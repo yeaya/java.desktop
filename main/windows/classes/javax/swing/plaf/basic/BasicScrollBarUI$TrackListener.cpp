@@ -369,7 +369,7 @@ void BasicScrollBarUI$TrackListener::startScrollTimerIfNecessary() {
 				if ($nc(tb)->y + tb->height < $nc(this->this$0->trackListener)->currentMouseY) {
 					$nc(this->this$0->scrollTimer)->start();
 				}
-			} else if (tb->y > $nc(this->this$0->trackListener)->currentMouseY) {
+			} else if ($nc(tb)->y > $nc(this->this$0->trackListener)->currentMouseY) {
 				$nc(this->this$0->scrollTimer)->start();
 			}
 			break;

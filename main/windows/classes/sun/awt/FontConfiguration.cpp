@@ -1056,7 +1056,7 @@ $FontDescriptorArray* FontConfiguration::getFontDescriptors($String* fontName$re
 		$throwNew($AssertionError);
 	}
 	$init($Locale);
-	$assign(fontName, fontName->toLowerCase($Locale::ENGLISH));
+	$assign(fontName, $nc(fontName)->toLowerCase($Locale::ENGLISH));
 	int32_t fontIndex = getFontIndex(fontName);
 	int32_t styleIndex = getStyleIndex(style);
 	return getFontDescriptors(fontIndex, styleIndex);

@@ -1563,7 +1563,7 @@ void PNGMetadata::mergeStandardTree($Node* root) {
 	$assign(node, $nc(node)->getFirstChild());
 	while (node != nullptr) {
 		$var($String, name, node->getNodeName());
-		if (name->equals("Chroma"_s)) {
+		if ($nc(name)->equals("Chroma"_s)) {
 			$var($Node, child, node->getFirstChild());
 			while (child != nullptr) {
 				$var($String, childName, child->getNodeName());
@@ -1622,7 +1622,7 @@ void PNGMetadata::mergeStandardTree($Node* root) {
 			$var($Node, child, node->getFirstChild());
 			while (child != nullptr) {
 				$var($String, childName, child->getNodeName());
-				if (childName->equals("NumProgressiveScans"_s)) {
+				if ($nc(childName)->equals("NumProgressiveScans"_s)) {
 					int32_t scans = getIntAttribute(child, "value"_s);
 					this->IHDR_interlaceMethod = (scans > 1) ? 1 : 0;
 				}
@@ -1632,7 +1632,7 @@ void PNGMetadata::mergeStandardTree($Node* root) {
 			$var($Node, child, node->getFirstChild());
 			while (child != nullptr) {
 				$var($String, childName, child->getNodeName());
-				if (childName->equals("BitsPerSample"_s)) {
+				if ($nc(childName)->equals("BitsPerSample"_s)) {
 					$var($String, s, getAttribute(child, "value"_s));
 					$var($StringTokenizer, t, $new($StringTokenizer, s));
 					int32_t maxBits = -1;
@@ -1694,7 +1694,7 @@ void PNGMetadata::mergeStandardTree($Node* root) {
 			$var($Node, child, node->getFirstChild());
 			while (child != nullptr) {
 				$var($String, childName, child->getNodeName());
-				if (childName->equals("PixelAspectRatio"_s)) {
+				if ($nc(childName)->equals("PixelAspectRatio"_s)) {
 					aspectRatio = getFloatAttribute(child, "value"_s);
 					gotAspectRatio = true;
 				} else if (childName->equals("HorizontalPixelSize"_s)) {
@@ -1728,7 +1728,7 @@ void PNGMetadata::mergeStandardTree($Node* root) {
 			$var($Node, child, node->getFirstChild());
 			while (child != nullptr) {
 				$var($String, childName, child->getNodeName());
-				if (childName->equals("ImageModificationTime"_s)) {
+				if ($nc(childName)->equals("ImageModificationTime"_s)) {
 					this->tIME_present = true;
 					this->tIME_year = getIntAttribute(child, "year"_s);
 					this->tIME_month = getIntAttribute(child, "month"_s);
@@ -1752,7 +1752,7 @@ void PNGMetadata::mergeStandardTree($Node* root) {
 			$var($Node, child, node->getFirstChild());
 			while (child != nullptr) {
 				$var($String, childName, child->getNodeName());
-				if (childName->equals("TextEntry"_s)) {
+				if ($nc(childName)->equals("TextEntry"_s)) {
 					$var($String, keyword, getAttribute(child, "keyword"_s, ""_s, false));
 					$var($String, value, getAttribute(child, "value"_s));
 					$var($String, language, getAttribute(child, "language"_s, ""_s, false));

@@ -136,7 +136,7 @@ void MetalIconFactory$InternalFrameAltMaximizeIcon::paintIcon($Component* c, $Gr
 			$assign(mainItemColor, darkHighlightColor);
 		}
 	} else {
-		bool var$2 = buttonModel->isPressed();
+		bool var$2 = $nc(buttonModel)->isPressed();
 		if (var$2 && buttonModel->isArmed()) {
 			$assign(internalBackgroundColor, $MetalLookAndFeel::getPrimaryControlShadow());
 			$assign(ulLightHighlightColor, internalBackgroundColor);

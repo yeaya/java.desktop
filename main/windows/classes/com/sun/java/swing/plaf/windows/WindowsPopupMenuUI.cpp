@@ -210,7 +210,7 @@ void WindowsPopupMenuUI::paint($Graphics* g, $JComponent* c) {
 			$nc(c)->putClientProperty(WindowsPopupMenuUI::GUTTER_OFFSET_KEY, $($Integer::valueOf(gutterOffset)));
 			$var($Insets, insets, c->getInsets());
 			$nc(skin)->paintSkin(g, gutterOffset, $nc(insets)->top, gutterWidth, c->getHeight() - insets->bottom - insets->top, $TMSchema$State::NORMAL);
-		} else if (c->getClientProperty(WindowsPopupMenuUI::GUTTER_OFFSET_KEY) != nullptr) {
+		} else if ($nc(c)->getClientProperty(WindowsPopupMenuUI::GUTTER_OFFSET_KEY) != nullptr) {
 			c->putClientProperty(WindowsPopupMenuUI::GUTTER_OFFSET_KEY, nullptr);
 		}
 	} else {

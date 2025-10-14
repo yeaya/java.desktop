@@ -348,41 +348,41 @@ $AccessibleStateSet* JTree$AccessibleJTree$AccessibleJTreeNode::getAccessibleSta
 		$nc(states)->add($AccessibleState::SHOWING);
 	} else {
 		$init($AccessibleState);
-		if (states->contains($AccessibleState::SHOWING)) {
+		if ($nc(states)->contains($AccessibleState::SHOWING)) {
 			states->remove($AccessibleState::SHOWING);
 		}
 	}
 	if (isVisible()) {
 		$init($AccessibleState);
-		states->add($AccessibleState::VISIBLE);
+		$nc(states)->add($AccessibleState::VISIBLE);
 	} else {
 		$init($AccessibleState);
-		if (states->contains($AccessibleState::VISIBLE)) {
+		if ($nc(states)->contains($AccessibleState::VISIBLE)) {
 			states->remove($AccessibleState::VISIBLE);
 		}
 	}
 	if ($nc(this->tree)->isPathSelected(this->path)) {
 		$init($AccessibleState);
-		states->add($AccessibleState::SELECTED);
+		$nc(states)->add($AccessibleState::SELECTED);
 	}
 	if (this->path == $nc(this->this$1->this$0)->getLeadSelectionPath()) {
 		$init($AccessibleState);
-		states->add($AccessibleState::ACTIVE);
+		$nc(states)->add($AccessibleState::ACTIVE);
 	}
 	if (!this->isLeaf) {
 		$init($AccessibleState);
-		states->add($AccessibleState::EXPANDABLE);
+		$nc(states)->add($AccessibleState::EXPANDABLE);
 	}
 	if ($nc(this->tree)->isExpanded(this->path)) {
 		$init($AccessibleState);
-		states->add($AccessibleState::EXPANDED);
+		$nc(states)->add($AccessibleState::EXPANDED);
 	} else {
 		$init($AccessibleState);
-		states->add($AccessibleState::COLLAPSED);
+		$nc(states)->add($AccessibleState::COLLAPSED);
 	}
 	if ($nc(this->tree)->isEditable()) {
 		$init($AccessibleState);
-		states->add($AccessibleState::EDITABLE);
+		$nc(states)->add($AccessibleState::EDITABLE);
 	}
 	return states;
 }

@@ -311,7 +311,7 @@ $Class* IndexedPropertyDescriptor::findIndexedPropertyType($Method* indexedReadM
 		}
 		if (indexedPropertyType == nullptr || $nc($nc(params)->get(1))->isAssignableFrom(indexedPropertyType)) {
 			indexedPropertyType = params->get(1);
-		} else if (!indexedPropertyType->isAssignableFrom(params->get(1))) {
+		} else if (!$nc(indexedPropertyType)->isAssignableFrom(params->get(1))) {
 			$throwNew($IntrospectionException, $$str({"type mismatch between indexed read and indexed write methods: "_s, $(getName())}));
 		}
 	}

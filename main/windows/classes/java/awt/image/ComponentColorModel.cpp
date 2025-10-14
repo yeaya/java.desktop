@@ -1160,7 +1160,7 @@ $ints* ComponentColorModel::getComponents(Object$* pixel, $ints* components$rena
 	}
 	if (components == nullptr) {
 		$assign(components, $new($ints, offset + this->numComponents));
-	} else if ((components->length - offset) < this->numComponents) {
+	} else if (($nc(components)->length - offset) < this->numComponents) {
 		$throwNew($IllegalArgumentException, "Length of components array < number of components in model"_s);
 	}
 	$System::arraycopy(intpixel, 0, components, offset, this->numComponents);

@@ -100,7 +100,7 @@ void BasicSplitPaneDivider$OneTouchActionHandler::actionPerformed($ActionEvent* 
 			}
 		} else {
 			int32_t var$6 = currentLoc;
-			int32_t var$8 = $nc(this->this$0->splitPane)->getWidth() - insets->right;
+			int32_t var$8 = $nc(this->this$0->splitPane)->getWidth() - $nc(insets)->right;
 			int32_t var$7 = (var$8 - this->this$0->getWidth());
 			if (var$6 >= var$7) {
 				int32_t maxLoc = $nc(this->this$0->splitPane)->getMaximumDividerLocation();
@@ -121,7 +121,7 @@ void BasicSplitPaneDivider$OneTouchActionHandler::actionPerformed($ActionEvent* 
 			newLoc = var$9 - this->this$0->getHeight() - insets->top;
 			$nc(this->this$0->splitPaneUI)->setKeepHidden(true);
 		}
-	} else if (currentLoc == insets->left) {
+	} else if (currentLoc == $nc(insets)->left) {
 		int32_t maxLoc = $nc(this->this$0->splitPane)->getMaximumDividerLocation();
 		newLoc = $Math::min(lastLoc, maxLoc);
 		$nc(this->this$0->splitPaneUI)->setKeepHidden(false);

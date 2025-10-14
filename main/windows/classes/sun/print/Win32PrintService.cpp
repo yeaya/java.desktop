@@ -1279,7 +1279,7 @@ bool Win32PrintService::isAttributeCategorySupported($Class* category) {
 	}
 	$var($ClassArray, classList, getSupportedAttributeCategories());
 	for (int32_t i = 0; i < $nc(classList)->length; ++i) {
-		if ($of(category)->equals(classList->get(i))) {
+		if ($nc($of(category))->equals(classList->get(i))) {
 			return true;
 		}
 	}

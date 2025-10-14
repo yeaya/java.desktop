@@ -317,7 +317,7 @@ void MotifInternalFrameTitlePane::propertyChange($PropertyChangeEvent* evt) {
 	$init($JInternalFrame);
 	if ($nc($JInternalFrame::IS_SELECTED_PROPERTY)->equals(prop)) {
 		repaint();
-	} else if (prop->equals("maximizable"_s)) {
+	} else if ($nc(prop)->equals("maximizable"_s)) {
 		$init($Boolean);
 		if ($cast($Boolean, evt->getNewValue()) == $Boolean::TRUE) {
 			add(static_cast<$Component*>(this->maximizeButton));

@@ -90,7 +90,7 @@ void MetalBorders$ToggleButtonBorder::paintBorder($Component* c, $Graphics* g, i
 	if (!$nc(c)->isEnabled()) {
 		$MetalUtils::drawDisabledBorder(g, x, y, w - 1, h - 1);
 	} else {
-		bool var$2 = model->isPressed();
+		bool var$2 = $nc(model)->isPressed();
 		if (var$2 && model->isArmed()) {
 			$MetalUtils::drawPressed3DBorder(g, x, y, w, h);
 		} else if (model->isSelected()) {

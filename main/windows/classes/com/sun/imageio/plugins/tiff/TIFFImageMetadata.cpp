@@ -287,7 +287,7 @@ $Node* TIFFImageMetadata::getIFDAsTree($TIFFIFD* ifd, $String* parentTagName, in
 		if (tag == nullptr) {
 			$assign(node, f->getAsNativeNode());
 		} else {
-			bool var$1 = tag->isIFDPointer();
+			bool var$1 = $nc(tag)->isIFDPointer();
 			if (var$1 && f->hasDirectory()) {
 				$var($TIFFIFD, subIFD, $TIFFIFD::getDirectoryAsIFD($(f->getDirectory())));
 				$var($TIFFIFD, var$2, subIFD);
@@ -918,7 +918,7 @@ void TIFFImageMetadata::mergeStandardTree($Node* root) {
 			$var($Node, child, node->getFirstChild());
 			while (child != nullptr) {
 				$var($String, childName, child->getNodeName());
-				if (childName->equals("CompressionTypeName"_s)) {
+				if ($nc(childName)->equals("CompressionTypeName"_s)) {
 					int32_t compression = -1;
 					$var($String, compressionTypeName, getAttribute(child, "value"_s));
 					if ($nc(compressionTypeName)->equalsIgnoreCase("None"_s)) {
@@ -945,7 +945,7 @@ void TIFFImageMetadata::mergeStandardTree($Node* root) {
 			$var($Node, child, node->getFirstChild());
 			while (child != nullptr) {
 				$var($String, childName, child->getNodeName());
-				if (childName->equals("PlanarConfiguration"_s)) {
+				if ($nc(childName)->equals("PlanarConfiguration"_s)) {
 					$var($String, pc, getAttribute(child, "value"_s));
 					int32_t planarConfiguration = -1;
 					if ($nc(pc)->equals("PixelInterleaved"_s)) {
@@ -1000,7 +1000,7 @@ void TIFFImageMetadata::mergeStandardTree($Node* root) {
 			$var($Node, child, node->getFirstChild());
 			while (child != nullptr) {
 				$var($String, childName, child->getNodeName());
-				if (childName->equals("PixelAspectRatio"_s)) {
+				if ($nc(childName)->equals("PixelAspectRatio"_s)) {
 					$var($String, par, getAttribute(child, "value"_s));
 					pixelAspectRatio = $Float::parseFloat(par);
 					gotPixelAspectRatio = true;
@@ -1091,7 +1091,7 @@ void TIFFImageMetadata::mergeStandardTree($Node* root) {
 			$var($Node, child, node->getFirstChild());
 			while (child != nullptr) {
 				$var($String, childName, child->getNodeName());
-				if (childName->equals("SubimageInterpretation"_s)) {
+				if ($nc(childName)->equals("SubimageInterpretation"_s)) {
 					$var($String, si, getAttribute(child, "value"_s));
 					int32_t newSubFileType = -1;
 					if ($nc(si)->equals("TransparencyMask"_s)) {
@@ -1107,7 +1107,7 @@ void TIFFImageMetadata::mergeStandardTree($Node* root) {
 						$nc(this->rootIFD)->addTIFFField(f);
 					}
 				}
-				if (childName->equals("ImageCreationTime"_s)) {
+				if ($nc(childName)->equals("ImageCreationTime"_s)) {
 					$var($String, year, getAttribute(child, "year"_s));
 					$var($String, month, getAttribute(child, "month"_s));
 					$var($String, day, getAttribute(child, "day"_s));
@@ -1155,7 +1155,7 @@ void TIFFImageMetadata::mergeStandardTree($Node* root) {
 			$var($String, theTitle, nullptr);
 			while (child != nullptr) {
 				$var($String, childName, child->getNodeName());
-				if (childName->equals("TextEntry"_s)) {
+				if ($nc(childName)->equals("TextEntry"_s)) {
 					int32_t tagNumber = -1;
 					$var($NamedNodeMap, childAttrs, child->getAttributes());
 					$var($Node, keywordNode, $nc(childAttrs)->getNamedItem("keyword"_s));
@@ -1216,7 +1216,7 @@ void TIFFImageMetadata::mergeStandardTree($Node* root) {
 			$var($Node, child, node->getFirstChild());
 			while (child != nullptr) {
 				$var($String, childName, child->getNodeName());
-				if (childName->equals("Alpha"_s)) {
+				if ($nc(childName)->equals("Alpha"_s)) {
 					$var($String, alpha, getAttribute(child, "value"_s));
 					$assign(f, nullptr);
 					if ($nc(alpha)->equals("premultiplied"_s)) {
@@ -1336,7 +1336,7 @@ $TIFFIFD* TIFFImageMetadata::parseIFD($Node* node$renamed) {
 	while (node != nullptr) {
 		$var($String, name, node->getNodeName());
 		$var($TIFFField, f, nullptr);
-		if (name->equals("TIFFIFD"_s)) {
+		if ($nc(name)->equals("TIFFIFD"_s)) {
 			$var($TIFFIFD, subIFD, parseIFD(node));
 			$var($String, parentTagName, getAttribute(node, "parentTagName"_s));
 			$var($String, parentTagNumber, getAttribute(node, "parentTagNumber"_s));
@@ -1352,7 +1352,7 @@ $TIFFIFD* TIFFImageMetadata::parseIFD($Node* node$renamed) {
 				type = $TIFFTag::TIFF_LONG;
 				$init($TIFFTag);
 				$assign(tag, $new($TIFFTag, $TIFFTag::UNKNOWN_TAG_NAME, 0, $sl(1, type)));
-			} else if (tag->isDataTypeOK($TIFFTag::TIFF_IFD_POINTER)) {
+			} else if ($nc(tag)->isDataTypeOK($TIFFTag::TIFF_IFD_POINTER)) {
 				type = $TIFFTag::TIFF_IFD_POINTER;
 			} else if (tag->isDataTypeOK($TIFFTag::TIFF_LONG)) {
 				type = $TIFFTag::TIFF_LONG;

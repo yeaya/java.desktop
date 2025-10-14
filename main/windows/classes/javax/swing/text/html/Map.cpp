@@ -212,12 +212,12 @@ $ints* Map::extractCoords(Object$* stringCoords) {
 			int32_t intValue = $Integer::parseInt(token);
 			if (retValue == nullptr) {
 				$assign(retValue, $new($ints, 4));
-			} else if (numCoords == retValue->length) {
+			} else if (numCoords == $nc(retValue)->length) {
 				$var($ints, temp, $new($ints, retValue->length * 2));
 				$System::arraycopy(retValue, 0, temp, 0, retValue->length);
 				$assign(retValue, temp);
 			}
-			retValue->set(numCoords++, intValue * scale);
+			$nc(retValue)->set(numCoords++, intValue * scale);
 		} catch ($NumberFormatException&) {
 			$var($NumberFormatException, nfe, $catch());
 			return nullptr;

@@ -702,12 +702,12 @@ void TIFFImageReader::initializeFromMetadata() {
 	if (f == nullptr) {
 		replicateFirst = true;
 		first = $BaselineTIFFTagSet::SAMPLE_FORMAT_UNDEFINED;
-	} else if (f->getCount() != this->samplesPerPixel) {
+	} else if ($nc(f)->getCount() != this->samplesPerPixel) {
 		replicateFirst = true;
 		first = f->getAsInt(0);
 	}
 	for (int32_t i = 0; i < this->samplesPerPixel; ++i) {
-		$nc(this->sampleFormat)->set(i, replicateFirst ? first : f->getAsInt(i));
+		$nc(this->sampleFormat)->set(i, replicateFirst ? first : $nc(f)->getAsInt(i));
 		if ($nc(this->sampleFormat)->get(i) != $BaselineTIFFTagSet::SAMPLE_FORMAT_UNSIGNED_INTEGER && $nc(this->sampleFormat)->get(i) != $BaselineTIFFTagSet::SAMPLE_FORMAT_SIGNED_INTEGER && $nc(this->sampleFormat)->get(i) != $BaselineTIFFTagSet::SAMPLE_FORMAT_FLOATING_POINT && $nc(this->sampleFormat)->get(i) != $BaselineTIFFTagSet::SAMPLE_FORMAT_UNDEFINED) {
 			processWarningOccurred("Illegal value for SAMPLE_FORMAT, assuming SAMPLE_FORMAT_UNDEFINED"_s);
 			$nc(this->sampleFormat)->set(i, $BaselineTIFFTagSet::SAMPLE_FORMAT_UNDEFINED);
@@ -719,12 +719,12 @@ void TIFFImageReader::initializeFromMetadata() {
 	if (f == nullptr) {
 		replicateFirst = true;
 		first = defaultBitDepth;
-	} else if (f->getCount() != this->samplesPerPixel) {
+	} else if ($nc(f)->getCount() != this->samplesPerPixel) {
 		replicateFirst = true;
 		first = f->getAsInt(0);
 	}
 	for (int32_t i = 0; i < this->samplesPerPixel; ++i) {
-		$nc(this->bitsPerSample)->set(i, replicateFirst ? first : f->getAsInt(i));
+		$nc(this->bitsPerSample)->set(i, replicateFirst ? first : $nc(f)->getAsInt(i));
 		if ($nc(this->bitsPerSample)->get(i) > TIFFImageReader::BITS_PER_SAMPLE_MAX) {
 			$throwNew($IIOException, $$str({"Bits per sample ("_s, $$str($nc(this->bitsPerSample)->get(i)), ") greater than allowed maximum ("_s, $$str(TIFFImageReader::BITS_PER_SAMPLE_MAX), ")"_s}));
 		}
@@ -1096,7 +1096,7 @@ $BufferedImage* TIFFImageReader::read(int32_t imageIndex, $ImageReadParam* param
 		$var($TIFFField, JPEGProcField, $nc(this->imageMetadata)->getTIFFField($BaselineTIFFTagSet::TAG_JPEG_PROC));
 		if (JPEGProcField == nullptr) {
 			processWarningOccurred("JPEGProc field missing; assuming baseline sequential JPEG process."_s);
-		} else if (JPEGProcField->getAsInt(0) != $BaselineTIFFTagSet::JPEG_PROC_BASELINE) {
+		} else if ($nc(JPEGProcField)->getAsInt(0) != $BaselineTIFFTagSet::JPEG_PROC_BASELINE) {
 			$throwNew($IIOException, "Old-style JPEG supported for baseline sequential JPEG process only!"_s);
 		}
 		$set(this, decompressor, $new($TIFFOldJPEGDecompressor));

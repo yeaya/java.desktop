@@ -204,11 +204,11 @@ $Component* ContainerOrderFocusTraversalPolicy::getComponentAfter($Container* aC
 		$throwNew($IllegalArgumentException, "aContainer should be focus cycle root or focus traversal policy provider"_s);
 	} else {
 		bool var$2 = aContainer->isFocusCycleRoot();
-		if (var$2 && !aComponent->isFocusCycleRoot(aContainer)) {
+		if (var$2 && !$nc(aComponent)->isFocusCycleRoot(aContainer)) {
 			$throwNew($IllegalArgumentException, "aContainer is not a focus cycle root of aComponent"_s);
 		}
 	}
-	$synchronized(aContainer->getTreeLock()) {
+	$synchronized($nc(aContainer)->getTreeLock()) {
 		bool var$3 = aContainer->isVisible();
 		if (!(var$3 && aContainer->isDisplayable())) {
 			return nullptr;
@@ -273,11 +273,11 @@ $Component* ContainerOrderFocusTraversalPolicy::getComponentBefore($Container* a
 		$throwNew($IllegalArgumentException, "aContainer should be focus cycle root or focus traversal policy provider"_s);
 	} else {
 		bool var$2 = aContainer->isFocusCycleRoot();
-		if (var$2 && !aComponent->isFocusCycleRoot(aContainer)) {
+		if (var$2 && !$nc(aComponent)->isFocusCycleRoot(aContainer)) {
 			$throwNew($IllegalArgumentException, "aContainer is not a focus cycle root of aComponent"_s);
 		}
 	}
-	$synchronized(aContainer->getTreeLock()) {
+	$synchronized($nc(aContainer)->getTreeLock()) {
 		bool var$3 = aContainer->isVisible();
 		if (!(var$3 && aContainer->isDisplayable())) {
 			return nullptr;
@@ -389,7 +389,7 @@ $Component* ContainerOrderFocusTraversalPolicy::getLastComponent($Container* aCo
 	if (aContainer == nullptr) {
 		$throwNew($IllegalArgumentException, "aContainer cannot be null"_s);
 	}
-	$synchronized(aContainer->getTreeLock()) {
+	$synchronized($nc(aContainer)->getTreeLock()) {
 		bool var$0 = aContainer->isVisible();
 		if (!(var$0 && aContainer->isDisplayable())) {
 			return nullptr;

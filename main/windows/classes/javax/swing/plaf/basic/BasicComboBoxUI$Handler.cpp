@@ -195,7 +195,7 @@ void BasicComboBoxUI$Handler::propertyChange($PropertyChangeEvent* e) {
 			this->this$0->isDisplaySizeDirty = true;
 			$nc(comboBox)->revalidate();
 			comboBox->repaint();
-		} else if (propertyName == "editor"_s && comboBox->isEditable()) {
+		} else if (propertyName == "editor"_s && $nc(comboBox)->isEditable()) {
 			this->this$0->addEditor();
 			comboBox->revalidate();
 		} else if (propertyName == "editable"_s) {
@@ -275,7 +275,7 @@ void BasicComboBoxUI$Handler::keyPressed($KeyEvent* e) {
 		bool var$6 = $nc(this->this$0->comboBox)->isEnabled();
 		bool var$5 = var$6 && $nc($($nc(this->this$0->comboBox)->getModel()))->getSize() != 0;
 		bool var$4 = var$5 && isTypeAheadKey(e);
-		if (var$4 && e->getKeyChar() != $KeyEvent::CHAR_UNDEFINED) {
+		if (var$4 && $nc(e)->getKeyChar() != $KeyEvent::CHAR_UNDEFINED) {
 			this->this$0->time = e->getWhen();
 			if ($nc(this->this$0->comboBox)->selectWithKeyChar(e->getKeyChar())) {
 				e->consume();

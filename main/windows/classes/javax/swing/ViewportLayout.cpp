@@ -146,12 +146,12 @@ void ViewportLayout::layoutContainer($Container* parent) {
 		if (($nc(viewPosition)->x + $nc(extentSize)->width) > viewSize->width) {
 			viewPosition->x = $Math::max(0, viewSize->width - extentSize->width);
 		}
-	} else if (extentSize->width > viewSize->width) {
+	} else if ($nc(extentSize)->width > viewSize->width) {
 		$nc(viewPosition)->x = viewSize->width - extentSize->width;
 	} else {
 		$nc(viewPosition)->x = $Math::max(0, $Math::min(viewSize->width - extentSize->width, viewPosition->x));
 	}
-	if (($nc(viewPosition)->y + extentSize->height) > viewSize->height) {
+	if (($nc(viewPosition)->y + $nc(extentSize)->height) > viewSize->height) {
 		viewPosition->y = $Math::max(0, viewSize->height - extentSize->height);
 	}
 	if (scrollableView == nullptr) {

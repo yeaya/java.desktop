@@ -220,7 +220,7 @@ $bytes* EffectUtils::getPixels($BufferedImage* img, int32_t x, int32_t y, int32_
 	}
 	if (pixels == nullptr) {
 		$assign(pixels, $new($bytes, w * h));
-	} else if (pixels->length < w * h) {
+	} else if ($nc(pixels)->length < w * h) {
 		$throwNew($IllegalArgumentException, "pixels array must have a length >= w*h"_s);
 	}
 	int32_t imageType = $nc(img)->getType();
@@ -235,7 +235,7 @@ $bytes* EffectUtils::getPixels($BufferedImage* img, int32_t x, int32_t y, int32_
 void EffectUtils::setPixels($BufferedImage* img, int32_t x, int32_t y, int32_t w, int32_t h, $bytes* pixels) {
 	if (pixels == nullptr || w == 0 || h == 0) {
 		return;
-	} else if (pixels->length < w * h) {
+	} else if ($nc(pixels)->length < w * h) {
 		$throwNew($IllegalArgumentException, "pixels array must have a length >= w*h"_s);
 	}
 	int32_t imageType = $nc(img)->getType();
@@ -254,7 +254,7 @@ $ints* EffectUtils::getPixels($BufferedImage* img, int32_t x, int32_t y, int32_t
 	}
 	if (pixels == nullptr) {
 		$assign(pixels, $new($ints, w * h));
-	} else if (pixels->length < w * h) {
+	} else if ($nc(pixels)->length < w * h) {
 		$throwNew($IllegalArgumentException, "pixels array must have a length >= w*h"_s);
 	}
 	int32_t imageType = $nc(img)->getType();
@@ -268,7 +268,7 @@ $ints* EffectUtils::getPixels($BufferedImage* img, int32_t x, int32_t y, int32_t
 void EffectUtils::setPixels($BufferedImage* img, int32_t x, int32_t y, int32_t w, int32_t h, $ints* pixels) {
 	if (pixels == nullptr || w == 0 || h == 0) {
 		return;
-	} else if (pixels->length < w * h) {
+	} else if ($nc(pixels)->length < w * h) {
 		$throwNew($IllegalArgumentException, "pixels array must have a length >= w*h"_s);
 	}
 	int32_t imageType = $nc(img)->getType();

@@ -178,9 +178,9 @@ void WindowsIconFactory$RadioButtonIcon::paintIcon($Component* c, $Graphics* g, 
 		}
 		$nc(skin)->paintSkin(g, x, y, state);
 	} else {
-		bool var$5 = model->isPressed();
+		bool var$5 = $nc(model)->isPressed();
 		bool var$4 = (var$5 && model->isArmed());
-		if (var$4 || !model->isEnabled()) {
+		if (var$4 || !$nc(model)->isEnabled()) {
 			$nc(g)->setColor($($UIManager::getColor("RadioButton.background"_s)));
 		} else {
 			$nc(g)->setColor($($UIManager::getColor("RadioButton.interiorBackground"_s)));
@@ -203,7 +203,7 @@ void WindowsIconFactory$RadioButtonIcon::paintIcon($Component* c, $Graphics* g, 
 			g->setColor($($UIManager::getColor("RadioButton.light"_s)));
 			g->drawArc(x + 1, y + 1, 9, 9, 45, -180);
 			g2d->setStroke(oldStroke);
-			if (model->isSelected()) {
+			if ($nc(model)->isSelected()) {
 				if (model->isEnabled()) {
 					g->setColor($($UIManager::getColor("RadioButton.foreground"_s)));
 				} else {
@@ -241,7 +241,7 @@ void WindowsIconFactory$RadioButtonIcon::paintIcon($Component* c, $Graphics* g, 
 			g->drawLine(x + 9, y + 8, x + 9, y + 8);
 			g->drawLine(x + 10, y + 7, x + 10, y + 4);
 			g->drawLine(x + 9, y + 3, x + 9, y + 3);
-			if (model->isSelected()) {
+			if ($nc(model)->isSelected()) {
 				if (model->isEnabled()) {
 					g->setColor($($UIManager::getColor("RadioButton.foreground"_s)));
 				} else {

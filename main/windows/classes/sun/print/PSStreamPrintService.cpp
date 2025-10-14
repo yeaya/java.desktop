@@ -683,7 +683,7 @@ $AttributeSet* PSStreamPrintService::getUnsupportedAttributes($DocFlavor* flavor
 	for (int32_t i = 0; i < $nc(attrs)->length; ++i) {
 		try {
 			$assign(attr, attrs->get(i));
-			if (!isAttributeCategorySupported(attr->getCategory())) {
+			if (!isAttributeCategorySupported($nc(attr)->getCategory())) {
 				unsupp->add(attr);
 			} else if (!isAttributeValueSupported(attr, flavor, attributes)) {
 				unsupp->add(attr);

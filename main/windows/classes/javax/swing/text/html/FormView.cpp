@@ -559,7 +559,7 @@ void FormView::actionPerformed($ActionEvent* evt) {
 	$var($AttributeSet, attr, $nc(element)->getAttributes());
 	$init($HTML$Attribute);
 	$var($String, type, $cast($String, $nc(attr)->getAttribute($HTML$Attribute::TYPE)));
-	if (type->equals("submit"_s)) {
+	if ($nc(type)->equals("submit"_s)) {
 		getFormData(dataBuffer);
 		submitData($(dataBuffer->toString()));
 	} else if (type->equals("reset"_s)) {
@@ -742,8 +742,8 @@ $String* FormView::getInputElementData($AttributeSet* attr) {
 	$init($HTML$Attribute);
 	$var($String, type, $cast($String, attr->getAttribute($HTML$Attribute::TYPE)));
 	$var($String, value, nullptr);
-	bool var$0 = type->equals("text"_s);
-	if (var$0 || type->equals("password"_s)) {
+	bool var$0 = $nc(type)->equals("text"_s);
+	if (var$0 || $nc(type)->equals("password"_s)) {
 		$var($Document, doc, $cast($Document, model));
 		try {
 			$assign(value, $nc(doc)->getText(0, doc->getLength()));

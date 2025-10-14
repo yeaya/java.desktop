@@ -525,7 +525,7 @@ int32_t Helpers::outcode(double x, double y, $doubles* clipRect) {
 	} else {
 		code = 0;
 	}
-	if (x < clipRect->get(2)) {
+	if (x < $nc(clipRect)->get(2)) {
 		code |= $MarlinConst::OUTCODE_LEFT;
 	} else if (x >= clipRect->get(3)) {
 		code |= $MarlinConst::OUTCODE_RIGHT;

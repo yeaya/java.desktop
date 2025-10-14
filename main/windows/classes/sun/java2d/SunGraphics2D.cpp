@@ -1119,7 +1119,7 @@ void SunGraphics2D::validateBasicStroke($BasicStroke* bs) {
 			}
 		} else if ($equals(bs, SunGraphics2D::defaultStroke)) {
 			this->strokeState = SunGraphics2D::STROKE_THIN;
-		} else if (bs->getLineWidth() <= 1.0f) {
+		} else if ($nc(bs)->getLineWidth() <= 1.0f) {
 			if (bs->getDashArray() == nullptr) {
 				this->strokeState = SunGraphics2D::STROKE_THIN;
 			} else {

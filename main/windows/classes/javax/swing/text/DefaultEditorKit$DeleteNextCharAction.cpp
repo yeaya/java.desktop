@@ -91,7 +91,7 @@ void DefaultEditorKit$DeleteNextCharAction::actionPerformed($ActionEvent* e) {
 				int32_t var$0 = $Math::min(dot, mark);
 				$nc(doc)->remove(var$0, $Math::abs(dot - mark));
 				beep = false;
-			} else if (dot < doc->getLength()) {
+			} else if (dot < $nc(doc)->getLength()) {
 				int32_t delChars = 1;
 				if (dot < doc->getLength() - 1) {
 					$var($String, dotChars, doc->getText(dot, 2));

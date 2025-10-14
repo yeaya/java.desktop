@@ -223,8 +223,8 @@ void BasicColorChooserUI::installPreviewPanel() {
 		$assign(previewPanel, $ColorChooserComponentFactory::getPreviewPanel());
 	} else {
 		$load($JPanel);
-		bool var$1 = $of($JPanel::class$)->equals($of(previewPanel)->getClass());
-		if (var$1 && (0 == previewPanel->getComponentCount())) {
+		bool var$1 = $of($JPanel::class$)->equals($nc($of(previewPanel))->getClass());
+		if (var$1 && (0 == $nc(previewPanel)->getComponentCount())) {
 			$assign(previewPanel, nullptr);
 		}
 	}

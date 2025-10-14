@@ -768,8 +768,8 @@ void BasicMenuItemUI::paintBackground($Graphics* g, $JMenuItem* menuItem, $Color
 		}
 		g->setColor(oldColor);
 	} else {
-		bool var$2 = model->isArmed();
-		if (var$2 || ($instanceOf($JMenu, menuItem) && model->isSelected())) {
+		bool var$2 = $nc(model)->isArmed();
+		if (var$2 || ($instanceOf($JMenu, menuItem) && $nc(model)->isSelected())) {
 			g->setColor(bgColor);
 			g->fillRect(0, 0, menuWidth, menuHeight);
 			g->setColor(oldColor);

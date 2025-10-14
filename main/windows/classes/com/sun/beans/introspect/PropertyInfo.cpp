@@ -173,7 +173,7 @@ bool PropertyInfo::initialize() {
 					if (writeType == nullptr) {
 						$set(this, write, info);
 						writeType = $nc(info)->type;
-					} else if (writeType->isAssignableFrom($nc(info)->type)) {
+					} else if ($nc(writeType)->isAssignableFrom($nc(info)->type)) {
 						if ((this->write == nullptr) || $nc($nc(this->write)->type)->isAssignableFrom($nc(info)->type)) {
 							$set(this, write, info);
 							writeType = $nc(info)->type;

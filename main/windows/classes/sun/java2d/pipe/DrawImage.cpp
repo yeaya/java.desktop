@@ -245,7 +245,7 @@ void DrawImage::transformImage($SunGraphics2D* sg, $Image* img, int32_t x, int32
 			return;
 		}
 		checkfinalxform = false;
-	} else if (sg->transformState <= $SunGraphics2D::TRANSFORM_TRANSLATESCALE && (((int32_t)(txtype & (uint32_t)(($AffineTransform::TYPE_FLIP | $AffineTransform::TYPE_MASK_ROTATION) | $AffineTransform::TYPE_GENERAL_TRANSFORM))) == 0)) {
+	} else if ($nc(sg)->transformState <= $SunGraphics2D::TRANSFORM_TRANSLATESCALE && (((int32_t)(txtype & (uint32_t)(($AffineTransform::TYPE_FLIP | $AffineTransform::TYPE_MASK_ROTATION) | $AffineTransform::TYPE_GENERAL_TRANSFORM))) == 0)) {
 		$var($doubles, coords, $new($doubles, {
 			(double)0,
 			(double)0,
@@ -265,7 +265,7 @@ void DrawImage::transformImage($SunGraphics2D* sg, $Image* img, int32_t x, int32
 	} else {
 		checkfinalxform = true;
 	}
-	$var($AffineTransform, tx, $new($AffineTransform, sg->transform$));
+	$var($AffineTransform, tx, $new($AffineTransform, $nc(sg)->transform$));
 	tx->translate((double)x, (double)y);
 	tx->concatenate(extraAT);
 	if (checkfinalxform) {
@@ -667,10 +667,10 @@ $ColorModel* DrawImage::getTransformColorModel($SunGraphics2D* sg, $BufferedImag
 					}
 				}
 			}
-		} else if (needTrans && cm->getTransparency() == $Transparency::OPAQUE) {
+		} else if (needTrans && $nc(cm)->getTransparency() == $Transparency::OPAQUE) {
 			$assign(dstCM, $ColorModel::getRGBdefault());
 		}
-	} else if ($instanceOf($IndexColorModel, cm) || (needTrans && cm->getTransparency() == $Transparency::OPAQUE)) {
+	} else if ($instanceOf($IndexColorModel, cm) || (needTrans && $nc(cm)->getTransparency() == $Transparency::OPAQUE)) {
 		$assign(dstCM, $ColorModel::getRGBdefault());
 	}
 	return dstCM;

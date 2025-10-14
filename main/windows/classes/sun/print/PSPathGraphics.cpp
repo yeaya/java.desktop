@@ -298,7 +298,7 @@ bool PSPathGraphics::drawImageToPlatform($Image* image, $AffineTransform* xform$
 						if (drawBitmaskImage(img, xform, bgcolor, srcX, srcY, srcWidth, srcHeight)) {
 							return true;
 						}
-					} else if (bgcolor->getTransparency() == $Transparency::OPAQUE) {
+					} else if ($nc(bgcolor)->getTransparency() == $Transparency::OPAQUE) {
 						drawOpaque = true;
 					}
 				}

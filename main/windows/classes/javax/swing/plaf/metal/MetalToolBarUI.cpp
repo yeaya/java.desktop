@@ -189,7 +189,7 @@ $Object* MetalToolBarUI::findRegisteredComponentOfType($JComponent* from, $Class
 				if (component == nullptr) {
 					$nc(MetalToolBarUI::components)->remove(counter);
 				} else {
-					bool var$1 = target->isInstance(component);
+					bool var$1 = $nc(target)->isInstance(component);
 					if (var$1 && $SwingUtilities::getRootPane($cast($Component, component)) == rp) {
 						return $of(component);
 					}

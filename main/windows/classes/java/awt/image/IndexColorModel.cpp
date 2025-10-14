@@ -909,10 +909,10 @@ bool IndexColorModel::equals(Object$* obj) {
 	}
 	if (testValidBits) {
 		for (int32_t i = 0; i < this->map_size; ++i) {
-			bool var$5 = $nc(this->rgb)->get(i) != $nc(cm->rgb)->get(i);
+			bool var$5 = $nc(this->rgb)->get(i) != $nc($nc(cm)->rgb)->get(i);
 			if (!var$5) {
 				bool var$6 = $nc(this->validBits)->testBit(i);
-				var$5 = var$6 != $nc(cm->validBits)->testBit(i);
+				var$5 = var$6 != $nc($nc(cm)->validBits)->testBit(i);
 			}
 			if (var$5) {
 				return false;
@@ -920,7 +920,7 @@ bool IndexColorModel::equals(Object$* obj) {
 		}
 	} else {
 		for (int32_t i = 0; i < this->map_size; ++i) {
-			if ($nc(this->rgb)->get(i) != $nc(cm->rgb)->get(i)) {
+			if ($nc(this->rgb)->get(i) != $nc($nc(cm)->rgb)->get(i)) {
 				return false;
 			}
 		}

@@ -379,7 +379,7 @@ int32_t JTextArea::getLineOfOffset(int32_t offset) {
 	$var($Document, doc, getDocument());
 	if (offset < 0) {
 		$throwNew($BadLocationException, "Can\'t translate offset to line"_s, -1);
-	} else if (offset > doc->getLength()) {
+	} else if (offset > $nc(doc)->getLength()) {
 		$throwNew($BadLocationException, "Can\'t translate offset to line"_s, doc->getLength() + 1);
 	} else {
 		$var($Element, map, $nc($(getDocument()))->getDefaultRootElement());

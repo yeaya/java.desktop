@@ -1517,7 +1517,7 @@ $FocusEvent* KeyboardFocusManager::retargetFocusLost($FocusEvent* fe$renamed) {
 			} else {
 				return fe;
 			}
-		} else if (hwFocusRequest != nullptr && (nativeOpposite == hwFocusRequest->heavyweight || nativeOpposite == nullptr && opposite == $nc($(hwFocusRequest->getFirstLightweightRequest()))->component)) {
+		} else if (hwFocusRequest != nullptr && (nativeOpposite == hwFocusRequest->heavyweight || nativeOpposite == nullptr && opposite == $nc($($nc(hwFocusRequest)->getFirstLightweightRequest()))->component)) {
 			if (currentFocusOwner == nullptr) {
 				return fe;
 			}

@@ -181,7 +181,7 @@ void MetalBorders$ButtonBorder::paintOceanBorder($Component* c, $Graphics* g, in
 			g->setColor($($UIManager::getColor("Button.disabledToolBarBorderBackground"_s)));
 			g->drawRect(0, 0, w - 2, h - 2);
 		}
-	} else if (model->isEnabled()) {
+	} else if ($nc(model)->isEnabled()) {
 		bool pressed = model->isPressed();
 		bool armed = model->isArmed();
 		if (($instanceOf($JButton, c)) && $nc(($cast($JButton, c)))->isDefaultButton()) {
@@ -197,7 +197,7 @@ void MetalBorders$ButtonBorder::paintOceanBorder($Component* c, $Graphics* g, in
 		} else {
 			bool var$3 = model->isRollover();
 			$init($MetalBorders);
-			if (var$3 && button->getClientProperty($MetalBorders::NO_BUTTON_ROLLOVER) == nullptr) {
+			if (var$3 && $nc(button)->getClientProperty($MetalBorders::NO_BUTTON_ROLLOVER) == nullptr) {
 				g->setColor($($MetalLookAndFeel::getPrimaryControl()));
 				g->drawRect(0, 0, w - 1, h - 1);
 				g->drawRect(2, 2, w - 5, h - 5);

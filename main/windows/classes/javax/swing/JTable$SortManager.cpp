@@ -161,7 +161,7 @@ void JTable$SortManager::cacheSelection($RowSorterEvent* sortEvent, $JTable$Mode
 		} else if (this->modelSelection == nullptr) {
 			cacheModelSelection(sortEvent);
 		}
-	} else if (change->allRowsChanged) {
+	} else if ($nc(change)->allRowsChanged) {
 		$set(this, modelSelection, nullptr);
 	} else if (this->modelSelection != nullptr) {
 		switch (change->type) {

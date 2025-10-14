@@ -720,7 +720,7 @@ $String* CSS::colorToHex($Color* color) {
 		$plusAssign(colorstr, str);
 	}
 	$assign(str, $Integer::toHexString($nc(color)->getGreen()));
-	if (str->length() > 2) {
+	if ($nc(str)->length() > 2) {
 		$assign(str, str->substring(0, 2));
 	} else if (str->length() < 2) {
 		$plusAssign(colorstr, $$str({"0"_s, str}));
@@ -728,7 +728,7 @@ $String* CSS::colorToHex($Color* color) {
 		$plusAssign(colorstr, str);
 	}
 	$assign(str, $Integer::toHexString($nc(color)->getBlue()));
-	if (str->length() > 2) {
+	if ($nc(str)->length() > 2) {
 		$assign(str, str->substring(0, 2));
 	} else if (str->length() < 2) {
 		$plusAssign(colorstr, $$str({"0"_s, str}));
@@ -945,7 +945,7 @@ float CSS::getPointSize(int32_t index, $StyleSheet* ss$renamed) {
 	--index;
 	if (index < 0) {
 		return (float)$nc(sizeMap)->get(0);
-	} else if (index > sizeMap->length - 1) {
+	} else if (index > $nc(sizeMap)->length - 1) {
 		return (float)sizeMap->get(sizeMap->length - 1);
 	} else {
 		return (float)sizeMap->get(index);

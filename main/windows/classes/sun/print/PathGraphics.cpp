@@ -517,7 +517,7 @@ bool PathGraphics::printedSimpleGlyphVector($GlyphVector* g, float x, float y) {
 			char16_t ch = 0;
 			if (gc == $CharToGlyphMapper::INVISIBLE_GLYPH_ID) {
 				ch = u'\n';
-			} else if (gc < 0 || gc >= map->length) {
+			} else if (gc < 0 || gc >= $nc(map)->length) {
 				return false;
 			} else {
 				ch = map->get(gc);
@@ -534,7 +534,7 @@ bool PathGraphics::printedSimpleGlyphVector($GlyphVector* g, float x, float y) {
 			char16_t ch = 0;
 			if (gc == $CharToGlyphMapper::INVISIBLE_GLYPH_ID) {
 				ch = u'\n';
-			} else if (gc < 0 || gc >= glyphToCharMap->length) {
+			} else if (gc < 0 || gc >= $nc(glyphToCharMap)->length) {
 				return false;
 			} else {
 				ch = glyphToCharMap->get(gc);

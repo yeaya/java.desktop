@@ -129,7 +129,7 @@ $Object* PropertyElementHandler::getPropertyValue(Object$* bean, $String* name, 
 	$Class* type = $nc($of(bean))->getClass();
 	if (index == nullptr) {
 		return $of($MethodUtil::invoke($(findGetter(type, name, $$new($ClassArray, 0))), bean, $$new($ObjectArray, 0)));
-	} else if (type->isArray() && (name == nullptr)) {
+	} else if ($nc(type)->isArray() && (name == nullptr)) {
 		return $of($1Array::get(bean, $nc(index)->intValue()));
 	} else {
 		$init($Integer);
@@ -143,7 +143,7 @@ void PropertyElementHandler::setPropertyValue(Object$* bean, $String* name, $Int
 	$Class* param = (value != nullptr) ? $nc($of(value))->getClass() : ($Class*)nullptr;
 	if (index == nullptr) {
 		$MethodUtil::invoke($(findSetter(type, name, $$new($ClassArray, {param}))), bean, $$new($ObjectArray, {value}));
-	} else if (type->isArray() && (name == nullptr)) {
+	} else if ($nc(type)->isArray() && (name == nullptr)) {
 		$1Array::set(bean, $nc(index)->intValue(), value);
 	} else {
 			$init($Integer);

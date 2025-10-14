@@ -261,8 +261,8 @@ AudioFloatConverter* AudioFloatConverter::getConverter($AudioFormat* format) {
 			}
 		}
 	}
-	bool var$28 = $nc($(format->getEncoding()))->equals($AudioFormat$Encoding::PCM_SIGNED);
-	bool var$27 = (var$28 || $nc($(format->getEncoding()))->equals($AudioFormat$Encoding::PCM_UNSIGNED));
+	bool var$28 = $nc($($nc(format)->getEncoding()))->equals($AudioFormat$Encoding::PCM_SIGNED);
+	bool var$27 = (var$28 || $nc($($nc(format)->getEncoding()))->equals($AudioFormat$Encoding::PCM_UNSIGNED));
 	if (var$27 && (format->getSampleSizeInBits() % 8 != 0)) {
 		$assign(conv, $new($AudioFloatConverter$AudioFloatLSBFilter, conv, format));
 	}

@@ -856,7 +856,7 @@ $Dimension* BasicTextUI::getPreferredSize($JComponent* c) {
 			} else if (d->width == 0 && d->height == 0) {
 				$nc(this->rootView)->setSize((float)$Integer::MAX_VALUE, (float)$Integer::MAX_VALUE);
 			}
-			d->width = (int32_t)$Math::min($cast(int64_t, $nc(this->rootView)->getPreferredSpan($View::X_AXIS)) + (int64_t)$nc(i)->left + (int64_t)i->right + this->caretMargin, (int64_t)$Integer::MAX_VALUE);
+			$nc(d)->width = (int32_t)$Math::min($cast(int64_t, $nc(this->rootView)->getPreferredSpan($View::X_AXIS)) + (int64_t)$nc(i)->left + (int64_t)i->right + this->caretMargin, (int64_t)$Integer::MAX_VALUE);
 			d->height = (int32_t)$Math::min($cast(int64_t, $nc(this->rootView)->getPreferredSpan($View::Y_AXIS)) + (int64_t)$nc(i)->top + (int64_t)i->bottom, (int64_t)$Integer::MAX_VALUE);
 		} catch ($Throwable&) {
 			$assign(var$0, $catch());

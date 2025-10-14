@@ -546,7 +546,7 @@ void OGLSurfaceData::validatePipe($SunGraphics2D* sg2d) {
 		}
 	}
 	if (txPipe != nullptr) {
-		if (sg2d->transformState >= $SunGraphics2D::TRANSFORM_TRANSLATESCALE) {
+		if ($nc(sg2d)->transformState >= $SunGraphics2D::TRANSFORM_TRANSLATESCALE) {
 			$set(sg2d, drawpipe, txPipe);
 			$set(sg2d, fillpipe, txPipe);
 		} else if (sg2d->strokeState != $SunGraphics2D::STROKE_THIN) {
@@ -556,16 +556,16 @@ void OGLSurfaceData::validatePipe($SunGraphics2D* sg2d) {
 			$set(sg2d, drawpipe, nonTxPipe);
 			$set(sg2d, fillpipe, nonTxPipe);
 		}
-		$set(sg2d, shapepipe, txPipe);
+		$set($nc(sg2d), shapepipe, txPipe);
 	} else if (!validated) {
 		$SurfaceData::validatePipe(sg2d);
 	}
-	$set(sg2d, textpipe, textpipe);
+	$set($nc(sg2d), textpipe, textpipe);
 	$set(sg2d, imagepipe, OGLSurfaceData::oglImagePipe);
 }
 
 $MaskFill* OGLSurfaceData::getMaskFill($SunGraphics2D* sg2d) {
-	if (sg2d->paintState > $SunGraphics2D::PAINT_ALPHACOLOR) {
+	if ($nc(sg2d)->paintState > $SunGraphics2D::PAINT_ALPHACOLOR) {
 		bool var$0 = !$OGLPaints::isValid(sg2d);
 		if (var$0 || !$nc(this->graphicsConfig)->isCapPresent(16)) {
 			return nullptr;
@@ -575,7 +575,7 @@ $MaskFill* OGLSurfaceData::getMaskFill($SunGraphics2D* sg2d) {
 }
 
 bool OGLSurfaceData::copyArea($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w, int32_t h, int32_t dx, int32_t dy) {
-	if (sg2d->compositeState >= $SunGraphics2D::COMP_XOR) {
+	if ($nc(sg2d)->compositeState >= $SunGraphics2D::COMP_XOR) {
 		return false;
 	}
 	$nc(OGLSurfaceData::oglRenderPipe)->copyArea(sg2d, x, y, w, h, dx, dy);

@@ -643,7 +643,7 @@ $String* BasicFileChooserUI::getDialogTitle($JFileChooser* fc) {
 }
 
 int32_t BasicFileChooserUI::getApproveButtonMnemonic($JFileChooser* fc) {
-	int32_t mnemonic = fc->getApproveButtonMnemonic();
+	int32_t mnemonic = $nc(fc)->getApproveButtonMnemonic();
 	if (mnemonic > 0) {
 		return mnemonic;
 	} else if (fc->getDialogType() == $JFileChooser::OPEN_DIALOG) {
@@ -656,7 +656,7 @@ int32_t BasicFileChooserUI::getApproveButtonMnemonic($JFileChooser* fc) {
 }
 
 $String* BasicFileChooserUI::getApproveButtonText($JFileChooser* fc) {
-	$var($String, buttonText, fc->getApproveButtonText());
+	$var($String, buttonText, $nc(fc)->getApproveButtonText());
 	if (buttonText != nullptr) {
 		return buttonText;
 	} else if (fc->getDialogType() == $JFileChooser::OPEN_DIALOG) {

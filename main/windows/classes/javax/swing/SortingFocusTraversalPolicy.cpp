@@ -272,7 +272,7 @@ $Component* SortingFocusTraversalPolicy::getComponentAfter($Container* aContaine
 		$throwNew($IllegalArgumentException, "aContainer should be focus cycle root or focus traversal policy provider"_s);
 	} else {
 		bool var$2 = aContainer->isFocusCycleRoot();
-		if (var$2 && !aComponent->isFocusCycleRoot(aContainer)) {
+		if (var$2 && !$nc(aComponent)->isFocusCycleRoot(aContainer)) {
 			$throwNew($IllegalArgumentException, "aContainer is not a focus cycle root of aComponent"_s);
 		}
 	}
@@ -314,7 +314,7 @@ $Component* SortingFocusTraversalPolicy::getComponentAfter($Container* aContaine
 			return comp;
 		}
 	}
-	if (aContainer->isFocusCycleRoot()) {
+	if ($nc(aContainer)->isFocusCycleRoot()) {
 		$set(this, cachedRoot, aContainer);
 		$set(this, cachedCycle, cycle);
 		$assign(comp, getFirstComponent(aContainer));
@@ -335,7 +335,7 @@ $Component* SortingFocusTraversalPolicy::getComponentBefore($Container* aContain
 		$throwNew($IllegalArgumentException, "aContainer should be focus cycle root or focus traversal policy provider"_s);
 	} else {
 		bool var$2 = aContainer->isFocusCycleRoot();
-		if (var$2 && !aComponent->isFocusCycleRoot(aContainer)) {
+		if (var$2 && !$nc(aComponent)->isFocusCycleRoot(aContainer)) {
 			$throwNew($IllegalArgumentException, "aContainer is not a focus cycle root of aComponent"_s);
 		}
 	}
@@ -380,7 +380,7 @@ $Component* SortingFocusTraversalPolicy::getComponentBefore($Container* aContain
 			return comp;
 		}
 	}
-	if (aContainer->isFocusCycleRoot()) {
+	if ($nc(aContainer)->isFocusCycleRoot()) {
 		$set(this, cachedRoot, aContainer);
 		$set(this, cachedCycle, cycle);
 		$assign(comp, getLastComponent(aContainer));

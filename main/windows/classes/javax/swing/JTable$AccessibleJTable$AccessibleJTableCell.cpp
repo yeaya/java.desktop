@@ -299,26 +299,26 @@ $AccessibleStateSet* JTable$AccessibleJTable$AccessibleJTableCell::getAccessible
 		$nc(as)->add($AccessibleState::SHOWING);
 	} else {
 		$init($AccessibleState);
-		if (as->contains($AccessibleState::SHOWING)) {
+		if ($nc(as)->contains($AccessibleState::SHOWING)) {
 			as->remove($AccessibleState::SHOWING);
 		}
 	}
 	if ($nc(this->parent)->isCellSelected(this->row, this->column)) {
 		$init($AccessibleState);
-		as->add($AccessibleState::SELECTED);
+		$nc(as)->add($AccessibleState::SELECTED);
 	} else {
 		$init($AccessibleState);
-		if (as->contains($AccessibleState::SELECTED)) {
+		if ($nc(as)->contains($AccessibleState::SELECTED)) {
 			as->remove($AccessibleState::SELECTED);
 		}
 	}
 	bool var$0 = (this->row == $nc(this->this$1->this$0)->getSelectedRow());
 	if (var$0 && (this->column == $nc(this->this$1->this$0)->getSelectedColumn())) {
 		$init($AccessibleState);
-		as->add($AccessibleState::ACTIVE);
+		$nc(as)->add($AccessibleState::ACTIVE);
 	}
 	$init($AccessibleState);
-	as->add($AccessibleState::TRANSIENT);
+	$nc(as)->add($AccessibleState::TRANSIENT);
 	return as;
 }
 

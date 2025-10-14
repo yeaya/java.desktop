@@ -98,7 +98,7 @@ void AsyncBoxView$ChildLocator::childChanged($AsyncBoxView$ChildState* cs) {
 		if (this->lastValidOffset == nullptr) {
 			$set(this, lastValidOffset, cs);
 		} else {
-			int32_t var$1 = $nc($(cs->getChildView()))->getStartOffset();
+			int32_t var$1 = $nc($($nc(cs)->getChildView()))->getStartOffset();
 			if (var$1 < $nc($($nc(this->lastValidOffset)->getChildView()))->getStartOffset()) {
 				$set(this, lastValidOffset, cs);
 			}

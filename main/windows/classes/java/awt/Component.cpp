@@ -3493,7 +3493,7 @@ bool Component::isCoalesceEventsOverriden($Class* clazz) {
 				$nc(Component::coalesceMap)->put(superclass, $($Boolean::valueOf(true)));
 				return true;
 			}
-		} else if ((value)->booleanValue()) {
+		} else if ($nc((value))->booleanValue()) {
 			return true;
 		}
 	}

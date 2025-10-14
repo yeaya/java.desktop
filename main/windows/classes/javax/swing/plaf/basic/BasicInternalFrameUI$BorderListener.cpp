@@ -394,16 +394,16 @@ void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
 		pHeight = s->height;
 		newX = $nc(this->startingBounds)->x - deltaX;
 		newY = $nc(this->startingBounds)->y - deltaY;
-		if (newX + i->left <= -this->__x) {
+		if (newX + $nc(i)->left <= -this->__x) {
 			newX = -this->__x - i->left + 1;
 		}
-		if (newY + i->top <= -this->__y) {
+		if (newY + $nc(i)->top <= -this->__y) {
 			newY = -this->__y - i->top + 1;
 		}
-		if (newX + this->__x + i->right >= pWidth) {
+		if (newX + this->__x + $nc(i)->right >= pWidth) {
 			newX = pWidth - this->__x - i->right - 1;
 		}
-		if (newY + this->__y + i->bottom >= pHeight) {
+		if (newY + this->__y + $nc(i)->bottom >= pHeight) {
 			newY = pHeight - this->__y - i->bottom - 1;
 		}
 		$nc($(this->this$0->getDesktopManager()))->dragFrame(this->this$0->frame, newX, newY);
@@ -426,7 +426,7 @@ void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
 		{
 			if ($nc(this->startingBounds)->height + deltaY < $nc(min)->height) {
 				deltaY = -($nc(this->startingBounds)->height - min->height);
-			} else if ($nc(this->startingBounds)->height + deltaY > max->height) {
+			} else if ($nc(this->startingBounds)->height + deltaY > $nc(max)->height) {
 				deltaY = max->height - $nc(this->startingBounds)->height;
 			}
 			if ($nc(this->startingBounds)->y - deltaY < 0) {
@@ -442,7 +442,7 @@ void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
 		{
 			if ($nc(this->startingBounds)->height + deltaY < $nc(min)->height) {
 				deltaY = -($nc(this->startingBounds)->height - min->height);
-			} else if ($nc(this->startingBounds)->height + deltaY > max->height) {
+			} else if ($nc(this->startingBounds)->height + deltaY > $nc(max)->height) {
 				deltaY = max->height - $nc(this->startingBounds)->height;
 			}
 			if ($nc(this->startingBounds)->y - deltaY < 0) {
@@ -450,7 +450,7 @@ void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
 			}
 			if ($nc(this->startingBounds)->width - deltaX < $nc(min)->width) {
 				deltaX = $nc(this->startingBounds)->width - min->width;
-			} else if ($nc(this->startingBounds)->width - deltaX > max->width) {
+			} else if ($nc(this->startingBounds)->width - deltaX > $nc(max)->width) {
 				deltaX = -(max->width - $nc(this->startingBounds)->width);
 			}
 			if ($nc(this->startingBounds)->x + $nc(this->startingBounds)->width - deltaX > $nc(this->this$0->parentBounds)->width) {
@@ -466,7 +466,7 @@ void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
 		{
 			if ($nc(this->startingBounds)->width - deltaX < $nc(min)->width) {
 				deltaX = $nc(this->startingBounds)->width - min->width;
-			} else if ($nc(this->startingBounds)->width - deltaX > max->width) {
+			} else if ($nc(this->startingBounds)->width - deltaX > $nc(max)->width) {
 				deltaX = -(max->width - $nc(this->startingBounds)->width);
 			}
 			if ($nc(this->startingBounds)->x + $nc(this->startingBounds)->width - deltaX > $nc(this->this$0->parentBounds)->width) {
@@ -480,7 +480,7 @@ void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
 		{
 			if ($nc(this->startingBounds)->width - deltaX < $nc(min)->width) {
 				deltaX = $nc(this->startingBounds)->width - min->width;
-			} else if ($nc(this->startingBounds)->width - deltaX > max->width) {
+			} else if ($nc(this->startingBounds)->width - deltaX > $nc(max)->width) {
 				deltaX = -(max->width - $nc(this->startingBounds)->width);
 			}
 			if ($nc(this->startingBounds)->x + $nc(this->startingBounds)->width - deltaX > $nc(this->this$0->parentBounds)->width) {
@@ -488,7 +488,7 @@ void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
 			}
 			if ($nc(this->startingBounds)->height - deltaY < $nc(min)->height) {
 				deltaY = $nc(this->startingBounds)->height - min->height;
-			} else if ($nc(this->startingBounds)->height - deltaY > max->height) {
+			} else if ($nc(this->startingBounds)->height - deltaY > $nc(max)->height) {
 				deltaY = -(max->height - $nc(this->startingBounds)->height);
 			}
 			if ($nc(this->startingBounds)->y + $nc(this->startingBounds)->height - deltaY > $nc(this->this$0->parentBounds)->height) {
@@ -502,7 +502,7 @@ void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
 		{
 			if ($nc(this->startingBounds)->height - deltaY < $nc(min)->height) {
 				deltaY = $nc(this->startingBounds)->height - min->height;
-			} else if ($nc(this->startingBounds)->height - deltaY > max->height) {
+			} else if ($nc(this->startingBounds)->height - deltaY > $nc(max)->height) {
 				deltaY = -(max->height - $nc(this->startingBounds)->height);
 			}
 			if ($nc(this->startingBounds)->y + $nc(this->startingBounds)->height - deltaY > $nc(this->this$0->parentBounds)->height) {
@@ -516,7 +516,7 @@ void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
 		{
 			if ($nc(this->startingBounds)->height - deltaY < $nc(min)->height) {
 				deltaY = $nc(this->startingBounds)->height - min->height;
-			} else if ($nc(this->startingBounds)->height - deltaY > max->height) {
+			} else if ($nc(this->startingBounds)->height - deltaY > $nc(max)->height) {
 				deltaY = -(max->height - $nc(this->startingBounds)->height);
 			}
 			if ($nc(this->startingBounds)->y + $nc(this->startingBounds)->height - deltaY > $nc(this->this$0->parentBounds)->height) {
@@ -524,7 +524,7 @@ void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
 			}
 			if ($nc(this->startingBounds)->width + deltaX < $nc(min)->width) {
 				deltaX = -($nc(this->startingBounds)->width - min->width);
-			} else if ($nc(this->startingBounds)->width + deltaX > max->width) {
+			} else if ($nc(this->startingBounds)->width + deltaX > $nc(max)->width) {
 				deltaX = max->width - $nc(this->startingBounds)->width;
 			}
 			if ($nc(this->startingBounds)->x - deltaX < 0) {
@@ -540,7 +540,7 @@ void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
 		{
 			if ($nc(this->startingBounds)->width + deltaX < $nc(min)->width) {
 				deltaX = -($nc(this->startingBounds)->width - min->width);
-			} else if ($nc(this->startingBounds)->width + deltaX > max->width) {
+			} else if ($nc(this->startingBounds)->width + deltaX > $nc(max)->width) {
 				deltaX = max->width - $nc(this->startingBounds)->width;
 			}
 			if ($nc(this->startingBounds)->x - deltaX < 0) {
@@ -556,7 +556,7 @@ void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
 		{
 			if ($nc(this->startingBounds)->width + deltaX < $nc(min)->width) {
 				deltaX = -($nc(this->startingBounds)->width - min->width);
-			} else if ($nc(this->startingBounds)->width + deltaX > max->width) {
+			} else if ($nc(this->startingBounds)->width + deltaX > $nc(max)->width) {
 				deltaX = max->width - $nc(this->startingBounds)->width;
 			}
 			if ($nc(this->startingBounds)->x - deltaX < 0) {
@@ -564,7 +564,7 @@ void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
 			}
 			if ($nc(this->startingBounds)->height + deltaY < $nc(min)->height) {
 				deltaY = -($nc(this->startingBounds)->height - min->height);
-			} else if ($nc(this->startingBounds)->height + deltaY > max->height) {
+			} else if ($nc(this->startingBounds)->height + deltaY > $nc(max)->height) {
 				deltaY = max->height - $nc(this->startingBounds)->height;
 			}
 			if ($nc(this->startingBounds)->y - deltaY < 0) {
@@ -601,7 +601,7 @@ void BasicInternalFrameUI$BorderListener::mouseMoved($MouseEvent* e) {
 			ep->x += $nc(np)->x;
 			ep->y += np->y;
 		}
-		if (ep->x <= i->left) {
+		if (ep->x <= $nc(i)->left) {
 			if (ep->y < this->resizeCornerSize + i->top) {
 				$nc(this->this$0->frame)->setCursor($($Cursor::getPredefinedCursor($Cursor::NW_RESIZE_CURSOR)));
 			} else if (ep->y > $nc(this->this$0->frame)->getHeight() - this->resizeCornerSize - i->bottom) {

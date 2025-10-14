@@ -111,7 +111,7 @@ bool CompoundEdit::addEdit($UndoableEdit* anEdit) {
 		$var($UndoableEdit, last, lastEdit());
 		if (last == nullptr) {
 			$nc(this->edits)->addElement(anEdit);
-		} else if (!last->addEdit(anEdit)) {
+		} else if (!$nc(last)->addEdit(anEdit)) {
 			if ($nc(anEdit)->replaceEdit(last)) {
 				$nc(this->edits)->removeElementAt($nc(this->edits)->size() - 1);
 			}

@@ -151,7 +151,7 @@ void MotifIconFactory$MenuArrowIcon::paintIcon($Component* c, $Graphics* g, int3
 			g->drawLine(x + 5, y + 2, x + 5, y + 2);
 			g->drawLine(x + 7, y + 1, x + 7, y + 1);
 		}
-	} else if ($nc($(c->getComponentOrientation()))->isLeftToRight()) {
+	} else if ($nc($($nc(c)->getComponentOrientation()))->isLeftToRight()) {
 		g->setColor(this->highlight);
 		g->drawLine(x + 1, y + 1, x + 1, y + h);
 		g->drawLine(x + 2, y + 1, x + 2, y + h - 2);

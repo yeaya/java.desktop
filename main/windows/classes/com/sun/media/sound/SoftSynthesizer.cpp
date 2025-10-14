@@ -1418,7 +1418,7 @@ $AudioInputStream* SoftSynthesizer::openStream($AudioFormat* targetFormat, $Map*
 		}
 		{
 			$var($SoftVoiceArray, arr$, getVoices());
-			int32_t len$ = arr$->length;
+			int32_t len$ = $nc(arr$)->length;
 			int32_t i$ = 0;
 			for (; i$ < len$; ++i$) {
 				$var($SoftVoice, voice, arr$->get(i$));
@@ -1565,7 +1565,7 @@ $Properties* SoftSynthesizer::lambda$getStoredProperties$1() {
 			$var($StringArray, prefs_keys, $nc(prefs)->keys());
 			{
 				$var($StringArray, arr$, prefs_keys);
-				int32_t len$ = arr$->length;
+				int32_t len$ = $nc(arr$)->length;
 				int32_t i$ = 0;
 				for (; i$ < len$; ++i$) {
 					$var($String, prefs_key, arr$->get(i$));

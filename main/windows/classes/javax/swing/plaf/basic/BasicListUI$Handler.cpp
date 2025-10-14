@@ -393,7 +393,7 @@ void BasicListUI$Handler::mousePressed($MouseEvent* e) {
 			if ($BasicGraphicsUtils::isMenuShortcutKeyDown(e)) {
 				return;
 			} else {
-				bool var$1 = !e->isShiftDown();
+				bool var$1 = !$nc(e)->isShiftDown();
 				if (var$1 && $nc(this->this$0->list)->isSelectedIndex(row)) {
 					$nc(this->this$0->list)->addSelectionInterval(row, row);
 					return;
@@ -447,7 +447,7 @@ void BasicListUI$Handler::adjustSelection($MouseEvent* e) {
 			} else {
 				$nc(this->this$0->list)->addSelectionInterval(row, row);
 			}
-		} else if (e->isShiftDown()) {
+		} else if ($nc(e)->isShiftDown()) {
 			$nc(this->this$0->list)->setSelectionInterval(anchorIndex, row);
 		} else {
 			$nc(this->this$0->list)->setSelectionInterval(row, row);

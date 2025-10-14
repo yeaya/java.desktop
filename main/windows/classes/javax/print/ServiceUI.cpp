@@ -87,13 +87,13 @@ $PrintService* ServiceUI::printDialog($GraphicsConfiguration* gc, int32_t x, int
 	int32_t defaultIndex = -1;
 	if ($GraphicsEnvironment::isHeadless()) {
 		$throwNew($HeadlessException);
-	} else if ((services == nullptr) || (services->length == 0)) {
+	} else if ((services == nullptr) || ($nc(services)->length == 0)) {
 		$throwNew($IllegalArgumentException, "services must be non-null and non-empty"_s);
 	} else if (attributes == nullptr) {
 		$throwNew($IllegalArgumentException, "attributes must be non-null"_s);
 	}
 	if (defaultService != nullptr) {
-		for (int32_t i = 0; i < services->length; ++i) {
+		for (int32_t i = 0; i < $nc(services)->length; ++i) {
 			if ($nc(services->get(i))->equals(defaultService)) {
 				defaultIndex = i;
 				break;

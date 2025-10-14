@@ -1024,7 +1024,7 @@ $TransferHandler$DropLocation* JList::dropLocationForPoint($Point* p) {
 					$init($SwingUtilities2$Section);
 					if ($SwingUtilities2::liesInHorizontal(rect, p, ltr, false) == $SwingUtilities2$Section::TRAILING) {
 						++index;
-					} else if (index == $nc($(getModel()))->getSize() - 1 && p->y >= rect->y + rect->height) {
+					} else if (index == $nc($(getModel()))->getSize() - 1 && $nc(p)->y >= $nc(rect)->y + rect->height) {
 						++index;
 					}
 				} else {
@@ -1050,7 +1050,7 @@ $TransferHandler$DropLocation* JList::dropLocationForPoint($Point* p) {
 					if (section == $SwingUtilities2$Section::TRAILING) {
 						++index;
 						between = true;
-					} else if (index == $nc($(getModel()))->getSize() - 1 && p->y >= rect->y + rect->height) {
+					} else if (index == $nc($(getModel()))->getSize() - 1 && $nc(p)->y >= $nc(rect)->y + rect->height) {
 						++index;
 						between = true;
 					} else {
@@ -1442,7 +1442,7 @@ $Object* JList::getSelectedValue() {
 void JList::setSelectedValue(Object$* anObject, bool shouldScroll) {
 	if (anObject == nullptr) {
 		clearSelection();
-	} else if (!$of(anObject)->equals($(getSelectedValue()))) {
+	} else if (!$nc($of(anObject))->equals($(getSelectedValue()))) {
 		int32_t i = 0;
 		int32_t c = 0;
 		$var($ListModel, dm, getModel());

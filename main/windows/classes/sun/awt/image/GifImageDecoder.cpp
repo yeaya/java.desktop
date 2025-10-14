@@ -493,7 +493,7 @@ bool GifImageDecoder::readImage(bool first, int32_t disposal_method, int32_t del
 			$assign(local_colormap, grow_colormap(local_colormap, num_local_colors));
 		}
 		$assign(model, $new($IndexColorModel, 8, num_local_colors, local_colormap, 0, false, this->trans_pixel));
-	} else if (model == nullptr || this->trans_pixel != model->getTransparentPixel()) {
+	} else if (model == nullptr || this->trans_pixel != $nc(model)->getTransparentPixel()) {
 		if (this->trans_pixel >= this->num_global_colors) {
 			this->num_global_colors = this->trans_pixel + 1;
 			$set(this, global_colormap, grow_colormap(this->global_colormap, this->num_global_colors));

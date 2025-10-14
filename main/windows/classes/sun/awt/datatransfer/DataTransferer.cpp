@@ -958,7 +958,7 @@ $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlav
 	if (var$0) {
 		$var($String, str, removeSuspectedData(flavor, contents, $cast($String, obj)));
 		return translateTransferableString(str, format);
-	} else if (flavor->isRepresentationClassReader()) {
+	} else if ($nc(flavor)->isRepresentationClassReader()) {
 		bool var$3 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
 		if (!(var$3 && isTextFormat(format))) {
 			$throwNew($IOException, "cannot transfer non-text data as Reader"_s);
@@ -1175,7 +1175,7 @@ $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlav
 				}
 			}
 		}
-	} else if (flavor->isRepresentationClassInputStream()) {
+	} else if ($nc(flavor)->isRepresentationClassInputStream()) {
 		if (!($instanceOf($InputStream, obj))) {
 			return $new($bytes, 0);
 		}
@@ -1336,7 +1336,7 @@ $bytes* DataTransferer::convertObjectToBytes(Object$* object) {
 $String* DataTransferer::removeSuspectedData($DataFlavor* flavor, $Transferable* contents, $String* str) {
 	$beforeCallerSensitive();
 	bool var$0 = nullptr == $System::getSecurityManager();
-	if (var$0 || !flavor->isMimeTypeEqual("text/uri-list"_s)) {
+	if (var$0 || !$nc(flavor)->isMimeTypeEqual("text/uri-list"_s)) {
 		return str;
 	}
 	$var($ProtectionDomain, userProtectionDomain, getUserProtectionDomain(contents));
@@ -1513,11 +1513,11 @@ $Object* DataTransferer::translateBytes($bytes* bytes$renamed, $DataFlavor* flav
 			}
 		} else {
 			$load($String);
-			bool var$8 = $of($String::class$)->equals(flavor->getRepresentationClass());
+			bool var$8 = $of($String::class$)->equals($nc(flavor)->getRepresentationClass());
 			bool var$7 = var$8 && $DataFlavorUtil::isFlavorCharsetTextType(flavor);
 			if (var$7 && isTextFormat(format)) {
 				$assign(theObject, translateBytesToString(bytes, format, localeTransferable));
-			} else if (flavor->isRepresentationClassReader()) {
+			} else if ($nc(flavor)->isRepresentationClassReader()) {
 				{
 					$var($ByteArrayInputStream, bais, $new($ByteArrayInputStream, bytes));
 					{
@@ -1733,14 +1733,14 @@ $Object* DataTransferer::translateStream($InputStream* str, $DataFlavor* flavor,
 		$assign(theObject, files);
 	} else {
 		$load($String);
-		bool var$4 = $of($String::class$)->equals(flavor->getRepresentationClass());
+		bool var$4 = $of($String::class$)->equals($nc(flavor)->getRepresentationClass());
 		bool var$3 = var$4 && $DataFlavorUtil::isFlavorCharsetTextType(flavor);
 		if (var$3 && isTextFormat(format)) {
 			return $of(translateBytesToString($(inputStreamToByteArray(str)), format, localeTransferable));
 		} else {
 			if ($nc($DataFlavor::plainTextFlavor)->equals(flavor)) {
 				$assign(theObject, $new($StringReader, $(translateBytesToString($(inputStreamToByteArray(str)), format, localeTransferable))));
-			} else if (flavor->isRepresentationClassInputStream()) {
+			} else if ($nc(flavor)->isRepresentationClassInputStream()) {
 				$assign(theObject, translateStreamToInputStream(str, flavor, format, localeTransferable));
 			} else if (flavor->isRepresentationClassReader()) {
 				bool var$5 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
@@ -1852,7 +1852,7 @@ $Object* DataTransferer::translateStreamToInputStream($InputStream* str$renamed,
 
 $Object* DataTransferer::constructFlavoredObject(Object$* arg, $DataFlavor* flavor, $Class* clazz) {
 	$beforeCallerSensitive();
-	$Class* dfrc = flavor->getRepresentationClass();
+	$Class* dfrc = $nc(flavor)->getRepresentationClass();
 	if ($nc($of(clazz))->equals(dfrc)) {
 		return $of(arg);
 	} else {

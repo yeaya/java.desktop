@@ -271,7 +271,7 @@ bool StyleSheet$ResolvedStyle::matches($String* selector, int32_t sCurrent, int3
 			if ((thisLast - thisDotIndex) != (sLast - sDotIndex) || !$nc(selector)->regionMatches(sCurrent, this->name, thisDotIndex, (thisLast - thisDotIndex))) {
 				return false;
 			}
-		} else if ((sLast - sCurrent) != (thisLast - thisCurrent) || !selector->regionMatches(sCurrent, this->name, thisCurrent, (thisLast - thisCurrent))) {
+		} else if ((sLast - sCurrent) != (thisLast - thisCurrent) || !$nc(selector)->regionMatches(sCurrent, this->name, thisCurrent, (thisLast - thisCurrent))) {
 			return false;
 		}
 		return true;
@@ -284,7 +284,7 @@ bool StyleSheet$ResolvedStyle::matches($String* selector, int32_t sCurrent, int3
 			if ((thisLast - thisPoundIndex) != (sLast - sPoundIndex) || !$nc(selector)->regionMatches(sCurrent, this->name, thisPoundIndex, (thisLast - thisPoundIndex))) {
 				return false;
 			}
-		} else if ((sLast - sCurrent) != (thisLast - thisCurrent) || !selector->regionMatches(sCurrent, this->name, thisCurrent, (thisLast - thisCurrent))) {
+		} else if ((sLast - sCurrent) != (thisLast - thisCurrent) || !$nc(selector)->regionMatches(sCurrent, this->name, thisCurrent, (thisLast - thisCurrent))) {
 			return false;
 		}
 		return true;

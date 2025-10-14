@@ -232,7 +232,7 @@ void DefaultDesktopManager::closeFrame($JInternalFrame* f) {
 		} catch ($PropertyVetoException&) {
 			$catch();
 		}
-	} else if (findNext && d->getComponentCount() == 0) {
+	} else if (findNext && $nc(d)->getComponentCount() == 0) {
 		d->requestFocus();
 	}
 }
@@ -409,13 +409,13 @@ void DefaultDesktopManager::setupDragMode($JComponent* f) {
 		} else {
 			bool var$3 = mode != nullptr && mode->equals("faster"_s) && $instanceOf($JInternalFrame, f);
 			bool var$2 = var$3 && $nc(($cast($JInternalFrame, f)))->isOpaque();
-			if (var$2 && (parent == nullptr || parent->isOpaque())) {
+			if (var$2 && (parent == nullptr || $nc(parent)->isOpaque())) {
 				this->dragMode = DefaultDesktopManager::FASTER_DRAG_MODE;
 			} else if (p->getDragMode() == $JDesktopPane::OUTLINE_DRAG_MODE) {
 				this->dragMode = DefaultDesktopManager::OUTLINE_DRAG_MODE;
 			} else {
 				bool var$5 = p->getDragMode() == $JDesktopPane::LIVE_DRAG_MODE && $instanceOf($JInternalFrame, f);
-				if (var$5 && ($cast($JInternalFrame, f))->isOpaque()) {
+				if (var$5 && $nc(($cast($JInternalFrame, f)))->isOpaque()) {
 					this->dragMode = DefaultDesktopManager::FASTER_DRAG_MODE;
 				} else {
 					this->dragMode = DefaultDesktopManager::DEFAULT_DRAG_MODE;

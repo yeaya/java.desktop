@@ -164,7 +164,7 @@ void BasicPopupMenuUI$BasicMenuKeyListener::menuKeyPressed($MenuKeyEvent* e) {
 		$var($JMenuItem, item, $cast($JMenuItem, $nc(items)->get(firstMatch)));
 		if ($instanceOf($JMenu, item)) {
 			$set(this, menuToOpen, item);
-		} else if (item->isEnabled()) {
+		} else if ($nc(item)->isEnabled()) {
 			$nc(manager)->clearSelectedPath();
 			item->doClick();
 		}

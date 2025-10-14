@@ -108,14 +108,14 @@ $WritableRaster* BandCombineOp::filter($Raster* src, $WritableRaster* dst$rename
 	}
 	if (dst == nullptr) {
 		$assign(dst, createCompatibleDestRaster(src));
-	} else if (this->nrows != dst->getNumBands()) {
+	} else if (this->nrows != $nc(dst)->getNumBands()) {
 		$throwNew($IllegalArgumentException, $$str({"Number of rows in the matrix ("_s, $$str(this->nrows), ") must be equal to the number of bands ([+1]) in dst ("_s, $$str(nBands), ")."_s}));
 	}
 	if ($ImagingLib::filter(static_cast<$RasterOp*>(this), src, dst) != nullptr) {
 		return dst;
 	}
 	$var($ints, pixel, nullptr);
-	$var($ints, dstPixel, $new($ints, dst->getNumBands()));
+	$var($ints, dstPixel, $new($ints, $nc(dst)->getNumBands()));
 	float accum = 0.0;
 	int32_t sminX = src->getMinX();
 	int32_t sY = src->getMinY();

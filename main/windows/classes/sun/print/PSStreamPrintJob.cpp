@@ -461,7 +461,7 @@ void PSStreamPrintJob::print($Doc* doc, $PrintRequestAttributeSet* attributes) {
 				notifyEvent($PrintJobEvent::JOB_FAILED);
 				$throwNew($PrintException, static_cast<$Exception*>(cce));
 			}
-		} else if (repClassName->equals("java.awt.print.Pageable"_s)) {
+		} else if ($nc(repClassName)->equals("java.awt.print.Pageable"_s)) {
 			try {
 				pageableJob($cast($Pageable, $(doc->getPrintData())), this->reqAttrSet);
 				return;

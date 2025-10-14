@@ -162,8 +162,8 @@ void MetalToggleButtonUI::update($Graphics* g, $JComponent* c) {
 				return;
 			}
 		} else {
-			bool var$15 = model->isRollover();
-			bool var$14 = (var$15 || model->isSelected());
+			bool var$15 = $nc(model)->isRollover();
+			bool var$14 = (var$15 || $nc(model)->isSelected());
 			if (var$14) {
 				$var($Component, var$16, static_cast<$Component*>(c));
 				$var($Graphics, var$17, g);

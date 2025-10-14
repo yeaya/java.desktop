@@ -292,7 +292,7 @@ $TMSchema$State* WindowsButtonUI::getXPButtonState($AbstractButton* b) {
 			{
 				toolbar = ($instanceOf($JToolBar, $(b->getParent())));
 				if (toolbar) {
-					bool var$2 = model->isArmed();
+					bool var$2 = $nc(model)->isArmed();
 					if (var$2 && model->isPressed()) {
 						state = $TMSchema$State::PRESSED;
 					} else if (!model->isEnabled()) {
@@ -310,9 +310,9 @@ $TMSchema$State* WindowsButtonUI::getXPButtonState($AbstractButton* b) {
 						}
 					}
 				} else {
-					bool var$8 = model->isArmed();
+					bool var$8 = $nc(model)->isArmed();
 					bool var$7 = (var$8 && model->isPressed());
-					if (var$7 || model->isSelected()) {
+					if (var$7 || $nc(model)->isSelected()) {
 						state = $TMSchema$State::PRESSED;
 					} else if (!model->isEnabled()) {
 						state = $TMSchema$State::DISABLED;
@@ -320,7 +320,7 @@ $TMSchema$State* WindowsButtonUI::getXPButtonState($AbstractButton* b) {
 						bool var$10 = model->isRollover();
 						if (var$10 || model->isPressed()) {
 							state = $TMSchema$State::HOT;
-						} else if ($instanceOf($JButton, b) && ($cast($JButton, b))->isDefaultButton()) {
+						} else if ($instanceOf($JButton, b) && $nc(($cast($JButton, b)))->isDefaultButton()) {
 							state = $TMSchema$State::DEFAULTED;
 						} else if (b->hasFocus()) {
 							state = $TMSchema$State::HOT;

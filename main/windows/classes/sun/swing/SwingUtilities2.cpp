@@ -1649,7 +1649,7 @@ bool SwingUtilities2::tabbedPaneChangeFocusTo($Component* comp) {
 		if (comp->isFocusTraversable()) {
 			SwingUtilities2::compositeRequestFocus(comp);
 			return true;
-		} else if ($instanceOf($JComponent, comp) && ($cast($JComponent, comp))->requestDefaultFocus()) {
+		} else if ($instanceOf($JComponent, comp) && $nc(($cast($JComponent, comp)))->requestDefaultFocus()) {
 			return true;
 		}
 	}

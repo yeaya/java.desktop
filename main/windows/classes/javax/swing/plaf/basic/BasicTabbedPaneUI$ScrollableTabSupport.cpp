@@ -177,7 +177,7 @@ void BasicTabbedPaneUI$ScrollableTabSupport::scrollForward(int32_t tabPlacement)
 		if ($nc(viewRect)->width >= $nc(viewSize)->width - viewRect->x) {
 			return;
 		}
-	} else if (viewRect->height >= viewSize->height - viewRect->y) {
+	} else if ($nc(viewRect)->height >= $nc(viewSize)->height - viewRect->y) {
 		return;
 	}
 	setLeadingTabIndex(tabPlacement, this->leadingTabIndex + 1);

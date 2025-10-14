@@ -498,7 +498,7 @@ $ImageTypeSpecifier* TIFFDecompressor::getRawImageTypeSpecifier(int32_t photomet
 			int32_t dataType = 0;
 			if (bitsPerSample->get(0) <= 8) {
 				dataType = $DataBuffer::TYPE_BYTE;
-			} else if (sampleFormat->get(0) == $BaselineTIFFTagSet::SAMPLE_FORMAT_SIGNED_INTEGER) {
+			} else if ($nc(sampleFormat)->get(0) == $BaselineTIFFTagSet::SAMPLE_FORMAT_SIGNED_INTEGER) {
 				dataType = $DataBuffer::TYPE_SHORT;
 			} else {
 				dataType = $DataBuffer::TYPE_USHORT;
@@ -707,7 +707,7 @@ $ImageTypeSpecifier* TIFFDecompressor::getRawImageTypeSpecifier(int32_t photomet
 					alphaPremultiplied = true;
 				}
 				return $ImageTypeSpecifier::createPacked(rgb, redMask, greenMask, blueMask, alphaMask, transferType, alphaPremultiplied);
-			} else if (samplesPerPixel == 3 && dataTypeSize == bitsPerSample->get(0) && bitsPerSample->get(0) == bitsPerSample->get(1) && bitsPerSample->get(1) == bitsPerSample->get(2)) {
+			} else if (samplesPerPixel == 3 && dataTypeSize == $nc(bitsPerSample)->get(0) && bitsPerSample->get(0) == bitsPerSample->get(1) && bitsPerSample->get(1) == bitsPerSample->get(2)) {
 				$var($ints, bandOffsets, $new($ints, {
 					0,
 					1,

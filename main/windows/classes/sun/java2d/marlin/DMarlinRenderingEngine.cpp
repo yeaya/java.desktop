@@ -365,7 +365,7 @@ double DMarlinRenderingEngine::userSpaceLineWidth($AffineTransform* at, double l
 	double widthScale = 0.0;
 	if (at == nullptr) {
 		widthScale = 1.0;
-	} else if (((int32_t)(at->getType() & (uint32_t)($AffineTransform::TYPE_GENERAL_TRANSFORM | $AffineTransform::TYPE_GENERAL_SCALE))) != 0) {
+	} else if (((int32_t)($nc(at)->getType() & (uint32_t)($AffineTransform::TYPE_GENERAL_TRANSFORM | $AffineTransform::TYPE_GENERAL_SCALE))) != 0) {
 		widthScale = $Math::sqrt($Math::abs(at->getDeterminant()));
 	} else {
 		double A = at->getScaleX();

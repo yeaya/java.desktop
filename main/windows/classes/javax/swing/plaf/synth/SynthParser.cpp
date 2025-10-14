@@ -590,7 +590,7 @@ void SynthParser::startState($Attributes* attributes) {
 	int32_t state = 0;
 	$var($String, id, nullptr);
 	$set(this, _stateInfo, nullptr);
-	for (int32_t i = attributes->getLength() - 1; i >= 0; --i) {
+	for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
 		$var($String, key, attributes->getQName(i));
 		if ($nc(key)->equals(SynthParser::ATTRIBUTE_ID)) {
 			$assign(id, attributes->getValue(i));
@@ -647,9 +647,9 @@ void SynthParser::startFont($Attributes* attributes) {
 	int32_t size = 0;
 	$var($String, id, nullptr);
 	$var($String, name, nullptr);
-	for (int32_t i = attributes->getLength() - 1; i >= 0; --i) {
+	for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
 		$var($String, key, attributes->getQName(i));
-		if (key->equals(SynthParser::ATTRIBUTE_ID)) {
+		if ($nc(key)->equals(SynthParser::ATTRIBUTE_ID)) {
 			$assign(id, attributes->getValue(i));
 		} else if (key->equals(SynthParser::ATTRIBUTE_IDREF)) {
 			$load($Font);
@@ -699,9 +699,9 @@ void SynthParser::startColor($Attributes* attributes) {
 	$var($Color, color, nullptr);
 	$var($String, id, nullptr);
 	$nc(this->_colorTypes)->clear();
-	for (int32_t i = attributes->getLength() - 1; i >= 0; --i) {
+	for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
 		$var($String, key, attributes->getQName(i));
-		if (key->equals(SynthParser::ATTRIBUTE_ID)) {
+		if ($nc(key)->equals(SynthParser::ATTRIBUTE_ID)) {
 			$assign(id, attributes->getValue(i));
 		} else if (key->equals(SynthParser::ATTRIBUTE_IDREF)) {
 			$load($Color);
@@ -806,7 +806,7 @@ void SynthParser::startProperty($Attributes* attributes, Object$* property) {
 	$var($String, key, nullptr);
 	int32_t iType = 0;
 	$var($String, aValue, nullptr);
-	for (int32_t i = attributes->getLength() - 1; i >= 0; --i) {
+	for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
 		$var($String, aName, attributes->getQName(i));
 		if ($nc(aName)->equals(SynthParser::ATTRIBUTE_TYPE)) {
 			$var($String, type, $nc($(attributes->getValue(i)))->toUpperCase());
@@ -896,9 +896,9 @@ void SynthParser::startProperty($Attributes* attributes, Object$* property) {
 
 void SynthParser::startGraphics($Attributes* attributes) {
 	$var($SynthGraphicsUtils, graphics, nullptr);
-	for (int32_t i = attributes->getLength() - 1; i >= 0; --i) {
+	for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
 		$var($String, key, attributes->getQName(i));
-		if (key->equals(SynthParser::ATTRIBUTE_IDREF)) {
+		if ($nc(key)->equals(SynthParser::ATTRIBUTE_IDREF)) {
 			$load($SynthGraphicsUtils);
 			$assign(graphics, $cast($SynthGraphicsUtils, lookup($(attributes->getValue(i)), $SynthGraphicsUtils::class$)));
 		}
@@ -918,10 +918,10 @@ void SynthParser::startInsets($Attributes* attributes) {
 	int32_t right = 0;
 	$var($Insets, insets, nullptr);
 	$var($String, id, nullptr);
-	for (int32_t i = attributes->getLength() - 1; i >= 0; --i) {
+	for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
 		$var($String, key, attributes->getQName(i));
 		try {
-			if (key->equals(SynthParser::ATTRIBUTE_IDREF)) {
+			if ($nc(key)->equals(SynthParser::ATTRIBUTE_IDREF)) {
 				$load($Insets);
 				$assign(insets, $cast($Insets, lookup($(attributes->getValue(i)), $Insets::class$)));
 			} else if (key->equals(SynthParser::ATTRIBUTE_ID)) {
@@ -953,9 +953,9 @@ void SynthParser::startBind($Attributes* attributes) {
 	$var($ParsedSynthStyle, style, nullptr);
 	$var($String, path, nullptr);
 	int32_t type = -1;
-	for (int32_t i = attributes->getLength() - 1; i >= 0; --i) {
+	for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
 		$var($String, key, attributes->getQName(i));
-		if (key->equals(SynthParser::ATTRIBUTE_STYLE)) {
+		if ($nc(key)->equals(SynthParser::ATTRIBUTE_STYLE)) {
 			$load($ParsedSynthStyle);
 			$assign(style, $cast($ParsedSynthStyle, lookup($(attributes->getValue(i)), $ParsedSynthStyle::class$)));
 		} else if (key->equals(SynthParser::ATTRIBUTE_TYPE)) {
@@ -995,10 +995,10 @@ void SynthParser::startPainter($Attributes* attributes, $String* type) {
 	bool center = false;
 	bool stretchSpecified = false;
 	bool paintCenterSpecified = false;
-	for (int32_t i = attributes->getLength() - 1; i >= 0; --i) {
+	for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
 		$var($String, key, attributes->getQName(i));
 		$var($String, value, attributes->getValue(i));
-		if (key->equals(SynthParser::ATTRIBUTE_ID)) {
+		if ($nc(key)->equals(SynthParser::ATTRIBUTE_ID)) {
 			$assign(id, value);
 		} else if (key->equals(SynthParser::ATTRIBUTE_METHOD)) {
 			$init($Locale);
@@ -1097,9 +1097,9 @@ void SynthParser::addPainterOrMerge($List* painters, $String* method, $SynthPain
 void SynthParser::startImageIcon($Attributes* attributes) {
 	$var($String, path, nullptr);
 	$var($String, id, nullptr);
-	for (int32_t i = attributes->getLength() - 1; i >= 0; --i) {
+	for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
 		$var($String, key, attributes->getQName(i));
-		if (key->equals(SynthParser::ATTRIBUTE_ID)) {
+		if ($nc(key)->equals(SynthParser::ATTRIBUTE_ID)) {
 			$assign(id, attributes->getValue(i));
 		} else if (key->equals(SynthParser::ATTRIBUTE_PATH)) {
 			$assign(path, attributes->getValue(i));
@@ -1114,9 +1114,9 @@ void SynthParser::startImageIcon($Attributes* attributes) {
 void SynthParser::startOpaque($Attributes* attributes) {
 	if (this->_style != nullptr) {
 		$nc(this->_style)->setOpaque(true);
-		for (int32_t i = attributes->getLength() - 1; i >= 0; --i) {
+		for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
 			$var($String, key, attributes->getQName(i));
-			if (key->equals(SynthParser::ATTRIBUTE_VALUE)) {
+			if ($nc(key)->equals(SynthParser::ATTRIBUTE_VALUE)) {
 				$nc(this->_style)->setOpaque("true"_s->equals($($nc($(attributes->getValue(i)))->toLowerCase())));
 			}
 		}
@@ -1127,9 +1127,9 @@ void SynthParser::startInputMap($Attributes* attributes) {
 	$nc(this->_inputMapBindings)->clear();
 	$set(this, _inputMapID, nullptr);
 	if (this->_style != nullptr) {
-		for (int32_t i = attributes->getLength() - 1; i >= 0; --i) {
+		for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
 			$var($String, key, attributes->getQName(i));
-			if (key->equals(SynthParser::ATTRIBUTE_ID)) {
+			if ($nc(key)->equals(SynthParser::ATTRIBUTE_ID)) {
 				$set(this, _inputMapID, attributes->getValue(i));
 			}
 		}
@@ -1151,7 +1151,7 @@ void SynthParser::startBindKey($Attributes* attributes) {
 	if (this->_style != nullptr) {
 		$var($String, key, nullptr);
 		$var($String, value, nullptr);
-		for (int32_t i = attributes->getLength() - 1; i >= 0; --i) {
+		for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
 			$var($String, aKey, attributes->getQName(i));
 			if ($nc(aKey)->equals(SynthParser::ATTRIBUTE_KEY)) {
 				$assign(key, attributes->getValue(i));

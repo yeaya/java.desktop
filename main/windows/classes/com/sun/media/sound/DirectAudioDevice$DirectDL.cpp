@@ -220,7 +220,7 @@ void DirectAudioDevice$DirectDL::implOpen($AudioFormat* format, int32_t bufferSi
 		$assign(ddli, $cast($DirectAudioDevice$DirectDLI, this->info));
 	}
 	if (this->isSource) {
-		bool var$0 = !$nc($(format->getEncoding()))->equals($AudioFormat$Encoding::PCM_SIGNED);
+		bool var$0 = !$nc($($nc(format)->getEncoding()))->equals($AudioFormat$Encoding::PCM_SIGNED);
 		if (var$0 && !$nc($(format->getEncoding()))->equals($AudioFormat$Encoding::PCM_UNSIGNED)) {
 			$set(this, controls, $new($ControlArray, 0));
 		} else {
@@ -246,11 +246,11 @@ void DirectAudioDevice$DirectDL::implOpen($AudioFormat* format, int32_t bufferSi
 		$var($AudioFormat, newFormat, $DirectAudioDevice::getSignOrEndianChangedFormat(format));
 		if (ddli->isFormatSupportedInHardware(newFormat)) {
 			$set(this, hardwareFormat, newFormat);
-			int32_t var$3 = format->getFrameSize();
+			int32_t var$3 = $nc(format)->getFrameSize();
 			this->softwareConversionSize = $div(var$3, format->getChannels());
 		}
 	}
-	int32_t var$4 = ($div(bufferSize, format->getFrameSize()));
+	int32_t var$4 = ($div(bufferSize, $nc(format)->getFrameSize()));
 	bufferSize = var$4 * format->getFrameSize();
 	int32_t var$5 = this->mixerIndex;
 	int32_t var$6 = this->deviceID;

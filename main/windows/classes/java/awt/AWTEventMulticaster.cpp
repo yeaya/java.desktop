@@ -663,7 +663,7 @@ int32_t AWTEventMulticaster::populateListenerArray($EventListenerArray* a, $Even
 		$var(AWTEventMulticaster, mc, $cast(AWTEventMulticaster, l));
 		int32_t lhs = populateListenerArray(a, $nc(mc)->a, index);
 		return populateListenerArray(a, $nc(mc)->b, lhs);
-	} else if ($nc($of(a)->getClass()->getComponentType())->isInstance(l)) {
+	} else if ($nc($nc($of(a))->getClass()->getComponentType())->isInstance(l)) {
 		a->set(index, l);
 		return index + 1;
 	} else {

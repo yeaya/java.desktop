@@ -307,12 +307,12 @@ void BasicPopupMenuUI$Actions::cancel() {
 
 void BasicPopupMenuUI$Actions::shortenSelectedPath() {
 	$var($MenuElementArray, path, $nc($($MenuSelectionManager::defaultManager()))->getSelectedPath());
-	if (path->length <= 2) {
+	if ($nc(path)->length <= 2) {
 		$nc($($MenuSelectionManager::defaultManager()))->clearSelectedPath();
 		return;
 	}
 	int32_t value = 2;
-	$var($MenuElement, lastElement, path->get(path->length - 1));
+	$var($MenuElement, lastElement, $nc(path)->get(path->length - 1));
 	$var($JPopupMenu, lastPopup, $BasicPopupMenuUI::getLastPopup());
 	if ($equals(lastElement, lastPopup)) {
 		$var($MenuElement, previousElement, path->get(path->length - 2));

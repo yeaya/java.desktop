@@ -356,11 +356,11 @@ void HTMLDocument::insertUpdate($AbstractDocument$DefaultDocumentEvent* chng, $A
 		$assign(attr, HTMLDocument::contentAttributeSet);
 	} else {
 		$init($StyleConstants);
-		if (attr->isDefined($StyleConstants::ComposedTextAttribute)) {
+		if ($nc(attr)->isDefined($StyleConstants::ComposedTextAttribute)) {
 			$nc(($cast($MutableAttributeSet, attr)))->addAttributes(HTMLDocument::contentAttributeSet);
 		}
 	}
-	if (attr->isDefined("CR"_s)) {
+	if ($nc(attr)->isDefined("CR"_s)) {
 		$nc(($cast($MutableAttributeSet, attr)))->removeAttribute("CR"_s);
 	}
 	$DefaultStyledDocument::insertUpdate(chng, attr);

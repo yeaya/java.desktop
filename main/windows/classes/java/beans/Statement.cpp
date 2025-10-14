@@ -294,7 +294,7 @@ $String* Statement::instanceName(Object$* instance) {
 		return "null"_s;
 	} else {
 		$load($String);
-		if ($of(instance)->getClass() == $String::class$) {
+		if ($nc($of(instance))->getClass() == $String::class$) {
 			return $str({"\""_s, $cast($String, instance), "\""_s});
 		} else {
 			return $NameGenerator::unqualifiedClassName($of(instance)->getClass());

@@ -353,7 +353,7 @@ void BasicTableUI$Handler::mousePressedDND($MouseEvent* e) {
 		if ($BasicGraphicsUtils::isMenuShortcutKeyDown(e) && this->this$0->isFileList) {
 			return;
 		} else {
-			bool var$2 = !e->isShiftDown();
+			bool var$2 = !$nc(e)->isShiftDown();
 			if (var$2 && $nc(this->this$0->table)->isCellSelected(this->pressedRow, this->pressedCol)) {
 				$nc($($nc(this->this$0->table)->getSelectionModel()))->addSelectionInterval(this->pressedRow, this->pressedRow);
 				$nc($($nc($($nc(this->this$0->table)->getColumnModel()))->getSelectionModel()))->addSelectionInterval(this->pressedCol, this->pressedCol);

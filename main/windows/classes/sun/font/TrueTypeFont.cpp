@@ -709,7 +709,7 @@ $bytes* TrueTypeFont::getTableBytes(int32_t tag) {
 	$var($ByteBuffer, buffer, getTableBuffer(tag));
 	if (buffer == nullptr) {
 		return nullptr;
-	} else if (buffer->hasArray()) {
+	} else if ($nc(buffer)->hasArray()) {
 		try {
 			return $cast($bytes, buffer->array());
 		} catch ($Exception&) {
@@ -717,7 +717,7 @@ $bytes* TrueTypeFont::getTableBytes(int32_t tag) {
 		}
 	}
 	$var($bytes, data, $new($bytes, getTableSize(tag)));
-	buffer->get(data);
+	$nc(buffer)->get(data);
 	return data;
 }
 
@@ -1103,7 +1103,7 @@ $String* TrueTypeFont::getPostscriptName() {
 $String* TrueTypeFont::getFontName($Locale* locale) {
 	if (locale == nullptr) {
 		return this->fullName;
-	} else if (locale->equals(this->nameLocale) && this->localeFullName != nullptr) {
+	} else if ($nc(locale)->equals(this->nameLocale) && this->localeFullName != nullptr) {
 		return this->localeFullName;
 	} else {
 		int16_t localeID = getLCIDFromLocale(locale);
@@ -1311,7 +1311,7 @@ int16_t TrueTypeFont::getLCIDFromLocale($Locale* locale) {
 $String* TrueTypeFont::getFamilyName($Locale* locale) {
 	if (locale == nullptr) {
 		return this->familyName;
-	} else if (locale->equals(this->nameLocale) && this->localeFamilyName != nullptr) {
+	} else if ($nc(locale)->equals(this->nameLocale) && this->localeFamilyName != nullptr) {
 		return this->localeFamilyName;
 	} else {
 		int16_t localeID = getLCIDFromLocale(locale);

@@ -159,14 +159,14 @@ $Object* CSS$FontSize::parseCssValue($String* value) {
 }
 
 $Object* CSS$FontSize::parseHtmlValue($String* value) {
-	if ((value == nullptr) || (value->length() == 0)) {
+	if ((value == nullptr) || ($nc(value)->length() == 0)) {
 		return $of(nullptr);
 	}
 	$var(CSS$FontSize, fs, $new(CSS$FontSize, this->this$0));
 	$set(fs, svalue, value);
 	try {
 		int32_t baseFontSize = this->this$0->getBaseFontSize();
-		if (value->charAt(0) == u'+') {
+		if ($nc(value)->charAt(0) == u'+') {
 			int32_t relSize = $nc($($Integer::valueOf($(value->substring(1)))))->intValue();
 			fs->value = (float)(baseFontSize + relSize);
 			fs->index = true;
@@ -199,7 +199,7 @@ $Object* CSS$FontSize::fromStyleConstants($StyleConstants* key, Object$* value) 
 		fs->index = true;
 		return $of(fs);
 	}
-	return $of(parseCssValue($($of(value)->toString())));
+	return $of(parseCssValue($($nc($of(value))->toString())));
 }
 
 $Object* CSS$FontSize::toStyleConstants($StyleConstants* key, $View* v) {

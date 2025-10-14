@@ -196,7 +196,7 @@ void PopupFactory$HeavyWeightPopup::recycleHeavyWeightPopup(PopupFactory$HeavyWe
 		if ($instanceOf($Popup$DefaultFrame, window) || !$nc(window)->isVisible()) {
 			$nc(popup)->_dispose();
 			return;
-		} else if (heavyPopupCache->containsKey(window)) {
+		} else if ($nc(heavyPopupCache)->containsKey(window)) {
 			$assign(cache, $cast($List, heavyPopupCache->get(window)));
 		} else {
 			$assign(cache, $new($ArrayList));

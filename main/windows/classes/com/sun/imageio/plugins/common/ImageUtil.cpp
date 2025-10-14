@@ -656,7 +656,7 @@ $ColorModel* ImageUtil::createColorModel($ColorSpace* colorSpace$renamed, $Sampl
 	if (sampleModel == nullptr) {
 		$throwNew($IllegalArgumentException, $($I18N::getString("ImageUtil1"_s)));
 	}
-	int32_t numBands = sampleModel->getNumBands();
+	int32_t numBands = $nc(sampleModel)->getNumBands();
 	if (numBands < 1 || numBands > 4) {
 		return nullptr;
 	}

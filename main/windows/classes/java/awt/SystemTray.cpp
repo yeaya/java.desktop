@@ -173,10 +173,10 @@ void SystemTray::add($TrayIcon* trayIcon) {
 		if (icons == nullptr) {
 			$assign(icons, $new($Vector, 3));
 			$nc($($AppContext::getAppContext()))->put($TrayIcon::class$, icons);
-		} else if (icons->contains(trayIcon)) {
+		} else if ($nc(icons)->contains(trayIcon)) {
 			$throwNew($IllegalArgumentException, "adding TrayIcon that is already added"_s);
 		}
-		icons->add(trayIcon);
+		$nc(icons)->add(trayIcon);
 		$assign(newArray, $nc(SystemTray::systemTray)->getTrayIcons());
 		$nc(trayIcon)->setID(++this->currentIconID);
 	}

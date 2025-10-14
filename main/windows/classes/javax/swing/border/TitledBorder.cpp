@@ -613,7 +613,7 @@ $Dimension* TitledBorder::getMinimumSize($Component* c) {
 		int32_t position = getPosition();
 		if ((position != TitledBorder::ABOVE_TOP) && (position != TitledBorder::BELOW_BOTTOM)) {
 			minSize->width += $nc(size)->width;
-		} else if (minSize->width < size->width) {
+		} else if (minSize->width < $nc(size)->width) {
 			minSize->width += size->width;
 		}
 	}

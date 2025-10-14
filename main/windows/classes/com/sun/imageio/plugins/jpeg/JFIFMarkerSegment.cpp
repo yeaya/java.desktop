@@ -500,7 +500,7 @@ void JFIFMarkerSegment::writeThumb($ImageOutputStream* ios, $BufferedImage* thum
 			jfxx->write(ios, writer);
 			writer->thumbnailComplete();
 		}
-	} else if (cs->getType() == $ColorSpace::TYPE_RGB) {
+	} else if ($nc(cs)->getType() == $ColorSpace::TYPE_RGB) {
 		if (jfxx == nullptr) {
 			if (onlyOne) {
 				write(ios, thumb, writer);

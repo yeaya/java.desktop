@@ -203,7 +203,7 @@ $DataFlavor* BasicTextUI$TextTransferHandler::getImportFlavor($DataFlavorArray* 
 	}
 	for (int32_t i = 0; i < $nc(flavors)->length; ++i) {
 		$var($String, mime, $nc(flavors->get(i))->getMimeType());
-		if (mime->startsWith("text/plain"_s)) {
+		if ($nc(mime)->startsWith("text/plain"_s)) {
 			return flavors->get(i);
 		} else {
 			bool var$3 = refFlavor == nullptr && mime->startsWith("application/x-java-jvm-local-objectref"_s);

@@ -429,7 +429,7 @@ void BasicTreeUI$Handler::mousePressedDND($MouseEvent* e) {
 		if ($BasicGraphicsUtils::isMenuShortcutKeyDown(e)) {
 			return;
 		} else {
-			bool var$4 = !e->isShiftDown();
+			bool var$4 = !$nc(e)->isShiftDown();
 			if (var$4 && $nc(this->this$0->tree)->isPathSelected(this->pressedPath)) {
 				this->this$0->setAnchorSelectionPath(this->pressedPath);
 				this->this$0->setLeadSelectionPath(this->pressedPath, true);
@@ -575,7 +575,7 @@ void BasicTreeUI$Handler::valueChanged($TreeSelectionEvent* event) {
 	$var($TreePath, lead, $nc($($nc(this->this$0->tree)->getSelectionModel()))->getLeadSelectionPath());
 	this->this$0->setAnchorSelectionPath(lead);
 	this->this$0->setLeadSelectionPath(lead);
-	$var($TreePathArray, changedPaths, event->getPaths());
+	$var($TreePathArray, changedPaths, $nc(event)->getPaths());
 	$var($Rectangle, nodeBounds, nullptr);
 	$var($Rectangle, visRect, $nc(this->this$0->tree)->getVisibleRect());
 	bool paintPaths = true;

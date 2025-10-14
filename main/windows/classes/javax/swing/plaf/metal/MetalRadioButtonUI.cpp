@@ -243,7 +243,7 @@ void MetalRadioButtonUI::paint($Graphics* g, $JComponent* c) {
 				v->paint(g, textRect);
 			} else {
 				int32_t mnemIndex = b->getDisplayedMnemonicIndex();
-				if (model->isEnabled()) {
+				if ($nc(model)->isEnabled()) {
 					g->setColor($(b->getForeground()));
 				} else {
 					g->setColor($(getDisabledTextColor()));

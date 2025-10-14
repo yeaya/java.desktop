@@ -106,7 +106,7 @@ void MetaData$java_util_Map_PersistenceDelegate::initialize($Class* type, Object
 							oldKey,
 							oldValue
 						}), out);
-					} else if ((newValue == nullptr) && !newMap->containsKey(oldKey)) {
+					} else if ((newValue == nullptr) && !$nc(newMap)->containsKey(oldKey)) {
 						invokeStatement(oldInstance, "put"_s, $$new($ObjectArray, {
 							oldKey,
 							oldValue

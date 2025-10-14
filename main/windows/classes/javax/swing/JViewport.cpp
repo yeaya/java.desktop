@@ -408,12 +408,12 @@ void JViewport::scrollRectToVisible($Rectangle* contentRect) {
 					} else if (viewPosition->x < 0) {
 						viewPosition->x = 0;
 					}
-				} else if (extent->width > viewSize->width) {
+				} else if ($nc(extent)->width > $nc(viewSize)->width) {
 					viewPosition->x = viewSize->width - extent->width;
 				} else {
 					viewPosition->x = $Math::max(0, $Math::min(viewSize->width - extent->width, viewPosition->x));
 				}
-				if (viewPosition->y + extent->height > viewSize->height) {
+				if (viewPosition->y + $nc(extent)->height > $nc(viewSize)->height) {
 					viewPosition->y = $Math::max(0, viewSize->height - extent->height);
 				} else if (viewPosition->y < 0) {
 					viewPosition->y = 0;

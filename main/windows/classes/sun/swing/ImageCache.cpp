@@ -96,7 +96,7 @@ $ImageCache$Entry* ImageCache::getEntry(Object$* key, $GraphicsConfiguration* co
 		$assign(entry, $cast($ImageCache$Entry, $nc(ref)->get()));
 		if (entry == nullptr) {
 			iter->remove();
-		} else if (entry->equals(config, w, h, args)) {
+		} else if ($nc(entry)->equals(config, w, h, args)) {
 			iter->remove();
 			$nc(this->entries)->addFirst(ref);
 			return entry;

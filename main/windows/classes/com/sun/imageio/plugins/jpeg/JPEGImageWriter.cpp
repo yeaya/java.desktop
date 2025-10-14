@@ -627,7 +627,7 @@ void JPEGImageWriter::writeOnThread($IIOMetadata* streamMetadata, $IIOImage* ima
 		if ($instanceOf($BufferedImage, rimage)) {
 			$set(this, srcRas, $nc(($cast($BufferedImage, rimage)))->getRaster());
 		} else {
-			bool var$1 = rimage->getNumXTiles() == 1;
+			bool var$1 = $nc(rimage)->getNumXTiles() == 1;
 			if (var$1 && rimage->getNumYTiles() == 1) {
 				int32_t var$2 = rimage->getMinTileX();
 				$set(this, srcRas, rimage->getTile(var$2, rimage->getMinTileY()));

@@ -124,7 +124,7 @@ $TMSchema$State* WindowsMenuUI$1::getState($JMenuItem* menu) {
 		state = (menu->isEnabled()) ? $TMSchema$State::PUSHED : $TMSchema$State::DISABLEDPUSHED;
 	} else {
 		bool var$2 = model->isRollover();
-		if (var$2 && ($cast($JMenu, menu))->isTopLevelMenu()) {
+		if (var$2 && $nc(($cast($JMenu, menu)))->isTopLevelMenu()) {
 			$TMSchema$State* stateTmp = state;
 			state = (menu->isEnabled()) ? $TMSchema$State::HOT : $TMSchema$State::DISABLEDHOT;
 			{
@@ -143,7 +143,7 @@ $TMSchema$State* WindowsMenuUI$1::getState($JMenuItem* menu) {
 			}
 		}
 	}
-	if (!($cast($JMenu, menu))->isTopLevelMenu()) {
+	if (!$nc(($cast($JMenu, menu)))->isTopLevelMenu()) {
 		if (state == $TMSchema$State::PUSHED) {
 			state = $TMSchema$State::HOT;
 		} else {
@@ -152,7 +152,7 @@ $TMSchema$State* WindowsMenuUI$1::getState($JMenuItem* menu) {
 			}
 		}
 	}
-	bool var$3 = ($cast($JMenu, menu))->isTopLevelMenu();
+	bool var$3 = $nc(($cast($JMenu, menu)))->isTopLevelMenu();
 	if (var$3 && $WindowsMenuItemUI::isVistaPainting()) {
 		if (!$WindowsMenuBarUI::isActive(menu)) {
 			state = $TMSchema$State::DISABLED;

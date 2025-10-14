@@ -744,7 +744,7 @@ $Component* JScrollPane::getCorner($String* key$renamed) {
 			}
 		}
 	}
-	if (key->equals($ScrollPaneConstants::LOWER_LEFT_CORNER)) {
+	if ($nc(key)->equals($ScrollPaneConstants::LOWER_LEFT_CORNER)) {
 		return this->lowerLeft;
 	} else {
 		if (key->equals($ScrollPaneConstants::LOWER_RIGHT_CORNER)) {
@@ -768,7 +768,7 @@ void JScrollPane::setCorner($String* key$renamed, $Component* corner) {
 	$var($Component, old, nullptr);
 	bool isLeftToRight = $nc($(getComponentOrientation()))->isLeftToRight();
 	$init($ScrollPaneConstants);
-	if (key->equals($ScrollPaneConstants::LOWER_LEADING_CORNER)) {
+	if ($nc(key)->equals($ScrollPaneConstants::LOWER_LEADING_CORNER)) {
 		$assign(key, isLeftToRight ? $ScrollPaneConstants::LOWER_LEFT_CORNER : $ScrollPaneConstants::LOWER_RIGHT_CORNER);
 	} else {
 		if (key->equals($ScrollPaneConstants::LOWER_TRAILING_CORNER)) {
@@ -783,7 +783,7 @@ void JScrollPane::setCorner($String* key$renamed, $Component* corner) {
 			}
 		}
 	}
-	if (key->equals($ScrollPaneConstants::LOWER_LEFT_CORNER)) {
+	if ($nc(key)->equals($ScrollPaneConstants::LOWER_LEFT_CORNER)) {
 		$assign(old, this->lowerLeft);
 		$set(this, lowerLeft, corner);
 	} else {

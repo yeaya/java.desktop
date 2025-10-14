@@ -192,7 +192,7 @@ void TransferHandler$DropHandler::autoscroll($JComponent* c, $Point* pos) {
 			$var($Rectangle, r, $new($Rectangle, $nc(this->inner)->x, $nc(this->outer)->y + $nc(this->outer)->height, $nc(this->inner)->width, dy));
 			$nc(c)->scrollRectToVisible(r);
 		}
-		if (pos->x < $nc(this->inner)->x) {
+		if ($nc(pos)->x < $nc(this->inner)->x) {
 			int32_t dx = $nc(s)->getScrollableUnitIncrement(this->outer, $SwingConstants::HORIZONTAL, -1);
 			$var($Rectangle, r, $new($Rectangle, $nc(this->outer)->x - dx, $nc(this->inner)->y, dx, $nc(this->inner)->height));
 			$nc(c)->scrollRectToVisible(r);

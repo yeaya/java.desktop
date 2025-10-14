@@ -245,7 +245,7 @@ void HTMLEditorKit$ActivateLinkAction::actionPerformed($ActionEvent* e) {
 			}
 		} else {
 			$init($HTML$Tag);
-			if (name->equals($($nc($HTML$Tag::OBJECT)->toString()))) {
+			if ($nc(name)->equals($($nc($HTML$Tag::OBJECT)->toString()))) {
 				$var($Object, obj, $HTMLEditorKit::getAttrValue(attr, $HTML$Attribute::CLASSID));
 				if (obj != nullptr) {
 					bool var$1 = currentOffset >= currentElement->getStartOffset();

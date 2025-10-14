@@ -344,7 +344,7 @@ void MarlinTileGenerator::getAlphaRLE($bytes* tile, int32_t offset, int32_t rows
 							}
 						}
 					}
-				} else if (rowAAx1->get(cy) > x0) {
+				} else if ($nc(rowAAx1)->get(cy) > x0) {
 					cx = $nc(rowAAx0)->get(cy);
 					if (cx > x1) {
 						cx = x1;
@@ -429,7 +429,7 @@ void MarlinTileGenerator::getAlphaRLE($bytes* tile, int32_t offset, int32_t rows
 							}
 						}
 					}
-				} else if (rowAAx1->get(cy) > x0) {
+				} else if ($nc(rowAAx1)->get(cy) > x0) {
 					cx = $nc(rowAAx0)->get(cy);
 					if (cx > x1) {
 						cx = x1;
@@ -510,7 +510,7 @@ void MarlinTileGenerator::getAlphaRLE($bytes* tile, int32_t offset, int32_t rows
 							}
 						}
 					}
-				} else if (rowAAx1->get(cy) > x0) {
+				} else if ($nc(rowAAx1)->get(cy) > x0) {
 					cx = $nc(rowAAx0)->get(cy);
 					if (cx > x1) {
 						cx = x1;

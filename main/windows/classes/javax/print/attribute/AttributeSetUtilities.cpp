@@ -191,7 +191,7 @@ $Class* AttributeSetUtilities::verifyAttributeCategory(Object$* object, $Class* 
 $Attribute* AttributeSetUtilities::verifyAttributeValue(Object$* object, $Class* interfaceName) {
 	if (object == nullptr) {
 		$throwNew($NullPointerException);
-	} else if (interfaceName->isInstance(object)) {
+	} else if ($nc(interfaceName)->isInstance(object)) {
 		return $cast($Attribute, object);
 	} else {
 		$throwNew($ClassCastException);

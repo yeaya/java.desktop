@@ -269,7 +269,7 @@ void DefaultKeyboardFocusManager::restoreFocus($WindowEvent* we) {
 	$var($Window, realOppositeWindow, $cast($Window, $nc(this->realOppositeWindowWR)->get()));
 	if (realOppositeWindow != nullptr && restoreFocus(realOppositeWindow, nullptr, false)) {
 	} else {
-		bool var$1 = we->getOppositeWindow() != nullptr;
+		bool var$1 = $nc(we)->getOppositeWindow() != nullptr;
 		if (var$1 && restoreFocus($(we->getOppositeWindow()), nullptr, false)) {
 		} else {
 			clearGlobalFocusOwnerPriv();
@@ -950,13 +950,13 @@ void DefaultKeyboardFocusManager::consumeNextKeyTyped($KeyEvent* e) {
 }
 
 void DefaultKeyboardFocusManager::consumeTraversalKey($KeyEvent* e) {
-	e->consume();
+	$nc(e)->consume();
 	bool var$0 = (e->getID() == $KeyEvent::KEY_PRESSED);
 	this->consumeNextKeyTyped$ = var$0 && !e->isActionKey();
 }
 
 bool DefaultKeyboardFocusManager::consumeProcessedKeyEvent($KeyEvent* e) {
-	if ((e->getID() == $KeyEvent::KEY_TYPED) && this->consumeNextKeyTyped$) {
+	if (($nc(e)->getID() == $KeyEvent::KEY_TYPED) && this->consumeNextKeyTyped$) {
 		e->consume();
 		this->consumeNextKeyTyped$ = false;
 		return true;
@@ -968,11 +968,11 @@ void DefaultKeyboardFocusManager::processKeyEvent($Component* focusedComponent, 
 	if (consumeProcessedKeyEvent(e)) {
 		return;
 	}
-	if (e->getID() == $KeyEvent::KEY_TYPED) {
+	if ($nc(e)->getID() == $KeyEvent::KEY_TYPED) {
 		return;
 	}
 	bool var$0 = $nc(focusedComponent)->getFocusTraversalKeysEnabled();
-	if (var$0 && !e->isConsumed()) {
+	if (var$0 && !$nc(e)->isConsumed()) {
 		$var($AWTKeyStroke, stroke, $AWTKeyStroke::getAWTKeyStrokeForEvent(e));
 		int32_t var$1 = $nc(stroke)->getKeyCode();
 		int32_t var$2 = stroke->getModifiers();

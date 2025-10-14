@@ -162,7 +162,7 @@ void MetalButtonUI::update($Graphics* g, $JComponent* c) {
 				return;
 			}
 		} else {
-			bool var$13 = model->isRollover();
+			bool var$13 = $nc(model)->isRollover();
 			if (var$13) {
 				$var($Component, var$14, static_cast<$Component*>(c));
 				$var($Graphics, var$15, g);

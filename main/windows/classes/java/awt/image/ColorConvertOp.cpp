@@ -563,13 +563,13 @@ $BufferedImage* ColorConvertOp::nonICCBIFilter($BufferedImage* src, $ColorSpace*
 		$assign(dst, createCompatibleDestImage(src, nullptr));
 		$assign(dstColorSpace, $nc($($nc(dst)->getColorModel()))->getColorSpace());
 	} else {
-		bool var$1 = (h != dst->getHeight());
-		if (var$1 || (w != dst->getWidth())) {
+		bool var$1 = (h != $nc(dst)->getHeight());
+		if (var$1 || (w != $nc(dst)->getWidth())) {
 			$throwNew($IllegalArgumentException, "Width or height of BufferedImages do not match"_s);
 		}
 	}
 	$var($Raster, srcRas, src->getRaster());
-	$var($WritableRaster, dstRas, dst->getRaster());
+	$var($WritableRaster, dstRas, $nc(dst)->getRaster());
 	$var($ColorModel, srcCM, src->getColorModel());
 	$var($ColorModel, dstCM, dst->getColorModel());
 	int32_t srcNumComp = $nc(srcCM)->getNumColorComponents();

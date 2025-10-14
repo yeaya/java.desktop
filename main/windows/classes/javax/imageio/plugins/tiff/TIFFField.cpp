@@ -332,7 +332,7 @@ void TIFFField::init$($TIFFTag* tag, int32_t type, int32_t count, Object$* data)
 		$throwNew($NullPointerException, "tag == null!"_s);
 	} else if (type < $TIFFTag::MIN_DATATYPE || type > $TIFFTag::MAX_DATATYPE) {
 		$throwNew($IllegalArgumentException, $$str({"Unknown data type "_s, $$str(type)}));
-	} else if (!tag->isDataTypeOK(type)) {
+	} else if (!$nc(tag)->isDataTypeOK(type)) {
 		$throwNew($IllegalArgumentException, $$str({"Illegal data type "_s, $$str(type), " for "_s, $(tag->getName()), " tag"_s}));
 	} else if (count < 0) {
 		$throwNew($IllegalArgumentException, "count < 0!"_s);
@@ -475,7 +475,7 @@ void TIFFField::init$($TIFFTag* tag, int32_t type, int32_t count, Object$* data)
 		$throwNew($IllegalArgumentException, "Illegal class or length for data array"_s);
 	}
 	$set(this, tag, tag);
-	this->tagNumber = tag->getNumber();
+	this->tagNumber = $nc(tag)->getNumber();
 	this->type = type;
 	this->count = count;
 	$set(this, data, data);
@@ -496,7 +496,7 @@ void TIFFField::init$($TIFFTag* tag, int64_t value) {
 		$throwNew($IllegalArgumentException, "value > 0xffffffff!"_s);
 	}
 	$set(this, tag, tag);
-	this->tagNumber = tag->getNumber();
+	this->tagNumber = $nc(tag)->getNumber();
 	this->count = 1;
 	if (value < 0x00010000) {
 		if (!tag->isDataTypeOK($TIFFTag::TIFF_SHORT)) {
@@ -526,7 +526,7 @@ void TIFFField::init$($TIFFTag* tag, int32_t type, int64_t offset, $TIFFDirector
 		$throwNew($NullPointerException, "tag == null!"_s);
 	} else if (type < $TIFFTag::MIN_DATATYPE || type > $TIFFTag::MAX_DATATYPE) {
 		$throwNew($IllegalArgumentException, $$str({"Unknown data type "_s, $$str(type)}));
-	} else if (!tag->isDataTypeOK(type)) {
+	} else if (!$nc(tag)->isDataTypeOK(type)) {
 		$throwNew($IllegalArgumentException, $$str({"Illegal data type "_s, $$str(type), " for "_s, $(tag->getName()), " tag"_s}));
 	} else if (type != $TIFFTag::TIFF_LONG && type != $TIFFTag::TIFF_IFD_POINTER) {
 		$throwNew($IllegalArgumentException, $$str({"type "_s, $$str(type), " is neither TIFFTag.TIFF_LONG nor TIFFTag.TIFF_IFD_POINTER"_s}));
@@ -536,7 +536,7 @@ void TIFFField::init$($TIFFTag* tag, int32_t type, int64_t offset, $TIFFDirector
 		$throwNew($NullPointerException, "dir == null"_s);
 	}
 	$set(this, tag, tag);
-	this->tagNumber = tag->getNumber();
+	this->tagNumber = $nc(tag)->getNumber();
 	this->type = type;
 	this->count = 1;
 	$set(this, data, $new($longs, {offset}));

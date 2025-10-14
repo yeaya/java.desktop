@@ -406,7 +406,7 @@ void FixedHeightLayoutCache::treeStructureChanged($TreeModelEvent* e) {
 				int32_t row = changedNode->getRow();
 				parent->resetChildrenRowsFrom(row, index, changedNode->getChildIndex());
 				$assign(changedNode, getNodeForPath(changedPath, false, true));
-				changedNode->expand();
+				$nc(changedNode)->expand();
 			}
 			if (this->treeSelectionModel != nullptr && wasVisible && wasExpanded) {
 				$nc(this->treeSelectionModel)->resetRowSelection();

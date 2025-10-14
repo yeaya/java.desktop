@@ -488,7 +488,7 @@ void DefaultStyledDocument$ElementBuffer::insertElement($DefaultStyledDocument$E
 				if (es->getDirection() != $DefaultStyledDocument$ElementSpec::JoinNextDirection) {
 					$var($Element, leaf, this->this$0->createLeafElement($nc(ec)->parent, $(es->getAttributes()), this->pos, this->pos + len));
 					$nc($nc(ec)->added)->addElement(leaf);
-				} else if (!ec->isFracture) {
+				} else if (!$nc(ec)->isFracture) {
 					$var($Element, first, nullptr);
 					if (this->insertPath != nullptr) {
 						for (int32_t counter = $nc(this->insertPath)->length - 1; counter >= 0; --counter) {
@@ -564,7 +564,7 @@ bool DefaultStyledDocument$ElementBuffer::removeElements($Element* elem, int32_t
 				if (!containsOffs1) {
 					$assign(child1, nullptr);
 					++rmIndex1;
-				} else if (child1->getStartOffset() == rmOffs1) {
+				} else if ($nc(child1)->getStartOffset() == rmOffs1) {
 					$assign(child1, nullptr);
 				}
 				if (rmIndex0 <= rmIndex1) {

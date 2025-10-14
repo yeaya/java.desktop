@@ -137,8 +137,8 @@ void MetalBorders$MenuItemBorder::paintBorder($Component* c, $Graphics* g, int32
 			g->drawLine(w - 1, 0, w - 1, 0);
 		}
 	} else {
-		bool var$2 = model->isArmed();
-		if (var$2 || ($instanceOf($JMenu, c) && model->isSelected())) {
+		bool var$2 = $nc(model)->isArmed();
+		if (var$2 || ($instanceOf($JMenu, c) && $nc(model)->isSelected())) {
 			g->setColor($($MetalLookAndFeel::getPrimaryControlDarkShadow()));
 			g->drawLine(0, 0, w - 1, 0);
 			g->setColor($($MetalLookAndFeel::getPrimaryControlHighlight()));

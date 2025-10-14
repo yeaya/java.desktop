@@ -118,7 +118,7 @@ $Component* WindowsComboBoxUI$WindowsComboBoxRenderer::getListCellRendererCompon
 			if (component->getClientProperty(WindowsComboBoxUI$WindowsComboBoxRenderer::BORDER_KEY) == nullptr) {
 				component->putClientProperty(WindowsComboBoxUI$WindowsComboBoxRenderer::BORDER_KEY, (border == nullptr) ? $of(WindowsComboBoxUI$WindowsComboBoxRenderer::NULL_BORDER) : $of(border));
 			}
-		} else if ($instanceOf($WindowsBorders$DashedBorder, $(component->getBorder()))) {
+		} else if ($instanceOf($WindowsBorders$DashedBorder, $($nc(component)->getBorder()))) {
 			$var($Object, storedBorder, component->getClientProperty(WindowsComboBoxUI$WindowsComboBoxRenderer::BORDER_KEY));
 			if ($instanceOf($Border, storedBorder)) {
 				component->setBorder(($equals(storedBorder, WindowsComboBoxUI$WindowsComboBoxRenderer::NULL_BORDER)) ? ($Border*)nullptr : $cast($Border, storedBorder));
@@ -126,10 +126,10 @@ $Component* WindowsComboBoxUI$WindowsComboBoxRenderer::getListCellRendererCompon
 			component->putClientProperty(WindowsComboBoxUI$WindowsComboBoxRenderer::BORDER_KEY, nullptr);
 		}
 		if (index == -1) {
-			component->setOpaque(false);
+			$nc(component)->setOpaque(false);
 			component->setForeground($($nc(list)->getForeground()));
 		} else {
-			component->setOpaque(true);
+			$nc(component)->setOpaque(true);
 		}
 	}
 	return rv;

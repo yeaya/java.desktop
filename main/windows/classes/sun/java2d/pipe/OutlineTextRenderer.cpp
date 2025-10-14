@@ -121,7 +121,7 @@ void OutlineTextRenderer::drawGlyphVector($SunGraphics2D* g2d, $GlyphVector* gv,
 		g2d->antialiasHint = $SunHints::INTVAL_ANTIALIAS_OFF;
 		g2d->validatePipe();
 	}
-	g2d->fill(s);
+	$nc(g2d)->fill(s);
 	if (prevaaHint != -1) {
 		g2d->antialiasHint = prevaaHint;
 		g2d->validatePipe();

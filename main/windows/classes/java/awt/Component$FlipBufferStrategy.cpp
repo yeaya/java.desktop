@@ -139,7 +139,7 @@ void Component$FlipBufferStrategy::createBuffers(int32_t numBuffers, $BufferCapa
 		$throwNew($IllegalArgumentException, "Number of buffers cannot be less than two"_s);
 	} else if (this->this$0->peer == nullptr) {
 		$throwNew($IllegalStateException, "Component must have a valid peer"_s);
-	} else if (caps == nullptr || !caps->isPageFlipping()) {
+	} else if (caps == nullptr || !$nc(caps)->isPageFlipping()) {
 		$throwNew($IllegalArgumentException, "Page flipping capabilities must be specified"_s);
 	}
 	this->width = this->this$0->getWidth();
@@ -150,7 +150,7 @@ void Component$FlipBufferStrategy::createBuffers(int32_t numBuffers, $BufferCapa
 	if ($instanceOf($ExtendedBufferCapabilities, caps)) {
 		$var($ExtendedBufferCapabilities, ebc, $cast($ExtendedBufferCapabilities, caps));
 		$init($ExtendedBufferCapabilities$VSyncType);
-		if (ebc->getVSync() == $ExtendedBufferCapabilities$VSyncType::VSYNC_ON) {
+		if ($nc(ebc)->getVSync() == $ExtendedBufferCapabilities$VSyncType::VSYNC_ON) {
 			if (!$VSyncedBSManager::vsyncAllowed(this)) {
 				$assign(caps, ebc->derive($ExtendedBufferCapabilities$VSyncType::VSYNC_DEFAULT));
 			}

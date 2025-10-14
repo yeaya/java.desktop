@@ -626,7 +626,7 @@ void DLSSoundbank::readInsChunk($RIFFReader* riff) {
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
 		$var($String, format, $nc(chunk)->getFormat());
-		if (format->equals("LIST"_s)) {
+		if ($nc(format)->equals("LIST"_s)) {
 			if ($nc($(chunk->getType()))->equals("INFO"_s)) {
 				readInsInfoChunk(instrument, chunk);
 			}
@@ -745,7 +745,7 @@ bool DLSSoundbank::readRgnChunk($DLSRegion* split, $RIFFReader* riff) {
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
 		$var($String, format, $nc(chunk)->getFormat());
-		if (format->equals("LIST"_s)) {
+		if ($nc(format)->equals("LIST"_s)) {
 			if ($nc($(chunk->getType()))->equals("lart"_s)) {
 				$var($List, modlist, $new($ArrayList));
 				while (chunk->hasNextChunk()) {
@@ -836,7 +836,7 @@ void DLSSoundbank::readInsInfoChunk($DLSInstrument* dlsinstrument, $RIFFReader* 
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
 		$var($String, format, $nc(chunk)->getFormat());
-		if (format->equals("INAM"_s)) {
+		if ($nc(format)->equals("INAM"_s)) {
 			$set($nc(dlsinstrument->info), name, chunk->readString(chunk->available()));
 		} else if (format->equals("ICRD"_s)) {
 			$set($nc(dlsinstrument->info), creationDate, chunk->readString(chunk->available()));
@@ -890,7 +890,7 @@ void DLSSoundbank::readWaveChunk($RIFFReader* riff) {
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
 		$var($String, format, $nc(chunk)->getFormat());
-		if (format->equals("LIST"_s)) {
+		if ($nc(format)->equals("LIST"_s)) {
 			if ($nc($(chunk->getType()))->equals("INFO"_s)) {
 				readWaveInfoChunk(sample, chunk);
 			}
@@ -960,7 +960,7 @@ void DLSSoundbank::readWaveInfoChunk($DLSSample* dlssample, $RIFFReader* riff) {
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
 		$var($String, format, $nc(chunk)->getFormat());
-		if (format->equals("INAM"_s)) {
+		if ($nc(format)->equals("INAM"_s)) {
 			$set($nc(dlssample->info), name, chunk->readString(chunk->available()));
 		} else if (format->equals("ICRD"_s)) {
 			$set($nc(dlssample->info), creationDate, chunk->readString(chunk->available()));

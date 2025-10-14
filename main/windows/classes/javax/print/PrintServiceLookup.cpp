@@ -188,10 +188,10 @@ bool PrintServiceLookup::registerService($PrintService* service) {
 		$var($ArrayList, registeredServices, getRegisteredServices());
 		if (registeredServices == nullptr) {
 			$assign(registeredServices, initRegisteredServices());
-		} else if (registeredServices->contains(service)) {
+		} else if ($nc(registeredServices)->contains(service)) {
 			return false;
 		}
-		registeredServices->add(service);
+		$nc(registeredServices)->add(service);
 		return true;
 	}
 }

@@ -237,7 +237,7 @@ bool BasicStroke::equals(Object$* obj) {
 		if (!$Arrays::equals(this->dash, $nc(bs)->dash)) {
 			return false;
 		}
-	} else if (bs->dash != nullptr) {
+	} else if ($nc(bs)->dash != nullptr) {
 		return false;
 	}
 	return true;

@@ -685,7 +685,7 @@ void SurfaceData::validatePipe($SunGraphics2D* sg2d) {
 }
 
 $TextPipe* SurfaceData::getTextPipe($SunGraphics2D* sg2d, bool aaHintIsOn) {
-	switch (sg2d->textAntialiasHint) {
+	switch ($nc(sg2d)->textAntialiasHint) {
 	case $SunHints::INTVAL_TEXT_ANTIALIAS_DEFAULT:
 		{
 			if (aaHintIsOn) {
@@ -734,7 +734,7 @@ $TextPipe* SurfaceData::getTextPipe($SunGraphics2D* sg2d, bool aaHintIsOn) {
 
 $SurfaceType* SurfaceData::getPaintSurfaceType($SunGraphics2D* sg2d) {
 	$init(SurfaceData);
-	switch (sg2d->paintState) {
+	switch ($nc(sg2d)->paintState) {
 	case $SunGraphics2D::PAINT_OPAQUECOLOR:
 		{
 			$init($SurfaceType);
@@ -797,7 +797,7 @@ $SurfaceType* SurfaceData::getPaintSurfaceType($SunGraphics2D* sg2d) {
 
 $CompositeType* SurfaceData::getFillCompositeType($SunGraphics2D* sg2d) {
 	$init(SurfaceData);
-	$var($CompositeType, compType, sg2d->imageComp);
+	$var($CompositeType, compType, $nc(sg2d)->imageComp);
 	if (sg2d->compositeState == $SunGraphics2D::COMP_ISCOPY) {
 		$init($CompositeType);
 		if (compType == $CompositeType::SrcOverNoEa) {
@@ -819,7 +819,7 @@ $MaskFill* SurfaceData::getMaskFill($SunGraphics2D* sg2d) {
 $RenderLoops* SurfaceData::getRenderLoops($SunGraphics2D* sg2d) {
 	$var($SurfaceType, src, getPaintSurfaceType(sg2d));
 	$var($CompositeType, comp, getFillCompositeType(sg2d));
-	$var($SurfaceType, dst, $nc($(sg2d->getSurfaceData()))->getSurfaceType());
+	$var($SurfaceType, dst, $nc($($nc(sg2d)->getSurfaceData()))->getSurfaceType());
 	$var($Object, o, $nc(SurfaceData::loopcache)->get(src, comp, dst));
 	if (o != nullptr) {
 		return $cast($RenderLoops, o);

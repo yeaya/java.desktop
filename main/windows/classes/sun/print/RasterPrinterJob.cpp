@@ -563,7 +563,7 @@ $PrintService* RasterPrinterJob::getPrintService() {
 void RasterPrinterJob::setPrintService($PrintService* service) {
 	if (service == nullptr) {
 		$throwNew($PrinterException, "Service cannot be null"_s);
-	} else if (!($instanceOf($StreamPrintService, service)) && service->getName() == nullptr) {
+	} else if (!($instanceOf($StreamPrintService, service)) && $nc(service)->getName() == nullptr) {
 		$throwNew($PrinterException, "Null PrintService name."_s);
 	} else {
 		$load($PrinterState);

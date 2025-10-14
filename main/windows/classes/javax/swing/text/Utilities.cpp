@@ -944,7 +944,7 @@ int32_t Utilities::getNextVisualPositionFrom($View* v, int32_t pos, $Position$Bi
 				$assign(child, v->getView(childIndex));
 				$assign(childBounds, v->getChildAllocation(childIndex, alloc));
 				$var($Position$Bias, originalBias, $nc(biasRet)->get(0));
-				int32_t nextPos = child->getNextVisualPositionFrom(-1, b, childBounds, direction, biasRet);
+				int32_t nextPos = $nc(child)->getNextVisualPositionFrom(-1, b, childBounds, direction, biasRet);
 				if (biasRet->get(0) == b) {
 					retValue = nextPos;
 				} else {

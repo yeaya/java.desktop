@@ -201,14 +201,14 @@ bool BasicSliderUI$TrackListener::shouldScroll(int32_t direction) {
 			if ($nc(r)->y <= this->currentMouseY) {
 				return false;
 			}
-		} else if (r->y + r->height >= this->currentMouseY) {
+		} else if ($nc(r)->y + r->height >= this->currentMouseY) {
 			return false;
 		}
 	} else if (this->this$0->drawInverted() ? direction < 0 : direction > 0) {
 		if ($nc(r)->x + r->width >= this->currentMouseX) {
 			return false;
 		}
-	} else if (r->x <= this->currentMouseX) {
+	} else if ($nc(r)->x <= this->currentMouseX) {
 		return false;
 	}
 	bool var$0 = direction > 0;

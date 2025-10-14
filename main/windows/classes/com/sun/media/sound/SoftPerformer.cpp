@@ -442,7 +442,7 @@ void SoftPerformer::init$($ModelPerformer* performer) {
 						if ($nc($($nc($(connection->getDestination()))->getIdentifier()))->equals($ModelDestination::DESTINATION_PITCH)) {
 							if (found_vib_connection == nullptr) {
 								$assign(found_vib_connection, connection);
-							} else if ($nc($(found_vib_connection->getSources()))->length > sources->length) {
+							} else if ($nc($($nc(found_vib_connection)->getSources()))->length > sources->length) {
 								$assign(found_vib_connection, connection);
 							} else if ($nc($($nc($nc($(found_vib_connection->getSources()))->get(0))->getIdentifier()))->getInstance() < 1) {
 								int32_t var$2 = $nc($($nc($nc($(found_vib_connection->getSources()))->get(0))->getIdentifier()))->getInstance();

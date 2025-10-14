@@ -499,7 +499,7 @@ void Introspector::processPropertyDescriptors() {
 								$assign(igpd, ipd);
 							}
 						}
-					} else if (pd->getReadMethod() != nullptr) {
+					} else if ($nc(pd)->getReadMethod() != nullptr) {
 						$var($String, pdName, $nc($(pd->getReadMethod()))->getName());
 						if (gpd != nullptr) {
 							$var($String, gpdName, $nc($(gpd->getReadMethod()))->getName());
@@ -532,7 +532,7 @@ void Introspector::processPropertyDescriptors() {
 								$assign(ispd, ipd);
 							}
 						}
-					} else if (pd->getWriteMethod() != nullptr) {
+					} else if ($nc(pd)->getWriteMethod() != nullptr) {
 						if (gpd != nullptr) {
 							$Class* var$2 = gpd->getPropertyType();
 							if (isAssignable(var$2, pd->getPropertyType())) {
@@ -571,7 +571,7 @@ void Introspector::processPropertyDescriptors() {
 					if (pd == nullptr) {
 						$assign(pd, ipd);
 					} else {
-						$Class* propType = pd->getPropertyType();
+						$Class* propType = $nc(pd)->getPropertyType();
 						$Class* ipropType = $nc(ipd)->getIndexedPropertyType();
 						bool var$3 = $nc(propType)->isArray();
 						if (var$3 && propType->getComponentType() == ipropType) {
@@ -621,7 +621,7 @@ void Introspector::processPropertyDescriptors() {
 				}
 				if ($instanceOf($IndexedPropertyDescriptor, pd)) {
 					$assign(ipd, $cast($IndexedPropertyDescriptor, pd));
-					bool var$4 = ipd->getIndexedReadMethod() == nullptr;
+					bool var$4 = $nc(ipd)->getIndexedReadMethod() == nullptr;
 					if (var$4 && ipd->getIndexedWriteMethod() == nullptr) {
 						$assign(pd, $new($PropertyDescriptor, ipd));
 					}

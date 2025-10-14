@@ -136,7 +136,7 @@ void MetalIconFactory$InternalFrameCloseIcon::paintIcon($Component* c, $Graphics
 			$assign(mainItemColor, darkHighlightColor);
 		}
 	} else {
-		bool var$2 = buttonModel->isPressed();
+		bool var$2 = $nc(buttonModel)->isPressed();
 		if (var$2 && buttonModel->isArmed()) {
 			$assign(internalBackgroundColor, $MetalLookAndFeel::getPrimaryControlShadow());
 			$assign(xLightHighlightColor, internalBackgroundColor);

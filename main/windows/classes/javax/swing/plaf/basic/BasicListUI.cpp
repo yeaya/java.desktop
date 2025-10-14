@@ -519,7 +519,7 @@ $Rectangle* BasicListUI::getDropLineRect($JList$DropLocation* loc) {
 		} else if (rect->x < 0) {
 			rect->x = 0;
 		}
-		rect->width = BasicListUI::DROP_LINE_THICKNESS;
+		$nc(rect)->width = BasicListUI::DROP_LINE_THICKNESS;
 	} else if (this->layoutOrientation == $JList::VERTICAL_WRAP) {
 		if (index == size) {
 			--index;
@@ -840,11 +840,11 @@ $Rectangle* BasicListUI::getCellBounds($JList* list, int32_t index1, int32_t ind
 				$nc(minBounds)->x = 0;
 				minBounds->width = $nc(list)->getWidth();
 			}
-		} else if (minBounds->x != maxBounds->x) {
+		} else if ($nc(minBounds)->x != maxBounds->x) {
 			minBounds->y = 0;
 			minBounds->height = $nc(list)->getHeight();
 		}
-		minBounds->add(maxBounds);
+		$nc(minBounds)->add(maxBounds);
 	}
 	return minBounds;
 }

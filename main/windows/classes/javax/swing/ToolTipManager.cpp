@@ -366,12 +366,12 @@ void ToolTipManager::showTipWindow() {
 		$nc(this->popupRect)->setBounds($nc(location)->x, location->y, $nc(size)->width, size->height);
 		if ($nc(location)->x < sBounds->x) {
 			location->x = sBounds->x;
-		} else if (location->x - sBounds->x + size->width > sBounds->width) {
+		} else if (location->x - sBounds->x + $nc(size)->width > sBounds->width) {
 			location->x = sBounds->x + $Math::max(0, sBounds->width - size->width);
 		}
-		if (location->y < sBounds->y) {
+		if ($nc(location)->y < sBounds->y) {
 			location->y = sBounds->y;
-		} else if (location->y - sBounds->y + size->height > sBounds->height) {
+		} else if (location->y - sBounds->y + $nc(size)->height > sBounds->height) {
 			location->y = sBounds->y + $Math::max(0, sBounds->height - size->height);
 		}
 		$var($PopupFactory, popupFactory, $PopupFactory::getSharedInstance());
@@ -386,7 +386,7 @@ void ToolTipManager::showTipWindow() {
 		} else {
 			$nc(popupFactory)->setPopupType($PopupFactory::MEDIUM_WEIGHT_POPUP);
 		}
-		$set(this, tipWindow, $nc(popupFactory)->getPopup(this->insideComponent, this->tip, location->x, location->y));
+		$set(this, tipWindow, $nc(popupFactory)->getPopup(this->insideComponent, this->tip, $nc(location)->x, location->y));
 		popupFactory->setPopupType($PopupFactory::LIGHT_WEIGHT_POPUP);
 		$nc(this->tipWindow)->show();
 		$var($Window, componentWindow, $SwingUtilities::windowForComponent(this->insideComponent));

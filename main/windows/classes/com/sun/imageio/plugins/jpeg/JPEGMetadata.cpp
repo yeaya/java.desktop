@@ -1384,7 +1384,7 @@ void JPEGMetadata::mergeStandardTree($Node* root) {
 	for (int32_t i = 0; i < $nc(children)->getLength(); ++i) {
 		$var($Node, node, children->item(i));
 		$var($String, name, $nc(node)->getNodeName());
-		if (name->equals("Chroma"_s)) {
+		if ($nc(name)->equals("Chroma"_s)) {
 			mergeStandardChromaNode(node, children);
 		} else if (name->equals("Compression"_s)) {
 			mergeStandardCompressionNode(node);
@@ -1726,7 +1726,7 @@ void JPEGMetadata::mergeStandardDimensionNode($Node* node) {
 			$var($Node, child, children->item(i));
 			$var($NamedNodeMap, attrs, $nc(child)->getAttributes());
 			$var($String, name, child->getNodeName());
-			if (name->equals("PixelAspectRatio"_s)) {
+			if ($nc(name)->equals("PixelAspectRatio"_s)) {
 				$var($String, valueString, $nc($($nc(attrs)->getNamedItem("value"_s)))->getNodeValue());
 				float value = $Float::parseFloat(valueString);
 				$var($Point, p, findIntegerRatio(value));
@@ -1868,7 +1868,7 @@ void JPEGMetadata::setFromTree($String* formatName, $Node* root) {
 		$throwNew($IllegalArgumentException, "null root!"_s);
 	}
 	$init($JPEG);
-	if (this->isStream && (formatName->equals($JPEG::nativeStreamMetadataFormatName))) {
+	if (this->isStream && ($nc(formatName)->equals($JPEG::nativeStreamMetadataFormatName))) {
 		setFromNativeTree(root);
 	} else {
 		if (!this->isStream && (formatName->equals($JPEG::nativeImageMetadataFormatName))) {

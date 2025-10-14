@@ -219,7 +219,7 @@ void GIFWritableImageMetadata::mergeStandardTree($Node* root) {
 	$assign(node, $nc(node)->getFirstChild());
 	while (node != nullptr) {
 		$var($String, name, node->getNodeName());
-		if (name->equals("Chroma"_s)) {
+		if ($nc(name)->equals("Chroma"_s)) {
 			$var($Node, childNode, node->getFirstChild());
 			while (childNode != nullptr) {
 				$var($String, childName, childNode->getNodeName());

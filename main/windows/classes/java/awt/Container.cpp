@@ -1716,7 +1716,7 @@ $Component* Container::getMouseEventTargetImpl(int32_t x, int32_t y, bool includ
 					if (deeper != nullptr) {
 						return deeper;
 					}
-				} else if (filter->accept(comp)) {
+				} else if ($nc(filter)->accept(comp)) {
 					return comp;
 				}
 			}

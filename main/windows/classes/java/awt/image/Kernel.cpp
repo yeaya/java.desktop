@@ -108,7 +108,7 @@ $floats* Kernel::getKernelData($floats* data$renamed) {
 	$var($floats, data, data$renamed);
 	if (data == nullptr) {
 		$assign(data, $new($floats, $nc(this->data)->length));
-	} else if (data->length < $nc(this->data)->length) {
+	} else if ($nc(data)->length < $nc(this->data)->length) {
 		$throwNew($IllegalArgumentException, $$str({"Data array too small (should be "_s, $$str($nc(this->data)->length), " but is "_s, $$str(data->length), " )"_s}));
 	}
 	$System::arraycopy(this->data, 0, data, 0, $nc(this->data)->length);

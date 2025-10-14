@@ -341,7 +341,7 @@ $Rectangle* JTableHeader::getHeaderRect(int32_t column) {
 		if (!$nc($(getComponentOrientation()))->isLeftToRight()) {
 			r->x = getWidthInRightToLeft();
 		}
-	} else if (column >= cm->getColumnCount()) {
+	} else if (column >= $nc(cm)->getColumnCount()) {
 		if ($nc($(getComponentOrientation()))->isLeftToRight()) {
 			r->x = getWidth();
 		}

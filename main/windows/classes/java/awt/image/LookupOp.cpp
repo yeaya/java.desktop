@@ -225,12 +225,12 @@ $WritableRaster* LookupOp::filter($Raster* src, $WritableRaster* dst$renamed) {
 	if (dst == nullptr) {
 		$assign(dst, createCompatibleDestRaster(src));
 	} else {
-		bool var$1 = height != dst->getHeight();
-		if (var$1 || width != dst->getWidth()) {
+		bool var$1 = height != $nc(dst)->getHeight();
+		if (var$1 || width != $nc(dst)->getWidth()) {
 			$throwNew($IllegalArgumentException, "Width or height of Rasters do not match"_s);
 		}
 	}
-	int32_t dstLength = dst->getNumBands();
+	int32_t dstLength = $nc(dst)->getNumBands();
 	if (numBands != dstLength) {
 		$throwNew($IllegalArgumentException, $$str({"Number of channels in the src ("_s, $$str(numBands), ") does not match number of channels in the destination ("_s, $$str(dstLength), ")"_s}));
 	}

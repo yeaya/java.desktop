@@ -570,7 +570,7 @@ $String* ExecutableInputMethodManager::createLocalePath($Locale* locale) {
 	$var($String, localePath, nullptr);
 	if (!$nc(variant)->isEmpty()) {
 		$assign(localePath, $str({"_"_s, language, "/_"_s, country, "/_"_s, variant}));
-	} else if (!country->isEmpty()) {
+	} else if (!$nc(country)->isEmpty()) {
 		$assign(localePath, $str({"_"_s, language, "/_"_s, country}));
 	} else {
 		$assign(localePath, $str({"_"_s, language}));
@@ -598,7 +598,7 @@ $Locale* ExecutableInputMethodManager::getAdvertisedLocale($InputMethodLocator* 
 	$var($Locale, advertised, nullptr);
 	if ($nc(locator)->isLocaleAvailable(locale)) {
 		$assign(advertised, locale);
-	} else if ($nc($(locale->getLanguage()))->equals("ja"_s)) {
+	} else if ($nc($($nc(locale)->getLanguage()))->equals("ja"_s)) {
 		$init($Locale);
 		if (locator->isLocaleAvailable($Locale::JAPAN)) {
 			$assign(advertised, $Locale::JAPAN);

@@ -86,7 +86,7 @@ $Object* AppContext$3::run() {
 				$AppContext::initMainAppContext();
 			} else {
 				bool var$2 = $System::getProperty("javafx.version"_s) != nullptr;
-				if (var$2 && threadGroup->getParent() != nullptr) {
+				if (var$2 && $nc(threadGroup)->getParent() != nullptr) {
 					$SunToolkit::createNewAppContext();
 				}
 			}

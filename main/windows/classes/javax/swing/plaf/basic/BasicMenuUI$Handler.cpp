@@ -239,7 +239,7 @@ void BasicMenuUI$Handler::mouseEntered($MouseEvent* e) {
 				this->this$0->setupPostTimer(menu);
 			}
 		}
-	} else if (selectedPath->length > 0 && $equals(selectedPath->get(0), menu->getParent())) {
+	} else if ($nc(selectedPath)->length > 0 && $equals(selectedPath->get(0), menu->getParent())) {
 		$var($MenuElementArray, newPath, $new($MenuElementArray, 3));
 		newPath->set(0, $cast($MenuElement, $(menu->getParent())));
 		newPath->set(1, menu);

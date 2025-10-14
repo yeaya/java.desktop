@@ -143,7 +143,7 @@ void BasicSplitPaneDivider$MouseHandler::mouseReleased($MouseEvent* e) {
 			$nc(this->this$0->dragger)->completeDrag(ourX, ourY);
 		}
 		$set(this->this$0, dragger, nullptr);
-		e->consume();
+		$nc(e)->consume();
 	}
 }
 
@@ -162,7 +162,7 @@ void BasicSplitPaneDivider$MouseHandler::mouseDragged($MouseEvent* e) {
 			int32_t ourY = e->getY() + hDividerLoc->y;
 			$nc(this->this$0->dragger)->continueDrag(ourX, ourY);
 		}
-		e->consume();
+		$nc(e)->consume();
 	}
 }
 

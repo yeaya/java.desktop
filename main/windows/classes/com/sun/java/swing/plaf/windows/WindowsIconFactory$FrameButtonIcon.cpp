@@ -168,7 +168,7 @@ void WindowsIconFactory$FrameButtonIcon::paintIcon($Component* c, $Graphics* g, 
 					state = $TMSchema$State::NORMAL;
 				}
 			}
-		} else if (!model->isEnabled()) {
+		} else if (!$nc(model)->isEnabled()) {
 			$init($TMSchema$State);
 			state = $TMSchema$State::INACTIVEDISABLED;
 		} else {

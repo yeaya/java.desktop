@@ -424,7 +424,7 @@ void BasicButtonUI::paintIcon($Graphics* g, $JComponent* c, $Rectangle* iconRect
 	if (tmpIcon != nullptr) {
 		$assign(icon, tmpIcon);
 	}
-	bool var$4 = model->isPressed();
+	bool var$4 = $nc(model)->isPressed();
 	if (var$4 && model->isArmed()) {
 		$var($Component, var$5, static_cast<$Component*>(c));
 		$var($Graphics, var$6, g);

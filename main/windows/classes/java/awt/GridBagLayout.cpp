@@ -736,7 +736,7 @@ $GridBagLayoutInfo* GridBagLayout::GetLayoutInfo($Container* parent, int32_t siz
 				} else if (constraints->tempWidth > i && constraints->tempWidth < nextSize) {
 					nextSize = constraints->tempWidth;
 				}
-				if (constraints->tempHeight == i) {
+				if ($nc(constraints)->tempHeight == i) {
 					py = constraints->tempY + constraints->tempHeight;
 					weight_diff = constraints->weighty;
 					for (k = constraints->tempY; k < py; ++k) {
@@ -1195,7 +1195,7 @@ $Dimension* GridBagLayout::GetMinSize($Container* parent, $GridBagLayoutInfo* in
 	$var($Dimension, d, $new($Dimension));
 	int32_t i = 0;
 	int32_t t = 0;
-	$var($Insets, insets, parent->getInsets());
+	$var($Insets, insets, $nc(parent)->getInsets());
 	t = 0;
 	for (i = 0; i < $nc(info)->width; ++i) {
 		t += $nc(info->minWidth)->get(i);
@@ -1217,7 +1217,7 @@ void GridBagLayout::ArrangeGrid($Container* parent) {
 	$var($Component, comp, nullptr);
 	int32_t compindex = 0;
 	$var($GridBagConstraints, constraints, nullptr);
-	$var($Insets, insets, parent->getInsets());
+	$var($Insets, insets, $nc(parent)->getInsets());
 	$var($ComponentArray, components, parent->getComponents());
 	$var($Dimension, d, nullptr);
 	$var($Rectangle, r, $new($Rectangle));
@@ -1324,7 +1324,7 @@ void GridBagLayout::ArrangeGrid($Container* parent) {
 		}
 		if ((r->width <= 0) || (r->height <= 0)) {
 			$nc(comp)->setBounds(0, 0, 0, 0);
-		} else if (comp->x != r->x || comp->y != r->y || comp->width != r->width || comp->height != r->height) {
+		} else if ($nc(comp)->x != r->x || $nc(comp)->y != r->y || $nc(comp)->width != r->width || $nc(comp)->height != r->height) {
 			comp->setBounds(r->x, r->y, r->width, r->height);
 		}
 	}

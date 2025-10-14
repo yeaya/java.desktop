@@ -211,7 +211,7 @@ void JList$AccessibleJList::valueChanged($ListSelectionEvent* e) {
 		}
 	} else {
 		$init($AccessibleState);
-		if (s->contains($AccessibleState::MULTISELECTABLE)) {
+		if ($nc(s)->contains($AccessibleState::MULTISELECTABLE)) {
 			s->remove($AccessibleState::MULTISELECTABLE);
 			firePropertyChange($AccessibleContext::ACCESSIBLE_STATE_PROPERTY, $AccessibleState::MULTISELECTABLE, nullptr);
 		}

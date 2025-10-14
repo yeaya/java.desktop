@@ -185,7 +185,7 @@ $ints* BidiUtils::createNormalizedMap($ints* values, $bytes* levels, int32_t sta
 				primaryLevel = (int8_t)0;
 				copyRange = true;
 				canonical = true;
-			} else if (levels->get(start) == levels->get(limit - 1)) {
+			} else if ($nc(levels)->get(start) == levels->get(limit - 1)) {
 				primaryLevel = levels->get(start);
 				canonical = ((int32_t)(primaryLevel & (uint32_t)(int32_t)(int8_t)1)) == 0;
 				int32_t i = 0;

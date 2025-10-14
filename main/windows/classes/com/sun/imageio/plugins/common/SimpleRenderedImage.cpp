@@ -317,31 +317,31 @@ $Raster* SimpleRenderedImage::getData($Rectangle* bounds$renamed) {
 	$var($Rectangle, imageBounds, getBounds());
 	if (bounds == nullptr) {
 		$assign(bounds, imageBounds);
-	} else if (!bounds->intersects(imageBounds)) {
+	} else if (!$nc(bounds)->intersects(imageBounds)) {
 		$throwNew($IllegalArgumentException, "The provided region doesn\'t intersect with the image bounds."_s);
 	}
-	int32_t startX = XToTileX(bounds->x);
-	int32_t startY = YToTileY(bounds->y);
-	int32_t endX = XToTileX(bounds->x + bounds->width - 1);
-	int32_t endY = YToTileY(bounds->y + bounds->height - 1);
+	int32_t startX = XToTileX($nc(bounds)->x);
+	int32_t startY = YToTileY($nc(bounds)->y);
+	int32_t endX = XToTileX($nc(bounds)->x + bounds->width - 1);
+	int32_t endY = YToTileY($nc(bounds)->y + bounds->height - 1);
 	if ((startX == endX) && (startY == endY)) {
 		$var($Raster, tile, getTile(startX, startY));
-		return $nc(tile)->createChild(bounds->x, bounds->y, bounds->width, bounds->height, bounds->x, bounds->y, nullptr);
+		return $nc(tile)->createChild($nc(bounds)->x, bounds->y, bounds->width, bounds->height, bounds->x, bounds->y, nullptr);
 	} else {
 		if (!$nc(imageBounds)->contains(bounds)) {
-			$var($Rectangle, xsect, bounds->intersection(imageBounds));
+			$var($Rectangle, xsect, $nc(bounds)->intersection(imageBounds));
 			startX = XToTileX($nc(xsect)->x);
 			startY = YToTileY($nc(xsect)->y);
 			endX = XToTileX($nc(xsect)->x + xsect->width - 1);
 			endY = YToTileY($nc(xsect)->y + xsect->height - 1);
 		}
-		$var($SampleModel, sm, $nc(this->sampleModel)->createCompatibleSampleModel(bounds->width, bounds->height));
-		$var($WritableRaster, dest, $Raster::createWritableRaster(sm, $(bounds->getLocation())));
+		$var($SampleModel, sm, $nc(this->sampleModel)->createCompatibleSampleModel($nc(bounds)->width, bounds->height));
+		$var($WritableRaster, dest, $Raster::createWritableRaster(sm, $($nc(bounds)->getLocation())));
 		for (int32_t j = startY; j <= endY; ++j) {
 			for (int32_t i = startX; i <= endX; ++i) {
 				$var($Raster, tile, getTile(i, j));
 				$var($Rectangle, tileRect, $nc(tile)->getBounds());
-				$var($Rectangle, intersectRect, bounds->intersection($(tile->getBounds())));
+				$var($Rectangle, intersectRect, $nc(bounds)->intersection($(tile->getBounds())));
 				$var($Raster, liveRaster, tile->createChild($nc(intersectRect)->x, intersectRect->y, intersectRect->width, intersectRect->height, intersectRect->x, intersectRect->y, nullptr));
 				$nc(dest)->setRect(liveRaster);
 			}

@@ -443,7 +443,7 @@ void MenuSelectionManager::processKeyEvent($KeyEvent* e) {
 				$assign(path, $new($MenuElementArray, i + 2));
 				$System::arraycopy(sel2, 0, path, 0, i + 1);
 			}
-			path->set(i + 1, subs->get(j));
+			$nc(path)->set(i + 1, subs->get(j));
 			$nc(subs->get(j))->processKeyEvent(e, path, this);
 			if ($nc(e)->isConsumed()) {
 				return;

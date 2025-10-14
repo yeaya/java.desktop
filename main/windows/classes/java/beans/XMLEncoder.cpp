@@ -290,7 +290,7 @@ void XMLEncoder::writeStatement($Statement* oldStm) {
 			$var($String, method, oldStm->getMethodName());
 			$var($ObjectArray, args, oldStm->getArguments());
 			if ((method == nullptr) || (args == nullptr)) {
-			} else if (method->equals("get"_s) && (args->length == 1)) {
+			} else if ($nc(method)->equals("get"_s) && ($nc(args)->length == 1)) {
 				$assign(target, args->get(0));
 			} else if (method->equals("set"_s) && (args->length == 2)) {
 				$assign(target, args->get(0));
@@ -562,7 +562,7 @@ void XMLEncoder::outputStatement($Statement* exp, Object$* outer, bool isArgumen
 	if ($equals(target, outer)) {
 	} else {
 		$load($1Array);
-		if ($equals(target, $1Array::class$) && methodName->equals("newInstance"_s)) {
+		if ($equals(target, $1Array::class$) && $nc(methodName)->equals("newInstance"_s)) {
 			$assign(tag, "array"_s);
 			$assign(attributes, $str({attributes, " class="_s, $(quote($($nc(($cast($Class, $nc(args)->get(0))))->getName())))}));
 			$assign(attributes, $str({attributes, " length="_s, $(quote($($nc($of($nc(args)->get(1)))->toString())))}));
@@ -593,8 +593,8 @@ void XMLEncoder::outputStatement($Statement* exp, Object$* outer, bool isArgumen
 		$set(d, name, instanceName);
 		$assign(attributes, $str({attributes, " id="_s, $(quote(instanceName))}));
 	}
-	bool var$0 = (!expression && methodName->equals("set"_s) && $nc(args)->length == 2 && $instanceOf($Integer, args->get(0)));
-	if (var$0 || (expression && methodName->equals("get"_s) && $nc(args)->length == 1 && $instanceOf($Integer, args->get(0)))) {
+	bool var$0 = (!expression && $nc(methodName)->equals("set"_s) && $nc(args)->length == 2 && $instanceOf($Integer, args->get(0)));
+	if (var$0 || (expression && $nc(methodName)->equals("get"_s) && $nc(args)->length == 1 && $instanceOf($Integer, args->get(0)))) {
 		$assign(attributes, $str({attributes, " index="_s, $(quote($($nc($of(args->get(0)))->toString())))}));
 		$assign(args, (args->length == 1) ? $new($ObjectArray, 0) : $new($ObjectArray, {args->get(1)}));
 	} else {
@@ -615,13 +615,13 @@ void XMLEncoder::outputStatement($Statement* exp, Object$* outer, bool isArgumen
 
 void XMLEncoder::outputXML($String* tag, $String* attributes, Object$* value, $ObjectArray* args) {
 	$var($List, statements, statementList(value));
-	if (args->length == 0 && $nc(statements)->size() == 0) {
+	if ($nc(args)->length == 0 && $nc(statements)->size() == 0) {
 		writeln($$str({"<"_s, tag, attributes, "/>"_s}));
 		return;
 	}
 	writeln($$str({"<"_s, tag, attributes, ">"_s}));
 	++this->indentation;
-	for (int32_t i = 0; i < args->length; ++i) {
+	for (int32_t i = 0; i < $nc(args)->length; ++i) {
 		outputValue(args->get(i), nullptr, true);
 	}
 	while (!$nc(statements)->isEmpty()) {

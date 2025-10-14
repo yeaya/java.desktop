@@ -540,10 +540,10 @@ int32_t BasicListUI$Actions::getNextColumnIndex($JList* list, $BasicListUI* ui, 
 			return 0;
 		} else if (size == 1) {
 			return 0;
-		} else if (ui == nullptr || ui->columnCount <= 1) {
+		} else if (ui == nullptr || $nc(ui)->columnCount <= 1) {
 			return -1;
 		}
-		int32_t column = ui->convertModelToColumn(index);
+		int32_t column = $nc(ui)->convertModelToColumn(index);
 		int32_t row = ui->convertModelToRow(index);
 		column += amount;
 		if (column >= ui->columnCount || column < 0) {

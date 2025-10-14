@@ -147,7 +147,7 @@ void DefaultEditorKit$VerticalPageAction::actionPerformed($ActionEvent* e) {
 int32_t DefaultEditorKit$VerticalPageAction::constrainY($JTextComponent* target, int32_t y, int32_t vis) {
 	if (y < 0) {
 		y = 0;
-	} else if (y + vis > target->getHeight()) {
+	} else if (y + vis > $nc(target)->getHeight()) {
 		y = $Math::max(0, target->getHeight() - vis);
 	}
 	return y;

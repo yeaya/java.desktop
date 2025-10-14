@@ -385,7 +385,7 @@ void BasicEditorPaneUI::updateForeground($Color* color) {
 		if ($nc(style)->getAttribute($StyleConstants::Foreground) != nullptr) {
 			style->removeAttribute($StyleConstants::Foreground);
 		}
-	} else if (!color->equals($($StyleConstants::getForeground(style)))) {
+	} else if (!$nc(color)->equals($($StyleConstants::getForeground(style)))) {
 		$StyleConstants::setForeground(style, color);
 	}
 }

@@ -301,7 +301,7 @@ $bytes* GIFImageWriter::createColorTable($ColorModel* colorModel, $SampleModel* 
 			colorTable->set(idx++, greens->get(i));
 			colorTable->set(idx++, blues->get(i));
 		}
-	} else if (sampleModel->getNumBands() == 1) {
+	} else if ($nc(sampleModel)->getNumBands() == 1) {
 		int32_t numBits = $nc($(sampleModel->getSampleSize()))->get(0);
 		if (numBits > 8) {
 			numBits = 8;

@@ -630,7 +630,7 @@ void AttributeValues::set($EAttribute* a, AttributeValues* src) {
 	}
 	if (src == nullptr || src == AttributeValues::DEFAULT) {
 		setDefault(a);
-	} else if (((int32_t)(src->defined & (uint32_t)a->mask)) != 0) {
+	} else if (((int32_t)($nc(src)->defined & (uint32_t)$nc(a)->mask)) != 0) {
 		i_set(a, src);
 		update(a);
 	}

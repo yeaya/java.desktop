@@ -178,9 +178,9 @@ void WindowsIconFactory$CheckBoxIcon::paintIcon($Component* c, $Graphics* g, int
 			g->setColor($($UIManager::getColor("CheckBox.light"_s)));
 			g->drawLine(x + 1, y + 11, x + 11, y + 11);
 			g->drawLine(x + 11, y + 1, x + 11, y + 10);
-			bool var$5 = model->isPressed();
+			bool var$5 = $nc(model)->isPressed();
 			bool var$4 = (var$5 && model->isArmed());
-			if (var$4 || !model->isEnabled()) {
+			if (var$4 || !$nc(model)->isEnabled()) {
 				g->setColor($($UIManager::getColor("CheckBox.background"_s)));
 			} else {
 				g->setColor($($UIManager::getColor("CheckBox.interiorBackground"_s)));
@@ -189,21 +189,21 @@ void WindowsIconFactory$CheckBoxIcon::paintIcon($Component* c, $Graphics* g, int
 		} else {
 			$nc(g)->setColor($($UIManager::getColor("CheckBox.shadow"_s)));
 			g->drawRect(x + 1, y + 1, WindowsIconFactory$CheckBoxIcon::csize - 3, WindowsIconFactory$CheckBoxIcon::csize - 3);
-			bool var$7 = model->isPressed();
+			bool var$7 = $nc(model)->isPressed();
 			bool var$6 = (var$7 && model->isArmed());
-			if (var$6 || !model->isEnabled()) {
+			if (var$6 || !$nc(model)->isEnabled()) {
 				g->setColor($($UIManager::getColor("CheckBox.background"_s)));
 			} else {
 				g->setColor($($UIManager::getColor("CheckBox.interiorBackground"_s)));
 			}
 			g->fillRect(x + 2, y + 2, WindowsIconFactory$CheckBoxIcon::csize - 4, WindowsIconFactory$CheckBoxIcon::csize - 4);
 		}
-		if (model->isEnabled()) {
+		if ($nc(model)->isEnabled()) {
 			$nc(g)->setColor($($UIManager::getColor("CheckBox.foreground"_s)));
 		} else {
 			$nc(g)->setColor($($UIManager::getColor("CheckBox.shadow"_s)));
 		}
-		if (model->isSelected()) {
+		if ($nc(model)->isSelected()) {
 			if ($SwingUtilities2::isScaledGraphics(g)) {
 				$var($ints, xPoints, $new($ints, {
 					3,

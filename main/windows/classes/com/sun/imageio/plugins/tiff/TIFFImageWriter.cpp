@@ -579,7 +579,7 @@ $IIOMetadata* TIFFImageWriter::convertImageMetadata($IIOMetadata* inData, $Image
 				$var($IIOInvalidTreeException, e, $catch());
 				return nullptr;
 			}
-		} else if (inData->isStandardMetadataFormatSupported()) {
+		} else if ($nc(inData)->isStandardMetadataFormatSupported()) {
 			try {
 				$assign(outData, convertStandardImageMetadata(inData));
 			} catch ($IIOInvalidTreeException&) {
@@ -610,13 +610,13 @@ $IIOMetadata* TIFFImageWriter::convertImageMetadata($IIOMetadata* inData, $Image
 $TIFFImageMetadata* TIFFImageWriter::convertStandardImageMetadata($IIOMetadata* inData) {
 	if (inData == nullptr) {
 		$throwNew($NullPointerException, "inData == null!"_s);
-	} else if (!inData->isStandardMetadataFormatSupported()) {
+	} else if (!$nc(inData)->isStandardMetadataFormatSupported()) {
 		$throwNew($IllegalArgumentException, "inData does not support standard metadata format!"_s);
 	}
 	$var($TIFFImageMetadata, outData, nullptr);
 	$init($IIOMetadataFormatImpl);
 	$var($String, formatName, $IIOMetadataFormatImpl::standardMetadataFormatName);
-	$var($Node, tree, inData->getAsTree(formatName));
+	$var($Node, tree, $nc(inData)->getAsTree(formatName));
 	if (tree != nullptr) {
 		$var($List, tagSets, $new($ArrayList, 1));
 		tagSets->add($($BaselineTIFFTagSet::getInstance()));
@@ -1278,7 +1278,7 @@ int32_t TIFFImageWriter::writeTile($Rectangle* tileRect$renamed, $TIFFCompressor
 				}
 			}
 			return $nc(compressor)->encode(buf, 0, width, height, this->sampleSize, (tileRect->width + 7) / 8);
-		} else if (this->bitDepth == 8 && sm->getDataType() == $DataBuffer::TYPE_BYTE) {
+		} else if (this->bitDepth == 8 && $nc(sm)->getDataType() == $DataBuffer::TYPE_BYTE) {
 			$var($ComponentSampleModel, csm, $cast($ComponentSampleModel, $nc(raster)->getSampleModel()));
 			$var($bytes, buf, $nc(($cast($DataBufferByte, $(raster->getDataBuffer()))))->getData());
 			int32_t var$3 = minX - raster->getSampleModelTranslateX();

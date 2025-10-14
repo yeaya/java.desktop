@@ -359,7 +359,7 @@ void FileFontStrike::getGlyphImagePtrs($ints* glyphCodes, $longs* images, int32_
 			$init($StrikeCache);
 			$nc(images)->set(i, $StrikeCache::invisibleGlyphPtr);
 			continue;
-		} else if ((images->set(i, getCachedGlyphPtr(glyphCode))) != (int64_t)0) {
+		} else if (($nc(images)->set(i, getCachedGlyphPtr(glyphCode))) != (int64_t)0) {
 			continue;
 		} else {
 			int64_t glyphPtr = 0;
@@ -387,7 +387,7 @@ int32_t FileFontStrike::getSlot0GlyphImagePtrs($ints* glyphCodes, $longs* images
 			$init($StrikeCache);
 			$nc(images)->set(i, $StrikeCache::invisibleGlyphPtr);
 			continue;
-		} else if ((images->set(i, getCachedGlyphPtr(glyphCode))) != (int64_t)0) {
+		} else if (($nc(images)->set(i, getCachedGlyphPtr(glyphCode))) != (int64_t)0) {
 			continue;
 		} else {
 			int64_t glyphPtr = 0;

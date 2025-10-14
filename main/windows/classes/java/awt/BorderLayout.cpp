@@ -239,7 +239,7 @@ void BorderLayout::addLayoutComponent($String* name$renamed, $Component* comp) {
 }
 
 void BorderLayout::removeLayoutComponent($Component* comp) {
-	$synchronized(comp->getTreeLock()) {
+	$synchronized($nc(comp)->getTreeLock()) {
 		if (comp == this->center) {
 			$set(this, center, nullptr);
 		} else if (comp == this->north) {

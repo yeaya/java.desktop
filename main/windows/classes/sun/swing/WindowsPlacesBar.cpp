@@ -227,7 +227,7 @@ void WindowsPlacesBar::doDirectoryChanged($File* f) {
 		if ($nc($nc(this->files)->get(i))->equals(f)) {
 			$nc(b)->setSelected(true);
 			break;
-		} else if (b->isSelected()) {
+		} else if ($nc(b)->isSelected()) {
 			$nc(this->buttonGroup)->remove(b);
 			b->setSelected(false);
 			$nc(this->buttonGroup)->add(b);

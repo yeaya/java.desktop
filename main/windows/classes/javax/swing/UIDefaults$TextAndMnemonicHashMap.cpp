@@ -107,7 +107,7 @@ $Object* UIDefaults$TextAndMnemonicHashMap::get(Object$* key) {
 			}
 			return $of(value == nullptr ? ($Object*)nullptr : $of(getMnemonicFromProperty($($nc($of(value))->toString()))));
 		}
-		if (stringKey->endsWith("NameText"_s)) {
+		if ($nc(stringKey)->endsWith("NameText"_s)) {
 			$assign(compositeKey, composeKey(stringKey, 8, UIDefaults$TextAndMnemonicHashMap::TEXT_SUFFIX));
 		} else if (stringKey->endsWith(".nameText"_s)) {
 			$assign(compositeKey, composeKey(stringKey, 9, UIDefaults$TextAndMnemonicHashMap::TEXT_SUFFIX));
@@ -120,7 +120,7 @@ $Object* UIDefaults$TextAndMnemonicHashMap::get(Object$* key) {
 			$assign(value, $HashMap::get(compositeKey));
 			return $of(value == nullptr ? ($Object*)nullptr : $of(getTextFromProperty($($nc($of(value))->toString()))));
 		}
-		if (stringKey->endsWith("DisplayedMnemonicIndex"_s)) {
+		if ($nc(stringKey)->endsWith("DisplayedMnemonicIndex"_s)) {
 			$assign(compositeKey, composeKey(stringKey, 22, UIDefaults$TextAndMnemonicHashMap::TEXT_SUFFIX));
 			$assign(value, $HashMap::get(compositeKey));
 			if (value == nullptr) {

@@ -1397,7 +1397,7 @@ $Font2D* SunFontManager::findFontFromPlatformMap($String* lcName, int32_t style)
 			if (font == nullptr) {
 				$assign(font, fontFamily->getClosestStyle(style));
 			}
-		} else if (style > 0 && style != font->style) {
+		} else if (style > 0 && style != $nc(font)->style) {
 			style |= font->style;
 			$assign(font, fontFamily->getFont(style));
 			if (font == nullptr) {

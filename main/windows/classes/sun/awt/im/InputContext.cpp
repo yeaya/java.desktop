@@ -487,7 +487,7 @@ $Window* InputContext::getComponentWindow($Component* component$renamed) {
 }
 
 void InputContext::focusLost($Component* source, bool isTemporary) {
-	$synchronized(source->getTreeLock()) {
+	$synchronized($nc(source)->getTreeLock()) {
 		$synchronized(this) {
 			if (this->isInputMethodActive) {
 				deactivateInputMethod(isTemporary);

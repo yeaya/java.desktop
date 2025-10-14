@@ -247,7 +247,7 @@ void BasicComboPopup$Handler::mouseDragged($MouseEvent* e) {
 			} else if (!this->this$0->isAutoScrolling) {
 				this->this$0->startAutoScrolling(directionToScroll);
 			}
-		} else if ($nc($(e->getPoint()))->y < 0) {
+		} else if ($nc($($nc(e)->getPoint()))->y < 0) {
 			this->this$0->hasEntered = true;
 			this->this$0->startAutoScrolling(0);
 		}

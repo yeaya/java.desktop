@@ -447,7 +447,7 @@ $Component$BaselineResizeBehavior* GroupLayout$SequentialGroup::getBaselineResiz
 					{
 						if (spring == this->baselineSpring) {
 							break;
-						} else if (spring->isResizable(1)) {
+						} else if ($nc(spring)->isResizable(1)) {
 							leadingResizable = true;
 							break;
 						}

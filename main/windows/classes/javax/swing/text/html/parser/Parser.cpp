@@ -1824,8 +1824,8 @@ void Parser::parseTag() {
 				$assign(elemName, $nc(elem)->getName());
 				bool var$2 = this->stack != sp;
 				if (var$2) {
-					bool var$3 = elemName->equals("font"_s);
-					var$2 = (var$3 || elemName->equals("center"_s));
+					bool var$3 = $nc(elemName)->equals("font"_s);
+					var$2 = (var$3 || $nc(elemName)->equals("center"_s));
 				}
 				if (var$2) {
 					if (elemName->equals("center"_s)) {

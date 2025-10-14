@@ -241,7 +241,7 @@ void HTMLWriter::write() {
 		if (current != nullptr) {
 			if (indentNeedsIncrementing(current, next)) {
 				incrIndent();
-			} else if (current->getParentElement() != next->getParentElement()) {
+			} else if (current->getParentElement() != $nc(next)->getParentElement()) {
 				$var($Element, top, $cast($Element, $nc(this->blockElementStack)->peek()));
 				while (top != next->getParentElement()) {
 					$nc(this->blockElementStack)->pop();
@@ -265,8 +265,8 @@ void HTMLWriter::write() {
 				}
 			}
 		}
-		bool var$2 = !next->isLeaf();
-		if (var$2 || isFormElementWithContent($(next->getAttributes()))) {
+		bool var$2 = !$nc(next)->isLeaf();
+		if (var$2 || isFormElementWithContent($($nc(next)->getAttributes()))) {
 			$nc(this->blockElementStack)->push(next);
 			startTag(next);
 		} else {

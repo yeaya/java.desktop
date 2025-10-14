@@ -1400,7 +1400,7 @@ $TextHitInfo* TextLayout::hitTestChar(float x, float y, $Rectangle2D* bounds) {
 		} else if (y >= bounds->getMaxY()) {
 			return $TextHitInfo::trailing(this->characterCount - 1);
 		}
-	} else if (x < bounds->getMinX()) {
+	} else if (x < $nc(bounds)->getMinX()) {
 		return isLeftToRight() ? $TextHitInfo::leading(0) : $TextHitInfo::trailing(this->characterCount - 1);
 	} else if (x >= bounds->getMaxX()) {
 		return isLeftToRight() ? $TextHitInfo::trailing(this->characterCount - 1) : $TextHitInfo::leading(0);
@@ -1433,7 +1433,7 @@ $TextHitInfo* TextLayout::hitTestChar(float x, float y, $Rectangle2D* bounds) {
 			} else {
 				cy = cm->effectiveBaselineOffset(this->baselineOffsets) + cm->ssOffset;
 			}
-			float dy = (cm->descent - cm->ascent) / 2 - cy;
+			float dy = ($nc(cm)->descent - cm->ascent) / 2 - cy;
 			dya = dy * cm->italicAngle;
 			cy += dy;
 			ydsq = (cy - y) * (cy - y);

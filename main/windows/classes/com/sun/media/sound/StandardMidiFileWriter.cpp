@@ -194,14 +194,14 @@ $InputStream* StandardMidiFileWriter::getFileStream(int32_t type, $Sequence* seq
 		if ($nc(tracks)->length < 1) {
 			return nullptr;
 		}
-	} else if (tracks->length == 1) {
+	} else if ($nc(tracks)->length == 1) {
 		type = StandardMidiFileWriter::MIDI_TYPE_0;
 	} else if (tracks->length > 1) {
 		type = StandardMidiFileWriter::MIDI_TYPE_1;
 	} else {
 		return nullptr;
 	}
-	$assign(trackStreams, $new($InputStreamArray, tracks->length));
+	$assign(trackStreams, $new($InputStreamArray, $nc(tracks)->length));
 	int32_t trackCount = 0;
 	for (int32_t i = 0; i < tracks->length; ++i) {
 		try {

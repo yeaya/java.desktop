@@ -367,7 +367,7 @@ void BasicDesktopPaneUI$Actions::setState($JDesktopPane* dp, $String* state) {
 			} else if (f->isMaximum()) {
 				f->setMaximum(false);
 			}
-			f->setSelected(true);
+			$nc(f)->setSelected(true);
 		} catch ($PropertyVetoException&) {
 			$catch();
 		}

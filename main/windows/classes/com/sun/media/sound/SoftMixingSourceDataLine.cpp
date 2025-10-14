@@ -430,7 +430,7 @@ void SoftMixingSourceDataLine::open($AudioFormat* format, int32_t bufferSize) {
 			if ($Math::abs(var$0 - $nc(this->outputformat)->getSampleRate()) > 1.0E-6) {
 				$set(this, afis, $new($SoftMixingDataLine$AudioFloatInputStreamResampler, this->afis, this->outputformat));
 			}
-		} else if (!format->matches($(getFormat()))) {
+		} else if (!$nc(format)->matches($(getFormat()))) {
 			$var($String, var$1, $$str({"Line is already open with format "_s, $(getFormat()), " and bufferSize "_s}));
 			$throwNew($IllegalStateException, $$concat(var$1, $$str(getBufferSize())));
 		}

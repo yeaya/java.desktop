@@ -216,8 +216,8 @@ $WritableRaster* ConvolveOp::filter($Raster* src, $WritableRaster* dst$renamed) 
 	} else if ($equals(src, dst)) {
 		$throwNew($IllegalArgumentException, "src image cannot be the same as the dst image"_s);
 	} else {
-		int32_t var$1 = src->getNumBands();
-		if (var$1 != dst->getNumBands()) {
+		int32_t var$1 = $nc(src)->getNumBands();
+		if (var$1 != $nc(dst)->getNumBands()) {
 			$throwNew($ImagingOpException, "Different number of bands in src  and dst Rasters"_s);
 		}
 	}

@@ -385,8 +385,8 @@ $WritableRaster* RescaleOp::filterRasterImpl($Raster* src, $WritableRaster* dst$
 	if (dst == nullptr) {
 		$assign(dst, createCompatibleDestRaster(src));
 	} else {
-		bool var$1 = height != dst->getHeight();
-		if (var$1 || width != dst->getWidth()) {
+		bool var$1 = height != $nc(dst)->getHeight();
+		if (var$1 || width != $nc(dst)->getWidth()) {
 			$throwNew($IllegalArgumentException, "Width or height of Rasters do not match"_s);
 		} else if (numBands != dst->getNumBands()) {
 			$throwNew($IllegalArgumentException, $$str({"Number of bands in src "_s, $$str(numBands), " does not equal number of bands in dest "_s, $$str(dst->getNumBands())}));
@@ -416,7 +416,7 @@ $WritableRaster* RescaleOp::filterRasterImpl($Raster* src, $WritableRaster* dst$
 		}
 		int32_t sminX = src->getMinX();
 		int32_t sY = src->getMinY();
-		int32_t dminX = dst->getMinX();
+		int32_t dminX = $nc(dst)->getMinX();
 		int32_t dY = dst->getMinY();
 		int32_t sX = 0;
 		int32_t dX = 0;

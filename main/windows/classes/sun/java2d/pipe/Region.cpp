@@ -1114,22 +1114,22 @@ bool Region::equals(Object$* o) {
 	$var(Region, r, $cast(Region, o));
 	if (this->isEmpty()) {
 		return $nc(r)->isEmpty();
-	} else if (r->isEmpty()) {
+	} else if ($nc(r)->isEmpty()) {
 		return false;
 	}
-	if (r->lox != this->lox || r->loy != this->loy || r->hix != this->hix || r->hiy != this->hiy) {
+	if ($nc(r)->lox != this->lox || $nc(r)->loy != this->loy || $nc(r)->hix != this->hix || $nc(r)->hiy != this->hiy) {
 		return false;
 	}
 	if (this->bands == nullptr) {
-		return (r->bands == nullptr);
-	} else if (r->bands == nullptr) {
+		return ($nc(r)->bands == nullptr);
+	} else if ($nc(r)->bands == nullptr) {
 		return false;
 	}
-	if (this->endIndex != r->endIndex) {
+	if (this->endIndex != $nc(r)->endIndex) {
 		return false;
 	}
 	$var($ints, abands, this->bands);
-	$var($ints, bbands, r->bands);
+	$var($ints, bbands, $nc(r)->bands);
 	for (int32_t i = 0; i < this->endIndex; ++i) {
 		if ($nc(abands)->get(i) != $nc(bbands)->get(i)) {
 			return false;

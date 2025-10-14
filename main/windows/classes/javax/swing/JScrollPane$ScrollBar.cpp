@@ -141,7 +141,7 @@ int32_t JScrollPane$ScrollBar::getBlockIncrement(int32_t direction) {
 	$var($JViewport, vp, this->this$0->getViewport());
 	if (this->blockIncrementSet || vp == nullptr) {
 		return $JScrollBar::getBlockIncrement(direction);
-	} else if ($instanceOf($Scrollable, $(vp->getView()))) {
+	} else if ($instanceOf($Scrollable, $($nc(vp)->getView()))) {
 		$var($Scrollable, view, ($cast($Scrollable, vp->getView())));
 		$var($Rectangle, vr, vp->getViewRect());
 		return $nc(view)->getScrollableBlockIncrement(vr, getOrientation(), direction);

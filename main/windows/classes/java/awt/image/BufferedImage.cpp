@@ -498,7 +498,7 @@ void BufferedImage::init$(int32_t width, int32_t height, int32_t imageType, $Ind
 			}
 		}
 	}
-	if (!cm->isCompatibleRaster(this->raster)) {
+	if (!$nc(cm)->isCompatibleRaster(this->raster)) {
 		$throwNew($IllegalArgumentException, "Incompatible image type and IndexColorModel"_s);
 	}
 	$set(this, colorModel, cm);
@@ -508,7 +508,7 @@ void BufferedImage::init$(int32_t width, int32_t height, int32_t imageType, $Ind
 void BufferedImage::init$($ColorModel* cm, $WritableRaster* raster, bool isRasterPremultiplied, $Hashtable* properties) {
 	$Image::init$();
 	this->imageType = BufferedImage::TYPE_CUSTOM;
-	if (!cm->isCompatibleRaster(raster)) {
+	if (!$nc(cm)->isCompatibleRaster(raster)) {
 		$throwNew($IllegalArgumentException, $$str({"Raster "_s, raster, " is incompatible with ColorModel "_s, cm}));
 	}
 	if (($nc(raster)->minX != 0) || ($nc(raster)->minY != 0)) {
@@ -531,7 +531,7 @@ void BufferedImage::init$($ColorModel* cm, $WritableRaster* raster, bool isRaste
 		}
 	}
 	int32_t numBands = $nc(raster)->getNumBands();
-	bool isAlphaPre = cm->isAlphaPremultiplied();
+	bool isAlphaPre = $nc(cm)->isAlphaPremultiplied();
 	bool isStandard = BufferedImage::isStandard(cm, raster);
 	$var($ColorSpace, cs, nullptr);
 	coerceData(isRasterPremultiplied);
@@ -545,12 +545,12 @@ void BufferedImage::init$($ColorModel* cm, $WritableRaster* raster, bool isRaste
 			} else {
 				bool var$3 = $instanceOf($ByteComponentRaster, raster) && raster->getNumBands() == 1;
 				bool var$2 = var$3 && cm->getComponentSize(0) == 8;
-				if (var$2 && ($cast($ByteComponentRaster, raster))->getPixelStride() == 1) {
+				if (var$2 && $nc(($cast($ByteComponentRaster, raster)))->getPixelStride() == 1) {
 					this->imageType = BufferedImage::TYPE_BYTE_GRAY;
 				} else {
 					bool var$7 = $instanceOf($ShortComponentRaster, raster) && raster->getNumBands() == 1;
 					bool var$6 = var$7 && cm->getComponentSize(0) == 16;
-					if (var$6 && ($cast($ShortComponentRaster, raster))->getPixelStride() == 1) {
+					if (var$6 && $nc(($cast($ShortComponentRaster, raster)))->getPixelStride() == 1) {
 						this->imageType = BufferedImage::TYPE_USHORT_GRAY;
 					}
 				}
@@ -633,7 +633,7 @@ void BufferedImage::init$($ColorModel* cm, $WritableRaster* raster, bool isRaste
 bool BufferedImage::isStandard($ColorModel* cm, $WritableRaster* wr) {
 	$init(BufferedImage);
 	$beforeCallerSensitive();
-	$Class* cmClass = $of(cm)->getClass();
+	$Class* cmClass = $nc($of(cm))->getClass();
 	$Class* wrClass = $nc($of(wr))->getClass();
 	$Class* smClass = $nc($of($(wr->getSampleModel())))->getClass();
 	$var($PrivilegedAction, checkClassLoadersAction, $new($BufferedImage$1, cmClass, smClass, wrClass));

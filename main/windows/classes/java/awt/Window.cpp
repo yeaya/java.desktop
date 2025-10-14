@@ -2017,7 +2017,7 @@ void Window::setLocationRelativeTo($Component* c) {
 		$var($Point, centerPoint, ge->getCenterPoint());
 		dx = $nc(centerPoint)->x - $nc(windowSize)->width / 2;
 		dy = centerPoint->y - windowSize->height / 2;
-	} else if (!c->isShowing()) {
+	} else if (!$nc(c)->isShowing()) {
 		$assign(gc, $nc(componentWindow)->getGraphicsConfiguration());
 		$assign(gcBounds, $nc(gc)->getBounds());
 		dx = $nc(gcBounds)->x + (gcBounds->width - $nc(windowSize)->width) / 2;

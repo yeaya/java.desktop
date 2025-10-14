@@ -384,9 +384,9 @@ $Object* NumberFormatter::toggleSign(bool positive) {
 				}
 				try {
 					$ReflectUtil::checkPackageAccess(valueClass);
-					$SwingUtilities2::checkAccess(valueClass->getModifiers());
+					$SwingUtilities2::checkAccess($nc(valueClass)->getModifiers());
 					$load($String);
-					$var($Constructor, cons, valueClass->getConstructor($$new($ClassArray, {$String::class$})));
+					$var($Constructor, cons, $nc(valueClass)->getConstructor($$new($ClassArray, {$String::class$})));
 					if (cons != nullptr) {
 						$SwingUtilities2::checkAccess(cons->getModifiers());
 						return $of(cons->newInstance($$new($ObjectArray, {$of(string)})));

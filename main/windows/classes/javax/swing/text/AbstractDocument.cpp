@@ -846,7 +846,7 @@ void AbstractDocument::updateBidi($AbstractDocument$DefaultDocumentEvent* chng) 
 		int32_t prevLevel = $StyleConstants::getBidiLevel($($nc(prevElem)->getAttributes()));
 		if (prevLevel == $nc(levels)->get(0)) {
 			firstSpanStart = $nc(prevElem)->getStartOffset();
-		} else if (prevElem->getEndOffset() > firstPStart) {
+		} else if ($nc(prevElem)->getEndOffset() > firstPStart) {
 			newElements->addElement($$new($AbstractDocument$BidiElement, this, this->bidiRoot, prevElem->getStartOffset(), firstPStart, prevLevel));
 		} else {
 			++removeFromIndex;
@@ -866,7 +866,7 @@ void AbstractDocument::updateBidi($AbstractDocument$DefaultDocumentEvent* chng) 
 		int32_t nextLevel = $StyleConstants::getBidiLevel($($nc(nextElem)->getAttributes()));
 		if (nextLevel == $nc(levels)->get(levels->length - 1)) {
 			lastSpanEnd = $nc(nextElem)->getEndOffset();
-		} else if (nextElem->getStartOffset() < lastPEnd) {
+		} else if ($nc(nextElem)->getStartOffset() < lastPEnd) {
 			$assign(newNextElem, $new($AbstractDocument$BidiElement, this, this->bidiRoot, lastPEnd, nextElem->getEndOffset(), nextLevel));
 		} else {
 			--removeToIndex;
@@ -903,7 +903,7 @@ void AbstractDocument::updateBidi($AbstractDocument$DefaultDocumentEvent* chng) 
 	$var($ElementArray, addedElems, $new($ElementArray, newElements->size()));
 	newElements->copyInto(addedElems);
 	$var($AbstractDocument$ElementEdit, ee, $new($AbstractDocument$ElementEdit, this->bidiRoot, removeFromIndex, removedElems, addedElems));
-	chng->addEdit(ee);
+	$nc(chng)->addEdit(ee);
 	$nc(this->bidiRoot)->replace(removeFromIndex, removedElems->length, addedElems);
 }
 

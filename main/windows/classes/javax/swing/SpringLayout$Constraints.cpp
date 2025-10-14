@@ -177,7 +177,7 @@ void SpringLayout$Constraints::pushConstraint($String* name, $Spring* value, boo
 		valid = false;
 	}
 	if (value != nullptr) {
-		history->add(name);
+		$nc(history)->add(name);
 	}
 	if (!valid) {
 		$init($SpringLayout);
@@ -189,7 +189,7 @@ void SpringLayout$Constraints::pushConstraint($String* name, $Spring* value, boo
 			for (; i$ < len$; ++i$) {
 				$var($String, s, arr$->get(i$));
 				{
-					if (!history->contains(s)) {
+					if (!$nc(history)->contains(s)) {
 						setConstraint(s, nullptr);
 					}
 				}
@@ -420,7 +420,7 @@ void SpringLayout$Constraints::setConstraint($String* edgeName$renamed, $Spring*
 
 $Spring* SpringLayout$Constraints::getConstraint($String* edgeName$renamed) {
 	$var($String, edgeName, edgeName$renamed);
-	$assign(edgeName, edgeName->intern());
+	$assign(edgeName, $nc(edgeName)->intern());
 	return (edgeName == "West"_s) ? getX() : (edgeName == "North"_s) ? getY() : (edgeName == "East"_s) ? getEast() : (edgeName == "South"_s) ? getSouth() : (edgeName == "Width"_s) ? getWidth() : (edgeName == "Height"_s) ? getHeight() : (edgeName == "HorizontalCenter"_s) ? getHorizontalCenter() : (edgeName == "VerticalCenter"_s) ? getVerticalCenter() : (edgeName == "Baseline"_s) ? getBaseline() : ($Spring*)nullptr;
 }
 

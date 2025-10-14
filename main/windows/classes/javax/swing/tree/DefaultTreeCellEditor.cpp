@@ -382,7 +382,7 @@ bool DefaultTreeCellEditor::inHitRegion(int32_t x, int32_t y) {
 			if (bounds != nullptr && x <= (bounds->x + this->offset) && this->offset < (bounds->width - 5)) {
 				return false;
 			}
-		} else if (bounds != nullptr && (x >= (bounds->x + bounds->width - this->offset + 5) || x <= (bounds->x + 5)) && this->offset < (bounds->width - 5)) {
+		} else if (bounds != nullptr && (x >= (bounds->x + bounds->width - this->offset + 5) || x <= ($nc(bounds)->x + 5)) && this->offset < (bounds->width - 5)) {
 			return false;
 		}
 	}

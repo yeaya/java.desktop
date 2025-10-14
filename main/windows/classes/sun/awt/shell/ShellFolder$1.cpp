@@ -96,7 +96,7 @@ $Object* ShellFolder$1::call() {
 				}
 				if (commonParent == nullptr) {
 					$assign(commonParent, parent);
-				} else if (commonParent != parent && !commonParent->equals(parent)) {
+				} else if (commonParent != parent && !$nc(commonParent)->equals(parent)) {
 					$assign(commonParent, nullptr);
 					break;
 				}

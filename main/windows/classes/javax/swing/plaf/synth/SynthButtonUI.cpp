@@ -490,7 +490,7 @@ $Icon* SynthButtonUI::getSpecificIcon($AbstractButton* b, $Icon* specificSelecte
 int32_t SynthButtonUI::getTextShiftOffset($SynthContext* state) {
 	$var($AbstractButton, button, $cast($AbstractButton, $nc(state)->getComponent()));
 	$var($ButtonModel, model, $nc(button)->getModel());
-	bool var$1 = model->isArmed();
+	bool var$1 = $nc(model)->isArmed();
 	bool var$0 = var$1 && model->isPressed();
 	if (var$0 && button->getPressedIcon() == nullptr) {
 		return $nc($(state->getStyle()))->getInt(state, $$str({$(getPropertyPrefix()), "textShiftOffset"_s}), 0);

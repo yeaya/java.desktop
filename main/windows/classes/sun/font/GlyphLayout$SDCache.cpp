@@ -152,10 +152,10 @@ GlyphLayout$SDCache* GlyphLayout$SDCache::get($Font* font, $FontRenderContext* f
 		if (cache == nullptr) {
 			$assign(cache, $new($ConcurrentHashMap, 10));
 			$assignStatic(GlyphLayout$SDCache::cacheRef, $new($SoftReference, cache));
-		} else if (cache->size() >= 512) {
+		} else if ($nc(cache)->size() >= 512) {
 			cache->clear();
 		}
-		cache->put(key, res);
+		$nc(cache)->put(key, res);
 	}
 	return res;
 }

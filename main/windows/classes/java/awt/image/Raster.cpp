@@ -211,8 +211,8 @@ $WritableRaster* Raster::createInterleavedRaster(int32_t dataType, int32_t w, in
 	if (location == nullptr) {
 		$assign(location, $new($Point, 0, 0));
 	} else {
-		bool var$1 = (w + location->getX() > $Integer::MAX_VALUE);
-		if (var$1 || (h + location->getY() > $Integer::MAX_VALUE)) {
+		bool var$1 = (w + $nc(location)->getX() > $Integer::MAX_VALUE);
+		if (var$1 || (h + $nc(location)->getY() > $Integer::MAX_VALUE)) {
 			$throwNew($RasterFormatException, "location.x + w and location.y + h  cannot exceed Integer.MAX_VALUE"_s);
 		}
 	}
@@ -406,8 +406,8 @@ $WritableRaster* Raster::createInterleavedRaster($DataBuffer* dataBuffer, int32_
 	if (location == nullptr) {
 		$assign(location, $new($Point, 0, 0));
 	} else {
-		bool var$1 = (w + location->getX() > $Integer::MAX_VALUE);
-		if (var$1 || (h + location->getY() > $Integer::MAX_VALUE)) {
+		bool var$1 = (w + $nc(location)->getX() > $Integer::MAX_VALUE);
+		if (var$1 || (h + $nc(location)->getY() > $Integer::MAX_VALUE)) {
 			$throwNew($RasterFormatException, "location.x + w and location.y + h  cannot exceed Integer.MAX_VALUE"_s);
 		}
 	}
@@ -461,8 +461,8 @@ $WritableRaster* Raster::createBandedRaster($DataBuffer* dataBuffer, int32_t w, 
 	if (location == nullptr) {
 		$assign(location, $new($Point, 0, 0));
 	} else {
-		bool var$1 = (w + location->getX() > $Integer::MAX_VALUE);
-		if (var$1 || (h + location->getY() > $Integer::MAX_VALUE)) {
+		bool var$1 = (w + $nc(location)->getX() > $Integer::MAX_VALUE);
+		if (var$1 || (h + $nc(location)->getY() > $Integer::MAX_VALUE)) {
 			$throwNew($RasterFormatException, "location.x + w and location.y + h  cannot exceed Integer.MAX_VALUE"_s);
 		}
 	}

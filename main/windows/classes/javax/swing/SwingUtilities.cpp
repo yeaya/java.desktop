@@ -686,7 +686,7 @@ $RectangleArray* SwingUtilities::computeDifference($Rectangle* rectA, $Rectangle
 			$assign(d, $new($Rectangle, t));
 			++rectCount;
 		}
-	} else if (rectB->x <= rectA->x && rectB->y <= rectA->y) {
+	} else if ($nc(rectB)->x <= $nc(rectA)->x && rectB->y <= rectA->y) {
 		if ((rectB->x + rectB->width) > (rectA->x + rectA->width)) {
 			t->x = rectA->x;
 			t->y = rectB->y + rectB->height;
@@ -1293,12 +1293,12 @@ bool SwingUtilities::notifyAction($Action* action, $KeyStroke* ks, $KeyEvent* ev
 	$var($String, command, nullptr);
 	if (commandO != nullptr) {
 		$assign(command, $of(commandO)->toString());
-	} else if (!stayNull && event->getKeyChar() != $KeyEvent::CHAR_UNDEFINED) {
+	} else if (!stayNull && $nc(event)->getKeyChar() != $KeyEvent::CHAR_UNDEFINED) {
 		$assign(command, $String::valueOf(event->getKeyChar()));
 	} else {
 		$assign(command, nullptr);
 	}
-	action->actionPerformed($$new($ActionEvent, sender, $ActionEvent::ACTION_PERFORMED, command, event->getWhen(), modifiers));
+	action->actionPerformed($$new($ActionEvent, sender, $ActionEvent::ACTION_PERFORMED, command, $nc(event)->getWhen(), modifiers));
 	return true;
 }
 

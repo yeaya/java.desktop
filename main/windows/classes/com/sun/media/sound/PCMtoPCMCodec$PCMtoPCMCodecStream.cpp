@@ -133,7 +133,7 @@ void PCMtoPCMCodec$PCMtoPCMCodecStream::init$($PCMtoPCMCodec* this$0, $AudioInpu
 				this->conversionType = this->PCM_SWITCH_SIGNED_8BIT;
 			}
 		}
-	} else if (inputEncoding->equals(outputEncoding) && (inputIsBigEndian != outputIsBigEndian)) {
+	} else if ($nc(inputEncoding)->equals(outputEncoding) && (inputIsBigEndian != outputIsBigEndian)) {
 		this->conversionType = this->PCM_SWITCH_ENDIAN;
 	} else {
 		$init($AudioFormat$Encoding);

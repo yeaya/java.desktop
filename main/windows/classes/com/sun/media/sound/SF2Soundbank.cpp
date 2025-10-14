@@ -428,7 +428,7 @@ void SF2Soundbank::readPdtaChunk($RIFFReader* riff) {
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
 		$var($String, format, $nc(chunk)->getFormat());
-		if (format->equals("phdr"_s)) {
+		if ($nc(format)->equals("phdr"_s)) {
 			if (chunk->available() % 38 != 0) {
 				$throwNew($RIFFInvalidDataException);
 			}

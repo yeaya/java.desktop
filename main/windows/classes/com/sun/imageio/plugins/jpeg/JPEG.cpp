@@ -247,7 +247,7 @@ bool JPEG::isJFIFcompliant($ImageTypeSpecifier* imageType, bool input) {
 		if ($nc($($nc(cm)->getColorSpace()))->getType() == $ColorSpace::TYPE_RGB) {
 			return true;
 		}
-	} else if ($nc($(cm->getColorSpace()))->getType() == $ColorSpace::TYPE_YCbCr) {
+	} else if ($nc($($nc(cm)->getColorSpace()))->getType() == $ColorSpace::TYPE_YCbCr) {
 		return true;
 	}
 	return false;
