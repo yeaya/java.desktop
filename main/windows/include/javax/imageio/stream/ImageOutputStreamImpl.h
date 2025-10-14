@@ -1,0 +1,100 @@
+#ifndef _javax_imageio_stream_ImageOutputStreamImpl_h_
+#define _javax_imageio_stream_ImageOutputStreamImpl_h_
+//$ class javax.imageio.stream.ImageOutputStreamImpl
+//$ extends javax.imageio.stream.ImageInputStreamImpl
+//$ implements javax.imageio.stream.ImageOutputStream
+
+#include <java/lang/Array.h>
+#include <javax/imageio/stream/ImageInputStreamImpl.h>
+#include <javax/imageio/stream/ImageOutputStream.h>
+
+namespace javax {
+	namespace imageio {
+		namespace stream {
+
+class $import ImageOutputStreamImpl : public ::javax::imageio::stream::ImageInputStreamImpl, public ::javax::imageio::stream::ImageOutputStream {
+	$class(ImageOutputStreamImpl, $NO_CLASS_INIT, ::javax::imageio::stream::ImageInputStreamImpl, ::javax::imageio::stream::ImageOutputStream)
+public:
+	ImageOutputStreamImpl();
+	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
+	virtual $Object* clone() override;
+	virtual void close() override;
+	virtual bool equals(Object$* arg0) override;
+	virtual void finalize() override;
+	virtual void flush() override;
+	virtual void flushBefore(int64_t pos) override;
+	virtual int32_t getBitOffset() override;
+	virtual ::java::nio::ByteOrder* getByteOrder() override;
+	virtual int64_t getFlushedPosition() override;
+	virtual int64_t getStreamPosition() override;
+	virtual int32_t hashCode() override;
+	void init$();
+	void flushBits();
+	virtual bool isCached() override;
+	virtual bool isCachedFile() override;
+	virtual bool isCachedMemory() override;
+	virtual int64_t length() override;
+	virtual void mark() override;
+	virtual int32_t read() override {return 0;}
+	virtual int32_t read($bytes* b) override;
+	virtual int32_t read($bytes* b, int32_t off, int32_t len) override {return 0;}
+	virtual int32_t readBit() override;
+	virtual int64_t readBits(int32_t numBits) override;
+	virtual bool readBoolean() override;
+	virtual int8_t readByte() override;
+	virtual void readBytes(::javax::imageio::stream::IIOByteBuffer* buf, int32_t len) override;
+	virtual char16_t readChar() override;
+	virtual double readDouble() override;
+	virtual float readFloat() override;
+	virtual void readFully($bytes* b, int32_t off, int32_t len) override;
+	virtual void readFully($bytes* b) override;
+	virtual void readFully($shorts* s, int32_t off, int32_t len) override;
+	virtual void readFully($chars* c, int32_t off, int32_t len) override;
+	virtual void readFully($ints* i, int32_t off, int32_t len) override;
+	virtual void readFully($longs* l, int32_t off, int32_t len) override;
+	virtual void readFully($floats* f, int32_t off, int32_t len) override;
+	virtual void readFully($doubles* d, int32_t off, int32_t len) override;
+	virtual int32_t readInt() override;
+	virtual $String* readLine() override;
+	virtual int64_t readLong() override;
+	virtual int16_t readShort() override;
+	virtual $String* readUTF() override;
+	virtual int32_t readUnsignedByte() override;
+	virtual int64_t readUnsignedInt() override;
+	virtual int32_t readUnsignedShort() override;
+	virtual void reset() override;
+	virtual void seek(int64_t pos) override;
+	virtual void setBitOffset(int32_t bitOffset) override;
+	virtual void setByteOrder(::java::nio::ByteOrder* byteOrder) override;
+	virtual int32_t skipBytes(int32_t n) override;
+	virtual int64_t skipBytes(int64_t n) override;
+	virtual $String* toString() override;
+	virtual void write(int32_t b) override {}
+	virtual void write($bytes* b, int32_t off, int32_t len) override {}
+	virtual void write($bytes* b) override;
+	virtual void writeBit(int32_t bit) override;
+	virtual void writeBits(int64_t bits, int32_t numBits) override;
+	virtual void writeBoolean(bool v) override;
+	virtual void writeByte(int32_t v) override;
+	virtual void writeBytes($String* s) override;
+	virtual void writeChar(int32_t v) override;
+	virtual void writeChars($String* s) override;
+	virtual void writeChars($chars* c, int32_t off, int32_t len) override;
+	virtual void writeDouble(double v) override;
+	virtual void writeDoubles($doubles* d, int32_t off, int32_t len) override;
+	virtual void writeFloat(float v) override;
+	virtual void writeFloats($floats* f, int32_t off, int32_t len) override;
+	virtual void writeInt(int32_t v) override;
+	virtual void writeInts($ints* i, int32_t off, int32_t len) override;
+	virtual void writeLong(int64_t v) override;
+	virtual void writeLongs($longs* l, int32_t off, int32_t len) override;
+	virtual void writeShort(int32_t v) override;
+	virtual void writeShorts($shorts* s, int32_t off, int32_t len) override;
+	virtual void writeUTF($String* s) override;
+};
+
+		} // stream
+	} // imageio
+} // javax
+
+#endif // _javax_imageio_stream_ImageOutputStreamImpl_h_

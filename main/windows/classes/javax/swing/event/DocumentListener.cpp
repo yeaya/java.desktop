@@ -1,0 +1,50 @@
+#include <javax/swing/event/DocumentListener.h>
+
+#include <java/lang/Class.h>
+#include <java/lang/ClassInfo.h>
+#include <java/lang/MethodInfo.h>
+#include <java/lang/String.h>
+#include <java/lang/reflect/Constructor.h>
+#include <java/lang/reflect/Method.h>
+#include <javax/swing/event/DocumentEvent.h>
+#include <jcpp.h>
+
+using $ClassInfo = ::java::lang::ClassInfo;
+using $MethodInfo = ::java::lang::MethodInfo;
+using $EventListener = ::java::util::EventListener;
+using $DocumentEvent = ::javax::swing::event::DocumentEvent;
+
+namespace javax {
+	namespace swing {
+		namespace event {
+
+$MethodInfo _DocumentListener_MethodInfo_[] = {
+	{"changedUpdate", "(Ljavax/swing/event/DocumentEvent;)V", nullptr, $PUBLIC | $ABSTRACT},
+	{"insertUpdate", "(Ljavax/swing/event/DocumentEvent;)V", nullptr, $PUBLIC | $ABSTRACT},
+	{"removeUpdate", "(Ljavax/swing/event/DocumentEvent;)V", nullptr, $PUBLIC | $ABSTRACT},
+	{}
+};
+
+$ClassInfo _DocumentListener_ClassInfo_ = {
+	$PUBLIC | $INTERFACE | $ABSTRACT,
+	"javax.swing.event.DocumentListener",
+	nullptr,
+	"java.util.EventListener",
+	nullptr,
+	_DocumentListener_MethodInfo_
+};
+
+$Object* allocate$DocumentListener($Class* clazz) {
+	return $of($alloc(DocumentListener));
+}
+
+$Class* DocumentListener::load$($String* name, bool initialize) {
+	$loadClass(DocumentListener, name, initialize, &_DocumentListener_ClassInfo_, allocate$DocumentListener);
+	return class$;
+}
+
+$Class* DocumentListener::class$ = nullptr;
+
+		} // event
+	} // swing
+} // javax

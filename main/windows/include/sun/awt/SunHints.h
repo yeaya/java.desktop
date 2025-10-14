@@ -1,0 +1,418 @@
+#ifndef _sun_awt_SunHints_h_
+#define _sun_awt_SunHints_h_
+//$ class sun.awt.SunHints
+//$ extends java.lang.Object
+
+#include <java/lang/Object.h>
+
+#pragma push_macro("INTKEY_AATEXT_LCD_CONTRAST")
+#undef INTKEY_AATEXT_LCD_CONTRAST
+#pragma push_macro("INTKEY_ALPHA_INTERPOLATION")
+#undef INTKEY_ALPHA_INTERPOLATION
+#pragma push_macro("INTKEY_ANTIALIASING")
+#undef INTKEY_ANTIALIASING
+#pragma push_macro("INTKEY_COLOR_RENDERING")
+#undef INTKEY_COLOR_RENDERING
+#pragma push_macro("INTKEY_DITHERING")
+#undef INTKEY_DITHERING
+#pragma push_macro("INTKEY_FRACTIONALMETRICS")
+#undef INTKEY_FRACTIONALMETRICS
+#pragma push_macro("INTKEY_INTERPOLATION")
+#undef INTKEY_INTERPOLATION
+#pragma push_macro("INTKEY_RENDERING")
+#undef INTKEY_RENDERING
+#pragma push_macro("INTKEY_RESOLUTION_VARIANT")
+#undef INTKEY_RESOLUTION_VARIANT
+#pragma push_macro("INTKEY_STROKE_CONTROL")
+#undef INTKEY_STROKE_CONTROL
+#pragma push_macro("INTKEY_TEXT_ANTIALIASING")
+#undef INTKEY_TEXT_ANTIALIASING
+#pragma push_macro("INTVAL_ALPHA_INTERPOLATION_DEFAULT")
+#undef INTVAL_ALPHA_INTERPOLATION_DEFAULT
+#pragma push_macro("INTVAL_ALPHA_INTERPOLATION_QUALITY")
+#undef INTVAL_ALPHA_INTERPOLATION_QUALITY
+#pragma push_macro("INTVAL_ALPHA_INTERPOLATION_SPEED")
+#undef INTVAL_ALPHA_INTERPOLATION_SPEED
+#pragma push_macro("INTVAL_ANTIALIAS_DEFAULT")
+#undef INTVAL_ANTIALIAS_DEFAULT
+#pragma push_macro("INTVAL_ANTIALIAS_OFF")
+#undef INTVAL_ANTIALIAS_OFF
+#pragma push_macro("INTVAL_ANTIALIAS_ON")
+#undef INTVAL_ANTIALIAS_ON
+#pragma push_macro("INTVAL_COLOR_RENDER_DEFAULT")
+#undef INTVAL_COLOR_RENDER_DEFAULT
+#pragma push_macro("INTVAL_COLOR_RENDER_QUALITY")
+#undef INTVAL_COLOR_RENDER_QUALITY
+#pragma push_macro("INTVAL_COLOR_RENDER_SPEED")
+#undef INTVAL_COLOR_RENDER_SPEED
+#pragma push_macro("INTVAL_DITHER_DEFAULT")
+#undef INTVAL_DITHER_DEFAULT
+#pragma push_macro("INTVAL_DITHER_DISABLE")
+#undef INTVAL_DITHER_DISABLE
+#pragma push_macro("INTVAL_DITHER_ENABLE")
+#undef INTVAL_DITHER_ENABLE
+#pragma push_macro("INTVAL_FRACTIONALMETRICS_DEFAULT")
+#undef INTVAL_FRACTIONALMETRICS_DEFAULT
+#pragma push_macro("INTVAL_FRACTIONALMETRICS_OFF")
+#undef INTVAL_FRACTIONALMETRICS_OFF
+#pragma push_macro("INTVAL_FRACTIONALMETRICS_ON")
+#undef INTVAL_FRACTIONALMETRICS_ON
+#pragma push_macro("INTVAL_INTERPOLATION_BICUBIC")
+#undef INTVAL_INTERPOLATION_BICUBIC
+#pragma push_macro("INTVAL_INTERPOLATION_BILINEAR")
+#undef INTVAL_INTERPOLATION_BILINEAR
+#pragma push_macro("INTVAL_INTERPOLATION_NEAREST_NEIGHBOR")
+#undef INTVAL_INTERPOLATION_NEAREST_NEIGHBOR
+#pragma push_macro("INTVAL_RENDER_DEFAULT")
+#undef INTVAL_RENDER_DEFAULT
+#pragma push_macro("INTVAL_RENDER_QUALITY")
+#undef INTVAL_RENDER_QUALITY
+#pragma push_macro("INTVAL_RENDER_SPEED")
+#undef INTVAL_RENDER_SPEED
+#pragma push_macro("INTVAL_RESOLUTION_VARIANT_BASE")
+#undef INTVAL_RESOLUTION_VARIANT_BASE
+#pragma push_macro("INTVAL_RESOLUTION_VARIANT_DEFAULT")
+#undef INTVAL_RESOLUTION_VARIANT_DEFAULT
+#pragma push_macro("INTVAL_RESOLUTION_VARIANT_DPI_FIT")
+#undef INTVAL_RESOLUTION_VARIANT_DPI_FIT
+#pragma push_macro("INTVAL_RESOLUTION_VARIANT_SIZE_FIT")
+#undef INTVAL_RESOLUTION_VARIANT_SIZE_FIT
+#pragma push_macro("INTVAL_STROKE_DEFAULT")
+#undef INTVAL_STROKE_DEFAULT
+#pragma push_macro("INTVAL_STROKE_NORMALIZE")
+#undef INTVAL_STROKE_NORMALIZE
+#pragma push_macro("INTVAL_STROKE_PURE")
+#undef INTVAL_STROKE_PURE
+#pragma push_macro("INTVAL_TEXT_ANTIALIAS_DEFAULT")
+#undef INTVAL_TEXT_ANTIALIAS_DEFAULT
+#pragma push_macro("INTVAL_TEXT_ANTIALIAS_GASP")
+#undef INTVAL_TEXT_ANTIALIAS_GASP
+#pragma push_macro("INTVAL_TEXT_ANTIALIAS_LCD_HBGR")
+#undef INTVAL_TEXT_ANTIALIAS_LCD_HBGR
+#pragma push_macro("INTVAL_TEXT_ANTIALIAS_LCD_HRGB")
+#undef INTVAL_TEXT_ANTIALIAS_LCD_HRGB
+#pragma push_macro("INTVAL_TEXT_ANTIALIAS_LCD_VBGR")
+#undef INTVAL_TEXT_ANTIALIAS_LCD_VBGR
+#pragma push_macro("INTVAL_TEXT_ANTIALIAS_LCD_VRGB")
+#undef INTVAL_TEXT_ANTIALIAS_LCD_VRGB
+#pragma push_macro("INTVAL_TEXT_ANTIALIAS_OFF")
+#undef INTVAL_TEXT_ANTIALIAS_OFF
+#pragma push_macro("INTVAL_TEXT_ANTIALIAS_ON")
+#undef INTVAL_TEXT_ANTIALIAS_ON
+#pragma push_macro("KEY_ALPHA_INTERPOLATION")
+#undef KEY_ALPHA_INTERPOLATION
+#pragma push_macro("KEY_ANTIALIASING")
+#undef KEY_ANTIALIASING
+#pragma push_macro("KEY_COLOR_RENDERING")
+#undef KEY_COLOR_RENDERING
+#pragma push_macro("KEY_DITHERING")
+#undef KEY_DITHERING
+#pragma push_macro("KEY_FRACTIONALMETRICS")
+#undef KEY_FRACTIONALMETRICS
+#pragma push_macro("KEY_INTERPOLATION")
+#undef KEY_INTERPOLATION
+#pragma push_macro("KEY_RENDERING")
+#undef KEY_RENDERING
+#pragma push_macro("KEY_RESOLUTION_VARIANT")
+#undef KEY_RESOLUTION_VARIANT
+#pragma push_macro("KEY_STROKE_CONTROL")
+#undef KEY_STROKE_CONTROL
+#pragma push_macro("KEY_TEXT_ANTIALIASING")
+#undef KEY_TEXT_ANTIALIASING
+#pragma push_macro("KEY_TEXT_ANTIALIAS_LCD_CONTRAST")
+#undef KEY_TEXT_ANTIALIAS_LCD_CONTRAST
+#pragma push_macro("NUM_KEYS")
+#undef NUM_KEYS
+#pragma push_macro("VALS_PER_KEY")
+#undef VALS_PER_KEY
+#pragma push_macro("VALUE_ALPHA_INTERPOLATION_DEFAULT")
+#undef VALUE_ALPHA_INTERPOLATION_DEFAULT
+#pragma push_macro("VALUE_ALPHA_INTERPOLATION_QUALITY")
+#undef VALUE_ALPHA_INTERPOLATION_QUALITY
+#pragma push_macro("VALUE_ALPHA_INTERPOLATION_SPEED")
+#undef VALUE_ALPHA_INTERPOLATION_SPEED
+#pragma push_macro("VALUE_ANTIALIAS_DEFAULT")
+#undef VALUE_ANTIALIAS_DEFAULT
+#pragma push_macro("VALUE_ANTIALIAS_OFF")
+#undef VALUE_ANTIALIAS_OFF
+#pragma push_macro("VALUE_ANTIALIAS_ON")
+#undef VALUE_ANTIALIAS_ON
+#pragma push_macro("VALUE_COLOR_RENDER_DEFAULT")
+#undef VALUE_COLOR_RENDER_DEFAULT
+#pragma push_macro("VALUE_COLOR_RENDER_QUALITY")
+#undef VALUE_COLOR_RENDER_QUALITY
+#pragma push_macro("VALUE_COLOR_RENDER_SPEED")
+#undef VALUE_COLOR_RENDER_SPEED
+#pragma push_macro("VALUE_DITHER_DEFAULT")
+#undef VALUE_DITHER_DEFAULT
+#pragma push_macro("VALUE_DITHER_DISABLE")
+#undef VALUE_DITHER_DISABLE
+#pragma push_macro("VALUE_DITHER_ENABLE")
+#undef VALUE_DITHER_ENABLE
+#pragma push_macro("VALUE_FRACTIONALMETRICS_DEFAULT")
+#undef VALUE_FRACTIONALMETRICS_DEFAULT
+#pragma push_macro("VALUE_FRACTIONALMETRICS_OFF")
+#undef VALUE_FRACTIONALMETRICS_OFF
+#pragma push_macro("VALUE_FRACTIONALMETRICS_ON")
+#undef VALUE_FRACTIONALMETRICS_ON
+#pragma push_macro("VALUE_INTERPOLATION_BICUBIC")
+#undef VALUE_INTERPOLATION_BICUBIC
+#pragma push_macro("VALUE_INTERPOLATION_BILINEAR")
+#undef VALUE_INTERPOLATION_BILINEAR
+#pragma push_macro("VALUE_INTERPOLATION_NEAREST_NEIGHBOR")
+#undef VALUE_INTERPOLATION_NEAREST_NEIGHBOR
+#pragma push_macro("VALUE_RENDER_DEFAULT")
+#undef VALUE_RENDER_DEFAULT
+#pragma push_macro("VALUE_RENDER_QUALITY")
+#undef VALUE_RENDER_QUALITY
+#pragma push_macro("VALUE_RENDER_SPEED")
+#undef VALUE_RENDER_SPEED
+#pragma push_macro("VALUE_RESOLUTION_VARIANT_BASE")
+#undef VALUE_RESOLUTION_VARIANT_BASE
+#pragma push_macro("VALUE_RESOLUTION_VARIANT_DEFAULT")
+#undef VALUE_RESOLUTION_VARIANT_DEFAULT
+#pragma push_macro("VALUE_RESOLUTION_VARIANT_DPI_FIT")
+#undef VALUE_RESOLUTION_VARIANT_DPI_FIT
+#pragma push_macro("VALUE_RESOLUTION_VARIANT_SIZE_FIT")
+#undef VALUE_RESOLUTION_VARIANT_SIZE_FIT
+#pragma push_macro("VALUE_STROKE_DEFAULT")
+#undef VALUE_STROKE_DEFAULT
+#pragma push_macro("VALUE_STROKE_NORMALIZE")
+#undef VALUE_STROKE_NORMALIZE
+#pragma push_macro("VALUE_STROKE_PURE")
+#undef VALUE_STROKE_PURE
+#pragma push_macro("VALUE_TEXT_ANTIALIAS_DEFAULT")
+#undef VALUE_TEXT_ANTIALIAS_DEFAULT
+#pragma push_macro("VALUE_TEXT_ANTIALIAS_GASP")
+#undef VALUE_TEXT_ANTIALIAS_GASP
+#pragma push_macro("VALUE_TEXT_ANTIALIAS_LCD_HBGR")
+#undef VALUE_TEXT_ANTIALIAS_LCD_HBGR
+#pragma push_macro("VALUE_TEXT_ANTIALIAS_LCD_HRGB")
+#undef VALUE_TEXT_ANTIALIAS_LCD_HRGB
+#pragma push_macro("VALUE_TEXT_ANTIALIAS_LCD_VBGR")
+#undef VALUE_TEXT_ANTIALIAS_LCD_VBGR
+#pragma push_macro("VALUE_TEXT_ANTIALIAS_LCD_VRGB")
+#undef VALUE_TEXT_ANTIALIAS_LCD_VRGB
+#pragma push_macro("VALUE_TEXT_ANTIALIAS_OFF")
+#undef VALUE_TEXT_ANTIALIAS_OFF
+#pragma push_macro("VALUE_TEXT_ANTIALIAS_ON")
+#undef VALUE_TEXT_ANTIALIAS_ON
+
+namespace java {
+	namespace awt {
+		class RenderingHints$Key;
+	}
+}
+namespace sun {
+	namespace awt {
+		class SunHints$Key;
+	}
+}
+
+namespace sun {
+	namespace awt {
+
+class $import SunHints : public ::java::lang::Object {
+	$class(SunHints, 0, ::java::lang::Object)
+public:
+	SunHints();
+	void init$();
+	static const int32_t NUM_KEYS = 10;
+	static const int32_t VALS_PER_KEY = 8;
+	static const int32_t INTKEY_RENDERING = 0;
+	static const int32_t INTVAL_RENDER_DEFAULT = 0;
+	static const int32_t INTVAL_RENDER_SPEED = 1;
+	static const int32_t INTVAL_RENDER_QUALITY = 2;
+	static const int32_t INTKEY_ANTIALIASING = 1;
+	static const int32_t INTVAL_ANTIALIAS_DEFAULT = 0;
+	static const int32_t INTVAL_ANTIALIAS_OFF = 1;
+	static const int32_t INTVAL_ANTIALIAS_ON = 2;
+	static const int32_t INTKEY_TEXT_ANTIALIASING = 2;
+	static const int32_t INTVAL_TEXT_ANTIALIAS_DEFAULT = 0;
+	static const int32_t INTVAL_TEXT_ANTIALIAS_OFF = 1;
+	static const int32_t INTVAL_TEXT_ANTIALIAS_ON = 2;
+	static const int32_t INTVAL_TEXT_ANTIALIAS_GASP = 3;
+	static const int32_t INTVAL_TEXT_ANTIALIAS_LCD_HRGB = 4;
+	static const int32_t INTVAL_TEXT_ANTIALIAS_LCD_HBGR = 5;
+	static const int32_t INTVAL_TEXT_ANTIALIAS_LCD_VRGB = 6;
+	static const int32_t INTVAL_TEXT_ANTIALIAS_LCD_VBGR = 7;
+	static const int32_t INTKEY_FRACTIONALMETRICS = 3;
+	static const int32_t INTVAL_FRACTIONALMETRICS_DEFAULT = 0;
+	static const int32_t INTVAL_FRACTIONALMETRICS_OFF = 1;
+	static const int32_t INTVAL_FRACTIONALMETRICS_ON = 2;
+	static const int32_t INTKEY_DITHERING = 4;
+	static const int32_t INTVAL_DITHER_DEFAULT = 0;
+	static const int32_t INTVAL_DITHER_DISABLE = 1;
+	static const int32_t INTVAL_DITHER_ENABLE = 2;
+	static const int32_t INTKEY_INTERPOLATION = 5;
+	static const int32_t INTVAL_INTERPOLATION_NEAREST_NEIGHBOR = 0;
+	static const int32_t INTVAL_INTERPOLATION_BILINEAR = 1;
+	static const int32_t INTVAL_INTERPOLATION_BICUBIC = 2;
+	static const int32_t INTKEY_ALPHA_INTERPOLATION = 6;
+	static const int32_t INTVAL_ALPHA_INTERPOLATION_DEFAULT = 0;
+	static const int32_t INTVAL_ALPHA_INTERPOLATION_SPEED = 1;
+	static const int32_t INTVAL_ALPHA_INTERPOLATION_QUALITY = 2;
+	static const int32_t INTKEY_COLOR_RENDERING = 7;
+	static const int32_t INTVAL_COLOR_RENDER_DEFAULT = 0;
+	static const int32_t INTVAL_COLOR_RENDER_SPEED = 1;
+	static const int32_t INTVAL_COLOR_RENDER_QUALITY = 2;
+	static const int32_t INTKEY_STROKE_CONTROL = 8;
+	static const int32_t INTVAL_STROKE_DEFAULT = 0;
+	static const int32_t INTVAL_STROKE_NORMALIZE = 1;
+	static const int32_t INTVAL_STROKE_PURE = 2;
+	static const int32_t INTKEY_RESOLUTION_VARIANT = 9;
+	static const int32_t INTVAL_RESOLUTION_VARIANT_DEFAULT = 0;
+	static const int32_t INTVAL_RESOLUTION_VARIANT_BASE = 1;
+	static const int32_t INTVAL_RESOLUTION_VARIANT_SIZE_FIT = 2;
+	static const int32_t INTVAL_RESOLUTION_VARIANT_DPI_FIT = 3;
+	static const int32_t INTKEY_AATEXT_LCD_CONTRAST = 100;
+	static ::sun::awt::SunHints$Key* KEY_RENDERING;
+	static $Object* VALUE_RENDER_SPEED;
+	static $Object* VALUE_RENDER_QUALITY;
+	static $Object* VALUE_RENDER_DEFAULT;
+	static ::sun::awt::SunHints$Key* KEY_ANTIALIASING;
+	static $Object* VALUE_ANTIALIAS_ON;
+	static $Object* VALUE_ANTIALIAS_OFF;
+	static $Object* VALUE_ANTIALIAS_DEFAULT;
+	static ::sun::awt::SunHints$Key* KEY_TEXT_ANTIALIASING;
+	static $Object* VALUE_TEXT_ANTIALIAS_ON;
+	static $Object* VALUE_TEXT_ANTIALIAS_OFF;
+	static $Object* VALUE_TEXT_ANTIALIAS_DEFAULT;
+	static $Object* VALUE_TEXT_ANTIALIAS_GASP;
+	static $Object* VALUE_TEXT_ANTIALIAS_LCD_HRGB;
+	static $Object* VALUE_TEXT_ANTIALIAS_LCD_HBGR;
+	static $Object* VALUE_TEXT_ANTIALIAS_LCD_VRGB;
+	static $Object* VALUE_TEXT_ANTIALIAS_LCD_VBGR;
+	static ::sun::awt::SunHints$Key* KEY_FRACTIONALMETRICS;
+	static $Object* VALUE_FRACTIONALMETRICS_ON;
+	static $Object* VALUE_FRACTIONALMETRICS_OFF;
+	static $Object* VALUE_FRACTIONALMETRICS_DEFAULT;
+	static ::sun::awt::SunHints$Key* KEY_DITHERING;
+	static $Object* VALUE_DITHER_ENABLE;
+	static $Object* VALUE_DITHER_DISABLE;
+	static $Object* VALUE_DITHER_DEFAULT;
+	static ::sun::awt::SunHints$Key* KEY_INTERPOLATION;
+	static $Object* VALUE_INTERPOLATION_NEAREST_NEIGHBOR;
+	static $Object* VALUE_INTERPOLATION_BILINEAR;
+	static $Object* VALUE_INTERPOLATION_BICUBIC;
+	static ::sun::awt::SunHints$Key* KEY_ALPHA_INTERPOLATION;
+	static $Object* VALUE_ALPHA_INTERPOLATION_SPEED;
+	static $Object* VALUE_ALPHA_INTERPOLATION_QUALITY;
+	static $Object* VALUE_ALPHA_INTERPOLATION_DEFAULT;
+	static ::sun::awt::SunHints$Key* KEY_COLOR_RENDERING;
+	static $Object* VALUE_COLOR_RENDER_SPEED;
+	static $Object* VALUE_COLOR_RENDER_QUALITY;
+	static $Object* VALUE_COLOR_RENDER_DEFAULT;
+	static ::sun::awt::SunHints$Key* KEY_STROKE_CONTROL;
+	static $Object* VALUE_STROKE_DEFAULT;
+	static $Object* VALUE_STROKE_NORMALIZE;
+	static $Object* VALUE_STROKE_PURE;
+	static ::sun::awt::SunHints$Key* KEY_RESOLUTION_VARIANT;
+	static $Object* VALUE_RESOLUTION_VARIANT_DEFAULT;
+	static $Object* VALUE_RESOLUTION_VARIANT_BASE;
+	static $Object* VALUE_RESOLUTION_VARIANT_SIZE_FIT;
+	static $Object* VALUE_RESOLUTION_VARIANT_DPI_FIT;
+	static ::java::awt::RenderingHints$Key* KEY_TEXT_ANTIALIAS_LCD_CONTRAST;
+};
+
+	} // awt
+} // sun
+
+#pragma pop_macro("INTKEY_AATEXT_LCD_CONTRAST")
+#pragma pop_macro("INTKEY_ALPHA_INTERPOLATION")
+#pragma pop_macro("INTKEY_ANTIALIASING")
+#pragma pop_macro("INTKEY_COLOR_RENDERING")
+#pragma pop_macro("INTKEY_DITHERING")
+#pragma pop_macro("INTKEY_FRACTIONALMETRICS")
+#pragma pop_macro("INTKEY_INTERPOLATION")
+#pragma pop_macro("INTKEY_RENDERING")
+#pragma pop_macro("INTKEY_RESOLUTION_VARIANT")
+#pragma pop_macro("INTKEY_STROKE_CONTROL")
+#pragma pop_macro("INTKEY_TEXT_ANTIALIASING")
+#pragma pop_macro("INTVAL_ALPHA_INTERPOLATION_DEFAULT")
+#pragma pop_macro("INTVAL_ALPHA_INTERPOLATION_QUALITY")
+#pragma pop_macro("INTVAL_ALPHA_INTERPOLATION_SPEED")
+#pragma pop_macro("INTVAL_ANTIALIAS_DEFAULT")
+#pragma pop_macro("INTVAL_ANTIALIAS_OFF")
+#pragma pop_macro("INTVAL_ANTIALIAS_ON")
+#pragma pop_macro("INTVAL_COLOR_RENDER_DEFAULT")
+#pragma pop_macro("INTVAL_COLOR_RENDER_QUALITY")
+#pragma pop_macro("INTVAL_COLOR_RENDER_SPEED")
+#pragma pop_macro("INTVAL_DITHER_DEFAULT")
+#pragma pop_macro("INTVAL_DITHER_DISABLE")
+#pragma pop_macro("INTVAL_DITHER_ENABLE")
+#pragma pop_macro("INTVAL_FRACTIONALMETRICS_DEFAULT")
+#pragma pop_macro("INTVAL_FRACTIONALMETRICS_OFF")
+#pragma pop_macro("INTVAL_FRACTIONALMETRICS_ON")
+#pragma pop_macro("INTVAL_INTERPOLATION_BICUBIC")
+#pragma pop_macro("INTVAL_INTERPOLATION_BILINEAR")
+#pragma pop_macro("INTVAL_INTERPOLATION_NEAREST_NEIGHBOR")
+#pragma pop_macro("INTVAL_RENDER_DEFAULT")
+#pragma pop_macro("INTVAL_RENDER_QUALITY")
+#pragma pop_macro("INTVAL_RENDER_SPEED")
+#pragma pop_macro("INTVAL_RESOLUTION_VARIANT_BASE")
+#pragma pop_macro("INTVAL_RESOLUTION_VARIANT_DEFAULT")
+#pragma pop_macro("INTVAL_RESOLUTION_VARIANT_DPI_FIT")
+#pragma pop_macro("INTVAL_RESOLUTION_VARIANT_SIZE_FIT")
+#pragma pop_macro("INTVAL_STROKE_DEFAULT")
+#pragma pop_macro("INTVAL_STROKE_NORMALIZE")
+#pragma pop_macro("INTVAL_STROKE_PURE")
+#pragma pop_macro("INTVAL_TEXT_ANTIALIAS_DEFAULT")
+#pragma pop_macro("INTVAL_TEXT_ANTIALIAS_GASP")
+#pragma pop_macro("INTVAL_TEXT_ANTIALIAS_LCD_HBGR")
+#pragma pop_macro("INTVAL_TEXT_ANTIALIAS_LCD_HRGB")
+#pragma pop_macro("INTVAL_TEXT_ANTIALIAS_LCD_VBGR")
+#pragma pop_macro("INTVAL_TEXT_ANTIALIAS_LCD_VRGB")
+#pragma pop_macro("INTVAL_TEXT_ANTIALIAS_OFF")
+#pragma pop_macro("INTVAL_TEXT_ANTIALIAS_ON")
+#pragma pop_macro("KEY_ALPHA_INTERPOLATION")
+#pragma pop_macro("KEY_ANTIALIASING")
+#pragma pop_macro("KEY_COLOR_RENDERING")
+#pragma pop_macro("KEY_DITHERING")
+#pragma pop_macro("KEY_FRACTIONALMETRICS")
+#pragma pop_macro("KEY_INTERPOLATION")
+#pragma pop_macro("KEY_RENDERING")
+#pragma pop_macro("KEY_RESOLUTION_VARIANT")
+#pragma pop_macro("KEY_STROKE_CONTROL")
+#pragma pop_macro("KEY_TEXT_ANTIALIASING")
+#pragma pop_macro("KEY_TEXT_ANTIALIAS_LCD_CONTRAST")
+#pragma pop_macro("NUM_KEYS")
+#pragma pop_macro("VALS_PER_KEY")
+#pragma pop_macro("VALUE_ALPHA_INTERPOLATION_DEFAULT")
+#pragma pop_macro("VALUE_ALPHA_INTERPOLATION_QUALITY")
+#pragma pop_macro("VALUE_ALPHA_INTERPOLATION_SPEED")
+#pragma pop_macro("VALUE_ANTIALIAS_DEFAULT")
+#pragma pop_macro("VALUE_ANTIALIAS_OFF")
+#pragma pop_macro("VALUE_ANTIALIAS_ON")
+#pragma pop_macro("VALUE_COLOR_RENDER_DEFAULT")
+#pragma pop_macro("VALUE_COLOR_RENDER_QUALITY")
+#pragma pop_macro("VALUE_COLOR_RENDER_SPEED")
+#pragma pop_macro("VALUE_DITHER_DEFAULT")
+#pragma pop_macro("VALUE_DITHER_DISABLE")
+#pragma pop_macro("VALUE_DITHER_ENABLE")
+#pragma pop_macro("VALUE_FRACTIONALMETRICS_DEFAULT")
+#pragma pop_macro("VALUE_FRACTIONALMETRICS_OFF")
+#pragma pop_macro("VALUE_FRACTIONALMETRICS_ON")
+#pragma pop_macro("VALUE_INTERPOLATION_BICUBIC")
+#pragma pop_macro("VALUE_INTERPOLATION_BILINEAR")
+#pragma pop_macro("VALUE_INTERPOLATION_NEAREST_NEIGHBOR")
+#pragma pop_macro("VALUE_RENDER_DEFAULT")
+#pragma pop_macro("VALUE_RENDER_QUALITY")
+#pragma pop_macro("VALUE_RENDER_SPEED")
+#pragma pop_macro("VALUE_RESOLUTION_VARIANT_BASE")
+#pragma pop_macro("VALUE_RESOLUTION_VARIANT_DEFAULT")
+#pragma pop_macro("VALUE_RESOLUTION_VARIANT_DPI_FIT")
+#pragma pop_macro("VALUE_RESOLUTION_VARIANT_SIZE_FIT")
+#pragma pop_macro("VALUE_STROKE_DEFAULT")
+#pragma pop_macro("VALUE_STROKE_NORMALIZE")
+#pragma pop_macro("VALUE_STROKE_PURE")
+#pragma pop_macro("VALUE_TEXT_ANTIALIAS_DEFAULT")
+#pragma pop_macro("VALUE_TEXT_ANTIALIAS_GASP")
+#pragma pop_macro("VALUE_TEXT_ANTIALIAS_LCD_HBGR")
+#pragma pop_macro("VALUE_TEXT_ANTIALIAS_LCD_HRGB")
+#pragma pop_macro("VALUE_TEXT_ANTIALIAS_LCD_VBGR")
+#pragma pop_macro("VALUE_TEXT_ANTIALIAS_LCD_VRGB")
+#pragma pop_macro("VALUE_TEXT_ANTIALIAS_OFF")
+#pragma pop_macro("VALUE_TEXT_ANTIALIAS_ON")
+
+#endif // _sun_awt_SunHints_h_

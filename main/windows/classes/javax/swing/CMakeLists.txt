@@ -1,0 +1,21 @@
+#machine generated
+
+add_subdirectory("beaninfo")
+add_subdirectory("border")
+add_subdirectory("colorchooser")
+add_subdirectory("event")
+add_subdirectory("filechooser")
+add_subdirectory("plaf")
+add_subdirectory("table")
+add_subdirectory("text")
+add_subdirectory("tree")
+add_subdirectory("undo")
+
+aux_source_directory("${CMAKE_CURRENT_SOURCE_DIR}" windows-classes.javax.swing_SRCS)
+file(GLOB windows-classes.javax.swing_HEADERS *.h *.hpp)
+source_group("Include" FILES ${windows-classes.javax.swing_HEADERS}) 
+list(LENGTH windows-classes.javax.swing_SRCS windows-classes.javax.swing_SRCS_LENGTH)
+if(windows-classes.javax.swing_SRCS_LENGTH)
+	add_library(windows-classes.javax.swing OBJECT "${windows-classes.javax.swing_SRCS}" "${windows-classes.javax.swing_HEADERS}")
+	jcpp_enable_bigobj(windows-classes.javax.swing)
+endif()

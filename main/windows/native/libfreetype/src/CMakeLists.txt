@@ -1,0 +1,23 @@
+#machine generated
+
+add_subdirectory("autofit")
+add_subdirectory("base")
+add_subdirectory("cff")
+add_subdirectory("cid")
+add_subdirectory("psaux")
+add_subdirectory("pshinter")
+add_subdirectory("psnames")
+add_subdirectory("raster")
+add_subdirectory("sfnt")
+add_subdirectory("smooth")
+add_subdirectory("truetype")
+add_subdirectory("type1")
+
+aux_source_directory("${CMAKE_CURRENT_SOURCE_DIR}" windows-native.libfreetype.src_SRCS)
+file(GLOB windows-native.libfreetype.src_HEADERS *.h *.hpp)
+source_group("Include" FILES ${windows-native.libfreetype.src_HEADERS}) 
+list(LENGTH windows-native.libfreetype.src_SRCS windows-native.libfreetype.src_SRCS_LENGTH)
+if(windows-native.libfreetype.src_SRCS_LENGTH)
+	add_library(windows-native.libfreetype.src OBJECT "${windows-native.libfreetype.src_SRCS}" "${windows-native.libfreetype.src_HEADERS}")
+	jcpp_enable_bigobj(windows-native.libfreetype.src)
+endif()

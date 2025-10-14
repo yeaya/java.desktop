@@ -1,0 +1,22 @@
+#machine generated
+
+add_subdirectory("datatransfer")
+add_subdirectory("dnd")
+add_subdirectory("event")
+add_subdirectory("geom")
+add_subdirectory("im")
+add_subdirectory("image")
+add_subdirectory("resources")
+add_subdirectory("shell")
+add_subdirectory("util")
+add_subdirectory("windows")
+add_subdirectory("www")
+
+aux_source_directory("${CMAKE_CURRENT_SOURCE_DIR}" windows-classes.sun.awt_SRCS)
+file(GLOB windows-classes.sun.awt_HEADERS *.h *.hpp)
+source_group("Include" FILES ${windows-classes.sun.awt_HEADERS}) 
+list(LENGTH windows-classes.sun.awt_SRCS windows-classes.sun.awt_SRCS_LENGTH)
+if(windows-classes.sun.awt_SRCS_LENGTH)
+	add_library(windows-classes.sun.awt OBJECT "${windows-classes.sun.awt_SRCS}" "${windows-classes.sun.awt_HEADERS}")
+	jcpp_enable_bigobj(windows-classes.sun.awt)
+endif()

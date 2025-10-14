@@ -1,0 +1,68 @@
+#ifndef _javax_swing_plaf_basic_BasicTextAreaUI_h_
+#define _javax_swing_plaf_basic_BasicTextAreaUI_h_
+//$ class javax.swing.plaf.basic.BasicTextAreaUI
+//$ extends javax.swing.plaf.basic.BasicTextUI
+
+#include <javax/swing/plaf/basic/BasicTextUI.h>
+
+namespace java {
+	namespace awt {
+		class Component$BaselineResizeBehavior;
+		class Dimension;
+	}
+}
+namespace java {
+	namespace beans {
+		class PropertyChangeEvent;
+	}
+}
+namespace javax {
+	namespace swing {
+		class JComponent;
+	}
+}
+namespace javax {
+	namespace swing {
+		namespace plaf {
+			class ComponentUI;
+		}
+	}
+}
+namespace javax {
+	namespace swing {
+		namespace text {
+			class Element;
+			class View;
+		}
+	}
+}
+
+namespace javax {
+	namespace swing {
+		namespace plaf {
+			namespace basic {
+
+class $export BasicTextAreaUI : public ::javax::swing::plaf::basic::BasicTextUI {
+	$class(BasicTextAreaUI, $NO_CLASS_INIT, ::javax::swing::plaf::basic::BasicTextUI)
+public:
+	BasicTextAreaUI();
+	using ::javax::swing::plaf::basic::BasicTextUI::create;
+	void init$();
+	virtual ::javax::swing::text::View* create(::javax::swing::text::Element* elem) override;
+	virtual ::javax::swing::text::View* createI18N(::javax::swing::text::Element* elem);
+	static ::javax::swing::plaf::ComponentUI* createUI(::javax::swing::JComponent* ta);
+	virtual int32_t getBaseline(::javax::swing::JComponent* c, int32_t width, int32_t height) override;
+	virtual ::java::awt::Component$BaselineResizeBehavior* getBaselineResizeBehavior(::javax::swing::JComponent* c) override;
+	virtual ::java::awt::Dimension* getMinimumSize(::javax::swing::JComponent* c) override;
+	virtual ::java::awt::Dimension* getPreferredSize(::javax::swing::JComponent* c) override;
+	virtual $String* getPropertyPrefix() override;
+	virtual void installDefaults() override;
+	virtual void propertyChange(::java::beans::PropertyChangeEvent* evt) override;
+};
+
+			} // basic
+		} // plaf
+	} // swing
+} // javax
+
+#endif // _javax_swing_plaf_basic_BasicTextAreaUI_h_

@@ -1,0 +1,7 @@
+java.desktop:17.35
+java.logging:17.35
+jdk.httpserver:17.35
+java.prefs:17.35
+java.datatransfer:17.35
+java.xml:17.35
+java.base:17.35

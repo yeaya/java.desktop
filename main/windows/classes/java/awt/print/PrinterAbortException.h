@@ -1,0 +1,28 @@
+#ifndef _java_awt_print_PrinterAbortException_h_
+#define _java_awt_print_PrinterAbortException_h_
+//$ class java.awt.print.PrinterAbortException
+//$ extends java.awt.print.PrinterException
+
+#include <java/awt/print/PrinterException.h>
+
+namespace java {
+	namespace awt {
+		namespace print {
+
+class $export PrinterAbortException : public ::java::awt::print::PrinterException {
+	$class(PrinterAbortException, $NO_CLASS_INIT, ::java::awt::print::PrinterException)
+public:
+	PrinterAbortException();
+	void init$();
+	void init$($String* msg);
+	static const int64_t serialVersionUID = (int64_t)0x41932C31C3078DF8;
+	PrinterAbortException(const PrinterAbortException& e);
+	PrinterAbortException wrapper$();
+	virtual void throwWrapper$() override;
+};
+
+		} // print
+	} // awt
+} // java
+
+#endif // _java_awt_print_PrinterAbortException_h_
