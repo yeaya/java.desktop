@@ -257,8 +257,7 @@ if(JCPP_OS MATCHES "windows")
 		DESTINATION "${JCPP_INSTALL_PATH}"
 	)
 endif()
-
-if(JCPP_OS MATCHES "windows")
+if(INSTALL_TO_REPO AND JCPP_OS MATCHES "windows")
 	install(
 		FILES "windows/dependencies.txt"
 		DESTINATION "${JCPP_INSTALL_PATH}"
