@@ -254,12 +254,12 @@ endif()
 if(JCPP_OS MATCHES "windows")
 	install(
 		DIRECTORY "windows/include/"
-		DESTINATION "include"
+		DESTINATION "${JCPP_INSTALL_INCLUDE_DIR}"
 	)
 endif()
 if(INSTALL_TO_REPO AND JCPP_OS MATCHES "windows")
 	install(
 		FILES "windows/dependencies.txt"
-		DESTINATION "."
+		DESTINATION "${JCPP_INSTALL_DIR}"
 	)
 endif()
