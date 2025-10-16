@@ -80,7 +80,7 @@ endif()
 
 jcpp_enable_bigobj(${JCPP_PROJECT_FULL_NAME}-test)
 
-install(TARGETS ${JCPP_PROJECT_FULL_NAME}-test DESTINATION "${JCPP_BIN_INSTALL_PATH}")
+install(TARGETS ${JCPP_PROJECT_FULL_NAME}-test DESTINATION "${JCPP_INSTALL_BIN_DIR}")
 
 if(JCPP_OS MATCHES "windows")
 	add_test(NAME AbstractActionBug COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> AbstractActionBug)
