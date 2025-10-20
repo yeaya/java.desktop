@@ -2296,6 +2296,7 @@ case$128:
 }
 
 AffineTransform* AffineTransform::createInverse() {
+	$useLocalCurrentObjectStackCache();
 	double det = 0.0;
 	do {
 		if (this->state == ((AffineTransform::APPLY_SHEAR | AffineTransform::APPLY_SCALE) | AffineTransform::APPLY_TRANSLATE)) {
@@ -2395,6 +2396,7 @@ case$137:
 }
 
 void AffineTransform::invert() {
+	$useLocalCurrentObjectStackCache();
 	double M00 = 0.0;
 	double M01 = 0.0;
 	double M02 = 0.0;
@@ -2640,6 +2642,7 @@ case$155:
 }
 
 void AffineTransform::transform($Point2DArray* ptSrc, int32_t srcOff, $Point2DArray* ptDst, int32_t dstOff, int32_t numPts) {
+	$useLocalCurrentObjectStackCache();
 	int32_t state = this->state;
 	while (--numPts >= 0) {
 		$var($Point2D, src, $nc(ptSrc)->get(srcOff++));
@@ -3321,6 +3324,7 @@ case$200:
 }
 
 $Point2D* AffineTransform::inverseTransform($Point2D* ptSrc, $Point2D* ptDst$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point2D, ptDst, ptDst$renamed);
 	if (ptDst == nullptr) {
 		if ($instanceOf($Point2D$Double, ptSrc)) {
@@ -3428,6 +3432,7 @@ case$209:
 }
 
 void AffineTransform::inverseTransform($doubles* srcPts, int32_t srcOff, $doubles* dstPts, int32_t dstOff, int32_t numPts) {
+	$useLocalCurrentObjectStackCache();
 	double M00 = 0.0;
 	double M01 = 0.0;
 	double M02 = 0.0;
@@ -3802,6 +3807,7 @@ double AffineTransform::_matround(double matval) {
 }
 
 $String* AffineTransform::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$9, $$str({"AffineTransform[["_s, $$str(_matround(this->m00)), ", "_s}));
 	$var($String, var$8, $$concat(var$9, $$str(_matround(this->m01))));
 	$var($String, var$7, $$concat(var$8, ", "));

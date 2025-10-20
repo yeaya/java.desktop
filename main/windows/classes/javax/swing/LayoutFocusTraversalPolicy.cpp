@@ -127,6 +127,7 @@ void LayoutFocusTraversalPolicy::init$($Comparator* c) {
 }
 
 $Component* LayoutFocusTraversalPolicy::getComponentAfter($Container* aContainer, $Component* aComponent) {
+	$useLocalCurrentObjectStackCache();
 	if (aContainer == nullptr || aComponent == nullptr) {
 		$throwNew($IllegalArgumentException, "aContainer and aComponent cannot be null"_s);
 	}
@@ -138,6 +139,7 @@ $Component* LayoutFocusTraversalPolicy::getComponentAfter($Container* aContainer
 }
 
 $Component* LayoutFocusTraversalPolicy::getComponentBefore($Container* aContainer, $Component* aComponent) {
+	$useLocalCurrentObjectStackCache();
 	if (aContainer == nullptr || aComponent == nullptr) {
 		$throwNew($IllegalArgumentException, "aContainer and aComponent cannot be null"_s);
 	}
@@ -149,6 +151,7 @@ $Component* LayoutFocusTraversalPolicy::getComponentBefore($Container* aContaine
 }
 
 $Component* LayoutFocusTraversalPolicy::getFirstComponent($Container* aContainer) {
+	$useLocalCurrentObjectStackCache();
 	if (aContainer == nullptr) {
 		$throwNew($IllegalArgumentException, "aContainer cannot be null"_s);
 	}
@@ -160,6 +163,7 @@ $Component* LayoutFocusTraversalPolicy::getFirstComponent($Container* aContainer
 }
 
 $Component* LayoutFocusTraversalPolicy::getLastComponent($Container* aContainer) {
+	$useLocalCurrentObjectStackCache();
 	if (aContainer == nullptr) {
 		$throwNew($IllegalArgumentException, "aContainer cannot be null"_s);
 	}
@@ -171,6 +175,7 @@ $Component* LayoutFocusTraversalPolicy::getLastComponent($Container* aContainer)
 }
 
 bool LayoutFocusTraversalPolicy::accept($Component* aComponent) {
+	$useLocalCurrentObjectStackCache();
 	if (!$SortingFocusTraversalPolicy::accept(aComponent)) {
 		return false;
 	} else if ($SunToolkit::isInstanceOf($of(aComponent), "javax.swing.JTable"_s)) {

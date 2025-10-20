@@ -43,6 +43,7 @@ void HeadlessJDialog::init$() {
 }
 
 void HeadlessJDialog::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	bool exceptions = false;
 	$var($JDialog, b, nullptr);
 	try {

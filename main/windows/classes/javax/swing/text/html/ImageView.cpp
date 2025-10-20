@@ -270,11 +270,13 @@ void ImageView::init$($Element* elem) {
 }
 
 $String* ImageView::getAltText() {
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Attribute);
 	return $cast($String, $nc($($nc($(getElement()))->getAttributes()))->getAttribute($HTML$Attribute::ALT));
 }
 
 $URL* ImageView::getImageURL() {
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Attribute);
 	$var($String, src, $cast($String, $nc($($nc($(getElement()))->getAttributes()))->getAttribute($HTML$Attribute::SRC)));
 	if (src == nullptr) {
@@ -344,6 +346,7 @@ $String* ImageView::getToolTipText(float x, float y, $Shape* allocation) {
 }
 
 void ImageView::setPropertiesFromAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($StyleSheet, sheet, getStyleSheet());
 	$set(this, attr, $nc(sheet)->getViewAttributes(this));
 	$init($HTML$Attribute);
@@ -395,6 +398,7 @@ void ImageView::changedUpdate($DocumentEvent* e, $Shape* a, $ViewFactory* f) {
 }
 
 void ImageView::paint($Graphics* g, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	sync();
 	$var($Rectangle, rect, ($instanceOf($Rectangle, a)) ? $cast($Rectangle, a) : $nc(a)->getBounds());
 	$var($Rectangle, clip, $nc(g)->getClipBounds());
@@ -432,6 +436,7 @@ void ImageView::paint($Graphics* g, $Shape* a) {
 }
 
 void ImageView::paintHighlights($Graphics* g, $Shape* shape) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JTextComponent, this->container)) {
 		$var($JTextComponent, tc, $cast($JTextComponent, this->container));
 		$var($Highlighter, h, $nc(tc)->getHighlighter());
@@ -457,6 +462,7 @@ void ImageView::paintBorder($Graphics* g, $Rectangle* rect) {
 }
 
 float ImageView::getPreferredSpan(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	sync();
 	if (axis == $View::X_AXIS && ((int32_t)(this->state & (uint32_t)ImageView::WIDTH_FLAG)) == ImageView::WIDTH_FLAG) {
 		getPreferredSpanFromAltView(axis);
@@ -581,6 +587,7 @@ void ImageView::repaint(int64_t delay) {
 }
 
 int32_t ImageView::getIntAttr($HTML$Attribute* name, int32_t deflt) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attr, $nc($(getElement()))->getAttributes());
 	if ($nc(attr)->isDefined(name)) {
 		int32_t i = 0;
@@ -640,6 +647,7 @@ void ImageView::refreshImage() {
 }
 
 void ImageView::loadImage() {
+	$useLocalCurrentObjectStackCache();
 	$var($URL, src, getImageURL());
 	$var($Image, newImage, nullptr);
 	if (src != nullptr) {
@@ -658,6 +666,7 @@ void ImageView::loadImage() {
 }
 
 void ImageView::updateImageSize() {
+	$useLocalCurrentObjectStackCache();
 	int32_t newWidth = 0;
 	int32_t newHeight = 0;
 	int32_t newState = 0;
@@ -732,6 +741,7 @@ void ImageView::updateImageSize() {
 }
 
 void ImageView::updateAltTextView() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, text, getAltText());
 	if (text != nullptr) {
 		$var($ImageView$ImageLabelView, newView, nullptr);
@@ -743,6 +753,7 @@ void ImageView::updateAltTextView() {
 }
 
 $View* ImageView::getAltView() {
+	$useLocalCurrentObjectStackCache();
 	$var($View, view, nullptr);
 	$synchronized(this) {
 		$assign(view, this->altView);
@@ -754,6 +765,7 @@ $View* ImageView::getAltView() {
 }
 
 void ImageView::safePreferenceChanged() {
+	$useLocalCurrentObjectStackCache();
 	if ($SwingUtilities::isEventDispatchThread()) {
 		$var($Document, doc, getDocument());
 		if ($instanceOf($AbstractDocument, doc)) {

@@ -90,6 +90,7 @@ void BasicTabbedPaneUI$ScrollableTabButton::finalize() {
 }
 
 void BasicTabbedPaneUI$ScrollableTabButton::init$($BasicTabbedPaneUI* this$0, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	int32_t var$0 = direction;
 	$var($Color, var$1, $UIManager::getColor("TabbedPane.selected"_s));

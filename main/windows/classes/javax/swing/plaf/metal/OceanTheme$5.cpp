@@ -79,6 +79,7 @@ void OceanTheme$5::init$($OceanTheme* this$0) {
 }
 
 $Object* OceanTheme$5::createValue($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, var$0, this->this$0->getHastenedIcon("icons/ocean/paletteClose.gif"_s, table));
 	return $of($new($OceanTheme$IFIcon, var$0, $(this->this$0->getHastenedIcon("icons/ocean/paletteClose-pressed.gif"_s, table))));
 }

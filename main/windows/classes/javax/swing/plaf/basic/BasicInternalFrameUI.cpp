@@ -287,6 +287,7 @@ void BasicInternalFrameUI::uninstallUI($JComponent* c) {
 }
 
 void BasicInternalFrameUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, frameIcon, $nc(this->frame)->getFrameIcon());
 	if (frameIcon == nullptr || $instanceOf($UIResource, frameIcon)) {
 		$nc(this->frame)->setFrameIcon($($UIManager::getIcon("InternalFrame.icon"_s)));
@@ -318,6 +319,7 @@ void BasicInternalFrameUI::loadActionMap($LazyActionMap* map) {
 }
 
 void BasicInternalFrameUI::installComponents() {
+	$useLocalCurrentObjectStackCache();
 	setNorthPane($(createNorthPane(this->frame)));
 	setSouthPane($(createSouthPane(this->frame)));
 	setEastPane($(createEastPane(this->frame)));
@@ -325,6 +327,7 @@ void BasicInternalFrameUI::installComponents() {
 }
 
 void BasicInternalFrameUI::installListeners() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, borderListener, createBorderListener(this->frame));
 	$set(this, propertyChangeListener, createPropertyChangeListener());
 	$nc(this->frame)->addPropertyChangeListener(this->propertyChangeListener);
@@ -402,6 +405,7 @@ void BasicInternalFrameUI::uninstallComponents() {
 }
 
 void BasicInternalFrameUI::uninstallListeners() {
+	$useLocalCurrentObjectStackCache();
 	if (($nc(this->frame)->getParent() != nullptr) && this->componentListenerAdded) {
 		$nc($($nc(this->frame)->getParent()))->removeComponentListener(this->componentListener);
 		this->componentListenerAdded = false;
@@ -574,6 +578,7 @@ void BasicInternalFrameUI::setEastPane($JComponent* c) {
 }
 
 $DesktopManager* BasicInternalFrameUI::getDesktopManager() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(this->frame)->getDesktopPane() != nullptr;
 	if (var$0 && $nc($($nc(this->frame)->getDesktopPane()))->getDesktopManager() != nullptr) {
 		return $nc($($nc(this->frame)->getDesktopPane()))->getDesktopManager();

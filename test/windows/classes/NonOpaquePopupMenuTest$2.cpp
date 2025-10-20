@@ -75,6 +75,7 @@ void NonOpaquePopupMenuTest$2::init$($booleans* val$result) {
 }
 
 void NonOpaquePopupMenuTest$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($NonOpaquePopupMenuTest);
 	$nc(this->val$result)->set(0, $nc($($nc($($nc($NonOpaquePopupMenuTest::fileMenu)->getPopupMenu()))->getParent()))->isOpaque());
 }

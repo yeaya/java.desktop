@@ -90,6 +90,7 @@ $Object* allocate$ImageTypeSpecifier$Grayscale($Class* clazz) {
 }
 
 void ImageTypeSpecifier$Grayscale::init$(int32_t bits, int32_t dataType, bool isSigned, bool hasAlpha, bool isAlphaPremultiplied) {
+	$useLocalCurrentObjectStackCache();
 	$ImageTypeSpecifier::init$();
 	if (bits != 1 && bits != 2 && bits != 4 && bits != 8 && bits != 16) {
 		$throwNew($IllegalArgumentException, "Bad value for bits!"_s);

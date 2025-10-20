@@ -306,6 +306,7 @@ void FormView::init$($Element* elem) {
 }
 
 $Component* FormView::createComponent() {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attr, $nc($(getElement()))->getAttributes());
 	$init($StyleConstants);
 	$var($HTML$Tag, t, $cast($HTML$Tag, $nc(attr)->getAttribute($StyleConstants::NameAttribute)));
@@ -349,6 +350,7 @@ $Component* FormView::createComponent() {
 }
 
 $JComponent* FormView::createInputComponent($AttributeSet* attr, Object$* model) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, c, nullptr);
 	$init($HTML$Attribute);
 	$var($String, type, $cast($String, $nc(attr)->getAttribute($HTML$Attribute::TYPE)));
@@ -445,6 +447,7 @@ $JComponent* FormView::createInputComponent($AttributeSet* attr, Object$* model)
 }
 
 void FormView::removeStaleListenerForModel(Object$* model) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($DefaultButtonModel, model)) {
 		$var($DefaultButtonModel, buttonModel, $cast($DefaultButtonModel, model));
 		$var($String, listenerClass, "javax.swing.AbstractButton$Handler"_s);
@@ -553,6 +556,7 @@ float FormView::getMaximumSpan(int32_t axis) {
 }
 
 void FormView::actionPerformed($ActionEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, element, getElement());
 	$var($StringBuilder, dataBuffer, $new($StringBuilder));
 	$var($HTMLDocument, doc, $cast($HTMLDocument, getDocument()));
@@ -578,6 +582,7 @@ void FormView::actionPerformed($ActionEvent* evt) {
 }
 
 void FormView::submitData($String* data) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, form, getFormElement());
 	$var($AttributeSet, attrs, $nc(form)->getAttributes());
 	$var($HTMLDocument, doc, $cast($HTMLDocument, form->getDocument()));
@@ -633,6 +638,7 @@ void FormView::submitData($String* data) {
 }
 
 void FormView::storePostData($HTMLDocument* doc, $String* target, $String* data) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, propDoc, static_cast<$Document*>(static_cast<$AbstractDocument*>(static_cast<$DefaultStyledDocument*>(doc))));
 	$var($String, propName, FormView::PostDataProperty);
 	if ($nc(doc)->isFrameDocument()) {
@@ -648,6 +654,7 @@ void FormView::storePostData($HTMLDocument* doc, $String* target, $String* data)
 }
 
 void FormView::imageSubmit($String* imageData) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, dataBuffer, $new($StringBuilder));
 	$var($Element, elem, getElement());
 	$var($HTMLDocument, hdoc, $cast($HTMLDocument, $nc(elem)->getDocument()));
@@ -661,6 +668,7 @@ void FormView::imageSubmit($String* imageData) {
 }
 
 $String* FormView::getImageData($Point* point) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, mouseCoords, $str({$$str($nc(point)->x), ":"_s, $$str(point->y)}));
 	int32_t sep = $nc(mouseCoords)->indexOf((int32_t)u':');
 	$var($String, x, mouseCoords->substring(0, sep));
@@ -678,6 +686,7 @@ $String* FormView::getImageData($Point* point) {
 }
 
 $Element* FormView::getFormElement() {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, getElement());
 	while (elem != nullptr) {
 		$init($StyleConstants);
@@ -691,6 +700,7 @@ $Element* FormView::getFormElement() {
 }
 
 void FormView::getFormData($StringBuilder* buffer) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, formE, getFormElement());
 	if (formE != nullptr) {
 		$var($ElementIterator, it, $new($ElementIterator, formE));
@@ -710,6 +720,7 @@ void FormView::getFormData($StringBuilder* buffer) {
 }
 
 void FormView::loadElementDataIntoBuffer($Element* elem, $StringBuilder* buffer) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attr, $nc(elem)->getAttributes());
 	$init($HTML$Attribute);
 	$var($String, name, $cast($String, $nc(attr)->getAttribute($HTML$Attribute::NAME)));
@@ -737,6 +748,7 @@ void FormView::loadElementDataIntoBuffer($Element* elem, $StringBuilder* buffer)
 }
 
 $String* FormView::getInputElementData($AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$init($StyleConstants);
 	$var($Object, model, $nc(attr)->getAttribute($StyleConstants::ModelAttribute));
 	$init($HTML$Attribute);
@@ -787,6 +799,7 @@ $String* FormView::getInputElementData($AttributeSet* attr) {
 }
 
 $String* FormView::getTextAreaData($AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$init($StyleConstants);
 	$var($Document, doc, $cast($Document, $nc(attr)->getAttribute($StyleConstants::ModelAttribute)));
 	try {
@@ -799,6 +812,7 @@ $String* FormView::getTextAreaData($AttributeSet* attr) {
 }
 
 void FormView::loadSelectData($AttributeSet* attr, $StringBuilder* buffer) {
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Attribute);
 	$var($String, name, $cast($String, $nc(attr)->getAttribute($HTML$Attribute::NAME)));
 	if (name == nullptr) {
@@ -832,6 +846,7 @@ void FormView::loadSelectData($AttributeSet* attr, $StringBuilder* buffer) {
 }
 
 void FormView::appendBuffer($StringBuilder* buffer, $String* name, $String* value) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(buffer)->length() > 0) {
 		buffer->append(u'&');
 	}
@@ -847,6 +862,7 @@ bool FormView::isControl($Element* elem) {
 }
 
 bool FormView::isLastTextOrPasswordField() {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, parent, getFormElement());
 	$var($Element, elem, getElement());
 	if (parent != nullptr) {
@@ -874,6 +890,7 @@ bool FormView::isLastTextOrPasswordField() {
 }
 
 void FormView::resetForm() {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, parent, getFormElement());
 	if (parent != nullptr) {
 		$var($ElementIterator, it, $new($ElementIterator, parent));

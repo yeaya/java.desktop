@@ -66,6 +66,7 @@ void Test7048204$1::init$() {
 }
 
 void Test7048204$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$new($JLabel);
 	$var($UIDefaults, uid, $UIManager::getDefaults());
 	$nc(uid)->putDefaults($$new($ObjectArray, 0));

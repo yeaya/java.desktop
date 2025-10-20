@@ -158,6 +158,7 @@ int32_t IconInfo::getScaledRawLength(int32_t w, int32_t h) {
 }
 
 $ints* IconInfo::getScaledWidthAndHeight(int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, tx, $nc($($nc($($nc($($GraphicsEnvironment::getLocalGraphicsEnvironment()))->getDefaultScreenDevice()))->getDefaultConfiguration()))->getDefaultTransform());
 	int32_t w = $Region::clipScale(width, $nc(tx)->getScaleX());
 	int32_t h = $Region::clipScale(height, $nc(tx)->getScaleY());
@@ -180,6 +181,7 @@ int32_t IconInfo::getHeight() {
 }
 
 $String* IconInfo::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"IconInfo[w="_s, $$str(this->width), ",h="_s, $$str(this->height), ",sw="_s, $$str(this->scaledWidth), ",sh="_s, $$str(this->scaledHeight), "]"_s});
 }
 
@@ -239,6 +241,7 @@ $longs* IconInfo::intArrayToLongArray($ints* intData) {
 }
 
 $Image* IconInfo::intArrayToImage($ints* raw) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, cm, $new($DirectColorModel, $($ColorSpace::getInstance($ColorSpace::CS_sRGB)), 32, 0x00FF0000, 0x0000FF00, 255, (int32_t)0xFF000000, false, $DataBuffer::TYPE_INT));
 	$var($DataBuffer, buffer, $new($DataBufferInt, raw, $nc(raw)->length - 2, 2));
 	$var($WritableRaster, raster, $Raster::createPackedRaster(buffer, $nc(raw)->get(0), raw->get(1), raw->get(0), $$new($ints, {
@@ -252,6 +255,7 @@ $Image* IconInfo::intArrayToImage($ints* raw) {
 }
 
 $ints* IconInfo::imageToIntArray($Image* image, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (width <= 0 || height <= 0) {
 		return nullptr;
 	}

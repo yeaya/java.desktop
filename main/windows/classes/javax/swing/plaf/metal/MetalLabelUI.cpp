@@ -79,6 +79,7 @@ void MetalLabelUI::init$() {
 
 $ComponentUI* MetalLabelUI::createUI($JComponent* c) {
 	$init(MetalLabelUI);
+	$useLocalCurrentObjectStackCache();
 	if ($System::getSecurityManager() != nullptr) {
 		$var($AppContext, appContext, $AppContext::getAppContext());
 		$var(MetalLabelUI, safeMetalLabelUI, $cast(MetalLabelUI, $nc(appContext)->get(MetalLabelUI::METAL_LABEL_UI_KEY)));

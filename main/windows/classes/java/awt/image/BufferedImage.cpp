@@ -286,6 +286,7 @@ void BufferedImage::initIDs() {
 }
 
 void BufferedImage::init$(int32_t width, int32_t height, int32_t imageType) {
+	$useLocalCurrentObjectStackCache();
 	$Image::init$();
 	this->imageType = BufferedImage::TYPE_CUSTOM;
 	switch (imageType) {
@@ -462,6 +463,7 @@ void BufferedImage::init$(int32_t width, int32_t height, int32_t imageType) {
 }
 
 void BufferedImage::init$(int32_t width, int32_t height, int32_t imageType, $IndexColorModel* cm) {
+	$useLocalCurrentObjectStackCache();
 	$Image::init$();
 	this->imageType = BufferedImage::TYPE_CUSTOM;
 	bool var$0 = $nc(cm)->hasAlpha();
@@ -506,6 +508,7 @@ void BufferedImage::init$(int32_t width, int32_t height, int32_t imageType, $Ind
 }
 
 void BufferedImage::init$($ColorModel* cm, $WritableRaster* raster, bool isRasterPremultiplied, $Hashtable* properties) {
+	$useLocalCurrentObjectStackCache();
 	$Image::init$();
 	this->imageType = BufferedImage::TYPE_CUSTOM;
 	if (!$nc(cm)->isCompatibleRaster(raster)) {
@@ -632,6 +635,7 @@ void BufferedImage::init$($ColorModel* cm, $WritableRaster* raster, bool isRaste
 
 bool BufferedImage::isStandard($ColorModel* cm, $WritableRaster* wr) {
 	$init(BufferedImage);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$Class* cmClass = $nc($of(cm))->getClass();
 	$Class* wrClass = $nc($of(wr))->getClass();
@@ -661,6 +665,7 @@ int32_t BufferedImage::getRGB(int32_t x, int32_t y) {
 }
 
 $ints* BufferedImage::getRGB(int32_t startX, int32_t startY, int32_t w, int32_t h, $ints* rgbArray$renamed, int32_t offset, int32_t scansize) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, rgbArray, rgbArray$renamed);
 	int32_t yoff = offset;
 	int32_t off = 0;
@@ -783,6 +788,7 @@ $Graphics2D* BufferedImage::createGraphics() {
 }
 
 BufferedImage* BufferedImage::getSubimage(int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, var$0, this->colorModel);
 	$var($WritableRaster, var$1, $nc(this->raster)->createWritableChild(x, y, w, h, 0, 0, nullptr));
 	return $new(BufferedImage, var$0, var$1, $nc(this->colorModel)->isAlphaPremultiplied(), this->properties);
@@ -800,6 +806,7 @@ void BufferedImage::coerceData(bool isAlphaPremultiplied) {
 }
 
 $String* BufferedImage::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"BufferedImage@"_s, $($Integer::toHexString(hashCode())), ": type = "_s, $$str(this->imageType), " "_s, this->colorModel, " "_s, this->raster});
 }
 
@@ -808,6 +815,7 @@ $Vector* BufferedImage::getSources() {
 }
 
 $StringArray* BufferedImage::getPropertyNames() {
+	$useLocalCurrentObjectStackCache();
 	if (this->properties == nullptr || $nc(this->properties)->isEmpty()) {
 		return nullptr;
 	}
@@ -867,6 +875,7 @@ $Raster* BufferedImage::getTile(int32_t tileX, int32_t tileY) {
 }
 
 $Raster* BufferedImage::getData() {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = $nc(this->raster)->getWidth();
 	int32_t height = $nc(this->raster)->getHeight();
 	int32_t startX = $nc(this->raster)->getMinX();
@@ -883,6 +892,7 @@ $Raster* BufferedImage::getData() {
 }
 
 $Raster* BufferedImage::getData($Rectangle* rect) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, sm, $nc(this->raster)->getSampleModel());
 	$var($SampleModel, nsm, $nc(sm)->createCompatibleSampleModel($nc(rect)->width, rect->height));
 	$var($WritableRaster, wr, $Raster::createWritableRaster(nsm, $($nc(rect)->getLocation())));
@@ -915,6 +925,7 @@ $WritableRaster* BufferedImage::copyData($WritableRaster* outRaster) {
 }
 
 void BufferedImage::setData($Raster* r) {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = $nc(r)->getWidth();
 	int32_t height = r->getHeight();
 	int32_t startX = r->getMinX();
@@ -950,6 +961,7 @@ bool BufferedImage::isTileWritable(int32_t tileX, int32_t tileY) {
 }
 
 $PointArray* BufferedImage::getWritableTileIndices() {
+	$useLocalCurrentObjectStackCache();
 	$var($PointArray, p, $new($PointArray, 1));
 	p->set(0, $$new($Point, 0, 0));
 	return p;

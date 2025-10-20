@@ -39,6 +39,7 @@ void HeadlessOverlayLayout::init$() {
 }
 
 void HeadlessOverlayLayout::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($OverlayLayout, msm, $new($OverlayLayout, $$new($Container)));
 }
 

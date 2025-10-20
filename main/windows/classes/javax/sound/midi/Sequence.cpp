@@ -91,6 +91,7 @@ float Sequence::SMPTE_30DROP = 0.0;
 float Sequence::SMPTE_30 = 0.0;
 
 void Sequence::init$(float divisionType, int32_t resolution) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, tracks, $new($Vector));
 	if (divisionType == Sequence::PPQ) {
 		this->divisionType = Sequence::PPQ;
@@ -109,6 +110,7 @@ void Sequence::init$(float divisionType, int32_t resolution) {
 }
 
 void Sequence::init$(float divisionType, int32_t resolution, int32_t numTracks) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, tracks, $new($Vector));
 	if (divisionType == Sequence::PPQ) {
 		this->divisionType = Sequence::PPQ;
@@ -156,6 +158,7 @@ int64_t Sequence::getMicrosecondLength() {
 }
 
 int64_t Sequence::getTickLength() {
+	$useLocalCurrentObjectStackCache();
 	int64_t length = 0;
 	$synchronized(this->tracks) {
 		for (int32_t i = 0; i < $nc(this->tracks)->size(); ++i) {

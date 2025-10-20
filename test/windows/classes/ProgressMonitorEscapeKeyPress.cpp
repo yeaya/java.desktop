@@ -142,6 +142,7 @@ void ProgressMonitorEscapeKeyPress::init$() {
 
 void ProgressMonitorEscapeKeyPress::main($StringArray* args) {
 	$init(ProgressMonitorEscapeKeyPress);
+	$useLocalCurrentObjectStackCache();
 	createTestUI();
 	$assignStatic(ProgressMonitorEscapeKeyPress::monitor, $new($ProgressMonitor, ProgressMonitorEscapeKeyPress::frame, "Progress"_s, nullptr, 0, 100));
 	$assignStatic(ProgressMonitorEscapeKeyPress::robotThread, $new($TestThread));

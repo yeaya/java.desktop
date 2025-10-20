@@ -140,6 +140,7 @@ void FontByDefault::init$() {
 
 void FontByDefault::main($StringArray* args) {
 	$init(FontByDefault);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -155,6 +156,7 @@ void FontByDefault::main($StringArray* args) {
 }
 
 void FontByDefault::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, mainFrame, $new($JFrame));
 	{
 		$var($Throwable, var$0, nullptr);
@@ -173,6 +175,7 @@ void FontByDefault::run() {
 
 void FontByDefault::testDefaultFont($JFrame* frame) {
 	$init(FontByDefault);
+	$useLocalCurrentObjectStackCache();
 	$nc(frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$var($JSpinner, spinner, $new($JSpinner));
 	frame->add(static_cast<$Component*>(spinner));
@@ -190,6 +193,7 @@ void FontByDefault::testDefaultFont($JFrame* frame) {
 
 void FontByDefault::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(FontByDefault);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 	} catch ($ClassNotFoundException&) {

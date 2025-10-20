@@ -581,6 +581,7 @@ $ComponentUI* JTabbedPane::getUI() {
 }
 
 void JTabbedPane::setUI($TabbedPaneUI* ui) {
+	$useLocalCurrentObjectStackCache();
 	$JComponent::setUI(ui);
 	for (int32_t i = 0; i < getTabCount(); ++i) {
 		$var($Icon, icon, $nc(($cast($JTabbedPane$Page, $($nc(this->pages)->get(i)))))->disabledIcon);
@@ -618,6 +619,7 @@ $ChangeListenerArray* JTabbedPane::getChangeListeners() {
 }
 
 void JTabbedPane::fireStateChanged() {
+	$useLocalCurrentObjectStackCache();
 	int32_t selIndex = getSelectedIndex();
 	if (selIndex < 0) {
 		if (this->visComp != nullptr && $nc(this->visComp)->isVisible()) {
@@ -730,6 +732,7 @@ void JTabbedPane::setSelectedIndex(int32_t index) {
 }
 
 void JTabbedPane::setSelectedIndexImpl(int32_t index, bool doAccessibleChanges) {
+	$useLocalCurrentObjectStackCache();
 	int32_t oldIndex = $nc(this->model)->getSelectedIndex();
 	$var($JTabbedPane$Page, oldPage, nullptr);
 	$var($JTabbedPane$Page, newPage, nullptr);
@@ -788,6 +791,7 @@ void JTabbedPane::setSelectedComponent($Component* c) {
 }
 
 void JTabbedPane::insertTab($String* title, $Icon* icon, $Component* component, $String* tip, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	int32_t newIndex = index;
 	int32_t removeIndex = indexOfComponent(component);
 	if (component != nullptr && removeIndex != -1) {
@@ -853,6 +857,7 @@ $Component* JTabbedPane::add($String* title, $Component* component) {
 }
 
 $Component* JTabbedPane::add($Component* component, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($UIResource, component))) {
 		$var($String, var$0, $nc(component)->getName());
 		$var($Component, var$1, component);
@@ -878,6 +883,7 @@ void JTabbedPane::add($Component* component, Object$* constraints) {
 }
 
 void JTabbedPane::add($Component* component, Object$* constraints, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($UIResource, component))) {
 		$var($Icon, icon, $instanceOf($Icon, constraints) ? $cast($Icon, constraints) : ($Icon*)nullptr);
 		$var($String, title, $instanceOf($String, constraints) ? $cast($String, constraints) : ($String*)nullptr);
@@ -895,6 +901,7 @@ void JTabbedPane::clearAccessibleParent($Component* c) {
 }
 
 void JTabbedPane::removeTabAt(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	checkIndex(index);
 	$var($Component, component, getComponentAt(index));
 	bool shouldChangeFocus = false;
@@ -992,6 +999,7 @@ $Icon* JTabbedPane::getIconAt(int32_t index) {
 }
 
 $Icon* JTabbedPane::getDisabledIconAt(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTabbedPane$Page, page, $cast($JTabbedPane$Page, $nc(this->pages)->get(index)));
 	if ($nc(page)->disabledIcon == nullptr) {
 		$set(page, disabledIcon, $nc($($UIManager::getLookAndFeel()))->getDisabledIcon(this, page->icon));
@@ -1040,6 +1048,7 @@ $Rectangle* JTabbedPane::getBoundsAt(int32_t index) {
 }
 
 void JTabbedPane::setTitleAt(int32_t index, $String* title) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTabbedPane$Page, page, $cast($JTabbedPane$Page, $nc(this->pages)->get(index)));
 	$var($String, oldTitle, $nc(page)->title);
 	$set(page, title, title);
@@ -1058,6 +1067,7 @@ void JTabbedPane::setTitleAt(int32_t index, $String* title) {
 }
 
 void JTabbedPane::setIconAt(int32_t index, $Icon* icon) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTabbedPane$Page, page, $cast($JTabbedPane$Page, $nc(this->pages)->get(index)));
 	$var($Icon, oldIcon, $nc(page)->icon);
 	if (icon != oldIcon) {
@@ -1075,6 +1085,7 @@ void JTabbedPane::setIconAt(int32_t index, $Icon* icon) {
 }
 
 void JTabbedPane::setDisabledIconAt(int32_t index, $Icon* disabledIcon) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, oldIcon, $nc(($cast($JTabbedPane$Page, $($nc(this->pages)->get(index)))))->disabledIcon);
 	$set($nc($cast($JTabbedPane$Page, $($nc(this->pages)->get(index)))), disabledIcon, disabledIcon);
 	if (disabledIcon != oldIcon && !isEnabledAt(index)) {
@@ -1084,6 +1095,7 @@ void JTabbedPane::setDisabledIconAt(int32_t index, $Icon* disabledIcon) {
 }
 
 void JTabbedPane::setToolTipTextAt(int32_t index, $String* toolTipText) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, oldToolTipText, $nc(($cast($JTabbedPane$Page, $($nc(this->pages)->get(index)))))->tip);
 	$set($nc($cast($JTabbedPane$Page, $($nc(this->pages)->get(index)))), tip, toolTipText);
 	if ((oldToolTipText != toolTipText) && (this->accessibleContext != nullptr)) {
@@ -1097,6 +1109,7 @@ void JTabbedPane::setToolTipTextAt(int32_t index, $String* toolTipText) {
 }
 
 void JTabbedPane::setBackgroundAt(int32_t index, $Color* background) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, oldBg, $nc(($cast($JTabbedPane$Page, $($nc(this->pages)->get(index)))))->background);
 	$nc(($cast($JTabbedPane$Page, $($nc(this->pages)->get(index)))))->setBackground(background);
 	if (background == nullptr || oldBg == nullptr || !$nc(background)->equals(oldBg)) {
@@ -1108,6 +1121,7 @@ void JTabbedPane::setBackgroundAt(int32_t index, $Color* background) {
 }
 
 void JTabbedPane::setForegroundAt(int32_t index, $Color* foreground) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, oldFg, $nc(($cast($JTabbedPane$Page, $($nc(this->pages)->get(index)))))->foreground);
 	$nc(($cast($JTabbedPane$Page, $($nc(this->pages)->get(index)))))->setForeground(foreground);
 	if (foreground == nullptr || oldFg == nullptr || !$nc(foreground)->equals(oldFg)) {
@@ -1119,6 +1133,7 @@ void JTabbedPane::setForegroundAt(int32_t index, $Color* foreground) {
 }
 
 void JTabbedPane::setEnabledAt(int32_t index, bool enabled) {
+	$useLocalCurrentObjectStackCache();
 	bool oldEnabled = $nc(($cast($JTabbedPane$Page, $($nc(this->pages)->get(index)))))->isEnabled();
 	$nc(($cast($JTabbedPane$Page, $($nc(this->pages)->get(index)))))->setEnabled(enabled);
 	if (enabled != oldEnabled) {
@@ -1128,6 +1143,7 @@ void JTabbedPane::setEnabledAt(int32_t index, bool enabled) {
 }
 
 void JTabbedPane::setComponentAt(int32_t index, $Component* component) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTabbedPane$Page, page, $cast($JTabbedPane$Page, $nc(this->pages)->get(index)));
 	if (component != $nc(page)->component) {
 		bool shouldChangeFocus = false;
@@ -1176,6 +1192,7 @@ void JTabbedPane::setMnemonicAt(int32_t tabIndex, int32_t mnemonic) {
 }
 
 int32_t JTabbedPane::indexOfTab($String* title) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < getTabCount(); ++i) {
 		if ($nc($(getTitleAt(i)))->equals(title == nullptr ? $of(""_s) : $of(title))) {
 			return i;
@@ -1185,6 +1202,7 @@ int32_t JTabbedPane::indexOfTab($String* title) {
 }
 
 int32_t JTabbedPane::indexOfTab($Icon* icon) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < getTabCount(); ++i) {
 		$var($Icon, tabIcon, getIconAt(i));
 		if ((tabIcon != nullptr && $of(tabIcon)->equals(icon)) || (tabIcon == nullptr && tabIcon == icon)) {
@@ -1195,6 +1213,7 @@ int32_t JTabbedPane::indexOfTab($Icon* icon) {
 }
 
 int32_t JTabbedPane::indexOfComponent($Component* component) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < getTabCount(); ++i) {
 		$var($Component, c, getComponentAt(i));
 		if ((c != nullptr && $of(c)->equals(component)) || (c == nullptr && c == component)) {
@@ -1223,6 +1242,7 @@ $String* JTabbedPane::getToolTipText($MouseEvent* event) {
 }
 
 void JTabbedPane::checkIndex(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index >= $nc(this->pages)->size()) {
 		$throwNew($IndexOutOfBoundsException, $$str({"Index: "_s, $$str(index), ", Tab count: "_s, $$str($nc(this->pages)->size())}));
 	}
@@ -1247,6 +1267,7 @@ void JTabbedPane::compWriteObjectNotify() {
 }
 
 void JTabbedPane::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	int32_t newTabPlacement = $nc(f)->get("tabPlacement"_s, $SwingConstants::TOP);
 	checkTabPlacement(newTabPlacement);
@@ -1268,6 +1289,7 @@ void JTabbedPane::readObject($ObjectInputStream* s) {
 }
 
 $String* JTabbedPane::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, tabPlacementString, nullptr);
 	if (this->tabPlacement == $SwingConstants::TOP) {
 		$assign(tabPlacementString, "TOP"_s);
@@ -1285,6 +1307,7 @@ $String* JTabbedPane::paramString() {
 }
 
 $AccessibleContext* JTabbedPane::getAccessibleContext() {
+	$useLocalCurrentObjectStackCache();
 	if (this->accessibleContext == nullptr) {
 		$set(this, accessibleContext, $new($JTabbedPane$AccessibleJTabbedPane, this));
 		int32_t count = getTabCount();
@@ -1296,6 +1319,7 @@ $AccessibleContext* JTabbedPane::getAccessibleContext() {
 }
 
 void JTabbedPane::setTabComponentAt(int32_t index, $Component* component) {
+	$useLocalCurrentObjectStackCache();
 	if (component != nullptr && indexOfComponent(component) != -1) {
 		$throwNew($IllegalArgumentException, "Component is already added to this JTabbedPane"_s);
 	}
@@ -1315,6 +1339,7 @@ $Component* JTabbedPane::getTabComponentAt(int32_t index) {
 }
 
 int32_t JTabbedPane::indexOfTabComponent($Component* tabComponent) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < getTabCount(); ++i) {
 		$var($Component, c, getTabComponentAt(i));
 		if (c == tabComponent) {

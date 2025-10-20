@@ -160,6 +160,7 @@ void Applet::readObject($ObjectInputStream* s) {
 }
 
 void Applet::setStub($AppletStub* stub) {
+	$useLocalCurrentObjectStackCache();
 	if (this->stub != nullptr) {
 		$var($SecurityManager, s, $System::getSecurityManager());
 		if (s != nullptr) {
@@ -220,6 +221,7 @@ $Image* Applet::getImage($URL* url) {
 }
 
 $Image* Applet::getImage($URL* url, $String* name) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return getImage($$new($URL, url, name));
 	} catch ($MalformedURLException&) {
@@ -239,6 +241,7 @@ $AudioClip* Applet::getAudioClip($URL* url) {
 }
 
 $AudioClip* Applet::getAudioClip($URL* url, $String* name) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return getAudioClip($$new($URL, url, name));
 	} catch ($MalformedURLException&) {

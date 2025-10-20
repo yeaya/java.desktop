@@ -92,6 +92,7 @@ void bug8038113$1$1::init$($bug8038113$1* this$1, $BasicTreeUI* val$treeUI) {
 }
 
 void bug8038113$1$1::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$JPanel::paint(g);
 	$var($Graphics2D, g2, $cast($Graphics2D, g));
 	$nc(g2)->setStroke($$new($BasicStroke, 0.5f));

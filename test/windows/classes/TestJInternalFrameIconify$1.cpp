@@ -88,6 +88,7 @@ void TestJInternalFrameIconify$1::init$($String* val$lookAndFeelString) {
 }
 
 void TestJInternalFrameIconify$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($TestJInternalFrameIconify);
 	$assignStatic($TestJInternalFrameIconify::frame, $new($JFrame, this->val$lookAndFeelString));
 	$assignStatic($TestJInternalFrameIconify::desktopPane, $new($JDesktopPane));

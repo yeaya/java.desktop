@@ -170,6 +170,7 @@ int32_t GroupLayout$ParallelGroup::calculateMaximumSize(int32_t axis) {
 }
 
 void GroupLayout$ParallelGroup::setValidSize(int32_t axis, int32_t origin, int32_t size) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->springs)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -209,6 +210,7 @@ void GroupLayout$ParallelGroup::setChildSize($GroupLayout$Spring* spring, int32_
 }
 
 void GroupLayout$ParallelGroup::insertAutopadding(int32_t axis, $List* leadingPadding, $List* trailingPadding, $List* leading, $List* trailing, bool insert) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->springs)->iterator());
 		for (; $nc(i$)->hasNext();) {

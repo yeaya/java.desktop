@@ -156,12 +156,14 @@ void TIFFField::init$() {
 
 $String* TIFFField::getAttribute($Node* node, $String* attrName) {
 	$init(TIFFField);
+	$useLocalCurrentObjectStackCache();
 	$var($NamedNodeMap, attrs, $nc(node)->getAttributes());
 	return $nc($($nc(attrs)->getNamedItem(attrName)))->getNodeValue();
 }
 
 void TIFFField::initData($Node* node, $ints* otype, $ints* ocount, $ObjectArray* odata) {
 	$init(TIFFField);
+	$useLocalCurrentObjectStackCache();
 	int32_t type = 0;
 	int32_t count = 0;
 	$var($Object, data, nullptr);
@@ -269,6 +271,7 @@ void TIFFField::initData($Node* node, $ints* otype, $ints* ocount, $ObjectArray*
 
 TIFFField* TIFFField::createFromMetadataNode($TIFFTagSet* tagSet, $Node* node) {
 	$init(TIFFField);
+	$useLocalCurrentObjectStackCache();
 	if (node == nullptr) {
 		$throwNew($IllegalArgumentException, static_cast<$Throwable*>($$new($NullPointerException, "node == null!"_s)));
 	}
@@ -328,6 +331,7 @@ TIFFField* TIFFField::createFromMetadataNode($TIFFTagSet* tagSet, $Node* node) {
 }
 
 void TIFFField::init$($TIFFTag* tag, int32_t type, int32_t count, Object$* data) {
+	$useLocalCurrentObjectStackCache();
 	if (tag == nullptr) {
 		$throwNew($NullPointerException, "tag == null!"_s);
 	} else if (type < $TIFFTag::MIN_DATATYPE || type > $TIFFTag::MAX_DATATYPE) {
@@ -486,6 +490,7 @@ void TIFFField::init$($TIFFTag* tag, int32_t type, int32_t count) {
 }
 
 void TIFFField::init$($TIFFTag* tag, int64_t value) {
+	$useLocalCurrentObjectStackCache();
 	if (tag == nullptr) {
 		$throwNew($NullPointerException, "tag == null!"_s);
 	}
@@ -522,6 +527,7 @@ void TIFFField::init$($TIFFTag* tag, int64_t value) {
 }
 
 void TIFFField::init$($TIFFTag* tag, int32_t type, int64_t offset, $TIFFDirectory* dir) {
+	$useLocalCurrentObjectStackCache();
 	if (tag == nullptr) {
 		$throwNew($NullPointerException, "tag == null!"_s);
 	} else if (type < $TIFFTag::MIN_DATATYPE || type > $TIFFTag::MAX_DATATYPE) {
@@ -557,6 +563,7 @@ int32_t TIFFField::getType() {
 
 $String* TIFFField::getTypeName(int32_t dataType) {
 	$init(TIFFField);
+	$useLocalCurrentObjectStackCache();
 	if (dataType < $TIFFTag::MIN_DATATYPE || dataType > $TIFFTag::MAX_DATATYPE) {
 		$throwNew($IllegalArgumentException, $$str({"Unknown data type "_s, $$str(dataType)}));
 	}
@@ -575,6 +582,7 @@ int32_t TIFFField::getTypeByName($String* typeName) {
 
 $Object* TIFFField::createArrayForType(int32_t dataType, int32_t count) {
 	$init(TIFFField);
+	$useLocalCurrentObjectStackCache();
 	if (count < 0) {
 		$throwNew($IllegalArgumentException, "count < 0!"_s);
 	} else if ((dataType == $TIFFTag::TIFF_RATIONAL || dataType == $TIFFTag::TIFF_SRATIONAL) && count < 1) {
@@ -665,6 +673,7 @@ $shorts* TIFFField::getAsShorts() {
 }
 
 $ints* TIFFField::getAsInts() {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($ints, this->data)) {
 		return $cast($ints, this->data);
 	} else if ($instanceOf($chars, this->data)) {
@@ -707,6 +716,7 @@ $longArray2* TIFFField::getAsRationals() {
 }
 
 int32_t TIFFField::getAsInt(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($ints, ivalue, nullptr)
 		$var($longs, lvalue, nullptr)
@@ -772,6 +782,7 @@ int32_t TIFFField::getAsInt(int32_t index) {
 }
 
 int64_t TIFFField::getAsLong(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($ints, ivalue, nullptr)
 		$var($longs, lvalue, nullptr)
@@ -837,6 +848,7 @@ int64_t TIFFField::getAsLong(int32_t index) {
 }
 
 float TIFFField::getAsFloat(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($ints, ivalue, nullptr)
 		$var($longs, lvalue, nullptr)
@@ -902,6 +914,7 @@ float TIFFField::getAsFloat(int32_t index) {
 }
 
 double TIFFField::getAsDouble(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($ints, ivalue, nullptr)
 		$var($longs, lvalue, nullptr)
@@ -979,6 +992,7 @@ $longs* TIFFField::getAsRational(int32_t index) {
 }
 
 $String* TIFFField::getValueAsString(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($ints, ivalue, nullptr)
 		$var($String, srationalString, nullptr)
@@ -1064,6 +1078,7 @@ $TIFFDirectory* TIFFField::getDirectory() {
 }
 
 TIFFField* TIFFField::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(TIFFField, field, $cast(TIFFField, $Cloneable::clone()));
 	$var($Object, fieldData, nullptr);
 	switch (this->type) {

@@ -79,6 +79,7 @@ void OceanTheme$3::init$($OceanTheme* this$0) {
 }
 
 $Object* OceanTheme$3::createValue($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, var$0, this->this$0->getHastenedIcon("icons/ocean/minimize.gif"_s, table));
 	return $of($new($OceanTheme$IFIcon, var$0, $(this->this$0->getHastenedIcon("icons/ocean/minimize-pressed.gif"_s, table))));
 }

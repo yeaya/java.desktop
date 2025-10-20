@@ -68,6 +68,7 @@ $Object* allocate$bug8005019$GeneralFilter($Class* clazz) {
 }
 
 void bug8005019$GeneralFilter::init$($ints* columns) {
+	$useLocalCurrentObjectStackCache();
 	$RowFilter::init$();
 	$set(this, excludes, $Arrays::asList($$new($IntegerArray, {$($Integer::valueOf(0))})));
 	$set(this, columns, columns);

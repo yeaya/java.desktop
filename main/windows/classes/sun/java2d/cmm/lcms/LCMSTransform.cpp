@@ -121,6 +121,7 @@ void LCMSTransform::init$($ICC_Profile* profile, int32_t renderType, int32_t tra
 }
 
 void LCMSTransform::init$($ColorTransformArray* transforms) {
+	$useLocalCurrentObjectStackCache();
 	this->inFormatter = 0;
 	this->isInIntPacked = false;
 	this->outFormatter = 0;
@@ -172,6 +173,7 @@ void LCMSTransform::doTransform($LCMSImageLayout* in, $LCMSImageLayout* out) {
 
 bool LCMSTransform::isLCMSSupport($BufferedImage* src, $BufferedImage* dst) {
 	$init(LCMSTransform);
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($nc(dst)->getColorModel()))->hasAlpha()) {
 		return true;
 	}
@@ -184,6 +186,7 @@ bool LCMSTransform::isLCMSSupport($BufferedImage* src, $BufferedImage* dst) {
 }
 
 void LCMSTransform::colorConvert($BufferedImage* src, $BufferedImage* dst) {
+	$useLocalCurrentObjectStackCache();
 	$var($LCMSImageLayout, srcIL, nullptr);
 	$var($LCMSImageLayout, dstIL, nullptr);
 	try {
@@ -359,6 +362,7 @@ void LCMSTransform::colorConvert($BufferedImage* src, $BufferedImage* dst) {
 }
 
 void LCMSTransform::colorConvert($Raster* src, $WritableRaster* dst, $floats* srcMinVal, $floats* srcMaxVal, $floats* dstMinVal, $floats* dstMaxVal) {
+	$useLocalCurrentObjectStackCache();
 	$var($LCMSImageLayout, srcIL, nullptr);
 	$var($LCMSImageLayout, dstIL, nullptr);
 	$var($SampleModel, srcSM, $nc(src)->getSampleModel());
@@ -456,6 +460,7 @@ void LCMSTransform::colorConvert($Raster* src, $WritableRaster* dst, $floats* sr
 }
 
 void LCMSTransform::colorConvert($Raster* src, $WritableRaster* dst) {
+	$useLocalCurrentObjectStackCache();
 	$var($LCMSImageLayout, srcIL, nullptr);
 	$var($LCMSImageLayout, dstIL, nullptr);
 	$assign(dstIL, $LCMSImageLayout::createImageLayout(static_cast<$Raster*>(dst)));
@@ -589,6 +594,7 @@ void LCMSTransform::colorConvert($Raster* src, $WritableRaster* dst) {
 }
 
 $shorts* LCMSTransform::colorConvert($shorts* src, $shorts* dst$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($shorts, dst, dst$renamed);
 	if (dst == nullptr) {
 		int32_t var$0 = ($div($nc(src)->length, getNumInComponents()));
@@ -615,6 +621,7 @@ $shorts* LCMSTransform::colorConvert($shorts* src, $shorts* dst$renamed) {
 }
 
 $bytes* LCMSTransform::colorConvert($bytes* src, $bytes* dst$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, dst, dst$renamed);
 	if (dst == nullptr) {
 		int32_t var$0 = ($div($nc(src)->length, getNumInComponents()));

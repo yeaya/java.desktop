@@ -110,6 +110,7 @@ $Border* DefaultTreeCellEditor$DefaultTextField::getBorder() {
 }
 
 $Font* DefaultTreeCellEditor$DefaultTextField::getFont() {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, font, $JTextField::getFont());
 	if ($instanceOf($FontUIResource, font)) {
 		$var($Container, parent, getParent());
@@ -121,6 +122,7 @@ $Font* DefaultTreeCellEditor$DefaultTextField::getFont() {
 }
 
 $Dimension* DefaultTreeCellEditor$DefaultTextField::getPreferredSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, $JTextField::getPreferredSize());
 	if (this->this$0->renderer != nullptr && this->this$0->getFont() == nullptr) {
 		$var($Dimension, rSize, $nc(this->this$0->renderer)->getPreferredSize());

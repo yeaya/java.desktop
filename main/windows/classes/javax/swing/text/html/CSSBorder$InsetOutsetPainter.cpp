@@ -77,6 +77,7 @@ void CSSBorder$InsetOutsetPainter::init$($CSS$Value* type) {
 }
 
 void CSSBorder$InsetOutsetPainter::paint($Polygon* shape, $Graphics* g, $Color* color, int32_t side) {
+	$useLocalCurrentObjectStackCache();
 	$init($CSS$Value);
 	$nc(g)->setColor(((side + 1) % 4 < 2) == (this->type == $CSS$Value::INSET) ? $(getShadowColor(color)) : $(getLightColor(color)));
 	g->fillPolygon(shape);

@@ -504,6 +504,7 @@ int32_t FilePane::getViewType() {
 }
 
 void FilePane::setViewType(int32_t viewType) {
+	$useLocalCurrentObjectStackCache();
 	if (viewType == this->viewType) {
 		return;
 	}
@@ -580,6 +581,7 @@ $Action* FilePane::getViewTypeAction(int32_t viewType) {
 
 void FilePane::recursivelySetInheritsPopupMenu($Container* container, bool b) {
 	$init(FilePane);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JComponent, container)) {
 		$nc(($cast($JComponent, container)))->setInheritsPopupMenu(b);
 	}
@@ -590,6 +592,7 @@ void FilePane::recursivelySetInheritsPopupMenu($Container* container, bool b) {
 }
 
 void FilePane::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($Locale, l, $nc($(getFileChooser()))->getLocale());
 	$set(this, listViewBorder, $UIManager::getBorder("FileChooser.listViewBorder"_s));
 	$set(this, listViewBackground, $UIManager::getColor("FileChooser.listViewBackground"_s));
@@ -613,6 +616,7 @@ void FilePane::installDefaults() {
 }
 
 $ActionArray* FilePane::getActions() {
+	$useLocalCurrentObjectStackCache();
 	if (this->actions == nullptr) {
 		{
 		}
@@ -647,12 +651,14 @@ $ActionArray* FilePane::getActions() {
 }
 
 void FilePane::createActionMap() {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, var$0, $JPanel::getActionMap());
 	addActionsToMap(var$0, $(getActions()));
 }
 
 void FilePane::addActionsToMap($ActionMap* map, $ActionArray* actions) {
 	$init(FilePane);
+	$useLocalCurrentObjectStackCache();
 	if (map != nullptr && actions != nullptr) {
 		{
 			$var($ActionArray, arr$, actions);
@@ -682,6 +688,7 @@ void FilePane::updateListRowCount($JList* list) {
 }
 
 $JPanel* FilePane::createList() {
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, p, $new($JPanel, static_cast<$LayoutManager*>($$new($BorderLayout))));
 	$var($JFileChooser, fileChooser, getFileChooser());
 	$var($JList, list, $new($FilePane$4, this, fileChooser));
@@ -725,6 +732,7 @@ $FilePane$DetailsTableModel* FilePane::getDetailsTableModel() {
 }
 
 void FilePane::updateDetailsColumnModel($JTable* table) {
+	$useLocalCurrentObjectStackCache();
 	if (table != nullptr) {
 		$var($ShellFolderColumnInfoArray, columns, $nc(this->detailsTableModel)->getColumns());
 		$var($TableColumnModel, columnModel, $new($DefaultTableColumnModel));
@@ -768,6 +776,7 @@ $FilePane$DetailsTableCellEditor* FilePane::getDetailsTableCellEditor() {
 }
 
 $JPanel* FilePane::createDetailsView() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, chooser, getFileChooser());
 	$var($JPanel, p, $new($JPanel, static_cast<$LayoutManager*>($$new($BorderLayout))));
 	$var($JTable, detailsTable, $new($FilePane$6, this, $(getDetailsTableModel()), chooser));
@@ -819,6 +828,7 @@ $JPanel* FilePane::createDetailsView() {
 }
 
 void FilePane::fixNameColumnWidth(int32_t viewWidth) {
+	$useLocalCurrentObjectStackCache();
 	$var($TableColumn, nameCol, $nc($($nc(this->detailsTable)->getColumnModel()))->getColumn(FilePane::COLUMN_FILENAME));
 	int32_t tableWidth = $nc($($nc(this->detailsTable)->getPreferredSize()))->width;
 	if (tableWidth < viewWidth) {
@@ -853,6 +863,7 @@ void FilePane::cancelEdit() {
 }
 
 void FilePane::editFileName(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, chooser, getFileChooser());
 	$var($File, currentDirectory, $nc(chooser)->getCurrentDirectory());
 	if (this->readOnly || !canWrite(currentDirectory)) {
@@ -901,6 +912,7 @@ void FilePane::editFileName(int32_t index) {
 }
 
 void FilePane::applyEdit() {
+	$useLocalCurrentObjectStackCache();
 	if (this->editFile != nullptr && $nc(this->editFile)->exists()) {
 		$var($JFileChooser, chooser, getFileChooser());
 		$var($String, oldDisplayName, $nc(chooser)->getName(this->editFile));
@@ -946,6 +958,7 @@ $Action* FilePane::getNewFolderAction() {
 }
 
 void FilePane::setFileSelected() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc($(getFileChooser()))->isMultiSelectionEnabled();
 	if (var$0 && !isDirectorySelected()) {
 		$var($FileArray, files, $nc($(getFileChooser()))->getSelectedFiles());
@@ -1010,6 +1023,7 @@ void FilePane::setFileSelected() {
 }
 
 void FilePane::doSelectFile($File* fileToSelect) {
+	$useLocalCurrentObjectStackCache();
 	int32_t index = $nc($(getModel()))->indexOf(fileToSelect);
 	if (index >= 0) {
 		index = $nc($(getRowSorter()))->convertRowIndexToView(index);
@@ -1018,11 +1032,13 @@ void FilePane::doSelectFile($File* fileToSelect) {
 }
 
 void FilePane::doDeselectFile(Object$* fileToDeselect) {
+	$useLocalCurrentObjectStackCache();
 	int32_t index = $nc($(getRowSorter()))->convertRowIndexToView($nc($(getModel()))->indexOf(fileToDeselect));
 	$nc(this->listSelectionModel)->removeSelectionInterval(index, index);
 }
 
 void FilePane::doSelectedFileChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	applyEdit();
 	$var($File, f, $cast($File, $nc(e)->getNewValue()));
 	$var($JFileChooser, fc, getFileChooser());
@@ -1042,6 +1058,7 @@ void FilePane::doSelectedFileChanged($PropertyChangeEvent* e) {
 }
 
 void FilePane::doSelectedFilesChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	applyEdit();
 	$var($FileArray, files, $cast($FileArray, $nc(e)->getNewValue()));
 	$var($JFileChooser, fc, getFileChooser());
@@ -1056,6 +1073,7 @@ void FilePane::doSelectedFilesChanged($PropertyChangeEvent* e) {
 }
 
 void FilePane::doDirectoryChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$nc($(getDetailsTableModel()))->updateColumnInfo();
 	$var($JFileChooser, fc, getFileChooser());
 	$var($FileSystemView, fsv, $nc(fc)->getFileSystemView());
@@ -1087,6 +1105,7 @@ void FilePane::doFileSelectionModeChanged($PropertyChangeEvent* e) {
 }
 
 void FilePane::doMultiSelectionChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($(getFileChooser()))->isMultiSelectionEnabled()) {
 		$nc(this->listSelectionModel)->setSelectionMode($ListSelectionModel::MULTIPLE_INTERVAL_SELECTION);
 	} else {
@@ -1097,6 +1116,7 @@ void FilePane::doMultiSelectionChanged($PropertyChangeEvent* e) {
 }
 
 void FilePane::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->viewType == -1) {
 		setViewType(FilePane::VIEWTYPE_LIST);
 	}
@@ -1155,6 +1175,7 @@ void FilePane::ensureIndexIsVisible(int32_t i) {
 }
 
 void FilePane::ensureFileIsVisible($JFileChooser* fc, $File* f) {
+	$useLocalCurrentObjectStackCache();
 	int32_t modelIndex = $nc($(getModel()))->indexOf(f);
 	if (modelIndex >= 0) {
 		ensureIndexIsVisible($nc($(getRowSorter()))->convertRowIndexToView(modelIndex));
@@ -1176,6 +1197,7 @@ void FilePane::clearSelection() {
 }
 
 $JMenu* FilePane::getViewMenu() {
+	$useLocalCurrentObjectStackCache();
 	if (this->viewMenu == nullptr) {
 		$set(this, viewMenu, $new($JMenu, this->viewMenuLabelText));
 		$var($ButtonGroup, viewButtonGroup, $new($ButtonGroup));
@@ -1190,6 +1212,7 @@ $JMenu* FilePane::getViewMenu() {
 }
 
 void FilePane::updateViewMenu() {
+	$useLocalCurrentObjectStackCache();
 	if (this->viewMenu != nullptr) {
 		$var($ComponentArray, comps, $nc(this->viewMenu)->getMenuComponents());
 		{
@@ -1212,6 +1235,7 @@ void FilePane::updateViewMenu() {
 }
 
 $JPopupMenu* FilePane::getComponentPopupMenu() {
+	$useLocalCurrentObjectStackCache();
 	$var($JPopupMenu, popupMenu, $nc($(getFileChooser()))->getComponentPopupMenu());
 	if (popupMenu != nullptr) {
 		return popupMenu;
@@ -1260,6 +1284,7 @@ $File* FilePane::getDirectory() {
 }
 
 $Object* FilePane::findChildComponent($Container* container, $Class* cls) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = $nc(container)->getComponentCount();
 	for (int32_t i = 0; i < n; ++i) {
 		$var($Component, comp, container->getComponent(i));
@@ -1276,6 +1301,7 @@ $Object* FilePane::findChildComponent($Container* container, $Class* cls) {
 }
 
 bool FilePane::canWrite($File* f) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(f)->exists()) {
 		return false;
 	}
@@ -1301,6 +1327,7 @@ bool FilePane::canWrite($File* f) {
 
 bool FilePane::usesShellFolder($JFileChooser* chooser) {
 	$init(FilePane);
+	$useLocalCurrentObjectStackCache();
 	$var($Boolean, prop, $cast($Boolean, $nc(chooser)->getClientProperty("FileChooser.useShellFolder"_s)));
 	return prop == nullptr ? $nc($of($(chooser->getFileSystemView())))->equals($($FileSystemView::getFileSystemView())) : $nc(prop)->booleanValue();
 }

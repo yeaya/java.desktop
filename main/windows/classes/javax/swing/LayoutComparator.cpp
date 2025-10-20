@@ -102,6 +102,7 @@ void LayoutComparator::setComponentOrientation($ComponentOrientation* orientatio
 }
 
 int32_t LayoutComparator::compare($Component* a$renamed, $Component* b$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, a, a$renamed);
 	$var($Component, b, b$renamed);
 	if (a == b) {

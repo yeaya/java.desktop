@@ -136,6 +136,7 @@ void ImageUtil::init$() {
 }
 
 $ColorModel* ImageUtil::createColorModel($SampleModel* sampleModel) {
+	$useLocalCurrentObjectStackCache();
 	if (sampleModel == nullptr) {
 		$throwNew($IllegalArgumentException, "sampleModel == null!"_s);
 	}
@@ -215,6 +216,7 @@ $ColorModel* ImageUtil::createColorModel($SampleModel* sampleModel) {
 }
 
 $bytes* ImageUtil::getPackedBinaryData($Raster* raster, $Rectangle* rect) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, sm, $nc(raster)->getSampleModel());
 	if (!isBinary(sm)) {
 		$throwNew($IllegalArgumentException, $($I18N::getString("ImageUtil0"_s)));
@@ -354,6 +356,7 @@ $bytes* ImageUtil::getPackedBinaryData($Raster* raster, $Rectangle* rect) {
 }
 
 $bytes* ImageUtil::getUnpackedBinaryData($Raster* raster, $Rectangle* rect) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, sm, $nc(raster)->getSampleModel());
 	if (!isBinary(sm)) {
 		$throwNew($IllegalArgumentException, $($I18N::getString("ImageUtil0"_s)));
@@ -412,6 +415,7 @@ $bytes* ImageUtil::getUnpackedBinaryData($Raster* raster, $Rectangle* rect) {
 }
 
 void ImageUtil::setPackedBinaryData($bytes* binaryDataArray, $WritableRaster* raster, $Rectangle* rect) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, sm, $nc(raster)->getSampleModel());
 	if (!isBinary(sm)) {
 		$throwNew($IllegalArgumentException, $($I18N::getString("ImageUtil0"_s)));
@@ -589,6 +593,7 @@ void ImageUtil::setPackedBinaryData($bytes* binaryDataArray, $WritableRaster* ra
 }
 
 void ImageUtil::setUnpackedBinaryData($bytes* bdata, $WritableRaster* raster, $Rectangle* rect) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, sm, $nc(raster)->getSampleModel());
 	if (!isBinary(sm)) {
 		$throwNew($IllegalArgumentException, $($I18N::getString("ImageUtil0"_s)));
@@ -651,6 +656,7 @@ bool ImageUtil::isBinary($SampleModel* sm) {
 }
 
 $ColorModel* ImageUtil::createColorModel($ColorSpace* colorSpace$renamed, $SampleModel* sampleModel) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorSpace, colorSpace, colorSpace$renamed);
 	$var($ColorModel, colorModel, nullptr);
 	if (sampleModel == nullptr) {
@@ -734,6 +740,7 @@ int32_t ImageUtil::getElementSize($SampleModel* sm) {
 }
 
 int64_t ImageUtil::getTileSize($SampleModel* sm) {
+	$useLocalCurrentObjectStackCache();
 	int32_t elementSize = $DataBuffer::getDataTypeSize($nc(sm)->getDataType());
 	if ($instanceOf($MultiPixelPackedSampleModel, sm)) {
 		$var($MultiPixelPackedSampleModel, mppsm, $cast($MultiPixelPackedSampleModel, sm));
@@ -812,6 +819,7 @@ bool ImageUtil::isIndicesForGrayscale($bytes* r, $bytes* g, $bytes* b) {
 }
 
 $String* ImageUtil::convertObjectToString(Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	if (obj == nullptr) {
 		return ""_s;
 	}
@@ -841,6 +849,7 @@ $String* ImageUtil::convertObjectToString(Object$* obj) {
 }
 
 void ImageUtil::canEncodeImage($ImageWriter* writer, $ImageTypeSpecifier* type) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageWriterSpi, spi, $nc(writer)->getOriginatingProvider());
 	if (type != nullptr && spi != nullptr && !spi->canEncodeImage(type)) {
 		$var($String, var$0, $$str({$($I18N::getString("ImageUtil2"_s)), " "_s}));
@@ -857,6 +866,7 @@ void ImageUtil::canEncodeImage($ImageWriter* writer, $ColorModel* colorModel, $S
 }
 
 bool ImageUtil::imageIsContiguous($RenderedImage* image) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, sm, nullptr);
 	if ($instanceOf($BufferedImage, image)) {
 		$var($WritableRaster, ras, $nc(($cast($BufferedImage, image)))->getRaster());
@@ -888,6 +898,7 @@ bool ImageUtil::imageIsContiguous($RenderedImage* image) {
 }
 
 $ImageTypeSpecifier* ImageUtil::getDestinationType($ImageReadParam* param, $Iterator* imageTypes) {
+	$useLocalCurrentObjectStackCache();
 	if (imageTypes == nullptr || !$nc(imageTypes)->hasNext()) {
 		$throwNew($IllegalArgumentException, "imageTypes null or empty!"_s);
 	}
@@ -918,6 +929,7 @@ $ImageTypeSpecifier* ImageUtil::getDestinationType($ImageReadParam* param, $Iter
 }
 
 bool ImageUtil::isNonStandardICCColorSpace($ColorSpace* cs) {
+	$useLocalCurrentObjectStackCache();
 	bool var$3 = $instanceOf($ICC_ColorSpace, cs) && !$nc(cs)->isCS_sRGB();
 	bool var$2 = var$3 && !$of(cs)->equals($($ColorSpace::getInstance($ColorSpace::CS_LINEAR_RGB)));
 	bool var$1 = var$2 && !$of(cs)->equals($($ColorSpace::getInstance($ColorSpace::CS_GRAY)));

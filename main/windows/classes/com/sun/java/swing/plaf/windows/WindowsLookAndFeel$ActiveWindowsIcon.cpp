@@ -112,6 +112,7 @@ void WindowsLookAndFeel$ActiveWindowsIcon::init$($WindowsLookAndFeel* this$0, $S
 }
 
 $Object* WindowsLookAndFeel$ActiveWindowsIcon::createValue($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	if (this->icon == nullptr) {
 		$var($Image, image, $cast($Image, $ShellFolder::get(this->nativeImageName)));
 		if (image != nullptr) {

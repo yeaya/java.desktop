@@ -91,6 +91,7 @@ void ValueFormatter$1::remove($DocumentFilter$FilterBypass* fb, int32_t offset, 
 }
 
 void ValueFormatter$1::replace($DocumentFilter$FilterBypass* fb, int32_t offset, int32_t length, $String* text, $AttributeSet* set) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$1 = $nc($($nc(fb)->getDocument()))->getLength();
 	bool var$0 = this->this$0->isValid(var$1 + $nc(text)->length() - length);
 	if (var$0 && this->this$0->isValid(text)) {
@@ -100,6 +101,7 @@ void ValueFormatter$1::replace($DocumentFilter$FilterBypass* fb, int32_t offset,
 }
 
 void ValueFormatter$1::insertString($DocumentFilter$FilterBypass* fb, int32_t offset, $String* text, $AttributeSet* set) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$1 = $nc($($nc(fb)->getDocument()))->getLength();
 	bool var$0 = this->this$0->isValid(var$1 + $nc(text)->length());
 	if (var$0 && this->this$0->isValid(text)) {

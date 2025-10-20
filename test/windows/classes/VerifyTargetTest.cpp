@@ -201,6 +201,7 @@ void VerifyTargetTest::init$() {
 
 void VerifyTargetTest::main($StringArray* args) {
 	$init(VerifyTargetTest);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(VerifyTargetTest$$Lambda$lambda$main$0)));
 	{
 		$var($Throwable, var$0, nullptr);
@@ -230,6 +231,7 @@ void VerifyTargetTest::main($StringArray* args) {
 
 void VerifyTargetTest::setup() {
 	$init(VerifyTargetTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(VerifyTargetTest::frame, $new($JFrame));
 	$var($JTextField, field1, $new($JTextField, "Input 1"_s));
 	$var(VerifyTargetTest, test, $new(VerifyTargetTest));

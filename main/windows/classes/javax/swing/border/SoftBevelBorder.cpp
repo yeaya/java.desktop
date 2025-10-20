@@ -89,6 +89,7 @@ void SoftBevelBorder::init$(int32_t bevelType, $Color* highlightOuterColor, $Col
 }
 
 void SoftBevelBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, oldColor, $nc(g)->getColor());
 	g->translate(x, y);
 	if (this->bevelType == $BevelBorder::RAISED) {

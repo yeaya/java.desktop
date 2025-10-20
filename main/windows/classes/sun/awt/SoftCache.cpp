@@ -144,6 +144,7 @@ $Object* SoftCache::fill(Object$* key) {
 }
 
 $Object* SoftCache::get(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	processQueue();
 	$var($Object, v, $nc(this->hash)->get(key));
 	if (v == nullptr) {
@@ -157,6 +158,7 @@ $Object* SoftCache::get(Object$* key) {
 }
 
 $Object* SoftCache::put(Object$* key, Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	processQueue();
 	$var($SoftCache$ValueCell, vc, $SoftCache$ValueCell::create(key, value, this->queue));
 	return $of($SoftCache$ValueCell::strip($($nc(this->hash)->put(key, vc)), true));

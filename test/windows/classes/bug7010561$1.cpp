@@ -93,6 +93,7 @@ void bug7010561$1::init$() {
 }
 
 void bug7010561$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($JTabbedPane, tabbedPane, $new($JTabbedPane));
 	tabbedPane->addTab("Tab 1"_s, $$new($JLabel, "Tab 1"_s));

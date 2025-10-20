@@ -122,6 +122,7 @@ void MetalIconFactory$FileIcon16::init$() {
 }
 
 void MetalIconFactory$FileIcon16::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, $nc(c)->getGraphicsConfiguration());
 	if (this->imageCacher == nullptr) {
 		$set(this, imageCacher, $new($MetalIconFactory$ImageCacher));
@@ -144,6 +145,7 @@ void MetalIconFactory$FileIcon16::paintIcon($Component* c, $Graphics* g, int32_t
 }
 
 void MetalIconFactory$FileIcon16::paintMe($Component* c, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$init($MetalIconFactory);
 	int32_t right = $nc($MetalIconFactory::fileIcon16Size)->width - 1;
 	int32_t bottom = $nc($MetalIconFactory::fileIcon16Size)->height - 1;

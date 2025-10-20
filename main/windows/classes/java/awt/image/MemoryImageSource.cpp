@@ -182,6 +182,7 @@ void MemoryImageSource::requestTopDownLeftRightResend($ImageConsumer* ic) {
 
 void MemoryImageSource::setAnimated(bool animated) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		this->animating = animated;
 		if (!this->animating) {
 			$var($Enumeration, enum_, $nc(this->theConsumers)->elements());
@@ -199,6 +200,7 @@ void MemoryImageSource::setAnimated(bool animated) {
 
 void MemoryImageSource::setFullBufferUpdates(bool fullbuffers) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->fullbuffers == fullbuffers) {
 			return;
 		}
@@ -225,6 +227,7 @@ void MemoryImageSource::newPixels(int32_t x, int32_t y, int32_t w, int32_t h) {
 
 void MemoryImageSource::newPixels(int32_t x, int32_t y, int32_t w, int32_t h, bool framenotify) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->animating) {
 			if (this->fullbuffers) {
 				x = (y = 0);

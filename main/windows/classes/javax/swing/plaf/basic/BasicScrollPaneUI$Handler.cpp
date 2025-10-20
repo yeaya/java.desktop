@@ -147,6 +147,7 @@ void BasicScrollPaneUI$Handler::init$($BasicScrollPaneUI* this$0) {
 }
 
 void BasicScrollPaneUI$Handler::mouseWheelMoved($MouseWheelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(this->this$0->scrollpane)->isWheelScrollingEnabled();
 	if (var$0 && $nc(e)->getWheelRotation() != 0) {
 		$var($JScrollBar, toScroll, $nc(this->this$0->scrollpane)->getVerticalScrollBar());
@@ -246,6 +247,7 @@ void BasicScrollPaneUI$Handler::mouseWheelMoved($MouseWheelEvent* e) {
 }
 
 void BasicScrollPaneUI$Handler::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JViewport, viewport, $nc(this->this$0->scrollpane)->getViewport());
 	if (viewport != nullptr) {
 		if ($equals($nc(e)->getSource(), viewport)) {
@@ -273,6 +275,7 @@ void BasicScrollPaneUI$Handler::stateChanged($ChangeEvent* e) {
 }
 
 void BasicScrollPaneUI$Handler::vsbStateChanged($JViewport* viewport, $ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($BoundedRangeModel, model, ($cast($BoundedRangeModel, $nc(e)->getSource())));
 	$var($Point, p, $nc(viewport)->getViewPosition());
 	$nc(p)->y = $nc(model)->getValue();
@@ -280,6 +283,7 @@ void BasicScrollPaneUI$Handler::vsbStateChanged($JViewport* viewport, $ChangeEve
 }
 
 void BasicScrollPaneUI$Handler::hsbStateChanged($JViewport* viewport, $ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($BoundedRangeModel, model, ($cast($BoundedRangeModel, $nc(e)->getSource())));
 	$var($Point, p, $nc(viewport)->getViewPosition());
 	int32_t value = $nc(model)->getValue();
@@ -330,6 +334,7 @@ void BasicScrollPaneUI$Handler::scrollPanePropertyChange($PropertyChangeEvent* e
 }
 
 void BasicScrollPaneUI$Handler::sbPropertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propertyName, $nc(e)->getPropertyName());
 	$var($Object, source, e->getSource());
 	if ("model"_s == propertyName) {

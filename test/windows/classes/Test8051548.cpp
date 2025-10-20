@@ -433,6 +433,7 @@ void Test8051548::init$() {
 
 void Test8051548::main($StringArray* args) {
 	$init(Test8051548);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -454,6 +455,7 @@ void Test8051548::main($StringArray* args) {
 
 void Test8051548::testColorPanels() {
 	$init(Test8051548);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(Test8051548$$Lambda$lambda$testColorPanels$1$1)));
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(50);
@@ -476,6 +478,7 @@ void Test8051548::testColorPanels() {
 
 void Test8051548::testShowDialog(bool colorTransparencySelectionEnabled) {
 	$init(Test8051548);
+	$useLocalCurrentObjectStackCache();
 	int32_t alphaValue = 123;
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(50);
@@ -523,6 +526,7 @@ $Component* Test8051548::findTextField($Component* component, $String* value) {
 
 $Component* Test8051548::findComponent($Component* component, $Predicate* predicate) {
 	$init(Test8051548);
+	$useLocalCurrentObjectStackCache();
 	if ($nc(predicate)->test(component)) {
 		return component;
 	}
@@ -540,6 +544,7 @@ $Component* Test8051548::findComponent($Component* component, $Predicate* predic
 
 bool Test8051548::lambda$findTextField$7($String* value, $Component* comp) {
 	$init(Test8051548);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JFormattedTextField, comp)) {
 		$var($JFormattedTextField, textField, $cast($JFormattedTextField, comp));
 		return $nc(value)->equals($($nc(textField)->getText()));
@@ -563,6 +568,7 @@ void Test8051548::lambda$testShowDialog$4(int32_t alphaValue, bool colorTranspar
 
 void Test8051548::lambda$testColorPanels$3($String* tab, $String* initialValue) {
 	$init(Test8051548);
+	$useLocalCurrentObjectStackCache();
 	$nc(Test8051548::colorChooser)->setColor($$new($Color, 50, 100, 85));
 	$var($JTabbedPane, tabbedPane, $cast($JTabbedPane, findComponent(static_cast<$Component*>(Test8051548::colorChooser), "JTabbedPane"_s)));
 	int32_t index = $nc(tabbedPane)->indexOfTab(tab);
@@ -595,6 +601,7 @@ void Test8051548::lambda$testColorPanels$3($String* tab, $String* initialValue) 
 
 void Test8051548::lambda$testColorPanels$2($PropertyChangeEvent* e) {
 	$init(Test8051548);
+	$useLocalCurrentObjectStackCache();
 	$init($AbstractColorChooserPanel);
 	if ($nc($AbstractColorChooserPanel::TRANSPARENCY_ENABLED_PROPERTY)->equals($($nc(e)->getPropertyName()))) {
 		Test8051548::propertyChangeListenerInvoked = true;
@@ -618,6 +625,7 @@ void Test8051548::lambda$main$0() {
 }
 
 void clinit$Test8051548($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(Test8051548::TABS, $new($StringArray2, {
 		$$new($StringArray, {
 			"HSV"_s,

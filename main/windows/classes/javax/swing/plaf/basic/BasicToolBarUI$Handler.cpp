@@ -179,6 +179,7 @@ void BasicToolBarUI$Handler::mousePressed($MouseEvent* evt) {
 }
 
 void BasicToolBarUI$Handler::mouseReleased($MouseEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->tb)->isEnabled()) {
 		return;
 	}
@@ -194,6 +195,7 @@ void BasicToolBarUI$Handler::mouseReleased($MouseEvent* evt) {
 }
 
 void BasicToolBarUI$Handler::mouseDragged($MouseEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->tb)->isEnabled()) {
 		return;
 	}
@@ -218,6 +220,7 @@ void BasicToolBarUI$Handler::mouseMoved($MouseEvent* evt) {
 }
 
 void BasicToolBarUI$Handler::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propertyName, $nc(evt)->getPropertyName());
 	if (propertyName == "lookAndFeel"_s) {
 		$nc(this->this$0->toolBar)->updateUI();

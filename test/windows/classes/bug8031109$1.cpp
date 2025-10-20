@@ -86,6 +86,7 @@ void bug8031109$1::init$() {
 }
 
 void bug8031109$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, editorPane, $new($JEditorPane));
 	editorPane->setEditable(false);
 	$var($EditorKit, defaultHtmlEditor, $JEditorPane::createEditorKitForContentType("text/html"_s));

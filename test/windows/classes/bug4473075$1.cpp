@@ -93,6 +93,7 @@ void bug4473075$1::init$() {
 }
 
 void bug4473075$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug4473075);
 	$assignStatic($bug4473075::frame, $new($JFrame));
 	$nc($bug4473075::frame)->setUndecorated(true);

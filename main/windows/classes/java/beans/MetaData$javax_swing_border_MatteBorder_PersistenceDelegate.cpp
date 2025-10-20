@@ -71,6 +71,7 @@ void MetaData$javax_swing_border_MatteBorder_PersistenceDelegate::init$() {
 }
 
 $Expression* MetaData$javax_swing_border_MatteBorder_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($MatteBorder, border, $cast($MatteBorder, oldInstance));
 	$var($Insets, insets, $nc(border)->getBorderInsets());
 	$var($Object, object, border->getTileIcon());

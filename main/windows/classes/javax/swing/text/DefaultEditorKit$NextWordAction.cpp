@@ -87,6 +87,7 @@ void DefaultEditorKit$NextWordAction::init$($String* nm, bool select) {
 }
 
 void DefaultEditorKit$NextWordAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getTextComponent(e));
 	if (target != nullptr) {
 		int32_t offs = target->getCaretPosition();

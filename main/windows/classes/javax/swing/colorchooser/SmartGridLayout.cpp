@@ -106,6 +106,7 @@ void SmartGridLayout::init$(int32_t numColumns, int32_t numRows) {
 }
 
 void SmartGridLayout::layoutContainer($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	buildLayoutGrid(c);
 	$var($ints, rowHeights, $new($ints, this->rows));
 	$var($ints, columnWidths, $new($ints, this->columns));
@@ -182,6 +183,7 @@ void SmartGridLayout::buildLayoutGrid($Container* c) {
 }
 
 int32_t SmartGridLayout::computeColumnWidth(int32_t columnNum) {
+	$useLocalCurrentObjectStackCache();
 	int32_t maxWidth = 1;
 	for (int32_t row = 0; row < this->rows; ++row) {
 		int32_t width = $nc($($nc($nc($nc(this->layoutGrid)->get(columnNum))->get(row))->getPreferredSize()))->width;
@@ -193,6 +195,7 @@ int32_t SmartGridLayout::computeColumnWidth(int32_t columnNum) {
 }
 
 int32_t SmartGridLayout::computeRowHeight(int32_t rowNum) {
+	$useLocalCurrentObjectStackCache();
 	int32_t maxHeight = 1;
 	for (int32_t column = 0; column < this->columns; ++column) {
 		int32_t height = $nc($($nc($nc($nc(this->layoutGrid)->get(column))->get(rowNum))->getPreferredSize()))->height;

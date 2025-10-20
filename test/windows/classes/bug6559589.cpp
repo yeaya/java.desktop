@@ -71,6 +71,7 @@ void bug6559589::init$() {
 }
 
 void bug6559589::createGui() {
+	$useLocalCurrentObjectStackCache();
 	$var($JScrollPane, sp, $new($JScrollPane));
 	int32_t listenerCount = $nc($(sp->getPropertyChangeListeners()))->length;
 	sp->updateUI();
@@ -80,6 +81,7 @@ void bug6559589::createGui() {
 }
 
 void bug6559589::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 	$SwingUtilities::invokeAndWait($$new($bug6559589$1));
 }

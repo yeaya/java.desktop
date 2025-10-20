@@ -196,6 +196,7 @@ $DPathConsumer2D* TransformingPathConsumer2D::deltaTransformConsumer($DPathConsu
 
 double TransformingPathConsumer2D::adjustClipScale($doubles* clipRect, double mxx, double myy) {
 	$init(TransformingPathConsumer2D);
+	$useLocalCurrentObjectStackCache();
 	double scaleY = 1.0 / myy;
 	(*$nc(clipRect))[0] *= scaleY;
 	(*clipRect)[1] *= scaleY;
@@ -224,6 +225,7 @@ double TransformingPathConsumer2D::adjustClipScale($doubles* clipRect, double mx
 
 double TransformingPathConsumer2D::adjustClipInverseDelta($doubles* clipRect, double mxx, double mxy, double myx, double myy) {
 	$init(TransformingPathConsumer2D);
+	$useLocalCurrentObjectStackCache();
 	double det = mxx * myy - mxy * myx;
 	double imxx = myy / det;
 	double imxy = -mxy / det;

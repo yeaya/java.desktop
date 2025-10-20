@@ -268,6 +268,7 @@ int32_t WGLGraphicsConfig::getOGLCapabilities(int64_t configInfo) {
 }
 
 void WGLGraphicsConfig::init$($Win32GraphicsDevice* device, int32_t visualnum, int64_t configInfo, $ContextCapabilities* oglCaps) {
+	$useLocalCurrentObjectStackCache();
 	$Win32GraphicsConfig::init$(device, visualnum);
 	$set(this, disposerReferent, $new($Object));
 	this->pConfigInfo = configInfo;
@@ -286,6 +287,7 @@ $SurfaceData* WGLGraphicsConfig::createManagedSurface(int32_t w, int32_t h, int3
 
 WGLGraphicsConfig* WGLGraphicsConfig::getConfig($Win32GraphicsDevice* device, int32_t pixfmt) {
 	$init(WGLGraphicsConfig);
+	$useLocalCurrentObjectStackCache();
 	if (!WGLGraphicsConfig::wglAvailable) {
 		return nullptr;
 	}
@@ -340,6 +342,7 @@ $BufferedContext* WGLGraphicsConfig::getContext() {
 
 void WGLGraphicsConfig::displayChanged() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$Win32GraphicsConfig::displayChanged();
 		$var($OGLRenderQueue, rq, $OGLRenderQueue::getInstance());
 		$nc(rq)->lock();
@@ -385,6 +388,7 @@ $ColorModel* WGLGraphicsConfig::getColorModel(int32_t transparency) {
 }
 
 $String* WGLGraphicsConfig::toString() {
+	$useLocalCurrentObjectStackCache();
 	return ($str({"WGLGraphicsConfig[dev="_s, $($cast($Win32GraphicsDevice, getDevice())), ",pixfmt="_s, $$str(this->visual), "]"_s}));
 }
 
@@ -419,6 +423,7 @@ $VolatileImage* WGLGraphicsConfig::createBackBuffer($WComponentPeer* peer) {
 }
 
 void WGLGraphicsConfig::flip($WComponentPeer* peer, $Component* target, $VolatileImage* backBuffer, int32_t x1, int32_t y1, int32_t x2, int32_t y2, $BufferCapabilities$FlipContents* flipAction) {
+	$useLocalCurrentObjectStackCache();
 	$init($BufferCapabilities$FlipContents);
 	if (flipAction == $BufferCapabilities$FlipContents::COPIED) {
 		$var($SurfaceManager, vsm, $SurfaceManager::getManager(backBuffer));
@@ -497,6 +502,7 @@ $ImageCapabilities* WGLGraphicsConfig::getImageCapabilities() {
 }
 
 $VolatileImage* WGLGraphicsConfig::createCompatibleVolatileImage(int32_t width, int32_t height, int32_t transparency, int32_t type) {
+	$useLocalCurrentObjectStackCache();
 	if ((type != 5 && type != 3) || transparency == $Transparency::BITMASK || type == 5 && !isCapPresent(12)) {
 		return nullptr;
 	}

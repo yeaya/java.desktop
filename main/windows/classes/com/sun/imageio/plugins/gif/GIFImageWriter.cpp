@@ -196,6 +196,7 @@ $String* GIFImageWriter::IMAGE_METADATA_NAME = nullptr;
 
 int32_t GIFImageWriter::getNumBits(int32_t value) {
 	$init(GIFImageWriter);
+	$useLocalCurrentObjectStackCache();
 	int32_t numBits = 0;
 	switch (value) {
 	case 2:
@@ -248,6 +249,7 @@ int32_t GIFImageWriter::getNumBits(int32_t value) {
 
 void GIFImageWriter::computeRegions($Rectangle* sourceBounds, $Dimension* destSize, $ImageWriteParam* p) {
 	$init(GIFImageWriter);
+	$useLocalCurrentObjectStackCache();
 	$var($ImageWriteParam, param, nullptr);
 	int32_t periodX = 1;
 	int32_t periodY = 1;
@@ -278,6 +280,7 @@ void GIFImageWriter::computeRegions($Rectangle* sourceBounds, $Dimension* destSi
 
 $bytes* GIFImageWriter::createColorTable($ColorModel* colorModel, $SampleModel* sampleModel) {
 	$init(GIFImageWriter);
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, colorTable, nullptr);
 	if ($instanceOf($IndexColorModel, colorModel)) {
 		$var($IndexColorModel, icm, $cast($IndexColorModel, colorModel));
@@ -345,6 +348,7 @@ bool GIFImageWriter::canWriteSequence() {
 }
 
 void GIFImageWriter::convertMetadata($String* metadataFormatName, $IIOMetadata* inData, $IIOMetadata* outData) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, formatName, nullptr);
 	$var($String, nativeFormatName, $nc(inData)->getNativeMetadataFormatName());
 	if (nativeFormatName != nullptr && nativeFormatName->equals(metadataFormatName)) {
@@ -411,6 +415,7 @@ void GIFImageWriter::endWriteSequence() {
 }
 
 $IIOMetadata* GIFImageWriter::getDefaultImageMetadata($ImageTypeSpecifier* imageType, $ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	$var($GIFWritableImageMetadata, imageMetadata, $new($GIFWritableImageMetadata));
 	$var($SampleModel, sampleModel, $nc(imageType)->getSampleModel());
 	int32_t var$0 = $nc(sampleModel)->getWidth();
@@ -528,6 +533,7 @@ void GIFImageWriter::writeToSequence($IIOImage* image, $ImageWriteParam* param) 
 }
 
 bool GIFImageWriter::needToCreateIndex($RenderedImage* image) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, sampleModel, $nc(image)->getSampleModel());
 	$var($ColorModel, colorModel, image->getColorModel());
 	bool var$1 = $nc(sampleModel)->getNumBands() != 1;
@@ -536,6 +542,7 @@ bool GIFImageWriter::needToCreateIndex($RenderedImage* image) {
 }
 
 void GIFImageWriter::write(bool writeHeader, bool writeTrailer, $IIOMetadata* sm, $IIOImage* iioimage, $ImageWriteParam* p) {
+	$useLocalCurrentObjectStackCache();
 	$var($RenderedImage, image, $nc(iioimage)->getRenderedImage());
 	if (needToCreateIndex(image)) {
 		$assign(image, $PaletteBuilder::createIndexedImage(image));
@@ -612,6 +619,7 @@ void GIFImageWriter::write(bool writeHeader, bool writeTrailer, $IIOMetadata* sm
 }
 
 void GIFImageWriter::writeImage($RenderedImage* image, $GIFWritableImageMetadata* imageMetadata$renamed, $ImageWriteParam* param, $bytes* globalColorTable, $Rectangle* sourceBounds, $Dimension* destSize) {
+	$useLocalCurrentObjectStackCache();
 	$var($GIFWritableImageMetadata, imageMetadata, imageMetadata$renamed);
 	$var($ColorModel, colorModel, $nc(image)->getColorModel());
 	$var($SampleModel, sampleModel, image->getSampleModel());
@@ -653,6 +661,7 @@ void GIFImageWriter::writeImage($RenderedImage* image, $GIFWritableImageMetadata
 }
 
 void GIFImageWriter::writeRows($RenderedImage* image, $LZWCompressor* compressor, int32_t sx, int32_t sdx, int32_t sy, int32_t sdy, int32_t sw, int32_t dy, int32_t ddy, int32_t dw, int32_t dh, int32_t numRowsWritten, int32_t progressReportRowPeriod) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, sbuf, $new($ints, sw));
 	$var($bytes, dbuf, $new($bytes, dw));
 	bool var$0 = $nc(image)->getNumXTiles() == 1;
@@ -697,6 +706,7 @@ void GIFImageWriter::writeRowsOpt($bytes* data, int32_t offset, int32_t lineStri
 }
 
 void GIFImageWriter::writeRasterData($RenderedImage* image, $Rectangle* sourceBounds, $Dimension* destSize, $ImageWriteParam* param, bool interlaceFlag) {
+	$useLocalCurrentObjectStackCache();
 	int32_t sourceXOffset = $nc(sourceBounds)->x;
 	int32_t sourceYOffset = sourceBounds->y;
 	int32_t sourceWidth = sourceBounds->width;
@@ -804,6 +814,7 @@ void GIFImageWriter::writeRasterData($RenderedImage* image, $Rectangle* sourceBo
 }
 
 void GIFImageWriter::writeHeader($String* version, int32_t logicalScreenWidth, int32_t logicalScreenHeight, int32_t colorResolution, int32_t pixelAspectRatio, int32_t backgroundColorIndex, bool sortFlag, int32_t bitsPerPixel, $bytes* globalColorTable) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$nc(this->stream)->writeBytes($$str({"GIF"_s, version}));
 		$nc(this->stream)->writeShort((int16_t)logicalScreenWidth);
@@ -827,6 +838,7 @@ void GIFImageWriter::writeHeader($String* version, int32_t logicalScreenWidth, i
 }
 
 void GIFImageWriter::writeHeader($IIOMetadata* streamMetadata, int32_t bitsPerPixel) {
+	$useLocalCurrentObjectStackCache();
 	$var($GIFWritableStreamMetadata, sm, nullptr);
 	if ($instanceOf($GIFWritableStreamMetadata, streamMetadata)) {
 		$assign(sm, $cast($GIFWritableStreamMetadata, streamMetadata));
@@ -900,6 +912,7 @@ void GIFImageWriter::writePlainTextExtension($GIFWritableImageMetadata* im) {
 }
 
 void GIFImageWriter::writeApplicationExtension($GIFWritableImageMetadata* im) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(im)->applicationIDs != nullptr) {
 		$var($Iterator, iterIDs, $nc(im->applicationIDs)->iterator());
 		$var($Iterator, iterCodes, $nc(im->authenticationCodes)->iterator());
@@ -922,6 +935,7 @@ void GIFImageWriter::writeApplicationExtension($GIFWritableImageMetadata* im) {
 }
 
 void GIFImageWriter::writeCommentExtension($GIFWritableImageMetadata* im) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(im)->comments != nullptr) {
 		try {
 			{

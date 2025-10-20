@@ -178,6 +178,7 @@ void Statement::execute() {
 }
 
 $Object* Statement::invoke() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($AccessControlContext, acc, this->acc);
 	if ((acc == nullptr) && ($System::getSecurityManager() != nullptr)) {
@@ -193,6 +194,7 @@ $Object* Statement::invoke() {
 }
 
 $Object* Statement::invokeInternal() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Object, target, getTarget());
 	$var($String, methodName, getMethodName());
@@ -303,6 +305,7 @@ $String* Statement::instanceName(Object$* instance) {
 }
 
 $String* Statement::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, target, getTarget());
 	$var($String, methodName, getMethodName());
 	$var($ObjectArray, arguments, getArguments());

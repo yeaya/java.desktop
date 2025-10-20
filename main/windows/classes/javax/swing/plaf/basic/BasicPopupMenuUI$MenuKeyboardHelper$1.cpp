@@ -82,6 +82,7 @@ void BasicPopupMenuUI$MenuKeyboardHelper$1::init$($BasicPopupMenuUI$MenuKeyboard
 }
 
 void BasicPopupMenuUI$MenuKeyboardHelper$1::focusGained($FocusEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, opposite, $nc(ev)->getOppositeComponent());
 	if (opposite != nullptr) {
 		$set(this->this$0, lastFocused, opposite);

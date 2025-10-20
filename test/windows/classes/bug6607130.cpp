@@ -114,6 +114,7 @@ $Object* allocate$bug6607130($Class* clazz) {
 }
 
 void bug6607130::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var(bug6607130, test, $new(bug6607130));
 	{
 		$var($Throwable, var$0, nullptr);
@@ -138,6 +139,7 @@ void bug6607130::init$() {
 }
 
 void bug6607130::setupUI() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, $new($JFrame));
 	$nc(this->frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$var($DefaultTableModel, model, $new($DefaultTableModel, 1, 1));
@@ -191,6 +193,7 @@ void bug6607130::test2() {
 }
 
 void bug6607130::checkResult($String* testName) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->cb)->isShowing()) {
 		$init($System);
 		$nc($System::out)->println($$str({testName, " passed"_s}));

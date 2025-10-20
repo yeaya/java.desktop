@@ -89,6 +89,7 @@ $String* BMPImageReaderSpi::getDescription($Locale* locale) {
 }
 
 bool BMPImageReaderSpi::canDecodeInput(Object$* source) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($ImageInputStream, source))) {
 		return false;
 	}

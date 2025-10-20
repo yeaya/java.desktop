@@ -486,6 +486,7 @@ $ImageWriteParam* TIFFImageWriter::getDefaultWriteParam() {
 }
 
 void TIFFImageWriter::setOutput(Object$* output) {
+	$useLocalCurrentObjectStackCache();
 	if (output != nullptr) {
 		if (!($instanceOf($ImageOutputStream, output))) {
 			$throwNew($IllegalArgumentException, "output not an ImageOutputStream!"_s);
@@ -522,6 +523,7 @@ $IIOMetadata* TIFFImageWriter::getDefaultStreamMetadata($ImageWriteParam* param)
 }
 
 $IIOMetadata* TIFFImageWriter::getDefaultImageMetadata($ImageTypeSpecifier* imageType, $ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, tagSets, $new($ArrayList, 1));
 	tagSets->add($($BaselineTIFFTagSet::getInstance()));
 	$var($TIFFImageMetadata, imageMetadata, $new($TIFFImageMetadata, tagSets));
@@ -535,6 +537,7 @@ $IIOMetadata* TIFFImageWriter::getDefaultImageMetadata($ImageTypeSpecifier* imag
 }
 
 $IIOMetadata* TIFFImageWriter::convertStreamMetadata($IIOMetadata* inData, $ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	if (inData == nullptr) {
 		$throwNew($NullPointerException, "inData == null!"_s);
 	}
@@ -560,6 +563,7 @@ $IIOMetadata* TIFFImageWriter::convertStreamMetadata($IIOMetadata* inData, $Imag
 }
 
 $IIOMetadata* TIFFImageWriter::convertImageMetadata($IIOMetadata* inData, $ImageTypeSpecifier* imageType, $ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	if (inData == nullptr) {
 		$throwNew($NullPointerException, "inData == null!"_s);
 	}
@@ -608,6 +612,7 @@ $IIOMetadata* TIFFImageWriter::convertImageMetadata($IIOMetadata* inData, $Image
 }
 
 $TIFFImageMetadata* TIFFImageWriter::convertStandardImageMetadata($IIOMetadata* inData) {
+	$useLocalCurrentObjectStackCache();
 	if (inData == nullptr) {
 		$throwNew($NullPointerException, "inData == null!"_s);
 	} else if (!$nc(inData)->isStandardMetadataFormatSupported()) {
@@ -627,6 +632,7 @@ $TIFFImageMetadata* TIFFImageWriter::convertStandardImageMetadata($IIOMetadata* 
 }
 
 $TIFFImageMetadata* TIFFImageWriter::convertNativeImageMetadata($IIOMetadata* inData) {
+	$useLocalCurrentObjectStackCache();
 	if (inData == nullptr) {
 		$throwNew($NullPointerException, "inData == null!"_s);
 	} else {
@@ -649,6 +655,7 @@ $TIFFImageMetadata* TIFFImageWriter::convertNativeImageMetadata($IIOMetadata* in
 }
 
 void TIFFImageWriter::setupMetadata($ColorModel* cm, $SampleModel* sm, int32_t destWidth, int32_t destHeight) {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFIFD, rootIFD, $nc(this->imageMetadata)->getRootIFD());
 	$var($BaselineTIFFTagSet, base, $BaselineTIFFTagSet::getInstance());
 	$var($TIFFField, f, $nc(rootIFD)->getTIFFField($BaselineTIFFTagSet::TAG_PLANAR_CONFIGURATION));
@@ -1226,6 +1233,7 @@ $ImageTypeSpecifier* TIFFImageWriter::getImageType() {
 }
 
 int32_t TIFFImageWriter::writeTile($Rectangle* tileRect$renamed, $TIFFCompressor* compressor) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, tileRect, tileRect$renamed);
 	$var($Rectangle, activeRect, nullptr);
 	bool isPadded = false;
@@ -1690,6 +1698,7 @@ bool TIFFImageWriter::equals($ints* s0, $ints* s1) {
 }
 
 void TIFFImageWriter::initializeScaleTables($ints* sampleSize) {
+	$useLocalCurrentObjectStackCache();
 	if (this->bitDepth == this->scalingBitDepth && equals(sampleSize, this->sampleSize)) {
 		return;
 	}
@@ -1774,6 +1783,7 @@ void TIFFImageWriter::writeHeader() {
 }
 
 void TIFFImageWriter::write($IIOMetadata* sm, $IIOImage* iioimage, $ImageWriteParam* p, bool writeHeader, bool writeData) {
+	$useLocalCurrentObjectStackCache();
 	if (this->stream == nullptr) {
 		$throwNew($IllegalStateException, "output == null!"_s);
 	}
@@ -1981,6 +1991,7 @@ void TIFFImageWriter::endWriteSequence() {
 }
 
 bool TIFFImageWriter::canInsertImage(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (getOutput() == nullptr) {
 		$throwNew($IllegalStateException, "getOutput() == null!"_s);
 	}
@@ -1993,6 +2004,7 @@ bool TIFFImageWriter::canInsertImage(int32_t imageIndex) {
 }
 
 void TIFFImageWriter::locateIFD(int32_t imageIndex, $longs* ifdpos, $longs* ifd) {
+	$useLocalCurrentObjectStackCache();
 	if (imageIndex < -1) {
 		$throwNew($IndexOutOfBoundsException, "imageIndex < -1!"_s);
 	}
@@ -2048,6 +2060,7 @@ void TIFFImageWriter::locateIFD(int32_t imageIndex, $longs* ifdpos, $longs* ifd)
 }
 
 void TIFFImageWriter::writeInsert(int32_t imageIndex, $IIOImage* image, $ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	int32_t currentImageCached = this->currentImage;
 	{
 		$var($Throwable, var$0, nullptr);
@@ -2070,6 +2083,7 @@ void TIFFImageWriter::writeInsert(int32_t imageIndex, $IIOImage* image, $ImageWr
 }
 
 void TIFFImageWriter::insert(int32_t imageIndex, $IIOImage* image, $ImageWriteParam* param, bool writeData) {
+	$useLocalCurrentObjectStackCache();
 	if (this->stream == nullptr) {
 		$throwNew($IllegalStateException, "Output not set!"_s);
 	}
@@ -2116,6 +2130,7 @@ bool TIFFImageWriter::canWriteEmpty() {
 }
 
 void TIFFImageWriter::checkParamsEmpty($ImageTypeSpecifier* imageType, int32_t width, int32_t height, $List* thumbnails) {
+	$useLocalCurrentObjectStackCache();
 	if (getOutput() == nullptr) {
 		$throwNew($IllegalStateException, "getOutput() == null!"_s);
 	}
@@ -2143,6 +2158,7 @@ void TIFFImageWriter::checkParamsEmpty($ImageTypeSpecifier* imageType, int32_t w
 }
 
 void TIFFImageWriter::prepareInsertEmpty(int32_t imageIndex, $ImageTypeSpecifier* imageType, int32_t width, int32_t height, $IIOMetadata* imageMetadata, $List* thumbnails, $ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	checkParamsEmpty(imageType, width, height, thumbnails);
 	this->isInsertingEmpty = true;
 	$var($SampleModel, emptySM, $nc(imageType)->getSampleModel());
@@ -2156,6 +2172,7 @@ void TIFFImageWriter::prepareInsertEmpty(int32_t imageIndex, $ImageTypeSpecifier
 }
 
 void TIFFImageWriter::prepareWriteEmpty($IIOMetadata* streamMetadata, $ImageTypeSpecifier* imageType, int32_t width, int32_t height, $IIOMetadata* imageMetadata, $List* thumbnails, $ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	if (this->stream == nullptr) {
 		$throwNew($IllegalStateException, "output == null!"_s);
 	}
@@ -2208,6 +2225,7 @@ void TIFFImageWriter::endWriteEmpty() {
 }
 
 $TIFFIFD* TIFFImageWriter::readIFD(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (this->stream == nullptr) {
 		$throwNew($IllegalStateException, "Output not set!"_s);
 	}
@@ -2231,6 +2249,7 @@ $TIFFIFD* TIFFImageWriter::readIFD(int32_t imageIndex) {
 }
 
 bool TIFFImageWriter::canReplacePixels(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (getOutput() == nullptr) {
 		$throwNew($IllegalStateException, "getOutput() == null!"_s);
 	}
@@ -2241,6 +2260,7 @@ bool TIFFImageWriter::canReplacePixels(int32_t imageIndex) {
 }
 
 void TIFFImageWriter::prepareReplacePixels(int32_t imageIndex, $Rectangle* region$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, region, region$renamed);
 	$synchronized(this->replacePixelsLock) {
 		if (this->stream == nullptr) {
@@ -2299,6 +2319,7 @@ void TIFFImageWriter::prepareReplacePixels(int32_t imageIndex, $Rectangle* regio
 }
 
 $Raster* TIFFImageWriter::subsample($Raster* raster, $ints* sourceBands, int32_t subOriginX, int32_t subOriginY, int32_t subPeriodX, int32_t subPeriodY, int32_t dstOffsetX, int32_t dstOffsetY, $Rectangle* target) {
+	$useLocalCurrentObjectStackCache();
 	int32_t x = $nc(raster)->getMinX();
 	int32_t y = raster->getMinY();
 	int32_t w = raster->getWidth();
@@ -2369,6 +2390,7 @@ $Raster* TIFFImageWriter::subsample($Raster* raster, $ints* sourceBands, int32_t
 }
 
 void TIFFImageWriter::replacePixels($RenderedImage* image, $ImageWriteParam* param$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageWriteParam, param, param$renamed);
 	$synchronized(this->replacePixelsLock) {
 		if (this->stream == nullptr) {
@@ -2577,6 +2599,7 @@ void TIFFImageWriter::replacePixels($RenderedImage* image, $ImageWriteParam* par
 }
 
 void TIFFImageWriter::replacePixels($Raster* raster, $ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	if (raster == nullptr) {
 		$throwNew($NullPointerException, "raster == null!"_s);
 	}

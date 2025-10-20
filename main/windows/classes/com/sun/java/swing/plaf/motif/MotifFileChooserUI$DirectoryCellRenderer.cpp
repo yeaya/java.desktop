@@ -83,6 +83,7 @@ void MotifFileChooserUI$DirectoryCellRenderer::init$($MotifFileChooserUI* this$0
 }
 
 $Component* MotifFileChooserUI$DirectoryCellRenderer::getListCellRendererComponent($JList* list, Object$* value, int32_t index, bool isSelected, bool cellHasFocus) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultListCellRenderer::getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 	setText($($nc($(this->this$0->getFileChooser()))->getName($cast($File, value))));
 	setInheritsPopupMenu(true);

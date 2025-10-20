@@ -274,6 +274,7 @@ void DLSSoundbank::init$() {
 }
 
 void DLSSoundbank::init$($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	this->major = -1;
 	this->minor = -1;
 	$set(this, info, $new($DLSInfo));
@@ -298,6 +299,7 @@ void DLSSoundbank::init$($URL* url) {
 }
 
 void DLSSoundbank::init$($File* file) {
+	$useLocalCurrentObjectStackCache();
 	this->major = -1;
 	this->minor = -1;
 	$set(this, info, $new($DLSInfo));
@@ -335,6 +337,7 @@ void DLSSoundbank::init$($InputStream* inputstream) {
 }
 
 void DLSSoundbank::readSoundbank($InputStream* inputstream) {
+	$useLocalCurrentObjectStackCache();
 	$var($RIFFReader, riff, $new($RIFFReader, inputstream));
 	if (!$nc($(riff->getFormat()))->equals("RIFF"_s)) {
 		$throwNew($RIFFInvalidFormatException, "Input stream is not a valid RIFF stream!"_s);
@@ -426,6 +429,7 @@ int64_t DLSSoundbank::cdlQuery($DLSSoundbank$DLSID* uuid) {
 }
 
 bool DLSSoundbank::readCdlChunk($RIFFReader* riff) {
+	$useLocalCurrentObjectStackCache();
 	$var($DLSSoundbank$DLSID, uuid, nullptr);
 	int64_t x = 0;
 	int64_t y = 0;
@@ -568,6 +572,7 @@ bool DLSSoundbank::readCdlChunk($RIFFReader* riff) {
 }
 
 void DLSSoundbank::readInfoChunk($RIFFReader* riff) {
+	$useLocalCurrentObjectStackCache();
 	$set($nc(this->info), name, nullptr);
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
@@ -611,6 +616,7 @@ void DLSSoundbank::readInfoChunk($RIFFReader* riff) {
 }
 
 void DLSSoundbank::readLinsChunk($RIFFReader* riff) {
+	$useLocalCurrentObjectStackCache();
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
 		if ($nc($($nc(chunk)->getFormat()))->equals("LIST"_s)) {
@@ -622,6 +628,7 @@ void DLSSoundbank::readLinsChunk($RIFFReader* riff) {
 }
 
 void DLSSoundbank::readInsChunk($RIFFReader* riff) {
+	$useLocalCurrentObjectStackCache();
 	$var($DLSInstrument, instrument, $new($DLSInstrument, this));
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
@@ -706,6 +713,7 @@ void DLSSoundbank::readInsChunk($RIFFReader* riff) {
 }
 
 void DLSSoundbank::readArt1Chunk($List* modulators, $RIFFReader* riff) {
+	$useLocalCurrentObjectStackCache();
 	int64_t size = $nc(riff)->readUnsignedInt();
 	int64_t count = riff->readUnsignedInt();
 	if (size - 8 != 0) {
@@ -724,6 +732,7 @@ void DLSSoundbank::readArt1Chunk($List* modulators, $RIFFReader* riff) {
 }
 
 void DLSSoundbank::readArt2Chunk($List* modulators, $RIFFReader* riff) {
+	$useLocalCurrentObjectStackCache();
 	int64_t size = $nc(riff)->readUnsignedInt();
 	int64_t count = riff->readUnsignedInt();
 	if (size - 8 != 0) {
@@ -742,6 +751,7 @@ void DLSSoundbank::readArt2Chunk($List* modulators, $RIFFReader* riff) {
 }
 
 bool DLSSoundbank::readRgnChunk($DLSRegion* split, $RIFFReader* riff) {
+	$useLocalCurrentObjectStackCache();
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
 		$var($String, format, $nc(chunk)->getFormat());
@@ -809,6 +819,7 @@ bool DLSSoundbank::readRgnChunk($DLSRegion* split, $RIFFReader* riff) {
 }
 
 void DLSSoundbank::readWsmpChunk($DLSSampleOptions* sampleOptions, $RIFFReader* riff) {
+	$useLocalCurrentObjectStackCache();
 	int64_t size = $nc(riff)->readUnsignedInt();
 	$nc(sampleOptions)->unitynote = riff->readUnsignedShort();
 	sampleOptions->finetune = riff->readShort();
@@ -832,6 +843,7 @@ void DLSSoundbank::readWsmpChunk($DLSSampleOptions* sampleOptions, $RIFFReader* 
 }
 
 void DLSSoundbank::readInsInfoChunk($DLSInstrument* dlsinstrument, $RIFFReader* riff) {
+	$useLocalCurrentObjectStackCache();
 	$set($nc($nc(dlsinstrument)->info), name, nullptr);
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
@@ -875,6 +887,7 @@ void DLSSoundbank::readInsInfoChunk($DLSInstrument* dlsinstrument, $RIFFReader* 
 }
 
 void DLSSoundbank::readWvplChunk($RIFFReader* riff) {
+	$useLocalCurrentObjectStackCache();
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
 		if ($nc($($nc(chunk)->getFormat()))->equals("LIST"_s)) {
@@ -886,6 +899,7 @@ void DLSSoundbank::readWvplChunk($RIFFReader* riff) {
 }
 
 void DLSSoundbank::readWaveChunk($RIFFReader* riff) {
+	$useLocalCurrentObjectStackCache();
 	$var($DLSSample, sample, $new($DLSSample, this));
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
@@ -956,6 +970,7 @@ void DLSSoundbank::readWaveChunk($RIFFReader* riff) {
 }
 
 void DLSSoundbank::readWaveInfoChunk($DLSSample* dlssample, $RIFFReader* riff) {
+	$useLocalCurrentObjectStackCache();
 	$set($nc($nc(dlssample)->info), name, nullptr);
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
@@ -1011,6 +1026,7 @@ void DLSSoundbank::save($OutputStream* out) {
 }
 
 void DLSSoundbank::writeSoundbank($RIFFWriter* writer) {
+	$useLocalCurrentObjectStackCache();
 	$var($RIFFWriter, colh_chunk, $nc(writer)->writeChunk("colh"_s));
 	$nc(colh_chunk)->writeUnsignedInt($nc(this->instruments)->size());
 	if (this->major != -1 && this->minor != -1) {
@@ -1056,6 +1072,7 @@ void DLSSoundbank::writeSoundbank($RIFFWriter* writer) {
 }
 
 void DLSSoundbank::writeSample($RIFFWriter* writer, $DLSSample* sample) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFormat, audioformat, $nc(sample)->getFormat());
 	$var($AudioFormat$Encoding, encoding, $nc(audioformat)->getEncoding());
 	float sampleRate = audioformat->getSampleRate();
@@ -1123,6 +1140,7 @@ void DLSSoundbank::writeSample($RIFFWriter* writer, $DLSSample* sample) {
 }
 
 void DLSSoundbank::writeInstruments($RIFFWriter* writer) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->instruments)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1135,6 +1153,7 @@ void DLSSoundbank::writeInstruments($RIFFWriter* writer) {
 }
 
 void DLSSoundbank::writeInstrument($RIFFWriter* writer, $DLSInstrument* instrument) {
+	$useLocalCurrentObjectStackCache();
 	int32_t art1_count = 0;
 	int32_t art2_count = 0;
 	{
@@ -1194,6 +1213,7 @@ void DLSSoundbank::writeInstrument($RIFFWriter* writer, $DLSInstrument* instrume
 }
 
 void DLSSoundbank::writeArticulators($RIFFWriter* writer, $List* modulators) {
+	$useLocalCurrentObjectStackCache();
 	int32_t art1_count = 0;
 	int32_t art2_count = 0;
 	{
@@ -1255,6 +1275,7 @@ void DLSSoundbank::writeArticulators($RIFFWriter* writer, $List* modulators) {
 }
 
 void DLSSoundbank::writeRegion($RIFFWriter* writer, $DLSRegion* region, int32_t version) {
+	$useLocalCurrentObjectStackCache();
 	$var($RIFFWriter, rgns, nullptr);
 	if (version == 1) {
 		$assign(rgns, $nc(writer)->writeList("rgn "_s));
@@ -1289,6 +1310,7 @@ void DLSSoundbank::writeRegion($RIFFWriter* writer, $DLSRegion* region, int32_t 
 }
 
 void DLSSoundbank::writeSampleOptions($RIFFWriter* wsmp, $DLSSampleOptions* sampleoptions) {
+	$useLocalCurrentObjectStackCache();
 	$nc(wsmp)->writeUnsignedInt(20);
 	wsmp->writeUnsignedShort($nc(sampleoptions)->unitynote);
 	wsmp->writeShort($nc(sampleoptions)->finetune);
@@ -1310,6 +1332,7 @@ void DLSSoundbank::writeSampleOptions($RIFFWriter* wsmp, $DLSSampleOptions* samp
 }
 
 void DLSSoundbank::writeInfoStringChunk($RIFFWriter* writer, $String* name, $String* value) {
+	$useLocalCurrentObjectStackCache();
 	if (value == nullptr) {
 		return;
 	}
@@ -1352,6 +1375,7 @@ $String* DLSSoundbank::getName() {
 }
 
 $String* DLSSoundbank::getVersion() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$$str(this->major), "."_s, $$str(this->minor)});
 }
 
@@ -1376,6 +1400,7 @@ void DLSSoundbank::setDescription($String* s) {
 }
 
 $SoundbankResourceArray* DLSSoundbank::getResources() {
+	$useLocalCurrentObjectStackCache();
 	$var($SoundbankResourceArray, resources, $new($SoundbankResourceArray, $nc(this->samples)->size()));
 	int32_t j = 0;
 	for (int32_t i = 0; i < $nc(this->samples)->size(); ++i) {
@@ -1385,6 +1410,7 @@ $SoundbankResourceArray* DLSSoundbank::getResources() {
 }
 
 $InstrumentArray* DLSSoundbank::getInstruments() {
+	$useLocalCurrentObjectStackCache();
 	$var($DLSInstrumentArray, inslist_array, $fcast($DLSInstrumentArray, $nc(this->instruments)->toArray($$new($DLSInstrumentArray, $nc(this->instruments)->size()))));
 	$Arrays::sort(inslist_array, $$new($ModelInstrumentComparator));
 	return $fcast($InstrumentArray, inslist_array);
@@ -1395,6 +1421,7 @@ $DLSSampleArray* DLSSoundbank::getSamples() {
 }
 
 $Instrument* DLSSoundbank::getInstrument($Patch* patch) {
+	$useLocalCurrentObjectStackCache();
 	int32_t program = $nc(patch)->getProgram();
 	int32_t bank = patch->getBank();
 	bool percussion = false;

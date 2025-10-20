@@ -85,12 +85,14 @@ $ComponentUIArray* MultiOptionPaneUI::getUIs() {
 }
 
 void MultiOptionPaneUI::selectInitialValue($JOptionPane* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($OptionPaneUI, $($nc(this->uis)->elementAt(i))))))->selectInitialValue(a);
 	}
 }
 
 bool MultiOptionPaneUI::containsCustomComponents($JOptionPane* a) {
+	$useLocalCurrentObjectStackCache();
 	bool returnValue = $nc((($cast($OptionPaneUI, $($nc(this->uis)->elementAt(0))))))->containsCustomComponents(a);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($OptionPaneUI, $($nc(this->uis)->elementAt(i))))))->containsCustomComponents(a);
@@ -99,6 +101,7 @@ bool MultiOptionPaneUI::containsCustomComponents($JOptionPane* a) {
 }
 
 bool MultiOptionPaneUI::contains($JComponent* a, int32_t b, int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	bool returnValue = $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->contains(a, b, c);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->contains(a, b, c);
@@ -107,6 +110,7 @@ bool MultiOptionPaneUI::contains($JComponent* a, int32_t b, int32_t c) {
 }
 
 void MultiOptionPaneUI::update($Graphics* a, $JComponent* b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->update(a, b);
 	}
@@ -119,24 +123,28 @@ $ComponentUI* MultiOptionPaneUI::createUI($JComponent* a) {
 }
 
 void MultiOptionPaneUI::installUI($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->installUI(a);
 	}
 }
 
 void MultiOptionPaneUI::uninstallUI($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->uninstallUI(a);
 	}
 }
 
 void MultiOptionPaneUI::paint($Graphics* a, $JComponent* b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->paint(a, b);
 	}
 }
 
 $Dimension* MultiOptionPaneUI::getPreferredSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getPreferredSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getPreferredSize(a);
@@ -145,6 +153,7 @@ $Dimension* MultiOptionPaneUI::getPreferredSize($JComponent* a) {
 }
 
 $Dimension* MultiOptionPaneUI::getMinimumSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getMinimumSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getMinimumSize(a);
@@ -153,6 +162,7 @@ $Dimension* MultiOptionPaneUI::getMinimumSize($JComponent* a) {
 }
 
 $Dimension* MultiOptionPaneUI::getMaximumSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getMaximumSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getMaximumSize(a);
@@ -161,6 +171,7 @@ $Dimension* MultiOptionPaneUI::getMaximumSize($JComponent* a) {
 }
 
 int32_t MultiOptionPaneUI::getAccessibleChildrenCount($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getAccessibleChildrenCount(a);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getAccessibleChildrenCount(a);
@@ -169,6 +180,7 @@ int32_t MultiOptionPaneUI::getAccessibleChildrenCount($JComponent* a) {
 }
 
 $Accessible* MultiOptionPaneUI::getAccessibleChild($JComponent* a, int32_t b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Accessible, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getAccessibleChild(a, b));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getAccessibleChild(a, b);

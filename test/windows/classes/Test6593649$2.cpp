@@ -88,6 +88,7 @@ void Test6593649$2::init$() {
 }
 
 void Test6593649$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($Test6593649);
 	$assignStatic($Test6593649::frame, $new($JFrame));
 	$nc($Test6593649::frame)->setSize(200, 100);

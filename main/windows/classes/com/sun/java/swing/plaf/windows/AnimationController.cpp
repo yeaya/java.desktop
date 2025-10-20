@@ -185,6 +185,7 @@ AnimationController* AnimationController::getAnimationController() {
 	$load(AnimationController);
 	$synchronized(class$) {
 		$init(AnimationController);
+		$useLocalCurrentObjectStackCache();
 		$var($AppContext, appContext, $AppContext::getAppContext());
 		$var($Object, obj, $nc(appContext)->get(AnimationController::ANIMATION_CONTROLLER_KEY));
 		if (obj == nullptr) {
@@ -205,6 +206,7 @@ void AnimationController::init$() {
 
 void AnimationController::triggerAnimation($JComponent* c, $TMSchema$Part* part, $TMSchema$State* newState) {
 	$init(AnimationController);
+	$useLocalCurrentObjectStackCache();
 	$init($TMSchema$Part);
 	if ($instanceOf($JTabbedPane, c) || part == $TMSchema$Part::TP_BUTTON) {
 		return;
@@ -296,6 +298,7 @@ $TMSchema$State* AnimationController::normalizeState($TMSchema$State* state) {
 
 $TMSchema$State* AnimationController::getState($JComponent* component, $TMSchema$Part* part) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$TMSchema$State* rv = nullptr;
 		$var($Object, tmpObject, $nc(component)->getClientProperty($($AnimationController$PartUIClientPropertyKey::getKey(part))));
 		if ($instanceOf($TMSchema$State, tmpObject)) {
@@ -313,6 +316,7 @@ void AnimationController::putState($JComponent* component, $TMSchema$Part* part,
 
 void AnimationController::startAnimation($JComponent* component, $TMSchema$Part* part, $TMSchema$State* startState, $TMSchema$State* endState, int64_t millis) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		bool isForwardAndReverse = false;
 		$init($TMSchema$State);
 		if (endState == $TMSchema$State::DEFAULTED) {
@@ -342,6 +346,7 @@ void AnimationController::startAnimation($JComponent* component, $TMSchema$Part*
 
 void AnimationController::paintSkin($JComponent* component, $XPStyle$Skin* skin, $Graphics* g, int32_t dx, int32_t dy, int32_t dw, int32_t dh, $TMSchema$State* state) {
 	$init(AnimationController);
+	$useLocalCurrentObjectStackCache();
 	if (AnimationController::VISTA_ANIMATION_DISABLED) {
 		$nc(skin)->paintSkinRaw(g, dx, dy, dw, dh, state);
 		return;
@@ -373,6 +378,7 @@ void AnimationController::propertyChange($PropertyChangeEvent* e) {
 
 void AnimationController::actionPerformed($ActionEvent* e) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($List, componentsToRemove, nullptr);
 		$var($List, partsToRemove, nullptr);
 		{
@@ -457,6 +463,7 @@ void AnimationController::dispose() {
 }
 
 void clinit$AnimationController($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	AnimationController::VISTA_ANIMATION_DISABLED = $nc(($cast($Boolean, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetBooleanAction, "swing.disablevistaanimation"_s)))))))->booleanValue();
 	$assignStatic(AnimationController::ANIMATION_CONTROLLER_KEY, $new($StringBuilder, "ANIMATION_CONTROLLER_KEY"_s));

@@ -201,6 +201,7 @@ int32_t ColorSpace::getNumComponents() {
 }
 
 $String* ColorSpace::getName(int32_t component) {
+	$useLocalCurrentObjectStackCache();
 	rangeCheck(component);
 	if (this->compName == nullptr) {
 
@@ -330,6 +331,7 @@ float ColorSpace::getMaxValue(int32_t component) {
 }
 
 void ColorSpace::rangeCheck(int32_t component) {
+	$useLocalCurrentObjectStackCache();
 	if (component < 0 || component > getNumComponents() - 1) {
 		$throwNew($IllegalArgumentException, $$str({"Component index out of range: "_s, $$str(component)}));
 	}

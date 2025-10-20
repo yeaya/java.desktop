@@ -133,6 +133,7 @@ $Border* BasicComboBoxRenderer::getNoFocusBorder() {
 }
 
 $Dimension* BasicComboBoxRenderer::getPreferredSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, nullptr);
 	bool var$0 = this->getText() == nullptr;
 	if (var$0 || $nc($(this->getText()))->isEmpty()) {
@@ -146,6 +147,7 @@ $Dimension* BasicComboBoxRenderer::getPreferredSize() {
 }
 
 $Component* BasicComboBoxRenderer::getListCellRendererComponent($JList* list, Object$* value, int32_t index, bool isSelected, bool cellHasFocus) {
+	$useLocalCurrentObjectStackCache();
 	if (isSelected) {
 		setBackground($($nc(list)->getSelectionBackground()));
 		setForeground($($nc(list)->getSelectionForeground()));

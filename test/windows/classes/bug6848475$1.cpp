@@ -78,6 +78,7 @@ void bug6848475$1::init$() {
 }
 
 void bug6848475$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6848475);
 	$assignStatic($bug6848475::frame, $new($JFrame));
 	$var($DefaultBoundedRangeModel, sliderModel, $new($bug6848475$1$1, this));

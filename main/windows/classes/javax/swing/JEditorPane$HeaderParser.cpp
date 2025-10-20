@@ -74,6 +74,7 @@ void JEditorPane$HeaderParser::init$($String* raw) {
 }
 
 void JEditorPane$HeaderParser::parse() {
+	$useLocalCurrentObjectStackCache();
 	if (this->raw != nullptr) {
 		$set(this, raw, $nc(this->raw)->trim());
 		$var($chars, ca, $nc(this->raw)->toCharArray());
@@ -181,6 +182,7 @@ $String* JEditorPane$HeaderParser::findValue($String* k$renamed, $String* Defaul
 }
 
 int32_t JEditorPane$HeaderParser::findInt($String* k, int32_t Default) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $Integer::parseInt($(findValue(k, $($String::valueOf(Default)))));
 	} catch ($Throwable&) {

@@ -81,6 +81,7 @@ void SoftSynthesizer$3::init$($SoftSynthesizer* this$0) {
 }
 
 $Object* SoftSynthesizer$3::run() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc($($System::getProperties()))->getProperty("os.name"_s)))->startsWith("Windows"_s)) {
 		$var($File, gm_dls, $new($File, $$str({$($System::getenv("SystemRoot"_s)), "\\system32\\drivers\\gm.dls"_s})));
 		if (gm_dls->isFile()) {

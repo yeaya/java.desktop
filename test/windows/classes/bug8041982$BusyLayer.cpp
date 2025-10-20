@@ -99,6 +99,7 @@ void bug8041982$BusyLayer::init$($bug8041982* this$0) {
 }
 
 void bug8041982$BusyLayer::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$LayerUI::paint(g, c);
 	if (isAnimated()) {
 		$var($Component, var$0, static_cast<$Component*>(c));
@@ -115,6 +116,7 @@ bool bug8041982$BusyLayer::isAnimated() {
 }
 
 void bug8041982$BusyLayer::setAnimated(bool animated) {
+	$useLocalCurrentObjectStackCache();
 	if (this->animated != animated) {
 		this->animated = animated;
 		$var($String, var$0, "animated"_s);
@@ -128,6 +130,7 @@ void bug8041982$BusyLayer::applyPropertyChange($PropertyChangeEvent* evt, $JLaye
 }
 
 bool bug8041982$BusyLayer::imageUpdate($Image* img, int32_t infoflags, int32_t x, int32_t y, int32_t w, int32_t h, $JLayer* l) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println($$str({"imageUpdate "_s, $$str(this->imageUpdateCount)}));
 	if (this->imageUpdateCount++ == 100) {

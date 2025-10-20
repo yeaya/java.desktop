@@ -114,6 +114,7 @@ void HeadlessJTextField::init$() {
 }
 
 void HeadlessJTextField::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextField, t, $new($JTextField));
 	t->selectAll();
 	t->getSelectionStart();

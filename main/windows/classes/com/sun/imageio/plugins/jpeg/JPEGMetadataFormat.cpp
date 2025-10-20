@@ -75,6 +75,7 @@ void JPEGMetadataFormat::init$($String* formatName, int32_t childPolicy) {
 }
 
 void JPEGMetadataFormat::addStreamElements($String* parentName) {
+	$useLocalCurrentObjectStackCache();
 	addElement("dqt"_s, parentName, 1, 4);
 	addElement("dqtable"_s, "dqt"_s, $IIOMetadataFormat::CHILD_POLICY_EMPTY);
 	addAttribute("dqtable"_s, "elementPrecision"_s, $IIOMetadataFormat::DATATYPE_INTEGER, false, "0"_s);

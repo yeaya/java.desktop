@@ -84,10 +84,12 @@ $Object* SoftCache$Entry::getValue() {
 }
 
 $Object* SoftCache$Entry::setValue(Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	return $of($nc(this->ent)->setValue($($SoftCache$ValueCell::create($($nc(this->ent)->getKey()), value, this->this$0->queue))));
 }
 
 bool SoftCache$Entry::equals(Object$* o) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($Map$Entry, o))) {
 		return false;
 	}

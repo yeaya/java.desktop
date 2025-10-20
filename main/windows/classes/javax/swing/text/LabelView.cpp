@@ -133,6 +133,7 @@ void LabelView::setBackground($Color* bg) {
 }
 
 void LabelView::setPropertiesFromAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attr, getAttributes());
 	if (attr != nullptr) {
 		$var($Document, d, getDocument());
@@ -157,6 +158,7 @@ void LabelView::setPropertiesFromAttributes() {
 }
 
 $FontMetrics* LabelView::getFontMetrics() {
+	$useLocalCurrentObjectStackCache();
 	sync();
 	$var($Container, c, getContainer());
 	return (c != nullptr) ? $nc(c)->getFontMetrics(this->font) : $nc($($Toolkit::getDefaultToolkit()))->getFontMetrics(this->font);

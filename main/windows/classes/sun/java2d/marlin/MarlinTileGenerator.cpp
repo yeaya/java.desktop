@@ -200,6 +200,7 @@ void MarlinTileGenerator::getAlpha($bytes* tile, int32_t offset, int32_t rowstri
 }
 
 void MarlinTileGenerator::getAlphaNoRLE($bytes* tile, int32_t offset, int32_t rowstride) {
+	$useLocalCurrentObjectStackCache();
 	$var($MarlinCache, _cache, this->cache);
 	$var($longs, rowAAChunkIndex, $nc(_cache)->rowAAChunkIndex);
 	$var($ints, rowAAx0, _cache->rowAAx0);
@@ -265,6 +266,7 @@ void MarlinTileGenerator::getAlphaNoRLE($bytes* tile, int32_t offset, int32_t ro
 }
 
 void MarlinTileGenerator::getAlphaRLE($bytes* tile, int32_t offset, int32_t rowstride) {
+	$useLocalCurrentObjectStackCache();
 	$var($MarlinCache, _cache, this->cache);
 	$var($longs, rowAAChunkIndex, $nc(_cache)->rowAAChunkIndex);
 	$var($ints, rowAAx0, _cache->rowAAx0);
@@ -583,6 +585,7 @@ $String* MarlinTileGenerator::hex(int32_t v, int32_t d) {
 }
 
 void clinit$MarlinTileGenerator($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$init($MarlinConst);
 	MarlinTileGenerator::MAX_TILE_ALPHA_SUM = $MarlinConst::TILE_W * $MarlinConst::TILE_H * $MarlinConst::MAX_AA_ALPHA;
 	MarlinTileGenerator::TH_AA_ALPHA_FILL_EMPTY = (($MarlinConst::MAX_AA_ALPHA + 1) / 3);

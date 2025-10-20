@@ -2011,6 +2011,7 @@ void MetalLookAndFeel::init$() {
 
 bool MetalLookAndFeel::isWindows() {
 	$init(MetalLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (!MetalLookAndFeel::checkedWindows) {
 		$OSInfo$OSType* osType = $cast($OSInfo$OSType, $AccessController::doPrivileged($($OSInfo::getOSTypeAction())));
@@ -2040,6 +2041,7 @@ bool MetalLookAndFeel::useSystemFonts() {
 
 bool MetalLookAndFeel::useHighContrastTheme() {
 	$init(MetalLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = isWindows();
 	if (var$0 && useSystemFonts()) {
 		$var($Boolean, highContrast, $cast($Boolean, $nc($($Toolkit::getDefaultToolkit()))->getDesktopProperty("win.highContrast.on"_s)));
@@ -2078,6 +2080,7 @@ bool MetalLookAndFeel::getSupportsWindowDecorations() {
 }
 
 void MetalLookAndFeel::initClassDefaults($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$BasicLookAndFeel::initClassDefaults(table);
 	$var($String, metalPackageName, "javax.swing.plaf.metal."_s);
 	$var($ObjectArray, uiDefaults, $new($ObjectArray, {
@@ -2130,6 +2133,7 @@ void MetalLookAndFeel::initClassDefaults($UIDefaults* table) {
 }
 
 void MetalLookAndFeel::initSystemColorDefaults($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$var($MetalTheme, theme, getCurrentTheme());
 	$var($Color, control, $nc(theme)->getControl());
 	$var($ObjectArray, systemColors, $new($ObjectArray, {
@@ -2194,6 +2198,7 @@ void MetalLookAndFeel::initResourceBundle($UIDefaults* table) {
 }
 
 void MetalLookAndFeel::initComponentDefaults($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$BasicLookAndFeel::initComponentDefaults(table);
 	initResourceBundle(table);
 	$var($Color, acceleratorForeground, getAcceleratorForeground());
@@ -3888,6 +3893,7 @@ void MetalLookAndFeel::createDefaultTheme() {
 }
 
 $UIDefaults* MetalLookAndFeel::getDefaults() {
+	$useLocalCurrentObjectStackCache();
 	MetalLookAndFeel::METAL_LOOK_AND_FEEL_INITED = true;
 	createDefaultTheme();
 	$var($UIDefaults, table, $BasicLookAndFeel::getDefaults());
@@ -3911,6 +3917,7 @@ void MetalLookAndFeel::setCurrentTheme($MetalTheme* theme) {
 
 $MetalTheme* MetalLookAndFeel::getCurrentTheme() {
 	$init(MetalLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($MetalTheme, currentTheme, nullptr);
 	$var($AppContext, context, $AppContext::getAppContext());

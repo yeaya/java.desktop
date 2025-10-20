@@ -328,6 +328,7 @@ $ComponentUI* SynthLookAndFeel::getSelectedUI() {
 
 void SynthLookAndFeel::setSelectedUI($ComponentUI* uix, bool selected, bool focused, bool enabled, bool rollover) {
 	$init(SynthLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	int32_t selectedUIState = 0;
 	if (selected) {
 		selectedUIState = $SynthConstants::SELECTED;
@@ -354,6 +355,7 @@ void SynthLookAndFeel::setSelectedUI($ComponentUI* uix, bool selected, bool focu
 
 int32_t SynthLookAndFeel::getSelectedUIState() {
 	$init(SynthLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	$var($Integer, result, $cast($Integer, $nc($($AppContext::getAppContext()))->get(SynthLookAndFeel::SELECTED_UI_STATE_KEY)));
 	return result == nullptr ? 0 : $nc(result)->intValue();
 }
@@ -410,6 +412,7 @@ bool SynthLookAndFeel::shouldUpdateStyle($PropertyChangeEvent* event) {
 
 $SynthStyle* SynthLookAndFeel::updateStyle($SynthContext* context, $SynthUI* ui) {
 	$init(SynthLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, var$0, $nc(context)->getComponent());
 	$var($SynthStyle, newStyle, getStyle(var$0, $(context->getRegion())));
 	$var($SynthStyle, oldStyle, $nc(context)->getStyle());
@@ -425,6 +428,7 @@ $SynthStyle* SynthLookAndFeel::updateStyle($SynthContext* context, $SynthUI* ui)
 
 void SynthLookAndFeel::updateStyles($Component* c) {
 	$init(SynthLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JComponent, c)) {
 		$var($String, name, $nc(c)->getName());
 		c->setName(nullptr);
@@ -462,6 +466,7 @@ $Region* SynthLookAndFeel::getRegion($JComponent* c) {
 
 $Insets* SynthLookAndFeel::getPaintingInsets($SynthContext* state, $Insets* insets$renamed) {
 	$init(SynthLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, insets$renamed);
 	if ($nc(state)->isSubregion()) {
 		$assign(insets, $nc($(state->getStyle()))->getInsets(state, insets));
@@ -483,6 +488,7 @@ void SynthLookAndFeel::updateSubregion($SynthContext* state, $Graphics* g, $Rect
 
 void SynthLookAndFeel::paintRegion($SynthContext* state, $Graphics* g, $Rectangle* bounds) {
 	$init(SynthLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, c, $nc(state)->getComponent());
 	$var($SynthStyle, style, state->getStyle());
 	int32_t x = 0;
@@ -524,6 +530,7 @@ $Object* SynthLookAndFeel::getUIOfType($ComponentUI* ui, $Class* klass) {
 
 $ComponentUI* SynthLookAndFeel::createUI($JComponent* c) {
 	$init(SynthLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	$var($String, key, $nc($($nc(c)->getUIClassID()))->intern());
 	if (key == "ButtonUI"_s) {
 		return $SynthButtonUI::createUI(c);
@@ -632,6 +639,7 @@ void SynthLookAndFeel::load($InputStream* input, $Class* resourceBase) {
 }
 
 void SynthLookAndFeel::load($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	if (url == nullptr) {
 		$throwNew($IllegalArgumentException, "You must supply a valid Synth set URL"_s);
 	}
@@ -643,6 +651,7 @@ void SynthLookAndFeel::load($URL* url) {
 }
 
 void SynthLookAndFeel::initialize() {
+	$useLocalCurrentObjectStackCache();
 	$BasicLookAndFeel::initialize();
 	$DefaultLookup::setDefaultLookup($$new($SynthDefaultLookup));
 	setStyleFactory(this->factory);
@@ -655,6 +664,7 @@ void SynthLookAndFeel::uninitialize() {
 }
 
 $UIDefaults* SynthLookAndFeel::getDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $new($UIDefaults, 60, 0.75f));
 	$Region::registerUIs(table);
 	table->setDefaultLocale($($Locale::getDefault()));
@@ -751,6 +761,7 @@ bool SynthLookAndFeel::shouldUpdateStyleOnEvent($PropertyChangeEvent* ev) {
 
 bool SynthLookAndFeel::useLAFConditions() {
 	$init(SynthLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	$var($String, language, $nc($($Locale::getDefault()))->getLanguage());
 	$var($Toolkit, tk, $Toolkit::getDefaultToolkit());
 	$var($String, desktop, ($instanceOf($SunToolkit, tk)) ? $nc(($cast($SunToolkit, tk)))->getDesktop() : ($String*)nullptr);

@@ -126,6 +126,7 @@ void JTextComponent$InputMethodRequestsHandler::init$($JTextComponent* this$0) {
 }
 
 $AttributedCharacterIterator* JTextComponent$InputMethodRequestsHandler::cancelLatestCommittedText($AttributedCharacterIterator$AttributeArray* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, this->this$0->getDocument());
 	if ((doc != nullptr) && (this->this$0->latestCommittedTextStart != nullptr) && (!$nc($of(this->this$0->latestCommittedTextStart))->equals(this->this$0->latestCommittedTextEnd))) {
 		try {
@@ -142,6 +143,7 @@ $AttributedCharacterIterator* JTextComponent$InputMethodRequestsHandler::cancelL
 }
 
 $AttributedCharacterIterator* JTextComponent$InputMethodRequestsHandler::getCommittedText(int32_t beginIndex, int32_t endIndex, $AttributedCharacterIterator$AttributeArray* attributes) {
+	$useLocalCurrentObjectStackCache();
 	int32_t composedStartIndex = 0;
 	int32_t composedEndIndex = 0;
 	if (this->this$0->composedTextExists()) {
@@ -220,6 +222,7 @@ $TextHitInfo* JTextComponent$InputMethodRequestsHandler::getLocationOffset(int32
 }
 
 $Rectangle* JTextComponent$InputMethodRequestsHandler::getTextLocation($TextHitInfo* offset) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, r, nullptr);
 	try {
 		$assign(r, this->this$0->modelToView(this->this$0->getCaretPosition()));
@@ -238,6 +241,7 @@ $Rectangle* JTextComponent$InputMethodRequestsHandler::getTextLocation($TextHitI
 }
 
 $AttributedCharacterIterator* JTextComponent$InputMethodRequestsHandler::getSelectedText($AttributedCharacterIterator$AttributeArray* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, selection, this->this$0->getSelectedText());
 	if (selection != nullptr) {
 		return $$new($AttributedString, selection)->getIterator();

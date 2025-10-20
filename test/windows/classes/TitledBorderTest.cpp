@@ -44,6 +44,7 @@ void TitledBorderTest::init$() {
 }
 
 void TitledBorderTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($CountDownLatch, latch, $new($CountDownLatch, 1));
 	$var($TitledBorder, test, $new($TitledBorder, latch));
 	$var($Thread, T1, $new($Thread, static_cast<$Runnable*>(test)));

@@ -169,6 +169,7 @@ void BasicButtonListener::finalize() {
 
 void BasicButtonListener::loadActionMap($LazyActionMap* map) {
 	$init(BasicButtonListener);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicButtonListener$Actions);
 	$nc(map)->put($$new($BasicButtonListener$Actions, $BasicButtonListener$Actions::PRESS));
 	map->put($$new($BasicButtonListener$Actions, $BasicButtonListener$Actions::RELEASE));
@@ -180,6 +181,7 @@ void BasicButtonListener::init$($AbstractButton* b) {
 }
 
 void BasicButtonListener::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prop, $nc(e)->getPropertyName());
 	$init($AbstractButton);
 	if (prop == $AbstractButton::MNEMONIC_CHANGED_PROPERTY) {
@@ -201,6 +203,7 @@ void BasicButtonListener::checkOpacity($AbstractButton* b) {
 }
 
 void BasicButtonListener::installKeyboardActions($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	updateMnemonicBinding(b);
 	$LazyActionMap::installLazyActionMap(c, BasicButtonListener::class$, "Button.actionMap"_s);
@@ -215,6 +218,7 @@ void BasicButtonListener::uninstallKeyboardActions($JComponent* c) {
 }
 
 $InputMap* BasicButtonListener::getInputMap(int32_t condition, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if (condition == $JComponent::WHEN_FOCUSED) {
 		$load($BasicButtonUI);
 		$var($BasicButtonUI, ui, $cast($BasicButtonUI, $BasicLookAndFeel::getUIOfType($($nc(($cast($AbstractButton, c)))->getUI()), $BasicButtonUI::class$)));
@@ -226,6 +230,7 @@ $InputMap* BasicButtonListener::getInputMap(int32_t condition, $JComponent* c) {
 }
 
 void BasicButtonListener::updateMnemonicBinding($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	int32_t m = $nc(b)->getMnemonic();
 	if (m != 0) {
 		$var($InputMap, map, $SwingUtilities::getUIInputMap(b, $JComponent::WHEN_IN_FOCUSED_WINDOW));
@@ -253,6 +258,7 @@ void BasicButtonListener::stateChanged($ChangeEvent* e) {
 }
 
 void BasicButtonListener::focusGained($FocusEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, $nc(e)->getSource()));
 	if ($instanceOf($JButton, b) && $nc(($cast($JButton, b)))->isDefaultCapable()) {
 		$var($JRootPane, root, $nc(b)->getRootPane());
@@ -270,6 +276,7 @@ void BasicButtonListener::focusGained($FocusEvent* e) {
 }
 
 void BasicButtonListener::focusLost($FocusEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, $nc(e)->getSource()));
 	$var($JRootPane, root, $nc(b)->getRootPane());
 	if (root != nullptr) {
@@ -298,6 +305,7 @@ void BasicButtonListener::mouseClicked($MouseEvent* e) {
 }
 
 void BasicButtonListener::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($SwingUtilities::isLeftMouseButton(e)) {
 		$var($AbstractButton, b, $cast($AbstractButton, $nc(e)->getSource()));
 		int32_t var$0 = e->getX();
@@ -326,6 +334,7 @@ void BasicButtonListener::mousePressed($MouseEvent* e) {
 }
 
 void BasicButtonListener::mouseReleased($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($SwingUtilities::isLeftMouseButton(e)) {
 		if (this->shouldDiscardRelease) {
 			this->shouldDiscardRelease = false;
@@ -339,6 +348,7 @@ void BasicButtonListener::mouseReleased($MouseEvent* e) {
 }
 
 void BasicButtonListener::mouseEntered($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, $nc(e)->getSource()));
 	$var($ButtonModel, model, $nc(b)->getModel());
 	bool var$0 = b->isRolloverEnabled();
@@ -351,6 +361,7 @@ void BasicButtonListener::mouseEntered($MouseEvent* e) {
 }
 
 void BasicButtonListener::mouseExited($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, $nc(e)->getSource()));
 	$var($ButtonModel, model, $nc(b)->getModel());
 	if (b->isRolloverEnabled()) {

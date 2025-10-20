@@ -128,6 +128,7 @@ int32_t JTable$AccessibleJTable$AccessibleTableHeader::getAccessibleColumnCount(
 }
 
 $Accessible* JTable$AccessibleJTable$AccessibleTableHeader::getAccessibleAt(int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($TableColumn, aColumn, $nc(this->headerModel)->getColumn(column));
 	$var($TableCellRenderer, renderer, $nc(aColumn)->getHeaderRenderer());
 	if (renderer == nullptr) {

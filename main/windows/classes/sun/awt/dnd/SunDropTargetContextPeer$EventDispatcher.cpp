@@ -240,6 +240,7 @@ void SunDropTargetContextPeer$EventDispatcher::registerEvent($SunDropTargetEvent
 }
 
 void SunDropTargetContextPeer$EventDispatcher::unregisterEvent($SunDropTargetEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$nc(SunDropTargetContextPeer$EventDispatcher::handler)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -286,6 +287,7 @@ void SunDropTargetContextPeer$EventDispatcher::unregisterEvent($SunDropTargetEve
 }
 
 void SunDropTargetContextPeer$EventDispatcher::unregisterAllEvents() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, events, nullptr);
 	$nc(SunDropTargetContextPeer$EventDispatcher::handler)->lock();
 	{

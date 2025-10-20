@@ -216,6 +216,7 @@ float View::getAlignment(int32_t axis) {
 }
 
 void View::setParent(View* parent) {
+	$useLocalCurrentObjectStackCache();
 	if (parent == nullptr) {
 		for (int32_t i = 0; i < getViewCount(); ++i) {
 			if ($nc($(getView(i)))->getParent() == this) {
@@ -266,6 +267,7 @@ $Shape* View::getChildAllocation(int32_t index, $Shape* a) {
 }
 
 int32_t View::getNextVisualPositionFrom(int32_t pos, $Position$Bias* b, $Shape* a, int32_t direction, $Position$BiasArray* biasRet) {
+	$useLocalCurrentObjectStackCache();
 	if (pos < -1 || pos > $nc($(getDocument()))->getLength()) {
 		$throwNew($BadLocationException, "Invalid position"_s, pos);
 	}
@@ -331,6 +333,7 @@ int32_t View::getNextVisualPositionFrom(int32_t pos, $Position$Bias* b, $Shape* 
 }
 
 $Shape* View::modelToView(int32_t p0, $Position$Bias* b0, int32_t p1, $Position$Bias* b1, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Shape, s0, modelToView(p0, a, b0));
 	$var($Shape, s1, nullptr);
 	if (p1 == getEndOffset()) {
@@ -359,6 +362,7 @@ $Shape* View::modelToView(int32_t p0, $Position$Bias* b0, int32_t p1, $Position$
 }
 
 void View::insertUpdate($DocumentEvent* e, $Shape* a, $ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	if (getViewCount() > 0) {
 		$var($Element, elem, getElement());
 		$var($DocumentEvent$ElementChange, ec, $nc(e)->getChange(elem));
@@ -373,6 +377,7 @@ void View::insertUpdate($DocumentEvent* e, $Shape* a, $ViewFactory* f) {
 }
 
 void View::removeUpdate($DocumentEvent* e, $Shape* a, $ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	if (getViewCount() > 0) {
 		$var($Element, elem, getElement());
 		$var($DocumentEvent$ElementChange, ec, $nc(e)->getChange(elem));
@@ -387,6 +392,7 @@ void View::removeUpdate($DocumentEvent* e, $Shape* a, $ViewFactory* f) {
 }
 
 void View::changedUpdate($DocumentEvent* e, $Shape* a, $ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	if (getViewCount() > 0) {
 		$var($Element, elem, getElement());
 		$var($DocumentEvent$ElementChange, ec, $nc(e)->getChange(elem));
@@ -458,6 +464,7 @@ $ViewFactory* View::getViewFactory() {
 }
 
 $String* View::getToolTipText(float x, float y, $Shape* allocation$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Shape, allocation, allocation$renamed);
 	int32_t viewIndex = getViewIndex(x, y, allocation);
 	if (viewIndex >= 0) {
@@ -471,6 +478,7 @@ $String* View::getToolTipText(float x, float y, $Shape* allocation$renamed) {
 }
 
 int32_t View::getViewIndex(float x, float y, $Shape* allocation) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t counter = getViewCount() - 1; counter >= 0; --counter) {
 		$var($Shape, childAllocation, getChildAllocation(counter, allocation));
 		if (childAllocation != nullptr) {
@@ -484,6 +492,7 @@ int32_t View::getViewIndex(float x, float y, $Shape* allocation) {
 }
 
 bool View::updateChildren($DocumentEvent$ElementChange* ec, $DocumentEvent* e, $ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($ElementArray, removedElems, $nc(ec)->getChildrenRemoved());
 	$var($ElementArray, addedElems, ec->getChildrenAdded());
 	$var($ViewArray, added, nullptr);
@@ -503,6 +512,7 @@ bool View::updateChildren($DocumentEvent$ElementChange* ec, $DocumentEvent* e, $
 }
 
 void View::forwardUpdate($DocumentEvent$ElementChange* ec, $DocumentEvent* e, $Shape* a, $ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	calculateUpdateIndexes(e);
 	int32_t hole0 = this->lastUpdateIndex + 1;
 	int32_t hole1 = hole0;

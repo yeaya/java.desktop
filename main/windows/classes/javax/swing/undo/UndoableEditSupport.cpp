@@ -100,6 +100,7 @@ $UndoableEditListenerArray* UndoableEditSupport::getUndoableEditListeners() {
 }
 
 void UndoableEditSupport::_postEdit($UndoableEdit* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($UndoableEditEvent, ev, $new($UndoableEditEvent, this->realSource, e));
 	$var($Enumeration, cursor, $nc(($cast($Vector, $($nc(this->listeners)->clone()))))->elements());
 	while ($nc(cursor)->hasMoreElements()) {
@@ -146,6 +147,7 @@ void UndoableEditSupport::endUpdate() {
 }
 
 $String* UndoableEditSupport::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($Object::toString()), " updateLevel: "_s, $$str(this->updateLevel), " listeners: "_s, this->listeners, " compoundEdit: "_s, this->compoundEdit});
 }
 

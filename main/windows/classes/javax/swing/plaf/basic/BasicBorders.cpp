@@ -109,6 +109,7 @@ void BasicBorders::init$() {
 }
 
 $Border* BasicBorders::getButtonBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $UIManager::getLookAndFeelDefaults());
 	$var($Color, var$1, $nc(table)->getColor("Button.shadow"_s));
 	$var($Color, var$2, table->getColor("Button.darkShadow"_s));
@@ -119,6 +120,7 @@ $Border* BasicBorders::getButtonBorder() {
 }
 
 $Border* BasicBorders::getRadioButtonBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $UIManager::getLookAndFeelDefaults());
 	$var($Color, var$1, $nc(table)->getColor("RadioButton.shadow"_s));
 	$var($Color, var$2, table->getColor("RadioButton.darkShadow"_s));
@@ -129,6 +131,7 @@ $Border* BasicBorders::getRadioButtonBorder() {
 }
 
 $Border* BasicBorders::getToggleButtonBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $UIManager::getLookAndFeelDefaults());
 	$var($Color, var$1, $nc(table)->getColor("ToggleButton.shadow"_s));
 	$var($Color, var$2, table->getColor("ToggleButton.darkShadow"_s));
@@ -139,6 +142,7 @@ $Border* BasicBorders::getToggleButtonBorder() {
 }
 
 $Border* BasicBorders::getMenuBarBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $UIManager::getLookAndFeelDefaults());
 	$var($Color, var$0, $nc(table)->getColor("MenuBar.shadow"_s));
 	$var($Border, menuBarBorder, $new($BasicBorders$MenuBarBorder, var$0, $(table->getColor("MenuBar.highlight"_s))));
@@ -146,6 +150,7 @@ $Border* BasicBorders::getMenuBarBorder() {
 }
 
 $Border* BasicBorders::getSplitPaneBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $UIManager::getLookAndFeelDefaults());
 	$var($Color, var$0, $nc(table)->getColor("SplitPane.highlight"_s));
 	$var($Border, splitPaneBorder, $new($BasicBorders$SplitPaneBorder, var$0, $(table->getColor("SplitPane.darkShadow"_s))));
@@ -153,6 +158,7 @@ $Border* BasicBorders::getSplitPaneBorder() {
 }
 
 $Border* BasicBorders::getSplitPaneDividerBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $UIManager::getLookAndFeelDefaults());
 	$var($Color, var$0, $nc(table)->getColor("SplitPane.highlight"_s));
 	$var($Border, splitPaneBorder, $new($BasicBorders$SplitPaneDividerBorder, var$0, $(table->getColor("SplitPane.darkShadow"_s))));
@@ -160,6 +166,7 @@ $Border* BasicBorders::getSplitPaneDividerBorder() {
 }
 
 $Border* BasicBorders::getTextFieldBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $UIManager::getLookAndFeelDefaults());
 	$var($Color, var$0, $nc(table)->getColor("TextField.shadow"_s));
 	$var($Color, var$1, table->getColor("TextField.darkShadow"_s));
@@ -169,6 +176,7 @@ $Border* BasicBorders::getTextFieldBorder() {
 }
 
 $Border* BasicBorders::getProgressBarBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $UIManager::getLookAndFeelDefaults());
 	$init($Color);
 	$var($Border, progressBarBorder, $new($BorderUIResource$LineBorderUIResource, $Color::green, 2));
@@ -176,6 +184,7 @@ $Border* BasicBorders::getProgressBarBorder() {
 }
 
 $Border* BasicBorders::getInternalFrameBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $UIManager::getLookAndFeelDefaults());
 	$var($Color, var$1, $nc(table)->getColor("InternalFrame.borderLight"_s));
 	$var($Color, var$2, table->getColor("InternalFrame.borderHighlight"_s));

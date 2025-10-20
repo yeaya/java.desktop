@@ -68,6 +68,7 @@ $Object* allocate$Component$ProxyCapabilities($Class* clazz) {
 }
 
 void Component$ProxyCapabilities::init$($Component* this$0, $BufferCapabilities* orig) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$var($ImageCapabilities, var$0, $nc(orig)->getFrontBufferCapabilities());
 	$var($ImageCapabilities, var$1, orig->getBackBufferCapabilities());

@@ -193,6 +193,7 @@ void AlwaysOnTopImeTest::init$() {
 }
 
 void AlwaysOnTopImeTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeLater(static_cast<$Runnable*>($$new(AlwaysOnTopImeTest$$Lambda$lambda$main$0)));
 	$var($Robot, robot, $new($Robot));
 	robot->waitForIdle();

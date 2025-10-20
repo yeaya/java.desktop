@@ -56,6 +56,7 @@ void GenericFileSystemView::init$() {
 }
 
 $File* GenericFileSystemView::createNewFolder($File* containingDir) {
+	$useLocalCurrentObjectStackCache();
 	if (containingDir == nullptr) {
 		$throwNew($IOException, "Containing directory is null:"_s);
 	}

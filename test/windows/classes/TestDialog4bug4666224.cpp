@@ -135,6 +135,7 @@ void TestDialog4bug4666224::init$($Frame* frame, $String* name) {
 }
 
 void TestDialog4bug4666224::printInstructions($StringArray* instructions) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->instructionsText)->setText(""_s);
 	$var($String, printStr, nullptr);
 	$var($String, remainingStr, nullptr);

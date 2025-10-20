@@ -121,6 +121,7 @@ bool TranslucentWindowPainter::forceSW = false;
 
 TranslucentWindowPainter* TranslucentWindowPainter::createInstance($WWindowPeer* peer) {
 	$init(TranslucentWindowPainter);
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, $nc(peer)->getGraphicsConfiguration());
 	if (!TranslucentWindowPainter::forceSW && $instanceOf($AccelGraphicsConfig, gc)) {
 		$var($String, gcName, $nc($of(gc))->getClass()->getSimpleName());
@@ -144,6 +145,7 @@ void TranslucentWindowPainter::init$($WWindowPeer* peer) {
 }
 
 void TranslucentWindowPainter::updateWindow(bool repaint) {
+	$useLocalCurrentObjectStackCache();
 	bool done = false;
 	while (!done) {
 		if (repaint) {
@@ -171,6 +173,7 @@ void TranslucentWindowPainter::updateWindow(bool repaint) {
 
 $Image* TranslucentWindowPainter::clearImage($Image* bb) {
 	$init(TranslucentWindowPainter);
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics2D, g, $cast($Graphics2D, $nc(bb)->getGraphics()));
 	int32_t w = bb->getWidth(nullptr);
 	int32_t h = bb->getHeight(nullptr);
@@ -182,6 +185,7 @@ $Image* TranslucentWindowPainter::clearImage($Image* bb) {
 }
 
 void clinit$TranslucentWindowPainter($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	TranslucentWindowPainter::forceOpt = $nc($($Boolean::valueOf($cast($String, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, "sun.java2d.twp.forceopt"_s, "false"_s))))))))->booleanValue();
 	TranslucentWindowPainter::forceSW = $nc($($Boolean::valueOf($cast($String, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, "sun.java2d.twp.forcesw"_s, "false"_s))))))))->booleanValue();

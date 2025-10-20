@@ -58,6 +58,7 @@ $ObjectArray2* TIFFStreamMetadataFormatResources::getContents() {
 }
 
 void clinit$TIFFStreamMetadataFormatResources($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(TIFFStreamMetadataFormatResources::contents, $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("ByteOrder"_s),

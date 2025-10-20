@@ -287,6 +287,7 @@ void JButton::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JButton::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, defaultCapableString, this->defaultCapable ? "true"_s : "false"_s);
 	return $str({$($AbstractButton::paramString()), ",defaultCapable="_s, defaultCapableString});
 }

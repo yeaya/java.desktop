@@ -141,6 +141,7 @@ void bug5074573::init$() {
 
 void bug5074573::main($StringArray* args) {
 	$init(bug5074573);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -171,6 +172,7 @@ void bug5074573::main($StringArray* args) {
 
 bool bug5074573::test($Class* textComponentClass) {
 	$init(bug5074573);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoWaitForIdle(true);
 	robot->setAutoDelay(50);
@@ -197,6 +199,7 @@ bool bug5074573::test($Class* textComponentClass) {
 
 $String* bug5074573::getText() {
 	$init(bug5074573);
+	$useLocalCurrentObjectStackCache();
 	$var($StringArray, result, $new($StringArray, 1));
 	$SwingUtilities::invokeAndWait($$new($bug5074573$4, result));
 	return result->get(0);
@@ -204,6 +207,7 @@ $String* bug5074573::getText() {
 
 int32_t bug5074573::getCtrlKey() {
 	$init(bug5074573);
+	$useLocalCurrentObjectStackCache();
 	if ("Aqua"_s->equals($($nc($($UIManager::getLookAndFeel()))->getID()))) {
 		return $KeyEvent::VK_ALT;
 	}
@@ -212,6 +216,7 @@ int32_t bug5074573::getCtrlKey() {
 
 void bug5074573::initialize($Class* textComponentClass) {
 	$init(bug5074573);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$var($JFrame, frame, $new($JFrame));

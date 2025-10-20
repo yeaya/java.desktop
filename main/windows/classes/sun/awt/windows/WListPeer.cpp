@@ -352,6 +352,7 @@ bool WListPeer::isFocusable() {
 }
 
 $ints* WListPeer::getSelectedIndexes() {
+	$useLocalCurrentObjectStackCache();
 	$var($List, l, $cast($List, this->target));
 	int32_t len = $nc(l)->getItemCount();
 	$var($ints, sel, $new($ints, len));
@@ -379,6 +380,7 @@ void WListPeer::setMultipleMode(bool b) {
 }
 
 $Dimension* WListPeer::getPreferredSize(int32_t rows) {
+	$useLocalCurrentObjectStackCache();
 	if (this->fm == nullptr) {
 		$var($List, li, $cast($List, this->target));
 		$set(this, fm, getFontMetrics($($nc(li)->getFont())));
@@ -457,6 +459,7 @@ void WListPeer::create($WComponentPeer* parent) {
 }
 
 void WListPeer::initialize() {
+	$useLocalCurrentObjectStackCache();
 	$var($List, li, $cast($List, this->target));
 	$set(this, fm, getFontMetrics($($nc(li)->getFont())));
 	$var($Font, f, $nc(li)->getFont());
@@ -519,11 +522,13 @@ void WListPeer::_setFont($Font* f) {
 }
 
 void WListPeer::handleAction(int32_t index, int64_t when, int32_t modifiers) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, l, $cast($List, this->target));
 	$WToolkit::executeOnEventHandlerThread(l, $$new($WListPeer$1, this, l, index, when, modifiers));
 }
 
 void WListPeer::handleListChanged(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, l, $cast($List, this->target));
 	$WToolkit::executeOnEventHandlerThread(l, $$new($WListPeer$2, this, l, index));
 }

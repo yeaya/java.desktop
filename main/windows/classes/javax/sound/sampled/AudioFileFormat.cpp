@@ -133,6 +133,7 @@ $Object* AudioFileFormat::getProperty($String* key) {
 }
 
 $String* AudioFileFormat::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, "Unknown file format"_s);
 	if (getType() != nullptr) {
 		$var($String, var$1, $$str({$(getType()), " (."_s}));

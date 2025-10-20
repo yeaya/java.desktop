@@ -117,6 +117,7 @@ int32_t DisplayMode::hashCode() {
 }
 
 $String* DisplayMode::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$4, $$str({$$str(getWidth()), "x"_s}));
 	$var($String, var$3, $$concat(var$4, $$str(getHeight())));
 	$var($String, var$2, $$concat(var$3, "x"));

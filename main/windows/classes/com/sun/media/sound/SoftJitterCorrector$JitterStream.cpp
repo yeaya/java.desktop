@@ -104,6 +104,7 @@ $Object* allocate$SoftJitterCorrector$JitterStream($Class* clazz) {
 int32_t SoftJitterCorrector$JitterStream::MAX_BUFFER_SIZE = 0;
 
 $bytes* SoftJitterCorrector$JitterStream::nextReadBuffer() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->buffers_mutex) {
 		if (this->writepos > this->readpos) {
 			int32_t w_m = this->writepos - this->readpos;
@@ -208,6 +209,7 @@ void SoftJitterCorrector$JitterStream::fillBuffer() {
 }
 
 int32_t SoftJitterCorrector$JitterStream::read($bytes* b, int32_t off, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	if (this->bbuffer == nullptr) {
 		fillBuffer();
 	}

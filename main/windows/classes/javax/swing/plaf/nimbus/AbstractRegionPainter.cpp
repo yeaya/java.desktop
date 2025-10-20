@@ -182,6 +182,7 @@ void AbstractRegionPainter::init$() {
 }
 
 void AbstractRegionPainter::paint($Graphics2D* g, $JComponent* c, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (w <= 0 || h <= 0) {
 		return;
 	}
@@ -258,6 +259,7 @@ float AbstractRegionPainter::decodeAnchorY(float y, float dy) {
 }
 
 $Color* AbstractRegionPainter::decodeColor($String* key, float hOffset, float sOffset, float bOffset, int32_t aOffset) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($NimbusLookAndFeel, $($UIManager::getLookAndFeel()))) {
 		$var($NimbusLookAndFeel, laf, $cast($NimbusLookAndFeel, $UIManager::getLookAndFeel()));
 		return $nc(laf)->getDerivedColor(key, hOffset, sOffset, bOffset, aOffset, true);
@@ -285,6 +287,7 @@ $RadialGradientPaint* AbstractRegionPainter::decodeRadialGradient(float x, float
 }
 
 $Color* AbstractRegionPainter::getComponentColor($JComponent* c, $String* property, $Color* defaultColor, float saturationOffset, float brightnessOffset, int32_t alphaOffset) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, color, nullptr);
 	if (c != nullptr) {
 		if ("background"_s->equals(property)) {
@@ -368,6 +371,7 @@ void AbstractRegionPainter::prepare(float w, float h) {
 }
 
 void AbstractRegionPainter::paintWith9SquareCaching($Graphics2D* g, $AbstractRegionPainter$PaintContext* ctx, $JComponent* c, int32_t w, int32_t h, $ObjectArray* extendedCacheKeys) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, canvas, $nc(ctx)->canvasSize);
 	$var($Insets, insets, ctx->stretchingInsets);
 	if (w <= ($nc(canvas)->width * ctx->maxHorizontalScaleFactor) && h <= (canvas->height * ctx->maxVerticalScaleFactor)) {
@@ -396,6 +400,7 @@ void AbstractRegionPainter::paintWith9SquareCaching($Graphics2D* g, $AbstractReg
 }
 
 void AbstractRegionPainter::paintWithFixedSizeCaching($Graphics2D* g, $JComponent* c, int32_t w, int32_t h, $ObjectArray* extendedCacheKeys) {
+	$useLocalCurrentObjectStackCache();
 	$var($VolatileImage, img, getImage($($nc(g)->getDeviceConfiguration()), c, w, h, extendedCacheKeys));
 	if (img != nullptr) {
 		$nc(g)->drawImage(img, 0, 0, nullptr);
@@ -405,6 +410,7 @@ void AbstractRegionPainter::paintWithFixedSizeCaching($Graphics2D* g, $JComponen
 }
 
 $VolatileImage* AbstractRegionPainter::getImage($GraphicsConfiguration* config, $JComponent* c, int32_t w, int32_t h, $ObjectArray* extendedCacheKeys) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageCache, imageCache, $ImageCache::getInstance());
 	$var($VolatileImage, buffer, $cast($VolatileImage, $nc(imageCache)->getImage(config, w, h, $$new($ObjectArray, {
 		$of(this),

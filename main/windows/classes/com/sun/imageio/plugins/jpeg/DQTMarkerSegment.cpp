@@ -105,6 +105,7 @@ $Object* allocate$DQTMarkerSegment($Class* clazz) {
 }
 
 void DQTMarkerSegment::init$(float quality, bool needTwo) {
+	$useLocalCurrentObjectStackCache();
 	$MarkerSegment::init$($JPEG::DQT);
 	$set(this, tables, $new($ArrayList));
 	$nc(this->tables)->add($$new($DQTMarkerSegment$Qtable, this, true, quality));
@@ -114,6 +115,7 @@ void DQTMarkerSegment::init$(float quality, bool needTwo) {
 }
 
 void DQTMarkerSegment::init$($JPEGBuffer* buffer) {
+	$useLocalCurrentObjectStackCache();
 	$MarkerSegment::init$(buffer);
 	$set(this, tables, $new($ArrayList));
 	int32_t count = this->length;
@@ -126,6 +128,7 @@ void DQTMarkerSegment::init$($JPEGBuffer* buffer) {
 }
 
 void DQTMarkerSegment::init$($JPEGQTableArray* qtables) {
+	$useLocalCurrentObjectStackCache();
 	$MarkerSegment::init$($JPEG::DQT);
 	$set(this, tables, $new($ArrayList));
 	for (int32_t i = 0; i < $nc(qtables)->length; ++i) {
@@ -134,6 +137,7 @@ void DQTMarkerSegment::init$($JPEGQTableArray* qtables) {
 }
 
 void DQTMarkerSegment::init$($Node* node) {
+	$useLocalCurrentObjectStackCache();
 	$MarkerSegment::init$($JPEG::DQT);
 	$set(this, tables, $new($ArrayList));
 	$var($NodeList, children, $nc(node)->getChildNodes());
@@ -147,6 +151,7 @@ void DQTMarkerSegment::init$($Node* node) {
 }
 
 $Object* DQTMarkerSegment::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(DQTMarkerSegment, newGuy, $cast(DQTMarkerSegment, $MarkerSegment::clone()));
 	$set($nc(newGuy), tables, $new($ArrayList, $nc(this->tables)->size()));
 	{
@@ -162,6 +167,7 @@ $Object* DQTMarkerSegment::clone() {
 }
 
 $IIOMetadataNode* DQTMarkerSegment::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "dqt"_s));
 	for (int32_t i = 0; i < $nc(this->tables)->size(); ++i) {
 		$var($DQTMarkerSegment$Qtable, table, $cast($DQTMarkerSegment$Qtable, $nc(this->tables)->get(i)));
@@ -174,6 +180,7 @@ void DQTMarkerSegment::write($ImageOutputStream* ios) {
 }
 
 void DQTMarkerSegment::print() {
+	$useLocalCurrentObjectStackCache();
 	printTag("DQT"_s);
 	$init($System);
 	$nc($System::out)->println($$str({"Num tables: "_s, $($Integer::toString($nc(this->tables)->size()))}));
@@ -185,6 +192,7 @@ void DQTMarkerSegment::print() {
 }
 
 $DQTMarkerSegment$Qtable* DQTMarkerSegment::getChromaForLuma($DQTMarkerSegment$Qtable* luma) {
+	$useLocalCurrentObjectStackCache();
 	$var($DQTMarkerSegment$Qtable, newGuy, nullptr);
 	bool allSame = true;
 	for (int32_t i = 1; i < $nc(luma)->QTABLE_SIZE; ++i) {

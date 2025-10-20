@@ -326,6 +326,7 @@ void GetUpToDateData::init$() {
 
 void GetUpToDateData::main($StringArray* args) {
 	$init(GetUpToDateData);
+	$useLocalCurrentObjectStackCache();
 	$var($CountDownLatch, go, $new($CountDownLatch, 3));
 	$var($Thread, t1, $new($Thread, static_cast<$Runnable*>($$new(GetUpToDateData$$Lambda$lambda$main$1$1))));
 	$var($Thread, t2, $new($Thread, static_cast<$Runnable*>($$new(GetUpToDateData$$Lambda$lambda$main$2$2))));
@@ -350,6 +351,7 @@ void GetUpToDateData::main($StringArray* args) {
 
 void GetUpToDateData::lambda$main$5($CountDownLatch* go) {
 	$init(GetUpToDateData);
+	$useLocalCurrentObjectStackCache();
 	while (true) {
 		$load($AWTEventListener);
 		bool var$0 = $nc(($fcast($AWTEventListenerArray, $($nc(GetUpToDateData::listeners)->getListeners($AWTEventListener::class$)))))->length != 1;
@@ -364,6 +366,7 @@ void GetUpToDateData::lambda$main$5($CountDownLatch* go) {
 
 void GetUpToDateData::lambda$main$4($CountDownLatch* go) {
 	$init(GetUpToDateData);
+	$useLocalCurrentObjectStackCache();
 	while (true) {
 		$load($EventListener);
 		bool var$0 = $nc($($nc(GetUpToDateData::listeners)->getListeners($EventListener::class$)))->length != 1;

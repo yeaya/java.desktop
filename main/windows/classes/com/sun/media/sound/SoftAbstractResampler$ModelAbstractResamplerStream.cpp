@@ -196,6 +196,7 @@ void SoftAbstractResampler$ModelAbstractResamplerStream::setPitch(float pitch) {
 }
 
 void SoftAbstractResampler$ModelAbstractResamplerStream::nextBuffer() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->ix)->get(0) < this->pad) {
 		if (this->markset) {
 			$nc(this->stream)->reset();
@@ -279,6 +280,7 @@ void SoftAbstractResampler$ModelAbstractResamplerStream::nextBuffer() {
 }
 
 void SoftAbstractResampler$ModelAbstractResamplerStream::reverseBuffers() {
+	$useLocalCurrentObjectStackCache();
 	this->ibuffer_order = !this->ibuffer_order;
 	for (int32_t c = 0; c < this->nrofchannels; ++c) {
 		$var($floats, cbuff, $nc(this->ibuffer)->get(c));
@@ -293,6 +295,7 @@ void SoftAbstractResampler$ModelAbstractResamplerStream::reverseBuffers() {
 }
 
 int32_t SoftAbstractResampler$ModelAbstractResamplerStream::read($floatArray2* buffer, int32_t offset, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	if (this->eof) {
 		return -1;
 	}

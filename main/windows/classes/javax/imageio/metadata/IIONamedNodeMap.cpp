@@ -68,6 +68,7 @@ int32_t IIONamedNodeMap::getLength() {
 }
 
 $Node* IIONamedNodeMap::getNamedItem($String* name) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->nodes)->iterator());
 		for (; $nc(i$)->hasNext();) {

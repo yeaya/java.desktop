@@ -74,6 +74,7 @@ void SynthTreeUI$SynthTreeCellEditor::init$($JTree* tree, $DefaultTreeCellRender
 }
 
 $TreeCellEditor* SynthTreeUI$SynthTreeCellEditor::createTreeCellEditor() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextField, tf, $new($SynthTreeUI$SynthTreeCellEditor$1, this));
 	$var($DefaultCellEditor, editor, $new($DefaultCellEditor, tf));
 	editor->setClickCountToStart(1);

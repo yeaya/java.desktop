@@ -102,6 +102,7 @@ void Toolkit$DesktopPropertyChangeSupport::init$(Object$* sourceBean) {
 
 void Toolkit$DesktopPropertyChangeSupport::addPropertyChangeListener($String* propertyName, $PropertyChangeListener* listener) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($PropertyChangeSupport, pcs, $cast($PropertyChangeSupport, $nc($($AppContext::getAppContext()))->get(Toolkit$DesktopPropertyChangeSupport::PROP_CHANGE_SUPPORT_KEY)));
 		if (nullptr == pcs) {
 			$assign(pcs, $new($PropertyChangeSupport, this->source));
@@ -113,6 +114,7 @@ void Toolkit$DesktopPropertyChangeSupport::addPropertyChangeListener($String* pr
 
 void Toolkit$DesktopPropertyChangeSupport::removePropertyChangeListener($String* propertyName, $PropertyChangeListener* listener) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($PropertyChangeSupport, pcs, $cast($PropertyChangeSupport, $nc($($AppContext::getAppContext()))->get(Toolkit$DesktopPropertyChangeSupport::PROP_CHANGE_SUPPORT_KEY)));
 		if (nullptr != pcs) {
 			pcs->removePropertyChangeListener(propertyName, listener);
@@ -122,6 +124,7 @@ void Toolkit$DesktopPropertyChangeSupport::removePropertyChangeListener($String*
 
 $PropertyChangeListenerArray* Toolkit$DesktopPropertyChangeSupport::getPropertyChangeListeners() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($PropertyChangeSupport, pcs, $cast($PropertyChangeSupport, $nc($($AppContext::getAppContext()))->get(Toolkit$DesktopPropertyChangeSupport::PROP_CHANGE_SUPPORT_KEY)));
 		if (nullptr != pcs) {
 			return pcs->getPropertyChangeListeners();
@@ -133,6 +136,7 @@ $PropertyChangeListenerArray* Toolkit$DesktopPropertyChangeSupport::getPropertyC
 
 $PropertyChangeListenerArray* Toolkit$DesktopPropertyChangeSupport::getPropertyChangeListeners($String* propertyName) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($PropertyChangeSupport, pcs, $cast($PropertyChangeSupport, $nc($($AppContext::getAppContext()))->get(Toolkit$DesktopPropertyChangeSupport::PROP_CHANGE_SUPPORT_KEY)));
 		if (nullptr != pcs) {
 			return pcs->getPropertyChangeListeners(propertyName);
@@ -144,6 +148,7 @@ $PropertyChangeListenerArray* Toolkit$DesktopPropertyChangeSupport::getPropertyC
 
 void Toolkit$DesktopPropertyChangeSupport::addPropertyChangeListener($PropertyChangeListener* listener) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($PropertyChangeSupport, pcs, $cast($PropertyChangeSupport, $nc($($AppContext::getAppContext()))->get(Toolkit$DesktopPropertyChangeSupport::PROP_CHANGE_SUPPORT_KEY)));
 		if (nullptr == pcs) {
 			$assign(pcs, $new($PropertyChangeSupport, this->source));
@@ -155,6 +160,7 @@ void Toolkit$DesktopPropertyChangeSupport::addPropertyChangeListener($PropertyCh
 
 void Toolkit$DesktopPropertyChangeSupport::removePropertyChangeListener($PropertyChangeListener* listener) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($PropertyChangeSupport, pcs, $cast($PropertyChangeSupport, $nc($($AppContext::getAppContext()))->get(Toolkit$DesktopPropertyChangeSupport::PROP_CHANGE_SUPPORT_KEY)));
 		if (nullptr != pcs) {
 			pcs->removePropertyChangeListener(listener);
@@ -163,6 +169,7 @@ void Toolkit$DesktopPropertyChangeSupport::removePropertyChangeListener($Propert
 }
 
 void Toolkit$DesktopPropertyChangeSupport::firePropertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, oldValue, $nc(evt)->getOldValue());
 	$var($Object, newValue, evt->getNewValue());
 	$var($String, propertyName, evt->getPropertyName());

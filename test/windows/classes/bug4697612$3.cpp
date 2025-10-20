@@ -73,6 +73,7 @@ void bug4697612$3::init$($bug4697612* this$0) {
 }
 
 void bug4697612$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug4697612);
 	$nc($bug4697612::text)->setFont($($nc($($nc($bug4697612::text)->getFont()))->deriveFont($bug4697612::fontHeight)));
 }

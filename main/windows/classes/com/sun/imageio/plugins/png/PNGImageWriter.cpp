@@ -236,6 +236,7 @@ $IIOMetadata* PNGImageWriter::getDefaultStreamMetadata($ImageWriteParam* param) 
 }
 
 $IIOMetadata* PNGImageWriter::getDefaultImageMetadata($ImageTypeSpecifier* imageType, $ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	$var($PNGMetadata, m, $new($PNGMetadata));
 	m->initialize(imageType, $nc($($nc(imageType)->getSampleModel()))->getNumBands());
 	return m;
@@ -356,6 +357,7 @@ void PNGImageWriter::write_sRGB() {
 }
 
 void PNGImageWriter::write_PLTE() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->metadata)->PLTE_present) {
 		if ($nc(this->metadata)->IHDR_colorType == $PNGImageReader::PNG_COLOR_GRAY || $nc(this->metadata)->IHDR_colorType == $PNGImageReader::PNG_COLOR_GRAY_ALPHA) {
 			processWarningOccurred(0, "A PLTE chunk may not appear in a gray or gray alpha image.\nThe chunk will not be written"_s);
@@ -504,6 +506,7 @@ void PNGImageWriter::write_tIME() {
 }
 
 void PNGImageWriter::write_tEXt() {
+	$useLocalCurrentObjectStackCache();
 	$var($Iterator, keywordIter, $nc($nc(this->metadata)->tEXt_keyword)->iterator());
 	$var($Iterator, textIter, $nc($nc(this->metadata)->tEXt_text)->iterator());
 	while ($nc(keywordIter)->hasNext()) {
@@ -521,6 +524,7 @@ void PNGImageWriter::write_tEXt() {
 }
 
 $bytes* PNGImageWriter::deflate($bytes* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($ByteArrayOutputStream, baos, $new($ByteArrayOutputStream));
 	$var($DeflaterOutputStream, dos, $new($DeflaterOutputStream, baos));
 	dos->write(b);
@@ -529,6 +533,7 @@ $bytes* PNGImageWriter::deflate($bytes* b) {
 }
 
 void PNGImageWriter::write_iTXt() {
+	$useLocalCurrentObjectStackCache();
 	$var($Iterator, keywordIter, $nc($nc(this->metadata)->iTXt_keyword)->iterator());
 	$var($Iterator, flagIter, $nc($nc(this->metadata)->iTXt_compressionFlag)->iterator());
 	$var($Iterator, methodIter, $nc($nc(this->metadata)->iTXt_compressionMethod)->iterator());
@@ -561,6 +566,7 @@ void PNGImageWriter::write_iTXt() {
 }
 
 void PNGImageWriter::write_zTXt() {
+	$useLocalCurrentObjectStackCache();
 	$var($Iterator, keywordIter, $nc($nc(this->metadata)->zTXt_keyword)->iterator());
 	$var($Iterator, methodIter, $nc($nc(this->metadata)->zTXt_compressionMethod)->iterator());
 	$var($Iterator, textIter, $nc($nc(this->metadata)->zTXt_text)->iterator());
@@ -581,6 +587,7 @@ void PNGImageWriter::write_zTXt() {
 }
 
 void PNGImageWriter::writeUnknownChunks() {
+	$useLocalCurrentObjectStackCache();
 	$var($Iterator, typeIter, $nc($nc(this->metadata)->unknownChunkType)->iterator());
 	$var($Iterator, dataIter, $nc($nc(this->metadata)->unknownChunkData)->iterator());
 	while (true) {
@@ -609,6 +616,7 @@ int32_t PNGImageWriter::chunkType($String* typeString) {
 }
 
 void PNGImageWriter::encodePass($ImageOutputStream* os, $RenderedImage* image, int32_t xOffset, int32_t yOffset, int32_t xSkip, int32_t ySkip) {
+	$useLocalCurrentObjectStackCache();
 	int32_t minX = this->sourceXOffset;
 	int32_t minY = this->sourceYOffset;
 	int32_t width = this->sourceWidth;
@@ -740,6 +748,7 @@ void PNGImageWriter::encodePass($ImageOutputStream* os, $RenderedImage* image, i
 }
 
 void PNGImageWriter::write_IDAT($RenderedImage* image, int32_t deflaterLevel) {
+	$useLocalCurrentObjectStackCache();
 	$var($IDATOutputStream, ios, $new($IDATOutputStream, this->stream, 32768, deflaterLevel));
 	{
 		$var($Throwable, var$0, nullptr);
@@ -787,6 +796,7 @@ bool PNGImageWriter::equals($ints* s0, $ints* s1) {
 }
 
 void PNGImageWriter::initializeScaleTables($ints* sampleSize) {
+	$useLocalCurrentObjectStackCache();
 	int32_t bitDepth = $nc(this->metadata)->IHDR_bitDepth;
 	if (bitDepth == this->scalingBitDepth && equals(sampleSize, this->sampleSize)) {
 		return;
@@ -826,6 +836,7 @@ void PNGImageWriter::initializeScaleTables($ints* sampleSize) {
 }
 
 void PNGImageWriter::write($IIOMetadata* streamMetadata, $IIOImage* image, $ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	if (this->stream == nullptr) {
 		$throwNew($IllegalStateException, "output == null!"_s);
 	}

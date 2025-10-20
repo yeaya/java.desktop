@@ -203,6 +203,7 @@ $PersistenceDelegate* MetaData::getPersistenceDelegate($Class* type) {
 	$load(MetaData);
 	$synchronized(class$) {
 		$init(MetaData);
+		$useLocalCurrentObjectStackCache();
 		$beforeCallerSensitive();
 		if (type == nullptr) {
 			return MetaData::nullPersistenceDelegate;
@@ -262,6 +263,7 @@ $PersistenceDelegate* MetaData::getPersistenceDelegate($Class* type) {
 
 $StringArray* MetaData::getConstructorProperties($Class* type) {
 	$init(MetaData);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($StringArray, names, nullptr);
 	int32_t length = 0;
@@ -292,6 +294,7 @@ $StringArray* MetaData::getAnnotationValue($Constructor* constructor) {
 
 bool MetaData::isValid($Constructor* constructor, $StringArray* names) {
 	$init(MetaData);
+	$useLocalCurrentObjectStackCache();
 	$var($ClassArray, parameters, $nc(constructor)->getParameterTypes());
 	if ($nc(names)->length != $nc(parameters)->length) {
 		return false;
@@ -314,6 +317,7 @@ bool MetaData::isValid($Constructor* constructor, $StringArray* names) {
 
 $Object* MetaData::getBeanAttribute($Class* type, $String* attribute) {
 	$init(MetaData);
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $of($nc($($nc($($Introspector::getBeanInfo(type)))->getBeanDescriptor()))->getValue(attribute));
 	} catch ($IntrospectionException&) {
@@ -325,6 +329,7 @@ $Object* MetaData::getBeanAttribute($Class* type, $String* attribute) {
 
 $Object* MetaData::getPrivateFieldValue(Object$* instance, $String* name) {
 	$init(MetaData);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Field, field, $cast($Field, $nc(MetaData::fields)->get(name)));
 	if (field == nullptr) {
@@ -344,6 +349,7 @@ $Object* MetaData::getPrivateFieldValue(Object$* instance, $String* name) {
 }
 
 void clinit$MetaData($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(MetaData::fields, $Collections::synchronizedMap($$new($WeakHashMap)));
 	$assignStatic(MetaData::internalPersistenceDelegates, $new($Hashtable));
 	$assignStatic(MetaData::nullPersistenceDelegate, $new($MetaData$NullPersistenceDelegate));

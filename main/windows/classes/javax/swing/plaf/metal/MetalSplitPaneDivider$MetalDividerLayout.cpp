@@ -85,6 +85,7 @@ void MetalSplitPaneDivider$MetalDividerLayout::init$($MetalSplitPaneDivider* thi
 }
 
 void MetalSplitPaneDivider$MetalDividerLayout::layoutContainer($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JButton, leftButton, this->this$0->getLeftButtonFromSuper());
 	$var($JButton, rightButton, this->this$0->getRightButtonFromSuper());
 	$var($JSplitPane, splitPane, this->this$0->getSplitPaneFromSuper());

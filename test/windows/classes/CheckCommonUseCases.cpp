@@ -125,6 +125,7 @@ void CheckCommonUseCases::main($StringArray* args) {
 }
 
 void CheckCommonUseCases::countListeners($JPasswordField* pf) {
+	$useLocalCurrentObjectStackCache();
 	$var($AtomicInteger, insert, $new($AtomicInteger));
 	$var($AtomicInteger, update, $new($AtomicInteger));
 	$var($AtomicInteger, remove, $new($AtomicInteger));
@@ -168,6 +169,7 @@ void CheckCommonUseCases::countListeners($JPasswordField* pf) {
 }
 
 void CheckCommonUseCases::checkDifferentTextLength($JPasswordField* pf) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < 100; ++i) {
 		$var($String, expected, $nc(($$str({""_s, $$str(i)})))->repeat(i));
 		$nc(pf)->setText(expected);

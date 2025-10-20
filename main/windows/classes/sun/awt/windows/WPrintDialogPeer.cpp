@@ -457,12 +457,14 @@ bool WPrintDialogPeer::_show() {
 }
 
 void WPrintDialogPeer::show() {
+	$useLocalCurrentObjectStackCache();
 	$var($Runnable, runnable, static_cast<$Runnable*>($new(WPrintDialogPeer$$Lambda$lambda$show$0, this)));
 	$$new($Thread, nullptr, runnable, "PrintDialog"_s, 0, false)->start();
 }
 
 void WPrintDialogPeer::setHWnd(int64_t hwnd) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		this->hwnd = hwnd;
 		{
 			$var($Iterator, i$, $nc(this->blockedWindows)->iterator());
@@ -499,6 +501,7 @@ void WPrintDialogPeer::unblockWindow($WWindowPeer* window) {
 }
 
 void WPrintDialogPeer::blockWindows($List* toBlock) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(toBlock)->iterator());
 		for (; $nc(i$)->hasNext();) {

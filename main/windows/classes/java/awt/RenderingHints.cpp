@@ -352,6 +352,7 @@ $Object* RenderingHints::remove(Object$* key) {
 }
 
 void RenderingHints::putAll($Map* m) {
+	$useLocalCurrentObjectStackCache();
 	if (RenderingHints::class$->isInstance(m)) {
 		{
 			$var($Iterator, i$, $nc($($nc(m)->entrySet()))->iterator());
@@ -399,6 +400,7 @@ int32_t RenderingHints::hashCode() {
 }
 
 $Object* RenderingHints::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(RenderingHints, rh, nullptr);
 	try {
 		$assign(rh, $cast(RenderingHints, $Map::clone()));
@@ -413,6 +415,7 @@ $Object* RenderingHints::clone() {
 }
 
 $String* RenderingHints::toString() {
+	$useLocalCurrentObjectStackCache();
 	if (this->hintmap == nullptr) {
 		$var($String, var$1, $$str({$($of(this)->getClass()->getName()), "@"_s}));
 		$var($String, var$0, $$concat(var$1, $($Integer::toHexString(hashCode()))));

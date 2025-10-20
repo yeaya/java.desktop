@@ -59,6 +59,7 @@ void bug6883341::init$() {
 }
 
 void bug6883341::createGui() {
+	$useLocalCurrentObjectStackCache();
 	$var($JPopupMenu, menu, $new($JPopupMenu));
 	menu->add($$new($JMenuItem));
 	menu->setVisible(true);

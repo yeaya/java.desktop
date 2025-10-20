@@ -90,6 +90,7 @@ void MethodDescriptor::init$($Method* method, $ParameterDescriptorArray* paramet
 
 $Method* MethodDescriptor::getMethod() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Method, method, $nc(this->methodRef)->get());
 		if (method == nullptr) {
 			$Class* cls = getClass0();
@@ -128,6 +129,7 @@ void MethodDescriptor::setMethod($Method* method) {
 
 void MethodDescriptor::setParams($ClassArray* param) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (param == nullptr) {
 			return;
 		}
@@ -146,6 +148,7 @@ $StringArray* MethodDescriptor::getParamNames() {
 
 $ClassArray* MethodDescriptor::getParams() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($ClassArray, clss, $new($ClassArray, $nc(this->params)->size()));
 		for (int32_t i = 0; i < $nc(this->params)->size(); ++i) {
 			$var($Reference, ref, $cast($Reference, $nc(this->params)->get(i)));
@@ -177,6 +180,7 @@ $Method* MethodDescriptor::resolve($Method* oldMethod, $Method* newMethod) {
 }
 
 void MethodDescriptor::init$(MethodDescriptor* x, MethodDescriptor* y) {
+	$useLocalCurrentObjectStackCache();
 	$FeatureDescriptor::init$(x, y);
 	$set(this, methodRef, $new($MethodRef));
 	$var($Method, var$0, $nc($nc(x)->methodRef)->get());
@@ -196,6 +200,7 @@ void MethodDescriptor::init$(MethodDescriptor* x, MethodDescriptor* y) {
 }
 
 void MethodDescriptor::init$(MethodDescriptor* old) {
+	$useLocalCurrentObjectStackCache();
 	$FeatureDescriptor::init$(old);
 	$set(this, methodRef, $new($MethodRef));
 	$nc(this->methodRef)->set($($nc(old)->getMethod()));
@@ -211,6 +216,7 @@ void MethodDescriptor::init$(MethodDescriptor* old) {
 }
 
 void MethodDescriptor::appendTo($StringBuilder* sb) {
+	$useLocalCurrentObjectStackCache();
 	$FeatureDescriptor::appendTo(sb, "method"_s, $($of($nc(this->methodRef)->get())));
 	if (this->parameterDescriptors != nullptr) {
 		$nc(sb)->append("; parameterDescriptors={"_s);

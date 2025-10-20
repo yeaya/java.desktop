@@ -156,6 +156,7 @@ $String* Button$AccessibleAWTButton::getAccessibleActionDescription(int32_t i) {
 }
 
 bool Button$AccessibleAWTButton::doAccessibleAction(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (i == 0) {
 		$nc($($Toolkit::getEventQueue()))->postEvent($$new($ActionEvent, this->this$0, $ActionEvent::ACTION_PERFORMED, $(this->this$0->getActionCommand())));
 		return true;

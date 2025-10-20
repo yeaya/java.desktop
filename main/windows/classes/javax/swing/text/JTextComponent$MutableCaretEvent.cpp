@@ -113,6 +113,7 @@ void JTextComponent$MutableCaretEvent::init$($JTextComponent* c) {
 }
 
 void JTextComponent$MutableCaretEvent::fire() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, c, $cast($JTextComponent, getSource()));
 	if (c != nullptr) {
 		$var($Caret, caret, c->getCaret());
@@ -123,6 +124,7 @@ void JTextComponent$MutableCaretEvent::fire() {
 }
 
 $String* JTextComponent$MutableCaretEvent::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"dot="_s, $$str(this->dot), ",mark="_s, $$str(this->mark)});
 }
 
@@ -141,6 +143,7 @@ void JTextComponent$MutableCaretEvent::stateChanged($ChangeEvent* e) {
 }
 
 void JTextComponent$MutableCaretEvent::focusGained($FocusEvent* fe) {
+	$useLocalCurrentObjectStackCache();
 	$init($JTextComponent);
 	$nc($($AppContext::getAppContext()))->put($JTextComponent::FOCUSED_COMPONENT, $($nc(fe)->getSource()));
 }

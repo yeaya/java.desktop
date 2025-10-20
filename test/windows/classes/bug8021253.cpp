@@ -166,6 +166,7 @@ void bug8021253::init$() {
 }
 
 void bug8021253::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -198,6 +199,7 @@ void bug8021253::main($StringArray* args) {
 }
 
 void bug8021253::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug8021253);
 	$assignStatic(bug8021253::file, getTempFile());
 	$assignStatic(bug8021253::frame, $new($JFrame, "Test"_s));
@@ -213,6 +215,7 @@ void bug8021253::createAndShowGUI() {
 }
 
 $File* bug8021253::getTempFile() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($File, temp, $File::createTempFile("test"_s, ".txt"_s));
 		$nc(temp)->deleteOnExit();

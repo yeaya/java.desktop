@@ -103,6 +103,7 @@ void TestJInternalFrameIconify::init$() {
 
 void TestJInternalFrameIconify::main($StringArray* args) {
 	$init(TestJInternalFrameIconify);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(TestJInternalFrameIconify::robot, $new($Robot));
 	$var($UIManager$LookAndFeelInfoArray, lookAndFeelArray, $UIManager::getInstalledLookAndFeels());
 	{
@@ -128,6 +129,7 @@ void TestJInternalFrameIconify::main($StringArray* args) {
 
 bool TestJInternalFrameIconify::tryLookAndFeel($String* lookAndFeelString) {
 	$init(TestJInternalFrameIconify);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(lookAndFeelString);
 		return true;

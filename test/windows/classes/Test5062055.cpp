@@ -53,6 +53,7 @@ void Test5062055::init$() {
 
 void Test5062055::main($StringArray* argv) {
 	$init(Test5062055);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeLater($$new(Test5062055));
 	try {
 		$Thread::sleep(5000);
@@ -63,6 +64,7 @@ void Test5062055::main($StringArray* argv) {
 }
 
 void Test5062055::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, jep, $new($JEditorPane));
 	jep->setContentType("text/html"_s);
 	jep->setEditable(false);

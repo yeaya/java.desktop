@@ -101,6 +101,7 @@ void SunFontManager$2::init$($SunFontManager* this$0) {
 }
 
 $Object* SunFontManager$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($SunFontManager);
 	$init($File);
 	$var($File, badFontFile, $new($File, $$str({$SunFontManager::jreFontDirName, $File::separator, "badfonts.txt"_s})));

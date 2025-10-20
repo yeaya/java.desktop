@@ -223,10 +223,12 @@ void BasicMenuUI::installKeyboardActions() {
 }
 
 void BasicMenuUI::installLazyActionMap() {
+	$useLocalCurrentObjectStackCache();
 	$LazyActionMap::installLazyActionMap(this->menuItem, BasicMenuUI::class$, $$str({$(getPropertyPrefix()), ".actionMap"_s}));
 }
 
 void BasicMenuUI::updateMnemonicBinding() {
+	$useLocalCurrentObjectStackCache();
 	int32_t mnemonic = $nc($($nc(this->menuItem)->getModel()))->getMnemonic();
 	$var($ints, shortcutKeys, $cast($ints, $DefaultLookup::get(this->menuItem, this, "Menu.shortcutKeys"_s)));
 	if (shortcutKeys == nullptr) {
@@ -341,6 +343,7 @@ $Dimension* BasicMenuUI::getMaximumSize($JComponent* c) {
 }
 
 void BasicMenuUI::setupPostTimer($JMenu* menu) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc(menu)->getDelay();
 	$init($BasicMenuUI$Actions);
 	$var($Timer, timer, $new($Timer, var$0, $$new($BasicMenuUI$Actions, $BasicMenuUI$Actions::SELECT, menu, false)));
@@ -350,6 +353,7 @@ void BasicMenuUI::setupPostTimer($JMenu* menu) {
 
 void BasicMenuUI::appendPath($MenuElementArray* path, $MenuElement* elem) {
 	$init(BasicMenuUI);
+	$useLocalCurrentObjectStackCache();
 	$var($MenuElementArray, newPath, $new($MenuElementArray, $nc(path)->length + 1));
 	$System::arraycopy(path, 0, newPath, 0, path->length);
 	newPath->set(path->length, elem);
@@ -357,6 +361,7 @@ void BasicMenuUI::appendPath($MenuElementArray* path, $MenuElement* elem) {
 }
 
 void BasicMenuUI::updateDefaultBackgroundColor() {
+	$useLocalCurrentObjectStackCache();
 	if (!$UIManager::getBoolean("Menu.useMenuBarBackgroundForTopLevel"_s)) {
 		return;
 	}

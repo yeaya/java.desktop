@@ -129,6 +129,7 @@ void HeadlessJTree::init$() {
 }
 
 void HeadlessJTree::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTree, t, nullptr);
 	$var($DefaultMutableTreeNode, root, $new($DefaultMutableTreeNode, "JTree"_s));
 	$var($DefaultMutableTreeNode, parent, nullptr);

@@ -70,6 +70,7 @@ void MetalInternalFrameUI$MetalPropertyChangeHandler::init$() {
 }
 
 void MetalInternalFrameUI$MetalPropertyChangeHandler::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(e)->getPropertyName());
 	$var($JInternalFrame, jif, $cast($JInternalFrame, e->getSource()));
 	if (!($instanceOf($MetalInternalFrameUI, $($cast($InternalFrameUI, $nc(jif)->getUI()))))) {

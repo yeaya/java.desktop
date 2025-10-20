@@ -227,6 +227,7 @@ void SynthInternalFrameUI::uninstallListeners() {
 }
 
 void SynthInternalFrameUI::updateStyle($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -278,6 +279,7 @@ $ComponentListener* SynthInternalFrameUI::createComponentListener() {
 }
 
 void SynthInternalFrameUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -300,6 +302,7 @@ void SynthInternalFrameUI::paintBorder($SynthContext* context, $Graphics* g, int
 }
 
 void SynthInternalFrameUI::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthStyle, oldStyle, this->style);
 	$var($JInternalFrame, f, $cast($JInternalFrame, $nc(evt)->getSource()));
 	$var($String, prop, evt->getPropertyName());

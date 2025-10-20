@@ -110,6 +110,7 @@ $Font* JSlider$1SmartHashtable$LabelUIResource::getFont() {
 }
 
 $Color* JSlider$1SmartHashtable$LabelUIResource::getForeground() {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, fg, $JLabel::getForeground());
 	if (fg != nullptr && !($instanceOf($UIResource, fg))) {
 		return fg;

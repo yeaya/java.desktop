@@ -82,6 +82,7 @@ void MetalComboBoxIcon::init$() {
 }
 
 void MetalComboBoxIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, component, $cast($JComponent, c));
 	int32_t iconWidth = getIconWidth();
 	$nc(g)->translate(x, y);

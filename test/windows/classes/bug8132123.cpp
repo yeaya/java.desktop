@@ -118,6 +118,7 @@ void bug8132123::init() {
 }
 
 void bug8132123::lambda$init$0() {
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, left, $new($JPanel));
 	$init($Color);
 	left->setBackground($Color::GRAY);

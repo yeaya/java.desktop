@@ -97,6 +97,7 @@ $Object* allocate$TestDialog4FileChooserTest($Class* clazz) {
 }
 
 void TestDialog4FileChooserTest::init$($JFrame* frame, $String* name) {
+	$useLocalCurrentObjectStackCache();
 	$JDialog::init$(static_cast<$Frame*>(frame), name);
 	this->maxStringLength = 80;
 	$set(this, buttonP, $new($Panel));
@@ -123,6 +124,7 @@ void TestDialog4FileChooserTest::init$($JFrame* frame, $String* name) {
 }
 
 void TestDialog4FileChooserTest::printInstructions($StringArray* instructions) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->instructionsText)->setText(""_s);
 	$var($String, printStr, nullptr);
 	$var($String, remainingStr, nullptr);

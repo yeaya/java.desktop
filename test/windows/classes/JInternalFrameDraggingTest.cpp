@@ -276,6 +276,7 @@ void JInternalFrameDraggingTest::init$() {
 
 void JInternalFrameDraggingTest::main($StringArray* args) {
 	$init(JInternalFrameDraggingTest);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -338,6 +339,7 @@ void JInternalFrameDraggingTest::createAndShowGUI() {
 
 void JInternalFrameDraggingTest::moveFrame($Robot* robot, int32_t w, int32_t h, int32_t N) {
 	$init(JInternalFrameDraggingTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, getInternalFrameLocation());
 	int32_t xs = $nc(p)->x + 100;
 	int32_t ys = p->y + 15;
@@ -365,6 +367,7 @@ void JInternalFrameDraggingTest::moveFrame($Robot* robot, int32_t w, int32_t h, 
 
 $Point* JInternalFrameDraggingTest::getInternalFrameLocation() {
 	$init(JInternalFrameDraggingTest);
+	$useLocalCurrentObjectStackCache();
 	$var($PointArray, points, $new($PointArray, 1));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(JInternalFrameDraggingTest$$Lambda$lambda$getInternalFrameLocation$1$2, points)));
 	return points->get(0);
@@ -372,6 +375,7 @@ $Point* JInternalFrameDraggingTest::getInternalFrameLocation() {
 
 $Point* JInternalFrameDraggingTest::getDesktopPaneLocation() {
 	$init(JInternalFrameDraggingTest);
+	$useLocalCurrentObjectStackCache();
 	$var($PointArray, points, $new($PointArray, 1));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(JInternalFrameDraggingTest$$Lambda$lambda$getDesktopPaneLocation$2$3, points)));
 	return points->get(0);

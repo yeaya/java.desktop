@@ -465,6 +465,7 @@ $Point* WScrollPanePeer::getScrollOffset() {
 }
 
 void WScrollPanePeer::childResized(int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($ScrollPane, sp, $cast($ScrollPane, this->target));
 	$var($Dimension, vs, $nc(sp)->getSize());
 	setSpans($nc(vs)->width, vs->height, width, height);
@@ -478,6 +479,7 @@ void WScrollPanePeer::setSpans(int32_t viewWidth, int32_t viewHeight, int32_t ch
 }
 
 void WScrollPanePeer::setValue($Adjustable* adj, int32_t v) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, getScrollChild());
 	if (c == nullptr) {
 		return;
@@ -498,6 +500,7 @@ void WScrollPanePeer::setValue($Adjustable* adj, int32_t v) {
 }
 
 $Component* WScrollPanePeer::getScrollChild() {
+	$useLocalCurrentObjectStackCache();
 	$var($ScrollPane, sp, $cast($ScrollPane, this->target));
 	$var($Component, child, nullptr);
 	try {
@@ -509,6 +512,7 @@ $Component* WScrollPanePeer::getScrollChild() {
 }
 
 void WScrollPanePeer::postScrollEvent(int32_t orient, int32_t type, int32_t pos, bool isAdjusting) {
+	$useLocalCurrentObjectStackCache();
 	$var($Runnable, adjustor, $new($WScrollPanePeer$Adjustor, this, orient, type, pos, isAdjusting));
 	$WToolkit::executeOnEventHandlerThread($$new($WScrollPanePeer$ScrollEvent, this, this->target, adjustor));
 }

@@ -109,6 +109,7 @@ void RIFFWriter::init$($OutputStream* stream, $String* format) {
 }
 
 void RIFFWriter::init$($RIFFWriter$RandomAccessWriter* raf, $String* format, int32_t chunktype) {
+	$useLocalCurrentObjectStackCache();
 	$OutputStream::init$();
 	this->chunktype = 0;
 	$set(this, childchunk, nullptr);

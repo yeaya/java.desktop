@@ -90,6 +90,7 @@ void WindowsInternalFrameTitlePane$1::init$($WindowsInternalFrameTitlePane* this
 }
 
 void WindowsInternalFrameTitlePane$1::paintComponent($Graphics* g$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, g, g$renamed);
 	int32_t x = 0;
 	int32_t y = 0;

@@ -84,6 +84,7 @@ JPEGHuffmanTable* JPEGHuffmanTable::StdACLuminance = nullptr;
 JPEGHuffmanTable* JPEGHuffmanTable::StdACChrominance = nullptr;
 
 void JPEGHuffmanTable::init$($shorts* lengths, $shorts* values) {
+	$useLocalCurrentObjectStackCache();
 	if (lengths == nullptr || values == nullptr || $nc(lengths)->length == 0 || $nc(values)->length == 0 || $nc(lengths)->length > 16 || $nc(values)->length > 256) {
 		$throwNew($IllegalArgumentException, "Illegal lengths or values"_s);
 	}
@@ -131,6 +132,7 @@ $shorts* JPEGHuffmanTable::getValues() {
 }
 
 $String* JPEGHuffmanTable::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, ls, $System::getProperty("line.separator"_s, "\n"_s));
 	$var($StringBuilder, sb, $new($StringBuilder, "JPEGHuffmanTable"_s));
 	sb->append(ls)->append("lengths:"_s);

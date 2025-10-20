@@ -102,6 +102,7 @@ void SynthTabbedPaneUI$1::mouseExited($MouseEvent* e) {
 }
 
 void SynthTabbedPaneUI$1::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($SynthTabbedPaneUI::access$000(this->this$0)))->isEnabled()) {
 		return;
 	}

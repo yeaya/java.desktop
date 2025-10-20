@@ -164,6 +164,7 @@ int32_t LZWStringTable::expandCode($bytes* buf, int32_t offset, int16_t code, in
 }
 
 void LZWStringTable::dump($PrintStream* out) {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = 0;
 	for (i = 258; i < this->numStrings; ++i) {
 		$var($String, var$0, $$str({" strNxt["_s, $$str(i), "] = "_s, $$str($nc(this->strNxt)->get(i)), " strChr "_s, $($Integer::toHexString((int32_t)($nc(this->strChr)->get(i) & (uint32_t)255))), " strLen "_s}));

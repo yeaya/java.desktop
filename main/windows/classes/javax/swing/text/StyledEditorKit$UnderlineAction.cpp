@@ -70,6 +70,7 @@ void StyledEditorKit$UnderlineAction::init$() {
 }
 
 void StyledEditorKit$UnderlineAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, editor, getEditor(e));
 	if (editor != nullptr) {
 		$var($StyledEditorKit, kit, getStyledEditorKit(editor));

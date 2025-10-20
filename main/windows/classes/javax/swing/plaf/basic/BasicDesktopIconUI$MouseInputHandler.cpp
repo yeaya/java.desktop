@@ -107,6 +107,7 @@ void BasicDesktopIconUI$MouseInputHandler::init$($BasicDesktopIconUI* this$0) {
 }
 
 void BasicDesktopIconUI$MouseInputHandler::mouseReleased($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	this->_x = 0;
 	this->_y = 0;
 	this->__x = 0;
@@ -120,6 +121,7 @@ void BasicDesktopIconUI$MouseInputHandler::mouseReleased($MouseEvent* e) {
 }
 
 void BasicDesktopIconUI$MouseInputHandler::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, var$0, $cast($Component, $nc(e)->getSource()));
 	int32_t var$1 = e->getX();
 	$var($Point, p, $SwingUtilities::convertPoint(var$0, var$1, e->getY(), nullptr));
@@ -153,6 +155,7 @@ void BasicDesktopIconUI$MouseInputHandler::mouseMoved($MouseEvent* e) {
 }
 
 void BasicDesktopIconUI$MouseInputHandler::mouseDragged($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	int32_t newX = 0;
 	int32_t newY = 0;
@@ -202,6 +205,7 @@ void BasicDesktopIconUI$MouseInputHandler::mouseDragged($MouseEvent* e) {
 }
 
 void BasicDesktopIconUI$MouseInputHandler::moveAndRepaint($JComponent* f, int32_t newX, int32_t newY, int32_t newWidth, int32_t newHeight) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, r, $nc(f)->getBounds());
 	f->setBounds(newX, newY, newWidth, newHeight);
 	$SwingUtilities::computeUnion(newX, newY, newWidth, newHeight, r);

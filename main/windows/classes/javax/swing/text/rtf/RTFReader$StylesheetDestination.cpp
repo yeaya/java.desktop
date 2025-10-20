@@ -98,6 +98,7 @@ void RTFReader$StylesheetDestination::begingroup() {
 }
 
 void RTFReader$StylesheetDestination::close() {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, chrStyles, $new($Vector));
 	$var($Vector, pgfStyles, $new($Vector));
 	$var($Vector, secStyles, $new($Vector));

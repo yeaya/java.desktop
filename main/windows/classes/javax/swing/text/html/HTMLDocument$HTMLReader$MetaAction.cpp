@@ -81,6 +81,7 @@ void HTMLDocument$HTMLReader$MetaAction::init$($HTMLDocument$HTMLReader* this$1)
 }
 
 void HTMLDocument$HTMLReader$MetaAction::start($HTML$Tag* t, $MutableAttributeSet* a) {
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Attribute);
 	$var($Object, equiv, $nc(a)->getAttribute($HTML$Attribute::HTTPEQUIV));
 	if (equiv != nullptr) {

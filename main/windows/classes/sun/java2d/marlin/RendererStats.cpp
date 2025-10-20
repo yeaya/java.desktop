@@ -148,6 +148,7 @@ $Object* allocate$RendererStats($Class* clazz) {
 
 RendererStats* RendererStats::createInstance(Object$* parent, $String* name) {
 	$init(RendererStats);
+	$useLocalCurrentObjectStackCache();
 	$var(RendererStats, stats, $new(RendererStats, name));
 	$nc($($RendererStats$RendererStatsHolder::getInstance()))->add(parent, stats);
 	return stats;
@@ -299,6 +300,7 @@ void RendererStats::init$($String* name) {
 }
 
 void RendererStats::dump() {
+	$useLocalCurrentObjectStackCache();
 	$MarlinUtils::logInfo($$str({"RendererContext: "_s, this->name}));
 	$init($MarlinConst);
 	if ($MarlinConst::DO_STATS) {

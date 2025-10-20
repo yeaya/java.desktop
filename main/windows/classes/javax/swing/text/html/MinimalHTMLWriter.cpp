@@ -156,6 +156,7 @@ void MinimalHTMLWriter::write() {
 }
 
 void MinimalHTMLWriter::writeAttributes($AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, attributeNames, $nc(attr)->getAttributeNames());
 	while ($nc(attributeNames)->hasMoreElements()) {
 		$var($Object, name, attributeNames->nextElement());
@@ -206,6 +207,7 @@ void MinimalHTMLWriter::writeHeader() {
 }
 
 void MinimalHTMLWriter::writeStyles() {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultStyledDocument, styledDoc, $cast($DefaultStyledDocument, getDocument()));
 	$var($Enumeration, styleNames, $nc(styledDoc)->getStyleNames());
 	while ($nc(styleNames)->hasMoreElements()) {
@@ -227,6 +229,7 @@ void MinimalHTMLWriter::writeStyles() {
 }
 
 void MinimalHTMLWriter::writeBody() {
+	$useLocalCurrentObjectStackCache();
 	$var($ElementIterator, it, getElementIterator());
 	$nc(it)->current();
 	$var($Element, next, nullptr);
@@ -268,6 +271,7 @@ void MinimalHTMLWriter::writeEndParagraph() {
 }
 
 void MinimalHTMLWriter::writeStartParagraph($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attr, $nc(elem)->getAttributes());
 	$init($StyleConstants);
 	$var($Object, resolveAttr, $nc(attr)->getAttribute($StyleConstants::ResolveAttribute));
@@ -382,6 +386,7 @@ void MinimalHTMLWriter::writeEndMask(int32_t mask) {
 }
 
 void MinimalHTMLWriter::writeNonHTMLAttributes($AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, style, ""_s);
 	$var($String, separator, "; "_s);
 	bool var$0 = inFontTag();
@@ -466,6 +471,7 @@ void MinimalHTMLWriter::endSpanTag() {
 }
 
 $String* MinimalHTMLWriter::addStyleName($String* style) {
+	$useLocalCurrentObjectStackCache();
 	if (this->styleNameMapping == nullptr) {
 		return style;
 	}

@@ -129,6 +129,7 @@ int32_t Port$Info::hashCode() {
 }
 
 $String* Port$Info::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $String::format("%s %s port"_s, $$new($ObjectArray, {
 		$($of(getName())),
 		isSource() ? $of("source"_s) : $of("target"_s)

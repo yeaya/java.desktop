@@ -57,6 +57,7 @@ void SetFillRectANY::init$() {
 }
 
 void SetFillRectANY::FillRect$($SunGraphics2D* sg2d, $SurfaceData* sData, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($PixelWriter, pw, $GeneralRenderer::createSolidPixelWriter(sg2d, sData));
 	$var($Region, r, $nc($($nc(sg2d)->getCompClip()))->getBoundsIntersectionXYWH(x, y, w, h));
 	$var($SurfaceData, var$0, sData);

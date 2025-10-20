@@ -357,6 +357,7 @@ void TestTranslucentLabelText::init$() {
 
 void TestTranslucentLabelText::doTest($Runnable* action) {
 	$init(TestTranslucentLabelText);
+	$useLocalCurrentObjectStackCache();
 	$var($String, description, " A frame with 2 labels will be shown in middle of screen.\n Left side label text should be opaque.\n  Right side label text should be translucent.\n If Right side label text is translucent, press PASS else press FAIL"_s);
 	$var($JDialog, dialog, $new($JDialog));
 	dialog->setTitle("JLabelTranslucentTest"_s);
@@ -406,6 +407,7 @@ void TestTranslucentLabelText::fail() {
 
 $JLabel* TestTranslucentLabelText::create($String* text) {
 	$init(TestTranslucentLabelText);
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, label, $new($JLabel, text));
 	label->setOpaque(true);
 	label->setBackground(TestTranslucentLabelText::background);
@@ -418,6 +420,7 @@ $JLabel* TestTranslucentLabelText::create($String* text) {
 
 void TestTranslucentLabelText::runTest() {
 	$init(TestTranslucentLabelText);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(TestTranslucentLabelText::frame, $new($JFrame));
 	$nc(TestTranslucentLabelText::frame)->setUndecorated(true);
 	$nc(TestTranslucentLabelText::frame)->setLayout($$new($FlowLayout));
@@ -431,6 +434,7 @@ void TestTranslucentLabelText::runTest() {
 
 void TestTranslucentLabelText::main($StringArray* args) {
 	$init(TestTranslucentLabelText);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestTranslucentLabelText$$Lambda$lambda$main$3$3)));
 	$assignStatic(TestTranslucentLabelText::mainThread, $Thread::currentThread());
 	try {

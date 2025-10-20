@@ -119,6 +119,7 @@ void HeadlessJInternalFrame::init$() {
 }
 
 void HeadlessJInternalFrame::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame, intf, $new($JInternalFrame, "TEST"_s));
 	intf->setUI(static_cast<$InternalFrameUI*>($$new($HeadlessJInternalFrame$1, intf)));
 	intf->setUI(($InternalFrameUI*)nullptr);

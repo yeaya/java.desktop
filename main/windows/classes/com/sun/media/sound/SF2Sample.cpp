@@ -118,6 +118,7 @@ void SF2Sample::init$() {
 }
 
 $Object* SF2Sample::getData() {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFormat, format, getFormat());
 	$var($InputStream, is, $nc(this->data)->getInputStream());
 	if (is == nullptr) {

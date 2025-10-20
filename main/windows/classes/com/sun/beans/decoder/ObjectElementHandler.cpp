@@ -104,6 +104,7 @@ bool ObjectElementHandler::isArgument() {
 }
 
 $ValueObject* ObjectElementHandler::getValueObject($Class* type, $ObjectArray* args) {
+	$useLocalCurrentObjectStackCache();
 	if (this->field != nullptr) {
 		return $ValueObjectImpl::create($($FieldElementHandler::getFieldValue($(getContextBean()), this->field)));
 	}

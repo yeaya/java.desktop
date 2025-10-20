@@ -64,6 +64,7 @@ $Object* allocate$bug6348946$ParameterTable($Class* clazz) {
 }
 
 void bug6348946$ParameterTable::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JTable::init$($$new($ObjectArray2, {$$new($ObjectArray, {$($of($Integer::valueOf(5)))})}), $$new($StringArray, {"Value"_s}));
 	$nc($($nc($(getColumnModel()))->getColumn(0)))->setCellRenderer($$new($bug6348946$Renderer));
 	$nc($($nc($(getColumnModel()))->getColumn(0)))->setCellEditor($$new($bug6348946$Editor));

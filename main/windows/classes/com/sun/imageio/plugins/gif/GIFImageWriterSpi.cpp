@@ -94,6 +94,7 @@ void GIFImageWriterSpi::init$() {
 }
 
 bool GIFImageWriterSpi::canEncodeImage($ImageTypeSpecifier* type) {
+	$useLocalCurrentObjectStackCache();
 	if (type == nullptr) {
 		$throwNew($IllegalArgumentException, "type == null!"_s);
 	}

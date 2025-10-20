@@ -51,6 +51,7 @@ void PropertyEditorManager::init$() {
 }
 
 void PropertyEditorManager::registerEditor($Class* targetType, $Class* editorClass) {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm != nullptr) {
 		sm->checkPropertiesAccess();
@@ -59,14 +60,17 @@ void PropertyEditorManager::registerEditor($Class* targetType, $Class* editorCla
 }
 
 $PropertyEditor* PropertyEditorManager::findEditor($Class* targetType) {
+	$useLocalCurrentObjectStackCache();
 	return $cast($PropertyEditor, $nc($($nc($($ThreadGroupContext::getContext()))->getPropertyEditorFinder()))->find(targetType));
 }
 
 $StringArray* PropertyEditorManager::getEditorSearchPath() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($nc($($ThreadGroupContext::getContext()))->getPropertyEditorFinder()))->getPackages();
 }
 
 void PropertyEditorManager::setEditorSearchPath($StringArray* path) {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm != nullptr) {
 		sm->checkPropertiesAccess();

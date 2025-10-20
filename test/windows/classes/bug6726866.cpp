@@ -63,6 +63,7 @@ void bug6726866::init$() {
 }
 
 void bug6726866::init() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame, "bug6726866"_s));
 	frame->setUndecorated(true);
 	setWindowNonOpaque(frame);
@@ -83,6 +84,7 @@ void bug6726866::init() {
 
 void bug6726866::setWindowNonOpaque($Window* window) {
 	$init(bug6726866);
+	$useLocalCurrentObjectStackCache();
 	$var($Color, bg, $nc(window)->getBackground());
 	if (bg == nullptr) {
 		$assign(bg, $new($Color, 0, 0, 0, 0));

@@ -58,6 +58,7 @@ void SetDrawPolygonsANY::init$() {
 }
 
 void SetDrawPolygonsANY::DrawPolygons$($SunGraphics2D* sg2d, $SurfaceData* sData, $ints* xPoints, $ints* yPoints, $ints* nPoints, int32_t numPolys, int32_t transx, int32_t transy, bool close) {
+	$useLocalCurrentObjectStackCache();
 	$var($PixelWriter, pw, $GeneralRenderer::createSolidPixelWriter(sg2d, sData));
 	int32_t off = 0;
 	$var($Region, clip, $nc(sg2d)->getCompClip());

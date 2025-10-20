@@ -77,6 +77,7 @@ void OutlineTextRenderer::drawChars($SunGraphics2D* g2d, $chars* data, int32_t o
 }
 
 void OutlineTextRenderer::drawString($SunGraphics2D* g2d, $String* str, double x, double y) {
+	$useLocalCurrentObjectStackCache();
 	if (""_s->equals(str)) {
 		return;
 	}
@@ -103,6 +104,7 @@ void OutlineTextRenderer::drawString($SunGraphics2D* g2d, $String* str, double x
 }
 
 void OutlineTextRenderer::drawGlyphVector($SunGraphics2D* g2d, $GlyphVector* gv, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($Shape, s, $nc(gv)->getOutline(x, y));
 	int32_t prevaaHint = -1;
 	$var($FontRenderContext, frc, gv->getFontRenderContext());

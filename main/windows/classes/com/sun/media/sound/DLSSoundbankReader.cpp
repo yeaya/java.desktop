@@ -58,6 +58,7 @@ void DLSSoundbankReader::init$() {
 }
 
 $Soundbank* DLSSoundbankReader::getSoundbank($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $new($DLSSoundbank, url);
 	} catch ($RIFFInvalidFormatException&) {

@@ -199,6 +199,7 @@ void Helpers$PolyStack::pushLine(double x, double y) {
 }
 
 void Helpers$PolyStack::pullAll($DPathConsumer2D* io) {
+	$useLocalCurrentObjectStackCache();
 	int32_t nc = this->numCurves;
 	if (nc == 0) {
 		return;
@@ -244,6 +245,7 @@ void Helpers$PolyStack::pullAll($DPathConsumer2D* io) {
 }
 
 void Helpers$PolyStack::popAll($DPathConsumer2D* io) {
+	$useLocalCurrentObjectStackCache();
 	int32_t nc = this->numCurves;
 	if (nc == 0) {
 		return;
@@ -289,6 +291,7 @@ void Helpers$PolyStack::popAll($DPathConsumer2D* io) {
 }
 
 $String* Helpers$PolyStack::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, ret, ""_s);
 	int32_t nc = this->numCurves;
 	int32_t last = this->end;

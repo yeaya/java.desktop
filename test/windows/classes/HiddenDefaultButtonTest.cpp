@@ -147,6 +147,7 @@ void HiddenDefaultButtonTest::init$() {
 
 void HiddenDefaultButtonTest::createGUI() {
 	$init(HiddenDefaultButtonTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(HiddenDefaultButtonTest::frame, $new($JFrame));
 	$nc(HiddenDefaultButtonTest::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$var($JButton, button, $new($JButton, "Default button"_s));

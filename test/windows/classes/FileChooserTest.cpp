@@ -91,6 +91,7 @@ void FileChooserTest::init() {
 
 void FileChooserTest::main($StringArray* args) {
 	$init(FileChooserTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(FileChooserTest::mainThread, $Thread::currentThread());
 	try {
 		init();

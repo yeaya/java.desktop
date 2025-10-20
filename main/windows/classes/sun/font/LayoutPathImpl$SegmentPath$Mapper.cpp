@@ -90,6 +90,7 @@ $Object* allocate$LayoutPathImpl$SegmentPath$Mapper($Class* clazz) {
 }
 
 void LayoutPathImpl$SegmentPath$Mapper::init$($LayoutPathImpl$SegmentPath* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$set(this, li, $new($LayoutPathImpl$SegmentPath$LineInfo, this$0));
 	$set(this, segments, $new($ArrayList));
@@ -103,6 +104,7 @@ void LayoutPathImpl$SegmentPath$Mapper::init$($LayoutPathImpl$SegmentPath* this$
 }
 
 void LayoutPathImpl$SegmentPath$Mapper::init() {
+	$useLocalCurrentObjectStackCache();
 	this->haveMT = false;
 	{
 		$var($Iterator, i$, $nc(this->segments)->iterator());
@@ -122,6 +124,7 @@ void LayoutPathImpl$SegmentPath$Mapper::moveTo(double x, double y) {
 }
 
 void LayoutPathImpl$SegmentPath$Mapper::lineTo(double x, double y) {
+	$useLocalCurrentObjectStackCache();
 	if (this->haveMT) {
 		$nc(this->cpt)->x = $nc(this->mpt)->x;
 		$nc(this->cpt)->y = $nc(this->mpt)->y;
@@ -156,6 +159,7 @@ void LayoutPathImpl$SegmentPath$Mapper::lineTo(double x, double y) {
 }
 
 void LayoutPathImpl$SegmentPath$Mapper::close() {
+	$useLocalCurrentObjectStackCache();
 	lineTo($nc(this->mpt)->x, $nc(this->mpt)->y);
 	{
 		$var($Iterator, i$, $nc(this->segments)->iterator());
@@ -169,6 +173,7 @@ void LayoutPathImpl$SegmentPath$Mapper::close() {
 }
 
 $Shape* LayoutPathImpl$SegmentPath$Mapper::mapShape($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($PathIterator, pi, $nc(s)->getPathIterator(nullptr, (double)1));
 	init();
 	$var($doubles, coords, $new($doubles, 2));

@@ -119,6 +119,7 @@ $Dimension* ViewportLayout::minimumLayoutSize($Container* parent) {
 }
 
 void ViewportLayout::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($JViewport, vp, $cast($JViewport, parent));
 	$var($Component, view, $nc(vp)->getView());
 	$var($Scrollable, scrollableView, nullptr);

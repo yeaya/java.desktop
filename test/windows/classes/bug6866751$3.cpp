@@ -71,6 +71,7 @@ void bug6866751$3::init$() {
 }
 
 void bug6866751$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6866751);
 	int32_t width = $nc($bug6866751::area)->getWidth();
 	double caretX = $nc($($nc($($nc($bug6866751::area)->getCaret()))->getMagicCaretPosition()))->getX();

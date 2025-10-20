@@ -96,6 +96,7 @@ void MetalIconFactory$FileChooserDetailViewIcon::init$() {
 }
 
 void MetalIconFactory$FileChooserDetailViewIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->translate(x, y);
 	g->setColor($($MetalLookAndFeel::getPrimaryControlInfo()));
 	g->drawLine(2, 2, 5, 2);

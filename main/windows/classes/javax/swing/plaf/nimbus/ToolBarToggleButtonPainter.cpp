@@ -290,6 +290,7 @@ void ToolBarToggleButtonPainter::paintBackgroundFocused($Graphics2D* g) {
 }
 
 void ToolBarToggleButtonPainter::paintBackgroundMouseOver($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color2);
 	g->fill(this->roundRect);
@@ -302,6 +303,7 @@ void ToolBarToggleButtonPainter::paintBackgroundMouseOver($Graphics2D* g) {
 }
 
 void ToolBarToggleButtonPainter::paintBackgroundMouseOverAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect4());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -314,6 +316,7 @@ void ToolBarToggleButtonPainter::paintBackgroundMouseOverAndFocused($Graphics2D*
 }
 
 void ToolBarToggleButtonPainter::paintBackgroundPressed($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect5());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->roundRect);
@@ -326,6 +329,7 @@ void ToolBarToggleButtonPainter::paintBackgroundPressed($Graphics2D* g) {
 }
 
 void ToolBarToggleButtonPainter::paintBackgroundPressedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect8());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -338,6 +342,7 @@ void ToolBarToggleButtonPainter::paintBackgroundPressedAndFocused($Graphics2D* g
 }
 
 void ToolBarToggleButtonPainter::paintBackgroundSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect5());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->roundRect);
@@ -350,6 +355,7 @@ void ToolBarToggleButtonPainter::paintBackgroundSelected($Graphics2D* g) {
 }
 
 void ToolBarToggleButtonPainter::paintBackgroundSelectedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect8());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -362,6 +368,7 @@ void ToolBarToggleButtonPainter::paintBackgroundSelectedAndFocused($Graphics2D* 
 }
 
 void ToolBarToggleButtonPainter::paintBackgroundPressedAndSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect5());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->roundRect);
@@ -374,6 +381,7 @@ void ToolBarToggleButtonPainter::paintBackgroundPressedAndSelected($Graphics2D* 
 }
 
 void ToolBarToggleButtonPainter::paintBackgroundPressedAndSelectedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect8());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -386,6 +394,7 @@ void ToolBarToggleButtonPainter::paintBackgroundPressedAndSelectedAndFocused($Gr
 }
 
 void ToolBarToggleButtonPainter::paintBackgroundMouseOverAndSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect5());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->roundRect);
@@ -398,6 +407,7 @@ void ToolBarToggleButtonPainter::paintBackgroundMouseOverAndSelected($Graphics2D
 }
 
 void ToolBarToggleButtonPainter::paintBackgroundMouseOverAndSelectedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect8());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -410,6 +420,7 @@ void ToolBarToggleButtonPainter::paintBackgroundMouseOverAndSelectedAndFocused($
 }
 
 void ToolBarToggleButtonPainter::paintBackgroundDisabledAndSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect5());
 	$nc(g)->setPaint(this->color25);
 	g->fill(this->roundRect);
@@ -582,6 +593,7 @@ $RoundRectangle2D* ToolBarToggleButtonPainter::decodeRoundRect8() {
 }
 
 $Paint* ToolBarToggleButtonPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -599,6 +611,7 @@ $Paint* ToolBarToggleButtonPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* ToolBarToggleButtonPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -632,6 +645,7 @@ $Paint* ToolBarToggleButtonPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* ToolBarToggleButtonPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -649,6 +663,7 @@ $Paint* ToolBarToggleButtonPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* ToolBarToggleButtonPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -670,6 +685,7 @@ $Paint* ToolBarToggleButtonPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* ToolBarToggleButtonPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -687,6 +703,7 @@ $Paint* ToolBarToggleButtonPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* ToolBarToggleButtonPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -708,6 +725,7 @@ $Paint* ToolBarToggleButtonPainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* ToolBarToggleButtonPainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -725,6 +743,7 @@ $Paint* ToolBarToggleButtonPainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* ToolBarToggleButtonPainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -746,6 +765,7 @@ $Paint* ToolBarToggleButtonPainter::decodeGradient8($Shape* s) {
 }
 
 $Paint* ToolBarToggleButtonPainter::decodeGradient9($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -763,6 +783,7 @@ $Paint* ToolBarToggleButtonPainter::decodeGradient9($Shape* s) {
 }
 
 $Paint* ToolBarToggleButtonPainter::decodeGradient10($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

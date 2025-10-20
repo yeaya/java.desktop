@@ -68,6 +68,7 @@ bool ListSelectionEvent::getValueIsAdjusting() {
 }
 
 $String* ListSelectionEvent::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, properties, $str({" source="_s, $(getSource()), " firstIndex= "_s, $$str(this->firstIndex), " lastIndex= "_s, $$str(this->lastIndex), " isAdjusting= "_s, $$str(this->isAdjusting), " "_s}));
 	return $str({$($of(this)->getClass()->getName()), "["_s, properties, "]"_s});
 }

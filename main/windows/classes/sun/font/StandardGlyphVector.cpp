@@ -260,6 +260,7 @@ $Object* allocate$StandardGlyphVector($Class* clazz) {
 bool StandardGlyphVector::$assertionsDisabled = false;
 
 void StandardGlyphVector::init$($Font* font, $String* str, $FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	$GlyphVector::init$();
 	$var($Font, var$0, font);
 	$var($chars, var$1, $nc(str)->toCharArray());
@@ -277,6 +278,7 @@ void StandardGlyphVector::init$($Font* font, $chars* text, int32_t start, int32_
 }
 
 float StandardGlyphVector::getTracking($Font* font) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(font)->hasLayoutAttributes()) {
 		$var($AttributeValues, values, $nc(($cast($AttributeMap, $(font->getAttributes()))))->getValues());
 		return $nc(values)->getTracking();
@@ -285,6 +287,7 @@ float StandardGlyphVector::getTracking($Font* font) {
 }
 
 void StandardGlyphVector::init$($Font* font, $FontRenderContext* frc, $ints* glyphs, $floats* positions, $ints* indices, int32_t flags) {
+	$useLocalCurrentObjectStackCache();
 	$GlyphVector::init$();
 	initGlyphVector(font, frc, glyphs, positions, indices, flags);
 	float track = getTracking(font);
@@ -354,6 +357,7 @@ void StandardGlyphVector::init$($Font* font, $ints* glyphs, $FontRenderContext* 
 
 StandardGlyphVector* StandardGlyphVector::getStandardGV($GlyphVector* gv, $FontInfo* info) {
 	$init(StandardGlyphVector);
+	$useLocalCurrentObjectStackCache();
 	if ($nc(info)->aaHint == $SunHints::INTVAL_TEXT_ANTIALIAS_ON) {
 		$var($Object, aaHint, $nc($($nc(gv)->getFontRenderContext()))->getAntiAliasingHint());
 		$init($RenderingHints);
@@ -395,6 +399,7 @@ int32_t StandardGlyphVector::getGlyphCode(int32_t glyphIndex) {
 }
 
 $ints* StandardGlyphVector::getGlyphCodes(int32_t start, int32_t count, $ints* result$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, result, result$renamed);
 	if (count < 0) {
 		$throwNew($IllegalArgumentException, $$str({"count = "_s, $$str(count)}));
@@ -415,6 +420,7 @@ $ints* StandardGlyphVector::getGlyphCodes(int32_t start, int32_t count, $ints* r
 }
 
 int32_t StandardGlyphVector::getGlyphCharIndex(int32_t ix) {
+	$useLocalCurrentObjectStackCache();
 	if (ix < 0 && ix >= $nc(this->glyphs)->length) {
 		$throwNew($IndexOutOfBoundsException, $$str({""_s, $$str(ix)}));
 	}
@@ -428,6 +434,7 @@ int32_t StandardGlyphVector::getGlyphCharIndex(int32_t ix) {
 }
 
 $ints* StandardGlyphVector::getGlyphCharIndices(int32_t start, int32_t count, $ints* result$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, result, result$renamed);
 	if (start < 0 || count < 0 || (count > $nc(this->glyphs)->length - start)) {
 		$throwNew($IndexOutOfBoundsException, $$str({""_s, $$str(start), ", "_s, $$str(count)}));
@@ -481,6 +488,7 @@ $Rectangle2D* StandardGlyphVector::getLogicalBounds() {
 }
 
 $Rectangle2D* StandardGlyphVector::getVisualBounds() {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, result, nullptr);
 	for (int32_t i = 0; i < $nc(this->glyphs)->length; ++i) {
 		$var($Rectangle2D, glyphVB, $nc($(getGlyphVisualBounds(i)))->getBounds2D());
@@ -525,6 +533,7 @@ $Point2D* StandardGlyphVector::getGlyphPosition(int32_t ix) {
 }
 
 void StandardGlyphVector::setGlyphPosition(int32_t ix, $Point2D* pos) {
+	$useLocalCurrentObjectStackCache();
 	if (ix < 0 || ix > $nc(this->glyphs)->length) {
 		$throwNew($IndexOutOfBoundsException, $$str({"ix = "_s, $$str(ix)}));
 	}
@@ -539,6 +548,7 @@ void StandardGlyphVector::setGlyphPosition(int32_t ix, $Point2D* pos) {
 }
 
 $AffineTransform* StandardGlyphVector::getGlyphTransform(int32_t ix) {
+	$useLocalCurrentObjectStackCache();
 	if (ix < 0 || ix >= $nc(this->glyphs)->length) {
 		$throwNew($IndexOutOfBoundsException, $$str({"ix = "_s, $$str(ix)}));
 	}
@@ -549,6 +559,7 @@ $AffineTransform* StandardGlyphVector::getGlyphTransform(int32_t ix) {
 }
 
 void StandardGlyphVector::setGlyphTransform(int32_t ix, $AffineTransform* newTX) {
+	$useLocalCurrentObjectStackCache();
 	if (ix < 0 || ix >= $nc(this->glyphs)->length) {
 		$throwNew($IndexOutOfBoundsException, $$str({"ix = "_s, $$str(ix)}));
 	}
@@ -588,6 +599,7 @@ int32_t StandardGlyphVector::getLayoutFlags() {
 }
 
 $floats* StandardGlyphVector::getGlyphPositions(int32_t start, int32_t count, $floats* result) {
+	$useLocalCurrentObjectStackCache();
 	if (count < 0) {
 		$throwNew($IllegalArgumentException, $$str({"count = "_s, $$str(count)}));
 	}
@@ -601,6 +613,7 @@ $floats* StandardGlyphVector::getGlyphPositions(int32_t start, int32_t count, $f
 }
 
 $Shape* StandardGlyphVector::getGlyphLogicalBounds(int32_t ix) {
+	$useLocalCurrentObjectStackCache();
 	if (ix < 0 || ix >= $nc(this->glyphs)->length) {
 		$throwNew($IndexOutOfBoundsException, $$str({"ix = "_s, $$str(ix)}));
 	}
@@ -636,6 +649,7 @@ $Shape* StandardGlyphVector::getGlyphLogicalBounds(int32_t ix) {
 }
 
 $Shape* StandardGlyphVector::getGlyphVisualBounds(int32_t ix) {
+	$useLocalCurrentObjectStackCache();
 	if (ix < 0 || ix >= $nc(this->glyphs)->length) {
 		$throwNew($IndexOutOfBoundsException, $$str({"ix = "_s, $$str(ix)}));
 	}
@@ -657,6 +671,7 @@ $Rectangle* StandardGlyphVector::getGlyphPixelBounds(int32_t index, $FontRenderC
 }
 
 $GlyphMetrics* StandardGlyphVector::getGlyphMetrics(int32_t ix) {
+	$useLocalCurrentObjectStackCache();
 	if (ix < 0 || ix >= $nc(this->glyphs)->length) {
 		$throwNew($IndexOutOfBoundsException, $$str({"ix = "_s, $$str(ix)}));
 	}
@@ -674,6 +689,7 @@ $GlyphMetrics* StandardGlyphVector::getGlyphMetrics(int32_t ix) {
 }
 
 $GlyphJustificationInfo* StandardGlyphVector::getGlyphJustificationInfo(int32_t ix) {
+	$useLocalCurrentObjectStackCache();
 	if (ix < 0 || ix >= $nc(this->glyphs)->length) {
 		$throwNew($IndexOutOfBoundsException, $$str({"ix = "_s, $$str(ix)}));
 	}
@@ -681,6 +697,7 @@ $GlyphJustificationInfo* StandardGlyphVector::getGlyphJustificationInfo(int32_t 
 }
 
 bool StandardGlyphVector::equals($GlyphVector* rhs) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals(this, rhs)) {
 		return true;
 	}
@@ -765,6 +782,7 @@ $Object* StandardGlyphVector::clone() {
 }
 
 void StandardGlyphVector::setGlyphPositions($floats* srcPositions, int32_t srcStart, int32_t start, int32_t count) {
+	$useLocalCurrentObjectStackCache();
 	if (count < 0) {
 		$throwNew($IllegalArgumentException, $$str({"count = "_s, $$str(count)}));
 	}
@@ -782,6 +800,7 @@ void StandardGlyphVector::setGlyphPositions($floats* srcPositions, int32_t srcSt
 }
 
 void StandardGlyphVector::setGlyphPositions($floats* srcPositions) {
+	$useLocalCurrentObjectStackCache();
 	int32_t requiredLength = $nc(this->glyphs)->length * 2 + 2;
 	if ($nc(srcPositions)->length != requiredLength) {
 		$throwNew($IllegalArgumentException, $$str({"srcPositions.length != "_s, $$str(requiredLength)}));
@@ -796,6 +815,7 @@ $floats* StandardGlyphVector::getGlyphPositions($floats* result) {
 }
 
 $AffineTransformArray* StandardGlyphVector::getGlyphTransforms(int32_t start, int32_t count, $AffineTransformArray* result$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransformArray, result, result$renamed);
 	if (start < 0 || count < 0 || start + count > $nc(this->glyphs)->length) {
 		$throwNew($IllegalArgumentException, $$str({"start: "_s, $$str(start), " count: "_s, $$str(count)}));
@@ -831,6 +851,7 @@ void StandardGlyphVector::setGlyphTransforms($AffineTransformArray* srcTransform
 }
 
 $floats* StandardGlyphVector::getGlyphInfo() {
+	$useLocalCurrentObjectStackCache();
 	setFRCTX();
 	initPositions();
 	$var($floats, result, $new($floats, $nc(this->glyphs)->length * 8));
@@ -960,6 +981,7 @@ void StandardGlyphVector::resetDTX($AffineTransform* at) {
 }
 
 void StandardGlyphVector::init$($GlyphVector* gv, $FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	$GlyphVector::init$();
 	$set(this, font, $nc(gv)->getFont());
 	$set(this, frc, frc);
@@ -1001,6 +1023,7 @@ $ints* StandardGlyphVector::getValidatedGlyphs($ints* oglyphs) {
 }
 
 void StandardGlyphVector::init($Font* font, $chars* text$renamed, int32_t start, int32_t count, $FontRenderContext* frc, int32_t flags) {
+	$useLocalCurrentObjectStackCache();
 	$var($chars, text, text$renamed);
 	if (start < 0 || count < 0 || start + count > $nc(text)->length) {
 		$throwNew($ArrayIndexOutOfBoundsException, "start or count out of bounds"_s);
@@ -1070,6 +1093,7 @@ $Rectangle2D* StandardGlyphVector::getGlyphOutlineBounds(int32_t ix) {
 }
 
 $Shape* StandardGlyphVector::getGlyphsOutline(int32_t start, int32_t count, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	setFRCTX();
 	initPositions();
 	$var($GeneralPath, result, $new($GeneralPath, $GeneralPath::WIND_NON_ZERO));
@@ -1087,6 +1111,7 @@ $Shape* StandardGlyphVector::getGlyphsOutline(int32_t start, int32_t count, floa
 }
 
 $Rectangle* StandardGlyphVector::getGlyphsPixelBounds($FontRenderContext* frc, float x, float y, int32_t start, int32_t count) {
+	$useLocalCurrentObjectStackCache();
 	initPositions();
 	$var($AffineTransform, tx, nullptr);
 	if (frc == nullptr || $nc(frc)->equals(this->frc)) {
@@ -1120,6 +1145,7 @@ $Rectangle* StandardGlyphVector::getGlyphsPixelBounds($FontRenderContext* frc, f
 }
 
 void StandardGlyphVector::clearCaches(int32_t ix) {
+	$useLocalCurrentObjectStackCache();
 	if (this->lbcacheRef != nullptr) {
 		$var($ShapeArray, lbcache, $cast($ShapeArray, $nc(this->lbcacheRef)->get()));
 		if (lbcache != nullptr) {
@@ -1140,6 +1166,7 @@ void StandardGlyphVector::clearCaches() {
 }
 
 void StandardGlyphVector::initPositions() {
+	$useLocalCurrentObjectStackCache();
 	if (this->positions == nullptr) {
 		setFRCTX();
 		$set(this, positions, $new($floats, $nc(this->glyphs)->length * 2 + 2));
@@ -1208,6 +1235,7 @@ $String* StandardGlyphVector::toString() {
 }
 
 $StringBuffer* StandardGlyphVector::appendString($StringBuffer* buf$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuffer, buf, buf$renamed);
 	if (buf == nullptr) {
 		$assign(buf, $new($StringBuffer));

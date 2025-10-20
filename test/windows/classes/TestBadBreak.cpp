@@ -177,6 +177,7 @@ void TestBadBreak::init$() {
 
 void TestBadBreak::main($StringArray* args) {
 	$init(TestBadBreak);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(TestBadBreak::robot, $new($Robot));
 	$var($BufferedImage, bi1, $new($BufferedImage, 200, 90, 2));
 	$var($BufferedImage, bi2, $new($BufferedImage, 200, 90, 2));
@@ -196,6 +197,7 @@ void TestBadBreak::main($StringArray* args) {
 
 void TestBadBreak::test($String* text, $BufferedImage* i1) {
 	$init(TestBadBreak);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($TestBadBreak$1, text, i1));
 	$nc(TestBadBreak::robot)->waitForIdle();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestBadBreak$$Lambda$lambda$test$0)));

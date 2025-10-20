@@ -84,6 +84,7 @@ void JTextPaneDocumentAlignment::init$() {
 }
 
 void JTextPaneDocumentAlignment::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($JTextPaneDocumentAlignment$1));
 	$var($Robot, robot, $new($Robot));
 	robot->waitForIdle();

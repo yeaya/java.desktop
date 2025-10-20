@@ -155,6 +155,7 @@ $Enumeration* SimpleAttributeSet::getAttributeNames() {
 }
 
 $Object* SimpleAttributeSet::getAttribute(Object$* name) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, $nc(this->table)->get(name));
 	if (value == nullptr) {
 		$var($AttributeSet, parent, getResolveParent());
@@ -170,6 +171,7 @@ bool SimpleAttributeSet::containsAttribute(Object$* name, Object$* value) {
 }
 
 bool SimpleAttributeSet::containsAttributes($AttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	bool result = true;
 	$var($Enumeration, names, $nc(attributes)->getAttributeNames());
 	while (result && $nc(names)->hasMoreElements()) {
@@ -184,6 +186,7 @@ void SimpleAttributeSet::addAttribute(Object$* name, Object$* value) {
 }
 
 void SimpleAttributeSet::addAttributes($AttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, names, $nc(attributes)->getAttributeNames());
 	while ($nc(names)->hasMoreElements()) {
 		$var($Object, name, names->nextElement());
@@ -196,12 +199,14 @@ void SimpleAttributeSet::removeAttribute(Object$* name) {
 }
 
 void SimpleAttributeSet::removeAttributes($Enumeration* names) {
+	$useLocalCurrentObjectStackCache();
 	while ($nc(names)->hasMoreElements()) {
 		removeAttribute($(names->nextElement()));
 	}
 }
 
 void SimpleAttributeSet::removeAttributes($AttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals(attributes, this)) {
 		$nc(this->table)->clear();
 	} else {
@@ -227,6 +232,7 @@ void SimpleAttributeSet::setResolveParent($AttributeSet* parent) {
 }
 
 $Object* SimpleAttributeSet::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(SimpleAttributeSet, attr, nullptr);
 	try {
 		$assign(attr, $cast(SimpleAttributeSet, $MutableAttributeSet::clone()));
@@ -254,6 +260,7 @@ bool SimpleAttributeSet::equals(Object$* obj) {
 }
 
 $String* SimpleAttributeSet::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, s, ""_s);
 	$var($Enumeration, names, getAttributeNames());
 	while ($nc(names)->hasMoreElements()) {

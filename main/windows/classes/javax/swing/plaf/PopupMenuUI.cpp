@@ -60,6 +60,7 @@ bool PopupMenuUI::isPopupTrigger($MouseEvent* e) {
 }
 
 $Popup* PopupMenuUI::getPopup($JPopupMenu* popup, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($PopupFactory, popupFactory, $PopupFactory::getSharedInstance());
 	return $nc(popupFactory)->getPopup($($nc(popup)->getInvoker()), popup, x, y);
 }

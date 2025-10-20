@@ -86,6 +86,7 @@ void WindowsLookAndFeel$XPBorderValue::init$($TMSchema$Part* xpValue, Object$* c
 }
 
 $Object* WindowsLookAndFeel$XPBorderValue::getXPValue($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	$var($Border, xpBorder, xp != nullptr ? $nc(xp)->getBorder(nullptr, $cast($TMSchema$Part, this->xpValue)) : ($Border*)nullptr);
 	if (xpBorder != nullptr && this->extraMargin != nullptr) {

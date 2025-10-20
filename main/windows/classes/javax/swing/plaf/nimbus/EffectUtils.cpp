@@ -98,6 +98,7 @@ void EffectUtils::clearImage($BufferedImage* img) {
 }
 
 $BufferedImage* EffectUtils::gaussianBlur($BufferedImage* src, $BufferedImage* dst$renamed, int32_t radius) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, dst, dst$renamed);
 	int32_t width = $nc(src)->getWidth();
 	int32_t height = src->getHeight();
@@ -214,6 +215,7 @@ $floats* EffectUtils::createGaussianKernel(int32_t radius) {
 }
 
 $bytes* EffectUtils::getPixels($BufferedImage* img, int32_t x, int32_t y, int32_t w, int32_t h, $bytes* pixels$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, pixels, pixels$renamed);
 	if (w == 0 || h == 0) {
 		return $new($bytes, 0);
@@ -248,6 +250,7 @@ void EffectUtils::setPixels($BufferedImage* img, int32_t x, int32_t y, int32_t w
 }
 
 $ints* EffectUtils::getPixels($BufferedImage* img, int32_t x, int32_t y, int32_t w, int32_t h, $ints* pixels$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, pixels, pixels$renamed);
 	if (w == 0 || h == 0) {
 		return $new($ints, 0);
@@ -281,6 +284,7 @@ void EffectUtils::setPixels($BufferedImage* img, int32_t x, int32_t y, int32_t w
 }
 
 $BufferedImage* EffectUtils::createColorModelCompatibleImage($BufferedImage* image) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, cm, $nc(image)->getColorModel());
 	$var($ColorModel, var$0, cm);
 	int32_t var$2 = image->getWidth();
@@ -297,6 +301,7 @@ bool EffectUtils::isHeadless() {
 }
 
 $GraphicsConfiguration* EffectUtils::getGraphicsConfiguration() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($nc($($GraphicsEnvironment::getLocalGraphicsEnvironment()))->getDefaultScreenDevice()))->getDefaultConfiguration();
 }
 

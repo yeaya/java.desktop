@@ -214,6 +214,7 @@ void TextAreaPainter::doPaint($Graphics2D* g, $JComponent* c, int32_t width, int
 }
 
 $ObjectArray* TextAreaPainter::getExtendedCacheKeys($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, extendedCacheKeys, nullptr);
 	switch (this->state) {
 	case TextAreaPainter::BACKGROUND_ENABLED:
@@ -281,6 +282,7 @@ void TextAreaPainter::paintBackgroundSelected($Graphics2D* g) {
 }
 
 void TextAreaPainter::paintBorderDisabledAndNotInScrollPane($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect3());
 	$nc(g)->setPaint($(decodeGradient1(this->rect)));
 	g->fill(this->rect);
@@ -299,6 +301,7 @@ void TextAreaPainter::paintBorderDisabledAndNotInScrollPane($Graphics2D* g) {
 }
 
 void TextAreaPainter::paintBorderFocusedAndNotInScrollPane($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect8());
 	$nc(g)->setPaint($(decodeGradient3(this->rect)));
 	g->fill(this->rect);
@@ -320,6 +323,7 @@ void TextAreaPainter::paintBorderFocusedAndNotInScrollPane($Graphics2D* g) {
 }
 
 void TextAreaPainter::paintBorderEnabledAndNotInScrollPane($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect8());
 	$nc(g)->setPaint($(decodeGradient5(this->rect)));
 	g->fill(this->rect);
@@ -494,6 +498,7 @@ $Path2D* TextAreaPainter::decodePath1() {
 }
 
 $Paint* TextAreaPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -511,6 +516,7 @@ $Paint* TextAreaPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* TextAreaPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -528,6 +534,7 @@ $Paint* TextAreaPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* TextAreaPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -545,6 +552,7 @@ $Paint* TextAreaPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* TextAreaPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -562,6 +570,7 @@ $Paint* TextAreaPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* TextAreaPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

@@ -148,6 +148,7 @@ $ObjectArray* LoweredBorder::getExtendedCacheKeys($JComponent* c) {
 }
 
 void LoweredBorder::doPaint($Graphics2D* g, $JComponent* c, int32_t width, int32_t height, $ObjectArray* extendedCacheKeys) {
+	$useLocalCurrentObjectStackCache();
 	$init($Color);
 	$var($Color, color, (c == nullptr) ? $Color::BLACK : $nc(c)->getBackground());
 	$var($BufferedImage, img1, $new($BufferedImage, LoweredBorder::IMG_SIZE, LoweredBorder::IMG_SIZE, $BufferedImage::TYPE_INT_ARGB));
@@ -193,6 +194,7 @@ bool LoweredBorder::isBorderOpaque() {
 }
 
 void LoweredBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, comp, ($instanceOf($JComponent, c)) ? $cast($JComponent, c) : ($JComponent*)nullptr);
 	if ($instanceOf($Graphics2D, g)) {
 		$var($Graphics2D, g2, $cast($Graphics2D, g));

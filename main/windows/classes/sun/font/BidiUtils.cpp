@@ -59,6 +59,7 @@ void BidiUtils::init$() {
 }
 
 void BidiUtils::getLevels($Bidi* bidi, $bytes* levels, int32_t start) {
+	$useLocalCurrentObjectStackCache();
 	int32_t limit = start + $nc(bidi)->getLength();
 	if (start < 0 || limit > $nc(levels)->length) {
 		$throwNew($IndexOutOfBoundsException, $$str({"levels.length = "_s, $$str(levels->length), " start: "_s, $$str(start), " limit: "_s, $$str(limit)}));
@@ -233,6 +234,7 @@ $ints* BidiUtils::createNormalizedMap($ints* values, $bytes* levels, int32_t sta
 }
 
 void BidiUtils::reorderVisually($bytes* levels, $ObjectArray* objects) {
+	$useLocalCurrentObjectStackCache();
 	int32_t len = $nc(levels)->length;
 	int8_t lowestOddLevel = (int8_t)(BidiUtils::NUMLEVELS + 1);
 	int8_t highestLevel = (int8_t)0;

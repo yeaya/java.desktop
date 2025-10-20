@@ -48,6 +48,7 @@ void PrintEvent::init$(Object$* source) {
 }
 
 $String* PrintEvent::toString() {
+	$useLocalCurrentObjectStackCache();
 	return ($str({"PrintEvent on "_s, $($nc($of($(getSource())))->toString())}));
 }
 

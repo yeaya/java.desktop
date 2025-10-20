@@ -107,6 +107,7 @@ $Icon* WindowsIconFactory$VistaMenuItemCheckIconFactory::getIcon($String* type) 
 
 int32_t WindowsIconFactory$VistaMenuItemCheckIconFactory::getIconWidth() {
 	$init(WindowsIconFactory$VistaMenuItemCheckIconFactory);
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	$init($TMSchema$Part);
 	return ((xp != nullptr) ? $nc($($nc(xp)->getSkin(nullptr, $TMSchema$Part::MP_POPUPCHECK)))->getWidth() : 16) + 2 * WindowsIconFactory$VistaMenuItemCheckIconFactory::OFFSET;

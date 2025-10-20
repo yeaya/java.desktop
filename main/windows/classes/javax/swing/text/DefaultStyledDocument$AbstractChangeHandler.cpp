@@ -101,6 +101,7 @@ void DefaultStyledDocument$AbstractChangeHandler::init$($DefaultStyledDocument* 
 
 $List* DefaultStyledDocument$AbstractChangeHandler::getStaleListeners($ChangeListener* l) {
 	$init(DefaultStyledDocument$AbstractChangeHandler);
+	$useLocalCurrentObjectStackCache();
 	$var($List, staleListeners, $new($ArrayList));
 	$var($ReferenceQueue, q, $cast($ReferenceQueue, $nc(DefaultStyledDocument$AbstractChangeHandler::queueMap)->get($nc($of(l))->getClass())));
 	if (q != nullptr) {

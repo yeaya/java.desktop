@@ -267,6 +267,7 @@ int16_t SF2Region::getDefaultValue(int32_t generator) {
 }
 
 int16_t SF2Region::getShort(int32_t generator) {
+	$useLocalCurrentObjectStackCache();
 	if (!contains(generator)) {
 		return getDefaultValue(generator);
 	}
@@ -274,6 +275,7 @@ int16_t SF2Region::getShort(int32_t generator) {
 }
 
 void SF2Region::putShort(int32_t generator, int16_t value) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, var$0, $of($Integer::valueOf(generator)));
 	$nc(this->generators)->put(var$0, $($Short::valueOf(value)));
 }
@@ -287,6 +289,7 @@ $bytes* SF2Region::getBytes(int32_t generator) {
 }
 
 void SF2Region::putBytes(int32_t generator, $bytes* bytes) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, var$0, $of($Integer::valueOf(generator)));
 	$nc(this->generators)->put(var$0, $($Short::valueOf((int16_t)($nc(bytes)->get(0) + (bytes->get(1) << 8)))));
 }
@@ -296,6 +299,7 @@ int32_t SF2Region::getInteger(int32_t generator) {
 }
 
 void SF2Region::putInteger(int32_t generator, int32_t value) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, var$0, $of($Integer::valueOf(generator)));
 	$nc(this->generators)->put(var$0, $($Short::valueOf((int16_t)value)));
 }

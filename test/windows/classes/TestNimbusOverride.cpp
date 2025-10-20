@@ -196,6 +196,7 @@ bool TestNimbusOverride::passed = false;
 
 void TestNimbusOverride::main($StringArray* args) {
 	$init(TestNimbusOverride);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -221,6 +222,7 @@ void TestNimbusOverride::main($StringArray* args) {
 }
 
 void TestNimbusOverride::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$();
 	setDefaultCloseOperation($WindowConstants::DISPOSE_ON_CLOSE);
 	$var($JEditorPane, pp, $new($JEditorPane));

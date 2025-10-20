@@ -67,6 +67,7 @@ void TextRenderer::init$($CompositePipe* pipe) {
 }
 
 void TextRenderer::drawGlyphList($SunGraphics2D* sg2d, $GlyphList* gl) {
+	$useLocalCurrentObjectStackCache();
 	int32_t num = $nc(gl)->getNumGlyphs();
 	$var($Region, clipRegion, $nc(sg2d)->getCompClip());
 	int32_t cx1 = $nc(clipRegion)->getLoX();

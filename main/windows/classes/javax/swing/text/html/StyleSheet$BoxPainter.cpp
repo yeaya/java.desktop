@@ -186,6 +186,7 @@ $Color* StyleSheet$BoxPainter::getBorderColor($AttributeSet* a) {
 }
 
 float StyleSheet$BoxPainter::getInset(int32_t side, $View* v) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, a, $nc(v)->getAttributes());
 	float inset = (float)0;
 	switch (side) {
@@ -275,6 +276,7 @@ float StyleSheet$BoxPainter::getLength($CSS$Attribute* key, $AttributeSet* a) {
 
 bool StyleSheet$BoxPainter::isLeftToRight($View* v) {
 	$init(StyleSheet$BoxPainter);
+	$useLocalCurrentObjectStackCache();
 	bool ret = true;
 	if (isOrientationAware(v)) {
 		$var($Container, container, nullptr);
@@ -287,6 +289,7 @@ bool StyleSheet$BoxPainter::isLeftToRight($View* v) {
 
 bool StyleSheet$BoxPainter::isOrientationAware($View* v) {
 	$init(StyleSheet$BoxPainter);
+	$useLocalCurrentObjectStackCache();
 	bool ret = false;
 	$var($AttributeSet, attr, nullptr);
 	$var($Object, obj, nullptr);

@@ -75,6 +75,7 @@ $Object* allocate$SimpleDoc($Class* clazz) {
 }
 
 void SimpleDoc::init$(Object$* printData, $DocFlavor* flavor, $DocAttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (flavor == nullptr || printData == nullptr) {
 		$throwNew($IllegalArgumentException, "null argument(s)"_s);

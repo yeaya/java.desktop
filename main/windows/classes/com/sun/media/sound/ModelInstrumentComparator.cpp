@@ -48,6 +48,7 @@ void ModelInstrumentComparator::init$() {
 }
 
 int32_t ModelInstrumentComparator::compare($Instrument* arg0, $Instrument* arg1) {
+	$useLocalCurrentObjectStackCache();
 	$var($Patch, p0, $nc(arg0)->getPatch());
 	$var($Patch, p1, $nc(arg1)->getPatch());
 	int32_t var$0 = $nc(p0)->getBank() * 128;

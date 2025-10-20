@@ -82,6 +82,7 @@ $Object* allocate$bug5012888($Class* clazz) {
 }
 
 void bug5012888::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$();
 	$set(this, spinner1, $new($JSpinner, $$new($SpinnerNumberModel, 0, -1000, 1000, 1)));
 	$set(this, spinner2, $new($JSpinner, $$new($SpinnerNumberModel, 1, -1000, 1000, 1)));
@@ -93,6 +94,7 @@ void bug5012888::init$() {
 }
 
 void bug5012888::doTest() {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->waitForIdle();
 	$var($Point, p, $nc(this->spinner2)->getLocationOnScreen());

@@ -109,6 +109,7 @@ void NimbusDefaults$LazyPainter::init$($String* className, int32_t which, $Inset
 }
 
 $Object* NimbusDefaults$LazyPainter::createValue($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$Class* c = nullptr;

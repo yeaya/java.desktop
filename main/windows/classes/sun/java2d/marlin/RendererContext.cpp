@@ -194,6 +194,7 @@ $AtomicInteger* RendererContext::CTX_COUNT = nullptr;
 
 RendererContext* RendererContext::createContext() {
 	$init(RendererContext);
+	$useLocalCurrentObjectStackCache();
 	return $new(RendererContext, $$str({"ctx"_s, $($Integer::toString($nc(RendererContext::CTX_COUNT)->getAndIncrement()))}));
 }
 

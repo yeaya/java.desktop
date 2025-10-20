@@ -84,6 +84,7 @@ void JTextPaneDocumentWrapping::init$() {
 }
 
 void JTextPaneDocumentWrapping::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($JTextPaneDocumentWrapping$1));
 	$var($Robot, robot, $new($Robot));
 	robot->waitForIdle();

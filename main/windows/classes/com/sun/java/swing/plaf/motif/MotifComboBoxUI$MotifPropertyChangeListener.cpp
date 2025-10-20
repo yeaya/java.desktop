@@ -81,6 +81,7 @@ void MotifComboBoxUI$MotifPropertyChangeListener::init$($MotifComboBoxUI* this$0
 }
 
 void MotifComboBoxUI$MotifPropertyChangeListener::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$BasicComboBoxUI$PropertyChangeHandler::propertyChange(e);
 	$var($String, propertyName, $nc(e)->getPropertyName());
 	if (propertyName == "enabled"_s) {

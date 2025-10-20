@@ -118,6 +118,7 @@ $View* InlineView::breakView(int32_t axis, int32_t offset, float pos, float len)
 }
 
 void InlineView::setPropertiesFromAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$LabelView::setPropertiesFromAttributes();
 	$var($AttributeSet, a, getAttributes());
 	$init($CSS$Attribute);

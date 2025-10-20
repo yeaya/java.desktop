@@ -81,6 +81,7 @@ void JFileChooserOrientation$1$1::init$($JFileChooserOrientation$1* this$0) {
 }
 
 void JFileChooserOrientation$1$1::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$JFileChooserOrientation::showFileChooser();

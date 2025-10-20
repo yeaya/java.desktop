@@ -73,6 +73,7 @@ void TestPopupMenu$TestInternalFrame::init$($TestPopupMenu* this$0) {
 }
 
 void TestPopupMenu$TestInternalFrame::jbInit() {
+	$useLocalCurrentObjectStackCache();
 	setTitle("Test Internal Frame"_s);
 	$init($Color);
 	$nc($(getContentPane()))->setBackground($Color::GRAY);

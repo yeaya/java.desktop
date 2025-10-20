@@ -82,6 +82,7 @@ void HTMLEditorKit$InsertHRAction::init$() {
 }
 
 void HTMLEditorKit$InsertHRAction::actionPerformed($ActionEvent* ae) {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, editor, getEditor(ae));
 	if (editor != nullptr) {
 		$var($HTMLDocument, doc, getHTMLDocument(editor));

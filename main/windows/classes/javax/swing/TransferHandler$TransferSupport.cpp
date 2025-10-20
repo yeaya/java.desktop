@@ -134,6 +134,7 @@ void TransferHandler$TransferSupport::init$($Component* component, $Transferable
 }
 
 void TransferHandler$TransferSupport::setDNDVariables($Component* component, $DropTargetEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	if (!TransferHandler$TransferSupport::$assertionsDisabled && !this->isDrop$) {
 		$throwNew($AssertionError);
 	}
@@ -186,6 +187,7 @@ void TransferHandler$TransferSupport::setShowDropLocation(bool showDropLocation)
 }
 
 void TransferHandler$TransferSupport::setDropAction(int32_t dropAction) {
+	$useLocalCurrentObjectStackCache();
 	assureIsDrop();
 	int32_t action = (int32_t)(dropAction & (uint32_t)getSourceDropActions());
 	if (!(action == 1 || action == 2 || action == 0x40000000)) {

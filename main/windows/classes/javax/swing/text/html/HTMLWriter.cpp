@@ -216,6 +216,7 @@ void HTMLWriter::init$($Writer* w, $HTMLDocument* doc, int32_t pos, int32_t len)
 }
 
 void HTMLWriter::write() {
+	$useLocalCurrentObjectStackCache();
 	$var($ElementIterator, it, getElementIterator());
 	$var($Element, current, nullptr);
 	$var($Element, next, nullptr);
@@ -299,6 +300,7 @@ void HTMLWriter::write() {
 }
 
 void HTMLWriter::writeAttributes($AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->convAttr)->removeAttributes(static_cast<$AttributeSet*>(this->convAttr));
 	convertToHTML32(attr, this->convAttr);
 	$var($Enumeration, names, $nc(this->convAttr)->getAttributeNames());
@@ -315,6 +317,7 @@ void HTMLWriter::writeAttributes($AttributeSet* attr) {
 }
 
 void HTMLWriter::emptyTag($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->inContent && !this->inPre) {
 		indentSmart();
 	}
@@ -371,6 +374,7 @@ void HTMLWriter::emptyTag($Element* elem) {
 }
 
 bool HTMLWriter::isBlockTag($AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$init($StyleConstants);
 	$var($Object, o, $nc(attr)->getAttribute($StyleConstants::NameAttribute));
 	if ($instanceOf($HTML$Tag, o)) {
@@ -381,6 +385,7 @@ bool HTMLWriter::isBlockTag($AttributeSet* attr) {
 }
 
 void HTMLWriter::startTag($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	if (synthesizedElement(elem)) {
 		return;
 	}
@@ -507,6 +512,7 @@ void HTMLWriter::text($Element* elem) {
 }
 
 void HTMLWriter::selectContent($AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$init($StyleConstants);
 	$var($Object, model, $nc(attr)->getAttribute($StyleConstants::ModelAttribute));
 	incrIndent();
@@ -529,6 +535,7 @@ void HTMLWriter::selectContent($AttributeSet* attr) {
 }
 
 void HTMLWriter::writeOption($Option* option) {
+	$useLocalCurrentObjectStackCache();
 	indentSmart();
 	write(u'<');
 	write("option"_s);
@@ -548,6 +555,7 @@ void HTMLWriter::writeOption($Option* option) {
 }
 
 void HTMLWriter::endTag($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	if (synthesizedElement(elem)) {
 		return;
 	}
@@ -574,6 +582,7 @@ void HTMLWriter::endTag($Element* elem) {
 }
 
 void HTMLWriter::comment($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, as, $nc(elem)->getAttributes());
 	$init($HTML$Tag);
 	if (matchNameAttribute(as, $HTML$Tag::COMMENT)) {
@@ -598,6 +607,7 @@ void HTMLWriter::writeComment($String* string) {
 }
 
 void HTMLWriter::writeAdditionalComments() {
+	$useLocalCurrentObjectStackCache();
 	$init($HTMLDocument);
 	$var($Object, comments, $nc($(getDocument()))->getProperty($HTMLDocument::AdditionalComments));
 	if ($instanceOf($Vector, comments)) {
@@ -621,6 +631,7 @@ bool HTMLWriter::synthesizedElement($Element* elem) {
 }
 
 bool HTMLWriter::matchNameAttribute($AttributeSet* attr, $HTML$Tag* tag) {
+	$useLocalCurrentObjectStackCache();
 	$init($StyleConstants);
 	$var($Object, o, $nc(attr)->getAttribute($StyleConstants::NameAttribute));
 	if ($instanceOf($HTML$Tag, o)) {
@@ -633,6 +644,7 @@ bool HTMLWriter::matchNameAttribute($AttributeSet* attr, $HTML$Tag* tag) {
 }
 
 void HTMLWriter::writeEmbeddedTags($AttributeSet* attr$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attr, attr$renamed);
 	$assign(attr, convertToHTML(attr, this->oConvAttr));
 	$var($Enumeration, names, $nc(attr)->getAttributeNames());
@@ -668,6 +680,7 @@ bool HTMLWriter::noMatchForTagInAttributes($AttributeSet* attr, $HTML$Tag* t, Ob
 }
 
 void HTMLWriter::closeOutUnwantedEmbeddedTags($AttributeSet* attr$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attr, attr$renamed);
 	$nc(this->tagsToRemove)->removeAllElements();
 	$assign(attr, convertToHTML(attr, nullptr));
@@ -736,6 +749,7 @@ bool HTMLWriter::indentNeedsIncrementing($Element* current, $Element* next) {
 }
 
 void HTMLWriter::writeMaps($Enumeration* maps) {
+	$useLocalCurrentObjectStackCache();
 	if (maps != nullptr) {
 		while (maps->hasMoreElements()) {
 			$var($Map, map, $cast($Map, maps->nextElement()));
@@ -776,6 +790,7 @@ void HTMLWriter::writeMaps($Enumeration* maps) {
 }
 
 void HTMLWriter::writeStyles($StyleSheet* sheet) {
+	$useLocalCurrentObjectStackCache();
 	if (sheet != nullptr) {
 		$var($Enumeration, styles, sheet->getStyleNames());
 		if (styles != nullptr) {
@@ -796,6 +811,7 @@ void HTMLWriter::writeStyles($StyleSheet* sheet) {
 }
 
 bool HTMLWriter::writeStyle($String* name, $Style* style, bool outputStyle) {
+	$useLocalCurrentObjectStackCache();
 	bool didOutputStyle = false;
 	$var($Enumeration, attributes, $nc(style)->getAttributeNames());
 	if (attributes != nullptr) {
@@ -870,6 +886,7 @@ $AttributeSet* HTMLWriter::convertToHTML($AttributeSet* from, $MutableAttributeS
 
 void HTMLWriter::convertToHTML32($AttributeSet* from, $MutableAttributeSet* to) {
 	$init(HTMLWriter);
+	$useLocalCurrentObjectStackCache();
 	if (from == nullptr) {
 		return;
 	}
@@ -966,6 +983,7 @@ void HTMLWriter::addAttribute($MutableAttributeSet* to, Object$* key, Object$* v
 
 void HTMLWriter::createFontAttribute($CSS$Attribute* a, $AttributeSet* from, $MutableAttributeSet* to) {
 	$init(HTMLWriter);
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Tag);
 	$var($MutableAttributeSet, fontAttr, $cast($MutableAttributeSet, $nc(to)->getAttribute($HTML$Tag::FONT)));
 	if (fontAttr == nullptr) {
@@ -992,6 +1010,7 @@ void HTMLWriter::createFontAttribute($CSS$Attribute* a, $AttributeSet* from, $Mu
 
 void HTMLWriter::convertToHTML40($AttributeSet* from, $MutableAttributeSet* to) {
 	$init(HTMLWriter);
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, keys, $nc(from)->getAttributeNames());
 	$var($String, value, ""_s);
 	while ($nc(keys)->hasMoreElements()) {
@@ -1019,6 +1038,7 @@ void HTMLWriter::writeLineSeparator() {
 }
 
 void HTMLWriter::output($chars* chars, int32_t start, int32_t length) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->replaceEntities) {
 		$AbstractWriter::output(chars, start, length);
 		return;

@@ -63,6 +63,7 @@ void RGBImageFilter::init$() {
 }
 
 void RGBImageFilter::setColorModel($ColorModel* model) {
+	$useLocalCurrentObjectStackCache();
 	if (this->canFilterIndexColorModel && ($instanceOf($IndexColorModel, model))) {
 		$var($ColorModel, newcm, filterIndexColorModel($cast($IndexColorModel, model)));
 		substituteColorModel(model, newcm);
@@ -78,6 +79,7 @@ void RGBImageFilter::substituteColorModel($ColorModel* oldcm, $ColorModel* newcm
 }
 
 $IndexColorModel* RGBImageFilter::filterIndexColorModel($IndexColorModel* icm) {
+	$useLocalCurrentObjectStackCache();
 	int32_t mapsize = $nc(icm)->getMapSize();
 	$var($bytes, r, $new($bytes, mapsize));
 	$var($bytes, g, $new($bytes, mapsize));

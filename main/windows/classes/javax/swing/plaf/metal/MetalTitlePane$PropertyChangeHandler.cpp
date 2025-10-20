@@ -73,6 +73,7 @@ void MetalTitlePane$PropertyChangeHandler::init$($MetalTitlePane* this$0) {
 }
 
 void MetalTitlePane$PropertyChangeHandler::propertyChange($PropertyChangeEvent* pce) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(pce)->getPropertyName());
 	bool var$0 = "resizable"_s->equals(name);
 	if (var$0 || "state"_s->equals(name)) {

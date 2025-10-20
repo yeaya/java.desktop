@@ -136,6 +136,7 @@ void WindowsScrollBarUI$WindowsArrowButton::init$($WindowsScrollBarUI* this$0, i
 }
 
 void WindowsScrollBarUI$WindowsArrowButton::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$var($ButtonModel, model, getModel());
@@ -306,6 +307,7 @@ void WindowsScrollBarUI$WindowsArrowButton::paint($Graphics* g) {
 }
 
 $Dimension* WindowsScrollBarUI$WindowsArrowButton::getPreferredSize() {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = 16;
 	if ($WindowsScrollBarUI::access$500(this->this$0) != nullptr) {
 		switch ($nc($($WindowsScrollBarUI::access$600(this->this$0)))->getOrientation()) {

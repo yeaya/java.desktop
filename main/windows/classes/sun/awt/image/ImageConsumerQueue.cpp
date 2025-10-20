@@ -63,6 +63,7 @@ $Object* allocate$ImageConsumerQueue($Class* clazz) {
 }
 
 ImageConsumerQueue* ImageConsumerQueue::removeConsumer(ImageConsumerQueue* cqbase$renamed, $ImageConsumer* ic, bool stillinterested) {
+	$useLocalCurrentObjectStackCache();
 	$var(ImageConsumerQueue, cqbase, cqbase$renamed);
 	$var(ImageConsumerQueue, cqprev, nullptr);
 	{
@@ -96,6 +97,7 @@ bool ImageConsumerQueue::isConsumer(ImageConsumerQueue* cqbase, $ImageConsumer* 
 }
 
 void ImageConsumerQueue::init$($InputStreamImageSource* src, $ImageConsumer* ic) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, consumer, ic);
 	this->interested = true;
 	if ($instanceOf($ImageRepresentation, ic)) {
@@ -115,6 +117,7 @@ void ImageConsumerQueue::init$($InputStreamImageSource* src, $ImageConsumer* ic)
 }
 
 $String* ImageConsumerQueue::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$1, $$str({"["_s, this->consumer, ", "_s, (this->interested ? ""_s : "not "_s), "interested"_s}));
 	$var($String, var$0, $$concat(var$1, (this->securityContext != nullptr ? $$str({", "_s, this->securityContext}) : ""_s)));
 	return ($concat(var$0, "]"));

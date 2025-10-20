@@ -98,6 +98,7 @@ bool MetaData$java_awt_Font_PersistenceDelegate::mutatesTo(Object$* oldInstance,
 }
 
 $Expression* MetaData$java_awt_Font_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, font, $cast($Font, oldInstance));
 	int32_t count = 0;
 	$var($String, family, nullptr);

@@ -119,6 +119,7 @@ void SynthTableUI$SynthBooleanTableCellRenderer::init$($SynthTableUI* this$0) {
 }
 
 $Component* SynthTableUI$SynthBooleanTableCellRenderer::getTableCellRendererComponent($JTable* table, Object$* value, bool isSelected, bool hasFocus, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	this->isRowSelected = isSelected;
 	if (isSelected) {
 		setForeground($(unwrap($($nc(table)->getSelectionForeground()))));

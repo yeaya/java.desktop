@@ -79,11 +79,13 @@ void SizeRequirements::init$(int32_t min, int32_t pref, int32_t max, float a) {
 }
 
 $String* SizeRequirements::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"["_s, $$str(this->minimum), ","_s, $$str(this->preferred), ","_s, $$str(this->maximum), "]@"_s, $$str(this->alignment)});
 }
 
 SizeRequirements* SizeRequirements::getTiledSizeRequirements($SizeRequirementsArray* children) {
 	$init(SizeRequirements);
+	$useLocalCurrentObjectStackCache();
 	$var(SizeRequirements, total, $new(SizeRequirements));
 	for (int32_t i = 0; i < $nc(children)->length; ++i) {
 		$var(SizeRequirements, req, children->get(i));
@@ -96,6 +98,7 @@ SizeRequirements* SizeRequirements::getTiledSizeRequirements($SizeRequirementsAr
 
 SizeRequirements* SizeRequirements::getAlignedSizeRequirements($SizeRequirementsArray* children) {
 	$init(SizeRequirements);
+	$useLocalCurrentObjectStackCache();
 	$var(SizeRequirements, totalAscent, $new(SizeRequirements));
 	$var(SizeRequirements, totalDescent, $new(SizeRequirements));
 	for (int32_t i = 0; i < $nc(children)->length; ++i) {
@@ -148,6 +151,7 @@ void SizeRequirements::calculateTiledPositions(int32_t allocated, SizeRequiremen
 
 void SizeRequirements::compressedTile(int32_t allocated, int64_t min, int64_t pref, int64_t max, $SizeRequirementsArray* request, $ints* offsets, $ints* spans, bool forward) {
 	$init(SizeRequirements);
+	$useLocalCurrentObjectStackCache();
 	float totalPlay = (float)$Math::min(pref - allocated, pref - min);
 	float factor = (pref - min == 0) ? 0.0f : totalPlay / (pref - min);
 	int32_t totalOffset = 0;
@@ -174,6 +178,7 @@ void SizeRequirements::compressedTile(int32_t allocated, int64_t min, int64_t pr
 
 void SizeRequirements::expandedTile(int32_t allocated, int64_t min, int64_t pref, int64_t max, $SizeRequirementsArray* request, $ints* offsets, $ints* spans, bool forward) {
 	$init(SizeRequirements);
+	$useLocalCurrentObjectStackCache();
 	float totalPlay = (float)$Math::min(allocated - pref, max - pref);
 	float factor = (max - pref == 0) ? 0.0f : totalPlay / (max - pref);
 	int32_t totalOffset = 0;
@@ -205,6 +210,7 @@ void SizeRequirements::calculateAlignedPositions(int32_t allocated, SizeRequirem
 
 void SizeRequirements::calculateAlignedPositions(int32_t allocated, SizeRequirements* total, $SizeRequirementsArray* children, $ints* offsets, $ints* spans, bool normal) {
 	$init(SizeRequirements);
+	$useLocalCurrentObjectStackCache();
 	float totalAlignment = normal ? $nc(total)->alignment : 1.0f - total->alignment;
 	int32_t totalAscent = $cast(int32_t, (allocated * totalAlignment));
 	int32_t totalDescent = allocated - totalAscent;

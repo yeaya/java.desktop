@@ -106,6 +106,7 @@ Decoration* Decoration::getPlainDecoration() {
 
 Decoration* Decoration::getDecoration($AttributeValues* values$renamed) {
 	$init(Decoration);
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeValues, values, values$renamed);
 	if (values == nullptr || !$nc(values)->anyDefined(Decoration::VALUES_MASK)) {
 		return Decoration::PLAIN;

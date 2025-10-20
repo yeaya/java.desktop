@@ -110,6 +110,7 @@ int32_t JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink::getAccessibl
 }
 
 bool JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink::doAccessibleAction(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (i == 0 && isValid() == true) {
 		$var($URL, u, $cast($URL, getAccessibleActionObject(i)));
 		if (u != nullptr) {
@@ -123,6 +124,7 @@ bool JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink::doAccessibleAct
 }
 
 $String* JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink::getAccessibleActionDescription(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (i == 0 && isValid() == true) {
 		$var($Document, d, $nc(this->this$1->this$0)->getDocument());
 		if (d != nullptr) {
@@ -140,6 +142,7 @@ $String* JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink::getAccessib
 }
 
 $Object* JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink::getAccessibleActionObject(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (i == 0 && isValid() == true) {
 		$var($AttributeSet, as, $nc(this->element)->getAttributes());
 		$init($HTML$Tag);

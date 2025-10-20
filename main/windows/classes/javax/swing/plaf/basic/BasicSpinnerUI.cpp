@@ -199,6 +199,7 @@ void BasicSpinnerUI::maybeAdd($Component* c, $String* s) {
 }
 
 void BasicSpinnerUI::installUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, spinner, $cast($JSpinner, c));
 	installDefaults();
 	installListeners();
@@ -217,6 +218,7 @@ void BasicSpinnerUI::uninstallUI($JComponent* c) {
 }
 
 void BasicSpinnerUI::installListeners() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, propertyChangeListener, createPropertyChangeListener());
 	$nc(this->spinner)->addPropertyChangeListener(this->propertyChangeListener);
 	if ($DefaultLookup::getBoolean(this->spinner, this, "Spinner.disableOnBoundaryValues"_s, false)) {
@@ -233,6 +235,7 @@ void BasicSpinnerUI::installListeners() {
 }
 
 void BasicSpinnerUI::uninstallListeners() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->spinner)->removePropertyChangeListener(this->propertyChangeListener);
 	$nc(this->spinner)->removeChangeListener(this->handler);
 	$var($JComponent, editor, $nc(this->spinner)->getEditor());
@@ -249,6 +252,7 @@ void BasicSpinnerUI::uninstallListeners() {
 }
 
 void BasicSpinnerUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->spinner)->setLayout($(createLayout()));
 	$LookAndFeel::installBorder(this->spinner, "Spinner.border"_s);
 	$LookAndFeel::installColorsAndFont(this->spinner, "Spinner.background"_s, "Spinner.foreground"_s, "Spinner.font"_s);
@@ -316,6 +320,7 @@ $Component* BasicSpinnerUI::createNextButton() {
 }
 
 $Component* BasicSpinnerUI::createArrowButton(int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	$var($JButton, b, $new($BasicArrowButton, direction));
 	$var($Border, buttonBorder, $UIManager::getBorder("Spinner.arrowButtonBorder"_s));
 	if ($instanceOf($UIResource, buttonBorder)) {
@@ -353,6 +358,7 @@ void BasicSpinnerUI::updateEditorAlignment($JComponent* editor) {
 }
 
 void BasicSpinnerUI::maybeRemoveEditorBorder($JComponent* editor$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, editor, editor$renamed);
 	if (!$UIManager::getBoolean("Spinner.editorBorderPainted"_s)) {
 		bool var$0 = $instanceOf($JPanel, editor) && $nc(editor)->getBorder() == nullptr;
@@ -366,6 +372,7 @@ void BasicSpinnerUI::maybeRemoveEditorBorder($JComponent* editor$renamed) {
 }
 
 void BasicSpinnerUI::installEditorBorderListener($JComponent* editor$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, editor, editor$renamed);
 	if (!$UIManager::getBoolean("Spinner.editorBorderPainted"_s)) {
 		bool var$0 = $instanceOf($JPanel, editor) && $nc(editor)->getBorder() == nullptr;
@@ -384,6 +391,7 @@ void BasicSpinnerUI::installEditorBorderListener($JComponent* editor$renamed) {
 }
 
 void BasicSpinnerUI::removeEditorBorderListener($JComponent* editor$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, editor, editor$renamed);
 	if (!$UIManager::getBoolean("Spinner.editorBorderPainted"_s)) {
 		if ($instanceOf($JPanel, editor) && $nc(editor)->getComponentCount() > 0) {
@@ -400,6 +408,7 @@ void BasicSpinnerUI::updateEnabledState() {
 }
 
 void BasicSpinnerUI::updateEnabledState($Container* c, bool enabled) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t counter = $nc(c)->getComponentCount() - 1; counter >= 0; --counter) {
 		$var($Component, child, c->getComponent(counter));
 		if ($DefaultLookup::getBoolean(this->spinner, this, "Spinner.disableOnBoundaryValues"_s, false)) {
@@ -444,6 +453,7 @@ void BasicSpinnerUI::loadActionMap($LazyActionMap* map) {
 }
 
 int32_t BasicSpinnerUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$SpinnerUI::getBaseline(c, width, height);
 	$var($JComponent, editor, $nc(this->spinner)->getEditor());
 	$var($Insets, insets, $nc(this->spinner)->getInsets());

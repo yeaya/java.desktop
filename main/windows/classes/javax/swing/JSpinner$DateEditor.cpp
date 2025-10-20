@@ -109,6 +109,7 @@ $Object* allocate$JSpinner$DateEditor($Class* clazz) {
 
 $String* JSpinner$DateEditor::getDefaultPattern($Locale* loc) {
 	$init(JSpinner$DateEditor);
+	$useLocalCurrentObjectStackCache();
 	$load($DateFormatProvider);
 	$var($LocaleProviderAdapter, adapter, $LocaleProviderAdapter::getAdapter($DateFormatProvider::class$, loc));
 	$var($LocaleResources, lr, $nc(adapter)->getLocaleResources(loc));
@@ -119,14 +120,17 @@ $String* JSpinner$DateEditor::getDefaultPattern($Locale* loc) {
 }
 
 void JSpinner$DateEditor::init$($JSpinner* spinner) {
+	$useLocalCurrentObjectStackCache();
 	JSpinner$DateEditor::init$(spinner, $(getDefaultPattern($($nc(spinner)->getLocale()))));
 }
 
 void JSpinner$DateEditor::init$($JSpinner* spinner, $String* dateFormatPattern) {
+	$useLocalCurrentObjectStackCache();
 	JSpinner$DateEditor::init$(spinner, static_cast<$DateFormat*>($$new($SimpleDateFormat, dateFormatPattern, $($nc(spinner)->getLocale()))));
 }
 
 void JSpinner$DateEditor::init$($JSpinner* spinner, $DateFormat* format) {
+	$useLocalCurrentObjectStackCache();
 	$JSpinner$DefaultEditor::init$(spinner);
 	if (!($instanceOf($SpinnerDateModel, $($nc(spinner)->getModel())))) {
 		$throwNew($IllegalArgumentException, "model not a SpinnerDateModel"_s);
@@ -148,6 +152,7 @@ void JSpinner$DateEditor::init$($JSpinner* spinner, $DateFormat* format) {
 }
 
 $SimpleDateFormat* JSpinner$DateEditor::getFormat() {
+	$useLocalCurrentObjectStackCache();
 	return $cast($SimpleDateFormat, $nc((($cast($DateFormatter, $($nc($(getTextField()))->getFormatter())))))->getFormat());
 }
 

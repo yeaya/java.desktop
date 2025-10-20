@@ -254,6 +254,7 @@ float TextLayout::dy = 0.0;
 $TextLayout$CaretPolicy* TextLayout::DEFAULT_CARET_POLICY = nullptr;
 
 void TextLayout::init$($String* string, $Font* font, $FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	this->isVerticalLine = false;
 	$set(this, lineMetrics, nullptr);
 	this->cacheIsValid = false;
@@ -285,6 +286,7 @@ void TextLayout::init$($String* string, $Font* font, $FontRenderContext* frc) {
 }
 
 void TextLayout::init$($String* string, $Map* attributes, $FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	this->isVerticalLine = false;
 	$set(this, lineMetrics, nullptr);
 	this->cacheIsValid = false;
@@ -312,6 +314,7 @@ void TextLayout::init$($String* string, $Map* attributes, $FontRenderContext* fr
 
 $Font* TextLayout::singleFont($chars* text, int32_t start, int32_t limit, $Map* attributes) {
 	$init(TextLayout);
+	$useLocalCurrentObjectStackCache();
 	$init($TextAttribute);
 	if ($nc(attributes)->get($TextAttribute::CHAR_REPLACEMENT) != nullptr) {
 		return nullptr;
@@ -344,6 +347,7 @@ $Font* TextLayout::singleFont($chars* text, int32_t start, int32_t limit, $Map* 
 }
 
 void TextLayout::init$($AttributedCharacterIterator* text, $FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	this->isVerticalLine = false;
 	$set(this, lineMetrics, nullptr);
 	this->cacheIsValid = false;
@@ -402,6 +406,7 @@ void TextLayout::paragraphInit(int8_t aBaseline, $CoreMetrics* lm, $Map* paragra
 }
 
 void TextLayout::fastInit($chars* chars, $Font* font, $Map* attrs, $FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	this->isVerticalLine = false;
 	$var($LineMetrics, lm, $nc(font)->getLineMetrics(chars, 0, $nc(chars)->length, frc));
 	$var($CoreMetrics, cm, $CoreMetrics::get(lm));
@@ -418,6 +423,7 @@ void TextLayout::fastInit($chars* chars, $Font* font, $Map* attrs, $FontRenderCo
 }
 
 void TextLayout::standardInit($AttributedCharacterIterator* text, $chars* chars, $FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	this->characterCount = $nc(chars)->length;
 	{
 		$var($Map, paragraphAttrs, $nc(text)->getAttributes());
@@ -578,6 +584,7 @@ float TextLayout::getLeading() {
 }
 
 $Rectangle2D* TextLayout::getBounds() {
+	$useLocalCurrentObjectStackCache();
 	ensureCache();
 	if (this->boundsRect == nullptr) {
 		$var($Rectangle2D, vb, $nc(this->textLine)->getVisualBounds());
@@ -681,6 +688,7 @@ $floats* TextLayout::getCaretInfo($TextHitInfo* hit, $Rectangle2D* bounds) {
 }
 
 $floats* TextLayout::getCaretInfoTestInternal($TextHitInfo* hit, $Rectangle2D* bounds) {
+	$useLocalCurrentObjectStackCache();
 	ensureCache();
 	checkTextHit(hit);
 	$var($floats, info, $new($floats, 6));
@@ -813,6 +821,7 @@ $TextHitInfo* TextLayout::getNextRightHit($TextHitInfo* hit) {
 }
 
 $TextHitInfo* TextLayout::getNextRightHit(int32_t offset, $TextLayout$CaretPolicy* policy) {
+	$useLocalCurrentObjectStackCache();
 	if (offset < 0 || offset > this->characterCount) {
 		$throwNew($IllegalArgumentException, "Offset out of bounds in TextLayout.getNextRightHit()"_s);
 	}
@@ -848,6 +857,7 @@ $TextHitInfo* TextLayout::getNextLeftHit($TextHitInfo* hit) {
 }
 
 $TextHitInfo* TextLayout::getNextLeftHit(int32_t offset, $TextLayout$CaretPolicy* policy) {
+	$useLocalCurrentObjectStackCache();
 	if (policy == nullptr) {
 		$throwNew($IllegalArgumentException, "Null CaretPolicy passed to TextLayout.getNextLeftHit()"_s);
 	}
@@ -1036,6 +1046,7 @@ $GeneralPath* TextLayout::pathToShape($doubles* path, bool close, $LayoutPathImp
 }
 
 $Shape* TextLayout::getCaretShape($TextHitInfo* hit, $Rectangle2D* bounds) {
+	$useLocalCurrentObjectStackCache();
 	ensureCache();
 	checkTextHit(hit);
 	if (bounds == nullptr) {
@@ -1076,6 +1087,7 @@ int8_t TextLayout::getCharacterLevel(int32_t index) {
 }
 
 $ShapeArray* TextLayout::getCaretShapes(int32_t offset, $Rectangle2D* bounds, $TextLayout$CaretPolicy* policy) {
+	$useLocalCurrentObjectStackCache();
 	ensureCache();
 	if (offset < 0 || offset > this->characterCount) {
 		$throwNew($IllegalArgumentException, "Offset out of bounds in TextLayout.getCaretShapes()"_s);
@@ -1146,6 +1158,7 @@ $GeneralPath* TextLayout::boundingShape($doubles* path0, $doubles* path1) {
 }
 
 $GeneralPath* TextLayout::caretBoundingShape(int32_t caret0, int32_t caret1, $Rectangle2D* bounds) {
+	$useLocalCurrentObjectStackCache();
 	if (caret0 > caret1) {
 		int32_t temp = caret0;
 		caret0 = caret1;
@@ -1156,6 +1169,7 @@ $GeneralPath* TextLayout::caretBoundingShape(int32_t caret0, int32_t caret1, $Re
 }
 
 $GeneralPath* TextLayout::leftShape($Rectangle2D* bounds) {
+	$useLocalCurrentObjectStackCache();
 	$var($doubles, path0, nullptr);
 	if (this->isVerticalLine) {
 			double var$0 = bounds->getX();
@@ -1179,6 +1193,7 @@ $GeneralPath* TextLayout::leftShape($Rectangle2D* bounds) {
 }
 
 $GeneralPath* TextLayout::rightShape($Rectangle2D* bounds) {
+	$useLocalCurrentObjectStackCache();
 	$var($doubles, path1, nullptr);
 	if (this->isVerticalLine) {
 			double var$0 = bounds->getY();
@@ -1206,6 +1221,7 @@ $GeneralPath* TextLayout::rightShape($Rectangle2D* bounds) {
 }
 
 $ints* TextLayout::getLogicalRangesForVisualSelection($TextHitInfo* firstEndpoint, $TextHitInfo* secondEndpoint) {
+	$useLocalCurrentObjectStackCache();
 	ensureCache();
 	checkTextHit(firstEndpoint);
 	checkTextHit(secondEndpoint);
@@ -1250,6 +1266,7 @@ $ints* TextLayout::getLogicalRangesForVisualSelection($TextHitInfo* firstEndpoin
 }
 
 $Shape* TextLayout::getVisualHighlightShape($TextHitInfo* firstEndpoint, $TextHitInfo* secondEndpoint, $Rectangle2D* bounds) {
+	$useLocalCurrentObjectStackCache();
 	ensureCache();
 	checkTextHit(firstEndpoint);
 	checkTextHit(secondEndpoint);
@@ -1284,6 +1301,7 @@ $Shape* TextLayout::getVisualHighlightShape($TextHitInfo* firstEndpoint, $TextHi
 }
 
 $Shape* TextLayout::getLogicalHighlightShape(int32_t firstEndpoint, int32_t secondEndpoint, $Rectangle2D* bounds) {
+	$useLocalCurrentObjectStackCache();
 	if (bounds == nullptr) {
 		$throwNew($IllegalArgumentException, "Null Rectangle2D passed to TextLayout.getLogicalHighlightShape()"_s);
 	}
@@ -1350,6 +1368,7 @@ $Shape* TextLayout::getLogicalHighlightShape(int32_t firstEndpoint, int32_t seco
 }
 
 $Shape* TextLayout::getBlackBoxBounds(int32_t firstEndpoint, int32_t secondEndpoint) {
+	$useLocalCurrentObjectStackCache();
 	ensureCache();
 	if (firstEndpoint > secondEndpoint) {
 		int32_t t = firstEndpoint;
@@ -1386,6 +1405,7 @@ float TextLayout::caretToPointDistance($floats* caretInfo, float x, float y) {
 }
 
 $TextHitInfo* TextLayout::hitTestChar(float x, float y, $Rectangle2D* bounds) {
+	$useLocalCurrentObjectStackCache();
 	$var($LayoutPathImpl, lp, $nc(this->textLine)->getLayoutPath());
 	bool prev = false;
 	if (lp != nullptr) {
@@ -1501,6 +1521,7 @@ int8_t TextLayout::getBaselineFromGraphic($GraphicAttribute* graphic) {
 }
 
 $Shape* TextLayout::getOutline($AffineTransform* tx) {
+	$useLocalCurrentObjectStackCache();
 	ensureCache();
 	$var($Shape, result, $nc(this->textLine)->getOutline(tx));
 	$var($LayoutPathImpl, lp, $nc(this->textLine)->getLayoutPath());
@@ -1515,6 +1536,7 @@ $LayoutPath* TextLayout::getLayoutPath() {
 }
 
 void TextLayout::hitToPoint($TextHitInfo* hit, $Point2D* point) {
+	$useLocalCurrentObjectStackCache();
 	if (hit == nullptr || point == nullptr) {
 		$throwNew($NullPointerException, $$str({(hit == nullptr ? "hit"_s : "point"_s), " can\'t be null"_s}));
 	}

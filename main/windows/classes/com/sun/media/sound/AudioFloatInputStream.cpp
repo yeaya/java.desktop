@@ -107,6 +107,7 @@ AudioFloatInputStream* AudioFloatInputStream::getInputStream($AudioInputStream* 
 }
 
 AudioFloatInputStream* AudioFloatInputStream::getInputStream($AudioFormat* format, $bytes* buffer, int32_t offset, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFloatConverter, converter, $AudioFloatConverter::getConverter(format));
 	if (converter != nullptr) {
 		return $new($AudioFloatInputStream$BytaArrayAudioFloatInputStream, converter, buffer, offset, len);

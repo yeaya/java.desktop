@@ -130,6 +130,7 @@ void BlockView::setParent($View* parent) {
 }
 
 $SizeRequirements* BlockView::calculateMajorAxisRequirements(int32_t axis, $SizeRequirements* r$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($SizeRequirements, r, r$renamed);
 	if (r == nullptr) {
 		$assign(r, $new($SizeRequirements));
@@ -156,6 +157,7 @@ $SizeRequirements* BlockView::calculateMajorAxisRequirements(int32_t axis, $Size
 }
 
 $SizeRequirements* BlockView::calculateMinorAxisRequirements(int32_t axis, $SizeRequirements* r$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($SizeRequirements, r, r$renamed);
 	if (r == nullptr) {
 		$assign(r, $new($SizeRequirements));
@@ -221,6 +223,7 @@ bool BlockView::spanSetFromAttributes(int32_t axis, $SizeRequirements* r, $CSS$L
 }
 
 void BlockView::layoutMinorAxis(int32_t targetSpan, int32_t axis, $ints* offsets, $ints* spans) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = getViewCount();
 	$init($CSS$Attribute);
 	$var($Object, key, (axis == $View::X_AXIS) ? $of($CSS$Attribute::WIDTH) : $of($CSS$Attribute::HEIGHT));
@@ -262,6 +265,7 @@ $AttributeSet* BlockView::getAttributes() {
 }
 
 int32_t BlockView::getResizeWeight(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	switch (axis) {
 	case $View::X_AXIS:
 		{
@@ -279,6 +283,7 @@ int32_t BlockView::getResizeWeight(int32_t axis) {
 }
 
 float BlockView::getAlignment(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	{
 		float span = 0;
 		$var($View, v, nullptr)

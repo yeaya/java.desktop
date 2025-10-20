@@ -71,6 +71,7 @@ $Object* allocate$DrawPath$TraceDrawPath($Class* clazz) {
 }
 
 void DrawPath$TraceDrawPath::init$($DrawPath* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, var$0, $nc(target)->getSourceType());
 	$var($CompositeType, var$1, target->getCompositeType());
 	$DrawPath::init$(var$0, var$1, $(target->getDestType()));

@@ -435,6 +435,7 @@ int64_t JPEGImageReader::initJPEGImageReader() {
 }
 
 void JPEGImageReader::warningOccurred(int32_t code) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->cbLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -550,6 +551,7 @@ void JPEGImageReader::setSource(int64_t structPointer) {
 }
 
 void JPEGImageReader::checkTablesOnly() {
+	$useLocalCurrentObjectStackCache();
 	if (this->debug) {
 		$init($System);
 		$nc($System::out)->println("Checking for tables-only image"_s);
@@ -619,6 +621,7 @@ int32_t JPEGImageReader::getNumImages(bool allowSearch) {
 }
 
 void JPEGImageReader::skipPastImage(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->cbLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -715,6 +718,7 @@ int32_t JPEGImageReader::getNumImagesOnThread(bool allowSearch) {
 }
 
 void JPEGImageReader::gotoImage(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (this->iis == nullptr) {
 		$throwNew($IllegalStateException, "Input not set"_s);
 	}
@@ -754,6 +758,7 @@ void JPEGImageReader::gotoImage(int32_t imageIndex) {
 }
 
 void JPEGImageReader::skipImage() {
+	$useLocalCurrentObjectStackCache();
 	if (this->debug) {
 		$init($System);
 		$nc($System::out)->println("skipImage called"_s);
@@ -1213,6 +1218,7 @@ bool JPEGImageReader::hasNextImage() {
 }
 
 void JPEGImageReader::pushBack(int32_t num) {
+	$useLocalCurrentObjectStackCache();
 	if (this->debug) {
 		$init($System);
 		$nc($System::out)->println($$str({"pushing back "_s, $$str(num), " bytes"_s}));
@@ -1255,6 +1261,7 @@ bool JPEGImageReader::readImageHeader(int64_t structPointer, bool clearBuffer, b
 }
 
 void JPEGImageReader::setImageData(int32_t width, int32_t height, int32_t colorSpaceCode, int32_t outColorSpaceCode, int32_t numComponents, $bytes* iccData) {
+	$useLocalCurrentObjectStackCache();
 	this->width = width;
 	this->height = height;
 	this->colorSpaceCode = colorSpaceCode;
@@ -1378,6 +1385,7 @@ $ImageTypeProducer* JPEGImageReader::getImageType(int32_t code) {
 }
 
 $ImageTypeSpecifier* JPEGImageReader::getRawImageType(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	setThreadLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -1407,6 +1415,7 @@ $ImageTypeSpecifier* JPEGImageReader::getRawImageType(int32_t imageIndex) {
 }
 
 $Iterator* JPEGImageReader::getImageTypes(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	setThreadLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -1432,6 +1441,7 @@ $Iterator* JPEGImageReader::getImageTypes(int32_t imageIndex) {
 }
 
 $Iterator* JPEGImageReader::getImageTypesOnThread(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (this->currentImage != imageIndex) {
 		$nc(this->cbLock)->check();
 		readHeader(imageIndex, true);
@@ -1465,6 +1475,7 @@ $Iterator* JPEGImageReader::getImageTypesOnThread(int32_t imageIndex) {
 }
 
 void JPEGImageReader::checkColorConversion($BufferedImage* image, $ImageReadParam* param) {
+	$useLocalCurrentObjectStackCache();
 	if (param != nullptr) {
 		bool var$0 = (param->getSourceBands() != nullptr);
 		if (var$0 || (param->getDestinationBands() != nullptr)) {
@@ -1529,6 +1540,7 @@ $ImageReadParam* JPEGImageReader::getDefaultReadParam() {
 }
 
 $IIOMetadata* JPEGImageReader::getStreamMetadata() {
+	$useLocalCurrentObjectStackCache();
 	setThreadLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -1558,6 +1570,7 @@ $IIOMetadata* JPEGImageReader::getStreamMetadata() {
 }
 
 $IIOMetadata* JPEGImageReader::getImageMetadata(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	setThreadLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -1592,6 +1605,7 @@ $IIOMetadata* JPEGImageReader::getImageMetadata(int32_t imageIndex) {
 }
 
 $BufferedImage* JPEGImageReader::read(int32_t imageIndex, $ImageReadParam* param) {
+	$useLocalCurrentObjectStackCache();
 	setThreadLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -1631,6 +1645,7 @@ $BufferedImage* JPEGImageReader::read(int32_t imageIndex, $ImageReadParam* param
 }
 
 $Raster* JPEGImageReader::readInternal(int32_t imageIndex, $ImageReadParam* param, bool wantRaster) {
+	$useLocalCurrentObjectStackCache();
 	readHeader(imageIndex, false);
 	$var($WritableRaster, imRas, nullptr);
 	int32_t numImageBands = 0;
@@ -1751,6 +1766,7 @@ $Raster* JPEGImageReader::readInternal(int32_t imageIndex, $ImageReadParam* para
 }
 
 void JPEGImageReader::acceptPixels(int32_t y, bool progressive) {
+	$useLocalCurrentObjectStackCache();
 	if (this->convert != nullptr) {
 		$nc(this->convert)->filter(static_cast<$Raster*>(this->raster), this->raster);
 	}
@@ -1947,6 +1963,7 @@ bool JPEGImageReader::canReadRaster() {
 }
 
 $Raster* JPEGImageReader::readRaster(int32_t imageIndex, $ImageReadParam* param) {
+	$useLocalCurrentObjectStackCache();
 	setThreadLock();
 	$var($Raster, retval, nullptr);
 	{
@@ -1989,6 +2006,7 @@ bool JPEGImageReader::readerSupportsThumbnails() {
 }
 
 int32_t JPEGImageReader::getNumThumbnails(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	setThreadLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -2023,6 +2041,7 @@ int32_t JPEGImageReader::getNumThumbnails(int32_t imageIndex) {
 }
 
 int32_t JPEGImageReader::getThumbnailWidth(int32_t imageIndex, int32_t thumbnailIndex) {
+	$useLocalCurrentObjectStackCache();
 	setThreadLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -2054,6 +2073,7 @@ int32_t JPEGImageReader::getThumbnailWidth(int32_t imageIndex, int32_t thumbnail
 }
 
 int32_t JPEGImageReader::getThumbnailHeight(int32_t imageIndex, int32_t thumbnailIndex) {
+	$useLocalCurrentObjectStackCache();
 	setThreadLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -2085,6 +2105,7 @@ int32_t JPEGImageReader::getThumbnailHeight(int32_t imageIndex, int32_t thumbnai
 }
 
 $BufferedImage* JPEGImageReader::readThumbnail(int32_t imageIndex, int32_t thumbnailIndex) {
+	$useLocalCurrentObjectStackCache();
 	setThreadLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -2189,6 +2210,7 @@ void JPEGImageReader::disposeReader(int64_t structPointer) {
 
 void JPEGImageReader::setThreadLock() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Thread, currThread, $Thread::currentThread());
 		if (this->theThread != nullptr) {
 			if (this->theThread != currThread) {
@@ -2205,6 +2227,7 @@ void JPEGImageReader::setThreadLock() {
 
 void JPEGImageReader::clearThreadLock() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Thread, currThread, $Thread::currentThread());
 		if (this->theThread == nullptr || this->theThread != currThread) {
 			$throwNew($IllegalStateException, $$str({"Attempt to clear thread lock  form wrong thread. Locked thread: "_s, this->theThread, "; current thread: "_s, currThread}));

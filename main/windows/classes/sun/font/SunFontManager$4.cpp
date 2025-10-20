@@ -81,6 +81,7 @@ void SunFontManager$4::init$($SunFontManager* this$0, $FilenameFilter* val$filte
 }
 
 $Object* SunFontManager$4::run() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->this$0->pathDirs)->length == 1) {
 		$var($File, dir, $new($File, $nc(this->this$0->pathDirs)->get(0)));
 		$var($StringArray, files, dir->list(this->val$filter));

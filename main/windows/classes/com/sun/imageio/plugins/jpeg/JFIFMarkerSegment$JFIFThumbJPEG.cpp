@@ -165,6 +165,7 @@ void JFIFMarkerSegment$JFIFThumbJPEG::init$($JFIFMarkerSegment* this$0, $JPEGBuf
 }
 
 void JFIFMarkerSegment$JFIFThumbJPEG::init$($JFIFMarkerSegment* this$0, $Node* node) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JFIFMarkerSegment$JFIFThumb::init$(this$0);
 	$set(this, thumbMetadata, nullptr);
@@ -184,6 +185,7 @@ void JFIFMarkerSegment$JFIFThumbJPEG::init$($JFIFMarkerSegment* this$0, $Node* n
 }
 
 void JFIFMarkerSegment$JFIFThumbJPEG::init$($JFIFMarkerSegment* this$0, $BufferedImage* thumb) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JFIFMarkerSegment$JFIFThumb::init$(this$0);
 	$set(this, thumbMetadata, nullptr);
@@ -235,6 +237,7 @@ int32_t JFIFMarkerSegment$JFIFThumbJPEG::getHeight() {
 }
 
 $BufferedImage* JFIFMarkerSegment$JFIFThumbJPEG::getThumbnail($ImageInputStream* iis, $JPEGImageReader* reader) {
+	$useLocalCurrentObjectStackCache();
 	$nc(iis)->mark();
 	iis->seek(this->streamPos);
 	$var($JPEGImageReader, thumbReader, $new($JPEGImageReader, nullptr));
@@ -255,6 +258,7 @@ $Object* JFIFMarkerSegment$JFIFThumbJPEG::clone() {
 }
 
 $IIOMetadataNode* JFIFMarkerSegment$JFIFThumbJPEG::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "JFIFthumbJPEG"_s));
 	if (this->thumbMetadata != nullptr) {
 		node->appendChild($($nc(this->thumbMetadata)->getNativeTree()));

@@ -96,6 +96,7 @@ $View* SynthPasswordFieldUI::create($Element* elem) {
 }
 
 void SynthPasswordFieldUI::paintBackground($SynthContext* context, $Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, var$0, context);
 	$var($Graphics, var$1, g);
 	int32_t var$2 = $nc(c)->getWidth();
@@ -107,6 +108,7 @@ void SynthPasswordFieldUI::paintBorder($SynthContext* context, $Graphics* g, int
 }
 
 void SynthPasswordFieldUI::installKeyboardActions() {
+	$useLocalCurrentObjectStackCache();
 	$SynthTextFieldUI::installKeyboardActions();
 	$var($ActionMap, map, $SwingUtilities::getUIActionMap($(getComponent())));
 	$init($DefaultEditorKit);

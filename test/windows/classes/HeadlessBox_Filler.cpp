@@ -112,6 +112,7 @@ void HeadlessBox_Filler::init$() {
 }
 
 void HeadlessBox_Filler::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, var$0, $new($Dimension, 10, 10));
 	$var($Dimension, var$1, $new($Dimension, 20, 20));
 	$var($Box$Filler, bf, $new($Box$Filler, var$0, var$1, $$new($Dimension, 30, 30)));

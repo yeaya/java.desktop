@@ -85,6 +85,7 @@ void TestUIDefaultsErrorHandling::init$() {
 
 void TestUIDefaultsErrorHandling::main($StringArray* args) {
 	$init(TestUIDefaultsErrorHandling);
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$var($PrintStream, err, $System::err);
 	$var($ByteArrayOutputStream, bytes, $new($ByteArrayOutputStream));

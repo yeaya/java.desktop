@@ -288,12 +288,14 @@ $AdjustmentListenerArray* ScrollPaneAdjustable::getAdjustmentListeners() {
 }
 
 $String* ScrollPaneAdjustable::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$1, $$str({$($of(this)->getClass()->getName()), "["_s}));
 	$var($String, var$0, $$concat(var$1, $(paramString())));
 	return $concat(var$0, "]");
 }
 
 $String* ScrollPaneAdjustable::paramString() {
+	$useLocalCurrentObjectStackCache();
 	return ($str({(this->orientation == $Adjustable::VERTICAL ? "vertical,"_s : "horizontal,"_s), "[0.."_s, $$str(this->maximum), "],val="_s, $$str(this->value), ",vis="_s, $$str(this->visibleAmount), ",unit="_s, $$str(this->unitIncrement), ",block="_s, $$str(this->blockIncrement), ",isAdjusting="_s, $$str(this->isAdjusting)}));
 }
 

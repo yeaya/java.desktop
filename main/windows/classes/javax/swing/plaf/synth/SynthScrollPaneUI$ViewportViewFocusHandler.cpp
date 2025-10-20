@@ -105,6 +105,7 @@ void SynthScrollPaneUI$ViewportViewFocusHandler::init$($SynthScrollPaneUI* this$
 }
 
 void SynthScrollPaneUI$ViewportViewFocusHandler::componentAdded($ContainerEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JTextComponent, $($nc(e)->getChild()))) {
 		$nc($(e->getChild()))->addFocusListener(this);
 		this->this$0->viewportViewHasFocus = $nc($(e->getChild()))->isFocusOwner();
@@ -113,6 +114,7 @@ void SynthScrollPaneUI$ViewportViewFocusHandler::componentAdded($ContainerEvent*
 }
 
 void SynthScrollPaneUI$ViewportViewFocusHandler::componentRemoved($ContainerEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JTextComponent, $($nc(e)->getChild()))) {
 		$nc($(e->getChild()))->removeFocusListener(this);
 	}

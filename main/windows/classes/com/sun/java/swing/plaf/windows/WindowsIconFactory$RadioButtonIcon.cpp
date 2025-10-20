@@ -140,6 +140,7 @@ void WindowsIconFactory$RadioButtonIcon::init$() {
 }
 
 void WindowsIconFactory$RadioButtonIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	$var($ButtonModel, model, $nc(b)->getModel());
 	$var($XPStyle, xp, $XPStyle::getXP());
@@ -255,6 +256,7 @@ void WindowsIconFactory$RadioButtonIcon::paintIcon($Component* c, $Graphics* g, 
 }
 
 int32_t WindowsIconFactory$RadioButtonIcon::getIconWidth() {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$init($TMSchema$Part);
@@ -265,6 +267,7 @@ int32_t WindowsIconFactory$RadioButtonIcon::getIconWidth() {
 }
 
 int32_t WindowsIconFactory$RadioButtonIcon::getIconHeight() {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$init($TMSchema$Part);

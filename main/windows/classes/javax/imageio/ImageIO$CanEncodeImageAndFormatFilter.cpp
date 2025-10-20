@@ -75,6 +75,7 @@ void ImageIO$CanEncodeImageAndFormatFilter::init$($ImageTypeSpecifier* type, $St
 }
 
 bool ImageIO$CanEncodeImageAndFormatFilter::filter(Object$* elt) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageWriterSpi, spi, $cast($ImageWriterSpi, elt));
 	bool var$0 = $nc($($Arrays::asList($($nc(spi)->getFormatNames()))))->contains(this->formatName);
 	return var$0 && $nc(spi)->canEncodeImage(this->type);

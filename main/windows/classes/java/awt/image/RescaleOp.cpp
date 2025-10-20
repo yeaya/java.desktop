@@ -200,6 +200,7 @@ int32_t RescaleOp::getNumFactors() {
 }
 
 $ByteLookupTable* RescaleOp::createByteLut($floats* scale, $floats* off, int32_t nBands, int32_t nElems) {
+	$useLocalCurrentObjectStackCache();
 	$var($byteArray2, lutData, $new($byteArray2, nBands, nElems));
 	int32_t band = 0;
 	for (band = 0; band < $nc(scale)->length; ++band) {
@@ -233,6 +234,7 @@ $ByteLookupTable* RescaleOp::createByteLut($floats* scale, $floats* off, int32_t
 }
 
 $ShortLookupTable* RescaleOp::createShortLut($floats* scale, $floats* off, int32_t nBands, int32_t nElems) {
+	$useLocalCurrentObjectStackCache();
 	$var($shortArray2, lutData, $new($shortArray2, nBands, nElems));
 	int32_t band = 0;
 	for (band = 0; band < $nc(scale)->length; ++band) {
@@ -266,6 +268,7 @@ $ShortLookupTable* RescaleOp::createShortLut($floats* scale, $floats* off, int32
 }
 
 bool RescaleOp::canUseLookup($Raster* src, $Raster* dst) {
+	$useLocalCurrentObjectStackCache();
 	int32_t datatype = $nc($($nc(src)->getDataBuffer()))->getDataType();
 	if (datatype != $DataBuffer::TYPE_BYTE && datatype != $DataBuffer::TYPE_USHORT) {
 		return false;
@@ -310,6 +313,7 @@ bool RescaleOp::canUseLookup($Raster* src, $Raster* dst) {
 }
 
 $BufferedImage* RescaleOp::filter($BufferedImage* src, $BufferedImage* dst$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, dst, dst$renamed);
 	$var($ColorModel, srcCM, $nc(src)->getColorModel());
 	$var($ColorModel, dstCM, nullptr);
@@ -375,6 +379,7 @@ $WritableRaster* RescaleOp::filter($Raster* src, $WritableRaster* dst) {
 }
 
 $WritableRaster* RescaleOp::filterRasterImpl($Raster* src, $WritableRaster* dst$renamed, int32_t scaleConst, bool sCheck) {
+	$useLocalCurrentObjectStackCache();
 	$var($WritableRaster, dst, dst$renamed);
 	int32_t numBands = $nc(src)->getNumBands();
 	int32_t width = src->getWidth();
@@ -467,6 +472,7 @@ $Rectangle2D* RescaleOp::getBounds2D($Raster* src) {
 }
 
 $BufferedImage* RescaleOp::createCompatibleDestImage($BufferedImage* src, $ColorModel* destCM) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, image, nullptr);
 	if (destCM == nullptr) {
 		$var($ColorModel, cm, $nc(src)->getColorModel());

@@ -106,6 +106,7 @@ void bug8041642::init$() {
 }
 
 void bug8041642::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel"_s);
 	{
 		$var($Throwable, var$0, nullptr);
@@ -137,6 +138,7 @@ void bug8041642::main($StringArray* args) {
 }
 
 void bug8041642::setup($JFrame* frame) {
+	$useLocalCurrentObjectStackCache();
 	$init(bug8041642);
 	$assignStatic(bug8041642::bar, $new($JProgressBar));
 	$init($Color);

@@ -86,6 +86,7 @@ void TestBadBreak$1::init$($String* val$text, $BufferedImage* val$i1) {
 }
 
 void TestBadBreak$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($TestBadBreak);
 	$assignStatic($TestBadBreak::frame, $new($JFrame));
 	$var($JLabel, label, $new($TestBadBreak$1$1, this, this->val$text));

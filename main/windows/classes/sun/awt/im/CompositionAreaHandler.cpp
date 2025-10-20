@@ -148,6 +148,7 @@ void CompositionAreaHandler::init$($InputMethodContext* context) {
 }
 
 void CompositionAreaHandler::createCompositionArea() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(CompositionAreaHandler::compositionAreaLock) {
 		$assignStatic(CompositionAreaHandler::compositionArea, $new($CompositionArea));
 		if (CompositionAreaHandler::compositionAreaOwner != nullptr) {
@@ -237,6 +238,7 @@ void CompositionAreaHandler::setCompositionAreaUndecorated(bool undecorated) {
 }
 
 void CompositionAreaHandler::inputMethodTextChanged($InputMethodEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributedCharacterIterator, text, $nc(event)->getText());
 	int32_t committedCharacterCount = event->getCommittedCharacterCount();
 	$set(this, composedText, nullptr);

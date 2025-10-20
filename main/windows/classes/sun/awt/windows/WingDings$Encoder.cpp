@@ -99,6 +99,7 @@ bool WingDings$Encoder::canEncode(char16_t c) {
 }
 
 $CoderResult* WingDings$Encoder::encodeLoop($CharBuffer* src, $ByteBuffer* dst) {
+	$useLocalCurrentObjectStackCache();
 	$var($chars, sa, $cast($chars, $nc(src)->array()));
 	int32_t var$0 = src->arrayOffset();
 	int32_t sp = var$0 + src->position();

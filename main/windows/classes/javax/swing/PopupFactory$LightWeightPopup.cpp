@@ -152,6 +152,7 @@ void PopupFactory$LightWeightPopup::recycleLightWeightPopup(PopupFactory$LightWe
 
 PopupFactory$LightWeightPopup* PopupFactory$LightWeightPopup::getRecycledLightWeightPopup() {
 	$init(PopupFactory$LightWeightPopup);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(PopupFactory$LightWeightPopup::class$) {
 		$var($List, lightPopupCache, getLightWeightPopupCache());
 		if ($nc(lightPopupCache)->size() > 0) {
@@ -171,6 +172,7 @@ void PopupFactory$LightWeightPopup::hide() {
 }
 
 void PopupFactory$LightWeightPopup::show() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, parent, nullptr);
 	if (this->owner != nullptr) {
 		$assign(parent, $instanceOf($Container, this->owner) ? $cast($Container, this->owner) : $nc(this->owner)->getParent());

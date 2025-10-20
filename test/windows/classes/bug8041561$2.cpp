@@ -80,6 +80,7 @@ void bug8041561$2::init$() {
 }
 
 void bug8041561$2::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($bug8041561);
 		$var($Point, point, $nc($bug8041561::radioButton)->getLocationOnScreen());

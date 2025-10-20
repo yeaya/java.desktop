@@ -439,6 +439,7 @@ void PrintJob2D::init$($Frame* frame, $String* doctitle, $JobAttributes* jobAttr
 }
 
 void PrintJob2D::initPrintJob2D($Frame* frame, $String* doctitle, $JobAttributes* jobAttributes, $PageAttributes* pageAttributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, security, $System::getSecurityManager());
 	if (security != nullptr) {
 		security->checkPrintJobAccess();
@@ -508,6 +509,7 @@ void PrintJob2D::initPrintJob2D($Frame* frame, $String* doctitle, $JobAttributes
 }
 
 bool PrintJob2D::printDialog() {
+	$useLocalCurrentObjectStackCache();
 	bool proceedWithPrint = false;
 	$set(this, printerJob, $PrinterJob::getPrinterJob());
 	if (this->printerJob == nullptr) {
@@ -619,6 +621,7 @@ bool PrintJob2D::printDialog() {
 }
 
 void PrintJob2D::updateAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$load($Copies);
 	$var($Copies, c, $cast($Copies, $nc(this->attributes)->get($Copies::class$)));
 	$nc(this->jobAttributes)->setCopies($nc(c)->getValue());
@@ -727,6 +730,7 @@ void PrintJob2D::updateAttributes() {
 }
 
 void PrintJob2D::debugPrintAttributes(bool ja, bool pa) {
+	$useLocalCurrentObjectStackCache();
 	if (ja) {
 		$init($System);
 		$var($String, var$14, $$str({"new Attributes\ncopies = "_s, $$str($nc(this->jobAttributes)->getCopies()), "\nselection = "_s}));
@@ -758,6 +762,7 @@ void PrintJob2D::debugPrintAttributes(bool ja, bool pa) {
 }
 
 void PrintJob2D::copyAttributes($PrintService* printServ) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, attributes, $new($HashPrintRequestAttributeSet));
 	$nc(this->attributes)->add(static_cast<$Attribute*>(static_cast<$PrintRequestAttribute*>($$new($JobName, this->docTitle, nullptr))));
 	$var($PrintService, pServ, printServ);
@@ -882,6 +887,7 @@ void PrintJob2D::copyAttributes($PrintService* printServ) {
 }
 
 $Graphics* PrintJob2D::getGraphics() {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, printGraphics, nullptr);
 	$synchronized(this) {
 		++this->pageIndex;
@@ -1013,6 +1019,7 @@ $ints* PrintJob2D::getSize($PageAttributes$MediaType* mType) {
 
 $MediaSizeName* PrintJob2D::mapMedia($PageAttributes$MediaType* mType) {
 	$init(PrintJob2D);
+	$useLocalCurrentObjectStackCache();
 	$var($MediaSizeName, media, nullptr);
 	int32_t length = $Math::min($nc(PrintJob2D::SIZES)->length, $nc(PrintJob2D::JAVAXSIZES)->length);
 	for (int32_t i = 0; i < length; ++i) {
@@ -1106,6 +1113,7 @@ void PrintJob2D::translateInputProps() {
 }
 
 void PrintJob2D::translateOutputProps() {
+	$useLocalCurrentObjectStackCache();
 	if (this->props == nullptr) {
 		return;
 	}
@@ -1152,6 +1160,7 @@ void PrintJob2D::translateOutputProps() {
 }
 
 void PrintJob2D::throwPrintToFile() {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, security, $System::getSecurityManager());
 	$var($FilePermission, printToFilePermission, nullptr);
 	if (security != nullptr) {

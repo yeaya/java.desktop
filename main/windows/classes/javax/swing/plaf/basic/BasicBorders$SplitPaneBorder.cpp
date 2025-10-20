@@ -109,6 +109,7 @@ void BasicBorders$SplitPaneBorder::init$($Color* highlight, $Color* shadow) {
 }
 
 void BasicBorders$SplitPaneBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($JSplitPane, c))) {
 		return;
 	}

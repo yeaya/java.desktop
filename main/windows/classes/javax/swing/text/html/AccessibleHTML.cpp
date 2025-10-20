@@ -178,10 +178,12 @@ $AccessibleHTML$ElementInfo* AccessibleHTML::getRootInfo() {
 }
 
 $View* AccessibleHTML::getRootView() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($cast($TextUI, $nc($(getTextComponent()))->getUI())))->getRootView($(getTextComponent()));
 }
 
 $Rectangle* AccessibleHTML::getRootEditorRect() {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, alloc, $nc($(getTextComponent()))->getBounds());
 	if (($nc(alloc)->width > 0) && (alloc->height > 0)) {
 		alloc->x = (alloc->y = 0);
@@ -211,6 +213,7 @@ void AccessibleHTML::unlock(Object$* key) {
 }
 
 void AccessibleHTML::buildInfo() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, lock, this->lock());
 	{
 		$var($Throwable, var$0, nullptr);
@@ -231,6 +234,7 @@ void AccessibleHTML::buildInfo() {
 }
 
 $AccessibleHTML$ElementInfo* AccessibleHTML::createElementInfo($Element* e, $AccessibleHTML$ElementInfo* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attrs, $nc(e)->getAttributes());
 	if (attrs != nullptr) {
 		$init($StyleConstants);

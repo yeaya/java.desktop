@@ -271,6 +271,7 @@ void CaretFloatingPointAPITest$CustomCaret::deinstall($JTextComponent* c) {
 }
 
 void CaretFloatingPointAPITest$CustomCaret::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (this->component == nullptr) {
 		return;
 	}
@@ -384,6 +385,7 @@ void CaretFloatingPointAPITest$CustomCaret::moveDot(int32_t dot, $Position$Bias*
 }
 
 void CaretFloatingPointAPITest$CustomCaret::handleSetDot(int32_t dot, $Position$Bias* dotBias$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Position$Bias, dotBias, dotBias$renamed);
 	if (this->component == nullptr) {
 		return;
@@ -413,6 +415,7 @@ void CaretFloatingPointAPITest$CustomCaret::changeCaretPosition(int32_t dot, $Po
 }
 
 void CaretFloatingPointAPITest$CustomCaret::updateSelection() {
+	$useLocalCurrentObjectStackCache();
 	$var($Highlighter, h, $nc(this->component)->getHighlighter());
 	if (h != nullptr) {
 		int32_t p0 = $Math::min(this->dot, this->mark);
@@ -439,6 +442,7 @@ void CaretFloatingPointAPITest$CustomCaret::updateSelection() {
 }
 
 void CaretFloatingPointAPITest$CustomCaret::repaintNewCaret() {
+	$useLocalCurrentObjectStackCache();
 	if (this->component != nullptr) {
 		$var($TextUI, mapper, $cast($TextUI, $nc(this->component)->getUI()));
 		$var($Document, doc, $nc(this->component)->getDocument());

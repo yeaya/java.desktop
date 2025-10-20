@@ -114,6 +114,7 @@ void bug6894632::main($StringArray* args) {
 }
 
 void bug6894632::test($List* sortKeys) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame));
 	{
 		$var($Throwable, var$0, nullptr);

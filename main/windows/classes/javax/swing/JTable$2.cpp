@@ -95,6 +95,7 @@ int32_t JTable$2::getUpperBoundAt(int32_t i) {
 }
 
 int32_t JTable$2::getMidPointAt(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->val$inverse) {
 		return $nc($($nc(this->val$cm)->getColumn(i)))->getPreferredWidth();
 	} else {
@@ -103,6 +104,7 @@ int32_t JTable$2::getMidPointAt(int32_t i) {
 }
 
 void JTable$2::setSizeAt(int32_t s, int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->val$inverse) {
 		$nc($($nc(this->val$cm)->getColumn(i)))->setWidth(s);
 	} else {

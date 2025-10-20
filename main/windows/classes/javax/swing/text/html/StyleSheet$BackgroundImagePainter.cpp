@@ -93,6 +93,7 @@ $Object* allocate$StyleSheet$BackgroundImagePainter($Class* clazz) {
 }
 
 void StyleSheet$BackgroundImagePainter::init$($AttributeSet* a, $CSS* css, $StyleSheet* ss) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, backgroundImage, $nc(ss)->getBackgroundImage(a));
 	$init($CSS$Attribute);
 	$var($CSS$BackgroundPosition, pos, $cast($CSS$BackgroundPosition, $nc(a)->getAttribute($CSS$Attribute::BACKGROUND_POSITION)));

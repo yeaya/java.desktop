@@ -87,6 +87,7 @@ void Test6657026MetalBorders::init$() {
 
 void Test6657026MetalBorders::main($StringArray* args) {
 	$init(Test6657026MetalBorders);
+	$useLocalCurrentObjectStackCache();
 	$new($Test6657026MetalBorders$1);
 	$new($Test6657026MetalBorders$2);
 	$new($Test6657026MetalBorders$3);
@@ -104,6 +105,7 @@ void Test6657026MetalBorders::main($StringArray* args) {
 
 $Border* Test6657026MetalBorders::create($String* name$renamed) {
 	$init(Test6657026MetalBorders);
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, name$renamed);
 	$beforeCallerSensitive();
 	try {
@@ -118,6 +120,7 @@ $Border* Test6657026MetalBorders::create($String* name$renamed) {
 
 void Test6657026MetalBorders::test($Border* border) {
 	$init(Test6657026MetalBorders);
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, actual, $nc(border)->getBorderInsets(nullptr));
 	if ($nc(Test6657026MetalBorders::NEGATIVE)->equals(actual)) {
 		$throwNew($Error, $$str({"unexpected insets in "_s, $of(border)->getClass()}));

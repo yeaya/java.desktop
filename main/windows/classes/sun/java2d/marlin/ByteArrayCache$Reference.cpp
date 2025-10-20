@@ -91,6 +91,7 @@ void ByteArrayCache$Reference::init$($ByteArrayCache* cache, int32_t initialSize
 }
 
 $bytes* ByteArrayCache$Reference::getArray(int32_t length) {
+	$useLocalCurrentObjectStackCache();
 	$init($ArrayCacheConst);
 	if (length <= $ArrayCacheConst::MAX_ARRAY_SIZE) {
 		return $nc($($nc(this->cache)->getCacheBucket(length)))->getArray();
@@ -106,6 +107,7 @@ $bytes* ByteArrayCache$Reference::getArray(int32_t length) {
 }
 
 $bytes* ByteArrayCache$Reference::widenArray($bytes* array, int32_t usedSize, int32_t needSize) {
+	$useLocalCurrentObjectStackCache();
 	int32_t length = $nc(array)->length;
 	$init($MarlinConst);
 	if ($MarlinConst::DO_CHECKS && length >= needSize) {

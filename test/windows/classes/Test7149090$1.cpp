@@ -102,6 +102,7 @@ void Test7149090$1::init$(int32_t val$expectedPosition) {
 }
 
 void Test7149090$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($List, borders, $new($ArrayList));
 	borders->add($($BorderFactory::createTitledBorder($$new($EmptyBorder, 0, 0, 0, 0), "Title"_s)));

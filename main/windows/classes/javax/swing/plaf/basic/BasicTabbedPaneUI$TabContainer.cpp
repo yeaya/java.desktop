@@ -127,6 +127,7 @@ void BasicTabbedPaneUI$TabContainer::remove($Component* comp) {
 }
 
 void BasicTabbedPaneUI$TabContainer::removeUnusedTabComponents() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($ComponentArray, arr$, getComponents());
 		int32_t len$ = $nc(arr$)->length;

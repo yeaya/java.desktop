@@ -94,6 +94,7 @@ void bug8038113$1::init$($bug8038113* this$0) {
 }
 
 void bug8038113$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTree, tree, $new($JTree));
 	$var($BasicTreeUI, treeUI, $cast($BasicTreeUI, $cast($TreeUI, tree->getUI())));
 	$var($JPanel, panel, $new($bug8038113$1$1, this, treeUI));

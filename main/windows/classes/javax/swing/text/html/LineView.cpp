@@ -106,6 +106,7 @@ float LineView::getMinimumSpan(int32_t axis) {
 }
 
 int32_t LineView::getResizeWeight(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	switch (axis) {
 	case $View::X_AXIS:
 		{
@@ -142,6 +143,7 @@ float LineView::nextTabStop(float x, int32_t tabOffset) {
 }
 
 float LineView::getPreTab(float x, int32_t tabOffset) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, d, getDocument());
 	$var($View, v, getViewAtPosition(tabOffset, nullptr));
 	if (($instanceOf($StyledDocument, d)) && v != nullptr) {

@@ -80,6 +80,7 @@ void IconifyTest$1::init$() {
 }
 
 void IconifyTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($IconifyTest);
 	$assignStatic($IconifyTest::frame, $new($JFrame));
 	$assignStatic($IconifyTest::button, $new($JButton, "HI"_s));

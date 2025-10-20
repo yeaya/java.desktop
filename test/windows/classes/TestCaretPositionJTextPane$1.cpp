@@ -88,6 +88,7 @@ void TestCaretPositionJTextPane$1::mouseClicked($MouseEvent* e) {
 }
 
 void TestCaretPositionJTextPane$1::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($TestCaretPositionJTextPane);
 		$var($Caret, caret, $nc($TestCaretPositionJTextPane::textPane)->getCaret());

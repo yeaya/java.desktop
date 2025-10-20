@@ -113,6 +113,7 @@ void HeadlessJDesktopPane::init$() {
 }
 
 void HeadlessJDesktopPane::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, ch, $new($HeadlessJDesktopPane$1));
 	ch->getAccessibleContext();
 	ch->isFocusTraversable();

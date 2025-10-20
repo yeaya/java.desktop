@@ -200,6 +200,7 @@ $String* ExecutableInputMethodManager::preferredIMNode = nullptr;
 $String* ExecutableInputMethodManager::descriptorKey = nullptr;
 
 void ExecutableInputMethodManager::init$() {
+	$useLocalCurrentObjectStackCache();
 	$InputMethodManager::init$();
 	$set(this, preferredLocatorCache, $new($Hashtable));
 	$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());
@@ -225,6 +226,7 @@ void ExecutableInputMethodManager::initialize() {
 }
 
 void ExecutableInputMethodManager::run() {
+	$useLocalCurrentObjectStackCache();
 	while (!hasMultipleInputMethods()) {
 		try {
 			$synchronized(this) {
@@ -252,6 +254,7 @@ void ExecutableInputMethodManager::run() {
 }
 
 void ExecutableInputMethodManager::showInputMethodMenuOnRequesterEDT($Component* requester) {
+	$useLocalCurrentObjectStackCache();
 	if (requester == nullptr) {
 		return;
 	}
@@ -325,6 +328,7 @@ void ExecutableInputMethodManager::waitForChangeRequest() {
 }
 
 void ExecutableInputMethodManager::initializeInputMethodLocatorList() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$synchronized(this->javaInputMethodLocatorList) {
 		$nc(this->javaInputMethodLocatorList)->clear();
@@ -346,6 +350,7 @@ void ExecutableInputMethodManager::initializeInputMethodLocatorList() {
 }
 
 void ExecutableInputMethodManager::showInputMethodMenu() {
+	$useLocalCurrentObjectStackCache();
 	if (!hasMultipleInputMethods()) {
 		$set(this, requestComponent, nullptr);
 		return;
@@ -370,6 +375,7 @@ void ExecutableInputMethodManager::showInputMethodMenu() {
 }
 
 $String* ExecutableInputMethodManager::getCurrentSelection() {
+	$useLocalCurrentObjectStackCache();
 	$var($InputContext, inputContext, this->currentInputContext);
 	if (inputContext != nullptr) {
 		$var($InputMethodLocator, locator, inputContext->getInputMethodLocator());
@@ -382,6 +388,7 @@ $String* ExecutableInputMethodManager::getCurrentSelection() {
 
 void ExecutableInputMethodManager::changeInputMethod($String* choice) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($InputMethodLocator, locator, nullptr);
 		$var($String, inputMethodName, choice);
 		$var($String, localeString, nullptr);
@@ -435,6 +442,7 @@ void ExecutableInputMethodManager::changeInputMethod($String* choice) {
 }
 
 $InputMethodLocator* ExecutableInputMethodManager::findInputMethod($Locale* locale) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMethodLocator, locator, getPreferredInputMethod(locale));
 	if (locator != nullptr) {
 		return locator;
@@ -463,6 +471,7 @@ $Locale* ExecutableInputMethodManager::getDefaultKeyboardLocale() {
 
 $InputMethodLocator* ExecutableInputMethodManager::getPreferredInputMethod($Locale* locale) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($InputMethodLocator, preferredLocator, nullptr);
 		if (!hasMultipleInputMethods()) {
 			return nullptr;
@@ -502,6 +511,7 @@ $InputMethodLocator* ExecutableInputMethodManager::getPreferredInputMethod($Loca
 }
 
 $String* ExecutableInputMethodManager::findPreferredInputMethodNode($Locale* locale) {
+	$useLocalCurrentObjectStackCache();
 	if (this->userRoot == nullptr) {
 		return nullptr;
 	}
@@ -530,6 +540,7 @@ $String* ExecutableInputMethodManager::readPreferredInputMethod($String* nodePat
 
 void ExecutableInputMethodManager::putPreferredInputMethod($InputMethodLocator* locator) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($InputMethodDescriptor, descriptor, $nc(locator)->getDescriptor());
 		$var($Locale, preferredLocale, locator->getLocale());
 		if (preferredLocale == nullptr) {
@@ -564,6 +575,7 @@ void ExecutableInputMethodManager::putPreferredInputMethod($InputMethodLocator* 
 }
 
 $String* ExecutableInputMethodManager::createLocalePath($Locale* locale) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, language, $nc(locale)->getLanguage());
 	$var($String, country, locale->getCountry());
 	$var($String, variant, locale->getVariant());
@@ -595,6 +607,7 @@ $Preferences* ExecutableInputMethodManager::getUserRoot() {
 }
 
 $Locale* ExecutableInputMethodManager::getAdvertisedLocale($InputMethodLocator* locator, $Locale* locale) {
+	$useLocalCurrentObjectStackCache();
 	$var($Locale, advertised, nullptr);
 	if ($nc(locator)->isLocaleAvailable(locale)) {
 		$assign(advertised, locale);

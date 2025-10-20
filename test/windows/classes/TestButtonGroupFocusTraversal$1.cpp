@@ -105,6 +105,7 @@ void TestButtonGroupFocusTraversal$1::init$() {
 }
 
 void TestButtonGroupFocusTraversal$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($TestButtonGroupFocusTraversal);
 	$assignStatic($TestButtonGroupFocusTraversal::textFieldFirst, $new($JTextField, "First"_s));
 	$assignStatic($TestButtonGroupFocusTraversal::textFieldLast, $new($JTextField, "Last"_s));

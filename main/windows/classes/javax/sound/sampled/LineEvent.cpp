@@ -85,6 +85,7 @@ int64_t LineEvent::getFramePosition() {
 }
 
 $String* LineEvent::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $String::format("%s event from line %s"_s, $$new($ObjectArray, {
 		$of(this->type),
 		$($of(getLine()))

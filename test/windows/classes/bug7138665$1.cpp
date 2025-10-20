@@ -80,6 +80,7 @@ void bug7138665$1::init$() {
 }
 
 void bug7138665$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JOptionPane, pane, $new($JOptionPane, "Enter value"_s, $JOptionPane::QUESTION_MESSAGE, $JOptionPane::OK_CANCEL_OPTION, nullptr, nullptr, nullptr));
 	pane->setWantsInput(true);
 	$var($JDialog, dialog, pane->createDialog(nullptr, "My Dialog"_s));

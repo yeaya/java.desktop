@@ -109,6 +109,7 @@ void ActionListenerExceptionTest::init$() {
 }
 
 void ActionListenerExceptionTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($EventQueue, queue, $nc($($Toolkit::getDefaultToolkit()))->getSystemEventQueue());
 	$nc(queue)->push($$new($EventQueueProxy));
 	$var(ActionListenerExceptionTest, testObject, $new(ActionListenerExceptionTest));
@@ -129,6 +130,7 @@ void ActionListenerExceptionTest::disposeGUI() {
 }
 
 void ActionListenerExceptionTest::test() {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, testRobot, $new($Robot));
 	testRobot->delay(200);
 	$SwingUtilities::invokeAndWait($$new($ActionListenerExceptionTest$3, this));

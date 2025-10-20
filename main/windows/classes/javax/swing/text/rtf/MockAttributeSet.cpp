@@ -100,6 +100,7 @@ void MockAttributeSet::addAttribute(Object$* name, Object$* value) {
 }
 
 void MockAttributeSet::addAttributes($AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, as, $nc(attr)->getAttributeNames());
 	while ($nc(as)->hasMoreElements()) {
 		$var($Object, el, as->nextElement());

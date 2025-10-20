@@ -110,6 +110,7 @@ int32_t Entity::name2type($String* nm) {
 }
 
 void clinit$Entity($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(Entity::entityTypes, $new($Hashtable));
 	{
 		$nc(Entity::entityTypes)->put("PUBLIC"_s, $($Integer::valueOf($DTDConstants::PUBLIC)));

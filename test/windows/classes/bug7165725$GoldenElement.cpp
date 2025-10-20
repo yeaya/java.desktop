@@ -85,6 +85,7 @@ void bug7165725$GoldenElement::init$($String* goldenName, $bug7165725$GoldenElem
 }
 
 void bug7165725$GoldenElement::checkStructureEquivalence($AbstractDocument$AbstractElement* elem) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(elem)->getName());
 	if (!$nc(this->goldenName)->equals(name)) {
 		$throwNew($RuntimeException, $$str({"Bad structure: expected element name is \'"_s, this->goldenName, "\' but the actual name was \'"_s, name, "\'."_s}));

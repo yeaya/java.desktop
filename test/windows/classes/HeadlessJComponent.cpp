@@ -113,6 +113,7 @@ void HeadlessJComponent::init$() {
 }
 
 void HeadlessJComponent::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, ch, $new($HeadlessJComponent$1));
 	ch->getAccessibleContext();
 	ch->isFocusTraversable();

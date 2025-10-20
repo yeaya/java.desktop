@@ -55,6 +55,7 @@ void HeadlessException::init$($String* msg) {
 }
 
 $String* HeadlessException::getMessage() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, superMessage, $UnsupportedOperationException::getMessage());
 	$var($String, headlessMessage, $GraphicsEnvironment::getHeadlessMessage());
 	if (superMessage == nullptr) {

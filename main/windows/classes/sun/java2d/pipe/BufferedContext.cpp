@@ -130,6 +130,7 @@ void BufferedContext::validateContext($AccelSurface* surface) {
 }
 
 void BufferedContext::validate($AccelSurface* srcData, $AccelSurface* dstData, $Region* clip, $Composite* comp, $AffineTransform* xform, $Paint* paint, $SunGraphics2D* sg2d, int32_t flags) {
+	$useLocalCurrentObjectStackCache();
 	bool updateClip = false;
 	bool updatePaint = false;
 	bool var$1 = !$nc(dstData)->isValid();
@@ -258,6 +259,7 @@ void BufferedContext::resetClip() {
 }
 
 void BufferedContext::setClip($Region* clip) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(clip)->isRectangular()) {
 		$nc(this->rq)->ensureCapacity(20);
 		$nc(this->buf)->putInt(51);

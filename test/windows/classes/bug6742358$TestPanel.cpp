@@ -65,6 +65,7 @@ $Object* allocate$bug6742358$TestPanel($Class* clazz) {
 }
 
 void bug6742358$TestPanel::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JPanel::init$();
 	$var($JPanel, pnVertical, $new($JPanel));
 	pnVertical->setLayout($$new($BoxLayout, pnVertical, $BoxLayout::Y_AXIS));

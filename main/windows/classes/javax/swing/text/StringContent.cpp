@@ -160,6 +160,7 @@ $UndoableEdit* StringContent::insertString(int32_t where, $String* str) {
 }
 
 $UndoableEdit* StringContent::remove(int32_t where, int32_t nitems) {
+	$useLocalCurrentObjectStackCache();
 	if (where + nitems >= this->count) {
 		$throwNew($BadLocationException, "Invalid range"_s, this->count);
 	}
@@ -222,6 +223,7 @@ void StringContent::resize(int32_t ncount) {
 
 void StringContent::updateMarksForInsert(int32_t offset, int32_t length) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (offset == 0) {
 			offset = 1;
 		}
@@ -241,6 +243,7 @@ void StringContent::updateMarksForInsert(int32_t offset, int32_t length) {
 
 void StringContent::updateMarksForRemove(int32_t offset, int32_t length) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		int32_t n = $nc(this->marks)->size();
 		for (int32_t i = 0; i < n; ++i) {
 			$var($StringContent$PosRec, mark, $cast($StringContent$PosRec, $nc(this->marks)->elementAt(i)));
@@ -258,6 +261,7 @@ void StringContent::updateMarksForRemove(int32_t offset, int32_t length) {
 }
 
 $Vector* StringContent::getPositionsInRange($Vector* v, int32_t offset, int32_t length) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = $nc(this->marks)->size();
 	int32_t end = offset + length;
 	$var($Vector, placeIn, (v == nullptr) ? $new($Vector) : v);
@@ -275,6 +279,7 @@ $Vector* StringContent::getPositionsInRange($Vector* v, int32_t offset, int32_t 
 }
 
 void StringContent::updateUndoPositions($Vector* positions) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t counter = $nc(positions)->size() - 1; counter >= 0; --counter) {
 		$var($StringContent$UndoPosRef, ref, $cast($StringContent$UndoPosRef, positions->elementAt(counter)));
 		if ($nc($nc(ref)->rec)->unused) {

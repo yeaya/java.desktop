@@ -75,6 +75,7 @@ $Object* allocate$BasicInternalFrameTitlePane$NoFocusButton($Class* clazz) {
 }
 
 void BasicInternalFrameTitlePane$NoFocusButton::init$($BasicInternalFrameTitlePane* this$0, $String* uiKey, $String* opacityKey) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JButton::init$();
 	setFocusPainted(false);
@@ -94,6 +95,7 @@ void BasicInternalFrameTitlePane$NoFocusButton::requestFocus() {
 }
 
 $AccessibleContext* BasicInternalFrameTitlePane$NoFocusButton::getAccessibleContext() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, $JButton::getAccessibleContext());
 	if (this->uiKey != nullptr) {
 		$nc(ac)->setAccessibleName($($UIManager::getString(this->uiKey)));

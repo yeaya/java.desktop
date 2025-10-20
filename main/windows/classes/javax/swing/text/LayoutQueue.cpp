@@ -124,6 +124,7 @@ void LayoutQueue::init$() {
 
 LayoutQueue* LayoutQueue::getDefaultQueue() {
 	$init(LayoutQueue);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, ac, $AppContext::getAppContext());
 	$synchronized(LayoutQueue::DEFAULT_QUEUE) {
 		$var(LayoutQueue, defaultQueue, $cast(LayoutQueue, $nc(ac)->get(LayoutQueue::DEFAULT_QUEUE)));
@@ -157,6 +158,7 @@ void LayoutQueue::addTask($Runnable* task) {
 
 $Runnable* LayoutQueue::waitForWork() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		while ($nc(this->tasks)->size() == 0) {
 			try {
 				$of(this)->wait();

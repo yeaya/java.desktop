@@ -80,6 +80,7 @@ void DrawGlyphList$General::init$($SurfaceType* srctype, $CompositeType* comptyp
 }
 
 void DrawGlyphList$General::DrawGlyphList$($SunGraphics2D* sg2d, $SurfaceData* dest, $GlyphList* gl, int32_t fromGlyph, int32_t toGlyph) {
+	$useLocalCurrentObjectStackCache();
 	$var($Region, clip, $nc(sg2d)->getCompClip());
 	int32_t cx1 = $nc(clip)->getLoX();
 	int32_t cy1 = clip->getLoY();

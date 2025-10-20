@@ -74,6 +74,7 @@ void bug4697612$7::init$($ints* val$result) {
 }
 
 void bug4697612$7::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug4697612);
 	$nc(this->val$result)->set(0, $nc($($nc($($nc($bug4697612::scroller)->getViewport()))->getViewPosition()))->y);
 }

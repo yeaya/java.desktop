@@ -75,6 +75,7 @@ bool MethodRef::isSet() {
 }
 
 $Method* MethodRef::get() {
+	$useLocalCurrentObjectStackCache();
 	if (this->methodRef == nullptr) {
 		return nullptr;
 	}
@@ -94,6 +95,7 @@ $Method* MethodRef::get() {
 
 $Method* MethodRef::find($Class* type, $String* signature) {
 	$load(MethodRef);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (type != nullptr) {
 		{

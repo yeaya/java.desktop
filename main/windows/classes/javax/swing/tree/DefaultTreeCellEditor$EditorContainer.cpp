@@ -96,6 +96,7 @@ void DefaultTreeCellEditor$EditorContainer::EditorContainer() {
 }
 
 void DefaultTreeCellEditor$EditorContainer::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = getWidth();
 	int32_t height = getHeight();
 	if (this->this$0->editingIcon != nullptr) {
@@ -127,6 +128,7 @@ void DefaultTreeCellEditor$EditorContainer::doLayout() {
 }
 
 int32_t DefaultTreeCellEditor$EditorContainer::calculateIconY($Icon* icon) {
+	$useLocalCurrentObjectStackCache();
 	int32_t iconHeight = $nc(icon)->getIconHeight();
 	int32_t textHeight = $nc($($nc(this->this$0->editingComponent)->getFontMetrics($($nc(this->this$0->editingComponent)->getFont()))))->getHeight();
 	int32_t textY = iconHeight / 2 - textHeight / 2;
@@ -136,6 +138,7 @@ int32_t DefaultTreeCellEditor$EditorContainer::calculateIconY($Icon* icon) {
 }
 
 $Dimension* DefaultTreeCellEditor$EditorContainer::getPreferredSize() {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->editingComponent != nullptr) {
 		$var($Dimension, pSize, $nc(this->this$0->editingComponent)->getPreferredSize());
 		$nc(pSize)->width += this->this$0->offset + 5;

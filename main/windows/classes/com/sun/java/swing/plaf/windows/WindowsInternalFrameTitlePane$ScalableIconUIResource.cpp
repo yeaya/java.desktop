@@ -114,6 +114,7 @@ void WindowsInternalFrameTitlePane$ScalableIconUIResource::finalize() {
 }
 
 void WindowsInternalFrameTitlePane$ScalableIconUIResource::init$($ObjectArray* objects) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, icons, $new($IconArray, $nc(objects)->length));
 	for (int32_t i = 0; i < objects->length; ++i) {
 		if ($instanceOf($UIDefaults$LazyValue, objects->get(i))) {
@@ -125,6 +126,7 @@ void WindowsInternalFrameTitlePane$ScalableIconUIResource::init$($ObjectArray* o
 }
 
 $Icon* WindowsInternalFrameTitlePane$ScalableIconUIResource::getBestIcon(int32_t size) {
+	$useLocalCurrentObjectStackCache();
 	if (this->icons != nullptr && $nc(this->icons)->length > 0) {
 		int32_t bestIndex = 0;
 		int32_t minDiff = $Integer::MAX_VALUE;
@@ -146,6 +148,7 @@ $Icon* WindowsInternalFrameTitlePane$ScalableIconUIResource::getBestIcon(int32_t
 }
 
 void WindowsInternalFrameTitlePane$ScalableIconUIResource::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics2D, g2d, $cast($Graphics2D, $nc(g)->create()));
 	int32_t size = getIconWidth();
 	double scale = $nc($($nc(g2d)->getTransform()))->getScaleX();

@@ -81,6 +81,7 @@ void Test4177735::init$() {
 
 void Test4177735::main($StringArray* args) {
 	$init(Test4177735);
+	$useLocalCurrentObjectStackCache();
 	int32_t hsvIndex = 0;
 	int32_t panelsLength = 0;
 	int32_t finalIndex = 0;
@@ -107,6 +108,7 @@ void Test4177735::main($StringArray* args) {
 
 $JDialog* Test4177735::show($JColorChooser* chooser) {
 	$init(Test4177735);
+	$useLocalCurrentObjectStackCache();
 	$var($JDialog, dialog, $JColorChooser::createDialog(nullptr, nullptr, false, chooser, nullptr, nullptr));
 	$nc(dialog)->setVisible(true);
 	$var($Point, point, nullptr);
@@ -131,6 +133,7 @@ void Test4177735::pause(int64_t delay) {
 }
 
 void Test4177735::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($ThreadGroup, group, $($Thread::currentThread())->getThreadGroup());
 	$var($ThreadArray, threads, $new($ThreadArray, $nc(group)->activeCount()));
 	int32_t count = group->enumerate(threads, false);

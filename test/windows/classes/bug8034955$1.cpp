@@ -71,6 +71,7 @@ void bug8034955$1::init$() {
 }
 
 void bug8034955$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame));
 	$nc($(frame->getContentPane()))->add(static_cast<$Component*>($$new($JLabel, "<html>a<title>"_s)));
 	frame->pack();

@@ -75,6 +75,7 @@ int32_t Histogram::bucket(int32_t val) {
 }
 
 void Histogram::init$($String* name) {
+	$useLocalCurrentObjectStackCache();
 	$StatLong::init$(name);
 	$set(this, stats, $new($StatLongArray, Histogram::MAX));
 	for (int32_t i = 0; i < Histogram::MAX; ++i) {
@@ -102,6 +103,7 @@ void Histogram::add(int64_t val) {
 }
 
 $String* Histogram::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, $new($StringBuilder, 2048));
 	$nc($($StatLong::toString(sb)))->append(" { "_s);
 	for (int32_t i = 0; i < Histogram::MAX; ++i) {

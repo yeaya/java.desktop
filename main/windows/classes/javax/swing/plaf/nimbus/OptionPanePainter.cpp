@@ -264,6 +264,7 @@ void OptionPanePainter::painterrorIconEnabled($Graphics2D* g) {
 }
 
 void OptionPanePainter::paintinformationIconEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse2());
 	$nc(g)->setPaint(this->color8);
 	g->fill(this->ellipse);
@@ -291,6 +292,7 @@ void OptionPanePainter::paintinformationIconEnabled($Graphics2D* g) {
 }
 
 void OptionPanePainter::paintquestionIconEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse3());
 	$nc(g)->setPaint($(decodeGradient5(this->ellipse)));
 	g->fill(this->ellipse);
@@ -309,6 +311,7 @@ void OptionPanePainter::paintquestionIconEnabled($Graphics2D* g) {
 }
 
 void OptionPanePainter::paintwarningIconEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint(this->color8);
 	g->fill(this->rect);
@@ -819,6 +822,7 @@ $Ellipse2D* OptionPanePainter::decodeEllipse7() {
 }
 
 $Paint* OptionPanePainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -844,6 +848,7 @@ $Paint* OptionPanePainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* OptionPanePainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -861,6 +866,7 @@ $Paint* OptionPanePainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* OptionPanePainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -882,6 +888,7 @@ $Paint* OptionPanePainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* OptionPanePainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -911,6 +918,7 @@ $Paint* OptionPanePainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* OptionPanePainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -928,6 +936,7 @@ $Paint* OptionPanePainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* OptionPanePainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -945,6 +954,7 @@ $Paint* OptionPanePainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* OptionPanePainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -970,6 +980,7 @@ $Paint* OptionPanePainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* OptionPanePainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -987,6 +998,7 @@ $Paint* OptionPanePainter::decodeGradient8($Shape* s) {
 }
 
 $Paint* OptionPanePainter::decodeGradient9($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1016,6 +1028,7 @@ $Paint* OptionPanePainter::decodeGradient9($Shape* s) {
 }
 
 $Paint* OptionPanePainter::decodeGradient10($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

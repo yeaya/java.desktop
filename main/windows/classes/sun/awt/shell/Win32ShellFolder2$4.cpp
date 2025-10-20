@@ -86,6 +86,7 @@ void Win32ShellFolder2$4::init$($Win32ShellFolder2* this$0) {
 }
 
 $Object* Win32ShellFolder2$4::call() {
+	$useLocalCurrentObjectStackCache();
 	if (!Win32ShellFolder2$4::$assertionsDisabled && !(this->this$0->isDirectory())) {
 		$throwNew($AssertionError);
 	}

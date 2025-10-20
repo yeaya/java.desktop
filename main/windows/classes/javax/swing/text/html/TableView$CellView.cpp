@@ -90,6 +90,7 @@ void TableView$CellView::init$($TableView* this$0, $Element* elem) {
 }
 
 void TableView$CellView::layoutMajorAxis(int32_t targetSpan, int32_t axis, $ints* offsets, $ints* spans) {
+	$useLocalCurrentObjectStackCache();
 	$BlockView::layoutMajorAxis(targetSpan, axis, offsets, spans);
 	int32_t used = 0;
 	int32_t n = $nc(spans)->length;
@@ -124,6 +125,7 @@ $SizeRequirements* TableView$CellView::calculateMajorAxisRequirements(int32_t ax
 }
 
 $SizeRequirements* TableView$CellView::calculateMinorAxisRequirements(int32_t axis, $SizeRequirements* r) {
+	$useLocalCurrentObjectStackCache();
 	$var($SizeRequirements, rv, $BlockView::calculateMinorAxisRequirements(axis, r));
 	int32_t n = getViewCount();
 	int32_t min = 0;

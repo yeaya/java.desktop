@@ -148,6 +148,7 @@ void WindowsPlacesBar::finalize() {
 }
 
 void WindowsPlacesBar::init$($JFileChooser* fc, bool isXPStyle) {
+	$useLocalCurrentObjectStackCache();
 	$JToolBar::init$($JToolBar::VERTICAL);
 	$set(this, fc, fc);
 	setFloatable(false);
@@ -222,6 +223,7 @@ void WindowsPlacesBar::init$($JFileChooser* fc, bool isXPStyle) {
 }
 
 void WindowsPlacesBar::doDirectoryChanged($File* f) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->buttons)->length; ++i) {
 		$var($JToggleButton, b, $nc(this->buttons)->get(i));
 		if ($nc($nc(this->files)->get(i))->equals(f)) {
@@ -236,6 +238,7 @@ void WindowsPlacesBar::doDirectoryChanged($File* f) {
 }
 
 void WindowsPlacesBar::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prop, $nc(e)->getPropertyName());
 	$init($JFileChooser);
 	if (prop == $JFileChooser::DIRECTORY_CHANGED_PROPERTY) {
@@ -254,6 +257,7 @@ void WindowsPlacesBar::actionPerformed($ActionEvent* e) {
 }
 
 $Dimension* WindowsPlacesBar::getPreferredSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, min, $JToolBar::getMinimumSize());
 	$var($Dimension, pref, $JToolBar::getPreferredSize());
 	int32_t h = $nc(min)->height;

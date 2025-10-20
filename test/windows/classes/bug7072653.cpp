@@ -189,6 +189,7 @@ void bug7072653::init$() {
 }
 
 void bug7072653::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(bug7072653);
 	$assignStatic(bug7072653::robot, $new($Robot));
 	$var($GraphicsEnvironment, ge, $GraphicsEnvironment::getLocalGraphicsEnvironment());
@@ -224,6 +225,7 @@ void bug7072653::executeCase($String* lookAndFeelString, $GraphicsDevice* sd) {
 }
 
 void bug7072653::setup($String* lookAndFeelString, $GraphicsDevice* sd) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, $nc(sd)->getDefaultConfiguration());
 	$var($Rectangle, gcBounds, $nc(gc)->getBounds());
 	$init(bug7072653);
@@ -249,6 +251,7 @@ void bug7072653::test() {
 }
 
 bool bug7072653::tryLookAndFeel($String* lookAndFeelString) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(lookAndFeelString);
 	} catch ($UnsupportedLookAndFeelException&) {
@@ -268,6 +271,7 @@ bool bug7072653::tryLookAndFeel($String* lookAndFeelString) {
 }
 
 void bug7072653::lambda$executeCase$0($String* lookAndFeelString, $GraphicsDevice* sd) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

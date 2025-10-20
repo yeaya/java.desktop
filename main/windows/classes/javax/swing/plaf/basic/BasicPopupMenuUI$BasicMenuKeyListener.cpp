@@ -101,6 +101,7 @@ void BasicPopupMenuUI$BasicMenuKeyListener::init$($BasicPopupMenuUI* this$0) {
 }
 
 void BasicPopupMenuUI$BasicMenuKeyListener::menuKeyTyped($MenuKeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->menuToOpen != nullptr) {
 		$var($JPopupMenu, subpopup, $nc(($cast($JMenu, this->menuToOpen)))->getPopupMenu());
 		$var($MenuElement, subitem, $BasicPopupMenuUI::findEnabledChild($($nc(subpopup)->getSubElements()), -1, true));
@@ -119,6 +120,7 @@ void BasicPopupMenuUI$BasicMenuKeyListener::menuKeyTyped($MenuKeyEvent* e) {
 }
 
 void BasicPopupMenuUI$BasicMenuKeyListener::menuKeyPressed($MenuKeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	char16_t keyChar = $nc(e)->getKeyChar();
 	if (!$Character::isLetterOrDigit(keyChar)) {
 		return;

@@ -106,6 +106,7 @@ void MotifComboBoxUI$MotifComboBoxArrowIcon::init$($Color* lightShadow, $Color* 
 }
 
 void MotifComboBoxUI$MotifComboBoxArrowIcon::paintIcon($Component* c, $Graphics* g, int32_t xo, int32_t yo) {
+	$useLocalCurrentObjectStackCache();
 	int32_t w = getIconWidth();
 	int32_t h = getIconHeight();
 	int32_t x1 = xo + w - 1;

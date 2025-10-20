@@ -201,6 +201,7 @@ void HiddenTagView::init$($Element* e) {
 }
 
 $Component* HiddenTagView::createComponent() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextField, tf, $new($JTextField, $($nc($(getElement()))->getName())));
 	$var($Document, doc, getDocument());
 	$var($Font, font, nullptr);
@@ -270,6 +271,7 @@ void HiddenTagView::changedUpdate($DocumentEvent* e, $Shape* a, $ViewFactory* f)
 }
 
 void HiddenTagView::updateYAlign($Font* font) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, c, getContainer());
 	$var($FontMetrics, fm, (c != nullptr) ? $nc(c)->getFontMetrics(font) : $nc($($Toolkit::getDefaultToolkit()))->getFontMetrics(font));
 	float h = (float)$nc(fm)->getHeight();
@@ -297,6 +299,7 @@ void HiddenTagView::setTextFromModel() {
 }
 
 void HiddenTagView::_setTextFromModel() {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	{
 		$var($Throwable, var$0, nullptr);
@@ -340,6 +343,7 @@ void HiddenTagView::updateModelFromText() {
 }
 
 void HiddenTagView::_updateModelFromText() {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	$init($StyleConstants);
 	$var($Object, name, $nc($($nc($(getElement()))->getAttributes()))->getAttribute($StyleConstants::NameAttribute));
@@ -375,11 +379,13 @@ $JTextComponent* HiddenTagView::getTextComponent() {
 }
 
 $String* HiddenTagView::getRepresentedText() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, retValue, $nc($(getElement()))->getName());
 	return (retValue == nullptr) ? ""_s : retValue;
 }
 
 bool HiddenTagView::isEndTag() {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, as, $nc($(getElement()))->getAttributes());
 	if (as != nullptr) {
 		$init($HTML$Attribute);

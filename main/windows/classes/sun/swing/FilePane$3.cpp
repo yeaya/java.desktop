@@ -94,6 +94,7 @@ void FilePane$3::repaintSelection(Object$* source) {
 }
 
 void FilePane$3::repaintListSelection($JList* list) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, indices, $nc(list)->getSelectedIndices());
 	{
 		$var($ints, arr$, indices);
@@ -110,6 +111,7 @@ void FilePane$3::repaintListSelection($JList* list) {
 }
 
 void FilePane$3::repaintTableSelection($JTable* table) {
+	$useLocalCurrentObjectStackCache();
 	int32_t minRow = $nc($($nc(table)->getSelectionModel()))->getMinSelectionIndex();
 	int32_t maxRow = $nc($(table->getSelectionModel()))->getMaxSelectionIndex();
 	if (minRow == -1 || maxRow == -1) {

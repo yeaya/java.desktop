@@ -280,6 +280,7 @@ void ButtonGroupFocusTest::init$() {
 }
 
 void ButtonGroupFocusTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(ButtonGroupFocusTest);
 	$assignStatic(ButtonGroupFocusTest::robot, $new($Robot));
 	$nc(ButtonGroupFocusTest::robot)->setAutoDelay(100);
@@ -326,6 +327,7 @@ void ButtonGroupFocusTest::lambda$main$1() {
 }
 
 void ButtonGroupFocusTest::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$init(ButtonGroupFocusTest);
 	$assignStatic(ButtonGroupFocusTest::frame, $new($JFrame));
 	$var($Container, contentPane, $nc(ButtonGroupFocusTest::frame)->getContentPane());

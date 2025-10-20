@@ -174,6 +174,7 @@ void WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon::in
 }
 
 int32_t WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon::getIconHeight() {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, lafIcon, getLaFIcon());
 	if (lafIcon != nullptr) {
 		return lafIcon->getIconHeight();
@@ -197,6 +198,7 @@ int32_t WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon:
 }
 
 int32_t WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon::getIconWidth() {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, lafIcon, getLaFIcon());
 	if (lafIcon != nullptr) {
 		return lafIcon->getIconWidth();
@@ -212,6 +214,7 @@ int32_t WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon:
 }
 
 void WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, lafIcon, getLaFIcon());
 	if (lafIcon != nullptr) {
 		lafIcon->paintIcon(c, g, x, y);
@@ -263,6 +266,7 @@ void WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon::pa
 
 $WindowsMenuItemUIAccessor* WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon::getAccessor($JMenuItem* menuItem) {
 	$init(WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon);
+	$useLocalCurrentObjectStackCache();
 	$var($WindowsMenuItemUIAccessor, rv, nullptr);
 	$var($ButtonUI, uiObject, (menuItem != nullptr) ? $cast($ButtonUI, $nc(menuItem)->getUI()) : ($ButtonUI*)nullptr);
 	if ($instanceOf($WindowsMenuItemUI, uiObject)) {
@@ -279,6 +283,7 @@ $WindowsMenuItemUIAccessor* WindowsIconFactory$VistaMenuItemCheckIconFactory$Vis
 
 bool WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon::isEnabled($Component* c, $TMSchema$State* state$renamed) {
 	$init(WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon);
+	$useLocalCurrentObjectStackCache();
 	$var($TMSchema$State, state, state$renamed);
 	if (state == nullptr && $instanceOf($JMenuItem, c)) {
 		$var($WindowsMenuItemUIAccessor, accessor, getAccessor($cast($JMenuItem, c)));
@@ -299,6 +304,7 @@ bool WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon::is
 }
 
 $Icon* WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon::getIcon() {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, rv, nullptr);
 	if (this->menuItem == nullptr) {
 		return rv;
@@ -319,6 +325,7 @@ $Icon* WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon::
 }
 
 $Icon* WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon::getLaFIcon() {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, rv, $cast($Icon, $nc($($UIManager::getDefaults()))->get($(typeToString(this->type)))));
 	if ($instanceOf(WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon, rv) && $nc(($cast(WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon, rv)))->type == this->type) {
 		$assign(rv, nullptr);
@@ -328,6 +335,7 @@ $Icon* WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon::
 
 $String* WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon::typeToString($Class* type) {
 	$init(WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon);
+	$useLocalCurrentObjectStackCache();
 	$load($JMenuItem);
 	$load($JMenu);
 	$load($JCheckBoxMenuItem);

@@ -605,6 +605,7 @@ void JComboBox::setUI($ComboBoxUI* ui) {
 }
 
 void JComboBox::updateUI() {
+	$useLocalCurrentObjectStackCache();
 	if (!this->updateInProgress) {
 		this->updateInProgress = true;
 		{
@@ -708,6 +709,7 @@ $ComboBoxEditor* JComboBox::getEditor() {
 }
 
 void JComboBox::setSelectedItem(Object$* anObject) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, oldSelection, this->selectedItemReminder);
 	$var($Object, objectToSelect, anObject);
 	if (oldSelection == nullptr || !$nc($of(oldSelection))->equals(anObject)) {
@@ -741,6 +743,7 @@ $Object* JComboBox::getSelectedItem() {
 }
 
 void JComboBox::setSelectedIndex(int32_t anIndex) {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc(this->dataModel)->getSize();
 	if (anIndex == -1) {
 		setSelectedItem(nullptr);
@@ -752,6 +755,7 @@ void JComboBox::setSelectedIndex(int32_t anIndex) {
 }
 
 int32_t JComboBox::getSelectedIndex() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, sObject, $nc(this->dataModel)->getSelectedItem());
 	int32_t i = 0;
 	int32_t c = 0;
@@ -796,6 +800,7 @@ void JComboBox::removeItemAt(int32_t anIndex) {
 }
 
 void JComboBox::removeAllItems() {
+	$useLocalCurrentObjectStackCache();
 	checkMutableComboBoxModel();
 	$var($MutableComboBoxModel, model, $cast($MutableComboBoxModel, this->dataModel));
 	int32_t size = $nc(model)->getSize();
@@ -885,6 +890,7 @@ $PopupMenuListenerArray* JComboBox::getPopupMenuListeners() {
 }
 
 void JComboBox::firePopupMenuWillBecomeVisible() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($PopupMenuEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -899,6 +905,7 @@ void JComboBox::firePopupMenuWillBecomeVisible() {
 }
 
 void JComboBox::firePopupMenuWillBecomeInvisible() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($PopupMenuEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -913,6 +920,7 @@ void JComboBox::firePopupMenuWillBecomeInvisible() {
 }
 
 void JComboBox::firePopupMenuCanceled() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($PopupMenuEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -1010,6 +1018,7 @@ void JComboBox::fireItemStateChanged($ItemEvent* e) {
 }
 
 void JComboBox::fireActionEvent() {
+	$useLocalCurrentObjectStackCache();
 	if (!this->firingActionEvent) {
 		this->firingActionEvent = true;
 		$var($ActionEvent, e, nullptr);
@@ -1047,6 +1056,7 @@ void JComboBox::fireActionEvent() {
 }
 
 void JComboBox::selectedItemChanged() {
+	$useLocalCurrentObjectStackCache();
 	if (this->selectedItemReminder != nullptr) {
 		fireItemStateChanged($$new($ItemEvent, this, $ItemEvent::ITEM_STATE_CHANGED, this->selectedItemReminder, $ItemEvent::DESELECTED));
 	}
@@ -1057,6 +1067,7 @@ void JComboBox::selectedItemChanged() {
 }
 
 $ObjectArray* JComboBox::getSelectedObjects() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, selectedObject, getSelectedItem());
 	if (selectedObject == nullptr) {
 		return $new($ObjectArray, 0);
@@ -1068,6 +1079,7 @@ $ObjectArray* JComboBox::getSelectedObjects() {
 }
 
 void JComboBox::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	setPopupVisible(false);
 	$nc($(getModel()))->setSelectedItem($($nc($(getEditor()))->getItem()));
 	$var($String, oldCommand, getActionCommand());
@@ -1077,6 +1089,7 @@ void JComboBox::actionPerformed($ActionEvent* e) {
 }
 
 void JComboBox::contentsChanged($ListDataEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, oldSelection, this->selectedItemReminder);
 	$var($Object, newSelection, $nc(this->dataModel)->getSelectedItem());
 	if (oldSelection == nullptr || !$nc($of(oldSelection))->equals(newSelection)) {
@@ -1130,6 +1143,7 @@ void JComboBox::processKeyEvent($KeyEvent* e) {
 }
 
 bool JComboBox::processKeyBinding($KeyStroke* ks, $KeyEvent* e, int32_t condition, bool pressed) {
+	$useLocalCurrentObjectStackCache();
 	if ($JComponent::processKeyBinding(ks, e, condition, pressed)) {
 		return true;
 	}
@@ -1179,6 +1193,7 @@ void JComboBox::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JComboBox::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, selectedItemReminderString, this->selectedItemReminder != nullptr ? $nc($of(this->selectedItemReminder))->toString() : ""_s);
 	$var($String, isEditableString, this->isEditable$ ? "true"_s : "false"_s);
 	$var($String, lightWeightPopupEnabledString, this->lightWeightPopupEnabled ? "true"_s : "false"_s);

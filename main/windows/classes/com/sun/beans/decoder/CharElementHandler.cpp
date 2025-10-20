@@ -52,6 +52,7 @@ void CharElementHandler::init$() {
 }
 
 void CharElementHandler::addAttribute($String* name, $String* value) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(name)->equals("code"_s)) {
 		int32_t code = $nc($($Integer::decode(value)))->intValue();
 		{

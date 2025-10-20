@@ -76,6 +76,7 @@ $ints* GroupLayout$1::$SwitchMap$java$awt$Component$BaselineResizeBehavior = nul
 $ints* GroupLayout$1::$SwitchMap$javax$swing$GroupLayout$Alignment = nullptr;
 
 void clinit$GroupLayout$1($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(GroupLayout$1::$SwitchMap$java$awt$Component$BaselineResizeBehavior, $new($ints, $($Component$BaselineResizeBehavior::values())->length));
 	{
 		try {

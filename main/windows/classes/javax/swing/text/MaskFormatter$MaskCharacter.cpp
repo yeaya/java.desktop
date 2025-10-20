@@ -93,6 +93,7 @@ char16_t MaskFormatter$MaskCharacter::getChar(char16_t aChar) {
 }
 
 void MaskFormatter$MaskCharacter::append($StringBuilder* buff, $String* formatting, $ints* index, $String* placeholder) {
+	$useLocalCurrentObjectStackCache();
 	bool inString = $nc(index)->get(0) < $nc(formatting)->length();
 	char16_t aChar = inString ? formatting->charAt(index->get(0)) : (char16_t)0;
 	if (isLiteral()) {

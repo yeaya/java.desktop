@@ -78,6 +78,7 @@ void SynthTreeUI$ExpandedIconWrapper::init$($SynthTreeUI* this$0) {
 }
 
 void SynthTreeUI$ExpandedIconWrapper::paintIcon($SynthContext* context$renamed, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, context$renamed);
 	if (context == nullptr) {
 		$assign(context, this->this$0->getContext($($SynthTreeUI::access$100(this->this$0))));
@@ -88,6 +89,7 @@ void SynthTreeUI$ExpandedIconWrapper::paintIcon($SynthContext* context$renamed, 
 }
 
 int32_t SynthTreeUI$ExpandedIconWrapper::getIconWidth($SynthContext* context$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, context$renamed);
 	int32_t width = 0;
 	if (context == nullptr) {
@@ -100,6 +102,7 @@ int32_t SynthTreeUI$ExpandedIconWrapper::getIconWidth($SynthContext* context$ren
 }
 
 int32_t SynthTreeUI$ExpandedIconWrapper::getIconHeight($SynthContext* context$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, context$renamed);
 	int32_t height = 0;
 	if (context == nullptr) {

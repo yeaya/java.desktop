@@ -114,6 +114,7 @@ void WindowsLookAndFeel$SkinIcon::init$($TMSchema$Part* part, $TMSchema$State* s
 }
 
 void WindowsLookAndFeel$SkinIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (!WindowsLookAndFeel$SkinIcon::$assertionsDisabled && !(xp != nullptr)) {
 		$throwNew($AssertionError);
@@ -125,6 +126,7 @@ void WindowsLookAndFeel$SkinIcon::paintIcon($Component* c, $Graphics* g, int32_t
 }
 
 int32_t WindowsLookAndFeel$SkinIcon::getIconWidth() {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = 0;
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (!WindowsLookAndFeel$SkinIcon::$assertionsDisabled && !(xp != nullptr)) {
@@ -138,6 +140,7 @@ int32_t WindowsLookAndFeel$SkinIcon::getIconWidth() {
 }
 
 int32_t WindowsLookAndFeel$SkinIcon::getIconHeight() {
+	$useLocalCurrentObjectStackCache();
 	int32_t height = 0;
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {

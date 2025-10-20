@@ -125,6 +125,7 @@ void ShortMessage::init$($bytes* data) {
 }
 
 void ShortMessage::setMessage(int32_t status) {
+	$useLocalCurrentObjectStackCache();
 	int32_t dataLength = getDataLength(status);
 	if (dataLength != 0) {
 		$throwNew($InvalidMidiDataException, $$str({"Status byte; "_s, $$str(status), " requires "_s, $$str(dataLength), " data bytes"_s}));
@@ -133,6 +134,7 @@ void ShortMessage::setMessage(int32_t status) {
 }
 
 void ShortMessage::setMessage(int32_t status, int32_t data1, int32_t data2) {
+	$useLocalCurrentObjectStackCache();
 	int32_t dataLength = getDataLength(status);
 	if (dataLength > 0) {
 		if (data1 < 0 || data1 > 127) {
@@ -158,6 +160,7 @@ void ShortMessage::setMessage(int32_t status, int32_t data1, int32_t data2) {
 }
 
 void ShortMessage::setMessage(int32_t command, int32_t channel, int32_t data1, int32_t data2) {
+	$useLocalCurrentObjectStackCache();
 	if (command >= 240 || command < 128) {
 		$throwNew($InvalidMidiDataException, $$str({"command out of range: 0x"_s, $($Integer::toHexString(command))}));
 	}
@@ -196,6 +199,7 @@ $Object* ShortMessage::clone() {
 }
 
 int32_t ShortMessage::getDataLength(int32_t status) {
+	$useLocalCurrentObjectStackCache();
 	switch (status) {
 	case 246:
 		{}

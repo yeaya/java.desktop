@@ -69,6 +69,7 @@ void ImageIO$ContainsFilter::init$($Method* method, $String* name) {
 }
 
 bool ImageIO$ContainsFilter::filter(Object$* elt) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		return $ImageIO::contains($cast($StringArray, $($nc(this->method)->invoke(elt, $$new($ObjectArray, 0)))), this->name);

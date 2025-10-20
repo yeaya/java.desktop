@@ -1387,6 +1387,7 @@ bool WindowsLookAndFeel::isSupportedLookAndFeel() {
 }
 
 void WindowsLookAndFeel::initialize() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$BasicLookAndFeel::initialize();
 	$init($OSInfo);
@@ -1407,6 +1408,7 @@ void WindowsLookAndFeel::initialize() {
 }
 
 void WindowsLookAndFeel::initClassDefaults($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$BasicLookAndFeel::initClassDefaults(table);
 	$var($String, windowsPackageName, "com.sun.java.swing.plaf.windows."_s);
 	$var($ObjectArray, uiDefaults, $new($ObjectArray, {
@@ -1549,6 +1551,7 @@ void WindowsLookAndFeel::initResourceBundle($UIDefaults* table) {
 }
 
 void WindowsLookAndFeel::initComponentDefaults($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$BasicLookAndFeel::initComponentDefaults(table);
 	initResourceBundle(table);
@@ -3460,6 +3463,7 @@ bool WindowsLookAndFeel::isOnWindows7() {
 }
 
 void WindowsLookAndFeel::initVistaComponentDefaults($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	if (!isOnVista()) {
 		return;
 	}
@@ -3601,6 +3605,7 @@ $Object* WindowsLookAndFeel::getDesktopFontValue($String* fontName, Object$* bac
 }
 
 $ObjectArray* WindowsLookAndFeel::getLazyValueDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$init($TMSchema$Part);
 	$var($Object, buttonBorder, $new($WindowsLookAndFeel$XPBorderValue, $TMSchema$Part::BP_PUSHBUTTON, static_cast<$UIDefaults$LazyValue*>($$new(WindowsLookAndFeel$$Lambda$lambda$getLazyValueDefaults$9$9))));
 	$var($Object, textFieldBorder, $new($WindowsLookAndFeel$XPBorderValue, $TMSchema$Part::EP_EDIT, static_cast<$UIDefaults$LazyValue*>($$new(WindowsLookAndFeel$$Lambda$lambda$getLazyValueDefaults$10$10))));
@@ -3718,6 +3723,7 @@ $ObjectArray* WindowsLookAndFeel::getLazyValueDefaults() {
 }
 
 void WindowsLookAndFeel::uninitialize() {
+	$useLocalCurrentObjectStackCache();
 	$BasicLookAndFeel::uninitialize();
 	$init($WindowsPopupMenuUI);
 	if ($WindowsPopupMenuUI::mnemonicListener != nullptr) {
@@ -3764,6 +3770,7 @@ $LayoutStyle* WindowsLookAndFeel::getLayoutStyle() {
 }
 
 $Action* WindowsLookAndFeel::createAudioAction(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	if (key != nullptr) {
 		$var($String, audioKey, $cast($String, key));
 		$var($String, audioValue, $cast($String, $UIManager::get(key)));
@@ -3775,6 +3782,7 @@ $Action* WindowsLookAndFeel::createAudioAction(Object$* key) {
 
 void WindowsLookAndFeel::repaintRootPane($Component* c$renamed) {
 	$init(WindowsLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, c$renamed);
 	$var($JRootPane, root, nullptr);
 	for (; c != nullptr; $assign(c, $nc(c)->getParent())) {
@@ -3803,6 +3811,7 @@ int32_t WindowsLookAndFeel::dluToPixels(int32_t dlu, int32_t direction) {
 }
 
 void WindowsLookAndFeel::calculateBaseUnits() {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, metrics, $nc($($Toolkit::getDefaultToolkit()))->getFontMetrics($($UIManager::getFont("Button.font"_s))));
 	this->baseUnitX = $nc(metrics)->stringWidth("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"_s);
 	this->baseUnitX = (this->baseUnitX / 26 + 1) / 2;
@@ -3811,6 +3820,7 @@ void WindowsLookAndFeel::calculateBaseUnits() {
 }
 
 $Icon* WindowsLookAndFeel::getDisabledIcon($JComponent* component, $Icon* icon) {
+	$useLocalCurrentObjectStackCache();
 	$init($Boolean);
 	bool var$1 = icon != nullptr && component != nullptr && $nc($Boolean::TRUE)->equals($(component->getClientProperty(WindowsLookAndFeel::HI_RES_DISABLED_ICON_CLIENT_KEY)));
 	bool var$0 = var$1 && icon->getIconWidth() > 0;
@@ -3942,6 +3952,7 @@ $Object* WindowsLookAndFeel::lambda$initVistaComponentDefaults$6($UIDefaults* t)
 }
 
 $Object* WindowsLookAndFeel::lambda$initComponentDefaults$5($UIDefaults* t) {
+	$useLocalCurrentObjectStackCache();
 		$load($BasicLookAndFeel);
 	return $of($new($WindowsInternalFrameTitlePane$ScalableIconUIResource, $$new($ObjectArray, {
 		$($SwingUtilities2::makeIcon($of(this)->getClass(), $BasicLookAndFeel::class$, "icons/JavaCup16.png"_s)),

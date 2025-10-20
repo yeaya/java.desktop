@@ -119,6 +119,7 @@ void AllSwingComponentsBaselineTest::init$() {
 }
 
 void AllSwingComponentsBaselineTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -137,6 +138,7 @@ void AllSwingComponentsBaselineTest::main($StringArray* args) {
 }
 
 void AllSwingComponentsBaselineTest::test() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, nullptr);
 	{
 		$var($Throwable, var$0, nullptr);

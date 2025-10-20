@@ -154,6 +154,7 @@ void GraphicsPrimitiveMgr::register$($GraphicsPrimitiveArray* newPrimitives) {
 	$load(GraphicsPrimitiveMgr);
 	$synchronized(class$) {
 		$init(GraphicsPrimitiveMgr);
+		$useLocalCurrentObjectStackCache();
 		$var($GraphicsPrimitiveArray, devCollection, GraphicsPrimitiveMgr::primitives);
 		int32_t oldSize = 0;
 		int32_t newSize = $nc(newPrimitives)->length;
@@ -218,6 +219,7 @@ $GraphicsPrimitive* GraphicsPrimitiveMgr::locatePrim(int32_t primTypeID, $Surfac
 	$load(GraphicsPrimitiveMgr);
 	$synchronized(class$) {
 		$init(GraphicsPrimitiveMgr);
+		$useLocalCurrentObjectStackCache();
 		$var($SurfaceType, src, nullptr);
 		$var($SurfaceType, dst, nullptr);
 		$var($CompositeType, cmp, nullptr);
@@ -240,6 +242,7 @@ $GraphicsPrimitive* GraphicsPrimitiveMgr::locatePrim(int32_t primTypeID, $Surfac
 
 $GraphicsPrimitive* GraphicsPrimitiveMgr::locateGeneral(int32_t primTypeID) {
 	$init(GraphicsPrimitiveMgr);
+	$useLocalCurrentObjectStackCache();
 	if (GraphicsPrimitiveMgr::generalPrimitives == nullptr) {
 		return nullptr;
 	}
@@ -254,6 +257,7 @@ $GraphicsPrimitive* GraphicsPrimitiveMgr::locateGeneral(int32_t primTypeID) {
 
 $GraphicsPrimitive* GraphicsPrimitiveMgr::locate($GraphicsPrimitiveMgr$PrimitiveSpec* spec) {
 	$init(GraphicsPrimitiveMgr);
+	$useLocalCurrentObjectStackCache();
 	if (GraphicsPrimitiveMgr::needssort) {
 		$init($GraphicsPrimitive);
 		if ($GraphicsPrimitive::traceflags != 0) {
@@ -291,6 +295,7 @@ void GraphicsPrimitiveMgr::testPrimitiveInstantiation() {
 
 void GraphicsPrimitiveMgr::testPrimitiveInstantiation(bool verbose) {
 	$init(GraphicsPrimitiveMgr);
+	$useLocalCurrentObjectStackCache();
 	int32_t resolved = 0;
 	int32_t unresolved = 0;
 	$var($GraphicsPrimitiveArray, prims, GraphicsPrimitiveMgr::primitives);

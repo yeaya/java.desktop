@@ -70,6 +70,7 @@ void RealTimeSequencer$RecordingTrack::init$($Track* track, int32_t channel) {
 }
 
 RealTimeSequencer$RecordingTrack* RealTimeSequencer$RecordingTrack::get($List* recordingTracks, $Track* track) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(recordingTracks) {
 		int32_t size = $nc(recordingTracks)->size();
 		for (int32_t i = 0; i < size; ++i) {
@@ -83,6 +84,7 @@ RealTimeSequencer$RecordingTrack* RealTimeSequencer$RecordingTrack::get($List* r
 }
 
 $Track* RealTimeSequencer$RecordingTrack::get($List* recordingTracks, int32_t channel) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(recordingTracks) {
 		int32_t size = $nc(recordingTracks)->size();
 		for (int32_t i = 0; i < size; ++i) {

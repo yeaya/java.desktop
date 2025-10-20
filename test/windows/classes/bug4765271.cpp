@@ -179,6 +179,7 @@ void bug4765271::init$(bool showFrame) {
 }
 
 void bug4765271::init() {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println($$str({"res = "_s, $$str(bug4765271::RES)}));
 	$set(this, jep, $new($JEditorPane));
@@ -200,6 +201,7 @@ void bug4765271::init() {
 }
 
 void bug4765271::test() {
+	$useLocalCurrentObjectStackCache();
 	$var($Shape, r, $nc(this->jep)->getBounds());
 	$var($View, v, $nc($($cast($TextUI, $nc(this->jep)->getUI())))->getRootView(this->jep));
 	while (!($instanceOf($InlineView, v))) {
@@ -244,6 +246,7 @@ void bug4765271::test() {
 
 void bug4765271::main($StringArray* args) {
 	$init(bug4765271);
+	$useLocalCurrentObjectStackCache();
 	$var(bug4765271, test, $new(bug4765271, ($nc(args)->length > 0) && "-show"_s->equals(args->get(0))));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4765271$$Lambda$lambda$main$0, test)));
 	if (!$nc(test->passed)->get()) {

@@ -76,6 +76,7 @@ void PerformanceLogger$1::init$() {
 }
 
 $Object* PerformanceLogger$1::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($PerformanceLogger);
 		$var($File, logFile, $new($File, $PerformanceLogger::logFileName));

@@ -277,6 +277,7 @@ void JTextAreaWordWrapTest::init$() {
 }
 
 void JTextAreaWordWrapTest::doWrapOnTest() {
+	$useLocalCurrentObjectStackCache();
 	$init(JTextAreaWordWrapTest);
 	$assignStatic(JTextAreaWordWrapTest::frame, $new($JFrame));
 	$nc(JTextAreaWordWrapTest::frame)->setSize(720, 300);
@@ -296,6 +297,7 @@ void JTextAreaWordWrapTest::doWrapOnTest() {
 }
 
 void JTextAreaWordWrapTest::doWrapOffTest() {
+	$useLocalCurrentObjectStackCache();
 	$init(JTextAreaWordWrapTest);
 	$assignStatic(JTextAreaWordWrapTest::frame1, $new($JFrame));
 	$nc(JTextAreaWordWrapTest::frame1)->setSize(720, 300);
@@ -314,6 +316,7 @@ void JTextAreaWordWrapTest::doWrapOffTest() {
 }
 
 void JTextAreaWordWrapTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$System::setProperty("sun.java2d.uiScale"_s, "1.25"_s);
 	{
 		$var($Throwable, var$0, nullptr);
@@ -346,6 +349,7 @@ void JTextAreaWordWrapTest::lambda$main$3() {
 }
 
 void JTextAreaWordWrapTest::lambda$main$2() {
+	$useLocalCurrentObjectStackCache();
 	$init(JTextAreaWordWrapTest);
 	int32_t wraponHeight = $nc(JTextAreaWordWrapTest::textArea)->getHeight();
 	$init($System);

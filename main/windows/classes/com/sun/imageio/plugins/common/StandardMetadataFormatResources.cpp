@@ -45,6 +45,7 @@ void StandardMetadataFormatResources::init$() {
 }
 
 $ObjectArray2* StandardMetadataFormatResources::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("Chroma"_s),

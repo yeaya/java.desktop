@@ -73,6 +73,7 @@ void bug4666224$DumpAction::init$($bug4666224* this$0) {
 }
 
 void bug4666224$DumpAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->this$0->tabPane)->getTabCount(); ++i) {
 		$init($System);
 		$nc($System::out)->println($$str({"Tab: "_s, $$str(i), " "_s, $($nc($($cast($TabbedPaneUI, $nc(this->this$0->tabPane)->getUI())))->getTabBounds(this->this$0->tabPane, i))}));

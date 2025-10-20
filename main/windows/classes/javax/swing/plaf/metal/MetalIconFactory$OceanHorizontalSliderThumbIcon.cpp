@@ -140,6 +140,7 @@ void MetalIconFactory$OceanHorizontalSliderThumbIcon::init$() {
 }
 
 void MetalIconFactory$OceanHorizontalSliderThumbIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($Graphics2D, g))) {
 		return;
 	}
@@ -164,6 +165,7 @@ $Image* MetalIconFactory$OceanHorizontalSliderThumbIcon::createImage($Component*
 }
 
 void MetalIconFactory$OceanHorizontalSliderThumbIcon::paintToImage($Component* c, $Image* image, $Graphics* g2, int32_t w, int32_t h, $ObjectArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics2D, g, $cast($Graphics2D, g2));
 	bool hasFocus = $nc(($cast($Boolean, $nc(args)->get(0))))->booleanValue();
 	bool enabled = $nc(($cast($Boolean, args->get(1))))->booleanValue();
@@ -207,6 +209,7 @@ int32_t MetalIconFactory$OceanHorizontalSliderThumbIcon::getIconHeight() {
 }
 
 void clinit$MetalIconFactory$OceanHorizontalSliderThumbIcon($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$assignStatic(MetalIconFactory$OceanHorizontalSliderThumbIcon::THUMB_SHAPE, $new($Polygon, $$new($ints, {
 			0,

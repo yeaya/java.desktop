@@ -80,6 +80,7 @@ void BasicOptionPaneUI$ButtonActionListener::init$($BasicOptionPaneUI* this$0, i
 }
 
 void BasicOptionPaneUI$ButtonActionListener::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->optionPane != nullptr) {
 		int32_t optionType = $nc(this->this$0->optionPane)->getOptionType();
 		$var($ObjectArray, options, $nc(this->this$0->optionPane)->getOptions());

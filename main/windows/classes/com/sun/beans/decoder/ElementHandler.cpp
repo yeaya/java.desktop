@@ -98,6 +98,7 @@ $Object* ElementHandler::getVariable($String* id) {
 }
 
 $Object* ElementHandler::getContextBean() {
+	$useLocalCurrentObjectStackCache();
 	if (this->parent != nullptr) {
 		$var($ValueObject, value, $nc(this->parent)->getValueObject());
 		if (!$nc(value)->isVoid()) {
@@ -125,6 +126,7 @@ void ElementHandler::startElement() {
 }
 
 void ElementHandler::endElement() {
+	$useLocalCurrentObjectStackCache();
 	$var($ValueObject, value, getValueObject());
 	if (!$nc(value)->isVoid()) {
 		if (this->id != nullptr) {
@@ -141,6 +143,7 @@ void ElementHandler::endElement() {
 }
 
 void ElementHandler::addCharacter(char16_t ch) {
+	$useLocalCurrentObjectStackCache();
 	if ((ch != u' ') && (ch != u'\n') && (ch != u'\t') && (ch != u'\r')) {
 		$throwNew($IllegalStateException, $$str({"Illegal character with code "_s, $$str((int32_t)ch)}));
 	}

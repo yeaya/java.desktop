@@ -69,6 +69,7 @@ void AbstractMidiDeviceProvider$Info::init$($String* name, $String* vendor, $Str
 }
 
 bool AbstractMidiDeviceProvider$Info::equalStrings(AbstractMidiDeviceProvider$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	bool var$2 = info != nullptr && $nc($(getName()))->equals($(info->getName()));
 	bool var$1 = var$2 && $nc($(getVendor()))->equals($(info->getVendor()));
 	bool var$0 = var$1 && $nc($(getDescription()))->equals($(info->getDescription()));

@@ -119,6 +119,7 @@ $Object* allocate$MotifInternalFrameTitlePane$Title($Class* clazz) {
 }
 
 void MotifInternalFrameTitlePane$Title::init$($MotifInternalFrameTitlePane* this$0, $String* title) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$MotifInternalFrameTitlePane$FrameButton::init$(this$0);
 	setText(title);
@@ -130,6 +131,7 @@ void MotifInternalFrameTitlePane$Title::init$($MotifInternalFrameTitlePane* this
 }
 
 void MotifInternalFrameTitlePane$Title::forwardEventToParent($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, var$0, static_cast<$Component*>(getParent()));
 	int32_t var$1 = $nc(e)->getID();
 	int64_t var$2 = e->getWhen();
@@ -146,6 +148,7 @@ void MotifInternalFrameTitlePane$Title::forwardEventToParent($MouseEvent* e) {
 }
 
 void MotifInternalFrameTitlePane$Title::paintComponent($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$MotifInternalFrameTitlePane$FrameButton::paintComponent(g);
 	if ($nc($($MotifInternalFrameTitlePane::access$300(this->this$0)))->isSelected()) {
 		$nc(g)->setColor($($UIManager::getColor("activeCaptionText"_s)));

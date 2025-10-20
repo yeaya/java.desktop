@@ -284,6 +284,7 @@ void bug4310381::init() {
 
 void bug4310381::main($StringArray* args) {
 	$init(bug4310381);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug4310381::testLatch, $new($CountDownLatch, 1));
 	$assignStatic(bug4310381::test, $new($TestUI, bug4310381::testLatch));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4310381$$Lambda$lambda$main$0)));
@@ -324,6 +325,7 @@ void bug4310381::disposeUI() {
 
 void bug4310381::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(bug4310381);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 	} catch ($ClassNotFoundException&) {
@@ -347,6 +349,7 @@ void bug4310381::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 
 void bug4310381::showUI() {
 	$init(bug4310381);
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc(bug4310381::frame)->getContentPane()))->add(static_cast<$Component*>(bug4310381::tab));
 	$nc(bug4310381::frame)->setDefaultCloseOperation($JFrame::DISPOSE_ON_CLOSE);
 	$nc(bug4310381::frame)->setLocationRelativeTo(nullptr);
@@ -357,6 +360,7 @@ void bug4310381::showUI() {
 
 void bug4310381::createContentPane() {
 	$init(bug4310381);
+	$useLocalCurrentObjectStackCache();
 	$var($String, a2z, "abcdefghijklmnopqrstuvwxyz"_s);
 	$nc(bug4310381::tab)->addTab($$str({"0"_s, a2z, a2z}), $$new($JLabel, $$str({$($nc(($($UIManager::getLookAndFeel())))->getName()), " Look and Feel"_s})));
 	$nc(bug4310381::tab)->addTab($$str({"1"_s, a2z}), $$new($JLabel, $$str({"1"_s, a2z})));

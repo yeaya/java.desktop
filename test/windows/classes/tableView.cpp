@@ -157,6 +157,7 @@ void tableView::paintChild($Graphics* g, $Rectangle* alloc, int32_t index) {
 }
 
 $View* tableView::create($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, kind, $nc(elem)->getName());
 	if (kind != nullptr) {
 		$init($CodeBugDocument);

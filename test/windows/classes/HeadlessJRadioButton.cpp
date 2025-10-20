@@ -116,6 +116,7 @@ void HeadlessJRadioButton::init$() {
 }
 
 void HeadlessJRadioButton::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JRadioButton, rb, $new($JRadioButton));
 	rb->getAccessibleContext();
 	rb->isFocusTraversable();

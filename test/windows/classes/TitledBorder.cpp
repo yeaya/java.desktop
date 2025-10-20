@@ -99,6 +99,7 @@ void TitledBorder::init$($CountDownLatch* latch) {
 }
 
 void TitledBorder::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		createUI();
 	} catch ($Exception&) {

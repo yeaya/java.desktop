@@ -117,6 +117,7 @@ $JPanel* Test4252164::createUI() {
 }
 
 void Test4252164::update(int32_t thickness) {
+	$useLocalCurrentObjectStackCache();
 	this->thickness += thickness;
 	$init($Color);
 	$nc(this->rounded)->setBorder($$new($LineBorder, $Color::RED, this->thickness, true));

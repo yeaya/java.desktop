@@ -84,6 +84,7 @@ void PSPrinterJob$PrinterOpener::init$($PSPrinterJob* this$0) {
 }
 
 $Object* PSPrinterJob$PrinterOpener::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$set(this->this$0, spoolFile, $nc($($Files::createTempFile("javaprint"_s, ".ps"_s, $$new($FileAttributeArray, 0))))->toFile());
 		$nc(this->this$0->spoolFile)->deleteOnExit();

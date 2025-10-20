@@ -139,6 +139,7 @@ void ProgressMonitor::init$($Component* parentComponent, Object$* message, $Stri
 }
 
 void ProgressMonitor::setProgress(int32_t nv) {
+	$useLocalCurrentObjectStackCache();
 	if (nv >= this->max) {
 		close();
 	} else if (this->myBar != nullptr) {
@@ -206,6 +207,7 @@ void ProgressMonitor::setMaximum(int32_t m) {
 }
 
 bool ProgressMonitor::isCanceled() {
+	$useLocalCurrentObjectStackCache();
 	if (this->pane == nullptr) {
 		return false;
 	}

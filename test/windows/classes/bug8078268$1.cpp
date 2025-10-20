@@ -71,6 +71,7 @@ void bug8078268$1::init$() {
 }
 
 void bug8078268$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($HTMLEditorKit, htmlKit, $new($HTMLEditorKit));
 	$var($Document, doc, htmlKit->createDefaultDocument());
 	try {

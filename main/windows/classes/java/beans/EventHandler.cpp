@@ -174,6 +174,7 @@ $String* EventHandler::getListenerMethodName() {
 }
 
 $Object* EventHandler::applyGetters(Object$* target, $String* getters) {
+	$useLocalCurrentObjectStackCache();
 	if (getters == nullptr || $nc(getters)->isEmpty()) {
 		return $of(target);
 	}
@@ -209,6 +210,7 @@ $Object* EventHandler::applyGetters(Object$* target, $String* getters) {
 }
 
 $Object* EventHandler::invoke(Object$* proxy, $Method* method, $ObjectArray* arguments) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($AccessControlContext, acc, this->acc);
 	if ((acc == nullptr) && ($System::getSecurityManager() != nullptr)) {
@@ -218,6 +220,7 @@ $Object* EventHandler::invoke(Object$* proxy, $Method* method, $ObjectArray* arg
 }
 
 $Object* EventHandler::invokeInternal(Object$* proxy, $Method* method, $ObjectArray* arguments) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, methodName, $nc(method)->getName());
 	$load($Object);
 	if (method->getDeclaringClass() == $Object::class$) {
@@ -282,6 +285,7 @@ $Object* EventHandler::create($Class* listenerInterface, Object$* target, $Strin
 
 $Object* EventHandler::create($Class* listenerInterface, Object$* target, $String* action, $String* eventPropertyName, $String* listenerMethodName) {
 	$init(EventHandler);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var(EventHandler, handler, $new(EventHandler, target, action, eventPropertyName, listenerMethodName));
 	if (listenerInterface == nullptr) {
@@ -294,6 +298,7 @@ $Object* EventHandler::create($Class* listenerInterface, Object$* target, $Strin
 
 $ClassLoader* EventHandler::getClassLoader($Class* type) {
 	$init(EventHandler);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$ReflectUtil::checkPackageAccess(type);
 	$var($ClassLoader, loader, $nc(type)->getClassLoader());

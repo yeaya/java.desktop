@@ -95,6 +95,7 @@ void AbstractMidiDeviceProvider::init$() {
 
 void AbstractMidiDeviceProvider::readDeviceInfos() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($AbstractMidiDeviceProvider$InfoArray, infos, getInfoCache());
 		$var($MidiDeviceArray, devices, getDeviceCache());
 		if (!AbstractMidiDeviceProvider::enabled) {
@@ -144,6 +145,7 @@ void AbstractMidiDeviceProvider::readDeviceInfos() {
 }
 
 $MidiDevice$InfoArray* AbstractMidiDeviceProvider::getDeviceInfo() {
+	$useLocalCurrentObjectStackCache();
 	readDeviceInfos();
 	$var($AbstractMidiDeviceProvider$InfoArray, infos, getInfoCache());
 	$var($MidiDevice$InfoArray, localArray, $new($MidiDevice$InfoArray, $nc(infos)->length));
@@ -152,6 +154,7 @@ $MidiDevice$InfoArray* AbstractMidiDeviceProvider::getDeviceInfo() {
 }
 
 $MidiDevice* AbstractMidiDeviceProvider::getDevice($MidiDevice$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(info);
 	if ($instanceOf($AbstractMidiDeviceProvider$Info, info)) {
 		readDeviceInfos();

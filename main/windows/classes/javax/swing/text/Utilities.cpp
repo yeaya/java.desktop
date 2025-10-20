@@ -292,6 +292,7 @@ int32_t Utilities::drawTabbedText($View* view, $Segment* s, int32_t x, int32_t y
 }
 
 float Utilities::drawTabbedText($View* view, $Segment* s, float x, float y, $Graphics* g, $TabExpander* e, int32_t startOffset, $ints* justificationData, bool useFPAPI) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, component, getJComponent(view));
 	$var($FontMetrics, metrics, $SwingUtilities2::getFontMetrics(component, g));
 	float nextX = x;
@@ -370,6 +371,7 @@ float Utilities::getTabbedTextWidth($View* view, $Segment* s, $FontMetrics* metr
 }
 
 float Utilities::getTabbedTextWidth($View* view, $Segment* s, $FontMetrics* metrics, float x, $TabExpander* e, int32_t startOffset, $ints* justificationData, bool useFPAPI) {
+	$useLocalCurrentObjectStackCache();
 	float nextX = x;
 	$var($chars, txt, $nc(s)->array);
 	int32_t txtOffset = s->offset;
@@ -439,6 +441,7 @@ int32_t Utilities::getTabbedTextOffset($Segment* s, $FontMetrics* metrics, float
 }
 
 int32_t Utilities::getTabbedTextOffset($View* view, $Segment* s, $FontMetrics* metrics, float x0, float x, $TabExpander* e, int32_t startOffset, bool round, $ints* justificationData, bool useFPAPI) {
+	$useLocalCurrentObjectStackCache();
 	if (x0 >= x) {
 		return 0;
 	}
@@ -517,6 +520,7 @@ int32_t Utilities::getBreakLocation($Segment* s, $FontMetrics* metrics, int32_t 
 }
 
 int32_t Utilities::getBreakLocation($Segment* s, $FontMetrics* metrics, float x0, float x, $TabExpander* e, int32_t startOffset, bool useFPIAPI) {
+	$useLocalCurrentObjectStackCache();
 	$var($chars, txt, $nc(s)->array);
 	int32_t txtOffset = s->offset;
 	int32_t txtCount = s->count;
@@ -566,6 +570,7 @@ int32_t Utilities::getRowStart($JTextComponent* c, int32_t offs) {
 }
 
 int32_t Utilities::getRowEnd($JTextComponent* c, int32_t offs) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, r, $nc(c)->modelToView2D(offs));
 	if (r == nullptr) {
 		return -1;
@@ -624,6 +629,7 @@ int32_t Utilities::getPositionBelow($JTextComponent* c, int32_t offs, int32_t x)
 }
 
 int32_t Utilities::getPositionBelow($JTextComponent* c, int32_t offs, float x, bool useFPAPI) {
+	$useLocalCurrentObjectStackCache();
 	int32_t lastOffs = getRowEnd(c, offs) + 1;
 	if (lastOffs <= 0) {
 		return -1;
@@ -657,6 +663,7 @@ int32_t Utilities::getPositionBelow($JTextComponent* c, int32_t offs, float x) {
 }
 
 int32_t Utilities::getWordStart($JTextComponent* c, int32_t offs) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(c)->getDocument());
 	$var($Element, line, getParagraphElement(c, offs));
 	if (line == nullptr) {
@@ -682,6 +689,7 @@ int32_t Utilities::getWordStart($JTextComponent* c, int32_t offs) {
 }
 
 int32_t Utilities::getWordEnd($JTextComponent* c, int32_t offs) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(c)->getDocument());
 	$var($Element, line, getParagraphElement(c, offs));
 	if (line == nullptr) {
@@ -716,6 +724,7 @@ int32_t Utilities::getNextWord($JTextComponent* c, int32_t offs) {
 }
 
 int32_t Utilities::getNextWordInParagraph($JTextComponent* c, $Element* line, int32_t offs, bool first) {
+	$useLocalCurrentObjectStackCache();
 	if (line == nullptr) {
 		$throwNew($BadLocationException, "No more words"_s, offs);
 	}
@@ -764,6 +773,7 @@ int32_t Utilities::getPreviousWord($JTextComponent* c, int32_t offs) {
 }
 
 int32_t Utilities::getPrevWordInParagraph($JTextComponent* c, $Element* line, int32_t offs) {
+	$useLocalCurrentObjectStackCache();
 	if (line == nullptr) {
 		$throwNew($BadLocationException, "No more words"_s, offs);
 	}
@@ -800,6 +810,7 @@ int32_t Utilities::getPrevWordInParagraph($JTextComponent* c, $Element* line, in
 }
 
 $Element* Utilities::getParagraphElement($JTextComponent* c, int32_t offs) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(c)->getDocument());
 	if ($instanceOf($StyledDocument, doc)) {
 		return $nc(($cast($StyledDocument, doc)))->getParagraphElement(offs);
@@ -841,6 +852,7 @@ float Utilities::drawComposedText($View* view, $AttributeSet* attr, $Graphics* g
 }
 
 float Utilities::drawComposedText($View* view, $AttributeSet* attr, $Graphics* g, float x, float y, int32_t p0, int32_t p1, bool useFPAPI) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics2D, g2d, $cast($Graphics2D, g));
 	$init($StyleConstants);
 	$var($AttributedString, as, $cast($AttributedString, $nc(attr)->getAttribute($StyleConstants::ComposedTextAttribute)));
@@ -854,6 +866,7 @@ float Utilities::drawComposedText($View* view, $AttributeSet* attr, $Graphics* g
 }
 
 void Utilities::paintComposedText($Graphics* g, $Rectangle* alloc, $GlyphView* v) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Graphics2D, g)) {
 		$var($Graphics2D, g2d, $cast($Graphics2D, g));
 		int32_t p0 = $nc(v)->getStartOffset();
@@ -895,6 +908,7 @@ bool Utilities::isLeftToRight($Component* c) {
 }
 
 int32_t Utilities::getNextVisualPositionFrom($View* v, int32_t pos, $Position$Bias* b, $Shape* alloc, int32_t direction, $Position$BiasArray* biasRet) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(v)->getViewCount() == 0) {
 		return pos;
 	}

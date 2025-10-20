@@ -191,6 +191,7 @@ void JSpinner$AccessibleJSpinner::init$($JSpinner* this$0) {
 }
 
 void JSpinner$AccessibleJSpinner::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (e == nullptr) {
 		$throwNew($NullPointerException);
 	}
@@ -282,6 +283,7 @@ bool JSpinner$AccessibleJSpinner::setCurrentAccessibleValue($Number* n) {
 }
 
 $Number* JSpinner$AccessibleJSpinner::getMinimumAccessibleValue() {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($SpinnerNumberModel, this->this$0->model)) {
 		$var($SpinnerNumberModel, numberModel, $cast($SpinnerNumberModel, this->this$0->model));
 		$var($Object, o, $nc(numberModel)->getMinimum());
@@ -293,6 +295,7 @@ $Number* JSpinner$AccessibleJSpinner::getMinimumAccessibleValue() {
 }
 
 $Number* JSpinner$AccessibleJSpinner::getMaximumAccessibleValue() {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($SpinnerNumberModel, this->this$0->model)) {
 		$var($SpinnerNumberModel, numberModel, $cast($SpinnerNumberModel, this->this$0->model));
 		$var($Object, o, $nc(numberModel)->getMaximum());
@@ -345,6 +348,7 @@ bool JSpinner$AccessibleJSpinner::sameWindowAncestor($Component* src, $Component
 }
 
 int32_t JSpinner$AccessibleJSpinner::getIndexAtPoint($Point* p) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleText, at, getEditorAccessibleText());
 	if (at != nullptr && sameWindowAncestor(this->this$0, this->this$0->editor)) {
 		$var($Point, editorPoint, $SwingUtilities::convertPoint(this->this$0, p, this->this$0->editor));
@@ -356,6 +360,7 @@ int32_t JSpinner$AccessibleJSpinner::getIndexAtPoint($Point* p) {
 }
 
 $Rectangle* JSpinner$AccessibleJSpinner::getCharacterBounds(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleText, at, getEditorAccessibleText());
 	if (at != nullptr) {
 		$var($Rectangle, editorRect, at->getCharacterBounds(i));

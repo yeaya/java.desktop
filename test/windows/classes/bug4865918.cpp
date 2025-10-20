@@ -146,6 +146,7 @@ void bug4865918::init$() {
 }
 
 void bug4865918::main($StringArray* argv) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -173,12 +174,14 @@ void bug4865918::main($StringArray* argv) {
 }
 
 int32_t bug4865918::getValue() {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, result, $new($ints, 1));
 	$SwingUtilities::invokeAndWait($$new($bug4865918$3, result));
 	return result->get(0);
 }
 
 void bug4865918::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug4865918);
 	$assignStatic(bug4865918::frame, $new($JFrame, "bug4865918"_s));
 	$nc(bug4865918::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);

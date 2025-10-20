@@ -96,6 +96,7 @@ void StyledEditorKit$ForegroundAction::init$($String* nm, $Color* fg) {
 }
 
 void StyledEditorKit$ForegroundAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, editor, getEditor(e));
 	if (editor != nullptr) {
 		$var($Color, fg, this->fg);

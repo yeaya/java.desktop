@@ -101,6 +101,7 @@ void PSPrinterJob$PrinterSpooler::init$($PSPrinterJob* this$0) {
 }
 
 void PSPrinterJob$PrinterSpooler::handleProcessFailure($Process* failedProcess, $StringArray* execCmd, int32_t result) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($StringWriter, sw, $new($StringWriter));
 		{
@@ -260,6 +261,7 @@ void PSPrinterJob$PrinterSpooler::handleProcessFailure($Process* failedProcess, 
 }
 
 $Object* PSPrinterJob$PrinterSpooler::run() {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->spoolFile == nullptr || !$nc(this->this$0->spoolFile)->exists()) {
 		$set(this, pex, $new($PrinterException, "No spool file"_s));
 		return $of(nullptr);

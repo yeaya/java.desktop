@@ -86,6 +86,7 @@ void Win32GraphicsDevice$Win32FSWindowAdapter::init$($Win32GraphicsDevice* devic
 }
 
 void Win32GraphicsDevice$Win32FSWindowAdapter::setFSWindowsState($Window* other, int32_t state) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsDeviceArray, gds, $nc($($GraphicsEnvironment::getLocalGraphicsEnvironment()))->getScreenDevices());
 	if (other != nullptr) {
 		{

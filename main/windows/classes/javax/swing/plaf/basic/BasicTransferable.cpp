@@ -118,6 +118,7 @@ void BasicTransferable::init$($String* plainData, $String* htmlData) {
 }
 
 $DataFlavorArray* BasicTransferable::getTransferDataFlavors() {
+	$useLocalCurrentObjectStackCache();
 	$var($DataFlavorArray, richerFlavors, getRicherFlavors());
 	int32_t nRicher = (richerFlavors != nullptr) ? $nc(richerFlavors)->length : 0;
 	int32_t nHTML = (isHTMLSupported()) ? $nc(BasicTransferable::htmlFlavors)->length : 0;
@@ -156,6 +157,7 @@ bool BasicTransferable::isDataFlavorSupported($DataFlavor* flavor) {
 }
 
 $Object* BasicTransferable::getTransferData($DataFlavor* flavor) {
+	$useLocalCurrentObjectStackCache();
 	$var($DataFlavorArray, richerFlavors, getRicherFlavors());
 	if (isRicherFlavor(flavor)) {
 		return $of(getRicherData(flavor));
@@ -202,6 +204,7 @@ $Object* BasicTransferable::getTransferData($DataFlavor* flavor) {
 }
 
 $InputStream* BasicTransferable::createInputStream($DataFlavor* flavor, $String* data) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, cs, $DataFlavorUtil::getTextCharset(flavor));
 	if (cs == nullptr) {
 		$throwNew($UnsupportedFlavorException, flavor);
@@ -275,6 +278,7 @@ bool BasicTransferable::isStringFlavor($DataFlavor* flavor) {
 }
 
 void clinit$BasicTransferable($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	{
 		try {
 			$assignStatic(BasicTransferable::htmlFlavors, $new($DataFlavorArray, 3));

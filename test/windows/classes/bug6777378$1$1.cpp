@@ -80,6 +80,7 @@ int32_t bug6777378$1$1::getColumnCount() {
 }
 
 $Object* bug6777378$1$1::getValueAt(int32_t rowIndex, int32_t columnIndex) {
+	$useLocalCurrentObjectStackCache();
 	return $of($str({""_s, $$str(rowIndex), " "_s, $$str(columnIndex)}));
 }
 

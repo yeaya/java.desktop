@@ -509,6 +509,7 @@ $PrinterName* Win32PrintService::getPrinterName() {
 }
 
 int32_t Win32PrintService::findPaperID($MediaSizeName* msn) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Win32MediaSize, msn)) {
 		$var($Win32MediaSize, winMedia, $cast($Win32MediaSize, msn));
 		return $nc(winMedia)->getDMPaper();
@@ -557,6 +558,7 @@ int32_t Win32PrintService::findTrayID($MediaTray* tray) {
 }
 
 $MediaTray* Win32PrintService::findMediaTray(int32_t dmBin) {
+	$useLocalCurrentObjectStackCache();
 	if (dmBin >= 1 && dmBin <= $nc(Win32PrintService::dmPaperBinToPrintService)->length) {
 		return $nc(Win32PrintService::dmPaperBinToPrintService)->get(dmBin - 1);
 	}
@@ -616,6 +618,7 @@ bool Win32PrintService::addToUniqueList($ArrayList* msnList, $MediaSizeName* med
 
 void Win32PrintService::initMedia() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->mediaInitialized == true) {
 			return;
 		}
@@ -698,6 +701,7 @@ void Win32PrintService::initMedia() {
 
 $MediaPrintableAreaArray* Win32PrintService::getMediaPrintables($MediaSizeName* msn) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (msn == nullptr) {
 			if (this->mpaListInitialized == true) {
 				return this->mediaPrintables;
@@ -771,6 +775,7 @@ $MediaPrintableAreaArray* Win32PrintService::getMediaPrintables($MediaSizeName* 
 
 $MediaTrayArray* Win32PrintService::getMediaTrays() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->gotTrays == true && this->mediaTrays != nullptr) {
 			return this->mediaTrays;
 		}
@@ -842,6 +847,7 @@ $MediaSizeName* Win32PrintService::findMatchingMediaSizeNameMM(float w, float h)
 }
 
 $MediaSizeArray* Win32PrintService::getMediaSizes($ArrayList* idList, $ints* media, $ArrayList* dmPaperNameList$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, dmPaperNameList, dmPaperNameList$renamed);
 	if (dmPaperNameList == nullptr) {
 		$assign(dmPaperNameList, $new($ArrayList));
@@ -1030,6 +1036,7 @@ $ints* Win32PrintService::getDefaultPrinterSettings() {
 }
 
 $PrinterResolutionArray* Win32PrintService::getPrintResolutions() {
+	$useLocalCurrentObjectStackCache();
 	if (this->printRes == nullptr) {
 		$var($ints, prnRes, getAllResolutions(this->printer, $(getPort())));
 		if (prnRes == nullptr) {
@@ -1073,6 +1080,7 @@ $DocPrintJob* Win32PrintService::createPrintJob() {
 }
 
 $PrintServiceAttributeSet* Win32PrintService::getDynamicAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($PrintServiceAttributeSet, attrs, $new($HashPrintServiceAttributeSet));
 	attrs->add($(getPrinterIsAcceptingJobs()));
 	attrs->add($(getQueuedJobCount()));
@@ -1080,6 +1088,7 @@ $PrintServiceAttributeSet* Win32PrintService::getDynamicAttributes() {
 }
 
 $PrintServiceAttributeSet* Win32PrintService::getUpdatedAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($PrintServiceAttributeSet, currSet, getDynamicAttributes());
 	if (this->lastSet == nullptr) {
 		$set(this, lastSet, currSet);
@@ -1180,6 +1189,7 @@ $PrintServiceAttribute* Win32PrintService::getAttribute($Class* category) {
 }
 
 $PrintServiceAttributeSet* Win32PrintService::getAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($PrintServiceAttributeSet, attrs, $new($HashPrintServiceAttributeSet));
 	attrs->add($(getPrinterName()));
 	attrs->add($(getPrinterIsAcceptingJobs()));
@@ -1239,6 +1249,7 @@ bool Win32PrintService::isDocFlavorSupported($DocFlavor* flavor) {
 }
 
 $ClassArray* Win32PrintService::getSupportedAttributeCategories() {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, categList, $new($ArrayList, $nc(Win32PrintService::otherAttrCats)->length + 3));
 	for (int32_t i = 0; i < $nc(Win32PrintService::otherAttrCats)->length; ++i) {
 		categList->add($nc(Win32PrintService::otherAttrCats)->get(i));
@@ -1270,6 +1281,7 @@ $ClassArray* Win32PrintService::getSupportedAttributeCategories() {
 }
 
 bool Win32PrintService::isAttributeCategorySupported($Class* category) {
+	$useLocalCurrentObjectStackCache();
 	if (category == nullptr) {
 		$throwNew($NullPointerException, "null category"_s);
 	}
@@ -1287,6 +1299,7 @@ bool Win32PrintService::isAttributeCategorySupported($Class* category) {
 }
 
 $Object* Win32PrintService::getDefaultAttributeValue($Class* category) {
+	$useLocalCurrentObjectStackCache();
 	if (category == nullptr) {
 		$throwNew($NullPointerException, "null category"_s);
 	}
@@ -1547,6 +1560,7 @@ bool Win32PrintService::isAutoSense($DocFlavor* flavor) {
 }
 
 $Object* Win32PrintService::getSupportedAttributeValues($Class* category, $DocFlavor* flavor, $AttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	if (category == nullptr) {
 		$throwNew($NullPointerException, "null category"_s);
 	}
@@ -1810,6 +1824,7 @@ $Object* Win32PrintService::getSupportedAttributeValues($Class* category, $DocFl
 }
 
 bool Win32PrintService::isAttributeValueSupported($Attribute* attr, $DocFlavor* flavor, $AttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	if (attr == nullptr) {
 		$throwNew($NullPointerException, "null attribute"_s);
 	}
@@ -1984,6 +1999,7 @@ bool Win32PrintService::isAttributeValueSupported($Attribute* attr, $DocFlavor* 
 }
 
 $AttributeSet* Win32PrintService::getUnsupportedAttributes($DocFlavor* flavor, $AttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	if (flavor != nullptr && !isDocFlavorSupported(flavor)) {
 		$throwNew($IllegalArgumentException, $$str({"flavor "_s, flavor, " is not supported"_s}));
 	}
@@ -2032,6 +2048,7 @@ $String* Win32PrintService::toString() {
 }
 
 bool Win32PrintService::equals(Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	return ($equals(obj, this) || ($instanceOf(Win32PrintService, obj) && $nc($($nc(($cast(Win32PrintService, obj)))->getName()))->equals($(getName()))));
 }
 

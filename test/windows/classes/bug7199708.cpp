@@ -120,6 +120,7 @@ void bug7199708::init$() {
 
 void bug7199708::main($StringArray* args) {
 	$init(bug7199708);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(50);
 	{
@@ -160,6 +161,7 @@ void bug7199708::main($StringArray* args) {
 
 void bug7199708::doAction($Component* component, $bug7199708$ComponentAction* action) {
 	$init(bug7199708);
+	$useLocalCurrentObjectStackCache();
 	if ($nc(action)->accept(component)) {
 		action->perform(component);
 	} else if ($instanceOf($Container, component)) {
@@ -179,6 +181,7 @@ void bug7199708::doAction($Component* component, $bug7199708$ComponentAction* ac
 
 $File* bug7199708::createLargeFolder() {
 	$init(bug7199708);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$assignStatic(bug7199708::largeFolder, $nc($($Files::createTempDirectory("large_folder"_s, $$new($FileAttributeArray, 0))))->toFile());
 		for (int32_t i = 0; i < bug7199708::FILE_NUMBER; ++i) {

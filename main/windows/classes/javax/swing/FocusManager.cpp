@@ -98,6 +98,7 @@ void FocusManager::setCurrentManager(FocusManager* aFocusManager) {
 
 void FocusManager::disableSwingFocusManager() {
 	$init(FocusManager);
+	$useLocalCurrentObjectStackCache();
 	if (FocusManager::enabled) {
 		FocusManager::enabled = false;
 		$nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->setDefaultFocusTraversalPolicy($$new($DefaultFocusTraversalPolicy));

@@ -124,6 +124,7 @@ void ActionPropertyChangeListener::init$($JComponent* c, $Action* a) {
 }
 
 void ActionPropertyChangeListener::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, target, getTarget());
 	if (target == nullptr) {
 		$nc($(getAction()))->removePropertyChangeListener(this);
@@ -133,6 +134,7 @@ void ActionPropertyChangeListener::propertyChange($PropertyChangeEvent* e) {
 }
 
 void ActionPropertyChangeListener::setTarget($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($ReferenceQueue, queue, getQueue());
 	$var($ActionPropertyChangeListener$OwnedWeakReference, r, nullptr);
 	while (($assign(r, $cast($ActionPropertyChangeListener$OwnedWeakReference, $nc(queue)->poll()))) != nullptr) {

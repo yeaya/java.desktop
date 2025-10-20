@@ -99,6 +99,7 @@ int32_t GlyphLayout$LayoutEngineKey::lang() {
 }
 
 bool GlyphLayout$LayoutEngineKey::equals(Object$* rhs) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals(this, rhs)) {
 		return true;
 	}

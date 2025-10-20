@@ -136,6 +136,7 @@ void FontEditor::finalize() {
 }
 
 void FontEditor::init$() {
+	$useLocalCurrentObjectStackCache();
 	$Panel::init$();
 	$set(this, sampleText, "Abcde..."_s);
 	$set(this, styleNames, $new($StringArray, {
@@ -190,6 +191,7 @@ $Dimension* FontEditor::preferredSize() {
 }
 
 void FontEditor::setValue(Object$* o) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, font, $cast($Font, o));
 	if (this->font == nullptr) {
 		return;
@@ -239,6 +241,7 @@ $Object* FontEditor::getValue() {
 }
 
 $String* FontEditor::getJavaInitializationString() {
+	$useLocalCurrentObjectStackCache();
 	if (this->font == nullptr) {
 		return "null"_s;
 	}
@@ -250,6 +253,7 @@ $String* FontEditor::getJavaInitializationString() {
 }
 
 bool FontEditor::action($Event* e, Object$* arg) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, family, $nc(this->familyChoser)->getSelectedItem());
 	int32_t style = $nc(this->styles)->get($nc(this->styleChoser)->getSelectedIndex());
 	int32_t size = $nc(this->pointSizes)->get($nc(this->sizeChoser)->getSelectedIndex());
@@ -269,6 +273,7 @@ bool FontEditor::isPaintable() {
 }
 
 void FontEditor::paintValue($Graphics* gfx, $Rectangle* box) {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, oldFont, $nc(gfx)->getFont());
 	gfx->setFont(this->font);
 	$var($FontMetrics, fm, gfx->getFontMetrics());
@@ -278,6 +283,7 @@ void FontEditor::paintValue($Graphics* gfx, $Rectangle* box) {
 }
 
 $String* FontEditor::getAsText() {
+	$useLocalCurrentObjectStackCache();
 	if (this->font == nullptr) {
 		return nullptr;
 	}

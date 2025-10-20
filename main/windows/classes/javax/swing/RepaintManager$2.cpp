@@ -92,6 +92,7 @@ void RepaintManager$2::init$($RepaintManager* this$0, $Component* val$c, $Runnab
 }
 
 void RepaintManager$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessControlContext, stack, $AccessController::getContext());
 	$var($AccessControlContext, acc, $nc($($AWTAccessor::getComponentAccessor()))->getAccessControlContext(this->val$c));
 	$init($RepaintManager);

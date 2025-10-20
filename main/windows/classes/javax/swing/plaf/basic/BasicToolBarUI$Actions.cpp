@@ -89,6 +89,7 @@ void BasicToolBarUI$Actions::init$($String* name) {
 }
 
 void BasicToolBarUI$Actions::actionPerformed($ActionEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, key, getName());
 	$var($JToolBar, toolBar, $cast($JToolBar, $nc(evt)->getSource()));
 	$load($BasicToolBarUI);

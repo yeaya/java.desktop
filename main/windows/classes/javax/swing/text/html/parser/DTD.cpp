@@ -178,6 +178,7 @@ $Element* DTD::getElement(int32_t index) {
 }
 
 $Entity* DTD::defineEntity($String* name, int32_t type, $chars* data) {
+	$useLocalCurrentObjectStackCache();
 	$var($Entity, ent, $cast($Entity, $nc(this->entityHash)->get(name)));
 	if (ent == nullptr) {
 		$assign(ent, $new($Entity, name, type, data));
@@ -227,6 +228,7 @@ $Entity* DTD::defEntity($String* name, int32_t type, $String* str) {
 }
 
 $Element* DTD::defElement($String* name, int32_t type, bool omitStart, bool omitEnd, $ContentModel* content, $StringArray* exclusions, $StringArray* inclusions, $AttributeList* atts) {
+	$useLocalCurrentObjectStackCache();
 	$var($BitSet, excl, nullptr);
 	if (exclusions != nullptr && exclusions->length > 0) {
 		$assign(excl, $new($BitSet));
@@ -265,6 +267,7 @@ $Element* DTD::defElement($String* name, int32_t type, bool omitStart, bool omit
 }
 
 $AttributeList* DTD::defAttributeList($String* name, int32_t type, int32_t modifier, $String* value, $String* values, $AttributeList* atts) {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, vals, nullptr);
 	if (values != nullptr) {
 		$assign(vals, $new($Vector));
@@ -296,6 +299,7 @@ void DTD::putDTDHash($String* name, DTD* dtd) {
 
 DTD* DTD::getDTD($String* name$renamed) {
 	$init(DTD);
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, name$renamed);
 	$assign(name, $nc(name)->toLowerCase());
 	$var(DTD, dtd, $cast(DTD, $nc($(getDtdHash()))->get(name)));
@@ -307,6 +311,7 @@ DTD* DTD::getDTD($String* name$renamed) {
 
 $Hashtable* DTD::getDtdHash() {
 	$init(DTD);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var($Hashtable, result, $cast($Hashtable, $nc(appContext)->get(DTD::DTD_HASH_KEY)));
 	if (result == nullptr) {
@@ -317,6 +322,7 @@ $Hashtable* DTD::getDtdHash() {
 }
 
 void DTD::read($DataInputStream* in) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(in)->readInt() != DTD::FILE_VERSION) {
 	}
 	$var($StringArray, names, $new($StringArray, $nc(in)->readShort()));
@@ -344,6 +350,7 @@ void DTD::read($DataInputStream* in) {
 }
 
 $ContentModel* DTD::readContentModel($DataInputStream* in, $StringArray* names) {
+	$useLocalCurrentObjectStackCache();
 	int8_t flag = $nc(in)->readByte();
 	switch (flag) {
 	case 0:
@@ -388,6 +395,7 @@ $StringArray* DTD::readNameArray($DataInputStream* in, $StringArray* names) {
 }
 
 $AttributeList* DTD::readAttributeList($DataInputStream* in, $StringArray* names) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeList, result, nullptr);
 	for (int32_t num = $nc(in)->readByte(); num > 0; --num) {
 		int16_t nameId = in->readShort();

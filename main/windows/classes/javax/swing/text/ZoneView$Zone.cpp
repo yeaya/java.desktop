@@ -114,6 +114,7 @@ void ZoneView$Zone::init$($ZoneView* this$0, $Element* elem, $Position* start, $
 }
 
 void ZoneView$Zone::load() {
+	$useLocalCurrentObjectStackCache();
 	if (!isLoaded()) {
 		setEstimatedMajorSpan(true);
 		$var($Element, e, getElement());
@@ -139,6 +140,7 @@ bool ZoneView$Zone::isLoaded() {
 }
 
 void ZoneView$Zone::loadChildren($ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	setEstimatedMajorSpan(true);
 	$var($Element, elem, getElement());
 	int32_t index0 = $nc(elem)->getElementIndex(getStartOffset());
@@ -173,6 +175,7 @@ int32_t ZoneView$Zone::getViewIndex(int32_t pos, $Position$Bias* b) {
 }
 
 bool ZoneView$Zone::updateChildren($DocumentEvent$ElementChange* ec, $DocumentEvent* e, $ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($ElementArray, removedElems, $nc(ec)->getChildrenRemoved());
 	$var($ElementArray, addedElems, ec->getChildrenAdded());
 	$var($Element, elem, getElement());

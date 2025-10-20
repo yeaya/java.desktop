@@ -242,6 +242,7 @@ void DNDTextToScaledArea::init$() {
 
 void DNDTextToScaledArea::main($StringArray* args) {
 	$init(DNDTextToScaledArea);
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsEnvironment, lge, $GraphicsEnvironment::getLocalGraphicsEnvironment());
 	{
 		$var($GraphicsDeviceArray, arr$, $nc(lge)->getScreenDevices());
@@ -258,6 +259,7 @@ void DNDTextToScaledArea::main($StringArray* args) {
 
 void DNDTextToScaledArea::test($GraphicsDevice* device) {
 	$init(DNDTextToScaledArea);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(150);
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(DNDTextToScaledArea$$Lambda$lambda$test$0, device)));
@@ -279,6 +281,7 @@ void DNDTextToScaledArea::test($GraphicsDevice* device) {
 
 void DNDTextToScaledArea::createAndShowGUI($GraphicsDevice* device) {
 	$init(DNDTextToScaledArea);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(DNDTextToScaledArea::frame, $new($JFrame, $($nc(device)->getDefaultConfiguration())));
 	$var($Rectangle, screen, $nc($($nc(device)->getDefaultConfiguration()))->getBounds());
 	int32_t x = $cast(int32_t, ($nc(screen)->getCenterX() - DNDTextToScaledArea::SIZE / 2));
@@ -298,6 +301,7 @@ void DNDTextToScaledArea::createAndShowGUI($GraphicsDevice* device) {
 
 $Point* DNDTextToScaledArea::getPoint($Component* component, double scale) {
 	$init(DNDTextToScaledArea);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, point, $nc(component)->getLocationOnScreen());
 	$var($Dimension, bounds, component->getSize());
 	$nc(point)->translate($cast(int32_t, ($nc(bounds)->width * scale)), $cast(int32_t, (bounds->height * scale)));

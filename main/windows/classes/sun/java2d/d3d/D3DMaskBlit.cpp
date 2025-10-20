@@ -76,6 +76,7 @@ $Object* allocate$D3DMaskBlit($Class* clazz) {
 
 void D3DMaskBlit::register$() {
 	$init(D3DMaskBlit);
+	$useLocalCurrentObjectStackCache();
 		$init($SurfaceType);
 		$init($CompositeType);
 	$var($GraphicsPrimitiveArray, primitives, $new($GraphicsPrimitiveArray, {

@@ -212,6 +212,7 @@ $Font* DefaultTreeCellEditor::getFont() {
 }
 
 $Component* DefaultTreeCellEditor::getTreeCellEditorComponent($JTree* tree, Object$* value, bool isSelected, bool expanded, bool leaf, int32_t row) {
+	$useLocalCurrentObjectStackCache();
 	setTree(tree);
 	this->lastRow = row;
 	determineOffset(tree, value, isSelected, expanded, leaf, row);
@@ -240,6 +241,7 @@ $Object* DefaultTreeCellEditor::getCellEditorValue() {
 }
 
 bool DefaultTreeCellEditor::isCellEditable($EventObject* event) {
+	$useLocalCurrentObjectStackCache();
 	bool retValue = false;
 	bool editable = false;
 	if (event != nullptr) {
@@ -375,6 +377,7 @@ bool DefaultTreeCellEditor::canEditImmediately($EventObject* event) {
 }
 
 bool DefaultTreeCellEditor::inHitRegion(int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	if (this->lastRow != -1 && this->tree != nullptr) {
 		$var($Rectangle, bounds, $nc(this->tree)->getRowBounds(this->lastRow));
 		$var($ComponentOrientation, treeOrientation, $nc(this->tree)->getComponentOrientation());
@@ -421,6 +424,7 @@ $Container* DefaultTreeCellEditor::createContainer() {
 }
 
 $TreeCellEditor* DefaultTreeCellEditor::createTreeCellEditor() {
+	$useLocalCurrentObjectStackCache();
 	$var($Border, aBorder, $UIManager::getBorder("Tree.editorBorder"_s));
 	$var($DefaultCellEditor, editor, $new($DefaultTreeCellEditor$1, this, $$new($DefaultTreeCellEditor$DefaultTextField, this, aBorder)));
 	editor->setClickCountToStart(1);

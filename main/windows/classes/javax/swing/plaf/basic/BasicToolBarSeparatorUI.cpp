@@ -70,6 +70,7 @@ $ComponentUI* BasicToolBarSeparatorUI::createUI($JComponent* c) {
 }
 
 void BasicToolBarSeparatorUI::installDefaults($JSeparator* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, $nc(($cast($JToolBar$Separator, s)))->getSeparatorSize());
 	if (size == nullptr || $instanceOf($UIResource, size)) {
 		$var($JToolBar$Separator, sep, $cast($JToolBar$Separator, s));

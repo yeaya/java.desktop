@@ -257,6 +257,7 @@ $Object* allocate$SoftVoice($Class* clazz) {
 }
 
 void SoftVoice::init$($SoftSynthesizer* synth) {
+	$useLocalCurrentObjectStackCache();
 	$VoiceStatus::init$();
 	this->exclusiveClass = 0;
 	this->releaseTriggered = false;
@@ -331,6 +332,7 @@ void SoftVoice::init$($SoftSynthesizer* synth) {
 }
 
 int32_t SoftVoice::getValueKC($ModelIdentifier* id) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc(id)->getObject()))->equals("midi_cc"_s)) {
 		int32_t ic = $Integer::parseInt($(id->getVariable()));
 		if (ic != 0 && ic != 32) {
@@ -350,6 +352,7 @@ int32_t SoftVoice::getValueKC($ModelIdentifier* id) {
 }
 
 $doubles* SoftVoice::getValue($ModelIdentifier* id) {
+	$useLocalCurrentObjectStackCache();
 	$var($SoftControl, o, $cast($SoftControl, $nc(this->objects)->get($($nc(id)->getObject()))));
 	if (o == nullptr) {
 		return nullptr;
@@ -398,6 +401,7 @@ double SoftVoice::processKeyBasedController(double value, int32_t keycontrol) {
 }
 
 void SoftVoice::processConnection(int32_t ix) {
+	$useLocalCurrentObjectStackCache();
 	$var($ModelConnectionBlock, conn, $nc(this->connections)->get(ix));
 	$var($doubleArray2, src, $nc(this->connections_src)->get(ix));
 	$var($doubles, dst, $nc(this->connections_dst)->get(ix));
@@ -452,6 +456,7 @@ void SoftVoice::setNote(int32_t noteNumber) {
 }
 
 void SoftVoice::noteOn(int32_t noteNumber, int32_t velocity, int32_t delay) {
+	$useLocalCurrentObjectStackCache();
 	this->sustain = false;
 	this->sostenuto = false;
 	this->portamento = false;
@@ -635,6 +640,7 @@ void SoftVoice::controlChange(int32_t controller, int32_t value) {
 }
 
 void SoftVoice::nrpnChange(int32_t controller, int32_t value) {
+	$useLocalCurrentObjectStackCache();
 	if (this->performer == nullptr) {
 		return;
 	}
@@ -648,6 +654,7 @@ void SoftVoice::nrpnChange(int32_t controller, int32_t value) {
 }
 
 void SoftVoice::rpnChange(int32_t controller, int32_t value) {
+	$useLocalCurrentObjectStackCache();
 	if (this->performer == nullptr) {
 		return;
 	}
@@ -756,6 +763,7 @@ void SoftVoice::redamp() {
 }
 
 void SoftVoice::processControlLogic() {
+	$useLocalCurrentObjectStackCache();
 	if (this->stopping) {
 		this->active = false;
 		this->stopping = false;
@@ -910,6 +918,7 @@ void SoftVoice::processControlLogic() {
 }
 
 void SoftVoice::mixAudioStream($SoftAudioBuffer* in, $SoftAudioBuffer* out, $SoftAudioBuffer* dout, float amp_from, float amp_to) {
+	$useLocalCurrentObjectStackCache();
 	int32_t bufferlen = $nc(in)->getSize();
 	if (amp_from < 1.0E-9 && amp_to < 1.0E-9) {
 		return;
@@ -961,6 +970,7 @@ void SoftVoice::mixAudioStream($SoftAudioBuffer* in, $SoftAudioBuffer* out, $Sof
 }
 
 void SoftVoice::processAudioLogic($SoftAudioBufferArray* buffer) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->audiostarted) {
 		return;
 	}

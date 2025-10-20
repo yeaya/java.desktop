@@ -116,6 +116,7 @@ $Object* allocate$MotifDesktopIconUI$IconLabel($Class* clazz) {
 }
 
 void MotifDesktopIconUI$IconLabel::init$($MotifDesktopIconUI* this$0, $JInternalFrame* f) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JPanel::init$();
 	$set(this, frame, f);
@@ -126,6 +127,7 @@ void MotifDesktopIconUI$IconLabel::init$($MotifDesktopIconUI* this$0, $JInternal
 }
 
 void MotifDesktopIconUI$IconLabel::forwardEventToParent($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, var$0, static_cast<$Component*>(getParent()));
 	int32_t var$1 = $nc(e)->getID();
 	int64_t var$2 = e->getWhen();
@@ -150,6 +152,7 @@ $Dimension* MotifDesktopIconUI$IconLabel::getMinimumSize() {
 }
 
 $Dimension* MotifDesktopIconUI$IconLabel::getPreferredSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, title, $nc(this->frame)->getTitle());
 	$init($MotifDesktopIconUI);
 	$var($FontMetrics, fm, $nc(this->frame)->getFontMetrics($MotifDesktopIconUI::defaultTitleFont));
@@ -161,6 +164,7 @@ $Dimension* MotifDesktopIconUI$IconLabel::getPreferredSize() {
 }
 
 void MotifDesktopIconUI$IconLabel::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$JPanel::paint(g);
 	int32_t maxX = getWidth() - 1;
 	$var($Color, shadow, $nc($($nc($($UIManager::getColor("inactiveCaptionBorder"_s)))->darker()))->darker());

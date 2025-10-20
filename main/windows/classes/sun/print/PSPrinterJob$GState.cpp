@@ -100,6 +100,7 @@ bool PSPrinterJob$GState::canSetClip($Shape* clip) {
 }
 
 void PSPrinterJob$GState::emitPSClip($Shape* clip) {
+	$useLocalCurrentObjectStackCache();
 	if (clip != nullptr && (this->mClip == nullptr || $nc($of(this->mClip))->equals(clip) == false)) {
 		$var($String, saveFillOp, this->this$0->mFillOpStr);
 		$var($String, saveClipOp, this->this$0->mClipOpStr);
@@ -112,6 +113,7 @@ void PSPrinterJob$GState::emitPSClip($Shape* clip) {
 }
 
 void PSPrinterJob$GState::emitTransform($AffineTransform* transform) {
+	$useLocalCurrentObjectStackCache();
 	if (transform != nullptr && transform->equals(this->mTransform) == false) {
 		$var($doubles, matrix, $new($doubles, 6));
 		transform->getMatrix(matrix);
@@ -121,6 +123,7 @@ void PSPrinterJob$GState::emitTransform($AffineTransform* transform) {
 }
 
 void PSPrinterJob$GState::emitPSColor($Color* color) {
+	$useLocalCurrentObjectStackCache();
 	if (color != nullptr && color->equals(this->mColor) == false) {
 		$var($floats, rgb, color->getRGBColorComponents(nullptr));
 		if ($nc(rgb)->get(0) == rgb->get(1) && rgb->get(1) == rgb->get(2)) {
@@ -133,6 +136,7 @@ void PSPrinterJob$GState::emitPSColor($Color* color) {
 }
 
 void PSPrinterJob$GState::emitPSFont(int32_t psFontIndex, float fontSize) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->this$0->mPSStream)->println($$str({$$str(fontSize), " "_s, $$str(psFontIndex), " "_s, "F"_s}));
 }
 

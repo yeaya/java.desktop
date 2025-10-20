@@ -157,6 +157,7 @@ int32_t DefaultMetalTheme::getDefaultFontSize(int32_t key) {
 
 int32_t DefaultMetalTheme::getDefaultFontStyle(int32_t key) {
 	$init(DefaultMetalTheme);
+	$useLocalCurrentObjectStackCache();
 	if (key != $MetalTheme::WINDOW_TITLE_FONT) {
 		$var($Object, boldMetal, nullptr);
 		$init($SwingUtilities2);
@@ -257,6 +258,7 @@ bool DefaultMetalTheme::isSystemTheme() {
 }
 
 void clinit$DefaultMetalTheme($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 		$init($Font);
 	$assignStatic(DefaultMetalTheme::fontNames, $new($StringArray, {

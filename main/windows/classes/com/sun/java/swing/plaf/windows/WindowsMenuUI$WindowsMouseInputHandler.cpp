@@ -85,6 +85,7 @@ void WindowsMenuUI$WindowsMouseInputHandler::init$($WindowsMenuUI* this$0) {
 }
 
 void WindowsMenuUI$WindowsMouseInputHandler::mouseEntered($MouseEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$BasicMenuUI$MouseInputHandler::mouseEntered(evt);
 	$var($JMenu, menu, $cast($JMenu, $nc(evt)->getSource()));
 	bool var$0 = this->this$0->hotTrackingOn && $nc(menu)->isTopLevelMenu();
@@ -95,6 +96,7 @@ void WindowsMenuUI$WindowsMouseInputHandler::mouseEntered($MouseEvent* evt) {
 }
 
 void WindowsMenuUI$WindowsMouseInputHandler::mouseExited($MouseEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$BasicMenuUI$MouseInputHandler::mouseExited(evt);
 	$var($JMenu, menu, $cast($JMenu, $nc(evt)->getSource()));
 	$var($ButtonModel, model, $nc(menu)->getModel());

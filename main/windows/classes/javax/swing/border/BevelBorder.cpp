@@ -106,6 +106,7 @@ void BevelBorder::init$(int32_t bevelType) {
 }
 
 void BevelBorder::init$(int32_t bevelType, $Color* highlight, $Color* shadow) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = bevelType;
 	$var($Color, var$1, $nc(highlight)->brighter());
 	$var($Color, var$2, highlight);
@@ -135,21 +136,25 @@ $Insets* BevelBorder::getBorderInsets($Component* c, $Insets* insets) {
 }
 
 $Color* BevelBorder::getHighlightOuterColor($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, highlight, getHighlightOuterColor());
 	return highlight != nullptr ? highlight : $nc($($nc($($nc(c)->getBackground()))->brighter()))->brighter();
 }
 
 $Color* BevelBorder::getHighlightInnerColor($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, highlight, getHighlightInnerColor());
 	return highlight != nullptr ? highlight : $nc($($nc(c)->getBackground()))->brighter();
 }
 
 $Color* BevelBorder::getShadowInnerColor($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, shadow, getShadowInnerColor());
 	return shadow != nullptr ? shadow : $nc($($nc(c)->getBackground()))->darker();
 }
 
 $Color* BevelBorder::getShadowOuterColor($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, shadow, getShadowOuterColor());
 	return shadow != nullptr ? shadow : $nc($($nc($($nc(c)->getBackground()))->darker()))->darker();
 }
@@ -179,6 +184,7 @@ bool BevelBorder::isBorderOpaque() {
 }
 
 void BevelBorder::paintRaisedBevel($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, oldColor, $nc(g)->getColor());
 	int32_t h = height;
 	int32_t w = width;
@@ -200,6 +206,7 @@ void BevelBorder::paintRaisedBevel($Component* c, $Graphics* g, int32_t x, int32
 }
 
 void BevelBorder::paintLoweredBevel($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, oldColor, $nc(g)->getColor());
 	int32_t h = height;
 	int32_t w = width;

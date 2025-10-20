@@ -310,6 +310,7 @@ void MetalScrollBarUI::paintThumb($Graphics* g, $JComponent* c, $Rectangle* thum
 }
 
 void MetalScrollBarUI::oceanPaintThumb($Graphics* g, $JComponent* c, $Rectangle* thumbBounds) {
+	$useLocalCurrentObjectStackCache();
 	bool leftToRight = $MetalUtils::isLeftToRight(c);
 	$nc(g)->translate($nc(thumbBounds)->x, thumbBounds->y);
 	if ($nc(this->scrollbar)->getOrientation() == $JScrollBar::VERTICAL) {

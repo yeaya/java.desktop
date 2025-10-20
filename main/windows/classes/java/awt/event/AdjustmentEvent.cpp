@@ -100,6 +100,7 @@ bool AdjustmentEvent::getValueIsAdjusting() {
 }
 
 $String* AdjustmentEvent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, typeStr, nullptr);
 	switch (this->id) {
 	case AdjustmentEvent::ADJUSTMENT_VALUE_CHANGED:

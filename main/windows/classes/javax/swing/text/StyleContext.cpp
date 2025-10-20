@@ -280,6 +280,7 @@ $Color* StyleContext::getBackground($AttributeSet* attr) {
 }
 
 $Font* StyleContext::getFont($String* family, int32_t style, int32_t size) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->fontSearch)->setValue(family, style, size);
 	$var($Font, f, $cast($Font, $nc(this->fontTable)->get(this->fontSearch)));
 	if (f == nullptr) {
@@ -418,6 +419,7 @@ void StyleContext::removeUnusedSets() {
 }
 
 $AttributeSet* StyleContext::getImmutableUniqueSet() {
+	$useLocalCurrentObjectStackCache();
 	$var($StyleContext$SmallAttributeSet, key, createSmallAttributeSet(this->search));
 	$var($WeakReference, reference, $cast($WeakReference, $nc(this->attributesPool)->get(key)));
 	$var($StyleContext$SmallAttributeSet, a, nullptr);
@@ -437,6 +439,7 @@ $MutableAttributeSet* StyleContext::getMutableAttributeSet($AttributeSet* a) {
 }
 
 $String* StyleContext::toString() {
+	$useLocalCurrentObjectStackCache();
 	removeUnusedSets();
 	$var($String, s, ""_s);
 	{
@@ -461,6 +464,7 @@ void StyleContext::readAttributes($ObjectInputStream* in, $MutableAttributeSet* 
 
 void StyleContext::writeAttributeSet($ObjectOutputStream* out, $AttributeSet* a) {
 	$init(StyleContext);
+	$useLocalCurrentObjectStackCache();
 	int32_t n = $nc(a)->getAttributeCount();
 	$nc(out)->writeInt(n);
 	$var($Enumeration, keys, a->getAttributeNames());
@@ -490,6 +494,7 @@ void StyleContext::writeAttributeSet($ObjectOutputStream* out, $AttributeSet* a)
 
 void StyleContext::readAttributeSet($ObjectInputStream* in, $MutableAttributeSet* a) {
 	$init(StyleContext);
+	$useLocalCurrentObjectStackCache();
 	int32_t n = $nc(in)->readInt();
 	for (int32_t i = 0; i < n; ++i) {
 		$var($Object, key, in->readObject());
@@ -510,6 +515,7 @@ void StyleContext::readAttributeSet($ObjectInputStream* in, $MutableAttributeSet
 
 void StyleContext::registerStaticAttributeKey(Object$* key) {
 	$init(StyleContext);
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $$str({$($nc($of(key))->getClass()->getName()), "."_s}));
 	$var($String, ioFmt, $concat(var$0, $($of(key)->toString())));
 	if (StyleContext::freezeKeyMap == nullptr) {
@@ -530,6 +536,7 @@ $Object* StyleContext::getStaticAttribute(Object$* key) {
 
 $Object* StyleContext::getStaticAttributeKey(Object$* key) {
 	$init(StyleContext);
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $$str({$($nc($of(key))->getClass()->getName()), "."_s}));
 	return $of($concat(var$0, $($of(key)->toString())));
 }
@@ -540,6 +547,7 @@ void StyleContext::writeObject($ObjectOutputStream* s) {
 }
 
 void StyleContext::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, fontSearch, $new($StyleContext$FontKey, nullptr, 0, 0));
 	$set(this, fontTable, $new($Hashtable));
 	$set(this, search, $new($SimpleAttributeSet));

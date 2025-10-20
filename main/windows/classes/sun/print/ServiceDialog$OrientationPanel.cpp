@@ -155,6 +155,7 @@ void ServiceDialog$OrientationPanel::finalize() {
 }
 
 void ServiceDialog$OrientationPanel::init$($ServiceDialog* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JPanel::init$();
 	$set(this, strTitle, $ServiceDialog::getMsg("border.orientation"_s));
@@ -207,6 +208,7 @@ void ServiceDialog$OrientationPanel::addOrientationListener($ServiceDialog$Margi
 }
 
 void ServiceDialog$OrientationPanel::updateInfo() {
+	$useLocalCurrentObjectStackCache();
 	$load($OrientationRequested);
 	$Class* orCategory = $OrientationRequested::class$;
 	bool pSupported = false;

@@ -79,6 +79,7 @@ void TestCCEOnEditEvent$3$1::init$($TestCCEOnEditEvent$3* this$1) {
 }
 
 void TestCCEOnEditEvent$3$1::fireUndoableEditUpdate($UndoableEditEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	for (int32_t index = $nc(listeners)->length - 2; index >= 0; index -= 2) {
 		$var($Object0, listenerType, listeners->get(index));

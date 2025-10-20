@@ -142,6 +142,7 @@ void DesktopProperty::setUpdatePending(bool update) {
 	$load(DesktopProperty);
 	$synchronized(class$) {
 		$init(DesktopProperty);
+		$useLocalCurrentObjectStackCache();
 		$nc($($AppContext::getAppContext()))->put(DesktopProperty::DESKTOP_PROPERTY_UPDATE_PENDING_KEY, $($Boolean::valueOf(update)));
 	}
 }
@@ -150,12 +151,14 @@ bool DesktopProperty::isUpdatePending() {
 	$load(DesktopProperty);
 	$synchronized(class$) {
 		$init(DesktopProperty);
+		$useLocalCurrentObjectStackCache();
 		$init($Boolean);
 		return $nc($Boolean::TRUE)->equals($($nc($($AppContext::getAppContext()))->get(DesktopProperty::DESKTOP_PROPERTY_UPDATE_PENDING_KEY)));
 	}
 }
 
 void DesktopProperty::updateAllUIs() {
+	$useLocalCurrentObjectStackCache();
 	$var($FrameArray, appFrames, $Frame::getFrames());
 	{
 		$var($FrameArray, arr$, appFrames);
@@ -172,6 +175,7 @@ void DesktopProperty::updateAllUIs() {
 
 void DesktopProperty::updateWindowUI($Window* window) {
 	$init(DesktopProperty);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::updateComponentTreeUI(window);
 	$var($WindowArray, ownedWins, $nc(window)->getOwnedWindows());
 	{
@@ -194,6 +198,7 @@ void DesktopProperty::init$($String* key, Object$* fallback) {
 }
 
 $Object* DesktopProperty::createValue($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	if (this->value == nullptr) {
 		$set(this, value, configureValue($(getValueFromDesktop())));
 		if (this->value == nullptr) {
@@ -204,6 +209,7 @@ $Object* DesktopProperty::createValue($UIDefaults* table) {
 }
 
 $Object* DesktopProperty::getValueFromDesktop() {
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());
 	if (this->pcl == nullptr) {
 		$var($String, var$0, getKey());

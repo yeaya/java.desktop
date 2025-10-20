@@ -94,6 +94,7 @@ int32_t MenuShortcut::hashCode() {
 }
 
 $String* MenuShortcut::toString() {
+	$useLocalCurrentObjectStackCache();
 	int32_t modifiers = 0;
 	if (!$GraphicsEnvironment::isHeadless()) {
 		modifiers = $nc($($Toolkit::getDefaultToolkit()))->getMenuShortcutKeyMaskEx();
@@ -106,6 +107,7 @@ $String* MenuShortcut::toString() {
 }
 
 $String* MenuShortcut::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, $str({"key="_s, $$str(this->key)}));
 	if (usesShiftModifier()) {
 		$plusAssign(str, ",usesShiftModifier"_s);

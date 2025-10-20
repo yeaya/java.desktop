@@ -78,6 +78,7 @@ void PNGImageDecoder$Chromaticities::init$(int32_t wx, int32_t wy, int32_t rx, i
 }
 
 $String* PNGImageDecoder$Chromaticities::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"Chromaticities(white="_s, $$str(this->whiteX), ","_s, $$str(this->whiteY), ";red="_s, $$str(this->redX), ","_s, $$str(this->redY), ";green="_s, $$str(this->greenX), ","_s, $$str(this->greenY), ";blue="_s, $$str(this->blueX), ","_s, $$str(this->blueY), 
 	")"_s});
 }

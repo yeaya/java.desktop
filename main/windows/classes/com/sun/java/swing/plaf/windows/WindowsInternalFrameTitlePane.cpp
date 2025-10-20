@@ -284,6 +284,7 @@ void WindowsInternalFrameTitlePane::addSubComponents() {
 }
 
 void WindowsInternalFrameTitlePane::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$BasicInternalFrameTitlePane::installDefaults();
 	this->titlePaneHeight = $UIManager::getInt("InternalFrame.titlePaneHeight"_s);
 	this->buttonWidth = $UIManager::getInt("InternalFrame.titleButtonWidth"_s) - 4;
@@ -330,6 +331,7 @@ void WindowsInternalFrameTitlePane::setButtonIcons() {
 }
 
 void WindowsInternalFrameTitlePane::paintComponent($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	paintTitleBackground(g);
 	$var($String, title, $nc(this->frame)->getTitle());
@@ -414,6 +416,7 @@ $Dimension* WindowsInternalFrameTitlePane::getPreferredSize() {
 }
 
 $Dimension* WindowsInternalFrameTitlePane::getMinimumSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, $new($Dimension, $($BasicInternalFrameTitlePane::getMinimumSize())));
 	d->height = this->titlePaneHeight + 2;
 	$var($XPStyle, xp, $XPStyle::getXP());
@@ -428,6 +431,7 @@ $Dimension* WindowsInternalFrameTitlePane::getMinimumSize() {
 }
 
 void WindowsInternalFrameTitlePane::paintTitleBackground($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$init($TMSchema$Part);
@@ -462,6 +466,7 @@ void WindowsInternalFrameTitlePane::paintTitleBackground($Graphics* g) {
 }
 
 void WindowsInternalFrameTitlePane::assembleSystemMenu() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, systemPopupMenu, $new($JPopupMenu));
 	addSystemMenuItems(this->systemPopupMenu);
 	enableActions();
@@ -471,6 +476,7 @@ void WindowsInternalFrameTitlePane::assembleSystemMenu() {
 }
 
 void WindowsInternalFrameTitlePane::addSystemMenuItems($JPopupMenu* menu) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuItem, mi, $nc(menu)->add(this->restoreAction));
 	$nc(mi)->setMnemonic(getButtonMnemonic("restore"_s));
 	$assign(mi, menu->add(this->moveAction));
@@ -488,6 +494,7 @@ void WindowsInternalFrameTitlePane::addSystemMenuItems($JPopupMenu* menu) {
 
 int32_t WindowsInternalFrameTitlePane::getButtonMnemonic($String* button) {
 	$init(WindowsInternalFrameTitlePane);
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $Integer::parseInt($($UIManager::getString($$str({"InternalFrameTitlePane."_s, button, "Button.mnemonic"_s}))));
 	} catch ($NumberFormatException&) {
@@ -502,6 +509,7 @@ void WindowsInternalFrameTitlePane::showSystemMenu() {
 }
 
 void WindowsInternalFrameTitlePane::showSystemPopupMenu($Component* invoker) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, dim, $new($Dimension));
 	$var($Border, border, $nc(this->frame)->getBorder());
 	if (border != nullptr) {

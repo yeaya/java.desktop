@@ -95,6 +95,7 @@ void JFormattedTextField$FocusLostHandler::init$($JFormattedTextField* this$0) {
 }
 
 void JFormattedTextField$FocusLostHandler::run() {
+	$useLocalCurrentObjectStackCache();
 	int32_t fb = this->this$0->getFocusLostBehavior();
 	if (fb == $JFormattedTextField::COMMIT || fb == $JFormattedTextField::COMMIT_OR_REVERT) {
 		try {

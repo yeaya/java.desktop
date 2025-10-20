@@ -89,6 +89,7 @@ void NimbusDefaults$ColorTree$Node::set($Color* color, NimbusDefaults$ColorTree$
 }
 
 void NimbusDefaults$ColorTree$Node::update() {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($DerivedColor, this->color)) {
 		$nc(($cast($DerivedColor, this->color)))->rederiveColor();
 	}

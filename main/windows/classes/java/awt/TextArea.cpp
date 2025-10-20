@@ -222,6 +222,7 @@ void TextArea::init$($String* text, int32_t rows, int32_t columns, int32_t scrol
 }
 
 $String* TextArea::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(TextArea::class$) {
 		$var($String, var$0, TextArea::base);
 		return $concat(var$0, $$str(TextArea::nameCounter++));
@@ -243,6 +244,7 @@ void TextArea::insert($String* str, int32_t pos) {
 
 void TextArea::insertText($String* str, int32_t pos) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($TextAreaPeer, peer, $cast($TextAreaPeer, this->peer));
 		if (peer != nullptr) {
 			peer->insert(str, pos);
@@ -268,6 +270,7 @@ void TextArea::replaceRange($String* str, int32_t start, int32_t end) {
 
 void TextArea::replaceText($String* str, int32_t start, int32_t end) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($TextAreaPeer, peer, $cast($TextAreaPeer, this->peer));
 		if (peer != nullptr) {
 			peer->replaceRange(str, start, end);
@@ -354,6 +357,7 @@ $Dimension* TextArea::minimumSize() {
 }
 
 $String* TextArea::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, sbVisStr, nullptr);
 	switch (this->scrollbarVisibility) {
 	case TextArea::SCROLLBARS_BOTH:
@@ -409,6 +413,7 @@ $AccessibleContext* TextArea::getAccessibleContext() {
 }
 
 void clinit$TextArea($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(TextArea::base, "text"_s);
 	TextArea::nameCounter = 0;
 	{

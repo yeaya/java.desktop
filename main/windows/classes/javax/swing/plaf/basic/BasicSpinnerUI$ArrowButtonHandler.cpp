@@ -211,6 +211,7 @@ $JSpinner* BasicSpinnerUI$ArrowButtonHandler::eventToSpinner($AWTEvent* e) {
 }
 
 void BasicSpinnerUI$ArrowButtonHandler::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JSpinner, spinner, this->spinner);
 	if (!($instanceOf($Timer, $($nc(e)->getSource())))) {
 		$assign(spinner, eventToSpinner(e));
@@ -248,6 +249,7 @@ void BasicSpinnerUI$ArrowButtonHandler::actionPerformed($ActionEvent* e) {
 }
 
 void BasicSpinnerUI$ArrowButtonHandler::select($JSpinner* spinner) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, editor, $nc(spinner)->getEditor());
 	if ($instanceOf($JSpinner$DateEditor, editor)) {
 		$var($JSpinner$DateEditor, dateEditor, $cast($JSpinner$DateEditor, editor));
@@ -272,6 +274,7 @@ void BasicSpinnerUI$ArrowButtonHandler::select($JSpinner* spinner) {
 }
 
 bool BasicSpinnerUI$ArrowButtonHandler::select($JFormattedTextField* ftf, $AttributedCharacterIterator* iterator, $DateFormat$Field* field) {
+	$useLocalCurrentObjectStackCache();
 	int32_t max = $nc($($nc(ftf)->getDocument()))->getLength();
 	$nc(iterator)->first();
 	do {
@@ -289,6 +292,7 @@ bool BasicSpinnerUI$ArrowButtonHandler::select($JFormattedTextField* ftf, $Attri
 }
 
 int32_t BasicSpinnerUI$ArrowButtonHandler::getCalendarField($JSpinner* spinner) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, editor, $nc(spinner)->getEditor());
 	if ($instanceOf($JSpinner$DateEditor, editor)) {
 		$var($JSpinner$DateEditor, dateEditor, $cast($JSpinner$DateEditor, editor));
@@ -348,6 +352,7 @@ void BasicSpinnerUI$ArrowButtonHandler::mouseExited($MouseEvent* e) {
 }
 
 void BasicSpinnerUI$ArrowButtonHandler::focusSpinnerIfNecessary() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, fo, $nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner());
 	bool var$0 = $nc(this->spinner)->isRequestFocusEnabled();
 	if (var$0 && (fo == nullptr || !$SwingUtilities::isDescendingFrom(fo, this->spinner))) {

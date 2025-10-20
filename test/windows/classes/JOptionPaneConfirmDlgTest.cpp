@@ -195,6 +195,7 @@ void JOptionPaneConfirmDlgTest::main($StringArray* args) {
 }
 
 void JOptionPaneConfirmDlgTest::init$() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, f, nullptr);
 	{
 		$var($Throwable, var$0, nullptr);
@@ -213,6 +214,7 @@ void JOptionPaneConfirmDlgTest::init$() {
 }
 
 void JOptionPaneConfirmDlgTest::createGUI() {
+	$useLocalCurrentObjectStackCache();
 	$JOptionPane::showMessageDialog(($Component*)nullptr, "An internalFrame with 2 buttons will be displayed. \n Press \"Hit me 1\" button. The bug causes a RuntimeException to be thrown here\n But If a confirmation dialog comes, test has passed\n Similarly, press \"Hit me 2\" button. The bug will cause a RuntimeException\n to be thrown here but if a confirmation dialog comes, test has passed.\n Close the dialog and frame."_s, "information"_s, $JOptionPane::INFORMATION_MESSAGE);
 	$set(this, f, $new($JFrame));
 	$set(this, textFrame, $new($JInternalFrame, "Main-Frame"_s, true));

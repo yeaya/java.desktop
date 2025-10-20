@@ -93,6 +93,7 @@ bool JTable$DropLocation::isInsertColumn() {
 }
 
 $String* JTable$DropLocation::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$9, $$str({$($of(this)->getClass()->getName()), "[dropPoint="_s}));
 	$var($String, var$8, $$concat(var$9, $(getDropPoint())));
 	$var($String, var$7, $$concat(var$8, ",row="));

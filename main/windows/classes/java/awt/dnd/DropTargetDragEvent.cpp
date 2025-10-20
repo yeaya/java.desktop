@@ -79,6 +79,7 @@ $Object* allocate$DropTargetDragEvent($Class* clazz) {
 }
 
 void DropTargetDragEvent::init$($DropTargetContext* dtc, $Point* cursorLocn, int32_t dropAction, int32_t srcActions) {
+	$useLocalCurrentObjectStackCache();
 	$DropTargetEvent::init$(dtc);
 	if (cursorLocn == nullptr) {
 		$throwNew($NullPointerException, "cursorLocn"_s);

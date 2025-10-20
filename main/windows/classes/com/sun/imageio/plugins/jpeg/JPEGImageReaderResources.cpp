@@ -53,6 +53,7 @@ void JPEGImageReaderResources::init$() {
 }
 
 $ObjectArray2* JPEGImageReaderResources::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$($of($Integer::toString($JPEGImageReader::WARNING_NO_EOI))),

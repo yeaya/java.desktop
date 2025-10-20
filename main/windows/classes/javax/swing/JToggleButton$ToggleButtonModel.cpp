@@ -84,6 +84,7 @@ bool JToggleButton$ToggleButtonModel::isSelected() {
 }
 
 void JToggleButton$ToggleButtonModel::setSelected(bool b) {
+	$useLocalCurrentObjectStackCache();
 	$var($ButtonGroup, group, getGroup());
 	if (group != nullptr) {
 		group->setSelected(this, b);
@@ -102,6 +103,7 @@ void JToggleButton$ToggleButtonModel::setSelected(bool b) {
 }
 
 void JToggleButton$ToggleButtonModel::setPressed(bool b) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = (isPressed() == b);
 	if (var$0 || !isEnabled()) {
 		return;

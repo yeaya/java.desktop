@@ -95,6 +95,7 @@ $Object* ParsedSynthStyle$StateInfo::clone() {
 }
 
 $DefaultSynthStyle$StateInfo* ParsedSynthStyle$StateInfo::addTo($DefaultSynthStyle$StateInfo* info$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultSynthStyle$StateInfo, info, info$renamed);
 	if (!($instanceOf(ParsedSynthStyle$StateInfo, info))) {
 		$assign(info, $new(ParsedSynthStyle$StateInfo, info));
@@ -107,6 +108,7 @@ $DefaultSynthStyle$StateInfo* ParsedSynthStyle$StateInfo::addTo($DefaultSynthSty
 }
 
 $String* ParsedSynthStyle$StateInfo::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, text, $new($StringBuilder, $($DefaultSynthStyle$StateInfo::toString())));
 	text->append(",painters=["_s);
 	if (this->_painterInfo != nullptr) {

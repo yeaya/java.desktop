@@ -90,6 +90,7 @@ void bug6578666::init$() {
 }
 
 void bug6578666::createGui() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame));
 	frame->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$init(bug6578666);
@@ -102,6 +103,7 @@ void bug6578666::createGui() {
 }
 
 void bug6578666::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(10);
 	$SwingUtilities::invokeAndWait($$new($bug6578666$2));

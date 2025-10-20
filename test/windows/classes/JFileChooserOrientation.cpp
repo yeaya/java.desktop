@@ -168,6 +168,7 @@ void JFileChooserOrientation::pass() {
 
 void JFileChooserOrientation::fail() {
 	$init(JFileChooserOrientation);
+	$useLocalCurrentObjectStackCache();
 	$nc(JFileChooserOrientation::frame)->dispose();
 	$init($System);
 	$nc($System::err)->println($$str({$($nc($of($($nc(JFileChooserOrientation::lookAndFeelComboBox)->getSelectedItem())))->toString()), " : Incorrect Orientation"_s}));
@@ -175,6 +176,7 @@ void JFileChooserOrientation::fail() {
 
 void JFileChooserOrientation::showFileChooser() {
 	$init(JFileChooserOrientation);
+	$useLocalCurrentObjectStackCache();
 	if (tryLookAndFeel($($nc($of($($nc(JFileChooserOrientation::lookAndFeelComboBox)->getSelectedItem())))->toString()))) {
 		$assignStatic(JFileChooserOrientation::openChooser, $new($JFileChooser));
 		$init($ComponentOrientation);
@@ -218,6 +220,7 @@ void JFileChooserOrientation::showFileChooser() {
 
 bool JFileChooserOrientation::tryLookAndFeel($String* lookAndFeelString) {
 	$init(JFileChooserOrientation);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(lookAndFeelString);
 	} catch ($UnsupportedLookAndFeelException&) {

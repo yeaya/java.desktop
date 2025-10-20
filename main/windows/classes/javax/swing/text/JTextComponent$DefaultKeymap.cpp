@@ -119,6 +119,7 @@ $Action* JTextComponent$DefaultKeymap::getAction($KeyStroke* key) {
 }
 
 $KeyStrokeArray* JTextComponent$DefaultKeymap::getBoundKeyStrokes() {
+	$useLocalCurrentObjectStackCache();
 	$var($KeyStrokeArray, keys, $new($KeyStrokeArray, $nc(this->bindings)->size()));
 	int32_t i = 0;
 	{
@@ -131,6 +132,7 @@ $KeyStrokeArray* JTextComponent$DefaultKeymap::getBoundKeyStrokes() {
 }
 
 $ActionArray* JTextComponent$DefaultKeymap::getBoundActions() {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionArray, actions, $new($ActionArray, $nc(this->bindings)->size()));
 	int32_t i = 0;
 	{
@@ -143,6 +145,7 @@ $ActionArray* JTextComponent$DefaultKeymap::getBoundActions() {
 }
 
 $KeyStrokeArray* JTextComponent$DefaultKeymap::getKeyStrokesForAction($Action* a) {
+	$useLocalCurrentObjectStackCache();
 	if (a == nullptr) {
 		return nullptr;
 	}

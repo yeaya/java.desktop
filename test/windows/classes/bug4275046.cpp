@@ -150,6 +150,7 @@ void bug4275046::init$() {
 }
 
 void bug4275046::createGUI() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, $new($JFrame, "bug4275046"_s));
 	$nc(this->frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$var($JComboBox, cb, $new($JComboBox, $$new($ObjectArray, {
@@ -171,6 +172,7 @@ void bug4275046::createGUI() {
 }
 
 void bug4275046::test() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -189,6 +191,7 @@ void bug4275046::test() {
 }
 
 void bug4275046::runTest() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->robot)->waitForIdle();
 	$SwingUtilities::invokeAndWait($$new($bug4275046$3, this));
 	$nc(this->robot)->mouseMove($nc(this->tableLoc)->x + $nc(this->cellRect)->x + $nc(this->cellRect)->width / 2, $nc(this->tableLoc)->y + $nc(this->cellRect)->y + $nc(this->cellRect)->height / 2);
@@ -216,6 +219,7 @@ void bug4275046::runTest() {
 }
 
 void bug4275046::checkResult() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->robot)->waitForIdle();
 	$SwingUtilities::invokeAndWait($$new($bug4275046$5, this));
 	if (!this->testResult) {
@@ -224,6 +228,7 @@ void bug4275046::checkResult() {
 }
 
 void clinit$bug4275046($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug4275046::EXPECTED_VALUE, "rededited"_s);
 	$assignStatic(bug4275046::colNames, $new($StringArray, {
 		"ID"_s,

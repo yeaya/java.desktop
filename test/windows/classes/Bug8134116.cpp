@@ -201,6 +201,7 @@ void Bug8134116::init$() {
 
 void Bug8134116::main($StringArray* args) {
 	$init(Bug8134116);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($NimbusLookAndFeel)));
 	} catch ($Exception&) {
@@ -239,6 +240,7 @@ void Bug8134116::lambda$main$1() {
 
 void Bug8134116::lambda$main$0() {
 	$init(Bug8134116);
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, panel0, $new($JPanel));
 	$var($JPanel, panel2, $new($JPanel));
 	$var($Bug8134116$BadPane, badPane, $new($Bug8134116$BadPane));

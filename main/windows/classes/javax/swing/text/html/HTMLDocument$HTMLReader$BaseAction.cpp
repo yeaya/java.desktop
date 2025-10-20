@@ -84,6 +84,7 @@ void HTMLDocument$HTMLReader$BaseAction::init$($HTMLDocument$HTMLReader* this$1)
 }
 
 void HTMLDocument$HTMLReader$BaseAction::start($HTML$Tag* t, $MutableAttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Attribute);
 	$var($String, href, $cast($String, $nc(attr)->getAttribute($HTML$Attribute::HREF)));
 	if (href != nullptr) {

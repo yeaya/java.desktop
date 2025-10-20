@@ -85,6 +85,7 @@ void TranslucentWindowPainter$VIWindowPainter::init$($WWindowPeer* peer) {
 }
 
 $Image* TranslucentWindowPainter$VIWindowPainter::getBackBuffer(bool clear) {
+	$useLocalCurrentObjectStackCache();
 	int32_t w = $nc(this->window)->getWidth();
 	int32_t h = $nc(this->window)->getHeight();
 	$var($GraphicsConfiguration, gc, $nc(this->peer)->getGraphicsConfiguration());

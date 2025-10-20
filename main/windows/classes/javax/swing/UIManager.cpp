@@ -287,6 +287,7 @@ $String* UIManager::makeInstalledLAFKey($String* laf, $String* attr) {
 
 $String* UIManager::makeSwingPropertiesFilename() {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	$init($File);
 	$var($String, sep, $File::separator);
 	$var($String, javaHome, $System::getProperty("java.home"_s));
@@ -298,6 +299,7 @@ $String* UIManager::makeSwingPropertiesFilename() {
 
 $UIManager$LookAndFeelInfoArray* UIManager::getInstalledLookAndFeels() {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	maybeInitialize();
 	$var($UIManager$LookAndFeelInfoArray, ilafs, $nc($(getLAFState()))->installedLAFs);
 	if (ilafs == nullptr) {
@@ -310,6 +312,7 @@ $UIManager$LookAndFeelInfoArray* UIManager::getInstalledLookAndFeels() {
 
 void UIManager::setInstalledLookAndFeels($UIManager$LookAndFeelInfoArray* infos) {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	maybeInitialize();
 	$var($UIManager$LookAndFeelInfoArray, newInfos, $new($UIManager$LookAndFeelInfoArray, $nc(infos)->length));
 	$System::arraycopy(infos, 0, newInfos, 0, infos->length);
@@ -318,6 +321,7 @@ void UIManager::setInstalledLookAndFeels($UIManager$LookAndFeelInfoArray* infos)
 
 void UIManager::installLookAndFeel($UIManager$LookAndFeelInfo* info) {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	$var($UIManager$LookAndFeelInfoArray, infos, getInstalledLookAndFeels());
 	$var($UIManager$LookAndFeelInfoArray, newInfos, $new($UIManager$LookAndFeelInfoArray, $nc(infos)->length + 1));
 	$System::arraycopy(infos, 0, newInfos, 0, infos->length);
@@ -338,6 +342,7 @@ $LookAndFeel* UIManager::getLookAndFeel() {
 
 $LookAndFeel* UIManager::createLookAndFeel($String* name$renamed) {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, name$renamed);
 	$beforeCallerSensitive();
 	$Objects::requireNonNull(name);
@@ -375,6 +380,7 @@ $LookAndFeel* UIManager::createLookAndFeel($String* name$renamed) {
 
 void UIManager::setLookAndFeel($LookAndFeel* newLookAndFeel) {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	if ((newLookAndFeel != nullptr) && !newLookAndFeel->isSupportedLookAndFeel()) {
 		$var($String, s, $str({$(newLookAndFeel->toString()), " not supported on this platform"_s}));
 		$throwNew($UnsupportedLookAndFeelException, s);
@@ -400,6 +406,7 @@ void UIManager::setLookAndFeel($LookAndFeel* newLookAndFeel) {
 
 void UIManager::setLookAndFeel($String* className) {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if ("javax.swing.plaf.metal.MetalLookAndFeel"_s->equals(className)) {
 		setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
@@ -411,6 +418,7 @@ void UIManager::setLookAndFeel($String* className) {
 
 $String* UIManager::getSystemLookAndFeelClassName() {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, systemLAF, $cast($String, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, "swing.systemlaf"_s)))));
 	if (systemLAF != nullptr) {
@@ -441,6 +449,7 @@ $String* UIManager::getSystemLookAndFeelClassName() {
 
 $String* UIManager::getCrossPlatformLookAndFeelClassName() {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, laf, $cast($String, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, "swing.crossplatformlaf"_s)))));
 	if (laf != nullptr) {
@@ -568,6 +577,7 @@ $Object* UIManager::put(Object$* key, Object$* value) {
 
 $ComponentUI* UIManager::getUI($JComponent* target) {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	maybeInitialize();
 	maybeInitializeFocusPolicy(target);
 	$var($ComponentUI, ui, nullptr);
@@ -589,6 +599,7 @@ $UIDefaults* UIManager::getLookAndFeelDefaults() {
 
 $LookAndFeel* UIManager::getMultiLookAndFeel() {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($LookAndFeel, multiLookAndFeel, $nc($(getLAFState()))->multiLookAndFeel);
 	if (multiLookAndFeel == nullptr) {
@@ -608,6 +619,7 @@ $LookAndFeel* UIManager::getMultiLookAndFeel() {
 
 void UIManager::addAuxiliaryLookAndFeel($LookAndFeel* laf) {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	maybeInitialize();
 	if (!$nc(laf)->isSupportedLookAndFeel()) {
 		return;
@@ -628,6 +640,7 @@ void UIManager::addAuxiliaryLookAndFeel($LookAndFeel* laf) {
 
 bool UIManager::removeAuxiliaryLookAndFeel($LookAndFeel* laf) {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	maybeInitialize();
 	bool result = false;
 	$var($Vector, v, $nc($(getLAFState()))->auxLookAndFeels);
@@ -649,6 +662,7 @@ bool UIManager::removeAuxiliaryLookAndFeel($LookAndFeel* laf) {
 
 $LookAndFeelArray* UIManager::getAuxiliaryLookAndFeels() {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	maybeInitialize();
 	$var($Vector, v, $nc($(getLAFState()))->auxLookAndFeels);
 	if ((v == nullptr) || ($nc(v)->size() == 0)) {
@@ -664,6 +678,7 @@ $LookAndFeelArray* UIManager::getAuxiliaryLookAndFeels() {
 
 void UIManager::addPropertyChangeListener($PropertyChangeListener* listener) {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(UIManager::classLock) {
 		$nc($($nc($(getLAFState()))->getPropertyChangeSupport(true)))->addPropertyChangeListener(listener);
 	}
@@ -671,6 +686,7 @@ void UIManager::addPropertyChangeListener($PropertyChangeListener* listener) {
 
 void UIManager::removePropertyChangeListener($PropertyChangeListener* listener) {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(UIManager::classLock) {
 		$nc($($nc($(getLAFState()))->getPropertyChangeSupport(true)))->removePropertyChangeListener(listener);
 	}
@@ -678,6 +694,7 @@ void UIManager::removePropertyChangeListener($PropertyChangeListener* listener) 
 
 $PropertyChangeListenerArray* UIManager::getPropertyChangeListeners() {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(UIManager::classLock) {
 		return $nc($($nc($(getLAFState()))->getPropertyChangeSupport(true)))->getPropertyChangeListeners();
 	}
@@ -685,6 +702,7 @@ $PropertyChangeListenerArray* UIManager::getPropertyChangeListeners() {
 
 $Properties* UIManager::loadSwingProperties() {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (UIManager::class$->getClassLoader() != nullptr) {
 		return $new($Properties);
@@ -705,6 +723,7 @@ void UIManager::checkProperty($Properties* props, $String* key) {
 
 void UIManager::initializeInstalledLAFs($Properties* swingProps) {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	$var($String, ilafsString, $nc(swingProps)->getProperty(UIManager::installedLAFsKey));
 	if (ilafsString == nullptr) {
 		return;
@@ -737,6 +756,7 @@ void UIManager::initializeInstalledLAFs($Properties* swingProps) {
 
 void UIManager::initializeDefaultLAF($Properties* swingProps) {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	if ($nc($(getLAFState()))->lookAndFeel != nullptr) {
 		return;
 	}
@@ -770,6 +790,7 @@ void UIManager::initializeDefaultLAF($Properties* swingProps) {
 
 void UIManager::initializeAuxiliaryLAFs($Properties* swingProps) {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, auxLookAndFeelNames, $nc(swingProps)->getProperty(UIManager::auxiliaryLAFsKey));
 	if (auxLookAndFeelNames == nullptr) {
@@ -809,6 +830,7 @@ void UIManager::initializeSystemDefaults($Properties* swingProps) {
 
 void UIManager::maybeInitialize() {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(UIManager::classLock) {
 		if (!$nc($(getLAFState()))->initialized) {
 			$nc($(getLAFState()))->initialized = true;
@@ -819,6 +841,7 @@ void UIManager::maybeInitialize() {
 
 void UIManager::maybeInitializeFocusPolicy($JComponent* comp) {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JRootPane, comp)) {
 		$synchronized(UIManager::classLock) {
 			if (!$nc($(getLAFState()))->focusPolicyInitialized) {
@@ -833,6 +856,7 @@ void UIManager::maybeInitializeFocusPolicy($JComponent* comp) {
 
 void UIManager::initialize() {
 	$init(UIManager);
+	$useLocalCurrentObjectStackCache();
 	$var($Properties, swingProps, loadSwingProperties());
 	initializeSystemDefaults(swingProps);
 	initializeDefaultLAF(swingProps);
@@ -848,6 +872,7 @@ void UIManager::initialize() {
 }
 
 void clinit$UIManager($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(UIManager::defaultLAFKey, "swing.defaultlaf"_s);
 	$assignStatic(UIManager::auxiliaryLAFsKey, "swing.auxiliarylaf"_s);
 	$assignStatic(UIManager::multiplexingLAFKey, "swing.plaf.multiplexinglaf"_s);

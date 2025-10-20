@@ -87,6 +87,7 @@ void BasicMenuBarUI$Actions::init$($String* key) {
 }
 
 void BasicMenuBarUI$Actions::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuBar, menuBar, $cast($JMenuBar, $nc(e)->getSource()));
 	$var($MenuSelectionManager, defaultManager, $MenuSelectionManager::defaultManager());
 	$var($MenuElementArray, me, nullptr);

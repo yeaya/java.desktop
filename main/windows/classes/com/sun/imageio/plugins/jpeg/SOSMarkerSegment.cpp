@@ -99,6 +99,7 @@ $Object* allocate$SOSMarkerSegment($Class* clazz) {
 }
 
 void SOSMarkerSegment::init$(bool willSubsample, $bytes* componentIDs, int32_t numComponents) {
+	$useLocalCurrentObjectStackCache();
 	$MarkerSegment::init$($JPEG::SOS);
 	this->startSpectralSelection = 0;
 	this->endSpectralSelection = 63;
@@ -117,6 +118,7 @@ void SOSMarkerSegment::init$(bool willSubsample, $bytes* componentIDs, int32_t n
 }
 
 void SOSMarkerSegment::init$($JPEGBuffer* buffer) {
+	$useLocalCurrentObjectStackCache();
 	$MarkerSegment::init$(buffer);
 	int32_t numComponents = $nc($nc(buffer)->buf)->get(buffer->bufPtr++);
 	$set(this, componentSpecs, $new($SOSMarkerSegment$ScanComponentSpecArray, numComponents));
@@ -140,6 +142,7 @@ void SOSMarkerSegment::init$($Node* node) {
 }
 
 $Object* SOSMarkerSegment::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(SOSMarkerSegment, newGuy, $cast(SOSMarkerSegment, $MarkerSegment::clone()));
 	if (this->componentSpecs != nullptr) {
 		$set($nc(newGuy), componentSpecs, $cast($SOSMarkerSegment$ScanComponentSpecArray, $nc(this->componentSpecs)->clone()));
@@ -151,6 +154,7 @@ $Object* SOSMarkerSegment::clone() {
 }
 
 $IIOMetadataNode* SOSMarkerSegment::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "sos"_s));
 	node->setAttribute("numScanComponents"_s, $($Integer::toString($nc(this->componentSpecs)->length)));
 	node->setAttribute("startSpectralSelection"_s, $($Integer::toString(this->startSpectralSelection)));
@@ -164,6 +168,7 @@ $IIOMetadataNode* SOSMarkerSegment::getNativeNode() {
 }
 
 void SOSMarkerSegment::updateFromNativeNode($Node* node, bool fromScratch) {
+	$useLocalCurrentObjectStackCache();
 	$var($NamedNodeMap, attrs, $nc(node)->getAttributes());
 	int32_t numComponents = getAttributeValue(node, attrs, "numScanComponents"_s, 1, 4, true);
 	int32_t value = getAttributeValue(node, attrs, "startSpectralSelection"_s, 0, 63, false);

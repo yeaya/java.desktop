@@ -286,6 +286,7 @@ void TextLine::checkCtorArgs() {
 }
 
 void TextLine::init() {
+	$useLocalCurrentObjectStackCache();
 	float ascent = (float)0;
 	float descent = (float)0;
 	float leading = (float)0;
@@ -426,6 +427,7 @@ void TextLine::init() {
 }
 
 $Rectangle* TextLine::getPixelBounds($FontRenderContext* frc$renamed, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontRenderContext, frc, frc$renamed);
 	$var($Rectangle, result, nullptr);
 	if (frc != nullptr && frc->equals(this->frc)) {
@@ -490,6 +492,7 @@ $Rectangle* TextLine::getPixelBounds($FontRenderContext* frc$renamed, float x, f
 
 $Rectangle* TextLine::computePixelBounds($BufferedImage* im) {
 	$init(TextLine);
+	$useLocalCurrentObjectStackCache();
 	int32_t w = $nc(im)->getWidth();
 	int32_t h = im->getHeight();
 	int32_t l = -1;
@@ -707,6 +710,7 @@ int32_t TextLine::getComponentLogicalIndex(int32_t vi) {
 }
 
 int32_t TextLine::getComponentVisualIndex(int32_t li) {
+	$useLocalCurrentObjectStackCache();
 	if (this->fComponentVisualOrder == nullptr) {
 		return li;
 	}
@@ -719,6 +723,7 @@ int32_t TextLine::getComponentVisualIndex(int32_t li) {
 }
 
 $Rectangle2D* TextLine::getCharBounds(int32_t logicalIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (logicalIndex < 0) {
 		$throwNew($IllegalArgumentException, "Negative logicalIndex."_s);
 	}
@@ -748,6 +753,7 @@ float TextLine::getComponentShift(int32_t index) {
 }
 
 void TextLine::draw($Graphics2D* g2, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	if (this->lp == nullptr) {
 		{
 			int32_t i = 0;
@@ -784,6 +790,7 @@ void TextLine::draw($Graphics2D* g2, float x, float y) {
 }
 
 $Rectangle2D* TextLine::getVisualBounds() {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, result, nullptr);
 	{
 		int32_t i = 0;
@@ -827,6 +834,7 @@ $Rectangle2D* TextLine::getVisualBounds() {
 }
 
 $Rectangle2D* TextLine::getItalicBounds() {
+	$useLocalCurrentObjectStackCache();
 	$init($Float);
 	float left = $Float::MAX_VALUE;
 	float right = -$Float::MAX_VALUE;
@@ -850,6 +858,7 @@ $Rectangle2D* TextLine::getItalicBounds() {
 }
 
 $Shape* TextLine::getOutline($AffineTransform* tx) {
+	$useLocalCurrentObjectStackCache();
 	$var($GeneralPath, dstShape, $new($GeneralPath, $GeneralPath::WIND_NON_ZERO));
 	{
 		int32_t i = 0;
@@ -875,6 +884,7 @@ $String* TextLine::toString() {
 
 TextLine* TextLine::fastCreateTextLine($FontRenderContext* frc, $chars* chars, $Font* font, $CoreMetrics* lm, $Map* attributes) {
 	$init(TextLine);
+	$useLocalCurrentObjectStackCache();
 	bool isDirectionLTR = true;
 	$var($bytes, levels, nullptr);
 	$var($ints, charsLtoV, nullptr);
@@ -937,6 +947,7 @@ $TextLineComponentArray* TextLine::expandArray($TextLineComponentArray* orig) {
 
 $TextLineComponentArray* TextLine::createComponentsOnRun(int32_t runStart, int32_t runLimit, $chars* chars, $ints* charsLtoV, $bytes* levels, $TextLabelFactory* factory, $Font* font, $CoreMetrics* cm$renamed, $FontRenderContext* frc, $Decoration* decorator, $TextLineComponentArray* components$renamed, int32_t numComponents) {
 	$init(TextLine);
+	$useLocalCurrentObjectStackCache();
 	$var($TextLineComponentArray, components, components$renamed);
 	$var($CoreMetrics, cm, cm$renamed);
 	int32_t pos = runStart;
@@ -966,6 +977,7 @@ $TextLineComponentArray* TextLine::createComponentsOnRun(int32_t runStart, int32
 
 $TextLineComponentArray* TextLine::getComponents($StyledParagraph* styledParagraph, $chars* chars, int32_t textStart, int32_t textLimit, $ints* charsLtoV, $bytes* levels, $TextLabelFactory* factory) {
 	$init(TextLine);
+	$useLocalCurrentObjectStackCache();
 	$var($FontRenderContext, frc, $nc(factory)->getFontRenderContext());
 	int32_t numComponents = 0;
 	$var($TextLineComponentArray, tempComponents, $new($TextLineComponentArray, 1));
@@ -1009,6 +1021,7 @@ $TextLineComponentArray* TextLine::getComponents($StyledParagraph* styledParagra
 
 TextLine* TextLine::createLineFromText($chars* chars, $StyledParagraph* styledParagraph, $TextLabelFactory* factory, bool isDirectionLTR, $floats* baselineOffsets) {
 	$init(TextLine);
+	$useLocalCurrentObjectStackCache();
 	$nc(factory)->setLineContext(0, $nc(chars)->length);
 	$var($Bidi, lineBidi, factory->getLineBidi());
 	$var($ints, charsLtoV, nullptr);
@@ -1040,6 +1053,7 @@ $ints* TextLine::computeComponentOrder($TextLineComponentArray* components, $int
 
 TextLine* TextLine::standardCreateTextLine($FontRenderContext* frc, $AttributedCharacterIterator* text, $chars* chars, $floats* baselineOffsets) {
 	$init(TextLine);
+	$useLocalCurrentObjectStackCache();
 	$var($StyledParagraph, styledParagraph, $new($StyledParagraph, text, chars));
 	$var($Bidi, bidi, $new($Bidi, text));
 	if (bidi->isLeftToRight()) {
@@ -1067,6 +1081,7 @@ bool TextLine::advanceToFirstFont($AttributedCharacterIterator* aci) {
 
 $floats* TextLine::getNormalizedOffsets($floats* baselineOffsets$renamed, int8_t baseline) {
 	$init(TextLine);
+	$useLocalCurrentObjectStackCache();
 	$var($floats, baselineOffsets, baselineOffsets$renamed);
 	if ($nc(baselineOffsets)->get(baseline) != 0) {
 		float base = baselineOffsets->get(baseline);
@@ -1081,6 +1096,7 @@ $floats* TextLine::getNormalizedOffsets($floats* baselineOffsets$renamed, int8_t
 
 $Font* TextLine::getFontAtCurrentPos($AttributedCharacterIterator* aci) {
 	$init(TextLine);
+	$useLocalCurrentObjectStackCache();
 	$init($TextAttribute);
 	$var($Object, value, $nc(aci)->getAttribute($TextAttribute::FONT));
 	if (value != nullptr) {
@@ -1116,6 +1132,7 @@ int32_t TextLine::firstVisualChunk($ints* order, $bytes* direction, int32_t star
 }
 
 TextLine* TextLine::getJustifiedLine(float justificationWidth, float justifyRatio, int32_t justStart, int32_t justLimit) {
+	$useLocalCurrentObjectStackCache();
 	$var($TextLineComponentArray, newComponents, $new($TextLineComponentArray, $nc(this->fComponents)->length));
 	$System::arraycopy(this->fComponents, 0, newComponents, 0, $nc(this->fComponents)->length);
 	float leftHang = (float)0;
@@ -1183,6 +1200,7 @@ TextLine* TextLine::getJustifiedLine(float justificationWidth, float justifyRati
 
 float TextLine::getAdvanceBetween($TextLineComponentArray* components, int32_t start, int32_t limit) {
 	$init(TextLine);
+	$useLocalCurrentObjectStackCache();
 	float advance = (float)0;
 	int32_t tlcStart = 0;
 	for (int32_t i = 0; i < $nc(components)->length; ++i) {

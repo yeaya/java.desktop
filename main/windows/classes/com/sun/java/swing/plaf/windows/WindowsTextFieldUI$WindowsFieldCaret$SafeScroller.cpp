@@ -90,6 +90,7 @@ void WindowsTextFieldUI$WindowsFieldCaret$SafeScroller::init$($WindowsTextFieldU
 }
 
 void WindowsTextFieldUI$WindowsFieldCaret$SafeScroller::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextField, field, $cast($JTextField, $WindowsTextFieldUI$WindowsFieldCaret::access$000(this->this$0)));
 	if (field != nullptr) {
 		$var($TextUI, ui, $cast($TextUI, field->getUI()));

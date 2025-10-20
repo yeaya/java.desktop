@@ -95,6 +95,7 @@ $Object* allocate$MotifDesktopIconUI$IconButton($Class* clazz) {
 }
 
 void MotifDesktopIconUI$IconButton::init$($MotifDesktopIconUI* this$0, $Icon* icon) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JButton::init$(icon);
 	$set(this, icon, icon);
@@ -103,6 +104,7 @@ void MotifDesktopIconUI$IconButton::init$($MotifDesktopIconUI* this$0, $Icon* ic
 }
 
 void MotifDesktopIconUI$IconButton::forwardEventToParent($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, var$0, static_cast<$Component*>(getParent()));
 	int32_t var$1 = $nc(e)->getID();
 	int64_t var$2 = e->getWhen();

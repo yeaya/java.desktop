@@ -77,6 +77,7 @@ $ControlArray* CompoundControl::getMemberControls() {
 }
 
 $String* CompoundControl::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringJoiner, controls, $new($StringJoiner, ", "_s, "["_s, "]"_s));
 	{
 		$var($ControlArray, arr$, getMemberControls());

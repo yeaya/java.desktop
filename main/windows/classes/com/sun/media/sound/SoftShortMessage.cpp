@@ -68,6 +68,7 @@ void SoftShortMessage::setMessage(int32_t command, int32_t channel, int32_t data
 }
 
 $Object* SoftShortMessage::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(SoftShortMessage, clone, $new(SoftShortMessage));
 	try {
 		int32_t var$0 = getCommand();

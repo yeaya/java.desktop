@@ -161,6 +161,7 @@ $WeakReference* TexturePaintContext::byteRasRef = nullptr;
 
 $PaintContext* TexturePaintContext::getContext($BufferedImage* bufImg, $AffineTransform* xform, $RenderingHints* hints, $Rectangle* devBounds) {
 	$init(TexturePaintContext);
+	$useLocalCurrentObjectStackCache();
 	$var($WritableRaster, raster, $nc(bufImg)->getRaster());
 	$var($ColorModel, cm, bufImg->getColorModel());
 	int32_t maxw = $nc(devBounds)->width;
@@ -232,6 +233,7 @@ $ColorModel* TexturePaintContext::getInternedColorModel($ColorModel* cm) {
 }
 
 void TexturePaintContext::init$($ColorModel* cm, $AffineTransform* xform$renamed, int32_t bWidth, int32_t bHeight, int32_t maxw) {
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, xform, xform$renamed);
 	$set(this, colorModel, getInternedColorModel(cm));
 	this->bWidth = bWidth;
@@ -303,6 +305,7 @@ $WritableRaster* TexturePaintContext::makeRaster($ColorModel* cm, $Raster* srcRa
 	$load(TexturePaintContext);
 	$synchronized(class$) {
 		$init(TexturePaintContext);
+		$useLocalCurrentObjectStackCache();
 		if (TexturePaintContext::xrgbmodel == cm) {
 			if (TexturePaintContext::xrgbRasRef != nullptr) {
 				$var($WritableRaster, wr, $cast($WritableRaster, $nc(TexturePaintContext::xrgbRasRef)->get()));

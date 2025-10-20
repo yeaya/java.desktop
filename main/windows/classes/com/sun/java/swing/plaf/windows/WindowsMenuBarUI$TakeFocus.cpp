@@ -84,6 +84,7 @@ void WindowsMenuBarUI$TakeFocus::init$() {
 }
 
 void WindowsMenuBarUI$TakeFocus::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuBar, menuBar, $cast($JMenuBar, $nc(e)->getSource()));
 	$var($JMenu, menu, $nc(menuBar)->getMenu(0));
 	if (menu != nullptr) {

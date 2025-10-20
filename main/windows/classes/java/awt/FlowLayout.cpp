@@ -184,6 +184,7 @@ void FlowLayout::removeLayoutComponent($Component* comp) {
 }
 
 $Dimension* FlowLayout::preferredLayoutSize($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(target)->getTreeLock()) {
 		$var($Dimension, dim, $new($Dimension, 0, 0));
 		int32_t nmembers = target->getComponentCount();
@@ -222,6 +223,7 @@ $Dimension* FlowLayout::preferredLayoutSize($Container* target) {
 }
 
 $Dimension* FlowLayout::minimumLayoutSize($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(target)->getTreeLock()) {
 		bool useBaseline = getAlignOnBaseline();
 		$var($Dimension, dim, $new($Dimension, 0, 0));
@@ -260,6 +262,7 @@ $Dimension* FlowLayout::minimumLayoutSize($Container* target) {
 }
 
 int32_t FlowLayout::moveComponents($Container* target, int32_t x, int32_t y, int32_t width, int32_t height, int32_t rowStart, int32_t rowEnd, bool ltr, bool useBaseline, $ints* ascent, $ints* descent) {
+	$useLocalCurrentObjectStackCache();
 	switch (this->newAlign) {
 	case FlowLayout::LEFT:
 		{
@@ -326,6 +329,7 @@ int32_t FlowLayout::moveComponents($Container* target, int32_t x, int32_t y, int
 }
 
 void FlowLayout::layoutContainer($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(target)->getTreeLock()) {
 		$var($Insets, insets, target->getInsets());
 		int32_t maxwidth = target->width - ($nc(insets)->left + insets->right + this->hgap * 2);
@@ -384,6 +388,7 @@ void FlowLayout::readObject($ObjectInputStream* stream) {
 }
 
 $String* FlowLayout::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, ""_s);
 	switch (this->align) {
 	case FlowLayout::LEFT:

@@ -74,6 +74,7 @@ void bug4275046$5::init$($bug4275046* this$0) {
 }
 
 void bug4275046$5::run() {
+	$useLocalCurrentObjectStackCache();
 	$set(this->this$0, editedValue, $nc($($nc(this->this$0->table)->getModel()))->getValueAt(0, 1));
 	$init($System);
 	$nc($System::out)->println($$str({"The edited value is = "_s, this->this$0->editedValue}));

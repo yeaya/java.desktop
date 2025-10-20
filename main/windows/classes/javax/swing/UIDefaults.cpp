@@ -270,6 +270,7 @@ $Object* UIDefaults::get(Object$* key) {
 }
 
 $Object* UIDefaults::getFromHashtable(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, $Hashtable::get(key));
 	if ((!$equals(value, UIDefaults::PENDING)) && !($instanceOf($UIDefaults$ActiveValue, value)) && !($instanceOf($UIDefaults$LazyValue, value))) {
 		return $of(value);
@@ -325,6 +326,7 @@ $Object* UIDefaults::get(Object$* key, $Locale* l) {
 }
 
 $Object* UIDefaults::getFromResourceBundle(Object$* key, $Locale* l$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Locale, l, l$renamed);
 	if (this->resourceBundles == nullptr || $nc(this->resourceBundles)->isEmpty() || !($instanceOf($String, key))) {
 		return $of(nullptr);
@@ -342,6 +344,7 @@ $Object* UIDefaults::getFromResourceBundle(Object$* key, $Locale* l$renamed) {
 }
 
 $Map* UIDefaults::getResourceCache($Locale* l) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Map, values, $cast($Map, $nc(this->resourceCache)->get(l)));
 	if (values == nullptr) {
@@ -374,6 +377,7 @@ $Map* UIDefaults::getResourceCache($Locale* l) {
 
 bool UIDefaults::isDesktopResourceBundle($String* baseName) {
 	$init(UIDefaults);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Module, thisModule, UIDefaults::class$->getModule());
 	return $nc(($cast($Boolean, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($UIDefaults$1, thisModule, baseName)))))))->booleanValue();
@@ -388,6 +392,7 @@ $Object* UIDefaults::put(Object$* key, Object$* value) {
 }
 
 void UIDefaults::putDefaults($ObjectArray* keyValueList) {
+	$useLocalCurrentObjectStackCache();
 	{
 		int32_t i = 0;
 		int32_t max = $nc(keyValueList)->length;
@@ -494,6 +499,7 @@ $Dimension* UIDefaults::getDimension(Object$* key, $Locale* l) {
 }
 
 $Class* UIDefaults::getUIClass($String* uiClassID, $ClassLoader* uiClassLoader) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($String, className, $cast($String, get(uiClassID)));
 		if (className != nullptr) {
@@ -536,6 +542,7 @@ void UIDefaults::getUIError($String* msg) {
 }
 
 $ComponentUI* UIDefaults::getUI($JComponent* target) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Object, cl, get("ClassLoader"_s));
 	$var($ClassLoader, uiClassLoader, (cl != nullptr) ? $cast($ClassLoader, cl) : $nc($of(target))->getClass()->getClassLoader());

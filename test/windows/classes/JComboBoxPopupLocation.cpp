@@ -243,6 +243,7 @@ void JComboBoxPopupLocation::init$() {
 
 void JComboBoxPopupLocation::main($StringArray* args) {
 	$init(JComboBoxPopupLocation);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(JComboBoxPopupLocation::robot, $new($Robot));
 	$nc(JComboBoxPopupLocation::robot)->setAutoDelay(100);
 	$nc(JComboBoxPopupLocation::robot)->setAutoWaitForIdle(true);
@@ -269,6 +270,7 @@ void JComboBoxPopupLocation::main($StringArray* args) {
 
 void JComboBoxPopupLocation::step($GraphicsDeviceArray* sds, $UIManager$LookAndFeelInfo* lookAndFeelItem) {
 	$init(JComboBoxPopupLocation);
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel($($nc(lookAndFeelItem)->getClassName()));
 	$var($Point, left, nullptr);
 	{
@@ -342,6 +344,7 @@ void JComboBoxPopupLocation::dispose() {
 
 void JComboBoxPopupLocation::setup($Point* tmp) {
 	$init(JComboBoxPopupLocation);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(JComboBoxPopupLocation::comboBox, $new($JComboBox));
 	for (int32_t i = 1; i < 7; ++i) {
 		$nc(JComboBoxPopupLocation::comboBox)->addItem($$str({"Long-long-long-long-long text in the item-"_s, $$str(i)}));

@@ -118,6 +118,7 @@ bool SwingUtilities3::isVsyncRequested($Container* rootContainer) {
 
 $RepaintManager* SwingUtilities3::getDelegateRepaintManager($Component* component$renamed) {
 	$init(SwingUtilities3);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, component, component$renamed);
 	$var($RepaintManager, delegate, nullptr);
 	$init($Boolean);

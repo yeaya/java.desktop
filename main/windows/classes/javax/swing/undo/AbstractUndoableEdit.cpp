@@ -137,6 +137,7 @@ $String* AbstractUndoableEdit::getPresentationName() {
 }
 
 $String* AbstractUndoableEdit::getUndoPresentationName() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, getPresentationName());
 	if (!""_s->equals(name)) {
 		$assign(name, $str({$($UIManager::getString("AbstractUndoableEdit.undoText"_s)), " "_s, name}));
@@ -147,6 +148,7 @@ $String* AbstractUndoableEdit::getUndoPresentationName() {
 }
 
 $String* AbstractUndoableEdit::getRedoPresentationName() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, getPresentationName());
 	if (!""_s->equals(name)) {
 		$assign(name, $str({$($UIManager::getString("AbstractUndoableEdit.redoText"_s)), " "_s, name}));
@@ -157,6 +159,7 @@ $String* AbstractUndoableEdit::getRedoPresentationName() {
 }
 
 $String* AbstractUndoableEdit::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($UndoableEdit::toString()), " hasBeenDone: "_s, $$str(this->hasBeenDone), " alive: "_s, $$str(this->alive)});
 }
 

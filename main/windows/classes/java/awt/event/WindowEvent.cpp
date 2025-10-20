@@ -131,6 +131,7 @@ int32_t WindowEvent::getNewState() {
 }
 
 $String* WindowEvent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, typeStr, nullptr);
 	switch (this->id) {
 	case WindowEvent::WINDOW_OPENED:

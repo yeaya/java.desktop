@@ -199,6 +199,7 @@ void BasicListUI$Actions::init$($String* name) {
 }
 
 void BasicListUI$Actions::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, getName());
 	$var($JList, list, $cast($JList, $nc(e)->getSource()));
 	$load($BasicListUI);
@@ -279,6 +280,7 @@ void BasicListUI$Actions::actionPerformed($ActionEvent* e) {
 }
 
 bool BasicListUI$Actions::accept(Object$* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, name, getName());
 	if ($equals(name, BasicListUI$Actions::SELECT_PREVIOUS_COLUMN_CHANGE_LEAD) || $equals(name, BasicListUI$Actions::SELECT_NEXT_COLUMN_CHANGE_LEAD) || $equals(name, BasicListUI$Actions::SELECT_PREVIOUS_ROW_CHANGE_LEAD) || $equals(name, BasicListUI$Actions::SELECT_NEXT_ROW_CHANGE_LEAD) || $equals(name, BasicListUI$Actions::SELECT_FIRST_ROW_CHANGE_LEAD) || $equals(name, BasicListUI$Actions::SELECT_LAST_ROW_CHANGE_LEAD) || $equals(name, BasicListUI$Actions::SCROLL_UP_CHANGE_LEAD) || $equals(name, BasicListUI$Actions::SCROLL_DOWN_CHANGE_LEAD)) {
 		return c != nullptr && $instanceOf($DefaultListSelectionModel, $($nc(($cast($JList, c)))->getSelectionModel()));
@@ -291,6 +293,7 @@ void BasicListUI$Actions::clearSelection($JList* list) {
 }
 
 void BasicListUI$Actions::selectAll($JList* list) {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc($($nc(list)->getModel()))->getSize();
 	if (size > 0) {
 		$var($ListSelectionModel, lsm, list->getSelectionModel());
@@ -313,6 +316,7 @@ void BasicListUI$Actions::selectAll($JList* list) {
 }
 
 int32_t BasicListUI$Actions::getNextPageIndex($JList* list, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc(list)->getModel()))->getSize() == 0) {
 		return -1;
 	}
@@ -436,6 +440,7 @@ int32_t BasicListUI$Actions::getNextPageIndex($JList* list, int32_t direction) {
 }
 
 void BasicListUI$Actions::changeSelection($JList* list, int32_t type, int32_t index, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	if (index >= 0 && index < $nc($($nc(list)->getModel()))->getSize()) {
 		$var($ListSelectionModel, lsm, list->getSelectionModel());
 		if (type == 0 && list->getSelectionMode() != $ListSelectionModel::MULTIPLE_INTERVAL_SELECTION) {
@@ -457,6 +462,7 @@ void BasicListUI$Actions::changeSelection($JList* list, int32_t type, int32_t in
 }
 
 void BasicListUI$Actions::adjustScrollPositionIfNecessary($JList* list, int32_t index, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	if (direction == 0) {
 		return;
 	}

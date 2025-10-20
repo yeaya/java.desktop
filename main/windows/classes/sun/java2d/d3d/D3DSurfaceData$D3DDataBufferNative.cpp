@@ -79,6 +79,7 @@ void D3DSurfaceData$D3DDataBufferNative::init$($SurfaceData* sData, int32_t type
 }
 
 int32_t D3DSurfaceData$D3DDataBufferNative::getElem(int32_t x, int32_t y, $SurfaceData* sData) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(sData)->isSurfaceLost()) {
 		return 0;
 	}
@@ -103,6 +104,7 @@ int32_t D3DSurfaceData$D3DDataBufferNative::getElem(int32_t x, int32_t y, $Surfa
 }
 
 void D3DSurfaceData$D3DDataBufferNative::setElem(int32_t x, int32_t y, int32_t pixel, $SurfaceData* sData) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(sData)->isSurfaceLost()) {
 		return;
 	}

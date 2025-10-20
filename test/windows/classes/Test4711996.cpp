@@ -40,6 +40,7 @@ void Test4711996::init$() {
 }
 
 void Test4711996::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JColorChooser, chooser, $new($JColorChooser));
 	$var($AbstractColorChooserPanelArray, panels, chooser->getChooserPanels());
 	chooser->removeChooserPanel($nc(panels)->get(0));

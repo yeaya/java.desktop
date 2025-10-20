@@ -211,6 +211,7 @@ void LightweightDispatcher::enableEvents(int64_t events) {
 }
 
 bool LightweightDispatcher::dispatchEvent($AWTEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool ret = false;
 	if ($instanceOf($SunDropTargetEvent, e)) {
 		$var($SunDropTargetEvent, sdde, $cast($SunDropTargetEvent, e));
@@ -237,6 +238,7 @@ bool LightweightDispatcher::isMouseGrab($MouseEvent* e) {
 }
 
 bool LightweightDispatcher::processMouseEvent($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t id = $nc(e)->getID();
 	int32_t var$0 = e->getX();
 	$var($Component, mouseOver, $nc(this->nativeContainer)->getMouseEventTarget(var$0, e->getY(), $Container::INCLUDE_SELF));
@@ -302,6 +304,7 @@ bool LightweightDispatcher::processMouseEvent($MouseEvent* e) {
 }
 
 bool LightweightDispatcher::processDropTargetEvent($SunDropTargetEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t id = $nc(e)->getID();
 	int32_t x = e->getX();
 	int32_t y = e->getY();
@@ -340,6 +343,7 @@ bool LightweightDispatcher::processDropTargetEvent($SunDropTargetEvent* e) {
 }
 
 void LightweightDispatcher::trackDropTargetEnterExit($Component* targetOver, $MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t id = $nc(e)->getID();
 	if (id == $MouseEvent::MOUSE_ENTERED && this->isMouseDTInNativeContainer) {
 		$nc(this->targetLastEnteredDT)->clear();
@@ -353,6 +357,7 @@ void LightweightDispatcher::trackDropTargetEnterExit($Component* targetOver, $Mo
 }
 
 void LightweightDispatcher::trackMouseEnterExit($Component* targetOver, $MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($SunDropTargetEvent, e)) {
 		trackDropTargetEnterExit(targetOver, e);
 		return;
@@ -400,6 +405,7 @@ void LightweightDispatcher::stopListeningForOtherDrags() {
 }
 
 void LightweightDispatcher::eventDispatched($AWTEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool isForeignDrag = ($instanceOf($MouseEvent, e)) && !($instanceOf($SunDropTargetEvent, e)) && ($nc(e)->id == $MouseEvent::MOUSE_DRAGGED) && (!$equals(e->getSource(), this->nativeContainer));
 	if (!isForeignDrag) {
 		return;
@@ -453,6 +459,7 @@ void LightweightDispatcher::eventDispatched($AWTEvent* e) {
 }
 
 void LightweightDispatcher::retargetMouseEvent($Component* target, int32_t id, $MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (target == nullptr) {
 		return;
 	}
@@ -523,6 +530,7 @@ void LightweightDispatcher::retargetMouseEvent($Component* target, int32_t id, $
 }
 
 void clinit$LightweightDispatcher($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	LightweightDispatcher::$assertionsDisabled = !LightweightDispatcher::class$->desiredAssertionStatus();
 	$assignStatic(LightweightDispatcher::eventLog, $PlatformLogger::getLogger("java.awt.event.LightweightDispatcher"_s));
 	{

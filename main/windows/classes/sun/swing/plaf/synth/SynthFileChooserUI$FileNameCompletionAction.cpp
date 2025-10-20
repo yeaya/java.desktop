@@ -77,6 +77,7 @@ void SynthFileChooserUI$FileNameCompletionAction::init$($SynthFileChooserUI* thi
 }
 
 void SynthFileChooserUI$FileNameCompletionAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, chooser, this->this$0->getFileChooser());
 	$var($String, fileName, this->this$0->getFileName());
 	if (fileName != nullptr) {

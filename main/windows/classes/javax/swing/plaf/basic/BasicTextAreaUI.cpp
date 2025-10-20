@@ -131,6 +131,7 @@ void BasicTextAreaUI::installDefaults() {
 }
 
 void BasicTextAreaUI::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$BasicTextUI::propertyChange(evt);
 	bool var$1 = $nc($($nc(evt)->getPropertyName()))->equals("lineWrap"_s);
 	bool var$0 = var$1 || $nc($($nc(evt)->getPropertyName()))->equals("wrapStyleWord"_s);
@@ -150,6 +151,7 @@ $Dimension* BasicTextAreaUI::getMinimumSize($JComponent* c) {
 }
 
 $View* BasicTextAreaUI::create($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(elem)->getDocument());
 	$var($Object, i18nFlag, $nc(doc)->getProperty("i18n"_s));
 	$init($Boolean);
@@ -187,6 +189,7 @@ $View* BasicTextAreaUI::createI18N($Element* elem) {
 }
 
 int32_t BasicTextAreaUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$BasicTextUI::getBaseline(c, width, height);
 	$var($Object, i18nFlag, $nc($($nc(($cast($JTextComponent, c)))->getDocument()))->getProperty("i18n"_s));
 	$var($Insets, insets, $nc(c)->getInsets());

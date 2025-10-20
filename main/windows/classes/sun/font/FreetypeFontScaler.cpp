@@ -203,6 +203,7 @@ void FreetypeFontScaler::init$($Font2D* font, int32_t indexInCollection, bool su
 
 $StrikeMetrics* FreetypeFontScaler::getFontMetrics(int64_t pScalerContext) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->nativeScaler != (int64_t)0) {
 			return getFontMetricsNative($cast($Font2D, $($nc(this->font)->get())), pScalerContext, this->nativeScaler);
 		}
@@ -212,6 +213,7 @@ $StrikeMetrics* FreetypeFontScaler::getFontMetrics(int64_t pScalerContext) {
 
 float FreetypeFontScaler::getGlyphAdvance(int64_t pScalerContext, int32_t glyphCode) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->nativeScaler != (int64_t)0) {
 			return getGlyphAdvanceNative($cast($Font2D, $($nc(this->font)->get())), pScalerContext, this->nativeScaler, glyphCode);
 		}
@@ -221,6 +223,7 @@ float FreetypeFontScaler::getGlyphAdvance(int64_t pScalerContext, int32_t glyphC
 
 void FreetypeFontScaler::getGlyphMetrics(int64_t pScalerContext, int32_t glyphCode, $Point2D$Float* metrics) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->nativeScaler != (int64_t)0) {
 			getGlyphMetricsNative($cast($Font2D, $($nc(this->font)->get())), pScalerContext, this->nativeScaler, glyphCode, metrics);
 			return;
@@ -231,6 +234,7 @@ void FreetypeFontScaler::getGlyphMetrics(int64_t pScalerContext, int32_t glyphCo
 
 int64_t FreetypeFontScaler::getGlyphImage(int64_t pScalerContext, int32_t glyphCode) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->nativeScaler != (int64_t)0) {
 			return getGlyphImageNative($cast($Font2D, $($nc(this->font)->get())), pScalerContext, this->nativeScaler, glyphCode);
 		}
@@ -240,6 +244,7 @@ int64_t FreetypeFontScaler::getGlyphImage(int64_t pScalerContext, int32_t glyphC
 
 $Rectangle2D$Float* FreetypeFontScaler::getGlyphOutlineBounds(int64_t pScalerContext, int32_t glyphCode) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->nativeScaler != (int64_t)0) {
 			return getGlyphOutlineBoundsNative($cast($Font2D, $($nc(this->font)->get())), pScalerContext, this->nativeScaler, glyphCode);
 		}
@@ -249,6 +254,7 @@ $Rectangle2D$Float* FreetypeFontScaler::getGlyphOutlineBounds(int64_t pScalerCon
 
 $GeneralPath* FreetypeFontScaler::getGlyphOutline(int64_t pScalerContext, int32_t glyphCode, float x, float y) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->nativeScaler != (int64_t)0) {
 			return getGlyphOutlineNative($cast($Font2D, $($nc(this->font)->get())), pScalerContext, this->nativeScaler, glyphCode, x, y);
 		}
@@ -258,6 +264,7 @@ $GeneralPath* FreetypeFontScaler::getGlyphOutline(int64_t pScalerContext, int32_
 
 $GeneralPath* FreetypeFontScaler::getGlyphVectorOutline(int64_t pScalerContext, $ints* glyphs, int32_t numGlyphs, float x, float y) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->nativeScaler != (int64_t)0) {
 			return getGlyphVectorOutlineNative($cast($Font2D, $($nc(this->font)->get())), pScalerContext, this->nativeScaler, glyphs, numGlyphs, x, y);
 		}
@@ -276,6 +283,7 @@ void FreetypeFontScaler::dispose() {
 
 void FreetypeFontScaler::disposeScaler() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->nativeScaler != (int64_t)0) {
 			$$new($Thread, nullptr, static_cast<$Runnable*>($$new(FreetypeFontScaler$$Lambda$lambda$disposeScaler$0, this)), "free scaler"_s, 0, false)->start();
 		}
@@ -302,6 +310,7 @@ int32_t FreetypeFontScaler::getMissingGlyphCode() {
 
 int32_t FreetypeFontScaler::getGlyphCode(char16_t charCode) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->nativeScaler != (int64_t)0) {
 			return getGlyphCodeNative($cast($Font2D, $($nc(this->font)->get())), this->nativeScaler, charCode);
 		}
@@ -311,6 +320,7 @@ int32_t FreetypeFontScaler::getGlyphCode(char16_t charCode) {
 
 $Point2D$Float* FreetypeFontScaler::getGlyphPoint(int64_t pScalerContext, int32_t glyphCode, int32_t ptNumber) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->nativeScaler != (int64_t)0) {
 			return getGlyphPointNative($cast($Font2D, $($nc(this->font)->get())), pScalerContext, this->nativeScaler, glyphCode, ptNumber);
 		}

@@ -100,6 +100,7 @@ GlyphView$GlyphPainter* GlyphView$GlyphPainter::getPainter($GlyphView* v, int32_
 }
 
 int32_t GlyphView$GlyphPainter::getNextVisualPositionFrom($GlyphView* v, int32_t pos, $Position$Bias* b, $Shape* a, int32_t direction, $Position$BiasArray* biasRet) {
+	$useLocalCurrentObjectStackCache();
 	int32_t startOffset = $nc(v)->getStartOffset();
 	int32_t endOffset = v->getEndOffset();
 	$var($Segment, text, nullptr);

@@ -86,6 +86,7 @@ void GIFMetadata::fatal($Node* node, $String* reason) {
 
 $String* GIFMetadata::getStringAttribute($Node* node, $String* name, $String* defaultValue, bool required, $StringArray* range) {
 	$init(GIFMetadata);
+	$useLocalCurrentObjectStackCache();
 	$var($Node, attr, $nc($($nc(node)->getAttributes()))->getNamedItem(name));
 	if (attr == nullptr) {
 		if (!required) {
@@ -116,6 +117,7 @@ $String* GIFMetadata::getStringAttribute($Node* node, $String* name, $String* de
 
 int32_t GIFMetadata::getIntAttribute($Node* node, $String* name, int32_t defaultValue, bool required, bool bounded, int32_t min, int32_t max) {
 	$init(GIFMetadata);
+	$useLocalCurrentObjectStackCache();
 	$var($String, value, getStringAttribute(node, name, nullptr, required, nullptr));
 	if (value == nullptr || $nc(value)->isEmpty()) {
 		return defaultValue;
@@ -154,6 +156,7 @@ float GIFMetadata::getFloatAttribute($Node* node, $String* name) {
 
 bool GIFMetadata::getBooleanAttribute($Node* node, $String* name, bool defaultValue, bool required) {
 	$init(GIFMetadata);
+	$useLocalCurrentObjectStackCache();
 	$var($Node, attr, $nc($($nc(node)->getAttributes()))->getNamedItem(name));
 	if (attr == nullptr) {
 		if (!required) {
@@ -184,6 +187,7 @@ bool GIFMetadata::getBooleanAttribute($Node* node, $String* name) {
 
 int32_t GIFMetadata::getEnumeratedAttribute($Node* node, $String* name, $StringArray* legalNames, int32_t defaultValue, bool required) {
 	$init(GIFMetadata);
+	$useLocalCurrentObjectStackCache();
 	$var($Node, attr, $nc($($nc(node)->getAttributes()))->getNamedItem(name));
 	if (attr == nullptr) {
 		if (!required) {
@@ -209,6 +213,7 @@ int32_t GIFMetadata::getEnumeratedAttribute($Node* node, $String* name, $StringA
 
 $String* GIFMetadata::getAttribute($Node* node, $String* name, $String* defaultValue, bool required) {
 	$init(GIFMetadata);
+	$useLocalCurrentObjectStackCache();
 	$var($Node, attr, $nc($($nc(node)->getAttributes()))->getNamedItem(name));
 	if (attr == nullptr) {
 		if (!required) {
@@ -249,6 +254,7 @@ void GIFMetadata::mergeTree($String* formatName, $Node* root) {
 }
 
 $bytes* GIFMetadata::getColorTable($Node* colorTableNode, $String* entryNodeName, bool lengthExpected, int32_t expectedLength) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, red, $new($bytes, 256));
 	$var($bytes, green, $new($bytes, 256));
 	$var($bytes, blue, $new($bytes, 256));

@@ -116,6 +116,7 @@ $Object* allocate$AudioFloatFormatConverter$AudioFloatInputStreamResampler($Clas
 }
 
 void AudioFloatFormatConverter$AudioFloatInputStreamResampler::init$($AudioFloatInputStream* ais, $AudioFormat* format) {
+	$useLocalCurrentObjectStackCache();
 	$AudioFloatInputStream::init$();
 	$set(this, pitch, $new($floats, 1));
 	this->ibuffer_index = (float)0;
@@ -190,6 +191,7 @@ int64_t AudioFloatFormatConverter$AudioFloatInputStreamResampler::getFrameLength
 }
 
 void AudioFloatFormatConverter$AudioFloatInputStreamResampler::mark(int32_t readlimit) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->ais)->mark($cast(int32_t, (readlimit * $nc(this->pitch)->get(0))));
 	this->mark_ibuffer_index = this->ibuffer_index;
 	this->mark_ibuffer_len = this->ibuffer_len;
@@ -210,6 +212,7 @@ bool AudioFloatFormatConverter$AudioFloatInputStreamResampler::markSupported() {
 }
 
 void AudioFloatFormatConverter$AudioFloatInputStreamResampler::readNextBuffer() {
+	$useLocalCurrentObjectStackCache();
 	if (this->ibuffer_len == -1) {
 		return;
 	}
@@ -253,6 +256,7 @@ void AudioFloatFormatConverter$AudioFloatInputStreamResampler::readNextBuffer() 
 }
 
 int32_t AudioFloatFormatConverter$AudioFloatInputStreamResampler::read($floats* b, int32_t off, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	if (this->cbuffer == nullptr || $nc($nc(this->cbuffer)->get(0))->length < $div(len, this->nrofchannels)) {
 		$set(this, cbuffer, $new($floatArray2, this->nrofchannels, $div(len, this->nrofchannels)));
 	}
@@ -304,6 +308,7 @@ int32_t AudioFloatFormatConverter$AudioFloatInputStreamResampler::read($floats* 
 }
 
 void AudioFloatFormatConverter$AudioFloatInputStreamResampler::reset() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->ais)->reset();
 	if (this->mark_ibuffer == nullptr) {
 		return;

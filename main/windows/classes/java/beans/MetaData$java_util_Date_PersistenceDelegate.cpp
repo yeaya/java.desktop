@@ -66,6 +66,7 @@ void MetaData$java_util_Date_PersistenceDelegate::init$() {
 }
 
 bool MetaData$java_util_Date_PersistenceDelegate::mutatesTo(Object$* oldInstance, Object$* newInstance) {
+	$useLocalCurrentObjectStackCache();
 	if (!$PersistenceDelegate::mutatesTo(oldInstance, newInstance)) {
 		return false;
 	}
@@ -76,6 +77,7 @@ bool MetaData$java_util_Date_PersistenceDelegate::mutatesTo(Object$* oldInstance
 }
 
 $Expression* MetaData$java_util_Date_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Date, date, $cast($Date, oldInstance));
 	$var($Object, var$0, $of(date));
 	$var($Object, var$1, $of($nc($of(date))->getClass()));

@@ -112,18 +112,22 @@ void MotifFileChooserUI$MotifFileListModel::init$($MotifFileChooserUI* this$0) {
 }
 
 int32_t MotifFileChooserUI$MotifFileListModel::getSize() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($nc($(this->this$0->getModel()))->getFiles()))->size();
 }
 
 bool MotifFileChooserUI$MotifFileListModel::contains(Object$* o) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($nc($(this->this$0->getModel()))->getFiles()))->contains(o);
 }
 
 int32_t MotifFileChooserUI$MotifFileListModel::indexOf(Object$* o) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($nc($(this->this$0->getModel()))->getFiles()))->indexOf(o);
 }
 
 $Object* MotifFileChooserUI$MotifFileListModel::getElementAt(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	return $of($cast($File, $nc($($nc($(this->this$0->getModel()))->getFiles()))->elementAt(index)));
 }
 
@@ -138,6 +142,7 @@ void MotifFileChooserUI$MotifFileListModel::intervalRemoved($ListDataEvent* e) {
 }
 
 void MotifFileChooserUI$MotifFileListModel::fireContentsChanged() {
+	$useLocalCurrentObjectStackCache();
 	fireContentsChanged(this, 0, $nc($($nc($(this->this$0->getModel()))->getFiles()))->size() - 1);
 }
 

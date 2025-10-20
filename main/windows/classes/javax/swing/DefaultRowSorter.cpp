@@ -181,6 +181,7 @@ void DefaultRowSorter::init$() {
 }
 
 void DefaultRowSorter::setModelWrapper($DefaultRowSorter$ModelWrapper* modelWrapper) {
+	$useLocalCurrentObjectStackCache();
 	if (modelWrapper == nullptr) {
 		$throwNew($IllegalArgumentException, "modelWrapper most be non-null"_s);
 	}
@@ -218,6 +219,7 @@ bool DefaultRowSorter::isSortable(int32_t column) {
 }
 
 void DefaultRowSorter::setSortKeys($List* sortKeys) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, old, this->sortKeys);
 	if (sortKeys != nullptr && sortKeys->size() > 0) {
 		int32_t max = $nc($(getModelWrapper()))->getColumnCount();
@@ -280,6 +282,7 @@ $RowFilter* DefaultRowSorter::getRowFilter() {
 }
 
 void DefaultRowSorter::toggleSortOrder(int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	checkColumn(column);
 	if (isSortable(column)) {
 		$var($List, keys, $new($ArrayList, $(static_cast<$Collection*>(getSortKeys()))));
@@ -347,6 +350,7 @@ int32_t DefaultRowSorter::convertUnsortedUnfiltered(int32_t index) {
 }
 
 bool DefaultRowSorter::isUnsorted() {
+	$useLocalCurrentObjectStackCache();
 	$var($List, keys, getSortKeys());
 	int32_t keySize = $nc(keys)->size();
 	$init($SortOrder);
@@ -354,6 +358,7 @@ bool DefaultRowSorter::isUnsorted() {
 }
 
 void DefaultRowSorter::sortExistingData() {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, lastViewToModel, getViewToModelAsInts(this->viewToModel));
 	updateUseToString();
 	cacheSortKeys($(getSortKeys()));
@@ -378,6 +383,7 @@ void DefaultRowSorter::sortExistingData() {
 }
 
 void DefaultRowSorter::sort() {
+	$useLocalCurrentObjectStackCache();
 	this->sorted = true;
 	$var($ints, lastViewToModel, getViewToModelAsInts(this->viewToModel));
 	updateUseToString();
@@ -446,6 +452,7 @@ void DefaultRowSorter::createModelToView(int32_t rowCount) {
 }
 
 void DefaultRowSorter::createViewToModel(int32_t rowCount) {
+	$useLocalCurrentObjectStackCache();
 	int32_t recreateFrom = 0;
 	if (this->viewToModel != nullptr) {
 		recreateFrom = $Math::min(rowCount, $nc(this->viewToModel)->length);
@@ -467,6 +474,7 @@ void DefaultRowSorter::createViewToModel(int32_t rowCount) {
 }
 
 void DefaultRowSorter::cacheSortKeys($List* keys) {
+	$useLocalCurrentObjectStackCache();
 	int32_t keySize = $nc(keys)->size();
 	$set(this, sortComparators, $new($ComparatorArray, keySize));
 	for (int32_t i = 0; i < keySize; ++i) {
@@ -616,6 +624,7 @@ void DefaultRowSorter::checkAgainstModel(int32_t firstRow, int32_t endRow) {
 }
 
 bool DefaultRowSorter::include(int32_t row) {
+	$useLocalCurrentObjectStackCache();
 	$var($RowFilter, filter, getRowFilter());
 	if (filter != nullptr) {
 		return filter->include($(getFilterEntry(row)));
@@ -624,6 +633,7 @@ bool DefaultRowSorter::include(int32_t row) {
 }
 
 int32_t DefaultRowSorter::compare(int32_t model1, int32_t model2) {
+	$useLocalCurrentObjectStackCache();
 	int32_t column = 0;
 	$SortOrder* sortOrder = nullptr;
 	$var($Object, v1, nullptr);
@@ -671,6 +681,7 @@ bool DefaultRowSorter::isTransformed() {
 }
 
 void DefaultRowSorter::insertInOrder($List* toAdd, $DefaultRowSorter$RowArray* current) {
+	$useLocalCurrentObjectStackCache();
 	int32_t last = 0;
 	int32_t index = 0;
 	int32_t max = $nc(toAdd)->size();
@@ -698,6 +709,7 @@ bool DefaultRowSorter::shouldOptimizeChange(int32_t firstRow, int32_t lastRow) {
 }
 
 void DefaultRowSorter::rowsInserted0(int32_t firstRow, int32_t lastRow) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, oldViewToModel, getViewToModelAsInts(this->viewToModel));
 	int32_t i = 0;
 	int32_t delta = (lastRow - firstRow) + 1;
@@ -726,6 +738,7 @@ void DefaultRowSorter::rowsInserted0(int32_t firstRow, int32_t lastRow) {
 }
 
 void DefaultRowSorter::rowsDeleted0(int32_t firstRow, int32_t lastRow) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, oldViewToModel, getViewToModelAsInts(this->viewToModel));
 	int32_t removedFromView = 0;
 	int32_t i = 0;
@@ -764,6 +777,7 @@ void DefaultRowSorter::rowsDeleted0(int32_t firstRow, int32_t lastRow) {
 }
 
 void DefaultRowSorter::rowsUpdated0(int32_t firstRow, int32_t lastRow) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, oldViewToModel, getViewToModelAsInts(this->viewToModel));
 	int32_t i = 0;
 	int32_t j = 0;

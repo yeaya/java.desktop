@@ -312,6 +312,7 @@ void D3DScreenUpdateManager::init$() {
 }
 
 $SurfaceData* D3DScreenUpdateManager::createScreenSurface($Win32GraphicsConfig* gc, $WComponentPeer* peer, int32_t bbNum, bool isResize) {
+	$useLocalCurrentObjectStackCache();
 	if (this->done || !($instanceOf($D3DGraphicsConfig, gc))) {
 		return $ScreenUpdateManager::createScreenSurface(gc, peer, bbNum, isResize);
 	}
@@ -335,6 +336,7 @@ $SurfaceData* D3DScreenUpdateManager::createScreenSurface($Win32GraphicsConfig* 
 
 bool D3DScreenUpdateManager::canUseD3DOnScreen($WComponentPeer* peer, $Win32GraphicsConfig* gc, int32_t bbNum) {
 	$init(D3DScreenUpdateManager);
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($D3DGraphicsConfig, gc))) {
 		return false;
 	}
@@ -360,6 +362,7 @@ bool D3DScreenUpdateManager::canUseD3DOnScreen($WComponentPeer* peer, $Win32Grap
 }
 
 $Graphics2D* D3DScreenUpdateManager::createGraphics($SurfaceData* sd$renamed, $WComponentPeer* peer, $Color* fgColor, $Color* bgColor, $Font* font) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceData, sd, sd$renamed);
 	if (!this->done && $instanceOf($D3DSurfaceData$D3DWindowSurfaceData, sd)) {
 		$var($D3DSurfaceData$D3DWindowSurfaceData, d3dw, $cast($D3DSurfaceData$D3DWindowSurfaceData, sd));
@@ -374,6 +377,7 @@ $Graphics2D* D3DScreenUpdateManager::createGraphics($SurfaceData* sd$renamed, $W
 }
 
 void D3DScreenUpdateManager::repaintPeerTarget($WComponentPeer* peer) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, target, $cast($Component, $nc(peer)->getTarget()));
 	$var($Rectangle, bounds, $nc($($AWTAccessor::getComponentAccessor()))->getBounds(target));
 	peer->handlePaint(0, 0, $nc(bounds)->width, bounds->height);
@@ -458,6 +462,7 @@ void D3DScreenUpdateManager::runUpdateNow() {
 }
 
 void D3DScreenUpdateManager::run() {
+	$useLocalCurrentObjectStackCache();
 	while (!this->done) {
 		$synchronized(this->runLock) {
 			int64_t timeout = $nc(this->d3dwSurfaces)->size() > 0 ? 100 : 0;
@@ -519,6 +524,7 @@ void D3DScreenUpdateManager::run() {
 }
 
 bool D3DScreenUpdateManager::validate($D3DSurfaceData$D3DWindowSurfaceData* sd) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(sd)->isSurfaceLost()) {
 		try {
 			sd->restoreSurface();
@@ -539,6 +545,7 @@ bool D3DScreenUpdateManager::validate($D3DSurfaceData$D3DWindowSurfaceData* sd) 
 
 $SurfaceData* D3DScreenUpdateManager::getGdiSurface($D3DSurfaceData$D3DWindowSurfaceData* d3dw) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->gdiSurfaces == nullptr) {
 			$set(this, gdiSurfaces, $new($HashMap));
 		}
@@ -553,6 +560,7 @@ $SurfaceData* D3DScreenUpdateManager::getGdiSurface($D3DSurfaceData$D3DWindowSur
 
 bool D3DScreenUpdateManager::hasHWChildren($Component* comp) {
 	$init(D3DScreenUpdateManager);
+	$useLocalCurrentObjectStackCache();
 	$var($AWTAccessor$ComponentAccessor, acc, $AWTAccessor::getComponentAccessor());
 	if ($instanceOf($Container, comp)) {
 		{
@@ -574,6 +582,7 @@ bool D3DScreenUpdateManager::hasHWChildren($Component* comp) {
 }
 
 $Thread* D3DScreenUpdateManager::lambda$startUpdateThread$2() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, "D3D Screen Updater"_s);
 	$var($Thread, t, $new($Thread, $($ThreadGroupUtils::getRootThreadGroup()), this, name, 0, false));
 	t->setPriority($Thread::NORM_PRIORITY + 2);
@@ -582,6 +591,7 @@ $Thread* D3DScreenUpdateManager::lambda$startUpdateThread$2() {
 }
 
 $Void* D3DScreenUpdateManager::lambda$new$1() {
+	$useLocalCurrentObjectStackCache();
 	$var($Runnable, shutdownRunnable, static_cast<$Runnable*>($new(D3DScreenUpdateManager$$Lambda$lambda$new$0$2, this)));
 	$var($Thread, shutdown, $new($Thread, $($ThreadGroupUtils::getRootThreadGroup()), shutdownRunnable, "ScreenUpdater"_s, 0, false));
 	shutdown->setContextClassLoader(nullptr);

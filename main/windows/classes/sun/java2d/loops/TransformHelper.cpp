@@ -100,6 +100,7 @@ TransformHelper* TransformHelper::getFromCache($SurfaceType* src) {
 	$load(TransformHelper);
 	$synchronized(class$) {
 		$init(TransformHelper);
+		$useLocalCurrentObjectStackCache();
 		$var($Object, o, $nc(TransformHelper::helpercache)->get(src, nullptr, nullptr));
 		if (o != nullptr) {
 			return $cast(TransformHelper, o);

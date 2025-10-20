@@ -90,6 +90,7 @@ void AppContext$4::init$($AppContext* this$0, $PropertyChangeSupport* val$change
 }
 
 void AppContext$4::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($WindowArray, windowsToDispose, $Window::getOwnerlessWindows());
 	{

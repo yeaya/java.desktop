@@ -74,6 +74,7 @@ void JComponent$AccessibleJComponent$AccessibleContainerHandler::init$($JCompone
 }
 
 void JComponent$AccessibleJComponent$AccessibleContainerHandler::componentAdded($ContainerEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $nc(e)->getChild());
 	if (c != nullptr && $instanceOf($Accessible, c)) {
 		$init($AccessibleContext);
@@ -82,6 +83,7 @@ void JComponent$AccessibleJComponent$AccessibleContainerHandler::componentAdded(
 }
 
 void JComponent$AccessibleJComponent$AccessibleContainerHandler::componentRemoved($ContainerEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $nc(e)->getChild());
 	if (c != nullptr && $instanceOf($Accessible, c)) {
 		$init($AccessibleContext);

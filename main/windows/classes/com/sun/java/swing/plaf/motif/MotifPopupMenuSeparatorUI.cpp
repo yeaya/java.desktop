@@ -67,6 +67,7 @@ $ComponentUI* MotifPopupMenuSeparatorUI::createUI($JComponent* c) {
 }
 
 void MotifPopupMenuSeparatorUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, s, $nc(c)->getSize());
 	$nc(g)->setColor($(c->getForeground()));
 	g->drawLine(0, 0, $nc(s)->width, 0);

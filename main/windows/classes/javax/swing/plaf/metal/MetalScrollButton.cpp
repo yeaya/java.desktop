@@ -106,6 +106,7 @@ void MetalScrollButton::setFreeStanding(bool freeStanding) {
 }
 
 void MetalScrollButton::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	bool leftToRight = $MetalUtils::isLeftToRight(this);
 	bool isEnabled = $nc($(getParent()))->isEnabled();
 	$var($Color, arrowColor, isEnabled ? static_cast<$Color*>($MetalLookAndFeel::getControlInfo()) : static_cast<$Color*>($MetalLookAndFeel::getControlDisabled()));

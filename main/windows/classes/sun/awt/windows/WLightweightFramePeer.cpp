@@ -149,16 +149,19 @@ void WLightweightFramePeer::overrideWindowHandle(int64_t handle) {
 }
 
 void WLightweightFramePeer::show() {
+	$useLocalCurrentObjectStackCache();
 	$WFramePeer::show();
 	postEvent($$new($ComponentEvent, $cast($Component, $(getTarget())), $ComponentEvent::COMPONENT_SHOWN));
 }
 
 void WLightweightFramePeer::hide() {
+	$useLocalCurrentObjectStackCache();
 	$WFramePeer::hide();
 	postEvent($$new($ComponentEvent, $cast($Component, $(getTarget())), $ComponentEvent::COMPONENT_HIDDEN));
 }
 
 void WLightweightFramePeer::reshape(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$WFramePeer::reshape(x, y, width, height);
 	postEvent($$new($ComponentEvent, $cast($Component, $(getTarget())), $ComponentEvent::COMPONENT_MOVED));
 	postEvent($$new($ComponentEvent, $cast($Component, $(getTarget())), $ComponentEvent::COMPONENT_RESIZED));
@@ -180,6 +183,7 @@ void WLightweightFramePeer::ungrab() {
 }
 
 void WLightweightFramePeer::updateCursorImmediately() {
+	$useLocalCurrentObjectStackCache();
 	$nc($($SwingAccessor::getJLightweightFrameAccessor()))->updateCursor($cast($JLightweightFrame, $(getLwTarget())));
 }
 

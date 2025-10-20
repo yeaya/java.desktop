@@ -112,6 +112,7 @@ void HeadlessJScrollPane::init$() {
 }
 
 void HeadlessJScrollPane::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JScrollPane, sp, $new($JScrollPane));
 	sp->getAccessibleContext();
 	sp->isFocusTraversable();

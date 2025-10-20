@@ -99,6 +99,7 @@ void RepaintManager$4::init$($RepaintManager* this$0, $Map* val$tmpDirtyComponen
 }
 
 $Object* RepaintManager$4::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, rect, $cast($Rectangle, $nc(this->val$tmpDirtyComponents)->get(this->val$dirtyComponent)));
 	if (rect == nullptr) {
 		return $of(nullptr);

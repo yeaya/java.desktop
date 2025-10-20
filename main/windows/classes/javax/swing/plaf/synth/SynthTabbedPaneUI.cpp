@@ -375,6 +375,7 @@ void SynthTabbedPaneUI::installDefaults() {
 }
 
 void SynthTabbedPaneUI::updateStyle($JTabbedPane* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -457,6 +458,7 @@ $SynthContext* SynthTabbedPaneUI::getContext($JComponent* c, $Region* subregion,
 }
 
 $JButton* SynthTabbedPaneUI::createScrollButton(int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	if ($UIManager::getBoolean("TabbedPane.useBasicArrows"_s)) {
 		$var($JButton, btn, $BasicTabbedPaneUI::createScrollButton(direction));
 		$nc(btn)->setBorder($($BorderFactory::createEmptyBorder()));
@@ -472,6 +474,7 @@ void SynthTabbedPaneUI::propertyChange($PropertyChangeEvent* e) {
 }
 
 $MouseListener* SynthTabbedPaneUI::createMouseListener() {
+	$useLocalCurrentObjectStackCache();
 	$var($MouseListener, delegate, $BasicTabbedPaneUI::createMouseListener());
 	$var($MouseMotionListener, delegate2, $cast($MouseMotionListener, delegate));
 	return $new($SynthTabbedPaneUI$1, this, delegate, delegate2);
@@ -494,6 +497,7 @@ int32_t SynthTabbedPaneUI::getTabLabelShiftY(int32_t tabPlacement, int32_t tabIn
 }
 
 void SynthTabbedPaneUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -504,6 +508,7 @@ void SynthTabbedPaneUI::update($Graphics* g, $JComponent* c) {
 }
 
 int32_t SynthTabbedPaneUI::getBaseline(int32_t tab) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(this->tabPane)->getTabComponentAt(tab) != nullptr;
 	if (var$0 || getTextViewForTab(tab) != nullptr) {
 		return $BasicTabbedPaneUI::getBaseline(tab);
@@ -530,6 +535,7 @@ void SynthTabbedPaneUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void SynthTabbedPaneUI::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	int32_t selectedIndex = $nc(this->tabPane)->getSelectedIndex();
 	int32_t tabPlacement = $nc(this->tabPane)->getTabPlacement();
 	ensureCurrentLayout();
@@ -576,6 +582,7 @@ void SynthTabbedPaneUI::paint($SynthContext* context, $Graphics* g) {
 }
 
 void SynthTabbedPaneUI::paintTabArea($Graphics* g, int32_t tabPlacement, int32_t selectedIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, $nc(this->tabPane)->getInsets());
 	int32_t x = $nc(insets)->left;
 	int32_t y = insets->top;
@@ -585,6 +592,7 @@ void SynthTabbedPaneUI::paintTabArea($Graphics* g, int32_t tabPlacement, int32_t
 }
 
 void SynthTabbedPaneUI::paintTabArea($SynthContext* ss, $Graphics* g, int32_t tabPlacement, int32_t selectedIndex, $Rectangle* tabAreaBounds) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, clipRect, $nc(g)->getClipBounds());
 	if (this->tabAreaStatesMatchSelectedTab && selectedIndex >= 0) {
 		int32_t var$0 = selectedIndex;
@@ -641,6 +649,7 @@ void SynthTabbedPaneUI::setRolloverTab(int32_t index) {
 }
 
 void SynthTabbedPaneUI::paintTab($SynthContext* ss, $Graphics* g, int32_t tabPlacement, $RectangleArray* rects, int32_t tabIndex, $Rectangle* iconRect, $Rectangle* textRect) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, tabRect, $nc(rects)->get(tabIndex));
 	int32_t selectedIndex = $nc(this->tabPane)->getSelectedIndex();
 	bool isSelected = selectedIndex == tabIndex;
@@ -710,6 +719,7 @@ void SynthTabbedPaneUI::paintTab($SynthContext* ss, $Graphics* g, int32_t tabPla
 }
 
 void SynthTabbedPaneUI::layoutLabel($SynthContext* ss, int32_t tabPlacement, $FontMetrics* metrics, int32_t tabIndex, $String* title, $Icon* icon, $Rectangle* tabRect, $Rectangle* iconRect, $Rectangle* textRect, bool isSelected) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, v, getTextViewForTab(tabIndex));
 	if (v != nullptr) {
 		$nc(this->tabPane)->putClientProperty("html"_s, v);
@@ -726,6 +736,7 @@ void SynthTabbedPaneUI::layoutLabel($SynthContext* ss, int32_t tabPlacement, $Fo
 }
 
 void SynthTabbedPaneUI::paintText($SynthContext* ss, $Graphics* g, int32_t tabPlacement, $Font* font, $FontMetrics* metrics, int32_t tabIndex, $String* title, $Rectangle* textRect, bool isSelected) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setFont(font);
 	$var($View, v, getTextViewForTab(tabIndex));
 	if (v != nullptr) {
@@ -739,6 +750,7 @@ void SynthTabbedPaneUI::paintText($SynthContext* ss, $Graphics* g, int32_t tabPl
 }
 
 void SynthTabbedPaneUI::paintContentBorder($SynthContext* ss, $Graphics* g, int32_t tabPlacement, int32_t selectedIndex) {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = $nc(this->tabPane)->getWidth();
 	int32_t height = $nc(this->tabPane)->getHeight();
 	$var($Insets, insets, $nc(this->tabPane)->getInsets());
@@ -787,6 +799,7 @@ void SynthTabbedPaneUI::ensureCurrentLayout() {
 }
 
 int32_t SynthTabbedPaneUI::calculateMaxTabHeight(int32_t tabPlacement) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, metrics, getFontMetrics($($nc($($nc(this->tabContext)->getStyle()))->getFont(this->tabContext))));
 	int32_t tabCount = $nc(this->tabPane)->getTabCount();
 	int32_t result = 0;
@@ -798,6 +811,7 @@ int32_t SynthTabbedPaneUI::calculateMaxTabHeight(int32_t tabPlacement) {
 }
 
 int32_t SynthTabbedPaneUI::calculateTabWidth(int32_t tabPlacement, int32_t tabIndex, $FontMetrics* metrics) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, icon, getIconForTab(tabIndex));
 	$var($Insets, tabInsets, getTabInsets(tabPlacement, tabIndex));
 	int32_t width = $nc(tabInsets)->left + tabInsets->right;
@@ -820,6 +834,7 @@ int32_t SynthTabbedPaneUI::calculateTabWidth(int32_t tabPlacement, int32_t tabIn
 }
 
 int32_t SynthTabbedPaneUI::calculateMaxTabWidth(int32_t tabPlacement) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, metrics, getFontMetrics($($nc($($nc(this->tabContext)->getStyle()))->getFont(this->tabContext))));
 	int32_t tabCount = $nc(this->tabPane)->getTabCount();
 	int32_t result = 0;
@@ -835,6 +850,7 @@ $Insets* SynthTabbedPaneUI::getTabInsets(int32_t tabPlacement, int32_t tabIndex)
 }
 
 $FontMetrics* SynthTabbedPaneUI::getFontMetrics() {
+	$useLocalCurrentObjectStackCache();
 	return getFontMetrics($($nc($($nc(this->tabContext)->getStyle()))->getFont(this->tabContext)));
 }
 

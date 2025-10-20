@@ -88,6 +88,7 @@ void bug6263446$3::init$(int32_t val$clicks) {
 }
 
 void bug6263446$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$init($bug6263446);

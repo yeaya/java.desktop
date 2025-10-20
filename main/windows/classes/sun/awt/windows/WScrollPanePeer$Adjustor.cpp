@@ -109,6 +109,7 @@ void WScrollPanePeer$Adjustor::init$($WScrollPanePeer* this$0, int32_t orient, i
 }
 
 void WScrollPanePeer$Adjustor::run() {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->getScrollChild() == nullptr) {
 		return;
 	}

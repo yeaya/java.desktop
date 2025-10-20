@@ -77,6 +77,7 @@ void bug4128979$1::init$($bug4128979* this$0) {
 }
 
 void bug4128979$1::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor($($UIManager::getColor("ToggleButton.highlight"_s)));
 	g->fillRect(x, y, 49, 49);
 	g->setColor($$new($Color, ~$nc($($UIManager::getColor("ToggleButton.highlight"_s)))->getRGB()));

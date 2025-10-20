@@ -148,6 +148,7 @@ void MetalDesktopIconUI::installDefaults() {
 }
 
 void MetalDesktopIconUI::installComponents() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, $nc(this->desktopIcon)->getInternalFrame());
 	$var($Icon, icon, $nc(this->frame)->getFrameIcon());
 	$var($String, title, $nc(this->frame)->getTitle());
@@ -194,6 +195,7 @@ $Dimension* MetalDesktopIconUI::getPreferredSize($JComponent* c) {
 }
 
 $Dimension* MetalDesktopIconUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	return $new($Dimension, this->width, $nc($($nc($($nc(this->desktopIcon)->getLayout()))->minimumLayoutSize(this->desktopIcon)))->height);
 }
 

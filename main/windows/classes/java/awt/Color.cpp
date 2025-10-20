@@ -259,6 +259,7 @@ void Color::initIDs() {
 
 void Color::testColorValueRange(int32_t r, int32_t g, int32_t b, int32_t a) {
 	$init(Color);
+	$useLocalCurrentObjectStackCache();
 	bool rangeError = false;
 	$var($String, badComponentString, ""_s);
 	if (a < 0 || a > 255) {
@@ -284,6 +285,7 @@ void Color::testColorValueRange(int32_t r, int32_t g, int32_t b, int32_t a) {
 
 void Color::testColorValueRange(float r, float g, float b, float a) {
 	$init(Color);
+	$useLocalCurrentObjectStackCache();
 	bool rangeError = false;
 	$var($String, badComponentString, ""_s);
 	if (a < 0.0 || a > 1.0) {
@@ -362,6 +364,7 @@ void Color::init$(float r, float g, float b, float a) {
 }
 
 void Color::init$($ColorSpace* cspace, $floats* components, float alpha) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frgbvalue, nullptr);
 	$set(this, fvalue, nullptr);
 	this->falpha = 0.0f;
@@ -456,6 +459,7 @@ bool Color::equals(Object$* obj) {
 }
 
 $String* Color::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$5, $$str({$($of(this)->getClass()->getName()), "[r="_s}));
 	$var($String, var$4, $$concat(var$5, $$str(getRed())));
 	$var($String, var$3, $$concat(var$4, ",g="));
@@ -683,6 +687,7 @@ $floats* Color::getColorComponents($floats* compArray) {
 }
 
 $floats* Color::getComponents($ColorSpace* cspace, $floats* compArray$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($floats, compArray, compArray$renamed);
 	if (this->cs == nullptr) {
 		$set(this, cs, $ColorSpace::getInstance($ColorSpace::CS_sRGB));
@@ -713,6 +718,7 @@ $floats* Color::getComponents($ColorSpace* cspace, $floats* compArray$renamed) {
 }
 
 $floats* Color::getColorComponents($ColorSpace* cspace, $floats* compArray) {
+	$useLocalCurrentObjectStackCache();
 	if (this->cs == nullptr) {
 		$set(this, cs, $ColorSpace::getInstance($ColorSpace::CS_sRGB));
 	}

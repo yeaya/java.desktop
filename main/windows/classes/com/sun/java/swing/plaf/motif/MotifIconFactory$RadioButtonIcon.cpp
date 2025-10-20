@@ -112,6 +112,7 @@ void MotifIconFactory$RadioButtonIcon::init$() {
 }
 
 void MotifIconFactory$RadioButtonIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	$var($ButtonModel, model, $nc(b)->getModel());
 	int32_t w = getIconWidth();

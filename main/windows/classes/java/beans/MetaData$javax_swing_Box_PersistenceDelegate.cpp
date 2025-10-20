@@ -71,11 +71,13 @@ void MetaData$javax_swing_Box_PersistenceDelegate::init$() {
 }
 
 bool MetaData$javax_swing_Box_PersistenceDelegate::mutatesTo(Object$* oldInstance, Object$* newInstance) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $DefaultPersistenceDelegate::mutatesTo(oldInstance, newInstance);
 	return var$0 && $nc($(getAxis(oldInstance)))->equals($(getAxis(newInstance)));
 }
 
 $Expression* MetaData$javax_swing_Box_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, var$0, oldInstance);
 	$var($Object, var$1, $of($nc($of(oldInstance))->getClass()));
 	$var($String, var$2, "new"_s);
@@ -83,6 +85,7 @@ $Expression* MetaData$javax_swing_Box_PersistenceDelegate::instantiate(Object$* 
 }
 
 $Integer* MetaData$javax_swing_Box_PersistenceDelegate::getAxis(Object$* object) {
+	$useLocalCurrentObjectStackCache();
 	$var($Box, box, $cast($Box, object));
 	return $cast($Integer, $MetaData::getPrivateFieldValue($($nc(box)->getLayout()), "javax.swing.BoxLayout.axis"_s));
 }

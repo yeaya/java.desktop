@@ -107,6 +107,7 @@ void SunDisplayChanger::remove($DisplayChangedListener* theListener) {
 }
 
 void SunDisplayChanger::notifyListeners() {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(SunDisplayChanger::log)->isLoggable($PlatformLogger$Level::FINEST)) {
 		$nc(SunDisplayChanger::log)->finest("notifyListeners"_s);
@@ -135,6 +136,7 @@ void SunDisplayChanger::notifyListeners() {
 }
 
 void SunDisplayChanger::notifyPaletteChanged() {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(SunDisplayChanger::log)->isLoggable($PlatformLogger$Level::FINEST)) {
 		$nc(SunDisplayChanger::log)->finest("notifyPaletteChanged"_s);

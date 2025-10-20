@@ -71,6 +71,7 @@ bool AbstractFinder::isValid($Executable* method) {
 }
 
 $Executable* AbstractFinder::find($ExecutableArray* methods) {
+	$useLocalCurrentObjectStackCache();
 	$var($Map, map, $new($HashMap));
 	$var($Executable, oldMethod, nullptr);
 	$var($ClassArray, oldParams, nullptr);

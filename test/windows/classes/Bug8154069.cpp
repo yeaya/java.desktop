@@ -171,6 +171,7 @@ void Bug8154069::init$() {
 
 void Bug8154069::main($StringArray* args) {
 	$init(Bug8154069);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -209,6 +210,7 @@ void Bug8154069::lambda$main$1() {
 
 void Bug8154069::lambda$main$0() {
 	$init(Bug8154069);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(Bug8154069::frame, $new($JFrame));
 	$var($StringArray, petStrings, $new($StringArray, {
 		"Bird"_s,

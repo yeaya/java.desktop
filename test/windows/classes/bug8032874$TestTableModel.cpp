@@ -67,6 +67,7 @@ $Object* allocate$bug8032874$TestTableModel($Class* clazz) {
 }
 
 void bug8032874$TestTableModel::init$() {
+	$useLocalCurrentObjectStackCache();
 	$AbstractTableModel::init$();
 	$set(this, data, $new($ArrayList));
 	for (int32_t i = 0; i < 5; ++i) {

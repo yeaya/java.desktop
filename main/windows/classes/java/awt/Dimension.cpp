@@ -142,6 +142,7 @@ int32_t Dimension::hashCode() {
 }
 
 $String* Dimension::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($of(this)->getClass()->getName()), "[width="_s, $$str(this->width), ",height="_s, $$str(this->height), "]"_s});
 }
 

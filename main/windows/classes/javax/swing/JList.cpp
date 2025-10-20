@@ -743,6 +743,7 @@ void JList::setUI($ListUI* ui) {
 }
 
 void JList::updateUI() {
+	$useLocalCurrentObjectStackCache();
 	if (!this->updateInProgress) {
 		this->updateInProgress = true;
 		{
@@ -770,6 +771,7 @@ $String* JList::getUIClassID() {
 }
 
 void JList::updateFixedCellSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($ListCellRenderer, cr, getCellRenderer());
 	$var($Object, value, getPrototypeCellValue());
 	if ((cr != nullptr) && (value != nullptr)) {
@@ -884,6 +886,7 @@ void JList::setLayoutOrientation(int32_t layoutOrientation) {
 }
 
 int32_t JList::getFirstVisibleIndex() {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, r, getVisibleRect());
 	int32_t first = 0;
 	if ($nc($(this->getComponentOrientation()))->isLeftToRight()) {
@@ -904,6 +907,7 @@ int32_t JList::getFirstVisibleIndex() {
 }
 
 int32_t JList::getLastVisibleIndex() {
+	$useLocalCurrentObjectStackCache();
 	bool leftToRight = $nc($(this->getComponentOrientation()))->isLeftToRight();
 	$var($Rectangle, r, getVisibleRect());
 	$var($Point, lastPoint, nullptr);
@@ -996,6 +1000,7 @@ $DropMode* JList::getDropMode() {
 }
 
 $TransferHandler$DropLocation* JList::dropLocationForPoint($Point* p) {
+	$useLocalCurrentObjectStackCache();
 	$var($JList$DropLocation, location, nullptr);
 	$var($Rectangle, rect, nullptr);
 	int32_t index = locationToIndex(p);
@@ -1085,6 +1090,7 @@ $TransferHandler$DropLocation* JList::dropLocationForPoint($Point* p) {
 }
 
 $Object* JList::setDropLocation($TransferHandler$DropLocation* location, Object$* state, bool forDrop) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, retVal, nullptr);
 	$var($JList$DropLocation, listLocation, $cast($JList$DropLocation, location));
 	$init($DropMode);
@@ -1130,6 +1136,7 @@ $JList$DropLocation* JList::getDropLocation() {
 }
 
 int32_t JList::getNextMatch($String* prefix$renamed, int32_t startIndex, $Position$Bias* bias) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prefix, prefix$renamed);
 	$var($ListModel, model, getModel());
 	int32_t max = $nc(model)->getSize();
@@ -1165,6 +1172,7 @@ int32_t JList::getNextMatch($String* prefix$renamed, int32_t startIndex, $Positi
 }
 
 $String* JList::getToolTipText($MouseEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	if (event != nullptr) {
 		$var($Point, p, event->getPoint());
 		int32_t index = locationToIndex(p);
@@ -1249,6 +1257,7 @@ $ListSelectionModel* JList::getSelectionModel() {
 }
 
 void JList::fireSelectionValueChanged(int32_t firstIndex, int32_t lastIndex, bool isAdjusting) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($ListSelectionEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -1355,6 +1364,7 @@ $ints* JList::getSelectedIndices() {
 }
 
 void JList::setSelectedIndex(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (index >= $nc($(getModel()))->getSize()) {
 		return;
 	}
@@ -1362,6 +1372,7 @@ void JList::setSelectedIndex(int32_t index) {
 }
 
 void JList::setSelectedIndices($ints* indices) {
+	$useLocalCurrentObjectStackCache();
 	$var($ListSelectionModel, sm, getSelectionModel());
 	$nc(sm)->clearSelection();
 	int32_t size = $nc($(getModel()))->getSize();
@@ -1381,6 +1392,7 @@ void JList::setSelectedIndices($ints* indices) {
 }
 
 $ObjectArray* JList::getSelectedValues() {
+	$useLocalCurrentObjectStackCache();
 	$var($ListSelectionModel, sm, getSelectionModel());
 	$var($ListModel, dm, getModel());
 	int32_t iMin = $nc(sm)->getMinSelectionIndex();
@@ -1403,6 +1415,7 @@ $ObjectArray* JList::getSelectedValues() {
 }
 
 $List* JList::getSelectedValuesList() {
+	$useLocalCurrentObjectStackCache();
 	$var($ListModel, dm, getModel());
 	$var($ints, selectedIndices, getSelectedIndices());
 	if ($nc(selectedIndices)->length > 0) {
@@ -1435,11 +1448,13 @@ int32_t JList::getSelectedIndex() {
 }
 
 $Object* JList::getSelectedValue() {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = getMinSelectionIndex();
 	return $of(((i == -1) || (i >= $nc($(getModel()))->getSize())) ? ($Object*)nullptr : $nc($(getModel()))->getElementAt(i));
 }
 
 void JList::setSelectedValue(Object$* anObject, bool shouldScroll) {
+	$useLocalCurrentObjectStackCache();
 	if (anObject == nullptr) {
 		clearSelection();
 	} else if (!$nc($of(anObject))->equals($(getSelectedValue()))) {
@@ -1480,6 +1495,7 @@ void JList::checkScrollableParameters($Rectangle* visibleRect, int32_t orientati
 }
 
 $Dimension* JList::getPreferredScrollableViewportSize() {
+	$useLocalCurrentObjectStackCache();
 	if (getLayoutOrientation() != JList::VERTICAL) {
 		return getPreferredSize();
 	}
@@ -1511,6 +1527,7 @@ $Dimension* JList::getPreferredScrollableViewportSize() {
 }
 
 int32_t JList::getScrollableUnitIncrement($Rectangle* visibleRect, int32_t orientation, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	checkScrollableParameters(visibleRect, orientation);
 	if (orientation == $SwingConstants::VERTICAL) {
 		int32_t row = locationToIndex($($nc(visibleRect)->getLocation()));
@@ -1576,6 +1593,7 @@ int32_t JList::getScrollableUnitIncrement($Rectangle* visibleRect, int32_t orien
 }
 
 int32_t JList::getScrollableBlockIncrement($Rectangle* visibleRect, int32_t orientation, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	checkScrollableParameters(visibleRect, orientation);
 	if (orientation == $SwingConstants::VERTICAL) {
 		int32_t inc = $nc(visibleRect)->height;
@@ -1667,6 +1685,7 @@ int32_t JList::getScrollableBlockIncrement($Rectangle* visibleRect, int32_t orie
 }
 
 bool JList::getScrollableTracksViewportWidth() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = getLayoutOrientation() == JList::HORIZONTAL_WRAP;
 	if (var$0 && getVisibleRowCount() <= 0) {
 		return true;
@@ -1680,6 +1699,7 @@ bool JList::getScrollableTracksViewportWidth() {
 }
 
 bool JList::getScrollableTracksViewportHeight() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = getLayoutOrientation() == JList::VERTICAL_WRAP;
 	if (var$0 && getVisibleRowCount() <= 0) {
 		return true;
@@ -1704,6 +1724,7 @@ void JList::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JList::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, selectionForegroundString, this->selectionForeground != nullptr ? $nc(this->selectionForeground)->toString() : ""_s);
 	$var($String, selectionBackgroundString, this->selectionBackground != nullptr ? $nc(this->selectionBackground)->toString() : ""_s);
 	return $str({$($JComponent::paramString()), ",fixedCellHeight="_s, $$str(this->fixedCellHeight), ",fixedCellWidth="_s, $$str(this->fixedCellWidth), ",horizontalScrollIncrement="_s, $$str(this->horizontalScrollIncrement), ",selectionBackground="_s, selectionBackgroundString, ",selectionForeground="_s, selectionForegroundString, ",visibleRowCount="_s, $$str(this->visibleRowCount), ",layoutOrientation="_s, $$str(this->layoutOrientation)});

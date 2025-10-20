@@ -106,6 +106,7 @@ void Test6943780::uncaughtException($Thread* thread, $Throwable* throwable) {
 }
 
 void Test6943780::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTabbedPane, pane, $new($JTabbedPane, $JTabbedPane::TOP, $JTabbedPane::SCROLL_TAB_LAYOUT));
 	pane->addTab("first"_s, $$new($JButton, "first"_s));
 	pane->addTab("second"_s, $$new($JButton, "second"_s));

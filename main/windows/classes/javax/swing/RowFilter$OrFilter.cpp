@@ -71,6 +71,7 @@ $Object* allocate$RowFilter$OrFilter($Class* clazz) {
 }
 
 void RowFilter$OrFilter::init$($Iterable* filters) {
+	$useLocalCurrentObjectStackCache();
 	$RowFilter::init$();
 	$set(this, filters, $new($ArrayList));
 	{
@@ -88,6 +89,7 @@ void RowFilter$OrFilter::init$($Iterable* filters) {
 }
 
 bool RowFilter$OrFilter::include($RowFilter$Entry* value) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->filters)->iterator());
 		for (; $nc(i$)->hasNext();) {

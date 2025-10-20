@@ -83,6 +83,7 @@ void bug7049024$1::init$() {
 }
 
 void bug7049024$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug7049024);
 	$assignStatic($bug7049024::frame, $new($JFrame, "Test"_s));
 	$assignStatic($bug7049024::textField, $new($JTextField, "test selection for textfield"_s));

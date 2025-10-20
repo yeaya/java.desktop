@@ -90,6 +90,7 @@ void GroupLayout$LinkInfo::init$(int32_t axis) {
 }
 
 void GroupLayout$LinkInfo::add($GroupLayout$ComponentInfo* child) {
+	$useLocalCurrentObjectStackCache();
 	$var(GroupLayout$LinkInfo, childMaster, $nc(child)->getLinkInfo(this->axis, false));
 	if (childMaster == nullptr) {
 		$nc(this->linked)->add(child);
@@ -130,6 +131,7 @@ int32_t GroupLayout$LinkInfo::getSize(int32_t axis) {
 }
 
 int32_t GroupLayout$LinkInfo::calculateLinkedSize(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = 0;
 	{
 		$var($Iterator, i$, $nc(this->linked)->iterator());

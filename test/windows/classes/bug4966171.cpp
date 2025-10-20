@@ -174,6 +174,7 @@ void bug4966171::init$() {
 }
 
 void bug4966171::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -189,6 +190,7 @@ void bug4966171::main($StringArray* args) {
 }
 
 void bug4966171::test() {
+	$useLocalCurrentObjectStackCache();
 	int64_t var$0 = $System::nanoTime();
 	$init($TimeUnit);
 	int64_t endtime = var$0 + $TimeUnit::SECONDS->toNanos(10);
@@ -258,6 +260,7 @@ void bug4966171::test() {
 }
 
 void bug4966171::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 	} catch ($UnsupportedLookAndFeelException&) {

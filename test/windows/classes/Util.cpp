@@ -180,6 +180,7 @@ bool Util::compareBufferedImages($BufferedImage* bufferedImage0, $BufferedImage*
 }
 
 void Util::generateOOME() {
+	$useLocalCurrentObjectStackCache();
 	$var($List, bigLeak, $new($LinkedList));
 	bool oome = false;
 	$init($System);
@@ -211,6 +212,7 @@ void Util::generateOOME() {
 }
 
 $Component* Util::findSubComponent($Component* parent, $String* className) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, parentClassName, $nc($of(parent))->getClass()->getName());
 	if ($nc(parentClassName)->contains(className)) {
 		return parent;
@@ -235,6 +237,7 @@ $Component* Util::findSubComponent($Component* parent, $String* className) {
 }
 
 void Util::hitMnemonics($Robot* robot, $ints* keys) {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, mnemonicKeyCodes, getSystemMnemonicKeyCodes());
 	{
 		$var($Iterator, i$, $nc(mnemonicKeyCodes)->iterator());
@@ -281,6 +284,7 @@ $Point* Util::getCenterPoint($Component* component) {
 }
 
 $Object* Util::invokeOnEDT($Callable* task) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, result, $new($ArrayList, 1));
 	$var($ExceptionArray, exception, $new($ExceptionArray, 1));
 	$SwingUtilities::invokeAndWait($$new($Util$2, result, task, exception));
@@ -291,6 +295,7 @@ $Object* Util::invokeOnEDT($Callable* task) {
 }
 
 $ArrayList* Util::getKeyCodesFromKeyMask(int32_t modifiers) {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, result, $new($ArrayList));
 	if (((int32_t)(modifiers & (uint32_t)$InputEvent::CTRL_MASK)) != 0) {
 		result->add($($Integer::valueOf($KeyEvent::VK_CONTROL)));
@@ -308,6 +313,7 @@ $ArrayList* Util::getKeyCodesFromKeyMask(int32_t modifiers) {
 }
 
 $ArrayList* Util::getSystemMnemonicKeyCodes() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, osName, $System::getProperty("os.name"_s));
 	$var($ArrayList, result, $new($ArrayList));
 	if ($nc(osName)->contains("OS X"_s)) {
@@ -318,6 +324,7 @@ $ArrayList* Util::getSystemMnemonicKeyCodes() {
 }
 
 $JDialog* Util::createModalDialogWithPassFailButtons($String* failString) {
+	$useLocalCurrentObjectStackCache();
 	$var($JDialog, retDialog, $new($JDialog));
 	$var($Box, buttonBox, $Box::createHorizontalBox());
 	$var($JButton, passButton, $new($JButton, "Pass"_s));

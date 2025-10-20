@@ -63,6 +63,7 @@ void TestClearSel::init$() {
 }
 
 void TestClearSel::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($CountDownLatch, latch, $new($CountDownLatch, 1));
 	$var($ClearSelTest, test, $new($ClearSelTest, latch));
 	$var($Thread, T1, $new($Thread, static_cast<$Runnable*>(test)));

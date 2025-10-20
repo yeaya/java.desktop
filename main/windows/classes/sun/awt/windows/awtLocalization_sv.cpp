@@ -43,6 +43,7 @@ void awtLocalization_sv::init$() {
 }
 
 $ObjectArray2* awtLocalization_sv::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("allFiles"_s),

@@ -162,6 +162,7 @@ $Object* ParameterBlock::shallowClone() {
 }
 
 $Object* ParameterBlock::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(ParameterBlock, theClone, nullptr);
 	try {
 		$assign(theClone, $cast(ParameterBlock, $Cloneable::clone()));
@@ -341,6 +342,7 @@ double ParameterBlock::getDoubleParameter(int32_t index) {
 }
 
 $ClassArray* ParameterBlock::getParamClasses() {
+	$useLocalCurrentObjectStackCache();
 	int32_t numParams = getNumParameters();
 	$var($ClassArray, classes, $new($ClassArray, numParams));
 	int32_t i = 0;

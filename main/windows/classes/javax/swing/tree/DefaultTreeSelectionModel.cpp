@@ -208,6 +208,7 @@ $RowMapper* DefaultTreeSelectionModel::getRowMapper() {
 }
 
 void DefaultTreeSelectionModel::setSelectionMode(int32_t mode) {
+	$useLocalCurrentObjectStackCache();
 	int32_t oldMode = this->selectionMode;
 	this->selectionMode = validateSelectionMode(mode);
 	if (oldMode != this->selectionMode && this->changeSupport != nullptr) {
@@ -237,6 +238,7 @@ void DefaultTreeSelectionModel::setSelectionPath($TreePath* path) {
 }
 
 void DefaultTreeSelectionModel::setSelectionPaths($TreePathArray* pPaths) {
+	$useLocalCurrentObjectStackCache();
 	int32_t newCount = 0;
 	int32_t newCounter = 0;
 	int32_t oldCount = 0;
@@ -312,6 +314,7 @@ void DefaultTreeSelectionModel::addSelectionPath($TreePath* path) {
 }
 
 void DefaultTreeSelectionModel::addSelectionPaths($TreePathArray* paths) {
+	$useLocalCurrentObjectStackCache();
 	int32_t newPathLength = ((paths == nullptr) ? 0 : $nc(paths)->length);
 	if (newPathLength > 0) {
 		if (this->selectionMode == $TreeSelectionModel::SINGLE_TREE_SELECTION) {
@@ -390,6 +393,7 @@ void DefaultTreeSelectionModel::removeSelectionPath($TreePath* path) {
 }
 
 void DefaultTreeSelectionModel::removeSelectionPaths($TreePathArray* paths) {
+	$useLocalCurrentObjectStackCache();
 	if (paths != nullptr && this->selection != nullptr && paths->length > 0) {
 		if (!canPathsBeRemoved(paths)) {
 			clearSelection();
@@ -468,6 +472,7 @@ bool DefaultTreeSelectionModel::isSelectionEmpty() {
 }
 
 void DefaultTreeSelectionModel::clearSelection() {
+	$useLocalCurrentObjectStackCache();
 	if (this->selection != nullptr && $nc(this->selection)->length > 0) {
 		int32_t selSize = $nc(this->selection)->length;
 		$var($booleans, newness, $new($booleans, selSize));
@@ -514,6 +519,7 @@ $EventListenerArray* DefaultTreeSelectionModel::getListeners($Class* listenerTyp
 }
 
 $ints* DefaultTreeSelectionModel::getSelectionRows() {
+	$useLocalCurrentObjectStackCache();
 	if (this->rowMapper != nullptr && this->selection != nullptr && $nc(this->selection)->length > 0) {
 		$var($ints, rows, $nc(this->rowMapper)->getRowsForPaths(this->selection));
 		if (rows != nullptr) {
@@ -623,6 +629,7 @@ $PropertyChangeListenerArray* DefaultTreeSelectionModel::getPropertyChangeListen
 }
 
 void DefaultTreeSelectionModel::insureRowContinuity() {
+	$useLocalCurrentObjectStackCache();
 	if (this->selectionMode == $TreeSelectionModel::CONTIGUOUS_TREE_SELECTION && this->selection != nullptr && this->rowMapper != nullptr) {
 		$var($DefaultListSelectionModel, lModel, this->listSelectionModel);
 		int32_t min = $nc(lModel)->getMinSelectionIndex();
@@ -655,6 +662,7 @@ void DefaultTreeSelectionModel::insureRowContinuity() {
 }
 
 bool DefaultTreeSelectionModel::arePathsContiguous($TreePathArray* paths) {
+	$useLocalCurrentObjectStackCache();
 	if (this->rowMapper == nullptr || $nc(paths)->length < 2) {
 		return true;
 	} else {
@@ -698,6 +706,7 @@ bool DefaultTreeSelectionModel::arePathsContiguous($TreePathArray* paths) {
 }
 
 bool DefaultTreeSelectionModel::canPathsBeAdded($TreePathArray* paths) {
+	$useLocalCurrentObjectStackCache();
 	if (paths == nullptr || $nc(paths)->length == 0 || this->rowMapper == nullptr || this->selection == nullptr || this->selectionMode == $TreeSelectionModel::DISCONTIGUOUS_TREE_SELECTION) {
 		return true;
 	} else {
@@ -744,6 +753,7 @@ bool DefaultTreeSelectionModel::canPathsBeAdded($TreePathArray* paths) {
 }
 
 bool DefaultTreeSelectionModel::canPathsBeRemoved($TreePathArray* paths) {
+	$useLocalCurrentObjectStackCache();
 	if (this->rowMapper == nullptr || this->selection == nullptr || this->selectionMode == $TreeSelectionModel::DISCONTIGUOUS_TREE_SELECTION) {
 		return true;
 	} else {
@@ -790,6 +800,7 @@ bool DefaultTreeSelectionModel::canPathsBeRemoved($TreePathArray* paths) {
 }
 
 void DefaultTreeSelectionModel::notifyPathChange($Vector* changedPaths, $TreePath* oldLeadSelection) {
+	$useLocalCurrentObjectStackCache();
 	int32_t cPathCount = $nc(changedPaths)->size();
 	$var($booleans, newness, $new($booleans, cPathCount));
 	$var($TreePathArray, paths, $new($TreePathArray, cPathCount));
@@ -826,6 +837,7 @@ void DefaultTreeSelectionModel::insureUniqueness() {
 }
 
 $String* DefaultTreeSelectionModel::toString() {
+	$useLocalCurrentObjectStackCache();
 	int32_t selCount = getSelectionCount();
 	$var($StringBuilder, sb, $new($StringBuilder));
 	$var($ints, rows, nullptr);
@@ -880,6 +892,7 @@ void DefaultTreeSelectionModel::writeObject($ObjectOutputStream* s) {
 }
 
 void DefaultTreeSelectionModel::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	$set(this, changeSupport, $cast($SwingPropertyChangeSupport, $nc(f)->get("changeSupport"_s, ($Object*)nullptr)));
 	$set(this, selection, $cast($TreePathArray, f->get("selection"_s, ($Object*)nullptr)));

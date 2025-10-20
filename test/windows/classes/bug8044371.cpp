@@ -106,6 +106,7 @@ void bug8044371::main($StringArray* args) {
 }
 
 void bug8044371::init$($JFrame* frame) {
+	$useLocalCurrentObjectStackCache();
 	this->lastAdjust = 0;
 	this->initialAdjust = 0;
 	$var($JPanel, p, $new($JPanel));
@@ -119,6 +120,7 @@ void bug8044371::init$($JFrame* frame) {
 }
 
 void bug8044371::adjustmentValueChanged($AdjustmentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println($$str({"adjustmentValueChanged: "_s, $$str($nc(e)->getValue())}));
 	this->lastAdjust = $nc(e)->getValue();
@@ -133,6 +135,7 @@ void bug8044371::step1() {
 }
 
 void bug8044371::step2() {
+	$useLocalCurrentObjectStackCache();
 	if (this->lastAdjust < this->initialAdjust) {
 		$throwNew($RuntimeException, $$str({"Failed: Adjustment decreased: "_s, $$str(this->lastAdjust)}));
 	}
@@ -140,6 +143,7 @@ void bug8044371::step2() {
 }
 
 void bug8044371::step3() {
+	$useLocalCurrentObjectStackCache();
 	if (this->lastAdjust < this->initialAdjust) {
 		$throwNew($RuntimeException, $$str({"Failed: Adjustment decreased: "_s, $$str(this->lastAdjust)}));
 	}

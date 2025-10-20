@@ -89,6 +89,7 @@ $CSS$Value* CSS$BorderStyle::getValue() {
 }
 
 $Object* CSS$BorderStyle::parseCssValue($String* value) {
+	$useLocalCurrentObjectStackCache();
 	$var($CSS$Value, cssv, $CSS::getValue(value));
 	if (cssv != nullptr) {
 		$init($CSS$Value);

@@ -67,6 +67,7 @@ void SoftMixingMixerProvider::init$() {
 }
 
 $Mixer* SoftMixingMixerProvider::getMixer($Mixer$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	$init($SoftMixingMixer);
 	if (!(info == nullptr || info == $SoftMixingMixer::info)) {
 		$throwNew($IllegalArgumentException, $$str({"Mixer "_s, $($nc(info)->toString()), " not supported by this provider."_s}));

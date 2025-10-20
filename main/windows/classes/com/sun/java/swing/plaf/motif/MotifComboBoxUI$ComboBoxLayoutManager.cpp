@@ -77,6 +77,7 @@ void MotifComboBoxUI$ComboBoxLayoutManager::init$($MotifComboBoxUI* this$0) {
 }
 
 void MotifComboBoxUI$ComboBoxLayoutManager::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->motifGetEditor() != nullptr) {
 		$var($Rectangle, cvb, this->this$0->rectangleForCurrentValue());
 		$nc(cvb)->x += 1;

@@ -81,6 +81,7 @@ void SynthDesktopPaneUI$TaskBar$2::init$($SynthDesktopPaneUI$TaskBar* this$0, in
 }
 
 void SynthDesktopPaneUI$TaskBar$2::paintRaisedBevel($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, oldColor, $nc(g)->getColor());
 	g->translate(x, y);
 	g->setColor($(getHighlightOuterColor(c)));

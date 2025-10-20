@@ -87,6 +87,7 @@ void bug4242228$1$1::init$($bug4242228$1* this$0, $JScrollPane* val$editorPane, 
 }
 
 void bug4242228$1$1::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($bug4242228);
 	if ($equals($nc($bug4242228::tabPane)->getSelectedComponent(), this->val$editorPane)) {
 		$nc(this->val$htmlEditor)->setText($($nc(this->val$sourceEditor)->getText()));

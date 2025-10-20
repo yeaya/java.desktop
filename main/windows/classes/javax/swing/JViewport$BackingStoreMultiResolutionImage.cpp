@@ -119,6 +119,7 @@ $Image* JViewport$BackingStoreMultiResolutionImage::getResolutionVariant(double 
 }
 
 $List* JViewport$BackingStoreMultiResolutionImage::getResolutionVariants() {
+	$useLocalCurrentObjectStackCache();
 	return $Collections::unmodifiableList($($Arrays::asList($$new($ImageArray, {this->rvImage}))));
 }
 

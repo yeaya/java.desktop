@@ -216,6 +216,7 @@ $StringArray* IIOMetadata::getExtraMetadataFormatNames() {
 }
 
 $StringArray* IIOMetadata::getMetadataFormatNames() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, nativeName, getNativeMetadataFormatName());
 	$init($IIOMetadataFormatImpl);
 	$var($String, standardName, isStandardMetadataFormatSupported() ? $IIOMetadataFormatImpl::standardMetadataFormatName : ($String*)nullptr);
@@ -250,6 +251,7 @@ $StringArray* IIOMetadata::getMetadataFormatNames() {
 }
 
 $IIOMetadataFormat* IIOMetadata::getMetadataFormat($String* formatName) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (formatName == nullptr) {
 		$throwNew($IllegalArgumentException, "formatName == null!"_s);
@@ -288,6 +290,7 @@ $IIOMetadataFormat* IIOMetadata::getMetadataFormat($String* formatName) {
 }
 
 $Class* IIOMetadata::getMetadataFormatClass($String* formatClassName) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Module, thisModule, IIOMetadata::class$->getModule());
 	$var($Module, targetModule, $of(this)->getClass()->getModule());
@@ -354,6 +357,7 @@ void IIOMetadata::append($IIOMetadataNode* root, $IIOMetadataNode* node) {
 }
 
 $IIOMetadataNode* IIOMetadata::getStandardTree() {
+	$useLocalCurrentObjectStackCache();
 	$init($IIOMetadataFormatImpl);
 	$var($IIOMetadataNode, root, $new($IIOMetadataNode, $IIOMetadataFormatImpl::standardMetadataFormatName));
 	append(root, $(getStandardChromaNode()));

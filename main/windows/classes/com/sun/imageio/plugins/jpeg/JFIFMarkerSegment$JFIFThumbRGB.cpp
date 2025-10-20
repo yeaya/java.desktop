@@ -128,6 +128,7 @@ int32_t JFIFMarkerSegment$JFIFThumbRGB::getLength() {
 }
 
 $BufferedImage* JFIFMarkerSegment$JFIFThumbRGB::getThumbnail($ImageInputStream* iis, $JPEGImageReader* reader) {
+	$useLocalCurrentObjectStackCache();
 	$nc(iis)->mark();
 	iis->seek(this->streamPos);
 	$var($DataBufferByte, buffer, $new($DataBufferByte, getLength()));

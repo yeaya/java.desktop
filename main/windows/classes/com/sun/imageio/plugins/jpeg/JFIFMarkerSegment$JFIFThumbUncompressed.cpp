@@ -122,6 +122,7 @@ void JFIFMarkerSegment$JFIFThumbUncompressed::init$($JFIFMarkerSegment* this$0, 
 }
 
 void JFIFMarkerSegment$JFIFThumbUncompressed::init$($JFIFMarkerSegment* this$0, $Node* node, $String* name) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JFIFMarkerSegment$JFIFThumb::init$(this$0);
 	$set(this, thumbnail, nullptr);
@@ -174,6 +175,7 @@ int32_t JFIFMarkerSegment$JFIFThumbUncompressed::getHeight() {
 }
 
 $IIOMetadataNode* JFIFMarkerSegment$JFIFThumbUncompressed::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, this->name));
 	node->setAttribute("thumbWidth"_s, $($Integer::toString(this->thumbWidth)));
 	node->setAttribute("thumbHeight"_s, $($Integer::toString(this->thumbHeight)));
@@ -191,6 +193,7 @@ void JFIFMarkerSegment$JFIFThumbUncompressed::write($ImageOutputStream* ios, $JP
 }
 
 void JFIFMarkerSegment$JFIFThumbUncompressed::writePixels($ImageOutputStream* ios, $JPEGImageWriter* writer) {
+	$useLocalCurrentObjectStackCache();
 	if ((this->thumbWidth > 255) || (this->thumbHeight > 255)) {
 		$nc(writer)->warningOccurred($JPEGImageWriter::WARNING_THUMB_CLIPPED);
 	}
@@ -201,6 +204,7 @@ void JFIFMarkerSegment$JFIFThumbUncompressed::writePixels($ImageOutputStream* io
 }
 
 void JFIFMarkerSegment$JFIFThumbUncompressed::print() {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->print($$str({this->name, " width: "_s}));
 	$nc($System::out)->println(this->thumbWidth);

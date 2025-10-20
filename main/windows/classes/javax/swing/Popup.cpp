@@ -105,6 +105,7 @@ void Popup::show() {
 }
 
 void Popup::hide() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, component, getComponent());
 	if ($instanceOf($JWindow, component)) {
 		$nc(component)->hide();
@@ -114,6 +115,7 @@ void Popup::hide() {
 }
 
 void Popup::dispose() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, component, getComponent());
 	$var($Window, window, $SwingUtilities::getWindowAncestor(component));
 	if ($instanceOf($JWindow, component)) {
@@ -126,6 +128,7 @@ void Popup::dispose() {
 }
 
 void Popup::reset($Component* owner, $Component* contents, int32_t ownerX, int32_t ownerY) {
+	$useLocalCurrentObjectStackCache();
 	if (getComponent() == nullptr) {
 		$set(this, component, createComponent(owner));
 	}

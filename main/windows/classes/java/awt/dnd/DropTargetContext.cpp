@@ -119,6 +119,7 @@ void DropTargetContext::reset() {
 }
 
 void DropTargetContext::setTargetActions(int32_t actions) {
+	$useLocalCurrentObjectStackCache();
 	$var($DropTargetContextPeer, peer, getDropTargetContextPeer());
 	if (peer != nullptr) {
 		$synchronized(peer) {
@@ -184,6 +185,7 @@ bool DropTargetContext::isDataFlavorSupported($DataFlavor* df) {
 }
 
 $Transferable* DropTargetContext::getTransferable() {
+	$useLocalCurrentObjectStackCache();
 	$var($DropTargetContextPeer, peer, getDropTargetContextPeer());
 	if (peer == nullptr) {
 		$throwNew($InvalidDnDOperationException);

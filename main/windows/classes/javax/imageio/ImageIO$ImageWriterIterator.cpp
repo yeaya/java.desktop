@@ -81,6 +81,7 @@ bool ImageIO$ImageWriterIterator::hasNext() {
 }
 
 $Object* ImageIO$ImageWriterIterator::next() {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageWriterSpi, spi, nullptr);
 	try {
 		$assign(spi, $cast($ImageWriterSpi, $nc(this->iter)->next()));

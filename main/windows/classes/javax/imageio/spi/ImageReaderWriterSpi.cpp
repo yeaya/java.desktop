@@ -273,6 +273,7 @@ $IIOMetadataFormat* ImageReaderWriterSpi::getImageMetadataFormat($String* format
 }
 
 $IIOMetadataFormat* ImageReaderWriterSpi::getMetadataFormat($String* formatName, bool supportsStandard, $String* nativeName, $String* nativeClassName, $StringArray* extraNames, $StringArray* extraClassNames) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (formatName == nullptr) {
 		$throwNew($IllegalArgumentException, "formatName == null!"_s);
@@ -311,6 +312,7 @@ $IIOMetadataFormat* ImageReaderWriterSpi::getMetadataFormat($String* formatName,
 }
 
 $Class* ImageReaderWriterSpi::getMetadataFormatClass($String* formatClassName) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Module, thisModule, ImageReaderWriterSpi::class$->getModule());
 	$var($Module, targetModule, $of(this)->getClass()->getModule());

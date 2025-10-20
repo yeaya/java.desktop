@@ -116,6 +116,7 @@ void AudioFloatFormatConverter::init$() {
 }
 
 $AudioInputStream* AudioFloatFormatConverter::getAudioInputStream($AudioFormat$Encoding* targetEncoding, $AudioInputStream* sourceStream) {
+	$useLocalCurrentObjectStackCache();
 	if (!isConversionSupported(targetEncoding, $($nc(sourceStream)->getFormat()))) {
 		$var($String, var$0, $$str({"Unsupported conversion: "_s, $($nc($($nc(sourceStream)->getFormat()))->toString()), " to "_s}));
 		$throwNew($IllegalArgumentException, $$concat(var$0, $($nc(targetEncoding)->toString())));
@@ -137,6 +138,7 @@ $AudioInputStream* AudioFloatFormatConverter::getAudioInputStream($AudioFormat$E
 }
 
 $AudioInputStream* AudioFloatFormatConverter::getAudioInputStream($AudioFormat* targetFormat, $AudioInputStream* sourceStream) {
+	$useLocalCurrentObjectStackCache();
 	if (!isConversionSupported(targetFormat, $($nc(sourceStream)->getFormat()))) {
 		$var($String, var$0, $$str({"Unsupported conversion: "_s, $($nc($($nc(sourceStream)->getFormat()))->toString()), " to "_s}));
 		$throwNew($IllegalArgumentException, $$concat(var$0, $($nc(targetFormat)->toString())));
@@ -145,6 +147,7 @@ $AudioInputStream* AudioFloatFormatConverter::getAudioInputStream($AudioFormat* 
 }
 
 $AudioInputStream* AudioFloatFormatConverter::getAudioInputStream($AudioFormat* targetFormat, $AudioFloatInputStream* sourceStream$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFloatInputStream, sourceStream, sourceStream$renamed);
 	if (!isConversionSupported(targetFormat, $($nc(sourceStream)->getFormat()))) {
 		$var($String, var$0, $$str({"Unsupported conversion: "_s, $($nc($($nc(sourceStream)->getFormat()))->toString()), " to "_s}));
@@ -189,6 +192,7 @@ $AudioFormat$EncodingArray* AudioFloatFormatConverter::getTargetEncodings($Audio
 }
 
 $AudioFormatArray* AudioFloatFormatConverter::getTargetFormats($AudioFormat$Encoding* targetEncoding, $AudioFormat* sourceFormat) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(targetEncoding);
 	if ($AudioFloatConverter::getConverter(sourceFormat) == nullptr) {
 		return $new($AudioFormatArray, 0);

@@ -138,6 +138,7 @@ void DefaultTableModel::setDataVector($Vector* dataVector, $Vector* columnIdenti
 }
 
 void DefaultTableModel::setDataVector($ObjectArray2* dataVector, $ObjectArray* columnIdentifiers) {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, var$0, convertToVector(dataVector));
 	setDataVector(var$0, $(convertToVector(columnIdentifiers)));
 }
@@ -147,6 +148,7 @@ void DefaultTableModel::newDataAvailable($TableModelEvent* event) {
 }
 
 void DefaultTableModel::justifyRows(int32_t from, int32_t to) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->dataVector)->setSize(getRowCount());
 	for (int32_t i = from; i < to; ++i) {
 		if ($nc(this->dataVector)->elementAt(i) == nullptr) {
@@ -209,6 +211,7 @@ int32_t DefaultTableModel::gcd(int32_t i, int32_t j) {
 
 void DefaultTableModel::rotate($Vector* v, int32_t a, int32_t b, int32_t shift) {
 	$init(DefaultTableModel);
+	$useLocalCurrentObjectStackCache();
 	int32_t size = b - a;
 	int32_t r = size - shift;
 	int32_t g = gcd(size, r);
@@ -262,6 +265,7 @@ void DefaultTableModel::addColumn(Object$* columnName) {
 }
 
 void DefaultTableModel::addColumn(Object$* columnName, $Vector* columnData) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->columnIdentifiers)->addElement(columnName);
 	if (columnData != nullptr) {
 		int32_t columnSize = columnData->size();
@@ -317,6 +321,7 @@ void DefaultTableModel::setValueAt(Object$* aValue, int32_t row, int32_t column)
 
 $Vector* DefaultTableModel::convertToVector($ObjectArray* anArray) {
 	$init(DefaultTableModel);
+	$useLocalCurrentObjectStackCache();
 	if (anArray == nullptr) {
 		return nullptr;
 	}
@@ -337,6 +342,7 @@ $Vector* DefaultTableModel::convertToVector($ObjectArray* anArray) {
 
 $Vector* DefaultTableModel::convertToVector($ObjectArray2* anArray) {
 	$init(DefaultTableModel);
+	$useLocalCurrentObjectStackCache();
 	if (anArray == nullptr) {
 		return nullptr;
 	}

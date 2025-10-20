@@ -77,6 +77,7 @@ void ListDataEvent::init$(Object$* source, int32_t type, int32_t index0, int32_t
 }
 
 $String* ListDataEvent::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($of(this)->getClass()->getName()), "[type="_s, $$str(this->type), ",index0="_s, $$str(this->index0), ",index1="_s, $$str(this->index1), "]"_s});
 }
 

@@ -253,6 +253,7 @@ void JMenuSelectedColorTest::init$() {
 
 void JMenuSelectedColorTest::blockTillDisplayed($Component* comp) {
 	$init(JMenuSelectedColorTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	while (p == nullptr) {
 		try {
@@ -280,6 +281,7 @@ int32_t JMenuSelectedColorTest::getMaxColorDiff($Color* c1, $Color* c2) {
 
 void JMenuSelectedColorTest::main($StringArray* args) {
 	$init(JMenuSelectedColorTest);
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($System::getProperty("os.name"_s)))->startsWith("Linux"_s)) {
 		$init($System);
 		$nc($System::out)->println("This test is meant for Linux platform only"_s);

@@ -128,6 +128,7 @@ void BasicLookAndFeel$AudioAction::init$($BasicLookAndFeel* this$0, $String* nam
 }
 
 void BasicLookAndFeel$AudioAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->audioBuffer == nullptr) {
 		$set(this, audioBuffer, this->this$0->loadAudioData(this->audioResource));
 	}

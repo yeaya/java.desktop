@@ -198,6 +198,7 @@ void ServiceDialog$JobAttributesPanel::finalize() {
 }
 
 void ServiceDialog$JobAttributesPanel::init$($ServiceDialog* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JPanel::init$();
 	$set(this, strTitle, $ServiceDialog::getMsg("border.jobattributes"_s));
@@ -267,10 +268,12 @@ void ServiceDialog$JobAttributesPanel::actionPerformed($ActionEvent* e) {
 }
 
 void ServiceDialog$JobAttributesPanel::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->this$0->asCurrent)->add(static_cast<$Attribute*>(static_cast<$PrintRequestAttribute*>($$new($JobPriority, $nc($($nc(this->snModel)->getNumber()))->intValue()))));
 }
 
 void ServiceDialog$JobAttributesPanel::focusLost($FocusEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, source, $nc(e)->getSource());
 	if ($equals(source, this->tfJobName)) {
 		$var($String, var$0, $nc(this->tfJobName)->getText());
@@ -285,6 +288,7 @@ void ServiceDialog$JobAttributesPanel::focusGained($FocusEvent* e) {
 }
 
 void ServiceDialog$JobAttributesPanel::updateInfo() {
+	$useLocalCurrentObjectStackCache();
 	$load($JobSheets);
 	$Class* jsCategory = $JobSheets::class$;
 	$load($JobPriority);

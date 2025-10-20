@@ -116,6 +116,7 @@ int32_t ProgressMonitor$ProgressOptionPane::getMaxCharactersPerLineCount() {
 }
 
 $JDialog* ProgressMonitor$ProgressOptionPane::createDialog($Component* parentComponent, $String* title) {
+	$useLocalCurrentObjectStackCache();
 	$var($JDialog, dialog, nullptr);
 	$var($Window, window, $JOptionPane::getWindowForComponent(parentComponent));
 	if ($instanceOf($Frame, window)) {

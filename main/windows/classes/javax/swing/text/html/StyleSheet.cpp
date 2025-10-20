@@ -255,6 +255,7 @@ void StyleSheet::init$() {
 }
 
 $Style* StyleSheet::getRule($HTML$Tag* t, $Element* e$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, e, e$renamed);
 	$var($StyleSheet$SearchBuffer, sb, $StyleSheet$SearchBuffer::obtainSearchBuffer());
 	{
@@ -338,6 +339,7 @@ $Style* StyleSheet::getRule($HTML$Tag* t, $Element* e$renamed) {
 }
 
 $Style* StyleSheet::getRule($String* selector$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, selector, selector$renamed);
 	$assign(selector, cleanSelectorString(selector));
 	if (selector != nullptr) {
@@ -348,6 +350,7 @@ $Style* StyleSheet::getRule($String* selector$renamed) {
 }
 
 void StyleSheet::addRule($String* rule) {
+	$useLocalCurrentObjectStackCache();
 	if (rule != nullptr) {
 		$var($String, baseUnitsDisable, "BASE_SIZE_DISABLE"_s);
 		$var($String, baseUnits, "BASE_SIZE "_s);
@@ -392,6 +395,7 @@ $AttributeSet* StyleSheet::getViewAttributes($View* v) {
 }
 
 void StyleSheet::removeStyle($String* nm) {
+	$useLocalCurrentObjectStackCache();
 	$var($Style, aStyle, getStyle(nm));
 	if (aStyle != nullptr) {
 		$var($String, selector, cleanSelectorString(nm));
@@ -462,6 +466,7 @@ $StyleSheetArray* StyleSheet::getStyleSheets() {
 }
 
 void StyleSheet::importStyleSheet($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($InputStream, is, nullptr);
 		$assign(is, $nc(url)->openStream());
@@ -497,6 +502,7 @@ bool StyleSheet::addCSSAttributeFromHTML($MutableAttributeSet* attr, $CSS$Attrib
 }
 
 $AttributeSet* StyleSheet::translateHTMLToCSS($AttributeSet* htmlAttrSet) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, cssAttrSet, $nc(this->css)->translateHTMLToCSS(htmlAttrSet));
 	$var($MutableAttributeSet, cssStyleSet, addStyle(nullptr, nullptr));
 	$nc(cssStyleSet)->addAttributes(cssAttrSet);
@@ -504,6 +510,7 @@ $AttributeSet* StyleSheet::translateHTMLToCSS($AttributeSet* htmlAttrSet) {
 }
 
 $AttributeSet* StyleSheet::addAttribute($AttributeSet* old$renamed, Object$* key, Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, old, old$renamed);
 	if (this->css == nullptr) {
 		$set(this, css, $new($CSS));
@@ -525,6 +532,7 @@ $AttributeSet* StyleSheet::addAttribute($AttributeSet* old$renamed, Object$* key
 }
 
 $AttributeSet* StyleSheet::addAttributes($AttributeSet* old$renamed, $AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, old, old$renamed);
 	if (!($instanceOf($HTMLDocument$TaggedAttributeSet, attr))) {
 		$assign(old, removeHTMLTags(old, attr));
@@ -533,6 +541,7 @@ $AttributeSet* StyleSheet::addAttributes($AttributeSet* old$renamed, $AttributeS
 }
 
 $AttributeSet* StyleSheet::removeAttribute($AttributeSet* old$renamed, Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, old, old$renamed);
 	if ($instanceOf($StyleConstants, key)) {
 		$var($HTML$Tag, tag, $HTML::getTagForStyleConstantsKey($cast($StyleConstants, key)));
@@ -552,6 +561,7 @@ $AttributeSet* StyleSheet::removeAttributes($AttributeSet* old, $Enumeration* na
 }
 
 $AttributeSet* StyleSheet::removeAttributes($AttributeSet* old$renamed, $AttributeSet* attrs) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, old, old$renamed);
 	if (old != attrs) {
 		$assign(old, removeHTMLTags(old, attrs));
@@ -568,6 +578,7 @@ $MutableAttributeSet* StyleSheet::createLargeAttributeSet($AttributeSet* a) {
 }
 
 $AttributeSet* StyleSheet::removeHTMLTags($AttributeSet* old$renamed, $AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, old, old$renamed);
 	if (!($instanceOf($StyleSheet$LargeConversionSet, attr)) && !($instanceOf($StyleSheet$SmallConversionSet, attr))) {
 		$var($Enumeration, names, $nc(attr)->getAttributeNames());
@@ -585,6 +596,7 @@ $AttributeSet* StyleSheet::removeHTMLTags($AttributeSet* old$renamed, $Attribute
 }
 
 $AttributeSet* StyleSheet::convertAttributeSet($AttributeSet* a) {
+	$useLocalCurrentObjectStackCache();
 	if (($instanceOf($StyleSheet$LargeConversionSet, a)) || ($instanceOf($StyleSheet$SmallConversionSet, a))) {
 		return a;
 	}
@@ -670,6 +682,7 @@ $Color* StyleSheet::stringToColor($String* string) {
 }
 
 $ImageIcon* StyleSheet::getBackgroundImage($AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$init($CSS$Attribute);
 	$var($Object, value, $nc(attr)->getAttribute($CSS$Attribute::BACKGROUND_IMAGE));
 	if (value != nullptr) {
@@ -679,6 +692,7 @@ $ImageIcon* StyleSheet::getBackgroundImage($AttributeSet* attr) {
 }
 
 void StyleSheet::addRule($StringArray* selector, $AttributeSet* declaration, bool isLinked) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = $nc(selector)->length;
 	$var($StringBuilder, sb, $new($StringBuilder));
 	sb->append(selector->get(0));
@@ -711,6 +725,7 @@ void StyleSheet::addRule($StringArray* selector, $AttributeSet* declaration, boo
 
 void StyleSheet::linkStyleSheetAt(StyleSheet* ss, int32_t index) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if ($nc(this->resolvedStyles)->size() > 0) {
 			$var($Enumeration, values, $nc(this->resolvedStyles)->elements());
 			while ($nc(values)->hasMoreElements()) {
@@ -723,6 +738,7 @@ void StyleSheet::linkStyleSheetAt(StyleSheet* ss, int32_t index) {
 
 void StyleSheet::unlinkStyleSheet(StyleSheet* ss, int32_t index) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if ($nc(this->resolvedStyles)->size() > 0) {
 			$var($Enumeration, values, $nc(this->resolvedStyles)->elements());
 			while ($nc(values)->hasMoreElements()) {
@@ -734,6 +750,7 @@ void StyleSheet::unlinkStyleSheet(StyleSheet* ss, int32_t index) {
 }
 
 $StringArray* StyleSheet::getSimpleSelectors($String* selector$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, selector, selector$renamed);
 	$assign(selector, cleanSelectorString(selector));
 	$var($StyleSheet$SearchBuffer, sb, $StyleSheet$SearchBuffer::obtainSearchBuffer());
@@ -797,6 +814,7 @@ $String* StyleSheet::cleanSelectorString($String* selector) {
 }
 
 $String* StyleSheet::_cleanSelectorString($String* selector) {
+	$useLocalCurrentObjectStackCache();
 	$var($StyleSheet$SearchBuffer, sb, $StyleSheet$SearchBuffer::obtainSearchBuffer());
 	$var($StringBuffer, buff, $nc(sb)->getStringBuffer());
 	bool lastWasSpace = true;
@@ -932,6 +950,7 @@ $Style* StyleSheet::getResolvedStyle($String* selector) {
 }
 
 void StyleSheet::addSortedStyle($StyleSheet$SelectorMapping* mapping, $Vector* elements) {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc(elements)->size();
 	if (size > 0) {
 		int32_t specificity = $nc(mapping)->getSpecificity();
@@ -947,6 +966,7 @@ void StyleSheet::addSortedStyle($StyleSheet$SelectorMapping* mapping, $Vector* e
 
 void StyleSheet::getStyles($StyleSheet$SelectorMapping* parentMapping, $Vector* styles, $StringArray* tags, $StringArray* ids, $StringArray* classes, int32_t index, int32_t numElements, $Hashtable* alreadyChecked) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if ($nc(alreadyChecked)->contains(parentMapping)) {
 			return;
 		}
@@ -991,6 +1011,7 @@ void StyleSheet::getStyles($StyleSheet$SelectorMapping* parentMapping, $Vector* 
 
 $Style* StyleSheet::createResolvedStyle($String* selector, $StringArray* tags, $StringArray* ids, $StringArray* classes) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($StyleSheet$SearchBuffer, sb, $StyleSheet$SearchBuffer::obtainSearchBuffer());
 		$var($Vector, tempVector, $nc(sb)->getVector());
 		$var($Hashtable, tempHashtable, sb->getHashtable());
@@ -1065,6 +1086,7 @@ $Style* StyleSheet::createResolvedStyle($String* selector, $StringArray* tags, $
 }
 
 $Style* StyleSheet::createResolvedStyle($String* selector, $Vector* elements, $HTML$Tag* t) {
+	$useLocalCurrentObjectStackCache();
 	int32_t numElements = $nc(elements)->size();
 	$var($StringArray, tags, $new($StringArray, numElements));
 	$var($StringArray, ids, $new($StringArray, numElements));
@@ -1110,6 +1132,7 @@ $Style* StyleSheet::createResolvedStyle($String* selector, $Vector* elements, $H
 }
 
 $Style* StyleSheet::createResolvedStyle($String* selector) {
+	$useLocalCurrentObjectStackCache();
 	$var($StyleSheet$SearchBuffer, sb, $StyleSheet$SearchBuffer::obtainSearchBuffer());
 	$var($Vector, elements, $nc(sb)->getVector());
 	{
@@ -1236,6 +1259,7 @@ $Style* StyleSheet::createResolvedStyle($String* selector) {
 
 void StyleSheet::refreshResolvedRules($String* selectorName, $StringArray* selector, $Style* newStyle, int32_t specificity) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if ($nc(this->resolvedStyles)->size() > 0) {
 			$var($Enumeration, values, $nc(this->resolvedStyles)->elements());
 			while ($nc(values)->hasMoreElements()) {

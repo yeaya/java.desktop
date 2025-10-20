@@ -106,6 +106,7 @@ void AbstractTableModel::init$() {
 }
 
 $String* AbstractTableModel::getColumnName(int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, result, ""_s);
 	for (; column >= 0; column = column / 26 - 1) {
 		$assign(result, $str({$$str((char16_t)((char16_t)(column % 26) + u'A')), result}));
@@ -114,6 +115,7 @@ $String* AbstractTableModel::getColumnName(int32_t column) {
 }
 
 int32_t AbstractTableModel::findColumn($String* columnName) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < getColumnCount(); ++i) {
 		if ($nc(columnName)->equals($(getColumnName(i)))) {
 			return i;

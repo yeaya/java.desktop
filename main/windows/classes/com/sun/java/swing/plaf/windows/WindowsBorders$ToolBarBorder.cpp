@@ -128,6 +128,7 @@ void WindowsBorders$ToolBarBorder::init$($Color* shadow, $Color* highlight) {
 }
 
 void WindowsBorders$ToolBarBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($JToolBar, c))) {
 		return;
 	}

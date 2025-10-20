@@ -65,6 +65,7 @@ void MidiMessage::init$($bytes* data) {
 }
 
 void MidiMessage::setMessage($bytes* data, int32_t length) {
+	$useLocalCurrentObjectStackCache();
 	if (length < 0 || (length > 0 && length > $nc(data)->length)) {
 		$throwNew($IndexOutOfBoundsException, $$str({"length out of bounds: "_s, $$str(length)}));
 	}

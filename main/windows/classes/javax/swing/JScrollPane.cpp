@@ -440,6 +440,7 @@ void JScrollPane::finalize() {
 $String* JScrollPane::uiClassID = nullptr;
 
 void JScrollPane::init$($Component* view, int32_t vsbPolicy, int32_t hsbPolicy) {
+	$useLocalCurrentObjectStackCache();
 	$JComponent::init$();
 	this->verticalScrollBarPolicy = $ScrollPaneConstants::VERTICAL_SCROLLBAR_AS_NEEDED;
 	this->horizontalScrollBarPolicy = $ScrollPaneConstants::HORIZONTAL_SCROLLBAR_AS_NEEDED;
@@ -567,6 +568,7 @@ void JScrollPane::setViewportBorder($Border* viewportBorder) {
 }
 
 $Rectangle* JScrollPane::getViewportBorderBounds() {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, borderR, $new($Rectangle, $(getSize())));
 	$var($Insets, insets, getInsets());
 	borderR->x = $nc(insets)->left;
@@ -669,6 +671,7 @@ void JScrollPane::setViewport($JViewport* viewport) {
 }
 
 void JScrollPane::setViewportView($Component* view) {
+	$useLocalCurrentObjectStackCache();
 	if (getViewport() == nullptr) {
 		setViewport($(createViewport()));
 	}
@@ -694,6 +697,7 @@ void JScrollPane::setRowHeader($JViewport* rowHeader) {
 }
 
 void JScrollPane::setRowHeaderView($Component* view) {
+	$useLocalCurrentObjectStackCache();
 	if (getRowHeader() == nullptr) {
 		setRowHeader($(createViewport()));
 	}
@@ -719,6 +723,7 @@ void JScrollPane::setColumnHeader($JViewport* columnHeader) {
 }
 
 void JScrollPane::setColumnHeaderView($Component* view) {
+	$useLocalCurrentObjectStackCache();
 	if (getColumnHeader() == nullptr) {
 		setColumnHeader($(createViewport()));
 	}
@@ -726,6 +731,7 @@ void JScrollPane::setColumnHeaderView($Component* view) {
 }
 
 $Component* JScrollPane::getCorner($String* key$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, key, key$renamed);
 	bool isLeftToRight = $nc($(getComponentOrientation()))->isLeftToRight();
 	$init($ScrollPaneConstants);
@@ -764,6 +770,7 @@ $Component* JScrollPane::getCorner($String* key$renamed) {
 }
 
 void JScrollPane::setCorner($String* key$renamed, $Component* corner) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, key, key$renamed);
 	$var($Component, old, nullptr);
 	bool isLeftToRight = $nc($(getComponentOrientation()))->isLeftToRight();
@@ -847,6 +854,7 @@ void JScrollPane::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JScrollPane::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, viewportBorderString, this->viewportBorder != nullptr ? $nc($of(this->viewportBorder))->toString() : ""_s);
 	$var($String, viewportString, this->viewport != nullptr ? $nc(this->viewport)->toString() : ""_s);
 	$var($String, verticalScrollBarPolicyString, nullptr);

@@ -254,6 +254,7 @@ void WindowsScrollBarUI::configureScrollBarColors() {
 }
 
 $JButton* WindowsScrollBarUI::createDecreaseButton(int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = orientation;
 	$var($Color, var$1, $UIManager::getColor("ScrollBar.thumb"_s));
 	$var($Color, var$2, $UIManager::getColor("ScrollBar.thumbShadow"_s));
@@ -262,6 +263,7 @@ $JButton* WindowsScrollBarUI::createDecreaseButton(int32_t orientation) {
 }
 
 $JButton* WindowsScrollBarUI::createIncreaseButton(int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = orientation;
 	$var($Color, var$1, $UIManager::getColor("ScrollBar.thumb"_s));
 	$var($Color, var$2, $UIManager::getColor("ScrollBar.thumbShadow"_s));
@@ -278,6 +280,7 @@ $BasicScrollBarUI$ArrowButtonListener* WindowsScrollBarUI::createArrowButtonList
 }
 
 void WindowsScrollBarUI::paintTrack($Graphics* g, $JComponent* c, $Rectangle* trackBounds) {
+	$useLocalCurrentObjectStackCache();
 	bool v = ($nc(this->scrollbar)->getOrientation() == $JScrollBar::VERTICAL);
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
@@ -303,6 +306,7 @@ void WindowsScrollBarUI::paintTrack($Graphics* g, $JComponent* c, $Rectangle* tr
 }
 
 void WindowsScrollBarUI::paintThumb($Graphics* g, $JComponent* c, $Rectangle* thumbBounds) {
+	$useLocalCurrentObjectStackCache();
 	bool v = ($nc(this->scrollbar)->getOrientation() == $JScrollBar::VERTICAL);
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
@@ -342,6 +346,7 @@ void WindowsScrollBarUI::paintThumb($Graphics* g, $JComponent* c, $Rectangle* th
 }
 
 void WindowsScrollBarUI::paintDecreaseHighlight($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (this->highlightGrid == nullptr) {
 		$BasicScrollBarUI::paintDecreaseHighlight(g);
 	} else {
@@ -369,6 +374,7 @@ void WindowsScrollBarUI::paintDecreaseHighlight($Graphics* g) {
 }
 
 void WindowsScrollBarUI::paintIncreaseHighlight($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (this->highlightGrid == nullptr) {
 		$BasicScrollBarUI::paintDecreaseHighlight(g);
 	} else {

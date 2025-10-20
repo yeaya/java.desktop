@@ -127,6 +127,7 @@ int32_t SMFParser::readIntFromStream() {
 }
 
 bool SMFParser::nextTrack() {
+	$useLocalCurrentObjectStackCache();
 	int32_t magic = 0;
 	this->trackLength = 0;
 	do {
@@ -168,6 +169,7 @@ bool SMFParser::trackFinished() {
 }
 
 void SMFParser::readTrack($Track* track) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		int64_t tick = 0;
 		int32_t status = 0;

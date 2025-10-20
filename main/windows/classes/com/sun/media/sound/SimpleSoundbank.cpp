@@ -136,12 +136,14 @@ $SoundbankResourceArray* SimpleSoundbank::getResources() {
 }
 
 $InstrumentArray* SimpleSoundbank::getInstruments() {
+	$useLocalCurrentObjectStackCache();
 	$var($InstrumentArray, inslist_array, $fcast($InstrumentArray, $nc(this->instruments)->toArray($$new($InstrumentArray, $nc(this->resources)->size()))));
 	$Arrays::sort(inslist_array, $$new($ModelInstrumentComparator));
 	return inslist_array;
 }
 
 $Instrument* SimpleSoundbank::getInstrument($Patch* patch) {
+	$useLocalCurrentObjectStackCache();
 	int32_t program = $nc(patch)->getProgram();
 	int32_t bank = patch->getBank();
 	bool percussion = false;
@@ -196,6 +198,7 @@ void SimpleSoundbank::removeInstrument($Instrument* resource) {
 }
 
 void SimpleSoundbank::addAllInstruments($Soundbank* soundbank) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($InstrumentArray, arr$, $nc(soundbank)->getInstruments());
 		int32_t len$ = $nc(arr$)->length;
@@ -208,6 +211,7 @@ void SimpleSoundbank::addAllInstruments($Soundbank* soundbank) {
 }
 
 void SimpleSoundbank::removeAllInstruments($Soundbank* soundbank) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($InstrumentArray, arr$, $nc(soundbank)->getInstruments());
 		int32_t len$ = $nc(arr$)->length;

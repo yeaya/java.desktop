@@ -119,6 +119,7 @@ void Test4759934::init() {
 }
 
 void Test4759934::actionPerformed($ActionEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, command, $nc(event)->getActionCommand());
 	if ($nc(Test4759934::CMD_DIALOG)->equals(command)) {
 		$var($JDialog, dialog, $new($JDialog, static_cast<$Frame*>(this->frame), "Dialog"_s));
@@ -133,6 +134,7 @@ void Test4759934::actionPerformed($ActionEvent* event) {
 }
 
 void Test4759934::show($Window* window, $String* command) {
+	$useLocalCurrentObjectStackCache();
 	$var($JButton, button, $new($JButton, command));
 	button->setActionCommand(command);
 	button->addActionListener(this);

@@ -194,6 +194,7 @@ void Checkbox::init$($String* label, $CheckboxGroup* group, bool state) {
 }
 
 $String* Checkbox::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(Checkbox::class$) {
 		$var($String, var$0, Checkbox::base);
 		return $concat(var$0, $$str(Checkbox::nameCounter++));
@@ -260,6 +261,7 @@ $CheckboxGroup* Checkbox::getCheckboxGroup() {
 }
 
 void Checkbox::setCheckboxGroup($CheckboxGroup* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($CheckboxGroup, oldGroup, nullptr);
 	bool oldState = false;
 	if (this->group == g) {
@@ -349,6 +351,7 @@ void Checkbox::processItemEvent($ItemEvent* e) {
 }
 
 $String* Checkbox::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, $Component::paramString());
 	$var($String, label, this->label);
 	if (label != nullptr) {
@@ -365,6 +368,7 @@ void Checkbox::writeObject($ObjectOutputStream* s) {
 }
 
 void Checkbox::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$GraphicsEnvironment::checkHeadless();
 	$nc(s)->defaultReadObject();
 	$var($Object, keyOrNull, nullptr);

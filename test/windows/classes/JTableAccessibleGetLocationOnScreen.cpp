@@ -100,6 +100,7 @@ void JTableAccessibleGetLocationOnScreen::main($StringArray* args) {
 }
 
 void JTableAccessibleGetLocationOnScreen::constructInEDT() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringArray, columnNames, $new($StringArray, {
 		"col1"_s,
 		"col2"_s
@@ -123,6 +124,7 @@ void JTableAccessibleGetLocationOnScreen::constructInEDT() {
 }
 
 void JTableAccessibleGetLocationOnScreen::assertGetLocation() {
+	$useLocalCurrentObjectStackCache();
 	$init(JTableAccessibleGetLocationOnScreen);
 	$var($AccessibleTable, accessibleTable, $cast($AccessibleTable, $nc(JTableAccessibleGetLocationOnScreen::table)->getAccessibleContext()));
 	$var($AccessibleTable, header, $nc(accessibleTable)->getAccessibleColumnHeader());

@@ -127,6 +127,7 @@ $String* DocFlavor::getMediaSubtype() {
 }
 
 $String* DocFlavor::getParameter($String* paramName) {
+	$useLocalCurrentObjectStackCache();
 	return $cast($String, $nc($($nc(this->myMimeType)->getParameterMap()))->get($($nc(paramName)->toLowerCase())));
 }
 
@@ -143,6 +144,7 @@ int32_t DocFlavor::hashCode() {
 }
 
 bool DocFlavor::equals(Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	return obj != nullptr && $instanceOf(DocFlavor, obj) && $nc($(getStringValue()))->equals($($nc(($cast(DocFlavor, obj)))->getStringValue()));
 }
 

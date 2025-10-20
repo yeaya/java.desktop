@@ -154,6 +154,7 @@ int64_t Toolkit::frames2micros($AudioFormat* format, int64_t frames) {
 }
 
 void Toolkit::validateBuffer(int32_t frameSize, int32_t bufferSize) {
+	$useLocalCurrentObjectStackCache();
 	if ($mod(bufferSize, frameSize) == 0) {
 		return;
 	}
@@ -164,6 +165,7 @@ void Toolkit::validateBuffer(int32_t frameSize, int32_t bufferSize) {
 }
 
 void Toolkit::isFullySpecifiedAudioFormat($AudioFormat* format) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(format)->getFrameSize() <= 0) {
 		$throwNew($IllegalArgumentException, $$str({"invalid frame size: "_s, ((format->getFrameSize() == -1) ? "NOT_SPECIFIED"_s : $($String::valueOf(format->getFrameSize())))}));
 	}
@@ -189,6 +191,7 @@ void Toolkit::isFullySpecifiedAudioFormat($AudioFormat* format) {
 }
 
 bool Toolkit::isFullySpecifiedPCMFormat($AudioFormat* format) {
+	$useLocalCurrentObjectStackCache();
 	$init($AudioFormat$Encoding);
 	bool var$0 = !$nc($($nc(format)->getEncoding()))->equals($AudioFormat$Encoding::PCM_SIGNED);
 	if (var$0 && !$nc($(format->getEncoding()))->equals($AudioFormat$Encoding::PCM_UNSIGNED)) {
@@ -205,6 +208,7 @@ bool Toolkit::isFullySpecifiedPCMFormat($AudioFormat* format) {
 }
 
 $AudioInputStream* Toolkit::getPCMConvertedAudioInputStream($AudioInputStream* ais$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioInputStream, ais, ais$renamed);
 	$var($AudioFormat, af, $nc(ais)->getFormat());
 	$init($AudioFormat$Encoding);

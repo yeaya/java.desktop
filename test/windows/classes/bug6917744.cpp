@@ -163,6 +163,7 @@ void bug6917744::init$() {
 
 void bug6917744::blockTillDisplayed($JComponent* comp) {
 	$init(bug6917744);
+	$useLocalCurrentObjectStackCache();
 	while (bug6917744::p == nullptr) {
 		try {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug6917744$$Lambda$lambda$blockTillDisplayed$0, comp)));
@@ -179,6 +180,7 @@ void bug6917744::blockTillDisplayed($JComponent* comp) {
 
 void bug6917744::main($StringArray* args) {
 	$init(bug6917744);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug6917744::robot, $new($Robot));
 	$nc(bug6917744::robot)->setAutoDelay(100);
 	$SwingUtilities::invokeAndWait($$new($bug6917744$1));

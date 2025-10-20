@@ -91,6 +91,7 @@ void SunFileReader::init$() {
 }
 
 $AudioFileFormat* SunFileReader::getAudioFileFormat($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$nc(stream)->mark(200);
 	{
 		$var($Throwable, var$0, nullptr);
@@ -121,6 +122,7 @@ $AudioFileFormat* SunFileReader::getAudioFileFormat($InputStream* stream) {
 }
 
 $AudioFileFormat* SunFileReader::getAudioFileFormat($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($InputStream, is, $nc(url)->openStream());
 		{
@@ -166,6 +168,7 @@ $AudioFileFormat* SunFileReader::getAudioFileFormat($URL* url) {
 }
 
 $AudioFileFormat* SunFileReader::getAudioFileFormat($File* file) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($InputStream, is, $new($FileInputStream, file));
 		{
@@ -207,6 +210,7 @@ $AudioFileFormat* SunFileReader::getAudioFileFormat($File* file) {
 }
 
 $AudioInputStream* SunFileReader::getAudioInputStream($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$nc(stream)->mark(200);
 	try {
 		$var($StandardFileFormat, format, getAudioFileFormatImpl(stream));
@@ -226,6 +230,7 @@ $AudioInputStream* SunFileReader::getAudioInputStream($InputStream* stream) {
 }
 
 $AudioInputStream* SunFileReader::getAudioInputStream($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputStream, urlStream, $nc(url)->openStream());
 	try {
 		return getAudioInputStream(static_cast<$InputStream*>($$new($BufferedInputStream, urlStream)));
@@ -238,6 +243,7 @@ $AudioInputStream* SunFileReader::getAudioInputStream($URL* url) {
 }
 
 $AudioInputStream* SunFileReader::getAudioInputStream($File* file) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputStream, fileStream, $new($FileInputStream, file));
 	try {
 		return getAudioInputStream(static_cast<$InputStream*>($$new($BufferedInputStream, fileStream)));

@@ -280,6 +280,7 @@ float Win32GraphicsDevice::getNativeScaleY(int32_t screen) {
 }
 
 void Win32GraphicsDevice::init$(int32_t screennum) {
+	$useLocalCurrentObjectStackCache();
 	$GraphicsDevice::init$();
 	$set(this, topLevels, $new($SunDisplayChanger));
 	this->screen = screennum;
@@ -338,6 +339,7 @@ $String* Win32GraphicsDevice::getIDstring() {
 }
 
 $GraphicsConfigurationArray* Win32GraphicsDevice::getConfigurations() {
+	$useLocalCurrentObjectStackCache();
 	if (this->configs == nullptr) {
 		bool var$0 = $WindowsFlags::isOGLEnabled();
 		if (var$0 && isDefaultDevice()) {
@@ -413,6 +415,7 @@ int32_t Win32GraphicsDevice::getDefaultPixIDImpl(int32_t screen) {
 }
 
 $GraphicsConfiguration* Win32GraphicsDevice::getDefaultConfiguration() {
+	$useLocalCurrentObjectStackCache();
 	if (this->defaultConfig == nullptr) {
 		bool var$0 = $WindowsFlags::isOGLEnabled();
 		if (var$0 && isDefaultDevice()) {
@@ -447,6 +450,7 @@ bool Win32GraphicsDevice::isDefaultDevice() {
 
 bool Win32GraphicsDevice::isFSExclusiveModeAllowed() {
 	$init(Win32GraphicsDevice);
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, security, $System::getSecurityManager());
 	if (security != nullptr) {
 		if (Win32GraphicsDevice::fullScreenExclusivePermission == nullptr) {
@@ -468,6 +472,7 @@ bool Win32GraphicsDevice::isFullScreenSupported() {
 
 void Win32GraphicsDevice::setFullScreenWindow($Window* w) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Window, old, getFullScreenWindow());
 		if (w == old) {
 			return;
@@ -525,6 +530,7 @@ bool Win32GraphicsDevice::isDisplayChangeSupported() {
 
 void Win32GraphicsDevice::setDisplayMode($DisplayMode* dm$renamed) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($DisplayMode, dm, dm$renamed);
 		if (!isDisplayChangeSupported()) {
 			$GraphicsDevice::setDisplayMode(dm);
@@ -582,6 +588,7 @@ $DisplayMode* Win32GraphicsDevice::getDisplayMode() {
 
 $DisplayModeArray* Win32GraphicsDevice::getDisplayModes() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($ArrayList, modes, $new($ArrayList));
 		enumDisplayModes(this->screen, modes);
 		int32_t listSize = modes->size();
@@ -595,6 +602,7 @@ $DisplayModeArray* Win32GraphicsDevice::getDisplayModes() {
 
 $DisplayMode* Win32GraphicsDevice::getMatchingDisplayMode($DisplayMode* dm) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (!isDisplayChangeSupported()) {
 			return nullptr;
 		}
@@ -687,6 +695,7 @@ void Win32GraphicsDevice::removeFSWindowListener($Window* w) {
 }
 
 void clinit$Win32GraphicsDevice($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	{
 		$var($String, nopixfmt, $cast($String, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, "sun.awt.nopixfmt"_s)))));

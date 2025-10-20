@@ -73,6 +73,7 @@ void ListSelectionModelTest$1::init$($UIManager$LookAndFeelInfo* val$lookAndFeel
 }
 
 void ListSelectionModelTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$ListSelectionModelTest::CreateGUIAndTest($($nc(this->val$lookAndFeelInfo)->getClassName()));
 	} catch ($Exception&) {

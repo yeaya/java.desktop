@@ -103,6 +103,7 @@ $Object* allocate$PCMtoPCMCodec$PCMtoPCMCodecStream($Class* clazz) {
 }
 
 void PCMtoPCMCodec$PCMtoPCMCodecStream::init$($PCMtoPCMCodec* this$0, $AudioInputStream* stream, $AudioFormat* outputFormat) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$AudioInputStream::init$(stream, outputFormat, -1);
 	this->conversionType = 0;

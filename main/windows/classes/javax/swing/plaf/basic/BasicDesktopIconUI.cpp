@@ -140,6 +140,7 @@ void BasicDesktopIconUI::init$() {
 }
 
 void BasicDesktopIconUI::installUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, desktopIcon, $cast($JInternalFrame$JDesktopIcon, c));
 	$set(this, frame, $nc(this->desktopIcon)->getInternalFrame());
 	installDefaults();
@@ -160,6 +161,7 @@ void BasicDesktopIconUI::installUI($JComponent* c) {
 }
 
 void BasicDesktopIconUI::uninstallUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	uninstallDefaults();
 	uninstallComponents();
 	$var($JInternalFrame, f, $nc(this->desktopIcon)->getInternalFrame());
@@ -222,6 +224,7 @@ $Dimension* BasicDesktopIconUI::getPreferredSize($JComponent* c) {
 }
 
 $Dimension* BasicDesktopIconUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, dim, $new($Dimension, $($nc(this->iconPane)->getMinimumSize())));
 	$var($Border, border, $nc(this->frame)->getBorder());
 	if (border != nullptr) {
@@ -236,6 +239,7 @@ $Dimension* BasicDesktopIconUI::getMaximumSize($JComponent* c) {
 }
 
 $Insets* BasicDesktopIconUI::getInsets($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame, iframe, $nc(this->desktopIcon)->getInternalFrame());
 	$var($Border, border, $nc(iframe)->getBorder());
 	if (border != nullptr) {

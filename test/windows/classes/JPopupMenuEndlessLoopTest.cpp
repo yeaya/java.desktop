@@ -105,6 +105,7 @@ void JPopupMenuEndlessLoopTest::main($StringArray* args) {
 }
 
 void JPopupMenuEndlessLoopTest::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$var($JPopupMenu, popup, $new($JPopupMenu, "Popup Menu"_s));
 	$var($JMenu, menu, $new($JMenu, "Menu"_s));
 	menu->add($$new($JMenuItem, "Menu Item"_s));

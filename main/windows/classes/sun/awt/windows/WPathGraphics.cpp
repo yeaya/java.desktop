@@ -229,6 +229,7 @@ void WPathGraphics::init$($Graphics2D* graphics, $PrinterJob* printerJob, $Print
 }
 
 $Graphics* WPathGraphics::create() {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics2D, var$0, $cast($Graphics2D, $nc($(getDelegate()))->create()));
 	$var($PrinterJob, var$1, getPrinterJob());
 	$var($Printable, var$2, getPrintable());
@@ -238,6 +239,7 @@ $Graphics* WPathGraphics::create() {
 }
 
 void WPathGraphics::draw($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Stroke, stroke, getStroke());
 	if ($instanceOf($BasicStroke, stroke)) {
 		$var($BasicStroke, lineStroke, nullptr);
@@ -287,6 +289,7 @@ void WPathGraphics::drawString($String* str, int32_t x, int32_t y) {
 }
 
 void WPathGraphics::drawString($String* str, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, str);
 	float var$1 = x;
 	float var$2 = y;
@@ -295,6 +298,7 @@ void WPathGraphics::drawString($String* str, float x, float y) {
 }
 
 int32_t WPathGraphics::platformFontCount($Font* font, $String* str) {
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, deviceTransform, getTransform());
 	$var($AffineTransform, fontTransform, $new($AffineTransform, deviceTransform));
 	fontTransform->concatenate($($nc($(getFont()))->getTransform()));
@@ -313,6 +317,7 @@ int32_t WPathGraphics::platformFontCount($Font* font, $String* str) {
 
 bool WPathGraphics::isXP() {
 	$init(WPathGraphics);
+	$useLocalCurrentObjectStackCache();
 	$var($String, osVersion, $System::getProperty("os.version"_s));
 	if (osVersion != nullptr) {
 		$var($Float, version, $Float::valueOf(osVersion));
@@ -363,6 +368,7 @@ float WPathGraphics::getAwScale(double scaleFactorX, double scaleFactorY) {
 }
 
 void WPathGraphics::drawString($String* str, float x, float y, $Font* font, $FontRenderContext* frc, float targetW) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(str)->length() == 0) {
 		return;
 	}
@@ -482,6 +488,7 @@ void WPathGraphics::drawString($String* str, float x, float y, $Font* font, $Fon
 }
 
 bool WPathGraphics::printGlyphVector($GlyphVector* gv, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	if (((int32_t)($nc(gv)->getLayoutFlags() & (uint32_t)$GlyphVector::FLAG_HAS_TRANSFORMS)) != 0) {
 		return false;
 	}
@@ -635,6 +642,7 @@ bool WPathGraphics::printGlyphVector($GlyphVector* gv, float x, float y) {
 }
 
 void WPathGraphics::textOut($String* str$renamed, $Font* font, $PhysicalFont* font2D, $FontRenderContext* frc, float deviceSize, int32_t rotation, float awScale, double scaleFactorX, double scaleFactorY, float userx, float usery, float devx, float devy, float targetW) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, str$renamed);
 	$var($String, family, $nc(font2D)->getFamilyName(nullptr));
 	int32_t var$0 = $nc(font)->getStyle();
@@ -669,6 +677,7 @@ void WPathGraphics::textOut($String* str$renamed, $Font* font, $PhysicalFont* fo
 }
 
 bool WPathGraphics::okGDIMetrics($String* str, $Font* font, $FontRenderContext* frc, double scaleX) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bds, $nc(font)->getStringBounds(str, frc));
 	double jdkAdvance = $nc(bds)->getWidth();
 	jdkAdvance = (double)$Math::round(jdkAdvance * scaleX);
@@ -685,6 +694,7 @@ bool WPathGraphics::okGDIMetrics($String* str, $Font* font, $FontRenderContext* 
 }
 
 bool WPathGraphics::drawImageToPlatform($Image* image, $AffineTransform* xform$renamed, $Color* bgcolor$renamed, int32_t srcX, int32_t srcY, int32_t srcWidth, int32_t srcHeight, bool handlingTransparency) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, bgcolor, bgcolor$renamed);
 	$var($AffineTransform, xform, xform$renamed);
 	$var($BufferedImage, img, getBufferedImage(image));
@@ -883,6 +893,7 @@ bool WPathGraphics::drawImageToPlatform($Image* image, $AffineTransform* xform$r
 }
 
 void WPathGraphics::redrawRegion($Rectangle2D* region, double scaleX, double scaleY, $Shape* savedClip, $AffineTransform* savedTransform) {
+	$useLocalCurrentObjectStackCache();
 	$var($WPrinterJob, wPrinterJob, $cast($WPrinterJob, getPrinterJob()));
 	$var($Printable, painter, getPrintable());
 	$var($PageFormat, pageFormat, getPageFormat());
@@ -941,6 +952,7 @@ void WPathGraphics::deviceClip($PathIterator* pathIter) {
 }
 
 void WPathGraphics::deviceFrameRect(int32_t x, int32_t y, int32_t width, int32_t height, $Color* color) {
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, deviceTransform, getTransform());
 	int32_t transformType = $nc(deviceTransform)->getType();
 	bool usePath = (((int32_t)(transformType & (uint32_t)($AffineTransform::TYPE_GENERAL_ROTATION | $AffineTransform::TYPE_GENERAL_TRANSFORM))) != 0);
@@ -989,6 +1001,7 @@ void WPathGraphics::deviceFrameRect(int32_t x, int32_t y, int32_t width, int32_t
 }
 
 void WPathGraphics::deviceFillRect(int32_t x, int32_t y, int32_t width, int32_t height, $Color* color) {
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, deviceTransform, getTransform());
 	int32_t transformType = $nc(deviceTransform)->getType();
 	bool usePath = (((int32_t)(transformType & (uint32_t)($AffineTransform::TYPE_GENERAL_ROTATION | $AffineTransform::TYPE_GENERAL_TRANSFORM))) != 0);
@@ -1010,6 +1023,7 @@ void WPathGraphics::deviceFillRect(int32_t x, int32_t y, int32_t width, int32_t 
 }
 
 void WPathGraphics::deviceDrawLine(int32_t xBegin, int32_t yBegin, int32_t xEnd, int32_t yEnd, $Color* color) {
+	$useLocalCurrentObjectStackCache();
 	$var($Stroke, stroke, getStroke());
 	if ($instanceOf($BasicStroke, stroke)) {
 		$var($BasicStroke, lineStroke, $cast($BasicStroke, stroke));
@@ -1067,6 +1081,7 @@ void WPathGraphics::precisionScaleUp($floats* values, int32_t size) {
 }
 
 void WPathGraphics::convertToWPath($PathIterator* pathIter) {
+	$useLocalCurrentObjectStackCache();
 	$var($floats, segment, $new($floats, 6));
 	int32_t segmentType = 0;
 	$var($WPrinterJob, wPrinterJob, $cast($WPrinterJob, getPrinterJob()));
@@ -1133,6 +1148,7 @@ void WPathGraphics::convertToWPath($PathIterator* pathIter) {
 }
 
 void clinit$WPathGraphics($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	WPathGraphics::MIN_DEVICE_LINEWIDTH = 1.2f;
 	WPathGraphics::MAX_THINLINE_INCHES = 0.014f;
 	WPathGraphics::precisionScale = 1000.0f;

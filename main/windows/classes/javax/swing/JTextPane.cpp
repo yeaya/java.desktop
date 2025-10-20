@@ -178,6 +178,7 @@ $Object* allocate$JTextPane($Class* clazz) {
 $String* JTextPane::uiClassID = nullptr;
 
 void JTextPane::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JEditorPane::init$();
 	$var($EditorKit, editorKit, createDefaultEditorKit());
 	$var($String, contentType, $nc(editorKit)->getContentType());
@@ -222,6 +223,7 @@ void JTextPane::replaceSelection($String* content) {
 }
 
 void JTextPane::replaceSelection($String* content, bool checkEditable) {
+	$useLocalCurrentObjectStackCache();
 	if (checkEditable && !isEditable()) {
 		$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this);
 		return;
@@ -298,6 +300,7 @@ $Style* JTextPane::getLogicalStyle() {
 }
 
 $AttributeSet* JTextPane::getCharacterAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($StyledDocument, doc, getStyledDocument());
 	$var($Element, run, $nc(doc)->getCharacterElement(getCaretPosition()));
 	if (run != nullptr) {
@@ -307,6 +310,7 @@ $AttributeSet* JTextPane::getCharacterAttributes() {
 }
 
 void JTextPane::setCharacterAttributes($AttributeSet* attr, bool replace) {
+	$useLocalCurrentObjectStackCache();
 	int32_t p0 = getSelectionStart();
 	int32_t p1 = getSelectionEnd();
 	if (p0 != p1) {
@@ -322,6 +326,7 @@ void JTextPane::setCharacterAttributes($AttributeSet* attr, bool replace) {
 }
 
 $AttributeSet* JTextPane::getParagraphAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($StyledDocument, doc, getStyledDocument());
 	$var($Element, paragraph, $nc(doc)->getParagraphElement(getCaretPosition()));
 	if (paragraph != nullptr) {

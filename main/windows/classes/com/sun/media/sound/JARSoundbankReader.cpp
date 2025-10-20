@@ -85,6 +85,7 @@ void JARSoundbankReader::init$() {
 
 bool JARSoundbankReader::isZIP($URL* url) {
 	$init(JARSoundbankReader);
+	$useLocalCurrentObjectStackCache();
 	bool ok = false;
 	try {
 		$var($InputStream, stream, $nc(url)->openStream());
@@ -112,6 +113,7 @@ bool JARSoundbankReader::isZIP($URL* url) {
 }
 
 $Soundbank* JARSoundbankReader::getSoundbank($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (!isZIP(url)) {
 		return nullptr;
@@ -175,6 +177,7 @@ $Soundbank* JARSoundbankReader::getSoundbank($InputStream* stream) {
 }
 
 $Soundbank* JARSoundbankReader::getSoundbank($File* file) {
+	$useLocalCurrentObjectStackCache();
 	return getSoundbank($($nc($($nc(file)->toURI()))->toURL()));
 }
 

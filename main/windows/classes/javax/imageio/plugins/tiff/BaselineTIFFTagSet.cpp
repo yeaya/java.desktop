@@ -584,6 +584,7 @@ $List* BaselineTIFFTagSet::tags = nullptr;
 
 void BaselineTIFFTagSet::initTags() {
 	$init(BaselineTIFFTagSet);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(BaselineTIFFTagSet::tags, $new($ArrayList, 76));
 	$nc(BaselineTIFFTagSet::tags)->add($$new($BaselineTIFFTagSet$Artist));
 	$nc(BaselineTIFFTagSet::tags)->add($$new($BaselineTIFFTagSet$BitsPerSample));

@@ -66,6 +66,7 @@ void bug5073047::init$() {
 }
 
 void bug5073047::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($bug5073047$MyTheme, theme, $new($bug5073047$MyTheme));
 	$MetalLookAndFeel::setCurrentTheme(theme);
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));

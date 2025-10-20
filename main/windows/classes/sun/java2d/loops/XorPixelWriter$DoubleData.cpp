@@ -67,6 +67,7 @@ $Object* allocate$XorPixelWriter$DoubleData($Class* clazz) {
 }
 
 void XorPixelWriter$DoubleData::init$(Object$* srcPixel, Object$* xorPixel) {
+	$useLocalCurrentObjectStackCache();
 	$XorPixelWriter::init$();
 	$var($doubles, srcData, $cast($doubles, srcPixel));
 	$var($doubles, xorData, $cast($doubles, xorPixel));

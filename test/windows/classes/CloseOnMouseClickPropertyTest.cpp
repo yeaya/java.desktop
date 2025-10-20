@@ -263,6 +263,7 @@ void CloseOnMouseClickPropertyTest::init$() {
 
 void CloseOnMouseClickPropertyTest::main($StringArray* args) {
 	$init(CloseOnMouseClickPropertyTest);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -289,6 +290,7 @@ void CloseOnMouseClickPropertyTest::main($StringArray* args) {
 
 void CloseOnMouseClickPropertyTest::test($CloseOnMouseClickPropertyTest$TestItem* item) {
 	$init(CloseOnMouseClickPropertyTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(50);
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(CloseOnMouseClickPropertyTest$$Lambda$lambda$test$0, item)));
@@ -308,6 +310,7 @@ void CloseOnMouseClickPropertyTest::test($CloseOnMouseClickPropertyTest$TestItem
 
 void CloseOnMouseClickPropertyTest::createAndShowGUI($CloseOnMouseClickPropertyTest$TestItem* testItem) {
 	$init(CloseOnMouseClickPropertyTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(CloseOnMouseClickPropertyTest::frame, $new($JFrame));
 	$nc(CloseOnMouseClickPropertyTest::frame)->setSize(300, 300);
 	$nc(CloseOnMouseClickPropertyTest::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
@@ -323,6 +326,7 @@ void CloseOnMouseClickPropertyTest::createAndShowGUI($CloseOnMouseClickPropertyT
 
 $Point* CloseOnMouseClickPropertyTest::getClickPoint(bool parent) {
 	$init(CloseOnMouseClickPropertyTest);
+	$useLocalCurrentObjectStackCache();
 	$var($PointArray, points, $new($PointArray, 1));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(CloseOnMouseClickPropertyTest$$Lambda$lambda$getClickPoint$2$2, parent, points)));
 	return points->get(0);
@@ -330,6 +334,7 @@ $Point* CloseOnMouseClickPropertyTest::getClickPoint(bool parent) {
 
 void CloseOnMouseClickPropertyTest::lambda$getClickPoint$2(bool parent, $PointArray* points) {
 	$init(CloseOnMouseClickPropertyTest);
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, comp, parent ? static_cast<$JComponent*>(CloseOnMouseClickPropertyTest::menu) : static_cast<$JComponent*>($nc(CloseOnMouseClickPropertyTest::menu)->getItem(0)));
 	$var($Point, point, $nc(comp)->getLocationOnScreen());
 	$var($Rectangle, bounds, comp->getBounds());
@@ -354,6 +359,7 @@ void CloseOnMouseClickPropertyTest::lambda$test$0($CloseOnMouseClickPropertyTest
 }
 
 void clinit$CloseOnMouseClickPropertyTest($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(CloseOnMouseClickPropertyTest::CHECK_BOX_PROP, "CheckBoxMenuItem.doNotCloseOnMouseClick"_s);
 	$assignStatic(CloseOnMouseClickPropertyTest::RADIO_BUTTON_PROP, "RadioButtonMenuItem.doNotCloseOnMouseClick"_s);
 		$init($CloseOnMouseClickPropertyTest$TestType);

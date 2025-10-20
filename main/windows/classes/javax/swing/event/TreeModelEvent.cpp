@@ -112,6 +112,7 @@ $ints* TreeModelEvent::getChildIndices() {
 }
 
 $String* TreeModelEvent::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, $new($StringBuilder));
 	$var($String, var$0, $$str({$($of(this)->getClass()->getName()), " "_s}));
 	sb->append($$concat(var$0, $($Integer::toString(hashCode()))));

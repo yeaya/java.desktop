@@ -414,6 +414,7 @@ int32_t JProgressBar::getOrientation() {
 }
 
 void JProgressBar::setOrientation(int32_t newOrientation) {
+	$useLocalCurrentObjectStackCache();
 	if (this->orientation != newOrientation) {
 		{
 			int32_t oldOrientation = 0;
@@ -556,6 +557,7 @@ $BoundedRangeModel* JProgressBar::getModel() {
 }
 
 void JProgressBar::setModel($BoundedRangeModel* newModel) {
+	$useLocalCurrentObjectStackCache();
 	$var($BoundedRangeModel, oldModel, getModel());
 	if (newModel != oldModel) {
 		if (oldModel != nullptr) {
@@ -593,6 +595,7 @@ int32_t JProgressBar::getMaximum() {
 }
 
 void JProgressBar::setValue(int32_t n) {
+	$useLocalCurrentObjectStackCache();
 	$var($BoundedRangeModel, brm, getModel());
 	int32_t oldValue = $nc(brm)->getValue();
 	brm->setValue(n);
@@ -634,6 +637,7 @@ void JProgressBar::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JProgressBar::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, orientationString, this->orientation == $SwingConstants::HORIZONTAL ? "HORIZONTAL"_s : "VERTICAL"_s);
 	$var($String, paintBorderString, this->paintBorder$ ? "true"_s : "false"_s);
 	$var($String, progressStringString, this->progressString != nullptr ? this->progressString : ""_s);

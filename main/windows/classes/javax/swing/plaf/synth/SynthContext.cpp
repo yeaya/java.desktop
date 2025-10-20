@@ -124,6 +124,7 @@ int32_t SynthContext::getComponentState() {
 }
 
 $SynthPainter* SynthContext::getPainter() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthPainter, painter, $nc($(getStyle()))->getPainter(this));
 	if (painter != nullptr) {
 		return painter;

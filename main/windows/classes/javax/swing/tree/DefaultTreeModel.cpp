@@ -225,6 +225,7 @@ void DefaultTreeModel::insertNodeInto($MutableTreeNode* newChild, $MutableTreeNo
 }
 
 void DefaultTreeModel::removeNodeFromParent($MutableTreeNode* node) {
+	$useLocalCurrentObjectStackCache();
 	$var($MutableTreeNode, parent, $cast($MutableTreeNode, $nc(node)->getParent()));
 	if (parent == nullptr) {
 		$throwNew($IllegalArgumentException, "node does not have a parent."_s);
@@ -238,6 +239,7 @@ void DefaultTreeModel::removeNodeFromParent($MutableTreeNode* node) {
 }
 
 void DefaultTreeModel::nodeChanged($TreeNode* node) {
+	$useLocalCurrentObjectStackCache();
 	if (this->listenerList != nullptr && node != nullptr) {
 		$var($TreeNode, parent, node->getParent());
 		if (parent != nullptr) {
@@ -260,6 +262,7 @@ void DefaultTreeModel::reload($TreeNode* node) {
 }
 
 void DefaultTreeModel::nodesWereInserted($TreeNode* node, $ints* childIndices) {
+	$useLocalCurrentObjectStackCache();
 	if (this->listenerList != nullptr && node != nullptr && childIndices != nullptr && childIndices->length > 0) {
 		int32_t cCount = childIndices->length;
 		$var($ObjectArray, newChildren, $new($ObjectArray, cCount));
@@ -277,6 +280,7 @@ void DefaultTreeModel::nodesWereRemoved($TreeNode* node, $ints* childIndices, $O
 }
 
 void DefaultTreeModel::nodesChanged($TreeNode* node, $ints* childIndices) {
+	$useLocalCurrentObjectStackCache();
 	if (node != nullptr) {
 		if (childIndices != nullptr) {
 			int32_t cCount = childIndices->length;
@@ -304,6 +308,7 @@ $TreeNodeArray* DefaultTreeModel::getPathToRoot($TreeNode* aNode) {
 }
 
 $TreeNodeArray* DefaultTreeModel::getPathToRoot($TreeNode* aNode, int32_t depth) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeNodeArray, retNodes, nullptr);
 	if (aNode == nullptr) {
 		if (depth == 0) {
@@ -339,6 +344,7 @@ $TreeModelListenerArray* DefaultTreeModel::getTreeModelListeners() {
 }
 
 void DefaultTreeModel::fireTreeNodesChanged(Object$* source, $ObjectArray* path, $ints* childIndices, $ObjectArray* children) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($TreeModelEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -353,6 +359,7 @@ void DefaultTreeModel::fireTreeNodesChanged(Object$* source, $ObjectArray* path,
 }
 
 void DefaultTreeModel::fireTreeNodesInserted(Object$* source, $ObjectArray* path, $ints* childIndices, $ObjectArray* children) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($TreeModelEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -367,6 +374,7 @@ void DefaultTreeModel::fireTreeNodesInserted(Object$* source, $ObjectArray* path
 }
 
 void DefaultTreeModel::fireTreeNodesRemoved(Object$* source, $ObjectArray* path, $ints* childIndices, $ObjectArray* children) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($TreeModelEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -381,6 +389,7 @@ void DefaultTreeModel::fireTreeNodesRemoved(Object$* source, $ObjectArray* path,
 }
 
 void DefaultTreeModel::fireTreeStructureChanged(Object$* source, $ObjectArray* path, $ints* childIndices, $ObjectArray* children) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($TreeModelEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -395,6 +404,7 @@ void DefaultTreeModel::fireTreeStructureChanged(Object$* source, $ObjectArray* p
 }
 
 void DefaultTreeModel::fireTreeStructureChanged(Object$* source, $TreePath* path) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($TreeModelEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -423,6 +433,7 @@ void DefaultTreeModel::writeObject($ObjectOutputStream* s) {
 }
 
 void DefaultTreeModel::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	$var($EventListenerList, newListenerList, $cast($EventListenerList, $nc(f)->get("listenerList"_s, ($Object*)nullptr)));
 	if (newListenerList == nullptr) {

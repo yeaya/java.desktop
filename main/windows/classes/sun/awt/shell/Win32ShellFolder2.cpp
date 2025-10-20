@@ -557,11 +557,13 @@ void Win32ShellFolder2::setRelativePIDL(int64_t relativePIDL) {
 
 $String* Win32ShellFolder2::composePathForCsidl(int32_t csidl) {
 	$init(Win32ShellFolder2);
+	$useLocalCurrentObjectStackCache();
 	$var($String, path, getFileSystemPath(csidl));
 	return path == nullptr ? ($str({"ShellFolder: 0x"_s, $($Integer::toHexString(csidl))})) : path;
 }
 
 void Win32ShellFolder2::init$(int32_t csidl) {
+	$useLocalCurrentObjectStackCache();
 	$ShellFolder::init$(nullptr, $(composePathForCsidl(csidl)));
 	$set(this, disposerReferent, $new($Object));
 	$set(this, disposer, $new($Win32ShellFolder2$FolderDisposer));
@@ -595,6 +597,7 @@ void Win32ShellFolder2::init$(Win32ShellFolder2* parent, int64_t pIShellFolder, 
 
 Win32ShellFolder2* Win32ShellFolder2::createShellFolder(Win32ShellFolder2* parent, int64_t pIDL) {
 	$init(Win32ShellFolder2);
+	$useLocalCurrentObjectStackCache();
 	$load($RuntimeException);
 	$var($String, path, $cast($String, invoke($$new($Win32ShellFolder2$2, parent, pIDL), $RuntimeException::class$)));
 	$var($String, libPath, resolveLibrary(path));
@@ -671,6 +674,7 @@ void Win32ShellFolder2::releaseIShellFolder(int64_t pIShellFolder) {
 }
 
 int64_t Win32ShellFolder2::getIShellFolder() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->disposer)->pIShellFolder == 0) {
 		try {
 			$load($RuntimeException);
@@ -723,6 +727,7 @@ bool Win32ShellFolder2::pathsEqual($String* path1, $String* path2) {
 }
 
 bool Win32ShellFolder2::equals(Object$* o) {
+	$useLocalCurrentObjectStackCache();
 	if (o == nullptr || !($instanceOf(Win32ShellFolder2, o))) {
 		if (!($instanceOf($File, o))) {
 			return $ShellFolder::equals(o);
@@ -753,6 +758,7 @@ bool Win32ShellFolder2::equals(Object$* o) {
 
 bool Win32ShellFolder2::pidlsEqual(int64_t pIShellFolder, int64_t pidl1, int64_t pidl2) {
 	$init(Win32ShellFolder2);
+	$useLocalCurrentObjectStackCache();
 	$load($RuntimeException);
 	return $nc(($cast($Boolean, $(invoke($$new($Win32ShellFolder2$5, pIShellFolder, pidl1, pidl2), $RuntimeException::class$)))))->booleanValue();
 }
@@ -774,6 +780,7 @@ bool Win32ShellFolder2::isFileSystem() {
 }
 
 bool Win32ShellFolder2::hasAttribute(int32_t attribute) {
+	$useLocalCurrentObjectStackCache();
 	$var($Boolean, result, $cast($Boolean, invoke($$new($Win32ShellFolder2$6, this, attribute))));
 	return result != nullptr && result->booleanValue();
 }
@@ -789,6 +796,7 @@ int32_t Win32ShellFolder2::getAttributes0(int64_t pParentIShellFolder, int64_t p
 
 $String* Win32ShellFolder2::getFileSystemPath(int64_t parentIShellFolder, int64_t relativePIDL) {
 	$init(Win32ShellFolder2);
+	$useLocalCurrentObjectStackCache();
 	int32_t linkedFolder = Win32ShellFolder2::ATTRIB_LINK | Win32ShellFolder2::ATTRIB_FOLDER;
 	bool var$0 = parentIShellFolder == $nc($($Win32ShellFolderManager2::getNetwork()))->getIShellFolder();
 	if (var$0 && getAttributes0(parentIShellFolder, relativePIDL, linkedFolder) == linkedFolder) {
@@ -804,6 +812,7 @@ $String* Win32ShellFolder2::getFileSystemPath(int64_t parentIShellFolder, int64_
 
 $String* Win32ShellFolder2::resolveLibrary($String* path) {
 	$init(Win32ShellFolder2);
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = path != nullptr && path->startsWith("::{"_s);
 	if (var$0 && $(path->toLowerCase())->endsWith(".library-ms"_s)) {
 		{
@@ -825,6 +834,7 @@ $String* Win32ShellFolder2::resolveLibrary($String* path) {
 
 $String* Win32ShellFolder2::getFileSystemPath(int32_t csidl) {
 	$init(Win32ShellFolder2);
+	$useLocalCurrentObjectStackCache();
 	$load($IOException);
 	$var($String, path, $cast($String, invoke($$new($Win32ShellFolder2$7, csidl), $IOException::class$)));
 	if (path != nullptr) {
@@ -875,6 +885,7 @@ bool Win32ShellFolder2::isDirectory() {
 }
 
 int64_t Win32ShellFolder2::getEnumObjects(bool includeHiddenFiles) {
+	$useLocalCurrentObjectStackCache();
 	$load($RuntimeException);
 	return $nc(($cast($Long, $(invoke($$new($Win32ShellFolder2$8, this, includeHiddenFiles), $RuntimeException::class$)))))->longValue();
 }
@@ -911,6 +922,7 @@ int64_t Win32ShellFolder2::bindToObject(int64_t parentIShellFolder, int64_t pIDL
 }
 
 $FileArray* Win32ShellFolder2::listFiles(bool includeHiddenFiles) {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, security, $System::getSecurityManager());
 	if (security != nullptr) {
 		security->checkRead($(getPath()));
@@ -960,6 +972,7 @@ Win32ShellFolder2* Win32ShellFolder2::getLinkLocation(bool resolve) {
 }
 
 int64_t Win32ShellFolder2::parseDisplayName($String* name) {
+	$useLocalCurrentObjectStackCache();
 	$load($IOException);
 	return $nc(($cast($Long, $(invoke($$new($Win32ShellFolder2$12, this, name), $IOException::class$)))))->longValue();
 }
@@ -1127,6 +1140,7 @@ int64_t Win32ShellFolder2::getIShellIcon() {
 
 $Image* Win32ShellFolder2::makeIcon(int64_t hIcon) {
 	$init(Win32ShellFolder2);
+	$useLocalCurrentObjectStackCache();
 	if (hIcon != (int64_t)0 && hIcon != (int64_t)-1) {
 		$var($ints, iconBits, getIconBits(hIcon));
 		if (iconBits != nullptr) {
@@ -1140,6 +1154,7 @@ $Image* Win32ShellFolder2::makeIcon(int64_t hIcon) {
 }
 
 $Image* Win32ShellFolder2::getIcon(bool getLargeIcon) {
+	$useLocalCurrentObjectStackCache();
 	$var($Image, icon, getLargeIcon ? this->largeIcon : this->smallIcon);
 	int32_t size = getLargeIcon ? Win32ShellFolder2::LARGE_ICON_SIZE : Win32ShellFolder2::SMALL_ICON_SIZE;
 	if (icon == nullptr) {
@@ -1200,6 +1215,7 @@ int32_t Win32ShellFolder2::compareTo($File* file2) {
 }
 
 $ShellFolderColumnInfoArray* Win32ShellFolder2::getFolderColumns() {
+	$useLocalCurrentObjectStackCache();
 	$var($ShellFolder, library, resolveLibrary());
 	if (library != nullptr) {
 		return library->getFolderColumns();
@@ -1208,6 +1224,7 @@ $ShellFolderColumnInfoArray* Win32ShellFolder2::getFolderColumns() {
 }
 
 $Object* Win32ShellFolder2::getFolderColumnValue(int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	if (!isLibrary()) {
 		$var($ShellFolder, library, resolveLibrary());
 		if (library != nullptr) {
@@ -1222,6 +1239,7 @@ bool Win32ShellFolder2::isLibrary() {
 }
 
 $ShellFolder* Win32ShellFolder2::resolveLibrary() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($ShellFolder, f, this);
 		for (; f != nullptr; $assign(f, f->parent)) {
@@ -1279,6 +1297,7 @@ int32_t Win32ShellFolder2::compareTo(Object$* file2) {
 }
 
 $Image* Win32ShellFolder2::lambda$getIcon$0(int32_t size) {
+	$useLocalCurrentObjectStackCache();
 	$var($Image, newIcon, nullptr);
 	if (isLink()) {
 		$var(Win32ShellFolder2, folder, getLinkLocation(false));

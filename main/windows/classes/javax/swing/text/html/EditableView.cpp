@@ -89,6 +89,7 @@ float EditableView::getMaximumSpan(int32_t axis) {
 }
 
 void EditableView::paint($Graphics* g, $Shape* allocation) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, getComponent());
 	$var($Container, host, getContainer());
 	if ($instanceOf($JTextComponent, host) && this->isVisible$ != $nc(($cast($JTextComponent, host)))->isEditable()) {

@@ -182,6 +182,7 @@ $Rectangle2D* Rectangle2D$Double::createUnion($Rectangle2D* r) {
 }
 
 $String* Rectangle2D$Double::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($of(this)->getClass()->getName()), "[x="_s, $$str(this->x), ",y="_s, $$str(this->y), ",w="_s, $$str(this->width), ",h="_s, $$str(this->height), "]"_s});
 }
 

@@ -102,6 +102,7 @@ void TextLabelFactory::setLineContext(int32_t lineStart, int32_t lineLimit) {
 }
 
 $ExtendedTextLabel* TextLabelFactory::createExtended($Font* font, $CoreMetrics* lm, $Decoration* decorator, int32_t start, int32_t limit) {
+	$useLocalCurrentObjectStackCache();
 	if (start >= limit || start < this->lineStart || limit > this->lineLimit) {
 		$throwNew($IllegalArgumentException, $$str({"bad start: "_s, $$str(start), " or limit: "_s, $$str(limit)}));
 	}
@@ -119,6 +120,7 @@ $ExtendedTextLabel* TextLabelFactory::createExtended($Font* font, $CoreMetrics* 
 }
 
 $TextLabel* TextLabelFactory::createSimple($Font* font, $CoreMetrics* lm, int32_t start, int32_t limit) {
+	$useLocalCurrentObjectStackCache();
 	if (start >= limit || start < this->lineStart || limit > this->lineLimit) {
 		$throwNew($IllegalArgumentException, $$str({"bad start: "_s, $$str(start), " or limit: "_s, $$str(limit)}));
 	}

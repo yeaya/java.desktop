@@ -70,6 +70,7 @@ void bug4984669::init$() {
 }
 
 void bug4984669::init() {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, pane, $new($JEditorPane));
 	$nc($(this->getContentPane()))->add(static_cast<$Component*>($$new($JScrollPane, pane)));
 	pane->setEditorKit($$new($StyledEditorKit));

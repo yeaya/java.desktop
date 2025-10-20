@@ -101,6 +101,7 @@ void JColorChooserTest::init$($CountDownLatch* latch) {
 }
 
 void JColorChooserTest::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		createUI();
 	} catch ($Exception&) {

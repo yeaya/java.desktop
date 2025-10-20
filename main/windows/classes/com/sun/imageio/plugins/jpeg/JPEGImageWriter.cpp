@@ -439,6 +439,7 @@ $ImageWriteParam* JPEGImageWriter::getDefaultWriteParam() {
 }
 
 $IIOMetadata* JPEGImageWriter::getDefaultStreamMetadata($ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	setThreadLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -464,6 +465,7 @@ $IIOMetadata* JPEGImageWriter::getDefaultStreamMetadata($ImageWriteParam* param)
 }
 
 $IIOMetadata* JPEGImageWriter::getDefaultImageMetadata($ImageTypeSpecifier* imageType, $ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	setThreadLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -499,6 +501,7 @@ $IIOMetadata* JPEGImageWriter::convertStreamMetadata($IIOMetadata* inData, $Imag
 }
 
 $IIOMetadata* JPEGImageWriter::convertImageMetadata($IIOMetadata* inData, $ImageTypeSpecifier* imageType, $ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	setThreadLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -524,6 +527,7 @@ $IIOMetadata* JPEGImageWriter::convertImageMetadata($IIOMetadata* inData, $Image
 }
 
 $IIOMetadata* JPEGImageWriter::convertImageMetadataOnThread($IIOMetadata* inData, $ImageTypeSpecifier* imageType, $ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JPEGMetadata, inData)) {
 		$var($JPEGMetadata, jpegData, $cast($JPEGMetadata, inData));
 		if (!$nc(jpegData)->isStream) {
@@ -609,6 +613,7 @@ void JPEGImageWriter::write($IIOMetadata* streamMetadata, $IIOImage* image, $Ima
 }
 
 void JPEGImageWriter::writeOnThread($IIOMetadata* streamMetadata, $IIOImage* image, $ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	if (this->ios == nullptr) {
 		$throwNew($IllegalStateException, "Output has not been set!"_s);
 	}
@@ -1154,6 +1159,7 @@ void JPEGImageWriter::prepareWriteSequence($IIOMetadata* streamMetadata) {
 }
 
 void JPEGImageWriter::prepareWriteSequenceOnThread($IIOMetadata* streamMetadata) {
+	$useLocalCurrentObjectStackCache();
 	if (this->ios == nullptr) {
 		$throwNew($IllegalStateException, "Output has not been set!"_s);
 	}
@@ -1329,6 +1335,7 @@ void JPEGImageWriter::dispose() {
 }
 
 void JPEGImageWriter::warningOccurred(int32_t code) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->cbLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -1448,6 +1455,7 @@ void JPEGImageWriter::checkAdobe($AdobeMarkerSegment* adobe, $ImageTypeSpecifier
 }
 
 $ints* JPEGImageWriter::collectScans($JPEGMetadata* metadata, $SOFMarkerSegment* sof) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, segments, $new($ArrayList));
 	int32_t SCAN_SIZE = 9;
 	int32_t MAX_COMPS_PER_SCAN = 4;
@@ -1492,6 +1500,7 @@ $ints* JPEGImageWriter::collectScans($JPEGMetadata* metadata, $SOFMarkerSegment*
 }
 
 $JPEGQTableArray* JPEGImageWriter::collectQTablesFromMetadata($JPEGMetadata* metadata) {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, tables, $new($ArrayList));
 	{
 		$var($Iterator, i$, $nc($nc(metadata)->markerSequence)->iterator());
@@ -1516,6 +1525,7 @@ $JPEGQTableArray* JPEGImageWriter::collectQTablesFromMetadata($JPEGMetadata* met
 }
 
 $JPEGHuffmanTableArray* JPEGImageWriter::collectHTablesFromMetadata($JPEGMetadata* metadata, bool wantDC) {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, tables, $new($ArrayList));
 	{
 		$var($Iterator, i$, $nc($nc(metadata)->markerSequence)->iterator());
@@ -1594,6 +1604,7 @@ int32_t JPEGImageWriter::getSrcCSType($ColorModel* cm) {
 }
 
 int32_t JPEGImageWriter::getDestCSType($ImageTypeSpecifier* destType) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, cm, $nc(destType)->getColorModel());
 	bool alpha = $nc(cm)->hasAlpha();
 	$var($ColorSpace, cs, cm->getColorSpace());
@@ -1722,6 +1733,7 @@ void JPEGImageWriter::writeTables(int64_t structPointer, $JPEGQTableArray* qtabl
 }
 
 void JPEGImageWriter::grabPixels(int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($Raster, sourceLine, nullptr);
 	if (this->indexed) {
 		$assign(sourceLine, $nc(this->srcRas)->createChild(this->sourceXOffset, this->sourceYOffset + y, this->sourceWidth, 1, 0, 0, $$new($ints, {0})));
@@ -1813,6 +1825,7 @@ void JPEGImageWriter::writeOutputData($bytes* data, int32_t offset, int32_t len)
 
 void JPEGImageWriter::setThreadLock() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Thread, currThread, $Thread::currentThread());
 		if (this->theThread != nullptr) {
 			if (this->theThread != currThread) {
@@ -1829,6 +1842,7 @@ void JPEGImageWriter::setThreadLock() {
 
 void JPEGImageWriter::clearThreadLock() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Thread, currThread, $Thread::currentThread());
 		if (this->theThread == nullptr || this->theThread != currThread) {
 			$throwNew($IllegalStateException, $$str({"Attempt to clear thread lock form wrong thread. Locked thread: "_s, this->theThread, "; current thread: "_s, currThread}));
@@ -1841,6 +1855,7 @@ void JPEGImageWriter::clearThreadLock() {
 }
 
 void clinit$JPEGImageWriter($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	{
 		JPEGImageWriter::initStatic();
 	}

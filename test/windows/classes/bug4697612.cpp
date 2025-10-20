@@ -250,6 +250,7 @@ $JScrollPane* bug4697612::scroller = nullptr;
 $Robot* bug4697612::robot = nullptr;
 
 void bug4697612::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 	} catch ($ClassNotFoundException&) {
@@ -268,6 +269,7 @@ void bug4697612::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 }
 
 void bug4697612::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(bug4697612);
 	$assignStatic(bug4697612::robot, $new($Robot));
 	$nc(bug4697612::robot)->setAutoDelay(100);
@@ -294,6 +296,7 @@ void bug4697612::main($StringArray* args) {
 }
 
 void bug4697612::init$() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -362,18 +365,21 @@ void bug4697612::init$() {
 }
 
 int32_t bug4697612::getTextCaretPosition() {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, result, $new($ints, 1));
 	$SwingUtilities::invokeAndWait($$new($bug4697612$5, result));
 	return result->get(0);
 }
 
 int32_t bug4697612::getTextCaretHeight() {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, result, $new($ints, 1));
 	$SwingUtilities::invokeAndWait($$new($bug4697612$6, result));
 	return result->get(0);
 }
 
 int32_t bug4697612::getScrollerViewPosition() {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, result, $new($ints, 1));
 	$SwingUtilities::invokeAndWait($$new($bug4697612$7, result));
 	return result->get(0);
@@ -381,6 +387,7 @@ int32_t bug4697612::getScrollerViewPosition() {
 
 void bug4697612::createAndShowGUI() {
 	$load(bug4697612);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$init(bug4697612);
 	$assignStatic(bug4697612::frame, $new($JFrame));

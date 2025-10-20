@@ -189,6 +189,7 @@ bool MuxingAttributeSet::isEqual($AttributeSet* attr) {
 }
 
 $AttributeSet* MuxingAttributeSet::copyAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSetArray, as, getAttributes());
 	$var($MutableAttributeSet, a, $new($SimpleAttributeSet));
 	int32_t n = 0;
@@ -199,6 +200,7 @@ $AttributeSet* MuxingAttributeSet::copyAttributes() {
 }
 
 $Object* MuxingAttributeSet::getAttribute(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSetArray, as, getAttributes());
 	int32_t n = $nc(as)->length;
 	for (int32_t i = 0; i < n; ++i) {
@@ -219,6 +221,7 @@ bool MuxingAttributeSet::containsAttribute(Object$* name, Object$* value) {
 }
 
 bool MuxingAttributeSet::containsAttributes($AttributeSet* attrs) {
+	$useLocalCurrentObjectStackCache();
 	bool result = true;
 	$var($Enumeration, names, $nc(attrs)->getAttributeNames());
 	while (result && $nc(names)->hasMoreElements()) {

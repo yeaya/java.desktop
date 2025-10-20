@@ -144,6 +144,7 @@ $Painter* NimbusIcon::paintFilter($Painter* painter) {
 }
 
 void NimbusIcon::paintIcon($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($Painter, painter, nullptr);
 	if (context != nullptr) {
 		$assign(painter, paintFilter($cast($Painter, $($nc($(context->getStyle()))->get(context, this->key)))));
@@ -218,6 +219,7 @@ void NimbusIcon::paintIcon($SynthContext* context, $Graphics* g, int32_t x, int3
 }
 
 void NimbusIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($Painter, painter, paintFilter($cast($Painter, $($UIManager::get($$str({this->prefix, "[Enabled]."_s, this->key}))))));
 	if (painter != nullptr) {
 		$var($JComponent, jc, ($instanceOf($JComponent, c)) ? $cast($JComponent, c) : ($JComponent*)nullptr);
@@ -229,6 +231,7 @@ void NimbusIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
 }
 
 int32_t NimbusIcon::getIconWidth($SynthContext* context) {
+	$useLocalCurrentObjectStackCache();
 	if (context == nullptr) {
 		return this->width;
 	}
@@ -245,6 +248,7 @@ int32_t NimbusIcon::getIconWidth($SynthContext* context) {
 }
 
 int32_t NimbusIcon::getIconHeight($SynthContext* context) {
+	$useLocalCurrentObjectStackCache();
 	if (context == nullptr) {
 		return this->height;
 	}
@@ -266,6 +270,7 @@ int32_t NimbusIcon::getIconHeight($SynthContext* context) {
 }
 
 int32_t NimbusIcon::scale($SynthContext* context, int32_t size) {
+	$useLocalCurrentObjectStackCache();
 	if (context == nullptr || $nc(context)->getComponent() == nullptr) {
 		return size;
 	}

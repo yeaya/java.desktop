@@ -114,6 +114,7 @@ void HeadlessDefaultListCellRenderer::init$() {
 }
 
 void HeadlessDefaultListCellRenderer::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultListCellRenderer, dcr, $new($DefaultListCellRenderer));
 	$var($Component, c1, dcr->add(static_cast<$Component*>($$new($HeadlessDefaultListCellRenderer$1))));
 	$var($Component, c2, dcr->add(static_cast<$Component*>($$new($HeadlessDefaultListCellRenderer$2))));

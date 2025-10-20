@@ -106,6 +106,7 @@ void VSyncedBSManager::releaseVsync($BufferStrategy* bs) {
 }
 
 void clinit$VSyncedBSManager($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	VSyncedBSManager::vSyncLimit = $nc($($Boolean::valueOf($cast($String, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, "sun.java2d.vsynclimit"_s, "true"_s))))))))->booleanValue();
 }

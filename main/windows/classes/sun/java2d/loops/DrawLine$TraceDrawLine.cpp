@@ -69,6 +69,7 @@ $Object* allocate$DrawLine$TraceDrawLine($Class* clazz) {
 }
 
 void DrawLine$TraceDrawLine::init$($DrawLine* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, var$0, $nc(target)->getSourceType());
 	$var($CompositeType, var$1, target->getCompositeType());
 	$DrawLine::init$(var$0, var$1, $(target->getDestType()));

@@ -1462,6 +1462,7 @@ void BasicLookAndFeel::installAWTEventListener() {
 }
 
 void BasicLookAndFeel::uninitialize() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($AppContext, context, $AppContext::getAppContext());
 	$init($BasicPopupMenuUI);
@@ -1488,6 +1489,7 @@ void BasicLookAndFeel::uninitialize() {
 }
 
 void BasicLookAndFeel::initClassDefaults($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, basicPackageName, "javax.swing.plaf.basic."_s);
 	$var($ObjectArray, uiDefaults, $new($ObjectArray, {
 		$of("ButtonUI"_s),
@@ -1639,6 +1641,7 @@ void BasicLookAndFeel::initSystemColorDefaults($UIDefaults* table) {
 }
 
 void BasicLookAndFeel::loadSystemColors($UIDefaults* table, $StringArray* systemColors, bool useNative) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (useNative) {
 		for (int32_t i = 0; i < $nc(systemColors)->length; i += 2) {
@@ -1669,11 +1672,13 @@ void BasicLookAndFeel::loadSystemColors($UIDefaults* table, $StringArray* system
 }
 
 void BasicLookAndFeel::initResourceBundle($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$nc(table)->setDefaultLocale($($Locale::getDefault()));
 	$nc($($SwingAccessor::getUIDefaultsAccessor()))->addInternalBundle(table, "com.sun.swing.internal.plaf.basic.resources.basic"_s);
 }
 
 void BasicLookAndFeel::initComponentDefaults($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	initResourceBundle(table);
 	$var($Integer, fiveHundred, $Integer::valueOf(500));
 	$var($Long, oneThousand, $Long::valueOf((int64_t)1000));
@@ -3714,6 +3719,7 @@ $Object* BasicLookAndFeel::getUIOfType($ComponentUI* ui, $Class* klass) {
 }
 
 $ActionMap* BasicLookAndFeel::getAudioActionMap() {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, audioActionMap, $cast($ActionMap, $UIManager::get("AuditoryCues.actionMap"_s)));
 	if (audioActionMap == nullptr) {
 		$var($ObjectArray, acList, $cast($ObjectArray, $UIManager::get("AuditoryCues.cueList"_s)));
@@ -3729,6 +3735,7 @@ $ActionMap* BasicLookAndFeel::getAudioActionMap() {
 }
 
 $Action* BasicLookAndFeel::createAudioAction(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	if (key != nullptr) {
 		$var($String, audioKey, $cast($String, key));
 		$var($String, audioValue, $cast($String, $UIManager::get(key)));
@@ -3739,6 +3746,7 @@ $Action* BasicLookAndFeel::createAudioAction(Object$* key) {
 }
 
 $bytes* BasicLookAndFeel::loadAudioData($String* soundFile) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (soundFile == nullptr) {
 		return nullptr;
@@ -3758,6 +3766,7 @@ $bytes* BasicLookAndFeel::loadAudioData($String* soundFile) {
 }
 
 void BasicLookAndFeel::playSound($Action* audioAction) {
+	$useLocalCurrentObjectStackCache();
 	if (audioAction != nullptr) {
 		$var($ObjectArray, audioStrings, $cast($ObjectArray, $UIManager::get("AuditoryCues.playList"_s)));
 		if (audioStrings != nullptr) {
@@ -3784,6 +3793,7 @@ void BasicLookAndFeel::playSound($Action* audioAction) {
 
 void BasicLookAndFeel::installAudioActionMap($ActionMap* map) {
 	$init(BasicLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	$var($LookAndFeel, laf, $UIManager::getLookAndFeel());
 	if ($instanceOf(BasicLookAndFeel, laf)) {
 		$nc(map)->setParent($($nc(($cast(BasicLookAndFeel, laf)))->getAudioActionMap()));
@@ -3792,6 +3802,7 @@ void BasicLookAndFeel::installAudioActionMap($ActionMap* map) {
 
 void BasicLookAndFeel::playSound($JComponent* c, Object$* actionKey) {
 	$init(BasicLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	$var($LookAndFeel, laf, $UIManager::getLookAndFeel());
 	if ($instanceOf(BasicLookAndFeel, laf)) {
 		$var($ActionMap, map, $nc(c)->getActionMap());

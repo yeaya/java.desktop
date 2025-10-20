@@ -170,6 +170,7 @@ void InputStreamImageSource::addConsumer($ImageConsumer* ic) {
 
 void InputStreamImageSource::printQueue($ImageConsumerQueue* cq$renamed, $String* prefix) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($ImageConsumerQueue, cq, cq$renamed);
 		while (cq != nullptr) {
 			$init($System);
@@ -181,6 +182,7 @@ void InputStreamImageSource::printQueue($ImageConsumerQueue* cq$renamed, $String
 
 void InputStreamImageSource::printQueues($String* title) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$init($System);
 		$nc($System::out)->println($$str({title, "[ -----------"_s}));
 		printQueue(this->consumers, "  "_s);
@@ -197,6 +199,7 @@ void InputStreamImageSource::printQueues($String* title) {
 
 void InputStreamImageSource::addConsumer($ImageConsumer* ic, bool produce) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		checkSecurity(nullptr, false);
 		{
 			$var($ImageDecoder, id, this->decoders);
@@ -347,6 +350,7 @@ $ImageDecoder* InputStreamImageSource::getDecoder($InputStream* is$renamed) {
 }
 
 void InputStreamImageSource::doFetch() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this) {
 		if (this->consumers == nullptr) {
 			this->awaitingFetch = false;
@@ -421,6 +425,7 @@ void InputStreamImageSource::setDecoder($ImageDecoder* mydecoder) {
 
 void InputStreamImageSource::removeDecoder($ImageDecoder* mydecoder) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		doneDecoding(mydecoder);
 		$var($ImageDecoder, idprev, nullptr);
 		{

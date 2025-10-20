@@ -122,6 +122,7 @@ void Component$BltBufferStrategy::dispose() {
 }
 
 void Component$BltBufferStrategy::createBackBuffers(int32_t numBuffers) {
+	$useLocalCurrentObjectStackCache();
 	if (numBuffers == 0) {
 		$set(this, backBuffers, nullptr);
 	} else {
@@ -153,6 +154,7 @@ $BufferCapabilities* Component$BltBufferStrategy::getCapabilities() {
 }
 
 $Graphics* Component$BltBufferStrategy::getDrawGraphics() {
+	$useLocalCurrentObjectStackCache();
 	revalidate();
 	$var($Image, backBuffer, getBackBuffer());
 	if (backBuffer == nullptr) {
@@ -179,6 +181,7 @@ void Component$BltBufferStrategy::show() {
 }
 
 void Component$BltBufferStrategy::showSubRegion(int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
+	$useLocalCurrentObjectStackCache();
 	if (this->backBuffers == nullptr) {
 		return;
 	}
@@ -218,6 +221,7 @@ void Component$BltBufferStrategy::revalidate() {
 }
 
 void Component$BltBufferStrategy::revalidate(bool checkSize) {
+	$useLocalCurrentObjectStackCache();
 	this->validatedContents = false;
 	if (this->backBuffers == nullptr) {
 		return;

@@ -84,6 +84,7 @@ void SynthFileChooserUI$SynthFCPropertyChangeListener::init$($SynthFileChooserUI
 }
 
 void SynthFileChooserUI$SynthFCPropertyChangeListener::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prop, $nc(e)->getPropertyName());
 	$init($JFileChooser);
 	if ($nc(prop)->equals($JFileChooser::FILE_SELECTION_MODE_CHANGED_PROPERTY)) {

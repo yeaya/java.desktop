@@ -202,6 +202,7 @@ void Menu::init$($String* label, bool tearOff) {
 }
 
 $String* Menu::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(Menu::class$) {
 		$var($String, var$0, Menu::base);
 		return $concat(var$0, $$str(Menu::nameCounter++));
@@ -209,6 +210,7 @@ $String* Menu::constructComponentName() {
 }
 
 void Menu::addNotify() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		if (this->peer == nullptr) {
 			$set(this, peer, $nc($(getComponentFactory()))->createMenu(this));
@@ -223,6 +225,7 @@ void Menu::addNotify() {
 }
 
 void Menu::removeNotify() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		int32_t nitems = getItemCount();
 		for (int32_t i = 0; i < nitems; ++i) {
@@ -277,6 +280,7 @@ void Menu::add($String* label) {
 }
 
 void Menu::insert($MenuItem* menuitem, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		if (index < 0) {
 			$throwNew($IllegalArgumentException, "index less than zero."_s);
@@ -303,6 +307,7 @@ void Menu::addSeparator() {
 }
 
 void Menu::insertSeparator(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		if (index < 0) {
 			$throwNew($IllegalArgumentException, "index less than zero."_s);
@@ -321,6 +326,7 @@ void Menu::insertSeparator(int32_t index) {
 }
 
 void Menu::remove(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		$var($MenuItem, mi, getItem(index));
 		$nc(this->items)->removeElementAt(index);
@@ -352,6 +358,7 @@ void Menu::removeAll() {
 }
 
 bool Menu::handleShortcut($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t nitems = getItemCount();
 	for (int32_t i = 0; i < nitems; ++i) {
 		$var($MenuItem, mi, getItem(i));
@@ -363,6 +370,7 @@ bool Menu::handleShortcut($KeyEvent* e) {
 }
 
 $MenuItem* Menu::getShortcutMenuItem($MenuShortcut* s) {
+	$useLocalCurrentObjectStackCache();
 	int32_t nitems = getItemCount();
 	for (int32_t i = 0; i < nitems; ++i) {
 		$var($MenuItem, mi, $nc($(getItem(i)))->getShortcutMenuItem(s));
@@ -375,6 +383,7 @@ $MenuItem* Menu::getShortcutMenuItem($MenuShortcut* s) {
 
 $Enumeration* Menu::shortcuts() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Vector, shortcuts, $new($Vector));
 		int32_t nitems = getItemCount();
 		for (int32_t i = 0; i < nitems; ++i) {
@@ -396,6 +405,7 @@ $Enumeration* Menu::shortcuts() {
 }
 
 void Menu::deleteShortcut($MenuShortcut* s) {
+	$useLocalCurrentObjectStackCache();
 	int32_t nitems = getItemCount();
 	for (int32_t i = 0; i < nitems; ++i) {
 		$nc($(getItem(i)))->deleteShortcut(s);
@@ -407,6 +417,7 @@ void Menu::writeObject($ObjectOutputStream* s) {
 }
 
 void Menu::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	for (int32_t i = 0; i < $nc(this->items)->size(); ++i) {
 		$var($MenuItem, item, $cast($MenuItem, $nc(this->items)->elementAt(i)));
@@ -415,6 +426,7 @@ void Menu::readObject($ObjectInputStream* s) {
 }
 
 $String* Menu::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, $str({",tearOff="_s, $$str(this->tearOff), ",isHelpMenu="_s, $$str(this->isHelpMenu)}));
 	return $str({$($MenuItem::paramString()), str});
 }

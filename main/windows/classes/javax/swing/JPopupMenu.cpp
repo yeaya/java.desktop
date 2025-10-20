@@ -619,6 +619,7 @@ $JMenuItem* JPopupMenu::add($Action* a) {
 }
 
 $Point* JPopupMenu::adjustPopupLocationToFitScreen(int32_t xPosition, int32_t yPosition) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, popupLocation, $new($Point, xPosition, yPosition));
 	if (JPopupMenu::popupPostionFixDisabled == true || $GraphicsEnvironment::isHeadless()) {
 		return popupLocation;
@@ -659,6 +660,7 @@ $Point* JPopupMenu::adjustPopupLocationToFitScreen(int32_t xPosition, int32_t yP
 }
 
 $GraphicsConfiguration* JPopupMenu::getCurrentGraphicsConfiguration($Point* popupLocation) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, nullptr);
 	$var($GraphicsEnvironment, ge, $GraphicsEnvironment::getLocalGraphicsEnvironment());
 	$var($GraphicsDeviceArray, gd, $nc(ge)->getScreenDevices());
@@ -743,6 +745,7 @@ void JPopupMenu::insert($Action* a, int32_t index) {
 }
 
 void JPopupMenu::insert($Component* component, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0) {
 		$throwNew($IllegalArgumentException, "index less than zero."_s);
 	}
@@ -795,6 +798,7 @@ $MenuKeyListenerArray* JPopupMenu::getMenuKeyListeners() {
 }
 
 void JPopupMenu::firePopupMenuWillBecomeVisible() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($PopupMenuEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -809,6 +813,7 @@ void JPopupMenu::firePopupMenuWillBecomeVisible() {
 }
 
 void JPopupMenu::firePopupMenuWillBecomeInvisible() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($PopupMenuEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -823,6 +828,7 @@ void JPopupMenu::firePopupMenuWillBecomeInvisible() {
 }
 
 void JPopupMenu::firePopupMenuCanceled() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($PopupMenuEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -853,6 +859,7 @@ void JPopupMenu::pack() {
 }
 
 void JPopupMenu::setVisible(bool b) {
+	$useLocalCurrentObjectStackCache();
 	if (b == isVisible()) {
 		return;
 	}
@@ -887,6 +894,7 @@ void JPopupMenu::setVisible(bool b) {
 }
 
 void JPopupMenu::showPopup() {
+	$useLocalCurrentObjectStackCache();
 	$var($Popup, oldPopup, this->popup);
 	if (oldPopup != nullptr) {
 		oldPopup->hide();
@@ -939,6 +947,7 @@ void JPopupMenu::setInvoker($Component* invoker) {
 }
 
 void JPopupMenu::show($Component* invoker, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	setInvoker(invoker);
 	$var($Frame, newFrame, getFrame(invoker));
 	if (newFrame != this->frame) {
@@ -976,6 +985,7 @@ void JPopupMenu::show($Component* invoker, int32_t x, int32_t y) {
 }
 
 JPopupMenu* JPopupMenu::getRootPopupMenu() {
+	$useLocalCurrentObjectStackCache();
 	$var(JPopupMenu, mp, this);
 	while (true) {
 		bool var$2 = (mp != nullptr) && (mp->isPopupMenu() != true);
@@ -996,6 +1006,7 @@ $Component* JPopupMenu::getComponentAtIndex(int32_t i) {
 }
 
 int32_t JPopupMenu::getComponentIndex($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t ncomponents = this->getComponentCount();
 	$var($ComponentArray, component, this->getComponents());
 	for (int32_t i = 0; i < ncomponents; ++i) {
@@ -1008,6 +1019,7 @@ int32_t JPopupMenu::getComponentIndex($Component* c) {
 }
 
 void JPopupMenu::setPopupSize($Dimension* d) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, oldSize, getPreferredSize());
 	setPreferredSize(d);
 	if (this->popup != nullptr) {
@@ -1052,6 +1064,7 @@ $Insets* JPopupMenu::getMargin() {
 }
 
 bool JPopupMenu::isSubPopupMenu(JPopupMenu* popup) {
+	$useLocalCurrentObjectStackCache();
 	int32_t ncomponents = this->getComponentCount();
 	$var($ComponentArray, component, this->getComponents());
 	for (int32_t i = 0; i < ncomponents; ++i) {
@@ -1080,6 +1093,7 @@ $Frame* JPopupMenu::getFrame($Component* c) {
 }
 
 $String* JPopupMenu::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, labelString, this->label != nullptr ? this->label : ""_s);
 	$var($String, paintBorderString, this->paintBorder$ ? "true"_s : "false"_s);
 	$var($String, marginString, this->margin != nullptr ? $nc(this->margin)->toString() : ""_s);
@@ -1095,6 +1109,7 @@ $AccessibleContext* JPopupMenu::getAccessibleContext() {
 }
 
 void JPopupMenu::writeObject($ObjectOutputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, values, $new($Vector));
 	$nc(s)->defaultWriteObject();
 	if (this->invoker != nullptr && $instanceOf($Serializable, this->invoker)) {
@@ -1116,6 +1131,7 @@ void JPopupMenu::writeObject($ObjectOutputStream* s) {
 }
 
 void JPopupMenu::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	int32_t newDesiredLocationX = $nc(f)->get("desiredLocationX"_s, 0);
 	int32_t newDesiredLocationY = f->get("desiredLocationY"_s, 0);
@@ -1144,6 +1160,7 @@ void JPopupMenu::processMouseEvent($MouseEvent* event, $MenuElementArray* path, 
 }
 
 void JPopupMenu::processKeyEvent($KeyEvent* e, $MenuElementArray* path, $MenuSelectionManager* manager) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, var$0, $nc(e)->getComponent());
 	int32_t var$1 = e->getID();
 	int64_t var$2 = e->getWhen();
@@ -1225,6 +1242,7 @@ void JPopupMenu::menuSelectionChanged(bool isIncluded) {
 }
 
 $MenuElementArray* JPopupMenu::getSubElements() {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuElementArray, result, nullptr);
 	$var($Vector, tmp, $new($Vector));
 	int32_t c = getComponentCount();
@@ -1252,6 +1270,7 @@ bool JPopupMenu::isPopupTrigger($MouseEvent* e) {
 }
 
 void clinit$JPopupMenu($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(JPopupMenu::uiClassID, "PopupMenuUI"_s);
 	$beforeCallerSensitive();
 	$assignStatic(JPopupMenu::defaultLWPopupEnabledKey, $new($StringBuffer, "JPopupMenu.defaultLWPopupEnabledKey"_s));

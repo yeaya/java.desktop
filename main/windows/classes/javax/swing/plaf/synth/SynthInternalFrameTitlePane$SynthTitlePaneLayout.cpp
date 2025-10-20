@@ -111,6 +111,7 @@ $Dimension* SynthInternalFrameTitlePane$SynthTitlePaneLayout::preferredLayoutSiz
 }
 
 $Dimension* SynthInternalFrameTitlePane$SynthTitlePaneLayout::minimumLayoutSize($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, this->this$0->getContext(this->this$0));
 	int32_t width = 0;
 	int32_t height = 0;
@@ -176,6 +177,7 @@ int32_t SynthInternalFrameTitlePane$SynthTitlePaneLayout::center($Component* c, 
 }
 
 void SynthInternalFrameTitlePane$SynthTitlePaneLayout::layoutContainer($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, $nc(c)->getInsets());
 	$var($Dimension, pref, nullptr);
 	if ($SynthLookAndFeel::isLeftToRight($($SynthInternalFrameTitlePane::access$800(this->this$0)))) {

@@ -103,6 +103,7 @@ $StyledEditorKit* StyledEditorKit$StyledTextAction::getStyledEditorKit($JEditorP
 }
 
 void StyledEditorKit$StyledTextAction::setCharacterAttributes($JEditorPane* editor, $AttributeSet* attr, bool replace) {
+	$useLocalCurrentObjectStackCache();
 	int32_t p0 = $nc(editor)->getSelectionStart();
 	int32_t p1 = editor->getSelectionEnd();
 	if (p0 != p1) {

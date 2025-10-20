@@ -216,6 +216,7 @@ $Rectangle2D* TabbedPaneTabAreaPainter::decodeRect2() {
 }
 
 $Paint* TabbedPaneTabAreaPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -241,6 +242,7 @@ $Paint* TabbedPaneTabAreaPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* TabbedPaneTabAreaPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -266,6 +268,7 @@ $Paint* TabbedPaneTabAreaPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* TabbedPaneTabAreaPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -291,6 +294,7 @@ $Paint* TabbedPaneTabAreaPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* TabbedPaneTabAreaPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

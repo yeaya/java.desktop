@@ -75,6 +75,7 @@ void bug6542335$3::init$($RectangleArray* val$thumbBounds) {
 }
 
 void bug6542335$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6542335);
 	$var($Rectangle, newThumbBounds, $nc($bug6542335::ui)->getThumbBounds());
 	if (!$nc($nc(this->val$thumbBounds)->get(0))->equals(newThumbBounds)) {

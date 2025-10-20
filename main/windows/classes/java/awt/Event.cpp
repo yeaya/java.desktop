@@ -376,6 +376,7 @@ char16_t Event::getKeyEventChar() {
 }
 
 $String* Event::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, $str({"id="_s, $$str(this->id), ",x="_s, $$str(this->x), ",y="_s, $$str(this->y)}));
 	if (this->key != 0) {
 		$plusAssign(str, $$str({",key="_s, $$str(this->key)}));
@@ -399,12 +400,14 @@ $String* Event::paramString() {
 }
 
 $String* Event::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$1, $$str({$($of(this)->getClass()->getName()), "["_s}));
 	$var($String, var$0, $$concat(var$1, $(paramString())));
 	return $concat(var$0, "]");
 }
 
 void clinit$Event($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(Event::actionKeyCodes, $new($intArray2, {
 		$$new($ints, {
 			$KeyEvent::VK_HOME,

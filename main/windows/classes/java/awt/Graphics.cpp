@@ -154,6 +154,7 @@ void Graphics::drawRect(int32_t x, int32_t y, int32_t width, int32_t height) {
 }
 
 void Graphics::draw3DRect(int32_t x, int32_t y, int32_t width, int32_t height, bool raised) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, c, getColor());
 	$var($Color, brighter, $nc(c)->brighter());
 	$var($Color, darker, c->darker());
@@ -167,6 +168,7 @@ void Graphics::draw3DRect(int32_t x, int32_t y, int32_t width, int32_t height, b
 }
 
 void Graphics::fill3DRect(int32_t x, int32_t y, int32_t width, int32_t height, bool raised) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, c, getColor());
 	$var($Color, brighter, $nc(c)->brighter());
 	$var($Color, darker, c->darker());
@@ -204,6 +206,7 @@ void Graphics::finalize() {
 }
 
 $String* Graphics::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$3, $$str({$($of(this)->getClass()->getName()), "[font="_s}));
 	$var($String, var$2, $$concat(var$3, $(getFont())));
 	$var($String, var$1, $$concat(var$2, ",color="));

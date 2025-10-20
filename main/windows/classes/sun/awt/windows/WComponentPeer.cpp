@@ -501,6 +501,7 @@ void WComponentPeer::setBounds(int32_t x, int32_t y, int32_t width, int32_t heig
 }
 
 void WComponentPeer::dynamicallyLayoutContainer() {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(WComponentPeer::log)->isLoggable($PlatformLogger$Level::FINE)) {
 		$var($Container, parent, $WToolkit::getNativeContainer($cast($Component, this->target)));
@@ -540,6 +541,7 @@ $ints* WComponentPeer::createPrintedPixels(int32_t srcX, int32_t srcY, int32_t s
 }
 
 void WComponentPeer::print($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, comp, $cast($Component, this->target));
 	int32_t totalW = $nc(comp)->getWidth();
 	int32_t totalH = comp->getHeight();
@@ -566,6 +568,7 @@ void WComponentPeer::print($Graphics* g) {
 }
 
 void WComponentPeer::coalescePaintEvent($PaintEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, r, $nc(e)->getUpdateRect());
 	if (!($instanceOf($IgnorePaintEvent, e))) {
 		$nc(this->paintArea)->add(r, e->getID());
@@ -706,12 +709,14 @@ void WComponentPeer::replaceSurfaceData() {
 }
 
 void WComponentPeer::createScreenSurface(bool isResize) {
+	$useLocalCurrentObjectStackCache();
 	$var($Win32GraphicsConfig, gc, $cast($Win32GraphicsConfig, getGraphicsConfiguration()));
 	$var($ScreenUpdateManager, mgr, $ScreenUpdateManager::getInstance());
 	$set(this, surfaceData, $nc(mgr)->createScreenSurface(gc, this, this->numBackBuffers, isResize));
 }
 
 void WComponentPeer::replaceSurfaceData(int32_t newNumBackBuffers, $BufferCapabilities* caps) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceData, oldData, nullptr);
 	$var($VolatileImage, oldBB, nullptr);
 	$synchronized($nc(($cast($Component, this->target)))->getTreeLock()) {
@@ -749,6 +754,7 @@ void WComponentPeer::replaceSurfaceData(int32_t newNumBackBuffers, $BufferCapabi
 }
 
 void WComponentPeer::replaceSurfaceDataLater() {
+	$useLocalCurrentObjectStackCache();
 	$var($Runnable, r, $new($WComponentPeer$2, this));
 	$var($Component, c, $cast($Component, this->target));
 	if (!$nc($($PaintEventDispatcher::getPaintEventDispatcher()))->queueSurfaceDataReplacing(c, r)) {
@@ -757,6 +763,7 @@ void WComponentPeer::replaceSurfaceDataLater() {
 }
 
 bool WComponentPeer::updateGraphicsData($GraphicsConfiguration* gc) {
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, old, $nc($(getGraphicsConfiguration()))->getDefaultTransform());
 	$set(this, winGraphicsConfig, $cast($Win32GraphicsConfig, gc));
 	if (gc != nullptr && !$nc(old)->equals($(gc->getDefaultTransform()))) {
@@ -803,6 +810,7 @@ $ColorModel* WComponentPeer::getColorModel(int32_t transparency) {
 }
 
 $Graphics* WComponentPeer::getGraphics() {
+	$useLocalCurrentObjectStackCache();
 	if (isDisposed()) {
 		return nullptr;
 	}
@@ -862,6 +870,7 @@ void WComponentPeer::_dispose() {
 }
 
 void WComponentPeer::disposeImpl() {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceData, oldData, this->surfaceData);
 	$set(this, surfaceData, nullptr);
 	$nc($($ScreenUpdateManager::getInstance()))->dropScreenSurface(oldData);
@@ -871,6 +880,7 @@ void WComponentPeer::disposeImpl() {
 }
 
 void WComponentPeer::disposeLater() {
+	$useLocalCurrentObjectStackCache();
 	postEvent($$new($InvocationEvent, this->target, $$new($WComponentPeer$3, this)));
 }
 
@@ -922,6 +932,7 @@ void WComponentPeer::updateCursorImmediately() {
 }
 
 bool WComponentPeer::requestFocus($Component* lightweightChild, bool temporary, bool focusedWindowChangeAllowed, int64_t time, $FocusEvent$Cause* cause) {
+	$useLocalCurrentObjectStackCache();
 	if ($WKeyboardFocusManagerPeer::processSynchronousLightweightTransfer($cast($Component, this->target), lightweightChild, temporary, focusedWindowChangeAllowed, time)) {
 		return true;
 	}
@@ -1032,6 +1043,7 @@ void WComponentPeer::start() {
 }
 
 void WComponentPeer::initialize() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(($cast($Component, this->target)))->isVisible()) {
 		show();
 	}
@@ -1062,6 +1074,7 @@ void WComponentPeer::handlePaint(int32_t x, int32_t y, int32_t w, int32_t h) {
 }
 
 void WComponentPeer::postPaintIfNecessary(int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($AWTAccessor::getComponentAccessor()))->getIgnoreRepaint($cast($Component, this->target))) {
 		$var($PaintEvent, event, $nc($($PaintEventDispatcher::getPaintEventDispatcher()))->createPaintEvent($cast($Component, this->target), x, y, w, h));
 		if (event != nullptr) {
@@ -1083,6 +1096,7 @@ void WComponentPeer::beginLayout() {
 }
 
 void WComponentPeer::endLayout() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = !$nc(this->paintArea)->isEmpty() && !this->paintPending;
 	if (var$0 && !$nc(($cast($Component, this->target)))->getIgnoreRepaint()) {
 		postEvent($$new($PaintEvent, $cast($Component, this->target), $PaintEvent::PAINT, $$new($Rectangle)));
@@ -1152,6 +1166,7 @@ bool WComponentPeer::isPaintPending() {
 }
 
 void WComponentPeer::createBuffers(int32_t numBuffers, $BufferCapabilities* caps) {
+	$useLocalCurrentObjectStackCache();
 	$var($Win32GraphicsConfig, gc, $cast($Win32GraphicsConfig, getGraphicsConfiguration()));
 	$nc(gc)->assertOperationSupported($cast($Component, this->target), numBuffers, caps);
 	try {
@@ -1167,6 +1182,7 @@ void WComponentPeer::destroyBuffers() {
 }
 
 void WComponentPeer::flip(int32_t x1, int32_t y1, int32_t x2, int32_t y2, $BufferCapabilities$FlipContents* flipAction) {
+	$useLocalCurrentObjectStackCache();
 	$var($VolatileImage, backBuffer, this->backBuffer);
 	if (backBuffer == nullptr) {
 		$throwNew($IllegalStateException, "Buffers have not been created"_s);
@@ -1234,6 +1250,7 @@ void WComponentPeer::setRectangularShape(int32_t lox, int32_t loy, int32_t hix, 
 
 bool WComponentPeer::isContainingTopLevelAccelCapable($Component* c$renamed) {
 	$init(WComponentPeer);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, c$renamed);
 	while (c != nullptr && !($instanceOf($WEmbeddedFrame, c))) {
 		$assign(c, c->getParent());
@@ -1246,6 +1263,7 @@ bool WComponentPeer::isContainingTopLevelAccelCapable($Component* c$renamed) {
 }
 
 void WComponentPeer::applyShape($Region* shape$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Region, shape, shape$renamed);
 	$init($PlatformLogger$Level);
 	if ($nc(WComponentPeer::shapeLog)->isLoggable($PlatformLogger$Level::FINER)) {

@@ -506,6 +506,7 @@ void SoftSynthesizer::init$() {
 }
 
 void SoftSynthesizer::getBuffers($ModelInstrument* instrument, $List* buffers) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($ModelPerformerArray, arr$, $nc(instrument)->getPerformers());
 		int32_t len$ = $nc(arr$)->length;
@@ -540,6 +541,7 @@ void SoftSynthesizer::getBuffers($ModelInstrument* instrument, $List* buffers) {
 }
 
 bool SoftSynthesizer::loadSamples($List* instruments) {
+	$useLocalCurrentObjectStackCache();
 	if (this->largemode) {
 		return true;
 	}
@@ -561,6 +563,7 @@ bool SoftSynthesizer::loadSamples($List* instruments) {
 }
 
 bool SoftSynthesizer::loadInstruments($List* instruments) {
+	$useLocalCurrentObjectStackCache();
 	if (!isOpen()) {
 		return false;
 	}
@@ -599,6 +602,7 @@ bool SoftSynthesizer::loadInstruments($List* instruments) {
 }
 
 void SoftSynthesizer::processPropertyInfo($Map* info) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioSynthesizerPropertyInfoArray, items, getPropertyInfo(info));
 	$var($String, resamplerType, $cast($String, $nc($nc(items)->get(0))->value));
 	if ($nc(resamplerType)->equalsIgnoreCase("point"_s)) {
@@ -639,6 +643,7 @@ void SoftSynthesizer::processPropertyInfo($Map* info) {
 }
 
 $String* SoftSynthesizer::patchToString($Patch* patch) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($ModelPatch, patch) && $nc(($cast($ModelPatch, patch)))->isPercussion()) {
 		$var($String, var$0, $$str({"p."_s, $$str($nc(patch)->getProgram()), "."_s}));
 		return $concat(var$0, $$str(patch->getBank()));
@@ -680,6 +685,7 @@ $SoftMainMixer* SoftSynthesizer::getMainMixer() {
 }
 
 $SoftInstrument* SoftSynthesizer::findInstrument(int32_t program, int32_t bank, int32_t channel) {
+	$useLocalCurrentObjectStackCache();
 	if (bank >> 7 == 120 || bank >> 7 == 121) {
 		$var($SoftInstrument, current_instrument, $cast($SoftInstrument, $nc(this->inslist)->get($$str({$$str(program), "."_s, $$str(bank)}))));
 		if (current_instrument != nullptr) {
@@ -755,6 +761,7 @@ $SoftVoiceArray* SoftSynthesizer::getVoices() {
 }
 
 $SoftTuning* SoftSynthesizer::getTuning($Patch* patch) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, t_id, patchToString(patch));
 	$var($SoftTuning, tuning, $cast($SoftTuning, $nc(this->tunings)->get(t_id)));
 	if (tuning == nullptr) {
@@ -783,6 +790,7 @@ int32_t SoftSynthesizer::getMaxPolyphony() {
 }
 
 $MidiChannelArray* SoftSynthesizer::getChannels() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->control_mutex) {
 		if (this->external_channels == nullptr) {
 			$set(this, external_channels, $new($SoftChannelProxyArray, 16));
@@ -804,6 +812,7 @@ $MidiChannelArray* SoftSynthesizer::getChannels() {
 }
 
 $VoiceStatusArray* SoftSynthesizer::getVoiceStatus() {
+	$useLocalCurrentObjectStackCache();
 	if (!isOpen()) {
 		$var($VoiceStatusArray, tempVoiceStatusArray, $new($VoiceStatusArray, getMaxPolyphony()));
 		for (int32_t i = 0; i < tempVoiceStatusArray->length; ++i) {
@@ -836,6 +845,7 @@ $VoiceStatusArray* SoftSynthesizer::getVoiceStatus() {
 }
 
 bool SoftSynthesizer::isSoundbankSupported($Soundbank* soundbank) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($InstrumentArray, arr$, $nc(soundbank)->getInstruments());
 		int32_t len$ = $nc(arr$)->length;
@@ -851,6 +861,7 @@ bool SoftSynthesizer::isSoundbankSupported($Soundbank* soundbank) {
 }
 
 bool SoftSynthesizer::loadInstrument($Instrument* instrument) {
+	$useLocalCurrentObjectStackCache();
 	if (instrument == nullptr || (!($instanceOf($ModelInstrument, instrument)))) {
 		$throwNew($IllegalArgumentException, $$str({"Unsupported instrument: "_s, instrument}));
 	}
@@ -860,6 +871,7 @@ bool SoftSynthesizer::loadInstrument($Instrument* instrument) {
 }
 
 void SoftSynthesizer::unloadInstrument($Instrument* instrument) {
+	$useLocalCurrentObjectStackCache();
 	if (instrument == nullptr || (!($instanceOf($ModelInstrument, instrument)))) {
 		$throwNew($IllegalArgumentException, $$str({"Unsupported instrument: "_s, instrument}));
 	}
@@ -886,6 +898,7 @@ void SoftSynthesizer::unloadInstrument($Instrument* instrument) {
 }
 
 bool SoftSynthesizer::remapInstrument($Instrument* from, $Instrument* to) {
+	$useLocalCurrentObjectStackCache();
 	if (from == nullptr) {
 		$throwNew($NullPointerException);
 	}
@@ -912,6 +925,7 @@ bool SoftSynthesizer::remapInstrument($Instrument* from, $Instrument* to) {
 }
 
 $Soundbank* SoftSynthesizer::getDefaultSoundbank() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$synchronized(SoftSynthesizer::class$) {
 		if (SoftSynthesizer::defaultSoundBank != nullptr) {
@@ -977,6 +991,7 @@ $Soundbank* SoftSynthesizer::getDefaultSoundbank() {
 }
 
 $InstrumentArray* SoftSynthesizer::getAvailableInstruments() {
+	$useLocalCurrentObjectStackCache();
 	$var($Soundbank, defsbk, getDefaultSoundbank());
 	if (defsbk == nullptr) {
 		return $new($InstrumentArray, 0);
@@ -987,6 +1002,7 @@ $InstrumentArray* SoftSynthesizer::getAvailableInstruments() {
 }
 
 $InstrumentArray* SoftSynthesizer::getLoadedInstruments() {
+	$useLocalCurrentObjectStackCache();
 	if (!isOpen()) {
 		return $new($InstrumentArray, 0);
 	}
@@ -999,6 +1015,7 @@ $InstrumentArray* SoftSynthesizer::getLoadedInstruments() {
 }
 
 bool SoftSynthesizer::loadAllInstruments($Soundbank* soundbank) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, instruments, $new($ArrayList));
 	{
 		$var($InstrumentArray, arr$, $nc(soundbank)->getInstruments());
@@ -1018,6 +1035,7 @@ bool SoftSynthesizer::loadAllInstruments($Soundbank* soundbank) {
 }
 
 void SoftSynthesizer::unloadAllInstruments($Soundbank* soundbank) {
+	$useLocalCurrentObjectStackCache();
 	if (soundbank == nullptr || !isSoundbankSupported(soundbank)) {
 		$throwNew($IllegalArgumentException, $$str({"Unsupported soundbank: "_s, soundbank}));
 	}
@@ -1040,6 +1058,7 @@ void SoftSynthesizer::unloadAllInstruments($Soundbank* soundbank) {
 }
 
 bool SoftSynthesizer::loadInstruments($Soundbank* soundbank, $PatchArray* patchList) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, instruments, $new($ArrayList));
 	{
 		$var($PatchArray, arr$, patchList);
@@ -1060,6 +1079,7 @@ bool SoftSynthesizer::loadInstruments($Soundbank* soundbank, $PatchArray* patchL
 }
 
 void SoftSynthesizer::unloadInstruments($Soundbank* soundbank, $PatchArray* patchList) {
+	$useLocalCurrentObjectStackCache();
 	if (soundbank == nullptr || !isSoundbankSupported(soundbank)) {
 		$throwNew($IllegalArgumentException, $$str({"Unsupported soundbank: "_s, soundbank}));
 	}
@@ -1092,6 +1112,7 @@ $Properties* SoftSynthesizer::getStoredProperties() {
 }
 
 $AudioSynthesizerPropertyInfoArray* SoftSynthesizer::getPropertyInfo($Map* info) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, list, $new($ArrayList));
 	$var($AudioSynthesizerPropertyInfo, item, nullptr);
 	bool o = info == nullptr && this->open$;
@@ -1283,6 +1304,7 @@ void SoftSynthesizer::open() {
 }
 
 void SoftSynthesizer::open($SourceDataLine* line$renamed, $Map* info) {
+	$useLocalCurrentObjectStackCache();
 	$var($SourceDataLine, line, line$renamed);
 	if (isOpen()) {
 		$synchronized(this->control_mutex) {
@@ -1368,6 +1390,7 @@ void SoftSynthesizer::open($SourceDataLine* line$renamed, $Map* info) {
 }
 
 $AudioInputStream* SoftSynthesizer::openStream($AudioFormat* targetFormat, $Map* info) {
+	$useLocalCurrentObjectStackCache();
 	if (isOpen()) {
 		$throwNew($MidiUnavailableException, "Synthesizer is already open"_s);
 	}
@@ -1442,6 +1465,7 @@ $AudioInputStream* SoftSynthesizer::openStream($AudioFormat* targetFormat, $Map*
 }
 
 void SoftSynthesizer::close() {
+	$useLocalCurrentObjectStackCache();
 	if (!isOpen()) {
 		return;
 	}
@@ -1556,6 +1580,7 @@ $Transmitter* SoftSynthesizer::getTransmitterReferenceCounting() {
 
 $Properties* SoftSynthesizer::lambda$getStoredProperties$1() {
 	$init(SoftSynthesizer);
+	$useLocalCurrentObjectStackCache();
 	$var($Properties, p, $new($Properties));
 	$var($String, notePath, "/com/sun/media/sound/softsynthesizer"_s);
 	try {
@@ -1586,6 +1611,7 @@ $Properties* SoftSynthesizer::lambda$getStoredProperties$1() {
 
 $OutputStream* SoftSynthesizer::lambda$getDefaultSoundbank$0() {
 	$init(SoftSynthesizer);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($File, userhome, $new($File, $($System::getProperty("user.home"_s)), ".gervill"_s));
 		if (!userhome->isDirectory()) {

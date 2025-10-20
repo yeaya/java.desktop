@@ -462,6 +462,7 @@ void BasicToolBarUI::uninstallComponents() {
 }
 
 void BasicToolBarUI::installListeners() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, dockingListener, createDockingListener());
 	if (this->dockingListener != nullptr) {
 		$nc(this->toolBar)->addMouseMotionListener(this->dockingListener);
@@ -493,6 +494,7 @@ void BasicToolBarUI::installListeners() {
 }
 
 void BasicToolBarUI::uninstallListeners() {
+	$useLocalCurrentObjectStackCache();
 	if (this->dockingListener != nullptr) {
 		$nc(this->toolBar)->removeMouseMotionListener(this->dockingListener);
 		$nc(this->toolBar)->removeMouseListener(this->dockingListener);
@@ -539,6 +541,7 @@ $InputMap* BasicToolBarUI::getInputMap(int32_t condition) {
 
 void BasicToolBarUI::loadActionMap($LazyActionMap* map) {
 	$init(BasicToolBarUI);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicToolBarUI$Actions);
 	$nc(map)->put($$new($BasicToolBarUI$Actions, $BasicToolBarUI$Actions::NAVIGATE_RIGHT));
 	map->put($$new($BasicToolBarUI$Actions, $BasicToolBarUI$Actions::NAVIGATE_LEFT));
@@ -552,6 +555,7 @@ void BasicToolBarUI::uninstallKeyboardActions() {
 }
 
 void BasicToolBarUI::navigateFocusedComp(int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	int32_t nComp = $nc(this->toolBar)->getComponentCount();
 	int32_t j = 0;
 	switch (direction) {
@@ -605,6 +609,7 @@ void BasicToolBarUI::navigateFocusedComp(int32_t direction) {
 }
 
 $Border* BasicToolBarUI::createRolloverBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, border, $UIManager::get("ToolBar.rolloverBorder"_s));
 	if (border != nullptr) {
 		return $cast($Border, border);
@@ -618,6 +623,7 @@ $Border* BasicToolBarUI::createRolloverBorder() {
 }
 
 $Border* BasicToolBarUI::createNonRolloverBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, border, $UIManager::get("ToolBar.nonrolloverBorder"_s));
 	if (border != nullptr) {
 		return $cast($Border, border);
@@ -631,6 +637,7 @@ $Border* BasicToolBarUI::createNonRolloverBorder() {
 }
 
 $Border* BasicToolBarUI::createNonRolloverToggleBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $UIManager::getLookAndFeelDefaults());
 	$var($Color, var$1, $nc(table)->getColor("ToggleButton.shadow"_s));
 	$var($Color, var$2, table->getColor("ToggleButton.darkShadow"_s));
@@ -640,6 +647,7 @@ $Border* BasicToolBarUI::createNonRolloverToggleBorder() {
 }
 
 $JFrame* BasicToolBarUI::createFloatingFrame($JToolBar* toolbar) {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, window, $SwingUtilities::getWindowAncestor(toolbar));
 	$var($String, var$0, $nc(toolbar)->getName());
 	$var($JFrame, frame, $new($BasicToolBarUI$1, this, var$0, (window != nullptr) ? $($nc(window)->getGraphicsConfiguration()) : ($GraphicsConfiguration*)nullptr));
@@ -651,6 +659,7 @@ $JFrame* BasicToolBarUI::createFloatingFrame($JToolBar* toolbar) {
 }
 
 $RootPaneContainer* BasicToolBarUI::createFloatingWindow($JToolBar* toolbar) {
+	$useLocalCurrentObjectStackCache();
 	{
 	}
 	$var($JDialog, dialog, nullptr);
@@ -671,6 +680,7 @@ $RootPaneContainer* BasicToolBarUI::createFloatingWindow($JToolBar* toolbar) {
 }
 
 $BasicToolBarUI$DragWindow* BasicToolBarUI::createDragWindow($JToolBar* toolbar) {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, frame, nullptr);
 	if (this->toolBar != nullptr) {
 		$var($Container, p, nullptr);
@@ -704,6 +714,7 @@ void BasicToolBarUI::setRolloverBorders(bool rollover) {
 }
 
 void BasicToolBarUI::installRolloverBorders($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentArray, components, $nc(c)->getComponents());
 	{
 		$var($ComponentArray, arr$, components);
@@ -722,6 +733,7 @@ void BasicToolBarUI::installRolloverBorders($JComponent* c) {
 }
 
 void BasicToolBarUI::installNonRolloverBorders($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentArray, components, $nc(c)->getComponents());
 	{
 		$var($ComponentArray, arr$, components);
@@ -740,6 +752,7 @@ void BasicToolBarUI::installNonRolloverBorders($JComponent* c) {
 }
 
 void BasicToolBarUI::installNormalBorders($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentArray, components, $nc(c)->getComponents());
 	{
 		$var($ComponentArray, arr$, components);
@@ -755,6 +768,7 @@ void BasicToolBarUI::installNormalBorders($JComponent* c) {
 }
 
 void BasicToolBarUI::setBorderToRollover($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($AbstractButton, c)) {
 		$var($AbstractButton, b, $cast($AbstractButton, c));
 		$var($Border, border, $cast($Border, $nc(this->borderTable)->get(b)));
@@ -775,6 +789,7 @@ $Border* BasicToolBarUI::getRolloverBorder($AbstractButton* b) {
 }
 
 void BasicToolBarUI::setBorderToNonRollover($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($AbstractButton, c)) {
 		$var($AbstractButton, b, $cast($AbstractButton, c));
 		$var($Border, border, $cast($Border, $nc(this->borderTable)->get(b)));
@@ -799,6 +814,7 @@ $Border* BasicToolBarUI::getNonRolloverBorder($AbstractButton* b) {
 }
 
 void BasicToolBarUI::setBorderToNormal($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($AbstractButton, c)) {
 		$var($AbstractButton, b, $cast($AbstractButton, c));
 		$var($Border, border, $cast($Border, $nc(this->borderTable)->remove(b)));
@@ -820,6 +836,7 @@ bool BasicToolBarUI::isFloating() {
 }
 
 void BasicToolBarUI::setFloating(bool b, $Point* p) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->toolBar)->isFloatable()) {
 		bool visible = false;
 		$var($Window, ancestor, $SwingUtilities::getWindowAncestor(this->toolBar));
@@ -926,6 +943,7 @@ void BasicToolBarUI::setFloatingColor($Color* c) {
 }
 
 bool BasicToolBarUI::isBlocked($Component* comp, Object$* constraint) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Container, comp)) {
 		$var($Container, cont, $cast($Container, comp));
 		$var($LayoutManager, lm, $nc(cont)->getLayout());
@@ -943,6 +961,7 @@ bool BasicToolBarUI::canDock($Component* c, $Point* p) {
 }
 
 $String* BasicToolBarUI::calculateConstraint() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, constraint, nullptr);
 	$var($LayoutManager, lm, $nc(this->dockingSource)->getLayout());
 	if ($instanceOf($BorderLayout, lm)) {
@@ -952,6 +971,7 @@ $String* BasicToolBarUI::calculateConstraint() {
 }
 
 $String* BasicToolBarUI::getDockingConstraint($Component* c, $Point* p) {
+	$useLocalCurrentObjectStackCache();
 	if (p == nullptr) {
 		return this->constraintBeforeFloating;
 	}
@@ -977,6 +997,7 @@ $String* BasicToolBarUI::getDockingConstraint($Component* c, $Point* p) {
 }
 
 void BasicToolBarUI::dragTo($Point* position, $Point* origin) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->toolBar)->isFloatable()) {
 		try {
 			if (this->dragWindow == nullptr) {
@@ -1020,6 +1041,7 @@ void BasicToolBarUI::dragTo($Point* position, $Point* origin) {
 }
 
 void BasicToolBarUI::floatAt($Point* position, $Point* origin) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->toolBar)->isFloatable()) {
 		try {
 			$var($Point, offset, $nc(this->dragWindow)->getOffset());
@@ -1076,6 +1098,7 @@ $WindowListener* BasicToolBarUI::createFrameListener() {
 }
 
 void BasicToolBarUI::paintDragWindow($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor($($nc(this->dragWindow)->getBackground()));
 	int32_t w = $nc(this->dragWindow)->getWidth();
 	int32_t h = $nc(this->dragWindow)->getHeight();

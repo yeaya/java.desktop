@@ -87,6 +87,7 @@ void PNGImageWriterSpi::init$() {
 }
 
 bool PNGImageWriterSpi::canEncodeImage($ImageTypeSpecifier* type) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, sampleModel, $nc(type)->getSampleModel());
 	$var($ColorModel, colorModel, type->getColorModel());
 	$var($ints, sampleSize, $nc(sampleModel)->getSampleSize());

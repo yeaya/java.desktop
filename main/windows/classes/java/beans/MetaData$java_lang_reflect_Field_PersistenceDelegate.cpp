@@ -68,6 +68,7 @@ bool MetaData$java_lang_reflect_Field_PersistenceDelegate::mutatesTo(Object$* ol
 }
 
 $Expression* MetaData$java_lang_reflect_Field_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Field, f, $cast($Field, oldInstance));
 	$var($Object, var$0, oldInstance);
 	$var($Object, var$1, $of($nc(f)->getDeclaringClass()));

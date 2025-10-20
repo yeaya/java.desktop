@@ -100,6 +100,7 @@ void DefaultLookup::init$() {
 
 void DefaultLookup::setDefaultLookup(DefaultLookup* lookup$renamed) {
 	$init(DefaultLookup);
+	$useLocalCurrentObjectStackCache();
 	$var(DefaultLookup, lookup, lookup$renamed);
 	$synchronized(DefaultLookup::class$) {
 		if (!DefaultLookup::isLookupSet && lookup == nullptr) {
@@ -116,6 +117,7 @@ void DefaultLookup::setDefaultLookup(DefaultLookup* lookup$renamed) {
 
 $Object* DefaultLookup::get($JComponent* c, $ComponentUI* ui, $String* key) {
 	$init(DefaultLookup);
+	$useLocalCurrentObjectStackCache();
 	bool lookupSet = false;
 	$synchronized(DefaultLookup::class$) {
 		lookupSet = DefaultLookup::isLookupSet;

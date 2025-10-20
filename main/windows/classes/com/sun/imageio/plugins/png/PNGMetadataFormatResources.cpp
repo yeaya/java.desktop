@@ -45,6 +45,7 @@ void PNGMetadataFormatResources::init$() {
 }
 
 $ObjectArray2* PNGMetadataFormatResources::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("IHDR"_s),

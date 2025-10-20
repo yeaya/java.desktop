@@ -376,6 +376,7 @@ void JTextField::init$($String* text, int32_t columns) {
 }
 
 void JTextField::init$($Document* doc$renamed, $String* text, int32_t columns) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, doc$renamed);
 	$JTextComponent::init$();
 	this->horizontalAlignment = $SwingConstants::LEADING;
@@ -449,6 +450,7 @@ void JTextField::setColumns(int32_t columns) {
 }
 
 int32_t JTextField::getColumnWidth() {
+	$useLocalCurrentObjectStackCache();
 	if (this->columnWidth == 0) {
 		$var($FontMetrics, metrics, getFontMetrics($(getFont())));
 		this->columnWidth = $nc(metrics)->charWidth(u'm');
@@ -457,6 +459,7 @@ int32_t JTextField::getColumnWidth() {
 }
 
 $Dimension* JTextField::getPreferredSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, $JTextComponent::getPreferredSize());
 	if (this->columns != 0) {
 		$var($Insets, insets, getInsets());
@@ -496,6 +499,7 @@ $ActionListenerArray* JTextField::getActionListeners() {
 }
 
 void JTextField::fireActionPerformed() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	int32_t modifiers = 0;
 	$var($AWTEvent, currentEvent, $EventQueue::getCurrentEvent());
@@ -642,6 +646,7 @@ void JTextField::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JTextField::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, horizontalAlignmentString, nullptr);
 	if (this->horizontalAlignment == $SwingConstants::LEFT) {
 		$assign(horizontalAlignmentString, "LEFT"_s);

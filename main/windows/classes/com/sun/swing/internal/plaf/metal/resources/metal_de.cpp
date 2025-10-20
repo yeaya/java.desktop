@@ -47,6 +47,7 @@ void metal_de::init$() {
 }
 
 $ObjectArray2* metal_de::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("FileChooser.detailsViewActionLabel.textAndMnemonic"_s),

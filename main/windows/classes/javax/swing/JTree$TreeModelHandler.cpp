@@ -92,6 +92,7 @@ void JTree$TreeModelHandler::treeNodesInserted($TreeModelEvent* e) {
 }
 
 void JTree$TreeModelHandler::treeStructureChanged($TreeModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (e == nullptr) {
 		return;
 	}
@@ -125,6 +126,7 @@ void JTree$TreeModelHandler::treeStructureChanged($TreeModelEvent* e) {
 }
 
 void JTree$TreeModelHandler::treeNodesRemoved($TreeModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (e == nullptr) {
 		return;
 	}

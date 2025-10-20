@@ -109,6 +109,7 @@ void Test8039750::test(Object$* value, $String* name) {
 }
 
 void Test8039750::test(Object$* value, $String* one, $String* two) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($CompoundBorder, value)) {
 		$var($CompoundBorder, border, $cast($CompoundBorder, value));
 		test($($nc(border)->getOutsideBorder()), one);
@@ -119,6 +120,7 @@ void Test8039750::test(Object$* value, $String* one, $String* two) {
 }
 
 void Test8039750::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $$new($MetalLookAndFeel)->getDefaults());
 	test($($nc(table)->get("ToolBar.rolloverBorder"_s)), "javax.swing.plaf.metal.MetalBorders$ButtonBorder"_s, "javax.swing.plaf.metal.MetalBorders$RolloverMarginBorder"_s);
 	test($($nc(table)->get("ToolBar.nonrolloverBorder"_s)), "javax.swing.plaf.metal.MetalBorders$ButtonBorder"_s, "javax.swing.plaf.metal.MetalBorders$RolloverMarginBorder"_s);

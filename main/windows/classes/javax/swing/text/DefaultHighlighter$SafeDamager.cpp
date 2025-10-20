@@ -85,6 +85,7 @@ void DefaultHighlighter$SafeDamager::init$($DefaultHighlighter* this$0) {
 
 void DefaultHighlighter$SafeDamager::run() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->this$0->component != nullptr) {
 			$var($TextUI, mapper, $cast($TextUI, $nc(this->this$0->component)->getUI()));
 			if (mapper != nullptr && this->lastDoc == $nc(this->this$0->component)->getDocument()) {

@@ -110,6 +110,7 @@ void JToggleButton$AccessibleJToggleButton::init$($JToggleButton* this$0) {
 }
 
 void JToggleButton$AccessibleJToggleButton::itemStateChanged($ItemEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JToggleButton, tb, $cast($JToggleButton, $nc(e)->getSource()));
 	if ($JToggleButton::access$000(this->this$0) != nullptr) {
 		if ($nc(tb)->isSelected()) {

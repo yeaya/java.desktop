@@ -127,6 +127,7 @@ void AbstractButton$Handler::actionPerformed($ActionEvent* event) {
 }
 
 void AbstractButton$Handler::itemStateChanged($ItemEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	this->this$0->fireItemStateChanged(event);
 	if (this->this$0->shouldUpdateSelectedStateFromAction()) {
 		$var($Action, action, this->this$0->getAction());

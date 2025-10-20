@@ -211,6 +211,7 @@ int32_t ImagingLib::getNativeOpIndex($Class* opClass) {
 
 $WritableRaster* ImagingLib::filter($RasterOp* op, $Raster* src, $WritableRaster* dst$renamed) {
 	$init(ImagingLib);
+	$useLocalCurrentObjectStackCache();
 	$var($WritableRaster, dst, dst$renamed);
 	if (ImagingLib::useLib == false) {
 		return nullptr;
@@ -274,6 +275,7 @@ $WritableRaster* ImagingLib::filter($RasterOp* op, $Raster* src, $WritableRaster
 
 $BufferedImage* ImagingLib::filter($BufferedImageOp* op, $BufferedImage* src, $BufferedImage* dst$renamed) {
 	$init(ImagingLib);
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, dst, dst$renamed);
 	if (ImagingLib::verbose) {
 		$init($System);
@@ -342,6 +344,7 @@ $BufferedImage* ImagingLib::filter($BufferedImageOp* op, $BufferedImage* src, $B
 }
 
 void clinit$ImagingLib($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	ImagingLib::useLib = true;
 	ImagingLib::verbose = false;

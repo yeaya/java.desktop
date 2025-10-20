@@ -74,6 +74,7 @@ void AppContext$6::init$() {
 }
 
 bool AppContext$6::hasRootThreadGroup($AppContext* ecx) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	return $nc(($cast($Boolean, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($AppContext$6$1, this, ecx)))))))->booleanValue();
 }

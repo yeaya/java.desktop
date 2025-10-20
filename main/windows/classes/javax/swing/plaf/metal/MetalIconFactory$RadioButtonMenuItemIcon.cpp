@@ -110,6 +110,7 @@ void MetalIconFactory$RadioButtonMenuItemIcon::init$() {
 }
 
 void MetalIconFactory$RadioButtonMenuItemIcon::paintOceanIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($ButtonModel, model, $nc(($cast($JMenuItem, c)))->getModel());
 	bool isSelected = $nc(model)->isSelected();
 	bool isEnabled = model->isEnabled();
@@ -150,6 +151,7 @@ void MetalIconFactory$RadioButtonMenuItemIcon::paintOceanIcon($Component* c, $Gr
 }
 
 void MetalIconFactory$RadioButtonMenuItemIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, aaHint, $SwingUtilities2::getAndSetAntialisingHintForScaledGraphics(g));
 	if ($MetalLookAndFeel::usingOcean()) {
 		paintOceanIcon(c, g, x, y);

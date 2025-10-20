@@ -165,6 +165,7 @@ void GDIRenderer::doDrawLine($GDIWindowSurfaceData* sData, $Region* clip, $Compo
 }
 
 void GDIRenderer::drawLine($SunGraphics2D* sg2d, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
+	$useLocalCurrentObjectStackCache();
 	int32_t transx = $nc(sg2d)->transX;
 	int32_t transy = sg2d->transY;
 	try {
@@ -182,6 +183,7 @@ void GDIRenderer::doDrawRect($GDIWindowSurfaceData* sData, $Region* clip, $Compo
 }
 
 void GDIRenderer::drawRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		doDrawRect($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height);
 	} catch ($ClassCastException&) {
@@ -197,6 +199,7 @@ void GDIRenderer::doDrawRoundRect($GDIWindowSurfaceData* sData, $Region* clip, $
 }
 
 void GDIRenderer::drawRoundRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t width, int32_t height, int32_t arcWidth, int32_t arcHeight) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		doDrawRoundRect($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height, arcWidth, arcHeight);
 	} catch ($ClassCastException&) {
@@ -212,6 +215,7 @@ void GDIRenderer::doDrawOval($GDIWindowSurfaceData* sData, $Region* clip, $Compo
 }
 
 void GDIRenderer::drawOval($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		doDrawOval($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height);
 	} catch ($ClassCastException&) {
@@ -227,6 +231,7 @@ void GDIRenderer::doDrawArc($GDIWindowSurfaceData* sData, $Region* clip, $Compos
 }
 
 void GDIRenderer::drawArc($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t width, int32_t height, int32_t startAngle, int32_t arcAngle) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		doDrawArc($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height, startAngle, arcAngle);
 	} catch ($ClassCastException&) {
@@ -242,6 +247,7 @@ void GDIRenderer::doDrawPoly($GDIWindowSurfaceData* sData, $Region* clip, $Compo
 }
 
 void GDIRenderer::drawPolyline($SunGraphics2D* sg2d, $ints* xpoints, $ints* ypoints, int32_t npoints) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		doDrawPoly($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, sg2d->transX, sg2d->transY, xpoints, ypoints, npoints, false);
 	} catch ($ClassCastException&) {
@@ -251,6 +257,7 @@ void GDIRenderer::drawPolyline($SunGraphics2D* sg2d, $ints* xpoints, $ints* ypoi
 }
 
 void GDIRenderer::drawPolygon($SunGraphics2D* sg2d, $ints* xpoints, $ints* ypoints, int32_t npoints) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		doDrawPoly($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, sg2d->transX, sg2d->transY, xpoints, ypoints, npoints, true);
 	} catch ($ClassCastException&) {
@@ -266,6 +273,7 @@ void GDIRenderer::doFillRect($GDIWindowSurfaceData* sData, $Region* clip, $Compo
 }
 
 void GDIRenderer::fillRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		doFillRect($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height);
 	} catch ($ClassCastException&) {
@@ -281,6 +289,7 @@ void GDIRenderer::doFillRoundRect($GDIWindowSurfaceData* sData, $Region* clip, $
 }
 
 void GDIRenderer::fillRoundRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t width, int32_t height, int32_t arcWidth, int32_t arcHeight) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		doFillRoundRect($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height, arcWidth, arcHeight);
 	} catch ($ClassCastException&) {
@@ -296,6 +305,7 @@ void GDIRenderer::doFillOval($GDIWindowSurfaceData* sData, $Region* clip, $Compo
 }
 
 void GDIRenderer::fillOval($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		doFillOval($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height);
 	} catch ($ClassCastException&) {
@@ -311,6 +321,7 @@ void GDIRenderer::doFillArc($GDIWindowSurfaceData* sData, $Region* clip, $Compos
 }
 
 void GDIRenderer::fillArc($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t width, int32_t height, int32_t startAngle, int32_t arcAngle) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		doFillArc($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height, startAngle, arcAngle);
 	} catch ($ClassCastException&) {
@@ -326,6 +337,7 @@ void GDIRenderer::doFillPoly($GDIWindowSurfaceData* sData, $Region* clip, $Compo
 }
 
 void GDIRenderer::fillPolygon($SunGraphics2D* sg2d, $ints* xpoints, $ints* ypoints, int32_t npoints) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		doFillPoly($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, sg2d->transX, sg2d->transY, xpoints, ypoints, npoints);
 	} catch ($ClassCastException&) {
@@ -341,6 +353,7 @@ void GDIRenderer::doShape($GDIWindowSurfaceData* sData, $Region* clip, $Composit
 }
 
 void GDIRenderer::doShape($SunGraphics2D* sg2d, $Shape* s, bool isfill) {
+	$useLocalCurrentObjectStackCache();
 	$var($Path2D$Float, p2df, nullptr);
 	int32_t transX = 0;
 	int32_t transY = 0;
@@ -366,6 +379,7 @@ void GDIRenderer::doShape($SunGraphics2D* sg2d, $Shape* s, bool isfill) {
 }
 
 void GDIRenderer::doFillSpans($SunGraphics2D* sg2d, $SpanIterator* si) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, box, $new($ints, 4));
 	$var($GDIWindowSurfaceData, sd, nullptr);
 	try {
@@ -383,6 +397,7 @@ void GDIRenderer::doFillSpans($SunGraphics2D* sg2d, $SpanIterator* si) {
 }
 
 void GDIRenderer::draw($SunGraphics2D* sg2d, $Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(sg2d)->strokeState == $SunGraphics2D::STROKE_THIN) {
 		doShape(sg2d, s, false);
 	} else if (sg2d->strokeState < $SunGraphics2D::STROKE_CUSTOM) {

@@ -209,6 +209,7 @@ void bug4337267::fail($String* message) {
 }
 
 void bug4337267::assertEquals(Object$* o1, Object$* o2) {
+	$useLocalCurrentObjectStackCache();
 	if ((o1 == nullptr) && (o2 != nullptr)) {
 		fail($$str({"Expected null, got "_s, o2}));
 	} else if ((o1 != nullptr) && (o2 == nullptr)) {
@@ -219,6 +220,7 @@ void bug4337267::assertEquals(Object$* o1, Object$* o2) {
 }
 
 void bug4337267::testTextComponent() {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println("testTextComponent:"_s);
 	$var($JTextArea, area1, $new($JTextArea));
@@ -239,6 +241,7 @@ void bug4337267::testTextComponent() {
 }
 
 void bug4337267::testNonTextComponentHTML() {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println("testNonTextComponentHTML:"_s);
 	$var($JLabel, label1, $new($JLabel));
@@ -259,6 +262,7 @@ void bug4337267::testNonTextComponentHTML() {
 }
 
 void bug4337267::testNonTextComponentPlain() {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println("testNonTextComponentPlain:"_s);
 	$var($JLabel, label1, $new($JLabel));
@@ -292,6 +296,7 @@ void bug4337267::injectComponent($JComponent* p, $JComponent* c, bool shape) {
 }
 
 void bug4337267::printComponent($JComponent* c, $bug4337267$TestBufferedImage* i) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, g, $nc(i)->getGraphics());
 	$nc(g)->setColor($($nc(c)->getBackground()));
 	int32_t var$0 = i->getWidth();
@@ -300,6 +305,7 @@ void bug4337267::printComponent($JComponent* c, $bug4337267$TestBufferedImage* i
 }
 
 $Component* bug4337267::createContentPane() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, $new($Dimension, 500, 100));
 	$set(this, i1, $new($bug4337267$TestBufferedImage, size->width, size->height, $BufferedImage::TYPE_INT_ARGB));
 	$set(this, i2, $new($bug4337267$TestBufferedImage, size->width, size->height, $BufferedImage::TYPE_INT_ARGB));
@@ -316,6 +322,7 @@ $Component* bug4337267::createContentPane() {
 
 void bug4337267::main($StringArray* args) {
 	$init(bug4337267);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

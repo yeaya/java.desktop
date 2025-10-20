@@ -99,6 +99,7 @@ void BasicHTML$BasicEditorKit::init$() {
 }
 
 $StyleSheet* BasicHTML$BasicEditorKit::getStyleSheet() {
+	$useLocalCurrentObjectStackCache();
 	if (BasicHTML$BasicEditorKit::defaultStyles == nullptr) {
 		$assignStatic(BasicHTML$BasicEditorKit::defaultStyles, $new($StyleSheet));
 		$var($StringReader, r, $new($StringReader, "p { margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0 }body { margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0 }"_s));
@@ -114,6 +115,7 @@ $StyleSheet* BasicHTML$BasicEditorKit::getStyleSheet() {
 }
 
 $Document* BasicHTML$BasicEditorKit::createDefaultDocument($Font* defaultFont, $Color* foreground) {
+	$useLocalCurrentObjectStackCache();
 	$var($StyleSheet, styles, getStyleSheet());
 	$var($StyleSheet, ss, $new($StyleSheet));
 	ss->addStyleSheet(styles);

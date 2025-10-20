@@ -82,6 +82,7 @@ void JSpinner$ListEditor$ListFormatter$Filter::init$($JSpinner$ListEditor$ListFo
 }
 
 void JSpinner$ListEditor$ListFormatter$Filter::replace($DocumentFilter$FilterBypass* fb, int32_t offset, int32_t length, $String* string, $AttributeSet* attrs) {
+	$useLocalCurrentObjectStackCache();
 	if (string != nullptr && (offset + length) == $nc($($nc(fb)->getDocument()))->getLength()) {
 		$var($Object, next, $nc($($nc(this->this$1->this$0)->getModel()))->findNextMatch($$str({$($nc($(fb->getDocument()))->getText(0, offset)), string})));
 		$var($String, value, (next != nullptr) ? $nc($of(next))->toString() : ($String*)nullptr);

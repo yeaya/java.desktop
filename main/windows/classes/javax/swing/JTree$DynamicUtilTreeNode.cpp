@@ -78,6 +78,7 @@ $Object* allocate$JTree$DynamicUtilTreeNode($Class* clazz) {
 
 void JTree$DynamicUtilTreeNode::createChildren($DefaultMutableTreeNode* parent, Object$* children) {
 	$init(JTree$DynamicUtilTreeNode);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Vector, children)) {
 		$var($Vector, childVector, $cast($Vector, children));
 		{

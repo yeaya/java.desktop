@@ -141,6 +141,7 @@ void MotifDesktopPaneUI$MotifDesktopManager::init$($MotifDesktopPaneUI* this$0) 
 }
 
 void MotifDesktopPaneUI$MotifDesktopManager::setBoundsForFrame($JComponent* f, int32_t newX, int32_t newY, int32_t newWidth, int32_t newHeight) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->usingDragPane) {
 		bool didResize = false;
 		bool var$0 = $nc(f)->getWidth() != newWidth;
@@ -186,6 +187,7 @@ void MotifDesktopPaneUI$MotifDesktopManager::dragFrame($JComponent* f, int32_t n
 }
 
 void MotifDesktopPaneUI$MotifDesktopManager::endDraggingFrame($JComponent* f) {
+	$useLocalCurrentObjectStackCache();
 	if (this->usingDragPane) {
 		$nc(this->layeredPaneForDragPane)->remove(static_cast<$Component*>(this->dragPane));
 		this->usingDragPane = false;
@@ -204,6 +206,7 @@ void MotifDesktopPaneUI$MotifDesktopManager::endDraggingFrame($JComponent* f) {
 }
 
 void MotifDesktopPaneUI$MotifDesktopManager::beginResizingFrame($JComponent* f, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	this->usingDragPane = false;
 	if ($instanceOf($JLayeredPane, $($nc(f)->getParent()))) {
 		if (this->dragPane == nullptr) {
@@ -225,6 +228,7 @@ void MotifDesktopPaneUI$MotifDesktopManager::resizeFrame($JComponent* f, int32_t
 }
 
 void MotifDesktopPaneUI$MotifDesktopManager::endResizingFrame($JComponent* f) {
+	$useLocalCurrentObjectStackCache();
 	if (this->usingDragPane) {
 		$var($JLayeredPane, p, $cast($JLayeredPane, $nc(f)->getParent()));
 		$nc(p)->remove(static_cast<$Component*>(this->dragPane));
@@ -238,6 +242,7 @@ void MotifDesktopPaneUI$MotifDesktopManager::endResizingFrame($JComponent* f) {
 }
 
 void MotifDesktopPaneUI$MotifDesktopManager::iconifyFrame($JInternalFrame* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame$JDesktopIcon, icon, $nc(f)->getDesktopIcon());
 	$var($Point, p, $nc(icon)->getLocation());
 	adjustBoundsForIcon(icon, $nc(p)->x, p->y);
@@ -245,6 +250,7 @@ void MotifDesktopPaneUI$MotifDesktopManager::iconifyFrame($JInternalFrame* f) {
 }
 
 void MotifDesktopPaneUI$MotifDesktopManager::adjustIcons($JDesktopPane* desktop) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame$JDesktopIcon, icon, $new($JInternalFrame$JDesktopIcon, $$new($JInternalFrame)));
 	$var($Dimension, iconSize, icon->getPreferredSize());
 	this->iconWidth = $nc(iconSize)->width;
@@ -287,6 +293,7 @@ void MotifDesktopPaneUI$MotifDesktopManager::adjustBoundsForIcon($JInternalFrame
 }
 
 $JInternalFrame$JDesktopIcon* MotifDesktopPaneUI$MotifDesktopManager::getIconAt($JDesktopPane* desktop, $JInternalFrame$JDesktopIcon* icon, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame$JDesktopIcon, currentIcon, nullptr);
 	$var($ComponentArray, components, $nc(desktop)->getComponents());
 	for (int32_t i = 0; i < $nc(components)->length; ++i) {

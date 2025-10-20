@@ -581,6 +581,7 @@ void FileChooserPainter::paintBackgroundEnabled($Graphics2D* g) {
 }
 
 void FileChooserPainter::paintfileIconEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color2);
 	g->fill(this->path);
@@ -602,6 +603,7 @@ void FileChooserPainter::paintfileIconEnabled($Graphics2D* g) {
 }
 
 void FileChooserPainter::paintdirectoryIconEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath6());
 	$nc(g)->setPaint(this->color10);
 	g->fill(this->path);
@@ -632,6 +634,7 @@ void FileChooserPainter::paintdirectoryIconEnabled($Graphics2D* g) {
 }
 
 void FileChooserPainter::paintupFolderIconEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath12());
 	$nc(g)->setPaint($(decodeGradient7(this->path)));
 	g->fill(this->path);
@@ -659,6 +662,7 @@ void FileChooserPainter::paintupFolderIconEnabled($Graphics2D* g) {
 }
 
 void FileChooserPainter::paintnewFolderIconEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath6());
 	$nc(g)->setPaint(this->color10);
 	g->fill(this->path);
@@ -698,6 +702,7 @@ void FileChooserPainter::paintnewFolderIconEnabled($Graphics2D* g) {
 }
 
 void FileChooserPainter::painthardDriveIconEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect6());
 	$nc(g)->setPaint(this->color43);
 	g->fill(this->rect);
@@ -752,6 +757,7 @@ void FileChooserPainter::painthardDriveIconEnabled($Graphics2D* g) {
 }
 
 void FileChooserPainter::paintfloppyDriveIconEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath25());
 	$nc(g)->setPaint($(decodeGradient16(this->path)));
 	g->fill(this->path);
@@ -785,6 +791,7 @@ void FileChooserPainter::paintfloppyDriveIconEnabled($Graphics2D* g) {
 }
 
 void FileChooserPainter::painthomeFolderIconEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath30());
 	$nc(g)->setPaint(this->color72);
 	g->fill(this->path);
@@ -818,6 +825,7 @@ void FileChooserPainter::painthomeFolderIconEnabled($Graphics2D* g) {
 }
 
 void FileChooserPainter::paintdetailsViewIconEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect22());
 	$nc(g)->setPaint($(decodeGradient26(this->rect)));
 	g->fill(this->rect);
@@ -863,6 +871,7 @@ void FileChooserPainter::paintdetailsViewIconEnabled($Graphics2D* g) {
 }
 
 void FileChooserPainter::paintlistViewIconEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect31());
 	$nc(g)->setPaint($(decodeGradient26(this->rect)));
 	g->fill(this->rect);
@@ -2578,6 +2587,7 @@ $Rectangle2D* FileChooserPainter::decodeRect52() {
 }
 
 $Paint* FileChooserPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2595,6 +2605,7 @@ $Paint* FileChooserPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2612,6 +2623,7 @@ $Paint* FileChooserPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2637,6 +2649,7 @@ $Paint* FileChooserPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2654,6 +2667,7 @@ $Paint* FileChooserPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2671,6 +2685,7 @@ $Paint* FileChooserPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2692,6 +2707,7 @@ $Paint* FileChooserPainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2713,6 +2729,7 @@ $Paint* FileChooserPainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2734,6 +2751,7 @@ $Paint* FileChooserPainter::decodeGradient8($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient9($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2751,6 +2769,7 @@ $Paint* FileChooserPainter::decodeGradient9($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient10($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2776,6 +2795,7 @@ $Paint* FileChooserPainter::decodeGradient10($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient11($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2793,6 +2813,7 @@ $Paint* FileChooserPainter::decodeGradient11($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient12($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2810,6 +2831,7 @@ $Paint* FileChooserPainter::decodeGradient12($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeRadial1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2835,6 +2857,7 @@ $Paint* FileChooserPainter::decodeRadial1($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient13($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2852,6 +2875,7 @@ $Paint* FileChooserPainter::decodeGradient13($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient14($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2869,6 +2893,7 @@ $Paint* FileChooserPainter::decodeGradient14($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient15($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2890,6 +2915,7 @@ $Paint* FileChooserPainter::decodeGradient15($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient16($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2915,6 +2941,7 @@ $Paint* FileChooserPainter::decodeGradient16($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient17($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2944,6 +2971,7 @@ $Paint* FileChooserPainter::decodeGradient17($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient18($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -2993,6 +3021,7 @@ $Paint* FileChooserPainter::decodeGradient18($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient19($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3010,6 +3039,7 @@ $Paint* FileChooserPainter::decodeGradient19($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient20($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3027,6 +3057,7 @@ $Paint* FileChooserPainter::decodeGradient20($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient21($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3044,6 +3075,7 @@ $Paint* FileChooserPainter::decodeGradient21($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient22($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3061,6 +3093,7 @@ $Paint* FileChooserPainter::decodeGradient22($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient23($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3078,6 +3111,7 @@ $Paint* FileChooserPainter::decodeGradient23($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient24($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3095,6 +3129,7 @@ $Paint* FileChooserPainter::decodeGradient24($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient25($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3112,6 +3147,7 @@ $Paint* FileChooserPainter::decodeGradient25($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient26($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3129,6 +3165,7 @@ $Paint* FileChooserPainter::decodeGradient26($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient27($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3154,6 +3191,7 @@ $Paint* FileChooserPainter::decodeGradient27($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient28($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3171,6 +3209,7 @@ $Paint* FileChooserPainter::decodeGradient28($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeRadial2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3188,6 +3227,7 @@ $Paint* FileChooserPainter::decodeRadial2($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient29($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3209,6 +3249,7 @@ $Paint* FileChooserPainter::decodeGradient29($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient30($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3234,6 +3275,7 @@ $Paint* FileChooserPainter::decodeGradient30($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient31($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3259,6 +3301,7 @@ $Paint* FileChooserPainter::decodeGradient31($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient32($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3280,6 +3323,7 @@ $Paint* FileChooserPainter::decodeGradient32($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient33($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3301,6 +3345,7 @@ $Paint* FileChooserPainter::decodeGradient33($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient34($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -3318,6 +3363,7 @@ $Paint* FileChooserPainter::decodeGradient34($Shape* s) {
 }
 
 $Paint* FileChooserPainter::decodeGradient35($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

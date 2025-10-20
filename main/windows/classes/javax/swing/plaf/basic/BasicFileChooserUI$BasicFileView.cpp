@@ -94,6 +94,7 @@ void BasicFileChooserUI$BasicFileView::clearIconCache() {
 }
 
 $String* BasicFileChooserUI$BasicFileView::getName($File* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, fileName, nullptr);
 	if (f != nullptr) {
 		$assign(fileName, $nc($($nc($(this->this$0->getFileChooser()))->getFileSystemView()))->getSystemDisplayName(f));
@@ -106,6 +107,7 @@ $String* BasicFileChooserUI$BasicFileView::getDescription($File* f) {
 }
 
 $String* BasicFileChooserUI$BasicFileView::getTypeDescription($File* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, type, $nc($($nc($(this->this$0->getFileChooser()))->getFileSystemView()))->getSystemTypeDescription(f));
 	if (type == nullptr) {
 		if ($nc(f)->isDirectory()) {
@@ -129,6 +131,7 @@ void BasicFileChooserUI$BasicFileView::cacheIcon($File* f, $Icon* i) {
 }
 
 $Icon* BasicFileChooserUI$BasicFileView::getIcon($File* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, icon, getCachedIcon(f));
 	if (icon != nullptr) {
 		return icon;

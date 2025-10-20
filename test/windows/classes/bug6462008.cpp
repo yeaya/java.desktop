@@ -219,6 +219,7 @@ void bug6462008::init$() {
 }
 
 void bug6462008::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -251,6 +252,7 @@ void bug6462008::main($StringArray* args) {
 }
 
 void bug6462008::testListSelection() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6462008);
 	$nc(bug6462008::robot)->keyPress($KeyEvent::VK_SPACE);
 	$nc(bug6462008::robot)->keyRelease($KeyEvent::VK_SPACE);
@@ -413,6 +415,7 @@ void bug6462008::testListSelection() {
 }
 
 $DefaultListModel* bug6462008::getModel() {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultListModel, listModel, $new($DefaultListModel));
 	for (int32_t i = 0; i < 10; ++i) {
 		listModel->addElement($$str({"List Item "_s, $$str(i)}));
@@ -421,6 +424,7 @@ $DefaultListModel* bug6462008::getModel() {
 }
 
 $Point* bug6462008::clickItem4() {
+	$useLocalCurrentObjectStackCache();
 	$var($PointArray, result, $new($PointArray, 1));
 	$SwingUtilities::invokeAndWait($$new($bug6462008$2, result));
 	return result->get(0);
@@ -447,12 +451,14 @@ void bug6462008::setAnchorLead(int32_t anchorLeadValue) {
 }
 
 void bug6462008::setAnchorLeadNonThreadSafe() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6462008);
 	$nc($($nc(bug6462008::list)->getSelectionModel()))->setAnchorSelectionIndex(bug6462008::anchorLead);
 	$nc(($cast($DefaultListSelectionModel, $($nc(bug6462008::list)->getSelectionModel()))))->moveLeadSelectionIndex(bug6462008::anchorLead);
 }
 
 void bug6462008::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6462008);
 	$assignStatic(bug6462008::frame, $new($JFrame, "bug6462008"_s));
 	$nc(bug6462008::frame)->setSize(200, 500);
@@ -474,6 +480,7 @@ void bug6462008::checkSelectionAL(int32_t anchor, int32_t lead, $ints* sels) {
 }
 
 void bug6462008::checkSelectionNonThreadSafe(int32_t anchor, int32_t lead, $ints* sels) {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6462008);
 	$var($ListSelectionModel, lsm, $nc(bug6462008::list)->getSelectionModel());
 	int32_t actualAnchor = $nc(lsm)->getAnchorSelectionIndex();

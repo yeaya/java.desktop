@@ -72,6 +72,7 @@ void MediaEntry::init$($MediaTracker* mt, int32_t id) {
 }
 
 MediaEntry* MediaEntry::insert(MediaEntry* head$renamed, MediaEntry* me) {
+	$useLocalCurrentObjectStackCache();
 	$var(MediaEntry, head, head$renamed);
 	$var(MediaEntry, cur, head);
 	$var(MediaEntry, prev, nullptr);

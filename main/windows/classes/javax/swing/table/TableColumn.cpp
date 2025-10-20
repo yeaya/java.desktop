@@ -310,6 +310,7 @@ void TableColumn::firePropertyChange($String* propertyName, Object$* oldValue, O
 }
 
 void TableColumn::firePropertyChange($String* propertyName, int32_t oldValue, int32_t newValue) {
+	$useLocalCurrentObjectStackCache();
 	if (oldValue != newValue) {
 		$var($String, var$0, propertyName);
 		$var($Object, var$1, $of($Integer::valueOf(oldValue)));
@@ -318,6 +319,7 @@ void TableColumn::firePropertyChange($String* propertyName, int32_t oldValue, in
 }
 
 void TableColumn::firePropertyChange($String* propertyName, bool oldValue, bool newValue) {
+	$useLocalCurrentObjectStackCache();
 	if (oldValue != newValue) {
 		$var($String, var$0, propertyName);
 		$var($Object, var$1, $of($Boolean::valueOf(oldValue)));
@@ -448,6 +450,7 @@ bool TableColumn::getResizable() {
 }
 
 void TableColumn::sizeWidthToFit() {
+	$useLocalCurrentObjectStackCache();
 	if (this->headerRenderer == nullptr) {
 		return;
 	}

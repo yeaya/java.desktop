@@ -140,6 +140,7 @@ void SynthViewportUI::installDefaults($JComponent* c) {
 }
 
 void SynthViewportUI::updateStyle($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c, $SynthConstants::ENABLED));
 	$var($JComponent, var$0, $nc(context)->getComponent());
 	$var($SynthStyle, newStyle, $SynthLookAndFeel::getStyle(var$0, $(context->getRegion())));
@@ -181,6 +182,7 @@ $Region* SynthViewportUI::getRegion($JComponent* c) {
 }
 
 void SynthViewportUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);

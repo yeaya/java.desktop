@@ -142,6 +142,7 @@ $LookupTable* LookupOp::getTable() {
 }
 
 $BufferedImage* LookupOp::filter($BufferedImage* src, $BufferedImage* dst$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, dst, dst$renamed);
 	$var($ColorModel, srcCM, $nc(src)->getColorModel());
 	int32_t numBands = $nc(srcCM)->getNumColorComponents();
@@ -217,6 +218,7 @@ $BufferedImage* LookupOp::filter($BufferedImage* src, $BufferedImage* dst$rename
 }
 
 $WritableRaster* LookupOp::filter($Raster* src, $WritableRaster* dst$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($WritableRaster, dst, dst$renamed);
 	int32_t numBands = $nc(src)->getNumBands();
 	int32_t height = src->getHeight();
@@ -272,6 +274,7 @@ $Rectangle2D* LookupOp::getBounds2D($Raster* src) {
 }
 
 $BufferedImage* LookupOp::createCompatibleDestImage($BufferedImage* src, $ColorModel* destCM) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, image, nullptr);
 	int32_t w = $nc(src)->getWidth();
 	int32_t h = src->getHeight();
@@ -349,6 +352,7 @@ $RenderingHints* LookupOp::getRenderingHints() {
 }
 
 void LookupOp::byteFilter($ByteLookupTable* lookup, $Raster* src, $WritableRaster* dst, int32_t width, int32_t height, int32_t numBands) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, srcPix, nullptr);
 	$var($byteArray2, table, $nc(lookup)->getTable());
 	int32_t offset = lookup->getOffset();
@@ -378,6 +382,7 @@ void LookupOp::byteFilter($ByteLookupTable* lookup, $Raster* src, $WritableRaste
 }
 
 void LookupOp::shortFilter($ShortLookupTable* lookup, $Raster* src, $WritableRaster* dst, int32_t width, int32_t height, int32_t numBands) {
+	$useLocalCurrentObjectStackCache();
 	int32_t band = 0;
 	$var($ints, srcPix, nullptr);
 	$var($shortArray2, table, $nc(lookup)->getTable());

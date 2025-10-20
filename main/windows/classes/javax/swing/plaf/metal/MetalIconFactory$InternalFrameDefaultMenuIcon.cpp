@@ -96,6 +96,7 @@ void MetalIconFactory$InternalFrameDefaultMenuIcon::init$() {
 }
 
 void MetalIconFactory$InternalFrameDefaultMenuIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, windowBodyColor, $MetalLookAndFeel::getWindowBackground());
 	$var($Color, titleColor, $MetalLookAndFeel::getPrimaryControl());
 	$var($Color, edgeColor, $MetalLookAndFeel::getPrimaryControlDarkShadow());

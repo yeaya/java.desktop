@@ -115,6 +115,7 @@ void KeyboardFocusManagerPeerImpl::init$() {
 }
 
 void KeyboardFocusManagerPeerImpl::clearGlobalFocusOwner($Window* activeWindow) {
+	$useLocalCurrentObjectStackCache();
 	if (activeWindow != nullptr) {
 		$var($Component, focusOwner, activeWindow->getFocusOwner());
 		$init($PlatformLogger$Level);
@@ -131,6 +132,7 @@ void KeyboardFocusManagerPeerImpl::clearGlobalFocusOwner($Window* activeWindow) 
 
 bool KeyboardFocusManagerPeerImpl::shouldFocusOnClick($Component* component) {
 	$init(KeyboardFocusManagerPeerImpl);
+	$useLocalCurrentObjectStackCache();
 	bool acceptFocusOnClick = false;
 	$var($AWTAccessor$ComponentAccessor, acc, $AWTAccessor::getComponentAccessor());
 	if ($instanceOf($Canvas, component) || $instanceOf($Scrollbar, component)) {
@@ -146,6 +148,7 @@ bool KeyboardFocusManagerPeerImpl::shouldFocusOnClick($Component* component) {
 
 bool KeyboardFocusManagerPeerImpl::deliverFocus($Component* lightweightChild$renamed, $Component* target, bool temporary, bool focusedWindowChangeAllowed, int64_t time, $FocusEvent$Cause* cause, $Component* currentFocusOwner) {
 	$init(KeyboardFocusManagerPeerImpl);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, lightweightChild, lightweightChild$renamed);
 	if (lightweightChild == nullptr) {
 		$assign(lightweightChild, target);

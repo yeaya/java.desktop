@@ -86,6 +86,7 @@ void bug8048506::init$() {
 }
 
 void bug8048506::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 	$SwingUtilities::invokeAndWait($$new($bug8048506$1));
 	$init($System);
@@ -93,6 +94,7 @@ void bug8048506::main($StringArray* args) {
 }
 
 void bug8048506::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame, "bug8048506"_s));
 	frame->setSize(400, 400);
 	frame->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);

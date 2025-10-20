@@ -190,6 +190,7 @@ $Object* allocate$Robot($Class* clazz) {
 int32_t Robot::LEGAL_BUTTON_MASK = 0;
 
 void Robot::init$() {
+	$useLocalCurrentObjectStackCache();
 	this->isAutoWaitForIdle$ = false;
 	this->autoDelay$ = 0;
 	$set(this, screenCapCM, nullptr);
@@ -219,6 +220,7 @@ void Robot::initLegalButtonMask() {
 	$load(Robot);
 	$synchronized(class$) {
 		$init(Robot);
+		$useLocalCurrentObjectStackCache();
 		if (Robot::LEGAL_BUTTON_MASK != 0) {
 			return;
 		}
@@ -341,6 +343,7 @@ $MultiResolutionImage* Robot::createMultiResolutionScreenCapture($Rectangle* scr
 
 $BufferedImageArray* Robot::createCompatibleImage($Rectangle* screenRect, bool isHiDPI) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		checkScreenCaptureAllowed();
 		checkValidRect(screenRect);
 		$var($BufferedImage, lowResolutionImage, nullptr);
@@ -465,6 +468,7 @@ void Robot::autoDelay() {
 }
 
 void Robot::delay(int32_t ms) {
+	$useLocalCurrentObjectStackCache();
 	checkDelayArgument(ms);
 	$var($Thread, thread, $Thread::currentThread());
 	if (!thread->isInterrupted()) {
@@ -501,6 +505,7 @@ void Robot::checkNotDispatchThread() {
 
 $String* Robot::toString() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($String, var$0, $$str({"autoDelay = "_s, $$str(getAutoDelay()), ", autoWaitForIdle = "_s}));
 		$var($String, params, $concat(var$0, $$str(isAutoWaitForIdle())));
 		return $str({$($of(this)->getClass()->getName()), "[ "_s, params, " ]"_s});

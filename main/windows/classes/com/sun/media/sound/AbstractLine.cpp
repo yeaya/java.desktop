@@ -170,6 +170,7 @@ $Control* AbstractLine::getControl($Control$Type* controlType) {
 }
 
 void AbstractLine::setOpen(bool open) {
+	$useLocalCurrentObjectStackCache();
 	bool sendEvents = false;
 	int64_t position = getLongFramePosition();
 	if (this->open$ != open) {
@@ -204,6 +205,7 @@ $AbstractMixer* AbstractLine::getMixer() {
 }
 
 $EventDispatcher* AbstractLine::getEventDispatcher() {
+	$useLocalCurrentObjectStackCache();
 	$var($ThreadGroup, tg, $($Thread::currentThread())->getThreadGroup());
 	$synchronized(AbstractLine::dispatchers) {
 		$var($EventDispatcher, eventDispatcher, $cast($EventDispatcher, $nc(AbstractLine::dispatchers)->get(tg)));

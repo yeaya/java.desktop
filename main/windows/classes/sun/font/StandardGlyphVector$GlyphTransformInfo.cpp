@@ -133,6 +133,7 @@ bool StandardGlyphVector$GlyphTransformInfo::equals(StandardGlyphVector$GlyphTra
 }
 
 void StandardGlyphVector$GlyphTransformInfo::setGlyphTransform(int32_t glyphIndex, $AffineTransform* newTX) {
+	$useLocalCurrentObjectStackCache();
 	$var($doubles, temp, $new($doubles, 6));
 	bool isIdentity = true;
 	if (newTX == nullptr || $nc(newTX)->isIdentity()) {
@@ -240,6 +241,7 @@ int32_t StandardGlyphVector$GlyphTransformInfo::transformCount() {
 }
 
 $Object* StandardGlyphVector$GlyphTransformInfo::setupGlyphImages($longs* images, $floats* positions, $AffineTransform* tx) {
+	$useLocalCurrentObjectStackCache();
 	int32_t len = $nc($nc(this->sgv)->glyphs)->length;
 	$var($StandardGlyphVector$GlyphStrikeArray, sl, getAllStrikes());
 	for (int32_t i = 0; i < len; ++i) {
@@ -253,6 +255,7 @@ $Object* StandardGlyphVector$GlyphTransformInfo::setupGlyphImages($longs* images
 }
 
 $Rectangle* StandardGlyphVector$GlyphTransformInfo::getGlyphsPixelBounds($AffineTransform* tx, float x, float y, int32_t start, int32_t count) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, result, nullptr);
 	$var($Rectangle, r, $new($Rectangle));
 	$var($Point2D$Float, pt, $new($Point2D$Float));
@@ -310,6 +313,7 @@ $StandardGlyphVector$GlyphStrikeArray* StandardGlyphVector$GlyphTransformInfo::g
 }
 
 $StandardGlyphVector$GlyphStrike* StandardGlyphVector$GlyphTransformInfo::getStrikeAtIndex($StandardGlyphVector$GlyphStrikeArray* strikes, int32_t strikeIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($StandardGlyphVector$GlyphStrike, strike, $nc(strikes)->get(strikeIndex));
 	if (strike == nullptr) {
 		if (strikeIndex == 0) {

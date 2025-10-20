@@ -78,6 +78,7 @@ void WindowsLookAndFeel$XPColorValue::init$($TMSchema$Part* part, $TMSchema$Stat
 }
 
 $Object* WindowsLookAndFeel$XPColorValue::getXPValue($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$var($WindowsLookAndFeel$XPColorValue$XPColorValueKey, key, $cast($WindowsLookAndFeel$XPColorValue$XPColorValueKey, this->xpValue));
 	$var($XPStyle, xp, $XPStyle::getXP());
 	return $of(xp != nullptr ? $of($nc(xp)->getColor($nc(key)->skin, key->prop, nullptr)) : ($Object*)nullptr);

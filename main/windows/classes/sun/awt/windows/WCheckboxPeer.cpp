@@ -341,6 +341,7 @@ int32_t WCheckboxPeer::getCheckMarkSize() {
 }
 
 $Dimension* WCheckboxPeer::getMinimumSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, lbl, $nc(($cast($Checkbox, this->target)))->getLabel());
 	int32_t marksize = getCheckMarkSize();
 	if (lbl == nullptr) {
@@ -366,6 +367,7 @@ void WCheckboxPeer::create($WComponentPeer* parent) {
 }
 
 void WCheckboxPeer::initialize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Checkbox, t, $cast($Checkbox, this->target));
 	setState($nc(t)->getState());
 	setCheckboxGroup($($nc(t)->getCheckboxGroup()));
@@ -381,6 +383,7 @@ bool WCheckboxPeer::shouldClearRectBeforePaint() {
 }
 
 void WCheckboxPeer::handleAction(bool state) {
+	$useLocalCurrentObjectStackCache();
 	$var($Checkbox, cb, $cast($Checkbox, this->target));
 	$WToolkit::executeOnEventHandlerThread(cb, $$new($WCheckboxPeer$1, this, cb, state));
 }

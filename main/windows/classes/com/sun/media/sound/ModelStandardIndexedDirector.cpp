@@ -67,6 +67,7 @@ $Object* allocate$ModelStandardIndexedDirector($Class* clazz) {
 }
 
 void ModelStandardIndexedDirector::init$($ModelPerformerArray* performers, $ModelDirectedPlayer* player) {
+	$useLocalCurrentObjectStackCache();
 	this->noteOnUsed = false;
 	this->noteOffUsed = false;
 	$set(this, performers, $fcast($ModelPerformerArray, $Arrays::copyOf(performers, $nc(performers)->length)));
@@ -111,6 +112,7 @@ int32_t ModelStandardIndexedDirector::restrict(int32_t value) {
 }
 
 void ModelStandardIndexedDirector::buildindex() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, trantables, $new($byteArray2, 2, 129));
 	$set(this, counters, $new($ints, $nc(this->trantables)->length));
 	{
@@ -223,6 +225,7 @@ void ModelStandardIndexedDirector::close() {
 }
 
 void ModelStandardIndexedDirector::noteOff(int32_t noteNumber, int32_t velocity) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->noteOffUsed) {
 		return;
 	}
@@ -247,6 +250,7 @@ void ModelStandardIndexedDirector::noteOff(int32_t noteNumber, int32_t velocity)
 }
 
 void ModelStandardIndexedDirector::noteOn(int32_t noteNumber, int32_t velocity) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->noteOnUsed) {
 		return;
 	}

@@ -62,6 +62,7 @@ $Object* allocate$bug5073047$MyTheme($Class* clazz) {
 }
 
 void bug5073047$MyTheme::init$() {
+	$useLocalCurrentObjectStackCache();
 	$DefaultMetalTheme::init$();
 	$set(this, ctf, $new($FontUIResource, $($nc($($DefaultMetalTheme::getControlTextFont()))->deriveFont(40.0f))));
 }

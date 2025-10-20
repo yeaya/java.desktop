@@ -64,6 +64,7 @@ void Sysout4bug4644444::createDialogWithInstructions($StringArray* instructions)
 }
 
 void Sysout4bug4644444::createDialog() {
+	$useLocalCurrentObjectStackCache();
 	$init(Sysout4bug4644444);
 	$assignStatic(Sysout4bug4644444::dialog, $new($TestDialog4bug4644444, $$new($Frame), "Instructions"_s));
 	$var($StringArray, defInstr, $new($StringArray, {

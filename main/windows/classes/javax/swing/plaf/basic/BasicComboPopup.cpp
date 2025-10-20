@@ -299,6 +299,7 @@ void BasicComboPopup::show() {
 }
 
 void BasicComboPopup::hide() {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, manager, $MenuSelectionManager::defaultManager());
 	$var($MenuElementArray, selection, $nc(manager)->getSelectedPath());
 	for (int32_t i = 0; i < $nc(selection)->length; ++i) {
@@ -451,6 +452,7 @@ $JList* BasicComboPopup::createList() {
 }
 
 void BasicComboPopup::configureList() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->list$)->setFont($($nc(this->comboBox)->getFont()));
 	$nc(this->list$)->setForeground($($nc(this->comboBox)->getForeground()));
 	$nc(this->list$)->setBackground($($nc(this->comboBox)->getBackground()));
@@ -553,6 +555,7 @@ bool BasicComboPopup::isFocusTraversable() {
 }
 
 void BasicComboPopup::startAutoScrolling(int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	if (this->isAutoScrolling) {
 		$nc(this->autoscrollTimer)->stop();
 	}
@@ -606,6 +609,7 @@ $AccessibleContext* BasicComboPopup::getAccessibleContext() {
 }
 
 void BasicComboPopup::delegateFocus($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->comboBox)->isEditable()) {
 		$var($Component, comp, $nc($($nc(this->comboBox)->getEditor()))->getEditorComponent());
 		if ((!($instanceOf($JComponent, comp))) || $nc(($cast($JComponent, comp)))->isRequestFocusEnabled()) {
@@ -634,6 +638,7 @@ void BasicComboPopup::setListSelection(int32_t selectedIndex) {
 }
 
 $MouseEvent* BasicComboPopup::convertMouseEvent($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, var$0, $cast($Component, $nc(e)->getSource()));
 	$var($Point, convertedPoint, $SwingUtilities::convertPoint(var$0, $(e->getPoint()), this->list$));
 	$var($Component, var$1, $cast($Component, $nc(e)->getSource()));
@@ -652,6 +657,7 @@ $MouseEvent* BasicComboPopup::convertMouseEvent($MouseEvent* e) {
 }
 
 int32_t BasicComboPopup::getPopupHeightForRowCount(int32_t maxRowCount) {
+	$useLocalCurrentObjectStackCache();
 	int32_t minRowCount = $Math::min(maxRowCount, $nc(this->comboBox)->getItemCount());
 	int32_t height = 0;
 	$var($ListCellRenderer, renderer, $nc(this->list$)->getCellRenderer());
@@ -678,6 +684,7 @@ int32_t BasicComboPopup::getPopupHeightForRowCount(int32_t maxRowCount) {
 }
 
 $Rectangle* BasicComboPopup::computePopupBounds(int32_t px, int32_t py, int32_t pw, int32_t ph) {
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());
 	$var($Rectangle, screenBounds, nullptr);
 	$var($GraphicsConfiguration, gc, $nc(this->comboBox)->getGraphicsConfiguration());
@@ -714,6 +721,7 @@ $Rectangle* BasicComboPopup::computePopupBounds(int32_t px, int32_t py, int32_t 
 }
 
 $Point* BasicComboPopup::getPopupLocation() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, popupSize, $nc(this->comboBox)->getSize());
 	$var($Insets, insets, getInsets());
 	$nc(popupSize)->setSize(popupSize->width - ($nc(insets)->right + insets->left), getPopupHeightForRowCount($nc(this->comboBox)->getMaximumRowCount()));
@@ -728,6 +736,7 @@ $Point* BasicComboPopup::getPopupLocation() {
 }
 
 void BasicComboPopup::updateListBoxSelectionForEvent($MouseEvent* anEvent, bool shouldScroll) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, location, $nc(anEvent)->getPoint());
 	if (this->list$ == nullptr) {
 		return;

@@ -90,6 +90,7 @@ void ClassicSortArrowIcon::init$(bool ascending) {
 }
 
 void ClassicSortArrowIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	x += ClassicSortArrowIcon::X_OFFSET;
 	if (this->ascending) {
 		$nc(g)->setColor($($UIManager::getColor("Table.sortIconHighlight"_s)));

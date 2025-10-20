@@ -170,6 +170,7 @@ void TestTabSize::main($StringArray* args) {
 
 void TestTabSize::lambda$main$0() {
 	$init(TestTabSize);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

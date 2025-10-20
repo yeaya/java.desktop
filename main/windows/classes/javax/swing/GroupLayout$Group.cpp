@@ -143,6 +143,7 @@ GroupLayout$Group* GroupLayout$Group::addSpring($GroupLayout$Spring* spring) {
 }
 
 void GroupLayout$Group::setSize(int32_t axis, int32_t origin, int32_t size) {
+	$useLocalCurrentObjectStackCache();
 	$GroupLayout$Spring::setSize(axis, origin, size);
 	if (size == (int32_t)0x80000000) {
 		for (int32_t counter = $nc(this->springs)->size() - 1; counter >= 0; --counter) {
@@ -166,6 +167,7 @@ int32_t GroupLayout$Group::calculateMaximumSize(int32_t axis) {
 }
 
 int32_t GroupLayout$Group::calculateSize(int32_t axis, int32_t type) {
+	$useLocalCurrentObjectStackCache();
 	int32_t count = $nc(this->springs)->size();
 	if (count == 0) {
 		return 0;
@@ -203,6 +205,7 @@ int32_t GroupLayout$Group::getSpringSize($GroupLayout$Spring* spring, int32_t ax
 }
 
 void GroupLayout$Group::removeAutopadding() {
+	$useLocalCurrentObjectStackCache();
 	unset();
 	for (int32_t counter = $nc(this->springs)->size() - 1; counter >= 0; --counter) {
 		$var($GroupLayout$Spring, spring, $cast($GroupLayout$Spring, $nc(this->springs)->get(counter)));
@@ -219,6 +222,7 @@ void GroupLayout$Group::removeAutopadding() {
 }
 
 void GroupLayout$Group::unsetAutopadding() {
+	$useLocalCurrentObjectStackCache();
 	unset();
 	for (int32_t counter = $nc(this->springs)->size() - 1; counter >= 0; --counter) {
 		$var($GroupLayout$Spring, spring, $cast($GroupLayout$Spring, $nc(this->springs)->get(counter)));
@@ -231,6 +235,7 @@ void GroupLayout$Group::unsetAutopadding() {
 }
 
 void GroupLayout$Group::calculateAutopadding(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t counter = $nc(this->springs)->size() - 1; counter >= 0; --counter) {
 		$var($GroupLayout$Spring, spring, $cast($GroupLayout$Spring, $nc(this->springs)->get(counter)));
 		if ($instanceOf($GroupLayout$AutoPreferredGapSpring, spring)) {
@@ -244,6 +249,7 @@ void GroupLayout$Group::calculateAutopadding(int32_t axis) {
 }
 
 bool GroupLayout$Group::willHaveZeroSize(bool treatAutopaddingAsZeroSized) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = $nc(this->springs)->size() - 1; i >= 0; --i) {
 		$var($GroupLayout$Spring, spring, $cast($GroupLayout$Spring, $nc(this->springs)->get(i)));
 		if (!$nc(spring)->willHaveZeroSize(treatAutopaddingAsZeroSized)) {

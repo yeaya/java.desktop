@@ -92,6 +92,7 @@ void StyleContext$SmallAttributeSet::init$($StyleContext* this$0, $ObjectArray* 
 }
 
 void StyleContext$SmallAttributeSet::init$($StyleContext* this$0, $AttributeSet* attrs) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	int32_t n = $nc(attrs)->getAttributeCount();
 	$var($ObjectArray, tbl, $new($ObjectArray, 2 * n));
@@ -133,6 +134,7 @@ $Object* StyleContext$SmallAttributeSet::getLocalAttribute(Object$* nm) {
 }
 
 $String* StyleContext$SmallAttributeSet::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, s, "{"_s);
 	$var($ObjectArray, tbl, this->attributes);
 	for (int32_t i = 0; i < $nc(tbl)->length; i += 2) {
@@ -198,6 +200,7 @@ $AttributeSet* StyleContext$SmallAttributeSet::copyAttributes() {
 }
 
 $Object* StyleContext$SmallAttributeSet::getAttribute(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, getLocalAttribute(key));
 	if (value == nullptr) {
 		$var($AttributeSet, parent, getResolveParent());
@@ -217,6 +220,7 @@ bool StyleContext$SmallAttributeSet::containsAttribute(Object$* name, Object$* v
 }
 
 bool StyleContext$SmallAttributeSet::containsAttributes($AttributeSet* attrs) {
+	$useLocalCurrentObjectStackCache();
 	bool result = true;
 	$var($Enumeration, names, $nc(attrs)->getAttributeNames());
 	while (result && $nc(names)->hasMoreElements()) {

@@ -169,6 +169,7 @@ $Border* DefaultListCellRenderer::getNoFocusBorder() {
 }
 
 $Component* DefaultListCellRenderer::getListCellRendererComponent($JList* list, Object$* value, int32_t index, bool isSelected, bool cellHasFocus) {
+	$useLocalCurrentObjectStackCache();
 	setComponentOrientation($($nc(list)->getComponentOrientation()));
 	$var($Color, bg, nullptr);
 	$var($Color, fg, nullptr);
@@ -211,6 +212,7 @@ $Component* DefaultListCellRenderer::getListCellRendererComponent($JList* list, 
 }
 
 bool DefaultListCellRenderer::isOpaque() {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, back, getBackground());
 	$var($Component, p, getParent());
 	if (p != nullptr) {

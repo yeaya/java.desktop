@@ -63,6 +63,7 @@ $Object* allocate$ReplicateScaleFilter($Class* clazz) {
 }
 
 void ReplicateScaleFilter::init$(int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$ImageFilter::init$();
 	if (width == 0 || height == 0) {
 		$throwNew($IllegalArgumentException, $$str({"Width ("_s, $$str(width), ") and height ("_s, $$str(height), ") must be non-zero"_s}));
@@ -72,6 +73,7 @@ void ReplicateScaleFilter::init$(int32_t width, int32_t height) {
 }
 
 void ReplicateScaleFilter::setProperties($Hashtable* props) {
+	$useLocalCurrentObjectStackCache();
 	$var($Hashtable, p, $cast($Hashtable, $nc(props)->clone()));
 	$var($String, key, "rescale"_s);
 	$var($String, val, $str({$$str(this->destWidth), "x"_s, $$str(this->destHeight)}));

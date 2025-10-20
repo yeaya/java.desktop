@@ -138,6 +138,7 @@ $ComponentUI* SynthEditorPaneUI::createUI($JComponent* c) {
 }
 
 void SynthEditorPaneUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$BasicEditorPaneUI::installDefaults();
 	$var($JComponent, c, getComponent());
 	$init($JEditorPane);
@@ -149,6 +150,7 @@ void SynthEditorPaneUI::installDefaults() {
 }
 
 void SynthEditorPaneUI::uninstallDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext($(getComponent()), $SynthConstants::ENABLED));
 	$var($JComponent, c, getComponent());
 	$nc(c)->putClientProperty("caretAspectRatio"_s, nullptr);
@@ -164,6 +166,7 @@ void SynthEditorPaneUI::uninstallDefaults() {
 }
 
 void SynthEditorPaneUI::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc(evt)->getPropertyName()))->equals("keymap"_s)) {
 		if (evt->getNewValue() != nullptr) {
 			this->updateKBAction = false;
@@ -178,6 +181,7 @@ void SynthEditorPaneUI::propertyChange($PropertyChangeEvent* evt) {
 }
 
 void SynthEditorPaneUI::updateStyle($JTextComponent* comp, bool updateKBAction) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(comp, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -217,6 +221,7 @@ void SynthEditorPaneUI::paintBackground($Graphics* g) {
 }
 
 void SynthEditorPaneUI::paintBackground($SynthContext* context, $Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, var$0, context);
 	$var($Graphics, var$1, g);
 	int32_t var$2 = $nc(c)->getWidth();

@@ -126,6 +126,7 @@ bool CSS$LengthValue::isPercentage() {
 }
 
 $Object* CSS$LengthValue::parseCssValue($String* value) {
+	$useLocalCurrentObjectStackCache();
 	$var(CSS$LengthValue, lv, nullptr);
 	try {
 		float absolute = $nc($($Float::valueOf(value)))->floatValue();

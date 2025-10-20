@@ -93,6 +93,7 @@ void Test7163696::main($StringArray* args) {
 }
 
 void Test7163696::test() {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
@@ -127,6 +128,7 @@ void Test7163696::test() {
 }
 
 void Test7163696::run() {
+	$useLocalCurrentObjectStackCache();
 	if (this->bar == nullptr) {
 		$set(this, bar, $new($JScrollBar, $JScrollBar::HORIZONTAL, 50, 10, 0, 100));
 		$nc(this->bar)->setPreferredSize($$new($Dimension, 400, 20));

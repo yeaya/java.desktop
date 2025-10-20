@@ -106,6 +106,7 @@ void IdentityArrayList::finalize() {
 }
 
 void IdentityArrayList::init$(int32_t initialCapacity) {
+	$useLocalCurrentObjectStackCache();
 	$AbstractList::init$();
 	if (initialCapacity < 0) {
 		$throwNew($IllegalArgumentException, $$str({"Illegal Capacity: "_s, $$str(initialCapacity)}));
@@ -305,6 +306,7 @@ void IdentityArrayList::rangeCheckForAdd(int32_t index) {
 }
 
 $String* IdentityArrayList::outOfBoundsMsg(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	return $str({"Index: "_s, $$str(index), ", Size: "_s, $$str(this->size$)});
 }
 

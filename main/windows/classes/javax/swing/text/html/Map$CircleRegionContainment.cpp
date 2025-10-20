@@ -79,6 +79,7 @@ $Object* allocate$Map$CircleRegionContainment($Class* clazz) {
 }
 
 void Map$CircleRegionContainment::init$($AttributeSet* as) {
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Attribute);
 	$var($ints, coords, $Map::extractCoords($($nc(as)->getAttribute($HTML$Attribute::COORDS))));
 	if (coords == nullptr || $nc(coords)->length != 3) {

@@ -349,6 +349,7 @@ void RealTimeSequencer::init$() {
 
 void RealTimeSequencer::setSequence($Sequence* sequence) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (sequence != this->sequence) {
 			if (this->sequence != nullptr && sequence == nullptr) {
 				setCaches();
@@ -448,6 +449,7 @@ bool RealTimeSequencer::isRecording() {
 }
 
 void RealTimeSequencer::recordEnable($Track* track, int32_t channel) {
+	$useLocalCurrentObjectStackCache();
 	if (!findTrack(track)) {
 		$throwNew($IllegalArgumentException, "Track does not exist in the current sequence"_s);
 	}
@@ -635,6 +637,7 @@ $Sequencer$SyncModeArray* RealTimeSequencer::getSlaveSyncModes() {
 }
 
 int32_t RealTimeSequencer::getTrackCount() {
+	$useLocalCurrentObjectStackCache();
 	$var($Sequence, seq, getSequence());
 	if (seq != nullptr) {
 		return $nc($($nc(this->sequence)->getTracks()))->length;
@@ -759,6 +762,7 @@ $ints* RealTimeSequencer::removeControllerEventListener($ControllerEventListener
 }
 
 void RealTimeSequencer::setLoopStartPoint(int64_t tick) {
+	$useLocalCurrentObjectStackCache();
 	if ((tick > getTickLength()) || ((this->loopEnd != -1) && (tick > this->loopEnd)) || (tick < 0)) {
 		$throwNew($IllegalArgumentException, $$str({"invalid loop start point: "_s, $$str(tick)}));
 	}
@@ -770,6 +774,7 @@ int64_t RealTimeSequencer::getLoopStartPoint() {
 }
 
 void RealTimeSequencer::setLoopEndPoint(int64_t tick) {
+	$useLocalCurrentObjectStackCache();
 	if ((tick > getTickLength()) || ((this->loopStart > tick) && (tick != -1)) || (tick < -1)) {
 		$throwNew($IllegalArgumentException, $$str({"invalid loop end point: "_s, $$str(tick)}));
 	}
@@ -781,6 +786,7 @@ int64_t RealTimeSequencer::getLoopEndPoint() {
 }
 
 void RealTimeSequencer::setLoopCount(int32_t count) {
+	$useLocalCurrentObjectStackCache();
 	if (count != $Sequencer::LOOP_CONTINUOUSLY && count < 0) {
 		$throwNew($IllegalArgumentException, $$str({"illegal value for loop count: "_s, $$str(count)}));
 	}
@@ -806,6 +812,7 @@ void RealTimeSequencer::implOpen() {
 }
 
 void RealTimeSequencer::doAutoConnect() {
+	$useLocalCurrentObjectStackCache();
 	$var($Receiver, rec, nullptr);
 	try {
 		$var($Synthesizer, synth, $MidiSystem::getSynthesizer());
@@ -936,6 +943,7 @@ void RealTimeSequencer::implStop() {
 
 $EventDispatcher* RealTimeSequencer::getEventDispatcher() {
 	$init(RealTimeSequencer);
+	$useLocalCurrentObjectStackCache();
 	$var($ThreadGroup, tg, $($Thread::currentThread())->getThreadGroup());
 	$synchronized(RealTimeSequencer::dispatchers) {
 		$var($EventDispatcher, eventDispatcher, $cast($EventDispatcher, $nc(RealTimeSequencer::dispatchers)->get(tg)));
@@ -956,6 +964,7 @@ void RealTimeSequencer::sendMetaEvents($MidiMessage* message) {
 }
 
 void RealTimeSequencer::sendControllerEvents($MidiMessage* message) {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc(this->controllerEventListeners)->size();
 	if (size == 0) {
 		return;

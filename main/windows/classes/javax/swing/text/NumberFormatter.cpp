@@ -144,6 +144,7 @@ void NumberFormatter::init$($NumberFormat* format) {
 }
 
 void NumberFormatter::setFormat($Format* format) {
+	$useLocalCurrentObjectStackCache();
 	$InternationalFormatter::setFormat(format);
 	$var($DecimalFormatSymbols, dfs, getDecimalFormatSymbols());
 	if (dfs != nullptr) {
@@ -292,6 +293,7 @@ bool NumberFormatter::isNavigatable(int32_t index) {
 }
 
 $NumberFormat$Field* NumberFormatter::getFieldFrom(int32_t index, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	if (isValidMask()) {
 		int32_t max = $nc($($nc($(getFormattedTextField()))->getDocument()))->getLength();
 		$var($AttributedCharacterIterator, iterator, getIterator());
@@ -330,6 +332,7 @@ void NumberFormatter::replace($DocumentFilter$FilterBypass* fb, int32_t offset, 
 }
 
 bool NumberFormatter::toggleSignIfNecessary($DocumentFilter$FilterBypass* fb, int32_t offset, char16_t aChar) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = aChar == getMinusSign();
 	if (var$0 || aChar == getPositiveSign()) {
 		$var($NumberFormat$Field, field, getFieldFrom(offset, -1));
@@ -359,6 +362,7 @@ bool NumberFormatter::toggleSignIfNecessary($DocumentFilter$FilterBypass* fb, in
 }
 
 $Object* NumberFormatter::toggleSign(bool positive) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Object, value, stringToValue($($nc($(getFormattedTextField()))->getText())));
 	if (value != nullptr) {
@@ -401,6 +405,7 @@ $Object* NumberFormatter::toggleSign(bool positive) {
 }
 
 $Object* NumberFormatter::toggleExponentSign(int32_t offset, char16_t aChar) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, string, $nc($(getFormattedTextField()))->getText());
 	int32_t replaceLength = 0;
 	$init($NumberFormat$Field);

@@ -110,6 +110,7 @@ void Cache::init$($Cache$Kind* keyKind, $Cache$Kind* valueKind, bool identity) {
 }
 
 $Object* Cache::get(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(key, "key"_s);
 	removeStaleEntries();
 	int32_t hash = this->hash(key);
@@ -149,6 +150,7 @@ $Object* Cache::get(Object$* key) {
 }
 
 void Cache::remove(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	if (key != nullptr) {
 		$synchronized(this->queue) {
 			removeStaleEntries();
@@ -175,6 +177,7 @@ void Cache::remove(Object$* key) {
 }
 
 void Cache::clear() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->queue) {
 		int32_t index = $nc(this->table)->length;
 		while (0 < index--) {
@@ -221,6 +224,7 @@ $Object* Cache::getEntryValue(Object$* key, int32_t hash, $Cache$CacheEntry* ent
 }
 
 void Cache::removeStaleEntries() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, reference, $nc(this->queue)->poll());
 	if (reference != nullptr) {
 		$synchronized(this->queue) {
@@ -255,6 +259,7 @@ void Cache::removeStaleEntries() {
 }
 
 void Cache::transfer($Cache$CacheEntryArray* oldTable, $Cache$CacheEntryArray* newTable) {
+	$useLocalCurrentObjectStackCache();
 	int32_t oldIndex = $nc(oldTable)->length;
 	while (0 < oldIndex--) {
 		$var($Cache$CacheEntry, entry, oldTable->get(oldIndex));

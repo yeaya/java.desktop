@@ -114,6 +114,7 @@ void bug6691503::testApplet() {
 }
 
 void bug6691503::checkResult() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($Robot, robot, $new($Robot));
 		robot->waitForIdle();

@@ -277,6 +277,7 @@ $IIOMetadata* BMPImageWriter::getDefaultStreamMetadata($ImageWriteParam* param) 
 }
 
 $IIOMetadata* BMPImageWriter::getDefaultImageMetadata($ImageTypeSpecifier* imageType, $ImageWriteParam* param) {
+	$useLocalCurrentObjectStackCache();
 	$var($BMPMetadata, meta, $new($BMPMetadata));
 	$init($BMPConstants);
 	$set(meta, bmpVersion, $BMPConstants::VERSION_3);
@@ -301,6 +302,7 @@ bool BMPImageWriter::canWriteRasters() {
 }
 
 void BMPImageWriter::write($IIOMetadata* streamMetadata, $IIOImage* image, $ImageWriteParam* param$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageWriteParam, param, param$renamed);
 	if (this->stream == nullptr) {
 		$throwNew($IllegalStateException, $($I18N::getString("BMPImageWriter7"_s)));
@@ -759,6 +761,7 @@ void BMPImageWriter::write($IIOMetadata* streamMetadata, $IIOImage* image, $Imag
 }
 
 void BMPImageWriter::writePixels(int32_t l, int32_t scanlineBytes, int32_t bitsPerPixel, $ints* pixels, int32_t padding, int32_t numBands, $IndexColorModel* icm) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pixel = 0;
 	int32_t k = 0;
 	switch (bitsPerPixel) {
@@ -1235,6 +1238,7 @@ void BMPImageWriter::reset() {
 }
 
 void BMPImageWriter::writeEmbedded($IIOImage* image, $ImageWriteParam* bmpParam) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, format, this->compressionType == $BMPConstants::BI_JPEG ? "jpeg"_s : "png"_s);
 	$var($Iterator, iterator, $ImageIO::getImageWritersByFormatName(format));
 	$var($ImageWriter, writer, nullptr);
@@ -1289,6 +1293,7 @@ bool BMPImageWriter::canEncodeImage(int32_t compression, $ColorModel* cm, $Sampl
 }
 
 bool BMPImageWriter::canEncodeImage(int32_t compression, $ImageTypeSpecifier* imgType) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageWriterSpi, spi, this->getOriginatingProvider());
 	if (!$nc(spi)->canEncodeImage(imgType)) {
 		return false;

@@ -267,6 +267,7 @@ float TextComponentPrintable::FOOTER_FONT_SIZE = 0.0;
 
 $Printable* TextComponentPrintable::getPrintable($JTextComponent* textComponent, $MessageFormat* headerFormat, $MessageFormat* footerFormat) {
 	$init(TextComponentPrintable);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JEditorPane, textComponent) && isFrameSetDocument($($nc(textComponent)->getDocument()))) {
 		$var($List, frames, getFrames($cast($JEditorPane, textComponent)));
 		$var($List, printables, $new($ArrayList));
@@ -287,6 +288,7 @@ $Printable* TextComponentPrintable::getPrintable($JTextComponent* textComponent,
 
 bool TextComponentPrintable::isFrameSetDocument($Document* document) {
 	$init(TextComponentPrintable);
+	$useLocalCurrentObjectStackCache();
 	bool ret = false;
 	if ($instanceOf($HTMLDocument, document)) {
 		$var($HTMLDocument, htmlDocument, $cast($HTMLDocument, document));
@@ -311,6 +313,7 @@ $List* TextComponentPrintable::getFrames($JEditorPane* editor) {
 
 void TextComponentPrintable::getFrames($Container* container, $List* list) {
 	$init(TextComponentPrintable);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($ComponentArray, arr$, $nc(container)->getComponents());
 		int32_t len$ = $nc(arr$)->length;
@@ -330,6 +333,7 @@ void TextComponentPrintable::getFrames($Container* container, $List* list) {
 
 void TextComponentPrintable::createFrames($JEditorPane* editor) {
 	$init(TextComponentPrintable);
+	$useLocalCurrentObjectStackCache();
 	$var($Runnable, doCreateFrames, $new($TextComponentPrintable$1, editor));
 	if ($SwingUtilities::isEventDispatchThread()) {
 		doCreateFrames->run();
@@ -348,6 +352,7 @@ void TextComponentPrintable::createFrames($JEditorPane* editor) {
 }
 
 void TextComponentPrintable::init$($JTextComponent* textComponent, $MessageFormat* headerFormat, $MessageFormat* footerFormat) {
+	$useLocalCurrentObjectStackCache();
 	this->isLayouted = false;
 	$set(this, frc, $new($AtomicReference, nullptr));
 	this->needReadLock = false;
@@ -362,6 +367,7 @@ void TextComponentPrintable::init$($JTextComponent* textComponent, $MessageForma
 }
 
 $JTextComponent* TextComponentPrintable::createPrintShell($JTextComponent* textComponent) {
+	$useLocalCurrentObjectStackCache();
 	if ($SwingUtilities::isEventDispatchThread()) {
 		return createPrintShellOnEDT(textComponent);
 	} else {
@@ -388,6 +394,7 @@ $JTextComponent* TextComponentPrintable::createPrintShell($JTextComponent* textC
 }
 
 $JTextComponent* TextComponentPrintable::createPrintShellOnEDT($JTextComponent* textComponent) {
+	$useLocalCurrentObjectStackCache();
 	if (!TextComponentPrintable::$assertionsDisabled && !$SwingUtilities::isEventDispatchThread()) {
 		$throwNew($AssertionError);
 	}
@@ -426,6 +433,7 @@ int32_t TextComponentPrintable::getNumberOfPages() {
 }
 
 int32_t TextComponentPrintable::print($Graphics* graphics, $PageFormat* pf, int32_t pageIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->isLayouted) {
 		if ($instanceOf($Graphics2D, graphics)) {
 			$nc(this->frc)->set($($nc(($cast($Graphics2D, graphics)))->getFontRenderContext()));
@@ -463,6 +471,7 @@ int32_t TextComponentPrintable::print($Graphics* graphics, $PageFormat* pf, int3
 }
 
 int32_t TextComponentPrintable::printOnEDT($Graphics* graphics, $PageFormat* pf, int32_t pageIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (!TextComponentPrintable::$assertionsDisabled && !$SwingUtilities::isEventDispatchThread()) {
 		$throwNew($AssertionError);
 	}
@@ -527,6 +536,7 @@ void TextComponentPrintable::releaseReadLock() {
 }
 
 void TextComponentPrintable::acquireReadLock() {
+	$useLocalCurrentObjectStackCache();
 	if (!TextComponentPrintable::$assertionsDisabled && ! !$SwingUtilities::isEventDispatchThread()) {
 		$throwNew($AssertionError);
 	}
@@ -545,6 +555,7 @@ void TextComponentPrintable::acquireReadLock() {
 }
 
 void TextComponentPrintable::layout(int32_t width) {
+	$useLocalCurrentObjectStackCache();
 	if (!$SwingUtilities::isEventDispatchThread()) {
 		$var($Callable, doLayoutOnEDT, $new($TextComponentPrintable$10, this, width));
 		$var($FutureTask, futureLayoutOnEDT, $new($FutureTask, doLayoutOnEDT));
@@ -585,6 +596,7 @@ void TextComponentPrintable::layout(int32_t width) {
 }
 
 void TextComponentPrintable::layoutOnEDT(int32_t width) {
+	$useLocalCurrentObjectStackCache();
 	if (!TextComponentPrintable::$assertionsDisabled && !$SwingUtilities::isEventDispatchThread()) {
 		$throwNew($AssertionError);
 	}
@@ -604,6 +616,7 @@ void TextComponentPrintable::layoutOnEDT(int32_t width) {
 }
 
 void TextComponentPrintable::updatePagesMetrics(int32_t pageIndex, int32_t pageHeight) {
+	$useLocalCurrentObjectStackCache();
 	while (true) {
 		bool var$0 = pageIndex >= $nc(this->pagesMetrics)->size();
 		if (!(var$0 && !$nc(this->rowsMetrics)->isEmpty())) {
@@ -638,6 +651,7 @@ void TextComponentPrintable::updatePagesMetrics(int32_t pageIndex, int32_t pageH
 }
 
 void TextComponentPrintable::calculateRowsMetrics() {
+	$useLocalCurrentObjectStackCache();
 	int32_t documentLength = $nc($($nc(this->printShell)->getDocument()))->getLength();
 	$var($List, documentMetrics, $new($ArrayList, TextComponentPrintable::LIST_SIZE));
 	$var($Rectangle, rect, nullptr);

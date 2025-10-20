@@ -111,6 +111,7 @@ void bug6608456::init$() {
 
 void bug6608456::main($StringArray* args) {
 	$init(bug6608456);
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, component, $cast($JComponent, invokeAndWait($$new($bug6608456$1))));
 	if (component == nullptr) {
 		$throwNew($RuntimeException, "failed. can not register delegate"_s);
@@ -145,6 +146,7 @@ void bug6608456::main($StringArray* args) {
 
 bool bug6608456::registerDelegate($JComponent* c, $RepaintManager* repaintManager) {
 	$init(bug6608456);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	bool rv = false;
 	try {
@@ -175,6 +177,7 @@ $Object* bug6608456::invokeAndWait($Callable* callable) {
 
 void bug6608456::blockTillDisplayed($Component* comp) {
 	$init(bug6608456);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	while (p == nullptr) {
 		try {

@@ -100,6 +100,7 @@ $Object* allocate$MultipleGradientPaint($Class* clazz) {
 }
 
 void MultipleGradientPaint::init$($floats* fractions, $ColorArray* colors, $MultipleGradientPaint$CycleMethod* cycleMethod, $MultipleGradientPaint$ColorSpaceType* colorSpace, $AffineTransform* gradientTransform) {
+	$useLocalCurrentObjectStackCache();
 	if (fractions == nullptr) {
 		$throwNew($NullPointerException, "Fractions array cannot be null"_s);
 	}

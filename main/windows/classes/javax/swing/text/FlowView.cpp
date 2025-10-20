@@ -134,6 +134,7 @@ void FlowView::loadChildren($ViewFactory* f) {
 }
 
 int32_t FlowView::getViewIndexAtPosition(int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = pos >= getStartOffset();
 	if (var$0 && (pos < getEndOffset())) {
 		for (int32_t counter = 0; counter < getViewCount(); ++counter) {
@@ -148,6 +149,7 @@ int32_t FlowView::getViewIndexAtPosition(int32_t pos) {
 }
 
 void FlowView::layout(int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	int32_t faxis = getFlowAxis();
 	int32_t newSpan = 0;
 	if (faxis == $View::X_AXIS) {

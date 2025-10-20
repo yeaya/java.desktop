@@ -112,6 +112,7 @@ void JEditorPane$PageLoader::init$($JEditorPane* this$0, $Document* doc, $InputS
 }
 
 $Object* JEditorPane$PageLoader::doInBackground() {
+	$useLocalCurrentObjectStackCache();
 	bool pageLoaded = false;
 	{
 		$var($Throwable, var$0, nullptr);

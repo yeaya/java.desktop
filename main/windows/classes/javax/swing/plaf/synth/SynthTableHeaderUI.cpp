@@ -167,6 +167,7 @@ void SynthTableHeaderUI::installDefaults() {
 }
 
 void SynthTableHeaderUI::updateStyle($JTableHeader* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -184,6 +185,7 @@ void SynthTableHeaderUI::installListeners() {
 }
 
 void SynthTableHeaderUI::uninstallDefaults() {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($SynthTableHeaderUI$HeaderRenderer, $($nc(this->header)->getDefaultRenderer()))) {
 		$nc(this->header)->setDefaultRenderer(this->prevRenderer);
 	}
@@ -198,6 +200,7 @@ void SynthTableHeaderUI::uninstallListeners() {
 }
 
 void SynthTableHeaderUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -229,6 +232,7 @@ $SynthContext* SynthTableHeaderUI::getContext($JComponent* c, int32_t state) {
 }
 
 void SynthTableHeaderUI::rolloverColumnUpdated(int32_t oldColumn, int32_t newColumn) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->header)->repaint($($nc(this->header)->getHeaderRect(oldColumn)));
 	$nc(this->header)->repaint($($nc(this->header)->getHeaderRect(newColumn)));
 }

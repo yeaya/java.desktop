@@ -217,6 +217,7 @@ $AbstractRegionPainter$PaintContext* ScrollBarButtonPainter::getPaintContext() {
 }
 
 void ScrollBarButtonPainter::paintForegroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->path);
@@ -241,6 +242,7 @@ void ScrollBarButtonPainter::paintForegroundDisabled($Graphics2D* g) {
 }
 
 void ScrollBarButtonPainter::paintForegroundMouseOver($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->path);
@@ -259,6 +261,7 @@ void ScrollBarButtonPainter::paintForegroundMouseOver($Graphics2D* g) {
 }
 
 void ScrollBarButtonPainter::paintForegroundPressed($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->path);
@@ -399,6 +402,7 @@ $Path2D* ScrollBarButtonPainter::decodePath5() {
 }
 
 $Paint* ScrollBarButtonPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -432,6 +436,7 @@ $Paint* ScrollBarButtonPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* ScrollBarButtonPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -449,6 +454,7 @@ $Paint* ScrollBarButtonPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* ScrollBarButtonPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -470,6 +476,7 @@ $Paint* ScrollBarButtonPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* ScrollBarButtonPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -503,6 +510,7 @@ $Paint* ScrollBarButtonPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* ScrollBarButtonPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -520,6 +528,7 @@ $Paint* ScrollBarButtonPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* ScrollBarButtonPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -541,6 +550,7 @@ $Paint* ScrollBarButtonPainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* ScrollBarButtonPainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -574,6 +584,7 @@ $Paint* ScrollBarButtonPainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* ScrollBarButtonPainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

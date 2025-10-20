@@ -93,6 +93,7 @@ void BasicFileChooserUI$NewFolderAction::init$($BasicFileChooserUI* this$0) {
 }
 
 void BasicFileChooserUI$NewFolderAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->readOnly) {
 		return;
 	}

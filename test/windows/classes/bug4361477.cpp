@@ -154,6 +154,7 @@ void bug4361477::init$() {
 
 void bug4361477::main($StringArray* args) {
 	$init(bug4361477);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -185,6 +186,7 @@ void bug4361477::main($StringArray* args) {
 
 void bug4361477::createAndShowUI() {
 	$init(bug4361477);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug4361477::frame, $new($JFrame));
 	$assignStatic(bug4361477::tabbedPane, $new($JTabbedPane));
 	$nc(bug4361477::tabbedPane)->add("Tab0"_s, static_cast<$Component*>($$new($JPanel)));

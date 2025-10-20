@@ -112,6 +112,7 @@ void HeadlessJList::init$() {
 }
 
 void HeadlessJList::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JList, l, $new($JList));
 	l->getAccessibleContext();
 	l->isFocusTraversable();

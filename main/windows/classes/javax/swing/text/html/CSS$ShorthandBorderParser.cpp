@@ -86,6 +86,7 @@ void CSS$ShorthandBorderParser::init$() {
 
 void CSS$ShorthandBorderParser::parseShorthandBorder($MutableAttributeSet* attributes, $CSS$Attribute* key, $String* value) {
 	$init(CSS$ShorthandBorderParser);
+	$useLocalCurrentObjectStackCache();
 	$init($CSSBorder);
 	$var($ObjectArray, parts, $new($ObjectArray, $nc($CSSBorder::PARSERS)->length));
 	$var($StringArray, strings, $CSS::parseStrings(value));

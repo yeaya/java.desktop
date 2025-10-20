@@ -81,6 +81,7 @@ void WindowsInternalFrameTitlePane$WindowsPropertyChangeHandler::init$($WindowsI
 }
 
 void WindowsInternalFrameTitlePane$WindowsPropertyChangeHandler::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prop, $nc(evt)->getPropertyName());
 	$init($JInternalFrame);
 	if ($nc($JInternalFrame::FRAME_ICON_PROPERTY)->equals(prop) && this->this$0->systemLabel != nullptr) {

@@ -237,6 +237,7 @@ $ImageIO$CacheInfo* ImageIO::getCacheInfo() {
 	$load(ImageIO);
 	$synchronized(class$) {
 		$init(ImageIO);
+		$useLocalCurrentObjectStackCache();
 		$var($AppContext, context, $AppContext::getAppContext());
 		$load($ImageIO$CacheInfo);
 		$var($ImageIO$CacheInfo, info, $cast($ImageIO$CacheInfo, $nc(context)->get($ImageIO$CacheInfo::class$)));
@@ -257,6 +258,7 @@ $String* ImageIO::getTempDir() {
 
 bool ImageIO::hasCachePermission() {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	$var($Boolean, hasPermission, $nc($(getCacheInfo()))->getHasPermission());
 	if (hasPermission != nullptr) {
 		return hasPermission->booleanValue();
@@ -308,6 +310,7 @@ bool ImageIO::getUseCache() {
 
 void ImageIO::setCacheDirectory($File* cacheDirectory) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if ((cacheDirectory != nullptr) && !(cacheDirectory->isDirectory())) {
 		$throwNew($IllegalArgumentException, "Not a directory!"_s);
 	}
@@ -322,6 +325,7 @@ $File* ImageIO::getCacheDirectory() {
 
 $ImageInputStream* ImageIO::createImageInputStream(Object$* input) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (input == nullptr) {
 		$throwNew($IllegalArgumentException, "input == null!"_s);
 	}
@@ -351,6 +355,7 @@ $ImageInputStream* ImageIO::createImageInputStream(Object$* input) {
 
 $ImageOutputStream* ImageIO::createImageOutputStream(Object$* output) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (output == nullptr) {
 		$throwNew($IllegalArgumentException, "output == null!"_s);
 	}
@@ -380,6 +385,7 @@ $ImageOutputStream* ImageIO::createImageOutputStream(Object$* output) {
 
 $StringArray* ImageIO::getReaderWriterInfo($Class* spiClass, $ImageIO$SpiInfo* spiInfo) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	$var($Iterator, iter, nullptr);
 	try {
 		$assign(iter, $nc(ImageIO::theRegistry)->getServiceProviders(spiClass, true));
@@ -421,6 +427,7 @@ $StringArray* ImageIO::getReaderFileSuffixes() {
 
 $Iterator* ImageIO::getImageReaders(Object$* input) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (input == nullptr) {
 		$throwNew($IllegalArgumentException, "input == null!"_s);
 	}
@@ -437,6 +444,7 @@ $Iterator* ImageIO::getImageReaders(Object$* input) {
 
 $Iterator* ImageIO::getImageReadersByFormatName($String* formatName) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (formatName == nullptr) {
 		$throwNew($IllegalArgumentException, "formatName == null!"_s);
 	}
@@ -453,6 +461,7 @@ $Iterator* ImageIO::getImageReadersByFormatName($String* formatName) {
 
 $Iterator* ImageIO::getImageReadersBySuffix($String* fileSuffix) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (fileSuffix == nullptr) {
 		$throwNew($IllegalArgumentException, "fileSuffix == null!"_s);
 	}
@@ -469,6 +478,7 @@ $Iterator* ImageIO::getImageReadersBySuffix($String* fileSuffix) {
 
 $Iterator* ImageIO::getImageReadersByMIMEType($String* MIMEType) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (MIMEType == nullptr) {
 		$throwNew($IllegalArgumentException, "MIMEType == null!"_s);
 	}
@@ -516,6 +526,7 @@ bool ImageIO::contains($StringArray* names, $String* name) {
 
 $Iterator* ImageIO::getImageWritersByFormatName($String* formatName) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (formatName == nullptr) {
 		$throwNew($IllegalArgumentException, "formatName == null!"_s);
 	}
@@ -532,6 +543,7 @@ $Iterator* ImageIO::getImageWritersByFormatName($String* formatName) {
 
 $Iterator* ImageIO::getImageWritersBySuffix($String* fileSuffix) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (fileSuffix == nullptr) {
 		$throwNew($IllegalArgumentException, "fileSuffix == null!"_s);
 	}
@@ -548,6 +560,7 @@ $Iterator* ImageIO::getImageWritersBySuffix($String* fileSuffix) {
 
 $Iterator* ImageIO::getImageWritersByMIMEType($String* MIMEType) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (MIMEType == nullptr) {
 		$throwNew($IllegalArgumentException, "MIMEType == null!"_s);
 	}
@@ -564,6 +577,7 @@ $Iterator* ImageIO::getImageWritersByMIMEType($String* MIMEType) {
 
 $ImageWriter* ImageIO::getImageWriter($ImageReader* reader) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (reader == nullptr) {
 		$throwNew($IllegalArgumentException, "reader == null!"_s);
@@ -617,6 +631,7 @@ $ImageWriter* ImageIO::getImageWriter($ImageReader* reader) {
 
 $ImageReader* ImageIO::getImageReader($ImageWriter* writer) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (writer == nullptr) {
 		$throwNew($IllegalArgumentException, "writer == null!"_s);
@@ -670,6 +685,7 @@ $ImageReader* ImageIO::getImageReader($ImageWriter* writer) {
 
 $Iterator* ImageIO::getImageWriters($ImageTypeSpecifier* type, $String* formatName) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (type == nullptr) {
 		$throwNew($IllegalArgumentException, "type == null!"_s);
 	}
@@ -689,6 +705,7 @@ $Iterator* ImageIO::getImageWriters($ImageTypeSpecifier* type, $String* formatNa
 
 $Iterator* ImageIO::getImageTranscoders($ImageReader* reader, $ImageWriter* writer) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (reader == nullptr) {
 		$throwNew($IllegalArgumentException, "reader == null!"_s);
 	}
@@ -711,6 +728,7 @@ $Iterator* ImageIO::getImageTranscoders($ImageReader* reader, $ImageWriter* writ
 
 $BufferedImage* ImageIO::read($File* input) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (input == nullptr) {
 		$throwNew($IllegalArgumentException, "input == null!"_s);
 	}
@@ -730,6 +748,7 @@ $BufferedImage* ImageIO::read($File* input) {
 
 $BufferedImage* ImageIO::read($InputStream* input) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (input == nullptr) {
 		$throwNew($IllegalArgumentException, "input == null!"_s);
 	}
@@ -746,6 +765,7 @@ $BufferedImage* ImageIO::read($InputStream* input) {
 
 $BufferedImage* ImageIO::read($URL* input) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (input == nullptr) {
 		$throwNew($IllegalArgumentException, "input == null!"_s);
 	}
@@ -783,6 +803,7 @@ $BufferedImage* ImageIO::read($URL* input) {
 
 $BufferedImage* ImageIO::read($ImageInputStream* stream) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (stream == nullptr) {
 		$throwNew($IllegalArgumentException, "stream == null!"_s);
 	}
@@ -827,6 +848,7 @@ bool ImageIO::write($RenderedImage* im, $String* formatName, $ImageOutputStream*
 
 bool ImageIO::write($RenderedImage* im, $String* formatName, $File* output) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (output == nullptr) {
 		$throwNew($IllegalArgumentException, "output == null!"_s);
 	}
@@ -864,6 +886,7 @@ bool ImageIO::write($RenderedImage* im, $String* formatName, $File* output) {
 
 bool ImageIO::write($RenderedImage* im, $String* formatName, $OutputStream* output) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	if (output == nullptr) {
 		$throwNew($IllegalArgumentException, "output == null!"_s);
 	}
@@ -896,6 +919,7 @@ bool ImageIO::write($RenderedImage* im, $String* formatName, $OutputStream* outp
 
 $ImageWriter* ImageIO::getWriter($RenderedImage* im, $String* formatName) {
 	$init(ImageIO);
+	$useLocalCurrentObjectStackCache();
 	$var($ImageTypeSpecifier, type, $ImageTypeSpecifier::createFromRenderedImage(im));
 	$var($Iterator, iter, getImageWriters(type, formatName));
 	if ($nc(iter)->hasNext()) {
@@ -929,6 +953,7 @@ bool ImageIO::doWrite($RenderedImage* im, $ImageWriter* writer, $ImageOutputStre
 }
 
 void clinit$ImageIO($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$assignStatic(ImageIO::theRegistry, $IIORegistry::getDefaultInstance());
 	{

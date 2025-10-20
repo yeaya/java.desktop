@@ -80,6 +80,7 @@ $Color* CSS$ColorValue::getValue() {
 }
 
 $Object* CSS$ColorValue::parseCssValue($String* value) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, c, $CSS::stringToColor(value));
 	if (c != nullptr) {
 		$var(CSS$ColorValue, cv, $new(CSS$ColorValue));

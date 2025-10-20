@@ -255,6 +255,7 @@ void BasicListTest::init$() {
 }
 
 void BasicListTest::initComponents() {
+	$useLocalCurrentObjectStackCache();
 	$init(BasicListTest);
 	$assignStatic(BasicListTest::f, $new($JFrame));
 	$assignStatic(BasicListTest::jScrollPane1, $new($JScrollPane));
@@ -270,6 +271,7 @@ void BasicListTest::initComponents() {
 }
 
 void BasicListTest::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 	} catch ($ClassNotFoundException&) {
@@ -288,6 +290,7 @@ void BasicListTest::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 }
 
 void BasicListTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;

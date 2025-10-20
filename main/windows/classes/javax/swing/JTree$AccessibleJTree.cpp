@@ -178,6 +178,7 @@ void JTree$AccessibleJTree::init$($JTree* this$0) {
 }
 
 void JTree$AccessibleJTree::valueChanged($TreeSelectionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($AccessibleContext);
 	$var($String, var$0, $AccessibleContext::ACCESSIBLE_SELECTION_PROPERTY);
 	$var($Object, var$1, $of($Boolean::valueOf(false)));
@@ -185,6 +186,7 @@ void JTree$AccessibleJTree::valueChanged($TreeSelectionEvent* e) {
 }
 
 void JTree$AccessibleJTree::fireVisibleDataPropertyChange() {
+	$useLocalCurrentObjectStackCache();
 	$init($AccessibleContext);
 	$var($String, var$0, $AccessibleContext::ACCESSIBLE_VISIBLE_DATA_PROPERTY);
 	$var($Object, var$1, $of($Boolean::valueOf(false)));
@@ -208,6 +210,7 @@ void JTree$AccessibleJTree::treeStructureChanged($TreeModelEvent* e) {
 }
 
 void JTree$AccessibleJTree::treeCollapsed($TreeExpansionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	fireVisibleDataPropertyChange();
 	$var($TreePath, path, $nc(e)->getPath());
 	if (path != nullptr) {
@@ -220,6 +223,7 @@ void JTree$AccessibleJTree::treeCollapsed($TreeExpansionEvent* e) {
 }
 
 void JTree$AccessibleJTree::treeExpanded($TreeExpansionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	fireVisibleDataPropertyChange();
 	$var($TreePath, path, $nc(e)->getPath());
 	if (path != nullptr) {
@@ -232,6 +236,7 @@ void JTree$AccessibleJTree::treeExpanded($TreeExpansionEvent* e) {
 }
 
 void JTree$AccessibleJTree::fireActiveDescendantPropertyChange($TreePath* oldPath, $TreePath* newPath) {
+	$useLocalCurrentObjectStackCache();
 	if (oldPath != newPath) {
 		$var($Accessible, oldLSA, (oldPath != nullptr) ? static_cast<$Accessible*>($new($JTree$AccessibleJTree$AccessibleJTreeNode, this, this->this$0, oldPath, nullptr)) : ($Accessible*)nullptr);
 		$var($Accessible, newLSA, (newPath != nullptr) ? static_cast<$Accessible*>($new($JTree$AccessibleJTree$AccessibleJTreeNode, this, this->this$0, newPath, nullptr)) : ($Accessible*)nullptr);
@@ -250,6 +255,7 @@ $AccessibleContext* JTree$AccessibleJTree::getCurrentAccessibleContext() {
 }
 
 $Component* JTree$AccessibleJTree::getCurrentComponent() {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeModel, model, this->this$0->getModel());
 	if (model == nullptr) {
 		return nullptr;
@@ -289,6 +295,7 @@ $Accessible* JTree$AccessibleJTree::getAccessibleAt($Point* p) {
 }
 
 int32_t JTree$AccessibleJTree::getAccessibleChildrenCount() {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeModel, model, this->this$0->getModel());
 	if (model == nullptr) {
 		return 0;
@@ -304,6 +311,7 @@ int32_t JTree$AccessibleJTree::getAccessibleChildrenCount() {
 }
 
 $Accessible* JTree$AccessibleJTree::getAccessibleChild(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeModel, model, this->this$0->getModel());
 	if (model == nullptr) {
 		return nullptr;
@@ -346,6 +354,7 @@ $AccessibleSelection* JTree$AccessibleJTree::getAccessibleSelection() {
 }
 
 int32_t JTree$AccessibleJTree::getAccessibleSelectionCount() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, rootPath, $new($ObjectArray, 1));
 	rootPath->set(0, $($nc(this->this$0->treeModel)->getRoot()));
 	if (rootPath->get(0) == nullptr) {
@@ -360,6 +369,7 @@ int32_t JTree$AccessibleJTree::getAccessibleSelectionCount() {
 }
 
 $Accessible* JTree$AccessibleJTree::getAccessibleSelection(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (i == 0) {
 		$var($ObjectArray, rootPath, $new($ObjectArray, 1));
 		rootPath->set(0, $($nc(this->this$0->treeModel)->getRoot()));
@@ -375,6 +385,7 @@ $Accessible* JTree$AccessibleJTree::getAccessibleSelection(int32_t i) {
 }
 
 bool JTree$AccessibleJTree::isAccessibleChildSelected(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (i == 0) {
 		$var($ObjectArray, rootPath, $new($ObjectArray, 1));
 		rootPath->set(0, $($nc(this->this$0->treeModel)->getRoot()));
@@ -389,6 +400,7 @@ bool JTree$AccessibleJTree::isAccessibleChildSelected(int32_t i) {
 }
 
 void JTree$AccessibleJTree::addAccessibleSelection(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeModel, model, this->this$0->getModel());
 	if (model != nullptr) {
 		if (i == 0) {
@@ -403,6 +415,7 @@ void JTree$AccessibleJTree::addAccessibleSelection(int32_t i) {
 }
 
 void JTree$AccessibleJTree::removeAccessibleSelection(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeModel, model, this->this$0->getModel());
 	if (model != nullptr) {
 		if (i == 0) {
@@ -424,6 +437,7 @@ void JTree$AccessibleJTree::clearAccessibleSelection() {
 }
 
 void JTree$AccessibleJTree::selectAllAccessibleSelection() {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeModel, model, this->this$0->getModel());
 	if (model != nullptr) {
 		$var($ObjectArray, objPath, $new($ObjectArray, {$(model->getRoot())}));

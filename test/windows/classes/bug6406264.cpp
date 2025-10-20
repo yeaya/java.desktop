@@ -86,6 +86,7 @@ bug6406264* bug6406264::comboBox = nullptr;
 
 void bug6406264::main($StringArray* args) {
 	$init(bug6406264);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	$SwingUtilities::invokeAndWait($$new($bug6406264$1));
 	robot->waitForIdle();

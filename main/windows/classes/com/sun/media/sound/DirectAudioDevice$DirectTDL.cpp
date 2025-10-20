@@ -223,6 +223,7 @@ void DirectAudioDevice$DirectTDL::finalize() {
 }
 
 void DirectAudioDevice$DirectTDL::init$($DataLine$Info* info, $AudioFormat* format, int32_t bufferSize, $DirectAudioDevice* mixer) {
+	$useLocalCurrentObjectStackCache();
 	$var($DataLine$Info, var$0, info);
 	$var($DirectAudioDevice, var$1, mixer);
 	$var($AudioFormat, var$2, format);
@@ -232,6 +233,7 @@ void DirectAudioDevice$DirectTDL::init$($DataLine$Info* info, $AudioFormat* form
 }
 
 int32_t DirectAudioDevice$DirectTDL::read($bytes* b, int32_t off, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	this->flushing = false;
 	if (len == 0) {
 		return 0;

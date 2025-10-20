@@ -45,6 +45,7 @@ void accessibility_it::init$() {
 }
 
 $ObjectArray2* accessibility_it::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("active"_s),

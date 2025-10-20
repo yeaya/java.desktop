@@ -71,6 +71,7 @@ $Object* allocate$DrawGlyphListAA$TraceDrawGlyphListAA($Class* clazz) {
 }
 
 void DrawGlyphListAA$TraceDrawGlyphListAA::init$($DrawGlyphListAA* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, var$0, $nc(target)->getSourceType());
 	$var($CompositeType, var$1, target->getCompositeType());
 	$DrawGlyphListAA::init$(var$0, var$1, $(target->getDestType()));

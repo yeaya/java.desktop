@@ -101,6 +101,7 @@ void SoftLimiter::globalParameterControlChange($ints* slothpath, int64_t param, 
 }
 
 void SoftLimiter::processAudio() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(this->bufferL)->isSilent();
 	if (var$0 && (this->bufferR == nullptr || $nc(this->bufferR)->isSilent())) {
 		this->silentcounter += 1 / this->controlrate;

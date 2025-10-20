@@ -145,6 +145,7 @@ void LastNodeLowerHalfDrop::init$() {
 }
 
 void LastNodeLowerHalfDrop::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($LastNodeLowerHalfDrop$1));
 	$init(LastNodeLowerHalfDrop);
 	testCase(LastNodeLowerHalfDrop::b2, LastNodeLowerHalfDrop::a1, +0.4f);
@@ -165,6 +166,7 @@ void LastNodeLowerHalfDrop::cleanUp() {
 }
 
 void LastNodeLowerHalfDrop::testCase($DefaultMutableTreeNode* drag, $DefaultMutableTreeNode* drop, float shift) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->waitForIdle();
 	$SwingUtilities::invokeAndWait($$new($LastNodeLowerHalfDrop$3, drag, drop, shift));
@@ -180,6 +182,7 @@ void LastNodeLowerHalfDrop::testCase($DefaultMutableTreeNode* drag, $DefaultMuta
 }
 
 $JScrollPane* LastNodeLowerHalfDrop::getContent() {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(LastNodeLowerHalfDrop::jTree, $new($JTree, $(getTreeModel())));
 	$nc(LastNodeLowerHalfDrop::jTree)->setRootVisible(false);
 	$nc(LastNodeLowerHalfDrop::jTree)->setDragEnabled(true);
@@ -212,6 +215,7 @@ $TreeModel* LastNodeLowerHalfDrop::getTreeModel() {
 }
 
 void LastNodeLowerHalfDrop::expandTree($JTree* tree) {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultMutableTreeNode, root, $cast($DefaultMutableTreeNode, $nc($($nc(tree)->getModel()))->getRoot()));
 	$var($Enumeration, e, $nc(root)->breadthFirstEnumeration());
 	while ($nc(e)->hasMoreElements()) {

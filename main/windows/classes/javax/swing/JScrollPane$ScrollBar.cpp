@@ -121,6 +121,7 @@ void JScrollPane$ScrollBar::setUnitIncrement(int32_t unitIncrement) {
 }
 
 int32_t JScrollPane$ScrollBar::getUnitIncrement(int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	$var($JViewport, vp, this->this$0->getViewport());
 	if (!this->unitIncrementSet && (vp != nullptr) && ($instanceOf($Scrollable, $(vp->getView())))) {
 		$var($Scrollable, view, ($cast($Scrollable, vp->getView())));
@@ -138,6 +139,7 @@ void JScrollPane$ScrollBar::setBlockIncrement(int32_t blockIncrement) {
 }
 
 int32_t JScrollPane$ScrollBar::getBlockIncrement(int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	$var($JViewport, vp, this->this$0->getViewport());
 	if (this->blockIncrementSet || vp == nullptr) {
 		return $JScrollBar::getBlockIncrement(direction);

@@ -134,6 +134,7 @@ int32_t DefaultStyledDocument$ElementSpec::getLength() {
 }
 
 $String* DefaultStyledDocument$ElementSpec::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, tlbl, "??"_s);
 	$var($String, plbl, "??"_s);
 	switch (this->type) {

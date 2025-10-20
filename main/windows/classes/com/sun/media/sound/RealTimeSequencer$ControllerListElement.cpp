@@ -79,6 +79,7 @@ void RealTimeSequencer$ControllerListElement::init$($RealTimeSequencer* this$0, 
 }
 
 void RealTimeSequencer$ControllerListElement::addControllers($ints* c) {
+	$useLocalCurrentObjectStackCache();
 	if (c == nullptr) {
 		$set(this, controllers, $new($ints, 128));
 		for (int32_t i = 0; i < 128; ++i) {
@@ -112,6 +113,7 @@ void RealTimeSequencer$ControllerListElement::addControllers($ints* c) {
 }
 
 void RealTimeSequencer$ControllerListElement::removeControllers($ints* c) {
+	$useLocalCurrentObjectStackCache();
 	if (c == nullptr) {
 		$set(this, controllers, $new($ints, 0));
 	} else {

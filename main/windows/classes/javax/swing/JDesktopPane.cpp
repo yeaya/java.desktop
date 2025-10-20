@@ -313,11 +313,13 @@ $String* JDesktopPane::getUIClassID() {
 }
 
 $JInternalFrameArray* JDesktopPane::getAllFrames() {
+	$useLocalCurrentObjectStackCache();
 	return $fcast($JInternalFrameArray, $nc($(getAllFrames(this)))->toArray($$new($JInternalFrameArray, 0)));
 }
 
 $Collection* JDesktopPane::getAllFrames($Container* parent) {
 	$init(JDesktopPane);
+	$useLocalCurrentObjectStackCache();
 	int32_t i = 0;
 	int32_t count = 0;
 	$var($Collection, results, static_cast<$Collection*>(static_cast<$AbstractCollection*>(static_cast<$AbstractSet*>(static_cast<$HashSet*>($new($LinkedHashSet))))));
@@ -347,6 +349,7 @@ void JDesktopPane::setSelectedFrame($JInternalFrame* f) {
 }
 
 $JInternalFrameArray* JDesktopPane::getAllFramesInLayer(int32_t layer) {
+	$useLocalCurrentObjectStackCache();
 	$var($Collection, allFrames, getAllFrames(this));
 	$var($Iterator, iterator, $nc(allFrames)->iterator());
 	while ($nc(iterator)->hasNext()) {
@@ -358,6 +361,7 @@ $JInternalFrameArray* JDesktopPane::getAllFramesInLayer(int32_t layer) {
 }
 
 $List* JDesktopPane::getFrames() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, nullptr);
 	$var($Set, set, static_cast<$Set*>(static_cast<$AbstractSet*>($new($TreeSet))));
 	for (int32_t i = 0; i < getComponentCount(); ++i) {
@@ -429,6 +433,7 @@ void JDesktopPane::remove($Component* comp) {
 }
 
 $JInternalFrame* JDesktopPane::selectFrame(bool forward) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame, selectedFrame, getSelectedFrame());
 	$var($JInternalFrame, frameToSelect, getNextFrame(selectedFrame, forward));
 	if (frameToSelect == nullptr) {
@@ -479,6 +484,7 @@ void JDesktopPane::remove(int32_t index) {
 }
 
 void JDesktopPane::removeAll() {
+	$useLocalCurrentObjectStackCache();
 	if (this->componentOrderCheckingEnabled) {
 		int32_t count = getComponentCount();
 		for (int32_t i = 0; i < count; ++i) {
@@ -524,6 +530,7 @@ void JDesktopPane::setUIProperty($String* propertyName, Object$* value) {
 }
 
 $String* JDesktopPane::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, desktopManagerString, this->desktopManager != nullptr ? $nc($of(this->desktopManager))->toString() : ""_s);
 	return $str({$($JLayeredPane::paramString()), ",desktopManager="_s, desktopManagerString});
 }

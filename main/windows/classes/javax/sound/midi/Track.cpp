@@ -89,6 +89,7 @@ void Track::init$() {
 }
 
 bool Track::add($MidiEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	if (event == nullptr) {
 		return false;
 	}
@@ -154,6 +155,7 @@ bool Track::remove($MidiEvent* event) {
 }
 
 $MidiEvent* Track::get(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$synchronized(this->eventsList) {
 			return $cast($MidiEvent, $nc(this->eventsList)->get(index));

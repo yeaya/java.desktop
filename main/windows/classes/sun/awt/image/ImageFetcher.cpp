@@ -111,6 +111,7 @@ void ImageFetcher::init$() {
 }
 
 void ImageFetcher::init$($ThreadGroup* threadGroup, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$Thread::init$(threadGroup, nullptr, $$str({"Image Fetcher "_s, $$str(index)}), 0, false);
 	setDaemon(true);
 }
@@ -165,6 +166,7 @@ bool ImageFetcher::amFetcher() {
 
 $ImageFetchable* ImageFetcher::nextImage() {
 	$init(ImageFetcher);
+	$useLocalCurrentObjectStackCache();
 	$var($FetcherInfo, info, $FetcherInfo::getFetcherInfo());
 	$synchronized($nc(info)->waitList) {
 		$var($ImageFetchable, src, nullptr);
@@ -210,6 +212,7 @@ $ImageFetchable* ImageFetcher::nextImage() {
 }
 
 void ImageFetcher::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($FetcherInfo, info, $FetcherInfo::getFetcherInfo());
 	{
 		$var($Throwable, var$0, nullptr);
@@ -240,6 +243,7 @@ void ImageFetcher::run() {
 }
 
 void ImageFetcher::fetchloop() {
+	$useLocalCurrentObjectStackCache();
 	$var($Thread, me, $Thread::currentThread());
 	while (isFetcher(me)) {
 		$Thread::interrupted();
@@ -262,6 +266,7 @@ void ImageFetcher::fetchloop() {
 
 void ImageFetcher::startingAnimation() {
 	$init(ImageFetcher);
+	$useLocalCurrentObjectStackCache();
 	$var($FetcherInfo, info, $FetcherInfo::getFetcherInfo());
 	$var($Thread, me, $Thread::currentThread());
 	$synchronized($nc(info)->waitList) {
@@ -283,6 +288,7 @@ void ImageFetcher::startingAnimation() {
 
 void ImageFetcher::stoppingAnimation($Thread* me) {
 	$init(ImageFetcher);
+	$useLocalCurrentObjectStackCache();
 	$var($FetcherInfo, info, $FetcherInfo::getFetcherInfo());
 	$synchronized($nc(info)->waitList) {
 		int32_t index = -1;
@@ -305,6 +311,7 @@ void ImageFetcher::stoppingAnimation($Thread* me) {
 
 void ImageFetcher::createFetchers($FetcherInfo* info) {
 	$init(ImageFetcher);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var($ThreadGroup, threadGroup, $nc(appContext)->getThreadGroup());

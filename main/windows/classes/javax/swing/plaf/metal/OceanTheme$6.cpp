@@ -79,6 +79,7 @@ void OceanTheme$6::init$($OceanTheme* this$0) {
 }
 
 $Object* OceanTheme$6::createValue($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, var$0, this->this$0->getHastenedIcon("icons/ocean/collapsed.gif"_s, table));
 	return $of($new($OceanTheme$COIcon, var$0, $(this->this$0->getHastenedIcon("icons/ocean/collapsed-rtl.gif"_s, table))));
 }

@@ -87,6 +87,7 @@ $Object* allocate$SlidingSpinner($Class* clazz) {
 }
 
 void SlidingSpinner::init$($ColorPanel* panel, $JComponent* label) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, model, $new($SpinnerNumberModel));
 	$set(this, slider, $new($JSlider));
 	$set(this, spinner, $new($JSpinner, this->model));
@@ -127,6 +128,7 @@ void SlidingSpinner::setValue(float value) {
 }
 
 void SlidingSpinner::setRange(int32_t min, int32_t max) {
+	$useLocalCurrentObjectStackCache();
 	this->internal = true;
 	$nc(this->slider)->setMinimum(min);
 	$nc(this->slider)->setMaximum(max);
@@ -146,6 +148,7 @@ bool SlidingSpinner::isVisible() {
 }
 
 void SlidingSpinner::stateChanged($ChangeEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->internal) {
 		if ($equals(this->spinner, $nc(event)->getSource())) {
 			$var($Object, value, $nc(this->spinner)->getValue());

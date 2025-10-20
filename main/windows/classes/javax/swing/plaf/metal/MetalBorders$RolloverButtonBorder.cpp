@@ -67,6 +67,7 @@ void MetalBorders$RolloverButtonBorder::init$() {
 }
 
 void MetalBorders$RolloverButtonBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	$var($ButtonModel, model, $nc(b)->getModel());
 	bool var$0 = $nc(model)->isRollover();

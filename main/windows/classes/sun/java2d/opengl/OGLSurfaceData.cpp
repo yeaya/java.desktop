@@ -364,6 +364,7 @@ int32_t OGLSurfaceData::getTextureID(int64_t pData) {
 }
 
 void OGLSurfaceData::init$($OGLGraphicsConfig* gc, $ColorModel* cm, int32_t type) {
+	$useLocalCurrentObjectStackCache();
 	$SurfaceData::init$($(getCustomSurfaceType(type)), cm);
 	$set(this, graphicsConfig, gc);
 	this->type = type;
@@ -428,6 +429,7 @@ void OGLSurfaceData::initSurfaceNow(int32_t width, int32_t height) {
 }
 
 void OGLSurfaceData::initSurface(int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($OGLRenderQueue, rq, $OGLRenderQueue::getInstance());
 	$nc(rq)->lock();
 	{
@@ -506,6 +508,7 @@ bool OGLSurfaceData::canHandleComposite($Composite* c) {
 }
 
 void OGLSurfaceData::validatePipe($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	$var($TextPipe, textpipe, nullptr);
 	bool validated = false;
 	if (($nc(sg2d)->compositeState <= $SunGraphics2D::COMP_ISCOPY && sg2d->paintState <= $SunGraphics2D::PAINT_ALPHACOLOR) || ($nc(sg2d)->compositeState == $SunGraphics2D::COMP_ALPHA && sg2d->paintState <= $SunGraphics2D::PAINT_ALPHACOLOR && ($nc(($cast($AlphaComposite, sg2d->composite)))->getRule() == $AlphaComposite::SRC_OVER)) || ($nc(sg2d)->compositeState == $SunGraphics2D::COMP_XOR && sg2d->paintState <= $SunGraphics2D::PAINT_ALPHACOLOR)) {
@@ -583,6 +586,7 @@ bool OGLSurfaceData::copyArea($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_
 }
 
 void OGLSurfaceData::flush() {
+	$useLocalCurrentObjectStackCache();
 	invalidate();
 	$var($OGLRenderQueue, rq, $OGLRenderQueue::getInstance());
 	$nc(rq)->lock();
@@ -608,6 +612,7 @@ void OGLSurfaceData::flush() {
 
 void OGLSurfaceData::dispose(int64_t pData, $OGLGraphicsConfig* gc) {
 	$init(OGLSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	$var($OGLRenderQueue, rq, $OGLRenderQueue::getInstance());
 	$nc(rq)->lock();
 	{
@@ -632,6 +637,7 @@ void OGLSurfaceData::dispose(int64_t pData, $OGLGraphicsConfig* gc) {
 
 void OGLSurfaceData::swapBuffers(int64_t window) {
 	$init(OGLSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	$var($OGLRenderQueue, rq, $OGLRenderQueue::getInstance());
 	$nc(rq)->lock();
 	{
@@ -662,6 +668,7 @@ bool OGLSurfaceData::isTexRectAvailable() {
 }
 
 $Rectangle* OGLSurfaceData::getNativeBounds() {
+	$useLocalCurrentObjectStackCache();
 	$var($OGLRenderQueue, rq, $OGLRenderQueue::getInstance());
 	$nc(rq)->lock();
 	{
@@ -692,6 +699,7 @@ bool OGLSurfaceData::isOnScreen() {
 }
 
 void clinit$OGLSurfaceData($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(OGLSurfaceData::DESC_OPENGL_SURFACE, "OpenGL Surface"_s);
 	$assignStatic(OGLSurfaceData::DESC_OPENGL_SURFACE_RTT, "OpenGL Surface (render-to-texture)"_s);
 	$assignStatic(OGLSurfaceData::DESC_OPENGL_TEXTURE, "OpenGL Texture"_s);

@@ -159,6 +159,7 @@ char16_t Segment::previous() {
 }
 
 char16_t Segment::setIndex(int32_t position) {
+	$useLocalCurrentObjectStackCache();
 	int32_t end = this->offset + this->count;
 	if ((position < this->offset) || (position > end)) {
 		$throwNew($IllegalArgumentException, $$str({"bad position: "_s, $$str(position)}));
@@ -211,6 +212,7 @@ $CharSequence* Segment::subSequence(int32_t start, int32_t end) {
 }
 
 $Object* Segment::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, o, nullptr);
 	try {
 		$assign(o, $CharacterIterator::clone());

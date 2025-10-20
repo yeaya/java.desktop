@@ -161,6 +161,7 @@ $String* MenuItem$AccessibleAWTMenuItem::getAccessibleActionDescription(int32_t 
 }
 
 bool MenuItem$AccessibleAWTMenuItem::doAccessibleAction(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (i == 0) {
 		$var($Object, var$0, $of(this->this$0));
 		$var($String, var$1, this->this$0->getActionCommand());

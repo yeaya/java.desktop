@@ -191,6 +191,7 @@ void SynthProgressBarUI::installDefaults() {
 }
 
 void SynthProgressBarUI::updateStyle($JProgressBar* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -234,6 +235,7 @@ int32_t SynthProgressBarUI::getComponentState($JComponent* c) {
 }
 
 int32_t SynthProgressBarUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$BasicProgressBarUI::getBaseline(c, width, height);
 	bool var$0 = $nc(this->progressBar)->isStringPainted();
 	if (var$0 && $nc(this->progressBar)->getOrientation() == $JProgressBar::HORIZONTAL) {
@@ -268,6 +270,7 @@ void SynthProgressBarUI::setAnimationIndex(int32_t newValue) {
 }
 
 void SynthProgressBarUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -284,6 +287,7 @@ void SynthProgressBarUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void SynthProgressBarUI::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($JProgressBar, pBar, $cast($JProgressBar, $nc(context)->getComponent()));
 	int32_t x = 0;
 	int32_t y = 0;
@@ -343,6 +347,7 @@ void SynthProgressBarUI::paint($SynthContext* context, $Graphics* g) {
 }
 
 void SynthProgressBarUI::paintText($SynthContext* context, $Graphics* g, $String* title) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->progressBar)->isStringPainted()) {
 		$var($SynthStyle, style, $nc(context)->getStyle());
 		$var($Font, font, $nc(style)->getFont(context));
@@ -393,6 +398,7 @@ void SynthProgressBarUI::paintBorder($SynthContext* context, $Graphics* g, int32
 }
 
 void SynthProgressBarUI::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $SynthLookAndFeel::shouldUpdateStyle(e);
 	if (var$0 || "indeterminate"_s->equals($($nc(e)->getPropertyName()))) {
 		updateStyle($cast($JProgressBar, $($nc(e)->getSource())));
@@ -400,6 +406,7 @@ void SynthProgressBarUI::propertyChange($PropertyChangeEvent* e) {
 }
 
 $Dimension* SynthProgressBarUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, nullptr);
 	$var($Insets, border, $nc(this->progressBar)->getInsets());
 	$var($FontMetrics, fontSizer, $nc(this->progressBar)->getFontMetrics($($nc(this->progressBar)->getFont())));

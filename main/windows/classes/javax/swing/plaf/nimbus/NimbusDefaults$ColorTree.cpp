@@ -93,6 +93,7 @@ $Color* NimbusDefaults$ColorTree::getColor($String* uin) {
 }
 
 void NimbusDefaults$ColorTree::addColor($String* uin, $Color* color) {
+	$useLocalCurrentObjectStackCache();
 	$var($NimbusDefaults$ColorTree$Node, parent, getParentNode(color));
 	$var($NimbusDefaults$ColorTree$Node, node, $new($NimbusDefaults$ColorTree$Node, this, color, parent));
 	$nc($nc(parent)->children)->add(node);
@@ -102,6 +103,7 @@ void NimbusDefaults$ColorTree::addColor($String* uin, $Color* color) {
 }
 
 $NimbusDefaults$ColorTree$Node* NimbusDefaults$ColorTree::getParentNode($Color* color) {
+	$useLocalCurrentObjectStackCache();
 	$var($NimbusDefaults$ColorTree$Node, parent, this->root);
 	if ($instanceOf($DerivedColor, color)) {
 		$var($String, parentUin, $nc(($cast($DerivedColor, color)))->getUiDefaultParentName());
@@ -118,6 +120,7 @@ void NimbusDefaults$ColorTree::update() {
 }
 
 void NimbusDefaults$ColorTree::propertyChange($PropertyChangeEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(ev)->getPropertyName());
 	$var($NimbusDefaults$ColorTree$Node, node, $cast($NimbusDefaults$ColorTree$Node, $nc(this->nodes)->get(name)));
 	if (node != nullptr) {

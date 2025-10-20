@@ -127,6 +127,7 @@ void LegacyGlueFocusTraversalPolicy::unsetNextFocusableComponent($Component* lef
 }
 
 $Component* LegacyGlueFocusTraversalPolicy::getComponentAfter($Container* focusCycleRoot, $Component* aComponent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, hardCoded, aComponent);
 	$var($Component, prevHardCoded, nullptr);
 	$var($HashSet, sanity, $new($HashSet));
@@ -151,6 +152,7 @@ $Component* LegacyGlueFocusTraversalPolicy::getComponentAfter($Container* focusC
 }
 
 $Component* LegacyGlueFocusTraversalPolicy::getComponentBefore($Container* focusCycleRoot, $Component* aComponent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, hardCoded, aComponent);
 	$var($Component, prevHardCoded, nullptr);
 	$var($HashSet, sanity, $new($HashSet));
@@ -241,6 +243,7 @@ void LegacyGlueFocusTraversalPolicy::writeObject($ObjectOutputStream* out) {
 }
 
 void LegacyGlueFocusTraversalPolicy::readObject($ObjectInputStream* in) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(in)->readFields());
 	$var($HashMap, newForwardMap, $cast($HashMap, $nc(f)->get("forwardMap"_s, ($Object*)nullptr)));
 	if (newForwardMap == nullptr) {

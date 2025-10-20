@@ -75,6 +75,7 @@ void bug6342301::init$() {
 }
 
 void bug6342301::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6342301);
 	$assignStatic(bug6342301::tempDir, $System::getProperty("java.io.tmpdir"_s));
 	if ($nc(bug6342301::tempDir)->length() == 0) {

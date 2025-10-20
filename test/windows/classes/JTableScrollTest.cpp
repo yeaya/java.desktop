@@ -273,6 +273,7 @@ void JTableScrollTest::main($StringArray* args) {
 
 void JTableScrollTest::createTable() {
 	$init(JTableScrollTest);
+	$useLocalCurrentObjectStackCache();
 	$var($StringArray, names, $new($StringArray, {
 		$$new($String, "first_name"_s),
 		$$new($String, "last_name"_s),
@@ -559,6 +560,7 @@ void JTableScrollTest::createTable() {
 
 void JTableScrollTest::doTest($Runnable* action) {
 	$init(JTableScrollTest);
+	$useLocalCurrentObjectStackCache();
 	$var($String, description, "JTable with rows will be displayed along with scrollbar.\nScroll the table. Verify no arifacts are shown and rows.\n are correctly displayed."_s);
 	$var($JDialog, dialog, $new($JDialog));
 	dialog->setTitle("ScrollArtifactTest "_s);

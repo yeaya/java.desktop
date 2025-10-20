@@ -86,6 +86,7 @@ void WButtonPeer$1::init$($WButtonPeer* this$0, int64_t val$when, int32_t val$mo
 }
 
 void WButtonPeer$1::run() {
+	$useLocalCurrentObjectStackCache();
 	this->this$0->postEvent($$new($ActionEvent, this->this$0->target, $ActionEvent::ACTION_PERFORMED, $($nc(($cast($Button, this->this$0->target)))->getActionCommand()), this->val$when, this->val$modifiers));
 }
 

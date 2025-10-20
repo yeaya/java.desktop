@@ -280,6 +280,7 @@ $Object* allocate$GUIUndFrame($Class* clazz) {
 }
 
 void GUIUndFrame::init$() {
+	$useLocalCurrentObjectStackCache();
 	$Frame::init$();
 	$set(this, jframe1, $new($JFrame));
 	$nc($($nc(this->jframe1)->getContentPane()))->setLayout($$new($FlowLayout));

@@ -125,6 +125,7 @@ void WCheckboxMenuItemPeer::init$($CheckboxMenuItem* target) {
 }
 
 void WCheckboxMenuItemPeer::handleAction(bool state) {
+	$useLocalCurrentObjectStackCache();
 	$var($CheckboxMenuItem, target, $cast($CheckboxMenuItem, this->target));
 	$WToolkit::executeOnEventHandlerThread(target, $$new($WCheckboxMenuItemPeer$1, this, target, state));
 }

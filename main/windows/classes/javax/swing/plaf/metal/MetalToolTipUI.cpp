@@ -125,6 +125,7 @@ $ComponentUI* MetalToolTipUI::createUI($JComponent* c) {
 }
 
 void MetalToolTipUI::installUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$BasicToolTipUI::installUI(c);
 	$set(this, tip, $cast($JToolTip, c));
 	$var($Font, f, $nc(c)->getFont());
@@ -143,6 +144,7 @@ void MetalToolTipUI::uninstallUI($JComponent* c) {
 }
 
 void MetalToolTipUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JToolTip, tip, $cast($JToolTip, c));
 	$var($Font, font, $nc(c)->getFont());
 	$var($FontMetrics, metrics, $SwingUtilities2::getFontMetrics(c, g, font));
@@ -183,6 +185,7 @@ int32_t MetalToolTipUI::calcAccelSpacing($JComponent* c, $FontMetrics* fm, $Stri
 }
 
 $Dimension* MetalToolTipUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, $BasicToolTipUI::getPreferredSize(c));
 	$var($String, key, getAcceleratorString($cast($JToolTip, c)));
 	if (!$nc(key)->isEmpty()) {
@@ -204,6 +207,7 @@ $String* MetalToolTipUI::getAcceleratorString($JToolTip* tip) {
 }
 
 $String* MetalToolTipUI::getAcceleratorString() {
+	$useLocalCurrentObjectStackCache();
 	if (this->tip == nullptr || isAcceleratorHidden()) {
 		return ""_s;
 	}

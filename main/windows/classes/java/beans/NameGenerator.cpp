@@ -69,6 +69,7 @@ void NameGenerator::clear() {
 }
 
 $String* NameGenerator::unqualifiedClassName($Class* type) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(type)->isArray()) {
 		return $str({$(unqualifiedClassName(type->getComponentType())), "Array"_s});
 	}
@@ -77,6 +78,7 @@ $String* NameGenerator::unqualifiedClassName($Class* type) {
 }
 
 $String* NameGenerator::capitalize($String* name) {
+	$useLocalCurrentObjectStackCache();
 	if (name == nullptr || $nc(name)->length() == 0) {
 		return name;
 	}
@@ -86,6 +88,7 @@ $String* NameGenerator::capitalize($String* name) {
 }
 
 $String* NameGenerator::instanceName(Object$* instance) {
+	$useLocalCurrentObjectStackCache();
 	if (instance == nullptr) {
 		return "null"_s;
 	}

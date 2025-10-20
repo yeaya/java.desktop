@@ -178,6 +178,7 @@ void AbstractColorChooserPanel::paint($Graphics* g) {
 }
 
 int32_t AbstractColorChooserPanel::getInt(Object$* key, int32_t defaultValue) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, $UIManager::get(key, $(getLocale())));
 	if ($instanceOf($Integer, value)) {
 		return $nc(($cast($Integer, value)))->intValue();

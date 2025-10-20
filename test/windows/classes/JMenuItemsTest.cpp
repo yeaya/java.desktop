@@ -164,6 +164,7 @@ void JMenuItemsTest::dispose() {
 }
 
 void JMenuItemsTest::testDisabledStateOfJMenu() {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, rect, $nc(JMenuItemsTest::disabledMenu)->getBounds());
 	$var($BufferedImage, image, $new($BufferedImage, $nc(rect)->width, rect->height, $BufferedImage::TYPE_INT_ARGB));
 	$nc(JMenuItemsTest::disabledMenu)->paint($(image->getGraphics()));
@@ -179,6 +180,7 @@ void JMenuItemsTest::testDisabledStateOfJMenu() {
 }
 
 void JMenuItemsTest::testDisabledStateOfJMenuItem() {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, rect, $nc(JMenuItemsTest::disabledMenuItem)->getBounds());
 	$var($BufferedImage, image, $new($BufferedImage, $nc(rect)->width, rect->height, $BufferedImage::TYPE_INT_ARGB));
 	$nc(JMenuItemsTest::disabledMenuItem)->paint($(image->getGraphics()));
@@ -199,6 +201,7 @@ void JMenuItemsTest::main($StringArray* args) {
 }
 
 void JMenuItemsTest::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var(JMenuItemsTest, obj, $new(JMenuItemsTest));
 		obj->testDisabledStateOfJMenu();

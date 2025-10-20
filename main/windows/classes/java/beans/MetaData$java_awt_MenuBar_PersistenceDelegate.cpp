@@ -63,6 +63,7 @@ void MetaData$java_awt_MenuBar_PersistenceDelegate::init$() {
 }
 
 void MetaData$java_awt_MenuBar_PersistenceDelegate::initialize($Class* type, Object$* oldInstance, Object$* newInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultPersistenceDelegate::initialize(type, oldInstance, newInstance, out);
 	$var($MenuBar, m, $cast($MenuBar, oldInstance));
 	$var($MenuBar, n, $cast($MenuBar, newInstance));

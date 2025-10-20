@@ -151,6 +151,7 @@ void BasicPopupMenuUI$Actions::actionPerformed($ActionEvent* e) {
 }
 
 void BasicPopupMenuUI$Actions::doReturn() {
+	$useLocalCurrentObjectStackCache();
 	$var($KeyboardFocusManager, fmgr, $KeyboardFocusManager::getCurrentKeyboardFocusManager());
 	$var($Component, focusOwner, $nc(fmgr)->getFocusOwner());
 	if (focusOwner != nullptr && !($instanceOf($JRootPane, focusOwner))) {
@@ -179,6 +180,7 @@ void BasicPopupMenuUI$Actions::doReturn() {
 }
 
 void BasicPopupMenuUI$Actions::selectParentChild(bool direction) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, msm, $MenuSelectionManager::defaultManager());
 	$var($MenuElementArray, path, $nc(msm)->getSelectedPath());
 	int32_t len = $nc(path)->length;
@@ -234,6 +236,7 @@ void BasicPopupMenuUI$Actions::selectParentChild(bool direction) {
 }
 
 void BasicPopupMenuUI$Actions::selectItem(bool direction) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, msm, $MenuSelectionManager::defaultManager());
 	$var($MenuElementArray, path, $nc(msm)->getSelectedPath());
 	if ($nc(path)->length == 0) {
@@ -292,6 +295,7 @@ void BasicPopupMenuUI$Actions::selectItem(bool direction) {
 }
 
 void BasicPopupMenuUI$Actions::cancel() {
+	$useLocalCurrentObjectStackCache();
 	$var($JPopupMenu, lastPopup, $BasicPopupMenuUI::getLastPopup());
 	if (lastPopup != nullptr) {
 		$init($Boolean);
@@ -306,6 +310,7 @@ void BasicPopupMenuUI$Actions::cancel() {
 }
 
 void BasicPopupMenuUI$Actions::shortenSelectedPath() {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuElementArray, path, $nc($($MenuSelectionManager::defaultManager()))->getSelectedPath());
 	if ($nc(path)->length <= 2) {
 		$nc($($MenuSelectionManager::defaultManager()))->clearSelectedPath();

@@ -141,6 +141,7 @@ PrintServiceLookupProvider* PrintServiceLookupProvider::getWin32PrintLUS() {
 }
 
 void PrintServiceLookupProvider::init$() {
+	$useLocalCurrentObjectStackCache();
 	$PrintServiceLookup::init$();
 	if (PrintServiceLookupProvider::win32PrintLUS == nullptr) {
 		$assignStatic(PrintServiceLookupProvider::win32PrintLUS, this);
@@ -168,6 +169,7 @@ $PrintServiceArray* PrintServiceLookupProvider::getPrintServices() {
 
 void PrintServiceLookupProvider::refreshServices() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($StringArray, printers, getAllPrinterNames());
 		if (printers == nullptr) {
 			invalidateServices();
@@ -212,6 +214,7 @@ void PrintServiceLookupProvider::invalidateServices() {
 
 $PrintService* PrintServiceLookupProvider::getPrintServiceByName($String* name) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (name == nullptr || $nc(name)->isEmpty()) {
 			return nullptr;
 		} else {
@@ -227,6 +230,7 @@ $PrintService* PrintServiceLookupProvider::getPrintServiceByName($String* name) 
 }
 
 bool PrintServiceLookupProvider::matchingService($PrintService* service, $PrintServiceAttributeSet* serviceSet) {
+	$useLocalCurrentObjectStackCache();
 	if (serviceSet != nullptr) {
 		$var($AttributeArray, attrs, serviceSet->toArray());
 		$var($Attribute, serviceAttr, nullptr);
@@ -241,6 +245,7 @@ bool PrintServiceLookupProvider::matchingService($PrintService* service, $PrintS
 }
 
 $PrintServiceArray* PrintServiceLookupProvider::getPrintServices($DocFlavor* flavor, $AttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, security, $System::getSecurityManager());
 	if (security != nullptr) {
 		security->checkPrintJobAccess();
@@ -301,6 +306,7 @@ $MultiDocPrintServiceArray* PrintServiceLookupProvider::getMultiDocPrintServices
 
 $PrintService* PrintServiceLookupProvider::getDefaultPrintService() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($SecurityManager, security, $System::getSecurityManager());
 		if (security != nullptr) {
 			security->checkPrintJobAccess();

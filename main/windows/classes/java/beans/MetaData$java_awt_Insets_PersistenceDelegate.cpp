@@ -70,6 +70,7 @@ bool MetaData$java_awt_Insets_PersistenceDelegate::mutatesTo(Object$* oldInstanc
 }
 
 $Expression* MetaData$java_awt_Insets_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, $cast($Insets, oldInstance));
 	$var($ObjectArray, args, $new($ObjectArray, {
 		$($of($Integer::valueOf($nc(insets)->top))),

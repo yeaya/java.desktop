@@ -83,6 +83,7 @@ void JColorChooserDnDTest$1::init$() {
 }
 
 void JColorChooserDnDTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame));
 	frame->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$var($JPanel, panel, $new($JPanel));

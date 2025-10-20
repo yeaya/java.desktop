@@ -84,6 +84,7 @@ void Test6199676::main($StringArray* args) {
 
 $Component* Test6199676::getPreview($Container* container$renamed) {
 	$init(Test6199676);
+	$useLocalCurrentObjectStackCache();
 	$var($Container, container, container$renamed);
 	$var($String, name, "ColorChooser.previewPanelHolder"_s);
 	{
@@ -113,6 +114,7 @@ bool Test6199676::isShowing($Component* component) {
 
 void Test6199676::run() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($JColorChooser, chooser, $new($JColorChooser));
 		$var($JFrame, frame, $new($JFrame, $($of(this)->getClass()->getName())));
 		{
@@ -149,6 +151,7 @@ void Test6199676::run() {
 
 void Test6199676::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(Test6199676);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 	} catch ($UnsupportedLookAndFeelException&) {

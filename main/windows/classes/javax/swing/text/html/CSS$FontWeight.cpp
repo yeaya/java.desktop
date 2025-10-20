@@ -87,6 +87,7 @@ int32_t CSS$FontWeight::getValue() {
 }
 
 $Object* CSS$FontWeight::parseCssValue($String* value) {
+	$useLocalCurrentObjectStackCache();
 	$var(CSS$FontWeight, fw, $new(CSS$FontWeight));
 	$set(fw, svalue, value);
 	if ($nc(value)->equals("bold"_s)) {

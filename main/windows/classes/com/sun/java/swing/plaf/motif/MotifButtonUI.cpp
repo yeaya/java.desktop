@@ -115,6 +115,7 @@ void MotifButtonUI::init$() {
 
 $ComponentUI* MotifButtonUI::createUI($JComponent* c) {
 	$init(MotifButtonUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(MotifButtonUI, motifButtonUI, $cast(MotifButtonUI, $nc(appContext)->get(MotifButtonUI::MOTIF_BUTTON_UI_KEY)));
 	if (motifButtonUI == nullptr) {
@@ -129,6 +130,7 @@ $BasicButtonListener* MotifButtonUI::createButtonListener($AbstractButton* b) {
 }
 
 void MotifButtonUI::installDefaults($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$BasicButtonUI::installDefaults(b);
 	if (!this->defaults_initialized) {
 		$set(this, selectColor, $UIManager::getColor($$str({$(getPropertyPrefix()), "select"_s})));
@@ -153,6 +155,7 @@ void MotifButtonUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void MotifButtonUI::paintIcon($Graphics* g, $JComponent* c, $Rectangle* iconRect) {
+	$useLocalCurrentObjectStackCache();
 	$var($Shape, oldClip, $nc(g)->getClip());
 	$var($Component, var$0, static_cast<$Component*>(c));
 	$var($Border, var$1, $nc(c)->getBorder());
@@ -173,6 +176,7 @@ void MotifButtonUI::paintButtonPressed($Graphics* g, $AbstractButton* b) {
 }
 
 void MotifButtonUI::fillContentArea($Graphics* g, $AbstractButton* b, $Color* fillColor) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(b)->isContentAreaFilled()) {
 		$var($Insets, margin, b->getMargin());
 		$var($Insets, insets, b->getInsets());

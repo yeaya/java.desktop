@@ -77,6 +77,7 @@ void Spring$StaticSpring::init$(int32_t min, int32_t pref, int32_t max) {
 }
 
 $String* Spring$StaticSpring::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"StaticSpring ["_s, $$str(this->min), ", "_s, $$str(this->pref), ", "_s, $$str(this->max), "]"_s});
 }
 

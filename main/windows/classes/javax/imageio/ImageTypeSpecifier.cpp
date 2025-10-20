@@ -278,6 +278,7 @@ $ColorModel* ImageTypeSpecifier::getColorModel() {
 }
 
 $BufferedImage* ImageTypeSpecifier::createBufferedImage(int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($SampleModel, sampleModel, getSampleModel(width, height));
 		$var($WritableRaster, raster, $Raster::createWritableRaster(sampleModel, $$new($Point, 0, 0)));
@@ -316,6 +317,7 @@ ImageTypeSpecifier* ImageTypeSpecifier::getSpecifier(int32_t type) {
 
 ImageTypeSpecifier* ImageTypeSpecifier::createSpecifier(int32_t type) {
 	$init(ImageTypeSpecifier);
+	$useLocalCurrentObjectStackCache();
 	switch (type) {
 	case $BufferedImage::TYPE_INT_RGB:
 		{

@@ -165,6 +165,7 @@ $BeanInfoArray* SimpleBeanInfo::getAdditionalBeanInfo() {
 }
 
 $Image* SimpleBeanInfo::getIcon(int32_t iconKind) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($BeanDescriptor, descriptor, getBeanDescriptor());
 	if (descriptor != nullptr) {
@@ -206,12 +207,14 @@ $Image* SimpleBeanInfo::loadStandardImage($String* resourceName) {
 }
 
 $Image* SimpleBeanInfo::loadImage($String* resourceName, $String* suffix) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prefix, "/javax/swing/beaninfo/images/"_s);
 	$var($Image, image, loadStandardImage($$str({prefix, resourceName, suffix})));
 	return image == nullptr ? loadStandardImage($$str({prefix, "JComponent"_s, suffix})) : image;
 }
 
 $Image* SimpleBeanInfo::loadImage($String* resourceName) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$var($URL, url, $of(this)->getClass()->getResource(resourceName));

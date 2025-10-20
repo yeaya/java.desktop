@@ -67,6 +67,7 @@ void bug8049533::init$() {
 
 void bug8049533::main($StringArray* args) {
 	$init(bug8049533);
+	$useLocalCurrentObjectStackCache();
 	$var($Frame, frame, $new($Frame));
 	$var($Panel, panel, $new($Panel));
 	frame->add(static_cast<$Component*>(panel));

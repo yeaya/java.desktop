@@ -103,6 +103,7 @@ void BasicFileChooserUI$FileTransferHandler::init$() {
 }
 
 $Transferable* BasicFileChooserUI$FileTransferHandler::createTransferable($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, values, nullptr);
 	if ($instanceOf($JList, c)) {
 		$assign(values, $nc(($cast($JList, c)))->getSelectedValues());

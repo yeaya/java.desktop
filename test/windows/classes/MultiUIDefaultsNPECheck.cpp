@@ -128,6 +128,7 @@ void MultiUIDefaultsNPECheck::main($StringArray* args) {
 }
 
 void MultiUIDefaultsNPECheck::Test() {
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, label, $new($JLabel));
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MultiUIDefaultsNPECheck$1)));

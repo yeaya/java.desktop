@@ -133,6 +133,7 @@ void CompositeGlyphMapper::setCachedGlyphCode(int32_t unicode, int32_t glyphCode
 }
 
 $CharToGlyphMapper* CompositeGlyphMapper::getSlotMapper(int32_t slot) {
+	$useLocalCurrentObjectStackCache();
 	$var($CharToGlyphMapper, mapper, $nc(this->slotMappers)->get(slot));
 	if (mapper == nullptr) {
 		$assign(mapper, $nc($($nc(this->font)->getSlotFont(slot)))->getMapper());
@@ -142,6 +143,7 @@ $CharToGlyphMapper* CompositeGlyphMapper::getSlotMapper(int32_t slot) {
 }
 
 int32_t CompositeGlyphMapper::convertToGlyph(int32_t unicode) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t slot = 0; slot < $nc(this->font)->numSlots; ++slot) {
 		if (!this->hasExcludes || !$nc(this->font)->isExcludedChar(slot, unicode)) {
 			$var($CharToGlyphMapper, mapper, getSlotMapper(slot));
@@ -157,6 +159,7 @@ int32_t CompositeGlyphMapper::convertToGlyph(int32_t unicode) {
 }
 
 int32_t CompositeGlyphMapper::getNumGlyphs() {
+	$useLocalCurrentObjectStackCache();
 	int32_t numGlyphs = 0;
 	for (int32_t slot = 0; slot < 1; ++slot) {
 		$var($CharToGlyphMapper, mapper, $nc(this->slotMappers)->get(slot));

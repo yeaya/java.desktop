@@ -174,6 +174,7 @@ void TAB::init$() {
 
 void TAB::initTest($Container* contentPane) {
 	$init(TAB);
+	$useLocalCurrentObjectStackCache();
 	$var($StringArray, names, $new($StringArray, {
 		"First Name"_s,
 		"Last Name"_s,
@@ -370,6 +371,7 @@ void TAB::init() {
 }
 
 void TAB::lambda$init$0() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"_s);
 	} catch ($Exception&) {

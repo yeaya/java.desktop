@@ -72,6 +72,7 @@ void ServiceDialog$5::init$($String* val$key) {
 }
 
 $Object* ServiceDialog$5::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$load($ServiceDialog);
 	$var($URL, url, $ServiceDialog::class$->getResource($$str({"resources/"_s, this->val$key})));

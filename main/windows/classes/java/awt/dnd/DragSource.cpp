@@ -180,6 +180,7 @@ $String* DragSource::dragSourceMotionListenerK = nullptr;
 
 $Cursor* DragSource::load($String* name) {
 	$init(DragSource);
+	$useLocalCurrentObjectStackCache();
 	if ($GraphicsEnvironment::isHeadless()) {
 		return nullptr;
 	}
@@ -204,6 +205,7 @@ DragSource* DragSource::getDefaultDragSource() {
 
 bool DragSource::isDragImageSupported() {
 	$init(DragSource);
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, t, $Toolkit::getDefaultToolkit());
 	$var($Boolean, supported, nullptr);
 	try {
@@ -224,6 +226,7 @@ void DragSource::init$() {
 }
 
 void DragSource::startDrag($DragGestureEvent* trigger, $Cursor* dragCursor, $Image* dragImage, $Point* imageOffset, $Transferable* transferable, $DragSourceListener* dsl, $FlavorMap* flavorMap) {
+	$useLocalCurrentObjectStackCache();
 	$SunDragSourceContextPeer::setDragDropInProgress(true);
 	try {
 		if (flavorMap != nullptr) {
@@ -378,6 +381,7 @@ void DragSource::writeObject($ObjectOutputStream* s) {
 }
 
 void DragSource::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	$set(this, flavorMap, $cast($FlavorMap, s->readObject()));
 	if (this->flavorMap == nullptr) {
@@ -398,6 +402,7 @@ void DragSource::readObject($ObjectInputStream* s) {
 
 int32_t DragSource::getDragThreshold() {
 	$init(DragSource);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	int32_t ts = $nc(($cast($Integer, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetIntegerAction, "awt.dnd.drag.threshold"_s, 0)))))))->intValue();
 	if (ts > 0) {

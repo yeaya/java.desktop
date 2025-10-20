@@ -39,6 +39,7 @@ void bug7083457::init$() {
 }
 
 void bug7083457::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultCaret, caret, $new($DefaultCaret));
 	for (int32_t i = 0; i < 10; ++i) {
 		bool active = (i % 2 == 0);

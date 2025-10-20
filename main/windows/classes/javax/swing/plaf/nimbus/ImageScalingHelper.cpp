@@ -101,6 +101,7 @@ void ImageScalingHelper::init$() {
 
 void ImageScalingHelper::paint($Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, $Image* image, $Insets* sInsets$renamed, $Insets* dInsets$renamed, $ImageScalingHelper$PaintType* paintType, int32_t mask) {
 	$init(ImageScalingHelper);
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, sInsets, sInsets$renamed);
 	$var($Insets, dInsets, dInsets$renamed);
 	bool var$0 = image == nullptr || $nc(image)->getWidth(nullptr) <= 0;

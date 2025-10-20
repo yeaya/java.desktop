@@ -159,18 +159,22 @@ void FormatConversionProvider::init$() {
 }
 
 bool FormatConversionProvider::isSourceEncodingSupported($AudioFormat$Encoding* sourceEncoding) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($Arrays::stream($(getSourceEncodings()))))->anyMatch(static_cast<$Predicate*>($$new(FormatConversionProvider$$Lambda$equals, static_cast<$AudioFormat$Encoding*>($nc(sourceEncoding)))));
 }
 
 bool FormatConversionProvider::isTargetEncodingSupported($AudioFormat$Encoding* targetEncoding) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($Arrays::stream($(getTargetEncodings()))))->anyMatch(static_cast<$Predicate*>($$new(FormatConversionProvider$$Lambda$equals, static_cast<$AudioFormat$Encoding*>($nc(targetEncoding)))));
 }
 
 bool FormatConversionProvider::isConversionSupported($AudioFormat$Encoding* targetEncoding, $AudioFormat* sourceFormat) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($Arrays::stream($(getTargetEncodings(sourceFormat)))))->anyMatch(static_cast<$Predicate*>($$new(FormatConversionProvider$$Lambda$equals, static_cast<$AudioFormat$Encoding*>($nc(targetEncoding)))));
 }
 
 bool FormatConversionProvider::isConversionSupported($AudioFormat* targetFormat, $AudioFormat* sourceFormat) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFormat$Encoding, targetEncoding, $nc(targetFormat)->getEncoding());
 	return $nc($($Arrays::stream($(getTargetFormats(targetEncoding, sourceFormat)))))->anyMatch(static_cast<$Predicate*>($$new(FormatConversionProvider$$Lambda$matches$1, static_cast<$AudioFormat*>(targetFormat))));
 }

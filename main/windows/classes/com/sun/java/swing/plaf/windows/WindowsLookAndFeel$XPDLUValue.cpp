@@ -70,6 +70,7 @@ $Object* allocate$WindowsLookAndFeel$XPDLUValue($Class* clazz) {
 }
 
 void WindowsLookAndFeel$XPDLUValue::init$($WindowsLookAndFeel* this$0, int32_t xpdlu, int32_t classicdlu, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$var($Object, var$0, $of($Integer::valueOf(xpdlu)));
 	$WindowsLookAndFeel$XPValue::init$(var$0, $($Integer::valueOf(classicdlu)));

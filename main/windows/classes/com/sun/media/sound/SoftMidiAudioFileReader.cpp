@@ -113,6 +113,7 @@ $StandardFileFormat* SoftMidiAudioFileReader::getAudioFileFormat($Sequence* seq)
 }
 
 $AudioInputStream* SoftMidiAudioFileReader::getAudioInputStream($Sequence* seq) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioSynthesizer, synth, $new($SoftSynthesizer));
 	$var($AudioInputStream, stream, nullptr);
 	$var($Receiver, recv, nullptr);
@@ -182,6 +183,7 @@ $AudioInputStream* SoftMidiAudioFileReader::getAudioInputStream($Sequence* seq) 
 }
 
 $AudioInputStream* SoftMidiAudioFileReader::getAudioInputStream($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$nc(stream)->mark(200);
 	try {
 		return getAudioInputStream($($MidiSystem::getSequence(stream)));
@@ -198,6 +200,7 @@ $AudioInputStream* SoftMidiAudioFileReader::getAudioInputStream($InputStream* st
 }
 
 $StandardFileFormat* SoftMidiAudioFileReader::getAudioFileFormatImpl($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return getAudioFileFormat($($MidiSystem::getSequence(stream)));
 	} catch ($InvalidMidiDataException&) {

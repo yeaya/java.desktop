@@ -109,6 +109,7 @@ $AudioFormat$EncodingArray* AlawCodec::getTargetEncodings() {
 }
 
 $AudioFormat$EncodingArray* AlawCodec::getTargetEncodings($AudioFormat* sourceFormat) {
+	$useLocalCurrentObjectStackCache();
 	$init($AudioFormat$Encoding);
 	if ($nc($($nc(sourceFormat)->getEncoding()))->equals($AudioFormat$Encoding::PCM_SIGNED)) {
 		if (sourceFormat->getSampleSizeInBits() == 16) {
@@ -134,6 +135,7 @@ $AudioFormat$EncodingArray* AlawCodec::getTargetEncodings($AudioFormat* sourceFo
 }
 
 $AudioFormatArray* AlawCodec::getTargetFormats($AudioFormat$Encoding* targetEncoding, $AudioFormat* sourceFormat) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(sourceFormat);
 	$init($AudioFormat$Encoding);
 	bool var$1 = $nc(targetEncoding)->equals($AudioFormat$Encoding::PCM_SIGNED);
@@ -150,6 +152,7 @@ $AudioFormatArray* AlawCodec::getTargetFormats($AudioFormat$Encoding* targetEnco
 }
 
 $AudioInputStream* AlawCodec::getAudioInputStream($AudioFormat$Encoding* targetEncoding, $AudioInputStream* sourceStream) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFormat, sourceFormat, $nc(sourceStream)->getFormat());
 	$var($AudioFormat$Encoding, sourceEncoding, $nc(sourceFormat)->getEncoding());
 	if (!isConversionSupported(targetEncoding, $(sourceStream->getFormat()))) {
@@ -185,6 +188,7 @@ $AudioInputStream* AlawCodec::getAudioInputStream($AudioFormat$Encoding* targetE
 }
 
 $AudioInputStream* AlawCodec::getAudioInputStream($AudioFormat* targetFormat, $AudioInputStream* sourceStream) {
+	$useLocalCurrentObjectStackCache();
 	if (!isConversionSupported(targetFormat, $($nc(sourceStream)->getFormat()))) {
 		$var($String, var$0, $$str({"Unsupported conversion: "_s, $($nc($($nc(sourceStream)->getFormat()))->toString()), " to "_s}));
 		$throwNew($IllegalArgumentException, $$concat(var$0, $($nc(targetFormat)->toString())));
@@ -193,6 +197,7 @@ $AudioInputStream* AlawCodec::getAudioInputStream($AudioFormat* targetFormat, $A
 }
 
 $AudioInputStream* AlawCodec::getConvertedStream($AudioFormat* outputFormat, $AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioInputStream, cs, nullptr);
 	$var($AudioFormat, inputFormat, $nc(stream)->getFormat());
 	if ($nc(inputFormat)->matches(outputFormat)) {
@@ -204,6 +209,7 @@ $AudioInputStream* AlawCodec::getConvertedStream($AudioFormat* outputFormat, $Au
 }
 
 $AudioFormatArray* AlawCodec::getOutputFormats($AudioFormat* inputFormat) {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, formats, $new($Vector));
 	$var($AudioFormat, format, nullptr);
 	bool var$0 = $nc(inputFormat)->getSampleSizeInBits() == 16;

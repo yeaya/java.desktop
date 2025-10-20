@@ -88,6 +88,7 @@ bool ComponentOrientation::isLeftToRight() {
 
 ComponentOrientation* ComponentOrientation::getOrientation($Locale* locale) {
 	$init(ComponentOrientation);
+	$useLocalCurrentObjectStackCache();
 	$var($String, s6144$, $nc(locale)->getLanguage());
 	int32_t tmp6144$ = -1;
 	switch ($nc(s6144$)->hashCode()) {
@@ -172,6 +173,7 @@ ComponentOrientation* ComponentOrientation::getOrientation($Locale* locale) {
 
 ComponentOrientation* ComponentOrientation::getOrientation($ResourceBundle* bdl) {
 	$init(ComponentOrientation);
+	$useLocalCurrentObjectStackCache();
 	$var(ComponentOrientation, result, nullptr);
 	try {
 		$assign(result, $cast(ComponentOrientation, $nc(bdl)->getObject("Orientation"_s)));

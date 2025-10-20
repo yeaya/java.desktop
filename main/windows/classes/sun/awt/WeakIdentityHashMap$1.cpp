@@ -86,6 +86,7 @@ $Iterator* WeakIdentityHashMap$1::iterator() {
 }
 
 int32_t WeakIdentityHashMap$1::size() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($nc($(this->this$0->getMap()))->keySet()))->size();
 }
 

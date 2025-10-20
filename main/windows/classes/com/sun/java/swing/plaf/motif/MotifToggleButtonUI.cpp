@@ -99,6 +99,7 @@ void MotifToggleButtonUI::init$() {
 
 $ComponentUI* MotifToggleButtonUI::createUI($JComponent* b) {
 	$init(MotifToggleButtonUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(MotifToggleButtonUI, motifToggleButtonUI, $cast(MotifToggleButtonUI, $nc(appContext)->get(MotifToggleButtonUI::MOTIF_TOGGLE_BUTTON_UI_KEY)));
 	if (motifToggleButtonUI == nullptr) {
@@ -109,6 +110,7 @@ $ComponentUI* MotifToggleButtonUI::createUI($JComponent* b) {
 }
 
 void MotifToggleButtonUI::installDefaults($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$BasicToggleButtonUI::installDefaults(b);
 	if (!this->defaults_initialized) {
 		$set(this, selectColor, $UIManager::getColor($$str({$(getPropertyPrefix()), "select"_s})));
@@ -128,6 +130,7 @@ $Color* MotifToggleButtonUI::getSelectColor() {
 }
 
 void MotifToggleButtonUI::paintButtonPressed($Graphics* g, $AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(b)->isContentAreaFilled()) {
 		$var($Color, oldColor, $nc(g)->getColor());
 		$var($Dimension, size, b->getSize());
@@ -142,6 +145,7 @@ void MotifToggleButtonUI::paintButtonPressed($Graphics* g, $AbstractButton* b) {
 }
 
 $Insets* MotifToggleButtonUI::getInsets($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Border, border, $nc(c)->getBorder());
 	$var($Insets, i, border != nullptr ? $nc(border)->getBorderInsets(c) : $new($Insets, 0, 0, 0, 0));
 	return i;

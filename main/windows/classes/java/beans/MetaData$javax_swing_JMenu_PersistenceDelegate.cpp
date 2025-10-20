@@ -64,6 +64,7 @@ void MetaData$javax_swing_JMenu_PersistenceDelegate::init$() {
 }
 
 void MetaData$javax_swing_JMenu_PersistenceDelegate::initialize($Class* type, Object$* oldInstance, Object$* newInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultPersistenceDelegate::initialize(type, oldInstance, newInstance, out);
 	$var($JMenu, m, $cast($JMenu, oldInstance));
 	$var($ComponentArray, c, $nc(m)->getMenuComponents());

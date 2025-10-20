@@ -115,6 +115,7 @@ void MetalBorders$MenuBarBorder::init$() {
 }
 
 void MetalBorders$MenuBarBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->translate(x, y);
 	if ($MetalLookAndFeel::usingOcean()) {
 		if ($instanceOf($JMenuBar, c) && !$MetalToolBarUI::doesMenuBarBorderToolBar($cast($JMenuBar, c))) {

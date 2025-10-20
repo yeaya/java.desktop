@@ -115,6 +115,7 @@ $Object* allocate$TreeTransferHandler($Class* clazz) {
 }
 
 void TreeTransferHandler::init$() {
+	$useLocalCurrentObjectStackCache();
 	$TransferHandler::init$();
 	$set(this, flavors, $new($DataFlavorArray, 1));
 	try {
@@ -131,6 +132,7 @@ void TreeTransferHandler::init$() {
 }
 
 bool TreeTransferHandler::canImport($TransferHandler$TransferSupport* support) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(support)->isDrop()) {
 		return false;
 	}
@@ -167,6 +169,7 @@ bool TreeTransferHandler::canImport($TransferHandler$TransferSupport* support) {
 }
 
 bool TreeTransferHandler::haveCompleteNode($JTree* tree) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, selRows, $nc(tree)->getSelectionRows());
 	$var($TreePath, path, tree->getPathForRow($nc(selRows)->get(0)));
 	$var($DefaultMutableTreeNode, first, $cast($DefaultMutableTreeNode, $nc(path)->getLastPathComponent()));
@@ -187,6 +190,7 @@ bool TreeTransferHandler::haveCompleteNode($JTree* tree) {
 }
 
 $Transferable* TreeTransferHandler::createTransferable($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTree, tree, $cast($JTree, c));
 	$var($TreePathArray, paths, $nc(tree)->getSelectionPaths());
 	if (paths != nullptr) {
@@ -223,6 +227,7 @@ $DefaultMutableTreeNode* TreeTransferHandler::copy($TreeNode* node) {
 }
 
 void TreeTransferHandler::exportDone($JComponent* source, $Transferable* data, int32_t action) {
+	$useLocalCurrentObjectStackCache();
 	if (((int32_t)(action & (uint32_t)$TransferHandler::MOVE)) == $TransferHandler::MOVE) {
 		$var($JTree, tree, $cast($JTree, source));
 		$var($DefaultTreeModel, model, $cast($DefaultTreeModel, $nc(tree)->getModel()));
@@ -245,6 +250,7 @@ int32_t TreeTransferHandler::getSourceActions($JComponent* c) {
 }
 
 bool TreeTransferHandler::importData($TransferHandler$TransferSupport* support) {
+	$useLocalCurrentObjectStackCache();
 	if (!canImport(support)) {
 		return false;
 	}

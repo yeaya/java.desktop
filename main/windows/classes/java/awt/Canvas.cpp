@@ -126,6 +126,7 @@ void Canvas::init$($GraphicsConfiguration* config) {
 }
 
 void Canvas::setGraphicsConfiguration($GraphicsConfiguration* gc$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, gc$renamed);
 	$synchronized(getTreeLock()) {
 		$var($CanvasPeer, peer, $cast($CanvasPeer, this->peer));
@@ -137,6 +138,7 @@ void Canvas::setGraphicsConfiguration($GraphicsConfiguration* gc$renamed) {
 }
 
 $String* Canvas::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(Canvas::class$) {
 		$var($String, var$0, Canvas::base);
 		return $concat(var$0, $$str(Canvas::nameCounter++));

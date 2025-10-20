@@ -102,6 +102,7 @@ void FormView$1::init$($FormView* this$0, $FormSubmitEvent* val$fse, $JEditorPan
 }
 
 void FormView$1::run() {
+	$useLocalCurrentObjectStackCache();
 	if (this->val$fse != nullptr) {
 		$nc(this->val$c)->fireHyperlinkUpdate(this->val$fse);
 	} else {

@@ -285,6 +285,7 @@ bool PathGraphics::canDoRedraws() {
 }
 
 void PathGraphics::drawLine(int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
+	$useLocalCurrentObjectStackCache();
 	$var($Paint, paint, getPaint());
 	try {
 		$var($AffineTransform, deviceTransform, getTransform());
@@ -299,6 +300,7 @@ void PathGraphics::drawLine(int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
 }
 
 void PathGraphics::drawRect(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Paint, paint, getPaint());
 	try {
 		$var($AffineTransform, deviceTransform, getTransform());
@@ -313,6 +315,7 @@ void PathGraphics::drawRect(int32_t x, int32_t y, int32_t width, int32_t height)
 }
 
 void PathGraphics::fillRect(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Paint, paint, getPaint());
 	try {
 		$var($AffineTransform, deviceTransform, getTransform());
@@ -327,6 +330,7 @@ void PathGraphics::fillRect(int32_t x, int32_t y, int32_t width, int32_t height)
 }
 
 void PathGraphics::clearRect(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Shape, var$0, static_cast<$Shape*>($new($Rectangle2D$Float, (float)x, (float)y, (float)width, (float)height)));
 	fill(var$0, $(getBackground()));
 }
@@ -356,6 +360,7 @@ void PathGraphics::fillArc(int32_t x, int32_t y, int32_t width, int32_t height, 
 }
 
 void PathGraphics::drawPolyline($ints* xPoints, $ints* yPoints, int32_t nPoints) {
+	$useLocalCurrentObjectStackCache();
 	if (nPoints == 2) {
 		draw($$new($Line2D$Float, (float)$nc(xPoints)->get(0), (float)$nc(yPoints)->get(0), (float)xPoints->get(1), (float)yPoints->get(1)));
 	} else if (nPoints > 2) {
@@ -389,6 +394,7 @@ void PathGraphics::drawString($String* str, int32_t x, int32_t y) {
 }
 
 void PathGraphics::drawString($String* str, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(str)->length() == 0) {
 		return;
 	}
@@ -399,6 +405,7 @@ void PathGraphics::drawString($String* str, float x, float y) {
 }
 
 void PathGraphics::drawString($String* str, float x, float y, $Font* font, $FontRenderContext* frc, float w) {
+	$useLocalCurrentObjectStackCache();
 	$var($TextLayout, layout, $new($TextLayout, str, font, frc));
 	$var($Shape, textShape, layout->getOutline($($AffineTransform::getTranslateInstance(x, y))));
 	fill(textShape);
@@ -409,6 +416,7 @@ void PathGraphics::drawString($AttributedCharacterIterator* iterator, int32_t x,
 }
 
 void PathGraphics::drawString($AttributedCharacterIterator* iterator, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	if (iterator == nullptr) {
 		$throwNew($NullPointerException, "attributedcharacteriterator is null"_s);
 	}
@@ -417,6 +425,7 @@ void PathGraphics::drawString($AttributedCharacterIterator* iterator, float x, f
 }
 
 void PathGraphics::drawGlyphVector($GlyphVector* g, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	if (this->printingGlyphVector) {
 		if (!PathGraphics::$assertionsDisabled && ! !this->printingGlyphVector) {
 			$throwNew($AssertionError);
@@ -452,6 +461,7 @@ bool PathGraphics::printGlyphVector($GlyphVector* gv, float x, float y) {
 }
 
 bool PathGraphics::printedSimpleGlyphVector($GlyphVector* g, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	int32_t flags = $nc(g)->getLayoutFlags();
 	if (flags != 0 && flags != $GlyphVector::FLAG_HAS_POSITION_ADJUSTMENTS) {
 		return printGlyphVector(g, x, y);
@@ -665,10 +675,12 @@ $chars* PathGraphics::getGlyphToCharMapForFont($Font2D* font2D) {
 }
 
 void PathGraphics::draw($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	fill($($nc($(getStroke()))->createStrokedShape(s)));
 }
 
 void PathGraphics::fill($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Paint, paint, getPaint());
 	try {
 		fill(s, $cast($Color, paint));
@@ -679,6 +691,7 @@ void PathGraphics::fill($Shape* s) {
 }
 
 void PathGraphics::fill($Shape* s, $Color* color) {
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, deviceTransform, getTransform());
 	if (getClip() != nullptr) {
 		deviceClip($($nc($(getClip()))->getPathIterator(deviceTransform)));
@@ -699,6 +712,7 @@ $BufferedImage* PathGraphics::getBufferedImage($Image* img) {
 }
 
 bool PathGraphics::hasTransparentPixels($BufferedImage* bufferedImage) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, colorModel, $nc(bufferedImage)->getColorModel());
 	bool hasTransparency = colorModel == nullptr ? true : $nc(colorModel)->getTransparency() != $ColorModel::OPAQUE;
 	if (hasTransparency && bufferedImage != nullptr) {
@@ -742,6 +756,7 @@ bool PathGraphics::isBitmaskTransparency($BufferedImage* bufferedImage) {
 }
 
 bool PathGraphics::drawBitmaskImage($BufferedImage* bufferedImage, $AffineTransform* xform, $Color* bgcolor, int32_t srcX, int32_t srcY, int32_t srcWidth, int32_t srcHeight) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, colorModel, $nc(bufferedImage)->getColorModel());
 	$var($IndexColorModel, icm, nullptr);
 	$var($ints, pixels, nullptr);
@@ -931,6 +946,7 @@ bool PathGraphics::drawImage($Image* img, $AffineTransform* xform, $ImageObserve
 }
 
 void PathGraphics::drawImage($BufferedImage* img$renamed, $BufferedImageOp* op, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, img, img$renamed);
 	if (img == nullptr) {
 		return;
@@ -949,6 +965,7 @@ void PathGraphics::drawImage($BufferedImage* img$renamed, $BufferedImageOp* op, 
 }
 
 void PathGraphics::drawRenderedImage($RenderedImage* img, $AffineTransform* xform) {
+	$useLocalCurrentObjectStackCache();
 	if (img == nullptr) {
 		return;
 	}

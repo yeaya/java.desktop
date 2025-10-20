@@ -91,6 +91,7 @@ void EventDispatchThread$HierarchyEventFilter::init$($Component* modalComponent)
 }
 
 $EventFilter$FilterAction* EventDispatchThread$HierarchyEventFilter::acceptEvent($AWTEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	if (this->modalComponent != nullptr) {
 		int32_t eventID = $nc(event)->getID();
 		bool mouseEvent = (eventID >= $MouseEvent::MOUSE_FIRST) && (eventID <= $MouseEvent::MOUSE_LAST);

@@ -144,6 +144,7 @@ void BasicMenuItemUI$Handler::mousePressed($MouseEvent* e) {
 }
 
 void BasicMenuItemUI$Handler::mouseReleased($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->this$0->menuItem)->isEnabled()) {
 		return;
 	}
@@ -158,6 +159,7 @@ void BasicMenuItemUI$Handler::mouseReleased($MouseEvent* e) {
 }
 
 void BasicMenuItemUI$Handler::mouseEntered($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, manager, $MenuSelectionManager::defaultManager());
 	int32_t modifiers = $nc(e)->getModifiers();
 	if (((int32_t)(modifiers & (uint32_t)(($InputEvent::BUTTON1_MASK | $InputEvent::BUTTON2_MASK) | $InputEvent::BUTTON3_MASK))) != 0) {
@@ -168,6 +170,7 @@ void BasicMenuItemUI$Handler::mouseEntered($MouseEvent* e) {
 }
 
 void BasicMenuItemUI$Handler::mouseExited($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, manager, $MenuSelectionManager::defaultManager());
 	int32_t modifiers = $nc(e)->getModifiers();
 	if (((int32_t)(modifiers & (uint32_t)(($InputEvent::BUTTON1_MASK | $InputEvent::BUTTON2_MASK) | $InputEvent::BUTTON3_MASK))) != 0) {
@@ -194,12 +197,14 @@ void BasicMenuItemUI$Handler::mouseMoved($MouseEvent* e) {
 }
 
 void BasicMenuItemUI$Handler::menuDragMouseEntered($MenuDragMouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, manager, $nc(e)->getMenuSelectionManager());
 	$var($MenuElementArray, path, e->getPath());
 	$nc(manager)->setSelectedPath(path);
 }
 
 void BasicMenuItemUI$Handler::menuDragMouseDragged($MenuDragMouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, manager, $nc(e)->getMenuSelectionManager());
 	$var($MenuElementArray, path, e->getPath());
 	$nc(manager)->setSelectedPath(path);
@@ -209,6 +214,7 @@ void BasicMenuItemUI$Handler::menuDragMouseExited($MenuDragMouseEvent* e) {
 }
 
 void BasicMenuItemUI$Handler::menuDragMouseReleased($MenuDragMouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->this$0->menuItem)->isEnabled()) {
 		return;
 	}
@@ -224,6 +230,7 @@ void BasicMenuItemUI$Handler::menuDragMouseReleased($MenuDragMouseEvent* e) {
 }
 
 void BasicMenuItemUI$Handler::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(e)->getPropertyName());
 	if (name == "labelFor"_s || name == "displayedMnemonic"_s || name == "accelerator"_s) {
 		this->this$0->updateAcceleratorBinding();

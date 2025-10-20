@@ -43,6 +43,7 @@ void awt_ja::init$() {
 }
 
 $ObjectArray2* awt_ja::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("AWT.CompositionWindowTitle"_s),

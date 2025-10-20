@@ -61,6 +61,7 @@ void MetaData$javax_swing_DefaultListModel_PersistenceDelegate::init$() {
 }
 
 void MetaData$javax_swing_DefaultListModel_PersistenceDelegate::initialize($Class* type, Object$* oldInstance, Object$* newInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultPersistenceDelegate::initialize(type, oldInstance, newInstance, out);
 	$var($DefaultListModel, m, $cast($DefaultListModel, oldInstance));
 	$var($DefaultListModel, n, $cast($DefaultListModel, newInstance));

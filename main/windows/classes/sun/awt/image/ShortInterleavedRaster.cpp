@@ -94,6 +94,7 @@ $Object* allocate$ShortInterleavedRaster($Class* clazz) {
 }
 
 void ShortInterleavedRaster::init$($SampleModel* sampleModel, $Point* origin) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, var$0, sampleModel);
 	$var($DataBufferUShort, var$1, $cast($DataBufferUShort, $nc(sampleModel)->createDataBuffer()));
 	int32_t var$2 = $nc(origin)->x;
@@ -110,6 +111,7 @@ void ShortInterleavedRaster::init$($SampleModel* sampleModel, $DataBufferUShort*
 }
 
 void ShortInterleavedRaster::init$($SampleModel* sampleModel, $DataBufferUShort* dataBuffer, $Rectangle* aRegion, $Point* origin, ShortInterleavedRaster* parent) {
+	$useLocalCurrentObjectStackCache();
 	$ShortComponentRaster::init$(sampleModel, dataBuffer, aRegion, origin, parent);
 	this->maxX = this->minX + this->width;
 	this->maxY = this->minY + this->height;
@@ -372,6 +374,7 @@ $Raster* ShortInterleavedRaster::createChild(int32_t x, int32_t y, int32_t width
 }
 
 $WritableRaster* ShortInterleavedRaster::createWritableChild(int32_t x, int32_t y, int32_t width, int32_t height, int32_t x0, int32_t y0, $ints* bandList) {
+	$useLocalCurrentObjectStackCache();
 	if (x < this->minX) {
 		$throwNew($RasterFormatException, "x lies outside the raster"_s);
 	}
@@ -399,6 +402,7 @@ $WritableRaster* ShortInterleavedRaster::createWritableChild(int32_t x, int32_t 
 }
 
 $WritableRaster* ShortInterleavedRaster::createCompatibleWritableRaster(int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (w <= 0 || h <= 0) {
 		$throwNew($RasterFormatException, $$str({"negative "_s, ((w <= 0) ? "width"_s : "height"_s)}));
 	}
@@ -411,6 +415,7 @@ $WritableRaster* ShortInterleavedRaster::createCompatibleWritableRaster() {
 }
 
 $String* ShortInterleavedRaster::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $new($String, $$str({"ShortInterleavedRaster: width = "_s, $$str(this->width), " height = "_s, $$str(this->height), " #numDataElements "_s, $$str(this->numDataElements)}));
 }
 

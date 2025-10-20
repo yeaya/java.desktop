@@ -88,6 +88,7 @@ void ComponentTest$2::init$($UIManager$LookAndFeelInfo* val$laf) {
 }
 
 void ComponentTest$2::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(this->val$laf)->getClassName()));
 	} catch ($Exception&) {

@@ -112,6 +112,7 @@ JPEGQTable* JPEGQTable::getScaledInstance(float scaleFactor, bool forceBaseline)
 }
 
 $String* JPEGQTable::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, ls, $System::getProperty("line.separator"_s, "\n"_s));
 	$var($StringBuilder, sb, $new($StringBuilder, $$str({"JPEGQTable:"_s, ls})));
 	for (int32_t i = 0; i < $nc(this->qTable)->length; ++i) {

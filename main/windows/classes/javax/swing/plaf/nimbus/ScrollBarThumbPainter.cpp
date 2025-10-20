@@ -203,6 +203,7 @@ $AbstractRegionPainter$PaintContext* ScrollBarThumbPainter::getPaintContext() {
 }
 
 void ScrollBarThumbPainter::paintBackgroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint($(decodeGradient1(this->path)));
 	g->fill(this->path);
@@ -221,6 +222,7 @@ void ScrollBarThumbPainter::paintBackgroundEnabled($Graphics2D* g) {
 }
 
 void ScrollBarThumbPainter::paintBackgroundMouseOver($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint($(decodeGradient1(this->path)));
 	g->fill(this->path);
@@ -239,6 +241,7 @@ void ScrollBarThumbPainter::paintBackgroundMouseOver($Graphics2D* g) {
 }
 
 void ScrollBarThumbPainter::paintBackgroundPressed($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint($(decodeGradient6(this->path)));
 	g->fill(this->path);
@@ -395,6 +398,7 @@ $Path2D* ScrollBarThumbPainter::decodePath6() {
 }
 
 $Paint* ScrollBarThumbPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -412,6 +416,7 @@ $Paint* ScrollBarThumbPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* ScrollBarThumbPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -441,6 +446,7 @@ $Paint* ScrollBarThumbPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* ScrollBarThumbPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -458,6 +464,7 @@ $Paint* ScrollBarThumbPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* ScrollBarThumbPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -475,6 +482,7 @@ $Paint* ScrollBarThumbPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* ScrollBarThumbPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -504,6 +512,7 @@ $Paint* ScrollBarThumbPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* ScrollBarThumbPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -521,6 +530,7 @@ $Paint* ScrollBarThumbPainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* ScrollBarThumbPainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -550,6 +560,7 @@ $Paint* ScrollBarThumbPainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* ScrollBarThumbPainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -567,6 +578,7 @@ $Paint* ScrollBarThumbPainter::decodeGradient8($Shape* s) {
 }
 
 $Paint* ScrollBarThumbPainter::decodeGradient9($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

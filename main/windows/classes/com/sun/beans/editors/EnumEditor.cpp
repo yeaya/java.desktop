@@ -80,6 +80,7 @@ $Object* allocate$EnumEditor($Class* clazz) {
 }
 
 void EnumEditor::init$($Class* type) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, listeners, $new($ArrayList));
 	$var($ObjectArray, values, $nc(type)->getEnumConstants());
 	if (values == nullptr) {
@@ -98,6 +99,7 @@ $Object* EnumEditor::getValue() {
 }
 
 void EnumEditor::setValue(Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	if ((value != nullptr) && !$nc(this->type)->isInstance(value)) {
 		$throwNew($IllegalArgumentException, $$str({"Unsupported value: "_s, value}));
 	}
@@ -143,6 +145,7 @@ $StringArray* EnumEditor::getTags() {
 }
 
 $String* EnumEditor::getJavaInitializationString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, getAsText());
 	return (name != nullptr) ? $str({$($nc(this->type)->getName()), $$str(u'.'), name}) : "null"_s;
 }

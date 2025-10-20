@@ -287,6 +287,7 @@ void SoftMixingClip::processControlLogic() {
 }
 
 void SoftMixingClip::processAudioLogic($SoftAudioBufferArray* buffers) {
+	$useLocalCurrentObjectStackCache();
 	if (this->_active) {
 		$var($floats, left, $nc($nc(buffers)->get($SoftMixingMainMixer::CHANNEL_LEFT))->array());
 		$var($floats, right, $nc(buffers->get($SoftMixingMainMixer::CHANNEL_RIGHT))->array());
@@ -405,6 +406,7 @@ void SoftMixingClip::loop(int32_t count) {
 }
 
 void SoftMixingClip::open($AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	if (isOpen()) {
 		$var($String, var$0, $$str({"Clip is already open with format "_s, $(getFormat()), " and frame lengh of "_s}));
 		$throwNew($IllegalStateException, $$concat(var$0, $$str(getFrameLength())));
@@ -448,6 +450,7 @@ void SoftMixingClip::open($AudioInputStream* stream) {
 }
 
 void SoftMixingClip::open($AudioFormat* format, $bytes* data, int32_t offset, int32_t bufferSize) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->control_mutex) {
 		if (isOpen()) {
 			$var($String, var$0, $$str({"Clip is already open with format "_s, $(getFormat()), " and frame lengh of "_s}));
@@ -487,6 +490,7 @@ void SoftMixingClip::setFramePosition(int32_t frames) {
 }
 
 void SoftMixingClip::setLoopPoints(int32_t start, int32_t end) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->control_mutex) {
 		if (end != -1) {
 			if (end < start) {
@@ -599,6 +603,7 @@ void SoftMixingClip::stop() {
 }
 
 void SoftMixingClip::close() {
+	$useLocalCurrentObjectStackCache();
 	$var($LineEvent, event, nullptr);
 	$synchronized(this->control_mutex) {
 		if (!isOpen()) {

@@ -201,6 +201,7 @@ TimerQueue* TimerQueue::sharedInstance() {
 }
 
 void TimerQueue::startIfNeeded() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (!this->running) {
 		$nc(this->runningLock)->lock();
@@ -226,6 +227,7 @@ void TimerQueue::startIfNeeded() {
 }
 
 void TimerQueue::addTimer($Timer* timer, int64_t delayMillis) {
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc(timer)->getLock()))->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -247,6 +249,7 @@ void TimerQueue::addTimer($Timer* timer, int64_t delayMillis) {
 }
 
 void TimerQueue::addTimer($TimerQueue$DelayedTimer* delayedTimer) {
+	$useLocalCurrentObjectStackCache();
 	if (!TimerQueue::$assertionsDisabled && !(delayedTimer != nullptr && !containsTimer($(delayedTimer->getTimer())))) {
 		$throwNew($AssertionError);
 	}
@@ -269,6 +272,7 @@ void TimerQueue::addTimer($TimerQueue$DelayedTimer* delayedTimer) {
 }
 
 void TimerQueue::removeTimer($Timer* timer) {
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc(timer)->getLock()))->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -289,6 +293,7 @@ void TimerQueue::removeTimer($Timer* timer) {
 }
 
 bool TimerQueue::containsTimer($Timer* timer) {
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc(timer)->getLock()))->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -314,6 +319,7 @@ bool TimerQueue::containsTimer($Timer* timer) {
 }
 
 void TimerQueue::run() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->runningLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -385,6 +391,7 @@ void TimerQueue::run() {
 }
 
 $String* TimerQueue::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, buf, $new($StringBuilder));
 	buf->append("TimerQueue ("_s);
 	bool isFirst = true;
@@ -411,6 +418,7 @@ int64_t TimerQueue::now() {
 }
 
 $Object* TimerQueue::lambda$startIfNeeded$0($ThreadGroup* threadGroup) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, "TimerQueue"_s);
 	$var($Thread, timerThread, $new($Thread, threadGroup, this, name, 0, false));
 	timerThread->setDaemon(true);

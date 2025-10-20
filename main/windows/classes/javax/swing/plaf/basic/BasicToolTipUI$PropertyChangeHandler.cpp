@@ -70,6 +70,7 @@ void BasicToolTipUI$PropertyChangeHandler::init$() {
 }
 
 void BasicToolTipUI$PropertyChangeHandler::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(e)->getPropertyName());
 	bool var$2 = $nc(name)->equals("tiptext"_s);
 	bool var$1 = var$2 || "foreground"_s->equals(name);

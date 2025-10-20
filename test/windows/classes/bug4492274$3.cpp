@@ -72,6 +72,7 @@ void bug4492274$3::init$($StringArray* val$result) {
 }
 
 void bug4492274$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug4492274);
 	$nc(this->val$result)->set(0, $($nc($($nc($bug4492274::jep)->getPage()))->getRef()));
 }

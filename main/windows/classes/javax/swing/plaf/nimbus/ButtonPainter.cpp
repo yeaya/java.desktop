@@ -330,6 +330,7 @@ void ButtonPainter::doPaint($Graphics2D* g, $JComponent* c, int32_t width, int32
 }
 
 $ObjectArray* ButtonPainter::getExtendedCacheKeys($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, extendedCacheKeys, nullptr);
 	switch (this->state) {
 	case ButtonPainter::BACKGROUND_DEFAULT:
@@ -471,6 +472,7 @@ $AbstractRegionPainter$PaintContext* ButtonPainter::getPaintContext() {
 }
 
 void ButtonPainter::paintBackgroundDefault($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -483,6 +485,7 @@ void ButtonPainter::paintBackgroundDefault($Graphics2D* g) {
 }
 
 void ButtonPainter::paintBackgroundDefaultAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect4());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->roundRect);
@@ -495,6 +498,7 @@ void ButtonPainter::paintBackgroundDefaultAndFocused($Graphics2D* g) {
 }
 
 void ButtonPainter::paintBackgroundMouseOverAndDefault($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect5());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -507,6 +511,7 @@ void ButtonPainter::paintBackgroundMouseOverAndDefault($Graphics2D* g) {
 }
 
 void ButtonPainter::paintBackgroundMouseOverAndDefaultAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect4());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->roundRect);
@@ -519,6 +524,7 @@ void ButtonPainter::paintBackgroundMouseOverAndDefaultAndFocused($Graphics2D* g)
 }
 
 void ButtonPainter::paintBackgroundPressedAndDefault($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color17);
 	g->fill(this->roundRect);
@@ -531,6 +537,7 @@ void ButtonPainter::paintBackgroundPressedAndDefault($Graphics2D* g) {
 }
 
 void ButtonPainter::paintBackgroundPressedAndDefaultAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect4());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->roundRect);
@@ -543,6 +550,7 @@ void ButtonPainter::paintBackgroundPressedAndDefaultAndFocused($Graphics2D* g) {
 }
 
 void ButtonPainter::paintBackgroundDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color25);
 	g->fill(this->roundRect);
@@ -555,6 +563,7 @@ void ButtonPainter::paintBackgroundDisabled($Graphics2D* g) {
 }
 
 void ButtonPainter::paintBackgroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -567,6 +576,7 @@ void ButtonPainter::paintBackgroundEnabled($Graphics2D* g) {
 }
 
 void ButtonPainter::paintBackgroundFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect4());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->roundRect);
@@ -579,6 +589,7 @@ void ButtonPainter::paintBackgroundFocused($Graphics2D* g) {
 }
 
 void ButtonPainter::paintBackgroundMouseOver($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -591,6 +602,7 @@ void ButtonPainter::paintBackgroundMouseOver($Graphics2D* g) {
 }
 
 void ButtonPainter::paintBackgroundMouseOverAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect4());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->roundRect);
@@ -603,6 +615,7 @@ void ButtonPainter::paintBackgroundMouseOverAndFocused($Graphics2D* g) {
 }
 
 void ButtonPainter::paintBackgroundPressed($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color44);
 	g->fill(this->roundRect);
@@ -615,6 +628,7 @@ void ButtonPainter::paintBackgroundPressed($Graphics2D* g) {
 }
 
 void ButtonPainter::paintBackgroundPressedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect4());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->roundRect);
@@ -677,6 +691,7 @@ $RoundRectangle2D* ButtonPainter::decodeRoundRect5() {
 }
 
 $Paint* ButtonPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -694,6 +709,7 @@ $Paint* ButtonPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* ButtonPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -727,6 +743,7 @@ $Paint* ButtonPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* ButtonPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -744,6 +761,7 @@ $Paint* ButtonPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* ButtonPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -761,6 +779,7 @@ $Paint* ButtonPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* ButtonPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -778,6 +797,7 @@ $Paint* ButtonPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* ButtonPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -811,6 +831,7 @@ $Paint* ButtonPainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* ButtonPainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -828,6 +849,7 @@ $Paint* ButtonPainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* ButtonPainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -861,6 +883,7 @@ $Paint* ButtonPainter::decodeGradient8($Shape* s) {
 }
 
 $Paint* ButtonPainter::decodeGradient9($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -878,6 +901,7 @@ $Paint* ButtonPainter::decodeGradient9($Shape* s) {
 }
 
 $Paint* ButtonPainter::decodeGradient10($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -911,6 +935,7 @@ $Paint* ButtonPainter::decodeGradient10($Shape* s) {
 }
 
 $Paint* ButtonPainter::decodeGradient11($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

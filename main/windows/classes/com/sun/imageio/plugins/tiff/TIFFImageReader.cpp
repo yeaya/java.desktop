@@ -343,6 +343,7 @@ void TIFFImageReader::setInput(Object$* input, bool seekForwardOnly, bool ignore
 }
 
 void TIFFImageReader::readHeader() {
+	$useLocalCurrentObjectStackCache();
 	if (this->gotHeader) {
 		return;
 	}
@@ -381,6 +382,7 @@ void TIFFImageReader::readHeader() {
 }
 
 int32_t TIFFImageReader::locateImage(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	readHeader();
 	int32_t index = $Math::min(imageIndex, $nc(this->imageStartPosition)->size() - 1);
 	try {
@@ -457,6 +459,7 @@ void TIFFImageReader::seekToImage(int32_t imageIndex) {
 }
 
 void TIFFImageReader::readMetadata() {
+	$useLocalCurrentObjectStackCache();
 	if (this->stream == nullptr) {
 		$throwNew($IllegalStateException, "Input not set!"_s);
 	}
@@ -509,6 +512,7 @@ int32_t TIFFImageReader::getTileOrStripHeight() {
 }
 
 int32_t TIFFImageReader::getPlanarConfiguration() {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFField, f, $nc(this->imageMetadata)->getTIFFField($BaselineTIFFTagSet::TAG_PLANAR_CONFIGURATION));
 	if (f != nullptr) {
 		int32_t planarConfigurationValue = f->getAsInt(0);
@@ -610,6 +614,7 @@ int32_t TIFFImageReader::getHeight(int32_t imageIndex) {
 }
 
 void TIFFImageReader::initializeFromMetadata() {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFField, f, nullptr);
 	$assign(f, $nc(this->imageMetadata)->getTIFFField($BaselineTIFFTagSet::TAG_COMPRESSION));
 	if (f == nullptr) {
@@ -737,6 +742,7 @@ void TIFFImageReader::initializeFromMetadata() {
 }
 
 $Iterator* TIFFImageReader::getImageTypes(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, l, nullptr);
 	$var($Integer, imageIndexInteger, $Integer::valueOf(imageIndex));
 	if ($nc(this->imageTypeMap)->containsKey(imageIndexInteger)) {
@@ -818,6 +824,7 @@ $Iterator* TIFFImageReader::getImageTypes(int32_t imageIndex) {
 }
 
 $IIOMetadata* TIFFImageReader::getImageMetadata(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	seekToImage(imageIndex);
 	$var($TIFFImageMetadata, im, $new($TIFFImageMetadata, $($nc($($nc(this->imageMetadata)->getRootIFD()))->getTagSetList())));
 	$var($Node, root, $nc(this->imageMetadata)->getAsTree($TIFFImageMetadata::NATIVE_METADATA_FORMAT_NAME));
@@ -826,6 +833,7 @@ $IIOMetadata* TIFFImageReader::getImageMetadata(int32_t imageIndex) {
 }
 
 $IIOMetadata* TIFFImageReader::getStreamMetadata(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	readHeader();
 	$var($TIFFStreamMetadata, sm, $new($TIFFStreamMetadata));
 	$init($TIFFStreamMetadata);
@@ -876,6 +884,7 @@ int32_t TIFFImageReader::getTileHeight(int32_t imageIndex) {
 }
 
 $BufferedImage* TIFFImageReader::readTile(int32_t imageIndex, int32_t tileX, int32_t tileY) {
+	$useLocalCurrentObjectStackCache();
 	int32_t w = getWidth(imageIndex);
 	int32_t h = getHeight(imageIndex);
 	int32_t tw = getTileWidth(imageIndex);
@@ -923,6 +932,7 @@ int32_t TIFFImageReader::iceil(int32_t num, int32_t den) {
 }
 
 void TIFFImageReader::prepareRead(int32_t imageIndex, $ImageReadParam* param$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageReadParam, param, param$renamed);
 	if (this->stream == nullptr) {
 		$throwNew($IllegalStateException, "Input not set!"_s);
@@ -973,6 +983,7 @@ $RenderedImage* TIFFImageReader::readAsRenderedImage(int32_t imageIndex, $ImageR
 }
 
 void TIFFImageReader::decodeTile(int32_t ti, int32_t tj, int32_t band) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, tileRect, $new($Rectangle, ti * this->tileOrStripWidth, tj * this->tileOrStripHeight, this->tileOrStripWidth, this->tileOrStripHeight));
 	if (!isImageTiled(this->currIndex)) {
 		$assign(tileRect, tileRect->intersection($$new($Rectangle, 0, 0, this->width, this->height)));
@@ -1042,6 +1053,7 @@ void TIFFImageReader::reportProgress() {
 }
 
 $BufferedImage* TIFFImageReader::read(int32_t imageIndex, $ImageReadParam* param) {
+	$useLocalCurrentObjectStackCache();
 	prepareRead(imageIndex, param);
 	$set(this, theImage, getDestination(param, $(getImageTypes(imageIndex)), this->width, this->height));
 	this->srcXSubsampling = $nc(this->imageReadParam)->getSourceXSubsampling();

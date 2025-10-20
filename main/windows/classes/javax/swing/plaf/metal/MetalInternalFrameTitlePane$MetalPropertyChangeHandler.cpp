@@ -82,6 +82,7 @@ void MetalInternalFrameTitlePane$MetalPropertyChangeHandler::init$($MetalInterna
 }
 
 void MetalInternalFrameTitlePane$MetalPropertyChangeHandler::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prop, $nc(evt)->getPropertyName());
 	$init($JInternalFrame);
 	if ($nc(prop)->equals($JInternalFrame::IS_SELECTED_PROPERTY)) {

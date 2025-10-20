@@ -346,6 +346,7 @@ void TestJTextPaneHTMLRendering::init$() {
 
 void TestJTextPaneHTMLRendering::main($StringArray* args) {
 	$init(TestJTextPaneHTMLRendering);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(TestJTextPaneHTMLRendering::urlArrow, $new($URL, "http:\\arrow.png"_s));
 	$assignStatic(TestJTextPaneHTMLRendering::countDownLatch, $new($CountDownLatch, 1));
 	$SwingUtilities::invokeLater(static_cast<$Runnable*>($$new(TestJTextPaneHTMLRendering$$Lambda$createUI)));
@@ -359,6 +360,7 @@ void TestJTextPaneHTMLRendering::main($StringArray* args) {
 
 void TestJTextPaneHTMLRendering::createUI() {
 	$init(TestJTextPaneHTMLRendering);
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, mainControlPanel, $new($JPanel, static_cast<$LayoutManager*>($$new($BorderLayout, 20, 20))));
 	$var($JPanel, resultButtonPanel, $new($JPanel, static_cast<$LayoutManager*>($$new($GridBagLayout))));
 	createTestUI(mainControlPanel);
@@ -391,6 +393,7 @@ void TestJTextPaneHTMLRendering::createUI() {
 
 void TestJTextPaneHTMLRendering::createTestUI($JPanel* panel) {
 	$init(TestJTextPaneHTMLRendering);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$assignStatic(TestJTextPaneHTMLRendering::textPane, $new($JTextPane));
 	$init($BorderLayout);
@@ -413,6 +416,7 @@ void TestJTextPaneHTMLRendering::createTestUI($JPanel* panel) {
 
 void TestJTextPaneHTMLRendering::runTest() {
 	$init(TestJTextPaneHTMLRendering);
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < 10; ++i) {
 		$var($StringBuffer, sb, $new($StringBuffer));
 		sb->append($$str({"<html><body bgcolor=\"#BBBBBB\"><center>Iteration "_s, $$str((i + 1)), " -> <br>"_s}));

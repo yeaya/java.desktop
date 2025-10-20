@@ -228,6 +228,7 @@ int32_t JTabbedPane$Page::getMnemonic() {
 }
 
 void JTabbedPane$Page::setDisplayedMnemonicIndex(int32_t mnemonicIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (this->mnemonicIndex != mnemonicIndex) {
 		$var($String, t, getTitle());
 		if (mnemonicIndex != -1 && (t == nullptr || mnemonicIndex < 0 || mnemonicIndex >= $nc(t)->length())) {
@@ -273,6 +274,7 @@ $AccessibleRole* JTabbedPane$Page::getAccessibleRole() {
 }
 
 $AccessibleStateSet* JTabbedPane$Page::getAccessibleStateSet() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleStateSet, states, nullptr);
 	$assign(states, $nc($($nc(this->parent)->getAccessibleContext()))->getAccessibleStateSet());
 	$init($AccessibleState);
@@ -374,6 +376,7 @@ bool JTabbedPane$Page::contains($Point* p) {
 }
 
 $Point* JTabbedPane$Page::getLocationOnScreen() {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, parentLocation, $nc(this->parent)->getLocationOnScreen());
 	$var($Point, componentLocation, getLocation());
 	$nc(componentLocation)->translate($nc(parentLocation)->x, parentLocation->y);
@@ -425,6 +428,7 @@ void JTabbedPane$Page::removeFocusListener($FocusListener* l) {
 }
 
 $AccessibleIconArray* JTabbedPane$Page::getAccessibleIcon() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleIcon, accessibleIcon, nullptr);
 	if (this->enabled && $instanceOf($ImageIcon, this->icon)) {
 		$var($AccessibleContext, ac, $nc(($cast($ImageIcon, this->icon)))->getAccessibleContext());

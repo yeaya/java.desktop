@@ -75,6 +75,7 @@ void bug8041725$1::init$() {
 }
 
 void bug8041725$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame, "bug8041725"_s));
 	frame->setSize(200, 200);
 	$var($JList, list, $new($JList, $$new($StringArray, {

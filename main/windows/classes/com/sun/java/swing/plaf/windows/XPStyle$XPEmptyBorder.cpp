@@ -112,6 +112,7 @@ void XPStyle$XPEmptyBorder::init$($XPStyle* this$0, $Insets* m) {
 }
 
 $Insets* XPStyle$XPEmptyBorder::getBorderInsets($Component* c, $Insets* insets$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, insets$renamed);
 	$assign(insets, $EmptyBorder::getBorderInsets(c, insets));
 	$var($Insets, margin, nullptr);

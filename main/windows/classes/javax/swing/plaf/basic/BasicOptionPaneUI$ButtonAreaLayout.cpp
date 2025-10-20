@@ -163,6 +163,7 @@ void BasicOptionPaneUI$ButtonAreaLayout::addLayoutComponent($String* string, $Co
 }
 
 void BasicOptionPaneUI$ButtonAreaLayout::layoutContainer($Container* container) {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentArray, children, $nc(container)->getComponents());
 	if (children != nullptr && children->length > 0) {
 		int32_t numChildren = children->length;
@@ -228,6 +229,7 @@ void BasicOptionPaneUI$ButtonAreaLayout::layoutContainer($Container* container) 
 }
 
 $Dimension* BasicOptionPaneUI$ButtonAreaLayout::minimumLayoutSize($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	if (c != nullptr) {
 		$var($ComponentArray, children, c->getComponents());
 		if (children != nullptr && children->length > 0) {

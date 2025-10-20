@@ -188,6 +188,7 @@ void TestTitledBorderLeak::init$() {
 
 void TestTitledBorderLeak::main($StringArray* args) {
 	$init(TestTitledBorderLeak);
+	$useLocalCurrentObjectStackCache();
 	$var($JFrameArray, frame, $new($JFrameArray, TestTitledBorderLeak::TOTAL_TITLEDBORDER));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestTitledBorderLeak$$Lambda$lambda$main$0, frame)));
 	if (TestTitledBorderLeak::TOTAL_TITLEDBORDER != $nc(TestTitledBorderLeak::weakRefArrTB)->size()) {
@@ -207,6 +208,7 @@ void TestTitledBorderLeak::main($StringArray* args) {
 
 void TestTitledBorderLeak::attemptGCTitledBorder() {
 	$init(TestTitledBorderLeak);
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < TestTitledBorderLeak::GC_ATTEMPTS; ++i) {
 		$System::gc();
 		$System::runFinalization();
@@ -224,6 +226,7 @@ void TestTitledBorderLeak::attemptGCTitledBorder() {
 
 int32_t TestTitledBorderLeak::getCleanedUpTitledBorderCount() {
 	$init(TestTitledBorderLeak);
+	$useLocalCurrentObjectStackCache();
 	int32_t count = 0;
 	{
 		$var($Iterator, i$, $nc(TestTitledBorderLeak::weakRefArrTB)->iterator());
@@ -249,6 +252,7 @@ void TestTitledBorderLeak::lambda$main$1($JFrameArray* frame) {
 
 void TestTitledBorderLeak::lambda$main$0($JFrameArray* frame) {
 	$init(TestTitledBorderLeak);
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < TestTitledBorderLeak::TOTAL_TITLEDBORDER; ++i) {
 		$var($TitledBorder, tb, $new($TitledBorder, ""_s));
 		$nc(TestTitledBorderLeak::weakRefArrTB)->add(i, $$new($WeakReference, tb));

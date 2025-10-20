@@ -205,6 +205,7 @@ void BasicPopupMenuUI$MouseGrabber::init$() {
 }
 
 void BasicPopupMenuUI$MouseGrabber::uninstall() {
+	$useLocalCurrentObjectStackCache();
 	$init($BasicPopupMenuUI);
 	$synchronized($BasicPopupMenuUI::MOUSE_GRABBER_KEY) {
 		$nc($($MenuSelectionManager::defaultManager()))->removeChangeListener(this);
@@ -214,6 +215,7 @@ void BasicPopupMenuUI$MouseGrabber::uninstall() {
 }
 
 void BasicPopupMenuUI$MouseGrabber::grabWindow($MenuElementArray* newPath) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Toolkit, tk, $Toolkit::getDefaultToolkit());
 	$AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($BasicPopupMenuUI$MouseGrabber$1, this, tk)));
@@ -233,6 +235,7 @@ void BasicPopupMenuUI$MouseGrabber::grabWindow($MenuElementArray* newPath) {
 }
 
 void BasicPopupMenuUI$MouseGrabber::ungrabWindow() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Toolkit, tk, $Toolkit::getDefaultToolkit());
 	$AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($BasicPopupMenuUI$MouseGrabber$2, this, tk)));
@@ -253,6 +256,7 @@ void BasicPopupMenuUI$MouseGrabber::realUngrabWindow() {
 }
 
 void BasicPopupMenuUI$MouseGrabber::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, msm, $MenuSelectionManager::defaultManager());
 	$var($MenuElementArray, p, $nc(msm)->getSelectedPath());
 	if ($nc(this->lastPathSelected)->length == 0 && $nc(p)->length != 0) {
@@ -265,6 +269,7 @@ void BasicPopupMenuUI$MouseGrabber::stateChanged($ChangeEvent* e) {
 }
 
 void BasicPopupMenuUI$MouseGrabber::eventDispatched($AWTEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($UngrabEvent, ev)) {
 		cancelPopupMenu();
 		return;
@@ -342,6 +347,7 @@ bool BasicPopupMenuUI$MouseGrabber::isInPopup($Component* src) {
 }
 
 void BasicPopupMenuUI$MouseGrabber::cancelPopupMenu() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($List, popups, $BasicPopupMenuUI::getPopups());
 		{

@@ -104,6 +104,7 @@ void Map$PolygonRegionContainment::finalize() {
 }
 
 void Map$PolygonRegionContainment::init$($AttributeSet* as) {
+	$useLocalCurrentObjectStackCache();
 	$Polygon::init$();
 	$init($HTML$Attribute);
 	$var($ints, coords, $Map::extractCoords($($nc(as)->getAttribute($HTML$Attribute::COORDS))));

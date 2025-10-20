@@ -81,6 +81,7 @@ void CSSBorder$DottedDashedPainter::init$(int32_t factor) {
 }
 
 void CSSBorder$DottedDashedPainter::paint($Polygon* shape, $Graphics* g, $Color* color, int32_t side) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, r, $nc(shape)->getBounds());
 	int32_t length = $nc(r)->height * this->factor;
 	$var($ints, lengthPattern, $new($ints, {

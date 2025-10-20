@@ -64,6 +64,7 @@ void Effect::init$() {
 }
 
 $Effect$ArrayCache* Effect::getArrayCache() {
+	$useLocalCurrentObjectStackCache();
 	$load($Effect$ArrayCache);
 	$var($Effect$ArrayCache, cache, $cast($Effect$ArrayCache, $nc($($AppContext::getAppContext()))->get($Effect$ArrayCache::class$)));
 	if (cache == nullptr) {

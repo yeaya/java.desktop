@@ -104,6 +104,7 @@ void PortMixerProvider::init$() {
 
 void PortMixerProvider::init() {
 	$init(PortMixerProvider);
+	$useLocalCurrentObjectStackCache();
 	int32_t numDevices = nGetNumDevices();
 	if (PortMixerProvider::infos == nullptr || $nc(PortMixerProvider::infos)->length != numDevices) {
 		$assignStatic(PortMixerProvider::infos, $new($PortMixerProvider$PortMixerInfoArray, numDevices));
@@ -123,6 +124,7 @@ $Mixer$InfoArray* PortMixerProvider::getMixerInfo() {
 }
 
 $Mixer* PortMixerProvider::getMixer($Mixer$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(PortMixerProvider::class$) {
 		for (int32_t i = 0; i < $nc(PortMixerProvider::infos)->length; ++i) {
 			if ($nc($nc(PortMixerProvider::infos)->get(i))->equals(info)) {

@@ -313,6 +313,7 @@ void TestPopupMenu::main($StringArray* args) {
 }
 
 void TestPopupMenu::blockTillDisplayed($JComponent* comp) {
+	$useLocalCurrentObjectStackCache();
 	while (this->p == nullptr) {
 		try {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestPopupMenu$$Lambda$lambda$blockTillDisplayed$0, this, comp)));
@@ -328,6 +329,7 @@ void TestPopupMenu::blockTillDisplayed($JComponent* comp) {
 }
 
 void TestPopupMenu::init$() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, p, nullptr);
 	$set(this, d, nullptr);
 	$var($Robot, robot, $new($Robot));
@@ -363,6 +365,7 @@ void TestPopupMenu::init$() {
 }
 
 void TestPopupMenu::createAndShowUI() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, $new($JFrame));
 	$nc(this->frame)->setTitle("Test Frame"_s);
 	$nc(this->frame)->setSize(800, 600);
@@ -379,6 +382,7 @@ void TestPopupMenu::createAndShowUI() {
 }
 
 void TestPopupMenu::lambda$createAndShowUI$3($JDesktopPane* pane, $ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($TestPopupMenu$TestInternalFrame, testInternalFrame2, $new($TestPopupMenu$TestInternalFrame, this));
 	$nc(pane)->add(static_cast<$Component*>(testInternalFrame2));
 	try {

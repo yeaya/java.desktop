@@ -91,6 +91,7 @@ void bug6542335$2::init$($RectangleArray* val$thumbBounds, $Robot* val$robot) {
 }
 
 void bug6542335$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6542335);
 	$nc(this->val$thumbBounds)->set(0, $$new($Rectangle, $($nc($bug6542335::ui)->getThumbBounds())));
 	$var($Point, l, $nc($bug6542335::sb)->getLocationOnScreen());

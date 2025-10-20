@@ -112,6 +112,7 @@ int32_t MetalIconFactory$CheckBoxIcon::getControlSize() {
 }
 
 void MetalIconFactory$CheckBoxIcon::paintOceanIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($ButtonModel, model, $nc(($cast($JCheckBox, c)))->getModel());
 	$nc(g)->translate(x, y);
 	int32_t w = getIconWidth();
@@ -150,6 +151,7 @@ void MetalIconFactory$CheckBoxIcon::paintOceanIcon($Component* c, $Graphics* g, 
 }
 
 void MetalIconFactory$CheckBoxIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	if ($MetalLookAndFeel::usingOcean()) {
 		paintOceanIcon(c, g, x, y);
 		return;
@@ -176,6 +178,7 @@ void MetalIconFactory$CheckBoxIcon::paintIcon($Component* c, $Graphics* g, int32
 }
 
 void MetalIconFactory$CheckBoxIcon::drawCheck($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	int32_t controlSize = getControlSize();
 	int32_t csx = controlSize - 3;
 	int32_t csy1 = controlSize - 6;

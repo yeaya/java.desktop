@@ -75,6 +75,7 @@ float TIFFYCbCrColorConverter::CODING_RANGE_Y = 0.0;
 float TIFFYCbCrColorConverter::CODING_RANGE_CB_CR = 0.0;
 
 void TIFFYCbCrColorConverter::init$($TIFFImageMetadata* metadata) {
+	$useLocalCurrentObjectStackCache();
 	$TIFFColorConverter::init$();
 	this->lumaRed = 0.299f;
 	this->lumaGreen = 0.587f;

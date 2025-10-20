@@ -84,6 +84,7 @@ $Object* allocate$AudioFloatInputStream$DirectAudioFloatInputStream($Class* claz
 }
 
 void AudioFloatInputStream$DirectAudioFloatInputStream::init$($AudioInputStream* stream$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioInputStream, stream, stream$renamed);
 	$AudioFloatInputStream::init$();
 	$set(this, converter, $AudioFloatConverter::getConverter($($nc(stream)->getFormat())));

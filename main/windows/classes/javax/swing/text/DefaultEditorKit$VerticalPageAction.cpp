@@ -91,6 +91,7 @@ void DefaultEditorKit$VerticalPageAction::init$($String* nm, int32_t direction, 
 }
 
 void DefaultEditorKit$VerticalPageAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getTextComponent(e));
 	if (target != nullptr) {
 		$var($Rectangle, visible, target->getVisibleRect());

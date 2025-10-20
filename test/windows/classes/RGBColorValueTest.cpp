@@ -48,6 +48,7 @@ void RGBColorValueTest::init$() {
 }
 
 void RGBColorValueTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($StyleSheet, styleSheet, $new($StyleSheet));
 	$var($AttributeSet, attributeSet, styleSheet->getDeclaration("border-color: rgb(1, 2, 3)    rgb(1, 2, 4);"_s));
 	$init($CSS$Attribute);

@@ -65,6 +65,7 @@ void PaintContextScaleValidation::main($StringArray* args) {
 }
 
 void PaintContextScaleValidation::test(double maxH, double maxV) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($Insets, var$0, $new($Insets, 1, 1, 1, 1));
 		$new($AbstractRegionPainter$PaintContext, var$0, $$new($Dimension, 1, 1), false, nullptr, maxH, maxV);

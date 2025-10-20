@@ -120,6 +120,7 @@ $MenuItemLayoutHelper$ColumnAlignment* SynthMenuItemLayoutHelper::RTL_ALIGNMENT_
 $MenuItemLayoutHelper$ColumnAlignment* SynthMenuItemLayoutHelper::RTL_ALIGNMENT_2 = nullptr;
 
 void SynthMenuItemLayoutHelper::init$($SynthContext* context, $SynthContext* accContext, $JMenuItem* mi, $Icon* checkIcon, $Icon* arrowIcon, $Rectangle* viewRect, int32_t gap, $String* accDelimiter, bool isLeftToRight, bool useCheckAndArrow, $String* propertyPrefix) {
+	$useLocalCurrentObjectStackCache();
 	$MenuItemLayoutHelper::init$();
 	$set(this, context, context);
 	$set(this, accContext, accContext);
@@ -145,6 +146,7 @@ bool SynthMenuItemLayoutHelper::getAlignAcceleratorText($String* propertyPrefix)
 }
 
 void SynthMenuItemLayoutHelper::calcWidthsAndHeights() {
+	$useLocalCurrentObjectStackCache();
 	if (getIcon() != nullptr) {
 		$nc($(getIconSize()))->setWidth($SynthGraphicsUtils::getIconWidth($(getIcon()), this->context));
 		$nc($(getIconSize()))->setHeight($SynthGraphicsUtils::getIconHeight($(getIcon()), this->context));
@@ -214,6 +216,7 @@ void SynthMenuItemLayoutHelper::calcWidthsAndHeights() {
 }
 
 void SynthMenuItemLayoutHelper::calcMaxWidths() {
+	$useLocalCurrentObjectStackCache();
 	$init($MenuItemLayoutHelper);
 	calcMaxWidth($(getCheckSize()), $MenuItemLayoutHelper::MAX_CHECK_WIDTH);
 	this->maxAccOrArrowWidth = calcMaxValue(SynthMenuItemLayoutHelper::MAX_ACC_OR_ARROW_WIDTH, $nc($(getArrowSize()))->getWidth());
@@ -273,6 +276,7 @@ int32_t SynthMenuItemLayoutHelper::getMaxAccOrArrowWidth() {
 }
 
 void SynthMenuItemLayoutHelper::prepareForLayout($MenuItemLayoutHelper$LayoutResult* lr) {
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc(lr)->getCheckRect()))->width = $nc($(getCheckSize()))->getMaxWidth();
 	bool var$0 = useCheckAndArrow();
 	if (var$0 && (!""_s->equals($(getAccText())))) {
@@ -299,6 +303,7 @@ $MenuItemLayoutHelper$ColumnAlignment* SynthMenuItemLayoutHelper::getRTLColumnAl
 }
 
 void SynthMenuItemLayoutHelper::layoutIconAndTextInLabelRect($MenuItemLayoutHelper$LayoutResult* lr) {
+	$useLocalCurrentObjectStackCache();
 	$nc(lr)->setTextRect($$new($Rectangle));
 	lr->setIconRect($$new($Rectangle));
 	$var($SynthContext, var$0, this->context);

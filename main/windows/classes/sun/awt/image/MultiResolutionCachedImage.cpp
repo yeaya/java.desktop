@@ -307,6 +307,7 @@ $Object* allocate$MultiResolutionCachedImage($Class* clazz) {
 }
 
 void MultiResolutionCachedImage::init$(int32_t baseImageWidth, int32_t baseImageHeight, $BiFunction* mapper) {
+	$useLocalCurrentObjectStackCache();
 	MultiResolutionCachedImage::init$(baseImageWidth, baseImageHeight, $fcast($Dimension2DArray, $$new($DimensionArray, {$$new($Dimension, baseImageWidth, baseImageHeight)})), mapper);
 }
 
@@ -323,6 +324,7 @@ void MultiResolutionCachedImage::init$(int32_t baseImageWidth, int32_t baseImage
 }
 
 $Image* MultiResolutionCachedImage::getResolutionVariant(double destWidth, double destHeight) {
+	$useLocalCurrentObjectStackCache();
 	checkSize(destWidth, destHeight);
 	int32_t width = $cast(int32_t, $Math::ceil(destWidth));
 	int32_t height = $cast(int32_t, $Math::ceil(destHeight));
@@ -340,6 +342,7 @@ $Image* MultiResolutionCachedImage::getResolutionVariant(double destWidth, doubl
 
 void MultiResolutionCachedImage::checkSize(double width, double height) {
 	$init(MultiResolutionCachedImage);
+	$useLocalCurrentObjectStackCache();
 	if (width <= 0 || height <= 0) {
 		$throwNew($IllegalArgumentException, $($String::format("Width (%s) or height (%s) cannot be <= 0"_s, $$new($ObjectArray, {
 			$($of($Double::valueOf(width))),
@@ -356,6 +359,7 @@ void MultiResolutionCachedImage::checkSize(double width, double height) {
 }
 
 $List* MultiResolutionCachedImage::getResolutionVariants() {
+	$useLocalCurrentObjectStackCache();
 	return $cast($List, $nc($($nc($($Arrays::stream(this->sizes)))->map(static_cast<$Function*>($$new(MultiResolutionCachedImage$$Lambda$lambda$getResolutionVariants$0, this)))))->collect($($Collectors::toList())));
 }
 
@@ -365,6 +369,7 @@ MultiResolutionCachedImage* MultiResolutionCachedImage::map($Function* mapper) {
 
 $Image* MultiResolutionCachedImage::map($MultiResolutionImage* mrImage, $Function* mapper) {
 	$init(MultiResolutionCachedImage);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($MultiResolutionToolkitImage, mrImage)) {
 		$var($MultiResolutionToolkitImage, mrtImage, $cast($MultiResolutionToolkitImage, mrImage));
 		return $MultiResolutionToolkitImage::map(mrtImage, mapper);
@@ -410,6 +415,7 @@ void MultiResolutionCachedImage::updateInfo($ImageObserver* observer, int32_t in
 
 int32_t MultiResolutionCachedImage::getInfo($Image* image) {
 	$init(MultiResolutionCachedImage);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($ToolkitImage, image)) {
 		return $nc($($nc(($cast($ToolkitImage, image)))->getImageRep()))->check(static_cast<$ImageObserver*>($$new(MultiResolutionCachedImage$$Lambda$lambda$getInfo$3$3)));
 	}

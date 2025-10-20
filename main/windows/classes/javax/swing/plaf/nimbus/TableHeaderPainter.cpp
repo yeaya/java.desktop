@@ -173,6 +173,7 @@ $Path2D* TableHeaderPainter::decodePath2() {
 }
 
 $Paint* TableHeaderPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

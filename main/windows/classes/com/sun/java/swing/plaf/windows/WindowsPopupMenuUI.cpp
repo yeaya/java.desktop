@@ -141,12 +141,14 @@ void WindowsPopupMenuUI::installListeners() {
 }
 
 $Popup* WindowsPopupMenuUI::getPopup($JPopupMenu* popupMenu, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($PopupFactory, popupFactory, $PopupFactory::getSharedInstance());
 	return $nc(popupFactory)->getPopup($($nc(popupMenu)->getInvoker()), popupMenu, x, y);
 }
 
 int32_t WindowsPopupMenuUI::getTextOffset($JComponent* c) {
 	$init(WindowsPopupMenuUI);
+	$useLocalCurrentObjectStackCache();
 	int32_t rv = -1;
 	$init($SwingUtilities2);
 	$var($Object, maxTextOffset, $nc(c)->getClientProperty($SwingUtilities2::BASICMENUITEMUI_MAX_TEXT_OFFSET));
@@ -174,6 +176,7 @@ int32_t WindowsPopupMenuUI::getSpanAfterGutter() {
 
 int32_t WindowsPopupMenuUI::getGutterWidth() {
 	$init(WindowsPopupMenuUI);
+	$useLocalCurrentObjectStackCache();
 	int32_t rv = 2;
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
@@ -186,6 +189,7 @@ int32_t WindowsPopupMenuUI::getGutterWidth() {
 
 bool WindowsPopupMenuUI::isLeftToRight($JComponent* c) {
 	$init(WindowsPopupMenuUI);
+	$useLocalCurrentObjectStackCache();
 	bool leftToRight = true;
 	for (int32_t i = $nc(c)->getComponentCount() - 1; i >= 0 && leftToRight; --i) {
 		leftToRight = $nc($($nc($(c->getComponent(i)))->getComponentOrientation()))->isLeftToRight();
@@ -194,6 +198,7 @@ bool WindowsPopupMenuUI::isLeftToRight($JComponent* c) {
 }
 
 void WindowsPopupMenuUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if ($WindowsMenuItemUI::isVistaPainting(xp)) {
 		$init($TMSchema$Part);

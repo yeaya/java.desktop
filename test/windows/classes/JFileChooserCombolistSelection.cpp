@@ -98,6 +98,7 @@ void JFileChooserCombolistSelection::init() {
 
 void JFileChooserCombolistSelection::main($StringArray* args) {
 	$init(JFileChooserCombolistSelection);
+	$useLocalCurrentObjectStackCache();
 	$var($String, osName, $System::getProperty("os.name"_s));
 	if (!$($nc(osName)->toLowerCase())->contains("win"_s)) {
 		$nc($System::out)->println("The test was skipped because it is sensible only for Windows."_s);

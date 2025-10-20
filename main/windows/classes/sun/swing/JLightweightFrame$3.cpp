@@ -91,6 +91,7 @@ void JLightweightFrame$3::init$($JLightweightFrame* this$0) {
 }
 
 void JLightweightFrame$3::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$init($JLightweightFrame);
 	if (!$JLightweightFrame::copyBufferEnabled) {
 		$nc(this->this$0->content)->paintLock();

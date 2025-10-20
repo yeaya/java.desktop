@@ -106,6 +106,7 @@ $Object* allocate$EventSetDescriptor($Class* clazz) {
 }
 
 void EventSetDescriptor::init$($Class* sourceClass, $String* eventSetName, $Class* listenerType, $String* listenerMethodName) {
+	$useLocalCurrentObjectStackCache();
 	$Class* var$0 = sourceClass;
 	$var($String, var$1, eventSetName);
 	$Class* var$2 = listenerType;
@@ -136,6 +137,7 @@ void EventSetDescriptor::init$($Class* sourceClass, $String* eventSetName, $Clas
 }
 
 void EventSetDescriptor::init$($Class* sourceClass, $String* eventSetName, $Class* listenerType, $StringArray* listenerMethodNames, $String* addListenerMethodName, $String* removeListenerMethodName, $String* getListenerMethodName) {
+	$useLocalCurrentObjectStackCache();
 	$FeatureDescriptor::init$();
 	this->inDefaultEventSet = true;
 	if (sourceClass == nullptr || eventSetName == nullptr || listenerType == nullptr) {
@@ -162,6 +164,7 @@ void EventSetDescriptor::init$($Class* sourceClass, $String* eventSetName, $Clas
 
 $Method* EventSetDescriptor::getMethod($Class* cls, $String* name, int32_t args) {
 	$init(EventSetDescriptor);
+	$useLocalCurrentObjectStackCache();
 	if (name == nullptr) {
 		return nullptr;
 	}
@@ -188,6 +191,7 @@ void EventSetDescriptor::init$($String* eventSetName, $Class* listenerType, $Met
 }
 
 void EventSetDescriptor::init$($String* base, $EventSetInfo* info, $MethodArray* methods) {
+	$useLocalCurrentObjectStackCache();
 	$FeatureDescriptor::init$();
 	this->inDefaultEventSet = true;
 	setName($($Introspector::decapitalize(base)));
@@ -219,6 +223,7 @@ void EventSetDescriptor::setListenerType($Class* cls) {
 
 $MethodArray* EventSetDescriptor::getListenerMethods() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($MethodArray, methods, getListenerMethods0());
 		if (methods == nullptr) {
 			if (this->listenerMethodDescriptors != nullptr) {
@@ -234,6 +239,7 @@ $MethodArray* EventSetDescriptor::getListenerMethods() {
 }
 
 void EventSetDescriptor::setListenerMethods($MethodArray* methods) {
+	$useLocalCurrentObjectStackCache();
 	if (methods == nullptr) {
 		return;
 	}
@@ -362,6 +368,7 @@ void EventSetDescriptor::init$(EventSetDescriptor* x, EventSetDescriptor* y) {
 }
 
 void EventSetDescriptor::init$(EventSetDescriptor* old) {
+	$useLocalCurrentObjectStackCache();
 	$FeatureDescriptor::init$(old);
 	this->inDefaultEventSet = true;
 	if ($nc(old)->listenerMethodDescriptors != nullptr) {
@@ -380,6 +387,7 @@ void EventSetDescriptor::init$(EventSetDescriptor* old) {
 }
 
 void EventSetDescriptor::appendTo($StringBuilder* sb) {
+	$useLocalCurrentObjectStackCache();
 	$FeatureDescriptor::appendTo(sb, "unicast"_s, this->unicast);
 	$FeatureDescriptor::appendTo(sb, "inDefaultEventSet"_s, this->inDefaultEventSet);
 	$FeatureDescriptor::appendTo(sb, "listenerType"_s, this->listenerTypeRef);

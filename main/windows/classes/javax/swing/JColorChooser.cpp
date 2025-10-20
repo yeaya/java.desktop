@@ -305,6 +305,7 @@ $Color* JColorChooser::showDialog($Component* component, $String* title, $Color*
 
 $Color* JColorChooser::showDialog($Component* component, $String* title, $Color* initialColor, bool colorTransparencySelectionEnabled) {
 	$init(JColorChooser);
+	$useLocalCurrentObjectStackCache();
 	$init($Color);
 	$var(JColorChooser, pane, $new(JColorChooser, initialColor != nullptr ? initialColor : $Color::white));
 	{
@@ -327,6 +328,7 @@ $Color* JColorChooser::showDialog($Component* component, $String* title, $Color*
 
 $JDialog* JColorChooser::createDialog($Component* c, $String* title, bool modal, JColorChooser* chooserPane, $ActionListener* okListener, $ActionListener* cancelListener) {
 	$init(JColorChooser);
+	$useLocalCurrentObjectStackCache();
 	$var($Window, window, $JOptionPane::getWindowForComponent(c));
 	$var($ColorChooserDialog, dialog, nullptr);
 	if ($instanceOf($Frame, window)) {
@@ -413,6 +415,7 @@ $JComponent* JColorChooser::getPreviewPanel() {
 }
 
 void JColorChooser::addChooserPanel($AbstractColorChooserPanel* panel) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractColorChooserPanelArray, oldPanels, getChooserPanels());
 	$var($AbstractColorChooserPanelArray, newPanels, $new($AbstractColorChooserPanelArray, $nc(oldPanels)->length + 1));
 	$System::arraycopy(oldPanels, 0, newPanels, 0, oldPanels->length);
@@ -476,6 +479,7 @@ void JColorChooser::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JColorChooser::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, chooserPanelsString, $new($StringBuilder));
 	{
 		$var($AbstractColorChooserPanelArray, arr$, this->chooserPanels);

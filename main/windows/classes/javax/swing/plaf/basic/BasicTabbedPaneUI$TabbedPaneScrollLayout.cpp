@@ -115,6 +115,7 @@ int32_t BasicTabbedPaneUI$TabbedPaneScrollLayout::preferredTabAreaWidth(int32_t 
 }
 
 void BasicTabbedPaneUI$TabbedPaneScrollLayout::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	this->this$0->setRolloverTab(-1);
 	int32_t tabPlacement = $nc(this->this$0->tabPane)->getTabPlacement();
 	int32_t tabCount = $nc(this->this$0->tabPane)->getTabCount();
@@ -308,6 +309,7 @@ void BasicTabbedPaneUI$TabbedPaneScrollLayout::layoutContainer($Container* paren
 }
 
 void BasicTabbedPaneUI$TabbedPaneScrollLayout::layoutCroppedEdge() {
+	$useLocalCurrentObjectStackCache();
 	$nc($nc(this->this$0->tabScroller)->croppedEdge)->resetParams();
 	$var($Rectangle, viewRect, $nc($nc(this->this$0->tabScroller)->viewport)->getViewRect());
 	int32_t cropline = 0;
@@ -340,6 +342,7 @@ void BasicTabbedPaneUI$TabbedPaneScrollLayout::layoutCroppedEdge() {
 }
 
 void BasicTabbedPaneUI$TabbedPaneScrollLayout::calculateTabRects(int32_t tabPlacement, int32_t tabCount) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, metrics, this->this$0->getFontMetrics());
 	$var($Dimension, size, $nc(this->this$0->tabPane)->getSize());
 	$var($Insets, insets, $nc(this->this$0->tabPane)->getInsets());

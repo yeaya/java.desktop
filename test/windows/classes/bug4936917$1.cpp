@@ -83,6 +83,7 @@ void bug4936917$1::init$($bug4936917* this$0) {
 }
 
 void bug4936917$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$set(this->this$0, editorPane, $new($JEditorPane, "text/html"_s, ""_s));
 	$nc(this->this$0->editorPane)->setEditable(false);
 	$nc(this->this$0->editorPane)->setMargin($$new($Insets, 0, 0, 0, 0));

@@ -77,6 +77,7 @@ void bug6735293::init$() {
 }
 
 void bug6735293::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($bug6735293$1));
 	$Thread::sleep(1000);
 	$SwingUtilities::invokeAndWait($$new($bug6735293$2));

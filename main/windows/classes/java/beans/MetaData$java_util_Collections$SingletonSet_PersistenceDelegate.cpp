@@ -66,6 +66,7 @@ void MetaData$java_util_Collections$SingletonSet_PersistenceDelegate::init$() {
 }
 
 $Expression* MetaData$java_util_Collections$SingletonSet_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Set, set, $cast($Set, oldInstance));
 	$load($Collections);
 	return $new($Expression, oldInstance, $Collections::class$, "singleton"_s, $$new($ObjectArray, {$($nc($($nc(set)->iterator()))->next())}));

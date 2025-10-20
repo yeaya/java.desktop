@@ -291,6 +291,7 @@ void TestJSpinnerPressUnpress::init$() {
 
 void TestJSpinnerPressUnpress::main($StringArray* args) {
 	$init(TestJSpinnerPressUnpress);
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($System::getProperty("os.name"_s)))->startsWith("Linux"_s)) {
 		$init($System);
 		$nc($System::out)->println("This test is meant for Linux platform only"_s);
@@ -327,6 +328,7 @@ void TestJSpinnerPressUnpress::main($StringArray* args) {
 
 void TestJSpinnerPressUnpress::createUI() {
 	$init(TestJSpinnerPressUnpress);
+	$useLocalCurrentObjectStackCache();
 	$var($GridBagLayout, layout, $new($GridBagLayout));
 	$var($JPanel, mainControlPanel, $new($JPanel, static_cast<$LayoutManager*>(layout)));
 	$var($JPanel, resultButtonPanel, $new($JPanel, static_cast<$LayoutManager*>(layout)));

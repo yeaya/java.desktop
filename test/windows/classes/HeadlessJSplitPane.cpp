@@ -91,6 +91,7 @@ void HeadlessJSplitPane::init$() {
 }
 
 void HeadlessJSplitPane::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JSplitPane, s, $new($JSplitPane));
 	s->getAccessibleContext();
 	s->isFocusTraversable();

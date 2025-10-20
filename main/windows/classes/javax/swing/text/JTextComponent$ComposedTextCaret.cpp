@@ -103,6 +103,7 @@ void JTextComponent$ComposedTextCaret::init$($JTextComponent* this$0) {
 }
 
 void JTextComponent$ComposedTextCaret::install($JTextComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultCaret::install(c);
 	$var($Document, doc, $nc(c)->getDocument());
 	if ($instanceOf($StyledDocument, doc)) {
@@ -130,6 +131,7 @@ void JTextComponent$ComposedTextCaret::paint($Graphics* g) {
 }
 
 void JTextComponent$ComposedTextCaret::positionCaret($MouseEvent* me) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, host, this->component);
 	int32_t var$0 = $nc(me)->getX();
 	$var($Point, pt, $new($Point, var$0, me->getY()));

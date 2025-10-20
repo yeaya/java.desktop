@@ -108,6 +108,7 @@ $Object* allocate$StyleSheet$ViewAttributeSet($Class* clazz) {
 }
 
 void StyleSheet$ViewAttributeSet::init$($StyleSheet* this$0, $View* v) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$MuxingAttributeSet::init$();
 	$set(this, host, v);
@@ -171,6 +172,7 @@ void StyleSheet$ViewAttributeSet::init$($StyleSheet* this$0, $View* v) {
 }
 
 bool StyleSheet$ViewAttributeSet::isDefined(Object$* key$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, key, key$renamed);
 	if ($instanceOf($StyleConstants, key)) {
 		$var($Object, cssKey, $nc(this->this$0->css)->styleConstantsKeyToCSSKey($cast($StyleConstants, key)));
@@ -182,6 +184,7 @@ bool StyleSheet$ViewAttributeSet::isDefined(Object$* key$renamed) {
 }
 
 $Object* StyleSheet$ViewAttributeSet::getAttribute(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($StyleConstants, key)) {
 		$var($Object, cssKey, $nc(this->this$0->css)->styleConstantsKeyToCSSKey($cast($StyleConstants, key)));
 		if (cssKey != nullptr) {
@@ -197,6 +200,7 @@ $Object* StyleSheet$ViewAttributeSet::getAttribute(Object$* key) {
 }
 
 $Object* StyleSheet$ViewAttributeSet::doGetAttribute(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$init($CSS$Attribute);
 	if ($equals(key, $CSS$Attribute::FONT_SIZE) && !isDefined(key)) {
 		return $of(this->this$0->fontSizeInherit());

@@ -78,6 +78,7 @@ void OGLGeneralTransformedBlit::init$($TransformBlit* performop) {
 
 void OGLGeneralTransformedBlit::Transform($SurfaceData* src$renamed, $SurfaceData* dst, $Composite* comp, $Region* clip, $AffineTransform* at, int32_t hint, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t width, int32_t height) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($SurfaceData, src, src$renamed);
 		$init($CompositeType);
 		$init($SurfaceType);

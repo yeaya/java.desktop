@@ -74,6 +74,7 @@ void DataBufferInt::init$(int32_t size) {
 }
 
 void DataBufferInt::init$(int32_t size, int32_t numBanks) {
+	$useLocalCurrentObjectStackCache();
 	$init($StateTrackable$State);
 	$DataBuffer::init$($StateTrackable$State::STABLE, $DataBuffer::TYPE_INT, size, numBanks);
 	$set(this, bankdata, $new($intArray2, numBanks));

@@ -78,6 +78,7 @@ $Object* allocate$BandCombineOp($Class* clazz) {
 }
 
 void BandCombineOp::init$($floatArray2* matrix, $RenderingHints* hints) {
+	$useLocalCurrentObjectStackCache();
 	this->nrows = 0;
 	this->ncols = 0;
 	this->nrows = $nc(matrix)->length;
@@ -93,6 +94,7 @@ void BandCombineOp::init$($floatArray2* matrix, $RenderingHints* hints) {
 }
 
 $floatArray2* BandCombineOp::getMatrix() {
+	$useLocalCurrentObjectStackCache();
 	$var($floatArray2, ret, $new($floatArray2, this->nrows));
 	for (int32_t i = 0; i < this->nrows; ++i) {
 		ret->set(i, $($Arrays::copyOf($nc(this->matrix)->get(i), this->ncols)));
@@ -101,6 +103,7 @@ $floatArray2* BandCombineOp::getMatrix() {
 }
 
 $WritableRaster* BandCombineOp::filter($Raster* src, $WritableRaster* dst$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($WritableRaster, dst, dst$renamed);
 	int32_t nBands = $nc(src)->getNumBands();
 	if (this->ncols != nBands && this->ncols != (nBands + 1)) {
@@ -164,6 +167,7 @@ $Rectangle2D* BandCombineOp::getBounds2D($Raster* src) {
 }
 
 $WritableRaster* BandCombineOp::createCompatibleDestRaster($Raster* src) {
+	$useLocalCurrentObjectStackCache();
 	int32_t nBands = $nc(src)->getNumBands();
 	if ((this->ncols != nBands) && (this->ncols != (nBands + 1))) {
 		$throwNew($IllegalArgumentException, $$str({"Number of columns in the matrix ("_s, $$str(this->ncols), ") must be equal to the number of bands ([+1]) in src ("_s, $$str(nBands), ")."_s}));

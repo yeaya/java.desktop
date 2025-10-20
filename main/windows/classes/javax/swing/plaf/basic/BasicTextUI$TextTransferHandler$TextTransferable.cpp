@@ -102,6 +102,7 @@ $Object* allocate$BasicTextUI$TextTransferHandler$TextTransferable($Class* clazz
 }
 
 void BasicTextUI$TextTransferHandler$TextTransferable::init$($JTextComponent* c, int32_t start, int32_t end) {
+	$useLocalCurrentObjectStackCache();
 	$BasicTransferable::init$(nullptr, nullptr);
 	$set(this, c, c);
 	$var($Document, doc, $nc(c)->getDocument());
@@ -154,6 +155,7 @@ void BasicTextUI$TextTransferHandler$TextTransferable::removeText() {
 }
 
 $DataFlavorArray* BasicTextUI$TextTransferHandler$TextTransferable::getRicherFlavors() {
+	$useLocalCurrentObjectStackCache();
 	if (this->richText == nullptr) {
 		return nullptr;
 	}

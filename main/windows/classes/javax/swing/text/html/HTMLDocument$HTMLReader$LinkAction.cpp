@@ -80,6 +80,7 @@ void HTMLDocument$HTMLReader$LinkAction::init$($HTMLDocument$HTMLReader* this$1)
 }
 
 void HTMLDocument$HTMLReader$LinkAction::start($HTML$Tag* t, $MutableAttributeSet* a) {
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Attribute);
 	$var($String, rel, $cast($String, $nc(a)->getAttribute($HTML$Attribute::REL)));
 	if (rel != nullptr) {

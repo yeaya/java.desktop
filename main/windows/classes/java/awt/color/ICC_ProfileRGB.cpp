@@ -76,6 +76,7 @@ $floats* ICC_ProfileRGB::getMediaWhitePoint() {
 }
 
 $floatArray2* ICC_ProfileRGB::getMatrix() {
+	$useLocalCurrentObjectStackCache();
 	$var($floats, red, getXYZTag($ICC_Profile::icSigRedColorantTag));
 	$var($floats, green, getXYZTag($ICC_Profile::icSigGreenColorantTag));
 	$var($floats, blue, getXYZTag($ICC_Profile::icSigBlueColorantTag));

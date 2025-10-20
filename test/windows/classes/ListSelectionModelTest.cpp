@@ -82,6 +82,7 @@ void ListSelectionModelTest::init$() {
 }
 
 void ListSelectionModelTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($UIManager$LookAndFeelInfoArray, lookAndFeelInfoArray, $UIManager::getInstalledLookAndFeels());
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, lookAndFeelInfoArray);
@@ -97,6 +98,7 @@ void ListSelectionModelTest::main($StringArray* args) {
 }
 
 void ListSelectionModelTest::CreateGUIAndTest($String* lookAndFeel) {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(lookAndFeel);
 	$var($DefaultListModel, listModel, $new($DefaultListModel));
 	for (int32_t j = 0; j < 10; ++j) {
@@ -160,6 +162,7 @@ void ListSelectionModelTest::CreateGUIAndTest($String* lookAndFeel) {
 }
 
 void ListSelectionModelTest::checkSelection($JList* list, $ints* selectionArray, $String* lookAndFeel) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, listSelection, $nc(list)->getSelectedIndices());
 	if ($nc(listSelection)->length != $nc(selectionArray)->length) {
 		$init($System);

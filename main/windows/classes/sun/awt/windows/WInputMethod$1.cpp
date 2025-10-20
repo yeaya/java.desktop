@@ -87,6 +87,7 @@ void WInputMethod$1::init$($WInputMethod* this$0) {
 }
 
 void WInputMethod$1::run() {
+	$useLocalCurrentObjectStackCache();
 	int32_t x = 0;
 	int32_t y = 0;
 	$var($Component, client, $WInputMethod::access$000(this->this$0));

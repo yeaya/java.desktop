@@ -138,6 +138,7 @@ void WPopupMenuPeer::finalize() {
 }
 
 void WPopupMenuPeer::init$($PopupMenu* target) {
+	$useLocalCurrentObjectStackCache();
 	$WMenuPeer::init$();
 	$set(this, target, target);
 	$var($MenuContainer, parent, nullptr);
@@ -168,6 +169,7 @@ void WPopupMenuPeer::createMenu($WComponentPeer* parent) {
 }
 
 void WPopupMenuPeer::show($Event* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, origin, $cast($Component, $nc(e)->target));
 	$var($WComponentPeer, peer, $cast($WComponentPeer, $WToolkit::targetToPeer(origin)));
 	if (peer == nullptr) {
@@ -186,6 +188,7 @@ void WPopupMenuPeer::show($Event* e) {
 }
 
 void WPopupMenuPeer::show($Component* origin, $Point* p) {
+	$useLocalCurrentObjectStackCache();
 	$var($WComponentPeer, peer, $cast($WComponentPeer, $WToolkit::targetToPeer(origin)));
 	$var($Event, e, $new($Event, origin, 0, $Event::MOUSE_DOWN, $nc(p)->x, p->y, 0, 0));
 	if (peer == nullptr) {

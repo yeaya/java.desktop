@@ -206,6 +206,7 @@ $Set* ComponentView$Invalidator::getFocusTraversalKeys(int32_t id) {
 }
 
 void ComponentView$Invalidator::propertyChange($PropertyChangeEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	$var($Boolean, enable, $cast($Boolean, $nc(ev)->getNewValue()));
 	if (getComponentCount() > 0) {
 		$nc($(getComponent(0)))->setEnabled($nc(enable)->booleanValue());

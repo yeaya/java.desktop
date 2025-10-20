@@ -75,6 +75,7 @@ void CaretFloatingPointAPITest$CustomCaret$CaretMouseListener::init$($CaretFloat
 }
 
 void CaretFloatingPointAPITest$CustomCaret$CaretMouseListener::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc(e)->getX();
 	$var($Point, pt, $new($Point, var$0, e->getY()));
 	$var($Position$BiasArray, biasRet, $new($Position$BiasArray, 1));

@@ -75,6 +75,7 @@ void StreamCloser$1::init$() {
 }
 
 void StreamCloser$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($StreamCloser);
 	if ($StreamCloser::toCloseQueue != nullptr) {
 		$synchronized($StreamCloser::class$) {

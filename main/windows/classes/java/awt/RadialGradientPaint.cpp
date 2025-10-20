@@ -141,6 +141,7 @@ void RadialGradientPaint::init$($Point2D* center, float radius, $floats* fractio
 }
 
 void RadialGradientPaint::init$(float cx, float cy, float radius, float fx, float fy, $floats* fractions, $ColorArray* colors, $MultipleGradientPaint$CycleMethod* cycleMethod) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point2D, var$0, static_cast<$Point2D*>($new($Point2D$Float, cx, cy)));
 	float var$1 = radius;
 	RadialGradientPaint::init$(var$0, var$1, static_cast<$Point2D*>($$new($Point2D$Float, fx, fy)), fractions, colors, cycleMethod);
@@ -170,6 +171,7 @@ void RadialGradientPaint::init$($Point2D* center, float radius, $Point2D* focus,
 }
 
 void RadialGradientPaint::init$($Rectangle2D* gradientBounds, $floats* fractions, $ColorArray* colors, $MultipleGradientPaint$CycleMethod* cycleMethod) {
+	$useLocalCurrentObjectStackCache();
 	double var$1 = $nc(gradientBounds)->getCenterX();
 	$var($Point2D, var$0, static_cast<$Point2D*>($new($Point2D$Double, var$1, gradientBounds->getCenterY())));
 	double var$3 = $nc(gradientBounds)->getCenterX();
@@ -197,6 +199,7 @@ $AffineTransform* RadialGradientPaint::createGradientTransform($Rectangle2D* r) 
 }
 
 $PaintContext* RadialGradientPaint::createContext($ColorModel* cm, $Rectangle* deviceBounds, $Rectangle2D* userBounds, $AffineTransform* transform$renamed, $RenderingHints* hints) {
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, transform, transform$renamed);
 	$assign(transform, $new($AffineTransform, transform));
 	transform->concatenate(this->gradientTransform);

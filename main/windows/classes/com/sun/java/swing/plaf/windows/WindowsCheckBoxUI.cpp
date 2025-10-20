@@ -83,6 +83,7 @@ void WindowsCheckBoxUI::init$() {
 
 $ComponentUI* WindowsCheckBoxUI::createUI($JComponent* c) {
 	$init(WindowsCheckBoxUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(WindowsCheckBoxUI, windowsCheckBoxUI, $cast(WindowsCheckBoxUI, $nc(appContext)->get(WindowsCheckBoxUI::WINDOWS_CHECK_BOX_UI_KEY)));
 	if (windowsCheckBoxUI == nullptr) {
@@ -97,6 +98,7 @@ $String* WindowsCheckBoxUI::getPropertyPrefix() {
 }
 
 void WindowsCheckBoxUI::installDefaults($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$WindowsRadioButtonUI::installDefaults(b);
 	if (!this->defaults_initialized) {
 		$set(this, icon, $UIManager::getIcon($$str({$(getPropertyPrefix()), "icon"_s})));

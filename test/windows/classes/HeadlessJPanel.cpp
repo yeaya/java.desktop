@@ -112,6 +112,7 @@ void HeadlessJPanel::init$() {
 }
 
 void HeadlessJPanel::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, p, $new($JPanel));
 	p->getAccessibleContext();
 	p->isFocusTraversable();

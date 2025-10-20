@@ -103,6 +103,7 @@ $View* AsyncBoxView$ChildState::getChildView() {
 }
 
 void AsyncBoxView$ChildState::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractDocument, doc, $cast($AbstractDocument, this->this$0->getDocument()));
 	{
 		$var($Throwable, var$0, nullptr);

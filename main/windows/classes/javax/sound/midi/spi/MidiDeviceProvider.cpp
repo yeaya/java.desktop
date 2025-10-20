@@ -109,6 +109,7 @@ void MidiDeviceProvider::init$() {
 }
 
 bool MidiDeviceProvider::isDeviceSupported($MidiDevice$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($Arrays::stream($(getDeviceInfo()))))->anyMatch(static_cast<$Predicate*>($$new(MidiDeviceProvider$$Lambda$equals, static_cast<$MidiDevice$Info*>($nc(info)))));
 }
 

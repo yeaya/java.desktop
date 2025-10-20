@@ -806,6 +806,7 @@ void JFileChooser::init$($String* currentDirectoryPath, $FileSystemView* fsv) {
 }
 
 void JFileChooser::setup($FileSystemView* view$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($FileSystemView, view, view$renamed);
 	installShowFilesListener();
 	installHierarchyListener();
@@ -825,6 +826,7 @@ void JFileChooser::installHierarchyListener() {
 }
 
 void JFileChooser::installShowFilesListener() {
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, tk, $Toolkit::getDefaultToolkit());
 	$var($Object, showHiddenProperty, $nc(tk)->getDesktopProperty(JFileChooser::SHOW_HIDDEN_PROP));
 	if ($instanceOf($Boolean, showHiddenProperty)) {
@@ -855,6 +857,7 @@ $File* JFileChooser::getSelectedFile() {
 }
 
 void JFileChooser::setSelectedFile($File* file) {
+	$useLocalCurrentObjectStackCache();
 	$var($File, oldValue, this->selectedFile);
 	$set(this, selectedFile, file);
 	if (this->selectedFile != nullptr) {
@@ -878,6 +881,7 @@ $FileArray* JFileChooser::getSelectedFiles() {
 }
 
 void JFileChooser::setSelectedFiles($FileArray* selectedFiles$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($FileArray, selectedFiles, selectedFiles$renamed);
 	$var($FileArray, oldValue, this->selectedFiles);
 	if (selectedFiles == nullptr || $nc(selectedFiles)->length == 0) {
@@ -896,6 +900,7 @@ $File* JFileChooser::getCurrentDirectory() {
 }
 
 void JFileChooser::setCurrentDirectory($File* dir$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($File, dir, dir$renamed);
 	$var($File, oldValue, this->currentDirectory);
 	if (dir != nullptr && !dir->exists()) {
@@ -919,6 +924,7 @@ void JFileChooser::setCurrentDirectory($File* dir$renamed) {
 }
 
 void JFileChooser::changeToParentDirectory() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, selectedFile, nullptr);
 	$var($File, oldValue, getCurrentDirectory());
 	setCurrentDirectory($($nc($(getFileSystemView()))->getParentDirectory(oldValue)));
@@ -943,6 +949,7 @@ int32_t JFileChooser::showSaveDialog($Component* parent) {
 }
 
 int32_t JFileChooser::showDialog($Component* parent, $String* approveButtonText) {
+	$useLocalCurrentObjectStackCache();
 	if (this->dialog != nullptr) {
 		return JFileChooser::ERROR_OPTION;
 	}
@@ -963,6 +970,7 @@ int32_t JFileChooser::showDialog($Component* parent, $String* approveButtonText)
 }
 
 $JDialog* JFileChooser::createDialog($Component* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($FileChooserUI, ui, $cast($FileChooserUI, getUI()));
 	$var($String, title, $nc(ui)->getDialogTitle(this));
 	$init($AccessibleContext);
@@ -1022,6 +1030,7 @@ void JFileChooser::setDialogType(int32_t dialogType) {
 
 void JFileChooser::checkDialogType(int32_t dialogType) {
 	$init(JFileChooser);
+	$useLocalCurrentObjectStackCache();
 	if (!(dialogType == JFileChooser::OPEN_DIALOG || dialogType == JFileChooser::SAVE_DIALOG || dialogType == JFileChooser::CUSTOM_DIALOG)) {
 		$throwNew($IllegalArgumentException, $$str({"Incorrect Dialog Type: "_s, $$str(dialogType)}));
 	}
@@ -1094,6 +1103,7 @@ $FileFilterArray* JFileChooser::getChoosableFileFilters() {
 }
 
 void JFileChooser::addChoosableFileFilter($FileFilter* filter) {
+	$useLocalCurrentObjectStackCache();
 	if (filter != nullptr && !$nc(this->filters)->contains(filter)) {
 		$var($FileFilterArray, oldValue, getChoosableFileFilters());
 		$nc(this->filters)->addElement(filter);
@@ -1105,6 +1115,7 @@ void JFileChooser::addChoosableFileFilter($FileFilter* filter) {
 }
 
 bool JFileChooser::removeChoosableFileFilter($FileFilter* f) {
+	$useLocalCurrentObjectStackCache();
 	int32_t index = $nc(this->filters)->indexOf(f);
 	if (index >= 0) {
 		if (getFileFilter() == f) {
@@ -1129,6 +1140,7 @@ bool JFileChooser::removeChoosableFileFilter($FileFilter* f) {
 }
 
 void JFileChooser::resetChoosableFileFilters() {
+	$useLocalCurrentObjectStackCache();
 	$var($FileFilterArray, oldValue, getChoosableFileFilters());
 	setFileFilter(nullptr);
 	$nc(this->filters)->removeAllElements();
@@ -1139,6 +1151,7 @@ void JFileChooser::resetChoosableFileFilters() {
 }
 
 $FileFilter* JFileChooser::getAcceptAllFileFilter() {
+	$useLocalCurrentObjectStackCache();
 	$var($FileFilter, filter, nullptr);
 	if ($cast($FileChooserUI, getUI()) != nullptr) {
 		$assign(filter, $nc($($cast($FileChooserUI, getUI())))->getAcceptAllFileFilter(this));
@@ -1151,6 +1164,7 @@ bool JFileChooser::isAcceptAllFileFilterUsed() {
 }
 
 void JFileChooser::setAcceptAllFileFilterUsed(bool b) {
+	$useLocalCurrentObjectStackCache();
 	bool oldValue = this->useAcceptAllFileFilter;
 	this->useAcceptAllFileFilter = b;
 	if (!b) {
@@ -1184,6 +1198,7 @@ void JFileChooser::setFileSelectionMode(int32_t mode) {
 
 void JFileChooser::checkFileSelectionMode(int32_t mode) {
 	$init(JFileChooser);
+	$useLocalCurrentObjectStackCache();
 	if ((mode != JFileChooser::FILES_ONLY) && (mode != JFileChooser::DIRECTORIES_ONLY) && (mode != JFileChooser::FILES_AND_DIRECTORIES)) {
 		$throwNew($IllegalArgumentException, $$str({"Incorrect Mode for file selection: "_s, $$str(mode)}));
 	}
@@ -1229,6 +1244,7 @@ void JFileChooser::setFileHidingEnabled(bool b) {
 }
 
 void JFileChooser::setFileFilter($FileFilter* filter) {
+	$useLocalCurrentObjectStackCache();
 	$var($FileFilter, oldValue, this->fileFilter);
 	$set(this, fileFilter, filter);
 	if (filter != nullptr) {
@@ -1275,6 +1291,7 @@ $FileView* JFileChooser::getFileView() {
 }
 
 $String* JFileChooser::getName($File* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, filename, nullptr);
 	if (f != nullptr) {
 		if (getFileView() != nullptr) {
@@ -1289,6 +1306,7 @@ $String* JFileChooser::getName($File* f) {
 }
 
 $String* JFileChooser::getDescription($File* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, description, nullptr);
 	if (f != nullptr) {
 		if (getFileView() != nullptr) {
@@ -1303,6 +1321,7 @@ $String* JFileChooser::getDescription($File* f) {
 }
 
 $String* JFileChooser::getTypeDescription($File* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, typeDescription, nullptr);
 	if (f != nullptr) {
 		if (getFileView() != nullptr) {
@@ -1317,6 +1336,7 @@ $String* JFileChooser::getTypeDescription($File* f) {
 }
 
 $Icon* JFileChooser::getIcon($File* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, icon, nullptr);
 	if (f != nullptr) {
 		if (getFileView() != nullptr) {
@@ -1331,6 +1351,7 @@ $Icon* JFileChooser::getIcon($File* f) {
 }
 
 bool JFileChooser::isTraversable($File* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($Boolean, traversable, nullptr);
 	if (f != nullptr) {
 		$var($FileView, fileView, getFileView());
@@ -1399,6 +1420,7 @@ $ActionListenerArray* JFileChooser::getActionListeners() {
 }
 
 void JFileChooser::fireActionPerformed($String* command) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	int64_t mostRecentEventTime = $EventQueue::getMostRecentEventTime();
 	int32_t modifiers = 0;
@@ -1421,6 +1443,7 @@ void JFileChooser::fireActionPerformed($String* command) {
 }
 
 void JFileChooser::updateUI() {
+	$useLocalCurrentObjectStackCache();
 	if (isAcceptAllFileFilterUsed()) {
 		removeChoosableFileFilter($(getAcceptAllFileFilter()));
 	}
@@ -1443,6 +1466,7 @@ $ComponentUI* JFileChooser::getUI() {
 }
 
 void JFileChooser::readObject($ObjectInputStream* in) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(in)->readFields());
 	$set(this, dialogTitle, $cast($String, $nc(f)->get("dialogTitle"_s, ($Object*)nullptr)));
 	$set(this, approveButtonText, $cast($String, f->get("approveButtonText"_s, ($Object*)nullptr)));
@@ -1480,6 +1504,7 @@ void JFileChooser::readObject($ObjectInputStream* in) {
 }
 
 void JFileChooser::writeObject($ObjectOutputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($FileSystemView, fsv, nullptr);
 	if (isAcceptAllFileFilterUsed()) {
 		removeChoosableFileFilter($(getAcceptAllFileFilter()));
@@ -1505,6 +1530,7 @@ void JFileChooser::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JFileChooser::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, approveButtonTextString, this->approveButtonText != nullptr ? this->approveButtonText : ""_s);
 	$var($String, dialogTitleString, this->dialogTitle != nullptr ? this->dialogTitle : ""_s);
 	$var($String, dialogTypeString, nullptr);

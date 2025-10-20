@@ -188,6 +188,7 @@ bool ThemeReader::isXPStyleEnabled() {
 
 $Long* ThemeReader::getThemeImpl($String* widget) {
 	$init(ThemeReader);
+	$useLocalCurrentObjectStackCache();
 	$var($Long, theme, $cast($Long, $nc(ThemeReader::widgetToTheme)->get(widget)));
 	if (theme == nullptr) {
 		int32_t i = $nc(widget)->indexOf("::"_s);
@@ -205,6 +206,7 @@ $Long* ThemeReader::getThemeImpl($String* widget) {
 
 $Long* ThemeReader::getTheme($String* widget) {
 	$init(ThemeReader);
+	$useLocalCurrentObjectStackCache();
 	if (!ThemeReader::isThemed$) {
 		$throwNew($IllegalStateException, "Themes are not loaded"_s);
 	}
@@ -269,6 +271,7 @@ void ThemeReader::paintBackground($ints* buffer, int64_t theme, int32_t part, in
 
 void ThemeReader::paintBackground($ints* buffer, $String* widget, int32_t part, int32_t state, int32_t x, int32_t y, int32_t w, int32_t h, int32_t stride) {
 	$init(ThemeReader);
+	$useLocalCurrentObjectStackCache();
 	$nc(ThemeReader::readLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -296,6 +299,7 @@ $Insets* ThemeReader::getThemeMargins(int64_t theme, int32_t part, int32_t state
 
 $Insets* ThemeReader::getThemeMargins($String* widget, int32_t part, int32_t state, int32_t marginType) {
 	$init(ThemeReader);
+	$useLocalCurrentObjectStackCache();
 	$nc(ThemeReader::readLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -331,6 +335,7 @@ bool ThemeReader::isThemePartDefined(int64_t theme, int32_t part, int32_t state)
 
 bool ThemeReader::isThemePartDefined($String* widget, int32_t part, int32_t state) {
 	$init(ThemeReader);
+	$useLocalCurrentObjectStackCache();
 	$nc(ThemeReader::readLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -366,6 +371,7 @@ $Color* ThemeReader::getColor(int64_t theme, int32_t part, int32_t state, int32_
 
 $Color* ThemeReader::getColor($String* widget, int32_t part, int32_t state, int32_t property) {
 	$init(ThemeReader);
+	$useLocalCurrentObjectStackCache();
 	$nc(ThemeReader::readLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -401,6 +407,7 @@ int32_t ThemeReader::getInt(int64_t theme, int32_t part, int32_t state, int32_t 
 
 int32_t ThemeReader::getInt($String* widget, int32_t part, int32_t state, int32_t property) {
 	$init(ThemeReader);
+	$useLocalCurrentObjectStackCache();
 	$nc(ThemeReader::readLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -436,6 +443,7 @@ int32_t ThemeReader::getEnum(int64_t theme, int32_t part, int32_t state, int32_t
 
 int32_t ThemeReader::getEnum($String* widget, int32_t part, int32_t state, int32_t property) {
 	$init(ThemeReader);
+	$useLocalCurrentObjectStackCache();
 	$nc(ThemeReader::readLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -471,6 +479,7 @@ bool ThemeReader::getBoolean(int64_t theme, int32_t part, int32_t state, int32_t
 
 bool ThemeReader::getBoolean($String* widget, int32_t part, int32_t state, int32_t property) {
 	$init(ThemeReader);
+	$useLocalCurrentObjectStackCache();
 	$nc(ThemeReader::readLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -506,6 +515,7 @@ bool ThemeReader::getSysBoolean(int64_t theme, int32_t property) {
 
 bool ThemeReader::getSysBoolean($String* widget, int32_t property) {
 	$init(ThemeReader);
+	$useLocalCurrentObjectStackCache();
 	$nc(ThemeReader::readLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -541,6 +551,7 @@ $Point* ThemeReader::getPoint(int64_t theme, int32_t part, int32_t state, int32_
 
 $Point* ThemeReader::getPoint($String* widget, int32_t part, int32_t state, int32_t property) {
 	$init(ThemeReader);
+	$useLocalCurrentObjectStackCache();
 	$nc(ThemeReader::readLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -576,6 +587,7 @@ $Dimension* ThemeReader::getPosition(int64_t theme, int32_t part, int32_t state,
 
 $Dimension* ThemeReader::getPosition($String* widget, int32_t part, int32_t state, int32_t property) {
 	$init(ThemeReader);
+	$useLocalCurrentObjectStackCache();
 	$nc(ThemeReader::readLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -611,6 +623,7 @@ $Dimension* ThemeReader::getPartSize(int64_t theme, int32_t part, int32_t state)
 
 $Dimension* ThemeReader::getPartSize($String* widget, int32_t part, int32_t state) {
 	$init(ThemeReader);
+	$useLocalCurrentObjectStackCache();
 	$nc(ThemeReader::readLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -669,6 +682,7 @@ int64_t ThemeReader::getThemeTransitionDuration(int64_t theme, int32_t part, int
 
 int64_t ThemeReader::getThemeTransitionDuration($String* widget, int32_t part, int32_t stateFrom, int32_t stateTo, int32_t propId) {
 	$init(ThemeReader);
+	$useLocalCurrentObjectStackCache();
 	$nc(ThemeReader::readLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -704,6 +718,7 @@ $Insets* ThemeReader::getThemeBackgroundContentMargins(int64_t theme, int32_t pa
 
 $Insets* ThemeReader::getThemeBackgroundContentMargins($String* widget, int32_t part, int32_t state, int32_t boundingWidth, int32_t boundingHeight) {
 	$init(ThemeReader);
+	$useLocalCurrentObjectStackCache();
 	$nc(ThemeReader::readLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);

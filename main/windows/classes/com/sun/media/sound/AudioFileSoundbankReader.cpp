@@ -86,6 +86,7 @@ void AudioFileSoundbankReader::init$() {
 }
 
 $Soundbank* AudioFileSoundbankReader::getSoundbank($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($AudioInputStream, ais, $AudioSystem::getAudioInputStream(url));
 		$var($Soundbank, sbk, getSoundbank(ais));
@@ -102,6 +103,7 @@ $Soundbank* AudioFileSoundbankReader::getSoundbank($URL* url) {
 }
 
 $Soundbank* AudioFileSoundbankReader::getSoundbank($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$nc(stream)->mark(512);
 	try {
 		$var($AudioInputStream, ais, $AudioSystem::getAudioInputStream(stream));
@@ -119,6 +121,7 @@ $Soundbank* AudioFileSoundbankReader::getSoundbank($InputStream* stream) {
 }
 
 $Soundbank* AudioFileSoundbankReader::getSoundbank($AudioInputStream* ais) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($bytes, buffer, nullptr);
 		if ($nc(ais)->getFrameLength() == -1) {
@@ -152,6 +155,7 @@ $Soundbank* AudioFileSoundbankReader::getSoundbank($AudioInputStream* ais) {
 }
 
 $Soundbank* AudioFileSoundbankReader::getSoundbank($File* file) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($AudioInputStream, ais, $AudioSystem::getAudioInputStream(file));
 		$nc(ais)->close();

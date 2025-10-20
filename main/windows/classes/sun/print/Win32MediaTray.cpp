@@ -118,6 +118,7 @@ int32_t Win32MediaTray::getTraySize() {
 }
 
 $StringArray* Win32MediaTray::getStringTable() {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, completeList, $new($ArrayList));
 	for (int32_t i = 0; i < $nc(Win32MediaTray::myStringTable)->length; ++i) {
 		completeList->add($nc(Win32MediaTray::myStringTable)->get(i));
@@ -128,6 +129,7 @@ $StringArray* Win32MediaTray::getStringTable() {
 }
 
 $EnumSyntaxArray* Win32MediaTray::getEnumValueTable() {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, completeList, $new($ArrayList));
 	for (int32_t i = 0; i < $nc(Win32MediaTray::myEnumValueTable)->length; ++i) {
 		completeList->add($nc(Win32MediaTray::myEnumValueTable)->get(i));

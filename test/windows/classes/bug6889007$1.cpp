@@ -91,6 +91,7 @@ void bug6889007$1::init$($JFrame* val$frame) {
 }
 
 void bug6889007$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->val$frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$var($JTableHeader, th, $new($JTableHeader));
 	th->setColumnModel($($$new($JTable, 20, 5)->getColumnModel()));

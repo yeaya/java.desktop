@@ -61,6 +61,7 @@ void bug7141573::init$() {
 }
 
 void bug7141573::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel"_s);
 	} catch ($Exception&) {

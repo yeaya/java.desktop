@@ -178,6 +178,7 @@ void FileDialog::setTitle($String* title) {
 }
 
 $String* FileDialog::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(FileDialog::class$) {
 		$var($String, var$0, FileDialog::base);
 		return $concat(var$0, $$str(FileDialog::nameCounter++));
@@ -293,6 +294,7 @@ void FileDialog::readObject($ObjectInputStream* s) {
 }
 
 $String* FileDialog::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, $Dialog::paramString());
 	$plusAssign(str, $$str({",dir= "_s, this->dir}));
 	$plusAssign(str, $$str({",file= "_s, this->file}));

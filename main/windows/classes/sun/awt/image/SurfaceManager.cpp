@@ -119,6 +119,7 @@ void SurfaceManager::setImageAccessor($SurfaceManager$ImageAccessor* ia) {
 }
 
 SurfaceManager* SurfaceManager::getManager($Image* img) {
+	$useLocalCurrentObjectStackCache();
 	$init(SurfaceManager);
 	$var(SurfaceManager, sMgr, $nc(SurfaceManager::imgaccessor)->getSurfaceManager(img));
 	if (sMgr == nullptr) {
@@ -169,6 +170,7 @@ void SurfaceManager::flush() {
 
 void SurfaceManager::flush(bool deaccelerate) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->cacheMap != nullptr) {
 			$var($Iterator, i, $nc($($nc(this->cacheMap)->values()))->iterator());
 			while ($nc(i)->hasNext()) {
@@ -190,6 +192,7 @@ void SurfaceManager::setAccelerationPriority(float priority) {
 }
 
 double SurfaceManager::getImageScaleX($Image* img) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($VolatileImage, img))) {
 		return (double)1;
 	}
@@ -198,6 +201,7 @@ double SurfaceManager::getImageScaleX($Image* img) {
 }
 
 double SurfaceManager::getImageScaleY($Image* img) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($VolatileImage, img))) {
 		return (double)1;
 	}

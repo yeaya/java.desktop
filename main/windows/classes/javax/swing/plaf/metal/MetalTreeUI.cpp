@@ -157,6 +157,7 @@ void MetalTreeUI::decodeLineStyle(Object$* lineStyleFlag) {
 }
 
 bool MetalTreeUI::isLocationInExpandControl(int32_t row, int32_t rowLevel, int32_t mouseX, int32_t mouseY) {
+	$useLocalCurrentObjectStackCache();
 	if (this->tree != nullptr && !isLeaf(row)) {
 		int32_t boxWidth = 0;
 		if (getExpandedIcon() != nullptr) {
@@ -181,6 +182,7 @@ void MetalTreeUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void MetalTreeUI::paintHorizontalSeparators($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor(MetalTreeUI::lineColor);
 	$var($Rectangle, clipBounds, g->getClipBounds());
 	int32_t beginRow = getRowForPath(this->tree, $(getClosestPathForLocation(this->tree, 0, $nc(clipBounds)->y)));

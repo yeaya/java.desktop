@@ -487,6 +487,7 @@ void RightAltKeyTest::init$() {
 }
 
 void RightAltKeyTest::testJMenu() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, $new($JFrame, "Menu Frame"_s));
 	$var($JMenuBar, mb, $new($JMenuBar));
 	$var($JMenu, m1, $new($JMenu, "File"_s));
@@ -503,6 +504,7 @@ void RightAltKeyTest::testJMenu() {
 }
 
 void RightAltKeyTest::testJMenuItem() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, $new($JFrame, "Menu Frame"_s));
 	$var($JMenuBar, mb, $new($JMenuBar));
 	$var($JMenu, m1, $new($JMenu, "File"_s));
@@ -524,6 +526,7 @@ void RightAltKeyTest::testJOptionPane() {
 }
 
 void RightAltKeyTest::testJTabbedPane() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, $new($JFrame));
 	$var($JPanel, p1, $new($JPanel));
 	$var($JPanel, p2, $new($JPanel));
@@ -539,6 +542,7 @@ void RightAltKeyTest::testJTabbedPane() {
 }
 
 void RightAltKeyTest::testJTextArea() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextField, firstField, $new($JTextField, 10));
 	$var($JTextField, lastField, $new($JTextField, 10));
 	$var($JLabel, firstLabel, $new($JLabel, "First Name"_s, $JLabel::RIGHT));
@@ -561,6 +565,7 @@ void RightAltKeyTest::testJTextArea() {
 }
 
 void RightAltKeyTest::test() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIManager$LookAndFeelInfoArray, lookAndFeels, $UIManager::getInstalledLookAndFeels());
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, lookAndFeels);
@@ -641,6 +646,7 @@ void RightAltKeyTest::disposeUI() {
 }
 
 void RightAltKeyTest::errLog($String* componentName, $String* lookAndFeel) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(RightAltKeyTest$$Lambda$disposeUI$7, this)));
 	$throwNew($RuntimeException, $$str({"Actions are not performed for "_s, componentName, " with "_s, lookAndFeel, " look and feel."_s}));
 }

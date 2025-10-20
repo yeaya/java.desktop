@@ -124,6 +124,7 @@ void bug4987336::init$() {
 }
 
 void bug4987336::init() {
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, pnLafs, $new($JPanel));
 	pnLafs->setLayout($$new($BoxLayout, pnLafs, $BoxLayout::Y_AXIS));
 	$var($ButtonGroup, group, $new($ButtonGroup));
@@ -153,6 +154,7 @@ void bug4987336::init() {
 
 $JSlider* bug4987336::createSlider(bool enabled, $String* firstEnabledImage, $String* firstDisabledImage, $String* secondEnabledImage, $String* secondDisabledImage) {
 	$init(bug4987336);
+	$useLocalCurrentObjectStackCache();
 	$var($Hashtable, dictionary, $new($Hashtable));
 	$var($Object, var$0, $of($Integer::valueOf(0)));
 	dictionary->put(var$0, $(createLabel(firstEnabledImage, firstDisabledImage)));
@@ -167,6 +169,7 @@ $JSlider* bug4987336::createSlider(bool enabled, $String* firstEnabledImage, $St
 
 $JLabel* bug4987336::createLabel($String* enabledImage, $String* disabledImage) {
 	$init(bug4987336);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($ImageIcon, enabledIcon, enabledImage == nullptr ? ($ImageIcon*)nullptr : $new($ImageIcon, $(bug4987336::class$->getResource(enabledImage))));
 	$var($ImageIcon, disabledIcon, disabledImage == nullptr ? ($ImageIcon*)nullptr : $new($ImageIcon, $(bug4987336::class$->getResource(disabledImage))));

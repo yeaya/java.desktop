@@ -156,6 +156,7 @@ $AccessibleRole* JScrollPane$AccessibleJScrollPane::getAccessibleRole() {
 }
 
 void JScrollPane$AccessibleJScrollPane::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (e == nullptr) {
 		$throwNew($NullPointerException);
 	}
@@ -166,6 +167,7 @@ void JScrollPane$AccessibleJScrollPane::stateChanged($ChangeEvent* e) {
 }
 
 void JScrollPane$AccessibleJScrollPane::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propertyName, $nc(e)->getPropertyName());
 	if (propertyName == "horizontalScrollBar"_s || propertyName == "verticalScrollBar"_s) {
 		if ($instanceOf($JScrollBar, $(e->getNewValue()))) {
@@ -175,6 +177,7 @@ void JScrollPane$AccessibleJScrollPane::propertyChange($PropertyChangeEvent* e) 
 }
 
 void JScrollPane$AccessibleJScrollPane::setScrollBarRelations($JScrollBar* scrollBar) {
+	$useLocalCurrentObjectStackCache();
 	$init($AccessibleRelation);
 	$var($AccessibleRelation, controlledBy, $new($AccessibleRelation, $AccessibleRelation::CONTROLLED_BY, $of(scrollBar)));
 	$var($AccessibleRelation, controllerFor, $new($AccessibleRelation, $AccessibleRelation::CONTROLLER_FOR, $of(this->this$0)));

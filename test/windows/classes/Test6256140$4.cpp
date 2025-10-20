@@ -77,6 +77,7 @@ void Test6256140$4::init$() {
 }
 
 $JToolTip* Test6256140$4::createToolTip() {
+	$useLocalCurrentObjectStackCache();
 	$var($JToolTip, toolTip, $JFormattedTextField::createToolTip());
 	$nc(toolTip)->setLayout($$new($BorderLayout));
 	$init($Test6256140);

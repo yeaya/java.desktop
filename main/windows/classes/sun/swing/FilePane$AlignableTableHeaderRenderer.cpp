@@ -83,6 +83,7 @@ void FilePane$AlignableTableHeaderRenderer::init$($FilePane* this$0, $TableCellR
 }
 
 $Component* FilePane$AlignableTableHeaderRenderer::getTableCellRendererComponent($JTable* table, Object$* value, bool isSelected, bool hasFocus, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $nc(this->wrappedRenderer)->getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column));
 	int32_t modelColumn = $nc(table)->convertColumnIndexToModel(column);
 	$var($ShellFolderColumnInfo, columnInfo, $nc($($nc(this->this$0->detailsTableModel)->getColumns()))->get(modelColumn));

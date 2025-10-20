@@ -87,6 +87,7 @@ void ClassLoaderObjectInputStream::init$($InputStream* is, $Map* map) {
 }
 
 $Class* ClassLoaderObjectInputStream::resolveClass($ObjectStreamClass* classDesc) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, className, $nc(classDesc)->getName());
 	$var($Set, s, $new($HashSet, 1));
@@ -100,6 +101,7 @@ $Class* ClassLoaderObjectInputStream::resolveClass($ObjectStreamClass* classDesc
 }
 
 $Class* ClassLoaderObjectInputStream::resolveProxyClass($StringArray* interfaces) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Set, s, $new($HashSet, $nc(interfaces)->length));
 	for (int32_t i = 0; i < $nc(interfaces)->length; ++i) {

@@ -80,6 +80,7 @@ void FontConfiguration$1::init$($FontConfiguration* this$0, $String* val$fileNam
 }
 
 $Object* FontConfiguration$1::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($File, f, $new($File, this->val$fileName));
 		return $of($Boolean::valueOf(f->exists()));

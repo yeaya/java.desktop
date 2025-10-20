@@ -208,6 +208,7 @@ $ints* BoxView::updateLayoutArray($ints* oldArray, int32_t offset, int32_t nInse
 }
 
 void BoxView::forwardUpdate($DocumentEvent$ElementChange* ec, $DocumentEvent* e, $Shape* a, $ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	bool wasValid = isLayoutValid(this->majorAxis);
 	$CompositeView::forwardUpdate(ec, e, a, f);
 	if (wasValid && (!isLayoutValid(this->majorAxis))) {
@@ -281,6 +282,7 @@ void BoxView::setSpanOnAxis(int32_t axis, float span) {
 }
 
 void BoxView::updateChildSizes() {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = getViewCount();
 	if (this->majorAxis == $View::X_AXIS) {
 		for (int32_t i = 0; i < n; ++i) {
@@ -311,6 +313,7 @@ void BoxView::setSize(float width, float height) {
 }
 
 void BoxView::paint($Graphics* g, $Shape* allocation) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, alloc, ($instanceOf($Rectangle, allocation)) ? $cast($Rectangle, allocation) : $nc(allocation)->getBounds());
 	int32_t n = getViewCount();
 	int32_t x = $nc(alloc)->x + getLeftInset();
@@ -336,6 +339,7 @@ void BoxView::paint($Graphics* g, $Shape* allocation) {
 }
 
 $Shape* BoxView::getChildAllocation(int32_t index, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	if (a != nullptr) {
 		$var($Shape, ca, $CompositeView::getChildAllocation(index, a));
 		if ((ca != nullptr) && (!isAllocationValid())) {
@@ -516,6 +520,7 @@ int32_t BoxView::getHeight() {
 }
 
 void BoxView::layoutMajorAxis(int32_t targetSpan, int32_t axis, $ints* offsets, $ints* spans) {
+	$useLocalCurrentObjectStackCache();
 	int64_t preferred = 0;
 	int32_t n = getViewCount();
 	for (int32_t i = 0; i < n; ++i) {
@@ -558,6 +563,7 @@ void BoxView::layoutMajorAxis(int32_t targetSpan, int32_t axis, $ints* offsets, 
 }
 
 void BoxView::layoutMinorAxis(int32_t targetSpan, int32_t axis, $ints* offsets, $ints* spans) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = getViewCount();
 	for (int32_t i = 0; i < n; ++i) {
 		$var($View, v, getView(i));
@@ -575,6 +581,7 @@ void BoxView::layoutMinorAxis(int32_t targetSpan, int32_t axis, $ints* offsets, 
 }
 
 $SizeRequirements* BoxView::calculateMajorAxisRequirements(int32_t axis, $SizeRequirements* r$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($SizeRequirements, r, r$renamed);
 	float min = (float)0;
 	float pref = (float)0;
@@ -597,6 +604,7 @@ $SizeRequirements* BoxView::calculateMajorAxisRequirements(int32_t axis, $SizeRe
 }
 
 $SizeRequirements* BoxView::calculateMinorAxisRequirements(int32_t axis, $SizeRequirements* r$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($SizeRequirements, r, r$renamed);
 	int32_t min = 0;
 	int64_t pref = 0;
@@ -619,6 +627,7 @@ $SizeRequirements* BoxView::calculateMinorAxisRequirements(int32_t axis, $SizeRe
 }
 
 void BoxView::checkRequests(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	if ((axis != $View::X_AXIS) && (axis != $View::Y_AXIS)) {
 		$throwNew($IllegalArgumentException, $$str({"Invalid axis: "_s, $$str(axis)}));
 	}
@@ -634,6 +643,7 @@ void BoxView::checkRequests(int32_t axis) {
 }
 
 void BoxView::baselineLayout(int32_t targetSpan, int32_t axis, $ints* offsets, $ints* spans) {
+	$useLocalCurrentObjectStackCache();
 	int32_t totalAscent = $cast(int32_t, (targetSpan * getAlignment(axis)));
 	int32_t totalDescent = targetSpan - totalAscent;
 	int32_t n = getViewCount();
@@ -661,6 +671,7 @@ void BoxView::baselineLayout(int32_t targetSpan, int32_t axis, $ints* offsets, $
 }
 
 $SizeRequirements* BoxView::baselineRequirements(int32_t axis, $SizeRequirements* r$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($SizeRequirements, r, r$renamed);
 	$var($SizeRequirements, totalAscent, $new($SizeRequirements));
 	$var($SizeRequirements, totalDescent, $new($SizeRequirements));

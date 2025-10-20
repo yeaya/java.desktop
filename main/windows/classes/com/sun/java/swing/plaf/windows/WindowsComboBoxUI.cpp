@@ -357,6 +357,7 @@ void WindowsComboBoxUI::paint($Graphics* g, $JComponent* c) {
 }
 
 $TMSchema$State* WindowsComboBoxUI::getXPComboBoxState($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$init($TMSchema$State);
 	$TMSchema$State* state = $TMSchema$State::NORMAL;
 	if (!$nc(c)->isEnabled()) {
@@ -375,6 +376,7 @@ $TMSchema$State* WindowsComboBoxUI::getXPComboBoxState($JComponent* c) {
 }
 
 void WindowsComboBoxUI::paintXPComboBoxBackground($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp == nullptr) {
 		return;
@@ -395,6 +397,7 @@ void WindowsComboBoxUI::paintXPComboBoxBackground($Graphics* g, $JComponent* c) 
 }
 
 void WindowsComboBoxUI::paintCurrentValue($Graphics* g, $Rectangle* bounds, bool hasFocus) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$nc(bounds)->x += 2;
@@ -442,6 +445,7 @@ void WindowsComboBoxUI::paintCurrentValueBackground($Graphics* g, $Rectangle* bo
 }
 
 $Dimension* WindowsComboBoxUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, $BasicComboBoxUI::getMinimumSize(c));
 	if ($XPStyle::getXP() != nullptr) {
 		$nc(d)->width += 7;

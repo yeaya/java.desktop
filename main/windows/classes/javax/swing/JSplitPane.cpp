@@ -462,6 +462,7 @@ $String* JSplitPane::DIVIDER_LOCATION_PROPERTY = nullptr;
 $String* JSplitPane::RESIZE_WEIGHT_PROPERTY = nullptr;
 
 void JSplitPane::init$() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $UIManager::getBoolean("SplitPane.continuousLayout"_s);
 	$var($Component, var$1, static_cast<$Component*>($new($JButton, $($UIManager::getString("SplitPane.leftButtonText"_s)))));
 	JSplitPane::init$(JSplitPane::HORIZONTAL_SPLIT, var$0, var$1, $$new($JButton, $($UIManager::getString("SplitPane.rightButtonText"_s))));
@@ -723,6 +724,7 @@ bool JSplitPane::isValidateRoot() {
 }
 
 void JSplitPane::addImpl($Component* comp, Object$* constraints$renamed, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, constraints, constraints$renamed);
 	$var($Component, toRemove, nullptr);
 	if (constraints != nullptr && !($instanceOf($String, constraints))) {
@@ -770,6 +772,7 @@ void JSplitPane::addImpl($Component* comp, Object$* constraints$renamed, int32_t
 }
 
 void JSplitPane::paintChildren($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$JComponent::paintChildren(g);
 	$var($SplitPaneUI, ui, $cast($SplitPaneUI, getUI()));
 	if (ui != nullptr) {
@@ -807,6 +810,7 @@ void JSplitPane::setUIProperty($String* propertyName, Object$* value) {
 }
 
 $String* JSplitPane::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, orientationString, this->orientation == JSplitPane::HORIZONTAL_SPLIT ? "HORIZONTAL_SPLIT"_s : "VERTICAL_SPLIT"_s);
 	$var($String, continuousLayoutString, this->continuousLayout ? "true"_s : "false"_s);
 	$var($String, oneTouchExpandableString, this->oneTouchExpandable ? "true"_s : "false"_s);

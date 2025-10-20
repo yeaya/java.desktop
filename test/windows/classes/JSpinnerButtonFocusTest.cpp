@@ -282,6 +282,7 @@ void JSpinnerButtonFocusTest::init$() {
 }
 
 void JSpinnerButtonFocusTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -337,6 +338,7 @@ void JSpinnerButtonFocusTest::lambda$main$1() {
 }
 
 void JSpinnerButtonFocusTest::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$init(JSpinnerButtonFocusTest);
 	$assignStatic(JSpinnerButtonFocusTest::frame, $new($JFrame));
 	$assignStatic(JSpinnerButtonFocusTest::spinner1, $new($JSpinner));

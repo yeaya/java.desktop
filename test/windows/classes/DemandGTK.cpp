@@ -159,6 +159,7 @@ void DemandGTK::createAndShow() {
 }
 
 void DemandGTK::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(DemandGTK$$Lambda$createAndShow)));
 	$var($Robot, robot, $new($Robot));
 	robot->waitForIdle();

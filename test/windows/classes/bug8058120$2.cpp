@@ -68,6 +68,7 @@ void bug8058120$2::init$() {
 }
 
 void bug8058120$2::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($bug8058120);
 		$nc($bug8058120::document)->insertAfterEnd($($nc($bug8058120::document)->getElement("ab"_s)), "c"_s);

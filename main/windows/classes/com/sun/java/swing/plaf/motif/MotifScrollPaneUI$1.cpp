@@ -92,6 +92,7 @@ void MotifScrollPaneUI$1::init$($MotifScrollPaneUI* this$0) {
 }
 
 void MotifScrollPaneUI$1::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propertyName, $nc(e)->getPropertyName());
 	if ($nc(propertyName)->equals("componentOrientation"_s)) {
 		$var($JScrollPane, pane, $cast($JScrollPane, e->getSource()));

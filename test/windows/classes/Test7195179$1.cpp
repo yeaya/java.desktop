@@ -102,6 +102,7 @@ void Test7195179$1::init$() {
 }
 
 void Test7195179$1::run() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

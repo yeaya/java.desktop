@@ -163,6 +163,7 @@ bool TableViewLayoutTest::isTabWrong = false;
 $Boolean* TableViewLayoutTest::isI18n = nullptr;
 
 void TableViewLayoutTest::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$("Code example for a TableView bug"_s);
 	setUndecorated(true);
 	setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
@@ -202,6 +203,7 @@ void TableViewLayoutTest::initCodeBug() {
 
 void TableViewLayoutTest::main($StringArray* args) {
 	$init(TableViewLayoutTest);
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < TableViewLayoutTest::tn; ++i) {
 		$var($Robot, rob, $new($Robot));
 		$SwingUtilities::invokeAndWait($$new($TableViewLayoutTest$2));

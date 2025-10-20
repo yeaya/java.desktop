@@ -69,6 +69,7 @@ $Object* allocate$DefaultMutableTreeNode$BreadthFirstEnumeration($Class* clazz) 
 }
 
 void DefaultMutableTreeNode$BreadthFirstEnumeration::init$($DefaultMutableTreeNode* this$0, $TreeNode* rootNode) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$var($Vector, v, $new($Vector, 1));
 	v->addElement(rootNode);
@@ -82,6 +83,7 @@ bool DefaultMutableTreeNode$BreadthFirstEnumeration::hasMoreElements() {
 }
 
 $Object* DefaultMutableTreeNode$BreadthFirstEnumeration::nextElement() {
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, enumer, $cast($Enumeration, $nc(this->queue)->firstObject()));
 	$var($TreeNode, node, $cast($TreeNode, $nc(enumer)->nextElement()));
 	$var($Enumeration, children, $nc(node)->children());

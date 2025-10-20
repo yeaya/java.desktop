@@ -79,6 +79,7 @@ void JEditorPane$PageLoader$2::init$($JEditorPane$PageLoader* this$1) {
 }
 
 void JEditorPane$PageLoader$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($Document);
 	$var($URL, u, $cast($URL, $nc($($nc(this->this$1->this$0)->getDocument()))->getProperty($Document::StreamDescriptionProperty)));
 	$var($String, ref, $nc(u)->getRef());

@@ -104,6 +104,7 @@ $String* Expression::instanceName(Object$* instance) {
 }
 
 $String* Expression::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $$str({$(instanceName(this->value)), "="_s}));
 	return $concat(var$0, $($Statement::toString()));
 }

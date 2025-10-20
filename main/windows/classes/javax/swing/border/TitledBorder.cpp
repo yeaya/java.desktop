@@ -337,6 +337,7 @@ void TitledBorder::init$($Border* border, $String* title, int32_t titleJustifica
 }
 
 void TitledBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Border, border, getBorder());
 	$var($String, title, getTitle());
 	if ((title != nullptr) && !title->isEmpty()) {
@@ -453,6 +454,7 @@ void TitledBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y
 }
 
 $Insets* TitledBorder::getBorderInsets($Component* c, $Insets* insets$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, insets$renamed);
 	$var($Border, border, getBorder());
 	$assign(insets, getBorderInsets(border, c, insets));
@@ -546,6 +548,7 @@ void TitledBorder::setBorder($Border* border) {
 }
 
 void TitledBorder::setTitlePosition(int32_t titlePosition) {
+	$useLocalCurrentObjectStackCache();
 	switch (titlePosition) {
 	case TitledBorder::ABOVE_TOP:
 		{}
@@ -572,6 +575,7 @@ void TitledBorder::setTitlePosition(int32_t titlePosition) {
 }
 
 void TitledBorder::setTitleJustification(int32_t titleJustification) {
+	$useLocalCurrentObjectStackCache();
 	switch (titleJustification) {
 	case TitledBorder::DEFAULT_JUSTIFICATION:
 		{}
@@ -604,6 +608,7 @@ void TitledBorder::setTitleColor($Color* titleColor) {
 }
 
 $Dimension* TitledBorder::getMinimumSize($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, getBorderInsets(c));
 	$var($Dimension, minSize, $new($Dimension, $nc(insets)->right + insets->left, insets->top + insets->bottom));
 	$var($String, title, getTitle());
@@ -621,6 +626,7 @@ $Dimension* TitledBorder::getMinimumSize($Component* c) {
 }
 
 int32_t TitledBorder::getBaseline($Component* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (c == nullptr) {
 		$throwNew($NullPointerException, "Must supply non-null component"_s);
 	}
@@ -697,6 +703,7 @@ $Component$BaselineResizeBehavior* TitledBorder::getBaselineResizeBehavior($Comp
 }
 
 int32_t TitledBorder::getPosition() {
+	$useLocalCurrentObjectStackCache();
 	int32_t position = getTitlePosition();
 	if (position != TitledBorder::DEFAULT_POSITION) {
 		return position;
@@ -732,6 +739,7 @@ int32_t TitledBorder::getPosition() {
 }
 
 int32_t TitledBorder::getJustification($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t justification = getTitleJustification();
 	if ((justification == TitledBorder::LEADING) || (justification == TitledBorder::DEFAULT_JUSTIFICATION)) {
 		return $nc($($nc(c)->getComponentOrientation()))->isLeftToRight() ? TitledBorder::LEFT : TitledBorder::RIGHT;
@@ -766,6 +774,7 @@ $Color* TitledBorder::getColor($Component* c) {
 }
 
 $JLabel* TitledBorder::getLabel($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->label)->setText($(getTitle()));
 	$nc(this->label)->setFont($(getFont(c)));
 	$nc(this->label)->setForeground($(getColor(c)));
@@ -776,6 +785,7 @@ $JLabel* TitledBorder::getLabel($Component* c) {
 
 $Insets* TitledBorder::getBorderInsets($Border* border, $Component* c, $Insets* insets$renamed) {
 	$init(TitledBorder);
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, insets$renamed);
 	if (border == nullptr) {
 		$nc(insets)->set(0, 0, 0, 0);
@@ -790,6 +800,7 @@ $Insets* TitledBorder::getBorderInsets($Border* border, $Component* c, $Insets* 
 }
 
 void TitledBorder::installPropertyChangeListeners() {
+	$useLocalCurrentObjectStackCache();
 	$var($WeakReference, weakReference, $new($WeakReference, this));
 	$var($PropertyChangeListener, listener, static_cast<$PropertyChangeListener*>($new(TitledBorder$$Lambda$lambda$installPropertyChangeListeners$0, weakReference)));
 	$UIManager::addPropertyChangeListener(listener);
@@ -805,6 +816,7 @@ void TitledBorder::lambda$installPropertyChangeListeners$1($PropertyChangeListen
 
 void TitledBorder::lambda$installPropertyChangeListeners$0($WeakReference* weakReference, $PropertyChangeEvent* evt) {
 	$init(TitledBorder);
+	$useLocalCurrentObjectStackCache();
 	$var(TitledBorder, tb, $cast(TitledBorder, $nc(weakReference)->get()));
 	$var($String, prop, $nc(evt)->getPropertyName());
 	bool var$0 = tb != nullptr;

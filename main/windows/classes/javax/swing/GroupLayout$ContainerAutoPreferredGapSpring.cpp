@@ -110,6 +110,7 @@ void GroupLayout$ContainerAutoPreferredGapSpring::addTarget($GroupLayout$Compone
 }
 
 void GroupLayout$ContainerAutoPreferredGapSpring::calculatePadding(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	$var($LayoutStyle, p, this->this$0->getLayoutStyle0());
 	int32_t maxPadding = 0;
 	int32_t position = 0;
@@ -161,6 +162,7 @@ void GroupLayout$ContainerAutoPreferredGapSpring::calculatePadding(int32_t axis)
 }
 
 int32_t GroupLayout$ContainerAutoPreferredGapSpring::updateSize($LayoutStyle* p, $GroupLayout$ComponentSpring* sourceSpring, int32_t position) {
+	$useLocalCurrentObjectStackCache();
 	int32_t padding = 10;
 	if ($instanceOf($JComponent, $($nc(sourceSpring)->getComponent()))) {
 		padding = $nc(p)->getContainerGap($cast($JComponent, $(sourceSpring->getComponent())), position, this->this$0->host);
@@ -173,6 +175,7 @@ int32_t GroupLayout$ContainerAutoPreferredGapSpring::updateSize($LayoutStyle* p,
 }
 
 $String* GroupLayout$ContainerAutoPreferredGapSpring::getMatchDescription() {
+	$useLocalCurrentObjectStackCache();
 	if (this->targets != nullptr) {
 		return $str({"leading: "_s, $($nc($of(this->targets))->toString())});
 	}

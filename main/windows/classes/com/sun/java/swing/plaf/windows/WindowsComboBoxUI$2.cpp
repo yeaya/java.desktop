@@ -88,6 +88,7 @@ void WindowsComboBoxUI$2::init$() {
 }
 
 void WindowsComboBoxUI$2::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propertyName, $nc(e)->getPropertyName());
 	$var($Object, source, nullptr);
 	bool var$0 = "componentOrientation"_s == propertyName && $instanceOf($JComboBox, $assign(source, e->getSource()));

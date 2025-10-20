@@ -117,6 +117,7 @@ void TestOpaqueListTable::init$() {
 }
 
 void TestOpaqueListTable::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($UIManager$LookAndFeelInfoArray, installedLookAndFeels, nullptr);
 	$assign(installedLookAndFeels, $UIManager::getInstalledLookAndFeels());
 	{
@@ -140,6 +141,7 @@ void TestOpaqueListTable::main($StringArray* args) {
 }
 
 void TestOpaqueListTable::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$var($JList, list, $new($JList));
 	$var($JTable, table, $new($JTable));
 	$var($JTree, tree, $new($JTree));

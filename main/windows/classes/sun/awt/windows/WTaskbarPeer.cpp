@@ -330,6 +330,7 @@ void WTaskbarPeer::init() {
 	$load(WTaskbarPeer);
 	$synchronized(class$) {
 		$init(WTaskbarPeer);
+		$useLocalCurrentObjectStackCache();
 		if (!WTaskbarPeer::initExecuted) {
 			$init($OSInfo);
 			bool var$0 = $nc($($OSInfo::getWindowsVersion()))->compareTo($OSInfo::WINDOWS_7) >= 0;
@@ -373,6 +374,7 @@ bool WTaskbarPeer::isSupported($Taskbar$Feature* feature) {
 
 $ints* WTaskbarPeer::imageToArray($Image* image) {
 	$init(WTaskbarPeer);
+	$useLocalCurrentObjectStackCache();
 	if (image == nullptr) {
 		return nullptr;
 	}
@@ -391,6 +393,7 @@ $ints* WTaskbarPeer::imageToArray($Image* image) {
 }
 
 void WTaskbarPeer::setWindowIconBadge($Window* window, $Image* image) {
+	$useLocalCurrentObjectStackCache();
 	$var($WWindowPeer, wp, $cast($WWindowPeer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(window)));
 	if (wp != nullptr) {
 		$var($ints, buffer, imageToArray(image));
@@ -399,6 +402,7 @@ void WTaskbarPeer::setWindowIconBadge($Window* window, $Image* image) {
 }
 
 void WTaskbarPeer::requestWindowUserAttention($Window* window) {
+	$useLocalCurrentObjectStackCache();
 	$var($WWindowPeer, wp, $cast($WWindowPeer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(window)));
 	if (wp != nullptr) {
 		flashWindow(wp->getHWnd());
@@ -406,6 +410,7 @@ void WTaskbarPeer::requestWindowUserAttention($Window* window) {
 }
 
 void WTaskbarPeer::setWindowProgressValue($Window* window, int32_t value) {
+	$useLocalCurrentObjectStackCache();
 	$var($WWindowPeer, wp, $cast($WWindowPeer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(window)));
 	if (wp != nullptr) {
 		$ShellFolder::invoke(static_cast<$Callable*>($$new(WTaskbarPeer$$Lambda$lambda$setWindowProgressValue$2$2, this, wp, value)));
@@ -413,6 +418,7 @@ void WTaskbarPeer::setWindowProgressValue($Window* window, int32_t value) {
 }
 
 void WTaskbarPeer::setWindowProgressState($Window* window, $Taskbar$State* state) {
+	$useLocalCurrentObjectStackCache();
 	$var($WWindowPeer, wp, $cast($WWindowPeer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(window)));
 	if (wp != nullptr) {
 		$ShellFolder::invoke(static_cast<$Callable*>($$new(WTaskbarPeer$$Lambda$lambda$setWindowProgressState$3$3, this, wp, state)));

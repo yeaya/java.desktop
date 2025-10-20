@@ -67,6 +67,7 @@ void Test4165217::init$() {
 }
 
 void Test4165217::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JColorChooser, chooser, $new($JColorChooser));
 	chooser->setColor($$new($Color, $$new($Random)->nextInt()));
 	$var($Color, before, chooser->getColor());
@@ -77,6 +78,7 @@ void Test4165217::main($StringArray* args) {
 }
 
 $JColorChooser* Test4165217::copy($JColorChooser* chooser) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $cast($JColorChooser, deserialize($(serialize(chooser))));
 	} catch ($ClassNotFoundException&) {
@@ -90,6 +92,7 @@ $JColorChooser* Test4165217::copy($JColorChooser* chooser) {
 }
 
 $bytes* Test4165217::serialize(Object$* object) {
+	$useLocalCurrentObjectStackCache();
 	$var($ByteArrayOutputStream, baos, $new($ByteArrayOutputStream));
 	$var($ObjectOutputStream, oos, $new($ObjectOutputStream, baos));
 	oos->writeObject(object);
@@ -98,6 +101,7 @@ $bytes* Test4165217::serialize(Object$* object) {
 }
 
 $Object* Test4165217::deserialize($bytes* array) {
+	$useLocalCurrentObjectStackCache();
 	$var($ByteArrayInputStream, bais, $new($ByteArrayInputStream, array));
 	$var($ObjectInputStream, ois, $new($ObjectInputStream, bais));
 	return $of(ois->readObject());

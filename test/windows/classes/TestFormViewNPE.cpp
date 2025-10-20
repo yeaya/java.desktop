@@ -174,6 +174,7 @@ void TestFormViewNPE::setup() {
 }
 
 void TestFormViewNPE::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(100);
 	{

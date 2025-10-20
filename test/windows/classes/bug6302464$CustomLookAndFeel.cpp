@@ -100,6 +100,7 @@ bool bug6302464$CustomLookAndFeel::isSupportedLookAndFeel() {
 }
 
 void bug6302464$CustomLookAndFeel::initClassDefaults($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$BasicLookAndFeel::initClassDefaults(table);
 	$init($RenderingHints);
 	$nc(table)->put($RenderingHints::KEY_TEXT_ANTIALIASING, $(getAAHint()));

@@ -94,6 +94,7 @@ bool FixedHeightLayoutCache$VisibleFHTreeStateNodeEnumeration::hasMoreElements()
 }
 
 $Object* FixedHeightLayoutCache$VisibleFHTreeStateNodeEnumeration::nextElement() {
+	$useLocalCurrentObjectStackCache();
 	if (!hasMoreElements()) {
 		$throwNew($NoSuchElementException, "No more visible paths"_s);
 	}
@@ -119,6 +120,7 @@ void FixedHeightLayoutCache$VisibleFHTreeStateNodeEnumeration::updateNextObject(
 }
 
 bool FixedHeightLayoutCache$VisibleFHTreeStateNodeEnumeration::findNextValidParent() {
+	$useLocalCurrentObjectStackCache();
 	if (this->parent == this->this$0->root) {
 		$set(this, parent, nullptr);
 		return false;
@@ -140,6 +142,7 @@ bool FixedHeightLayoutCache$VisibleFHTreeStateNodeEnumeration::findNextValidPare
 }
 
 bool FixedHeightLayoutCache$VisibleFHTreeStateNodeEnumeration::updateNextIndex() {
+	$useLocalCurrentObjectStackCache();
 	if (this->nextIndex == -1 && !$nc(this->parent)->isExpanded()) {
 		return false;
 	}

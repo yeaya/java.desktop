@@ -45,6 +45,7 @@ void bug6570445::init$() {
 
 void bug6570445::main($StringArray* args) {
 	$load(bug6570445);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$System::setSecurityManager($$new($SecurityManager));
 	$nc($($FileSystemView::getFileSystemView()))->getRoots();

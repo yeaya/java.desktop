@@ -203,6 +203,7 @@ $Container* BufferStrategyPaintManager$BufferInfo::getRoot() {
 }
 
 $BufferStrategy* BufferStrategyPaintManager$BufferInfo::getBufferStrategy(bool create) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferStrategy, bs, (this->weakBS == nullptr) ? ($BufferStrategy*)nullptr : $cast($BufferStrategy, $nc(this->weakBS)->get()));
 	if (bs == nullptr && create) {
 		$assign(bs, createBufferStrategy());
@@ -219,6 +220,7 @@ $BufferStrategy* BufferStrategyPaintManager$BufferInfo::getBufferStrategy(bool c
 }
 
 bool BufferStrategyPaintManager$BufferInfo::hasBufferStrategyChanged() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, root, getRoot());
 	if (root != nullptr) {
 		$var($BufferStrategy, ourBS, nullptr);
@@ -241,6 +243,7 @@ bool BufferStrategyPaintManager$BufferInfo::hasBufferStrategyChanged() {
 }
 
 $BufferStrategy* BufferStrategyPaintManager$BufferInfo::createBufferStrategy() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, root, getRoot());
 	if (root == nullptr) {
 		return nullptr;
@@ -264,6 +267,7 @@ $BufferStrategy* BufferStrategyPaintManager$BufferInfo::createBufferStrategy() {
 }
 
 $BufferStrategy* BufferStrategyPaintManager$BufferInfo::createBufferStrategy($Container* root, bool isVsynced) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferCapabilities, caps, nullptr);
 	if (isVsynced) {
 		$var($ImageCapabilities, var$0, $new($ImageCapabilities, true));
@@ -305,6 +309,7 @@ $BufferStrategy* BufferStrategyPaintManager$BufferInfo::createBufferStrategy($Co
 }
 
 void BufferStrategyPaintManager$BufferInfo::dispose() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, root, getRoot());
 	$init($BufferStrategyPaintManager);
 	$init($PlatformLogger$Level);

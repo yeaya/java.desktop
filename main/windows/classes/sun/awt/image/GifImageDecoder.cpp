@@ -140,6 +140,7 @@ void GifImageDecoder::error($String* s1) {
 }
 
 int32_t GifImageDecoder::readBytes($bytes* buf, int32_t off, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	while (len > 0) {
 		try {
 			int32_t n = $nc(this->input)->read(buf, off, len);
@@ -167,6 +168,7 @@ int32_t GifImageDecoder::ExtractWord($bytes* buf, int32_t off) {
 }
 
 void GifImageDecoder::produceImage() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		bool return$1 = false;
@@ -336,6 +338,7 @@ void GifImageDecoder::produceImage() {
 }
 
 void GifImageDecoder::readHeader() {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, buf, $new($bytes, 13));
 	if (readBytes(buf, 0, 13) != 0) {
 		$throwNew($IOException);
@@ -457,6 +460,7 @@ int32_t GifImageDecoder::sendPixels(int32_t x, int32_t y, int32_t width, int32_t
 }
 
 bool GifImageDecoder::readImage(bool first, int32_t disposal_method, int32_t delay) {
+	$useLocalCurrentObjectStackCache();
 	if (this->curframe != nullptr && !$nc(this->curframe)->dispose()) {
 		abort();
 		return false;

@@ -93,6 +93,7 @@ void SoftJitterCorrector$JitterStream$1::init$($SoftJitterCorrector$JitterStream
 }
 
 void SoftJitterCorrector$JitterStream$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFormat, format, $nc(this->this$0->stream)->getFormat());
 	int32_t bufflen = $nc($nc(this->this$0->buffers)->get(0))->length;
 	int32_t frames = $div(bufflen, $nc(format)->getFrameSize());

@@ -152,6 +152,7 @@ $Object* allocate$PortMixer($Class* clazz) {
 }
 
 void PortMixer::init$($PortMixerProvider$PortMixerInfo* portMixerInfo) {
+	$useLocalCurrentObjectStackCache();
 	$AbstractMixer::init$(portMixerInfo, nullptr, nullptr, nullptr);
 	this->id = 0;
 	int32_t count = 0;
@@ -204,6 +205,7 @@ void PortMixer::init$($PortMixerProvider$PortMixerInfo* portMixerInfo) {
 }
 
 $Line* PortMixer::getLine($Line$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	$var($Line$Info, fullInfo, getLineInfo(info));
 	if ((fullInfo != nullptr) && ($instanceOf($Port$Info, fullInfo))) {
 		for (int32_t i = 0; i < $nc(this->portInfos)->length; ++i) {
@@ -250,6 +252,7 @@ void PortMixer::implStop() {
 }
 
 $Port$Info* PortMixer::getPortInfo(int32_t portIndex, int32_t type) {
+	$useLocalCurrentObjectStackCache();
 	switch (type) {
 	case PortMixer::SRC_UNKNOWN:
 		{

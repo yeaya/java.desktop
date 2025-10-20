@@ -51,6 +51,7 @@ $Object* allocate$FieldFinder($Class* clazz) {
 
 $Field* FieldFinder::findField($Class* type, $String* name) {
 	$load(FieldFinder);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (name == nullptr) {
 		$throwNew($IllegalArgumentException, "Field name is not set"_s);
@@ -71,6 +72,7 @@ $Field* FieldFinder::findField($Class* type, $String* name) {
 }
 
 $Field* FieldFinder::findInstanceField($Class* type, $String* name) {
+	$useLocalCurrentObjectStackCache();
 	$var($Field, field, findField(type, name));
 	if ($Modifier::isStatic($nc(field)->getModifiers())) {
 		$throwNew($NoSuchFieldException, $$str({"Field \'"_s, name, "\' is static"_s}));
@@ -79,6 +81,7 @@ $Field* FieldFinder::findInstanceField($Class* type, $String* name) {
 }
 
 $Field* FieldFinder::findStaticField($Class* type, $String* name) {
+	$useLocalCurrentObjectStackCache();
 	$var($Field, field, findField(type, name));
 	if (!$Modifier::isStatic($nc(field)->getModifiers())) {
 		$throwNew($NoSuchFieldException, $$str({"Field \'"_s, name, "\' is not static"_s}));

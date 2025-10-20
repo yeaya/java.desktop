@@ -118,6 +118,7 @@ void bug4209065::init$() {
 }
 
 void bug4209065::init() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$EventQueue::invokeAndWait(static_cast<$Runnable*>($$new(bug4209065$$Lambda$createTabbedPane, this)));
 	} catch ($InterruptedException&) {
@@ -130,6 +131,7 @@ void bug4209065::init() {
 }
 
 void bug4209065::createTabbedPane() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTabbedPane, tp, $new($JTabbedPane));
 	$nc($(getContentPane()))->add(static_cast<$Component*>(tp));
 	$var($String, text, "<html><center>If the style of the text on the tabs matches<br>the descriptions, press <em><b>PASS</b></em></center></html>"_s);

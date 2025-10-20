@@ -546,6 +546,7 @@ void SwingUtilities2::init$() {
 
 void SwingUtilities2::putAATextInfo(bool lafCondition, $Map* map) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	$SunToolkit::setAAFontSettingsCondition(lafCondition);
 	$var($Toolkit, tk, $Toolkit::getDefaultToolkit());
 	$var($Object, desktopHints, $nc(tk)->getDesktopProperty($SunToolkit::DESKTOPFONTHINTS));
@@ -587,6 +588,7 @@ int32_t SwingUtilities2::getLeftSideBearing($JComponent* c, $FontMetrics* fm, $S
 
 int32_t SwingUtilities2::getLeftSideBearing($JComponent* c, $FontMetrics* fm, char16_t firstChar) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	int32_t charIndex = (int32_t)firstChar;
 	if (charIndex < SwingUtilities2::MAX_CHAR_INDEX && charIndex >= SwingUtilities2::MIN_CHAR_INDEX) {
 		$var($bytes, lsbs, nullptr);
@@ -645,6 +647,7 @@ int32_t SwingUtilities2::stringWidth($JComponent* c, $FontMetrics* fm, $String* 
 
 float SwingUtilities2::stringWidth($JComponent* c, $FontMetrics* fm, $String* string, bool useFPAPI) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	if (string == nullptr || $nc(string)->isEmpty()) {
 		return (float)0;
 	}
@@ -681,6 +684,7 @@ $String* SwingUtilities2::clipStringIfNecessary($JComponent* c, $FontMetrics* fm
 
 $String* SwingUtilities2::clipString($JComponent* c, $FontMetrics* fm, $String* string$renamed, int32_t availTextWidth) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	$var($String, string, string$renamed);
 	$var($String, clipString, "..."_s);
 	availTextWidth -= SwingUtilities2::stringWidth(c, fm, clipString);
@@ -723,6 +727,7 @@ void SwingUtilities2::drawString($JComponent* c, $Graphics* g, $String* text, in
 
 void SwingUtilities2::drawString($JComponent* c, $Graphics* g, $String* text, float x, float y, bool useFPAPI) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	if (text == nullptr || $nc(text)->length() <= 0) {
 		return;
 	}
@@ -814,6 +819,7 @@ void SwingUtilities2::drawStringUnderlineCharAt($JComponent* c, $Graphics* g, $S
 
 void SwingUtilities2::drawStringUnderlineCharAt($JComponent* c, $Graphics* g, $String* text, int32_t underlinedIndex, float x, float y, bool useFPAPI) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	if (text == nullptr || $nc(text)->length() <= 0) {
 		return;
 	}
@@ -876,6 +882,7 @@ int32_t SwingUtilities2::loc2IndexFileList($JList* list, $Point* point) {
 
 bool SwingUtilities2::pointIsInActualBounds($JList* list, int32_t index, $Point* point) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	$var($ListCellRenderer, renderer, $nc(list)->getCellRenderer());
 	$var($Object, value, $nc($(list->getModel()))->getElementAt(index));
 	$var($Component, item, $nc(renderer)->getListCellRendererComponent(list, value, index, false, false));
@@ -890,6 +897,7 @@ bool SwingUtilities2::pointIsInActualBounds($JList* list, int32_t index, $Point*
 
 bool SwingUtilities2::pointOutsidePrefSize($JTable* table, int32_t row, int32_t column, $Point* p) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	if ($nc(table)->convertColumnIndexToModel(column) != 0 || row == -1) {
 		return true;
 	}
@@ -951,6 +959,7 @@ float SwingUtilities2::drawChars($JComponent* c, $Graphics* g, $chars* data, int
 
 float SwingUtilities2::drawChars($JComponent* c, $Graphics* g, $chars* data, int32_t offset, int32_t length, float x, float y, bool useFPAPI) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	if (length <= 0) {
 		return x;
 	}
@@ -1024,6 +1033,7 @@ float SwingUtilities2::getFontCharWidth(char16_t c, $FontMetrics* fm, bool useFP
 
 float SwingUtilities2::getFontCharsWidth($chars* data, int32_t offset, int32_t len, $FontMetrics* fm, bool useFPAPI) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	if (len == 0) {
 		return (float)0;
 	}
@@ -1037,6 +1047,7 @@ float SwingUtilities2::getFontCharsWidth($chars* data, int32_t offset, int32_t l
 
 float SwingUtilities2::getFontStringWidth($String* data, $FontMetrics* fm, bool useFPAPI) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	if (useFPAPI) {
 		$var($Rectangle2D, bounds, $nc($($nc(fm)->getFont()))->getStringBounds(data, $(fm->getFontRenderContext())));
 		return (float)$nc(bounds)->getWidth();
@@ -1057,6 +1068,7 @@ float SwingUtilities2::drawString($JComponent* c, $Graphics* g, $AttributedChara
 
 float SwingUtilities2::drawStringImpl($JComponent* c, $Graphics* g, $AttributedCharacterIterator* iterator, float x, float y) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	float retVal = 0.0;
 	bool isPrinting = SwingUtilities2::isPrinting(g);
 	$var($Color, col, $nc(g)->getColor());
@@ -1143,6 +1155,7 @@ void SwingUtilities2::drawRect($Graphics* g, int32_t x, int32_t y, int32_t w, in
 
 $TextLayout* SwingUtilities2::createTextLayout($JComponent* c, $String* s, $Font* f, $FontRenderContext* frc) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	$init($TextAttribute);
 	$var($Object, shaper, c == nullptr ? ($Object*)nullptr : $nc(c)->getClientProperty($TextAttribute::NUMERIC_SHAPING));
 	if (shaper == nullptr) {
@@ -1157,6 +1170,7 @@ $TextLayout* SwingUtilities2::createTextLayout($JComponent* c, $String* s, $Font
 
 bool SwingUtilities2::isFontRenderContextPrintCompatible($FontRenderContext* frc1, $FontRenderContext* frc2) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	if (frc1 == frc2) {
 		return true;
 	}
@@ -1190,6 +1204,7 @@ $Graphics2D* SwingUtilities2::getGraphics2D($Graphics* g) {
 
 $FontRenderContext* SwingUtilities2::getFontRenderContext($Component* c) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	if (!SwingUtilities2::$assertionsDisabled && !(c != nullptr)) {
 		$throwNew($AssertionError);
 	}
@@ -1219,6 +1234,7 @@ $FontMetrics* SwingUtilities2::getFontMetrics($JComponent* c, $Font* font) {
 
 $FontRenderContext* SwingUtilities2::getFRCProperty($JComponent* c) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	if (c != nullptr) {
 		$var($GraphicsConfiguration, gc, c->getGraphicsConfiguration());
 		$var($AffineTransform, tx, (gc == nullptr) ? ($AffineTransform*)nullptr : $nc(gc)->getDefaultTransform());
@@ -1231,6 +1247,7 @@ $FontRenderContext* SwingUtilities2::getFRCProperty($JComponent* c) {
 
 $FontRenderContext* SwingUtilities2::getFRCFromCache($AffineTransform* tx, Object$* aaHint$renamed) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	$var($Object, aaHint, aaHint$renamed);
 	if (tx == nullptr && aaHint == nullptr) {
 		return nullptr;
@@ -1288,6 +1305,7 @@ $AttributedCharacterIterator* SwingUtilities2::getTrimmedTrailingSpacesIterator(
 
 bool SwingUtilities2::useSelectedTextColor($Highlighter$Highlight* h, $JTextComponent* c) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	$var($Highlighter$HighlightPainter, painter, $nc(h)->getPainter());
 	$var($String, painterClass, $nc($of(painter))->getClass()->getName());
 	bool var$0 = $nc(painterClass)->indexOf("javax.swing.text.DefaultHighlighter"_s) != 0;
@@ -1418,6 +1436,7 @@ bool SwingUtilities2::isTrustedContext() {
 
 $String* SwingUtilities2::displayPropertiesToCSS($Font* font, $Color* fg) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, rule, $new($StringBuilder, "body {"_s));
 	if (font != nullptr) {
 		rule->append(" font-family: "_s);
@@ -1470,6 +1489,7 @@ $Object* SwingUtilities2::makeIcon($Class* baseClass, $Class* rootClass, $String
 
 $bytes* SwingUtilities2::getIconBytes($Class* baseClass, $Class* rootClass, $String* imageFile) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$Class* srchClass = baseClass;
 	while (srchClass != nullptr) {
@@ -1616,6 +1636,7 @@ int32_t SwingUtilities2::getUIDefaultsInt(Object$* key, $Locale* l, int32_t defa
 
 $Component* SwingUtilities2::compositeRequestFocus($Component* component) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Container, component)) {
 		$var($Container, container, $cast($Container, component));
 		if ($nc(container)->isFocusCycleRoot()) {
@@ -1683,6 +1704,7 @@ void SwingUtilities2::execute($Runnable* command) {
 
 void SwingUtilities2::setSkipClickCount($Component* comp, int32_t count) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JTextComponent, comp) && $instanceOf($DefaultCaret, $($nc(($cast($JTextComponent, comp)))->getCaret()))) {
 		($cast($JTextComponent, comp))->putClientProperty(SwingUtilities2::SKIP_CLICK_COUNT, $($Integer::valueOf(count)));
 	}
@@ -1762,6 +1784,7 @@ int32_t SwingUtilities2::convertColumnIndexToModel($TableColumnModel* cm, int32_
 
 int32_t SwingUtilities2::convertColumnIndexToView($TableColumnModel* cm, int32_t modelColumnIndex) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	if (modelColumnIndex < 0) {
 		return modelColumnIndex;
 	}
@@ -1789,6 +1812,7 @@ int32_t SwingUtilities2::getSystemMnemonicKeyMask() {
 
 $TreePath* SwingUtilities2::getTreePath($TreeModelEvent* event, $TreeModel* model) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	$var($TreePath, path, $nc(event)->getTreePath());
 	if ((path == nullptr) && (model != nullptr)) {
 		$var($Object, root, model->getRoot());
@@ -1810,6 +1834,7 @@ bool SwingUtilities2::isScaledGraphics($Graphics* g) {
 
 $Object* SwingUtilities2::getAndSetAntialisingHintForScaledGraphics($Graphics* g) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = isScaledGraphics(g);
 	if (var$0 && isLocalDisplay()) {
 		$var($Graphics2D, g2d, $cast($Graphics2D, g));
@@ -1855,6 +1880,7 @@ bool SwingUtilities2::getBoolean($JComponent* component, $String* key) {
 
 bool SwingUtilities2::isScaleChanged($PropertyChangeEvent* ev) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $nc(ev)->getPropertyName());
 	$var($Object, var$1, ev->getOldValue());
 	return isScaleChanged(var$0, var$1, $(ev->getNewValue()));
@@ -1862,6 +1888,7 @@ bool SwingUtilities2::isScaleChanged($PropertyChangeEvent* ev) {
 
 bool SwingUtilities2::isScaleChanged($String* name, Object$* oldValue, Object$* newValue) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	if ($equals(oldValue, newValue) || !"graphicsConfiguration"_s->equals(name)) {
 		return false;
 	}
@@ -1874,6 +1901,7 @@ bool SwingUtilities2::isScaleChanged($String* name, Object$* oldValue, Object$* 
 
 $Object* SwingUtilities2::lambda$makeIcon$1(bool enablePrivileges, $Class* baseClass, $Class* rootClass, $String* imageFile, $UIDefaults* table) {
 	$init(SwingUtilities2);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($bytes, buffer, enablePrivileges ? $cast($bytes, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new(SwingUtilities2$$Lambda$lambda$makeIcon$0$1, baseClass, rootClass, imageFile)))) : getIconBytes(baseClass, rootClass, imageFile));
 	if (buffer == nullptr) {

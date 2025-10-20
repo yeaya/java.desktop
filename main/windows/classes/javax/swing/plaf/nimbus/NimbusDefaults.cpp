@@ -628,6 +628,7 @@ void NimbusDefaults::init$() {
 }
 
 void NimbusDefaults::initializeDefaults($UIDefaults* d) {
+	$useLocalCurrentObjectStackCache();
 	addColor(d, "text"_s, 0, 0, 0, 255);
 	addColor(d, "control"_s, 214, 217, 223, 255);
 	addColor(d, "nimbusBase"_s, 51, 98, 140, 255);
@@ -2017,6 +2018,7 @@ void NimbusDefaults::initializeDefaults($UIDefaults* d) {
 }
 
 void NimbusDefaults::register$($Region* region, $String* prefix) {
+	$useLocalCurrentObjectStackCache();
 	if (region == nullptr || prefix == nullptr) {
 		$throwNew($IllegalArgumentException, "Neither Region nor Prefix may be null"_s);
 	}
@@ -2043,6 +2045,7 @@ void NimbusDefaults::register$($Region* region, $String* prefix) {
 }
 
 $SynthStyle* NimbusDefaults::getStyle($JComponent* comp, $Region* r) {
+	$useLocalCurrentObjectStackCache();
 	if (comp == nullptr || r == nullptr) {
 		$throwNew($IllegalArgumentException, "Neither comp nor r may be null"_s);
 	}
@@ -2072,6 +2075,7 @@ void NimbusDefaults::clearOverridesCache($JComponent* c) {
 }
 
 void NimbusDefaults::addColor($UIDefaults* d, $String* uin, int32_t r, int32_t g, int32_t b, int32_t a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, color, $new($ColorUIResource, $$new($Color, r, g, b, a)));
 	$nc(this->colorTree)->addColor(uin, color);
 	$nc(d)->put(uin, color);

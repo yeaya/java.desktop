@@ -396,6 +396,7 @@ void bug6647340::init$() {
 }
 
 void bug6647340::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6647340);
 	$assignStatic(bug6647340::robot, $new($Robot));
 	$var(bug6647340, test, $new(bug6647340));
@@ -420,6 +421,7 @@ void bug6647340::main($StringArray* args) {
 }
 
 void bug6647340::setupUI() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, $new($JFrame));
 	$nc(this->frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$var($JDesktopPane, desktop, $new($JDesktopPane));
@@ -451,6 +453,7 @@ void bug6647340::test1() {
 }
 
 void bug6647340::test2() {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug6647340$$Lambda$lambda$test2$3$3, this)));
 	$nc(bug6647340::robot)->waitForIdle();
 	$nc(bug6647340::robot)->delay(500);
@@ -507,6 +510,7 @@ void bug6647340::lambda$test2$3() {
 }
 
 void bug6647340::lambda$test1$2() {
+	$useLocalCurrentObjectStackCache();
 	setIcon(true);
 	$set(this, location, $nc($($nc(this->jif)->getDesktopIcon()))->getLocation());
 	$var($Dimension, size, $nc(this->frame)->getSize());

@@ -210,6 +210,7 @@ void JComponent$AccessibleJComponent::removePropertyChangeListener($PropertyChan
 }
 
 $String* JComponent$AccessibleJComponent::getBorderTitle($Border* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, s, nullptr);
 	if ($instanceOf($TitledBorder, b)) {
 		return $nc(($cast($TitledBorder, b)))->getTitle();
@@ -225,6 +226,7 @@ $String* JComponent$AccessibleJComponent::getBorderTitle($Border* b) {
 }
 
 $String* JComponent$AccessibleJComponent::getAccessibleName() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, this->accessibleName);
 	if (name == nullptr) {
 		$init($AccessibleContext);
@@ -247,6 +249,7 @@ $String* JComponent$AccessibleJComponent::getAccessibleName() {
 }
 
 $String* JComponent$AccessibleJComponent::getAccessibleDescription() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, description, this->accessibleDescription);
 	if (description == nullptr) {
 		$init($AccessibleContext);
@@ -312,6 +315,7 @@ $String* JComponent$AccessibleJComponent::getTitledBorderText() {
 }
 
 $AccessibleKeyBinding* JComponent$AccessibleJComponent::getAccessibleKeyBinding() {
+	$useLocalCurrentObjectStackCache();
 	$init($JLabel);
 	$var($Object, o, this->this$0->getClientProperty($JLabel::LABELED_BY_PROPERTY));
 	if ($instanceOf($Accessible, o)) {

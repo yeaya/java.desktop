@@ -94,6 +94,7 @@ $Object* allocate$RIFFReader($Class* clazz) {
 }
 
 void RIFFReader::init$($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$InputStream::init$();
 	this->filepointer = 0;
 	$set(this, riff_type, nullptr);
@@ -261,6 +262,7 @@ void RIFFReader::finish() {
 }
 
 $String* RIFFReader::readString(int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, buff, nullptr);
 	try {
 		$assign(buff, $new($bytes, len));

@@ -90,6 +90,7 @@ void WindowsLookAndFeel$WindowsFontProperty::invalidate($LookAndFeel* laf) {
 }
 
 $Object* WindowsLookAndFeel$WindowsFontProperty::configureValue(Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Font, value)) {
 		$var($Font, font, $cast($Font, value));
 		if ("MS Sans Serif"_s->equals($($nc(font)->getName()))) {

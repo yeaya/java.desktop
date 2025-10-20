@@ -91,6 +91,7 @@ $SynthPainter* ParsedSynthStyle::DELEGATING_PAINTER_INSTANCE = nullptr;
 
 $ParsedSynthStyle$PainterInfoArray* ParsedSynthStyle::mergePainterInfo($ParsedSynthStyle$PainterInfoArray* old, $ParsedSynthStyle$PainterInfoArray* newPI) {
 	$init(ParsedSynthStyle);
+	$useLocalCurrentObjectStackCache();
 	if (old == nullptr) {
 		return newPI;
 	}
@@ -147,6 +148,7 @@ void ParsedSynthStyle::setPainters($ParsedSynthStyle$PainterInfoArray* info) {
 }
 
 $DefaultSynthStyle* ParsedSynthStyle::addTo($DefaultSynthStyle* style$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultSynthStyle, style, style$renamed);
 	if (!($instanceOf(ParsedSynthStyle, style))) {
 		$assign(style, $new(ParsedSynthStyle, style));
@@ -157,6 +159,7 @@ $DefaultSynthStyle* ParsedSynthStyle::addTo($DefaultSynthStyle* style$renamed) {
 }
 
 $SynthPainter* ParsedSynthStyle::getBestPainter($SynthContext* context, $String* method, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	$var($ParsedSynthStyle$StateInfo, info, $cast($ParsedSynthStyle$StateInfo, getStateInfo($nc(context)->getComponentState())));
 	$var($SynthPainter, painter, nullptr);
 	if (info != nullptr) {
@@ -172,6 +175,7 @@ $SynthPainter* ParsedSynthStyle::getBestPainter($SynthContext* context, $String*
 }
 
 $SynthPainter* ParsedSynthStyle::getBestPainter($ParsedSynthStyle$PainterInfoArray* info, $String* method, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	if (info != nullptr) {
 		$var($SynthPainter, nullPainter, nullptr);
 		$var($SynthPainter, methodPainter, nullptr);
@@ -196,6 +200,7 @@ $SynthPainter* ParsedSynthStyle::getBestPainter($ParsedSynthStyle$PainterInfoArr
 }
 
 $String* ParsedSynthStyle::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, text, $new($StringBuilder, $($DefaultSynthStyle::toString())));
 	if (this->_painters != nullptr) {
 		text->append(",painters=["_s);

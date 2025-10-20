@@ -286,6 +286,7 @@ int32_t GIFImageReader::getHeight(int32_t imageIndex) {
 }
 
 $ImageTypeSpecifier* GIFImageReader::createIndexed($bytes* r, $bytes* g, $bytes* b, int32_t bits) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, colorModel, nullptr);
 	if ($nc(this->imageMetadata)->transparentColorFlag) {
 		int32_t idx = $Math::min($nc(this->imageMetadata)->transparentColorIndex, $nc(r)->length - 1);
@@ -304,6 +305,7 @@ $ImageTypeSpecifier* GIFImageReader::createIndexed($bytes* r, $bytes* g, $bytes*
 }
 
 $Iterator* GIFImageReader::getImageTypes(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	checkIndex(imageIndex);
 	int32_t index = locateImage(imageIndex);
 	if (index != imageIndex) {
@@ -486,6 +488,7 @@ void GIFImageReader::outputPixels($bytes* string, int32_t len) {
 }
 
 void GIFImageReader::readHeader() {
+	$useLocalCurrentObjectStackCache();
 	if (this->gotHeader) {
 		return;
 	}
@@ -527,6 +530,7 @@ void GIFImageReader::readHeader() {
 }
 
 bool GIFImageReader::skipImage() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		while (true) {
 			int32_t blockType = $nc(this->stream)->readUnsignedByte();
@@ -574,6 +578,7 @@ bool GIFImageReader::skipImage() {
 }
 
 int32_t GIFImageReader::locateImage(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	readHeader();
 	try {
 		int32_t index = $Math::min(imageIndex, $nc(this->imageStartPosition)->size() - 1);
@@ -600,6 +605,7 @@ int32_t GIFImageReader::locateImage(int32_t imageIndex) {
 }
 
 $bytes* GIFImageReader::concatenateBlocks() {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, data, $new($bytes, 0));
 	while (true) {
 		int32_t length = $nc(this->stream)->readUnsignedByte();
@@ -615,6 +621,7 @@ $bytes* GIFImageReader::concatenateBlocks() {
 }
 
 void GIFImageReader::readMetadata() {
+	$useLocalCurrentObjectStackCache();
 	if (this->stream == nullptr) {
 		$throwNew($IllegalStateException, "Input not set!"_s);
 	}
@@ -727,6 +734,7 @@ int32_t GIFImageReader::copyData($bytes* src, int32_t offset, $bytes* dst) {
 }
 
 void GIFImageReader::startPass(int32_t pass) {
+	$useLocalCurrentObjectStackCache();
 	if (this->updateListeners == nullptr || !$nc(this->imageMetadata)->interlaceFlag) {
 		return;
 	}
@@ -740,6 +748,7 @@ void GIFImageReader::startPass(int32_t pass) {
 }
 
 $BufferedImage* GIFImageReader::read(int32_t imageIndex, $ImageReadParam* param$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageReadParam, param, param$renamed);
 	if (this->stream == nullptr) {
 		$throwNew($IllegalStateException, "Input not set!"_s);
@@ -901,6 +910,7 @@ $bytes* GIFImageReader::getDefaultPalette() {
 	$load(GIFImageReader);
 	$synchronized(class$) {
 		$init(GIFImageReader);
+		$useLocalCurrentObjectStackCache();
 		if (GIFImageReader::defaultPalette == nullptr) {
 			$var($BufferedImage, img, $new($BufferedImage, 1, 1, $BufferedImage::TYPE_BYTE_INDEXED));
 			$var($IndexColorModel, icm, $cast($IndexColorModel, img->getColorModel()));

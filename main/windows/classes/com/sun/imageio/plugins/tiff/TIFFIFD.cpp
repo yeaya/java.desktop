@@ -203,6 +203,7 @@ $volatile($Set*) TIFFIFD::essentialTags = nullptr;
 
 void TIFFIFD::initializeEssentialTags() {
 	$init(TIFFIFD);
+	$useLocalCurrentObjectStackCache();
 	$var($Set, tags, TIFFIFD::essentialTags);
 	if (tags == nullptr) {
 		$assignStatic(TIFFIFD::essentialTags, ($assign(tags, $Set::of($$new($IntegerArray, {
@@ -245,6 +246,7 @@ void TIFFIFD::initializeEssentialTags() {
 
 TIFFIFD* TIFFIFD::getDirectoryAsIFD($TIFFDirectory* dir) {
 	$init(TIFFIFD);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf(TIFFIFD, dir)) {
 		return $cast(TIFFIFD, dir);
 	}
@@ -280,6 +282,7 @@ TIFFIFD* TIFFIFD::getDirectoryAsIFD($TIFFDirectory* dir) {
 
 $TIFFTag* TIFFIFD::getTag(int32_t tagNumber, $List* tagSets) {
 	$init(TIFFIFD);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(tagSets)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -297,6 +300,7 @@ $TIFFTag* TIFFIFD::getTag(int32_t tagNumber, $List* tagSets) {
 
 $TIFFTag* TIFFIFD::getTag($String* tagName, $List* tagSets) {
 	$init(TIFFIFD);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(tagSets)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -314,6 +318,7 @@ $TIFFTag* TIFFIFD::getTag($String* tagName, $List* tagSets) {
 
 void TIFFIFD::writeTIFFFieldToStream($TIFFField* field, $ImageOutputStream* stream) {
 	$init(TIFFIFD);
+	$useLocalCurrentObjectStackCache();
 	int32_t count = $nc(field)->getCount();
 	$var($Object, data, field->getData());
 	switch (field->getType()) {
@@ -399,6 +404,7 @@ void TIFFIFD::writeTIFFFieldToStream($TIFFField* field, $ImageOutputStream* stre
 }
 
 void TIFFIFD::init$($List* tagSets, $TIFFTag* parentTag) {
+	$useLocalCurrentObjectStackCache();
 	$TIFFDirectory::init$($fcast($TIFFTagSetArray, $($nc(tagSets)->toArray($$new($TIFFTagSetArray, tagSets->size())))), parentTag);
 	this->stripOrTileByteCountsPosition = -1;
 	this->stripOrTileOffsetsPosition = -1;
@@ -414,11 +420,13 @@ $List* TIFFIFD::getTagSetList() {
 }
 
 $Iterator* TIFFIFD::iterator() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($Arrays::asList($(getTIFFFields()))))->iterator();
 }
 
 int32_t TIFFIFD::readFieldValue($ImageInputStream* stream, int32_t type, int32_t count, $ObjectArray* data) {
 	$init(TIFFIFD);
+	$useLocalCurrentObjectStackCache();
 	$var($Object, obj, nullptr);
 	int32_t UNIT_SIZE = 0x000FA000;
 	{
@@ -836,6 +844,7 @@ int32_t TIFFIFD::getFieldAsInt(int32_t tagNumber) {
 }
 
 bool TIFFIFD::calculateByteCounts(int32_t expectedSize, $List* byteCounts) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(byteCounts)->isEmpty()) {
 		$throwNew($IllegalArgumentException, "byteCounts is not empty"_s);
 	}
@@ -921,6 +930,7 @@ bool TIFFIFD::calculateByteCounts(int32_t expectedSize, $List* byteCounts) {
 }
 
 void TIFFIFD::checkFieldOffsets(int64_t streamLength) {
+	$useLocalCurrentObjectStackCache();
 	if (streamLength < 0) {
 		return;
 	}
@@ -1065,6 +1075,7 @@ void TIFFIFD::checkFieldOffsets(int64_t streamLength) {
 }
 
 void TIFFIFD::initialize($ImageInputStream* stream, bool isPrimaryIFD, bool ignoreMetadata, bool readUnknownTags) {
+	$useLocalCurrentObjectStackCache();
 	removeTIFFFields();
 	int64_t streamLength = $nc(stream)->length();
 	bool haveStreamLength = streamLength != -1;
@@ -1202,6 +1213,7 @@ void TIFFIFD::initialize($ImageInputStream* stream, bool isPrimaryIFD, bool igno
 }
 
 void TIFFIFD::writeToStream($ImageOutputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	int32_t numFields = getNumTIFFFields();
 	$nc(stream)->writeShort(numFields);
 	int64_t nextSpace = stream->getStreamPosition() + 12 * numFields + 4;
@@ -1278,6 +1290,7 @@ void TIFFIFD::setPositions(int64_t stripOrTileOffsetsPosition, int64_t stripOrTi
 }
 
 TIFFIFD* TIFFIFD::getShallowClone() {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFTagSet, baselineTagSet, $BaselineTIFFTagSet::getInstance());
 	$var($List, tagSetList, getTagSetList());
 	if (!$nc(tagSetList)->contains(baselineTagSet)) {

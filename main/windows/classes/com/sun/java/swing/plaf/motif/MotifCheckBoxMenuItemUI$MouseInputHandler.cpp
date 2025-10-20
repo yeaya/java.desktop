@@ -98,11 +98,13 @@ void MotifCheckBoxMenuItemUI$MouseInputHandler::mouseClicked($MouseEvent* e) {
 }
 
 void MotifCheckBoxMenuItemUI$MouseInputHandler::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, manager, $MenuSelectionManager::defaultManager());
 	$nc(manager)->setSelectedPath($(this->this$0->getPath()));
 }
 
 void MotifCheckBoxMenuItemUI$MouseInputHandler::mouseReleased($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, manager, $MenuSelectionManager::defaultManager());
 	$var($JMenuItem, menuItem, $cast($JMenuItem, $nc(e)->getComponent()));
 	$var($Point, p, e->getPoint());

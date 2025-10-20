@@ -270,6 +270,7 @@ $PrintStream* DebugGraphics::logStream() {
 }
 
 void DebugGraphics::setFont($Font* aFont) {
+	$useLocalCurrentObjectStackCache();
 	if (debugLog()) {
 		$nc($(info()))->log($$str({$(toShortString()), " Setting font: "_s, aFont}));
 	}
@@ -281,6 +282,7 @@ $Font* DebugGraphics::getFont() {
 }
 
 void DebugGraphics::setColor($Color* aColor) {
+	$useLocalCurrentObjectStackCache();
 	if (debugLog()) {
 		$nc($(info()))->log($$str({$(toShortString()), " Setting color: "_s, aColor}));
 	}
@@ -300,6 +302,7 @@ $FontMetrics* DebugGraphics::getFontMetrics($Font* f) {
 }
 
 void DebugGraphics::translate(int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	if (debugLog()) {
 		$var($String, var$0, $$str({$(toShortString()), " Translating by: "_s}));
 		$nc($(info()))->log($$concat(var$0, $($new($Point, x, y))));
@@ -310,6 +313,7 @@ void DebugGraphics::translate(int32_t x, int32_t y) {
 }
 
 void DebugGraphics::setPaintMode() {
+	$useLocalCurrentObjectStackCache();
 	if (debugLog()) {
 		$nc($(info()))->log($$str({$(toShortString()), " Setting paint mode"_s}));
 	}
@@ -317,6 +321,7 @@ void DebugGraphics::setPaintMode() {
 }
 
 void DebugGraphics::setXORMode($Color* aColor) {
+	$useLocalCurrentObjectStackCache();
 	if (debugLog()) {
 		$nc($(info()))->log($$str({$(toShortString()), " Setting XOR mode: "_s, aColor}));
 	}
@@ -328,6 +333,7 @@ $Rectangle* DebugGraphics::getClipBounds() {
 }
 
 void DebugGraphics::clipRect(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->graphics)->clipRect(x, y, width, height);
 	if (debugLog()) {
 		$var($String, var$2, $$str({$(toShortString()), " Setting clipRect: "_s}));
@@ -338,6 +344,7 @@ void DebugGraphics::clipRect(int32_t x, int32_t y, int32_t width, int32_t height
 }
 
 void DebugGraphics::setClip(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->graphics)->setClip(x, y, width, height);
 	if (debugLog()) {
 		$var($String, var$0, $$str({$(toShortString()), " Setting new clipRect: "_s}));
@@ -350,6 +357,7 @@ $Shape* DebugGraphics::getClip() {
 }
 
 void DebugGraphics::setClip($Shape* clip) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->graphics)->setClip(clip);
 	if (debugLog()) {
 		$var($String, var$0, $$str({$(toShortString()), " Setting new clipRect: "_s}));
@@ -358,6 +366,7 @@ void DebugGraphics::setClip($Shape* clip) {
 }
 
 void DebugGraphics::drawRect(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$0, $$str({$(toShortString()), " Drawing rect: "_s}));
@@ -385,6 +394,7 @@ void DebugGraphics::drawRect(int32_t x, int32_t y, int32_t width, int32_t height
 }
 
 void DebugGraphics::fillRect(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$0, $$str({$(toShortString()), " Filling rect: "_s}));
@@ -412,6 +422,7 @@ void DebugGraphics::fillRect(int32_t x, int32_t y, int32_t width, int32_t height
 }
 
 void DebugGraphics::clearRect(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$0, $$str({$(toShortString()), " Clearing rect: "_s}));
@@ -439,6 +450,7 @@ void DebugGraphics::clearRect(int32_t x, int32_t y, int32_t width, int32_t heigh
 }
 
 void DebugGraphics::drawRoundRect(int32_t x, int32_t y, int32_t width, int32_t height, int32_t arcWidth, int32_t arcHeight) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$4, $$str({$(toShortString()), " Drawing round rect: "_s}));
@@ -470,6 +482,7 @@ void DebugGraphics::drawRoundRect(int32_t x, int32_t y, int32_t width, int32_t h
 }
 
 void DebugGraphics::fillRoundRect(int32_t x, int32_t y, int32_t width, int32_t height, int32_t arcWidth, int32_t arcHeight) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$4, $$str({$(toShortString()), " Filling round rect: "_s}));
@@ -501,6 +514,7 @@ void DebugGraphics::fillRoundRect(int32_t x, int32_t y, int32_t width, int32_t h
 }
 
 void DebugGraphics::drawLine(int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$2, $$str({$(toShortString()), " Drawing line: from "_s}));
@@ -530,6 +544,7 @@ void DebugGraphics::drawLine(int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
 }
 
 void DebugGraphics::draw3DRect(int32_t x, int32_t y, int32_t width, int32_t height, bool raised) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$2, $$str({$(toShortString()), " Drawing 3D rect: "_s}));
@@ -559,6 +574,7 @@ void DebugGraphics::draw3DRect(int32_t x, int32_t y, int32_t width, int32_t heig
 }
 
 void DebugGraphics::fill3DRect(int32_t x, int32_t y, int32_t width, int32_t height, bool raised) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$2, $$str({$(toShortString()), " Filling 3D rect: "_s}));
@@ -588,6 +604,7 @@ void DebugGraphics::fill3DRect(int32_t x, int32_t y, int32_t width, int32_t heig
 }
 
 void DebugGraphics::drawOval(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$0, $$str({$(toShortString()), " Drawing oval: "_s}));
@@ -615,6 +632,7 @@ void DebugGraphics::drawOval(int32_t x, int32_t y, int32_t width, int32_t height
 }
 
 void DebugGraphics::fillOval(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$0, $$str({$(toShortString()), " Filling oval: "_s}));
@@ -642,6 +660,7 @@ void DebugGraphics::fillOval(int32_t x, int32_t y, int32_t width, int32_t height
 }
 
 void DebugGraphics::drawArc(int32_t x, int32_t y, int32_t width, int32_t height, int32_t startAngle, int32_t arcAngle) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$4, $$str({$(toShortString()), " Drawing arc: "_s}));
@@ -673,6 +692,7 @@ void DebugGraphics::drawArc(int32_t x, int32_t y, int32_t width, int32_t height,
 }
 
 void DebugGraphics::fillArc(int32_t x, int32_t y, int32_t width, int32_t height, int32_t startAngle, int32_t arcAngle) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$4, $$str({$(toShortString()), " Filling arc: "_s}));
@@ -704,6 +724,7 @@ void DebugGraphics::fillArc(int32_t x, int32_t y, int32_t width, int32_t height,
 }
 
 void DebugGraphics::drawPolyline($ints* xPoints, $ints* yPoints, int32_t nPoints) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$nc($(DebugGraphics::info()))->log($$str({$(toShortString()), " Drawing polyline:  nPoints: "_s, $$str(nPoints), " X\'s: "_s, xPoints, " Y\'s: "_s, yPoints}));
@@ -730,6 +751,7 @@ void DebugGraphics::drawPolyline($ints* xPoints, $ints* yPoints, int32_t nPoints
 }
 
 void DebugGraphics::drawPolygon($ints* xPoints, $ints* yPoints, int32_t nPoints) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$nc($(DebugGraphics::info()))->log($$str({$(toShortString()), " Drawing polygon:  nPoints: "_s, $$str(nPoints), " X\'s: "_s, xPoints, " Y\'s: "_s, yPoints}));
@@ -756,6 +778,7 @@ void DebugGraphics::drawPolygon($ints* xPoints, $ints* yPoints, int32_t nPoints)
 }
 
 void DebugGraphics::fillPolygon($ints* xPoints, $ints* yPoints, int32_t nPoints) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$nc($(DebugGraphics::info()))->log($$str({$(toShortString()), " Filling polygon:  nPoints: "_s, $$str(nPoints), " X\'s: "_s, xPoints, " Y\'s: "_s, yPoints}));
@@ -782,6 +805,7 @@ void DebugGraphics::fillPolygon($ints* xPoints, $ints* yPoints, int32_t nPoints)
 }
 
 void DebugGraphics::drawString($String* aString, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$0, $$str({$(toShortString()), " Drawing string: \""_s, aString, "\" at: "_s}));
@@ -809,6 +833,7 @@ void DebugGraphics::drawString($String* aString, int32_t x, int32_t y) {
 }
 
 void DebugGraphics::drawString($AttributedCharacterIterator* iterator, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$0, $$str({$(toShortString()), " Drawing text: \""_s, iterator, "\" at: "_s}));
@@ -836,6 +861,7 @@ void DebugGraphics::drawString($AttributedCharacterIterator* iterator, int32_t x
 }
 
 void DebugGraphics::drawBytes($bytes* data, int32_t offset, int32_t length, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	$var($Font, font, $nc(this->graphics)->getFont());
 	if (debugLog()) {
@@ -864,6 +890,7 @@ void DebugGraphics::drawBytes($bytes* data, int32_t offset, int32_t length, int3
 }
 
 void DebugGraphics::drawChars($chars* data, int32_t offset, int32_t length, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	$var($Font, font, $nc(this->graphics)->getFont());
 	if (debugLog()) {
@@ -892,6 +919,7 @@ void DebugGraphics::drawChars($chars* data, int32_t offset, int32_t length, int3
 }
 
 bool DebugGraphics::drawImage($Image* img, int32_t x, int32_t y, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$0, $$str({$(toShortString()), " Drawing image: "_s, img, " at: "_s}));
@@ -923,6 +951,7 @@ bool DebugGraphics::drawImage($Image* img, int32_t x, int32_t y, $ImageObserver*
 }
 
 bool DebugGraphics::drawImage($Image* img, int32_t x, int32_t y, int32_t width, int32_t height, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$0, $$str({$(toShortString()), " Drawing image: "_s, img, " at: "_s}));
@@ -954,6 +983,7 @@ bool DebugGraphics::drawImage($Image* img, int32_t x, int32_t y, int32_t width, 
 }
 
 bool DebugGraphics::drawImage($Image* img, int32_t x, int32_t y, $Color* bgcolor, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$2, $$str({$(toShortString()), " Drawing image: "_s, img, " at: "_s}));
@@ -987,6 +1017,7 @@ bool DebugGraphics::drawImage($Image* img, int32_t x, int32_t y, $Color* bgcolor
 }
 
 bool DebugGraphics::drawImage($Image* img, int32_t x, int32_t y, int32_t width, int32_t height, $Color* bgcolor, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$2, $$str({$(toShortString()), " Drawing image: "_s, img, " at: "_s}));
@@ -1020,6 +1051,7 @@ bool DebugGraphics::drawImage($Image* img, int32_t x, int32_t y, int32_t width, 
 }
 
 bool DebugGraphics::drawImage($Image* img, int32_t dx1, int32_t dy1, int32_t dx2, int32_t dy2, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$2, $$str({$(toShortString()), " Drawing image: "_s, img, " destination: "_s}));
@@ -1053,6 +1085,7 @@ bool DebugGraphics::drawImage($Image* img, int32_t dx1, int32_t dy1, int32_t dx2
 }
 
 bool DebugGraphics::drawImage($Image* img, int32_t dx1, int32_t dy1, int32_t dx2, int32_t dy2, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, $Color* bgcolor, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (debugLog()) {
 		$var($String, var$4, $$str({$(toShortString()), " Drawing image: "_s, img, " destination: "_s}));
@@ -1093,6 +1126,7 @@ void DebugGraphics::loadImage($Image* img) {
 }
 
 void DebugGraphics::copyArea(int32_t x, int32_t y, int32_t width, int32_t height, int32_t destX, int32_t destY) {
+	$useLocalCurrentObjectStackCache();
 	if (debugLog()) {
 		$var($String, var$2, $$str({$(toShortString()), " Copying area from: "_s}));
 		$var($String, var$1, $$concat(var$2, $($new($Rectangle, x, y, width, height))));
@@ -1120,14 +1154,17 @@ bool DebugGraphics::isDrawingBuffer() {
 }
 
 $String* DebugGraphics::toShortString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"Graphics"_s, (isDrawingBuffer() ? "<B>"_s : ""_s), "("_s, $$str(this->graphicsID), "-"_s, $$str(this->debugOptions), ")"_s});
 }
 
 $String* DebugGraphics::pointToString(int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	return $str({"("_s, $$str(x), ", "_s, $$str(y), ")"_s});
 }
 
 void DebugGraphics::setDebugOptions(int32_t options) {
+	$useLocalCurrentObjectStackCache();
 	if (options != 0) {
 		if (options == DebugGraphics::NONE_OPTION) {
 			if (this->debugOptions != 0) {
@@ -1166,6 +1203,7 @@ int32_t DebugGraphics::getDebugOptions($JComponent* component) {
 
 int32_t DebugGraphics::shouldComponentDebug($JComponent* component) {
 	$init(DebugGraphics);
+	$useLocalCurrentObjectStackCache();
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	if (info == nullptr) {
 		return 0;
@@ -1203,6 +1241,7 @@ bool DebugGraphics::debugBuffered() {
 }
 
 $Graphics* DebugGraphics::debugGraphics() {
+	$useLocalCurrentObjectStackCache();
 	$var(DebugGraphics, debugGraphics, nullptr);
 	$var($DebugGraphicsInfo, info, DebugGraphics::info());
 	$var($JFrame, debugFrame, nullptr);

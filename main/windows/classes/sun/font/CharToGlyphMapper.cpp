@@ -93,6 +93,7 @@ bool CharToGlyphMapper::canDisplay(int32_t cp) {
 }
 
 int32_t CharToGlyphMapper::charToGlyph(char16_t unicode) {
+	$useLocalCurrentObjectStackCache();
 	$var($chars, chars, $new($chars, 1));
 	$var($ints, glyphs, $new($ints, 1));
 	chars->set(0, unicode);
@@ -101,6 +102,7 @@ int32_t CharToGlyphMapper::charToGlyph(char16_t unicode) {
 }
 
 int32_t CharToGlyphMapper::charToGlyph(int32_t unicode) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, chars, $new($ints, 1));
 	$var($ints, glyphs, $new($ints, 1));
 	chars->set(0, unicode);

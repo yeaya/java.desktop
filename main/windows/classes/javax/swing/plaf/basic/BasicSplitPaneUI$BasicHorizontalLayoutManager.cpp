@@ -138,6 +138,7 @@ void BasicSplitPaneUI$BasicHorizontalLayoutManager::init$($BasicSplitPaneUI* thi
 }
 
 void BasicSplitPaneUI$BasicHorizontalLayoutManager::layoutContainer($Container* container) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, containerSize, $nc(container)->getSize());
 	if ($nc(containerSize)->height <= 0 || $nc(containerSize)->width <= 0) {
 		this->lastSplitPaneSize = 0;
@@ -215,6 +216,7 @@ void BasicSplitPaneUI$BasicHorizontalLayoutManager::layoutContainer($Container* 
 }
 
 void BasicSplitPaneUI$BasicHorizontalLayoutManager::addLayoutComponent($String* place, $Component* component) {
+	$useLocalCurrentObjectStackCache();
 	bool isValid = true;
 	if (place != nullptr) {
 		$init($JSplitPane);
@@ -249,6 +251,7 @@ void BasicSplitPaneUI$BasicHorizontalLayoutManager::addLayoutComponent($String* 
 }
 
 $Dimension* BasicSplitPaneUI$BasicHorizontalLayoutManager::minimumLayoutSize($Container* container) {
+	$useLocalCurrentObjectStackCache();
 	int32_t minPrimary = 0;
 	int32_t minSecondary = 0;
 	$var($Insets, insets, $nc(this->this$0->splitPane)->getInsets());
@@ -275,6 +278,7 @@ $Dimension* BasicSplitPaneUI$BasicHorizontalLayoutManager::minimumLayoutSize($Co
 }
 
 $Dimension* BasicSplitPaneUI$BasicHorizontalLayoutManager::preferredLayoutSize($Container* container) {
+	$useLocalCurrentObjectStackCache();
 	int32_t prePrimary = 0;
 	int32_t preSecondary = 0;
 	$var($Insets, insets, $nc(this->this$0->splitPane)->getInsets());
@@ -436,6 +440,7 @@ int32_t BasicSplitPaneUI$BasicHorizontalLayoutManager::getSizeForSecondaryAxis($
 }
 
 void BasicSplitPaneUI$BasicHorizontalLayoutManager::updateComponents() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, comp, nullptr);
 	$assign(comp, $nc(this->this$0->splitPane)->getLeftComponent());
 	if ($nc(this->components)->get(0) != comp) {
@@ -545,6 +550,7 @@ void BasicSplitPaneUI$BasicHorizontalLayoutManager::resetToPreferredSizes(int32_
 }
 
 void BasicSplitPaneUI$BasicHorizontalLayoutManager::distributeSpace(int32_t space, bool keepHidden) {
+	$useLocalCurrentObjectStackCache();
 	bool lValid = ($nc(this->components)->get(0) != nullptr && $nc($nc(this->components)->get(0))->isVisible());
 	bool rValid = ($nc(this->components)->get(1) != nullptr && $nc($nc(this->components)->get(1))->isVisible());
 	if (keepHidden) {

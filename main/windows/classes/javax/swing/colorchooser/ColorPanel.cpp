@@ -160,6 +160,7 @@ void ColorPanel::finalize() {
 }
 
 void ColorPanel::init$($ColorModel* model) {
+	$useLocalCurrentObjectStackCache();
 	$JPanel::init$(static_cast<$LayoutManager*>($$new($GridBagLayout)));
 	$set(this, spinners, $new($SlidingSpinnerArray, 5));
 	$set(this, values, $new($floats, $nc(this->spinners)->length));
@@ -229,6 +230,7 @@ void ColorPanel::init$($ColorModel* model) {
 }
 
 void ColorPanel::actionPerformed($ActionEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		this->z = $Integer::parseInt($($nc(event)->getActionCommand()));
 		this->y = (this->z != 2) ? 2 : 1;
@@ -240,6 +242,7 @@ void ColorPanel::actionPerformed($ActionEvent* event) {
 }
 
 void ColorPanel::buildPanel() {
+	$useLocalCurrentObjectStackCache();
 	int32_t count = $nc(this->model)->getCount();
 	$nc($nc(this->spinners)->get(4))->setVisible(count > 4);
 	for (int32_t i = 0; i < count; ++i) {
@@ -267,6 +270,7 @@ void ColorPanel::buildPanel() {
 }
 
 void ColorPanel::colorChanged() {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = getColor(0);
 	$set(this, color, $new($Color, var$0, isColorTransparencySelectionEnabled()));
 	$var($Object, parent, getParent());

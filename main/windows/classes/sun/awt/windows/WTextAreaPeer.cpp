@@ -352,6 +352,7 @@ $Dimension* WTextAreaPeer::getPreferredSize(int32_t rows, int32_t cols) {
 }
 
 $Dimension* WTextAreaPeer::getMinimumSize(int32_t rows, int32_t cols) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, fm, getFontMetrics($($nc(($cast($TextArea, this->target)))->getFont())));
 	int32_t var$0 = $nc(fm)->charWidth(u'0') * cols + 20;
 	return $new($Dimension, var$0, fm->getHeight() * rows + 20);

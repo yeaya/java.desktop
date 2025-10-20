@@ -118,6 +118,7 @@ $Object* SpinnerListModel::getPreviousValue() {
 }
 
 $Object* SpinnerListModel::findNextMatch($String* substring) {
+	$useLocalCurrentObjectStackCache();
 	int32_t max = $nc(this->list)->size();
 	if (max == 0) {
 		return $of(nullptr);

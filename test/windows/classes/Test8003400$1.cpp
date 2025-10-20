@@ -86,6 +86,7 @@ void Test8003400$1::init$() {
 }
 
 void Test8003400$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultMutableTreeNode, root, $new($DefaultMutableTreeNode));
 	$init($Test8003400);
 	$assignStatic($Test8003400::tree, $new($JTree, static_cast<$TreeNode*>(root)));

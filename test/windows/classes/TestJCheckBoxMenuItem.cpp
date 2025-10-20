@@ -309,6 +309,7 @@ void TestJCheckBoxMenuItem::init$() {
 
 void TestJCheckBoxMenuItem::main($StringArray* args) {
 	$init(TestJCheckBoxMenuItem);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(TestJCheckBoxMenuItem::countDownLatch, $new($CountDownLatch, 1));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestJCheckBoxMenuItem$$Lambda$createInstructionUI)));
 	$var($SynthLookAndFeel, lookAndFeel, $new($SynthLookAndFeel));
@@ -332,6 +333,7 @@ void TestJCheckBoxMenuItem::main($StringArray* args) {
 
 void TestJCheckBoxMenuItem::createInstructionUI() {
 	$init(TestJCheckBoxMenuItem);
+	$useLocalCurrentObjectStackCache();
 	$var($GridBagLayout, layout, $new($GridBagLayout));
 	$var($JPanel, mainControlPanel, $new($JPanel, static_cast<$LayoutManager*>(layout)));
 	$var($JPanel, resultButtonPanel, $new($JPanel, static_cast<$LayoutManager*>(layout)));
@@ -371,6 +373,7 @@ void TestJCheckBoxMenuItem::createInstructionUI() {
 
 void TestJCheckBoxMenuItem::createTestUI() {
 	$init(TestJCheckBoxMenuItem);
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuBar, menuBar, $new($JMenuBar));
 	$var($JMenu, menu, $new($JMenu, "Menu"_s));
 	$var($JCheckBoxMenuItem, checkBoxMenuItem, $new($JCheckBoxMenuItem));

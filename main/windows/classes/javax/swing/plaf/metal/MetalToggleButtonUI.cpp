@@ -105,6 +105,7 @@ void MetalToggleButtonUI::init$() {
 
 $ComponentUI* MetalToggleButtonUI::createUI($JComponent* b) {
 	$init(MetalToggleButtonUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(MetalToggleButtonUI, metalToggleButtonUI, $cast(MetalToggleButtonUI, $nc(appContext)->get(MetalToggleButtonUI::METAL_TOGGLE_BUTTON_UI_KEY)));
 	if (metalToggleButtonUI == nullptr) {
@@ -115,6 +116,7 @@ $ComponentUI* MetalToggleButtonUI::createUI($JComponent* b) {
 }
 
 void MetalToggleButtonUI::installDefaults($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$BasicToggleButtonUI::installDefaults(b);
 	if (!this->defaults_initialized) {
 		$set(this, focusColor, $UIManager::getColor($$str({$(getPropertyPrefix()), "focus"_s})));
@@ -142,6 +144,7 @@ $Color* MetalToggleButtonUI::getFocusColor() {
 }
 
 void MetalToggleButtonUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, button, $cast($AbstractButton, c));
 	bool var$1 = ($instanceOf($UIResource, $($nc(c)->getBackground())));
 	bool var$0 = var$1 && $nc(button)->isContentAreaFilled();
@@ -189,6 +192,7 @@ void MetalToggleButtonUI::paintButtonPressed($Graphics* g, $AbstractButton* b) {
 }
 
 void MetalToggleButtonUI::paintText($Graphics* g, $JComponent* c, $Rectangle* textRect, $String* text) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	$var($ButtonModel, model, $nc(b)->getModel());
 	$var($FontMetrics, fm, $SwingUtilities2::getFontMetrics(static_cast<$JComponent*>(b), g));
@@ -204,6 +208,7 @@ void MetalToggleButtonUI::paintText($Graphics* g, $JComponent* c, $Rectangle* te
 }
 
 void MetalToggleButtonUI::paintFocus($Graphics* g, $AbstractButton* b, $Rectangle* viewRect, $Rectangle* textRect, $Rectangle* iconRect) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, focusRect, $new($Rectangle));
 	$var($String, text, $nc(b)->getText());
 	bool isIcon = b->getIcon() != nullptr;

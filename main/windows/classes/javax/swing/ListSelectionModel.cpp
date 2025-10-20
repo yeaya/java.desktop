@@ -71,6 +71,7 @@ $Object* allocate$ListSelectionModel($Class* clazz) {
 }
 
 $ints* ListSelectionModel::getSelectedIndices() {
+	$useLocalCurrentObjectStackCache();
 	int32_t iMin = getMinSelectionIndex();
 	int32_t iMax = getMaxSelectionIndex();
 	if ((iMin < 0) || (iMax < 0)) {

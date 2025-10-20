@@ -76,6 +76,7 @@ void SwingWorker$6::init$() {
 }
 
 $Thread* SwingWorker$6::newThread($Runnable* r) {
+	$useLocalCurrentObjectStackCache();
 	$var($Thread, thread, $nc(this->defaultFactory)->newThread(r));
 	$nc(thread)->setName($$str({"SwingWorker-"_s, $(thread->getName())}));
 	thread->setDaemon(true);

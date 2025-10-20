@@ -130,6 +130,7 @@ void bug8032874::init$() {
 }
 
 void bug8032874::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	$SwingUtilities::invokeAndWait($$new($bug8032874$1));
 	robot->waitForIdle();
@@ -139,6 +140,7 @@ void bug8032874::main($StringArray* args) {
 }
 
 void bug8032874::createAndShowUI() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"_s);
 	} catch ($Exception&) {

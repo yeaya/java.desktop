@@ -155,6 +155,7 @@ $ModelConnectionBlockArray* SoftPerformer::defaultconnections = nullptr;
 $SoftPerformer$KeySortComparator* SoftPerformer::keySortComparator = nullptr;
 
 $String* SoftPerformer::extractKeys($ModelConnectionBlock* conn) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, $new($StringBuilder));
 	if ($nc(conn)->getSources() != nullptr) {
 		sb->append("["_s);
@@ -179,6 +180,7 @@ $String* SoftPerformer::extractKeys($ModelConnectionBlock* conn) {
 }
 
 void SoftPerformer::processSource($ModelSource* src, int32_t ix) {
+	$useLocalCurrentObjectStackCache();
 	$var($ModelIdentifier, id, $nc(src)->getIdentifier());
 	$var($String, o, $nc(id)->getObject());
 	if ($nc(o)->equals("midi_cc"_s)) {
@@ -201,6 +203,7 @@ void SoftPerformer::processSource($ModelSource* src, int32_t ix) {
 }
 
 void SoftPerformer::processMidiControlSource($ModelSource* src, int32_t ix) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, v, $nc($($nc(src)->getIdentifier()))->getVariable());
 	if (v == nullptr) {
 		return;
@@ -220,6 +223,7 @@ void SoftPerformer::processMidiControlSource($ModelSource* src, int32_t ix) {
 }
 
 void SoftPerformer::processNoteOnSource($ModelSource* src, int32_t ix) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, v, $nc($($nc(src)->getIdentifier()))->getVariable());
 	int32_t c = -1;
 	if ($nc(v)->equals("on"_s)) {
@@ -245,6 +249,7 @@ void SoftPerformer::processNoteOnSource($ModelSource* src, int32_t ix) {
 }
 
 void SoftPerformer::processMidiSource($ModelSource* src, int32_t ix) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, v, $nc($($nc(src)->getIdentifier()))->getVariable());
 	int32_t c = -1;
 	if ($nc(v)->equals("pitch"_s)) {
@@ -273,6 +278,7 @@ void SoftPerformer::processMidiSource($ModelSource* src, int32_t ix) {
 }
 
 void SoftPerformer::processMidiRpnSource($ModelSource* src, int32_t ix) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, v, $nc($($nc(src)->getIdentifier()))->getVariable());
 	if (v == nullptr) {
 		return;
@@ -292,6 +298,7 @@ void SoftPerformer::processMidiRpnSource($ModelSource* src, int32_t ix) {
 }
 
 void SoftPerformer::processMidiNrpnSource($ModelSource* src, int32_t ix) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, v, $nc($($nc(src)->getIdentifier()))->getVariable());
 	if (v == nullptr) {
 		return;
@@ -311,6 +318,7 @@ void SoftPerformer::processMidiNrpnSource($ModelSource* src, int32_t ix) {
 }
 
 void SoftPerformer::init$($ModelPerformer* performer) {
+	$useLocalCurrentObjectStackCache();
 	this->keyFrom = 0;
 	this->keyTo = 127;
 	this->velFrom = 0;
@@ -605,6 +613,7 @@ bool SoftPerformer::isUnnecessaryTransform($ModelTransform* transform) {
 }
 
 void clinit$SoftPerformer($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(SoftPerformer::defaultconnections, $new($ModelConnectionBlockArray, 42));
 	{
 		int32_t o = 0;

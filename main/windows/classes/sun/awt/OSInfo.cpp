@@ -155,6 +155,7 @@ $PrivilegedAction* OSInfo::getOSTypeAction() {
 
 $OSInfo$WindowsVersion* OSInfo::getWindowsVersion() {
 	$init(OSInfo);
+	$useLocalCurrentObjectStackCache();
 	$var($String, osVersion, $System::getProperty(OSInfo::OS_VERSION));
 	if (osVersion == nullptr) {
 		return OSInfo::WINDOWS_UNKNOWN;
@@ -181,6 +182,7 @@ $OSInfo$WindowsVersion* OSInfo::getWindowsVersion() {
 }
 
 void clinit$OSInfo($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(OSInfo::OS_NAME, "os.name"_s);
 	$assignStatic(OSInfo::OS_VERSION, "os.version"_s);
 	$assignStatic(OSInfo::WINDOWS_UNKNOWN, $new($OSInfo$WindowsVersion, -1, -1));

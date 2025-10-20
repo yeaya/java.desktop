@@ -89,6 +89,7 @@ void PixelConverter::init$() {
 }
 
 int32_t PixelConverter::rgbToPixel(int32_t rgb, $ColorModel* cm) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, obj, $nc(cm)->getDataElements(rgb, nullptr));
 	{
 		$var($bytes, bytearr, nullptr)

@@ -45,6 +45,7 @@ void Test4461329::init$() {
 }
 
 void Test4461329::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JColorChooser, chooser, $new($JColorChooser));
 	if (nullptr == chooser->getPreviewPanel()) {
 		$throwNew($Error, "Failed: getPreviewPanel() returned null"_s);

@@ -112,6 +112,7 @@ void HeadlessJSeparator::init$() {
 }
 
 void HeadlessJSeparator::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JSeparator, sp, $new($JSeparator));
 	sp->getAccessibleContext();
 	sp->isFocusTraversable();

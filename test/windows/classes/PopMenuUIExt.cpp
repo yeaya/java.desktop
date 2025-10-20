@@ -74,6 +74,7 @@ void PopMenuUIExt::init$() {
 }
 
 $Popup* PopMenuUIExt::getPopup($JPopupMenu* popup, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$PopupFactory::setSharedInstance($$new($PopMenuUIExt$1, this));
 	$var($PopupFactory, factory, $PopupFactory::getSharedInstance());
 	$assignStatic(PopMenuUIExt::popUp, $nc(factory)->getPopup($($nc(popup)->getInvoker()), popup, x, y));

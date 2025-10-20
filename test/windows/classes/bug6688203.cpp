@@ -61,6 +61,7 @@ void bug6688203::init$() {
 
 void bug6688203::main($StringArray* args) {
 	$load(bug6688203);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$FileSystemView::getFileSystemView();
 	int32_t startCount = $nc($($UIManager::getPropertyChangeListeners()))->length;

@@ -253,6 +253,7 @@ void Parser::handleComment($chars* text) {
 }
 
 void Parser::handleEOFInComment() {
+	$useLocalCurrentObjectStackCache();
 	int32_t commentEndPos = strIndexOf(u'\n');
 	if (commentEndPos >= 0) {
 		handleComment($(getChars(0, commentEndPos)));
@@ -283,6 +284,7 @@ void Parser::handleError(int32_t ln, $String* msg) {
 }
 
 void Parser::handleText($TagElement* tag) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(tag)->breaksFlow()) {
 		this->space = false;
 		if (!this->strict) {
@@ -342,6 +344,7 @@ void Parser::error($String* err) {
 }
 
 void Parser::startTag($TagElement* tag) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, $nc(tag)->getElement());
 	bool var$0 = !$nc(elem)->isEmpty();
 	if (var$0 || ((this->last != nullptr) && !$nc(this->last)->breaksFlow()) || (this->textpos != 0)) {
@@ -380,6 +383,7 @@ void Parser::startTag($TagElement* tag) {
 }
 
 void Parser::endTag(bool omitted) {
+	$useLocalCurrentObjectStackCache();
 	handleText($nc(this->stack)->tag);
 	if (omitted && !$nc($nc(this->stack)->elem)->omitEnd()) {
 		error("end.missing"_s, $($nc($nc(this->stack)->elem)->getName()));
@@ -392,6 +396,7 @@ void Parser::endTag(bool omitted) {
 }
 
 bool Parser::ignoreElement($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, stackElement, $nc($nc(this->stack)->elem)->getName());
 	$var($String, elemName, $nc(elem)->getName());
 	bool var$1 = ($nc(elemName)->equals("html"_s) && this->seenHtml);
@@ -434,6 +439,7 @@ bool Parser::ignoreElement($Element* elem) {
 }
 
 void Parser::markFirstTime($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, elemName, $nc(elem)->getName());
 	if ($nc(elemName)->equals("html"_s)) {
 		this->seenHtml = true;
@@ -450,6 +456,7 @@ void Parser::markFirstTime($Element* elem) {
 }
 
 bool Parser::legalElementContext($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	if (this->stack == nullptr) {
 		if (elem != $nc(this->dtd)->html) {
 			startTag($(makeTag($nc(this->dtd)->html, true)));
@@ -584,6 +591,7 @@ bool Parser::legalElementContext($Element* elem) {
 }
 
 void Parser::legalTagContext($TagElement* tag) {
+	$useLocalCurrentObjectStackCache();
 	if (legalElementContext($($nc(tag)->getElement()))) {
 		markFirstTime($($nc(tag)->getElement()));
 		return;
@@ -965,6 +973,7 @@ bool Parser::parseIdentifier(bool lower) {
 }
 
 $chars* Parser::parseEntityReference() {
+	$useLocalCurrentObjectStackCache();
 	int32_t pos = this->strpos;
 	if ((this->ch = readCh()) == u'#') {
 		int32_t n = 0;
@@ -1076,6 +1085,7 @@ $chars* Parser::parseEntityReference() {
 }
 
 $chars* Parser::mapNumericReference(int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	$var($chars, data, nullptr);
 	if (c >= 0x0000FFFF) {
 		try {
@@ -1170,6 +1180,7 @@ void Parser::parseComment() {
 }
 
 void Parser::parseLiteral(bool replace) {
+	$useLocalCurrentObjectStackCache();
 	while (true) {
 		int32_t c = this->ch;
 		{
@@ -1262,6 +1273,7 @@ void Parser::parseLiteral(bool replace) {
 }
 
 $String* Parser::parseAttributeValue(bool lower) {
+	$useLocalCurrentObjectStackCache();
 	int32_t delim = -1;
 	switch (this->ch) {
 	case u'\'':
@@ -1386,6 +1398,7 @@ $String* Parser::parseAttributeValue(bool lower) {
 }
 
 void Parser::parseAttributeSpecificationList($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	while (true) {
 		skipSpace();
 		switch (this->ch) {
@@ -1566,6 +1579,7 @@ $String* Parser::parseDTDMarkup() {
 }
 
 bool Parser::parseMarkupDeclarations($StringBuffer* strBuff) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$1 = $nc(strBuff)->length();
 	bool var$0 = (var$1 == "DOCTYPE"_s->length());
 	if (var$0 && ($($nc($(strBuff->toString()))->toUpperCase())->equals("DOCTYPE"_s))) {
@@ -1599,6 +1613,7 @@ void Parser::parseInvalidTag() {
 }
 
 void Parser::parseTag() {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, nullptr);
 	bool net = false;
 	bool warned = false;
@@ -2034,6 +2049,7 @@ void Parser::parseScript() {
 }
 
 void Parser::parseContent() {
+	$useLocalCurrentObjectStackCache();
 	$var($Thread, curThread, $Thread::currentThread());
 	for (;;) {
 		if (curThread->isInterrupted()) {
@@ -2216,6 +2232,7 @@ $String* Parser::getEndOfLineString() {
 
 void Parser::parse($Reader* in) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$set(this, in, in);
 		this->ln = 1;
 		this->seenHtml = false;
@@ -2270,6 +2287,7 @@ void Parser::parse($Reader* in) {
 }
 
 int32_t Parser::readCh() {
+	$useLocalCurrentObjectStackCache();
 	if (this->pos >= this->len) {
 		for (;;) {
 			try {

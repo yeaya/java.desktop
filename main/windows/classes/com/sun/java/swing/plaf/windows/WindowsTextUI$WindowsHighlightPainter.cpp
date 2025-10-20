@@ -85,6 +85,7 @@ void WindowsTextUI$WindowsHighlightPainter::init$($Color* c) {
 }
 
 void WindowsTextUI$WindowsHighlightPainter::paint($Graphics* g, int32_t offs0, int32_t offs1, $Shape* bounds, $JTextComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, alloc, $nc(bounds)->getBounds());
 	try {
 		$var($TextUI, mapper, $cast($TextUI, $nc(c)->getUI()));
@@ -135,6 +136,7 @@ void WindowsTextUI$WindowsHighlightPainter::paint($Graphics* g, int32_t offs0, i
 }
 
 $Shape* WindowsTextUI$WindowsHighlightPainter::paintLayer($Graphics* g, int32_t offs0, int32_t offs1, $Shape* bounds, $JTextComponent* c, $View* view) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, color, getColor());
 	if (color == nullptr) {
 		$nc(g)->setColor($($nc(c)->getSelectionColor()));

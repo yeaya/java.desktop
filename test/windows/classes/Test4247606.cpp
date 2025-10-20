@@ -68,6 +68,7 @@ void Test4247606::init$() {
 }
 
 void Test4247606::init() {
+	$useLocalCurrentObjectStackCache();
 	$var($JButton, button, $new($JButton, "Button"_s));
 	$init($Color);
 	button->setBorder($($BorderFactory::createLineBorder($Color::red, 1)));
@@ -80,6 +81,7 @@ void Test4247606::init() {
 
 $JPanel* Test4247606::create($JComponent* component, $Border* border) {
 	$init(Test4247606);
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, panel, $new($JPanel, static_cast<$LayoutManager*>($$new($BorderLayout))));
 	panel->setBorder(border);
 	panel->add(static_cast<$Component*>(component));

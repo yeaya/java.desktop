@@ -338,6 +338,7 @@ bool DefaultMutableTreeNode::isNodeDescendant(DefaultMutableTreeNode* anotherNod
 }
 
 $TreeNode* DefaultMutableTreeNode::getSharedAncestor(DefaultMutableTreeNode* aNode) {
+	$useLocalCurrentObjectStackCache();
 	if (aNode == this) {
 		return this;
 	} else if (aNode == nullptr) {
@@ -385,6 +386,7 @@ bool DefaultMutableTreeNode::isNodeRelated(DefaultMutableTreeNode* aNode) {
 }
 
 int32_t DefaultMutableTreeNode::getDepth() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, last, nullptr);
 	$var($Enumeration, enum_, breadthFirstEnumeration());
 	while ($nc(enum_)->hasMoreElements()) {
@@ -412,6 +414,7 @@ $TreeNodeArray* DefaultMutableTreeNode::getPath() {
 }
 
 $TreeNodeArray* DefaultMutableTreeNode::getPathToRoot($TreeNode* aNode, int32_t depth) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeNodeArray, retNodes, nullptr);
 	if (aNode == nullptr) {
 		if (depth == 0) {
@@ -428,6 +431,7 @@ $TreeNodeArray* DefaultMutableTreeNode::getPathToRoot($TreeNode* aNode, int32_t 
 }
 
 $ObjectArray* DefaultMutableTreeNode::getUserObjectPath() {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeNodeArray, realPath, getPath());
 	$var($ObjectArray, retPath, $new($ObjectArray, $nc(realPath)->length));
 	for (int32_t counter = 0; counter < realPath->length; ++counter) {
@@ -437,6 +441,7 @@ $ObjectArray* DefaultMutableTreeNode::getUserObjectPath() {
 }
 
 $TreeNode* DefaultMutableTreeNode::getRoot() {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeNode, ancestor, this);
 	$var($TreeNode, previous, nullptr);
 	do {
@@ -451,6 +456,7 @@ bool DefaultMutableTreeNode::isRoot() {
 }
 
 DefaultMutableTreeNode* DefaultMutableTreeNode::getNextNode() {
+	$useLocalCurrentObjectStackCache();
 	if (getChildCount() == 0) {
 		$var(DefaultMutableTreeNode, nextSibling, getNextSibling());
 		if (nextSibling == nullptr) {
@@ -474,6 +480,7 @@ DefaultMutableTreeNode* DefaultMutableTreeNode::getNextNode() {
 }
 
 DefaultMutableTreeNode* DefaultMutableTreeNode::getPreviousNode() {
+	$useLocalCurrentObjectStackCache();
 	$var(DefaultMutableTreeNode, previousSibling, nullptr);
 	$var(DefaultMutableTreeNode, myParent, $cast(DefaultMutableTreeNode, getParent()));
 	if (myParent == nullptr) {
@@ -568,6 +575,7 @@ $TreeNode* DefaultMutableTreeNode::getChildBefore($TreeNode* aChild) {
 }
 
 bool DefaultMutableTreeNode::isNodeSibling($TreeNode* anotherNode) {
+	$useLocalCurrentObjectStackCache();
 	bool retval = false;
 	if (anotherNode == nullptr) {
 		retval = false;
@@ -593,6 +601,7 @@ int32_t DefaultMutableTreeNode::getSiblingCount() {
 }
 
 DefaultMutableTreeNode* DefaultMutableTreeNode::getNextSibling() {
+	$useLocalCurrentObjectStackCache();
 	$var(DefaultMutableTreeNode, retval, nullptr);
 	$var(DefaultMutableTreeNode, myParent, $cast(DefaultMutableTreeNode, getParent()));
 	if (myParent == nullptr) {
@@ -607,6 +616,7 @@ DefaultMutableTreeNode* DefaultMutableTreeNode::getNextSibling() {
 }
 
 DefaultMutableTreeNode* DefaultMutableTreeNode::getPreviousSibling() {
+	$useLocalCurrentObjectStackCache();
 	$var(DefaultMutableTreeNode, retval, nullptr);
 	$var(DefaultMutableTreeNode, myParent, $cast(DefaultMutableTreeNode, getParent()));
 	if (myParent == nullptr) {
@@ -641,6 +651,7 @@ DefaultMutableTreeNode* DefaultMutableTreeNode::getLastLeaf() {
 }
 
 DefaultMutableTreeNode* DefaultMutableTreeNode::getNextLeaf() {
+	$useLocalCurrentObjectStackCache();
 	$var(DefaultMutableTreeNode, nextSibling, nullptr);
 	$var(DefaultMutableTreeNode, myParent, $cast(DefaultMutableTreeNode, getParent()));
 	if (myParent == nullptr) {
@@ -654,6 +665,7 @@ DefaultMutableTreeNode* DefaultMutableTreeNode::getNextLeaf() {
 }
 
 DefaultMutableTreeNode* DefaultMutableTreeNode::getPreviousLeaf() {
+	$useLocalCurrentObjectStackCache();
 	$var(DefaultMutableTreeNode, previousSibling, nullptr);
 	$var(DefaultMutableTreeNode, myParent, $cast(DefaultMutableTreeNode, getParent()));
 	if (myParent == nullptr) {
@@ -667,6 +679,7 @@ DefaultMutableTreeNode* DefaultMutableTreeNode::getPreviousLeaf() {
 }
 
 int32_t DefaultMutableTreeNode::getLeafCount() {
+	$useLocalCurrentObjectStackCache();
 	int32_t count = 0;
 	$var($TreeNode, node, nullptr);
 	$var($Enumeration, enum_, breadthFirstEnumeration());
@@ -691,6 +704,7 @@ $String* DefaultMutableTreeNode::toString() {
 }
 
 $Object* DefaultMutableTreeNode::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(DefaultMutableTreeNode, newNode, nullptr);
 	try {
 		$assign(newNode, $cast(DefaultMutableTreeNode, $Cloneable::clone()));
@@ -717,6 +731,7 @@ void DefaultMutableTreeNode::writeObject($ObjectOutputStream* s) {
 }
 
 void DefaultMutableTreeNode::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	$set(this, parent, $cast($MutableTreeNode, $nc(f)->get("parent"_s, ($Object*)nullptr)));
 	$var($Vector, newChildren, $cast($Vector, f->get("children"_s, ($Object*)nullptr)));

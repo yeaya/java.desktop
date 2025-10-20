@@ -404,6 +404,7 @@ void SynthParser::init$() {
 }
 
 void SynthParser::parse($InputStream* inputStream, $DefaultSynthStyleFactory* factory, $URL* urlResourceBase, $Class* classResourceBase, $Map* defaultsMap) {
+	$useLocalCurrentObjectStackCache();
 	if (inputStream == nullptr || factory == nullptr || (urlResourceBase == nullptr && classResourceBase == nullptr)) {
 		$throwNew($IllegalArgumentException, "You must supply an InputStream, StyleFactory and Class or URL"_s);
 	}
@@ -472,6 +473,7 @@ bool SynthParser::isForwarding() {
 }
 
 $DocumentHandler* SynthParser::getHandler() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (this->_handler == nullptr) {
 		$set(this, _handler, $new($DocumentHandler));
@@ -497,6 +499,7 @@ $DocumentHandler* SynthParser::getHandler() {
 }
 
 $Object* SynthParser::checkCast(Object$* value, $Class* type) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(type)->isInstance(value)) {
 		$var($String, var$0, $$str({"Expected type "_s, type, " got "_s}));
 		$throwNew($SAXException, $$concat(var$0, $($nc($of(value))->getClass())));
@@ -505,6 +508,7 @@ $Object* SynthParser::checkCast(Object$* value, $Class* type) {
 }
 
 $Object* SynthParser::lookup($String* key, $Class* type) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, nullptr);
 	if (this->_handler != nullptr) {
 		if ($nc(this->_handler)->hasVariable(key)) {
@@ -533,6 +537,7 @@ void SynthParser::register$($String* key, Object$* value) {
 }
 
 int32_t SynthParser::nextInt($StringTokenizer* tok, $String* errorMsg) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(tok)->hasMoreTokens()) {
 		$throwNew($SAXException, errorMsg);
 	}
@@ -554,6 +559,7 @@ $Insets* SynthParser::parseInsets($String* insets, $String* errorMsg) {
 }
 
 void SynthParser::startStyle($Attributes* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, id, nullptr);
 	$set(this, _style, nullptr);
 	for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
@@ -572,6 +578,7 @@ void SynthParser::startStyle($Attributes* attributes) {
 }
 
 void SynthParser::endStyle() {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc(this->_stylePainters)->size();
 	if (size > 0) {
 		$nc(this->_style)->setPainters($fcast($ParsedSynthStyle$PainterInfoArray, $($nc(this->_stylePainters)->toArray($$new($ParsedSynthStyle$PainterInfoArray, size)))));
@@ -586,6 +593,7 @@ void SynthParser::endStyle() {
 }
 
 void SynthParser::startState($Attributes* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($ParsedSynthStyle$StateInfo, stateInfo, nullptr);
 	int32_t state = 0;
 	$var($String, id, nullptr);
@@ -633,6 +641,7 @@ void SynthParser::startState($Attributes* attributes) {
 }
 
 void SynthParser::endState() {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc(this->_statePainters)->size();
 	if (size > 0) {
 		$nc(this->_stateInfo)->setPainters($fcast($ParsedSynthStyle$PainterInfoArray, $($nc(this->_statePainters)->toArray($$new($ParsedSynthStyle$PainterInfoArray, size)))));
@@ -642,6 +651,7 @@ void SynthParser::endState() {
 }
 
 void SynthParser::startFont($Attributes* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, font, nullptr);
 	int32_t style = $Font::PLAIN;
 	int32_t size = 0;
@@ -695,6 +705,7 @@ void SynthParser::startFont($Attributes* attributes) {
 }
 
 void SynthParser::startColor($Attributes* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Color, color, nullptr);
 	$var($String, id, nullptr);
@@ -802,6 +813,7 @@ void SynthParser::startColor($Attributes* attributes) {
 }
 
 void SynthParser::startProperty($Attributes* attributes, Object$* property) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, nullptr);
 	$var($String, key, nullptr);
 	int32_t iType = 0;
@@ -895,6 +907,7 @@ void SynthParser::startProperty($Attributes* attributes, Object$* property) {
 }
 
 void SynthParser::startGraphics($Attributes* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthGraphicsUtils, graphics, nullptr);
 	for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
 		$var($String, key, attributes->getQName(i));
@@ -912,6 +925,7 @@ void SynthParser::startGraphics($Attributes* attributes) {
 }
 
 void SynthParser::startInsets($Attributes* attributes) {
+	$useLocalCurrentObjectStackCache();
 	int32_t top = 0;
 	int32_t bottom = 0;
 	int32_t left = 0;
@@ -950,6 +964,7 @@ void SynthParser::startInsets($Attributes* attributes) {
 }
 
 void SynthParser::startBind($Attributes* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($ParsedSynthStyle, style, nullptr);
 	$var($String, path, nullptr);
 	int32_t type = -1;
@@ -983,6 +998,7 @@ void SynthParser::startBind($Attributes* attributes) {
 }
 
 void SynthParser::startPainter($Attributes* attributes, $String* type) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, sourceInsets, nullptr);
 	$var($Insets, destInsets, nullptr);
 	$var($String, path, nullptr);
@@ -1075,6 +1091,7 @@ void SynthParser::startPainter($Attributes* attributes, $String* type) {
 }
 
 void SynthParser::addPainterOrMerge($List* painters, $String* method, $SynthPainter* painter, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	$var($ParsedSynthStyle$PainterInfo, painterInfo, nullptr);
 	$assign(painterInfo, $new($ParsedSynthStyle$PainterInfo, method, painter, direction));
 	{
@@ -1095,6 +1112,7 @@ void SynthParser::addPainterOrMerge($List* painters, $String* method, $SynthPain
 }
 
 void SynthParser::startImageIcon($Attributes* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, path, nullptr);
 	$var($String, id, nullptr);
 	for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
@@ -1112,6 +1130,7 @@ void SynthParser::startImageIcon($Attributes* attributes) {
 }
 
 void SynthParser::startOpaque($Attributes* attributes) {
+	$useLocalCurrentObjectStackCache();
 	if (this->_style != nullptr) {
 		$nc(this->_style)->setOpaque(true);
 		for (int32_t i = $nc(attributes)->getLength() - 1; i >= 0; --i) {
@@ -1124,6 +1143,7 @@ void SynthParser::startOpaque($Attributes* attributes) {
 }
 
 void SynthParser::startInputMap($Attributes* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->_inputMapBindings)->clear();
 	$set(this, _inputMapID, nullptr);
 	if (this->_style != nullptr) {
@@ -1137,6 +1157,7 @@ void SynthParser::startInputMap($Attributes* attributes) {
 }
 
 void SynthParser::endInputMap() {
+	$useLocalCurrentObjectStackCache();
 	if (this->_inputMapID != nullptr) {
 		register$(this->_inputMapID, $$new($UIDefaults$LazyInputMap, $($nc(this->_inputMapBindings)->toArray($$new($ObjectArray, $nc(this->_inputMapBindings)->size())))));
 	}
@@ -1145,6 +1166,7 @@ void SynthParser::endInputMap() {
 }
 
 void SynthParser::startBindKey($Attributes* attributes) {
+	$useLocalCurrentObjectStackCache();
 	if (this->_inputMapID == nullptr) {
 		return;
 	}
@@ -1205,6 +1227,7 @@ void SynthParser::endDocument() {
 }
 
 void SynthParser::startElement($String* uri, $String* local, $String* name$renamed, $Attributes* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, name$renamed);
 	$assign(name, $nc(name)->intern());
 	if (name == SynthParser::ELEMENT_STYLE) {
@@ -1246,6 +1269,7 @@ void SynthParser::startElement($String* uri, $String* local, $String* name$renam
 }
 
 void SynthParser::endElement($String* uri, $String* local, $String* name$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, name$renamed);
 	if (isForwarding()) {
 		$nc($(getHandler()))->endElement(uri, local, name);

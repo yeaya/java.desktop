@@ -80,6 +80,7 @@ $Object* allocate$State$StandardState($Class* clazz) {
 }
 
 void State$StandardState::init$(int32_t state) {
+	$useLocalCurrentObjectStackCache();
 	$State::init$($(toString(state)));
 	this->state = state;
 	$init($State);

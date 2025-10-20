@@ -104,6 +104,7 @@ $Object* allocate$DHTMarkerSegment($Class* clazz) {
 }
 
 void DHTMarkerSegment::init$(bool needFour) {
+	$useLocalCurrentObjectStackCache();
 	$MarkerSegment::init$($JPEG::DHT);
 	$set(this, tables, $new($ArrayList));
 	$init($JPEGHuffmanTable);
@@ -118,6 +119,7 @@ void DHTMarkerSegment::init$(bool needFour) {
 }
 
 void DHTMarkerSegment::init$($JPEGBuffer* buffer) {
+	$useLocalCurrentObjectStackCache();
 	$MarkerSegment::init$(buffer);
 	$set(this, tables, $new($ArrayList));
 	int32_t count = this->length;
@@ -130,6 +132,7 @@ void DHTMarkerSegment::init$($JPEGBuffer* buffer) {
 }
 
 void DHTMarkerSegment::init$($JPEGHuffmanTableArray* dcTables, $JPEGHuffmanTableArray* acTables) {
+	$useLocalCurrentObjectStackCache();
 	$MarkerSegment::init$($JPEG::DHT);
 	$set(this, tables, $new($ArrayList));
 	for (int32_t i = 0; i < $nc(dcTables)->length; ++i) {
@@ -141,6 +144,7 @@ void DHTMarkerSegment::init$($JPEGHuffmanTableArray* dcTables, $JPEGHuffmanTable
 }
 
 void DHTMarkerSegment::init$($Node* node) {
+	$useLocalCurrentObjectStackCache();
 	$MarkerSegment::init$($JPEG::DHT);
 	$set(this, tables, $new($ArrayList));
 	$var($NodeList, children, $nc(node)->getChildNodes());
@@ -154,6 +158,7 @@ void DHTMarkerSegment::init$($Node* node) {
 }
 
 $Object* DHTMarkerSegment::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(DHTMarkerSegment, newGuy, $cast(DHTMarkerSegment, $MarkerSegment::clone()));
 	$set($nc(newGuy), tables, $new($ArrayList, $nc(this->tables)->size()));
 	{
@@ -169,6 +174,7 @@ $Object* DHTMarkerSegment::clone() {
 }
 
 $IIOMetadataNode* DHTMarkerSegment::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "dht"_s));
 	for (int32_t i = 0; i < $nc(this->tables)->size(); ++i) {
 		$var($DHTMarkerSegment$Htable, table, $cast($DHTMarkerSegment$Htable, $nc(this->tables)->get(i)));
@@ -181,6 +187,7 @@ void DHTMarkerSegment::write($ImageOutputStream* ios) {
 }
 
 void DHTMarkerSegment::print() {
+	$useLocalCurrentObjectStackCache();
 	printTag("DHT"_s);
 	$init($System);
 	$nc($System::out)->println($$str({"Num tables: "_s, $($Integer::toString($nc(this->tables)->size()))}));

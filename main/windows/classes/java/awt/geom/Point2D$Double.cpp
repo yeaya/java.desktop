@@ -108,6 +108,7 @@ void Point2D$Double::setLocation(double x, double y) {
 }
 
 $String* Point2D$Double::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"Point2D.Double["_s, $$str(this->x), ", "_s, $$str(this->y), "]"_s});
 }
 

@@ -91,6 +91,7 @@ bool TransferableProxy::isDataFlavorSupported($DataFlavor* flavor) {
 }
 
 $Object* TransferableProxy::getTransferData($DataFlavor* df) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, data, $nc(this->transferable)->getTransferData(df));
 	if (data != nullptr && this->isLocal && $nc(df)->isFlavorSerializedObjectType()) {
 		$var($ByteArrayOutputStream, baos, $new($ByteArrayOutputStream));

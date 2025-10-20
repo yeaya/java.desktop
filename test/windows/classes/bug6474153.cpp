@@ -48,6 +48,7 @@ void bug6474153::init$() {
 }
 
 void bug6474153::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 		$init($DefaultEditorKit);
 	checkArray($($LookAndFeel::makeKeyBindings($$new($ObjectArray, {
 		$of("UP"_s),

@@ -87,6 +87,7 @@ void ActionListenerExceptionTest$1::init$($ActionListenerExceptionTest* this$0) 
 }
 
 void ActionListenerExceptionTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$set(this->this$0, frame, $new($JFrame));
 	$nc(this->this$0->frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$set(this->this$0, combo, $new($JComboBox, $$new($StringArray, {

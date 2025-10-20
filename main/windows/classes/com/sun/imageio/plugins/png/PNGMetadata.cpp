@@ -430,6 +430,7 @@ void PNGMetadata::init$($IIOMetadata* metadata) {
 }
 
 void PNGMetadata::initialize($ImageTypeSpecifier* imageType, int32_t numBands) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, colorModel, $nc(imageType)->getColorModel());
 	$var($SampleModel, sampleModel, imageType->getSampleModel());
 	$var($ints, sampleSize, $nc(sampleModel)->getSampleSize());
@@ -544,6 +545,7 @@ bool PNGMetadata::isReadOnly() {
 }
 
 $ArrayList* PNGMetadata::cloneBytesArrayList($ArrayList* in) {
+	$useLocalCurrentObjectStackCache();
 	if (in == nullptr) {
 		return nullptr;
 	} else {
@@ -562,6 +564,7 @@ $ArrayList* PNGMetadata::cloneBytesArrayList($ArrayList* in) {
 }
 
 $Object* PNGMetadata::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(PNGMetadata, metadata, nullptr);
 	try {
 		$assign(metadata, $cast(PNGMetadata, $IIOMetadata::clone()));
@@ -587,6 +590,7 @@ $Node* PNGMetadata::getAsTree($String* formatName) {
 }
 
 $Node* PNGMetadata::getNativeTree() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, nullptr);
 	$var($IIOMetadataNode, root, $new($IIOMetadataNode, PNGMetadata::nativeMetadataFormatName));
 	if (this->IHDR_present) {
@@ -816,6 +820,7 @@ int32_t PNGMetadata::getNumChannels() {
 }
 
 $IIOMetadataNode* PNGMetadata::getStandardChromaNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, chroma_node, $new($IIOMetadataNode, "Chroma"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$assign(node, $new($IIOMetadataNode, "ColorSpaceType"_s));
@@ -875,6 +880,7 @@ $IIOMetadataNode* PNGMetadata::getStandardChromaNode() {
 }
 
 $IIOMetadataNode* PNGMetadata::getStandardCompressionNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, compression_node, $new($IIOMetadataNode, "Compression"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$assign(node, $new($IIOMetadataNode, "CompressionTypeName"_s));
@@ -903,6 +909,7 @@ $String* PNGMetadata::repeat($String* s, int32_t times) {
 }
 
 $IIOMetadataNode* PNGMetadata::getStandardDataNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, data_node, $new($IIOMetadataNode, "Data"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$assign(node, $new($IIOMetadataNode, "PlanarConfiguration"_s));
@@ -936,6 +943,7 @@ $IIOMetadataNode* PNGMetadata::getStandardDataNode() {
 }
 
 $IIOMetadataNode* PNGMetadata::getStandardDimensionNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, dimension_node, $new($IIOMetadataNode, "Dimension"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$assign(node, $new($IIOMetadataNode, "PixelAspectRatio"_s));
@@ -957,6 +965,7 @@ $IIOMetadataNode* PNGMetadata::getStandardDimensionNode() {
 }
 
 $IIOMetadataNode* PNGMetadata::getStandardDocumentNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, document_node, nullptr);
 	if (this->tIME_present) {
 		$assign(document_node, $new($IIOMetadataNode, "Document"_s));
@@ -986,6 +995,7 @@ $IIOMetadataNode* PNGMetadata::getStandardDocumentNode() {
 }
 
 $IIOMetadataNode* PNGMetadata::getStandardTextNode() {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$1 = $nc(this->tEXt_keyword)->size();
 	int32_t var$0 = var$1 + $nc(this->iTXt_keyword)->size();
 	int32_t numEntries = var$0 + $nc(this->zTXt_keyword)->size();
@@ -1025,6 +1035,7 @@ $IIOMetadataNode* PNGMetadata::getStandardTextNode() {
 }
 
 $IIOMetadataNode* PNGMetadata::getStandardTransparencyNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, transparency_node, $new($IIOMetadataNode, "Transparency"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$assign(node, $new($IIOMetadataNode, "Alpha"_s));
@@ -1051,6 +1062,7 @@ void PNGMetadata::fatal($Node* node, $String* reason) {
 }
 
 $String* PNGMetadata::getStringAttribute($Node* node, $String* name, $String* defaultValue, bool required) {
+	$useLocalCurrentObjectStackCache();
 	$var($Node, attr, $nc($($nc(node)->getAttributes()))->getNamedItem(name));
 	if (attr == nullptr) {
 		if (!required) {
@@ -1087,6 +1099,7 @@ float PNGMetadata::getFloatAttribute($Node* node, $String* name) {
 }
 
 bool PNGMetadata::getBooleanAttribute($Node* node, $String* name, bool defaultValue, bool required) {
+	$useLocalCurrentObjectStackCache();
 	$var($Node, attr, $nc($($nc(node)->getAttributes()))->getNamedItem(name));
 	if (attr == nullptr) {
 		if (!required) {
@@ -1115,6 +1128,7 @@ bool PNGMetadata::getBooleanAttribute($Node* node, $String* name) {
 }
 
 int32_t PNGMetadata::getEnumeratedAttribute($Node* node, $String* name, $StringArray* legalNames, int32_t defaultValue, bool required) {
+	$useLocalCurrentObjectStackCache();
 	$var($Node, attr, $nc($($nc(node)->getAttributes()))->getNamedItem(name));
 	if (attr == nullptr) {
 		if (!required) {
@@ -1138,6 +1152,7 @@ int32_t PNGMetadata::getEnumeratedAttribute($Node* node, $String* name, $StringA
 }
 
 $String* PNGMetadata::getAttribute($Node* node, $String* name, $String* defaultValue, bool required) {
+	$useLocalCurrentObjectStackCache();
 	$var($Node, attr, $nc($($nc(node)->getAttributes()))->getNamedItem(name));
 	if (attr == nullptr) {
 		if (!required) {
@@ -1173,6 +1188,7 @@ void PNGMetadata::mergeTree($String* formatName, $Node* root) {
 }
 
 void PNGMetadata::mergeNativeTree($Node* root) {
+	$useLocalCurrentObjectStackCache();
 	$var($Node, node, root);
 	if (!$nc($($nc(node)->getNodeName()))->equals(PNGMetadata::nativeMetadataFormatName)) {
 		fatal(node, $$str({"Root must be "_s, PNGMetadata::nativeMetadataFormatName}));
@@ -1555,6 +1571,7 @@ bool PNGMetadata::isISOLatin($String* s, bool isLineFeedAllowed) {
 }
 
 void PNGMetadata::mergeStandardTree($Node* root) {
+	$useLocalCurrentObjectStackCache();
 	$var($Node, node, root);
 	$init($IIOMetadataFormatImpl);
 	if (!$nc($($nc(node)->getNodeName()))->equals($IIOMetadataFormatImpl::standardMetadataFormatName)) {
@@ -1797,6 +1814,7 @@ void PNGMetadata::initImageCreationTime($OffsetDateTime* offsetDateTime) {
 }
 
 void PNGMetadata::initImageCreationTime(int32_t year, int32_t month, int32_t day, int32_t hour, int32_t min, int32_t second) {
+	$useLocalCurrentObjectStackCache();
 	$var($LocalDateTime, locDT, $LocalDateTime::of(year, month, day, hour, min, second));
 	$var($ZoneOffset, offset, $nc($($nc($($ZoneId::systemDefault()))->getRules()))->getOffset(locDT));
 	$var($OffsetDateTime, offDateTime, $OffsetDateTime::of(locDT, offset));
@@ -1804,6 +1822,7 @@ void PNGMetadata::initImageCreationTime(int32_t year, int32_t month, int32_t day
 }
 
 void PNGMetadata::decodeImageCreationTimeFromTextChunk($ListIterator* iterChunk) {
+	$useLocalCurrentObjectStackCache();
 	if (iterChunk != nullptr && iterChunk->hasNext()) {
 		setCreationTimeChunk(iterChunk);
 		$var($String, encodedTime, getEncodedTime());
@@ -1812,6 +1831,7 @@ void PNGMetadata::decodeImageCreationTimeFromTextChunk($ListIterator* iterChunk)
 }
 
 void PNGMetadata::encodeImageCreationTimeToTextChunk() {
+	$useLocalCurrentObjectStackCache();
 	if (this->creation_time_present) {
 		if (this->tEXt_creation_time_present == false) {
 			$nc(this->tEXt_keyword)->add(PNGMetadata::tEXt_creationTimeKey);
@@ -1852,6 +1872,7 @@ $String* PNGMetadata::getEncodedTime() {
 }
 
 $OffsetDateTime* PNGMetadata::parseEncodedTime($String* encodedTime) {
+	$useLocalCurrentObjectStackCache();
 	$var($OffsetDateTime, retVal, nullptr);
 	bool timeDecoded = false;
 	try {

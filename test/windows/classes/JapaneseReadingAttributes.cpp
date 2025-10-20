@@ -379,6 +379,7 @@ void JapaneseReadingAttributes::main($StringArray* args) {
 
 void JapaneseReadingAttributes::setupUI() {
 	$init(JapaneseReadingAttributes);
+	$useLocalCurrentObjectStackCache();
 	$var($String, description, " 1. Go to \"Language Preferences -> Add a Language\" and add \"Japanese\"\n 2. Set current IM to \"Japanese\" and IME option to \"Full width Katakana\" \n 3. Try typing in the text field to ensure that Japanese IME has been successfully selected \n 4. Now click on \"Start Test\" button \n"_s);
 	$var($String, title, "Reading Attributes test Japanese IME (Windows)"_s);
 	$assignStatic(JapaneseReadingAttributes::frame, $new($JFrame, title));
@@ -424,6 +425,7 @@ void JapaneseReadingAttributes::glyphTest() {
 
 void JapaneseReadingAttributes::performTasks($Robot* robotForKeyInput) {
 	$init(JapaneseReadingAttributes);
+	$useLocalCurrentObjectStackCache();
 	$nc(JapaneseReadingAttributes::lblTestStatus)->setText("Running Tests.."_s);
 	$nc(robotForKeyInput)->setAutoDelay(500);
 	$var($ArrayList, keyCodesToUse, $new($ArrayList));
@@ -463,6 +465,7 @@ void JapaneseReadingAttributes::performTasks($Robot* robotForKeyInput) {
 
 void JapaneseReadingAttributes::enterInput($Robot* robotKeyInput, $ArrayList* keyInputs) {
 	$init(JapaneseReadingAttributes);
+	$useLocalCurrentObjectStackCache();
 	$nc(JapaneseReadingAttributes::textFieldReading)->setText(""_s);
 	$nc(JapaneseReadingAttributes::textFieldMain)->setText(""_s);
 	$var($String, strKeyInput, "KeyPress=>"_s);
@@ -479,6 +482,7 @@ void JapaneseReadingAttributes::enterInput($Robot* robotKeyInput, $ArrayList* ke
 
 bool JapaneseReadingAttributes::setTaskStatus($String* readingValue, int32_t passCount) {
 	$init(JapaneseReadingAttributes);
+	$useLocalCurrentObjectStackCache();
 	bool status = false;
 	if (!$nc(readingValue)->isEmpty()) {
 		$assignStatic(JapaneseReadingAttributes::testResult, $str({"Attribute : "_s, readingValue, "read from pass "_s, $($Integer::toString(passCount))}));

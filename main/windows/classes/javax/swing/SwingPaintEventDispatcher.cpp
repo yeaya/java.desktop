@@ -89,6 +89,7 @@ void SwingPaintEventDispatcher::init$() {
 }
 
 $PaintEvent* SwingPaintEventDispatcher::createPaintEvent($Component* component, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($RootPaneContainer, component)) {
 		$var($AppContext, appContext, $SunToolkit::targetToAppContext(component));
 		$var($RepaintManager, rm, $RepaintManager::currentManager(appContext));
@@ -110,6 +111,7 @@ bool SwingPaintEventDispatcher::shouldDoNativeBackgroundErase($Component* c) {
 }
 
 bool SwingPaintEventDispatcher::queueSurfaceDataReplacing($Component* c, $Runnable* r) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($RootPaneContainer, c)) {
 		$var($AppContext, appContext, $SunToolkit::targetToAppContext(c));
 		$nc($($RepaintManager::currentManager(appContext)))->nativeQueueSurfaceDataRunnable(appContext, c, r);
@@ -119,6 +121,7 @@ bool SwingPaintEventDispatcher::queueSurfaceDataReplacing($Component* c, $Runnab
 }
 
 void clinit$SwingPaintEventDispatcher($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	{
 		SwingPaintEventDispatcher::SHOW_FROM_DOUBLE_BUFFER = "true"_s->equals($($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, "swing.showFromDoubleBuffer"_s, "true"_s)))));

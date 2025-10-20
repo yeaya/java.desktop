@@ -112,6 +112,7 @@ void bug4242228$1::init$() {
 }
 
 void bug4242228$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug4242228);
 	$assignStatic($bug4242228::frame, $new($JFrame, "4242228 Test"_s));
 	$var($JScrollPane, sourcePane, $new($JScrollPane));

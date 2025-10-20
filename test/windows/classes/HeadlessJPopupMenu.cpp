@@ -116,6 +116,7 @@ void HeadlessJPopupMenu::init$() {
 }
 
 void HeadlessJPopupMenu::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenu, m, $new($JMenu));
 	m->getAccessibleContext();
 	m->isFocusTraversable();

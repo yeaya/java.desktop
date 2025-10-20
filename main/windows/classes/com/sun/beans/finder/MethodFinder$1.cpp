@@ -83,6 +83,7 @@ void MethodFinder$1::init$($Cache$Kind* keyKind, $Cache$Kind* valueKind) {
 }
 
 $Method* MethodFinder$1::create($Signature* signature) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$var($String, var$0, $nc(signature)->getName());

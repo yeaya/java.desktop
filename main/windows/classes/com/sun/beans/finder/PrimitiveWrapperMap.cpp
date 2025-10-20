@@ -74,6 +74,7 @@ $Map* PrimitiveWrapperMap::map = nullptr;
 
 void PrimitiveWrapperMap::replacePrimitivesWithWrappers($ClassArray* types) {
 	$init(PrimitiveWrapperMap);
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(types)->length; ++i) {
 		if (types->get(i) != nullptr) {
 			if ($nc(types->get(i))->isPrimitive()) {
@@ -92,6 +93,7 @@ void PrimitiveWrapperMap::init$() {
 }
 
 void clinit$PrimitiveWrapperMap($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(PrimitiveWrapperMap::map, $new($HashMap, 9));
 	{
 		$init($Boolean);

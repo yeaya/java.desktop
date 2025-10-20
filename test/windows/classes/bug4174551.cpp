@@ -107,6 +107,7 @@ void bug4174551::init$() {
 }
 
 void bug4174551::init() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$EventQueue::invokeLater(static_cast<$Runnable*>($$new(bug4174551$$Lambda$lambda$init$0)));
 	} catch ($Exception&) {
@@ -117,6 +118,7 @@ void bug4174551::init() {
 
 void bug4174551::lambda$init$0() {
 	$init(bug4174551);
+	$useLocalCurrentObjectStackCache();
 	$nc($($UIManager::getDefaults()))->put("OptionPane.buttonFont"_s, $$new($Font, "Dialog"_s, $Font::PLAIN, 10));
 	$nc($($UIManager::getDefaults()))->put("OptionPane.messageFont"_s, $$new($Font, "Dialog"_s, $Font::PLAIN, 24));
 	$JOptionPane::showMessageDialog(nullptr, "HI 24!"_s);

@@ -138,6 +138,7 @@ void DocFlavor$URL::init$($String* mimeType) {
 }
 
 void clinit$DocFlavor$URL($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$init($DocFlavor);
 	$assignStatic(DocFlavor$URL::TEXT_PLAIN_HOST, $new(DocFlavor$URL, $$str({"text/plain; charset="_s, $DocFlavor::hostEncoding})));
 	$assignStatic(DocFlavor$URL::TEXT_PLAIN_UTF_8, $new(DocFlavor$URL, "text/plain; charset=utf-8"_s));

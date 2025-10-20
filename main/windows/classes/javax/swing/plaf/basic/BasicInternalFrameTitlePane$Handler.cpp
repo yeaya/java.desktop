@@ -186,6 +186,7 @@ $Dimension* BasicInternalFrameTitlePane$Handler::preferredLayoutSize($Container*
 }
 
 $Dimension* BasicInternalFrameTitlePane$Handler::minimumLayoutSize($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = 22;
 	if ($nc(this->this$0->frame)->isClosable()) {
 		width += 19;
@@ -225,6 +226,7 @@ $Dimension* BasicInternalFrameTitlePane$Handler::minimumLayoutSize($Container* c
 }
 
 void BasicInternalFrameTitlePane$Handler::layoutContainer($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	bool leftToRight = $BasicGraphicsUtils::isLeftToRight(this->this$0->frame);
 	int32_t w = this->this$0->getWidth();
 	int32_t h = this->this$0->getHeight();

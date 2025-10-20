@@ -134,6 +134,7 @@ float TablePrintable::HEADER_FONT_SIZE = 0.0;
 float TablePrintable::FOOTER_FONT_SIZE = 0.0;
 
 void TablePrintable::init$($JTable* table, $JTable$PrintMode* printMode, $MessageFormat* headerFormat, $MessageFormat* footerFormat) {
+	$useLocalCurrentObjectStackCache();
 	this->last = -1;
 	this->row = 0;
 	this->col = 0;
@@ -155,6 +156,7 @@ void TablePrintable::init$($JTable* table, $JTable$PrintMode* printMode, $Messag
 }
 
 int32_t TablePrintable::print($Graphics* graphics, $PageFormat* pageFormat, int32_t pageIndex) {
+	$useLocalCurrentObjectStackCache();
 	int32_t imgWidth = $cast(int32_t, $nc(pageFormat)->getImageableWidth());
 	int32_t imgHeight = $cast(int32_t, pageFormat->getImageableHeight());
 	if (imgWidth <= 0) {
@@ -290,6 +292,7 @@ int32_t TablePrintable::print($Graphics* graphics, $PageFormat* pageFormat, int3
 }
 
 void TablePrintable::printText($Graphics2D* g2d, $String* text, $Rectangle2D* rect, $Font* font, int32_t imgWidth) {
+	$useLocalCurrentObjectStackCache();
 	int32_t tx = 0;
 	if ($nc(rect)->getWidth() < imgWidth) {
 		tx = $cast(int32_t, ((imgWidth - rect->getWidth()) / 2));
@@ -306,6 +309,7 @@ void TablePrintable::printText($Graphics2D* g2d, $String* text, $Rectangle2D* re
 }
 
 void TablePrintable::findNextClip(int32_t pw, int32_t ph) {
+	$useLocalCurrentObjectStackCache();
 	bool ltr = $nc($($nc(this->table)->getComponentOrientation()))->isLeftToRight();
 	if (this->col == 0) {
 		if (ltr) {

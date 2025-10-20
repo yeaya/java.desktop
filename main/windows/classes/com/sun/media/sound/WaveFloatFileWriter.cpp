@@ -97,6 +97,7 @@ $AudioFileFormat$TypeArray* WaveFloatFileWriter::getAudioFileTypes() {
 }
 
 $AudioFileFormat$TypeArray* WaveFloatFileWriter::getAudioFileTypes($AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$init($AudioFormat$Encoding);
 	if (!$nc($($nc($($nc(stream)->getFormat()))->getEncoding()))->equals($AudioFormat$Encoding::PCM_FLOAT)) {
 		return $new($AudioFileFormat$TypeArray, 0);
@@ -106,6 +107,7 @@ $AudioFileFormat$TypeArray* WaveFloatFileWriter::getAudioFileTypes($AudioInputSt
 }
 
 void WaveFloatFileWriter::checkFormat($AudioFileFormat$Type* type, $AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$init($AudioFileFormat$Type);
 	if (!$nc($AudioFileFormat$Type::WAVE)->equals(type)) {
 		$throwNew($IllegalArgumentException, $$str({"File type "_s, type, " not supported."_s}));
@@ -117,6 +119,7 @@ void WaveFloatFileWriter::checkFormat($AudioFileFormat$Type* type, $AudioInputSt
 }
 
 void WaveFloatFileWriter::write($AudioInputStream* stream, $RIFFWriter* writer) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($RIFFWriter, fmt_chunk, $nc(writer)->writeChunk("fmt "_s));
 		{
@@ -189,6 +192,7 @@ void WaveFloatFileWriter::write($AudioInputStream* stream, $RIFFWriter* writer) 
 }
 
 $AudioInputStream* WaveFloatFileWriter::toLittleEndian($AudioInputStream* ais) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFormat, format, $nc(ais)->getFormat());
 	$var($AudioFormat$Encoding, var$0, $nc(format)->getEncoding());
 	float var$1 = format->getSampleRate();
@@ -200,6 +204,7 @@ $AudioInputStream* WaveFloatFileWriter::toLittleEndian($AudioInputStream* ais) {
 }
 
 int32_t WaveFloatFileWriter::write($AudioInputStream* stream$renamed, $AudioFileFormat$Type* fileType, $OutputStream* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioInputStream, stream, stream$renamed);
 	$Objects::requireNonNull(stream);
 	$Objects::requireNonNull(fileType);
@@ -247,6 +252,7 @@ int32_t WaveFloatFileWriter::write($AudioInputStream* stream$renamed, $AudioFile
 }
 
 int32_t WaveFloatFileWriter::write($AudioInputStream* stream$renamed, $AudioFileFormat$Type* fileType, $File* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioInputStream, stream, stream$renamed);
 	$Objects::requireNonNull(stream);
 	$Objects::requireNonNull(fileType);

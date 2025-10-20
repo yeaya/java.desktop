@@ -114,6 +114,7 @@ void HeadlessJTextArea::init$() {
 }
 
 void HeadlessJTextArea::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextArea, t, $new($JTextArea));
 	t->selectAll();
 	t->getSelectionStart();

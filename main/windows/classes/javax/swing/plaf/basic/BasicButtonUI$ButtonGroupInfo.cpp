@@ -115,6 +115,7 @@ $Component* BasicButtonUI$ButtonGroupInfo::getFocusTransferBaseComponent(bool ne
 }
 
 bool BasicButtonUI$ButtonGroupInfo::getButtonGroupInfo() {
+	$useLocalCurrentObjectStackCache();
 	if (this->activeBtn == nullptr) {
 		return false;
 	}
@@ -154,6 +155,7 @@ bool BasicButtonUI$ButtonGroupInfo::getButtonGroupInfo() {
 }
 
 void BasicButtonUI$ButtonGroupInfo::selectNewButton(bool next) {
+	$useLocalCurrentObjectStackCache();
 	if (!getButtonGroupInfo()) {
 		return;
 	}
@@ -181,6 +183,7 @@ void BasicButtonUI$ButtonGroupInfo::selectNewButton(bool next) {
 }
 
 void BasicButtonUI$ButtonGroupInfo::jumpToNextComponent(bool next) {
+	$useLocalCurrentObjectStackCache();
 	if (!getButtonGroupInfo()) {
 		if (this->activeBtn != nullptr) {
 			$set(this, lastBtn, this->activeBtn);

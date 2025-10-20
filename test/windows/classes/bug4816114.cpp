@@ -177,6 +177,7 @@ void bug4816114::init$() {
 
 void bug4816114::main($StringArray* args) {
 	$init(bug4816114);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -211,6 +212,7 @@ void bug4816114::main($StringArray* args) {
 }
 
 void bug4816114::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug4816114::fr, $new($JFrame, "Test"_s));
 	$nc(bug4816114::fr)->setUndecorated(true);
 	$set(this, splitPane, $new($bug4816114$TestSplitPane, this));

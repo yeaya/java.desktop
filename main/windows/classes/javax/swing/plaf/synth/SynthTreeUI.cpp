@@ -303,6 +303,7 @@ void SynthTreeUI::installDefaults() {
 }
 
 void SynthTreeUI::updateStyle($JTree* tree) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(static_cast<$JComponent*>(tree), $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -364,6 +365,7 @@ int32_t SynthTreeUI::getComponentState($JComponent* c, $Region* region) {
 }
 
 $TreeCellEditor* SynthTreeUI::createDefaultCellEditor() {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeCellRenderer, renderer, $nc(this->tree)->getCellRenderer());
 	$var($DefaultTreeCellEditor, editor, nullptr);
 	if (renderer != nullptr && ($instanceOf($DefaultTreeCellRenderer, renderer))) {
@@ -379,6 +381,7 @@ $TreeCellRenderer* SynthTreeUI::createDefaultCellRenderer() {
 }
 
 void SynthTreeUI::uninstallDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(static_cast<$JComponent*>(this->tree), $SynthConstants::ENABLED));
 	$nc(this->style)->uninstallDefaults(context);
 	$set(this, style, nullptr);
@@ -397,6 +400,7 @@ void SynthTreeUI::uninstallListeners() {
 }
 
 void SynthTreeUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -416,6 +420,7 @@ void SynthTreeUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void SynthTreeUI::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, paintContext, context);
 	updateLeadSelectionRow();
 	$var($Rectangle, paintBounds, $nc(g)->getClipBounds());
@@ -514,6 +519,7 @@ void SynthTreeUI::paint($SynthContext* context, $Graphics* g) {
 }
 
 void SynthTreeUI::configureRenderer($SynthContext* context) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeCellRenderer, renderer, $nc(this->tree)->getCellRenderer());
 	if ($instanceOf($DefaultTreeCellRenderer, renderer)) {
 		$var($DefaultTreeCellRenderer, r, $cast($DefaultTreeCellRenderer, renderer));
@@ -550,6 +556,7 @@ void SynthTreeUI::paintHorizontalPartOfLeg($Graphics* g, $Rectangle* clipBounds,
 }
 
 void SynthTreeUI::paintHorizontalLine($Graphics* g, $JComponent* c, int32_t y, int32_t left, int32_t right) {
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc($($nc(this->paintContext)->getStyle()))->getGraphicsUtils(this->paintContext)))->drawLine(this->paintContext, "Tree.horizontalLine"_s, g, left, y, right, y, this->linesStyle);
 }
 
@@ -560,10 +567,12 @@ void SynthTreeUI::paintVerticalPartOfLeg($Graphics* g, $Rectangle* clipBounds, $
 }
 
 void SynthTreeUI::paintVerticalLine($Graphics* g, $JComponent* c, int32_t x, int32_t top, int32_t bottom) {
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc($($nc(this->paintContext)->getStyle()))->getGraphicsUtils(this->paintContext)))->drawLine(this->paintContext, "Tree.verticalLine"_s, g, x, top, x, bottom, this->linesStyle);
 }
 
 void SynthTreeUI::paintRow($TreeCellRenderer* renderer, $DefaultTreeCellRenderer* dtcr, $SynthContext* treeContext, $SynthContext* cellContext, $Graphics* g, $Rectangle* clipBounds, $Insets* insets, $Rectangle* bounds, $Rectangle* rowBounds, $TreePath* path, int32_t row, bool isExpanded, bool hasBeenExpanded, bool isLeaf) {
+	$useLocalCurrentObjectStackCache();
 	bool selected = $nc(this->tree)->isRowSelected(row);
 	$var($JTree$DropLocation, dropLocation, $nc(this->tree)->getDropLocation());
 	bool var$0 = dropLocation != nullptr && dropLocation->getChildIndex() == -1;
@@ -618,6 +627,7 @@ void SynthTreeUI::drawCentered($Component* c, $Graphics* graphics, $Icon* icon, 
 }
 
 void SynthTreeUI::propertyChange($PropertyChangeEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	if ($SynthLookAndFeel::shouldUpdateStyle(event)) {
 		updateStyle($cast($JTree, $($nc(event)->getSource())));
 	}
@@ -629,6 +639,7 @@ void SynthTreeUI::propertyChange($PropertyChangeEvent* event) {
 }
 
 void SynthTreeUI::paintDropLine($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTree$DropLocation, loc, $nc(this->tree)->getDropLocation());
 	if (!isDropLine(loc)) {
 		return;
@@ -642,6 +653,7 @@ void SynthTreeUI::paintDropLine($Graphics* g) {
 }
 
 void SynthTreeUI::repaintDropLocation($JTree$DropLocation* loc) {
+	$useLocalCurrentObjectStackCache();
 	if (loc == nullptr) {
 		return;
 	}

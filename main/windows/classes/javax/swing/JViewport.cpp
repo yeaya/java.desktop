@@ -382,6 +382,7 @@ void JViewport::remove($Component* child) {
 }
 
 void JViewport::scrollRectToVisible($Rectangle* contentRect) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, view, getView());
 	if (view == nullptr) {
 		return;
@@ -428,6 +429,7 @@ void JViewport::scrollRectToVisible($Rectangle* contentRect) {
 }
 
 void JViewport::validateView() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, validateRoot, $SwingUtilities::getValidateRoot(this, false));
 	if (validateRoot == nullptr) {
 		return;
@@ -477,6 +479,7 @@ $Insets* JViewport::getInsets($Insets* insets) {
 }
 
 $Graphics* JViewport::getBackingStoreGraphics($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, bsg, $nc(this->backingStoreImage)->getGraphics());
 	$nc(bsg)->setColor($($nc(g)->getColor()));
 	bsg->setFont($($nc(g)->getFont()));
@@ -485,6 +488,7 @@ $Graphics* JViewport::getBackingStoreGraphics($Graphics* g) {
 }
 
 void JViewport::paintViaBackingStore($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, bsg, getBackingStoreGraphics(g));
 	{
 		$var($Throwable, var$0, nullptr);
@@ -503,6 +507,7 @@ void JViewport::paintViaBackingStore($Graphics* g) {
 }
 
 void JViewport::paintViaBackingStore($Graphics* g, $Rectangle* oClip) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, bsg, getBackingStoreGraphics(g));
 	{
 		$var($Throwable, var$0, nullptr);
@@ -539,6 +544,7 @@ $Point* JViewport::getViewLocation() {
 }
 
 void JViewport::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = getWidth();
 	int32_t height = getHeight();
 	if ((width <= 0) || (height <= 0)) {
@@ -723,6 +729,7 @@ bool JViewport::isBlitting() {
 }
 
 bool JViewport::isFPScale() {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, getGraphicsConfiguration());
 	if (gc != nullptr) {
 		return $SwingUtilities2::isFloatingPointScale($(gc->getDefaultTransform()));
@@ -735,6 +742,7 @@ $Component* JViewport::getView() {
 }
 
 void JViewport::setView($Component* view) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = getComponentCount();
 	for (int32_t i = n - 1; i >= 0; --i) {
 		remove($(getComponent(i)));
@@ -767,6 +775,7 @@ $Dimension* JViewport::getViewSize() {
 }
 
 void JViewport::setViewSize($Dimension* newSize) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, view, getView());
 	if (view != nullptr) {
 		$var($Dimension, oldSize, view->getSize());
@@ -780,6 +789,7 @@ void JViewport::setViewSize($Dimension* newSize) {
 }
 
 $Point* JViewport::getViewPosition() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, view, getView());
 	if (view != nullptr) {
 		$var($Point, p, view->getLocation());
@@ -792,6 +802,7 @@ $Point* JViewport::getViewPosition() {
 }
 
 void JViewport::setViewPosition($Point* p) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, view, getView());
 	if (view == nullptr) {
 		return;
@@ -860,6 +871,7 @@ void JViewport::setViewPosition($Point* p) {
 }
 
 $Rectangle* JViewport::getViewRect() {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, var$0, getViewPosition());
 	return $new($Rectangle, var$0, $(getExtentSize()));
 }
@@ -974,6 +986,7 @@ void JViewport::repaint(int64_t tm, int32_t x, int32_t y, int32_t w, int32_t h) 
 }
 
 $String* JViewport::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, isViewSizeSetString, this->isViewSizeSet ? "true"_s : "false"_s);
 	$var($String, lastPaintPositionString, this->lastPaintPosition != nullptr ? $nc(this->lastPaintPosition)->toString() : ""_s);
 	$var($String, scrollUnderwayString, this->scrollUnderway ? "true"_s : "false"_s);
@@ -992,6 +1005,7 @@ void JViewport::firePropertyChange($String* propertyName, Object$* oldValue, Obj
 }
 
 bool JViewport::needsRepaintAfterBlit() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, heavyParent, getParent());
 	while (heavyParent != nullptr && heavyParent->isLightweight()) {
 		$assign(heavyParent, heavyParent->getParent());
@@ -1007,12 +1021,14 @@ bool JViewport::needsRepaintAfterBlit() {
 }
 
 $Timer* JViewport::createRepaintTimer() {
+	$useLocalCurrentObjectStackCache();
 	$var($Timer, timer, $new($Timer, 300, $$new($JViewport$1, this)));
 	timer->setRepeats(false);
 	return timer;
 }
 
 void JViewport::flushViewDirtyRegion($Graphics* g, $Rectangle* dirty) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, view, $cast($JComponent, getView()));
 	if (dirty != nullptr && dirty->width > 0 && dirty->height > 0) {
 		dirty->x += $nc(view)->getX();
@@ -1031,6 +1047,7 @@ void JViewport::flushViewDirtyRegion($Graphics* g, $Rectangle* dirty) {
 }
 
 bool JViewport::windowBlitPaint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = getWidth();
 	int32_t height = getHeight();
 	if ((width == 0) || (height == 0)) {
@@ -1067,6 +1084,7 @@ bool JViewport::windowBlitPaint($Graphics* g) {
 }
 
 void JViewport::blitDoubleBuffered($JComponent* view, $Graphics* g, int32_t clipX, int32_t clipY, int32_t clipW, int32_t clipH, int32_t blitFromX, int32_t blitFromY, int32_t blitToX, int32_t blitToY, int32_t blitW, int32_t blitH) {
+	$useLocalCurrentObjectStackCache();
 	$var($RepaintManager, rm, $RepaintManager::currentManager(static_cast<$JComponent*>(this)));
 	int32_t bdx = blitToX - blitFromX;
 	int32_t bdy = blitToY - blitFromY;
@@ -1090,6 +1108,7 @@ void JViewport::blitDoubleBuffered($JComponent* view, $Graphics* g, int32_t clip
 }
 
 void JViewport::paintView($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, clip, $nc(g)->getClipBounds());
 	$var($JComponent, view, $cast($JComponent, getView()));
 	int32_t var$0 = $nc(view)->getWidth();
@@ -1120,6 +1139,7 @@ void JViewport::paintView($Graphics* g) {
 }
 
 bool JViewport::canUseWindowBlitter() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = !isShowing();
 	if (!var$0) {
 		bool var$1 = !($instanceOf($JComponent, $(getParent())));

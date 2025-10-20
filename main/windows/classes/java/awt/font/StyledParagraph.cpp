@@ -109,6 +109,7 @@ $Object* allocate$StyledParagraph($Class* clazz) {
 int32_t StyledParagraph::INITIAL_SIZE = 0;
 
 void StyledParagraph::init$($AttributedCharacterIterator* aci, $chars* chars) {
+	$useLocalCurrentObjectStackCache();
 	int32_t start = $nc(aci)->getBeginIndex();
 	int32_t end = aci->getEndIndex();
 	this->length = end - start;
@@ -147,6 +148,7 @@ void StyledParagraph::insertInto(int32_t pos, $ints* starts, int32_t numStarts) 
 
 StyledParagraph* StyledParagraph::insertChar($AttributedCharacterIterator* aci, $chars* chars, int32_t insertPos, StyledParagraph* oldParagraph) {
 	$init(StyledParagraph);
+	$useLocalCurrentObjectStackCache();
 	char16_t ch = $nc(aci)->setIndex(insertPos);
 	int32_t relativePos = $Math::max(insertPos - aci->getBeginIndex() - 1, 0);
 	$var($Map, attributes, addInputMethodAttrs($(aci->getAttributes())));
@@ -252,6 +254,7 @@ int32_t StyledParagraph::findRunContaining(int32_t index, $ints* starts) {
 
 $ints* StyledParagraph::addToVector(Object$* obj, int32_t index, $Vector* v, $ints* starts$renamed) {
 	$init(StyledParagraph);
+	$useLocalCurrentObjectStackCache();
 	$var($ints, starts, starts$renamed);
 	if (!$nc($of($($nc(v)->lastElement())))->equals(obj)) {
 		v->addElement(obj);
@@ -297,6 +300,7 @@ void StyledParagraph::addFont(Object$* f, int32_t index) {
 }
 
 void StyledParagraph::addFonts($chars* chars, $Map* attributes, int32_t start, int32_t limit) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontResolver, resolver, $FontResolver::getInstance());
 	$var($CodePointIterator, iter, $CodePointIterator::create(chars, start, limit));
 	for (int32_t runStart = $nc(iter)->charIndex(); runStart < limit; runStart = iter->charIndex()) {
@@ -307,6 +311,7 @@ void StyledParagraph::addFonts($chars* chars, $Map* attributes, int32_t start, i
 
 $Map* StyledParagraph::addInputMethodAttrs($Map* oldStyles) {
 	$init(StyledParagraph);
+	$useLocalCurrentObjectStackCache();
 	$init($TextAttribute);
 	$var($Object, value, $nc(oldStyles)->get($TextAttribute::INPUT_METHOD_HIGHLIGHT));
 	try {

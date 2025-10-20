@@ -81,6 +81,7 @@ void bug4697612$6::init$($ints* val$result) {
 }
 
 void bug4697612$6::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($bug4697612);
 		int32_t pos0 = $nc($bug4697612::text)->getCaretPosition();

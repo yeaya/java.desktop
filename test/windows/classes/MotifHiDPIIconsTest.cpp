@@ -239,6 +239,7 @@ void MotifHiDPIIconsTest::main($StringArray* args) {
 
 void MotifHiDPIIconsTest::createUI() {
 	$init(MotifHiDPIIconsTest);
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, mainFrame, $new($JFrame, "Motif L&F icons test"_s));
 	$var($GridBagLayout, layout, $new($GridBagLayout));
 	$var($JPanel, mainControlPanel, $new($JPanel, static_cast<$LayoutManager*>(layout)));
@@ -281,6 +282,7 @@ void MotifHiDPIIconsTest::createUI() {
 
 $JPanel* MotifHiDPIIconsTest::createJPanel() {
 	$init(MotifHiDPIIconsTest);
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, panel, $new($JPanel));
 	panel->setLayout($$new($BoxLayout, panel, $BoxLayout::Y_AXIS));
 	$var($JPanel, iconPanel, $new($JPanel, static_cast<$LayoutManager*>($$new($FlowLayout))));

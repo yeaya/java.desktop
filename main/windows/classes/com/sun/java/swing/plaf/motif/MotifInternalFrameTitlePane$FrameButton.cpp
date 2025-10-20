@@ -103,6 +103,7 @@ $Dimension* MotifInternalFrameTitlePane$FrameButton::getPreferredSize() {
 }
 
 void MotifInternalFrameTitlePane$FrameButton::paintComponent($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, getSize());
 	int32_t maxX = $nc(d)->width - 1;
 	int32_t maxY = d->height - 1;

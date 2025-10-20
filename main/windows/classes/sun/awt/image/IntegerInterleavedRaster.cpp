@@ -86,6 +86,7 @@ $Object* allocate$IntegerInterleavedRaster($Class* clazz) {
 }
 
 void IntegerInterleavedRaster::init$($SampleModel* sampleModel, $Point* origin) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, var$0, sampleModel);
 	$var($DataBufferInt, var$1, $cast($DataBufferInt, $nc(sampleModel)->createDataBuffer()));
 	int32_t var$2 = $nc(origin)->x;
@@ -200,6 +201,7 @@ void IntegerInterleavedRaster::setDataElements(int32_t x, int32_t y, $Raster* in
 }
 
 void IntegerInterleavedRaster::setDataElements(int32_t dstX, int32_t dstY, int32_t width, int32_t height, $Raster* inRaster) {
+	$useLocalCurrentObjectStackCache();
 	if (width <= 0 || height <= 0) {
 		return;
 	}
@@ -244,6 +246,7 @@ void IntegerInterleavedRaster::setDataElements(int32_t x, int32_t y, int32_t w, 
 }
 
 $WritableRaster* IntegerInterleavedRaster::createWritableChild(int32_t x, int32_t y, int32_t width, int32_t height, int32_t x0, int32_t y0, $ints* bandList) {
+	$useLocalCurrentObjectStackCache();
 	if (x < this->minX) {
 		$throwNew($RasterFormatException, "x lies outside raster"_s);
 	}
@@ -275,6 +278,7 @@ $Raster* IntegerInterleavedRaster::createChild(int32_t x, int32_t y, int32_t wid
 }
 
 $WritableRaster* IntegerInterleavedRaster::createCompatibleWritableRaster(int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (w <= 0 || h <= 0) {
 		$throwNew($RasterFormatException, $$str({"negative "_s, ((w <= 0) ? "width"_s : "height"_s)}));
 	}
@@ -287,6 +291,7 @@ $WritableRaster* IntegerInterleavedRaster::createCompatibleWritableRaster() {
 }
 
 $String* IntegerInterleavedRaster::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $new($String, $$str({"IntegerInterleavedRaster: width = "_s, $$str(this->width), " height = "_s, $$str(this->height), " #Bands = "_s, $$str(this->numBands), " xOff = "_s, $$str(this->sampleModelTranslateX), " yOff = "_s, $$str(this->sampleModelTranslateY), " dataOffset[0] "_s, $$str($nc(this->dataOffsets)->get(0))}));
 }
 

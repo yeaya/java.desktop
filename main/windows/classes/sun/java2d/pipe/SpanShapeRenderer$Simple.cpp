@@ -100,6 +100,7 @@ $Object* SpanShapeRenderer$Simple::startSequence($SunGraphics2D* sg, $Shape* s, 
 }
 
 void SpanShapeRenderer$Simple::renderBox(Object$* ctx, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($SunGraphics2D, sg2d, $cast($SunGraphics2D, ctx));
 	$var($SurfaceData, sd, $nc(sg2d)->getSurfaceData());
 	$nc($nc(sg2d->loops)->fillRectLoop)->FillRect$(sg2d, sd, x, y, w, h);

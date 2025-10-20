@@ -325,6 +325,7 @@ void FPMethodCalledTest::init$() {
 
 void FPMethodCalledTest::main($StringArray* args) {
 	$init(FPMethodCalledTest);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($FPMethodCalledTest$TestArray, arr$, FPMethodCalledTest::TESTS);
 		int32_t len$ = $nc(arr$)->length;
@@ -340,6 +341,7 @@ void FPMethodCalledTest::main($StringArray* args) {
 
 void FPMethodCalledTest::test($FPMethodCalledTest$Test* test) {
 	$init(FPMethodCalledTest);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -363,6 +365,7 @@ void FPMethodCalledTest::test($FPMethodCalledTest$Test* test) {
 
 void FPMethodCalledTest::createAndShowGUI($FPMethodCalledTest$Test* test) {
 	$init(FPMethodCalledTest);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 	} catch ($Exception&) {
@@ -390,6 +393,7 @@ void FPMethodCalledTest::lambda$test$3() {
 
 void FPMethodCalledTest::lambda$test$2($FPMethodCalledTest$Test* test) {
 	$init(FPMethodCalledTest);
+	$useLocalCurrentObjectStackCache();
 	$var($FPMethodCalledTest$Resultable, resultable, $nc(test)->resultable);
 	if (!$nc(resultable)->getResult()) {
 		$throwNew($RuntimeException, $$str({"Test fails for: "_s, resultable}));
@@ -407,6 +411,7 @@ void FPMethodCalledTest::lambda$test$0($FPMethodCalledTest$Test* test) {
 }
 
 void clinit$FPMethodCalledTest($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(FPMethodCalledTest::TESTS, $new($FPMethodCalledTest$TestArray, {
 		static_cast<$FPMethodCalledTest$Test*>($$new($FPMethodCalledTest$2)),
 		static_cast<$FPMethodCalledTest$Test*>($$new($FPMethodCalledTest$3)),

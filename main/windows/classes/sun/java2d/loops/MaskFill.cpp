@@ -114,6 +114,7 @@ MaskFill* MaskFill::locatePrim($SurfaceType* srctype, $CompositeType* comptype, 
 
 MaskFill* MaskFill::getFromCache($SurfaceType* src, $CompositeType* comp, $SurfaceType* dst) {
 	$init(MaskFill);
+	$useLocalCurrentObjectStackCache();
 	$var($Object, o, $nc(MaskFill::fillcache)->get(src, comp, dst));
 	if (o != nullptr) {
 		return $cast(MaskFill, o);

@@ -212,6 +212,7 @@ void ServiceDialog$MarginsPanel::finalize() {
 }
 
 void ServiceDialog$MarginsPanel::init$($ServiceDialog* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JPanel::init$();
 	$set(this, strTitle, $ServiceDialog::getMsg("border.margins"_s));
@@ -320,6 +321,7 @@ void ServiceDialog$MarginsPanel::focusGained($FocusEvent* e) {
 }
 
 void ServiceDialog$MarginsPanel::updateMargins(Object$* source) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($JFormattedTextField, source))) {
 		return;
 	} else {
@@ -403,6 +405,7 @@ void ServiceDialog$MarginsPanel::updateMargins(Object$* source) {
 }
 
 $MediaPrintableArea* ServiceDialog$MarginsPanel::validateMargins(float lm, float rm, float tm, float bm) {
+	$useLocalCurrentObjectStackCache();
 	$load($MediaPrintableArea);
 	$Class* mpaCategory = $MediaPrintableArea::class$;
 	$var($MediaPrintableArea, mpa, nullptr);
@@ -451,6 +454,7 @@ $MediaPrintableArea* ServiceDialog$MarginsPanel::validateMargins(float lm, float
 }
 
 void ServiceDialog$MarginsPanel::updateInfo() {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->isAWT) {
 		$nc(this->leftMargin)->setEnabled(false);
 		$nc(this->rightMargin)->setEnabled(false);

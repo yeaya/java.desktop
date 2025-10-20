@@ -81,6 +81,7 @@ void D3DPaints$MultiGradient::init$() {
 }
 
 bool D3DPaints$MultiGradient::isPaintValid($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	$var($MultipleGradientPaint, paint, $cast($MultipleGradientPaint, $nc(sg2d)->paint));
 	if ($nc($($nc(paint)->getFractions()))->length > D3DPaints$MultiGradient::MULTI_MAX_FRACTIONS_D3D) {
 		return false;

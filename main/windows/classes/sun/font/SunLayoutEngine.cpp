@@ -195,6 +195,7 @@ $GlyphLayout$LayoutEngine* SunLayoutEngine::getEngine($Font2D* font, int32_t scr
 }
 
 $GlyphLayout$LayoutEngine* SunLayoutEngine::getEngine($GlyphLayout$LayoutEngineKey* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($ConcurrentHashMap, cache, $cast($ConcurrentHashMap, $nc(this->cacheref)->get()));
 	if (cache == nullptr) {
 		$assign(cache, $new($ConcurrentHashMap));
@@ -215,6 +216,7 @@ void SunLayoutEngine::init$($GlyphLayout$LayoutEngineKey* key) {
 }
 
 int64_t SunLayoutEngine::getFacePtr($Font2D* font2D) {
+	$useLocalCurrentObjectStackCache();
 	$var($SunLayoutEngine$FaceRef, ref, nullptr);
 	$synchronized(SunLayoutEngine::facePtr) {
 		$assign(ref, $cast($SunLayoutEngine$FaceRef, $nc(SunLayoutEngine::facePtr)->computeIfAbsent(font2D, static_cast<$Function*>($$new(SunLayoutEngine$$Lambda$FaceRef)))));
@@ -223,6 +225,7 @@ int64_t SunLayoutEngine::getFacePtr($Font2D* font2D) {
 }
 
 void SunLayoutEngine::layout($FontStrikeDesc* desc, $floats* mat, float ptSize, int32_t gmask, int32_t baseIndex, $TextRecord* tr, int32_t typo_flags, $Point2D$Float* pt, $GlyphLayout$GVData* data) {
+	$useLocalCurrentObjectStackCache();
 	$var($Font2D, font, $nc(this->key)->font());
 	$var($FontStrike, strike, $nc(font)->getStrike(desc));
 	int64_t pFace = getFacePtr(font);

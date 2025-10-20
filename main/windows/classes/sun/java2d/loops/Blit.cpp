@@ -106,6 +106,7 @@ Blit* Blit::locate($SurfaceType* srctype, $CompositeType* comptype, $SurfaceType
 
 Blit* Blit::getFromCache($SurfaceType* src, $CompositeType* comp, $SurfaceType* dst) {
 	$init(Blit);
+	$useLocalCurrentObjectStackCache();
 	$var($Object, o, $nc(Blit::blitcache)->get(src, comp, dst));
 	if (o != nullptr) {
 		return $cast(Blit, o);

@@ -99,6 +99,7 @@ $DLSInfo* DLSSample::getInfo() {
 }
 
 $Object* DLSSample::getData() {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFormat, format, getFormat());
 	$var($InputStream, is, $nc(this->data)->getInputStream());
 	if (is == nullptr) {

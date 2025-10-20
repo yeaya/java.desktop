@@ -69,6 +69,7 @@ void FetcherInfo::init$() {
 
 FetcherInfo* FetcherInfo::getFetcherInfo() {
 	$init(FetcherInfo);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$synchronized(appContext) {
 		$var(FetcherInfo, info, $cast(FetcherInfo, $nc(appContext)->get(FetcherInfo::FETCHER_INFO_KEY)));

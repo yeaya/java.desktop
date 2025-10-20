@@ -73,6 +73,7 @@ void D3DDrawImage::init$() {
 }
 
 void D3DDrawImage::renderImageXform($SunGraphics2D* sg, $Image* img, $AffineTransform* tx, int32_t interpType, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, $Color* bgColor) {
+	$useLocalCurrentObjectStackCache();
 	if (interpType != $AffineTransformOp::TYPE_BICUBIC) {
 		$var($SurfaceData, dstData, $nc(sg)->surfaceData);
 		$var($SurfaceData, srcData, $nc(dstData)->getSourceSurfaceData(img, $SunGraphics2D::TRANSFORM_GENERIC, sg->imageComp, bgColor));
@@ -90,6 +91,7 @@ void D3DDrawImage::renderImageXform($SunGraphics2D* sg, $Image* img, $AffineTran
 }
 
 void D3DDrawImage::transformImage($SunGraphics2D* sg, $BufferedImage* img$renamed, $BufferedImageOp* op, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, img, img$renamed);
 	if (op != nullptr) {
 		if ($instanceOf($AffineTransformOp, op)) {

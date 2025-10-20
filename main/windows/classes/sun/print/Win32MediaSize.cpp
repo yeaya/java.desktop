@@ -121,6 +121,7 @@ $EnumSyntaxArray* Win32MediaSize::getEnumValueTable() {
 }
 
 void clinit$Win32MediaSize($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(Win32MediaSize::winStringTable, $new($ArrayList));
 	$assignStatic(Win32MediaSize::winEnumTable, $new($ArrayList));
 	{

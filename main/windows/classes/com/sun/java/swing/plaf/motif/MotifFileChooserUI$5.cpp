@@ -80,6 +80,7 @@ void MotifFileChooserUI$5::init$($MotifFileChooserUI* this$0, int32_t columns) {
 }
 
 $Dimension* MotifFileChooserUI$5::getMaximumSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, $JTextField::getMaximumSize());
 	$nc(d)->height = $nc($(getPreferredSize()))->height;
 	return d;

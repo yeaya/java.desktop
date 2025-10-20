@@ -96,6 +96,7 @@ void JInternalFrameIconTest$2::init$($String* val$lookAndFeelString) {
 }
 
 void JInternalFrameIconTest$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($JInternalFrameIconTest);
 	$assignStatic($JInternalFrameIconTest::desktopPane, $new($JDesktopPane));
 	$assignStatic($JInternalFrameIconTest::internalFrame, $new($JInternalFrame));

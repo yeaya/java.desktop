@@ -103,6 +103,7 @@ MaskBlit* MaskBlit::locate($SurfaceType* srctype, $CompositeType* comptype, $Sur
 
 MaskBlit* MaskBlit::getFromCache($SurfaceType* src, $CompositeType* comp, $SurfaceType* dst) {
 	$init(MaskBlit);
+	$useLocalCurrentObjectStackCache();
 	$var($Object, o, $nc(MaskBlit::blitcache)->get(src, comp, dst));
 	if (o != nullptr) {
 		return $cast(MaskBlit, o);

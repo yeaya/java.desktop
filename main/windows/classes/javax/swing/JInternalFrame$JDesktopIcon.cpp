@@ -157,6 +157,7 @@ $JDesktopPane* JInternalFrame$JDesktopIcon::getDesktopPane() {
 }
 
 void JInternalFrame$JDesktopIcon::updateUI() {
+	$useLocalCurrentObjectStackCache();
 	bool hadUI = (this->ui != nullptr);
 	setUI($cast($DesktopIconUI, $($UIManager::getUI(this))));
 	invalidate();
@@ -168,6 +169,7 @@ void JInternalFrame$JDesktopIcon::updateUI() {
 }
 
 void JInternalFrame$JDesktopIcon::updateUIWhenHidden() {
+	$useLocalCurrentObjectStackCache();
 	setUI($cast($DesktopIconUI, $($UIManager::getUI(this))));
 	$var($Dimension, r, getPreferredSize());
 	setSize($nc(r)->width, r->height);

@@ -115,6 +115,7 @@ $ViewFactory* JEditorPane$PlainEditorKit::getViewFactory() {
 }
 
 $View* JEditorPane$PlainEditorKit::create($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(elem)->getDocument());
 	$var($Object, i18nFlag, $nc(doc)->getProperty("i18n"_s));
 	$init($Boolean);

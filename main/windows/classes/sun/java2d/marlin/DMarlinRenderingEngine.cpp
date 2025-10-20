@@ -270,6 +270,7 @@ void DMarlinRenderingEngine::init$() {
 }
 
 $Shape* DMarlinRenderingEngine::createStrokedShape($Shape* src, float width, int32_t caps, int32_t join, float miterlimit, $floats* dashes, float dashphase) {
+	$useLocalCurrentObjectStackCache();
 	$var($RendererContext, rdrCtx, getRendererContext());
 	{
 		$var($Throwable, var$0, nullptr);
@@ -302,6 +303,7 @@ void DMarlinRenderingEngine::strokeTo($Shape* src, $AffineTransform* at, $BasicS
 }
 
 void DMarlinRenderingEngine::strokeTo($Shape* src, $AffineTransform* at, $Region* clip, $BasicStroke* bs, bool thin, bool normalize, bool antialias, $PathConsumer2D* consumer) {
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, _at, (at != nullptr && !at->isIdentity()) ? at : ($AffineTransform*)nullptr);
 	$init($DMarlinRenderingEngine$NormMode);
 	$DMarlinRenderingEngine$NormMode* norm = (normalize) ? ((antialias) ? $DMarlinRenderingEngine$NormMode::ON_WITH_AA : $DMarlinRenderingEngine$NormMode::ON_NO_AA) : $DMarlinRenderingEngine$NormMode::OFF;
@@ -339,6 +341,7 @@ void DMarlinRenderingEngine::strokeTo($Shape* src, $AffineTransform* at, $Region
 }
 
 void DMarlinRenderingEngine::strokeTo($RendererContext* rdrCtx, $Shape* src, $AffineTransform* at, $BasicStroke* bs, bool thin, $DMarlinRenderingEngine$NormMode* normalize, bool antialias, $DPathConsumer2D* pc2d) {
+	$useLocalCurrentObjectStackCache();
 	double lw = 0.0;
 	if (thin) {
 		if (antialias) {
@@ -383,6 +386,7 @@ double DMarlinRenderingEngine::userSpaceLineWidth($AffineTransform* at, double l
 }
 
 void DMarlinRenderingEngine::strokeTo($RendererContext* rdrCtx, $Shape* src, $AffineTransform* at$renamed, double width, $DMarlinRenderingEngine$NormMode* norm, int32_t caps, int32_t join, float miterlimit, $floats* dashes, float dashphase, $DPathConsumer2D* pc2d$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($DPathConsumer2D, pc2d, pc2d$renamed);
 	$var($AffineTransform, at, at$renamed);
 	$var($AffineTransform, strokerat, nullptr);
@@ -533,6 +537,7 @@ void DMarlinRenderingEngine::pathToLoop($doubles* coords, $PathIterator* pi, $DP
 }
 
 $AATileGenerator* DMarlinRenderingEngine::getAATileGenerator($Shape* s, $AffineTransform* at, $Region* clip, $BasicStroke* bs, bool thin, bool normalize, $ints* bbox) {
+	$useLocalCurrentObjectStackCache();
 	$var($MarlinTileGenerator, ptg, nullptr);
 	$var($Renderer, r, nullptr);
 	$var($RendererContext, rdrCtx, getRendererContext());
@@ -599,6 +604,7 @@ $AATileGenerator* DMarlinRenderingEngine::getAATileGenerator($Shape* s, $AffineT
 }
 
 $AATileGenerator* DMarlinRenderingEngine::getAATileGenerator(double x, double y, double dx1, double dy1, double dx2, double dy2, double lw1, double lw2, $Region* clip, $ints* bbox) {
+	$useLocalCurrentObjectStackCache();
 	double ldx1 = 0.0;
 	double ldy1 = 0.0;
 	double ldx2 = 0.0;
@@ -675,6 +681,7 @@ float DMarlinRenderingEngine::getMinimumAAPenSize() {
 
 void DMarlinRenderingEngine::logSettings($String* reClass) {
 	$init(DMarlinRenderingEngine);
+	$useLocalCurrentObjectStackCache();
 	if (DMarlinRenderingEngine::SETTINGS_LOGGED) {
 		return;
 	}
@@ -760,6 +767,7 @@ void DMarlinRenderingEngine::returnRendererContext($RendererContext* rdrCtx) {
 }
 
 void clinit$DMarlinRenderingEngine($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$init($Float);
 	DMarlinRenderingEngine::UPPER_BND = $Float::MAX_VALUE / 2.0;
 	DMarlinRenderingEngine::LOWER_BND = -DMarlinRenderingEngine::UPPER_BND;

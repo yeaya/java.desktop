@@ -196,6 +196,7 @@ $GroupLayout$LinkInfo* GroupLayout$ComponentInfo::getLinkInfo(int32_t axis) {
 }
 
 $GroupLayout$LinkInfo* GroupLayout$ComponentInfo::getLinkInfo(int32_t axis, bool create) {
+	$useLocalCurrentObjectStackCache();
 	if (axis == 0) {
 		if (this->horizontalMaster == nullptr && create) {
 			$$new($GroupLayout$LinkInfo, 0)->add(this);

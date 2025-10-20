@@ -133,6 +133,7 @@ void EventDispatcher::start() {
 }
 
 void EventDispatcher::processEvent($EventDispatcher$EventInfo* eventInfo) {
+	$useLocalCurrentObjectStackCache();
 	int32_t count = $nc(eventInfo)->getListenerCount();
 	if ($instanceOf($LineEvent, $(eventInfo->getEvent()))) {
 		$var($LineEvent, event, $cast($LineEvent, eventInfo->getEvent()));
@@ -228,6 +229,7 @@ void EventDispatcher::postEvent($EventDispatcher$EventInfo* eventInfo) {
 }
 
 void EventDispatcher::run() {
+	$useLocalCurrentObjectStackCache();
 	while (true) {
 		try {
 			dispatchEvents();
@@ -251,6 +253,7 @@ void EventDispatcher::sendAudioEvents(Object$* event, $List* listeners) {
 }
 
 void EventDispatcher::closeAutoClosingClips() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->autoClosingClips) {
 		int64_t currTime = $System::currentTimeMillis();
 		for (int32_t i = $nc(this->autoClosingClips)->size() - 1; i >= 0; --i) {
@@ -274,6 +277,7 @@ void EventDispatcher::closeAutoClosingClips() {
 }
 
 int32_t EventDispatcher::getAutoClosingClipIndex($AutoClosingClip* clip) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->autoClosingClips) {
 		for (int32_t i = $nc(this->autoClosingClips)->size() - 1; i >= 0; --i) {
 			if ($nc($of(clip))->equals($($nc(($cast($EventDispatcher$ClipInfo, $($nc(this->autoClosingClips)->get(i)))))->getClip()))) {
@@ -309,6 +313,7 @@ void EventDispatcher::autoClosingClipClosed($AutoClosingClip* clip) {
 }
 
 void EventDispatcher::monitorLines() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->lineMonitors) {
 		for (int32_t i = 0; i < $nc(this->lineMonitors)->size(); ++i) {
 			$nc(($cast($EventDispatcher$LineMonitor, $($nc(this->lineMonitors)->get(i)))))->checkLine();

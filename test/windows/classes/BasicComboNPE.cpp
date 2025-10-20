@@ -62,6 +62,7 @@ void BasicComboNPE::init$() {
 
 void BasicComboNPE::main($StringArray* args) {
 	$init(BasicComboNPE);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;

@@ -147,6 +147,7 @@ void bug4885629::init$() {
 
 void bug4885629::main($StringArray* args) {
 	$init(bug4885629);
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($bug4885629$1)));
 	{
 		$var($Throwable, var$0, nullptr);

@@ -205,6 +205,7 @@ void ServiceDialog$PrintRangePanel::finalize() {
 }
 
 void ServiceDialog$PrintRangePanel::init$($ServiceDialog* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JPanel::init$();
 	$set(this, strTitle, $ServiceDialog::getMsg("border.printrange"_s));
@@ -267,6 +268,7 @@ void ServiceDialog$PrintRangePanel::init$($ServiceDialog* this$0) {
 }
 
 void ServiceDialog$PrintRangePanel::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, source, $nc(e)->getSource());
 	$init($SunPageSelection);
 	$var($SunPageSelection, select, $SunPageSelection::ALL);
@@ -302,6 +304,7 @@ void ServiceDialog$PrintRangePanel::setupRangeWidgets() {
 }
 
 void ServiceDialog$PrintRangePanel::updateRangeAttribute() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, strFrom, $nc(this->tfRangeFrom)->getText());
 	$var($String, strTo, $nc(this->tfRangeTo)->getText());
 	int32_t min = 0;
@@ -331,6 +334,7 @@ void ServiceDialog$PrintRangePanel::updateRangeAttribute() {
 }
 
 void ServiceDialog$PrintRangePanel::updateInfo() {
+	$useLocalCurrentObjectStackCache();
 	$load($PageRanges);
 	$Class* prCategory = $PageRanges::class$;
 	this->prSupported = false;

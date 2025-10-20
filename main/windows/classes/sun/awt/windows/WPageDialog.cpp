@@ -92,6 +92,7 @@ void WPageDialog::init$($Dialog* parent, $PrinterJob* control, $PageFormat* page
 }
 
 void WPageDialog::addNotify() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		$var($Container, parent, getParent());
 		if (parent != nullptr && !parent->isDisplayable()) {

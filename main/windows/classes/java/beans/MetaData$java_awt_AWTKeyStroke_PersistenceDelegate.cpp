@@ -81,6 +81,7 @@ bool MetaData$java_awt_AWTKeyStroke_PersistenceDelegate::mutatesTo(Object$* oldI
 }
 
 $Expression* MetaData$java_awt_AWTKeyStroke_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($AWTKeyStroke, key, $cast($AWTKeyStroke, oldInstance));
 	char16_t ch = $nc(key)->getKeyChar();
 	int32_t code = key->getKeyCode();

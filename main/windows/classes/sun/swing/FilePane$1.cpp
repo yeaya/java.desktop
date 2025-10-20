@@ -117,6 +117,7 @@ void FilePane$1::init$($FilePane* this$0) {
 }
 
 void FilePane$1::keyTyped($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($BasicDirectoryModel, model, this->this$0->getModel());
 	int32_t rowCount = $nc(model)->getSize();
 	bool var$1 = this->this$0->detailsTable == nullptr || rowCount == 0 || $nc(e)->isAltDown();
@@ -166,6 +167,7 @@ void FilePane$1::keyTyped($KeyEvent* e) {
 }
 
 int32_t FilePane$1::getNextMatch(int32_t startIndex, int32_t finishIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($BasicDirectoryModel, model, this->this$0->getModel());
 	$var($JFileChooser, fileChooser, this->this$0->getFileChooser());
 	$var($FilePane$DetailsTableRowSorter, rowSorter, this->this$0->getRowSorter());

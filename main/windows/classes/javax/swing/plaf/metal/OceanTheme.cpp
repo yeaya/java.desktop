@@ -215,6 +215,7 @@ void OceanTheme::init$() {
 }
 
 void OceanTheme::addCustomEntriesToTable($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults$LazyValue, focusBorder, static_cast<$UIDefaults$LazyValue*>($new(OceanTheme$$Lambda$lambda$addCustomEntriesToTable$0, this)));
 	$var($List, buttonGradient, $Arrays::asList($$new($ObjectArray, {
 		$($of($Float::valueOf(0.3f))),

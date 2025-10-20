@@ -104,6 +104,7 @@ void MetalUtils$GradientPainter::init$(int32_t count) {
 }
 
 void MetalUtils$GradientPainter::paint($Component* c, $Graphics2D* g, $List* gradient, int32_t x, int32_t y, int32_t w, int32_t h, bool isVertical) {
+	$useLocalCurrentObjectStackCache();
 	int32_t imageWidth = 0;
 	int32_t imageHeight = 0;
 	if (isVertical) {
@@ -124,6 +125,7 @@ void MetalUtils$GradientPainter::paint($Component* c, $Graphics2D* g, $List* gra
 }
 
 void MetalUtils$GradientPainter::paintToImage($Component* c, $Image* image, $Graphics* g, int32_t w, int32_t h, $ObjectArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics2D, g2, $cast($Graphics2D, g));
 	$var($List, gradient, $cast($List, $nc(args)->get(0)));
 	bool isVertical = $nc(($cast($Boolean, args->get(1))))->booleanValue();
@@ -162,6 +164,7 @@ void MetalUtils$GradientPainter::paintImage($Component* c, $Graphics* g, int32_t
 }
 
 void MetalUtils$GradientPainter::drawVerticalGradient($Graphics2D* g, float ratio1, float ratio2, $Color* c1, $Color* c2, $Color* c3, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	int32_t mid = $cast(int32_t, (ratio1 * h));
 	int32_t mid2 = $cast(int32_t, (ratio2 * h));
 	if (mid > 0) {
@@ -183,6 +186,7 @@ void MetalUtils$GradientPainter::drawVerticalGradient($Graphics2D* g, float rati
 }
 
 void MetalUtils$GradientPainter::drawHorizontalGradient($Graphics2D* g, float ratio1, float ratio2, $Color* c1, $Color* c2, $Color* c3, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	int32_t mid = $cast(int32_t, (ratio1 * w));
 	int32_t mid2 = $cast(int32_t, (ratio2 * w));
 	if (mid > 0) {

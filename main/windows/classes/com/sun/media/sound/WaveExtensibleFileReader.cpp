@@ -135,6 +135,7 @@ $String* WaveExtensibleFileReader::decodeChannelMask(int64_t channelmask) {
 }
 
 $StandardFileFormat* WaveExtensibleFileReader::getAudioFileFormatImpl($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$var($RIFFReader, riffiterator, $new($RIFFReader, stream));
 	if (!$nc($(riffiterator->getFormat()))->equals("RIFF"_s)) {
 		$throwNew($UnsupportedAudioFileException);
@@ -214,6 +215,7 @@ $StandardFileFormat* WaveExtensibleFileReader::getAudioFileFormatImpl($InputStre
 }
 
 $AudioInputStream* WaveExtensibleFileReader::getAudioInputStream($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$var($StandardFileFormat, format, $cast($StandardFileFormat, getAudioFileFormat(stream)));
 	$var($AudioFormat, af, $nc(format)->getFormat());
 	int64_t length = format->getLongFrameLength();

@@ -73,6 +73,7 @@ void SequencedEvent$3::init$($SequencedEvent* this$0) {
 }
 
 void SequencedEvent$3::run() {
+	$useLocalCurrentObjectStackCache();
 	while (!this->this$0->isFirstOrDisposed()) {
 		try {
 			$Thread::sleep(100);

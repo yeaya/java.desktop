@@ -70,6 +70,7 @@ void SliderTickTest::init$() {
 }
 
 void SliderTickTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($CountDownLatch, latch, $new($CountDownLatch, 1));
 	$var($TestUI, test, $new($TestUI, latch));
 	$SwingUtilities::invokeLater($$new($SliderTickTest$1, test));

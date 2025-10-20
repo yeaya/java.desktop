@@ -81,6 +81,7 @@ void Test7149090::init$() {
 
 void Test7149090::main($StringArray* args) {
 	$init(Test7149090);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -111,6 +112,7 @@ void Test7149090::main($StringArray* args) {
 }
 
 void clinit$Test7149090($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(Test7149090::DEFAULT_TITLE_POSITIONS, $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("Metal"_s),

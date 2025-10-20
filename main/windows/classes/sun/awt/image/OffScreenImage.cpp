@@ -94,6 +94,7 @@ $Graphics* OffScreenImage::getGraphics() {
 }
 
 $Graphics2D* OffScreenImage::createGraphics() {
+	$useLocalCurrentObjectStackCache();
 	if (this->c == nullptr) {
 		$var($GraphicsEnvironment, env, $GraphicsEnvironment::getLocalGraphicsEnvironment());
 		return $nc(env)->createGraphics(this);
@@ -119,6 +120,7 @@ $Graphics2D* OffScreenImage::createGraphics() {
 }
 
 void OffScreenImage::initSurface(int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics2D, g2, createGraphics());
 	{
 		$var($Throwable, var$0, nullptr);

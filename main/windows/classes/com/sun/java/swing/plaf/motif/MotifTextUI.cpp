@@ -94,6 +94,7 @@ $Caret* MotifTextUI::createCaret() {
 }
 
 void clinit$MotifTextUI($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 		$init($DefaultEditorKit);
 	$assignStatic(MotifTextUI::defaultBindings, $new($JTextComponent$KeyBindingArray, {
 		$$new($JTextComponent$KeyBinding, $($KeyStroke::getKeyStroke($KeyEvent::VK_INSERT, $InputEvent::CTRL_MASK)), $DefaultEditorKit::copyAction),

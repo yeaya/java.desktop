@@ -122,6 +122,7 @@ void bug8048110::init$() {
 
 void bug8048110::main($StringArray* args) {
 	$init(bug8048110);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug8048110::robot, $new($Robot));
 	$SwingUtilities::invokeAndWait($$new($bug8048110$1));
 	$var($Thread, thread, $new($bug8048110$2));
@@ -138,6 +139,7 @@ void bug8048110::main($StringArray* args) {
 
 void bug8048110::createAndShowGUI() {
 	$init(bug8048110);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"_s);
 	} catch ($Exception&) {
@@ -168,6 +170,7 @@ void bug8048110::createAndShowGUI() {
 
 $Element* bug8048110::findFirstElement($Element* e, $String* name) {
 	$init(bug8048110);
+	$useLocalCurrentObjectStackCache();
 	$var($String, elementName, $nc(e)->getName());
 	if (elementName != nullptr && elementName->equalsIgnoreCase(name)) {
 		return e;

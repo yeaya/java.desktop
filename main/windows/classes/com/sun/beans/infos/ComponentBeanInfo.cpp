@@ -62,6 +62,7 @@ void ComponentBeanInfo::init$() {
 }
 
 $PropertyDescriptorArray* ComponentBeanInfo::getPropertyDescriptors() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($PropertyDescriptor, name, $new($PropertyDescriptor, "name"_s, ComponentBeanInfo::beanClass));
 		$var($PropertyDescriptor, background, $new($PropertyDescriptor, "background"_s, ComponentBeanInfo::beanClass));

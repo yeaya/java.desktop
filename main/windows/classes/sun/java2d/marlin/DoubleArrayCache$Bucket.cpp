@@ -98,6 +98,7 @@ $doubles* DoubleArrayCache$Bucket::getArray() {
 }
 
 void DoubleArrayCache$Bucket::putArray($doubles* array) {
+	$useLocalCurrentObjectStackCache();
 	$init($MarlinConst);
 	if ($MarlinConst::DO_CHECKS && ($nc(array)->length != this->arraySize)) {
 		$MarlinUtils::logInfo($$str({$($DoubleArrayCache::getLogPrefix(this->clean)), "DoubleArrayCache: bad length = "_s, $$str(array->length)}));

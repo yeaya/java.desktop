@@ -136,6 +136,7 @@ $DTD* ParserDelegator::getDefaultDTD() {
 	$load(ParserDelegator);
 	$synchronized(class$) {
 		$init(ParserDelegator);
+		$useLocalCurrentObjectStackCache();
 		$var($AppContext, appContext, $AppContext::getAppContext());
 		$var($DTD, dtd, $cast($DTD, $nc(appContext)->get(ParserDelegator::DTD_KEY)));
 		if (dtd == nullptr) {
@@ -157,6 +158,7 @@ $DTD* ParserDelegator::getDefaultDTD() {
 
 $DTD* ParserDelegator::createDTD($DTD* dtd, $String* name) {
 	$init(ParserDelegator);
+	$useLocalCurrentObjectStackCache();
 	$var($InputStream, in, nullptr);
 	bool debug = true;
 	try {
@@ -180,6 +182,7 @@ void ParserDelegator::init$() {
 }
 
 void ParserDelegator::parse($Reader* r, $HTMLEditorKit$ParserCallback* cb, bool ignoreCharSet) {
+	$useLocalCurrentObjectStackCache();
 	$$new($DocumentParser, $(getDefaultDTD()))->parse(r, cb, ignoreCharSet);
 }
 

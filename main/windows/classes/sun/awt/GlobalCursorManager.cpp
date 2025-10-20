@@ -110,6 +110,7 @@ void GlobalCursorManager::updateCursorImmediately($InputEvent* e) {
 }
 
 void GlobalCursorManager::updateCursorLater($Component* heavy) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->nativeUpdater)->postIfNotPending(heavy, $$new($InvocationEvent, $($Toolkit::getDefaultToolkit()), this->nativeUpdater));
 }
 
@@ -119,6 +120,7 @@ void GlobalCursorManager::init$() {
 }
 
 void GlobalCursorManager::_updateCursor(bool useCache) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->lastUpdateLock) {
 		this->lastUpdateMillis = $System::currentTimeMillis();
 	}

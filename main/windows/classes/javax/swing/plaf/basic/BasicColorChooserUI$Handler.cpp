@@ -164,6 +164,7 @@ void BasicColorChooserUI$Handler::mouseExited($MouseEvent* evt) {
 }
 
 void BasicColorChooserUI$Handler::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prop, $nc(evt)->getPropertyName());
 	$init($JColorChooser);
 	if (prop == $JColorChooser::CHOOSER_PANELS_PROPERTY) {

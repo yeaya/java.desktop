@@ -249,6 +249,7 @@ void TIFFImageMetadata::initializeFromStream($ImageInputStream* stream, bool ign
 }
 
 void TIFFImageMetadata::addShortOrLongField(int32_t tagNumber, int64_t value) {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFField, field, $new($TIFFField, $($nc(this->rootIFD)->getTag(tagNumber)), value));
 	$nc(this->rootIFD)->addTIFFField(field);
 }
@@ -258,6 +259,7 @@ bool TIFFImageMetadata::isReadOnly() {
 }
 
 $Node* TIFFImageMetadata::getIFDAsTree($TIFFIFD* ifd, $String* parentTagName, int32_t parentTagNumber) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, IFDRoot, $new($IIOMetadataNode, "TIFFIFD"_s));
 	if (parentTagNumber != 0) {
 		IFDRoot->setAttribute("parentTagNumber"_s, $($Integer::toString(parentTagNumber)));
@@ -318,6 +320,7 @@ $Node* TIFFImageMetadata::getAsTree($String* formatName) {
 }
 
 $Node* TIFFImageMetadata::getNativeTree() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, root, $new($IIOMetadataNode, this->nativeMetadataFormatName));
 	$var($Node, IFDNode, getIFDAsTree(this->rootIFD, nullptr, 0));
 	root->appendChild(IFDNode);
@@ -325,6 +328,7 @@ $Node* TIFFImageMetadata::getNativeTree() {
 }
 
 $IIOMetadataNode* TIFFImageMetadata::getStandardChromaNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, chroma_node, $new($IIOMetadataNode, "Chroma"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$var($TIFFField, f, nullptr);
@@ -396,6 +400,7 @@ $IIOMetadataNode* TIFFImageMetadata::getStandardChromaNode() {
 }
 
 $IIOMetadataNode* TIFFImageMetadata::getStandardCompressionNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, compression_node, $new($IIOMetadataNode, "Compression"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$var($TIFFField, f, nullptr);
@@ -447,6 +452,7 @@ $String* TIFFImageMetadata::repeat($String* s, int32_t times) {
 }
 
 $IIOMetadataNode* TIFFImageMetadata::getStandardDataNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, data_node, $new($IIOMetadataNode, "Data"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$var($TIFFField, f, nullptr);
@@ -554,6 +560,7 @@ $IIOMetadataNode* TIFFImageMetadata::getStandardDataNode() {
 }
 
 $IIOMetadataNode* TIFFImageMetadata::getStandardDimensionNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, dimension_node, $new($IIOMetadataNode, "Dimension"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$var($TIFFField, f, nullptr);
@@ -645,6 +652,7 @@ $IIOMetadataNode* TIFFImageMetadata::getStandardDimensionNode() {
 }
 
 $IIOMetadataNode* TIFFImageMetadata::getStandardDocumentNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, document_node, $new($IIOMetadataNode, "Document"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$var($TIFFField, f, nullptr);
@@ -695,6 +703,7 @@ $IIOMetadataNode* TIFFImageMetadata::getStandardDocumentNode() {
 }
 
 $IIOMetadataNode* TIFFImageMetadata::getStandardTextNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, text_node, nullptr);
 	$var($IIOMetadataNode, node, nullptr);
 	$var($TIFFField, f, nullptr);
@@ -727,6 +736,7 @@ $IIOMetadataNode* TIFFImageMetadata::getStandardTextNode() {
 }
 
 $IIOMetadataNode* TIFFImageMetadata::getStandardTransparencyNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, transparency_node, $new($IIOMetadataNode, "Transparency"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$var($TIFFField, f, nullptr);
@@ -756,6 +766,7 @@ void TIFFImageMetadata::fatal($Node* node, $String* reason) {
 }
 
 $ints* TIFFImageMetadata::listToIntArray($String* list) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringTokenizer, st, $new($StringTokenizer, list, " "_s));
 	$var($ArrayList, intList, $new($ArrayList));
 	while (st->hasMoreTokens()) {
@@ -771,6 +782,7 @@ $ints* TIFFImageMetadata::listToIntArray($String* list) {
 }
 
 $chars* TIFFImageMetadata::listToCharArray($String* list) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringTokenizer, st, $new($StringTokenizer, list, " "_s));
 	$var($ArrayList, intList, $new($ArrayList));
 	while (st->hasMoreTokens()) {
@@ -786,6 +798,7 @@ $chars* TIFFImageMetadata::listToCharArray($String* list) {
 }
 
 void TIFFImageMetadata::mergeStandardTree($Node* root) {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFField, f, nullptr);
 	$var($TIFFTag, tag, nullptr);
 	$var($Node, node, root);
@@ -1266,12 +1279,14 @@ void TIFFImageMetadata::mergeStandardTree($Node* root) {
 
 $String* TIFFImageMetadata::getAttribute($Node* node, $String* attrName) {
 	$init(TIFFImageMetadata);
+	$useLocalCurrentObjectStackCache();
 	$var($NamedNodeMap, attrs, $nc(node)->getAttributes());
 	$var($Node, attr, $nc(attrs)->getNamedItem(attrName));
 	return attr != nullptr ? $nc(attr)->getNodeValue() : ($String*)nullptr;
 }
 
 $Node* TIFFImageMetadata::getChildNode($Node* node, $String* childName) {
+	$useLocalCurrentObjectStackCache();
 	$var($Node, childNode, nullptr);
 	if ($nc(node)->hasChildNodes()) {
 		$var($NodeList, childNodes, node->getChildNodes());
@@ -1289,6 +1304,7 @@ $Node* TIFFImageMetadata::getChildNode($Node* node, $String* childName) {
 
 $TIFFIFD* TIFFImageMetadata::parseIFD($Node* node$renamed) {
 	$init(TIFFImageMetadata);
+	$useLocalCurrentObjectStackCache();
 	$var($Node, node, node$renamed);
 	$beforeCallerSensitive();
 	if (!$nc($($nc(node)->getNodeName()))->equals("TIFFIFD"_s)) {
@@ -1390,6 +1406,7 @@ $TIFFIFD* TIFFImageMetadata::parseIFD($Node* node$renamed) {
 }
 
 void TIFFImageMetadata::mergeNativeTree($Node* root) {
+	$useLocalCurrentObjectStackCache();
 	$var($Node, node, root);
 	if (!$nc($($nc(node)->getNodeName()))->equals(this->nativeMetadataFormatName)) {
 		fatal(node, $$str({"Root must be "_s, this->nativeMetadataFormatName}));

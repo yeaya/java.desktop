@@ -114,6 +114,7 @@ $Dialog* ModalEventFilter::getModalDialog() {
 }
 
 $EventFilter$FilterAction* ModalEventFilter::acceptEvent($AWTEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	if (this->disabled || !$nc(this->modalDialog)->isVisible()) {
 		$init($EventFilter$FilterAction);
 		return $EventFilter$FilterAction::ACCEPT;
@@ -141,6 +142,7 @@ void ModalEventFilter::disable() {
 }
 
 int32_t ModalEventFilter::compareTo(ModalEventFilter* another) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dialog, anotherDialog, $nc(another)->getModalDialog());
 	$var($Component, c, this->modalDialog);
 	while (c != nullptr) {

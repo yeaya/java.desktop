@@ -125,6 +125,7 @@ void SoftReverb::init$() {
 }
 
 void SoftReverb::init(float samplerate, float controlrate) {
+	$useLocalCurrentObjectStackCache();
 	this->samplerate = samplerate;
 	double freqscale = ((double)samplerate) / 44100.0;
 	int32_t stereospread = 23;
@@ -184,6 +185,7 @@ void SoftReverb::setMixMode(bool mix) {
 }
 
 void SoftReverb::processAudio() {
+	$useLocalCurrentObjectStackCache();
 	bool silent_input = $nc(this->inputA)->isSilent();
 	if (!silent_input) {
 		this->silent = false;

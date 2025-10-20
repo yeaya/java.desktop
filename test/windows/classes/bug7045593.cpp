@@ -73,6 +73,7 @@ void bug7045593::init$() {
 }
 
 void bug7045593::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($bug7045593$1));
 	$var($Robot, robot, $new($Robot));
 	robot->waitForIdle();
@@ -80,6 +81,7 @@ void bug7045593::main($StringArray* args) {
 }
 
 void bug7045593::assertEquals(int32_t i1, int32_t i2) {
+	$useLocalCurrentObjectStackCache();
 	if (i1 != i2) {
 		$throwNew($RuntimeException, $$str({"Test failed, "_s, $$str(i1), " != "_s, $$str(i2)}));
 	}

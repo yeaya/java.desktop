@@ -86,6 +86,7 @@ bool MultiLookAndFeel::isSupportedLookAndFeel() {
 }
 
 $UIDefaults* MultiLookAndFeel::getDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, packageName, "javax.swing.plaf.multi.Multi"_s);
 	$var($ObjectArray, uiDefaults, $new($ObjectArray, {
 		$of("ButtonUI"_s),
@@ -182,6 +183,7 @@ $UIDefaults* MultiLookAndFeel::getDefaults() {
 
 $ComponentUI* MultiLookAndFeel::createUIs($ComponentUI* mui, $Vector* uis, $JComponent* target) {
 	$init(MultiLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentUI, ui, nullptr);
 	$assign(ui, $nc($($UIManager::getDefaults()))->getUI(target));
 	if (ui != nullptr) {
@@ -208,6 +210,7 @@ $ComponentUI* MultiLookAndFeel::createUIs($ComponentUI* mui, $Vector* uis, $JCom
 
 $ComponentUIArray* MultiLookAndFeel::uisToArray($Vector* uis) {
 	$init(MultiLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	if (uis == nullptr) {
 		return $new($ComponentUIArray, 0);
 	} else {

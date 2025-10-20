@@ -219,6 +219,7 @@ void DirectAudioDevice$DirectSDL::finalize() {
 }
 
 void DirectAudioDevice$DirectSDL::init$($DataLine$Info* info, $AudioFormat* format, int32_t bufferSize, $DirectAudioDevice* mixer) {
+	$useLocalCurrentObjectStackCache();
 	$var($DataLine$Info, var$0, info);
 	$var($DirectAudioDevice, var$1, mixer);
 	$var($AudioFormat, var$2, format);

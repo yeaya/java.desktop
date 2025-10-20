@@ -122,6 +122,7 @@ void ShellFolderQueriesSecurityManagerTest::init$() {
 
 void ShellFolderQueriesSecurityManagerTest::main($StringArray* args) {
 	$init(ShellFolderQueriesSecurityManagerTest);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($FileArray, shortcuts, $nc(ShellFolderQueriesSecurityManagerTest::fsv)->getChooserShortcutPanelFiles());
 		$init($System);

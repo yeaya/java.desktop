@@ -70,6 +70,7 @@ $Object* allocate$CustomCursor($Class* clazz) {
 }
 
 void CustomCursor::init$($Image* cursor$renamed, $Point* hotSpot, $String* name) {
+	$useLocalCurrentObjectStackCache();
 	$var($Image, cursor, cursor$renamed);
 	$Cursor::init$(name);
 	$set(this, image, cursor);

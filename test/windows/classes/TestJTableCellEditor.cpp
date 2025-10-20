@@ -124,6 +124,7 @@ void TestJTableCellEditor::init$() {
 
 void TestJTableCellEditor::main($StringArray* args) {
 	$load(TestJTableCellEditor);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestJTableCellEditor$$Lambda$testJTableCellEditor)));
 	$System::setSecurityManager($$new($SecurityManager));
@@ -131,6 +132,7 @@ void TestJTableCellEditor::main($StringArray* args) {
 }
 
 void TestJTableCellEditor::testJTableCellEditor() {
+	$useLocalCurrentObjectStackCache();
 	$load($TestJTableCellEditor$UserEditor);
 	$Class* cls = $TestJTableCellEditor$UserEditor::class$;
 	$var($JTable, table, $new($JTable, $$new($TestJTableCellEditor$1, cls)));

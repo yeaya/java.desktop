@@ -80,6 +80,7 @@ void TIFFLZWUtil::init$() {
 }
 
 $bytes* TIFFLZWUtil::decode($bytes* data, int32_t predictor, int32_t samplesPerPixel, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(data)->get(0) == (int8_t)0 && data->get(1) == (int8_t)1) {
 		$throwNew($IIOException, "TIFF 5.0-style LZW compression is not supported!"_s);
 	}
@@ -131,6 +132,7 @@ $bytes* TIFFLZWUtil::decode($bytes* data, int32_t predictor, int32_t samplesPerP
 }
 
 void TIFFLZWUtil::initializeStringTable() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, stringTable, $new($byteArray2, 4096));
 	for (int32_t i = 0; i < 256; ++i) {
 		$nc(this->stringTable)->set(i, $$new($bytes, 1));

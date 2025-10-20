@@ -93,6 +93,7 @@ $ComponentUI* MetalProgressBarUI::createUI($JComponent* c) {
 }
 
 void MetalProgressBarUI::paintDeterminate($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$BasicProgressBarUI::paintDeterminate(g, c);
 	if (!($instanceOf($Graphics2D, g))) {
 		return;
@@ -145,6 +146,7 @@ void MetalProgressBarUI::paintDeterminate($Graphics* g, $JComponent* c) {
 }
 
 void MetalProgressBarUI::paintIndeterminate($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$BasicProgressBarUI::paintIndeterminate(g, c);
 	if (!$nc(this->progressBar)->isBorderPainted() || (!($instanceOf($Graphics2D, g)))) {
 		return;

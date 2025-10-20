@@ -72,6 +72,7 @@ $Object* allocate$GDIBlitLoops($Class* clazz) {
 
 void GDIBlitLoops::register$() {
 	$init(GDIBlitLoops);
+	$useLocalCurrentObjectStackCache();
 		$init($SurfaceType);
 		$init($GDIWindowSurfaceData);
 	$var($GraphicsPrimitiveArray, primitives, $new($GraphicsPrimitiveArray, {

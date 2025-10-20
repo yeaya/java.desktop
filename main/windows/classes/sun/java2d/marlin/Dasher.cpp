@@ -414,6 +414,7 @@ void Dasher::lineTo(double x1, double y1) {
 }
 
 void Dasher::_lineTo(double x1, double y1) {
+	$useLocalCurrentObjectStackCache();
 	double dx = x1 - this->cx0;
 	double dy = y1 - this->cy0;
 	double len = dx * dx + dy * dy;
@@ -514,6 +515,7 @@ void Dasher::skipLen() {
 }
 
 void Dasher::somethingTo(int32_t type) {
+	$useLocalCurrentObjectStackCache();
 	$var($doubles, _curCurvepts, this->curCurvepts);
 	if (pointCurve(_curCurvepts, type)) {
 		return;
@@ -555,6 +557,7 @@ void Dasher::somethingTo(int32_t type) {
 }
 
 void Dasher::skipSomethingTo(int32_t type) {
+	$useLocalCurrentObjectStackCache();
 	$var($doubles, _curCurvepts, this->curCurvepts);
 	if (pointCurve(_curCurvepts, type)) {
 		return;
@@ -612,6 +615,7 @@ void Dasher::curveTo(double x1, double y1, double x2, double y2, double x3, doub
 }
 
 void Dasher::_curveTo(double x1, double y1, double x2, double y2, double x3, double y3) {
+	$useLocalCurrentObjectStackCache();
 	$var($doubles, _curCurvepts, this->curCurvepts);
 	$var($TransformingPathConsumer2D$CurveBasicMonotonizer, monotonizer, $nc($nc(this->rdrCtx)->monotonizer)->curve(this->cx0, this->cy0, x1, y1, x2, y2, x3, y3));
 	int32_t nSplits = $nc(monotonizer)->nbSplits;
@@ -674,6 +678,7 @@ void Dasher::quadTo(double x1, double y1, double x2, double y2) {
 }
 
 void Dasher::_quadTo(double x1, double y1, double x2, double y2) {
+	$useLocalCurrentObjectStackCache();
 	$var($doubles, _curCurvepts, this->curCurvepts);
 	$var($TransformingPathConsumer2D$CurveBasicMonotonizer, monotonizer, $nc($nc(this->rdrCtx)->monotonizer)->quad(this->cx0, this->cy0, x1, y1, x2, y2));
 	int32_t nSplits = $nc(monotonizer)->nbSplits;

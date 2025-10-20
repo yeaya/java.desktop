@@ -142,6 +142,7 @@ void PSPathGraphics::init$($Graphics2D* graphics, $PrinterJob* printerJob, $Prin
 }
 
 $Graphics* PSPathGraphics::create() {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics2D, var$0, $cast($Graphics2D, $nc($(getDelegate()))->create()));
 	$var($PrinterJob, var$1, getPrinterJob());
 	$var($Printable, var$2, getPrintable());
@@ -151,6 +152,7 @@ $Graphics* PSPathGraphics::create() {
 }
 
 void PSPathGraphics::fill($Shape* s, $Color* color) {
+	$useLocalCurrentObjectStackCache();
 	deviceFill($($nc(s)->getPathIterator($$new($AffineTransform))), color);
 }
 
@@ -159,6 +161,7 @@ void PSPathGraphics::drawString($String* str, int32_t x, int32_t y) {
 }
 
 void PSPathGraphics::drawString($String* str, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, str);
 	float var$1 = x;
 	float var$2 = y;
@@ -176,6 +179,7 @@ int32_t PSPathGraphics::platformFontCount($Font* font, $String* str) {
 }
 
 void PSPathGraphics::drawString($String* str, float x, float y, $Font* font, $FontRenderContext* frc, float w) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(str)->length() == 0) {
 		return;
 	}
@@ -241,6 +245,7 @@ void PSPathGraphics::drawString($String* str, float x, float y, $Font* font, $Fo
 }
 
 bool PSPathGraphics::drawImageToPlatform($Image* image, $AffineTransform* xform$renamed, $Color* bgcolor$renamed, int32_t srcX, int32_t srcY, int32_t srcWidth, int32_t srcHeight, bool handlingTransparency) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, bgcolor, bgcolor$renamed);
 	$var($AffineTransform, xform, xform$renamed);
 	$var($BufferedImage, img, getBufferedImage(image));
@@ -397,6 +402,7 @@ bool PSPathGraphics::drawImageToPlatform($Image* image, $AffineTransform* xform$
 }
 
 void PSPathGraphics::redrawRegion($Rectangle2D* region, double scaleX, double scaleY, $Shape* savedClip, $AffineTransform* savedTransform) {
+	$useLocalCurrentObjectStackCache();
 	$var($PSPrinterJob, psPrinterJob, $cast($PSPrinterJob, getPrinterJob()));
 	$var($Printable, painter, getPrintable());
 	$var($PageFormat, pageFormat, getPageFormat());
@@ -442,6 +448,7 @@ void PSPathGraphics::redrawRegion($Rectangle2D* region, double scaleX, double sc
 }
 
 void PSPathGraphics::deviceFill($PathIterator* pathIter, $Color* color) {
+	$useLocalCurrentObjectStackCache();
 	$var($PSPrinterJob, psPrinterJob, $cast($PSPrinterJob, getPrinterJob()));
 	$var($PathIterator, var$0, pathIter);
 	$var($Color, var$1, color);

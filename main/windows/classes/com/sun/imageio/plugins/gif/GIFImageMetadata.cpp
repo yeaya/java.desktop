@@ -164,6 +164,7 @@ $String* GIFImageMetadata::toISO8859($bytes* data) {
 }
 
 $Node* GIFImageMetadata::getNativeTree() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, nullptr);
 	$var($IIOMetadataNode, root, $new($IIOMetadataNode, GIFImageMetadata::nativeMetadataFormatName));
 	$assign(node, $new($IIOMetadataNode, "ImageDescriptor"_s));
@@ -241,6 +242,7 @@ $Node* GIFImageMetadata::getNativeTree() {
 }
 
 $IIOMetadataNode* GIFImageMetadata::getStandardChromaNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, chroma_node, $new($IIOMetadataNode, "Chroma"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$assign(node, $new($IIOMetadataNode, "ColorSpaceType"_s));
@@ -269,6 +271,7 @@ $IIOMetadataNode* GIFImageMetadata::getStandardChromaNode() {
 }
 
 $IIOMetadataNode* GIFImageMetadata::getStandardCompressionNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, compression_node, $new($IIOMetadataNode, "Compression"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$assign(node, $new($IIOMetadataNode, "CompressionTypeName"_s));
@@ -284,6 +287,7 @@ $IIOMetadataNode* GIFImageMetadata::getStandardCompressionNode() {
 }
 
 $IIOMetadataNode* GIFImageMetadata::getStandardDataNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, data_node, $new($IIOMetadataNode, "Data"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$assign(node, $new($IIOMetadataNode, "SampleFormat"_s));
@@ -293,6 +297,7 @@ $IIOMetadataNode* GIFImageMetadata::getStandardDataNode() {
 }
 
 $IIOMetadataNode* GIFImageMetadata::getStandardDimensionNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, dimension_node, $new($IIOMetadataNode, "Dimension"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$assign(node, $new($IIOMetadataNode, "ImageOrientation"_s));
@@ -308,6 +313,7 @@ $IIOMetadataNode* GIFImageMetadata::getStandardDimensionNode() {
 }
 
 $IIOMetadataNode* GIFImageMetadata::getStandardTextNode() {
+	$useLocalCurrentObjectStackCache();
 	if (this->comments == nullptr) {
 		return nullptr;
 	}
@@ -336,6 +342,7 @@ $IIOMetadataNode* GIFImageMetadata::getStandardTextNode() {
 }
 
 $IIOMetadataNode* GIFImageMetadata::getStandardTransparencyNode() {
+	$useLocalCurrentObjectStackCache();
 	if (!this->transparentColorFlag) {
 		return nullptr;
 	}

@@ -165,6 +165,7 @@ void TransferHandler$DropHandler::init$() {
 }
 
 void TransferHandler$DropHandler::updateAutoscrollRegion($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, visible, $nc(c)->getVisibleRect());
 	$nc(this->outer)->setBounds($nc(visible)->x, visible->y, visible->width, visible->height);
 	$var($Insets, i, $new($Insets, 0, 0, 0, 0));
@@ -181,6 +182,7 @@ void TransferHandler$DropHandler::updateAutoscrollRegion($JComponent* c) {
 }
 
 void TransferHandler$DropHandler::autoscroll($JComponent* c, $Point* pos) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Scrollable, c)) {
 		$var($Scrollable, s, $cast($Scrollable, c));
 		if ($nc(pos)->y < $nc(this->inner)->y) {
@@ -205,6 +207,7 @@ void TransferHandler$DropHandler::autoscroll($JComponent* c, $Point* pos) {
 }
 
 void TransferHandler$DropHandler::initPropertiesIfNecessary() {
+	$useLocalCurrentObjectStackCache();
 	if (this->timer == nullptr) {
 		$var($Toolkit, t, $Toolkit::getDefaultToolkit());
 		$var($Integer, prop, nullptr);
@@ -228,6 +231,7 @@ void TransferHandler$DropHandler::actionPerformed($ActionEvent* e) {
 }
 
 void TransferHandler$DropHandler::setComponentDropLocation($TransferHandler$TransferSupport* support, bool forDrop) {
+	$useLocalCurrentObjectStackCache();
 	$var($TransferHandler$DropLocation, dropLocation, (support == nullptr) ? ($TransferHandler$DropLocation*)nullptr : $nc(support)->getDropLocation());
 	if ($SunToolkit::isInstanceOf($of(this->component), "javax.swing.text.JTextComponent"_s)) {
 		$set(this, state, $nc($($SwingAccessor::getJTextComponentAccessor()))->setDropLocation($cast($JTextComponent, this->component), dropLocation, this->state, forDrop));
@@ -287,6 +291,7 @@ void TransferHandler$DropHandler::dragExit($DropTargetEvent* e) {
 }
 
 void TransferHandler$DropHandler::drop($DropTargetDropEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($TransferHandler, importer, $nc(($cast($TransferHandler$HasGetTransferHandler, this->component)))->getTransferHandler());
 	if (importer == nullptr) {
 		$nc(e)->rejectDrop();

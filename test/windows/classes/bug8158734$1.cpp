@@ -71,6 +71,7 @@ void bug8158734$1::init$() {
 }
 
 void bug8158734$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, c, $new($JEditorPane));
 	c->setContentType("test/test"_s);
 	$var($bug8158734$MyClassloader, loader, $new($bug8158734$MyClassloader));

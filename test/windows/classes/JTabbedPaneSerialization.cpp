@@ -62,6 +62,7 @@ void JTabbedPaneSerialization::init$() {
 }
 
 void JTabbedPaneSerialization::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTabbedPane, tabbedPane, $new($JTabbedPane));
 	tabbedPane->addTab("Tab1"_s, $$new($JLabel, "Label1"_s));
 	tabbedPane->addTab("Tab2"_s, $$new($JLabel, "Label2"_s));

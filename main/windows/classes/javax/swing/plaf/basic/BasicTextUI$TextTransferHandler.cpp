@@ -171,6 +171,7 @@ void BasicTextUI$TextTransferHandler::init$() {
 }
 
 $DataFlavor* BasicTextUI$TextTransferHandler::getImportFlavor($DataFlavorArray* flavors, $JTextComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($DataFlavor, plainFlavor, nullptr);
 	$var($DataFlavor, refFlavor, nullptr);
 	$var($DataFlavor, stringFlavor, nullptr);
@@ -225,6 +226,7 @@ $DataFlavor* BasicTextUI$TextTransferHandler::getImportFlavor($DataFlavorArray* 
 }
 
 void BasicTextUI$TextTransferHandler::handleReaderImport($Reader* in, $JTextComponent* c, bool useRead) {
+	$useLocalCurrentObjectStackCache();
 	if (useRead) {
 		int32_t startPosition = $nc(c)->getSelectionStart();
 		int32_t endPosition = c->getSelectionEnd();
@@ -328,6 +330,7 @@ void BasicTextUI$TextTransferHandler::exportDone($JComponent* source, $Transfera
 }
 
 bool BasicTextUI$TextTransferHandler::importData($TransferHandler$TransferSupport* support) {
+	$useLocalCurrentObjectStackCache();
 	this->isDrop = $nc(support)->isDrop();
 	if (this->isDrop) {
 		$init($DropMode);
@@ -362,6 +365,7 @@ bool BasicTextUI$TextTransferHandler::importData($TransferHandler$TransferSuppor
 }
 
 bool BasicTextUI$TextTransferHandler::importData($JComponent* comp, $Transferable* t) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, c, $cast($JTextComponent, comp));
 	int32_t pos = this->modeBetween ? $nc($($nc(c)->getDropLocation()))->getIndex() : c->getCaretPosition();
 	if (this->dropAction == $TransferHandler::MOVE && c == this->exportComp && pos >= this->p0 && pos <= this->p1) {

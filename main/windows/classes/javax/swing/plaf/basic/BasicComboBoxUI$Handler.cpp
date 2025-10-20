@@ -169,6 +169,7 @@ void BasicComboBoxUI$Handler::init$($BasicComboBoxUI* this$0) {
 }
 
 void BasicComboBoxUI$Handler::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propertyName, $nc(e)->getPropertyName());
 	if ($equals(e->getSource(), this->this$0->editor)) {
 		if ("border"_s->equals(propertyName)) {
@@ -268,6 +269,7 @@ void BasicComboBoxUI$Handler::propertyChange($PropertyChangeEvent* e) {
 }
 
 void BasicComboBoxUI$Handler::keyPressed($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc(e)->getKeyCode();
 	if (this->this$0->isNavigationKey(var$0, e->getModifiers())) {
 		this->this$0->lastTime = 0;
@@ -312,6 +314,7 @@ void BasicComboBoxUI$Handler::focusGained($FocusEvent* e) {
 }
 
 void BasicComboBoxUI$Handler::focusLost($FocusEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($ComboBoxEditor, editor, $nc(this->this$0->comboBox)->getEditor());
 	bool var$0 = (editor != nullptr);
 	if (var$0) {
@@ -333,6 +336,7 @@ void BasicComboBoxUI$Handler::focusLost($FocusEvent* e) {
 }
 
 void BasicComboBoxUI$Handler::contentsChanged($ListDataEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(e)->getIndex0() == -1;
 	if (!(var$0 && e->getIndex1() == -1)) {
 		this->this$0->isMinimumSizeDirty = true;
@@ -369,6 +373,7 @@ $Dimension* BasicComboBoxUI$Handler::minimumLayoutSize($Container* parent) {
 }
 
 void BasicComboBoxUI$Handler::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComboBox, cb, $cast($JComboBox, parent));
 	int32_t width = $nc(cb)->getWidth();
 	int32_t height = cb->getHeight();
@@ -394,6 +399,7 @@ void BasicComboBoxUI$Handler::layoutContainer($Container* parent) {
 }
 
 void BasicComboBoxUI$Handler::actionPerformed($ActionEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, item, $nc($($nc(this->this$0->comboBox)->getEditor()))->getItem());
 	if (item != nullptr) {
 		bool var$0 = !$nc(this->this$0->comboBox)->isPopupVisible();

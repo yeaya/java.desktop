@@ -350,6 +350,7 @@ void WTextComponentPeer::init$($TextComponent* target) {
 }
 
 void WTextComponentPeer::initialize() {
+	$useLocalCurrentObjectStackCache();
 	$var($TextComponent, tc, $cast($TextComponent, this->target));
 	$var($String, text, $nc(tc)->getText());
 	if (text != nullptr) {

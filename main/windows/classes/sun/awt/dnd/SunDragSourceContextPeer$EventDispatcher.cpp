@@ -74,6 +74,7 @@ $Object* allocate$SunDragSourceContextPeer$EventDispatcher($Class* clazz) {
 }
 
 void SunDragSourceContextPeer$EventDispatcher::init$($SunDragSourceContextPeer* this$0, int32_t dispatchType, $DragSourceEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	switch (dispatchType) {
 	case 1:
@@ -110,6 +111,7 @@ void SunDragSourceContextPeer$EventDispatcher::init$($SunDragSourceContextPeer* 
 }
 
 void SunDragSourceContextPeer$EventDispatcher::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($DragSourceContext, dragSourceContext, this->this$0->getDragSourceContext());
 	{
 		$var($Throwable, var$0, nullptr);

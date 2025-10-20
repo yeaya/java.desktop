@@ -119,6 +119,7 @@ $StringArray* FontFamily::getAllFamilyNames() {
 
 void FontFamily::remove($Font2D* font2D) {
 	$init(FontFamily);
+	$useLocalCurrentObjectStackCache();
 	$init($Locale);
 	$var($String, name, $nc(font2D)->getFamilyName($Locale::ENGLISH));
 	$var(FontFamily, family, getFamily(name));
@@ -169,6 +170,7 @@ int32_t FontFamily::getRank() {
 }
 
 bool FontFamily::isFromSameSource($Font2D* font) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($FileFont, font))) {
 		return false;
 	}
@@ -206,6 +208,7 @@ bool FontFamily::isFromSameSource($Font2D* font) {
 }
 
 bool FontFamily::preferredWidth($Font2D* font) {
+	$useLocalCurrentObjectStackCache();
 	int32_t newWidth = $nc(font)->getWidth();
 	if (this->familyWidth == 0) {
 		this->familyWidth = newWidth;
@@ -229,6 +232,7 @@ bool FontFamily::preferredWidth($Font2D* font) {
 }
 
 bool FontFamily::closerWeight($Font2D* currFont, $Font2D* font, int32_t style) {
+	$useLocalCurrentObjectStackCache();
 	if (this->familyWidth != $nc(font)->getWidth()) {
 		return false;
 	}
@@ -284,6 +288,7 @@ case$4:
 }
 
 void FontFamily::setFont($Font2D* font, int32_t style) {
+	$useLocalCurrentObjectStackCache();
 	if ($FontUtilities::isLogging()) {
 		$var($String, msg, nullptr);
 		if ($instanceOf($CompositeFont, font)) {
@@ -538,6 +543,7 @@ void FontFamily::addLocaleNames(FontFamily* family, $StringArray* names) {
 	$load(FontFamily);
 	$synchronized(class$) {
 		$init(FontFamily);
+		$useLocalCurrentObjectStackCache();
 		if (FontFamily::allLocaleNames == nullptr) {
 			$assignStatic(FontFamily::allLocaleNames, $new($HashMap));
 		}
@@ -560,6 +566,7 @@ FontFamily* FontFamily::getLocaleFamily($String* name) {
 
 $FontFamilyArray* FontFamily::getAllFontFamilies() {
 	$init(FontFamily);
+	$useLocalCurrentObjectStackCache();
 	$var($Collection, families, $nc(FontFamily::familyNameMap)->values());
 	return $fcast($FontFamilyArray, $nc(families)->toArray($$new($FontFamilyArray, 0)));
 }

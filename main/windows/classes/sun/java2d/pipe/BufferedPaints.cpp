@@ -176,6 +176,7 @@ void BufferedPaints::setColor($RenderQueue* rq, int32_t pixel) {
 }
 
 void BufferedPaints::setGradientPaint($RenderQueue* rq, $AffineTransform* at, $Color* c1, $Color* c2, $Point2D* pt1, $Point2D* pt2, bool isCyclic, bool useMask) {
+	$useLocalCurrentObjectStackCache();
 	$init($PixelConverter$ArgbPre);
 	$var($PixelConverter, pc, $PixelConverter$ArgbPre::instance);
 	int32_t pixel1 = $nc(pc)->rgbToPixel($nc(c1)->getRGB(), nullptr);
@@ -211,6 +212,7 @@ void BufferedPaints::setGradientPaint($RenderQueue* rq, $AffineTransform* at, $C
 }
 
 void BufferedPaints::setGradientPaint($RenderQueue* rq, $SunGraphics2D* sg2d, $GradientPaint* paint, bool useMask) {
+	$useLocalCurrentObjectStackCache();
 	$var($RenderQueue, var$0, rq);
 	$var($AffineTransform, var$1, $cast($AffineTransform, $nc($nc(sg2d)->transform$)->clone()));
 	$var($Color, var$2, $nc(paint)->getColor1());
@@ -221,6 +223,7 @@ void BufferedPaints::setGradientPaint($RenderQueue* rq, $SunGraphics2D* sg2d, $G
 }
 
 void BufferedPaints::setTexturePaint($RenderQueue* rq, $SunGraphics2D* sg2d, $TexturePaint* paint, bool useMask) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, bi, $nc(paint)->getImage());
 	$var($SurfaceData, dstData, $nc(sg2d)->surfaceData);
 	$init($CompositeType);
@@ -302,6 +305,7 @@ $ints* BufferedPaints::convertToIntArgbPrePixels($ColorArray* colors, bool linea
 }
 
 void BufferedPaints::setLinearGradientPaint($RenderQueue* rq, $SunGraphics2D* sg2d, $LinearGradientPaint* paint, bool useMask) {
+	$useLocalCurrentObjectStackCache();
 	$init($MultipleGradientPaint$ColorSpaceType);
 	bool linear = ($nc(paint)->getColorSpace() == $MultipleGradientPaint$ColorSpaceType::LINEAR_RGB);
 	$var($ColorArray, colors, paint->getColors());
@@ -354,6 +358,7 @@ void BufferedPaints::setLinearGradientPaint($RenderQueue* rq, $SunGraphics2D* sg
 }
 
 void BufferedPaints::setRadialGradientPaint($RenderQueue* rq, $SunGraphics2D* sg2d, $RadialGradientPaint* paint, bool useMask) {
+	$useLocalCurrentObjectStackCache();
 	$init($MultipleGradientPaint$ColorSpaceType);
 	bool linear = ($nc(paint)->getColorSpace() == $MultipleGradientPaint$ColorSpaceType::LINEAR_RGB);
 	int32_t cycleMethod = $nc($(paint->getCycleMethod()))->ordinal();

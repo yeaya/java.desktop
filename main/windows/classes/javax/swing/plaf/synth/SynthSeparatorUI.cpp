@@ -155,6 +155,7 @@ void SynthSeparatorUI::installDefaults($JSeparator* c) {
 }
 
 void SynthSeparatorUI::updateStyle($JSeparator* sep) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(sep, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -187,6 +188,7 @@ void SynthSeparatorUI::uninstallListeners($JSeparator* c) {
 }
 
 void SynthSeparatorUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$var($JSeparator, separator, $cast($JSeparator, $nc(context)->getComponent()));
 	$SynthLookAndFeel::update(context, g);
@@ -204,6 +206,7 @@ void SynthSeparatorUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void SynthSeparatorUI::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($JSeparator, separator, $cast($JSeparator, $nc(context)->getComponent()));
 	$var($SynthContext, var$0, context);
 	$var($Graphics, var$1, g);
@@ -213,11 +216,13 @@ void SynthSeparatorUI::paint($SynthContext* context, $Graphics* g) {
 }
 
 void SynthSeparatorUI::paintBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($JSeparator, separator, $cast($JSeparator, $nc(context)->getComponent()));
 	$nc($(context->getPainter()))->paintSeparatorBorder(context, g, x, y, w, h, $nc(separator)->getOrientation());
 }
 
 $Dimension* SynthSeparatorUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	int32_t thickness = $nc(this->style)->getInt(context, "Separator.thickness"_s, 2);
 	$var($Insets, insets, $nc(c)->getInsets());

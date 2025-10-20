@@ -197,6 +197,7 @@ void FormattedTextFieldPainter::doPaint($Graphics2D* g, $JComponent* c, int32_t 
 }
 
 $ObjectArray* FormattedTextFieldPainter::getExtendedCacheKeys($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, extendedCacheKeys, nullptr);
 	switch (this->state) {
 	case FormattedTextFieldPainter::BACKGROUND_ENABLED:
@@ -247,6 +248,7 @@ void FormattedTextFieldPainter::paintBackgroundSelected($Graphics2D* g) {
 }
 
 void FormattedTextFieldPainter::paintBorderDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect2());
 	$nc(g)->setPaint($(decodeGradient1(this->rect)));
 	g->fill(this->rect);
@@ -265,6 +267,7 @@ void FormattedTextFieldPainter::paintBorderDisabled($Graphics2D* g) {
 }
 
 void FormattedTextFieldPainter::paintBorderFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect7());
 	$nc(g)->setPaint($(decodeGradient3(this->rect)));
 	g->fill(this->rect);
@@ -286,6 +289,7 @@ void FormattedTextFieldPainter::paintBorderFocused($Graphics2D* g) {
 }
 
 void FormattedTextFieldPainter::paintBorderEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect7());
 	$nc(g)->setPaint($(decodeGradient5(this->rect)));
 	g->fill(this->rect);
@@ -450,6 +454,7 @@ $Path2D* FormattedTextFieldPainter::decodePath1() {
 }
 
 $Paint* FormattedTextFieldPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -467,6 +472,7 @@ $Paint* FormattedTextFieldPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* FormattedTextFieldPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -484,6 +490,7 @@ $Paint* FormattedTextFieldPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* FormattedTextFieldPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -501,6 +508,7 @@ $Paint* FormattedTextFieldPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* FormattedTextFieldPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -518,6 +526,7 @@ $Paint* FormattedTextFieldPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* FormattedTextFieldPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

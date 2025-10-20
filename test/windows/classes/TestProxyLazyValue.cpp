@@ -155,6 +155,7 @@ void TestProxyLazyValue::init$() {
 
 void TestProxyLazyValue::main($StringArray* args) {
 	$load(TestProxyLazyValue);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestProxyLazyValue$$Lambda$testUserProxyLazyValue)));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestProxyLazyValue$$Lambda$testProxyLazyValue$1)));
@@ -164,6 +165,7 @@ void TestProxyLazyValue::main($StringArray* args) {
 }
 
 void TestProxyLazyValue::testUserProxyLazyValue() {
+	$useLocalCurrentObjectStackCache();
 	$load($TestProxyLazyValue$UserLazyClass);
 	$var($Object, obj, $$new($TestProxyLazyValue$UserProxyLazyValue, $($TestProxyLazyValue$UserLazyClass::class$->getName()))->createValue(nullptr));
 	if (!($instanceOf($TestProxyLazyValue$UserLazyClass, obj))) {
@@ -189,6 +191,7 @@ void TestProxyLazyValue::testUserProxyLazyValue() {
 }
 
 void TestProxyLazyValue::testProxyLazyValue() {
+	$useLocalCurrentObjectStackCache();
 	$load($TestProxyLazyValue$UserLazyClass);
 	$var($Object, obj, $$new($UIDefaults$ProxyLazyValue, $($TestProxyLazyValue$UserLazyClass::class$->getName()))->createValue(nullptr));
 	if (!($instanceOf($TestProxyLazyValue$UserLazyClass, obj))) {

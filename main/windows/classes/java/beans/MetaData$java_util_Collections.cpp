@@ -87,6 +87,7 @@ void MetaData$java_util_Collections::init$() {
 }
 
 bool MetaData$java_util_Collections::mutatesTo(Object$* oldInstance, Object$* newInstance) {
+	$useLocalCurrentObjectStackCache();
 	if (!$PersistenceDelegate::mutatesTo(oldInstance, newInstance)) {
 		return false;
 	}

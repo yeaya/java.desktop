@@ -136,6 +136,7 @@ void JTable$SortManager::prepareForChange($RowSorterEvent* sortEvent, $JTable$Mo
 }
 
 void JTable$SortManager::cacheSelection($RowSorterEvent* sortEvent, $JTable$ModelChange* change) {
+	$useLocalCurrentObjectStackCache();
 	if (sortEvent != nullptr) {
 		bool var$0 = this->modelSelection == nullptr;
 		if (var$0) {

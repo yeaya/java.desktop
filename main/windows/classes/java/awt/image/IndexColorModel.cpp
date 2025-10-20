@@ -178,6 +178,7 @@ void IndexColorModel::initIDs() {
 }
 
 void IndexColorModel::init$(int32_t bits, int32_t size, $bytes* r, $bytes* g, $bytes* b) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = bits;
 	$var($ints, var$1, IndexColorModel::opaqueBits);
 	$var($ColorSpace, var$2, $ColorSpace::getInstance($ColorSpace::CS_sRGB));
@@ -194,6 +195,7 @@ void IndexColorModel::init$(int32_t bits, int32_t size, $bytes* r, $bytes* g, $b
 }
 
 void IndexColorModel::init$(int32_t bits, int32_t size, $bytes* r, $bytes* g, $bytes* b, int32_t trans) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = bits;
 	$var($ints, var$1, IndexColorModel::opaqueBits);
 	$var($ColorSpace, var$2, $ColorSpace::getInstance($ColorSpace::CS_sRGB));
@@ -211,6 +213,7 @@ void IndexColorModel::init$(int32_t bits, int32_t size, $bytes* r, $bytes* g, $b
 }
 
 void IndexColorModel::init$(int32_t bits, int32_t size, $bytes* r, $bytes* g, $bytes* b, $bytes* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = bits;
 	$var($ints, var$1, IndexColorModel::alphaBits);
 	$var($ColorSpace, var$2, $ColorSpace::getInstance($ColorSpace::CS_sRGB));
@@ -234,6 +237,7 @@ void IndexColorModel::init$(int32_t bits, int32_t size, $bytes* cmap, int32_t st
 }
 
 void IndexColorModel::init$(int32_t bits, int32_t size, $bytes* cmap, int32_t start, bool hasalpha, int32_t trans) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = bits;
 	$var($ints, var$1, IndexColorModel::opaqueBits);
 	$var($ColorSpace, var$2, $ColorSpace::getInstance($ColorSpace::CS_sRGB));
@@ -284,6 +288,7 @@ void IndexColorModel::init$(int32_t bits, int32_t size, $bytes* cmap, int32_t st
 }
 
 void IndexColorModel::init$(int32_t bits, int32_t size, $ints* cmap, int32_t start, bool hasalpha, int32_t trans, int32_t transferType) {
+	$useLocalCurrentObjectStackCache();
 	$ColorModel::init$(bits, IndexColorModel::opaqueBits, $($ColorSpace::getInstance($ColorSpace::CS_sRGB)), false, false, $Transparency::OPAQUE, transferType);
 	this->transparent_index = -1;
 	$set(this, colorData, nullptr);
@@ -303,6 +308,7 @@ void IndexColorModel::init$(int32_t bits, int32_t size, $ints* cmap, int32_t sta
 }
 
 void IndexColorModel::init$(int32_t bits, int32_t size, $ints* cmap, int32_t start, int32_t transferType, $BigInteger* validBits) {
+	$useLocalCurrentObjectStackCache();
 	$ColorModel::init$(bits, IndexColorModel::alphaBits, $($ColorSpace::getInstance($ColorSpace::CS_sRGB)), true, false, $Transparency::TRANSLUCENT, transferType);
 	this->transparent_index = -1;
 	$set(this, colorData, nullptr);
@@ -329,6 +335,7 @@ void IndexColorModel::init$(int32_t bits, int32_t size, $ints* cmap, int32_t sta
 }
 
 void IndexColorModel::setRGBs(int32_t size, $bytes* r, $bytes* g, $bytes* b, $bytes* a) {
+	$useLocalCurrentObjectStackCache();
 	if (size < 1) {
 		$throwNew($IllegalArgumentException, $$str({"Map size ("_s, $$str(size), ") must be >= 1"_s}));
 	}
@@ -528,6 +535,7 @@ int32_t IndexColorModel::getRGB(int32_t pixel) {
 
 $Object* IndexColorModel::getDataElements(int32_t rgb, Object$* pixel) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		int32_t red = (int32_t)((rgb >> 16) & (uint32_t)255);
 		int32_t green = (int32_t)((rgb >> 8) & (uint32_t)255);
 		int32_t blue = (int32_t)(rgb & (uint32_t)255);
@@ -637,6 +645,7 @@ $Object* IndexColorModel::getDataElements(int32_t rgb, Object$* pixel) {
 }
 
 $Object* IndexColorModel::installpixel(Object$* pixel$renamed, int32_t pix) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, pixel, pixel$renamed);
 	{
 		$var($ints, intObj, nullptr)
@@ -697,6 +706,7 @@ $ints* IndexColorModel::getComponents(int32_t pixel, $ints* components$renamed, 
 }
 
 $ints* IndexColorModel::getComponents(Object$* pixel, $ints* components, int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	int32_t intpixel = 0;
 	{
 		$var($bytes, bdata, nullptr)
@@ -731,6 +741,7 @@ $ints* IndexColorModel::getComponents(Object$* pixel, $ints* components, int32_t
 }
 
 int32_t IndexColorModel::getDataElement($ints* components, int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	int32_t rgb = (($nc(components)->get(offset + 0) << 16) | (components->get(offset + 1) << 8)) | (components->get(offset + 2));
 	if (this->supportsAlpha) {
 		rgb |= (components->get(offset + 3) << 24);
@@ -825,6 +836,7 @@ bool IndexColorModel::isCompatibleSampleModel($SampleModel* sm) {
 }
 
 $BufferedImage* IndexColorModel::convertToIntDiscrete($Raster* raster, bool forceARGB) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, cm, nullptr);
 	if (!isCompatibleRaster(raster)) {
 		$throwNew($IllegalArgumentException, "This raster is not compatiblewith this IndexColorModel."_s);
@@ -878,10 +890,12 @@ void IndexColorModel::finalize() {
 }
 
 $String* IndexColorModel::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $new($String, $$str({"IndexColorModel: #pixelBits = "_s, $$str(this->pixel_bits), " numComponents = "_s, $$str(this->numComponents), " color space = "_s, this->colorSpace, " transparency = "_s, $$str(this->transparency), " transIndex   = "_s, $$str(this->transparent_index), " has alpha = "_s, $$str(this->supportsAlpha), " isAlphaPre = "_s, $$str(this->isAlphaPremultiplied$)}));
 }
 
 bool IndexColorModel::equals(Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf(IndexColorModel, obj))) {
 		return false;
 	}

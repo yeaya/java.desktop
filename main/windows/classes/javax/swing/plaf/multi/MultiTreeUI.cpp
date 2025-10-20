@@ -97,6 +97,7 @@ $ComponentUIArray* MultiTreeUI::getUIs() {
 }
 
 $Rectangle* MultiTreeUI::getPathBounds($JTree* a, $TreePath* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, returnValue, $nc((($cast($TreeUI, $($nc(this->uis)->elementAt(0))))))->getPathBounds(a, b));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TreeUI, $($nc(this->uis)->elementAt(i))))))->getPathBounds(a, b);
@@ -105,6 +106,7 @@ $Rectangle* MultiTreeUI::getPathBounds($JTree* a, $TreePath* b) {
 }
 
 $TreePath* MultiTreeUI::getPathForRow($JTree* a, int32_t b) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePath, returnValue, $nc((($cast($TreeUI, $($nc(this->uis)->elementAt(0))))))->getPathForRow(a, b));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TreeUI, $($nc(this->uis)->elementAt(i))))))->getPathForRow(a, b);
@@ -113,6 +115,7 @@ $TreePath* MultiTreeUI::getPathForRow($JTree* a, int32_t b) {
 }
 
 int32_t MultiTreeUI::getRowForPath($JTree* a, $TreePath* b) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc((($cast($TreeUI, $($nc(this->uis)->elementAt(0))))))->getRowForPath(a, b);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TreeUI, $($nc(this->uis)->elementAt(i))))))->getRowForPath(a, b);
@@ -121,6 +124,7 @@ int32_t MultiTreeUI::getRowForPath($JTree* a, $TreePath* b) {
 }
 
 int32_t MultiTreeUI::getRowCount($JTree* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc((($cast($TreeUI, $($nc(this->uis)->elementAt(0))))))->getRowCount(a);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TreeUI, $($nc(this->uis)->elementAt(i))))))->getRowCount(a);
@@ -129,6 +133,7 @@ int32_t MultiTreeUI::getRowCount($JTree* a) {
 }
 
 $TreePath* MultiTreeUI::getClosestPathForLocation($JTree* a, int32_t b, int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePath, returnValue, $nc((($cast($TreeUI, $($nc(this->uis)->elementAt(0))))))->getClosestPathForLocation(a, b, c));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TreeUI, $($nc(this->uis)->elementAt(i))))))->getClosestPathForLocation(a, b, c);
@@ -137,6 +142,7 @@ $TreePath* MultiTreeUI::getClosestPathForLocation($JTree* a, int32_t b, int32_t 
 }
 
 bool MultiTreeUI::isEditing($JTree* a) {
+	$useLocalCurrentObjectStackCache();
 	bool returnValue = $nc((($cast($TreeUI, $($nc(this->uis)->elementAt(0))))))->isEditing(a);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TreeUI, $($nc(this->uis)->elementAt(i))))))->isEditing(a);
@@ -145,6 +151,7 @@ bool MultiTreeUI::isEditing($JTree* a) {
 }
 
 bool MultiTreeUI::stopEditing($JTree* a) {
+	$useLocalCurrentObjectStackCache();
 	bool returnValue = $nc((($cast($TreeUI, $($nc(this->uis)->elementAt(0))))))->stopEditing(a);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TreeUI, $($nc(this->uis)->elementAt(i))))))->stopEditing(a);
@@ -153,18 +160,21 @@ bool MultiTreeUI::stopEditing($JTree* a) {
 }
 
 void MultiTreeUI::cancelEditing($JTree* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TreeUI, $($nc(this->uis)->elementAt(i))))))->cancelEditing(a);
 	}
 }
 
 void MultiTreeUI::startEditingAtPath($JTree* a, $TreePath* b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TreeUI, $($nc(this->uis)->elementAt(i))))))->startEditingAtPath(a, b);
 	}
 }
 
 $TreePath* MultiTreeUI::getEditingPath($JTree* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePath, returnValue, $nc((($cast($TreeUI, $($nc(this->uis)->elementAt(0))))))->getEditingPath(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TreeUI, $($nc(this->uis)->elementAt(i))))))->getEditingPath(a);
@@ -173,6 +183,7 @@ $TreePath* MultiTreeUI::getEditingPath($JTree* a) {
 }
 
 bool MultiTreeUI::contains($JComponent* a, int32_t b, int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	bool returnValue = $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->contains(a, b, c);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->contains(a, b, c);
@@ -181,6 +192,7 @@ bool MultiTreeUI::contains($JComponent* a, int32_t b, int32_t c) {
 }
 
 void MultiTreeUI::update($Graphics* a, $JComponent* b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->update(a, b);
 	}
@@ -193,24 +205,28 @@ $ComponentUI* MultiTreeUI::createUI($JComponent* a) {
 }
 
 void MultiTreeUI::installUI($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->installUI(a);
 	}
 }
 
 void MultiTreeUI::uninstallUI($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->uninstallUI(a);
 	}
 }
 
 void MultiTreeUI::paint($Graphics* a, $JComponent* b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->paint(a, b);
 	}
 }
 
 $Dimension* MultiTreeUI::getPreferredSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getPreferredSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getPreferredSize(a);
@@ -219,6 +235,7 @@ $Dimension* MultiTreeUI::getPreferredSize($JComponent* a) {
 }
 
 $Dimension* MultiTreeUI::getMinimumSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getMinimumSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getMinimumSize(a);
@@ -227,6 +244,7 @@ $Dimension* MultiTreeUI::getMinimumSize($JComponent* a) {
 }
 
 $Dimension* MultiTreeUI::getMaximumSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getMaximumSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getMaximumSize(a);
@@ -235,6 +253,7 @@ $Dimension* MultiTreeUI::getMaximumSize($JComponent* a) {
 }
 
 int32_t MultiTreeUI::getAccessibleChildrenCount($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getAccessibleChildrenCount(a);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getAccessibleChildrenCount(a);
@@ -243,6 +262,7 @@ int32_t MultiTreeUI::getAccessibleChildrenCount($JComponent* a) {
 }
 
 $Accessible* MultiTreeUI::getAccessibleChild($JComponent* a, int32_t b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Accessible, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getAccessibleChild(a, b));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getAccessibleChild(a, b);

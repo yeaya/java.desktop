@@ -102,6 +102,7 @@ void IconCoord$Test::init$() {
 }
 
 $JFrame* IconCoord$Test::createTestFrame($String* name, $Component* topComponent, $String* instructions, int32_t instrHeight) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, PASS, "Pass"_s);
 	$var($String, FAIL, "Fail"_s);
 	$var($JFrame, frame, $new($JFrame, name));

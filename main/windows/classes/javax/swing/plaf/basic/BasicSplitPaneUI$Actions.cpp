@@ -126,6 +126,7 @@ void BasicSplitPaneUI$Actions::init$($String* key) {
 }
 
 void BasicSplitPaneUI$Actions::actionPerformed($ActionEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	$var($JSplitPane, splitPane, $cast($JSplitPane, $nc(ev)->getSource()));
 	$load($BasicSplitPaneUI);
 	$var($BasicSplitPaneUI, ui, $cast($BasicSplitPaneUI, $BasicLookAndFeel::getUIOfType($($nc(splitPane)->getUI()), $BasicSplitPaneUI::class$)));
@@ -177,6 +178,7 @@ void BasicSplitPaneUI$Actions::actionPerformed($ActionEvent* ev) {
 }
 
 void BasicSplitPaneUI$Actions::moveFocus($JSplitPane* splitPane, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, rootAncestor, $nc(splitPane)->getFocusCycleRootAncestor());
 	$var($FocusTraversalPolicy, policy, $nc(rootAncestor)->getFocusTraversalPolicy());
 	$var($Component, focusOn, (direction > 0) ? $nc(policy)->getComponentAfter(rootAncestor, splitPane) : policy->getComponentBefore(rootAncestor, splitPane));
@@ -197,6 +199,7 @@ void BasicSplitPaneUI$Actions::moveFocus($JSplitPane* splitPane, int32_t directi
 }
 
 void BasicSplitPaneUI$Actions::toggleFocus($JSplitPane* splitPane) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, left, $nc(splitPane)->getLeftComponent());
 	$var($Component, right, splitPane->getRightComponent());
 	$var($KeyboardFocusManager, manager, $KeyboardFocusManager::getCurrentKeyboardFocusManager());
@@ -221,6 +224,7 @@ void BasicSplitPaneUI$Actions::toggleFocus($JSplitPane* splitPane) {
 }
 
 $Component* BasicSplitPaneUI$Actions::getNextSide($JSplitPane* splitPane, $Component* focus) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, left, $nc(splitPane)->getLeftComponent());
 	$var($Component, right, splitPane->getRightComponent());
 	$var($Component, next, nullptr);
@@ -243,6 +247,7 @@ $Component* BasicSplitPaneUI$Actions::getNextSide($JSplitPane* splitPane, $Compo
 }
 
 $Component* BasicSplitPaneUI$Actions::getFirstAvailableComponent($Component* c$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, c$renamed);
 	if (c != nullptr && $instanceOf($JSplitPane, c)) {
 		$var($JSplitPane, sp, $cast($JSplitPane, c));

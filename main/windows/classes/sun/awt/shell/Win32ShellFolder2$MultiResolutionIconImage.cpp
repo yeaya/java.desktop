@@ -120,6 +120,7 @@ $Image* Win32ShellFolder2$MultiResolutionIconImage::getBaseImage() {
 }
 
 $Image* Win32ShellFolder2$MultiResolutionIconImage::getResolutionVariant(double width, double height) {
+	$useLocalCurrentObjectStackCache();
 	int32_t dist = 0;
 	$var($Image, retVal, nullptr);
 	int32_t w = $cast(int32_t, width);
@@ -149,6 +150,7 @@ $Image* Win32ShellFolder2$MultiResolutionIconImage::getResolutionVariant(double 
 }
 
 $List* Win32ShellFolder2$MultiResolutionIconImage::getResolutionVariants() {
+	$useLocalCurrentObjectStackCache();
 	return $Collections::unmodifiableList($$new($ArrayList, $($nc(this->resolutionVariants)->values())));
 }
 

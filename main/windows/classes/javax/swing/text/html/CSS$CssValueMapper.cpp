@@ -62,6 +62,7 @@ void CSS$CssValueMapper::init$() {
 }
 
 $Object* CSS$CssValueMapper::parseCssValue($String* value) {
+	$useLocalCurrentObjectStackCache();
 	$init($CSS);
 	$var($Object, retValue, $nc($CSS::cssValueToInternalValueMap)->get(value));
 	if (retValue == nullptr) {
@@ -71,6 +72,7 @@ $Object* CSS$CssValueMapper::parseCssValue($String* value) {
 }
 
 $Object* CSS$CssValueMapper::parseHtmlValue($String* value) {
+	$useLocalCurrentObjectStackCache();
 	$init($CSS);
 	$var($Object, retValue, $nc($CSS::htmlValueToCssValueMap)->get(value));
 	if (retValue == nullptr) {

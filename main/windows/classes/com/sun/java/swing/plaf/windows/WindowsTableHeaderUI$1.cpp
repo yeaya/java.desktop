@@ -81,6 +81,7 @@ $ints* WindowsTableHeaderUI$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSche
 $ints* WindowsTableHeaderUI$1::$SwitchMap$javax$swing$SortOrder = nullptr;
 
 void clinit$WindowsTableHeaderUI$1($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(WindowsTableHeaderUI$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State, $new($ints, $($TMSchema$State::values())->length));
 	{
 		try {

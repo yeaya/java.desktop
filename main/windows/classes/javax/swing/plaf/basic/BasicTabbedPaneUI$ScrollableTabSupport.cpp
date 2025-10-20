@@ -171,6 +171,7 @@ void BasicTabbedPaneUI$ScrollableTabSupport::createButtons() {
 }
 
 void BasicTabbedPaneUI$ScrollableTabSupport::scrollForward(int32_t tabPlacement) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, viewSize, $nc(this->viewport)->getViewSize());
 	$var($Rectangle, viewRect, $nc(this->viewport)->getViewRect());
 	if (tabPlacement == 1 || tabPlacement == 3) {
@@ -191,6 +192,7 @@ void BasicTabbedPaneUI$ScrollableTabSupport::scrollBackward(int32_t tabPlacement
 }
 
 void BasicTabbedPaneUI$ScrollableTabSupport::setLeadingTabIndex(int32_t tabPlacement, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	this->leadingTabIndex = index;
 	$var($Dimension, viewSize, $nc(this->viewport)->getViewSize());
 	$var($Rectangle, viewRect, $nc(this->viewport)->getViewRect());
@@ -225,6 +227,7 @@ void BasicTabbedPaneUI$ScrollableTabSupport::stateChanged($ChangeEvent* e) {
 }
 
 void BasicTabbedPaneUI$ScrollableTabSupport::updateView() {
+	$useLocalCurrentObjectStackCache();
 	int32_t tabPlacement = $nc(this->this$0->tabPane)->getTabPlacement();
 	int32_t tabCount = $nc(this->this$0->tabPane)->getTabCount();
 	this->this$0->assureRectsCreated(tabCount);
@@ -289,6 +292,7 @@ void BasicTabbedPaneUI$ScrollableTabSupport::updateView() {
 }
 
 void BasicTabbedPaneUI$ScrollableTabSupport::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, map, $nc(this->this$0->tabPane)->getActionMap());
 	if (map != nullptr) {
 		$var($String, actionKey, nullptr);
@@ -307,6 +311,7 @@ void BasicTabbedPaneUI$ScrollableTabSupport::actionPerformed($ActionEvent* e) {
 }
 
 $String* BasicTabbedPaneUI$ScrollableTabSupport::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$4, $$str({"viewport.viewSize="_s, $($nc(this->viewport)->getViewSize()), "\nviewport.viewRectangle="_s}));
 	$var($String, var$3, $$concat(var$4, $($nc(this->viewport)->getViewRect())));
 	$var($String, var$2, $$concat(var$3, "\nleadingTabIndex="));

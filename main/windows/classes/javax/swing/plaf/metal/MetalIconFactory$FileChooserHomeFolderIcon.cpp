@@ -96,6 +96,7 @@ void MetalIconFactory$FileChooserHomeFolderIcon::init$() {
 }
 
 void MetalIconFactory$FileChooserHomeFolderIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->translate(x, y);
 	g->setColor($($MetalLookAndFeel::getPrimaryControlInfo()));
 	g->drawLine(8, 1, 1, 8);

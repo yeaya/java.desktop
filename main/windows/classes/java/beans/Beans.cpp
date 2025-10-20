@@ -119,6 +119,7 @@ $Object* Beans::instantiate($ClassLoader* cls, $String* beanName, $BeanContext* 
 
 $Object* Beans::instantiate($ClassLoader* cls$renamed, $String* beanName, $BeanContext* beanContext, $AppletInitializer* initializer) {
 	$load(Beans);
+	$useLocalCurrentObjectStackCache();
 	$var($ClassLoader, cls, cls$renamed);
 	$beforeCallerSensitive();
 	$var($InputStream, ins, nullptr);
@@ -259,6 +260,7 @@ bool Beans::isGuiAvailable() {
 }
 
 void Beans::setDesignTime(bool isDesignTime) {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm != nullptr) {
 		sm->checkPropertiesAccess();
@@ -267,6 +269,7 @@ void Beans::setDesignTime(bool isDesignTime) {
 }
 
 void Beans::setGuiAvailable(bool isGuiAvailable) {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm != nullptr) {
 		sm->checkPropertiesAccess();

@@ -203,6 +203,7 @@ void SoftMixingDataLine::calcVolume() {
 }
 
 void SoftMixingDataLine::sendEvent($LineEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->listeners)->size() == 0) {
 		return;
 	}

@@ -81,6 +81,7 @@ void bug8001470$1::init$() {
 }
 
 void bug8001470$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug8001470);
 	$assignStatic($bug8001470::frame, $new($JFrame, "JTextField Test"_s));
 	$nc($bug8001470::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);

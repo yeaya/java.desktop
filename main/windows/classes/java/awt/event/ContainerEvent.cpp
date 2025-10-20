@@ -77,6 +77,7 @@ $Component* ContainerEvent::getChild() {
 }
 
 $String* ContainerEvent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, typeStr, nullptr);
 	switch (this->id) {
 	case ContainerEvent::COMPONENT_ADDED:

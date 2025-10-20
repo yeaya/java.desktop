@@ -392,6 +392,7 @@ void BMPImageReader::setInput(Object$* input, bool seekForwardOnly, bool ignoreM
 }
 
 int32_t BMPImageReader::getNumImages(bool allowSearch) {
+	$useLocalCurrentObjectStackCache();
 	if (this->iis == nullptr) {
 		$throwNew($IllegalStateException, $($I18N::getString("GetNumImages0"_s)));
 	}
@@ -402,6 +403,7 @@ int32_t BMPImageReader::getNumImages(bool allowSearch) {
 }
 
 int32_t BMPImageReader::getWidth(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	checkIndex(imageIndex);
 	try {
 		readHeader();
@@ -413,6 +415,7 @@ int32_t BMPImageReader::getWidth(int32_t imageIndex) {
 }
 
 int32_t BMPImageReader::getHeight(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	checkIndex(imageIndex);
 	try {
 		readHeader();
@@ -430,6 +433,7 @@ void BMPImageReader::checkIndex(int32_t imageIndex) {
 }
 
 void BMPImageReader::readHeader() {
+	$useLocalCurrentObjectStackCache();
 	if (this->gotHeader) {
 		return;
 	}
@@ -862,6 +866,7 @@ void BMPImageReader::readHeader() {
 }
 
 $Iterator* BMPImageReader::getImageTypes(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	checkIndex(imageIndex);
 	try {
 		readHeader();
@@ -879,6 +884,7 @@ $ImageReadParam* BMPImageReader::getDefaultReadParam() {
 }
 
 $IIOMetadata* BMPImageReader::getImageMetadata(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	checkIndex(imageIndex);
 	if (this->metadata == nullptr) {
 		try {
@@ -896,6 +902,7 @@ $IIOMetadata* BMPImageReader::getStreamMetadata() {
 }
 
 bool BMPImageReader::isRandomAccessEasy(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	checkIndex(imageIndex);
 	try {
 		readHeader();
@@ -907,6 +914,7 @@ bool BMPImageReader::isRandomAccessEasy(int32_t imageIndex) {
 }
 
 $BufferedImage* BMPImageReader::read(int32_t imageIndex, $ImageReadParam* param$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageReadParam, param, param$renamed);
 	if (this->iis == nullptr) {
 		$throwNew($IllegalStateException, $($I18N::getString("BMPImageReader5"_s)));
@@ -1170,6 +1178,7 @@ void BMPImageReader::reset() {
 }
 
 void BMPImageReader::read1Bit($bytes* bdata) {
+	$useLocalCurrentObjectStackCache();
 	int32_t bytesPerScanline = (this->width + 7) / 8;
 	int32_t padding = bytesPerScanline % 4;
 	if (padding != 0) {
@@ -1239,6 +1248,7 @@ void BMPImageReader::read1Bit($bytes* bdata) {
 }
 
 void BMPImageReader::read4Bit($bytes* bdata) {
+	$useLocalCurrentObjectStackCache();
 	int32_t bytesPerScanline = (this->width + 1) / 2;
 	int32_t padding = bytesPerScanline % 4;
 	if (padding != 0) {
@@ -1308,6 +1318,7 @@ void BMPImageReader::read4Bit($bytes* bdata) {
 }
 
 void BMPImageReader::read8Bit($bytes* bdata) {
+	$useLocalCurrentObjectStackCache();
 	int32_t padding = this->width % 4;
 	if (padding != 0) {
 		padding = 4 - padding;
@@ -1365,6 +1376,7 @@ void BMPImageReader::read8Bit($bytes* bdata) {
 }
 
 void BMPImageReader::read24Bit($bytes* bdata) {
+	$useLocalCurrentObjectStackCache();
 	int32_t padding = this->width * 3 % 4;
 	if (padding != 0) {
 		padding = 4 - padding;
@@ -1426,6 +1438,7 @@ void BMPImageReader::read24Bit($bytes* bdata) {
 }
 
 void BMPImageReader::read16Bit($shorts* sdata) {
+	$useLocalCurrentObjectStackCache();
 	int32_t padding = this->width * 2 % 4;
 	if (padding != 0) {
 		padding = 4 - padding;
@@ -1483,6 +1496,7 @@ void BMPImageReader::read16Bit($shorts* sdata) {
 }
 
 void BMPImageReader::read32Bit($ints* idata) {
+	$useLocalCurrentObjectStackCache();
 	if (this->noTransform) {
 		int32_t j = this->isBottomUp ? (this->height - 1) * this->width : 0;
 		for (int32_t i = 0; i < this->height; ++i) {
@@ -1550,6 +1564,7 @@ void BMPImageReader::readRLE8($bytes* bdata) {
 }
 
 bool BMPImageReader::copyRLE8ScanlineToDst(int32_t lineNo, $bytes* val, $bytes* bdata) {
+	$useLocalCurrentObjectStackCache();
 	bool isSuccess = false;
 	if (lineNo >= $nc(this->sourceRegion)->y && lineNo < $nc(this->sourceRegion)->y + $nc(this->sourceRegion)->height) {
 		if (this->noTransform) {
@@ -1682,6 +1697,7 @@ void BMPImageReader::readRLE4($bytes* bdata) {
 }
 
 bool BMPImageReader::copyRLE4ScanlineToDst(int32_t lineNo, $bytes* val, $bytes* bdata) {
+	$useLocalCurrentObjectStackCache();
 	bool isSuccess = false;
 	if (lineNo >= $nc(this->sourceRegion)->y && lineNo < $nc(this->sourceRegion)->y + $nc(this->sourceRegion)->height) {
 		if (this->noTransform) {
@@ -1724,6 +1740,7 @@ bool BMPImageReader::copyRLE4ScanlineToDst(int32_t lineNo, $bytes* val, $bytes* 
 }
 
 void BMPImageReader::decodeRLE4(int32_t imSize, int32_t padding, $bytes* values, $bytes* bdata) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, val, $new($bytes, this->width));
 	int32_t count = 0;
 	int32_t l = 0;
@@ -1820,6 +1837,7 @@ void BMPImageReader::decodeRLE4(int32_t imSize, int32_t padding, $bytes* values,
 }
 
 $BufferedImage* BMPImageReader::readEmbedded(int32_t type, $BufferedImage* bi$renamed, $ImageReadParam* bmpParam) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, bi, bi$renamed);
 	$var($String, format, nullptr);
 	switch (type) {

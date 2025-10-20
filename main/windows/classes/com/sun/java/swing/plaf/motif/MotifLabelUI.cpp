@@ -64,6 +64,7 @@ void MotifLabelUI::init$() {
 
 $ComponentUI* MotifLabelUI::createUI($JComponent* c) {
 	$init(MotifLabelUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(MotifLabelUI, motifLabelUI, $cast(MotifLabelUI, $nc(appContext)->get(MotifLabelUI::MOTIF_LABEL_UI_KEY)));
 	if (motifLabelUI == nullptr) {

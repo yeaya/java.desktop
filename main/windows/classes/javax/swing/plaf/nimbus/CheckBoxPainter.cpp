@@ -338,6 +338,7 @@ $AbstractRegionPainter$PaintContext* CheckBoxPainter::getPaintContext() {
 }
 
 void CheckBoxPainter::painticonDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint($(decodeGradient1(this->roundRect)));
 	g->fill(this->roundRect);
@@ -347,6 +348,7 @@ void CheckBoxPainter::painticonDisabled($Graphics2D* g) {
 }
 
 void CheckBoxPainter::painticonEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect3());
 	$nc(g)->setPaint(this->color6);
 	g->fill(this->roundRect);
@@ -359,6 +361,7 @@ void CheckBoxPainter::painticonEnabled($Graphics2D* g) {
 }
 
 void CheckBoxPainter::painticonFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->roundRect);
@@ -371,6 +374,7 @@ void CheckBoxPainter::painticonFocused($Graphics2D* g) {
 }
 
 void CheckBoxPainter::painticonMouseOver($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect3());
 	$nc(g)->setPaint(this->color6);
 	g->fill(this->roundRect);
@@ -383,6 +387,7 @@ void CheckBoxPainter::painticonMouseOver($Graphics2D* g) {
 }
 
 void CheckBoxPainter::painticonMouseOverAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->roundRect);
@@ -395,6 +400,7 @@ void CheckBoxPainter::painticonMouseOverAndFocused($Graphics2D* g) {
 }
 
 void CheckBoxPainter::painticonPressed($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect3());
 	$nc(g)->setPaint(this->color6);
 	g->fill(this->roundRect);
@@ -407,6 +413,7 @@ void CheckBoxPainter::painticonPressed($Graphics2D* g) {
 }
 
 void CheckBoxPainter::painticonPressedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->roundRect);
@@ -419,6 +426,7 @@ void CheckBoxPainter::painticonPressedAndFocused($Graphics2D* g) {
 }
 
 void CheckBoxPainter::painticonSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect3());
 	$nc(g)->setPaint(this->color6);
 	g->fill(this->roundRect);
@@ -434,6 +442,7 @@ void CheckBoxPainter::painticonSelected($Graphics2D* g) {
 }
 
 void CheckBoxPainter::painticonSelectedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->roundRect);
@@ -449,6 +458,7 @@ void CheckBoxPainter::painticonSelectedAndFocused($Graphics2D* g) {
 }
 
 void CheckBoxPainter::painticonPressedAndSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect3());
 	$nc(g)->setPaint(this->color29);
 	g->fill(this->roundRect);
@@ -464,6 +474,7 @@ void CheckBoxPainter::painticonPressedAndSelected($Graphics2D* g) {
 }
 
 void CheckBoxPainter::painticonPressedAndSelectedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->roundRect);
@@ -479,6 +490,7 @@ void CheckBoxPainter::painticonPressedAndSelectedAndFocused($Graphics2D* g) {
 }
 
 void CheckBoxPainter::painticonMouseOverAndSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect3());
 	$nc(g)->setPaint(this->color6);
 	g->fill(this->roundRect);
@@ -494,6 +506,7 @@ void CheckBoxPainter::painticonMouseOverAndSelected($Graphics2D* g) {
 }
 
 void CheckBoxPainter::painticonMouseOverAndSelectedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->roundRect);
@@ -509,6 +522,7 @@ void CheckBoxPainter::painticonMouseOverAndSelectedAndFocused($Graphics2D* g) {
 }
 
 void CheckBoxPainter::painticonDisabledAndSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint($(decodeGradient15(this->roundRect)));
 	g->fill(this->roundRect);
@@ -583,6 +597,7 @@ $Path2D* CheckBoxPainter::decodePath1() {
 }
 
 $Paint* CheckBoxPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -600,6 +615,7 @@ $Paint* CheckBoxPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* CheckBoxPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -621,6 +637,7 @@ $Paint* CheckBoxPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* CheckBoxPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -638,6 +655,7 @@ $Paint* CheckBoxPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* CheckBoxPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -659,6 +677,7 @@ $Paint* CheckBoxPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* CheckBoxPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -676,6 +695,7 @@ $Paint* CheckBoxPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* CheckBoxPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -697,6 +717,7 @@ $Paint* CheckBoxPainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* CheckBoxPainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -714,6 +735,7 @@ $Paint* CheckBoxPainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* CheckBoxPainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -735,6 +757,7 @@ $Paint* CheckBoxPainter::decodeGradient8($Shape* s) {
 }
 
 $Paint* CheckBoxPainter::decodeGradient9($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -752,6 +775,7 @@ $Paint* CheckBoxPainter::decodeGradient9($Shape* s) {
 }
 
 $Paint* CheckBoxPainter::decodeGradient10($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -773,6 +797,7 @@ $Paint* CheckBoxPainter::decodeGradient10($Shape* s) {
 }
 
 $Paint* CheckBoxPainter::decodeGradient11($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -790,6 +815,7 @@ $Paint* CheckBoxPainter::decodeGradient11($Shape* s) {
 }
 
 $Paint* CheckBoxPainter::decodeGradient12($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -815,6 +841,7 @@ $Paint* CheckBoxPainter::decodeGradient12($Shape* s) {
 }
 
 $Paint* CheckBoxPainter::decodeGradient13($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -832,6 +859,7 @@ $Paint* CheckBoxPainter::decodeGradient13($Shape* s) {
 }
 
 $Paint* CheckBoxPainter::decodeGradient14($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -853,6 +881,7 @@ $Paint* CheckBoxPainter::decodeGradient14($Shape* s) {
 }
 
 $Paint* CheckBoxPainter::decodeGradient15($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -870,6 +899,7 @@ $Paint* CheckBoxPainter::decodeGradient15($Shape* s) {
 }
 
 $Paint* CheckBoxPainter::decodeGradient16($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

@@ -206,6 +206,7 @@ void WindowsComboBoxSizeTest::init$() {
 }
 
 void WindowsComboBoxSizeTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel($($UIManager::getSystemLookAndFeelClassName()));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(WindowsComboBoxSizeTest$$Lambda$lambda$main$0)));
 	$var($Robot, robot, $new($Robot));
@@ -231,6 +232,7 @@ void WindowsComboBoxSizeTest::test() {
 }
 
 void WindowsComboBoxSizeTest::lambda$test$1() {
+	$useLocalCurrentObjectStackCache();
 	$init(WindowsComboBoxSizeTest);
 	int32_t expected = $nc($($nc(WindowsComboBoxSizeTest::textField)->getSize()))->height;
 	if ($nc($($nc(WindowsComboBoxSizeTest::comboBox)->getSize()))->height != expected) {
@@ -242,6 +244,7 @@ void WindowsComboBoxSizeTest::lambda$test$1() {
 }
 
 void WindowsComboBoxSizeTest::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$init(WindowsComboBoxSizeTest);
 	$assignStatic(WindowsComboBoxSizeTest::frame, $new($JFrame));
 	$nc($($nc(WindowsComboBoxSizeTest::frame)->getContentPane()))->setLayout($$new($FlowLayout));

@@ -56,6 +56,7 @@ $Object* allocate$SoftJitterCorrector($Class* clazz) {
 }
 
 void SoftJitterCorrector::init$($AudioInputStream* stream, int32_t buffersize, int32_t smallbuffersize) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputStream, var$0, static_cast<$InputStream*>($new($SoftJitterCorrector$JitterStream, stream, buffersize, smallbuffersize)));
 	$var($AudioFormat, var$1, $nc(stream)->getFormat());
 	$AudioInputStream::init$(var$0, var$1, stream->getFrameLength());

@@ -66,6 +66,7 @@ $Object* allocate$TIFFImageReaderSpi($Class* clazz) {
 }
 
 void TIFFImageReaderSpi::init$() {
+	$useLocalCurrentObjectStackCache();
 	$load($ImageInputStream);
 	$init($TIFFStreamMetadata);
 	$init($TIFFImageMetadata);
@@ -86,6 +87,7 @@ $String* TIFFImageReaderSpi::getDescription($Locale* locale) {
 }
 
 bool TIFFImageReaderSpi::canDecodeInput(Object$* input) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($ImageInputStream, input))) {
 		return false;
 	}

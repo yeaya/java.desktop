@@ -101,6 +101,7 @@ void MidiUtils::init$() {
 }
 
 $RuntimeException* MidiUtils::unsupportedDevice($MidiDevice$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	return $new($IllegalArgumentException, $($String::format("MidiDevice %s not supported by this provider"_s, $$new($ObjectArray, {$of(info)}))));
 }
 
@@ -112,6 +113,7 @@ void MidiUtils::checkSysexStatus($bytes* data, int32_t length) {
 }
 
 void MidiUtils::checkSysexStatus(int32_t status) {
+	$useLocalCurrentObjectStackCache();
 	if (status != 240 && status != 247) {
 		$throwNew($InvalidMidiDataException, $($String::format("Invalid status byte for sysex message: 0x%X"_s, $$new($ObjectArray, {$($of($Integer::valueOf(status)))}))));
 	}
@@ -164,6 +166,7 @@ int64_t MidiUtils::microsec2ticks(int64_t us, double tempoMPQ, int32_t resolutio
 }
 
 int64_t MidiUtils::tick2microsecond($Sequence* seq, int64_t tick, $MidiUtils$TempoCache* cache$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($MidiUtils$TempoCache, cache, cache$renamed);
 	$init($Sequence);
 	if ($nc(seq)->getDivisionType() != $Sequence::PPQ) {
@@ -202,6 +205,7 @@ int64_t MidiUtils::tick2microsecond($Sequence* seq, int64_t tick, $MidiUtils$Tem
 }
 
 int64_t MidiUtils::microsecond2tick($Sequence* seq, int64_t micros, $MidiUtils$TempoCache* cache$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($MidiUtils$TempoCache, cache, cache$renamed);
 	$init($Sequence);
 	if ($nc(seq)->getDivisionType() != $Sequence::PPQ) {
@@ -240,6 +244,7 @@ int64_t MidiUtils::microsecond2tick($Sequence* seq, int64_t micros, $MidiUtils$T
 }
 
 int32_t MidiUtils::tick2index($Track* track, int64_t tick) {
+	$useLocalCurrentObjectStackCache();
 	int32_t ret = 0;
 	if (tick > 0) {
 		int32_t low = 0;

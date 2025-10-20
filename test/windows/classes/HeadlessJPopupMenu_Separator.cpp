@@ -114,6 +114,7 @@ void HeadlessJPopupMenu_Separator::init$() {
 }
 
 void HeadlessJPopupMenu_Separator::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JPopupMenu$Separator, s, $new($JPopupMenu$Separator));
 	s->getAccessibleContext();
 	s->isFocusTraversable();

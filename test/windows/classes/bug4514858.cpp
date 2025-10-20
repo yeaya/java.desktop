@@ -118,12 +118,14 @@ void bug4514858::init$() {
 
 void bug4514858::main($StringArray* argv) {
 	$init(bug4514858);
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel($($UIManager::getCrossPlatformLookAndFeelClassName()));
 	$SwingUtilities::invokeAndWait($$new($bug4514858$1));
 	$nc(bug4514858::test)->waitTestResult();
 }
 
 void bug4514858::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, fr, $new($JFrame, "Test"_s));
 	$var($JButton, left2, $new($JButton, "Button 1"_s));
 	$var($JButton, left3, $new($JButton, "Button 2"_s));
@@ -166,6 +168,7 @@ void bug4514858::createAndShowGUI() {
 }
 
 bool bug4514858::isSupportedLAF($String* str) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$Class* c = $Class::forName(str);
@@ -179,6 +182,7 @@ bool bug4514858::isSupportedLAF($String* str) {
 }
 
 void bug4514858::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, s, $nc(e)->getActionCommand());
 	if ($nc(s)->equals("Metal"_s)) {
 		$assign(s, "javax.swing.plaf.metal.MetalLookAndFeel"_s);

@@ -98,6 +98,7 @@ $bytes* ByteArrayCache$Bucket::getArray() {
 }
 
 void ByteArrayCache$Bucket::putArray($bytes* array) {
+	$useLocalCurrentObjectStackCache();
 	$init($MarlinConst);
 	if ($MarlinConst::DO_CHECKS && ($nc(array)->length != this->arraySize)) {
 		$MarlinUtils::logInfo($$str({$($ByteArrayCache::getLogPrefix(this->clean)), "ByteArrayCache: bad length = "_s, $$str(array->length)}));

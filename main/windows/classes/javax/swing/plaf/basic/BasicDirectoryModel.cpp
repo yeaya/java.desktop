@@ -212,6 +212,7 @@ void BasicDirectoryModel::init$($JFileChooser* filechooser) {
 }
 
 void BasicDirectoryModel::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prop, $nc(e)->getPropertyName());
 	$init($JFileChooser);
 	if (prop == $JFileChooser::DIRECTORY_CHANGED_PROPERTY || prop == $JFileChooser::FILE_VIEW_CHANGED_PROPERTY || prop == $JFileChooser::FILE_FILTER_CHANGED_PROPERTY || prop == $JFileChooser::FILE_HIDING_CHANGED_PROPERTY || prop == $JFileChooser::FILE_SELECTION_MODE_CHANGED_PROPERTY) {
@@ -249,6 +250,7 @@ $Vector* BasicDirectoryModel::getDirectories() {
 }
 
 $Vector* BasicDirectoryModel::getFiles() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->fileCache) {
 		if (this->files != nullptr) {
 			return this->files;
@@ -323,6 +325,7 @@ void BasicDirectoryModel::sort($Vector* v) {
 }
 
 bool BasicDirectoryModel::lt($File* a, $File* b) {
+	$useLocalCurrentObjectStackCache();
 	int32_t diff = $($nc($($nc(a)->getName()))->toLowerCase())->compareTo($($nc($($nc(b)->getName()))->toLowerCase()));
 	if (diff != 0) {
 		return diff < 0;

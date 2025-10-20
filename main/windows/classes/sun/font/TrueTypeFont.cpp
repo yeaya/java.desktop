@@ -335,6 +335,7 @@ $FileChannel* TrueTypeFont::open() {
 
 $FileChannel* TrueTypeFont::open(bool usePool) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$beforeCallerSensitive();
 		if ($nc(this->disposerRecord)->channel == nullptr) {
 			if ($FontUtilities::isLogging()) {
@@ -380,6 +381,7 @@ void TrueTypeFont::close() {
 }
 
 int32_t TrueTypeFont::readBlock($ByteBuffer* buffer, int32_t offset, int32_t length) {
+	$useLocalCurrentObjectStackCache();
 	int32_t bread = 0;
 	try {
 		$synchronized(this) {
@@ -454,6 +456,7 @@ int32_t TrueTypeFont::readBlock($ByteBuffer* buffer, int32_t offset, int32_t len
 }
 
 $ByteBuffer* TrueTypeFont::readBlock(int32_t offset, int32_t length) {
+	$useLocalCurrentObjectStackCache();
 	$var($ByteBuffer, buffer, $ByteBuffer::allocate(length));
 	try {
 		$synchronized(this) {
@@ -487,6 +490,7 @@ $ByteBuffer* TrueTypeFont::readBlock(int32_t offset, int32_t length) {
 }
 
 $bytes* TrueTypeFont::readBytes(int32_t offset, int32_t length) {
+	$useLocalCurrentObjectStackCache();
 	$var($ByteBuffer, buffer, readBlock(offset, length));
 	if ($nc(buffer)->hasArray()) {
 		return $cast($bytes, buffer->array());
@@ -502,6 +506,7 @@ void TrueTypeFont::verify(bool usePool) {
 }
 
 void TrueTypeFont::init(int32_t fIndex) {
+	$useLocalCurrentObjectStackCache();
 	int32_t headerOffset = 0;
 	$var($ByteBuffer, buffer, readBlock(0, TrueTypeFont::TTCHEADERSIZE));
 	try {
@@ -586,6 +591,7 @@ void TrueTypeFont::init(int32_t fIndex) {
 
 $String* TrueTypeFont::getCodePage() {
 	$init(TrueTypeFont);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (TrueTypeFont::defaultCodePage != nullptr) {
 		return TrueTypeFont::defaultCodePage;
@@ -623,6 +629,7 @@ $String* TrueTypeFont::getCodePage() {
 }
 
 bool TrueTypeFont::supportsEncoding($String* encoding$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, encoding, encoding$renamed);
 	if (encoding == nullptr) {
 		$assign(encoding, getCodePage());
@@ -665,6 +672,7 @@ bool TrueTypeFont::supportsJA() {
 }
 
 $ByteBuffer* TrueTypeFont::getTableBuffer(int32_t tag) {
+	$useLocalCurrentObjectStackCache();
 	$var($TrueTypeFont$DirectoryEntry, entry, nullptr);
 	for (int32_t i = 0; i < this->numTables; ++i) {
 		if ($nc($nc(this->tableDirectory)->get(i))->tag == tag) {
@@ -706,6 +714,7 @@ $ByteBuffer* TrueTypeFont::getTableBuffer(int32_t tag) {
 }
 
 $bytes* TrueTypeFont::getTableBytes(int32_t tag) {
+	$useLocalCurrentObjectStackCache();
 	$var($ByteBuffer, buffer, getTableBuffer(tag));
 	if (buffer == nullptr) {
 		return nullptr;
@@ -872,6 +881,7 @@ void TrueTypeFont::setUnderlineMetrics($ByteBuffer* postTable, int32_t upem) {
 }
 
 void TrueTypeFont::getStyleMetrics(float pointSize, $floats* metrics, int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	if (this->ulSize == 0.0f && this->ulPos == 0.0f) {
 		$var($ByteBuffer, head_Table, getTableBuffer(TrueTypeFont::headTag));
 		int32_t upem = -1;
@@ -894,6 +904,7 @@ void TrueTypeFont::getStyleMetrics(float pointSize, $floats* metrics, int32_t of
 }
 
 $String* TrueTypeFont::makeString($bytes* bytes$renamed, int32_t len, int16_t platformID, int16_t encoding) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, bytes, bytes$renamed);
 	if (platformID == TrueTypeFont::MAC_PLATFORM_ID) {
 		encoding = (int16_t)-1;
@@ -973,6 +984,7 @@ $String* TrueTypeFont::makeString($bytes* bytes$renamed, int32_t len, int16_t pl
 }
 
 void TrueTypeFont::initNames() {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, name, $new($bytes, 256));
 	$var($ByteBuffer, buffer, getTableBuffer(TrueTypeFont::nameTag));
 	if (buffer != nullptr) {
@@ -1046,6 +1058,7 @@ void TrueTypeFont::initNames() {
 }
 
 $String* TrueTypeFont::lookupName(int16_t findLocaleID, int32_t findNameID) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, foundName, nullptr);
 	$var($bytes, name, $new($bytes, 1024));
 	$var($ByteBuffer, buffer, getTableBuffer(TrueTypeFont::nameTag));
@@ -1286,6 +1299,7 @@ void TrueTypeFont::createLCIDMap() {
 
 int16_t TrueTypeFont::getLCIDFromLocale($Locale* locale) {
 	$init(TrueTypeFont);
+	$useLocalCurrentObjectStackCache();
 	$init($Locale);
 	if ($nc(locale)->equals($Locale::US)) {
 		return TrueTypeFont::US_LCID;
@@ -1332,6 +1346,7 @@ $CharToGlyphMapper* TrueTypeFont::getMapper() {
 }
 
 void TrueTypeFont::initAllNames(int32_t requestedID, $HashSet* names) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, name, $new($bytes, 256));
 	$var($ByteBuffer, buffer, getTableBuffer(TrueTypeFont::nameTag));
 	if (buffer != nullptr) {
@@ -1360,6 +1375,7 @@ void TrueTypeFont::initAllNames(int32_t requestedID, $HashSet* names) {
 }
 
 $StringArray* TrueTypeFont::getAllFamilyNames() {
+	$useLocalCurrentObjectStackCache();
 	$var($HashSet, aSet, $new($HashSet));
 	try {
 		initAllNames(TrueTypeFont::FAMILY_NAME_ID, aSet);
@@ -1370,6 +1386,7 @@ $StringArray* TrueTypeFont::getAllFamilyNames() {
 }
 
 $StringArray* TrueTypeFont::getAllFullNames() {
+	$useLocalCurrentObjectStackCache();
 	$var($HashSet, aSet, $new($HashSet));
 	try {
 		initAllNames(TrueTypeFont::FULL_NAME_ID, aSet);
@@ -1380,6 +1397,7 @@ $StringArray* TrueTypeFont::getAllFullNames() {
 }
 
 $Point2D$Float* TrueTypeFont::getGlyphPoint(int64_t pScalerContext, int32_t glyphCode, int32_t ptNumber) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getGlyphPoint(pScalerContext, glyphCode, ptNumber);
 	} catch ($FontScalerException&) {
@@ -1390,6 +1408,7 @@ $Point2D$Float* TrueTypeFont::getGlyphPoint(int64_t pScalerContext, int32_t glyp
 }
 
 $chars* TrueTypeFont::getGaspTable() {
+	$useLocalCurrentObjectStackCache();
 	if (this->gaspTable != nullptr) {
 		return this->gaspTable;
 	}
@@ -1433,6 +1452,7 @@ bool TrueTypeFont::hasSupplementaryChars() {
 }
 
 $String* TrueTypeFont::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"** TrueType Font: Family="_s, this->familyName, " Name="_s, this->fullName, " style="_s, $$str(this->style), " fileName="_s, $(getPublicFileName())});
 }
 
@@ -1455,6 +1475,7 @@ bool TrueTypeFont::isLanguageCompatible(int16_t lcid) {
 
 $shorts* TrueTypeFont::getLanguageCompatibleLCIDsFromLocale($Locale* locale) {
 	$init(TrueTypeFont);
+	$useLocalCurrentObjectStackCache();
 	if (TrueTypeFont::lcidLanguageCompatibilityMap == nullptr) {
 		createLCIDMap();
 		createLCIDLanguageCompatibilityMap();
@@ -1466,6 +1487,7 @@ $shorts* TrueTypeFont::getLanguageCompatibleLCIDsFromLocale($Locale* locale) {
 
 void TrueTypeFont::createLCIDLanguageCompatibilityMap() {
 	$init(TrueTypeFont);
+	$useLocalCurrentObjectStackCache();
 	$var($Map, map, $new($HashMap));
 	$var($shorts, sarr, nullptr);
 	$assign(sarr, $new($shorts, {
@@ -1614,6 +1636,7 @@ void TrueTypeFont::createLCIDLanguageCompatibilityMap() {
 }
 
 void clinit$TrueTypeFont($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(TrueTypeFont::encoding_mapping, $new($StringArray, {
 		"cp1252"_s,
 		"cp1250"_s,

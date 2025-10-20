@@ -142,6 +142,7 @@ void Test8015926::treeNodesChanged($TreeModelEvent* event) {
 }
 
 void Test8015926::run() {
+	$useLocalCurrentObjectStackCache();
 	$($Thread::currentThread())->setUncaughtExceptionHandler(this);
 	$var($DefaultMutableTreeNode, root, $new($DefaultMutableTreeNode));
 	$var($DefaultMutableTreeNode, child, $new($DefaultMutableTreeNode, "Child"_s));

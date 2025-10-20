@@ -86,6 +86,7 @@ void bug7013453$1$1::init$($bug7013453$1* this$0, Object$* val$paintManager, $Fi
 }
 
 void bug7013453$1$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$Thread::sleep(500);

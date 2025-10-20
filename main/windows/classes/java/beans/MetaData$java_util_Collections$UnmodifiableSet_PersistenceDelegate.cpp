@@ -70,6 +70,7 @@ void MetaData$java_util_Collections$UnmodifiableSet_PersistenceDelegate::init$()
 }
 
 $Expression* MetaData$java_util_Collections$UnmodifiableSet_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Set, set, $new($HashSet, $cast($Set, oldInstance)));
 	$load($Collections);
 	return $new($Expression, oldInstance, $Collections::class$, "unmodifiableSet"_s, $$new($ObjectArray, {$of(set)}));

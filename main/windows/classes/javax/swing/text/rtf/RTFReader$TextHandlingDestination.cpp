@@ -115,6 +115,7 @@ void RTFReader$TextHandlingDestination::beginParagraph() {
 }
 
 void RTFReader$TextHandlingDestination::endParagraph() {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, pgfAttributes, currentParagraphAttributes());
 	$var($AttributeSet, chrAttributes, currentTextAttributes());
 	finishParagraph(pgfAttributes, chrAttributes);

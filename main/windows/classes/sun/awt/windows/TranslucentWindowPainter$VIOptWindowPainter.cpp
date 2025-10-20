@@ -87,6 +87,7 @@ void TranslucentWindowPainter$VIOptWindowPainter::init$($WWindowPeer* peer) {
 }
 
 bool TranslucentWindowPainter$VIOptWindowPainter::update($Image* bb) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($DestSurfaceProvider, bb)) {
 		$var($Surface, s, $nc(($cast($DestSurfaceProvider, bb)))->getDestSurface());
 		if ($instanceOf($AccelSurface, s)) {

@@ -198,6 +198,7 @@ $String* PerformanceLogger::getMessageAtIndex(int32_t index) {
 
 void PerformanceLogger::outputLog($Writer* writer) {
 	$init(PerformanceLogger);
+	$useLocalCurrentObjectStackCache();
 	if (loggingEnabled()) {
 		try {
 			$synchronized(PerformanceLogger::times) {
@@ -225,6 +226,7 @@ void PerformanceLogger::outputLog() {
 }
 
 void clinit$PerformanceLogger($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	PerformanceLogger::perfLoggingOn = false;
 	PerformanceLogger::useNanoTime = false;

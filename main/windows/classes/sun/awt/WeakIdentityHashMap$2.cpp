@@ -83,11 +83,13 @@ void WeakIdentityHashMap$2::init$($WeakIdentityHashMap* this$0) {
 }
 
 $Iterator* WeakIdentityHashMap$2::iterator() {
+	$useLocalCurrentObjectStackCache();
 	$var($Iterator, iterator, $nc($($nc($(this->this$0->getMap()))->entrySet()))->iterator());
 	return $new($WeakIdentityHashMap$2$1, this, iterator);
 }
 
 int32_t WeakIdentityHashMap$2::size() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($nc($(this->this$0->getMap()))->entrySet()))->size();
 }
 

@@ -75,6 +75,7 @@ void SunFontManager$6::init$($SunFontManager* this$0, $String* val$s) {
 }
 
 $Object* SunFontManager$6::run() {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t p = 0; p < $nc(this->this$0->pathDirs)->length; ++p) {
 		$init($File);
 		$var($File, f, $new($File, $$str({$nc(this->this$0->pathDirs)->get(p), $File::separator, this->val$s})));

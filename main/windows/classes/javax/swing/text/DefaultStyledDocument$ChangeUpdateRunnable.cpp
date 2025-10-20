@@ -77,6 +77,7 @@ void DefaultStyledDocument$ChangeUpdateRunnable::init$($DefaultStyledDocument* t
 }
 
 void DefaultStyledDocument$ChangeUpdateRunnable::run() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this) {
 		this->isPending = false;
 	}

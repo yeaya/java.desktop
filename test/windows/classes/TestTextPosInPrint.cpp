@@ -532,6 +532,7 @@ void TestTextPosInPrint::init$() {
 
 void TestTextPosInPrint::main($StringArray* args) {
 	$init(TestTextPosInPrint);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(TestTextPosInPrint::job, $PrinterJob::getPrinterJob());
 	if ($nc(TestTextPosInPrint::job)->getPrintService() == nullptr) {
 		$init($System);
@@ -573,6 +574,7 @@ void TestTextPosInPrint::main($StringArray* args) {
 
 void TestTextPosInPrint::doTest() {
 	$init(TestTextPosInPrint);
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel($($UIManager::getSystemLookAndFeelClassName()));
 	$assignStatic(TestTextPosInPrint::f, $new($JFrame));
 	$nc(TestTextPosInPrint::f)->setLocationRelativeTo(nullptr);
@@ -618,6 +620,7 @@ void TestTextPosInPrint::fail($String* failureMsg) {
 
 $String* TestTextPosInPrint::convertMillisToTimeStr(int32_t millis) {
 	$init(TestTextPosInPrint);
+	$useLocalCurrentObjectStackCache();
 	if (millis < 0) {
 		return "00:00:00"_s;
 	}
@@ -633,6 +636,7 @@ $String* TestTextPosInPrint::convertMillisToTimeStr(int32_t millis) {
 
 void TestTextPosInPrint::createAndShowTestDialog() {
 	$init(TestTextPosInPrint);
+	$useLocalCurrentObjectStackCache();
 	$var($String, description, " 1. Click on \"Start Test\" button.\r\n 2. Multiple strings will be displayed on console.\r\n 3. A print dialog will be shown. Select any printer to print. \r\n If the printed output of the strings are same without any alignment issue, click on \"PASS\"\r\n button, otherwise click on \"FAIL\" button."_s);
 	$var($JDialog, dialog, $new($JDialog));
 	dialog->setTitle("SaveFileWithoutPrinter"_s);
@@ -695,12 +699,14 @@ void TestTextPosInPrint::lambda$createAndShowTestDialog$6($JDialog* dialog, $Act
 
 void TestTextPosInPrint::lambda$createAndShowTestDialog$5($JButton* testButton, $JButton* passButton, $JButton* failButton, $JDialog* dialog, $ActionEvent* e) {
 	$init(TestTextPosInPrint);
+	$useLocalCurrentObjectStackCache();
 	$nc(testButton)->setEnabled(false);
 	$$new($Thread, static_cast<$Runnable*>($$new(TestTextPosInPrint$$Lambda$lambda$createAndShowTestDialog$4$6, passButton, failButton, dialog)))->start();
 }
 
 void TestTextPosInPrint::lambda$createAndShowTestDialog$4($JButton* passButton, $JButton* failButton, $JDialog* dialog) {
 	$init(TestTextPosInPrint);
+	$useLocalCurrentObjectStackCache();
 	try {
 		doTest();
 		$SwingUtilities::invokeLater(static_cast<$Runnable*>($$new(TestTextPosInPrint$$Lambda$lambda$createAndShowTestDialog$3$7, passButton, failButton)));
@@ -720,6 +726,7 @@ void TestTextPosInPrint::lambda$createAndShowTestDialog$3($JButton* passButton, 
 
 void TestTextPosInPrint::lambda$createAndShowTestDialog$2(int64_t startTime, $Timer* timer, $JDialog* dialog, $JLabel* testTimeoutLabel, $ActionEvent* e) {
 	$init(TestTextPosInPrint);
+	$useLocalCurrentObjectStackCache();
 	int32_t leftTime = TestTextPosInPrint::testTimeout - (int32_t)($System::currentTimeMillis() - startTime);
 	if ((leftTime < 0) || TestTextPosInPrint::testFinished) {
 		$nc(timer)->stop();

@@ -73,6 +73,7 @@ void bug4962534$6::init$($bug4962534* this$0) {
 }
 
 void bug4962534$6::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug4962534);
 	int32_t var$1 = $nc($($nc($bug4962534::frame)->getLocationOnScreen()))->x;
 	int32_t var$0 = var$1 + $nc($bug4962534::frame)->getWidth() / 2;

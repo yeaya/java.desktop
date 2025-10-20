@@ -100,6 +100,7 @@ void BlitBg$General::init$($SurfaceType* srctype, $CompositeType* comptype, $Sur
 }
 
 void BlitBg$General::BlitBg$($SurfaceData* srcData, $SurfaceData* dstData, $Composite* comp, $Region* clip, int32_t bgArgb, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, dstModel, $nc(dstData)->getColorModel());
 	bool bgHasAlpha = ((int32_t)((uint32_t)bgArgb >> 24)) != 255;
 	if (!$nc(dstModel)->hasAlpha() && bgHasAlpha) {

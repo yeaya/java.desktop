@@ -123,6 +123,7 @@ void bug6698013::main($StringArray* args) {
 }
 
 void bug6698013::init() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, chooser, $new($JFileChooser, static_cast<$FileSystemView*>($$new($VirtualFileSystemView))));
 	chooser->setCurrentDirectory(bug6698013::root);
 	chooser->showOpenDialog(nullptr);

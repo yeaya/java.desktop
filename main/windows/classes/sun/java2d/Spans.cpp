@@ -109,6 +109,7 @@ bool Spans::intersects(float start, float end) {
 }
 
 void Spans::sortAndCollapse() {
+	$useLocalCurrentObjectStackCache();
 	$Collections::sort(this->mSpans);
 	this->mAddsSinceSort = 0;
 	$var($Iterator, iter, $nc(this->mSpans)->iterator());

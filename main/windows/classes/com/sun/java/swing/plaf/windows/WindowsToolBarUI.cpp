@@ -109,6 +109,7 @@ $Border* WindowsToolBarUI::createNonRolloverBorder() {
 }
 
 void WindowsToolBarUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$init($TMSchema$Part);
@@ -121,6 +122,7 @@ void WindowsToolBarUI::paint($Graphics* g, $JComponent* c) {
 }
 
 $Border* WindowsToolBarUI::getRolloverBorder($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		return xp->getBorder(b, $($WindowsButtonUI::getXPButtonType(b)));

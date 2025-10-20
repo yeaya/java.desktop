@@ -108,6 +108,7 @@ $AWTEventListener* Toolkit$ToolkitEventMulticaster::remove($AWTEventListener* l,
 }
 
 $EventListener* Toolkit$ToolkitEventMulticaster::remove($EventListener* oldl) {
+	$useLocalCurrentObjectStackCache();
 	if (oldl == this->a) {
 		return this->b;
 	}

@@ -76,6 +76,7 @@ void Test6593649$1::init$() {
 }
 
 void Test6593649$1::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($Test6593649);
 	bool failed = !$nc($($nc($($nc($Test6593649::textArea)->getParent()))->getSize()))->equals($($nc($Test6593649::textArea)->getSize()));
 	$nc($Test6593649::frame)->dispose();

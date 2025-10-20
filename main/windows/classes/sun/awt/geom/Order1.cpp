@@ -277,6 +277,7 @@ $Curve* Order1::getReversedCurve() {
 }
 
 int32_t Order1::compareTo($Curve* other, $doubles* yrange) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf(Order1, other))) {
 		return $Curve::compareTo(other, yrange);
 	}

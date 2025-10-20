@@ -116,6 +116,7 @@ void WindowsCheckBoxMenuItemUI::paintBackground($Graphics* g, $JMenuItem* menuIt
 }
 
 void WindowsCheckBoxMenuItemUI::paintText($Graphics* g, $JMenuItem* menuItem, $Rectangle* textRect, $String* text) {
+	$useLocalCurrentObjectStackCache();
 	if ($WindowsMenuItemUI::isVistaPainting()) {
 		$WindowsMenuItemUI::paintText(this->accessor, g, menuItem, textRect, text);
 		return;

@@ -117,6 +117,7 @@ void AnimatedIcon::isAnimated($BufferedImage* bi, $JButton* button) {
 }
 
 void AnimatedIcon::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, bi, $new($BufferedImage, 1, 1, 1));
 	$var($ImageIcon, icon, $new($ImageIcon, static_cast<$Image*>(bi)));
 	$var($JButton, button, $new($JButton, static_cast<$Icon*>(icon)));

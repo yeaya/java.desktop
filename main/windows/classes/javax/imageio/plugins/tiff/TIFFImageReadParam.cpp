@@ -68,6 +68,7 @@ $Object* allocate$TIFFImageReadParam($Class* clazz) {
 }
 
 void TIFFImageReadParam::init$() {
+	$useLocalCurrentObjectStackCache();
 	$ImageReadParam::init$();
 	$set(this, allowedTagSets, $new($ArrayList, 4));
 	this->readUnknownTags = false;

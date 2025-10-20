@@ -85,6 +85,7 @@ void JTextComponent$4$1::init$($JTextComponent$4* this$0, $Class* val$type) {
 }
 
 $Object* JTextComponent$4$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$load($InputMethodEvent);

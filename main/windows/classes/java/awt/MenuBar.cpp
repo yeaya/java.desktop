@@ -187,6 +187,7 @@ void MenuBar::init$() {
 }
 
 $String* MenuBar::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(MenuBar::class$) {
 		$var($String, var$0, MenuBar::base);
 		return $concat(var$0, $$str(MenuBar::nameCounter++));
@@ -194,6 +195,7 @@ $String* MenuBar::constructComponentName() {
 }
 
 void MenuBar::addNotify() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		if (this->peer == nullptr) {
 			$set(this, peer, $nc($(getComponentFactory()))->createMenuBar(this));
@@ -206,6 +208,7 @@ void MenuBar::addNotify() {
 }
 
 void MenuBar::removeNotify() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		int32_t nmenus = getMenuCount();
 		for (int32_t i = 0; i < nmenus; ++i) {
@@ -266,6 +269,7 @@ $Menu* MenuBar::add($Menu* m) {
 }
 
 void MenuBar::remove(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		$var($Menu, m, getMenu(index));
 		$nc(this->menus)->removeElementAt(index);
@@ -313,6 +317,7 @@ $Menu* MenuBar::getMenuImpl(int32_t i) {
 
 $Enumeration* MenuBar::shortcuts() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Vector, shortcuts, $new($Vector));
 		int32_t nmenus = getMenuCount();
 		for (int32_t i = 0; i < nmenus; ++i) {
@@ -326,6 +331,7 @@ $Enumeration* MenuBar::shortcuts() {
 }
 
 $MenuItem* MenuBar::getShortcutMenuItem($MenuShortcut* s) {
+	$useLocalCurrentObjectStackCache();
 	int32_t nmenus = getMenuCount();
 	for (int32_t i = 0; i < nmenus; ++i) {
 		$var($MenuItem, mi, $nc($(getMenu(i)))->getShortcutMenuItem(s));
@@ -337,6 +343,7 @@ $MenuItem* MenuBar::getShortcutMenuItem($MenuShortcut* s) {
 }
 
 bool MenuBar::handleShortcut($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t id = $nc(e)->getID();
 	if (id != $KeyEvent::KEY_PRESSED && id != $KeyEvent::KEY_RELEASED) {
 		return false;
@@ -356,6 +363,7 @@ bool MenuBar::handleShortcut($KeyEvent* e) {
 }
 
 void MenuBar::deleteShortcut($MenuShortcut* s) {
+	$useLocalCurrentObjectStackCache();
 	int32_t nmenus = getMenuCount();
 	for (int32_t i = 0; i < nmenus; ++i) {
 		$nc($(getMenu(i)))->deleteShortcut(s);
@@ -367,6 +375,7 @@ void MenuBar::writeObject($ObjectOutputStream* s) {
 }
 
 void MenuBar::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	for (int32_t i = 0; i < $nc(this->menus)->size(); ++i) {
 		$var($Menu, m, $cast($Menu, $nc(this->menus)->elementAt(i)));

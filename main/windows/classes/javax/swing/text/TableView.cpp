@@ -185,6 +185,7 @@ $TableView$TableRow* TableView::getRow(int32_t row) {
 }
 
 int32_t TableView::getColumnsOccupied($View* v) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, a, $nc($($nc(v)->getElement()))->getAttributes());
 	$init($HTML$Attribute);
 	$var($String, s, $cast($String, $nc(a)->getAttribute($HTML$Attribute::COLSPAN)));
@@ -199,6 +200,7 @@ int32_t TableView::getColumnsOccupied($View* v) {
 }
 
 int32_t TableView::getRowsOccupied($View* v) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, a, $nc($($nc(v)->getElement()))->getAttributes());
 	$init($HTML$Attribute);
 	$var($String, s, $cast($String, $nc(a)->getAttribute($HTML$Attribute::ROWSPAN)));
@@ -217,6 +219,7 @@ void TableView::invalidateGrid() {
 }
 
 void TableView::forwardUpdate($DocumentEvent$ElementChange* ec, $DocumentEvent* e, $Shape* a, $ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	$BoxView::forwardUpdate(ec, e, a, f);
 	if (a != nullptr) {
 		$var($Component, c, getContainer());
@@ -233,6 +236,7 @@ void TableView::replace(int32_t offset, int32_t length, $ViewArray* views) {
 }
 
 void TableView::updateGrid() {
+	$useLocalCurrentObjectStackCache();
 	if (!this->gridValid) {
 		$nc(this->rows)->removeAllElements();
 		int32_t n = getViewCount();
@@ -295,6 +299,7 @@ void TableView::layoutColumns(int32_t targetSpan, $ints* offsets, $ints* spans, 
 }
 
 void TableView::layoutMinorAxis(int32_t targetSpan, int32_t axis, $ints* offsets, $ints* spans) {
+	$useLocalCurrentObjectStackCache();
 	updateGrid();
 	int32_t n = getRowCount();
 	for (int32_t i = 0; i < n; ++i) {
@@ -306,6 +311,7 @@ void TableView::layoutMinorAxis(int32_t targetSpan, int32_t axis, $ints* offsets
 }
 
 $SizeRequirements* TableView::calculateMinorAxisRequirements(int32_t axis, $SizeRequirements* r$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($SizeRequirements, r, r$renamed);
 	updateGrid();
 	calculateColumnRequirements(axis);
@@ -339,6 +345,7 @@ $SizeRequirements* TableView::calculateMinorAxisRequirements(int32_t axis, $Size
 }
 
 void TableView::calculateColumnRequirements(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($SizeRequirementsArray, arr$, this->columnRequirements);
 		int32_t len$ = $nc(arr$)->length;
@@ -399,6 +406,7 @@ void TableView::checkSingleColumnCell(int32_t axis, int32_t col, $View* v) {
 }
 
 void TableView::checkMultiColumnCell(int32_t axis, int32_t col, int32_t ncols, $View* v) {
+	$useLocalCurrentObjectStackCache();
 	int64_t min = 0;
 	int64_t pref = 0;
 	int64_t max = 0;
@@ -443,6 +451,7 @@ void TableView::checkMultiColumnCell(int32_t axis, int32_t col, int32_t ncols, $
 }
 
 $View* TableView::getViewAtPosition(int32_t pos, $Rectangle* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = getViewCount();
 	for (int32_t i = 0; i < n; ++i) {
 		$var($View, v, getView(i));

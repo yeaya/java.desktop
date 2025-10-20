@@ -79,6 +79,7 @@ void DefaultFocusManager::init$() {
 }
 
 $Component* DefaultFocusManager::getComponentAfter($Container* aContainer, $Component* aComponent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, root, ($nc(aContainer)->isFocusCycleRoot()) ? aContainer : $nc(aContainer)->getFocusCycleRootAncestor());
 	if (root != nullptr) {
 		$var($FocusTraversalPolicy, policy, root->getFocusTraversalPolicy());
@@ -92,6 +93,7 @@ $Component* DefaultFocusManager::getComponentAfter($Container* aContainer, $Comp
 }
 
 $Component* DefaultFocusManager::getComponentBefore($Container* aContainer, $Component* aComponent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, root, ($nc(aContainer)->isFocusCycleRoot()) ? aContainer : $nc(aContainer)->getFocusCycleRootAncestor());
 	if (root != nullptr) {
 		$var($FocusTraversalPolicy, policy, root->getFocusTraversalPolicy());
@@ -105,6 +107,7 @@ $Component* DefaultFocusManager::getComponentBefore($Container* aContainer, $Com
 }
 
 $Component* DefaultFocusManager::getFirstComponent($Container* aContainer) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, root, ($nc(aContainer)->isFocusCycleRoot()) ? aContainer : $nc(aContainer)->getFocusCycleRootAncestor());
 	if (root != nullptr) {
 		$var($FocusTraversalPolicy, policy, root->getFocusTraversalPolicy());
@@ -118,6 +121,7 @@ $Component* DefaultFocusManager::getFirstComponent($Container* aContainer) {
 }
 
 $Component* DefaultFocusManager::getLastComponent($Container* aContainer) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, root, ($nc(aContainer)->isFocusCycleRoot()) ? aContainer : $nc(aContainer)->getFocusCycleRootAncestor());
 	if (root != nullptr) {
 		$var($FocusTraversalPolicy, policy, root->getFocusTraversalPolicy());

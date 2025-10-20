@@ -149,6 +149,7 @@ void bug8057791::runSteps() {
 
 bool bug8057791::tryNimbusLookAndFeel() {
 	$init(bug8057791);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($NimbusLookAndFeel)));
 	} catch ($UnsupportedLookAndFeelException&) {
@@ -171,6 +172,7 @@ void bug8057791::runColorTestCase() {
 
 void bug8057791::checkColor($Color* colorCheck, $Rectangle* bounds) {
 	$init(bug8057791);
+	$useLocalCurrentObjectStackCache();
 	if (!findColor(colorCheck, bounds)) {
 		$var($String, error, $str({"[ERROR]["_s, $($nc(colorCheck)->toString()), "] Not found in selected cell"_s}));
 		$plusAssignStatic(bug8057791::errorString, error);
@@ -179,6 +181,7 @@ void bug8057791::checkColor($Color* colorCheck, $Rectangle* bounds) {
 
 void bug8057791::checkNotColor($Color* colorCheck, $Rectangle* bounds) {
 	$init(bug8057791);
+	$useLocalCurrentObjectStackCache();
 	if (findColor(colorCheck, bounds)) {
 		$var($String, error, $str({"[ERROR]["_s, $($nc(colorCheck)->toString()), "] is found in selected cell. Not supposed to be found in negative test case"_s}));
 		$plusAssignStatic(bug8057791::errorString, error);
@@ -187,6 +190,7 @@ void bug8057791::checkNotColor($Color* colorCheck, $Rectangle* bounds) {
 
 bool bug8057791::findColor($Color* colorCheck, $Rectangle* bounds) {
 	$init(bug8057791);
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, img, $new($BufferedImage, $nc(bounds)->width, bounds->height, $BufferedImage::TYPE_INT_ARGB));
 	$var($Graphics, g, img->getGraphics());
 	$nc(bug8057791::list)->paint(g);

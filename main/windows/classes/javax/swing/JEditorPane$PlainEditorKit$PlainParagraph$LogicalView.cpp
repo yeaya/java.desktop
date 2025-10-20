@@ -99,6 +99,7 @@ bool JEditorPane$PlainEditorKit$PlainParagraph$LogicalView::updateChildren($Docu
 }
 
 void JEditorPane$PlainEditorKit$PlainParagraph$LogicalView::loadChildren($ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, getElement());
 	if ($nc(elem)->getElementCount() > 0) {
 		$CompositeView::loadChildren(f);

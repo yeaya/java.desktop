@@ -84,6 +84,7 @@ void StyledEditorKit$AlignmentAction::init$($String* nm, int32_t a) {
 }
 
 void StyledEditorKit$AlignmentAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, editor, getEditor(e));
 	if (editor != nullptr) {
 		int32_t a = this->a;

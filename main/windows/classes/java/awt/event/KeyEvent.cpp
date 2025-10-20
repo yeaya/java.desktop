@@ -641,6 +641,7 @@ int32_t KeyEvent::getKeyLocation() {
 
 $String* KeyEvent::getKeyText(int32_t keyCode) {
 	$init(KeyEvent);
+	$useLocalCurrentObjectStackCache();
 	if (keyCode >= KeyEvent::VK_0 && keyCode <= KeyEvent::VK_9 || keyCode >= KeyEvent::VK_A && keyCode <= KeyEvent::VK_Z) {
 		return $String::valueOf((char16_t)keyCode);
 	}
@@ -1224,6 +1225,7 @@ $String* KeyEvent::getKeyText(int32_t keyCode) {
 
 $String* KeyEvent::getKeyModifiersText(int32_t modifiers) {
 	$init(KeyEvent);
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, buf, $new($StringBuilder));
 	if (((int32_t)(modifiers & (uint32_t)$InputEvent::META_MASK)) != 0) {
 		buf->append($($Toolkit::getProperty("AWT.meta"_s, "Meta"_s)));
@@ -1414,6 +1416,7 @@ bool KeyEvent::isActionKey() {
 }
 
 $String* KeyEvent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, str, $new($StringBuilder, 100));
 	switch (this->id) {
 	case KeyEvent::KEY_PRESSED:

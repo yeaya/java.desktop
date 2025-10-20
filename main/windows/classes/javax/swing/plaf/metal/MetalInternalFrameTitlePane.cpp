@@ -333,6 +333,7 @@ $JButton* MetalInternalFrameTitlePane::access$000(MetalInternalFrameTitlePane* x
 }
 
 void MetalInternalFrameTitlePane::init$($JInternalFrame* f) {
+	$useLocalCurrentObjectStackCache();
 	$BasicInternalFrameTitlePane::init$(f);
 	this->isPalette = false;
 	this->buttonsWidth = 0;
@@ -371,6 +372,7 @@ void MetalInternalFrameTitlePane::uninstallDefaults() {
 }
 
 void MetalInternalFrameTitlePane::createButtons() {
+	$useLocalCurrentObjectStackCache();
 	$BasicInternalFrameTitlePane::createButtons();
 	$init($Boolean);
 	$var($Boolean, paintActive, $nc(this->frame)->isSelected() ? $Boolean::TRUE : $Boolean::FALSE);
@@ -412,6 +414,7 @@ $LayoutManager* MetalInternalFrameTitlePane::createLayout() {
 }
 
 void MetalInternalFrameTitlePane::paintPalette($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	bool leftToRight = $MetalUtils::isLeftToRight(this->frame);
 	int32_t width = getWidth();
 	int32_t height = getHeight();
@@ -434,6 +437,7 @@ void MetalInternalFrameTitlePane::paintPalette($Graphics* g) {
 }
 
 void MetalInternalFrameTitlePane::paintComponent($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (this->isPalette) {
 		paintPalette(g);
 		return;

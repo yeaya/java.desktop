@@ -111,6 +111,7 @@ void LayoutPathImpl$SegmentPath::pathToPoint($Point2D* location, bool preceding,
 }
 
 bool LayoutPathImpl$SegmentPath::pointToPath($Point2D* pt, $Point2D* result) {
+	$useLocalCurrentObjectStackCache();
 	double x = $nc(pt)->getX();
 	double y = pt->getY();
 	double bx = $nc(this->data)->get(0);
@@ -296,6 +297,7 @@ int32_t LayoutPathImpl$SegmentPath::locateAndGetIndex($Point2D* loc, bool preced
 }
 
 $String* LayoutPathImpl$SegmentPath::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, b, $new($StringBuilder));
 	b->append("{"_s);
 	b->append($($nc(this->etype)->toString()));

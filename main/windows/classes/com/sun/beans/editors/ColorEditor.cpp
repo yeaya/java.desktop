@@ -218,6 +218,7 @@ bool ColorEditor::keyUp($Event* e, int32_t key) {
 }
 
 void ColorEditor::setAsText($String* s) {
+	$useLocalCurrentObjectStackCache();
 	if (s == nullptr) {
 		changeColor(nullptr);
 		return;
@@ -251,6 +252,7 @@ $String* ColorEditor::getJavaInitializationString() {
 }
 
 void ColorEditor::changeColor($Color* c) {
+	$useLocalCurrentObjectStackCache();
 	if (c == nullptr) {
 		$set(this, color, nullptr);
 		$nc(this->text)->setText(""_s);
@@ -292,6 +294,7 @@ void ColorEditor::paintValue($Graphics* gfx, $Rectangle* box) {
 }
 
 $String* ColorEditor::getAsText() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, nullptr);
 	if (this->color != nullptr) {
 		$var($String, var$3, $$str({$$str($nc(this->color)->getRed()), ","_s}));

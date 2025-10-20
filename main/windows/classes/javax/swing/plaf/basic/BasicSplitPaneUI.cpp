@@ -387,6 +387,7 @@ $ComponentUI* BasicSplitPaneUI::createUI($JComponent* x) {
 
 void BasicSplitPaneUI::loadActionMap($LazyActionMap* map) {
 	$init(BasicSplitPaneUI);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicSplitPaneUI$Actions);
 	$nc(map)->put($$new($BasicSplitPaneUI$Actions, $BasicSplitPaneUI$Actions::NEGATIVE_INCREMENT));
 	map->put($$new($BasicSplitPaneUI$Actions, $BasicSplitPaneUI$Actions::POSITIVE_INCREMENT));
@@ -410,6 +411,7 @@ void BasicSplitPaneUI::installUI($JComponent* c) {
 }
 
 void BasicSplitPaneUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$LookAndFeel::installBorder(this->splitPane, "SplitPane.border"_s);
 	$LookAndFeel::installColors(this->splitPane, "SplitPane.background"_s, "SplitPane.foreground"_s);
 	$init($Boolean);
@@ -607,6 +609,7 @@ void BasicSplitPaneUI::setNonContinuousLayoutDivider($Component* newDivider, boo
 }
 
 void BasicSplitPaneUI::addHeavyweightDivider() {
+	$useLocalCurrentObjectStackCache();
 	if (this->nonContinuousLayoutDivider != nullptr && this->splitPane != nullptr) {
 		$var($Component, leftC, $nc(this->splitPane)->getLeftComponent());
 		$var($Component, rightC, $nc(this->splitPane)->getRightComponent());
@@ -684,6 +687,7 @@ void BasicSplitPaneUI::setDividerLocation($JSplitPane* jc, int32_t location) {
 }
 
 int32_t BasicSplitPaneUI::getDividerLocation($JSplitPane* jc) {
+	$useLocalCurrentObjectStackCache();
 	if (this->orientation == $JSplitPane::HORIZONTAL_SPLIT) {
 		return $nc($($nc(this->divider)->getLocation()))->x;
 	}
@@ -691,6 +695,7 @@ int32_t BasicSplitPaneUI::getDividerLocation($JSplitPane* jc) {
 }
 
 int32_t BasicSplitPaneUI::getMinimumDividerLocation($JSplitPane* jc) {
+	$useLocalCurrentObjectStackCache();
 	int32_t minLoc = 0;
 	$var($Component, leftC, $nc(this->splitPane)->getLeftComponent());
 	if ((leftC != nullptr) && (leftC->isVisible())) {
@@ -713,6 +718,7 @@ int32_t BasicSplitPaneUI::getMinimumDividerLocation($JSplitPane* jc) {
 }
 
 int32_t BasicSplitPaneUI::getMaximumDividerLocation($JSplitPane* jc) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, splitPaneSize, $nc(this->splitPane)->getSize());
 	int32_t maxLoc = 0;
 	$var($Component, rightC, $nc(this->splitPane)->getRightComponent());
@@ -806,6 +812,7 @@ bool BasicSplitPaneUI::getKeepHidden() {
 }
 
 void BasicSplitPaneUI::startDragging() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, leftC, $nc(this->splitPane)->getLeftComponent());
 	$var($Component, rightC, $nc(this->splitPane)->getRightComponent());
 	$var($ComponentPeer, cPeer, nullptr);
@@ -865,6 +872,7 @@ void BasicSplitPaneUI::dragDividerTo(int32_t location) {
 }
 
 void BasicSplitPaneUI::finishDraggingTo(int32_t location) {
+	$useLocalCurrentObjectStackCache();
 	dragDividerTo(location);
 	setLastDragLocation(-1);
 	if (!isContinuousLayout()) {

@@ -65,6 +65,7 @@ void Test7022041::init$() {
 }
 
 void Test7022041::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($UIManager$LookAndFeelInfoArray, installedLookAndFeels, $UIManager::getInstalledLookAndFeels());
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, installedLookAndFeels);
@@ -92,6 +93,7 @@ void Test7022041::main($StringArray* args) {
 }
 
 void Test7022041::checkTitleColor() {
+	$useLocalCurrentObjectStackCache();
 	$var($TitledBorder, titledBorder, $new($TitledBorder, static_cast<$Border*>($$new($EmptyBorder, 1, 1, 1, 1))));
 	$var($Color, defaultColor, $nc($($UIManager::getLookAndFeelDefaults()))->getColor("TitledBorder.titleColor"_s));
 	$var($Color, titledBorderColor, titledBorder->getTitleColor());
@@ -119,6 +121,7 @@ void Test7022041::checkTitleColor() {
 }
 
 void Test7022041::checkTitleFont() {
+	$useLocalCurrentObjectStackCache();
 	$var($TitledBorder, titledBorder, $new($TitledBorder, static_cast<$Border*>($$new($EmptyBorder, 1, 1, 1, 1))));
 	$var($Font, defaultFont, $nc($($UIManager::getLookAndFeelDefaults()))->getFont("TitledBorder.font"_s));
 	$var($Font, titledBorderFont, titledBorder->getTitleFont());

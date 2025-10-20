@@ -196,6 +196,7 @@ void CardLayout::addLayoutComponent($Component* comp, Object$* constraints$renam
 }
 
 void CardLayout::addLayoutComponent($String* name, $Component* comp) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(comp)->getTreeLock()) {
 		if (!$nc(this->vector)->isEmpty()) {
 			comp->setVisible(false);
@@ -211,6 +212,7 @@ void CardLayout::addLayoutComponent($String* name, $Component* comp) {
 }
 
 void CardLayout::removeLayoutComponent($Component* comp) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(comp)->getTreeLock()) {
 		for (int32_t i = 0; i < $nc(this->vector)->size(); ++i) {
 			if ($nc(($cast($CardLayout$Card, $($nc(this->vector)->get(i)))))->comp == comp) {
@@ -229,6 +231,7 @@ void CardLayout::removeLayoutComponent($Component* comp) {
 }
 
 $Dimension* CardLayout::preferredLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(parent)->getTreeLock()) {
 		$var($Insets, insets, parent->getInsets());
 		int32_t ncomponents = parent->getComponentCount();
@@ -249,6 +252,7 @@ $Dimension* CardLayout::preferredLayoutSize($Container* parent) {
 }
 
 $Dimension* CardLayout::minimumLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(parent)->getTreeLock()) {
 		$var($Insets, insets, parent->getInsets());
 		int32_t ncomponents = parent->getComponentCount();
@@ -284,6 +288,7 @@ void CardLayout::invalidateLayout($Container* target) {
 }
 
 void CardLayout::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(parent)->getTreeLock()) {
 		$var($Insets, insets, parent->getInsets());
 		int32_t ncomponents = parent->getComponentCount();
@@ -309,6 +314,7 @@ void CardLayout::checkLayout($Container* parent) {
 }
 
 void CardLayout::first($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(parent)->getTreeLock()) {
 		checkLayout(parent);
 		int32_t ncomponents = parent->getComponentCount();
@@ -328,6 +334,7 @@ void CardLayout::first($Container* parent) {
 }
 
 void CardLayout::next($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(parent)->getTreeLock()) {
 		checkLayout(parent);
 		int32_t ncomponents = parent->getComponentCount();
@@ -347,6 +354,7 @@ void CardLayout::next($Container* parent) {
 }
 
 void CardLayout::previous($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(parent)->getTreeLock()) {
 		checkLayout(parent);
 		int32_t ncomponents = parent->getComponentCount();
@@ -374,6 +382,7 @@ void CardLayout::showDefaultComponent($Container* parent) {
 }
 
 void CardLayout::last($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(parent)->getTreeLock()) {
 		checkLayout(parent);
 		int32_t ncomponents = parent->getComponentCount();
@@ -393,6 +402,7 @@ void CardLayout::last($Container* parent) {
 }
 
 void CardLayout::show($Container* parent, $String* name) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(parent)->getTreeLock()) {
 		checkLayout(parent);
 		$var($Component, next, nullptr);
@@ -421,10 +431,12 @@ void CardLayout::show($Container* parent, $String* name) {
 }
 
 $String* CardLayout::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($of(this)->getClass()->getName()), "[hgap="_s, $$str(this->hgap), ",vgap="_s, $$str(this->vgap), "]"_s});
 }
 
 void CardLayout::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	this->hgap = $nc(f)->get("hgap"_s, 0);
 	this->vgap = f->get("vgap"_s, 0);
@@ -451,6 +463,7 @@ void CardLayout::readObject($ObjectInputStream* s) {
 }
 
 void CardLayout::writeObject($ObjectOutputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Hashtable, tab, $new($Hashtable));
 	int32_t ncomponents = $nc(this->vector)->size();
 	for (int32_t i = 0; i < ncomponents; ++i) {
@@ -467,6 +480,7 @@ void CardLayout::writeObject($ObjectOutputStream* s) {
 }
 
 void clinit$CardLayout($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 		$load($Hashtable);
 		$init($Integer);
 		$load($Vector);

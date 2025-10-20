@@ -176,6 +176,7 @@ void WaitDispatchSupport::init$($EventDispatchThread* dispatchThread, $Condition
 }
 
 bool WaitDispatchSupport::enter() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$init($PlatformLogger$Level);
 	if ($nc(WaitDispatchSupport::log)->isLoggable($PlatformLogger$Level::FINE)) {
@@ -304,6 +305,7 @@ bool WaitDispatchSupport::enter() {
 }
 
 bool WaitDispatchSupport::exit() {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(WaitDispatchSupport::log)->isLoggable($PlatformLogger$Level::FINE)) {
 		$var($String, var$0, $$str({"exit(): blockingEDT="_s, $$str($nc(this->keepBlockingEDT)->get()), ", blockingCT="_s}));
@@ -324,6 +326,7 @@ $Object* WaitDispatchSupport::getTreeLock() {
 }
 
 void WaitDispatchSupport::wakeupEDT() {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(WaitDispatchSupport::log)->isLoggable($PlatformLogger$Level::FINEST)) {
 		$nc(WaitDispatchSupport::log)->finest($$str({"wakeupEDT(): EDT == "_s, this->dispatchThread}));

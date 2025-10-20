@@ -113,6 +113,7 @@ void TooltipImageTest::init$() {
 }
 
 void TooltipImageTest::checkSize($JToolTip* tip, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, $nc(tip)->getPreferredSize());
 	$var($Insets, insets, tip->getInsets());
 	if (!(($nc(d)->width - $nc(insets)->right - insets->left - 6) == width) && !((d->height - insets->top - insets->bottom) == height)) {
@@ -122,6 +123,7 @@ void TooltipImageTest::checkSize($JToolTip* tip, int32_t width, int32_t height) 
 
 void TooltipImageTest::main($StringArray* args) {
 	$load(TooltipImageTest);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, PATH, $nc($(TooltipImageTest::class$->getResource("circle.png"_s)))->getPath());
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TooltipImageTest$$Lambda$lambda$main$0, PATH)));
@@ -130,6 +132,7 @@ void TooltipImageTest::main($StringArray* args) {
 }
 
 void TooltipImageTest::lambda$main$0($String* PATH) {
+	$useLocalCurrentObjectStackCache();
 	$var($JToolTip, tip, $new($JToolTip));
 	tip->setTipText($$str({"<html><img width=\"100\" src=\"file:///"_s, PATH, "\"></html>"_s}));
 	checkSize(tip, 100, 100);

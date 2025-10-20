@@ -102,6 +102,7 @@ void Container$AccessibleAWTContainer$AccessibleContainerHandler::init$($Contain
 }
 
 void Container$AccessibleAWTContainer$AccessibleContainerHandler::componentAdded($ContainerEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $nc(e)->getChild());
 	if (c != nullptr && $instanceOf($Accessible, c)) {
 		$init($AccessibleContext);
@@ -110,6 +111,7 @@ void Container$AccessibleAWTContainer$AccessibleContainerHandler::componentAdded
 }
 
 void Container$AccessibleAWTContainer$AccessibleContainerHandler::componentRemoved($ContainerEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $nc(e)->getChild());
 	if (c != nullptr && $instanceOf($Accessible, c)) {
 		$init($AccessibleContext);

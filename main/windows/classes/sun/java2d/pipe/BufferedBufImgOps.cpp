@@ -125,6 +125,7 @@ bool BufferedBufImgOps::isConvolveOpValid($ConvolveOp* cop) {
 }
 
 void BufferedBufImgOps::enableConvolveOp($RenderQueue* rq, $SurfaceData* srcData, $ConvolveOp* cop) {
+	$useLocalCurrentObjectStackCache();
 	bool edgeZero = $nc(cop)->getEdgeCondition() == $ConvolveOp::EDGE_ZERO_FILL;
 	$var($Kernel, kernel, cop->getKernel());
 	int32_t kernelWidth = $nc(kernel)->getWidth();
@@ -149,6 +150,7 @@ void BufferedBufImgOps::disableConvolveOp($RenderQueue* rq) {
 }
 
 bool BufferedBufImgOps::isRescaleOpValid($RescaleOp* rop, $BufferedImage* srcImg) {
+	$useLocalCurrentObjectStackCache();
 	int32_t numFactors = $nc(rop)->getNumFactors();
 	$var($ColorModel, srcCM, $nc(srcImg)->getColorModel());
 	if ($instanceOf($IndexColorModel, srcCM)) {
@@ -169,6 +171,7 @@ bool BufferedBufImgOps::isRescaleOpValid($RescaleOp* rop, $BufferedImage* srcImg
 }
 
 void BufferedBufImgOps::enableRescaleOp($RenderQueue* rq, $SurfaceData* srcData, $BufferedImage* srcImg, $RescaleOp* rop) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, srcCM, $nc(srcImg)->getColorModel());
 	bool var$0 = $nc(srcCM)->hasAlpha();
 	bool nonPremult = var$0 && srcCM->isAlphaPremultiplied();
@@ -230,6 +233,7 @@ void BufferedBufImgOps::disableRescaleOp($RenderQueue* rq) {
 }
 
 bool BufferedBufImgOps::isLookupOpValid($LookupOp* lop, $BufferedImage* srcImg) {
+	$useLocalCurrentObjectStackCache();
 	$var($LookupTable, table, $nc(lop)->getTable());
 	int32_t numComps = $nc(table)->getNumComponents();
 	$var($ColorModel, srcCM, $nc(srcImg)->getColorModel());
@@ -268,6 +272,7 @@ bool BufferedBufImgOps::isLookupOpValid($LookupOp* lop, $BufferedImage* srcImg) 
 }
 
 void BufferedBufImgOps::enableLookupOp($RenderQueue* rq, $SurfaceData* srcData, $BufferedImage* srcImg, $LookupOp* lop) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc($($nc(srcImg)->getColorModel()))->hasAlpha();
 	bool nonPremult = var$0 && srcImg->isAlphaPremultiplied();
 	$var($LookupTable, table, $nc(lop)->getTable());

@@ -61,6 +61,7 @@ void ColorChooserComponentFactory::init$() {
 }
 
 $AbstractColorChooserPanelArray* ColorChooserComponentFactory::getDefaultChooserPanels() {
+	$useLocalCurrentObjectStackCache();
 	return $new($AbstractColorChooserPanelArray, {
 		static_cast<$AbstractColorChooserPanel*>($$new($DefaultSwatchChooserPanel)),
 		static_cast<$AbstractColorChooserPanel*>($$new($ColorChooserPanel, $$new($ColorModelHSV))),

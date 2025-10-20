@@ -154,6 +154,7 @@ void DefaultTableCellHeaderRenderer::setHorizontalTextPosition(int32_t textPosit
 }
 
 $Component* DefaultTableCellHeaderRenderer::getTableCellRendererComponent($JTable* table, Object$* value, bool isSelected, bool hasFocus, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, sortIcon, nullptr);
 	bool isPaintingForPrint = false;
 	if (table != nullptr) {
@@ -219,6 +220,7 @@ $Component* DefaultTableCellHeaderRenderer::getTableCellRendererComponent($JTabl
 
 $SortOrder* DefaultTableCellHeaderRenderer::getColumnSortOrder($JTable* table, int32_t column) {
 	$init(DefaultTableCellHeaderRenderer);
+	$useLocalCurrentObjectStackCache();
 	$SortOrder* rv = nullptr;
 	if (table == nullptr || $nc(table)->getRowSorter() == nullptr) {
 		return rv;
@@ -250,6 +252,7 @@ void DefaultTableCellHeaderRenderer::paintComponent($Graphics* g) {
 }
 
 $Point* DefaultTableCellHeaderRenderer::computeIconPosition($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, fontMetrics, $nc(g)->getFontMetrics());
 	$var($Rectangle, viewR, $new($Rectangle));
 	$var($Rectangle, textR, $new($Rectangle));

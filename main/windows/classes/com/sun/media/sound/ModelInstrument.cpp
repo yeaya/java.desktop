@@ -81,6 +81,7 @@ $ModelChannelMixer* ModelInstrument::getChannelMixer($MidiChannel* channel, $Aud
 }
 
 $Patch* ModelInstrument::getPatchAlias() {
+	$useLocalCurrentObjectStackCache();
 	$var($Patch, patch, getPatch());
 	int32_t program = $nc(patch)->getProgram();
 	int32_t bank = patch->getBank();
@@ -99,6 +100,7 @@ $Patch* ModelInstrument::getPatchAlias() {
 }
 
 $StringArray* ModelInstrument::getKeys() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringArray, keys, $new($StringArray, 128));
 	{
 		$var($ModelPerformerArray, arr$, getPerformers());
@@ -123,6 +125,7 @@ $StringArray* ModelInstrument::getKeys() {
 }
 
 $booleans* ModelInstrument::getChannels() {
+	$useLocalCurrentObjectStackCache();
 	bool percussion = false;
 	if ($instanceOf($ModelPatch, $(getPatch()))) {
 		percussion = $nc(($cast($ModelPatch, $(getPatch()))))->isPercussion();

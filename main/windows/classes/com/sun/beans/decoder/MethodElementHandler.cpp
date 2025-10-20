@@ -73,6 +73,7 @@ void MethodElementHandler::addAttribute($String* name, $String* value) {
 }
 
 $ValueObject* MethodElementHandler::getValueObject($Class* type, $ObjectArray* args$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, args, args$renamed);
 	$var($Object, bean, getContextBean());
 	$var($ClassArray, types, getArgumentTypes(args));

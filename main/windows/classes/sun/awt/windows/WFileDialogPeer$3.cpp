@@ -67,6 +67,7 @@ void WFileDialogPeer$3::init$() {
 }
 
 $Object* WFileDialogPeer$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$var($ResourceBundle, rb, $ResourceBundle::getBundle("sun.awt.windows.awtLocalization"_s));

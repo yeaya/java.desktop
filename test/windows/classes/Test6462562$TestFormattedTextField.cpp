@@ -93,6 +93,7 @@ $Object* allocate$Test6462562$TestFormattedTextField($Class* clazz) {
 }
 
 void Test6462562$TestFormattedTextField::init$($Test6462562* this$0, $InternationalFormatter* fmt) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JFormattedTextField::init$(static_cast<$JFormattedTextField$AbstractFormatter*>(fmt));
 	$nc(fmt)->setAllowsInvalid(false);
@@ -105,6 +106,7 @@ void Test6462562$TestFormattedTextField::init$($Test6462562* this$0, $Internatio
 }
 
 bool Test6462562$TestFormattedTextField::test(int32_t pos, int32_t selectionLength, $String* todo, Object$* expectedResult) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, v0, getValue());
 	$var($Caret, caret, getCaret());
 	$nc(caret)->setDot(pos);

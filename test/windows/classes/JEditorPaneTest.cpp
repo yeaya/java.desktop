@@ -71,6 +71,7 @@ void JEditorPaneTest::init$() {
 }
 
 void JEditorPaneTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	try {
 		$var($File, file, $File::createTempFile("Temp_"_s, ".txt"_s));
@@ -89,6 +90,7 @@ void JEditorPaneTest::main($StringArray* args) {
 }
 
 void JEditorPaneTest::writeFile($File* file) {
+	$useLocalCurrentObjectStackCache();
 	$var($FileWriter, fw, nullptr);
 	try {
 		$assign(fw, $new($FileWriter, $($nc(file)->getAbsoluteFile())));

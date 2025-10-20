@@ -158,6 +158,7 @@ $Object* allocate$ClipboardTransferable($Class* clazz) {
 }
 
 void ClipboardTransferable::init$($SunClipboard* clipboard) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, flavorsToData, $new($HashMap));
 	$set(this, flavors, $new($DataFlavorArray, 0));
 	$nc(clipboard)->openClipboard(nullptr);
@@ -182,6 +183,7 @@ void ClipboardTransferable::init$($SunClipboard* clipboard) {
 }
 
 bool ClipboardTransferable::fetchOneFlavor($SunClipboard* clipboard, $DataFlavor* flavor, int64_t format, $Map* cached_data) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->flavorsToData)->containsKey(flavor)) {
 		$var($Object, data, nullptr);
 		if (!$nc(cached_data)->containsKey($($Long::valueOf(format)))) {
@@ -218,6 +220,7 @@ bool ClipboardTransferable::isDataFlavorSupported($DataFlavor* flavor) {
 }
 
 $Object* ClipboardTransferable::getTransferData($DataFlavor* flavor) {
+	$useLocalCurrentObjectStackCache();
 	if (!isDataFlavorSupported(flavor)) {
 		$throwNew($UnsupportedFlavorException, flavor);
 	}
@@ -232,6 +235,7 @@ $Object* ClipboardTransferable::getTransferData($DataFlavor* flavor) {
 }
 
 void ClipboardTransferable::lambda$new$0($SunClipboard* clipboard, $Map* cached_data, $Map$Entry* entry) {
+	$useLocalCurrentObjectStackCache();
 	$var($SunClipboard, var$0, clipboard);
 	$var($DataFlavor, var$1, $cast($DataFlavor, $nc(entry)->getKey()));
 	fetchOneFlavor(var$0, var$1, $nc(($cast($Long, $(entry->getValue()))))->longValue(), cached_data);

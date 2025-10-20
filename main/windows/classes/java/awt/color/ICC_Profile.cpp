@@ -401,6 +401,7 @@ void ICC_Profile::finalize() {
 
 ICC_Profile* ICC_Profile::getInstance($bytes* data) {
 	$init(ICC_Profile);
+	$useLocalCurrentObjectStackCache();
 	$ProfileDataVerifier::verify(data);
 	$var($Profile, p, nullptr);
 	try {
@@ -478,6 +479,7 @@ ICC_Profile* ICC_Profile::getInstance(int32_t cspace) {
 
 ICC_Profile* ICC_Profile::getInstance($String* fileName) {
 	$init(ICC_Profile);
+	$useLocalCurrentObjectStackCache();
 	$var($InputStream, is, nullptr);
 	$var($File, f, getProfileFile(fileName));
 	if (f != nullptr) {
@@ -536,6 +538,7 @@ ICC_Profile* ICC_Profile::getInstance($InputStream* s) {
 
 $bytes* ICC_Profile::getProfileDataFromStream($InputStream* s) {
 	$init(ICC_Profile);
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedInputStream, bis, $new($BufferedInputStream, s));
 	bis->mark(128);
 	$var($bytes, header, bis->readNBytes(128));
@@ -554,6 +557,7 @@ $bytes* ICC_Profile::getProfileDataFromStream($InputStream* s) {
 }
 
 $Profile* ICC_Profile::cmmProfile() {
+	$useLocalCurrentObjectStackCache();
 	$var($Profile, p, this->cmmProfile$);
 	if (p != nullptr) {
 		return p;
@@ -618,6 +622,7 @@ int32_t ICC_Profile::getMinorVersion() {
 }
 
 int32_t ICC_Profile::getProfileClass() {
+	$useLocalCurrentObjectStackCache();
 	$var($ProfileDeferralInfo, info, this->deferralInfo);
 	if (info != nullptr) {
 		return info->profileClass;
@@ -673,6 +678,7 @@ int32_t ICC_Profile::getProfileClass() {
 }
 
 int32_t ICC_Profile::getColorSpaceType() {
+	$useLocalCurrentObjectStackCache();
 	$var($ProfileDeferralInfo, info, this->deferralInfo);
 	if (info != nullptr) {
 		return info->colorSpaceType;
@@ -694,6 +700,7 @@ int32_t ICC_Profile::getPCSType() {
 }
 
 void ICC_Profile::write($String* fileName) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($OutputStream, out, $new($FileOutputStream, fileName));
 		{
@@ -728,16 +735,19 @@ void ICC_Profile::write($OutputStream* s) {
 }
 
 $bytes* ICC_Profile::getData() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($CMSManager::getModule()))->getProfileData($(cmmProfile()));
 }
 
 $bytes* ICC_Profile::getData(int32_t tagSignature) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, t, getData($(cmmProfile()), tagSignature));
 	return t != nullptr ? $cast($bytes, $nc(t)->clone()) : ($bytes*)nullptr;
 }
 
 $bytes* ICC_Profile::getData($Profile* p, int32_t tagSignature) {
 	$init(ICC_Profile);
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($($CMSManager::getModule()))->getTagData(p, tagSignature);
 	} catch ($CMMException&) {
@@ -748,10 +758,12 @@ $bytes* ICC_Profile::getData($Profile* p, int32_t tagSignature) {
 }
 
 void ICC_Profile::setData(int32_t tagSignature, $bytes* tagData) {
+	$useLocalCurrentObjectStackCache();
 	$nc($($CMSManager::getModule()))->setTagData($(cmmProfile()), tagSignature, tagData);
 }
 
 int32_t ICC_Profile::getNumComponents() {
+	$useLocalCurrentObjectStackCache();
 	$var($ProfileDeferralInfo, info, this->deferralInfo);
 	if (info != nullptr) {
 		return info->numComponents;
@@ -871,6 +883,7 @@ $floats* ICC_Profile::getMediaWhitePoint() {
 }
 
 $floats* ICC_Profile::getXYZTag(int32_t tagSignature) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, theData, getData(tagSignature));
 	$var($floats, theXYZNumber, $new($floats, 3));
 	{
@@ -894,6 +907,7 @@ float ICC_Profile::getGamma(int32_t tagSignature) {
 }
 
 $shorts* ICC_Profile::getTRC(int32_t tagSignature) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, theTRCData, getData(tagSignature));
 	int32_t nElements = intFromBigEndian(theTRCData, ICC_Profile::icCurveCount);
 	if (nElements == 1) {
@@ -1062,6 +1076,7 @@ int16_t ICC_Profile::shortFromBigEndian($bytes* array, int32_t index) {
 
 $File* ICC_Profile::getProfileFile($String* fileName) {
 	$init(ICC_Profile);
+	$useLocalCurrentObjectStackCache();
 	$var($File, f, $new($File, fileName));
 	if (f->isAbsolute()) {
 		return f->isFile() ? f : ($File*)nullptr;
@@ -1110,6 +1125,7 @@ $File* ICC_Profile::getProfileFile($String* fileName) {
 
 $InputStream* ICC_Profile::getStandardProfileInputStream($String* fileName) {
 	$init(ICC_Profile);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($PrivilegedAction, var$0, static_cast<$PrivilegedAction*>($new(ICC_Profile$$Lambda$lambda$getStandardProfileInputStream$0, fileName)));
 	return $cast($InputStream, $AccessController::doPrivileged(var$0, ($AccessControlContext*)nullptr, $$new($PermissionArray, {
@@ -1120,6 +1136,7 @@ $InputStream* ICC_Profile::getStandardProfileInputStream($String* fileName) {
 
 bool ICC_Profile::isChildOf($File* f, $String* dirName) {
 	$init(ICC_Profile);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($File, dir, $new($File, dirName));
 		$var($String, canonicalDirName, dir->getCanonicalPath());
@@ -1136,6 +1153,7 @@ bool ICC_Profile::isChildOf($File* f, $String* dirName) {
 }
 
 void ICC_Profile::writeObject($ObjectOutputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultWriteObject();
 	$var($String, csName, nullptr);
 	$init($ICC_Profile$BuiltInProfile);
@@ -1167,6 +1185,7 @@ void ICC_Profile::writeObject($ObjectOutputStream* s) {
 }
 
 void ICC_Profile::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	$var($String, csName, $cast($String, s->readObject()));
 	$var($bytes, data, $cast($bytes, s->readObject()));

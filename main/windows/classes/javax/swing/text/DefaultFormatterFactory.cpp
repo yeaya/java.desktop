@@ -157,6 +157,7 @@ $JFormattedTextField$AbstractFormatter* DefaultFormatterFactory::getNullFormatte
 }
 
 $JFormattedTextField$AbstractFormatter* DefaultFormatterFactory::getFormatter($JFormattedTextField* source) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFormattedTextField$AbstractFormatter, format, nullptr);
 	if (source == nullptr) {
 		return nullptr;

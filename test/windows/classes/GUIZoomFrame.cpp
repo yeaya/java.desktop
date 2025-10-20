@@ -84,6 +84,7 @@ $Object* allocate$GUIZoomFrame($Class* clazz) {
 }
 
 void GUIZoomFrame::init$() {
+	$useLocalCurrentObjectStackCache();
 	$Frame::init$();
 	$set(this, jframe1, $new($JFrame, "ZoomJFrameChangeState"_s));
 	$init($Color);

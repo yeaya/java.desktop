@@ -79,6 +79,7 @@ void DefaultKeyboardFocusManager$4::init$($SentEvent* val$se, $AppContext* val$t
 }
 
 void DefaultKeyboardFocusManager$4::run() {
+	$useLocalCurrentObjectStackCache();
 	while (!$nc(this->val$se)->dispatched$ && !$nc(this->val$targetAppContext)->isDisposed()) {
 		try {
 			$Thread::sleep(100);

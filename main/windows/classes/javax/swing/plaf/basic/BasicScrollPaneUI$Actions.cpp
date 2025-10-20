@@ -125,6 +125,7 @@ void BasicScrollPaneUI$Actions::init$($String* key) {
 }
 
 void BasicScrollPaneUI$Actions::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JScrollPane, scrollPane, $cast($JScrollPane, $nc(e)->getSource()));
 	bool ltr = $nc($($nc(scrollPane)->getComponentOrientation()))->isLeftToRight();
 	$var($String, key, getName());
@@ -152,6 +153,7 @@ void BasicScrollPaneUI$Actions::actionPerformed($ActionEvent* e) {
 }
 
 void BasicScrollPaneUI$Actions::scrollEnd($JScrollPane* scrollpane) {
+	$useLocalCurrentObjectStackCache();
 	$var($JViewport, vp, $nc(scrollpane)->getViewport());
 	$var($Component, view, nullptr);
 	if (vp != nullptr && ($assign(view, vp->getView())) != nullptr) {
@@ -166,6 +168,7 @@ void BasicScrollPaneUI$Actions::scrollEnd($JScrollPane* scrollpane) {
 }
 
 void BasicScrollPaneUI$Actions::scrollHome($JScrollPane* scrollpane) {
+	$useLocalCurrentObjectStackCache();
 	$var($JViewport, vp, $nc(scrollpane)->getViewport());
 	$var($Component, view, nullptr);
 	if (vp != nullptr && ($assign(view, vp->getView())) != nullptr) {
@@ -180,6 +183,7 @@ void BasicScrollPaneUI$Actions::scrollHome($JScrollPane* scrollpane) {
 }
 
 void BasicScrollPaneUI$Actions::scroll($JScrollPane* scrollpane, int32_t orientation, int32_t direction, bool block) {
+	$useLocalCurrentObjectStackCache();
 	$var($JViewport, vp, $nc(scrollpane)->getViewport());
 	$var($Component, view, nullptr);
 	if (vp != nullptr && ($assign(view, vp->getView())) != nullptr) {

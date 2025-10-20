@@ -68,6 +68,7 @@ void TIFFLZWCompressor::setStream($ImageOutputStream* stream) {
 }
 
 int32_t TIFFLZWCompressor::encode($bytes* b, int32_t off, int32_t width, int32_t height, $ints* bitsPerSample, int32_t scanlineStride) {
+	$useLocalCurrentObjectStackCache();
 	$var($LZWCompressor, lzwCompressor, $new($LZWCompressor, this->stream, 8, true));
 	int32_t samplesPerPixel = $nc(bitsPerSample)->length;
 	int32_t bitsPerPixel = 0;

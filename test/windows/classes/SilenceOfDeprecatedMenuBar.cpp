@@ -143,6 +143,7 @@ void SilenceOfDeprecatedMenuBar::init$() {
 
 void SilenceOfDeprecatedMenuBar::main($StringArray* args) {
 	$init(SilenceOfDeprecatedMenuBar);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -158,6 +159,7 @@ void SilenceOfDeprecatedMenuBar::main($StringArray* args) {
 }
 
 void SilenceOfDeprecatedMenuBar::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($SilenceOfDeprecatedMenuBar$DeprecatedFrame));
 	{
 		$var($Throwable, var$0, nullptr);
@@ -183,6 +185,7 @@ void SilenceOfDeprecatedMenuBar::run() {
 
 void SilenceOfDeprecatedMenuBar::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(SilenceOfDeprecatedMenuBar);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 		$init($System);

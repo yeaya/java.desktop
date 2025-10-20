@@ -180,6 +180,7 @@ bool InputMethodContext::haveActiveClient() {
 }
 
 void InputMethodContext::dispatchInputMethodEvent(int32_t id, $AttributedCharacterIterator* text, int32_t committedCharacterCount, $TextHitInfo* caret, $TextHitInfo* visiblePosition) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, source, nullptr);
 	$assign(source, getClientComponent());
 	if (source != nullptr) {
@@ -195,6 +196,7 @@ void InputMethodContext::dispatchInputMethodEvent(int32_t id, $AttributedCharact
 
 void InputMethodContext::dispatchCommittedText($Component* client, $AttributedCharacterIterator* text, int32_t committedCharacterCount) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		bool var$0 = committedCharacterCount == 0;
 		if (!var$0) {
 			int32_t var$1 = $nc(text)->getEndIndex();
@@ -235,6 +237,7 @@ void InputMethodContext::dispatchCommittedText($Component* client, $AttributedCh
 }
 
 void InputMethodContext::dispatchEvent($AWTEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($InputMethodEvent, event)) {
 		bool var$0 = $nc(($cast($Component, $($nc(event)->getSource()))))->getInputMethodRequests() == nullptr;
 		if (var$0 || (useBelowTheSpotInput() && !this->dispatchingCommittedText)) {
@@ -363,6 +366,7 @@ void InputMethodContext::setCompositionAreaUndecorated(bool undecorated) {
 }
 
 void clinit$InputMethodContext($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	{
 		$var($String, inputStyle, $cast($String, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, "java.awt.im.style"_s, nullptr)))));

@@ -89,6 +89,7 @@ void ImageCache::flush() {
 }
 
 $ImageCache$Entry* ImageCache::getEntry(Object$* key, $GraphicsConfiguration* config, int32_t w, int32_t h, $ObjectArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageCache$Entry, entry, nullptr);
 	$var($Iterator, iter, $nc(this->entries)->listIterator());
 	while ($nc(iter)->hasNext()) {

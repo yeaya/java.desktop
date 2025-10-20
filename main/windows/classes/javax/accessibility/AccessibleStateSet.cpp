@@ -119,6 +119,7 @@ bool AccessibleStateSet::contains($AccessibleState* state) {
 }
 
 $AccessibleStateArray* AccessibleStateSet::toArray() {
+	$useLocalCurrentObjectStackCache();
 	if (this->states == nullptr) {
 		return $new($AccessibleStateArray, 0);
 	} else {
@@ -131,6 +132,7 @@ $AccessibleStateArray* AccessibleStateSet::toArray() {
 }
 
 $String* AccessibleStateSet::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, ret, nullptr);
 	if ((this->states != nullptr) && ($nc(this->states)->size() > 0)) {
 		$assign(ret, $nc(($cast($AccessibleState, $($nc(this->states)->elementAt(0)))))->toDisplayString());

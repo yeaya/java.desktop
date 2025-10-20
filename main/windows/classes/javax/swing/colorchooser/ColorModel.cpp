@@ -123,10 +123,12 @@ int32_t ColorModel::to8bit(float value) {
 }
 
 $String* ColorModel::getText($Component* component, $String* suffix) {
+	$useLocalCurrentObjectStackCache();
 	return $UIManager::getString($of($$str({this->prefix, suffix, "Text"_s})), $($nc(component)->getLocale()));
 }
 
 int32_t ColorModel::getInteger($Component* component, $String* suffix) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, $UIManager::get($$str({this->prefix, suffix}), $($nc(component)->getLocale())));
 	if ($instanceOf($Integer, value)) {
 		return $nc(($cast($Integer, value)))->intValue();

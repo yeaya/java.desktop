@@ -65,6 +65,7 @@ void bug6337518$1::init$() {
 }
 
 void bug6337518$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JComboBox, comboBox, $new($JComboBox));
 	comboBox->setUI(static_cast<$ComboBoxUI*>($$new($bug6337518)));
 }

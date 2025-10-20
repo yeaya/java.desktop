@@ -81,6 +81,7 @@ $ComponentUIArray* MultiButtonUI::getUIs() {
 }
 
 bool MultiButtonUI::contains($JComponent* a, int32_t b, int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	bool returnValue = $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->contains(a, b, c);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->contains(a, b, c);
@@ -89,6 +90,7 @@ bool MultiButtonUI::contains($JComponent* a, int32_t b, int32_t c) {
 }
 
 void MultiButtonUI::update($Graphics* a, $JComponent* b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->update(a, b);
 	}
@@ -101,24 +103,28 @@ $ComponentUI* MultiButtonUI::createUI($JComponent* a) {
 }
 
 void MultiButtonUI::installUI($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->installUI(a);
 	}
 }
 
 void MultiButtonUI::uninstallUI($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->uninstallUI(a);
 	}
 }
 
 void MultiButtonUI::paint($Graphics* a, $JComponent* b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->paint(a, b);
 	}
 }
 
 $Dimension* MultiButtonUI::getPreferredSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getPreferredSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getPreferredSize(a);
@@ -127,6 +133,7 @@ $Dimension* MultiButtonUI::getPreferredSize($JComponent* a) {
 }
 
 $Dimension* MultiButtonUI::getMinimumSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getMinimumSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getMinimumSize(a);
@@ -135,6 +142,7 @@ $Dimension* MultiButtonUI::getMinimumSize($JComponent* a) {
 }
 
 $Dimension* MultiButtonUI::getMaximumSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getMaximumSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getMaximumSize(a);
@@ -143,6 +151,7 @@ $Dimension* MultiButtonUI::getMaximumSize($JComponent* a) {
 }
 
 int32_t MultiButtonUI::getAccessibleChildrenCount($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getAccessibleChildrenCount(a);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getAccessibleChildrenCount(a);
@@ -151,6 +160,7 @@ int32_t MultiButtonUI::getAccessibleChildrenCount($JComponent* a) {
 }
 
 $Accessible* MultiButtonUI::getAccessibleChild($JComponent* a, int32_t b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Accessible, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getAccessibleChild(a, b));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getAccessibleChild(a, b);

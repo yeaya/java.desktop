@@ -72,6 +72,7 @@ void NestedWorkers::init$(int32_t level) {
 }
 
 $Object* NestedWorkers::doInBackground() {
+	$useLocalCurrentObjectStackCache();
 	if (this->level < NestedWorkers::MAX_LEVEL) {
 		$var($SwingWorker, nested, $new(NestedWorkers, this->level + 1));
 		nested->execute();

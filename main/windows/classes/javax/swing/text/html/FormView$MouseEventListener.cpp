@@ -70,6 +70,7 @@ void FormView$MouseEventListener::init$($FormView* this$0) {
 }
 
 void FormView$MouseEventListener::mouseReleased($MouseEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, imageData, this->this$0->getImageData($($nc(evt)->getPoint())));
 	this->this$0->imageSubmit(imageData);
 }

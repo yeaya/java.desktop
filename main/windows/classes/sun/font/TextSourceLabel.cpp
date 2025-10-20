@@ -155,6 +155,7 @@ $Rectangle* TextSourceLabel::getPixelBounds($FontRenderContext* frc, float x, fl
 }
 
 $AffineTransform* TextSourceLabel::getBaselineTransform() {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, font, $nc(this->source)->getFont());
 	if ($nc(font)->hasLayoutAttributes()) {
 		return $AttributeValues::getBaselineTransform($(font->getAttributes()));
@@ -194,6 +195,7 @@ $GlyphVector* TextSourceLabel::getGV() {
 }
 
 $GlyphVector* TextSourceLabel::createGV() {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, font, $nc(this->source)->getFont());
 	$var($FontRenderContext, frc, $nc(this->source)->getFRC());
 	int32_t flags = $nc(this->source)->getLayoutFlags();

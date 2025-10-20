@@ -202,6 +202,7 @@ $ComponentUI* SynthDesktopIconUI::createUI($JComponent* c) {
 }
 
 void SynthDesktopIconUI::installComponents() {
+	$useLocalCurrentObjectStackCache();
 	if ($UIManager::getBoolean("InternalFrame.useTaskBar"_s)) {
 		$var($String, var$0, $nc(this->frame)->getTitle());
 		$var($JToggleButton, tmp, $new($SynthDesktopIconUI$1, this, var$0, $($nc(this->frame)->getFrameIcon())));
@@ -271,6 +272,7 @@ int32_t SynthDesktopIconUI::getComponentState($JComponent* c) {
 }
 
 void SynthDesktopIconUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -293,6 +295,7 @@ void SynthDesktopIconUI::paintBorder($SynthContext* context, $Graphics* g, int32
 }
 
 void SynthDesktopIconUI::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JInternalFrame$JDesktopIcon, $($nc(evt)->getSource()))) {
 		if ($SynthLookAndFeel::shouldUpdateStyle(evt)) {
 			updateStyle($cast($JInternalFrame$JDesktopIcon, $(evt->getSource())));

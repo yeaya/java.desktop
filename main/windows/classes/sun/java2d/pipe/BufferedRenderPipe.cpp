@@ -294,6 +294,7 @@ void BufferedRenderPipe::fillArc($SunGraphics2D* sg2d, int32_t x, int32_t y, int
 }
 
 void BufferedRenderPipe::drawPoly($SunGraphics2D* sg2d, $ints* xPoints, $ints* yPoints, int32_t nPoints, bool isClosed) {
+	$useLocalCurrentObjectStackCache();
 	if (xPoints == nullptr || yPoints == nullptr) {
 		$throwNew($NullPointerException, "coordinate array"_s);
 	}
@@ -399,6 +400,7 @@ int32_t BufferedRenderPipe::fillSpans($RenderQueue* rq, int64_t buf, int32_t pos
 }
 
 void BufferedRenderPipe::fillSpans($SunGraphics2D* sg2d, $SpanIterator* si, int32_t transx, int32_t transy) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->rq)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -476,6 +478,7 @@ void BufferedRenderPipe::drawParallelogram($SunGraphics2D* sg2d, double ux1, dou
 }
 
 void BufferedRenderPipe::draw($SunGraphics2D* sg2d, $Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(sg2d)->strokeState == $SunGraphics2D::STROKE_THIN) {
 		if ($instanceOf($Polygon, s)) {
 			if (sg2d->transformState < $SunGraphics2D::TRANSFORM_TRANSLATESCALE) {
@@ -522,6 +525,7 @@ void BufferedRenderPipe::draw($SunGraphics2D* sg2d, $Shape* s) {
 }
 
 void BufferedRenderPipe::fill($SunGraphics2D* sg2d, $Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	int32_t transx = 0;
 	int32_t transy = 0;
 	if ($nc(sg2d)->strokeState == $SunGraphics2D::STROKE_THIN) {

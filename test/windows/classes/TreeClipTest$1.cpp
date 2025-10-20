@@ -99,6 +99,7 @@ void TreeClipTest$1::init$() {
 }
 
 void TreeClipTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultMutableTreeNode, root, $new($DefaultMutableTreeNode, "JTree"_s));
 	$var($DefaultMutableTreeNode, parent, nullptr);
 	$assign(parent, $new($DefaultMutableTreeNode, "colors"_s));

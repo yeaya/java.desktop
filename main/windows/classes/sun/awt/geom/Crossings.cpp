@@ -127,6 +127,7 @@ double Crossings::getYHi() {
 }
 
 void Crossings::print() {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println("Crossings ["_s);
 	$nc($System::out)->println($$str({"  bounds = ["_s, $$str(this->ylo), ", "_s, $$str(this->yhi), "]"_s}));
@@ -141,6 +142,7 @@ bool Crossings::isEmpty() {
 }
 
 Crossings* Crossings::findCrossings($Vector* curves, double xlo, double ylo, double xhi, double yhi) {
+	$useLocalCurrentObjectStackCache();
 	$var(Crossings, cross, $new($Crossings$EvenOdd, xlo, ylo, xhi, yhi));
 	$var($Enumeration, enum_, $nc(curves)->elements());
 	while ($nc(enum_)->hasMoreElements()) {
@@ -153,6 +155,7 @@ Crossings* Crossings::findCrossings($Vector* curves, double xlo, double ylo, dou
 }
 
 Crossings* Crossings::findCrossings($PathIterator* pi, double xlo, double ylo, double xhi, double yhi) {
+	$useLocalCurrentObjectStackCache();
 	$var(Crossings, cross, nullptr);
 	if ($nc(pi)->getWindingRule() == $PathIterator::WIND_EVEN_ODD) {
 		$assign(cross, $new($Crossings$EvenOdd, xlo, ylo, xhi, yhi));
@@ -280,6 +283,7 @@ bool Crossings::accumulateLine(double x0, double y0, double x1, double y1, int32
 }
 
 bool Crossings::accumulateQuad(double x0, double y0, $doubles* coords) {
+	$useLocalCurrentObjectStackCache();
 	if (y0 < this->ylo && $nc(coords)->get(1) < this->ylo && coords->get(3) < this->ylo) {
 		return false;
 	}
@@ -312,6 +316,7 @@ bool Crossings::accumulateQuad(double x0, double y0, $doubles* coords) {
 }
 
 bool Crossings::accumulateCubic(double x0, double y0, $doubles* coords) {
+	$useLocalCurrentObjectStackCache();
 	if (y0 < this->ylo && $nc(coords)->get(1) < this->ylo && coords->get(3) < this->ylo && coords->get(5) < this->ylo) {
 		return false;
 	}

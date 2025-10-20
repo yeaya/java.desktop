@@ -115,6 +115,7 @@ WDragSourceContextPeer* WDragSourceContextPeer::createDragSourceContextPeer($Dra
 }
 
 void WDragSourceContextPeer::startDrag($Transferable* trans, $longs* formats, $Map* formatMap) {
+	$useLocalCurrentObjectStackCache();
 	int64_t nativeCtxtLocal = 0;
 	$var($Component, var$0, $nc($(getTrigger()))->getComponent());
 	$var($Transferable, var$1, trans);

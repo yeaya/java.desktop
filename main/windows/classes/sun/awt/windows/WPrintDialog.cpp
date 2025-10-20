@@ -105,6 +105,7 @@ void WPrintDialog::setPeer($ComponentPeer* p) {
 }
 
 void WPrintDialog::addNotify() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		$var($Container, parent, getParent());
 		if (parent != nullptr && !parent->isDisplayable()) {

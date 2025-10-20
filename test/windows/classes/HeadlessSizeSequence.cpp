@@ -37,6 +37,7 @@ void HeadlessSizeSequence::init$() {
 }
 
 void HeadlessSizeSequence::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($SizeSequence, ss, nullptr);
 	$assign(ss, $new($SizeSequence));
 	$assign(ss, $new($SizeSequence, 10));

@@ -138,6 +138,7 @@ $AccessibleRole* JMenuItem$AccessibleJMenuItem::getAccessibleRole() {
 }
 
 void JMenuItem$AccessibleJMenuItem::fireAccessibilityFocusedEvent($JMenuItem* toCheck) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuElementArray, path, $nc($($MenuSelectionManager::defaultManager()))->getSelectedPath());
 	if ($nc(path)->length > 0) {
 		$var($Object, menuItem, path->get(path->length - 1));
@@ -150,6 +151,7 @@ void JMenuItem$AccessibleJMenuItem::fireAccessibilityFocusedEvent($JMenuItem* to
 }
 
 void JMenuItem$AccessibleJMenuItem::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($AccessibleContext);
 	$var($String, var$0, $AccessibleContext::ACCESSIBLE_VISIBLE_DATA_PROPERTY);
 	$var($Object, var$1, $of($Boolean::valueOf(false)));

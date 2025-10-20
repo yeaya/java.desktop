@@ -189,6 +189,7 @@ void DefaultButtonModelCrashTest::main($StringArray* args) {
 }
 
 void DefaultButtonModelCrashTest::init$() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, nullptr);
 	$set(this, p, nullptr);
 	{
@@ -217,6 +218,7 @@ void DefaultButtonModelCrashTest::init$() {
 }
 
 void DefaultButtonModelCrashTest::go() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, $new($JFrame));
 	$nc(this->frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$var($Container, contentPane, $nc(this->frame)->getContentPane());

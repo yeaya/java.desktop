@@ -122,6 +122,7 @@ void MetalBorders$ButtonBorder::init$() {
 }
 
 void MetalBorders$ButtonBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($AbstractButton, c))) {
 		return;
 	}
@@ -150,6 +151,7 @@ void MetalBorders$ButtonBorder::paintBorder($Component* c, $Graphics* g, int32_t
 }
 
 void MetalBorders$ButtonBorder::paintOceanBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, button, $cast($AbstractButton, c));
 	$var($ButtonModel, model, $nc(($cast($AbstractButton, c)))->getModel());
 	$nc(g)->translate(x, y);

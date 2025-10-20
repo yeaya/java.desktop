@@ -67,6 +67,7 @@ void SunFontManager$12::init$() {
 }
 
 $Object* SunFontManager$12::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, fileEncoding, $System::getProperty("file.encoding"_s, ""_s));
 	$var($String, sysEncoding, $System::getProperty("sun.jnu.encoding"_s));
 	if (sysEncoding != nullptr && !sysEncoding->equals(fileEncoding)) {

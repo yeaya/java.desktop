@@ -137,6 +137,7 @@ void HRuleView::init$($Element* elem) {
 }
 
 void HRuleView::setPropertiesFromAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($StyleSheet, sheet, $nc(($cast($HTMLDocument, $(getDocument()))))->getStyleSheet());
 	$var($AttributeSet, eAttr, $nc($(getElement()))->getAttributes());
 	$set(this, attr, $nc(sheet)->getViewAttributes(this));
@@ -182,6 +183,7 @@ float HRuleView::getLength($CSS$Attribute* key, $AttributeSet* a) {
 }
 
 void HRuleView::paint($Graphics* g, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, alloc, ($instanceOf($Rectangle, a)) ? $cast($Rectangle, a) : $nc(a)->getBounds());
 	int32_t x = 0;
 	int32_t y = $nc(alloc)->y + HRuleView::SPACE_ABOVE + $cast(int32_t, this->topMargin);
@@ -238,6 +240,7 @@ void HRuleView::paint($Graphics* g, $Shape* a) {
 }
 
 float HRuleView::getPreferredSpan(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	switch (axis) {
 	case $View::X_AXIS:
 		{

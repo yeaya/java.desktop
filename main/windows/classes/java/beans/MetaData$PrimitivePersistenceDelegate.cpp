@@ -66,6 +66,7 @@ bool MetaData$PrimitivePersistenceDelegate::mutatesTo(Object$* oldInstance, Obje
 }
 
 $Expression* MetaData$PrimitivePersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, var$0, oldInstance);
 	$var($Object, var$1, $of($nc($of(oldInstance))->getClass()));
 	$var($String, var$2, "new"_s);

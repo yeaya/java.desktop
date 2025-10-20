@@ -218,6 +218,7 @@ bool D3DGraphicsDevice::initD3D() {
 
 D3DGraphicsDevice* D3DGraphicsDevice::createDevice(int32_t screen) {
 	$init(D3DGraphicsDevice);
+	$useLocalCurrentObjectStackCache();
 	if (!D3DGraphicsDevice::d3dAvailable) {
 		return nullptr;
 	}
@@ -257,6 +258,7 @@ $String* D3DGraphicsDevice::getDeviceIdNative(int32_t screen) {
 
 $ContextCapabilities* D3DGraphicsDevice::getDeviceCaps(int32_t screen) {
 	$init(D3DGraphicsDevice);
+	$useLocalCurrentObjectStackCache();
 	$var($ContextCapabilities, d3dCaps, nullptr);
 	$var($D3DRenderQueue, rq, $D3DRenderQueue::getInstance());
 	$nc(rq)->lock();
@@ -285,6 +287,7 @@ bool D3DGraphicsDevice::isCapPresent(int32_t cap) {
 }
 
 void D3DGraphicsDevice::init$(int32_t screennum, $ContextCapabilities* d3dCaps) {
+	$useLocalCurrentObjectStackCache();
 	$Win32GraphicsDevice::init$(screennum);
 	$set(this, ownerOrigBounds, nullptr);
 	$set(this, descString, $str({"D3DGraphicsDevice[screen="_s, $$str(screennum)}));
@@ -323,6 +326,7 @@ bool D3DGraphicsDevice::enterFullScreenExclusiveNative(int32_t screen, int64_t h
 }
 
 void D3DGraphicsDevice::enterFullScreenExclusive(int32_t screen, $WindowPeer* wp) {
+	$useLocalCurrentObjectStackCache();
 	$var($WWindowPeer, wpeer, $cast($WWindowPeer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(this->realFSWindow)));
 	$var($D3DRenderQueue, rq, $D3DRenderQueue::getInstance());
 	$nc(rq)->lock();
@@ -354,6 +358,7 @@ bool D3DGraphicsDevice::exitFullScreenExclusiveNative(int32_t screen) {
 }
 
 void D3DGraphicsDevice::exitFullScreenExclusive(int32_t screen, $WindowPeer* w) {
+	$useLocalCurrentObjectStackCache();
 	if (this->fsStatus) {
 		$var($D3DRenderQueue, rq, $D3DRenderQueue::getInstance());
 		$nc(rq)->lock();
@@ -376,6 +381,7 @@ void D3DGraphicsDevice::exitFullScreenExclusive(int32_t screen, $WindowPeer* w) 
 }
 
 void D3DGraphicsDevice::addFSWindowListener($Window* w) {
+	$useLocalCurrentObjectStackCache();
 	$var($AWTAccessor$ComponentAccessor, acc, $AWTAccessor::getComponentAccessor());
 	if (!($instanceOf($Frame, w)) && !($instanceOf($Dialog, w)) && ($assignField(this, realFSWindow, getToplevelOwner(w))) != nullptr) {
 		$set(this, ownerOrigBounds, $nc(this->realFSWindow)->getBounds());
@@ -394,6 +400,7 @@ void D3DGraphicsDevice::addFSWindowListener($Window* w) {
 }
 
 void D3DGraphicsDevice::removeFSWindowListener($Window* w) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->realFSWindow)->removeWindowListener(this->fsWindowListener);
 	$set(this, fsWindowListener, nullptr);
 	$var($WWindowPeer, wpeer, $cast($WWindowPeer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(this->realFSWindow)));
@@ -428,6 +435,7 @@ $DisplayMode* D3DGraphicsDevice::getCurrentDisplayModeNative(int32_t screen) {
 }
 
 $DisplayMode* D3DGraphicsDevice::getCurrentDisplayMode(int32_t screen) {
+	$useLocalCurrentObjectStackCache();
 	$var($D3DRenderQueue, rq, $D3DRenderQueue::getInstance());
 	$nc(rq)->lock();
 	{
@@ -470,6 +478,7 @@ void D3DGraphicsDevice::configDisplayModeNative(int32_t screen, int64_t hwnd, in
 }
 
 void D3DGraphicsDevice::configDisplayMode(int32_t screen, $WindowPeer* w, int32_t width, int32_t height, int32_t bitDepth, int32_t refreshRate) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->fsStatus) {
 		$Win32GraphicsDevice::configDisplayMode(screen, w, width, height, bitDepth, refreshRate);
 		return;
@@ -504,6 +513,7 @@ void D3DGraphicsDevice::enumDisplayModesNative(int32_t screen, $ArrayList* modes
 }
 
 void D3DGraphicsDevice::enumDisplayModes(int32_t screen, $ArrayList* modes) {
+	$useLocalCurrentObjectStackCache();
 	$var($D3DRenderQueue, rq, $D3DRenderQueue::getInstance());
 	$nc(rq)->lock();
 	{
@@ -534,6 +544,7 @@ int64_t D3DGraphicsDevice::getAvailableAcceleratedMemoryNative(int32_t screen) {
 }
 
 int32_t D3DGraphicsDevice::getAvailableAcceleratedMemory() {
+	$useLocalCurrentObjectStackCache();
 	$var($D3DRenderQueue, rq, $D3DRenderQueue::getInstance());
 	$nc(rq)->lock();
 	{
@@ -599,6 +610,7 @@ bool D3DGraphicsDevice::isD3DAvailableOnDeviceNative(int32_t screen) {
 
 bool D3DGraphicsDevice::isD3DAvailableOnDevice(int32_t screen) {
 	$init(D3DGraphicsDevice);
+	$useLocalCurrentObjectStackCache();
 	if (!D3DGraphicsDevice::d3dAvailable) {
 		return false;
 	}

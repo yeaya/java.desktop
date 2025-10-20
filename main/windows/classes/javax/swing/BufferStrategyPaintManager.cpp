@@ -162,6 +162,7 @@ void BufferStrategyPaintManager::dispose() {
 }
 
 void BufferStrategyPaintManager::dispose($List* bufferInfos) {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(BufferStrategyPaintManager::LOGGER)->isLoggable($PlatformLogger$Level::FINER)) {
 		$nc(BufferStrategyPaintManager::LOGGER)->finer("BufferStrategyPaintManager disposed"_s, static_cast<$Throwable*>($$new($RuntimeException)));
@@ -180,6 +181,7 @@ void BufferStrategyPaintManager::dispose($List* bufferInfos) {
 }
 
 bool BufferStrategyPaintManager::show($Container* c, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this) {
 		if (this->painting) {
 			return false;
@@ -249,6 +251,7 @@ bool BufferStrategyPaintManager::paint($JComponent* paintingComponent, $JCompone
 }
 
 void BufferStrategyPaintManager::copyArea($JComponent* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t deltaX, int32_t deltaY, bool clip) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, root, fetchRoot(c));
 	bool var$0 = prepare(c, root, false, 0, 0, 0, 0);
 	if (var$0 && $nc(this->bufferInfo)->isInSync()) {
@@ -294,6 +297,7 @@ void BufferStrategyPaintManager::beginPaint() {
 }
 
 void BufferStrategyPaintManager::endPaint() {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(BufferStrategyPaintManager::LOGGER)->isLoggable($PlatformLogger$Level::FINEST)) {
 		$nc(BufferStrategyPaintManager::LOGGER)->finest($$str({"endPaint: region "_s, $$str(this->accumulatedX), " "_s, $$str(this->accumulatedY), " "_s, $$str(this->accumulatedMaxX), " "_s, $$str(this->accumulatedMaxY)}));
@@ -365,6 +369,7 @@ void BufferStrategyPaintManager::doubleBufferingChanged($JRootPane* rootPane) {
 }
 
 void BufferStrategyPaintManager::doubleBufferingChanged0($JRootPane* rootPane) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferStrategyPaintManager$BufferInfo, info, nullptr);
 	$synchronized(this) {
 		while (this->showing) {
@@ -388,6 +393,7 @@ void BufferStrategyPaintManager::doubleBufferingChanged0($JRootPane* rootPane) {
 }
 
 bool BufferStrategyPaintManager::prepare($JComponent* c, $Container* root, bool isPaint, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (this->bsg != nullptr) {
 		$nc(this->bsg)->dispose();
 		$set(this, bsg, nullptr);
@@ -484,6 +490,7 @@ void BufferStrategyPaintManager::resetDoubleBufferPerWindow() {
 }
 
 $BufferStrategyPaintManager$BufferInfo* BufferStrategyPaintManager::getBufferInfo($Container* root) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t counter = $nc(this->bufferInfos)->size() - 1; counter >= 0; --counter) {
 		$var($BufferStrategyPaintManager$BufferInfo, bufferInfo, $cast($BufferStrategyPaintManager$BufferInfo, $nc(this->bufferInfos)->get(counter)));
 		$var($Container, biRoot, $nc(bufferInfo)->getRoot());

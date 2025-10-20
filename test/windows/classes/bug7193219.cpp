@@ -97,6 +97,7 @@ void bug7193219::init$() {
 }
 
 $bytes* bug7193219::serializeGUI() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame, "Serialization"_s));
 	$var($JPanel, mainPanel, $new($JPanel));
 	$var($JComboBox, status, $new($JComboBox));
@@ -119,6 +120,7 @@ $bytes* bug7193219::serializeGUI() {
 }
 
 void bug7193219::deserializeGUI($bytes* serializedData) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($ObjectInputStream, ois, $new($ObjectInputStream, $$new($ByteArrayInputStream, serializedData)));
 		$var($JPanel, mainPanel, $cast($JPanel, ois->readObject()));
@@ -133,6 +135,7 @@ void bug7193219::deserializeGUI($bytes* serializedData) {
 }
 
 void bug7193219::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 	$SwingUtilities::invokeAndWait($$new($bug7193219$1));
 }

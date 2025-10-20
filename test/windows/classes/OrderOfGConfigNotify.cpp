@@ -213,6 +213,7 @@ void OrderOfGConfigNotify::main($StringArray* args) {
 
 void OrderOfGConfigNotify::lambda$main$2() {
 	$init(OrderOfGConfigNotify);
+	$useLocalCurrentObjectStackCache();
 	$var($AtomicBoolean, parentCalled, $new($AtomicBoolean, false));
 	$var($AtomicBoolean, childCalled, $new($AtomicBoolean, false));
 	$var($JFrame, frame, $new($JFrame));

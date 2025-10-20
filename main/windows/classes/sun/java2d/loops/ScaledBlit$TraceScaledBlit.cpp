@@ -71,6 +71,7 @@ $Object* allocate$ScaledBlit$TraceScaledBlit($Class* clazz) {
 }
 
 void ScaledBlit$TraceScaledBlit::init$($ScaledBlit* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, var$0, $nc(target)->getSourceType());
 	$var($CompositeType, var$1, target->getCompositeType());
 	$ScaledBlit::init$(var$0, var$1, $(target->getDestType()));

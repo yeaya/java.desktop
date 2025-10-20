@@ -108,6 +108,7 @@ void bug8040328::init$() {
 
 void bug8040328::main($StringArray* args) {
 	$init(bug8040328);
+	$useLocalCurrentObjectStackCache();
 	$var($SynthLookAndFeel, lookAndFeel, $new($SynthLookAndFeel));
 	lookAndFeel->load($$new($ByteArrayInputStream, $($nc(bug8040328::synthXml)->getBytes("UTF8"_s))), bug8040328::class$);
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>(lookAndFeel));
@@ -118,6 +119,7 @@ void bug8040328::main($StringArray* args) {
 
 void bug8040328::test($JFrame* frame) {
 	$init(bug8040328);
+	$useLocalCurrentObjectStackCache();
 	$var($JSlider, hslider, $new($JSlider, $JSlider::HORIZONTAL));
 	$init($Color);
 	hslider->setBackground($Color::DARK_GRAY);

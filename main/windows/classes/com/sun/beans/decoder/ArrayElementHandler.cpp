@@ -79,6 +79,7 @@ bool ArrayElementHandler::isArgument() {
 }
 
 $ValueObject* ArrayElementHandler::getValueObject($Class* type, $ObjectArray* args) {
+	$useLocalCurrentObjectStackCache();
 	if (type == nullptr) {
 		$load($Object);
 		type = $Object::class$;

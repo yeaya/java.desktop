@@ -91,6 +91,7 @@ void FrameSetView::init$($Element* elem, int32_t axis) {
 }
 
 $StringArray* FrameSetView::parseRowColSpec($HTML$Attribute* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attributes, $nc($(getElement()))->getAttributes());
 	$var($String, spec, "*"_s);
 	if (attributes != nullptr) {
@@ -116,6 +117,7 @@ $StringArray* FrameSetView::parseRowColSpec($HTML$Attribute* key) {
 }
 
 void FrameSetView::init() {
+	$useLocalCurrentObjectStackCache();
 	if (getAxis() == $View::Y_AXIS) {
 		$init($HTML$Attribute);
 		$set(this, children, parseRowColSpec($HTML$Attribute::ROWS));
@@ -167,6 +169,7 @@ void FrameSetView::layoutMajorAxis(int32_t targetSpan, int32_t axis, $ints* offs
 }
 
 $SizeRequirementsArray* FrameSetView::getChildRequests(int32_t targetSpan, int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, span, $new($ints, $nc(this->children)->length));
 	spread(targetSpan, span);
 	int32_t n = getViewCount();

@@ -383,6 +383,7 @@ void RepaintManager::displayChanged() {
 
 void RepaintManager::addInvalidComponent($JComponent* invalidComponent) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var(RepaintManager, delegate, getDelegate(invalidComponent));
 		if (delegate != nullptr) {
 			delegate->addInvalidComponent(invalidComponent);
@@ -424,6 +425,7 @@ void RepaintManager::removeInvalidComponent($JComponent* component) {
 }
 
 void RepaintManager::addDirtyRegion0($Container* c, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if ((w <= 0) || (h <= 0) || (c == nullptr)) {
 		return;
 	}
@@ -481,6 +483,7 @@ void RepaintManager::addDirtyRegion($Applet* applet, int32_t x, int32_t y, int32
 }
 
 void RepaintManager::scheduleHeavyWeightPaints() {
+	$useLocalCurrentObjectStackCache();
 	$var($Map, hws, nullptr);
 	$synchronized(this) {
 		if ($nc(this->hwDirtyComponents)->size() == 0) {
@@ -508,6 +511,7 @@ void RepaintManager::scheduleHeavyWeightPaints() {
 }
 
 void RepaintManager::nativeAddDirtyRegion($AppContext* appContext, $Container* c, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (w > 0 && h > 0) {
 		$synchronized(this) {
 			$var($Rectangle, dirty, $cast($Rectangle, $nc(this->hwDirtyComponents)->get(c)));
@@ -543,6 +547,7 @@ bool RepaintManager::extendDirtyRegion($Component* c, int32_t x, int32_t y, int3
 }
 
 $Rectangle* RepaintManager::getDirtyRegion($JComponent* aComponent) {
+	$useLocalCurrentObjectStackCache();
 	$var(RepaintManager, delegate, getDelegate(aComponent));
 	if (delegate != nullptr) {
 		return delegate->getDirtyRegion(aComponent);
@@ -579,6 +584,7 @@ void RepaintManager::markCompletelyClean($JComponent* aComponent) {
 }
 
 bool RepaintManager::isCompletelyDirty($JComponent* aComponent) {
+	$useLocalCurrentObjectStackCache();
 	$var(RepaintManager, delegate, getDelegate(aComponent));
 	if (delegate != nullptr) {
 		return delegate->isCompletelyDirty(aComponent);
@@ -593,6 +599,7 @@ bool RepaintManager::isCompletelyDirty($JComponent* aComponent) {
 }
 
 void RepaintManager::validateInvalidComponents() {
+	$useLocalCurrentObjectStackCache();
 	$var($List, ic, nullptr);
 	$synchronized(this) {
 		if (this->invalidComponents == nullptr) {
@@ -611,6 +618,7 @@ void RepaintManager::validateInvalidComponents() {
 }
 
 void RepaintManager::prePaintDirtyRegions() {
+	$useLocalCurrentObjectStackCache();
 	$var($Map, dirtyComponents, nullptr);
 	$var($List, runnableList, nullptr);
 	$synchronized(this) {
@@ -636,6 +644,7 @@ void RepaintManager::prePaintDirtyRegions() {
 }
 
 void RepaintManager::updateWindows($Map* dirtyComponents) {
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());
 	if (!($instanceOf($SunToolkit, toolkit) && $nc(($cast($SunToolkit, toolkit)))->needUpdateWindow())) {
 		return;
@@ -678,6 +687,7 @@ void RepaintManager::paintDirtyRegions() {
 }
 
 void RepaintManager::paintDirtyRegions($Map* tmpDirtyComponents) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(tmpDirtyComponents)->isEmpty()) {
 		return;
 	}
@@ -717,6 +727,7 @@ void RepaintManager::paintDirtyRegions($Map* tmpDirtyComponents) {
 }
 
 void RepaintManager::adjustRoots($JComponent* root, $List* roots, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = $nc(roots)->size() - 1; i >= index; --i) {
 		$var($Component, c, $cast($Component, roots->get(i)));
 		for (;;) {
@@ -732,6 +743,7 @@ void RepaintManager::adjustRoots($JComponent* root, $List* roots, int32_t index)
 }
 
 void RepaintManager::collectDirtyComponents($Map* dirtyComponents, $Component* dirtyComponent, $List* roots) {
+	$useLocalCurrentObjectStackCache();
 	int32_t dx = 0;
 	int32_t dy = 0;
 	int32_t rootDx = 0;
@@ -791,6 +803,7 @@ void RepaintManager::collectDirtyComponents($Map* dirtyComponents, $Component* d
 
 $String* RepaintManager::toString() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($StringBuilder, sb, $new($StringBuilder));
 		if (this->dirtyComponents != nullptr) {
 			sb->append($$str({""_s, this->dirtyComponents}));
@@ -808,6 +821,7 @@ $Image* RepaintManager::getOffscreenBuffer($Component* c, int32_t proposedWidth,
 }
 
 $Image* RepaintManager::getVolatileOffscreenBuffer($Component* c, int32_t proposedWidth, int32_t proposedHeight) {
+	$useLocalCurrentObjectStackCache();
 	$var(RepaintManager, delegate, getDelegate(c));
 	if (delegate != nullptr) {
 		return delegate->getVolatileOffscreenBuffer(c, proposedWidth, proposedHeight);
@@ -839,6 +853,7 @@ $Image* RepaintManager::getVolatileOffscreenBuffer($Component* c, int32_t propos
 }
 
 $Image* RepaintManager::_getOffscreenBuffer($Component* c, int32_t proposedWidth, int32_t proposedHeight) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, maxSize, getDoubleBufferMaximumSize());
 	$var($RepaintManager$DoubleBufferInfo, doubleBuffer, nullptr);
 	int32_t width = 0;
@@ -893,6 +908,7 @@ void RepaintManager::clearImages() {
 }
 
 void RepaintManager::clearImages(int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (this->standardDoubleBuffer != nullptr && $nc(this->standardDoubleBuffer)->image != nullptr) {
 		bool var$0 = $nc($nc(this->standardDoubleBuffer)->image)->getWidth(nullptr) > width;
 		if (var$0 || $nc($nc(this->standardDoubleBuffer)->image)->getHeight(nullptr) > height) {
@@ -913,6 +929,7 @@ void RepaintManager::clearImages(int32_t width, int32_t height) {
 }
 
 $Dimension* RepaintManager::getDoubleBufferMaximumSize() {
+	$useLocalCurrentObjectStackCache();
 	if (this->doubleBufferMaxSize == nullptr) {
 		try {
 			$var($Rectangle, virtualBounds, $new($Rectangle));
@@ -939,6 +956,7 @@ $Dimension* RepaintManager::getDoubleBufferMaximumSize() {
 }
 
 void RepaintManager::setDoubleBufferingEnabled(bool aFlag) {
+	$useLocalCurrentObjectStackCache();
 	this->doubleBufferingEnabled = aFlag;
 	$var($RepaintManager$PaintManager, paintManager, getPaintManager());
 	$load($RepaintManager$PaintManager);
@@ -1002,6 +1020,7 @@ void RepaintManager::removeRepaintListener($SwingUtilities2$RepaintListener* l) 
 }
 
 void RepaintManager::notifyRepaintPerformed($JComponent* c, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->repaintListeners)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1014,6 +1033,7 @@ void RepaintManager::notifyRepaintPerformed($JComponent* c, int32_t x, int32_t y
 }
 
 void RepaintManager::beginPaint() {
+	$useLocalCurrentObjectStackCache();
 	bool multiThreadedPaint = false;
 	int32_t paintDepth = 0;
 	$var($Thread, currentThread, $Thread::currentThread());
@@ -1057,6 +1077,7 @@ void RepaintManager::doubleBufferingChanged($JRootPane* rootPane) {
 }
 
 void RepaintManager::setPaintManager($RepaintManager$PaintManager* paintManager$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($RepaintManager$PaintManager, paintManager, paintManager$renamed);
 	if (paintManager == nullptr) {
 		$assign(paintManager, $new($RepaintManager$PaintManager));
@@ -1074,6 +1095,7 @@ void RepaintManager::setPaintManager($RepaintManager$PaintManager* paintManager$
 
 $RepaintManager$PaintManager* RepaintManager::getPaintManager() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->paintManager == nullptr) {
 			$var($RepaintManager$PaintManager, paintManager, nullptr);
 			if (this->doubleBufferingEnabled && !RepaintManager::nativeDoubleBuffering) {
@@ -1110,6 +1132,7 @@ $RepaintManager$PaintManager* RepaintManager::getPaintManager() {
 }
 
 void RepaintManager::scheduleProcessingRunnable($AppContext* context) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->processingRunnable)->markPending()) {
 		$var($Toolkit, tk, $Toolkit::getDefaultToolkit());
 		if ($instanceOf($SunToolkit, tk)) {
@@ -1129,6 +1152,7 @@ RepaintManager* RepaintManager::getDelegate($Component* c) {
 }
 
 void clinit$RepaintManager($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$assignStatic(RepaintManager::repaintManagerKey, RepaintManager::class$);
 	RepaintManager::volatileImageBufferEnabled = true;

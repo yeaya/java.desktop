@@ -226,6 +226,7 @@ int32_t GroupLayout$SequentialGroup::operator$(int32_t a, int32_t b) {
 }
 
 void GroupLayout$SequentialGroup::setValidSize(int32_t axis, int32_t origin, int32_t size) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pref = getPreferredSize(axis);
 	if (size == pref) {
 		{
@@ -249,6 +250,7 @@ void GroupLayout$SequentialGroup::setValidSize(int32_t axis, int32_t origin, int
 }
 
 void GroupLayout$SequentialGroup::setValidSizeNotPreferred(int32_t axis, int32_t origin, int32_t size) {
+	$useLocalCurrentObjectStackCache();
 	int32_t delta = size - getPreferredSize(axis);
 	if (!GroupLayout$SequentialGroup::$assertionsDisabled && !(delta != 0)) {
 		$throwNew($AssertionError);
@@ -300,6 +302,7 @@ void GroupLayout$SequentialGroup::setValidSizeNotPreferred(int32_t axis, int32_t
 }
 
 $List* GroupLayout$SequentialGroup::buildResizableList(int32_t axis, bool useMin) {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc(this->springs)->size();
 	$var($List, sorted, $new($ArrayList, size));
 	for (int32_t counter = 0; counter < size; ++counter) {
@@ -321,6 +324,7 @@ $List* GroupLayout$SequentialGroup::buildResizableList(int32_t axis, bool useMin
 }
 
 int32_t GroupLayout$SequentialGroup::indexOfNextNonZeroSpring(int32_t index, bool treatAutopaddingAsZeroSized) {
+	$useLocalCurrentObjectStackCache();
 	while (index < $nc(this->springs)->size()) {
 		$var($GroupLayout$Spring, spring, $cast($GroupLayout$Spring, $nc(this->springs)->get(index)));
 		if (!$nc(spring)->willHaveZeroSize(treatAutopaddingAsZeroSized)) {
@@ -332,6 +336,7 @@ int32_t GroupLayout$SequentialGroup::indexOfNextNonZeroSpring(int32_t index, boo
 }
 
 void GroupLayout$SequentialGroup::insertAutopadding(int32_t axis, $List* leadingPadding, $List* trailingPadding, $List* leading, $List* trailing, bool insert) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, newLeadingPadding, $new($ArrayList, static_cast<$Collection*>(leadingPadding)));
 	$var($List, newTrailingPadding, $new($ArrayList, 1));
 	$var($List, newLeading, $new($ArrayList, static_cast<$Collection*>(leading)));
@@ -414,6 +419,7 @@ void GroupLayout$SequentialGroup::insertAutopadding(int32_t axis, $List* leading
 }
 
 int32_t GroupLayout$SequentialGroup::getBaseline() {
+	$useLocalCurrentObjectStackCache();
 	if (this->baselineSpring != nullptr) {
 		int32_t baseline = $nc(this->baselineSpring)->getBaseline();
 		if (baseline >= 0) {
@@ -437,6 +443,7 @@ int32_t GroupLayout$SequentialGroup::getBaseline() {
 }
 
 $Component$BaselineResizeBehavior* GroupLayout$SequentialGroup::getBaselineResizeBehavior() {
+	$useLocalCurrentObjectStackCache();
 	if (isResizable(1)) {
 		if (!$nc(this->baselineSpring)->isResizable(1)) {
 			bool leadingResizable = false;

@@ -75,6 +75,7 @@ void Test6741426::init$() {
 }
 
 void Test6741426::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JComboBox, cb, $new($JComboBox));
 	$var($JTextField, tf, $new($JTextField));
 	tf->setBorder($(cb->getBorder()));
@@ -85,6 +86,7 @@ void Test6741426::run() {
 
 void Test6741426::main($StringArray* args) {
 	$init(Test6741426);
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($NimbusLookAndFeel)));
 	$SwingUtilities::invokeAndWait($$new(Test6741426));
 }

@@ -149,6 +149,7 @@ void ServiceDialog$SidesPanel::finalize() {
 }
 
 void ServiceDialog$SidesPanel::init$($ServiceDialog* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JPanel::init$();
 	$set(this, strTitle, $ServiceDialog::getMsg("border.sides"_s));
@@ -188,6 +189,7 @@ void ServiceDialog$SidesPanel::actionPerformed($ActionEvent* e) {
 }
 
 void ServiceDialog$SidesPanel::updateInfo() {
+	$useLocalCurrentObjectStackCache();
 	$load($Sides);
 	$Class* sdCategory = $Sides::class$;
 	bool osSupported = false;

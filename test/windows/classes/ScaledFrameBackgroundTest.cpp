@@ -200,6 +200,7 @@ void ScaledFrameBackgroundTest::init$() {
 
 void ScaledFrameBackgroundTest::main($StringArray* args) {
 	$init(ScaledFrameBackgroundTest);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -248,6 +249,7 @@ void ScaledFrameBackgroundTest::lambda$main$1($RectangleArray* rects) {
 
 void ScaledFrameBackgroundTest::lambda$main$0() {
 	$init(ScaledFrameBackgroundTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(ScaledFrameBackgroundTest::frame, $new($JFrame));
 	$nc(ScaledFrameBackgroundTest::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$nc(ScaledFrameBackgroundTest::frame)->setSize(400, 300);

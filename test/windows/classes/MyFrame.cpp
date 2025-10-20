@@ -71,6 +71,7 @@ $Object* allocate$MyFrame($Class* clazz) {
 }
 
 void MyFrame::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$();
 	$set(this, content, "A\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO"_s);
 	$var($JEditorPane, editpane, $new($JEditorPane));

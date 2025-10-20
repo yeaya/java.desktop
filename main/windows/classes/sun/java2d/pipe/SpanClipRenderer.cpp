@@ -100,6 +100,7 @@ void SpanClipRenderer::init$($CompositePipe* pipe) {
 }
 
 $Object* SpanClipRenderer::startSequence($SunGraphics2D* sg, $Shape* s, $Rectangle* devR, $ints* abox) {
+	$useLocalCurrentObjectStackCache();
 	$var($RegionIterator, ri, $nc($nc(sg)->clipRegion)->getIterator());
 	return $of($new($SpanClipRenderer$SCRcontext, this, ri, $($nc(this->outpipe)->startSequence(sg, s, devR, abox))));
 }
@@ -114,6 +115,7 @@ void SpanClipRenderer::renderPathTile(Object$* ctx, $bytes* atile, int32_t offse
 }
 
 void SpanClipRenderer::renderPathTile(Object$* ctx, $bytes* atile$renamed, int32_t offset, int32_t tsize, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, atile, atile$renamed);
 	$var($SpanClipRenderer$SCRcontext, context, $cast($SpanClipRenderer$SCRcontext, ctx));
 	$var($RegionIterator, ri, $nc($nc(context)->iterator)->createCopy());

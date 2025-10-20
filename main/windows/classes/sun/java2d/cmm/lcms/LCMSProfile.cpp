@@ -130,6 +130,7 @@ int64_t LCMSProfile::getLcmsPtr() {
 }
 
 $bytes* LCMSProfile::getProfileData() {
+	$useLocalCurrentObjectStackCache();
 	int64_t stamp = $nc(this->lock)->readLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -155,6 +156,7 @@ $bytes* LCMSProfile::getProfileData() {
 }
 
 $bytes* LCMSProfile::getTag(int32_t sig) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, t, $cast($bytes, $nc(this->tags)->get($($Integer::valueOf(sig)))));
 	if (t != nullptr) {
 		return t;

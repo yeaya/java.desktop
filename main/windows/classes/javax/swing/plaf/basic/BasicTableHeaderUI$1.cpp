@@ -88,6 +88,7 @@ void BasicTableHeaderUI$1::focusLost($FocusEvent* e) {
 }
 
 void BasicTableHeaderUI$1::repaintHeader(Object$* source) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JTableHeader, source)) {
 		$var($JTableHeader, th, $cast($JTableHeader, source));
 		$load($BasicTableHeaderUI);

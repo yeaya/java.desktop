@@ -223,6 +223,7 @@ void MarlinCache::clearAARow(int32_t y) {
 }
 
 void MarlinCache::copyAARowNoRLE($ints* alphaRow, int32_t y, int32_t px0, int32_t px1) {
+	$useLocalCurrentObjectStackCache();
 	int32_t px_bbox1 = $FloatMath::min(px1, this->bboxX1);
 	$init($MarlinConst);
 	if ($MarlinConst::DO_LOG_BOUNDS) {
@@ -281,6 +282,7 @@ void MarlinCache::copyAARowNoRLE($ints* alphaRow, int32_t y, int32_t px0, int32_
 }
 
 void MarlinCache::copyAARowRLE_WithBlockFlags($ints* blkFlags, $ints* alphaRow, int32_t y, int32_t px0, int32_t px1) {
+	$useLocalCurrentObjectStackCache();
 	int32_t _bboxX0 = this->bboxX0;
 	int32_t row = y - this->bboxY0;
 	int32_t from = px0 - _bboxX0;
@@ -449,6 +451,7 @@ int32_t MarlinCache::alphaSumInTile(int32_t x) {
 }
 
 $String* MarlinCache::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"bbox = ["_s, $$str(this->bboxX0), ", "_s, $$str(this->bboxY0), " => "_s, $$str(this->bboxX1), ", "_s, $$str(this->bboxY1), "]\n"_s});
 }
 
@@ -463,6 +466,7 @@ $bytes* MarlinCache::buildAlphaMap(int32_t maxalpha) {
 }
 
 void clinit$MarlinCache($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	MarlinCache::FORCE_RLE = $MarlinProperties::isForceRLE();
 	MarlinCache::FORCE_NO_RLE = $MarlinProperties::isForceNoRLE();
 	$init($MarlinConst);

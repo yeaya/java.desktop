@@ -76,6 +76,7 @@ void TIFFDeflateDecompressor::init$(int32_t predictor) {
 
 void TIFFDeflateDecompressor::decodeRaw($bytes* b, int32_t dstOffset, int32_t bitsPerPixel, int32_t scanlineStride) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->predictor == $BaselineTIFFTagSet::PREDICTOR_HORIZONTAL_DIFFERENCING) {
 			int32_t len = $nc(this->bitsPerSample)->length;
 			for (int32_t i = 0; i < len; ++i) {

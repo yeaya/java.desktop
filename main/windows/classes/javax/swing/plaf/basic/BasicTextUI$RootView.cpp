@@ -306,6 +306,7 @@ $Container* BasicTextUI$RootView::getContainer() {
 }
 
 $ViewFactory* BasicTextUI$RootView::getViewFactory() {
+	$useLocalCurrentObjectStackCache();
 	$var($EditorKit, kit, this->this$0->getEditorKit(this->this$0->editor));
 	$var($ViewFactory, f, $nc(kit)->getViewFactory());
 	if (f != nullptr) {

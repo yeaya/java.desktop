@@ -197,6 +197,7 @@ void TextFieldPainter::doPaint($Graphics2D* g, $JComponent* c, int32_t width, in
 }
 
 $ObjectArray* TextFieldPainter::getExtendedCacheKeys($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, extendedCacheKeys, nullptr);
 	switch (this->state) {
 	case TextFieldPainter::BACKGROUND_ENABLED:
@@ -247,6 +248,7 @@ void TextFieldPainter::paintBackgroundSelected($Graphics2D* g) {
 }
 
 void TextFieldPainter::paintBorderDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect2());
 	$nc(g)->setPaint($(decodeGradient1(this->rect)));
 	g->fill(this->rect);
@@ -265,6 +267,7 @@ void TextFieldPainter::paintBorderDisabled($Graphics2D* g) {
 }
 
 void TextFieldPainter::paintBorderFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect7());
 	$nc(g)->setPaint($(decodeGradient3(this->rect)));
 	g->fill(this->rect);
@@ -286,6 +289,7 @@ void TextFieldPainter::paintBorderFocused($Graphics2D* g) {
 }
 
 void TextFieldPainter::paintBorderEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect7());
 	$nc(g)->setPaint($(decodeGradient5(this->rect)));
 	g->fill(this->rect);
@@ -450,6 +454,7 @@ $Path2D* TextFieldPainter::decodePath1() {
 }
 
 $Paint* TextFieldPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -467,6 +472,7 @@ $Paint* TextFieldPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* TextFieldPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -484,6 +490,7 @@ $Paint* TextFieldPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* TextFieldPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -501,6 +508,7 @@ $Paint* TextFieldPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* TextFieldPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -518,6 +526,7 @@ $Paint* TextFieldPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* TextFieldPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

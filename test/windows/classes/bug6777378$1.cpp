@@ -94,6 +94,7 @@ void bug6777378$1::init$() {
 }
 
 void bug6777378$1::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 	} catch ($Exception&) {

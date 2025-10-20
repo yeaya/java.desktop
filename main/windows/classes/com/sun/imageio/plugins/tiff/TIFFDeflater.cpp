@@ -74,6 +74,7 @@ void TIFFDeflater::init$($String* compressionType, int32_t compressionTagValue, 
 }
 
 int32_t TIFFDeflater::encode($bytes* b, int32_t off, int32_t width, int32_t height, $ints* bitsPerSample, int32_t scanlineStride) {
+	$useLocalCurrentObjectStackCache();
 	int32_t inputSize = height * scanlineStride;
 	int32_t blocks = (inputSize + 32767) / 32768;
 	$var($bytes, compData, $new($bytes, inputSize + 5 * blocks + 6));

@@ -293,6 +293,7 @@ $List* DLSInstrument::getModulators() {
 }
 
 $String* DLSInstrument::toString() {
+	$useLocalCurrentObjectStackCache();
 	if (this->druminstrument) {
 		return $str({"Drumkit: "_s, $nc(this->info)->name, " bank #"_s, $$str(this->bank), " preset #"_s, $$str(this->preset)});
 	} else {
@@ -479,6 +480,7 @@ $ModelIdentifier* DLSInstrument::convertToModelSrc(int32_t src) {
 }
 
 $ModelConnectionBlock* DLSInstrument::convertToModel($DLSModulator* mod) {
+	$useLocalCurrentObjectStackCache();
 	$var($ModelIdentifier, source, convertToModelSrc($nc(mod)->getSource()));
 	$var($ModelIdentifier, control, convertToModelSrc($nc(mod)->getControl()));
 	$var($ModelIdentifier, destination_id, convertToModelDest($nc(mod)->getDestination()));
@@ -582,6 +584,7 @@ $ModelConnectionBlock* DLSInstrument::convertToModel($DLSModulator* mod) {
 }
 
 $ModelPerformerArray* DLSInstrument::getPerformers() {
+	$useLocalCurrentObjectStackCache();
 	$var($List, performers, $new($ArrayList));
 	$var($Map, modmap, $new($HashMap));
 	{

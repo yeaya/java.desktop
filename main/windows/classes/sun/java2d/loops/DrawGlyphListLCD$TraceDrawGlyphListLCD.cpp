@@ -71,6 +71,7 @@ $Object* allocate$DrawGlyphListLCD$TraceDrawGlyphListLCD($Class* clazz) {
 }
 
 void DrawGlyphListLCD$TraceDrawGlyphListLCD::init$($DrawGlyphListLCD* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, var$0, $nc(target)->getSourceType());
 	$var($CompositeType, var$1, target->getCompositeType());
 	$DrawGlyphListLCD::init$(var$0, var$1, $(target->getDestType()));

@@ -87,6 +87,7 @@ void BasicLookAndFeel$3::init$($BasicLookAndFeel* this$0, $String* val$soundFile
 }
 
 $Object* BasicLookAndFeel$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$var($InputStream, resource, $of(this->this$0)->getClass()->getResourceAsStream(this->val$soundFile));

@@ -165,6 +165,7 @@ void JToolBar$DefaultToolBarLayout::invalidateLayout($Container* target) {
 }
 
 void JToolBar$DefaultToolBarLayout::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(e)->getPropertyName());
 	if ($nc(name)->equals("orientation"_s)) {
 		int32_t o = $nc(($cast($Integer, $(e->getNewValue()))))->intValue();

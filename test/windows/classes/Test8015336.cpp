@@ -40,6 +40,7 @@ void Test8015336::init$() {
 }
 
 void Test8015336::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$nc($($$new($JComboBox)->getEditor()))->setItem($$new(Test8015336));
 }
 

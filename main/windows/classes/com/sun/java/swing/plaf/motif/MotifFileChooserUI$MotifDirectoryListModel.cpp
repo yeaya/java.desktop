@@ -110,10 +110,12 @@ void MotifFileChooserUI$MotifDirectoryListModel::init$($MotifFileChooserUI* this
 }
 
 int32_t MotifFileChooserUI$MotifDirectoryListModel::getSize() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($nc($(this->this$0->getModel()))->getDirectories()))->size();
 }
 
 $Object* MotifFileChooserUI$MotifDirectoryListModel::getElementAt(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	return $of($cast($File, $nc($($nc($(this->this$0->getModel()))->getDirectories()))->elementAt(index)));
 }
 
@@ -128,6 +130,7 @@ void MotifFileChooserUI$MotifDirectoryListModel::intervalRemoved($ListDataEvent*
 }
 
 void MotifFileChooserUI$MotifDirectoryListModel::fireContentsChanged() {
+	$useLocalCurrentObjectStackCache();
 	fireContentsChanged(this, 0, $nc($($nc($(this->this$0->getModel()))->getDirectories()))->size() - 1);
 }
 

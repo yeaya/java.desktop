@@ -75,6 +75,7 @@ $Object* allocate$RenderingHints$Key($Class* clazz) {
 $HashMap* RenderingHints$Key::identitymap = nullptr;
 
 $String* RenderingHints$Key::getIdentity() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$2, $$str({$($of(this)->getClass()->getName()), "@"_s}));
 	$var($String, var$1, $$concat(var$2, $($Integer::toHexString($System::identityHashCode($of(this)->getClass())))));
 	$var($String, var$0, $$concat(var$1, ":"));
@@ -85,6 +86,7 @@ void RenderingHints$Key::recordIdentity(RenderingHints$Key* k) {
 	$load(RenderingHints$Key);
 	$synchronized(class$) {
 		$init(RenderingHints$Key);
+		$useLocalCurrentObjectStackCache();
 		$var($Object, identity, $nc(k)->getIdentity());
 		$var($Object, otherref, $nc(RenderingHints$Key::identitymap)->get(identity));
 		if (otherref != nullptr) {

@@ -79,6 +79,7 @@ void PrimitiveTypeMap::init$() {
 }
 
 void clinit$PrimitiveTypeMap($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(PrimitiveTypeMap::map, $new($HashMap, 9));
 	{
 		$init($Boolean);

@@ -106,6 +106,7 @@ void MotifRadioButtonMenuItemUI$ChangeHandler::init$($MotifRadioButtonMenuItemUI
 }
 
 void MotifRadioButtonMenuItemUI$ChangeHandler::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuItem, c, $cast($JMenuItem, $nc(e)->getSource()));
 	$LookAndFeel::installProperty(c, "borderPainted"_s, $($Boolean::valueOf($nc(c)->isArmed())));
 }

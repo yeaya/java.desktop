@@ -97,6 +97,7 @@ $AccessibleRole* JTableHeader$AccessibleJTableHeader::getAccessibleRole() {
 }
 
 $Accessible* JTableHeader$AccessibleJTableHeader::getAccessibleAt($Point* p) {
+	$useLocalCurrentObjectStackCache();
 	int32_t column = 0;
 	if ((column = this->this$0->columnAtPoint(p)) != -1) {
 		$var($TableColumn, aColumn, $nc(this->this$0->columnModel)->getColumn(column));
@@ -121,6 +122,7 @@ int32_t JTableHeader$AccessibleJTableHeader::getAccessibleChildrenCount() {
 }
 
 $Accessible* JTableHeader$AccessibleJTableHeader::getAccessibleChild(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (i < 0 || i >= getAccessibleChildrenCount()) {
 		return nullptr;
 	} else {

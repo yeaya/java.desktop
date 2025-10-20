@@ -71,6 +71,7 @@ void ImageIO$TranscoderFilter::init$($ImageReaderSpi* readerSpi, $ImageWriterSpi
 }
 
 bool ImageIO$TranscoderFilter::filter(Object$* elt) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageTranscoderSpi, spi, $cast($ImageTranscoderSpi, elt));
 	$var($String, readerName, $nc(spi)->getReaderServiceProviderName());
 	$var($String, writerName, spi->getWriterServiceProviderName());

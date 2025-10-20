@@ -248,6 +248,7 @@ void WrappedPlainView::init$($Element* elem, bool wordWrap) {
 }
 
 int32_t WrappedPlainView::getTabSize() {
+	$useLocalCurrentObjectStackCache();
 	$init($PlainDocument);
 	$var($Integer, i, $cast($Integer, $nc($(getDocument()))->getProperty($PlainDocument::tabSizeAttribute)));
 	int32_t size = (i != nullptr) ? $nc(i)->intValue() : 8;
@@ -259,6 +260,7 @@ void WrappedPlainView::drawLine(int32_t p0, int32_t p1, $Graphics* g, int32_t x,
 }
 
 void WrappedPlainView::drawLineImpl(int32_t p0, int32_t p1, $Graphics* g, float x, float y, bool useFPAPI) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, lineMap, getElement());
 	$var($Element, line, $nc(lineMap)->getElement(lineMap->getElementIndex(p0)));
 	$var($Element, elem, nullptr);
@@ -286,6 +288,7 @@ void WrappedPlainView::drawLine(int32_t p0, int32_t p1, $Graphics2D* g, float x,
 }
 
 float WrappedPlainView::drawText($Element* elem, int32_t p0, int32_t p1, $Graphics* g, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	p1 = $Math::min($nc($(getDocument()))->getLength(), p1);
 	$var($AttributeSet, attr, $nc(elem)->getAttributes());
 	if ($Utilities::isComposedTextAttributeDefined(attr)) {
@@ -327,6 +330,7 @@ float WrappedPlainView::callDrawUnselectedText($Graphics* g, float x, float y, i
 }
 
 float WrappedPlainView::drawUnselectedTextImpl($Graphics* g, float x, float y, int32_t p0, int32_t p1, bool useFPAPI) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor(this->unselected);
 	$var($Document, doc, getDocument());
 	$var($Segment, segment, $SegmentCache::getSharedSegment());
@@ -349,6 +353,7 @@ float WrappedPlainView::callDrawSelectedText($Graphics* g, float x, float y, int
 }
 
 float WrappedPlainView::drawSelectedTextImpl($Graphics* g, float x, float y, int32_t p0, int32_t p1, bool useFPAPI) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor(this->selected);
 	$var($Document, doc, getDocument());
 	$var($Segment, segment, $SegmentCache::getSharedSegment());
@@ -384,6 +389,7 @@ int32_t WrappedPlainView::calculateBreakPosition(int32_t p0, int32_t p1) {
 }
 
 void WrappedPlainView::loadChildren($ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, e, getElement());
 	int32_t n = $nc(e)->getElementCount();
 	if (n > 0) {
@@ -396,6 +402,7 @@ void WrappedPlainView::loadChildren($ViewFactory* f) {
 }
 
 void WrappedPlainView::updateChildren($DocumentEvent* e, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, getElement());
 	$var($DocumentEvent$ElementChange, ec, $nc(e)->getChange(elem));
 	if (ec != nullptr) {
@@ -415,6 +422,7 @@ void WrappedPlainView::updateChildren($DocumentEvent* e, $Shape* a) {
 }
 
 void WrappedPlainView::loadText($Segment* segment, int32_t p0, int32_t p1) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($Document, doc, getDocument());
 		$nc(doc)->getText(p0, p1 - p0, segment);
@@ -425,6 +433,7 @@ void WrappedPlainView::loadText($Segment* segment, int32_t p0, int32_t p1) {
 }
 
 void WrappedPlainView::updateMetrics() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, host, getContainer());
 	$var($Font, f, $nc(host)->getFont());
 	$set(this, metrics, host->getFontMetrics(f));
@@ -447,6 +456,7 @@ float WrappedPlainView::nextTabStop(float x, int32_t tabOffset) {
 }
 
 void WrappedPlainView::paint($Graphics* g, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, alloc, $cast($Rectangle, a));
 	this->tabBase = $nc(alloc)->x;
 	$var($JTextComponent, host, $cast($JTextComponent, getContainer()));
@@ -486,6 +496,7 @@ float WrappedPlainView::getMaximumSpan(int32_t axis) {
 }
 
 void WrappedPlainView::insertUpdate($DocumentEvent* e, $Shape* a, $ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	updateChildren(e, a);
 	$var($Rectangle, alloc, ((a != nullptr) && isAllocationValid()) ? getInsideAllocation(a) : ($Rectangle*)nullptr);
 	int32_t pos = $nc(e)->getOffset();
@@ -496,6 +507,7 @@ void WrappedPlainView::insertUpdate($DocumentEvent* e, $Shape* a, $ViewFactory* 
 }
 
 void WrappedPlainView::removeUpdate($DocumentEvent* e, $Shape* a, $ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	updateChildren(e, a);
 	$var($Rectangle, alloc, ((a != nullptr) && isAllocationValid()) ? getInsideAllocation(a) : ($Rectangle*)nullptr);
 	int32_t pos = $nc(e)->getOffset();

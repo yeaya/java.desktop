@@ -115,6 +115,7 @@ void FocusTraversal$1::init$($String* val$lookAndFeelString) {
 }
 
 void FocusTraversal$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($Set, keystrokes, $new($HashSet));
 	keystrokes->add($($KeyStroke::getKeyStroke("TAB"_s)));
 	keystrokes->add($($KeyStroke::getKeyStroke("ENTER"_s)));

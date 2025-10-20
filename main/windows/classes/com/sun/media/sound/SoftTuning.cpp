@@ -113,6 +113,7 @@ bool SoftTuning::checksumOK($bytes* data) {
 }
 
 void SoftTuning::load($bytes* data) {
+	$useLocalCurrentObjectStackCache();
 	if (((int32_t)($nc(data)->get(1) & (uint32_t)255)) == 126 || ((int32_t)($nc(data)->get(1) & (uint32_t)255)) == 127) {
 		int32_t subid1 = (int32_t)(data->get(3) & (uint32_t)255);
 		{

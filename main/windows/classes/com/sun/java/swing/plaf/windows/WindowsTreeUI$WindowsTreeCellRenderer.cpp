@@ -80,6 +80,7 @@ void WindowsTreeUI$WindowsTreeCellRenderer::init$($WindowsTreeUI* this$0) {
 }
 
 $Component* WindowsTreeUI$WindowsTreeCellRenderer::getTreeCellRendererComponent($JTree* tree, Object$* value, bool sel, bool expanded, bool leaf, int32_t row, bool hasFocus) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultTreeCellRenderer::getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
 	if (!$nc(tree)->isEnabled()) {
 		setEnabled(false);

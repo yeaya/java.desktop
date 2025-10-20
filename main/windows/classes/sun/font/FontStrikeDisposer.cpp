@@ -142,6 +142,7 @@ void FontStrikeDisposer::init$($Font2D* font2D, $FontStrikeDesc* desc) {
 
 void FontStrikeDisposer::dispose() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (!this->disposed) {
 			$var($Reference, ref, $cast($Reference, $nc(this->strikeCache)->get(this->desc)));
 			if (ref != nullptr) {

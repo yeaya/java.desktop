@@ -161,6 +161,7 @@ void DrawGridLinesTest::main($StringArray* args) {
 
 void DrawGridLinesTest::checkTableGridLines() {
 	$init(DrawGridLinesTest);
+	$useLocalCurrentObjectStackCache();
 	$var($TableModel, dataModel, $new($DrawGridLinesTest$1));
 	$var($DefaultTableCellRenderer, r, $new($DefaultTableCellRenderer));
 	r->setOpaque(true);
@@ -179,6 +180,7 @@ void DrawGridLinesTest::checkTableGridLines() {
 
 void DrawGridLinesTest::checkTableGridLines($JTable* table) {
 	$init(DrawGridLinesTest);
+	$useLocalCurrentObjectStackCache();
 	int32_t w = DrawGridLinesTest::SCALE * DrawGridLinesTest::WIDTH;
 	int32_t h = DrawGridLinesTest::SCALE * DrawGridLinesTest::HEIGHT;
 	$var($BufferedImage, img, $new($BufferedImage, w, h, $BufferedImage::TYPE_INT_RGB));

@@ -124,6 +124,7 @@ void bug6348946::init$() {
 
 void bug6348946::main($StringArray* args) {
 	$init(bug6348946);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug6348946::robot, $new($Robot));
 	$nc(bug6348946::robot)->setAutoDelay(10);
 	$var($String, lf, "javax.swing.plaf.metal.MetalLookAndFeel"_s);
@@ -149,6 +150,7 @@ void bug6348946::main($StringArray* args) {
 
 void bug6348946::setupUI() {
 	$init(bug6348946);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug6348946::frame, $new($JFrame));
 	$assignStatic(bug6348946::panel, $new($JPanel));
 	$nc(bug6348946::panel)->setLayout($$new($BorderLayout));
@@ -189,6 +191,7 @@ void bug6348946::stopEDT() {
 
 $Rectangle* bug6348946::getPanelRectangle() {
 	$init(bug6348946);
+	$useLocalCurrentObjectStackCache();
 	$var($RectangleArray, result, $new($RectangleArray, 1));
 	$SwingUtilities::invokeAndWait($$new($bug6348946$3, result));
 	return result->get(0);

@@ -93,6 +93,7 @@ void bug6263446$6::init$($String* val$sel) {
 }
 
 void bug6263446$6::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$init($bug6263446);

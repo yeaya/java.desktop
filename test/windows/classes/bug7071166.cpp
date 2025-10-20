@@ -76,6 +76,7 @@ void bug7071166::init$() {
 
 void bug7071166::main($StringArray* args) {
 	$init(bug7071166);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;

@@ -65,6 +65,7 @@ void bug6462008$3::init$() {
 }
 
 void bug6462008$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6462008);
 	$nc($($nc($bug6462008::list)->getSelectionModel()))->setSelectionMode($ListSelectionModel::MULTIPLE_INTERVAL_SELECTION);
 	$nc($($nc($bug6462008::list)->getSelectionModel()))->clearSelection();

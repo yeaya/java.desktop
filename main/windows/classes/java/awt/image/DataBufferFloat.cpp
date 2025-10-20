@@ -82,6 +82,7 @@ void DataBufferFloat::init$(int32_t size) {
 }
 
 void DataBufferFloat::init$(int32_t size, int32_t numBanks) {
+	$useLocalCurrentObjectStackCache();
 	$init($StateTrackable$State);
 	$DataBuffer::init$($StateTrackable$State::STABLE, $DataBuffer::TYPE_FLOAT, size, numBanks);
 	$set(this, bankdata, $new($floatArray2, numBanks));

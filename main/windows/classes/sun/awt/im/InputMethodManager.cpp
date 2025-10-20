@@ -80,6 +80,7 @@ void InputMethodManager::init$() {
 
 InputMethodManager* InputMethodManager::getInstance() {
 	$init(InputMethodManager);
+	$useLocalCurrentObjectStackCache();
 	if (InputMethodManager::inputMethodManager != nullptr) {
 		return InputMethodManager::inputMethodManager;
 	}

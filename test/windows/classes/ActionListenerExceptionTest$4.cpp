@@ -88,6 +88,7 @@ void ActionListenerExceptionTest$4::init$($ActionListenerExceptionTest* this$0) 
 }
 
 void ActionListenerExceptionTest$4::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, comp, $nc($($cast($ComboBoxUI, $nc(this->this$0->combo)->getUI())))->getAccessibleChild(this->this$0->combo, 0));
 	int32_t i = 0;
 	$var($JComponent, scrollPane, nullptr);

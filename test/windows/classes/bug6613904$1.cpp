@@ -75,6 +75,7 @@ void bug6613904$1::init$() {
 }
 
 void bug6613904$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($GroupLayout, groupLayout, $new($GroupLayout, $$new($JPanel)));
 	try {
 		groupLayout->createParallelGroup(nullptr);

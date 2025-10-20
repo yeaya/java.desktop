@@ -110,6 +110,7 @@ void MetalIconFactory$CheckBoxMenuItemIcon::init$() {
 }
 
 void MetalIconFactory$CheckBoxMenuItemIcon::paintOceanIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($ButtonModel, model, $nc(($cast($JMenuItem, c)))->getModel());
 	bool isSelected = $nc(model)->isSelected();
 	bool isEnabled = model->isEnabled();
@@ -157,6 +158,7 @@ void MetalIconFactory$CheckBoxMenuItemIcon::paintOceanIcon($Component* c, $Graph
 }
 
 void MetalIconFactory$CheckBoxMenuItemIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	if ($MetalLookAndFeel::usingOcean()) {
 		paintOceanIcon(c, g, x, y);
 		return;
@@ -213,6 +215,7 @@ void MetalIconFactory$CheckBoxMenuItemIcon::paintIcon($Component* c, $Graphics* 
 }
 
 void MetalIconFactory$CheckBoxMenuItemIcon::drawCheck($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, xPoints, $new($ints, {
 		2,
 		3,

@@ -338,6 +338,7 @@ void SynthFileChooserUIImpl::installDefaults($JFileChooser* fc) {
 }
 
 void SynthFileChooserUIImpl::installComponents($JFileChooser* fc) {
+	$useLocalCurrentObjectStackCache();
 	$SynthFileChooserUI::installComponents(fc);
 	$var($SynthContext, context, getContext(fc, $SynthConstants::ENABLED));
 	$nc(fc)->setLayout($$new($BorderLayout, 0, 11));
@@ -508,6 +509,7 @@ $String* SynthFileChooserUIImpl::fileNameString($File* file) {
 }
 
 $String* SynthFileChooserUIImpl::fileNameString($FileArray* files) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, $new($StringBuilder));
 	for (int32_t i = 0; files != nullptr && i < files->length; ++i) {
 		if (i > 0) {
@@ -581,6 +583,7 @@ void SynthFileChooserUIImpl::rescanCurrentDirectory($JFileChooser* fc) {
 }
 
 void SynthFileChooserUIImpl::doSelectedFileChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$SynthFileChooserUI::doSelectedFileChanged(e);
 	$var($File, f, $cast($File, $nc(e)->getNewValue()));
 	$var($JFileChooser, fc, getFileChooser());
@@ -600,6 +603,7 @@ void SynthFileChooserUIImpl::doSelectedFileChanged($PropertyChangeEvent* e) {
 }
 
 void SynthFileChooserUIImpl::doSelectedFilesChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$SynthFileChooserUI::doSelectedFilesChanged(e);
 	$var($FileArray, files, $cast($FileArray, $nc(e)->getNewValue()));
 	$var($JFileChooser, fc, getFileChooser());
@@ -614,6 +618,7 @@ void SynthFileChooserUIImpl::doSelectedFilesChanged($PropertyChangeEvent* e) {
 }
 
 void SynthFileChooserUIImpl::doDirectoryChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$SynthFileChooserUI::doDirectoryChanged(e);
 	$var($JFileChooser, fc, getFileChooser());
 	$var($FileSystemView, fsv, $nc(fc)->getFileSystemView());
@@ -641,6 +646,7 @@ void SynthFileChooserUIImpl::doDirectoryChanged($PropertyChangeEvent* e) {
 }
 
 void SynthFileChooserUIImpl::doFileSelectionModeChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$SynthFileChooserUI::doFileSelectionModeChanged(e);
 	$var($JFileChooser, fc, getFileChooser());
 	$var($File, currentDirectory, $nc(fc)->getCurrentDirectory());
@@ -654,6 +660,7 @@ void SynthFileChooserUIImpl::doFileSelectionModeChanged($PropertyChangeEvent* e)
 }
 
 void SynthFileChooserUIImpl::doAccessoryChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (getAccessoryPanel() != nullptr) {
 		if ($nc(e)->getOldValue() != nullptr) {
 			$nc($(getAccessoryPanel()))->remove($cast($JComponent, $(e->getOldValue())));
@@ -688,6 +695,7 @@ void SynthFileChooserUIImpl::removeControlButtons() {
 }
 
 $ActionMap* SynthFileChooserUIImpl::createActionMap() {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, map, $new($ActionMapUIResource));
 	$FilePane::addActionsToMap(map, $($nc(this->filePane)->getActions()));
 	map->put("fileNameCompletion"_s, $(getFileNameCompletionAction()));

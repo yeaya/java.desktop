@@ -68,6 +68,7 @@ void Test6860438::init$() {
 }
 
 void Test6860438::check(Object$* key, Object$* value, bool present, int32_t size) {
+	$useLocalCurrentObjectStackCache();
 	check($equals($UIManager::get(key), value), "UIManager.get()"_s);
 	check($nc($($UIManager::getDefaults()))->size() == size, "MultiUIDefaults.size()"_s);
 	checkEnumeration($($nc($($UIManager::getDefaults()))->keys()), key, present, "MultiUIDefaults.keys()"_s);
@@ -106,6 +107,7 @@ void Test6860438::check(bool condition, $String* methodName) {
 }
 
 void Test6860438::test() {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc($($UIManager::getDefaults()))->size();
 	$nc($($UIManager::getLookAndFeelDefaults()))->put(Test6860438::KEY, Test6860438::VALUE);
 	check(Test6860438::KEY, Test6860438::VALUE, true, size + 1);

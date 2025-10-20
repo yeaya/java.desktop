@@ -123,6 +123,7 @@ void SynthSplitPaneDivider::propertyChange($PropertyChangeEvent* e) {
 }
 
 void SynthSplitPaneDivider::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, g2, $nc(g)->create());
 	$init($Region);
 	$var($SynthContext, context, $nc(($cast($SynthSplitPaneUI, this->splitPaneUI)))->getContext(static_cast<$JComponent*>(this->splitPane), $Region::SPLIT_PANE_DIVIDER));
@@ -160,6 +161,7 @@ int32_t SynthSplitPaneDivider::mapDirection(bool isLeft) {
 }
 
 $JButton* SynthSplitPaneDivider::createLeftOneTouchButton() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthArrowButton, b, $new($SynthArrowButton, $SwingConstants::NORTH));
 	int32_t oneTouchSize = lookupOneTouchSize();
 	b->setName("SplitPaneDivider.leftOneTouchButton"_s);
@@ -177,6 +179,7 @@ int32_t SynthSplitPaneDivider::lookupOneTouchSize() {
 }
 
 $JButton* SynthSplitPaneDivider::createRightOneTouchButton() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthArrowButton, b, $new($SynthArrowButton, $SwingConstants::NORTH));
 	int32_t oneTouchSize = lookupOneTouchSize();
 	b->setName("SplitPaneDivider.rightOneTouchButton"_s);

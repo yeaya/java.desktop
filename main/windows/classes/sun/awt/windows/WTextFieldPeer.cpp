@@ -343,12 +343,14 @@ void WTextFieldPeer::finalize() {
 }
 
 $Dimension* WTextFieldPeer::getMinimumSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, fm, getFontMetrics($($nc(($cast($TextField, this->target)))->getFont())));
 	int32_t var$0 = $nc(fm)->stringWidth($(getText())) + 24;
 	return $new($Dimension, var$0, fm->getHeight() + 8);
 }
 
 bool WTextFieldPeer::handleJavaKeyEvent($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	switch ($nc(e)->getID()) {
 	case $KeyEvent::KEY_TYPED:
 		{
@@ -378,6 +380,7 @@ $Dimension* WTextFieldPeer::getPreferredSize(int32_t cols) {
 }
 
 $Dimension* WTextFieldPeer::getMinimumSize(int32_t cols) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, fm, getFontMetrics($($nc(($cast($TextField, this->target)))->getFont())));
 	int32_t var$0 = $nc(fm)->charWidth(u'0') * cols + 24;
 	return $new($Dimension, var$0, fm->getHeight() + 8);

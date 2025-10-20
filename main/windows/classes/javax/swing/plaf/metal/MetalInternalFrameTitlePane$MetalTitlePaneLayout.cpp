@@ -108,6 +108,7 @@ $Dimension* MetalInternalFrameTitlePane$MetalTitlePaneLayout::preferredLayoutSiz
 }
 
 $Dimension* MetalInternalFrameTitlePane$MetalTitlePaneLayout::minimumLayoutSize($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = 30;
 	if ($nc($($MetalInternalFrameTitlePane::access$400(this->this$0)))->isClosable()) {
 		width += 21;
@@ -148,6 +149,7 @@ $Dimension* MetalInternalFrameTitlePane$MetalTitlePaneLayout::minimumLayoutSize(
 }
 
 void MetalInternalFrameTitlePane$MetalTitlePaneLayout::layoutContainer($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	bool leftToRight = $MetalUtils::isLeftToRight($($MetalInternalFrameTitlePane::access$1600(this->this$0)));
 	int32_t w = this->this$0->getWidth();
 	int32_t x = leftToRight ? w : 0;

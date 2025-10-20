@@ -124,6 +124,7 @@ void BasicTreeUI$TreeTransferHandler::init$() {
 }
 
 $Transferable* BasicTreeUI$TreeTransferHandler::createTransferable($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JTree, c)) {
 		$set(this, tree, $cast($JTree, c));
 		$var($TreePathArray, paths, $nc(this->tree)->getSelectionPaths());
@@ -174,6 +175,7 @@ $String* BasicTreeUI$TreeTransferHandler::getDisplayString($TreePath* path, bool
 }
 
 $TreePathArray* BasicTreeUI$TreeTransferHandler::getDisplayOrderPaths($TreePathArray* paths) {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, selOrder, $new($ArrayList));
 	{
 		$var($TreePathArray, arr$, paths);

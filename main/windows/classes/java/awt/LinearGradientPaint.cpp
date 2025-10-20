@@ -117,12 +117,14 @@ $Object* allocate$LinearGradientPaint($Class* clazz) {
 }
 
 void LinearGradientPaint::init$(float startX, float startY, float endX, float endY, $floats* fractions, $ColorArray* colors) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point2D, var$0, static_cast<$Point2D*>($new($Point2D$Float, startX, startY)));
 	$init($MultipleGradientPaint$CycleMethod);
 	LinearGradientPaint::init$(var$0, $$new($Point2D$Float, endX, endY), fractions, colors, $MultipleGradientPaint$CycleMethod::NO_CYCLE);
 }
 
 void LinearGradientPaint::init$(float startX, float startY, float endX, float endY, $floats* fractions, $ColorArray* colors, $MultipleGradientPaint$CycleMethod* cycleMethod) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point2D, var$0, static_cast<$Point2D*>($new($Point2D$Float, startX, startY)));
 	LinearGradientPaint::init$(var$0, $$new($Point2D$Float, endX, endY), fractions, colors, cycleMethod);
 }

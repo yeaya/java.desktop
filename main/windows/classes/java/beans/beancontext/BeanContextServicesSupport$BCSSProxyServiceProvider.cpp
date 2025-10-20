@@ -111,6 +111,7 @@ void BeanContextServicesSupport$BCSSProxyServiceProvider::init$($BeanContextServ
 }
 
 $Object* BeanContextServicesSupport$BCSSProxyServiceProvider::getService($BeanContextServices* bcs, Object$* requestor, $Class* serviceClass, Object$* serviceSelector) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, service, nullptr);
 	try {
 		$assign(service, $nc(this->nestingCtxt)->getService(bcs, requestor, serviceClass, serviceSelector, this));
@@ -130,6 +131,7 @@ $Iterator* BeanContextServicesSupport$BCSSProxyServiceProvider::getCurrentServic
 }
 
 void BeanContextServicesSupport$BCSSProxyServiceProvider::serviceRevoked($BeanContextServiceRevokedEvent* bcsre) {
+	$useLocalCurrentObjectStackCache();
 	$var($Iterator, i, this->this$0->bcsChildren());
 	while ($nc(i)->hasNext()) {
 		$Class* var$0 = $nc(bcsre)->getServiceClass();

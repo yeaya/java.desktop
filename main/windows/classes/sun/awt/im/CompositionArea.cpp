@@ -182,6 +182,7 @@ void CompositionArea::finalize() {
 }
 
 void CompositionArea::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JPanel::init$();
 	$set(this, caret, nullptr);
 	$var($String, windowTitle, $Toolkit::getProperty("AWT.CompositionWindowTitle"_s, "Input Window"_s));
@@ -216,6 +217,7 @@ $InputMethodRequests* CompositionArea::getInputMethodRequests() {
 }
 
 $Rectangle* CompositionArea::getCaretRectangle($TextHitInfo* caret) {
+	$useLocalCurrentObjectStackCache();
 	int32_t caretLocation = 0;
 	$var($TextLayout, layout, this->composedTextLayout);
 	if (layout != nullptr) {
@@ -243,6 +245,7 @@ $Rectangle* CompositionArea::getCaretRectangle($TextHitInfo* caret) {
 }
 
 void CompositionArea::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$JPanel::paint(g);
 	$nc(g)->setColor($(getForeground()));
 	$var($TextLayout, layout, this->composedTextLayout);
@@ -274,6 +277,7 @@ void CompositionArea::caretPositionChanged($InputMethodEvent* event) {
 }
 
 void CompositionArea::setText($AttributedCharacterIterator* composedText, $TextHitInfo* caret) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, composedTextLayout, nullptr);
 	if (composedText == nullptr) {
 		$nc(this->compositionWindow)->setVisible(false);
@@ -319,6 +323,7 @@ void CompositionArea::setText($AttributedCharacterIterator* composedText, $TextH
 }
 
 void CompositionArea::setCaret($TextHitInfo* caret) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, caret, caret);
 	if ($nc(this->compositionWindow)->isVisible()) {
 		$var($Graphics, g, getGraphics());
@@ -339,6 +344,7 @@ void CompositionArea::setCaret($TextHitInfo* caret) {
 }
 
 void CompositionArea::updateWindowLocation() {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMethodRequests, req, $nc(this->handler)->getClientInputMethodRequests());
 	if (req == nullptr) {
 		return;
@@ -362,6 +368,7 @@ void CompositionArea::updateWindowLocation() {
 }
 
 $Rectangle* CompositionArea::getTextLocation($TextHitInfo* offset) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, rectangle, getCaretRectangle(offset));
 	$var($Point, location, getLocationOnScreen());
 	$nc(rectangle)->translate($nc(location)->x, location->y);
@@ -369,6 +376,7 @@ $Rectangle* CompositionArea::getTextLocation($TextHitInfo* offset) {
 }
 
 $TextHitInfo* CompositionArea::getLocationOffset(int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($TextLayout, layout, this->composedTextLayout);
 	if (layout == nullptr) {
 		return nullptr;

@@ -198,6 +198,7 @@ void FontSetToNull::init$() {
 
 void FontSetToNull::main($StringArray* args) {
 	$init(FontSetToNull);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -214,6 +215,7 @@ void FontSetToNull::main($StringArray* args) {
 
 void FontSetToNull::test($JSpinner* spinner) {
 	$init(FontSetToNull);
+	$useLocalCurrentObjectStackCache();
 	$var($JSpinner$DefaultEditor, de, $cast($JSpinner$DefaultEditor, $nc(spinner)->getEditor()));
 	spinner->setFont(nullptr);
 	$SwingUtilities::updateComponentTreeUI(de);
@@ -229,6 +231,7 @@ void FontSetToNull::test($JSpinner* spinner) {
 
 void FontSetToNull::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(FontSetToNull);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 		$init($System);
@@ -250,6 +253,7 @@ void FontSetToNull::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 
 void FontSetToNull::lambda$main$1() {
 	$init(FontSetToNull);
+	$useLocalCurrentObjectStackCache();
 	test($$new($JSpinner));
 	test($$new($FontSetToNull$1));
 }

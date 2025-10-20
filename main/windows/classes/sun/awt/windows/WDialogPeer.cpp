@@ -421,6 +421,7 @@ void WDialogPeer::finalize() {
 $Color* WDialogPeer::defaultBackground = nullptr;
 
 void WDialogPeer::init$($Dialog* target) {
+	$useLocalCurrentObjectStackCache();
 	$WWindowPeer::init$(target);
 	$var($InputMethodManager, imm, $InputMethodManager::getInstance());
 	$var($String, menuString, $nc(imm)->getTriggerMenuString());
@@ -453,6 +454,7 @@ void WDialogPeer::endModal() {
 }
 
 void WDialogPeer::initialize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dialog, target, $cast($Dialog, this->target));
 	if (!$nc(target)->isBackgroundSet()) {
 		target->setBackground(WDialogPeer::defaultBackground);
@@ -485,6 +487,7 @@ void WDialogPeer::hide() {
 }
 
 void WDialogPeer::blockWindows($List* toBlock) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(toBlock)->iterator());
 		for (; $nc(i$)->hasNext();) {

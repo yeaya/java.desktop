@@ -253,6 +253,7 @@ void TextSelectionTest::init$() {
 
 void TextSelectionTest::main($StringArray* args) {
 	$init(TextSelectionTest);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TextSelectionTest$$Lambda$createAndShowGUI)));
 	$init($TimeUnit);
 	$nc(TextSelectionTest::latch)->await(3, $TimeUnit::MINUTES);
@@ -265,6 +266,7 @@ void TextSelectionTest::main($StringArray* args) {
 
 void TextSelectionTest::createAndShowGUI() {
 	$init(TextSelectionTest);
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame, "Follow the instructions below:"_s));
 	frame->setSize(700, 500);
 	frame->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);

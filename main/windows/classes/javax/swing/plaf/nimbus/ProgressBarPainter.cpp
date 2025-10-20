@@ -301,6 +301,7 @@ $AbstractRegionPainter$PaintContext* ProgressBarPainter::getPaintContext() {
 }
 
 void ProgressBarPainter::paintBackgroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint($(decodeGradient1(this->rect)));
 	g->fill(this->rect);
@@ -310,6 +311,7 @@ void ProgressBarPainter::paintBackgroundEnabled($Graphics2D* g) {
 }
 
 void ProgressBarPainter::paintBackgroundDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint($(decodeGradient3(this->rect)));
 	g->fill(this->rect);
@@ -319,6 +321,7 @@ void ProgressBarPainter::paintBackgroundDisabled($Graphics2D* g) {
 }
 
 void ProgressBarPainter::paintForegroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color17);
 	g->fill(this->path);
@@ -331,6 +334,7 @@ void ProgressBarPainter::paintForegroundEnabled($Graphics2D* g) {
 }
 
 void ProgressBarPainter::paintForegroundEnabledAndFinished($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath2());
 	$nc(g)->setPaint(this->color17);
 	g->fill(this->path);
@@ -343,6 +347,7 @@ void ProgressBarPainter::paintForegroundEnabledAndFinished($Graphics2D* g) {
 }
 
 void ProgressBarPainter::paintForegroundEnabledAndIndeterminate($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect7());
 	$nc(g)->setPaint($(decodeGradient7(this->rect)));
 	g->fill(this->rect);
@@ -358,6 +363,7 @@ void ProgressBarPainter::paintForegroundEnabledAndIndeterminate($Graphics2D* g) 
 }
 
 void ProgressBarPainter::paintForegroundDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color33);
 	g->fill(this->path);
@@ -370,6 +376,7 @@ void ProgressBarPainter::paintForegroundDisabled($Graphics2D* g) {
 }
 
 void ProgressBarPainter::paintForegroundDisabledAndFinished($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath4());
 	$nc(g)->setPaint(this->color33);
 	g->fill(this->path);
@@ -382,6 +389,7 @@ void ProgressBarPainter::paintForegroundDisabledAndFinished($Graphics2D* g) {
 }
 
 void ProgressBarPainter::paintForegroundDisabledAndIndeterminate($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect7());
 	$nc(g)->setPaint($(decodeGradient11(this->rect)));
 	g->fill(this->rect);
@@ -709,6 +717,7 @@ $Path2D* ProgressBarPainter::decodePath5() {
 }
 
 $Paint* ProgressBarPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -726,6 +735,7 @@ $Paint* ProgressBarPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* ProgressBarPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -759,6 +769,7 @@ $Paint* ProgressBarPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* ProgressBarPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -776,6 +787,7 @@ $Paint* ProgressBarPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* ProgressBarPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -809,6 +821,7 @@ $Paint* ProgressBarPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* ProgressBarPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -838,6 +851,7 @@ $Paint* ProgressBarPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* ProgressBarPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -871,6 +885,7 @@ $Paint* ProgressBarPainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* ProgressBarPainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -900,6 +915,7 @@ $Paint* ProgressBarPainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* ProgressBarPainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -925,6 +941,7 @@ $Paint* ProgressBarPainter::decodeGradient8($Shape* s) {
 }
 
 $Paint* ProgressBarPainter::decodeGradient9($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -954,6 +971,7 @@ $Paint* ProgressBarPainter::decodeGradient9($Shape* s) {
 }
 
 $Paint* ProgressBarPainter::decodeGradient10($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -987,6 +1005,7 @@ $Paint* ProgressBarPainter::decodeGradient10($Shape* s) {
 }
 
 $Paint* ProgressBarPainter::decodeGradient11($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1016,6 +1035,7 @@ $Paint* ProgressBarPainter::decodeGradient11($Shape* s) {
 }
 
 $Paint* ProgressBarPainter::decodeGradient12($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

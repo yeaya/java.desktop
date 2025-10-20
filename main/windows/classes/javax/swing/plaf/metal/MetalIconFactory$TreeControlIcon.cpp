@@ -126,6 +126,7 @@ void MetalIconFactory$TreeControlIcon::init$(bool isCollapsed) {
 }
 
 void MetalIconFactory$TreeControlIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, $nc(c)->getGraphicsConfiguration());
 	if (this->imageCacher == nullptr) {
 		$set(this, imageCacher, $new($MetalIconFactory$ImageCacher));
@@ -159,6 +160,7 @@ void MetalIconFactory$TreeControlIcon::paintIcon($Component* c, $Graphics* g, in
 }
 
 void MetalIconFactory$TreeControlIcon::paintMe($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor($($MetalLookAndFeel::getPrimaryControlInfo()));
 	int32_t xoff = ($MetalUtils::isLeftToRight(c)) ? 0 : 4;
 	g->drawLine(xoff + 4, 6, xoff + 4, 9);

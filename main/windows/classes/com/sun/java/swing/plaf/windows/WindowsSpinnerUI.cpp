@@ -112,6 +112,7 @@ $TMSchema$State* WindowsSpinnerUI::getXPState($JComponent* c) {
 }
 
 void WindowsSpinnerUI::paintXPBackground($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp == nullptr) {
 		return;
@@ -125,6 +126,7 @@ void WindowsSpinnerUI::paintXPBackground($Graphics* g, $JComponent* c) {
 }
 
 $Component* WindowsSpinnerUI::createPreviousButton() {
+	$useLocalCurrentObjectStackCache();
 	if ($XPStyle::getXP() != nullptr) {
 		$init($TMSchema$Part);
 		$var($JButton, xpButton, $new($XPStyle$GlyphButton, this->spinner, $TMSchema$Part::SPNP_DOWN));
@@ -138,6 +140,7 @@ $Component* WindowsSpinnerUI::createPreviousButton() {
 }
 
 $Component* WindowsSpinnerUI::createNextButton() {
+	$useLocalCurrentObjectStackCache();
 	if ($XPStyle::getXP() != nullptr) {
 		$init($TMSchema$Part);
 		$var($JButton, xpButton, $new($XPStyle$GlyphButton, this->spinner, $TMSchema$Part::SPNP_UP));

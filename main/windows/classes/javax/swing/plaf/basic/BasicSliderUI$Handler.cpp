@@ -154,6 +154,7 @@ void BasicSliderUI$Handler::focusLost($FocusEvent* e) {
 }
 
 void BasicSliderUI$Handler::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propertyName, $nc(e)->getPropertyName());
 	if (propertyName == "orientation"_s || propertyName == "inverted"_s || propertyName == "labelTable"_s || propertyName == "majorTickSpacing"_s || propertyName == "minorTickSpacing"_s || propertyName == "paintTicks"_s || propertyName == "paintTrack"_s || propertyName == "font"_s || $SwingUtilities2::isScaleChanged(e) || propertyName == "paintLabels"_s || propertyName == "Slider.paintThumbArrowShape"_s) {
 		this->this$0->checkedLabelBaselines = false;

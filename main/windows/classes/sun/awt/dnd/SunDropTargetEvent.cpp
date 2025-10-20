@@ -100,6 +100,7 @@ $SunDropTargetContextPeer$EventDispatcher* SunDropTargetEvent::getDispatcher() {
 }
 
 $String* SunDropTargetEvent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, typeStr, nullptr);
 	switch (this->id) {
 	case SunDropTargetEvent::MOUSE_DROPPED:

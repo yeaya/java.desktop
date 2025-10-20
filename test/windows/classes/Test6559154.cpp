@@ -100,6 +100,7 @@ void Test6559154::actionPerformed($ActionEvent* event) {
 }
 
 void Test6559154::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($Timer, timer, $new($Timer, 1000, this));
 	timer->setRepeats(false);
 	timer->start();
@@ -112,6 +113,7 @@ void Test6559154::run() {
 
 void Test6559154::setEnabledRecursive($Container* container, bool enabled) {
 	$init(Test6559154);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($ComponentArray, arr$, $nc(container)->getComponents());
 		int32_t len$ = $nc(arr$)->length;

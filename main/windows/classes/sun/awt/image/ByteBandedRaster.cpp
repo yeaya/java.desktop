@@ -99,6 +99,7 @@ $Object* allocate$ByteBandedRaster($Class* clazz) {
 }
 
 void ByteBandedRaster::init$($SampleModel* sampleModel, $Point* origin) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, var$0, sampleModel);
 	$var($DataBufferByte, var$1, $cast($DataBufferByte, $nc(sampleModel)->createDataBuffer()));
 	int32_t var$2 = $nc(origin)->x;
@@ -115,6 +116,7 @@ void ByteBandedRaster::init$($SampleModel* sampleModel, $DataBufferByte* dataBuf
 }
 
 void ByteBandedRaster::init$($SampleModel* sampleModel, $DataBufferByte* dataBuffer, $Rectangle* aRegion, $Point* origin, ByteBandedRaster* parent) {
+	$useLocalCurrentObjectStackCache();
 	$SunWritableRaster::init$(sampleModel, dataBuffer, aRegion, origin, parent);
 	this->maxX = this->minX + this->width;
 	this->maxY = this->minY + this->height;
@@ -180,6 +182,7 @@ $Object* ByteBandedRaster::getDataElements(int32_t x, int32_t y, Object$* obj) {
 }
 
 $Object* ByteBandedRaster::getDataElements(int32_t x, int32_t y, int32_t w, int32_t h, Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	if ((x < this->minX) || (y < this->minY) || (x + w > this->maxX) || (y + h > this->maxY)) {
 		$throwNew($ArrayIndexOutOfBoundsException, "Coordinate out of bounds!"_s);
 	}
@@ -228,6 +231,7 @@ $bytes* ByteBandedRaster::getByteData(int32_t x, int32_t y, int32_t w, int32_t h
 }
 
 $bytes* ByteBandedRaster::getByteData(int32_t x, int32_t y, int32_t w, int32_t h, $bytes* outData$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, outData, outData$renamed);
 	if ((x < this->minX) || (y < this->minY) || (x + w > this->maxX) || (y + h > this->maxY)) {
 		$throwNew($ArrayIndexOutOfBoundsException, "Coordinate out of bounds!"_s);
@@ -289,6 +293,7 @@ void ByteBandedRaster::setDataElements(int32_t dstX, int32_t dstY, int32_t width
 }
 
 void ByteBandedRaster::setDataElements(int32_t x, int32_t y, int32_t w, int32_t h, Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	if ((x < this->minX) || (y < this->minY) || (x + w > this->maxX) || (y + h > this->maxY)) {
 		$throwNew($ArrayIndexOutOfBoundsException, "Coordinate out of bounds!"_s);
 	}
@@ -331,6 +336,7 @@ void ByteBandedRaster::putByteData(int32_t x, int32_t y, int32_t w, int32_t h, i
 }
 
 void ByteBandedRaster::putByteData(int32_t x, int32_t y, int32_t w, int32_t h, $bytes* inData) {
+	$useLocalCurrentObjectStackCache();
 	if ((x < this->minX) || (y < this->minY) || (x + w > this->maxX) || (y + h > this->maxY)) {
 		$throwNew($ArrayIndexOutOfBoundsException, "Coordinate out of bounds!"_s);
 	}
@@ -352,6 +358,7 @@ void ByteBandedRaster::putByteData(int32_t x, int32_t y, int32_t w, int32_t h, $
 }
 
 $WritableRaster* ByteBandedRaster::createWritableChild(int32_t x, int32_t y, int32_t width, int32_t height, int32_t x0, int32_t y0, $ints* bandList) {
+	$useLocalCurrentObjectStackCache();
 	if (x < this->minX) {
 		$throwNew($RasterFormatException, "x lies outside raster"_s);
 	}
@@ -383,6 +390,7 @@ $Raster* ByteBandedRaster::createChild(int32_t x, int32_t y, int32_t width, int3
 }
 
 $WritableRaster* ByteBandedRaster::createCompatibleWritableRaster(int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (w <= 0 || h <= 0) {
 		$throwNew($RasterFormatException, $$str({"negative "_s, ((w <= 0) ? "width"_s : "height"_s)}));
 	}
@@ -395,6 +403,7 @@ $WritableRaster* ByteBandedRaster::createCompatibleWritableRaster() {
 }
 
 void ByteBandedRaster::verify() {
+	$useLocalCurrentObjectStackCache();
 	if (this->width <= 0 || this->height <= 0 || this->height > ($div($Integer::MAX_VALUE, this->width))) {
 		$throwNew($RasterFormatException, "Invalid raster dimension"_s);
 	}
@@ -446,6 +455,7 @@ void ByteBandedRaster::verify() {
 }
 
 $String* ByteBandedRaster::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $new($String, $$str({"ByteBandedRaster: width = "_s, $$str(this->width), " height = "_s, $$str(this->height), " #bands "_s, $$str(this->numDataElements), " minX = "_s, $$str(this->minX), " minY = "_s, $$str(this->minY)}));
 }
 

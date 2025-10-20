@@ -134,6 +134,7 @@ void Test8013442::main($StringArray* args) {
 }
 
 bool Test8013442::accept($File* file) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = !$nc(file)->isFile();
 	return var$0 || $($nc($($nc(file)->getName()))->toLowerCase())->endsWith(".txt"_s);
 }
@@ -143,6 +144,7 @@ $String* Test8013442::getDescription() {
 }
 
 void Test8013442::run() {
+	$useLocalCurrentObjectStackCache();
 	if (this->infos == nullptr) {
 		$set(this, infos, $UIManager::getInstalledLookAndFeels());
 		$($Thread::currentThread())->setUncaughtExceptionHandler(this);

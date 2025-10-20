@@ -366,6 +366,7 @@ void HTMLDocument$HTMLReader::init$($HTMLDocument* this$0, int32_t offset, int32
 }
 
 void HTMLDocument$HTMLReader::init$($HTMLDocument* this$0, int32_t offset, int32_t popDepth, int32_t pushDepth, $HTML$Tag* insertTag, bool insertInsertTag, bool insertAfterImplied, bool wantsTrailingNewline) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$HTMLEditorKit$ParserCallback::init$();
 	this->inParagraph = false;
@@ -515,6 +516,7 @@ void HTMLDocument$HTMLReader::init$($HTMLDocument* this$0, int32_t offset, int32
 }
 
 void HTMLDocument$HTMLReader::generateEndsSpecsForMidInsert() {
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Tag);
 	int32_t count = heightToElementWithName($HTML$Tag::BODY, $Math::max(0, this->offset - 1));
 	bool joinNext = false;
@@ -563,6 +565,7 @@ int32_t HTMLDocument$HTMLReader::depthTo(int32_t offset) {
 }
 
 int32_t HTMLDocument$HTMLReader::heightToElementWithName(Object$* name, int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, e, $nc($(this->this$0->getCharacterElement(offset)))->getParentElement());
 	int32_t count = 0;
 	$init($StyleConstants);
@@ -574,6 +577,7 @@ int32_t HTMLDocument$HTMLReader::heightToElementWithName(Object$* name, int32_t 
 }
 
 void HTMLDocument$HTMLReader::adjustEndElement() {
+	$useLocalCurrentObjectStackCache();
 	int32_t length = this->this$0->getLength();
 	if (length == 0) {
 		return;
@@ -643,6 +647,7 @@ void HTMLDocument$HTMLReader::adjustEndElement() {
 }
 
 $ElementArray* HTMLDocument$HTMLReader::getPathTo(int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	$var($Stack, elements, $new($Stack));
 	$var($Element, e, this->this$0->getDefaultRootElement());
 	int32_t index = 0;
@@ -668,6 +673,7 @@ void HTMLDocument$HTMLReader::flush() {
 }
 
 void HTMLDocument$HTMLReader::handleText($chars* data, int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	if (this->receivedEndHTML || (this->midInsert && !this->inBody)) {
 		return;
 	}
@@ -707,6 +713,7 @@ void HTMLDocument$HTMLReader::handleText($chars* data, int32_t pos) {
 }
 
 void HTMLDocument$HTMLReader::handleStartTag($HTML$Tag* t, $MutableAttributeSet* a, int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	if (this->receivedEndHTML) {
 		return;
 	}
@@ -738,6 +745,7 @@ void HTMLDocument$HTMLReader::handleStartTag($HTML$Tag* t, $MutableAttributeSet*
 }
 
 void HTMLDocument$HTMLReader::handleComment($chars* data, int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	if (this->receivedEndHTML) {
 		addExternalComment($$new($String, data));
 		return;
@@ -766,6 +774,7 @@ void HTMLDocument$HTMLReader::handleComment($chars* data, int32_t pos) {
 }
 
 void HTMLDocument$HTMLReader::addExternalComment($String* comment) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, comments, this->this$0->getProperty("AdditionalComments"_s));
 	if (comments != nullptr && !($instanceOf($Vector, comments))) {
 		return;
@@ -799,6 +808,7 @@ void HTMLDocument$HTMLReader::handleEndTag($HTML$Tag* t, int32_t pos) {
 }
 
 void HTMLDocument$HTMLReader::handleSimpleTag($HTML$Tag* t, $MutableAttributeSet* a, int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	if (this->receivedEndHTML || (this->midInsert && !this->inBody)) {
 		return;
 	}
@@ -852,6 +862,7 @@ void HTMLDocument$HTMLReader::textAreaContent($chars* data) {
 }
 
 void HTMLDocument$HTMLReader::preContent($chars* data) {
+	$useLocalCurrentObjectStackCache();
 	int32_t last = 0;
 	for (int32_t i = 0; i < $nc(data)->length; ++i) {
 		if (data->get(i) == u'\n') {
@@ -871,6 +882,7 @@ void HTMLDocument$HTMLReader::preContent($chars* data) {
 }
 
 void HTMLDocument$HTMLReader::blockOpen($HTML$Tag* t, $MutableAttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	if (this->impliedP) {
 		$init($HTML$Tag);
 		blockClose($HTML$Tag::IMPLIED);
@@ -891,6 +903,7 @@ void HTMLDocument$HTMLReader::blockOpen($HTML$Tag* t, $MutableAttributeSet* attr
 }
 
 void HTMLDocument$HTMLReader::blockClose($HTML$Tag* t) {
+	$useLocalCurrentObjectStackCache();
 	--this->inBlock;
 	if (!this->foundInsertTag$) {
 		return;
@@ -927,6 +940,7 @@ void HTMLDocument$HTMLReader::addContent($chars* data, int32_t offs, int32_t len
 }
 
 void HTMLDocument$HTMLReader::addContent($chars* data, int32_t offs, int32_t length, bool generateImpliedPIfNecessary) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->foundInsertTag$) {
 		return;
 	}
@@ -959,6 +973,7 @@ void HTMLDocument$HTMLReader::addContent($chars* data, int32_t offs, int32_t len
 }
 
 void HTMLDocument$HTMLReader::addSpecialElement($HTML$Tag* t, $MutableAttributeSet* a) {
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Tag);
 	if ((t != $HTML$Tag::FRAME) && (!this->inParagraph) && (!this->inPre)) {
 		$set(this, nextTagAfterPImplied, t);
@@ -1007,6 +1022,7 @@ void HTMLDocument$HTMLReader::flushBuffer(bool endOfStream) {
 }
 
 void HTMLDocument$HTMLReader::adjustEndSpecsForPartialInsert() {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc(this->parseBuffer)->size();
 	if (this->insertTagDepthDelta < 0) {
 		int32_t removeCounter = this->insertTagDepthDelta;
@@ -1069,6 +1085,7 @@ void HTMLDocument$HTMLReader::addCSSRules($String* rules) {
 }
 
 void HTMLDocument$HTMLReader::linkCSSStyleSheet($String* href) {
+	$useLocalCurrentObjectStackCache();
 	$var($URL, url, nullptr);
 	try {
 		$assign(url, $new($URL, this->this$0->base, href));
@@ -1117,6 +1134,7 @@ bool HTMLDocument$HTMLReader::isInsertTag($HTML$Tag* tag) {
 }
 
 void HTMLDocument$HTMLReader::foundInsertTag(bool isBlockTag) {
+	$useLocalCurrentObjectStackCache();
 	this->foundInsertTag$ = true;
 	if (!this->insertAfterImplied && (this->popDepth > 0 || this->pushDepth > 0)) {
 		try {

@@ -61,6 +61,7 @@ void bug6493680::init$() {
 }
 
 void bug6493680::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < bug6493680::NUMBER_OF_TRIES; ++i) {
 		if (!($$new($bug6493680$Test))->test()) {
 			$throwNew($RuntimeException, "failed"_s);

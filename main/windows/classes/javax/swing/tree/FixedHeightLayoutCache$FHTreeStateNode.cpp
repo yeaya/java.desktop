@@ -117,6 +117,7 @@ void FixedHeightLayoutCache$FHTreeStateNode::init$($FixedHeightLayoutCache* this
 }
 
 void FixedHeightLayoutCache$FHTreeStateNode::setParent($MutableTreeNode* parent) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultMutableTreeNode::setParent(parent);
 	if (parent != nullptr) {
 		$set(this, path, $nc($($nc(($cast(FixedHeightLayoutCache$FHTreeStateNode, parent)))->getTreePath()))->pathByAddingChild($(getUserObject())));
@@ -131,6 +132,7 @@ void FixedHeightLayoutCache$FHTreeStateNode::remove(int32_t childIndex) {
 }
 
 void FixedHeightLayoutCache$FHTreeStateNode::setUserObject(Object$* o) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultMutableTreeNode::setUserObject(o);
 	if (this->path != nullptr) {
 		$var(FixedHeightLayoutCache$FHTreeStateNode, parent, $cast(FixedHeightLayoutCache$FHTreeStateNode, getParent()));
@@ -151,6 +153,7 @@ $TreePath* FixedHeightLayoutCache$FHTreeStateNode::getTreePath() {
 }
 
 FixedHeightLayoutCache$FHTreeStateNode* FixedHeightLayoutCache$FHTreeStateNode::getChildAtModelIndex(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t counter = getChildCount() - 1; counter >= 0; --counter) {
 		if ($nc(($cast(FixedHeightLayoutCache$FHTreeStateNode, $(getChildAt(counter)))))->childIndex == index) {
 			return $cast(FixedHeightLayoutCache$FHTreeStateNode, getChildAt(counter));
@@ -197,6 +200,7 @@ int32_t FixedHeightLayoutCache$FHTreeStateNode::getRowToModelIndex(int32_t index
 }
 
 int32_t FixedHeightLayoutCache$FHTreeStateNode::getTotalChildCount() {
+	$useLocalCurrentObjectStackCache();
 	if (isExpanded()) {
 		$var(FixedHeightLayoutCache$FHTreeStateNode, parent, $cast(FixedHeightLayoutCache$FHTreeStateNode, getParent()));
 		int32_t pIndex = 0;
@@ -232,6 +236,7 @@ int32_t FixedHeightLayoutCache$FHTreeStateNode::getVisibleLevel() {
 }
 
 void FixedHeightLayoutCache$FHTreeStateNode::resetChildrenPaths($TreePath* parentPath) {
+	$useLocalCurrentObjectStackCache();
 	this->this$0->removeMapping(this);
 	if (parentPath == nullptr) {
 		$set(this, path, $new($TreePath, $(getUserObject())));
@@ -245,6 +250,7 @@ void FixedHeightLayoutCache$FHTreeStateNode::resetChildrenPaths($TreePath* paren
 }
 
 void FixedHeightLayoutCache$FHTreeStateNode::removeFromMapping() {
+	$useLocalCurrentObjectStackCache();
 	if (this->path != nullptr) {
 		this->this$0->removeMapping(this);
 		for (int32_t counter = getChildCount() - 1; counter >= 0; --counter) {
@@ -254,6 +260,7 @@ void FixedHeightLayoutCache$FHTreeStateNode::removeFromMapping() {
 }
 
 FixedHeightLayoutCache$FHTreeStateNode* FixedHeightLayoutCache$FHTreeStateNode::createChildFor(Object$* userObject) {
+	$useLocalCurrentObjectStackCache();
 	int32_t newChildIndex = $nc(this->this$0->treeModel)->getIndexOfChild($(getUserObject()), userObject);
 	if (newChildIndex < 0) {
 		return nullptr;
@@ -283,6 +290,7 @@ FixedHeightLayoutCache$FHTreeStateNode* FixedHeightLayoutCache$FHTreeStateNode::
 }
 
 void FixedHeightLayoutCache$FHTreeStateNode::adjustRowBy(int32_t amount) {
+	$useLocalCurrentObjectStackCache();
 	this->row += amount;
 	if (this->isExpanded$) {
 		for (int32_t counter = getChildCount() - 1; counter >= 0; --counter) {
@@ -292,6 +300,7 @@ void FixedHeightLayoutCache$FHTreeStateNode::adjustRowBy(int32_t amount) {
 }
 
 void FixedHeightLayoutCache$FHTreeStateNode::adjustRowBy(int32_t amount, int32_t startIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (this->isExpanded$) {
 		for (int32_t counter = getChildCount() - 1; counter >= startIndex; --counter) {
 			$nc(($cast(FixedHeightLayoutCache$FHTreeStateNode, $(getChildAt(counter)))))->adjustRowBy(amount);
@@ -405,11 +414,13 @@ void FixedHeightLayoutCache$FHTreeStateNode::collapse(bool adjustRows) {
 }
 
 bool FixedHeightLayoutCache$FHTreeStateNode::isLeaf() {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeModel, model, this->this$0->getModel());
 	return (model != nullptr) ? $nc(model)->isLeaf($(this->getUserObject())) : true;
 }
 
 void FixedHeightLayoutCache$FHTreeStateNode::addNode(FixedHeightLayoutCache$FHTreeStateNode* newChild) {
+	$useLocalCurrentObjectStackCache();
 	bool added = false;
 	int32_t childIndex = $nc(newChild)->getChildIndex();
 	{
@@ -429,6 +440,7 @@ void FixedHeightLayoutCache$FHTreeStateNode::addNode(FixedHeightLayoutCache$FHTr
 }
 
 void FixedHeightLayoutCache$FHTreeStateNode::removeChildAtModelIndex(int32_t modelIndex, bool isChildVisible) {
+	$useLocalCurrentObjectStackCache();
 	$var(FixedHeightLayoutCache$FHTreeStateNode, childNode, getChildAtModelIndex(modelIndex));
 	if (childNode != nullptr) {
 		int32_t row = childNode->getRow();
@@ -466,6 +478,7 @@ void FixedHeightLayoutCache$FHTreeStateNode::removeChildAtModelIndex(int32_t mod
 }
 
 void FixedHeightLayoutCache$FHTreeStateNode::adjustChildIndexs(int32_t index, int32_t amount) {
+	$useLocalCurrentObjectStackCache();
 	{
 		int32_t counter = index;
 		int32_t maxCounter = getChildCount();
@@ -476,6 +489,7 @@ void FixedHeightLayoutCache$FHTreeStateNode::adjustChildIndexs(int32_t index, in
 }
 
 void FixedHeightLayoutCache$FHTreeStateNode::childInsertedAtModelIndex(int32_t index, bool isExpandedAndVisible) {
+	$useLocalCurrentObjectStackCache();
 	$var(FixedHeightLayoutCache$FHTreeStateNode, aChild, nullptr);
 	int32_t maxCounter = getChildCount();
 	for (int32_t counter = 0; counter < maxCounter; ++counter) {
@@ -500,6 +514,7 @@ void FixedHeightLayoutCache$FHTreeStateNode::childInsertedAtModelIndex(int32_t i
 }
 
 bool FixedHeightLayoutCache$FHTreeStateNode::getPathForRow(int32_t row, int32_t nextRow, $FixedHeightLayoutCache$SearchInfo* info) {
+	$useLocalCurrentObjectStackCache();
 	if (this->row == row) {
 		$set($nc(info), node, this);
 		info->isNodeParentNode = false;
@@ -555,6 +570,7 @@ bool FixedHeightLayoutCache$FHTreeStateNode::getPathForRow(int32_t row, int32_t 
 }
 
 int32_t FixedHeightLayoutCache$FHTreeStateNode::getCountTo(int32_t stopIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var(FixedHeightLayoutCache$FHTreeStateNode, aChild, nullptr);
 	int32_t retCount = stopIndex + 1;
 	{

@@ -230,6 +230,7 @@ bool DefaultKeyboardFocusManager::fxAppThreadIsDispatchThread = false;
 
 void DefaultKeyboardFocusManager::initStatic() {
 	$init(DefaultKeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$AWTAccessor::setDefaultKeyboardFocusManagerAccessor($$new($DefaultKeyboardFocusManager$1));
 	$AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($DefaultKeyboardFocusManager$2)));
@@ -252,6 +253,7 @@ $Window* DefaultKeyboardFocusManager::getOwningFrameDialog($Window* window$renam
 }
 
 void DefaultKeyboardFocusManager::restoreFocus($FocusEvent* fe, $Window* newFocusedWindow) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, realOppositeComponent, $cast($Component, $nc(this->realOppositeComponentWR)->get()));
 	$var($Component, vetoedComponent, $nc(fe)->getComponent());
 	if (newFocusedWindow != nullptr && restoreFocus(newFocusedWindow, vetoedComponent, false)) {
@@ -266,6 +268,7 @@ void DefaultKeyboardFocusManager::restoreFocus($FocusEvent* fe, $Window* newFocu
 }
 
 void DefaultKeyboardFocusManager::restoreFocus($WindowEvent* we) {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, realOppositeWindow, $cast($Window, $nc(this->realOppositeWindowWR)->get()));
 	if (realOppositeWindow != nullptr && restoreFocus(realOppositeWindow, nullptr, false)) {
 	} else {
@@ -339,6 +342,7 @@ bool DefaultKeyboardFocusManager::doRestoreFocus($Component* toFocus, $Component
 
 bool DefaultKeyboardFocusManager::sendMessage($Component* target, $AWTEvent* e) {
 	$init(DefaultKeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$nc(e)->isPosted = true;
 	$var($AppContext, myAppContext, $AppContext::getAppContext());
 	$var($AppContext, targetAppContext, $nc(target)->appContext);
@@ -382,6 +386,7 @@ bool DefaultKeyboardFocusManager::sendMessage($Component* target, $AWTEvent* e) 
 }
 
 bool DefaultKeyboardFocusManager::repostIfFollowsKeyEvents($WindowEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($TimedWindowEvent, e))) {
 		return false;
 	}
@@ -405,6 +410,7 @@ bool DefaultKeyboardFocusManager::repostIfFollowsKeyEvents($WindowEvent* e) {
 }
 
 bool DefaultKeyboardFocusManager::dispatchEvent($AWTEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(DefaultKeyboardFocusManager::focusLog)->isLoggable($PlatformLogger$Level::FINE) && ($instanceOf($WindowEvent, e) || $instanceOf($FocusEvent, e))) {
 		$nc(DefaultKeyboardFocusManager::focusLog)->fine($$str({""_s, e}));
@@ -724,6 +730,7 @@ bool DefaultKeyboardFocusManager::dispatchEvent($AWTEvent* e) {
 }
 
 bool DefaultKeyboardFocusManager::dispatchKeyEvent($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, focusOwner, ($nc((static_cast<$AWTEvent*>(e)))->isPosted) ? getFocusOwner() : $nc(e)->getComponent());
 	bool var$0 = focusOwner != nullptr && focusOwner->isShowing();
 	if (var$0 && focusOwner->canBeFocusOwner()) {
@@ -762,6 +769,7 @@ bool DefaultKeyboardFocusManager::dispatchKeyEvent($KeyEvent* e) {
 }
 
 bool DefaultKeyboardFocusManager::postProcessKeyEvent($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(e)->isConsumed()) {
 		$var($Component, target, e->getComponent());
 		$var($Container, p, ($cast($Container, ($instanceOf($Container, target) ? target : static_cast<$Component*>($nc(target)->getParent())))));
@@ -773,6 +781,7 @@ bool DefaultKeyboardFocusManager::postProcessKeyEvent($KeyEvent* e) {
 }
 
 void DefaultKeyboardFocusManager::pumpApprovedKeyEvents() {
+	$useLocalCurrentObjectStackCache();
 	$var($KeyEvent, ke, nullptr);
 	do {
 		$assign(ke, nullptr);
@@ -801,6 +810,7 @@ void DefaultKeyboardFocusManager::pumpApprovedKeyEvents() {
 }
 
 void DefaultKeyboardFocusManager::dumpMarkers() {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(DefaultKeyboardFocusManager::focusLog)->isLoggable($PlatformLogger$Level::FINEST)) {
 		$nc(DefaultKeyboardFocusManager::focusLog)->finest(">>> Markers dump, time: {0}"_s, $$new($ObjectArray, {$($of($Long::valueOf($System::currentTimeMillis())))}));
@@ -821,6 +831,7 @@ void DefaultKeyboardFocusManager::dumpMarkers() {
 }
 
 bool DefaultKeyboardFocusManager::typeAheadAssertions($Component* target, $AWTEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	pumpApprovedKeyEvents();
 	switch ($nc(e)->getID()) {
 	case $KeyEvent::KEY_TYPED:
@@ -893,6 +904,7 @@ bool DefaultKeyboardFocusManager::typeAheadAssertions($Component* target, $AWTEv
 }
 
 bool DefaultKeyboardFocusManager::hasMarker($Component* comp) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, iter, $nc(this->typeAheadMarkers)->iterator());
 		for (; $nc(iter)->hasNext();) {
@@ -911,6 +923,7 @@ void DefaultKeyboardFocusManager::clearMarkers() {
 }
 
 bool DefaultKeyboardFocusManager::preDispatchKeyEvent($KeyEvent* ke) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc((static_cast<$AWTEvent*>(ke)))->isPosted) {
 		$var($Component, focusOwner, getFocusOwner());
 		$nc(ke)->setSource(((focusOwner != nullptr) ? $of(focusOwner) : $($of(getFocusedWindow()))));
@@ -965,6 +978,7 @@ bool DefaultKeyboardFocusManager::consumeProcessedKeyEvent($KeyEvent* e) {
 }
 
 void DefaultKeyboardFocusManager::processKeyEvent($Component* focusedComponent, $KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (consumeProcessedKeyEvent(e)) {
 		return;
 	}
@@ -1029,6 +1043,7 @@ void DefaultKeyboardFocusManager::processKeyEvent($Component* focusedComponent, 
 
 void DefaultKeyboardFocusManager::enqueueKeyEvents(int64_t after, $Component* untilFocused) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (untilFocused == nullptr) {
 			return;
 		}
@@ -1055,6 +1070,7 @@ void DefaultKeyboardFocusManager::enqueueKeyEvents(int64_t after, $Component* un
 
 void DefaultKeyboardFocusManager::dequeueKeyEvents(int64_t after, $Component* untilFocused) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (untilFocused == nullptr) {
 			return;
 		}
@@ -1089,6 +1105,7 @@ void DefaultKeyboardFocusManager::dequeueKeyEvents(int64_t after, $Component* un
 
 void DefaultKeyboardFocusManager::discardKeyEvents($Component* comp) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (comp == nullptr) {
 			return;
 		}
@@ -1119,6 +1136,7 @@ void DefaultKeyboardFocusManager::discardKeyEvents($Component* comp) {
 }
 
 void DefaultKeyboardFocusManager::purgeStampedEvents(int64_t start, int64_t end) {
+	$useLocalCurrentObjectStackCache();
 	if (start < 0) {
 		return;
 	}

@@ -95,6 +95,7 @@ $WeakIdentityMap* ThreadGroupContext::contexts = nullptr;
 
 ThreadGroupContext* ThreadGroupContext::getContext() {
 	$init(ThreadGroupContext);
+	$useLocalCurrentObjectStackCache();
 	return $cast(ThreadGroupContext, $nc(ThreadGroupContext::contexts)->get($($($Thread::currentThread())->getThreadGroup())));
 }
 

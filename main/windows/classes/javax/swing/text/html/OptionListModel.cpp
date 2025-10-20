@@ -223,6 +223,7 @@ void OptionListModel::fireValueChanged(int32_t firstIndex, int32_t lastIndex) {
 }
 
 void OptionListModel::fireValueChanged(int32_t firstIndex, int32_t lastIndex, bool isAdjusting) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($ListSelectionEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -432,6 +433,7 @@ void OptionListModel::setValueIsAdjusting(bool isAdjusting) {
 }
 
 $String* OptionListModel::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, ((getValueIsAdjusting()) ? "~"_s : "="_s));
 	$var($String, s, $concat(var$0, $($nc(this->value)->toString())));
 	$var($String, var$3, $$str({$($of(this)->getClass()->getName()), " "_s}));

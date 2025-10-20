@@ -108,6 +108,7 @@ void PopupFactory$ContainerPopup::init$() {
 }
 
 void PopupFactory$ContainerPopup::hide() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, component, getComponent());
 	if (component != nullptr) {
 		$var($Container, parent, component->getParent());
@@ -121,6 +122,7 @@ void PopupFactory$ContainerPopup::hide() {
 }
 
 void PopupFactory$ContainerPopup::pack() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, component, getComponent());
 	if (component != nullptr) {
 		component->setSize($(component->getPreferredSize()));
@@ -139,6 +141,7 @@ void PopupFactory$ContainerPopup::reset($Component* owner$renamed, $Component* c
 }
 
 bool PopupFactory$ContainerPopup::overlappedByOwnedWindow() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, component, getComponent());
 	if (this->owner != nullptr && component != nullptr) {
 		$var($Window, w, $SwingUtilities::getWindowAncestor(this->owner));
@@ -168,6 +171,7 @@ bool PopupFactory$ContainerPopup::overlappedByOwnedWindow() {
 }
 
 bool PopupFactory$ContainerPopup::fitsOnScreen() {
+	$useLocalCurrentObjectStackCache();
 	bool result = false;
 	$var($Component, component, getComponent());
 	if (this->owner != nullptr && component != nullptr) {
@@ -200,6 +204,7 @@ bool PopupFactory$ContainerPopup::fitsOnScreen() {
 }
 
 $Rectangle* PopupFactory$ContainerPopup::getContainerPopupArea($GraphicsConfiguration* gc) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, screenBounds, nullptr);
 	$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());
 	$var($Insets, insets, nullptr);

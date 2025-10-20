@@ -99,6 +99,7 @@ void MidiUtils$TempoCache::init$($Sequence* seq) {
 
 void MidiUtils$TempoCache::refresh($Sequence* seq) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($ArrayList, list, $new($ArrayList));
 		$var($TrackArray, tracks, $nc(seq)->getTracks());
 		if ($nc(tracks)->length > 0) {

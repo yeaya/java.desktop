@@ -109,6 +109,7 @@ $TypeArray* TypeResolver::resolveInClass($Class* inClass, $TypeArray* types) {
 
 $Type* TypeResolver::resolve($Type* actual, $Type* formal) {
 	$init(TypeResolver);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Class, formal)) {
 		return formal;
 	}
@@ -152,6 +153,7 @@ $Type* TypeResolver::resolve($Type* actual, $Type* formal) {
 
 $TypeArray* TypeResolver::resolve($Type* actual, $TypeArray* formals) {
 	$init(TypeResolver);
+	$useLocalCurrentObjectStackCache();
 	int32_t length = $nc(formals)->length;
 	$var($TypeArray, actuals, $new($TypeArray, length));
 	for (int32_t i = 0; i < length; ++i) {
@@ -162,6 +164,7 @@ $TypeArray* TypeResolver::resolve($Type* actual, $TypeArray* formals) {
 
 $Class* TypeResolver::erase($Type* type) {
 	$init(TypeResolver);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Class, type)) {
 		return $cast($Class, type);
 	}
@@ -200,6 +203,7 @@ $ClassArray* TypeResolver::erase($TypeArray* types) {
 
 void TypeResolver::prepare($Map* map, $Type* type) {
 	$init(TypeResolver);
+	$useLocalCurrentObjectStackCache();
 	$Class* raw = ($cast($Class, (($instanceOf($Class, type)) ? type : $nc(($cast($ParameterizedType, type)))->getRawType())));
 	$var($TypeVariableArray, formals, $nc(raw)->getTypeParameters());
 	$var($TypeArray, actuals, ($instanceOf($Class, type)) ? $fcast($TypeArray, formals) : ($cast($ParameterizedType, type))->getActualTypeArguments());
@@ -239,6 +243,7 @@ void TypeResolver::prepare($Map* map, $Type* type) {
 
 $Type* TypeResolver::fixGenericArray($Type* type) {
 	$init(TypeResolver);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($GenericArrayType, type)) {
 		$var($Type, comp, $nc(($cast($GenericArrayType, type)))->getGenericComponentType());
 		$assign(comp, fixGenericArray(comp));

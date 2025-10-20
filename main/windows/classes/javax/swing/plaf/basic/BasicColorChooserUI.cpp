@@ -176,6 +176,7 @@ void BasicColorChooserUI::uninstallDefaultChoosers() {
 }
 
 void BasicColorChooserUI::installUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, chooser, $cast($JColorChooser, c));
 	$ColorChooserUI::installUI(c);
 	installDefaults();
@@ -218,6 +219,7 @@ void BasicColorChooserUI::uninstallUI($JComponent* c) {
 }
 
 void BasicColorChooserUI::installPreviewPanel() {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, previewPanel, $nc(this->chooser)->getPreviewPanel());
 	if (previewPanel == nullptr) {
 		$assign(previewPanel, $ColorChooserComponentFactory::getPreviewPanel());
@@ -288,6 +290,7 @@ void BasicColorChooserUI::uninstallListeners() {
 }
 
 void BasicColorChooserUI::selectionChanged($ColorSelectionModel* model) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, previewPanel, $nc(this->chooser)->getPreviewPanel());
 	if (previewPanel != nullptr) {
 		previewPanel->setForeground($($nc(model)->getSelectedColor()));

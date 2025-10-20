@@ -117,6 +117,7 @@ void JProgressBar$AccessibleJProgressBar::init$($JProgressBar* this$0) {
 }
 
 $AccessibleStateSet* JProgressBar$AccessibleJProgressBar::getAccessibleStateSet() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleStateSet, states, $JComponent$AccessibleJComponent::getAccessibleStateSet());
 	if ($nc($(this->this$0->getModel()))->getValueIsAdjusting()) {
 		$init($AccessibleState);

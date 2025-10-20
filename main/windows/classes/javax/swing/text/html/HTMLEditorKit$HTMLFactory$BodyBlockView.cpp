@@ -158,6 +158,7 @@ $SizeRequirements* HTMLEditorKit$HTMLFactory$BodyBlockView::calculateMajorAxisRe
 }
 
 void HTMLEditorKit$HTMLFactory$BodyBlockView::layoutMinorAxis(int32_t targetSpan, int32_t axis, $ints* offsets, $ints* spans) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, container, getContainer());
 	$var($Container, parentContainer, nullptr);
 	if (container != nullptr && ($instanceOf($JEditorPane, container)) && ($assign(parentContainer, container->getParent())) != nullptr && ($instanceOf($JViewport, parentContainer))) {
@@ -206,6 +207,7 @@ void HTMLEditorKit$HTMLFactory$BodyBlockView::setParent($View* parent) {
 }
 
 void HTMLEditorKit$HTMLFactory$BodyBlockView::componentResized($ComponentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($JViewport, $($nc(e)->getSource())))) {
 		return;
 	}

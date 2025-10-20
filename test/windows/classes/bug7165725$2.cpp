@@ -92,6 +92,7 @@ void bug7165725$2::init$($bug7165725* this$0, $bug7165725$GoldenElement* val$gol
 }
 
 void bug7165725$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($HTMLDocument, doc, $cast($HTMLDocument, $nc(this->this$0->editorPane)->getDocument()));
 	$init($System);
 	$nc(doc)->dump($System::out);

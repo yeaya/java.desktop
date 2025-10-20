@@ -116,6 +116,7 @@ void ComponentView::init$($Element* elem) {
 }
 
 $Component* ComponentView::createComponent() {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attr, $nc($(getElement()))->getAttributes());
 	$var($Component, comp, $StyleConstants::getComponent(attr));
 	return comp;
@@ -133,6 +134,7 @@ void ComponentView::paint($Graphics* g, $Shape* a) {
 }
 
 float ComponentView::getPreferredSpan(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	if ((axis != $View::X_AXIS) && (axis != $View::Y_AXIS)) {
 		$throwNew($IllegalArgumentException, $$str({"Invalid axis: "_s, $$str(axis)}));
 	}
@@ -148,6 +150,7 @@ float ComponentView::getPreferredSpan(int32_t axis) {
 }
 
 float ComponentView::getMinimumSpan(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	if ((axis != $View::X_AXIS) && (axis != $View::Y_AXIS)) {
 		$throwNew($IllegalArgumentException, $$str({"Invalid axis: "_s, $$str(axis)}));
 	}
@@ -163,6 +166,7 @@ float ComponentView::getMinimumSpan(int32_t axis) {
 }
 
 float ComponentView::getMaximumSpan(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	if ((axis != $View::X_AXIS) && (axis != $View::Y_AXIS)) {
 		$throwNew($IllegalArgumentException, $$str({"Invalid axis: "_s, $$str(axis)}));
 	}
@@ -204,6 +208,7 @@ void ComponentView::setParent($View* p) {
 }
 
 void ComponentView::setComponentParent() {
+	$useLocalCurrentObjectStackCache();
 	$var($View, p, getParent());
 	if (p != nullptr) {
 		$var($Container, parent, getContainer());
@@ -232,6 +237,7 @@ void ComponentView::setComponentParent() {
 }
 
 $Shape* ComponentView::modelToView(int32_t pos, $Shape* a, $Position$Bias* b) {
+	$useLocalCurrentObjectStackCache();
 	int32_t p0 = getStartOffset();
 	int32_t p1 = getEndOffset();
 	if ((pos >= p0) && (pos <= p1)) {

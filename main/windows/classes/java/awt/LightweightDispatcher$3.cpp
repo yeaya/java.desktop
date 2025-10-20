@@ -84,6 +84,7 @@ void LightweightDispatcher$3::init$($LightweightDispatcher* this$0, $MouseEvent*
 }
 
 void LightweightDispatcher$3::run() {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->this$0->nativeContainer)->isShowing()) {
 		return;
 	}

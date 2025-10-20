@@ -74,6 +74,7 @@ void JLayer$DefaultLayerGlassPane::init$() {
 }
 
 bool JLayer$DefaultLayerGlassPane::contains(int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < getComponentCount(); ++i) {
 		$var($Component, c, getComponent(i));
 		$var($Point, point, $SwingUtilities::convertPoint(this, $$new($Point, x, y), c));

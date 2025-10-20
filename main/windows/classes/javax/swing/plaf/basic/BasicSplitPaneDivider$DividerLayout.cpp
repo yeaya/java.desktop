@@ -85,6 +85,7 @@ void BasicSplitPaneDivider$DividerLayout::init$($BasicSplitPaneDivider* this$0) 
 }
 
 void BasicSplitPaneDivider$DividerLayout::layoutContainer($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->leftButton != nullptr && this->this$0->rightButton != nullptr && $equals(c, this->this$0)) {
 		if ($nc(this->this$0->splitPane)->isOneTouchExpandable()) {
 			$var($Insets, insets, this->this$0->getInsets());
@@ -127,6 +128,7 @@ void BasicSplitPaneDivider$DividerLayout::layoutContainer($Container* c) {
 }
 
 $Dimension* BasicSplitPaneDivider$DividerLayout::minimumLayoutSize($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	if (!$equals(c, this->this$0) || this->this$0->splitPane == nullptr) {
 		return $new($Dimension, 0, 0);
 	}

@@ -410,6 +410,7 @@ void MetalFileChooserUI::uninstallComponents($JFileChooser* fc) {
 }
 
 void MetalFileChooserUI::installComponents($JFileChooser* fc) {
+	$useLocalCurrentObjectStackCache();
 	$var($FileSystemView, fsv, $nc(fc)->getFileSystemView());
 	fc->setBorder($$new($EmptyBorder, 12, 12, 11, 11));
 	fc->setLayout($$new($BorderLayout, 0, 11));
@@ -567,6 +568,7 @@ $JPanel* MetalFileChooserUI::getBottomPanel() {
 }
 
 void MetalFileChooserUI::installStrings($JFileChooser* fc) {
+	$useLocalCurrentObjectStackCache();
 	$BasicFileChooserUI::installStrings(fc);
 	$var($Locale, l, $nc(fc)->getLocale());
 	this->lookInLabelMnemonic = $nc($(getMnemonic("FileChooser.lookInLabelMnemonic"_s, l)))->intValue();
@@ -605,6 +607,7 @@ $ActionMap* MetalFileChooserUI::getActionMap() {
 }
 
 $ActionMap* MetalFileChooserUI::createActionMap() {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, map, $new($ActionMapUIResource));
 	$FilePane::addActionsToMap(map, $($nc(this->filePane)->getActions()));
 	return map;
@@ -623,6 +626,7 @@ $ListSelectionListener* MetalFileChooserUI::createListSelectionListener($JFileCh
 }
 
 void MetalFileChooserUI::uninstallUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$nc(c)->removePropertyChangeListener(this->filterComboBoxModel);
 	c->removePropertyChangeListener(this->filePane);
 	$nc(this->cancelButton)->removeActionListener($(getCancelSelectionAction()));
@@ -636,6 +640,7 @@ void MetalFileChooserUI::uninstallUI($JComponent* c) {
 }
 
 $Dimension* MetalFileChooserUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t prefWidth = $nc(MetalFileChooserUI::PREF_SIZE)->width;
 	$var($Dimension, d, $nc($($nc(c)->getLayout()))->preferredLayoutSize(c));
 	if (d != nullptr) {
@@ -654,6 +659,7 @@ $Dimension* MetalFileChooserUI::getMaximumSize($JComponent* c) {
 }
 
 $String* MetalFileChooserUI::fileNameString($File* file) {
+	$useLocalCurrentObjectStackCache();
 	if (file == nullptr) {
 		return nullptr;
 	} else {
@@ -674,6 +680,7 @@ $String* MetalFileChooserUI::fileNameString($File* file) {
 }
 
 $String* MetalFileChooserUI::fileNameString($FileArray* files) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, $new($StringBuilder));
 	for (int32_t i = 0; files != nullptr && i < files->length; ++i) {
 		if (i > 0) {
@@ -691,6 +698,7 @@ $String* MetalFileChooserUI::fileNameString($FileArray* files) {
 }
 
 void MetalFileChooserUI::doSelectedFileChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($File, f, $cast($File, $nc(e)->getNewValue()));
 	$var($JFileChooser, fc, getFileChooser());
 	bool var$0 = f != nullptr;
@@ -709,6 +717,7 @@ void MetalFileChooserUI::doSelectedFileChanged($PropertyChangeEvent* e) {
 }
 
 void MetalFileChooserUI::doSelectedFilesChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($FileArray, files, $cast($FileArray, $nc(e)->getNewValue()));
 	$var($JFileChooser, fc, getFileChooser());
 	bool var$0 = files != nullptr && files->length > 0;
@@ -722,6 +731,7 @@ void MetalFileChooserUI::doSelectedFilesChanged($PropertyChangeEvent* e) {
 }
 
 void MetalFileChooserUI::doDirectoryChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, fc, getFileChooser());
 	$var($FileSystemView, fsv, $nc(fc)->getFileSystemView());
 	clearIconCache();
@@ -744,6 +754,7 @@ void MetalFileChooserUI::doFilterChanged($PropertyChangeEvent* e) {
 }
 
 void MetalFileChooserUI::doFileSelectionModeChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->fileNameLabel != nullptr) {
 		populateFileNameLabel();
 	}
@@ -760,6 +771,7 @@ void MetalFileChooserUI::doFileSelectionModeChanged($PropertyChangeEvent* e) {
 }
 
 void MetalFileChooserUI::doAccessoryChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (getAccessoryPanel() != nullptr) {
 		if ($nc(e)->getOldValue() != nullptr) {
 			$nc($(getAccessoryPanel()))->remove($cast($JComponent, $(e->getOldValue())));
@@ -773,12 +785,14 @@ void MetalFileChooserUI::doAccessoryChanged($PropertyChangeEvent* e) {
 }
 
 void MetalFileChooserUI::doApproveButtonTextChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, chooser, getFileChooser());
 	$nc(this->approveButton)->setText($(getApproveButtonText(chooser)));
 	$nc(this->approveButton)->setToolTipText($(getApproveButtonToolTipText(chooser)));
 }
 
 void MetalFileChooserUI::doDialogTypeChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, chooser, getFileChooser());
 	$nc(this->approveButton)->setText($(getApproveButtonText(chooser)));
 	$nc(this->approveButton)->setToolTipText($(getApproveButtonToolTipText(chooser)));
@@ -805,10 +819,12 @@ $PropertyChangeListener* MetalFileChooserUI::createPropertyChangeListener($JFile
 }
 
 void MetalFileChooserUI::removeControlButtons() {
+	$useLocalCurrentObjectStackCache();
 	$nc($(getBottomPanel()))->remove($(static_cast<$Component*>(getButtonPanel())));
 }
 
 void MetalFileChooserUI::addControlButtons() {
+	$useLocalCurrentObjectStackCache();
 	$nc($(getBottomPanel()))->add($(static_cast<$Component*>(getButtonPanel())));
 }
 
@@ -835,6 +851,7 @@ void MetalFileChooserUI::setFileName($String* filename) {
 }
 
 void MetalFileChooserUI::setDirectorySelected(bool directorySelected) {
+	$useLocalCurrentObjectStackCache();
 	$BasicFileChooserUI::setDirectorySelected(directorySelected);
 	$var($JFileChooser, chooser, getFileChooser());
 	if (directorySelected) {
@@ -872,6 +889,7 @@ $MetalFileChooserUI$FilterComboBoxModel* MetalFileChooserUI::createFilterComboBo
 }
 
 void MetalFileChooserUI::valueChanged($ListSelectionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, fc, getFileChooser());
 	$var($File, f, $nc(fc)->getSelectedFile());
 	bool var$0 = !$nc(e)->getValueIsAdjusting() && f != nullptr;

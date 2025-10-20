@@ -84,6 +84,7 @@ bool PartiallyOrderedSet::contains(Object$* o) {
 }
 
 $Iterator* PartiallyOrderedSet::iterator() {
+	$useLocalCurrentObjectStackCache();
 	return $new($PartialOrderIterator, $($nc($($nc(this->poNodes)->values()))->iterator()));
 }
 
@@ -111,6 +112,7 @@ void PartiallyOrderedSet::clear() {
 }
 
 bool PartiallyOrderedSet::setOrdering(Object$* first, Object$* second) {
+	$useLocalCurrentObjectStackCache();
 	$var($DigraphNode, firstPONode, $cast($DigraphNode, $nc(this->poNodes)->get(first)));
 	$var($DigraphNode, secondPONode, $cast($DigraphNode, $nc(this->poNodes)->get(second)));
 	$nc(secondPONode)->removeEdge(firstPONode);
@@ -118,6 +120,7 @@ bool PartiallyOrderedSet::setOrdering(Object$* first, Object$* second) {
 }
 
 bool PartiallyOrderedSet::unsetOrdering(Object$* first, Object$* second) {
+	$useLocalCurrentObjectStackCache();
 	$var($DigraphNode, firstPONode, $cast($DigraphNode, $nc(this->poNodes)->get(first)));
 	$var($DigraphNode, secondPONode, $cast($DigraphNode, $nc(this->poNodes)->get(second)));
 	bool var$0 = $nc(firstPONode)->removeEdge(secondPONode);
@@ -125,6 +128,7 @@ bool PartiallyOrderedSet::unsetOrdering(Object$* first, Object$* second) {
 }
 
 bool PartiallyOrderedSet::hasOrdering(Object$* preferred, Object$* other) {
+	$useLocalCurrentObjectStackCache();
 	$var($DigraphNode, preferredPONode, $cast($DigraphNode, $nc(this->poNodes)->get(preferred)));
 	$var($DigraphNode, otherPONode, $cast($DigraphNode, $nc(this->poNodes)->get(other)));
 	return $nc(preferredPONode)->hasEdge(otherPONode);

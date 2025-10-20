@@ -167,6 +167,7 @@ $String* IIOMetadataFormatImpl::standardMetadataFormatName = nullptr;
 $IIOMetadataFormat* IIOMetadataFormatImpl::standardFormat = nullptr;
 
 void IIOMetadataFormatImpl::init$($String* rootName, int32_t childPolicy) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, resourceBaseName, $str({$($of(this)->getClass()->getName()), "Resources"_s}));
 	$set(this, elementMap, $new($HashMap));
 	if (rootName == nullptr) {
@@ -183,6 +184,7 @@ void IIOMetadataFormatImpl::init$($String* rootName, int32_t childPolicy) {
 }
 
 void IIOMetadataFormatImpl::init$($String* rootName, int32_t minChildren, int32_t maxChildren) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, resourceBaseName, $str({$($of(this)->getClass()->getName()), "Resources"_s}));
 	$set(this, elementMap, $new($HashMap));
 	if (rootName == nullptr) {
@@ -215,6 +217,7 @@ $String* IIOMetadataFormatImpl::getResourceBaseName() {
 }
 
 $IIOMetadataFormatImpl$Element* IIOMetadataFormatImpl::getElement($String* elementName, bool mustAppear) {
+	$useLocalCurrentObjectStackCache();
 	if (mustAppear && (elementName == nullptr)) {
 		$throwNew($IllegalArgumentException, "element name is null!"_s);
 	}
@@ -230,6 +233,7 @@ $IIOMetadataFormatImpl$Element* IIOMetadataFormatImpl::getElement($String* eleme
 }
 
 $IIOMetadataFormatImpl$Attribute* IIOMetadataFormatImpl::getAttribute($String* elementName, $String* attrName) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName));
 	$var($IIOMetadataFormatImpl$Attribute, attr, $cast($IIOMetadataFormatImpl$Attribute, $nc($nc(element)->attrMap)->get(attrName)));
 	if (attr == nullptr) {
@@ -239,6 +243,7 @@ $IIOMetadataFormatImpl$Attribute* IIOMetadataFormatImpl::getAttribute($String* e
 }
 
 void IIOMetadataFormatImpl::addElement($String* elementName, $String* parentName, int32_t childPolicy) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, parent, getElement(parentName));
 	if (childPolicy < $IIOMetadataFormat::CHILD_POLICY_EMPTY || childPolicy > $IIOMetadataFormat::CHILD_POLICY_MAX || childPolicy == $IIOMetadataFormat::CHILD_POLICY_REPEAT) {
 		$throwNew($IllegalArgumentException, "Invalid value for childPolicy!"_s);
@@ -252,6 +257,7 @@ void IIOMetadataFormatImpl::addElement($String* elementName, $String* parentName
 }
 
 void IIOMetadataFormatImpl::addElement($String* elementName, $String* parentName, int32_t minChildren, int32_t maxChildren) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, parent, getElement(parentName));
 	if (minChildren < 0) {
 		$throwNew($IllegalArgumentException, "minChildren < 0!"_s);
@@ -270,6 +276,7 @@ void IIOMetadataFormatImpl::addElement($String* elementName, $String* parentName
 }
 
 void IIOMetadataFormatImpl::addChildElement($String* elementName, $String* parentName) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, parent, getElement(parentName));
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName));
 	$nc($nc(parent)->childList)->add(elementName);
@@ -277,6 +284,7 @@ void IIOMetadataFormatImpl::addChildElement($String* elementName, $String* paren
 }
 
 void IIOMetadataFormatImpl::removeElement($String* elementName) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName, false));
 	if (element != nullptr) {
 		{
@@ -296,6 +304,7 @@ void IIOMetadataFormatImpl::removeElement($String* elementName) {
 }
 
 void IIOMetadataFormatImpl::addAttribute($String* elementName, $String* attrName, int32_t dataType, bool required, $String* defaultValue) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName));
 	if (attrName == nullptr) {
 		$throwNew($IllegalArgumentException, "attrName == null!"_s);
@@ -314,6 +323,7 @@ void IIOMetadataFormatImpl::addAttribute($String* elementName, $String* attrName
 }
 
 void IIOMetadataFormatImpl::addAttribute($String* elementName, $String* attrName, int32_t dataType, bool required, $String* defaultValue, $List* enumeratedValues) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName));
 	if (attrName == nullptr) {
 		$throwNew($IllegalArgumentException, "attrName == null!"_s);
@@ -353,6 +363,7 @@ void IIOMetadataFormatImpl::addAttribute($String* elementName, $String* attrName
 }
 
 void IIOMetadataFormatImpl::addAttribute($String* elementName, $String* attrName, int32_t dataType, bool required, $String* defaultValue, $String* minValue, $String* maxValue, bool minInclusive, bool maxInclusive) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName));
 	if (attrName == nullptr) {
 		$throwNew($IllegalArgumentException, "attrName == null!"_s);
@@ -379,6 +390,7 @@ void IIOMetadataFormatImpl::addAttribute($String* elementName, $String* attrName
 }
 
 void IIOMetadataFormatImpl::addAttribute($String* elementName, $String* attrName, int32_t dataType, bool required, int32_t listMinLength, int32_t listMaxLength) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName));
 	if (attrName == nullptr) {
 		$throwNew($IllegalArgumentException, "attrName == null!"_s);
@@ -401,6 +413,7 @@ void IIOMetadataFormatImpl::addAttribute($String* elementName, $String* attrName
 }
 
 void IIOMetadataFormatImpl::addBooleanAttribute($String* elementName, $String* attrName, bool hasDefaultValue, bool defaultValue) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, values, $new($ArrayList));
 	values->add("TRUE"_s);
 	values->add("FALSE"_s);
@@ -418,6 +431,7 @@ void IIOMetadataFormatImpl::removeAttribute($String* elementName, $String* attrN
 }
 
 void IIOMetadataFormatImpl::addObjectValue($String* elementName, $Class* classType, bool required, Object$* defaultValue) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName));
 	$var($IIOMetadataFormatImpl$ObjectValue, obj, $new($IIOMetadataFormatImpl$ObjectValue, this));
 	obj->valueType = $IIOMetadataFormat::VALUE_ARBITRARY;
@@ -427,6 +441,7 @@ void IIOMetadataFormatImpl::addObjectValue($String* elementName, $Class* classTy
 }
 
 void IIOMetadataFormatImpl::addObjectValue($String* elementName, $Class* classType, bool required, Object$* defaultValue, $List* enumeratedValues) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName));
 	if (enumeratedValues == nullptr) {
 		$throwNew($IllegalArgumentException, "enumeratedValues == null!"_s);
@@ -457,6 +472,7 @@ void IIOMetadataFormatImpl::addObjectValue($String* elementName, $Class* classTy
 }
 
 void IIOMetadataFormatImpl::addObjectValue($String* elementName, $Class* classType, Object$* defaultValue, $Comparable* minValue, $Comparable* maxValue, bool minInclusive, bool maxInclusive) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName));
 	$var($IIOMetadataFormatImpl$ObjectValue, obj, $new($IIOMetadataFormatImpl$ObjectValue, this));
 	obj->valueType = $IIOMetadataFormat::VALUE_RANGE;
@@ -474,6 +490,7 @@ void IIOMetadataFormatImpl::addObjectValue($String* elementName, $Class* classTy
 }
 
 void IIOMetadataFormatImpl::addObjectValue($String* elementName, $Class* classType, int32_t arrayMinLength, int32_t arrayMaxLength) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName));
 	$var($IIOMetadataFormatImpl$ObjectValue, obj, $new($IIOMetadataFormatImpl$ObjectValue, this));
 	obj->valueType = $IIOMetadataFormat::VALUE_LIST;
@@ -509,6 +526,7 @@ int32_t IIOMetadataFormatImpl::getElementMaxChildren($String* elementName) {
 }
 
 $String* IIOMetadataFormatImpl::getResource($String* key, $Locale* locale$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Locale, locale, locale$renamed);
 	$beforeCallerSensitive();
 	if (locale == nullptr) {
@@ -535,6 +553,7 @@ int32_t IIOMetadataFormatImpl::getChildPolicy($String* elementName) {
 }
 
 $StringArray* IIOMetadataFormatImpl::getChildNames($String* elementName) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName));
 	if ($nc(element)->childPolicy == $IIOMetadataFormat::CHILD_POLICY_EMPTY) {
 		return nullptr;
@@ -543,6 +562,7 @@ $StringArray* IIOMetadataFormatImpl::getChildNames($String* elementName) {
 }
 
 $StringArray* IIOMetadataFormatImpl::getAttributeNames($String* elementName) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName));
 	$var($List, names, $nc(element)->attrList);
 	$var($StringArray, result, $new($StringArray, $nc(names)->size()));
@@ -570,6 +590,7 @@ $String* IIOMetadataFormatImpl::getAttributeDefaultValue($String* elementName, $
 }
 
 $StringArray* IIOMetadataFormatImpl::getAttributeEnumerations($String* elementName, $String* attrName) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Attribute, attr, getAttribute(elementName, attrName));
 	if ($nc(attr)->valueType != $IIOMetadataFormat::VALUE_ENUMERATION) {
 		$throwNew($IllegalArgumentException, "Attribute not an enumeration!"_s);
@@ -612,6 +633,7 @@ int32_t IIOMetadataFormatImpl::getAttributeListMaxLength($String* elementName, $
 }
 
 $String* IIOMetadataFormatImpl::getAttributeDescription($String* elementName, $String* attrName, $Locale* locale) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName));
 	if (attrName == nullptr) {
 		$throwNew($IllegalArgumentException, "attrName == null!"_s);
@@ -625,6 +647,7 @@ $String* IIOMetadataFormatImpl::getAttributeDescription($String* elementName, $S
 }
 
 $IIOMetadataFormatImpl$ObjectValue* IIOMetadataFormatImpl::getObjectValue($String* elementName) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName));
 	$var($IIOMetadataFormatImpl$ObjectValue, objv, $nc(element)->objectValue);
 	if (objv == nullptr) {
@@ -634,6 +657,7 @@ $IIOMetadataFormatImpl$ObjectValue* IIOMetadataFormatImpl::getObjectValue($Strin
 }
 
 int32_t IIOMetadataFormatImpl::getObjectValueType($String* elementName) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$Element, element, getElement(elementName));
 	$var($IIOMetadataFormatImpl$ObjectValue, objv, $nc(element)->objectValue);
 	if (objv == nullptr) {
@@ -653,6 +677,7 @@ $Object* IIOMetadataFormatImpl::getObjectDefaultValue($String* elementName) {
 }
 
 $ObjectArray* IIOMetadataFormatImpl::getObjectEnumerations($String* elementName) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataFormatImpl$ObjectValue, objv, getObjectValue(elementName));
 	if ($nc(objv)->valueType != $IIOMetadataFormat::VALUE_ENUMERATION) {
 		$throwNew($IllegalArgumentException, "Not an enumeration!"_s);

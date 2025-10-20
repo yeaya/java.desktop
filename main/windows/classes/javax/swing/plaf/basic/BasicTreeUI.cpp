@@ -495,6 +495,7 @@ $ComponentUI* BasicTreeUI::createUI($JComponent* x) {
 
 void BasicTreeUI::loadActionMap($LazyActionMap* map) {
 	$init(BasicTreeUI);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicTreeUI$Actions);
 	$nc(map)->put($$new($BasicTreeUI$Actions, $BasicTreeUI$Actions::SELECT_PREVIOUS));
 	map->put($$new($BasicTreeUI$Actions, $BasicTreeUI$Actions::SELECT_PREVIOUS_CHANGE_LEAD));
@@ -738,6 +739,7 @@ $TreeSelectionModel* BasicTreeUI::getSelectionModel() {
 }
 
 $Rectangle* BasicTreeUI::getPathBounds($JTree* tree, $TreePath* path) {
+	$useLocalCurrentObjectStackCache();
 	if (tree != nullptr && this->treeState != nullptr) {
 		$var($TreePath, var$0, path);
 		$var($Insets, var$1, tree->getInsets());
@@ -847,6 +849,7 @@ void BasicTreeUI::completeUIInstall() {
 }
 
 void BasicTreeUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(this->tree)->getBackground() == nullptr;
 	if (var$0 || $instanceOf($UIResource, $($nc(this->tree)->getBackground()))) {
 		$nc(this->tree)->setBackground($($UIManager::getColor("Tree.background"_s)));
@@ -881,6 +884,7 @@ void BasicTreeUI::installDefaults() {
 }
 
 void BasicTreeUI::installListeners() {
+	$useLocalCurrentObjectStackCache();
 	if (($assignField(this, propertyChangeListener, createPropertyChangeListener())) != nullptr) {
 		$nc(this->tree)->addPropertyChangeListener(this->propertyChangeListener);
 	}
@@ -928,6 +932,7 @@ void BasicTreeUI::installKeyboardActions() {
 }
 
 $InputMap* BasicTreeUI::getInputMap(int32_t condition) {
+	$useLocalCurrentObjectStackCache();
 	if (condition == $JComponent::WHEN_ANCESTOR_OF_FOCUSED_COMPONENT) {
 		return $cast($InputMap, $DefaultLookup::get(this->tree, this, "Tree.ancestorInputMap"_s));
 	} else if (condition == $JComponent::WHEN_FOCUSED) {
@@ -1123,6 +1128,7 @@ void BasicTreeUI::redoTheLayout() {
 }
 
 int32_t BasicTreeUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$TreeUI::getBaseline(c, width, height);
 	$var($UIDefaults, lafDefaults, $UIManager::getLookAndFeelDefaults());
 	$var($Component, renderer, $cast($Component, $nc(lafDefaults)->get(BasicTreeUI::BASELINE_COMPONENT_KEY)));
@@ -1149,6 +1155,7 @@ $Component$BaselineResizeBehavior* BasicTreeUI::getBaselineResizeBehavior($JComp
 }
 
 void BasicTreeUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if (!$equals(this->tree, c)) {
 		$throwNew($InternalError, "incorrect component"_s);
 	}
@@ -1228,6 +1235,7 @@ bool BasicTreeUI::isDropLine($JTree$DropLocation* loc) {
 }
 
 void BasicTreeUI::paintDropLine($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTree$DropLocation, loc, $nc(this->tree)->getDropLocation());
 	if (!isDropLine(loc)) {
 		return;
@@ -1241,6 +1249,7 @@ void BasicTreeUI::paintDropLine($Graphics* g) {
 }
 
 $Rectangle* BasicTreeUI::getDropLineRect($JTree$DropLocation* loc) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, rect, nullptr);
 	$var($TreePath, path, $nc(loc)->getPath());
 	int32_t index = loc->getChildIndex();
@@ -1287,6 +1296,7 @@ $Rectangle* BasicTreeUI::getDropLineRect($JTree$DropLocation* loc) {
 }
 
 void BasicTreeUI::paintHorizontalPartOfLeg($Graphics* g, $Rectangle* clipBounds, $Insets* insets, $Rectangle* bounds, $TreePath* path, int32_t row, bool isExpanded, bool hasBeenExpanded, bool isLeaf) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->paintLines) {
 		return;
 	}
@@ -1318,6 +1328,7 @@ void BasicTreeUI::paintHorizontalPartOfLeg($Graphics* g, $Rectangle* clipBounds,
 }
 
 void BasicTreeUI::paintVerticalPartOfLeg($Graphics* g, $Rectangle* clipBounds, $Insets* insets, $TreePath* path) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->paintLines) {
 		return;
 	}
@@ -1370,6 +1381,7 @@ void BasicTreeUI::paintVerticalPartOfLeg($Graphics* g, $Rectangle* clipBounds, $
 }
 
 void BasicTreeUI::paintExpandControl($Graphics* g, $Rectangle* clipBounds, $Insets* insets, $Rectangle* bounds, $TreePath* path, int32_t row, bool isExpanded, bool hasBeenExpanded, bool isLeaf) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, $nc(path)->getLastPathComponent());
 	if (!isLeaf && (!hasBeenExpanded || $nc(this->treeModel)->getChildCount(value) > 0)) {
 		int32_t middleXOfKnob = 0;
@@ -1394,6 +1406,7 @@ void BasicTreeUI::paintExpandControl($Graphics* g, $Rectangle* clipBounds, $Inse
 }
 
 void BasicTreeUI::paintRow($Graphics* g, $Rectangle* clipBounds, $Insets* insets, $Rectangle* bounds, $TreePath* path, int32_t row, bool isExpanded, bool hasBeenExpanded, bool isLeaf) {
+	$useLocalCurrentObjectStackCache();
 	if (this->editingComponent != nullptr && this->editingRow == row) {
 		return;
 	}
@@ -1451,6 +1464,7 @@ int32_t BasicTreeUI::findCenteredX(int32_t x, int32_t iconWidth) {
 }
 
 void BasicTreeUI::drawCentered($Component* c, $Graphics* graphics, $Icon* icon, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, var$0, c);
 	$var($Graphics, var$1, graphics);
 	int32_t var$2 = findCenteredX(x, icon->getIconWidth());
@@ -1466,6 +1480,7 @@ void BasicTreeUI::drawDashedVerticalLine($Graphics* g, int32_t x, int32_t y1, in
 }
 
 void BasicTreeUI::drawDashedLine($Graphics* g, int32_t v, int32_t v1, int32_t v2, bool isVertical) {
+	$useLocalCurrentObjectStackCache();
 	if (v1 >= v2) {
 		return;
 	}
@@ -1487,12 +1502,14 @@ int32_t BasicTreeUI::getRowX(int32_t row, int32_t depth) {
 }
 
 void BasicTreeUI::updateLayoutCacheExpandedNodes() {
+	$useLocalCurrentObjectStackCache();
 	if (this->treeModel != nullptr && $nc(this->treeModel)->getRoot() != nullptr) {
 		updateExpandedDescendants($$new($TreePath, $($nc(this->treeModel)->getRoot())));
 	}
 }
 
 void BasicTreeUI::updateLayoutCacheExpandedNodesIfNecessary() {
+	$useLocalCurrentObjectStackCache();
 	if (this->treeModel != nullptr && $nc(this->treeModel)->getRoot() != nullptr) {
 		$var($TreePath, rootPath, $new($TreePath, $($nc(this->treeModel)->getRoot())));
 		if ($nc(this->tree)->isExpanded(rootPath)) {
@@ -1504,6 +1521,7 @@ void BasicTreeUI::updateLayoutCacheExpandedNodesIfNecessary() {
 }
 
 void BasicTreeUI::updateExpandedDescendants($TreePath* path$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePath, path, path$renamed);
 	completeEditing();
 	if (this->treeState != nullptr) {
@@ -1521,6 +1539,7 @@ void BasicTreeUI::updateExpandedDescendants($TreePath* path$renamed) {
 }
 
 $TreePath* BasicTreeUI::getLastChildPath($TreePath* parent) {
+	$useLocalCurrentObjectStackCache();
 	if (this->treeModel != nullptr) {
 		int32_t childCount = $nc(this->treeModel)->getChildCount($($nc(parent)->getLastPathComponent()));
 		if (childCount > 0) {
@@ -1577,6 +1596,7 @@ void BasicTreeUI::updateCellEditor() {
 }
 
 void BasicTreeUI::updateRenderer() {
+	$useLocalCurrentObjectStackCache();
 	if (this->tree != nullptr) {
 		$var($TreeCellRenderer, newCellRenderer, nullptr);
 		$assign(newCellRenderer, $nc(this->tree)->getCellRenderer());
@@ -1598,6 +1618,7 @@ void BasicTreeUI::updateRenderer() {
 }
 
 void BasicTreeUI::configureLayoutCache() {
+	$useLocalCurrentObjectStackCache();
 	if (this->treeState != nullptr && this->tree != nullptr) {
 		if (this->nodeDimensions == nullptr) {
 			$set(this, nodeDimensions, createNodeDimensions());
@@ -1638,6 +1659,7 @@ void BasicTreeUI::updateSize0() {
 }
 
 void BasicTreeUI::updateCachedPreferredSize() {
+	$useLocalCurrentObjectStackCache();
 	if (this->treeState != nullptr) {
 		$var($Insets, i, $nc(this->tree)->getInsets());
 		if (isLargeModel()) {
@@ -1687,6 +1709,7 @@ void BasicTreeUI::pathWasCollapsed($TreePath* path) {
 }
 
 void BasicTreeUI::ensureRowsAreVisible(int32_t beginRow, int32_t endRow) {
+	$useLocalCurrentObjectStackCache();
 	if (this->tree != nullptr && beginRow >= 0 && endRow < getRowCount(this->tree)) {
 		bool scrollVert = $DefaultLookup::getBoolean(this->tree, this, "Tree.scrollsHorizontallyAndVertically"_s, false);
 		if (beginRow == endRow) {
@@ -1778,6 +1801,7 @@ void BasicTreeUI::completeEditing() {
 }
 
 void BasicTreeUI::completeEditing(bool messageStop, bool messageCancel, bool messageTree) {
+	$useLocalCurrentObjectStackCache();
 	if (this->stopEditingInCompleteEditing && this->editingComponent != nullptr) {
 		$var($Component, oldComponent, this->editingComponent);
 		$var($TreePath, oldPath, this->editingPath);
@@ -1841,6 +1865,7 @@ bool BasicTreeUI::startEditingOnRelease($TreePath* path, $MouseEvent* event, $Mo
 }
 
 bool BasicTreeUI::startEditing($TreePath* path, $MouseEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	bool var$1 = isEditing(this->tree);
 	bool var$0 = var$1 && $nc(this->tree)->getInvokesStopCellEditing();
 	if (var$0 && !stopEditing(this->tree)) {
@@ -1917,6 +1942,7 @@ void BasicTreeUI::checkForClickInExpandControl($TreePath* path, int32_t mouseX, 
 }
 
 bool BasicTreeUI::isLocationInExpandControl($TreePath* path, int32_t mouseX, int32_t mouseY) {
+	$useLocalCurrentObjectStackCache();
 	if (path != nullptr && !$nc(this->treeModel)->isLeaf($(path->getLastPathComponent()))) {
 		int32_t boxWidth = 0;
 		$var($Insets, i, $nc(this->tree)->getInsets());
@@ -1983,6 +2009,7 @@ bool BasicTreeUI::isToggleEvent($MouseEvent* event) {
 }
 
 void BasicTreeUI::selectPathForEvent($TreePath* path, $MouseEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	if (isMultiSelectEvent(event)) {
 		$var($TreePath, anchor, getAnchorSelectionPath());
 		int32_t anchorRow = (anchor == nullptr) ? -1 : getRowForPath(this->tree, anchor);
@@ -2025,6 +2052,7 @@ void BasicTreeUI::selectPathForEvent($TreePath* path, $MouseEvent* event) {
 }
 
 bool BasicTreeUI::isLeaf(int32_t row) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePath, path, getPathForRow(this->tree, row));
 	if (path != nullptr) {
 		return $nc(this->treeModel)->isLeaf($(path->getLastPathComponent()));
@@ -2058,6 +2086,7 @@ void BasicTreeUI::setLeadSelectionPath($TreePath* newPath) {
 }
 
 void BasicTreeUI::setLeadSelectionPath($TreePath* newPath, bool repaint) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, bounds, repaint ? getPathBounds(this->tree, $(getLeadSelectionPath())) : ($Rectangle*)nullptr);
 	this->ignoreLAChange = true;
 	{

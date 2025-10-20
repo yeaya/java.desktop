@@ -80,6 +80,7 @@ void Test8019180::main($StringArray* args) {
 }
 
 void Test8019180::run() {
+	$useLocalCurrentObjectStackCache();
 	if (this->test == nullptr) {
 		$set(this, test, $new($JComboBox, Test8019180::ITEMS));
 		$nc(this->test)->addActionListener(this->test);

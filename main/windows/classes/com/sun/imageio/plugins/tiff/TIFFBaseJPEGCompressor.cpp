@@ -182,6 +182,7 @@ $String* TIFFBaseJPEGCompressor::IMAGE_METADATA_NAME = nullptr;
 
 void TIFFBaseJPEGCompressor::pruneNodes($Node* tree, bool pruneTables) {
 	$init(TIFFBaseJPEGCompressor);
+	$useLocalCurrentObjectStackCache();
 	if (tree == nullptr) {
 		$throwNew($NullPointerException, "tree == null!"_s);
 	}
@@ -216,6 +217,7 @@ void TIFFBaseJPEGCompressor::pruneNodes($Node* tree, bool pruneTables) {
 
 $List* TIFFBaseJPEGCompressor::getAllNodes($IIOMetadataNode* root, $List* nodes$renamed) {
 	$init(TIFFBaseJPEGCompressor);
+	$useLocalCurrentObjectStackCache();
 	$var($List, nodes, nodes$renamed);
 	if (nodes == nullptr) {
 		$assign(nodes, $new($ArrayList));
@@ -243,6 +245,7 @@ void TIFFBaseJPEGCompressor::init$($String* compressionType, int32_t compression
 }
 
 void TIFFBaseJPEGCompressor::initJPEGWriter(bool supportsStreamMetadata, bool supportsImageMetadata) {
+	$useLocalCurrentObjectStackCache();
 	if (this->JPEGWriter != nullptr && (supportsStreamMetadata || supportsImageMetadata)) {
 		$var($ImageWriterSpi, spi, $nc(this->JPEGWriter)->getOriginatingProvider());
 		if (supportsStreamMetadata) {
@@ -298,6 +301,7 @@ void TIFFBaseJPEGCompressor::initJPEGWriter(bool supportsStreamMetadata, bool su
 }
 
 $IIOMetadata* TIFFBaseJPEGCompressor::getImageMetadata(bool pruneTables) {
+	$useLocalCurrentObjectStackCache();
 	if (this->JPEGImageMetadata == nullptr && $nc(TIFFBaseJPEGCompressor::IMAGE_METADATA_NAME)->equals($($nc($($nc(this->JPEGWriter)->getOriginatingProvider()))->getNativeImageMetadataFormatName()))) {
 		$var($TIFFImageWriter, tiffWriter, $cast($TIFFImageWriter, this->writer));
 		$set(this, JPEGImageMetadata, $nc(this->JPEGWriter)->getDefaultImageMetadata($($nc(tiffWriter)->getImageType()), this->JPEGParam));
@@ -319,6 +323,7 @@ $IIOMetadata* TIFFBaseJPEGCompressor::getImageMetadata(bool pruneTables) {
 }
 
 int32_t TIFFBaseJPEGCompressor::encode($bytes* b, int32_t off, int32_t width, int32_t height, $ints* bitsPerSample, int32_t scanlineStride) {
+	$useLocalCurrentObjectStackCache();
 	if (this->JPEGWriter == nullptr) {
 		$throwNew($IIOException, "JPEG writer has not been initialized!"_s);
 	}

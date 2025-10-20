@@ -88,6 +88,7 @@ void JOptionPane$5::init$($JOptionPane* this$0, $JInternalFrame* val$iFrame) {
 }
 
 void JOptionPane$5::propertyChange($PropertyChangeEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	bool var$1 = $nc(this->val$iFrame)->isVisible();
 	bool var$0 = var$1 && $equals($nc(event)->getSource(), this->this$0);
 	if (var$0 && $nc($(event->getPropertyName()))->equals("value"_s)) {

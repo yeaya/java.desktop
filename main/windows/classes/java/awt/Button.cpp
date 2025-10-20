@@ -180,6 +180,7 @@ void Button::init$($String* label) {
 }
 
 $String* Button::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(Button::class$) {
 		$var($String, var$0, Button::base);
 		return $concat(var$0, $$str(Button::nameCounter++));
@@ -298,6 +299,7 @@ void Button::writeObject($ObjectOutputStream* s) {
 }
 
 void Button::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$GraphicsEnvironment::checkHeadless();
 	$nc(s)->defaultReadObject();
 	$var($Object, keyOrNull, nullptr);

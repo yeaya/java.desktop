@@ -134,6 +134,7 @@ void TIFFRenderedImage::init$($TIFFImageReader* reader, int32_t imageIndex, $Ima
 }
 
 $ImageReadParam* TIFFRenderedImage::cloneImageReadParam($ImageReadParam* param, bool copyTagSets) {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFImageReadParam, newParam, $new($TIFFImageReadParam));
 	int32_t var$0 = $nc(param)->getSourceXSubsampling();
 	int32_t var$1 = param->getSourceYSubsampling();
@@ -243,6 +244,7 @@ $Raster* TIFFRenderedImage::getData($Rectangle* rect) {
 
 $WritableRaster* TIFFRenderedImage::read($Rectangle* rect) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$nc(this->tileParam)->setSourceRegion(this->isSubsampling ? $$new($Rectangle, this->subsampleX * $nc(rect)->x, this->subsampleY * rect->y, this->subsampleX * rect->width, this->subsampleY * rect->height) : rect);
 		try {
 			$var($BufferedImage, bi, $nc(this->reader)->read(this->imageIndex, this->tileParam));
@@ -258,6 +260,7 @@ $WritableRaster* TIFFRenderedImage::read($Rectangle* rect) {
 }
 
 $WritableRaster* TIFFRenderedImage::copyData($WritableRaster* raster) {
+	$useLocalCurrentObjectStackCache();
 	if (raster == nullptr) {
 		int32_t var$0 = getWidth();
 		return read($$new($Rectangle, 0, 0, var$0, getHeight()));

@@ -136,6 +136,7 @@ void ExtendedKeyCodes::init$() {
 
 int32_t ExtendedKeyCodes::getExtendedKeyCodeForChar(int32_t c) {
 	$init(ExtendedKeyCodes);
+	$useLocalCurrentObjectStackCache();
 	int32_t uc = $Character::toUpperCase(c);
 	int32_t lc = $Character::toLowerCase(c);
 	if ($nc(ExtendedKeyCodes::regularKeyCodesMap)->containsKey($($Integer::valueOf(c)))) {
@@ -157,6 +158,7 @@ int32_t ExtendedKeyCodes::getExtendedKeyCodeForChar(int32_t c) {
 }
 
 void clinit$ExtendedKeyCodes($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(ExtendedKeyCodes::regularKeyCodesMap, $new($HashMap, 98, 1.0f));
 	$assignStatic(ExtendedKeyCodes::extendedKeyCodesSet, $new($HashSet, 496, 1.0f));
 	{

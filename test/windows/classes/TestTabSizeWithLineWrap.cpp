@@ -170,6 +170,7 @@ void TestTabSizeWithLineWrap::main($StringArray* args) {
 
 void TestTabSizeWithLineWrap::lambda$main$0() {
 	$init(TestTabSizeWithLineWrap);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

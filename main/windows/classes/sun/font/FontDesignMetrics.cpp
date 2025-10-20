@@ -168,6 +168,7 @@ int32_t FontDesignMetrics::recentIndex = 0;
 
 $FontRenderContext* FontDesignMetrics::getDefaultFrc() {
 	$init(FontDesignMetrics);
+	$useLocalCurrentObjectStackCache();
 	if (FontDesignMetrics::DEFAULT_FRC == nullptr) {
 		$var($AffineTransform, tx, nullptr);
 		if ($GraphicsEnvironment::isHeadless()) {
@@ -187,6 +188,7 @@ FontDesignMetrics* FontDesignMetrics::getMetrics($Font* font) {
 
 FontDesignMetrics* FontDesignMetrics::getMetrics($Font* font, $FontRenderContext* frc) {
 	$init(FontDesignMetrics);
+	$useLocalCurrentObjectStackCache();
 	$var($SunFontManager, fm, $SunFontManager::getInstance());
 	bool var$0 = $nc(fm)->usingAlternateCompositeFonts();
 	if (var$0 && $instanceOf($CompositeFont, $($FontUtilities::getFont2D(font)))) {
@@ -251,6 +253,7 @@ void FontDesignMetrics::init$($Font* font, $FontRenderContext* frc) {
 }
 
 void FontDesignMetrics::initMatrixAndMetrics() {
+	$useLocalCurrentObjectStackCache();
 	$var($Font2D, font2D, $FontUtilities::getFont2D(this->font));
 	$set(this, fontStrike, $nc(font2D)->getStrike(this->font, this->frc));
 	$var($StrikeMetrics, metrics, $nc(this->fontStrike)->getFontMetrics());
@@ -331,6 +334,7 @@ int32_t FontDesignMetrics::charWidth(int32_t ch) {
 }
 
 int32_t FontDesignMetrics::stringWidth($String* str) {
+	$useLocalCurrentObjectStackCache();
 	float width = (float)0;
 	if ($nc(this->font)->hasLayoutAttributes()) {
 		if (str == nullptr) {
@@ -358,6 +362,7 @@ int32_t FontDesignMetrics::stringWidth($String* str) {
 }
 
 int32_t FontDesignMetrics::charsWidth($chars* data, int32_t off, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	float width = (float)0;
 	if ($nc(this->font)->hasLayoutAttributes()) {
 		if (len == 0) {

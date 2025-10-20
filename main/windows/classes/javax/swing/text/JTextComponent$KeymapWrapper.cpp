@@ -84,6 +84,7 @@ void JTextComponent$KeymapWrapper::init$($Keymap* keymap) {
 }
 
 $KeyStrokeArray* JTextComponent$KeymapWrapper::keys() {
+	$useLocalCurrentObjectStackCache();
 	$var($KeyStrokeArray, sKeys, $InputMap::keys());
 	$var($KeyStrokeArray, keymapKeys, $nc(this->keymap)->getBoundKeyStrokes());
 	int32_t sCount = (sKeys == nullptr) ? 0 : $nc(sKeys)->length;

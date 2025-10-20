@@ -59,6 +59,7 @@ $Object* allocate$ModelStandardDirector($Class* clazz) {
 }
 
 void ModelStandardDirector::init$($ModelPerformerArray* performers, $ModelDirectedPlayer* player) {
+	$useLocalCurrentObjectStackCache();
 	this->noteOnUsed = false;
 	this->noteOffUsed = false;
 	$set(this, performers, $fcast($ModelPerformerArray, $Arrays::copyOf(performers, $nc(performers)->length)));
@@ -84,6 +85,7 @@ void ModelStandardDirector::close() {
 }
 
 void ModelStandardDirector::noteOff(int32_t noteNumber, int32_t velocity) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->noteOffUsed) {
 		return;
 	}
@@ -102,6 +104,7 @@ void ModelStandardDirector::noteOff(int32_t noteNumber, int32_t velocity) {
 }
 
 void ModelStandardDirector::noteOn(int32_t noteNumber, int32_t velocity) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->noteOnUsed) {
 		return;
 	}

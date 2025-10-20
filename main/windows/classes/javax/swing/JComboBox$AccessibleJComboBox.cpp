@@ -158,6 +158,7 @@ void JComboBox$AccessibleJComboBox::finalize() {
 }
 
 void JComboBox$AccessibleJComboBox::init$($JComboBox* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JComponent$AccessibleJComponent::init$(this$0);
 	$set(this, previousSelectedAccessible, nullptr);
@@ -173,6 +174,7 @@ void JComboBox$AccessibleJComboBox::init$($JComboBox* this$0) {
 }
 
 void JComboBox$AccessibleJComboBox::setEditorNameAndDescription() {
+	$useLocalCurrentObjectStackCache();
 	$var($ComboBoxEditor, editor, this->this$0->getEditor());
 	if (editor != nullptr) {
 		$var($Component, comp, editor->getEditorComponent());
@@ -261,6 +263,7 @@ int32_t JComboBox$AccessibleJComboBox::getAccessibleSelectionCount() {
 }
 
 $Accessible* JComboBox$AccessibleJComboBox::getAccessibleSelection(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($Accessible, a, $nc($($cast($ComboBoxUI, this->this$0->getUI())))->getAccessibleChild(this->this$0, 0));
 	if (a != nullptr && $instanceOf($ComboPopup, a)) {
 		$var($JList, list, $nc(($cast($ComboPopup, a)))->getList());

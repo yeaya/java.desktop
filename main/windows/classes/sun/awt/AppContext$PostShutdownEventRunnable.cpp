@@ -70,6 +70,7 @@ void AppContext$PostShutdownEventRunnable::init$($AppContext* ac) {
 }
 
 void AppContext$PostShutdownEventRunnable::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($AppContext);
 	$var($EventQueue, eq, $cast($EventQueue, $nc(this->appContext)->get($AppContext::EVENT_QUEUE_KEY)));
 	if (eq != nullptr) {

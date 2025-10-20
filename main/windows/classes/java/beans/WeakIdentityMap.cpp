@@ -87,6 +87,7 @@ void WeakIdentityMap::init$() {
 }
 
 $Object* WeakIdentityMap::get(Object$* key$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, key, key$renamed);
 	removeStaleEntries();
 	if (key == nullptr) {
@@ -136,6 +137,7 @@ $Object* WeakIdentityMap::get(Object$* key$renamed) {
 }
 
 void WeakIdentityMap::removeStaleEntries() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, ref, $nc(this->queue)->poll());
 	if (ref != nullptr) {
 		$synchronized(WeakIdentityMap::NULL) {
@@ -167,6 +169,7 @@ void WeakIdentityMap::removeStaleEntries() {
 }
 
 void WeakIdentityMap::transfer($WeakIdentityMap$EntryArray* oldTable, $WeakIdentityMap$EntryArray* newTable) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(oldTable)->length; ++i) {
 		$var($WeakIdentityMap$Entry, entry, oldTable->get(i));
 		oldTable->set(i, nullptr);

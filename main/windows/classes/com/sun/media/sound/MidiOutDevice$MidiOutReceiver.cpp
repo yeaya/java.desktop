@@ -81,6 +81,7 @@ void MidiOutDevice$MidiOutReceiver::init$($MidiOutDevice* this$0) {
 }
 
 void MidiOutDevice$MidiOutReceiver::implSend($MidiMessage* message, int64_t timeStamp) {
+	$useLocalCurrentObjectStackCache();
 	int32_t length = $nc(message)->getLength();
 	int32_t status = message->getStatus();
 	if (length <= 3 && status != 240 && status != 247) {

@@ -102,6 +102,7 @@ void bug4530474::init$() {
 
 void bug4530474::main($StringArray* args) {
 	$init(bug4530474);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(50);
 	$SwingUtilities::invokeAndWait($$new($bug4530474$1));
@@ -112,6 +113,7 @@ void bug4530474::main($StringArray* args) {
 
 void bug4530474::createAndShowGUI() {
 	$init(bug4530474);
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, mainFrame, $new($JFrame, "bug4530474"_s));
 	mainFrame->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$assignStatic(bug4530474::jep, $new($JEditorPane));

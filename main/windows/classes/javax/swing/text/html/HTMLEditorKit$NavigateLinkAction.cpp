@@ -146,6 +146,7 @@ void HTMLEditorKit$NavigateLinkAction::init$($String* actionName) {
 }
 
 void HTMLEditorKit$NavigateLinkAction::caretUpdate($CaretEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, src, $nc(e)->getSource());
 	if ($instanceOf($JTextComponent, src)) {
 		$var($JTextComponent, comp, $cast($JTextComponent, src));
@@ -161,6 +162,7 @@ void HTMLEditorKit$NavigateLinkAction::caretUpdate($CaretEvent* e) {
 }
 
 void HTMLEditorKit$NavigateLinkAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, comp, getTextComponent(e));
 	if (comp == nullptr || $nc(comp)->isEditable()) {
 		return;

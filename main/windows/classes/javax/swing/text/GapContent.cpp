@@ -203,6 +203,7 @@ $UndoableEdit* GapContent::insertString(int32_t where, $String* str) {
 }
 
 $UndoableEdit* GapContent::remove(int32_t where, int32_t nitems) {
+	$useLocalCurrentObjectStackCache();
 	if (where + nitems >= length()) {
 		$throwNew($BadLocationException, "Invalid remove"_s, length() + 1);
 	}
@@ -257,6 +258,7 @@ void GapContent::getChars(int32_t where, int32_t len, $Segment* chars) {
 }
 
 $Position* GapContent::createPosition(int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	while ($nc(this->queue)->poll() != nullptr) {
 		++this->unusedMarks;
 	}
@@ -283,6 +285,7 @@ $Position* GapContent::createPosition(int32_t offset) {
 }
 
 void GapContent::shiftEnd(int32_t newSize) {
+	$useLocalCurrentObjectStackCache();
 	int32_t oldGapEnd = getGapEnd();
 	$GapVector::shiftEnd(newSize);
 	int32_t dg = getGapEnd() - oldGapEnd;
@@ -303,6 +306,7 @@ int32_t GapContent::getNewArraySize(int32_t reqSize) {
 }
 
 void GapContent::shiftGap(int32_t newGapStart) {
+	$useLocalCurrentObjectStackCache();
 	int32_t oldGapStart = getGapStart();
 	int32_t dg = newGapStart - oldGapStart;
 	int32_t oldGapEnd = getGapEnd();
@@ -334,6 +338,7 @@ void GapContent::shiftGap(int32_t newGapStart) {
 }
 
 void GapContent::resetMarksAtZero() {
+	$useLocalCurrentObjectStackCache();
 	if (this->marks != nullptr && getGapStart() == 0) {
 		int32_t g1 = getGapEnd();
 		{
@@ -352,6 +357,7 @@ void GapContent::resetMarksAtZero() {
 }
 
 void GapContent::shiftGapStartDown(int32_t newGapStart) {
+	$useLocalCurrentObjectStackCache();
 	int32_t adjustIndex = findMarkAdjustIndex(newGapStart);
 	int32_t n = $nc(this->marks)->size();
 	int32_t g0 = getGapStart();
@@ -368,6 +374,7 @@ void GapContent::shiftGapStartDown(int32_t newGapStart) {
 }
 
 void GapContent::shiftGapEndUp(int32_t newGapEnd) {
+	$useLocalCurrentObjectStackCache();
 	int32_t adjustIndex = findMarkAdjustIndex(getGapEnd());
 	int32_t n = $nc(this->marks)->size();
 	for (int32_t i = adjustIndex; i < n; ++i) {
@@ -392,6 +399,7 @@ int32_t GapContent::compare($GapContent$MarkData* o1, $GapContent$MarkData* o2) 
 }
 
 int32_t GapContent::findMarkAdjustIndex(int32_t searchIndex) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->search)->index = $Math::max(searchIndex, 1);
 	int32_t index = findSortIndex(this->search);
 	for (int32_t i = index - 1; i >= 0; --i) {
@@ -405,6 +413,7 @@ int32_t GapContent::findMarkAdjustIndex(int32_t searchIndex) {
 }
 
 int32_t GapContent::findSortIndex($GapContent$MarkData* o) {
+	$useLocalCurrentObjectStackCache();
 	int32_t lower = 0;
 	int32_t upper = $nc(this->marks)->size() - 1;
 	int32_t mid = 0;
@@ -433,6 +442,7 @@ int32_t GapContent::findSortIndex($GapContent$MarkData* o) {
 }
 
 void GapContent::removeUnusedMarks() {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = $nc(this->marks)->size();
 	$var($GapContent$MarkVector, cleaned, $new($GapContent$MarkVector, n));
 	for (int32_t i = 0; i < n; ++i) {
@@ -453,6 +463,7 @@ void GapContent::readObject($ObjectInputStream* s) {
 }
 
 $Vector* GapContent::getPositionsInRange($Vector* v, int32_t offset, int32_t length) {
+	$useLocalCurrentObjectStackCache();
 	int32_t endOffset = offset + length;
 	int32_t startIndex = 0;
 	int32_t endIndex = 0;
@@ -481,6 +492,7 @@ $Vector* GapContent::getPositionsInRange($Vector* v, int32_t offset, int32_t len
 }
 
 void GapContent::updateUndoPositions($Vector* positions, int32_t offset, int32_t length) {
+	$useLocalCurrentObjectStackCache();
 	int32_t endOffset = offset + length;
 	int32_t g1 = getGapEnd();
 	int32_t startIndex = 0;

@@ -80,6 +80,7 @@ void MotifFileChooserUI$4::init$($MotifFileChooserUI* this$0) {
 }
 
 $Dimension* MotifFileChooserUI$4::getMaximumSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, $JComboBox::getMaximumSize());
 	$nc(d)->height = $nc($(getPreferredSize()))->height;
 	return d;

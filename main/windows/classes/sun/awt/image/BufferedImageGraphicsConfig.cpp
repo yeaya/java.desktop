@@ -107,6 +107,7 @@ BufferedImageGraphicsConfig* BufferedImageGraphicsConfig::getConfig($BufferedIma
 
 BufferedImageGraphicsConfig* BufferedImageGraphicsConfig::getConfig($BufferedImage* bImg, double scaleX, double scaleY) {
 	$init(BufferedImageGraphicsConfig);
+	$useLocalCurrentObjectStackCache();
 	$var(BufferedImageGraphicsConfig, ret, nullptr);
 	int32_t type = $nc(bImg)->getType();
 	$var($BufferedImageGraphicsConfigArray, configs, (scaleX == 1 && scaleY == 1) ? BufferedImageGraphicsConfig::standardConfigs : BufferedImageGraphicsConfig::scaledConfigs);
@@ -124,6 +125,7 @@ BufferedImageGraphicsConfig* BufferedImageGraphicsConfig::getConfig($BufferedIma
 }
 
 void BufferedImageGraphicsConfig::init$($BufferedImage* bufImg, $Component* comp, double scaleX, double scaleY) {
+	$useLocalCurrentObjectStackCache();
 	$GraphicsConfiguration::init$();
 	if (comp == nullptr) {
 		$set(this, device, $new($BufferedImageDevice, this));

@@ -133,6 +133,7 @@ void BeanContextChildSupport::init$($BeanContextChild* bcc) {
 
 void BeanContextChildSupport::setBeanContext($BeanContext* bc) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (bc == this->beanContext) {
 			return;
 		}

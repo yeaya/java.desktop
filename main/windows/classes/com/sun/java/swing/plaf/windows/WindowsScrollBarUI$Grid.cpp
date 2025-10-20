@@ -97,6 +97,7 @@ $HashMap* WindowsScrollBarUI$Grid::map = nullptr;
 
 WindowsScrollBarUI$Grid* WindowsScrollBarUI$Grid::getGrid($Color* fg, $Color* bg) {
 	$init(WindowsScrollBarUI$Grid);
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $$str({$$str($nc(fg)->getRGB()), " "_s}));
 	$var($String, key, $concat(var$0, $$str($nc(bg)->getRGB())));
 	$var($WeakReference, ref, $cast($WeakReference, $nc(WindowsScrollBarUI$Grid::map)->get(key)));
@@ -109,6 +110,7 @@ WindowsScrollBarUI$Grid* WindowsScrollBarUI$Grid::getGrid($Color* fg, $Color* bg
 }
 
 void WindowsScrollBarUI$Grid::init$($Color* fg, $Color* bg) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, cmap, $new($ints, {
 		$nc(fg)->getRGB(),
 		$nc(bg)->getRGB()

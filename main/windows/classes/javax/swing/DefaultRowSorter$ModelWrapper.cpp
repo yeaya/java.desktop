@@ -58,6 +58,7 @@ void DefaultRowSorter$ModelWrapper::init$() {
 }
 
 $String* DefaultRowSorter$ModelWrapper::getStringValueAt(int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, o, getValueAt(row, column));
 	if (o == nullptr) {
 		return ""_s;

@@ -73,6 +73,7 @@ void bug8010718$1$2::init$($bug8010718$1* this$0) {
 }
 
 bool bug8010718$1$2::accept($File* f) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(f)->isDirectory();
 	return var$0 || $($nc($($nc(f)->getName()))->toLowerCase())->endsWith(".txt"_s);
 }

@@ -71,6 +71,7 @@ void MetaData$java_util_List_PersistenceDelegate::init$() {
 }
 
 void MetaData$java_util_List_PersistenceDelegate::initialize($Class* type, Object$* oldInstance, Object$* newInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, oldO, $cast($List, oldInstance));
 	$var($List, newO, $cast($List, newInstance));
 	int32_t oldSize = $nc(oldO)->size();

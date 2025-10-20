@@ -267,6 +267,7 @@ FileSystemView* FileSystemView::getFileSystemView() {
 }
 
 void FileSystemView::init$() {
+	$useLocalCurrentObjectStackCache();
 	this->useSystemExtensionHiding = $nc($($UIManager::getDefaults()))->getBoolean("FileChooser.useSystemExtensionHiding"_s);
 	$var($WeakReference, weakReference, $new($WeakReference, this));
 	$var($PropertyChangeListener, pcl, static_cast<$PropertyChangeListener*>($new(FileSystemView$$Lambda$lambda$new$0, weakReference)));
@@ -275,6 +276,7 @@ void FileSystemView::init$() {
 }
 
 bool FileSystemView::isRoot($File* f) {
+	$useLocalCurrentObjectStackCache();
 	if (f == nullptr || !$nc(f)->isAbsolute()) {
 		return false;
 	}
@@ -300,6 +302,7 @@ $Boolean* FileSystemView::isTraversable($File* f) {
 }
 
 $String* FileSystemView::getSystemDisplayName($File* f) {
+	$useLocalCurrentObjectStackCache();
 	if (f == nullptr) {
 		return nullptr;
 	}
@@ -330,6 +333,7 @@ $String* FileSystemView::getSystemTypeDescription($File* f) {
 }
 
 $Icon* FileSystemView::getSystemIcon($File* f) {
+	$useLocalCurrentObjectStackCache();
 	if (f == nullptr) {
 		return nullptr;
 	}
@@ -349,6 +353,7 @@ $Icon* FileSystemView::getSystemIcon($File* f) {
 }
 
 $Icon* FileSystemView::getSystemIcon($File* f, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (height < 1 || width < 1) {
 		$throwNew($IllegalArgumentException, "Icon size can not be below 1"_s);
 	}
@@ -374,6 +379,7 @@ $Icon* FileSystemView::getSystemIcon($File* f, int32_t width, int32_t height) {
 }
 
 bool FileSystemView::isParent($File* folder, $File* file) {
+	$useLocalCurrentObjectStackCache();
 	if (folder == nullptr || file == nullptr) {
 		return false;
 	} else if ($instanceOf($ShellFolder, folder)) {
@@ -402,6 +408,7 @@ bool FileSystemView::isParent($File* folder, $File* file) {
 }
 
 $File* FileSystemView::getChild($File* parent, $String* fileName) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($ShellFolder, parent)) {
 		$var($FileArray, children, getFiles(parent, false));
 		{
@@ -456,6 +463,7 @@ bool FileSystemView::isComputerNode($File* dir) {
 }
 
 $FileArray* FileSystemView::getRoots() {
+	$useLocalCurrentObjectStackCache();
 	$var($FileArray, roots, $cast($FileArray, $ShellFolder::get("roots"_s)));
 	for (int32_t i = 0; i < $nc(roots)->length; ++i) {
 		if (isFileSystemRoot(roots->get(i))) {
@@ -494,6 +502,7 @@ $File* FileSystemView::createFileObject($String* path) {
 }
 
 $FileArray* FileSystemView::getFiles($File* dir$renamed, bool useFileHiding) {
+	$useLocalCurrentObjectStackCache();
 	$var($File, dir, dir$renamed);
 	$var($List, files, $new($ArrayList));
 	if (!($instanceOf($ShellFolder, dir))) {
@@ -542,6 +551,7 @@ $FileArray* FileSystemView::getFiles($File* dir$renamed, bool useFileHiding) {
 }
 
 $File* FileSystemView::getParentDirectory($File* dir) {
+	$useLocalCurrentObjectStackCache();
 	if (dir == nullptr || !$nc(dir)->exists()) {
 		return nullptr;
 	}
@@ -579,6 +589,7 @@ $FileArray* FileSystemView::getChooserShortcutPanelFiles() {
 }
 
 bool FileSystemView::isLink($File* file) {
+	$useLocalCurrentObjectStackCache();
 	if (file == nullptr) {
 		$throwNew($NullPointerException, "file is null"_s);
 	}
@@ -592,6 +603,7 @@ bool FileSystemView::isLink($File* file) {
 }
 
 $File* FileSystemView::getLinkLocation($File* file) {
+	$useLocalCurrentObjectStackCache();
 	if (file == nullptr) {
 		$throwNew($NullPointerException, "file is null"_s);
 	}
@@ -606,6 +618,7 @@ $File* FileSystemView::getLinkLocation($File* file) {
 }
 
 $ShellFolder* FileSystemView::getShellFolder($File* f$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($File, f, f$renamed);
 	if (!($instanceOf($ShellFolder, f)) && !($instanceOf($FileSystemView$FileSystemRoot, f)) && isFileSystemRoot(f)) {
 		$assign(f, createFileSystemRoot(f));
@@ -633,6 +646,7 @@ void FileSystemView::lambda$new$1($PropertyChangeListener* pcl) {
 
 void FileSystemView::lambda$new$0($WeakReference* weakReference, $PropertyChangeEvent* evt) {
 	$init(FileSystemView);
+	$useLocalCurrentObjectStackCache();
 	$var(FileSystemView, fsv, $cast(FileSystemView, $nc(weakReference)->get()));
 	if (fsv != nullptr && $nc($($nc(evt)->getPropertyName()))->equals("lookAndFeel"_s)) {
 		fsv->useSystemExtensionHiding = $nc($($UIManager::getDefaults()))->getBoolean("FileChooser.useSystemExtensionHiding"_s);

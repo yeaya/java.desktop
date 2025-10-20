@@ -79,6 +79,7 @@ void SunToolkit$1::init$($AWTEvent* val$e) {
 }
 
 void SunToolkit$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$nc($($AWTAccessor::getAWTEventAccessor()))->setPosted(this->val$e);
 	$nc(($cast($Component, $($nc(this->val$e)->getSource()))))->dispatchEvent(this->val$e);
 }

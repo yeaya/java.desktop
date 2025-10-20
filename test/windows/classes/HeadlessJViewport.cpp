@@ -117,6 +117,7 @@ void HeadlessJViewport::init$() {
 }
 
 void HeadlessJViewport::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JViewport, v, $new($JViewport));
 	v->getUI();
 	v->getUIClassID();

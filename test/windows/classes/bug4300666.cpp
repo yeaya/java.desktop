@@ -157,6 +157,7 @@ void bug4300666::init$() {
 }
 
 void bug4300666::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -172,6 +173,7 @@ void bug4300666::main($StringArray* args) {
 }
 
 void bug4300666::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 	} catch ($UnsupportedLookAndFeelException&) {

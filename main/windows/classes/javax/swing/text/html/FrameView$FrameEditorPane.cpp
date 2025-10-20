@@ -95,6 +95,7 @@ void FrameView$FrameEditorPane::init$($FrameView* this$0) {
 }
 
 $EditorKit* FrameView$FrameEditorPane::getEditorKitForContentType($String* type) {
+	$useLocalCurrentObjectStackCache();
 	$var($EditorKit, editorKit, $JEditorPane::getEditorKitForContentType(type));
 	$var($JEditorPane, outerMostJEditorPane, nullptr);
 	if (($assign(outerMostJEditorPane, this->this$0->getOutermostJEditorPane())) != nullptr) {

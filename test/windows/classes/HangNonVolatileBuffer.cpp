@@ -177,6 +177,7 @@ void HangNonVolatileBuffer::init$() {
 }
 
 void HangNonVolatileBuffer::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(HangNonVolatileBuffer$$Lambda$lambda$main$0)));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(HangNonVolatileBuffer$$Lambda$lambda$main$1$1)));
 	$Thread::sleep(1000);

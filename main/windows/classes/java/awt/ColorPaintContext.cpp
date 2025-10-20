@@ -74,6 +74,7 @@ $ColorModel* ColorPaintContext::getColorModel() {
 
 $Raster* ColorPaintContext::getRaster(int32_t x, int32_t y, int32_t w, int32_t h) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($WritableRaster, t, this->savedTile);
 		bool var$0 = t == nullptr || w > $nc(t)->getWidth();
 		if (var$0 || h > $nc(t)->getHeight()) {

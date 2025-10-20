@@ -155,6 +155,7 @@ void RepaintOnFrameIconifiedStateChangeTest::init$() {
 
 void RepaintOnFrameIconifiedStateChangeTest::main($StringArray* args) {
 	$init(RepaintOnFrameIconifiedStateChangeTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());
 	bool var$0 = !$nc(toolkit)->isFrameStateSupported($JFrame::ICONIFIED);
 	if (var$0 || !$nc(toolkit)->isFrameStateSupported($JFrame::NORMAL)) {
@@ -222,6 +223,7 @@ void RepaintOnFrameIconifiedStateChangeTest::main($StringArray* args) {
 
 void RepaintOnFrameIconifiedStateChangeTest::createGUI() {
 	$init(RepaintOnFrameIconifiedStateChangeTest);
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($MetalLookAndFeel, $($UIManager::getLookAndFeel())))) {
 		try {
 			$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
@@ -246,6 +248,7 @@ void RepaintOnFrameIconifiedStateChangeTest::createGUI() {
 }
 
 void clinit$RepaintOnFrameIconifiedStateChangeTest($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(RepaintOnFrameIconifiedStateChangeTest::strsForComps, $new($StringArray2, {
 		$$new($StringArray, {
 			"JLabel AAA"_s,

@@ -112,6 +112,7 @@ void HeadlessJToolTip::init$() {
 }
 
 void HeadlessJToolTip::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JToolTip, tt, $new($JToolTip));
 	tt->getAccessibleContext();
 	tt->isFocusTraversable();

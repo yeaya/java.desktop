@@ -144,12 +144,14 @@ void HtmlCommentTagParseTest::main($StringArray* args) {
 
 $String* HtmlCommentTagParseTest::getDirURL() {
 	$init(HtmlCommentTagParseTest);
+	$useLocalCurrentObjectStackCache();
 	$init($File);
 	return $str({$($$new($File, $($System::getProperty("test.src"_s, "."_s)))->getAbsolutePath()), $File::separator});
 }
 
 void HtmlCommentTagParseTest::lambda$main$0() {
 	$init(HtmlCommentTagParseTest);
+	$useLocalCurrentObjectStackCache();
 	$var($HtmlCommentTagParseTest$MyParser, cb, $new($HtmlCommentTagParseTest$MyParser));
 	$var($HTMLEditorKit, htmlKit, $new($HTMLEditorKit));
 	$var($HTMLDocument, htmlDoc, $cast($HTMLDocument, htmlKit->createDefaultDocument()));

@@ -61,6 +61,7 @@ void MetaData$javax_swing_DefaultComboBoxModel_PersistenceDelegate::init$() {
 }
 
 void MetaData$javax_swing_DefaultComboBoxModel_PersistenceDelegate::initialize($Class* type, Object$* oldInstance, Object$* newInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultPersistenceDelegate::initialize(type, oldInstance, newInstance, out);
 	$var($DefaultComboBoxModel, m, $cast($DefaultComboBoxModel, oldInstance));
 	for (int32_t i = 0; i < $nc(m)->getSize(); ++i) {

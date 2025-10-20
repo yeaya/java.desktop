@@ -66,6 +66,7 @@ void bug4865918$TestScrollBar::init$(int32_t orientation, int32_t value, int32_t
 }
 
 void bug4865918$TestScrollBar::pressMouse() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug4865918);
 	$var($Component, var$0, static_cast<$Component*>($bug4865918::sbar));
 	int64_t var$1 = ($$new($Date))->getTime();

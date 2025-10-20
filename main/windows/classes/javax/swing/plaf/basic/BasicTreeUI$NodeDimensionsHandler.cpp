@@ -84,6 +84,7 @@ void BasicTreeUI$NodeDimensionsHandler::init$($BasicTreeUI* this$0) {
 }
 
 $Rectangle* BasicTreeUI$NodeDimensionsHandler::getNodeDimensions(Object$* value, int32_t row, int32_t depth, bool expanded, $Rectangle* size$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, size, size$renamed);
 	if (this->this$0->editingComponent != nullptr && this->this$0->editingRow == row) {
 		$var($Dimension, prefSize, $nc(this->this$0->editingComponent)->getPreferredSize());

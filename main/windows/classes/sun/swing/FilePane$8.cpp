@@ -92,6 +92,7 @@ void FilePane$8::init$($FilePane* this$0) {
 }
 
 void FilePane$8::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JScrollPane, jsp, $cast($JScrollPane, $nc(e)->getComponent()));
 	$var($JTable, table, $cast($JTable, $nc($($nc(jsp)->getViewport()))->getView()));
 	bool var$0 = !e->isShiftDown();

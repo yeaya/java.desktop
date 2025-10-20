@@ -94,6 +94,7 @@ void SynthInternalFrameUI$1::init$($SynthInternalFrameUI* this$0) {
 }
 
 void SynthInternalFrameUI$1::componentResized($ComponentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $SynthInternalFrameUI::access$000(this->this$0) != nullptr;
 	if (var$0 && $nc($($SynthInternalFrameUI::access$100(this->this$0)))->isMaximum()) {
 		$var($JDesktopPane, desktop, $cast($JDesktopPane, $nc(e)->getSource()));

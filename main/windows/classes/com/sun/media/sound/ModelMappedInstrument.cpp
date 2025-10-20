@@ -67,6 +67,7 @@ $Object* allocate$ModelMappedInstrument($Class* clazz) {
 }
 
 void ModelMappedInstrument::init$($ModelInstrument* ins, $Patch* patch) {
+	$useLocalCurrentObjectStackCache();
 	$var($Soundbank, var$0, $nc(ins)->getSoundbank());
 	$var($Patch, var$1, patch);
 	$var($String, var$2, ins->getName());

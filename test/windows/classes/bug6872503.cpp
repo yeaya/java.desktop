@@ -105,6 +105,7 @@ void bug6872503::init$() {
 }
 
 void bug6872503::createGui() {
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());
 	int32_t length = $nc($($nc(toolkit)->getAWTEventListeners()))->length;
 	$init(bug6872503);
@@ -137,6 +138,7 @@ void bug6872503::createGui() {
 }
 
 bool bug6872503::isLayerEventControllerAdded() {
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());
 	$var($AWTEventListener, layerEventController, nullptr);
 	{
@@ -170,6 +172,7 @@ bool bug6872503::isLayerEventControllerAdded() {
 }
 
 bool bug6872503::layerEventControllerMaskEquals(int64_t mask) {
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());
 	$var($AWTEventListener, layerEventController, nullptr);
 	{

@@ -214,6 +214,7 @@ void TestBoxFiller::showFocusOwner($PropertyChangeEvent* e) {
 }
 
 void TestBoxFiller::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -238,6 +239,7 @@ void TestBoxFiller::main($StringArray* args) {
 }
 
 void TestBoxFiller::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$init(TestBoxFiller);
 	$assignStatic(TestBoxFiller::frame, $new($JFrame));
 	$var($KeyboardFocusManager, m, $KeyboardFocusManager::getCurrentKeyboardFocusManager());

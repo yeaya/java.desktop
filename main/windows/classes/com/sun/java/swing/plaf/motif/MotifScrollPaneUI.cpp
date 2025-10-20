@@ -120,6 +120,7 @@ $PropertyChangeListener* MotifScrollPaneUI::createPropertyChangeHandler() {
 }
 
 void MotifScrollPaneUI::installDefaults($JScrollPane* scrollpane) {
+	$useLocalCurrentObjectStackCache();
 	$BasicScrollPaneUI::installDefaults(scrollpane);
 	$var($JScrollBar, vsb, $nc(scrollpane)->getVerticalScrollBar());
 	if (vsb != nullptr) {
@@ -138,6 +139,7 @@ void MotifScrollPaneUI::installDefaults($JScrollPane* scrollpane) {
 }
 
 void MotifScrollPaneUI::uninstallDefaults($JScrollPane* c) {
+	$useLocalCurrentObjectStackCache();
 	$BasicScrollPaneUI::uninstallDefaults(c);
 	$var($JScrollBar, vsb, $nc(this->scrollpane)->getVerticalScrollBar());
 	if (vsb != nullptr) {

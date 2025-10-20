@@ -85,6 +85,7 @@ void MotifLookAndFeel$9::init$($MotifLookAndFeel* this$0) {
 }
 
 $Object* MotifLookAndFeel$9::createValue($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, c, $nc(table)->getColor("control"_s));
 	int32_t var$0 = $Math::max($cast(int32_t, ($nc(c)->getRed() * 0.85)), 0);
 	int32_t var$1 = $Math::max($cast(int32_t, ($nc(c)->getGreen() * 0.85)), 0);

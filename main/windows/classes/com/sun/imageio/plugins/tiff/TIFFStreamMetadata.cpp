@@ -97,6 +97,7 @@ void TIFFStreamMetadata::fatal($Node* node, $String* reason) {
 }
 
 $Node* TIFFStreamMetadata::getAsTree($String* formatName) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, root, $new($IIOMetadataNode, this->nativeMetadataFormatName));
 	$var($IIOMetadataNode, byteOrderNode, $new($IIOMetadataNode, "ByteOrder"_s));
 	byteOrderNode->setAttribute("value"_s, $($nc(this->byteOrder)->toString()));
@@ -105,6 +106,7 @@ $Node* TIFFStreamMetadata::getAsTree($String* formatName) {
 }
 
 void TIFFStreamMetadata::mergeNativeTree($Node* root) {
+	$useLocalCurrentObjectStackCache();
 	$var($Node, node, root);
 	if (!$nc($($nc(node)->getNodeName()))->equals(this->nativeMetadataFormatName)) {
 		fatal(node, $$str({"Root must be "_s, this->nativeMetadataFormatName}));

@@ -76,6 +76,7 @@ void MetaData$StaticFieldsPersistenceDelegate::init$() {
 }
 
 void MetaData$StaticFieldsPersistenceDelegate::installFields($Encoder* out, $Class* cls) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	bool var$0 = $Modifier::isPublic($nc(cls)->getModifiers());
 	if (var$0 && $ReflectUtil::isPackageAccessible(cls)) {

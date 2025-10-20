@@ -116,6 +116,7 @@ void WaveFileWriter::init$() {
 }
 
 $AudioFileFormat$TypeArray* WaveFileWriter::getAudioFileTypes($AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFileFormat$TypeArray, filetypes, $new($AudioFileFormat$TypeArray, $nc(this->types)->length));
 	$System::arraycopy(this->types, 0, filetypes, 0, $nc(this->types)->length);
 	$var($AudioFormat, format, $nc(stream)->getFormat());
@@ -142,6 +143,7 @@ int32_t WaveFileWriter::write($AudioInputStream* stream, $AudioFileFormat$Type* 
 }
 
 int32_t WaveFileWriter::write($AudioInputStream* stream, $AudioFileFormat$Type* fileType, $File* out) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(stream);
 	$Objects::requireNonNull(fileType);
 	$Objects::requireNonNull(out);
@@ -236,6 +238,7 @@ int32_t WaveFileWriter::write($AudioInputStream* stream, $AudioFileFormat$Type* 
 }
 
 $AudioFileFormat* WaveFileWriter::getAudioFileFormat($AudioFileFormat$Type* type, $AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	if (!isFileTypeSupported(type, stream)) {
 		$throwNew($IllegalArgumentException, $$str({"File type "_s, type, " not supported."_s}));
 	}
@@ -287,6 +290,7 @@ $AudioFileFormat* WaveFileWriter::getAudioFileFormat($AudioFileFormat$Type* type
 }
 
 int32_t WaveFileWriter::writeWaveFile($InputStream* in, $WaveFileFormat* waveFileFormat, $OutputStream* out) {
+	$useLocalCurrentObjectStackCache();
 	int32_t bytesRead = 0;
 	int32_t bytesWritten = 0;
 	$var($InputStream, fileStream, getFileStream(waveFileFormat, in));
@@ -313,6 +317,7 @@ int32_t WaveFileWriter::writeWaveFile($InputStream* in, $WaveFileFormat* waveFil
 }
 
 $InputStream* WaveFileWriter::getFileStream($WaveFileFormat* waveFileFormat, $InputStream* audioStream) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFormat, audioFormat, $nc(waveFileFormat)->getFormat());
 	int32_t headerLength = waveFileFormat->getHeaderSize();
 	int32_t riffMagic = $WaveFileFormat::RIFF_MAGIC;

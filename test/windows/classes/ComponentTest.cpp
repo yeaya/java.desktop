@@ -98,6 +98,7 @@ $Object* allocate$ComponentTest($Class* clazz) {
 $JFrame* ComponentTest::frame = nullptr;
 
 void ComponentTest::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$();
 	setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	setLayout($$new($FlowLayout));
@@ -112,6 +113,7 @@ void ComponentTest::init$() {
 
 void ComponentTest::main($StringArray* args) {
 	$init(ComponentTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	$SwingUtilities::invokeAndWait($$new($ComponentTest$1));
 	robot->waitForIdle();

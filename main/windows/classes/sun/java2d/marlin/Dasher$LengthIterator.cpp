@@ -220,6 +220,7 @@ double Dasher$LengthIterator::lastSegLen() {
 }
 
 void Dasher$LengthIterator::goToNextLeaf() {
+	$useLocalCurrentObjectStackCache();
 	$var($booleans, _sides, this->sidesRight);
 	int32_t _recLevel = this->recLevel;
 	--_recLevel;

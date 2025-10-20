@@ -115,6 +115,7 @@ void Test8030118::run() {
 }
 
 void Test8030118::insertUpdate($DocumentEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$$new($Thread, static_cast<$Runnable*>(this))->start();
 	try {
 		$init($TimeUnit);

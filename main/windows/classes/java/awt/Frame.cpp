@@ -349,6 +349,7 @@ void Frame::init($String* title, $GraphicsConfiguration* gc) {
 }
 
 $String* Frame::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(Frame::class$) {
 		$var($String, var$0, Frame::base);
 		return $concat(var$0, $$str(Frame::nameCounter++));
@@ -356,6 +357,7 @@ $String* Frame::constructComponentName() {
 }
 
 void Frame::addNotify() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		if (this->peer == nullptr) {
 			$set(this, peer, $nc($(getComponentFactory()))->createFrame(this));
@@ -377,6 +379,7 @@ $String* Frame::getTitle() {
 }
 
 void Frame::setTitle($String* title$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, title, title$renamed);
 	$var($String, oldTitle, this->title);
 	if (title == nullptr) {
@@ -481,6 +484,7 @@ void Frame::setExtendedState(int32_t state) {
 }
 
 bool Frame::isFrameStateSupported(int32_t state) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($(getToolkit()))->isFrameStateSupported(state)) {
 		if ((((int32_t)(state & (uint32_t)Frame::ICONIFIED)) != 0) && !$nc($(getToolkit()))->isFrameStateSupported(Frame::ICONIFIED)) {
 			return false;
@@ -618,6 +622,7 @@ void Frame::postProcessKeyEvent($KeyEvent* e) {
 }
 
 $String* Frame::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, $Window::paramString());
 	if (this->title != nullptr) {
 		$plusAssign(str, $$str({",title="_s, this->title}));
@@ -656,6 +661,7 @@ int32_t Frame::getCursorType() {
 
 $FrameArray* Frame::getFrames() {
 	$init(Frame);
+	$useLocalCurrentObjectStackCache();
 	$var($WindowArray, allWindows, $Window::getWindows());
 	int32_t frameCount = 0;
 	{
@@ -702,6 +708,7 @@ void Frame::writeObject($ObjectOutputStream* s) {
 }
 
 void Frame::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	try {
 		$var($Image, icon, $cast($Image, s->readObject()));

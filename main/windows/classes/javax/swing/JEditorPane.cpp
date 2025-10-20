@@ -438,6 +438,7 @@ void JEditorPane::access$000(JEditorPane* x0, $String* x1, Object$* x2, Object$*
 }
 
 void JEditorPane::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JTextComponent::init$();
 	setFocusCycleRoot(true);
 	setFocusTraversalPolicy($$new($JEditorPane$1, this));
@@ -493,6 +494,7 @@ void JEditorPane::fireHyperlinkUpdate($HyperlinkEvent* e) {
 }
 
 void JEditorPane::setPage($URL* page) {
+	$useLocalCurrentObjectStackCache();
 	if (page == nullptr) {
 		$throwNew($IOException, "invalid url"_s);
 	}
@@ -545,6 +547,7 @@ void JEditorPane::setPage($URL* page) {
 }
 
 $Document* JEditorPane::initializeModel($EditorKit* kit, $URL* page) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(kit)->createDefaultDocument());
 	if (this->pageProperties != nullptr) {
 		{
@@ -568,6 +571,7 @@ int32_t JEditorPane::getAsynchronousLoadPriority($Document* doc) {
 }
 
 void JEditorPane::read($InputStream* in, Object$* desc) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($HTMLDocument, desc) && $instanceOf($HTMLEditorKit, this->kit)) {
 		$var($HTMLDocument, hdoc, $cast($HTMLDocument, desc));
 		setDocument(static_cast<$Document*>(static_cast<$AbstractDocument*>(static_cast<$DefaultStyledDocument*>(hdoc))));
@@ -580,6 +584,7 @@ void JEditorPane::read($InputStream* in, Object$* desc) {
 }
 
 void JEditorPane::read($InputStream* in$renamed, $Document* doc) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputStream, in, in$renamed);
 	$init($Boolean);
 	if (!$nc($Boolean::TRUE)->equals($($nc(doc)->getProperty("IgnoreCharsetDirective"_s)))) {
@@ -653,6 +658,7 @@ void JEditorPane::read($InputStream* in$renamed, $Document* doc) {
 }
 
 $InputStream* JEditorPane::getStream($URL* page$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($URL, page, page$renamed);
 	$var($URLConnection, conn, $nc(page)->openConnection());
 	if ($instanceOf($HttpURLConnection, conn)) {
@@ -691,6 +697,7 @@ $InputStream* JEditorPane::getStream($URL* page$renamed) {
 }
 
 void JEditorPane::handleConnectionProperties($URLConnection* conn) {
+	$useLocalCurrentObjectStackCache();
 	if (this->pageProperties == nullptr) {
 		$set(this, pageProperties, $new($Hashtable));
 	}
@@ -712,6 +719,7 @@ $Object* JEditorPane::getPostData() {
 }
 
 void JEditorPane::handlePostData($HttpURLConnection* conn, Object$* postData) {
+	$useLocalCurrentObjectStackCache();
 	$nc(conn)->setDoOutput(true);
 	$var($DataOutputStream, os, nullptr);
 	{
@@ -734,6 +742,7 @@ void JEditorPane::handlePostData($HttpURLConnection* conn, Object$* postData) {
 }
 
 void JEditorPane::scrollToReference($String* reference) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, d, getDocument());
 	if ($instanceOf($HTMLDocument, d)) {
 		$var($HTMLDocument, doc, $cast($HTMLDocument, d));
@@ -796,6 +805,7 @@ $String* JEditorPane::getContentType() {
 }
 
 void JEditorPane::setContentType($String* type$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, type, type$renamed);
 	int32_t parm = $nc(type)->indexOf((int32_t)u';');
 	if (parm > -1) {
@@ -815,6 +825,7 @@ void JEditorPane::setContentType($String* type$renamed) {
 }
 
 void JEditorPane::setCharsetFromContentTypeParameters($String* paramlist$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, paramlist, paramlist$renamed);
 	$var($String, charset, nullptr);
 	try {
@@ -842,6 +853,7 @@ void JEditorPane::setCharsetFromContentTypeParameters($String* paramlist$renamed
 }
 
 void JEditorPane::setEditorKit($EditorKit* kit) {
+	$useLocalCurrentObjectStackCache();
 	$var($EditorKit, old, this->kit);
 	this->isUserSetEditorKit = true;
 	if (old != nullptr) {
@@ -880,6 +892,7 @@ void JEditorPane::setEditorKitForContentType($String* type, $EditorKit* k) {
 }
 
 void JEditorPane::replaceSelection($String* content) {
+	$useLocalCurrentObjectStackCache();
 	if (!isEditable()) {
 		$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this);
 		return;
@@ -918,6 +931,7 @@ void JEditorPane::replaceSelection($String* content) {
 
 $EditorKit* JEditorPane::createEditorKitForContentType($String* type) {
 	$init(JEditorPane);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Hashtable, kitRegistry, getKitRegisty());
 	$var($EditorKit, k, $cast($EditorKit, $nc(kitRegistry)->get(type)));
@@ -947,12 +961,14 @@ $EditorKit* JEditorPane::createEditorKitForContentType($String* type) {
 
 void JEditorPane::registerEditorKitForContentType($String* type, $String* classname) {
 	$init(JEditorPane);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	registerEditorKitForContentType(type, classname, $($($Thread::currentThread())->getContextClassLoader()));
 }
 
 void JEditorPane::registerEditorKitForContentType($String* type, $String* classname, $ClassLoader* loader) {
 	$init(JEditorPane);
+	$useLocalCurrentObjectStackCache();
 	$nc($(getKitTypeRegistry()))->put(type, classname);
 	if (loader != nullptr) {
 		$nc($(getKitLoaderRegistry()))->put(type, loader);
@@ -993,6 +1009,7 @@ $Hashtable* JEditorPane::getKitRegisty() {
 
 void JEditorPane::loadDefaultKitsIfNecessary() {
 	$init(JEditorPane);
+	$useLocalCurrentObjectStackCache();
 	if ($SwingUtilities::appContextGet(JEditorPane::kitTypeRegistryKey) == nullptr) {
 		$synchronized(JEditorPane::defaultEditorKitMap) {
 			if ($nc(JEditorPane::defaultEditorKitMap)->size() == 0) {
@@ -1019,6 +1036,7 @@ void JEditorPane::loadDefaultKitsIfNecessary() {
 }
 
 $Dimension* JEditorPane::getPreferredSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, $JTextComponent::getPreferredSize());
 	$var($Container, parent, $SwingUtilities::getUnwrappedParent(this));
 	if ($instanceOf($JViewport, parent)) {
@@ -1048,6 +1066,7 @@ $Dimension* JEditorPane::getPreferredSize() {
 }
 
 void JEditorPane::setText($String* t) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($Document, doc, getDocument());
 		$nc(doc)->remove(0, doc->getLength());
@@ -1067,6 +1086,7 @@ void JEditorPane::setText($String* t) {
 }
 
 $String* JEditorPane::getText() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, txt, nullptr);
 	try {
 		$var($StringWriter, buf, $new($StringWriter));
@@ -1080,6 +1100,7 @@ $String* JEditorPane::getText() {
 }
 
 bool JEditorPane::getScrollableTracksViewportWidth() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, parent, $SwingUtilities::getUnwrappedParent(this));
 	if ($instanceOf($JViewport, parent)) {
 		$var($JViewport, port, $cast($JViewport, parent));
@@ -1095,6 +1116,7 @@ bool JEditorPane::getScrollableTracksViewportWidth() {
 }
 
 bool JEditorPane::getScrollableTracksViewportHeight() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, parent, $SwingUtilities::getUnwrappedParent(this));
 	if ($instanceOf($JViewport, parent)) {
 		$var($JViewport, port, $cast($JViewport, parent));
@@ -1123,6 +1145,7 @@ void JEditorPane::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JEditorPane::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, kitString, this->kit != nullptr ? $nc($of(this->kit))->toString() : ""_s);
 	$var($String, typeHandlersString, this->typeHandlers != nullptr ? $nc(this->typeHandlers)->toString() : ""_s);
 	return $str({$($JTextComponent::paramString()), ",kit="_s, kitString, ",typeHandlers="_s, typeHandlersString});

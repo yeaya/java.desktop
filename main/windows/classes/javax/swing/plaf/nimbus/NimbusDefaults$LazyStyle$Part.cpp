@@ -66,6 +66,7 @@ $Object* allocate$NimbusDefaults$LazyStyle$Part($Class* clazz) {
 }
 
 void NimbusDefaults$LazyStyle$Part::init$($NimbusDefaults$LazyStyle* this$1, $String* s) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$set(this, this$1, this$1);
 	bool var$0 = $nc(s)->charAt(0) == u'\"';

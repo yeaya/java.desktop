@@ -149,6 +149,7 @@ void MetalLookAndFeel$AATextListener::init$($LookAndFeel* laf) {
 }
 
 void MetalLookAndFeel$AATextListener::propertyChange($PropertyChangeEvent* pce) {
+	$useLocalCurrentObjectStackCache();
 	$var($LookAndFeel, laf, $cast($LookAndFeel, get()));
 	if (laf == nullptr || laf != $UIManager::getLookAndFeel()) {
 		dispose();
@@ -167,6 +168,7 @@ void MetalLookAndFeel$AATextListener::dispose() {
 
 void MetalLookAndFeel$AATextListener::updateWindowUI($Window* window) {
 	$init(MetalLookAndFeel$AATextListener);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::updateComponentTreeUI(window);
 	$var($WindowArray, ownedWins, $nc(window)->getOwnedWindows());
 	{
@@ -184,6 +186,7 @@ void MetalLookAndFeel$AATextListener::updateWindowUI($Window* window) {
 
 void MetalLookAndFeel$AATextListener::updateAllUIs() {
 	$init(MetalLookAndFeel$AATextListener);
+	$useLocalCurrentObjectStackCache();
 	$var($FrameArray, appFrames, $Frame::getFrames());
 	{
 		$var($FrameArray, arr$, appFrames);

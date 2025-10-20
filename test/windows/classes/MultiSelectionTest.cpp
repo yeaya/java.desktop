@@ -413,6 +413,7 @@ void MultiSelectionTest::init$() {
 }
 
 void MultiSelectionTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(MultiSelectionTest$$Lambda$lambda$main$0)));
 	$var($Robot, robot, $new($Robot));
 	robot->waitForIdle();
@@ -520,6 +521,7 @@ void MultiSelectionTest::lambda$main$1() {
 }
 
 void MultiSelectionTest::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$init(MultiSelectionTest);
 	$assignStatic(MultiSelectionTest::frame, $new($JFrame));
 	$assignStatic(MultiSelectionTest::field1, $new($JTextField, "field1                       "_s));

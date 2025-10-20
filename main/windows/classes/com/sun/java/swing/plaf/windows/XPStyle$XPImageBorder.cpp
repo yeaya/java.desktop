@@ -119,6 +119,7 @@ void XPStyle$XPImageBorder::paintBorder($Component* c, $Graphics* g, int32_t x, 
 }
 
 $Insets* XPStyle$XPImageBorder::getBorderInsets($Component* c, $Insets* insets) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, margin, nullptr);
 	$var($Insets, borderInsets, $nc(this->skin)->getContentMargin());
 	if (borderInsets == nullptr) {

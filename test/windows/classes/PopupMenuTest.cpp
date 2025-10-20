@@ -229,6 +229,7 @@ void PopupMenuTest::dispose() {
 }
 
 void PopupMenuTest::exectuteTest() {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, $nc(PopupMenuTest::frame)->getLocationOnScreen());
 	$var($Rectangle, rect, $nc(PopupMenuTest::frame)->getBounds());
 	$nc(PopupMenuTest::robot)->mouseMove($nc(p)->x + $nc(rect)->width / 2, p->y + rect->height / 2);
@@ -251,6 +252,7 @@ void PopupMenuTest::lambda$dispose$1() {
 }
 
 void PopupMenuTest::lambda$createUI$0() {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(PopupMenuTest::frame, $new($JFrame, "Popup Menu"_s));
 	$set(this, jpopup, $new($JPopupMenu));
 	$nc(this->jpopup)->setUI(static_cast<$PopupMenuUI*>($$new($PopMenuUIExt)));

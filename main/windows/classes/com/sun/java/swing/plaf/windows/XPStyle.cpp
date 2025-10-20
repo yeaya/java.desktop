@@ -181,6 +181,7 @@ XPStyle* XPStyle::getXP() {
 	$load(XPStyle);
 	$synchronized(class$) {
 		$init(XPStyle);
+		$useLocalCurrentObjectStackCache();
 		$beforeCallerSensitive();
 		if (XPStyle::themeActive == nullptr) {
 			$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());
@@ -223,6 +224,7 @@ $TMSchema$TypeEnum* XPStyle::getTypeEnum($Component* c, $TMSchema$Part* part, $T
 
 $String* XPStyle::getTypeEnumName($Component* c, $TMSchema$Part* part, $TMSchema$State* state, $TMSchema$Prop* prop) {
 	$init(XPStyle);
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $nc(part)->getControlName(c));
 	int32_t var$1 = part->getValue();
 	int32_t var$2 = $TMSchema$State::getValue(part, state);
@@ -241,6 +243,7 @@ int32_t XPStyle::getInt($Component* c, $TMSchema$Part* part, $TMSchema$State* st
 }
 
 $Dimension* XPStyle::getDimension($Component* c, $TMSchema$Part* part, $TMSchema$State* state, $TMSchema$Prop* prop) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $nc(part)->getControlName(c));
 	int32_t var$1 = part->getValue();
 	int32_t var$2 = $TMSchema$State::getValue(part, state);
@@ -249,6 +252,7 @@ $Dimension* XPStyle::getDimension($Component* c, $TMSchema$Part* part, $TMSchema
 }
 
 $Point* XPStyle::getPoint($Component* c, $TMSchema$Part* part, $TMSchema$State* state, $TMSchema$Prop* prop) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $nc(part)->getControlName(c));
 	int32_t var$1 = part->getValue();
 	int32_t var$2 = $TMSchema$State::getValue(part, state);
@@ -257,6 +261,7 @@ $Point* XPStyle::getPoint($Component* c, $TMSchema$Part* part, $TMSchema$State* 
 }
 
 $Insets* XPStyle::getMargin($Component* c, $TMSchema$Part* part, $TMSchema$State* state, $TMSchema$Prop* prop) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $nc(part)->getControlName(c));
 	int32_t var$1 = part->getValue();
 	int32_t var$2 = $TMSchema$State::getValue(part, state);
@@ -266,6 +271,7 @@ $Insets* XPStyle::getMargin($Component* c, $TMSchema$Part* part, $TMSchema$State
 
 $Color* XPStyle::getColor($XPStyle$Skin* skin, $TMSchema$Prop* prop, $Color* fallback) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($String, var$0, $$str({$($nc(skin)->toString()), "."_s}));
 		$var($String, key, $concat(var$0, $($nc(prop)->name())));
 		$TMSchema$Part* part = skin->part;
@@ -290,6 +296,7 @@ $Color* XPStyle::getColor($Component* c, $TMSchema$Part* part, $TMSchema$State* 
 
 $Border* XPStyle::getBorder($Component* c, $TMSchema$Part* part) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$init($TMSchema$Part);
 		if (part == $TMSchema$Part::MENU) {
 			if (this->flatMenus) {

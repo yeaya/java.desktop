@@ -49,6 +49,7 @@ $Object* allocate$MergeSort($Class* clazz) {
 }
 
 void MergeSort::mergeSortNoCopy($ints* x, $ints* y, $ints* auxX, $ints* auxY, int32_t toIndex, int32_t insertionSortIndex) {
+	$useLocalCurrentObjectStackCache();
 	if ((toIndex > $nc(x)->length) || (toIndex > $nc(y)->length) || (toIndex > $nc(auxX)->length) || (toIndex > $nc(auxY)->length)) {
 		$throwNew($ArrayIndexOutOfBoundsException, $$str({"bad arguments: toIndex="_s, $$str(toIndex)}));
 	}

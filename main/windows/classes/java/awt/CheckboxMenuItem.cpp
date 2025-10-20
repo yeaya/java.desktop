@@ -179,6 +179,7 @@ void CheckboxMenuItem::init$($String* label, bool state) {
 }
 
 $String* CheckboxMenuItem::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(CheckboxMenuItem::class$) {
 		$var($String, var$0, CheckboxMenuItem::base);
 		return $concat(var$0, $$str(CheckboxMenuItem::nameCounter++));
@@ -282,11 +283,13 @@ void CheckboxMenuItem::processItemEvent($ItemEvent* e) {
 }
 
 void CheckboxMenuItem::doMenuEvent(int64_t when, int32_t modifiers) {
+	$useLocalCurrentObjectStackCache();
 	setState(!this->state);
 	$nc($($Toolkit::getEventQueue()))->postEvent($$new($ItemEvent, this, $ItemEvent::ITEM_STATE_CHANGED, $(getLabel()), this->state ? $ItemEvent::SELECTED : $ItemEvent::DESELECTED));
 }
 
 $String* CheckboxMenuItem::paramString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($MenuItem::paramString()), ",state="_s, $$str(this->state)});
 }
 
@@ -298,6 +301,7 @@ void CheckboxMenuItem::writeObject($ObjectOutputStream* s) {
 }
 
 void CheckboxMenuItem::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	$var($Object, keyOrNull, nullptr);
 	while (nullptr != ($assign(keyOrNull, s->readObject()))) {

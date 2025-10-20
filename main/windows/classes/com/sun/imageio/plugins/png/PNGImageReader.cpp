@@ -294,6 +294,7 @@ void PNGImageReader::setInput(Object$* input, bool seekForwardOnly, bool ignoreM
 }
 
 $String* PNGImageReader::readNullTerminatedString($String* charset, int32_t maxLen) {
+	$useLocalCurrentObjectStackCache();
 	$var($ByteArrayOutputStream, baos, $new($ByteArrayOutputStream));
 	int32_t b = 0;
 	int32_t count = 0;
@@ -310,6 +311,7 @@ $String* PNGImageReader::readNullTerminatedString($String* charset, int32_t maxL
 }
 
 void PNGImageReader::readHeader() {
+	$useLocalCurrentObjectStackCache();
 	if (this->gotHeader) {
 		return;
 	}
@@ -468,6 +470,7 @@ void PNGImageReader::parse_hIST_chunk(int32_t chunkLength) {
 }
 
 void PNGImageReader::parse_iCCP_chunk(int32_t chunkLength) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, keyword, readNullTerminatedString("ISO-8859-1"_s, 80));
 	int32_t compressedProfileLength = chunkLength - $nc(keyword)->length() - 2;
 	if (compressedProfileLength <= 0) {
@@ -482,6 +485,7 @@ void PNGImageReader::parse_iCCP_chunk(int32_t chunkLength) {
 }
 
 void PNGImageReader::parse_iTXt_chunk(int32_t chunkLength) {
+	$useLocalCurrentObjectStackCache();
 	int64_t chunkStart = $nc(this->stream)->getStreamPosition();
 	$var($String, keyword, readNullTerminatedString("ISO-8859-1"_s, 80));
 	$nc($nc(this->metadata)->iTXt_keyword)->add(keyword);
@@ -586,6 +590,7 @@ void PNGImageReader::parse_sRGB_chunk() {
 }
 
 void PNGImageReader::parse_tEXt_chunk(int32_t chunkLength) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, keyword, readNullTerminatedString("ISO-8859-1"_s, 80));
 	int32_t textLength = chunkLength - $nc(keyword)->length() - 1;
 	if (textLength < 0) {
@@ -656,6 +661,7 @@ void PNGImageReader::parse_tRNS_chunk(int32_t chunkLength) {
 
 $bytes* PNGImageReader::inflate($bytes* b) {
 	$init(PNGImageReader);
+	$useLocalCurrentObjectStackCache();
 	$var($InputStream, bais, $new($ByteArrayInputStream, b));
 	$var($InputStream, iis, $new($InflaterInputStream, bais));
 	$var($ByteArrayOutputStream, baos, $new($ByteArrayOutputStream));
@@ -679,6 +685,7 @@ $bytes* PNGImageReader::inflate($bytes* b) {
 }
 
 void PNGImageReader::parse_zTXt_chunk(int32_t chunkLength) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, keyword, readNullTerminatedString("ISO-8859-1"_s, 80));
 	int32_t textLength = chunkLength - $nc(keyword)->length() - 2;
 	if (textLength < 0) {
@@ -698,6 +705,7 @@ void PNGImageReader::parse_zTXt_chunk(int32_t chunkLength) {
 }
 
 void PNGImageReader::readMetadata() {
+	$useLocalCurrentObjectStackCache();
 	if (this->gotMetadata) {
 		return;
 	}
@@ -962,6 +970,7 @@ void PNGImageReader::decodePaethFilter($bytes* curr, int32_t coff, $bytes* prev,
 }
 
 $WritableRaster* PNGImageReader::createRaster(int32_t width, int32_t height, int32_t bands, int32_t scanlineStride, int32_t bitDepth) {
+	$useLocalCurrentObjectStackCache();
 	$var($DataBuffer, dataBuffer, nullptr);
 	$var($WritableRaster, ras, nullptr);
 	$var($Point, origin, $new($Point, 0, 0));
@@ -996,6 +1005,7 @@ void PNGImageReader::updateImageProgress(int32_t newPixels) {
 }
 
 void PNGImageReader::decodePass(int32_t passNum, int32_t xStart, int32_t yStart, int32_t xStep, int32_t yStep, int32_t passWidth, int32_t passHeight) {
+	$useLocalCurrentObjectStackCache();
 	if ((passWidth == 0) || (passHeight == 0)) {
 		return;
 	}
@@ -1213,6 +1223,7 @@ void PNGImageReader::decodeImage() {
 }
 
 void PNGImageReader::readImage($ImageReadParam* param) {
+	$useLocalCurrentObjectStackCache();
 	readMetadata();
 	int32_t width = $nc(this->metadata)->IHDR_width;
 	int32_t height = $nc(this->metadata)->IHDR_height;
@@ -1312,6 +1323,7 @@ int32_t PNGImageReader::getHeight(int32_t imageIndex) {
 }
 
 $Iterator* PNGImageReader::getImageTypes(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (imageIndex != 0) {
 		$throwNew($IndexOutOfBoundsException, "imageIndex != 0!"_s);
 	}
@@ -1437,6 +1449,7 @@ $Iterator* PNGImageReader::getImageTypes(int32_t imageIndex) {
 }
 
 $ImageTypeSpecifier* PNGImageReader::getRawImageType(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($Iterator, types, getImageTypes(imageIndex));
 	$var($ImageTypeSpecifier, raw, nullptr);
 	do {
@@ -1462,6 +1475,7 @@ $IIOMetadata* PNGImageReader::getImageMetadata(int32_t imageIndex) {
 }
 
 $BufferedImage* PNGImageReader::read(int32_t imageIndex, $ImageReadParam* param) {
+	$useLocalCurrentObjectStackCache();
 	if (imageIndex != 0) {
 		$throwNew($IndexOutOfBoundsException, "imageIndex != 0!"_s);
 	}
@@ -1497,6 +1511,7 @@ void PNGImageReader::resetStreamSettings() {
 }
 
 void clinit$PNGImageReader($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(PNGImageReader::inputBandsForColorType, $new($ints, {
 		1,
 		-1,

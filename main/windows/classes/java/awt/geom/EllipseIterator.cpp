@@ -101,6 +101,7 @@ void EllipseIterator::next() {
 }
 
 int32_t EllipseIterator::currentSegment($floats* coords) {
+	$useLocalCurrentObjectStackCache();
 	if (isDone()) {
 		$throwNew($NoSuchElementException, "ellipse iterator out of bounds"_s);
 	}
@@ -130,6 +131,7 @@ int32_t EllipseIterator::currentSegment($floats* coords) {
 }
 
 int32_t EllipseIterator::currentSegment($doubles* coords) {
+	$useLocalCurrentObjectStackCache();
 	if (isDone()) {
 		$throwNew($NoSuchElementException, "ellipse iterator out of bounds"_s);
 	}
@@ -159,6 +161,7 @@ int32_t EllipseIterator::currentSegment($doubles* coords) {
 }
 
 void clinit$EllipseIterator($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	EllipseIterator::CtrlVal = 0.5522847498307933;
 	EllipseIterator::pcv = 0.5 + EllipseIterator::CtrlVal * 0.5;
 	EllipseIterator::ncv = 0.5 - EllipseIterator::CtrlVal * 0.5;

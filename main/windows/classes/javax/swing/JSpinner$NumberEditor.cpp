@@ -112,6 +112,7 @@ $Object* allocate$JSpinner$NumberEditor($Class* clazz) {
 
 $String* JSpinner$NumberEditor::getDefaultPattern($Locale* locale) {
 	$init(JSpinner$NumberEditor);
+	$useLocalCurrentObjectStackCache();
 	$var($LocaleProviderAdapter, adapter, nullptr);
 	$load($NumberFormatProvider);
 	$assign(adapter, $LocaleProviderAdapter::getAdapter($NumberFormatProvider::class$, locale));
@@ -124,6 +125,7 @@ $String* JSpinner$NumberEditor::getDefaultPattern($Locale* locale) {
 }
 
 void JSpinner$NumberEditor::init$($JSpinner* spinner) {
+	$useLocalCurrentObjectStackCache();
 	JSpinner$NumberEditor::init$(spinner, $(getDefaultPattern($($nc(spinner)->getLocale()))));
 }
 
@@ -132,6 +134,7 @@ void JSpinner$NumberEditor::init$($JSpinner* spinner, $String* decimalFormatPatt
 }
 
 void JSpinner$NumberEditor::init$($JSpinner* spinner, $DecimalFormat* format) {
+	$useLocalCurrentObjectStackCache();
 	$JSpinner$DefaultEditor::init$(spinner);
 	if (!($instanceOf($SpinnerNumberModel, $($nc(spinner)->getModel())))) {
 		$throwNew($IllegalArgumentException, "model not a SpinnerNumberModel"_s);
@@ -154,6 +157,7 @@ void JSpinner$NumberEditor::init$($JSpinner* spinner, $DecimalFormat* format) {
 }
 
 $DecimalFormat* JSpinner$NumberEditor::getFormat() {
+	$useLocalCurrentObjectStackCache();
 	return $cast($DecimalFormat, $nc((($cast($NumberFormatter, $($nc($(getTextField()))->getFormatter())))))->getFormat());
 }
 

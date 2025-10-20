@@ -266,6 +266,7 @@ $Document* IIOMetadataNode::getOwnerDocument() {
 }
 
 $Node* IIOMetadataNode::insertBefore($Node* newChild, $Node* refChild) {
+	$useLocalCurrentObjectStackCache();
 	if (newChild == nullptr) {
 		$throwNew($IllegalArgumentException, "newChild == null!"_s);
 	}
@@ -300,6 +301,7 @@ $Node* IIOMetadataNode::insertBefore($Node* newChild, $Node* refChild) {
 }
 
 $Node* IIOMetadataNode::replaceChild($Node* newChild, $Node* oldChild) {
+	$useLocalCurrentObjectStackCache();
 	if (newChild == nullptr) {
 		$throwNew($IllegalArgumentException, "newChild == null!"_s);
 	}
@@ -331,6 +333,7 @@ $Node* IIOMetadataNode::replaceChild($Node* newChild, $Node* oldChild) {
 }
 
 $Node* IIOMetadataNode::removeChild($Node* oldChild) {
+	$useLocalCurrentObjectStackCache();
 	if (oldChild == nullptr) {
 		$throwNew($IllegalArgumentException, "oldChild == null!"_s);
 	}
@@ -370,6 +373,7 @@ bool IIOMetadataNode::hasChildNodes() {
 }
 
 $Node* IIOMetadataNode::cloneNode(bool deep) {
+	$useLocalCurrentObjectStackCache();
 	$var(IIOMetadataNode, newNode, $new(IIOMetadataNode, this->nodeName));
 	newNode->setUserObject($(getUserObject()));
 	if (deep) {
@@ -422,6 +426,7 @@ $String* IIOMetadataNode::getAttributeNS($String* namespaceURI, $String* localNa
 }
 
 void IIOMetadataNode::setAttribute($String* name, $String* value) {
+	$useLocalCurrentObjectStackCache();
 	bool valid = true;
 	$var($chars, chs, $nc(name)->toCharArray());
 	for (int32_t i = 0; i < chs->length; ++i) {
@@ -446,6 +451,7 @@ void IIOMetadataNode::removeAttribute($String* name) {
 }
 
 void IIOMetadataNode::removeAttribute($String* name, bool checkPresent) {
+	$useLocalCurrentObjectStackCache();
 	int32_t numAttributes = $nc(this->attributes)->size();
 	for (int32_t i = 0; i < numAttributes; ++i) {
 		$var($IIOAttr, attr, $cast($IIOAttr, $nc(this->attributes)->get(i)));
@@ -465,6 +471,7 @@ void IIOMetadataNode::removeAttributeNS($String* namespaceURI, $String* localNam
 }
 
 $Attr* IIOMetadataNode::getAttributeNode($String* name) {
+	$useLocalCurrentObjectStackCache();
 	$var($Node, node, $nc($(getAttributes()))->getNamedItem(name));
 	return $cast($Attr, node);
 }
@@ -474,6 +481,7 @@ $Attr* IIOMetadataNode::getAttributeNodeNS($String* namespaceURI, $String* local
 }
 
 $Attr* IIOMetadataNode::setAttributeNode($Attr* newAttr) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, owner, $nc(newAttr)->getOwnerElement());
 	if (owner != nullptr) {
 		if ($equals(owner, this)) {

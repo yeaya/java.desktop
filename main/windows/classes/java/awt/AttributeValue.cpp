@@ -54,6 +54,7 @@ $Object* allocate$AttributeValue($Class* clazz) {
 $PlatformLogger* AttributeValue::log = nullptr;
 
 void AttributeValue::init$(int32_t value, $StringArray* names) {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(AttributeValue::log)->isLoggable($PlatformLogger$Level::FINEST)) {
 		$nc(AttributeValue::log)->finest($$str({"value = "_s, $$str(value), ", names = "_s, names}));

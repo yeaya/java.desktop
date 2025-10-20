@@ -505,6 +505,7 @@ void Dialog::init$($Window* owner, $String* title, $Dialog$ModalityType* modalit
 }
 
 $String* Dialog::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(Dialog::class$) {
 		$var($String, var$0, Dialog::base);
 		return $concat(var$0, $$str(Dialog::nameCounter++));
@@ -543,6 +544,7 @@ $Dialog$ModalityType* Dialog::getModalityType() {
 }
 
 void Dialog::setModalityType($Dialog$ModalityType* type$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dialog$ModalityType, type, type$renamed);
 	if (type == nullptr) {
 		$init($Dialog$ModalityType);
@@ -566,6 +568,7 @@ $String* Dialog::getTitle() {
 }
 
 void Dialog::setTitle($String* title) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, oldTitle, this->title);
 	$synchronized(this) {
 		$set(this, title, title);
@@ -578,6 +581,7 @@ void Dialog::setTitle($String* title) {
 }
 
 bool Dialog::conditionalShow($Component* toFocus, $AtomicLong* time) {
+	$useLocalCurrentObjectStackCache();
 	bool retval = false;
 	closeSplashScreen();
 	$synchronized(getTreeLock()) {
@@ -635,6 +639,7 @@ void Dialog::setVisible(bool b) {
 }
 
 void Dialog::show() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (!this->initialized) {
 		$throwNew($IllegalStateException, "The dialog component has not been initialized properly"_s);
@@ -720,6 +725,7 @@ void Dialog::show() {
 }
 
 void Dialog::modalityPushed() {
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, tk, $Toolkit::getDefaultToolkit());
 	if ($instanceOf($SunToolkit, tk)) {
 		$var($SunToolkit, stk, $cast($SunToolkit, tk));
@@ -728,6 +734,7 @@ void Dialog::modalityPushed() {
 }
 
 void Dialog::modalityPopped() {
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, tk, $Toolkit::getDefaultToolkit());
 	if ($instanceOf($SunToolkit, tk)) {
 		$var($SunToolkit, stk, $cast($SunToolkit, tk));
@@ -772,6 +779,7 @@ void Dialog::doDispose() {
 }
 
 void Dialog::toBack() {
+	$useLocalCurrentObjectStackCache();
 	$Window::toBack();
 	if (this->visible) {
 		$synchronized(getTreeLock()) {
@@ -861,6 +869,7 @@ void Dialog::setBackground($Color* bgColor) {
 }
 
 $String* Dialog::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, $str({$($Window::paramString()), ","_s, this->modalityType}));
 	if (this->title != nullptr) {
 		$plusAssign(str, $$str({",title="_s, this->title}));
@@ -876,6 +885,7 @@ void Dialog::initIDs() {
 }
 
 void Dialog::modalShow() {
+	$useLocalCurrentObjectStackCache();
 	$var($IdentityArrayList, blockers, $new($IdentityArrayList));
 	{
 		$var($Iterator, i$, $nc(Dialog::modalDialogs)->iterator());
@@ -957,6 +967,7 @@ void Dialog::modalShow() {
 }
 
 void Dialog::modalHide() {
+	$useLocalCurrentObjectStackCache();
 	$var($IdentityArrayList, save, $new($IdentityArrayList));
 	int32_t blockedWindowsCount = $nc(this->blockedWindows)->size();
 	for (int32_t i = 0; i < blockedWindowsCount; ++i) {
@@ -976,6 +987,7 @@ void Dialog::modalHide() {
 }
 
 bool Dialog::shouldBlock($Window* w) {
+	$useLocalCurrentObjectStackCache();
 	bool var$1 = !isVisible_NoClientCode();
 	bool var$0 = var$1 || (!$nc(w)->isVisible_NoClientCode() && !w->isInShow) || this->isInHide || ($equals(w, this));
 	if (var$0 || !isModal_NoClientCode()) {
@@ -1036,6 +1048,7 @@ void Dialog::blockWindow($Window* w) {
 }
 
 void Dialog::blockWindows($List* toBlock) {
+	$useLocalCurrentObjectStackCache();
 	$var($DialogPeer, dpeer, $cast($DialogPeer, this->peer));
 	if (dpeer == nullptr) {
 		return;
@@ -1063,6 +1076,7 @@ void Dialog::unblockWindow($Window* w) {
 
 void Dialog::checkShouldBeBlocked($Window* w) {
 	$init(Dialog);
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(w)->getTreeLock()) {
 		for (int32_t i = 0; i < $nc(Dialog::modalDialogs)->size(); ++i) {
 			$var(Dialog, modalDialog, $cast(Dialog, $nc(Dialog::modalDialogs)->get(i)));
@@ -1086,6 +1100,7 @@ void Dialog::checkModalityPermission($Dialog$ModalityType* mt) {
 }
 
 void Dialog::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$GraphicsEnvironment::checkHeadless();
 	$var($ObjectInputStream$GetField, fields, $nc(s)->readFields());
 	$Dialog$ModalityType* localModalityType = $cast($Dialog$ModalityType, $nc(fields)->get("modalityType"_s, ($Object*)nullptr));

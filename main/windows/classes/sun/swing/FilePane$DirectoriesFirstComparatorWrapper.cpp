@@ -78,6 +78,7 @@ void FilePane$DirectoriesFirstComparatorWrapper::init$($FilePane* this$0, int32_
 }
 
 int32_t FilePane$DirectoriesFirstComparatorWrapper::compare($File* f1, $File* f2) {
+	$useLocalCurrentObjectStackCache();
 	if (f1 != nullptr && f2 != nullptr) {
 		bool traversable1 = $nc($(this->this$0->getFileChooser()))->isTraversable(f1);
 		bool traversable2 = $nc($(this->this$0->getFileChooser()))->isTraversable(f2);

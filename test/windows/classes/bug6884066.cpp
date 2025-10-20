@@ -88,6 +88,7 @@ void bug6884066::init$() {
 }
 
 void bug6884066::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel($($UIManager::getSystemLookAndFeelClassName()));
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(20);
@@ -105,6 +106,7 @@ void bug6884066::main($StringArray* args) {
 }
 
 void bug6884066::checkColumn(int32_t index, $String* str) {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6884066);
 	$var($TableColumnModel, model, $nc(bug6884066::header)->getColumnModel());
 	$var($Object, value, $nc($($nc(model)->getColumn(index)))->getHeaderValue());

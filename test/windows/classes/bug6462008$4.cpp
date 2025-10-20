@@ -72,6 +72,7 @@ void bug6462008$4::init$() {
 }
 
 void bug6462008$4::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6462008);
 	$nc($($nc($($nc($bug6462008::list)->getActionMap()))->get("scrollDownExtendSelection"_s)))->actionPerformed($$new($ActionEvent, $bug6462008::list, $ActionEvent::ACTION_PERFORMED, nullptr));
 }

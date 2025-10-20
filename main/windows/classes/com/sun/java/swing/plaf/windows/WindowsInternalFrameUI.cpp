@@ -130,6 +130,7 @@ $JInternalFrame* WindowsInternalFrameUI::access$000(WindowsInternalFrameUI* x0) 
 }
 
 void WindowsInternalFrameUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$BasicInternalFrameUI::installDefaults();
 	if (this->xp != nullptr) {
 		$nc(this->frame)->setBorder($$new($WindowsInternalFrameUI$XPBorder, this));

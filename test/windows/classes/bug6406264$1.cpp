@@ -74,6 +74,7 @@ void bug6406264$1::init$() {
 }
 
 void bug6406264$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6406264);
 	$assignStatic($bug6406264::frame, $new($JFrame, "JComboBox6406264 test"_s));
 	$nc($bug6406264::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);

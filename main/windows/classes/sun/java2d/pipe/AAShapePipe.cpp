@@ -144,6 +144,7 @@ void AAShapePipe::init$($CompositePipe* pipe) {
 }
 
 void AAShapePipe::draw($SunGraphics2D* sg, $Shape* s$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Shape, s, s$renamed);
 	$var($BasicStroke, bs, nullptr);
 	if ($instanceOf($BasicStroke, $nc(sg)->stroke)) {
@@ -160,6 +161,7 @@ void AAShapePipe::fill($SunGraphics2D* sg, $Shape* s) {
 }
 
 void AAShapePipe::fillParallelogram($SunGraphics2D* sg, double ux1, double uy1, double ux2, double uy2, double x, double y, double dx1, double dy1, double dx2, double dy2) {
+	$useLocalCurrentObjectStackCache();
 	$var($AAShapePipe$TileState, ts, $cast($AAShapePipe$TileState, $nc(AAShapePipe::TILE_STATE_PROVIDER)->acquire()));
 	{
 		$var($Throwable, var$0, nullptr);
@@ -181,6 +183,7 @@ void AAShapePipe::fillParallelogram($SunGraphics2D* sg, double ux1, double uy1, 
 }
 
 void AAShapePipe::drawParallelogram($SunGraphics2D* sg, double ux1, double uy1, double ux2, double uy2, double x, double y, double dx1, double dy1, double dx2, double dy2, double lw1, double lw2) {
+	$useLocalCurrentObjectStackCache();
 	$var($AAShapePipe$TileState, ts, $cast($AAShapePipe$TileState, $nc(AAShapePipe::TILE_STATE_PROVIDER)->acquire()));
 	{
 		$var($Throwable, var$0, nullptr);
@@ -202,6 +205,7 @@ void AAShapePipe::drawParallelogram($SunGraphics2D* sg, double ux1, double uy1, 
 }
 
 void AAShapePipe::renderPath($SunGraphics2D* sg, $Shape* s, $BasicStroke* bs) {
+	$useLocalCurrentObjectStackCache();
 	bool adjust = (bs != nullptr && $nc(sg)->strokeHint != $SunHints::INTVAL_STROKE_PURE);
 	bool thin = (sg->strokeState <= $SunGraphics2D::STROKE_THINDASHED);
 	$var($AAShapePipe$TileState, ts, $cast($AAShapePipe$TileState, $nc(AAShapePipe::TILE_STATE_PROVIDER)->acquire()));
@@ -225,6 +229,7 @@ void AAShapePipe::renderPath($SunGraphics2D* sg, $Shape* s, $BasicStroke* bs) {
 }
 
 void AAShapePipe::renderTiles($SunGraphics2D* sg, $Shape* s, $AATileGenerator* aatg, $ints* abox, $AAShapePipe$TileState* ts) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, context, nullptr);
 	{
 		$var($Throwable, var$0, nullptr);

@@ -169,6 +169,7 @@ int32_t Win32GraphicsEnvironment::getYResolution() {
 }
 
 void Win32GraphicsEnvironment::displayChanged() {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsDeviceArray, newDevices, $new($GraphicsDeviceArray, getNumScreens()));
 	$var($GraphicsDeviceArray, oldScreens, this->screens);
 	if (oldScreens != nullptr) {
@@ -244,6 +245,7 @@ bool Win32GraphicsEnvironment::isDisplayLocal() {
 }
 
 bool Win32GraphicsEnvironment::isFlipStrategyPreferred($ComponentPeer* peer) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, nullptr);
 	if (peer != nullptr && ($assign(gc, peer->getGraphicsConfiguration())) != nullptr) {
 		$var($GraphicsDevice, gd, $nc(gc)->getDevice());

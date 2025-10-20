@@ -79,6 +79,7 @@ void bug6278700$2::init$($bug6278700* this$0) {
 }
 
 void bug6278700$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JSlider, slider, $new($JSlider, static_cast<$BoundedRangeModel*>($$new($DefaultBoundedRangeModel, 5, 0, 0, 10))));
 	slider->addChangeListener(this->this$0->listener);
 	slider->setValue(0);

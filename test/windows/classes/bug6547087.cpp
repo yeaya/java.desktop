@@ -77,6 +77,7 @@ void bug6547087::init$() {
 }
 
 void bug6547087::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		invokeAndWait($$new($bug6547087$1));
 	} catch ($ExecutionException&) {
@@ -88,6 +89,7 @@ void bug6547087::main($StringArray* args) {
 }
 
 void bug6547087::test() {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel($($UIManager::getSystemLookAndFeelClassName()));
 	$var($JPopupMenu$Separator, separator, $new($JPopupMenu$Separator));
 	separator->getPreferredSize();

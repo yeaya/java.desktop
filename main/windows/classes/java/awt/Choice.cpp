@@ -183,6 +183,7 @@ void Choice::init$() {
 }
 
 $String* Choice::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(Choice::class$) {
 		$var($String, var$0, Choice::base);
 		return $concat(var$0, $$str(Choice::nameCounter++));
@@ -303,6 +304,7 @@ $String* Choice::getSelectedItem() {
 
 $ObjectArray* Choice::getSelectedObjects() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->selectedIndex >= 0) {
 			$var($ObjectArray, items, $new($ObjectArray, 1));
 			items->set(0, $(getItem(this->selectedIndex)));
@@ -318,6 +320,7 @@ int32_t Choice::getSelectedIndex() {
 
 void Choice::select(int32_t pos) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if ((pos >= $nc(this->pItems)->size()) || (pos < 0)) {
 			$throwNew($IllegalArgumentException, $$str({"illegal Choice item position: "_s, $$str(pos)}));
 		}
@@ -403,6 +406,7 @@ void Choice::processItemEvent($ItemEvent* e) {
 }
 
 $String* Choice::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $$str({$($Component::paramString()), ",current="_s}));
 	return $concat(var$0, $(getSelectedItem()));
 }
@@ -415,6 +419,7 @@ void Choice::writeObject($ObjectOutputStream* s) {
 }
 
 void Choice::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$GraphicsEnvironment::checkHeadless();
 	$nc(s)->defaultReadObject();
 	$var($Object, keyOrNull, nullptr);

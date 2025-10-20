@@ -70,6 +70,7 @@ void ImageIO$CanDecodeInputFilter::init$(Object$* input) {
 }
 
 bool ImageIO$CanDecodeInputFilter::filter(Object$* elt) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($ImageReaderSpi, spi, $cast($ImageReaderSpi, elt));
 		$var($ImageInputStream, stream, nullptr);

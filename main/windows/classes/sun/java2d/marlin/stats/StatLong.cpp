@@ -97,6 +97,7 @@ void StatLong::add(int64_t val) {
 }
 
 $String* StatLong::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($(toString($$new($StringBuilder, 128))))->toString();
 }
 

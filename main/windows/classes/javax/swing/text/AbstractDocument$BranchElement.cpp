@@ -127,6 +127,7 @@ void AbstractDocument$BranchElement::replace(int32_t offset, int32_t length, $El
 }
 
 $String* AbstractDocument$BranchElement::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$3, $$str({"BranchElement("_s, $(getName()), ") "_s}));
 	$var($String, var$2, $$concat(var$3, $$str(getStartOffset())));
 	$var($String, var$1, $$concat(var$2, ","));
@@ -163,6 +164,7 @@ int32_t AbstractDocument$BranchElement::getElementCount() {
 }
 
 int32_t AbstractDocument$BranchElement::getElementIndex(int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	int32_t index = 0;
 	int32_t lower = 0;
 	int32_t upper = this->nchildren - 1;

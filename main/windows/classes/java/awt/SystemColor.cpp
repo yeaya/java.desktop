@@ -258,6 +258,7 @@ void SystemColor::init$(int8_t index) {
 }
 
 $String* SystemColor::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($of(this)->getClass()->getName()), "[i="_s, $$str((this->index)), "]"_s});
 }
 

@@ -93,6 +93,7 @@ void bug7088744$1::init$() {
 }
 
 void bug7088744$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, source, $new($JLabel));
 	$var($MouseEvent, mouseEventNoButtons, $new($MouseEvent, source, 0, $System::currentTimeMillis(), (($Event::ALT_MASK | $Event::META_MASK) | $InputEvent::ALT_DOWN_MASK) | $InputEvent::META_DOWN_MASK, 0, 0, 0, false, $MouseEvent::NOBUTTON));
 	if ($SwingUtilities::isLeftMouseButton(mouseEventNoButtons)) {

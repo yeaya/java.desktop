@@ -103,6 +103,7 @@ void HTMLDocument$HTMLReader$ConvertAction::init$($HTMLDocument$HTMLReader* this
 }
 
 void HTMLDocument$HTMLReader$ConvertAction::start($HTML$Tag* t, $MutableAttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	this->this$1->pushCharacterStyle();
 	if (!this->this$1->foundInsertTag$) {
 		bool insert = this->this$1->canInsertTag(t, attr, false);

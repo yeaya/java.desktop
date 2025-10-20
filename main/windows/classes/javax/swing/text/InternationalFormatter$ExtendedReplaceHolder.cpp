@@ -72,6 +72,7 @@ void InternationalFormatter$ExtendedReplaceHolder::init$() {
 }
 
 void InternationalFormatter$ExtendedReplaceHolder::resetFromValue($InternationalFormatter* formatter) {
+	$useLocalCurrentObjectStackCache();
 	this->offset = 0;
 	try {
 		$set(this, text, $nc(formatter)->valueToString(this->value));

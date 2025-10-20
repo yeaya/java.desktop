@@ -243,6 +243,7 @@ void SetInvokerJPopupMenuTest::init$() {
 }
 
 void SetInvokerJPopupMenuTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($UIManager$LookAndFeelInfoArray, installedLookAndFeels, nullptr);
 	$assign(installedLookAndFeels, $UIManager::getInstalledLookAndFeels());
 	{
@@ -317,6 +318,7 @@ void SetInvokerJPopupMenuTest::lambda$main$1() {
 }
 
 void SetInvokerJPopupMenuTest::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$init(SetInvokerJPopupMenuTest);
 	$assignStatic(SetInvokerJPopupMenuTest::jtb, $new($SetInvokerJPopupMenuTest$MyButton, "Press Me"_s));
 	$nc(SetInvokerJPopupMenuTest::jtb)->addActionListener($$new($SetInvokerJPopupMenuTest$1));

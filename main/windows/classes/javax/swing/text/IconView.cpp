@@ -87,11 +87,13 @@ void IconView::init$($Element* elem) {
 }
 
 void IconView::paint($Graphics* g, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, alloc, $nc(a)->getBounds());
 	$nc(this->c)->paintIcon($(getContainer()), g, $nc(alloc)->x, alloc->y);
 }
 
 float IconView::getPreferredSpan(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	switch (axis) {
 	case $View::X_AXIS:
 		{
@@ -122,6 +124,7 @@ float IconView::getAlignment(int32_t axis) {
 }
 
 $Shape* IconView::modelToView(int32_t pos, $Shape* a, $Position$Bias* b) {
+	$useLocalCurrentObjectStackCache();
 	int32_t p0 = getStartOffset();
 	int32_t p1 = getEndOffset();
 	if ((pos >= p0) && (pos <= p1)) {

@@ -84,6 +84,7 @@ void BasicButtonListener$Actions::init$($String* name) {
 }
 
 void BasicButtonListener$Actions::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, $nc(e)->getSource()));
 	$var($String, key, getName());
 	if (key == BasicButtonListener$Actions::PRESS) {

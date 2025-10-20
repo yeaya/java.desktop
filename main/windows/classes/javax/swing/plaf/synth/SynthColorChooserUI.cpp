@@ -132,6 +132,7 @@ $ComponentUI* SynthColorChooserUI::createUI($JComponent* c) {
 }
 
 $AbstractColorChooserPanelArray* SynthColorChooserUI::createDefaultChoosers() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(this->chooser, $SynthConstants::ENABLED));
 	$var($AbstractColorChooserPanelArray, panels, $cast($AbstractColorChooserPanelArray, $nc($($nc(context)->getStyle()))->get(context, "ColorChooser.panels"_s)));
 	if (panels == nullptr) {
@@ -180,6 +181,7 @@ int32_t SynthColorChooserUI::getComponentState($JComponent* c) {
 }
 
 void SynthColorChooserUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);

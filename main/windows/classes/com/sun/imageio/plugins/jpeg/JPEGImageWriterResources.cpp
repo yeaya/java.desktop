@@ -66,6 +66,7 @@ void JPEGImageWriterResources::init$() {
 }
 
 $ObjectArray2* JPEGImageWriterResources::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$($of($Integer::toString($JPEGImageWriter::WARNING_DEST_IGNORED))),

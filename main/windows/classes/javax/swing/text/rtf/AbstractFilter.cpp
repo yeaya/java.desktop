@@ -107,6 +107,7 @@ void AbstractFilter::write(int32_t b) {
 }
 
 void AbstractFilter::write($bytes* buf, int32_t off, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, accumulator, nullptr);
 	while (len > 0) {
 		int16_t b = (int16_t)$nc(buf)->get(off);

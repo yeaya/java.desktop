@@ -47,6 +47,7 @@ void basic_sv::init$() {
 }
 
 $ObjectArray2* basic_sv::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("AbstractButton.click.textAndMnemonic"_s),

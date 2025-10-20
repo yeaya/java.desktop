@@ -56,6 +56,7 @@ void SynthTest::init$() {
 
 void SynthTest::main($StringArray* args) {
 	$load(SynthTest);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($SynthLookAndFeel, laf, $new($SynthLookAndFeel));
 	$var($InputStream, in, SynthTest::class$->getResourceAsStream("synthconfig.xml"_s));

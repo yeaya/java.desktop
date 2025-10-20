@@ -202,6 +202,7 @@ void AffineTransformOp::init$($AffineTransform* xform, $RenderingHints* hints) {
 }
 
 void AffineTransformOp::init$($AffineTransform* xform, int32_t interpolationType) {
+	$useLocalCurrentObjectStackCache();
 	this->interpolationType = AffineTransformOp::TYPE_NEAREST_NEIGHBOR;
 	validateTransform(xform);
 	$set(this, xform, $cast($AffineTransform, $nc(xform)->clone()));
@@ -227,6 +228,7 @@ int32_t AffineTransformOp::getInterpolationType() {
 }
 
 $BufferedImage* AffineTransformOp::filter($BufferedImage* src$renamed, $BufferedImage* dst$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, dst, dst$renamed);
 	$var($BufferedImage, src, src$renamed);
 	if (src == nullptr) {
@@ -304,6 +306,7 @@ $BufferedImage* AffineTransformOp::filter($BufferedImage* src$renamed, $Buffered
 }
 
 $WritableRaster* AffineTransformOp::filter($Raster* src, $WritableRaster* dst$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($WritableRaster, dst, dst$renamed);
 	if (src == nullptr) {
 		$throwNew($NullPointerException, "src image is null"_s);
@@ -364,6 +367,7 @@ $Rectangle2D* AffineTransformOp::getBounds2D($Raster* src) {
 }
 
 $BufferedImage* AffineTransformOp::createCompatibleDestImage($BufferedImage* src, $ColorModel* destCM) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, image, nullptr);
 	$var($Rectangle, r, $nc($(getBounds2D(src)))->getBounds());
 	int32_t w = $nc(r)->x + r->width;
@@ -408,6 +412,7 @@ $AffineTransform* AffineTransformOp::getTransform() {
 }
 
 $RenderingHints* AffineTransformOp::getRenderingHints() {
+	$useLocalCurrentObjectStackCache();
 	if (this->hints == nullptr) {
 		$var($Object, val, nullptr);
 		switch (this->interpolationType) {

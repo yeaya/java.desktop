@@ -202,6 +202,7 @@ void SpanTest$2::init$($SpanTest* this$0) {
 }
 
 void SpanTest$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, description, " INSTRUCTIONS:\n A string will be shown.\n  Press Pass if there is no overlap of characters\n else press Fail."_s);
 	$init($SpanTest);
 	$assignStatic($SpanTest::dialog, $new($JDialog));

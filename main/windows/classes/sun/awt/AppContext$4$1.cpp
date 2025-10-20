@@ -79,6 +79,7 @@ void AppContext$4$1::init$($AppContext$4* this$1) {
 }
 
 $Object* AppContext$4$1::run() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = !$GraphicsEnvironment::isHeadless();
 	if (var$0 && $SystemTray::isSupported()) {
 		$var($SystemTray, systemTray, $SystemTray::getSystemTray());

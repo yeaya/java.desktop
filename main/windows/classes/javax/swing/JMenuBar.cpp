@@ -329,6 +329,7 @@ void JMenuBar::setUI($MenuBarUI* ui) {
 }
 
 void JMenuBar::updateUI() {
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, tk, $Toolkit::getDefaultToolkit());
 	if ($instanceOf($SunToolkit, tk)) {
 		$nc(($cast($SunToolkit, tk)))->updateScreenMenuBarUI();
@@ -384,6 +385,7 @@ $Component* JMenuBar::getComponentAtIndex(int32_t i) {
 }
 
 int32_t JMenuBar::getComponentIndex($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t ncomponents = this->getComponentCount();
 	$var($ComponentArray, component, this->getComponents());
 	for (int32_t i = 0; i < ncomponents; ++i) {
@@ -453,6 +455,7 @@ void JMenuBar::menuSelectionChanged(bool isIncluded) {
 }
 
 $MenuElementArray* JMenuBar::getSubElements() {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuElementArray, result, nullptr);
 	$var($Vector, tmp, $new($Vector));
 	int32_t c = getComponentCount();
@@ -476,6 +479,7 @@ $Component* JMenuBar::getComponent() {
 }
 
 $String* JMenuBar::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, paintBorderString, this->paintBorder$ ? "true"_s : "false"_s);
 	$var($String, marginString, this->margin != nullptr ? $nc(this->margin)->toString() : ""_s);
 	return $str({$($JComponent::paramString()), ",margin="_s, marginString, ",paintBorder="_s, paintBorderString});
@@ -489,6 +493,7 @@ $AccessibleContext* JMenuBar::getAccessibleContext() {
 }
 
 bool JMenuBar::processKeyBinding($KeyStroke* ks, $KeyEvent* e, int32_t condition, bool pressed) {
+	$useLocalCurrentObjectStackCache();
 	bool retValue = $JComponent::processKeyBinding(ks, e, condition, pressed);
 	if (!retValue) {
 		$var($MenuElementArray, subElements, getSubElements());
@@ -511,6 +516,7 @@ bool JMenuBar::processKeyBinding($KeyStroke* ks, $KeyEvent* e, int32_t condition
 
 bool JMenuBar::processBindingForKeyStrokeRecursive($MenuElement* elem, $KeyStroke* ks, $KeyEvent* e, int32_t condition, bool pressed) {
 	$init(JMenuBar);
+	$useLocalCurrentObjectStackCache();
 	if (elem == nullptr) {
 		return false;
 	}
@@ -550,6 +556,7 @@ void JMenuBar::removeNotify() {
 }
 
 void JMenuBar::writeObject($ObjectOutputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultWriteObject();
 	if ($nc($(getUIClassID()))->equals(JMenuBar::uiClassID)) {
 		int8_t count = $JComponent::getWriteObjCounter(this);

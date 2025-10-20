@@ -307,6 +307,7 @@ void BasicScrollBarUI::init$() {
 
 void BasicScrollBarUI::loadActionMap($LazyActionMap* map) {
 	$init(BasicScrollBarUI);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicScrollBarUI$Actions);
 	$nc(map)->put($$new($BasicScrollBarUI$Actions, $BasicScrollBarUI$Actions::POSITIVE_UNIT_INCREMENT));
 	map->put($$new($BasicScrollBarUI$Actions, $BasicScrollBarUI$Actions::POSITIVE_BLOCK_INCREMENT));
@@ -354,6 +355,7 @@ void BasicScrollBarUI::uninstallUI($JComponent* c) {
 }
 
 void BasicScrollBarUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	this->scrollBarWidth = $UIManager::getInt("ScrollBar.width"_s);
 	if (this->scrollBarWidth <= 0) {
 		this->scrollBarWidth = 16;
@@ -422,6 +424,7 @@ void BasicScrollBarUI::uninstallComponents() {
 }
 
 void BasicScrollBarUI::installListeners() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, trackListener, createTrackListener());
 	$set(this, buttonListener, createArrowButtonListener());
 	$set(this, modelListener, createModelListener());
@@ -456,6 +459,7 @@ void BasicScrollBarUI::uninstallKeyboardActions() {
 }
 
 $InputMap* BasicScrollBarUI::getInputMap(int32_t condition) {
+	$useLocalCurrentObjectStackCache();
 	if (condition == $JComponent::WHEN_FOCUSED) {
 		$var($InputMap, keyMap, $cast($InputMap, $DefaultLookup::get(this->scrollbar, this, "ScrollBar.focusInputMap"_s)));
 		$var($InputMap, rtlKeyMap, nullptr);
@@ -481,6 +485,7 @@ $InputMap* BasicScrollBarUI::getInputMap(int32_t condition) {
 }
 
 void BasicScrollBarUI::uninstallListeners() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->scrollTimer)->stop();
 	$set(this, scrollTimer, nullptr);
 	if (this->decrButton != nullptr) {
@@ -548,6 +553,7 @@ bool BasicScrollBarUI::isThumbRollover() {
 }
 
 void BasicScrollBarUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	paintTrack(g, c, $(getTrackBounds()));
 	$var($Rectangle, thumbBounds, getThumbBounds());
 	if ($nc(thumbBounds)->intersects($($nc(g)->getClipBounds()))) {
@@ -564,6 +570,7 @@ $Dimension* BasicScrollBarUI::getMaximumSize($JComponent* c) {
 }
 
 $JButton* BasicScrollBarUI::createDecreaseButton(int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = orientation;
 	$var($Color, var$1, $UIManager::getColor("ScrollBar.thumb"_s));
 	$var($Color, var$2, $UIManager::getColor("ScrollBar.thumbShadow"_s));
@@ -572,6 +579,7 @@ $JButton* BasicScrollBarUI::createDecreaseButton(int32_t orientation) {
 }
 
 $JButton* BasicScrollBarUI::createIncreaseButton(int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = orientation;
 	$var($Color, var$1, $UIManager::getColor("ScrollBar.thumb"_s));
 	$var($Color, var$2, $UIManager::getColor("ScrollBar.thumbShadow"_s));
@@ -580,6 +588,7 @@ $JButton* BasicScrollBarUI::createIncreaseButton(int32_t orientation) {
 }
 
 void BasicScrollBarUI::paintDecreaseHighlight($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, $nc(this->scrollbar)->getInsets());
 	$var($Rectangle, thumbR, getThumbBounds());
 	$nc(g)->setColor(this->trackHighlightColor);
@@ -606,6 +615,7 @@ void BasicScrollBarUI::paintDecreaseHighlight($Graphics* g) {
 }
 
 void BasicScrollBarUI::paintIncreaseHighlight($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, $nc(this->scrollbar)->getInsets());
 	$var($Rectangle, thumbR, getThumbBounds());
 	$nc(g)->setColor(this->trackHighlightColor);
@@ -689,6 +699,7 @@ int32_t BasicScrollBarUI::getValue($JScrollBar* sb) {
 }
 
 void BasicScrollBarUI::layoutVScrollbar($JScrollBar* sb) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, sbSize, $nc(sb)->getSize());
 	$var($Insets, sbInsets, sb->getInsets());
 	int32_t itemW = $nc(sbSize)->width - ($nc(sbInsets)->left + sbInsets->right);
@@ -746,6 +757,7 @@ void BasicScrollBarUI::layoutVScrollbar($JScrollBar* sb) {
 }
 
 void BasicScrollBarUI::layoutHScrollbar($JScrollBar* sb) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, sbSize, $nc(sb)->getSize());
 	$var($Insets, sbInsets, sb->getInsets());
 	int32_t itemH = $nc(sbSize)->height - ($nc(sbInsets)->top + sbInsets->bottom);

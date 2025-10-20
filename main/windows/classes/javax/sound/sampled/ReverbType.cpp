@@ -101,6 +101,7 @@ int32_t ReverbType::hashCode() {
 }
 
 $String* ReverbType::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $String::format("%s, early reflection delay %d ns, early reflection intensity %s dB, late deflection delay %d ns, late reflection intensity %s dB, decay time %d"_s, $$new($ObjectArray, {
 		$($of(getName())),
 		$($of($Integer::valueOf(this->earlyReflectionDelay))),

@@ -78,6 +78,7 @@ int32_t TabSet::getTabCount() {
 }
 
 $TabStop* TabSet::getTab(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	int32_t numTabs = getTabCount();
 	if (index < 0 || index >= numTabs) {
 		$throwNew($IllegalArgumentException, $$str({$$str(index), " is outside the range of tabs"_s}));
@@ -124,6 +125,7 @@ int32_t TabSet::getTabIndexAfter(float location) {
 }
 
 bool TabSet::equals(Object$* o) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals(o, this)) {
 		return true;
 	}
@@ -146,6 +148,7 @@ bool TabSet::equals(Object$* o) {
 }
 
 int32_t TabSet::hashCode() {
+	$useLocalCurrentObjectStackCache();
 	if (this->hashCode$ == $Integer::MAX_VALUE) {
 		this->hashCode$ = 0;
 		int32_t len = getTabCount();
@@ -161,6 +164,7 @@ int32_t TabSet::hashCode() {
 }
 
 $String* TabSet::toString() {
+	$useLocalCurrentObjectStackCache();
 	int32_t tabCount = getTabCount();
 	$var($StringBuilder, buffer, $new($StringBuilder, "[ "_s));
 	for (int32_t counter = 0; counter < tabCount; ++counter) {

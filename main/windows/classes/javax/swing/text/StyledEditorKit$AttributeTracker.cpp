@@ -110,6 +110,7 @@ void StyledEditorKit$AttributeTracker::init$($StyledEditorKit* this$0) {
 }
 
 void StyledEditorKit$AttributeTracker::updateInputAttributes(int32_t dot, int32_t mark, $JTextComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, aDoc, $nc(c)->getDocument());
 	if (!($instanceOf($StyledDocument, aDoc))) {
 		return;
@@ -130,6 +131,7 @@ void StyledEditorKit$AttributeTracker::updateInputAttributes(int32_t dot, int32_
 }
 
 void StyledEditorKit$AttributeTracker::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, newValue, $nc(evt)->getNewValue());
 	$var($Object, source, evt->getSource());
 	if (($instanceOf($JTextComponent, source)) && ($instanceOf($Document, newValue))) {

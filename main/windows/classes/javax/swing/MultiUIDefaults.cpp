@@ -104,6 +104,7 @@ void MultiUIDefaults::init$() {
 }
 
 $Object* MultiUIDefaults::get(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, $UIDefaults::get(key));
 	if (value != nullptr) {
 		return $of(value);
@@ -126,6 +127,7 @@ $Object* MultiUIDefaults::get(Object$* key) {
 }
 
 $Object* MultiUIDefaults::get(Object$* key, $Locale* l) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, $UIDefaults::get(key, l));
 	if (value != nullptr) {
 		return $of(value);
@@ -161,6 +163,7 @@ $Enumeration* MultiUIDefaults::keys() {
 }
 
 $Set* MultiUIDefaults::keySet() {
+	$useLocalCurrentObjectStackCache();
 	$var($Set, set, $new($HashSet));
 	for (int32_t i = $nc(this->tables)->length - 1; i >= 0; --i) {
 		if ($nc(this->tables)->get(i) != nullptr) {
@@ -177,6 +180,7 @@ $Enumeration* MultiUIDefaults::elements() {
 }
 
 $Set* MultiUIDefaults::entrySet() {
+	$useLocalCurrentObjectStackCache();
 	$var($Set, set, $new($HashSet));
 	for (int32_t i = $nc(this->tables)->length - 1; i >= 0; --i) {
 		if ($nc(this->tables)->get(i) != nullptr) {
@@ -196,6 +200,7 @@ void MultiUIDefaults::getUIError($String* msg) {
 }
 
 $Object* MultiUIDefaults::remove(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, nullptr);
 	for (int32_t i = $nc(this->tables)->length - 1; i >= 0; --i) {
 		if ($nc(this->tables)->get(i) != nullptr) {
@@ -213,6 +218,7 @@ $Object* MultiUIDefaults::remove(Object$* key) {
 }
 
 void MultiUIDefaults::clear() {
+	$useLocalCurrentObjectStackCache();
 	$UIDefaults::clear();
 	{
 		$var($UIDefaultsArray, arr$, this->tables);
@@ -231,6 +237,7 @@ void MultiUIDefaults::clear() {
 
 $String* MultiUIDefaults::toString() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($StringBuilder, sb, $new($StringBuilder));
 		sb->append("{"_s);
 		$var($Enumeration, keys, this->keys());

@@ -92,6 +92,7 @@ void bug7013453$1::init$() {
 }
 
 void bug7013453$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$load($RepaintManager);

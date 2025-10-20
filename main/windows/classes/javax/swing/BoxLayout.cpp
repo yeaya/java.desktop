@@ -187,6 +187,7 @@ void BoxLayout::addLayoutComponent($Component* comp, Object$* constraints) {
 }
 
 $Dimension* BoxLayout::preferredLayoutSize($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, nullptr);
 	$synchronized(this) {
 		checkContainer(target);
@@ -200,6 +201,7 @@ $Dimension* BoxLayout::preferredLayoutSize($Container* target) {
 }
 
 $Dimension* BoxLayout::minimumLayoutSize($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, nullptr);
 	$synchronized(this) {
 		checkContainer(target);
@@ -213,6 +215,7 @@ $Dimension* BoxLayout::minimumLayoutSize($Container* target) {
 }
 
 $Dimension* BoxLayout::maximumLayoutSize($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, nullptr);
 	$synchronized(this) {
 		checkContainer(target);
@@ -242,6 +245,7 @@ float BoxLayout::getLayoutAlignmentY($Container* target) {
 }
 
 void BoxLayout::layoutContainer($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	checkContainer(target);
 	int32_t nChildren = $nc(target)->getComponentCount();
 	$var($ints, xOffsets, $new($ints, nChildren));
@@ -287,6 +291,7 @@ void BoxLayout::checkContainer($Container* target) {
 }
 
 void BoxLayout::checkRequests() {
+	$useLocalCurrentObjectStackCache();
 	if (this->xChildren == nullptr || this->yChildren == nullptr) {
 		int32_t n = $nc(this->target)->getComponentCount();
 		$set(this, xChildren, $new($SizeRequirementsArray, n));

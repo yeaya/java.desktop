@@ -143,6 +143,7 @@ int32_t UndoManager::getLimit() {
 
 void UndoManager::discardAllEdits() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		{
 			$var($Iterator, i$, $nc(this->edits)->iterator());
 			for (; $nc(i$)->hasNext();) {
@@ -183,6 +184,7 @@ void UndoManager::trimForLimit() {
 }
 
 void UndoManager::trimEdits(int32_t from, int32_t to) {
+	$useLocalCurrentObjectStackCache();
 	if (from <= to) {
 		for (int32_t i = to; from <= i; --i) {
 			$var($UndoableEdit, e, $cast($UndoableEdit, $nc(this->edits)->elementAt(i)));
@@ -208,6 +210,7 @@ void UndoManager::setLimit(int32_t l) {
 }
 
 $UndoableEdit* UndoManager::editToBeUndone() {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = this->indexOfNextAdd;
 	while (i > 0) {
 		$var($UndoableEdit, edit, $cast($UndoableEdit, $nc(this->edits)->elementAt(--i)));
@@ -219,6 +222,7 @@ $UndoableEdit* UndoManager::editToBeUndone() {
 }
 
 $UndoableEdit* UndoManager::editToBeRedone() {
+	$useLocalCurrentObjectStackCache();
 	int32_t count = $nc(this->edits)->size();
 	int32_t i = this->indexOfNextAdd;
 	while (i < count) {
@@ -231,6 +235,7 @@ $UndoableEdit* UndoManager::editToBeRedone() {
 }
 
 void UndoManager::undoTo($UndoableEdit* edit) {
+	$useLocalCurrentObjectStackCache();
 	bool done = false;
 	while (!done) {
 		$var($UndoableEdit, next, $cast($UndoableEdit, $nc(this->edits)->elementAt(--this->indexOfNextAdd)));
@@ -240,6 +245,7 @@ void UndoManager::undoTo($UndoableEdit* edit) {
 }
 
 void UndoManager::redoTo($UndoableEdit* edit) {
+	$useLocalCurrentObjectStackCache();
 	bool done = false;
 	while (!done) {
 		$var($UndoableEdit, next, $cast($UndoableEdit, $nc(this->edits)->elementAt(this->indexOfNextAdd++)));
@@ -285,6 +291,7 @@ void UndoManager::redo() {
 }
 
 void UndoManager::tryUndoOrRedo($UndoManager$Action* action) {
+	$useLocalCurrentObjectStackCache();
 	$var($UndoableEditLockSupport, lockSupport, nullptr);
 	bool undo = false;
 	$synchronized(this) {
@@ -451,6 +458,7 @@ void UndoManager::undoableEditHappened($UndoableEditEvent* e) {
 }
 
 $String* UndoManager::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($CompoundEdit::toString()), " limit: "_s, $$str(this->limit), " indexOfNextAdd: "_s, $$str(this->indexOfNextAdd)});
 }
 

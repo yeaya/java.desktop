@@ -70,6 +70,7 @@ void TimeChangeButtonClickTest::init$() {
 }
 
 void TimeChangeButtonClickTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($CountDownLatch, latch, $new($CountDownLatch, 1));
 	$var($TestUI, test, $new($TestUI, latch));
 	$SwingUtilities::invokeLater($$new($TimeChangeButtonClickTest$1, test));

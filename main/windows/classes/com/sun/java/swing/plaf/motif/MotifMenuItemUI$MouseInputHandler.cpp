@@ -94,11 +94,13 @@ void MotifMenuItemUI$MouseInputHandler::mouseClicked($MouseEvent* e) {
 }
 
 void MotifMenuItemUI$MouseInputHandler::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, manager, $MenuSelectionManager::defaultManager());
 	$nc(manager)->setSelectedPath($(this->this$0->getPath()));
 }
 
 void MotifMenuItemUI$MouseInputHandler::mouseReleased($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, manager, $MenuSelectionManager::defaultManager());
 	$var($JMenuItem, menuItem, $cast($JMenuItem, $nc(e)->getComponent()));
 	$var($Point, p, e->getPoint());

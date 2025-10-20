@@ -153,6 +153,7 @@ bool Win32FontManager::useAbsoluteFontFileNames() {
 }
 
 void Win32FontManager::registerFontFile($String* fontFileName, $StringArray* nativeNames, int32_t fontRank, bool defer) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->registeredFontFiles)->contains(fontFileName)) {
 		return;
 	}
@@ -230,6 +231,7 @@ $String* Win32FontManager::getFontPath(bool noType1Fonts) {
 }
 
 $StringArray* Win32FontManager::getDefaultPlatformFont() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($StringArray, info, $new($StringArray, 2));
 	info->set(0, "Arial"_s);
@@ -254,6 +256,7 @@ void Win32FontManager::registerJREFontsWithPlatform($String* pathName) {
 
 void Win32FontManager::registerJREFontsForPrinting() {
 	$init(Win32FontManager);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, pathName, nullptr);
 	$load($Win32GraphicsEnvironment);
@@ -283,6 +286,7 @@ void Win32FontManager::deRegisterFontWithPlatform($String* fontName) {
 }
 
 $HashMap* Win32FontManager::populateHardcodedFileNameMap() {
+	$useLocalCurrentObjectStackCache();
 	$var($HashMap, platformFontMap, $new($HashMap));
 	$var($SunFontManager$FamilyDescription, fd, nullptr);
 	$assign(fd, $new($SunFontManager$FamilyDescription));

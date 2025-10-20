@@ -78,6 +78,7 @@ void WindowsLookAndFeel$AudioAction::init$($String* name, $String* resource) {
 }
 
 void WindowsLookAndFeel$AudioAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->audioRunnable == nullptr) {
 		$set(this, audioRunnable, $cast($Runnable, $nc($($Toolkit::getDefaultToolkit()))->getDesktopProperty(this->audioResource)));
 	}

@@ -82,6 +82,7 @@ void bug7071166$1::init$() {
 }
 
 void bug7071166$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($LayoutStyle, layoutStyle, $LayoutStyle::getInstance());
 	$init($System);
 	$nc($System::out)->println($$str({"LayoutStyle: "_s, layoutStyle}));

@@ -190,6 +190,7 @@ void DefaultDesktopManager::init$() {
 }
 
 void DefaultDesktopManager::openFrame($JInternalFrame* f) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc(f)->getDesktopIcon()))->getParent() != nullptr) {
 		$nc($($nc($(f->getDesktopIcon()))->getParent()))->add(static_cast<$Component*>(f));
 		removeIconFor(f);
@@ -197,6 +198,7 @@ void DefaultDesktopManager::openFrame($JInternalFrame* f) {
 }
 
 void DefaultDesktopManager::closeFrame($JInternalFrame* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($JDesktopPane, d, $nc(f)->getDesktopPane());
 	if (d == nullptr) {
 		return;
@@ -238,6 +240,7 @@ void DefaultDesktopManager::closeFrame($JInternalFrame* f) {
 }
 
 void DefaultDesktopManager::maximizeFrame($JInternalFrame* f) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(f)->isIcon()) {
 		try {
 			f->setIcon(false);
@@ -278,6 +281,7 @@ void DefaultDesktopManager::minimizeFrame($JInternalFrame* f) {
 }
 
 void DefaultDesktopManager::iconifyFrame($JInternalFrame* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame$JDesktopIcon, desktopIcon, nullptr);
 	$var($Container, c, $nc(f)->getParent());
 	$var($JDesktopPane, d, f->getDesktopPane());
@@ -313,6 +317,7 @@ void DefaultDesktopManager::iconifyFrame($JInternalFrame* f) {
 }
 
 void DefaultDesktopManager::deiconifyFrame($JInternalFrame* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame$JDesktopIcon, desktopIcon, $nc(f)->getDesktopIcon());
 	$var($Container, c, $nc(desktopIcon)->getParent());
 	$var($JDesktopPane, d, f->getDesktopPane());
@@ -340,6 +345,7 @@ void DefaultDesktopManager::deiconifyFrame($JInternalFrame* f) {
 }
 
 void DefaultDesktopManager::activateFrame($JInternalFrame* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, p, $nc(f)->getParent());
 	$var($ComponentArray, c, nullptr);
 	$var($JDesktopPane, d, f->getDesktopPane());
@@ -370,6 +376,7 @@ void DefaultDesktopManager::activateFrame($JInternalFrame* f) {
 }
 
 void DefaultDesktopManager::deactivateFrame($JInternalFrame* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($JDesktopPane, d, $nc(f)->getDesktopPane());
 	$var($JInternalFrame, currentlyActiveFrame, (d == nullptr) ? ($JInternalFrame*)nullptr : $nc(d)->getSelectedFrame());
 	if (currentlyActiveFrame == f) {
@@ -396,6 +403,7 @@ void DefaultDesktopManager::beginDraggingFrame($JComponent* f) {
 }
 
 void DefaultDesktopManager::setupDragMode($JComponent* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($JDesktopPane, p, getDesktopPane(f));
 	$var($Container, parent, $nc(f)->getParent());
 	this->dragMode = DefaultDesktopManager::DEFAULT_DRAG_MODE;
@@ -426,6 +434,7 @@ void DefaultDesktopManager::setupDragMode($JComponent* f) {
 }
 
 void DefaultDesktopManager::dragFrame($JComponent* f, int32_t newX, int32_t newY) {
+	$useLocalCurrentObjectStackCache();
 	if (this->dragMode == DefaultDesktopManager::OUTLINE_DRAG_MODE) {
 		$var($JDesktopPane, desktopPane, getDesktopPane(f));
 		if (desktopPane != nullptr) {
@@ -483,6 +492,7 @@ void DefaultDesktopManager::beginResizingFrame($JComponent* f, int32_t direction
 }
 
 void DefaultDesktopManager::resizeFrame($JComponent* f, int32_t newX, int32_t newY, int32_t newWidth, int32_t newHeight) {
+	$useLocalCurrentObjectStackCache();
 	if (this->dragMode == DefaultDesktopManager::DEFAULT_DRAG_MODE || this->dragMode == DefaultDesktopManager::FASTER_DRAG_MODE) {
 		setBoundsForFrame(f, newX, newY, newWidth, newHeight);
 	} else {
@@ -518,6 +528,7 @@ void DefaultDesktopManager::setBoundsForFrame($JComponent* f, int32_t newX, int3
 }
 
 void DefaultDesktopManager::removeIconFor($JInternalFrame* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame$JDesktopIcon, di, $nc(f)->getDesktopIcon());
 	$var($Container, c, $nc(di)->getParent());
 	if (c != nullptr) {
@@ -530,6 +541,7 @@ void DefaultDesktopManager::removeIconFor($JInternalFrame* f) {
 }
 
 $Rectangle* DefaultDesktopManager::getBoundsForIconOf($JInternalFrame* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame$JDesktopIcon, icon, $nc(f)->getDesktopIcon());
 	$var($Dimension, prefSize, $nc(icon)->getPreferredSize());
 	$var($Container, c, f->getParent());
@@ -598,6 +610,7 @@ bool DefaultDesktopManager::wasIcon($JInternalFrame* f) {
 }
 
 $JDesktopPane* DefaultDesktopManager::getDesktopPane($JComponent* frame) {
+	$useLocalCurrentObjectStackCache();
 	$var($JDesktopPane, pane, nullptr);
 	$var($Component, c, $nc(frame)->getParent());
 	while (pane == nullptr) {
@@ -613,6 +626,7 @@ $JDesktopPane* DefaultDesktopManager::getDesktopPane($JComponent* frame) {
 }
 
 void DefaultDesktopManager::dragFrameFaster($JComponent* f, int32_t newX, int32_t newY) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, previousBounds, $new($Rectangle, $nc(this->currentBounds)->x, $nc(this->currentBounds)->y, $nc(this->currentBounds)->width, $nc(this->currentBounds)->height));
 	$nc(this->currentBounds)->x = newX;
 	$nc(this->currentBounds)->y = newY;
@@ -704,6 +718,7 @@ bool DefaultDesktopManager::isFloaterCollision($Rectangle* moveFrom, $Rectangle*
 }
 
 $RectangleArray* DefaultDesktopManager::findFloatingItems($JComponent* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, desktop, $nc(f)->getParent());
 	$var($ComponentArray, children, $nc(desktop)->getComponents());
 	int32_t i = 0;

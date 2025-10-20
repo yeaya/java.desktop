@@ -137,6 +137,7 @@ void RTFParser::write($String* s$renamed) {
 }
 
 void RTFParser::write(char16_t ch) {
+	$useLocalCurrentObjectStackCache();
 	bool ok = false;
 	switch (this->state) {
 	case this->S_text:

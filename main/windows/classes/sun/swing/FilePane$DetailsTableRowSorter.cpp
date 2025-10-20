@@ -98,6 +98,7 @@ void FilePane$DetailsTableRowSorter::access$001(FilePane$DetailsTableRowSorter* 
 }
 
 void FilePane$DetailsTableRowSorter::init$($FilePane* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$TableRowSorter::init$();
 	$var($FilePane$DetailsTableRowSorter$SorterModelWrapper, modelWrapper, $new($FilePane$DetailsTableRowSorter$SorterModelWrapper, this));
@@ -106,6 +107,7 @@ void FilePane$DetailsTableRowSorter::init$($FilePane* this$0) {
 }
 
 void FilePane$DetailsTableRowSorter::updateComparators($ShellFolderColumnInfoArray* columns) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(columns)->length; ++i) {
 		$var($Comparator, c, $nc(columns->get(i))->getComparator());
 		if (c != nullptr) {

@@ -94,6 +94,7 @@ void SwingFontMetricsTest$1::init$($String* arg0, $JFrame* val$frame) {
 }
 
 void SwingFontMetricsTest$1::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$JLabel::paint(g);
 	$var($Font, font, getFont());
 	$var($Graphics2D, g2d, $cast($Graphics2D, g));

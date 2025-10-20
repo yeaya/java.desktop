@@ -178,6 +178,7 @@ $String* AttributeList::type2name(int32_t tp) {
 }
 
 void clinit$AttributeList($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(AttributeList::attributeTypes, $new($Hashtable));
 	{
 		AttributeList::defineAttributeType("CDATA"_s, $DTDConstants::CDATA);

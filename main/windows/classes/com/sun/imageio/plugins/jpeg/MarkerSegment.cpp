@@ -89,6 +89,7 @@ $Object* allocate$MarkerSegment($Class* clazz) {
 }
 
 void MarkerSegment::init$($JPEGBuffer* buffer) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, data, nullptr);
 	this->unknown = false;
 	$nc(buffer)->loadBuf(3);
@@ -111,6 +112,7 @@ void MarkerSegment::init$(int32_t tag) {
 }
 
 void MarkerSegment::init$($Node* node) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, data, nullptr);
 	this->unknown = false;
 	this->tag = getAttributeValue(node, nullptr, "MarkerTag"_s, 0, 255, true);
@@ -149,6 +151,7 @@ void MarkerSegment::loadData($JPEGBuffer* buffer) {
 }
 
 $IIOMetadataNode* MarkerSegment::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "unknown"_s));
 	node->setAttribute("MarkerTag"_s, $($Integer::toString(this->tag)));
 	node->setUserObject(this->data);
@@ -157,6 +160,7 @@ $IIOMetadataNode* MarkerSegment::getNativeNode() {
 
 int32_t MarkerSegment::getAttributeValue($Node* node, $NamedNodeMap* attrs$renamed, $String* name, int32_t min, int32_t max, bool required) {
 	$init(MarkerSegment);
+	$useLocalCurrentObjectStackCache();
 	$var($NamedNodeMap, attrs, attrs$renamed);
 	if (attrs == nullptr) {
 		$assign(attrs, $nc(node)->getAttributes());
@@ -197,12 +201,14 @@ void MarkerSegment::write2bytes($ImageOutputStream* ios, int32_t value) {
 }
 
 void MarkerSegment::printTag($String* prefix) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println($$str({prefix, " marker segment - marker = 0x"_s, $($Integer::toHexString(this->tag))}));
 	$nc($System::out)->println($$str({"length: "_s, $$str(this->length)}));
 }
 
 void MarkerSegment::print() {
+	$useLocalCurrentObjectStackCache();
 	printTag("Unknown"_s);
 	if (this->length > 10) {
 		$init($System);

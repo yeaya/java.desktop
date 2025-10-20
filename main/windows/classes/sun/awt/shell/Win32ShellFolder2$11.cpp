@@ -79,6 +79,7 @@ void Win32ShellFolder2$11::init$($Win32ShellFolder2* this$0, bool val$resolve) {
 }
 
 $Object* Win32ShellFolder2$11::call() {
+	$useLocalCurrentObjectStackCache();
 	if (!this->this$0->isLink()) {
 		return $of(nullptr);
 	}

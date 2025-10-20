@@ -92,6 +92,7 @@ $Point2D$Float* GlyphLayout$SDCache::ZERO_DELTA = nullptr;
 $SoftReference* GlyphLayout$SDCache::cacheRef = nullptr;
 
 void GlyphLayout$SDCache::init$($Font* font, $FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, key_font, font);
 	$set(this, key_frc, frc);
 	$set(this, dtx, $nc(frc)->getTransform());
@@ -124,6 +125,7 @@ void GlyphLayout$SDCache::init$($Font* font, $FontRenderContext* frc) {
 
 GlyphLayout$SDCache* GlyphLayout$SDCache::get($Font* font, $FontRenderContext* frc$renamed) {
 	$init(GlyphLayout$SDCache);
+	$useLocalCurrentObjectStackCache();
 	$var($FontRenderContext, frc, frc$renamed);
 	if ($nc(frc)->isTransformed()) {
 		$var($AffineTransform, transform, frc->getTransform());

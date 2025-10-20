@@ -328,6 +328,7 @@ void AccessibleHTML$TableElementInfo$TableAccessibleContext::setAccessibleColumn
 }
 
 bool AccessibleHTML$TableElementInfo$TableAccessibleContext::isAccessibleSelected(int32_t r, int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$1->validateIfNecessary()) {
 		bool var$0 = r < 0 || r >= getAccessibleRowCount() || c < 0;
 		if (var$0 || c >= getAccessibleColumnCount()) {
@@ -346,6 +347,7 @@ bool AccessibleHTML$TableElementInfo$TableAccessibleContext::isAccessibleSelecte
 }
 
 bool AccessibleHTML$TableElementInfo$TableAccessibleContext::isAccessibleRowSelected(int32_t r) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$1->validateIfNecessary()) {
 		if (r < 0 || r >= getAccessibleRowCount()) {
 			return false;
@@ -368,6 +370,7 @@ bool AccessibleHTML$TableElementInfo$TableAccessibleContext::isAccessibleRowSele
 }
 
 bool AccessibleHTML$TableElementInfo$TableAccessibleContext::isAccessibleColumnSelected(int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$1->validateIfNecessary()) {
 		if (c < 0 || c >= getAccessibleColumnCount()) {
 			return false;
@@ -390,6 +393,7 @@ bool AccessibleHTML$TableElementInfo$TableAccessibleContext::isAccessibleColumnS
 }
 
 $ints* AccessibleHTML$TableElementInfo$TableAccessibleContext::getSelectedAccessibleRows() {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$1->validateIfNecessary()) {
 		int32_t nRows = getAccessibleRowCount();
 		$var($Vector, vec, $new($Vector));
@@ -408,6 +412,7 @@ $ints* AccessibleHTML$TableElementInfo$TableAccessibleContext::getSelectedAccess
 }
 
 $ints* AccessibleHTML$TableElementInfo$TableAccessibleContext::getSelectedAccessibleColumns() {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$1->validateIfNecessary()) {
 		int32_t nColumns = getAccessibleRowCount();
 		$var($Vector, vec, $new($Vector));
@@ -464,6 +469,7 @@ int32_t AccessibleHTML$TableElementInfo$TableAccessibleContext::getAccessibleInd
 }
 
 $String* AccessibleHTML$TableElementInfo$TableAccessibleContext::getAccessibleRowHeader(int32_t r) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$1->validateIfNecessary()) {
 		$var($AccessibleHTML$TableElementInfo$TableCellElementInfo, cellInfo, this->this$1->getCell(r, 0));
 		if ($nc(cellInfo)->isHeaderCell()) {
@@ -484,6 +490,7 @@ $String* AccessibleHTML$TableElementInfo$TableAccessibleContext::getAccessibleRo
 }
 
 $String* AccessibleHTML$TableElementInfo$TableAccessibleContext::getAccessibleColumnHeader(int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$1->validateIfNecessary()) {
 		$var($AccessibleHTML$TableElementInfo$TableCellElementInfo, cellInfo, this->this$1->getCell(0, c));
 		if ($nc(cellInfo)->isHeaderCell()) {

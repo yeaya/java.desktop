@@ -100,6 +100,7 @@ $Object* allocate$ServiceDialog$IconRadioButton($Class* clazz) {
 }
 
 void ServiceDialog$IconRadioButton::init$($ServiceDialog* this$0, $String* key, $String* img, bool selected, $ButtonGroup* bg, $ActionListener* al) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$set(this, this$0, this$0);
 	$JPanel::init$(static_cast<$LayoutManager*>($$new($FlowLayout, $FlowLayout::LEADING)));

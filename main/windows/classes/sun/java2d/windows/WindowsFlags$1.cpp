@@ -68,6 +68,7 @@ void WindowsFlags$1::init$() {
 }
 
 $Object* WindowsFlags$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($WindowsFlags);
 	$WindowsFlags::magPresent = $WindowsFlags::getBooleanProp("javax.accessibility.screen_magnifier_present"_s, false);
 	bool ddEnabled = !$WindowsFlags::getBooleanProp("sun.java2d.noddraw"_s, $WindowsFlags::magPresent);

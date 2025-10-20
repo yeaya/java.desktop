@@ -96,6 +96,7 @@ void StyledEditorKit$FontSizeAction::init$($String* nm, int32_t size) {
 }
 
 void StyledEditorKit$FontSizeAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, editor, getEditor(e));
 	if (editor != nullptr) {
 		int32_t size = this->size;

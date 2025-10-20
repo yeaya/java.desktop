@@ -63,6 +63,7 @@ void BeanDescriptor::init$($Class* beanClass) {
 }
 
 void BeanDescriptor::init$($Class* beanClass, $Class* customizerClass) {
+	$useLocalCurrentObjectStackCache();
 	$FeatureDescriptor::init$();
 	$set(this, beanClassRef, getWeakReference(beanClass));
 	$set(this, customizerClassRef, getWeakReference(customizerClass));

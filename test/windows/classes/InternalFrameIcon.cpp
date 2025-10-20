@@ -126,6 +126,7 @@ void InternalFrameIcon::init$() {
 
 void InternalFrameIcon::main($StringArray* args) {
 	$init(InternalFrameIcon);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -142,6 +143,7 @@ void InternalFrameIcon::main($StringArray* args) {
 
 void InternalFrameIcon::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(InternalFrameIcon);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 		$init($System);
@@ -161,6 +163,7 @@ void InternalFrameIcon::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 }
 
 void InternalFrameIcon::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, o, $nc($($UIManager::getDefaults()))->get("InternalFrame.icon"_s));
 	if (o != nullptr && !($instanceOf($Icon, o))) {
 		$throwNew($RuntimeException, $$str({"Wrong object: "_s, o}));

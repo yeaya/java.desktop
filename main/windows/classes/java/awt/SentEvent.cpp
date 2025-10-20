@@ -98,12 +98,14 @@ void SentEvent::init$($AWTEvent* nested) {
 }
 
 void SentEvent::init$($AWTEvent* nested, $AppContext* toNotify) {
+	$useLocalCurrentObjectStackCache();
 	$AWTEvent::init$((nested != nullptr) ? $($nc(nested)->getSource()) : $($of($Toolkit::getDefaultToolkit())), SentEvent::ID);
 	$set(this, nested, nested);
 	$set(this, toNotify, toNotify);
 }
 
 void SentEvent::dispatch() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

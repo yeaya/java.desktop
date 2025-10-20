@@ -84,6 +84,7 @@ $ObjectArray* EventListenerList::getListenerList() {
 }
 
 $EventListenerArray* EventListenerList::getListeners($Class* t) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, lList, this->listenerList);
 	int32_t n = getListenerCount(lList, t);
 	$var($EventListenerArray, result, $cast($EventListenerArray, $1Array::newInstance(t, n)));
@@ -118,6 +119,7 @@ int32_t EventListenerList::getListenerCount($ObjectArray* list, $Class* t) {
 
 void EventListenerList::add($Class* t, $EventListener* l) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (l == nullptr) {
 			return;
 		}
@@ -142,6 +144,7 @@ void EventListenerList::add($Class* t, $EventListener* l) {
 
 void EventListenerList::remove($Class* t, $EventListener* l) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (l == nullptr) {
 			return;
 		}
@@ -167,6 +170,7 @@ void EventListenerList::remove($Class* t, $EventListener* l) {
 }
 
 void EventListenerList::writeObject($ObjectOutputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, lList, this->listenerList);
 	$nc(s)->defaultWriteObject();
 	for (int32_t i = 0; i < $nc(lList)->length; i += 2) {
@@ -181,6 +185,7 @@ void EventListenerList::writeObject($ObjectOutputStream* s) {
 }
 
 void EventListenerList::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$set(this, listenerList, EventListenerList::NULL_ARRAY);
 	$nc(s)->defaultReadObject();
@@ -196,6 +201,7 @@ void EventListenerList::readObject($ObjectInputStream* s) {
 }
 
 $String* EventListenerList::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, lList, this->listenerList);
 	$var($String, s, "EventListenerList: "_s);
 	$plusAssign(s, $$str({$$str($nc(lList)->length / 2), " listeners: "_s}));

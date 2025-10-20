@@ -269,6 +269,7 @@ void JTextComponent$AccessibleJTextComponent::finalize() {
 }
 
 void JTextComponent$AccessibleJTextComponent::init$($JTextComponent* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JComponent$AccessibleJComponent::init$(this$0);
 	$var($Document, doc, this$0->getDocument());
@@ -286,6 +287,7 @@ void JTextComponent$AccessibleJTextComponent::init$($JTextComponent* this$0) {
 }
 
 void JTextComponent$AccessibleJTextComponent::caretUpdate($CaretEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t dot = $nc(e)->getDot();
 	int32_t mark = e->getMark();
 	if (this->caretPos != dot) {
@@ -307,6 +309,7 @@ void JTextComponent$AccessibleJTextComponent::caretUpdate($CaretEvent* e) {
 }
 
 void JTextComponent$AccessibleJTextComponent::insertUpdate($DocumentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Integer, pos, $Integer::valueOf($nc(e)->getOffset()));
 	if ($SwingUtilities::isEventDispatchThread()) {
 		$init($AccessibleContext);
@@ -318,6 +321,7 @@ void JTextComponent$AccessibleJTextComponent::insertUpdate($DocumentEvent* e) {
 }
 
 void JTextComponent$AccessibleJTextComponent::removeUpdate($DocumentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Integer, pos, $Integer::valueOf($nc(e)->getOffset()));
 	if ($SwingUtilities::isEventDispatchThread()) {
 		$init($AccessibleContext);
@@ -329,6 +333,7 @@ void JTextComponent$AccessibleJTextComponent::removeUpdate($DocumentEvent* e) {
 }
 
 void JTextComponent$AccessibleJTextComponent::changedUpdate($DocumentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Integer, pos, $Integer::valueOf($nc(e)->getOffset()));
 	if ($SwingUtilities::isEventDispatchThread()) {
 		$init($AccessibleContext);
@@ -365,6 +370,7 @@ int32_t JTextComponent$AccessibleJTextComponent::getIndexAtPoint($Point* p) {
 }
 
 $Rectangle* JTextComponent$AccessibleJTextComponent::getRootEditorRect() {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, alloc, this->this$0->getBounds());
 	if (($nc(alloc)->width > 0) && (alloc->height > 0)) {
 		alloc->x = (alloc->y = 0);
@@ -379,6 +385,7 @@ $Rectangle* JTextComponent$AccessibleJTextComponent::getRootEditorRect() {
 }
 
 $Rectangle* JTextComponent$AccessibleJTextComponent::getCharacterBounds(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (i < 0 || i > $nc(this->this$0->model)->getLength() - 1) {
 		return nullptr;
 	}
@@ -431,6 +438,7 @@ int32_t JTextComponent$AccessibleJTextComponent::getCaretPosition() {
 }
 
 $AttributeSet* JTextComponent$AccessibleJTextComponent::getCharacterAttribute(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, e, nullptr);
 	if ($instanceOf($AbstractDocument, this->this$0->model)) {
 		$nc(($cast($AbstractDocument, this->this$0->model)))->readLock();
@@ -481,6 +489,7 @@ $String* JTextComponent$AccessibleJTextComponent::getBeforeIndex(int32_t part, i
 }
 
 $String* JTextComponent$AccessibleJTextComponent::getAtIndex(int32_t part, int32_t index, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($AbstractDocument, this->this$0->model)) {
 		$nc(($cast($AbstractDocument, this->this$0->model)))->readLock();
 	}
@@ -561,6 +570,7 @@ $String* JTextComponent$AccessibleJTextComponent::getAtIndex(int32_t part, int32
 }
 
 $Element* JTextComponent$AccessibleJTextComponent::getParagraphElement(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($PlainDocument, this->this$0->model)) {
 		$var($PlainDocument, sdoc, $cast($PlainDocument, this->this$0->model));
 		return $nc(sdoc)->getParagraphElement(index);
@@ -581,6 +591,7 @@ $Element* JTextComponent$AccessibleJTextComponent::getParagraphElement(int32_t i
 }
 
 $JTextComponent$AccessibleJTextComponent$IndexedSegment* JTextComponent$AccessibleJTextComponent::getParagraphElementText(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, para, getParagraphElement(index));
 	if (para != nullptr) {
 		$var($JTextComponent$AccessibleJTextComponent$IndexedSegment, segment, $new($JTextComponent$AccessibleJTextComponent$IndexedSegment, this));
@@ -599,6 +610,7 @@ $JTextComponent$AccessibleJTextComponent$IndexedSegment* JTextComponent$Accessib
 }
 
 $JTextComponent$AccessibleJTextComponent$IndexedSegment* JTextComponent$AccessibleJTextComponent::getSegmentAt(int32_t part, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent$AccessibleJTextComponent$IndexedSegment, seg, getParagraphElementText(index));
 	if (seg == nullptr) {
 		return nullptr;
@@ -648,6 +660,7 @@ void JTextComponent$AccessibleJTextComponent::setTextContents($String* s) {
 }
 
 void JTextComponent$AccessibleJTextComponent::insertTextAtIndex(int32_t index, $String* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, this->this$0->getDocument());
 	if (doc != nullptr) {
 		try {
@@ -666,6 +679,7 @@ void JTextComponent$AccessibleJTextComponent::insertTextAtIndex(int32_t index, $
 }
 
 $String* JTextComponent$AccessibleJTextComponent::getTextRange(int32_t startIndex, int32_t endIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, txt, nullptr);
 	int32_t p0 = $Math::min(startIndex, endIndex);
 	int32_t p1 = $Math::max(startIndex, endIndex);
@@ -682,6 +696,7 @@ $String* JTextComponent$AccessibleJTextComponent::getTextRange(int32_t startInde
 }
 
 void JTextComponent$AccessibleJTextComponent::delete$(int32_t startIndex, int32_t endIndex) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = this->this$0->isEditable();
 	if (var$0 && isEnabled()) {
 		try {
@@ -719,6 +734,7 @@ void JTextComponent$AccessibleJTextComponent::selectText(int32_t startIndex, int
 }
 
 void JTextComponent$AccessibleJTextComponent::setAttributes(int32_t startIndex, int32_t endIndex, $AttributeSet* as) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, this->this$0->getDocument());
 	if (doc != nullptr && $instanceOf($StyledDocument, doc)) {
 		$var($StyledDocument, sDoc, $cast($StyledDocument, doc));
@@ -729,6 +745,7 @@ void JTextComponent$AccessibleJTextComponent::setAttributes(int32_t startIndex, 
 }
 
 $AccessibleTextSequence* JTextComponent$AccessibleJTextComponent::getSequenceAtIndex(int32_t part, int32_t index, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index >= $nc(this->this$0->model)->getLength()) {
 		return nullptr;
 	}
@@ -935,6 +952,7 @@ $AccessibleTextSequence* JTextComponent$AccessibleJTextComponent::getSequenceAtI
 }
 
 int32_t JTextComponent$AccessibleJTextComponent::getRunEdge(int32_t index, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index >= $nc(this->this$0->model)->getLength()) {
 		$throwNew($BadLocationException, "Location out of bounds"_s, index);
 	}
@@ -1001,6 +1019,7 @@ $AccessibleTextSequence* JTextComponent$AccessibleJTextComponent::getTextSequenc
 }
 
 $Rectangle* JTextComponent$AccessibleJTextComponent::getTextBounds(int32_t startIndex, int32_t endIndex) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = startIndex < 0 || startIndex > $nc(this->this$0->model)->getLength() - 1 || endIndex < 0;
 	if (var$0 || endIndex > $nc(this->this$0->model)->getLength() - 1 || startIndex > endIndex) {
 		return nullptr;
@@ -1063,6 +1082,7 @@ $String* JTextComponent$AccessibleJTextComponent::getAccessibleActionDescription
 }
 
 bool JTextComponent$AccessibleJTextComponent::doAccessibleAction(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionArray, actions, this->this$0->getActions());
 	if (i < 0 || i >= $nc(actions)->length) {
 		return false;

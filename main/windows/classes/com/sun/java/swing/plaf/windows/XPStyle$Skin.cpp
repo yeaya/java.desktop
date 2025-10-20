@@ -127,6 +127,7 @@ void XPStyle$Skin::init$($TMSchema$Part* part, $TMSchema$State* state) {
 }
 
 void XPStyle$Skin::init$($Component* component, $TMSchema$Part* part, $TMSchema$State* state) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, size, nullptr);
 	this->switchStates$ = false;
 	$set(this, component, component);
@@ -141,6 +142,7 @@ void XPStyle$Skin::init$($Component* component, $TMSchema$Part* part, $TMSchema$
 }
 
 $Insets* XPStyle$Skin::getContentMargin() {
+	$useLocalCurrentObjectStackCache();
 	int32_t boundingWidth = 100;
 	int32_t boundingHeight = 100;
 	$var($String, var$0, this->part->getControlName(nullptr));
@@ -193,6 +195,7 @@ int32_t XPStyle$Skin::hashCode() {
 }
 
 void XPStyle$Skin::paintSkin($Graphics* g, int32_t dx, int32_t dy, $TMSchema$State* state$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($TMSchema$State, state, state$renamed);
 	if (state == nullptr) {
 		state = this->state;
@@ -231,6 +234,7 @@ void XPStyle$Skin::paintSkinRaw($Graphics* g, int32_t dx, int32_t dy, int32_t dw
 }
 
 void XPStyle$Skin::paintSkin($Graphics* g, int32_t dx, int32_t dy, int32_t dw, int32_t dh, $TMSchema$State* state, bool borderFill) {
+	$useLocalCurrentObjectStackCache();
 	if ($XPStyle::getXP() == nullptr) {
 		return;
 	}

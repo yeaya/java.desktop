@@ -96,6 +96,7 @@ void TableView$RowIterator::init$($TableView* this$0) {
 }
 
 void TableView$RowIterator::updateAdjustments() {
+	$useLocalCurrentObjectStackCache();
 	int32_t axis = 1;
 	if (this->this$0->multiRowCells) {
 		int32_t n = this->this$0->getRowCount();
@@ -120,6 +121,7 @@ void TableView$RowIterator::updateAdjustments() {
 }
 
 void TableView$RowIterator::adjustMultiRowSpan(int32_t spanNeeded, int32_t nrows, int32_t rowIndex) {
+	$useLocalCurrentObjectStackCache();
 	if ((rowIndex + nrows) > getCount()) {
 		nrows = getCount() - rowIndex;
 		if (nrows < 1) {

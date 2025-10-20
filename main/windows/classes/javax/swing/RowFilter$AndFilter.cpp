@@ -65,6 +65,7 @@ void RowFilter$AndFilter::init$($Iterable* filters) {
 }
 
 bool RowFilter$AndFilter::include($RowFilter$Entry* value) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->filters)->iterator());
 		for (; $nc(i$)->hasNext();) {

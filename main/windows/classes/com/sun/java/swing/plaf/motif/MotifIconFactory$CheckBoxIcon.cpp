@@ -122,6 +122,7 @@ void MotifIconFactory$CheckBoxIcon::init$() {
 }
 
 void MotifIconFactory$CheckBoxIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	$var($ButtonModel, model, $nc(b)->getModel());
 	bool flat = false;
@@ -163,6 +164,7 @@ int32_t MotifIconFactory$CheckBoxIcon::getIconHeight() {
 }
 
 void MotifIconFactory$CheckBoxIcon::drawCheckBezelOut($Graphics* g, int32_t x, int32_t y, int32_t csize) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, controlShadow, $UIManager::getColor("controlShadow"_s));
 	int32_t w = csize;
 	int32_t h = csize;
@@ -179,6 +181,7 @@ void MotifIconFactory$CheckBoxIcon::drawCheckBezelOut($Graphics* g, int32_t x, i
 }
 
 void MotifIconFactory$CheckBoxIcon::drawCheckBezel($Graphics* g, int32_t x, int32_t y, int32_t csize, bool shade, bool out, bool check, bool flat) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, oldColor, $nc(g)->getColor());
 	g->translate(x, y);
 	if (!flat) {

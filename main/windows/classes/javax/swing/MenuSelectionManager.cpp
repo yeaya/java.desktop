@@ -137,6 +137,7 @@ void MenuSelectionManager::init$() {
 
 MenuSelectionManager* MenuSelectionManager::defaultManager() {
 	$init(MenuSelectionManager);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(MenuSelectionManager::MENU_SELECTION_MANAGER_KEY) {
 		$var($AppContext, context, $AppContext::getAppContext());
 		$var(MenuSelectionManager, msm, $cast(MenuSelectionManager, $nc(context)->get(MenuSelectionManager::MENU_SELECTION_MANAGER_KEY)));
@@ -154,6 +155,7 @@ MenuSelectionManager* MenuSelectionManager::defaultManager() {
 }
 
 void MenuSelectionManager::setSelectedPath($MenuElementArray* path$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuElementArray, path, path$renamed);
 	int32_t i = 0;
 	int32_t c = 0;
@@ -184,6 +186,7 @@ void MenuSelectionManager::setSelectedPath($MenuElementArray* path$renamed) {
 }
 
 $MenuElementArray* MenuSelectionManager::getSelectedPath() {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuElementArray, res, $new($MenuElementArray, $nc(this->selection)->size()));
 	int32_t i = 0;
 	int32_t c = 0;
@@ -228,6 +231,7 @@ void MenuSelectionManager::fireStateChanged() {
 }
 
 void MenuSelectionManager::processMouseEvent($MouseEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	int32_t screenX = 0;
 	int32_t screenY = 0;
 	$var($Point, p, nullptr);
@@ -345,6 +349,7 @@ void MenuSelectionManager::printMenuElementArray($MenuElementArray* path) {
 }
 
 void MenuSelectionManager::printMenuElementArray($MenuElementArray* path, bool dumpStack) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println("Path is("_s);
 	int32_t i = 0;
@@ -373,6 +378,7 @@ void MenuSelectionManager::printMenuElementArray($MenuElementArray* path, bool d
 }
 
 $Component* MenuSelectionManager::componentForPoint($Component* source, $Point* sourcePoint) {
+	$useLocalCurrentObjectStackCache();
 	int32_t screenX = 0;
 	int32_t screenY = 0;
 	$var($Point, p, sourcePoint);
@@ -423,6 +429,7 @@ $Component* MenuSelectionManager::componentForPoint($Component* source, $Point* 
 }
 
 void MenuSelectionManager::processKeyEvent($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuElementArray, sel2, $new($MenuElementArray, 0));
 	$assign(sel2, $fcast($MenuElementArray, $nc(this->selection)->toArray(sel2)));
 	int32_t selSize = $nc(sel2)->length;

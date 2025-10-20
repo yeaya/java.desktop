@@ -97,6 +97,7 @@ $Object* allocate$TestDialog4Sysout($Class* clazz) {
 }
 
 void TestDialog4Sysout::init$($JFrame* frame, $String* name) {
+	$useLocalCurrentObjectStackCache();
 	$JDialog::init$(static_cast<$Frame*>(frame), name);
 	this->maxStringLength = 80;
 	$set(this, buttonP, $new($Panel));
@@ -123,6 +124,7 @@ void TestDialog4Sysout::init$($JFrame* frame, $String* name) {
 }
 
 void TestDialog4Sysout::printInstructions($StringArray* instructions) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->instructionsText)->setText(""_s);
 	$var($String, printStr, nullptr);
 	$var($String, remainingStr, nullptr);

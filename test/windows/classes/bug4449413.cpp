@@ -341,6 +341,7 @@ bool bug4449413::isMetalLookAndFeel() {
 
 void bug4449413::main($StringArray* args) {
 	$init(bug4449413);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeLater(static_cast<$Runnable*>($$new(bug4449413$$Lambda$lambda$main$0)));
 	$init($TimeUnit);
 	bool timeoutHappened = !$nc(bug4449413::latch)->await(2, $TimeUnit::MINUTES);
@@ -353,6 +354,7 @@ void bug4449413::main($StringArray* args) {
 }
 
 void bug4449413::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	setTitle($($nc($of($($UIManager::getLookAndFeel())))->getClass()->getName()));
 	addComponentsToPane();
 	addWindowListener($$new($bug4449413$1, this));
@@ -362,6 +364,7 @@ void bug4449413::createAndShowGUI() {
 }
 
 void bug4449413::addComponentsToPane() {
+	$useLocalCurrentObjectStackCache();
 	setLayout($$new($BoxLayout, $(getContentPane()), $BoxLayout::Y_AXIS));
 	$var($JPanel, testedPanel, $new($JPanel));
 	testedPanel->setLayout($$new($GridLayout, 4, 6, 10, 15));
@@ -395,6 +398,7 @@ void bug4449413::addComponentsToPane() {
 
 $AbstractButton* bug4449413::createButton(int32_t enabled, int32_t type) {
 	$init(bug4449413);
+	$useLocalCurrentObjectStackCache();
 
 	$var($AbstractButton, var$0, nullptr)
 	switch (type) {

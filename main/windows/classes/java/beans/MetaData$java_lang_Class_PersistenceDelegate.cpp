@@ -78,6 +78,7 @@ bool MetaData$java_lang_Class_PersistenceDelegate::mutatesTo(Object$* oldInstanc
 }
 
 $Expression* MetaData$java_lang_Class_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$Class* c = $cast($Class, oldInstance);
 	if ($nc(c)->isPrimitive()) {

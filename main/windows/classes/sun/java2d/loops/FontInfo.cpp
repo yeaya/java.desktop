@@ -69,6 +69,7 @@ void FontInfo::init$() {
 }
 
 $String* FontInfo::mtx($doubles* matrix) {
+	$useLocalCurrentObjectStackCache();
 	return ($str({"["_s, $$str($nc(matrix)->get(0)), ", "_s, $$str(matrix->get(1)), ", "_s, $$str(matrix->get(2)), ", "_s, $$str(matrix->get(3)), "]"_s}));
 }
 
@@ -83,6 +84,7 @@ $Object* FontInfo::clone() {
 }
 
 $String* FontInfo::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$15, $$str({"FontInfo[font="_s, this->font, ", devTx="_s}));
 	$var($String, var$14, $$concat(var$15, $(mtx(this->devTx))));
 	$var($String, var$13, $$concat(var$14, ", glyphTx="));

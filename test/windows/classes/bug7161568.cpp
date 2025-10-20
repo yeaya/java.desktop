@@ -146,6 +146,7 @@ void bug7161568::init$() {
 }
 
 void bug7161568::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init($Boolean);
 	$UIManager::put("TabbedPane.selectionFollowsFocus"_s, $Boolean::FALSE);
 	{
@@ -177,6 +178,7 @@ void bug7161568::main($StringArray* args) {
 }
 
 void bug7161568::createAndShowUI() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug7161568);
 	$assignStatic(bug7161568::frame, $new($JFrame, "Test"_s));
 	$nc(bug7161568::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);

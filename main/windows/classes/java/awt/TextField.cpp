@@ -200,6 +200,7 @@ void TextField::init$($String* text, int32_t columns) {
 }
 
 $String* TextField::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(TextField::class$) {
 		$var($String, var$0, TextField::base);
 		return $concat(var$0, $$str(TextField::nameCounter++));
@@ -242,6 +243,7 @@ void TextField::setText($String* t) {
 
 $String* TextField::replaceEOL($String* text$renamed) {
 	$init(TextField);
+	$useLocalCurrentObjectStackCache();
 	$var($String, text, text$renamed);
 	if (text == nullptr) {
 		return text;
@@ -395,6 +397,7 @@ void TextField::processActionEvent($ActionEvent* e) {
 }
 
 $String* TextField::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, $TextComponent::paramString());
 	if (this->echoChar != 0) {
 		$plusAssign(str, $$str({",echo="_s, $$str(this->echoChar)}));
@@ -410,6 +413,7 @@ void TextField::writeObject($ObjectOutputStream* s) {
 }
 
 void TextField::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	$set(this, text, replaceEOL(this->text));
 	if (this->columns < 0) {

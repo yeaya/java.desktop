@@ -215,6 +215,7 @@ $Object* allocate$SoftMainMixer($Class* clazz) {
 }
 
 void SoftMainMixer::processSystemExclusiveMessage($bytes* data) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(this->synth)->control_mutex) {
 		activity();
 		if (((int32_t)($nc(data)->get(1) & (uint32_t)255)) == 126) {
@@ -591,6 +592,7 @@ void SoftMainMixer::processSystemExclusiveMessage($bytes* data) {
 }
 
 void SoftMainMixer::processMessages(int64_t timeStamp) {
+	$useLocalCurrentObjectStackCache();
 	$var($Iterator, iter, $nc($($nc(this->midimessages)->entrySet()))->iterator());
 	while ($nc(iter)->hasNext()) {
 		$var($Map$Entry, entry, $cast($Map$Entry, iter->next()));
@@ -612,6 +614,7 @@ void SoftMainMixer::processMessages(int64_t timeStamp) {
 }
 
 void SoftMainMixer::processAudioBuffers() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->synth)->weakstream != nullptr && $nc($nc(this->synth)->weakstream)->silent_samples != 0) {
 		this->sample_pos += $nc($nc(this->synth)->weakstream)->silent_samples;
 		$nc($nc(this->synth)->weakstream)->silent_samples = 0;
@@ -905,6 +908,7 @@ void SoftMainMixer::stopMixer($ModelChannelMixer* mixer) {
 }
 
 void SoftMainMixer::registerMixer($ModelChannelMixer* mixer) {
+	$useLocalCurrentObjectStackCache();
 	if (this->registeredMixers == nullptr) {
 		$set(this, registeredMixers, $new($HashSet));
 	}
@@ -919,6 +923,7 @@ void SoftMainMixer::registerMixer($ModelChannelMixer* mixer) {
 }
 
 void SoftMainMixer::init$($SoftSynthesizer* synth) {
+	$useLocalCurrentObjectStackCache();
 	this->active_sensing_on = false;
 	this->msec_last_activity = -1;
 	this->pusher_silent = false;
@@ -1002,6 +1007,7 @@ $AudioInputStream* SoftMainMixer::getInputStream() {
 }
 
 void SoftMainMixer::reset() {
+	$useLocalCurrentObjectStackCache();
 	$var($SoftChannelArray, channels, $nc(this->synth)->channels);
 	for (int32_t i = 0; i < $nc(channels)->length; ++i) {
 		$nc(channels->get(i))->allSoundOff();
@@ -1100,6 +1106,7 @@ void SoftMainMixer::processMessage(Object$* object) {
 }
 
 void SoftMainMixer::processMessage($MidiMessage* message) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($ShortMessage, message)) {
 		$var($ShortMessage, sms, $cast($ShortMessage, message));
 		int32_t var$0 = $nc(sms)->getChannel();
@@ -1138,6 +1145,7 @@ void SoftMainMixer::processMessage($bytes* data) {
 }
 
 void SoftMainMixer::processMessage(int32_t ch, int32_t cmd, int32_t data1, int32_t data2) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(this->synth)->control_mutex) {
 		activity();
 	}

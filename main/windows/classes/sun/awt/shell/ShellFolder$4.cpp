@@ -66,6 +66,7 @@ void ShellFolder$4::init$() {
 }
 
 int32_t ShellFolder$4::compare($File* f1, $File* f2) {
+	$useLocalCurrentObjectStackCache();
 	$var($ShellFolder, sf1, nullptr);
 	$var($ShellFolder, sf2, nullptr);
 	if ($instanceOf($ShellFolder, f1)) {

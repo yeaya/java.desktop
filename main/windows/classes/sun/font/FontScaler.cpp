@@ -95,6 +95,7 @@ void FontScaler::init$() {
 
 FontScaler* FontScaler::getScaler($Font2D* font, int32_t indexInCollection, bool supportsCJK, int32_t filesize) {
 	$init(FontScaler);
+	$useLocalCurrentObjectStackCache();
 	$var(FontScaler, scaler, nullptr);
 	try {
 		$assign(scaler, $new($FreetypeFontScaler, font, indexInCollection, supportsCJK, filesize));

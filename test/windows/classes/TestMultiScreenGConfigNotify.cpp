@@ -208,6 +208,7 @@ void TestMultiScreenGConfigNotify::init$() {
 
 void TestMultiScreenGConfigNotify::main($StringArray* args) {
 	$init(TestMultiScreenGConfigNotify);
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsEnvironment, ge, $GraphicsEnvironment::getLocalGraphicsEnvironment());
 	$var($GraphicsDeviceArray, gds, $nc(ge)->getScreenDevices());
 	if ($nc(gds)->length < 2) {
@@ -236,6 +237,7 @@ void TestMultiScreenGConfigNotify::lambda$main$2() {
 
 void TestMultiScreenGConfigNotify::lambda$main$1($GraphicsConfiguration* gc, $GraphicsConfiguration* gc2) {
 	$init(TestMultiScreenGConfigNotify);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(TestMultiScreenGConfigNotify::f, $new($JFrame));
 	$nc(TestMultiScreenGConfigNotify::f)->setSize(300, 300);
 	int32_t var$0 = $nc($($nc(gc)->getBounds()))->x;
@@ -257,6 +259,7 @@ void TestMultiScreenGConfigNotify::lambda$main$1($GraphicsConfiguration* gc, $Gr
 
 void TestMultiScreenGConfigNotify::lambda$main$0($PropertyChangeEvent* evt) {
 	$init(TestMultiScreenGConfigNotify);
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(evt)->getPropertyName());
 	$init($System);
 	$nc($System::out)->println($$str({"propertyChange "_s, name}));

@@ -170,6 +170,7 @@ void WindowsButtonUI::init$() {
 
 $ComponentUI* WindowsButtonUI::createUI($JComponent* c) {
 	$init(WindowsButtonUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(WindowsButtonUI, windowsButtonUI, $cast(WindowsButtonUI, $nc(appContext)->get(WindowsButtonUI::WINDOWS_BUTTON_UI_KEY)));
 	if (windowsButtonUI == nullptr) {
@@ -180,6 +181,7 @@ $ComponentUI* WindowsButtonUI::createUI($JComponent* c) {
 }
 
 void WindowsButtonUI::installDefaults($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$BasicButtonUI::installDefaults(b);
 	if (!this->defaults_initialized) {
 		$var($String, pp, getPropertyPrefix());
@@ -223,6 +225,7 @@ void WindowsButtonUI::paintButtonPressed($Graphics* g, $AbstractButton* b) {
 }
 
 $Dimension* WindowsButtonUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, $BasicButtonUI::getPreferredSize(c));
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	if (d != nullptr && $nc(b)->isFocusPainted()) {
@@ -260,6 +263,7 @@ $TMSchema$Part* WindowsButtonUI::getXPButtonType($AbstractButton* b) {
 
 $TMSchema$State* WindowsButtonUI::getXPButtonState($AbstractButton* b) {
 	$init(WindowsButtonUI);
+	$useLocalCurrentObjectStackCache();
 	$TMSchema$Part* part = getXPButtonType(b);
 	$var($ButtonModel, model, $nc(b)->getModel());
 	$init($TMSchema$State);
@@ -340,6 +344,7 @@ $TMSchema$State* WindowsButtonUI::getXPButtonState($AbstractButton* b) {
 
 void WindowsButtonUI::paintXPButtonBackground($Graphics* g, $JComponent* c) {
 	$init(WindowsButtonUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	$var($XPStyle, xp, $XPStyle::getXP());
 	$TMSchema$Part* part = getXPButtonType(b);
@@ -372,6 +377,7 @@ void WindowsButtonUI::paintXPButtonBackground($Graphics* g, $JComponent* c) {
 
 $Insets* WindowsButtonUI::getOpaqueInsets($Border* b, $Component* c) {
 	$init(WindowsButtonUI);
+	$useLocalCurrentObjectStackCache();
 	if (b == nullptr) {
 		return nullptr;
 	}

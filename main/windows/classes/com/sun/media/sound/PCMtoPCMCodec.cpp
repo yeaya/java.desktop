@@ -118,6 +118,7 @@ $AudioFormat$EncodingArray* PCMtoPCMCodec::getTargetEncodings($AudioFormat* sour
 }
 
 $AudioFormatArray* PCMtoPCMCodec::getTargetFormats($AudioFormat$Encoding* targetEncoding, $AudioFormat* sourceFormat) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(targetEncoding);
 	$var($AudioFormatArray, formats, getOutputFormats(sourceFormat));
 	$var($Vector, newFormats, $new($Vector));
@@ -134,6 +135,7 @@ $AudioFormatArray* PCMtoPCMCodec::getTargetFormats($AudioFormat$Encoding* target
 }
 
 $AudioInputStream* PCMtoPCMCodec::getAudioInputStream($AudioFormat$Encoding* targetEncoding, $AudioInputStream* sourceStream) {
+	$useLocalCurrentObjectStackCache();
 	if (isConversionSupported(targetEncoding, $($nc(sourceStream)->getFormat()))) {
 		$var($AudioFormat, sourceFormat, $nc(sourceStream)->getFormat());
 		$var($AudioFormat$Encoding, var$0, targetEncoding);
@@ -151,6 +153,7 @@ $AudioInputStream* PCMtoPCMCodec::getAudioInputStream($AudioFormat$Encoding* tar
 }
 
 $AudioInputStream* PCMtoPCMCodec::getAudioInputStream($AudioFormat* targetFormat, $AudioInputStream* sourceStream) {
+	$useLocalCurrentObjectStackCache();
 	if (!isConversionSupported(targetFormat, $($nc(sourceStream)->getFormat()))) {
 		$var($String, var$0, $$str({"Unsupported conversion: "_s, $($nc($($nc(sourceStream)->getFormat()))->toString()), " to "_s}));
 		$throwNew($IllegalArgumentException, $$concat(var$0, $($nc(targetFormat)->toString())));
@@ -159,6 +162,7 @@ $AudioInputStream* PCMtoPCMCodec::getAudioInputStream($AudioFormat* targetFormat
 }
 
 $AudioInputStream* PCMtoPCMCodec::getConvertedStream($AudioFormat* outputFormat, $AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioInputStream, cs, nullptr);
 	$var($AudioFormat, inputFormat, $nc(stream)->getFormat());
 	if ($nc(inputFormat)->matches(outputFormat)) {
@@ -170,6 +174,7 @@ $AudioInputStream* PCMtoPCMCodec::getConvertedStream($AudioFormat* outputFormat,
 }
 
 $AudioFormatArray* PCMtoPCMCodec::getOutputFormats($AudioFormat* inputFormat) {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, formats, $new($Vector));
 	$var($AudioFormat, format, nullptr);
 	int32_t sampleSize = $nc(inputFormat)->getSampleSizeInBits();

@@ -62,6 +62,7 @@ void bug7036025::init$() {
 
 void bug7036025::main($StringArray* args) {
 	$init(bug7036025);
+	$useLocalCurrentObjectStackCache();
 	$var($String, systemLookAndFeelClassName, $UIManager::getSystemLookAndFeelClassName());
 	if (!$($nc(systemLookAndFeelClassName)->toLowerCase())->contains("windows"_s)) {
 		$init($System);

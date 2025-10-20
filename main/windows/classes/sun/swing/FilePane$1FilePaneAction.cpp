@@ -96,6 +96,7 @@ void FilePane$1FilePaneAction::init$($FilePane* this$0, $String* name, $String* 
 }
 
 void FilePane$1FilePaneAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($Action);
 	$var($String, cmd, $cast($String, getValue($Action::ACTION_COMMAND_KEY)));
 	if (cmd == "cancelSelection"_s) {
@@ -121,6 +122,7 @@ void FilePane$1FilePaneAction::actionPerformed($ActionEvent* e) {
 }
 
 bool FilePane$1FilePaneAction::isEnabled() {
+	$useLocalCurrentObjectStackCache();
 	$init($Action);
 	$var($String, cmd, $cast($String, getValue($Action::ACTION_COMMAND_KEY)));
 	if (cmd == "cancelSelection"_s) {

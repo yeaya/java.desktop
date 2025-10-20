@@ -239,6 +239,7 @@ $SurfaceType* GraphicsPrimitive::getDestType() {
 }
 
 bool GraphicsPrimitive::satisfies($String* signature, $SurfaceType* srctype$renamed, $CompositeType* comptype$renamed, $SurfaceType* dsttype$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, srctype, srctype$renamed);
 	$var($CompositeType, comptype, comptype$renamed);
 	$var($SurfaceType, dsttype, dsttype$renamed);
@@ -282,6 +283,7 @@ bool GraphicsPrimitive::satisfiesSameAs(GraphicsPrimitive* other) {
 }
 
 GraphicsPrimitive* GraphicsPrimitive::makePrimitive($SurfaceType* srctype, $CompositeType* comptype, $SurfaceType* dsttype) {
+	$useLocalCurrentObjectStackCache();
 	$throwNew($InternalError, $("%s not implemented for %s, comp: %s, dst: %s"_s->formatted($$new($ObjectArray, {
 		$($of($of(this)->getClass()->getName())),
 		$of(srctype),
@@ -298,6 +300,7 @@ bool GraphicsPrimitive::tracingEnabled() {
 
 $PrintStream* GraphicsPrimitive::getTraceOutputFile() {
 	$init(GraphicsPrimitive);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (GraphicsPrimitive::traceout == nullptr) {
 		if (GraphicsPrimitive::tracefile != nullptr) {
@@ -320,6 +323,7 @@ void GraphicsPrimitive::tracePrimitive(Object$* prim) {
 	$load(GraphicsPrimitive);
 	$synchronized(class$) {
 		$init(GraphicsPrimitive);
+		$useLocalCurrentObjectStackCache();
 		if (((int32_t)(GraphicsPrimitive::traceflags & (uint32_t)GraphicsPrimitive::TRACECOUNTS)) != 0) {
 			if (GraphicsPrimitive::traceMap == nullptr) {
 				$assignStatic(GraphicsPrimitive::traceMap, $new($HashMap));
@@ -343,6 +347,7 @@ void GraphicsPrimitive::tracePrimitive(Object$* prim) {
 }
 
 void GraphicsPrimitive::setupGeneralBinaryOp($GraphicsPrimitive$GeneralBinaryOp* gbo) {
+	$useLocalCurrentObjectStackCache();
 	int32_t primID = $nc(gbo)->getPrimTypeID();
 	$var($String, methodSignature, gbo->getSignature());
 	$var($SurfaceType, srctype, gbo->getSourceType());
@@ -370,6 +375,7 @@ void GraphicsPrimitive::setupGeneralBinaryOp($GraphicsPrimitive$GeneralBinaryOp*
 }
 
 void GraphicsPrimitive::setupGeneralUnaryOp($GraphicsPrimitive$GeneralUnaryOp* guo) {
+	$useLocalCurrentObjectStackCache();
 	int32_t primID = $nc(guo)->getPrimTypeID();
 	$var($String, methodSignature, guo->getSignature());
 	$var($CompositeType, comptype, guo->getCompositeType());
@@ -386,6 +392,7 @@ void GraphicsPrimitive::setupGeneralUnaryOp($GraphicsPrimitive$GeneralUnaryOp* g
 
 $Blit* GraphicsPrimitive::createConverter($SurfaceType* srctype, $SurfaceType* dsttype) {
 	$init(GraphicsPrimitive);
+	$useLocalCurrentObjectStackCache();
 	if ($nc(srctype)->equals(dsttype)) {
 		return nullptr;
 	}
@@ -404,6 +411,7 @@ $SurfaceData* GraphicsPrimitive::convertFrom($Blit* ob, $SurfaceData* srcData, i
 
 $SurfaceData* GraphicsPrimitive::convertFrom($Blit* ob, $SurfaceData* srcData, int32_t srcX, int32_t srcY, int32_t w, int32_t h, $SurfaceData* dstData$renamed, int32_t type) {
 	$init(GraphicsPrimitive);
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceData, dstData, dstData$renamed);
 	if (dstData != nullptr) {
 		$var($Rectangle, r, dstData->getBounds());
@@ -436,6 +444,7 @@ GraphicsPrimitive* GraphicsPrimitive::getGeneralOp(int32_t primID, $CompositeTyp
 
 $String* GraphicsPrimitive::simplename($FieldArray* fields, Object$* o) {
 	$init(GraphicsPrimitive);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	for (int32_t i = 0; i < $nc(fields)->length; ++i) {
 		$var($Field, f, fields->get(i));
@@ -465,6 +474,7 @@ $String* GraphicsPrimitive::simplename($CompositeType* ct) {
 }
 
 $String* GraphicsPrimitive::toString() {
+	$useLocalCurrentObjectStackCache();
 	if (this->cachedname == nullptr) {
 		$var($String, sig, this->methodSignature);
 		int32_t index = $nc(sig)->indexOf((int32_t)u'(');
@@ -483,6 +493,7 @@ $String* GraphicsPrimitive::toString() {
 }
 
 void clinit$GraphicsPrimitive($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	GraphicsPrimitive::unusedPrimID = 1;
 	{

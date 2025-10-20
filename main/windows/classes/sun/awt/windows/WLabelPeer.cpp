@@ -294,6 +294,7 @@ void WLabelPeer::finalize() {
 }
 
 $Dimension* WLabelPeer::getMinimumSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, fm, getFontMetrics($($nc(($cast($Label, this->target)))->getFont())));
 	$var($String, label, $nc(($cast($Label, this->target)))->getText());
 	if (label == nullptr) {
@@ -343,6 +344,7 @@ void WLabelPeer::create($WComponentPeer* parent) {
 }
 
 void WLabelPeer::initialize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Label, l, $cast($Label, this->target));
 	$var($String, txt, $nc(l)->getText());
 	if (txt != nullptr) {

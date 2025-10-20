@@ -86,6 +86,7 @@ void TransferHandler$PropertyTransferable::init$($PropertyDescriptor* p, $JCompo
 }
 
 $DataFlavorArray* TransferHandler$PropertyTransferable::getTransferDataFlavors() {
+	$useLocalCurrentObjectStackCache();
 	$var($DataFlavorArray, flavors, $new($DataFlavorArray, 1));
 	$Class* propertyType = $nc(this->property)->getPropertyType();
 	$init($DataFlavor);
@@ -100,6 +101,7 @@ $DataFlavorArray* TransferHandler$PropertyTransferable::getTransferDataFlavors()
 }
 
 bool TransferHandler$PropertyTransferable::isDataFlavorSupported($DataFlavor* flavor) {
+	$useLocalCurrentObjectStackCache();
 	$Class* propertyType = $nc(this->property)->getPropertyType();
 	bool var$1 = "application"_s->equals($($nc(flavor)->getPrimaryType()));
 	bool var$0 = var$1 && "x-java-jvm-local-objectref"_s->equals($($nc(flavor)->getSubType()));
@@ -110,6 +112,7 @@ bool TransferHandler$PropertyTransferable::isDataFlavorSupported($DataFlavor* fl
 }
 
 $Object* TransferHandler$PropertyTransferable::getTransferData($DataFlavor* flavor) {
+	$useLocalCurrentObjectStackCache();
 	if (!isDataFlavorSupported(flavor)) {
 		$throwNew($UnsupportedFlavorException, flavor);
 	}

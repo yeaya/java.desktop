@@ -52,6 +52,7 @@ void GetSpanHiDpiBug::init$() {
 }
 
 void GetSpanHiDpiBug::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($CountDownLatch, latch, $new($CountDownLatch, 1));
 	$var($SpanTest, test, $new($SpanTest, latch));
 	$var($Thread, T1, $new($Thread, static_cast<$Runnable*>(test)));

@@ -79,6 +79,7 @@ void JEditorPaneTest$1::init$($File* val$file) {
 }
 
 void JEditorPaneTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, editorPane, $new($JEditorPane));
 	try {
 		editorPane->setPage($($nc($($nc(this->val$file)->toURI()))->toURL()));

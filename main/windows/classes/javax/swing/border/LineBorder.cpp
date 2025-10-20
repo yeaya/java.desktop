@@ -148,6 +148,7 @@ void LineBorder::init$($Color* color, int32_t thickness, bool roundedCorners) {
 }
 
 void LineBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if ((this->thickness > 0) && ($instanceOf($Graphics2D, g))) {
 		$var($Graphics2D, g2d, $cast($Graphics2D, g));
 		$var($Color, oldColor, $nc(g2d)->getColor());

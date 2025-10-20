@@ -109,6 +109,7 @@ void bug6587742$TestPanel$1::init$($bug6587742$TestPanel* this$1, $bug6587742* v
 }
 
 void bug6587742$TestPanel$1::itemStateChanged($ItemEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($MetalTheme, theme, $cast($MetalTheme, $nc(this->this$1->cbThemes)->getSelectedItem()));
 	if (theme != nullptr) {
 		$MetalLookAndFeel::setCurrentTheme(theme);

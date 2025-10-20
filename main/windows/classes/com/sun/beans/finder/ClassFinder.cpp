@@ -51,6 +51,7 @@ $Object* allocate$ClassFinder($Class* clazz) {
 
 $Class* ClassFinder::findClass($String* name) {
 	$load(ClassFinder);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$ReflectUtil::checkPackageAccess(name);
 	try {

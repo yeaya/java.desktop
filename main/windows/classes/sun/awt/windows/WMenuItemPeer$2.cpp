@@ -81,6 +81,7 @@ void WMenuItemPeer$2::init$() {
 }
 
 $Object* WMenuItemPeer$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$var($ResourceBundle, rb, $ResourceBundle::getBundle("sun.awt.windows.awtLocalization"_s));

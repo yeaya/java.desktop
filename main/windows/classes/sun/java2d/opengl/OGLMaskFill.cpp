@@ -81,6 +81,7 @@ $Object* allocate$OGLMaskFill($Class* clazz) {
 
 void OGLMaskFill::register$() {
 	$init(OGLMaskFill);
+	$useLocalCurrentObjectStackCache();
 		$init($SurfaceType);
 		$init($CompositeType);
 	$var($GraphicsPrimitiveArray, primitives, $new($GraphicsPrimitiveArray, {
@@ -110,6 +111,7 @@ void OGLMaskFill::maskFill(int32_t x, int32_t y, int32_t w, int32_t h, int32_t m
 }
 
 void OGLMaskFill::validateContext($SunGraphics2D* sg2d, $Composite* comp, int32_t ctxflags) {
+	$useLocalCurrentObjectStackCache();
 	$var($OGLSurfaceData, dstData, nullptr);
 	try {
 		$assign(dstData, $cast($OGLSurfaceData, $nc(sg2d)->surfaceData));

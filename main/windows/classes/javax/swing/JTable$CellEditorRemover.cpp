@@ -87,6 +87,7 @@ void JTable$CellEditorRemover::init$($JTable* this$0, $KeyboardFocusManager* fm)
 }
 
 void JTable$CellEditorRemover::propertyChange($PropertyChangeEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = !this->this$0->isEditing();
 	$init($Boolean);
 	if (var$0 || !$equals(this->this$0->getClientProperty("terminateEditOnFocusLost"_s), $Boolean::TRUE)) {

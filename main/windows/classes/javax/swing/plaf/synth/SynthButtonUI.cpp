@@ -203,6 +203,7 @@ void SynthButtonUI::installListeners($AbstractButton* b) {
 }
 
 void SynthButtonUI::updateStyle($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(b, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -249,6 +250,7 @@ $SynthContext* SynthButtonUI::getContext($JComponent* c, int32_t state) {
 }
 
 int32_t SynthButtonUI::getComponentState($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t state = $SynthConstants::ENABLED;
 	if (!$nc(c)->isEnabled()) {
 		state = $SynthConstants::DISABLED;
@@ -282,6 +284,7 @@ int32_t SynthButtonUI::getComponentState($JComponent* c) {
 }
 
 int32_t SynthButtonUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (c == nullptr) {
 		$throwNew($NullPointerException, "Component must be non-null"_s);
 	}
@@ -348,6 +351,7 @@ void SynthButtonUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void SynthButtonUI::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, $nc(context)->getComponent()));
 	$init($ColorType);
 	$nc(g)->setColor($($nc($(context->getStyle()))->getColor(context, $ColorType::TEXT_FOREGROUND)));
@@ -366,6 +370,7 @@ void SynthButtonUI::paint($SynthContext* context, $Graphics* g) {
 }
 
 void SynthButtonUI::paintBackground($SynthContext* context, $Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(($cast($AbstractButton, c)))->isContentAreaFilled()) {
 		$var($SynthContext, var$0, context);
 		$var($Graphics, var$1, g);
@@ -379,12 +384,14 @@ void SynthButtonUI::paintBorder($SynthContext* context, $Graphics* g, int32_t x,
 }
 
 $Icon* SynthButtonUI::getDefaultIcon($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(b));
 	$var($Icon, icon, $nc($($nc(context)->getStyle()))->getIcon(context, $$str({$(getPropertyPrefix()), "icon"_s})));
 	return icon;
 }
 
 $Icon* SynthButtonUI::getIcon($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, icon, $nc(b)->getIcon());
 	$var($ButtonModel, model, b->getModel());
 	if (!$nc(model)->isEnabled()) {
@@ -426,6 +433,7 @@ $Icon* SynthButtonUI::getIcon($AbstractButton* b, $Icon* specificIcon, $Icon* de
 }
 
 $Icon* SynthButtonUI::getSynthIcon($AbstractButton* b, int32_t synthConstant) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, var$0, getContext(b, synthConstant));
 	return $nc(this->style)->getIcon(var$0, $$str({$(getPropertyPrefix()), "icon"_s}));
 }
@@ -443,6 +451,7 @@ $Icon* SynthButtonUI::getSelectedIcon($AbstractButton* b, $Icon* defaultIcon) {
 }
 
 $Icon* SynthButtonUI::getRolloverIcon($AbstractButton* b, $Icon* defaultIcon) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, var$0, b);
 	$var($Icon, var$1, $nc(b)->getRolloverSelectedIcon());
 	return getSpecificIcon(var$0, var$1, $(b->getRolloverIcon()), defaultIcon, $SynthConstants::MOUSE_OVER);
@@ -453,12 +462,14 @@ $Icon* SynthButtonUI::getPressedIcon($AbstractButton* b, $Icon* defaultIcon) {
 }
 
 $Icon* SynthButtonUI::getSynthDisabledIcon($AbstractButton* b, $Icon* defaultIcon) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, var$0, b);
 	$var($Icon, var$1, $nc(b)->getDisabledSelectedIcon());
 	return getSpecificIcon(var$0, var$1, $(b->getDisabledIcon()), defaultIcon, $SynthConstants::DISABLED);
 }
 
 $Icon* SynthButtonUI::getSpecificIcon($AbstractButton* b, $Icon* specificSelectedIcon, $Icon* specificIcon, $Icon* defaultIcon, int32_t state) {
+	$useLocalCurrentObjectStackCache();
 	bool selected = $nc($($nc(b)->getModel()))->isSelected();
 	$var($Icon, icon, nullptr);
 	if (selected) {
@@ -488,6 +499,7 @@ $Icon* SynthButtonUI::getSpecificIcon($AbstractButton* b, $Icon* specificSelecte
 }
 
 int32_t SynthButtonUI::getTextShiftOffset($SynthContext* state) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, button, $cast($AbstractButton, $nc(state)->getComponent()));
 	$var($ButtonModel, model, $nc(button)->getModel());
 	bool var$1 = $nc(model)->isArmed();
@@ -499,6 +511,7 @@ int32_t SynthButtonUI::getTextShiftOffset($SynthContext* state) {
 }
 
 $Dimension* SynthButtonUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(c)->getComponentCount() > 0;
 	if (var$0 && c->getLayout() != nullptr) {
 		return nullptr;
@@ -519,6 +532,7 @@ $Dimension* SynthButtonUI::getMinimumSize($JComponent* c) {
 }
 
 $Dimension* SynthButtonUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(c)->getComponentCount() > 0;
 	if (var$0 && c->getLayout() != nullptr) {
 		return nullptr;
@@ -539,6 +553,7 @@ $Dimension* SynthButtonUI::getPreferredSize($JComponent* c) {
 }
 
 $Dimension* SynthButtonUI::getMaximumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(c)->getComponentCount() > 0;
 	if (var$0 && c->getLayout() != nullptr) {
 		return nullptr;
@@ -559,6 +574,7 @@ $Dimension* SynthButtonUI::getMaximumSize($JComponent* c) {
 }
 
 $Icon* SynthButtonUI::getSizingIcon($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, icon, getEnabledIcon(b, $($nc(b)->getIcon())));
 	if (icon == nullptr) {
 		$assign(icon, getDefaultIcon(b));

@@ -84,6 +84,7 @@ $Image* ImageCache$Entry::getImage() {
 }
 
 $String* ImageCache$Entry::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, value, $str({$($Object::toString()), "[ graphicsConfig="_s, this->config, ", image="_s, this->image, ", w="_s, $$str(this->w), ", h="_s, $$str(this->h)}));
 	if (this->args != nullptr) {
 		for (int32_t counter = 0; counter < $nc(this->args)->length; ++counter) {
@@ -95,6 +96,7 @@ $String* ImageCache$Entry::toString() {
 }
 
 bool ImageCache$Entry::equals($GraphicsConfiguration* config, int32_t w, int32_t h, $ObjectArray* args) {
+	$useLocalCurrentObjectStackCache();
 	if (this->w == w && this->h == h && ((this->config != nullptr && $nc($of(this->config))->equals(config)) || (this->config == nullptr && config == nullptr))) {
 		if (this->args == nullptr && args == nullptr) {
 			return true;

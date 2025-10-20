@@ -68,6 +68,7 @@ void bug6768387::init$() {
 }
 
 void bug6768387::createGui() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTable, table, $new($JTable));
 	$var($OutputStream, os, nullptr);
 	$var($ObjectOutputStream, out, nullptr);

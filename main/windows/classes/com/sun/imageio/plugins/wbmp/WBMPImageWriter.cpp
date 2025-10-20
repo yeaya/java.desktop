@@ -172,6 +172,7 @@ bool WBMPImageWriter::canWriteRasters() {
 }
 
 void WBMPImageWriter::write($IIOMetadata* streamMetadata, $IIOImage* image, $ImageWriteParam* param$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageWriteParam, param, param$renamed);
 	if (this->stream == nullptr) {
 		$throwNew($IllegalStateException, $($I18N::getString("WBMPImageWriter3"_s)));

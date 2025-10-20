@@ -125,6 +125,7 @@ void SwingTest::start($Class* type) {
 }
 
 void SwingTest::init$($Class* type) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Set, methods, static_cast<$Set*>(static_cast<$AbstractSet*>($new($TreeSet, static_cast<$Comparator*>($$new($SwingTest$1, this))))));
 	{
@@ -150,6 +151,7 @@ void SwingTest::init$($Class* type) {
 }
 
 void SwingTest::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		if (this->object == nullptr) {
@@ -195,6 +197,7 @@ void SwingTest::run() {
 }
 
 void SwingTest::start() {
+	$useLocalCurrentObjectStackCache();
 	do {
 		if ((this->method != nullptr) && $Modifier::isStatic($nc(this->method)->getModifiers())) {
 			run();

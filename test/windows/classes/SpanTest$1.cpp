@@ -75,6 +75,7 @@ void SpanTest$1::init$() {
 }
 
 void SpanTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, label, $new($JLabel, "<html><span>A few words to get started before the bug</span><span>overlapping text</span></html>"_s));
 	$init($SpanTest);
 	$assignStatic($SpanTest::f, $new($JFrame, ""_s));

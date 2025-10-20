@@ -171,6 +171,7 @@ void GroupLayout$AutoPreferredGapSpring::reset() {
 }
 
 void GroupLayout$AutoPreferredGapSpring::calculatePadding(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	this->size = (int32_t)0x80000000;
 	int32_t maxPadding = (int32_t)0x80000000;
 	if (this->matches != nullptr) {
@@ -202,6 +203,7 @@ void GroupLayout$AutoPreferredGapSpring::calculatePadding(int32_t axis) {
 }
 
 int32_t GroupLayout$AutoPreferredGapSpring::calculatePadding($LayoutStyle* p, int32_t position, $GroupLayout$ComponentSpring* source, $GroupLayout$ComponentSpring* target) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc(target)->getOrigin();
 	int32_t var$2 = $nc(source)->getOrigin();
 	int32_t var$1 = (var$2 + source->getSize());
@@ -224,6 +226,7 @@ int32_t GroupLayout$AutoPreferredGapSpring::calculatePadding($LayoutStyle* p, in
 }
 
 void GroupLayout$AutoPreferredGapSpring::addTarget($GroupLayout$ComponentSpring* spring, int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	int32_t oAxis = (axis == 0) ? 1 : 0;
 	if (this->source != nullptr) {
 		$var($Component, var$0, $nc(this->source)->getComponent());
@@ -271,6 +274,7 @@ $String* GroupLayout$AutoPreferredGapSpring::getMatchDescription() {
 }
 
 $String* GroupLayout$AutoPreferredGapSpring::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $($GroupLayout$Spring::toString()));
 	return $concat(var$0, $(getMatchDescription()));
 }

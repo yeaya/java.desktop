@@ -121,6 +121,7 @@ int32_t SoftSynthesizer$WeakAudioStream::read() {
 }
 
 int32_t SoftSynthesizer$WeakAudioStream::read($bytes* b, int32_t off, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioInputStream, local_stream, this->stream);
 	if (local_stream != nullptr) {
 		return local_stream->read(b, off, len);
@@ -145,6 +146,7 @@ int32_t SoftSynthesizer$WeakAudioStream::read($bytes* b, int32_t off, int32_t le
 }
 
 void SoftSynthesizer$WeakAudioStream::init$($AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$InputStream::init$();
 	$set(this, pusher, nullptr);
 	$set(this, jitter_stream, nullptr);

@@ -157,6 +157,7 @@ void SpringLayout$Constraints::init$($Spring* x, $Spring* y, $Spring* width, $Sp
 }
 
 void SpringLayout$Constraints::init$($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, horizontalHistory, $new($ArrayList, 2));
 	$set(this, verticalHistory, $new($ArrayList, 2));
 	$set(this, c, c);
@@ -167,6 +168,7 @@ void SpringLayout$Constraints::init$($Component* c) {
 }
 
 void SpringLayout$Constraints::pushConstraint($String* name, $Spring* value, bool horizontal) {
+	$useLocalCurrentObjectStackCache();
 	bool valid = true;
 	$var($List, history, horizontal ? this->horizontalHistory : this->verticalHistory);
 	if ($nc(history)->contains(name)) {
@@ -211,6 +213,7 @@ $Spring* SpringLayout$Constraints::scale($Spring* s, float factor) {
 }
 
 int32_t SpringLayout$Constraints::getBaselineFromHeight(int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (height < 0) {
 		return -$nc(this->c)->getBaseline($nc($($nc(this->c)->getPreferredSize()))->width, -height);
 	}
@@ -218,6 +221,7 @@ int32_t SpringLayout$Constraints::getBaselineFromHeight(int32_t height) {
 }
 
 int32_t SpringLayout$Constraints::getHeightFromBaseLine(int32_t baseline) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, prefSize, $nc(this->c)->getPreferredSize());
 	int32_t prefHeight = $nc(prefSize)->height;
 	int32_t prefBaseline = $nc(this->c)->getBaseline(prefSize->width, prefHeight);
@@ -261,6 +265,7 @@ void SpringLayout$Constraints::setX($Spring* x) {
 }
 
 $Spring* SpringLayout$Constraints::getX() {
+	$useLocalCurrentObjectStackCache();
 	if (this->x == nullptr) {
 		if (defined(this->horizontalHistory, "East"_s, "Width"_s)) {
 			$set(this, x, difference(this->east, this->width));
@@ -279,6 +284,7 @@ void SpringLayout$Constraints::setY($Spring* y) {
 }
 
 $Spring* SpringLayout$Constraints::getY() {
+	$useLocalCurrentObjectStackCache();
 	if (this->y == nullptr) {
 		if (defined(this->verticalHistory, "South"_s, "Height"_s)) {
 			$set(this, y, difference(this->south, this->height));
@@ -301,6 +307,7 @@ void SpringLayout$Constraints::setWidth($Spring* width) {
 }
 
 $Spring* SpringLayout$Constraints::getWidth() {
+	$useLocalCurrentObjectStackCache();
 	if (this->width == nullptr) {
 		if ($nc(this->horizontalHistory)->contains("East"_s)) {
 			$set(this, width, difference(this->east, $(getX())));
@@ -317,6 +324,7 @@ void SpringLayout$Constraints::setHeight($Spring* height) {
 }
 
 $Spring* SpringLayout$Constraints::getHeight() {
+	$useLocalCurrentObjectStackCache();
 	if (this->height == nullptr) {
 		if ($nc(this->verticalHistory)->contains("South"_s)) {
 			$set(this, height, difference(this->south, $(getY())));
@@ -335,6 +343,7 @@ void SpringLayout$Constraints::setEast($Spring* east) {
 }
 
 $Spring* SpringLayout$Constraints::getEast() {
+	$useLocalCurrentObjectStackCache();
 	if (this->east == nullptr) {
 		$var($Spring, var$0, getX());
 		$set(this, east, sum(var$0, $(getWidth())));
@@ -348,6 +357,7 @@ void SpringLayout$Constraints::setSouth($Spring* south) {
 }
 
 $Spring* SpringLayout$Constraints::getSouth() {
+	$useLocalCurrentObjectStackCache();
 	if (this->south == nullptr) {
 		$var($Spring, var$0, getY());
 		$set(this, south, sum(var$0, $(getHeight())));
@@ -356,6 +366,7 @@ $Spring* SpringLayout$Constraints::getSouth() {
 }
 
 $Spring* SpringLayout$Constraints::getHorizontalCenter() {
+	$useLocalCurrentObjectStackCache();
 	if (this->horizontalCenter == nullptr) {
 		$var($Spring, var$0, getX());
 		$set(this, horizontalCenter, sum(var$0, $(scale($(getWidth()), 0.5f))));
@@ -369,6 +380,7 @@ void SpringLayout$Constraints::setHorizontalCenter($Spring* horizontalCenter) {
 }
 
 $Spring* SpringLayout$Constraints::getVerticalCenter() {
+	$useLocalCurrentObjectStackCache();
 	if (this->verticalCenter == nullptr) {
 		$var($Spring, var$0, getY());
 		$set(this, verticalCenter, sum(var$0, $(scale($(getHeight()), 0.5f))));
@@ -382,6 +394,7 @@ void SpringLayout$Constraints::setVerticalCenter($Spring* verticalCenter) {
 }
 
 $Spring* SpringLayout$Constraints::getBaseline() {
+	$useLocalCurrentObjectStackCache();
 	if (this->baseline == nullptr) {
 		$var($Spring, var$0, getY());
 		$set(this, baseline, sum(var$0, $(heightToRelativeBaseline($(getHeight())))));
@@ -425,6 +438,7 @@ $Spring* SpringLayout$Constraints::getConstraint($String* edgeName$renamed) {
 }
 
 void SpringLayout$Constraints::reset() {
+	$useLocalCurrentObjectStackCache();
 	$var($SpringArray, allSprings, $new($SpringArray, {
 		this->x,
 		this->y,

@@ -88,6 +88,7 @@ void JFormattedTextField$AbstractFormatter::init$() {
 }
 
 void JFormattedTextField$AbstractFormatter::install($JFormattedTextField* ftf) {
+	$useLocalCurrentObjectStackCache();
 	if (this->ftf != nullptr) {
 		uninstall();
 	}
@@ -151,6 +152,7 @@ $Object* JFormattedTextField$AbstractFormatter::clone() {
 }
 
 void JFormattedTextField$AbstractFormatter::installDocumentFilter($DocumentFilter* filter) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFormattedTextField, ftf, getFormattedTextField());
 	if (ftf != nullptr) {
 		$var($Document, doc, ftf->getDocument());

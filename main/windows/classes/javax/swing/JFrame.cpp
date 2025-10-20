@@ -372,6 +372,7 @@ void JFrame::init$($String* title, $GraphicsConfiguration* gc) {
 }
 
 void JFrame::frameInit() {
+	$useLocalCurrentObjectStackCache();
 	enableEvents($AWTEvent::KEY_EVENT_MASK | $AWTEvent::WINDOW_EVENT_MASK);
 	setLocale($($JComponent::getDefaultLocale()));
 	setRootPane($(createRootPane()));
@@ -589,6 +590,7 @@ bool JFrame::isDefaultLookAndFeelDecorated() {
 }
 
 $String* JFrame::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, defaultCloseOperationString, nullptr);
 	if (this->defaultCloseOperation == $WindowConstants::HIDE_ON_CLOSE) {
 		$assign(defaultCloseOperationString, "HIDE_ON_CLOSE"_s);

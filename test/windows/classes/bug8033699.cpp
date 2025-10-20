@@ -647,6 +647,7 @@ void bug8033699::init$() {
 
 void bug8033699::main($StringArray* args) {
 	$init(bug8033699);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug8033699$$Lambda$lambda$main$0)));
 	$assignStatic(bug8033699::robot, $new($Robot));
 	$Thread::sleep(100);
@@ -665,6 +666,7 @@ void bug8033699::main($StringArray* args) {
 
 void bug8033699::changeLAF() {
 	$init(bug8033699);
+	$useLocalCurrentObjectStackCache();
 	$var($String, currentLAF, $nc($($UIManager::getLookAndFeel()))->toString());
 	$init($System);
 	$nc($System::out)->println(currentLAF);
@@ -681,6 +683,7 @@ void bug8033699::changeLAF() {
 
 void bug8033699::createAndShowGUI() {
 	$init(bug8033699);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug8033699::mainFrame, $new($JFrame, "Bug 8033699 - 8 Tests for Grouped/Non Group Radio Buttons"_s));
 	$assignStatic(bug8033699::btnStart, $new($JButton, "Start"_s));
 	$assignStatic(bug8033699::btnEnd, $new($JButton, "End"_s));
@@ -773,6 +776,7 @@ void bug8033699::runTest8() {
 
 void bug8033699::runTest9() {
 	$init(bug8033699);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug8033699$$Lambda$lambda$runTest9$10$10)));
 	$var($ActionListener, actLrRB1, static_cast<$ActionListener*>($new(bug8033699$$Lambda$lambda$runTest9$11$11)));
 	$var($ActionListener, actLrRB2, static_cast<$ActionListener*>($new(bug8033699$$Lambda$lambda$runTest9$12$12)));

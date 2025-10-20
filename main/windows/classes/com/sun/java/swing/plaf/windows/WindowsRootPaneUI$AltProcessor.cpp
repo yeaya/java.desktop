@@ -126,6 +126,7 @@ void WindowsRootPaneUI$AltProcessor::init$() {
 }
 
 void WindowsRootPaneUI$AltProcessor::altPressed($KeyEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, msm, $MenuSelectionManager::defaultManager());
 	$var($MenuElementArray, path, $nc(msm)->getSelectedPath());
 	if ($nc(path)->length > 0 && !($instanceOf($ComboPopup, path->get(0)))) {
@@ -153,6 +154,7 @@ void WindowsRootPaneUI$AltProcessor::altPressed($KeyEvent* ev) {
 }
 
 void WindowsRootPaneUI$AltProcessor::altReleased($KeyEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	if (WindowsRootPaneUI$AltProcessor::menuCanceledOnPress) {
 		$WindowsLookAndFeel::setMnemonicHidden(true);
 		$WindowsGraphicsUtils::repaintMnemonicsInWindow(WindowsRootPaneUI$AltProcessor::winAncestor);
@@ -192,6 +194,7 @@ void WindowsRootPaneUI$AltProcessor::altReleased($KeyEvent* ev) {
 }
 
 bool WindowsRootPaneUI$AltProcessor::postProcessKeyEvent($KeyEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(ev)->isConsumed()) {
 		if (ev->getKeyCode() != $KeyEvent::VK_ALT) {
 			WindowsRootPaneUI$AltProcessor::altKeyPressed = false;

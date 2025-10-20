@@ -111,6 +111,7 @@ void bug7088744::init$() {
 
 void bug7088744::main($StringArray* args) {
 	$init(bug7088744);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($bug7088744$1));
 	$SwingUtilities::invokeAndWait($$new($bug7088744$2));
 	$var($Robot, robot, $new($Robot));
@@ -132,6 +133,7 @@ void bug7088744::main($StringArray* args) {
 
 void bug7088744::processEvent(int32_t eventType, $MouseEvent* e) {
 	$init(bug7088744);
+	$useLocalCurrentObjectStackCache();
 	if (bug7088744::eventCount >= $nc(bug7088744::BUTTON_EVENTS_SEQUENCE)->length) {
 		$throwNew($RuntimeException, $$str({"Unexpected event "_s, e}));
 	}
@@ -168,6 +170,7 @@ void bug7088744::processEvent(int32_t eventType, $MouseEvent* e) {
 }
 
 void clinit$bug7088744($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug7088744::point, $new($Point));
 	$assignStatic(bug7088744::BUTTON_EVENTS_SEQUENCE, $new($intArray2, {
 		$$new($ints, {

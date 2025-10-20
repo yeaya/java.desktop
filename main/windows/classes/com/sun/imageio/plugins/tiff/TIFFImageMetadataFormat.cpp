@@ -73,6 +73,7 @@ bool TIFFImageMetadataFormat::canNodeAppear($String* elementName, $ImageTypeSpec
 }
 
 void TIFFImageMetadataFormat::init$() {
+	$useLocalCurrentObjectStackCache();
 	$TIFFMetadataFormat::init$();
 	$set(this, resourceBaseName, "javax.imageio.plugins.tiff.TIFFImageMetadataFormatResources"_s);
 	$init($TIFFImageMetadata);

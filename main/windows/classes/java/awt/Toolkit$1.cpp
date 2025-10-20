@@ -83,6 +83,7 @@ void Toolkit$1::init$($String* val$sep, $Properties* val$properties) {
 }
 
 $Object* Toolkit$1::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($File, propsFile, $new($File, $$str({$($System::getProperty("user.home"_s)), this->val$sep, ".accessibility.properties"_s})));
 		$var($FileInputStream, in, $new($FileInputStream, propsFile));

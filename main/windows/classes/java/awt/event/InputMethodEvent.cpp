@@ -152,6 +152,7 @@ int64_t InputMethodEvent::getWhen() {
 }
 
 $String* InputMethodEvent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, typeStr, nullptr);
 	switch (this->id) {
 	case InputMethodEvent::INPUT_METHOD_TEXT_CHANGED:
@@ -213,6 +214,7 @@ void InputMethodEvent::readObject($ObjectInputStream* s) {
 
 int64_t InputMethodEvent::getMostRecentEventTimeForSource(Object$* source) {
 	$init(InputMethodEvent);
+	$useLocalCurrentObjectStackCache();
 	if (source == nullptr) {
 		$throwNew($IllegalArgumentException, "null source"_s);
 	}

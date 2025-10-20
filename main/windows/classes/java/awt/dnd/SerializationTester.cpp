@@ -69,6 +69,7 @@ $ObjectOutputStream* SerializationTester::stream = nullptr;
 
 bool SerializationTester::test(Object$* obj) {
 	$init(SerializationTester);
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($Serializable, obj))) {
 		return false;
 	}

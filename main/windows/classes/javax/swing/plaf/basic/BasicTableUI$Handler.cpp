@@ -230,6 +230,7 @@ void BasicTableUI$Handler::keyReleased($KeyEvent* e) {
 }
 
 void BasicTableUI$Handler::keyTyped($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = (int32_t)$nc(e)->getKeyChar();
 	$var($KeyStroke, keyStroke, $KeyStroke::getKeyStroke(var$0, e->getModifiers()));
 	$var($InputMap, map, $nc(this->this$0->table)->getInputMap($JComponent::WHEN_FOCUSED));
@@ -276,6 +277,7 @@ void BasicTableUI$Handler::mouseClicked($MouseEvent* e) {
 }
 
 void BasicTableUI$Handler::setDispatchComponent($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, editorComponent, $nc(this->this$0->table)->getEditorComponent());
 	$var($Point, p, $nc(e)->getPoint());
 	$var($Point, p2, $SwingUtilities::convertPoint(this->this$0->table, p, editorComponent));
@@ -293,11 +295,13 @@ bool BasicTableUI$Handler::repostEvent($MouseEvent* e) {
 }
 
 void BasicTableUI$Handler::setValueIsAdjusting(bool flag) {
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc(this->this$0->table)->getSelectionModel()))->setValueIsAdjusting(flag);
 	$nc($($nc($($nc(this->this$0->table)->getColumnModel()))->getSelectionModel()))->setValueIsAdjusting(flag);
 }
 
 bool BasicTableUI$Handler::canStartDrag() {
+	$useLocalCurrentObjectStackCache();
 	if (this->pressedRow == -1 || this->pressedCol == -1) {
 		return false;
 	}
@@ -312,6 +316,7 @@ bool BasicTableUI$Handler::canStartDrag() {
 }
 
 void BasicTableUI$Handler::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($SwingUtilities2::shouldIgnore(e, this->this$0->table)) {
 		return;
 	}
@@ -344,6 +349,7 @@ void BasicTableUI$Handler::mousePressed($MouseEvent* e) {
 }
 
 void BasicTableUI$Handler::mousePressedDND($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, pressedEvent, e);
 	bool grabFocus = true;
 	this->dragStarted = false;
@@ -372,6 +378,7 @@ void BasicTableUI$Handler::mousePressedDND($MouseEvent* e) {
 }
 
 void BasicTableUI$Handler::adjustSelection($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->outsidePrefSize) {
 		bool var$0 = $nc(e)->getID() == $MouseEvent::MOUSE_PRESSED;
 		if (var$0) {
@@ -447,6 +454,7 @@ void BasicTableUI$Handler::mouseReleased($MouseEvent* e) {
 }
 
 void BasicTableUI$Handler::mouseReleasedDND($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($MouseEvent, me, $DragRecognitionSupport::mouseReleased(e));
 	if (me != nullptr) {
 		$SwingUtilities2::adjustFocus(this->this$0->table);
@@ -483,6 +491,7 @@ void BasicTableUI$Handler::mouseMoved($MouseEvent* e) {
 }
 
 void BasicTableUI$Handler::dragStarting($MouseEvent* me) {
+	$useLocalCurrentObjectStackCache();
 	this->dragStarted = true;
 	if ($BasicGraphicsUtils::isMenuShortcutKeyDown(me) && this->this$0->isFileList) {
 		$nc($($nc(this->this$0->table)->getSelectionModel()))->addSelectionInterval(this->pressedRow, this->pressedRow);
@@ -513,6 +522,7 @@ void BasicTableUI$Handler::mouseDragged($MouseEvent* e) {
 }
 
 void BasicTableUI$Handler::propertyChange($PropertyChangeEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, changeName, $nc(event)->getPropertyName());
 	if ("componentOrientation"_s == changeName) {
 		$var($InputMap, inputMap, this->this$0->getInputMap($JComponent::WHEN_ANCESTOR_OF_FOCUSED_COMPONENT));
@@ -546,6 +556,7 @@ void BasicTableUI$Handler::propertyChange($PropertyChangeEvent* event) {
 }
 
 void BasicTableUI$Handler::repaintDropLocation($JTable$DropLocation* loc) {
+	$useLocalCurrentObjectStackCache();
 	if (loc == nullptr) {
 		return;
 	}

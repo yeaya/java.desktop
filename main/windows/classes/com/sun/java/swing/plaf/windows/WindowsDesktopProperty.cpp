@@ -48,6 +48,7 @@ $Object* allocate$WindowsDesktopProperty($Class* clazz) {
 }
 
 void WindowsDesktopProperty::updateAllUIs() {
+	$useLocalCurrentObjectStackCache();
 	$Class* uiClass = $nc($of($($UIManager::getLookAndFeel())))->getClass();
 	if ($nc($of($($nc(uiClass)->getPackage())))->equals($(WindowsDesktopProperty::class$->getPackage()))) {
 		$XPStyle::invalidateStyle();

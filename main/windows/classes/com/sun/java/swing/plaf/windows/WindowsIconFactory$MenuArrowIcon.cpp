@@ -115,6 +115,7 @@ void WindowsIconFactory$MenuArrowIcon::init$() {
 }
 
 void WindowsIconFactory$MenuArrowIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if ($WindowsMenuItemUI::isVistaPainting(xp)) {
 		$init($TMSchema$State);
@@ -151,6 +152,7 @@ void WindowsIconFactory$MenuArrowIcon::paintIcon($Component* c, $Graphics* g, in
 }
 
 int32_t WindowsIconFactory$MenuArrowIcon::getIconWidth() {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if ($WindowsMenuItemUI::isVistaPainting(xp)) {
 		$init($TMSchema$Part);
@@ -162,6 +164,7 @@ int32_t WindowsIconFactory$MenuArrowIcon::getIconWidth() {
 }
 
 int32_t WindowsIconFactory$MenuArrowIcon::getIconHeight() {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if ($WindowsMenuItemUI::isVistaPainting(xp)) {
 		$init($TMSchema$Part);

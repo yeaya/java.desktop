@@ -90,6 +90,7 @@ $Object* allocate$FileCacheImageOutputStream($Class* clazz) {
 }
 
 void FileCacheImageOutputStream::init$($OutputStream* stream, $File* cacheDir) {
+	$useLocalCurrentObjectStackCache();
 	$ImageOutputStreamImpl::init$();
 	this->maxStreamPos = 0;
 	if (stream == nullptr) {

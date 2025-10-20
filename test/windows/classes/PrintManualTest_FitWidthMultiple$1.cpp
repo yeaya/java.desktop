@@ -249,6 +249,7 @@ void PrintManualTest_FitWidthMultiple$1::init$($PrintManualTest_FitWidthMultiple
 }
 
 void PrintManualTest_FitWidthMultiple$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, info, " \nThis test case brings up JTable with more Columns and Rows \nPress the Print Button. It Prints in PRINT_MODE_FIT_WIDTH \nIt Pops up the Print Dialog. Check if Job/Print Attributes in the\nPrint Dialog are configurable. Default Print out will be in Landscape \nThe Print out should have JTable Centered on the Print out with thin borders \nPrints out with Header and Footer. \nThe JTable should have all columns printed within border"_s);
 	$init($PrintManualTest_FitWidthMultiple);
 	$assignStatic($PrintManualTest_FitWidthMultiple::instructFrame, $new($JFrame, "PrintManualTest_NormalSingle"_s));

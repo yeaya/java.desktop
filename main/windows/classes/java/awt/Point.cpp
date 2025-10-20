@@ -140,6 +140,7 @@ bool Point::equals(Object$* obj) {
 }
 
 $String* Point::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($of(this)->getClass()->getName()), "[x="_s, $$str(this->x), ",y="_s, $$str(this->y), "]"_s});
 }
 

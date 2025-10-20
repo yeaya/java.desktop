@@ -170,6 +170,7 @@ DebugSettings* DebugSettings::getInstance() {
 
 void DebugSettings::loadProperties() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$beforeCallerSensitive();
 		$AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($DebugSettings$1, this)));
 		$init($PlatformLogger$Level);
@@ -180,6 +181,7 @@ void DebugSettings::loadProperties() {
 }
 
 $String* DebugSettings::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($ByteArrayOutputStream, bout, $new($ByteArrayOutputStream));
 	$var($PrintStream, pout, $new($PrintStream, static_cast<$OutputStream*>(bout)));
 	{
@@ -196,6 +198,7 @@ $String* DebugSettings::toString() {
 }
 
 void DebugSettings::loadDefaultProperties() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		for (int32_t nprop = 0; nprop < $nc(DebugSettings::DEFAULT_PROPS)->length; ++nprop) {
 			$var($StringBufferInputStream, in, $new($StringBufferInputStream, $nc(DebugSettings::DEFAULT_PROPS)->get(nprop)));
@@ -208,6 +211,7 @@ void DebugSettings::loadDefaultProperties() {
 }
 
 void DebugSettings::loadFileProperties() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propPath, nullptr);
 	$var($Properties, fileProps, nullptr);
 	$assign(propPath, $System::getProperty($$str({DebugSettings::PREFIX, "."_s, DebugSettings::PROP_FILE}), ""_s));
@@ -231,6 +235,7 @@ void DebugSettings::loadFileProperties() {
 }
 
 void DebugSettings::loadSystemProperties() {
+	$useLocalCurrentObjectStackCache();
 	$var($Properties, sysProps, $System::getProperties());
 	{
 		$var($Iterator, i$, $nc($($nc(sysProps)->stringPropertyNames()))->iterator());
@@ -248,6 +253,7 @@ void DebugSettings::loadSystemProperties() {
 
 bool DebugSettings::getBoolean($String* key, bool defval) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($String, value, getString(key, $($String::valueOf(defval))));
 		return $nc(value)->equalsIgnoreCase("true"_s);
 	}
@@ -255,6 +261,7 @@ bool DebugSettings::getBoolean($String* key, bool defval) {
 
 int32_t DebugSettings::getInt($String* key, int32_t defval) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($String, value, getString(key, $($String::valueOf(defval))));
 		return $Integer::parseInt(value);
 	}
@@ -262,6 +269,7 @@ int32_t DebugSettings::getInt($String* key, int32_t defval) {
 
 $String* DebugSettings::getString($String* key, $String* defval) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($String, actualKeyName, $str({DebugSettings::PREFIX, "."_s, key}));
 		$var($String, value, $nc(this->props)->getProperty(actualKeyName, defval));
 		return value;
@@ -270,6 +278,7 @@ $String* DebugSettings::getString($String* key, $String* defval) {
 
 $List* DebugSettings::getPropertyNames() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($List, propNames, $new($LinkedList));
 		{
 			$var($Iterator, i$, $nc($($nc(this->props)->stringPropertyNames()))->iterator());
@@ -311,6 +320,7 @@ void DebugSettings::setCTracingOn(bool enabled, $String* file, int32_t line) {
 }
 
 void DebugSettings::loadNativeSettings() {
+	$useLocalCurrentObjectStackCache();
 	bool ctracingOn = false;
 	ctracingOn = getBoolean(DebugSettings::PROP_CTRACE, false);
 	setCTracingOn(ctracingOn);

@@ -110,6 +110,7 @@ int32_t PrintingStatus$NotificationPrintable::print($Graphics* graphics, $PageFo
 }
 
 void PrintingStatus$NotificationPrintable::updateStatusOnEDT(int32_t pageIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (!PrintingStatus$NotificationPrintable::$assertionsDisabled && !$SwingUtilities::isEventDispatchThread()) {
 		$throwNew($AssertionError);
 	}

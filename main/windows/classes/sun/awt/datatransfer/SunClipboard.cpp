@@ -332,6 +332,7 @@ void SunClipboard::init$($String* name) {
 
 void SunClipboard::setContents($Transferable* contents, $ClipboardOwner* owner) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (contents == nullptr) {
 			$throwNew($NullPointerException, "contents"_s);
 		}
@@ -393,6 +394,7 @@ $Transferable* SunClipboard::getContextContents() {
 }
 
 $DataFlavorArray* SunClipboard::getAvailableDataFlavors() {
+	$useLocalCurrentObjectStackCache();
 	$var($Transferable, cntnts, getContextContents());
 	if (cntnts != nullptr) {
 		return cntnts->getTransferDataFlavors();
@@ -402,6 +404,7 @@ $DataFlavorArray* SunClipboard::getAvailableDataFlavors() {
 }
 
 bool SunClipboard::isDataFlavorAvailable($DataFlavor* flavor) {
+	$useLocalCurrentObjectStackCache();
 	if (flavor == nullptr) {
 		$throwNew($NullPointerException, "flavor"_s);
 	}
@@ -414,6 +417,7 @@ bool SunClipboard::isDataFlavorAvailable($DataFlavor* flavor) {
 }
 
 $Object* SunClipboard::getData($DataFlavor* flavor) {
+	$useLocalCurrentObjectStackCache();
 	if (flavor == nullptr) {
 		$throwNew($NullPointerException, "flavor"_s);
 	}
@@ -461,6 +465,7 @@ void SunClipboard::closeClipboard() {
 }
 
 void SunClipboard::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$init($AppContext);
 	bool var$0 = $nc($AppContext::DISPOSED_PROPERTY_NAME)->equals($($nc(evt)->getPropertyName()));
 	$init($Boolean);
@@ -475,6 +480,7 @@ void SunClipboard::lostOwnershipImpl() {
 }
 
 void SunClipboard::lostOwnershipLater($AppContext* disposedContext) {
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, context, this->contentsContext);
 	if (context == nullptr) {
 		return;
@@ -483,6 +489,7 @@ void SunClipboard::lostOwnershipLater($AppContext* disposedContext) {
 }
 
 void SunClipboard::lostOwnershipNow($AppContext* disposedContext) {
+	$useLocalCurrentObjectStackCache();
 	$var(SunClipboard, sunClipboard, this);
 	$var($ClipboardOwner, owner, nullptr);
 	$var($Transferable, contents, nullptr);
@@ -510,6 +517,7 @@ void SunClipboard::lostOwnershipNow($AppContext* disposedContext) {
 }
 
 $longs* SunClipboard::getClipboardFormatsOpenClose() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		$var($longs, var$2, nullptr);
@@ -536,11 +544,13 @@ $longs* SunClipboard::getClipboardFormatsOpenClose() {
 
 $Set* SunClipboard::formatArrayAsDataFlavorSet($longs* formats) {
 	$init(SunClipboard);
+	$useLocalCurrentObjectStackCache();
 	return (formats == nullptr) ? ($Set*)nullptr : $nc($($DataTransferer::getInstance()))->getFlavorsForFormatsAsSet(formats, $(getDefaultFlavorTable()));
 }
 
 void SunClipboard::addFlavorListener($FlavorListener* listener) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (listener == nullptr) {
 			return;
 		}
@@ -579,6 +589,7 @@ void SunClipboard::addFlavorListener($FlavorListener* listener) {
 
 void SunClipboard::removeFlavorListener($FlavorListener* listener) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (listener == nullptr) {
 			return;
 		}
@@ -599,6 +610,7 @@ $Set* SunClipboard::getFlavorListeners($AppContext* appContext) {
 
 $FlavorListenerArray* SunClipboard::getFlavorListeners() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Set, flavorListeners, getFlavorListeners($($AppContext::getAppContext())));
 		return flavorListeners == nullptr ? $new($FlavorListenerArray, 0) : $fcast($FlavorListenerArray, $nc(flavorListeners)->toArray($$new($FlavorListenerArray, flavorListeners->size())));
 	}
@@ -609,6 +621,7 @@ bool SunClipboard::areFlavorListenersRegistered() {
 }
 
 void SunClipboard::checkChange($longs* formats) {
+	$useLocalCurrentObjectStackCache();
 	if ($Arrays::equals(formats, this->currentFormats)) {
 		return;
 	}

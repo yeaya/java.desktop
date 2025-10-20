@@ -193,6 +193,7 @@ void SynthGraphicsUtils::drawLine($SynthContext* context, Object$* paintKey, $Gr
 }
 
 $String* SynthGraphicsUtils::layoutText($SynthContext* ss, $FontMetrics* fm, $String* text, $Icon* icon, int32_t hAlign, int32_t vAlign, int32_t hTextPosition, int32_t vTextPosition, $Rectangle* viewR, $Rectangle* iconR, $Rectangle* textR, int32_t iconTextGap) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($SynthIcon, icon)) {
 		$var($SynthGraphicsUtils$SynthIconWrapper, wrapper, $SynthGraphicsUtils$SynthIconWrapper::get($cast($SynthIcon, icon), ss));
 		$var($String, formattedText, $SwingUtilities::layoutCompoundLabel($($nc(ss)->getComponent()), fm, text, wrapper, vAlign, hAlign, vTextPosition, hTextPosition, viewR, iconR, textR, iconTextGap));
@@ -207,6 +208,7 @@ int32_t SynthGraphicsUtils::computeStringWidth($SynthContext* ss, $Font* font, $
 }
 
 $Dimension* SynthGraphicsUtils::getMinimumSize($SynthContext* ss, $Font* font, $String* text, $Icon* icon, int32_t hAlign, int32_t vAlign, int32_t hTextPosition, int32_t vTextPosition, int32_t iconTextGap, int32_t mnemonicIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, c, $nc(ss)->getComponent());
 	$var($Dimension, size, getPreferredSize(ss, font, text, icon, hAlign, vAlign, hTextPosition, vTextPosition, iconTextGap, mnemonicIndex));
 	$init($BasicHTML);
@@ -219,6 +221,7 @@ $Dimension* SynthGraphicsUtils::getMinimumSize($SynthContext* ss, $Font* font, $
 }
 
 $Dimension* SynthGraphicsUtils::getMaximumSize($SynthContext* ss, $Font* font, $String* text, $Icon* icon, int32_t hAlign, int32_t vAlign, int32_t hTextPosition, int32_t vTextPosition, int32_t iconTextGap, int32_t mnemonicIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, c, $nc(ss)->getComponent());
 	$var($Dimension, size, getPreferredSize(ss, font, text, icon, hAlign, vAlign, hTextPosition, vTextPosition, iconTextGap, mnemonicIndex));
 	$init($BasicHTML);
@@ -231,12 +234,14 @@ $Dimension* SynthGraphicsUtils::getMaximumSize($SynthContext* ss, $Font* font, $
 }
 
 int32_t SynthGraphicsUtils::getMaximumCharHeight($SynthContext* context) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, fm, $nc($($nc(context)->getComponent()))->getFontMetrics($($nc($(context->getStyle()))->getFont(context))));
 	int32_t var$0 = $nc(fm)->getAscent();
 	return (var$0 + fm->getDescent());
 }
 
 $Dimension* SynthGraphicsUtils::getPreferredSize($SynthContext* ss, $Font* font, $String* text, $Icon* icon, int32_t hAlign, int32_t vAlign, int32_t hTextPosition, int32_t vTextPosition, int32_t iconTextGap, int32_t mnemonicIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, c, $nc(ss)->getComponent());
 	$var($Insets, insets, $nc(c)->getInsets(this->viewSizingInsets));
 	int32_t dx = $nc(insets)->left + insets->right;
@@ -270,6 +275,7 @@ void SynthGraphicsUtils::paintText($SynthContext* ss, $Graphics* g, $String* tex
 }
 
 void SynthGraphicsUtils::paintText($SynthContext* ss, $Graphics* g, $String* text, int32_t x, int32_t y, int32_t mnemonicIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (text != nullptr) {
 		$var($JComponent, c, $nc(ss)->getComponent());
 		$var($FontMetrics, fm, $SwingUtilities2::getFontMetrics(c, g));
@@ -279,6 +285,7 @@ void SynthGraphicsUtils::paintText($SynthContext* ss, $Graphics* g, $String* tex
 }
 
 void SynthGraphicsUtils::paintText($SynthContext* ss, $Graphics* g, $String* text, $Icon* icon, int32_t hAlign, int32_t vAlign, int32_t hTextPosition, int32_t vTextPosition, int32_t iconTextGap, int32_t mnemonicIndex, int32_t textOffset) {
+	$useLocalCurrentObjectStackCache();
 	if ((icon == nullptr) && (text == nullptr)) {
 		return;
 	}
@@ -346,6 +353,7 @@ void SynthGraphicsUtils::paintIcon($Icon* icon, $SynthContext* context, $Graphic
 }
 
 $Dimension* SynthGraphicsUtils::getPreferredMenuItemSize($SynthContext* context, $SynthContext* accContext, $JComponent* c, $Icon* checkIcon, $Icon* arrowIcon, int32_t defaultTextIconGap, $String* acceleratorDelimiter, bool useCheckAndArrow, $String* propertyPrefix) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuItem, mi, $cast($JMenuItem, c));
 	$var($SynthContext, var$0, context);
 	$var($SynthContext, var$1, accContext);
@@ -393,6 +401,7 @@ void SynthGraphicsUtils::applyInsets($Rectangle* rect, $Insets* insets, bool lef
 }
 
 void SynthGraphicsUtils::paint($SynthContext* context, $SynthContext* accContext, $Graphics* g, $Icon* checkIcon, $Icon* arrowIcon, $String* acceleratorDelimiter, int32_t defaultTextIconGap, $String* propertyPrefix) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuItem, mi, $cast($JMenuItem, $nc(context)->getComponent()));
 	$var($SynthStyle, style, context->getStyle());
 	$nc(g)->setFont($($nc(style)->getFont(context)));
@@ -406,6 +415,7 @@ void SynthGraphicsUtils::paint($SynthContext* context, $SynthContext* accContext
 }
 
 void SynthGraphicsUtils::paintMenuItem($Graphics* g, $SynthMenuItemLayoutHelper* lh, $MenuItemLayoutHelper$LayoutResult* lr) {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, holdf, $nc(g)->getFont());
 	$var($Color, holdc, g->getColor());
 	paintCheckIcon(g, lh, lr);
@@ -418,12 +428,14 @@ void SynthGraphicsUtils::paintMenuItem($Graphics* g, $SynthMenuItemLayoutHelper*
 }
 
 void SynthGraphicsUtils::paintBackground($Graphics* g, $SynthMenuItemLayoutHelper* lh) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, var$0, $nc(lh)->getContext());
 	$var($Graphics, var$1, g);
 	paintBackground(var$0, var$1, $(lh->getMenuItem()));
 }
 
 void SynthGraphicsUtils::paintBackground($SynthContext* context, $Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, var$0, context);
 	$var($Graphics, var$1, g);
 	int32_t var$2 = $nc(c)->getWidth();
@@ -431,6 +443,7 @@ void SynthGraphicsUtils::paintBackground($SynthContext* context, $Graphics* g, $
 }
 
 void SynthGraphicsUtils::paintIcon($Graphics* g, $SynthMenuItemLayoutHelper* lh, $MenuItemLayoutHelper$LayoutResult* lr) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(lh)->getIcon() != nullptr) {
 		$var($Icon, icon, nullptr);
 		$var($JMenuItem, mi, lh->getMenuItem());
@@ -456,6 +469,7 @@ void SynthGraphicsUtils::paintIcon($Graphics* g, $SynthMenuItemLayoutHelper* lh,
 }
 
 void SynthGraphicsUtils::paintCheckIcon($Graphics* g, $SynthMenuItemLayoutHelper* lh, $MenuItemLayoutHelper$LayoutResult* lr) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(lh)->getCheckIcon() != nullptr) {
 		$var($Rectangle, checkRect, $nc(lr)->getCheckRect());
 		$var($Icon, var$0, lh->getCheckIcon());
@@ -464,6 +478,7 @@ void SynthGraphicsUtils::paintCheckIcon($Graphics* g, $SynthMenuItemLayoutHelper
 }
 
 void SynthGraphicsUtils::paintAccText($Graphics* g, $SynthMenuItemLayoutHelper* lh, $MenuItemLayoutHelper$LayoutResult* lr) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, accText, $nc(lh)->getAccText());
 	if (accText != nullptr && !accText->isEmpty()) {
 		$init($ColorType);
@@ -478,6 +493,7 @@ void SynthGraphicsUtils::paintAccText($Graphics* g, $SynthMenuItemLayoutHelper* 
 }
 
 void SynthGraphicsUtils::paintText($Graphics* g, $SynthMenuItemLayoutHelper* lh, $MenuItemLayoutHelper$LayoutResult* lr) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($nc(lh)->getText()))->isEmpty()) {
 		if (lh->getHtmlView() != nullptr) {
 			$nc($(lh->getHtmlView()))->paint(g, $($nc(lr)->getTextRect()));
@@ -496,6 +512,7 @@ void SynthGraphicsUtils::paintText($Graphics* g, $SynthMenuItemLayoutHelper* lh,
 }
 
 void SynthGraphicsUtils::paintArrowIcon($Graphics* g, $SynthMenuItemLayoutHelper* lh, $MenuItemLayoutHelper$LayoutResult* lr) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(lh)->getArrowIcon() != nullptr) {
 		$var($Rectangle, arrowRect, $nc(lr)->getArrowRect());
 		$var($Icon, var$0, lh->getArrowIcon());

@@ -90,6 +90,7 @@ void Win32ShellFolder2$15::init$($Win32ShellFolder2* this$0, bool val$getLargeIc
 }
 
 $Object* Win32ShellFolder2$15::call() {
+	$useLocalCurrentObjectStackCache();
 	$var($Image, newIcon, nullptr);
 	$var($Image, newIcon2, nullptr);
 	if (this->this$0->isLink()) {

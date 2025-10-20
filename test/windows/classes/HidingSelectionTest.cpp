@@ -413,6 +413,7 @@ void HidingSelectionTest::init$() {
 }
 
 void HidingSelectionTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(HidingSelectionTest$$Lambda$lambda$main$0)));
 	$var($Robot, robot, $new($Robot));
 	robot->waitForIdle();
@@ -508,6 +509,7 @@ void HidingSelectionTest::lambda$main$1() {
 }
 
 void HidingSelectionTest::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$init(HidingSelectionTest);
 	$assignStatic(HidingSelectionTest::frame, $new($JFrame));
 	$assignStatic(HidingSelectionTest::field1, $new($JTextField, "field1                       "_s));

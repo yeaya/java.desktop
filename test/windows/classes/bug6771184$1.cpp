@@ -83,6 +83,7 @@ void bug6771184$1::init$() {
 }
 
 void bug6771184$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextArea, textArea, $new($JTextArea, "Tested string"_s));
 	$var($Highlighter, highlighter, textArea->getHighlighter());
 	$var($Highlighter$HighlightPainter, myPainter, $new($bug6771184$1$1, this));

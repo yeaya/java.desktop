@@ -313,6 +313,7 @@ void bug4788637::init$() {
 }
 
 void bug4788637::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(bug4788637);
 	$assignStatic(bug4788637::robot, $new($Robot));
 	$nc(bug4788637::robot)->setAutoDelay(50);
@@ -348,6 +349,7 @@ void bug4788637::main($StringArray* args) {
 }
 
 void bug4788637::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug4788637::fr, $new($JFrame, "Test"_s));
 	$nc(bug4788637::fr)->setLayout($$new($GridBagLayout));
 	$var($SpinnerModel, model, $new($SpinnerNumberModel, 50, 1, 100, 1));
@@ -401,6 +403,7 @@ void bug4788637::destroy() {
 }
 
 void bug4788637::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 		$init($System);

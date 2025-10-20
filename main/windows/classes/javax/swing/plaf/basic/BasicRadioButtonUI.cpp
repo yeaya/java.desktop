@@ -141,6 +141,7 @@ void BasicRadioButtonUI::init$() {
 
 $ComponentUI* BasicRadioButtonUI::createUI($JComponent* b) {
 	$init(BasicRadioButtonUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(BasicRadioButtonUI, radioButtonUI, $cast(BasicRadioButtonUI, $nc(appContext)->get(BasicRadioButtonUI::BASIC_RADIO_BUTTON_UI_KEY)));
 	if (radioButtonUI == nullptr) {
@@ -155,6 +156,7 @@ $String* BasicRadioButtonUI::getPropertyPrefix() {
 }
 
 void BasicRadioButtonUI::installDefaults($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$BasicToggleButtonUI::installDefaults(b);
 	if (!this->defaults_initialized) {
 		$set(this, icon, $UIManager::getIcon($$str({$(getPropertyPrefix()), "icon"_s})));
@@ -173,6 +175,7 @@ $Icon* BasicRadioButtonUI::getDefaultIcon() {
 
 void BasicRadioButtonUI::paint($Graphics* g, $JComponent* c) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($AbstractButton, b, $cast($AbstractButton, c));
 		$var($ButtonModel, model, $nc(b)->getModel());
 		$var($Font, f, $nc(c)->getFont());
@@ -263,6 +266,7 @@ void BasicRadioButtonUI::paintFocus($Graphics* g, $Rectangle* textRect, $Dimensi
 }
 
 $Dimension* BasicRadioButtonUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(c)->getComponentCount() > 0) {
 		return nullptr;
 	}

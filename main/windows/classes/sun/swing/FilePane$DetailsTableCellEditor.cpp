@@ -81,6 +81,7 @@ void FilePane$DetailsTableCellEditor::init$($FilePane* this$0, $JTextField* tf) 
 }
 
 $Component* FilePane$DetailsTableCellEditor::getTableCellEditorComponent($JTable* table, Object$* value, bool isSelected, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, comp, $DefaultCellEditor::getTableCellEditorComponent(table, value, isSelected, row, column));
 	if ($instanceOf($File, value)) {
 		$nc(this->tf)->setText($($nc($(this->this$0->getFileChooser()))->getName($cast($File, value))));

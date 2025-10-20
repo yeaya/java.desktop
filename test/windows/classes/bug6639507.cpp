@@ -63,6 +63,7 @@ void bug6639507::main($StringArray* args) {
 }
 
 void bug6639507::assertEmptyTitle($Dialog* dialog, $String* ctr) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, title, $nc(dialog)->getTitle());
 	if (title == nullptr || $nc(title)->length() > 0) {
 		$throwNew($RuntimeException, $$str({"Title is not empty for constructor "_s, ctr}));

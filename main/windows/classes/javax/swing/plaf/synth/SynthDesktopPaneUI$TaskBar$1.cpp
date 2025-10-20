@@ -87,6 +87,7 @@ void SynthDesktopPaneUI$TaskBar$1::init$($SynthDesktopPaneUI$TaskBar* this$0, in
 }
 
 void SynthDesktopPaneUI$TaskBar$1::layoutContainer($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentArray, comps, $nc(target)->getComponents());
 	int32_t n = $nc(comps)->length;
 	if (n > 0) {

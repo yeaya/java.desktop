@@ -595,6 +595,7 @@ $BoundedRangeModel* JSlider::getModel() {
 }
 
 void JSlider::setModel($BoundedRangeModel* newModel) {
+	$useLocalCurrentObjectStackCache();
 	$var($BoundedRangeModel, oldModel, getModel());
 	if (oldModel != nullptr) {
 		oldModel->removeChangeListener(this->changeListener);
@@ -630,6 +631,7 @@ int32_t JSlider::getMinimum() {
 }
 
 void JSlider::setMinimum(int32_t minimum) {
+	$useLocalCurrentObjectStackCache();
 	int32_t oldMin = $nc($(getModel()))->getMinimum();
 	$nc($(getModel()))->setMinimum(minimum);
 	$var($String, var$0, "minimum"_s);
@@ -642,6 +644,7 @@ int32_t JSlider::getMaximum() {
 }
 
 void JSlider::setMaximum(int32_t maximum) {
+	$useLocalCurrentObjectStackCache();
 	int32_t oldMax = $nc($(getModel()))->getMaximum();
 	$nc($(getModel()))->setMaximum(maximum);
 	$var($String, var$0, "maximum"_s);
@@ -697,6 +700,7 @@ void JSlider::setFont($Font* font) {
 }
 
 bool JSlider::imageUpdate($Image* img, int32_t infoflags, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (!isShowing()) {
 		return false;
 	}
@@ -730,6 +734,7 @@ void JSlider::setLabelTable($Dictionary* labels) {
 }
 
 void JSlider::updateLabelUIs() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dictionary, labelTable, getLabelTable());
 	if (labelTable == nullptr) {
 		return;
@@ -743,6 +748,7 @@ void JSlider::updateLabelUIs() {
 }
 
 void JSlider::updateLabelSizes() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dictionary, labelTable, getLabelTable());
 	if (labelTable != nullptr) {
 		$var($Enumeration, labels, labelTable->elements());
@@ -758,6 +764,7 @@ $Hashtable* JSlider::createStandardLabels(int32_t increment) {
 }
 
 $Hashtable* JSlider::createStandardLabels(int32_t increment, int32_t start) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = start > getMaximum();
 	if (var$0 || start < getMinimum()) {
 		$throwNew($IllegalArgumentException, "Slider label start point out of range."_s);
@@ -895,6 +902,7 @@ void JSlider::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JSlider::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, paintTicksString, this->paintTicks ? "true"_s : "false"_s);
 	$var($String, paintTrackString, this->paintTrack ? "true"_s : "false"_s);
 	$var($String, paintLabelsString, this->paintLabels ? "true"_s : "false"_s);

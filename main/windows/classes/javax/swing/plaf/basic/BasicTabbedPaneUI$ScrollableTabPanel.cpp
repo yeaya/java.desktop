@@ -115,6 +115,7 @@ void BasicTabbedPaneUI$ScrollableTabPanel::finalize() {
 }
 
 void BasicTabbedPaneUI$ScrollableTabPanel::init$($BasicTabbedPaneUI* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JPanel::init$(($LayoutManager*)nullptr);
 	setOpaque($nc(this$0->tabPane)->isOpaque());
@@ -128,6 +129,7 @@ void BasicTabbedPaneUI$ScrollableTabPanel::init$($BasicTabbedPaneUI* this$0) {
 }
 
 void BasicTabbedPaneUI$ScrollableTabPanel::paintComponent($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$JPanel::paintComponent(g);
 	$var($Graphics, var$0, g);
 	int32_t var$1 = $nc(this->this$0->tabPane)->getTabPlacement();

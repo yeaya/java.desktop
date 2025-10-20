@@ -41,6 +41,7 @@ void bug8074956::init$() {
 }
 
 void bug8074956::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($DTD, html32, $DTD::getDTD("html32"_s));
 	$var($ContentModel, contentModel, $new($ContentModel, u'&', $$new($ContentModel)));
 	$var($Element, elem1, $nc(html32)->getElement("html-element"_s));

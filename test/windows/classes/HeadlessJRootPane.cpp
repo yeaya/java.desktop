@@ -112,6 +112,7 @@ void HeadlessJRootPane::init$() {
 }
 
 void HeadlessJRootPane::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JRootPane, rp, $new($JRootPane));
 	rp->getAccessibleContext();
 	rp->isFocusTraversable();

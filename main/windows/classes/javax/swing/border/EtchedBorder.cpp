@@ -111,6 +111,7 @@ void EtchedBorder::init$(int32_t etchType, $Color* highlight, $Color* shadow) {
 }
 
 void EtchedBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	int32_t w = width;
 	int32_t h = height;
 	$nc(g)->translate(x, y);

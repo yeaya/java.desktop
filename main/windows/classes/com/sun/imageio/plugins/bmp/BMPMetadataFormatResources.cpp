@@ -45,6 +45,7 @@ void BMPMetadataFormatResources::init$() {
 }
 
 $ObjectArray2* BMPMetadataFormatResources::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("BMPVersion"_s),

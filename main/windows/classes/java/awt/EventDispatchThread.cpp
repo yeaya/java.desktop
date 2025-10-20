@@ -142,6 +142,7 @@ void EventDispatchThread::stopDispatching() {
 }
 
 void EventDispatchThread::run() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -193,6 +194,7 @@ void EventDispatchThread::pumpEventsForFilter(int32_t id, $Conditional* cond, $E
 }
 
 void EventDispatchThread::addEventFilter($EventFilter* filter) {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(EventDispatchThread::eventLog)->isLoggable($PlatformLogger$Level::FINEST)) {
 		$nc(EventDispatchThread::eventLog)->finest($$str({"adding the event filter: "_s, filter}));
@@ -230,6 +232,7 @@ void EventDispatchThread::removeEventFilter($EventFilter* filter) {
 }
 
 bool EventDispatchThread::filterAndCheckEvent($AWTEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	bool eventOK = true;
 	$synchronized(this->eventFilters) {
 		for (int32_t i = $nc(this->eventFilters)->size() - 1; i >= 0; --i) {
@@ -250,6 +253,7 @@ bool EventDispatchThread::filterAndCheckEvent($AWTEvent* event) {
 }
 
 void EventDispatchThread::pumpOneEventForFilters(int32_t id) {
+	$useLocalCurrentObjectStackCache();
 	$var($AWTEvent, event, nullptr);
 	bool eventOK = false;
 	try {
@@ -281,6 +285,7 @@ void EventDispatchThread::pumpOneEventForFilters(int32_t id) {
 }
 
 void EventDispatchThread::processException($Throwable* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(EventDispatchThread::eventLog)->isLoggable($PlatformLogger$Level::FINE)) {
 		$nc(EventDispatchThread::eventLog)->fine($$str({"Processing exception: "_s, e}));

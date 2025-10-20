@@ -81,6 +81,7 @@ void EventQueue$6::init$($EventQueue* this$0) {
 }
 
 $Object* EventQueue$6::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($EventDispatchThread, t, $new($EventDispatchThread, this->this$0->threadGroup, this->this$0->name, this->this$0));
 	t->setContextClassLoader(this->this$0->classLoader);
 	t->setPriority($Thread::NORM_PRIORITY + 1);

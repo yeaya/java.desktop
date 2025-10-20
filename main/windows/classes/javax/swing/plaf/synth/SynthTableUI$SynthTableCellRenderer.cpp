@@ -145,6 +145,7 @@ void SynthTableUI$SynthTableCellRenderer::setBorder($Border* b) {
 }
 
 $Component* SynthTableUI$SynthTableCellRenderer::getTableCellRendererComponent($JTable* table, Object$* value, bool isSelected, bool hasFocus, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->this$0->useTableColors && (isSelected || hasFocus)) {
 		$load($SynthLabelUI);
 		$var($ComponentUI, var$0, $cast($SynthLabelUI, $SynthLookAndFeel::getUIOfType($(getUI()), $SynthLabelUI::class$)));
@@ -163,6 +164,7 @@ $Component* SynthTableUI$SynthTableCellRenderer::getTableCellRendererComponent($
 }
 
 void SynthTableUI$SynthTableCellRenderer::configureValue(Object$* value, $Class* columnClass) {
+	$useLocalCurrentObjectStackCache();
 	$load($Object);
 	if (columnClass == $Object::class$ || columnClass == nullptr) {
 		setHorizontalAlignment($JLabel::LEADING);

@@ -168,6 +168,7 @@ void ModelByteBuffer::init$($File* file, int64_t offset, int64_t len) {
 }
 
 void ModelByteBuffer::writeTo($OutputStream* out) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->root)->file != nullptr && $nc(this->root)->buffer == nullptr) {
 		{
 			$var($InputStream, is, getInputStream());
@@ -208,6 +209,7 @@ void ModelByteBuffer::writeTo($OutputStream* out) {
 }
 
 $InputStream* ModelByteBuffer::getInputStream() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->root)->file != nullptr && $nc(this->root)->buffer == nullptr) {
 		try {
 			return $new($ModelByteBuffer$RandomFileInputStream, this);
@@ -261,6 +263,7 @@ int64_t ModelByteBuffer::getFilePointer() {
 }
 
 void ModelByteBuffer::loadAll($Collection* col) {
+	$useLocalCurrentObjectStackCache();
 	$var($File, selfile, nullptr);
 	$var($RandomAccessFile, raf, nullptr);
 	{
@@ -318,6 +321,7 @@ void ModelByteBuffer::loadAll($Collection* col) {
 }
 
 void ModelByteBuffer::load() {
+	$useLocalCurrentObjectStackCache();
 	if (this->root != this) {
 		$nc(this->root)->load();
 		return;

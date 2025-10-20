@@ -122,6 +122,7 @@ void SynthDesktopPaneUI$SynthDesktopManager::init$($SynthDesktopPaneUI* this$0) 
 }
 
 void SynthDesktopPaneUI$SynthDesktopManager::maximizeFrame($JInternalFrame* f) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(f)->isIcon()) {
 		try {
 			f->setIcon(false);
@@ -144,6 +145,7 @@ void SynthDesktopPaneUI$SynthDesktopManager::maximizeFrame($JInternalFrame* f) {
 }
 
 void SynthDesktopPaneUI$SynthDesktopManager::iconifyFrame($JInternalFrame* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame$JDesktopIcon, desktopIcon, nullptr);
 	$var($Container, c, $nc(f)->getParent());
 	$var($JDesktopPane, d, f->getDesktopPane());
@@ -193,6 +195,7 @@ void SynthDesktopPaneUI$SynthDesktopManager::iconifyFrame($JInternalFrame* f) {
 }
 
 void SynthDesktopPaneUI$SynthDesktopManager::deiconifyFrame($JInternalFrame* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame$JDesktopIcon, desktopIcon, $nc(f)->getDesktopIcon());
 	$var($Container, c, $nc(desktopIcon)->getParent());
 	if (c != nullptr) {

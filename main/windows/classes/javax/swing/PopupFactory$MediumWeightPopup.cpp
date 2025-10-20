@@ -152,6 +152,7 @@ void PopupFactory$MediumWeightPopup::recycleMediumWeightPopup(PopupFactory$Mediu
 
 PopupFactory$MediumWeightPopup* PopupFactory$MediumWeightPopup::getRecycledMediumWeightPopup() {
 	$init(PopupFactory$MediumWeightPopup);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(PopupFactory$MediumWeightPopup::class$) {
 		$var($List, mediumPopupCache, getMediumWeightPopupCache());
 		if ($nc(mediumPopupCache)->size() > 0) {
@@ -170,6 +171,7 @@ void PopupFactory$MediumWeightPopup::hide() {
 }
 
 void PopupFactory$MediumWeightPopup::show() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, component, getComponent());
 	$var($Container, parent, nullptr);
 	if (this->owner != nullptr) {
@@ -204,6 +206,7 @@ $Component* PopupFactory$MediumWeightPopup::createComponent($Component* owner) {
 }
 
 void PopupFactory$MediumWeightPopup::reset($Component* owner, $Component* contents, int32_t ownerX, int32_t ownerY) {
+	$useLocalCurrentObjectStackCache();
 	$PopupFactory$ContainerPopup::reset(owner, contents, ownerX, ownerY);
 	$var($Component, component, getComponent());
 	$nc(component)->setVisible(false);

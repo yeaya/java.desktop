@@ -278,6 +278,7 @@ $Transferable* SunDropTargetContextPeer::getTransferable() {
 }
 
 $DataFlavorArray* SunDropTargetContextPeer::getTransferDataFlavors() {
+	$useLocalCurrentObjectStackCache();
 	$var($Transferable, localTransferable, this->local);
 	if (localTransferable != nullptr) {
 		return localTransferable->getTransferDataFlavors();
@@ -287,6 +288,7 @@ $DataFlavorArray* SunDropTargetContextPeer::getTransferDataFlavors() {
 }
 
 bool SunDropTargetContextPeer::isDataFlavorSupported($DataFlavor* df) {
+	$useLocalCurrentObjectStackCache();
 	$var($Transferable, localTransferable, this->local);
 	if (localTransferable != nullptr) {
 		return localTransferable->isDataFlavorSupported(df);
@@ -296,6 +298,7 @@ bool SunDropTargetContextPeer::isDataFlavorSupported($DataFlavor* df) {
 }
 
 $Object* SunDropTargetContextPeer::getTransferData($DataFlavor* df) {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	try {
 		if (!this->dropInProcess && sm != nullptr) {
@@ -355,6 +358,7 @@ int32_t SunDropTargetContextPeer::handleEnterMessage($Component* component, int3
 }
 
 void SunDropTargetContextPeer::processEnterMessage($SunDropTargetEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $cast($Component, $nc(event)->getSource()));
 	$var($DropTarget, dt, $nc(c)->getDropTarget());
 	$var($Point, hots, event->getPoint());
@@ -391,6 +395,7 @@ void SunDropTargetContextPeer::handleExitMessage($Component* component, int64_t 
 }
 
 void SunDropTargetContextPeer::processExitMessage($SunDropTargetEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $cast($Component, $nc(event)->getSource()));
 	$var($DropTarget, dt, $nc(c)->getDropTarget());
 	$var($DropTargetContext, dtc, nullptr);
@@ -448,6 +453,7 @@ int32_t SunDropTargetContextPeer::handleMotionMessage($Component* component, int
 }
 
 void SunDropTargetContextPeer::processMotionMessage($SunDropTargetEvent* event, bool operationChanged) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $cast($Component, $nc(event)->getSource()));
 	$var($Point, hots, event->getPoint());
 	int32_t id = event->getID();
@@ -498,6 +504,7 @@ void SunDropTargetContextPeer::handleDropMessage($Component* component, int32_t 
 }
 
 void SunDropTargetContextPeer::processDropMessage($SunDropTargetEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $cast($Component, $nc(event)->getSource()));
 	$var($Point, hots, event->getPoint());
 	$var($DropTarget, dt, $nc(c)->getDropTarget());
@@ -544,6 +551,7 @@ void SunDropTargetContextPeer::processDropMessage($SunDropTargetEvent* event) {
 }
 
 int32_t SunDropTargetContextPeer::postDropTargetEvent($Component* component, int32_t x, int32_t y, int32_t dropAction, int32_t actions, $longs* formats, int64_t nativeCtxt, int32_t eventID, bool dispatchType) {
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $SunToolkit::targetToAppContext(component));
 	$var($SunDropTargetContextPeer$EventDispatcher, dispatcher, $new($SunDropTargetContextPeer$EventDispatcher, this, dropAction, actions, formats, nativeCtxt, dispatchType));
 	$var($SunDropTargetEvent, event, $new($SunDropTargetEvent, component, eventID, x, y, dispatcher));
@@ -629,6 +637,7 @@ int32_t SunDropTargetContextPeer::mapOperation(int32_t operation) {
 
 void SunDropTargetContextPeer::dropComplete(bool success) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->dropStatus == SunDropTargetContextPeer::STATUS_NONE) {
 			$throwNew($InvalidDnDOperationException, "No Drop pending"_s);
 		}

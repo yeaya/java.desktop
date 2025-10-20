@@ -72,6 +72,7 @@ void JTextPaneDocumentAlignment$3::init$() {
 }
 
 void JTextPaneDocumentAlignment$3::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($JTextPaneDocumentAlignment);
 		$JTextPaneDocumentAlignment::position = $nc($($nc($JTextPaneDocumentAlignment::jTextPane)->modelToView(1)))->x;

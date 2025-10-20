@@ -99,6 +99,7 @@ void JScrollBar$ModelListener::init$($JScrollBar* this$0) {
 }
 
 void JScrollBar$ModelListener::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, obj, $nc(e)->getSource());
 	if ($instanceOf($BoundedRangeModel, obj)) {
 		int32_t id = $AdjustmentEvent::ADJUSTMENT_VALUE_CHANGED;

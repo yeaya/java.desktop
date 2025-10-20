@@ -145,6 +145,7 @@ $SynthGraphicsUtils* SynthStyle::SYNTH_GRAPHICS = nullptr;
 
 void SynthStyle::populateDefaultValues() {
 	$init(SynthStyle);
+	$useLocalCurrentObjectStackCache();
 	$var($Object, buttonMap, $new($UIDefaults$LazyInputMap, $$new($ObjectArray, {
 		$of("SPACE"_s),
 		$of("pressed"_s),
@@ -1282,6 +1283,7 @@ $SynthGraphicsUtils* SynthStyle::getGraphicsUtils($SynthContext* context) {
 }
 
 $Color* SynthStyle::getColor($SynthContext* context, $ColorType* type) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, c, $nc(context)->getComponent());
 	$var($Region, id, context->getRegion());
 	if (((int32_t)(context->getComponentState() & (uint32_t)$SynthConstants::DISABLED)) != 0) {
@@ -1330,6 +1332,7 @@ $Color* SynthStyle::getColor($SynthContext* context, $ColorType* type) {
 }
 
 $Font* SynthStyle::getFont($SynthContext* context) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, c, $nc(context)->getComponent());
 	if (context->getComponentState() == $SynthConstants::ENABLED) {
 		return $nc(c)->getFont();
@@ -1363,6 +1366,7 @@ $Object* SynthStyle::get($SynthContext* context, Object$* key) {
 }
 
 void SynthStyle::installDefaults($SynthContext* context, $SynthUI* ui) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(context)->isSubregion()) {
 		$var($JComponent, c, context->getComponent());
 		$var($Border, border, $nc(c)->getBorder());
@@ -1374,6 +1378,7 @@ void SynthStyle::installDefaults($SynthContext* context, $SynthUI* ui) {
 }
 
 void SynthStyle::installDefaults($SynthContext* context) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(context)->isSubregion()) {
 		$var($JComponent, c, context->getComponent());
 		$var($Region, region, context->getRegion());
@@ -1396,6 +1401,7 @@ void SynthStyle::installDefaults($SynthContext* context) {
 }
 
 void SynthStyle::uninstallDefaults($SynthContext* context) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(context)->isSubregion()) {
 		$var($JComponent, c, context->getComponent());
 		$var($Border, border, $nc(c)->getBorder());

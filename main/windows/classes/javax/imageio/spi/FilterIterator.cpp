@@ -63,6 +63,7 @@ void FilterIterator::init$($Iterator* iter, $ServiceRegistry$Filter* filter) {
 }
 
 void FilterIterator::advance() {
+	$useLocalCurrentObjectStackCache();
 	while ($nc(this->iter)->hasNext()) {
 		$var($Object, elt, $nc(this->iter)->next());
 		if ($nc(this->filter)->filter(elt)) {

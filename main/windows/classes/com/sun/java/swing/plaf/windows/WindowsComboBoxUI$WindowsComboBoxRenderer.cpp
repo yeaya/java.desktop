@@ -102,12 +102,14 @@ $Object* WindowsComboBoxUI$WindowsComboBoxRenderer::BORDER_KEY = nullptr;
 $Border* WindowsComboBoxUI$WindowsComboBoxRenderer::NULL_BORDER = nullptr;
 
 void WindowsComboBoxUI$WindowsComboBoxRenderer::init$() {
+	$useLocalCurrentObjectStackCache();
 	$BasicComboBoxRenderer$UIResource::init$();
 	$var($Insets, i, $nc($(getBorder()))->getBorderInsets(this));
 	setBorder($$new($EmptyBorder, 0, 2, 0, $nc(i)->right));
 }
 
 $Component* WindowsComboBoxUI$WindowsComboBoxRenderer::getListCellRendererComponent($JList* list, Object$* value, int32_t index, bool isSelected, bool cellHasFocus) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, rv, $BasicComboBoxRenderer$UIResource::getListCellRendererComponent(list, value, index, isSelected, cellHasFocus));
 	if ($instanceOf($JComponent, rv)) {
 		$var($JComponent, component, $cast($JComponent, rv));

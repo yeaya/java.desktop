@@ -93,6 +93,7 @@ void Test6707406::init$() {
 
 void Test6707406::main($StringArray* args) {
 	$init(Test6707406);
+	$useLocalCurrentObjectStackCache();
 	test();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
@@ -112,6 +113,7 @@ void Test6707406::main($StringArray* args) {
 
 void Test6707406::test() {
 	$init(Test6707406);
+	$useLocalCurrentObjectStackCache();
 	$var($JColorChooser, chooser, $new($JColorChooser));
 	$nc($($cast($ColorChooserUI, chooser->getUI())))->uninstallUI(chooser);
 	$$new(Test6707406)->installUI(chooser);

@@ -108,6 +108,7 @@ void DesktopPaneBackgroundTest::init$() {
 }
 
 void DesktopPaneBackgroundTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(DesktopPaneBackgroundTest);
 	$assignStatic(DesktopPaneBackgroundTest::defaultBackgroudColor, $cast($Color, $nc($($Toolkit::getDefaultToolkit()))->getDesktopProperty("win.mdi.backgroundColor"_s)));
 	$var($StringArray, lookAndFeel, $new($StringArray, {
@@ -129,6 +130,7 @@ void DesktopPaneBackgroundTest::main($StringArray* args) {
 }
 
 void DesktopPaneBackgroundTest::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$var($JDesktopPane, desktopPane, $new($JDesktopPane));
 	$var($Color, background, desktopPane->getBackground());
 	$init(DesktopPaneBackgroundTest);

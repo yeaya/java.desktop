@@ -99,6 +99,7 @@ void Test8039464::init() {
 
 void Test8039464::init($Container* container) {
 	$init(Test8039464);
+	$useLocalCurrentObjectStackCache();
 	$nc(container)->setLayout($$new($GridBagLayout));
 	$var($GridBagConstraints, gbc, $new($GridBagConstraints));
 	gbc->fill = $GridBagConstraints::BOTH;
@@ -125,6 +126,7 @@ void Test8039464::main($StringArray* args) {
 }
 
 void clinit$Test8039464($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	{
 		try {
 			$UIManager::setLookAndFeel($($UIManager::getSystemLookAndFeelClassName()));

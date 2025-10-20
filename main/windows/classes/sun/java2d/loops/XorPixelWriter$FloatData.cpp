@@ -67,6 +67,7 @@ $Object* allocate$XorPixelWriter$FloatData($Class* clazz) {
 }
 
 void XorPixelWriter$FloatData::init$(Object$* srcPixel, Object$* xorPixel) {
+	$useLocalCurrentObjectStackCache();
 	$XorPixelWriter::init$();
 	$var($floats, srcData, $cast($floats, srcPixel));
 	$var($floats, xorData, $cast($floats, xorPixel));

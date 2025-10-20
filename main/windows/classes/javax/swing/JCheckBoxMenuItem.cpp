@@ -215,6 +215,7 @@ void JCheckBoxMenuItem::setState(bool b) {
 }
 
 $ObjectArray* JCheckBoxMenuItem::getSelectedObjects() {
+	$useLocalCurrentObjectStackCache();
 	if (isSelected() == false) {
 		return nullptr;
 	}

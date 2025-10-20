@@ -219,6 +219,7 @@ void Font2D::setRank(int32_t rank) {
 }
 
 int32_t Font2D::getValidatedGlyphCode(int32_t glyphCode) {
+	$useLocalCurrentObjectStackCache();
 	if (glyphCode < 0 || glyphCode >= $nc($(getMapper()))->getNumGlyphs()) {
 		glyphCode = $nc($(getMapper()))->getMissingGlyphCode();
 	}
@@ -235,6 +236,7 @@ $FontStrike* Font2D::getStrike($Font* font) {
 }
 
 $FontStrike* Font2D::getStrike($Font* font, $AffineTransform* devTx, int32_t aa, int32_t fm) {
+	$useLocalCurrentObjectStackCache();
 	double ptSize = $nc(font)->getSize2D();
 	$var($AffineTransform, glyphTx, $cast($AffineTransform, $nc(devTx)->clone()));
 	$nc(glyphTx)->scale(ptSize, ptSize);
@@ -258,6 +260,7 @@ $FontStrike* Font2D::getStrike($Font* font, $AffineTransform* devTx, $AffineTran
 }
 
 $FontStrike* Font2D::getStrike($Font* font, $FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, at, $nc(frc)->getTransform());
 	double ptSize = $nc(font)->getSize2D();
 	$nc(at)->scale(ptSize, ptSize);
@@ -293,6 +296,7 @@ $FontStrike* Font2D::getStrike($FontStrikeDesc* desc) {
 }
 
 $FontStrike* Font2D::getStrike($FontStrikeDesc* desc$renamed, bool copy) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontStrikeDesc, desc, desc$renamed);
 	$var($FontStrike, strike, $cast($FontStrike, $nc(this->lastFontStrike)->get()));
 	if (strike != nullptr && $nc(desc)->equals(strike->desc)) {
@@ -325,6 +329,7 @@ $FontStrike* Font2D::getStrike($FontStrikeDesc* desc$renamed, bool copy) {
 }
 
 void Font2D::getFontMetrics($Font* font, $AffineTransform* at, Object$* aaHint, Object$* fmHint, $floats* metrics) {
+	$useLocalCurrentObjectStackCache();
 	int32_t aa = $FontStrikeDesc::getAAHintIntVal(aaHint, this, $nc(font)->getSize());
 	int32_t fm = $FontStrikeDesc::getFMHintIntVal(fmHint);
 	$var($FontStrike, strike, getStrike(font, at, aa, fm));
@@ -344,6 +349,7 @@ void Font2D::getStyleMetrics(float pointSize, $floats* metrics, int32_t offset) 
 }
 
 void Font2D::getFontMetrics($Font* font, $FontRenderContext* frc, $floats* metrics) {
+	$useLocalCurrentObjectStackCache();
 	$var($StrikeMetrics, strikeMetrics, $nc($(getStrike(font, frc)))->getFontMetrics());
 	$nc(metrics)->set(0, $nc(strikeMetrics)->getAscent());
 	metrics->set(1, strikeMetrics->getDescent());
@@ -420,6 +426,7 @@ int8_t Font2D::getBaselineFor(char16_t c) {
 }
 
 float Font2D::getItalicAngle($Font* font, $AffineTransform* at, Object$* aaHint, Object$* fmHint) {
+	$useLocalCurrentObjectStackCache();
 	int32_t aa = $FontStrikeDesc::getAAHintIntVal(aaHint, this, 12);
 	int32_t fm = $FontStrikeDesc::getFMHintIntVal(fmHint);
 	$var($FontStrike, strike, getStrike(font, at, aa, fm));

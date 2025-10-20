@@ -82,6 +82,7 @@ void bug6691503$2::init$($bug6691503* this$0) {
 }
 
 void bug6691503$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->this$0->popupMenu)->show(this->this$0->frame, 0, 0);
 	$var($Window, popupWindow, ($cast($Window, $nc($($nc($($nc($($nc(this->this$0->popupMenu)->getParent()))->getParent()))->getParent()))->getParent())));
 	this->this$0->isAlwaysOnTop1 = $nc(popupWindow)->isAlwaysOnTop();

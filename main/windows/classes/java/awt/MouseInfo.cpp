@@ -88,6 +88,7 @@ void MouseInfo::init$() {
 
 $PointerInfo* MouseInfo::getPointerInfo() {
 	$init(MouseInfo);
+	$useLocalCurrentObjectStackCache();
 	if ($GraphicsEnvironment::isHeadless()) {
 		$throwNew($HeadlessException);
 	}
@@ -120,6 +121,7 @@ $PointerInfo* MouseInfo::getPointerInfo() {
 
 bool MouseInfo::areScreenDevicesIndependent($GraphicsDeviceArray* gds) {
 	$init(MouseInfo);
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(gds)->length; ++i) {
 		$var($Rectangle, bounds, $nc($($nc(gds->get(i))->getDefaultConfiguration()))->getBounds());
 		if ($nc(bounds)->x != 0 || $nc(bounds)->y != 0) {
@@ -131,6 +133,7 @@ bool MouseInfo::areScreenDevicesIndependent($GraphicsDeviceArray* gds) {
 
 int32_t MouseInfo::getNumberOfButtons() {
 	$init(MouseInfo);
+	$useLocalCurrentObjectStackCache();
 	if ($GraphicsEnvironment::isHeadless()) {
 		$throwNew($HeadlessException);
 	}

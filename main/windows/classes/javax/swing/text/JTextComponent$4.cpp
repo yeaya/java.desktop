@@ -80,6 +80,7 @@ void JTextComponent$4::init$($Cache$Kind* keyKind, $Cache$Kind* valueKind) {
 }
 
 $Boolean* JTextComponent$4::create($Class* type) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$load($JTextComponent);
 	if ($JTextComponent::class$ == type) {

@@ -116,6 +116,7 @@ void HeadlessJCheckBoxMenuItem::init$() {
 }
 
 void HeadlessJCheckBoxMenuItem::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JCheckBoxMenuItem, ch, nullptr);
 	$assign(ch, $new($JCheckBoxMenuItem));
 	ch->getAccessibleContext();

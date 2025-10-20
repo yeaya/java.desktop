@@ -81,6 +81,7 @@ void ChangeListenerMap::init$() {
 
 void ChangeListenerMap::add($String* name, $EventListener* listener) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->map == nullptr) {
 			$set(this, map, $new($HashMap));
 		}
@@ -97,6 +98,7 @@ void ChangeListenerMap::add($String* name, $EventListener* listener) {
 
 void ChangeListenerMap::remove($String* name, $EventListener* listener) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->map != nullptr) {
 			$var($EventListenerArray, array, $cast($EventListenerArray, $nc(this->map)->get(name)));
 			if (array != nullptr) {
@@ -144,6 +146,7 @@ void ChangeListenerMap::set($String* name, $EventListenerArray* listeners) {
 
 $EventListenerArray* ChangeListenerMap::getListeners() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->map == nullptr) {
 			return newArray(0);
 		}

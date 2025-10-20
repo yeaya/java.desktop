@@ -143,6 +143,7 @@ void Curve::insertMove($Vector* curves, double x, double y) {
 
 void Curve::insertLine($Vector* curves, double x0, double y0, double x1, double y1) {
 	$init(Curve);
+	$useLocalCurrentObjectStackCache();
 	if (y0 < y1) {
 		$nc(curves)->add($$new($Order1, x0, y0, x1, y1, Curve::INCREASING));
 	} else if (y0 > y1) {
@@ -658,6 +659,7 @@ double Curve::next(double v) {
 }
 
 $String* Curve::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$4, $$str({"Curve["_s, $$str(getOrder()), ", "_s}));
 	$var($String, var$6, $$str({"("_s, $$str(round(getX0())), ", "_s}));
 	$var($String, var$5, $$concat(var$6, $$str(round(getY0()))));
@@ -754,6 +756,7 @@ Curve* Curve::getSubCurve(double ystart, double yend) {
 }
 
 int32_t Curve::compareTo(Curve* that, $doubles* yrange) {
+	$useLocalCurrentObjectStackCache();
 	double y0 = $nc(yrange)->get(0);
 	double y1 = yrange->get(1);
 	double var$0 = $Math::min(y1, this->getYBot());
@@ -890,6 +893,7 @@ int32_t Curve::compareTo(Curve* that, $doubles* yrange) {
 }
 
 bool Curve::findIntersect(Curve* that, $doubles* yrange, double ymin, int32_t slevel, int32_t tlevel, double s0, double xs0, double ys0, double s1, double xs1, double ys1, double t0, double xt0, double yt0, double t1, double xt1, double yt1) {
+	$useLocalCurrentObjectStackCache();
 	if (ys0 > yt1 || yt0 > ys1) {
 		return false;
 	}

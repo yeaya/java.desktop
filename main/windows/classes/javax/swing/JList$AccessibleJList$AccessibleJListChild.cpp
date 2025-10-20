@@ -291,6 +291,7 @@ $AccessibleRole* JList$AccessibleJList$AccessibleJListChild::getAccessibleRole()
 }
 
 $AccessibleStateSet* JList$AccessibleJList$AccessibleJListChild::getAccessibleStateSet() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	$var($AccessibleStateSet, s, nullptr);
 	if (ac != nullptr) {
@@ -339,6 +340,7 @@ int32_t JList$AccessibleJList$AccessibleJListChild::getAccessibleChildrenCount()
 }
 
 $Accessible* JList$AccessibleJList$AccessibleJListChild::getAccessibleChild(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if (ac != nullptr) {
 		$var($Accessible, accessibleChild, ac->getAccessibleChild(i));
@@ -392,6 +394,7 @@ $AccessibleValue* JList$AccessibleJList$AccessibleJListChild::getAccessibleValue
 }
 
 $Color* JList$AccessibleJList$AccessibleJListChild::getBackground() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->getBackground();
@@ -406,6 +409,7 @@ $Color* JList$AccessibleJList$AccessibleJListChild::getBackground() {
 }
 
 void JList$AccessibleJList$AccessibleJListChild::setBackground($Color* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setBackground(c);
@@ -418,6 +422,7 @@ void JList$AccessibleJList$AccessibleJListChild::setBackground($Color* c) {
 }
 
 $Color* JList$AccessibleJList$AccessibleJListChild::getForeground() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->getForeground();
@@ -432,6 +437,7 @@ $Color* JList$AccessibleJList$AccessibleJListChild::getForeground() {
 }
 
 void JList$AccessibleJList$AccessibleJListChild::setForeground($Color* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setForeground(c);
@@ -444,6 +450,7 @@ void JList$AccessibleJList$AccessibleJListChild::setForeground($Color* c) {
 }
 
 $Cursor* JList$AccessibleJList$AccessibleJListChild::getCursor() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->getCursor();
@@ -463,6 +470,7 @@ $Cursor* JList$AccessibleJList$AccessibleJListChild::getCursor() {
 }
 
 void JList$AccessibleJList$AccessibleJListChild::setCursor($Cursor* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setCursor(c);
@@ -475,6 +483,7 @@ void JList$AccessibleJList$AccessibleJListChild::setCursor($Cursor* c) {
 }
 
 $Font* JList$AccessibleJList$AccessibleJListChild::getFont() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->getFont();
@@ -489,6 +498,7 @@ $Font* JList$AccessibleJList$AccessibleJListChild::getFont() {
 }
 
 void JList$AccessibleJList$AccessibleJListChild::setFont($Font* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setFont(f);
@@ -501,6 +511,7 @@ void JList$AccessibleJList$AccessibleJListChild::setFont($Font* f) {
 }
 
 $FontMetrics* JList$AccessibleJList$AccessibleJListChild::getFontMetrics($Font* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->getFontMetrics(f);
@@ -515,6 +526,7 @@ $FontMetrics* JList$AccessibleJList$AccessibleJListChild::getFontMetrics($Font* 
 }
 
 bool JList$AccessibleJList$AccessibleJListChild::isEnabled() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->isEnabled();
@@ -529,6 +541,7 @@ bool JList$AccessibleJList$AccessibleJListChild::isEnabled() {
 }
 
 void JList$AccessibleJList$AccessibleJListChild::setEnabled(bool b) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setEnabled(b);
@@ -558,6 +571,7 @@ bool JList$AccessibleJList$AccessibleJListChild::isShowing() {
 }
 
 bool JList$AccessibleJList$AccessibleJListChild::contains($Point* p) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$var($Rectangle, r, $nc(($cast($AccessibleComponent, ac)))->getBounds());
@@ -574,6 +588,7 @@ bool JList$AccessibleJList$AccessibleJListChild::contains($Point* p) {
 }
 
 $Point* JList$AccessibleJList$AccessibleJListChild::getLocationOnScreen() {
+	$useLocalCurrentObjectStackCache();
 	if (this->parent != nullptr) {
 		$var($Point, listLocation, nullptr);
 		try {
@@ -633,6 +648,7 @@ $Dimension* JList$AccessibleJList$AccessibleJListChild::getSize() {
 }
 
 void JList$AccessibleJList$AccessibleJListChild::setSize($Dimension* d) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setSize(d);
@@ -654,6 +670,7 @@ $Accessible* JList$AccessibleJList$AccessibleJListChild::getAccessibleAt($Point*
 }
 
 bool JList$AccessibleJList$AccessibleJListChild::isFocusTraversable() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->isFocusTraversable();
@@ -668,6 +685,7 @@ bool JList$AccessibleJList$AccessibleJListChild::isFocusTraversable() {
 }
 
 void JList$AccessibleJList$AccessibleJListChild::requestFocus() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->requestFocus();
@@ -680,6 +698,7 @@ void JList$AccessibleJList$AccessibleJListChild::requestFocus() {
 }
 
 void JList$AccessibleJList$AccessibleJListChild::addFocusListener($FocusListener* l) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->addFocusListener(l);
@@ -692,6 +711,7 @@ void JList$AccessibleJList$AccessibleJListChild::addFocusListener($FocusListener
 }
 
 void JList$AccessibleJList$AccessibleJListChild::removeFocusListener($FocusListener* l) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->removeFocusListener(l);
@@ -713,6 +733,7 @@ $AccessibleIconArray* JList$AccessibleJList$AccessibleJListChild::getAccessibleI
 }
 
 $AccessibleAction* JList$AccessibleJList$AccessibleJListChild::getAccessibleAction() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if (ac == nullptr) {
 		return nullptr;

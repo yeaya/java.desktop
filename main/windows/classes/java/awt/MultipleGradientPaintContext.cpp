@@ -149,6 +149,7 @@ $ints* MultipleGradientPaintContext::SRGBtoLinearRGB = nullptr;
 $ints* MultipleGradientPaintContext::LinearRGBtoSRGB = nullptr;
 
 void MultipleGradientPaintContext::init$($MultipleGradientPaint* mgp, $ColorModel* cm, $Rectangle* deviceBounds, $Rectangle2D* userBounds, $AffineTransform* t, $RenderingHints* hints, $floats* fractions, $ColorArray* colors, $MultipleGradientPaint$CycleMethod* cycleMethod, $MultipleGradientPaint$ColorSpaceType* colorSpace) {
+	$useLocalCurrentObjectStackCache();
 	if (deviceBounds == nullptr) {
 		$throwNew($NullPointerException, "Device bounds cannot be null"_s);
 	}
@@ -204,6 +205,7 @@ void MultipleGradientPaintContext::init$($MultipleGradientPaint* mgp, $ColorMode
 }
 
 void MultipleGradientPaintContext::calculateLookupData($ColorArray* colors) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorArray, normalizedColors, nullptr);
 	$init($MultipleGradientPaint$ColorSpaceType);
 	if (this->colorSpace == $MultipleGradientPaint$ColorSpaceType::LINEAR_RGB) {
@@ -246,6 +248,7 @@ void MultipleGradientPaintContext::calculateLookupData($ColorArray* colors) {
 }
 
 void MultipleGradientPaintContext::calculateSingleArrayGradient($ColorArray* colors, float Imin) {
+	$useLocalCurrentObjectStackCache();
 	this->isSimpleLookup = true;
 	int32_t rgb1 = 0;
 	int32_t rgb2 = 0;
@@ -277,6 +280,7 @@ void MultipleGradientPaintContext::calculateSingleArrayGradient($ColorArray* col
 }
 
 void MultipleGradientPaintContext::calculateMultipleArrayGradient($ColorArray* colors) {
+	$useLocalCurrentObjectStackCache();
 	this->isSimpleLookup = false;
 	int32_t rgb1 = 0;
 	int32_t rgb2 = 0;
@@ -402,6 +406,7 @@ int32_t MultipleGradientPaintContext::convertLinearRGBtoSRGB(int32_t color) {
 }
 
 $Raster* MultipleGradientPaintContext::getRaster(int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($Raster, raster, this->saved);
 	bool var$0 = raster == nullptr || $nc(raster)->getWidth() < w;
 	if (var$0 || $nc(raster)->getHeight() < h) {

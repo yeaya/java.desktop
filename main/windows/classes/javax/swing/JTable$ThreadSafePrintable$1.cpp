@@ -85,6 +85,7 @@ void JTable$ThreadSafePrintable$1::init$($JTable$ThreadSafePrintable* this$1, $G
 
 void JTable$ThreadSafePrintable$1::run() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		{
 			$var($Throwable, var$0, nullptr);
 			try {

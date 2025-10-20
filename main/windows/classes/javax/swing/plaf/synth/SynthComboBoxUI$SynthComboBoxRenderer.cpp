@@ -131,6 +131,7 @@ $String* SynthComboBoxUI$SynthComboBoxRenderer::getName() {
 }
 
 $Component* SynthComboBoxUI$SynthComboBoxRenderer::getListCellRendererComponent($JList* list, Object$* value, int32_t index, bool isSelected, bool cellHasFocus) {
+	$useLocalCurrentObjectStackCache();
 	setName("ComboBox.listRenderer"_s);
 	$SynthLookAndFeel::resetSelectedUI();
 	if (isSelected) {

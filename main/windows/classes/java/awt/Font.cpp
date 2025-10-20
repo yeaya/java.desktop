@@ -450,6 +450,7 @@ $AttributeValues* Font::getAttributeValues() {
 }
 
 $Font2D* Font::getFont2D() {
+	$useLocalCurrentObjectStackCache();
 	$var($FontManager, fm, $FontManagerFactory::getInstance());
 	if (this->font2DHandle == nullptr) {
 		$set(this, font2DHandle, $nc($($nc(fm)->findFont2D(this->name, this->style, $FontManager::LOGICAL_FALLBACK)))->handle);
@@ -489,6 +490,7 @@ void Font::init$($String* name, int32_t style, float sizePts, bool created, $Fon
 }
 
 void Font::init$($File* fontFile, int32_t fontFormat, bool isCopy, $CreatedFontTracker* tracker) {
+	$useLocalCurrentObjectStackCache();
 	this->createdFont = false;
 	this->fontSerializedDataVersion = 1;
 	this->createdFont = true;
@@ -502,6 +504,7 @@ void Font::init$($File* fontFile, int32_t fontFormat, bool isCopy, $CreatedFontT
 }
 
 void Font::init$($AttributeValues* values, $String* oldName, int32_t oldStyle, bool created, $Font2DHandle* handle) {
+	$useLocalCurrentObjectStackCache();
 	this->createdFont = false;
 	this->fontSerializedDataVersion = 1;
 	this->createdFont = created;
@@ -548,6 +551,7 @@ void Font::init$($Map* attributes) {
 }
 
 void Font::init$(Font* font) {
+	$useLocalCurrentObjectStackCache();
 	this->createdFont = false;
 	this->fontSerializedDataVersion = 1;
 	if ($nc(font)->values != nullptr) {
@@ -591,6 +595,7 @@ bool Font::textRequiresLayout($chars* chars, int32_t start, int32_t end) {
 
 Font* Font::getFont($Map* attributes) {
 	$init(Font);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($AttributeMap, attributes) && $nc(($cast($AttributeMap, attributes)))->getValues() != nullptr) {
 		$var($AttributeValues, values, ($cast($AttributeMap, attributes))->getValues());
 		$init($EAttribute);
@@ -620,6 +625,7 @@ Font* Font::getFont($Map* attributes) {
 
 bool Font::hasTempPermission() {
 	$init(Font);
+	$useLocalCurrentObjectStackCache();
 	if ($System::getSecurityManager() == nullptr) {
 		return true;
 	}
@@ -638,6 +644,7 @@ bool Font::hasTempPermission() {
 
 $FontArray* Font::createFonts($InputStream* fontStream) {
 	$init(Font);
+	$useLocalCurrentObjectStackCache();
 	int32_t fontFormat = Font::TRUETYPE_FONT;
 	if (hasTempPermission()) {
 		return createFont0(fontFormat, fontStream, true, nullptr);
@@ -691,6 +698,7 @@ void Font::init$($Font2D* font2D) {
 
 $FontArray* Font::createFonts($File* fontFile$renamed) {
 	$init(Font);
+	$useLocalCurrentObjectStackCache();
 	$var($File, fontFile, fontFile$renamed);
 	int32_t fontFormat = Font::TRUETYPE_FONT;
 	$assign(fontFile, checkFontFile(fontFormat, fontFile));
@@ -706,6 +714,7 @@ $FontArray* Font::createFonts($File* fontFile$renamed) {
 
 Font* Font::createFont(int32_t fontFormat, $InputStream* fontStream) {
 	$init(Font);
+	$useLocalCurrentObjectStackCache();
 	if (hasTempPermission()) {
 		return $nc($(createFont0(fontFormat, fontStream, false, nullptr)))->get(0);
 	}
@@ -747,6 +756,7 @@ Font* Font::createFont(int32_t fontFormat, $InputStream* fontStream) {
 
 $FontArray* Font::createFont0(int32_t fontFormat, $InputStream* fontStream, bool allFonts, $CreatedFontTracker* tracker) {
 	$init(Font);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (fontFormat != Font::TRUETYPE_FONT && fontFormat != Font::TYPE1_FONT) {
 		$throwNew($IllegalArgumentException, "font format not recognized"_s);
@@ -854,6 +864,7 @@ Font* Font::createFont(int32_t fontFormat, $File* fontFile$renamed) {
 
 $File* Font::checkFontFile(int32_t fontFormat, $File* fontFile$renamed) {
 	$init(Font);
+	$useLocalCurrentObjectStackCache();
 	$var($File, fontFile, fontFile$renamed);
 	$assign(fontFile, $new($File, $($nc(fontFile)->getPath())));
 	if (fontFormat != Font::TRUETYPE_FONT && fontFormat != Font::TYPE1_FONT) {
@@ -871,6 +882,7 @@ $File* Font::checkFontFile(int32_t fontFormat, $File* fontFile$renamed) {
 }
 
 $AffineTransform* Font::getTransform() {
+	$useLocalCurrentObjectStackCache();
 	if (this->nonIdentityTx) {
 		$var($AttributeValues, values, getAttributeValues());
 		$init($EAttribute);
@@ -975,6 +987,7 @@ Font* Font::getFont($String* nm) {
 
 Font* Font::decode($String* str) {
 	$init(Font);
+	$useLocalCurrentObjectStackCache();
 	$var($String, fontName, str);
 	$var($String, styleName, ""_s);
 	int32_t fontSize = 12;
@@ -1062,6 +1075,7 @@ int32_t Font::hashCode() {
 }
 
 bool Font::equals(Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals(obj, this)) {
 		return true;
 	}
@@ -1083,6 +1097,7 @@ bool Font::equals(Object$* obj) {
 }
 
 $String* Font::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, strStyle, nullptr);
 	if (isBold()) {
 		$assign(strStyle, isItalic() ? "bolditalic"_s : "bold"_s);
@@ -1113,6 +1128,7 @@ void Font::writeObject($ObjectOutputStream* s) {
 }
 
 void Font::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	if (this->pointSize == 0) {
 		this->pointSize = (float)this->size;
@@ -1192,6 +1208,7 @@ $AttributedCharacterIterator$AttributeArray* Font::getAvailableAttributes() {
 }
 
 Font* Font::deriveFont(int32_t style, float size) {
+	$useLocalCurrentObjectStackCache();
 	if (this->values == nullptr) {
 		return $new(Font, this->name, style, size, this->createdFont, this->font2DHandle);
 	}
@@ -1203,6 +1220,7 @@ Font* Font::deriveFont(int32_t style, float size) {
 }
 
 Font* Font::deriveFont(int32_t style, $AffineTransform* trans) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeValues, newValues, $nc($(getAttributeValues()))->clone());
 	int32_t oldStyle = (this->style != style) ? this->style : -1;
 	applyStyle(style, newValues);
@@ -1211,6 +1229,7 @@ Font* Font::deriveFont(int32_t style, $AffineTransform* trans) {
 }
 
 Font* Font::deriveFont(float size) {
+	$useLocalCurrentObjectStackCache();
 	if (this->values == nullptr) {
 		return $new(Font, this->name, this->style, size, this->createdFont, this->font2DHandle);
 	}
@@ -1220,12 +1239,14 @@ Font* Font::deriveFont(float size) {
 }
 
 Font* Font::deriveFont($AffineTransform* trans) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeValues, newValues, $nc($(getAttributeValues()))->clone());
 	applyTransform(trans, newValues);
 	return $new(Font, newValues, ($String*)nullptr, -1, this->createdFont, this->font2DHandle);
 }
 
 Font* Font::deriveFont(int32_t style) {
+	$useLocalCurrentObjectStackCache();
 	if (this->values == nullptr) {
 		return $new(Font, this->name, style, (float)this->size, this->createdFont, this->font2DHandle);
 	}
@@ -1236,6 +1257,7 @@ Font* Font::deriveFont(int32_t style) {
 }
 
 Font* Font::deriveFont($Map* attributes) {
+	$useLocalCurrentObjectStackCache();
 	if (attributes == nullptr) {
 		return this;
 	}
@@ -1249,6 +1271,7 @@ bool Font::canDisplay(char16_t c) {
 }
 
 bool Font::canDisplay(int32_t codePoint) {
+	$useLocalCurrentObjectStackCache();
 	if (!$Character::isValidCodePoint(codePoint)) {
 		$throwNew($IllegalArgumentException, $$str({"invalid code point: "_s, $($Integer::toHexString(codePoint))}));
 	}
@@ -1319,6 +1342,7 @@ float Font::getItalicAngle() {
 }
 
 float Font::getItalicAngle($FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, aa, nullptr);
 	$var($Object, fm, nullptr);
 	if (frc == nullptr) {
@@ -1337,6 +1361,7 @@ bool Font::hasUniformLineMetrics() {
 }
 
 $FontLineMetrics* Font::defaultLineMetrics($FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontLineMetrics, flm, nullptr);
 	bool var$0 = this->flmref == nullptr || ($assign(flm, $cast($FontLineMetrics, $nc(this->flmref)->get()))) == nullptr;
 	if (var$0 || !$nc($nc(flm)->frc)->equals(frc)) {
@@ -1430,6 +1455,7 @@ $Rectangle2D* Font::getStringBounds($String* str, int32_t beginIndex, int32_t li
 }
 
 $Rectangle2D* Font::getStringBounds($chars* chars, int32_t beginIndex, int32_t limit, $FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	if (beginIndex < 0) {
 		$throwNew($IndexOutOfBoundsException, $$str({"beginIndex: "_s, $$str(beginIndex)}));
 	}
@@ -1464,6 +1490,7 @@ $Rectangle2D* Font::getStringBounds($chars* chars, int32_t beginIndex, int32_t l
 }
 
 $Rectangle2D* Font::getStringBounds($CharacterIterator* ci, int32_t beginIndex, int32_t limit, $FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	int32_t start = $nc(ci)->getBeginIndex();
 	int32_t end = ci->getEndIndex();
 	if (beginIndex < start) {
@@ -1485,6 +1512,7 @@ $Rectangle2D* Font::getStringBounds($CharacterIterator* ci, int32_t beginIndex, 
 }
 
 $Rectangle2D* Font::getMaxCharBounds($FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	$var($floats, metrics, $new($floats, 4));
 	$nc($(getFont2D()))->getFontMetrics(this, frc, metrics);
 	return $new($Rectangle2D$Float, (float)0, -metrics->get(0), metrics->get(3), metrics->get(0) + metrics->get(1) + metrics->get(2));
@@ -1507,6 +1535,7 @@ $GlyphVector* Font::createGlyphVector($FontRenderContext* frc, $ints* glyphCodes
 }
 
 $GlyphVector* Font::layoutGlyphVector($FontRenderContext* frc, $chars* text, int32_t start, int32_t limit, int32_t flags) {
+	$useLocalCurrentObjectStackCache();
 	$var($GlyphLayout, gl, $GlyphLayout::get(nullptr));
 	$var($StandardGlyphVector, gv, $nc(gl)->layout(this, frc, text, start, limit - start, flags, nullptr));
 	$GlyphLayout::done(gl);
@@ -1535,6 +1564,7 @@ void Font::initIDs() {
 }
 
 void clinit$Font($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(Font::DIALOG, "Dialog"_s);
 	$assignStatic(Font::DIALOG_INPUT, "DialogInput"_s);
 	$assignStatic(Font::SANS_SERIF, "SansSerif"_s);

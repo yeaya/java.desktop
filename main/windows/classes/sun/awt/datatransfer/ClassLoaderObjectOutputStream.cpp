@@ -90,6 +90,7 @@ void ClassLoaderObjectOutputStream::init$($OutputStream* os) {
 }
 
 void ClassLoaderObjectOutputStream::annotateClass($Class* cl) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($ClassLoader, classLoader, $cast($ClassLoader, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($ClassLoaderObjectOutputStream$1, this, cl)))));
 	$var($Set, s, $new($HashSet, 1));
@@ -98,6 +99,7 @@ void ClassLoaderObjectOutputStream::annotateClass($Class* cl) {
 }
 
 void ClassLoaderObjectOutputStream::annotateProxyClass($Class* cl) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($ClassLoader, classLoader, $cast($ClassLoader, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($ClassLoaderObjectOutputStream$2, this, cl)))));
 	$var($ClassArray, interfaces, $nc(cl)->getInterfaces());

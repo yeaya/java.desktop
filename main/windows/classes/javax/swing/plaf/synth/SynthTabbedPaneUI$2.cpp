@@ -94,6 +94,7 @@ void SynthTabbedPaneUI$2::init$($SynthTabbedPaneUI* this$0) {
 }
 
 void SynthTabbedPaneUI$2::calculateLayoutInfo() {
+	$useLocalCurrentObjectStackCache();
 	$BasicTabbedPaneUI$TabbedPaneLayout::calculateLayoutInfo();
 	if (this->this$0->tabOverlap != 0) {
 		int32_t tabCount = $nc($($SynthTabbedPaneUI::access$600(this->this$0)))->getTabCount();

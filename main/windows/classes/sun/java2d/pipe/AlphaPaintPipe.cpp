@@ -125,6 +125,7 @@ void AlphaPaintPipe::init$() {
 }
 
 $Object* AlphaPaintPipe::startSequence($SunGraphics2D* sg, $Shape* s, $Rectangle* devR, $ints* abox) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, var$0, sg->getDeviceColorModel());
 	$var($Rectangle, var$1, devR);
 	$var($Rectangle2D, var$2, $nc(s)->getBounds2D());
@@ -138,6 +139,7 @@ bool AlphaPaintPipe::needTile(Object$* context, int32_t x, int32_t y, int32_t w,
 }
 
 void AlphaPaintPipe::renderPathTile(Object$* ctx, $bytes* atile, int32_t offset, int32_t tilesize, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($AlphaPaintPipe$TileContext, context, $cast($AlphaPaintPipe$TileContext, ctx));
 	$var($PaintContext, paintCtxt, $nc(context)->paintCtxt);
 	$var($SunGraphics2D, sg, context->sunG2D);

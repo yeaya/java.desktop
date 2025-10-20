@@ -144,6 +144,7 @@ void StreamCloser::init$() {
 
 void StreamCloser::addToQueue($StreamCloser$CloseAction* ca) {
 	$load(StreamCloser);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$synchronized(StreamCloser::class$) {
 		$init(StreamCloser);
@@ -173,6 +174,7 @@ $StreamCloser$CloseAction* StreamCloser::createCloseAction($ImageInputStream* ii
 }
 
 $Object* StreamCloser::lambda$addToQueue$0($Runnable* streamCloserRunnable) {
+	$useLocalCurrentObjectStackCache();
 	$var($ThreadGroup, tg, $ThreadGroupUtils::getRootThreadGroup());
 	$init(StreamCloser);
 	$assignStatic(StreamCloser::streamCloser, $new($Thread, tg, streamCloserRunnable, "StreamCloser"_s, 0, false));

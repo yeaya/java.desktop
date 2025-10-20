@@ -118,6 +118,7 @@ void HeadlessBox::init$() {
 }
 
 void HeadlessBox::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($BoxArray, arr$, $new($BoxArray, {
 			$$new($Box, $BoxLayout::X_AXIS),

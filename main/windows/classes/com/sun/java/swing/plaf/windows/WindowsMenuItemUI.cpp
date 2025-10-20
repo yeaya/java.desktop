@@ -162,6 +162,7 @@ $ComponentUI* WindowsMenuItemUI::createUI($JComponent* c) {
 }
 
 void WindowsMenuItemUI::updateCheckIcon() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prefix, getPropertyPrefix());
 	if (this->checkIcon == nullptr || $instanceOf($UIResource, this->checkIcon)) {
 		$set(this, checkIcon, $UIManager::getIcon($$str({prefix, ".checkIcon"_s})));
@@ -191,6 +192,7 @@ void WindowsMenuItemUI::uninstallListeners() {
 }
 
 void WindowsMenuItemUI::paintText($Graphics* g, $JMenuItem* menuItem, $Rectangle* textRect, $String* text) {
+	$useLocalCurrentObjectStackCache();
 	if (WindowsMenuItemUI::isVistaPainting()) {
 		WindowsMenuItemUI::paintText(this->accessor, g, menuItem, textRect, text);
 		return;
@@ -219,6 +221,7 @@ void WindowsMenuItemUI::paintBackground($Graphics* g, $JMenuItem* menuItem, $Col
 
 void WindowsMenuItemUI::paintBackground($WindowsMenuItemUIAccessor* menuItemUI, $Graphics* g, $JMenuItem* menuItem, $Color* bgColor) {
 	$init(WindowsMenuItemUI);
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (!WindowsMenuItemUI::$assertionsDisabled && !isVistaPainting(xp)) {
 		$throwNew($AssertionError);
@@ -240,6 +243,7 @@ void WindowsMenuItemUI::paintBackground($WindowsMenuItemUIAccessor* menuItemUI, 
 
 void WindowsMenuItemUI::paintText($WindowsMenuItemUIAccessor* menuItemUI, $Graphics* g, $JMenuItem* menuItem, $Rectangle* textRect, $String* text) {
 	$init(WindowsMenuItemUI);
+	$useLocalCurrentObjectStackCache();
 	if (!WindowsMenuItemUI::$assertionsDisabled && !isVistaPainting()) {
 		$throwNew($AssertionError);
 	}

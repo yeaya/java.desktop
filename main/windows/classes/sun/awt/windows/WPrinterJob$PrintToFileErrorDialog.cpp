@@ -121,6 +121,7 @@ void WPrinterJob$PrintToFileErrorDialog::init$($WPrinterJob* this$0, $Dialog* pa
 }
 
 void WPrinterJob$PrintToFileErrorDialog::init($Component* parent, $String* title, $String* message, $String* buttonText) {
+	$useLocalCurrentObjectStackCache();
 	$var($Panel, p, $new($Panel));
 	add("Center"_s, static_cast<$Component*>($$new($Label, message)));
 	$var($Button, btn, $new($Button, buttonText));

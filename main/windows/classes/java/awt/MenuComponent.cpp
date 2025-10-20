@@ -167,6 +167,7 @@ $String* MenuComponent::constructComponentName() {
 }
 
 $ComponentFactory* MenuComponent::getComponentFactory() {
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());
 	if ($instanceOf($ComponentFactory, toolkit)) {
 		return $cast($ComponentFactory, toolkit);
@@ -201,6 +202,7 @@ $MenuContainer* MenuComponent::getParent_NoClientCode() {
 }
 
 $Font* MenuComponent::getFont() {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, font, this->font);
 	if (font != nullptr) {
 		return font;
@@ -213,6 +215,7 @@ $Font* MenuComponent::getFont() {
 }
 
 $Font* MenuComponent::getFont_NoClientCode() {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, font, this->font);
 	if (font != nullptr) {
 		return font;
@@ -239,6 +242,7 @@ void MenuComponent::setFont($Font* f) {
 }
 
 void MenuComponent::removeNotify() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		$var($MenuComponentPeer, p, this->peer);
 		if (p != nullptr) {
@@ -262,6 +266,7 @@ void MenuComponent::dispatchEvent($AWTEvent* e) {
 }
 
 void MenuComponent::dispatchEventImpl($AWTEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$EventQueue::setCurrentEventAndMostRecentTime(e);
 	$nc($($Toolkit::getDefaultToolkit()))->notifyAWTEventListeners(e);
 	if (this->newEventsOnly || (this->parent != nullptr && $instanceOf(MenuComponent, this->parent) && $nc(($cast(MenuComponent, this->parent)))->newEventsOnly)) {
@@ -292,6 +297,7 @@ $String* MenuComponent::paramString() {
 }
 
 $String* MenuComponent::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$1, $$str({$($of(this)->getClass()->getName()), "["_s}));
 	$var($String, var$0, $$concat(var$1, $(paramString())));
 	return $concat(var$0, "]");
@@ -321,6 +327,7 @@ $AccessibleContext* MenuComponent::getAccessibleContext() {
 }
 
 int32_t MenuComponent::getAccessibleIndexInParent() {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuContainer, localParent, this->parent);
 	if (!($instanceOf(MenuComponent, localParent))) {
 		return -1;

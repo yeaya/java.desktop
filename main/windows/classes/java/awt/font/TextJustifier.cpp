@@ -58,6 +58,7 @@ $Object* allocate$TextJustifier($Class* clazz) {
 bool TextJustifier::DEBUG = false;
 
 void TextJustifier::init$($GlyphJustificationInfoArray* info, int32_t start, int32_t limit) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, info, info);
 	this->start = start;
 	this->limit = limit;
@@ -72,6 +73,7 @@ void TextJustifier::init$($GlyphJustificationInfoArray* info, int32_t start, int
 }
 
 $floats* TextJustifier::justify(float delta) {
+	$useLocalCurrentObjectStackCache();
 	$var($floats, deltas, $new($floats, $nc(this->info)->length * 2));
 	bool grow = delta > 0;
 	if (TextJustifier::DEBUG) {

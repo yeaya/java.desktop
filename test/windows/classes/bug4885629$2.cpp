@@ -100,6 +100,7 @@ void bug4885629$2::init$() {
 }
 
 void bug4885629$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug4885629);
 	$assignStatic($bug4885629::frame, $new($JFrame));
 	$var($JComponent, a, $new($JPanel));

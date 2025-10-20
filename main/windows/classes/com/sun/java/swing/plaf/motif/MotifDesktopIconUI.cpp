@@ -175,6 +175,7 @@ void MotifDesktopIconUI::init$() {
 }
 
 void MotifDesktopIconUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$BasicDesktopIconUI::installDefaults();
 	setDefaultIcon($($UIManager::getIcon("DesktopIcon.icon"_s)));
 	$set(this, iconButton, createIconButton(this->defaultIcon));
@@ -263,6 +264,7 @@ void MotifDesktopIconUI::uninstallListeners() {
 }
 
 $Dimension* MotifDesktopIconUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame, iframe, $nc(this->desktopIcon)->getInternalFrame());
 	int32_t w = $nc(this->defaultIcon)->getIconWidth();
 	int32_t h = $nc(this->defaultIcon)->getIconHeight() + MotifDesktopIconUI::LABEL_HEIGHT + MotifDesktopIconUI::LABEL_DIVIDER;

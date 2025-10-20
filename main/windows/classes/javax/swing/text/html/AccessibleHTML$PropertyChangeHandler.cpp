@@ -72,6 +72,7 @@ void AccessibleHTML$PropertyChangeHandler::init$($AccessibleHTML* this$0) {
 }
 
 void AccessibleHTML$PropertyChangeHandler::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc(evt)->getPropertyName()))->equals("document"_s)) {
 		this->this$0->setDocument($($nc(this->this$0->editor)->getDocument()));
 	}

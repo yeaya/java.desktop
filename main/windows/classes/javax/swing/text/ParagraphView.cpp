@@ -212,6 +212,7 @@ $chars* ParagraphView::tabChars = nullptr;
 $chars* ParagraphView::tabDecimalChars = nullptr;
 
 void ParagraphView::init$($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	$FlowView::init$(elem, $View::Y_AXIS);
 	this->firstLineIndent = 0;
 	setPropertiesFromAttributes();
@@ -242,6 +243,7 @@ void ParagraphView::setFirstLineIndent(float fi) {
 }
 
 void ParagraphView::setPropertiesFromAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attr, getAttributes());
 	if (attr != nullptr) {
 		setParagraphInsets(attr);
@@ -275,6 +277,7 @@ $View* ParagraphView::getLayoutView(int32_t index) {
 }
 
 int32_t ParagraphView::getNextNorthSouthVisualPositionFrom(int32_t pos, $Position$Bias* b, $Shape* a, int32_t direction, $Position$BiasArray* biasRet) {
+	$useLocalCurrentObjectStackCache();
 	int32_t vIndex = 0;
 	if (pos == -1) {
 		vIndex = (direction == $SwingConstants::NORTH) ? getViewCount() - 1 : 0;
@@ -319,6 +322,7 @@ int32_t ParagraphView::getNextNorthSouthVisualPositionFrom(int32_t pos, $Positio
 }
 
 int32_t ParagraphView::getClosestPositionTo(int32_t pos, $Position$Bias* b, $Shape* a, int32_t direction, $Position$BiasArray* biasRet, int32_t rowIndex, int32_t x) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, text, $cast($JTextComponent, getContainer()));
 	$var($Document, doc, getDocument());
 	$var($View, row, getView(rowIndex));
@@ -381,6 +385,7 @@ bool ParagraphView::flipEastAndWestAtEnds(int32_t position, $Position$Bias* bias
 }
 
 int32_t ParagraphView::getFlowSpan(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, child, getView(index));
 	int32_t adjust = 0;
 	if ($instanceOf($ParagraphView$Row, child)) {
@@ -392,6 +397,7 @@ int32_t ParagraphView::getFlowSpan(int32_t index) {
 }
 
 int32_t ParagraphView::getFlowStart(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, child, getView(index));
 	int32_t adjust = 0;
 	if ($instanceOf($ParagraphView$Row, child)) {
@@ -406,6 +412,7 @@ $View* ParagraphView::createRow() {
 }
 
 float ParagraphView::nextTabStop(float x, int32_t tabOffset) {
+	$useLocalCurrentObjectStackCache();
 	if (this->justification != $StyleConstants::ALIGN_LEFT) {
 		return x + 10.0f;
 	}
@@ -464,10 +471,12 @@ float ParagraphView::nextTabStop(float x, int32_t tabOffset) {
 }
 
 $TabSet* ParagraphView::getTabSet() {
+	$useLocalCurrentObjectStackCache();
 	return $StyleConstants::getTabSet($($nc($(getElement()))->getAttributes()));
 }
 
 float ParagraphView::getPartialSize(int32_t startOffset, int32_t endOffset) {
+	$useLocalCurrentObjectStackCache();
 	float size = 0.0f;
 	int32_t viewIndex = 0;
 	int32_t numViews = getViewCount();
@@ -496,6 +505,7 @@ float ParagraphView::getPartialSize(int32_t startOffset, int32_t endOffset) {
 }
 
 int32_t ParagraphView::findOffsetToCharactersInString($chars* string, int32_t start) {
+	$useLocalCurrentObjectStackCache();
 	int32_t stringLength = $nc(string)->length;
 	int32_t end = getEndOffset();
 	$var($Segment, seg, $new($Segment));
@@ -525,6 +535,7 @@ float ParagraphView::getTabBase() {
 }
 
 void ParagraphView::paint($Graphics* g, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, alloc, ($instanceOf($Rectangle, a)) ? $cast($Rectangle, a) : $nc(a)->getBounds());
 	this->tabBase = $nc(alloc)->x + getLeftInset();
 	$FlowView::paint(g, a);
@@ -547,6 +558,7 @@ void ParagraphView::paint($Graphics* g, $Shape* a) {
 }
 
 float ParagraphView::getAlignment(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	{
 		float a = 0;
 		switch (axis) {
@@ -592,6 +604,7 @@ int32_t ParagraphView::getBreakWeight(int32_t axis, float len) {
 }
 
 $SizeRequirements* ParagraphView::calculateMinorAxisRequirements(int32_t axis, $SizeRequirements* r$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($SizeRequirements, r, r$renamed);
 	$assign(r, $FlowView::calculateMinorAxisRequirements(axis, r));
 	float min = (float)0;

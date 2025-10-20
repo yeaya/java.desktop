@@ -74,6 +74,7 @@ void WWindowPeer$GuiDisposedListener::init$() {
 }
 
 void WWindowPeer$GuiDisposedListener::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool isDisposed = $nc(($cast($Boolean, $($nc(e)->getNewValue()))))->booleanValue();
 	if (isDisposed != true) {
 		$init($WWindowPeer);

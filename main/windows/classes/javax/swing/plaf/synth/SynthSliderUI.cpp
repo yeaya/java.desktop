@@ -400,6 +400,7 @@ void SynthSliderUI::uninstallListeners($JSlider* slider) {
 }
 
 void SynthSliderUI::updateStyle($JSlider* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(static_cast<$JComponent*>(c), $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -462,6 +463,7 @@ void SynthSliderUI::setThumbPressed(bool pressed) {
 }
 
 int32_t SynthSliderUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (c == nullptr) {
 		$throwNew($NullPointerException, "Component must be non-null"_s);
 	}
@@ -516,6 +518,7 @@ int32_t SynthSliderUI::getBaseline($JComponent* c, int32_t width, int32_t height
 }
 
 $Dimension* SynthSliderUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	recalculateIfInsetsChanged();
 	$var($Dimension, d, $new($Dimension, $nc(this->contentRect)->width, $nc(this->contentRect)->height));
 	$var($Insets, i, $nc(this->slider)->getInsets());
@@ -547,6 +550,7 @@ void SynthSliderUI::calculateGeometry() {
 }
 
 void SynthSliderUI::layout() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(this->slider));
 	$var($SynthGraphicsUtils, synthGraphics, $nc(this->style)->getGraphicsUtils(context));
 	$var($Insets, trackInsets, $new($Insets, 0, 0, 0, 0));
@@ -661,6 +665,7 @@ void SynthSliderUI::layout() {
 }
 
 int32_t SynthSliderUI::getPadForLabel(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pad = 0;
 	$var($JComponent, c, $cast($JComponent, $nc($($nc(this->slider)->getLabelTable()))->get($($Integer::valueOf(i)))));
 	if (c != nullptr) {
@@ -792,6 +797,7 @@ $Dimension* SynthSliderUI::getThumbSize() {
 }
 
 void SynthSliderUI::recalculateIfInsetsChanged() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(this->slider));
 	$var($Insets, newInsets, $nc(this->style)->getInsets(context, nullptr));
 	$var($Insets, compInsets, $nc(this->slider)->getInsets());
@@ -843,6 +849,7 @@ int32_t SynthSliderUI::getComponentState($JComponent* c, $Region* region) {
 }
 
 void SynthSliderUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -859,6 +866,7 @@ void SynthSliderUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void SynthSliderUI::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	recalculateIfInsetsChanged();
 	recalculateIfOrientationChanged();
 	$var($Rectangle, clip, $nc(g)->getClipBounds());
@@ -908,6 +916,7 @@ void SynthSliderUI::paintBorder($SynthContext* context, $Graphics* g, int32_t x,
 }
 
 void SynthSliderUI::paintThumb($SynthContext* context, $Graphics* g, $Rectangle* thumbBounds) {
+	$useLocalCurrentObjectStackCache();
 	int32_t orientation = $nc(this->slider)->getOrientation();
 	$SynthLookAndFeel::updateSubregion(context, g, thumbBounds);
 	$nc($($nc(context)->getPainter()))->paintSliderThumbBackground(context, g, $nc(thumbBounds)->x, thumbBounds->y, thumbBounds->width, thumbBounds->height, orientation);
@@ -915,6 +924,7 @@ void SynthSliderUI::paintThumb($SynthContext* context, $Graphics* g, $Rectangle*
 }
 
 void SynthSliderUI::paintTrack($SynthContext* context, $Graphics* g, $Rectangle* trackBounds) {
+	$useLocalCurrentObjectStackCache();
 	int32_t orientation = $nc(this->slider)->getOrientation();
 	$SynthLookAndFeel::updateSubregion(context, g, trackBounds);
 	$nc($($nc(context)->getPainter()))->paintSliderTrackBackground(context, g, $nc(trackBounds)->x, trackBounds->y, trackBounds->width, trackBounds->height, orientation);

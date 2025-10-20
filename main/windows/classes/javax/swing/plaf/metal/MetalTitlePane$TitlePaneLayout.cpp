@@ -118,6 +118,7 @@ $Dimension* MetalTitlePane$TitlePaneLayout::minimumLayoutSize($Container* c) {
 }
 
 int32_t MetalTitlePane$TitlePaneLayout::computeHeight() {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, fm, $nc(this->this$0->rootPane)->getFontMetrics($(this->this$0->getFont())));
 	int32_t fontHeight = $nc(fm)->getHeight();
 	fontHeight += 7;
@@ -130,6 +131,7 @@ int32_t MetalTitlePane$TitlePaneLayout::computeHeight() {
 }
 
 void MetalTitlePane$TitlePaneLayout::layoutContainer($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	bool leftToRight = (this->this$0->window == nullptr) ? $nc($($nc($(this->this$0->getRootPane()))->getComponentOrientation()))->isLeftToRight() : $nc($($nc(this->this$0->window)->getComponentOrientation()))->isLeftToRight();
 	int32_t w = this->this$0->getWidth();
 	int32_t x = 0;

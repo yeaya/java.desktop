@@ -452,6 +452,7 @@ bool FontConfiguration::foundOsSpecificFile() {
 }
 
 bool FontConfiguration::fontFilesArePresent() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	init();
 	int16_t fontNameID = $nc($nc($nc(this->compFontNameIDs)->get(0))->get(0))->get(0);
@@ -462,6 +463,7 @@ bool FontConfiguration::fontFilesArePresent() {
 }
 
 void FontConfiguration::findFontConfigFile() {
+	$useLocalCurrentObjectStackCache();
 	this->foundOsSpecificFile$ = true;
 	$var($String, javaHome, $System::getProperty("java.home"_s));
 	if (javaHome == nullptr) {
@@ -482,6 +484,7 @@ void FontConfiguration::findFontConfigFile() {
 }
 
 void FontConfiguration::readFontConfigFile($File* f) {
+	$useLocalCurrentObjectStackCache();
 	if (f == nullptr) {
 		$var($InputStream, in, $ref(FontConfiguration::class$->getResourceAsStream("/fontconfig.bfc"_s)));
 		try {
@@ -519,6 +522,7 @@ void FontConfiguration::readFontConfigFile($File* f) {
 }
 
 void FontConfiguration::getInstalledFallbackFonts($String* javaLib) {
+	$useLocalCurrentObjectStackCache();
 	$init($File);
 	$var($String, fallbackDirName, $str({javaLib, $File::separator, "fonts"_s, $File::separator, "fallback"_s}));
 	$var($File, fallbackDir, $new($File, fallbackDirName));
@@ -544,6 +548,7 @@ void FontConfiguration::getInstalledFallbackFonts($String* javaLib) {
 }
 
 $File* FontConfiguration::findImpl($String* fname) {
+	$useLocalCurrentObjectStackCache();
 	$var($File, f, $new($File, $$str({fname, ".properties"_s})));
 	if ($FontUtilities::debugFonts()) {
 		$nc(FontConfiguration::logger)->info($$str({"Looking for text fontconfig file : "_s, f}));
@@ -570,6 +575,7 @@ $File* FontConfiguration::findImpl($String* fname) {
 }
 
 $File* FontConfiguration::findFontConfigFile($String* dir) {
+	$useLocalCurrentObjectStackCache();
 	if (!($$new($File, dir))->exists()) {
 		return nullptr;
 	}
@@ -621,6 +627,7 @@ $File* FontConfiguration::findFontConfigFile($String* dir) {
 
 void FontConfiguration::loadBinary($InputStream* inStream) {
 	$init(FontConfiguration);
+	$useLocalCurrentObjectStackCache();
 	$var($DataInputStream, in, $new($DataInputStream, inStream));
 	$assignStatic(FontConfiguration::head, readShortTable(in, FontConfiguration::HEAD_LENGTH));
 	$var($ints, tableSizes, $new($ints, FontConfiguration::INDEX_TABLEEND));
@@ -658,6 +665,7 @@ void FontConfiguration::loadBinary($InputStream* inStream) {
 
 void FontConfiguration::saveBinary($OutputStream* out) {
 	$init(FontConfiguration);
+	$useLocalCurrentObjectStackCache();
 	sanityCheck();
 	$var($DataOutputStream, dataOut, $new($DataOutputStream, out));
 	writeShortTable(dataOut, FontConfiguration::head);
@@ -705,6 +713,7 @@ void FontConfiguration::initFontConfig() {
 }
 
 int16_t FontConfiguration::getInitELC() {
+	$useLocalCurrentObjectStackCache();
 	if (this->initELC != -1) {
 		return this->initELC;
 	}
@@ -735,6 +744,7 @@ int16_t FontConfiguration::getInitELC() {
 }
 
 void FontConfiguration::initAllComponentFonts() {
+	$useLocalCurrentObjectStackCache();
 	$var($shorts, fallbackScripts, getFallbackScripts());
 	for (int32_t fontIndex = 0; fontIndex < FontConfiguration::NUM_FONTS; ++fontIndex) {
 		$var($shorts, coreScripts, getCoreScripts(fontIndex));
@@ -782,6 +792,7 @@ void FontConfiguration::initAllComponentFonts() {
 }
 
 int16_t FontConfiguration::remapLocaleMap(int32_t fontIndex, int32_t styleIndex, int16_t scriptID, int16_t fontID) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, scriptName, getString($nc(FontConfiguration::table_scriptIDs)->get(scriptID)));
 	$var($String, value, $cast($String, $nc(FontConfiguration::localeMap)->get(scriptName)));
 	if (value == nullptr) {
@@ -854,6 +865,7 @@ bool FontConfiguration::isLogicalFontFaceName($String* fontName) {
 
 bool FontConfiguration::isLogicalFontFaceNameLC($String* fontName) {
 	$init(FontConfiguration);
+	$useLocalCurrentObjectStackCache();
 	int32_t period = $nc(fontName)->indexOf((int32_t)u'.');
 	if (period >= 0) {
 		$var($String, familyName, fontName->substring(0, period));
@@ -944,6 +956,7 @@ $String* FontConfiguration::getStyleName(int32_t styleIndex) {
 
 $String* FontConfiguration::getLogicalFontFaceName($String* familyName, int32_t style) {
 	$init(FontConfiguration);
+	$useLocalCurrentObjectStackCache();
 	if (!FontConfiguration::$assertionsDisabled && !isLogicalFontFamilyName(familyName)) {
 		$throwNew($AssertionError);
 	}
@@ -993,6 +1006,7 @@ bool FontConfiguration::willReorderForStartupLocale() {
 
 $Object* FontConfiguration::getReorderSequence() {
 	$init(FontConfiguration);
+	$useLocalCurrentObjectStackCache();
 	if ($nc(FontConfiguration::fontConfig)->reorderMap == nullptr) {
 		$nc(FontConfiguration::fontConfig)->initReorderMap();
 	}
@@ -1010,6 +1024,7 @@ $Object* FontConfiguration::getReorderSequence() {
 }
 
 void FontConfiguration::reorderSequenceForLocale($StringArray* seq) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, val, getReorderSequence());
 	if ($instanceOf($String, val)) {
 		for (int32_t i = 0; i < $nc(seq)->length; ++i) {
@@ -1032,6 +1047,7 @@ void FontConfiguration::reorderSequenceForLocale($StringArray* seq) {
 
 $Vector* FontConfiguration::splitSequence($String* sequence) {
 	$init(FontConfiguration);
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, parts, $new($Vector));
 	int32_t start = 0;
 	int32_t end = 0;
@@ -1046,6 +1062,7 @@ $Vector* FontConfiguration::splitSequence($String* sequence) {
 }
 
 $StringArray* FontConfiguration::split($String* sequence) {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, v, splitSequence(sequence));
 	return $fcast($StringArray, $nc(v)->toArray($$new($StringArray, 0)));
 }
@@ -1072,6 +1089,7 @@ $FontDescriptorArray* FontConfiguration::getFontDescriptors(int32_t fontIndex, i
 }
 
 $FontDescriptorArray* FontConfiguration::buildFontDescriptors(int32_t fontIndex, int32_t styleIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, fontName, $nc(FontConfiguration::fontNames)->get(fontIndex));
 	$var($String, styleName, $nc(FontConfiguration::styleNames)->get(styleIndex));
 	$var($shorts, scriptIDs, getCoreScripts(fontIndex));
@@ -1107,6 +1125,7 @@ $String* FontConfiguration::makeAWTFontName($String* platformFontName, $String* 
 }
 
 $CharsetEncoder* FontConfiguration::getFontCharsetEncoder($String* charsetName, $String* fontName) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Charset, fc, nullptr);
 	if ($nc(charsetName)->equals("default"_s)) {
@@ -1146,6 +1165,7 @@ $HashSet* FontConfiguration::getAWTFontPathSet() {
 }
 
 $CompositeFontDescriptorArray* FontConfiguration::get2DCompositeFontInfo() {
+	$useLocalCurrentObjectStackCache();
 	$var($CompositeFontDescriptorArray, result, $new($CompositeFontDescriptorArray, FontConfiguration::NUM_FONTS * FontConfiguration::NUM_STYLES));
 	$var($String, defaultFontFile, $nc(this->fontManager)->getDefaultFontFile());
 	$var($String, defaultFontFaceName, $nc(this->fontManager)->getDefaultFontFaceName());
@@ -1218,6 +1238,7 @@ $CompositeFontDescriptorArray* FontConfiguration::get2DCompositeFontInfo() {
 }
 
 bool FontConfiguration::needToSearchForFile($String* fileName) {
+	$useLocalCurrentObjectStackCache();
 	$init($FontUtilities);
 	if (!$FontUtilities::isLinux) {
 		return false;
@@ -1243,6 +1264,7 @@ bool FontConfiguration::needToSearchForFile($String* fileName) {
 }
 
 int32_t FontConfiguration::getNumberCoreFonts() {
+	$useLocalCurrentObjectStackCache();
 	if (this->numCoreFonts == -1) {
 		this->numCoreFonts = $nc(this->coreFontNameIDs)->size();
 		$var($ShortArray, emptyShortArray, $new($ShortArray, 0));
@@ -1312,6 +1334,7 @@ void FontConfiguration::setFontConfiguration() {
 
 void FontConfiguration::sanityCheck() {
 	$init(FontConfiguration);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	int32_t errors = 0;
 	$var($String, osName, $cast($String, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($FontConfiguration$3)))));
@@ -1382,6 +1405,7 @@ bool FontConfiguration::isEmpty($shorts* a) {
 
 void FontConfiguration::dump() {
 	$init(FontConfiguration);
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println("\n----Head Table------------"_s);
 	for (int32_t ii = 0; ii < FontConfiguration::HEAD_LENGTH; ++ii) {
@@ -1492,6 +1516,7 @@ int16_t FontConfiguration::getComponentFontIDMotif(int16_t scriptID, int32_t fon
 
 $ints* FontConfiguration::getExclusionRanges(int16_t scriptID) {
 	$init(FontConfiguration);
+	$useLocalCurrentObjectStackCache();
 	int16_t exID = $nc(FontConfiguration::table_exclusions)->get(scriptID);
 	if (exID == 0) {
 		return FontConfiguration::EMPTY_INT_ARRAY;
@@ -1544,6 +1569,7 @@ $String* FontConfiguration::getScriptName(int16_t scriptID) {
 }
 
 $shorts* FontConfiguration::getCoreScripts(int32_t fontIndex) {
+	$useLocalCurrentObjectStackCache();
 	int16_t elc = getInitELC();
 	$var($shorts, scripts, getShortArray($nc(FontConfiguration::table_sequences)->get(elc * FontConfiguration::NUM_FONTS + fontIndex)));
 	if (this->preferLocaleFonts) {
@@ -1570,6 +1596,7 @@ $shorts* FontConfiguration::getFallbackScripts() {
 
 void FontConfiguration::printTable($shorts* list, int32_t start) {
 	$init(FontConfiguration);
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = start; i < $nc(list)->length; ++i) {
 		$init($System);
 		$nc($System::out)->println($$str({"  "_s, $$str(i), " : "_s, $(getString(list->get(i)))}));
@@ -1578,6 +1605,7 @@ void FontConfiguration::printTable($shorts* list, int32_t start) {
 
 $shorts* FontConfiguration::readShortTable($DataInputStream* in, int32_t len) {
 	$init(FontConfiguration);
+	$useLocalCurrentObjectStackCache();
 	if (len == 0) {
 		return FontConfiguration::EMPTY_SHORT_ARRAY;
 	}
@@ -1610,6 +1638,7 @@ void FontConfiguration::writeShortTable($DataOutputStream* out, $shorts* data) {
 
 $shorts* FontConfiguration::toList($HashMap* map) {
 	$init(FontConfiguration);
+	$useLocalCurrentObjectStackCache();
 	$var($shorts, list, $new($shorts, $nc(map)->size()));
 	$Arrays::fill(list, (int16_t)-1);
 	{
@@ -1638,6 +1667,7 @@ $String* FontConfiguration::getString(int16_t stringID) {
 
 $shorts* FontConfiguration::getShortArray(int16_t shortArrayID) {
 	$init(FontConfiguration);
+	$useLocalCurrentObjectStackCache();
 	$var($String, s, getString(shortArrayID));
 	$var($chars, cc, $nc(s)->toCharArray());
 	$var($shorts, ss, $new($shorts, cc->length));
@@ -1668,6 +1698,7 @@ int16_t FontConfiguration::getStringID($String* s) {
 
 int16_t FontConfiguration::getShortArrayID($shorts* sa) {
 	$init(FontConfiguration);
+	$useLocalCurrentObjectStackCache();
 	$var($chars, cc, $new($chars, $nc(sa)->length));
 	for (int32_t i = 0; i < sa->length; ++i) {
 		cc->set(i, (char16_t)sa->get(i));

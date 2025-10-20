@@ -86,6 +86,7 @@ void Window$1DisposeAction::init$($Window* this$0) {
 }
 
 void Window$1DisposeAction::run() {
+	$useLocalCurrentObjectStackCache();
 	this->this$0->disposing = true;
 	{
 		$var($Throwable, var$0, nullptr);

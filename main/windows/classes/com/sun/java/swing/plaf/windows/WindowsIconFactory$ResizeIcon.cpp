@@ -95,6 +95,7 @@ void WindowsIconFactory$ResizeIcon::init$() {
 }
 
 void WindowsIconFactory$ResizeIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor($($UIManager::getColor("InternalFrame.resizeIconHighlight"_s)));
 	g->drawLine(0, 11, 11, 0);
 	g->drawLine(4, 11, 11, 4);

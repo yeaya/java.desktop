@@ -95,6 +95,7 @@ void SynthLookAndFeel$Handler::init$($SynthLookAndFeel* this$0) {
 }
 
 void SynthLookAndFeel$Handler::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propertyName, $nc(evt)->getPropertyName());
 	$var($Object, newValue, evt->getNewValue());
 	$var($Object, oldValue, evt->getOldValue());
@@ -117,6 +118,7 @@ void SynthLookAndFeel$Handler::propertyChange($PropertyChangeEvent* evt) {
 }
 
 void SynthLookAndFeel$Handler::repaintIfBackgroundsDiffer($JComponent* comp) {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentUI, ui, $nc(comp)->getUI());
 	if ($instanceOf($SynthUI, ui)) {
 		$var($SynthUI, synthUI, $cast($SynthUI, ui));

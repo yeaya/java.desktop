@@ -61,6 +61,7 @@ $Object* allocate$LayoutStyle($Class* clazz) {
 }
 
 void LayoutStyle::setInstance(LayoutStyle* style) {
+	$useLocalCurrentObjectStackCache();
 	$load(LayoutStyle);
 	$synchronized(LayoutStyle::class$) {
 		if (style == nullptr) {
@@ -72,6 +73,7 @@ void LayoutStyle::setInstance(LayoutStyle* style) {
 }
 
 LayoutStyle* LayoutStyle::getInstance() {
+	$useLocalCurrentObjectStackCache();
 	$var(LayoutStyle, style, nullptr);
 	$load(LayoutStyle);
 	$synchronized(LayoutStyle::class$) {

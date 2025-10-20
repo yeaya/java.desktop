@@ -48,6 +48,7 @@ void Test8152419::init$() {
 }
 
 void Test8152419::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($CountDownLatch, latch, $new($CountDownLatch, 1));
 	$var($JColorChooserTest, test, $new($JColorChooserTest, latch));
 	$var($Thread, T1, $new($Thread, static_cast<$Runnable*>(test)));

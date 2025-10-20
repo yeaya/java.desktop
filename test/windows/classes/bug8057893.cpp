@@ -174,6 +174,7 @@ void bug8057893::init$() {
 
 void bug8057893::main($StringArray* args) {
 	$init(bug8057893);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(100);
 	$EventQueue::invokeAndWait(static_cast<$Runnable*>($$new(bug8057893$$Lambda$lambda$main$0)));
@@ -199,6 +200,7 @@ void bug8057893::lambda$main$1() {
 
 void bug8057893::lambda$main$0() {
 	$init(bug8057893);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug8057893::frame, $new($JFrame));
 	$nc(bug8057893::frame)->setDefaultCloseOperation($WindowConstants::EXIT_ON_CLOSE);
 	$var($JComboBox, comboBox, $new($JComboBox, $$new($StringArray, {

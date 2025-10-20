@@ -71,6 +71,7 @@ $Object* allocate$BlitBg$TraceBlitBg($Class* clazz) {
 }
 
 void BlitBg$TraceBlitBg::init$($BlitBg* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, var$0, $nc(target)->getSourceType());
 	$var($CompositeType, var$1, target->getCompositeType());
 	$BlitBg::init$(var$0, var$1, $(target->getDestType()));

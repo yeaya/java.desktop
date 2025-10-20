@@ -61,6 +61,7 @@ void TIFFJPEGCompressor$JPEGSPIFilter::init$() {
 }
 
 bool TIFFJPEGCompressor$JPEGSPIFilter::filter(Object$* provider) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageReaderSpi, readerSPI, $cast($ImageReaderSpi, provider));
 	if (readerSPI != nullptr) {
 		$var($String, streamMetadataName, readerSPI->getNativeStreamMetadataFormatName());

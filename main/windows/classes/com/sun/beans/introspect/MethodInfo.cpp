@@ -117,6 +117,7 @@ $Class* MethodInfo::resolve($Method* method, $Type* type) {
 
 $List* MethodInfo::get($Class* type) {
 	$load(MethodInfo);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($List, list, nullptr);
 	if (type != nullptr) {

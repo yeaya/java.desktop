@@ -209,6 +209,7 @@ $String* TextComponent$AccessibleAWTTextComponent::getSelectedText() {
 }
 
 $String* TextComponent$AccessibleAWTTextComponent::getAtIndex(int32_t part, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index >= $nc($(this->this$0->getText()))->length()) {
 		return nullptr;
 	}
@@ -260,6 +261,7 @@ int32_t TextComponent$AccessibleAWTTextComponent::findWordLimit(int32_t index, $
 }
 
 $String* TextComponent$AccessibleAWTTextComponent::getAfterIndex(int32_t part, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index >= $nc($(this->this$0->getText()))->length()) {
 		return nullptr;
 	}
@@ -313,6 +315,7 @@ $String* TextComponent$AccessibleAWTTextComponent::getAfterIndex(int32_t part, i
 }
 
 $String* TextComponent$AccessibleAWTTextComponent::getBeforeIndex(int32_t part, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index > $nc($(this->this$0->getText()))->length() - 1) {
 		return nullptr;
 	}

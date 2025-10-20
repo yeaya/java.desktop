@@ -69,6 +69,7 @@ $Object* allocate$DeafServer($Class* clazz) {
 }
 
 void DeafServer::init$() {
+	$useLocalCurrentObjectStackCache();
 	this->wakeup = false;
 	$var($InetSocketAddress, addr, $new($InetSocketAddress, 0));
 	$set(this, server, $HttpServer::create(addr, 0));

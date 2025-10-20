@@ -61,6 +61,7 @@ void MetaData$java_awt_List_PersistenceDelegate::init$() {
 }
 
 void MetaData$java_awt_List_PersistenceDelegate::initialize($Class* type, Object$* oldInstance, Object$* newInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultPersistenceDelegate::initialize(type, oldInstance, newInstance, out);
 	$var($List, m, $cast($List, oldInstance));
 	$var($List, n, $cast($List, newInstance));

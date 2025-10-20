@@ -105,6 +105,7 @@ void BasicLabelUI$Actions::init$($String* key) {
 }
 
 void BasicLabelUI$Actions::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, label, $cast($JLabel, $nc(e)->getSource()));
 	$var($String, key, getName());
 	if (key == BasicLabelUI$Actions::PRESS) {
@@ -115,6 +116,7 @@ void BasicLabelUI$Actions::actionPerformed($ActionEvent* e) {
 }
 
 void BasicLabelUI$Actions::doPress($JLabel* label) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, labelFor, $nc(label)->getLabelFor());
 	if (labelFor != nullptr && labelFor->isEnabled()) {
 		$var($InputMap, inputMap, $SwingUtilities::getUIInputMap(label, $JComponent::WHEN_FOCUSED));
@@ -132,6 +134,7 @@ void BasicLabelUI$Actions::doPress($JLabel* label) {
 }
 
 void BasicLabelUI$Actions::doRelease($JLabel* label, bool isCommand) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, labelFor, $nc(label)->getLabelFor());
 	if (labelFor != nullptr && labelFor->isEnabled()) {
 		if (label->hasFocus()) {

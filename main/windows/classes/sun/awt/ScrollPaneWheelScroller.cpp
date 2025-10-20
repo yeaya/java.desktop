@@ -73,6 +73,7 @@ void ScrollPaneWheelScroller::init$() {
 
 void ScrollPaneWheelScroller::handleWheelScrolling($ScrollPane* sp, $MouseWheelEvent* e) {
 	$init(ScrollPaneWheelScroller);
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(ScrollPaneWheelScroller::log)->isLoggable($PlatformLogger$Level::FINER)) {
 		$var($String, var$2, $$str({"x = "_s, $$str($nc(e)->getX()), ", y = "_s}));
@@ -95,6 +96,7 @@ void ScrollPaneWheelScroller::handleWheelScrolling($ScrollPane* sp, $MouseWheelE
 
 $Adjustable* ScrollPaneWheelScroller::getAdjustableToScroll($ScrollPane* sp) {
 	$init(ScrollPaneWheelScroller);
+	$useLocalCurrentObjectStackCache();
 	int32_t policy = $nc(sp)->getScrollbarDisplayPolicy();
 	if (policy == $ScrollPane::SCROLLBARS_ALWAYS || policy == $ScrollPane::SCROLLBARS_NEVER) {
 		$init($PlatformLogger$Level);
@@ -153,6 +155,7 @@ int32_t ScrollPaneWheelScroller::getIncrementFromAdjustable($Adjustable* adj, $M
 
 void ScrollPaneWheelScroller::scrollAdjustable($Adjustable* adj, int32_t amount) {
 	$init(ScrollPaneWheelScroller);
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(ScrollPaneWheelScroller::log)->isLoggable($PlatformLogger$Level::FINE)) {
 		if (adj == nullptr) {

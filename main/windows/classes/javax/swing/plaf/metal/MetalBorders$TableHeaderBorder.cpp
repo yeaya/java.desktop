@@ -79,6 +79,7 @@ void MetalBorders$TableHeaderBorder::init$() {
 }
 
 void MetalBorders$TableHeaderBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->translate(x, y);
 	g->setColor($($MetalLookAndFeel::getControlDarkShadow()));
 	g->drawLine(w - 1, 0, w - 1, h - 1);

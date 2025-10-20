@@ -193,6 +193,7 @@ $chars* RTFGenerator::hexdigits = nullptr;
 
 void RTFGenerator::writeDocument($Document* d, $OutputStream* to) {
 	$init(RTFGenerator);
+	$useLocalCurrentObjectStackCache();
 	$var(RTFGenerator, gen, $new(RTFGenerator, to));
 	$var($Element, root, $nc(d)->getDefaultRootElement());
 	gen->examineElement(root);
@@ -219,6 +220,7 @@ void RTFGenerator::init$($OutputStream* to) {
 }
 
 void RTFGenerator::examineElement($Element* el) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, a, $nc(el)->getAttributes());
 	$var($String, fontName, nullptr);
 	$var($Object, foregroundColor, nullptr);
@@ -251,6 +253,7 @@ void RTFGenerator::examineElement($Element* el) {
 }
 
 void RTFGenerator::tallyStyles($AttributeSet* a$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, a, a$renamed);
 	while (a != nullptr) {
 		if ($instanceOf($Style, a)) {
@@ -266,6 +269,7 @@ void RTFGenerator::tallyStyles($AttributeSet* a$renamed) {
 }
 
 $Style* RTFGenerator::findStyle($AttributeSet* a$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, a, a$renamed);
 	while (a != nullptr) {
 		if ($instanceOf($Style, a)) {
@@ -280,6 +284,7 @@ $Style* RTFGenerator::findStyle($AttributeSet* a$renamed) {
 }
 
 $Integer* RTFGenerator::findStyleNumber($AttributeSet* a$renamed, $String* domain) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, a, a$renamed);
 	while (a != nullptr) {
 		if ($instanceOf($Style, a)) {
@@ -298,6 +303,7 @@ $Integer* RTFGenerator::findStyleNumber($AttributeSet* a$renamed, $String* domai
 
 $Object* RTFGenerator::attrDiff($MutableAttributeSet* oldAttrs, $AttributeSet* newAttrs, Object$* key, Object$* dfl) {
 	$init(RTFGenerator);
+	$useLocalCurrentObjectStackCache();
 	$var($Object, oldValue, nullptr);
 	$var($Object, newValue, nullptr);
 	$assign(oldValue, $nc(oldAttrs)->getAttribute(key));
@@ -322,6 +328,7 @@ $Object* RTFGenerator::attrDiff($MutableAttributeSet* oldAttrs, $AttributeSet* n
 
 bool RTFGenerator::equalArraysOK(Object$* a, Object$* b) {
 	$init(RTFGenerator);
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, aa, nullptr);
 	$var($ObjectArray, bb, nullptr);
 	if ($equals(a, b)) {
@@ -358,6 +365,7 @@ void RTFGenerator::writeLineBreak() {
 }
 
 void RTFGenerator::writeRTFHeader() {
+	$useLocalCurrentObjectStackCache();
 	int32_t index = 0;
 	writeBegingroup();
 	writeControlWord("rtf"_s, 1);
@@ -472,6 +480,7 @@ void RTFGenerator::writeRTFHeader() {
 }
 
 void RTFGenerator::writeDocumentProperties($Document* doc) {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = 0;
 	bool wroteSomething = false;
 	$init($RTFAttributes);
@@ -510,6 +519,7 @@ void RTFGenerator::checkNumericControlWord($MutableAttributeSet* currentAttribut
 }
 
 void RTFGenerator::checkControlWord($MutableAttributeSet* currentAttributes, $AttributeSet* newAttributes, $RTFAttribute* word) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, parm, nullptr);
 	if (($assign(parm, attrDiff(currentAttributes, newAttributes, $($nc(word)->swingName()), RTFGenerator::MagicToken))) != nullptr) {
 		if ($equals(parm, RTFGenerator::MagicToken)) {
@@ -522,6 +532,7 @@ void RTFGenerator::checkControlWord($MutableAttributeSet* currentAttributes, $At
 }
 
 void RTFGenerator::checkControlWords($MutableAttributeSet* currentAttributes, $AttributeSet* newAttributes, $RTFAttributeArray* words, int32_t domain) {
+	$useLocalCurrentObjectStackCache();
 	int32_t wordIndex = 0;
 	int32_t wordCount = $nc(words)->length;
 	for (wordIndex = 0; wordIndex < wordCount; ++wordIndex) {
@@ -533,6 +544,7 @@ void RTFGenerator::checkControlWords($MutableAttributeSet* currentAttributes, $A
 }
 
 void RTFGenerator::updateSectionAttributes($MutableAttributeSet* current, $AttributeSet* newAttributes, bool emitStyleChanges) {
+	$useLocalCurrentObjectStackCache();
 	if (emitStyleChanges) {
 		$var($Object, oldStyle, $nc(current)->getAttribute("sectionStyle"_s));
 		$init($Constants);
@@ -554,6 +566,7 @@ void RTFGenerator::updateSectionAttributes($MutableAttributeSet* current, $Attri
 }
 
 void RTFGenerator::resetSectionAttributes($MutableAttributeSet* currentAttributes) {
+	$useLocalCurrentObjectStackCache();
 	writeControlWord("sectd"_s);
 	int32_t wordIndex = 0;
 	$init($RTFAttributes);
@@ -568,6 +581,7 @@ void RTFGenerator::resetSectionAttributes($MutableAttributeSet* currentAttribute
 }
 
 void RTFGenerator::updateParagraphAttributes($MutableAttributeSet* current, $AttributeSet* newAttributes, bool emitStyleChanges) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, parm, nullptr);
 	$var($Object, oldStyle, nullptr);
 	$var($Object, newStyle, nullptr);
@@ -672,6 +686,7 @@ void RTFGenerator::updateParagraphAttributes($MutableAttributeSet* current, $Att
 }
 
 void RTFGenerator::writeParagraphElement($Element* el) {
+	$useLocalCurrentObjectStackCache();
 	updateParagraphAttributes(this->outputAttributes, $($nc(el)->getAttributes()), true);
 	int32_t sub_count = $nc(el)->getElementCount();
 	for (int32_t idx = 0; idx < sub_count; ++idx) {
@@ -682,6 +697,7 @@ void RTFGenerator::writeParagraphElement($Element* el) {
 }
 
 void RTFGenerator::resetParagraphAttributes($MutableAttributeSet* currentAttributes) {
+	$useLocalCurrentObjectStackCache();
 	writeControlWord("pard"_s);
 	$init($StyleConstants);
 	$nc(currentAttributes)->addAttribute($StyleConstants::Alignment, $($Integer::valueOf(0)));
@@ -700,6 +716,7 @@ void RTFGenerator::resetParagraphAttributes($MutableAttributeSet* currentAttribu
 }
 
 void RTFGenerator::updateCharacterAttributes($MutableAttributeSet* current, $AttributeSet* newAttributes, bool updateStyleChanges) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, parm, nullptr);
 	if (updateStyleChanges) {
 		$var($Object, oldStyle, $nc(current)->getAttribute("characterStyle"_s));
@@ -747,6 +764,7 @@ void RTFGenerator::updateCharacterAttributes($MutableAttributeSet* current, $Att
 }
 
 void RTFGenerator::resetCharacterAttributes($MutableAttributeSet* currentAttributes) {
+	$useLocalCurrentObjectStackCache();
 	writeControlWord("plain"_s);
 	int32_t wordIndex = 0;
 	$init($RTFAttributes);
@@ -766,6 +784,7 @@ void RTFGenerator::resetCharacterAttributes($MutableAttributeSet* currentAttribu
 }
 
 void RTFGenerator::writeTextElement($Element* el) {
+	$useLocalCurrentObjectStackCache();
 	updateCharacterAttributes(this->outputAttributes, $($nc(el)->getAttributes()), true);
 	if ($nc(el)->isLeaf()) {
 		try {
@@ -938,6 +957,7 @@ int32_t RTFGenerator::convertCharacter($ints* conversion, char16_t ch) {
 }
 
 void clinit$RTFGenerator($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	RTFGenerator::defaultFontSize = 12.0f;
 	$assignStatic(RTFGenerator::defaultFontFamily, "Helvetica"_s);
 	$init($Color);

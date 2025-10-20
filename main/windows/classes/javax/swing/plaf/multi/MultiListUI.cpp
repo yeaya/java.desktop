@@ -90,6 +90,7 @@ $ComponentUIArray* MultiListUI::getUIs() {
 }
 
 int32_t MultiListUI::locationToIndex($JList* a, $Point* b) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc((($cast($ListUI, $($nc(this->uis)->elementAt(0))))))->locationToIndex(a, b);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($ListUI, $($nc(this->uis)->elementAt(i))))))->locationToIndex(a, b);
@@ -98,6 +99,7 @@ int32_t MultiListUI::locationToIndex($JList* a, $Point* b) {
 }
 
 $Point* MultiListUI::indexToLocation($JList* a, int32_t b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, returnValue, $nc((($cast($ListUI, $($nc(this->uis)->elementAt(0))))))->indexToLocation(a, b));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($ListUI, $($nc(this->uis)->elementAt(i))))))->indexToLocation(a, b);
@@ -106,6 +108,7 @@ $Point* MultiListUI::indexToLocation($JList* a, int32_t b) {
 }
 
 $Rectangle* MultiListUI::getCellBounds($JList* a, int32_t b, int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, returnValue, $nc((($cast($ListUI, $($nc(this->uis)->elementAt(0))))))->getCellBounds(a, b, c));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($ListUI, $($nc(this->uis)->elementAt(i))))))->getCellBounds(a, b, c);
@@ -114,6 +117,7 @@ $Rectangle* MultiListUI::getCellBounds($JList* a, int32_t b, int32_t c) {
 }
 
 bool MultiListUI::contains($JComponent* a, int32_t b, int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	bool returnValue = $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->contains(a, b, c);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->contains(a, b, c);
@@ -122,6 +126,7 @@ bool MultiListUI::contains($JComponent* a, int32_t b, int32_t c) {
 }
 
 void MultiListUI::update($Graphics* a, $JComponent* b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->update(a, b);
 	}
@@ -134,24 +139,28 @@ $ComponentUI* MultiListUI::createUI($JComponent* a) {
 }
 
 void MultiListUI::installUI($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->installUI(a);
 	}
 }
 
 void MultiListUI::uninstallUI($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->uninstallUI(a);
 	}
 }
 
 void MultiListUI::paint($Graphics* a, $JComponent* b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->paint(a, b);
 	}
 }
 
 $Dimension* MultiListUI::getPreferredSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getPreferredSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getPreferredSize(a);
@@ -160,6 +169,7 @@ $Dimension* MultiListUI::getPreferredSize($JComponent* a) {
 }
 
 $Dimension* MultiListUI::getMinimumSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getMinimumSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getMinimumSize(a);
@@ -168,6 +178,7 @@ $Dimension* MultiListUI::getMinimumSize($JComponent* a) {
 }
 
 $Dimension* MultiListUI::getMaximumSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getMaximumSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getMaximumSize(a);
@@ -176,6 +187,7 @@ $Dimension* MultiListUI::getMaximumSize($JComponent* a) {
 }
 
 int32_t MultiListUI::getAccessibleChildrenCount($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getAccessibleChildrenCount(a);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getAccessibleChildrenCount(a);
@@ -184,6 +196,7 @@ int32_t MultiListUI::getAccessibleChildrenCount($JComponent* a) {
 }
 
 $Accessible* MultiListUI::getAccessibleChild($JComponent* a, int32_t b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Accessible, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getAccessibleChild(a, b));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getAccessibleChild(a, b);

@@ -88,6 +88,7 @@ void FormView$BrowseFileAction::init$($FormView* this$0, $AttributeSet* attrs, $
 }
 
 void FormView$BrowseFileAction::actionPerformed($ActionEvent* ae) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, fc, $new($JFileChooser));
 	fc->setMultiSelectionEnabled(false);
 	if (fc->showOpenDialog($(this->this$0->getContainer())) == $JFileChooser::APPROVE_OPTION) {

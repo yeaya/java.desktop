@@ -492,6 +492,7 @@ void BasicSliderUI::installKeyboardActions($JSlider* slider) {
 }
 
 $InputMap* BasicSliderUI::getInputMap(int32_t condition, $JSlider* slider) {
+	$useLocalCurrentObjectStackCache();
 	if (condition == $JComponent::WHEN_FOCUSED) {
 		$var($InputMap, keyMap, $cast($InputMap, $DefaultLookup::get(slider, this, "Slider.focusInputMap"_s)));
 		$var($InputMap, rtlKeyMap, nullptr);
@@ -508,6 +509,7 @@ $InputMap* BasicSliderUI::getInputMap(int32_t condition, $JSlider* slider) {
 
 void BasicSliderUI::loadActionMap($LazyActionMap* map) {
 	$init(BasicSliderUI);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicSliderUI$Actions);
 	$nc(map)->put($$new($BasicSliderUI$Actions, $BasicSliderUI$Actions::POSITIVE_UNIT_INCREMENT));
 	map->put($$new($BasicSliderUI$Actions, $BasicSliderUI$Actions::POSITIVE_BLOCK_INCREMENT));
@@ -523,6 +525,7 @@ void BasicSliderUI::uninstallKeyboardActions($JSlider* slider) {
 }
 
 int32_t BasicSliderUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$SliderUI::getBaseline(c, width, height);
 	bool var$0 = $nc(this->slider)->getPaintLabels();
 	if (var$0 && labelsHaveSameBaselines()) {
@@ -572,6 +575,7 @@ $Component$BaselineResizeBehavior* BasicSliderUI::getBaselineResizeBehavior($JCo
 }
 
 bool BasicSliderUI::labelsHaveSameBaselines() {
+	$useLocalCurrentObjectStackCache();
 	if (!this->checkedLabelBaselines) {
 		this->checkedLabelBaselines = true;
 		$var($Dictionary, dictionary, $nc(this->slider)->getLabelTable());
@@ -635,6 +639,7 @@ $Dimension* BasicSliderUI::getMinimumVerticalSize() {
 }
 
 $Dimension* BasicSliderUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	recalculateIfInsetsChanged();
 	$var($Dimension, d, nullptr);
 	if ($nc(this->slider)->getOrientation() == $JSlider::VERTICAL) {
@@ -652,6 +657,7 @@ $Dimension* BasicSliderUI::getPreferredSize($JComponent* c) {
 }
 
 $Dimension* BasicSliderUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	recalculateIfInsetsChanged();
 	$var($Dimension, d, nullptr);
 	if ($nc(this->slider)->getOrientation() == $JSlider::VERTICAL) {
@@ -753,6 +759,7 @@ void BasicSliderUI::calculateThumbLocation() {
 }
 
 void BasicSliderUI::calculateTrackBuffer() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(this->slider)->getPaintLabels();
 	if (var$0 && $nc(this->slider)->getLabelTable() != nullptr) {
 		$var($Component, highLabel, getHighestValueLabel());
@@ -881,6 +888,7 @@ $Dimension* BasicSliderUI::getThumbSize() {
 }
 
 int32_t BasicSliderUI::getWidthOfWidestLabel() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dictionary, dictionary, $nc(this->slider)->getLabelTable());
 	int32_t widest = 0;
 	if (dictionary != nullptr) {
@@ -894,6 +902,7 @@ int32_t BasicSliderUI::getWidthOfWidestLabel() {
 }
 
 int32_t BasicSliderUI::getHeightOfTallestLabel() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dictionary, dictionary, $nc(this->slider)->getLabelTable());
 	int32_t tallest = 0;
 	if (dictionary != nullptr) {
@@ -907,6 +916,7 @@ int32_t BasicSliderUI::getHeightOfTallestLabel() {
 }
 
 int32_t BasicSliderUI::getWidthOfHighValueLabel() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, label, getHighestValueLabel());
 	int32_t width = 0;
 	if (label != nullptr) {
@@ -916,6 +926,7 @@ int32_t BasicSliderUI::getWidthOfHighValueLabel() {
 }
 
 int32_t BasicSliderUI::getWidthOfLowValueLabel() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, label, getLowestValueLabel());
 	int32_t width = 0;
 	if (label != nullptr) {
@@ -925,6 +936,7 @@ int32_t BasicSliderUI::getWidthOfLowValueLabel() {
 }
 
 int32_t BasicSliderUI::getHeightOfHighValueLabel() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, label, getHighestValueLabel());
 	int32_t height = 0;
 	if (label != nullptr) {
@@ -934,6 +946,7 @@ int32_t BasicSliderUI::getHeightOfHighValueLabel() {
 }
 
 int32_t BasicSliderUI::getHeightOfLowValueLabel() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, label, getLowestValueLabel());
 	int32_t height = 0;
 	if (label != nullptr) {
@@ -955,6 +968,7 @@ bool BasicSliderUI::drawInverted() {
 }
 
 $Integer* BasicSliderUI::getHighestValue() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dictionary, dictionary, $nc(this->slider)->getLabelTable());
 	if (dictionary == nullptr) {
 		return nullptr;
@@ -976,6 +990,7 @@ $Integer* BasicSliderUI::getHighestValue() {
 }
 
 $Integer* BasicSliderUI::getLowestValue() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dictionary, dictionary, $nc(this->slider)->getLabelTable());
 	if (dictionary == nullptr) {
 		return nullptr;
@@ -997,6 +1012,7 @@ $Integer* BasicSliderUI::getLowestValue() {
 }
 
 $Component* BasicSliderUI::getLowestValueLabel() {
+	$useLocalCurrentObjectStackCache();
 	$var($Integer, min, getLowestValue());
 	if (min != nullptr) {
 		return $cast($Component, $nc($($nc(this->slider)->getLabelTable()))->get(min));
@@ -1005,6 +1021,7 @@ $Component* BasicSliderUI::getLowestValueLabel() {
 }
 
 $Component* BasicSliderUI::getHighestValueLabel() {
+	$useLocalCurrentObjectStackCache();
 	$var($Integer, max, getHighestValue());
 	if (max != nullptr) {
 		return $cast($Component, $nc($($nc(this->slider)->getLabelTable()))->get(max));
@@ -1063,6 +1080,7 @@ void BasicSliderUI::paintFocus($Graphics* g) {
 }
 
 void BasicSliderUI::paintTrack($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, trackBounds, this->trackRect);
 	if ($nc(this->slider)->getOrientation() == $JSlider::HORIZONTAL) {
 		int32_t cy = ($nc(trackBounds)->height / 2) - 2;
@@ -1096,6 +1114,7 @@ void BasicSliderUI::paintTrack($Graphics* g) {
 }
 
 void BasicSliderUI::paintTicks($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, tickBounds, this->tickRect);
 	$init($Color);
 	$nc(g)->setColor($($DefaultLookup::getColor(this->slider, this, "Slider.tickColor"_s, $Color::black)));
@@ -1183,6 +1202,7 @@ void BasicSliderUI::paintMajorTickForVertSlider($Graphics* g, $Rectangle* tickBo
 }
 
 void BasicSliderUI::paintLabels($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, labelBounds, this->labelRect);
 	$var($Dictionary, dictionary, $nc(this->slider)->getLabelTable());
 	if (dictionary != nullptr) {
@@ -1237,6 +1257,7 @@ void BasicSliderUI::paintVerticalLabel($Graphics* g, int32_t value, $Component* 
 }
 
 void BasicSliderUI::paintThumb($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, knobBounds, this->thumbRect);
 	int32_t w = $nc(knobBounds)->width;
 	int32_t h = knobBounds->height;

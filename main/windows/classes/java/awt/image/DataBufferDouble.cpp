@@ -82,6 +82,7 @@ void DataBufferDouble::init$(int32_t size) {
 }
 
 void DataBufferDouble::init$(int32_t size, int32_t numBanks) {
+	$useLocalCurrentObjectStackCache();
 	$init($StateTrackable$State);
 	$DataBuffer::init$($StateTrackable$State::STABLE, $DataBuffer::TYPE_DOUBLE, size, numBanks);
 	$set(this, bankdata, $new($doubleArray2, numBanks));

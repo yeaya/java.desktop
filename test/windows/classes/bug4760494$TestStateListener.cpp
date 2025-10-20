@@ -64,6 +64,7 @@ void bug4760494$TestStateListener::init$() {
 }
 
 void bug4760494$TestStateListener::windowOpened($WindowEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$$new($Thread, static_cast<$Runnable*>($$new($bug4760494$RobotThread)))->start();
 	} catch ($Exception&) {

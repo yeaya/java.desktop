@@ -173,6 +173,7 @@ void KeyBoardNavigation::init$() {
 
 void KeyBoardNavigation::initTest($Container* contentPane) {
 	$init(KeyBoardNavigation);
+	$useLocalCurrentObjectStackCache();
 	$var($StringArray, names, $new($StringArray, {
 		"First Name"_s,
 		"Last Name"_s,
@@ -369,6 +370,7 @@ void KeyBoardNavigation::init() {
 }
 
 void KeyBoardNavigation::lambda$init$0() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"_s);
 	} catch ($Exception&) {

@@ -162,6 +162,7 @@ $String* HTMLCodec::INVALID_MSG = nullptr;
 
 $String* HTMLCodec::toPaddedString(int32_t n, int32_t width) {
 	$init(HTMLCodec);
+	$useLocalCurrentObjectStackCache();
 	$var($String, string, $str({""_s, $$str(n)}));
 	int32_t len = $nc(string)->length();
 	if (n >= 0 && len < width) {
@@ -174,6 +175,7 @@ $String* HTMLCodec::toPaddedString(int32_t n, int32_t width) {
 
 $bytes* HTMLCodec::convertToHTMLFormat($bytes* bytes) {
 	$init(HTMLCodec);
+	$useLocalCurrentObjectStackCache();
 	$var($String, htmlPrefix, ""_s);
 	$var($String, htmlSuffix, ""_s);
 	{
@@ -269,6 +271,7 @@ $String* HTMLCodec::getVersion() {
 }
 
 void HTMLCodec::parseDescription() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, stBaseURL, nullptr);
 	$set(this, stVersion, nullptr);
 	this->iHTMLEnd = (this->iHTMLStart = (this->iFragEnd = (this->iFragStart = (this->iSelEnd = (this->iSelStart = -1)))));

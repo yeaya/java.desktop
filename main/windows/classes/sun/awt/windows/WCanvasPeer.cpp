@@ -310,6 +310,7 @@ void WCanvasPeer::create($WComponentPeer* parent) {
 }
 
 void WCanvasPeer::initialize() {
+	$useLocalCurrentObjectStackCache();
 	this->eraseBackground = !$SunToolkit::getSunAwtNoerasebackground();
 	bool eraseBackgroundOnResize = $SunToolkit::getSunAwtErasebackgroundonresize();
 	if (!$nc($($PaintEventDispatcher::getPaintEventDispatcher()))->shouldDoNativeBackgroundErase($cast($Component, this->target))) {
@@ -324,6 +325,7 @@ void WCanvasPeer::initialize() {
 }
 
 void WCanvasPeer::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, $nc(($cast($Component, this->target)))->getSize());
 	if ($instanceOf($Graphics2D, g)) {
 		$nc(g)->clearRect(0, 0, $nc(d)->width, d->height);

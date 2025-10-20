@@ -84,6 +84,7 @@ void Test8003400$2::init$() {
 }
 
 void Test8003400$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($Test8003400);
 	$var($JTree, tree, $cast($JTree, $nc($($nc($Test8003400::pane)->getViewport()))->getView()));
 	$var($Rectangle, inner, $nc(tree)->getRowBounds(tree->getRowCount() - 1));

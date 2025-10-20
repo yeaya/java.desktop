@@ -79,6 +79,7 @@ void OGLContext$OGLContextCaps::init$(int32_t caps, $String* adapterId) {
 }
 
 $String* OGLContext$OGLContextCaps::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, $new($StringBuilder, $($ContextCapabilities::toString())));
 	if (((int32_t)(this->caps & (uint32_t)OGLContext$OGLContextCaps::CAPS_EXT_FBOBJECT)) != 0) {
 		sb->append("CAPS_EXT_FBOBJECT|"_s);

@@ -198,6 +198,7 @@ void CSSBorder::init$($AttributeSet* attrs) {
 }
 
 $Color* CSSBorder::getBorderColor(int32_t side) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, o, $nc(this->attrs)->getAttribute($nc($nc(CSSBorder::ATTRIBUTES)->get(CSSBorder::COLOR))->get(side)));
 	$var($CSS$ColorValue, cv, nullptr);
 	if ($instanceOf($CSS$ColorValue, o)) {
@@ -213,6 +214,7 @@ $Color* CSSBorder::getBorderColor(int32_t side) {
 }
 
 int32_t CSSBorder::getBorderWidth(int32_t side) {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = 0;
 	$var($CSS$BorderStyle, bs, $cast($CSS$BorderStyle, $nc(this->attrs)->getAttribute($nc($nc(CSSBorder::ATTRIBUTES)->get(CSSBorder::STYLE))->get(side))));
 	$init($CSS$Value);
@@ -243,6 +245,7 @@ $CSS$Value* CSSBorder::getBorderStyle(int32_t side) {
 }
 
 $Polygon* CSSBorder::getBorderShape(int32_t side) {
+	$useLocalCurrentObjectStackCache();
 	$var($Polygon, shape, nullptr);
 	$var($ints, widths, getWidths());
 	if ($nc(widths)->get(side) != 0) {
@@ -276,6 +279,7 @@ $Insets* CSSBorder::getBorderInsets($Component* c, $Insets* insets) {
 }
 
 void CSSBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($Graphics2D, g))) {
 		return;
 	}
@@ -333,6 +337,7 @@ void CSSBorder::registerBorderPainter($CSS$Value* style, $CSSBorder$BorderPainte
 }
 
 void clinit$CSSBorder($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 			$init($CSS$Attribute);
 	$assignStatic(CSSBorder::ATTRIBUTES, $new($CSS$AttributeArray2, {
 		$$new($CSS$AttributeArray, {

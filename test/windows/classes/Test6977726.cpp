@@ -47,6 +47,7 @@ void Test6977726::init$() {
 }
 
 void Test6977726::init() {
+	$useLocalCurrentObjectStackCache();
 	$var($JColorChooser, chooser, $new($JColorChooser));
 	chooser->setPreviewPanel($$new($JLabel, "Text Preview Panel"_s));
 	$nc($(getContentPane()))->add(static_cast<$Component*>(chooser));

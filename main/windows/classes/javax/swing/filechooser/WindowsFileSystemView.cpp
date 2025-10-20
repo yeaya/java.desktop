@@ -110,6 +110,7 @@ $Boolean* WindowsFileSystemView::isTraversable($File* f) {
 }
 
 $File* WindowsFileSystemView::getChild($File* parent, $String* fileName) {
+	$useLocalCurrentObjectStackCache();
 	bool var$1 = $nc(fileName)->startsWith("\\"_s);
 	bool var$0 = var$1 && !fileName->startsWith("\\\\"_s);
 	if (var$0 && isFileSystem(parent)) {
@@ -124,6 +125,7 @@ $File* WindowsFileSystemView::getChild($File* parent, $String* fileName) {
 }
 
 $String* WindowsFileSystemView::getSystemTypeDescription($File* f) {
+	$useLocalCurrentObjectStackCache();
 	if (f == nullptr) {
 		return nullptr;
 	}
@@ -142,6 +144,7 @@ $File* WindowsFileSystemView::getHomeDirectory() {
 }
 
 $File* WindowsFileSystemView::createNewFolder($File* containingDir) {
+	$useLocalCurrentObjectStackCache();
 	if (containingDir == nullptr) {
 		$throwNew($IOException, "Containing directory is null:"_s);
 	}
@@ -164,6 +167,7 @@ bool WindowsFileSystemView::isDrive($File* dir) {
 }
 
 bool WindowsFileSystemView::isFloppyDrive($File* dir) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, path, $cast($String, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($WindowsFileSystemView$1, this, dir)))));
 	bool var$0 = path != nullptr;
@@ -175,6 +179,7 @@ bool WindowsFileSystemView::isFloppyDrive($File* dir) {
 }
 
 $File* WindowsFileSystemView::createFileObject($String* path$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, path, path$renamed);
 	bool var$1 = $nc(path)->length() >= 2;
 	bool var$0 = var$1 && path->charAt(1) == u':';

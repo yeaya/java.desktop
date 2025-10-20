@@ -94,6 +94,7 @@ int32_t MetalCheckBoxIcon::getControlSize() {
 }
 
 void MetalCheckBoxIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($JCheckBox, cb, $cast($JCheckBox, c));
 	$var($ButtonModel, model, $nc(cb)->getModel());
 	int32_t controlSize = getControlSize();

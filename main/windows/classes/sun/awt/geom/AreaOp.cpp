@@ -121,6 +121,7 @@ void AreaOp::init$() {
 }
 
 $Vector* AreaOp::calculate($Vector* left, $Vector* right) {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, edges, $new($Vector));
 	addEdges(edges, left, AreaOp::CTAG_LEFT);
 	addEdges(edges, right, AreaOp::CTAG_RIGHT);
@@ -130,6 +131,7 @@ $Vector* AreaOp::calculate($Vector* left, $Vector* right) {
 
 void AreaOp::addEdges($Vector* edges, $Vector* curves, int32_t curvetag) {
 	$init(AreaOp);
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, enum_, $nc(curves)->elements());
 	while ($nc(enum_)->hasMoreElements()) {
 		$var($Curve, c, $cast($Curve, enum_->nextElement()));
@@ -140,6 +142,7 @@ void AreaOp::addEdges($Vector* edges, $Vector* curves, int32_t curvetag) {
 }
 
 $Vector* AreaOp::pruneEdges($Vector* edges) {
+	$useLocalCurrentObjectStackCache();
 	int32_t numedges = $nc(edges)->size();
 	if (numedges < 2) {
 		return $new($Vector);
@@ -300,6 +303,7 @@ $Vector* AreaOp::pruneEdges($Vector* edges) {
 
 void AreaOp::finalizeSubCurves($Vector* subcurves, $Vector* chains) {
 	$init(AreaOp);
+	$useLocalCurrentObjectStackCache();
 	int32_t numchains = $nc(chains)->size();
 	if (numchains == 0) {
 		return;
@@ -322,6 +326,7 @@ void AreaOp::finalizeSubCurves($Vector* subcurves, $Vector* chains) {
 
 void AreaOp::resolveLinks($Vector* subcurves, $Vector* chains, $Vector* links) {
 	$init(AreaOp);
+	$useLocalCurrentObjectStackCache();
 	int32_t numlinks = $nc(links)->size();
 	$var($CurveLinkArray, linklist, nullptr);
 	if (numlinks == 0) {

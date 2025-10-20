@@ -89,6 +89,7 @@ $Object* allocate$PSPrinterJob$PluginPrinter($Class* clazz) {
 }
 
 void PSPrinterJob$PluginPrinter::init$($Component* applet, $PrintStream* stream, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, applet, applet);
 	$set(this, epsTitle, "Java Plugin Applet"_s);
 	$set(this, stream, stream);

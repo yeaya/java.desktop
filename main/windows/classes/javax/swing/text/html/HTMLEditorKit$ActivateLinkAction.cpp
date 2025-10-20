@@ -121,6 +121,7 @@ void HTMLEditorKit$ActivateLinkAction::init$($String* actionName) {
 }
 
 void HTMLEditorKit$ActivateLinkAction::activateLink($String* href, $HTMLDocument* doc, $JEditorPane* editor, int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($Document);
 		$var($URL, page, $cast($URL, $nc(doc)->getProperty($Document::StreamDescriptionProperty)));
@@ -138,6 +139,7 @@ void HTMLEditorKit$ActivateLinkAction::activateLink($String* href, $HTMLDocument
 }
 
 void HTMLEditorKit$ActivateLinkAction::doObjectAction($JEditorPane* editor, $Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, view, getView(editor, elem));
 	if (view != nullptr && $instanceOf($ObjectView, view)) {
 		$var($Component, comp, $nc(($cast($ObjectView, view)))->getComponent());
@@ -158,6 +160,7 @@ $View* HTMLEditorKit$ActivateLinkAction::getRootView($JEditorPane* editor) {
 }
 
 $View* HTMLEditorKit$ActivateLinkAction::getView($JEditorPane* editor, $Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, lock, this->lock(editor));
 	{
 		$var($Throwable, var$0, nullptr);
@@ -217,6 +220,7 @@ void HTMLEditorKit$ActivateLinkAction::unlock(Object$* key) {
 }
 
 void HTMLEditorKit$ActivateLinkAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, c, getTextComponent(e));
 	if ($nc(c)->isEditable() || !($instanceOf($JEditorPane, c))) {
 		return;

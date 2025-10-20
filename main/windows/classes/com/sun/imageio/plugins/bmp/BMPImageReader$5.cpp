@@ -68,6 +68,7 @@ void BMPImageReader$5::init$() {
 }
 
 $Object* BMPImageReader$5::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, osname, $System::getProperty("os.name"_s));
 	return $of($Boolean::valueOf((osname != nullptr && $(osname->toLowerCase())->startsWith("win"_s))));
 }

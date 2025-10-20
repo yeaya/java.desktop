@@ -88,6 +88,7 @@ bool StyleSheet$SmallConversionSet::isDefined(Object$* key) {
 }
 
 $Object* StyleSheet$SmallConversionSet::getAttribute(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($StyleConstants, key)) {
 		$var($Object, cssKey, $nc(this->this$0->css)->styleConstantsKeyToCSSKey($cast($StyleConstants, key)));
 		if (cssKey != nullptr) {

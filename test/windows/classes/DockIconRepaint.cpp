@@ -236,6 +236,7 @@ void DockIconRepaint::init$() {
 }
 
 void DockIconRepaint::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(DockIconRepaint);
 	$assignStatic(DockIconRepaint::robot, $new($Robot));
 	$EventQueue::invokeAndWait(static_cast<$Runnable*>($$new(DockIconRepaint$$Lambda$createUI)));
@@ -262,6 +263,7 @@ void DockIconRepaint::main($StringArray* args) {
 }
 
 void DockIconRepaint::test() {
+	$useLocalCurrentObjectStackCache();
 	$EventQueue::invokeAndWait(static_cast<$Runnable*>($$new(DockIconRepaint$$Lambda$lambda$test$0$1)));
 	$init(DockIconRepaint);
 	$nc(DockIconRepaint::robot)->waitForIdle();
@@ -280,6 +282,7 @@ void DockIconRepaint::test() {
 }
 
 void DockIconRepaint::createUI() {
+	$useLocalCurrentObjectStackCache();
 	$init(DockIconRepaint);
 	$assignStatic(DockIconRepaint::frame, $new($JFrame));
 	$nc(DockIconRepaint::frame)->setUndecorated(true);
@@ -297,6 +300,7 @@ void DockIconRepaint::createUI() {
 }
 
 void DockIconRepaint::lambda$test$1() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init(DockIconRepaint);
 		$nc(DockIconRepaint::jif)->setIcon(true);

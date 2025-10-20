@@ -305,6 +305,7 @@ $Object* SwingUtilities::sharedOwnerFrameKey = nullptr;
 
 bool SwingUtilities::getSuppressDropTarget() {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (!SwingUtilities::checkedSuppressDropSupport) {
 		SwingUtilities::suppressDropSupport = $nc($($Boolean::valueOf($cast($String, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, "suppressSwingDropSupport"_s))))))))->booleanValue();
@@ -315,6 +316,7 @@ bool SwingUtilities::getSuppressDropTarget() {
 
 void SwingUtilities::installSwingDropTargetAsNecessary($Component* c, $TransferHandler* t) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	if (!getSuppressDropTarget()) {
 		$var($DropTarget, dropHandler, $nc(c)->getDropTarget());
 		if ((dropHandler == nullptr) || ($instanceOf($UIResource, dropHandler))) {
@@ -334,6 +336,7 @@ bool SwingUtilities::isRectangleContainingRectangle($Rectangle* a, $Rectangle* b
 
 $Rectangle* SwingUtilities::getLocalBounds($Component* aComponent) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, b, $new($Rectangle, $($nc(aComponent)->getBounds())));
 	b->x = (b->y = 0);
 	return b;
@@ -354,6 +357,7 @@ $Window* SwingUtilities::getWindowAncestor($Component* c) {
 
 $Point* SwingUtilities::convertScreenLocationToParent($Container* parent, int32_t x, int32_t y) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Container, p, parent);
 		for (; p != nullptr; $assign(p, $nc(p)->getParent())) {
@@ -369,6 +373,7 @@ $Point* SwingUtilities::convertScreenLocationToParent($Container* parent, int32_
 
 $Point* SwingUtilities::convertPoint($Component* source$renamed, $Point* aPoint, $Component* destination$renamed) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, destination, destination$renamed);
 	$var($Component, source, source$renamed);
 	$var($Point, p, nullptr);
@@ -420,6 +425,7 @@ $Container* SwingUtilities::getAncestorOfClass($Class* c, $Component* comp) {
 
 $Container* SwingUtilities::getAncestorNamed($String* name, $Component* comp) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	if (comp == nullptr || name == nullptr) {
 		return nullptr;
 	}
@@ -432,6 +438,7 @@ $Container* SwingUtilities::getAncestorNamed($String* name, $Component* comp) {
 
 $Component* SwingUtilities::getDeepestComponentAt($Component* parent, int32_t x, int32_t y) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(parent)->contains(x, y)) {
 		return nullptr;
 	}
@@ -464,6 +471,7 @@ $Component* SwingUtilities::getDeepestComponentAt($Component* parent, int32_t x,
 
 $MouseEvent* SwingUtilities::convertMouseEvent($Component* source, $MouseEvent* sourceEvent, $Component* destination) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc(sourceEvent)->getX();
 	$var($Point, p, convertPoint(source, $$new($Point, var$0, sourceEvent->getY()), destination));
 	$var($Component, newSource, nullptr);
@@ -526,6 +534,7 @@ $MouseEvent* SwingUtilities::convertMouseEvent($Component* source, $MouseEvent* 
 
 void SwingUtilities::convertPointToScreen($Point* p, $Component* c$renamed) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, c$renamed);
 	$var($Rectangle, b, nullptr);
 	int32_t x = 0;
@@ -559,6 +568,7 @@ void SwingUtilities::convertPointToScreen($Point* p, $Component* c$renamed) {
 
 void SwingUtilities::convertPointFromScreen($Point* p, $Component* c$renamed) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, c$renamed);
 	$var($Rectangle, b, nullptr);
 	int32_t x = 0;
@@ -642,6 +652,7 @@ $Rectangle* SwingUtilities::computeUnion(int32_t x, int32_t y, int32_t width, in
 
 $RectangleArray* SwingUtilities::computeDifference($Rectangle* rectA, $Rectangle* rectB) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = rectB == nullptr || !$nc(rectA)->intersects(rectB);
 	if (var$0 || isRectangleContainingRectangle(rectB, rectA)) {
 		return $new($RectangleArray, 0);
@@ -962,6 +973,7 @@ $String* SwingUtilities::layoutCompoundLabel($FontMetrics* fm, $String* text, $I
 
 $String* SwingUtilities::layoutCompoundLabelImpl($JComponent* c, $FontMetrics* fm, $String* text$renamed, $Icon* icon, int32_t verticalAlignment, int32_t horizontalAlignment, int32_t verticalTextPosition, int32_t horizontalTextPosition, $Rectangle* viewR, $Rectangle* iconR, $Rectangle* textR, int32_t textIconGap) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($String, text, text$renamed);
 	if (icon != nullptr) {
 		$nc(iconR)->width = icon->getIconWidth();
@@ -1092,6 +1104,7 @@ void SwingUtilities::updateComponentTreeUI($Component* c) {
 
 void SwingUtilities::updateComponentTreeUI0($Component* c) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JComponent, c)) {
 		$var($JComponent, jc, $cast($JComponent, c));
 		$nc(jc)->updateUI();
@@ -1143,6 +1156,7 @@ int32_t SwingUtilities::getAccessibleIndexInParent($Component* c) {
 
 $Accessible* SwingUtilities::getAccessibleAt($Component* c, $Point* p) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Container, c)) {
 		return $nc($($nc($($nc(c)->getAccessibleContext()))->getAccessibleComponent()))->getAccessibleAt(p);
 	} else if ($instanceOf($Accessible, c)) {
@@ -1193,6 +1207,7 @@ $Accessible* SwingUtilities::getAccessibleChild($Component* c, int32_t i) {
 
 $Component* SwingUtilities::findFocusOwner($Component* c) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, focusOwner, $nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner());
 	{
 		$var($Component, temp, focusOwner);
@@ -1221,6 +1236,7 @@ $JRootPane* SwingUtilities::getRootPane($Component* c$renamed) {
 
 $Component* SwingUtilities::getRoot($Component* c) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, applet, nullptr);
 	{
 		$var($Component, p, c);
@@ -1238,6 +1254,7 @@ $Component* SwingUtilities::getRoot($Component* c) {
 
 $JComponent* SwingUtilities::getPaintingOrigin($JComponent* c) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($Container, p, c);
 	while ($instanceOf($JComponent, $assign(p, $nc(p)->getParent()))) {
 		$var($JComponent, jp, $cast($JComponent, p));
@@ -1279,6 +1296,7 @@ bool SwingUtilities::isValidKeyEventForKeyBindings($KeyEvent* e) {
 
 bool SwingUtilities::notifyAction($Action* action, $KeyStroke* ks, $KeyEvent* event, Object$* sender, int32_t modifiers) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	if (action == nullptr || !$nc(action)->accept(sender)) {
 		return false;
 	}
@@ -1304,6 +1322,7 @@ bool SwingUtilities::notifyAction($Action* action, $KeyStroke* ks, $KeyEvent* ev
 
 void SwingUtilities::replaceUIInputMap($JComponent* component, int32_t type, $InputMap* uiInputMap) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($InputMap, map, $nc(component)->getInputMap(type, (uiInputMap != nullptr)));
 	while (map != nullptr) {
 		$var($InputMap, parent, map->getParent());
@@ -1317,6 +1336,7 @@ void SwingUtilities::replaceUIInputMap($JComponent* component, int32_t type, $In
 
 void SwingUtilities::replaceUIActionMap($JComponent* component, $ActionMap* uiActionMap) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, map, $nc(component)->getActionMap((uiActionMap != nullptr)));
 	while (map != nullptr) {
 		$var($ActionMap, parent, map->getParent());
@@ -1330,6 +1350,7 @@ void SwingUtilities::replaceUIActionMap($JComponent* component, $ActionMap* uiAc
 
 $InputMap* SwingUtilities::getUIInputMap($JComponent* component, int32_t condition) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($InputMap, map, $nc(component)->getInputMap(condition, false));
 	while (map != nullptr) {
 		$var($InputMap, parent, map->getParent());
@@ -1343,6 +1364,7 @@ $InputMap* SwingUtilities::getUIInputMap($JComponent* component, int32_t conditi
 
 $ActionMap* SwingUtilities::getUIActionMap($JComponent* component) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, map, $nc(component)->getActionMap(false));
 	while (map != nullptr) {
 		$var($ActionMap, parent, map->getParent());
@@ -1387,6 +1409,7 @@ void SwingUtilities::appContextRemove(Object$* key) {
 
 $Class* SwingUtilities::loadSystemClass($String* className) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$ReflectUtil::checkPackageAccess(className);
 	return $Class::forName(className, true, $($($Thread::currentThread())->getContextClassLoader()));
@@ -1427,6 +1450,7 @@ int32_t SwingUtilities::findDisplayedMnemonicIndex($String* text, int32_t mnemon
 
 $Rectangle* SwingUtilities::calculateInnerArea($JComponent* c, $Rectangle* r) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	if (c == nullptr) {
 		return nullptr;
 	}
@@ -1479,6 +1503,7 @@ $Component* SwingUtilities::getUnwrappedView($JViewport* viewport) {
 
 $Container* SwingUtilities::getValidateRoot($Container* c$renamed, bool visibleOnly) {
 	$init(SwingUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($Container, c, c$renamed);
 	$var($Container, root, nullptr);
 	for (; c != nullptr; $assign(c, $nc(c)->getParent())) {

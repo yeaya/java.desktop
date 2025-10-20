@@ -70,6 +70,7 @@ $JTextComponent* TextAction::getTextComponent($ActionEvent* e) {
 
 $ActionArray* TextAction::augmentList($ActionArray* list1, $ActionArray* list2) {
 	$init(TextAction);
+	$useLocalCurrentObjectStackCache();
 	$var($Hashtable, h, $new($Hashtable));
 	{
 		$var($ActionArray, arr$, list1);

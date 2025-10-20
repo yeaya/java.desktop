@@ -219,6 +219,7 @@ $Patch* ModelAbstractOscillator::getPatch() {
 }
 
 $ModelOscillatorStream* ModelAbstractOscillator::open(float samplerate) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var(ModelAbstractOscillator, oscs, nullptr);
 	try {
@@ -233,12 +234,14 @@ $ModelOscillatorStream* ModelAbstractOscillator::open(float samplerate) {
 }
 
 $ModelPerformer* ModelAbstractOscillator::getPerformer() {
+	$useLocalCurrentObjectStackCache();
 	$var($ModelPerformer, performer, $new($ModelPerformer));
 	$nc($(performer->getOscillators()))->add(this);
 	return performer;
 }
 
 $ModelInstrument* ModelAbstractOscillator::getInstrument() {
+	$useLocalCurrentObjectStackCache();
 	$var($SimpleInstrument, ins, $new($SimpleInstrument));
 	ins->setName($(getName()));
 	ins->add($(getPerformer()));
@@ -247,6 +250,7 @@ $ModelInstrument* ModelAbstractOscillator::getInstrument() {
 }
 
 $Soundbank* ModelAbstractOscillator::getSoundBank() {
+	$useLocalCurrentObjectStackCache();
 	$var($SimpleSoundbank, sbk, $new($SimpleSoundbank));
 	sbk->addInstrument($(getInstrument()));
 	return sbk;
@@ -257,6 +261,7 @@ $String* ModelAbstractOscillator::getDescription() {
 }
 
 $Instrument* ModelAbstractOscillator::getInstrument($Patch* patch) {
+	$useLocalCurrentObjectStackCache();
 	$var($Instrument, ins, getInstrument());
 	$var($Patch, p, $nc(ins)->getPatch());
 	int32_t var$0 = $nc(p)->getBank();

@@ -167,6 +167,7 @@ int32_t DefaultLayoutStyle::getButtonGap($JComponent* source, int32_t position, 
 }
 
 int32_t DefaultLayoutStyle::getButtonGap($JComponent* c, int32_t position) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, classID, $nc(c)->getUIClassID());
 	if ((classID == "CheckBoxUI"_s || classID == "RadioButtonUI"_s) && !$nc(($cast($AbstractButton, c)))->isBorderPainted()) {
 		$var($Border, border, c->getBorder());
@@ -209,6 +210,7 @@ int32_t DefaultLayoutStyle::flipDirection(int32_t position) {
 }
 
 int32_t DefaultLayoutStyle::getIndent($JComponent* c, int32_t position) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, classID, $nc(c)->getUIClassID());
 	if (classID == "CheckBoxUI"_s || classID == "RadioButtonUI"_s) {
 		$var($AbstractButton, button, $cast($AbstractButton, c));
@@ -225,6 +227,7 @@ int32_t DefaultLayoutStyle::getIndent($JComponent* c, int32_t position) {
 }
 
 $Icon* DefaultLayoutStyle::getIcon($AbstractButton* button) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, icon, $nc(button)->getIcon());
 	if (icon != nullptr) {
 		return icon;

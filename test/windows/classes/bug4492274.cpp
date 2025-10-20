@@ -161,6 +161,7 @@ void bug4492274::init$() {
 }
 
 void bug4492274::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -187,12 +188,14 @@ void bug4492274::main($StringArray* args) {
 }
 
 $String* bug4492274::getPageAnchor() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringArray, result, $new($StringArray, 1));
 	$SwingUtilities::invokeAndWait($$new($bug4492274$3, result));
 	return result->get(0);
 }
 
 void bug4492274::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($File, file, $new($File, $($System::getProperty("test.src"_s, "."_s)), "test.html"_s));
 		$init(bug4492274);

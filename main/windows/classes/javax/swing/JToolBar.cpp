@@ -335,6 +335,7 @@ void JToolBar::setUI($ToolBarUI* ui) {
 }
 
 void JToolBar::updateUI() {
+	$useLocalCurrentObjectStackCache();
 	setUI($cast($ToolBarUI, $($UIManager::getUI(this))));
 	if (getLayout() == nullptr) {
 		setLayout($$new($JToolBar$DefaultToolBarLayout, this, getOrientation()));
@@ -347,6 +348,7 @@ $String* JToolBar::getUIClassID() {
 }
 
 int32_t JToolBar::getComponentIndex($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t ncomponents = this->getComponentCount();
 	$var($ComponentArray, component, this->getComponents());
 	for (int32_t i = 0; i < ncomponents; ++i) {
@@ -522,6 +524,7 @@ void JToolBar::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JToolBar::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, paintBorderString, this->paintBorder$ ? "true"_s : "false"_s);
 	$var($String, marginString, this->margin != nullptr ? $nc(this->margin)->toString() : ""_s);
 	$var($String, floatableString, this->floatable ? "true"_s : "false"_s);

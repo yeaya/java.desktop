@@ -92,6 +92,7 @@ $Object* allocate$UlawCodec$UlawCodecStream($Class* clazz) {
 }
 
 void UlawCodec$UlawCodecStream::init$($UlawCodec* this$0, $AudioInputStream* stream, $AudioFormat* outputFormat) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$AudioInputStream::init$(stream, outputFormat, $AudioSystem::NOT_SPECIFIED);
 	$set(this, tempBuffer, nullptr);

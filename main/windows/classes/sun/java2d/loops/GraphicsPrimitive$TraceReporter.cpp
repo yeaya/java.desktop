@@ -135,6 +135,7 @@ void GraphicsPrimitive$TraceReporter::setShutdownHook() {
 }
 
 void GraphicsPrimitive$TraceReporter::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($PrintStream, ps, $GraphicsPrimitive::getTraceOutputFile());
 	$var($Iterator, iterator, $nc($($nc($GraphicsPrimitive::traceMap)->entrySet()))->iterator());
 	int64_t total = 0;
@@ -161,6 +162,7 @@ void GraphicsPrimitive$TraceReporter::run() {
 
 $Void* GraphicsPrimitive$TraceReporter::lambda$setShutdownHook$0() {
 	$init(GraphicsPrimitive$TraceReporter);
+	$useLocalCurrentObjectStackCache();
 	$var(GraphicsPrimitive$TraceReporter, t, $new(GraphicsPrimitive$TraceReporter));
 	$var($Thread, thread, $new($Thread, $($ThreadGroupUtils::getRootThreadGroup()), t, "TraceReporter"_s, 0, false));
 	thread->setContextClassLoader(nullptr);

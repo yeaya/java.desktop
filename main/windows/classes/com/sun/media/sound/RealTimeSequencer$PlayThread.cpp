@@ -189,6 +189,7 @@ void RealTimeSequencer$PlayThread::close() {
 }
 
 void RealTimeSequencer$PlayThread::run() {
+	$useLocalCurrentObjectStackCache();
 	while (!this->interrupted) {
 		bool EOM = false;
 		bool wasRunning = this->this$0->running;

@@ -161,6 +161,7 @@ void MidiSystem::init$() {
 }
 
 $MidiDevice$InfoArray* MidiSystem::getMidiDeviceInfo() {
+	$useLocalCurrentObjectStackCache();
 	$var($List, allInfos, $new($ArrayList));
 	{
 		$var($Iterator, i$, $nc($(getMidiDeviceProviders()))->iterator());
@@ -175,6 +176,7 @@ $MidiDevice$InfoArray* MidiSystem::getMidiDeviceInfo() {
 }
 
 $MidiDevice* MidiSystem::getMidiDevice($MidiDevice$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(info);
 	{
 		$var($Iterator, i$, $nc($(getMidiDeviceProviders()))->iterator());
@@ -191,6 +193,7 @@ $MidiDevice* MidiSystem::getMidiDevice($MidiDevice$Info* info) {
 }
 
 $Receiver* MidiSystem::getReceiver() {
+	$useLocalCurrentObjectStackCache();
 	$load($Receiver);
 	$var($MidiDevice, device, getDefaultDeviceWrapper($Receiver::class$));
 	$var($Receiver, receiver, nullptr);
@@ -206,6 +209,7 @@ $Receiver* MidiSystem::getReceiver() {
 }
 
 $Transmitter* MidiSystem::getTransmitter() {
+	$useLocalCurrentObjectStackCache();
 	$load($Transmitter);
 	$var($MidiDevice, device, getDefaultDeviceWrapper($Transmitter::class$));
 	$var($Transmitter, transmitter, nullptr);
@@ -230,6 +234,7 @@ $Sequencer* MidiSystem::getSequencer() {
 }
 
 $Sequencer* MidiSystem::getSequencer(bool connected) {
+	$useLocalCurrentObjectStackCache();
 	$load($Sequencer);
 	$var($Sequencer, seq, $cast($Sequencer, getDefaultDeviceWrapper($Sequencer::class$)));
 	if (connected) {
@@ -289,6 +294,7 @@ $Sequencer* MidiSystem::getSequencer(bool connected) {
 }
 
 $Soundbank* MidiSystem::getSoundbank($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(stream);
 	$var($SoundbankReader, sp, nullptr);
 	$var($Soundbank, s, nullptr);
@@ -304,6 +310,7 @@ $Soundbank* MidiSystem::getSoundbank($InputStream* stream) {
 }
 
 $Soundbank* MidiSystem::getSoundbank($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(url);
 	$var($SoundbankReader, sp, nullptr);
 	$var($Soundbank, s, nullptr);
@@ -319,6 +326,7 @@ $Soundbank* MidiSystem::getSoundbank($URL* url) {
 }
 
 $Soundbank* MidiSystem::getSoundbank($File* file) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(file);
 	$var($SoundbankReader, sp, nullptr);
 	$var($Soundbank, s, nullptr);
@@ -334,6 +342,7 @@ $Soundbank* MidiSystem::getSoundbank($File* file) {
 }
 
 $MidiFileFormat* MidiSystem::getMidiFileFormat($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(stream);
 	$var($List, providers, getMidiFileReaders());
 	$var($MidiFileFormat, format, nullptr);
@@ -355,6 +364,7 @@ $MidiFileFormat* MidiSystem::getMidiFileFormat($InputStream* stream) {
 }
 
 $MidiFileFormat* MidiSystem::getMidiFileFormat($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(url);
 	$var($List, providers, getMidiFileReaders());
 	$var($MidiFileFormat, format, nullptr);
@@ -376,6 +386,7 @@ $MidiFileFormat* MidiSystem::getMidiFileFormat($URL* url) {
 }
 
 $MidiFileFormat* MidiSystem::getMidiFileFormat($File* file) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(file);
 	$var($List, providers, getMidiFileReaders());
 	$var($MidiFileFormat, format, nullptr);
@@ -397,6 +408,7 @@ $MidiFileFormat* MidiSystem::getMidiFileFormat($File* file) {
 }
 
 $Sequence* MidiSystem::getSequence($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(stream);
 	$var($List, providers, getMidiFileReaders());
 	$var($Sequence, sequence, nullptr);
@@ -418,6 +430,7 @@ $Sequence* MidiSystem::getSequence($InputStream* stream) {
 }
 
 $Sequence* MidiSystem::getSequence($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(url);
 	$var($List, providers, getMidiFileReaders());
 	$var($Sequence, sequence, nullptr);
@@ -439,6 +452,7 @@ $Sequence* MidiSystem::getSequence($URL* url) {
 }
 
 $Sequence* MidiSystem::getSequence($File* file) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(file);
 	$var($List, providers, getMidiFileReaders());
 	$var($Sequence, sequence, nullptr);
@@ -460,6 +474,7 @@ $Sequence* MidiSystem::getSequence($File* file) {
 }
 
 $ints* MidiSystem::getMidiFileTypes() {
+	$useLocalCurrentObjectStackCache();
 	$var($List, providers, getMidiFileWriters());
 	$var($Set, allTypes, $new($HashSet));
 	for (int32_t i = 0; i < $nc(providers)->size(); ++i) {
@@ -484,6 +499,7 @@ $ints* MidiSystem::getMidiFileTypes() {
 }
 
 bool MidiSystem::isFileTypeSupported(int32_t fileType) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, providers, getMidiFileWriters());
 	for (int32_t i = 0; i < $nc(providers)->size(); ++i) {
 		$var($MidiFileWriter, writer, $cast($MidiFileWriter, providers->get(i)));
@@ -495,6 +511,7 @@ bool MidiSystem::isFileTypeSupported(int32_t fileType) {
 }
 
 $ints* MidiSystem::getMidiFileTypes($Sequence* sequence) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(sequence);
 	$var($List, providers, getMidiFileWriters());
 	$var($Set, allTypes, $new($HashSet));
@@ -520,6 +537,7 @@ $ints* MidiSystem::getMidiFileTypes($Sequence* sequence) {
 }
 
 bool MidiSystem::isFileTypeSupported(int32_t fileType, $Sequence* sequence) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(sequence);
 	$var($List, providers, getMidiFileWriters());
 	for (int32_t i = 0; i < $nc(providers)->size(); ++i) {
@@ -532,6 +550,7 @@ bool MidiSystem::isFileTypeSupported(int32_t fileType, $Sequence* sequence) {
 }
 
 int32_t MidiSystem::write($Sequence* in, int32_t fileType, $OutputStream* out) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(in);
 	$Objects::requireNonNull(out);
 	$var($List, providers, getMidiFileWriters());
@@ -550,6 +569,7 @@ int32_t MidiSystem::write($Sequence* in, int32_t fileType, $OutputStream* out) {
 }
 
 int32_t MidiSystem::write($Sequence* in, int32_t type, $File* out) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(in);
 	$Objects::requireNonNull(out);
 	$var($List, providers, getMidiFileWriters());
@@ -588,6 +608,7 @@ $List* MidiSystem::getMidiFileReaders() {
 }
 
 $MidiDevice* MidiSystem::getDefaultDeviceWrapper($Class* deviceClass) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return getDefaultDevice(deviceClass);
 	} catch ($IllegalArgumentException&) {
@@ -600,6 +621,7 @@ $MidiDevice* MidiSystem::getDefaultDeviceWrapper($Class* deviceClass) {
 }
 
 $MidiDevice* MidiSystem::getDefaultDevice($Class* deviceClass) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, providers, getMidiDeviceProviders());
 	$var($String, providerClassName, $JDK13Services::getDefaultProviderClassName(deviceClass));
 	$var($String, instanceName, $JDK13Services::getDefaultInstanceName(deviceClass));
@@ -633,6 +655,7 @@ $MidiDevice* MidiSystem::getDefaultDevice($Class* deviceClass) {
 }
 
 $MidiDeviceProvider* MidiSystem::getNamedProvider($String* providerClassName, $List* providers) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(providers)->size(); ++i) {
 		$var($MidiDeviceProvider, provider, $cast($MidiDeviceProvider, providers->get(i)));
 		if ($nc($($nc($of(provider))->getClass()->getName()))->equals(providerClassName)) {
@@ -659,6 +682,7 @@ $MidiDevice* MidiSystem::getNamedDevice($String* deviceName, $MidiDeviceProvider
 }
 
 $MidiDevice* MidiSystem::getNamedDevice($String* deviceName, $MidiDeviceProvider* provider, $Class* deviceClass, bool allowSynthesizer, bool allowSequencer) {
+	$useLocalCurrentObjectStackCache();
 	$var($MidiDevice$InfoArray, infos, $nc(provider)->getDeviceInfo());
 	for (int32_t i = 0; i < $nc(infos)->length; ++i) {
 		if ($nc($($nc(infos->get(i))->getName()))->equals(deviceName)) {
@@ -688,6 +712,7 @@ $MidiDevice* MidiSystem::getNamedDevice($String* deviceName, $List* providers, $
 }
 
 $MidiDevice* MidiSystem::getNamedDevice($String* deviceName, $List* providers, $Class* deviceClass, bool allowSynthesizer, bool allowSequencer) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(providers)->size(); ++i) {
 		$var($MidiDeviceProvider, provider, $cast($MidiDeviceProvider, providers->get(i)));
 		$var($MidiDevice, device, getNamedDevice(deviceName, provider, deviceClass, allowSynthesizer, allowSequencer));
@@ -715,6 +740,7 @@ $MidiDevice* MidiSystem::getFirstDevice($MidiDeviceProvider* provider, $Class* d
 }
 
 $MidiDevice* MidiSystem::getFirstDevice($MidiDeviceProvider* provider, $Class* deviceClass, bool allowSynthesizer, bool allowSequencer) {
+	$useLocalCurrentObjectStackCache();
 	$var($MidiDevice$InfoArray, infos, $nc(provider)->getDeviceInfo());
 	for (int32_t j = 0; j < $nc(infos)->length; ++j) {
 		$var($MidiDevice, device, provider->getDevice(infos->get(j)));
@@ -742,6 +768,7 @@ $MidiDevice* MidiSystem::getFirstDevice($List* providers, $Class* deviceClass) {
 }
 
 $MidiDevice* MidiSystem::getFirstDevice($List* providers, $Class* deviceClass, bool allowSynthesizer, bool allowSequencer) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(providers)->size(); ++i) {
 		$var($MidiDeviceProvider, provider, $cast($MidiDeviceProvider, providers->get(i)));
 		$var($MidiDevice, device, getFirstDevice(provider, deviceClass, allowSynthesizer, allowSequencer));

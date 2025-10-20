@@ -84,6 +84,7 @@ void JComponent$ReadObjectCallback::init$($JComponent* this$0, $ObjectInputStrea
 }
 
 void JComponent$ReadObjectCallback::validateObject() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -109,6 +110,7 @@ void JComponent$ReadObjectCallback::validateObject() {
 }
 
 void JComponent$ReadObjectCallback::registerComponent($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->roots)->iterator());
 		for (; $nc(i$)->hasNext();) {

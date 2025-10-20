@@ -252,6 +252,7 @@ void RealTimeSequencer$DataPump::clearNoteOnCache() {
 }
 
 void RealTimeSequencer$DataPump::notesOff(bool doControllers) {
+	$useLocalCurrentObjectStackCache();
 	int32_t done = 0;
 	for (int32_t ch = 0; ch < 16; ++ch) {
 		int32_t channelMask = ($sl(1, ch));
@@ -272,6 +273,7 @@ void RealTimeSequencer$DataPump::notesOff(bool doControllers) {
 }
 
 $booleans* RealTimeSequencer$DataPump::makeDisabledArray() {
+	$useLocalCurrentObjectStackCache();
 	if (this->tracks == nullptr) {
 		return nullptr;
 	}
@@ -304,6 +306,7 @@ $booleans* RealTimeSequencer$DataPump::makeDisabledArray() {
 }
 
 void RealTimeSequencer$DataPump::sendNoteOffIfOn($Track* track, int64_t endTick) {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc(track)->size();
 	int32_t done = 0;
 	try {
@@ -362,6 +365,7 @@ void RealTimeSequencer$DataPump::applyDisabledTracks($booleans* oldDisabled, $bo
 }
 
 void RealTimeSequencer$DataPump::chaseTrackEvents(int32_t trackNum, int64_t startTick, int64_t endTick, bool doReindex, $byteArray2* tempArray) {
+	$useLocalCurrentObjectStackCache();
 	if (startTick > endTick) {
 		startTick = 0;
 	}
@@ -468,6 +472,7 @@ void RealTimeSequencer$DataPump::ReindexTrack(int32_t trackNum, int64_t tick) {
 }
 
 bool RealTimeSequencer$DataPump::dispatchMessage(int32_t trackNum, $MidiEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	bool changesPending = false;
 	$var($MidiMessage, message, $nc(event)->getMessage());
 	int32_t msgStatus = $nc(message)->getStatus();
@@ -521,6 +526,7 @@ bool RealTimeSequencer$DataPump::dispatchMessage(int32_t trackNum, $MidiEvent* e
 
 bool RealTimeSequencer$DataPump::pump() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		int64_t currMillis = 0;
 		int64_t targetTick = this->lastTick;
 		$var($MidiEvent, currEvent, nullptr);

@@ -143,6 +143,7 @@ $ClassArray* UIDefaults$ProxyLazyValue::getClassArray($ObjectArray* args) {
 }
 
 $String* UIDefaults$ProxyLazyValue::printArgs($ObjectArray* array) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, s, "{"_s);
 	if (array != nullptr) {
 		for (int32_t i = 0; i < array->length - 1; ++i) {

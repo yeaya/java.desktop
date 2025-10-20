@@ -149,6 +149,7 @@ int32_t JMenuBar$AccessibleJMenuBar::getAccessibleSelectionCount() {
 }
 
 $Accessible* JMenuBar$AccessibleJMenuBar::getAccessibleSelection(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->isSelected()) {
 		if (i != 0) {
 			return nullptr;
@@ -166,6 +167,7 @@ bool JMenuBar$AccessibleJMenuBar::isAccessibleChildSelected(int32_t i) {
 }
 
 void JMenuBar$AccessibleJMenuBar::addAccessibleSelection(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	int32_t j = $nc($(this->this$0->getSelectionModel()))->getSelectedIndex();
 	if (i == j) {
 		return;
@@ -188,6 +190,7 @@ void JMenuBar$AccessibleJMenuBar::addAccessibleSelection(int32_t i) {
 }
 
 void JMenuBar$AccessibleJMenuBar::removeAccessibleSelection(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (i >= 0 && i < this->this$0->getMenuCount()) {
 		$var($JMenu, menu, this->this$0->getMenu(i));
 		if (menu != nullptr) {
@@ -198,6 +201,7 @@ void JMenuBar$AccessibleJMenuBar::removeAccessibleSelection(int32_t i) {
 }
 
 void JMenuBar$AccessibleJMenuBar::clearAccessibleSelection() {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = $nc($(this->this$0->getSelectionModel()))->getSelectedIndex();
 	if (i >= 0 && i < this->this$0->getMenuCount()) {
 		$var($JMenu, menu, this->this$0->getMenu(i));

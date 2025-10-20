@@ -64,6 +64,7 @@ void Test7048204::init$() {
 }
 
 void Test7048204::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($NimbusLookAndFeel)));
 	$SwingUtilities::invokeAndWait($$new($Test7048204$1));
 }

@@ -173,6 +173,7 @@ void DefaultSwatchChooserPanel::installChooserPanel($JColorChooser* enclosingCho
 }
 
 void DefaultSwatchChooserPanel::buildChooser() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, recentStr, $UIManager::getString($of("ColorChooser.swatchesRecentText"_s), $(getLocale())));
 	$var($GridBagLayout, gb, $new($GridBagLayout));
 	$var($GridBagConstraints, gbc, $new($GridBagConstraints));

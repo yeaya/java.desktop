@@ -71,11 +71,13 @@ void Window$WindowDisposerRecord::init$($AppContext* context, $Window* victim) {
 }
 
 void Window$WindowDisposerRecord::updateOwner() {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, victim, $cast($Window, $nc(this->weakThis)->get()));
 	$set(this, owner, (victim == nullptr) ? ($WeakReference*)nullptr : $new($WeakReference, $($nc(victim)->getOwner())));
 }
 
 void Window$WindowDisposerRecord::dispose() {
+	$useLocalCurrentObjectStackCache();
 	if (this->owner != nullptr) {
 		$var($Window, parent, $cast($Window, $nc(this->owner)->get()));
 		if (parent != nullptr) {

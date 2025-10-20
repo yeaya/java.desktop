@@ -73,6 +73,7 @@ void AppContext$CreateThreadAction::init$($AppContext* ac, $Runnable* r) {
 }
 
 $Object* AppContext$CreateThreadAction::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($Thread, t, $new($Thread, $($nc(this->appContext)->getThreadGroup()), this->runnable, "AppContext Disposer"_s, 0, false));
 	t->setContextClassLoader($($nc(this->appContext)->getContextClassLoader()));
 	t->setPriority($Thread::NORM_PRIORITY + 1);

@@ -149,6 +149,7 @@ void ValueFormatter::finalize() {
 
 void ValueFormatter::init(int32_t length, bool hex, $JFormattedTextField* text) {
 	$init(ValueFormatter);
+	$useLocalCurrentObjectStackCache();
 	$var(ValueFormatter, formatter, $new(ValueFormatter, length, hex));
 	$nc(text)->setColumns(length);
 	text->setFormatterFactory($$new($DefaultFormatterFactory, formatter));
@@ -165,6 +166,7 @@ void ValueFormatter::init$(int32_t length, bool hex) {
 }
 
 $Object* ValueFormatter::stringToValue($String* text) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $of($Integer::valueOf(text, this->radix));
 	} catch ($NumberFormatException&) {
@@ -177,6 +179,7 @@ $Object* ValueFormatter::stringToValue($String* text) {
 }
 
 $String* ValueFormatter::valueToString(Object$* object) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Integer, object)) {
 		if (this->radix == 10) {
 			return $nc($of(object))->toString();

@@ -176,6 +176,7 @@ void Raster::initIDs() {
 
 $WritableRaster* Raster::createInterleavedRaster(int32_t dataType, int32_t w, int32_t h, int32_t bands, $Point* location) {
 	$init(Raster);
+	$useLocalCurrentObjectStackCache();
 	if (w <= 0 || h <= 0) {
 		$throwNew($IllegalArgumentException, "w and h must be > 0"_s);
 	}
@@ -192,6 +193,7 @@ $WritableRaster* Raster::createInterleavedRaster(int32_t dataType, int32_t w, in
 
 $WritableRaster* Raster::createInterleavedRaster(int32_t dataType, int32_t w, int32_t h, int32_t scanlineStride, int32_t pixelStride, $ints* bandOffsets, $Point* location$renamed) {
 	$init(Raster);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, location, location$renamed);
 	$var($DataBuffer, d, nullptr);
 	if (w <= 0 || h <= 0) {
@@ -237,6 +239,7 @@ $WritableRaster* Raster::createInterleavedRaster(int32_t dataType, int32_t w, in
 
 $WritableRaster* Raster::createBandedRaster(int32_t dataType, int32_t w, int32_t h, int32_t bands, $Point* location) {
 	$init(Raster);
+	$useLocalCurrentObjectStackCache();
 	if (bands < 1) {
 		$throwNew($ArrayIndexOutOfBoundsException, $$str({"Number of bands ("_s, $$str(bands), ") must be greater than 0"_s}));
 	}
@@ -251,6 +254,7 @@ $WritableRaster* Raster::createBandedRaster(int32_t dataType, int32_t w, int32_t
 
 $WritableRaster* Raster::createBandedRaster(int32_t dataType, int32_t w, int32_t h, int32_t scanlineStride, $ints* bankIndices, $ints* bandOffsets, $Point* location) {
 	$init(Raster);
+	$useLocalCurrentObjectStackCache();
 	$var($DataBuffer, d, nullptr);
 	int32_t bands = $nc(bandOffsets)->length;
 	if (w <= 0 || h <= 0) {
@@ -310,6 +314,7 @@ $WritableRaster* Raster::createBandedRaster(int32_t dataType, int32_t w, int32_t
 
 $WritableRaster* Raster::createPackedRaster(int32_t dataType, int32_t w, int32_t h, $ints* bandMasks, $Point* location) {
 	$init(Raster);
+	$useLocalCurrentObjectStackCache();
 	$var($DataBuffer, d, nullptr);
 	switch (dataType) {
 	case $DataBuffer::TYPE_BYTE:
@@ -337,6 +342,7 @@ $WritableRaster* Raster::createPackedRaster(int32_t dataType, int32_t w, int32_t
 
 $WritableRaster* Raster::createPackedRaster(int32_t dataType, int32_t w, int32_t h, int32_t bands, int32_t bitsPerBand, $Point* location) {
 	$init(Raster);
+	$useLocalCurrentObjectStackCache();
 	$var($DataBuffer, d, nullptr);
 	if (bands <= 0) {
 		$throwNew($IllegalArgumentException, $$str({"Number of bands ("_s, $$str(bands), ") must be greater than 0"_s}));
@@ -399,6 +405,7 @@ $WritableRaster* Raster::createPackedRaster(int32_t dataType, int32_t w, int32_t
 
 $WritableRaster* Raster::createInterleavedRaster($DataBuffer* dataBuffer, int32_t w, int32_t h, int32_t scanlineStride, int32_t pixelStride, $ints* bandOffsets, $Point* location$renamed) {
 	$init(Raster);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, location, location$renamed);
 	if (dataBuffer == nullptr) {
 		$throwNew($NullPointerException, "DataBuffer cannot be null"_s);
@@ -438,6 +445,7 @@ $WritableRaster* Raster::createInterleavedRaster($DataBuffer* dataBuffer, int32_
 
 $WritableRaster* Raster::createBandedRaster($DataBuffer* dataBuffer, int32_t w, int32_t h, int32_t scanlineStride, $ints* bankIndices, $ints* bandOffsets, $Point* location$renamed) {
 	$init(Raster);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, location, location$renamed);
 	if (dataBuffer == nullptr) {
 		$throwNew($NullPointerException, "DataBuffer cannot be null"_s);
@@ -497,6 +505,7 @@ $WritableRaster* Raster::createBandedRaster($DataBuffer* dataBuffer, int32_t w, 
 
 $WritableRaster* Raster::createPackedRaster($DataBuffer* dataBuffer, int32_t w, int32_t h, int32_t scanlineStride, $ints* bandMasks, $Point* location$renamed) {
 	$init(Raster);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, location, location$renamed);
 	if (dataBuffer == nullptr) {
 		$throwNew($NullPointerException, "DataBuffer cannot be null"_s);
@@ -538,6 +547,7 @@ $WritableRaster* Raster::createPackedRaster($DataBuffer* dataBuffer, int32_t w, 
 
 $WritableRaster* Raster::createPackedRaster($DataBuffer* dataBuffer, int32_t w, int32_t h, int32_t bitsPerPixel, $Point* location$renamed) {
 	$init(Raster);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, location, location$renamed);
 	if (dataBuffer == nullptr) {
 		$throwNew($NullPointerException, "DataBuffer cannot be null"_s);
@@ -619,6 +629,7 @@ Raster* Raster::createRaster($SampleModel* sm, $DataBuffer* db, $Point* location
 
 $WritableRaster* Raster::createWritableRaster($SampleModel* sm, $Point* location$renamed) {
 	$init(Raster);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, location, location$renamed);
 	if (location == nullptr) {
 		$assign(location, $new($Point, 0, 0));
@@ -684,6 +695,7 @@ $WritableRaster* Raster::createWritableRaster($SampleModel* sm, $DataBuffer* db,
 }
 
 void Raster::init$($SampleModel* sampleModel, $Point* origin) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, var$0, sampleModel);
 	$var($DataBuffer, var$1, $nc(sampleModel)->createDataBuffer());
 	int32_t var$2 = $nc(origin)->x;
@@ -742,6 +754,7 @@ $WritableRaster* Raster::createCompatibleWritableRaster() {
 }
 
 $WritableRaster* Raster::createCompatibleWritableRaster(int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (w <= 0 || h <= 0) {
 		$throwNew($RasterFormatException, $$str({"negative "_s, ((w <= 0) ? "width"_s : "height"_s)}));
 	}
@@ -766,6 +779,7 @@ Raster* Raster::createTranslatedChild(int32_t childMinX, int32_t childMinY) {
 }
 
 Raster* Raster::createChild(int32_t parentX, int32_t parentY, int32_t width, int32_t height, int32_t childMinX, int32_t childMinY, $ints* bandList) {
+	$useLocalCurrentObjectStackCache();
 	if (parentX < this->minX) {
 		$throwNew($RasterFormatException, "parentX lies outside raster"_s);
 	}

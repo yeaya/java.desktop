@@ -105,6 +105,7 @@ void PrintServiceLookup::init$() {
 }
 
 $PrintServiceLookup$Services* PrintServiceLookup::getServicesForContext() {
+	$useLocalCurrentObjectStackCache();
 	$load($PrintServiceLookup$Services);
 	$var($PrintServiceLookup$Services, services, $cast($PrintServiceLookup$Services, $nc($($AppContext::getAppContext()))->get($PrintServiceLookup$Services::class$)));
 	if (services == nullptr) {
@@ -119,6 +120,7 @@ $ArrayList* PrintServiceLookup::getListOfLookupServices() {
 }
 
 $ArrayList* PrintServiceLookup::initListOfLookupServices() {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, listOfLookupServices, $new($ArrayList));
 	$set($nc($(getServicesForContext())), listOfLookupServices, listOfLookupServices);
 	return listOfLookupServices;
@@ -129,22 +131,26 @@ $ArrayList* PrintServiceLookup::getRegisteredServices() {
 }
 
 $ArrayList* PrintServiceLookup::initRegisteredServices() {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, registeredServices, $new($ArrayList));
 	$set($nc($(getServicesForContext())), registeredServices, registeredServices);
 	return registeredServices;
 }
 
 $PrintServiceArray* PrintServiceLookup::lookupPrintServices($DocFlavor* flavor, $AttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, list, getServices(flavor, attributes));
 	return $fcast($PrintServiceArray, $nc(list)->toArray($$new($PrintServiceArray, list->size())));
 }
 
 $MultiDocPrintServiceArray* PrintServiceLookup::lookupMultiDocPrintServices($DocFlavorArray* flavors, $AttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, list, getMultiDocServices(flavors, attributes));
 	return $fcast($MultiDocPrintServiceArray, $nc(list)->toArray($$new($MultiDocPrintServiceArray, list->size())));
 }
 
 $PrintService* PrintServiceLookup::lookupDefaultPrintService() {
+	$useLocalCurrentObjectStackCache();
 	$var($Iterator, psIterator, $nc($(getAllLookupServices()))->iterator());
 	while ($nc(psIterator)->hasNext()) {
 		try {
@@ -161,6 +167,7 @@ $PrintService* PrintServiceLookup::lookupDefaultPrintService() {
 }
 
 bool PrintServiceLookup::registerServiceProvider(PrintServiceLookup* sp) {
+	$useLocalCurrentObjectStackCache();
 	$load(PrintServiceLookup);
 	$synchronized(PrintServiceLookup::class$) {
 		$var($Iterator, psIterator, $nc($(getAllLookupServices()))->iterator());
@@ -198,6 +205,7 @@ bool PrintServiceLookup::registerService($PrintService* service) {
 
 $ArrayList* PrintServiceLookup::getAllLookupServices() {
 	$load(PrintServiceLookup);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$synchronized(PrintServiceLookup::class$) {
 		$var($ArrayList, listOfLookupServices, getListOfLookupServices());
@@ -216,6 +224,7 @@ $ArrayList* PrintServiceLookup::getAllLookupServices() {
 }
 
 $ArrayList* PrintServiceLookup::getServices($DocFlavor* flavor, $AttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, listOfServices, $new($ArrayList));
 	$var($Iterator, psIterator, $nc($(getAllLookupServices()))->iterator());
 	while ($nc(psIterator)->hasNext()) {
@@ -270,6 +279,7 @@ $ArrayList* PrintServiceLookup::getServices($DocFlavor* flavor, $AttributeSet* a
 }
 
 $ArrayList* PrintServiceLookup::getMultiDocServices($DocFlavorArray* flavors, $AttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, listOfServices, $new($ArrayList));
 	$var($Iterator, psIterator, $nc($(getAllLookupServices()))->iterator());
 	while ($nc(psIterator)->hasNext()) {

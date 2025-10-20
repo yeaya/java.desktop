@@ -111,6 +111,7 @@ void Test4783068::init$() {
 }
 
 void Test4783068::test() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 	} catch ($UnsupportedLookAndFeelException&) {
@@ -126,6 +127,7 @@ void Test4783068::test() {
 }
 
 void Test4783068::test($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$nc(c)->setEnabled(false);
 	c->setOpaque(true);
 	c->setBackground(Test4783068::TEST_COLOR);

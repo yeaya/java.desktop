@@ -387,6 +387,7 @@ void SynthInternalFrameTitlePane::uninstallListeners() {
 }
 
 void SynthInternalFrameTitlePane::updateStyle($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(this, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -416,6 +417,7 @@ void SynthInternalFrameTitlePane::installDefaults() {
 }
 
 void SynthInternalFrameTitlePane::uninstallDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(this, $SynthConstants::ENABLED));
 	$nc(this->style)->uninstallDefaults(context);
 	$set(this, style, nullptr);
@@ -427,6 +429,7 @@ void SynthInternalFrameTitlePane::uninstallDefaults() {
 }
 
 void SynthInternalFrameTitlePane::assembleSystemMenu() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, systemPopupMenu, $new($SynthInternalFrameTitlePane$JPopupMenuUIResource));
 	addSystemMenuItems(this->systemPopupMenu);
 	enableActions();
@@ -447,6 +450,7 @@ void SynthInternalFrameTitlePane::assembleSystemMenu() {
 }
 
 void SynthInternalFrameTitlePane::addSystemMenuItems($JPopupMenu* menu) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuItem, mi, $nc(menu)->add(this->restoreAction));
 	$nc(mi)->setMnemonic(getButtonMnemonic("restore"_s));
 	$assign(mi, menu->add(this->moveAction));
@@ -464,6 +468,7 @@ void SynthInternalFrameTitlePane::addSystemMenuItems($JPopupMenu* menu) {
 
 int32_t SynthInternalFrameTitlePane::getButtonMnemonic($String* button) {
 	$init(SynthInternalFrameTitlePane);
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $Integer::parseInt($($UIManager::getString($$str({"InternalFrameTitlePane."_s, button, "Button.mnemonic"_s}))));
 	} catch ($NumberFormatException&) {
@@ -474,6 +479,7 @@ int32_t SynthInternalFrameTitlePane::getButtonMnemonic($String* button) {
 }
 
 void SynthInternalFrameTitlePane::showSystemMenu() {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, $nc(this->frame)->getInsets());
 	if (!$nc(this->frame)->isIcon()) {
 		$var($Component, var$0, static_cast<$Component*>(this->frame));
@@ -489,6 +495,7 @@ void SynthInternalFrameTitlePane::showSystemMenu() {
 }
 
 void SynthInternalFrameTitlePane::paintComponent($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(this));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -499,6 +506,7 @@ void SynthInternalFrameTitlePane::paintComponent($Graphics* g) {
 }
 
 void SynthInternalFrameTitlePane::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, title, $nc(this->frame)->getTitle());
 	if (title != nullptr) {
 		$var($SynthStyle, style, $nc(context)->getStyle());
@@ -564,6 +572,7 @@ void SynthInternalFrameTitlePane::paintBorder($SynthContext* context, $Graphics*
 }
 
 $LayoutManager* SynthInternalFrameTitlePane::createLayout() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(this));
 	$var($LayoutManager, lm, $cast($LayoutManager, $nc(this->style)->get(context, "InternalFrameTitlePane.titlePaneLayout"_s)));
 	return (lm != nullptr) ? lm : static_cast<$LayoutManager*>($new($SynthInternalFrameTitlePane$SynthTitlePaneLayout, this));
@@ -583,6 +592,7 @@ void SynthInternalFrameTitlePane::propertyChange($PropertyChangeEvent* evt) {
 }
 
 void SynthInternalFrameTitlePane::updateMenuIcon() {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, frameIcon, $nc(this->frame)->getFrameIcon());
 	$var($SynthContext, context, getContext(this));
 	if (frameIcon != nullptr) {
@@ -602,6 +612,7 @@ void SynthInternalFrameTitlePane::updateMenuIcon() {
 }
 
 $JButton* SynthInternalFrameTitlePane::createNoFocusButton() {
+	$useLocalCurrentObjectStackCache();
 	$var($JButton, button, $new($JButton));
 	button->setFocusable(false);
 	button->setMargin($$new($Insets, 0, 0, 0, 0));

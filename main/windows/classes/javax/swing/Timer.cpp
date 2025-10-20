@@ -213,6 +213,7 @@ void Timer::setDelay(int32_t delay) {
 
 void Timer::checkDelay(int32_t delay, $String* message) {
 	$init(Timer);
+	$useLocalCurrentObjectStackCache();
 	if (delay < 0) {
 		$throwNew($IllegalArgumentException, $$str({message, $$str(delay)}));
 	}
@@ -268,6 +269,7 @@ bool Timer::isRunning() {
 }
 
 void Timer::stop() {
+	$useLocalCurrentObjectStackCache();
 	$nc($(getLock()))->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -286,6 +288,7 @@ void Timer::stop() {
 }
 
 void Timer::restart() {
+	$useLocalCurrentObjectStackCache();
 	$nc($(getLock()))->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -308,6 +311,7 @@ void Timer::cancelEvent() {
 }
 
 void Timer::post() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if ($nc(this->notify$)->compareAndSet(false, true) || !this->coalesce) {
 		$var($PrivilegedAction, var$0, static_cast<$PrivilegedAction*>($new($Timer$1, this)));
@@ -320,6 +324,7 @@ $Lock* Timer::getLock() {
 }
 
 void Timer::readObject($ObjectInputStream* in) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, acc, $AccessController::getContext());
 	$var($ObjectInputStream$GetField, f, $nc(in)->readFields());
 	$var($EventListenerList, newListenerList, $cast($EventListenerList, $nc(f)->get("listenerList"_s, ($Object*)nullptr)));

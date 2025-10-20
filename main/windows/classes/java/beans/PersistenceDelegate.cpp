@@ -44,6 +44,7 @@ void PersistenceDelegate::init$() {
 }
 
 void PersistenceDelegate::writeObject(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, newInstance, $nc(out)->get(oldInstance));
 	if (!mutatesTo(oldInstance, newInstance)) {
 		out->remove(oldInstance);

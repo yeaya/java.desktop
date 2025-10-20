@@ -344,6 +344,7 @@ Cursor* Cursor::getPredefinedCursor(int32_t type) {
 
 Cursor* Cursor::getSystemCustomCursor($String* name) {
 	$init(Cursor);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$GraphicsEnvironment::checkHeadless();
 	$var(Cursor, cursor, $cast(Cursor, $nc(Cursor::systemCustomCursors)->get(name)));
@@ -464,6 +465,7 @@ $String* Cursor::getName() {
 }
 
 $String* Cursor::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$1, $$str({$($of(this)->getClass()->getName()), "["_s}));
 	$var($String, var$0, $$concat(var$1, $(getName())));
 	return $concat(var$0, "]");
@@ -471,6 +473,7 @@ $String* Cursor::toString() {
 
 void Cursor::loadSystemCustomCursorProperties() {
 	$init(Cursor);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$synchronized(Cursor::systemCustomCursors) {
 		$assignStatic(Cursor::systemCustomCursorProperties, $new($Properties));
@@ -496,6 +499,7 @@ void Cursor::finalizeImpl(int64_t pData) {
 
 $Object* Cursor::lambda$loadSystemCustomCursorProperties$1() {
 	$init(Cursor);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	{
 		$var($InputStream, is, Cursor::class$->getResourceAsStream(Cursor::PROPERTIES_FILE));
@@ -538,6 +542,7 @@ $InputStream* Cursor::lambda$getSystemCustomCursor$0($String* file) {
 }
 
 void clinit$Cursor($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(Cursor::RESOURCE_PREFIX, "/sun/awt/resources/cursors/"_s);
 	$assignStatic(Cursor::PROPERTIES_FILE, $str({Cursor::RESOURCE_PREFIX, "cursors.properties"_s}));
 	$assignStatic(Cursor::CURSOR_DOT_PREFIX, "Cursor."_s);

@@ -79,6 +79,7 @@ void bug6694823$5::init$($Point* val$point) {
 }
 
 void bug6694823$5::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6694823);
 	$var($Point, frameLoc, $nc($bug6694823::frame)->getLocationOnScreen());
 	if ($nc($($nc($bug6694823::popup)->getLocationOnScreen()))->equals($$new($Point, $nc(frameLoc)->x, frameLoc->y + $nc(this->val$point)->y))) {

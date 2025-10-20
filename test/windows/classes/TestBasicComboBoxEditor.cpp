@@ -115,6 +115,7 @@ void TestBasicComboBoxEditor::init$() {
 
 void TestBasicComboBoxEditor::main($StringArray* args) {
 	$load(TestBasicComboBoxEditor);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestBasicComboBoxEditor$$Lambda$testBasicComboBoxEditor)));
 	$System::setSecurityManager($$new($SecurityManager));
@@ -122,6 +123,7 @@ void TestBasicComboBoxEditor::main($StringArray* args) {
 }
 
 void TestBasicComboBoxEditor::testBasicComboBoxEditor() {
+	$useLocalCurrentObjectStackCache();
 	$var($BasicComboBoxEditor, comboBoxEditor, $new($BasicComboBoxEditor));
 	comboBoxEditor->setItem($$new($TestBasicComboBoxEditor$UserComboBoxEditorType, "100"_s));
 	$var($JTextField, editor, $cast($JTextField, comboBoxEditor->getEditorComponent()));

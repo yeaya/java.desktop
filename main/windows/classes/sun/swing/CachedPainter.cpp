@@ -137,6 +137,7 @@ void CachedPainter::paint($Component* c, $Graphics* g, int32_t x, int32_t y, int
 }
 
 $Image* CachedPainter::getImage(Object$* key, $Component* c, int32_t baseWidth, int32_t baseHeight, int32_t w, int32_t h, $ObjectArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, config, getGraphicsConfiguration(c));
 	$var($ImageCache, cache, getCache(key));
 	$var($Image, image, $nc(cache)->getImage(key, config, w, h, args));
@@ -209,6 +210,7 @@ $Image* CachedPainter::getImage(Object$* key, $Component* c, int32_t baseWidth, 
 }
 
 void CachedPainter::paint0($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, $ObjectArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, key, $of(this)->getClass());
 	$var($GraphicsConfiguration, config, getGraphicsConfiguration(c));
 	$var($ImageCache, cache, getCache(key));

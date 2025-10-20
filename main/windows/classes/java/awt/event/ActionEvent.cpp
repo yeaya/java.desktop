@@ -96,6 +96,7 @@ int32_t ActionEvent::getModifiers() {
 }
 
 $String* ActionEvent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, typeStr, nullptr);
 	switch (this->id) {
 	case ActionEvent::ACTION_PERFORMED:

@@ -150,6 +150,7 @@ void JList$AccessibleJList::finalize() {
 }
 
 void JList$AccessibleJList::init$($JList* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JComponent$AccessibleJComponent::init$(this$0);
 	this$0->addPropertyChangeListener(this);
@@ -159,6 +160,7 @@ void JList$AccessibleJList::init$($JList* this$0) {
 }
 
 void JList$AccessibleJList::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(e)->getPropertyName());
 	$var($Object, oldValue, e->getOldValue());
 	$var($Object, newValue, e->getNewValue());
@@ -184,6 +186,7 @@ void JList$AccessibleJList::propertyChange($PropertyChangeEvent* e) {
 }
 
 void JList$AccessibleJList::valueChanged($ListSelectionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t oldLeadSelectionIndex = this->leadSelectionIndex;
 	this->leadSelectionIndex = this->this$0->getLeadSelectionIndex();
 	if (oldLeadSelectionIndex != this->leadSelectionIndex) {
@@ -219,6 +222,7 @@ void JList$AccessibleJList::valueChanged($ListSelectionEvent* e) {
 }
 
 void JList$AccessibleJList::intervalAdded($ListDataEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($AccessibleContext);
 	$var($String, var$0, $AccessibleContext::ACCESSIBLE_VISIBLE_DATA_PROPERTY);
 	$var($Object, var$1, $of($Boolean::valueOf(false)));
@@ -226,6 +230,7 @@ void JList$AccessibleJList::intervalAdded($ListDataEvent* e) {
 }
 
 void JList$AccessibleJList::intervalRemoved($ListDataEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($AccessibleContext);
 	$var($String, var$0, $AccessibleContext::ACCESSIBLE_VISIBLE_DATA_PROPERTY);
 	$var($Object, var$1, $of($Boolean::valueOf(false)));
@@ -233,6 +238,7 @@ void JList$AccessibleJList::intervalRemoved($ListDataEvent* e) {
 }
 
 void JList$AccessibleJList::contentsChanged($ListDataEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($AccessibleContext);
 	$var($String, var$0, $AccessibleContext::ACCESSIBLE_VISIBLE_DATA_PROPERTY);
 	$var($Object, var$1, $of($Boolean::valueOf(false)));

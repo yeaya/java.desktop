@@ -240,6 +240,7 @@ $String* WDataTransferer::getDefaultUnicodeEncoding() {
 }
 
 $bytes* WDataTransferer::translateTransferable($Transferable* contents, $DataFlavor* flavor, int64_t format) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, bytes, nullptr);
 	if (format == WDataTransferer::CF_HTML) {
 		$init($DataFlavor);
@@ -259,6 +260,7 @@ $bytes* WDataTransferer::translateTransferable($Transferable* contents, $DataFla
 }
 
 $Object* WDataTransferer::translateStream($InputStream* str$renamed, $DataFlavor* flavor, int64_t format, $Transferable* localeTransferable) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputStream, str, str$renamed);
 	if (format == WDataTransferer::CF_HTML && $nc(flavor)->isFlavorTextType()) {
 		$assign(str, $new($HTMLCodec, str, $($EHTMLReadMode::getEHTMLReadMode(flavor))));
@@ -267,6 +269,7 @@ $Object* WDataTransferer::translateStream($InputStream* str$renamed, $DataFlavor
 }
 
 $Object* WDataTransferer::translateBytes($bytes* bytes, $DataFlavor* flavor, int64_t format, $Transferable* localeTransferable) {
+	$useLocalCurrentObjectStackCache();
 	if (format == WDataTransferer::CF_FILEGROUPDESCRIPTORA || format == WDataTransferer::CF_FILEGROUPDESCRIPTORW) {
 		$init($DataFlavor);
 		if (bytes == nullptr || !$nc($DataFlavor::javaFileListFlavor)->equals(flavor)) {
@@ -347,6 +350,7 @@ bool WDataTransferer::isImageFormat(int64_t format) {
 }
 
 $bytes* WDataTransferer::imageToPlatformBytes($Image* image, int64_t format) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, mimeType, nullptr);
 	if (format == WDataTransferer::CF_PNG) {
 		$assign(mimeType, "image/png"_s);
@@ -404,6 +408,7 @@ $bytes* WDataTransferer::imageToPlatformBytes($Image* image, int64_t format) {
 }
 
 $ByteArrayOutputStream* WDataTransferer::convertFileListToBytes($ArrayList* fileList) {
+	$useLocalCurrentObjectStackCache();
 	$var($ByteArrayOutputStream, bos, $new($ByteArrayOutputStream));
 	if ($nc(fileList)->isEmpty()) {
 		bos->write(WDataTransferer::UNICODE_NULL_TERMINATOR);
@@ -427,6 +432,7 @@ $bytes* WDataTransferer::imageDataToPlatformImageBytes($bytes* imageData, int32_
 }
 
 $Image* WDataTransferer::platformImageBytesToImage($bytes* bytes, int64_t format) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, mimeType, nullptr);
 	if (format == WDataTransferer::CF_PNG) {
 		$assign(mimeType, "image/png"_s);
@@ -465,6 +471,7 @@ $StringArray* WDataTransferer::dragQueryFile($bytes* bytes) {
 }
 
 void clinit$WDataTransferer($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(WDataTransferer::predefinedClipboardNames, $new($StringArray, {
 		""_s,
 		"TEXT"_s,

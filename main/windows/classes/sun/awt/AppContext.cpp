@@ -285,6 +285,7 @@ bool AppContext::isDisposed() {
 }
 
 void AppContext::init$($ThreadGroup* threadGroup) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$set(this, table, $new($HashMap));
 	$set(this, changeSupport, nullptr);
@@ -312,6 +313,7 @@ void AppContext::initMainAppContext() {
 
 AppContext* AppContext::getAppContext() {
 	$init(AppContext);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if ($nc(AppContext::numAppContexts)->get() == 1 && AppContext::mainAppContext != nullptr) {
 		return AppContext::mainAppContext;
@@ -329,6 +331,7 @@ bool AppContext::isMainContext(AppContext* ctx) {
 }
 
 void AppContext::dispose() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if ($nc(this->threadGroup)->parentOf($($($Thread::currentThread())->getThreadGroup()))) {
 		$throwNew($IllegalThreadStateException, "Current Thread is contained within AppContext to be disposed."_s);
@@ -423,6 +426,7 @@ void AppContext::dispose() {
 
 void AppContext::stopEventDispatchThreads() {
 	$init(AppContext);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	{
 		$var($Iterator, i$, $nc($(getAppContexts()))->iterator());
@@ -446,6 +450,7 @@ void AppContext::stopEventDispatchThreads() {
 }
 
 $Object* AppContext::get(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->table) {
 		$var($MostRecentKeyValue, recent, this->mostRecentKeyValue);
 		if ((recent != nullptr) && ($equals(recent->key, key))) {
@@ -494,6 +499,7 @@ $ClassLoader* AppContext::getContextClassLoader() {
 }
 
 $String* AppContext::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$1, $$str({$($of(this)->getClass()->getName()), "[threadGroup="_s}));
 	$var($String, var$0, $$concat(var$1, $($nc(this->threadGroup)->getName())));
 	return $concat(var$0, "]");
@@ -540,6 +546,7 @@ $PropertyChangeListenerArray* AppContext::getPropertyChangeListeners($String* pr
 
 $Object* AppContext::getSoftReferenceValue(Object$* key, $Supplier* supplier) {
 	$init(AppContext);
+	$useLocalCurrentObjectStackCache();
 	$var(AppContext, appContext, AppContext::getAppContext());
 	$var($SoftReference, ref, $cast($SoftReference, $nc(appContext)->get(key)));
 	if (ref != nullptr) {
@@ -560,6 +567,7 @@ $Void* AppContext::lambda$dispose$0() {
 }
 
 void clinit$AppContext($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(AppContext::DISPOSED_PROPERTY_NAME, "disposed"_s);
 	$assignStatic(AppContext::GUI_DISPOSED, "guidisposed"_s);
 	$assignStatic(AppContext::log, $PlatformLogger::getLogger("sun.awt.AppContext"_s));

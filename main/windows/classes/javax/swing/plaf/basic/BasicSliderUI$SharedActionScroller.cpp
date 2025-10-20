@@ -83,6 +83,7 @@ void BasicSliderUI$SharedActionScroller::init$(int32_t dir, bool block) {
 }
 
 void BasicSliderUI$SharedActionScroller::actionPerformed($ActionEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($JSlider, slider, $cast($JSlider, $nc(evt)->getSource()));
 	$load($BasicSliderUI);
 	$var($BasicSliderUI, ui, $cast($BasicSliderUI, $BasicLookAndFeel::getUIOfType($($nc(slider)->getUI()), $BasicSliderUI::class$)));

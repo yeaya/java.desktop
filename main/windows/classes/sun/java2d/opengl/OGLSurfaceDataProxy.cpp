@@ -79,6 +79,7 @@ void OGLSurfaceDataProxy::init$($OGLGraphicsConfig* oglgc, int32_t transparency)
 }
 
 $SurfaceData* OGLSurfaceDataProxy::validateSurfaceData($SurfaceData* srcData, $SurfaceData* cachedData$renamed, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceData, cachedData, cachedData$renamed);
 	if (cachedData == nullptr) {
 		try {

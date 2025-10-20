@@ -451,6 +451,7 @@ void TMSchema$State::initStates() {
 	$load(TMSchema$State);
 	$synchronized(class$) {
 		$init(TMSchema$State);
+		$useLocalCurrentObjectStackCache();
 		$load($TMSchema$Part);
 		$assignStatic(TMSchema$State::stateMap, $new($EnumMap, $TMSchema$Part::class$));
 		$init($TMSchema$Part);

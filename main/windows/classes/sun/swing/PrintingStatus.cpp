@@ -171,6 +171,7 @@ void PrintingStatus::init$($Component* parent, $PrinterJob* job) {
 }
 
 void PrintingStatus::init() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, progressTitle, $UIManager::getString("PrintingDialog.titleProgressText"_s));
 	$var($String, dialogInitialContent, $UIManager::getString("PrintingDialog.contentInitialText"_s));
 	$set(this, statusFormat, $new($MessageFormat, $($UIManager::getString("PrintingDialog.contentProgressText"_s))));
@@ -200,6 +201,7 @@ void PrintingStatus::init() {
 }
 
 void PrintingStatus::showModal(bool isModal) {
+	$useLocalCurrentObjectStackCache();
 	if ($SwingUtilities::isEventDispatchThread()) {
 		showModalOnEDT(isModal);
 	} else {

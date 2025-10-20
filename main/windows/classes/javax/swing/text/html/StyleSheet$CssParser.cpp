@@ -173,6 +173,7 @@ void StyleSheet$CssParser::handleProperty($String* property) {
 }
 
 void StyleSheet$CssParser::handleValue($String* value$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, value, value$renamed);
 	if (this->propertyName != nullptr && value != nullptr && value->length() > 0) {
 		$var($CSS$Attribute, cssKey, $CSS::getAttribute(this->propertyName));
@@ -193,6 +194,7 @@ void StyleSheet$CssParser::handleValue($String* value$renamed) {
 }
 
 void StyleSheet$CssParser::endRule() {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = $nc(this->selectors)->size();
 	for (int32_t i = 0; i < n; ++i) {
 		$var($StringArray, selector, $cast($StringArray, $nc(this->selectors)->elementAt(i)));

@@ -75,6 +75,7 @@ void bug8032878$1::init$($bug8032878* this$0) {
 }
 
 void bug8032878$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$set(this->this$0, text, $nc(($cast($JTextComponent, $($nc($($nc(this->this$0->cb)->getEditor()))->getEditorComponent()))))->getText());
 }
 

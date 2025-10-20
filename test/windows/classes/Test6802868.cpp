@@ -80,6 +80,7 @@ void Test6802868::main($StringArray* args) {
 }
 
 void Test6802868::init$($JFrame* frame) {
+	$useLocalCurrentObjectStackCache();
 	$var($JDesktopPane, desktop, $new($JDesktopPane));
 	$set(this, frame, frame);
 	$nc(this->frame)->add(static_cast<$Component*>(desktop));
@@ -113,6 +114,7 @@ void Test6802868::secondTest() {
 }
 
 void Test6802868::secondValidation() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc($($nc(this->internal)->getDesktopIcon()))->getLocation()))->equals(this->location)) {
 		$throwNew($Error, "JDesktopIcon hasn\'t moved"_s);
 	}

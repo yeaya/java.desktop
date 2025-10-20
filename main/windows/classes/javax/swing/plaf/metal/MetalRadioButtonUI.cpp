@@ -123,6 +123,7 @@ void MetalRadioButtonUI::init$() {
 
 $ComponentUI* MetalRadioButtonUI::createUI($JComponent* c) {
 	$init(MetalRadioButtonUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(MetalRadioButtonUI, metalRadioButtonUI, $cast(MetalRadioButtonUI, $nc(appContext)->get(MetalRadioButtonUI::METAL_RADIO_BUTTON_UI_KEY)));
 	if (metalRadioButtonUI == nullptr) {
@@ -133,6 +134,7 @@ $ComponentUI* MetalRadioButtonUI::createUI($JComponent* c) {
 }
 
 void MetalRadioButtonUI::installDefaults($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$BasicRadioButtonUI::installDefaults(b);
 	if (!this->defaults_initialized) {
 		$set(this, focusColor, $UIManager::getColor($$str({$(getPropertyPrefix()), "focus"_s})));
@@ -163,6 +165,7 @@ $Color* MetalRadioButtonUI::getFocusColor() {
 
 void MetalRadioButtonUI::paint($Graphics* g, $JComponent* c) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($AbstractButton, b, $cast($AbstractButton, c));
 		$var($ButtonModel, model, $nc(b)->getModel());
 		$var($Dimension, size, $nc(c)->getSize());

@@ -98,6 +98,7 @@ void WindowsBorders::init$() {
 }
 
 $Border* WindowsBorders::getProgressBarBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $UIManager::getLookAndFeelDefaults());
 	$var($Color, var$1, $nc(table)->getColor("ProgressBar.shadow"_s));
 	$var($Border, var$0, static_cast<$Border*>($new($WindowsBorders$ProgressBarBorder, var$1, $(table->getColor("ProgressBar.highlight"_s)))));
@@ -106,6 +107,7 @@ $Border* WindowsBorders::getProgressBarBorder() {
 }
 
 $Border* WindowsBorders::getToolBarBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $UIManager::getLookAndFeelDefaults());
 	$var($Color, var$0, $nc(table)->getColor("ToolBar.shadow"_s));
 	$var($Border, toolBarBorder, $new($WindowsBorders$ToolBarBorder, var$0, $(table->getColor("ToolBar.highlight"_s))));
@@ -117,6 +119,7 @@ $Border* WindowsBorders::getFocusCellHighlightBorder() {
 }
 
 $Border* WindowsBorders::getTableHeaderBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $UIManager::getLookAndFeelDefaults());
 	$var($Color, var$1, $nc(table)->getColor("Table.shadow"_s));
 	$var($Color, var$2, table->getColor("Table.darkShadow"_s));
@@ -127,6 +130,7 @@ $Border* WindowsBorders::getTableHeaderBorder() {
 }
 
 $Border* WindowsBorders::getInternalFrameBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, table, $UIManager::getLookAndFeelDefaults());
 	$var($Color, var$1, $nc(table)->getColor("InternalFrame.borderColor"_s));
 	$var($Color, var$2, table->getColor("InternalFrame.borderHighlight"_s));

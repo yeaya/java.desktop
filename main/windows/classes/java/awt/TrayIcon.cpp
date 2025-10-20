@@ -354,6 +354,7 @@ $ActionListenerArray* TrayIcon::getActionListeners() {
 }
 
 void TrayIcon::displayMessage($String* caption, $String* text, $TrayIcon$MessageType* messageType) {
+	$useLocalCurrentObjectStackCache();
 	if (caption == nullptr && text == nullptr) {
 		$throwNew($NullPointerException, "displaying the message with both caption and text being null"_s);
 	}
@@ -368,6 +369,7 @@ $Dimension* TrayIcon::getSize() {
 }
 
 void TrayIcon::addNotify() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this) {
 		if (this->peer == nullptr) {
 			$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());

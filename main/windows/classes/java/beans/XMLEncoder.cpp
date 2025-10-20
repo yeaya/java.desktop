@@ -198,6 +198,7 @@ void XMLEncoder::init$($OutputStream* out) {
 }
 
 void XMLEncoder::init$($OutputStream* out, $String* charset, bool declaration, int32_t indentation) {
+	$useLocalCurrentObjectStackCache();
 	$Encoder::init$();
 	this->indentation = 0;
 	this->internal = false;
@@ -220,6 +221,7 @@ void XMLEncoder::init$($OutputStream* out, $String* charset, bool declaration, i
 }
 
 void XMLEncoder::setOwner(Object$* owner) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, owner, owner);
 	writeExpression($$new($Expression, this, "getOwner"_s, $$new($ObjectArray, 0)));
 }
@@ -229,6 +231,7 @@ $Object* XMLEncoder::getOwner() {
 }
 
 void XMLEncoder::writeObject(Object$* o) {
+	$useLocalCurrentObjectStackCache();
 	if (this->internal) {
 		$Encoder::writeObject(o);
 	} else {
@@ -246,6 +249,7 @@ $List* XMLEncoder::statementList(Object$* target) {
 }
 
 void XMLEncoder::mark(Object$* o, bool isArgument) {
+	$useLocalCurrentObjectStackCache();
 	if (o == nullptr || $equals(o, this)) {
 		return;
 	}
@@ -271,6 +275,7 @@ void XMLEncoder::mark(Object$* o, bool isArgument) {
 }
 
 void XMLEncoder::mark($Statement* stm) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, args, $nc(stm)->getArguments());
 	for (int32_t i = 0; i < $nc(args)->length; ++i) {
 		$var($Object0, arg, args->get(i));
@@ -280,6 +285,7 @@ void XMLEncoder::mark($Statement* stm) {
 }
 
 void XMLEncoder::writeStatement($Statement* oldStm) {
+	$useLocalCurrentObjectStackCache();
 	bool internal = this->internal;
 	this->internal = true;
 	try {
@@ -305,6 +311,7 @@ void XMLEncoder::writeStatement($Statement* oldStm) {
 }
 
 void XMLEncoder::writeExpression($Expression* oldExp) {
+	$useLocalCurrentObjectStackCache();
 	bool internal = this->internal;
 	this->internal = true;
 	$var($Object, oldValue, getValue(oldExp));
@@ -316,6 +323,7 @@ void XMLEncoder::writeExpression($Expression* oldExp) {
 }
 
 void XMLEncoder::flush() {
+	$useLocalCurrentObjectStackCache();
 	if (!this->preambleWritten) {
 		if (this->declaration) {
 			$var($String, var$1, $$str({"<?xml version="_s, $(quote("1.0"_s)), " encoding="_s}));
@@ -361,6 +369,7 @@ void XMLEncoder::clear() {
 }
 
 $Statement* XMLEncoder::getMissedStatement() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc($($nc(this->targetToStatementList)->values()))->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -379,6 +388,7 @@ $Statement* XMLEncoder::getMissedStatement() {
 }
 
 void XMLEncoder::close() {
+	$useLocalCurrentObjectStackCache();
 	flush();
 	writeln("</java>"_s);
 	try {
@@ -408,6 +418,7 @@ bool XMLEncoder::isValidCharCode(int32_t code) {
 }
 
 void XMLEncoder::writeln($String* exp) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($StringBuilder, sb, $new($StringBuilder));
 		for (int32_t i = 0; i < this->indentation; ++i) {
@@ -423,6 +434,7 @@ void XMLEncoder::writeln($String* exp) {
 }
 
 void XMLEncoder::outputValue(Object$* value$renamed, Object$* outer, bool isArgument) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, value$renamed);
 	if (value == nullptr) {
 		writeln("<null/>"_s);
@@ -522,6 +534,7 @@ $String* XMLEncoder::createString(int32_t code) {
 }
 
 $String* XMLEncoder::createString($String* string) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, $new($StringBuilder));
 	sb->append("<string>"_s);
 	int32_t index = 0;
@@ -547,6 +560,7 @@ $String* XMLEncoder::createString($String* string) {
 }
 
 void XMLEncoder::outputStatement($Statement* exp, Object$* outer, bool isArgument) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, target, $nc(exp)->getTarget());
 	$var($String, methodName, exp->getMethodName());
 	if (target == nullptr || methodName == nullptr) {
@@ -614,6 +628,7 @@ void XMLEncoder::outputStatement($Statement* exp, Object$* outer, bool isArgumen
 }
 
 void XMLEncoder::outputXML($String* tag, $String* attributes, Object$* value, $ObjectArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, statements, statementList(value));
 	if ($nc(args)->length == 0 && $nc(statements)->size() == 0) {
 		writeln($$str({"<"_s, tag, attributes, "/>"_s}));

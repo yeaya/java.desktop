@@ -65,6 +65,7 @@ void RepaintManagerFPUIScaleTest$TestListCellRenderer::init$() {
 }
 
 $Component* RepaintManagerFPUIScaleTest$TestListCellRenderer::getListCellRendererComponent($JList* list, Object$* value, int32_t index, bool isSelected, bool cellHasFocus) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, retValue, $DefaultListCellRenderer::getListCellRendererComponent(list, value, index, isSelected, cellHasFocus));
 	setIcon($$new($ImageIcon, $($RepaintManagerFPUIScaleTest::createTestImage(20, 10, index))));
 	return retValue;

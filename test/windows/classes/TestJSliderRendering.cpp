@@ -210,6 +210,7 @@ void TestJSliderRendering::init$() {
 
 void TestJSliderRendering::blockTillDisplayed($Component* comp) {
 	$init(TestJSliderRendering);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	while (p == nullptr) {
 		try {
@@ -237,6 +238,7 @@ int32_t TestJSliderRendering::getMaxColorDiff($Color* c1, $Color* c2) {
 
 void TestJSliderRendering::main($StringArray* args) {
 	$init(TestJSliderRendering);
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($System::getProperty("os.name"_s)))->startsWith("Linux"_s)) {
 		$init($System);
 		$nc($System::out)->println("This test is meant for Linux platform only"_s);

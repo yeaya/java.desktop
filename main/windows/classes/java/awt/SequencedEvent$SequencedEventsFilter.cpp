@@ -78,6 +78,7 @@ void SequencedEvent$SequencedEventsFilter::init$($SequencedEvent* currentSequenc
 }
 
 $EventFilter$FilterAction* SequencedEvent$SequencedEventsFilter::acceptEvent($AWTEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(ev)->getID() == 1006) {
 		$load($SequencedEvent);
 		$synchronized($SequencedEvent::class$) {

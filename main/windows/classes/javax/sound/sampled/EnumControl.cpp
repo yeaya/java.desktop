@@ -99,6 +99,7 @@ bool EnumControl::isValueSupported(Object$* value) {
 }
 
 $String* EnumControl::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $String::format("%s with current value: %s"_s, $$new($ObjectArray, {
 		$($of($Control::toString())),
 		$(getValue())

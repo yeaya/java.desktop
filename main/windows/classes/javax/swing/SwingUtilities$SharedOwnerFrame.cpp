@@ -112,6 +112,7 @@ void SwingUtilities$SharedOwnerFrame::addNotify() {
 }
 
 void SwingUtilities$SharedOwnerFrame::installListeners() {
+	$useLocalCurrentObjectStackCache();
 	$var($WindowArray, windows, getOwnedWindows());
 	{
 		$var($WindowArray, arr$, windows);
@@ -130,6 +131,7 @@ void SwingUtilities$SharedOwnerFrame::installListeners() {
 }
 
 void SwingUtilities$SharedOwnerFrame::windowClosed($WindowEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		$var($WindowArray, windows, getOwnedWindows());
 		{

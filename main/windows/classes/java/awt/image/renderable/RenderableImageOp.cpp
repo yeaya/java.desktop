@@ -95,6 +95,7 @@ $Vector* RenderableImageOp::getSources() {
 }
 
 $Vector* RenderableImageOp::getRenderableSources() {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, sources, nullptr);
 	if ($nc(this->paramBlock)->getNumSources() > 0) {
 		$assign(sources, $new($Vector));
@@ -163,6 +164,7 @@ $ParameterBlock* RenderableImageOp::getParameterBlock() {
 }
 
 $RenderedImage* RenderableImageOp::createScaledRendering(int32_t w, int32_t h, $RenderingHints* hints) {
+	$useLocalCurrentObjectStackCache();
 	double sx = (double)w / getWidth();
 	double sy = (double)h / getHeight();
 	if ($Math::abs(sx / sy - 1.0) < 0.01) {
@@ -174,12 +176,14 @@ $RenderedImage* RenderableImageOp::createScaledRendering(int32_t w, int32_t h, $
 }
 
 $RenderedImage* RenderableImageOp::createDefaultRendering() {
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, usr2dev, $new($AffineTransform));
 	$var($RenderContext, newRC, $new($RenderContext, usr2dev));
 	return createRendering(newRC);
 }
 
 $RenderedImage* RenderableImageOp::createRendering($RenderContext* renderContext) {
+	$useLocalCurrentObjectStackCache();
 	$var($RenderedImage, image, nullptr);
 	$var($RenderContext, rcOut, nullptr);
 	$var($ParameterBlock, renderedParamBlock, $cast($ParameterBlock, $nc(this->paramBlock)->clone()));

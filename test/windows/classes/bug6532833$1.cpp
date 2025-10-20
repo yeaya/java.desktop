@@ -85,6 +85,7 @@ void bug6532833$1::init$() {
 }
 
 void bug6532833$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JSpinnerArray, spinners, $new($JSpinnerArray, 2));
 	for (int32_t i = 0; i < spinners->length; ++i) {
 		$var($JSpinner, spinner, $new($JSpinner));

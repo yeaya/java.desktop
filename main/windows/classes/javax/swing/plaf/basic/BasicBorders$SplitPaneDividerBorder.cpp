@@ -115,6 +115,7 @@ void BasicBorders$SplitPaneDividerBorder::init$($Color* highlight, $Color* shado
 }
 
 void BasicBorders$SplitPaneDividerBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($BasicSplitPaneDivider, c))) {
 		return;
 	}
@@ -149,6 +150,7 @@ void BasicBorders$SplitPaneDividerBorder::paintBorder($Component* c, $Graphics* 
 }
 
 $Insets* BasicBorders$SplitPaneDividerBorder::getBorderInsets($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, $new($Insets, 0, 0, 0, 0));
 	if ($instanceOf($BasicSplitPaneDivider, c)) {
 		$var($BasicSplitPaneUI, bspui, $nc(($cast($BasicSplitPaneDivider, c)))->getBasicSplitPaneUI());

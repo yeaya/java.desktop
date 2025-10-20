@@ -73,6 +73,7 @@ void ToolBarSeparatorPainter::init$() {
 }
 
 $AbstractRegionPainter$PaintContext* ToolBarSeparatorPainter::getPaintContext() {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, var$0, $new($Insets, 1, 0, 1, 0));
 	$init($AbstractRegionPainter$PaintContext$CacheMode);
 	return $new($AbstractRegionPainter$PaintContext, var$0, $$new($Dimension, 38, 7), false, $AbstractRegionPainter$PaintContext$CacheMode::NO_CACHING, (double)1, (double)1);

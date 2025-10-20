@@ -150,6 +150,7 @@ void JFIFMarkerSegment$JFIFExtensionMarkerSegment::init$($JFIFMarkerSegment* thi
 }
 
 void JFIFMarkerSegment$JFIFExtensionMarkerSegment::init$($JFIFMarkerSegment* this$0, $Node* node) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$MarkerSegment::init$($JPEG::APP0);
 	$var($NamedNodeMap, attrs, $nc(node)->getAttributes());
@@ -187,6 +188,7 @@ void JFIFMarkerSegment$JFIFExtensionMarkerSegment::init$($JFIFMarkerSegment* thi
 }
 
 void JFIFMarkerSegment$JFIFExtensionMarkerSegment::init$($JFIFMarkerSegment* this$0, $BufferedImage* thumbnail) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$MarkerSegment::init$($JPEG::APP0);
 	$var($ColorModel, cm, $nc(thumbnail)->getColorModel());
@@ -242,6 +244,7 @@ $Object* JFIFMarkerSegment$JFIFExtensionMarkerSegment::clone() {
 }
 
 $IIOMetadataNode* JFIFMarkerSegment$JFIFExtensionMarkerSegment::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "app0JFXX"_s));
 	node->setAttribute("extensionCode"_s, $($Integer::toString(this->code)));
 	node->appendChild($($nc(this->thumb)->getNativeNode()));

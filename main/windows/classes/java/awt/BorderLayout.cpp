@@ -209,6 +209,7 @@ void BorderLayout::addLayoutComponent($Component* comp, Object$* constraints) {
 }
 
 void BorderLayout::addLayoutComponent($String* name$renamed, $Component* comp) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, name$renamed);
 	$synchronized($nc(comp)->getTreeLock()) {
 		if (name == nullptr) {
@@ -288,6 +289,7 @@ $Component* BorderLayout::getLayoutComponent(Object$* constraints) {
 }
 
 $Component* BorderLayout::getLayoutComponent($Container* target, Object$* constraints) {
+	$useLocalCurrentObjectStackCache();
 	bool ltr = $nc($($nc(target)->getComponentOrientation()))->isLeftToRight();
 	$var($Component, result, nullptr);
 	if ($nc(BorderLayout::NORTH)->equals(constraints)) {
@@ -339,6 +341,7 @@ $Object* BorderLayout::getConstraints($Component* comp) {
 }
 
 $Dimension* BorderLayout::minimumLayoutSize($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(target)->getTreeLock()) {
 		$var($Dimension, dim, $new($Dimension, 0, 0));
 		bool ltr = $nc($(target->getComponentOrientation()))->isLeftToRight();
@@ -376,6 +379,7 @@ $Dimension* BorderLayout::minimumLayoutSize($Container* target) {
 }
 
 $Dimension* BorderLayout::preferredLayoutSize($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(target)->getTreeLock()) {
 		$var($Dimension, dim, $new($Dimension, 0, 0));
 		bool ltr = $nc($(target->getComponentOrientation()))->isLeftToRight();
@@ -428,6 +432,7 @@ void BorderLayout::invalidateLayout($Container* target) {
 }
 
 void BorderLayout::layoutContainer($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(target)->getTreeLock()) {
 		$var($Insets, insets, target->getInsets());
 		int32_t top = $nc(insets)->top;
@@ -492,6 +497,7 @@ $Component* BorderLayout::getChild($String* key, bool ltr) {
 }
 
 $String* BorderLayout::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($of(this)->getClass()->getName()), "[hgap="_s, $$str(this->hgap), ",vgap="_s, $$str(this->vgap), "]"_s});
 }
 

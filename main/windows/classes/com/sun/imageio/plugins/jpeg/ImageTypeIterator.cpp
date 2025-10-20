@@ -61,6 +61,7 @@ void ImageTypeIterator::init$($Iterator* producers) {
 }
 
 bool ImageTypeIterator::hasNext() {
+	$useLocalCurrentObjectStackCache();
 	if (this->theNext != nullptr) {
 		return true;
 	}

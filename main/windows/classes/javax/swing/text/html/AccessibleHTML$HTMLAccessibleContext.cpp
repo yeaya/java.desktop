@@ -185,6 +185,7 @@ $AccessibleContext* AccessibleHTML$HTMLAccessibleContext::getAccessibleContext()
 }
 
 $AccessibleStateSet* AccessibleHTML$HTMLAccessibleContext::getAccessibleStateSet() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleStateSet, states, $new($AccessibleStateSet));
 	$var($Component, comp, this->this$0->getTextComponent());
 	if ($nc(comp)->isEnabled()) {
@@ -298,6 +299,7 @@ bool AccessibleHTML$HTMLAccessibleContext::contains($Point* p) {
 }
 
 $Point* AccessibleHTML$HTMLAccessibleContext::getLocationOnScreen() {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, editorLocation, $nc($(this->this$0->getTextComponent()))->getLocationOnScreen());
 	$var($Rectangle, r, getBounds());
 	if (r != nullptr) {
@@ -350,6 +352,7 @@ $Accessible* AccessibleHTML$HTMLAccessibleContext::getAccessibleAt($Point* p) {
 }
 
 $AccessibleHTML$ElementInfo* AccessibleHTML$HTMLAccessibleContext::getElementInfoAt($AccessibleHTML$ElementInfo* elementInfo, $Point* p) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(elementInfo)->getBounds() == nullptr) {
 		return nullptr;
 	}
@@ -388,6 +391,7 @@ bool AccessibleHTML$HTMLAccessibleContext::isFocusTraversable() {
 }
 
 void AccessibleHTML$HTMLAccessibleContext::requestFocus() {
+	$useLocalCurrentObjectStackCache();
 	if (!isFocusTraversable()) {
 		return;
 	}

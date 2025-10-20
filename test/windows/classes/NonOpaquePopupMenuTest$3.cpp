@@ -77,6 +77,7 @@ void NonOpaquePopupMenuTest$3::init$($PointArray* val$result) {
 }
 
 void NonOpaquePopupMenuTest$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($NonOpaquePopupMenuTest);
 	$var($Point, p, $nc($NonOpaquePopupMenuTest::fileMenu)->getLocationOnScreen());
 	$var($Dimension, size, $nc($NonOpaquePopupMenuTest::fileMenu)->getSize());

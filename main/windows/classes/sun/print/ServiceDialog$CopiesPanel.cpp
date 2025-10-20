@@ -188,6 +188,7 @@ void ServiceDialog$CopiesPanel::finalize() {
 }
 
 void ServiceDialog$CopiesPanel::init$($ServiceDialog* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JPanel::init$();
 	$set(this, strTitle, $ServiceDialog::getMsg("border.copies"_s));
@@ -224,6 +225,7 @@ void ServiceDialog$CopiesPanel::actionPerformed($ActionEvent* e) {
 }
 
 void ServiceDialog$CopiesPanel::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	updateCollateCB();
 	$nc(this->this$0->asCurrent)->add(static_cast<$Attribute*>(static_cast<$PrintRequestAttribute*>($$new($Copies, $nc($($nc(this->snModel)->getNumber()))->intValue()))));
 }
@@ -238,6 +240,7 @@ void ServiceDialog$CopiesPanel::updateCollateCB() {
 }
 
 void ServiceDialog$CopiesPanel::updateInfo() {
+	$useLocalCurrentObjectStackCache();
 	$load($Copies);
 	$Class* cpCategory = $Copies::class$;
 	$load($SheetCollate);

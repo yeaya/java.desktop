@@ -134,6 +134,7 @@ void bug7189299::doTest() {
 }
 
 void bug7189299::verifySingleDefaultButtonModelListener() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug7189299);
 	$var($HTMLEditorKit, htmlEditorKit, $cast($HTMLEditorKit, $nc(bug7189299::html)->getEditorKit()));
 	$var($StyleContext$NamedStyle, style, $cast($StyleContext$NamedStyle, $nc(htmlEditorKit)->getInputAttributes()));
@@ -155,6 +156,7 @@ void bug7189299::verifySingleDefaultButtonModelListener() {
 }
 
 void bug7189299::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	$SwingUtilities::invokeAndWait($$new($bug7189299$1));
 	robot->waitForIdle();

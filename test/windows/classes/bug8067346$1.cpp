@@ -69,6 +69,7 @@ void bug8067346$1::init$() {
 }
 
 void bug8067346$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($bug8067346, test, $new($bug8067346));
 	try {
 		$var($String, lnf, "com.sun.java.swing.plaf.windows.WindowsLookAndFeel"_s);

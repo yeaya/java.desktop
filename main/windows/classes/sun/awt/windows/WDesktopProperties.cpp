@@ -169,6 +169,7 @@ void WDesktopProperties::init() {
 }
 
 $StringArray* WDesktopProperties::getKeyNames() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, keys, $nc($($nc(this->map)->keySet()))->toArray());
 	$var($StringArray, sortedKeys, $new($StringArray, $nc(keys)->length));
 	for (int32_t nkey = 0; nkey < keys->length; ++nkey) {
@@ -186,6 +187,7 @@ void WDesktopProperties::getWindowsParameters() {
 
 void WDesktopProperties::setBooleanProperty($String* key, bool value) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (!WDesktopProperties::$assertionsDisabled && !(key != nullptr)) {
 			$throwNew($AssertionError);
 		}
@@ -199,6 +201,7 @@ void WDesktopProperties::setBooleanProperty($String* key, bool value) {
 
 void WDesktopProperties::setIntegerProperty($String* key, int32_t value) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (!WDesktopProperties::$assertionsDisabled && !(key != nullptr)) {
 			$throwNew($AssertionError);
 		}
@@ -225,6 +228,7 @@ void WDesktopProperties::setStringProperty($String* key, $String* value) {
 
 void WDesktopProperties::setColorProperty($String* key, int32_t r, int32_t g, int32_t b) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (!WDesktopProperties::$assertionsDisabled && !(key != nullptr && r <= 255 && g <= 255 && b <= 255)) {
 			$throwNew($AssertionError);
 		}
@@ -239,6 +243,7 @@ void WDesktopProperties::setColorProperty($String* key, int32_t r, int32_t g, in
 
 void WDesktopProperties::setFontProperty($String* key, $String* name$renamed, int32_t style, int32_t size) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($String, name, name$renamed);
 		if (!WDesktopProperties::$assertionsDisabled && !(key != nullptr && style <= ($Font::BOLD | $Font::ITALIC) && size >= 0)) {
 			$throwNew($AssertionError);
@@ -264,6 +269,7 @@ void WDesktopProperties::setFontProperty($String* key, $String* name$renamed, in
 
 void WDesktopProperties::setSoundProperty($String* key, $String* winEventName) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (!WDesktopProperties::$assertionsDisabled && !(key != nullptr && winEventName != nullptr)) {
 			$throwNew($AssertionError);
 		}
@@ -284,6 +290,7 @@ void WDesktopProperties::playWindowsSound($String* winEventName) {
 
 $Map* WDesktopProperties::getProperties() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$ThemeReader::flush();
 		$set(this, map, $new($HashMap));
 		getWindowsParameters();
@@ -297,6 +304,7 @@ $Map* WDesktopProperties::getProperties() {
 
 $RenderingHints* WDesktopProperties::getDesktopAAHints() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$init($RenderingHints);
 		$var($Object, fontSmoothingHint, $RenderingHints::VALUE_TEXT_ANTIALIAS_DEFAULT);
 		$var($Integer, fontSmoothingContrast, nullptr);

@@ -91,6 +91,7 @@ void bug8032667$1::init$($bug8032667* this$0) {
 }
 
 void bug8032667$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($Image, image1, $bug8032667::getImage($(static_cast<$JComponent*>($bug8032667::getCheckBox("Deselected"_s, false)))));
 	$var($Image, image2, $bug8032667::getImage($(static_cast<$JComponent*>($bug8032667::getCheckBox("Selected"_s, true)))));
 	$var($Canvas, canvas, $new($bug8032667$1$1, this, image1, image2));

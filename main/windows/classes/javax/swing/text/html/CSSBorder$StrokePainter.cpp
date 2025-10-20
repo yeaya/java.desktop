@@ -69,6 +69,7 @@ void CSSBorder$StrokePainter::init$() {
 }
 
 void CSSBorder$StrokePainter::paintStrokes($Rectangle* r, $Graphics* g, int32_t axis, $ints* lengthPattern, $ColorArray* colorPattern) {
+	$useLocalCurrentObjectStackCache();
 	bool xAxis = (axis == $View::X_AXIS);
 	int32_t start = 0;
 	int32_t end = (xAxis ? $nc(r)->width : r->height);

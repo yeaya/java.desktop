@@ -72,6 +72,7 @@ void ShowPopupAfterHidePopupTest$1::init$() {
 }
 
 void ShowPopupAfterHidePopupTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($ShowPopupAfterHidePopupTest);
 	$assignStatic($ShowPopupAfterHidePopupTest::frame, $new($JFrame, "Popup Menu of JComboBox"_s));
 	$assignStatic($ShowPopupAfterHidePopupTest::comboBox, $new($JComboBox, $$new($StringArray, {

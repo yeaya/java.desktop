@@ -112,6 +112,7 @@ void TableView$ColumnIterator::disablePercentages() {
 }
 
 void TableView$ColumnIterator::updatePercentagesAndAdjustmentWeights(int32_t span) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, adjustmentWeights, $new($ints, $nc(this->this$0->columnRequirements)->length));
 	for (int32_t i = 0; i < $nc(this->this$0->columnRequirements)->length; ++i) {
 		$nc(this->adjustmentWeights)->set(i, 0);

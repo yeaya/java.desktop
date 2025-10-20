@@ -252,6 +252,7 @@ void TextComponent::removeNotify() {
 
 void TextComponent::setText($String* t) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$set(this, text, (t != nullptr) ? t : ""_s);
 		int32_t selectionStart = getSelectionStart();
 		int32_t selectionEnd = getSelectionEnd();
@@ -346,6 +347,7 @@ void TextComponent::setSelectionEnd(int32_t selectionEnd) {
 
 void TextComponent::select(int32_t selectionStart, int32_t selectionEnd) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($String, text, getText());
 		if (selectionStart < 0) {
 			selectionStart = 0;
@@ -370,6 +372,7 @@ void TextComponent::select(int32_t selectionStart, int32_t selectionEnd) {
 
 void TextComponent::selectAll() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		this->selectionStart = 0;
 		this->selectionEnd = $nc($(getText()))->length();
 		$var($TextComponentPeer, peer, $cast($TextComponentPeer, this->peer));
@@ -381,6 +384,7 @@ void TextComponent::selectAll() {
 
 void TextComponent::setCaretPosition(int32_t position) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (position < 0) {
 			$throwNew($IllegalArgumentException, "position less than zero."_s);
 		}
@@ -399,6 +403,7 @@ void TextComponent::setCaretPosition(int32_t position) {
 
 int32_t TextComponent::getCaretPosition() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($TextComponentPeer, peer, $cast($TextComponentPeer, this->peer));
 		int32_t position = 0;
 		if (peer != nullptr) {
@@ -484,6 +489,7 @@ void TextComponent::processTextEvent($TextEvent* e) {
 }
 
 $String* TextComponent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $$str({$($Component::paramString()), ",text="_s}));
 	$var($String, str, $concat(var$0, $(getText())));
 	if (this->editable) {
@@ -522,6 +528,7 @@ void TextComponent::writeObject($ObjectOutputStream* s) {
 }
 
 void TextComponent::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$GraphicsEnvironment::checkHeadless();
 	$nc(s)->defaultReadObject();
 	$set(this, text, (this->text != nullptr) ? this->text : ""_s);

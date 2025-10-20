@@ -98,12 +98,14 @@ $String* SynthTextPaneUI::getPropertyPrefix() {
 }
 
 void SynthTextPaneUI::installUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$SynthEditorPaneUI::installUI(c);
 	updateForeground($($nc(c)->getForeground()));
 	updateFont($($nc(c)->getFont()));
 }
 
 void SynthTextPaneUI::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$SynthEditorPaneUI::propertyChange(evt);
 	$var($String, name, $nc(evt)->getPropertyName());
 	if ($nc(name)->equals("foreground"_s)) {
@@ -118,6 +120,7 @@ void SynthTextPaneUI::propertyChange($PropertyChangeEvent* evt) {
 }
 
 void SynthTextPaneUI::updateForeground($Color* color) {
+	$useLocalCurrentObjectStackCache();
 	$var($StyledDocument, doc, $cast($StyledDocument, $nc($(getComponent()))->getDocument()));
 	$init($StyleContext);
 	$var($Style, style, $nc(doc)->getStyle($StyleContext::DEFAULT_STYLE));
@@ -133,6 +136,7 @@ void SynthTextPaneUI::updateForeground($Color* color) {
 }
 
 void SynthTextPaneUI::updateFont($Font* font) {
+	$useLocalCurrentObjectStackCache();
 	$var($StyledDocument, doc, $cast($StyledDocument, $nc($(getComponent()))->getDocument()));
 	$init($StyleContext);
 	$var($Style, style, $nc(doc)->getStyle($StyleContext::DEFAULT_STYLE));
@@ -154,6 +158,7 @@ void SynthTextPaneUI::updateFont($Font* font) {
 }
 
 void SynthTextPaneUI::paintBackground($SynthContext* context, $Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, var$0, context);
 	$var($Graphics, var$1, g);
 	int32_t var$2 = $nc(c)->getWidth();

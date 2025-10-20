@@ -119,12 +119,14 @@ bool Taskbar::isSupported($Taskbar$Feature* feature) {
 }
 
 void Taskbar::checkFeatureSupport($Taskbar$Feature* featureType) {
+	$useLocalCurrentObjectStackCache();
 	if (!isSupported(featureType)) {
 		$throwNew($UnsupportedOperationException, $$str({"The "_s, $($nc(featureType)->name()), " feature is not supported on the current platform!"_s}));
 	}
 }
 
 void Taskbar::checkEventsProcessingPermission() {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm != nullptr) {
 		sm->checkPermission($$new($RuntimePermission, "canProcessApplicationEvents"_s));
@@ -141,6 +143,7 @@ void Taskbar::init$() {
 Taskbar* Taskbar::getTaskbar() {
 	$load(Taskbar);
 	$synchronized(class$) {
+		$useLocalCurrentObjectStackCache();
 		if ($GraphicsEnvironment::isHeadless()) {
 			$throwNew($HeadlessException);
 		}

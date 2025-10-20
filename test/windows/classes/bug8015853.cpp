@@ -106,6 +106,7 @@ void bug8015853::init$() {
 
 void bug8015853::main($StringArray* args) {
 	$init(bug8015853);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($URL, path, $ClassLoader::getSystemResource("bug8015853.txt"_s));
 		$var($File, file, $new($File, $($nc(path)->toURI())));
@@ -124,6 +125,7 @@ void bug8015853::main($StringArray* args) {
 
 void bug8015853::createAndShowGUI() {
 	$init(bug8015853);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"_s);
 	} catch ($Exception&) {

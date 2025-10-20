@@ -132,6 +132,7 @@ bool bug6711682$2::shouldSelectCell($EventObject* anEvent) {
 }
 
 bool bug6711682$2::stopCellEditing() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6711682);
 	$nc($($nc($bug6711682::table)->getModel()))->setValueAt($($Boolean::valueOf($nc($bug6711682::editorCb)->isSelected())), this->editedRow, 0);
 	return true;

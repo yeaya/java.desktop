@@ -74,6 +74,7 @@ void bug5076514::init$() {
 
 void bug5076514::main($StringArray* args) {
 	$init(bug5076514);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$System::setSecurityManager($$new($bug5076514$MySecurityManager));
 	bool expected = !$GraphicsEnvironment::isHeadless();

@@ -76,6 +76,7 @@ $Effect$EffectType* InnerShadowEffect::getEffectType() {
 }
 
 $BufferedImage* InnerShadowEffect::applyEffect($BufferedImage* src, $BufferedImage* dst$renamed, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, dst, dst$renamed);
 	if (src == nullptr || $nc(src)->getType() != $BufferedImage::TYPE_INT_ARGB) {
 		$throwNew($IllegalArgumentException, "Effect only works with source images of type BufferedImage.TYPE_INT_ARGB."_s);

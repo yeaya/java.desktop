@@ -163,6 +163,7 @@ $AbstractRegionPainter$PaintContext* DesktopPanePainter::getPaintContext() {
 }
 
 void DesktopPanePainter::paintBackgroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint($(decodeGradient1(this->path)));
 	g->fill(this->path);
@@ -491,6 +492,7 @@ $Path2D* DesktopPanePainter::decodePath9() {
 }
 
 $Paint* DesktopPanePainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -508,6 +510,7 @@ $Paint* DesktopPanePainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* DesktopPanePainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -525,6 +528,7 @@ $Paint* DesktopPanePainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* DesktopPanePainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -542,6 +546,7 @@ $Paint* DesktopPanePainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* DesktopPanePainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -559,6 +564,7 @@ $Paint* DesktopPanePainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* DesktopPanePainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -576,6 +582,7 @@ $Paint* DesktopPanePainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* DesktopPanePainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -593,6 +600,7 @@ $Paint* DesktopPanePainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* DesktopPanePainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -610,6 +618,7 @@ $Paint* DesktopPanePainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* DesktopPanePainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

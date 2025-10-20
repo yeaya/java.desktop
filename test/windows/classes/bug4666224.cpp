@@ -183,6 +183,7 @@ void bug4666224::init$() {
 }
 
 void bug4666224::init() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringArray2, instructionsSet, $new($StringArray2, {
 		$$new($StringArray, {
 			" Note : Incase of Assertion failure,user can enter"_s,
@@ -322,6 +323,7 @@ void bug4666224::destroy() {
 }
 
 $InputMap* bug4666224::createInputMap() {
+	$useLocalCurrentObjectStackCache();
 	return $LookAndFeel::makeComponentInputMap($(getRootPane()), $$new($ObjectArray, {
 		$of("R"_s),
 		$of("right"_s),
@@ -339,6 +341,7 @@ $InputMap* bug4666224::createInputMap() {
 }
 
 $ActionMap* bug4666224::createActionMap() {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, map, $new($ActionMap));
 	map->put("right"_s, $$new($bug4666224$RotateAction, this, $JTabbedPane::RIGHT));
 	map->put("left"_s, $$new($bug4666224$RotateAction, this, $JTabbedPane::LEFT));
@@ -350,6 +353,7 @@ $ActionMap* bug4666224::createActionMap() {
 }
 
 void bug4666224::lambda$new$0() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, tabPane, $new($JTabbedPane));
 	$nc(this->tabPane)->addMouseListener($$new($bug4666224$1, this));
 	$var($InputMap, inputMap, createInputMap());

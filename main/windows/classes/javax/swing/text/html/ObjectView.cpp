@@ -89,6 +89,7 @@ void ObjectView::init$($Element* elem) {
 }
 
 $Component* ObjectView::createComponent() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($AttributeSet, attr, $nc($(getElement()))->getAttributes());
 	$init($HTML$Attribute);
@@ -116,6 +117,7 @@ $Component* ObjectView::getUnloadableRepresentation() {
 }
 
 void ObjectView::setParameters($Component* comp, $AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$Class* k = $nc($of(comp))->getClass();
 	$var($BeanInfo, bi, nullptr);
 	try {

@@ -118,6 +118,7 @@ void MetalBorders$MenuItemBorder::init$() {
 }
 
 void MetalBorders$MenuItemBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($JMenuItem, c))) {
 		return;
 	}

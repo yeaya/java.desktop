@@ -78,6 +78,7 @@ void bug4714674::main($StringArray* args) {
 }
 
 void bug4714674::test() {
+	$useLocalCurrentObjectStackCache();
 	$var($DeafServer, server, $new($DeafServer));
 	$var($String, baseURL, $str({"http://localhost:"_s, $$str(server->getPort()), "/"_s}));
 	$SwingUtilities::invokeLater($$new($bug4714674$1, this, baseURL));

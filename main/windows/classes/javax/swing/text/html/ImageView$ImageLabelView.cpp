@@ -107,6 +107,7 @@ void ImageView$ImageLabelView::reset($String* text) {
 }
 
 void ImageView$ImageLabelView::paint($Graphics* g, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($GlyphView$GlyphPainter, painter, getGlyphPainter());
 	if (painter != nullptr) {
 		$nc(g)->setColor($(getForeground()));
@@ -139,6 +140,7 @@ $View* ImageView$ImageLabelView::breakView(int32_t axis, int32_t p0, float pos, 
 }
 
 $Color* ImageView$ImageLabelView::getForeground() {
+	$useLocalCurrentObjectStackCache();
 	$var($View, parent, nullptr);
 	if (this->fg == nullptr && ($assign(parent, getParent())) != nullptr) {
 		$var($Document, doc, getDocument());

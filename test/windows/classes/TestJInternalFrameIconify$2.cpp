@@ -83,6 +83,7 @@ void TestJInternalFrameIconify$2::init$($String* val$lookAndFeelString) {
 }
 
 void TestJInternalFrameIconify$2::run() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

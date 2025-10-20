@@ -158,6 +158,7 @@ void ImageWriteParam::init$($Locale* locale) {
 
 $DimensionArray* ImageWriteParam::clonePreferredTileSizes($DimensionArray* sizes) {
 	$init(ImageWriteParam);
+	$useLocalCurrentObjectStackCache();
 	if (sizes == nullptr) {
 		return nullptr;
 	}
@@ -208,6 +209,7 @@ $DimensionArray* ImageWriteParam::getPreferredTileSizes() {
 }
 
 void ImageWriteParam::setTiling(int32_t tileWidth, int32_t tileHeight, int32_t tileGridXOffset, int32_t tileGridYOffset) {
+	$useLocalCurrentObjectStackCache();
 	if (!canWriteTiles()) {
 		$throwNew($UnsupportedOperationException, "Tiling not supported!"_s);
 	}

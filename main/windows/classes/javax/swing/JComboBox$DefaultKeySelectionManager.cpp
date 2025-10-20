@@ -93,6 +93,7 @@ void JComboBox$DefaultKeySelectionManager::init$($JComboBox* this$0) {
 }
 
 int32_t JComboBox$DefaultKeySelectionManager::selectionForKey(char16_t aKey, $ComboBoxModel* aModel) {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = 0;
 	int32_t c = 0;
 	int32_t currentSelection = -1;

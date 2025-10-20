@@ -82,6 +82,7 @@ void JPEGBuffer::init$($ImageInputStream* iis) {
 }
 
 void JPEGBuffer::loadBuf(int32_t count) {
+	$useLocalCurrentObjectStackCache();
 	if (this->debug) {
 		$init($System);
 		$nc($System::out)->print("loadbuf called with "_s);
@@ -191,6 +192,7 @@ bool JPEGBuffer::scanForFF($JPEGImageReader* reader) {
 }
 
 void JPEGBuffer::print(int32_t count) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->print("buffer has "_s);
 	$nc($System::out)->print(this->bufAvail);

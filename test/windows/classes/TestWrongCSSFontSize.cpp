@@ -245,6 +245,7 @@ void TestWrongCSSFontSize::setUp() {
 }
 
 void TestWrongCSSFontSize::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($View, var$0, $nc($($cast($TextUI, $nc(this->editor)->getUI())))->getRootView(this->editor));
 	int32_t count = forEachTextRun(var$0, static_cast<$Consumer*>($$new(TestWrongCSSFontSize$$Lambda$assertFontSize, this)));
 	if (count != TestWrongCSSFontSize::expectedAssertions) {
@@ -253,6 +254,7 @@ void TestWrongCSSFontSize::run() {
 }
 
 int32_t TestWrongCSSFontSize::forEachTextRun($View* view, $Consumer* action) {
+	$useLocalCurrentObjectStackCache();
 	int32_t tested = 0;
 	for (int32_t i = 0; i < $nc(view)->getViewCount(); ++i) {
 		$var($View, child, view->getView(i));
@@ -271,6 +273,7 @@ int32_t TestWrongCSSFontSize::forEachTextRun($View* view, $Consumer* action) {
 }
 
 void TestWrongCSSFontSize::assertFontSize($GlyphView* child) {
+	$useLocalCurrentObjectStackCache();
 	printSource(child);
 	int32_t actualFontSize = $nc($($nc(child)->getFont()))->getSize();
 	if (actualFontSize != TestWrongCSSFontSize::expectedFontSize) {
@@ -279,6 +282,7 @@ void TestWrongCSSFontSize::assertFontSize($GlyphView* child) {
 }
 
 void TestWrongCSSFontSize::printSource($View* textRun) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($System);
 		$var($OutputStream, var$0, static_cast<$OutputStream*>($System::out));
@@ -294,6 +298,7 @@ void TestWrongCSSFontSize::printSource($View* textRun) {
 
 void TestWrongCSSFontSize::captureImage($Component* comp, $String* suffix) {
 	$init(TestWrongCSSFontSize);
+	$useLocalCurrentObjectStackCache();
 	try {
 		int32_t var$0 = $nc(comp)->getWidth();
 		$var($BufferedImage, capture, $new($BufferedImage, var$0, comp->getHeight(), $BufferedImage::TYPE_INT_ARGB));
@@ -309,6 +314,7 @@ void TestWrongCSSFontSize::captureImage($Component* comp, $String* suffix) {
 
 void TestWrongCSSFontSize::main($StringArray* args) {
 	$init(TestWrongCSSFontSize);
+	$useLocalCurrentObjectStackCache();
 	$var(TestWrongCSSFontSize, test, $new(TestWrongCSSFontSize, argW3CUnits(args)));
 	$var($AtomicReference, failure, $new($AtomicReference));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestWrongCSSFontSize$$Lambda$lambda$main$0$1, test, failure, args)));
@@ -329,6 +335,7 @@ bool TestWrongCSSFontSize::argCapture($StringArray* args) {
 
 void TestWrongCSSFontSize::lambda$main$0(TestWrongCSSFontSize* test, $AtomicReference* failure, $StringArray* args) {
 	$init(TestWrongCSSFontSize);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

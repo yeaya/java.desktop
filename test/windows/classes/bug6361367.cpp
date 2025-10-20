@@ -135,6 +135,7 @@ void bug6361367::init$() {
 
 void bug6361367::main($StringArray* args) {
 	$init(bug6361367);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -164,6 +165,7 @@ void bug6361367::main($StringArray* args) {
 
 bool bug6361367::test($Class* textComponentClass) {
 	$init(bug6361367);
+	$useLocalCurrentObjectStackCache();
 	$var($AtomicReference, ref, $new($AtomicReference));
 	$var($JTextComponent, textComponent, $cast($JTextComponent, invokeAndWait($$new($bug6361367$1, textComponentClass, ref))));
 	waitForFocus(textComponent);
@@ -182,6 +184,7 @@ bool bug6361367::test($Class* textComponentClass) {
 
 $JTextComponent* bug6361367::initialize($Class* textComponentClass, $AtomicReference* ref) {
 	$init(bug6361367);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($JFrame, frame, $new($JFrame, "bug6361367"_s));
 	$nc(ref)->set(frame);

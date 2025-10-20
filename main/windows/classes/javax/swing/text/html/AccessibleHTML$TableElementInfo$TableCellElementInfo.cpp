@@ -108,6 +108,7 @@ $Accessible* AccessibleHTML$TableElementInfo$TableCellElementInfo::getAccessible
 }
 
 void AccessibleHTML$TableElementInfo$TableCellElementInfo::getAccessible($AccessibleHTML$ElementInfo* elementInfo) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Accessible, elementInfo)) {
 		$set(this, accessible, $cast($Accessible, elementInfo));
 	} else {

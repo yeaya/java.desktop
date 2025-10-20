@@ -52,6 +52,7 @@ void SynthDefaultLookup::init$() {
 }
 
 $Object* SynthDefaultLookup::getDefault($JComponent* c, $ComponentUI* ui, $String* key) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($SynthUI, ui))) {
 		$var($Object, value, $DefaultLookup::getDefault(c, ui, key));
 		return $of(value);

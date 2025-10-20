@@ -232,6 +232,7 @@ void JPEG::init$() {
 
 bool JPEG::isJFIFcompliant($ImageTypeSpecifier* imageType, bool input) {
 	$init(JPEG);
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, cm, $nc(imageType)->getColorModel());
 	if ($nc(cm)->hasAlpha()) {
 		return false;
@@ -255,6 +256,7 @@ bool JPEG::isJFIFcompliant($ImageTypeSpecifier* imageType, bool input) {
 
 int32_t JPEG::transformForType($ImageTypeSpecifier* imageType, bool input) {
 	$init(JPEG);
+	$useLocalCurrentObjectStackCache();
 	int32_t retval = JPEG::ADOBE_IMPOSSIBLE;
 	$var($ColorModel, cm, $nc(imageType)->getColorModel());
 	switch ($nc($($nc(cm)->getColorSpace()))->getType()) {
@@ -322,6 +324,7 @@ $JPEGHuffmanTableArray* JPEG::getDefaultHuffmanTables(bool wantDC) {
 }
 
 void clinit$JPEG($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(JPEG::vendor, "Oracle Corporation"_s);
 	$assignStatic(JPEG::version, "0.5"_s);
 	$assignStatic(JPEG::nativeImageMetadataFormatName, "javax_imageio_jpeg_image_1.0"_s);

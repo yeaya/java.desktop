@@ -58,6 +58,7 @@ void WindowsSplitPaneDivider::init$($BasicSplitPaneUI* ui) {
 }
 
 void WindowsSplitPaneDivider::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, bgColor, ($nc(this->splitPane)->hasFocus()) ? $UIManager::getColor("SplitPane.shadow"_s) : getBackground());
 	$var($Dimension, size, getSize());
 	if (bgColor != nullptr) {

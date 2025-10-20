@@ -87,6 +87,7 @@ $Object* allocate$TexturePaintContext$ByteFilter($Class* clazz) {
 }
 
 void TexturePaintContext$ByteFilter::init$($ByteInterleavedRaster* srcRas, $ColorModel* cm, $AffineTransform* xform, int32_t maxw) {
+	$useLocalCurrentObjectStackCache();
 	$init($TexturePaintContext);
 	$var($ColorModel, var$0, ($nc(cm)->getTransparency() == $Transparency::OPAQUE ? $TexturePaintContext::xrgbmodel : $TexturePaintContext::argbmodel));
 	$var($AffineTransform, var$1, xform);
@@ -101,6 +102,7 @@ void TexturePaintContext$ByteFilter::init$($ByteInterleavedRaster* srcRas, $Colo
 }
 
 $WritableRaster* TexturePaintContext$ByteFilter::makeRaster(int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($WritableRaster, ras, $TexturePaintContext::makeRaster(this->colorModel, nullptr, w, h));
 	$var($IntegerInterleavedRaster, iiRas, $cast($IntegerInterleavedRaster, ras));
 	$set(this, outData, $nc(iiRas)->getDataStorage());
@@ -110,6 +112,7 @@ $WritableRaster* TexturePaintContext$ByteFilter::makeRaster(int32_t w, int32_t h
 }
 
 void TexturePaintContext$ByteFilter::setRaster(int32_t x, int32_t y, int32_t xerr, int32_t yerr, int32_t w, int32_t h, int32_t bWidth, int32_t bHeight, int32_t colincx, int32_t colincxerr, int32_t colincy, int32_t colincyerr, int32_t rowincx, int32_t rowincxerr, int32_t rowincy, int32_t rowincyerr) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, inData, this->inData);
 	$var($ints, outData, this->outData);
 	int32_t out = this->outOff;

@@ -75,6 +75,7 @@ void ModalEventFilter$DocumentModalEventFilter::init$($Dialog* modalDialog) {
 }
 
 $EventFilter$FilterAction* ModalEventFilter$DocumentModalEventFilter::acceptWindow($Window* w$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, w, w$renamed);
 	$init($Dialog$ModalExclusionType);
 	if ($nc(w)->isModalExcluded($Dialog$ModalExclusionType::APPLICATION_EXCLUDE)) {

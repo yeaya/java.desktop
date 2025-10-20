@@ -144,6 +144,7 @@ void BasicOptionPaneUI$Handler::init$($BasicOptionPaneUI* this$0) {
 }
 
 void BasicOptionPaneUI$Handler::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->this$0->optionPane)->setInputValue($($nc(($cast($JTextField, $($nc(e)->getSource()))))->getText()));
 }
 
@@ -160,6 +161,7 @@ void BasicOptionPaneUI$Handler::mouseExited($MouseEvent* e) {
 }
 
 void BasicOptionPaneUI$Handler::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(e)->getClickCount() == 2) {
 		$var($JList, list, $cast($JList, e->getSource()));
 		int32_t index = $nc(list)->locationToIndex($(e->getPoint()));
@@ -169,6 +171,7 @@ void BasicOptionPaneUI$Handler::mousePressed($MouseEvent* e) {
 }
 
 void BasicOptionPaneUI$Handler::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals($nc(e)->getSource(), this->this$0->optionPane)) {
 		if ("ancestor"_s == e->getPropertyName()) {
 			$var($JOptionPane, op, $cast($JOptionPane, e->getSource()));

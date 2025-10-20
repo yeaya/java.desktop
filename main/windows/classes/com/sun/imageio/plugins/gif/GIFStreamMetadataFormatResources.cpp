@@ -45,6 +45,7 @@ void GIFStreamMetadataFormatResources::init$() {
 }
 
 $ObjectArray2* GIFStreamMetadataFormatResources::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("Version"_s),

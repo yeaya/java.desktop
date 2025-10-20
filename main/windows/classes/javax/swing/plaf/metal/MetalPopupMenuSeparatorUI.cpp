@@ -65,6 +65,7 @@ $ComponentUI* MetalPopupMenuSeparatorUI::createUI($JComponent* c) {
 }
 
 void MetalPopupMenuSeparatorUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, s, $nc(c)->getSize());
 	$nc(g)->setColor($(c->getForeground()));
 	g->drawLine(0, 1, $nc(s)->width, 1);

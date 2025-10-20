@@ -130,6 +130,7 @@ void PropertyChangeSupport::init$(Object$* sourceBean) {
 }
 
 void PropertyChangeSupport::addPropertyChangeListener($PropertyChangeListener* listener) {
+	$useLocalCurrentObjectStackCache();
 	if (listener == nullptr) {
 		return;
 	}
@@ -143,6 +144,7 @@ void PropertyChangeSupport::addPropertyChangeListener($PropertyChangeListener* l
 }
 
 void PropertyChangeSupport::removePropertyChangeListener($PropertyChangeListener* listener) {
+	$useLocalCurrentObjectStackCache();
 	if (listener == nullptr) {
 		return;
 	}
@@ -192,6 +194,7 @@ void PropertyChangeSupport::firePropertyChange($String* propertyName, Object$* o
 }
 
 void PropertyChangeSupport::firePropertyChange($String* propertyName, int32_t oldValue, int32_t newValue) {
+	$useLocalCurrentObjectStackCache();
 	if (oldValue != newValue) {
 		$var($String, var$0, propertyName);
 		$var($Object, var$1, $of($Integer::valueOf(oldValue)));
@@ -200,6 +203,7 @@ void PropertyChangeSupport::firePropertyChange($String* propertyName, int32_t ol
 }
 
 void PropertyChangeSupport::firePropertyChange($String* propertyName, bool oldValue, bool newValue) {
+	$useLocalCurrentObjectStackCache();
 	if (oldValue != newValue) {
 		$var($String, var$0, propertyName);
 		$var($Object, var$1, $of($Boolean::valueOf(oldValue)));
@@ -208,6 +212,7 @@ void PropertyChangeSupport::firePropertyChange($String* propertyName, bool oldVa
 }
 
 void PropertyChangeSupport::firePropertyChange($PropertyChangeEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, oldValue, $nc(event)->getOldValue());
 	$var($Object, newValue, event->getNewValue());
 	if (oldValue == nullptr || newValue == nullptr || !$nc($of(oldValue))->equals(newValue)) {
@@ -221,6 +226,7 @@ void PropertyChangeSupport::firePropertyChange($PropertyChangeEvent* event) {
 
 void PropertyChangeSupport::fire($PropertyChangeListenerArray* listeners, $PropertyChangeEvent* event) {
 	$init(PropertyChangeSupport);
+	$useLocalCurrentObjectStackCache();
 	if (listeners != nullptr) {
 		{
 			$var($PropertyChangeListenerArray, arr$, listeners);
@@ -243,6 +249,7 @@ void PropertyChangeSupport::fireIndexedPropertyChange($String* propertyName, int
 }
 
 void PropertyChangeSupport::fireIndexedPropertyChange($String* propertyName, int32_t index, int32_t oldValue, int32_t newValue) {
+	$useLocalCurrentObjectStackCache();
 	if (oldValue != newValue) {
 		$var($String, var$0, propertyName);
 		int32_t var$1 = index;
@@ -252,6 +259,7 @@ void PropertyChangeSupport::fireIndexedPropertyChange($String* propertyName, int
 }
 
 void PropertyChangeSupport::fireIndexedPropertyChange($String* propertyName, int32_t index, bool oldValue, bool newValue) {
+	$useLocalCurrentObjectStackCache();
 	if (oldValue != newValue) {
 		$var($String, var$0, propertyName);
 		int32_t var$1 = index;
@@ -265,6 +273,7 @@ bool PropertyChangeSupport::hasListeners($String* propertyName) {
 }
 
 void PropertyChangeSupport::writeObject($ObjectOutputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Hashtable, children, nullptr);
 	$var($PropertyChangeListenerArray, listeners, nullptr);
 	$synchronized(this->map) {
@@ -312,6 +321,7 @@ void PropertyChangeSupport::writeObject($ObjectOutputStream* s) {
 }
 
 void PropertyChangeSupport::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, map, $new($PropertyChangeSupport$PropertyChangeListenerMap));
 	$var($ObjectInputStream$GetField, fields, $nc(s)->readFields());
 	$var($Hashtable, children, $cast($Hashtable, $nc(fields)->get("children"_s, ($Object*)nullptr)));
@@ -345,6 +355,7 @@ void PropertyChangeSupport::readObject($ObjectInputStream* s) {
 }
 
 void clinit$PropertyChangeSupport($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 		$load($Hashtable);
 		$load($Object);
 		$init($Integer);

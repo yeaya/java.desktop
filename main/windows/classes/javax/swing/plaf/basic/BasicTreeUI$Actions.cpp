@@ -253,6 +253,7 @@ bool BasicTreeUI$Actions::accept(Object$* o) {
 }
 
 void BasicTreeUI$Actions::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTree, tree, $cast($JTree, $nc(e)->getSource()));
 	$load($BasicTreeUI);
 	$var($BasicTreeUI, ui, $cast($BasicTreeUI, $BasicLookAndFeel::getUIOfType($($nc(tree)->getUI()), $BasicTreeUI::class$)));
@@ -364,6 +365,7 @@ void BasicTreeUI$Actions::actionPerformed($ActionEvent* e) {
 }
 
 void BasicTreeUI$Actions::scrollChangeSelection($JTree* tree, $BasicTreeUI* ui, int32_t direction, bool addToSelection, bool changeSelection) {
+	$useLocalCurrentObjectStackCache();
 	int32_t rowCount = 0;
 	if ((rowCount = $nc(ui)->getRowCount(tree)) > 0 && ui->treeSelectionModel != nullptr) {
 		$var($TreePath, newPath, nullptr);
@@ -387,6 +389,7 @@ void BasicTreeUI$Actions::scrollChangeSelection($JTree* tree, $BasicTreeUI* ui, 
 }
 
 void BasicTreeUI$Actions::scroll($JTree* component, $BasicTreeUI* ui, int32_t direction, int32_t amount) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, visRect, $nc(component)->getVisibleRect());
 	$var($Dimension, size, component->getSize());
 	if (direction == $SwingConstants::HORIZONTAL) {
@@ -402,6 +405,7 @@ void BasicTreeUI$Actions::scroll($JTree* component, $BasicTreeUI* ui, int32_t di
 }
 
 void BasicTreeUI$Actions::extendSelection($JTree* tree, $BasicTreeUI* ui) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(ui)->getRowCount(tree) > 0) {
 		int32_t lead = ui->getLeadSelectionRow();
 		if (lead != -1) {
@@ -419,6 +423,7 @@ void BasicTreeUI$Actions::extendSelection($JTree* tree, $BasicTreeUI* ui) {
 }
 
 void BasicTreeUI$Actions::selectAll($JTree* tree, $BasicTreeUI* ui, bool selectAll) {
+	$useLocalCurrentObjectStackCache();
 	int32_t rowCount = $nc(ui)->getRowCount(tree);
 	if (rowCount > 0) {
 		if (selectAll) {
@@ -467,6 +472,7 @@ void BasicTreeUI$Actions::cancelEditing($JTree* tree, $BasicTreeUI* ui) {
 }
 
 void BasicTreeUI$Actions::toggle($JTree* tree, $BasicTreeUI* ui) {
+	$useLocalCurrentObjectStackCache();
 	int32_t selRow = $nc(ui)->getLeadSelectionRow();
 	if (selRow != -1 && !ui->isLeaf(selRow)) {
 		$var($TreePath, aPath, ui->getAnchorSelectionPath());
@@ -488,6 +494,7 @@ void BasicTreeUI$Actions::collapse($JTree* tree, $BasicTreeUI* ui) {
 }
 
 void BasicTreeUI$Actions::increment($JTree* tree, $BasicTreeUI* ui, int32_t direction, bool addToSelection, bool changeSelection) {
+	$useLocalCurrentObjectStackCache();
 	if (!addToSelection && !changeSelection && $nc($($nc(tree)->getSelectionModel()))->getSelectionMode() != $TreeSelectionModel::DISCONTIGUOUS_TREE_SELECTION) {
 		changeSelection = true;
 	}
@@ -517,6 +524,7 @@ void BasicTreeUI$Actions::increment($JTree* tree, $BasicTreeUI* ui, int32_t dire
 }
 
 void BasicTreeUI$Actions::traverse($JTree* tree, $BasicTreeUI* ui, int32_t direction, bool changeSelection) {
+	$useLocalCurrentObjectStackCache();
 	if (!changeSelection && $nc($($nc(tree)->getSelectionModel()))->getSelectionMode() != $TreeSelectionModel::DISCONTIGUOUS_TREE_SELECTION) {
 		changeSelection = true;
 	}
@@ -563,6 +571,7 @@ void BasicTreeUI$Actions::traverse($JTree* tree, $BasicTreeUI* ui, int32_t direc
 }
 
 void BasicTreeUI$Actions::moveSelectionToParent($JTree* tree, $BasicTreeUI* ui) {
+	$useLocalCurrentObjectStackCache();
 	int32_t selRow = $nc(ui)->getLeadSelectionRow();
 	$var($TreePath, path, ui->getPathForRow(tree, selRow));
 	if (path != nullptr && path->getPathCount() > 1) {
@@ -575,6 +584,7 @@ void BasicTreeUI$Actions::moveSelectionToParent($JTree* tree, $BasicTreeUI* ui) 
 }
 
 void BasicTreeUI$Actions::page($JTree* tree, $BasicTreeUI* ui, int32_t direction, bool addToSelection, bool changeSelection) {
+	$useLocalCurrentObjectStackCache();
 	if (!addToSelection && !changeSelection && $nc($($nc(tree)->getSelectionModel()))->getSelectionMode() != $TreeSelectionModel::DISCONTIGUOUS_TREE_SELECTION) {
 		changeSelection = true;
 	}
@@ -621,6 +631,7 @@ void BasicTreeUI$Actions::page($JTree* tree, $BasicTreeUI* ui, int32_t direction
 }
 
 void BasicTreeUI$Actions::home($JTree* tree, $BasicTreeUI* ui, int32_t direction, bool addToSelection, bool changeSelection) {
+	$useLocalCurrentObjectStackCache();
 	if (!addToSelection && !changeSelection && $nc($($nc(tree)->getSelectionModel()))->getSelectionMode() != $TreeSelectionModel::DISCONTIGUOUS_TREE_SELECTION) {
 		changeSelection = true;
 	}

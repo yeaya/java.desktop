@@ -196,6 +196,7 @@ void SplitPaneDividerPainter::paintBackgroundFocused($Graphics2D* g) {
 }
 
 void SplitPaneDividerPainter::paintForegroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint($(decodeGradient3(this->roundRect)));
 	g->fill(this->roundRect);
@@ -205,6 +206,7 @@ void SplitPaneDividerPainter::paintForegroundEnabled($Graphics2D* g) {
 }
 
 void SplitPaneDividerPainter::paintForegroundEnabledAndVertical($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect3());
 	$nc(g)->setPaint($(decodeGradient5(this->roundRect)));
 	g->fill(this->roundRect);
@@ -264,6 +266,7 @@ $Rectangle2D* SplitPaneDividerPainter::decodeRect2() {
 }
 
 $Paint* SplitPaneDividerPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -297,6 +300,7 @@ $Paint* SplitPaneDividerPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* SplitPaneDividerPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -330,6 +334,7 @@ $Paint* SplitPaneDividerPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* SplitPaneDividerPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -347,6 +352,7 @@ $Paint* SplitPaneDividerPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* SplitPaneDividerPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -368,6 +374,7 @@ $Paint* SplitPaneDividerPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* SplitPaneDividerPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -389,6 +396,7 @@ $Paint* SplitPaneDividerPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* SplitPaneDividerPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

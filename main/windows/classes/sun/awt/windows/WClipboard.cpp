@@ -119,6 +119,7 @@ int64_t WClipboard::getID() {
 }
 
 void WClipboard::setContentsNative($Transferable* contents) {
+	$useLocalCurrentObjectStackCache();
 	$var($Map, formatMap, $nc($($WDataTransferer::getInstance()))->getFormatsForTransferable(contents, $(getDefaultFlavorTable())));
 	openClipboard(this);
 	{
@@ -219,6 +220,7 @@ void WClipboard::unregisterClipboardViewerChecked() {
 }
 
 void WClipboard::handleContentsChanged() {
+	$useLocalCurrentObjectStackCache();
 	if (!areFlavorListenersRegistered()) {
 		return;
 	}
@@ -245,6 +247,7 @@ void WClipboard::handleContentsChanged() {
 }
 
 $Transferable* WClipboard::createLocaleTransferable($longs* formats) {
+	$useLocalCurrentObjectStackCache();
 	bool found = false;
 	for (int32_t i = 0; i < $nc(formats)->length; ++i) {
 		if (formats->get(i) == $WDataTransferer::CF_LOCALE) {

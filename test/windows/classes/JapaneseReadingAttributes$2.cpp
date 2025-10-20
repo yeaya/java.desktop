@@ -79,6 +79,7 @@ void JapaneseReadingAttributes$2::caretPositionChanged($InputMethodEvent* event)
 }
 
 void JapaneseReadingAttributes$2::inputMethodTextChanged($InputMethodEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributedCharacterIterator, itr, $nc(event)->getText());
 	if (itr != nullptr) {
 		int32_t toCopy = event->getCommittedCharacterCount();

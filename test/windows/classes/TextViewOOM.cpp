@@ -226,6 +226,7 @@ void TextViewOOM::createAndShowGUI() {
 
 void TextViewOOM::main($StringArray* args) {
 	$init(TextViewOOM);
+	$useLocalCurrentObjectStackCache();
 	$EventQueue::invokeAndWait(static_cast<$Runnable*>($$new(TextViewOOM$$Lambda$createAndShowGUI)));
 	for (int32_t i = 0; i < 10; ++i) {
 		$System::gc();
@@ -259,6 +260,7 @@ void TextViewOOM::main($StringArray* args) {
 
 void TextViewOOM::lambda$main$0($StringBuilder* sb) {
 	$init(TextViewOOM);
+	$useLocalCurrentObjectStackCache();
 	$nc(TextViewOOM::ta)->setText($($nc(sb)->toString()));
 	for (int32_t i = 0; i < 10; ++i) {
 		$System::gc();

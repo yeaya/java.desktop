@@ -93,6 +93,7 @@ void WindowsPopupMenuUI$MnemonicListener::init$() {
 }
 
 void WindowsPopupMenuUI$MnemonicListener::stateChanged($ChangeEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, msm, $cast($MenuSelectionManager, $nc(ev)->getSource()));
 	$var($MenuElementArray, path, $nc(msm)->getSelectedPath());
 	if ($nc(path)->length == 0) {

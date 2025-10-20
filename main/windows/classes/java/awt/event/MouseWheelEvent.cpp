@@ -99,6 +99,7 @@ int32_t MouseWheelEvent::getUnitsToScroll() {
 }
 
 $String* MouseWheelEvent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, scrollTypeStr, nullptr);
 	if (getScrollType() == MouseWheelEvent::WHEEL_UNIT_SCROLL) {
 		$assign(scrollTypeStr, "WHEEL_UNIT_SCROLL"_s);

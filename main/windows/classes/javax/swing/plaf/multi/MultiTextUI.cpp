@@ -154,6 +154,7 @@ $ComponentUIArray* MultiTextUI::getUIs() {
 }
 
 $String* MultiTextUI::getToolTipText($JTextComponent* a, $Point* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, returnValue, $nc((($cast($TextUI, $($nc(this->uis)->elementAt(0))))))->getToolTipText(a, b));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TextUI, $($nc(this->uis)->elementAt(i))))))->getToolTipText(a, b);
@@ -162,6 +163,7 @@ $String* MultiTextUI::getToolTipText($JTextComponent* a, $Point* b) {
 }
 
 $Rectangle* MultiTextUI::modelToView($JTextComponent* a, int32_t b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, returnValue, $nc((($cast($TextUI, $($nc(this->uis)->elementAt(0))))))->modelToView(a, b));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TextUI, $($nc(this->uis)->elementAt(i))))))->modelToView(a, b);
@@ -170,6 +172,7 @@ $Rectangle* MultiTextUI::modelToView($JTextComponent* a, int32_t b) {
 }
 
 $Rectangle* MultiTextUI::modelToView($JTextComponent* a, int32_t b, $Position$Bias* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, returnValue, $nc((($cast($TextUI, $($nc(this->uis)->elementAt(0))))))->modelToView(a, b, c));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TextUI, $($nc(this->uis)->elementAt(i))))))->modelToView(a, b, c);
@@ -178,6 +181,7 @@ $Rectangle* MultiTextUI::modelToView($JTextComponent* a, int32_t b, $Position$Bi
 }
 
 $Rectangle2D* MultiTextUI::modelToView2D($JTextComponent* a, int32_t b, $Position$Bias* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, returnValue, $nc((($cast($TextUI, $($nc(this->uis)->elementAt(0))))))->modelToView2D(a, b, c));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TextUI, $($nc(this->uis)->elementAt(i))))))->modelToView2D(a, b, c);
@@ -186,6 +190,7 @@ $Rectangle2D* MultiTextUI::modelToView2D($JTextComponent* a, int32_t b, $Positio
 }
 
 int32_t MultiTextUI::viewToModel($JTextComponent* a, $Point* b) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc((($cast($TextUI, $($nc(this->uis)->elementAt(0))))))->viewToModel(a, b);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TextUI, $($nc(this->uis)->elementAt(i))))))->viewToModel(a, b);
@@ -194,6 +199,7 @@ int32_t MultiTextUI::viewToModel($JTextComponent* a, $Point* b) {
 }
 
 int32_t MultiTextUI::viewToModel($JTextComponent* a, $Point* b, $Position$BiasArray* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc((($cast($TextUI, $($nc(this->uis)->elementAt(0))))))->viewToModel(a, b, c);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TextUI, $($nc(this->uis)->elementAt(i))))))->viewToModel(a, b, c);
@@ -202,6 +208,7 @@ int32_t MultiTextUI::viewToModel($JTextComponent* a, $Point* b, $Position$BiasAr
 }
 
 int32_t MultiTextUI::viewToModel2D($JTextComponent* a, $Point2D* b, $Position$BiasArray* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc((($cast($TextUI, $($nc(this->uis)->elementAt(0))))))->viewToModel2D(a, b, c);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TextUI, $($nc(this->uis)->elementAt(i))))))->viewToModel2D(a, b, c);
@@ -210,6 +217,7 @@ int32_t MultiTextUI::viewToModel2D($JTextComponent* a, $Point2D* b, $Position$Bi
 }
 
 int32_t MultiTextUI::getNextVisualPositionFrom($JTextComponent* a, int32_t b, $Position$Bias* c, int32_t d, $Position$BiasArray* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc((($cast($TextUI, $($nc(this->uis)->elementAt(0))))))->getNextVisualPositionFrom(a, b, c, d, e);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TextUI, $($nc(this->uis)->elementAt(i))))))->getNextVisualPositionFrom(a, b, c, d, e);
@@ -218,18 +226,21 @@ int32_t MultiTextUI::getNextVisualPositionFrom($JTextComponent* a, int32_t b, $P
 }
 
 void MultiTextUI::damageRange($JTextComponent* a, int32_t b, int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TextUI, $($nc(this->uis)->elementAt(i))))))->damageRange(a, b, c);
 	}
 }
 
 void MultiTextUI::damageRange($JTextComponent* a, int32_t b, int32_t c, $Position$Bias* d, $Position$Bias* e) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TextUI, $($nc(this->uis)->elementAt(i))))))->damageRange(a, b, c, d, e);
 	}
 }
 
 $EditorKit* MultiTextUI::getEditorKit($JTextComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($EditorKit, returnValue, $nc((($cast($TextUI, $($nc(this->uis)->elementAt(0))))))->getEditorKit(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TextUI, $($nc(this->uis)->elementAt(i))))))->getEditorKit(a);
@@ -238,6 +249,7 @@ $EditorKit* MultiTextUI::getEditorKit($JTextComponent* a) {
 }
 
 $View* MultiTextUI::getRootView($JTextComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, returnValue, $nc((($cast($TextUI, $($nc(this->uis)->elementAt(0))))))->getRootView(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TextUI, $($nc(this->uis)->elementAt(i))))))->getRootView(a);
@@ -246,6 +258,7 @@ $View* MultiTextUI::getRootView($JTextComponent* a) {
 }
 
 bool MultiTextUI::contains($JComponent* a, int32_t b, int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	bool returnValue = $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->contains(a, b, c);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->contains(a, b, c);
@@ -254,6 +267,7 @@ bool MultiTextUI::contains($JComponent* a, int32_t b, int32_t c) {
 }
 
 void MultiTextUI::update($Graphics* a, $JComponent* b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->update(a, b);
 	}
@@ -266,24 +280,28 @@ $ComponentUI* MultiTextUI::createUI($JComponent* a) {
 }
 
 void MultiTextUI::installUI($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->installUI(a);
 	}
 }
 
 void MultiTextUI::uninstallUI($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->uninstallUI(a);
 	}
 }
 
 void MultiTextUI::paint($Graphics* a, $JComponent* b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->paint(a, b);
 	}
 }
 
 $Dimension* MultiTextUI::getPreferredSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getPreferredSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getPreferredSize(a);
@@ -292,6 +310,7 @@ $Dimension* MultiTextUI::getPreferredSize($JComponent* a) {
 }
 
 $Dimension* MultiTextUI::getMinimumSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getMinimumSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getMinimumSize(a);
@@ -300,6 +319,7 @@ $Dimension* MultiTextUI::getMinimumSize($JComponent* a) {
 }
 
 $Dimension* MultiTextUI::getMaximumSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getMaximumSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getMaximumSize(a);
@@ -308,6 +328,7 @@ $Dimension* MultiTextUI::getMaximumSize($JComponent* a) {
 }
 
 int32_t MultiTextUI::getAccessibleChildrenCount($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getAccessibleChildrenCount(a);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getAccessibleChildrenCount(a);
@@ -316,6 +337,7 @@ int32_t MultiTextUI::getAccessibleChildrenCount($JComponent* a) {
 }
 
 $Accessible* MultiTextUI::getAccessibleChild($JComponent* a, int32_t b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Accessible, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getAccessibleChild(a, b));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getAccessibleChild(a, b);

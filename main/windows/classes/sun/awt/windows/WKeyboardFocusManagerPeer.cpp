@@ -106,6 +106,7 @@ void WKeyboardFocusManagerPeer::init$() {
 }
 
 void WKeyboardFocusManagerPeer::setCurrentFocusOwner($Component* comp) {
+	$useLocalCurrentObjectStackCache();
 	$var($AWTAccessor$ComponentAccessor, acc, $AWTAccessor::getComponentAccessor());
 	setNativeFocusOwner(comp != nullptr ? $($nc(acc)->getPeer(comp)) : ($ComponentPeer*)nullptr);
 }

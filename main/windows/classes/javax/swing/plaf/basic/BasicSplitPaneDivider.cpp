@@ -191,6 +191,7 @@ void BasicSplitPaneDivider::finalize() {
 }
 
 void BasicSplitPaneDivider::init$($BasicSplitPaneUI* ui) {
+	$useLocalCurrentObjectStackCache();
 	$Container::init$();
 	this->dividerSize = 0;
 	this->oneTouchSize = $DefaultLookup::getInt($($nc(ui)->getSplitPane()), ui, "SplitPane.oneTouchButtonSize"_s, BasicSplitPaneDivider::ONE_TOUCH_SIZE);
@@ -291,6 +292,7 @@ $Dimension* BasicSplitPaneDivider::getMinimumSize() {
 }
 
 void BasicSplitPaneDivider::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals($nc(e)->getSource(), this->splitPane)) {
 		$init($JSplitPane);
 		if (e->getPropertyName() == $JSplitPane::ORIENTATION_PROPERTY) {
@@ -306,6 +308,7 @@ void BasicSplitPaneDivider::propertyChange($PropertyChangeEvent* e) {
 }
 
 void BasicSplitPaneDivider::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$Container::paint(g);
 	$var($Border, border, getBorder());
 	if (border != nullptr) {
@@ -315,6 +318,7 @@ void BasicSplitPaneDivider::paint($Graphics* g) {
 }
 
 void BasicSplitPaneDivider::oneTouchExpandableChanged() {
+	$useLocalCurrentObjectStackCache();
 	if (!$DefaultLookup::getBoolean(this->splitPane, this->splitPaneUI, "SplitPane.supportsOneTouchButtons"_s, true)) {
 		return;
 	}
@@ -336,6 +340,7 @@ void BasicSplitPaneDivider::oneTouchExpandableChanged() {
 }
 
 $JButton* BasicSplitPaneDivider::createLeftOneTouchButton() {
+	$useLocalCurrentObjectStackCache();
 	$var($JButton, b, $new($BasicSplitPaneDivider$1, this));
 	b->setMinimumSize($$new($Dimension, this->oneTouchSize, this->oneTouchSize));
 	b->setCursor($($Cursor::getPredefinedCursor($Cursor::DEFAULT_CURSOR)));
@@ -346,6 +351,7 @@ $JButton* BasicSplitPaneDivider::createLeftOneTouchButton() {
 }
 
 $JButton* BasicSplitPaneDivider::createRightOneTouchButton() {
+	$useLocalCurrentObjectStackCache();
 	$var($JButton, b, $new($BasicSplitPaneDivider$2, this));
 	b->setMinimumSize($$new($Dimension, this->oneTouchSize, this->oneTouchSize));
 	b->setCursor($($Cursor::getPredefinedCursor($Cursor::DEFAULT_CURSOR)));

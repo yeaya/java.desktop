@@ -142,6 +142,7 @@ void JLayer$LayerEventController::init$() {
 }
 
 void JLayer$LayerEventController::eventDispatched($AWTEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, source, $nc(event)->getSource());
 	if ($instanceOf($Component, source)) {
 		$var($Component, component, $cast($Component, source));
@@ -165,6 +166,7 @@ void JLayer$LayerEventController::eventDispatched($AWTEvent* event) {
 }
 
 void JLayer$LayerEventController::updateAWTEventListener(int64_t oldEventMask, int64_t newEventMask) {
+	$useLocalCurrentObjectStackCache();
 	if (oldEventMask != 0) {
 		$nc(this->layerMaskList)->remove($($of($Long::valueOf(oldEventMask))));
 	}

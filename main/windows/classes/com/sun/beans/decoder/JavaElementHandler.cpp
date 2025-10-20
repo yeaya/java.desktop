@@ -89,6 +89,7 @@ $ValueObject* JavaElementHandler::getValueObject() {
 }
 
 $Object* JavaElementHandler::getValue() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, owner, $nc($(getOwner()))->getOwner());
 	if ((this->type == nullptr) || isValid(owner)) {
 		return $of(owner);

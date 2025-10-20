@@ -108,6 +108,7 @@ void NimbusLookAndFeel$NimbusProperty::init$($NimbusLookAndFeel* this$0, $String
 }
 
 $Object* NimbusLookAndFeel$NimbusProperty::createValue($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, obj, nullptr);
 	if (this->state != nullptr) {
 		$assign(obj, $nc(this->this$0->uiDefaults)->get($$str({this->prefix, "["_s, this->state, "]."_s, this->suffix})));

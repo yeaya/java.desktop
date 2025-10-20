@@ -102,6 +102,7 @@ $String* PNGMetadataFormat::VALUE_MAX_16 = nullptr;
 $String* PNGMetadataFormat::VALUE_MAX_32 = nullptr;
 
 void PNGMetadataFormat::init$() {
+	$useLocalCurrentObjectStackCache();
 	$init($PNGMetadata);
 	$IIOMetadataFormatImpl::init$($PNGMetadata::nativeMetadataFormatName, $IIOMetadataFormat::CHILD_POLICY_SOME);
 	addElement("IHDR"_s, $PNGMetadata::nativeMetadataFormatName, $IIOMetadataFormat::CHILD_POLICY_EMPTY);

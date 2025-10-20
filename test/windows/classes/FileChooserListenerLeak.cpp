@@ -162,6 +162,7 @@ void FileChooserListenerLeak::main($StringArray* args) {
 }
 
 void FileChooserListenerLeak::checkListenersCount($Component* comp) {
+	$useLocalCurrentObjectStackCache();
 	test($($nc(comp)->getComponentListeners()));
 	test($($nc(comp)->getFocusListeners()));
 	test($($nc(comp)->getHierarchyListeners()));
@@ -199,6 +200,7 @@ void FileChooserListenerLeak::checkListenersCount($Component* comp) {
 }
 
 void FileChooserListenerLeak::test($ObjectArray* listeners) {
+	$useLocalCurrentObjectStackCache();
 	int32_t length = $nc(listeners)->length;
 	if (length > 20) {
 		$throwNew($RuntimeException, $$str({"The count of listeners is: "_s, $$str(length)}));
@@ -206,6 +208,7 @@ void FileChooserListenerLeak::test($ObjectArray* listeners) {
 }
 
 void FileChooserListenerLeak::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 	} catch ($UnsupportedLookAndFeelException&) {
@@ -225,6 +228,7 @@ void FileChooserListenerLeak::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 }
 
 void FileChooserListenerLeak::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, chooser, $new($JFileChooser));
 	checkListenersCount(chooser);
 	$var($UIManager$LookAndFeelInfoArray, infos, $UIManager::getInstalledLookAndFeels());

@@ -90,6 +90,7 @@ void ShowPopupAfterHidePopupTest::init$() {
 
 void ShowPopupAfterHidePopupTest::main($StringArray* args) {
 	$init(ShowPopupAfterHidePopupTest);
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 	$var($Robot, robot, $new($Robot));
 	$SwingUtilities::invokeAndWait($$new($ShowPopupAfterHidePopupTest$1));

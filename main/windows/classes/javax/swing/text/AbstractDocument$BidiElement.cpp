@@ -77,6 +77,7 @@ $Object* allocate$AbstractDocument$BidiElement($Class* clazz) {
 }
 
 void AbstractDocument$BidiElement::init$($AbstractDocument* this$0, $Element* parent, int32_t start, int32_t end, int32_t level) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$AbstractDocument$LeafElement::init$(this$0, parent, $$new($SimpleAttributeSet), start, end);
 	$init($StyleConstants);

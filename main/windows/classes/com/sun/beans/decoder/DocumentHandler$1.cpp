@@ -90,6 +90,7 @@ void DocumentHandler$1::init$($DocumentHandler* this$0, $InputSource* val$input)
 }
 
 $Object* DocumentHandler$1::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$nc($($nc($($SAXParserFactory::newInstance()))->newSAXParser()))->parse(this->val$input, static_cast<$DefaultHandler*>(this->this$0));
 	} catch ($ParserConfigurationException&) {

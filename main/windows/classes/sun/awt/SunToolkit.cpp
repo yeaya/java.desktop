@@ -640,6 +640,7 @@ $Object* SunToolkit::DEACTIVATION_TIMES_MAP_KEY = nullptr;
 
 void SunToolkit::initStatic() {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if ($nc(($cast($Boolean, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetBooleanAction, "sun.awt.nativedebug"_s)))))))->booleanValue()) {
 		$DebugSettings::init();
@@ -649,6 +650,7 @@ void SunToolkit::initStatic() {
 
 void SunToolkit::initEQ($AppContext* appContext) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	$var($EventQueue, eventQueue, $new($EventQueue));
 	$init($AppContext);
 	$nc(appContext)->put($AppContext::EVENT_QUEUE_KEY, eventQueue);
@@ -709,6 +711,7 @@ bool SunToolkit::isAWTLockHeldByCurrentThread() {
 
 $AppContext* SunToolkit::createNewAppContext() {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	$var($ThreadGroup, threadGroup, $($Thread::currentThread())->getThreadGroup());
 	return createNewAppContext(threadGroup);
 }
@@ -749,6 +752,7 @@ void SunToolkit::targetDisposedPeer(Object$* target, Object$* peer) {
 
 bool SunToolkit::setAppContext(Object$* target, $AppContext* context) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Component, target)) {
 		$nc($($AWTAccessor::getComponentAccessor()))->setAppContext($cast($Component, target), context);
 	} else if ($instanceOf($MenuComponent, target)) {
@@ -761,6 +765,7 @@ bool SunToolkit::setAppContext(Object$* target, $AppContext* context) {
 
 $AppContext* SunToolkit::getAppContext(Object$* target) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Component, target)) {
 		return $nc($($AWTAccessor::getComponentAccessor()))->getAppContext($cast($Component, target));
 	} else if ($instanceOf($MenuComponent, target)) {
@@ -789,6 +794,7 @@ void SunToolkit::setLWRequestStatus($Window* changed, bool status) {
 
 void SunToolkit::checkAndSetPolicy($Container* cont) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	$var($FocusTraversalPolicy, defaultPolicy, $nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getDefaultFocusTraversalPolicy());
 	$nc(cont)->setFocusTraversalPolicy(defaultPolicy);
 }
@@ -802,6 +808,7 @@ void SunToolkit::insertTargetMapping(Object$* target, $AppContext* appContext) {
 
 void SunToolkit::postEvent($AppContext* appContext, $AWTEvent* event) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	if (event == nullptr) {
 		$throwNew($NullPointerException);
 	}
@@ -827,6 +834,7 @@ void SunToolkit::postEvent($AppContext* appContext, $AWTEvent* event) {
 
 void SunToolkit::postPriorityEvent($AWTEvent* e) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	$var($Object, var$0, $of($Toolkit::getDefaultToolkit()));
 	$var($PeerEvent, pe, $new($PeerEvent, var$0, $$new($SunToolkit$1, e), $PeerEvent::ULTIMATE_PRIORITY_EVENT));
 	postEvent($(targetToAppContext($($nc(e)->getSource()))), pe);
@@ -858,16 +866,19 @@ void SunToolkit::executeOnEventHandlerThread(Object$* target, $Runnable* runnabl
 
 void SunToolkit::executeOnEventHandlerThread($PeerEvent* peerEvent) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	postEvent($(targetToAppContext($($nc(peerEvent)->getSource()))), peerEvent);
 }
 
 void SunToolkit::invokeLaterOnAppContext($AppContext* appContext, $Runnable* dispatcher) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	postEvent(appContext, $$new($PeerEvent, $($Toolkit::getDefaultToolkit()), dispatcher, $PeerEvent::PRIORITY_EVENT));
 }
 
 void SunToolkit::executeOnEDTAndWait(Object$* target, $Runnable* runnable) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	if ($EventQueue::isDispatchThread()) {
 		$throwNew($Error, "Cannot call executeOnEDTAndWait from any event dispatcher thread"_s);
 	}
@@ -889,6 +900,7 @@ void SunToolkit::executeOnEDTAndWait(Object$* target, $Runnable* runnable) {
 
 bool SunToolkit::isDispatchThreadForAppContext(Object$* target) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, targetToAppContext(target));
 	$init($AppContext);
 	$var($EventQueue, eq, $cast($EventQueue, $nc(appContext)->get($AppContext::EVENT_QUEUE_KEY)));
@@ -897,10 +909,12 @@ bool SunToolkit::isDispatchThreadForAppContext(Object$* target) {
 }
 
 $Dimension* SunToolkit::getScreenSize() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($nc($($nc($($nc($($GraphicsEnvironment::getLocalGraphicsEnvironment()))->getDefaultScreenDevice()))->getDefaultConfiguration()))->getBounds()))->getSize();
 }
 
 $ColorModel* SunToolkit::getColorModel() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($nc($($nc($($GraphicsEnvironment::getLocalGraphicsEnvironment()))->getDefaultScreenDevice()))->getDefaultConfiguration()))->getColorModel();
 }
 
@@ -934,18 +948,21 @@ void SunToolkit::disableBackgroundEraseImpl($Component* component) {
 
 bool SunToolkit::getSunAwtNoerasebackground() {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	return $nc(($cast($Boolean, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetBooleanAction, "sun.awt.noerasebackground"_s)))))))->booleanValue();
 }
 
 bool SunToolkit::getSunAwtErasebackgroundonresize() {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	return $nc(($cast($Boolean, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetBooleanAction, "sun.awt.erasebackgroundonresize"_s)))))))->booleanValue();
 }
 
 $Image* SunToolkit::getImageFromHash($Toolkit* tk, $URL* url) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	checkPermissions(url);
 	$synchronized(SunToolkit::urlImgCache) {
 		$var($String, key, $nc(url)->toString());
@@ -964,6 +981,7 @@ $Image* SunToolkit::getImageFromHash($Toolkit* tk, $URL* url) {
 
 $Image* SunToolkit::getImageFromHash($Toolkit* tk, $String* filename) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	checkPermissions(filename);
 	$synchronized(SunToolkit::fileImgCache) {
 		$var($Image, img, $cast($Image, $nc(SunToolkit::fileImgCache)->get(filename)));
@@ -988,6 +1006,7 @@ $Image* SunToolkit::getImage($URL* url) {
 }
 
 $Image* SunToolkit::getImageWithResolutionVariant($String* fileName, $String* resolutionVariantName) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(SunToolkit::fileImgCache) {
 		$var($Image, image, getImageFromHash(static_cast<$Toolkit*>(this), fileName));
 		if ($instanceOf($MultiResolutionImage, image)) {
@@ -1001,6 +1020,7 @@ $Image* SunToolkit::getImageWithResolutionVariant($String* fileName, $String* re
 }
 
 $Image* SunToolkit::getImageWithResolutionVariant($URL* url, $URL* resolutionVariantURL) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(SunToolkit::urlImgCache) {
 		$var($Image, image, getImageFromHash(static_cast<$Toolkit*>(this), url));
 		if ($instanceOf($MultiResolutionImage, image)) {
@@ -1038,6 +1058,7 @@ $Image* SunToolkit::createImageWithResolutionVariant($Image* image, $Image* reso
 }
 
 int32_t SunToolkit::checkImage($Image* img, int32_t w, int32_t h, $ImageObserver* o) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($ToolkitImage, img))) {
 		return $ImageObserver::ALLBITS;
 	}
@@ -1053,6 +1074,7 @@ int32_t SunToolkit::checkImage($Image* img, int32_t w, int32_t h, $ImageObserver
 }
 
 bool SunToolkit::prepareImage($Image* img, int32_t w, int32_t h, $ImageObserver* o) {
+	$useLocalCurrentObjectStackCache();
 	if (w == 0 || h == 0) {
 		return true;
 	}
@@ -1072,6 +1094,7 @@ bool SunToolkit::prepareImage($Image* img, int32_t w, int32_t h, $ImageObserver*
 }
 
 int32_t SunToolkit::checkResolutionVariant($Image* img, int32_t w, int32_t h, $ImageObserver* o) {
+	$useLocalCurrentObjectStackCache();
 	$var($ToolkitImage, rvImage, getResolutionVariant(img));
 	int32_t rvw = getRVSize(w);
 	int32_t rvh = getRVSize(h);
@@ -1079,6 +1102,7 @@ int32_t SunToolkit::checkResolutionVariant($Image* img, int32_t w, int32_t h, $I
 }
 
 bool SunToolkit::prepareResolutionVariant($Image* img, int32_t w, int32_t h, $ImageObserver* o) {
+	$useLocalCurrentObjectStackCache();
 	$var($ToolkitImage, rvImage, getResolutionVariant(img));
 	int32_t rvw = getRVSize(w);
 	int32_t rvh = getRVSize(h);
@@ -1124,6 +1148,7 @@ bool SunToolkit::imageExists($String* filename) {
 
 bool SunToolkit::imageExists($URL* url) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	if (url != nullptr) {
 		checkPermissions(url);
 		try {
@@ -1181,6 +1206,7 @@ void SunToolkit::checkPermissions($String* filename) {
 
 void SunToolkit::checkPermissions($URL* url) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm != nullptr) {
 		try {
@@ -1198,6 +1224,7 @@ void SunToolkit::checkPermissions($URL* url) {
 
 $BufferedImage* SunToolkit::getScaledIconImage($List* imageList, int32_t width, int32_t height) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	if (width == 0 || height == 0) {
 		return nullptr;
 	}
@@ -1314,6 +1341,7 @@ $BufferedImage* SunToolkit::getScaledIconImage($List* imageList, int32_t width, 
 
 $DataBufferInt* SunToolkit::getScaledIconData($List* imageList, int32_t width, int32_t height) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, bimage, getScaledIconImage(imageList, width, height));
 	if (bimage == nullptr) {
 		return nullptr;
@@ -1346,6 +1374,7 @@ $Container* SunToolkit::getNativeContainer($Component* c) {
 
 $Component* SunToolkit::getHeavyweightComponent($Component* c$renamed) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, c$renamed);
 	while (c != nullptr && $nc($($AWTAccessor::getComponentAccessor()))->isLightweight(c)) {
 		$assign(c, $nc($($AWTAccessor::getComponentAccessor()))->getParent(c));
@@ -1362,6 +1391,7 @@ bool SunToolkit::isPrintableCharacterModifiersMask(int32_t mods) {
 }
 
 bool SunToolkit::canPopupOverlapTaskBar() {
+	$useLocalCurrentObjectStackCache();
 	bool result = true;
 	try {
 		$var($SecurityManager, sm, $System::getSecurityManager());
@@ -1386,6 +1416,7 @@ bool SunToolkit::enableInputMethodsForTextComponent() {
 
 $Locale* SunToolkit::getStartupLocale() {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (SunToolkit::startupLocale == nullptr) {
 		$var($String, language, nullptr);
@@ -1418,6 +1449,7 @@ $Locale* SunToolkit::getDefaultKeyboardLocale() {
 
 bool SunToolkit::needsXEmbed() {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, noxembed, $cast($String, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, "sun.awt.noxembed"_s, "false"_s)))));
 	if ("true"_s->equals(noxembed)) {
@@ -1436,6 +1468,7 @@ bool SunToolkit::needsXEmbedImpl() {
 }
 
 bool SunToolkit::isXEmbedServerRequested() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	return $nc(($cast($Boolean, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetBooleanAction, "sun.awt.xembedserver"_s)))))))->booleanValue();
 }
@@ -1513,6 +1546,7 @@ void SunToolkit::realSync() {
 }
 
 void SunToolkit::realSync(int64_t timeout) {
+	$useLocalCurrentObjectStackCache();
 	if ($EventQueue::isDispatchThread()) {
 		$throwNew($SunToolkit$IllegalThreadException, "The SunToolkit.realSync() method cannot be used on the event dispatch thread (EDT)."_s);
 	}
@@ -1559,11 +1593,13 @@ int64_t SunToolkit::timeout(int64_t end) {
 }
 
 bool SunToolkit::isEQEmpty() {
+	$useLocalCurrentObjectStackCache();
 	$var($EventQueue, queue, getSystemEventQueueImpl());
 	return $nc($($AWTAccessor::getEventQueueAccessor()))->noEvents(queue);
 }
 
 bool SunToolkit::waitForIdle(int64_t end) {
+	$useLocalCurrentObjectStackCache();
 	if (timeout(end) <= 0) {
 		return false;
 	}
@@ -1638,6 +1674,7 @@ void SunToolkit::setAAFontSettingsCondition(bool extraCondition) {
 
 $RenderingHints* SunToolkit::getDesktopAAHintsByName($String* hintname$renamed) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	$var($String, hintname, hintname$renamed);
 	$var($Object, aaHint, nullptr);
 	$init($Locale);
@@ -1676,6 +1713,7 @@ $RenderingHints* SunToolkit::getDesktopAAHintsByName($String* hintname$renamed) 
 
 bool SunToolkit::useSystemAAFontSettings() {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (!SunToolkit::checkedSystemAAFontSettings) {
 		SunToolkit::useSystemAAFontSettings$ = true;
@@ -1704,6 +1742,7 @@ $RenderingHints* SunToolkit::getDesktopAAHints() {
 
 $RenderingHints* SunToolkit::getDesktopFontHints() {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	if (useSystemAAFontSettings()) {
 		$var($Toolkit, tk, $Toolkit::getDefaultToolkit());
 		if ($instanceOf(SunToolkit, tk)) {
@@ -1725,6 +1764,7 @@ void SunToolkit::consumeNextKeyTyped($KeyEvent* keyEvent) {
 	$load(SunToolkit);
 	$synchronized(class$) {
 		$init(SunToolkit);
+		$useLocalCurrentObjectStackCache();
 		try {
 			$nc($($AWTAccessor::getDefaultKeyboardFocusManagerAccessor()))->consumeNextKeyTyped($cast($DefaultKeyboardFocusManager, $($KeyboardFocusManager::getCurrentKeyboardFocusManager())), keyEvent);
 		} catch ($ClassCastException&) {
@@ -1770,6 +1810,7 @@ bool SunToolkit::isNativeGTKAvailable() {
 
 void SunToolkit::setWindowDeactivationTime($Window* w, int64_t time) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($AppContext, ctx, getAppContext(w));
 		if (ctx == nullptr) {
 			return;
@@ -1785,6 +1826,7 @@ void SunToolkit::setWindowDeactivationTime($Window* w, int64_t time) {
 
 int64_t SunToolkit::getWindowDeactivationTime($Window* w) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($AppContext, ctx, getAppContext(w));
 		if (ctx == nullptr) {
 			return -1;
@@ -1854,6 +1896,7 @@ bool SunToolkit::isInstanceOf(Object$* obj, $String* type) {
 
 bool SunToolkit::isInstanceOf($Class* cls, $String* type) {
 	$init(SunToolkit);
+	$useLocalCurrentObjectStackCache();
 	if (cls == nullptr) {
 		return false;
 	}

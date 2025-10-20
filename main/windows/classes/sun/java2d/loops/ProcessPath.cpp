@@ -684,6 +684,7 @@ void ProcessPath::ProcessMonotonicCubic($ProcessPath$ProcessHandler* hnd, $float
 
 void ProcessPath::ProcessCubic($ProcessPath$ProcessHandler* hnd, $floats* coords, $ints* pixelInfo) {
 	$init(ProcessPath);
+	$useLocalCurrentObjectStackCache();
 	$var($doubles, params, $new($doubles, 4));
 	$var($doubles, eqn, $new($doubles, 3));
 	$var($doubles, res, $new($doubles, 2));
@@ -828,6 +829,7 @@ void ProcessPath::ProcessLine($ProcessPath$ProcessHandler* hnd, float x1, float 
 
 bool ProcessPath::doProcessPath($ProcessPath$ProcessHandler* hnd, $Path2D$Float* p2df, float transXf, float transYf) {
 	$init(ProcessPath);
+	$useLocalCurrentObjectStackCache();
 	$var($floats, coords, $new($floats, 8));
 	$var($floats, tCoords, $new($floats, 8));
 	$var($floats, closeCoord, $new($floats, {
@@ -971,6 +973,7 @@ bool ProcessPath::doProcessPath($ProcessPath$ProcessHandler* hnd, $Path2D$Float*
 
 void ProcessPath::FillPolygon($ProcessPath$FillProcessHandler* hnd, int32_t fillRule) {
 	$init(ProcessPath);
+	$useLocalCurrentObjectStackCache();
 	int32_t k = 0;
 	int32_t y = 0;
 	int32_t n = 0;

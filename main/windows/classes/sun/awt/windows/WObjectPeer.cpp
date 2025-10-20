@@ -138,6 +138,7 @@ void WObjectPeer::addChildPeer(WObjectPeer* child) {
 }
 
 void WObjectPeer::disposeChildPeers() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getStateLock()) {
 		{
 			$var($Iterator, i$, $nc($($nc(this->childPeers)->keySet()))->iterator());

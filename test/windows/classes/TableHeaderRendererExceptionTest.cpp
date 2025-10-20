@@ -50,6 +50,7 @@ void TableHeaderRendererExceptionTest::init$() {
 }
 
 void TableHeaderRendererExceptionTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($UIManager$LookAndFeelInfoArray, lookAndFeelArray, $UIManager::getInstalledLookAndFeels());
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, lookAndFeelArray);

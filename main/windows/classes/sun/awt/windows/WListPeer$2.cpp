@@ -90,6 +90,7 @@ void WListPeer$2::init$($WListPeer* this$0, $List* val$l, int32_t val$index) {
 }
 
 void WListPeer$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($ItemSelectable, var$0, static_cast<$ItemSelectable*>(this->val$l));
 	$var($Object, var$1, $of($Integer::valueOf(this->val$index)));
 	this->this$0->postEvent($$new($ItemEvent, var$0, $ItemEvent::ITEM_STATE_CHANGED, var$1, this->this$0->isSelected(this->val$index) ? $ItemEvent::SELECTED : $ItemEvent::DESELECTED));

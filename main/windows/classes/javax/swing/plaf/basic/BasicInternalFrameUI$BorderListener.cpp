@@ -198,6 +198,7 @@ void BasicInternalFrameUI$BorderListener::mouseClicked($MouseEvent* e) {
 }
 
 void BasicInternalFrameUI$BorderListener::finishMouseReleased() {
+	$useLocalCurrentObjectStackCache();
 	if (this->discardRelease) {
 		this->discardRelease = false;
 		return;
@@ -234,6 +235,7 @@ void BasicInternalFrameUI$BorderListener::mouseReleased($MouseEvent* e) {
 }
 
 void BasicInternalFrameUI$BorderListener::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, var$0, $cast($Component, $nc(e)->getSource()));
 	int32_t var$1 = e->getX();
 	$var($Point, p, $SwingUtilities::convertPoint(var$0, var$1, e->getY(), nullptr));
@@ -367,6 +369,7 @@ void BasicInternalFrameUI$BorderListener::mousePressed($MouseEvent* e) {
 }
 
 void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->startingBounds == nullptr) {
 		return;
 	}
@@ -585,6 +588,7 @@ void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
 }
 
 void BasicInternalFrameUI$BorderListener::mouseMoved($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->this$0->frame)->isResizable()) {
 		return;
 	}

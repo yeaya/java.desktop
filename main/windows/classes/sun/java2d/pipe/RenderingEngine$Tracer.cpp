@@ -86,12 +86,14 @@ void RenderingEngine$Tracer::init$($RenderingEngine* target) {
 }
 
 $Shape* RenderingEngine$Tracer::createStrokedShape($Shape* src, float width, int32_t caps, int32_t join, float miterlimit, $floats* dashes, float dashphase) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println($$str({this->name, ".createStrokedShape("_s, $($nc($of(src))->getClass()->getName()), ", width = "_s, $$str(width), ", caps = "_s, $$str(caps), ", join = "_s, $$str(join), ", miter = "_s, $$str(miterlimit), ", dashes = "_s, dashes, ", dashphase = "_s, $$str(dashphase), ")"_s}));
 	return $nc(this->target)->createStrokedShape(src, width, caps, join, miterlimit, dashes, dashphase);
 }
 
 void RenderingEngine$Tracer::strokeTo($Shape* src, $AffineTransform* at, $BasicStroke* bs, bool thin, bool normalize, bool antialias, $PathConsumer2D* consumer) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$var($String, var$1, $$str({this->name, ".strokeTo("_s, $($nc($of(src))->getClass()->getName()), ", "_s, at, ", "_s, bs, ", "_s, (thin ? "thin"_s : "wide"_s), ", "_s, (normalize ? "normalized"_s : "pure"_s), ", "_s, (antialias ? "AA"_s : "non-AA"_s), ", "_s}));
 	$var($String, var$0, $$concat(var$1, $($nc($of(consumer))->getClass()->getName())));
@@ -100,6 +102,7 @@ void RenderingEngine$Tracer::strokeTo($Shape* src, $AffineTransform* at, $BasicS
 }
 
 void RenderingEngine$Tracer::strokeTo($Shape* src, $AffineTransform* at, $Region* clip, $BasicStroke* bs, bool thin, bool normalize, bool antialias, $PathConsumer2D* consumer) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$var($String, var$1, $$str({this->name, ".strokeTo("_s, $($nc($of(src))->getClass()->getName()), ", "_s, at, ", "_s, clip, ", "_s, bs, ", "_s, (thin ? "thin"_s : "wide"_s), ", "_s, (normalize ? "normalized"_s : "pure"_s), ", "_s, (antialias ? "AA"_s : "non-AA"_s), ", "_s}));
 	$var($String, var$0, $$concat(var$1, $($nc($of(consumer))->getClass()->getName())));
@@ -114,12 +117,14 @@ float RenderingEngine$Tracer::getMinimumAAPenSize() {
 }
 
 $AATileGenerator* RenderingEngine$Tracer::getAATileGenerator($Shape* s, $AffineTransform* at, $Region* clip, $BasicStroke* bs, bool thin, bool normalize, $ints* bbox) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println($$str({this->name, ".getAATileGenerator("_s, $($nc($of(s))->getClass()->getName()), ", "_s, at, ", "_s, clip, ", "_s, bs, ", "_s, (thin ? "thin"_s : "wide"_s), ", "_s, (normalize ? "normalized"_s : "pure"_s), ")"_s}));
 	return $nc(this->target)->getAATileGenerator(s, at, clip, bs, thin, normalize, bbox);
 }
 
 $AATileGenerator* RenderingEngine$Tracer::getAATileGenerator(double x, double y, double dx1, double dy1, double dx2, double dy2, double lw1, double lw2, $Region* clip, $ints* bbox) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println($$str({this->name, ".getAATileGenerator("_s, $$str(x), ", "_s, $$str(y), ", "_s, $$str(dx1), ", "_s, $$str(dy1), ", "_s, $$str(dx2), ", "_s, $$str(dy2), ", "_s, $$str(lw1), ", "_s, 
 	$$str(lw2), ", "_s, clip, ")"_s}));

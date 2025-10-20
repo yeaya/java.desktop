@@ -81,6 +81,7 @@ void bug6923305$1::init$() {
 }
 
 void bug6923305$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JSlider, slider, $new($JSlider));
 	slider->setUI(static_cast<$SliderUI*>($$new($bug6923305$1$1, this, slider)));
 	slider->setPaintTrack(false);

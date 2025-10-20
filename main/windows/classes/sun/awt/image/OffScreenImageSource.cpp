@@ -132,6 +132,7 @@ void OffScreenImageSource::requestTopDownLeftRightResend($ImageConsumer* ic) {
 }
 
 void OffScreenImageSource::sendPixels() {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, cm, $nc(this->image)->getColorModel());
 	$var($WritableRaster, raster, $nc(this->image)->getRaster());
 	int32_t numDataElements = $nc(raster)->getNumDataElements();
@@ -222,6 +223,7 @@ void OffScreenImageSource::sendPixels() {
 }
 
 void OffScreenImageSource::produce() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		int32_t var$0 = $nc(this->image)->getWidth();
 		$nc(this->theConsumer)->setDimensions(var$0, $nc(this->image)->getHeight());

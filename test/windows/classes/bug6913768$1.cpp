@@ -77,6 +77,7 @@ void bug6913768$1::init$() {
 }
 
 void bug6913768$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame));
 	$var($JTable, table, $new($JTable, $$new($ObjectArray2, {
 		$$new($ObjectArray, {

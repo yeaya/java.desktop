@@ -183,6 +183,7 @@ AWTKeyStroke* AWTKeyStroke::getCachedStroke(char16_t keyChar, int32_t keyCode, i
 	$load(AWTKeyStroke);
 	$synchronized(class$) {
 		$init(AWTKeyStroke);
+		$useLocalCurrentObjectStackCache();
 		$var($Map, cache, $cast($Map, $nc($($AppContext::getAppContext()))->get(AWTKeyStroke::APP_CONTEXT_CACHE_KEY)));
 		$var(AWTKeyStroke, cacheKey, $cast(AWTKeyStroke, $nc($($AppContext::getAppContext()))->get(AWTKeyStroke::APP_CONTEXT_KEYSTROKE_KEY)));
 		if (cache == nullptr) {
@@ -255,6 +256,7 @@ AWTKeyStroke* AWTKeyStroke::getAWTKeyStrokeForEvent($KeyEvent* anEvent) {
 
 AWTKeyStroke* AWTKeyStroke::getAWTKeyStroke($String* s) {
 	$init(AWTKeyStroke);
+	$useLocalCurrentObjectStackCache();
 	if (s == nullptr) {
 		$throwNew($IllegalArgumentException, "String cannot be null"_s);
 	}
@@ -328,6 +330,7 @@ $VKCollection* AWTKeyStroke::getVKCollection() {
 
 int32_t AWTKeyStroke::getVKValue($String* key) {
 	$init(AWTKeyStroke);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($VKCollection, vkCollect, getVKCollection());
 	$var($Integer, value, $nc(vkCollect)->findCode(key));
@@ -387,6 +390,7 @@ bool AWTKeyStroke::equals(Object$* anObject) {
 }
 
 $String* AWTKeyStroke::toString() {
+	$useLocalCurrentObjectStackCache();
 	if (this->keyCode == $KeyEvent::VK_UNDEFINED) {
 		return $str({$(getModifiersText(this->modifiers)), "typed "_s, $$str(this->keyChar)});
 	} else {
@@ -427,6 +431,7 @@ $String* AWTKeyStroke::getModifiersText(int32_t modifiers) {
 
 $String* AWTKeyStroke::getVKText(int32_t keyCode) {
 	$init(AWTKeyStroke);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($VKCollection, vkCollect, getVKCollection());
 	$var($Integer, key, $Integer::valueOf(keyCode));

@@ -154,6 +154,7 @@ $AccessibleStateSet* JSlider$AccessibleJSlider::getAccessibleStateSet() {
 }
 
 void JSlider$AccessibleJSlider::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (e == nullptr) {
 		$throwNew($NullPointerException);
 	}

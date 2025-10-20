@@ -151,6 +151,7 @@ $Kernel* ConvolveOp::getKernel() {
 }
 
 $BufferedImage* ConvolveOp::filter($BufferedImage* src$renamed, $BufferedImage* dst$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, dst, dst$renamed);
 	$var($BufferedImage, src, src$renamed);
 	if (src == nullptr) {
@@ -228,6 +229,7 @@ $WritableRaster* ConvolveOp::filter($Raster* src, $WritableRaster* dst$renamed) 
 }
 
 $BufferedImage* ConvolveOp::createCompatibleDestImage($BufferedImage* src, $ColorModel* destCM$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, destCM, destCM$renamed);
 	$var($BufferedImage, image, nullptr);
 	int32_t w = $nc(src)->getWidth();

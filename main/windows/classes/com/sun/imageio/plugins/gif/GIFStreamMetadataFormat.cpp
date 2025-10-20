@@ -65,6 +65,7 @@ $Object* allocate$GIFStreamMetadataFormat($Class* clazz) {
 $IIOMetadataFormat* GIFStreamMetadataFormat::instance = nullptr;
 
 void GIFStreamMetadataFormat::init$() {
+	$useLocalCurrentObjectStackCache();
 	$init($GIFStreamMetadata);
 	$IIOMetadataFormatImpl::init$($GIFStreamMetadata::nativeMetadataFormatName, $IIOMetadataFormat::CHILD_POLICY_SOME);
 	addElement("Version"_s, $GIFStreamMetadata::nativeMetadataFormatName, $IIOMetadataFormat::CHILD_POLICY_EMPTY);

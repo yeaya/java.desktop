@@ -150,6 +150,7 @@ void BasicComboBoxUI$Actions::init$($String* name) {
 }
 
 void BasicComboBoxUI$Actions::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, key, getName());
 	$var($JComboBox, comboBox, $cast($JComboBox, $nc(e)->getSource()));
 	$load($BasicComboBoxUI);
@@ -261,6 +262,7 @@ void BasicComboBoxUI$Actions::actionPerformed($ActionEvent* e) {
 }
 
 int32_t BasicComboBoxUI$Actions::getNextIndex($JComboBox* comboBox, $String* key) {
+	$useLocalCurrentObjectStackCache();
 	int32_t listHeight = $nc(comboBox)->getMaximumRowCount();
 	int32_t selectedIndex = comboBox->getSelectedIndex();
 	bool var$0 = $UIManager::getBoolean("ComboBox.noActionOnKeyNavigation"_s);
@@ -283,6 +285,7 @@ int32_t BasicComboBoxUI$Actions::getNextIndex($JComboBox* comboBox, $String* key
 }
 
 bool BasicComboBoxUI$Actions::accept(Object$* c) {
+	$useLocalCurrentObjectStackCache();
 	if (getName() == BasicComboBoxUI$Actions::HIDE) {
 		return (c != nullptr && $nc(($cast($JComboBox, c)))->isPopupVisible());
 	} else if (getName() == BasicComboBoxUI$Actions::ENTER) {

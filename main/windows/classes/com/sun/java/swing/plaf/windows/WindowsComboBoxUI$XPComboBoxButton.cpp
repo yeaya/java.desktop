@@ -101,6 +101,7 @@ $Object* allocate$WindowsComboBoxUI$XPComboBoxButton($Class* clazz) {
 }
 
 void WindowsComboBoxUI$XPComboBoxButton::init$($WindowsComboBoxUI* this$0, $XPStyle* xp) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$var($Component, var$0, static_cast<$Component*>($WindowsComboBoxUI::access$1000(this$0)));
 	$init($TMSchema$Part);
@@ -111,6 +112,7 @@ void WindowsComboBoxUI$XPComboBoxButton::init$($WindowsComboBoxUI* this$0, $XPSt
 }
 
 $TMSchema$State* WindowsComboBoxUI$XPComboBoxButton::getState() {
+	$useLocalCurrentObjectStackCache();
 	$TMSchema$State* rv = nullptr;
 	$nc($(getModel()))->setPressed($nc($($WindowsComboBoxUI::access$1300(this->this$0)))->isPopupVisible());
 	rv = $XPStyle$GlyphButton::getState();

@@ -71,6 +71,7 @@ void bug4960629$1::init$($bug4960629* this$0) {
 }
 
 void bug4960629$1::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		this->this$0->createAndShowGUI();
 	} catch ($Exception&) {

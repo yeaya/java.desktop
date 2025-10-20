@@ -73,6 +73,7 @@ void bug6342301$1::init$() {
 }
 
 void bug6342301$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($bug6342301$HackedFileChooser, openChooser, $new($bug6342301$HackedFileChooser));
 	openChooser->setUI($$new($MetalFileChooserUI, openChooser));
 	$init($bug6342301);

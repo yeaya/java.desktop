@@ -80,6 +80,7 @@ void BasicInternalFrameUI$1::init$($String* name) {
 }
 
 void BasicInternalFrameUI$1::actionPerformed($ActionEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame, iFrame, $cast($JInternalFrame, $nc(evt)->getSource()));
 	if ($instanceOf($BasicInternalFrameUI, $($cast($InternalFrameUI, $nc(iFrame)->getUI())))) {
 		$var($JComponent, comp, $nc(($cast($BasicInternalFrameUI, $($cast($InternalFrameUI, iFrame->getUI())))))->getNorthPane());
@@ -90,6 +91,7 @@ void BasicInternalFrameUI$1::actionPerformed($ActionEvent* evt) {
 }
 
 bool BasicInternalFrameUI$1::accept(Object$* sender) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JInternalFrame, sender)) {
 		$var($JInternalFrame, iFrame, $cast($JInternalFrame, sender));
 		if ($instanceOf($BasicInternalFrameUI, $($cast($InternalFrameUI, $nc(iFrame)->getUI())))) {

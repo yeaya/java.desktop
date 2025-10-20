@@ -96,6 +96,7 @@ void MetalIconFactory$TreeHardDriveIcon::init$() {
 }
 
 void MetalIconFactory$TreeHardDriveIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->translate(x, y);
 	g->setColor($($MetalLookAndFeel::getPrimaryControlInfo()));
 	g->drawLine(1, 4, 1, 5);

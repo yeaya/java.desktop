@@ -73,6 +73,7 @@ void LastNodeLowerHalfDrop$1::init$() {
 }
 
 void LastNodeLowerHalfDrop$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($LastNodeLowerHalfDrop);
 	$assignStatic($LastNodeLowerHalfDrop::f, $new($JFrame));
 	$nc($LastNodeLowerHalfDrop::f)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);

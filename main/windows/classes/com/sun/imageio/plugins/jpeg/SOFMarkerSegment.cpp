@@ -103,6 +103,7 @@ $Object* allocate$SOFMarkerSegment($Class* clazz) {
 }
 
 void SOFMarkerSegment::init$(bool wantProg, bool wantExtended, bool willSubsample, $bytes* componentIDs, int32_t numComponents) {
+	$useLocalCurrentObjectStackCache();
 	$MarkerSegment::init$(wantProg ? $JPEG::SOF2 : wantExtended ? $JPEG::SOF1 : $JPEG::SOF0);
 	this->samplePrecision = 8;
 	this->numLines = 0;
@@ -123,6 +124,7 @@ void SOFMarkerSegment::init$(bool wantProg, bool wantExtended, bool willSubsampl
 }
 
 void SOFMarkerSegment::init$($JPEGBuffer* buffer) {
+	$useLocalCurrentObjectStackCache();
 	$MarkerSegment::init$(buffer);
 	this->samplePrecision = $nc($nc(buffer)->buf)->get(buffer->bufPtr++);
 	this->numLines = ((int32_t)($nc(buffer->buf)->get(buffer->bufPtr++) & (uint32_t)255)) << 8;
@@ -146,6 +148,7 @@ void SOFMarkerSegment::init$($Node* node) {
 }
 
 $Object* SOFMarkerSegment::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(SOFMarkerSegment, newGuy, $cast(SOFMarkerSegment, $MarkerSegment::clone()));
 	if (this->componentSpecs != nullptr) {
 		$set($nc(newGuy), componentSpecs, $cast($SOFMarkerSegment$ComponentSpecArray, $nc(this->componentSpecs)->clone()));
@@ -157,6 +160,7 @@ $Object* SOFMarkerSegment::clone() {
 }
 
 $IIOMetadataNode* SOFMarkerSegment::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "sof"_s));
 	node->setAttribute("process"_s, $($Integer::toString(this->tag - $JPEG::SOF0)));
 	node->setAttribute("samplePrecision"_s, $($Integer::toString(this->samplePrecision)));
@@ -170,6 +174,7 @@ $IIOMetadataNode* SOFMarkerSegment::getNativeNode() {
 }
 
 void SOFMarkerSegment::updateFromNativeNode($Node* node, bool fromScratch) {
+	$useLocalCurrentObjectStackCache();
 	$var($NamedNodeMap, attrs, $nc(node)->getAttributes());
 	int32_t value = getAttributeValue(node, attrs, "process"_s, 0, 2, false);
 	this->tag = (value != -1) ? value + $JPEG::SOF0 : this->tag;

@@ -160,6 +160,7 @@ void TransferHandler$SwingDropTarget::dragOver($DropTargetDragEvent* e) {
 }
 
 void TransferHandler$SwingDropTarget::dragExit($DropTargetEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$DropTarget::dragExit(e);
 	if (this->listenerList != nullptr) {
 		$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());

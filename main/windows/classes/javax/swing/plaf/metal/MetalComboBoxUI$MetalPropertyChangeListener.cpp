@@ -86,6 +86,7 @@ void MetalComboBoxUI$MetalPropertyChangeListener::init$($MetalComboBoxUI* this$0
 }
 
 void MetalComboBoxUI$MetalPropertyChangeListener::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$BasicComboBoxUI$PropertyChangeHandler::propertyChange(e);
 	$var($String, propertyName, $nc(e)->getPropertyName());
 	if (propertyName == "editable"_s) {

@@ -1104,6 +1104,7 @@ bool WToolkit::startToolkitThread($Runnable* thread, $ThreadGroup* rootThreadGro
 }
 
 void WToolkit::init$() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$SunToolkit::init$();
 	this->dynamicLayoutSetting = false;
@@ -1264,6 +1265,7 @@ $CanvasPeer* WToolkit::createCanvas($Canvas* target) {
 }
 
 void WToolkit::disableBackgroundErase($Canvas* canvas) {
+	$useLocalCurrentObjectStackCache();
 	$var($WCanvasPeer, peer, $cast($WCanvasPeer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(canvas)));
 	if (peer == nullptr) {
 		$throwNew($IllegalStateException, "Canvas must have a valid peer"_s);
@@ -1468,6 +1470,7 @@ $FontMetrics* WToolkit::getFontMetrics($Font* font) {
 }
 
 $FontPeer* WToolkit::getFontPeer($String* name, int32_t style) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontPeer, retval, nullptr);
 	$var($String, lcName, $nc(name)->toLowerCase());
 	if (nullptr != this->cacheFontPeer) {
@@ -1627,6 +1630,7 @@ void WToolkit::paletteChanged() {
 
 void WToolkit::displayChanged() {
 	$init(WToolkit);
+	$useLocalCurrentObjectStackCache();
 	$var($Runnable, runnable, static_cast<$Runnable*>($new(WToolkit$$Lambda$lambda$displayChanged$4$5)));
 	if ($AppContext::getAppContext() != nullptr) {
 		$EventQueue::invokeLater(runnable);
@@ -1639,6 +1643,7 @@ void WToolkit::displayChanged() {
 }
 
 $DragSourceContextPeer* WToolkit::createDragSourceContextPeer($DragGestureEvent* dge) {
+	$useLocalCurrentObjectStackCache();
 	$var($LightweightFrame, f, $SunToolkit::getLightweightFrame($($nc(dge)->getComponent())));
 	if (f != nullptr) {
 		return f->createDragSourceContextPeer(dge);
@@ -1660,6 +1665,7 @@ $DragGestureRecognizer* WToolkit::createDragGestureRecognizer($Class* abstractRe
 }
 
 $Object* WToolkit::lazilyLoadDesktopProperty($String* name) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(name)->startsWith(WToolkit::prefix)) {
 		int32_t var$1 = $nc(WToolkit::prefix)->length();
 		$var($String, var$0, $(name->substring(var$1, name->length())));
@@ -1696,6 +1702,7 @@ void WToolkit::lazilyInitWProps() {
 
 bool WToolkit::isDynamicLayoutSupported() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		bool nativeDynamic = isDynamicLayoutSupportedNative();
 		lazilyInitWProps();
 		$var($Boolean, prop, $cast($Boolean, $nc(this->desktopProperties)->get("awt.dynamicLayoutSupported"_s)));
@@ -1712,6 +1719,7 @@ bool WToolkit::isDynamicLayoutSupported() {
 }
 
 void WToolkit::windowsSettingChange() {
+	$useLocalCurrentObjectStackCache();
 	$var($Map, props, getWProps());
 	if (props == nullptr) {
 		return;
@@ -1726,6 +1734,7 @@ void WToolkit::windowsSettingChange() {
 
 void WToolkit::updateProperties($Map* props) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (nullptr == props) {
 			return;
 		}
@@ -1775,6 +1784,7 @@ void WToolkit::addPropertyChangeListener($String* name, $PropertyChangeListener*
 
 void WToolkit::initializeDesktopProperties() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$nc(this->desktopProperties)->put("DnD.Autoscroll.initialDelay"_s, $($Integer::valueOf(50)));
 		$nc(this->desktopProperties)->put("DnD.Autoscroll.interval"_s, $($Integer::valueOf(50)));
 		$init($Boolean);
@@ -1814,6 +1824,7 @@ bool WToolkit::useBufferPerWindow() {
 }
 
 void WToolkit::grab($Window* w) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, peer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(w));
 	if (peer != nullptr) {
 		$nc(($cast($WWindowPeer, peer)))->grab();
@@ -1821,6 +1832,7 @@ void WToolkit::grab($Window* w) {
 }
 
 void WToolkit::ungrab($Window* w) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, peer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(w));
 	if (peer != nullptr) {
 		$nc(($cast($WWindowPeer, peer)))->ungrab();
@@ -1841,6 +1853,7 @@ bool WToolkit::isComponentValidForTouchKeyboard($Component* comp) {
 }
 
 void WToolkit::showOrHideTouchKeyboard($Component* comp, $AWTEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($TextComponent, comp)) && !($instanceOf($JTextComponent, comp))) {
 		return;
 	}
@@ -1964,6 +1977,7 @@ void WToolkit::lambda$windowsSettingChange$6($Map* props) {
 
 $Thread* WToolkit::lambda$displayChanged$5($Runnable* r) {
 	$init(WToolkit);
+	$useLocalCurrentObjectStackCache();
 	$var($Thread, t, $nc($($Executors::defaultThreadFactory()))->newThread(r));
 	$nc(t)->setDaemon(true);
 	return t;
@@ -1979,12 +1993,14 @@ void WToolkit::lambda$displayChanged$4() {
 
 $Void* WToolkit::lambda$run$3() {
 	$init(WToolkit);
+	$useLocalCurrentObjectStackCache();
 	$($Thread::currentThread())->setContextClassLoader(nullptr);
 	$($Thread::currentThread())->setPriority($Thread::NORM_PRIORITY + 1);
 	return nullptr;
 }
 
 $Void* WToolkit::lambda$registerShutdownHook$2() {
+	$useLocalCurrentObjectStackCache();
 	$var($ThreadGroup, var$0, $ThreadGroupUtils::getRootThreadGroup());
 	$var($Thread, shutdown, $new($Thread, var$0, static_cast<$Runnable*>($$new(WToolkit$$Lambda$shutdown$8, this)), "ToolkitShutdown"_s, 0, false));
 	shutdown->setContextClassLoader(nullptr);
@@ -1994,6 +2010,7 @@ $Void* WToolkit::lambda$registerShutdownHook$2() {
 
 $Void* WToolkit::lambda$new$1() {
 	$init(WToolkit);
+	$useLocalCurrentObjectStackCache();
 	$var($String, extraButtons, "sun.awt.enableExtraMouseButtons"_s);
 	WToolkit::areExtraMouseButtonsEnabled$ = $Boolean::parseBoolean($($System::getProperty(extraButtons, "true"_s)));
 	$System::setProperty(extraButtons, $$str({""_s, $$str(WToolkit::areExtraMouseButtonsEnabled$)}));
@@ -2001,6 +2018,7 @@ $Void* WToolkit::lambda$new$1() {
 }
 
 $Void* WToolkit::lambda$new$0($ThreadGroup* rootTG) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, "AWT-Windows"_s);
 	$var($Thread, toolkitThread, $new($Thread, rootTG, this, name, 0, false));
 	toolkitThread->setDaemon(true);
@@ -2009,6 +2027,7 @@ $Void* WToolkit::lambda$new$0($ThreadGroup* rootTG) {
 }
 
 void clinit$WToolkit($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(WToolkit::XPSTYLE_THEME_ACTIVE, "win.xpstyle.themeActive"_s);
 	$assignStatic(WToolkit::prefix, "DnD.Cursor."_s);
 	$assignStatic(WToolkit::postfix, ".32x32"_s);

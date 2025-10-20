@@ -114,6 +114,7 @@ void TestDialog4bug4644444$RemarksDialog::finalize() {
 }
 
 void TestDialog4bug4644444$RemarksDialog::init$($TestDialog4bug4644444* this$0, $Dialog* owner, $String* title, bool modal) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$Dialog::init$(owner, title, modal);
 	$set(this, rootPanel, $new($Panel, $$new($BorderLayout)));
@@ -133,6 +134,7 @@ void TestDialog4bug4644444$RemarksDialog::init$($TestDialog4bug4644444* this$0, 
 }
 
 void TestDialog4bug4644444$RemarksDialog::actionPerformed($ActionEvent* ae) {
+	$useLocalCurrentObjectStackCache();
 	$set(this->this$0, remarksMessage, nullptr);
 	if ($equals($nc(ae)->getSource(), this->addRemarks)) {
 		$var($String, msg, $nc($($nc(this->textarea)->getText()))->trim());

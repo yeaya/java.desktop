@@ -272,6 +272,7 @@ void SynthComboBoxUI::installDefaults() {
 }
 
 void SynthComboBoxUI::updateStyle($JComboBox* comboBox) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthStyle, oldStyle, this->style);
 	$var($SynthContext, context, getContext(comboBox, $SynthConstants::ENABLED));
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -332,6 +333,7 @@ $SynthContext* SynthComboBoxUI::getContext($JComponent* c, int32_t state) {
 }
 
 int32_t SynthComboBoxUI::getComponentState($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($JComboBox, c))) {
 		return $SynthLookAndFeel::getComponentState(c);
 	}
@@ -389,6 +391,7 @@ $JButton* SynthComboBoxUI::createArrowButton() {
 }
 
 void SynthComboBoxUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -417,6 +420,7 @@ void SynthComboBoxUI::paintBorder($SynthContext* context, $Graphics* g, int32_t 
 }
 
 void SynthComboBoxUI::paintCurrentValue($Graphics* g, $Rectangle* bounds, bool hasFocus) {
+	$useLocalCurrentObjectStackCache();
 	$var($ListCellRenderer, renderer, $nc(this->comboBox)->getRenderer());
 	$var($Component, c, nullptr);
 	$assign(c, $nc(renderer)->getListCellRendererComponent(this->listBox, $($nc(this->comboBox)->getSelectedItem()), -1, false, false));
@@ -452,6 +456,7 @@ bool SynthComboBoxUI::shouldActLikeButton() {
 }
 
 $Dimension* SynthComboBoxUI::getDefaultSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthComboBoxUI$SynthComboBoxRenderer, r, $new($SynthComboBoxUI$SynthComboBoxRenderer, this));
 	$var($Dimension, d, getSizeForComponent($(r->getListCellRendererComponent(this->listBox, " "_s, -1, false, false))));
 	return $new($Dimension, $nc(d)->width, d->height);

@@ -194,6 +194,7 @@ void SelectAllFilesFilterTest::init$() {
 
 void SelectAllFilesFilterTest::main($StringArray* args) {
 	$init(SelectAllFilesFilterTest);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeLater(static_cast<$Runnable*>($$new(SelectAllFilesFilterTest$$Lambda$createAndShowGUI)));
 	while (SelectAllFilesFilterTest::fileChooser == nullptr) {
 		$Thread::sleep(100);
@@ -207,6 +208,7 @@ void SelectAllFilesFilterTest::main($StringArray* args) {
 
 void SelectAllFilesFilterTest::createAndShowGUI() {
 	$init(SelectAllFilesFilterTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(SelectAllFilesFilterTest::fileChooser, $new($JFileChooser));
 	$nc(SelectAllFilesFilterTest::fileChooser)->setAcceptAllFileFilterUsed(true);
 	$nc(SelectAllFilesFilterTest::fileChooser)->setDialogType($JFileChooser::OPEN_DIALOG);
@@ -218,6 +220,7 @@ void SelectAllFilesFilterTest::createAndShowGUI() {
 
 $JComboBox* SelectAllFilesFilterTest::findComboBox($Component* comp) {
 	$init(SelectAllFilesFilterTest);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JLabel, comp)) {
 		$var($JLabel, label, $cast($JLabel, comp));
 		if ($nc(SelectAllFilesFilterTest::LABEL_TEXT)->equals($($nc(label)->getText()))) {

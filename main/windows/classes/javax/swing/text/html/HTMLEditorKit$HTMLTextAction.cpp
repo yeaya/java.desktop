@@ -106,6 +106,7 @@ $ElementArray* HTMLEditorKit$HTMLTextAction::getElementsAt($HTMLDocument* doc, i
 }
 
 $ElementArray* HTMLEditorKit$HTMLTextAction::getElementsAt($Element* parent, int32_t offset, int32_t depth) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(parent)->isLeaf()) {
 		$var($ElementArray, retValue, $new($ElementArray, depth + 1));
 		retValue->set(depth, parent);
@@ -117,6 +118,7 @@ $ElementArray* HTMLEditorKit$HTMLTextAction::getElementsAt($Element* parent, int
 }
 
 int32_t HTMLEditorKit$HTMLTextAction::elementCountToTag($HTMLDocument* doc, int32_t offset, $HTML$Tag* tag) {
+	$useLocalCurrentObjectStackCache();
 	int32_t depth = -1;
 	$var($Element, e, $nc(doc)->getCharacterElement(offset));
 	$init($StyleConstants);
@@ -131,6 +133,7 @@ int32_t HTMLEditorKit$HTMLTextAction::elementCountToTag($HTMLDocument* doc, int3
 }
 
 $Element* HTMLEditorKit$HTMLTextAction::findElementMatchingTag($HTMLDocument* doc, int32_t offset, $HTML$Tag* tag) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, e, $nc(doc)->getDefaultRootElement());
 	$var($Element, lastMatch, nullptr);
 	while (e != nullptr) {

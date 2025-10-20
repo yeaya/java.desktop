@@ -326,6 +326,7 @@ $TableCellRenderer* JTableHeader::getDefaultRenderer() {
 }
 
 int32_t JTableHeader::columnAtPoint($Point* point) {
+	$useLocalCurrentObjectStackCache();
 	int32_t x = $nc(point)->x;
 	if (!$nc($(getComponentOrientation()))->isLeftToRight()) {
 		x = getWidthInRightToLeft() - x - 1;
@@ -334,6 +335,7 @@ int32_t JTableHeader::columnAtPoint($Point* point) {
 }
 
 $Rectangle* JTableHeader::getHeaderRect(int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, r, $new($Rectangle));
 	$var($TableColumnModel, cm, getColumnModel());
 	r->height = getHeight();
@@ -359,6 +361,7 @@ $Rectangle* JTableHeader::getHeaderRect(int32_t column) {
 }
 
 $String* JTableHeader::getToolTipText($MouseEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, tip, nullptr);
 	$var($Point, p, $nc(event)->getPoint());
 	int32_t column = 0;
@@ -396,6 +399,7 @@ $String* JTableHeader::getToolTipText($MouseEvent* event) {
 }
 
 $Dimension* JTableHeader::getPreferredSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, preferredSize, $JComponent::getPreferredSize());
 	if (isPreferredSizeSet() && this->ui != nullptr) {
 		$var($Dimension, size, $nc(this->ui)->getPreferredSize(this));
@@ -418,6 +422,7 @@ void JTableHeader::setUI($TableHeaderUI* ui) {
 }
 
 void JTableHeader::updateUI() {
+	$useLocalCurrentObjectStackCache();
 	if (!this->updateInProgress) {
 		this->updateInProgress = true;
 		{
@@ -492,6 +497,7 @@ $TableCellRenderer* JTableHeader::createDefaultRenderer() {
 }
 
 void JTableHeader::initializeLocalVars() {
+	$useLocalCurrentObjectStackCache();
 	setOpaque(true);
 	$set(this, table, nullptr);
 	this->reorderingAllowed = true;
@@ -537,6 +543,7 @@ int32_t JTableHeader::getWidthInRightToLeft() {
 }
 
 $String* JTableHeader::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, reorderingAllowedString, this->reorderingAllowed ? "true"_s : "false"_s);
 	$var($String, resizingAllowedString, this->resizingAllowed ? "true"_s : "false"_s);
 	$var($String, updateTableInRealTimeString, this->updateTableInRealTime ? "true"_s : "false"_s);

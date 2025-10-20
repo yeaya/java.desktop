@@ -171,6 +171,7 @@ void GraphicComponent::init$($GraphicAttribute* graphic, $Decoration* decorator,
 }
 
 void GraphicComponent::init$(GraphicComponent* parent, int32_t start, int32_t limit, int32_t dir) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, visualBounds, nullptr);
 	$set(this, graphic, $nc(parent)->graphic);
 	this->graphicAdvance = parent->graphicAdvance;
@@ -269,6 +270,7 @@ $Rectangle2D* GraphicComponent::getVisualBounds() {
 }
 
 $Shape* GraphicComponent::handleGetOutline(float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($doubles, matrix, $new($doubles, {
 		(double)1,
 		(double)0,
@@ -335,6 +337,7 @@ bool GraphicComponent::caretAtOffsetIsValid(int32_t index) {
 }
 
 $Rectangle2D* GraphicComponent::handleGetCharVisualBounds(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(this->graphic)->getBounds());
 	$var($Rectangle2D$Float, charBounds, $new($Rectangle2D$Float));
 	charBounds->setRect(bounds);
@@ -371,6 +374,7 @@ $Rectangle2D* GraphicComponent::getItalicBounds() {
 }
 
 $TextLineComponent* GraphicComponent::getSubset(int32_t start, int32_t limit, int32_t dir) {
+	$useLocalCurrentObjectStackCache();
 	if (start < 0 || limit > this->graphicCount || start >= limit) {
 		$throwNew($IllegalArgumentException, $$str({"Invalid range.  start="_s, $$str(start), "; limit="_s, $$str(limit)}));
 	}
@@ -381,6 +385,7 @@ $TextLineComponent* GraphicComponent::getSubset(int32_t start, int32_t limit, in
 }
 
 $String* GraphicComponent::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$1, $$str({"[graphic="_s, this->graphic, ":count="_s}));
 	$var($String, var$0, $$concat(var$1, $$str(getNumCharacters())));
 	return $concat(var$0, "]");

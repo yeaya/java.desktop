@@ -85,6 +85,7 @@ void UIDefaults$1::init$($Module* val$thisModule, $String* val$baseName) {
 }
 
 $Object* UIDefaults$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$Class* c = $Class::forName(this->val$thisModule, this->val$baseName);
 	if (c != nullptr) {

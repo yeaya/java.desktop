@@ -140,6 +140,7 @@ void WindowsIconFactory$FrameButtonIcon::init$($TMSchema$Part* part) {
 }
 
 void WindowsIconFactory$FrameButtonIcon::paintIcon($Component* c, $Graphics* g, int32_t x0, int32_t y0) {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = getIconWidth();
 	int32_t height = getIconHeight();
 	$var($XPStyle, xp, $XPStyle::getXP());

@@ -118,6 +118,7 @@ void bug6694823::init$() {
 
 void bug6694823::main($StringArray* args) {
 	$load(bug6694823);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$init(bug6694823);
 	$assignStatic(bug6694823::robot, $new($Robot));
@@ -133,6 +134,7 @@ void bug6694823::main($StringArray* args) {
 }
 
 void bug6694823::createGui() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6694823);
 	$assignStatic(bug6694823::frame, $new($JFrame));
 	$nc(bug6694823::frame)->setDefaultCloseOperation($JFrame::DISPOSE_ON_CLOSE);
@@ -148,6 +150,7 @@ void bug6694823::createGui() {
 }
 
 void bug6694823::checkPopup() {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($bug6694823$3));
 	$init(bug6694823);
 	$nc(bug6694823::robot)->waitForIdle();

@@ -319,6 +319,7 @@ int32_t NumericShaper$Range::toRangeMask($Set* ranges) {
 
 $Set* NumericShaper$Range::maskToRangeSet(int32_t mask) {
 	$init(NumericShaper$Range);
+	$useLocalCurrentObjectStackCache();
 	$var($Set, set, $EnumSet::noneOf(NumericShaper$Range::class$));
 	$var($NumericShaper$RangeArray, a, NumericShaper$Range::values());
 	for (int32_t i = 0; i < 19; ++i) {

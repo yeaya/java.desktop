@@ -240,6 +240,7 @@ $Class* DefaultFormatter::getValueClass() {
 }
 
 $Object* DefaultFormatter::stringToValue($String* string) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$Class* vc = getValueClass();
 	$var($JFormattedTextField, ftf, getFormattedTextField());
@@ -322,6 +323,7 @@ bool DefaultFormatter::isLegalInsertText($String* text) {
 }
 
 int32_t DefaultFormatter::getNextNavigatableChar(int32_t offset, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	int32_t max = $nc($($nc($(getFormattedTextField()))->getDocument()))->getLength();
 	while (offset >= 0 && offset < max) {
 		if (isNavigatable(offset)) {
@@ -333,6 +335,7 @@ int32_t DefaultFormatter::getNextNavigatableChar(int32_t offset, int32_t directi
 }
 
 $String* DefaultFormatter::getReplaceString(int32_t offset, int32_t deleteLength, $String* replaceString) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, string, $nc($(getFormattedTextField()))->getText());
 	$var($String, result, nullptr);
 	$assign(result, $nc(string)->substring(0, offset));
@@ -346,6 +349,7 @@ $String* DefaultFormatter::getReplaceString(int32_t offset, int32_t deleteLength
 }
 
 bool DefaultFormatter::isValidEdit($DefaultFormatter$ReplaceHolder* rh) {
+	$useLocalCurrentObjectStackCache();
 	if (!getAllowsInvalid()) {
 		$var($String, newString, getReplaceString($nc(rh)->offset, rh->length, rh->text));
 		try {
@@ -371,6 +375,7 @@ void DefaultFormatter::updateValue() {
 }
 
 void DefaultFormatter::updateValue(Object$* value$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, value$renamed);
 	try {
 		if (value == nullptr) {
@@ -388,6 +393,7 @@ void DefaultFormatter::updateValue(Object$* value$renamed) {
 }
 
 int32_t DefaultFormatter::getNextCursorPosition(int32_t offset, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	int32_t newOffset = getNextNavigatableChar(offset, direction);
 	int32_t max = $nc($($nc($(getFormattedTextField()))->getDocument()))->getLength();
 	if (!getAllowsInvalid()) {
@@ -407,10 +413,12 @@ int32_t DefaultFormatter::getNextCursorPosition(int32_t offset, int32_t directio
 }
 
 void DefaultFormatter::repositionCursor(int32_t offset, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc($(getFormattedTextField()))->getCaret()))->setDot(getNextCursorPosition(offset, direction));
 }
 
 int32_t DefaultFormatter::getNextVisualPositionFrom($JTextComponent* text, int32_t pos, $Position$Bias* bias, int32_t direction, $Position$BiasArray* biasRet) {
+	$useLocalCurrentObjectStackCache();
 	int32_t value = $nc($($cast($TextUI, $nc(text)->getUI())))->getNextVisualPositionFrom(text, pos, bias, direction, biasRet);
 	if (value == -1) {
 		return -1;
@@ -448,6 +456,7 @@ void DefaultFormatter::replace($DocumentFilter$FilterBypass* fb, int32_t offset,
 }
 
 bool DefaultFormatter::replace($DefaultFormatter$ReplaceHolder* rh) {
+	$useLocalCurrentObjectStackCache();
 	bool valid = true;
 	int32_t direction = 1;
 	bool var$0 = $nc(rh)->length > 0 && (rh->text == nullptr || $nc($nc(rh)->text)->length() == 0);

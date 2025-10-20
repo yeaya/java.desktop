@@ -105,6 +105,7 @@ $Object* allocate$NimbusDefaults$LazyStyle($Class* clazz) {
 }
 
 void NimbusDefaults$LazyStyle::init$($NimbusDefaults* this$0, $String* prefix) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	this->simple = true;
 	if (prefix == nullptr) {
@@ -128,6 +129,7 @@ void NimbusDefaults$LazyStyle::init$($NimbusDefaults* this$0, $String* prefix) {
 }
 
 $SynthStyle* NimbusDefaults$LazyStyle::getStyle($JComponent* c, $Region* r) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(c)->getClientProperty("Nimbus.Overrides"_s) != nullptr) {
 		$var($Map, map, $cast($Map, $nc(this->this$0->overridesCache)->get(c)));
 		$var($SynthStyle, s, nullptr);
@@ -154,6 +156,7 @@ bool NimbusDefaults$LazyStyle::matches($JComponent* c) {
 }
 
 bool NimbusDefaults$LazyStyle::matches($Component* c, int32_t partIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (partIndex < 0) {
 		return true;
 	}
@@ -181,6 +184,7 @@ bool NimbusDefaults$LazyStyle::matches($Component* c, int32_t partIndex) {
 }
 
 $List* NimbusDefaults$LazyStyle::split($String* prefix) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, parts, $new($ArrayList));
 	int32_t bracketCount = 0;
 	bool inquotes = false;

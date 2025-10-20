@@ -53,6 +53,7 @@ void AccessibleResourceBundle::init$() {
 }
 
 $ObjectArray2* AccessibleResourceBundle::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("alert"_s),

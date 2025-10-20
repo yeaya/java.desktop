@@ -100,6 +100,7 @@ void BasicInternalFrameTitlePane$SystemMenuBar::requestFocus() {
 }
 
 void BasicInternalFrameTitlePane$SystemMenuBar::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, icon, $nc(this->this$0->frame)->getFrameIcon());
 	if (icon == nullptr) {
 		$assign(icon, $cast($Icon, $DefaultLookup::get(this->this$0->frame, $($nc(this->this$0->frame)->getUI()), "InternalFrame.icon"_s)));

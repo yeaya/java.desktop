@@ -84,6 +84,7 @@ void bug7010561::init$() {
 
 void bug7010561::main($StringArray* args) {
 	$init(bug7010561);
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($SynthLookAndFeel)));
 	$SwingUtilities::invokeAndWait($$new($bug7010561$1));
 }

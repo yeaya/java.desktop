@@ -96,6 +96,7 @@ void MetalIconFactory$TreeComputerIcon::init$() {
 }
 
 void MetalIconFactory$TreeComputerIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->translate(x, y);
 	g->setColor($($MetalLookAndFeel::getPrimaryControl()));
 	g->fillRect(5, 4, 6, 4);

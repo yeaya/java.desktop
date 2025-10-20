@@ -113,6 +113,7 @@ $String* JPasswordField$AccessibleJPasswordField::getEchoString($String* str) {
 }
 
 $String* JPasswordField$AccessibleJPasswordField::getAtIndex(int32_t part, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (part == $AccessibleText::CHARACTER) {
 		return getEchoString($($JTextField$AccessibleJTextField::getAtIndex(part, index)));
 	} else {
@@ -148,6 +149,7 @@ $String* JPasswordField$AccessibleJPasswordField::getTextRange(int32_t startInde
 }
 
 $AccessibleTextSequence* JPasswordField$AccessibleJPasswordField::getTextSequenceAt(int32_t part, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (part == $AccessibleText::CHARACTER) {
 		$var($AccessibleTextSequence, seq, $JTextField$AccessibleJTextField::getTextSequenceAt(part, index));
 		if (seq == nullptr) {
@@ -167,6 +169,7 @@ $AccessibleTextSequence* JPasswordField$AccessibleJPasswordField::getTextSequenc
 }
 
 $AccessibleTextSequence* JPasswordField$AccessibleJPasswordField::getTextSequenceAfter(int32_t part, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (part == $AccessibleText::CHARACTER) {
 		$var($AccessibleTextSequence, seq, $JTextField$AccessibleJTextField::getTextSequenceAfter(part, index));
 		if (seq == nullptr) {
@@ -179,6 +182,7 @@ $AccessibleTextSequence* JPasswordField$AccessibleJPasswordField::getTextSequenc
 }
 
 $AccessibleTextSequence* JPasswordField$AccessibleJPasswordField::getTextSequenceBefore(int32_t part, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (part == $AccessibleText::CHARACTER) {
 		$var($AccessibleTextSequence, seq, $JTextField$AccessibleJTextField::getTextSequenceBefore(part, index));
 		if (seq == nullptr) {

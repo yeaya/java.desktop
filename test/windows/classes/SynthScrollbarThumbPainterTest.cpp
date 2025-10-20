@@ -146,6 +146,7 @@ void SynthScrollbarThumbPainterTest::init$() {
 
 void SynthScrollbarThumbPainterTest::main($StringArray* args) {
 	$init(SynthScrollbarThumbPainterTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(SynthScrollbarThumbPainterTest::testRobot, $new($Robot));
 	$var($String, lookAndFeelString, "javax.swing.plaf.nimbus.NimbusLookAndFeel"_s);
 	$SwingUtilities::invokeAndWait($$new($SynthScrollbarThumbPainterTest$1, lookAndFeelString));
@@ -162,6 +163,7 @@ void SynthScrollbarThumbPainterTest::disposeTestUI() {
 
 void SynthScrollbarThumbPainterTest::constructTestUI($String* lookAndFeelString) {
 	$init(SynthScrollbarThumbPainterTest);
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(lookAndFeelString);
 	$init($Color);
 	$nc($($UIManager::getLookAndFeelDefaults()))->put("ScrollBar:ScrollBarThumb[Enabled].backgroundPainter"_s, $$new($FillPainter, $Color::RED));
@@ -172,6 +174,7 @@ void SynthScrollbarThumbPainterTest::constructTestUI($String* lookAndFeelString)
 
 void SynthScrollbarThumbPainterTest::testScrollBarThumbPainter() {
 	$init(SynthScrollbarThumbPainterTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, $nc(SynthScrollbarThumbPainterTest::testFrame)->getLocation());
 	$nc(SynthScrollbarThumbPainterTest::pos)->setLocation($nc(p)->x + 185, p->y + 80);
 	$nc(SynthScrollbarThumbPainterTest::testRobot)->delay(200);

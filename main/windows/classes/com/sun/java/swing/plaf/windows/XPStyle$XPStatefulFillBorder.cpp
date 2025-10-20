@@ -98,6 +98,7 @@ void XPStyle$XPStatefulFillBorder::init$($XPStyle* this$0, $Color* color, int32_
 }
 
 void XPStyle$XPStatefulFillBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$init($TMSchema$State);
 	$TMSchema$State* state = $TMSchema$State::NORMAL;
 	if ($instanceOf($JComboBox, c)) {

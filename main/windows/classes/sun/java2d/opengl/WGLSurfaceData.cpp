@@ -144,6 +144,7 @@ $GraphicsConfiguration* WGLSurfaceData::getDeviceConfiguration() {
 
 $WGLSurfaceData$WGLWindowSurfaceData* WGLSurfaceData::createData($WComponentPeer* peer) {
 	$init(WGLSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = !$nc(peer)->isAccelCapable();
 	if (var$0 || !$SunToolkit::isContainingTopLevelOpaque($cast($Component, $($nc(peer)->getTarget())))) {
 		return nullptr;
@@ -154,6 +155,7 @@ $WGLSurfaceData$WGLWindowSurfaceData* WGLSurfaceData::createData($WComponentPeer
 
 $WGLSurfaceData$WGLOffScreenSurfaceData* WGLSurfaceData::createData($WComponentPeer* peer, $Image* image, int32_t type) {
 	$init(WGLSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = !$nc(peer)->isAccelCapable();
 	if (var$0 || !$SunToolkit::isContainingTopLevelOpaque($cast($Component, $($nc(peer)->getTarget())))) {
 		return nullptr;
@@ -174,6 +176,7 @@ $WGLSurfaceData$WGLOffScreenSurfaceData* WGLSurfaceData::createData($WGLGraphics
 
 $WGLGraphicsConfig* WGLSurfaceData::getGC($WComponentPeer* peer) {
 	$init(WGLSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	if (peer != nullptr) {
 		return $cast($WGLGraphicsConfig, peer->getGraphicsConfiguration());
 	} else {

@@ -82,6 +82,7 @@ void DefaultMutableTreeNode$BreadthFirstEnumeration$Queue::enqueue(Object$* anOb
 }
 
 $Object* DefaultMutableTreeNode$BreadthFirstEnumeration$Queue::dequeue() {
+	$useLocalCurrentObjectStackCache();
 	if (this->head == nullptr) {
 		$throwNew($NoSuchElementException, "No more elements"_s);
 	}

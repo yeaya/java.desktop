@@ -372,6 +372,7 @@ $Robot* bug4870644::robot = nullptr;
 bool bug4870644::passed = false;
 
 void bug4870644::blockTillDisplayed($JComponent* comp) {
+	$useLocalCurrentObjectStackCache();
 	while (this->p == nullptr) {
 		try {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4870644$$Lambda$lambda$blockTillDisplayed$0, this, comp)));
@@ -388,6 +389,7 @@ void bug4870644::blockTillDisplayed($JComponent* comp) {
 
 void bug4870644::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(bug4870644);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 		$init($System);
@@ -409,6 +411,7 @@ void bug4870644::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 
 void bug4870644::main($StringArray* args) {
 	$init(bug4870644);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug4870644::robot, $new($Robot));
 	$nc(bug4870644::robot)->setAutoDelay(100);
 	{
@@ -434,6 +437,7 @@ void bug4870644::main($StringArray* args) {
 }
 
 void bug4870644::init$() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, p, nullptr);
 	$set(this, d, nullptr);
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4870644$$Lambda$lambda$new$2$2, this)));
@@ -474,6 +478,7 @@ void bug4870644::lambda$new$3() {
 }
 
 void bug4870644::lambda$new$2() {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuBar, menuBar, $new($JMenuBar));
 	$set(this, menu, $new($JMenu, "Menu"_s));
 	menuBar->add(this->menu);

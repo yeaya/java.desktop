@@ -71,6 +71,7 @@ void DefaultEditorKit$EndAction::init$($String* nm, bool select) {
 }
 
 void DefaultEditorKit$EndAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getTextComponent(e));
 	if (target != nullptr) {
 		$var($Document, doc, target->getDocument());

@@ -101,6 +101,7 @@ void Test6910490::init$() {
 }
 
 void Test6910490::init() {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, $new($Insets, 10, 10, 10, 10));
 	int32_t var$0 = getWidth() / 2;
 	$var($Dimension, size, $new($Dimension, var$0, getHeight()));

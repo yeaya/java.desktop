@@ -122,6 +122,7 @@ $String* TIFFTag::UNKNOWN_TAG_NAME = nullptr;
 $ints* TIFFTag::SIZE_OF_TYPE = nullptr;
 
 void TIFFTag::init$($String* name, int32_t number, int32_t dataTypes, int32_t count) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, tagSet, nullptr);
 	$set(this, valueNames, nullptr);
 	if (name == nullptr) {
@@ -207,6 +208,7 @@ $String* TIFFTag::getValueName(int32_t value) {
 }
 
 $ints* TIFFTag::getNamedValues() {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, intValues, nullptr);
 	if (this->valueNames != nullptr) {
 		$var($Set, values, $nc(this->valueNames)->keySet());

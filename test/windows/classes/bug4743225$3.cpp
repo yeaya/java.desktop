@@ -63,6 +63,7 @@ void bug4743225$3::init$() {
 }
 
 void bug4743225$3::run() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc($($bug4743225::getPopup()))->getList()))->getLastVisibleIndex() == 3) {
 		$init($bug4743225);
 		$bug4743225::flag = true;

@@ -91,6 +91,7 @@ void HTMLDocument$LeafIterator::init$($HTML$Tag* t, $Document* doc) {
 }
 
 $AttributeSet* HTMLDocument$LeafIterator::getAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, $nc(this->pos)->current());
 	if (elem != nullptr) {
 		$var($AttributeSet, a, $cast($AttributeSet, $nc($(elem->getAttributes()))->getAttribute(this->tag)));
@@ -115,6 +116,7 @@ int32_t HTMLDocument$LeafIterator::getEndOffset() {
 }
 
 void HTMLDocument$LeafIterator::next() {
+	$useLocalCurrentObjectStackCache();
 	for (nextLeaf(this->pos); isValid(); nextLeaf(this->pos)) {
 		$var($Element, elem, $nc(this->pos)->current());
 		if ($nc(elem)->getStartOffset() >= this->endOffset) {
@@ -138,6 +140,7 @@ bool HTMLDocument$LeafIterator::isValid() {
 }
 
 void HTMLDocument$LeafIterator::nextLeaf($ElementIterator* iter) {
+	$useLocalCurrentObjectStackCache();
 	for ($nc(iter)->next(); iter->current() != nullptr; iter->next()) {
 		$var($Element, e, iter->current());
 		if ($nc(e)->isLeaf()) {
@@ -147,6 +150,7 @@ void HTMLDocument$LeafIterator::nextLeaf($ElementIterator* iter) {
 }
 
 void HTMLDocument$LeafIterator::setEndOffset() {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, a0, getAttributes());
 	this->endOffset = $nc($($nc(this->pos)->current()))->getEndOffset();
 	$var($ElementIterator, fwd, $cast($ElementIterator, $nc(this->pos)->clone()));

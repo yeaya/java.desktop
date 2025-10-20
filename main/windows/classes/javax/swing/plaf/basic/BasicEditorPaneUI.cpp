@@ -159,6 +159,7 @@ $String* BasicEditorPaneUI::getPropertyPrefix() {
 }
 
 void BasicEditorPaneUI::installUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$BasicTextUI::installUI(c);
 	$var($Font, var$0, $nc(c)->getFont());
 	updateDisplayProperties(var$0, $(c->getForeground()));
@@ -175,6 +176,7 @@ $EditorKit* BasicEditorPaneUI::getEditorKit($JTextComponent* tc) {
 }
 
 $ActionMap* BasicEditorPaneUI::getActionMap() {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, am, $new($ActionMapUIResource));
 	am->put("requestFocus"_s, $$new($BasicTextUI$FocusAction, this));
 	$var($EditorKit, editorKit, getEditorKit($(getComponent())));
@@ -195,6 +197,7 @@ $ActionMap* BasicEditorPaneUI::getActionMap() {
 }
 
 void BasicEditorPaneUI::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$BasicTextUI::propertyChange(evt);
 	$var($String, name, $nc(evt)->getPropertyName());
 	if ("editorKit"_s->equals(name)) {
@@ -247,6 +250,7 @@ void BasicEditorPaneUI::propertyChange($PropertyChangeEvent* evt) {
 }
 
 void BasicEditorPaneUI::removeActions($ActionMap* map, $ActionArray* actions) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = $nc(actions)->length;
 	for (int32_t i = 0; i < n; ++i) {
 		$var($Action, a, actions->get(i));
@@ -256,6 +260,7 @@ void BasicEditorPaneUI::removeActions($ActionMap* map, $ActionArray* actions) {
 }
 
 void BasicEditorPaneUI::addActions($ActionMap* map, $ActionArray* actions) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = $nc(actions)->length;
 	for (int32_t i = 0; i < n; ++i) {
 		$var($Action, a, actions->get(i));
@@ -265,6 +270,7 @@ void BasicEditorPaneUI::addActions($ActionMap* map, $ActionArray* actions) {
 }
 
 void BasicEditorPaneUI::updateDisplayProperties($Font* font, $Color* fg) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, c, getComponent());
 	$init($JEditorPane);
 	$var($Object, honorDisplayPropertiesObject, $nc(c)->getClientProperty($JEditorPane::HONOR_DISPLAY_PROPERTIES));
@@ -305,6 +311,7 @@ void BasicEditorPaneUI::updateDisplayProperties($Font* font, $Color* fg) {
 }
 
 void BasicEditorPaneUI::cleanDisplayProperties() {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, document, $nc($(getComponent()))->getDocument());
 	if ($instanceOf($HTMLDocument, document)) {
 		$var($StyleSheet, documentStyleSheet, $nc(($cast($HTMLDocument, document)))->getStyleSheet());
@@ -335,6 +342,7 @@ void BasicEditorPaneUI::cleanDisplayProperties() {
 }
 
 void BasicEditorPaneUI::updateCSS($Font* font, $Color* fg) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, component, getComponent());
 	$var($Document, document, $nc(component)->getDocument());
 	if ($instanceOf($HTMLDocument, document)) {
@@ -374,6 +382,7 @@ void BasicEditorPaneUI::updateStyle($Font* font, $Color* fg) {
 }
 
 void BasicEditorPaneUI::updateForeground($Color* color) {
+	$useLocalCurrentObjectStackCache();
 	$var($StyledDocument, doc, $cast($StyledDocument, $nc($(getComponent()))->getDocument()));
 	$init($StyleContext);
 	$var($Style, style, $nc(doc)->getStyle($StyleContext::DEFAULT_STYLE));
@@ -391,6 +400,7 @@ void BasicEditorPaneUI::updateForeground($Color* color) {
 }
 
 void BasicEditorPaneUI::updateFont($Font* font) {
+	$useLocalCurrentObjectStackCache();
 	$var($StyledDocument, doc, $cast($StyledDocument, $nc($(getComponent()))->getDocument()));
 	$init($StyleContext);
 	$var($Style, style, $nc(doc)->getStyle($StyleContext::DEFAULT_STYLE));

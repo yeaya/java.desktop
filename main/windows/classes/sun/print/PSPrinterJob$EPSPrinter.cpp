@@ -108,6 +108,7 @@ void PSPrinterJob$EPSPrinter::init$($Printable* printable, $String* title, $Prin
 }
 
 void PSPrinterJob$EPSPrinter::print() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->stream)->println("%!PS-Adobe-3.0 EPSF-3.0"_s);
 	$nc(this->stream)->println($$str({"%%BoundingBox: "_s, $$str(this->llx), " "_s, $$str(this->lly), " "_s, $$str(this->urx), " "_s, $$str(this->ury)}));
 	$nc(this->stream)->println($$str({"%%Title: "_s, this->epsTitle}));

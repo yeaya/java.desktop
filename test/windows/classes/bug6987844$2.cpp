@@ -69,6 +69,7 @@ void bug6987844$2::init$() {
 }
 
 void bug6987844$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6987844);
 	$var($Dimension, popupSize1, $nc($($nc($bug6987844::menu1)->getPopupMenu()))->getSize());
 	$var($Dimension, popupSize2, $nc($($nc($bug6987844::menu2)->getPopupMenu()))->getSize());

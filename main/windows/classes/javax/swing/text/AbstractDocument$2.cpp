@@ -78,6 +78,7 @@ void AbstractDocument$2::init$($AbstractDocument* this$0) {
 }
 
 void AbstractDocument$2::validateObject() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

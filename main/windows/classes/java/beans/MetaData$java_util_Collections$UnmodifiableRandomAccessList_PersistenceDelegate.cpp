@@ -70,6 +70,7 @@ void MetaData$java_util_Collections$UnmodifiableRandomAccessList_PersistenceDele
 }
 
 $Expression* MetaData$java_util_Collections$UnmodifiableRandomAccessList_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, list, $new($ArrayList, $cast($Collection, oldInstance)));
 	$load($Collections);
 	return $new($Expression, oldInstance, $Collections::class$, "unmodifiableList"_s, $$new($ObjectArray, {$of(list)}));

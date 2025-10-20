@@ -185,6 +185,7 @@ void BasicListUI$Handler::init$($BasicListUI* this$0) {
 }
 
 void BasicListUI$Handler::keyTyped($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JList, src, $cast($JList, $nc(e)->getSource()));
 	$var($ListModel, model, $nc(src)->getModel());
 	bool var$2 = $nc(model)->getSize() == 0;
@@ -241,6 +242,7 @@ void BasicListUI$Handler::keyReleased($KeyEvent* e) {
 }
 
 bool BasicListUI$Handler::isNavigationKey($KeyEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMap, inputMap, $nc(this->this$0->list)->getInputMap($JComponent::WHEN_ANCESTOR_OF_FOCUSED_COMPONENT));
 	$var($KeyStroke, key, $KeyStroke::getKeyStrokeForEvent(event));
 	if (inputMap != nullptr && inputMap->get(key) != nullptr) {
@@ -250,6 +252,7 @@ bool BasicListUI$Handler::isNavigationKey($KeyEvent* event) {
 }
 
 void BasicListUI$Handler::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propertyName, $nc(e)->getPropertyName());
 	if (propertyName == "model"_s) {
 		$var($ListModel, oldModel, $cast($ListModel, e->getOldValue()));
@@ -361,6 +364,7 @@ void BasicListUI$Handler::contentsChanged($ListDataEvent* e) {
 }
 
 void BasicListUI$Handler::valueChanged($ListSelectionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	this->this$0->maybeUpdateLayoutState();
 	int32_t size = $nc($($nc(this->this$0->list)->getModel()))->getSize();
 	int32_t firstIndex = $Math::min(size - 1, $Math::max($nc(e)->getFirstIndex(), 0));
@@ -412,6 +416,7 @@ void BasicListUI$Handler::mousePressed($MouseEvent* e) {
 }
 
 void BasicListUI$Handler::adjustSelection($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t row = $SwingUtilities2::loc2IndexFileList(this->this$0->list, $($nc(e)->getPoint()));
 	if (row < 0) {
 		bool var$0 = this->this$0->isFileList && $nc(e)->getID() == $MouseEvent::MOUSE_PRESSED;
@@ -463,6 +468,7 @@ void BasicListUI$Handler::dragStarting($MouseEvent* me) {
 }
 
 void BasicListUI$Handler::mouseDragged($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($SwingUtilities2::shouldIgnore(e, this->this$0->list)) {
 		return;
 	}

@@ -71,6 +71,7 @@ void D3DGeneralBlit::init$($SurfaceType* dstType, $CompositeType* compType, $Bli
 
 void D3DGeneralBlit::Blit$($SurfaceData* src$renamed, $SurfaceData* dst, $Composite* comp, $Region* clip, int32_t sx, int32_t sy, int32_t dx, int32_t dy, int32_t w, int32_t h) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($SurfaceData, src, src$renamed);
 		$init($CompositeType);
 		$init($SurfaceType);

@@ -170,6 +170,7 @@ void DefaultSynthStyle::init$() {
 }
 
 void DefaultSynthStyle::init$(DefaultSynthStyle* style) {
+	$useLocalCurrentObjectStackCache();
 	$SynthStyle::init$();
 	this->opaque = $nc(style)->opaque;
 	if (style->insets != nullptr) {
@@ -199,12 +200,14 @@ void DefaultSynthStyle::init$($Insets* insets, bool opaque, $DefaultSynthStyle$S
 }
 
 $Color* DefaultSynthStyle::getColor($SynthContext* context, $ColorType* type) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, var$0, $nc(context)->getComponent());
 	$var($Region, var$1, context->getRegion());
 	return getColor(var$0, var$1, context->getComponentState(), type);
 }
 
 $Color* DefaultSynthStyle::getColor($JComponent* c, $Region* id, int32_t state, $ColorType* type) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(id)->isSubregion() && state == $SynthConstants::ENABLED) {
 		$init($ColorType);
 		if (type == $ColorType::BACKGROUND) {
@@ -237,12 +240,14 @@ $Color* DefaultSynthStyle::getColor($JComponent* c, $Region* id, int32_t state, 
 }
 
 $Color* DefaultSynthStyle::getColorForState($SynthContext* context, $ColorType* type) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, var$0, $nc(context)->getComponent());
 	$var($Region, var$1, context->getRegion());
 	return getColorForState(var$0, var$1, context->getComponentState(), type);
 }
 
 $Color* DefaultSynthStyle::getColorForState($JComponent* c, $Region* id, int32_t state, $ColorType* type) {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultSynthStyle$StateInfo, si, getStateInfo(state));
 	$var($Color, color, nullptr);
 	if (si != nullptr && ($assign(color, si->getColor(type))) != nullptr) {
@@ -262,6 +267,7 @@ void DefaultSynthStyle::setFont($Font* font) {
 }
 
 $Font* DefaultSynthStyle::getFont($SynthContext* state) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, var$0, $nc(state)->getComponent());
 	$var($Region, var$1, state->getRegion());
 	return getFont(var$0, var$1, state->getComponentState());
@@ -279,6 +285,7 @@ $Font* DefaultSynthStyle::getFont($JComponent* c, $Region* id, int32_t state) {
 }
 
 $Font* DefaultSynthStyle::getFontForState($JComponent* c, $Region* id, int32_t state) {
+	$useLocalCurrentObjectStackCache();
 	if (c == nullptr) {
 		return this->font;
 	}
@@ -297,6 +304,7 @@ $Font* DefaultSynthStyle::getFontForState($JComponent* c, $Region* id, int32_t s
 }
 
 $Font* DefaultSynthStyle::getFontForState($SynthContext* context) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, var$0, $nc(context)->getComponent());
 	$var($Region, var$1, context->getRegion());
 	return getFontForState(var$0, var$1, context->getComponentState());
@@ -358,6 +366,7 @@ $Map* DefaultSynthStyle::getData() {
 }
 
 $Object* DefaultSynthStyle::get($SynthContext* state, Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultSynthStyle$StateInfo, si, getStateInfo($nc(state)->getComponentState()));
 	bool var$0 = si != nullptr && si->getData() != nullptr;
 	if (var$0 && getKeyFromData($(si->getData()), key) != nullptr) {
@@ -409,6 +418,7 @@ $Object* DefaultSynthStyle::getDefaultValue($SynthContext* context, Object$* key
 }
 
 $Object* DefaultSynthStyle::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(DefaultSynthStyle, style, nullptr);
 	try {
 		$assign(style, $cast(DefaultSynthStyle, $SynthStyle::clone()));
@@ -430,6 +440,7 @@ $Object* DefaultSynthStyle::clone() {
 }
 
 DefaultSynthStyle* DefaultSynthStyle::addTo(DefaultSynthStyle* style) {
+	$useLocalCurrentObjectStackCache();
 	if (this->insets != nullptr) {
 		$set($nc(style), insets, this->insets);
 	}
@@ -549,6 +560,7 @@ $DefaultSynthStyle$StateInfo* DefaultSynthStyle::getStateInfo(int32_t state) {
 }
 
 $String* DefaultSynthStyle::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, $new($StringBuilder));
 	sb->append($($SynthStyle::toString()))->append(u',');
 	sb->append("data="_s)->append($of(this->data))->append(u',');

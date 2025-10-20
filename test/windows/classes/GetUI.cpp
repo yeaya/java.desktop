@@ -60,6 +60,7 @@ void GetUI::init$() {
 }
 
 void GetUI::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($GetUI$CustomJComponent, component, $new($GetUI$CustomJComponent));
 	$var($ComponentUI, ui, $new($GetUI$1));
 	component->setUI(ui);

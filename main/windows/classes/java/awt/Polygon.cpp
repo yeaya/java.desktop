@@ -350,6 +350,7 @@ bool Polygon::contains($Point2D* p) {
 }
 
 bool Polygon::intersects(double x, double y, double w, double h) {
+	$useLocalCurrentObjectStackCache();
 	if (this->npoints <= 0 || !$nc($(getBoundingBox()))->intersects(x, y, w, h)) {
 		return false;
 	}
@@ -365,6 +366,7 @@ bool Polygon::intersects($Rectangle2D* r) {
 }
 
 bool Polygon::contains(double x, double y, double w, double h) {
+	$useLocalCurrentObjectStackCache();
 	if (this->npoints <= 0 || !$nc($(getBoundingBox()))->intersects(x, y, w, h)) {
 		return false;
 	}

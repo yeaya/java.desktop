@@ -116,6 +116,7 @@ void MetalIconFactory$InternalFrameAltMaximizeIcon::init$(int32_t size) {
 }
 
 void MetalIconFactory$InternalFrameAltMaximizeIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($JButton, parentButton, $cast($JButton, c));
 	$var($ButtonModel, buttonModel, $nc(parentButton)->getModel());
 	$var($Color, backgroundColor, $MetalLookAndFeel::getPrimaryControl());

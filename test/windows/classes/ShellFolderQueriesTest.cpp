@@ -77,6 +77,7 @@ void ShellFolderQueriesTest::init$() {
 
 void ShellFolderQueriesTest::main($StringArray* args) {
 	$init(ShellFolderQueriesTest);
+	$useLocalCurrentObjectStackCache();
 	if ($($nc($($System::getProperty("os.name"_s)))->toLowerCase())->contains("windows"_s)) {
 		$init($System);
 		$nc($System::out)->println("Windows detected: will run shortcut test"_s);
@@ -91,6 +92,7 @@ void ShellFolderQueriesTest::main($StringArray* args) {
 
 void ShellFolderQueriesTest::testLink() {
 	$init(ShellFolderQueriesTest);
+	$useLocalCurrentObjectStackCache();
 	$var($File, file, createVbsScript($$str({ShellFolderQueriesTest::scriptBeg, ShellFolderQueriesTest::HOME, ShellFolderQueriesTest::scriptEnd})));
 	$var($String, var$0, $str({"cscript "_s, $($nc(file)->getName())}));
 	$nc($($nc($($Runtime::getRuntime()))->exec(var$0, ($StringArray*)nullptr, $(file->getParentFile()))))->waitFor();
@@ -125,6 +127,7 @@ void ShellFolderQueriesTest::testLink() {
 
 $File* ShellFolderQueriesTest::createVbsScript($String* script) {
 	$init(ShellFolderQueriesTest);
+	$useLocalCurrentObjectStackCache();
 	$var($File, file, $File::createTempFile("test"_s, ".vbs"_s));
 	$nc(file)->deleteOnExit();
 	$var($FileOutputStream, fos, $new($FileOutputStream, file));
@@ -135,6 +138,7 @@ $File* ShellFolderQueriesTest::createVbsScript($String* script) {
 
 void ShellFolderQueriesTest::testGet() {
 	$init(ShellFolderQueriesTest);
+	$useLocalCurrentObjectStackCache();
 	$var($FileArray, files, $nc(ShellFolderQueriesTest::fsv)->getChooserComboBoxFiles());
 	{
 		$var($FileArray, arr$, files);

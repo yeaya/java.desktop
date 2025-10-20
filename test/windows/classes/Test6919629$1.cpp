@@ -87,6 +87,7 @@ void Test6919629$1::init$($Test6919629* this$0) {
 }
 
 void Test6919629$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, d, $new($UIDefaults));
 	$init($Color);
 	d->put("Label.textForeground"_s, $Color::MAGENTA);

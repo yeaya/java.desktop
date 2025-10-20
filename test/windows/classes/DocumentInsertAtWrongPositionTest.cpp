@@ -57,6 +57,7 @@ void DocumentInsertAtWrongPositionTest::init$() {
 }
 
 void DocumentInsertAtWrongPositionTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextField, te, $new($JTextField, "1234567890"_s));
 	$var($JTextPane, tp, $new($JTextPane));
 	tp->setText("1234567890"_s);

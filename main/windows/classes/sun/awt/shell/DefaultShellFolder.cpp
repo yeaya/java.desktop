@@ -56,6 +56,7 @@ $Object* DefaultShellFolder::writeReplace() {
 }
 
 $FileArray* DefaultShellFolder::listFiles() {
+	$useLocalCurrentObjectStackCache();
 	$var($FileArray, files, $ShellFolder::listFiles());
 	if (files != nullptr) {
 		for (int32_t i = 0; i < files->length; ++i) {

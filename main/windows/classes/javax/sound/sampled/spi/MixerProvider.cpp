@@ -109,6 +109,7 @@ void MixerProvider::init$() {
 }
 
 bool MixerProvider::isMixerSupported($Mixer$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($Arrays::stream($(getMixerInfo()))))->anyMatch(static_cast<$Predicate*>($$new(MixerProvider$$Lambda$equals, static_cast<$Mixer$Info*>($nc(info)))));
 }
 

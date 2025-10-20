@@ -46,6 +46,7 @@ void TestNullLocale::init$() {
 }
 
 void TestNullLocale::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Locale, defaultLocale, $JComponent::getDefaultLocale());
 	$init($Locale);
 	$JComponent::setDefaultLocale($Locale::GERMAN);

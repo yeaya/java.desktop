@@ -85,6 +85,7 @@ $Object* allocate$TexturePaintContext$Byte($Class* clazz) {
 }
 
 void TexturePaintContext$Byte::init$($ByteInterleavedRaster* srcRas, $ColorModel* cm, $AffineTransform* xform, int32_t maxw) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, var$0, cm);
 	$var($AffineTransform, var$1, xform);
 	int32_t var$2 = $nc(srcRas)->getWidth();
@@ -96,6 +97,7 @@ void TexturePaintContext$Byte::init$($ByteInterleavedRaster* srcRas, $ColorModel
 }
 
 $WritableRaster* TexturePaintContext$Byte::makeRaster(int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($WritableRaster, ras, makeByteRaster(this->srcRas, w, h));
 	$var($ByteInterleavedRaster, biRas, $cast($ByteInterleavedRaster, ras));
 	$set(this, outData, $nc(biRas)->getDataStorage());
@@ -109,6 +111,7 @@ void TexturePaintContext$Byte::dispose() {
 }
 
 void TexturePaintContext$Byte::setRaster(int32_t x, int32_t y, int32_t xerr, int32_t yerr, int32_t w, int32_t h, int32_t bWidth, int32_t bHeight, int32_t colincx, int32_t colincxerr, int32_t colincy, int32_t colincyerr, int32_t rowincx, int32_t rowincxerr, int32_t rowincy, int32_t rowincyerr) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, inData, this->inData);
 	$var($bytes, outData, this->outData);
 	int32_t out = this->outOff;

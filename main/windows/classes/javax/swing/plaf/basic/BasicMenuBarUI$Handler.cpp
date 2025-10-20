@@ -109,6 +109,7 @@ void BasicMenuBarUI$Handler::init$($BasicMenuBarUI* this$0) {
 }
 
 void BasicMenuBarUI$Handler::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = 0;
 	int32_t c = 0;
 	for (i = 0, c = $nc(this->this$0->menuBar)->getMenuCount(); i < c; ++i) {
@@ -121,6 +122,7 @@ void BasicMenuBarUI$Handler::stateChanged($ChangeEvent* e) {
 }
 
 void BasicMenuBarUI$Handler::componentAdded($ContainerEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $nc(e)->getChild());
 	if ($instanceOf($JMenu, c)) {
 		$nc($($nc(($cast($JMenu, c)))->getModel()))->addChangeListener(this->this$0->changeListener);
@@ -128,6 +130,7 @@ void BasicMenuBarUI$Handler::componentAdded($ContainerEvent* e) {
 }
 
 void BasicMenuBarUI$Handler::componentRemoved($ContainerEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $nc(e)->getChild());
 	if ($instanceOf($JMenu, c)) {
 		$nc($($nc(($cast($JMenu, c)))->getModel()))->removeChangeListener(this->this$0->changeListener);

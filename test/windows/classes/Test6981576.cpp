@@ -291,6 +291,7 @@ $JFrame* Test6981576::frame = nullptr;
 
 void Test6981576::main($StringArray* args) {
 	$init(Test6981576);
+	$useLocalCurrentObjectStackCache();
 	$($Thread::currentThread())->setUncaughtExceptionHandler(static_cast<$Thread$UncaughtExceptionHandler*>($$new(Test6981576$$Lambda$lambda$main$0)));
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
@@ -321,6 +322,7 @@ void Test6981576::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y,
 
 void Test6981576::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(Test6981576);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 		$init($System);
@@ -353,6 +355,7 @@ void Test6981576::lambda$main$3() {
 
 void Test6981576::lambda$main$2() {
 	$init(Test6981576);
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, panel, $new($JPanel));
 	panel->setBorder($$new(Test6981576));
 	$assignStatic(Test6981576::frame, $new($JFrame, "Test6981576"_s));

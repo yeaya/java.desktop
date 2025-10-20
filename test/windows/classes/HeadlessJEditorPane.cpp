@@ -114,6 +114,7 @@ void HeadlessJEditorPane::init$() {
 }
 
 void HeadlessJEditorPane::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, b, nullptr);
 	$assign(b, $new($JEditorPane, "text/plain"_s, "The Text"_s));
 	$assign(b, $new($JEditorPane, "unknown/unknown"_s, "The Text"_s));

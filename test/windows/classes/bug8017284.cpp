@@ -196,6 +196,7 @@ void bug8017284::init$() {
 }
 
 void bug8017284::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug8017284$$Lambda$lambda$main$0)));
 	robot->waitForIdle();
@@ -214,6 +215,7 @@ void bug8017284::lambda$main$2() {
 }
 
 void bug8017284::lambda$main$1() {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t j = 0; j < bug8017284::ITERATIONS; ++j) {
 		for (int32_t i = 0; i < bug8017284::TAB_COUNT; ++i) {
 			$init(bug8017284);
@@ -223,6 +225,7 @@ void bug8017284::lambda$main$1() {
 }
 
 void bug8017284::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug8017284);
 	$assignStatic(bug8017284::frame, $new($JFrame));
 	$nc(bug8017284::frame)->setSize(500, 500);

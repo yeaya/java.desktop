@@ -95,6 +95,7 @@ void BasicSplitPaneDivider$2::setBorder($Border* border) {
 }
 
 void BasicSplitPaneDivider$2::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->splitPane != nullptr) {
 		$var($ints, xs, $new($ints, 3));
 		$var($ints, ys, $new($ints, 3));

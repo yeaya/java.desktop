@@ -224,6 +224,7 @@ $Object* MaskFormatter::stringToValue($String* value) {
 }
 
 $String* MaskFormatter::valueToString(Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, sValue, (value == nullptr) ? ""_s : $nc($of(value))->toString());
 	$var($StringBuilder, result, $new($StringBuilder));
 	$var($String, placeholder, getPlaceholder());
@@ -233,6 +234,7 @@ $String* MaskFormatter::valueToString(Object$* value) {
 }
 
 void MaskFormatter::install($JFormattedTextField* ftf) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultFormatter::install(ftf);
 	if (ftf != nullptr) {
 		$var($Object, value, ftf->getValue());
@@ -287,6 +289,7 @@ void MaskFormatter::append($StringBuilder* result, $String* value, $ints* index,
 }
 
 void MaskFormatter::updateInternalMask() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, mask, getMask());
 	$var($ArrayList, fixed, $new($ArrayList));
 	$var($ArrayList, temp, fixed);
@@ -389,6 +392,7 @@ char16_t MaskFormatter::getCharacter(int32_t index, char16_t aChar) {
 }
 
 $String* MaskFormatter::stripLiteralChars($String* string) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, nullptr);
 	int32_t last = 0;
 	{
@@ -444,6 +448,7 @@ bool MaskFormatter::isNavigatable(int32_t offset) {
 }
 
 bool MaskFormatter::isValidEdit($DefaultFormatter$ReplaceHolder* rh) {
+	$useLocalCurrentObjectStackCache();
 	if (!getAllowsInvalid()) {
 		$var($String, newString, getReplaceString($nc(rh)->offset, rh->length, rh->text));
 		try {
@@ -458,6 +463,7 @@ bool MaskFormatter::isValidEdit($DefaultFormatter$ReplaceHolder* rh) {
 }
 
 bool MaskFormatter::canReplace($DefaultFormatter$ReplaceHolder* rh) {
+	$useLocalCurrentObjectStackCache();
 	if (!getAllowsInvalid()) {
 		$var($StringBuilder, replace, nullptr);
 		$var($String, text, $nc(rh)->text);

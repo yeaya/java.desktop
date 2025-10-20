@@ -150,6 +150,7 @@ void SubRegistry::init$($ServiceRegistry* registry, $Class* category) {
 
 bool SubRegistry::registerServiceProvider(Object$* provider) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Object, oprovider, $nc(this->map)->get($nc($of(provider))->getClass()));
 		bool present = oprovider != nullptr;
 		if (present) {
@@ -176,6 +177,7 @@ bool SubRegistry::registerServiceProvider(Object$* provider) {
 
 bool SubRegistry::deregisterServiceProvider(Object$* provider) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Object, oprovider, $nc(this->map)->get($nc($of(provider))->getClass()));
 		if ($equals(provider, oprovider)) {
 			$nc(this->map)->remove($nc($of(provider))->getClass());
@@ -228,6 +230,7 @@ $Object* SubRegistry::getServiceProviderByClass($Class* providerClass) {
 
 void SubRegistry::clear() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$beforeCallerSensitive();
 		$var($Iterator, iter, $nc($($nc(this->map)->values()))->iterator());
 		while ($nc(iter)->hasNext()) {

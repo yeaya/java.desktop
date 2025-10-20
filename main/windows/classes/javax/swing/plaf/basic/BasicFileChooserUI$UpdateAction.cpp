@@ -74,6 +74,7 @@ void BasicFileChooserUI$UpdateAction::init$($BasicFileChooserUI* this$0) {
 }
 
 void BasicFileChooserUI$UpdateAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, fc, this->this$0->getFileChooser());
 	$nc(fc)->setCurrentDirectory($($nc($(fc->getFileSystemView()))->createFileObject($(this->this$0->getDirectoryName()))));
 	fc->rescanCurrentDirectory();

@@ -95,6 +95,7 @@ void WindowsComboBoxUI$1::init$() {
 }
 
 void WindowsComboBoxUI$1::handleRollover($MouseEvent* e, bool isRollover) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComboBox, comboBox, getComboBox(e));
 	$var($WindowsComboBoxUI, comboBoxUI, getWindowsComboBoxUI(e));
 	if (comboBox == nullptr || comboBoxUI == nullptr) {
@@ -122,6 +123,7 @@ void WindowsComboBoxUI$1::mouseExited($MouseEvent* e) {
 }
 
 $JComboBox* WindowsComboBoxUI$1::getComboBox($MouseEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, source, $nc(event)->getSource());
 	$var($JComboBox, rv, nullptr);
 	if ($instanceOf($JComboBox, source)) {
@@ -135,6 +137,7 @@ $JComboBox* WindowsComboBoxUI$1::getComboBox($MouseEvent* event) {
 }
 
 $WindowsComboBoxUI* WindowsComboBoxUI$1::getWindowsComboBoxUI($MouseEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComboBox, comboBox, getComboBox(event));
 	$var($WindowsComboBoxUI, rv, nullptr);
 	if (comboBox != nullptr && $instanceOf($WindowsComboBoxUI, $($cast($ComboBoxUI, comboBox->getUI())))) {

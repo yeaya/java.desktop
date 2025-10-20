@@ -99,6 +99,7 @@ void ElementIterator::init$($Element* root) {
 
 $Object* ElementIterator::clone() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		try {
 			$var(ElementIterator, it, $new(ElementIterator, this->root));
 			if (this->elementStack != nullptr) {
@@ -137,6 +138,7 @@ int32_t ElementIterator::depth() {
 }
 
 $Element* ElementIterator::current() {
+	$useLocalCurrentObjectStackCache();
 	if (this->elementStack == nullptr) {
 		return first();
 	}
@@ -153,6 +155,7 @@ $Element* ElementIterator::current() {
 }
 
 $Element* ElementIterator::next() {
+	$useLocalCurrentObjectStackCache();
 	if (this->elementStack == nullptr) {
 		return first();
 	}
@@ -182,6 +185,7 @@ $Element* ElementIterator::next() {
 }
 
 $Element* ElementIterator::previous() {
+	$useLocalCurrentObjectStackCache();
 	int32_t stackSize = 0;
 	if (this->elementStack == nullptr || (stackSize = $nc(this->elementStack)->size()) == 0) {
 		return nullptr;
@@ -219,6 +223,7 @@ $Element* ElementIterator::getDeepestLeaf($Element* parent) {
 }
 
 void ElementIterator::dumpTree() {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, nullptr);
 	while (true) {
 		if (($assign(elem, next())) != nullptr) {

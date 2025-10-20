@@ -242,6 +242,7 @@ $Component* DefaultCellEditor::getTreeCellEditorComponent($JTree* tree, Object$*
 }
 
 $Component* DefaultCellEditor::getTableCellEditorComponent($JTable* table, Object$* value, bool isSelected, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->delegate)->setValue(value);
 	if ($instanceOf($JCheckBox, this->editorComponent)) {
 		$var($TableCellRenderer, renderer, $nc(table)->getCellRenderer(row, column));

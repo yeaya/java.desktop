@@ -137,6 +137,7 @@ void BasicFileChooserUI$Handler::init$($BasicFileChooserUI* this$0, $JList* list
 }
 
 void BasicFileChooserUI$Handler::mouseClicked($MouseEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = this->list != nullptr && $SwingUtilities::isLeftMouseButton(evt);
 	if (var$0 && ($nc(evt)->getClickCount() % 2 == 0)) {
 		int32_t index = $SwingUtilities2::loc2IndexFileList(this->list, $(evt->getPoint()));
@@ -158,6 +159,7 @@ void BasicFileChooserUI$Handler::mouseClicked($MouseEvent* evt) {
 }
 
 void BasicFileChooserUI$Handler::mouseEntered($MouseEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if (this->list != nullptr) {
 		$var($TransferHandler, th1, $nc($(this->this$0->getFileChooser()))->getTransferHandler());
 		$var($TransferHandler, th2, $nc(this->list)->getTransferHandler());
@@ -181,6 +183,7 @@ void BasicFileChooserUI$Handler::mouseReleased($MouseEvent* evt) {
 }
 
 void BasicFileChooserUI$Handler::valueChanged($ListSelectionEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(evt)->getValueIsAdjusting()) {
 		$var($JFileChooser, chooser, this->this$0->getFileChooser());
 		$var($FileSystemView, fsv, $nc(chooser)->getFileSystemView());

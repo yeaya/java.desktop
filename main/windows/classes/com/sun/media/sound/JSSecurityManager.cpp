@@ -200,6 +200,7 @@ void JSSecurityManager::init$() {
 }
 
 void JSSecurityManager::checkRecordPermission() {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm != nullptr) {
 		sm->checkPermission($$new($AudioPermission, "record"_s));
@@ -208,6 +209,7 @@ void JSSecurityManager::checkRecordPermission() {
 
 void JSSecurityManager::loadProperties($Properties* properties) {
 	$load(JSSecurityManager);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, customFile, $cast($String, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new(JSSecurityManager$$Lambda$lambda$loadProperties$0)))));
 	if (customFile != nullptr) {
@@ -219,6 +221,7 @@ void JSSecurityManager::loadProperties($Properties* properties) {
 }
 
 bool JSSecurityManager::loadPropertiesImpl($Properties* properties, $String* first, $StringArray* more) {
+	$useLocalCurrentObjectStackCache();
 	$var($Path, fname, $Paths::get(first, more));
 	try {
 		$var($Reader, reader, $Files::newBufferedReader(fname));
@@ -266,6 +269,7 @@ bool JSSecurityManager::loadPropertiesImpl($Properties* properties, $String* fir
 }
 
 $Thread* JSSecurityManager::createThread($Runnable* runnable, $String* threadName, bool isDaemon, int32_t priority, bool doStart) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, (threadName != nullptr) ? threadName : "JSSM Thread"_s);
 	$var($Thread, thread, $new($Thread, nullptr, runnable, threadName, 0, false));
 	thread->setDaemon(isDaemon);
@@ -282,6 +286,7 @@ $List* JSSecurityManager::getProviders($Class* providerClass) {
 	$load(JSSecurityManager);
 	$synchronized(class$) {
 		$load(JSSecurityManager);
+		$useLocalCurrentObjectStackCache();
 		$beforeCallerSensitive();
 		$var($List, p, $new($ArrayList, 7));
 		$var($PrivilegedAction, psAction, $new($JSSecurityManager$1, providerClass));
@@ -306,6 +311,7 @@ $List* JSSecurityManager::getProviders($Class* providerClass) {
 }
 
 $Void* JSSecurityManager::lambda$loadProperties$1($Properties* properties) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, home, $System::getProperty("java.home"_s));
 	if (home == nullptr) {
 		$throwNew($Error, "Can\'t find java.home ??"_s);

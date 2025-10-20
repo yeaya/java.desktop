@@ -67,6 +67,7 @@ void bug8013566$1::init$() {
 }
 
 void bug8013566$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame));
 	{
 		$var($Throwable, var$0, nullptr);

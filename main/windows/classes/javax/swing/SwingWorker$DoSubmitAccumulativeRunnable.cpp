@@ -104,6 +104,7 @@ void SwingWorker$DoSubmitAccumulativeRunnable::init$() {
 }
 
 void SwingWorker$DoSubmitAccumulativeRunnable::run($List* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(args)->iterator());
 		for (; $nc(i$)->hasNext();) {

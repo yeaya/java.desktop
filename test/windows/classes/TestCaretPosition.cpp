@@ -188,6 +188,7 @@ void TestCaretPosition::init$() {
 }
 
 void TestCaretPosition::createUI() {
+	$useLocalCurrentObjectStackCache();
 	$init(TestCaretPosition);
 	$assignStatic(TestCaretPosition::jTextArea1, $new($JTextArea, 5, 80));
 	$assignStatic(TestCaretPosition::f, $new($JFrame));
@@ -202,6 +203,7 @@ void TestCaretPosition::createUI() {
 }
 
 void TestCaretPosition::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -228,6 +230,7 @@ void TestCaretPosition::main($StringArray* args) {
 }
 
 void TestCaretPosition::fillTextArea($JTextArea* area) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, buf, $new($StringBuilder));
 	for (int32_t i = 0; i < 3; ++i) {
 		$var($StringBuilder, row, $new($StringBuilder));

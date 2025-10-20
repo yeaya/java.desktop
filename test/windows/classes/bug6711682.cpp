@@ -171,6 +171,7 @@ void bug6711682::init$() {
 }
 
 void bug6711682::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -222,6 +223,7 @@ void bug6711682::main($StringArray* args) {
 }
 
 void bug6711682::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6711682);
 	$assignStatic(bug6711682::editorCb, $new($JCheckBox));
 	$assignStatic(bug6711682::rendererCb, $new($JCheckBox));

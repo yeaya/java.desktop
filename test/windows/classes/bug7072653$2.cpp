@@ -100,6 +100,7 @@ void bug7072653$2::popupMenuWillBecomeVisible($PopupMenuEvent* e) {
 }
 
 void bug7072653$2::popupMenuWillBecomeInvisible($PopupMenuEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t height = 0;
 	{
 		$var($WindowArray, arr$, $JFrame::getWindows());

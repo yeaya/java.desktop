@@ -113,6 +113,7 @@ void BasicArrowButton::init$(int32_t direction, $Color* background, $Color* shad
 }
 
 void BasicArrowButton::init$(int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = direction;
 	$var($Color, var$1, $UIManager::getColor("control"_s));
 	$var($Color, var$2, $UIManager::getColor("controlShadow"_s));
@@ -129,6 +130,7 @@ void BasicArrowButton::setDirection(int32_t direction) {
 }
 
 void BasicArrowButton::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, origColor, nullptr);
 	bool isPressed = false;
 	bool isEnabled = false;
@@ -282,6 +284,7 @@ void BasicArrowButton::paintUnscaledTriangle($Graphics* g, int32_t x, int32_t y,
 }
 
 void BasicArrowButton::paintScaledTriangle($Graphics* g, double x, double y, double size, int32_t direction, bool isEnabled) {
+	$useLocalCurrentObjectStackCache();
 	size = $Math::max(size, (double)2);
 	$var($Path2D$Double, path, $new($Path2D$Double));
 	path->moveTo(-size, size / 2);

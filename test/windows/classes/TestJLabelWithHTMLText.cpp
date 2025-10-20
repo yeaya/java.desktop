@@ -101,6 +101,7 @@ void TestJLabelWithHTMLText::main($StringArray* args) {
 }
 
 void TestJLabelWithHTMLText::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, label, $new($JLabel));
 	try {
 		$init($BasicHTML);

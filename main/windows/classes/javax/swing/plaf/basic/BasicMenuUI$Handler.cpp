@@ -179,6 +179,7 @@ void BasicMenuUI$Handler::mouseClicked($MouseEvent* e) {
 }
 
 void BasicMenuUI$Handler::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenu, menu, $cast($JMenu, this->this$0->menuItem));
 	if (!$nc(menu)->isEnabled()) {
 		return;
@@ -210,6 +211,7 @@ void BasicMenuUI$Handler::mousePressed($MouseEvent* e) {
 }
 
 void BasicMenuUI$Handler::mouseReleased($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenu, menu, $cast($JMenu, this->this$0->menuItem));
 	if (!$nc(menu)->isEnabled()) {
 		return;
@@ -222,6 +224,7 @@ void BasicMenuUI$Handler::mouseReleased($MouseEvent* e) {
 }
 
 void BasicMenuUI$Handler::mouseEntered($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenu, menu, $cast($JMenu, this->this$0->menuItem));
 	bool var$0 = !$nc(menu)->isEnabled();
 	if (var$0 && !$UIManager::getBoolean("MenuItem.disabledAreNavigable"_s)) {
@@ -254,6 +257,7 @@ void BasicMenuUI$Handler::mouseExited($MouseEvent* e) {
 }
 
 void BasicMenuUI$Handler::mouseDragged($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenu, menu, $cast($JMenu, this->this$0->menuItem));
 	if (!$nc(menu)->isEnabled()) {
 		return;
@@ -268,6 +272,7 @@ void BasicMenuUI$Handler::menuDragMouseEntered($MenuDragMouseEvent* e) {
 }
 
 void BasicMenuUI$Handler::menuDragMouseDragged($MenuDragMouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->this$0->menuItem)->isEnabled() == false) {
 		return;
 	}
@@ -304,6 +309,7 @@ void BasicMenuUI$Handler::menuDragMouseReleased($MenuDragMouseEvent* e) {
 }
 
 void BasicMenuUI$Handler::menuKeyTyped($MenuKeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($BasicMenuUI);
 	if (!$BasicMenuUI::crossMenuMnemonic && $BasicPopupMenuUI::getLastPopup() != nullptr) {
 		return;

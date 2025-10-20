@@ -84,6 +84,7 @@ void FilePane$7::init$($FilePane* this$0) {
 }
 
 void FilePane$7::componentResized($ComponentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JScrollPane, sp, $cast($JScrollPane, $nc(e)->getComponent()));
 	this->this$0->fixNameColumnWidth($nc($($nc($($nc(sp)->getViewport()))->getSize()))->width);
 	$nc(sp)->removeComponentListener(this);

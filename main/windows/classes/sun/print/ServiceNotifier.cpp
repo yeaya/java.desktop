@@ -76,6 +76,7 @@ $Object* allocate$ServiceNotifier($Class* clazz) {
 }
 
 void ServiceNotifier::init$($PrintService* service) {
+	$useLocalCurrentObjectStackCache();
 	$Thread::init$(nullptr, nullptr, $$str({$($nc(service)->getName()), " notifier"_s}), 0, false);
 	this->stop$ = false;
 	$set(this, service, service);
@@ -124,6 +125,7 @@ void ServiceNotifier::wake() {
 }
 
 void ServiceNotifier::run() {
+	$useLocalCurrentObjectStackCache();
 	int64_t minSleepTime = 15000;
 	int64_t sleepTime = 2000;
 	$var($HashPrintServiceAttributeSet, attrs, nullptr);

@@ -190,6 +190,7 @@ $SurfaceData* D3DGraphicsConfig::createManagedSurface(int32_t w, int32_t h, int3
 
 void D3DGraphicsConfig::displayChanged() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$Win32GraphicsConfig::displayChanged();
 		$var($D3DRenderQueue, rq, $D3DRenderQueue::getInstance());
 		$nc(rq)->lock();
@@ -261,6 +262,7 @@ $VolatileImage* D3DGraphicsConfig::createBackBuffer($WComponentPeer* peer) {
 }
 
 void D3DGraphicsConfig::flip($WComponentPeer* peer, $Component* target, $VolatileImage* backBuffer, int32_t x1, int32_t y1, int32_t x2, int32_t y2, $BufferCapabilities$FlipContents* flipAction) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceManager, d3dvsm, $SurfaceManager::getManager(backBuffer));
 	$var($SurfaceData, sd, $nc(d3dvsm)->getPrimarySurfaceData());
 	if ($instanceOf($D3DSurfaceData, sd)) {
@@ -333,6 +335,7 @@ $BufferedContext* D3DGraphicsConfig::getContext() {
 }
 
 $VolatileImage* D3DGraphicsConfig::createCompatibleVolatileImage(int32_t width, int32_t height, int32_t transparency, int32_t type) {
+	$useLocalCurrentObjectStackCache();
 	if (type == 4 || type == 1 || type == 0 || transparency == $Transparency::BITMASK) {
 		return nullptr;
 	}

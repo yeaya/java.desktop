@@ -91,6 +91,7 @@ void WindowsFileChooserUI$DirectoryComboBoxRenderer::init$($WindowsFileChooserUI
 }
 
 $Component* WindowsFileChooserUI$DirectoryComboBoxRenderer::getListCellRendererComponent($JList* list, Object$* value, int32_t index, bool isSelected, bool cellHasFocus) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultListCellRenderer::getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 	if (value == nullptr) {
 		setText(""_s);

@@ -89,6 +89,7 @@ $String* BasicPasswordFieldUI::getPropertyPrefix() {
 }
 
 void BasicPasswordFieldUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$BasicTextFieldUI::installDefaults();
 	$var($String, prefix, getPropertyPrefix());
 	$var($Character, echoChar, $cast($Character, $nc($($UIManager::getDefaults()))->get($$str({prefix, ".echoChar"_s}))));
@@ -102,6 +103,7 @@ $View* BasicPasswordFieldUI::create($Element* elem) {
 }
 
 $ActionMap* BasicPasswordFieldUI::createActionMap() {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, map, $BasicTextFieldUI::createActionMap());
 	$init($DefaultEditorKit);
 	if ($nc(map)->get($DefaultEditorKit::selectWordAction) != nullptr) {

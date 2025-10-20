@@ -73,6 +73,7 @@ void JTreeFocusTest$3::init$($JTreeFocusTest* this$0) {
 }
 
 void JTreeFocusTest$3::valueChanged($TreeSelectionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($JTreeFocusTest);
 	if ($nc($of($JTreeFocusTest::root))->equals($($nc($($nc(e)->getPath()))->getLastPathComponent()))) {
 		$synchronized(this->this$0) {

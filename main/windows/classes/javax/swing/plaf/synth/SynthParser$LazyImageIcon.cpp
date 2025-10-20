@@ -125,6 +125,7 @@ int32_t SynthParser$LazyImageIcon::getIconHeight() {
 }
 
 $Image* SynthParser$LazyImageIcon::getImage() {
+	$useLocalCurrentObjectStackCache();
 	if (this->location != nullptr) {
 		setImage($($nc($($Toolkit::getDefaultToolkit()))->getImage(this->location)));
 		$set(this, location, nullptr);

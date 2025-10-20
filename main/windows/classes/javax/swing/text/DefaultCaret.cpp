@@ -407,6 +407,7 @@ $Highlighter$HighlightPainter* DefaultCaret::getSelectionPainter() {
 }
 
 void DefaultCaret::positionCaret($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc(e)->getX();
 	$var($Point, pt, $new($Point, var$0, e->getY()));
 	$var($Position$BiasArray, biasRet, $new($Position$BiasArray, 1));
@@ -421,6 +422,7 @@ void DefaultCaret::positionCaret($MouseEvent* e) {
 }
 
 void DefaultCaret::moveCaret($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc(e)->getX();
 	$var($Point, pt, $new($Point, var$0, e->getY()));
 	$var($Position$BiasArray, biasRet, $new($Position$BiasArray, 1));
@@ -453,6 +455,7 @@ void DefaultCaret::focusLost($FocusEvent* e) {
 }
 
 void DefaultCaret::selectWord($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool var$1 = this->selectedWordEvent != nullptr;
 	if (var$1) {
 		int32_t var$2 = $nc(this->selectedWordEvent)->getX();
@@ -485,6 +488,7 @@ void DefaultCaret::selectWord($MouseEvent* e) {
 }
 
 void DefaultCaret::mouseClicked($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (getComponent() == nullptr) {
 		return;
 	}
@@ -612,6 +616,7 @@ void DefaultCaret::mouseMoved($MouseEvent* e) {
 }
 
 void DefaultCaret::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (isVisible()) {
 		try {
 			$var($TextUI, mapper, $cast($TextUI, $nc(this->component)->getUI()));
@@ -650,6 +655,7 @@ void DefaultCaret::paint($Graphics* g) {
 }
 
 void DefaultCaret::install($JTextComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, component, c);
 	$var($Document, doc, $nc(c)->getDocument());
 	this->dot = (this->mark = 0);
@@ -730,6 +736,7 @@ $EventListenerArray* DefaultCaret::getListeners($Class* listenerType) {
 }
 
 void DefaultCaret::setSelectionVisible(bool vis) {
+	$useLocalCurrentObjectStackCache();
 	if (vis != this->selectionVisible) {
 		this->selectionVisible = vis;
 		if (this->selectionVisible) {
@@ -766,6 +773,7 @@ bool DefaultCaret::isVisible() {
 }
 
 void DefaultCaret::setVisible(bool e) {
+	$useLocalCurrentObjectStackCache();
 	this->active = e;
 	if (this->component != nullptr) {
 		$var($TextUI, mapper, $cast($TextUI, $nc(this->component)->getUI()));
@@ -824,6 +832,7 @@ void DefaultCaret::moveDot(int32_t dot) {
 }
 
 void DefaultCaret::moveDot(int32_t dot, $Position$Bias* dotBias) {
+	$useLocalCurrentObjectStackCache();
 	if (dotBias == nullptr) {
 		$throwNew($IllegalArgumentException, "null bias"_s);
 	}
@@ -842,6 +851,7 @@ void DefaultCaret::moveDot(int32_t dot, $Position$Bias* dotBias) {
 }
 
 void DefaultCaret::handleMoveDot(int32_t dot, $Position$Bias* dotBias) {
+	$useLocalCurrentObjectStackCache();
 	changeCaretPosition(dot, dotBias);
 	if (this->selectionVisible) {
 		$var($Highlighter, h, $nc(this->component)->getHighlighter());
@@ -871,6 +881,7 @@ void DefaultCaret::handleMoveDot(int32_t dot, $Position$Bias* dotBias) {
 }
 
 void DefaultCaret::setDot(int32_t dot, $Position$Bias* dotBias) {
+	$useLocalCurrentObjectStackCache();
 	if (dotBias == nullptr) {
 		$throwNew($IllegalArgumentException, "null bias"_s);
 	}
@@ -883,6 +894,7 @@ void DefaultCaret::setDot(int32_t dot, $Position$Bias* dotBias) {
 }
 
 void DefaultCaret::handleSetDot(int32_t dot, $Position$Bias* dotBias$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Position$Bias, dotBias, dotBias$renamed);
 	$var($Document, doc, $nc(this->component)->getDocument());
 	if (doc != nullptr) {
@@ -932,6 +944,7 @@ bool DefaultCaret::isPositionLTR(int32_t position, $Position$Bias* bias) {
 }
 
 $Position$Bias* DefaultCaret::guessBiasForOffset(int32_t offset, $Position$Bias* lastBias$renamed, bool lastLTR) {
+	$useLocalCurrentObjectStackCache();
 	$var($Position$Bias, lastBias, lastBias$renamed);
 	if (lastLTR != isPositionLTR(offset, lastBias)) {
 		$init($Position$Bias);
@@ -974,6 +987,7 @@ void DefaultCaret::changeCaretPosition(int32_t dot, $Position$Bias* dotBias) {
 }
 
 void DefaultCaret::repaintNewCaret() {
+	$useLocalCurrentObjectStackCache();
 	if (this->component != nullptr) {
 		$var($TextUI, mapper, $cast($TextUI, $nc(this->component)->getUI()));
 		$var($Document, doc, $nc(this->component)->getDocument());
@@ -997,6 +1011,7 @@ void DefaultCaret::repaintNewCaret() {
 }
 
 void DefaultCaret::updateSystemSelection() {
+	$useLocalCurrentObjectStackCache();
 	if (!$SwingUtilities2::canCurrentEventAccessSystemClipboard()) {
 		return;
 	}
@@ -1069,6 +1084,7 @@ bool DefaultCaret::equals(Object$* obj) {
 }
 
 $String* DefaultCaret::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, s, $str({"Dot=("_s, $$str(this->dot), ", "_s, this->dotBias, ")"_s}));
 	$plusAssign(s, $$str({" Mark=("_s, $$str(this->mark), ", "_s, this->markBias, ")"_s}));
 	return s;
@@ -1138,6 +1154,7 @@ int32_t DefaultCaret::getCaretWidth(int32_t height) {
 }
 
 void DefaultCaret::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	$var($EventListenerList, newListenerList, $cast($EventListenerList, $nc(f)->get("listenerList"_s, ($Object*)nullptr)));
 	if (newListenerList == nullptr) {

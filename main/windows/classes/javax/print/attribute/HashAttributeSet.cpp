@@ -185,6 +185,7 @@ $Attribute* HashAttributeSet::get($Class* category) {
 }
 
 bool HashAttributeSet::add($Attribute* attribute) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, var$0, $of($nc(attribute)->getCategory()));
 	$var($Object, oldAttribute, $nc(this->attrMap)->put(var$0, $($AttributeSetUtilities::verifyAttributeValue(attribute, this->myInterface))));
 	return (!$nc($of(attribute))->equals(oldAttribute));
@@ -211,6 +212,7 @@ bool HashAttributeSet::containsValue($Attribute* attribute) {
 }
 
 bool HashAttributeSet::addAll($AttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeArray, attrs, $nc(attributes)->toArray());
 	bool result = false;
 	for (int32_t i = 0; i < $nc(attrs)->length; ++i) {
@@ -226,6 +228,7 @@ int32_t HashAttributeSet::size() {
 }
 
 $AttributeArray* HashAttributeSet::toArray() {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeArray, attrs, $new($AttributeArray, size()));
 	$nc($($nc(this->attrMap)->values()))->toArray(attrs);
 	return attrs;
@@ -240,6 +243,7 @@ bool HashAttributeSet::isEmpty() {
 }
 
 bool HashAttributeSet::equals(Object$* object) {
+	$useLocalCurrentObjectStackCache();
 	if (object == nullptr || !($instanceOf($AttributeSet, object))) {
 		return false;
 	}

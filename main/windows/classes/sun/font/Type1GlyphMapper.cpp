@@ -74,6 +74,7 @@ void Type1GlyphMapper::init$($Type1Font* font) {
 }
 
 void Type1GlyphMapper::initMapper() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, scaler, $nc(this->font)->getScaler());
 	try {
 		this->missingGlyph = $nc(this->scaler)->getMissingGlyphCode();

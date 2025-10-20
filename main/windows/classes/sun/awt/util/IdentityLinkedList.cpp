@@ -297,6 +297,7 @@ bool IdentityLinkedList::addAll($Collection* c) {
 }
 
 bool IdentityLinkedList::addAll(int32_t index, $Collection* c) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index > this->size$) {
 		$throwNew($IndexOutOfBoundsException, $$str({"Index: "_s, $$str(index), ", Size: "_s, $$str(this->size$)}));
 	}
@@ -320,6 +321,7 @@ bool IdentityLinkedList::addAll(int32_t index, $Collection* c) {
 }
 
 void IdentityLinkedList::clear() {
+	$useLocalCurrentObjectStackCache();
 	$var($IdentityLinkedList$Entry, e, $nc(this->header)->next);
 	while (e != this->header) {
 		$var($IdentityLinkedList$Entry, next, $nc(e)->next);
@@ -337,6 +339,7 @@ $Object* IdentityLinkedList::get(int32_t index) {
 }
 
 $Object* IdentityLinkedList::set(int32_t index, Object$* element) {
+	$useLocalCurrentObjectStackCache();
 	$var($IdentityLinkedList$Entry, e, entry(index));
 	$var($Object, oldVal, $nc(e)->element);
 	$set(e, element, element);
@@ -352,6 +355,7 @@ $Object* IdentityLinkedList::remove(int32_t index) {
 }
 
 $IdentityLinkedList$Entry* IdentityLinkedList::entry(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index >= this->size$) {
 		$throwNew($IndexOutOfBoundsException, $$str({"Index: "_s, $$str(index), ", Size: "_s, $$str(this->size$)}));
 	}
@@ -517,6 +521,7 @@ $Iterator* IdentityLinkedList::descendingIterator() {
 }
 
 $ObjectArray* IdentityLinkedList::toArray() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, result, $new($ObjectArray, this->size$));
 	int32_t i = 0;
 	{
@@ -529,6 +534,7 @@ $ObjectArray* IdentityLinkedList::toArray() {
 }
 
 $ObjectArray* IdentityLinkedList::toArray($ObjectArray* a$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, a, a$renamed);
 	if ($nc(a)->length < this->size$) {
 		$assign(a, $cast($ObjectArray, $1Array::newInstance($of(a)->getClass()->getComponentType(), this->size$)));

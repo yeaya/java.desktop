@@ -89,6 +89,7 @@ void WCheckboxMenuItemPeer$1::init$($WCheckboxMenuItemPeer* this$0, $CheckboxMen
 }
 
 void WCheckboxMenuItemPeer$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->val$target)->setState(this->val$state);
 	this->this$0->postEvent($$new($ItemEvent, this->val$target, $ItemEvent::ITEM_STATE_CHANGED, $($nc(this->val$target)->getLabel()), this->val$state ? $ItemEvent::SELECTED : $ItemEvent::DESELECTED));
 }

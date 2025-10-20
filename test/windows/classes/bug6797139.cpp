@@ -77,6 +77,7 @@ void bug6797139::init$() {
 }
 
 void bug6797139::createGui() {
+	$useLocalCurrentObjectStackCache();
 	$var($JButton, b, $new($JButton, "Probably"_s));
 	b->setUI(static_cast<$ButtonUI*>($$new($bug6797139$1)));
 	b->setSize($(b->getPreferredSize()));

@@ -344,6 +344,7 @@ void WChoicePeer::finalize() {
 }
 
 $Dimension* WChoicePeer::getMinimumSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, fm, getFontMetrics($($nc(($cast($Choice, this->target)))->getFont())));
 	$var($Choice, c, $cast($Choice, this->target));
 	int32_t w = 0;
@@ -406,6 +407,7 @@ void WChoicePeer::create($WComponentPeer* parent) {
 }
 
 void WChoicePeer::initialize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Choice, opt, $cast($Choice, this->target));
 	int32_t itemCount = $nc(opt)->getItemCount();
 	if (itemCount > 0) {
@@ -430,6 +432,7 @@ void WChoicePeer::initialize() {
 }
 
 void WChoicePeer::disposeImpl() {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, parentWindow, $SunToolkit::getContainingWindow($cast($Component, this->target)));
 	if (parentWindow != nullptr) {
 		$var($WWindowPeer, wpeer, $cast($WWindowPeer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(parentWindow)));
@@ -441,6 +444,7 @@ void WChoicePeer::disposeImpl() {
 }
 
 void WChoicePeer::handleAction(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($Choice, c, $cast($Choice, this->target));
 	$WToolkit::executeOnEventHandlerThread(c, $$new($WChoicePeer$2, this, c, index));
 }

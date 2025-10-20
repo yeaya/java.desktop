@@ -105,6 +105,7 @@ void GeneralCompositePipe::init$() {
 }
 
 $Object* GeneralCompositePipe::startSequence($SunGraphics2D* sg, $Shape* s, $Rectangle* devR, $ints* abox) {
+	$useLocalCurrentObjectStackCache();
 	$var($RenderingHints, hints, $nc(sg)->getRenderingHints());
 	$var($ColorModel, model, sg->getDeviceColorModel());
 	$var($ColorModel, var$0, model);
@@ -120,6 +121,7 @@ bool GeneralCompositePipe::needTile(Object$* ctx, int32_t x, int32_t y, int32_t 
 }
 
 void GeneralCompositePipe::renderPathTile(Object$* ctx, $bytes* atile, int32_t offset, int32_t tilesize, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($GeneralCompositePipe$TileContext, context, $cast($GeneralCompositePipe$TileContext, ctx));
 	$var($PaintContext, paintCtxt, $nc(context)->paintCtxt);
 	$var($CompositeContext, compCtxt, context->compCtxt);

@@ -60,6 +60,7 @@ void bug7011777$MyParserCallback::init$() {
 }
 
 void bug7011777$MyParserCallback::handleComment($chars* data, int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	$init($bug7011777);
 	int32_t var$0 = "<!--"_s->length();
 	int32_t var$1 = $nc($bug7011777::comment)->length();

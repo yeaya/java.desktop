@@ -84,6 +84,7 @@ void TableViewLayoutTest$1::init$($TableViewLayoutTest* this$0) {
 }
 
 void TableViewLayoutTest$1::caretUpdate($CaretEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, textComp, $cast($JTextComponent, $nc(e)->getSource()));
 	try {
 		$var($Rectangle, rect, $nc($($cast($TextUI, $nc(textComp)->getUI())))->modelToView(textComp, e->getDot()));

@@ -312,6 +312,7 @@ $AbstractRegionPainter$PaintContext* SliderThumbPainter::getPaintContext() {
 }
 
 void SliderThumbPainter::paintBackgroundDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse1());
 	$nc(g)->setPaint($(decodeGradient1(this->ellipse)));
 	g->fill(this->ellipse);
@@ -321,6 +322,7 @@ void SliderThumbPainter::paintBackgroundDisabled($Graphics2D* g) {
 }
 
 void SliderThumbPainter::paintBackgroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse3());
 	$nc(g)->setPaint(this->color6);
 	g->fill(this->ellipse);
@@ -333,6 +335,7 @@ void SliderThumbPainter::paintBackgroundEnabled($Graphics2D* g) {
 }
 
 void SliderThumbPainter::paintBackgroundFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->ellipse);
@@ -345,6 +348,7 @@ void SliderThumbPainter::paintBackgroundFocused($Graphics2D* g) {
 }
 
 void SliderThumbPainter::paintBackgroundFocusedAndMouseOver($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->ellipse);
@@ -357,6 +361,7 @@ void SliderThumbPainter::paintBackgroundFocusedAndMouseOver($Graphics2D* g) {
 }
 
 void SliderThumbPainter::paintBackgroundFocusedAndPressed($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->ellipse);
@@ -369,6 +374,7 @@ void SliderThumbPainter::paintBackgroundFocusedAndPressed($Graphics2D* g) {
 }
 
 void SliderThumbPainter::paintBackgroundMouseOver($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse3());
 	$nc(g)->setPaint(this->color6);
 	g->fill(this->ellipse);
@@ -381,6 +387,7 @@ void SliderThumbPainter::paintBackgroundMouseOver($Graphics2D* g) {
 }
 
 void SliderThumbPainter::paintBackgroundPressed($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse3());
 	$nc(g)->setPaint(this->color23);
 	g->fill(this->ellipse);
@@ -393,6 +400,7 @@ void SliderThumbPainter::paintBackgroundPressed($Graphics2D* g) {
 }
 
 void SliderThumbPainter::paintBackgroundEnabledAndArrowShape($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color24);
 	g->fill(this->path);
@@ -405,6 +413,7 @@ void SliderThumbPainter::paintBackgroundEnabledAndArrowShape($Graphics2D* g) {
 }
 
 void SliderThumbPainter::paintBackgroundDisabledAndArrowShape($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath2());
 	$nc(g)->setPaint($(decodeGradient11(this->path)));
 	g->fill(this->path);
@@ -414,6 +423,7 @@ void SliderThumbPainter::paintBackgroundDisabledAndArrowShape($Graphics2D* g) {
 }
 
 void SliderThumbPainter::paintBackgroundMouseOverAndArrowShape($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color24);
 	g->fill(this->path);
@@ -426,6 +436,7 @@ void SliderThumbPainter::paintBackgroundMouseOverAndArrowShape($Graphics2D* g) {
 }
 
 void SliderThumbPainter::paintBackgroundPressedAndArrowShape($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color24);
 	g->fill(this->path);
@@ -438,6 +449,7 @@ void SliderThumbPainter::paintBackgroundPressedAndArrowShape($Graphics2D* g) {
 }
 
 void SliderThumbPainter::paintBackgroundFocusedAndArrowShape($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->path);
@@ -450,6 +462,7 @@ void SliderThumbPainter::paintBackgroundFocusedAndArrowShape($Graphics2D* g) {
 }
 
 void SliderThumbPainter::paintBackgroundFocusedAndMouseOverAndArrowShape($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->path);
@@ -462,6 +475,7 @@ void SliderThumbPainter::paintBackgroundFocusedAndMouseOverAndArrowShape($Graphi
 }
 
 void SliderThumbPainter::paintBackgroundFocusedAndPressedAndArrowShape($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->path);
@@ -618,6 +632,7 @@ $Path2D* SliderThumbPainter::decodePath4() {
 }
 
 $Paint* SliderThumbPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -635,6 +650,7 @@ $Paint* SliderThumbPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -656,6 +672,7 @@ $Paint* SliderThumbPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -673,6 +690,7 @@ $Paint* SliderThumbPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -698,6 +716,7 @@ $Paint* SliderThumbPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -715,6 +734,7 @@ $Paint* SliderThumbPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -740,6 +760,7 @@ $Paint* SliderThumbPainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -757,6 +778,7 @@ $Paint* SliderThumbPainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -782,6 +804,7 @@ $Paint* SliderThumbPainter::decodeGradient8($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient9($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -803,6 +826,7 @@ $Paint* SliderThumbPainter::decodeGradient9($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient10($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -832,6 +856,7 @@ $Paint* SliderThumbPainter::decodeGradient10($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient11($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -849,6 +874,7 @@ $Paint* SliderThumbPainter::decodeGradient11($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient12($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -870,6 +896,7 @@ $Paint* SliderThumbPainter::decodeGradient12($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient13($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -887,6 +914,7 @@ $Paint* SliderThumbPainter::decodeGradient13($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient14($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -912,6 +940,7 @@ $Paint* SliderThumbPainter::decodeGradient14($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient15($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -929,6 +958,7 @@ $Paint* SliderThumbPainter::decodeGradient15($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient16($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -954,6 +984,7 @@ $Paint* SliderThumbPainter::decodeGradient16($Shape* s) {
 }
 
 $Paint* SliderThumbPainter::decodeGradient17($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

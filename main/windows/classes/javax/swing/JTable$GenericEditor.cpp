@@ -85,6 +85,7 @@ $Object* allocate$JTable$GenericEditor($Class* clazz) {
 }
 
 void JTable$GenericEditor::init$() {
+	$useLocalCurrentObjectStackCache();
 	$DefaultCellEditor::init$($$new($JTextField));
 	$load($String);
 	$set(this, argTypes, $new($ClassArray, {$String::class$}));
@@ -92,6 +93,7 @@ void JTable$GenericEditor::init$() {
 }
 
 bool JTable$GenericEditor::stopCellEditing() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, s, $cast($String, $DefaultCellEditor::getCellEditorValue()));
 	try {
@@ -114,6 +116,7 @@ bool JTable$GenericEditor::stopCellEditing() {
 }
 
 $Component* JTable$GenericEditor::getTableCellEditorComponent($JTable* table, Object$* value, bool isSelected, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$set(this, value, nullptr);
 	$init($Color);

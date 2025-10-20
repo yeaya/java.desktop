@@ -58,6 +58,7 @@ void SetFillSpansANY::init$() {
 }
 
 void SetFillSpansANY::FillSpans$($SunGraphics2D* sg2d, $SurfaceData* sData, $SpanIterator* si) {
+	$useLocalCurrentObjectStackCache();
 	$var($PixelWriter, pw, $GeneralRenderer::createSolidPixelWriter(sg2d, sData));
 	$var($ints, span, $new($ints, 4));
 	while ($nc(si)->nextSpan(span)) {

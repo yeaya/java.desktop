@@ -140,6 +140,7 @@ void Test6462562::main($StringArray* args) {
 }
 
 void Test6462562::testPercentFormat() {
+	$useLocalCurrentObjectStackCache();
 	$init($Locale);
 	$var($NumberFormat, format, $NumberFormat::getPercentInstance($Locale::US));
 	$var($Test6462562$TestFormattedTextField, ftf, create(format));
@@ -184,6 +185,7 @@ void Test6462562::testPercentFormat() {
 }
 
 void Test6462562::testCurrencyFormat() {
+	$useLocalCurrentObjectStackCache();
 	$init($Locale);
 	$var($NumberFormat, format, $NumberFormat::getCurrencyInstance($Locale::US));
 	$var($Test6462562$TestFormattedTextField, ftf, create(format));
@@ -224,6 +226,7 @@ void Test6462562::testCurrencyFormat() {
 }
 
 void Test6462562::testIntegerFormat() {
+	$useLocalCurrentObjectStackCache();
 	$init($Locale);
 	$var($NumberFormat, format, $NumberFormat::getIntegerInstance($Locale::US));
 	$var($Test6462562$TestFormattedTextField, ftf, create(format));
@@ -274,6 +277,7 @@ $Date* Test6462562::date($DateFormat* format, $String* spec) {
 }
 
 void Test6462562::testDateFormat() {
+	$useLocalCurrentObjectStackCache();
 	$init($Locale);
 	$var($DateFormat, format, $new($SimpleDateFormat, "MM/dd/yyyy"_s, $Locale::US));
 	$var($Test6462562$TestFormattedTextField, ftf, create(format));

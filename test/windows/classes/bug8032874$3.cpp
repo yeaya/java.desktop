@@ -65,6 +65,7 @@ void bug8032874$3::init$() {
 }
 
 void bug8032874$3::run() {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < 5; ++i) {
 		$init($bug8032874);
 		$nc($bug8032874::tableModel)->remove(0);

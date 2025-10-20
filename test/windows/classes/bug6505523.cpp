@@ -107,6 +107,7 @@ void bug6505523::init$() {
 }
 
 void bug6505523::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(50);
 	$SwingUtilities::invokeAndWait($$new($bug6505523$1));
@@ -119,12 +120,14 @@ void bug6505523::main($StringArray* args) {
 }
 
 $Point* bug6505523::getRowPointToClick(int32_t row) {
+	$useLocalCurrentObjectStackCache();
 	$var($PointArray, result, $new($PointArray, 1));
 	$SwingUtilities::invokeAndWait($$new($bug6505523$2, row, result));
 	return result->get(0);
 }
 
 void bug6505523::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultMutableTreeNode, root, $new($DefaultMutableTreeNode, "Problem with NPE under JDK 1.6"_s));
 	$var($DefaultMutableTreeNode, problematic, $new($DefaultMutableTreeNode, "Expand me and behold a NPE in stderr"_s));
 	problematic->add($$new($DefaultMutableTreeNode, "some content"_s));

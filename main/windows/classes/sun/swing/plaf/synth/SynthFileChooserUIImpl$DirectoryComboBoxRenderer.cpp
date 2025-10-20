@@ -97,6 +97,7 @@ void SynthFileChooserUIImpl$DirectoryComboBoxRenderer::init$($SynthFileChooserUI
 }
 
 $Component* SynthFileChooserUIImpl$DirectoryComboBoxRenderer::getListCellRendererComponent($JList* list, $File* value, int32_t index, bool isSelected, bool cellHasFocus) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $nc(this->delegate)->getListCellRendererComponent(list, value, index, isSelected, cellHasFocus));
 	if (!SynthFileChooserUIImpl$DirectoryComboBoxRenderer::$assertionsDisabled && !$instanceOf($JLabel, c)) {
 		$throwNew($AssertionError);

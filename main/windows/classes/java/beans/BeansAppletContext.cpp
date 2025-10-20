@@ -111,6 +111,7 @@ $AudioClip* BeansAppletContext::getAudioClip($URL* url) {
 
 $Image* BeansAppletContext::getImage($URL* url) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Object, o, $nc(this->imageCache)->get(url));
 		if (o != nullptr) {
 			return $cast($Image, o);

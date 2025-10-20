@@ -317,6 +317,7 @@ void BasicListUI::init$() {
 
 void BasicListUI::loadActionMap($LazyActionMap* map) {
 	$init(BasicListUI);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicListUI$Actions);
 	$nc(map)->put($$new($BasicListUI$Actions, $BasicListUI$Actions::SELECT_PREVIOUS_COLUMN));
 	map->put($$new($BasicListUI$Actions, $BasicListUI$Actions::SELECT_PREVIOUS_COLUMN_EXTEND));
@@ -358,6 +359,7 @@ void BasicListUI::loadActionMap($LazyActionMap* map) {
 }
 
 void BasicListUI::paintCell($Graphics* g, int32_t row, $Rectangle* rowBounds, $ListCellRenderer* cellRenderer, $ListModel* dataModel, $ListSelectionModel* selModel, int32_t leadIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, $nc(dataModel)->getElementAt(row));
 	bool cellHasFocus = $nc(this->list)->hasFocus() && (row == leadIndex);
 	bool isSelected = $nc(selModel)->isSelectedIndex(row);
@@ -384,6 +386,7 @@ void BasicListUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void BasicListUI::paintImpl($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	switch (this->layoutOrientation) {
 	case $JList::VERTICAL_WRAP:
 		{
@@ -449,6 +452,7 @@ void BasicListUI::paintImpl($Graphics* g, $JComponent* c) {
 }
 
 void BasicListUI::paintDropLine($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($JList$DropLocation, loc, $nc(this->list)->getDropLocation());
 	if (loc == nullptr || !$nc(loc)->isInsert()) {
 		return;
@@ -462,6 +466,7 @@ void BasicListUI::paintDropLine($Graphics* g) {
 }
 
 $Rectangle* BasicListUI::getDropLineRect($JList$DropLocation* loc) {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc($($nc(this->list)->getModel()))->getSize();
 	if (size == 0) {
 		$var($Insets, insets, $nc(this->list)->getInsets());
@@ -568,6 +573,7 @@ $Rectangle* BasicListUI::getDropLineRect($JList$DropLocation* loc) {
 }
 
 int32_t BasicListUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$ListUI::getBaseline(c, width, height);
 	int32_t rowHeight = $nc(this->list)->getFixedCellHeight();
 	$var($UIDefaults, lafDefaults, $UIManager::getLookAndFeelDefaults());
@@ -595,6 +601,7 @@ $Component$BaselineResizeBehavior* BasicListUI::getBaselineResizeBehavior($JComp
 }
 
 $Dimension* BasicListUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	maybeUpdateLayoutState();
 	int32_t lastRow = $nc($($nc(this->list)->getModel()))->getSize() - 1;
 	if (lastRow < 0) {
@@ -641,6 +648,7 @@ void BasicListUI::installKeyboardActions() {
 }
 
 $InputMap* BasicListUI::getInputMap(int32_t condition) {
+	$useLocalCurrentObjectStackCache();
 	if (condition == $JComponent::WHEN_FOCUSED) {
 		$var($InputMap, keyMap, $cast($InputMap, $DefaultLookup::get(this->list, this, "List.focusInputMap"_s)));
 		$var($InputMap, rtlKeyMap, nullptr);
@@ -660,6 +668,7 @@ void BasicListUI::uninstallKeyboardActions() {
 }
 
 void BasicListUI::installListeners() {
+	$useLocalCurrentObjectStackCache();
 	$var($TransferHandler, th, $nc(this->list)->getTransferHandler());
 	if (th == nullptr || $instanceOf($UIResource, th)) {
 		$nc(this->list)->setTransferHandler(BasicListUI::defaultTransferHandler);
@@ -688,6 +697,7 @@ void BasicListUI::installListeners() {
 }
 
 void BasicListUI::uninstallListeners() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->list)->removeFocusListener(this->focusListener);
 	$nc(this->list)->removeMouseListener(this->mouseInputListener);
 	$nc(this->list)->removeMouseMotionListener(this->mouseInputListener);
@@ -710,6 +720,7 @@ void BasicListUI::uninstallListeners() {
 }
 
 void BasicListUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->list)->setLayout(nullptr);
 	$LookAndFeel::installBorder(this->list, "List.border"_s);
 	$LookAndFeel::installColorsAndFont(this->list, "List.background"_s, "List.foreground"_s, "List.font"_s);
@@ -733,6 +744,7 @@ void BasicListUI::installDefaults() {
 }
 
 void BasicListUI::updateIsFileList() {
+	$useLocalCurrentObjectStackCache();
 	$init($Boolean);
 	bool b = $nc($Boolean::TRUE)->equals($($nc(this->list)->getClientProperty("List.isFileList"_s)));
 	if (b != this->isFileList) {
@@ -748,6 +760,7 @@ void BasicListUI::updateIsFileList() {
 }
 
 void BasicListUI::uninstallDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$LookAndFeel::uninstallBorder(this->list);
 	if ($instanceOf($UIResource, $($nc(this->list)->getFont()))) {
 		$nc(this->list)->setFont(nullptr);
@@ -773,6 +786,7 @@ void BasicListUI::uninstallDefaults() {
 }
 
 void BasicListUI::installUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JList, tmp, $cast($JList, c));
 	$set(this, list, tmp);
 	this->layoutOrientation = $nc(this->list)->getLayoutOrientation();
@@ -818,6 +832,7 @@ $Point* BasicListUI::indexToLocation($JList* list, int32_t index) {
 }
 
 $Rectangle* BasicListUI::getCellBounds($JList* list, int32_t index1, int32_t index2) {
+	$useLocalCurrentObjectStackCache();
 	maybeUpdateLayoutState();
 	int32_t minIndex = $Math::min(index1, index2);
 	int32_t maxIndex = $Math::max(index1, index2);
@@ -925,6 +940,7 @@ int32_t BasicListUI::getHeight(int32_t column, int32_t row) {
 }
 
 int32_t BasicListUI::convertLocationToRow(int32_t x, int32_t y0, bool closest) {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc($($nc(this->list)->getModel()))->getSize();
 	if (size <= 0) {
 		return -1;
@@ -983,6 +999,7 @@ int32_t BasicListUI::convertLocationToModel(int32_t x, int32_t y) {
 }
 
 int32_t BasicListUI::getRowCount(int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	if (column < 0 || column >= this->columnCount) {
 		return -1;
 	}
@@ -1006,6 +1023,7 @@ int32_t BasicListUI::getRowCount(int32_t column) {
 }
 
 int32_t BasicListUI::getModelIndex(int32_t column, int32_t row) {
+	$useLocalCurrentObjectStackCache();
 	switch (this->layoutOrientation) {
 	case $JList::VERTICAL_WRAP:
 		{
@@ -1081,6 +1099,7 @@ void BasicListUI::maybeUpdateLayoutState() {
 }
 
 void BasicListUI::updateLayoutState() {
+	$useLocalCurrentObjectStackCache();
 	int32_t fixedCellHeight = $nc(this->list)->getFixedCellHeight();
 	int32_t fixedCellWidth = $nc(this->list)->getFixedCellWidth();
 	this->cellWidth = (fixedCellWidth != -1) ? fixedCellWidth : -1;
@@ -1127,6 +1146,7 @@ void BasicListUI::updateLayoutState() {
 }
 
 void BasicListUI::updateHorizontalLayoutState(int32_t fixedCellWidth, int32_t fixedCellHeight) {
+	$useLocalCurrentObjectStackCache();
 	int32_t visRows = $nc(this->list)->getVisibleRowCount();
 	int32_t dataModelSize = $nc($($nc(this->list)->getModel()))->getSize();
 	$var($Insets, insets, $nc(this->list)->getInsets());

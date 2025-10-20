@@ -99,6 +99,7 @@ void bug6866751::init$() {
 }
 
 void bug6866751::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -120,6 +121,7 @@ void bug6866751::main($StringArray* args) {
 }
 
 void bug6866751::setup($JFrame* frame) {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6866751);
 	$assignStatic(bug6866751::area, $new($JTextArea));
 	$nc($($nc(frame)->getContentPane()))->add(static_cast<$Component*>($$new($JScrollPane, bug6866751::area)));

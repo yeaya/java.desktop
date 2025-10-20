@@ -133,6 +133,7 @@ $AttributeSet* ParagraphView::getAttributes() {
 }
 
 void ParagraphView::setPropertiesFromAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($StyleSheet, sheet, getStyleSheet());
 	$set(this, attr, $nc(sheet)->getViewAttributes(this));
 	$set(this, painter, sheet->getBoxPainter(this->attr));
@@ -187,6 +188,7 @@ $SizeRequirements* ParagraphView::calculateMinorAxisRequirements(int32_t axis, $
 }
 
 bool ParagraphView::isVisible() {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = getLayoutViewCount() - 1;
 	for (int32_t i = 0; i < n; ++i) {
 		$var($View, v, getLayoutView(i));

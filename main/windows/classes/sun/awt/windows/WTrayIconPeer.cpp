@@ -294,6 +294,7 @@ void WTrayIconPeer::showPopupMenu(int32_t x, int32_t y) {
 }
 
 void WTrayIconPeer::displayMessage($String* caption$renamed, $String* text$renamed, $String* messageType) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, caption, caption$renamed);
 	$var($String, text, text$renamed);
 	if (caption == nullptr) {
@@ -307,6 +308,7 @@ void WTrayIconPeer::displayMessage($String* caption$renamed, $String* text$renam
 
 void WTrayIconPeer::updateNativeImage($Image* image) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (isDisposed()) {
 			return;
 		}
@@ -345,6 +347,7 @@ void WTrayIconPeer::updateNativeImage($Image* image) {
 }
 
 void WTrayIconPeer::createNativeImage($BufferedImage* bimage) {
+	$useLocalCurrentObjectStackCache();
 	$var($Raster, raster, $nc(bimage)->getRaster());
 	$var($bytes, andMask, $new($bytes, WTrayIconPeer::TRAY_ICON_MASK_SIZE));
 	$var($ints, pixels, $nc(($cast($DataBufferInt, $($nc(raster)->getDataBuffer()))))->getData());
@@ -404,6 +407,7 @@ void WTrayIconPeer::_displayMessage($String* caption, $String* text, $String* me
 }
 
 void WTrayIconPeer::lambda$showPopupMenu$0(int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($PopupMenu, newPopup, $nc(($cast($TrayIcon, this->target)))->getPopupMenu());
 	if (this->popup != newPopup) {
 		if (this->popup != nullptr) {

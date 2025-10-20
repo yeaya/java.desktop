@@ -77,6 +77,7 @@ $Object* allocate$MaskFill$TraceMaskFill($Class* clazz) {
 }
 
 void MaskFill$TraceMaskFill::init$($MaskFill* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, var$0, $nc(target)->getSourceType());
 	$var($CompositeType, var$1, target->getCompositeType());
 	$MaskFill::init$(var$0, var$1, $(target->getDestType()));

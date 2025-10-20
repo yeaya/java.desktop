@@ -59,6 +59,7 @@ $Object* allocate$Win32ColorModel24($Class* clazz) {
 }
 
 void Win32ColorModel24::init$() {
+	$useLocalCurrentObjectStackCache();
 	$ComponentColorModel::init$($($ColorSpace::getInstance($ColorSpace::CS_sRGB)), $$new($ints, {
 		8,
 		8,

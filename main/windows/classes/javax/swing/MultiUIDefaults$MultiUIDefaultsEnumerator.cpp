@@ -82,6 +82,7 @@ bool MultiUIDefaults$MultiUIDefaultsEnumerator::hasMoreElements() {
 }
 
 $Object* MultiUIDefaults$MultiUIDefaultsEnumerator::nextElement() {
+	$useLocalCurrentObjectStackCache();
 	$init($MultiUIDefaults$1);
 	switch ($nc($MultiUIDefaults$1::$SwitchMap$javax$swing$MultiUIDefaults$MultiUIDefaultsEnumerator$Type)->get($nc((this->type))->ordinal())) {
 	case 1:

@@ -128,6 +128,7 @@ void BasicSplitPaneDivider$MouseHandler::mousePressed($MouseEvent* e) {
 }
 
 void BasicSplitPaneDivider$MouseHandler::mouseReleased($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->dragger != nullptr) {
 		if ($equals($nc(e)->getSource(), this->this$0->splitPane)) {
 			int32_t var$0 = e->getX();
@@ -148,6 +149,7 @@ void BasicSplitPaneDivider$MouseHandler::mouseReleased($MouseEvent* e) {
 }
 
 void BasicSplitPaneDivider$MouseHandler::mouseDragged($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->dragger != nullptr) {
 		if ($equals($nc(e)->getSource(), this->this$0->splitPane)) {
 			int32_t var$0 = e->getX();

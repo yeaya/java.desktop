@@ -89,6 +89,7 @@ void UIManager$1::init$($Properties* val$props) {
 }
 
 $Object* UIManager$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$OSInfo$OSType* osType = $cast($OSInfo$OSType, $AccessController::doPrivileged($($OSInfo::getOSTypeAction())));
 	$init($OSInfo$OSType);

@@ -79,6 +79,7 @@ void SoftSynthesizer$4::init$($SoftSynthesizer* this$0) {
 }
 
 $Object* SoftSynthesizer$4::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($File, userhome, $new($File, $($System::getProperty("user.home"_s)), ".gervill"_s));
 	$var($File, emg_soundbank_file, $new($File, userhome, "soundbank-emg.sf2"_s));
 	if (emg_soundbank_file->isFile()) {

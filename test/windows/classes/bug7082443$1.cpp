@@ -66,6 +66,7 @@ void bug7082443$1::init$() {
 }
 
 void bug7082443$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($bug7082443$TestComboBox, testComboBox, $new($bug7082443$TestComboBox));
 	if (testComboBox->isOldRendererOpaque()) {
 		$init($System);

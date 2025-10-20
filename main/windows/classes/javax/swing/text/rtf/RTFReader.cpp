@@ -230,6 +230,7 @@ $Color* RTFReader::defaultColor() {
 }
 
 void RTFReader::begingroup() {
+	$useLocalCurrentObjectStackCache();
 	if (this->skippingCharacters > 0) {
 		this->skippingCharacters = 0;
 	}
@@ -248,6 +249,7 @@ void RTFReader::begingroup() {
 }
 
 void RTFReader::endgroup() {
+	$useLocalCurrentObjectStackCache();
 	if (this->skippingCharacters > 0) {
 		this->skippingCharacters = 0;
 	}
@@ -277,6 +279,7 @@ void RTFReader::setRTFDestination($RTFReader$Destination* newDestination) {
 }
 
 void RTFReader::close() {
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, docProps, $nc(this->documentAttributes)->getAttributeNames());
 	while ($nc(docProps)->hasMoreElements()) {
 		$var($Object, propName, docProps->nextElement());
@@ -287,6 +290,7 @@ void RTFReader::close() {
 }
 
 bool RTFReader::handleKeyword($String* keyword) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, item, nullptr);
 	bool ignoreGroupIfUnknownKeywordSave = this->ignoreGroupIfUnknownKeyword;
 	if (this->skippingCharacters > 0) {
@@ -405,6 +409,7 @@ bool RTFReader::handleKeyword($String* keyword) {
 }
 
 bool RTFReader::handleKeyword($String* keyword, int32_t parameter) {
+	$useLocalCurrentObjectStackCache();
 	bool ignoreGroupIfUnknownKeywordSave = this->ignoreGroupIfUnknownKeyword;
 	if (this->skippingCharacters > 0) {
 		--this->skippingCharacters;
@@ -456,6 +461,7 @@ void RTFReader::setTargetAttribute($String* name, Object$* value) {
 }
 
 void RTFReader::setCharacterSet($String* name) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, set, nullptr);
 	try {
 		$assign(set, getCharacterSet(name));
@@ -491,6 +497,7 @@ void RTFReader::defineCharacterSet($String* name, $chars* table) {
 
 $Object* RTFReader::getCharacterSet($String* name) {
 	$init(RTFReader);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($chars, set, $cast($chars, $nc(RTFReader::characterSets)->get(name)));
 	if (set == nullptr) {
@@ -503,6 +510,7 @@ $Object* RTFReader::getCharacterSet($String* name) {
 
 $chars* RTFReader::readCharset($InputStream* strm) {
 	$init(RTFReader);
+	$useLocalCurrentObjectStackCache();
 	$var($chars, values, $new($chars, 256));
 	int32_t i = 0;
 	$var($StreamTokenizer, in, $new($StreamTokenizer, static_cast<$Reader*>($$new($BufferedReader, $$new($InputStreamReader, strm, "ISO-8859-1"_s)))));

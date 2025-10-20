@@ -70,6 +70,7 @@ void bug7011777::init$() {
 
 void bug7011777::main($StringArray* args) {
 	$init(bug7011777);
+	$useLocalCurrentObjectStackCache();
 	$var($Reader, var$0, static_cast<$Reader*>($new($StringReader, bug7011777::html)));
 	$$new($ParserDelegator)->parse(var$0, $$new($bug7011777$MyParserCallback), true);
 }

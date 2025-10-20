@@ -63,6 +63,7 @@ void Test6984643::init$() {
 }
 
 void Test6984643::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($Test6984643$1)));
 	$SwingUtilities::invokeAndWait($$new($Test6984643$2));
 }

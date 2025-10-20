@@ -156,6 +156,7 @@ $EventListener* DnDEventMulticaster::addInternal($EventListener* a, $EventListen
 }
 
 $EventListener* DnDEventMulticaster::remove($EventListener* oldl) {
+	$useLocalCurrentObjectStackCache();
 	if (oldl == this->a) {
 		return this->b;
 	}

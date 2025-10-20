@@ -91,6 +91,7 @@ void Test6888156::test($String* laf) {
 }
 
 void Test6888156::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var(Test6888156, t, $new(Test6888156));
 	t->test("javax.swing.plaf.nimbus.NimbusLookAndFeel"_s);
 	t->test("com.sun.java.swing.plaf.gtk.GTKLookAndFeel"_s);

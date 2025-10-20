@@ -60,6 +60,7 @@ void bug6875716::init$() {
 }
 
 void bug6875716::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLayer, layer, $new($JLayer, $$new($bug6875716$1)));
 	layer->setGlassPane(nullptr);
 	try {

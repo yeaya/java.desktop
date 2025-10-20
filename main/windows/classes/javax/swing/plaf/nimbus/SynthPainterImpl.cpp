@@ -248,6 +248,7 @@ void SynthPainterImpl::init$($NimbusStyle* style) {
 }
 
 void SynthPainterImpl::paint($Painter* p, $SynthContext* ctx, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, $AffineTransform* transform) {
+	$useLocalCurrentObjectStackCache();
 	if (p != nullptr) {
 		if ($instanceOf($Graphics2D, g)) {
 			$var($Graphics2D, gfx, $cast($Graphics2D, g));
@@ -280,6 +281,7 @@ void SynthPainterImpl::paint($Painter* p, $SynthContext* ctx, $Graphics* g, int3
 }
 
 void SynthPainterImpl::paintBackground($SynthContext* ctx, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, $AffineTransform* transform) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $nc(ctx)->getComponent());
 	$var($Color, bg, (c != nullptr) ? $nc(c)->getBackground() : ($Color*)nullptr);
 	if (bg == nullptr || $nc(bg)->getAlpha() > 0) {
@@ -305,6 +307,7 @@ void SynthPainterImpl::paintBorder($SynthContext* ctx, $Graphics* g, int32_t x, 
 }
 
 void SynthPainterImpl::paintBackground($SynthContext* ctx, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $nc(ctx)->getComponent());
 	bool ltr = $nc($($nc(c)->getComponentOrientation()))->isLeftToRight();
 	if ($instanceOf($JSlider, $(ctx->getComponent()))) {
@@ -332,6 +335,7 @@ void SynthPainterImpl::paintBackground($SynthContext* ctx, $Graphics* g, int32_t
 }
 
 void SynthPainterImpl::paintBorder($SynthContext* ctx, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $nc(ctx)->getComponent());
 	bool ltr = $nc($($nc(c)->getComponentOrientation()))->isLeftToRight();
 	if (orientation == $SwingConstants::VERTICAL && ltr) {
@@ -352,6 +356,7 @@ void SynthPainterImpl::paintBorder($SynthContext* ctx, $Graphics* g, int32_t x, 
 }
 
 void SynthPainterImpl::paintForeground($SynthContext* ctx, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $nc(ctx)->getComponent());
 	bool ltr = $nc($($nc(c)->getComponentOrientation()))->isLeftToRight();
 	if (orientation == $SwingConstants::VERTICAL && ltr) {
@@ -372,6 +377,7 @@ void SynthPainterImpl::paintForeground($SynthContext* ctx, $Graphics* g, int32_t
 }
 
 void SynthPainterImpl::paintArrowButtonBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc($($nc(context)->getComponent()))->getComponentOrientation()))->isLeftToRight()) {
 		paintBackground(context, g, x, y, w, h, ($AffineTransform*)nullptr);
 	} else {
@@ -388,6 +394,7 @@ void SynthPainterImpl::paintArrowButtonBorder($SynthContext* context, $Graphics*
 }
 
 void SynthPainterImpl::paintArrowButtonForeground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, compName, $nc($($nc(context)->getComponent()))->getName());
 	bool ltr = $nc($($nc($(context->getComponent()))->getComponentOrientation()))->isLeftToRight();
 	bool var$0 = "Spinner.nextButton"_s->equals(compName);
@@ -468,6 +475,7 @@ void SynthPainterImpl::paintColorChooserBorder($SynthContext* context, $Graphics
 }
 
 void SynthPainterImpl::paintComboBoxBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc($($nc(context)->getComponent()))->getComponentOrientation()))->isLeftToRight()) {
 		paintBackground(context, g, x, y, w, h, ($AffineTransform*)nullptr);
 	} else {
@@ -516,6 +524,7 @@ void SynthPainterImpl::paintFileChooserBorder($SynthContext* context, $Graphics*
 }
 
 void SynthPainterImpl::paintFormattedTextFieldBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc($($nc(context)->getComponent()))->getComponentOrientation()))->isLeftToRight()) {
 		paintBackground(context, g, x, y, w, h, ($AffineTransform*)nullptr);
 	} else {
@@ -528,6 +537,7 @@ void SynthPainterImpl::paintFormattedTextFieldBackground($SynthContext* context,
 }
 
 void SynthPainterImpl::paintFormattedTextFieldBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc($($nc(context)->getComponent()))->getComponentOrientation()))->isLeftToRight()) {
 		paintBorder(context, g, x, y, w, h, ($AffineTransform*)nullptr);
 	} else {
@@ -841,6 +851,7 @@ void SynthPainterImpl::paintTabbedPaneTabAreaBackground($SynthContext* context, 
 }
 
 void SynthPainterImpl::paintTabbedPaneTabAreaBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	if (orientation == $JTabbedPane::LEFT) {
 		$var($AffineTransform, transform, $new($AffineTransform));
 		transform->scale((double)-1, (double)1);
@@ -875,6 +886,7 @@ void SynthPainterImpl::paintTabbedPaneTabBackground($SynthContext* context, $Gra
 }
 
 void SynthPainterImpl::paintTabbedPaneTabBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t tabIndex, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	if (orientation == $JTabbedPane::LEFT) {
 		$var($AffineTransform, transform, $new($AffineTransform));
 		transform->scale((double)-1, (double)1);
@@ -945,6 +957,7 @@ void SynthPainterImpl::paintTextPaneBorder($SynthContext* context, $Graphics* g,
 }
 
 void SynthPainterImpl::paintTextFieldBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc($($nc(context)->getComponent()))->getComponentOrientation()))->isLeftToRight()) {
 		paintBackground(context, g, x, y, w, h, ($AffineTransform*)nullptr);
 	} else {
@@ -957,6 +970,7 @@ void SynthPainterImpl::paintTextFieldBackground($SynthContext* context, $Graphic
 }
 
 void SynthPainterImpl::paintTextFieldBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc($($nc(context)->getComponent()))->getComponentOrientation()))->isLeftToRight()) {
 		paintBorder(context, g, x, y, w, h, ($AffineTransform*)nullptr);
 	} else {

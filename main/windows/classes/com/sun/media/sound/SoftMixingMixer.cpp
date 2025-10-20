@@ -192,6 +192,7 @@ $String* SoftMixingMixer::INFO_VERSION = nullptr;
 $Mixer$Info* SoftMixingMixer::info = nullptr;
 
 void SoftMixingMixer::init$() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, control_mutex, this);
 	this->implicitOpen = false;
 	this->open$ = false;
@@ -227,6 +228,7 @@ void SoftMixingMixer::init$() {
 }
 
 $Line* SoftMixingMixer::getLine($Line$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	if (!isLineSupported(info)) {
 		$throwNew($IllegalArgumentException, $$str({"Line unsupported: "_s, info}));
 	}
@@ -264,6 +266,7 @@ $Line$InfoArray* SoftMixingMixer::getSourceLineInfo() {
 }
 
 $Line$InfoArray* SoftMixingMixer::getSourceLineInfo($Line$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = 0;
 	$var($ArrayList, infos, $new($ArrayList));
 	for (i = 0; i < $nc(this->sourceLineInfo)->length; ++i) {
@@ -275,6 +278,7 @@ $Line$InfoArray* SoftMixingMixer::getSourceLineInfo($Line$Info* info) {
 }
 
 $LineArray* SoftMixingMixer::getSourceLines() {
+	$useLocalCurrentObjectStackCache();
 	$var($LineArray, localLines, nullptr);
 	$synchronized(this->control_mutex) {
 		if (this->mainmixer == nullptr) {
@@ -331,6 +335,7 @@ void SoftMixingMixer::addLineListener($LineListener* listener) {
 }
 
 void SoftMixingMixer::sendEvent($LineEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->listeners)->size() == 0) {
 		return;
 	}
@@ -349,6 +354,7 @@ void SoftMixingMixer::sendEvent($LineEvent* event) {
 }
 
 void SoftMixingMixer::close() {
+	$useLocalCurrentObjectStackCache();
 	if (!isOpen()) {
 		return;
 	}
@@ -419,6 +425,7 @@ void SoftMixingMixer::open() {
 }
 
 void SoftMixingMixer::open($SourceDataLine* line$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($SourceDataLine, line, line$renamed);
 	if (isOpen()) {
 		this->implicitOpen = false;

@@ -102,6 +102,7 @@ void BasicFileChooserUI$ApproveSelectionAction::init$($BasicFileChooserUI* this$
 }
 
 void BasicFileChooserUI$ApproveSelectionAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->isDirectorySelected()) {
 		$var($File, dir, this->this$0->getDirectory());
 		if (dir != nullptr) {

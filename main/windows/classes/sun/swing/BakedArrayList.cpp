@@ -53,6 +53,7 @@ void BakedArrayList::init$(int32_t size) {
 }
 
 void BakedArrayList::init$($List* data) {
+	$useLocalCurrentObjectStackCache();
 	BakedArrayList::init$($nc(data)->size());
 	{
 		int32_t counter = 0;
@@ -65,6 +66,7 @@ void BakedArrayList::init$($List* data) {
 }
 
 void BakedArrayList::cacheHashCode() {
+	$useLocalCurrentObjectStackCache();
 	this->_hashCode = 1;
 	for (int32_t counter = size() - 1; counter >= 0; --counter) {
 		this->_hashCode = 31 * this->_hashCode + $nc($of($(get(counter))))->hashCode();
@@ -76,6 +78,7 @@ int32_t BakedArrayList::hashCode() {
 }
 
 bool BakedArrayList::equals(Object$* o) {
+	$useLocalCurrentObjectStackCache();
 	$var(BakedArrayList, list, $cast(BakedArrayList, o));
 	int32_t size = this->size();
 	if ($nc(list)->size() != size) {

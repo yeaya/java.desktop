@@ -239,6 +239,7 @@ void WindowsClassicHiDPIIconsTest::main($StringArray* args) {
 
 void WindowsClassicHiDPIIconsTest::createUI() {
 	$init(WindowsClassicHiDPIIconsTest);
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, mainFrame, $new($JFrame, "Windows Classic L&F icons test"_s));
 	$var($GridBagLayout, layout, $new($GridBagLayout));
 	$var($JPanel, mainControlPanel, $new($JPanel, static_cast<$LayoutManager*>(layout)));
@@ -281,6 +282,7 @@ void WindowsClassicHiDPIIconsTest::createUI() {
 
 $JPanel* WindowsClassicHiDPIIconsTest::createJPanel() {
 	$init(WindowsClassicHiDPIIconsTest);
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, panel, $new($JPanel));
 	panel->setLayout($$new($BoxLayout, panel, $BoxLayout::Y_AXIS));
 	$var($JPanel, iconPanel, $new($JPanel, static_cast<$LayoutManager*>($$new($FlowLayout))));

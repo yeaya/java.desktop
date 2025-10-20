@@ -236,6 +236,7 @@ $ComponentUI* BasicScrollPaneUI::createUI($JComponent* x) {
 
 void BasicScrollPaneUI::loadActionMap($LazyActionMap* map) {
 	$init(BasicScrollPaneUI);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicScrollPaneUI$Actions);
 	$nc(map)->put($$new($BasicScrollPaneUI$Actions, $BasicScrollPaneUI$Actions::SCROLL_UP));
 	map->put($$new($BasicScrollPaneUI$Actions, $BasicScrollPaneUI$Actions::SCROLL_DOWN));
@@ -250,6 +251,7 @@ void BasicScrollPaneUI::loadActionMap($LazyActionMap* map) {
 }
 
 void BasicScrollPaneUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Border, vpBorder, $nc(this->scrollpane)->getViewportBorder());
 	if (vpBorder != nullptr) {
 		$var($Rectangle, r, $nc(this->scrollpane)->getViewportBorderBounds());
@@ -274,6 +276,7 @@ void BasicScrollPaneUI::installDefaults($JScrollPane* scrollpane) {
 }
 
 void BasicScrollPaneUI::installListeners($JScrollPane* c) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, vsbChangeListener, createVSBChangeListener());
 	$set(this, vsbPropertyChangeListener, createVSBPropertyChangeListener());
 	$set(this, hsbChangeListener, createHSBChangeListener());
@@ -306,6 +309,7 @@ void BasicScrollPaneUI::installKeyboardActions($JScrollPane* c) {
 }
 
 $InputMap* BasicScrollPaneUI::getInputMap(int32_t condition) {
+	$useLocalCurrentObjectStackCache();
 	if (condition == $JComponent::WHEN_ANCESTOR_OF_FOCUSED_COMPONENT) {
 		$var($InputMap, keyMap, $cast($InputMap, $DefaultLookup::get(this->scrollpane, this, "ScrollPane.ancestorInputMap"_s)));
 		$var($InputMap, rtlKeyMap, nullptr);
@@ -335,6 +339,7 @@ void BasicScrollPaneUI::uninstallDefaults($JScrollPane* c) {
 }
 
 void BasicScrollPaneUI::uninstallListeners($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JViewport, viewport, $nc(this->scrollpane)->getViewport());
 	$var($JScrollBar, vsb, $nc(this->scrollpane)->getVerticalScrollBar());
 	$var($JScrollBar, hsb, $nc(this->scrollpane)->getHorizontalScrollBar());
@@ -381,6 +386,7 @@ $BasicScrollPaneUI$Handler* BasicScrollPaneUI::getHandler() {
 }
 
 void BasicScrollPaneUI::syncScrollPaneWithViewport() {
+	$useLocalCurrentObjectStackCache();
 	$var($JViewport, viewport, $nc(this->scrollpane)->getViewport());
 	$var($JScrollBar, vsb, $nc(this->scrollpane)->getVerticalScrollBar());
 	$var($JScrollBar, hsb, $nc(this->scrollpane)->getHorizontalScrollBar());
@@ -444,6 +450,7 @@ void BasicScrollPaneUI::syncScrollPaneWithViewport() {
 }
 
 int32_t BasicScrollPaneUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (c == nullptr) {
 		$throwNew($NullPointerException, "Component must be non-null"_s);
 	}
@@ -532,6 +539,7 @@ void BasicScrollPaneUI::updateScrollBarDisplayPolicy($PropertyChangeEvent* e) {
 }
 
 void BasicScrollPaneUI::updateViewport($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JViewport, oldViewport, ($cast($JViewport, $nc(e)->getOldValue())));
 	$var($JViewport, newViewport, ($cast($JViewport, e->getNewValue())));
 	if (oldViewport != nullptr) {
@@ -557,6 +565,7 @@ void BasicScrollPaneUI::updateViewport($PropertyChangeEvent* e) {
 }
 
 void BasicScrollPaneUI::updateRowHeader($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JViewport, newRowHead, ($cast($JViewport, $nc(e)->getNewValue())));
 	if (newRowHead != nullptr) {
 		$var($JViewport, viewport, $nc(this->scrollpane)->getViewport());
@@ -567,6 +576,7 @@ void BasicScrollPaneUI::updateRowHeader($PropertyChangeEvent* e) {
 }
 
 void BasicScrollPaneUI::updateColumnHeader($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JViewport, newColHead, ($cast($JViewport, $nc(e)->getNewValue())));
 	if (newColHead != nullptr) {
 		$var($JViewport, viewport, $nc(this->scrollpane)->getViewport());
@@ -593,6 +603,7 @@ void BasicScrollPaneUI::updateVerticalScrollBar($PropertyChangeEvent* pce) {
 }
 
 void BasicScrollPaneUI::updateScrollBar($PropertyChangeEvent* pce, $ChangeListener* cl, $PropertyChangeListener* pcl) {
+	$useLocalCurrentObjectStackCache();
 	$var($JScrollBar, sb, $cast($JScrollBar, $nc(pce)->getOldValue()));
 	if (sb != nullptr) {
 		if (cl != nullptr) {

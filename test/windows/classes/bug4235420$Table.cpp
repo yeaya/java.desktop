@@ -76,6 +76,7 @@ void bug4235420$Table::init$() {
 }
 
 void bug4235420$Table::test() {
+	$useLocalCurrentObjectStackCache();
 		$load($Object);
 		$load($Number);
 		$load($Date);

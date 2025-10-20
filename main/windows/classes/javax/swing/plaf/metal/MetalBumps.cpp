@@ -100,6 +100,7 @@ void MetalBumps::init$(int32_t width, int32_t height, $Color* newTopColor, $Colo
 
 $BumpBuffer* MetalBumps::createBuffer($GraphicsConfiguration* gc, $Color* topColor, $Color* shadowColor, $Color* backColor) {
 	$init(MetalBumps);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, context, $AppContext::getAppContext());
 	$var($List, buffers, $cast($List, $nc(context)->get(MetalBumps::METAL_BUMPS)));
 	if (buffers == nullptr) {
@@ -142,6 +143,7 @@ void MetalBumps::setBumpColors($Color* newTopColor, $Color* newShadowColor, $Col
 }
 
 void MetalBumps::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, ($instanceOf($Graphics2D, g)) ? $nc(($cast($Graphics2D, g)))->getDeviceConfiguration() : ($GraphicsConfiguration*)nullptr);
 	if ((this->buffer == nullptr) || !$nc(this->buffer)->hasSameConfiguration(gc, this->topColor, this->shadowColor, this->backColor)) {
 		$set(this, buffer, createBuffer(gc, this->topColor, this->shadowColor, this->backColor));

@@ -91,6 +91,7 @@ void BasicScrollBarUI$Actions::init$($String* name) {
 }
 
 void BasicScrollBarUI$Actions::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JScrollBar, scrollBar, $cast($JScrollBar, $nc(e)->getSource()));
 	$var($String, key, getName());
 	if (key == BasicScrollBarUI$Actions::POSITIVE_UNIT_INCREMENT) {

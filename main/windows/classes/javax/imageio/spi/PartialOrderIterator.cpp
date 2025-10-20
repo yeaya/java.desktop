@@ -64,6 +64,7 @@ $Object* allocate$PartialOrderIterator($Class* clazz) {
 }
 
 void PartialOrderIterator::init$($Iterator* iter) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, zeroList, $new($LinkedList));
 	$set(this, inDegrees, $new($HashMap));
 	while ($nc(iter)->hasNext()) {
@@ -81,6 +82,7 @@ bool PartialOrderIterator::hasNext() {
 }
 
 $Object* PartialOrderIterator::next() {
+	$useLocalCurrentObjectStackCache();
 	$var($DigraphNode, first, $cast($DigraphNode, $nc(this->zeroList)->removeFirst()));
 	$var($Iterator, outNodes, $nc(first)->getOutNodes());
 	while ($nc(outNodes)->hasNext()) {

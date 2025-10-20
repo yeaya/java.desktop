@@ -45,6 +45,7 @@ void HeadlessSpinnerListModel::init$() {
 }
 
 void HeadlessSpinnerListModel::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($LinkedList, list, $new($LinkedList));
 	list->add("prev"_s);
 	list->add("this"_s);

@@ -67,6 +67,7 @@ void SynthComboPopup::init$($JComboBox* combo) {
 }
 
 void SynthComboPopup::configureList() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->list$)->setFont($($nc(this->comboBox)->getFont()));
 	$nc(this->list$)->setCellRenderer($($nc(this->comboBox)->getRenderer()));
 	$nc(this->list$)->setFocusable(false);
@@ -82,6 +83,7 @@ void SynthComboPopup::configureList() {
 }
 
 $Rectangle* SynthComboPopup::computePopupBounds(int32_t px, int32_t py, int32_t pw, int32_t ph) {
+	$useLocalCurrentObjectStackCache();
 	$var($ComboBoxUI, ui, $cast($ComboBoxUI, $nc(this->comboBox)->getUI()));
 	if ($instanceOf($SynthComboBoxUI, ui)) {
 		$var($SynthComboBoxUI, sui, $cast($SynthComboBoxUI, ui));

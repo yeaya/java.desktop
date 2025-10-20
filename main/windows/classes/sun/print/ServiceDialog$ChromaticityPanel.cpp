@@ -149,6 +149,7 @@ void ServiceDialog$ChromaticityPanel::finalize() {
 }
 
 void ServiceDialog$ChromaticityPanel::init$($ServiceDialog* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JPanel::init$();
 	$set(this, strTitle, $ServiceDialog::getMsg("border.chromaticity"_s));
@@ -181,6 +182,7 @@ void ServiceDialog$ChromaticityPanel::actionPerformed($ActionEvent* e) {
 }
 
 void ServiceDialog$ChromaticityPanel::updateInfo() {
+	$useLocalCurrentObjectStackCache();
 	$load($Chromaticity);
 	$Class* chCategory = $Chromaticity::class$;
 	bool monoSupported = false;

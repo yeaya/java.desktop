@@ -92,6 +92,7 @@ void MetalToolBarUI$MetalDockingListener::init$($MetalToolBarUI* this$0, $JToolB
 }
 
 void MetalToolBarUI$MetalDockingListener::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$BasicToolBarUI$DockingListener::mousePressed(e);
 	if (!$nc(this->toolBar)->isEnabled()) {
 		return;

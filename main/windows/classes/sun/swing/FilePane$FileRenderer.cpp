@@ -86,6 +86,7 @@ void FilePane$FileRenderer::init$($FilePane* this$0) {
 }
 
 $Component* FilePane$FileRenderer::getListCellRendererComponent($JList* list, Object$* value, int32_t index, bool isSelected, bool cellHasFocus) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->listViewWindowsStyle && !$nc(list)->isFocusOwner()) {
 		isSelected = false;
 	}

@@ -71,6 +71,7 @@ void GetSelectedValueTest$1::init$() {
 }
 
 void GetSelectedValueTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultListModel, dlm, $new($DefaultListModel));
 	$var($JList, list, $new($JList, static_cast<$ListModel*>(dlm)));
 	list->setSelectionMode($ListSelectionModel::MULTIPLE_INTERVAL_SELECTION);

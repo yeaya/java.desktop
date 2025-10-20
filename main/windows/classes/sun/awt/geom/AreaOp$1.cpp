@@ -66,6 +66,7 @@ void AreaOp$1::init$() {
 }
 
 int32_t AreaOp$1::compare($Edge* o1, $Edge* o2) {
+	$useLocalCurrentObjectStackCache();
 	$var($Curve, c1, $nc(o1)->getCurve());
 	$var($Curve, c2, $nc(o2)->getCurve());
 	double v1 = 0.0;

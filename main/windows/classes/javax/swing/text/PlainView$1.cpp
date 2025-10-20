@@ -81,6 +81,7 @@ void PlainView$1::init$($String* val$methodName, $Class* val$className, $PlainVi
 }
 
 $Object* PlainView$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, this->val$methodName);
 	$Class* var$1 = this->val$className;
 	$var($ClassArray, var$2, this->val$methodArgs->getMethodArguments(false));

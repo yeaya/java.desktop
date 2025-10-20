@@ -78,6 +78,7 @@ void Win32ShellFolder2$3::init$($Win32ShellFolder2* this$0) {
 }
 
 $Object* Win32ShellFolder2$3::call() {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->isFileSystem()) {
 		return $of($new($File, $(this->this$0->getPath())));
 	} else {

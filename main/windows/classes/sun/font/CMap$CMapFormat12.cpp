@@ -73,6 +73,7 @@ $Object* allocate$CMap$CMapFormat12($Class* clazz) {
 }
 
 void CMap$CMapFormat12::init$($ByteBuffer* buffer$renamed, int32_t offset, $chars* xlat) {
+	$useLocalCurrentObjectStackCache();
 	$var($ByteBuffer, buffer, buffer$renamed);
 	$CMap::init$();
 	this->highBit = 0;

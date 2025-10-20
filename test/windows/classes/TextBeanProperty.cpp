@@ -68,6 +68,7 @@ void TextBeanProperty::main($StringArray* args) {
 }
 
 void TextBeanProperty::test($Class* beanClass) {
+	$useLocalCurrentObjectStackCache();
 	$var($BeanInfo, info, $Introspector::getBeanInfo(beanClass));
 	$var($PropertyDescriptorArray, pd, $nc(info)->getPropertyDescriptors());
 	int32_t i = 0;

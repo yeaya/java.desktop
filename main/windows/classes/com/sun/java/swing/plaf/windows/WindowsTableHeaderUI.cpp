@@ -143,6 +143,7 @@ void WindowsTableHeaderUI::uninstallUI($JComponent* c) {
 }
 
 void WindowsTableHeaderUI::rolloverColumnUpdated(int32_t oldColumn, int32_t newColumn) {
+	$useLocalCurrentObjectStackCache();
 	if ($XPStyle::getXP() != nullptr) {
 		$nc(this->header)->repaint($($nc(this->header)->getHeaderRect(oldColumn)));
 		$nc(this->header)->repaint($($nc(this->header)->getHeaderRect(newColumn)));

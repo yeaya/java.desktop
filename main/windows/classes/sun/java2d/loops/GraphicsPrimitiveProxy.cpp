@@ -64,6 +64,7 @@ void GraphicsPrimitiveProxy::init$($Class* owner, $String* relativeClassName, $S
 }
 
 $GraphicsPrimitive* GraphicsPrimitiveProxy::instantiate() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, name, $str({$(getPackageName($($nc(this->owner)->getName()))), "."_s, this->relativeClassName}));
 	try {

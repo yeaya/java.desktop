@@ -73,6 +73,7 @@ void SunFontManager$3::init$($SunFontManager* this$0) {
 }
 
 $Object* SunFontManager$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prop, $System::getProperty("java2d.font.usePlatformFont"_s));
 	$var($String, env, $System::getenv("JAVA2D_USEPLATFORMFONT"_s));
 	return $of($Boolean::valueOf("true"_s->equals(prop) || env != nullptr));

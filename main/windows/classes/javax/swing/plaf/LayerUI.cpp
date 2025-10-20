@@ -287,6 +287,7 @@ void LayerUI::applyPropertyChange($PropertyChangeEvent* evt, $JLayer* l) {
 }
 
 int32_t LayerUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLayer, l, $cast($JLayer, c));
 	if ($nc(l)->getView() != nullptr) {
 		return $nc($(l->getView()))->getBaseline(width, height);
@@ -295,6 +296,7 @@ int32_t LayerUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
 }
 
 $Component$BaselineResizeBehavior* LayerUI::getBaselineResizeBehavior($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLayer, l, $cast($JLayer, c));
 	if ($nc(l)->getView() != nullptr) {
 		return $nc($(l->getView()))->getBaselineResizeBehavior();
@@ -303,6 +305,7 @@ $Component$BaselineResizeBehavior* LayerUI::getBaselineResizeBehavior($JComponen
 }
 
 void LayerUI::doLayout($JLayer* l) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, view, $nc(l)->getView());
 	if (view != nullptr) {
 		int32_t var$0 = l->getWidth();
@@ -316,6 +319,7 @@ void LayerUI::doLayout($JLayer* l) {
 }
 
 $Dimension* LayerUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLayer, l, $cast($JLayer, c));
 	$var($Component, view, $nc(l)->getView());
 	if (view != nullptr) {
@@ -325,6 +329,7 @@ $Dimension* LayerUI::getPreferredSize($JComponent* c) {
 }
 
 $Dimension* LayerUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLayer, l, $cast($JLayer, c));
 	$var($Component, view, $nc(l)->getView());
 	if (view != nullptr) {
@@ -334,6 +339,7 @@ $Dimension* LayerUI::getMinimumSize($JComponent* c) {
 }
 
 $Dimension* LayerUI::getMaximumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLayer, l, $cast($JLayer, c));
 	$var($Component, view, $nc(l)->getView());
 	if (view != nullptr) {

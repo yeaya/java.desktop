@@ -620,6 +620,7 @@ $Object* WPrinterJob::getDisposerReferent() {
 }
 
 $PageFormat* WPrinterJob::pageDialog($PageFormat* page) {
+	$useLocalCurrentObjectStackCache();
 	if ($GraphicsEnvironment::isHeadless()) {
 		$throwNew($HeadlessException);
 	}
@@ -650,6 +651,7 @@ $PageFormat* WPrinterJob::pageDialog($PageFormat* page) {
 }
 
 bool WPrinterJob::displayNativeDialog() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (this->attributes == nullptr) {
 		return false;
@@ -789,6 +791,7 @@ void WPrinterJob::setNativePrintServiceIfNeeded($String* name) {
 }
 
 $PrintService* WPrinterJob::getPrintService() {
+	$useLocalCurrentObjectStackCache();
 	if (this->myService == nullptr) {
 		$var($String, printerName, getNativePrintService());
 		if (printerName != nullptr) {
@@ -832,6 +835,7 @@ void WPrinterJob::initAttributeMembers() {
 }
 
 void WPrinterJob::setAttributes($PrintRequestAttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	initAttributeMembers();
 	$RasterPrinterJob::setAttributes(attributes);
 	this->mAttCopies = getCopiesInt();
@@ -912,6 +916,7 @@ void WPrinterJob::validatePaper($Paper* origPaper, $Paper* newPaper) {
 }
 
 $Graphics2D* WPrinterJob::createPathGraphics($PeekGraphics* peekGraphics, $PrinterJob* printerJob, $Printable* painter, $PageFormat* pageFormat, int32_t pageIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($WPathGraphics, pathGraphics, nullptr);
 	$var($PeekMetrics, metrics, $nc(peekGraphics)->getMetrics());
 	$init($RasterPrinterJob);
@@ -976,6 +981,7 @@ bool WPrinterJob::isCollated() {
 }
 
 int32_t WPrinterJob::getCollatedCopies() {
+	$useLocalCurrentObjectStackCache();
 	debug_println($$str({"driverDoesMultipleCopies="_s, $$str(this->driverDoesMultipleCopies), " driverDoesCollation="_s, $$str(this->driverDoesCollation)}));
 	if ($RasterPrinterJob::isCollated() && !this->driverDoesCollation) {
 		this->mAttCollate = 0;
@@ -1190,6 +1196,7 @@ $String* WPrinterJob::removeControlChars($String* str) {
 }
 
 void WPrinterJob::textOut($String* str, float x, float y, $floats* positions) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, text, removeControlChars(str));
 	bool var$0 = !WPrinterJob::$assertionsDisabled;
 	if (var$0) {
@@ -1212,6 +1219,7 @@ void WPrinterJob::textOut($String* str, float x, float y, $floats* positions) {
 }
 
 void WPrinterJob::glyphsOut($ints* glyphs, float x, float y, $floats* positions) {
+	$useLocalCurrentObjectStackCache();
 	$var($chars, glyphCharArray, $new($chars, $nc(glyphs)->length));
 	for (int32_t i = 0; i < glyphs->length; ++i) {
 		glyphCharArray->set(i, (char16_t)((int32_t)(glyphs->get(i) & (uint32_t)0x0000FFFF)));
@@ -1510,6 +1518,7 @@ void WPrinterJob::drawDIBImage(int64_t printDC, $bytes* image, float destX, floa
 }
 
 $String* WPrinterJob::getPrinterAttrib() {
+	$useLocalCurrentObjectStackCache();
 	$var($PrintService, service, this->getPrintService());
 	$var($String, name, (service != nullptr) ? $nc(service)->getName() : ($String*)nullptr);
 	return name;
@@ -1568,6 +1577,7 @@ int32_t WPrinterJob::getCopiesAttrib() {
 }
 
 void WPrinterJob::setRangeCopiesAttribute(int32_t from, int32_t to, bool isRangeSet, int32_t copies) {
+	$useLocalCurrentObjectStackCache();
 	if (this->attributes != nullptr) {
 		if (isRangeSet) {
 			$nc(this->attributes)->add(static_cast<$Attribute*>(static_cast<$DocAttribute*>($$new($PageRanges, from, to))));
@@ -1647,6 +1657,7 @@ void WPrinterJob::setSidesAttrib($Attribute* attr, $PrintRequestAttributeSet* se
 }
 
 $ints* WPrinterJob::getWin32MediaAttrib() {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, wid_ht, $new($ints, {
 		0,
 		0
@@ -1741,6 +1752,7 @@ int32_t WPrinterJob::getMediaTrayAttrib() {
 }
 
 bool WPrinterJob::getPrintToFileEnabled() {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, security, $System::getSecurityManager());
 	if (security != nullptr) {
 		$var($FilePermission, printToFilePermission, $new($FilePermission, "<<ALL FILES>>"_s, "read,write"_s));
@@ -1755,6 +1767,7 @@ bool WPrinterJob::getPrintToFileEnabled() {
 }
 
 void WPrinterJob::setNativeAttributes(int32_t flags, int32_t fields, int32_t values) {
+	$useLocalCurrentObjectStackCache();
 	if (this->attributes == nullptr) {
 		return;
 	}
@@ -1845,6 +1858,7 @@ void WPrinterJob::setNativeAttributes(int32_t flags, int32_t fields, int32_t val
 }
 
 void WPrinterJob::getDevModeValues($PrintRequestAttributeSet* aset, $WPrinterJob$DevModeValues* info) {
+	$useLocalCurrentObjectStackCache();
 	$load($Copies);
 	$var($Copies, c, $cast($Copies, $nc(aset)->get($Copies::class$)));
 	if (c != nullptr) {
@@ -1938,6 +1952,7 @@ void WPrinterJob::getDevModeValues($PrintRequestAttributeSet* aset, $WPrinterJob
 }
 
 void WPrinterJob::setJobAttributes($PrintRequestAttributeSet* attributes, int32_t fields, int32_t values, int16_t copies, int16_t dmPaperSize, int16_t dmPaperWidth, int16_t dmPaperLength, int16_t dmDefaultSource, int16_t xRes, int16_t yRes) {
+	$useLocalCurrentObjectStackCache();
 	if (attributes == nullptr) {
 		return;
 	}
@@ -2021,6 +2036,7 @@ bool WPrinterJob::showDocProperties(int64_t hWnd, $PrintRequestAttributeSet* ase
 }
 
 $PrintRequestAttributeSet* WPrinterJob::showDocumentProperties($Window* owner, $PrintService* service, $PrintRequestAttributeSet* aset) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		setNativePrintServiceIfNeeded($($nc(service)->getName()));
 	} catch ($PrinterException&) {
@@ -2054,6 +2070,7 @@ void WPrinterJob::setResolutionAttrib($Attribute* attr) {
 }
 
 void WPrinterJob::setPrinterNameAttrib($String* printerName) {
+	$useLocalCurrentObjectStackCache();
 	$var($PrintService, service, this->getPrintService());
 	if (printerName == nullptr) {
 		return;

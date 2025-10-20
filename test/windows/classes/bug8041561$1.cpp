@@ -78,6 +78,7 @@ void bug8041561$1::init$() {
 }
 
 void bug8041561$1::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$MetalLookAndFeel::setCurrentTheme($$new($DefaultMetalTheme));
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));

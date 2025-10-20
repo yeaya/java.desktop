@@ -152,6 +152,7 @@ void JFileChooserTest::init$() {
 }
 
 void JFileChooserTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($CountDownLatch, latch, $new($CountDownLatch, 1));
 	$var($TestUI, test, $new($TestUI, latch));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(JFileChooserTest$$Lambda$lambda$main$0, test)));

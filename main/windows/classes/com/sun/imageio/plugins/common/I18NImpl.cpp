@@ -48,6 +48,7 @@ void I18NImpl::init$() {
 
 $String* I18NImpl::getString($String* className, $String* resource_name, $String* key) {
 	$load(I18NImpl);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($PropertyResourceBundle, bundle, nullptr);
 	try {

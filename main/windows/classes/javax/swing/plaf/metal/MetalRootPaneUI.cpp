@@ -226,6 +226,7 @@ void MetalRootPaneUI::uninstallLayout($JRootPane* root) {
 }
 
 void MetalRootPaneUI::installClientDecorations($JRootPane* root) {
+	$useLocalCurrentObjectStackCache();
 	installBorder(root);
 	$var($JComponent, titlePane, createTitlePane(root));
 	setTitlePane(root, titlePane);
@@ -266,6 +267,7 @@ $LayoutManager* MetalRootPaneUI::createLayoutManager() {
 }
 
 void MetalRootPaneUI::setTitlePane($JRootPane* root, $JComponent* titlePane) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLayeredPane, layeredPane, $nc(root)->getLayeredPane());
 	$var($JComponent, oldTitlePane, getTitlePane());
 	if (oldTitlePane != nullptr) {
@@ -289,6 +291,7 @@ $JRootPane* MetalRootPaneUI::getRootPane() {
 }
 
 void MetalRootPaneUI::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$BasicRootPaneUI::propertyChange(e);
 	$var($String, propertyName, $nc(e)->getPropertyName());
 	if (propertyName == nullptr) {

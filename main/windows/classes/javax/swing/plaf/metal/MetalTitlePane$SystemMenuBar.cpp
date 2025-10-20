@@ -90,6 +90,7 @@ void MetalTitlePane$SystemMenuBar::init$($MetalTitlePane* this$0) {
 }
 
 void MetalTitlePane$SystemMenuBar::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (isOpaque()) {
 		$nc(g)->setColor($(getBackground()));
 		int32_t var$0 = getWidth();

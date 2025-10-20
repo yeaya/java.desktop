@@ -86,6 +86,7 @@ void SwingWorker$7::init$($ExecutorService* val$es) {
 }
 
 void SwingWorker$7::propertyChange($PropertyChangeEvent* pce) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	bool disposed = $nc(($cast($Boolean, $($nc(pce)->getNewValue()))))->booleanValue();
 	if (disposed) {

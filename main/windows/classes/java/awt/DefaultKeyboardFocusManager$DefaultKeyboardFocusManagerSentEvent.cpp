@@ -69,6 +69,7 @@ void DefaultKeyboardFocusManager$DefaultKeyboardFocusManagerSentEvent::init$($AW
 }
 
 void DefaultKeyboardFocusManager$DefaultKeyboardFocusManagerSentEvent::dispatch() {
+	$useLocalCurrentObjectStackCache();
 	$var($KeyboardFocusManager, manager, $KeyboardFocusManager::getCurrentKeyboardFocusManager());
 	$var($DefaultKeyboardFocusManager, defaultManager, ($instanceOf($DefaultKeyboardFocusManager, manager)) ? $cast($DefaultKeyboardFocusManager, manager) : ($DefaultKeyboardFocusManager*)nullptr);
 	if (defaultManager != nullptr) {

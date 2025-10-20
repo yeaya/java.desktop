@@ -213,6 +213,7 @@ void SF2Soundbank::init$() {
 }
 
 void SF2Soundbank::init$($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	this->major = 2;
 	this->minor = 1;
 	$set(this, targetEngine, "EMU8000"_s);
@@ -250,6 +251,7 @@ void SF2Soundbank::init$($URL* url) {
 }
 
 void SF2Soundbank::init$($File* file) {
+	$useLocalCurrentObjectStackCache();
 	this->major = 2;
 	this->minor = 1;
 	$set(this, targetEngine, "EMU8000"_s);
@@ -313,6 +315,7 @@ void SF2Soundbank::init$($InputStream* inputstream) {
 }
 
 void SF2Soundbank::readSoundbank($InputStream* inputstream) {
+	$useLocalCurrentObjectStackCache();
 	$var($RIFFReader, riff, $new($RIFFReader, inputstream));
 	if (!$nc($(riff->getFormat()))->equals("RIFF"_s)) {
 		$throwNew($RIFFInvalidFormatException, "Input stream is not a valid RIFF stream!"_s);
@@ -337,6 +340,7 @@ void SF2Soundbank::readSoundbank($InputStream* inputstream) {
 }
 
 void SF2Soundbank::readInfoChunk($RIFFReader* riff) {
+	$useLocalCurrentObjectStackCache();
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
 		$var($String, format, $nc(chunk)->getFormat());
@@ -369,6 +373,7 @@ void SF2Soundbank::readInfoChunk($RIFFReader* riff) {
 }
 
 void SF2Soundbank::readSdtaChunk($RIFFReader* riff) {
+	$useLocalCurrentObjectStackCache();
 	while ($nc(riff)->hasNextChunk()) {
 		$var($RIFFReader, chunk, riff->nextChunk());
 		if ($nc($($nc(chunk)->getFormat()))->equals("smpl"_s)) {
@@ -417,6 +422,7 @@ void SF2Soundbank::readSdtaChunk($RIFFReader* riff) {
 }
 
 void SF2Soundbank::readPdtaChunk($RIFFReader* riff) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, presets, $new($ArrayList));
 	$var($List, presets_bagNdx, $new($ArrayList));
 	$var($List, presets_splits_gen, $new($ArrayList));
@@ -730,6 +736,7 @@ void SF2Soundbank::save($OutputStream* out) {
 }
 
 void SF2Soundbank::writeSoundbank($RIFFWriter* writer) {
+	$useLocalCurrentObjectStackCache();
 	writeInfo($($nc(writer)->writeList("INFO"_s)));
 	writeSdtaChunk($($nc(writer)->writeList("sdta"_s)));
 	writePdtaChunk($($nc(writer)->writeList("pdta"_s)));
@@ -737,6 +744,7 @@ void SF2Soundbank::writeSoundbank($RIFFWriter* writer) {
 }
 
 void SF2Soundbank::writeInfoStringChunk($RIFFWriter* writer, $String* name, $String* value) {
+	$useLocalCurrentObjectStackCache();
 	if (value == nullptr) {
 		return;
 	}
@@ -751,6 +759,7 @@ void SF2Soundbank::writeInfoStringChunk($RIFFWriter* writer, $String* name, $Str
 }
 
 void SF2Soundbank::writeInfo($RIFFWriter* writer) {
+	$useLocalCurrentObjectStackCache();
 	if (this->targetEngine == nullptr) {
 		$set(this, targetEngine, "EMU8000"_s);
 	}
@@ -778,6 +787,7 @@ void SF2Soundbank::writeInfo($RIFFWriter* writer) {
 }
 
 void SF2Soundbank::writeSdtaChunk($RIFFWriter* writer) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, pad, $new($bytes, 32));
 	$var($RIFFWriter, smpl_chunk, $nc(writer)->writeChunk("smpl"_s));
 	{
@@ -825,6 +835,7 @@ void SF2Soundbank::writeSdtaChunk($RIFFWriter* writer) {
 }
 
 void SF2Soundbank::writeModulators($RIFFWriter* writer, $List* modulators) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(modulators)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -841,6 +852,7 @@ void SF2Soundbank::writeModulators($RIFFWriter* writer, $List* modulators) {
 }
 
 void SF2Soundbank::writeGenerators($RIFFWriter* writer, $Map* generators) {
+	$useLocalCurrentObjectStackCache();
 	$var($Short, keyrange, $cast($Short, $nc(generators)->get($($Integer::valueOf($SF2Region::GENERATOR_KEYRANGE)))));
 	$var($Short, velrange, $cast($Short, generators->get($($Integer::valueOf($SF2Region::GENERATOR_VELRANGE)))));
 	if (keyrange != nullptr) {
@@ -870,6 +882,7 @@ void SF2Soundbank::writeGenerators($RIFFWriter* writer, $Map* generators) {
 }
 
 void SF2Soundbank::writePdtaChunk($RIFFWriter* writer) {
+	$useLocalCurrentObjectStackCache();
 	$var($RIFFWriter, phdr_chunk, $nc(writer)->writeChunk("phdr"_s));
 	int32_t phdr_zone_count = 0;
 	{
@@ -1119,6 +1132,7 @@ $String* SF2Soundbank::getName() {
 }
 
 $String* SF2Soundbank::getVersion() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$$str(this->major), "."_s, $$str(this->minor)});
 }
 
@@ -1143,6 +1157,7 @@ void SF2Soundbank::setDescription($String* s) {
 }
 
 $SoundbankResourceArray* SF2Soundbank::getResources() {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc(this->layers)->size();
 	$var($SoundbankResourceArray, resources, $new($SoundbankResourceArray, var$0 + $nc(this->samples)->size()));
 	int32_t j = 0;
@@ -1156,6 +1171,7 @@ $SoundbankResourceArray* SF2Soundbank::getResources() {
 }
 
 $InstrumentArray* SF2Soundbank::getInstruments() {
+	$useLocalCurrentObjectStackCache();
 	$var($SF2InstrumentArray, inslist_array, $fcast($SF2InstrumentArray, $nc(this->instruments)->toArray($$new($SF2InstrumentArray, $nc(this->instruments)->size()))));
 	$Arrays::sort(inslist_array, $$new($ModelInstrumentComparator));
 	return $fcast($InstrumentArray, inslist_array);
@@ -1170,6 +1186,7 @@ $SF2SampleArray* SF2Soundbank::getSamples() {
 }
 
 $Instrument* SF2Soundbank::getInstrument($Patch* patch) {
+	$useLocalCurrentObjectStackCache();
 	int32_t program = $nc(patch)->getProgram();
 	int32_t bank = patch->getBank();
 	bool percussion = false;

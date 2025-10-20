@@ -97,6 +97,7 @@ void XPStyle$SkinPainter::flush() {
 }
 
 void XPStyle$SkinPainter::paintToImage($Component* c$renamed, $Image* image, $Graphics* g, int32_t w, int32_t h, $ObjectArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, c$renamed);
 	$var($XPStyle$Skin, skin, $cast($XPStyle$Skin, $nc(args)->get(0)));
 	$TMSchema$Part* part = $nc(skin)->part;

@@ -107,6 +107,7 @@ void PressedButtonRightClickTest::init$() {
 }
 
 void PressedButtonRightClickTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($PressedButtonRightClickTest$1));
 	try {
 		$init(PressedButtonRightClickTest);
@@ -122,6 +123,7 @@ void PressedButtonRightClickTest::main($StringArray* args) {
 }
 
 void PressedButtonRightClickTest::test() {
+	$useLocalCurrentObjectStackCache();
 	$init(PressedButtonRightClickTest);
 	$var($Point, loc, $nc(PressedButtonRightClickTest::myFrame)->getLocationOnScreen());
 	$nc(PressedButtonRightClickTest::testRobot)->mouseMove(($nc(loc)->x + 100), (loc->y + 100));

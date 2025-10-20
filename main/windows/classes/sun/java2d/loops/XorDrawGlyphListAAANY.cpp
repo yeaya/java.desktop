@@ -59,6 +59,7 @@ void XorDrawGlyphListAAANY::init$() {
 }
 
 void XorDrawGlyphListAAANY::DrawGlyphListAA$($SunGraphics2D* sg2d, $SurfaceData* sData, $GlyphList* gl, int32_t fromGlyph, int32_t toGlyph) {
+	$useLocalCurrentObjectStackCache();
 	$var($PixelWriter, pw, $GeneralRenderer::createXorPixelWriter(sg2d, sData));
 	$GeneralRenderer::doDrawGlyphList(sData, pw, gl, fromGlyph, toGlyph, $($nc(sg2d)->getCompClip()));
 }

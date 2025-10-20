@@ -178,6 +178,7 @@ void GDIWindowSurfaceData::initIDs($Class* xorComp) {
 
 $SurfaceType* GDIWindowSurfaceData::getSurfaceType($ColorModel* cm) {
 	$init(GDIWindowSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	switch ($nc(cm)->getPixelSize()) {
 	case 32:
 		{}
@@ -229,6 +230,7 @@ $SurfaceType* GDIWindowSurfaceData::getSurfaceType($ColorModel* cm) {
 
 GDIWindowSurfaceData* GDIWindowSurfaceData::createData($WComponentPeer* peer) {
 	$init(GDIWindowSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, sType, getSurfaceType($($nc(peer)->getDeviceColorModel())));
 	return $new(GDIWindowSurfaceData, peer, sType);
 }
@@ -328,6 +330,7 @@ void GDIWindowSurfaceData::initOps($WComponentPeer* peer, int32_t depth, int32_t
 }
 
 void GDIWindowSurfaceData::init$($WComponentPeer* peer, $SurfaceType* sType) {
+	$useLocalCurrentObjectStackCache();
 	$SurfaceData::init$(sType, $($nc(peer)->getDeviceColorModel()));
 	$var($ColorModel, cm, $nc(peer)->getDeviceColorModel());
 	$set(this, peer, peer);
@@ -389,6 +392,7 @@ $Rectangle* GDIWindowSurfaceData::getBounds() {
 }
 
 bool GDIWindowSurfaceData::copyArea($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w, int32_t h, int32_t dx, int32_t dy) {
+	$useLocalCurrentObjectStackCache();
 	$var($CompositeType, comptype, $nc(sg2d)->imageComp);
 	bool var$0 = sg2d->clipState != $SunGraphics2D::CLIP_SHAPE;
 	if (var$0) {

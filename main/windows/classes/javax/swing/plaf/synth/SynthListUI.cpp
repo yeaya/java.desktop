@@ -155,6 +155,7 @@ $ComponentUI* SynthListUI::createUI($JComponent* list) {
 }
 
 void SynthListUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -185,6 +186,7 @@ void SynthListUI::uninstallListeners() {
 }
 
 void SynthListUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(this->list)->getCellRenderer() == nullptr;
 	if (var$0 || ($instanceOf($UIResource, $($nc(this->list)->getCellRenderer())))) {
 		$nc(this->list)->setCellRenderer($$new($SynthListUI$SynthListCellRenderer, this));
@@ -193,6 +195,7 @@ void SynthListUI::installDefaults() {
 }
 
 void SynthListUI::updateStyle($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(this->list, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));

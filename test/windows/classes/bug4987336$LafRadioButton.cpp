@@ -68,6 +68,7 @@ $Object* allocate$bug4987336$LafRadioButton($Class* clazz) {
 }
 
 void bug4987336$LafRadioButton::init$($bug4987336* this$0, $UIManager$LookAndFeelInfo* lafInfo) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$var($String, var$0, $nc(lafInfo)->getName());
 	$JRadioButton::init$(var$0, $nc($(lafInfo->getName()))->equals($($nc($($UIManager::getLookAndFeel()))->getName())));

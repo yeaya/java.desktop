@@ -58,6 +58,7 @@ $ObjectArray2* TIFFImageMetadataFormatResources::getContents() {
 }
 
 void clinit$TIFFImageMetadataFormatResources($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(TIFFImageMetadataFormatResources::contents, $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("TIFFIFD"_s),

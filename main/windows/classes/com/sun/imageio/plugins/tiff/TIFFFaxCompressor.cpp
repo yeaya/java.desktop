@@ -115,6 +115,7 @@ void TIFFFaxCompressor::init$($String* compressionType, int32_t compressionTagVa
 }
 
 void TIFFFaxCompressor::setMetadata($IIOMetadata* metadata) {
+	$useLocalCurrentObjectStackCache();
 	$TIFFCompressor::setMetadata(metadata);
 	if ($instanceOf($TIFFImageMetadata, metadata)) {
 		$var($TIFFImageMetadata, tim, $cast($TIFFImageMetadata, metadata));

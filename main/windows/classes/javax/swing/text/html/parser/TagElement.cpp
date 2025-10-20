@@ -63,6 +63,7 @@ void TagElement::init$($Element* elem) {
 }
 
 void TagElement::init$($Element* elem, bool fictional) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, elem, elem);
 	$set(this, htmlTag, $HTML::getTag($($nc(elem)->getName())));
 	if (this->htmlTag == nullptr) {

@@ -76,6 +76,7 @@ void Introspector$1::init$() {
 }
 
 $Method* Introspector$1::getReadMethod($Class* clazz, $String* property) {
+	$useLocalCurrentObjectStackCache();
 	$var($BeanInfo, bi, $Introspector::getBeanInfo(clazz));
 	$var($PropertyDescriptorArray, pds, $nc(bi)->getPropertyDescriptors());
 	{
@@ -95,6 +96,7 @@ $Method* Introspector$1::getReadMethod($Class* clazz, $String* property) {
 }
 
 $StringArray* Introspector$1::getConstructorPropertiesValue($Constructor* ctr) {
+	$useLocalCurrentObjectStackCache();
 	$load($ConstructorProperties);
 	$var($ConstructorProperties, cp, $cast($ConstructorProperties, $nc(ctr)->getAnnotation($ConstructorProperties::class$)));
 	$var($StringArray, ret, cp != nullptr ? $nc(cp)->value() : ($StringArray*)nullptr);

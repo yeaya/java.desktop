@@ -92,6 +92,7 @@ $Object* allocate$ByteArrayCache($Class* clazz) {
 }
 
 void ByteArrayCache::init$(bool clean, int32_t bucketCapacity) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, refBuckets, nullptr);
 	this->clean = clean;
 	this->bucketCapacity = bucketCapacity;
@@ -105,6 +106,7 @@ $ByteArrayCache$Bucket* ByteArrayCache::getCacheBucket(int32_t length) {
 }
 
 $ByteArrayCache$BucketArray* ByteArrayCache::getBuckets() {
+	$useLocalCurrentObjectStackCache();
 	$var($ByteArrayCache$BucketArray, buckets, (this->refBuckets != nullptr) ? $cast($ByteArrayCache$BucketArray, $nc(this->refBuckets)->get()) : ($ByteArrayCache$BucketArray*)nullptr);
 	if (buckets == nullptr) {
 		$assign(buckets, $new($ByteArrayCache$BucketArray, 8));
@@ -138,6 +140,7 @@ void ByteArrayCache::fill($bytes* array, int32_t fromIndex, int32_t toIndex, int
 
 void ByteArrayCache::check($bytes* array, int32_t fromIndex, int32_t toIndex, int8_t value) {
 	$init(ByteArrayCache);
+	$useLocalCurrentObjectStackCache();
 	$init($MarlinConst);
 	if ($MarlinConst::DO_CHECKS) {
 		for (int32_t i = 0; i < $nc(array)->length; ++i) {

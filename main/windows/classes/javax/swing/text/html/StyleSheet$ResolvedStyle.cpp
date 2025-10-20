@@ -171,6 +171,7 @@ void StyleSheet$ResolvedStyle::init$($String* name, $AttributeSetArray* attrs, i
 
 void StyleSheet$ResolvedStyle::insertStyle($Style* style, int32_t specificity) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($AttributeSetArray, attrs, getAttributes());
 		int32_t maxCounter = $nc(attrs)->length;
 		int32_t counter = 0;

@@ -75,6 +75,7 @@ void bug6739756$1::init$() {
 }
 
 void bug6739756$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JToolBar, tb, $new($JToolBar));
 	$var($Dimension, preferredSize, tb->getPreferredSize());
 	$var($JButton, button, $new($JButton, "Test"_s));

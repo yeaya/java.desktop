@@ -132,6 +132,7 @@ void IntegerComponentRaster::initIDs() {
 }
 
 void IntegerComponentRaster::init$($SampleModel* sampleModel, $Point* origin) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, var$0, sampleModel);
 	$var($DataBufferInt, var$1, $cast($DataBufferInt, $nc(sampleModel)->createDataBuffer()));
 	int32_t var$2 = $nc(origin)->x;
@@ -148,6 +149,7 @@ void IntegerComponentRaster::init$($SampleModel* sampleModel, $DataBufferInt* da
 }
 
 void IntegerComponentRaster::init$($SampleModel* sampleModel, $DataBufferInt* dataBuffer, $Rectangle* aRegion, $Point* origin, IntegerComponentRaster* parent) {
+	$useLocalCurrentObjectStackCache();
 	$SunWritableRaster::init$(sampleModel, dataBuffer, aRegion, origin, parent);
 	this->maxX = this->minX + this->width;
 	this->maxY = this->minY + this->height;
@@ -267,6 +269,7 @@ void IntegerComponentRaster::setDataElements(int32_t x, int32_t y, $Raster* inRa
 }
 
 void IntegerComponentRaster::setDataElements(int32_t dstX, int32_t dstY, int32_t width, int32_t height, $Raster* inRaster) {
+	$useLocalCurrentObjectStackCache();
 	if (width <= 0 || height <= 0) {
 		return;
 	}
@@ -323,6 +326,7 @@ void IntegerComponentRaster::setDataElements(int32_t x, int32_t y, int32_t w, in
 }
 
 $WritableRaster* IntegerComponentRaster::createWritableChild(int32_t x, int32_t y, int32_t width, int32_t height, int32_t x0, int32_t y0, $ints* bandList) {
+	$useLocalCurrentObjectStackCache();
 	if (x < this->minX) {
 		$throwNew($RasterFormatException, "x lies outside raster"_s);
 	}
@@ -354,6 +358,7 @@ $Raster* IntegerComponentRaster::createChild(int32_t x, int32_t y, int32_t width
 }
 
 $WritableRaster* IntegerComponentRaster::createCompatibleWritableRaster(int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (w <= 0 || h <= 0) {
 		$throwNew($RasterFormatException, $$str({"negative "_s, ((w <= 0) ? "width"_s : "height"_s)}));
 	}
@@ -366,6 +371,7 @@ $WritableRaster* IntegerComponentRaster::createCompatibleWritableRaster() {
 }
 
 void IntegerComponentRaster::verify() {
+	$useLocalCurrentObjectStackCache();
 	if (this->width <= 0 || this->height <= 0 || this->height > ($div($Integer::MAX_VALUE, this->width))) {
 		$throwNew($RasterFormatException, "Invalid raster dimension"_s);
 	}
@@ -409,6 +415,7 @@ void IntegerComponentRaster::verify() {
 }
 
 $String* IntegerComponentRaster::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $new($String, $$str({"IntegerComponentRaster: width = "_s, $$str(this->width), " height = "_s, $$str(this->height), " #Bands = "_s, $$str(this->numBands), " #DataElements "_s, $$str(this->numDataElements), " xOff = "_s, $$str(this->sampleModelTranslateX), " yOff = "_s, $$str(this->sampleModelTranslateY), " dataOffset[0] "_s, $$str($nc(this->dataOffsets)->get(0))}));
 }
 

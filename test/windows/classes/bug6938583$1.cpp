@@ -77,6 +77,7 @@ void bug6938583$1::init$() {
 }
 
 void bug6938583$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextArea, jta, $new($JTextArea));
 	$var($DefaultCaret, dc, $new($DefaultCaret));
 	jta->setCaret(dc);

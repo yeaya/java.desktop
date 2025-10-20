@@ -1525,6 +1525,7 @@ void JTable::init$($TableModel* dm, $TableColumnModel* cm) {
 }
 
 void JTable::init$($TableModel* dm$renamed, $TableColumnModel* cm$renamed, $ListSelectionModel* sm$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($TableModel, dm, dm$renamed);
 	$var($TableColumnModel, cm, cm$renamed);
 	$var($ListSelectionModel, sm, sm$renamed);
@@ -1570,6 +1571,7 @@ void JTable::addNotify() {
 }
 
 void JTable::configureEnclosingScrollPane() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, parent, $SwingUtilities::getUnwrappedParent(this));
 	if ($instanceOf($JViewport, parent)) {
 		$var($JViewport, port, $cast($JViewport, parent));
@@ -1587,6 +1589,7 @@ void JTable::configureEnclosingScrollPane() {
 }
 
 void JTable::configureEnclosingScrollPaneUI() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, parent, $SwingUtilities::getUnwrappedParent(this));
 	if ($instanceOf($JViewport, parent)) {
 		$var($JViewport, port, $cast($JViewport, parent));
@@ -1626,6 +1629,7 @@ void JTable::removeNotify() {
 }
 
 void JTable::unconfigureEnclosingScrollPane() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, parent, $SwingUtilities::getUnwrappedParent(this));
 	if ($instanceOf($JViewport, parent)) {
 		$var($JViewport, port, $cast($JViewport, parent));
@@ -1821,6 +1825,7 @@ bool JTable::getAutoCreateColumnsFromModel() {
 }
 
 void JTable::createDefaultColumnsFromModel() {
+	$useLocalCurrentObjectStackCache();
 	$var($TableModel, m, getModel());
 	if (m != nullptr) {
 		$var($TableColumnModel, cm, getColumnModel());
@@ -1934,6 +1939,7 @@ $DropMode* JTable::getDropMode() {
 }
 
 $TransferHandler$DropLocation* JTable::dropLocationForPoint($Point* p) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTable$DropLocation, location, nullptr);
 	int32_t row = rowAtPoint(p);
 	int32_t col = columnAtPoint(p);
@@ -2123,6 +2129,7 @@ $TransferHandler$DropLocation* JTable::dropLocationForPoint($Point* p) {
 }
 
 $Object* JTable::setDropLocation($TransferHandler$DropLocation* location, Object$* state, bool forDrop) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, retVal, nullptr);
 	$var($JTable$DropLocation, tableLocation, $cast($JTable$DropLocation, location));
 	$init($DropMode);
@@ -2194,6 +2201,7 @@ $JTable$DropLocation* JTable::getDropLocation() {
 }
 
 void JTable::setAutoCreateRowSorter(bool autoCreateRowSorter) {
+	$useLocalCurrentObjectStackCache();
 	bool oldValue = this->autoCreateRowSorter;
 	this->autoCreateRowSorter = autoCreateRowSorter;
 	if (autoCreateRowSorter) {
@@ -2239,6 +2247,7 @@ $RowSorter* JTable::getRowSorter() {
 }
 
 void JTable::setSelectionMode(int32_t selectionMode) {
+	$useLocalCurrentObjectStackCache();
 	clearSelection();
 	$nc($(getSelectionModel()))->setSelectionMode(selectionMode);
 	$nc($($nc($(getColumnModel()))->getSelectionModel()))->setSelectionMode(selectionMode);
@@ -2315,6 +2324,7 @@ void JTable::clearSelection() {
 }
 
 void JTable::clearSelectionAndLeadAnchor() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->selectionModel)->setValueIsAdjusting(true);
 	$nc($($nc(this->columnModel)->getSelectionModel()))->setValueIsAdjusting(true);
 	clearSelection();
@@ -2449,6 +2459,7 @@ void JTable::changeSelectionModel($ListSelectionModel* sm, int32_t index, bool t
 }
 
 void JTable::changeSelection(int32_t rowIndex, int32_t columnIndex, bool toggle, bool extend) {
+	$useLocalCurrentObjectStackCache();
 	$var($ListSelectionModel, rsm, getSelectionModel());
 	$var($ListSelectionModel, csm, $nc($(getColumnModel()))->getSelectionModel());
 	int32_t anchorRow = getAdjustedIndex($nc(rsm)->getAnchorSelectionIndex(), true);
@@ -2531,6 +2542,7 @@ int32_t JTable::convertRowIndexToModel(int32_t viewRowIndex) {
 }
 
 int32_t JTable::getRowCount() {
+	$useLocalCurrentObjectStackCache();
 	$var($RowSorter, sorter, getRowSorter());
 	if (sorter != nullptr) {
 		return sorter->getViewRowCount();
@@ -2556,6 +2568,7 @@ $Object* JTable::getValueAt(int32_t row, int32_t column) {
 }
 
 void JTable::setValueAt(Object$* aValue, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, var$0, aValue);
 	int32_t var$1 = convertRowIndexToModel(row);
 	$nc($(getModel()))->setValueAt(var$0, var$1, convertColumnIndexToModel(column));
@@ -2567,6 +2580,7 @@ bool JTable::isCellEditable(int32_t row, int32_t column) {
 }
 
 void JTable::addColumn($TableColumn* aColumn) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(aColumn)->getHeaderValue() == nullptr) {
 		int32_t modelColumn = aColumn->getModelIndex();
 		$var($String, columnName, $nc($(getModel()))->getColumnName(modelColumn));
@@ -2584,6 +2598,7 @@ void JTable::moveColumn(int32_t column, int32_t targetColumn) {
 }
 
 int32_t JTable::columnAtPoint($Point* point) {
+	$useLocalCurrentObjectStackCache();
 	int32_t x = $nc(point)->x;
 	if (!$nc($(getComponentOrientation()))->isLeftToRight()) {
 		x = getWidth() - x - 1;
@@ -2604,6 +2619,7 @@ int32_t JTable::rowAtPoint($Point* point) {
 }
 
 $Rectangle* JTable::getCellRect(int32_t row, int32_t column, bool includeSpacing) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, r, $new($Rectangle));
 	bool valid = true;
 	if (row < 0) {
@@ -2657,6 +2673,7 @@ int32_t JTable::viewIndexForColumn($TableColumn* aColumn) {
 }
 
 void JTable::doLayout() {
+	$useLocalCurrentObjectStackCache();
 	$var($TableColumn, resizingColumn, getResizingColumn());
 	if (resizingColumn == nullptr) {
 		setWidthsFromPreferredWidths(false);
@@ -2687,6 +2704,7 @@ void JTable::sizeColumnsToFit(bool lastColumnOnly) {
 }
 
 void JTable::sizeColumnsToFit(int32_t resizingColumn) {
+	$useLocalCurrentObjectStackCache();
 	if (resizingColumn == -1) {
 		setWidthsFromPreferredWidths(false);
 	} else if (this->autoResizeMode == JTable::AUTO_RESIZE_OFF) {
@@ -2701,6 +2719,7 @@ void JTable::sizeColumnsToFit(int32_t resizingColumn) {
 }
 
 void JTable::setWidthsFromPreferredWidths(bool inverse) {
+	$useLocalCurrentObjectStackCache();
 	int32_t totalWidth = getWidth();
 	int32_t totalPreferred = $nc($(getPreferredSize()))->width;
 	int32_t target = !inverse ? totalWidth : totalPreferred;
@@ -2710,6 +2729,7 @@ void JTable::setWidthsFromPreferredWidths(bool inverse) {
 }
 
 void JTable::accommodateDelta(int32_t resizingColumnIndex, int32_t delta) {
+	$useLocalCurrentObjectStackCache();
 	int32_t columnCount = getColumnCount();
 	int32_t from = resizingColumnIndex;
 	int32_t to = 0;
@@ -2799,6 +2819,7 @@ void JTable::adjustSizes(int64_t target, $JTable$Resizable2* r, bool limitToRang
 }
 
 $String* JTable::getToolTipText($MouseEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, tip, nullptr);
 	$var($Point, p, $nc(event)->getPoint());
 	int32_t hitColumnIndex = columnAtPoint(p);
@@ -2844,6 +2865,7 @@ bool JTable::editCellAt(int32_t row, int32_t column) {
 }
 
 bool JTable::editCellAt(int32_t row, int32_t column, $EventObject* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->cellEditor != nullptr && !$nc(this->cellEditor)->stopCellEditing()) {
 		return false;
 	}
@@ -2907,6 +2929,7 @@ void JTable::setUI($TableUI* ui) {
 }
 
 void JTable::updateUI() {
+	$useLocalCurrentObjectStackCache();
 	if (this->updateInProgress) {
 		return;
 	}
@@ -2950,6 +2973,7 @@ $String* JTable::getUIClassID() {
 }
 
 void JTable::setModel($TableModel* dataModel) {
+	$useLocalCurrentObjectStackCache();
 	if (dataModel == nullptr) {
 		$throwNew($IllegalArgumentException, "Cannot set a null TableModel"_s);
 	}
@@ -3067,6 +3091,7 @@ void JTable::sortedTableChanged($RowSorterEvent* sortedEvent, $TableModelEvent* 
 }
 
 void JTable::repaintSortedRows($JTable$ModelChange* change) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(change)->startModelIndex > change->endModelIndex || $nc(change)->startModelIndex + 10 < change->endModelIndex) {
 		repaint();
 		return;
@@ -3220,6 +3245,7 @@ int32_t JTable::convertRowIndexToModel($RowSorterEvent* e, int32_t viewIndex) {
 }
 
 void JTable::tableChanged($TableModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (e == nullptr || $nc(e)->getFirstRow() == $TableModelEvent::HEADER_ROW) {
 		clearSelectionAndLeadAnchor();
 		$set(this, rowModel, nullptr);
@@ -3284,6 +3310,7 @@ void JTable::tableChanged($TableModelEvent* e) {
 }
 
 void JTable::tableRowsInserted($TableModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t start = $nc(e)->getFirstRow();
 	int32_t end = e->getLastRow();
 	if (start < 0) {
@@ -3306,6 +3333,7 @@ void JTable::tableRowsInserted($TableModelEvent* e) {
 }
 
 void JTable::tableRowsDeleted($TableModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t start = $nc(e)->getFirstRow();
 	int32_t end = e->getLastRow();
 	if (start < 0) {
@@ -3341,6 +3369,7 @@ void JTable::columnRemoved($TableColumnModelEvent* e) {
 }
 
 void JTable::columnMoved($TableColumnModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = isEditing();
 	if (var$0 && !$nc($(getCellEditor()))->stopCellEditing()) {
 		$nc($(getCellEditor()))->cancelCellEditing();
@@ -3349,6 +3378,7 @@ void JTable::columnMoved($TableColumnModelEvent* e) {
 }
 
 void JTable::columnMarginChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = isEditing();
 	if (var$0 && !$nc($(getCellEditor()))->stopCellEditing()) {
 		$nc($(getCellEditor()))->cancelCellEditing();
@@ -3365,6 +3395,7 @@ int32_t JTable::limit(int32_t i, int32_t a, int32_t b) {
 }
 
 void JTable::columnSelectionChanged($ListSelectionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool isAdjusting = $nc(e)->getValueIsAdjusting();
 	if (this->columnSelectionAdjusting && !isAdjusting) {
 		this->columnSelectionAdjusting = false;
@@ -3402,6 +3433,7 @@ void JTable::columnSelectionChanged($ListSelectionEvent* e) {
 }
 
 void JTable::valueChanged($ListSelectionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->sortManager != nullptr) {
 		$nc(this->sortManager)->viewSelectionChanged(e);
 	}
@@ -3426,6 +3458,7 @@ void JTable::valueChanged($ListSelectionEvent* e) {
 }
 
 void JTable::editingStopped($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($TableCellEditor, editor, getCellEditor());
 	if (editor != nullptr) {
 		$var($Object, value, editor->getCellEditorValue());
@@ -3447,6 +3480,7 @@ $Dimension* JTable::getPreferredScrollableViewportSize() {
 }
 
 int32_t JTable::getScrollableUnitIncrement($Rectangle* visibleRect, int32_t orientation, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	int32_t leadingRow = 0;
 	int32_t leadingCol = 0;
 	$var($Rectangle, leadingCellRect, nullptr);
@@ -3502,6 +3536,7 @@ int32_t JTable::getScrollableUnitIncrement($Rectangle* visibleRect, int32_t orie
 }
 
 int32_t JTable::getScrollableBlockIncrement($Rectangle* visibleRect, int32_t orientation, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	if (getRowCount() == 0) {
 		if ($SwingConstants::VERTICAL == orientation) {
 			int32_t rh = getRowHeight();
@@ -3533,6 +3568,7 @@ int32_t JTable::getScrollableBlockIncrement($Rectangle* visibleRect, int32_t ori
 }
 
 int32_t JTable::getPreviousBlockIncrement($Rectangle* visibleRect, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	int32_t row = 0;
 	int32_t col = 0;
 	int32_t newEdge = 0;
@@ -3579,6 +3615,7 @@ int32_t JTable::getPreviousBlockIncrement($Rectangle* visibleRect, int32_t orien
 }
 
 int32_t JTable::getNextBlockIncrement($Rectangle* visibleRect, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	int32_t trailingRow = getTrailingRow(visibleRect);
 	int32_t trailingCol = getTrailingCol(visibleRect);
 	$var($Rectangle, cellRect, nullptr);
@@ -3611,6 +3648,7 @@ int32_t JTable::getNextBlockIncrement($Rectangle* visibleRect, int32_t orientati
 }
 
 int32_t JTable::getLeadingRow($Rectangle* visibleRect) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, leadingPoint, nullptr);
 	if ($nc($(getComponentOrientation()))->isLeftToRight()) {
 		$assign(leadingPoint, $new($Point, $nc(visibleRect)->x, visibleRect->y));
@@ -3621,6 +3659,7 @@ int32_t JTable::getLeadingRow($Rectangle* visibleRect) {
 }
 
 int32_t JTable::getLeadingCol($Rectangle* visibleRect) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, leadingPoint, nullptr);
 	if ($nc($(getComponentOrientation()))->isLeftToRight()) {
 		$assign(leadingPoint, $new($Point, $nc(visibleRect)->x, visibleRect->y));
@@ -3631,6 +3670,7 @@ int32_t JTable::getLeadingCol($Rectangle* visibleRect) {
 }
 
 int32_t JTable::getTrailingRow($Rectangle* visibleRect) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, trailingPoint, nullptr);
 	if ($nc($(getComponentOrientation()))->isLeftToRight()) {
 		$assign(trailingPoint, $new($Point, $nc(visibleRect)->x, visibleRect->y + visibleRect->height - 1));
@@ -3641,6 +3681,7 @@ int32_t JTable::getTrailingRow($Rectangle* visibleRect) {
 }
 
 int32_t JTable::getTrailingCol($Rectangle* visibleRect) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, trailingPoint, nullptr);
 	if ($nc($(getComponentOrientation()))->isLeftToRight()) {
 		$assign(trailingPoint, $new($Point, $nc(visibleRect)->x + visibleRect->width - 1, visibleRect->y));
@@ -3651,6 +3692,7 @@ int32_t JTable::getTrailingCol($Rectangle* visibleRect) {
 }
 
 int32_t JTable::leadingEdge($Rectangle* rect, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	if (orientation == $SwingConstants::VERTICAL) {
 		return $nc(rect)->y;
 	} else if ($nc($(getComponentOrientation()))->isLeftToRight()) {
@@ -3661,6 +3703,7 @@ int32_t JTable::leadingEdge($Rectangle* rect, int32_t orientation) {
 }
 
 int32_t JTable::trailingEdge($Rectangle* rect, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	if (orientation == $SwingConstants::VERTICAL) {
 		return $nc(rect)->y + rect->height;
 	} else if ($nc($(getComponentOrientation()))->isLeftToRight()) {
@@ -3675,6 +3718,7 @@ bool JTable::getScrollableTracksViewportWidth() {
 }
 
 bool JTable::getScrollableTracksViewportHeight() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, parent, $SwingUtilities::getUnwrappedParent(this));
 	bool var$0 = getFillsViewportHeight() && $instanceOf($JViewport, parent);
 	if (var$0) {
@@ -3696,6 +3740,7 @@ bool JTable::getFillsViewportHeight() {
 }
 
 bool JTable::processKeyBinding($KeyStroke* ks, $KeyEvent* e, int32_t condition, bool pressed) {
+	$useLocalCurrentObjectStackCache();
 	bool retValue = $JComponent::processKeyBinding(ks, e, condition, pressed);
 	bool var$0 = !retValue && condition == $JComponent::WHEN_ANCESTOR_OF_FOCUSED_COMPONENT && isFocusOwner();
 	$init($Boolean);
@@ -3734,6 +3779,7 @@ bool JTable::processKeyBinding($KeyStroke* ks, $KeyEvent* e, int32_t condition, 
 }
 
 void JTable::createDefaultRenderers() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, defaultRenderersByColumnClass, $new($UIDefaults, 8, 0.75f));
 	$load($Object);
 	$nc(this->defaultRenderersByColumnClass)->put($Object::class$, static_cast<$UIDefaults$LazyValue*>($$new(JTable$$Lambda$lambda$createDefaultRenderers$0)));
@@ -3754,6 +3800,7 @@ void JTable::createDefaultRenderers() {
 }
 
 void JTable::createDefaultEditors() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, defaultEditorsByColumnClass, $new($UIDefaults, 3, 0.75f));
 	$load($Object);
 	$nc(this->defaultEditorsByColumnClass)->put($Object::class$, static_cast<$UIDefaults$LazyValue*>($$new(JTable$$Lambda$lambda$createDefaultEditors$8$6)));
@@ -3764,6 +3811,7 @@ void JTable::createDefaultEditors() {
 }
 
 void JTable::initializeLocalVars() {
+	$useLocalCurrentObjectStackCache();
 	this->updateSelectionOnSort = true;
 	createDefaultRenderers();
 	createDefaultEditors();
@@ -3824,6 +3872,7 @@ void JTable::setEditingRow(int32_t aRow) {
 }
 
 $TableCellRenderer* JTable::getCellRenderer(int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($TableColumn, tableColumn, $nc($(getColumnModel()))->getColumn(column));
 	$var($TableCellRenderer, renderer, $nc(tableColumn)->getCellRenderer());
 	if (renderer == nullptr) {
@@ -3833,6 +3882,7 @@ $TableCellRenderer* JTable::getCellRenderer(int32_t row, int32_t column) {
 }
 
 $Component* JTable::prepareRenderer($TableCellRenderer* renderer, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, getValueAt(row, column));
 	bool isSelected = false;
 	bool hasFocus = false;
@@ -3846,6 +3896,7 @@ $Component* JTable::prepareRenderer($TableCellRenderer* renderer, int32_t row, i
 }
 
 $TableCellEditor* JTable::getCellEditor(int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($TableColumn, tableColumn, $nc($(getColumnModel()))->getColumn(column));
 	$var($TableCellEditor, editor, $nc(tableColumn)->getCellEditor());
 	if (editor == nullptr) {
@@ -3855,6 +3906,7 @@ $TableCellEditor* JTable::getCellEditor(int32_t row, int32_t column) {
 }
 
 $Component* JTable::prepareEditor($TableCellEditor* editor, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, getValueAt(row, column));
 	bool isSelected = isCellSelected(row, column);
 	$var($Component, comp, $nc(editor)->getTableCellEditorComponent(this, value, isSelected, row, column));
@@ -3868,6 +3920,7 @@ $Component* JTable::prepareEditor($TableCellEditor* editor, int32_t row, int32_t
 }
 
 void JTable::removeEditor() {
+	$useLocalCurrentObjectStackCache();
 	$nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->removePropertyChangeListener("permanentFocusOwner"_s, this->editorRemover);
 	$set(this, editorRemover, nullptr);
 	$var($TableCellEditor, editor, getCellEditor());
@@ -3902,6 +3955,7 @@ void JTable::writeObject($ObjectOutputStream* s) {
 }
 
 void JTable::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	$var($TableModel, newDataModel, $cast($TableModel, $nc(f)->get("dataModel"_s, ($Object*)nullptr)));
 	if (newDataModel == nullptr) {
@@ -3980,6 +4034,7 @@ void JTable::compWriteObjectNotify() {
 }
 
 $String* JTable::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, gridColorString, this->gridColor != nullptr ? $nc(this->gridColor)->toString() : ""_s);
 	$var($String, showHorizontalLinesString, this->showHorizontalLines ? "true"_s : "false"_s);
 	$var($String, showVerticalLinesString, this->showVerticalLines ? "true"_s : "false"_s);
@@ -4026,6 +4081,7 @@ bool JTable::print($JTable$PrintMode* printMode, $MessageFormat* headerFormat, $
 }
 
 bool JTable::print($JTable$PrintMode* printMode, $MessageFormat* headerFormat, $MessageFormat* footerFormat, bool showPrintDialog, $PrintRequestAttributeSet* attr$renamed, bool interactive, $PrintService* service) {
+	$useLocalCurrentObjectStackCache();
 	$var($PrintRequestAttributeSet, attr, attr$renamed);
 	bool isHeadless = $GraphicsEnvironment::isHeadless();
 	if (isHeadless) {
@@ -4104,6 +4160,7 @@ $AccessibleContext* JTable::getAccessibleContext() {
 }
 
 void JTable::lambda$print$11($PrinterJob* job, $PrintRequestAttributeSet* copyAttr, Object$* lock, $PrintingStatus* printingStatus) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

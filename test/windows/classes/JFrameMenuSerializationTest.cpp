@@ -243,6 +243,7 @@ void JFrameMenuSerializationTest::init$() {
 }
 
 void JFrameMenuSerializationTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$System::setProperty("apple.laf.useScreenMenuBar"_s, "true"_s);
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(JFrameMenuSerializationTest$$Lambda$lambda$main$1)));
 	$var($Robot, robot, $new($Robot));
@@ -256,6 +257,7 @@ void JFrameMenuSerializationTest::main($StringArray* args) {
 }
 
 void JFrameMenuSerializationTest::lambda$main$2($ObjectOutputStream* oos) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init(JFrameMenuSerializationTest);
 		$nc(oos)->writeObject(JFrameMenuSerializationTest::frame);
@@ -269,6 +271,7 @@ void JFrameMenuSerializationTest::lambda$main$2($ObjectOutputStream* oos) {
 }
 
 void JFrameMenuSerializationTest::lambda$main$1() {
+	$useLocalCurrentObjectStackCache();
 	$init(JFrameMenuSerializationTest);
 	$assignStatic(JFrameMenuSerializationTest::frame, $new($JFrame));
 	$nc(JFrameMenuSerializationTest::frame)->setJMenuBar($$new($JMenuBar));

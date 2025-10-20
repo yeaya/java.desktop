@@ -154,6 +154,7 @@ int32_t FontMetrics::getMaxAdvance() {
 }
 
 int32_t FontMetrics::charWidth(int32_t codePoint) {
+	$useLocalCurrentObjectStackCache();
 	if (!$Character::isValidCodePoint(codePoint)) {
 		codePoint = 0x0000FFFF;
 	}
@@ -167,6 +168,7 @@ int32_t FontMetrics::charWidth(int32_t codePoint) {
 }
 
 int32_t FontMetrics::charWidth(char16_t ch) {
+	$useLocalCurrentObjectStackCache();
 	if (ch < 256) {
 		return $nc($(getWidths()))->get(ch);
 	}
@@ -245,6 +247,7 @@ $FontRenderContext* FontMetrics::myFRC($Graphics* context) {
 }
 
 $String* FontMetrics::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$7, $$str({$($of(this)->getClass()->getName()), "[font="_s}));
 	$var($String, var$6, $$concat(var$7, $(getFont())));
 	$var($String, var$5, $$concat(var$6, "ascent="));

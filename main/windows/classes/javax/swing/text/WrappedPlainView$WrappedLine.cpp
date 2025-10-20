@@ -141,6 +141,7 @@ void WrappedPlainView$WrappedLine::init$($WrappedPlainView* this$0, $Element* el
 }
 
 float WrappedPlainView$WrappedLine::getPreferredSpan(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	{
 		float width = 0;
 		switch (axis) {
@@ -168,6 +169,7 @@ float WrappedPlainView$WrappedLine::getPreferredSpan(int32_t axis) {
 }
 
 void WrappedPlainView$WrappedLine::paint($Graphics* g, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, alloc, $cast($Rectangle, a));
 	int32_t y = $nc(alloc)->y + $nc(this->this$0->metrics)->getAscent();
 	int32_t x = alloc->x;
@@ -196,6 +198,7 @@ void WrappedPlainView$WrappedLine::paint($Graphics* g, $Shape* a) {
 }
 
 $Shape* WrappedPlainView$WrappedLine::modelToView(int32_t pos, $Shape* a, $Position$Bias* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, alloc, $nc(a)->getBounds());
 	$nc(alloc)->height = $nc(this->this$0->metrics)->getHeight();
 	alloc->width = 1;
@@ -226,6 +229,7 @@ $Shape* WrappedPlainView$WrappedLine::modelToView(int32_t pos, $Shape* a, $Posit
 }
 
 int32_t WrappedPlainView$WrappedLine::viewToModel(float fx, float fy, $Shape* a, $Position$BiasArray* bias) {
+	$useLocalCurrentObjectStackCache();
 	$init($Position$Bias);
 	$nc(bias)->set(0, $Position$Bias::Forward);
 	$var($Rectangle, alloc, $cast($Rectangle, a));
@@ -276,6 +280,7 @@ void WrappedPlainView$WrappedLine::removeUpdate($DocumentEvent* e, $Shape* a, $V
 }
 
 void WrappedPlainView$WrappedLine::update($DocumentEvent* ev, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t oldCount = this->lineCount;
 	breakLines($nc(ev)->getOffset());
 	if (oldCount != this->lineCount) {
@@ -302,6 +307,7 @@ $ints* WrappedPlainView$WrappedLine::getLineEnds() {
 }
 
 $ints* WrappedPlainView$WrappedLine::breakLines(int32_t startPos) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, lineEnds, (this->lineCache == nullptr) ? ($ints*)nullptr : $cast($ints, $nc(this->lineCache)->get()));
 	$var($ints, oldLineEnds, lineEnds);
 	int32_t start = getStartOffset();

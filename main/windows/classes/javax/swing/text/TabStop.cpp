@@ -113,6 +113,7 @@ int32_t TabStop::hashCode() {
 }
 
 $String* TabStop::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, buf, nullptr);
 	switch (this->alignment) {
 	default:

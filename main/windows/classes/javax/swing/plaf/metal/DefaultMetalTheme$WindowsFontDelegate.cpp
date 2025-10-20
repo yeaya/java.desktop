@@ -81,6 +81,7 @@ void DefaultMetalTheme$WindowsFontDelegate::init$() {
 }
 
 $FontUIResource* DefaultMetalTheme$WindowsFontDelegate::getFont(int32_t type) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->fonts)->get(type) != nullptr) {
 		return $nc(this->fonts)->get(type);
 	}

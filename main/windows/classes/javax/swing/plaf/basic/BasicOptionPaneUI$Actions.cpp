@@ -78,6 +78,7 @@ void BasicOptionPaneUI$Actions::init$($String* key) {
 }
 
 void BasicOptionPaneUI$Actions::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (getName() == BasicOptionPaneUI$Actions::CLOSE) {
 		$var($JOptionPane, optionPane, $cast($JOptionPane, $nc(e)->getSource()));
 		$nc(optionPane)->setValue($($Integer::valueOf($JOptionPane::CLOSED_OPTION)));

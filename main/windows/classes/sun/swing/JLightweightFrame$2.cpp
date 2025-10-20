@@ -76,6 +76,7 @@ void JLightweightFrame$2::init$($JLightweightFrame* this$0) {
 }
 
 void JLightweightFrame$2::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, $cast($Dimension, $nc(e)->getNewValue()));
 	if ("preferredSize"_s->equals($(e->getPropertyName()))) {
 		$nc(this->this$0->content)->preferredSizeChanged($nc(d)->width, d->height);

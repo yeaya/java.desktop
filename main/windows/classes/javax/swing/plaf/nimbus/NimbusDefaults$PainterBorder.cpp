@@ -114,6 +114,7 @@ void NimbusDefaults$PainterBorder::init$($String* painterKey, $Insets* insets) {
 }
 
 void NimbusDefaults$PainterBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (this->painter == nullptr) {
 		$var($Painter, temp, $cast($Painter, $UIManager::get(this->painterKey)));
 		$set(this, painter, temp);

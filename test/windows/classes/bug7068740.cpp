@@ -126,6 +126,7 @@ $Robot* bug7068740::robot = nullptr;
 $JTable* bug7068740::table = nullptr;
 
 void bug7068740::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$();
 	setDefaultCloseOperation($WindowConstants::EXIT_ON_CLOSE);
 	$var($DefaultTableModel, model, $new($bug7068740$1, this));
@@ -141,6 +142,7 @@ void bug7068740::init$() {
 
 void bug7068740::setUp() {
 	$init(bug7068740);
+	$useLocalCurrentObjectStackCache();
 	try {
 		if (bug7068740::robot == nullptr) {
 			$assignStatic(bug7068740::robot, $new($Robot));
@@ -164,6 +166,7 @@ void bug7068740::setUp() {
 
 int32_t bug7068740::getSelectedRow() {
 	$init(bug7068740);
+	$useLocalCurrentObjectStackCache();
 	$var($AtomicInteger, row, $new($AtomicInteger, -1));
 	$SwingUtilities::invokeAndWait($$new($bug7068740$3, row));
 	return row->intValue();
@@ -188,6 +191,7 @@ void bug7068740::doTest() {
 
 void bug7068740::main($StringArray* args) {
 	$init(bug7068740);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 		setUp();

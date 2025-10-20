@@ -78,6 +78,7 @@ void DataBufferUShort::init$(int32_t size) {
 }
 
 void DataBufferUShort::init$(int32_t size, int32_t numBanks) {
+	$useLocalCurrentObjectStackCache();
 	$init($StateTrackable$State);
 	$DataBuffer::init$($StateTrackable$State::STABLE, $DataBuffer::TYPE_USHORT, size, numBanks);
 	$set(this, bankdata, $new($shortArray2, numBanks));
@@ -113,6 +114,7 @@ void DataBufferUShort::init$($shorts* dataArray, int32_t size, int32_t offset) {
 }
 
 void DataBufferUShort::init$($shortArray2* dataArray, int32_t size) {
+	$useLocalCurrentObjectStackCache();
 	$init($StateTrackable$State);
 	$DataBuffer::init$($StateTrackable$State::UNTRACKABLE, $DataBuffer::TYPE_USHORT, size, $nc(dataArray)->length);
 	if (dataArray == nullptr) {
@@ -128,6 +130,7 @@ void DataBufferUShort::init$($shortArray2* dataArray, int32_t size) {
 }
 
 void DataBufferUShort::init$($shortArray2* dataArray, int32_t size, $ints* offsets) {
+	$useLocalCurrentObjectStackCache();
 	$init($StateTrackable$State);
 	$DataBuffer::init$($StateTrackable$State::UNTRACKABLE, $DataBuffer::TYPE_USHORT, size, $nc(dataArray)->length, offsets);
 	if (dataArray == nullptr) {

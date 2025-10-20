@@ -94,6 +94,7 @@ bool VariableHeightLayoutCache$VisibleTreeStateNodeEnumeration::hasMoreElements(
 }
 
 $Object* VariableHeightLayoutCache$VisibleTreeStateNodeEnumeration::nextElement() {
+	$useLocalCurrentObjectStackCache();
 	if (!hasMoreElements()) {
 		$throwNew($NoSuchElementException, "No more visible paths"_s);
 	}
@@ -115,6 +116,7 @@ void VariableHeightLayoutCache$VisibleTreeStateNodeEnumeration::updateNextObject
 }
 
 bool VariableHeightLayoutCache$VisibleTreeStateNodeEnumeration::findNextValidParent() {
+	$useLocalCurrentObjectStackCache();
 	if (this->parent == this->this$0->root) {
 		$set(this, parent, nullptr);
 		return false;

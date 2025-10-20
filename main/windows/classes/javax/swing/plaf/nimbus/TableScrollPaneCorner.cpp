@@ -84,6 +84,7 @@ void TableScrollPaneCorner::init$() {
 }
 
 void TableScrollPaneCorner::paintComponent($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Painter, painter, $cast($Painter, $UIManager::get("TableHeader:\"TableHeader.renderer\"[Enabled].backgroundPainter"_s)));
 	if (painter != nullptr) {
 		if ($instanceOf($Graphics2D, g)) {

@@ -185,6 +185,7 @@ $Image* MultiResolutionToolkitImage::getResolutionVariant(double destWidth, doub
 
 $Image* MultiResolutionToolkitImage::map(MultiResolutionToolkitImage* mrImage, $Function* mapper) {
 	$init(MultiResolutionToolkitImage);
+	$useLocalCurrentObjectStackCache();
 	$var($Image, baseImage, $cast($Image, $nc(mapper)->apply(mrImage)));
 	$var($Image, rvImage, $cast($Image, mapper->apply($nc(mrImage)->resolutionVariant)));
 	return $new(MultiResolutionToolkitImage, baseImage, rvImage);
@@ -192,6 +193,7 @@ $Image* MultiResolutionToolkitImage::map(MultiResolutionToolkitImage* mrImage, $
 
 void MultiResolutionToolkitImage::checkSize(double width, double height) {
 	$init(MultiResolutionToolkitImage);
+	$useLocalCurrentObjectStackCache();
 	if (width <= 0 || height <= 0) {
 		$throwNew($IllegalArgumentException, $($String::format("Width (%s) or height (%s) cannot be <= 0"_s, $$new($ObjectArray, {
 			$($of($Double::valueOf(width))),

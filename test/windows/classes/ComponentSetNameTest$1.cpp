@@ -115,6 +115,7 @@ void ComponentSetNameTest$1::init$() {
 }
 
 void ComponentSetNameTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIManager$LookAndFeelInfoArray, looks, $UIManager::getInstalledLookAndFeels());
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, looks);

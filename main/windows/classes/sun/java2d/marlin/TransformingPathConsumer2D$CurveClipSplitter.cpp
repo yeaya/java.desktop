@@ -111,6 +111,7 @@ void TransformingPathConsumer2D$CurveClipSplitter::init$($RendererContext* rdrCt
 }
 
 void TransformingPathConsumer2D$CurveClipSplitter::init() {
+	$useLocalCurrentObjectStackCache();
 	this->init_clipRectPad = true;
 	if (TransformingPathConsumer2D$CurveClipSplitter::DO_CHECK_LENGTH) {
 		this->minLength = ($nc(this->rdrCtx)->clipInvScale == 0.0) ? TransformingPathConsumer2D$CurveClipSplitter::LEN_TH : (TransformingPathConsumer2D$CurveClipSplitter::LEN_TH * $nc(this->rdrCtx)->clipInvScale);
@@ -122,6 +123,7 @@ void TransformingPathConsumer2D$CurveClipSplitter::init() {
 }
 
 void TransformingPathConsumer2D$CurveClipSplitter::initPaddedClip() {
+	$useLocalCurrentObjectStackCache();
 	$var($doubles, _clipRect, this->clipRect);
 	$var($doubles, _clipRectPad, this->clipRectPad);
 	$nc(_clipRectPad)->set(0, $nc(_clipRect)->get(0) - 0.25);
@@ -173,6 +175,7 @@ bool TransformingPathConsumer2D$CurveClipSplitter::splitCurve(double x0, double 
 }
 
 bool TransformingPathConsumer2D$CurveClipSplitter::subdivideAtIntersections(int32_t type, int32_t outCodeOR, $DPathConsumer2D* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($doubles, mid, this->middle);
 	$var($doubles, subTs, this->subdivTs);
 	if (this->init_clipRectPad) {

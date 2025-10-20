@@ -68,6 +68,7 @@ void CheckCancellationException::init$() {
 
 void CheckCancellationException::main($StringArray* args) {
 	$init(CheckCancellationException);
+	$useLocalCurrentObjectStackCache();
 	$var($SwingWorker, worker, $new($CheckCancellationException$1));
 	worker->execute();
 	$nc(CheckCancellationException::go)->await();

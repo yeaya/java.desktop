@@ -347,6 +347,7 @@ void DQTMarkerSegment$Qtable::init$($DQTMarkerSegment* this$0, $JPEGQTable* tabl
 }
 
 void DQTMarkerSegment$Qtable::init$($DQTMarkerSegment* this$0, $Node* node) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$set(this, zigzag, $new($ints, {
 		0,
@@ -451,6 +452,7 @@ $Object* DQTMarkerSegment$Qtable::clone() {
 }
 
 $IIOMetadataNode* DQTMarkerSegment$Qtable::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "dqtable"_s));
 	node->setAttribute("elementPrecision"_s, $($Integer::toString(this->elementPrecision)));
 	node->setAttribute("qtableId"_s, $($Integer::toString(this->tableID)));
@@ -459,6 +461,7 @@ $IIOMetadataNode* DQTMarkerSegment$Qtable::getNativeNode() {
 }
 
 void DQTMarkerSegment$Qtable::print() {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println($$str({"Table id: "_s, $($Integer::toString(this->tableID))}));
 	$nc($System::out)->println($$str({"Element precision: "_s, $($Integer::toString(this->elementPrecision))}));

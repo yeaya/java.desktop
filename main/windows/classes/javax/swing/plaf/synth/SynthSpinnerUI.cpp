@@ -186,6 +186,7 @@ $ComponentUI* SynthSpinnerUI::createUI($JComponent* c) {
 }
 
 void SynthSpinnerUI::installListeners() {
+	$useLocalCurrentObjectStackCache();
 	$BasicSpinnerUI::installListeners();
 	$nc(this->spinner)->addPropertyChangeListener(this);
 	$var($JComponent, editor, $nc(this->spinner)->getEditor());
@@ -198,6 +199,7 @@ void SynthSpinnerUI::installListeners() {
 }
 
 void SynthSpinnerUI::uninstallListeners() {
+	$useLocalCurrentObjectStackCache();
 	$BasicSpinnerUI::uninstallListeners();
 	$nc(this->spinner)->removePropertyChangeListener(this);
 	$var($JComponent, editor, $nc(this->spinner)->getEditor());
@@ -210,6 +212,7 @@ void SynthSpinnerUI::uninstallListeners() {
 }
 
 void SynthSpinnerUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($LayoutManager, layout, $nc(this->spinner)->getLayout());
 	if (layout == nullptr || $instanceOf($UIResource, layout)) {
 		$nc(this->spinner)->setLayout($(createLayout()));
@@ -218,6 +221,7 @@ void SynthSpinnerUI::installDefaults() {
 }
 
 void SynthSpinnerUI::updateStyle($JSpinner* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -229,6 +233,7 @@ void SynthSpinnerUI::updateStyle($JSpinner* c) {
 }
 
 void SynthSpinnerUI::uninstallDefaults() {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($UIResource, $($nc(this->spinner)->getLayout()))) {
 		$nc(this->spinner)->setLayout(nullptr);
 	}
@@ -263,6 +268,7 @@ $JComponent* SynthSpinnerUI::createEditor() {
 }
 
 void SynthSpinnerUI::replaceEditor($JComponent* oldEditor, $JComponent* newEditor) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->spinner)->remove(static_cast<$Component*>(oldEditor));
 	$nc(this->spinner)->add(static_cast<$Component*>(newEditor), $of("Editor"_s));
 	if ($instanceOf($JSpinner$DefaultEditor, oldEditor)) {
@@ -280,6 +286,7 @@ void SynthSpinnerUI::replaceEditor($JComponent* oldEditor, $JComponent* newEdito
 }
 
 void SynthSpinnerUI::updateEditorAlignment($JComponent* editor) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JSpinner$DefaultEditor, editor)) {
 		$var($SynthContext, context, getContext(this->spinner));
 		$var($Integer, alignment, $cast($Integer, $nc($($nc(context)->getStyle()))->get(context, "Spinner.editorAlignment"_s)));
@@ -300,6 +307,7 @@ $SynthContext* SynthSpinnerUI::getContext($JComponent* c, int32_t state) {
 }
 
 void SynthSpinnerUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -322,6 +330,7 @@ void SynthSpinnerUI::paintBorder($SynthContext* context, $Graphics* g, int32_t x
 }
 
 void SynthSpinnerUI::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JSpinner, spinner, ($cast($JSpinner, $nc(e)->getSource())));
 	$var($SpinnerUI, spinnerUI, $cast($SpinnerUI, $nc(spinner)->getUI()));
 	if ($instanceOf(SynthSpinnerUI, spinnerUI)) {

@@ -112,6 +112,7 @@ void HeadlessJTabbedPane::init$() {
 }
 
 void HeadlessJTabbedPane::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTabbedPane, s, $new($JTabbedPane));
 	s->getAccessibleContext();
 	s->isFocusTraversable();

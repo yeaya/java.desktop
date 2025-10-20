@@ -430,6 +430,7 @@ void DefaultComboBoxModelAddAllElementsTest::main($StringArray* args) {
 
 void DefaultComboBoxModelAddAllElementsTest::checkAddAll() {
 	$init(DefaultComboBoxModelAddAllElementsTest);
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultComboBoxModel, cm, $new($DefaultComboBoxModel));
 	cm->addListDataListener($$new($DefaultComboBoxModelAddAllElementsTest$MyListDataListener));
 	try {
@@ -444,6 +445,7 @@ void DefaultComboBoxModelAddAllElementsTest::checkAddAll() {
 
 void DefaultComboBoxModelAddAllElementsTest::checkAddAllWithIndex() {
 	$init(DefaultComboBoxModelAddAllElementsTest);
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultComboBoxModel, cm, $new($DefaultComboBoxModel));
 	cm->addListDataListener($$new($DefaultComboBoxModelAddAllElementsTest$MyListDataListener));
 	cm->addAll(static_cast<$Collection*>(static_cast<$AbstractCollection*>(static_cast<$AbstractSet*>(DefaultComboBoxModelAddAllElementsTest::set))));
@@ -474,6 +476,7 @@ void DefaultComboBoxModelAddAllElementsTest::checkAddAllWithIndex() {
 }
 
 void clinit$DefaultComboBoxModelAddAllElementsTest($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$var($Supplier, var$0, static_cast<$Supplier*>($new(DefaultComboBoxModelAddAllElementsTest$$Lambda$Vector)));
 	$var($ObjIntConsumer, var$1, static_cast<$ObjIntConsumer*>($new(DefaultComboBoxModelAddAllElementsTest$$Lambda$add$1)));
 	$assignStatic(DefaultComboBoxModelAddAllElementsTest::vector, $cast($Vector, $nc($($IntStream::range(DefaultComboBoxModelAddAllElementsTest::START, DefaultComboBoxModelAddAllElementsTest::END)))->collect(var$0, var$1, static_cast<$BiConsumer*>($$new(DefaultComboBoxModelAddAllElementsTest$$Lambda$addAll$2)))));

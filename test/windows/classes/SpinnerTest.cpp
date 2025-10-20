@@ -164,6 +164,7 @@ void SpinnerTest::init$() {
 }
 
 void SpinnerTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(100);
 	{
@@ -197,6 +198,7 @@ void SpinnerTest::lambda$main$1() {
 }
 
 void SpinnerTest::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$init(SpinnerTest);
 	$assignStatic(SpinnerTest::frame, $new($JFrame, "SpinnerDemo"_s));
 	$nc(SpinnerTest::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);

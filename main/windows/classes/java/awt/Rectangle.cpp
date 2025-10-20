@@ -703,6 +703,7 @@ bool Rectangle::equals(Object$* obj) {
 }
 
 $String* Rectangle::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($of(this)->getClass()->getName()), "[x="_s, $$str(this->x), ",y="_s, $$str(this->y), ",width="_s, $$str(this->width), ",height="_s, $$str(this->height), "]"_s});
 }
 

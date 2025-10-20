@@ -112,6 +112,7 @@ void HeadlessJFileChooser::init$() {
 }
 
 void HeadlessJFileChooser::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, ch, $new($JFileChooser));
 	ch->getAccessibleContext();
 	ch->isFocusTraversable();

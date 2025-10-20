@@ -340,6 +340,7 @@ void JTreeFocusTest::main($StringArray* args) {
 }
 
 void JTreeFocusTest::blockTillDisplayed($JComponent* comp) {
+	$useLocalCurrentObjectStackCache();
 	while (this->p == nullptr) {
 		try {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(JTreeFocusTest$$Lambda$lambda$blockTillDisplayed$0, this, comp)));
@@ -355,6 +356,7 @@ void JTreeFocusTest::blockTillDisplayed($JComponent* comp) {
 }
 
 void JTreeFocusTest::init$() {
+	$useLocalCurrentObjectStackCache();
 	this->rootSelected = false;
 	this->keysTyped = false;
 	$set(this, p, nullptr);
@@ -425,6 +427,7 @@ void JTreeFocusTest::lambda$new$2() {
 }
 
 void JTreeFocusTest::lambda$new$1() {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(JTreeFocusTest::fr, $new($JFrame, "Test"_s));
 	$assignStatic(JTreeFocusTest::root, $new($DefaultMutableTreeNode, "root"_s));
 	$var($JPanel, p, $new($JPanel));

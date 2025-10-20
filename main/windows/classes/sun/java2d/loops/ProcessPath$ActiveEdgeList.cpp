@@ -74,6 +74,7 @@ bool ProcessPath$ActiveEdgeList::isEmpty() {
 }
 
 void ProcessPath$ActiveEdgeList::insert($ProcessPath$Point* pnt, int32_t cy) {
+	$useLocalCurrentObjectStackCache();
 	$var($ProcessPath$Point, np, $nc(pnt)->next);
 	int32_t X1 = pnt->x;
 	int32_t Y1 = pnt->y;
@@ -116,6 +117,7 @@ void ProcessPath$ActiveEdgeList::insert($ProcessPath$Point* pnt, int32_t cy) {
 }
 
 void ProcessPath$ActiveEdgeList::delete$($ProcessPath$Edge* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($ProcessPath$Edge, prevp, $nc(e)->prev);
 	$var($ProcessPath$Edge, nextp, e->next);
 	if (prevp != nullptr) {
@@ -129,6 +131,7 @@ void ProcessPath$ActiveEdgeList::delete$($ProcessPath$Edge* e) {
 }
 
 void ProcessPath$ActiveEdgeList::sort() {
+	$useLocalCurrentObjectStackCache();
 	$var($ProcessPath$Edge, p, nullptr);
 	$var($ProcessPath$Edge, q, nullptr);
 	$var($ProcessPath$Edge, r, nullptr);

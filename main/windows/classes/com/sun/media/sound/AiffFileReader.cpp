@@ -82,6 +82,7 @@ void AiffFileReader::init$() {
 }
 
 $StandardFileFormat* AiffFileReader::getAudioFileFormatImpl($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$var($DataInputStream, dis, $new($DataInputStream, stream));
 	$var($AudioFormat, format, nullptr);
 	int32_t magic = dis->readInt();

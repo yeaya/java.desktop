@@ -116,6 +116,7 @@ void HeadlessDefaultListCellRenderer_UIResource::init$() {
 }
 
 void HeadlessDefaultListCellRenderer_UIResource::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultListCellRenderer$UIResource, dcr, $new($DefaultListCellRenderer$UIResource));
 	$var($Component, c1, dcr->add(static_cast<$Component*>($$new($HeadlessDefaultListCellRenderer_UIResource$1))));
 	$var($Component, c2, dcr->add(static_cast<$Component*>($$new($HeadlessDefaultListCellRenderer_UIResource$2))));

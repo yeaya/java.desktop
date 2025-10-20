@@ -91,6 +91,7 @@ void JTextPaneDocumentAlignment$1::init$() {
 }
 
 void JTextPaneDocumentAlignment$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($JTextPaneDocumentAlignment);
 	$assignStatic($JTextPaneDocumentAlignment::frame, $new($JFrame));
 	$nc($JTextPaneDocumentAlignment::frame)->setUndecorated(true);

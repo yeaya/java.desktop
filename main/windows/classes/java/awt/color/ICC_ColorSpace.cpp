@@ -114,6 +114,7 @@ $ICC_Profile* ICC_ColorSpace::getProfile() {
 }
 
 $floats* ICC_ColorSpace::toRGB($floats* colorvalue) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this2srgb == nullptr) {
 		$synchronized(this) {
 			if (this->this2srgb == nullptr) {
@@ -143,6 +144,7 @@ $floats* ICC_ColorSpace::toRGB($floats* colorvalue) {
 }
 
 $floats* ICC_ColorSpace::fromRGB($floats* rgbvalue) {
+	$useLocalCurrentObjectStackCache();
 	if (this->srgb2this == nullptr) {
 		$synchronized(this) {
 			if (this->srgb2this == nullptr) {
@@ -172,6 +174,7 @@ $floats* ICC_ColorSpace::fromRGB($floats* rgbvalue) {
 }
 
 $floats* ICC_ColorSpace::toCIEXYZ($floats* colorvalue) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this2xyz == nullptr) {
 		$synchronized(this) {
 			if (this->this2xyz == nullptr) {
@@ -207,6 +210,7 @@ $floats* ICC_ColorSpace::toCIEXYZ($floats* colorvalue) {
 }
 
 $floats* ICC_ColorSpace::fromCIEXYZ($floats* colorvalue) {
+	$useLocalCurrentObjectStackCache();
 	if (this->xyz2this == nullptr) {
 		$synchronized(this) {
 			if (this->xyz2this == nullptr) {

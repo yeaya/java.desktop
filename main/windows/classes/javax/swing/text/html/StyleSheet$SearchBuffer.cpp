@@ -87,6 +87,7 @@ void StyleSheet$SearchBuffer::init$() {
 
 StyleSheet$SearchBuffer* StyleSheet$SearchBuffer::obtainSearchBuffer() {
 	$init(StyleSheet$SearchBuffer);
+	$useLocalCurrentObjectStackCache();
 	$var(StyleSheet$SearchBuffer, sb, nullptr);
 	try {
 		if (!$nc(StyleSheet$SearchBuffer::searchBuffers)->empty()) {

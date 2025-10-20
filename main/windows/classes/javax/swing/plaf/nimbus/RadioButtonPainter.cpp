@@ -361,6 +361,7 @@ $AbstractRegionPainter$PaintContext* RadioButtonPainter::getPaintContext() {
 }
 
 void RadioButtonPainter::painticonDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse1());
 	$nc(g)->setPaint($(decodeGradient1(this->ellipse)));
 	g->fill(this->ellipse);
@@ -370,6 +371,7 @@ void RadioButtonPainter::painticonDisabled($Graphics2D* g) {
 }
 
 void RadioButtonPainter::painticonEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse3());
 	$nc(g)->setPaint(this->color7);
 	g->fill(this->ellipse);
@@ -382,6 +384,7 @@ void RadioButtonPainter::painticonEnabled($Graphics2D* g) {
 }
 
 void RadioButtonPainter::painticonFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->ellipse);
@@ -394,6 +397,7 @@ void RadioButtonPainter::painticonFocused($Graphics2D* g) {
 }
 
 void RadioButtonPainter::painticonMouseOver($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse3());
 	$nc(g)->setPaint(this->color7);
 	g->fill(this->ellipse);
@@ -406,6 +410,7 @@ void RadioButtonPainter::painticonMouseOver($Graphics2D* g) {
 }
 
 void RadioButtonPainter::painticonMouseOverAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->ellipse);
@@ -418,6 +423,7 @@ void RadioButtonPainter::painticonMouseOverAndFocused($Graphics2D* g) {
 }
 
 void RadioButtonPainter::painticonPressed($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse3());
 	$nc(g)->setPaint(this->color19);
 	g->fill(this->ellipse);
@@ -430,6 +436,7 @@ void RadioButtonPainter::painticonPressed($Graphics2D* g) {
 }
 
 void RadioButtonPainter::painticonPressedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->ellipse);
@@ -442,6 +449,7 @@ void RadioButtonPainter::painticonPressedAndFocused($Graphics2D* g) {
 }
 
 void RadioButtonPainter::painticonSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse3());
 	$nc(g)->setPaint(this->color7);
 	g->fill(this->ellipse);
@@ -457,6 +465,7 @@ void RadioButtonPainter::painticonSelected($Graphics2D* g) {
 }
 
 void RadioButtonPainter::painticonSelectedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->ellipse);
@@ -472,6 +481,7 @@ void RadioButtonPainter::painticonSelectedAndFocused($Graphics2D* g) {
 }
 
 void RadioButtonPainter::painticonPressedAndSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse3());
 	$nc(g)->setPaint(this->color19);
 	g->fill(this->ellipse);
@@ -487,6 +497,7 @@ void RadioButtonPainter::painticonPressedAndSelected($Graphics2D* g) {
 }
 
 void RadioButtonPainter::painticonPressedAndSelectedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->ellipse);
@@ -502,6 +513,7 @@ void RadioButtonPainter::painticonPressedAndSelectedAndFocused($Graphics2D* g) {
 }
 
 void RadioButtonPainter::painticonMouseOverAndSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse3());
 	$nc(g)->setPaint(this->color7);
 	g->fill(this->ellipse);
@@ -517,6 +529,7 @@ void RadioButtonPainter::painticonMouseOverAndSelected($Graphics2D* g) {
 }
 
 void RadioButtonPainter::painticonMouseOverAndSelectedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse4());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->ellipse);
@@ -532,6 +545,7 @@ void RadioButtonPainter::painticonMouseOverAndSelectedAndFocused($Graphics2D* g)
 }
 
 void RadioButtonPainter::painticonDisabledAndSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ellipse, decodeEllipse1());
 	$nc(g)->setPaint($(decodeGradient17(this->ellipse)));
 	g->fill(this->ellipse);
@@ -594,6 +608,7 @@ $Ellipse2D* RadioButtonPainter::decodeEllipse5() {
 }
 
 $Paint* RadioButtonPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -611,6 +626,7 @@ $Paint* RadioButtonPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -640,6 +656,7 @@ $Paint* RadioButtonPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -657,6 +674,7 @@ $Paint* RadioButtonPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -682,6 +700,7 @@ $Paint* RadioButtonPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -699,6 +718,7 @@ $Paint* RadioButtonPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -728,6 +748,7 @@ $Paint* RadioButtonPainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -745,6 +766,7 @@ $Paint* RadioButtonPainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -770,6 +792,7 @@ $Paint* RadioButtonPainter::decodeGradient8($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient9($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -787,6 +810,7 @@ $Paint* RadioButtonPainter::decodeGradient9($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient10($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -816,6 +840,7 @@ $Paint* RadioButtonPainter::decodeGradient10($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient11($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -837,6 +862,7 @@ $Paint* RadioButtonPainter::decodeGradient11($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient12($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -854,6 +880,7 @@ $Paint* RadioButtonPainter::decodeGradient12($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient13($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -883,6 +910,7 @@ $Paint* RadioButtonPainter::decodeGradient13($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient14($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -904,6 +932,7 @@ $Paint* RadioButtonPainter::decodeGradient14($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient15($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -921,6 +950,7 @@ $Paint* RadioButtonPainter::decodeGradient15($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient16($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -954,6 +984,7 @@ $Paint* RadioButtonPainter::decodeGradient16($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient17($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -971,6 +1002,7 @@ $Paint* RadioButtonPainter::decodeGradient17($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient18($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -992,6 +1024,7 @@ $Paint* RadioButtonPainter::decodeGradient18($Shape* s) {
 }
 
 $Paint* RadioButtonPainter::decodeGradient19($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

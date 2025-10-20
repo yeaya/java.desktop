@@ -125,6 +125,7 @@ void ColorCustomizationTest::init$() {
 }
 
 void ColorCustomizationTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(ColorCustomizationTest);
 	$assignStatic(ColorCustomizationTest::nimbus, $new($NimbusLookAndFeel));
 	try {
@@ -137,6 +138,7 @@ void ColorCustomizationTest::main($StringArray* args) {
 }
 
 void ColorCustomizationTest::check($Color* c) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::updateComponentTreeUI(this->label);
 	$nc(this->label)->paint(this->g);
 	int32_t var$0 = $nc($($nc(this->label)->getBackground()))->getRGB();
@@ -157,6 +159,7 @@ void ColorCustomizationTest::test() {
 }
 
 void ColorCustomizationTest::testOverrides() {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, defaultColor, $nc(this->label)->getBackground());
 	$var($UIDefaults, defs, $new($UIDefaults));
 	$init($Color);
@@ -172,6 +175,7 @@ void ColorCustomizationTest::testOverrides() {
 }
 
 void ColorCustomizationTest::testInheritance() {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, defaultColor, $nc(this->label)->getBackground());
 	$init($Color);
 	$UIManager::put("Label[Enabled].background"_s, $$new($ColorUIResource, $Color::RED));
@@ -190,6 +194,7 @@ void ColorCustomizationTest::testInheritance() {
 }
 
 void ColorCustomizationTest::testNames() {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, defaultColor, $nc(this->label)->getBackground());
 	$init($Color);
 	$UIManager::put("\"BlueLabel\"[Enabled].background"_s, $$new($ColorUIResource, $Color::BLUE));

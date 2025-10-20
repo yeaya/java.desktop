@@ -143,6 +143,7 @@ void bug8031971::main($StringArray* args) {
 
 void bug8031971::test($Hashtable* table, $ObjectArray2* values) {
 	$init(bug8031971);
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(values)->length; ++i) {
 		test($($nc(table)->get($nc(values->get(i))->get(0))), $cast($String, $nc(values->get(i))->get(1)));
 	}
@@ -150,6 +151,7 @@ void bug8031971::test($Hashtable* table, $ObjectArray2* values) {
 
 void bug8031971::test(Object$* obj, $String* className) {
 	$init(bug8031971);
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($nc($of(obj))->getClass()->getCanonicalName()))->equals($($nc(className)->replace(u'$', u'.')))) {
 		$throwNew($RuntimeException, "Wrong value!"_s);
 	}
@@ -157,12 +159,14 @@ void bug8031971::test(Object$* obj, $String* className) {
 
 void bug8031971::lambda$main$0() {
 	$init(bug8031971);
+	$useLocalCurrentObjectStackCache();
 	$var($bug8031971$TestTable, table, $new($bug8031971$TestTable));
 	test($(table->getDefaultRenderersByColumnClass()), bug8031971::RENDERERS);
 	test($(table->getDefaultEditorsByColumnClass()), bug8031971::EDITORS);
 }
 
 void clinit$bug8031971($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 			$load($Object);
 			$load($Number);
 			$load($Float);

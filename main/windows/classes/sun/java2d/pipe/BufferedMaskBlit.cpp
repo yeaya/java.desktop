@@ -106,6 +106,7 @@ void BufferedMaskBlit::init$($RenderQueue* rq, $SurfaceType* srcType, $Composite
 }
 
 void BufferedMaskBlit::MaskBlit$($SurfaceData* src, $SurfaceData* dst, $Composite* comp$renamed, $Region* clip, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t width, int32_t height, $bytes* mask, int32_t maskoff, int32_t maskscan) {
+	$useLocalCurrentObjectStackCache();
 	$var($Composite, comp, comp$renamed);
 	if (width <= 0 || height <= 0) {
 		return;

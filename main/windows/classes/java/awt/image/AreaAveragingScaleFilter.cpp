@@ -125,6 +125,7 @@ $ints* AreaAveragingScaleFilter::calcRow() {
 }
 
 void AreaAveragingScaleFilter::accumPixels(int32_t x, int32_t y, int32_t w, int32_t h, $ColorModel* model, Object$* pixels, int32_t off, int32_t scansize) {
+	$useLocalCurrentObjectStackCache();
 	if (this->reds == nullptr) {
 		makeAccumBuffers();
 	}

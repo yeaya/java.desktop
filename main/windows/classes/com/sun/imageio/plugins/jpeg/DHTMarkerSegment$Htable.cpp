@@ -122,6 +122,7 @@ void DHTMarkerSegment$Htable::init$($DHTMarkerSegment* this$0, $JPEGHuffmanTable
 }
 
 void DHTMarkerSegment$Htable::init$($DHTMarkerSegment* this$0, $Node* node) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$set(this, numCodes, $new($shorts, DHTMarkerSegment$Htable::NUM_LENGTHS));
 	if ($nc($($nc(node)->getNodeName()))->equals("dhtable"_s)) {
@@ -165,6 +166,7 @@ $Object* DHTMarkerSegment$Htable::clone() {
 }
 
 $IIOMetadataNode* DHTMarkerSegment$Htable::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "dhtable"_s));
 	node->setAttribute("class"_s, $($Integer::toString(this->tableClass)));
 	node->setAttribute("htableId"_s, $($Integer::toString(this->tableID)));
@@ -173,6 +175,7 @@ $IIOMetadataNode* DHTMarkerSegment$Htable::getNativeNode() {
 }
 
 void DHTMarkerSegment$Htable::print() {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println("Huffman Table"_s);
 	$nc($System::out)->println($$str({"table class: "_s, ((this->tableClass == 0) ? "DC"_s : "AC"_s)}));

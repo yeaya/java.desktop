@@ -152,6 +152,7 @@ void ExternalDriveNameTest::init$() {
 }
 
 void ExternalDriveNameTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($CountDownLatch, latch, $new($CountDownLatch, 1));
 	$var($TestUI, test, $new($TestUI, latch));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(ExternalDriveNameTest$$Lambda$lambda$main$0, test)));

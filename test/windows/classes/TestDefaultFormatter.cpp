@@ -121,6 +121,7 @@ void TestDefaultFormatter::init$() {
 
 void TestDefaultFormatter::main($StringArray* args) {
 	$load(TestDefaultFormatter);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestDefaultFormatter$$Lambda$testDefaultFormatter)));
 	$System::setSecurityManager($$new($SecurityManager));
@@ -128,11 +129,13 @@ void TestDefaultFormatter::main($StringArray* args) {
 }
 
 void TestDefaultFormatter::testDefaultFormatter() {
+	$useLocalCurrentObjectStackCache();
 	testDefaultFormatter($$new($TestDefaultFormatter$1));
 	testDefaultFormatter($$new($DefaultFormatter));
 }
 
 void TestDefaultFormatter::testDefaultFormatter($DefaultFormatter* formatter) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($System);
 		$nc($System::out)->println($$str({"formatter: "_s, $nc($of(formatter))->getClass()}));

@@ -73,6 +73,7 @@ $Object* allocate$bug8041982($Class* clazz) {
 }
 
 void bug8041982::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$();
 	setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$var($Component, var$0, static_cast<$Component*>($new($JPanel)));

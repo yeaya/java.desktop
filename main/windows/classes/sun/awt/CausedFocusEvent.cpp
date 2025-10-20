@@ -118,6 +118,7 @@ void CausedFocusEvent::init$($Component* source, int32_t id, bool temporary, $Co
 }
 
 $Object* CausedFocusEvent::readResolve() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$FocusEvent$Cause* newCause = nullptr;
 	$init($CausedFocusEvent$3);

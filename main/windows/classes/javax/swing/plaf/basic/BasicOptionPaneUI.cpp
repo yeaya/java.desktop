@@ -306,6 +306,7 @@ void BasicOptionPaneUI::uninstallDefaults() {
 }
 
 void BasicOptionPaneUI::installComponents() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->optionPane)->add($(static_cast<$Component*>(createMessageArea())));
 	$var($Container, separator, createSeparator());
 	if (separator != nullptr) {
@@ -380,6 +381,7 @@ $Dimension* BasicOptionPaneUI::getMinimumOptionPaneSize() {
 }
 
 $Dimension* BasicOptionPaneUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals(c, this->optionPane)) {
 		$var($Dimension, ourMin, getMinimumOptionPaneSize());
 		$var($LayoutManager, lm, $nc(c)->getLayout());
@@ -397,6 +399,7 @@ $Dimension* BasicOptionPaneUI::getPreferredSize($JComponent* c) {
 }
 
 $Container* BasicOptionPaneUI::createMessageArea() {
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, top, $new($JPanel));
 	$var($Border, topBorder, $cast($Border, $DefaultLookup::get(this->optionPane, this, "OptionPane.messageAreaBorder"_s)));
 	if (topBorder != nullptr) {
@@ -432,6 +435,7 @@ $Container* BasicOptionPaneUI::createMessageArea() {
 }
 
 void BasicOptionPaneUI::addMessageComponents($Container* container, $GridBagConstraints* cons, Object$* msg, int32_t maxll, bool internallyCreated) {
+	$useLocalCurrentObjectStackCache();
 	if (msg == nullptr) {
 		return;
 	}
@@ -508,6 +512,7 @@ void BasicOptionPaneUI::addMessageComponents($Container* container, $GridBagCons
 }
 
 $Object* BasicOptionPaneUI::getMessage() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, inputComponent, nullptr);
 	if (this->optionPane != nullptr) {
 		if ($nc(this->optionPane)->getWantsInput()) {
@@ -575,6 +580,7 @@ $Object* BasicOptionPaneUI::getMessage() {
 }
 
 void BasicOptionPaneUI::addIcon($Container* top) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, sideIcon, getIcon());
 	if (sideIcon != nullptr) {
 		$var($JLabel, iconLabel, $new($JLabel, sideIcon));
@@ -631,6 +637,7 @@ int32_t BasicOptionPaneUI::getMaxCharactersPerLineCount() {
 }
 
 void BasicOptionPaneUI::burstStringInto($Container* c, $String* d, int32_t maxll) {
+	$useLocalCurrentObjectStackCache();
 	int32_t len = $nc(d)->length();
 	if (len <= 0) {
 		return;
@@ -657,6 +664,7 @@ $Container* BasicOptionPaneUI::createSeparator() {
 }
 
 $Container* BasicOptionPaneUI::createButtonArea() {
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, bottom, $new($JPanel));
 	$var($Border, border, $cast($Border, $DefaultLookup::get(this->optionPane, this, "OptionPane.buttonAreaBorder"_s)));
 	bottom->setName("OptionPane.buttonArea"_s);
@@ -674,6 +682,7 @@ $Container* BasicOptionPaneUI::createButtonArea() {
 }
 
 void BasicOptionPaneUI::addButtonComponents($Container* container, $ObjectArray* buttons, int32_t initialIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (buttons != nullptr && buttons->length > 0) {
 		bool sizeButtonsToSame = getSizeButtonsToSameWidth();
 		bool createdAll = true;
@@ -740,6 +749,7 @@ $ActionListener* BasicOptionPaneUI::createButtonActionListener(int32_t buttonInd
 }
 
 $ObjectArray* BasicOptionPaneUI::getButtons() {
+	$useLocalCurrentObjectStackCache();
 	if (this->optionPane != nullptr) {
 		$var($ObjectArray, suppliedOptions, $nc(this->optionPane)->getOptions());
 		if (suppliedOptions == nullptr) {
@@ -805,6 +815,7 @@ bool BasicOptionPaneUI::getSizeButtonsToSameWidth() {
 }
 
 int32_t BasicOptionPaneUI::getInitialValueIndex() {
+	$useLocalCurrentObjectStackCache();
 	if (this->optionPane != nullptr) {
 		$var($Object, iv, $nc(this->optionPane)->getInitialValue());
 		$var($ObjectArray, options, $nc(this->optionPane)->getOptions());
@@ -822,6 +833,7 @@ int32_t BasicOptionPaneUI::getInitialValueIndex() {
 }
 
 void BasicOptionPaneUI::resetInputValue() {
+	$useLocalCurrentObjectStackCache();
 	if (this->inputComponent != nullptr && ($instanceOf($JTextField, this->inputComponent))) {
 		$nc(this->optionPane)->setInputValue($($nc(($cast($JTextField, this->inputComponent)))->getText()));
 	} else if (this->inputComponent != nullptr && ($instanceOf($JComboBox, this->inputComponent))) {
@@ -852,6 +864,7 @@ bool BasicOptionPaneUI::containsCustomComponents($JOptionPane* op) {
 }
 
 void BasicOptionPaneUI::configureMessageLabel($JLabel* label) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, color, $cast($Color, $DefaultLookup::get(this->optionPane, this, "OptionPane.messageForeground"_s)));
 	if (color != nullptr) {
 		$nc(label)->setForeground(color);

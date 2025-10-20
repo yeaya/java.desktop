@@ -118,6 +118,7 @@ void bug4128979::init$() {
 
 void bug4128979::main($StringArray* args) {
 	$init(bug4128979);
+	$useLocalCurrentObjectStackCache();
 	$var($JApplet, applet, $new(bug4128979));
 	applet->init();
 	applet->start();
@@ -131,6 +132,7 @@ void bug4128979::main($StringArray* args) {
 }
 
 void bug4128979::init() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel"_s);
 	} catch ($UnsupportedLookAndFeelException&) {
@@ -164,6 +166,7 @@ void bug4128979::init() {
 
 void bug4128979::addButtons($Container* c) {
 	$init(bug4128979);
+	$useLocalCurrentObjectStackCache();
 	$nc(c)->setLayout($$new($FlowLayout));
 	c->add(static_cast<$Component*>($$new($JToggleButton, "DefaultBorder"_s)));
 	$var($JToggleButton, cbut, $new($JToggleButton, "DefaultBorder"_s));

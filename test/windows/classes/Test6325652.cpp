@@ -89,6 +89,7 @@ void Test6325652::main($StringArray* args) {
 }
 
 void Test6325652::init$($JFrame* frame) {
+	$useLocalCurrentObjectStackCache();
 	$var($JDesktopPane, desktop, $new($JDesktopPane));
 	desktop->add($(static_cast<$Component*>(create(0))));
 	desktop->add(static_cast<$Component*>(($assignField(this, internal, create(1)))));
@@ -116,6 +117,7 @@ void Test6325652::stepFirstValidate() {
 }
 
 void Test6325652::stepSecond() {
+	$useLocalCurrentObjectStackCache();
 	click($$new($ints, {
 		$KeyEvent::VK_CONTROL,
 		$KeyEvent::VK_F6
@@ -133,6 +135,7 @@ void Test6325652::stepSecondValidate() {
 }
 
 void Test6325652::click($ints* keys) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($ints, arr$, keys);
 		int32_t len$ = $nc(arr$)->length;
@@ -160,6 +163,7 @@ void Test6325652::click($ints* keys) {
 }
 
 $JInternalFrame* Test6325652::create(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, text, $str({"test"_s, $$str(index)}));
 	index = index * 3 + 1;
 	$var($JInternalFrame, internal, $new($JInternalFrame, text, true, true, true, true));

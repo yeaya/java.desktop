@@ -169,6 +169,7 @@ void ColorChooserPanel::setEnabled(bool enabled) {
 
 void ColorChooserPanel::setEnabled($Container* container, bool enabled) {
 	$init(ColorChooserPanel);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($ComponentArray, arr$, $nc(container)->getComponents());
 		int32_t len$ = $nc(arr$)->length;
@@ -186,6 +187,7 @@ void ColorChooserPanel::setEnabled($Container* container, bool enabled) {
 }
 
 void ColorChooserPanel::updateChooser() {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, color, getColorFromModel());
 	if (color != nullptr) {
 		$nc(this->panel)->setColor(color);
@@ -196,6 +198,7 @@ void ColorChooserPanel::updateChooser() {
 }
 
 void ColorChooserPanel::buildChooser() {
+	$useLocalCurrentObjectStackCache();
 	if (0 == getComponentCount()) {
 		setLayout($$new($GridBagLayout));
 		$var($GridBagConstraints, gbc, $new($GridBagConstraints));
@@ -287,6 +290,7 @@ bool ColorChooserPanel::isColorTransparencySelectionEnabled() {
 }
 
 void ColorChooserPanel::propertyChange($PropertyChangeEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorSelectionModel, model, getColorSelectionModel());
 	if (model != nullptr) {
 		$var($Object, object, $nc(event)->getNewValue());
@@ -301,6 +305,7 @@ void ColorChooserPanel::propertyChange($PropertyChangeEvent* event) {
 
 void ColorChooserPanel::setInheritsPopupMenu($JComponent* component, bool value) {
 	$init(ColorChooserPanel);
+	$useLocalCurrentObjectStackCache();
 	$nc(component)->setInheritsPopupMenu(value);
 	{
 		$var($ComponentArray, arr$, component->getComponents());

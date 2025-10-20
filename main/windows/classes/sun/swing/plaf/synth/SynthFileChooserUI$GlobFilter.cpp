@@ -83,6 +83,7 @@ void SynthFileChooserUI$GlobFilter::init$($SynthFileChooserUI* this$0) {
 }
 
 void SynthFileChooserUI$GlobFilter::setPattern($String* globPattern) {
+	$useLocalCurrentObjectStackCache();
 	$var($chars, gPat, $nc(globPattern)->toCharArray());
 	$var($chars, rPat, $new($chars, gPat->length * 2));
 	$init($File);
@@ -175,6 +176,7 @@ void SynthFileChooserUI$GlobFilter::setPattern($String* globPattern) {
 }
 
 bool SynthFileChooserUI$GlobFilter::accept($File* f) {
+	$useLocalCurrentObjectStackCache();
 	if (f == nullptr) {
 		return false;
 	}

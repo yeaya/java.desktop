@@ -325,6 +325,7 @@ $JComponent* JSpinner::createEditor($SpinnerModel* model) {
 }
 
 void JSpinner::setModel($SpinnerModel* model) {
+	$useLocalCurrentObjectStackCache();
 	if (model == nullptr) {
 		$throwNew($IllegalArgumentException, "null model"_s);
 	}

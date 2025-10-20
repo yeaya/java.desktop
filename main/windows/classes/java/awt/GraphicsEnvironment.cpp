@@ -224,6 +224,7 @@ void GraphicsEnvironment::preferProportionalFonts() {
 }
 
 $Point* GraphicsEnvironment::getCenterPoint() {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, usableBounds, $SunGraphicsEnvironment::getUsableBounds($(getDefaultScreenDevice())));
 	return $new($Point, ($nc(usableBounds)->width / 2) + usableBounds->x, (usableBounds->height / 2) + usableBounds->y);
 }

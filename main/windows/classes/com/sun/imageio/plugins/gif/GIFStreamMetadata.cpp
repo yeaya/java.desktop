@@ -122,6 +122,7 @@ $Node* GIFStreamMetadata::getAsTree($String* formatName) {
 }
 
 $Node* GIFStreamMetadata::getNativeTree() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, nullptr);
 	$var($IIOMetadataNode, root, $new($IIOMetadataNode, GIFStreamMetadata::nativeMetadataFormatName));
 	$assign(node, $new($IIOMetadataNode, "Version"_s));
@@ -156,6 +157,7 @@ $Node* GIFStreamMetadata::getNativeTree() {
 }
 
 $IIOMetadataNode* GIFStreamMetadata::getStandardChromaNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, chroma_node, $new($IIOMetadataNode, "Chroma"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$assign(node, $new($IIOMetadataNode, "ColorSpaceType"_s));
@@ -184,6 +186,7 @@ $IIOMetadataNode* GIFStreamMetadata::getStandardChromaNode() {
 }
 
 $IIOMetadataNode* GIFStreamMetadata::getStandardCompressionNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, compression_node, $new($IIOMetadataNode, "Compression"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$assign(node, $new($IIOMetadataNode, "CompressionTypeName"_s));
@@ -196,6 +199,7 @@ $IIOMetadataNode* GIFStreamMetadata::getStandardCompressionNode() {
 }
 
 $IIOMetadataNode* GIFStreamMetadata::getStandardDataNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, data_node, $new($IIOMetadataNode, "Data"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$assign(node, $new($IIOMetadataNode, "SampleFormat"_s));
@@ -208,6 +212,7 @@ $IIOMetadataNode* GIFStreamMetadata::getStandardDataNode() {
 }
 
 $IIOMetadataNode* GIFStreamMetadata::getStandardDimensionNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, dimension_node, $new($IIOMetadataNode, "Dimension"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$assign(node, $new($IIOMetadataNode, "PixelAspectRatio"_s));
@@ -230,6 +235,7 @@ $IIOMetadataNode* GIFStreamMetadata::getStandardDimensionNode() {
 }
 
 $IIOMetadataNode* GIFStreamMetadata::getStandardDocumentNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, document_node, $new($IIOMetadataNode, "Document"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$assign(node, $new($IIOMetadataNode, "FormatVersion"_s));

@@ -243,6 +243,7 @@ $Point* GridBagLayout::getLayoutOrigin() {
 }
 
 $intArray2* GridBagLayout::getLayoutDimensions() {
+	$useLocalCurrentObjectStackCache();
 	if (this->layoutInfo == nullptr) {
 		return $new($intArray2, 2, 0);
 	}
@@ -255,6 +256,7 @@ $intArray2* GridBagLayout::getLayoutDimensions() {
 }
 
 $doubleArray2* GridBagLayout::getLayoutWeights() {
+	$useLocalCurrentObjectStackCache();
 	if (this->layoutInfo == nullptr) {
 		return $new($doubleArray2, 2, 0);
 	}
@@ -355,6 +357,7 @@ $GridBagLayoutInfo* GridBagLayout::getLayoutInfo($Container* parent, int32_t siz
 }
 
 $longs* GridBagLayout::preInitMaximumArraySizes($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentArray, components, $nc(parent)->getComponents());
 	$var($Component, comp, nullptr);
 	$var($GridBagConstraints, constraints, nullptr);
@@ -396,6 +399,7 @@ $longs* GridBagLayout::preInitMaximumArraySizes($Container* parent) {
 }
 
 $GridBagLayoutInfo* GridBagLayout::GetLayoutInfo($Container* parent, int32_t sizeflag) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(parent)->getTreeLock()) {
 		$var($GridBagLayoutInfo, r, nullptr);
 		$var($Component, comp, nullptr);
@@ -1192,6 +1196,7 @@ $Dimension* GridBagLayout::getMinSize($Container* parent, $GridBagLayoutInfo* in
 }
 
 $Dimension* GridBagLayout::GetMinSize($Container* parent, $GridBagLayoutInfo* info) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, $new($Dimension));
 	int32_t i = 0;
 	int32_t t = 0;
@@ -1214,6 +1219,7 @@ void GridBagLayout::arrangeGrid($Container* parent) {
 }
 
 void GridBagLayout::ArrangeGrid($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, comp, nullptr);
 	int32_t compindex = 0;
 	$var($GridBagConstraints, constraints, nullptr);

@@ -168,6 +168,7 @@ void TextMeasurer::init$($AttributedCharacterIterator* text, $FontRenderContext*
 }
 
 $Object* TextMeasurer::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(TextMeasurer, other, nullptr);
 	try {
 		$assign(other, $cast(TextMeasurer, $Cloneable::clone()));
@@ -188,6 +189,7 @@ void TextMeasurer::invalidateComponents() {
 }
 
 void TextMeasurer::initAll($AttributedCharacterIterator* text) {
+	$useLocalCurrentObjectStackCache();
 	this->fStart = $nc(text)->getBeginIndex();
 	$set(this, fChars, $new($chars, text->getEndIndex() - this->fStart));
 	int32_t n = 0;
@@ -231,6 +233,7 @@ void TextMeasurer::initAll($AttributedCharacterIterator* text) {
 }
 
 void TextMeasurer::generateComponents(int32_t startingAt, int32_t endingAt) {
+	$useLocalCurrentObjectStackCache();
 	if (this->collectStats) {
 		this->formattedChars += (endingAt - startingAt);
 	}
@@ -260,6 +263,7 @@ void TextMeasurer::generateComponents(int32_t startingAt, int32_t endingAt) {
 }
 
 int32_t TextMeasurer::calcLineBreak(int32_t pos, float maxAdvance) {
+	$useLocalCurrentObjectStackCache();
 	int32_t startPos = pos;
 	float width = maxAdvance;
 	int32_t tlcIndex = 0;
@@ -304,6 +308,7 @@ int32_t TextMeasurer::trailingCdWhitespaceStart(int32_t startPos, int32_t limitP
 }
 
 $TextLineComponentArray* TextMeasurer::makeComponentsOnRange(int32_t startPos, int32_t limitPos) {
+	$useLocalCurrentObjectStackCache();
 	int32_t cdWsStart = trailingCdWhitespaceStart(startPos, limitPos);
 	int32_t tlcIndex = 0;
 	int32_t tlcStart = this->fComponentStart;
@@ -368,6 +373,7 @@ $TextLineComponentArray* TextMeasurer::makeComponentsOnRange(int32_t startPos, i
 }
 
 $TextLine* TextMeasurer::makeTextLineOnRange(int32_t startPos, int32_t limitPos) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, charsLtoV, nullptr);
 	$var($bytes, charLevels, nullptr);
 	if (this->fBidi != nullptr) {
@@ -427,6 +433,7 @@ int32_t TextMeasurer::getLineBreakIndex(int32_t start, float maxAdvance) {
 }
 
 float TextMeasurer::getAdvanceBetween(int32_t start, int32_t limit) {
+	$useLocalCurrentObjectStackCache();
 	int32_t localStart = start - this->fStart;
 	int32_t localLimit = limit - this->fStart;
 	ensureComponents(localStart, localLimit);
@@ -447,6 +454,7 @@ $TextLayout* TextMeasurer::getLayout(int32_t start, int32_t limit) {
 }
 
 void TextMeasurer::printStats() {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println($$str({"formattedChars: "_s, $$str(this->formattedChars)}));
 	this->collectStats = false;

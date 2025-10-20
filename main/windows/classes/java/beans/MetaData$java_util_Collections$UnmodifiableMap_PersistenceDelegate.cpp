@@ -68,6 +68,7 @@ void MetaData$java_util_Collections$UnmodifiableMap_PersistenceDelegate::init$()
 }
 
 $Expression* MetaData$java_util_Collections$UnmodifiableMap_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Map, map, $new($HashMap, $cast($Map, oldInstance)));
 	$load($Collections);
 	return $new($Expression, oldInstance, $Collections::class$, "unmodifiableMap"_s, $$new($ObjectArray, {$of(map)}));

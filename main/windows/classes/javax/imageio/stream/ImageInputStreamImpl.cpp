@@ -315,6 +315,7 @@ $String* ImageInputStreamImpl::readLine() {
 }
 
 $String* ImageInputStreamImpl::readUTF() {
+	$useLocalCurrentObjectStackCache();
 	this->bitOffset = 0;
 	$var($ByteOrder, oldByteOrder, getByteOrder());
 	$init($ByteOrder);
@@ -679,6 +680,7 @@ void ImageInputStreamImpl::seek(int64_t pos) {
 }
 
 void ImageInputStreamImpl::mark() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$nc(this->markByteStack)->push($($Long::valueOf(getStreamPosition())));
 		$nc(this->markBitStack)->push($($Integer::valueOf(getBitOffset())));
@@ -688,6 +690,7 @@ void ImageInputStreamImpl::mark() {
 }
 
 void ImageInputStreamImpl::reset() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->markByteStack)->empty()) {
 		return;
 	}

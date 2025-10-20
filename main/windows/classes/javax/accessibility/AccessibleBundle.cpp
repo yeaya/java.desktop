@@ -79,6 +79,7 @@ void AccessibleBundle::init$() {
 }
 
 $String* AccessibleBundle::toDisplayString($String* name, $Locale* locale) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		return $nc($($ResourceBundle::getBundle(name, locale)))->getString(this->key);

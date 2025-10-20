@@ -89,6 +89,7 @@ void MotifInternalFrameUI$3::init$($MotifInternalFrameUI* this$0) {
 }
 
 void MotifInternalFrameUI$3::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame$JDesktopIcon, icon, $nc($(this->this$0->getFrame()))->getDesktopIcon());
 	$var($MotifDesktopIconUI, micon, $cast($MotifDesktopIconUI, $cast($DesktopIconUI, $nc(icon)->getUI())));
 	$nc(micon)->hideSystemMenu();

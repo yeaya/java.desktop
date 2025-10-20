@@ -124,6 +124,7 @@ bool WeakIdentityHashMap::isEmpty() {
 }
 
 bool WeakIdentityHashMap::containsKey(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($(getMap()))->containsKey($$new($WeakIdentityHashMap$WeakKey, key, nullptr));
 }
 
@@ -132,18 +133,22 @@ bool WeakIdentityHashMap::containsValue(Object$* value) {
 }
 
 $Object* WeakIdentityHashMap::get(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	return $of($nc($(getMap()))->get($$new($WeakIdentityHashMap$WeakKey, key, nullptr)));
 }
 
 $Object* WeakIdentityHashMap::put(Object$* key, Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	return $of($nc($(getMap()))->put($$new($WeakIdentityHashMap$WeakKey, key, this->queue), value));
 }
 
 $Object* WeakIdentityHashMap::remove(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	return $of($nc($(getMap()))->remove($$new($WeakIdentityHashMap$WeakKey, key, nullptr)));
 }
 
 void WeakIdentityHashMap::putAll($Map* m) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc($($nc(m)->entrySet()))->iterator());
 		for (; $nc(i$)->hasNext();) {

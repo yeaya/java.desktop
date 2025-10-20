@@ -81,6 +81,7 @@ void ComponentView$1::init$($ComponentView* this$0) {
 }
 
 void ComponentView$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, this->this$0->getDocument());
 	{
 		$var($Throwable, var$0, nullptr);

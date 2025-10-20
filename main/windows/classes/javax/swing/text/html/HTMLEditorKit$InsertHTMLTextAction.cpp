@@ -123,6 +123,7 @@ void HTMLEditorKit$InsertHTMLTextAction::init$($String* name, $String* html, $HT
 }
 
 void HTMLEditorKit$InsertHTMLTextAction::insertHTML($JEditorPane* editor, $HTMLDocument* doc, int32_t offset, $String* html, int32_t popDepth, int32_t pushDepth, $HTML$Tag* addTag) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$nc($(getHTMLEditorKit(editor)))->insertHTML(doc, offset, html, popDepth, pushDepth, addTag);
 	} catch ($IOException&) {
@@ -139,6 +140,7 @@ void HTMLEditorKit$InsertHTMLTextAction::insertAtBoundary($JEditorPane* editor, 
 }
 
 void HTMLEditorKit$InsertHTMLTextAction::insertAtBoundry($JEditorPane* editor, $HTMLDocument* doc, int32_t offset, $Element* insertElement, $String* html, $HTML$Tag* parentTag, $HTML$Tag* addTag) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, e, nullptr);
 	$var($Element, commonParent, nullptr);
 	bool isFirst = (offset == 0);
@@ -201,6 +203,7 @@ bool HTMLEditorKit$InsertHTMLTextAction::insertIntoTag($JEditorPane* editor, $HT
 }
 
 void HTMLEditorKit$InsertHTMLTextAction::adjustSelection($JEditorPane* pane, $HTMLDocument* doc, int32_t startOffset, int32_t oldLength) {
+	$useLocalCurrentObjectStackCache();
 	int32_t newLength = $nc(doc)->getLength();
 	if (newLength != oldLength && startOffset < newLength) {
 		if (startOffset > 0) {
@@ -224,6 +227,7 @@ void HTMLEditorKit$InsertHTMLTextAction::adjustSelection($JEditorPane* pane, $HT
 }
 
 void HTMLEditorKit$InsertHTMLTextAction::actionPerformed($ActionEvent* ae) {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, editor, getEditor(ae));
 	if (editor != nullptr) {
 		$var($HTMLDocument, doc, getHTMLDocument(editor));

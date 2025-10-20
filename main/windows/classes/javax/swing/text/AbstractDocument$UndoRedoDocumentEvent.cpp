@@ -79,6 +79,7 @@ $Object* allocate$AbstractDocument$UndoRedoDocumentEvent($Class* clazz) {
 }
 
 void AbstractDocument$UndoRedoDocumentEvent::init$($AbstractDocument* this$0, $AbstractDocument$DefaultDocumentEvent* src, bool isUndo) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$set(this, src, nullptr);
 	$set(this, type, nullptr);

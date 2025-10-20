@@ -131,6 +131,7 @@ void D3DRenderer::init$($RenderQueue* rq) {
 }
 
 void D3DRenderer::validateContext($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	int32_t ctxflags = $nc($nc(sg2d)->paint)->getTransparency() == $Transparency::OPAQUE ? $D3DContext::SRC_IS_OPAQUE : $D3DContext::NO_CONTEXT_FLAGS;
 	$var($D3DSurfaceData, dstData, nullptr);
 	try {
@@ -143,6 +144,7 @@ void D3DRenderer::validateContext($SunGraphics2D* sg2d) {
 }
 
 void D3DRenderer::validateContextAA($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	int32_t ctxflags = $D3DContext::NO_CONTEXT_FLAGS;
 	$var($D3DSurfaceData, dstData, nullptr);
 	try {
@@ -155,6 +157,7 @@ void D3DRenderer::validateContextAA($SunGraphics2D* sg2d) {
 }
 
 void D3DRenderer::copyArea($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w, int32_t h, int32_t dx, int32_t dy) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->rq)->lock();
 	{
 		$var($Throwable, var$0, nullptr);

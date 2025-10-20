@@ -112,6 +112,7 @@ $Image* CachedPainter$PainterMultiResolutionCachedImage::getBaseImage() {
 }
 
 $List* CachedPainter$PainterMultiResolutionCachedImage::getResolutionVariants() {
+	$useLocalCurrentObjectStackCache();
 	return $Arrays::asList($$new($ImageArray, {$(getResolutionVariant((double)this->baseWidth, (double)this->baseHeight))}));
 }
 

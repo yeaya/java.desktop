@@ -274,6 +274,7 @@ void ContextualMenuClearsTextSelectionTest::init$() {
 }
 
 void ContextualMenuClearsTextSelectionTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($System::getProperty("os.name"_s)))->startsWith("Mac"_s)) {
 		$init($System);
 		$nc($System::out)->println("This test is meant for Mac platform only"_s);
@@ -330,6 +331,7 @@ void ContextualMenuClearsTextSelectionTest::main($StringArray* args) {
 }
 
 void ContextualMenuClearsTextSelectionTest::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$init(ContextualMenuClearsTextSelectionTest);
 	$assignStatic(ContextualMenuClearsTextSelectionTest::frame, $new($JFrame));
 	$nc(ContextualMenuClearsTextSelectionTest::frame)->setLayout($$new($BorderLayout));

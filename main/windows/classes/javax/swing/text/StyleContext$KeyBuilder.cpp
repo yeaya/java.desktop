@@ -84,6 +84,7 @@ void StyleContext$KeyBuilder::init$($StyleContext* this$0) {
 }
 
 void StyleContext$KeyBuilder::initialize($AttributeSet* a) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($StyleContext$SmallAttributeSet, a)) {
 		initialize($nc(($cast($StyleContext$SmallAttributeSet, a)))->attributes);
 	} else {
@@ -108,6 +109,7 @@ void StyleContext$KeyBuilder::initialize($ObjectArray* sorted) {
 }
 
 $ObjectArray* StyleContext$KeyBuilder::createTable() {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = $nc(this->keys)->size();
 	$var($ObjectArray, tbl, $new($ObjectArray, 2 * n));
 	for (int32_t i = 0; i < n; ++i) {
@@ -128,6 +130,7 @@ void StyleContext$KeyBuilder::addAttribute(Object$* key, Object$* value) {
 }
 
 void StyleContext$KeyBuilder::addAttributes($AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($StyleContext$SmallAttributeSet, attr)) {
 		$var($ObjectArray, tbl, $nc(($cast($StyleContext$SmallAttributeSet, attr)))->attributes);
 		int32_t n = $nc(tbl)->length;
@@ -144,6 +147,7 @@ void StyleContext$KeyBuilder::addAttributes($AttributeSet* attr) {
 }
 
 void StyleContext$KeyBuilder::removeAttribute(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = $nc(this->keys)->size();
 	for (int32_t i = 0; i < n; ++i) {
 		if ($nc($of($($nc(this->keys)->elementAt(i))))->equals(key)) {
@@ -155,6 +159,7 @@ void StyleContext$KeyBuilder::removeAttribute(Object$* key) {
 }
 
 void StyleContext$KeyBuilder::removeAttributes($Enumeration* names) {
+	$useLocalCurrentObjectStackCache();
 	while ($nc(names)->hasMoreElements()) {
 		$var($Object, name, names->nextElement());
 		removeAttribute(name);
@@ -162,6 +167,7 @@ void StyleContext$KeyBuilder::removeAttributes($Enumeration* names) {
 }
 
 void StyleContext$KeyBuilder::removeAttributes($AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, names, $nc(attr)->getAttributeNames());
 	while ($nc(names)->hasMoreElements()) {
 		$var($Object, name, names->nextElement());
@@ -171,6 +177,7 @@ void StyleContext$KeyBuilder::removeAttributes($AttributeSet* attr) {
 }
 
 void StyleContext$KeyBuilder::removeSearchAttribute(Object$* ikey, Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = $nc(this->keys)->size();
 	for (int32_t i = 0; i < n; ++i) {
 		if ($nc($of($($nc(this->keys)->elementAt(i))))->equals(ikey)) {

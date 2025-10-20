@@ -92,6 +92,7 @@ void ModelByteBufferWavetable$Buffer8PlusInputStream::init$($ModelByteBufferWave
 }
 
 int32_t ModelByteBufferWavetable$Buffer8PlusInputStream::read($bytes* b, int32_t off, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	int32_t avail = available();
 	if (avail <= 0) {
 		return -1;

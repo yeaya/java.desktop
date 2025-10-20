@@ -68,6 +68,7 @@ void MetaData$java_util_Collections$SynchronizedSortedMap_PersistenceDelegate::i
 }
 
 $Expression* MetaData$java_util_Collections$SynchronizedSortedMap_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($SortedMap, map, $new($TreeMap, $cast($SortedMap, oldInstance)));
 	$load($Collections);
 	return $new($Expression, oldInstance, $Collections::class$, "synchronizedSortedMap"_s, $$new($ObjectArray, {$of(map)}));

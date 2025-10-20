@@ -156,6 +156,7 @@ void BackgroundImagePosition::init$() {
 
 void BackgroundImagePosition::main($StringArray* args) {
 	$init(BackgroundImagePosition);
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, bi, $new($BufferedImage, 50, 50, $BufferedImage::TYPE_INT_ARGB));
 	$var($Graphics2D, g, bi->createGraphics());
 	$init($Color);
@@ -189,6 +190,7 @@ void BackgroundImagePosition::main($StringArray* args) {
 
 void BackgroundImagePosition::compareImages($BufferedImage* img1, $BufferedImage* img2) {
 	$init(BackgroundImagePosition);
+	$useLocalCurrentObjectStackCache();
 	for (int32_t imgX = 0; imgX < BackgroundImagePosition::SIZE; ++imgX) {
 		for (int32_t imgY = 0; imgY < BackgroundImagePosition::SIZE; ++imgY) {
 			int32_t var$0 = $nc(img1)->getRGB(imgX, imgY);
@@ -204,6 +206,7 @@ void BackgroundImagePosition::compareImages($BufferedImage* img1, $BufferedImage
 
 $BufferedImage* BackgroundImagePosition::test($String* x, $String* y) {
 	$init(BackgroundImagePosition);
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, bi, $new($BufferedImage, BackgroundImagePosition::SIZE, BackgroundImagePosition::SIZE, $BufferedImage::TYPE_INT_ARGB));
 	$EventQueue::invokeAndWait(static_cast<$Runnable*>($$new(BackgroundImagePosition$$Lambda$lambda$test$0, x, y, bi)));
 	return bi;
@@ -211,6 +214,7 @@ $BufferedImage* BackgroundImagePosition::test($String* x, $String* y) {
 
 void BackgroundImagePosition::lambda$test$0($String* x, $String* y, $BufferedImage* bi) {
 	$init(BackgroundImagePosition);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($JEditorPane, jep, $new($JEditorPane));
 		$var($HTMLEditorKit, kit, $new($HTMLEditorKit));

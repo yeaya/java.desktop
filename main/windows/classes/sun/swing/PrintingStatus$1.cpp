@@ -92,6 +92,7 @@ void PrintingStatus$1::init$($PrintingStatus* this$0) {
 }
 
 void PrintingStatus$1::actionPerformed($ActionEvent* ae) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->this$0->isAborted$)->get()) {
 		$nc(this->this$0->isAborted$)->set(true);
 		$nc(this->this$0->abortButton)->setEnabled(false);

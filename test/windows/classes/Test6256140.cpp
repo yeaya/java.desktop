@@ -176,6 +176,7 @@ void Test6256140::init$() {
 
 void Test6256140::main($StringArray* args) {
 	$init(Test6256140);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -225,6 +226,7 @@ void Test6256140::main($StringArray* args) {
 
 bool Test6256140::isTooltipShowning() {
 	$init(Test6256140);
+	$useLocalCurrentObjectStackCache();
 	$var($booleans, result, $new($booleans, 1));
 	$SwingUtilities::invokeAndWait($$new($Test6256140$2, result));
 	return result->get(0);
@@ -232,6 +234,7 @@ bool Test6256140::isTooltipShowning() {
 
 bool Test6256140::isTextEqual() {
 	$init(Test6256140);
+	$useLocalCurrentObjectStackCache();
 	$var($booleans, result, $new($booleans, 1));
 	$SwingUtilities::invokeAndWait($$new($Test6256140$3, result));
 	return result->get(0);
@@ -239,6 +242,7 @@ bool Test6256140::isTextEqual() {
 
 void Test6256140::createAndShowGUI() {
 	$init(Test6256140);
+	$useLocalCurrentObjectStackCache();
 	$nc($($ToolTipManager::sharedInstance()))->setDismissDelay($Integer::MAX_VALUE);
 	$nc($($ToolTipManager::sharedInstance()))->setInitialDelay(0);
 	$assignStatic(Test6256140::frame, $new($JFrame));

@@ -314,6 +314,7 @@ void JLightweightFrame::finalize() {
 bool JLightweightFrame::copyBufferEnabled = false;
 
 void JLightweightFrame::init$() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$LightweightFrame::init$();
 	$set(this, rootPane, $new($JRootPane));
@@ -333,6 +334,7 @@ void JLightweightFrame::init$() {
 }
 
 void JLightweightFrame::dispose() {
+	$useLocalCurrentObjectStackCache();
 	$nc($($SwingAccessor::getRepaintManagerAccessor()))->removeRepaintListener($($RepaintManager::currentManager(static_cast<$Component*>(this))), this->repaintListener);
 	$LightweightFrame::dispose();
 }
@@ -355,6 +357,7 @@ void JLightweightFrame::setContent($LightweightContent* content) {
 }
 
 $Graphics* JLightweightFrame::getGraphics() {
+	$useLocalCurrentObjectStackCache();
 	if (this->bbImage == nullptr) {
 		return nullptr;
 	}
@@ -395,6 +398,7 @@ void JLightweightFrame::notifyDisplayChanged(int32_t scaleFactor) {
 }
 
 void JLightweightFrame::notifyDisplayChanged(double scaleFactorX, double scaleFactorY) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $Double::compare(scaleFactorX, this->scaleFactorX) != 0;
 	if (var$0 || $Double::compare(scaleFactorY, this->scaleFactorY) != 0) {
 		if (!JLightweightFrame::copyBufferEnabled) {
@@ -431,6 +435,7 @@ void JLightweightFrame::notifyDisplayChanged(double scaleFactorX, double scaleFa
 }
 
 void JLightweightFrame::addNotify() {
+	$useLocalCurrentObjectStackCache();
 	$LightweightFrame::addNotify();
 	$var($Object, peer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(this));
 	if ($instanceOf($DisplayChangedListener, peer)) {
@@ -439,6 +444,7 @@ void JLightweightFrame::addNotify() {
 }
 
 void JLightweightFrame::syncCopyBuffer(bool reset, int32_t x, int32_t y, int32_t w, int32_t h, double scaleX, double scaleY) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->content)->paintLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -481,6 +487,7 @@ void JLightweightFrame::notifyImageUpdated(int32_t x, int32_t y, int32_t width, 
 }
 
 void JLightweightFrame::initInterior() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$set(this, contentPane, $new($JLightweightFrame$3, this));
 	$nc(this->contentPane)->setLayout($$new($BorderLayout));
@@ -555,6 +562,7 @@ void JLightweightFrame::reshape(int32_t x, int32_t y, int32_t width, int32_t hei
 }
 
 void JLightweightFrame::resizeBuffer(int32_t width, int32_t height, double newScaleFactorX, double newScaleFactorY) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = (int32_t)$Math::round(width * newScaleFactorX);
 	$set(this, bbImage, $new($BufferedImage, var$0, (int32_t)$Math::round(height * newScaleFactorY), $BufferedImage::TYPE_INT_ARGB_PRE));
 	$var($ints, pixels, $nc(($cast($DataBufferInt, $($nc($($nc(this->bbImage)->getRaster()))->getDataBuffer()))))->getData());
@@ -594,6 +602,7 @@ $Component* JLightweightFrame::getGlassPane() {
 }
 
 void JLightweightFrame::updateClientCursor() {
+	$useLocalCurrentObjectStackCache();
 	$var($PointerInfo, pointerInfo, $MouseInfo::getPointerInfo());
 	if (pointerInfo == nullptr) {
 		return;
@@ -607,6 +616,7 @@ void JLightweightFrame::updateClientCursor() {
 }
 
 void JLightweightFrame::overrideNativeWindowHandle(int64_t handle, $Runnable* closeWindow) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, peer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(this));
 	if ($instanceOf($OverrideNativeWindowHandle, peer)) {
 		$nc(($cast($OverrideNativeWindowHandle, peer)))->overrideWindowHandle(handle);
@@ -639,6 +649,7 @@ void JLightweightFrame::removeDropTarget($DropTarget* dt) {
 }
 
 void JLightweightFrame::lambda$new$0($JComponent* c, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, jlf, $SwingUtilities::getWindowAncestor(c));
 	if (!$equals(jlf, this)) {
 		return;
@@ -652,6 +663,7 @@ void JLightweightFrame::lambda$new$0($JComponent* c, int32_t x, int32_t y, int32
 }
 
 void clinit$JLightweightFrame($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	{
 		$SwingAccessor::setJLightweightFrameAccessor($$new($JLightweightFrame$1));

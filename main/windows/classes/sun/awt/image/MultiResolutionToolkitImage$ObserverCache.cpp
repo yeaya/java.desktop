@@ -90,6 +90,7 @@ void MultiResolutionToolkitImage$ObserverCache::init$($ImageObserver* obs, bool 
 }
 
 bool MultiResolutionToolkitImage$ObserverCache::imageUpdate($Image* img, int32_t infoflags, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageObserver, observer, $cast($ImageObserver, $nc(this->observerRef)->get()));
 	$var($Image, image, $cast($Image, $nc(this->imageRef)->get()));
 	if (observer == nullptr || image == nullptr) {

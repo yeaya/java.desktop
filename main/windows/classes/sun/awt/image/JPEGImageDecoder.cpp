@@ -169,6 +169,7 @@ bool JPEGImageDecoder::sendPixels($bytes* pixels, int32_t y) {
 }
 
 void JPEGImageDecoder::produceImage() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -195,6 +196,7 @@ void JPEGImageDecoder::produceImage() {
 }
 
 void clinit$JPEGImageDecoder($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$load($InputStream);
 	$assignStatic(JPEGImageDecoder::InputStreamClass, $InputStream::class$);

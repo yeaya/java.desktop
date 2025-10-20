@@ -77,6 +77,7 @@ void PopupMenuTest$PopupListener::popupMenuWillBecomeVisible($PopupMenuEvent* e)
 }
 
 void PopupMenuTest$PopupListener::popupMenuWillBecomeInvisible($PopupMenuEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Popup, popup, $nc(($cast($PopMenuUIExt, $($cast($PopupMenuUI, $nc(this->this$0->jpopup)->getUI())))))->getPopup());
 	if (popup != nullptr) {
 		$init($PopupMenuTest);

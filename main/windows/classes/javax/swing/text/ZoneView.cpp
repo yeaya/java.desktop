@@ -145,6 +145,7 @@ void ZoneView::zoneWasLoaded($View* zone) {
 }
 
 void ZoneView::unloadOldZones() {
+	$useLocalCurrentObjectStackCache();
 	while (true) {
 		int32_t var$0 = $nc(this->loadedZones)->size();
 		if (!(var$0 > getMaxZonesLoaded())) {
@@ -167,6 +168,7 @@ bool ZoneView::isZoneLoaded($View* zone) {
 }
 
 $View* ZoneView::createZone(int32_t p0, int32_t p1) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	$var($View, zone, nullptr);
 	try {
@@ -181,6 +183,7 @@ $View* ZoneView::createZone(int32_t p0, int32_t p1) {
 }
 
 void ZoneView::loadChildren($ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	int32_t offs0 = getStartOffset();
 	int32_t offs1 = getEndOffset();
@@ -189,6 +192,7 @@ void ZoneView::loadChildren($ViewFactory* f) {
 }
 
 int32_t ZoneView::getViewIndexAtPosition(int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = getViewCount();
 	if (pos == getEndOffset()) {
 		return n - 1;
@@ -218,6 +222,7 @@ void ZoneView::handleRemove(int32_t pos, int32_t length) {
 }
 
 void ZoneView::splitZone(int32_t index, int32_t offs0, int32_t offs1) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, getElement());
 	$var($Document, doc, $nc(elem)->getDocument());
 	$var($Vector, zones, $new($Vector));
@@ -234,6 +239,7 @@ void ZoneView::splitZone(int32_t index, int32_t offs0, int32_t offs1) {
 }
 
 int32_t ZoneView::getDesiredZoneEnd(int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, getElement());
 	int32_t index = $nc(elem)->getElementIndex(pos + (this->maxZoneSize / 2));
 	$var($Element, child, elem->getElement(index));

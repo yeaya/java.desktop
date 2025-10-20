@@ -185,6 +185,7 @@ void bug6209975::init$() {
 
 void bug6209975::main($StringArray* args) {
 	$init(bug6209975);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -220,6 +221,7 @@ void bug6209975::main($StringArray* args) {
 
 $Point* bug6209975::getButtonClickPoint() {
 	$init(bug6209975);
+	$useLocalCurrentObjectStackCache();
 	$var($PointArray, result, $new($PointArray, 1));
 	$SwingUtilities::invokeAndWait($$new($bug6209975$2, result));
 	return result->get(0);
@@ -227,6 +229,7 @@ $Point* bug6209975::getButtonClickPoint() {
 
 $Point* bug6209975::getMenuClickPoint() {
 	$init(bug6209975);
+	$useLocalCurrentObjectStackCache();
 	$var($PointArray, result, $new($PointArray, 1));
 	$SwingUtilities::invokeAndWait($$new($bug6209975$3, result));
 	return result->get(0);
@@ -234,6 +237,7 @@ $Point* bug6209975::getMenuClickPoint() {
 
 void bug6209975::createAndShowGUI() {
 	$init(bug6209975);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug6209975::frame, $new($JFrame, "Test6209975"_s));
 	$nc(bug6209975::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$init($ComponentOrientation);

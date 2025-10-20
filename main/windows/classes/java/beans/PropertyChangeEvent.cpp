@@ -81,6 +81,7 @@ $Object* PropertyChangeEvent::getPropagationId() {
 }
 
 $String* PropertyChangeEvent::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, $new($StringBuilder, $($of(this)->getClass()->getName())));
 	sb->append("[propertyName="_s)->append($(getPropertyName()));
 	appendTo(sb);

@@ -69,6 +69,7 @@ $Object* allocate$FillParallelogram$TraceFillParallelogram($Class* clazz) {
 }
 
 void FillParallelogram$TraceFillParallelogram::init$($FillParallelogram* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, var$0, $nc(target)->getSourceType());
 	$var($CompositeType, var$1, target->getCompositeType());
 	$FillParallelogram::init$(var$0, var$1, $(target->getDestType()));

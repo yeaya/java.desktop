@@ -88,6 +88,7 @@ $Object* allocate$FontDescriptor($Class* clazz) {
 bool FontDescriptor::isLE = false;
 
 void FontDescriptor::init$($String* nativeName, $CharsetEncoder* encoder, $ints* exclusionRanges) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, nativeName, nativeName);
 	$set(this, encoder, encoder);
 	$set(this, exclusionRanges, exclusionRanges);
@@ -153,6 +154,7 @@ bool FontDescriptor::useUnicode() {
 }
 
 void clinit$FontDescriptor($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	{
 		$NativeLibLoader::loadLibraries();

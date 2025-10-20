@@ -109,6 +109,7 @@ void WDropTargetContextPeer::doDropDone(bool success, int32_t dropAction, bool i
 }
 
 void WDropTargetContextPeer::eventPosted($SunDropTargetEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(e)->getID() != $SunDropTargetEvent::MOUSE_DROPPED) {
 		$var($Runnable, runnable, $new($WDropTargetContextPeer$1, this, e));
 		$var($PeerEvent, peerEvent, $new($PeerEvent, $(e->getSource()), runnable, 0));

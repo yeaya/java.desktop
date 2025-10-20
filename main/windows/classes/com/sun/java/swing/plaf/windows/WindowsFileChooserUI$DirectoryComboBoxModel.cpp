@@ -137,6 +137,7 @@ void WindowsFileChooserUI$DirectoryComboBoxModel::finalize() {
 }
 
 void WindowsFileChooserUI$DirectoryComboBoxModel::init$($WindowsFileChooserUI* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$AbstractListModel::init$();
 	$set(this, directories, $new($Vector));
@@ -151,6 +152,7 @@ void WindowsFileChooserUI$DirectoryComboBoxModel::init$($WindowsFileChooserUI* t
 }
 
 void WindowsFileChooserUI$DirectoryComboBoxModel::addItem($File* directory) {
+	$useLocalCurrentObjectStackCache();
 	if (directory == nullptr) {
 		return;
 	}
@@ -192,6 +194,7 @@ void WindowsFileChooserUI$DirectoryComboBoxModel::addItem($File* directory) {
 }
 
 void WindowsFileChooserUI$DirectoryComboBoxModel::calculateDepths() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, depths, $new($ints, $nc(this->directories)->size()));
 	for (int32_t i = 0; i < $nc(this->depths)->length; ++i) {
 		$var($File, dir, $cast($File, $nc(this->directories)->get(i)));

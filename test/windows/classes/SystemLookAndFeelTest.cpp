@@ -44,6 +44,7 @@ void SystemLookAndFeelTest::init$() {
 }
 
 void SystemLookAndFeelTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, laf, $UIManager::getSystemLookAndFeelClassName());
 	$var($String, os, $nc($($System::getProperty("os.name"_s)))->toLowerCase());
 	$nc($System::out)->println($$str({"OS is "_s, os}));

@@ -117,6 +117,7 @@ void BasicDirectoryModel$FilesLoader::run() {
 }
 
 void BasicDirectoryModel$FilesLoader::run0() {
+	$useLocalCurrentObjectStackCache();
 	$var($FileSystemView, fileSystem, this->fileSystemView);
 	if ($nc(this->loadThread)->isInterrupted()) {
 		return;

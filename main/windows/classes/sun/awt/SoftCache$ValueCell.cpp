@@ -87,6 +87,7 @@ SoftCache$ValueCell* SoftCache$ValueCell::create(Object$* key, Object$* value, $
 
 $Object* SoftCache$ValueCell::strip(Object$* val, bool drop) {
 	$init(SoftCache$ValueCell);
+	$useLocalCurrentObjectStackCache();
 	if (val == nullptr) {
 		return $of(nullptr);
 	}

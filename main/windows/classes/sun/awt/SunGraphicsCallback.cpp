@@ -105,6 +105,7 @@ void SunGraphicsCallback::constrainGraphics($Graphics* g, $Rectangle* bounds) {
 }
 
 void SunGraphicsCallback::runOneComponent($Component* comp, $Rectangle* bounds$renamed, $Graphics* g, $Shape* clip, int32_t weightFlags) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, bounds, bounds$renamed);
 	bool var$0 = comp == nullptr || !$nc(comp)->isDisplayable();
 	if (var$0 || !$nc(comp)->isVisible()) {
@@ -142,6 +143,7 @@ void SunGraphicsCallback::runOneComponent($Component* comp, $Rectangle* bounds$r
 }
 
 void SunGraphicsCallback::runComponents($ComponentArray* comps, $Graphics* g, int32_t weightFlags) {
+	$useLocalCurrentObjectStackCache();
 	int32_t ncomponents = $nc(comps)->length;
 	$var($Shape, clip, $nc(g)->getClip());
 	$init($PlatformLogger$Level);

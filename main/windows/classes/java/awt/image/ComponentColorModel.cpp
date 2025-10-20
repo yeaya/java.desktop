@@ -134,6 +134,7 @@ $Object* allocate$ComponentColorModel($Class* clazz) {
 }
 
 void ComponentColorModel::init$($ColorSpace* colorSpace, $ints* bits, bool hasAlpha, bool isAlphaPremultiplied, int32_t transparency, int32_t transferType) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = bitsHelper(transferType, colorSpace, hasAlpha);
 	$ColorModel::init$(var$0, $(bitsArrayHelper(bits, transferType, colorSpace, hasAlpha)), colorSpace, hasAlpha, isAlphaPremultiplied, transparency, transferType);
 	switch (transferType) {
@@ -273,6 +274,7 @@ void ComponentColorModel::setupLUTs() {
 }
 
 void ComponentColorModel::initScale() {
+	$useLocalCurrentObjectStackCache();
 	this->needScaleInit = false;
 	if (this->nonStdScale || this->signed$) {
 		this->noUnnorm = true;
@@ -383,6 +385,7 @@ void ComponentColorModel::initScale() {
 }
 
 int32_t ComponentColorModel::getRGBComponent(int32_t pixel, int32_t idx) {
+	$useLocalCurrentObjectStackCache();
 	if (this->numComponents > 1) {
 		$throwNew($IllegalArgumentException, "More than one component per pixel"_s);
 	}
@@ -463,6 +466,7 @@ int32_t ComponentColorModel::getRGB(int32_t pixel) {
 }
 
 int32_t ComponentColorModel::extractComponent(Object$* inData, int32_t idx, int32_t precision) {
+	$useLocalCurrentObjectStackCache();
 	bool needAlpha = (this->supportsAlpha && this->isAlphaPremultiplied$);
 	int32_t alp = 0;
 	int32_t comp = 0;
@@ -577,6 +581,7 @@ int32_t ComponentColorModel::extractComponent(Object$* inData, int32_t idx, int3
 }
 
 int32_t ComponentColorModel::getRGBComponent(Object$* inData, int32_t idx) {
+	$useLocalCurrentObjectStackCache();
 	if (this->needScaleInit) {
 		initScale();
 	}
@@ -607,6 +612,7 @@ int32_t ComponentColorModel::getBlue(Object$* inData) {
 }
 
 int32_t ComponentColorModel::getAlpha(Object$* inData) {
+	$useLocalCurrentObjectStackCache();
 	if (this->supportsAlpha == false) {
 		return 255;
 	}
@@ -671,6 +677,7 @@ int32_t ComponentColorModel::getAlpha(Object$* inData) {
 }
 
 int32_t ComponentColorModel::getRGB(Object$* inData) {
+	$useLocalCurrentObjectStackCache();
 	if (this->needScaleInit) {
 		initScale();
 	}
@@ -689,6 +696,7 @@ int32_t ComponentColorModel::getRGB(Object$* inData) {
 }
 
 $Object* ComponentColorModel::getDataElements(int32_t rgb, Object$* pixel) {
+	$useLocalCurrentObjectStackCache();
 	int32_t red = 0;
 	int32_t grn = 0;
 	int32_t blu = 0;
@@ -1139,6 +1147,7 @@ $ints* ComponentColorModel::getComponents(int32_t pixel, $ints* components$renam
 }
 
 $ints* ComponentColorModel::getComponents(Object$* pixel, $ints* components$renamed, int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, components, components$renamed);
 	$var($ints, intpixel, nullptr);
 	if (this->needScaleInit) {
@@ -1188,6 +1197,7 @@ $floats* ComponentColorModel::getNormalizedComponents($ints* components, int32_t
 }
 
 int32_t ComponentColorModel::getDataElement($ints* components, int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	if (this->needScaleInit) {
 		initScale();
 	}
@@ -1201,6 +1211,7 @@ int32_t ComponentColorModel::getDataElement($ints* components, int32_t offset) {
 }
 
 $Object* ComponentColorModel::getDataElements($ints* components, int32_t offset, Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	if (this->needScaleInit) {
 		initScale();
 	}
@@ -1262,6 +1273,7 @@ $Object* ComponentColorModel::getDataElements($ints* components, int32_t offset,
 }
 
 int32_t ComponentColorModel::getDataElement($floats* normComponents, int32_t normOffset) {
+	$useLocalCurrentObjectStackCache();
 	if (this->numComponents > 1) {
 		$throwNew($IllegalArgumentException, "More than one component per pixel"_s);
 	}
@@ -1302,6 +1314,7 @@ int32_t ComponentColorModel::getDataElement($floats* normComponents, int32_t nor
 }
 
 $Object* ComponentColorModel::getDataElements($floats* normComponents, int32_t normOffset, Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	bool needAlpha = this->supportsAlpha && this->isAlphaPremultiplied$;
 	$var($floats, stdNormComponents, nullptr);
 	if (this->needScaleInit) {
@@ -1514,6 +1527,7 @@ $Object* ComponentColorModel::getDataElements($floats* normComponents, int32_t n
 }
 
 $floats* ComponentColorModel::getNormalizedComponents(Object$* pixel, $floats* normComponents$renamed, int32_t normOffset) {
+	$useLocalCurrentObjectStackCache();
 	$var($floats, normComponents, normComponents$renamed);
 	if (normComponents == nullptr) {
 		$assign(normComponents, $new($floats, this->numComponents + normOffset));
@@ -1622,6 +1636,7 @@ $floats* ComponentColorModel::getNormalizedComponents(Object$* pixel, $floats* n
 }
 
 $ColorModel* ComponentColorModel::coerceData($WritableRaster* raster, bool isAlphaPremultiplied) {
+	$useLocalCurrentObjectStackCache();
 	if ((this->supportsAlpha == false) || (this->isAlphaPremultiplied$ == isAlphaPremultiplied)) {
 		return this;
 	}
@@ -1969,6 +1984,7 @@ bool ComponentColorModel::isCompatibleRaster($Raster* raster) {
 }
 
 $WritableRaster* ComponentColorModel::createCompatibleWritableRaster(int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	int32_t dataSize = w * h * this->numComponents;
 	$var($WritableRaster, raster, nullptr);
 	{
@@ -2040,6 +2056,7 @@ $WritableRaster* ComponentColorModel::getAlphaRaster($WritableRaster* raster) {
 }
 
 bool ComponentColorModel::equals(Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf(ComponentColorModel, obj))) {
 		return false;
 	}

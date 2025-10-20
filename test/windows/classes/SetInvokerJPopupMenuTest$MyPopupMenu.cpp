@@ -63,6 +63,7 @@ void SetInvokerJPopupMenuTest$MyPopupMenu::init$() {
 }
 
 void SetInvokerJPopupMenuTest$MyPopupMenu::setVisible(bool state) {
+	$useLocalCurrentObjectStackCache();
 	if (!state) {
 		$var($Exception, ex, $new($Exception));
 		$var($StringWriter, stringWriter, $new($StringWriter));

@@ -82,6 +82,7 @@ void D3DPaints$Texture::init$() {
 }
 
 bool D3DPaints$Texture::isPaintValid($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	$var($TexturePaint, paint, $cast($TexturePaint, $nc(sg2d)->paint));
 	$var($D3DSurfaceData, dstData, $cast($D3DSurfaceData, sg2d->surfaceData));
 	$var($BufferedImage, bi, $nc(paint)->getImage());

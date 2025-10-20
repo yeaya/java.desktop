@@ -63,6 +63,7 @@ $Object* allocate$FileNameExtensionFilter($Class* clazz) {
 }
 
 void FileNameExtensionFilter::init$($String* description, $StringArray* extensions) {
+	$useLocalCurrentObjectStackCache();
 	$FileFilter::init$();
 	if (extensions == nullptr || $nc(extensions)->length == 0) {
 		$throwNew($IllegalArgumentException, "Extensions must be non-null and not empty"_s);
@@ -81,6 +82,7 @@ void FileNameExtensionFilter::init$($String* description, $StringArray* extensio
 }
 
 bool FileNameExtensionFilter::accept($File* f) {
+	$useLocalCurrentObjectStackCache();
 	if (f != nullptr) {
 		if (f->isDirectory()) {
 			return true;
@@ -119,6 +121,7 @@ $StringArray* FileNameExtensionFilter::getExtensions() {
 }
 
 $String* FileNameExtensionFilter::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$3, $$str({$($FileFilter::toString()), "[description="_s}));
 	$var($String, var$2, $$concat(var$3, $(getDescription())));
 	$var($String, var$1, $$concat(var$2, " extensions="));

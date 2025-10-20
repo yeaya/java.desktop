@@ -131,6 +131,7 @@ void OGLRenderer::init$($RenderQueue* rq) {
 }
 
 void OGLRenderer::validateContext($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	int32_t ctxflags = $nc($nc(sg2d)->paint)->getTransparency() == $Transparency::OPAQUE ? $OGLContext::SRC_IS_OPAQUE : $OGLContext::NO_CONTEXT_FLAGS;
 	$var($OGLSurfaceData, dstData, nullptr);
 	try {
@@ -143,6 +144,7 @@ void OGLRenderer::validateContext($SunGraphics2D* sg2d) {
 }
 
 void OGLRenderer::validateContextAA($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	int32_t ctxflags = $OGLContext::NO_CONTEXT_FLAGS;
 	$var($OGLSurfaceData, dstData, nullptr);
 	try {
@@ -155,6 +157,7 @@ void OGLRenderer::validateContextAA($SunGraphics2D* sg2d) {
 }
 
 void OGLRenderer::copyArea($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w, int32_t h, int32_t dx, int32_t dy) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->rq)->lock();
 	{
 		$var($Throwable, var$0, nullptr);

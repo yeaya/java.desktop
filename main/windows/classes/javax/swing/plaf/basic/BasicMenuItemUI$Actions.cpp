@@ -78,6 +78,7 @@ void BasicMenuItemUI$Actions::init$($String* key) {
 }
 
 void BasicMenuItemUI$Actions::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuItem, mi, $cast($JMenuItem, $nc(e)->getSource()));
 	$nc($($MenuSelectionManager::defaultManager()))->clearSelectedPath();
 	$nc(mi)->doClick();

@@ -98,6 +98,7 @@ void Crossings$NonZero::remove(int32_t cur) {
 }
 
 void Crossings$NonZero::insert(int32_t cur, double lo, double hi, int32_t dir) {
+	$useLocalCurrentObjectStackCache();
 	int32_t rem = this->limit - cur;
 	$var($doubles, oldranges, this->yranges);
 	$var($ints, oldcounts, this->crosscounts);

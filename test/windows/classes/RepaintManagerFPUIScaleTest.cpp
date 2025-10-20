@@ -267,6 +267,7 @@ void RepaintManagerFPUIScaleTest::main($StringArray* args) {
 
 void RepaintManagerFPUIScaleTest::createUI() {
 	$init(RepaintManagerFPUIScaleTest);
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, mainFrame, $new($JFrame, "Motif L&F icons test"_s));
 	$var($GridBagLayout, layout, $new($GridBagLayout));
 	$var($JPanel, mainControlPanel, $new($JPanel, static_cast<$LayoutManager*>(layout)));
@@ -309,6 +310,7 @@ void RepaintManagerFPUIScaleTest::createUI() {
 
 $JComponent* RepaintManagerFPUIScaleTest::createComponent() {
 	$init(RepaintManagerFPUIScaleTest);
+	$useLocalCurrentObjectStackCache();
 	int32_t N = 100;
 	$var($StringArray, data, $new($StringArray, N));
 	for (int32_t i = 0; i < N; ++i) {
@@ -322,6 +324,7 @@ $JComponent* RepaintManagerFPUIScaleTest::createComponent() {
 
 $Image* RepaintManagerFPUIScaleTest::createTestImage(int32_t width, int32_t height, int32_t colorindex) {
 	$init(RepaintManagerFPUIScaleTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Color, color, $nc(RepaintManagerFPUIScaleTest::COLORS)->get($mod(colorindex, $nc(RepaintManagerFPUIScaleTest::COLORS)->length)));
 	$var($AffineTransform, tx, $nc($($nc($($nc($($GraphicsEnvironment::getLocalGraphicsEnvironment()))->getDefaultScreenDevice()))->getDefaultConfiguration()))->getDefaultTransform());
 	$var($Image, baseImage, createTestImage(width, height, (double)1, (double)1, color));
@@ -337,6 +340,7 @@ $Image* RepaintManagerFPUIScaleTest::createTestImage(int32_t width, int32_t heig
 
 $Image* RepaintManagerFPUIScaleTest::createTestImage(int32_t w, int32_t h, double scaleX, double scaleY, $Color* color) {
 	$init(RepaintManagerFPUIScaleTest);
+	$useLocalCurrentObjectStackCache();
 	int32_t width = $cast(int32_t, $Math::ceil(scaleX * w));
 	int32_t height = $cast(int32_t, $Math::ceil(scaleY * h));
 	$var($BufferedImage, img, $new($BufferedImage, width, height, $BufferedImage::TYPE_INT_RGB));

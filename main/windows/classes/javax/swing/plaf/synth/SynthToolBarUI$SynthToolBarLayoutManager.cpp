@@ -105,6 +105,7 @@ void SynthToolBarUI$SynthToolBarLayoutManager::removeLayoutComponent($Component*
 }
 
 $Dimension* SynthToolBarUI$SynthToolBarLayoutManager::minimumLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($JToolBar, tb, $cast($JToolBar, parent));
 	$var($Insets, insets, $nc(tb)->getInsets());
 	$var($Dimension, dim, $new($Dimension));
@@ -138,6 +139,7 @@ $Dimension* SynthToolBarUI$SynthToolBarLayoutManager::minimumLayoutSize($Contain
 }
 
 $Dimension* SynthToolBarUI$SynthToolBarLayoutManager::preferredLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($JToolBar, tb, $cast($JToolBar, parent));
 	$var($Insets, insets, $nc(tb)->getInsets());
 	$var($Dimension, dim, $new($Dimension));
@@ -171,6 +173,7 @@ $Dimension* SynthToolBarUI$SynthToolBarLayoutManager::preferredLayoutSize($Conta
 }
 
 void SynthToolBarUI$SynthToolBarLayoutManager::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($JToolBar, tb, $cast($JToolBar, parent));
 	$var($Insets, insets, $nc(tb)->getInsets());
 	bool ltr = $nc($(tb->getComponentOrientation()))->isLeftToRight();
@@ -261,6 +264,7 @@ void SynthToolBarUI$SynthToolBarLayoutManager::layoutContainer($Container* paren
 }
 
 bool SynthToolBarUI$SynthToolBarLayoutManager::isGlue($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(c)->isVisible() && $instanceOf($Box$Filler, c)) {
 		$var($Box$Filler, f, $cast($Box$Filler, c));
 		$var($Dimension, min, f->getMinimumSize());

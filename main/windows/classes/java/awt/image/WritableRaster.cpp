@@ -78,6 +78,7 @@ $Object* allocate$WritableRaster($Class* clazz) {
 }
 
 void WritableRaster::init$($SampleModel* sampleModel, $Point* origin) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, var$0, sampleModel);
 	$var($DataBuffer, var$1, $nc(sampleModel)->createDataBuffer());
 	int32_t var$2 = $nc(origin)->x;
@@ -106,6 +107,7 @@ WritableRaster* WritableRaster::createWritableTranslatedChild(int32_t childMinX,
 }
 
 WritableRaster* WritableRaster::createWritableChild(int32_t parentX, int32_t parentY, int32_t w, int32_t h, int32_t childMinX, int32_t childMinY, $ints* bandList) {
+	$useLocalCurrentObjectStackCache();
 	if (parentX < this->minX) {
 		$throwNew($RasterFormatException, "parentX lies outside raster"_s);
 	}
@@ -162,6 +164,7 @@ void WritableRaster::setRect($Raster* srcRaster) {
 }
 
 void WritableRaster::setRect(int32_t dx, int32_t dy, $Raster* srcRaster) {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = $nc(srcRaster)->getWidth();
 	int32_t height = srcRaster->getHeight();
 	int32_t srcOffX = srcRaster->getMinX();

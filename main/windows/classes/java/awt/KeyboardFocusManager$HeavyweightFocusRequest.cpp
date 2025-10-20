@@ -100,6 +100,7 @@ void KeyboardFocusManager$HeavyweightFocusRequest::init$($Component* heavyweight
 }
 
 bool KeyboardFocusManager$HeavyweightFocusRequest::addLightweightRequest($Component* descendant, bool temporary, $FocusEvent$Cause* cause) {
+	$useLocalCurrentObjectStackCache();
 	$init($KeyboardFocusManager);
 	$init($PlatformLogger$Level);
 	if ($nc($KeyboardFocusManager::log)->isLoggable($PlatformLogger$Level::FINE)) {
@@ -127,6 +128,7 @@ $KeyboardFocusManager$LightweightFocusRequest* KeyboardFocusManager$HeavyweightF
 }
 
 $String* KeyboardFocusManager$HeavyweightFocusRequest::toString() {
+	$useLocalCurrentObjectStackCache();
 	bool first = true;
 	$var($String, str, $str({"HeavyweightFocusRequest[heavyweight="_s, this->heavyweight, ",lightweightRequests="_s}));
 	if (this->lightweightRequests == nullptr) {

@@ -113,11 +113,13 @@ void FieldView::init$($Element* elem) {
 }
 
 $FontMetrics* FieldView::getFontMetrics() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, getContainer());
 	return $nc(c)->getFontMetrics($(c->getFont()));
 }
 
 $Shape* FieldView::adjustAllocation($Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	if (a != nullptr) {
 		$var($Rectangle, bounds, a->getBounds());
 		int32_t vspan = $cast(int32_t, getPreferredSpan($View::Y_AXIS));
@@ -177,6 +179,7 @@ $Shape* FieldView::adjustAllocation($Shape* a) {
 }
 
 void FieldView::updateVisibilityModel() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, getContainer());
 	if ($instanceOf($JTextField, c)) {
 		$var($JTextField, field, $cast($JTextField, c));
@@ -206,6 +209,7 @@ $Shape* FieldView::adjustPaintRegion($Shape* a) {
 }
 
 float FieldView::getPreferredSpan(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Segment, buff, nullptr)
 		$var($Document, doc, nullptr)

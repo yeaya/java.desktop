@@ -68,6 +68,7 @@ void DefaultEditorKit$ToggleComponentOrientationAction::init$() {
 }
 
 void DefaultEditorKit$ToggleComponentOrientationAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getTextComponent(e));
 	if (target != nullptr) {
 		$var($ComponentOrientation, last, target->getComponentOrientation());

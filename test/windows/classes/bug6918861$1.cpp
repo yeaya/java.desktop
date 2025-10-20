@@ -71,6 +71,7 @@ void bug6918861$1::init$() {
 }
 
 void bug6918861$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JSlider, slider, $new($JSlider));
 	$var($bug6918861$HackedSynthSliderUI, ui, $new($bug6918861$HackedSynthSliderUI, slider));
 	slider->setUI(static_cast<$SliderUI*>(ui));

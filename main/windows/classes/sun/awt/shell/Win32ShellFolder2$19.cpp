@@ -74,6 +74,7 @@ void Win32ShellFolder2$19::init$() {
 }
 
 $Object* Win32ShellFolder2$19::call() {
+	$useLocalCurrentObjectStackCache();
 	$var($Win32ShellFolder2$KnownFolderDefinitionArray, all, $Win32ShellFolder2::loadKnownFolders());
 	$var($List, folders, $new($ArrayList));
 	if (all != nullptr) {

@@ -73,6 +73,7 @@ void OGLContext::setScratchSurface($OGLGraphicsConfig* gc) {
 
 void OGLContext::setScratchSurface(int64_t pConfigInfo) {
 	$init(OGLContext);
+	$useLocalCurrentObjectStackCache();
 	$init($BufferedContext);
 	$assignStatic($BufferedContext::currentContext, nullptr);
 	$var($OGLRenderQueue, rq, $OGLRenderQueue::getInstance());
@@ -84,6 +85,7 @@ void OGLContext::setScratchSurface(int64_t pConfigInfo) {
 
 void OGLContext::invalidateCurrentContext() {
 	$init(OGLContext);
+	$useLocalCurrentObjectStackCache();
 	$init($BufferedContext);
 	if ($BufferedContext::currentContext != nullptr) {
 		$nc($BufferedContext::currentContext)->invalidateContext();

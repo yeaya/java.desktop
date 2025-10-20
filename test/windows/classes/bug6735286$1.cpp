@@ -65,6 +65,7 @@ void bug6735286$1::init$() {
 }
 
 void bug6735286$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$load($Object);
 	$nc($($$new($JTable)->getDefaultRenderer($Object::class$)))->getTableCellRendererComponent(nullptr, "a value"_s, true, true, 0, 0);
 }

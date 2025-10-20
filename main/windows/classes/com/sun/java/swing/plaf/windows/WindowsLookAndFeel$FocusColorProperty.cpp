@@ -70,6 +70,7 @@ void WindowsLookAndFeel$FocusColorProperty::init$() {
 }
 
 $Object* WindowsLookAndFeel$FocusColorProperty::configureValue(Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, highContrastOn, $nc($($Toolkit::getDefaultToolkit()))->getDesktopProperty("win.highContrast.on"_s));
 	if (highContrastOn == nullptr || !$nc(($cast($Boolean, highContrastOn)))->booleanValue()) {
 		$init($Color);

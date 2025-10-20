@@ -222,6 +222,7 @@ void SequencedEvent::init$($AWTEvent* nested) {
 }
 
 void SequencedEvent::dispatch() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -305,6 +306,7 @@ SequencedEvent* SequencedEvent::getFirstWithContext() {
 }
 
 void SequencedEvent::dispose() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(SequencedEvent::class$) {
 		if (this->disposed) {
 			return;
@@ -345,6 +347,7 @@ bool SequencedEvent::lambda$dispatch$0() {
 }
 
 void clinit$SequencedEvent($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$assignStatic(SequencedEvent::list, $new($LinkedList));
 	{

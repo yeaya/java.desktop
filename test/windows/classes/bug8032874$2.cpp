@@ -67,6 +67,7 @@ void bug8032874$2::init$() {
 }
 
 void bug8032874$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug8032874);
 	$nc($($nc($bug8032874::table)->getRowSorter()))->toggleSortOrder(0);
 	$nc($($nc($bug8032874::table)->getSelectionModel()))->setSelectionMode($ListSelectionModel::SINGLE_INTERVAL_SELECTION);

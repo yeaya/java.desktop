@@ -73,6 +73,7 @@ void CropImageFilter::init$(int32_t x, int32_t y, int32_t w, int32_t h) {
 }
 
 void CropImageFilter::setProperties($Hashtable* props) {
+	$useLocalCurrentObjectStackCache();
 	$var($Hashtable, p, $cast($Hashtable, $nc(props)->clone()));
 	$nc(p)->put("croprect"_s, $$new($Rectangle, this->cropX, this->cropY, this->cropW, this->cropH));
 	$ImageFilter::setProperties(p);

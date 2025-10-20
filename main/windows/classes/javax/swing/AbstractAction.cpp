@@ -124,6 +124,7 @@ $Boolean* AbstractAction::RECONFIGURE_ON_NULL = nullptr;
 
 bool AbstractAction::shouldReconfigure($PropertyChangeEvent* e) {
 	$init(AbstractAction);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if ($nc(e)->getPropertyName() == nullptr) {
 		$synchronized(AbstractAction::class$) {
@@ -187,6 +188,7 @@ $Object* AbstractAction::getValue($String* key) {
 }
 
 void AbstractAction::putValue($String* key, Object$* newValue$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, newValue, newValue$renamed);
 	$var($Object, oldValue, nullptr);
 	if (key == "enabled"_s) {
@@ -216,6 +218,7 @@ bool AbstractAction::isEnabled() {
 }
 
 void AbstractAction::setEnabled(bool newValue) {
+	$useLocalCurrentObjectStackCache();
 	bool oldValue = this->enabled;
 	if (oldValue != newValue) {
 		this->enabled = newValue;
@@ -284,6 +287,7 @@ void AbstractAction::writeObject($ObjectOutputStream* s) {
 }
 
 void AbstractAction::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	for (int32_t counter = s->readInt() - 1; counter >= 0; --counter) {
 		$var($String, var$0, $cast($String, s->readObject()));

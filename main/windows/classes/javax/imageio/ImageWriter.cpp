@@ -174,6 +174,7 @@ $ImageWriterSpi* ImageWriter::getOriginatingProvider() {
 }
 
 void ImageWriter::setOutput(Object$* output) {
+	$useLocalCurrentObjectStackCache();
 	if (output != nullptr) {
 		$var($ImageWriterSpi, provider, getOriginatingProvider());
 		if (provider != nullptr) {
@@ -436,6 +437,7 @@ void ImageWriter::removeAllIIOWriteProgressListeners() {
 }
 
 void ImageWriter::processImageStarted(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -447,6 +449,7 @@ void ImageWriter::processImageStarted(int32_t imageIndex) {
 }
 
 void ImageWriter::processImageProgress(float percentageDone) {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -458,6 +461,7 @@ void ImageWriter::processImageProgress(float percentageDone) {
 }
 
 void ImageWriter::processImageComplete() {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -469,6 +473,7 @@ void ImageWriter::processImageComplete() {
 }
 
 void ImageWriter::processThumbnailStarted(int32_t imageIndex, int32_t thumbnailIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -480,6 +485,7 @@ void ImageWriter::processThumbnailStarted(int32_t imageIndex, int32_t thumbnailI
 }
 
 void ImageWriter::processThumbnailProgress(float percentageDone) {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -491,6 +497,7 @@ void ImageWriter::processThumbnailProgress(float percentageDone) {
 }
 
 void ImageWriter::processThumbnailComplete() {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -502,6 +509,7 @@ void ImageWriter::processThumbnailComplete() {
 }
 
 void ImageWriter::processWriteAborted() {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -513,6 +521,7 @@ void ImageWriter::processWriteAborted() {
 }
 
 void ImageWriter::processWarningOccurred(int32_t imageIndex, $String* warning) {
+	$useLocalCurrentObjectStackCache();
 	if (this->warningListeners == nullptr) {
 		return;
 	}
@@ -527,6 +536,7 @@ void ImageWriter::processWarningOccurred(int32_t imageIndex, $String* warning) {
 }
 
 void ImageWriter::processWarningOccurred(int32_t imageIndex, $String* baseName, $String* keyword) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (this->warningListeners == nullptr) {
 		return;

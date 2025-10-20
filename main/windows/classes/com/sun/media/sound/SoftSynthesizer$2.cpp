@@ -83,6 +83,7 @@ void SoftSynthesizer$2::init$($SoftSynthesizer* this$0) {
 }
 
 $Object* SoftSynthesizer$2::run() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc($($System::getProperties()))->getProperty("os.name"_s)))->startsWith("Linux"_s)) {
 		$var($FileArray, systemSoundFontsDir, $new($FileArray, {
 			$$new($File, "/usr/share/soundfonts/"_s),

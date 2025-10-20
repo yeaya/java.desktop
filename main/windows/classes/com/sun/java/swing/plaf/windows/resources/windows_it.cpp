@@ -47,6 +47,7 @@ void windows_it::init$() {
 }
 
 $ObjectArray2* windows_it::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("FileChooser.detailsViewActionLabel.textAndMnemonic"_s),

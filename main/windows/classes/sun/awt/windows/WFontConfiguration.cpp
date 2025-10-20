@@ -170,6 +170,7 @@ $String* WFontConfiguration::getFileNameFromComponentFontName($String* component
 }
 
 $String* WFontConfiguration::getTextComponentFontName($String* familyName, int32_t style) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontDescriptorArray, fontDescriptors, getFontDescriptors(familyName, style));
 	$var($String, fontName, findFontWithCharset(fontDescriptors, WFontConfiguration::textInputCharset));
 	if ((fontName == nullptr) && !$nc(WFontConfiguration::textInputCharset)->equals("DEFAULT_CHARSET"_s)) {
@@ -182,6 +183,7 @@ $String* WFontConfiguration::getTextComponentFontName($String* familyName, int32
 }
 
 $String* WFontConfiguration::findFontWithCharset($FontDescriptorArray* fontDescriptors, $String* charset) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, fontName, nullptr);
 	for (int32_t i = 0; i < $nc(fontDescriptors)->length; ++i) {
 		$var($String, componentFontName, $nc(fontDescriptors->get(i))->getNativeName());

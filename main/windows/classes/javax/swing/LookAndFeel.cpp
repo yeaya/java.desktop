@@ -117,6 +117,7 @@ void LookAndFeel::init$() {
 }
 
 void LookAndFeel::installColors($JComponent* c, $String* defaultBgName, $String* defaultFgName) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, bg, $nc(c)->getBackground());
 	if (bg == nullptr || $instanceOf($UIResource, bg)) {
 		c->setBackground($($UIManager::getColor(defaultBgName)));
@@ -128,6 +129,7 @@ void LookAndFeel::installColors($JComponent* c, $String* defaultBgName, $String*
 }
 
 void LookAndFeel::installColorsAndFont($JComponent* c, $String* defaultBgName, $String* defaultFgName, $String* defaultFontName) {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, f, $nc(c)->getFont());
 	if (f == nullptr || $instanceOf($UIResource, f)) {
 		c->setFont($($UIManager::getFont(defaultFontName)));
@@ -136,6 +138,7 @@ void LookAndFeel::installColorsAndFont($JComponent* c, $String* defaultBgName, $
 }
 
 void LookAndFeel::installBorder($JComponent* c, $String* defaultBorderName) {
+	$useLocalCurrentObjectStackCache();
 	$var($Border, b, $nc(c)->getBorder());
 	if (b == nullptr || $instanceOf($UIResource, b)) {
 		c->setBorder($($UIManager::getBorder(defaultBorderName)));
@@ -159,6 +162,7 @@ void LookAndFeel::installProperty($JComponent* c, $String* propertyName, Object$
 }
 
 $JTextComponent$KeyBindingArray* LookAndFeel::makeKeyBindings($ObjectArray* keyBindingList) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent$KeyBindingArray, rv, $new($JTextComponent$KeyBindingArray, $nc(keyBindingList)->length / 2));
 	for (int32_t i = 0; i < rv->length; ++i) {
 		$var($Object0, o, keyBindingList->get(2 * i));
@@ -182,6 +186,7 @@ $ComponentInputMap* LookAndFeel::makeComponentInputMap($JComponent* c, $ObjectAr
 }
 
 void LookAndFeel::loadKeyBindings($InputMap* retMap, $ObjectArray* keys) {
+	$useLocalCurrentObjectStackCache();
 	if (keys != nullptr) {
 		{
 			int32_t counter = 0;
@@ -214,6 +219,7 @@ void LookAndFeel::provideErrorFeedback($Component* component) {
 }
 
 $Object* LookAndFeel::getDesktopPropertyValue($String* systemPropertyName, Object$* fallbackValue) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, $nc($($Toolkit::getDefaultToolkit()))->getDesktopProperty(systemPropertyName));
 	if (value == nullptr) {
 		return $of(fallbackValue);
@@ -226,6 +232,7 @@ $Object* LookAndFeel::getDesktopPropertyValue($String* systemPropertyName, Objec
 }
 
 $Icon* LookAndFeel::getDisabledIcon($JComponent* component, $Icon* icon) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($ImageIcon, icon)) {
 		return $new($ImageIconUIResource, $($GrayFilter::createDisabledImage($($nc(($cast($ImageIcon, icon)))->getImage()))));
 	}
@@ -251,6 +258,7 @@ $UIDefaults* LookAndFeel::getDefaults() {
 }
 
 $String* LookAndFeel::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$1, $$str({"["_s, $(getDescription()), " - "_s}));
 	$var($String, var$0, $$concat(var$1, $($of(this)->getClass()->getName())));
 	return $concat(var$0, "]");

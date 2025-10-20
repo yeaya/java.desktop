@@ -79,6 +79,7 @@ void MetaData$java_awt_Component_PersistenceDelegate::init$() {
 }
 
 void MetaData$java_awt_Component_PersistenceDelegate::initialize($Class* type, Object$* oldInstance, Object$* newInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultPersistenceDelegate::initialize(type, oldInstance, newInstance, out);
 	$var($Component, c, $cast($Component, oldInstance));
 	$var($Component, c2, $cast($Component, newInstance));

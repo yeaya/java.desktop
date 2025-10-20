@@ -62,6 +62,7 @@ void HTMLEditorKitWriterBug::init$() {
 
 void HTMLEditorKitWriterBug::main($StringArray* args) {
 	$load(HTMLEditorKitWriterBug);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, htmlDoc, "<pre><p> </pre>"_s);
 	try {

@@ -117,6 +117,7 @@ void JFileChooserOrientation$1::init$() {
 }
 
 void JFileChooserOrientation$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($JFileChooserOrientation);
 	$assignStatic($JFileChooserOrientation::layout, $new($GridBagLayout));
 	$var($GridBagConstraints, gbc, $new($GridBagConstraints));

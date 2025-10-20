@@ -200,6 +200,7 @@ bool FileFontStrike::initNative() {
 }
 
 void FileFontStrike::init$($FileFont* fileFont, $FontStrikeDesc* desc) {
+	$useLocalCurrentObjectStackCache();
 	$PhysicalStrike::init$(fileFont, desc);
 	this->glyphCacheFormat = FileFontStrike::UNINITIALISED;
 	$set(this, fileFont, fileFont);
@@ -297,6 +298,7 @@ int64_t FileFontStrike::_getGlyphImageFromWindows($String* family, int32_t style
 }
 
 int64_t FileFontStrike::getGlyphImageFromWindows(int32_t glyphCode) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, family, $nc(this->fileFont)->getFamilyName(nullptr));
 	int32_t style = (((int32_t)($nc(this->desc)->style & (uint32_t)$Font::BOLD)) | ((int32_t)($nc(this->desc)->style & (uint32_t)$Font::ITALIC))) | $nc(this->fileFont)->getStyle();
 	int32_t size = this->intPtSize;
@@ -315,6 +317,7 @@ int64_t FileFontStrike::getGlyphImageFromWindows(int32_t glyphCode) {
 }
 
 int64_t FileFontStrike::getGlyphImageFromX11(int32_t glyphCode) {
+	$useLocalCurrentObjectStackCache();
 	int64_t glyphPtr = 0;
 	char16_t charCode = $nc($nc(this->fileFont)->glyphToCharMap)->get(glyphCode);
 	for (int32_t i = 0; i < $nc(this->nativeStrikes)->length; ++i) {
@@ -331,6 +334,7 @@ int64_t FileFontStrike::getGlyphImageFromX11(int32_t glyphCode) {
 }
 
 int64_t FileFontStrike::getGlyphImagePtr(int32_t glyphCode) {
+	$useLocalCurrentObjectStackCache();
 	if (glyphCode >= FileFontStrike::INVISIBLE_GLYPHS) {
 		$init($StrikeCache);
 		return $StrikeCache::invisibleGlyphPtr;
@@ -404,6 +408,7 @@ int32_t FileFontStrike::getSlot0GlyphImagePtrs($ints* glyphCodes, $longs* images
 }
 
 int64_t FileFontStrike::getCachedGlyphPtr(int32_t glyphCode) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return getCachedGlyphPtrInternal(glyphCode);
 	} catch ($Exception&) {
@@ -454,6 +459,7 @@ int64_t FileFontStrike::getCachedGlyphPtrInternal(int32_t glyphCode) {
 
 int64_t FileFontStrike::setCachedGlyphPtr(int32_t glyphCode, int64_t glyphPtr) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		try {
 			return setCachedGlyphPtrInternal(glyphCode, glyphPtr);
 		} catch ($Exception&) {
@@ -483,6 +489,7 @@ int64_t FileFontStrike::setCachedGlyphPtr(int32_t glyphCode, int64_t glyphPtr) {
 }
 
 int64_t FileFontStrike::setCachedGlyphPtrInternal(int32_t glyphCode, int64_t glyphPtr) {
+	$useLocalCurrentObjectStackCache();
 	{
 		int32_t segIndex = 0;
 		int32_t subIndex = 0;
@@ -580,6 +587,7 @@ float FileFontStrike::getGlyphAdvance(int32_t glyphCode) {
 }
 
 float FileFontStrike::getGlyphAdvance(int32_t glyphCode, bool getUserAdv) {
+	$useLocalCurrentObjectStackCache();
 	float advance = 0.0;
 	if (glyphCode >= FileFontStrike::INVISIBLE_GLYPHS) {
 		return 0.0f;
@@ -718,6 +726,7 @@ $Point2D$Float* FileFontStrike::getGlyphMetrics(int32_t glyphCode) {
 }
 
 $Point2D$Float* FileFontStrike::getGlyphMetrics(int32_t glyphCode, bool getImage) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point2D$Float, metrics, $new($Point2D$Float));
 	if (glyphCode >= FileFontStrike::INVISIBLE_GLYPHS) {
 		return metrics;
@@ -772,6 +781,7 @@ $Point2D$Float* FileFontStrike::getCharMetrics(char16_t ch) {
 }
 
 $Rectangle2D$Float* FileFontStrike::getGlyphOutlineBounds(int32_t glyphCode) {
+	$useLocalCurrentObjectStackCache();
 	if (this->boundsMap == nullptr) {
 		$set(this, boundsMap, $new($ConcurrentHashMap));
 	}
@@ -789,6 +799,7 @@ $Rectangle2D* FileFontStrike::getOutlineBounds(int32_t glyphCode) {
 }
 
 $GeneralPath* FileFontStrike::getGlyphOutline(int32_t glyphCode, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($GeneralPath, gp, nullptr);
 	$var($ConcurrentHashMap, outlineMap, nullptr);
 	if (this->outlineMapRef != nullptr) {

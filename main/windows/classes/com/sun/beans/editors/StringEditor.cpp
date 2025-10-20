@@ -46,6 +46,7 @@ void StringEditor::init$() {
 }
 
 $String* StringEditor::getJavaInitializationString() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, getValue());
 	if (value == nullptr) {
 		return "null"_s;

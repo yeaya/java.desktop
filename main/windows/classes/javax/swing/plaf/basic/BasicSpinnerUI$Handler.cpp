@@ -181,6 +181,7 @@ $Dimension* BasicSpinnerUI$Handler::preferredSize($Component* c) {
 }
 
 $Dimension* BasicSpinnerUI$Handler::preferredLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, nextD, preferredSize(this->nextButton));
 	$var($Dimension, previousD, preferredSize(this->previousButton));
 	$var($Dimension, editorD, preferredSize(this->editor));
@@ -204,6 +205,7 @@ void BasicSpinnerUI$Handler::setBounds($Component* c, int32_t x, int32_t y, int3
 }
 
 void BasicSpinnerUI$Handler::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = $nc(parent)->getWidth();
 	int32_t height = parent->getHeight();
 	$var($Insets, insets, parent->getInsets());
@@ -241,6 +243,7 @@ void BasicSpinnerUI$Handler::layoutContainer($Container* parent) {
 }
 
 void BasicSpinnerUI$Handler::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propertyName, $nc(e)->getPropertyName());
 	if ($instanceOf($JSpinner, $(e->getSource()))) {
 		$var($JSpinner, spinner, ($cast($JSpinner, e->getSource())));
@@ -319,6 +322,7 @@ void BasicSpinnerUI$Handler::propertyChange($PropertyChangeEvent* e) {
 }
 
 void BasicSpinnerUI$Handler::updateToolTipTextForChildren($JComponent* spinner) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, toolTipText, $nc(spinner)->getToolTipText());
 	$var($ComponentArray, children, spinner->getComponents());
 	for (int32_t i = 0; i < $nc(children)->length; ++i) {
@@ -334,6 +338,7 @@ void BasicSpinnerUI$Handler::updateToolTipTextForChildren($JComponent* spinner) 
 }
 
 void BasicSpinnerUI$Handler::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JSpinner, $($nc(e)->getSource()))) {
 		$var($JSpinner, spinner, $cast($JSpinner, e->getSource()));
 		$var($SpinnerUI, spinnerUI, $cast($SpinnerUI, $nc(spinner)->getUI()));

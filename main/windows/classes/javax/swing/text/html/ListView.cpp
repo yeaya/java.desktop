@@ -79,6 +79,7 @@ void ListView::init$($Element* elem) {
 }
 
 float ListView::getAlignment(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	switch (axis) {
 	case $View::X_AXIS:
 		{
@@ -96,6 +97,7 @@ float ListView::getAlignment(int32_t axis) {
 }
 
 void ListView::paint($Graphics* g, $Shape* allocation) {
+	$useLocalCurrentObjectStackCache();
 	$BlockView::paint(g, allocation);
 	$var($Rectangle, alloc, $nc(allocation)->getBounds());
 	$var($Rectangle, clip, $nc(g)->getClipBounds());
@@ -124,6 +126,7 @@ void ListView::paintChild($Graphics* g, $Rectangle* alloc, int32_t index) {
 }
 
 void ListView::setPropertiesFromAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$BlockView::setPropertiesFromAttributes();
 	$set(this, listPainter, $nc($(getStyleSheet()))->getListPainter($(getAttributes())));
 }

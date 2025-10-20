@@ -80,6 +80,7 @@ $String* BasicCheckBoxMenuItemUI::getPropertyPrefix() {
 }
 
 void BasicCheckBoxMenuItemUI::processMouseEvent($JMenuItem* item, $MouseEvent* e, $MenuElementArray* path, $MenuSelectionManager* manager) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, $nc(e)->getPoint());
 	bool var$0 = $nc(p)->x >= 0 && p->x < $nc(item)->getWidth() && p->y >= 0;
 	if (var$0 && p->y < item->getHeight()) {

@@ -137,6 +137,7 @@ void TransparencyTest::createAndShowGUI() {
 
 void TransparencyTest::main($StringArray* args) {
 	$init(TransparencyTest);
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsEnvironment, ge, $GraphicsEnvironment::getLocalGraphicsEnvironment());
 	$var($GraphicsDevice, gd, $nc(ge)->getDefaultScreenDevice());
 	$init($GraphicsDevice$WindowTranslucency);

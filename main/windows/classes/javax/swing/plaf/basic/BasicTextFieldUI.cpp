@@ -121,6 +121,7 @@ $String* BasicTextFieldUI::getPropertyPrefix() {
 }
 
 $View* BasicTextFieldUI::create($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(elem)->getDocument());
 	$var($Object, i18nFlag, $nc(doc)->getProperty("i18n"_s));
 	$init($Boolean);
@@ -141,6 +142,7 @@ $View* BasicTextFieldUI::create($Element* elem) {
 }
 
 int32_t BasicTextFieldUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$BasicTextUI::getBaseline(c, width, height);
 	$var($View, rootView, getRootView($cast($JTextComponent, c)));
 	if ($nc(rootView)->getViewCount() > 0) {

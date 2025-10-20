@@ -63,6 +63,7 @@ void MetaData$java_util_Collection_PersistenceDelegate::init$() {
 }
 
 void MetaData$java_util_Collection_PersistenceDelegate::initialize($Class* type, Object$* oldInstance, Object$* newInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Collection, oldO, $cast($Collection, oldInstance));
 	$var($Collection, newO, $cast($Collection, newInstance));
 	if ($nc(newO)->size() != 0) {

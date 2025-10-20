@@ -139,6 +139,7 @@ void GradientPaintContext::putCachedRaster($ColorModel* cm, $Raster* ras) {
 }
 
 void GradientPaintContext::init$($ColorModel* cm, $Point2D* p1$renamed, $Point2D* p2$renamed, $AffineTransform* xform, $Color* c1$renamed, $Color* c2$renamed, bool cyclic) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point2D, p1, p1$renamed);
 	$var($Point2D, p2, p2$renamed);
 	$var($Color, c1, c1$renamed);
@@ -239,6 +240,7 @@ $ColorModel* GradientPaintContext::getColorModel() {
 }
 
 $Raster* GradientPaintContext::getRaster(int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	double rowrel = (x - this->x1) * this->dx + (y - this->y1) * this->dy;
 	$var($Raster, rast, this->saved);
 	bool var$0 = rast == nullptr || $nc(rast)->getWidth() < w;

@@ -266,6 +266,7 @@ $String* InputContext::inputMethodSelectionKeyCodeName = nullptr;
 $String* InputContext::inputMethodSelectionKeyModifiersName = nullptr;
 
 void InputContext::init$() {
+	$useLocalCurrentObjectStackCache();
 	$InputContext::init$();
 	$set(this, characterSubsets, nullptr);
 	this->compositionAreaHidden = false;
@@ -285,6 +286,7 @@ void InputContext::init$() {
 
 bool InputContext::selectInputMethod($Locale* locale) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (locale == nullptr) {
 			$throwNew($NullPointerException);
 		}
@@ -346,6 +348,7 @@ void InputContext::reconvert() {
 }
 
 void InputContext::dispatchEvent($AWTEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($InputMethodEvent, event)) {
 		return;
 	}
@@ -387,6 +390,7 @@ void InputContext::dispatchEvent($AWTEvent* event) {
 }
 
 void InputContext::focusGained($Component* source) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(source)->getTreeLock()) {
 		$synchronized(this) {
 			if ("sun.awt.im.CompositionArea"_s->equals($($of(source)->getClass()->getName()))) {
@@ -431,6 +435,7 @@ void InputContext::focusGained($Component* source) {
 }
 
 void InputContext::activateInputMethod(bool updateCompositionArea) {
+	$useLocalCurrentObjectStackCache();
 	if (InputContext::inputMethodWindowContext != nullptr && InputContext::inputMethodWindowContext != this && $nc(InputContext::inputMethodWindowContext)->inputMethodLocator != nullptr && !$nc($nc(InputContext::inputMethodWindowContext)->inputMethodLocator)->sameInputMethod(this->inputMethodLocator) && $nc(InputContext::inputMethodWindowContext)->inputMethod != nullptr) {
 		$nc($nc(InputContext::inputMethodWindowContext)->inputMethod)->hideWindows();
 	}
@@ -525,6 +530,7 @@ void InputContext::deactivateInputMethod(bool isTemporary) {
 
 void InputContext::changeInputMethod($InputMethodLocator* newLocator$renamed) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($InputMethodLocator, newLocator, newLocator$renamed);
 		if (this->inputMethodLocator == nullptr) {
 			$set(this, inputMethodLocator, newLocator);
@@ -651,6 +657,7 @@ void InputContext::removeNotify($Component* component) {
 
 void InputContext::dispose() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->currentClientComponent != nullptr) {
 			$throwNew($IllegalStateException, "Can\'t dispose InputContext while it\'s active"_s);
 		}
@@ -716,6 +723,7 @@ bool InputContext::isCompositionEnabled() {
 }
 
 $String* InputContext::getInputMethodInfo() {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMethod, inputMethod, getInputMethod());
 	if (inputMethod == nullptr) {
 		$throwNew($UnsupportedOperationException, "Null input method"_s);
@@ -756,6 +764,7 @@ $InputMethod* InputContext::getInputMethod() {
 }
 
 $InputMethod* InputContext::getInputMethodInstance() {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMethodLocator, locator, this->inputMethodLocator);
 	if (locator == nullptr) {
 		this->inputMethodCreationFailed = true;
@@ -802,6 +811,7 @@ $InputMethod* InputContext::getInputMethodInstance() {
 }
 
 void InputContext::logCreationFailed($Throwable* throwable) {
+	$useLocalCurrentObjectStackCache();
 	$var($PlatformLogger, logger, $PlatformLogger::getLogger("sun.awt.im"_s));
 	$init($PlatformLogger$Level);
 	if ($nc(logger)->isLoggable($PlatformLogger$Level::CONFIG)) {
@@ -878,6 +888,7 @@ void InputContext::notifyClientWindowChange($Window* window) {
 
 void InputContext::addClientWindowListeners() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Component, client, getClientComponent());
 		if (client == nullptr) {
 			return;

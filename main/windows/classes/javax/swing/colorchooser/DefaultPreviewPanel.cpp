@@ -105,6 +105,7 @@ $JColorChooser* DefaultPreviewPanel::getColorChooser() {
 }
 
 $Dimension* DefaultPreviewPanel::getPreferredSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, host, getColorChooser());
 	if (host == nullptr) {
 		$assign(host, this);
@@ -119,6 +120,7 @@ $Dimension* DefaultPreviewPanel::getPreferredSize() {
 }
 
 void DefaultPreviewPanel::paintComponent($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (this->oldColor == nullptr) {
 		$set(this, oldColor, getForeground());
 	}
@@ -146,6 +148,7 @@ int32_t DefaultPreviewPanel::paintSwatch($Graphics* g, int32_t offsetX) {
 }
 
 int32_t DefaultPreviewPanel::paintText($Graphics* g, int32_t offsetX) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setFont($(getFont()));
 	$var($JComponent, host, getColorChooser());
 	if (host == nullptr) {

@@ -185,6 +185,7 @@ int32_t DirectColorModel::getAlphaMask() {
 }
 
 $floats* DirectColorModel::getDefaultRGBComponents(int32_t pixel) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, components, getComponents(pixel, ($ints*)nullptr, 0));
 	$var($floats, norm, getNormalizedComponents(components, 0, nullptr, 0));
 	return $nc(this->colorSpace)->toRGB(norm);
@@ -270,6 +271,7 @@ int32_t DirectColorModel::getRGB(int32_t pixel) {
 }
 
 int32_t DirectColorModel::getRed(Object$* inData) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pixel = 0;
 	{
 		$var($bytes, bdata, nullptr)
@@ -304,6 +306,7 @@ int32_t DirectColorModel::getRed(Object$* inData) {
 }
 
 int32_t DirectColorModel::getGreen(Object$* inData) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pixel = 0;
 	{
 		$var($bytes, bdata, nullptr)
@@ -338,6 +341,7 @@ int32_t DirectColorModel::getGreen(Object$* inData) {
 }
 
 int32_t DirectColorModel::getBlue(Object$* inData) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pixel = 0;
 	{
 		$var($bytes, bdata, nullptr)
@@ -372,6 +376,7 @@ int32_t DirectColorModel::getBlue(Object$* inData) {
 }
 
 int32_t DirectColorModel::getAlpha(Object$* inData) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pixel = 0;
 	{
 		$var($bytes, bdata, nullptr)
@@ -406,6 +411,7 @@ int32_t DirectColorModel::getAlpha(Object$* inData) {
 }
 
 int32_t DirectColorModel::getRGB(Object$* inData) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pixel = 0;
 	{
 		$var($bytes, bdata, nullptr)
@@ -440,6 +446,7 @@ int32_t DirectColorModel::getRGB(Object$* inData) {
 }
 
 $Object* DirectColorModel::getDataElements(int32_t rgb, Object$* pixel) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, intpixel, nullptr);
 	if (this->transferType == $DataBuffer::TYPE_INT && pixel != nullptr) {
 		$assign(intpixel, $cast($ints, pixel));
@@ -589,6 +596,7 @@ $ints* DirectColorModel::getComponents(int32_t pixel, $ints* components$renamed,
 }
 
 $ints* DirectColorModel::getComponents(Object$* pixel, $ints* components, int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	int32_t intpixel = 0;
 	{
 		$var($bytes, bdata, nullptr)
@@ -623,6 +631,7 @@ $ints* DirectColorModel::getComponents(Object$* pixel, $ints* components, int32_
 }
 
 $WritableRaster* DirectColorModel::createCompatibleWritableRaster(int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if ((w <= 0) || (h <= 0)) {
 		$throwNew($IllegalArgumentException, $$str({"Width ("_s, $$str(w), ") and height ("_s, $$str(h), ") cannot be <= 0"_s}));
 	}
@@ -654,6 +663,7 @@ int32_t DirectColorModel::getDataElement($ints* components, int32_t offset) {
 }
 
 $Object* DirectColorModel::getDataElements($ints* components, int32_t offset, Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pixel = 0;
 	for (int32_t i = 0; i < this->numComponents; ++i) {
 		pixel |= ((int32_t)(($sl($nc(components)->get(offset + i), $nc(this->maskOffsets)->get(i))) & (uint32_t)$nc(this->maskArray)->get(i)));
@@ -700,6 +710,7 @@ $Object* DirectColorModel::getDataElements($ints* components, int32_t offset, Ob
 }
 
 $ColorModel* DirectColorModel::coerceData($WritableRaster* raster, bool isAlphaPremultiplied) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->supportsAlpha || this->isAlphaPremultiplied() == isAlphaPremultiplied) {
 		return this;
 	}
@@ -867,6 +878,7 @@ $ColorModel* DirectColorModel::coerceData($WritableRaster* raster, bool isAlphaP
 }
 
 bool DirectColorModel::isCompatibleRaster($Raster* raster) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, sm, $nc(raster)->getSampleModel());
 	$var($SinglePixelPackedSampleModel, spsm, nullptr);
 	if ($instanceOf($SinglePixelPackedSampleModel, sm)) {
@@ -913,6 +925,7 @@ void DirectColorModel::setFields() {
 }
 
 $String* DirectColorModel::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$4, $$str({"DirectColorModel: rmask="_s, $($Integer::toHexString(this->red_mask)), " gmask="_s}));
 	$var($String, var$3, $$concat(var$4, $($Integer::toHexString(this->green_mask))));
 	$var($String, var$2, $$concat(var$3, " bmask="));

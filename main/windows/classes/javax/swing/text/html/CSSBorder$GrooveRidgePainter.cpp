@@ -88,6 +88,7 @@ void CSSBorder$GrooveRidgePainter::init$($CSS$Value* type) {
 }
 
 void CSSBorder$GrooveRidgePainter::paint($Polygon* shape, $Graphics* g, $Color* color, int32_t side) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, r, $nc(shape)->getBounds());
 	int32_t length = $Math::max($nc(r)->height / 2, 1);
 	$var($ints, lengthPattern, $new($ints, {

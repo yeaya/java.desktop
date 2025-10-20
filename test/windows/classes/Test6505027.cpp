@@ -133,6 +133,7 @@ void Test6505027::main($StringArray* args) {
 }
 
 void Test6505027::init$($JFrame* main) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, table, $new($JTable, $$new($DefaultTableModel, Test6505027::COLUMNS, 2)));
 	$var($Container, container, main);
 	{
@@ -156,6 +157,7 @@ void Test6505027::init$($JFrame* main) {
 }
 
 void Test6505027::press() {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, point, $nc($($nc(this->table)->getCellRect(1, 1, false)))->getLocation());
 	$SwingUtilities::convertPointToScreen(point, this->table);
 	$var($Robot, robot, $new($Robot));
@@ -167,6 +169,7 @@ void Test6505027::press() {
 
 void Test6505027::validate() {
 	$init(Test6505027);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, component, $nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner());
 	$load($JComboBox);
 	if (!$of($nc($of(component))->getClass())->equals($JComboBox::class$)) {

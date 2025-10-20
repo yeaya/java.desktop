@@ -87,6 +87,7 @@ void JEditorPane$1::init$($JEditorPane* this$0) {
 }
 
 $Component* JEditorPane$1::getComponentAfter($Container* focusCycleRoot, $Component* aComponent) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = !$equals(focusCycleRoot, this->this$0);
 	if (!var$0) {
 		bool var$1 = !this->this$0->isEditable();
@@ -101,6 +102,7 @@ $Component* JEditorPane$1::getComponentAfter($Container* focusCycleRoot, $Compon
 }
 
 $Component* JEditorPane$1::getComponentBefore($Container* focusCycleRoot, $Component* aComponent) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = !$equals(focusCycleRoot, this->this$0);
 	if (!var$0) {
 		bool var$1 = !this->this$0->isEditable();

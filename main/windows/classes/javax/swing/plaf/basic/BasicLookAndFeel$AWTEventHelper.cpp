@@ -144,6 +144,7 @@ $Object* BasicLookAndFeel$AWTEventHelper::run() {
 }
 
 void BasicLookAndFeel$AWTEventHelper::eventDispatched($AWTEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	int32_t eventID = $nc(ev)->getID();
 	if (((int64_t)(eventID & (uint64_t)$AWTEvent::MOUSE_EVENT_MASK)) != 0) {
 		$var($MouseEvent, me, $cast($MouseEvent, ev));

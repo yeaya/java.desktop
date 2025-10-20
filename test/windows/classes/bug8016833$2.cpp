@@ -75,6 +75,7 @@ void bug8016833$2::init$($bug8016833* this$0, $BufferedImage* val$img) {
 }
 
 void bug8016833$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, g, $nc(this->val$img)->getGraphics());
 	$nc(g)->setColor($$new($Color, this->this$0->getEmptyPixel()));
 	g->fillRect(0, 0, 10000, 10000);

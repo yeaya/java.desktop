@@ -227,6 +227,7 @@ $String* Introspector::IS_PREFIX = nullptr;
 
 $BeanInfo* Introspector::getBeanInfo($Class* beanClass) {
 	$init(Introspector);
+	$useLocalCurrentObjectStackCache();
 	if (!$ReflectUtil::isPackageAccessible(beanClass)) {
 		return ($$new(Introspector, beanClass, nullptr, Introspector::USE_ALL_BEANINFO))->getBeanInfo();
 	}
@@ -251,6 +252,7 @@ $BeanInfo* Introspector::getBeanInfo($Class* beanClass, $Class* stopClass) {
 
 $BeanInfo* Introspector::getBeanInfo($Class* beanClass, $Class* stopClass, int32_t flags) {
 	$init(Introspector);
+	$useLocalCurrentObjectStackCache();
 	$var($BeanInfo, bi, nullptr);
 	if (stopClass == nullptr && flags == Introspector::USE_ALL_BEANINFO) {
 		$assign(bi, getBeanInfo(beanClass));
@@ -277,11 +279,13 @@ $String* Introspector::decapitalize($String* name) {
 
 $StringArray* Introspector::getBeanInfoSearchPath() {
 	$init(Introspector);
+	$useLocalCurrentObjectStackCache();
 	return $nc($($nc($($ThreadGroupContext::getContext()))->getBeanInfoFinder()))->getPackages();
 }
 
 void Introspector::setBeanInfoSearchPath($StringArray* path) {
 	$init(Introspector);
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm != nullptr) {
 		sm->checkPropertiesAccess();
@@ -305,6 +309,7 @@ void Introspector::flushFromCaches($Class* clz) {
 }
 
 void Introspector::init$($Class* beanClass, $Class* stopClass, int32_t flags) {
+	$useLocalCurrentObjectStackCache();
 	this->propertyChangeSource = false;
 	this->defaultEventIndex = -1;
 	this->defaultPropertyIndex = -1;
@@ -345,6 +350,7 @@ void Introspector::init$($Class* beanClass, $Class* stopClass, int32_t flags) {
 }
 
 $BeanInfo* Introspector::getBeanInfo() {
+	$useLocalCurrentObjectStackCache();
 	$var($BeanDescriptor, bd, getTargetBeanDescriptor());
 	$var($MethodDescriptorArray, mds, getTargetMethodInfo());
 	$var($EventSetDescriptorArray, esds, getTargetEventInfo());
@@ -356,10 +362,12 @@ $BeanInfo* Introspector::getBeanInfo() {
 
 $BeanInfo* Introspector::findExplicitBeanInfo($Class* beanClass) {
 	$init(Introspector);
+	$useLocalCurrentObjectStackCache();
 	return $cast($BeanInfo, $nc($($nc($($ThreadGroupContext::getContext()))->getBeanInfoFinder()))->find(beanClass));
 }
 
 $PropertyDescriptorArray* Introspector::getTargetPropertyInfo() {
+	$useLocalCurrentObjectStackCache();
 	$var($PropertyDescriptorArray, explicitProperties, nullptr);
 	if (this->explicitBeanInfo != nullptr) {
 		$assign(explicitProperties, getPropertyDescriptors(this->explicitBeanInfo));
@@ -401,6 +409,7 @@ $PropertyDescriptorArray* Introspector::getTargetPropertyInfo() {
 }
 
 void Introspector::addPropertyDescriptor($PropertyDescriptor* pd$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($PropertyDescriptor, pd, pd$renamed);
 	$var($String, propName, $nc(pd)->getName());
 	$var($List, list, $cast($List, $nc(this->pdStore)->get(propName)));
@@ -441,6 +450,7 @@ void Introspector::addPropertyDescriptor($PropertyDescriptor* pd$renamed) {
 }
 
 void Introspector::addPropertyDescriptors($PropertyDescriptorArray* descriptors) {
+	$useLocalCurrentObjectStackCache();
 	if (descriptors != nullptr) {
 		{
 			$var($PropertyDescriptorArray, arr$, descriptors);
@@ -466,6 +476,7 @@ $PropertyDescriptorArray* Introspector::getPropertyDescriptors($BeanInfo* info) 
 }
 
 void Introspector::processPropertyDescriptors() {
+	$useLocalCurrentObjectStackCache();
 	if (this->properties == nullptr) {
 		$set(this, properties, static_cast<$Map*>(static_cast<$AbstractMap*>($new($TreeMap))));
 	}
@@ -655,6 +666,7 @@ $PropertyDescriptor* Introspector::mergePropertyWithIndexedProperty($PropertyDes
 }
 
 $PropertyDescriptor* Introspector::mergePropertyDescriptor($IndexedPropertyDescriptor* ipd, $PropertyDescriptor* pd) {
+	$useLocalCurrentObjectStackCache();
 	$var($PropertyDescriptor, result, nullptr);
 	$Class* propType = $nc(pd)->getPropertyType();
 	$Class* ipropType = $nc(ipd)->getIndexedPropertyType();
@@ -724,6 +736,7 @@ $IndexedPropertyDescriptor* Introspector::mergePropertyDescriptor($IndexedProper
 }
 
 $EventSetDescriptorArray* Introspector::getTargetEventInfo() {
+	$useLocalCurrentObjectStackCache();
 	if (this->events == nullptr) {
 		$set(this, events, $new($HashMap));
 	}
@@ -805,6 +818,7 @@ $EventSetDescriptorArray* Introspector::getTargetEventInfo() {
 }
 
 void Introspector::addEvent($EventSetDescriptor* esd) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, key, $nc(esd)->getName());
 	if ($nc($(esd->getName()))->equals("propertyChange"_s)) {
 		this->propertyChangeSource = true;
@@ -819,6 +833,7 @@ void Introspector::addEvent($EventSetDescriptor* esd) {
 }
 
 $MethodDescriptorArray* Introspector::getTargetMethodInfo() {
+	$useLocalCurrentObjectStackCache();
 	if (this->methods == nullptr) {
 		$set(this, methods, $new($HashMap, 100));
 	}
@@ -861,6 +876,7 @@ $MethodDescriptorArray* Introspector::getTargetMethodInfo() {
 }
 
 void Introspector::addMethod($MethodDescriptor* md) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(md)->getName());
 	$var($MethodDescriptor, old, $cast($MethodDescriptor, $nc(this->methods)->get(name)));
 	if (old == nullptr) {
@@ -925,6 +941,7 @@ $BeanDescriptor* Introspector::getTargetBeanDescriptor() {
 
 $Class* Introspector::findCustomizerClass($Class* type) {
 	$init(Introspector);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, name, $str({$($nc(type)->getName()), "Customizer"_s}));
 	try {
@@ -942,6 +959,7 @@ $Class* Introspector::findCustomizerClass($Class* type) {
 }
 
 bool Introspector::isEventHandler($Method* m) {
+	$useLocalCurrentObjectStackCache();
 	$var($TypeArray, argTypes, $nc(m)->getGenericParameterTypes());
 	if ($nc(argTypes)->length != 1) {
 		return false;
@@ -952,6 +970,7 @@ bool Introspector::isEventHandler($Method* m) {
 
 $Method* Introspector::internalFindMethod($Class* start, $String* methodName, int32_t argCount, $ClassArray* args) {
 	$init(Introspector);
+	$useLocalCurrentObjectStackCache();
 	{
 		$Class* cl = start;
 		for (; cl != nullptr; cl = $nc(cl)->getSuperclass()) {
@@ -1010,6 +1029,7 @@ $Method* Introspector::findMethod($Class* cls, $String* methodName, int32_t argC
 
 bool Introspector::isSubclass($Class* a, $Class* b) {
 	$init(Introspector);
+	$useLocalCurrentObjectStackCache();
 	if (a == b) {
 		return true;
 	}

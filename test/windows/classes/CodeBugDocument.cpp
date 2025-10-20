@@ -72,6 +72,7 @@ void CodeBugDocument::init$() {
 }
 
 void CodeBugDocument::insertTable(int32_t offset, int32_t rowCount, int32_t colCount) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($ArrayList, Specs, $new($ArrayList));
 		$var($AttributeSet, var$0, static_cast<$AttributeSet*>($new($SimpleAttributeSet)));
@@ -92,6 +93,7 @@ void CodeBugDocument::insertTable(int32_t offset, int32_t rowCount, int32_t colC
 }
 
 void CodeBugDocument::fillRowSpecs($ArrayList* Specs, int32_t rowCount, int32_t colCount) {
+	$useLocalCurrentObjectStackCache();
 	$var($SimpleAttributeSet, rowAttrs, $new($SimpleAttributeSet));
 	$init($AbstractDocument);
 	rowAttrs->addAttribute($AbstractDocument::ElementNameAttribute, CodeBugDocument::ELEMENT_TR);
@@ -105,6 +107,7 @@ void CodeBugDocument::fillRowSpecs($ArrayList* Specs, int32_t rowCount, int32_t 
 }
 
 void CodeBugDocument::fillCellSpecs($ArrayList* Specs, int32_t colCount) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < colCount; ++i) {
 		$var($SimpleAttributeSet, cellAttrs, $new($SimpleAttributeSet));
 		$init($AbstractDocument);

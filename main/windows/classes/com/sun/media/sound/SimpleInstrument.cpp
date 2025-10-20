@@ -170,6 +170,7 @@ void SimpleInstrument::add($ModelInstrument* ins) {
 }
 
 $ModelPerformerArray* SimpleInstrument::getPerformers() {
+	$useLocalCurrentObjectStackCache();
 	int32_t percount = 0;
 	{
 		$var($Iterator, i$, $nc(this->parts)->iterator());

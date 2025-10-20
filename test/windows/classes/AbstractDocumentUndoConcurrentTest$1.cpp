@@ -80,6 +80,7 @@ void AbstractDocumentUndoConcurrentTest$1::init$($String* arg0) {
 }
 
 void AbstractDocumentUndoConcurrentTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($AbstractDocumentUndoConcurrentTest);
 		$nc($AbstractDocumentUndoConcurrentTest::barrier)->await();

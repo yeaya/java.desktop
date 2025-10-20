@@ -199,6 +199,7 @@ void DirectAudioDevice$DirectDL::init$($DataLine$Info* info, $DirectAudioDevice*
 }
 
 void DirectAudioDevice$DirectDL::implOpen($AudioFormat* format, int32_t bufferSize) {
+	$useLocalCurrentObjectStackCache();
 	$Toolkit::isFullySpecifiedAudioFormat(format);
 	if (!this->isSource) {
 		$JSSecurityManager::checkRecordPermission();
@@ -419,6 +420,7 @@ int64_t DirectAudioDevice$DirectDL::getLongFramePosition() {
 }
 
 int32_t DirectAudioDevice$DirectDL::write($bytes* b, int32_t off, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	this->flushing = false;
 	if (len == 0) {
 		return 0;

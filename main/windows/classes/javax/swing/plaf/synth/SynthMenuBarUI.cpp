@@ -138,6 +138,7 @@ $ComponentUI* SynthMenuBarUI::createUI($JComponent* x) {
 }
 
 void SynthMenuBarUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(this->menuBar)->getLayout() == nullptr;
 	if (var$0 || $instanceOf($UIResource, $($nc(this->menuBar)->getLayout()))) {
 		$nc(this->menuBar)->setLayout($$new($SynthMenuLayout, this->menuBar, $BoxLayout::LINE_AXIS));
@@ -151,6 +152,7 @@ void SynthMenuBarUI::installListeners() {
 }
 
 void SynthMenuBarUI::updateStyle($JMenuBar* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -186,6 +188,7 @@ int32_t SynthMenuBarUI::getComponentState($JComponent* c) {
 }
 
 void SynthMenuBarUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);

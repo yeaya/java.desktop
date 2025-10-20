@@ -241,6 +241,7 @@ void ImageRepresentation::init$($ToolkitImage* im, $ColorModel* cmodel, bool for
 
 void ImageRepresentation::reconstruct(int32_t flags) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->src != nullptr) {
 			$nc(this->src)->checkSecurity(nullptr, false);
 		}
@@ -328,6 +329,7 @@ void ImageRepresentation::setProperties($Hashtable* props) {
 }
 
 void ImageRepresentation::setColorModel($ColorModel* model) {
+	$useLocalCurrentObjectStackCache();
 	if (this->src != nullptr) {
 		$nc(this->src)->checkSecurity(nullptr, false);
 	}
@@ -360,6 +362,7 @@ void ImageRepresentation::setColorModel($ColorModel* model) {
 }
 
 void ImageRepresentation::createBufferedImage() {
+	$useLocalCurrentObjectStackCache();
 	this->isDefaultBI = false;
 	try {
 		$set(this, biRaster, $nc(this->cmodel)->createCompatibleWritableRaster(this->width, this->height));
@@ -384,6 +387,7 @@ void ImageRepresentation::createBufferedImage() {
 }
 
 void ImageRepresentation::convertToRGB() {
+	$useLocalCurrentObjectStackCache();
 	int32_t w = $nc(this->bimage)->getWidth();
 	int32_t h = $nc(this->bimage)->getHeight();
 	int32_t size = w * h;
@@ -445,6 +449,7 @@ bool ImageRepresentation::setDiffICM(int32_t x, int32_t y, int32_t w, int32_t h,
 }
 
 void ImageRepresentation::setPixels(int32_t x, int32_t y, int32_t w, int32_t h, $ColorModel* model, $bytes* pix, int32_t off, int32_t scansize) {
+	$useLocalCurrentObjectStackCache();
 	int32_t lineOff = off;
 	int32_t poff = 0;
 	$var($ints, newLUT, nullptr);
@@ -593,6 +598,7 @@ void ImageRepresentation::setPixels(int32_t x, int32_t y, int32_t w, int32_t h, 
 }
 
 void ImageRepresentation::setPixels(int32_t x, int32_t y, int32_t w, int32_t h, $ColorModel* model, $ints* pix, int32_t off, int32_t scansize) {
+	$useLocalCurrentObjectStackCache();
 	int32_t lineOff = off;
 	int32_t poff = 0;
 	if (this->src != nullptr) {
@@ -667,6 +673,7 @@ void ImageRepresentation::setPixels(int32_t x, int32_t y, int32_t w, int32_t h, 
 }
 
 $BufferedImage* ImageRepresentation::getOpaqueRGBImage() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->bimage)->getType() == $BufferedImage::TYPE_INT_ARGB) {
 		int32_t w = $nc(this->bimage)->getWidth();
 		int32_t h = $nc(this->bimage)->getHeight();

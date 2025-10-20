@@ -73,6 +73,7 @@ void bug7045593$1::init$() {
 }
 
 void bug7045593$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug7045593);
 	$assignStatic($bug7045593::jtf, $new($JTextField, "WW"_s));
 	$var($JFrame, frame, $new($JFrame));

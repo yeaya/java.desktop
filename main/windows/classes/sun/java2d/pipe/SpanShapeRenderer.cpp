@@ -97,6 +97,7 @@ void SpanShapeRenderer::init$() {
 }
 
 void SpanShapeRenderer::draw($SunGraphics2D* sg, $Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($BasicStroke, $nc(sg)->stroke)) {
 		$var($ShapeSpanIterator, sr, $LoopPipe::getStrokeSpans(sg, s));
 		{
@@ -118,6 +119,7 @@ void SpanShapeRenderer::draw($SunGraphics2D* sg, $Shape* s) {
 }
 
 void SpanShapeRenderer::fill($SunGraphics2D* sg, $Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Rectangle2D, s) && ((int32_t)($nc($nc(sg)->transform$)->getType() & (uint32_t)SpanShapeRenderer::NON_RECTILINEAR_TRANSFORM_MASK)) == 0) {
 		renderRect(sg, $cast($Rectangle2D, s));
 		return;
@@ -142,6 +144,7 @@ void SpanShapeRenderer::fill($SunGraphics2D* sg, $Shape* s) {
 }
 
 void SpanShapeRenderer::renderRect($SunGraphics2D* sg, $Rectangle2D* r) {
+	$useLocalCurrentObjectStackCache();
 	$var($doubles, corners, $new($doubles, {
 		$nc(r)->getX(),
 		r->getY(),
@@ -189,6 +192,7 @@ void SpanShapeRenderer::renderRect($SunGraphics2D* sg, $Rectangle2D* r) {
 }
 
 void SpanShapeRenderer::renderSpans($SunGraphics2D* sg, $Region* clipRegion, $Shape* s, $ShapeSpanIterator* sr) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, context, nullptr);
 	$var($ints, abox, $new($ints, 4));
 	{

@@ -71,6 +71,7 @@ $Object* allocate$DrawGlyphListColor$TraceDrawGlyphListColor($Class* clazz) {
 }
 
 void DrawGlyphListColor$TraceDrawGlyphListColor::init$($DrawGlyphListColor* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, var$0, $nc(target)->getSourceType());
 	$var($CompositeType, var$1, target->getCompositeType());
 	$DrawGlyphListColor::init$(var$0, var$1, $(target->getDestType()));

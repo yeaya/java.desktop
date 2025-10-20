@@ -88,6 +88,7 @@ $MidiDevice* SoftReceiver::getMidiDevice() {
 }
 
 void SoftReceiver::send($MidiMessage* message, int64_t timeStamp) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->control_mutex) {
 		if (!this->open) {
 			$throwNew($IllegalStateException, "Receiver is not open"_s);

@@ -116,6 +116,7 @@ void WindowsSliderUI$WindowsTrackListener::mouseReleased($MouseEvent* e) {
 }
 
 void WindowsSliderUI$WindowsTrackListener::updatePressed(bool newPressed) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($WindowsSliderUI::access$300(this->this$0)))->isEnabled()) {
 		return;
 	}
@@ -126,6 +127,7 @@ void WindowsSliderUI$WindowsTrackListener::updatePressed(bool newPressed) {
 }
 
 void WindowsSliderUI$WindowsTrackListener::updateRollover(bool newRollover) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($WindowsSliderUI::access$600(this->this$0)))->isEnabled()) {
 		return;
 	}

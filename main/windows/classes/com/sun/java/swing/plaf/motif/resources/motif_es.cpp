@@ -47,6 +47,7 @@ void motif_es::init$() {
 }
 
 $ObjectArray2* motif_es::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("FileChooser.acceptAllFileFilter.textAndMnemonic"_s),

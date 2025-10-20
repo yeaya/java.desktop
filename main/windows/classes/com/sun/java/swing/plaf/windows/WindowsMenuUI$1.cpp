@@ -116,6 +116,7 @@ $JMenuItem* WindowsMenuUI$1::getMenuItem() {
 }
 
 $TMSchema$State* WindowsMenuUI$1::getState($JMenuItem* menu) {
+	$useLocalCurrentObjectStackCache();
 	$init($TMSchema$State);
 	$TMSchema$State* state = $nc(menu)->isEnabled() ? $TMSchema$State::NORMAL : $TMSchema$State::DISABLED;
 	$var($ButtonModel, model, $nc(menu)->getModel());

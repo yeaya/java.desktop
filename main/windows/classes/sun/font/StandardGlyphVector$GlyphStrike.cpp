@@ -107,6 +107,7 @@ $Object* allocate$StandardGlyphVector$GlyphStrike($Class* clazz) {
 }
 
 StandardGlyphVector$GlyphStrike* StandardGlyphVector$GlyphStrike::create($StandardGlyphVector* sgv, $AffineTransform* dtx, $AffineTransform* gtx) {
+	$useLocalCurrentObjectStackCache();
 	float dx = (float)0;
 	float dy = (float)0;
 	$var($AffineTransform, tx, $nc(sgv)->ftx);
@@ -155,6 +156,7 @@ void StandardGlyphVector$GlyphStrike::init$($StandardGlyphVector* sgv, $FontStri
 }
 
 void StandardGlyphVector$GlyphStrike::getADL($StandardGlyphVector$ADL* result) {
+	$useLocalCurrentObjectStackCache();
 	$var($StrikeMetrics, sm, $nc(this->strike)->getFontMetrics());
 	$var($Point2D$Float, delta, nullptr);
 	if ($nc($nc(this->sgv)->font)->isTransformed()) {
@@ -183,6 +185,7 @@ void StandardGlyphVector$GlyphStrike::addDefaultGlyphAdvance(int32_t glyphID, $P
 }
 
 $Rectangle2D* StandardGlyphVector$GlyphStrike::getGlyphOutlineBounds(int32_t glyphID, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, result, nullptr);
 	if ($nc(this->sgv)->invdtx == nullptr) {
 		$assign(result, $new($Rectangle2D$Float));
@@ -202,6 +205,7 @@ $Rectangle2D* StandardGlyphVector$GlyphStrike::getGlyphOutlineBounds(int32_t gly
 }
 
 void StandardGlyphVector$GlyphStrike::appendGlyphOutline(int32_t glyphID, $GeneralPath* result, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($GeneralPath, gp, nullptr);
 	if ($nc(this->sgv)->invdtx == nullptr) {
 		$assign(gp, $nc(this->strike)->getGlyphOutline(glyphID, x + this->dx, y + this->dy));

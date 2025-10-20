@@ -151,10 +151,12 @@ int32_t MimeType::hashCode() {
 }
 
 bool MimeType::equals(Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	return (obj != nullptr && $instanceOf(MimeType, obj) && $nc($(getStringValue()))->equals($($nc(($cast(MimeType, obj)))->getStringValue())));
 }
 
 $String* MimeType::getStringValue() {
+	$useLocalCurrentObjectStackCache();
 	if (this->myStringValue == nullptr) {
 		$var($StringBuilder, result, $new($StringBuilder));
 		result->append($nc(this->myPieces)->get(0));
@@ -219,6 +221,7 @@ $String* MimeType::addQuotes($String* s) {
 }
 
 void MimeType::parse($String* s) {
+	$useLocalCurrentObjectStackCache();
 	if (s == nullptr) {
 		$throwNew($NullPointerException);
 	}

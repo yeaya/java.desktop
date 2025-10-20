@@ -73,6 +73,7 @@ void Util$1::init$($Component* val$component) {
 }
 
 $Object* Util$1::call() {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, $nc(this->val$component)->getLocationOnScreen());
 	$var($Dimension, size, $nc(this->val$component)->getSize());
 	return $of($new($Point, $nc(p)->x + $nc(size)->width / 2, p->y + size->height / 2));

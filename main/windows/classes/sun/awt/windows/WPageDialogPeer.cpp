@@ -124,6 +124,7 @@ bool WPageDialogPeer::_show() {
 }
 
 void WPageDialogPeer::show() {
+	$useLocalCurrentObjectStackCache();
 	$var($Runnable, runnable, static_cast<$Runnable*>($new(WPageDialogPeer$$Lambda$lambda$show$0, this)));
 	$$new($Thread, nullptr, runnable, "PageDialog"_s, 0, false)->start();
 }

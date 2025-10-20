@@ -114,6 +114,7 @@ void RTFAttributes::init$() {
 
 $Dictionary* RTFAttributes::attributesByKeyword() {
 	$init(RTFAttributes);
+	$useLocalCurrentObjectStackCache();
 	$var($Dictionary, d, $new($Hashtable, $nc(RTFAttributes::attributes)->length));
 	{
 		$var($RTFAttributeArray, arr$, RTFAttributes::attributes);
@@ -130,6 +131,7 @@ $Dictionary* RTFAttributes::attributesByKeyword() {
 }
 
 void clinit$RTFAttributes($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Vector, a, $new($Vector));
 		int32_t CHR = $RTFAttribute::D_CHARACTER;

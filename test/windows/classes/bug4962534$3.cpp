@@ -77,6 +77,7 @@ void bug4962534$3::init$($bug4962534* this$0) {
 }
 
 void bug4962534$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($JLayeredPane);
 	for (int32_t j = 0; j < $nc($($nc(this->this$0->lPane)->getComponentsInLayer($nc($JLayeredPane::FRAME_CONTENT_LAYER)->intValue())))->length; ++j) {
 		$set(this->this$0, titleComponent, $nc($($nc(this->this$0->lPane)->getComponentsInLayer($nc($JLayeredPane::FRAME_CONTENT_LAYER)->intValue())))->get(j));

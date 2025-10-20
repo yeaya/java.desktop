@@ -197,6 +197,7 @@ void Test4319113::init$() {
 }
 
 void Test4319113::init() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$EventQueue::invokeLater(static_cast<$Runnable*>($$new(Test4319113$$Lambda$lambda$init$0, this)));
 	} catch ($Exception&) {
@@ -206,6 +207,7 @@ void Test4319113::init() {
 }
 
 void Test4319113::actionPerformed($ActionEvent* actionEvent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, object, $nc(actionEvent)->getSource());
 	$var($Component, component, $instanceOf($Component, object) ? $cast($Component, object) : ($Component*)nullptr);
 	$init($Color);
@@ -214,6 +216,7 @@ void Test4319113::actionPerformed($ActionEvent* actionEvent) {
 }
 
 void Test4319113::show($Window* window) {
+	$useLocalCurrentObjectStackCache();
 	$var($JButton, jButton, $new($JButton, "Show ColorChooser"_s));
 	jButton->setActionCommand("Show ColorChooser"_s);
 	jButton->addActionListener(this);
@@ -227,6 +230,7 @@ void Test4319113::show($Window* window) {
 
 void Test4319113::updateWindowTreeUI($Window* window) {
 	$init(Test4319113);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::updateComponentTreeUI(window);
 	$var($WindowArray, arrwindow, $nc(window)->getOwnedWindows());
 	int32_t n = $nc(arrwindow)->length;

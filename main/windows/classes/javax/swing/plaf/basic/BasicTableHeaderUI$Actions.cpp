@@ -118,6 +118,7 @@ void BasicTableHeaderUI$Actions::init$($String* name) {
 }
 
 bool BasicTableHeaderUI$Actions::accept(Object$* sender) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JTableHeader, sender)) {
 		$var($JTableHeader, th, $cast($JTableHeader, sender));
 		$var($TableColumnModel, cm, $nc(th)->getColumnModel());
@@ -145,6 +146,7 @@ bool BasicTableHeaderUI$Actions::accept(Object$* sender) {
 }
 
 void BasicTableHeaderUI$Actions::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTableHeader, th, $cast($JTableHeader, $nc(e)->getSource()));
 	$load($BasicTableHeaderUI);
 	$var($BasicTableHeaderUI, ui, $cast($BasicTableHeaderUI, $BasicLookAndFeel::getUIOfType($($nc(th)->getUI()), $BasicTableHeaderUI::class$)));
@@ -193,6 +195,7 @@ void BasicTableHeaderUI$Actions::moveColumn(bool leftArrow, $JTableHeader* th, $
 }
 
 bool BasicTableHeaderUI$Actions::maybeMoveColumn(bool leftArrow, $JTableHeader* th, $BasicTableHeaderUI* ui, bool doIt) {
+	$useLocalCurrentObjectStackCache();
 	int32_t oldIndex = $nc(ui)->getSelectedColumnIndex();
 	int32_t newIndex = 0;
 	if ($nc($($nc(th)->getComponentOrientation()))->isLeftToRight()) {
@@ -211,6 +214,7 @@ bool BasicTableHeaderUI$Actions::maybeMoveColumn(bool leftArrow, $JTableHeader* 
 }
 
 void BasicTableHeaderUI$Actions::resize(bool leftArrow, $JTableHeader* th, $BasicTableHeaderUI* ui) {
+	$useLocalCurrentObjectStackCache();
 	int32_t columnIndex = $nc(ui)->getSelectedColumnIndex();
 	$var($TableColumn, resizingColumn, $nc($($nc(th)->getColumnModel()))->getColumn(columnIndex));
 	th->setResizingColumn(resizingColumn);

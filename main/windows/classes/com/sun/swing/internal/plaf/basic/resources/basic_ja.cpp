@@ -47,6 +47,7 @@ void basic_ja::init$() {
 }
 
 $ObjectArray2* basic_ja::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("AbstractButton.click.textAndMnemonic"_s),

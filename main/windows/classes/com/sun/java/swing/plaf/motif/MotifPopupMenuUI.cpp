@@ -118,6 +118,7 @@ $ComponentUI* MotifPopupMenuUI::createUI($JComponent* x) {
 }
 
 $Dimension* MotifPopupMenuUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($LayoutManager, layout, $nc(c)->getLayout());
 	$var($Dimension, d, $nc(layout)->preferredLayoutSize(c));
 	$var($String, title, $nc(($cast($JPopupMenu, c)))->getLabel());

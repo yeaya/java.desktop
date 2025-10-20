@@ -70,6 +70,7 @@ void MetaData$java_util_Collections$UnmodifiableCollection_PersistenceDelegate::
 }
 
 $Expression* MetaData$java_util_Collections$UnmodifiableCollection_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, list, $new($ArrayList, $cast($Collection, oldInstance)));
 	$load($Collections);
 	return $new($Expression, oldInstance, $Collections::class$, "unmodifiableCollection"_s, $$new($ObjectArray, {$of(list)}));

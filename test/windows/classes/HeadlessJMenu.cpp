@@ -116,6 +116,7 @@ void HeadlessJMenu::init$() {
 }
 
 void HeadlessJMenu::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenu, m, $new($JMenu));
 	m->getAccessibleContext();
 	m->isFocusTraversable();

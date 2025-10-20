@@ -76,6 +76,7 @@ void OGLPaints$Texture::init$() {
 }
 
 bool OGLPaints$Texture::isPaintValid($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	$var($TexturePaint, paint, $cast($TexturePaint, $nc(sg2d)->paint));
 	$var($OGLSurfaceData, dstData, $cast($OGLSurfaceData, sg2d->surfaceData));
 	$var($BufferedImage, bi, $nc(paint)->getImage());

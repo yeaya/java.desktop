@@ -97,6 +97,7 @@ void bug6274267::init$() {
 }
 
 void bug6274267::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var(bug6274267, test, $new(bug6274267));
 	$var($Robot, robot, $new($Robot));
 	{
@@ -120,6 +121,7 @@ void bug6274267::main($StringArray* args) {
 }
 
 void bug6274267::setupUI1() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, $new($JFrame));
 	$nc(this->frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$set(this, left, $new($JPanel));

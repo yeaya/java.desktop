@@ -93,6 +93,7 @@ void TableColumn$1::init$($TableColumn* this$0) {
 }
 
 $Component* TableColumn$1::getTableCellRendererComponent($JTable* table, Object$* value, bool isSelected, bool hasFocus, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	if (table != nullptr) {
 		$var($JTableHeader, header, table->getTableHeader());
 		if (header != nullptr) {

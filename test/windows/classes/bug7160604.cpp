@@ -171,6 +171,7 @@ void bug7160604::init() {
 }
 
 void bug7160604::lambda$init$0() {
+	$useLocalCurrentObjectStackCache();
 	$init($GraphicsDevice$WindowTranslucency);
 	if (!$nc($($nc($($GraphicsEnvironment::getLocalGraphicsEnvironment()))->getDefaultScreenDevice()))->isWindowTranslucencySupported($GraphicsDevice$WindowTranslucency::PERPIXEL_TRANSLUCENT)) {
 		return;

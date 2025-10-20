@@ -288,6 +288,7 @@ void ContextMenuScrollTest::init$() {
 
 void ContextMenuScrollTest::main($StringArray* args) {
 	$init(ContextMenuScrollTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(ContextMenuScrollTest::robot, $new($Robot));
 	$nc(ContextMenuScrollTest::robot)->setAutoDelay(100);
 	{
@@ -323,6 +324,7 @@ void ContextMenuScrollTest::main($StringArray* args) {
 
 void ContextMenuScrollTest::createGUI() {
 	$init(ContextMenuScrollTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(ContextMenuScrollTest::frame, $new($JFrame));
 	$var($JMenuBar, menuBar, $new($JMenuBar));
 	$assignStatic(ContextMenuScrollTest::menu, $new($JMenu, "Menu"_s));

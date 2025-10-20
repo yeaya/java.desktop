@@ -78,6 +78,7 @@ void bug7031551::main($StringArray* args) {
 
 void bug7031551::testRawSignatures() {
 	$init(bug7031551);
+	$useLocalCurrentObjectStackCache();
 	$var($ComboBoxModel, rawTestModel, $new($DefaultComboBoxModel));
 	$var($JComboBox, rawTestComboBox, $new($JComboBox));
 	$assign(rawTestComboBox, $new($JComboBox, rawTestModel));
@@ -104,6 +105,7 @@ void bug7031551::testRawSignatures() {
 
 void bug7031551::testGenericSignatures() {
 	$init(bug7031551);
+	$useLocalCurrentObjectStackCache();
 	$var($ComboBoxModel, stringTestModel, $new($DefaultComboBoxModel));
 	$var($JComboBox, stringTestComboBox, $new($JComboBox));
 	$assign(stringTestComboBox, $new($JComboBox, stringTestModel));

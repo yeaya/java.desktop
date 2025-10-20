@@ -132,6 +132,7 @@ void MotifSplitPaneDivider::init$($BasicSplitPaneUI* ui) {
 }
 
 void MotifSplitPaneDivider::setDividerSize(int32_t newSize) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, getInsets());
 	int32_t borderSize = 0;
 	if ($nc($(getBasicSplitPaneUI()))->getOrientation() == $JSplitPane::HORIZONTAL_SPLIT) {
@@ -150,6 +151,7 @@ void MotifSplitPaneDivider::setDividerSize(int32_t newSize) {
 }
 
 void MotifSplitPaneDivider::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, bgColor, getBackground());
 	$var($Dimension, size, getSize());
 	$nc(g)->setColor($(getBackground()));
@@ -227,6 +229,7 @@ void MotifSplitPaneDivider::setBasicSplitPaneUI($BasicSplitPaneUI* newUI) {
 }
 
 bool MotifSplitPaneDivider::isInThumb(int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, getSize());
 	int32_t thumbX = 0;
 	int32_t thumbY = 0;

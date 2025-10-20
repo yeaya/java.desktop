@@ -194,6 +194,7 @@ void bug4760494::init$() {
 
 void bug4760494::main($StringArray* args) {
 	$init(bug4760494);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug4760494::pass, $new($bug4760494$PassedListener));
 	$assignStatic(bug4760494::tester, $new($bug4760494$TestStateListener));
 	$assignStatic(bug4760494::robot, $new($Robot));
@@ -222,6 +223,7 @@ void bug4760494::main($StringArray* args) {
 
 void bug4760494::createUI() {
 	$init(bug4760494);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug4760494::frame, $new($JFrame, "Bug 4760494"_s));
 	$nc(bug4760494::frame)->addWindowListener(bug4760494::tester);
 	$assignStatic(bug4760494::popup, $new($JPopupMenu));

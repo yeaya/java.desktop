@@ -52,6 +52,7 @@ void bug7032791::init$() {
 }
 
 void bug7032791::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($SynthLookAndFeel)));
 	$var($Object, value, "Test value"_s);
 	$var($JTable, table, $new($JTable, 1, 1));

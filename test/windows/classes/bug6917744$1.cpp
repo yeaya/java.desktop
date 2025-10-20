@@ -84,6 +84,7 @@ void bug6917744$1::init$() {
 }
 
 void bug6917744$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$init($bug6917744);
 	$assignStatic($bug6917744::frame, $new($JFrame));

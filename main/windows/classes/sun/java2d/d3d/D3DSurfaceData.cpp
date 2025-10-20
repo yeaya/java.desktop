@@ -426,6 +426,7 @@ void D3DSurfaceData::initOps(int32_t screen, int32_t width, int32_t height) {
 }
 
 void D3DSurfaceData::init$($WComponentPeer* peer, $D3DGraphicsConfig* gc, int32_t width, int32_t height, $Image* image, $ColorModel* cm, int32_t numBackBuffers, int32_t swapEffect, $ExtendedBufferCapabilities$VSyncType* vSyncType, int32_t type) {
+	$useLocalCurrentObjectStackCache();
 	$SurfaceData::init$($(getCustomSurfaceType(type)), cm);
 	$set(this, graphicsDevice, $nc(gc)->getD3DDevice());
 	this->scaleX = type == $AccelSurface::TEXTURE ? (float)1 : $nc(this->graphicsDevice)->getDefaultScaleX();
@@ -470,6 +471,7 @@ $SurfaceDataProxy* D3DSurfaceData::makeProxyFor($SurfaceData* srcData) {
 
 D3DSurfaceData* D3DSurfaceData::createData($WComponentPeer* peer, $Image* image) {
 	$init(D3DSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	$var($D3DGraphicsConfig, gc, getGC(peer));
 	if (gc == nullptr || !$nc(peer)->isAccelCapable()) {
 		return nullptr;
@@ -513,6 +515,7 @@ D3DSurfaceData* D3DSurfaceData::createData($WComponentPeer* peer) {
 
 D3DSurfaceData* D3DSurfaceData::createData($D3DGraphicsConfig* gc, int32_t width, int32_t height, $ColorModel* cm, $Image* image, int32_t type) {
 	$init(D3DSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	if (type == $AccelSurface::RT_TEXTURE) {
 		bool isOpaque = $nc(cm)->getTransparency() == $Transparency::OPAQUE;
 		int32_t cap = isOpaque ? 8 : 4;
@@ -588,6 +591,7 @@ bool D3DSurfaceData::initSurfaceNow() {
 }
 
 void D3DSurfaceData::initSurface() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this) {
 		$set(this, wrn, nullptr);
 	}
@@ -640,6 +644,7 @@ void D3DSurfaceData::dbSetPixelNative(int64_t pData, int32_t x, int32_t y, int32
 
 $Raster* D3DSurfaceData::getRaster(int32_t x, int32_t y, int32_t w, int32_t h) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->wrn == nullptr) {
 			$var($DirectColorModel, dcm, $cast($DirectColorModel, getColorModel()));
 			$var($SampleModel, smHw, nullptr);
@@ -674,6 +679,7 @@ void D3DSurfaceData::disableAccelerationForSurface() {
 }
 
 void D3DSurfaceData::validatePipe($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	$var($TextPipe, textpipe, nullptr);
 	bool validated = false;
 	if ($nc(sg2d)->compositeState >= $SunGraphics2D::COMP_XOR) {
@@ -757,6 +763,7 @@ bool D3DSurfaceData::copyArea($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_
 }
 
 void D3DSurfaceData::flush() {
+	$useLocalCurrentObjectStackCache();
 	$var($D3DRenderQueue, rq, $D3DRenderQueue::getInstance());
 	$nc(rq)->lock();
 	{
@@ -780,6 +787,7 @@ void D3DSurfaceData::flush() {
 
 void D3DSurfaceData::dispose(int64_t pData) {
 	$init(D3DSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	$var($D3DRenderQueue, rq, $D3DRenderQueue::getInstance());
 	$nc(rq)->lock();
 	{
@@ -803,6 +811,7 @@ void D3DSurfaceData::dispose(int64_t pData) {
 
 void D3DSurfaceData::swapBuffers(D3DSurfaceData* sd, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
 	$init(D3DSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	int64_t pData = $nc(sd)->getNativeOps();
 	$var($D3DRenderQueue, rq, $D3DRenderQueue::getInstance());
 	if ($D3DRenderQueue::isRenderQueueThread()) {
@@ -856,6 +865,7 @@ $Rectangle* D3DSurfaceData::getBounds() {
 }
 
 $Rectangle* D3DSurfaceData::getNativeBounds() {
+	$useLocalCurrentObjectStackCache();
 	$var($D3DRenderQueue, rq, $D3DRenderQueue::getInstance());
 	$nc(rq)->lock();
 	{
@@ -891,6 +901,7 @@ $SurfaceData* D3DSurfaceData::getReplacement() {
 
 $D3DGraphicsConfig* D3DSurfaceData::getGC($WComponentPeer* peer) {
 	$init(D3DSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, nullptr);
 	if (peer != nullptr) {
 		$assign(gc, peer->getGraphicsConfiguration());

@@ -123,6 +123,7 @@ void TIFFOldJPEGDecompressor::init$() {
 
 void TIFFOldJPEGDecompressor::initialize() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->isInitialized) {
 			return;
 		}
@@ -371,6 +372,7 @@ void TIFFOldJPEGDecompressor::initialize() {
 }
 
 void TIFFOldJPEGDecompressor::decodeRaw($bytes* b, int32_t dstOffset, int32_t bitsPerPixel, int32_t scanlineStride) {
+	$useLocalCurrentObjectStackCache();
 	initialize();
 	$var($TIFFImageMetadata, tim, $cast($TIFFImageMetadata, this->metadata));
 	if (this->JPEGStreamOffset != nullptr) {

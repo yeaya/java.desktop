@@ -103,6 +103,7 @@ void HTMLDocument$HTMLReader$HeadAction::start($HTML$Tag* t, $MutableAttributeSe
 }
 
 void HTMLDocument$HTMLReader$HeadAction::end($HTML$Tag* t) {
+	$useLocalCurrentObjectStackCache();
 	this->this$1->inHead = (this->this$1->inStyle = false);
 	if (this->this$1->styles != nullptr) {
 		bool isDefaultCSS = this->this$1->isStyleCSS;
@@ -144,6 +145,7 @@ bool HTMLDocument$HTMLReader$HeadAction::isEmpty($HTML$Tag* t) {
 }
 
 void HTMLDocument$HTMLReader$HeadAction::handleLink($AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Attribute);
 	$var($String, type, $cast($String, $nc(attr)->getAttribute($HTML$Attribute::TYPE)));
 	if (type == nullptr) {

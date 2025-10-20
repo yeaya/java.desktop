@@ -158,6 +158,7 @@ bool FileFont::canDoStyle(int32_t style) {
 
 void FileFont::setFileToRemove($List* fonts, $File* file, int32_t cnt, $CreatedFontTracker* tracker) {
 	$init(FileFont);
+	$useLocalCurrentObjectStackCache();
 	$var($FileFont$CreatedFontFileDisposerRecord, dr, $new($FileFont$CreatedFontFileDisposerRecord, file, cnt, tracker));
 	{
 		$var($Iterator, i$, $nc(fonts)->iterator());
@@ -172,6 +173,7 @@ void FileFont::setFileToRemove($List* fonts, $File* file, int32_t cnt, $CreatedF
 
 void FileFont::deregisterFontAndClearStrikeCache() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($SunFontManager, fm, $SunFontManager::getInstance());
 		$nc(fm)->deRegisterBadFont(this);
 		{
@@ -196,6 +198,7 @@ void FileFont::deregisterFontAndClearStrikeCache() {
 }
 
 $StrikeMetrics* FileFont::getFontMetrics(int64_t pScalerContext) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getFontMetrics(pScalerContext);
 	} catch ($FontScalerException&) {
@@ -207,6 +210,7 @@ $StrikeMetrics* FileFont::getFontMetrics(int64_t pScalerContext) {
 }
 
 float FileFont::getGlyphAdvance(int64_t pScalerContext, int32_t glyphCode) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getGlyphAdvance(pScalerContext, glyphCode);
 	} catch ($FontScalerException&) {
@@ -218,6 +222,7 @@ float FileFont::getGlyphAdvance(int64_t pScalerContext, int32_t glyphCode) {
 }
 
 void FileFont::getGlyphMetrics(int64_t pScalerContext, int32_t glyphCode, $Point2D$Float* metrics) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$nc($(getScaler()))->getGlyphMetrics(pScalerContext, glyphCode, metrics);
 	} catch ($FontScalerException&) {
@@ -228,6 +233,7 @@ void FileFont::getGlyphMetrics(int64_t pScalerContext, int32_t glyphCode, $Point
 }
 
 int64_t FileFont::getGlyphImage(int64_t pScalerContext, int32_t glyphCode) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getGlyphImage(pScalerContext, glyphCode);
 	} catch ($FontScalerException&) {
@@ -239,6 +245,7 @@ int64_t FileFont::getGlyphImage(int64_t pScalerContext, int32_t glyphCode) {
 }
 
 $Rectangle2D$Float* FileFont::getGlyphOutlineBounds(int64_t pScalerContext, int32_t glyphCode) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getGlyphOutlineBounds(pScalerContext, glyphCode);
 	} catch ($FontScalerException&) {
@@ -250,6 +257,7 @@ $Rectangle2D$Float* FileFont::getGlyphOutlineBounds(int64_t pScalerContext, int3
 }
 
 $GeneralPath* FileFont::getGlyphOutline(int64_t pScalerContext, int32_t glyphCode, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getGlyphOutline(pScalerContext, glyphCode, x, y);
 	} catch ($FontScalerException&) {
@@ -261,6 +269,7 @@ $GeneralPath* FileFont::getGlyphOutline(int64_t pScalerContext, int32_t glyphCod
 }
 
 $GeneralPath* FileFont::getGlyphVectorOutline(int64_t pScalerContext, $ints* glyphs, int32_t numGlyphs, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getGlyphVectorOutline(pScalerContext, glyphs, numGlyphs, x, y);
 	} catch ($FontScalerException&) {
@@ -276,6 +285,7 @@ int64_t FileFont::getUnitsPerEm() {
 }
 
 $String* FileFont::getPublicFileName() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm == nullptr) {

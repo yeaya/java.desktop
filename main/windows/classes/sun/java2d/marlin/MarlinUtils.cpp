@@ -94,6 +94,7 @@ void MarlinUtils::logException($String* msg, $Throwable* th) {
 
 $ThreadGroup* MarlinUtils::getRootThreadGroup() {
 	$init(MarlinUtils);
+	$useLocalCurrentObjectStackCache();
 	$var($ThreadGroup, currentTG, $($Thread::currentThread())->getThreadGroup());
 	$var($ThreadGroup, parentTG, $nc(currentTG)->getParent());
 	while (parentTG != nullptr) {

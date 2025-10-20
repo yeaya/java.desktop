@@ -103,6 +103,7 @@ void MotifMenuUI$MouseInputHandler::mouseClicked($MouseEvent* e) {
 }
 
 void MotifMenuUI$MouseInputHandler::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, manager, $MenuSelectionManager::defaultManager());
 	$var($JMenu, menu, $cast($JMenu, $nc(e)->getComponent()));
 	if ($nc(menu)->isEnabled()) {
@@ -130,6 +131,7 @@ void MotifMenuUI$MouseInputHandler::mousePressed($MouseEvent* e) {
 }
 
 void MotifMenuUI$MouseInputHandler::mouseReleased($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, manager, $MenuSelectionManager::defaultManager());
 	$var($JMenuItem, menuItem, $cast($JMenuItem, $nc(e)->getComponent()));
 	$var($Point, p, e->getPoint());

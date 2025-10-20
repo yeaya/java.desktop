@@ -125,6 +125,7 @@ $Object* allocate$FileCacheImageInputStream($Class* clazz) {
 }
 
 void FileCacheImageInputStream::init$($InputStream* stream, $File* cacheDir) {
+	$useLocalCurrentObjectStackCache();
 	$ImageInputStreamImpl::init$();
 	$set(this, buf, $new($bytes, FileCacheImageInputStream::BUFFER_LENGTH));
 	this->length$ = 0;

@@ -70,6 +70,7 @@ $Object* allocate$TagStack($Class* clazz) {
 }
 
 void TagStack::init$($TagElement* tag, TagStack* next) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, tag, tag);
 	$set(this, elem, $nc(tag)->getElement());
 	$set(this, next, next);
@@ -140,6 +141,7 @@ bool TagStack::terminate() {
 }
 
 $String* TagStack::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, nullptr);
 	if (this->next == nullptr) {
 		$assign(var$0, $str({"<"_s, $($nc($($nc(this->tag)->getElement()))->getName()), ">"_s}));

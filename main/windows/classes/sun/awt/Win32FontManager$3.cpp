@@ -75,6 +75,7 @@ void Win32FontManager$3::init$($Win32FontManager* this$0, $StringArray* val$dirs
 }
 
 $Object* Win32FontManager$3::run() {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->val$dirs)->length; ++i) {
 		$init($File);
 		$var($String, path, $str({$nc(this->val$dirs)->get(i), $File::separator, "arial.ttf"_s}));

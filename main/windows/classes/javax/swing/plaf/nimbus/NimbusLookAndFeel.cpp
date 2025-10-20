@@ -223,6 +223,7 @@ void NimbusLookAndFeel::initialize() {
 }
 
 void NimbusLookAndFeel::uninitialize() {
+	$useLocalCurrentObjectStackCache();
 	$SynthLookAndFeel::uninitialize();
 	$nc(this->defaults)->uninitialize();
 	$nc($($ImageCache::getInstance()))->flush();
@@ -230,6 +231,7 @@ void NimbusLookAndFeel::uninitialize() {
 }
 
 $UIDefaults* NimbusLookAndFeel::getDefaults() {
+	$useLocalCurrentObjectStackCache();
 	if (this->uiDefaults == nullptr) {
 		$var($String, osName, getSystemProperty("os.name"_s));
 		bool isWindows = osName != nullptr && osName->contains("Windows"_s);
@@ -308,6 +310,7 @@ bool NimbusLookAndFeel::shouldUpdateStyleOnAncestorChanged() {
 }
 
 bool NimbusLookAndFeel::shouldUpdateStyleOnEvent($PropertyChangeEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, eName, $nc(ev)->getPropertyName());
 	if ("name"_s == eName || "ancestor"_s == eName || "Nimbus.Overrides"_s == eName || "Nimbus.Overrides.InheritDefaults"_s == eName || "JComponent.sizeVariant"_s == eName) {
 		$var($JComponent, c, $cast($JComponent, ev->getSource()));
@@ -327,6 +330,7 @@ $String* NimbusLookAndFeel::getSystemProperty($String* key) {
 }
 
 $Icon* NimbusLookAndFeel::getDisabledIcon($JComponent* component, $Icon* icon) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($SynthIcon, icon)) {
 		$var($SynthIcon, si, $cast($SynthIcon, icon));
 		int32_t var$0 = $nc(si)->getIconWidth();
@@ -359,6 +363,7 @@ $Color* NimbusLookAndFeel::getDerivedColor($Color* color1, $Color* color2, float
 
 $Object* NimbusLookAndFeel::resolveToolbarConstraint($JToolBar* toolbar) {
 	$init(NimbusLookAndFeel);
+	$useLocalCurrentObjectStackCache();
 	if (toolbar != nullptr) {
 		$var($Container, parent, toolbar->getParent());
 		if (parent != nullptr) {
@@ -415,6 +420,7 @@ $String* NimbusLookAndFeel::parsePrefix($String* key) {
 }
 
 $Map* NimbusLookAndFeel::getDefaultsForPrefix($String* prefix) {
+	$useLocalCurrentObjectStackCache();
 	if (this->compiledDefaults == nullptr) {
 		$set(this, compiledDefaults, $new($HashMap));
 		{
@@ -438,6 +444,7 @@ $Map* NimbusLookAndFeel::getDefaultsForPrefix($String* prefix) {
 }
 
 void NimbusLookAndFeel::addDefault($String* key, Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	if (this->compiledDefaults == nullptr) {
 		return;
 	}

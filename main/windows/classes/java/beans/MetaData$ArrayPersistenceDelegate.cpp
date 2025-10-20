@@ -88,6 +88,7 @@ bool MetaData$ArrayPersistenceDelegate::mutatesTo(Object$* oldInstance, Object$*
 }
 
 $Expression* MetaData$ArrayPersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$Class* oldClass = $nc($of(oldInstance))->getClass();
 	$load($1Array);
 	return $new($Expression, oldInstance, $1Array::class$, "newInstance"_s, $$new($ObjectArray, {
@@ -97,6 +98,7 @@ $Expression* MetaData$ArrayPersistenceDelegate::instantiate(Object$* oldInstance
 }
 
 void MetaData$ArrayPersistenceDelegate::initialize($Class* type, Object$* oldInstance, Object$* newInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = $1Array::getLength(oldInstance);
 	for (int32_t i = 0; i < n; ++i) {
 		$var($Object, index, $Integer::valueOf(i));

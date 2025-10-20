@@ -79,6 +79,7 @@ bool VirtualFileSystemView::isFloppyDrive($File* dir) {
 }
 
 $File* VirtualFileSystemView::getParentDirectory($File* dir) {
+	$useLocalCurrentObjectStackCache();
 	if (dir == nullptr) {
 		return nullptr;
 	}

@@ -250,6 +250,7 @@ void ImageViewTest::init$() {
 }
 
 void ImageViewTest::test($Robot* r, $JEditorPane* editorPane, int32_t WIDTH, int32_t HEIGHT) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(ImageViewTest$$Lambda$lambda$test$0, editorPane, WIDTH, HEIGHT)));
 	$nc(r)->waitForIdle();
 	r->delay(500);
@@ -259,6 +260,7 @@ void ImageViewTest::test($Robot* r, $JEditorPane* editorPane, int32_t WIDTH, int
 
 void ImageViewTest::main($StringArray* args) {
 	$load(ImageViewTest);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, ABSOLUTE_FILE_PATH, $nc($(ImageViewTest::class$->getResource("circle.png"_s)))->getPath());
 	$init($System);
@@ -293,6 +295,7 @@ void ImageViewTest::main($StringArray* args) {
 }
 
 void ImageViewTest::lambda$main$2($JEditorPaneArray* editorPanes, $String* ABSOLUTE_FILE_PATH) {
+	$useLocalCurrentObjectStackCache();
 	$nc(editorPanes)->set(0, $$new($JEditorPane, "text/html"_s, $$str({"<img height=\"200\" src=\"file:///"_s, ABSOLUTE_FILE_PATH, "\""_s})));
 	editorPanes->set(1, $$new($JEditorPane, "text/html"_s, $$str({"<img width=\"200\" src=\"file:///"_s, ABSOLUTE_FILE_PATH, "\""_s})));
 	editorPanes->set(2, $$new($JEditorPane, "text/html"_s, $$str({"<img width=\"200\" height=\"200\" src=\"file:///"_s, ABSOLUTE_FILE_PATH, "\""_s})));
@@ -307,6 +310,7 @@ void ImageViewTest::lambda$main$2($JEditorPaneArray* editorPanes, $String* ABSOL
 }
 
 void ImageViewTest::lambda$test$1($JEditorPane* editorPane, $Robot* r, int32_t WIDTH, int32_t HEIGHT) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, $nc(editorPane)->getInsets());
 	$var($Point, loc, editorPane->getLocationOnScreen());
 	$init($Color);

@@ -111,6 +111,7 @@ void Test6526631::validateSecond() {
 }
 
 void Test6526631::validateThird() {
+	$useLocalCurrentObjectStackCache();
 	$var($JViewport, viewport, $nc(this->pane)->getViewport());
 	$var($JScrollBar, scroller, $nc(this->pane)->getHorizontalScrollBar());
 	$init($ComponentOrientation);

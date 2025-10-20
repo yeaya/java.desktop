@@ -217,6 +217,7 @@ void Test8003400::init$() {
 
 void Test8003400::blockTillDisplayed($Component* comp) {
 	$init(Test8003400);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	while (p == nullptr) {
 		try {
@@ -234,6 +235,7 @@ void Test8003400::blockTillDisplayed($Component* comp) {
 
 void Test8003400::main($StringArray* args) {
 	$init(Test8003400);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($StringArray, arr$, args);
 		int32_t len$ = $nc(arr$)->length;

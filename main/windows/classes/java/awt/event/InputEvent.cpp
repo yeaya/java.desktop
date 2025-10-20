@@ -270,6 +270,7 @@ $ints* InputEvent::getButtonDownMasks() {
 
 int32_t InputEvent::getMaskForButton(int32_t button) {
 	$init(InputEvent);
+	$useLocalCurrentObjectStackCache();
 	if (button <= 0 || button > $nc(InputEvent::BUTTON_DOWN_MASK)->length) {
 		$throwNew($IllegalArgumentException, $$str({"button doesn\'t exist "_s, $$str(button)}));
 	}
@@ -291,6 +292,7 @@ void InputEvent::init$($Component* source, int32_t id, int64_t when, int32_t mod
 }
 
 bool InputEvent::canAccessSystemClipboard() {
+	$useLocalCurrentObjectStackCache();
 	bool b = false;
 	if (!$GraphicsEnvironment::isHeadless()) {
 		$var($SecurityManager, sm, $System::getSecurityManager());
@@ -355,6 +357,7 @@ bool InputEvent::isConsumed() {
 
 $String* InputEvent::getModifiersExText(int32_t modifiers) {
 	$init(InputEvent);
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, buf, $new($StringBuilder));
 	if (((int32_t)(modifiers & (uint32_t)InputEvent::META_DOWN_MASK)) != 0) {
 		buf->append($($Toolkit::getProperty("AWT.meta"_s, "Meta"_s)));

@@ -127,6 +127,7 @@ void VariableHeightLayoutCache$TreeStateNode::init$($VariableHeightLayoutCache* 
 }
 
 void VariableHeightLayoutCache$TreeStateNode::setParent($MutableTreeNode* parent) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultMutableTreeNode::setParent(parent);
 	if (parent != nullptr) {
 		$set(this, path, $nc($($nc(($cast(VariableHeightLayoutCache$TreeStateNode, parent)))->getTreePath()))->pathByAddingChild($(getUserObject())));
@@ -141,6 +142,7 @@ void VariableHeightLayoutCache$TreeStateNode::remove(int32_t childIndex) {
 }
 
 void VariableHeightLayoutCache$TreeStateNode::setUserObject(Object$* o) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultMutableTreeNode::setUserObject(o);
 	if (this->path != nullptr) {
 		$var(VariableHeightLayoutCache$TreeStateNode, parent, $cast(VariableHeightLayoutCache$TreeStateNode, getParent()));
@@ -162,6 +164,7 @@ $Enumeration* VariableHeightLayoutCache$TreeStateNode::children() {
 }
 
 bool VariableHeightLayoutCache$TreeStateNode::isLeaf() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($(this->this$0->getModel()))->isLeaf($(this->getValue()));
 }
 
@@ -255,6 +258,7 @@ bool VariableHeightLayoutCache$TreeStateNode::isVisible() {
 }
 
 int32_t VariableHeightLayoutCache$TreeStateNode::getModelChildCount() {
+	$useLocalCurrentObjectStackCache();
 	if (this->hasBeenExpanded$) {
 		return $DefaultMutableTreeNode::getChildCount();
 	}
@@ -262,6 +266,7 @@ int32_t VariableHeightLayoutCache$TreeStateNode::getModelChildCount() {
 }
 
 int32_t VariableHeightLayoutCache$TreeStateNode::getVisibleChildCount() {
+	$useLocalCurrentObjectStackCache();
 	int32_t childCount = 0;
 	if (isExpanded()) {
 		int32_t maxCounter = getChildCount();
@@ -305,6 +310,7 @@ $TreePath* VariableHeightLayoutCache$TreeStateNode::getTreePath() {
 }
 
 void VariableHeightLayoutCache$TreeStateNode::resetChildrenPaths($TreePath* parentPath) {
+	$useLocalCurrentObjectStackCache();
 	this->this$0->removeMapping(this);
 	if (parentPath == nullptr) {
 		$set(this, path, $new($TreePath, $(getUserObject())));
@@ -330,6 +336,7 @@ void VariableHeightLayoutCache$TreeStateNode::updatePreferredSize() {
 }
 
 void VariableHeightLayoutCache$TreeStateNode::updatePreferredSize(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, var$0, this->getUserObject());
 	int32_t var$1 = index;
 	int32_t var$2 = getLevel();
@@ -354,6 +361,7 @@ void VariableHeightLayoutCache$TreeStateNode::markSizeInvalid() {
 }
 
 void VariableHeightLayoutCache$TreeStateNode::deepMarkSizeInvalid() {
+	$useLocalCurrentObjectStackCache();
 	markSizeInvalid();
 	for (int32_t counter = getChildCount() - 1; counter >= 0; --counter) {
 		$nc(($cast(VariableHeightLayoutCache$TreeStateNode, $(getChildAt(counter)))))->deepMarkSizeInvalid();
@@ -361,6 +369,7 @@ void VariableHeightLayoutCache$TreeStateNode::deepMarkSizeInvalid() {
 }
 
 $Enumeration* VariableHeightLayoutCache$TreeStateNode::getLoadedChildren(bool createIfNeeded) {
+	$useLocalCurrentObjectStackCache();
 	if (!createIfNeeded || this->hasBeenExpanded$) {
 		return $DefaultMutableTreeNode::children();
 	}
@@ -399,6 +408,7 @@ void VariableHeightLayoutCache$TreeStateNode::expandParentAndReceiver() {
 }
 
 void VariableHeightLayoutCache$TreeStateNode::expand(bool adjustTree) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = !isExpanded();
 	if (var$0 && !isLeaf()) {
 		bool isFixed = this->this$0->isFixedRowHeight();
@@ -469,6 +479,7 @@ void VariableHeightLayoutCache$TreeStateNode::expand(bool adjustTree) {
 }
 
 void VariableHeightLayoutCache$TreeStateNode::collapse(bool adjustTree) {
+	$useLocalCurrentObjectStackCache();
 	if (isExpanded()) {
 		$var($Enumeration, cursor, preorderEnumeration());
 		$nc(cursor)->nextElement();
@@ -531,6 +542,7 @@ void VariableHeightLayoutCache$TreeStateNode::collapse(bool adjustTree) {
 }
 
 void VariableHeightLayoutCache$TreeStateNode::removeFromMapping() {
+	$useLocalCurrentObjectStackCache();
 	if (this->path != nullptr) {
 		this->this$0->removeMapping(this);
 		for (int32_t counter = getChildCount() - 1; counter >= 0; --counter) {

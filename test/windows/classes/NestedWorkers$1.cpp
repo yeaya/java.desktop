@@ -69,6 +69,7 @@ void NestedWorkers$1::init$() {
 }
 
 void NestedWorkers$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($SwingWorker, sw, $new($NestedWorkers, 0));
 	sw->execute();
 	try {

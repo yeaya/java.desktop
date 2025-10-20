@@ -132,6 +132,7 @@ $Rectangle* GlyphVector::getPixelBounds($FontRenderContext* renderFRC, float x, 
 }
 
 $Shape* GlyphVector::getGlyphOutline(int32_t glyphIndex, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($Shape, s, getGlyphOutline(glyphIndex));
 	$var($AffineTransform, at, $AffineTransform::getTranslateInstance(x, y));
 	return $nc(at)->createTransformedShape(s);
@@ -142,6 +143,7 @@ int32_t GlyphVector::getLayoutFlags() {
 }
 
 $Rectangle* GlyphVector::getGlyphPixelBounds(int32_t index, $FontRenderContext* renderFRC, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, rect, $nc($(getGlyphVisualBounds(index)))->getBounds2D());
 	int32_t l = $cast(int32_t, $Math::floor($nc(rect)->getX() + x));
 	int32_t t = $cast(int32_t, $Math::floor($nc(rect)->getY() + y));

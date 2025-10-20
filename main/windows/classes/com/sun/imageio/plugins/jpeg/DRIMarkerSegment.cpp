@@ -84,6 +84,7 @@ void DRIMarkerSegment::init$($Node* node) {
 }
 
 $IIOMetadataNode* DRIMarkerSegment::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "dri"_s));
 	node->setAttribute("interval"_s, $($Integer::toString(this->restartInterval)));
 	return node;
@@ -97,6 +98,7 @@ void DRIMarkerSegment::write($ImageOutputStream* ios) {
 }
 
 void DRIMarkerSegment::print() {
+	$useLocalCurrentObjectStackCache();
 	printTag("DRI"_s);
 	$init($System);
 	$nc($System::out)->println($$str({"Interval: "_s, $($Integer::toString(this->restartInterval))}));

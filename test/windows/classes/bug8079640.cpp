@@ -117,6 +117,7 @@ void bug8079640::init$() {
 }
 
 void bug8079640::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -140,6 +141,7 @@ void bug8079640::test() {
 }
 
 void bug8079640::setup($JFrame* frame) {
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, panel, $new($JPanel));
 	$var($JComponent, comp1, $new($JLabel, "Test Label 1"_s));
 	comp1->setMinimumSize($$new($Dimension, 1000, 0x00009C40));

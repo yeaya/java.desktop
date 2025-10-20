@@ -119,6 +119,7 @@ $Stroke* Underline$StandardUnderline::getStroke(float thickness) {
 }
 
 void Underline$StandardUnderline::drawUnderline($Graphics2D* g2d, float thickness, float x1, float x2, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($Stroke, saveStroke, $nc(g2d)->getStroke());
 	g2d->setStroke($(getStroke(thickness)));
 	g2d->draw($$new($Line2D$Float, x1, y + this->shift, x2, y + this->shift));
@@ -130,6 +131,7 @@ float Underline$StandardUnderline::getLowerDrawLimit(float thickness) {
 }
 
 $Shape* Underline$StandardUnderline::getUnderlineShape(float thickness, float x1, float x2, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($Stroke, ulStroke, getStroke(thickness));
 	$var($Line2D, line, $new($Line2D$Float, x1, y + this->shift, x2, y + this->shift));
 	return $nc(ulStroke)->createStrokedShape(line);

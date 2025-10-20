@@ -78,6 +78,7 @@ void JFileChooser$WeakPCL::init$($JFileChooser* jfc) {
 }
 
 void JFileChooser$WeakPCL::propertyChange($PropertyChangeEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	if (!JFileChooser$WeakPCL::$assertionsDisabled && !$nc($($nc(ev)->getPropertyName()))->equals("awt.file.showHiddenFiles"_s)) {
 		$throwNew($AssertionError);
 	}

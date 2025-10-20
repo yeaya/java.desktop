@@ -108,6 +108,7 @@ $TableStringConverter* TableRowSorter::getStringConverter() {
 }
 
 $Comparator* TableRowSorter::getComparator(int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($Comparator, comparator, $DefaultRowSorter::getComparator(column));
 	if (comparator != nullptr) {
 		return comparator;
@@ -125,6 +126,7 @@ $Comparator* TableRowSorter::getComparator(int32_t column) {
 }
 
 bool TableRowSorter::useToString(int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($Comparator, comparator, $DefaultRowSorter::getComparator(column));
 	if (comparator != nullptr) {
 		return false;

@@ -166,6 +166,7 @@ void Type1Font::init$($String* platname, Object$* nativeNames) {
 }
 
 void Type1Font::init$($String* platname, Object$* nativeNames, bool createdCopy) {
+	$useLocalCurrentObjectStackCache();
 	$FileFont::init$(platname, nativeNames);
 	$set(this, bufferRef, $new($WeakReference, nullptr));
 	$set(this, psName, nullptr);
@@ -189,6 +190,7 @@ void Type1Font::init$($String* platname, Object$* nativeNames, bool createdCopy)
 
 $ByteBuffer* Type1Font::getBuffer() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$beforeCallerSensitive();
 		$var($ByteBuffer, bbuf, $cast($ByteBuffer, $nc(this->bufferRef)->get()));
 		if (bbuf == nullptr) {
@@ -221,6 +223,7 @@ void Type1Font::close() {
 }
 
 void Type1Font::readFile($ByteBuffer* buffer) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($RandomAccessFile, raf, nullptr);
 	$var($FileChannel, fc, nullptr);
@@ -274,6 +277,7 @@ void Type1Font::readFile($ByteBuffer* buffer) {
 
 $ByteBuffer* Type1Font::readBlock(int32_t offset, int32_t length) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($ByteBuffer, bbuf, nullptr);
 		try {
 			$assign(bbuf, getBuffer());
@@ -328,6 +332,7 @@ void Type1Font::verifyPFA($ByteBuffer* bb) {
 }
 
 void Type1Font::verifyPFB($ByteBuffer* bb) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pos = 0;
 	while (true) {
 		try {
@@ -357,6 +362,7 @@ void Type1Font::verifyPFB($ByteBuffer* bb) {
 }
 
 void Type1Font::initNames($ByteBuffer* bb) {
+	$useLocalCurrentObjectStackCache();
 	bool eof = false;
 	$var($String, fontType, nullptr);
 	try {
@@ -424,6 +430,7 @@ void Type1Font::initNames($ByteBuffer* bb) {
 }
 
 $String* Type1Font::fullName2FamilyName($String* name) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, res, nullptr);
 	$var($String, token, nullptr);
 	int32_t len = 0;
@@ -455,6 +462,7 @@ bool Type1Font::isStyleToken($String* token) {
 }
 
 $String* Type1Font::psName2FullName($String* name) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, res, nullptr);
 	int32_t pos = 0;
 	pos = $nc(name)->indexOf((int32_t)u'-');
@@ -486,6 +494,7 @@ int32_t Type1Font::nextCapitalLetter($String* s, int32_t off) {
 }
 
 $String* Type1Font::expandName($String* s, bool tryExpandAbbreviations) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, res, $new($StringBuilder, $nc(s)->length() + 10));
 	int32_t start = 0;
 	int32_t end = 0;
@@ -545,6 +554,7 @@ int32_t Type1Font::nextTokenType($ByteBuffer* bb) {
 }
 
 $String* Type1Font::getSimpleToken($ByteBuffer* bb) {
+	$useLocalCurrentObjectStackCache();
 	while ($nc(bb)->get() <= u' ') {
 	}
 	int32_t pos1 = $nc(bb)->position() - 1;
@@ -564,6 +574,7 @@ $String* Type1Font::getSimpleToken($ByteBuffer* bb) {
 }
 
 $String* Type1Font::getString($ByteBuffer* bb) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pos1 = $nc(bb)->position();
 	while (bb->get() != u')') {
 	}
@@ -601,6 +612,7 @@ $CharToGlyphMapper* Type1Font::getMapper() {
 }
 
 int32_t Type1Font::getNumGlyphs() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getNumGlyphs();
 	} catch ($FontScalerException&) {
@@ -612,6 +624,7 @@ int32_t Type1Font::getNumGlyphs() {
 }
 
 int32_t Type1Font::getMissingGlyphCode() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getMissingGlyphCode();
 	} catch ($FontScalerException&) {
@@ -623,6 +636,7 @@ int32_t Type1Font::getMissingGlyphCode() {
 }
 
 int32_t Type1Font::getGlyphCode(char16_t charCode) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getGlyphCode(charCode);
 	} catch ($FontScalerException&) {
@@ -634,10 +648,12 @@ int32_t Type1Font::getGlyphCode(char16_t charCode) {
 }
 
 $String* Type1Font::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"** Type1 Font: Family="_s, this->familyName, " Name="_s, this->fullName, " style="_s, $$str(this->style), " fileName="_s, $(getPublicFileName())});
 }
 
 void clinit$Type1Font($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$assignStatic(Type1Font::styleAbbreviationsMapping, $new($HashMap));
 		$assignStatic(Type1Font::styleNameTokes, $new($HashSet));

@@ -227,6 +227,7 @@ void JTable$AccessibleJTable::finalize() {
 }
 
 void JTable$AccessibleJTable::init$($JTable* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JComponent$AccessibleJComponent::init$(this$0);
 	this$0->putClientProperty("JTable.forceAutoStartsEdit"_s, $($Boolean::valueOf(true)));
@@ -241,6 +242,7 @@ void JTable$AccessibleJTable::init$($JTable* this$0) {
 }
 
 void JTable$AccessibleJTable::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(e)->getPropertyName());
 	$var($Object, oldValue, e->getOldValue());
 	$var($Object, newValue, e->getNewValue());
@@ -358,6 +360,7 @@ void JTable$AccessibleJTable::columnRemoved($TableColumnModelEvent* e) {
 }
 
 void JTable$AccessibleJTable::columnMoved($TableColumnModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($AccessibleContext);
 	firePropertyChange($AccessibleContext::ACCESSIBLE_VISIBLE_DATA_PROPERTY, nullptr, nullptr);
 	int32_t type = $AccessibleTableModelChange::DELETE;
@@ -389,6 +392,7 @@ void JTable$AccessibleJTable::editingCanceled($ChangeEvent* e) {
 }
 
 void JTable$AccessibleJTable::valueChanged($ListSelectionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($AccessibleContext);
 	$var($String, var$0, $AccessibleContext::ACCESSIBLE_SELECTION_PROPERTY);
 	$var($Object, var$1, $of($Boolean::valueOf(false)));
@@ -472,6 +476,7 @@ int32_t JTable$AccessibleJTable::getAccessibleSelectionCount() {
 }
 
 $Accessible* JTable$AccessibleJTable::getAccessibleSelection(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (i < 0 || i > getAccessibleSelectionCount()) {
 		return nullptr;
 	}

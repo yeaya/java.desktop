@@ -182,6 +182,7 @@ $ComponentUI* SynthScrollPaneUI::createUI($JComponent* x) {
 }
 
 void SynthScrollPaneUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -197,6 +198,7 @@ void SynthScrollPaneUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void SynthScrollPaneUI::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Border, vpBorder, $nc(this->scrollpane)->getViewportBorder());
 	if (vpBorder != nullptr) {
 		$var($Rectangle, r, $nc(this->scrollpane)->getViewportBorderBounds());
@@ -213,6 +215,7 @@ void SynthScrollPaneUI::installDefaults($JScrollPane* scrollpane) {
 }
 
 void SynthScrollPaneUI::updateStyle($JScrollPane* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -229,6 +232,7 @@ void SynthScrollPaneUI::updateStyle($JScrollPane* c) {
 }
 
 void SynthScrollPaneUI::installListeners($JScrollPane* c) {
+	$useLocalCurrentObjectStackCache();
 	$BasicScrollPaneUI::installListeners(c);
 	$nc(c)->addPropertyChangeListener(this);
 	if ($UIManager::getBoolean("ScrollPane.useChildTextComponentFocus"_s)) {
@@ -242,6 +246,7 @@ void SynthScrollPaneUI::installListeners($JScrollPane* c) {
 }
 
 void SynthScrollPaneUI::uninstallDefaults($JScrollPane* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c, $SynthConstants::ENABLED));
 	$nc(this->style)->uninstallDefaults(context);
 	if ($instanceOf($UIResource, $($nc(this->scrollpane)->getViewportBorder()))) {
@@ -250,6 +255,7 @@ void SynthScrollPaneUI::uninstallDefaults($JScrollPane* c) {
 }
 
 void SynthScrollPaneUI::uninstallListeners($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$BasicScrollPaneUI::uninstallListeners(c);
 	$nc(c)->removePropertyChangeListener(this);
 	if (this->viewportViewFocusHandler != nullptr) {

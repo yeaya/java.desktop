@@ -114,6 +114,7 @@ void HeadlessJToolBar_Separator::init$() {
 }
 
 void HeadlessJToolBar_Separator::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JToolBar$Separator, s, $new($JToolBar$Separator));
 	s->getAccessibleContext();
 	s->isFocusTraversable();

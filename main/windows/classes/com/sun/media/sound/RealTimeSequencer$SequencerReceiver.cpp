@@ -89,6 +89,7 @@ void RealTimeSequencer$SequencerReceiver::init$($RealTimeSequencer* this$0) {
 }
 
 void RealTimeSequencer$SequencerReceiver::implSend($MidiMessage* message$renamed, int64_t timeStamp) {
+	$useLocalCurrentObjectStackCache();
 	$var($MidiMessage, message, message$renamed);
 	if (this->this$0->recording) {
 		int64_t tickPos = 0;

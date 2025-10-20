@@ -70,6 +70,7 @@ void PNGImageDataEnumeration::init$($ImageInputStream* stream) {
 }
 
 $Object* PNGImageDataEnumeration::nextElement() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		this->firstTime = false;
 		$var($ImageInputStream, iis, $new($SubImageInputStream, this->stream, this->length));

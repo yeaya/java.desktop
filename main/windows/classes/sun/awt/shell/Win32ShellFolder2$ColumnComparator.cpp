@@ -77,6 +77,7 @@ void Win32ShellFolder2$ColumnComparator::init$($Win32ShellFolder2* shellFolder, 
 }
 
 int32_t Win32ShellFolder2$ColumnComparator::compare($File* o, $File* o1) {
+	$useLocalCurrentObjectStackCache();
 	$var($Integer, result, $cast($Integer, $ShellFolder::invoke($$new($Win32ShellFolder2$ColumnComparator$1, this, o, o1))));
 	return result == nullptr ? 0 : $nc(result)->intValue();
 }

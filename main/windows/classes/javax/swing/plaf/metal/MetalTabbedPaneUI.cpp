@@ -204,6 +204,7 @@ void MetalTabbedPaneUI::paintTabBorder($Graphics* g, int32_t tabPlacement, int32
 }
 
 void MetalTabbedPaneUI::paintTopTabBorder(int32_t tabIndex, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t btm, int32_t rght, bool isSelected) {
+	$useLocalCurrentObjectStackCache();
 	int32_t currentRun = getRunForTab($nc(this->tabPane)->getTabCount(), tabIndex);
 	int32_t lastIndex = lastTabInRun($nc(this->tabPane)->getTabCount(), currentRun);
 	int32_t firstIndex = $nc(this->tabRuns)->get(currentRun);
@@ -297,6 +298,7 @@ void MetalTabbedPaneUI::paintTopTabBorder(int32_t tabIndex, $Graphics* g, int32_
 }
 
 bool MetalTabbedPaneUI::shouldFillGap(int32_t currentRun, int32_t tabIndex, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	bool result = false;
 	if (!this->tabsOpaque) {
 		return false;
@@ -323,6 +325,7 @@ bool MetalTabbedPaneUI::shouldFillGap(int32_t currentRun, int32_t tabIndex, int3
 }
 
 $Color* MetalTabbedPaneUI::getColorForGap(int32_t currentRun, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	int32_t shadowWidth = 4;
 	int32_t selectedIndex = $nc(this->tabPane)->getSelectedIndex();
 	int32_t startIndex = $nc(this->tabRuns)->get(currentRun + 1);
@@ -344,6 +347,7 @@ $Color* MetalTabbedPaneUI::getColorForGap(int32_t currentRun, int32_t x, int32_t
 }
 
 void MetalTabbedPaneUI::paintLeftTabBorder(int32_t tabIndex, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t btm, int32_t rght, bool isSelected) {
+	$useLocalCurrentObjectStackCache();
 	int32_t tabCount = $nc(this->tabPane)->getTabCount();
 	int32_t currentRun = getRunForTab(tabCount, tabIndex);
 	int32_t lastIndex = lastTabInRun(tabCount, currentRun);
@@ -411,6 +415,7 @@ void MetalTabbedPaneUI::paintLeftTabBorder(int32_t tabIndex, $Graphics* g, int32
 }
 
 void MetalTabbedPaneUI::paintBottomTabBorder(int32_t tabIndex, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t btm, int32_t rght, bool isSelected) {
+	$useLocalCurrentObjectStackCache();
 	int32_t tabCount = $nc(this->tabPane)->getTabCount();
 	int32_t currentRun = getRunForTab(tabCount, tabIndex);
 	int32_t lastIndex = lastTabInRun(tabCount, currentRun);
@@ -641,6 +646,7 @@ int32_t MetalTabbedPaneUI::getBaselineOffset() {
 }
 
 void MetalTabbedPaneUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t tabPlacement = $nc(this->tabPane)->getTabPlacement();
 	$var($Insets, insets, $nc(c)->getInsets());
 	$var($Dimension, size, c->getSize());
@@ -769,6 +775,7 @@ void MetalTabbedPaneUI::paintFocusIndicator($Graphics* g, int32_t tabPlacement, 
 }
 
 void MetalTabbedPaneUI::paintContentBorderTopEdge($Graphics* g, int32_t tabPlacement, int32_t selectedIndex, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	bool leftToRight = $MetalUtils::isLeftToRight(this->tabPane);
 	int32_t right = x + w - 1;
 	$var($Rectangle, selRect, selectedIndex < 0 ? ($Rectangle*)nullptr : getTabBounds(selectedIndex, this->calcRect));
@@ -853,6 +860,7 @@ void MetalTabbedPaneUI::paintContentBorderBottomEdge($Graphics* g, int32_t tabPl
 }
 
 void MetalTabbedPaneUI::paintContentBorderLeftEdge($Graphics* g, int32_t tabPlacement, int32_t selectedIndex, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, selRect, selectedIndex < 0 ? ($Rectangle*)nullptr : getTabBounds(selectedIndex, this->calcRect));
 	if (this->ocean) {
 		$nc(g)->setColor(this->oceanSelectedBorderColor);
@@ -900,6 +908,7 @@ void MetalTabbedPaneUI::paintContentBorderRightEdge($Graphics* g, int32_t tabPla
 }
 
 int32_t MetalTabbedPaneUI::calculateMaxTabHeight(int32_t tabPlacement) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, metrics, getFontMetrics());
 	int32_t height = $nc(metrics)->getHeight();
 	bool tallerIcons = false;

@@ -90,6 +90,7 @@ void WListPeer$1::init$($WListPeer* this$0, $List* val$l, int32_t val$index, int
 }
 
 void WListPeer$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->val$l)->select(this->val$index);
 	this->this$0->postEvent($$new($ActionEvent, this->this$0->target, $ActionEvent::ACTION_PERFORMED, $($nc(this->val$l)->getItem(this->val$index)), this->val$when, this->val$modifiers));
 }

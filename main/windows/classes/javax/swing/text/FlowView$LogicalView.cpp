@@ -110,6 +110,7 @@ int32_t FlowView$LogicalView::getViewIndexAtPosition(int32_t pos) {
 }
 
 void FlowView$LogicalView::loadChildren($ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, getElement());
 	if ($nc(elem)->isLeaf()) {
 		$var($View, v, $new($LabelView, elem));
@@ -125,6 +126,7 @@ $AttributeSet* FlowView$LogicalView::getAttributes() {
 }
 
 float FlowView$LogicalView::getPreferredSpan(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	float maxpref = (float)0;
 	float pref = (float)0;
 	int32_t n = getViewCount();
@@ -141,6 +143,7 @@ float FlowView$LogicalView::getPreferredSpan(int32_t axis) {
 }
 
 float FlowView$LogicalView::getMinimumSpan(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	float maxmin = (float)0;
 	float min = (float)0;
 	bool nowrap = false;
@@ -171,6 +174,7 @@ void FlowView$LogicalView::forwardUpdateToView($View* v, $DocumentEvent* e, $Sha
 }
 
 void FlowView$LogicalView::forwardUpdate($DocumentEvent$ElementChange* ec, $DocumentEvent* e, $Shape* a, $ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	$CompositeView::forwardUpdate(ec, e, a, f);
 	$var($DocumentEvent$EventType, type, $nc(e)->getType());
 	$init($DocumentEvent$EventType);

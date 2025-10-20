@@ -142,6 +142,7 @@ void WindowsTableHeaderUI$XPDefaultRenderer::init$($WindowsTableHeaderUI* this$0
 }
 
 $Component* WindowsTableHeaderUI$XPDefaultRenderer::getTableCellRendererComponent($JTable* table, Object$* value, bool isSelected, bool hasFocus, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultTableCellHeaderRenderer::getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 	this->isSelected = isSelected;
 	this->hasFocus$ = hasFocus;
@@ -209,6 +210,7 @@ $Component* WindowsTableHeaderUI$XPDefaultRenderer::getTableCellRendererComponen
 }
 
 void WindowsTableHeaderUI$XPDefaultRenderer::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, getSize());
 	$init($TMSchema$State);
 	$TMSchema$State* state = $TMSchema$State::NORMAL;

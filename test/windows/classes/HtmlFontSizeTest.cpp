@@ -131,6 +131,7 @@ void HtmlFontSizeTest::init$() {
 }
 
 $Dimension* HtmlFontSizeTest::test(bool w3ccheck) {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, htmlPane, $new($JEditorPane));
 	htmlPane->setEditable(false);
 	if (w3ccheck) {
@@ -147,6 +148,7 @@ $Dimension* HtmlFontSizeTest::test(bool w3ccheck) {
 }
 
 void HtmlFontSizeTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(HtmlFontSizeTest$$Lambda$lambda$main$0)));
 	$init($System);
 	$init(HtmlFontSizeTest);

@@ -151,6 +151,7 @@ void ServiceDialog$QualityPanel::finalize() {
 }
 
 void ServiceDialog$QualityPanel::init$($ServiceDialog* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JPanel::init$();
 	$set(this, strTitle, $ServiceDialog::getMsg("border.quality"_s));
@@ -189,6 +190,7 @@ void ServiceDialog$QualityPanel::actionPerformed($ActionEvent* e) {
 }
 
 void ServiceDialog$QualityPanel::updateInfo() {
+	$useLocalCurrentObjectStackCache();
 	$load($PrintQuality);
 	$Class* pqCategory = $PrintQuality::class$;
 	bool draftSupported = false;

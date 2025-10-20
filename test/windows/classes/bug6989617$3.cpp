@@ -73,6 +73,7 @@ void bug6989617$3::init$() {
 }
 
 void bug6989617$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6989617);
 	$var($Rectangle, pr, $nc($bug6989617::panel)->getPaintRectangle());
 	if (!$nc($($nc(pr)->getSize()))->equals($($nc($bug6989617::button)->getSize()))) {

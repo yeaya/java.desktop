@@ -315,6 +315,7 @@ $AccessibleText* ProgressMonitor$AccessibleProgressMonitor::getNoteLabelAccessib
 }
 
 int32_t ProgressMonitor$AccessibleProgressMonitor::getIndexAtPoint($Point* p) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleText, at, getNoteLabelAccessibleText());
 	if (at != nullptr && sameWindowAncestor(this->this$0->pane, this->this$0->noteLabel)) {
 		$var($Point, noteLabelPoint, $SwingUtilities::convertPoint(this->this$0->pane, p, this->this$0->noteLabel));
@@ -326,6 +327,7 @@ int32_t ProgressMonitor$AccessibleProgressMonitor::getIndexAtPoint($Point* p) {
 }
 
 $Rectangle* ProgressMonitor$AccessibleProgressMonitor::getCharacterBounds(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleText, at, getNoteLabelAccessibleText());
 	if (at != nullptr && sameWindowAncestor(this->this$0->pane, this->this$0->noteLabel)) {
 		$var($Rectangle, noteLabelRect, at->getCharacterBounds(i));

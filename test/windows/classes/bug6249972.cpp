@@ -221,6 +221,7 @@ $Robot* bug6249972::robot = nullptr;
 
 void bug6249972::main($StringArray* args) {
 	$init(bug6249972);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -281,6 +282,7 @@ void bug6249972::lambda$test$2() {
 }
 
 void bug6249972::lambda$new$1() {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug6249972::frame, $new($JFrame, "bug6249972"_s));
 	$nc(bug6249972::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$var($JMenuBar, bar, $new($JMenuBar));

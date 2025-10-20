@@ -427,6 +427,7 @@ bool ProxyGraphics2D::needToCopyBgColorImage($Image* img) {
 }
 
 $BufferedImage* ProxyGraphics2D::getBufferedImageCopy($Image* img, $Color* bgcolor) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, imageCopy, nullptr);
 	int32_t width = $nc(img)->getWidth(nullptr);
 	int32_t height = img->getHeight(nullptr);
@@ -453,6 +454,7 @@ void ProxyGraphics2D::drawRenderedImage($RenderedImage* img, $AffineTransform* x
 }
 
 void ProxyGraphics2D::drawRenderableImage($RenderableImage* img, $AffineTransform* xform) {
+	$useLocalCurrentObjectStackCache();
 	if (img == nullptr) {
 		return;
 	}

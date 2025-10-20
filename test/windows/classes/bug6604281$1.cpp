@@ -96,6 +96,7 @@ void bug6604281$1::init$() {
 }
 
 void bug6604281$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthLookAndFeel, laf, $new($SynthLookAndFeel));
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>(laf));

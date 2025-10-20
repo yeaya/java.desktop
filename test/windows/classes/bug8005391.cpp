@@ -73,6 +73,7 @@ void bug8005391::init$() {
 
 void bug8005391::main($StringArray* args) {
 	$init(bug8005391);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	int32_t N = 10;
 	for (int32_t i = 0; i < N; ++i) {

@@ -43,6 +43,7 @@ void serviceui_zh_TW::init$() {
 }
 
 $ObjectArray2* serviceui_zh_TW::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("Automatic-Feeder"_s),

@@ -47,6 +47,7 @@ void basic_pt_BR::init$() {
 }
 
 $ObjectArray2* basic_pt_BR::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("AbstractButton.click.textAndMnemonic"_s),

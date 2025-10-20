@@ -114,6 +114,7 @@ void HeadlessJButton::init$() {
 }
 
 void HeadlessJButton::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JButton, b, $new($JButton));
 	$assign(b, $new($JButton, "Press me"_s));
 	b->getAccessibleContext();

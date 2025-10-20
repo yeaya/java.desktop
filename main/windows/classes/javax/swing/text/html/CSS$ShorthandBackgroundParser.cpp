@@ -75,6 +75,7 @@ void CSS$ShorthandBackgroundParser::init$() {
 }
 
 void CSS$ShorthandBackgroundParser::parseShorthandBackground($CSS* css, $String* value, $MutableAttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringArray, strings, $CSS::parseStrings(value));
 	int32_t count = $nc(strings)->length;
 	int32_t index = 0;

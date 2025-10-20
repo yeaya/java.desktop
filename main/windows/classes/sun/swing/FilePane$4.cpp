@@ -84,6 +84,7 @@ void FilePane$4::init$($FilePane* this$0, $JFileChooser* val$fileChooser) {
 }
 
 int32_t FilePane$4::getNextMatch($String* prefix, int32_t startIndex, $Position$Bias* bias) {
+	$useLocalCurrentObjectStackCache();
 	$var($ListModel, model, getModel());
 	int32_t max = $nc(model)->getSize();
 	if (prefix == nullptr || startIndex < 0 || startIndex >= max) {

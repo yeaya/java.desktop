@@ -78,6 +78,7 @@ void IIORegistry$1::init$($IIORegistry* this$0) {
 }
 
 $Object* IIORegistry$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Iterator, categories, this->this$0->getCategories());
 	while ($nc(categories)->hasNext()) {

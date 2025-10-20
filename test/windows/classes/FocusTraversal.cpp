@@ -137,6 +137,7 @@ void FocusTraversal::init$() {
 }
 
 void FocusTraversal::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(FocusTraversal);
 	$assignStatic(FocusTraversal::robot, $new($Robot));
 	$nc(FocusTraversal::robot)->setAutoDelay(100);
@@ -197,6 +198,7 @@ void FocusTraversal::isFocusOwner($Component* queriedFocusOwner, $String* direct
 }
 
 bool FocusTraversal::tryLookAndFeel($String* lookAndFeelString) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(lookAndFeelString);
 	} catch ($UnsupportedLookAndFeelException&) {

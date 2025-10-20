@@ -183,6 +183,7 @@ void PopupReferenceMemoryLeak::init$() {
 }
 
 void PopupReferenceMemoryLeak::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(200);
 	{
@@ -300,6 +301,7 @@ void PopupReferenceMemoryLeak::main($StringArray* args) {
 }
 
 void PopupReferenceMemoryLeak::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 	} catch ($UnsupportedLookAndFeelException&) {
@@ -313,6 +315,7 @@ void PopupReferenceMemoryLeak::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 }
 
 void PopupReferenceMemoryLeak::createUI() {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(PopupReferenceMemoryLeak::frame1, $new($JFrame, "Main test window"_s));
 	$var($JMenuBar, menuBar1, $new($JMenuBar));
 	$var($JMenu, file1, $new($JMenu, "File"_s));

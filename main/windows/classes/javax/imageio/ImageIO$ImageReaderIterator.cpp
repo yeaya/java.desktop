@@ -81,6 +81,7 @@ bool ImageIO$ImageReaderIterator::hasNext() {
 }
 
 $Object* ImageIO$ImageReaderIterator::next() {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageReaderSpi, spi, nullptr);
 	try {
 		$assign(spi, $cast($ImageReaderSpi, $nc(this->iter)->next()));

@@ -73,6 +73,7 @@ void bug5043626$2::init$($StringArray* val$result) {
 }
 
 void bug5043626$2::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($bug5043626);
 		$nc(this->val$result)->set(0, $($nc($($nc($bug5043626::doc)->getText(0, $nc($bug5043626::doc)->getLength())))->trim()));

@@ -41,6 +41,7 @@ void HeadlessJFrame::init$() {
 }
 
 void HeadlessJFrame::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	bool exceptions = false;
 	try {
 		$var($JFrame, b, $new($JFrame));

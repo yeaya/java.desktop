@@ -225,6 +225,7 @@ void Stroker::init$($RendererContext* rdrCtx) {
 }
 
 Stroker* Stroker::init($DPathConsumer2D* pc2d, double lineWidth, int32_t capStyle, int32_t joinStyle, double miterLimit, bool subdivideCurves) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, out, pc2d);
 	this->lineWidth2 = lineWidth / 2.0;
 	this->invHalfLineWidth2Sq = 1.0 / (2.0 * this->lineWidth2 * this->lineWidth2);
@@ -843,6 +844,7 @@ void Stroker::curveTo(double x1, double y1, double x2, double y2, double x3, dou
 }
 
 void Stroker::_curveTo(double x1, double y1, double x2, double y2, double x3, double y3, int32_t outcode0) {
+	$useLocalCurrentObjectStackCache();
 	double dxs = x1 - this->cx0;
 	double dys = y1 - this->cy0;
 	double dxf = x3 - x2;
@@ -968,6 +970,7 @@ void Stroker::quadTo(double x1, double y1, double x2, double y2) {
 }
 
 void Stroker::_quadTo(double x1, double y1, double x2, double y2, int32_t outcode0) {
+	$useLocalCurrentObjectStackCache();
 	double dxs = x1 - this->cx0;
 	double dys = y1 - this->cy0;
 	double dxf = x2 - x1;

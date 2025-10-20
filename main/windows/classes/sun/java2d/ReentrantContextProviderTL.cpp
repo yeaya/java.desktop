@@ -84,6 +84,7 @@ void ReentrantContextProviderTL::init$(int32_t refTypeTL, int32_t refTypeCLQ) {
 }
 
 $ReentrantContext* ReentrantContextProviderTL::acquire() {
+	$useLocalCurrentObjectStackCache();
 	$var($ReentrantContext, ctx, nullptr);
 	$var($Reference, ref, $cast($Reference, $nc(this->ctxTL)->get()));
 	if (ref != nullptr) {

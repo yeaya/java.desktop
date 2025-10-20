@@ -91,6 +91,7 @@ $ComponentUI* WindowsPopupMenuSeparatorUI::createUI($JComponent* c) {
 }
 
 void WindowsPopupMenuSeparatorUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, s, $nc(c)->getSize());
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if ($WindowsMenuItemUI::isVistaPainting(xp)) {
@@ -121,6 +122,7 @@ void WindowsPopupMenuSeparatorUI::paint($Graphics* g, $JComponent* c) {
 }
 
 $Dimension* WindowsPopupMenuSeparatorUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t fontHeight = 0;
 	$var($Font, font, $nc(c)->getFont());
 	if (font != nullptr) {

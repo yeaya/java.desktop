@@ -453,6 +453,7 @@ KeyboardFocusManager* KeyboardFocusManager::getCurrentKeyboardFocusManager($AppC
 
 void KeyboardFocusManager::setCurrentKeyboardFocusManager(KeyboardFocusManager* newManager) {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	checkReplaceKFMPermission();
 	$var(KeyboardFocusManager, oldManager, nullptr);
 	$synchronized(KeyboardFocusManager::class$) {
@@ -494,6 +495,7 @@ $SequencedEvent* KeyboardFocusManager::getCurrentSequencedEvent() {
 
 $Set* KeyboardFocusManager::initFocusTraversalKeysSet($String* value, $Set* targetSet) {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$var($StringTokenizer, tokens, $new($StringTokenizer, value, ","_s));
 	while (tokens->hasMoreTokens()) {
 		$nc(targetSet)->add($($AWTKeyStroke::getAWTKeyStroke($(tokens->nextToken()))));
@@ -502,6 +504,7 @@ $Set* KeyboardFocusManager::initFocusTraversalKeysSet($String* value, $Set* targ
 }
 
 void KeyboardFocusManager::init$() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, defaultPolicy, $new($DefaultFocusTraversalPolicy));
 	$set(this, defaultFocusTraversalKeys, $new($SetArray, 4));
 	$set(this, currentSequencedEvent, nullptr);
@@ -528,6 +531,7 @@ void KeyboardFocusManager::init$() {
 }
 
 void KeyboardFocusManager::initPeer() {
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, tk, $Toolkit::getDefaultToolkit());
 	$var($KeyboardFocusManagerPeerProvider, peerProvider, $cast($KeyboardFocusManagerPeerProvider, tk));
 	$set(this, peer, $nc(peerProvider)->getKeyboardFocusManagerPeer());
@@ -550,6 +554,7 @@ $Component* KeyboardFocusManager::getGlobalFocusOwner() {
 }
 
 void KeyboardFocusManager::setGlobalFocusOwner($Component* focusOwner) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, oldFocusOwner, nullptr);
 	bool shouldFire = false;
 	if (focusOwner == nullptr || $nc(focusOwner)->isFocusable()) {
@@ -614,6 +619,7 @@ $Component* KeyboardFocusManager::getNativeFocusOwner() {
 }
 
 void KeyboardFocusManager::setNativeFocusOwner($Component* comp) {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(KeyboardFocusManager::focusLog)->isLoggable($PlatformLogger$Level::FINEST)) {
 		$nc(KeyboardFocusManager::focusLog)->finest("Calling peer {0} setCurrentFocusOwner for {1}"_s, $$new($ObjectArray, {
@@ -645,6 +651,7 @@ $Component* KeyboardFocusManager::getGlobalPermanentFocusOwner() {
 }
 
 void KeyboardFocusManager::setGlobalPermanentFocusOwner($Component* permanentFocusOwner) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, oldPermanentFocusOwner, nullptr);
 	bool shouldFire = false;
 	if (permanentFocusOwner == nullptr || $nc(permanentFocusOwner)->isFocusable()) {
@@ -684,6 +691,7 @@ $Window* KeyboardFocusManager::getGlobalFocusedWindow() {
 }
 
 void KeyboardFocusManager::setGlobalFocusedWindow($Window* focusedWindow) {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, oldFocusedWindow, nullptr);
 	bool shouldFire = false;
 	if (focusedWindow == nullptr || $nc(focusedWindow)->isFocusableWindow()) {
@@ -722,6 +730,7 @@ $Window* KeyboardFocusManager::getGlobalActiveWindow() {
 }
 
 void KeyboardFocusManager::setGlobalActiveWindow($Window* activeWindow) {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, oldActiveWindow, nullptr);
 	$synchronized(KeyboardFocusManager::class$) {
 		checkKFMSecurity();
@@ -760,6 +769,7 @@ void KeyboardFocusManager::setDefaultFocusTraversalPolicy($FocusTraversalPolicy*
 }
 
 void KeyboardFocusManager::setDefaultFocusTraversalKeys(int32_t id, $Set* keystrokes) {
+	$useLocalCurrentObjectStackCache();
 	if (id < 0 || id >= KeyboardFocusManager::TRAVERSAL_KEY_LENGTH) {
 		$throwNew($IllegalArgumentException, "invalid focus traversal key identifier"_s);
 	}
@@ -1051,6 +1061,7 @@ void KeyboardFocusManager::setMostRecentFocusOwner($Window* window, $Component* 
 
 void KeyboardFocusManager::clearMostRecentFocusOwner($Component* comp) {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$var($Container, window, nullptr);
 	if (comp == nullptr) {
 		return;
@@ -1118,6 +1129,7 @@ void KeyboardFocusManager::downFocusCycle() {
 }
 
 void KeyboardFocusManager::dumpRequests() {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::err)->println($$str({">>> Requests dump, time: "_s, $$str($System::currentTimeMillis())}));
 	$synchronized(KeyboardFocusManager::heavyweightRequests) {
@@ -1136,6 +1148,7 @@ void KeyboardFocusManager::dumpRequests() {
 
 bool KeyboardFocusManager::processSynchronousLightweightTransfer($Component* heavyweight, $Component* descendant$renamed, bool temporary, bool focusedWindowChangeAllowed, int64_t time) {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, descendant, descendant$renamed);
 	$var($Window, parentWindow, $SunToolkit::getContainingWindow(heavyweight));
 	if (parentWindow == nullptr || !$nc(parentWindow)->syncLWRequests) {
@@ -1203,6 +1216,7 @@ bool KeyboardFocusManager::processSynchronousLightweightTransfer($Component* hea
 
 int32_t KeyboardFocusManager::shouldNativelyFocusHeavyweight($Component* heavyweight, $Component* descendant$renamed, bool temporary, bool focusedWindowChangeAllowed, int64_t time, $FocusEvent$Cause* cause) {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, descendant, descendant$renamed);
 	$init($PlatformLogger$Level);
 	if ($nc(KeyboardFocusManager::log)->isLoggable($PlatformLogger$Level::FINE)) {
@@ -1291,6 +1305,7 @@ int32_t KeyboardFocusManager::shouldNativelyFocusHeavyweight($Component* heavywe
 
 $Window* KeyboardFocusManager::markClearGlobalFocusOwner() {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, nativeFocusedWindow, $nc($(getCurrentKeyboardFocusManager()))->getNativeFocusedWindow());
 	$synchronized(KeyboardFocusManager::heavyweightRequests) {
 		$var($KeyboardFocusManager$HeavyweightFocusRequest, hwFocusRequest, getLastHWRequest());
@@ -1308,6 +1323,7 @@ $Window* KeyboardFocusManager::markClearGlobalFocusOwner() {
 }
 
 $Component* KeyboardFocusManager::getCurrentWaitingRequest($Component* parent) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(KeyboardFocusManager::heavyweightRequests) {
 		$var($KeyboardFocusManager$HeavyweightFocusRequest, hwFocusRequest, getFirstHWRequest());
 		if (hwFocusRequest != nullptr) {
@@ -1337,6 +1353,7 @@ bool KeyboardFocusManager::isAutoFocusTransferEnabledFor($Component* comp) {
 
 $Throwable* KeyboardFocusManager::dispatchAndCatchException($Throwable* ex, $Component* comp, $FocusEvent* event) {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$var($Throwable, retEx, nullptr);
 	try {
 		$nc(comp)->dispatchEvent(event);
@@ -1363,6 +1380,7 @@ void KeyboardFocusManager::handleException($Throwable* ex) {
 
 void KeyboardFocusManager::processCurrentLightweightRequests() {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$var(KeyboardFocusManager, manager, getCurrentKeyboardFocusManager());
 	$var($LinkedList, localLightweightRequests, nullptr);
 	$var($Component, globalFocusOwner, $nc(manager)->getGlobalFocusOwner());
@@ -1433,6 +1451,7 @@ void KeyboardFocusManager::processCurrentLightweightRequests() {
 
 $FocusEvent* KeyboardFocusManager::retargetUnexpectedFocusEvent($FocusEvent* fe) {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(KeyboardFocusManager::heavyweightRequests) {
 		if (removeFirstRequest()) {
 			return $cast($FocusEvent, retargetFocusEvent(fe));
@@ -1451,6 +1470,7 @@ $FocusEvent* KeyboardFocusManager::retargetUnexpectedFocusEvent($FocusEvent* fe)
 
 $FocusEvent* KeyboardFocusManager::retargetFocusGained($FocusEvent* fe) {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	if (!KeyboardFocusManager::$assertionsDisabled && !($nc(fe)->getID() == $FocusEvent::FOCUS_GAINED)) {
 		$throwNew($AssertionError);
 	}
@@ -1494,6 +1514,7 @@ $FocusEvent* KeyboardFocusManager::retargetFocusGained($FocusEvent* fe) {
 
 $FocusEvent* KeyboardFocusManager::retargetFocusLost($FocusEvent* fe$renamed) {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$var($FocusEvent, fe, fe$renamed);
 	if (!KeyboardFocusManager::$assertionsDisabled && !($nc(fe)->getID() == $FocusEvent::FOCUS_LOST)) {
 		$throwNew($AssertionError);
@@ -1537,6 +1558,7 @@ $FocusEvent* KeyboardFocusManager::retargetFocusLost($FocusEvent* fe$renamed) {
 
 $AWTEvent* KeyboardFocusManager::retargetFocusEvent($AWTEvent* event$renamed) {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$var($AWTEvent, event, event$renamed);
 	if (KeyboardFocusManager::clearingCurrentLightweightRequests) {
 		return event;
@@ -1589,6 +1611,7 @@ void KeyboardFocusManager::clearMarkers() {
 
 bool KeyboardFocusManager::removeFirstRequest() {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$var(KeyboardFocusManager, manager, KeyboardFocusManager::getCurrentKeyboardFocusManager());
 	$synchronized(KeyboardFocusManager::heavyweightRequests) {
 		$var($KeyboardFocusManager$HeavyweightFocusRequest, hwFocusRequest, getFirstHWRequest());
@@ -1612,6 +1635,7 @@ bool KeyboardFocusManager::removeFirstRequest() {
 
 void KeyboardFocusManager::removeLastFocusRequest($Component* heavyweight) {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(KeyboardFocusManager::log)->isLoggable($PlatformLogger$Level::FINE)) {
 		if (heavyweight == nullptr) {
@@ -1632,6 +1656,7 @@ void KeyboardFocusManager::removeLastFocusRequest($Component* heavyweight) {
 
 bool KeyboardFocusManager::focusedWindowChanged($Component* to, $Component* from) {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$var($Window, wto, $SunToolkit::getContainingWindow(to));
 	$var($Window, wfrom, $SunToolkit::getContainingWindow(from));
 	if (wto == nullptr && wfrom == nullptr) {
@@ -1648,6 +1673,7 @@ bool KeyboardFocusManager::focusedWindowChanged($Component* to, $Component* from
 
 bool KeyboardFocusManager::isTemporary($Component* to, $Component* from) {
 	$init(KeyboardFocusManager);
+	$useLocalCurrentObjectStackCache();
 	$var($Window, wto, $SunToolkit::getContainingWindow(to));
 	$var($Window, wfrom, $SunToolkit::getContainingWindow(from));
 	if (wto == nullptr && wfrom == nullptr) {

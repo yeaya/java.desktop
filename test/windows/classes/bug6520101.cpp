@@ -103,6 +103,7 @@ void bug6520101::main($StringArray* args) {
 
 void bug6520101::doAttempt() {
 	$init(bug6520101);
+	$useLocalCurrentObjectStackCache();
 	if (bug6520101::CHOOSER == nullptr) {
 		$assignStatic(bug6520101::CHOOSER, $new($JFileChooser, "."_s));
 	}
@@ -122,6 +123,7 @@ void bug6520101::init$($JFileChooser* chooser) {
 }
 
 void bug6520101::run() {
+	$useLocalCurrentObjectStackCache();
 	while (!$nc(this->chooser)->isShowing()) {
 		try {
 			$Thread::sleep(30);

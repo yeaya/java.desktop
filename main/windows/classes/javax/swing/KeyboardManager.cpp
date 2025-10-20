@@ -121,6 +121,7 @@ void KeyboardManager::setCurrentManager(KeyboardManager* km) {
 }
 
 void KeyboardManager::registerKeyStroke($KeyStroke* k, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, topContainer, getTopAncestor(c));
 	if (topContainer == nullptr) {
 		return;
@@ -169,6 +170,7 @@ $Container* KeyboardManager::getTopAncestor($JComponent* c) {
 }
 
 void KeyboardManager::unregisterKeyStroke($KeyStroke* ks, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($KeyboardManager$ComponentKeyStrokePair, ckp, $new($KeyboardManager$ComponentKeyStrokePair, this, c, ks));
 	$var($Container, topContainer, $cast($Container, $nc(this->componentKeyStrokeMap)->get(ckp)));
 	if (topContainer == nullptr) {
@@ -203,6 +205,7 @@ void KeyboardManager::unregisterKeyStroke($KeyStroke* ks, $JComponent* c) {
 }
 
 bool KeyboardManager::fireKeyboardAction($KeyEvent* e, bool pressed, $Container* topAncestor) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(e)->isConsumed()) {
 		$init($System);
 		$nc($System::out)->println("Acquired pre-used event!"_s);
@@ -294,6 +297,7 @@ void KeyboardManager::fireBinding($JComponent* c, $KeyStroke* ks, $KeyEvent* e, 
 }
 
 void KeyboardManager::registerMenuBar($JMenuBar* mb) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, top, getTopAncestor(mb));
 	if (top == nullptr) {
 		return;
@@ -314,6 +318,7 @@ void KeyboardManager::registerMenuBar($JMenuBar* mb) {
 }
 
 void KeyboardManager::unregisterMenuBar($JMenuBar* mb) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, topContainer, getTopAncestor(mb));
 	if (topContainer == nullptr) {
 		return;

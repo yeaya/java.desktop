@@ -132,6 +132,7 @@ $String* AbstractDocument$DefaultDocumentEvent::toString() {
 }
 
 bool AbstractDocument$DefaultDocumentEvent::addEdit($UndoableEdit* anEdit) {
+	$useLocalCurrentObjectStackCache();
 	if ((this->changeLookup == nullptr) && ($nc(this->edits)->size() > 10)) {
 		$set(this, changeLookup, $new($Hashtable));
 		int32_t n = $nc(this->edits)->size();
@@ -151,6 +152,7 @@ bool AbstractDocument$DefaultDocumentEvent::addEdit($UndoableEdit* anEdit) {
 }
 
 void AbstractDocument$DefaultDocumentEvent::redo() {
+	$useLocalCurrentObjectStackCache();
 	this->this$0->writeLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -179,6 +181,7 @@ void AbstractDocument$DefaultDocumentEvent::redo() {
 }
 
 void AbstractDocument$DefaultDocumentEvent::undo() {
+	$useLocalCurrentObjectStackCache();
 	this->this$0->writeLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -223,11 +226,13 @@ $String* AbstractDocument$DefaultDocumentEvent::getPresentationName() {
 }
 
 $String* AbstractDocument$DefaultDocumentEvent::getUndoPresentationName() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $$str({$($UIManager::getString("AbstractDocument.undoText"_s)), " "_s}));
 	return $concat(var$0, $(getPresentationName()));
 }
 
 $String* AbstractDocument$DefaultDocumentEvent::getRedoPresentationName() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $$str({$($UIManager::getString("AbstractDocument.redoText"_s)), " "_s}));
 	return $concat(var$0, $(getPresentationName()));
 }
@@ -249,6 +254,7 @@ $Document* AbstractDocument$DefaultDocumentEvent::getDocument() {
 }
 
 $DocumentEvent$ElementChange* AbstractDocument$DefaultDocumentEvent::getChange($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	if (this->changeLookup != nullptr) {
 		return $cast($DocumentEvent$ElementChange, $nc(this->changeLookup)->get(elem));
 	}

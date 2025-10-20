@@ -424,6 +424,7 @@ void JMenu::initFocusability() {
 }
 
 void JMenu::updateUI() {
+	$useLocalCurrentObjectStackCache();
 	setUI($cast($MenuItemUI, $($UIManager::getUI(this))));
 	if (this->popupMenu != nullptr) {
 		$nc(this->popupMenu)->setUI($cast($PopupMenuUI, $($UIManager::getUI(this->popupMenu))));
@@ -453,6 +454,7 @@ bool JMenu::isSelected() {
 }
 
 void JMenu::setSelected(bool b) {
+	$useLocalCurrentObjectStackCache();
 	$var($ButtonModel, model, getModel());
 	bool oldValue = $nc(model)->isSelected();
 	if (b != model->isSelected()) {
@@ -466,6 +468,7 @@ bool JMenu::isPopupMenuVisible() {
 }
 
 void JMenu::setPopupMenuVisible(bool b) {
+	$useLocalCurrentObjectStackCache();
 	bool isVisible = isPopupMenuVisible();
 	if (b != isVisible && (isEnabled() || !b)) {
 		ensurePopupMenuCreated();
@@ -482,6 +485,7 @@ void JMenu::setPopupMenuVisible(bool b) {
 }
 
 $Point* JMenu::getPopupMenuOrigin() {
+	$useLocalCurrentObjectStackCache();
 	int32_t x = 0;
 	int32_t y = 0;
 	$var($JPopupMenu, pm, getPopupMenu());
@@ -667,6 +671,7 @@ void JMenu::insertSeparator(int32_t index) {
 }
 
 $JMenuItem* JMenu::getItem(int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	if (pos < 0) {
 		$throwNew($IllegalArgumentException, "index less than zero."_s);
 	}
@@ -744,6 +749,7 @@ bool JMenu::isTopLevelMenu() {
 }
 
 bool JMenu::isMenuComponent($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals(c, this)) {
 		return true;
 	}
@@ -775,6 +781,7 @@ $Point* JMenu::translateToPopupMenu($Point* p) {
 }
 
 $Point* JMenu::translateToPopupMenu(int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	int32_t newX = 0;
 	int32_t newY = 0;
 	if ($instanceOf($JPopupMenu, $(getParent()))) {
@@ -808,6 +815,7 @@ $MenuListenerArray* JMenu::getMenuListeners() {
 }
 
 void JMenu::fireMenuSelected() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
 		$load($MenuListener);
@@ -825,6 +833,7 @@ void JMenu::fireMenuSelected() {
 }
 
 void JMenu::fireMenuDeselected() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
 		$load($MenuListener);
@@ -842,6 +851,7 @@ void JMenu::fireMenuDeselected() {
 }
 
 void JMenu::fireMenuCanceled() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
 		$load($MenuListener);
@@ -888,6 +898,7 @@ $Component* JMenu::getComponent() {
 }
 
 void JMenu::applyComponentOrientation($ComponentOrientation* o) {
+	$useLocalCurrentObjectStackCache();
 	$JMenuItem::applyComponentOrientation(o);
 	if (this->popupMenu != nullptr) {
 		int32_t ncomponents = getMenuComponentCount();
@@ -918,11 +929,13 @@ void JMenu::processKeyEvent($KeyEvent* evt) {
 }
 
 void JMenu::doClick(int32_t pressTime) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuElementArray, me, buildMenuElementArray(this));
 	$nc($($MenuSelectionManager::defaultManager()))->setSelectedPath(me);
 }
 
 $MenuElementArray* JMenu::buildMenuElementArray(JMenu* leaf) {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, elements, $new($Vector));
 	$var($Component, current, $nc(leaf)->getPopupMenu());
 	$var($JPopupMenu, pop, nullptr);

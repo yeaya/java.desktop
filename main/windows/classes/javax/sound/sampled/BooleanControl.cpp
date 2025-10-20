@@ -91,6 +91,7 @@ $String* BooleanControl::getStateLabel(bool state) {
 }
 
 $String* BooleanControl::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $String::format("%s with current value: %s"_s, $$new($ObjectArray, {
 		$($of($Control::toString())),
 		$($of(getStateLabel(getValue())))

@@ -185,6 +185,7 @@ $String* bug8032878::EXPECTED = nullptr;
 
 void bug8032878::main($StringArray* args) {
 	$init(bug8032878);
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 	$var(bug8032878, test, $new(bug8032878));
 	test->test(false);
@@ -197,6 +198,7 @@ void bug8032878::init$() {
 }
 
 void bug8032878::setupUI() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, $new($JFrame));
 	$nc(this->frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$var($JTable, table, $new($JTable, $fcast($ObjectArray2, $$new($StringArray2, {
@@ -221,6 +223,7 @@ void bug8032878::setupUI() {
 }
 
 void bug8032878::test(bool flag) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -263,6 +266,7 @@ void bug8032878::runTest() {
 }
 
 void bug8032878::checkResult() {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($bug8032878$1, this));
 	if ($nc(this->text)->equals(bug8032878::EXPECTED)) {
 		$init($System);

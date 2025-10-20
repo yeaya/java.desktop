@@ -179,6 +179,7 @@ $ComponentUI* MotifComboBoxUI::createUI($JComponent* c) {
 }
 
 void MotifComboBoxUI::installUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$BasicComboBoxUI::installUI(c);
 	$var($Color, var$0, $UIManager::getColor("controlHighlight"_s));
 	$var($Color, var$1, $UIManager::getColor("controlShadow"_s));
@@ -186,6 +187,7 @@ void MotifComboBoxUI::installUI($JComponent* c) {
 }
 
 $Dimension* MotifComboBoxUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->isMinimumSizeDirty) {
 		return $new($Dimension, this->cachedMinimumSize);
 	}
@@ -217,6 +219,7 @@ void MotifComboBoxUI::uninstallComponents() {
 }
 
 void MotifComboBoxUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	bool hasFocus = $nc(this->comboBox)->hasFocus();
 	$var($Rectangle, r, nullptr);
 	if ($nc(this->comboBox)->isEnabled()) {
@@ -258,6 +261,7 @@ void MotifComboBoxUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void MotifComboBoxUI::paintCurrentValue($Graphics* g, $Rectangle* bounds, bool hasFocus) {
+	$useLocalCurrentObjectStackCache();
 	$var($ListCellRenderer, renderer, $nc(this->comboBox)->getRenderer());
 	$var($Component, c, nullptr);
 	$var($Dimension, d, nullptr);
@@ -275,6 +279,7 @@ void MotifComboBoxUI::paintCurrentValue($Graphics* g, $Rectangle* bounds, bool h
 }
 
 $Rectangle* MotifComboBoxUI::rectangleForArrowIcon() {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, b, $nc(this->comboBox)->getBounds());
 	$var($Border, border, $nc(this->comboBox)->getBorder());
 	$var($Insets, in, nullptr);
@@ -299,6 +304,7 @@ $Rectangle* MotifComboBoxUI::rectangleForArrowIcon() {
 }
 
 $Rectangle* MotifComboBoxUI::rectangleForCurrentValue() {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = $nc(this->comboBox)->getWidth();
 	int32_t height = $nc(this->comboBox)->getHeight();
 	$var($Insets, insets, getInsets());

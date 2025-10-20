@@ -939,6 +939,7 @@ $String* JTree::EXPANDS_SELECTED_PATHS_PROPERTY = nullptr;
 
 $TreeModel* JTree::getDefaultTreeModel() {
 	$init(JTree);
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultMutableTreeNode, root, $new($DefaultMutableTreeNode, "JTree"_s));
 	$var($DefaultMutableTreeNode, parent, nullptr);
 	$assign(parent, $new($DefaultMutableTreeNode, "colors"_s));
@@ -1055,6 +1056,7 @@ void JTree::setUI($TreeUI* ui) {
 }
 
 void JTree::updateUI() {
+	$useLocalCurrentObjectStackCache();
 	if (!this->updateInProgress) {
 		this->updateInProgress = true;
 		{
@@ -1121,6 +1123,7 @@ $TreeModel* JTree::getModel() {
 }
 
 void JTree::setModel($TreeModel* newModel) {
+	$useLocalCurrentObjectStackCache();
 	clearSelection();
 	$var($TreeModel, oldModel, this->treeModel);
 	if (this->treeModel != nullptr && this->treeModelListener != nullptr) {
@@ -1295,6 +1298,7 @@ $DropMode* JTree::getDropMode() {
 }
 
 $TransferHandler$DropLocation* JTree::dropLocationForPoint($Point* p) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTree$DropLocation, location, nullptr);
 	int32_t row = getClosestRowForLocation($nc(p)->x, p->y);
 	$var($Rectangle, bounds, getRowBounds(row));
@@ -1400,6 +1404,7 @@ $TransferHandler$DropLocation* JTree::dropLocationForPoint($Point* p) {
 }
 
 $Object* JTree::setDropLocation($TransferHandler$DropLocation* location, Object$* state, bool forDrop) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, retVal, nullptr);
 	$var($JTree$DropLocation, treeLocation, $cast($JTree$DropLocation, location));
 	$init($DropMode);
@@ -1463,6 +1468,7 @@ bool JTree::isPathEditable($TreePath* path) {
 }
 
 $String* JTree::getToolTipText($MouseEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, tip, nullptr);
 	if (event != nullptr) {
 		$var($Point, p, event->getPoint());
@@ -1549,6 +1555,7 @@ void JTree::setSelectionRow(int32_t row) {
 }
 
 void JTree::setSelectionRows($ints* rows) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeUI, ui, $cast($TreeUI, getUI()));
 	if (ui != nullptr && rows != nullptr) {
 		int32_t numRows = rows->length;
@@ -1574,6 +1581,7 @@ void JTree::addSelectionRow(int32_t row) {
 }
 
 void JTree::addSelectionRows($ints* rows) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeUI, ui, $cast($TreeUI, getUI()));
 	if (ui != nullptr && rows != nullptr) {
 		int32_t numRows = rows->length;
@@ -1586,6 +1594,7 @@ void JTree::addSelectionRows($ints* rows) {
 }
 
 $Object* JTree::getLastSelectedPathComponent() {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePath, selPath, $nc($(getSelectionModel()))->getSelectionPath());
 	if (selPath != nullptr) {
 		return $of(selPath->getLastPathComponent());
@@ -1606,6 +1615,7 @@ $TreePath* JTree::getSelectionPath() {
 }
 
 $TreePathArray* JTree::getSelectionPaths() {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePathArray, selectionPaths, $nc($(getSelectionModel()))->getSelectionPaths());
 	return (selectionPaths != nullptr && selectionPaths->length > 0) ? selectionPaths : ($TreePathArray*)nullptr;
 }
@@ -1643,6 +1653,7 @@ bool JTree::isRowSelected(int32_t row) {
 }
 
 $Enumeration* JTree::getExpandedDescendants($TreePath* parent) {
+	$useLocalCurrentObjectStackCache();
 	if (!isExpanded(parent)) {
 		return nullptr;
 	}
@@ -1676,6 +1687,7 @@ bool JTree::hasBeenExpanded($TreePath* path) {
 }
 
 bool JTree::isExpanded($TreePath* path$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePath, path, path$renamed);
 	if (path == nullptr) {
 		return false;
@@ -1691,6 +1703,7 @@ bool JTree::isExpanded($TreePath* path$renamed) {
 }
 
 bool JTree::isExpanded(int32_t row) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeUI, tree, $cast($TreeUI, getUI()));
 	if (tree != nullptr) {
 		$var($TreePath, path, tree->getPathForRow(this, row));
@@ -1776,6 +1789,7 @@ int32_t JTree::getRowForPath($TreePath* path) {
 }
 
 void JTree::expandPath($TreePath* path) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeModel, model, getModel());
 	if (path != nullptr && model != nullptr && !model->isLeaf($(path->getLastPathComponent()))) {
 		setExpandedState(path, true);
@@ -1795,6 +1809,7 @@ void JTree::collapseRow(int32_t row) {
 }
 
 $TreePath* JTree::getPathForLocation(int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePath, closestPath, getClosestPathForLocation(x, y));
 	if (closestPath != nullptr) {
 		$var($Rectangle, pathBounds, getPathBounds(closestPath));
@@ -1860,6 +1875,7 @@ $TreePath* JTree::getEditingPath() {
 }
 
 void JTree::setSelectionModel($TreeSelectionModel* selectionModel$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeSelectionModel, selectionModel, selectionModel$renamed);
 	if (selectionModel == nullptr) {
 		$assign(selectionModel, $JTree$EmptySelectionModel::sharedInstance());
@@ -1890,6 +1906,7 @@ $TreeSelectionModel* JTree::getSelectionModel() {
 }
 
 $TreePathArray* JTree::getPathBetweenRows(int32_t index0, int32_t index1) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeUI, tree, $cast($TreeUI, getUI()));
 	if (tree != nullptr) {
 		int32_t rowCount = getRowCount();
@@ -1909,11 +1926,13 @@ $TreePathArray* JTree::getPathBetweenRows(int32_t index0, int32_t index1) {
 }
 
 void JTree::setSelectionInterval(int32_t index0, int32_t index1) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePathArray, paths, getPathBetweenRows(index0, index1));
 	$nc($(this->getSelectionModel()))->setSelectionPaths(paths);
 }
 
 void JTree::addSelectionInterval(int32_t index0, int32_t index1) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePathArray, paths, getPathBetweenRows(index0, index1));
 	if (paths != nullptr && paths->length > 0) {
 		$nc($(this->getSelectionModel()))->addSelectionPaths(paths);
@@ -1921,6 +1940,7 @@ void JTree::addSelectionInterval(int32_t index0, int32_t index1) {
 }
 
 void JTree::removeSelectionInterval(int32_t index0, int32_t index1) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePathArray, paths, getPathBetweenRows(index0, index1));
 	if (paths != nullptr && paths->length > 0) {
 		$nc($(this->getSelectionModel()))->removeSelectionPaths(paths);
@@ -1941,6 +1961,7 @@ void JTree::removeSelectionRow(int32_t row) {
 }
 
 void JTree::removeSelectionRows($ints* rows) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeUI, ui, $cast($TreeUI, getUI()));
 	if (ui != nullptr && rows != nullptr) {
 		int32_t numRows = rows->length;
@@ -1997,6 +2018,7 @@ $TreeWillExpandListenerArray* JTree::getTreeWillExpandListeners() {
 }
 
 void JTree::fireTreeExpanded($TreePath* path) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($TreeExpansionEvent, e, nullptr);
 	if (this->uiTreeExpansionListener != nullptr) {
@@ -2015,6 +2037,7 @@ void JTree::fireTreeExpanded($TreePath* path) {
 }
 
 void JTree::fireTreeCollapsed($TreePath* path) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($TreeExpansionEvent, e, nullptr);
 	if (this->uiTreeExpansionListener != nullptr) {
@@ -2033,6 +2056,7 @@ void JTree::fireTreeCollapsed($TreePath* path) {
 }
 
 void JTree::fireTreeWillExpand($TreePath* path) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($TreeExpansionEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -2047,6 +2071,7 @@ void JTree::fireTreeWillExpand($TreePath* path) {
 }
 
 void JTree::fireTreeWillCollapse($TreePath* path) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($TreeExpansionEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -2113,6 +2138,7 @@ int32_t JTree::getVisibleRowCount() {
 }
 
 void JTree::expandRoot() {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeModel, model, getModel());
 	if (model != nullptr && model->getRoot() != nullptr) {
 		expandPath($$new($TreePath, $(model->getRoot())));
@@ -2120,6 +2146,7 @@ void JTree::expandRoot() {
 }
 
 $TreePath* JTree::getNextMatch($String* prefix$renamed, int32_t startingRow, $Position$Bias* bias) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prefix, prefix$renamed);
 	int32_t max = getRowCount();
 	if (prefix == nullptr) {
@@ -2146,6 +2173,7 @@ $TreePath* JTree::getNextMatch($String* prefix$renamed, int32_t startingRow, $Po
 }
 
 void JTree::writeObject($ObjectOutputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, values, $new($Vector));
 	$nc(s)->defaultWriteObject();
 	if (this->cellRenderer != nullptr && $instanceOf($Serializable, this->cellRenderer)) {
@@ -2180,6 +2208,7 @@ void JTree::writeObject($ObjectOutputStream* s) {
 }
 
 void JTree::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	this->rootVisible = $nc(f)->get("rootVisible"_s, false);
 	this->rowHeight = f->get("rowHeight"_s, 0);
@@ -2245,6 +2274,7 @@ void JTree::readObject($ObjectInputStream* s) {
 }
 
 $Object* JTree::getArchivableExpandedState() {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeModel, model, getModel());
 	if (model != nullptr) {
 		$var($Enumeration, paths, $nc(this->expandedState)->keys());
@@ -2271,6 +2301,7 @@ $Object* JTree::getArchivableExpandedState() {
 }
 
 void JTree::unarchiveExpandedState(Object$* state) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Vector, state)) {
 		$var($Vector, paths, $cast($Vector, state));
 		for (int32_t counter = $nc(paths)->size() - 1; counter >= 0; --counter) {
@@ -2289,6 +2320,7 @@ void JTree::unarchiveExpandedState(Object$* state) {
 }
 
 $ints* JTree::getModelIndexsForPath($TreePath* path) {
+	$useLocalCurrentObjectStackCache();
 	if (path != nullptr) {
 		$var($TreeModel, model, getModel());
 		int32_t count = path->getPathCount();
@@ -2307,6 +2339,7 @@ $ints* JTree::getModelIndexsForPath($TreePath* path) {
 }
 
 $TreePath* JTree::getPathForIndexs($ints* indexs) {
+	$useLocalCurrentObjectStackCache();
 	if (indexs == nullptr) {
 		return nullptr;
 	}
@@ -2331,6 +2364,7 @@ $TreePath* JTree::getPathForIndexs($ints* indexs) {
 }
 
 $Dimension* JTree::getPreferredScrollableViewportSize() {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = $nc($(getPreferredSize()))->width;
 	int32_t visRows = getVisibleRowCount();
 	int32_t height = -1;
@@ -2390,6 +2424,7 @@ int32_t JTree::getScrollableBlockIncrement($Rectangle* visibleRect, int32_t orie
 }
 
 bool JTree::getScrollableTracksViewportWidth() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, parent, $SwingUtilities::getUnwrappedParent(this));
 	if ($instanceOf($JViewport, parent)) {
 		int32_t var$0 = $nc(parent)->getWidth();
@@ -2399,6 +2434,7 @@ bool JTree::getScrollableTracksViewportWidth() {
 }
 
 bool JTree::getScrollableTracksViewportHeight() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, parent, $SwingUtilities::getUnwrappedParent(this));
 	if ($instanceOf($JViewport, parent)) {
 		int32_t var$0 = $nc(parent)->getHeight();
@@ -2408,6 +2444,7 @@ bool JTree::getScrollableTracksViewportHeight() {
 }
 
 void JTree::setExpandedState($TreePath* path, bool state) {
+	$useLocalCurrentObjectStackCache();
 	if (path != nullptr) {
 		$var($Stack, stack, nullptr);
 		$var($TreePath, parentPath, path->getParentPath());
@@ -2501,6 +2538,7 @@ void JTree::setExpandedState($TreePath* path, bool state) {
 }
 
 $Enumeration* JTree::getDescendantToggledPaths($TreePath* parent) {
+	$useLocalCurrentObjectStackCache();
 	if (parent == nullptr) {
 		return nullptr;
 	}
@@ -2516,6 +2554,7 @@ $Enumeration* JTree::getDescendantToggledPaths($TreePath* parent) {
 }
 
 void JTree::removeDescendantToggledPaths($Enumeration* toRemove) {
+	$useLocalCurrentObjectStackCache();
 	if (toRemove != nullptr) {
 		while (toRemove->hasMoreElements()) {
 			$var($Enumeration, descendants, getDescendantToggledPaths($cast($TreePath, $(toRemove->nextElement()))));
@@ -2537,6 +2576,7 @@ $TreeModelListener* JTree::createTreeModelListener() {
 }
 
 bool JTree::removeDescendantSelectedPaths($TreePath* path, bool includePath) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePathArray, toRemove, getDescendantSelectedPaths(path, includePath));
 	if (toRemove != nullptr) {
 		$nc($(getSelectionModel()))->removeSelectionPaths(toRemove);
@@ -2546,6 +2586,7 @@ bool JTree::removeDescendantSelectedPaths($TreePath* path, bool includePath) {
 }
 
 $TreePathArray* JTree::getDescendantSelectedPaths($TreePath* path, bool includePath) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeSelectionModel, sm, getSelectionModel());
 	$var($TreePathArray, selPaths, (sm != nullptr) ? $nc(sm)->getSelectionPaths() : ($TreePathArray*)nullptr);
 	if (selPaths != nullptr) {
@@ -2567,6 +2608,7 @@ $TreePathArray* JTree::getDescendantSelectedPaths($TreePath* path, bool includeP
 }
 
 void JTree::removeDescendantSelectedPaths($TreeModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePath, pPath, $SwingUtilities2::getTreePath(e, $(getModel())));
 	$var($ObjectArray, oldChildren, $nc(e)->getChildren());
 	$var($TreeSelectionModel, sm, getSelectionModel());
@@ -2599,6 +2641,7 @@ void JTree::setUIProperty($String* propertyName, Object$* value) {
 }
 
 $String* JTree::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, rootVisibleString, this->rootVisible ? "true"_s : "false"_s);
 	$var($String, showsRootHandlesString, this->showsRootHandles ? "true"_s : "false"_s);
 	$var($String, editableString, this->editable ? "true"_s : "false"_s);

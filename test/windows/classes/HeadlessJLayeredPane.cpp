@@ -112,6 +112,7 @@ void HeadlessJLayeredPane::init$() {
 }
 
 void HeadlessJLayeredPane::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLayeredPane, lp, $new($JLayeredPane));
 	lp->getAccessibleContext();
 	lp->isFocusTraversable();

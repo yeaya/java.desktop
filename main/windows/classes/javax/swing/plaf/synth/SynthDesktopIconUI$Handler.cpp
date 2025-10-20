@@ -75,6 +75,7 @@ void SynthDesktopIconUI$Handler::init$($SynthDesktopIconUI* this$0) {
 }
 
 void SynthDesktopIconUI$Handler::actionPerformed($ActionEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JToggleButton, $($nc(evt)->getSource()))) {
 		$var($JToggleButton, button, $cast($JToggleButton, evt->getSource()));
 		try {

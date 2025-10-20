@@ -116,6 +116,7 @@ void WindowsRadioButtonMenuItemUI::paintBackground($Graphics* g, $JMenuItem* men
 }
 
 void WindowsRadioButtonMenuItemUI::paintText($Graphics* g, $JMenuItem* menuItem, $Rectangle* textRect, $String* text) {
+	$useLocalCurrentObjectStackCache();
 	if ($WindowsMenuItemUI::isVistaPainting()) {
 		$WindowsMenuItemUI::paintText(this->accessor, g, menuItem, textRect, text);
 		return;

@@ -70,6 +70,7 @@ $ColorSpace* ColorSpace$BuiltInSpace::PYCC = nullptr;
 $ColorSpace* ColorSpace$BuiltInSpace::GRAY = nullptr;
 
 void clinit$ColorSpace$BuiltInSpace($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(ColorSpace$BuiltInSpace::SRGB, $new($ICC_ColorSpace, $($ICC_Profile::getInstance(1000))));
 	$assignStatic(ColorSpace$BuiltInSpace::LRGB, $new($ICC_ColorSpace, $($ICC_Profile::getInstance(1004))));
 	$assignStatic(ColorSpace$BuiltInSpace::XYZ, $new($ICC_ColorSpace, $($ICC_Profile::getInstance(1001))));

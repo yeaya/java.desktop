@@ -263,6 +263,7 @@ void MotifLookAndFeel::initSystemColorDefaults($UIDefaults* table) {
 }
 
 void MotifLookAndFeel::initClassDefaults($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$BasicLookAndFeel::initClassDefaults(table);
 	$var($String, motifPackageName, "com.sun.java.swing.plaf.motif."_s);
 	$var($ObjectArray, uiDefaults, $new($ObjectArray, {
@@ -339,6 +340,7 @@ void MotifLookAndFeel::initResourceBundle($UIDefaults* table) {
 }
 
 void MotifLookAndFeel::initComponentDefaults($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$BasicLookAndFeel::initComponentDefaults(table);
 	initResourceBundle(table);
 	$init($Font);

@@ -117,6 +117,7 @@ void TestAbstractRegionPainter::init$() {
 
 void TestAbstractRegionPainter::main($StringArray* args) {
 	$load(TestAbstractRegionPainter);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestAbstractRegionPainter$$Lambda$testAbstractRegionPainter)));
 	$System::setSecurityManager($$new($SecurityManager));
@@ -124,6 +125,7 @@ void TestAbstractRegionPainter::main($StringArray* args) {
 }
 
 void TestAbstractRegionPainter::testAbstractRegionPainter() {
+	$useLocalCurrentObjectStackCache();
 	$var($TestAbstractRegionPainter$UserAbstractRegionPainter, painter, $new($TestAbstractRegionPainter$UserAbstractRegionPainter));
 	$var($JComponent, userComponent, $new($TestAbstractRegionPainter$UserJComponent));
 	$init($Color);

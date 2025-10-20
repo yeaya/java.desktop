@@ -177,6 +177,7 @@ void FastTooltipSwitchIAE::init$() {
 
 void FastTooltipSwitchIAE::main($StringArray* args) {
 	$init(FastTooltipSwitchIAE);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -200,6 +201,7 @@ void FastTooltipSwitchIAE::main($StringArray* args) {
 
 void FastTooltipSwitchIAE::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(FastTooltipSwitchIAE);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($System);
 		$nc($System::out)->println($$str({"LookAndFeel: "_s, $($nc(laf)->getClassName())}));
@@ -222,6 +224,7 @@ void FastTooltipSwitchIAE::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 
 void FastTooltipSwitchIAE::doTest() {
 	$init(FastTooltipSwitchIAE);
+	$useLocalCurrentObjectStackCache();
 	$var($JToolTip, toolTip, $new($JToolTip));
 	toolTip->setTipText("<html><h1>Hello world</h1></html>"_s);
 	toolTip->setMinimumSize(FastTooltipSwitchIAE::oneByOneSize);

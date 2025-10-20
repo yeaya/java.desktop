@@ -293,6 +293,7 @@ bool JTextAreaOrientationTest::compareBufferedImages($BufferedImage* bufferedIma
 }
 
 void JTextAreaOrientationTest::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 	} catch ($UnsupportedLookAndFeelException&) {
@@ -312,6 +313,7 @@ void JTextAreaOrientationTest::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 }
 
 void JTextAreaOrientationTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -336,6 +338,7 @@ void JTextAreaOrientationTest::main($StringArray* args) {
 }
 
 $BufferedImage* JTextAreaOrientationTest::test($ComponentOrientation* orientation) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(JTextAreaOrientationTest$$Lambda$lambda$test$1$1, orientation)));
 	$Thread::sleep(1000);
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(JTextAreaOrientationTest$$Lambda$lambda$test$2$2)));
@@ -360,6 +363,7 @@ void JTextAreaOrientationTest::lambda$test$2() {
 }
 
 void JTextAreaOrientationTest::lambda$test$1($ComponentOrientation* orientation) {
+	$useLocalCurrentObjectStackCache();
 	$init(JTextAreaOrientationTest);
 	$assignStatic(JTextAreaOrientationTest::frame, $new($JFrame, "Swing JTextArea component"_s));
 	$var($JTextArea, ta, $new($JTextArea));

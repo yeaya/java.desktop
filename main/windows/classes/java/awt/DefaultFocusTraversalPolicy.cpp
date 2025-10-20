@@ -55,6 +55,7 @@ void DefaultFocusTraversalPolicy::init$() {
 }
 
 bool DefaultFocusTraversalPolicy::accept($Component* aComponent) {
+	$useLocalCurrentObjectStackCache();
 	bool var$1 = $nc(aComponent)->isVisible();
 	bool var$0 = var$1 && aComponent->isDisplayable();
 	if (!(var$0 && aComponent->isEnabled())) {

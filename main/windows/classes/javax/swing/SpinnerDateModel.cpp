@@ -182,6 +182,7 @@ int32_t SpinnerDateModel::getCalendarField() {
 }
 
 $Object* SpinnerDateModel::getNextValue() {
+	$useLocalCurrentObjectStackCache();
 	$var($Calendar, cal, $Calendar::getInstance());
 	$nc(cal)->setTime($($nc(this->value)->getTime()));
 	cal->add(this->calendarField, 1);
@@ -190,6 +191,7 @@ $Object* SpinnerDateModel::getNextValue() {
 }
 
 $Object* SpinnerDateModel::getPreviousValue() {
+	$useLocalCurrentObjectStackCache();
 	$var($Calendar, cal, $Calendar::getInstance());
 	$nc(cal)->setTime($($nc(this->value)->getTime()));
 	cal->add(this->calendarField, -1);

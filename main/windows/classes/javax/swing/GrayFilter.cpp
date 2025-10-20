@@ -120,6 +120,7 @@ $Image* GrayFilter::createDisabledImage($Image* i) {
 
 $Image* GrayFilter::createDisabledImageImpl($Image* i) {
 	$init(GrayFilter);
+	$useLocalCurrentObjectStackCache();
 	$var(GrayFilter, filter, $new(GrayFilter, true, 50));
 	$var($ImageProducer, prod, $new($FilteredImageSource, $($nc(i)->getSource()), filter));
 	$var($Image, grayImage, $nc($($Toolkit::getDefaultToolkit()))->createImage(prod));

@@ -118,6 +118,7 @@ void TransferHandler$DragHandler::init$() {
 }
 
 void TransferHandler$DragHandler::dragGestureRecognized($DragGestureEvent* dge) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, c, $cast($JComponent, $nc(dge)->getComponent()));
 	$var($TransferHandler, th, $nc(c)->getTransferHandler());
 	$var($Transferable, t, $nc(th)->createTransferable(c));
@@ -150,6 +151,7 @@ void TransferHandler$DragHandler::dragExit($DragSourceEvent* dsde) {
 }
 
 void TransferHandler$DragHandler::dragDropEnd($DragSourceDropEvent* dsde) {
+	$useLocalCurrentObjectStackCache();
 	$var($DragSourceContext, dsc, $nc(dsde)->getDragSourceContext());
 	$var($JComponent, c, $cast($JComponent, $nc(dsc)->getComponent()));
 	if (dsde->getDropSuccess()) {

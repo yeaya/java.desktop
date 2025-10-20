@@ -201,6 +201,7 @@ void WEmbeddedFrame::init$(int64_t handle) {
 }
 
 void WEmbeddedFrame::addNotify() {
+	$useLocalCurrentObjectStackCache();
 	if (!isDisplayable()) {
 		$var($WToolkit, toolkit, $cast($WToolkit, $Toolkit::getDefaultToolkit()));
 		setPeer($(static_cast<$ComponentPeer*>(static_cast<$WComponentPeer*>(static_cast<$WCanvasPeer*>(static_cast<$WPanelPeer*>(static_cast<$WWindowPeer*>(static_cast<$WFramePeer*>($nc(toolkit)->createEmbeddedFrame(this)))))))));
@@ -213,6 +214,7 @@ int64_t WEmbeddedFrame::getEmbedderHandle() {
 }
 
 void WEmbeddedFrame::print(int64_t hdc) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, bandImage, nullptr);
 	int32_t xscale = 1;
 	int32_t yscale = 1;
@@ -307,6 +309,7 @@ void WEmbeddedFrame::activateEmbeddingTopLevel() {
 }
 
 void WEmbeddedFrame::synthesizeWindowActivation(bool activate) {
+	$useLocalCurrentObjectStackCache();
 	$var($FramePeer, peer, $cast($FramePeer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(this)));
 	if (!activate || $EventQueue::isDispatchThread()) {
 		$nc(peer)->emulateActivation(activate);
@@ -324,6 +327,7 @@ void WEmbeddedFrame::unregisterAccelerator($AWTKeyStroke* stroke) {
 }
 
 void WEmbeddedFrame::notifyModalBlocked($Dialog* blocker, bool blocked) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($ComponentPeer, thisPeer, $cast($ComponentPeer, $WToolkit::targetToPeer(this)));
 		$var($ComponentPeer, blockerPeer, $cast($ComponentPeer, $WToolkit::targetToPeer(blocker)));

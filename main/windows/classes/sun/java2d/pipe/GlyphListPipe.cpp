@@ -70,6 +70,7 @@ void GlyphListPipe::init$() {
 }
 
 void GlyphListPipe::drawString($SunGraphics2D* sg2d, $String* s, double x, double y) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontInfo, info, $nc(sg2d)->getFontInfo());
 	if ($nc(info)->nonInvertibleTx) {
 		return;
@@ -107,6 +108,7 @@ void GlyphListPipe::drawString($SunGraphics2D* sg2d, $String* s, double x, doubl
 }
 
 void GlyphListPipe::drawChars($SunGraphics2D* sg2d, $chars* data, int32_t offset, int32_t length, int32_t ix, int32_t iy) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontInfo, info, $nc(sg2d)->getFontInfo());
 	if ($nc(info)->nonInvertibleTx) {
 		return;
@@ -144,6 +146,7 @@ void GlyphListPipe::drawChars($SunGraphics2D* sg2d, $chars* data, int32_t offset
 }
 
 void GlyphListPipe::drawGlyphVector($SunGraphics2D* sg2d, $GlyphVector* gv, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontRenderContext, frc, $nc(gv)->getFontRenderContext());
 	$var($FontInfo, info, $nc(sg2d)->getGVFontInfo($(gv->getFont()), frc));
 	if ($nc(info)->nonInvertibleTx) {

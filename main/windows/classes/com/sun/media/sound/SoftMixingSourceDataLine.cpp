@@ -239,6 +239,7 @@ void SoftMixingSourceDataLine::init$($SoftMixingMixer* mixer, $DataLine$Info* in
 }
 
 int32_t SoftMixingSourceDataLine::write($bytes* b, int32_t off, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	if (!isOpen()) {
 		return 0;
 	}
@@ -300,6 +301,7 @@ void SoftMixingSourceDataLine::processControlLogic() {
 }
 
 void SoftMixingSourceDataLine::processAudioLogic($SoftAudioBufferArray* buffers) {
+	$useLocalCurrentObjectStackCache();
 	if (this->_active) {
 		$var($floats, left, $nc($nc(buffers)->get($SoftMixingMainMixer::CHANNEL_LEFT))->array());
 		$var($floats, right, $nc(buffers->get($SoftMixingMainMixer::CHANNEL_RIGHT))->array());
@@ -398,6 +400,7 @@ void SoftMixingSourceDataLine::open($AudioFormat* format) {
 }
 
 void SoftMixingSourceDataLine::open($AudioFormat* format, int32_t bufferSize) {
+	$useLocalCurrentObjectStackCache();
 	$var($LineEvent, event, nullptr);
 	if (bufferSize < $nc(format)->getFrameSize() * 32) {
 		bufferSize = format->getFrameSize() * 32;
@@ -447,6 +450,7 @@ int32_t SoftMixingSourceDataLine::available() {
 }
 
 void SoftMixingSourceDataLine::drain() {
+	$useLocalCurrentObjectStackCache();
 	while (true) {
 		int32_t avail = 0;
 		$synchronized(this->cycling_buffer) {
@@ -550,6 +554,7 @@ void SoftMixingSourceDataLine::stop() {
 }
 
 void SoftMixingSourceDataLine::close() {
+	$useLocalCurrentObjectStackCache();
 	$var($LineEvent, event, nullptr);
 	$synchronized(this->control_mutex) {
 		if (!isOpen()) {

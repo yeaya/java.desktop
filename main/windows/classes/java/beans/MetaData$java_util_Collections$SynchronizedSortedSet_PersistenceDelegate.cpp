@@ -68,6 +68,7 @@ void MetaData$java_util_Collections$SynchronizedSortedSet_PersistenceDelegate::i
 }
 
 $Expression* MetaData$java_util_Collections$SynchronizedSortedSet_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($SortedSet, set, $new($TreeSet, $cast($SortedSet, oldInstance)));
 	$load($Collections);
 	return $new($Expression, oldInstance, $Collections::class$, "synchronizedSortedSet"_s, $$new($ObjectArray, {$of(set)}));

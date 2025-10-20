@@ -96,6 +96,7 @@ void D3DTextRenderer::drawGlyphList(int32_t numGlyphs, bool usePositions, bool s
 }
 
 void D3DTextRenderer::validateContext($SunGraphics2D* sg2d, $Composite* comp) {
+	$useLocalCurrentObjectStackCache();
 	$var($D3DSurfaceData, d3dDst, $cast($D3DSurfaceData, $nc(sg2d)->surfaceData));
 	$D3DContext::validateContext(d3dDst, d3dDst, $(sg2d->getCompClip()), comp, nullptr, sg2d->paint, sg2d, $D3DContext::NO_CONTEXT_FLAGS);
 }

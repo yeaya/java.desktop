@@ -220,6 +220,7 @@ void bug8132119::testStringMethods() {
 
 void bug8132119::testStringWidth() {
 	$init(bug8132119);
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, u"12345678910\u036f"_s);
 	$var($JComponent, comp, createComponent(str));
 	$var($Font, font, $nc(comp)->getFont());
@@ -235,6 +236,7 @@ void bug8132119::testStringWidth() {
 
 void bug8132119::testStringClip() {
 	$init(bug8132119);
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, "1234567890"_s);
 	$var($JComponent, comp, createComponent(str));
 	$var($FontMetrics, fontMetrics, $nc(comp)->getFontMetrics($(comp->getFont())));
@@ -254,6 +256,7 @@ void bug8132119::testStringClip() {
 
 void bug8132119::checkClippedString($String* str, $String* res, $String* golden) {
 	$init(bug8132119);
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(golden)->equals(res)) {
 		$throwNew($RuntimeException, $($String::format("The string \'%s\' is not properly clipped. The result is \'%s\' instead of \'%s\'"_s, $$new($ObjectArray, {
 			$of(str),
@@ -265,6 +268,7 @@ void bug8132119::checkClippedString($String* str, $String* res, $String* golden)
 
 void bug8132119::testDrawEmptyString() {
 	$init(bug8132119);
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, label, $new($JLabel));
 	$var($BufferedImage, buffImage, createBufferedImage(50, 50));
 	$var($Graphics2D, g2, $nc(buffImage)->createGraphics());
@@ -283,6 +287,7 @@ void bug8132119::testDrawEmptyString() {
 
 void bug8132119::testDrawString(bool underlined) {
 	$init(bug8132119);
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, "AOB"_s);
 	$var($JComponent, comp, createComponent(str));
 	$var($BufferedImage, buffImage, createBufferedImage(bug8132119::WIDTH, bug8132119::HEIGHT));
@@ -313,6 +318,7 @@ void bug8132119::testDrawString(bool underlined) {
 
 void bug8132119::checkNullArguments() {
 	$init(bug8132119);
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics2D, g, nullptr);
 	{
 		$var($Throwable, var$0, nullptr);
@@ -373,6 +379,7 @@ void bug8132119::checkNullArgumentsDrawStringUnderlineCharAt($JComponent* comp, 
 
 void bug8132119::checkNullArgumentsGetClippedString($JComponent* comp, $String* text) {
 	$init(bug8132119);
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, fontMetrics, $nc(comp)->getFontMetrics($(comp->getFont())));
 	$BasicGraphicsUtils::getClippedString(nullptr, fontMetrics, text, 1);
 	$var($String, result, $BasicGraphicsUtils::getClippedString(comp, fontMetrics, nullptr, 1));
@@ -390,6 +397,7 @@ void bug8132119::checkNullArgumentsGetClippedString($JComponent* comp, $String* 
 
 void bug8132119::checkNullArgumentsGetStringWidth($JComponent* comp, $String* text) {
 	$init(bug8132119);
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, fontMetrics, $nc(comp)->getFontMetrics($(comp->getFont())));
 	$BasicGraphicsUtils::getStringWidth(nullptr, fontMetrics, text);
 	float result = $BasicGraphicsUtils::getStringWidth(comp, fontMetrics, nullptr);
@@ -407,6 +415,7 @@ void bug8132119::checkNullArgumentsGetStringWidth($JComponent* comp, $String* te
 
 void bug8132119::setMetalLAF() {
 	$init(bug8132119);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 	} catch ($Exception&) {
@@ -417,6 +426,7 @@ void bug8132119::setMetalLAF() {
 
 $JComponent* bug8132119::createComponent($String* str) {
 	$init(bug8132119);
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, comp, $new($JLabel, str));
 	comp->setSize(bug8132119::WIDTH, bug8132119::HEIGHT);
 	$init($TextAttribute);
@@ -427,6 +437,7 @@ $JComponent* bug8132119::createComponent($String* str) {
 
 $String* bug8132119::getFontName($String* fn, $StringArray* fontNames) {
 	$init(bug8132119);
+	$useLocalCurrentObjectStackCache();
 	$var($String, fontName, nullptr);
 	{
 		$var($StringArray, arr$, fontNames);
@@ -447,6 +458,7 @@ $String* bug8132119::getFontName($String* fn, $StringArray* fontNames) {
 
 $Font* bug8132119::getFont() {
 	$init(bug8132119);
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsEnvironment, ge, $GraphicsEnvironment::getLocalGraphicsEnvironment());
 	$var($StringArray, fontNames, $nc(ge)->getAvailableFontFamilyNames());
 	$var($String, fontName, getFontName("Arial"_s, fontNames));
@@ -466,6 +478,7 @@ $Font* bug8132119::getFont() {
 
 float bug8132119::getLayoutWidth($String* text, $Font* font, $NumericShaper* shaper) {
 	$init(bug8132119);
+	$useLocalCurrentObjectStackCache();
 	$var($HashMap, map, $new($HashMap));
 	$init($TextAttribute);
 	map->put($TextAttribute::FONT, font);
@@ -510,6 +523,7 @@ void bug8132119::checkImageContainsSymbol($BufferedImage* buffImage, int32_t x, 
 
 $BufferedImage* bug8132119::createBufferedImage(int32_t width, int32_t height) {
 	$init(bug8132119);
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, bufffImage, $new($BufferedImage, width, height, $BufferedImage::TYPE_INT_RGB));
 	$var($Graphics2D, g, bufffImage->createGraphics());
 	$nc(g)->setColor(bug8132119::BACKGROUND_COLOR);

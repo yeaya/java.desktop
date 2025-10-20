@@ -225,6 +225,7 @@ $ComponentInputMap* BasicRootPaneUI::createInputMap(int32_t condition, $JCompone
 
 void BasicRootPaneUI::loadActionMap($LazyActionMap* map) {
 	$init(BasicRootPaneUI);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicRootPaneUI$Actions);
 	$nc(map)->put($$new($BasicRootPaneUI$Actions, $BasicRootPaneUI$Actions::PRESS));
 	map->put($$new($BasicRootPaneUI$Actions, $BasicRootPaneUI$Actions::RELEASE));
@@ -232,6 +233,7 @@ void BasicRootPaneUI::loadActionMap($LazyActionMap* map) {
 }
 
 void BasicRootPaneUI::updateDefaultButtonBindings($JRootPane* root) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMap, km, $SwingUtilities::getUIInputMap(root, $JComponent::WHEN_IN_FOCUSED_WINDOW));
 	while (km != nullptr && !($instanceOf($BasicRootPaneUI$RootPaneInputMap, km))) {
 		$assign(km, km->getParent());
@@ -248,6 +250,7 @@ void BasicRootPaneUI::updateDefaultButtonBindings($JRootPane* root) {
 }
 
 void BasicRootPaneUI::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc(e)->getPropertyName()))->equals("defaultButton"_s)) {
 		$var($JRootPane, rootpane, $cast($JRootPane, e->getSource()));
 		updateDefaultButtonBindings(rootpane);

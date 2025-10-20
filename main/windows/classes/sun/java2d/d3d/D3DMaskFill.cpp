@@ -81,6 +81,7 @@ $Object* allocate$D3DMaskFill($Class* clazz) {
 
 void D3DMaskFill::register$() {
 	$init(D3DMaskFill);
+	$useLocalCurrentObjectStackCache();
 		$init($SurfaceType);
 		$init($CompositeType);
 	$var($GraphicsPrimitiveArray, primitives, $new($GraphicsPrimitiveArray, {
@@ -110,6 +111,7 @@ void D3DMaskFill::maskFill(int32_t x, int32_t y, int32_t w, int32_t h, int32_t m
 }
 
 void D3DMaskFill::validateContext($SunGraphics2D* sg2d, $Composite* comp, int32_t ctxflags) {
+	$useLocalCurrentObjectStackCache();
 	$var($D3DSurfaceData, dstData, nullptr);
 	try {
 		$assign(dstData, $cast($D3DSurfaceData, $nc(sg2d)->surfaceData));

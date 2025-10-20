@@ -157,12 +157,14 @@ $ComponentUI* SynthTextAreaUI::createUI($JComponent* ta) {
 }
 
 void SynthTextAreaUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$BasicTextAreaUI::installDefaults();
 	updateStyle($(getComponent()), true);
 	$nc($(getComponent()))->addFocusListener(this->handler);
 }
 
 void SynthTextAreaUI::uninstallDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext($(getComponent()), $SynthConstants::ENABLED));
 	$nc($(getComponent()))->putClientProperty("caretAspectRatio"_s, nullptr);
 	$nc($(getComponent()))->removeFocusListener(this->handler);
@@ -172,6 +174,7 @@ void SynthTextAreaUI::uninstallDefaults() {
 }
 
 void SynthTextAreaUI::updateStyle($JTextComponent* comp, bool updateKBAction) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(comp, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -193,6 +196,7 @@ $SynthContext* SynthTextAreaUI::getContext($JComponent* c, int32_t state) {
 }
 
 void SynthTextAreaUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -214,6 +218,7 @@ void SynthTextAreaUI::paintBorder($SynthContext* context, $Graphics* g, int32_t 
 }
 
 void SynthTextAreaUI::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc(evt)->getPropertyName()))->equals("keymap"_s)) {
 		if (evt->getNewValue() != nullptr) {
 			this->updateKBAction = false;

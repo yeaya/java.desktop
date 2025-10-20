@@ -53,6 +53,7 @@ void TIFFLSBCompressor::init$() {
 }
 
 int32_t TIFFLSBCompressor::encode($bytes* b, int32_t off, int32_t width, int32_t height, $ints* bitsPerSample, int32_t scanlineStride) {
+	$useLocalCurrentObjectStackCache();
 	int32_t bitsPerPixel = 0;
 	for (int32_t i = 0; i < $nc(bitsPerSample)->length; ++i) {
 		bitsPerPixel += bitsPerSample->get(i);

@@ -130,6 +130,7 @@ void FontConfiguration$PropertiesHandler::load($InputStream* in) {
 }
 
 void FontConfiguration$PropertiesHandler::initBinaryTable() {
+	$useLocalCurrentObjectStackCache();
 	$init($FontConfiguration);
 	$assignStatic($FontConfiguration::head, $new($shorts, 20));
 	$nc($FontConfiguration::head)->set(0, (int16_t)20);
@@ -313,6 +314,7 @@ void FontConfiguration$PropertiesHandler::initBinaryTable() {
 }
 
 void FontConfiguration$PropertiesHandler::initLogicalNameStyle() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, logicalFontIDs, $new($HashMap));
 	$set(this, fontStyleIDs, $new($HashMap));
 	$nc(this->logicalFontIDs)->put("serif"_s, $($Integer::valueOf(0)));
@@ -347,6 +349,7 @@ void FontConfiguration$PropertiesHandler::initHashMaps() {
 }
 
 $ints* FontConfiguration$PropertiesHandler::parseExclusions($String* key, $String* exclusions) {
+	$useLocalCurrentObjectStackCache();
 	if (exclusions == nullptr) {
 		$init($FontConfiguration);
 		return $FontConfiguration::EMPTY_INT_ARRAY;
@@ -400,6 +403,7 @@ $ints* FontConfiguration$PropertiesHandler::parseExclusions($String* key, $Strin
 }
 
 $Short* FontConfiguration$PropertiesHandler::getID($HashMap* map, $String* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($Short, ret, $cast($Short, $nc(map)->get(key)));
 	if (ret == nullptr) {
 		map->put(key, $($Short::valueOf((int16_t)map->size())));
@@ -409,6 +413,7 @@ $Short* FontConfiguration$PropertiesHandler::getID($HashMap* map, $String* key) 
 }
 
 void FontConfiguration$PropertiesHandler::parseProperty($String* key$renamed, $String* value) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, key, key$renamed);
 	if ($nc(key)->startsWith("filename."_s)) {
 		$assign(key, key->substring(9));

@@ -113,6 +113,7 @@ void TestCCEOnEditEvent::init$() {
 }
 
 void TestCCEOnEditEvent::main($StringArray* arguments) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -144,6 +145,7 @@ void TestCCEOnEditEvent::createAndShowGUI() {
 }
 
 void TestCCEOnEditEvent::createTextArea() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, textArea, $new($TestCCEOnEditEvent$3, this, "Text Area"_s));
 	$nc($($nc(this->textArea)->getDocument()))->addUndoableEditListener($$new($TestCCEOnEditEvent$4, this));
 	try {

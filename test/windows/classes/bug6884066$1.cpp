@@ -77,6 +77,7 @@ void bug6884066$1::init$() {
 }
 
 void bug6884066$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTable, table, $new($JTable, 10, 5));
 	$init($bug6884066);
 	$assignStatic($bug6884066::header, $new($JTableHeader, $(table->getColumnModel())));

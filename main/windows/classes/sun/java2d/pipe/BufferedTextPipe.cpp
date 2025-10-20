@@ -106,6 +106,7 @@ void BufferedTextPipe::init$($RenderQueue* rq) {
 }
 
 void BufferedTextPipe::drawGlyphList($SunGraphics2D* sg2d, $GlyphList* gl) {
+	$useLocalCurrentObjectStackCache();
 	$var($Composite, comp, $nc(sg2d)->composite);
 	$init($AlphaComposite);
 	if ($equals(comp, $AlphaComposite::Src)) {
@@ -129,6 +130,7 @@ void BufferedTextPipe::drawGlyphList($SunGraphics2D* sg2d, $GlyphList* gl) {
 }
 
 void BufferedTextPipe::enqueueGlyphList($SunGraphics2D* sg2d, $GlyphList* gl) {
+	$useLocalCurrentObjectStackCache();
 	$var($RenderBuffer, buf, $nc(this->rq)->getBuffer());
 	int32_t totalGlyphs = $nc(gl)->getNumGlyphs();
 	int32_t glyphBytesRequired = totalGlyphs * BufferedTextPipe::BYTES_PER_GLYPH_IMAGE;

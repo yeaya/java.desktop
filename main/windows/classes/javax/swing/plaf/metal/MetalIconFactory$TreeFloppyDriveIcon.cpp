@@ -96,6 +96,7 @@ void MetalIconFactory$TreeFloppyDriveIcon::init$() {
 }
 
 void MetalIconFactory$TreeFloppyDriveIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->translate(x, y);
 	g->setColor($($MetalLookAndFeel::getPrimaryControl()));
 	g->fillRect(2, 2, 12, 12);

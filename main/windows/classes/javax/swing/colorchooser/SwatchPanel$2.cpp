@@ -88,6 +88,7 @@ void SwatchPanel$2::init$($SwatchPanel* this$0) {
 }
 
 void SwatchPanel$2::keyPressed($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t typed = $nc(e)->getKeyCode();
 	switch (typed) {
 	case $KeyEvent::VK_UP:

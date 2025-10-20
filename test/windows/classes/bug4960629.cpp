@@ -98,6 +98,7 @@ $Object* allocate$bug4960629($Class* clazz) {
 }
 
 void bug4960629::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -131,6 +132,7 @@ void bug4960629::init$() {
 }
 
 void bug4960629::test() {
+	$useLocalCurrentObjectStackCache();
 	$init($BasicHTML);
 	$var($View, root, $nc(($cast($View, $($nc(this->label)->getClientProperty($BasicHTML::propertyKey)))))->getView(0));
 	int32_t n = $nc(root)->getViewCount();

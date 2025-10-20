@@ -93,6 +93,7 @@ void bug8031109::main($StringArray* args) {
 
 $URL* bug8031109::generateHtmlFile() {
 	$init(bug8031109);
+	$useLocalCurrentObjectStackCache();
 	$var($File, file, $new($File, "hello.html"_s));
 	try {
 		$var($FileWriter, fw, $new($FileWriter, $(file->getAbsoluteFile())));

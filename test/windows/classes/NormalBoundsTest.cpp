@@ -239,6 +239,7 @@ void NormalBoundsTest::drag($Robot* r, $Point* startPt, $Point* endPt, int32_t b
 }
 
 bool NormalBoundsTest::tryLookAndFeel($String* lookAndFeelString) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(lookAndFeelString);
 		return true;
@@ -259,6 +260,7 @@ bool NormalBoundsTest::tryLookAndFeel($String* lookAndFeelString) {
 }
 
 void NormalBoundsTest::executeTest($Robot* robot) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($NormalBoundsTest$1));
 	$nc(robot)->waitForIdle();
 	$SwingUtilities::invokeAndWait($$new($NormalBoundsTest$2));
@@ -282,6 +284,7 @@ void NormalBoundsTest::executeTest($Robot* robot) {
 }
 
 void NormalBoundsTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	$var($UIManager$LookAndFeelInfoArray, lookAndFeelArray, $UIManager::getInstalledLookAndFeels());
 	{

@@ -69,6 +69,7 @@ void bug8058120$3::init$() {
 }
 
 void bug8058120$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug8058120);
 	$var($Element, parent, $nc($($nc($bug8058120::document)->getElement("ab"_s)))->getParentElement());
 	int32_t count = $nc(parent)->getElementCount();

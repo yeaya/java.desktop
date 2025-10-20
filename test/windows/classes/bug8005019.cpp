@@ -78,6 +78,7 @@ void bug8005019::main($StringArray* args) {
 }
 
 void bug8005019::testSelectionWithFilterTable() {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultTableModel, model, $new($DefaultTableModel, 0, 1));
 	int32_t last = 2;
 	for (int32_t i = 0; i <= last; ++i) {

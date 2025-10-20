@@ -105,6 +105,7 @@ void WRobotPeer::keyRelease(int32_t keycode) {
 }
 
 int32_t WRobotPeer::getRGBPixel(int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($(getRGBPixels($$new($Rectangle, x, y, 1, 1))))->get(0);
 }
 

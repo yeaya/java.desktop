@@ -189,6 +189,7 @@ void ColorConvertOp::init$($ColorSpace* cspace, $RenderingHints* hints) {
 }
 
 void ColorConvertOp::init$($ColorSpace* srcCspace, $ColorSpace* dstCspace, $RenderingHints* hints) {
+	$useLocalCurrentObjectStackCache();
 	if ((srcCspace == nullptr) || (dstCspace == nullptr)) {
 		$throwNew($NullPointerException, "ColorSpaces cannot be null"_s);
 	}
@@ -229,6 +230,7 @@ $ICC_ProfileArray* ColorConvertOp::getICC_Profiles() {
 }
 
 $BufferedImage* ColorConvertOp::filter($BufferedImage* src$renamed, $BufferedImage* dest$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, src, src$renamed);
 	$var($BufferedImage, dest, dest$renamed);
 	$var($ColorSpace, srcColorSpace, nullptr);
@@ -277,6 +279,7 @@ $BufferedImage* ColorConvertOp::filter($BufferedImage* src$renamed, $BufferedIma
 }
 
 $BufferedImage* ColorConvertOp::ICCBIFilter($BufferedImage* src, $ColorSpace* srcColorSpace, $BufferedImage* dest$renamed, $ColorSpace* destColorSpace) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, dest, dest$renamed);
 	int32_t nProfiles = $nc(this->profileList)->length;
 	$var($ICC_Profile, srcProfile, nullptr);
@@ -334,6 +337,7 @@ $BufferedImage* ColorConvertOp::ICCBIFilter($BufferedImage* src, $ColorSpace* sr
 }
 
 void ColorConvertOp::updateBITransform($ICC_Profile* srcProfile, $ICC_Profile* destProfile) {
+	$useLocalCurrentObjectStackCache();
 	$var($ICC_ProfileArray, theProfiles, nullptr);
 	int32_t i1 = 0;
 	int32_t nProfiles = 0;
@@ -389,6 +393,7 @@ void ColorConvertOp::updateBITransform($ICC_Profile* srcProfile, $ICC_Profile* d
 }
 
 $WritableRaster* ColorConvertOp::filter($Raster* src, $WritableRaster* dest$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($WritableRaster, dest, dest$renamed);
 	if (this->CSList != nullptr) {
 		return nonICCRasterFilter(src, dest);
@@ -466,6 +471,7 @@ $Rectangle2D* ColorConvertOp::getBounds2D($Raster* src) {
 }
 
 $BufferedImage* ColorConvertOp::createCompatibleDestImage($BufferedImage* src, $ColorModel* destCM) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorSpace, cs, nullptr);
 	if (destCM == nullptr) {
 		if (this->CSList == nullptr) {
@@ -484,6 +490,7 @@ $BufferedImage* ColorConvertOp::createCompatibleDestImage($BufferedImage* src, $
 }
 
 $BufferedImage* ColorConvertOp::createCompatibleDestImage($BufferedImage* src, $ColorModel* destCM$renamed, $ColorSpace* destCS) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, destCM, destCM$renamed);
 	$var($BufferedImage, image, nullptr);
 	if (destCM == nullptr) {
@@ -512,6 +519,7 @@ $BufferedImage* ColorConvertOp::createCompatibleDestImage($BufferedImage* src, $
 }
 
 $WritableRaster* ColorConvertOp::createCompatibleDestRaster($Raster* src) {
+	$useLocalCurrentObjectStackCache();
 	int32_t ncomponents = 0;
 	if (this->CSList != nullptr) {
 		if ($nc(this->CSList)->length != 2) {
@@ -554,6 +562,7 @@ $RenderingHints* ColorConvertOp::getRenderingHints() {
 }
 
 $BufferedImage* ColorConvertOp::nonICCBIFilter($BufferedImage* src, $ColorSpace* srcColorSpace, $BufferedImage* dst$renamed, $ColorSpace* dstColorSpace$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, dst, dst$renamed);
 	$var($ColorSpace, dstColorSpace, dstColorSpace$renamed);
 	int32_t w = $nc(src)->getWidth();
@@ -729,6 +738,7 @@ $BufferedImage* ColorConvertOp::nonICCBIFilter($BufferedImage* src, $ColorSpace*
 }
 
 $WritableRaster* ColorConvertOp::nonICCRasterFilter($Raster* src, $WritableRaster* dst$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($WritableRaster, dst, dst$renamed);
 	if ($nc(this->CSList)->length != 2) {
 		$throwNew($IllegalArgumentException, "Destination ColorSpace is undefined"_s);

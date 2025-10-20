@@ -66,6 +66,7 @@ void JFormattedTextField$CommitAction::init$() {
 }
 
 void JFormattedTextField$CommitAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getFocusedComponent());
 	if ($instanceOf($JFormattedTextField, target)) {
 		try {
@@ -80,6 +81,7 @@ void JFormattedTextField$CommitAction::actionPerformed($ActionEvent* e) {
 }
 
 bool JFormattedTextField$CommitAction::isEnabled() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getFocusedComponent());
 	if ($instanceOf($JFormattedTextField, target)) {
 		$var($JFormattedTextField, ftf, $cast($JFormattedTextField, target));

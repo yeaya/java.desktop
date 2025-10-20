@@ -116,6 +116,7 @@ void I18NViewNoWrapMinSpan::main($StringArray* args) {
 }
 
 void I18NViewNoWrapMinSpan::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($JTextField, textField, $new($JTextField, 15));
 		textField->setText(u"\u0e2112345"_s);

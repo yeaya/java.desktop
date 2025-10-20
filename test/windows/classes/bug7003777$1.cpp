@@ -76,6 +76,7 @@ void bug7003777$1::init$() {
 }
 
 void bug7003777$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextPane, pane, $new($JTextPane));
 	pane->setContentType("text/html"_s);
 	{

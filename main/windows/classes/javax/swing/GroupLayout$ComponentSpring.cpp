@@ -141,6 +141,7 @@ int32_t GroupLayout$ComponentSpring::calculateMaximumSize(int32_t axis) {
 }
 
 bool GroupLayout$ComponentSpring::isVisible() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($(this->this$0->getComponentInfo($(getComponent()))))->isVisible();
 }
 
@@ -222,6 +223,7 @@ $Component* GroupLayout$ComponentSpring::getComponent() {
 }
 
 int32_t GroupLayout$ComponentSpring::getBaseline() {
+	$useLocalCurrentObjectStackCache();
 	if (this->baseline == -1) {
 		$var($GroupLayout$Spring, horizontalSpring, $nc($(this->this$0->getComponentInfo(this->component)))->horizontalSpring);
 		int32_t width = $nc(horizontalSpring)->getPreferredSize(0);
@@ -242,6 +244,7 @@ bool GroupLayout$ComponentSpring::isLinked(int32_t axis) {
 }
 
 void GroupLayout$ComponentSpring::installIfNecessary(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->installed) {
 		this->installed = true;
 		if (axis == 0) {

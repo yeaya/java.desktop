@@ -138,6 +138,7 @@ void DocFlavor$INPUT_STREAM::init$($String* mimeType) {
 }
 
 void clinit$DocFlavor$INPUT_STREAM($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$init($DocFlavor);
 	$assignStatic(DocFlavor$INPUT_STREAM::TEXT_PLAIN_HOST, $new(DocFlavor$INPUT_STREAM, $$str({"text/plain; charset="_s, $DocFlavor::hostEncoding})));
 	$assignStatic(DocFlavor$INPUT_STREAM::TEXT_PLAIN_UTF_8, $new(DocFlavor$INPUT_STREAM, "text/plain; charset=utf-8"_s));

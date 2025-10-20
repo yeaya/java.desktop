@@ -45,6 +45,7 @@ $Object* allocate$AbstractActionBug($Class* clazz) {
 
 void AbstractActionBug::main($StringArray* args) {
 	$init(AbstractActionBug);
+	$useLocalCurrentObjectStackCache();
 	$var(AbstractActionBug, a1, $new(AbstractActionBug, "a1"_s));
 	$assign(a1, $cast(AbstractActionBug, a1->clone()));
 	$init($System);

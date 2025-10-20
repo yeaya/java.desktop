@@ -214,6 +214,7 @@ void bug4927934::init$() {
 
 void bug4927934::main($StringArray* args) {
 	$init(bug4927934);
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 	$assignStatic(bug4927934::robot, $new($Robot));
 	$nc(bug4927934::robot)->setAutoDelay(50);
@@ -318,6 +319,7 @@ void bug4927934::focusGained($FocusEvent* e) {
 
 void bug4927934::createNodes($DefaultMutableTreeNode* root) {
 	$init(bug4927934);
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultMutableTreeNode, node, $new($DefaultMutableTreeNode, "Node"_s));
 	node->add($$new($DefaultMutableTreeNode, "Leaf1"_s));
 	node->add($$new($DefaultMutableTreeNode, "Leaf2"_s));
@@ -354,6 +356,7 @@ void bug4927934::treeExpanded($TreeExpansionEvent* e) {
 
 void bug4927934::hitKey(int32_t key) {
 	$init(bug4927934);
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println($$str({"key "_s, $$str(key), " pressed"_s}));
 	$nc(bug4927934::robot)->keyPress(key);
@@ -362,6 +365,7 @@ void bug4927934::hitKey(int32_t key) {
 
 bool bug4927934::checkSelectionChanged($JTree* tree, int32_t shouldBeSel) {
 	$init(bug4927934);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(bug4927934::listener) {
 		if (!bug4927934::selectionChanged) {
 			$init($System);

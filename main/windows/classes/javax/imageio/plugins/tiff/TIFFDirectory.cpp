@@ -115,6 +115,7 @@ $Object* allocate$TIFFDirectory($Class* clazz) {
 
 TIFFDirectory* TIFFDirectory::createFromMetadata($IIOMetadata* tiffImageMetadata) {
 	$init(TIFFDirectory);
+	$useLocalCurrentObjectStackCache();
 	if (tiffImageMetadata == nullptr) {
 		$throwNew($NullPointerException, "tiffImageMetadata == null"_s);
 	}
@@ -222,6 +223,7 @@ void TIFFDirectory::addTIFFField($TIFFField* f) {
 }
 
 $TIFFField* TIFFDirectory::getTIFFField(int32_t tagNumber) {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFField, f, nullptr);
 	if (tagNumber >= 0 && tagNumber <= TIFFDirectory::MAX_LOW_FIELD_TAG_NUM) {
 		$assign(f, $nc(this->lowFields)->get(tagNumber));
@@ -243,6 +245,7 @@ void TIFFDirectory::removeTIFFField(int32_t tagNumber) {
 }
 
 $TIFFFieldArray* TIFFDirectory::getTIFFFields() {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFFieldArray, fields, $new($TIFFFieldArray, this->numLowFields + $nc(this->highFields)->size()));
 	int32_t nextIndex = 0;
 	for (int32_t i = 0; i <= TIFFDirectory::MAX_LOW_FIELD_TAG_NUM; ++i) {
@@ -278,6 +281,7 @@ $IIOMetadata* TIFFDirectory::getAsMetadata() {
 }
 
 TIFFDirectory* TIFFDirectory::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(TIFFDirectory, dir, $cast(TIFFDirectory, $Cloneable::clone()));
 	$set($nc(dir), tagSets, $new($ArrayList, static_cast<$Collection*>(this->tagSets)));
 	$set(dir, parentTag, getParentTag());

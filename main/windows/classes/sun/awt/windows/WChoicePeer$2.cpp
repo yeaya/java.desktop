@@ -87,6 +87,7 @@ void WChoicePeer$2::init$($WChoicePeer* this$0, $Choice* val$c, int32_t val$inde
 }
 
 void WChoicePeer$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->val$c)->select(this->val$index);
 	this->this$0->postEvent($$new($ItemEvent, this->val$c, $ItemEvent::ITEM_STATE_CHANGED, $($nc(this->val$c)->getItem(this->val$index)), $ItemEvent::SELECTED));
 }

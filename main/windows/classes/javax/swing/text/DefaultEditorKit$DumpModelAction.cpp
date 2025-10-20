@@ -68,6 +68,7 @@ void DefaultEditorKit$DumpModelAction::init$() {
 }
 
 void DefaultEditorKit$DumpModelAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getTextComponent(e));
 	if (target != nullptr) {
 		$var($Document, d, target->getDocument());

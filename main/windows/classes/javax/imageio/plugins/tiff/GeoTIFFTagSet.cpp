@@ -100,6 +100,7 @@ $List* GeoTIFFTagSet::tags = nullptr;
 
 void GeoTIFFTagSet::initTags() {
 	$init(GeoTIFFTagSet);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(GeoTIFFTagSet::tags, $new($ArrayList, 42));
 	$nc(GeoTIFFTagSet::tags)->add($$new($GeoTIFFTagSet$ModelPixelScale));
 	$nc(GeoTIFFTagSet::tags)->add($$new($GeoTIFFTagSet$ModelTransformation));

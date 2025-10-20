@@ -301,6 +301,7 @@ $FontPeer* ComponentFactory::getFontPeer($String* name, int32_t style) {
 }
 
 $RobotPeer* ComponentFactory::createRobot($GraphicsDevice* screen) {
+	$useLocalCurrentObjectStackCache();
 	$throwNew($AWTException, $($String::format("Unsupported device: %s"_s, $$new($ObjectArray, {$of(screen)}))));
 	$shouldNotReachHere();
 }

@@ -899,6 +899,7 @@ void JTextComponent::fireCaretUpdate($CaretEvent* e) {
 }
 
 void JTextComponent::setDocument($Document* doc) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, old, this->model);
 	{
 		$var($Throwable, var$0, nullptr);
@@ -945,6 +946,7 @@ $Document* JTextComponent::getDocument() {
 }
 
 void JTextComponent::setComponentOrientation($ComponentOrientation* o) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	if (doc != nullptr) {
 		$init($TextAttribute);
@@ -955,6 +957,7 @@ void JTextComponent::setComponentOrientation($ComponentOrientation* o) {
 }
 
 $ActionArray* JTextComponent::getActions() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($nc($($cast($TextUI, getUI())))->getEditorKit(this)))->getActions();
 }
 
@@ -1060,6 +1063,7 @@ $DropMode* JTextComponent::getDropMode() {
 }
 
 $TransferHandler$DropLocation* JTextComponent::dropLocationForPoint($Point* p) {
+	$useLocalCurrentObjectStackCache();
 	$var($Position$BiasArray, bias, $new($Position$BiasArray, 1));
 	int32_t index = $nc($($cast($TextUI, getUI())))->viewToModel(this, p, bias);
 	if (bias->get(0) == nullptr) {
@@ -1070,6 +1074,7 @@ $TransferHandler$DropLocation* JTextComponent::dropLocationForPoint($Point* p) {
 }
 
 $Object* JTextComponent::setDropLocation($TransferHandler$DropLocation* location, Object$* state, bool forDrop) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, retVal, nullptr);
 	$var($JTextComponent$DropLocation, textLocation, $cast($JTextComponent$DropLocation, location));
 	$init($DropMode);
@@ -1142,6 +1147,7 @@ $JTextComponent$DropLocation* JTextComponent::getDropLocation() {
 }
 
 void JTextComponent::updateInputMap($Keymap* oldKm, $Keymap* newKm) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMap, km, getInputMap($JComponent::WHEN_FOCUSED));
 	$var($InputMap, last, km);
 	while (km != nullptr && !($instanceOf($JTextComponent$KeymapWrapper, km))) {
@@ -1206,6 +1212,7 @@ $Keymap* JTextComponent::getKeymap() {
 
 $Keymap* JTextComponent::addKeymap($String* nm, $Keymap* parent) {
 	$init(JTextComponent);
+	$useLocalCurrentObjectStackCache();
 	$var($Keymap, map, $new($JTextComponent$DefaultKeymap, nm, parent));
 	if (nm != nullptr) {
 		$nc($(getKeymapTable()))->put(nm, map);
@@ -1225,6 +1232,7 @@ $Keymap* JTextComponent::getKeymap($String* nm) {
 
 $HashMap* JTextComponent::getKeymapTable() {
 	$init(JTextComponent);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(JTextComponent::KEYMAP_TABLE) {
 		$var($AppContext, appContext, $AppContext::getAppContext());
 		$var($HashMap, keymapTable, $cast($HashMap, $nc(appContext)->get(JTextComponent::KEYMAP_TABLE)));
@@ -1240,6 +1248,7 @@ $HashMap* JTextComponent::getKeymapTable() {
 
 void JTextComponent::loadKeymap($Keymap* map, $JTextComponent$KeyBindingArray* bindings, $ActionArray* actions) {
 	$init(JTextComponent);
+	$useLocalCurrentObjectStackCache();
 	$var($Hashtable, h, $new($Hashtable));
 	{
 		$var($ActionArray, arr$, actions);
@@ -1311,6 +1320,7 @@ void JTextComponent::setDisabledTextColor($Color* c) {
 }
 
 void JTextComponent::replaceSelection($String* content) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	if (doc != nullptr) {
 		try {
@@ -1357,6 +1367,7 @@ int32_t JTextComponent::viewToModel($Point* pt) {
 }
 
 int32_t JTextComponent::viewToModel2D($Point2D* pt) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($cast($TextUI, getUI())))->viewToModel2D(this, pt, $$new($Position$BiasArray, 1));
 }
 
@@ -1379,6 +1390,7 @@ void JTextComponent::paste() {
 }
 
 void JTextComponent::invokeAction($String* name, $Action* altAction) {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, map, getActionMap());
 	$var($Action, action, nullptr);
 	if (map != nullptr) {
@@ -1404,6 +1416,7 @@ void JTextComponent::installDefaultTransferHandlerIfNecessary() {
 }
 
 void JTextComponent::moveCaretPosition(int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	if (doc != nullptr) {
 		if (pos > doc->getLength() || pos < 0) {
@@ -1426,6 +1439,7 @@ char16_t JTextComponent::getFocusAccelerator() {
 }
 
 void JTextComponent::read($Reader* in, Object$* desc) {
+	$useLocalCurrentObjectStackCache();
 	$var($EditorKit, kit, $nc($($cast($TextUI, getUI())))->getEditorKit(this));
 	$var($Document, doc, $nc(kit)->createDefaultDocument());
 	if (desc != nullptr) {
@@ -1442,6 +1456,7 @@ void JTextComponent::read($Reader* in, Object$* desc) {
 }
 
 void JTextComponent::write($Writer* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	try {
 		$nc($($nc($($cast($TextUI, getUI())))->getEditorKit(this)))->write(out, doc, 0, $nc(doc)->getLength());
@@ -1459,6 +1474,7 @@ void JTextComponent::removeNotify() {
 }
 
 void JTextComponent::setCaretPosition(int32_t position) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	if (doc != nullptr) {
 		if (position > doc->getLength() || position < 0) {
@@ -1473,6 +1489,7 @@ int32_t JTextComponent::getCaretPosition() {
 }
 
 void JTextComponent::setText($String* t) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($Document, doc, getDocument());
 		if ($instanceOf($AbstractDocument, doc)) {
@@ -1488,6 +1505,7 @@ void JTextComponent::setText($String* t) {
 }
 
 $String* JTextComponent::getText() {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	$var($String, txt, nullptr);
 	try {
@@ -1500,6 +1518,7 @@ $String* JTextComponent::getText() {
 }
 
 $String* JTextComponent::getSelectedText() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, txt, nullptr);
 	int32_t var$0 = $nc(this->caret)->getDot();
 	int32_t p0 = $Math::min(var$0, $nc(this->caret)->getMark());
@@ -1522,6 +1541,7 @@ bool JTextComponent::isEditable() {
 }
 
 void JTextComponent::setEditable(bool b) {
+	$useLocalCurrentObjectStackCache();
 	if (b != this->editable) {
 		bool oldVal = this->editable;
 		this->editable = b;
@@ -1580,6 +1600,7 @@ void JTextComponent::selectAll() {
 }
 
 $String* JTextComponent::getToolTipText($MouseEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, retValue, $JComponent::getToolTipText(event));
 	if (retValue == nullptr) {
 		$var($TextUI, ui, $cast($TextUI, getUI()));
@@ -1596,6 +1617,7 @@ $Dimension* JTextComponent::getPreferredScrollableViewportSize() {
 }
 
 int32_t JTextComponent::getScrollableUnitIncrement($Rectangle* visibleRect, int32_t orientation, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	switch (orientation) {
 	case $SwingConstants::VERTICAL:
 		{
@@ -1613,6 +1635,7 @@ int32_t JTextComponent::getScrollableUnitIncrement($Rectangle* visibleRect, int3
 }
 
 int32_t JTextComponent::getScrollableBlockIncrement($Rectangle* visibleRect, int32_t orientation, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	switch (orientation) {
 	case $SwingConstants::VERTICAL:
 		{
@@ -1630,6 +1653,7 @@ int32_t JTextComponent::getScrollableBlockIncrement($Rectangle* visibleRect, int
 }
 
 bool JTextComponent::getScrollableTracksViewportWidth() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, parent, $SwingUtilities::getUnwrappedParent(this));
 	if ($instanceOf($JViewport, parent)) {
 		int32_t var$0 = $nc(parent)->getWidth();
@@ -1639,6 +1663,7 @@ bool JTextComponent::getScrollableTracksViewportWidth() {
 }
 
 bool JTextComponent::getScrollableTracksViewportHeight() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, parent, $SwingUtilities::getUnwrappedParent(this));
 	if ($instanceOf($JViewport, parent)) {
 		int32_t var$0 = $nc(parent)->getHeight();
@@ -1656,6 +1681,7 @@ bool JTextComponent::print($MessageFormat* headerFormat, $MessageFormat* footerF
 }
 
 bool JTextComponent::print($MessageFormat* headerFormat, $MessageFormat* footerFormat, bool showPrintDialog, $PrintService* service, $PrintRequestAttributeSet* attributes, bool interactive) {
+	$useLocalCurrentObjectStackCache();
 	$var($PrinterJob, job, $PrinterJob::getPrinterJob());
 	$var($Printable, printable, nullptr);
 	$var($PrintingStatus, printingStatus, nullptr);
@@ -1760,6 +1786,7 @@ void JTextComponent::readObject($ObjectInputStream* s) {
 }
 
 $String* JTextComponent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, editableString, this->editable ? "true"_s : "false"_s);
 	$var($String, caretColorString, this->caretColor != nullptr ? $nc(this->caretColor)->toString() : ""_s);
 	$var($String, selectionColorString, this->selectionColor != nullptr ? $nc(this->selectionColor)->toString() : ""_s);
@@ -1827,6 +1854,7 @@ void JTextComponent::addInputMethodListener($InputMethodListener* l) {
 }
 
 void JTextComponent::replaceInputMethodText($InputMethodEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t commitCount = $nc(e)->getCommittedCharacterCount();
 	$var($AttributedCharacterIterator, text, e->getText());
 	int32_t composedTextIndex = 0;
@@ -1894,6 +1922,7 @@ void JTextComponent::replaceInputMethodText($InputMethodEvent* e) {
 }
 
 void JTextComponent::createComposedTextAttribute(int32_t composedIndex, $AttributedCharacterIterator* text) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	$var($StringBuilder, strBuf, $new($StringBuilder));
 	for (char16_t c = $nc(text)->setIndex(composedIndex); c != $CharacterIterator::DONE; c = text->next()) {
@@ -1935,6 +1964,7 @@ void JTextComponent::restoreComposedText() {
 }
 
 void JTextComponent::mapCommittedTextToAction($String* committedText) {
+	$useLocalCurrentObjectStackCache();
 	$var($Keymap, binding, getKeymap());
 	if (binding != nullptr) {
 		$var($Action, a, nullptr);
@@ -1955,6 +1985,7 @@ void JTextComponent::mapCommittedTextToAction($String* committedText) {
 }
 
 void JTextComponent::setInputMethodCaretPosition($InputMethodEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t dot = 0;
 	if (composedTextExists()) {
 		dot = $nc(this->composedTextStart)->getOffset();

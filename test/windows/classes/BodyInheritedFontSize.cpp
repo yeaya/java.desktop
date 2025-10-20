@@ -229,6 +229,7 @@ void BodyInheritedFontSize::init$() {
 
 $JEditorPane* BodyInheritedFontSize::createEditorPane(bool w3cUnits, bool showFrame) {
 	$init(BodyInheritedFontSize);
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, htmlPane, $new($JEditorPane));
 	htmlPane->setEditable(false);
 	if (w3cUnits) {
@@ -257,6 +258,7 @@ $JEditorPane* BodyInheritedFontSize::createEditorPane(bool w3cUnits, bool showFr
 
 void BodyInheritedFontSize::main($StringArray* args) {
 	$init(BodyInheritedFontSize);
+	$useLocalCurrentObjectStackCache();
 	$var($List, argsList, $Arrays::asList(args));
 	bool showFrame = toShowFrame(argsList);
 	bool debugPrint = toDebugPrint(argsList);
@@ -282,6 +284,7 @@ bool BodyInheritedFontSize::toDebugPrint($List* argsList) {
 
 void BodyInheritedFontSize::checkFontSize($JEditorPane* htmlPane, bool w3cUnits, bool debugPrint) {
 	$init(BodyInheritedFontSize);
+	$useLocalCurrentObjectStackCache();
 	$var($View, rootView, $nc($($cast($TextUI, $nc(htmlPane)->getUI())))->getRootView(htmlPane));
 	$var($View, boxView, $nc(rootView)->getView(0));
 	$var($View, bodyView, $nc(boxView)->getView(1));
@@ -299,6 +302,7 @@ void BodyInheritedFontSize::checkFontSize($JEditorPane* htmlPane, bool w3cUnits,
 
 int32_t BodyInheritedFontSize::getViewFontSize($View* paragraphView, bool debugPrint) {
 	$init(BodyInheritedFontSize);
+	$useLocalCurrentObjectStackCache();
 	$var($GlyphView, inlineView, findFirstTextRun(paragraphView));
 	int32_t fontSize = $nc($($nc(inlineView)->getFont()))->getSize();
 	if (debugPrint) {
@@ -310,6 +314,7 @@ int32_t BodyInheritedFontSize::getViewFontSize($View* paragraphView, bool debugP
 
 $GlyphView* BodyInheritedFontSize::findFirstTextRun($View* view) {
 	$init(BodyInheritedFontSize);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($GlyphView, view)) {
 		return $cast($GlyphView, view);
 	}
@@ -324,6 +329,7 @@ $GlyphView* BodyInheritedFontSize::findFirstTextRun($View* view) {
 
 void BodyInheritedFontSize::lambda$main$0(bool showFrame, bool debugPrint, $List* exceptions) {
 	$init(BodyInheritedFontSize);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($booleans, arr$, $new($booleans, {
 			true,

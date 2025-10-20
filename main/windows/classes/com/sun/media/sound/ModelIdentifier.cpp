@@ -147,6 +147,7 @@ bool ModelIdentifier::equals(Object$* obj) {
 }
 
 $String* ModelIdentifier::toString() {
+	$useLocalCurrentObjectStackCache();
 	if (this->variable == nullptr) {
 		return $str({this->object, "["_s, $$str(this->instance), "]"_s});
 	} else {

@@ -83,6 +83,7 @@ void bug4714674$1::init$($bug4714674* this$0, $String* val$baseURL) {
 }
 
 void bug4714674$1::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($JEditorPane, pane, $new($JEditorPane));
 		$nc(($cast($AbstractDocument, $(pane->getDocument()))))->setAsynchronousLoadPriority(1);

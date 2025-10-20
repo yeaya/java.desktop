@@ -311,6 +311,7 @@ void ProxyGraphics::finalize() {
 }
 
 $String* ProxyGraphics::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$3, $$str({$($of(this)->getClass()->getName()), "[font="_s}));
 	$var($String, var$2, $$concat(var$3, $(getFont())));
 	$var($String, var$1, $$concat(var$2, ",color="));

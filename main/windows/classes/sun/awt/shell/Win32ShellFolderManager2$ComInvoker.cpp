@@ -322,6 +322,7 @@ $Object* Win32ShellFolderManager2$ComInvoker::clone() {
 $Thread* Win32ShellFolderManager2$ComInvoker::comThread = nullptr;
 
 void Win32ShellFolderManager2$ComInvoker::init$() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$init($TimeUnit);
 	$ThreadPoolExecutor::init$(1, 1, 0, $TimeUnit::DAYS, $$new($LinkedBlockingQueue));
@@ -333,6 +334,7 @@ void Win32ShellFolderManager2$ComInvoker::init$() {
 
 $Thread* Win32ShellFolderManager2$ComInvoker::newThread($Runnable* task) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$beforeCallerSensitive();
 		$var($Runnable, comRun, $new($Win32ShellFolderManager2$ComInvoker$1, this, task));
 		$assignStatic(Win32ShellFolderManager2$ComInvoker::comThread, $cast($Thread, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new(Win32ShellFolderManager2$ComInvoker$$Lambda$lambda$newThread$3$2, comRun)))));
@@ -341,6 +343,7 @@ $Thread* Win32ShellFolderManager2$ComInvoker::newThread($Runnable* task) {
 }
 
 $Object* Win32ShellFolderManager2$ComInvoker::invoke($Callable* task) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if ($Thread::currentThread() == Win32ShellFolderManager2$ComInvoker::comThread) {
 		return $of($nc(task)->call());
@@ -375,6 +378,7 @@ $Object* Win32ShellFolderManager2$ComInvoker::invoke($Callable* task) {
 
 $Thread* Win32ShellFolderManager2$ComInvoker::lambda$newThread$3($Runnable* comRun) {
 	$init(Win32ShellFolderManager2$ComInvoker);
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, "Swing-Shell"_s);
 	$var($Thread, thread, $new($Thread, $($ThreadGroupUtils::getRootThreadGroup()), comRun, name, 0, false));
 	thread->setDaemon(true);
@@ -384,6 +388,7 @@ $Thread* Win32ShellFolderManager2$ComInvoker::lambda$newThread$3($Runnable* comR
 
 $Void* Win32ShellFolderManager2$ComInvoker::lambda$new$2($Runnable* shutdownHook) {
 	$init(Win32ShellFolderManager2$ComInvoker);
+	$useLocalCurrentObjectStackCache();
 	$var($Thread, t, $new($Thread, $($ThreadGroupUtils::getRootThreadGroup()), shutdownHook, "ShellFolder"_s, 0, false));
 	$nc($($Runtime::getRuntime()))->addShutdownHook(t);
 	return nullptr;

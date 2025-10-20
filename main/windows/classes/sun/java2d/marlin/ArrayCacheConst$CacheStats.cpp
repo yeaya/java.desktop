@@ -78,6 +78,7 @@ $Object* allocate$ArrayCacheConst$CacheStats($Class* clazz) {
 }
 
 void ArrayCacheConst$CacheStats::init$($String* name) {
+	$useLocalCurrentObjectStackCache();
 	this->resize = 0;
 	this->oversize = 0;
 	this->totalInitial = 0;
@@ -97,6 +98,7 @@ void ArrayCacheConst$CacheStats::reset() {
 }
 
 int64_t ArrayCacheConst$CacheStats::dumpStats() {
+	$useLocalCurrentObjectStackCache();
 	int64_t totalCacheBytes = 0;
 	$init($MarlinConst);
 	if ($MarlinConst::DO_STATS) {

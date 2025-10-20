@@ -194,6 +194,7 @@ void WindowsMenuBarUI::installListeners() {
 }
 
 void WindowsMenuBarUI::installKeyboardActions() {
+	$useLocalCurrentObjectStackCache();
 	$BasicMenuBarUI::installKeyboardActions();
 	$var($ActionMap, map, $SwingUtilities::getUIActionMap(this->menuBar));
 	if (map == nullptr) {
@@ -204,6 +205,7 @@ void WindowsMenuBarUI::installKeyboardActions() {
 }
 
 void WindowsMenuBarUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if ($WindowsMenuItemUI::isVistaPainting(xp)) {
 		$var($XPStyle$Skin, skin, nullptr);
@@ -221,6 +223,7 @@ void WindowsMenuBarUI::paint($Graphics* g, $JComponent* c) {
 
 bool WindowsMenuBarUI::isActive($JComponent* c) {
 	$init(WindowsMenuBarUI);
+	$useLocalCurrentObjectStackCache();
 	$var($JRootPane, rootPane, $nc(c)->getRootPane());
 	if (rootPane != nullptr) {
 		$var($Component, component, rootPane->getParent());

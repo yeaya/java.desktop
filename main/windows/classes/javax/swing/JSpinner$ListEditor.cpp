@@ -72,6 +72,7 @@ $Object* allocate$JSpinner$ListEditor($Class* clazz) {
 }
 
 void JSpinner$ListEditor::init$($JSpinner* spinner) {
+	$useLocalCurrentObjectStackCache();
 	$JSpinner$DefaultEditor::init$(spinner);
 	if (!($instanceOf($SpinnerListModel, $($nc(spinner)->getModel())))) {
 		$throwNew($IllegalArgumentException, "model not a SpinnerListModel"_s);

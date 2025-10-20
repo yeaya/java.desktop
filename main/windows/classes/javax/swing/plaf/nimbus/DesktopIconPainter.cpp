@@ -134,6 +134,7 @@ $AbstractRegionPainter$PaintContext* DesktopIconPainter::getPaintContext() {
 }
 
 void DesktopIconPainter::paintBackgroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -176,6 +177,7 @@ $Rectangle2D* DesktopIconPainter::decodeRect1() {
 }
 
 $Paint* DesktopIconPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -193,6 +195,7 @@ $Paint* DesktopIconPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* DesktopIconPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

@@ -74,6 +74,7 @@ void MotifBorders$MenuBarBorder::init$($Color* shadow, $Color* highlight, $Color
 }
 
 void MotifBorders$MenuBarBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($JMenuBar, c))) {
 		return;
 	}

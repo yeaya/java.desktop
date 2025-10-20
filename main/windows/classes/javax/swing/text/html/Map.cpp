@@ -120,6 +120,7 @@ void Map::addArea($AttributeSet* as) {
 }
 
 void Map::removeArea($AttributeSet* as) {
+	$useLocalCurrentObjectStackCache();
 	if (as != nullptr && this->areaAttributes != nullptr) {
 		int32_t numAreas = (this->areas != nullptr) ? $nc(this->areas)->size() : 0;
 		for (int32_t counter = $nc(this->areaAttributes)->size() - 1; counter >= 0; --counter) {
@@ -144,6 +145,7 @@ $AttributeSetArray* Map::getAreas() {
 }
 
 $AttributeSet* Map::getArea(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	int32_t numAttributes = (this->areaAttributes != nullptr) ? $nc(this->areaAttributes)->size() : 0;
 	if (numAttributes > 0) {
 		int32_t numAreas = (this->areas != nullptr) ? $nc(this->areas)->size() : 0;
@@ -164,6 +166,7 @@ $AttributeSet* Map::getArea(int32_t x, int32_t y, int32_t width, int32_t height)
 }
 
 $Map$RegionContainment* Map::createRegionContainment($AttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Attribute);
 	$var($Object, shape, $nc(attributes)->getAttribute($HTML$Attribute::SHAPE));
 	if (shape == nullptr) {
@@ -193,6 +196,7 @@ $Map$RegionContainment* Map::createRegionContainment($AttributeSet* attributes) 
 
 $ints* Map::extractCoords(Object$* stringCoords) {
 	$init(Map);
+	$useLocalCurrentObjectStackCache();
 	if (stringCoords == nullptr || !($instanceOf($String, stringCoords))) {
 		return nullptr;
 	}

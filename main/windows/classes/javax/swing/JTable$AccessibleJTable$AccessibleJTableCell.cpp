@@ -206,6 +206,7 @@ $AccessibleContext* JTable$AccessibleJTable$AccessibleJTableCell::getAccessibleC
 }
 
 $AccessibleContext* JTable$AccessibleJTable$AccessibleJTableCell::getCurrentAccessibleContext() {
+	$useLocalCurrentObjectStackCache();
 	$var($TableColumn, aColumn, $nc($($nc(this->this$1->this$0)->getColumnModel()))->getColumn(this->column));
 	$var($TableCellRenderer, renderer, $nc(aColumn)->getCellRenderer());
 	if (renderer == nullptr) {
@@ -221,6 +222,7 @@ $AccessibleContext* JTable$AccessibleJTable$AccessibleJTableCell::getCurrentAcce
 }
 
 $Component* JTable$AccessibleJTable$AccessibleJTableCell::getCurrentComponent() {
+	$useLocalCurrentObjectStackCache();
 	$var($TableColumn, aColumn, $nc($($nc(this->this$1->this$0)->getColumnModel()))->getColumn(this->column));
 	$var($TableCellRenderer, renderer, $nc(aColumn)->getCellRenderer());
 	if (renderer == nullptr) {
@@ -231,6 +233,7 @@ $Component* JTable$AccessibleJTable$AccessibleJTableCell::getCurrentComponent() 
 }
 
 $String* JTable$AccessibleJTable$AccessibleJTableCell::getAccessibleName() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if (ac != nullptr) {
 		$var($String, name, ac->getAccessibleName());
@@ -284,6 +287,7 @@ $AccessibleRole* JTable$AccessibleJTable$AccessibleJTableCell::getAccessibleRole
 }
 
 $AccessibleStateSet* JTable$AccessibleJTable$AccessibleJTableCell::getAccessibleStateSet() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	$var($AccessibleStateSet, as, nullptr);
 	if (ac != nullptr) {
@@ -340,6 +344,7 @@ int32_t JTable$AccessibleJTable$AccessibleJTableCell::getAccessibleChildrenCount
 }
 
 $Accessible* JTable$AccessibleJTable$AccessibleJTableCell::getAccessibleChild(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if (ac != nullptr) {
 		$var($Accessible, accessibleChild, ac->getAccessibleChild(i));
@@ -398,6 +403,7 @@ $AccessibleValue* JTable$AccessibleJTable$AccessibleJTableCell::getAccessibleVal
 }
 
 $Color* JTable$AccessibleJTable$AccessibleJTableCell::getBackground() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->getBackground();
@@ -412,6 +418,7 @@ $Color* JTable$AccessibleJTable$AccessibleJTableCell::getBackground() {
 }
 
 void JTable$AccessibleJTable$AccessibleJTableCell::setBackground($Color* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setBackground(c);
@@ -424,6 +431,7 @@ void JTable$AccessibleJTable$AccessibleJTableCell::setBackground($Color* c) {
 }
 
 $Color* JTable$AccessibleJTable$AccessibleJTableCell::getForeground() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->getForeground();
@@ -438,6 +446,7 @@ $Color* JTable$AccessibleJTable$AccessibleJTableCell::getForeground() {
 }
 
 void JTable$AccessibleJTable$AccessibleJTableCell::setForeground($Color* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setForeground(c);
@@ -450,6 +459,7 @@ void JTable$AccessibleJTable$AccessibleJTableCell::setForeground($Color* c) {
 }
 
 $Cursor* JTable$AccessibleJTable$AccessibleJTableCell::getCursor() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->getCursor();
@@ -469,6 +479,7 @@ $Cursor* JTable$AccessibleJTable$AccessibleJTableCell::getCursor() {
 }
 
 void JTable$AccessibleJTable$AccessibleJTableCell::setCursor($Cursor* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setCursor(c);
@@ -481,6 +492,7 @@ void JTable$AccessibleJTable$AccessibleJTableCell::setCursor($Cursor* c) {
 }
 
 $Font* JTable$AccessibleJTable$AccessibleJTableCell::getFont() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->getFont();
@@ -495,6 +507,7 @@ $Font* JTable$AccessibleJTable$AccessibleJTableCell::getFont() {
 }
 
 void JTable$AccessibleJTable$AccessibleJTableCell::setFont($Font* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setFont(f);
@@ -507,6 +520,7 @@ void JTable$AccessibleJTable$AccessibleJTableCell::setFont($Font* f) {
 }
 
 $FontMetrics* JTable$AccessibleJTable$AccessibleJTableCell::getFontMetrics($Font* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->getFontMetrics(f);
@@ -521,6 +535,7 @@ $FontMetrics* JTable$AccessibleJTable$AccessibleJTableCell::getFontMetrics($Font
 }
 
 bool JTable$AccessibleJTable$AccessibleJTableCell::isEnabled() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->isEnabled();
@@ -535,6 +550,7 @@ bool JTable$AccessibleJTable$AccessibleJTableCell::isEnabled() {
 }
 
 void JTable$AccessibleJTable$AccessibleJTableCell::setEnabled(bool b) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setEnabled(b);
@@ -547,6 +563,7 @@ void JTable$AccessibleJTable$AccessibleJTableCell::setEnabled(bool b) {
 }
 
 bool JTable$AccessibleJTable$AccessibleJTableCell::isVisible() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->isVisible();
@@ -561,6 +578,7 @@ bool JTable$AccessibleJTable$AccessibleJTableCell::isVisible() {
 }
 
 void JTable$AccessibleJTable$AccessibleJTableCell::setVisible(bool b) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setVisible(b);
@@ -573,6 +591,7 @@ void JTable$AccessibleJTable$AccessibleJTableCell::setVisible(bool b) {
 }
 
 bool JTable$AccessibleJTable$AccessibleJTableCell::isShowing() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		if ($nc(ac)->getAccessibleParent() != nullptr) {
@@ -591,6 +610,7 @@ bool JTable$AccessibleJTable$AccessibleJTableCell::isShowing() {
 }
 
 bool JTable$AccessibleJTable$AccessibleJTableCell::contains($Point* p) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$var($Rectangle, r, $nc(($cast($AccessibleComponent, ac)))->getBounds());
@@ -607,6 +627,7 @@ bool JTable$AccessibleJTable$AccessibleJTableCell::contains($Point* p) {
 }
 
 $Point* JTable$AccessibleJTable$AccessibleJTableCell::getLocationOnScreen() {
+	$useLocalCurrentObjectStackCache();
 	if (this->parent != nullptr && $nc(this->parent)->isShowing()) {
 		$var($Point, parentLocation, $nc(this->parent)->getLocationOnScreen());
 		$var($Point, componentLocation, getLocation());
@@ -639,6 +660,7 @@ $Rectangle* JTable$AccessibleJTable$AccessibleJTableCell::getBounds() {
 }
 
 void JTable$AccessibleJTable$AccessibleJTableCell::setBounds($Rectangle* r) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setBounds(r);
@@ -661,6 +683,7 @@ $Dimension* JTable$AccessibleJTable$AccessibleJTableCell::getSize() {
 }
 
 void JTable$AccessibleJTable$AccessibleJTableCell::setSize($Dimension* d) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setSize(d);
@@ -682,6 +705,7 @@ $Accessible* JTable$AccessibleJTable$AccessibleJTableCell::getAccessibleAt($Poin
 }
 
 bool JTable$AccessibleJTable$AccessibleJTableCell::isFocusTraversable() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->isFocusTraversable();
@@ -696,6 +720,7 @@ bool JTable$AccessibleJTable$AccessibleJTableCell::isFocusTraversable() {
 }
 
 void JTable$AccessibleJTable$AccessibleJTableCell::requestFocus() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->requestFocus();
@@ -708,6 +733,7 @@ void JTable$AccessibleJTable$AccessibleJTableCell::requestFocus() {
 }
 
 void JTable$AccessibleJTable$AccessibleJTableCell::addFocusListener($FocusListener* l) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->addFocusListener(l);
@@ -720,6 +746,7 @@ void JTable$AccessibleJTable$AccessibleJTableCell::addFocusListener($FocusListen
 }
 
 void JTable$AccessibleJTable$AccessibleJTableCell::removeFocusListener($FocusListener* l) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->removeFocusListener(l);

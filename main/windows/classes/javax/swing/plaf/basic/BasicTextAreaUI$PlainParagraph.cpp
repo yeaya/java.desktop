@@ -102,6 +102,7 @@ void BasicTextAreaUI$PlainParagraph::setParent($View* parent) {
 }
 
 void BasicTextAreaUI$PlainParagraph::setPropertiesFromAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, getContainer());
 	if ((c != nullptr) && (!$nc($(c->getComponentOrientation()))->isLeftToRight())) {
 		setJustification($StyleConstants::ALIGN_RIGHT);
@@ -111,6 +112,7 @@ void BasicTextAreaUI$PlainParagraph::setPropertiesFromAttributes() {
 }
 
 int32_t BasicTextAreaUI$PlainParagraph::getFlowSpan(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, getContainer());
 	if ($instanceOf($JTextArea, c)) {
 		$var($JTextArea, area, $cast($JTextArea, c));
@@ -122,6 +124,7 @@ int32_t BasicTextAreaUI$PlainParagraph::getFlowSpan(int32_t index) {
 }
 
 $SizeRequirements* BasicTextAreaUI$PlainParagraph::calculateMinorAxisRequirements(int32_t axis, $SizeRequirements* r) {
+	$useLocalCurrentObjectStackCache();
 	$var($SizeRequirements, req, $ParagraphView::calculateMinorAxisRequirements(axis, r));
 	$var($Component, c, getContainer());
 	if ($instanceOf($JTextArea, c)) {

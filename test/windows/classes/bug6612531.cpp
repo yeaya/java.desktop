@@ -52,6 +52,7 @@ void bug6612531::init$() {
 }
 
 void bug6612531::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($ScrollPaneLayout, c, $new($ScrollPaneLayout));
 	$var($JViewport, vp, $new($JViewport));
 	c->addLayoutComponent("VIEWPORT"_s, vp);

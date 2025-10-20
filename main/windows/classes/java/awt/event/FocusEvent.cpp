@@ -131,6 +131,7 @@ $Component* FocusEvent::getOppositeComponent() {
 }
 
 $String* FocusEvent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, typeStr, nullptr);
 	switch (this->id) {
 	case FocusEvent::FOCUS_GAINED:
@@ -157,6 +158,7 @@ $FocusEvent$Cause* FocusEvent::getCause() {
 }
 
 $Object* FocusEvent::readResolve() {
+	$useLocalCurrentObjectStackCache();
 	if (this->cause != nullptr) {
 		return $of(this);
 	}

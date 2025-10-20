@@ -81,6 +81,7 @@ void OGLBufImgOps::init$() {
 
 bool OGLBufImgOps::renderImageWithOp($SunGraphics2D* sg, $BufferedImage* img, $BufferedImageOp* biop, int32_t x, int32_t y) {
 	$init(OGLBufImgOps);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($ConvolveOp, biop)) {
 		if (!isConvolveOpValid($cast($ConvolveOp, biop))) {
 			return false;

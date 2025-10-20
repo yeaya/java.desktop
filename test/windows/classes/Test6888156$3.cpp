@@ -92,6 +92,7 @@ void Test6888156$3::init$($Test6888156* this$0, $String* val$laf) {
 }
 
 void Test6888156$3::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($System);
 		$nc($System::out)->println(this->val$laf);

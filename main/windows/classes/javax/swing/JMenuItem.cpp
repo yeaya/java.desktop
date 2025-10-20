@@ -501,6 +501,7 @@ void JMenuItem::actionPropertyChanged($Action* action, $String* propertyName) {
 }
 
 void JMenuItem::processMouseEvent($MouseEvent* e, $MenuElementArray* path, $MenuSelectionManager* manager) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, var$0, $nc(e)->getComponent());
 	int32_t var$1 = e->getID();
 	int64_t var$2 = e->getWhen();
@@ -514,6 +515,7 @@ void JMenuItem::processMouseEvent($MouseEvent* e, $MenuElementArray* path, $Menu
 }
 
 void JMenuItem::processKeyEvent($KeyEvent* e, $MenuElementArray* path, $MenuSelectionManager* manager) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, var$0, $nc(e)->getComponent());
 	int32_t var$1 = e->getID();
 	int64_t var$2 = e->getWhen();

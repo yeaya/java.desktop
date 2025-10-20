@@ -83,6 +83,7 @@ void TestCCEOnEditEvent$4::init$($TestCCEOnEditEvent* this$0) {
 }
 
 void TestCCEOnEditEvent$4::undoableEditHappened($UndoableEditEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($CompoundEdit, edit, nullptr);
 	try {
 		$assign(edit, $cast($CompoundEdit, $nc(event)->getEdit()));

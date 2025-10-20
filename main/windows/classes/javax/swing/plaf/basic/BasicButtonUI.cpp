@@ -223,6 +223,7 @@ void BasicButtonUI::init$() {
 
 $ComponentUI* BasicButtonUI::createUI($JComponent* c) {
 	$init(BasicButtonUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(BasicButtonUI, buttonUI, $cast(BasicButtonUI, $nc(appContext)->get(BasicButtonUI::BASIC_BUTTON_UI_KEY)));
 	if (buttonUI == nullptr) {
@@ -244,6 +245,7 @@ void BasicButtonUI::installUI($JComponent* c) {
 }
 
 void BasicButtonUI::installDefaults($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, pp, getPropertyPrefix());
 	this->defaultTextShiftOffset = $UIManager::getInt($$str({pp, "textShiftOffset"_s}));
 	if ($nc(b)->isContentAreaFilled()) {
@@ -267,6 +269,7 @@ void BasicButtonUI::installDefaults($AbstractButton* b) {
 }
 
 void BasicButtonUI::installListeners($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($BasicButtonListener, listener, createButtonListener(b));
 	if (listener != nullptr) {
 		$nc(b)->addMouseListener(listener);
@@ -310,6 +313,7 @@ void BasicButtonUI::uninstallKeyboardActions($AbstractButton* b) {
 }
 
 void BasicButtonUI::uninstallListeners($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($BasicButtonListener, listener, getButtonListener(b));
 	if (listener != nullptr) {
 		$nc(b)->removeMouseListener(listener);
@@ -345,6 +349,7 @@ int32_t BasicButtonUI::getDefaultTextIconGap($AbstractButton* b) {
 }
 
 void BasicButtonUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	$var($ButtonModel, model, $nc(b)->getModel());
 	$var($AbstractButton, var$0, b);
@@ -375,6 +380,7 @@ void BasicButtonUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void BasicButtonUI::paintIcon($Graphics* g, $JComponent* c, $Rectangle* iconRect) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	$var($ButtonModel, model, $nc(b)->getModel());
 	$var($Icon, icon, b->getIcon());
@@ -436,6 +442,7 @@ void BasicButtonUI::paintIcon($Graphics* g, $JComponent* c, $Rectangle* iconRect
 }
 
 void BasicButtonUI::paintText($Graphics* g, $JComponent* c, $Rectangle* textRect, $String* text) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	$var($ButtonModel, model, $nc(b)->getModel());
 	$var($FontMetrics, fm, $SwingUtilities2::getFontMetrics(c, g));
@@ -480,6 +487,7 @@ int32_t BasicButtonUI::getTextShiftOffset() {
 }
 
 $Dimension* BasicButtonUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, getPreferredSize(c));
 	$init($BasicHTML);
 	$var($View, v, $cast($View, $nc(c)->getClientProperty($BasicHTML::propertyKey)));
@@ -496,6 +504,7 @@ $Dimension* BasicButtonUI::getPreferredSize($JComponent* c) {
 }
 
 $Dimension* BasicButtonUI::getMaximumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, getPreferredSize(c));
 	$init($BasicHTML);
 	$var($View, v, $cast($View, $nc(c)->getClientProperty($BasicHTML::propertyKey)));
@@ -507,6 +516,7 @@ $Dimension* BasicButtonUI::getMaximumSize($JComponent* c) {
 }
 
 int32_t BasicButtonUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$ButtonUI::getBaseline(c, width, height);
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	$var($String, text, $nc(b)->getText());
@@ -547,6 +557,7 @@ $Component$BaselineResizeBehavior* BasicButtonUI::getBaselineResizeBehavior($JCo
 }
 
 $String* BasicButtonUI::layout($AbstractButton* b, $FontMetrics* fm, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, i, $nc(b)->getInsets());
 	$nc(BasicButtonUI::viewRect)->x = $nc(i)->left;
 	$nc(BasicButtonUI::viewRect)->y = i->top;
@@ -569,6 +580,7 @@ $String* BasicButtonUI::layout($AbstractButton* b, $FontMetrics* fm, int32_t wid
 }
 
 $BasicButtonListener* BasicButtonUI::getButtonListener($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($MouseMotionListenerArray, listeners, $nc(b)->getMouseMotionListeners());
 	if (listeners != nullptr) {
 		{
@@ -601,6 +613,7 @@ bool BasicButtonUI::isValidToggleButtonObj(Object$* obj) {
 }
 
 void BasicButtonUI::selectToggleButton($ActionEvent* event, bool next) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, eventSrc, $nc(event)->getSource());
 	if (!isValidToggleButtonObj(eventSrc)) {
 		return;

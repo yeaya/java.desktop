@@ -309,6 +309,7 @@ void BasicTableUI::installUI($JComponent* c) {
 }
 
 void BasicTableUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$LookAndFeel::installColorsAndFont(this->table, "Table.background"_s, "Table.foreground"_s, "Table.font"_s);
 	$init($Boolean);
 	$LookAndFeel::installProperty(this->table, "opaque"_s, $Boolean::TRUE);
@@ -339,6 +340,7 @@ void BasicTableUI::installDefaults() {
 }
 
 void BasicTableUI::installDefaults2() {
+	$useLocalCurrentObjectStackCache();
 	$var($TransferHandler, th, $nc(this->table)->getTransferHandler());
 	if (th == nullptr || $instanceOf($UIResource, th)) {
 		$nc(this->table)->setTransferHandler(BasicTableUI::defaultTransferHandler);
@@ -349,6 +351,7 @@ void BasicTableUI::installDefaults2() {
 }
 
 void BasicTableUI::installListeners() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, focusListener, createFocusListener());
 	$set(this, keyListener, createKeyListener());
 	$set(this, mouseInputListener, createMouseInputListener());
@@ -369,6 +372,7 @@ void BasicTableUI::installKeyboardActions() {
 }
 
 $InputMap* BasicTableUI::getInputMap(int32_t condition) {
+	$useLocalCurrentObjectStackCache();
 	if (condition == $JComponent::WHEN_ANCESTOR_OF_FOCUSED_COMPONENT) {
 		$var($InputMap, keyMap, $cast($InputMap, $DefaultLookup::get(this->table, this, "Table.ancestorInputMap"_s)));
 		$var($InputMap, rtlKeyMap, nullptr);
@@ -385,6 +389,7 @@ $InputMap* BasicTableUI::getInputMap(int32_t condition) {
 
 void BasicTableUI::loadActionMap($LazyActionMap* map) {
 	$init(BasicTableUI);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicTableUI$Actions);
 	$nc(map)->put($$new($BasicTableUI$Actions, $BasicTableUI$Actions::NEXT_COLUMN, 1, 0, false, false));
 	map->put($$new($BasicTableUI$Actions, $BasicTableUI$Actions::NEXT_COLUMN_CHANGE_LEAD, 1, 0, false, false));
@@ -452,6 +457,7 @@ void BasicTableUI::uninstallDefaults() {
 }
 
 void BasicTableUI::uninstallListeners() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->table)->removeFocusListener(this->focusListener);
 	$nc(this->table)->removeKeyListener(this->keyListener);
 	$nc(this->table)->removeMouseListener(this->mouseInputListener);
@@ -472,6 +478,7 @@ void BasicTableUI::uninstallKeyboardActions() {
 }
 
 int32_t BasicTableUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$TableUI::getBaseline(c, width, height);
 	$var($UIDefaults, lafDefaults, $UIManager::getLookAndFeelDefaults());
 	$var($Component, renderer, $cast($Component, $nc(lafDefaults)->get(BasicTableUI::BASELINE_COMPONENT_KEY)));
@@ -506,6 +513,7 @@ $Dimension* BasicTableUI::createTableSize(int64_t width) {
 }
 
 $Dimension* BasicTableUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	int64_t width = 0;
 	$var($Enumeration, enumeration, $nc($($nc(this->table)->getColumnModel()))->getColumns());
 	while ($nc(enumeration)->hasMoreElements()) {
@@ -516,6 +524,7 @@ $Dimension* BasicTableUI::getMinimumSize($JComponent* c) {
 }
 
 $Dimension* BasicTableUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	int64_t width = 0;
 	$var($Enumeration, enumeration, $nc($($nc(this->table)->getColumnModel()))->getColumns());
 	while ($nc(enumeration)->hasMoreElements()) {
@@ -526,6 +535,7 @@ $Dimension* BasicTableUI::getPreferredSize($JComponent* c) {
 }
 
 $Dimension* BasicTableUI::getMaximumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	int64_t width = 0;
 	$var($Enumeration, enumeration, $nc($($nc(this->table)->getColumnModel()))->getColumns());
 	while ($nc(enumeration)->hasMoreElements()) {
@@ -536,6 +546,7 @@ $Dimension* BasicTableUI::getMaximumSize($JComponent* c) {
 }
 
 void BasicTableUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, clip, $nc(g)->getClipBounds());
 	$var($Rectangle, bounds, $nc(this->table)->getBounds());
 	$nc(bounds)->x = (bounds->y = 0);
@@ -591,6 +602,7 @@ void BasicTableUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void BasicTableUI::paintDropLines($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTable$DropLocation, loc, $nc(this->table)->getDropLocation());
 	if (loc == nullptr) {
 		return;
@@ -632,6 +644,7 @@ void BasicTableUI::paintDropLines($Graphics* g) {
 }
 
 $Rectangle* BasicTableUI::getHDropLineRect($JTable$DropLocation* loc) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(loc)->isInsertRow()) {
 		return nullptr;
 	}
@@ -656,6 +669,7 @@ $Rectangle* BasicTableUI::getHDropLineRect($JTable$DropLocation* loc) {
 }
 
 $Rectangle* BasicTableUI::getVDropLineRect($JTable$DropLocation* loc) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(loc)->isInsertColumn()) {
 		return nullptr;
 	}
@@ -700,6 +714,7 @@ $Rectangle* BasicTableUI::extendRect($Rectangle* rect, bool horizontal) {
 }
 
 void BasicTableUI::paintGrid($Graphics* g, int32_t rMin, int32_t rMax, int32_t cMin, int32_t cMax) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor($($nc(this->table)->getGridColor()));
 	$var($Rectangle, minCell, $nc(this->table)->getCellRect(rMin, cMin, true));
 	$var($Rectangle, maxCell, $nc(this->table)->getCellRect(rMax, cMax, true));
@@ -745,6 +760,7 @@ int32_t BasicTableUI::viewIndexForColumn($TableColumn* aColumn) {
 }
 
 void BasicTableUI::paintCells($Graphics* g, int32_t rMin, int32_t rMax, int32_t cMin, int32_t cMax) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTableHeader, header, $nc(this->table)->getTableHeader());
 	$var($TableColumn, draggedColumn, (header == nullptr) ? ($TableColumn*)nullptr : $nc(header)->getDraggedColumn());
 	$var($TableColumnModel, cm, $nc(this->table)->getColumnModel());
@@ -792,6 +808,7 @@ void BasicTableUI::paintCells($Graphics* g, int32_t rMin, int32_t rMax, int32_t 
 }
 
 void BasicTableUI::paintDraggedArea($Graphics* g, int32_t rMin, int32_t rMax, $TableColumn* draggedColumn, int32_t distance) {
+	$useLocalCurrentObjectStackCache();
 	int32_t draggedColumnIndex = viewIndexForColumn(draggedColumn);
 	$var($Rectangle, minCell, $nc(this->table)->getCellRect(rMin, draggedColumnIndex, true));
 	$var($Rectangle, maxCell, $nc(this->table)->getCellRect(rMax, draggedColumnIndex, true));
@@ -828,6 +845,7 @@ void BasicTableUI::paintDraggedArea($Graphics* g, int32_t rMin, int32_t rMax, $T
 }
 
 void BasicTableUI::paintCell($Graphics* g, $Rectangle* cellRect, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	bool var$1 = $nc(this->table)->isEditing();
 	bool var$0 = var$1 && $nc(this->table)->getEditingRow() == row;
 	if (var$0 && $nc(this->table)->getEditingColumn() == column) {
@@ -850,6 +868,7 @@ int32_t BasicTableUI::getAdjustedLead($JTable* table, bool row, $ListSelectionMo
 
 int32_t BasicTableUI::getAdjustedLead($JTable* table, bool row) {
 	$init(BasicTableUI);
+	$useLocalCurrentObjectStackCache();
 	return row ? getAdjustedLead(table, row, $($nc(table)->getSelectionModel())) : getAdjustedLead(table, row, $($nc($($nc(table)->getColumnModel()))->getSelectionModel()));
 }
 

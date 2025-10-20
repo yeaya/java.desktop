@@ -611,6 +611,7 @@ void WWindowPeer::initIDs() {
 }
 
 void WWindowPeer::disposeImpl() {
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $SunToolkit::targetToAppContext(this->target));
 	$synchronized(appContext) {
 		$var($List, l, $cast($List, $nc(appContext)->get(WWindowPeer::ACTIVE_WINDOWS_KEY)));
@@ -705,6 +706,7 @@ void WWindowPeer::init$($Window* target) {
 }
 
 void WWindowPeer::initialize() {
+	$useLocalCurrentObjectStackCache();
 	$WPanelPeer::initialize();
 	updateInsets(this->insets_);
 	if (!$nc(($cast($Window, this->target)))->isFontSet()) {
@@ -764,6 +766,7 @@ void WWindowPeer::realShow() {
 }
 
 void WWindowPeer::show() {
+	$useLocalCurrentObjectStackCache();
 	updateFocusableWindowState();
 	bool alwaysOnTop = $nc(($cast($Window, this->target)))->isAlwaysOnTop();
 	updateGC();
@@ -901,6 +904,7 @@ bool WWindowPeer::focusAllowedFor() {
 }
 
 void WWindowPeer::hide() {
+	$useLocalCurrentObjectStackCache();
 	$var($WindowListener, listener, this->windowListener);
 	if (listener != nullptr) {
 		listener->windowClosing($$new($WindowEvent, $cast($Window, this->target), $WindowEvent::WINDOW_CLOSING));
@@ -929,6 +933,7 @@ void WWindowPeer::preprocessPostEvent($AWTEvent* event) {
 }
 
 void WWindowPeer::notifyWindowStateChanged(int32_t oldState, int32_t newState) {
+	$useLocalCurrentObjectStackCache();
 	int32_t changed = oldState ^ newState;
 	if (changed == 0) {
 		return;
@@ -966,6 +971,7 @@ void WWindowPeer::removeWindowListener($WindowListener* l) {
 }
 
 void WWindowPeer::updateMinimumSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, minimumSize, nullptr);
 	if ($nc(($cast($Component, this->target)))->isMinimumSizeSet()) {
 		$assign(minimumSize, $nc(($cast($Component, this->target)))->getMinimumSize());
@@ -982,6 +988,7 @@ void WWindowPeer::updateMinimumSize() {
 }
 
 void WWindowPeer::updateIconImages() {
+	$useLocalCurrentObjectStackCache();
 	$var($List, imageList, $nc(($cast($Window, this->target)))->getIconImages());
 	if (imageList == nullptr || $nc(imageList)->size() == 0) {
 		setIconImagesData(nullptr, 0, 0, nullptr, 0, 0);
@@ -1019,6 +1026,7 @@ bool WWindowPeer::isModalBlocked() {
 }
 
 void WWindowPeer::setModalBlocked($Dialog* dialog, bool blocked) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(($cast($Component, $(getTarget()))))->getTreeLock()) {
 		$var(WWindowPeer, blockerPeer, $cast(WWindowPeer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(dialog)));
 		if (blocked) {
@@ -1057,6 +1065,7 @@ void WWindowPeer::modalEnable($Dialog* blocker) {
 
 $longs* WWindowPeer::getActiveWindowHandles($Component* target) {
 	$init(WWindowPeer);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $SunToolkit::targetToAppContext(target));
 	if (appContext == nullptr) {
 		return nullptr;
@@ -1079,6 +1088,7 @@ void WWindowPeer::draggedToNewScreen() {
 }
 
 void WWindowPeer::updateGC() {
+	$useLocalCurrentObjectStackCache();
 	int32_t scrn = getScreenImOn();
 	$init($PlatformLogger$Level);
 	if ($nc(WWindowPeer::screenLog)->isLoggable($PlatformLogger$Level::FINER)) {
@@ -1169,6 +1179,7 @@ void WWindowPeer::print($Graphics* g) {
 }
 
 void WWindowPeer::replaceSurfaceDataRecursively($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Container, c)) {
 		{
 			$var($ComponentArray, arr$, $nc(($cast($Container, c)))->getComponents());
@@ -1210,6 +1221,7 @@ void WWindowPeer::setOpacity(int32_t iOpacity) {
 }
 
 void WWindowPeer::setOpacity(float opacity) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(($cast($SunToolkit, $($nc(($cast($Window, this->target)))->getToolkit()))))->isWindowOpacitySupported()) {
 		return;
 	}
@@ -1243,6 +1255,7 @@ void WWindowPeer::setOpaqueImpl(bool isOpaque) {
 }
 
 void WWindowPeer::setOpaque(bool isOpaque) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getStateLock()) {
 		if (this->isOpaque == isOpaque) {
 			return;
@@ -1295,6 +1308,7 @@ void WWindowPeer::updateWindow() {
 }
 
 void WWindowPeer::updateWindow(bool repaint) {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, w, $cast($Window, this->target));
 	$synchronized(getStateLock()) {
 		bool var$1 = this->isOpaque || !$nc(w)->isVisible();
@@ -1316,6 +1330,7 @@ void WWindowPeer::updateWindow(bool repaint) {
 
 void WWindowPeer::initActiveWindowsTracking($Window* w) {
 	$init(WWindowPeer);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$synchronized(appContext) {
 		$var($List, l, $cast($List, $nc(appContext)->get(WWindowPeer::ACTIVE_WINDOWS_KEY)));

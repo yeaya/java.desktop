@@ -172,6 +172,7 @@ void RootPaneDecorationSize::init$() {
 }
 
 void RootPaneDecorationSize::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -187,6 +188,7 @@ void RootPaneDecorationSize::main($StringArray* args) {
 }
 
 void RootPaneDecorationSize::test() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame));
 	$var($Dimension, size, nullptr);
 	$var($Dimension, min, nullptr);
@@ -236,6 +238,7 @@ void RootPaneDecorationSize::test() {
 }
 
 void RootPaneDecorationSize::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($System);
 		$nc($System::err)->println($$str({"LookAndFeel: "_s, $($nc(laf)->getClassName())}));

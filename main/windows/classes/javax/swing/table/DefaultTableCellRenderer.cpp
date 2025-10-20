@@ -183,6 +183,7 @@ void DefaultTableCellRenderer::updateUI() {
 }
 
 $Component* DefaultTableCellRenderer::getTableCellRendererComponent($JTable* table, Object$* value, bool isSelected, bool hasFocus, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	if (table == nullptr) {
 		return this;
 	}
@@ -240,6 +241,7 @@ $Component* DefaultTableCellRenderer::getTableCellRendererComponent($JTable* tab
 }
 
 bool DefaultTableCellRenderer::isOpaque() {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, back, getBackground());
 	$var($Component, p, getParent());
 	if (p != nullptr) {

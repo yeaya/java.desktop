@@ -93,6 +93,7 @@ TransformBlit* TransformBlit::locate($SurfaceType* srctype, $CompositeType* comp
 
 TransformBlit* TransformBlit::getFromCache($SurfaceType* src, $CompositeType* comp, $SurfaceType* dst) {
 	$init(TransformBlit);
+	$useLocalCurrentObjectStackCache();
 	$var($Object, o, $nc(TransformBlit::blitcache)->get(src, comp, dst));
 	if (o != nullptr) {
 		return $cast(TransformBlit, o);

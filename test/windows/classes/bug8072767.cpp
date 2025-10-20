@@ -251,6 +251,7 @@ void bug8072767::init$() {
 
 void bug8072767::main($StringArray* args) {
 	$init(bug8072767);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(100);
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug8072767$$Lambda$createAndShowGUI)));
@@ -277,6 +278,7 @@ void bug8072767::main($StringArray* args) {
 
 void bug8072767::createAndShowGUI() {
 	$init(bug8072767);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug8072767::frame, $new($JFrame));
 	$nc(bug8072767::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$nc(bug8072767::frame)->setSize(200, 200);

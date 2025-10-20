@@ -98,6 +98,7 @@ $Object* allocate$WindowsInternalFrameUI$XPBorder($Class* clazz) {
 }
 
 void WindowsInternalFrameUI$XPBorder::init$($WindowsInternalFrameUI* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$AbstractBorder::init$();
 	$init($TMSchema$Part);
@@ -107,6 +108,7 @@ void WindowsInternalFrameUI$XPBorder::init$($WindowsInternalFrameUI* this$0) {
 }
 
 void WindowsInternalFrameUI$XPBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$init($TMSchema$State);
 	$TMSchema$State* state = $nc(($cast($JInternalFrame, c)))->isSelected() ? $TMSchema$State::ACTIVE : $TMSchema$State::INACTIVE;
 	int32_t topBorderHeight = ($WindowsInternalFrameUI::access$300(this->this$0) != nullptr) ? $nc($($nc($($WindowsInternalFrameUI::access$400(this->this$0)))->getSize()))->height : 0;

@@ -140,6 +140,7 @@ void CMap::init$() {
 
 CMap* CMap::initialize($TrueTypeFont* font) {
 	$init(CMap);
+	$useLocalCurrentObjectStackCache();
 	$var(CMap, cmap, nullptr);
 	int32_t offset = 0;
 	int32_t platformID = 0;
@@ -243,6 +244,7 @@ CMap* CMap::initialize($TrueTypeFont* font) {
 
 $chars* CMap::getConverter(int16_t encodingID) {
 	$init(CMap);
+	$useLocalCurrentObjectStackCache();
 	int32_t dBegin = 32768;
 	int32_t dEnd = 0x0000FFFF;
 	$var($String, encoding, nullptr);
@@ -349,6 +351,7 @@ $chars* CMap::getConverterMap(int16_t encodingID) {
 
 CMap* CMap::createCMap($ByteBuffer* buffer, int32_t offset, $chars* xlat) {
 	$init(CMap);
+	$useLocalCurrentObjectStackCache();
 	int32_t subtableFormat = $nc(buffer)->getChar(offset);
 	int64_t subtableLength = 0;
 	if (subtableFormat < 8) {

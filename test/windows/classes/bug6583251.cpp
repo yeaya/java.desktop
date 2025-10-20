@@ -120,6 +120,7 @@ void bug6583251::init$() {
 }
 
 void bug6583251::createGui() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6583251);
 	$assignStatic(bug6583251::frame, $new($JFrame));
 	$nc(bug6583251::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
@@ -134,6 +135,7 @@ void bug6583251::createGui() {
 }
 
 void bug6583251::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	if ($SystemTray::isSupported()) {
 		$SwingUtilities::invokeAndWait($$new($bug6583251$1));
 		$var($Robot, robot, $new($Robot));

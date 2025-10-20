@@ -252,6 +252,7 @@ void Scrollbar::init$(int32_t orientation, int32_t value, int32_t visible, int32
 }
 
 $String* Scrollbar::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(Scrollbar::class$) {
 		$var($String, var$0, Scrollbar::base);
 		return $concat(var$0, $$str(Scrollbar::nameCounter++));
@@ -397,6 +398,7 @@ int32_t Scrollbar::getPageIncrement() {
 }
 
 void Scrollbar::setValues(int32_t value, int32_t visible, int32_t minimum, int32_t maximum) {
+	$useLocalCurrentObjectStackCache();
 	int32_t oldValue = 0;
 	$synchronized(this) {
 		if (minimum == $Integer::MAX_VALUE) {
@@ -520,6 +522,7 @@ void Scrollbar::processAdjustmentEvent($AdjustmentEvent* e) {
 }
 
 $String* Scrollbar::paramString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($Component::paramString()), ",val="_s, $$str(this->value), ",vis="_s, $$str(this->visibleAmount), ",min="_s, $$str(this->minimum), ",max="_s, $$str(this->maximum), ((this->orientation == Scrollbar::VERTICAL) ? ",vert"_s : ",horz"_s), ",isAdjusting="_s, $$str(this->isAdjusting)});
 }
 
@@ -531,6 +534,7 @@ void Scrollbar::writeObject($ObjectOutputStream* s) {
 }
 
 void Scrollbar::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$GraphicsEnvironment::checkHeadless();
 	$nc(s)->defaultReadObject();
 	$var($Object, keyOrNull, nullptr);

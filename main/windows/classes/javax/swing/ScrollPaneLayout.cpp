@@ -341,6 +341,7 @@ $Component* ScrollPaneLayout::getCorner($String* key) {
 }
 
 $Dimension* ScrollPaneLayout::preferredLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($JScrollPane, scrollPane, $cast($JScrollPane, parent));
 	this->vsbPolicy = $nc(scrollPane)->getVerticalScrollBarPolicy();
 	this->hsbPolicy = scrollPane->getHorizontalScrollBarPolicy();
@@ -405,6 +406,7 @@ $Dimension* ScrollPaneLayout::preferredLayoutSize($Container* parent) {
 }
 
 $Dimension* ScrollPaneLayout::minimumLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($JScrollPane, scrollPane, $cast($JScrollPane, parent));
 	this->vsbPolicy = $nc(scrollPane)->getVerticalScrollBarPolicy();
 	this->hsbPolicy = scrollPane->getHorizontalScrollBarPolicy();
@@ -446,6 +448,7 @@ $Dimension* ScrollPaneLayout::minimumLayoutSize($Container* parent) {
 }
 
 void ScrollPaneLayout::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($JScrollPane, scrollPane, $cast($JScrollPane, parent));
 	this->vsbPolicy = $nc(scrollPane)->getVerticalScrollBarPolicy();
 	this->hsbPolicy = scrollPane->getHorizontalScrollBarPolicy();

@@ -95,6 +95,7 @@ void GenericBeanInfo::init$($BeanDescriptor* beanDescriptor, $EventSetDescriptor
 }
 
 void GenericBeanInfo::init$(GenericBeanInfo* old) {
+	$useLocalCurrentObjectStackCache();
 	$SimpleBeanInfo::init$();
 	$set(this, beanDescriptor, $new($BeanDescriptor, $nc(old)->beanDescriptor));
 	if ($nc(old)->events != nullptr) {
@@ -161,6 +162,7 @@ $Image* GenericBeanInfo::getIcon(int32_t iconKind) {
 }
 
 $BeanInfo* GenericBeanInfo::getTargetBeanInfo() {
+	$useLocalCurrentObjectStackCache();
 	if (this->targetBeanInfoRef == nullptr) {
 		return nullptr;
 	}

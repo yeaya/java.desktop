@@ -85,6 +85,7 @@ void TestSelectedTextBackgroundColor$1::init$() {
 }
 
 void TestSelectedTextBackgroundColor$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, panel, $new($JPanel));
 	$var($StringArray, list, $new($StringArray, {"            "_s}));
 	$var($SpinnerListModel, model, $new($SpinnerListModel, list));

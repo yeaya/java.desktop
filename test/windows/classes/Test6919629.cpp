@@ -86,6 +86,7 @@ void Test6919629::init$() {
 }
 
 void Test6919629::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($NimbusLookAndFeel)));
 	$var(Test6919629, t, $new(Test6919629));
 	t->test();
@@ -94,6 +95,7 @@ void Test6919629::main($StringArray* args) {
 }
 
 void Test6919629::test() {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($Test6919629$1, this));
 	$Thread::sleep(2000);
 	$SwingUtilities::invokeAndWait($$new($Test6919629$2, this));

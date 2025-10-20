@@ -71,6 +71,7 @@ void bug6917744$3::init$() {
 }
 
 void bug6917744$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6917744);
 	$var($BoundedRangeModel, model, $nc($($nc($bug6917744::scrollPane)->getVerticalScrollBar()))->getModel());
 	int32_t var$0 = $nc(model)->getValue();

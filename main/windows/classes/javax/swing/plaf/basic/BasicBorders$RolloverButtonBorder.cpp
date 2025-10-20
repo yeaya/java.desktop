@@ -71,6 +71,7 @@ void BasicBorders$RolloverButtonBorder::init$($Color* shadow, $Color* darkShadow
 }
 
 void BasicBorders$RolloverButtonBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	$var($ButtonModel, model, $nc(b)->getModel());
 	$var($Color, shade, this->shadow);

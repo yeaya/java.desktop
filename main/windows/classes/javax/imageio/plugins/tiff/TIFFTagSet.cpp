@@ -82,6 +82,7 @@ void TIFFTagSet::init$() {
 }
 
 void TIFFTagSet::init$($List* tags) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, allowedTagsByNumber, $new($TreeMap));
 	$set(this, allowedTagsByName, $new($TreeMap));
 	if (tags == nullptr) {
@@ -115,6 +116,7 @@ $TIFFTag* TIFFTagSet::getTag($String* tagName) {
 }
 
 $SortedSet* TIFFTagSet::getTagNumbers() {
+	$useLocalCurrentObjectStackCache();
 	$var($Set, tagNumbers, $nc(this->allowedTagsByNumber)->keySet());
 	$var($SortedSet, sortedTagNumbers, nullptr);
 	if ($instanceOf($SortedSet, tagNumbers)) {
@@ -126,6 +128,7 @@ $SortedSet* TIFFTagSet::getTagNumbers() {
 }
 
 $SortedSet* TIFFTagSet::getTagNames() {
+	$useLocalCurrentObjectStackCache();
 	$var($Set, tagNames, $nc(this->allowedTagsByName)->keySet());
 	$var($SortedSet, sortedTagNames, nullptr);
 	if ($instanceOf($SortedSet, tagNames)) {

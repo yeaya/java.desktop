@@ -78,6 +78,7 @@ void bug4666224$1::init$($bug4666224* this$0) {
 }
 
 void bug4666224$1::mouseClicked($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, pt, $nc(e)->getPoint());
 	$init($System);
 	$nc($System::out)->println($$str({"Index at location: "_s, $$str($nc(this->this$0->tabPane)->indexAtLocation($nc(pt)->x, pt->y))}));

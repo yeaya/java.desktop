@@ -47,6 +47,7 @@ void windows_zh_HK::init$() {
 }
 
 $ObjectArray2* windows_zh_HK::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("FileChooser.detailsViewActionLabel.textAndMnemonic"_s),

@@ -74,6 +74,7 @@ $Object* allocate$SoftInstrument($Class* clazz) {
 }
 
 void SoftInstrument::init$($ModelInstrument* ins) {
+	$useLocalCurrentObjectStackCache();
 	$var($Soundbank, var$0, $nc(ins)->getSoundbank());
 	$var($Patch, var$1, ins->getPatch());
 	$var($String, var$2, ins->getName());
@@ -84,6 +85,7 @@ void SoftInstrument::init$($ModelInstrument* ins) {
 }
 
 void SoftInstrument::init$($ModelInstrument* ins, $ModelPerformerArray* overrideperformers) {
+	$useLocalCurrentObjectStackCache();
 	$var($Soundbank, var$0, $nc(ins)->getSoundbank());
 	$var($Patch, var$1, ins->getPatch());
 	$var($String, var$2, ins->getName());
@@ -94,6 +96,7 @@ void SoftInstrument::init$($ModelInstrument* ins, $ModelPerformerArray* override
 }
 
 void SoftInstrument::initPerformers($ModelPerformerArray* modelperformers) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, modelperformers, modelperformers);
 	$set(this, performers, $new($SoftPerformerArray, $nc(modelperformers)->length));
 	for (int32_t i = 0; i < modelperformers->length; ++i) {

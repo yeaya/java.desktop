@@ -170,6 +170,7 @@ void RTFReadBGColorTest::main($StringArray* a) {
 
 void RTFReadBGColorTest::write() {
 	$init(RTFReadBGColorTest);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($OutputStream, o, $Files::newOutputStream($($Paths::get("test.rtf"_s, $$new($StringArray, 0))), $$new($OpenOptionArray, 0)));
 		{
@@ -208,6 +209,7 @@ void RTFReadBGColorTest::write() {
 
 void RTFReadBGColorTest::read() {
 	$init(RTFReadBGColorTest);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($InputStream, in, $Files::newInputStream($($Paths::get("test.rtf"_s, $$new($StringArray, 0))), $$new($OpenOptionArray, 0)));
 		{
@@ -246,6 +248,7 @@ void RTFReadBGColorTest::read() {
 
 void RTFReadBGColorTest::lambda$main$0() {
 	$init(RTFReadBGColorTest);
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, f, $new($JFrame));
 	f->setBounds(200, 600, 400, 300);
 	f->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);

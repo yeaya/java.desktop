@@ -61,6 +61,7 @@ $Object* gif::getContent($URLConnection* urlc) {
 }
 
 $Object* gif::getContent($URLConnection* urlc, $ClassArray* classes) {
+	$useLocalCurrentObjectStackCache();
 	$var($ClassArray, cls, classes);
 	for (int32_t i = 0; i < $nc(cls)->length; ++i) {
 		$load($URLImageSource);

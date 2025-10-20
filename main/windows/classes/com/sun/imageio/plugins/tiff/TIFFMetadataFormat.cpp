@@ -107,6 +107,7 @@ $String* TIFFMetadataFormat::getRootName() {
 }
 
 $String* TIFFMetadataFormat::getResource($String* key, $Locale* locale$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Locale, locale, locale$renamed);
 	$beforeCallerSensitive();
 	if (locale == nullptr) {
@@ -123,6 +124,7 @@ $String* TIFFMetadataFormat::getResource($String* key, $Locale* locale$renamed) 
 }
 
 $TIFFElementInfo* TIFFMetadataFormat::getElementInfo($String* elementName) {
+	$useLocalCurrentObjectStackCache();
 	if (elementName == nullptr) {
 		$throwNew($NullPointerException, "elementName == null!"_s);
 	}
@@ -134,6 +136,7 @@ $TIFFElementInfo* TIFFMetadataFormat::getElementInfo($String* elementName) {
 }
 
 $TIFFAttrInfo* TIFFMetadataFormat::getAttrInfo($String* elementName, $String* attrName) {
+	$useLocalCurrentObjectStackCache();
 	if (elementName == nullptr) {
 		$throwNew($NullPointerException, "elementName == null!"_s);
 	}
@@ -225,6 +228,7 @@ int32_t TIFFMetadataFormat::getAttributeListMaxLength($String* elementName, $Str
 }
 
 $String* TIFFMetadataFormat::getAttributeDescription($String* elementName, $String* attrName, $Locale* locale) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, key, $str({elementName, "/"_s, attrName}));
 	if (!$nc(this->attrInfoMap)->containsKey(key)) {
 		$throwNew($IllegalArgumentException, $$str({"No such attribute: "_s, key}));
@@ -238,6 +242,7 @@ int32_t TIFFMetadataFormat::getObjectValueType($String* elementName) {
 }
 
 $Class* TIFFMetadataFormat::getObjectClass($String* elementName) {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFElementInfo, info, getElementInfo(elementName));
 	if ($nc(info)->objectValueType == $IIOMetadataFormat::VALUE_NONE) {
 		$throwNew($IllegalArgumentException, $$str({"Element cannot contain an object value: "_s, elementName}));
@@ -246,6 +251,7 @@ $Class* TIFFMetadataFormat::getObjectClass($String* elementName) {
 }
 
 $Object* TIFFMetadataFormat::getObjectDefaultValue($String* elementName) {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFElementInfo, info, getElementInfo(elementName));
 	if ($nc(info)->objectValueType == $IIOMetadataFormat::VALUE_NONE) {
 		$throwNew($IllegalArgumentException, $$str({"Element cannot contain an object value: "_s, elementName}));
@@ -254,6 +260,7 @@ $Object* TIFFMetadataFormat::getObjectDefaultValue($String* elementName) {
 }
 
 $ObjectArray* TIFFMetadataFormat::getObjectEnumerations($String* elementName) {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFElementInfo, info, getElementInfo(elementName));
 	if ($nc(info)->objectValueType == $IIOMetadataFormat::VALUE_NONE) {
 		$throwNew($IllegalArgumentException, $$str({"Element cannot contain an object value: "_s, elementName}));
@@ -262,6 +269,7 @@ $ObjectArray* TIFFMetadataFormat::getObjectEnumerations($String* elementName) {
 }
 
 $Comparable* TIFFMetadataFormat::getObjectMinValue($String* elementName) {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFElementInfo, info, getElementInfo(elementName));
 	if ($nc(info)->objectValueType == $IIOMetadataFormat::VALUE_NONE) {
 		$throwNew($IllegalArgumentException, $$str({"Element cannot contain an object value: "_s, elementName}));
@@ -270,6 +278,7 @@ $Comparable* TIFFMetadataFormat::getObjectMinValue($String* elementName) {
 }
 
 $Comparable* TIFFMetadataFormat::getObjectMaxValue($String* elementName) {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFElementInfo, info, getElementInfo(elementName));
 	if ($nc(info)->objectValueType == $IIOMetadataFormat::VALUE_NONE) {
 		$throwNew($IllegalArgumentException, $$str({"Element cannot contain an object value: "_s, elementName}));
@@ -278,6 +287,7 @@ $Comparable* TIFFMetadataFormat::getObjectMaxValue($String* elementName) {
 }
 
 int32_t TIFFMetadataFormat::getObjectArrayMinLength($String* elementName) {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFElementInfo, info, getElementInfo(elementName));
 	if ($nc(info)->objectValueType == $IIOMetadataFormat::VALUE_NONE) {
 		$throwNew($IllegalArgumentException, $$str({"Element cannot contain an object value: "_s, elementName}));
@@ -286,6 +296,7 @@ int32_t TIFFMetadataFormat::getObjectArrayMinLength($String* elementName) {
 }
 
 int32_t TIFFMetadataFormat::getObjectArrayMaxLength($String* elementName) {
+	$useLocalCurrentObjectStackCache();
 	$var($TIFFElementInfo, info, getElementInfo(elementName));
 	if ($nc(info)->objectValueType == $IIOMetadataFormat::VALUE_NONE) {
 		$throwNew($IllegalArgumentException, $$str({"Element cannot contain an object value: "_s, elementName}));

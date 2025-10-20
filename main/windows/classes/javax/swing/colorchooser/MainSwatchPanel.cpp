@@ -61,6 +61,7 @@ void MainSwatchPanel::initValues() {
 }
 
 void MainSwatchPanel::initColors() {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, rawValues, initRawValues());
 	int32_t numColors = $nc(rawValues)->length / 3;
 	$set(this, colors, $new($ColorArray, numColors));

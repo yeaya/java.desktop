@@ -233,6 +233,7 @@ $AbstractRegionPainter$PaintContext* TableHeaderRendererPainter::getPaintContext
 }
 
 void TableHeaderRendererPainter::paintBackgroundDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->rect);
@@ -245,6 +246,7 @@ void TableHeaderRendererPainter::paintBackgroundDisabled($Graphics2D* g) {
 }
 
 void TableHeaderRendererPainter::paintBackgroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->rect);
@@ -257,6 +259,7 @@ void TableHeaderRendererPainter::paintBackgroundEnabled($Graphics2D* g) {
 }
 
 void TableHeaderRendererPainter::paintBackgroundEnabledAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->rect);
@@ -272,6 +275,7 @@ void TableHeaderRendererPainter::paintBackgroundEnabledAndFocused($Graphics2D* g
 }
 
 void TableHeaderRendererPainter::paintBackgroundMouseOver($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->rect);
@@ -284,6 +288,7 @@ void TableHeaderRendererPainter::paintBackgroundMouseOver($Graphics2D* g) {
 }
 
 void TableHeaderRendererPainter::paintBackgroundPressed($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->rect);
@@ -296,6 +301,7 @@ void TableHeaderRendererPainter::paintBackgroundPressed($Graphics2D* g) {
 }
 
 void TableHeaderRendererPainter::paintBackgroundEnabledAndSorted($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->rect);
@@ -308,6 +314,7 @@ void TableHeaderRendererPainter::paintBackgroundEnabledAndSorted($Graphics2D* g)
 }
 
 void TableHeaderRendererPainter::paintBackgroundEnabledAndFocusedAndSorted($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->rect);
@@ -323,6 +330,7 @@ void TableHeaderRendererPainter::paintBackgroundEnabledAndFocusedAndSorted($Grap
 }
 
 void TableHeaderRendererPainter::paintBackgroundDisabledAndSorted($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->rect);
@@ -393,6 +401,7 @@ $Path2D* TableHeaderRendererPainter::decodePath1() {
 }
 
 $Paint* TableHeaderRendererPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -418,6 +427,7 @@ $Paint* TableHeaderRendererPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* TableHeaderRendererPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -443,6 +453,7 @@ $Paint* TableHeaderRendererPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* TableHeaderRendererPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -468,6 +479,7 @@ $Paint* TableHeaderRendererPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* TableHeaderRendererPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -493,6 +505,7 @@ $Paint* TableHeaderRendererPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* TableHeaderRendererPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -518,6 +531,7 @@ $Paint* TableHeaderRendererPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* TableHeaderRendererPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

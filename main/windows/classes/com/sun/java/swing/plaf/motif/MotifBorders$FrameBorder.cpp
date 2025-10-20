@@ -150,6 +150,7 @@ $Insets* MotifBorders$FrameBorder::getBorderInsets($Component* c, $Insets* newIn
 }
 
 bool MotifBorders$FrameBorder::drawTopBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, titleBarRect, $new($Rectangle, x, y, width, MotifBorders$FrameBorder::BORDER_SIZE));
 	if (!$nc($($nc(g)->getClipBounds()))->intersects(titleBarRect)) {
 		return false;
@@ -173,6 +174,7 @@ bool MotifBorders$FrameBorder::drawTopBorder($Component* c, $Graphics* g, int32_
 }
 
 bool MotifBorders$FrameBorder::drawLeftBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, borderRect, $new($Rectangle, 0, 0, $nc($(getBorderInsets(c)))->left, height));
 	if (!$nc($($nc(g)->getClipBounds()))->intersects(borderRect)) {
 		return false;
@@ -189,6 +191,7 @@ bool MotifBorders$FrameBorder::drawLeftBorder($Component* c, $Graphics* g, int32
 }
 
 bool MotifBorders$FrameBorder::drawRightBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = width - $nc($(getBorderInsets(c)))->right;
 	$var($Rectangle, borderRect, $new($Rectangle, var$0, 0, $nc($(getBorderInsets(c)))->right, height));
 	if (!$nc($($nc(g)->getClipBounds()))->intersects(borderRect)) {
@@ -206,6 +209,7 @@ bool MotifBorders$FrameBorder::drawRightBorder($Component* c, $Graphics* g, int3
 }
 
 bool MotifBorders$FrameBorder::drawBottomBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, borderRect, nullptr);
 	int32_t marginHeight = 0;
 	int32_t startY = 0;

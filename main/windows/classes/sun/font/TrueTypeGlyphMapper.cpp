@@ -107,6 +107,7 @@ $Object* allocate$TrueTypeGlyphMapper($Class* clazz) {
 bool TrueTypeGlyphMapper::isJAlocale = false;
 
 void TrueTypeGlyphMapper::init$($TrueTypeFont* font) {
+	$useLocalCurrentObjectStackCache();
 	$CharToGlyphMapper::init$();
 	$set(this, font, font);
 	try {
@@ -132,6 +133,7 @@ int32_t TrueTypeGlyphMapper::getNumGlyphs() {
 }
 
 char16_t TrueTypeGlyphMapper::getGlyphFromCMAP(int32_t charCode) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		char16_t glyphCode = $nc(this->cmap)->getGlyph(charCode);
 		if (glyphCode < this->numGlyphs || glyphCode >= $FileFontStrike::INVISIBLE_GLYPHS) {
@@ -154,6 +156,7 @@ char16_t TrueTypeGlyphMapper::getGlyphFromCMAP(int32_t charCode) {
 }
 
 char16_t TrueTypeGlyphMapper::getGlyphFromCMAP(int32_t charCode, int32_t variationSelector) {
+	$useLocalCurrentObjectStackCache();
 	if (variationSelector == 0) {
 		return getGlyphFromCMAP(charCode);
 	}
@@ -181,6 +184,7 @@ char16_t TrueTypeGlyphMapper::getGlyphFromCMAP(int32_t charCode, int32_t variati
 }
 
 void TrueTypeGlyphMapper::handleBadCMAP() {
+	$useLocalCurrentObjectStackCache();
 	if ($FontUtilities::isLogging()) {
 		$FontUtilities::logSevere($$str({"Null Cmap for "_s, this->font, "substituting for this font"_s}));
 	}

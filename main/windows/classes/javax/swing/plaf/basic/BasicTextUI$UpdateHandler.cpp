@@ -168,6 +168,7 @@ void BasicTextUI$UpdateHandler::init$($BasicTextUI* this$0) {
 }
 
 void BasicTextUI$UpdateHandler::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, oldValue, $nc(evt)->getOldValue());
 	$var($Object, newValue, evt->getNewValue());
 	$var($String, propertyName, evt->getPropertyName());
@@ -210,6 +211,7 @@ void BasicTextUI$UpdateHandler::propertyChange($PropertyChangeEvent* evt) {
 }
 
 void BasicTextUI$UpdateHandler::dropIndexChanged() {
+	$useLocalCurrentObjectStackCache();
 	$init($DropMode);
 	if ($nc(this->this$0->editor)->getDropMode() == $DropMode::USE_SELECTION) {
 		return;
@@ -233,6 +235,7 @@ void BasicTextUI$UpdateHandler::dropIndexChanged() {
 }
 
 void BasicTextUI$UpdateHandler::insertUpdate($DocumentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(e)->getDocument());
 	$var($Object, o, $nc(doc)->getProperty("i18n"_s));
 	if ($instanceOf($Boolean, o)) {
@@ -248,11 +251,13 @@ void BasicTextUI$UpdateHandler::insertUpdate($DocumentEvent* e) {
 }
 
 void BasicTextUI$UpdateHandler::removeUpdate($DocumentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, alloc, this->this$0->painted ? this->this$0->getVisibleEditorRect() : ($Rectangle*)nullptr);
 	$nc(this->this$0->rootView)->removeUpdate(e, alloc, $($nc(this->this$0->rootView)->getViewFactory()));
 }
 
 void BasicTextUI$UpdateHandler::changedUpdate($DocumentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, alloc, this->this$0->painted ? this->this$0->getVisibleEditorRect() : ($Rectangle*)nullptr);
 	$nc(this->this$0->rootView)->changedUpdate(e, alloc, $($nc(this->this$0->rootView)->getViewFactory()));
 }
@@ -275,6 +280,7 @@ $Dimension* BasicTextUI$UpdateHandler::minimumLayoutSize($Container* parent) {
 }
 
 void BasicTextUI$UpdateHandler::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	if ((this->constraints != nullptr) && (!$nc(this->constraints)->isEmpty())) {
 		$var($Rectangle, alloc, this->this$0->getVisibleEditorRect());
 		if (alloc != nullptr) {
@@ -312,6 +318,7 @@ void BasicTextUI$UpdateHandler::layoutContainer($Container* parent) {
 }
 
 $Shape* BasicTextUI$UpdateHandler::calculateViewPosition($Shape* alloc$renamed, $View* v) {
+	$useLocalCurrentObjectStackCache();
 	$var($Shape, alloc, alloc$renamed);
 	int32_t pos = $nc(v)->getStartOffset();
 	$var($View, child, nullptr);

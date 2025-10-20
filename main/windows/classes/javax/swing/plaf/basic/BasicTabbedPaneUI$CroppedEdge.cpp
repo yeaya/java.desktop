@@ -167,6 +167,7 @@ int32_t BasicTabbedPaneUI$CroppedEdge::getCroppedSideWidth() {
 }
 
 $Color* BasicTabbedPaneUI$CroppedEdge::getBgColor() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, parent, $nc(this->this$0->tabPane)->getParent());
 	if (parent != nullptr) {
 		$var($Color, bg, parent->getBackground());
@@ -178,6 +179,7 @@ $Color* BasicTabbedPaneUI$CroppedEdge::getBgColor() {
 }
 
 void BasicTabbedPaneUI$CroppedEdge::paintComponent($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$JPanel::paintComponent(g);
 	if (isParamsSet() && $instanceOf($Graphics2D, g)) {
 		$var($Graphics2D, g2, $cast($Graphics2D, g));

@@ -87,6 +87,7 @@ $Object* allocate$StandardTextSource($Class* clazz) {
 }
 
 void StandardTextSource::init$($chars* chars, int32_t start, int32_t len, int32_t cstart, int32_t clen, int32_t level, int32_t flags, $Font* font, $FontRenderContext* frc, $CoreMetrics* cm) {
+	$useLocalCurrentObjectStackCache();
 	$TextSource::init$();
 	if (chars == nullptr) {
 		$throwNew($IllegalArgumentException, "bad chars: null"_s);
@@ -173,6 +174,7 @@ $CoreMetrics* StandardTextSource::getCoreMetrics() {
 }
 
 $TextSource* StandardTextSource::getSubSource(int32_t start, int32_t length, int32_t dir) {
+	$useLocalCurrentObjectStackCache();
 	if (start < 0 || length < 0 || (start + length) > this->len) {
 		$throwNew($IllegalArgumentException, $$str({"bad start ("_s, $$str(start), ") or length ("_s, $$str(length), ")"_s}));
 	}
@@ -192,6 +194,7 @@ $String* StandardTextSource::toString() {
 }
 
 $String* StandardTextSource::toString(bool withContext) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, $new($StringBuilder, $($TextSource::toString())));
 	sb->append("[start:"_s);
 	sb->append(this->start);

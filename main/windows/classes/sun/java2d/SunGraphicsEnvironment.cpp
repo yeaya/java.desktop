@@ -191,6 +191,7 @@ void SunGraphicsEnvironment::init$() {
 
 $GraphicsDeviceArray* SunGraphicsEnvironment::getScreenDevices() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($GraphicsDeviceArray, ret, this->screens);
 		if (ret == nullptr) {
 			int32_t num = getNumScreens();
@@ -233,6 +234,7 @@ void SunGraphicsEnvironment::useAlternateFontforJALocales() {
 }
 
 $FontArray* SunGraphicsEnvironment::getAllFonts() {
+	$useLocalCurrentObjectStackCache();
 	$var($FontManagerForSGE, fm, getFontManagerForSGE());
 	$var($FontArray, installedFonts, $nc(fm)->getAllInstalledFonts());
 	$var($FontArray, created, fm->getCreatedFonts());
@@ -247,6 +249,7 @@ $FontArray* SunGraphicsEnvironment::getAllFonts() {
 }
 
 $StringArray* SunGraphicsEnvironment::getAvailableFontFamilyNames($Locale* requestedLocale) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontManagerForSGE, fm, getFontManagerForSGE());
 	$var($StringArray, installed, $nc(fm)->getInstalledFontFamilyNames(requestedLocale));
 	$var($TreeMap, map, fm->getCreatedFontFamilyNames());
@@ -271,6 +274,7 @@ $StringArray* SunGraphicsEnvironment::getAvailableFontFamilyNames() {
 
 $Rectangle* SunGraphicsEnvironment::getUsableBounds($GraphicsDevice* gd) {
 	$init(SunGraphicsEnvironment);
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, $nc(gd)->getDefaultConfiguration());
 	$var($Insets, insets, $nc($($Toolkit::getDefaultToolkit()))->getScreenInsets(gc));
 	$var($Rectangle, usableBounds, $nc(gc)->getBounds());
@@ -282,6 +286,7 @@ $Rectangle* SunGraphicsEnvironment::getUsableBounds($GraphicsDevice* gd) {
 }
 
 void SunGraphicsEnvironment::displayChanged() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($GraphicsDeviceArray, arr$, getScreenDevices());
 		int32_t len$ = $nc(arr$)->length;
@@ -326,6 +331,7 @@ double SunGraphicsEnvironment::getDebugScale() {
 
 double SunGraphicsEnvironment::getScaleFactor($String* propertyName) {
 	$init(SunGraphicsEnvironment);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, scaleFactor, $cast($String, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, propertyName, "-1"_s)))));
 	if (scaleFactor == nullptr || $nc(scaleFactor)->equals("-1"_s)) {
@@ -353,6 +359,7 @@ double SunGraphicsEnvironment::getScaleFactor($String* propertyName) {
 
 $GraphicsConfiguration* SunGraphicsEnvironment::getGraphicsConfigurationAtPoint($GraphicsConfiguration* current, double x, double y) {
 	$init(SunGraphicsEnvironment);
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc(current)->getBounds()))->contains(x, y)) {
 		return current;
 	}
@@ -376,6 +383,7 @@ $GraphicsConfiguration* SunGraphicsEnvironment::getGraphicsConfigurationAtPoint(
 
 $Rectangle* SunGraphicsEnvironment::getGCDeviceBounds($GraphicsConfiguration* config) {
 	$init(SunGraphicsEnvironment);
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, tx, $nc(config)->getDefaultTransform());
 	$var($Rectangle, bounds, config->getBounds());
 	$nc(bounds)->width *= $nc(tx)->getScaleX();
@@ -392,6 +400,7 @@ $Dimension* SunGraphicsEnvironment::toUserSpace($GraphicsConfiguration* gc, int3
 
 $Point* SunGraphicsEnvironment::toDeviceSpaceAbs(int32_t x, int32_t y) {
 	$init(SunGraphicsEnvironment);
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, $nc($($nc($(getLocalGraphicsEnvironment()))->getDefaultScreenDevice()))->getDefaultConfiguration());
 	$assign(gc, getGraphicsConfigurationAtPoint(gc, (double)x, (double)y));
 	return $nc($(toDeviceSpaceAbs(gc, x, y, 0, 0)))->getLocation();
@@ -399,6 +408,7 @@ $Point* SunGraphicsEnvironment::toDeviceSpaceAbs(int32_t x, int32_t y) {
 
 $Rectangle* SunGraphicsEnvironment::toDeviceSpaceAbs($Rectangle* rect) {
 	$init(SunGraphicsEnvironment);
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, $nc($($nc($(getLocalGraphicsEnvironment()))->getDefaultScreenDevice()))->getDefaultConfiguration());
 	$assign(gc, getGraphicsConfigurationAtPoint(gc, (double)$nc(rect)->x, (double)rect->y));
 	return toDeviceSpaceAbs(gc, $nc(rect)->x, rect->y, rect->width, rect->height);
@@ -406,6 +416,7 @@ $Rectangle* SunGraphicsEnvironment::toDeviceSpaceAbs($Rectangle* rect) {
 
 $Rectangle* SunGraphicsEnvironment::toDeviceSpaceAbs($GraphicsConfiguration* gc, int32_t x, int32_t y, int32_t w, int32_t h) {
 	$init(SunGraphicsEnvironment);
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, tx, $nc(gc)->getDefaultTransform());
 	$var($Rectangle, screen, gc->getBounds());
 	int32_t var$0 = $nc(screen)->x + $Region::clipRound((x - screen->x) * $nc(tx)->getScaleX());
@@ -416,6 +427,7 @@ $Rectangle* SunGraphicsEnvironment::toDeviceSpaceAbs($GraphicsConfiguration* gc,
 
 $Point* SunGraphicsEnvironment::toDeviceSpace(int32_t x, int32_t y) {
 	$init(SunGraphicsEnvironment);
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, $nc($($nc($(getLocalGraphicsEnvironment()))->getDefaultScreenDevice()))->getDefaultConfiguration());
 	$assign(gc, getGraphicsConfigurationAtPoint(gc, (double)x, (double)y));
 	return $nc($(toDeviceSpace(gc, x, y, 0, 0)))->getLocation();
@@ -431,6 +443,7 @@ $Rectangle* SunGraphicsEnvironment::toDeviceSpace($GraphicsConfiguration* gc, in
 }
 
 void clinit$SunGraphicsEnvironment($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	{
 		SunGraphicsEnvironment::uiScaleEnabled = "true"_s->equals($($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, "sun.java2d.uiScale.enabled"_s, "true"_s)))));

@@ -73,11 +73,13 @@ void bug8041725::init$() {
 }
 
 void bug8041725::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($NimbusLookAndFeel)));
 	$SwingUtilities::invokeAndWait($$new($bug8041725$1));
 }
 
 void bug8041725::testSelectionColors($JList* list) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, selBackColor, $nc(list)->getSelectionBackground());
 	if (!($instanceOf($UIResource, selBackColor))) {
 		$throwNew($RuntimeException, $($String::format("JList.getSelectionBackground() returned instance of \'%s\' instead of UIResource."_s, $$new($ObjectArray, {$of($nc($of(selBackColor))->getClass())}))));

@@ -65,6 +65,7 @@ void OpaqueCopyAnyToArgb::init$() {
 }
 
 void OpaqueCopyAnyToArgb::Blit$($SurfaceData* src, $SurfaceData* dst, $Composite* comp, $Region* clip, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($Raster, srcRast, $nc(src)->getRaster(srcx, srcy, w, h));
 	$var($ColorModel, srcCM, src->getColorModel());
 	$var($Raster, dstRast, $nc(dst)->getRaster(dstx, dsty, w, h));

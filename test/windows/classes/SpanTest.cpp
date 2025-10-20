@@ -86,6 +86,7 @@ void SpanTest::init$($CountDownLatch* latch) {
 }
 
 void SpanTest::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		createUI();
 		spanTest();

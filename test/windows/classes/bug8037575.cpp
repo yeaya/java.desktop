@@ -115,6 +115,7 @@ void bug8037575::init() {
 
 void bug8037575::main($StringArray* args) {
 	$init(bug8037575);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$assignStatic(bug8037575::mainThread, $Thread::currentThread());
 	try {
@@ -153,6 +154,7 @@ void bug8037575::runTest() {
 	$load(bug8037575);
 	$synchronized(class$) {
 		$init(bug8037575);
+		$useLocalCurrentObjectStackCache();
 		$nc(bug8037575::frame)->setSize(800, 600);
 		$nc(bug8037575::frame)->setVisible(true);
 		$nc(bug8037575::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);

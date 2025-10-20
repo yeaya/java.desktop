@@ -82,6 +82,7 @@ $Object* FieldElementHandler::getContextBean() {
 }
 
 $Object* FieldElementHandler::getValue($String* name) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $of(getFieldValue($(getContextBean()), name));
 	} catch ($Exception&) {
@@ -92,6 +93,7 @@ $Object* FieldElementHandler::getValue($String* name) {
 }
 
 void FieldElementHandler::setValue($String* name, Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		setFieldValue($(getContextBean()), name, value);
 	} catch ($Exception&) {

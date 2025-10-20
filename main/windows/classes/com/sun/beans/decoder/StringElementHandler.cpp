@@ -86,6 +86,7 @@ void StringElementHandler::addArgument(Object$* argument) {
 }
 
 $ValueObject* StringElementHandler::getValueObject() {
+	$useLocalCurrentObjectStackCache();
 	if (this->sb != nullptr) {
 		{
 			$var($Throwable, var$0, nullptr);

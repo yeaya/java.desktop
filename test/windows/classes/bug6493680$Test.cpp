@@ -75,6 +75,7 @@ void bug6493680$Test::init$() {
 }
 
 bool bug6493680$Test::test() {
+	$useLocalCurrentObjectStackCache();
 	$var($bug6493680$Test$TestSwingWorker, swingWorker, $new($bug6493680$Test$TestSwingWorker, this));
 	swingWorker->addPropertyChangeListener($$new($bug6493680$Test$1, this));
 	swingWorker->execute();

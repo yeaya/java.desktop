@@ -287,6 +287,7 @@ bool NumericShaper::isStrongDirectional(char16_t c) {
 
 int32_t NumericShaper::getKeyFromMask(int32_t mask) {
 	$init(NumericShaper);
+	$useLocalCurrentObjectStackCache();
 	int32_t key = 0;
 	while (key < NumericShaper::NUM_KEYS && (((int32_t)(mask & (uint32_t)($sl(1, key)))) == 0)) {
 		++key;
@@ -348,6 +349,7 @@ void NumericShaper::init$(int32_t key, int32_t mask) {
 }
 
 void NumericShaper::init$($NumericShaper$Range* defaultContext, $Set* ranges) {
+	$useLocalCurrentObjectStackCache();
 	$init($NumericShaper$Range);
 	$set(this, currentRange, $NumericShaper$Range::EUROPEAN);
 	this->stCache = 0;
@@ -416,6 +418,7 @@ void NumericShaper::shape($chars* text, int32_t start, int32_t count, $NumericSh
 }
 
 void NumericShaper::checkParams($chars* text, int32_t start, int32_t count) {
+	$useLocalCurrentObjectStackCache();
 	if (text == nullptr) {
 		$throwNew($NullPointerException, "text is null"_s);
 	}
@@ -539,6 +542,7 @@ int32_t NumericShaper::hashCode() {
 }
 
 bool NumericShaper::equals(Object$* o) {
+	$useLocalCurrentObjectStackCache();
 	if (o != nullptr) {
 		try {
 			$var(NumericShaper, rhs, $cast(NumericShaper, o));
@@ -568,6 +572,7 @@ bool NumericShaper::equals(Object$* o) {
 }
 
 $String* NumericShaper::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, buf, $new($StringBuilder, $($Serializable::toString())));
 	buf->append("[contextual:"_s)->append(isContextual());
 	$var($StringArray, keyNames, nullptr);

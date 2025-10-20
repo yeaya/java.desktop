@@ -108,6 +108,7 @@ void SynthListUI$SynthListCellRenderer::setBorder($Border* b) {
 }
 
 $Component* SynthListUI$SynthListCellRenderer::getListCellRendererComponent($JList* list, Object$* value, int32_t index, bool isSelected, bool cellHasFocus) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->this$0->useListColors && (isSelected || cellHasFocus)) {
 		$load($SynthLabelUI);
 		$var($ComponentUI, var$0, $cast($SynthLabelUI, $SynthLookAndFeel::getUIOfType($(getUI()), $SynthLabelUI::class$)));

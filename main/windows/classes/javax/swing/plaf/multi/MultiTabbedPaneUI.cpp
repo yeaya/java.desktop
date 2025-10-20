@@ -88,6 +88,7 @@ $ComponentUIArray* MultiTabbedPaneUI::getUIs() {
 }
 
 int32_t MultiTabbedPaneUI::tabForCoordinate($JTabbedPane* a, int32_t b, int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc((($cast($TabbedPaneUI, $($nc(this->uis)->elementAt(0))))))->tabForCoordinate(a, b, c);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TabbedPaneUI, $($nc(this->uis)->elementAt(i))))))->tabForCoordinate(a, b, c);
@@ -96,6 +97,7 @@ int32_t MultiTabbedPaneUI::tabForCoordinate($JTabbedPane* a, int32_t b, int32_t 
 }
 
 $Rectangle* MultiTabbedPaneUI::getTabBounds($JTabbedPane* a, int32_t b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, returnValue, $nc((($cast($TabbedPaneUI, $($nc(this->uis)->elementAt(0))))))->getTabBounds(a, b));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TabbedPaneUI, $($nc(this->uis)->elementAt(i))))))->getTabBounds(a, b);
@@ -104,6 +106,7 @@ $Rectangle* MultiTabbedPaneUI::getTabBounds($JTabbedPane* a, int32_t b) {
 }
 
 int32_t MultiTabbedPaneUI::getTabRunCount($JTabbedPane* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc((($cast($TabbedPaneUI, $($nc(this->uis)->elementAt(0))))))->getTabRunCount(a);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($TabbedPaneUI, $($nc(this->uis)->elementAt(i))))))->getTabRunCount(a);
@@ -112,6 +115,7 @@ int32_t MultiTabbedPaneUI::getTabRunCount($JTabbedPane* a) {
 }
 
 bool MultiTabbedPaneUI::contains($JComponent* a, int32_t b, int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	bool returnValue = $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->contains(a, b, c);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->contains(a, b, c);
@@ -120,6 +124,7 @@ bool MultiTabbedPaneUI::contains($JComponent* a, int32_t b, int32_t c) {
 }
 
 void MultiTabbedPaneUI::update($Graphics* a, $JComponent* b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->update(a, b);
 	}
@@ -132,24 +137,28 @@ $ComponentUI* MultiTabbedPaneUI::createUI($JComponent* a) {
 }
 
 void MultiTabbedPaneUI::installUI($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->installUI(a);
 	}
 }
 
 void MultiTabbedPaneUI::uninstallUI($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->uninstallUI(a);
 	}
 }
 
 void MultiTabbedPaneUI::paint($Graphics* a, $JComponent* b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->paint(a, b);
 	}
 }
 
 $Dimension* MultiTabbedPaneUI::getPreferredSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getPreferredSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getPreferredSize(a);
@@ -158,6 +167,7 @@ $Dimension* MultiTabbedPaneUI::getPreferredSize($JComponent* a) {
 }
 
 $Dimension* MultiTabbedPaneUI::getMinimumSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getMinimumSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getMinimumSize(a);
@@ -166,6 +176,7 @@ $Dimension* MultiTabbedPaneUI::getMinimumSize($JComponent* a) {
 }
 
 $Dimension* MultiTabbedPaneUI::getMaximumSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getMaximumSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getMaximumSize(a);
@@ -174,6 +185,7 @@ $Dimension* MultiTabbedPaneUI::getMaximumSize($JComponent* a) {
 }
 
 int32_t MultiTabbedPaneUI::getAccessibleChildrenCount($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getAccessibleChildrenCount(a);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getAccessibleChildrenCount(a);
@@ -182,6 +194,7 @@ int32_t MultiTabbedPaneUI::getAccessibleChildrenCount($JComponent* a) {
 }
 
 $Accessible* MultiTabbedPaneUI::getAccessibleChild($JComponent* a, int32_t b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Accessible, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getAccessibleChild(a, b));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getAccessibleChild(a, b);

@@ -109,6 +109,7 @@ int32_t MotifBorders$InternalFrameBorder::resizePartWidth() {
 }
 
 bool MotifBorders$InternalFrameBorder::drawTopBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $MotifBorders$FrameBorder::drawTopBorder(c, g, x, y, width, height);
 	if (var$0 && $nc(this->frame$)->isResizable()) {
 		$nc(g)->setColor($(getFrameShadow()));
@@ -123,6 +124,7 @@ bool MotifBorders$InternalFrameBorder::drawTopBorder($Component* c, $Graphics* g
 }
 
 bool MotifBorders$InternalFrameBorder::drawLeftBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $MotifBorders$FrameBorder::drawLeftBorder(c, g, x, y, width, height);
 	if (var$0 && $nc(this->frame$)->isResizable()) {
 		$nc(g)->setColor($(getFrameHighlight()));
@@ -139,6 +141,7 @@ bool MotifBorders$InternalFrameBorder::drawLeftBorder($Component* c, $Graphics* 
 }
 
 bool MotifBorders$InternalFrameBorder::drawRightBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $MotifBorders$FrameBorder::drawRightBorder(c, g, x, y, width, height);
 	if (var$0 && $nc(this->frame$)->isResizable()) {
 		int32_t startX = width - $nc($(getBorderInsets(c)))->right;
@@ -156,6 +159,7 @@ bool MotifBorders$InternalFrameBorder::drawRightBorder($Component* c, $Graphics*
 }
 
 bool MotifBorders$InternalFrameBorder::drawBottomBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $MotifBorders$FrameBorder::drawBottomBorder(c, g, x, y, width, height);
 	if (var$0 && $nc(this->frame$)->isResizable()) {
 		int32_t startY = height - $nc($(getBorderInsets(c)))->bottom;

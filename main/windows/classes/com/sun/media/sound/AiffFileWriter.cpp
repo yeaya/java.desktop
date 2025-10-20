@@ -144,6 +144,7 @@ void AiffFileWriter::init$() {
 }
 
 $AudioFileFormat$TypeArray* AiffFileWriter::getAudioFileTypes($AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFileFormat$TypeArray, filetypes, $new($AudioFileFormat$TypeArray, $nc(this->types)->length));
 	$System::arraycopy(this->types, 0, filetypes, 0, $nc(this->types)->length);
 	$var($AudioFormat, format, $nc(stream)->getFormat());
@@ -170,6 +171,7 @@ int32_t AiffFileWriter::write($AudioInputStream* stream, $AudioFileFormat$Type* 
 }
 
 int32_t AiffFileWriter::write($AudioInputStream* stream, $AudioFileFormat$Type* fileType, $File* out) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(stream);
 	$Objects::requireNonNull(fileType);
 	$Objects::requireNonNull(out);
@@ -271,6 +273,7 @@ int32_t AiffFileWriter::write($AudioInputStream* stream, $AudioFileFormat$Type* 
 }
 
 $AudioFileFormat* AiffFileWriter::getAudioFileFormat($AudioFileFormat$Type* type, $AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	if (!isFileTypeSupported(type, stream)) {
 		$throwNew($IllegalArgumentException, $$str({"File type "_s, type, " not supported."_s}));
 	}
@@ -322,6 +325,7 @@ $AudioFileFormat* AiffFileWriter::getAudioFileFormat($AudioFileFormat$Type* type
 }
 
 int32_t AiffFileWriter::writeAiffFile($InputStream* in, $AiffFileFormat* aiffFileFormat, $OutputStream* out) {
+	$useLocalCurrentObjectStackCache();
 	int32_t bytesRead = 0;
 	int32_t bytesWritten = 0;
 	$var($InputStream, fileStream, getFileStream(aiffFileFormat, in));
@@ -348,6 +352,7 @@ int32_t AiffFileWriter::writeAiffFile($InputStream* in, $AiffFileFormat* aiffFil
 }
 
 $InputStream* AiffFileWriter::getFileStream($AiffFileFormat* aiffFileFormat, $InputStream* audioStream) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFormat, format, $nc(aiffFileFormat)->getFormat());
 	$var($AudioFormat, streamFormat, nullptr);
 	$var($AudioFormat$Encoding, encoding, nullptr);

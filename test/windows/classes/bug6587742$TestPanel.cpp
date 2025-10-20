@@ -90,6 +90,7 @@ $Object* allocate$bug6587742$TestPanel($Class* clazz) {
 }
 
 void bug6587742$TestPanel::init$($bug6587742* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JPanel::init$();
 	$set(this, cbThemes, $new($JComboBox));

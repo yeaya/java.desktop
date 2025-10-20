@@ -148,6 +148,7 @@ void OverlayLayout::addLayoutComponent($Component* comp, Object$* constraints) {
 }
 
 $Dimension* OverlayLayout::preferredLayoutSize($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	checkContainer(target);
 	checkRequests();
 	$var($Dimension, size, $new($Dimension, $nc(this->xTotal)->preferred, $nc(this->yTotal)->preferred));
@@ -158,6 +159,7 @@ $Dimension* OverlayLayout::preferredLayoutSize($Container* target) {
 }
 
 $Dimension* OverlayLayout::minimumLayoutSize($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	checkContainer(target);
 	checkRequests();
 	$var($Dimension, size, $new($Dimension, $nc(this->xTotal)->minimum, $nc(this->yTotal)->minimum));
@@ -168,6 +170,7 @@ $Dimension* OverlayLayout::minimumLayoutSize($Container* target) {
 }
 
 $Dimension* OverlayLayout::maximumLayoutSize($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	checkContainer(target);
 	checkRequests();
 	$var($Dimension, size, $new($Dimension, $nc(this->xTotal)->maximum, $nc(this->yTotal)->maximum));
@@ -190,6 +193,7 @@ float OverlayLayout::getLayoutAlignmentY($Container* target) {
 }
 
 void OverlayLayout::layoutContainer($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	checkContainer(target);
 	checkRequests();
 	int32_t nChildren = $nc(target)->getComponentCount();
@@ -216,6 +220,7 @@ void OverlayLayout::checkContainer($Container* target) {
 }
 
 void OverlayLayout::checkRequests() {
+	$useLocalCurrentObjectStackCache();
 	if (this->xChildren == nullptr || this->yChildren == nullptr) {
 		int32_t n = $nc(this->target)->getComponentCount();
 		$set(this, xChildren, $new($SizeRequirementsArray, n));

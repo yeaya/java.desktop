@@ -76,6 +76,7 @@ void JTextComponent$KeymapActionMap::init$($Keymap* keymap) {
 }
 
 $ObjectArray* JTextComponent$KeymapActionMap::keys() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, sKeys, $ActionMap::keys());
 	$var($ObjectArray, keymapKeys, $nc(this->keymap)->getBoundActions());
 	int32_t sCount = (sKeys == nullptr) ? 0 : $nc(sKeys)->length;

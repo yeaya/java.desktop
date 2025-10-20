@@ -75,6 +75,7 @@ void bug8003830::run() {
 }
 
 void bug8003830::testNPEAtActionsPage() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTree, tree, $new($JTree));
 	$var($BasicTreeUI, ui, $new($bug8003830$NullReturningTreeUI));
 	tree->setUI(static_cast<$TreeUI*>(ui));

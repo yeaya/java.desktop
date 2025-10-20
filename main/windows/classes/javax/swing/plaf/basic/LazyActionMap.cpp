@@ -86,6 +86,7 @@ bool LazyActionMap::$assertionsDisabled = false;
 
 void LazyActionMap::installLazyActionMap($JComponent* c, $Class* loaderClass, $String* defaultsKey) {
 	$init(LazyActionMap);
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, map, $cast($ActionMap, $UIManager::get(defaultsKey)));
 	if (map == nullptr) {
 		$assign(map, $new(LazyActionMap, loaderClass));
@@ -96,6 +97,7 @@ void LazyActionMap::installLazyActionMap($JComponent* c, $Class* loaderClass, $S
 
 $ActionMap* LazyActionMap::getActionMap($Class* loaderClass, $String* defaultsKey) {
 	$init(LazyActionMap);
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, map, $cast($ActionMap, $UIManager::get(defaultsKey)));
 	if (map == nullptr) {
 		$assign(map, $new(LazyActionMap, loaderClass));
@@ -155,6 +157,7 @@ void LazyActionMap::setParent($ActionMap* map) {
 }
 
 void LazyActionMap::loadIfNecessary() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (this->_loader != nullptr) {
 		$var($Object, loader, this->_loader);

@@ -121,6 +121,7 @@ $ints* DataBuffer::dataTypeSize = nullptr;
 
 int32_t DataBuffer::getDataTypeSize(int32_t type) {
 	$init(DataBuffer);
+	$useLocalCurrentObjectStackCache();
 	if (type < DataBuffer::TYPE_BYTE || type > DataBuffer::TYPE_DOUBLE) {
 		$throwNew($IllegalArgumentException, $$str({"Unknown data type "_s, $$str(type)}));
 	}
@@ -251,6 +252,7 @@ void DataBuffer::setElemDouble(int32_t bank, int32_t i, double val) {
 
 $ints* DataBuffer::toIntArray(Object$* obj) {
 	$init(DataBuffer);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($ints, obj)) {
 		return $cast($ints, obj);
 	} else if (obj == nullptr) {

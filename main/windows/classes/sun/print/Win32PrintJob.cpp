@@ -302,6 +302,7 @@ void Win32PrintJob::removePrintJobListener($PrintJobListener* listener) {
 }
 
 void Win32PrintJob::closeDataStreams() {
+	$useLocalCurrentObjectStackCache();
 	if (this->doc == nullptr) {
 		return;
 	}
@@ -364,6 +365,7 @@ void Win32PrintJob::closeDataStreams() {
 }
 
 void Win32PrintJob::notifyEvent(int32_t reason) {
+	$useLocalCurrentObjectStackCache();
 	switch (reason) {
 	case $PrintJobEvent::DATA_TRANSFER_COMPLETE:
 		{}
@@ -458,6 +460,7 @@ void Win32PrintJob::removePrintJobAttributeListener($PrintJobAttributeListener* 
 }
 
 void Win32PrintJob::print($Doc* doc, $PrintRequestAttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this) {
 		if (this->printing) {
 			$throwNew($PrintException, "already printing"_s);
@@ -657,6 +660,7 @@ void Win32PrintJob::print($Doc* doc, $PrintRequestAttributeSet* attributes) {
 }
 
 void Win32PrintJob::printableJob($Printable* printable) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		bool return$1 = false;
@@ -733,6 +737,7 @@ void Win32PrintJob::printableJob($Printable* printable) {
 }
 
 void Win32PrintJob::pageableJob($Pageable* pageable) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		bool return$1 = false;
@@ -781,6 +786,7 @@ void Win32PrintJob::pageableJob($Pageable* pageable) {
 
 void Win32PrintJob::initializeAttributeSets($Doc* doc, $PrintRequestAttributeSet* reqSet) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$set(this, reqAttrSet, $new($HashPrintRequestAttributeSet));
 		$set(this, jobAttrSet, $new($HashPrintJobAttributeSet));
 		$var($AttributeArray, attrs, nullptr);
@@ -851,6 +857,7 @@ void Win32PrintJob::initializeAttributeSets($Doc* doc, $PrintRequestAttributeSet
 }
 
 void Win32PrintJob::getAttributeValues($DocFlavor* flavor) {
+	$useLocalCurrentObjectStackCache();
 	$load($Fidelity);
 	$init($Fidelity);
 	if ($equals($nc(this->reqAttrSet)->get($Fidelity::class$), $Fidelity::FIDELITY_TRUE)) {

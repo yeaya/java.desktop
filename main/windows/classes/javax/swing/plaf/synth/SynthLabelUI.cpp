@@ -183,6 +183,7 @@ int32_t SynthLabelUI::getComponentState($JComponent* c) {
 }
 
 int32_t SynthLabelUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (c == nullptr) {
 		$throwNew($NullPointerException, "Component must be non-null"_s);
 	}
@@ -231,6 +232,7 @@ int32_t SynthLabelUI::getBaseline($JComponent* c, int32_t width, int32_t height)
 }
 
 void SynthLabelUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -246,6 +248,7 @@ void SynthLabelUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void SynthLabelUI::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, label, $cast($JLabel, $nc(context)->getComponent()));
 	$var($Icon, icon, ($nc(label)->isEnabled()) ? $nc(label)->getIcon() : label->getDisabledIcon());
 	$init($ColorType);
@@ -268,6 +271,7 @@ void SynthLabelUI::paintBorder($SynthContext* context, $Graphics* g, int32_t x, 
 }
 
 $Dimension* SynthLabelUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, label, $cast($JLabel, c));
 	$var($Icon, icon, ($nc(label)->isEnabled()) ? $nc(label)->getIcon() : label->getDisabledIcon());
 	$var($SynthContext, context, getContext(c));
@@ -285,6 +289,7 @@ $Dimension* SynthLabelUI::getPreferredSize($JComponent* c) {
 }
 
 $Dimension* SynthLabelUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, label, $cast($JLabel, c));
 	$var($Icon, icon, ($nc(label)->isEnabled()) ? $nc(label)->getIcon() : label->getDisabledIcon());
 	$var($SynthContext, context, getContext(c));
@@ -302,6 +307,7 @@ $Dimension* SynthLabelUI::getMinimumSize($JComponent* c) {
 }
 
 $Dimension* SynthLabelUI::getMaximumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, label, $cast($JLabel, c));
 	$var($Icon, icon, ($nc(label)->isEnabled()) ? $nc(label)->getIcon() : label->getDisabledIcon());
 	$var($SynthContext, context, getContext(c));

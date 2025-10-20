@@ -67,6 +67,7 @@ void MetalFontDesktopProperty::init$($String* key, int32_t type) {
 }
 
 $Object* MetalFontDesktopProperty::configureValue(Object$* value$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, value$renamed);
 	if ($instanceOf($Integer, value)) {
 		$var($String, var$0, $DefaultMetalTheme::getDefaultFontName(this->type));

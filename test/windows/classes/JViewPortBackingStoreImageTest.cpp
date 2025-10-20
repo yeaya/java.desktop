@@ -275,6 +275,7 @@ void JViewPortBackingStoreImageTest::main($StringArray* args) {
 
 void JViewPortBackingStoreImageTest::createUI() {
 	$init(JViewPortBackingStoreImageTest);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel"_s);
 	} catch ($Exception&) {
@@ -323,6 +324,7 @@ void JViewPortBackingStoreImageTest::createUI() {
 
 $JComponent* JViewPortBackingStoreImageTest::createComponent() {
 	$init(JViewPortBackingStoreImageTest);
+	$useLocalCurrentObjectStackCache();
 	createStyles();
 	for (int32_t i = 0; i < $nc(JViewPortBackingStoreImageTest::data)->length; ++i) {
 		$var($JViewPortBackingStoreImageTest$Paragraph, p, $nc(JViewPortBackingStoreImageTest::data)->get(i));
@@ -338,6 +340,7 @@ $JComponent* JViewPortBackingStoreImageTest::createComponent() {
 
 void JViewPortBackingStoreImageTest::createStyles() {
 	$init(JViewPortBackingStoreImageTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(JViewPortBackingStoreImageTest::styles, $new($StyleContext));
 	$assignStatic(JViewPortBackingStoreImageTest::doc, $new($DefaultStyledDocument, JViewPortBackingStoreImageTest::styles));
 	$assignStatic(JViewPortBackingStoreImageTest::contentAttributes, $new($HashMap));
@@ -360,6 +363,7 @@ void JViewPortBackingStoreImageTest::createStyles() {
 
 void JViewPortBackingStoreImageTest::addParagraph($JViewPortBackingStoreImageTest$Paragraph* p) {
 	$init(JViewPortBackingStoreImageTest);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($Style, s, nullptr);
 		for (int32_t i = 0; i < $nc($nc(p)->data)->length; ++i) {
@@ -384,6 +388,7 @@ void JViewPortBackingStoreImageTest::lambda$createUI$0($JFrame* mainFrame, $Acti
 }
 
 void clinit$JViewPortBackingStoreImageTest($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(JViewPortBackingStoreImageTest::INSTRUCTIONS, "INSTRUCTIONS:\n\nVerify text is drawn with high resolution and text selection is not shifted when JViewPort is used on HiDPI display.\n\nIf the display does not support HiDPI mode press PASS.\n\n1. Check that the text does not have low resolution.\nIf no, press FAIL.\n\n2. Select the current text from the end to the beginning.\n\nIf the text is slightly shiftted from one side to another\nand back during selection press Fail.\nOtherwise, press Pass."_s);
 	JViewPortBackingStoreImageTest::testResult = false;
 	$assignStatic(JViewPortBackingStoreImageTest::data, $new($JViewPortBackingStoreImageTest$ParagraphArray, {

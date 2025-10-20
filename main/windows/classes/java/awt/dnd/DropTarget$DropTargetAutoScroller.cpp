@@ -94,6 +94,7 @@ $Object* allocate$DropTarget$DropTargetAutoScroller($Class* clazz) {
 }
 
 void DropTarget$DropTargetAutoScroller::init$($Component* c, $Point* p) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, outer, $new($Rectangle));
 	$set(this, inner, $new($Rectangle));
 	this->hysteresis = 10;
@@ -126,6 +127,7 @@ void DropTarget$DropTargetAutoScroller::init$($Component* c, $Point* p) {
 }
 
 void DropTarget$DropTargetAutoScroller::updateRegion() {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, i, $nc(this->autoScroll)->getAutoscrollInsets());
 	$var($Dimension, size, $nc(this->component)->getSize());
 	if ($nc(size)->width != $nc(this->outer)->width || $nc(size)->height != $nc(this->outer)->height) {

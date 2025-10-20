@@ -453,6 +453,7 @@ bool BeanContextServicesSupport::addService($Class* serviceClass, $BeanContextSe
 }
 
 bool BeanContextServicesSupport::addService($Class* serviceClass, $BeanContextServiceProvider* bcsp, bool fireEvent) {
+	$useLocalCurrentObjectStackCache();
 	if (serviceClass == nullptr) {
 		$throwNew($NullPointerException, "serviceClass"_s);
 	}
@@ -492,6 +493,7 @@ bool BeanContextServicesSupport::addService($Class* serviceClass, $BeanContextSe
 }
 
 void BeanContextServicesSupport::revokeService($Class* serviceClass, $BeanContextServiceProvider* bcsp, bool revokeCurrentServicesNow) {
+	$useLocalCurrentObjectStackCache();
 	if (serviceClass == nullptr) {
 		$throwNew($NullPointerException, "serviceClass"_s);
 	}
@@ -521,6 +523,7 @@ void BeanContextServicesSupport::revokeService($Class* serviceClass, $BeanContex
 
 bool BeanContextServicesSupport::hasService($Class* serviceClass) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (serviceClass == nullptr) {
 			$throwNew($NullPointerException, "serviceClass"_s);
 		}
@@ -542,6 +545,7 @@ bool BeanContextServicesSupport::hasService($Class* serviceClass) {
 }
 
 $Object* BeanContextServicesSupport::getService($BeanContextChild* child, Object$* requestor, $Class* serviceClass, Object$* serviceSelector, $BeanContextServiceRevokedListener* bcsrl) {
+	$useLocalCurrentObjectStackCache();
 	if (child == nullptr) {
 		$throwNew($NullPointerException, "child"_s);
 	}
@@ -630,15 +634,18 @@ void BeanContextServicesSupport::releaseService($BeanContextChild* child, Object
 }
 
 $Iterator* BeanContextServicesSupport::getCurrentServiceClasses() {
+	$useLocalCurrentObjectStackCache();
 	return $new($BeanContextSupport$BCSIterator, $($nc($($nc(this->services)->keySet()))->iterator()));
 }
 
 $Iterator* BeanContextServicesSupport::getCurrentServiceSelectors($Class* serviceClass) {
+	$useLocalCurrentObjectStackCache();
 	$var($BeanContextServicesSupport$BCSSServiceProvider, bcsssp, $cast($BeanContextServicesSupport$BCSSServiceProvider, $nc(this->services)->get(serviceClass)));
 	return bcsssp != nullptr ? static_cast<$Iterator*>($new($BeanContextSupport$BCSIterator, $($nc($($nc(bcsssp)->getServiceProvider()))->getCurrentServiceSelectors($(getBeanContextServicesPeer()), serviceClass)))) : ($Iterator*)nullptr;
 }
 
 void BeanContextServicesSupport::serviceAvailable($BeanContextServiceAvailableEvent* bcssae) {
+	$useLocalCurrentObjectStackCache();
 	$init($BeanContext);
 	$synchronized($BeanContext::globalHierarchyLock) {
 		if ($nc(this->services)->containsKey($nc(bcssae)->getServiceClass())) {
@@ -659,6 +666,7 @@ void BeanContextServicesSupport::serviceAvailable($BeanContextServiceAvailableEv
 }
 
 void BeanContextServicesSupport::serviceRevoked($BeanContextServiceRevokedEvent* bcssre) {
+	$useLocalCurrentObjectStackCache();
 	$init($BeanContext);
 	$synchronized($BeanContext::globalHierarchyLock) {
 		if ($nc(this->services)->containsKey($nc(bcssre)->getServiceClass())) {
@@ -696,6 +704,7 @@ void BeanContextServicesSupport::childJustRemovedHook(Object$* child, $BeanConte
 
 void BeanContextServicesSupport::releaseBeanContextResources() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($ObjectArray, bcssc, nullptr);
 		$BeanContextSupport::releaseBeanContextResources();
 		$synchronized(this->children) {
@@ -713,6 +722,7 @@ void BeanContextServicesSupport::releaseBeanContextResources() {
 
 void BeanContextServicesSupport::initializeBeanContextResources() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$BeanContextSupport::initializeBeanContextResources();
 		$var($BeanContext, nbc, getBeanContext());
 		if (nbc == nullptr) {
@@ -728,6 +738,7 @@ void BeanContextServicesSupport::initializeBeanContextResources() {
 }
 
 void BeanContextServicesSupport::fireServiceAdded($Class* serviceClass) {
+	$useLocalCurrentObjectStackCache();
 	$var($BeanContextServiceAvailableEvent, bcssae, $new($BeanContextServiceAvailableEvent, $(getBeanContextServicesPeer()), serviceClass));
 	fireServiceAdded(bcssae);
 }
@@ -753,6 +764,7 @@ void BeanContextServicesSupport::fireServiceRevoked($BeanContextServiceRevokedEv
 }
 
 void BeanContextServicesSupport::fireServiceRevoked($Class* serviceClass, bool revokeNow) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, copy, nullptr);
 	$var($BeanContextServiceRevokedEvent, bcsre, $new($BeanContextServiceRevokedEvent, $(getBeanContextServicesPeer()), serviceClass, revokeNow));
 	$synchronized(this->bcsListeners) {
@@ -765,6 +777,7 @@ void BeanContextServicesSupport::fireServiceRevoked($Class* serviceClass, bool r
 
 void BeanContextServicesSupport::bcsPreSerializationHook($ObjectOutputStream* oos) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$nc(oos)->writeInt(this->serializable);
 		if (this->serializable <= 0) {
 			return;
@@ -794,6 +807,7 @@ void BeanContextServicesSupport::bcsPreSerializationHook($ObjectOutputStream* oo
 
 void BeanContextServicesSupport::bcsPreDeserializationHook($ObjectInputStream* ois) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		this->serializable = $nc(ois)->readInt();
 		int32_t count = this->serializable;
 		while (count > 0) {

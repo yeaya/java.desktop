@@ -237,6 +237,7 @@ void LCMSImageLayout::init$() {
 
 LCMSImageLayout* LCMSImageLayout::createImageLayout($BufferedImage* image) {
 	$init(LCMSImageLayout);
+	$useLocalCurrentObjectStackCache();
 	$var(LCMSImageLayout, l, $new(LCMSImageLayout));
 	{
 		$var($ColorModel, cm, nullptr)
@@ -425,6 +426,7 @@ int32_t LCMSImageLayout::safeMult(int32_t a, int32_t b) {
 
 LCMSImageLayout* LCMSImageLayout::createImageLayout($Raster* r) {
 	$init(LCMSImageLayout);
+	$useLocalCurrentObjectStackCache();
 	$var(LCMSImageLayout, l, $new(LCMSImageLayout));
 	if ($instanceOf($ByteComponentRaster, r) && $instanceOf($ComponentSampleModel, $($nc(r)->getSampleModel()))) {
 		$var($ByteComponentRaster, br, $cast($ByteComponentRaster, r));

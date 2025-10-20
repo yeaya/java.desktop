@@ -175,6 +175,7 @@ void BasicDesktopPaneUI$Actions::init$($String* name) {
 }
 
 void BasicDesktopPaneUI$Actions::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JDesktopPane, dp, $cast($JDesktopPane, $nc(e)->getSource()));
 	$var($String, key, getName());
 	if (BasicDesktopPaneUI$Actions::CLOSE == key || BasicDesktopPaneUI$Actions::MAXIMIZE == key || BasicDesktopPaneUI$Actions::MINIMIZE == key || BasicDesktopPaneUI$Actions::RESTORE == key) {
@@ -317,6 +318,7 @@ void BasicDesktopPaneUI$Actions::actionPerformed($ActionEvent* e) {
 }
 
 void BasicDesktopPaneUI$Actions::setState($JDesktopPane* dp, $String* state) {
+	$useLocalCurrentObjectStackCache();
 	if (state == BasicDesktopPaneUI$Actions::CLOSE) {
 		$var($JInternalFrame, f, $nc(dp)->getSelectedFrame());
 		if (f == nullptr) {
@@ -375,6 +377,7 @@ void BasicDesktopPaneUI$Actions::setState($JDesktopPane* dp, $String* state) {
 }
 
 bool BasicDesktopPaneUI$Actions::accept(Object$* sender) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JDesktopPane, sender)) {
 		$var($JDesktopPane, dp, $cast($JDesktopPane, sender));
 		$var($String, action, getName());

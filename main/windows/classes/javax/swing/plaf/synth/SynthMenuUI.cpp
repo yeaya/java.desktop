@@ -174,6 +174,7 @@ void SynthMenuUI::installListeners() {
 }
 
 void SynthMenuUI::updateStyle($JMenuItem* mi) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthStyle, oldStyle, this->style);
 	$var($SynthContext, context, getContext(static_cast<$JComponent*>(mi), $SynthConstants::ENABLED));
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -217,6 +218,7 @@ void SynthMenuUI::uninstallUI($JComponent* c) {
 }
 
 void SynthMenuUI::uninstallDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(static_cast<$JComponent*>(this->menuItem), $SynthConstants::ENABLED));
 	$nc(this->style)->uninstallDefaults(context);
 	$set(this, style, nullptr);
@@ -269,6 +271,7 @@ int32_t SynthMenuUI::getComponentState($JComponent* c, $Region* region) {
 }
 
 $Dimension* SynthMenuUI::getPreferredMenuItemSize($JComponent* c, $Icon* checkIcon, $Icon* arrowIcon, int32_t defaultTextIconGap) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$init($Region);
 	$var($SynthContext, accContext, getContext(c, $Region::MENU_ITEM_ACCELERATOR));
@@ -285,6 +288,7 @@ $Dimension* SynthMenuUI::getPreferredMenuItemSize($JComponent* c, $Icon* checkIc
 }
 
 void SynthMenuUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -300,6 +304,7 @@ void SynthMenuUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void SynthMenuUI::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$init($Region);
 	$var($SynthContext, accContext, getContext(static_cast<$JComponent*>(this->menuItem), $Region::MENU_ITEM_ACCELERATOR));
 	$var($String, prefix, getPropertyPrefix());
@@ -313,6 +318,7 @@ void SynthMenuUI::paintBorder($SynthContext* context, $Graphics* g, int32_t x, i
 }
 
 void SynthMenuUI::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $SynthLookAndFeel::shouldUpdateStyle(e);
 	if (!var$0) {
 		bool var$1 = $nc($($nc(e)->getPropertyName()))->equals("ancestor"_s);

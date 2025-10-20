@@ -321,6 +321,7 @@ void DefaultStyledDocument::finalize() {
 }
 
 void DefaultStyledDocument::init$($AbstractDocument$Content* c, $StyleContext* styles) {
+	$useLocalCurrentObjectStackCache();
 	$AbstractDocument::init$(c, styles);
 	$set(this, listeningStyles, $new($Vector));
 	$set(this, buffer, $new($DefaultStyledDocument$ElementBuffer, this, $(createDefaultRoot())));
@@ -334,6 +335,7 @@ void DefaultStyledDocument::init$($StyleContext* styles) {
 }
 
 void DefaultStyledDocument::init$() {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractDocument$Content, var$0, static_cast<$AbstractDocument$Content*>($new($GapContent, DefaultStyledDocument::BUFFER_SIZE_DEFAULT)));
 	DefaultStyledDocument::init$(var$0, $$new($StyleContext));
 }
@@ -343,6 +345,7 @@ $Element* DefaultStyledDocument::getDefaultRootElement() {
 }
 
 void DefaultStyledDocument::create($DefaultStyledDocument$ElementSpecArray* data) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -388,6 +391,7 @@ void DefaultStyledDocument::create($DefaultStyledDocument$ElementSpecArray* data
 }
 
 void DefaultStyledDocument::insert(int32_t offset, $DefaultStyledDocument$ElementSpecArray* data) {
+	$useLocalCurrentObjectStackCache();
 	if (data == nullptr || $nc(data)->length == 0) {
 		return;
 	}
@@ -453,6 +457,7 @@ void DefaultStyledDocument::removeElement($Element* elem) {
 }
 
 void DefaultStyledDocument::removeElementImpl($Element* elem$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, elem$renamed);
 	if (!$equals($nc(elem)->getDocument(), this)) {
 		$throwNew($IllegalArgumentException, "element doesn\'t belong to document"_s);
@@ -558,6 +563,7 @@ $Enumeration* DefaultStyledDocument::getStyleNames() {
 }
 
 void DefaultStyledDocument::setLogicalStyle(int32_t pos, $Style* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, paragraph, getParagraphElement(pos));
 	if ((paragraph != nullptr) && ($instanceOf($AbstractDocument$AbstractElement, paragraph))) {
 		{
@@ -587,6 +593,7 @@ void DefaultStyledDocument::setLogicalStyle(int32_t pos, $Style* s) {
 }
 
 $Style* DefaultStyledDocument::getLogicalStyle(int32_t p) {
+	$useLocalCurrentObjectStackCache();
 	$var($Style, s, nullptr);
 	$var($Element, paragraph, getParagraphElement(p));
 	if (paragraph != nullptr) {
@@ -600,6 +607,7 @@ $Style* DefaultStyledDocument::getLogicalStyle(int32_t p) {
 }
 
 void DefaultStyledDocument::setCharacterAttributes(int32_t offset, int32_t length, $AttributeSet* s, bool replace) {
+	$useLocalCurrentObjectStackCache();
 	if (length == 0) {
 		return;
 	}
@@ -640,6 +648,7 @@ void DefaultStyledDocument::setCharacterAttributes(int32_t offset, int32_t lengt
 }
 
 void DefaultStyledDocument::setParagraphAttributes(int32_t offset, int32_t length, $AttributeSet* s, bool replace) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -706,6 +715,7 @@ $Element* DefaultStyledDocument::getCharacterElement(int32_t pos) {
 }
 
 void DefaultStyledDocument::insertUpdate($AbstractDocument$DefaultDocumentEvent* chng, $AttributeSet* attr$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attr, attr$renamed);
 	int32_t offset = $nc(chng)->getOffset();
 	int32_t length = chng->getLength();
@@ -820,6 +830,7 @@ void DefaultStyledDocument::insertUpdate($AbstractDocument$DefaultDocumentEvent*
 }
 
 int16_t DefaultStyledDocument::createSpecsForInsertAfterNewline($Element* paragraph, $Element* pParagraph, $AttributeSet* pattr, $Vector* parseBuffer, int32_t offset, int32_t endOffset) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(paragraph)->getParentElement() == $nc(pParagraph)->getParentElement()) {
 		$var($DefaultStyledDocument$ElementSpec, spec, $new($DefaultStyledDocument$ElementSpec, pattr, $DefaultStyledDocument$ElementSpec::EndTagType));
 		$nc(parseBuffer)->addElement(spec);
@@ -875,6 +886,7 @@ void DefaultStyledDocument::removeUpdate($AbstractDocument$DefaultDocumentEvent*
 }
 
 $AbstractDocument$AbstractElement* DefaultStyledDocument::createDefaultRoot() {
+	$useLocalCurrentObjectStackCache();
 	writeLock();
 	$var($AbstractDocument$BranchElement, section, $new($DefaultStyledDocument$SectionElement, this));
 	$var($AbstractDocument$BranchElement, paragraph, $new($AbstractDocument$BranchElement, this, section, nullptr));
@@ -918,6 +930,7 @@ void DefaultStyledDocument::styleChanged($Style* style) {
 }
 
 void DefaultStyledDocument::addDocumentListener($DocumentListener* listener) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->listeningStyles) {
 		$load($DocumentListener);
 		int32_t oldDLCount = $nc(this->listenerList)->getListenerCount($DocumentListener::class$);
@@ -946,6 +959,7 @@ void DefaultStyledDocument::addDocumentListener($DocumentListener* listener) {
 }
 
 void DefaultStyledDocument::removeDocumentListener($DocumentListener* listener) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->listeningStyles) {
 		$AbstractDocument::removeDocumentListener(listener);
 		$load($DocumentListener);
@@ -971,6 +985,7 @@ $ChangeListener* DefaultStyledDocument::createStyleContextChangeListener() {
 }
 
 void DefaultStyledDocument::updateStylesListeningTo() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->listeningStyles) {
 		$var($StyleContext, styles, $cast($StyleContext, getAttributeContext()));
 		if (this->styleChangeListener == nullptr) {
@@ -1013,6 +1028,7 @@ void DefaultStyledDocument::updateStylesListeningTo() {
 }
 
 void DefaultStyledDocument::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, listeningStyles, $new($Vector));
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	$set(this, buffer, $cast($DefaultStyledDocument$ElementBuffer, $nc(f)->get("buffer"_s, ($Object*)nullptr)));

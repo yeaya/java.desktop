@@ -293,6 +293,7 @@ void List::init$(int32_t rows, bool multipleMode) {
 }
 
 $String* List::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(List::class$) {
 		$var($String, var$0, List::base);
 		return $concat(var$0, $$str(List::nameCounter++));
@@ -356,6 +357,7 @@ void List::add($String* item, int32_t index) {
 
 void List::addItem($String* item$renamed, int32_t index) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($String, item, item$renamed);
 		if (index < -1 || index >= $nc(this->items)->size()) {
 			index = -1;
@@ -442,6 +444,7 @@ $String* List::getSelectedItem() {
 
 $StringArray* List::getSelectedItems() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($ints, sel, getSelectedIndexes());
 		$var($StringArray, str, $new($StringArray, $nc(sel)->length));
 		for (int32_t i = 0; i < sel->length; ++i) {
@@ -456,6 +459,7 @@ $ObjectArray* List::getSelectedObjects() {
 }
 
 void List::select(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($ListPeer, peer, nullptr);
 	do {
 		$assign(peer, $cast($ListPeer, this->peer));
@@ -488,6 +492,7 @@ void List::select(int32_t index) {
 
 void List::deselect(int32_t index) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($ListPeer, peer, $cast($ListPeer, this->peer));
 		if (peer != nullptr) {
 			bool var$0 = isMultipleMode();
@@ -723,6 +728,7 @@ void List::processActionEvent($ActionEvent* e) {
 }
 
 $String* List::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $$str({$($Component::paramString()), ",selected="_s}));
 	return $concat(var$0, $(getSelectedItem()));
 }
@@ -754,6 +760,7 @@ void List::writeObject($ObjectOutputStream* s) {
 }
 
 void List::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$GraphicsEnvironment::checkHeadless();
 	$nc(s)->defaultReadObject();
 	$var($Object, keyOrNull, nullptr);

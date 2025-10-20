@@ -173,12 +173,14 @@ void AudioSystem::init$() {
 }
 
 $Mixer$InfoArray* AudioSystem::getMixerInfo() {
+	$useLocalCurrentObjectStackCache();
 	$var($List, infos, getMixerInfoList());
 	$var($Mixer$InfoArray, allInfos, $fcast($Mixer$InfoArray, $nc(infos)->toArray($$new($Mixer$InfoArray, infos->size()))));
 	return allInfos;
 }
 
 $Mixer* AudioSystem::getMixer($Mixer$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc($(getMixerProviders()))->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -199,6 +201,7 @@ $Mixer* AudioSystem::getMixer($Mixer$Info* info) {
 }
 
 $Line$InfoArray* AudioSystem::getSourceLineInfo($Line$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, vector, $new($Vector));
 	$var($Line$InfoArray, currentInfoArray, nullptr);
 	$var($Mixer, mixer, nullptr);
@@ -219,6 +222,7 @@ $Line$InfoArray* AudioSystem::getSourceLineInfo($Line$Info* info) {
 }
 
 $Line$InfoArray* AudioSystem::getTargetLineInfo($Line$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, vector, $new($Vector));
 	$var($Line$InfoArray, currentInfoArray, nullptr);
 	$var($Mixer, mixer, nullptr);
@@ -239,6 +243,7 @@ $Line$InfoArray* AudioSystem::getTargetLineInfo($Line$Info* info) {
 }
 
 bool AudioSystem::isLineSupported($Line$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	$var($Mixer, mixer, nullptr);
 	$var($Mixer$InfoArray, infoArray, getMixerInfo());
 	for (int32_t i = 0; i < $nc(infoArray)->length; ++i) {
@@ -253,6 +258,7 @@ bool AudioSystem::isLineSupported($Line$Info* info) {
 }
 
 $Line* AudioSystem::getLine($Line$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	$var($LineUnavailableException, lue, nullptr);
 	$var($List, providers, getMixerProviders());
 	try {
@@ -308,6 +314,7 @@ $Line* AudioSystem::getLine($Line$Info* info) {
 }
 
 $Clip* AudioSystem::getClip() {
+	$useLocalCurrentObjectStackCache();
 	$init($AudioFormat$Encoding);
 	$var($AudioFormat, format, $new($AudioFormat, $AudioFormat$Encoding::PCM_SIGNED, (float)AudioSystem::NOT_SPECIFIED, 16, 2, 4, (float)AudioSystem::NOT_SPECIFIED, true));
 	$load($Clip);
@@ -316,6 +323,7 @@ $Clip* AudioSystem::getClip() {
 }
 
 $Clip* AudioSystem::getClip($Mixer$Info* mixerInfo) {
+	$useLocalCurrentObjectStackCache();
 	$init($AudioFormat$Encoding);
 	$var($AudioFormat, format, $new($AudioFormat, $AudioFormat$Encoding::PCM_SIGNED, (float)AudioSystem::NOT_SPECIFIED, 16, 2, 4, (float)AudioSystem::NOT_SPECIFIED, true));
 	$load($Clip);
@@ -331,6 +339,7 @@ $SourceDataLine* AudioSystem::getSourceDataLine($AudioFormat* format) {
 }
 
 $SourceDataLine* AudioSystem::getSourceDataLine($AudioFormat* format, $Mixer$Info* mixerinfo) {
+	$useLocalCurrentObjectStackCache();
 	$load($SourceDataLine);
 	$var($DataLine$Info, info, $new($DataLine$Info, $SourceDataLine::class$, format));
 	$var($Mixer, mixer, AudioSystem::getMixer(mixerinfo));
@@ -344,6 +353,7 @@ $TargetDataLine* AudioSystem::getTargetDataLine($AudioFormat* format) {
 }
 
 $TargetDataLine* AudioSystem::getTargetDataLine($AudioFormat* format, $Mixer$Info* mixerinfo) {
+	$useLocalCurrentObjectStackCache();
 	$load($TargetDataLine);
 	$var($DataLine$Info, info, $new($DataLine$Info, $TargetDataLine::class$, format));
 	$var($Mixer, mixer, AudioSystem::getMixer(mixerinfo));
@@ -351,6 +361,7 @@ $TargetDataLine* AudioSystem::getTargetDataLine($AudioFormat* format, $Mixer$Inf
 }
 
 $AudioFormat$EncodingArray* AudioSystem::getTargetEncodings($AudioFormat$Encoding* sourceEncoding) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(sourceEncoding);
 	$var($List, codecs, getFormatConversionProviders());
 	$var($Vector, encodings, $new($Vector));
@@ -371,6 +382,7 @@ $AudioFormat$EncodingArray* AudioSystem::getTargetEncodings($AudioFormat$Encodin
 }
 
 $AudioFormat$EncodingArray* AudioSystem::getTargetEncodings($AudioFormat* sourceFormat) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(sourceFormat);
 	$var($List, codecs, getFormatConversionProviders());
 	$var($List, encs, $new($ArrayList));
@@ -390,6 +402,7 @@ $AudioFormat$EncodingArray* AudioSystem::getTargetEncodings($AudioFormat* source
 }
 
 bool AudioSystem::isConversionSupported($AudioFormat$Encoding* targetEncoding, $AudioFormat* sourceFormat) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(targetEncoding);
 	$Objects::requireNonNull(sourceFormat);
 	if ($nc($(sourceFormat->getEncoding()))->equals(targetEncoding)) {
@@ -406,6 +419,7 @@ bool AudioSystem::isConversionSupported($AudioFormat$Encoding* targetEncoding, $
 }
 
 $AudioInputStream* AudioSystem::getAudioInputStream($AudioFormat$Encoding* targetEncoding, $AudioInputStream* sourceStream) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(targetEncoding);
 	$Objects::requireNonNull(sourceStream);
 	if ($nc($($nc($(sourceStream->getFormat()))->getEncoding()))->equals(targetEncoding)) {
@@ -423,6 +437,7 @@ $AudioInputStream* AudioSystem::getAudioInputStream($AudioFormat$Encoding* targe
 }
 
 $AudioFormatArray* AudioSystem::getTargetFormats($AudioFormat$Encoding* targetEncoding, $AudioFormat* sourceFormat) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(targetEncoding);
 	$Objects::requireNonNull(sourceFormat);
 	$var($List, codecs, getFormatConversionProviders());
@@ -460,6 +475,7 @@ $AudioFormatArray* AudioSystem::getTargetFormats($AudioFormat$Encoding* targetEn
 }
 
 bool AudioSystem::isConversionSupported($AudioFormat* targetFormat, $AudioFormat* sourceFormat) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(targetFormat);
 	$Objects::requireNonNull(sourceFormat);
 	if (sourceFormat->matches(targetFormat)) {
@@ -476,6 +492,7 @@ bool AudioSystem::isConversionSupported($AudioFormat* targetFormat, $AudioFormat
 }
 
 $AudioInputStream* AudioSystem::getAudioInputStream($AudioFormat* targetFormat, $AudioInputStream* sourceStream) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc(sourceStream)->getFormat()))->matches(targetFormat)) {
 		return sourceStream;
 	}
@@ -491,6 +508,7 @@ $AudioInputStream* AudioSystem::getAudioInputStream($AudioFormat* targetFormat, 
 }
 
 $AudioFileFormat* AudioSystem::getAudioFileFormat($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(stream);
 	{
 		$var($Iterator, i$, $nc($(getAudioFileReaders()))->iterator());
@@ -510,6 +528,7 @@ $AudioFileFormat* AudioSystem::getAudioFileFormat($InputStream* stream) {
 }
 
 $AudioFileFormat* AudioSystem::getAudioFileFormat($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(url);
 	{
 		$var($Iterator, i$, $nc($(getAudioFileReaders()))->iterator());
@@ -529,6 +548,7 @@ $AudioFileFormat* AudioSystem::getAudioFileFormat($URL* url) {
 }
 
 $AudioFileFormat* AudioSystem::getAudioFileFormat($File* file) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(file);
 	{
 		$var($Iterator, i$, $nc($(getAudioFileReaders()))->iterator());
@@ -548,6 +568,7 @@ $AudioFileFormat* AudioSystem::getAudioFileFormat($File* file) {
 }
 
 $AudioInputStream* AudioSystem::getAudioInputStream($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(stream);
 	{
 		$var($Iterator, i$, $nc($(getAudioFileReaders()))->iterator());
@@ -567,6 +588,7 @@ $AudioInputStream* AudioSystem::getAudioInputStream($InputStream* stream) {
 }
 
 $AudioInputStream* AudioSystem::getAudioInputStream($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(url);
 	{
 		$var($Iterator, i$, $nc($(getAudioFileReaders()))->iterator());
@@ -586,6 +608,7 @@ $AudioInputStream* AudioSystem::getAudioInputStream($URL* url) {
 }
 
 $AudioInputStream* AudioSystem::getAudioInputStream($File* file) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(file);
 	{
 		$var($Iterator, i$, $nc($(getAudioFileReaders()))->iterator());
@@ -605,6 +628,7 @@ $AudioInputStream* AudioSystem::getAudioInputStream($File* file) {
 }
 
 $AudioFileFormat$TypeArray* AudioSystem::getAudioFileTypes() {
+	$useLocalCurrentObjectStackCache();
 	$var($List, providers, getAudioFileWriters());
 	$var($Set, returnTypesSet, $new($HashSet));
 	for (int32_t i = 0; i < $nc(providers)->size(); ++i) {
@@ -619,6 +643,7 @@ $AudioFileFormat$TypeArray* AudioSystem::getAudioFileTypes() {
 }
 
 bool AudioSystem::isFileTypeSupported($AudioFileFormat$Type* fileType) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(fileType);
 	$var($List, providers, getAudioFileWriters());
 	for (int32_t i = 0; i < $nc(providers)->size(); ++i) {
@@ -631,6 +656,7 @@ bool AudioSystem::isFileTypeSupported($AudioFileFormat$Type* fileType) {
 }
 
 $AudioFileFormat$TypeArray* AudioSystem::getAudioFileTypes($AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(stream);
 	$var($List, providers, getAudioFileWriters());
 	$var($Set, returnTypesSet, $new($HashSet));
@@ -646,6 +672,7 @@ $AudioFileFormat$TypeArray* AudioSystem::getAudioFileTypes($AudioInputStream* st
 }
 
 bool AudioSystem::isFileTypeSupported($AudioFileFormat$Type* fileType, $AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(fileType);
 	$Objects::requireNonNull(stream);
 	$var($List, providers, getAudioFileWriters());
@@ -659,6 +686,7 @@ bool AudioSystem::isFileTypeSupported($AudioFileFormat$Type* fileType, $AudioInp
 }
 
 int32_t AudioSystem::write($AudioInputStream* stream, $AudioFileFormat$Type* fileType, $OutputStream* out) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(stream);
 	$Objects::requireNonNull(fileType);
 	$Objects::requireNonNull(out);
@@ -680,6 +708,7 @@ int32_t AudioSystem::write($AudioInputStream* stream, $AudioFileFormat$Type* fil
 }
 
 int32_t AudioSystem::write($AudioInputStream* stream, $AudioFileFormat$Type* fileType, $File* out) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(stream);
 	$Objects::requireNonNull(fileType);
 	$Objects::requireNonNull(out);
@@ -721,6 +750,7 @@ $List* AudioSystem::getAudioFileWriters() {
 }
 
 $Mixer* AudioSystem::getDefaultMixer($List* providers, $Line$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	$Class* lineClass = $nc(info)->getLineClass();
 	$var($String, providerClassName, $JDK13Services::getDefaultProviderClassName(lineClass));
 	$var($String, instanceName, $JDK13Services::getDefaultInstanceName(lineClass));
@@ -751,6 +781,7 @@ $Mixer* AudioSystem::getDefaultMixer($List* providers, $Line$Info* info) {
 }
 
 $MixerProvider* AudioSystem::getNamedProvider($String* providerClassName, $List* providers) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(providers)->size(); ++i) {
 		$var($MixerProvider, provider, $cast($MixerProvider, providers->get(i)));
 		if ($nc($($nc($of(provider))->getClass()->getName()))->equals(providerClassName)) {
@@ -761,6 +792,7 @@ $MixerProvider* AudioSystem::getNamedProvider($String* providerClassName, $List*
 }
 
 $Mixer* AudioSystem::getNamedMixer($String* mixerName, $MixerProvider* provider, $Line$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	$var($Mixer$InfoArray, infos, $nc(provider)->getMixerInfo());
 	for (int32_t i = 0; i < $nc(infos)->length; ++i) {
 		if ($nc($($nc(infos->get(i))->getName()))->equals(mixerName)) {
@@ -774,6 +806,7 @@ $Mixer* AudioSystem::getNamedMixer($String* mixerName, $MixerProvider* provider,
 }
 
 $Mixer* AudioSystem::getNamedMixer($String* mixerName, $List* providers, $Line$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(providers)->size(); ++i) {
 		$var($MixerProvider, provider, $cast($MixerProvider, providers->get(i)));
 		$var($Mixer, mixer, getNamedMixer(mixerName, provider, info));
@@ -785,6 +818,7 @@ $Mixer* AudioSystem::getNamedMixer($String* mixerName, $List* providers, $Line$I
 }
 
 $Mixer* AudioSystem::getFirstMixer($MixerProvider* provider, $Line$Info* info, bool isMixingRequired) {
+	$useLocalCurrentObjectStackCache();
 	$var($Mixer$InfoArray, infos, $nc(provider)->getMixerInfo());
 	for (int32_t j = 0; j < $nc(infos)->length; ++j) {
 		$var($Mixer, mixer, provider->getMixer(infos->get(j)));
@@ -820,6 +854,7 @@ $List* AudioSystem::getMixerInfoList() {
 }
 
 $List* AudioSystem::getMixerInfoList($List* providers) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, infos, $new($ArrayList));
 	$var($Mixer$InfoArray, someInfos, nullptr);
 	$var($Mixer$InfoArray, allInfos, nullptr);

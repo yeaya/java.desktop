@@ -138,6 +138,7 @@ void DefaultButtonTest::main($StringArray* args) {
 }
 
 void DefaultButtonTest::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$();
 	$nc($(getContentPane()))->add(static_cast<$Component*>($$new($DefaultButtonTest$DefaultPanel, this, this)));
 	pack();
@@ -147,6 +148,7 @@ void DefaultButtonTest::init$() {
 
 void DefaultButtonTest::test() {
 	$init(DefaultButtonTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, nullptr);
 	try {
 		$assign(robot, $new($Robot));
@@ -199,6 +201,7 @@ void DefaultButtonTest::test() {
 }
 
 void DefaultButtonTest::actionPerformed($ActionEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, cmd, $nc(evt)->getActionCommand());
 	$init($System);
 	$nc($System::out)->println($$str({"ActionEvent: "_s, cmd}));
@@ -212,6 +215,7 @@ void DefaultButtonTest::actionPerformed($ActionEvent* evt) {
 
 void DefaultButtonTest::testDefaultButton(bool flag) {
 	$init(DefaultButtonTest);
+	$useLocalCurrentObjectStackCache();
 	if (DefaultButtonTest::defaultButtonPressed != flag) {
 		$new($RuntimeException, $$str({"defaultButtonPressed unexpectedly = "_s, $$str(DefaultButtonTest::defaultButtonPressed)}));
 	}
@@ -220,6 +224,7 @@ void DefaultButtonTest::testDefaultButton(bool flag) {
 
 void DefaultButtonTest::testEditChange(bool flag) {
 	$init(DefaultButtonTest);
+	$useLocalCurrentObjectStackCache();
 	if (DefaultButtonTest::editChanged != flag) {
 		$new($RuntimeException, $$str({"editChanged unexpectedly = "_s, $$str(DefaultButtonTest::editChanged)}));
 	}

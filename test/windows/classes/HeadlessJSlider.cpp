@@ -112,6 +112,7 @@ void HeadlessJSlider::init$() {
 }
 
 void HeadlessJSlider::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JSlider, s, $new($JSlider));
 	s->getAccessibleContext();
 	s->isFocusTraversable();

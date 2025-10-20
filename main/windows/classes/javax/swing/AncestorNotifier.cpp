@@ -135,6 +135,7 @@ $AncestorListenerArray* AncestorNotifier::getAncestorListeners() {
 }
 
 void AncestorNotifier::fireAncestorAdded($JComponent* source, int32_t id, $Container* ancestor, $Container* ancestorParent) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
 		$load($AncestorListener);
@@ -146,6 +147,7 @@ void AncestorNotifier::fireAncestorAdded($JComponent* source, int32_t id, $Conta
 }
 
 void AncestorNotifier::fireAncestorRemoved($JComponent* source, int32_t id, $Container* ancestor, $Container* ancestorParent) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
 		$load($AncestorListener);
@@ -157,6 +159,7 @@ void AncestorNotifier::fireAncestorRemoved($JComponent* source, int32_t id, $Con
 }
 
 void AncestorNotifier::fireAncestorMoved($JComponent* source, int32_t id, $Container* ancestor, $Container* ancestorParent) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
 		$load($AncestorListener);
@@ -172,6 +175,7 @@ void AncestorNotifier::removeAllListeners() {
 }
 
 void AncestorNotifier::addListeners($Component* ancestor, bool addToFirst) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, a, nullptr);
 	$set(this, firstInvisibleAncestor, nullptr);
 	for ($assign(a, ancestor); this->firstInvisibleAncestor == nullptr; $assign(a, $nc(a)->getParent())) {
@@ -193,6 +197,7 @@ void AncestorNotifier::addListeners($Component* ancestor, bool addToFirst) {
 }
 
 void AncestorNotifier::removeListeners($Component* ancestor) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, a, nullptr);
 	for ($assign(a, ancestor); a != nullptr; $assign(a, $nc(a)->getParent())) {
 		a->removeComponentListener(this);
@@ -210,11 +215,13 @@ void AncestorNotifier::componentResized($ComponentEvent* e) {
 }
 
 void AncestorNotifier::componentMoved($ComponentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, source, $nc(e)->getComponent());
 	fireAncestorMoved(this->root, $AncestorEvent::ANCESTOR_MOVED, $cast($Container, source), $($nc(source)->getParent()));
 }
 
 void AncestorNotifier::componentShown($ComponentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, ancestor, $nc(e)->getComponent());
 	if (ancestor == this->firstInvisibleAncestor) {
 		addListeners(ancestor, false);
@@ -225,6 +232,7 @@ void AncestorNotifier::componentShown($ComponentEvent* e) {
 }
 
 void AncestorNotifier::componentHidden($ComponentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, ancestor, $nc(e)->getComponent());
 	bool needsNotify = this->firstInvisibleAncestor == nullptr;
 	if (!($instanceOf($Window, ancestor))) {
@@ -237,6 +245,7 @@ void AncestorNotifier::componentHidden($ComponentEvent* e) {
 }
 
 void AncestorNotifier::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, s, $nc(evt)->getPropertyName());
 	bool var$0 = s != nullptr;
 	if (var$0) {

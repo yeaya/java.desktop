@@ -110,6 +110,7 @@ void WrongBackgroundColor::main($StringArray* args) {
 }
 
 void WrongBackgroundColor::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, ui, $UIManager::getDefaults());
 	$nc(ui)->put("control"_s, $$new($ColorUIResource, 54, 54, 54));
 	$var($JDialog, dialog, $new($JDialog));

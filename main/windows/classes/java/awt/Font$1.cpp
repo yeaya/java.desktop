@@ -72,6 +72,7 @@ void Font$1::init$() {
 }
 
 $Object* Font$1::run() {
+	$useLocalCurrentObjectStackCache();
 	return $of($nc($($Files::createTempFile("+~JF"_s, ".tmp"_s, $$new($FileAttributeArray, 0))))->toFile());
 }
 

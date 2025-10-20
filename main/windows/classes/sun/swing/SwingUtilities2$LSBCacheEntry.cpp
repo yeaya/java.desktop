@@ -101,6 +101,7 @@ void SwingUtilities2$LSBCacheEntry::reset($FontRenderContext* frc, $Font* font) 
 }
 
 int32_t SwingUtilities2$LSBCacheEntry::getLeftSideBearing(char16_t aChar) {
+	$useLocalCurrentObjectStackCache();
 	int32_t index = aChar - 87;
 	if (!SwingUtilities2$LSBCacheEntry::$assertionsDisabled && !(index >= 0 && index < (88 - 87))) {
 		$throwNew($AssertionError);

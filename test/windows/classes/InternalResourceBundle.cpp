@@ -117,6 +117,7 @@ $Object* InternalResourceBundle::getValue($UIDefaults* defaults) {
 }
 
 void InternalResourceBundle::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($NimbusLookAndFeel)));
 	} catch ($UnsupportedLookAndFeelException&) {

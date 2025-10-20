@@ -299,6 +299,7 @@ $String* ExifGPSTagSet::DEST_DISTANCE_REF_KNOTS = nullptr;
 
 $List* ExifGPSTagSet::initTags() {
 	$init(ExifGPSTagSet);
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, tags, $new($ArrayList, 31));
 	tags->add($$new($ExifGPSTagSet$GPSVersionID));
 	tags->add($$new($ExifGPSTagSet$GPSLatitudeRef));

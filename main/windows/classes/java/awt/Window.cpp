@@ -635,6 +635,7 @@ void Window::init$($GraphicsConfiguration* gc) {
 }
 
 $GraphicsConfiguration* Window::initGC($GraphicsConfiguration* gc$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, gc$renamed);
 	$GraphicsEnvironment::checkHeadless();
 	if (gc == nullptr) {
@@ -645,6 +646,7 @@ $GraphicsConfiguration* Window::initGC($GraphicsConfiguration* gc$renamed) {
 }
 
 void Window::init($GraphicsConfiguration* gc$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, gc$renamed);
 	$GraphicsEnvironment::checkHeadless();
 	this->syncLWRequests = Window::systemSyncLWRequests;
@@ -729,6 +731,7 @@ void Window::ownedInit(Window* owner) {
 }
 
 $String* Window::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(Window::class$) {
 		$var($String, var$0, Window::base);
 		return $concat(var$0, $$str(Window::nameCounter++));
@@ -763,6 +766,7 @@ void Window::setIconImage($Image* image) {
 }
 
 void Window::addNotify() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		$var($Container, parent, this->parent);
 		if (parent != nullptr && parent->peer == nullptr) {
@@ -788,6 +792,7 @@ void Window::removeNotify() {
 }
 
 void Window::pack() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, parent, this->parent);
 	if (parent != nullptr && parent->peer == nullptr) {
 		parent->addNotify();
@@ -873,6 +878,7 @@ void Window::setVisible(bool b) {
 }
 
 void Window::show() {
+	$useLocalCurrentObjectStackCache();
 	if (this->peer == nullptr) {
 		addNotify();
 	}
@@ -911,6 +917,7 @@ void Window::show() {
 
 void Window::updateChildFocusableWindowState(Window* w) {
 	$init(Window);
+	$useLocalCurrentObjectStackCache();
 	if ($nc(w)->peer != nullptr && w->isShowing()) {
 		$nc(($cast($WindowPeer, w->peer)))->updateFocusableWindowState();
 	}
@@ -924,6 +931,7 @@ void Window::updateChildFocusableWindowState(Window* w) {
 
 void Window::postWindowEvent(int32_t id) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->windowListener != nullptr || ((int64_t)(this->eventMask & (uint64_t)$AWTEvent::WINDOW_EVENT_MASK)) != 0 || $Toolkit::enabledOnToolkit($AWTEvent::WINDOW_EVENT_MASK)) {
 			$var($WindowEvent, e, $new($WindowEvent, this, id));
 			$nc($($Toolkit::getEventQueue()))->postEvent(e);
@@ -932,6 +940,7 @@ void Window::postWindowEvent(int32_t id) {
 }
 
 void Window::hide() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->ownedWindowList) {
 		for (int32_t i = 0; i < $nc(this->ownedWindowList)->size(); ++i) {
 			$var(Window, child, $cast(Window, $nc(($cast($WeakReference, $($nc(this->ownedWindowList)->elementAt(i)))))->get()));
@@ -963,6 +972,7 @@ void Window::disposeImpl() {
 }
 
 void Window::doDispose() {
+	$useLocalCurrentObjectStackCache();
 	{
 	}
 	bool fireWindowClosedEvent = isDisplayable();
@@ -1040,6 +1050,7 @@ $String* Window::getWarningString() {
 }
 
 void Window::setWarningString() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$set(this, warningString, nullptr);
 	$var($SecurityManager, sm, $System::getSecurityManager());
@@ -1091,6 +1102,7 @@ $WindowArray* Window::getOwnedWindows() {
 }
 
 $WindowArray* Window::getOwnedWindows_NoClientCode() {
+	$useLocalCurrentObjectStackCache();
 	$var($WindowArray, realCopy, nullptr);
 	$synchronized(this->ownedWindowList) {
 		int32_t fullSize = $nc(this->ownedWindowList)->size();
@@ -1140,6 +1152,7 @@ $IdentityArrayList* Window::getAllWindows() {
 
 $IdentityArrayList* Window::getAllUnblockedWindows() {
 	$init(Window);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(Window::allWindows) {
 		$var($IdentityArrayList, unblocked, $new($IdentityArrayList));
 		for (int32_t i = 0; i < $nc(Window::allWindows)->size(); ++i) {
@@ -1154,6 +1167,7 @@ $IdentityArrayList* Window::getAllUnblockedWindows() {
 
 $WindowArray* Window::getWindows($AppContext* appContext) {
 	$init(Window);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(Window::class$) {
 		$var($WindowArray, realCopy, nullptr);
 		$var($Vector, windowList, $cast($Vector, $nc(appContext)->get(Window::class$)));
@@ -1186,6 +1200,7 @@ $WindowArray* Window::getWindows() {
 
 $WindowArray* Window::getOwnerlessWindows() {
 	$init(Window);
+	$useLocalCurrentObjectStackCache();
 	$var($WindowArray, allWindows, Window::getWindows());
 	int32_t ownerlessCount = 0;
 	{
@@ -1230,6 +1245,7 @@ Window* Window::getDocumentRoot() {
 }
 
 void Window::setModalExclusionType($Dialog$ModalExclusionType* exclusionType$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dialog$ModalExclusionType, exclusionType, exclusionType$renamed);
 	if (exclusionType == nullptr) {
 		$init($Dialog$ModalExclusionType);
@@ -1266,6 +1282,7 @@ bool Window::isModalExcluded($Dialog$ModalExclusionType* exclusionType) {
 }
 
 void Window::updateChildrenBlocking() {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, childHierarchy, $new($Vector));
 	$var($WindowArray, ownedWindows, getOwnedWindows());
 	for (int32_t i = 0; i < $nc(ownedWindows)->length; ++i) {
@@ -1574,6 +1591,7 @@ void Window::postProcessKeyEvent($KeyEvent* e) {
 }
 
 void Window::setAlwaysOnTop(bool alwaysOnTop) {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, security, $System::getSecurityManager());
 	if (security != nullptr) {
 		$init($AWTPermissions);
@@ -1599,6 +1617,7 @@ void Window::setAlwaysOnTop(bool alwaysOnTop) {
 }
 
 void Window::setOwnedWindowsAlwaysOnTop(bool alwaysOnTop) {
+	$useLocalCurrentObjectStackCache();
 	$var($WeakReferenceArray, ownedWindowArray, nullptr);
 	$synchronized(this->ownedWindowList) {
 		$assign(ownedWindowArray, $new($WeakReferenceArray, $nc(this->ownedWindowList)->size()));
@@ -1637,6 +1656,7 @@ $Component* Window::getFocusOwner() {
 }
 
 $Component* Window::getMostRecentFocusOwner() {
+	$useLocalCurrentObjectStackCache();
 	if (isFocused()) {
 		return getFocusOwner();
 	} else {
@@ -1658,6 +1678,7 @@ bool Window::isFocused() {
 }
 
 $Set* Window::getFocusTraversalKeys(int32_t id) {
+	$useLocalCurrentObjectStackCache();
 	if (id < 0 || id >= $KeyboardFocusManager::TRAVERSAL_KEY_LENGTH) {
 		$throwNew($IllegalArgumentException, "invalid focus traversal key identifier"_s);
 	}
@@ -1681,6 +1702,7 @@ $Container* Window::getFocusCycleRootAncestor() {
 }
 
 bool Window::isFocusableWindow() {
+	$useLocalCurrentObjectStackCache();
 	if (!getFocusableWindowState()) {
 		return false;
 	}
@@ -1706,6 +1728,7 @@ bool Window::getFocusableWindowState() {
 }
 
 void Window::setFocusableWindowState(bool focusableWindowState) {
+	$useLocalCurrentObjectStackCache();
 	bool oldFocusableWindowState = false;
 	$synchronized(this) {
 		oldFocusableWindowState = this->focusableWindowState;
@@ -1780,6 +1803,7 @@ void Window::applyResourceBundle($ResourceBundle* rb) {
 }
 
 void Window::applyResourceBundle($String* rbName) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($ClassLoader, cl, $($Thread::currentThread())->getContextClassLoader());
 	if (cl == nullptr) {
@@ -1856,6 +1880,7 @@ $Window$Type* Window::getType() {
 }
 
 void Window::writeObject($ObjectOutputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this) {
 		$set(this, focusMgr, $new($FocusManager));
 		$set($nc(this->focusMgr), focusRoot, this);
@@ -1909,6 +1934,7 @@ void Window::initDeserializedWindow() {
 }
 
 void Window::deserializeResources($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	if (this->windowSerializedDataVersion < 2) {
 		if (this->focusMgr != nullptr) {
 			if ($nc(this->focusMgr)->focusOwner != nullptr) {
@@ -1959,6 +1985,7 @@ void Window::deserializeResources($ObjectInputStream* s) {
 }
 
 void Window::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$GraphicsEnvironment::checkHeadless();
 	initDeserializedWindow();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
@@ -1990,6 +2017,7 @@ $AccessibleContext* Window::getAccessibleContext() {
 }
 
 void Window::setGraphicsConfiguration($GraphicsConfiguration* gc$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, gc$renamed);
 	if (gc == nullptr) {
 		$assign(gc, $nc($($nc($($GraphicsEnvironment::getLocalGraphicsEnvironment()))->getDefaultScreenDevice()))->getDefaultConfiguration());
@@ -2004,6 +2032,7 @@ void Window::setGraphicsConfiguration($GraphicsConfiguration* gc$renamed) {
 }
 
 void Window::setLocationRelativeTo($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t dx = 0;
 	int32_t dy = 0;
 	$var($GraphicsConfiguration, gc, getGraphicsConfiguration_NoClientCode());
@@ -2127,6 +2156,7 @@ float Window::getOpacity() {
 }
 
 void Window::setOpacity(float opacity) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		if (opacity < 0.0f || opacity > 1.0f) {
 			$throwNew($IllegalArgumentException, "The value of opacity should be in the range [0.0f .. 1.0f]."_s);
@@ -2157,6 +2187,7 @@ $Shape* Window::getShape() {
 }
 
 void Window::setShape($Shape* shape) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		if (shape != nullptr) {
 			$var($GraphicsConfiguration, gc, getGraphicsConfiguration());
@@ -2182,6 +2213,7 @@ $Color* Window::getBackground() {
 }
 
 void Window::setBackground($Color* bgColor) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, oldBg, getBackground());
 	$Container::setBackground(bgColor);
 	if (oldBg != nullptr && oldBg->equals(bgColor)) {
@@ -2227,6 +2259,7 @@ void Window::updateWindow() {
 }
 
 void Window::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (!isOpaque()) {
 		$var($Graphics, gg, $nc(g)->create());
 		{
@@ -2253,6 +2286,7 @@ void Window::paint($Graphics* g) {
 
 void Window::setLayersOpaque($Component* component, bool isOpaque) {
 	$init(Window);
+	$useLocalCurrentObjectStackCache();
 	if ($SunToolkit::isInstanceOf($of(component), "javax.swing.RootPaneContainer"_s)) {
 		$var($RootPaneContainer, rpc, $cast($RootPaneContainer, component));
 		$var($JRootPane, root, $nc(rpc)->getRootPane());
@@ -2299,6 +2333,7 @@ double Window::limit(double value, double min, double max) {
 }
 
 $Point2D* Window::calculateSecurityWarningPosition(double x, double y, double w, double h) {
+	$useLocalCurrentObjectStackCache();
 	$init($Component);
 	double wx = x + w * $Component::RIGHT_ALIGNMENT + 2.0;
 	double wy = y + h * $Component::TOP_ALIGNMENT + 0.0;
@@ -2316,6 +2351,7 @@ void Window::updateZOrder() {
 }
 
 void clinit$Window($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(Window::base, "win"_s);
 	$beforeCallerSensitive();
 	Window::systemSyncLWRequests = false;

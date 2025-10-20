@@ -108,6 +108,7 @@ void JFileChooser$FCHierarchyListener::init$($JFileChooser* this$0) {
 }
 
 void JFileChooser$FCHierarchyListener::hierarchyChanged($HierarchyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (((int64_t)($nc(e)->getChangeFlags() & (uint64_t)(int64_t)$HierarchyEvent::PARENT_CHANGED)) == $HierarchyEvent::PARENT_CHANGED) {
 		$var($JFileChooser, fc, this->this$0);
 		$var($JRootPane, rootPane, $SwingUtilities::getRootPane(fc));

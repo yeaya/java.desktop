@@ -112,6 +112,7 @@ $JMenu* NonOpaquePopupMenuTest::fileMenu = nullptr;
 $String* NonOpaquePopupMenuTest::AQUALAF = nullptr;
 
 void NonOpaquePopupMenuTest::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$();
 	$init($Color);
 	$nc($(getContentPane()))->setBackground($Color::RED);
@@ -129,6 +130,7 @@ void NonOpaquePopupMenuTest::init$() {
 
 void NonOpaquePopupMenuTest::main($StringArray* args) {
 	$init(NonOpaquePopupMenuTest);
+	$useLocalCurrentObjectStackCache();
 	$var($UIManager$LookAndFeelInfoArray, lookAndFeelInfoArray, $UIManager::getInstalledLookAndFeels());
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, lookAndFeelInfoArray);
@@ -163,6 +165,7 @@ void NonOpaquePopupMenuTest::main($StringArray* args) {
 
 bool NonOpaquePopupMenuTest::isParentOpaque() {
 	$init(NonOpaquePopupMenuTest);
+	$useLocalCurrentObjectStackCache();
 	$var($booleans, result, $new($booleans, 1));
 	$SwingUtilities::invokeAndWait($$new($NonOpaquePopupMenuTest$2, result));
 	return result->get(0);
@@ -170,6 +173,7 @@ bool NonOpaquePopupMenuTest::isParentOpaque() {
 
 $Point* NonOpaquePopupMenuTest::getMenuClickPoint() {
 	$init(NonOpaquePopupMenuTest);
+	$useLocalCurrentObjectStackCache();
 	$var($PointArray, result, $new($PointArray, 1));
 	$SwingUtilities::invokeAndWait($$new($NonOpaquePopupMenuTest$3, result));
 	return result->get(0);

@@ -88,6 +88,7 @@ void TestCaretPosition$1::mouseClicked($MouseEvent* e) {
 }
 
 void TestCaretPosition$1::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($TestCaretPosition);
 		$var($Caret, caret, $nc($TestCaretPosition::jTextArea1)->getCaret());

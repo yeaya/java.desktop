@@ -183,6 +183,7 @@ void AbstractDocument$AbstractElement::indent($PrintWriter* out, int32_t n) {
 }
 
 void AbstractDocument$AbstractElement::dump($PrintStream* psOut, int32_t indentAmount) {
+	$useLocalCurrentObjectStackCache();
 	$var($PrintWriter, out, nullptr);
 	try {
 		$assign(out, $new($PrintWriter, static_cast<$Writer*>($$new($OutputStreamWriter, static_cast<$OutputStream*>(psOut), "JavaEsc"_s)), true));
@@ -251,6 +252,7 @@ $AttributeSet* AbstractDocument$AbstractElement::copyAttributes() {
 }
 
 $Object* AbstractDocument$AbstractElement::getAttribute(Object$* attrName) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, $nc(this->attributes)->getAttribute(attrName));
 	if (value == nullptr) {
 		$var($AttributeSet, a, (this->parent != nullptr) ? $nc(this->parent)->getAttributes() : ($AttributeSet*)nullptr);
@@ -380,6 +382,7 @@ void AbstractDocument$AbstractElement::writeObject($ObjectOutputStream* s) {
 }
 
 void AbstractDocument$AbstractElement::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	$var($MutableAttributeSet, attr, $new($SimpleAttributeSet));
 	$StyleContext::readAttributeSet(s, attr);

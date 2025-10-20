@@ -132,6 +132,7 @@ void BasicTabbedPaneUI$Actions::init$($String* key) {
 }
 
 void BasicTabbedPaneUI$Actions::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, key, getName());
 	$var($JTabbedPane, pane, $cast($JTabbedPane, $nc(e)->getSource()));
 	$load($BasicTabbedPaneUI);

@@ -93,6 +93,7 @@ bool OGLUtilities::isQueueFlusherThread() {
 }
 
 bool OGLUtilities::invokeWithOGLContextCurrent($Graphics* g, $Runnable* r) {
+	$useLocalCurrentObjectStackCache();
 	$var($OGLRenderQueue, rq, $OGLRenderQueue::getInstance());
 	$nc(rq)->lock();
 	{
@@ -132,6 +133,7 @@ bool OGLUtilities::invokeWithOGLContextCurrent($Graphics* g, $Runnable* r) {
 }
 
 bool OGLUtilities::invokeWithOGLSharedContextCurrent($GraphicsConfiguration* config, $Runnable* r) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($OGLGraphicsConfig, config))) {
 		return false;
 	}
@@ -156,6 +158,7 @@ bool OGLUtilities::invokeWithOGLSharedContextCurrent($GraphicsConfiguration* con
 }
 
 $Rectangle* OGLUtilities::getOGLViewport($Graphics* g, int32_t componentWidth, int32_t componentHeight) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($SunGraphics2D, g))) {
 		return nullptr;
 	}
@@ -170,6 +173,7 @@ $Rectangle* OGLUtilities::getOGLViewport($Graphics* g, int32_t componentWidth, i
 }
 
 $Rectangle* OGLUtilities::getOGLScissorBox($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($SunGraphics2D, g))) {
 		return nullptr;
 	}

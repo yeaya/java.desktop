@@ -232,6 +232,7 @@ void TooMuchWheelRotationEventsTest::main($StringArray* args) {
 
 void TooMuchWheelRotationEventsTest::createUI() {
 	$init(TooMuchWheelRotationEventsTest);
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, mainFrame, $new($JFrame, "Trackpad scrolling test"_s));
 	$var($GridBagLayout, layout, $new($GridBagLayout));
 	$var($JPanel, mainControlPanel, $new($JPanel, static_cast<$LayoutManager*>(layout)));
@@ -275,6 +276,7 @@ void TooMuchWheelRotationEventsTest::createUI() {
 
 $JPanel* TooMuchWheelRotationEventsTest::createTestPanel() {
 	$init(TooMuchWheelRotationEventsTest);
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, panel, $new($JPanel));
 	panel->setLayout($$new($BoxLayout, panel, $BoxLayout::Y_AXIS));
 	$var($JTextArea, textArea, $new($JTextArea, 20, 20));
@@ -286,6 +288,7 @@ $JPanel* TooMuchWheelRotationEventsTest::createTestPanel() {
 
 $String* TooMuchWheelRotationEventsTest::getLongString() {
 	$init(TooMuchWheelRotationEventsTest);
+	$useLocalCurrentObjectStackCache();
 	$var($String, lowCaseString, getLongString(u'a', u'z'));
 	$var($String, upperCaseString, getLongString(u'A', u'Z'));
 	$var($String, digitsString, getLongString(u'0', u'9'));

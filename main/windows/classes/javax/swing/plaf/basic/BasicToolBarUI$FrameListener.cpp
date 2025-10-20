@@ -88,6 +88,7 @@ void BasicToolBarUI$FrameListener::init$($BasicToolBarUI* this$0) {
 }
 
 void BasicToolBarUI$FrameListener::windowClosing($WindowEvent* w) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->this$0->toolBar)->isFloatable()) {
 		if (this->this$0->dragWindow != nullptr) {
 			$nc(this->this$0->dragWindow)->setVisible(false);

@@ -89,6 +89,7 @@ int32_t TextComponentPrintable$IntegerSegment::hashCode() {
 }
 
 $String* TextComponentPrintable$IntegerSegment::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"IntegerSegment ["_s, $$str(this->start), ", "_s, $$str(this->end), "]"_s});
 }
 

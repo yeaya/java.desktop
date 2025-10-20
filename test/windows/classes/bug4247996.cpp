@@ -109,6 +109,7 @@ void bug4247996::init$() {
 }
 
 void bug4247996::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(50);
 	$UIManager::setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"_s);
@@ -125,12 +126,14 @@ void bug4247996::checkButtonsSize() {
 }
 
 $Point* bug4247996::getButtonCenter() {
+	$useLocalCurrentObjectStackCache();
 	$var($PointArray, result, $new($PointArray, 1));
 	$SwingUtilities::invokeAndWait($$new($bug4247996$3, result));
 	return result->get(0);
 }
 
 void bug4247996::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame, "Test"_s));
 	frame->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	frame->setSize(200, 200);

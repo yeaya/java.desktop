@@ -168,6 +168,7 @@ $AbstractRegionPainter$PaintContext* ComboBoxTextFieldPainter::getPaintContext()
 }
 
 void ComboBoxTextFieldPainter::paintBackgroundDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->rect);
@@ -186,6 +187,7 @@ void ComboBoxTextFieldPainter::paintBackgroundDisabled($Graphics2D* g) {
 }
 
 void ComboBoxTextFieldPainter::paintBackgroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->rect);
@@ -204,6 +206,7 @@ void ComboBoxTextFieldPainter::paintBackgroundEnabled($Graphics2D* g) {
 }
 
 void ComboBoxTextFieldPainter::paintBackgroundSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->rect);
@@ -272,6 +275,7 @@ $Rectangle2D* ComboBoxTextFieldPainter::decodeRect5() {
 }
 
 $Paint* ComboBoxTextFieldPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -289,6 +293,7 @@ $Paint* ComboBoxTextFieldPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* ComboBoxTextFieldPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -306,6 +311,7 @@ $Paint* ComboBoxTextFieldPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* ComboBoxTextFieldPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -323,6 +329,7 @@ $Paint* ComboBoxTextFieldPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* ComboBoxTextFieldPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

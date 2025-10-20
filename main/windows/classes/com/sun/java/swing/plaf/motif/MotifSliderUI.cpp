@@ -128,6 +128,7 @@ void MotifSliderUI::paintTrack($Graphics* g) {
 }
 
 void MotifSliderUI::paintThumb($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, knobBounds, this->thumbRect);
 	int32_t x = $nc(knobBounds)->x;
 	int32_t y = knobBounds->y;

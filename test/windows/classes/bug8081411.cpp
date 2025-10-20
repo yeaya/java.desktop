@@ -163,6 +163,7 @@ void bug8081411::main($StringArray* args) {
 
 void bug8081411::testSynthIcon() {
 	$init(bug8081411);
+	$useLocalCurrentObjectStackCache();
 	if (!checkAndSetNimbusLookAndFeel()) {
 		return;
 	}
@@ -185,6 +186,7 @@ void bug8081411::testSynthIcon() {
 
 void bug8081411::paintAndCheckIcon($Icon* icon, $SynthContext* synthContext, int32_t width, int32_t height) {
 	$init(bug8081411);
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, buffImage, $new($BufferedImage, width, height, $BufferedImage::TYPE_INT_RGB));
 	$var($Graphics, g, buffImage->createGraphics());
 	$init($Color);
@@ -200,6 +202,7 @@ void bug8081411::paintAndCheckIcon($Icon* icon, $SynthContext* synthContext, int
 
 bool bug8081411::checkAndSetNimbusLookAndFeel() {
 	$init(bug8081411);
+	$useLocalCurrentObjectStackCache();
 	try {
 		{
 			$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());

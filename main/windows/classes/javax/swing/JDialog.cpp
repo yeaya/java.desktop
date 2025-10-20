@@ -367,6 +367,7 @@ void JDialog::init$($Frame* owner, $String* title) {
 }
 
 void JDialog::init$($Frame* owner, $String* title, bool modal) {
+	$useLocalCurrentObjectStackCache();
 	$Dialog::init$(owner == nullptr ? $($SwingUtilities::getSharedOwnerFrame()) : owner, title, modal);
 	this->defaultCloseOperation = $WindowConstants::HIDE_ON_CLOSE;
 	this->rootPaneCheckingEnabled = false;
@@ -379,6 +380,7 @@ void JDialog::init$($Frame* owner, $String* title, bool modal) {
 }
 
 void JDialog::init$($Frame* owner, $String* title, bool modal, $GraphicsConfiguration* gc) {
+	$useLocalCurrentObjectStackCache();
 	$Dialog::init$(owner == nullptr ? $($SwingUtilities::getSharedOwnerFrame()) : owner, title, modal, gc);
 	this->defaultCloseOperation = $WindowConstants::HIDE_ON_CLOSE;
 	this->rootPaneCheckingEnabled = false;
@@ -449,6 +451,7 @@ void JDialog::init$($Window* owner, $String* title, $Dialog$ModalityType* modali
 }
 
 void JDialog::dialogInit() {
+	$useLocalCurrentObjectStackCache();
 	enableEvents($AWTEvent::KEY_EVENT_MASK | $AWTEvent::WINDOW_EVENT_MASK);
 	setLocale($($JComponent::getDefaultLocale()));
 	setRootPane($(createRootPane()));
@@ -651,6 +654,7 @@ bool JDialog::isDefaultLookAndFeelDecorated() {
 }
 
 $String* JDialog::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, defaultCloseOperationString, nullptr);
 	if (this->defaultCloseOperation == $WindowConstants::HIDE_ON_CLOSE) {
 		$assign(defaultCloseOperationString, "HIDE_ON_CLOSE"_s);

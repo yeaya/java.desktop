@@ -113,6 +113,7 @@ Underline* Underline::getUnderline(int32_t index) {
 }
 
 void clinit$Underline($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	Underline::DEFAULT_THICKNESS = 1.0f;
 	$assignStatic(Underline::UNDERLINES, $new($ConcurrentHashMap, 6));
 	{

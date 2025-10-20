@@ -201,6 +201,7 @@ void SwingWorker::done() {
 }
 
 void SwingWorker::setProgress(int32_t progress) {
+	$useLocalCurrentObjectStackCache();
 	if (progress < 0 || progress > 100) {
 		$throwNew($IllegalArgumentException, "the value should be from 0 to 100"_s);
 	}
@@ -283,6 +284,7 @@ void SwingWorker::setState($SwingWorker$StateValue* state) {
 }
 
 void SwingWorker::doneEDT() {
+	$useLocalCurrentObjectStackCache();
 	$var($Runnable, doDone, $new($SwingWorker$5, this));
 	if ($SwingUtilities::isEventDispatchThread()) {
 		doDone->run();
@@ -295,6 +297,7 @@ $ExecutorService* SwingWorker::getWorkersExecutorService() {
 	$load(SwingWorker);
 	$synchronized(class$) {
 		$init(SwingWorker);
+		$useLocalCurrentObjectStackCache();
 		$var($AppContext, appContext, $AppContext::getAppContext());
 		$var($ExecutorService, executorService, $cast($ExecutorService, $nc(appContext)->get(SwingWorker::class$)));
 		if (executorService == nullptr) {
@@ -311,6 +314,7 @@ $ExecutorService* SwingWorker::getWorkersExecutorService() {
 
 $AccumulativeRunnable* SwingWorker::getDoSubmit() {
 	$init(SwingWorker);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(SwingWorker::DO_SUBMIT_KEY) {
 		$var($AppContext, appContext, $AppContext::getAppContext());
 		$var($Object, doSubmit, $nc(appContext)->get(SwingWorker::DO_SUBMIT_KEY));

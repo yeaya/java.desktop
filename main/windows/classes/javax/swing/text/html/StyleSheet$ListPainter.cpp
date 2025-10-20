@@ -176,6 +176,7 @@ $Object* allocate$StyleSheet$ListPainter($Class* clazz) {
 $charArray2* StyleSheet$ListPainter::romanChars = nullptr;
 
 void StyleSheet$ListPainter::init$($AttributeSet* attr, $StyleSheet* ss) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, ss, nullptr);
 	$set(this, img, nullptr);
 	this->bulletgap = 5;
@@ -218,6 +219,7 @@ void StyleSheet$ListPainter::init$($AttributeSet* attr, $StyleSheet* ss) {
 }
 
 $CSS$Value* StyleSheet$ListPainter::getChildType($View* childView) {
+	$useLocalCurrentObjectStackCache();
 	$init($CSS$Attribute);
 	$var($CSS$Value, childtype, $cast($CSS$Value, $nc($($nc(childView)->getAttributes()))->getAttribute($CSS$Attribute::LIST_STYLE_TYPE)));
 	if (childtype == nullptr) {
@@ -240,6 +242,7 @@ $CSS$Value* StyleSheet$ListPainter::getChildType($View* childView) {
 }
 
 void StyleSheet$ListPainter::getStart($View* parent) {
+	$useLocalCurrentObjectStackCache();
 	this->checkedForStart = true;
 	$var($Element, element, $nc(parent)->getElement());
 	if (element != nullptr) {
@@ -258,6 +261,7 @@ void StyleSheet$ListPainter::getStart($View* parent) {
 }
 
 int32_t StyleSheet$ListPainter::getRenderIndex($View* parentView, int32_t childIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->checkedForStart) {
 		getStart(parentView);
 	}
@@ -287,6 +291,7 @@ int32_t StyleSheet$ListPainter::getRenderIndex($View* parentView, int32_t childI
 }
 
 void StyleSheet$ListPainter::paint($Graphics* g, float x, float y, float w, float h, $View* v, int32_t item) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, cv, $nc(v)->getView(item));
 	$var($Container, host, v->getContainer());
 	$init($StyleConstants);
@@ -356,6 +361,7 @@ void StyleSheet$ListPainter::drawIcon($Graphics* g, int32_t ax, int32_t ay, int3
 }
 
 void StyleSheet$ListPainter::drawShape($Graphics* g, $CSS$Value* type, int32_t ax, int32_t ay, int32_t aw, int32_t ah, float align) {
+	$useLocalCurrentObjectStackCache();
 	$init($RenderingHints);
 	$var($Object, origAA, $nc(($cast($Graphics2D, g)))->getRenderingHint($RenderingHints::KEY_ANTIALIASING));
 	($cast($Graphics2D, g))->setRenderingHint($RenderingHints::KEY_ANTIALIASING, $RenderingHints::VALUE_ANTIALIAS_ON);
@@ -377,6 +383,7 @@ void StyleSheet$ListPainter::drawShape($Graphics* g, $CSS$Value* type, int32_t a
 }
 
 void StyleSheet$ListPainter::drawLetter($Graphics* g, char16_t letter, int32_t ax, int32_t ay, int32_t aw, int32_t ah, float align, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, formatItemNum(index, letter));
 	$assign(str, this->isLeftToRight ? $str({str, "."_s}) : $str({"."_s, str}));
 	$var($FontMetrics, fm, $SwingUtilities2::getFontMetrics(($JComponent*)nullptr, g));
@@ -388,6 +395,7 @@ void StyleSheet$ListPainter::drawLetter($Graphics* g, char16_t letter, int32_t a
 }
 
 $String* StyleSheet$ListPainter::formatItemNum(int32_t itemNum, char16_t type) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, numStyle, "1"_s);
 	bool uppercase = false;
 	$var($String, formattedNum, nullptr);
@@ -424,6 +432,7 @@ $String* StyleSheet$ListPainter::formatItemNum(int32_t itemNum, char16_t type) {
 }
 
 $String* StyleSheet$ListPainter::formatAlphaNumerals(int32_t itemNum) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, result, nullptr);
 	if (itemNum > 26) {
 		$var($String, var$0, $(formatAlphaNumerals(itemNum / 26)));
@@ -439,6 +448,7 @@ $String* StyleSheet$ListPainter::formatRomanNumerals(int32_t num) {
 }
 
 $String* StyleSheet$ListPainter::formatRomanNumerals(int32_t level, int32_t num) {
+	$useLocalCurrentObjectStackCache();
 	if (num < 10) {
 		return formatRomanDigit(level, num);
 	} else {
@@ -448,6 +458,7 @@ $String* StyleSheet$ListPainter::formatRomanNumerals(int32_t level, int32_t num)
 }
 
 $String* StyleSheet$ListPainter::formatRomanDigit(int32_t level, int32_t digit) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, result, ""_s);
 	if (digit == 9) {
 		$assign(result, $str({result, $$str($nc($nc(StyleSheet$ListPainter::romanChars)->get(level))->get(0))}));
@@ -468,6 +479,7 @@ $String* StyleSheet$ListPainter::formatRomanDigit(int32_t level, int32_t digit) 
 }
 
 void clinit$StyleSheet$ListPainter($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(StyleSheet$ListPainter::romanChars, $new($charArray2, {
 		$$new($chars, {
 			u'i',

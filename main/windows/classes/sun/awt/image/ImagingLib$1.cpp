@@ -70,6 +70,7 @@ void ImagingLib$1::init$() {
 }
 
 $Object* ImagingLib$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, arch, $System::getProperty("os.arch"_s));
 	try {

@@ -67,6 +67,7 @@ bool MetaData$java_lang_reflect_Method_PersistenceDelegate::mutatesTo(Object$* o
 }
 
 $Expression* MetaData$java_lang_reflect_Method_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Method, m, $cast($Method, oldInstance));
 	$var($Object, var$0, oldInstance);
 	$var($Object, var$1, $of($nc(m)->getDeclaringClass()));

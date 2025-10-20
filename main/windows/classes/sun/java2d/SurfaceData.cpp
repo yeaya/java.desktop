@@ -432,6 +432,7 @@ void SurfaceData::setBlitProxyKey(Object$* key) {
 }
 
 SurfaceData* SurfaceData::getSourceSurfaceData($Image* img, int32_t txtype, $CompositeType* comp, $Color* bgColor) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceManager, srcMgr, $SurfaceManager::getManager(img));
 	$var(SurfaceData, srcData, $nc(srcMgr)->getPrimarySurfaceData());
 	if ($nc(img)->getAccelerationPriority() > 0.0f && this->blitProxyKey != nullptr) {
@@ -517,6 +518,7 @@ $PixelToParallelogramConverter* SurfaceData::makeConverter($AAShapePipe* rendere
 }
 
 bool SurfaceData::canRenderLCDText($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(sg2d)->compositeState <= $SunGraphics2D::COMP_ISCOPY && sg2d->paintState <= $SunGraphics2D::PAINT_ALPHACOLOR && sg2d->clipState <= $SunGraphics2D::CLIP_RECTANGULAR && $nc(sg2d->surfaceData)->getTransparency() == $Transparency::OPAQUE) {
 		if (this->haveLCDLoop == SurfaceData::LOOP_UNKNOWN) {
 			$init($SurfaceType);
@@ -530,6 +532,7 @@ bool SurfaceData::canRenderLCDText($SunGraphics2D* sg2d) {
 }
 
 bool SurfaceData::canRenderParallelograms($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(sg2d)->paintState <= $SunGraphics2D::PAINT_ALPHACOLOR) {
 		if (sg2d->compositeState == $SunGraphics2D::COMP_XOR) {
 			if (this->havePgramXORLoop == SurfaceData::LOOP_UNKNOWN) {
@@ -553,6 +556,7 @@ bool SurfaceData::canRenderParallelograms($SunGraphics2D* sg2d) {
 }
 
 void SurfaceData::validatePipe($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	$set($nc(sg2d), imagepipe, SurfaceData::imagepipe);
 	if (sg2d->compositeState == $SunGraphics2D::COMP_XOR) {
 		if (sg2d->paintState > $SunGraphics2D::PAINT_ALPHACOLOR) {
@@ -810,6 +814,7 @@ $CompositeType* SurfaceData::getFillCompositeType($SunGraphics2D* sg2d) {
 }
 
 $MaskFill* SurfaceData::getMaskFill($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, src, getPaintSurfaceType(sg2d));
 	$var($CompositeType, comp, getFillCompositeType(sg2d));
 	$var($SurfaceType, dst, getSurfaceType());
@@ -817,6 +822,7 @@ $MaskFill* SurfaceData::getMaskFill($SunGraphics2D* sg2d) {
 }
 
 $RenderLoops* SurfaceData::getRenderLoops($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, src, getPaintSurfaceType(sg2d));
 	$var($CompositeType, comp, getFillCompositeType(sg2d));
 	$var($SurfaceType, dst, $nc($($nc(sg2d)->getSurfaceData()))->getSurfaceType());

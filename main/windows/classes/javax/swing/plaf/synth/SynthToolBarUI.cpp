@@ -187,6 +187,7 @@ void SynthToolBarUI::uninstallListeners() {
 }
 
 void SynthToolBarUI::updateStyle($JToolBar* c) {
+	$useLocalCurrentObjectStackCache();
 	$init($Region);
 	$var($SynthContext, context, getContext(c, $Region::TOOL_BAR_CONTENT, this->contentStyle, $SynthConstants::ENABLED));
 	$set(this, contentStyle, $SynthLookAndFeel::updateStyle(context, this));
@@ -250,6 +251,7 @@ int32_t SynthToolBarUI::getComponentState($JComponent* c, $Region* region) {
 }
 
 void SynthToolBarUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -279,6 +281,7 @@ void SynthToolBarUI::setBorderToNormal($Component* c) {
 }
 
 void SynthToolBarUI::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (this->handleIcon != nullptr && $nc(this->toolBar)->isFloatable()) {
 		int32_t var$0 = 0;
 		if ($nc($($nc(this->toolBar)->getComponentOrientation()))->isLeftToRight()) {
@@ -301,12 +304,14 @@ void SynthToolBarUI::paint($SynthContext* context, $Graphics* g) {
 }
 
 void SynthToolBarUI::paintContent($SynthContext* context, $Graphics* g, $Rectangle* bounds) {
+	$useLocalCurrentObjectStackCache();
 	$SynthLookAndFeel::updateSubregion(context, g, bounds);
 	$nc($($nc(context)->getPainter()))->paintToolBarContentBackground(context, g, $nc(bounds)->x, bounds->y, bounds->width, bounds->height, $nc(this->toolBar)->getOrientation());
 	$nc($(context->getPainter()))->paintToolBarContentBorder(context, g, $nc(bounds)->x, bounds->y, bounds->width, bounds->height, $nc(this->toolBar)->getOrientation());
 }
 
 void SynthToolBarUI::paintDragWindow($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	int32_t w = $nc(this->dragWindow)->getWidth();
 	int32_t h = $nc(this->dragWindow)->getHeight();
 	$init($Region);

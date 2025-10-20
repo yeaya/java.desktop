@@ -188,6 +188,7 @@ $ComponentUI* SynthSplitPaneUI::createUI($JComponent* x) {
 }
 
 void SynthSplitPaneUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	updateStyle(this->splitPane);
 	setOrientation($nc(this->splitPane)->getOrientation());
 	setContinuousLayout($nc(this->splitPane)->isContinuousLayout());
@@ -210,6 +211,7 @@ void SynthSplitPaneUI::installDefaults() {
 }
 
 void SynthSplitPaneUI::updateStyle($JSplitPane* splitPane) {
+	$useLocalCurrentObjectStackCache();
 	$init($Region);
 	$var($SynthContext, context, getContext(splitPane, $Region::SPLIT_PANE_DIVIDER, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldDividerStyle, this->dividerStyle);
@@ -314,6 +316,7 @@ $Component* SynthSplitPaneUI::createDefaultNonContinuousLayoutDivider() {
 }
 
 void SynthSplitPaneUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -337,6 +340,7 @@ void SynthSplitPaneUI::paintBorder($SynthContext* context, $Graphics* g, int32_t
 }
 
 void SynthSplitPaneUI::paintDragDivider($Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$init($Region);
 	$var($SynthContext, context, getContext(static_cast<$JComponent*>(this->splitPane), $Region::SPLIT_PANE_DIVIDER));
 	$nc(context)->setComponentState(((context->getComponentState() | $SynthConstants::MOUSE_OVER) ^ $SynthConstants::MOUSE_OVER) | $SynthConstants::PRESSED);
@@ -347,6 +351,7 @@ void SynthSplitPaneUI::paintDragDivider($Graphics* g, int32_t x, int32_t y, int3
 }
 
 void SynthSplitPaneUI::finishedPaintingChildren($JSplitPane* jc, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = jc == this->splitPane && getLastDragLocation() != -1;
 	if (var$0 && !isContinuousLayout() && !this->draggingHW) {
 		if ($nc(jc)->getOrientation() == $JSplitPane::HORIZONTAL_SPLIT) {

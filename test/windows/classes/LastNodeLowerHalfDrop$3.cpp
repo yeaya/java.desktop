@@ -94,6 +94,7 @@ void LastNodeLowerHalfDrop$3::init$($DefaultMutableTreeNode* val$drag, $DefaultM
 }
 
 void LastNodeLowerHalfDrop$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($LastNodeLowerHalfDrop);
 	$var($Rectangle, rectDrag, $nc($LastNodeLowerHalfDrop::jTree)->getPathBounds($$new($TreePath, $($nc(this->val$drag)->getPath()))));
 	int32_t var$0 = $cast(int32_t, $nc(rectDrag)->getCenterX());

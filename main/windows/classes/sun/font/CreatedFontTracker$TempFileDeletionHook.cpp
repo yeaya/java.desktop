@@ -215,6 +215,7 @@ void CreatedFontTracker$TempFileDeletionHook::runHooks() {
 	$load(CreatedFontTracker$TempFileDeletionHook);
 	$synchronized(class$) {
 		$init(CreatedFontTracker$TempFileDeletionHook);
+		$useLocalCurrentObjectStackCache();
 		if ($nc(CreatedFontTracker$TempFileDeletionHook::files)->isEmpty()) {
 			return;
 		}
@@ -239,6 +240,7 @@ void CreatedFontTracker$TempFileDeletionHook::runHooks() {
 
 $Void* CreatedFontTracker$TempFileDeletionHook::lambda$init$0() {
 	$init(CreatedFontTracker$TempFileDeletionHook);
+	$useLocalCurrentObjectStackCache();
 	$var($ThreadGroup, rootTG, $ThreadGroupUtils::getRootThreadGroup());
 	$assignStatic(CreatedFontTracker$TempFileDeletionHook::t, $new($Thread, rootTG, static_cast<$Runnable*>($$new(CreatedFontTracker$TempFileDeletionHook$$Lambda$runHooks$1)), "TempFontFileDeleter"_s, 0, false));
 	$nc(CreatedFontTracker$TempFileDeletionHook::t)->setContextClassLoader(nullptr);

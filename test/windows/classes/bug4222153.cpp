@@ -118,6 +118,7 @@ void bug4222153::init() {
 }
 
 void bug4222153::lambda$init$0() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"_s);
 	} catch ($Exception&) {

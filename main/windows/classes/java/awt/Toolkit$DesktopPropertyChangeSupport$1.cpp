@@ -82,6 +82,7 @@ void Toolkit$DesktopPropertyChangeSupport$1::init$($Toolkit$DesktopPropertyChang
 }
 
 void Toolkit$DesktopPropertyChangeSupport$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($Toolkit$DesktopPropertyChangeSupport);
 	$var($PropertyChangeSupport, pcs, $cast($PropertyChangeSupport, $nc($($AppContext::getAppContext()))->get($Toolkit$DesktopPropertyChangeSupport::PROP_CHANGE_SUPPORT_KEY)));
 	if (nullptr != pcs) {

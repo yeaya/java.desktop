@@ -112,6 +112,7 @@ void HeadlessJOptionPane::init$() {
 }
 
 void HeadlessJOptionPane::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JOptionPane, op, $new($JOptionPane));
 	op->getAccessibleContext();
 	op->isFocusTraversable();

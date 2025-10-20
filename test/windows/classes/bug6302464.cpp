@@ -219,6 +219,7 @@ void bug6302464::testCustomLAF() {
 
 void bug6302464::testCustomLAF(bool useAAHints) {
 	$init(bug6302464);
+	$useLocalCurrentObjectStackCache();
 	$var($bug6302464$CustomLookAndFeel, customLAF, $new($bug6302464$CustomLookAndFeel, useAAHints));
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>(customLAF));
 	$var($JLabel, label, $new($JLabel));
@@ -235,6 +236,7 @@ void bug6302464::testCustomLAF(bool useAAHints) {
 
 void bug6302464::testFontRenderingContext() {
 	$init(bug6302464);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($ObjectArray, arr$, bug6302464::ANTIALIASING_HINTS);
 		int32_t len$ = $nc(arr$)->length;
@@ -250,6 +252,7 @@ void bug6302464::testFontRenderingContext() {
 
 void bug6302464::testFontRenderingContext(Object$* aaHint) {
 	$init(bug6302464);
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, label, $new($JLabel, "Test"_s));
 	$init($RenderingHints);
 	label->putClientProperty($RenderingHints::KEY_TEXT_ANTIALIASING, aaHint);
@@ -261,6 +264,7 @@ void bug6302464::testFontRenderingContext(Object$* aaHint) {
 
 void bug6302464::testAntialiasingHints() {
 	$init(bug6302464);
+	$useLocalCurrentObjectStackCache();
 	setMetalLookAndFeel();
 	bool isMacOSX14 = false;
 	bool isMacOSXBigSur = false;
@@ -305,6 +309,7 @@ void bug6302464::testAntialiasingHints() {
 
 $HashSet* bug6302464::getAntialiasedColors(Object$* aaHint, int32_t lcdContrast) {
 	$init(bug6302464);
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, label, $new($JLabel, "ABCD"_s));
 	label->setSize($(label->getPreferredSize()));
 	$init($RenderingHints);
@@ -348,6 +353,7 @@ void bug6302464::setLookAndFeel($String* lafClass) {
 
 void bug6302464::testLAFAAHints() {
 	$init(bug6302464);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -363,6 +369,7 @@ void bug6302464::testLAFAAHints() {
 
 bool bug6302464::isExcludedLAF($UIManager$LookAndFeelInfo* lafInfo) {
 	$init(bug6302464);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($StringArray, arr$, bug6302464::EXCLUDED_LAFS);
 		int32_t len$ = $nc(arr$)->length;
@@ -381,6 +388,7 @@ bool bug6302464::isExcludedLAF($UIManager$LookAndFeelInfo* lafInfo) {
 
 void bug6302464::testLAFAAHints($UIManager$LookAndFeelInfo* lafInfo) {
 	$init(bug6302464);
+	$useLocalCurrentObjectStackCache();
 	setLookAndFeel($($nc(lafInfo)->getClassName()));
 	$init($RenderingHints);
 	$var($Object, uiAAHint, $nc($($UIManager::getDefaults()))->get($RenderingHints::KEY_TEXT_ANTIALIASING));

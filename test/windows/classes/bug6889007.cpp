@@ -71,6 +71,7 @@ void bug6889007::init$() {
 }
 
 void bug6889007::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(20);
 	$var($JFrame, frame, $new($JFrame));

@@ -73,6 +73,7 @@ $shortArray2* ShortLookupTable::getTable() {
 }
 
 $ints* ShortLookupTable::lookupPixel($ints* src, $ints* dst$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, dst, dst$renamed);
 	if (dst == nullptr) {
 		$assign(dst, $new($ints, $nc(src)->length));
@@ -98,6 +99,7 @@ $ints* ShortLookupTable::lookupPixel($ints* src, $ints* dst$renamed) {
 }
 
 $shorts* ShortLookupTable::lookupPixel($shorts* src, $shorts* dst$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($shorts, dst, dst$renamed);
 	if (dst == nullptr) {
 		$assign(dst, $new($shorts, $nc(src)->length));

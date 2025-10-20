@@ -94,6 +94,7 @@ void bug8078268::main($StringArray* args) {
 
 $String* bug8078268::getDirURL() {
 	$init(bug8078268);
+	$useLocalCurrentObjectStackCache();
 	$init($File);
 	return $str({$($$new($File, $($System::getProperty("test.src"_s, "."_s)))->getAbsolutePath()), $File::separator});
 }

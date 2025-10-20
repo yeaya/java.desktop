@@ -103,6 +103,7 @@ void AccessibleHTML$TableElementInfo$TableRowElementInfo::init$($AccessibleHTML$
 }
 
 void AccessibleHTML$TableElementInfo$TableRowElementInfo::loadChildren($Element* e) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t x = 0; x < $nc(e)->getElementCount(); ++x) {
 		$var($AttributeSet, attrs, $nc($(e->getElement(x)))->getAttributes());
 		$init($StyleConstants);
@@ -122,6 +123,7 @@ void AccessibleHTML$TableElementInfo$TableRowElementInfo::loadChildren($Element*
 }
 
 int32_t AccessibleHTML$TableElementInfo$TableRowElementInfo::getRowCount() {
+	$useLocalCurrentObjectStackCache();
 	int32_t rowCount = 1;
 	if (validateIfNecessary()) {
 		for (int32_t counter = 0; counter < getChildCount(); ++counter) {
@@ -135,6 +137,7 @@ int32_t AccessibleHTML$TableElementInfo$TableRowElementInfo::getRowCount() {
 }
 
 int32_t AccessibleHTML$TableElementInfo$TableRowElementInfo::getColumnCount() {
+	$useLocalCurrentObjectStackCache();
 	int32_t colCount = 0;
 	if (validateIfNecessary()) {
 		for (int32_t counter = 0; counter < getChildCount(); ++counter) {
@@ -153,6 +156,7 @@ void AccessibleHTML$TableElementInfo$TableRowElementInfo::invalidate(bool first)
 }
 
 void AccessibleHTML$TableElementInfo$TableRowElementInfo::updateGrid(int32_t row) {
+	$useLocalCurrentObjectStackCache();
 	if (validateIfNecessary()) {
 		bool emptyRow = false;
 		while (!emptyRow) {
@@ -186,6 +190,7 @@ void AccessibleHTML$TableElementInfo$TableRowElementInfo::updateGrid(int32_t row
 }
 
 int32_t AccessibleHTML$TableElementInfo$TableRowElementInfo::getColumnCount(int32_t rowspan) {
+	$useLocalCurrentObjectStackCache();
 	if (validateIfNecessary()) {
 		int32_t cols = 0;
 		for (int32_t counter = 0; counter < getChildCount(); ++counter) {

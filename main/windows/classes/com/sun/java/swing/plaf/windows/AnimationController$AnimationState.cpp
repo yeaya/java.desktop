@@ -127,6 +127,7 @@ void AnimationController$AnimationState::updateProgress() {
 }
 
 void AnimationController$AnimationState::paintSkin($XPStyle$Skin* skin, $Graphics* _g, int32_t dx, int32_t dy, int32_t dw, int32_t dh, $TMSchema$State* state) {
+	$useLocalCurrentObjectStackCache();
 	if (!AnimationController$AnimationState::$assertionsDisabled && !$SwingUtilities::isEventDispatchThread()) {
 		$throwNew($AssertionError);
 	}

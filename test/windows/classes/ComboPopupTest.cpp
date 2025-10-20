@@ -226,6 +226,7 @@ $Object* allocate$ComboPopupTest($Class* clazz) {
 }
 
 void ComboPopupTest::blockTillDisplayed($JComponent* comp) {
+	$useLocalCurrentObjectStackCache();
 	while (this->p == nullptr) {
 		try {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(ComboPopupTest$$Lambda$lambda$blockTillDisplayed$0, this, comp)));
@@ -245,6 +246,7 @@ void ComboPopupTest::main($StringArray* args) {
 }
 
 void ComboPopupTest::init$() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, nullptr);
 	$set(this, comboBox, nullptr);
 	$set(this, p, nullptr);
@@ -280,6 +282,7 @@ void ComboPopupTest::init$() {
 }
 
 void ComboPopupTest::start() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, $new($JFrame));
 	$nc(this->frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$var($Container, contentPane, $nc(this->frame)->getContentPane());

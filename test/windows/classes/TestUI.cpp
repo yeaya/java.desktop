@@ -215,6 +215,7 @@ void TestUI::init$($CountDownLatch* latch) {
 }
 
 void TestUI::createUI() {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(TestUI::mainFrame, $new($JFrame));
 	$assignStatic(TestUI::layout, $new($GridBagLayout));
 	$assignStatic(TestUI::mainControlPanel, $new($JPanel, static_cast<$LayoutManager*>(TestUI::layout)));
@@ -254,6 +255,7 @@ void TestUI::disposeUI() {
 }
 
 void TestUI::customize() {
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, customButtonPanel, $new($JPanel, static_cast<$LayoutManager*>(TestUI::layout)));
 	$nc(TestUI::mainFrame)->setTitle("TestDisabledToolTipBorder"_s);
 	$var($JButton, disabledButton, $new($JButton, "Disabled Button"_s));

@@ -223,6 +223,7 @@ void AWTEventMulticaster::init$($EventListener* a, $EventListener* b) {
 }
 
 $EventListener* AWTEventMulticaster::remove($EventListener* oldl) {
+	$useLocalCurrentObjectStackCache();
 	if (oldl == this->a) {
 		return this->b;
 	}

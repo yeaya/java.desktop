@@ -95,6 +95,7 @@ void DefaultEditorKit$NextVisualPositionAction::init$($String* nm, bool select, 
 }
 
 void DefaultEditorKit$NextVisualPositionAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getTextComponent(e));
 	if (target != nullptr) {
 		$var($Caret, caret, target->getCaret());

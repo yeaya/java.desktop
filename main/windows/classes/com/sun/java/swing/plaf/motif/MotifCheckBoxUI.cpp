@@ -83,6 +83,7 @@ void MotifCheckBoxUI::init$() {
 
 $ComponentUI* MotifCheckBoxUI::createUI($JComponent* c) {
 	$init(MotifCheckBoxUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(MotifCheckBoxUI, motifCheckBoxUI, $cast(MotifCheckBoxUI, $nc(appContext)->get(MotifCheckBoxUI::MOTIF_CHECK_BOX_UI_KEY)));
 	if (motifCheckBoxUI == nullptr) {
@@ -97,6 +98,7 @@ $String* MotifCheckBoxUI::getPropertyPrefix() {
 }
 
 void MotifCheckBoxUI::installDefaults($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$MotifRadioButtonUI::installDefaults(b);
 	if (!this->defaults_initialized) {
 		$set(this, icon, $UIManager::getIcon($$str({$(getPropertyPrefix()), "icon"_s})));

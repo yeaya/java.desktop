@@ -82,6 +82,7 @@ $Object* allocate$IdentityLinkedList$ListItr($Class* clazz) {
 }
 
 void IdentityLinkedList$ListItr::init$($IdentityLinkedList* this$0, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$set(this, lastReturned, this->this$0->header);
 	this->expectedModCount = $IdentityLinkedList::access$000(this->this$0);
@@ -139,6 +140,7 @@ int32_t IdentityLinkedList$ListItr::previousIndex() {
 }
 
 void IdentityLinkedList$ListItr::remove() {
+	$useLocalCurrentObjectStackCache();
 	checkForComodification();
 	$var($IdentityLinkedList$Entry, lastNext, $nc(this->lastReturned)->next);
 	try {

@@ -89,6 +89,7 @@ $Object* allocate$BandedSampleModel($Class* clazz) {
 }
 
 void BandedSampleModel::init$(int32_t dataType, int32_t w, int32_t h, int32_t numBands) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = dataType;
 	int32_t var$1 = w;
 	int32_t var$2 = h;
@@ -102,6 +103,7 @@ void BandedSampleModel::init$(int32_t dataType, int32_t w, int32_t h, int32_t sc
 }
 
 $SampleModel* BandedSampleModel::createCompatibleSampleModel(int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, bandOffs, nullptr);
 	if (this->numBanks == 1) {
 		$assign(bandOffs, orderBands(this->bandOffsets, w * h));
@@ -113,6 +115,7 @@ $SampleModel* BandedSampleModel::createCompatibleSampleModel(int32_t w, int32_t 
 }
 
 $SampleModel* BandedSampleModel::createSubsetSampleModel($ints* bands) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(bands)->length > $nc(this->bankIndices)->length) {
 		$throwNew($RasterFormatException, $$str({"There are only "_s, $$str($nc(this->bankIndices)->length), " bands"_s}));
 	}
@@ -181,6 +184,7 @@ $DataBuffer* BandedSampleModel::createDataBuffer() {
 }
 
 $Object* BandedSampleModel::getDataElements(int32_t x, int32_t y, Object$* obj$renamed, $DataBuffer* data) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, obj, obj$renamed);
 	if ((x < 0) || (y < 0) || (x >= this->width) || (y >= this->height)) {
 		$throwNew($ArrayIndexOutOfBoundsException, "Coordinate out of bounds!"_s);
@@ -360,6 +364,7 @@ $ints* BandedSampleModel::getSamples(int32_t x, int32_t y, int32_t w, int32_t h,
 }
 
 void BandedSampleModel::setDataElements(int32_t x, int32_t y, Object$* obj, $DataBuffer* data) {
+	$useLocalCurrentObjectStackCache();
 	if ((x < 0) || (y < 0) || (x >= this->width) || (y >= this->height)) {
 		$throwNew($ArrayIndexOutOfBoundsException, "Coordinate out of bounds!"_s);
 	}

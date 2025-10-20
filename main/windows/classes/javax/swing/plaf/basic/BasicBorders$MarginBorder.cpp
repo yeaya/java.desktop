@@ -94,6 +94,7 @@ void BasicBorders$MarginBorder::init$() {
 }
 
 $Insets* BasicBorders$MarginBorder::getBorderInsets($Component* c, $Insets* insets) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, margin, nullptr);
 	if ($instanceOf($AbstractButton, c)) {
 		$var($AbstractButton, b, $cast($AbstractButton, c));

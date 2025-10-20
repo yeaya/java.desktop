@@ -75,6 +75,7 @@ void TestProperties::init$() {
 
 void TestProperties::main($StringArray* args) {
 	$init(TestProperties);
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 	test(TestProperties::metalProperties);
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($NimbusLookAndFeel)));
@@ -103,6 +104,7 @@ void TestProperties::main($StringArray* args) {
 
 void TestProperties::test($StringArray* properties) {
 	$init(TestProperties);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($StringArray, arr$, properties);
 		int32_t len$ = $nc(arr$)->length;

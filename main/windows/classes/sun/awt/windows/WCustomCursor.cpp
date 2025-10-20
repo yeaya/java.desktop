@@ -77,6 +77,7 @@ void WCustomCursor::init$($Image* cursor, $Point* hotSpot, $String* name) {
 }
 
 void WCustomCursor::createNativeCursor($Image* im, $ints* pixels, int32_t w, int32_t h, int32_t xHotSpot, int32_t yHotSpot) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, bimage, $new($BufferedImage, w, h, $BufferedImage::TYPE_INT_RGB));
 	$var($Graphics, g, bimage->getGraphics());
 	{

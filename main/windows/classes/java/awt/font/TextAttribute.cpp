@@ -323,6 +323,7 @@ void TextAttribute::init$($String* name) {
 }
 
 $Object* TextAttribute::readResolve() {
+	$useLocalCurrentObjectStackCache();
 	if ($of(this)->getClass() != TextAttribute::class$) {
 		$throwNew($InvalidObjectException, "subclass didn\'t correctly implement readResolve"_s);
 	}

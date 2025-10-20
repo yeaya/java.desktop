@@ -99,6 +99,7 @@ void bug6848475::init$() {
 }
 
 void bug6848475::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6848475);
 	$assignStatic(bug6848475::robot, $new($Robot));
 	$nc(bug6848475::robot)->setAutoDelay(100);
@@ -113,6 +114,7 @@ void bug6848475::main($StringArray* args) {
 
 $Rectangle* bug6848475::getThumbRectField() {
 	$load(bug6848475);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$init(bug6848475);

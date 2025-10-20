@@ -86,6 +86,7 @@ void RTFReader$DocumentDestination::init$($RTFReader* this$0) {
 }
 
 void RTFReader$DocumentDestination::deliverText($String* text, $AttributeSet* characterAttributes) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		int32_t var$0 = $nc(this->this$0->target)->getLength();
 		$var($String, var$1, text);
@@ -97,6 +98,7 @@ void RTFReader$DocumentDestination::deliverText($String* text, $AttributeSet* ch
 }
 
 void RTFReader$DocumentDestination::finishParagraph($AttributeSet* pgfAttributes, $AttributeSet* chrAttributes) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pgfEndPosition = $nc(this->this$0->target)->getLength();
 	try {
 		$nc(this->this$0->target)->insertString(pgfEndPosition, "\n"_s, chrAttributes);

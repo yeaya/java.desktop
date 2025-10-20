@@ -326,6 +326,7 @@ bool WInputMethod::setLocale($Locale* lang) {
 }
 
 bool WInputMethod::setLocale($Locale* lang, bool onActivate) {
+	$useLocalCurrentObjectStackCache();
 	$var($LocaleArray, available, $WInputMethodDescriptor::getAvailableLocalesInternal());
 	for (int32_t i = 0; i < $nc(available)->length; ++i) {
 		$var($Locale, locale, available->get(i));
@@ -362,6 +363,7 @@ $Locale* WInputMethod::getLocale() {
 }
 
 void WInputMethod::setCharacterSubsets($Character$SubsetArray* subsets) {
+	$useLocalCurrentObjectStackCache();
 	if (subsets == nullptr) {
 		setConversionStatus(this->context, this->cmode);
 		setOpenStatus(this->context, this->open);
@@ -582,6 +584,7 @@ bool WInputMethod::isCompositionEnabled() {
 }
 
 void WInputMethod::sendInputMethodEvent(int32_t id, int64_t when, $String* text, $ints* clauseBoundary, $StringArray* clauseReading, $ints* attributeBoundary, $bytes* attributeValue, int32_t commitedTextLength, int32_t caretPos, int32_t visiblePos) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributedCharacterIterator, iterator, nullptr);
 	if (text != nullptr) {
 		$var($AttributedString, attrStr, $new($AttributedString, text));
@@ -660,6 +663,7 @@ void WInputMethod::sendInputMethodEvent(int32_t id, int64_t when, $String* text,
 }
 
 void WInputMethod::inquireCandidatePosition() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, source, getClientComponent());
 	if (source == nullptr) {
 		return;
@@ -670,6 +674,7 @@ void WInputMethod::inquireCandidatePosition() {
 }
 
 $WComponentPeer* WInputMethod::getNearestNativePeer($Component* comp$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, comp, comp$renamed);
 	if (comp == nullptr) {
 		return nullptr;
@@ -809,6 +814,7 @@ bool WInputMethod::isCompositionStringAvailable(int32_t context) {
 }
 
 void clinit$WInputMethod($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($MapArray, styles, $new($MapArray, 4));
 		$var($HashMap, map, nullptr);

@@ -194,6 +194,7 @@ $View* TextLayoutStrategy$AttributedSegment::getView() {
 }
 
 void TextLayoutStrategy$AttributedSegment::setView($View* v) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, v, v);
 	$var($Document, doc, $nc(v)->getDocument());
 	int32_t p0 = v->getStartOffset();
@@ -208,6 +209,7 @@ void TextLayoutStrategy$AttributedSegment::setView($View* v) {
 }
 
 int32_t TextLayoutStrategy$AttributedSegment::getFontBoundary(int32_t childIndex, int32_t dir) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, child, $nc(this->v)->getView(childIndex));
 	$var($Font, f, getFont(childIndex));
 	for (childIndex += dir; (childIndex >= 0) && (childIndex < $nc(this->v)->getViewCount()); childIndex += dir) {
@@ -264,6 +266,7 @@ int32_t TextLayoutStrategy$AttributedSegment::getRunStart($AttributedCharacterIt
 }
 
 int32_t TextLayoutStrategy$AttributedSegment::getRunStart($Set* attributes) {
+	$useLocalCurrentObjectStackCache();
 	int32_t index = getBeginIndex();
 	$var($ObjectArray, a, $nc(attributes)->toArray());
 	for (int32_t i = 0; i < $nc(a)->length; ++i) {
@@ -295,6 +298,7 @@ int32_t TextLayoutStrategy$AttributedSegment::getRunLimit($AttributedCharacterIt
 }
 
 int32_t TextLayoutStrategy$AttributedSegment::getRunLimit($Set* attributes) {
+	$useLocalCurrentObjectStackCache();
 	int32_t index = getEndIndex();
 	$var($ObjectArray, a, $nc(attributes)->toArray());
 	for (int32_t i = 0; i < $nc(a)->length; ++i) {
@@ -305,6 +309,7 @@ int32_t TextLayoutStrategy$AttributedSegment::getRunLimit($Set* attributes) {
 }
 
 $Map* TextLayoutStrategy$AttributedSegment::getAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, ka, $nc(TextLayoutStrategy$AttributedSegment::keys)->toArray());
 	$var($Hashtable, h, $new($Hashtable));
 	for (int32_t i = 0; i < $nc(ka)->length; ++i) {

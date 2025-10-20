@@ -52,6 +52,7 @@ void TestHTMLBulletsSizeAndAliasing::init$() {
 }
 
 void TestHTMLBulletsSizeAndAliasing::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($CountDownLatch, latch, $new($CountDownLatch, 1));
 	$var($AliasingTest, test, $new($AliasingTest, latch));
 	$var($Thread, T1, $new($Thread, static_cast<$Runnable*>(test)));

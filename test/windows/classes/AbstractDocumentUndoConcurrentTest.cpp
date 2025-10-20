@@ -100,6 +100,7 @@ void AbstractDocumentUndoConcurrentTest::init$() {
 
 void AbstractDocumentUndoConcurrentTest::main($StringArray* args) {
 	$init(AbstractDocumentUndoConcurrentTest);
+	$useLocalCurrentObjectStackCache();
 	test();
 	$init($System);
 	$nc($System::out)->println($($nc(AbstractDocumentUndoConcurrentTest::doc1)->getText(0, $nc(AbstractDocumentUndoConcurrentTest::doc1)->getLength())));
@@ -109,6 +110,7 @@ void AbstractDocumentUndoConcurrentTest::main($StringArray* args) {
 
 void AbstractDocumentUndoConcurrentTest::test() {
 	$init(AbstractDocumentUndoConcurrentTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(AbstractDocumentUndoConcurrentTest::doc1, $new($PlainDocument, $$new($StringContent)));
 	$var($UndoManager, undoManager, $new($UndoManager));
 	$nc(AbstractDocumentUndoConcurrentTest::doc1)->addUndoableEditListener(undoManager);

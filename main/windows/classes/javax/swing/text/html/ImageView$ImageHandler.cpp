@@ -85,6 +85,7 @@ void ImageView$ImageHandler::init$($ImageView* this$0) {
 }
 
 bool ImageView$ImageHandler::imageUpdate($Image* img, int32_t flags, int32_t x, int32_t y, int32_t newWidth, int32_t newHeight) {
+	$useLocalCurrentObjectStackCache();
 	if (img != this->this$0->image && img != this->this$0->disabledImage || this->this$0->image == nullptr || this->this$0->getParent() == nullptr) {
 		return false;
 	}

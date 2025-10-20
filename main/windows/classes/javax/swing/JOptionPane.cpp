@@ -581,6 +581,7 @@ $String* JOptionPane::showInputDialog($Component* parentComponent, Object$* mess
 
 $Object* JOptionPane::showInputDialog($Component* parentComponent, Object$* message, $String* title, int32_t messageType, $Icon* icon, $ObjectArray* selectionValues, Object$* initialSelectionValue) {
 	$init(JOptionPane);
+	$useLocalCurrentObjectStackCache();
 	$var(JOptionPane, pane, $new(JOptionPane, message, messageType, JOptionPane::OK_CANCEL_OPTION, icon, nullptr, nullptr));
 	pane->setWantsInput(true);
 	pane->setSelectionValues(selectionValues);
@@ -635,6 +636,7 @@ int32_t JOptionPane::showConfirmDialog($Component* parentComponent, Object$* mes
 
 int32_t JOptionPane::showOptionDialog($Component* parentComponent, Object$* message, $String* title, int32_t optionType, int32_t messageType, $Icon* icon, $ObjectArray* options, Object$* initialValue) {
 	$init(JOptionPane);
+	$useLocalCurrentObjectStackCache();
 	$var(JOptionPane, pane, $new(JOptionPane, message, messageType, optionType, icon, options, initialValue));
 	pane->setInitialValue(initialValue);
 	pane->setComponentOrientation($($nc(((parentComponent == nullptr) ? $(static_cast<$Component*>(getRootFrame())) : parentComponent))->getComponentOrientation()));
@@ -678,6 +680,7 @@ $JDialog* JOptionPane::createDialog($String* title) {
 }
 
 $JDialog* JOptionPane::createDialog($Component* parentComponent, $String* title, int32_t style) {
+	$useLocalCurrentObjectStackCache();
 	$var($JDialog, dialog, nullptr);
 	$var($Window, window, JOptionPane::getWindowForComponent(parentComponent));
 	if ($instanceOf($Frame, window)) {
@@ -694,6 +697,7 @@ $JDialog* JOptionPane::createDialog($Component* parentComponent, $String* title,
 }
 
 void JOptionPane::initDialog($JDialog* dialog, int32_t style, $Component* parentComponent) {
+	$useLocalCurrentObjectStackCache();
 	$nc(dialog)->setComponentOrientation($(this->getComponentOrientation()));
 	$var($Container, contentPane, dialog->getContentPane());
 	$nc(contentPane)->setLayout($$new($BorderLayout));
@@ -765,6 +769,7 @@ bool JOptionPane::checkFrameForComponent($Component* parentComponent) {
 
 int32_t JOptionPane::showInternalOptionDialog($Component* parentComponent, Object$* message, $String* title, int32_t optionType, int32_t messageType, $Icon* icon, $ObjectArray* options, Object$* initialValue) {
 	$init(JOptionPane);
+	$useLocalCurrentObjectStackCache();
 	$var(JOptionPane, pane, $new(JOptionPane, message, messageType, optionType, icon, options, initialValue));
 	$init($ClientPropertyKey);
 	$init($Boolean);
@@ -837,6 +842,7 @@ $String* JOptionPane::showInternalInputDialog($Component* parentComponent, Objec
 
 $Object* JOptionPane::showInternalInputDialog($Component* parentComponent, Object$* message, $String* title, int32_t messageType, $Icon* icon, $ObjectArray* selectionValues, Object$* initialSelectionValue) {
 	$init(JOptionPane);
+	$useLocalCurrentObjectStackCache();
 	$var(JOptionPane, pane, $new(JOptionPane, message, messageType, JOptionPane::OK_CANCEL_OPTION, icon, nullptr, nullptr));
 	$init($ClientPropertyKey);
 	$init($Boolean);
@@ -877,6 +883,7 @@ $Object* JOptionPane::showInternalInputDialog($Component* parentComponent, Objec
 }
 
 $JInternalFrame* JOptionPane::createInternalFrame($Component* parentComponent, $String* title) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, parent, JOptionPane::getDesktopPaneForComponent(parentComponent));
 	if (parent == nullptr && (parentComponent == nullptr || ($assign(parent, $nc(parentComponent)->getParent())) == nullptr)) {
 		$throwNew($RuntimeException, "JOptionPane: parentComponent does not have a valid parent"_s);
@@ -1192,6 +1199,7 @@ int32_t JOptionPane::styleFromMessageType(int32_t messageType) {
 }
 
 void JOptionPane::writeObject($ObjectOutputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, values, $new($Vector));
 	$nc(s)->defaultWriteObject();
 	if (this->icon != nullptr && $instanceOf($Serializable, this->icon)) {
@@ -1258,6 +1266,7 @@ void JOptionPane::writeObject($ObjectOutputStream* s) {
 }
 
 void JOptionPane::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	int32_t newMessageType = $nc(f)->get("messageType"_s, 0);
 	checkMessageType(newMessageType);
@@ -1311,6 +1320,7 @@ void JOptionPane::readObject($ObjectInputStream* s) {
 }
 
 $String* JOptionPane::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, iconString, this->icon != nullptr ? $nc($of(this->icon))->toString() : ""_s);
 	$var($String, initialValueString, this->initialValue != nullptr ? $nc($of(this->initialValue))->toString() : ""_s);
 	$var($String, messageString, this->message != nullptr ? $nc($of(this->message))->toString() : ""_s);

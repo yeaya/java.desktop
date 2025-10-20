@@ -141,6 +141,7 @@ $List* SortingFocusTraversalPolicy::getFocusTraversalCycle($Container* aContaine
 }
 
 int32_t SortingFocusTraversalPolicy::getComponentIndex($List* cycle, $Component* aComponent) {
+	$useLocalCurrentObjectStackCache();
 	int32_t index = 0;
 	try {
 		index = $Collections::binarySearch(cycle, aComponent, this->comparator);
@@ -170,6 +171,7 @@ void SortingFocusTraversalPolicy::enumerateAndSortCycle($Container* focusCycleRo
 }
 
 void SortingFocusTraversalPolicy::legacySort($List* l, $Comparator* c) {
+	$useLocalCurrentObjectStackCache();
 	if (c != nullptr && $nc(l)->size() > 1) {
 		$var($ComponentArray, a, $fcast($ComponentArray, l->toArray($$new($ComponentArray, l->size()))));
 		mergeSort($cast($ComponentArray, $($nc(a)->clone())), a, 0, a->length, 0, c);
@@ -190,6 +192,7 @@ void SortingFocusTraversalPolicy::legacySort($List* l, $Comparator* c) {
 }
 
 void SortingFocusTraversalPolicy::enumerateCycle($Container* container, $List* cycle) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(container)->isVisible();
 	if (!(var$0 && container->isDisplayable())) {
 		return;
@@ -219,6 +222,7 @@ void SortingFocusTraversalPolicy::enumerateCycle($Container* container, $List* c
 }
 
 $Container* SortingFocusTraversalPolicy::getTopmostProvider($Container* focusCycleRoot, $Component* aComponent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, aCont, $nc(aComponent)->getParent());
 	$var($Container, ftp, nullptr);
 	while (aCont != focusCycleRoot && aCont != nullptr) {
@@ -234,6 +238,7 @@ $Container* SortingFocusTraversalPolicy::getTopmostProvider($Container* focusCyc
 }
 
 $Component* SortingFocusTraversalPolicy::getComponentDownCycle($Component* comp, int32_t traversalDirection) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, retComp, nullptr);
 	if ($instanceOf($Container, comp)) {
 		$var($Container, cont, $cast($Container, comp));
@@ -259,6 +264,7 @@ $Component* SortingFocusTraversalPolicy::getComponentDownCycle($Component* comp,
 }
 
 $Component* SortingFocusTraversalPolicy::getComponentAfter($Container* aContainer, $Component* aComponent$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, aComponent, aComponent$renamed);
 	$init($PlatformLogger$Level);
 	if ($nc(this->log)->isLoggable($PlatformLogger$Level::FINE)) {
@@ -326,6 +332,7 @@ $Component* SortingFocusTraversalPolicy::getComponentAfter($Container* aContaine
 }
 
 $Component* SortingFocusTraversalPolicy::getComponentBefore($Container* aContainer, $Component* aComponent$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, aComponent, aComponent$renamed);
 	if (aContainer == nullptr || aComponent == nullptr) {
 		$throwNew($IllegalArgumentException, "aContainer and aComponent cannot be null"_s);
@@ -392,6 +399,7 @@ $Component* SortingFocusTraversalPolicy::getComponentBefore($Container* aContain
 }
 
 $Component* SortingFocusTraversalPolicy::getFirstComponent($Container* aContainer) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, cycle, nullptr);
 	$init($PlatformLogger$Level);
 	if ($nc(this->log)->isLoggable($PlatformLogger$Level::FINE)) {
@@ -431,6 +439,7 @@ $Component* SortingFocusTraversalPolicy::getFirstComponent($Container* aContaine
 }
 
 $Component* SortingFocusTraversalPolicy::getLastComponent($Container* aContainer) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, cycle, nullptr);
 	$init($PlatformLogger$Level);
 	if ($nc(this->log)->isLoggable($PlatformLogger$Level::FINE)) {
@@ -495,6 +504,7 @@ bool SortingFocusTraversalPolicy::accept($Component* aComponent) {
 }
 
 void SortingFocusTraversalPolicy::mergeSort($ObjectArray* src, $ObjectArray* dest, int32_t low, int32_t high, int32_t off, $Comparator* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t length = high - low;
 	if (length < 7) {
 		for (int32_t i = low; i < high; ++i) {
@@ -532,6 +542,7 @@ void SortingFocusTraversalPolicy::mergeSort($ObjectArray* src, $ObjectArray* des
 }
 
 void clinit$SortingFocusTraversalPolicy($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$assignStatic(SortingFocusTraversalPolicy::fitnessTestPolicy, $new($SwingContainerOrderFocusTraversalPolicy));
 	{

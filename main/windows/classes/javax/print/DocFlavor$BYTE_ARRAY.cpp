@@ -138,6 +138,7 @@ void DocFlavor$BYTE_ARRAY::init$($String* mimeType) {
 }
 
 void clinit$DocFlavor$BYTE_ARRAY($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$init($DocFlavor);
 	$assignStatic(DocFlavor$BYTE_ARRAY::TEXT_PLAIN_HOST, $new(DocFlavor$BYTE_ARRAY, $$str({"text/plain; charset="_s, $DocFlavor::hostEncoding})));
 	$assignStatic(DocFlavor$BYTE_ARRAY::TEXT_PLAIN_UTF_8, $new(DocFlavor$BYTE_ARRAY, "text/plain; charset=utf-8"_s));

@@ -267,6 +267,7 @@ void AliasingTest::init$($CountDownLatch* latch) {
 }
 
 void AliasingTest::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(AliasingTest$$Lambda$lambda$run$0, this)));
 	} catch ($Exception&) {
@@ -291,6 +292,7 @@ $String* AliasingTest::getHtml() {
 
 $Component* AliasingTest::createSplitPane() {
 	$init(AliasingTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, var$0, createHtmlViewer(false));
 	$var($JSplitPane, splitPane, $new($JSplitPane, $JSplitPane::VERTICAL_SPLIT, var$0, $(createHtmlViewer(true))));
 	splitPane->setOneTouchExpandable(true);
@@ -301,6 +303,7 @@ $Component* AliasingTest::createSplitPane() {
 
 $Component* AliasingTest::createHtmlViewer(bool antialiasing) {
 	$init(AliasingTest);
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, editorPane, nullptr);
 	if (antialiasing) {
 		$assign(editorPane, $new($AliasingTest$1));
@@ -323,6 +326,7 @@ void AliasingTest::aliasingTest() {
 }
 
 void AliasingTest::createUI() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, description, " INSTRUCTIONS:\n A JEditorPane divided by SplitPane will be shown.\n The upper html is rendered in a default JEditorPane.\n  The lower html is rendered in a JEditorPane using  rendering hints to turn on antialiasing.\n If upper html bullets looks pixelated AND larger than needed relative to text font size\n and not as smooth as shown in lower html\n  then press fail else press pass"_s);
 	$assignStatic(AliasingTest::dialog, $new($JDialog));
 	$nc(AliasingTest::dialog)->setTitle("textselectionTest"_s);

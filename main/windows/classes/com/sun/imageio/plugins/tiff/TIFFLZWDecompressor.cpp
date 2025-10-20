@@ -103,6 +103,7 @@ void TIFFLZWDecompressor::init$(int32_t predictor, int32_t fillOrder) {
 }
 
 void TIFFLZWDecompressor::decodeRaw($bytes* b, int32_t dstOffset, int32_t bitsPerPixel, int32_t scanlineStride) {
+	$useLocalCurrentObjectStackCache();
 	if (this->predictor == $BaselineTIFFTagSet::PREDICTOR_HORIZONTAL_DIFFERENCING) {
 		int32_t len = $nc(this->bitsPerSample)->length;
 		for (int32_t i = 0; i < len; ++i) {
@@ -194,6 +195,7 @@ int32_t TIFFLZWDecompressor::decode($bytes* sdata, int32_t srcOffset, $bytes* dd
 }
 
 void TIFFLZWDecompressor::initializeStringTable() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, stringTable, $new($byteArray2, 4096));
 	for (int32_t i = 0; i < TIFFLZWDecompressor::CLEAR_CODE; ++i) {
 		$nc(this->stringTable)->set(i, $$new($bytes, 1));

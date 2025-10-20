@@ -73,6 +73,7 @@ void bug6848475$3::init$() {
 }
 
 void bug6848475$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6848475);
 	$bug6848475::thumbRectX = $nc($($bug6848475::getThumbRectField()))->x;
 	$var($Point, p, $nc($bug6848475::slider)->getLocationOnScreen());

@@ -160,6 +160,7 @@ void TestGlyphBreak::init$() {
 }
 
 void TestGlyphBreak::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestGlyphBreak$$Lambda$lambda$main$0)));
 	try {
 		$Thread::sleep(2000);
@@ -181,6 +182,7 @@ void TestGlyphBreak::lambda$main$1() {
 }
 
 void TestGlyphBreak::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, "<html><font size=2 color=red><bold>Three!</font></html>"_s);
 	$var($JButton, b, $new($JButton));
 	b->setText(str);

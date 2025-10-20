@@ -137,6 +137,7 @@ $Dimension* SynthSpinnerUI$SpinnerLayout::preferredSize($Component* c) {
 }
 
 $Dimension* SynthSpinnerUI$SpinnerLayout::preferredLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, nextD, preferredSize(this->nextButton));
 	$var($Dimension, previousD, preferredSize(this->previousButton));
 	$var($Dimension, editorD, preferredSize(this->editor));
@@ -160,6 +161,7 @@ void SynthSpinnerUI$SpinnerLayout::setBounds($Component* c, int32_t x, int32_t y
 }
 
 void SynthSpinnerUI$SpinnerLayout::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, $nc(parent)->getInsets());
 	int32_t availWidth = parent->getWidth() - ($nc(insets)->left + insets->right);
 	int32_t availHeight = parent->getHeight() - (insets->top + insets->bottom);

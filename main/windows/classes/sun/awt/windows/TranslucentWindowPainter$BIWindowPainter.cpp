@@ -106,6 +106,7 @@ void TranslucentWindowPainter$BIWindowPainter::init$($WWindowPeer* peer) {
 }
 
 $Image* TranslucentWindowPainter$BIWindowPainter::getBackBuffer(bool clear) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, $nc(this->peer)->getGraphicsConfiguration());
 	$var($AffineTransform, transform, $nc(gc)->getDefaultTransform());
 	int32_t var$0 = $nc(this->window)->getWidth();
@@ -121,6 +122,7 @@ $Image* TranslucentWindowPainter$BIWindowPainter::getBackBuffer(bool clear) {
 }
 
 bool TranslucentWindowPainter$BIWindowPainter::update($Image* bb) {
+	$useLocalCurrentObjectStackCache();
 	$var($VolatileImage, viBB, nullptr);
 	if ($instanceOf($BufferedImage, bb)) {
 		$var($BufferedImage, bi, $cast($BufferedImage, bb));
@@ -159,6 +161,7 @@ void TranslucentWindowPainter$BIWindowPainter::flush() {
 }
 
 $Graphics* TranslucentWindowPainter$BIWindowPainter::getGraphics(bool clear) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, g, $nc($(getBackBuffer(clear)))->getGraphics());
 	$nc(($cast($Graphics2D, g)))->transform($($nc($($nc(this->peer)->getGraphicsConfiguration()))->getDefaultTransform()));
 	return g;

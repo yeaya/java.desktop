@@ -320,6 +320,7 @@ bool TIFFDecompressor::areIntArraysEqual($ints* a, $ints* b) {
 }
 
 int32_t TIFFDecompressor::getDataTypeSize(int32_t dataType) {
+	$useLocalCurrentObjectStackCache();
 	int32_t dataTypeSize = 0;
 	switch (dataType) {
 	case $DataBuffer::TYPE_BYTE:
@@ -379,6 +380,7 @@ bool TIFFDecompressor::areSampleSizesEqual($SampleModel* sm) {
 }
 
 bool TIFFDecompressor::isDataBufferBitContiguous($SampleModel* sm, $ints* bitsPerSample) {
+	$useLocalCurrentObjectStackCache();
 	int32_t dataTypeSize = getDataTypeSize($nc(sm)->getDataType());
 	if ($instanceOf($ComponentSampleModel, sm)) {
 		int32_t numBands = $nc(sm)->getNumBands();
@@ -453,6 +455,7 @@ void TIFFDecompressor::reformatData($bytes* buf, int32_t bytesPerRow, int32_t nu
 }
 
 void TIFFDecompressor::reformatDiscontiguousData($bytes* buf, $ints* bitsPerSample, int32_t stride, int32_t w, int32_t h, $WritableRaster* raster) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, sm, $nc(raster)->getSampleModel());
 	int32_t numBands = $nc(sm)->getNumBands();
 	$var($ByteArrayInputStream, is, $new($ByteArrayInputStream, buf));
@@ -473,6 +476,7 @@ void TIFFDecompressor::reformatDiscontiguousData($bytes* buf, $ints* bitsPerSamp
 }
 
 $ImageTypeSpecifier* TIFFDecompressor::getRawImageTypeSpecifier(int32_t photometricInterpretation, int32_t compression, int32_t samplesPerPixel, $ints* bitsPerSample, $ints* sampleFormat, $ints* extraSamples, $chars* colorMap) {
+	$useLocalCurrentObjectStackCache();
 	if (samplesPerPixel == 1 && ($nc(bitsPerSample)->get(0) == 1 || $nc(bitsPerSample)->get(0) == 2 || $nc(bitsPerSample)->get(0) == 4 || $nc(bitsPerSample)->get(0) == 8 || $nc(bitsPerSample)->get(0) == 16)) {
 		if (colorMap == nullptr) {
 			bool isSigned = ($nc(sampleFormat)->get(0) == $BaselineTIFFTagSet::SAMPLE_FORMAT_SIGNED_INTEGER);
@@ -900,6 +904,7 @@ $ImageTypeSpecifier* TIFFDecompressor::getRawImageType() {
 }
 
 $BufferedImage* TIFFDecompressor::createRawImage() {
+	$useLocalCurrentObjectStackCache();
 	if (this->planar) {
 		int32_t bps = $nc(this->bitsPerSample)->get($nc(this->sourceBands)->get(0));
 		int32_t dataType = 0;
@@ -1081,6 +1086,7 @@ void TIFFDecompressor::decodeRaw($doubles* d, int32_t dstOffset, int32_t bitsPer
 }
 
 void TIFFDecompressor::beginDecoding() {
+	$useLocalCurrentObjectStackCache();
 	this->adjustBitDepths = false;
 	int32_t numBands = $nc(this->destinationBands)->length;
 	$var($ints, destBitsPerSample, nullptr);
@@ -1146,6 +1152,7 @@ void TIFFDecompressor::beginDecoding() {
 }
 
 void TIFFDecompressor::decode() {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, byteData, nullptr);
 	$var($shorts, shortData, nullptr);
 	$var($ints, intData, nullptr);

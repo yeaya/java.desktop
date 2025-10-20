@@ -486,6 +486,7 @@ int32_t TMSchema$Part::getValue() {
 }
 
 $String* TMSchema$Part::getControlName($Component* component) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, ""_s);
 	if ($instanceOf($JComponent, component)) {
 		$var($JComponent, c, $cast($JComponent, component));
@@ -498,6 +499,7 @@ $String* TMSchema$Part::getControlName($Component* component) {
 }
 
 $String* TMSchema$Part::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $$str({$(this->control->toString()), "."_s}));
 	return $concat(var$0, $(name()));
 }

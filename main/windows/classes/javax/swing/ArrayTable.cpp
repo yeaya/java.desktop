@@ -73,6 +73,7 @@ void ArrayTable::init$() {
 
 void ArrayTable::writeArrayTable($ObjectOutputStream* s, ArrayTable* table) {
 	$init(ArrayTable);
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, keys, nullptr);
 	if (table == nullptr || ($assign(keys, $nc(table)->getKeys(nullptr))) == nullptr) {
 		$nc(s)->writeInt(0);
@@ -111,6 +112,7 @@ void ArrayTable::writeArrayTable($ObjectOutputStream* s, ArrayTable* table) {
 }
 
 void ArrayTable::put(Object$* key, Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	if (this->table == nullptr) {
 		$set(this, table, $new($ObjectArray, {
 			key,
@@ -147,6 +149,7 @@ void ArrayTable::put(Object$* key, Object$* value) {
 }
 
 $Object* ArrayTable::get(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, nullptr);
 	if (this->table != nullptr) {
 		if (isArray()) {
@@ -196,6 +199,7 @@ bool ArrayTable::containsKey(Object$* key) {
 }
 
 $Object* ArrayTable::remove(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, nullptr);
 	if (key == nullptr) {
 		return $of(nullptr);
@@ -235,6 +239,7 @@ void ArrayTable::clear() {
 }
 
 $Object* ArrayTable::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(ArrayTable, newArrayTable, $new(ArrayTable));
 	if (this->table != nullptr) {
 		if (isArray()) {
@@ -255,6 +260,7 @@ $Object* ArrayTable::clone() {
 }
 
 $ObjectArray* ArrayTable::getKeys($ObjectArray* keys$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, keys, keys$renamed);
 	if (this->table == nullptr) {
 		return nullptr;
@@ -290,6 +296,7 @@ bool ArrayTable::isArray() {
 }
 
 void ArrayTable::grow() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, array, $cast($ObjectArray, this->table));
 	$var($Hashtable, tmp, $new($Hashtable, $nc(array)->length / 2));
 	for (int32_t i = 0; i < $nc(array)->length; i += 2) {
@@ -299,6 +306,7 @@ void ArrayTable::grow() {
 }
 
 void ArrayTable::shrink() {
+	$useLocalCurrentObjectStackCache();
 	$var($Hashtable, tmp, $cast($Hashtable, this->table));
 	$var($ObjectArray, array, $new($ObjectArray, $nc(tmp)->size() * 2));
 	$var($Enumeration, keys, tmp->keys());

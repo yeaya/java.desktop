@@ -87,6 +87,7 @@ void MotifRadioButtonUI::init$() {
 
 $ComponentUI* MotifRadioButtonUI::createUI($JComponent* c) {
 	$init(MotifRadioButtonUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(MotifRadioButtonUI, motifRadioButtonUI, $cast(MotifRadioButtonUI, $nc(appContext)->get(MotifRadioButtonUI::MOTIF_RADIO_BUTTON_UI_KEY)));
 	if (motifRadioButtonUI == nullptr) {
@@ -97,6 +98,7 @@ $ComponentUI* MotifRadioButtonUI::createUI($JComponent* c) {
 }
 
 void MotifRadioButtonUI::installDefaults($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$BasicRadioButtonUI::installDefaults(b);
 	if (!this->defaults_initialized) {
 		$set(this, focusColor, $UIManager::getColor($$str({$(getPropertyPrefix()), "focus"_s})));

@@ -171,6 +171,7 @@ void JColorChooserTest$1::init$($JColorChooserTest* this$0) {
 }
 
 void JColorChooserTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($JColorChooserTest);
 	$assignStatic($JColorChooserTest::mainFrame, $new($JFrame, "JColorChooser Test"_s));
 	$assignStatic($JColorChooserTest::layout, $new($GridBagLayout));

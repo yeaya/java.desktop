@@ -118,6 +118,7 @@ void AuFileWriter::init$() {
 }
 
 $AudioFileFormat$TypeArray* AuFileWriter::getAudioFileTypes($AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFileFormat$TypeArray, filetypes, $new($AudioFileFormat$TypeArray, $nc(this->types)->length));
 	$System::arraycopy(this->types, 0, filetypes, 0, $nc(this->types)->length);
 	$var($AudioFormat, format, $nc(stream)->getFormat());
@@ -142,6 +143,7 @@ int32_t AuFileWriter::write($AudioInputStream* stream, $AudioFileFormat$Type* fi
 }
 
 int32_t AuFileWriter::write($AudioInputStream* stream, $AudioFileFormat$Type* fileType, $File* out) {
+	$useLocalCurrentObjectStackCache();
 	$Objects::requireNonNull(stream);
 	$Objects::requireNonNull(fileType);
 	$Objects::requireNonNull(out);
@@ -234,6 +236,7 @@ int32_t AuFileWriter::write($AudioInputStream* stream, $AudioFileFormat$Type* fi
 }
 
 $AudioFileFormat* AuFileWriter::getAudioFileFormat($AudioFileFormat$Type* type, $AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	if (!isFileTypeSupported(type, stream)) {
 		$throwNew($IllegalArgumentException, $$str({"File type "_s, type, " not supported."_s}));
 	}
@@ -261,6 +264,7 @@ $AudioFileFormat* AuFileWriter::getAudioFileFormat($AudioFileFormat$Type* type, 
 }
 
 $InputStream* AuFileWriter::getFileStream($AuFileFormat* auFileFormat, $AudioInputStream* audioStream$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioInputStream, audioStream, audioStream$renamed);
 	$var($AudioFormat, format, $nc(auFileFormat)->getFormat());
 	int32_t headerSize = $AuFileFormat::AU_HEADERSIZE;
@@ -336,6 +340,7 @@ $InputStream* AuFileWriter::getFileStream($AuFileFormat* auFileFormat, $AudioInp
 }
 
 int32_t AuFileWriter::writeAuFile($AudioInputStream* in, $AuFileFormat* auFileFormat, $OutputStream* out) {
+	$useLocalCurrentObjectStackCache();
 	int32_t bytesRead = 0;
 	int32_t bytesWritten = 0;
 	$var($InputStream, fileStream, getFileStream(auFileFormat, in));

@@ -167,6 +167,7 @@ void InternalFrameIsNotCollectedTest::init$() {
 }
 
 void InternalFrameIsNotCollectedTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -222,6 +223,7 @@ void InternalFrameIsNotCollectedTest::closeInternalFrame() {
 }
 
 void InternalFrameIsNotCollectedTest::initUI() {
+	$useLocalCurrentObjectStackCache();
 	$init(InternalFrameIsNotCollectedTest);
 	$assignStatic(InternalFrameIsNotCollectedTest::frame, $new($JFrame, "Internal Frame Test"_s));
 	$nc($($nc(InternalFrameIsNotCollectedTest::frame)->getContentPane()))->setLayout($$new($BorderLayout));
@@ -240,6 +242,7 @@ void InternalFrameIsNotCollectedTest::initUI() {
 }
 
 void InternalFrameIsNotCollectedTest::invokeGC() {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println("Firing garbage collection!"_s);
 	try {

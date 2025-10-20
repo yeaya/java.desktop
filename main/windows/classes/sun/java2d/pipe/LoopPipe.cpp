@@ -196,11 +196,13 @@ void LoopPipe::drawArc($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t width
 }
 
 void LoopPipe::drawPolyline($SunGraphics2D* sg2d, $ints* xPoints, $ints* yPoints, int32_t nPoints) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, nPointsArray, $new($ints, {nPoints}));
 	$nc($nc($nc(sg2d)->loops)->drawPolygonsLoop)->DrawPolygons$(sg2d, $(sg2d->getSurfaceData()), xPoints, yPoints, nPointsArray, 1, sg2d->transX, sg2d->transY, false);
 }
 
 void LoopPipe::drawPolygon($SunGraphics2D* sg2d, $ints* xPoints, $ints* yPoints, int32_t nPoints) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, nPointsArray, $new($ints, {nPoints}));
 	$nc($nc($nc(sg2d)->loops)->drawPolygonsLoop)->DrawPolygons$(sg2d, $(sg2d->getSurfaceData()), xPoints, yPoints, nPointsArray, 1, sg2d->transX, sg2d->transY, true);
 }
@@ -222,6 +224,7 @@ void LoopPipe::fillArc($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t width
 }
 
 void LoopPipe::fillPolygon($SunGraphics2D* sg2d, $ints* xPoints, $ints* yPoints, int32_t nPoints) {
+	$useLocalCurrentObjectStackCache();
 	$var($ShapeSpanIterator, sr, getFillSSI(sg2d));
 	{
 		$var($Throwable, var$0, nullptr);
@@ -241,6 +244,7 @@ void LoopPipe::fillPolygon($SunGraphics2D* sg2d, $ints* xPoints, $ints* yPoints,
 }
 
 void LoopPipe::draw($SunGraphics2D* sg2d, $Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(sg2d)->strokeState == $SunGraphics2D::STROKE_THIN) {
 		$var($Path2D$Float, p2df, nullptr);
 		int32_t transX = 0;
@@ -289,6 +293,7 @@ $ShapeSpanIterator* LoopPipe::getFillSSI($SunGraphics2D* sg2d) {
 
 $ShapeSpanIterator* LoopPipe::getStrokeSpans($SunGraphics2D* sg2d, $Shape* s) {
 	$init(LoopPipe);
+	$useLocalCurrentObjectStackCache();
 	$var($ShapeSpanIterator, sr, $new($ShapeSpanIterator, false));
 	try {
 		$var($Region, clip, $nc(sg2d)->getCompClip());
@@ -308,6 +313,7 @@ $ShapeSpanIterator* LoopPipe::getStrokeSpans($SunGraphics2D* sg2d, $Shape* s) {
 }
 
 void LoopPipe::fill($SunGraphics2D* sg2d, $Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(sg2d)->strokeState == $SunGraphics2D::STROKE_THIN) {
 		$var($Path2D$Float, p2df, nullptr);
 		int32_t transX = 0;
@@ -349,6 +355,7 @@ void LoopPipe::fill($SunGraphics2D* sg2d, $Shape* s) {
 
 void LoopPipe::fillSpans($SunGraphics2D* sg2d, $SpanIterator* si$renamed) {
 	$init(LoopPipe);
+	$useLocalCurrentObjectStackCache();
 	$var($SpanIterator, si, si$renamed);
 	if ($nc(sg2d)->clipState == $SunGraphics2D::CLIP_SHAPE) {
 		$assign(si, $nc(sg2d->clipRegion)->filter(si));
@@ -371,11 +378,13 @@ void LoopPipe::fillSpans($SunGraphics2D* sg2d, $SpanIterator* si$renamed) {
 }
 
 void LoopPipe::fillParallelogram($SunGraphics2D* sg2d, double ux1, double uy1, double ux2, double uy2, double x, double y, double dx1, double dy1, double dx2, double dy2) {
+	$useLocalCurrentObjectStackCache();
 	$var($FillParallelogram, fp, $nc($nc(sg2d)->loops)->fillParallelogramLoop);
 	$nc(fp)->FillParallelogram$(sg2d, $(sg2d->getSurfaceData()), x, y, dx1, dy1, dx2, dy2);
 }
 
 void LoopPipe::drawParallelogram($SunGraphics2D* sg2d, double ux1, double uy1, double ux2, double uy2, double x, double y, double dx1, double dy1, double dx2, double dy2, double lw1, double lw2) {
+	$useLocalCurrentObjectStackCache();
 	$var($DrawParallelogram, dp, $nc($nc(sg2d)->loops)->drawParallelogramLoop);
 	$nc(dp)->DrawParallelogram$(sg2d, $(sg2d->getSurfaceData()), x, y, dx1, dy1, dx2, dy2, lw1, lw2);
 }

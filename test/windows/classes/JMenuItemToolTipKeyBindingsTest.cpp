@@ -164,6 +164,7 @@ void JMenuItemToolTipKeyBindingsTest::init$() {
 
 void JMenuItemToolTipKeyBindingsTest::main($StringArray* args) {
 	$init(JMenuItemToolTipKeyBindingsTest);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -190,6 +191,7 @@ void JMenuItemToolTipKeyBindingsTest::main($StringArray* args) {
 
 void JMenuItemToolTipKeyBindingsTest::createAndShowGUI() {
 	$init(JMenuItemToolTipKeyBindingsTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(JMenuItemToolTipKeyBindingsTest::controlDialog, $new($Dialog, ($JFrame*)nullptr, "JMenuItemToolTipKeyBindingsTest"_s));
 	$var($TextArea, messageArea, $new($TextArea, JMenuItemToolTipKeyBindingsTest::instructions, 15, 80, $TextArea::SCROLLBARS_BOTH));
 	$nc(JMenuItemToolTipKeyBindingsTest::controlDialog)->add("North"_s, static_cast<$Component*>(messageArea));

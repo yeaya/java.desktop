@@ -248,6 +248,7 @@ void JFIFMarkerSegment::init$($Node* node) {
 }
 
 $Object* JFIFMarkerSegment::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(JFIFMarkerSegment, newGuy, $cast(JFIFMarkerSegment, $MarkerSegment::clone()));
 	if (!$nc(this->extSegments)->isEmpty()) {
 		$set($nc(newGuy), extSegments, $new($ArrayList));
@@ -293,6 +294,7 @@ void JFIFMarkerSegment::addICC($ICC_ColorSpace* cs) {
 }
 
 $IIOMetadataNode* JFIFMarkerSegment::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "app0JFIF"_s));
 	node->setAttribute("majorVersion"_s, $($Integer::toString(this->majorVersion)));
 	node->setAttribute("minorVersion"_s, $($Integer::toString(this->minorVersion)));
@@ -319,6 +321,7 @@ $IIOMetadataNode* JFIFMarkerSegment::getNativeNode() {
 }
 
 void JFIFMarkerSegment::updateFromNativeNode($Node* node, bool fromScratch) {
+	$useLocalCurrentObjectStackCache();
 	$var($NamedNodeMap, attrs, $nc(node)->getAttributes());
 	if ($nc(attrs)->getLength() > 0) {
 		int32_t value = getAttributeValue(node, attrs, "majorVersion"_s, 0, 255, false);
@@ -389,6 +392,7 @@ int32_t JFIFMarkerSegment::getThumbnailHeight(int32_t index) {
 }
 
 $BufferedImage* JFIFMarkerSegment::getThumbnail($ImageInputStream* iis, int32_t index, $JPEGImageReader* reader) {
+	$useLocalCurrentObjectStackCache();
 	$nc(reader)->thumbnailStarted(index);
 	$var($BufferedImage, ret, nullptr);
 	if ((this->thumb != nullptr) && (index == 0)) {
@@ -409,6 +413,7 @@ void JFIFMarkerSegment::write($ImageOutputStream* ios, $JPEGImageWriter* writer)
 }
 
 void JFIFMarkerSegment::write($ImageOutputStream* ios, $BufferedImage* thumb, $JPEGImageWriter* writer) {
+	$useLocalCurrentObjectStackCache();
 	int32_t thumbWidth = 0;
 	int32_t thumbHeight = 0;
 	int32_t thumbLength = 0;
@@ -462,6 +467,7 @@ void JFIFMarkerSegment::writeThumbnailData($ImageOutputStream* ios, $ints* thumb
 }
 
 void JFIFMarkerSegment::writeWithThumbs($ImageOutputStream* ios, $List* thumbnails, $JPEGImageWriter* writer) {
+	$useLocalCurrentObjectStackCache();
 	if (thumbnails != nullptr) {
 		$var($JFIFMarkerSegment$JFIFExtensionMarkerSegment, jfxx, nullptr);
 		if (thumbnails->size() == 1) {
@@ -485,6 +491,7 @@ void JFIFMarkerSegment::writeWithThumbs($ImageOutputStream* ios, $List* thumbnai
 }
 
 void JFIFMarkerSegment::writeThumb($ImageOutputStream* ios, $BufferedImage* thumb, $JFIFMarkerSegment$JFIFExtensionMarkerSegment* jfxx, int32_t index, bool onlyOne, $JPEGImageWriter* writer) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, cm, $nc(thumb)->getColorModel());
 	$var($ColorSpace, cs, $nc(cm)->getColorSpace());
 	if ($instanceOf($IndexColorModel, cm)) {
@@ -552,6 +559,7 @@ void JFIFMarkerSegment::writeThumb($ImageOutputStream* ios, $BufferedImage* thum
 }
 
 void JFIFMarkerSegment::writeJFXXSegment(int32_t index, $BufferedImage* thumbnail, $ImageOutputStream* ios, $JPEGImageWriter* writer) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFIFMarkerSegment$JFIFExtensionMarkerSegment, jfxx, nullptr);
 	try {
 		$assign(jfxx, $new($JFIFMarkerSegment$JFIFExtensionMarkerSegment, this, thumbnail));
@@ -567,6 +575,7 @@ void JFIFMarkerSegment::writeJFXXSegment(int32_t index, $BufferedImage* thumbnai
 
 $BufferedImage* JFIFMarkerSegment::expandGrayThumb($BufferedImage* thumb) {
 	$init(JFIFMarkerSegment);
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc(thumb)->getWidth();
 	$var($BufferedImage, ret, $new($BufferedImage, var$0, thumb->getHeight(), $BufferedImage::TYPE_INT_RGB));
 	$var($Graphics, g, ret->getGraphics());
@@ -584,6 +593,7 @@ void JFIFMarkerSegment::writeDefaultJFIF($ImageOutputStream* ios, $List* thumbna
 }
 
 void JFIFMarkerSegment::print() {
+	$useLocalCurrentObjectStackCache();
 	printTag("JFIF"_s);
 	$init($System);
 	$nc($System::out)->print("Version "_s);
@@ -615,6 +625,7 @@ void JFIFMarkerSegment::print() {
 
 void JFIFMarkerSegment::writeICC($ICC_Profile* profile, $ImageOutputStream* ios) {
 	$init(JFIFMarkerSegment);
+	$useLocalCurrentObjectStackCache();
 	int32_t LENGTH_LENGTH = 2;
 	$var($String, ID, "ICC_PROFILE"_s);
 	int32_t ID_LENGTH = ID->length() + 1;

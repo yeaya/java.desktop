@@ -260,6 +260,7 @@ bool JToggleButton::shouldUpdateSelectedStateFromAction() {
 }
 
 JToggleButton* JToggleButton::getGroupSelection($FocusEvent$Cause* cause) {
+	$useLocalCurrentObjectStackCache();
 		$init($JToggleButton$1);
 	{
 		$var($ButtonModel, model, nullptr)

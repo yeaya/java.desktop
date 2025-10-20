@@ -105,6 +105,7 @@ $String* StateEdit::getPresentationName() {
 }
 
 void StateEdit::removeRedundantState() {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, uselessKeys, $new($Vector));
 	$var($Enumeration, myKeys, $nc(this->preState)->keys());
 	while ($nc(myKeys)->hasMoreElements()) {

@@ -111,6 +111,7 @@ bool WGLVolatileSurfaceManager::isAccelerationEnabled() {
 }
 
 $SurfaceData* WGLVolatileSurfaceManager::initAcceleratedSurface() {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceData, sData, nullptr);
 	$var($Component, comp, $nc(this->vImg)->getComponent());
 	$var($AWTAccessor$ComponentAccessor, acc, $AWTAccessor::getComponentAccessor());

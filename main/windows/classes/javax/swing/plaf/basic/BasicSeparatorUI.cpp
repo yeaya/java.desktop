@@ -111,6 +111,7 @@ void BasicSeparatorUI::uninstallListeners($JSeparator* s) {
 }
 
 void BasicSeparatorUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, s, $nc(c)->getSize());
 	if ($nc(($cast($JSeparator, c)))->getOrientation() == $JSeparator::VERTICAL) {
 		$nc(g)->setColor($(c->getForeground()));

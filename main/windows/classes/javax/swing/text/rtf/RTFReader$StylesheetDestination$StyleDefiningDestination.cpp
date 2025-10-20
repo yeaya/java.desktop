@@ -162,6 +162,7 @@ bool RTFReader$StylesheetDestination$StyleDefiningDestination::handleKeyword($St
 }
 
 $Style* RTFReader$StylesheetDestination$StyleDefiningDestination::realize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Style, basis, nullptr);
 	$var($Style, next, nullptr);
 	if (this->realizedStyle != nullptr) {

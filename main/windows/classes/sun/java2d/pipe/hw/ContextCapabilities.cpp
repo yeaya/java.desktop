@@ -81,6 +81,7 @@ int32_t ContextCapabilities::getCaps() {
 }
 
 $String* ContextCapabilities::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, $new($StringBuilder, $$str({"ContextCapabilities: adapter="_s, this->adapterId, ", caps="_s})));
 	if (this->caps == ContextCapabilities::CAPS_EMPTY) {
 		sb->append("CAPS_EMPTY"_s);

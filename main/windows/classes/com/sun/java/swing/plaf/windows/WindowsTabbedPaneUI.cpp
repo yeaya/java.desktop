@@ -133,6 +133,7 @@ void WindowsTabbedPaneUI::init$() {
 }
 
 void WindowsTabbedPaneUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$BasicTabbedPaneUI::installDefaults();
 	this->contentOpaque = $UIManager::getBoolean("TabbedPane.contentOpaque"_s);
 	if (WindowsTabbedPaneUI::managingFocusForwardTraversalKeys == nullptr) {
@@ -159,6 +160,7 @@ $ComponentUI* WindowsTabbedPaneUI::createUI($JComponent* c) {
 }
 
 void WindowsTabbedPaneUI::setRolloverTab(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if ($XPStyle::getXP() != nullptr) {
 		int32_t oldRolloverTab = getRolloverTab();
 		$BasicTabbedPaneUI::setRolloverTab(index);
@@ -183,6 +185,7 @@ void WindowsTabbedPaneUI::setRolloverTab(int32_t index) {
 }
 
 void WindowsTabbedPaneUI::paintContentBorder($Graphics* g, int32_t tabPlacement, int32_t selectedIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr && (this->contentOpaque || $nc(this->tabPane)->isOpaque())) {
 		$init($TMSchema$Part);
@@ -221,6 +224,7 @@ void WindowsTabbedPaneUI::paintTabBackground($Graphics* g, int32_t tabPlacement,
 }
 
 void WindowsTabbedPaneUI::paintTabBorder($Graphics* g, int32_t tabPlacement, int32_t tabIndex, int32_t x, int32_t y, int32_t w, int32_t h, bool isSelected) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$TMSchema$Part* part = nullptr;

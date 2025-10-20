@@ -87,6 +87,7 @@ $Object* CSS$BackgroundImage::parseHtmlValue($String* value) {
 }
 
 $ImageIcon* CSS$BackgroundImage::getImage($URL* base) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->loadedImage) {
 		$synchronized(this) {
 			if (!this->loadedImage) {

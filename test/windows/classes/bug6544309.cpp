@@ -103,6 +103,7 @@ void bug6544309::init$() {
 }
 
 void bug6544309::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6544309);
 	$assignStatic(bug6544309::robot, $new($Robot));
 	$nc(bug6544309::robot)->setAutoDelay(100);
@@ -132,6 +133,7 @@ void bug6544309::main($StringArray* args) {
 }
 
 void bug6544309::setupUI() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, dialog, $new($JDialog));
 	$nc(this->dialog)->setDefaultCloseOperation($JDialog::DISPOSE_ON_CLOSE);
 	$nc(this->dialog)->setSize(200, 100);

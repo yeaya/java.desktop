@@ -105,6 +105,7 @@ void AdobeMarkerSegment::init$($Node* node) {
 }
 
 $IIOMetadataNode* AdobeMarkerSegment::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "app14Adobe"_s));
 	node->setAttribute("version"_s, $($Integer::toString(this->version)));
 	node->setAttribute("flags0"_s, $($Integer::toString(this->flags0)));
@@ -153,6 +154,7 @@ void AdobeMarkerSegment::writeAdobeSegment($ImageOutputStream* ios, int32_t tran
 }
 
 void AdobeMarkerSegment::print() {
+	$useLocalCurrentObjectStackCache();
 	printTag("Adobe APP14"_s);
 	$init($System);
 	$nc($System::out)->print("Version: "_s);

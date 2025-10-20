@@ -204,6 +204,7 @@ $ColorModel* SimpleRenderedImage::getColorModel() {
 }
 
 $Object* SimpleRenderedImage::getProperty($String* name$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, name$renamed);
 	$assign(name, $nc(name)->toLowerCase());
 	$var($Object, value, $nc(this->properties)->get(name));
@@ -212,6 +213,7 @@ $Object* SimpleRenderedImage::getProperty($String* name$renamed) {
 }
 
 $StringArray* SimpleRenderedImage::getPropertyNames() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringArray, names, nullptr);
 	if ($nc(this->properties)->size() > 0) {
 		$assign(names, $new($StringArray, $nc(this->properties)->size()));
@@ -226,6 +228,7 @@ $StringArray* SimpleRenderedImage::getPropertyNames() {
 }
 
 $StringArray* SimpleRenderedImage::getPropertyNames($String* prefix$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prefix, prefix$renamed);
 	$var($StringArray, propertyNames, getPropertyNames());
 	if (propertyNames == nullptr) {
@@ -313,6 +316,7 @@ $Raster* SimpleRenderedImage::getData() {
 }
 
 $Raster* SimpleRenderedImage::getData($Rectangle* bounds$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, bounds, bounds$renamed);
 	$var($Rectangle, imageBounds, getBounds());
 	if (bounds == nullptr) {
@@ -351,6 +355,7 @@ $Raster* SimpleRenderedImage::getData($Rectangle* bounds$renamed) {
 }
 
 $WritableRaster* SimpleRenderedImage::copyData($WritableRaster* dest$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($WritableRaster, dest, dest$renamed);
 	$var($Rectangle, imageBounds, getBounds());
 	$var($Rectangle, bounds, nullptr);

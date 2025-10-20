@@ -186,6 +186,7 @@ $PropertyChangeListener* BasicToolTipUI::createPropertyChangeListener($JComponen
 }
 
 void BasicToolTipUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, font, $nc(c)->getFont());
 	$var($FontMetrics, metrics, $SwingUtilities2::getFontMetrics(c, g, font));
 	$var($Dimension, size, c->getSize());
@@ -207,6 +208,7 @@ void BasicToolTipUI::paint($Graphics* g, $JComponent* c) {
 }
 
 $Dimension* BasicToolTipUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, font, $nc(c)->getFont());
 	$var($FontMetrics, fm, c->getFontMetrics(font));
 	$var($Insets, insets, c->getInsets());
@@ -228,6 +230,7 @@ $Dimension* BasicToolTipUI::getPreferredSize($JComponent* c) {
 }
 
 $Dimension* BasicToolTipUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, getPreferredSize(c));
 	$init($BasicHTML);
 	$var($View, v, $cast($View, $nc(c)->getClientProperty($BasicHTML::propertyKey)));
@@ -239,6 +242,7 @@ $Dimension* BasicToolTipUI::getMinimumSize($JComponent* c) {
 }
 
 $Dimension* BasicToolTipUI::getMaximumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, getPreferredSize(c));
 	$init($BasicHTML);
 	$var($View, v, $cast($View, $nc(c)->getClientProperty($BasicHTML::propertyKey)));

@@ -75,6 +75,7 @@ void TabProb$FixLayout::init$($TabProb* this$0) {
 }
 
 void TabProb$FixLayout::layoutContainer($Container* C) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, in, $nc(C)->getInsets());
 	int32_t w = 200 - $nc(in)->left - in->right;
 	int32_t h = 100 - in->top - in->bottom;

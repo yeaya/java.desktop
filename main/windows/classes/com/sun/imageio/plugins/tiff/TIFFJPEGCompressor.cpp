@@ -126,6 +126,7 @@ $Object* allocate$TIFFJPEGCompressor($Class* clazz) {
 
 $ImageReader* TIFFJPEGCompressor::getJPEGTablesReader() {
 	$init(TIFFJPEGCompressor);
+	$useLocalCurrentObjectStackCache();
 	$var($ImageReader, jpegReader, nullptr);
 	try {
 		$var($IIORegistry, registry, $IIORegistry::getDefaultInstance());
@@ -146,6 +147,7 @@ void TIFFJPEGCompressor::init$($ImageWriteParam* param) {
 }
 
 void TIFFJPEGCompressor::setMetadata($IIOMetadata* metadata) {
+	$useLocalCurrentObjectStackCache();
 	$TIFFBaseJPEGCompressor::setMetadata(metadata);
 	if ($instanceOf($TIFFImageMetadata, metadata)) {
 		$var($TIFFImageMetadata, tim, $cast($TIFFImageMetadata, metadata));

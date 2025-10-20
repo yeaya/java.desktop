@@ -99,6 +99,7 @@ $Object* allocate$SwatchPanel($Class* clazz) {
 }
 
 void SwatchPanel::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JPanel::init$();
 	initValues();
 	initColors();
@@ -120,6 +121,7 @@ void SwatchPanel::initValues() {
 }
 
 void SwatchPanel::paintComponent($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor($(getBackground()));
 	int32_t var$0 = getWidth();
 	g->fillRect(0, 0, var$0, getHeight());
@@ -165,6 +167,7 @@ void SwatchPanel::initColors() {
 }
 
 $String* SwatchPanel::getToolTipText($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc(e)->getX();
 	$var($Color, color, getColorForLocation(var$0, e->getY()));
 	$var($String, var$3, $$str({$$str($nc(color)->getRed()), ", "_s}));

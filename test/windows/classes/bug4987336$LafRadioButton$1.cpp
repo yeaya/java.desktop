@@ -98,6 +98,7 @@ void bug4987336$LafRadioButton$1::init$($bug4987336$LafRadioButton* this$1, $bug
 }
 
 void bug4987336$LafRadioButton$1::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(this->val$lafInfo)->getClassName()));
 		$SwingUtilities::updateComponentTreeUI(this->this$1->this$0);

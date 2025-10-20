@@ -170,6 +170,7 @@ $AttributeSet* TableView$RowView::getAttributes() {
 }
 
 $View* TableView$RowView::findViewAtPoint(int32_t x, int32_t y, $Rectangle* alloc) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = getViewCount();
 	for (int32_t i = 0; i < n; ++i) {
 		if ($nc($(getChildAllocation(i, alloc)))->contains((double)x, (double)y)) {
@@ -186,6 +187,7 @@ $StyleSheet* TableView$RowView::getStyleSheet() {
 }
 
 void TableView$RowView::preferenceChanged($View* child, bool width, bool height) {
+	$useLocalCurrentObjectStackCache();
 	$BoxView::preferenceChanged(child, width, height);
 	if (this->this$0->multiRowCells && height) {
 		for (int32_t i = this->rowIndex - 1; i >= 0; --i) {
@@ -264,6 +266,7 @@ void TableView$RowView::replace(int32_t offset, int32_t length, $ViewArray* view
 }
 
 $SizeRequirements* TableView$RowView::calculateMinorAxisRequirements(int32_t axis, $SizeRequirements* r$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($SizeRequirements, r, r$renamed);
 	int64_t min = 0;
 	int64_t pref = 0;
@@ -292,6 +295,7 @@ $SizeRequirements* TableView$RowView::calculateMinorAxisRequirements(int32_t axi
 }
 
 void TableView$RowView::layoutMajorAxis(int32_t targetSpan, int32_t axis, $ints* offsets, $ints* spans) {
+	$useLocalCurrentObjectStackCache();
 	int32_t col = 0;
 	int32_t ncells = getViewCount();
 	for (int32_t cell = 0; cell < ncells; ++cell) {
@@ -319,6 +323,7 @@ void TableView$RowView::layoutMajorAxis(int32_t targetSpan, int32_t axis, $ints*
 }
 
 void TableView$RowView::layoutMinorAxis(int32_t targetSpan, int32_t axis, $ints* offsets, $ints* spans) {
+	$useLocalCurrentObjectStackCache();
 	$BoxView::layoutMinorAxis(targetSpan, axis, offsets, spans);
 	int32_t col = 0;
 	int32_t ncells = getViewCount();
@@ -344,6 +349,7 @@ int32_t TableView$RowView::getResizeWeight(int32_t axis) {
 }
 
 $View* TableView$RowView::getViewAtPosition(int32_t pos, $Rectangle* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = getViewCount();
 	for (int32_t i = 0; i < n; ++i) {
 		$var($View, v, getView(i));

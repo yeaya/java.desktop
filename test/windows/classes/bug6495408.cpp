@@ -129,6 +129,7 @@ void bug6495408::init$() {
 }
 
 void bug6495408::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

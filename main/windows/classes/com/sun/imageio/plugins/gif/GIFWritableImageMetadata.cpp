@@ -126,6 +126,7 @@ $bytes* GIFWritableImageMetadata::fromISO8859($String* data) {
 }
 
 void GIFWritableImageMetadata::mergeNativeTree($Node* root) {
+	$useLocalCurrentObjectStackCache();
 	$var($Node, node, root);
 	$init($GIFImageMetadata);
 	if (!$nc($($nc(node)->getNodeName()))->equals($GIFImageMetadata::nativeMetadataFormatName)) {
@@ -211,6 +212,7 @@ void GIFWritableImageMetadata::mergeNativeTree($Node* root) {
 }
 
 void GIFWritableImageMetadata::mergeStandardTree($Node* root) {
+	$useLocalCurrentObjectStackCache();
 	$var($Node, node, root);
 	$init($IIOMetadataFormatImpl);
 	if (!$nc($($nc(node)->getNodeName()))->equals($IIOMetadataFormatImpl::standardMetadataFormatName)) {

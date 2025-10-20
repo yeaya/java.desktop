@@ -209,6 +209,7 @@ void TestJTextPaneBackgroundColor::init$() {
 
 void TestJTextPaneBackgroundColor::blockTillDisplayed($Component* comp) {
 	$init(TestJTextPaneBackgroundColor);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	while (p == nullptr) {
 		try {
@@ -226,6 +227,7 @@ void TestJTextPaneBackgroundColor::blockTillDisplayed($Component* comp) {
 
 void TestJTextPaneBackgroundColor::main($StringArray* args) {
 	$init(TestJTextPaneBackgroundColor);
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($System::getProperty("os.name"_s)))->startsWith("Linux"_s)) {
 		$init($System);
 		$nc($System::out)->println("This test is meant for Linux platform only"_s);

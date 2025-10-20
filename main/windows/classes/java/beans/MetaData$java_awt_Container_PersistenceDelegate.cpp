@@ -74,6 +74,7 @@ void MetaData$java_awt_Container_PersistenceDelegate::init$() {
 }
 
 void MetaData$java_awt_Container_PersistenceDelegate::initialize($Class* type, Object$* oldInstance, Object$* newInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultPersistenceDelegate::initialize(type, oldInstance, newInstance, out);
 	if ($instanceOf($JScrollPane, oldInstance)) {
 		return;

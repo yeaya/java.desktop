@@ -114,6 +114,7 @@ void Point2D$Float::setLocation(float x, float y) {
 }
 
 $String* Point2D$Float::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"Point2D.Float["_s, $$str(this->x), ", "_s, $$str(this->y), "]"_s});
 }
 

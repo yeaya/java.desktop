@@ -118,6 +118,7 @@ void Element::init$() {
 }
 
 void Element::init$($String* name, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	this->type = $DTDConstants::ANY;
 	$set(this, name, name);
 	this->index = index;
@@ -128,6 +129,7 @@ void Element::init$($String* name, int32_t index) {
 
 int32_t Element::getMaxIndex() {
 	$init(Element);
+	$useLocalCurrentObjectStackCache();
 	$var($Integer, value, $cast($Integer, $nc($($AppContext::getAppContext()))->get(Element::MAX_INDEX_KEY)));
 	return (value != nullptr) ? $nc(value)->intValue() : 0;
 }
@@ -199,6 +201,7 @@ int32_t Element::name2type($String* nm) {
 }
 
 void clinit$Element($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(Element::MAX_INDEX_KEY, $new($Object));
 	$assignStatic(Element::contentTypes, $new($Hashtable));
 	{

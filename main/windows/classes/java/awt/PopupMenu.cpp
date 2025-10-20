@@ -130,6 +130,7 @@ $MenuContainer* PopupMenu::getParent() {
 }
 
 $String* PopupMenu::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(PopupMenu::class$) {
 		$var($String, var$0, PopupMenu::base);
 		return $concat(var$0, $$str(PopupMenu::nameCounter++));
@@ -137,6 +138,7 @@ $String* PopupMenu::constructComponentName() {
 }
 
 void PopupMenu::addNotify() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		if (this->parent != nullptr && !($instanceOf($Component, this->parent))) {
 			$Menu::addNotify();
@@ -155,6 +157,7 @@ void PopupMenu::addNotify() {
 }
 
 void PopupMenu::show($Component* origin, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuContainer, localParent, this->parent);
 	if (localParent == nullptr) {
 		$throwNew($NullPointerException, "parent is null"_s);

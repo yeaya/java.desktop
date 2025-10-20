@@ -92,6 +92,7 @@ void MatteBorder::init$($Icon* tileIcon) {
 }
 
 void MatteBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, getBorderInsets(c));
 	$var($Color, oldColor, $nc(g)->getColor());
 	g->translate(x, y);

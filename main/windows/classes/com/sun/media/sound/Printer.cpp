@@ -77,6 +77,7 @@ void Printer::err($String* str) {
 
 bool Printer::isBuildInternal() {
 	$init(Printer);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, javaVersion, $cast($String, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, "java.version"_s)))));
 	return javaVersion != nullptr && javaVersion->contains("internal"_s);
@@ -84,6 +85,7 @@ bool Printer::isBuildInternal() {
 
 void Printer::println($String* s) {
 	$init(Printer);
+	$useLocalCurrentObjectStackCache();
 	$var($String, prepend, ""_s);
 	{
 		$assign(prepend, $str({"thread "_s, $$str($($Thread::currentThread())->getId()), " "_s, prepend}));

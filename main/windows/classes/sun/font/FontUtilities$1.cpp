@@ -76,6 +76,7 @@ void FontUtilities$1::init$() {
 }
 
 $Object* FontUtilities$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, osName, $System::getProperty("os.name"_s, "unknownOS"_s));
 	$init($FontUtilities);
 	$FontUtilities::isLinux = $nc(osName)->startsWith("Linux"_s);

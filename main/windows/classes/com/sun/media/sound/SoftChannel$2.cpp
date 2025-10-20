@@ -79,6 +79,7 @@ void SoftChannel$2::init$($SoftChannel* this$0) {
 }
 
 $doubles* SoftChannel$2::get(int32_t instance, $String* name) {
+	$useLocalCurrentObjectStackCache();
 	if (name == nullptr) {
 		return nullptr;
 	}

@@ -116,6 +116,7 @@ void RenderBadPictureCrash::main($StringArray* args) {
 }
 
 void RenderBadPictureCrash::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, f, $new($JFrame));
 	f->setUndecorated(true);
 	$var($GraphicsDevice, gd, $nc($(f->getGraphicsConfiguration()))->getDevice());

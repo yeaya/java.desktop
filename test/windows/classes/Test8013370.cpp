@@ -103,6 +103,7 @@ void Test8013370::init$() {
 
 void Test8013370::main($StringArray* args) {
 	$init(Test8013370);
+	$useLocalCurrentObjectStackCache();
 	$var(Test8013370, task, $new(Test8013370));
 	$SwingUtilities::invokeAndWait(task);
 	$var($Robot, robot, $new($Robot));
@@ -115,6 +116,7 @@ void Test8013370::main($StringArray* args) {
 }
 
 void Test8013370::run() {
+	$useLocalCurrentObjectStackCache();
 	if (this->frame == nullptr) {
 		$var($JMenuBar, menu, $new($Test8013370$1, this));
 		menu->add(static_cast<$Component*>($$new($JMenuItem, "Menu"_s)));

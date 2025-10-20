@@ -152,6 +152,7 @@ void JInternalFrameIconTest::init$() {
 
 void JInternalFrameIconTest::main($StringArray* args) {
 	$init(JInternalFrameIconTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(JInternalFrameIconTest::robot, $new($Robot));
 	$var($UIManager$LookAndFeelInfoArray, lookAndFeelArray, $UIManager::getInstalledLookAndFeels());
 	{
@@ -209,6 +210,7 @@ void JInternalFrameIconTest::createIconUI($String* lookAndFeelString) {
 
 void JInternalFrameIconTest::getImageIconBufferedImage() {
 	$init(JInternalFrameIconTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, point, $nc(JInternalFrameIconTest::internalFrame)->getLocationOnScreen());
 	$var($Rectangle, rect, $nc(JInternalFrameIconTest::internalFrame)->getBounds());
 	int32_t var$0 = $nc(point)->x + $nc($($nc(JInternalFrameIconTest::internalFrame)->getInsets()))->left;
@@ -222,6 +224,7 @@ void JInternalFrameIconTest::getImageIconBufferedImage() {
 
 void JInternalFrameIconTest::getIconBufferedImage() {
 	$init(JInternalFrameIconTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, point, $nc(JInternalFrameIconTest::internalFrame)->getLocationOnScreen());
 	$var($Rectangle, rect, $nc(JInternalFrameIconTest::internalFrame)->getBounds());
 	int32_t var$0 = $nc(point)->x + $nc($($nc(JInternalFrameIconTest::internalFrame)->getInsets()))->left;
@@ -235,6 +238,7 @@ void JInternalFrameIconTest::getIconBufferedImage() {
 
 void JInternalFrameIconTest::testIfSame($String* lookAndFeelString) {
 	$init(JInternalFrameIconTest);
+	$useLocalCurrentObjectStackCache();
 	if (!bufferedImagesEqual(JInternalFrameIconTest::imageIconImage, JInternalFrameIconTest::iconImage)) {
 		$ImageIO::write(static_cast<$RenderedImage*>(JInternalFrameIconTest::imageIconImage), "png"_s, $$new($File, "imageicon-fail.png"_s));
 		$ImageIO::write(static_cast<$RenderedImage*>(JInternalFrameIconTest::iconImage), "png"_s, $$new($File, "iconImage-fail.png"_s));
@@ -300,6 +304,7 @@ void JInternalFrameIconTest::cleanUp() {
 
 bool JInternalFrameIconTest::tryLookAndFeel($String* lookAndFeelString) {
 	$init(JInternalFrameIconTest);
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(lookAndFeelString)->contains("motif"_s);
 	if (var$0 || $nc(lookAndFeelString)->contains("gtk"_s)) {
 		return false;

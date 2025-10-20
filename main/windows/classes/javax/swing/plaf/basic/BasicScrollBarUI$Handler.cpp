@@ -123,6 +123,7 @@ void BasicScrollBarUI$Handler::focusLost($FocusEvent* e) {
 }
 
 void BasicScrollBarUI$Handler::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propertyName, $nc(e)->getPropertyName());
 	if ("model"_s == propertyName) {
 		$var($BoundedRangeModel, oldModel, $cast($BoundedRangeModel, e->getOldValue()));

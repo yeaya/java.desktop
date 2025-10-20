@@ -137,6 +137,7 @@ void bug4506788::main($StringArray* args) {
 }
 
 void bug4506788::init() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$SwingUtilities::invokeAndWait($$new($bug4506788$1, this));
 	} catch ($InterruptedException&) {
@@ -151,6 +152,7 @@ void bug4506788::init() {
 }
 
 void bug4506788::start() {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, nullptr);
 	try {
 		$assign(robot, $new($Robot));
@@ -185,12 +187,14 @@ void bug4506788::start() {
 }
 
 $Point* bug4506788::getJEPLocOnScreen() {
+	$useLocalCurrentObjectStackCache();
 	$var($PointArray, result, $new($PointArray, 1));
 	$SwingUtilities::invokeAndWait($$new($bug4506788$2, this, result));
 	return result->get(0);
 }
 
 void bug4506788::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, jep, $new($JEditorPane));
 	$var($String, text, "abc"_s);
 	$var($JFrame, f, $new($JFrame));

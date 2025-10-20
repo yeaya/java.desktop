@@ -347,6 +347,7 @@ void ComboBoxPainter::doPaint($Graphics2D* g, $JComponent* c, int32_t width, int
 }
 
 $ObjectArray* ComboBoxPainter::getExtendedCacheKeys($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, extendedCacheKeys, nullptr);
 	switch (this->state) {
 	case ComboBoxPainter::BACKGROUND_ENABLED:
@@ -458,6 +459,7 @@ $AbstractRegionPainter$PaintContext* ComboBoxPainter::getPaintContext() {
 }
 
 void ComboBoxPainter::paintBackgroundDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->path);
@@ -476,6 +478,7 @@ void ComboBoxPainter::paintBackgroundDisabled($Graphics2D* g) {
 }
 
 void ComboBoxPainter::paintBackgroundDisabledAndPressed($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->path);
@@ -494,6 +497,7 @@ void ComboBoxPainter::paintBackgroundDisabledAndPressed($Graphics2D* g) {
 }
 
 void ComboBoxPainter::paintBackgroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color14);
 	g->fill(this->path);
@@ -512,6 +516,7 @@ void ComboBoxPainter::paintBackgroundEnabled($Graphics2D* g) {
 }
 
 void ComboBoxPainter::paintBackgroundFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color26);
 	g->fill(this->roundRect);
@@ -530,6 +535,7 @@ void ComboBoxPainter::paintBackgroundFocused($Graphics2D* g) {
 }
 
 void ComboBoxPainter::paintBackgroundMouseOverAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color26);
 	g->fill(this->roundRect);
@@ -548,6 +554,7 @@ void ComboBoxPainter::paintBackgroundMouseOverAndFocused($Graphics2D* g) {
 }
 
 void ComboBoxPainter::paintBackgroundMouseOver($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color14);
 	g->fill(this->path);
@@ -566,6 +573,7 @@ void ComboBoxPainter::paintBackgroundMouseOver($Graphics2D* g) {
 }
 
 void ComboBoxPainter::paintBackgroundPressedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color26);
 	g->fill(this->roundRect);
@@ -584,6 +592,7 @@ void ComboBoxPainter::paintBackgroundPressedAndFocused($Graphics2D* g) {
 }
 
 void ComboBoxPainter::paintBackgroundPressed($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color51);
 	g->fill(this->path);
@@ -602,6 +611,7 @@ void ComboBoxPainter::paintBackgroundPressed($Graphics2D* g) {
 }
 
 void ComboBoxPainter::paintBackgroundEnabledAndSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color52);
 	g->fill(this->path);
@@ -848,6 +858,7 @@ $Rectangle2D* ComboBoxPainter::decodeRect2() {
 }
 
 $Paint* ComboBoxPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -865,6 +876,7 @@ $Paint* ComboBoxPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* ComboBoxPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -890,6 +902,7 @@ $Paint* ComboBoxPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* ComboBoxPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -907,6 +920,7 @@ $Paint* ComboBoxPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* ComboBoxPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -932,6 +946,7 @@ $Paint* ComboBoxPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* ComboBoxPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -949,6 +964,7 @@ $Paint* ComboBoxPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* ComboBoxPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -974,6 +990,7 @@ $Paint* ComboBoxPainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* ComboBoxPainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -991,6 +1008,7 @@ $Paint* ComboBoxPainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* ComboBoxPainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1016,6 +1034,7 @@ $Paint* ComboBoxPainter::decodeGradient8($Shape* s) {
 }
 
 $Paint* ComboBoxPainter::decodeGradient9($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1033,6 +1052,7 @@ $Paint* ComboBoxPainter::decodeGradient9($Shape* s) {
 }
 
 $Paint* ComboBoxPainter::decodeGradient10($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1050,6 +1070,7 @@ $Paint* ComboBoxPainter::decodeGradient10($Shape* s) {
 }
 
 $Paint* ComboBoxPainter::decodeGradient11($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1067,6 +1088,7 @@ $Paint* ComboBoxPainter::decodeGradient11($Shape* s) {
 }
 
 $Paint* ComboBoxPainter::decodeGradient12($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

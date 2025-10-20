@@ -240,6 +240,7 @@ void TestButtonGroupFocusTraversal::init$() {
 }
 
 void TestButtonGroupFocusTraversal::blockTillDisplayed($Component* comp) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	while (p == nullptr) {
 		try {
@@ -275,6 +276,7 @@ void TestButtonGroupFocusTraversal::pressKey($ints* keys) {
 }
 
 void TestButtonGroupFocusTraversal::checkFocusedComponent($Component* component) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, focusedComponent, $nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner());
 	if (!$nc($of(focusedComponent))->equals(component)) {
 		$init($System);
@@ -299,6 +301,7 @@ void TestButtonGroupFocusTraversal::checkCheckboxActionPerformed() {
 }
 
 void TestButtonGroupFocusTraversal::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(TestButtonGroupFocusTraversal);
 	$assignStatic(TestButtonGroupFocusTraversal::robot, $new($Robot));
 	$nc(TestButtonGroupFocusTraversal::robot)->setAutoDelay(100);

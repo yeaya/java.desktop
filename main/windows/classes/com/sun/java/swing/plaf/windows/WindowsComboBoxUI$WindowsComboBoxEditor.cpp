@@ -79,6 +79,7 @@ void WindowsComboBoxUI$WindowsComboBoxEditor::init$() {
 }
 
 $JTextField* WindowsComboBoxUI$WindowsComboBoxEditor::createEditorComponent() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextField, editor, $BasicComboBoxEditor$UIResource::createEditorComponent());
 	$var($Border, border, $cast($Border, $UIManager::get("ComboBox.editorBorder"_s)));
 	if (border != nullptr) {
@@ -89,6 +90,7 @@ $JTextField* WindowsComboBoxUI$WindowsComboBoxEditor::createEditorComponent() {
 }
 
 void WindowsComboBoxUI$WindowsComboBoxEditor::setItem(Object$* item) {
+	$useLocalCurrentObjectStackCache();
 	$BasicComboBoxEditor$UIResource::setItem(item);
 	$var($Object, focus, $nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner());
 	if (($equals(focus, this->editor)) || ($equals(focus, $nc(this->editor)->getParent()))) {

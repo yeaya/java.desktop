@@ -192,6 +192,7 @@ void DefaultTreeCellRenderer::init$() {
 }
 
 void DefaultTreeCellRenderer::updateUI() {
+	$useLocalCurrentObjectStackCache();
 	$JLabel::updateUI();
 	if (!this->inited || ($instanceOf($UIResource, $(getLeafIcon())))) {
 		setLeafIcon($($DefaultLookup::getIcon(this, this->ui, "Tree.leafIcon"_s)));
@@ -332,6 +333,7 @@ void DefaultTreeCellRenderer::setBackground($Color* color$renamed) {
 }
 
 $Component* DefaultTreeCellRenderer::getTreeCellRendererComponent($JTree* tree, Object$* value, bool sel, bool expanded, bool leaf, int32_t row, bool hasFocus) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, stringValue, $nc(tree)->convertValueToText(value, sel, expanded, leaf, row, hasFocus));
 	$set(this, tree, tree);
 	this->hasFocus$ = hasFocus;
@@ -380,6 +382,7 @@ $Component* DefaultTreeCellRenderer::getTreeCellRendererComponent($JTree* tree, 
 }
 
 void DefaultTreeCellRenderer::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, bColor, nullptr);
 	if (this->isDropCell) {
 		$assign(bColor, $DefaultLookup::getColor(this, this->ui, "Tree.dropCellBackground"_s));

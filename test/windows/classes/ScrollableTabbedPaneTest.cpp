@@ -113,6 +113,7 @@ void ScrollableTabbedPaneTest::init$() {
 
 void ScrollableTabbedPaneTest::main($StringArray* args) {
 	$init(ScrollableTabbedPaneTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(ScrollableTabbedPaneTest::robot, $new($Robot));
 	$nc(ScrollableTabbedPaneTest::robot)->delay(1000);
 	$var($UIManager$LookAndFeelInfoArray, lookAndFeelArray, $UIManager::getInstalledLookAndFeels());
@@ -156,6 +157,7 @@ void ScrollableTabbedPaneTest::stepsToExecute($String* shortLAF) {
 
 bool ScrollableTabbedPaneTest::tryLookAndFeel($String* lookAndFeelString) {
 	$init(ScrollableTabbedPaneTest);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(lookAndFeelString);
 	} catch ($UnsupportedLookAndFeelException&) {

@@ -68,6 +68,7 @@ void OGLPaints$MultiGradient::init$() {
 }
 
 bool OGLPaints$MultiGradient::isPaintValid($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	$var($MultipleGradientPaint, paint, $cast($MultipleGradientPaint, $nc(sg2d)->paint));
 	if ($nc($($nc(paint)->getFractions()))->length > 12) {
 		return false;

@@ -269,6 +269,7 @@ void TestBackgroundScrollPolicy::init$() {
 }
 
 void TestBackgroundScrollPolicy::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(TestBackgroundScrollPolicy);
 	$assignStatic(TestBackgroundScrollPolicy::ROBOT, $new($Robot));
 	$nc(TestBackgroundScrollPolicy::ROBOT)->setAutoWaitForIdle(true);
@@ -309,6 +310,7 @@ void TestBackgroundScrollPolicy::main($StringArray* args) {
 }
 
 void TestBackgroundScrollPolicy::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 	} catch ($UnsupportedLookAndFeelException&) {
@@ -328,10 +330,12 @@ void TestBackgroundScrollPolicy::setLookAndFeel($UIManager$LookAndFeelInfo* laf)
 }
 
 void TestBackgroundScrollPolicy::addOpaqueError($UIManager$LookAndFeelInfo* laf, bool opaque) {
+	$useLocalCurrentObjectStackCache();
 	$throwNew($RuntimeException, $$str({$($nc(laf)->getClassName()), " background color wrong for opaque="_s, $$str(opaque)}));
 }
 
 void TestBackgroundScrollPolicy::createGUI() {
+	$useLocalCurrentObjectStackCache();
 	$init(TestBackgroundScrollPolicy);
 	$assignStatic(TestBackgroundScrollPolicy::pane, $new($JTabbedPane));
 	$nc(TestBackgroundScrollPolicy::pane)->setOpaque(true);
@@ -353,6 +357,7 @@ void TestBackgroundScrollPolicy::createGUI() {
 }
 
 void TestBackgroundScrollPolicy::test($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	$init(TestBackgroundScrollPolicy);
 	$var($Point, point, $new($Point, $nc(TestBackgroundScrollPolicy::pane)->getWidth() - 2, 2));
 	$SwingUtilities::convertPointToScreen(point, TestBackgroundScrollPolicy::pane);

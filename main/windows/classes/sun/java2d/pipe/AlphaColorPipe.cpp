@@ -93,6 +93,7 @@ bool AlphaColorPipe::needTile(Object$* context, int32_t x, int32_t y, int32_t w,
 }
 
 void AlphaColorPipe::renderPathTile(Object$* context, $bytes* atile, int32_t offset, int32_t tilesize, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($SunGraphics2D, sg, $cast($SunGraphics2D, context));
 	$nc($nc(sg)->alphafill)->MaskFill$(sg, $(sg->getSurfaceData()), sg->composite, x, y, w, h, atile, offset, tilesize);
 }

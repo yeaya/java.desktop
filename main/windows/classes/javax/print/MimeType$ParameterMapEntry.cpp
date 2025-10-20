@@ -87,11 +87,13 @@ $String* MimeType$ParameterMapEntry::setValue($String* value) {
 }
 
 bool MimeType$ParameterMapEntry::equals(Object$* o) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = o != nullptr && $instanceOf($Map$Entry, o) && $nc($($cast($String, getKey())))->equals($($nc(($cast($Map$Entry, o)))->getKey()));
 	return (var$0 && $nc($($cast($String, getValue())))->equals($($nc(($cast($Map$Entry, o)))->getValue())));
 }
 
 int32_t MimeType$ParameterMapEntry::hashCode() {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc($($cast($String, getKey())))->hashCode();
 	return var$0 ^ $nc($($cast($String, getValue())))->hashCode();
 }

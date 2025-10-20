@@ -84,6 +84,7 @@ void bug6691503$3::init$($bug6691503* this$0) {
 }
 
 void bug6691503$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$System::setSecurityManager($$new($SecurityManager));
 	$nc(this->this$0->popupMenu)->show(this->this$0->frame, 0, 0);

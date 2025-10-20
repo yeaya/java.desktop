@@ -163,6 +163,7 @@ void bug4708809::init$() {
 
 void bug4708809::main($StringArray* args) {
 	$init(bug4708809);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -200,6 +201,7 @@ void bug4708809::main($StringArray* args) {
 
 $Point* bug4708809::getClickPoint(double scaleX, double scaleY) {
 	$init(bug4708809);
+	$useLocalCurrentObjectStackCache();
 	$var($PointArray, result, $new($PointArray, 1));
 	$SwingUtilities::invokeAndWait($$new($bug4708809$4, result, scaleX, scaleY));
 	return result->get(0);
@@ -207,6 +209,7 @@ $Point* bug4708809::getClickPoint(double scaleX, double scaleY) {
 
 void bug4708809::createAndShowGUI() {
 	$init(bug4708809);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug4708809::fr, $new($JFrame, "Test"_s));
 	$var($JLabel, label, $new($JLabel, "picture"_s));
 	label->setPreferredSize($$new($Dimension, 500, 500));

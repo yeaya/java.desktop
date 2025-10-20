@@ -76,6 +76,7 @@ void BasicDirectoryModel$1::init$($BasicDirectoryModel* this$0, bool val$busy) {
 }
 
 void BasicDirectoryModel$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, "busy"_s);
 	$var($Object, var$1, $of($Boolean::valueOf(!this->val$busy)));
 	this->this$0->firePropertyChange(var$0, var$1, $($Boolean::valueOf(this->val$busy)));

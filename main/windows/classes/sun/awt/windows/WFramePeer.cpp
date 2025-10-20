@@ -500,6 +500,7 @@ void WFramePeer::setMaximizedBounds($Rectangle* b$renamed) {
 }
 
 $Rectangle* WFramePeer::adjustMaximizedBounds($Rectangle* bounds$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, bounds, bounds$renamed);
 	$assign(bounds, $SunGraphicsEnvironment::toDeviceSpaceAbs(bounds));
 	$var($GraphicsConfiguration, gc, getGraphicsConfiguration());
@@ -510,6 +511,7 @@ $Rectangle* WFramePeer::adjustMaximizedBounds($Rectangle* bounds$renamed) {
 }
 
 bool WFramePeer::updateGraphicsData($GraphicsConfiguration* gc) {
+	$useLocalCurrentObjectStackCache();
 	bool result = $WWindowPeer::updateGraphicsData(gc);
 	$var($Rectangle, bounds, $nc($($AWTAccessor::getFrameAccessor()))->getMaximizedBounds($cast($Frame, this->target)));
 	if (bounds != nullptr) {
@@ -531,6 +533,7 @@ void WFramePeer::reshape(int32_t x, int32_t y, int32_t width, int32_t height) {
 }
 
 $Dimension* WFramePeer::getMinimumSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, getGraphicsConfiguration());
 	$var($Dimension, d, $new($Dimension));
 	if (!$nc(($cast($Frame, this->target)))->isUndecorated()) {
@@ -570,6 +573,7 @@ void WFramePeer::setMenuBar0($WMenuBarPeer* mbPeer) {
 }
 
 void WFramePeer::init$($Frame* target) {
+	$useLocalCurrentObjectStackCache();
 	$WWindowPeer::init$(target);
 	$var($InputMethodManager, imm, $InputMethodManager::getInstance());
 	$var($String, menuString, $nc(imm)->getTriggerMenuString());
@@ -590,6 +594,7 @@ void WFramePeer::create($WComponentPeer* parent) {
 }
 
 void WFramePeer::initialize() {
+	$useLocalCurrentObjectStackCache();
 	$WWindowPeer::initialize();
 	$var($Frame, target, $cast($Frame, this->target));
 	if ($nc(target)->getTitle() != nullptr) {
@@ -637,6 +642,7 @@ void WFramePeer::synthesizeWmActivate(bool activate) {
 }
 
 void clinit$WFramePeer($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	{
 		WFramePeer::initIDs();

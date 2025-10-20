@@ -116,6 +116,7 @@ void JTextComponent$DefaultTransferHandler::init$() {
 }
 
 void JTextComponent$DefaultTransferHandler::exportToClipboard($JComponent* comp, $Clipboard* clipboard, int32_t action) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JTextComponent, comp)) {
 		$var($JTextComponent, text, $cast($JTextComponent, comp));
 		int32_t p0 = $nc(text)->getSelectionStart();
@@ -137,6 +138,7 @@ void JTextComponent$DefaultTransferHandler::exportToClipboard($JComponent* comp,
 }
 
 bool JTextComponent$DefaultTransferHandler::importData($JComponent* comp, $Transferable* t) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JTextComponent, comp)) {
 		$var($DataFlavor, flavor, getFlavor($($nc(t)->getTransferDataFlavors())));
 		if (flavor != nullptr) {
@@ -172,6 +174,7 @@ int32_t JTextComponent$DefaultTransferHandler::getSourceActions($JComponent* c) 
 }
 
 $DataFlavor* JTextComponent$DefaultTransferHandler::getFlavor($DataFlavorArray* flavors) {
+	$useLocalCurrentObjectStackCache();
 	if (flavors != nullptr) {
 		{
 			$var($DataFlavorArray, arr$, flavors);

@@ -142,6 +142,7 @@ void DefaultHighlighter::init$() {
 }
 
 void DefaultHighlighter::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	int32_t len = $nc(this->highlights)->size();
 	for (int32_t i = 0; i < len; ++i) {
 		$var($DefaultHighlighter$HighlightInfo, info, $cast($DefaultHighlighter$HighlightInfo, $nc(this->highlights)->elementAt(i)));
@@ -175,6 +176,7 @@ void DefaultHighlighter::deinstall($JTextComponent* c) {
 }
 
 $Object* DefaultHighlighter::addHighlight(int32_t p0, int32_t p1, $Highlighter$HighlightPainter* p) {
+	$useLocalCurrentObjectStackCache();
 	if (p0 < 0) {
 		$throwNew($BadLocationException, "Invalid start offset"_s, p0);
 	}
@@ -192,6 +194,7 @@ $Object* DefaultHighlighter::addHighlight(int32_t p0, int32_t p1, $Highlighter$H
 }
 
 void DefaultHighlighter::removeHighlight(Object$* tag) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($DefaultHighlighter$LayeredHighlightInfo, tag)) {
 		$var($DefaultHighlighter$LayeredHighlightInfo, lhi, $cast($DefaultHighlighter$LayeredHighlightInfo, tag));
 		if ($nc(lhi)->width > 0 && lhi->height > 0) {
@@ -205,6 +208,7 @@ void DefaultHighlighter::removeHighlight(Object$* tag) {
 }
 
 void DefaultHighlighter::removeAllHighlights() {
+	$useLocalCurrentObjectStackCache();
 	$var($TextUI, mapper, $cast($TextUI, $nc(this->component)->getUI()));
 	if (getDrawsLayeredHighlights()) {
 		int32_t len = $nc(this->highlights)->size();
@@ -264,6 +268,7 @@ void DefaultHighlighter::removeAllHighlights() {
 }
 
 void DefaultHighlighter::changeHighlight(Object$* tag, int32_t p0, int32_t p1) {
+	$useLocalCurrentObjectStackCache();
 	if (p0 < 0) {
 		$throwNew($BadLocationException, "Invalid beginning of the range"_s, p0);
 	}
@@ -311,6 +316,7 @@ $Highlighter$HighlightArray* DefaultHighlighter::getHighlights() {
 }
 
 void DefaultHighlighter::paintLayeredHighlights($Graphics* g, int32_t p0, int32_t p1, $Shape* viewBounds, $JTextComponent* editor, $View* view) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t counter = $nc(this->highlights)->size() - 1; counter >= 0; --counter) {
 		$var($DefaultHighlighter$HighlightInfo, tag, $cast($DefaultHighlighter$HighlightInfo, $nc(this->highlights)->elementAt(counter)));
 		if ($instanceOf($DefaultHighlighter$LayeredHighlightInfo, tag)) {
@@ -329,6 +335,7 @@ void DefaultHighlighter::safeDamageRange($Position* p0, $Position* p1) {
 }
 
 void DefaultHighlighter::safeDamageRange(int32_t a0, int32_t a1) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(this->component)->getDocument());
 	$var($Position, var$0, $nc(doc)->createPosition(a0));
 	safeDamageRange(var$0, $(doc->createPosition(a1)));

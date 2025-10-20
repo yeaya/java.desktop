@@ -166,6 +166,7 @@ void MenuItemIconTest::init$() {
 
 void MenuItemIconTest::main($StringArray* args) {
 	$init(MenuItemIconTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(MenuItemIconTest::robot, $new($Robot));
 	$var($String, name, $UIManager::getSystemLookAndFeelClassName());
 	try {
@@ -211,6 +212,7 @@ void MenuItemIconTest::checkPixeclColor(int32_t x, int32_t y) {
 
 $ImageIcon* MenuItemIconTest::createIcon() {
 	$init(MenuItemIconTest);
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, bi, $new($BufferedImage, MenuItemIconTest::IMAGE_WIDTH_AND_HEIGHT, MenuItemIconTest::IMAGE_WIDTH_AND_HEIGHT, $BufferedImage::TYPE_INT_ARGB));
 	$var($Graphics, g, bi->createGraphics());
 	$init($Color);
@@ -227,6 +229,7 @@ void MenuItemIconTest::executeTest() {
 
 void MenuItemIconTest::lambda$createUI$0() {
 	$init(MenuItemIconTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(MenuItemIconTest::frame, $new($JFrame));
 	$nc(MenuItemIconTest::frame)->setTitle("Test"_s);
 	$var($JMenuBar, menuBar, $new($JMenuBar));

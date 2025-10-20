@@ -185,6 +185,7 @@ void bug6683775::init$() {
 }
 
 void bug6683775::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, getGC());
 	$init($GraphicsDevice$WindowTranslucency);
 	if (gc == nullptr || !$nc($($nc(gc)->getDevice()))->isWindowTranslucencySupported($GraphicsDevice$WindowTranslucency::PERPIXEL_TRANSLUCENT)) {
@@ -205,6 +206,7 @@ void bug6683775::main($StringArray* args) {
 }
 
 void bug6683775::setOpaque($Window* window, bool opaque) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, bg, $nc(window)->getBackground());
 	if (bg == nullptr) {
 		$assign(bg, $new($Color, 0, 0, 0, 0));
@@ -215,6 +217,7 @@ void bug6683775::setOpaque($Window* window, bool opaque) {
 }
 
 $GraphicsConfiguration* bug6683775::getGC() {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, transparencyCapableGC, $nc($($nc($($GraphicsEnvironment::getLocalGraphicsEnvironment()))->getDefaultScreenDevice()))->getDefaultConfiguration());
 	if (!$nc(transparencyCapableGC)->isTranslucencyCapable()) {
 		$assign(transparencyCapableGC, nullptr);
@@ -233,6 +236,7 @@ $GraphicsConfiguration* bug6683775::getGC() {
 }
 
 void bug6683775::lambda$main$0($JFrame* testFrame) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, backgroundFrame, $new($JFrame, "Background frame"_s));
 	backgroundFrame->setUndecorated(true);
 	$var($JPanel, panel, $new($JPanel));

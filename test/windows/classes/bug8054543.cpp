@@ -74,6 +74,7 @@ $Object* allocate$bug8054543($Class* clazz) {
 }
 
 void bug8054543::init$() {
+	$useLocalCurrentObjectStackCache();
 	$var($JLayer, layer, $new($JLayer));
 	$init($Color);
 	$var($Border, border, $BorderFactory::createLineBorder($Color::GREEN));

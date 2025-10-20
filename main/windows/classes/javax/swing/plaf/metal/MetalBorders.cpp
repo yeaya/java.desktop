@@ -134,6 +134,7 @@ void MetalBorders::init$() {
 
 $Border* MetalBorders::getButtonBorder() {
 	$init(MetalBorders);
+	$useLocalCurrentObjectStackCache();
 	if (MetalBorders::buttonBorder == nullptr) {
 		$var($Border, var$0, static_cast<$Border*>($new($MetalBorders$ButtonBorder)));
 		$assignStatic(MetalBorders::buttonBorder, $new($BorderUIResource$CompoundBorderUIResource, var$0, $$new($BasicBorders$MarginBorder)));
@@ -143,6 +144,7 @@ $Border* MetalBorders::getButtonBorder() {
 
 $Border* MetalBorders::getTextBorder() {
 	$init(MetalBorders);
+	$useLocalCurrentObjectStackCache();
 	if (MetalBorders::textBorder == nullptr) {
 		$var($Border, var$0, static_cast<$Border*>($new($MetalBorders$Flush3DBorder)));
 		$assignStatic(MetalBorders::textBorder, $new($BorderUIResource$CompoundBorderUIResource, var$0, $$new($BasicBorders$MarginBorder)));
@@ -152,6 +154,7 @@ $Border* MetalBorders::getTextBorder() {
 
 $Border* MetalBorders::getTextFieldBorder() {
 	$init(MetalBorders);
+	$useLocalCurrentObjectStackCache();
 	if (MetalBorders::textFieldBorder == nullptr) {
 		$var($Border, var$0, static_cast<$Border*>($new($MetalBorders$TextFieldBorder)));
 		$assignStatic(MetalBorders::textFieldBorder, $new($BorderUIResource$CompoundBorderUIResource, var$0, $$new($BasicBorders$MarginBorder)));
@@ -161,6 +164,7 @@ $Border* MetalBorders::getTextFieldBorder() {
 
 $Border* MetalBorders::getToggleButtonBorder() {
 	$init(MetalBorders);
+	$useLocalCurrentObjectStackCache();
 	if (MetalBorders::toggleButtonBorder == nullptr) {
 		$var($Border, var$0, static_cast<$Border*>($new($MetalBorders$ToggleButtonBorder)));
 		$assignStatic(MetalBorders::toggleButtonBorder, $new($BorderUIResource$CompoundBorderUIResource, var$0, $$new($BasicBorders$MarginBorder)));
@@ -170,12 +174,14 @@ $Border* MetalBorders::getToggleButtonBorder() {
 
 $Border* MetalBorders::getDesktopIconBorder() {
 	$init(MetalBorders);
+	$useLocalCurrentObjectStackCache();
 	$var($Border, var$0, static_cast<$Border*>($new($LineBorder, $($MetalLookAndFeel::getControlDarkShadow()), 1)));
 	return $new($BorderUIResource$CompoundBorderUIResource, var$0, $$new($MatteBorder, 2, 2, 1, 2, $(static_cast<$Color*>($MetalLookAndFeel::getControl()))));
 }
 
 $Border* MetalBorders::getToolBarRolloverBorder() {
 	$init(MetalBorders);
+	$useLocalCurrentObjectStackCache();
 	if ($MetalLookAndFeel::usingOcean()) {
 		$var($Border, var$0, static_cast<$Border*>($new($MetalBorders$ButtonBorder)));
 		return $new($CompoundBorder, var$0, $$new($MetalBorders$RolloverMarginBorder));
@@ -186,6 +192,7 @@ $Border* MetalBorders::getToolBarRolloverBorder() {
 
 $Border* MetalBorders::getToolBarNonrolloverBorder() {
 	$init(MetalBorders);
+	$useLocalCurrentObjectStackCache();
 	if ($MetalLookAndFeel::usingOcean()) {
 		$var($Border, var$0, static_cast<$Border*>($new($MetalBorders$ButtonBorder)));
 		$new($CompoundBorder, var$0, $$new($MetalBorders$RolloverMarginBorder));

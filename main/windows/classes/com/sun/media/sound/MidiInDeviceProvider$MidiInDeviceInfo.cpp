@@ -61,6 +61,7 @@ $Object* allocate$MidiInDeviceProvider$MidiInDeviceInfo($Class* clazz) {
 }
 
 void MidiInDeviceProvider$MidiInDeviceInfo::init$(int32_t index, $Class* providerClass) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $MidiInDeviceProvider::nGetName(index));
 	$var($String, var$1, $MidiInDeviceProvider::nGetVendor(index));
 	$var($String, var$2, $MidiInDeviceProvider::nGetDescription(index));

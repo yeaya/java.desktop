@@ -280,6 +280,7 @@ void DirectAudioDevice$DirectClip::finalize() {
 }
 
 void DirectAudioDevice$DirectClip::init$($DataLine$Info* info, $AudioFormat* format, int32_t bufferSize, $DirectAudioDevice* mixer) {
+	$useLocalCurrentObjectStackCache();
 	$var($DataLine$Info, var$0, info);
 	$var($DirectAudioDevice, var$1, mixer);
 	$var($AudioFormat, var$2, format);
@@ -299,6 +300,7 @@ void DirectAudioDevice$DirectClip::open($AudioFormat* format, $bytes* data, int3
 }
 
 void DirectAudioDevice$DirectClip::open($AudioFormat* format, $bytes* data, int32_t frameLength) {
+	$useLocalCurrentObjectStackCache();
 	$Toolkit::isFullySpecifiedAudioFormat(format);
 	$synchronized(this->mixer) {
 		if (isOpen()) {
@@ -336,6 +338,7 @@ void DirectAudioDevice$DirectClip::open($AudioFormat* format, $bytes* data, int3
 }
 
 void DirectAudioDevice$DirectClip::open($AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$Toolkit::isFullySpecifiedAudioFormat($($nc(stream)->getFormat()));
 	$synchronized(this->mixer) {
 		$var($bytes, streamData, nullptr);
@@ -433,6 +436,7 @@ void DirectAudioDevice$DirectClip::setMicrosecondPosition(int64_t microseconds) 
 }
 
 void DirectAudioDevice$DirectClip::setLoopPoints(int32_t start, int32_t end) {
+	$useLocalCurrentObjectStackCache();
 	if (start < 0 || start >= getFrameLength()) {
 		$throwNew($IllegalArgumentException, $$str({"illegal value for start: "_s, $$str(start)}));
 	}
@@ -465,6 +469,7 @@ void DirectAudioDevice$DirectClip::implOpen($AudioFormat* format, int32_t buffer
 }
 
 void DirectAudioDevice$DirectClip::implClose() {
+	$useLocalCurrentObjectStackCache();
 	$var($Thread, oldThread, this->thread);
 	$set(this, thread, nullptr);
 	this->doIO = false;
@@ -545,6 +550,7 @@ bool DirectAudioDevice$DirectClip::isAutoClosing() {
 }
 
 void DirectAudioDevice$DirectClip::setAutoClosing(bool value) {
+	$useLocalCurrentObjectStackCache();
 	if (value != this->autoclosing) {
 		if (isOpen()) {
 			if (value) {

@@ -101,6 +101,7 @@ void BasicSliderUI$Actions::init$($String* name) {
 }
 
 void BasicSliderUI$Actions::actionPerformed($ActionEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($JSlider, slider, $cast($JSlider, $nc(evt)->getSource()));
 	$load($BasicSliderUI);
 	$var($BasicSliderUI, ui, $cast($BasicSliderUI, $BasicLookAndFeel::getUIOfType($($nc(slider)->getUI()), $BasicSliderUI::class$)));

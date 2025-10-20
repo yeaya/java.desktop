@@ -213,6 +213,7 @@ void StyledEditorKit::createInputAttributeUpdated() {
 }
 
 void StyledEditorKit::createInputAttributes($Element* element, $MutableAttributeSet* set) {
+	$useLocalCurrentObjectStackCache();
 	bool var$1 = $nc($($nc(element)->getAttributes()))->getAttributeCount() > 0;
 	if (!var$1) {
 		int32_t var$2 = $nc(element)->getEndOffset();
@@ -236,6 +237,7 @@ void StyledEditorKit::createInputAttributes($Element* element, $MutableAttribute
 }
 
 void clinit$StyledEditorKit($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(StyledEditorKit::defaultFactory, $new($StyledEditorKit$StyledViewFactory));
 	$assignStatic(StyledEditorKit::defaultActions, $new($ActionArray, {
 		static_cast<$Action*>($$new($StyledEditorKit$FontFamilyAction, "font-family-SansSerif"_s, "SansSerif"_s)),

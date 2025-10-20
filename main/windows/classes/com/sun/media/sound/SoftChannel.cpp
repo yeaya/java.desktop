@@ -314,6 +314,7 @@ int32_t SoftChannel::restrict14Bit(int32_t value) {
 }
 
 void SoftChannel::init$($SoftSynthesizer* synth, int32_t channel) {
+	$useLocalCurrentObjectStackCache();
 	this->rpn_control = SoftChannel::RPN_NULL_VALUE;
 	this->nrpn_control = SoftChannel::RPN_NULL_VALUE;
 	this->portamento_time = (double)1;
@@ -372,6 +373,7 @@ void SoftChannel::init$($SoftSynthesizer* synth, int32_t channel) {
 }
 
 int32_t SoftChannel::findFreeVoice(int32_t x) {
+	$useLocalCurrentObjectStackCache();
 	if (x == -1) {
 		return -1;
 	}
@@ -534,6 +536,7 @@ void SoftChannel::noteOn(int32_t noteNumber, int32_t velocity, int32_t delay) {
 }
 
 void SoftChannel::noteOn_internal(int32_t noteNumber, int32_t velocity, int32_t delay) {
+	$useLocalCurrentObjectStackCache();
 	if (velocity == 0) {
 		noteOff_internal(noteNumber, 64);
 		return;
@@ -622,6 +625,7 @@ void SoftChannel::noteOff(int32_t noteNumber, int32_t velocity) {
 }
 
 void SoftChannel::noteOff_internal(int32_t noteNumber, int32_t velocity) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->control_mutex) {
 		if (!this->mono) {
 			if (this->portamento) {
@@ -756,6 +760,7 @@ int32_t SoftChannel::getChannelPressure() {
 }
 
 void SoftChannel::applyInstrumentCustomization() {
+	$useLocalCurrentObjectStackCache();
 	if (this->cds_control_connections == nullptr && this->cds_channelpressure_connections == nullptr && this->cds_polypressure_connections == nullptr) {
 		return;
 	}
@@ -850,6 +855,7 @@ void SoftChannel::applyInstrumentCustomization() {
 }
 
 $ModelConnectionBlockArray* SoftChannel::createModelConnections($ModelIdentifier* sid, $ints* destination, $ints* range) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, conns, $new($ArrayList));
 	for (int32_t i = 0; i < $nc(destination)->length; ++i) {
 		int32_t d = destination->get(i);
@@ -938,6 +944,7 @@ void SoftChannel::mapChannelPressureToDestination($ints* destination, $ints* ran
 }
 
 void SoftChannel::mapControlToDestination(int32_t control, $ints* destination, $ints* range) {
+	$useLocalCurrentObjectStackCache();
 	if (!((control >= 1 && control <= 31) || (control >= 64 && control <= 95))) {
 		$set(this, cds_control_connections, nullptr);
 		return;
@@ -952,6 +959,7 @@ void SoftChannel::mapControlToDestination(int32_t control, $ints* destination, $
 }
 
 void SoftChannel::controlChangePerNote(int32_t noteNumber, int32_t controller, int32_t value) {
+	$useLocalCurrentObjectStackCache();
 	if (this->keybasedcontroller_active == nullptr) {
 		$set(this, keybasedcontroller_active, $new($booleanArray2, 128));
 		$set(this, keybasedcontroller_value, $new($doubleArray2, 128));
@@ -1003,6 +1011,7 @@ int32_t SoftChannel::getControlPerNote(int32_t noteNumber, int32_t controller) {
 }
 
 void SoftChannel::controlChange(int32_t controller, int32_t value) {
+	$useLocalCurrentObjectStackCache();
 	controller = restrict7Bit(controller);
 	value = restrict7Bit(value);
 	if (this->current_mixer != nullptr) {
@@ -1281,6 +1290,7 @@ int32_t SoftChannel::getPitchBend() {
 }
 
 void SoftChannel::nrpnChange(int32_t controller, int32_t value) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->synthesizer)->getGeneralMidiMode() == 0) {
 		if (controller == (1 << 7) + (8)) {
 			controlChange(76, value >> 7);
@@ -1342,6 +1352,7 @@ void SoftChannel::nrpnChange(int32_t controller, int32_t value) {
 }
 
 void SoftChannel::rpnChange(int32_t controller, int32_t value) {
+	$useLocalCurrentObjectStackCache();
 	if (controller == 3) {
 		this->tuning_program = (int32_t)((value >> 7) & (uint32_t)127);
 		tuningChange(this->tuning_bank, this->tuning_program);
@@ -1373,6 +1384,7 @@ void SoftChannel::resetAllControllers() {
 }
 
 void SoftChannel::resetAllControllers(bool allControls) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->control_mutex) {
 		$nc(this->mainmixer)->activity();
 		for (int32_t i = 0; i < 128; ++i) {
@@ -1512,6 +1524,7 @@ bool SoftChannel::getMute() {
 }
 
 void SoftChannel::setSolo(bool soloState) {
+	$useLocalCurrentObjectStackCache();
 	if (this->current_mixer != nullptr) {
 		$nc(this->current_mixer)->setSolo(soloState);
 	}

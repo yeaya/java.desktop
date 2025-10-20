@@ -93,6 +93,7 @@ void Win32ShellFolder2$16::init$($Win32ShellFolder2* this$0) {
 }
 
 $Object* Win32ShellFolder2$16::call() {
+	$useLocalCurrentObjectStackCache();
 	$var($ShellFolderColumnInfoArray, columns, this->this$0->doGetColumnInfo(this->this$0->getIShellFolder()));
 	if (columns != nullptr) {
 		$var($List, notNullColumns, $new($ArrayList));

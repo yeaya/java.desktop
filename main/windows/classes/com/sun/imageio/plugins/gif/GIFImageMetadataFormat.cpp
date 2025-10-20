@@ -73,6 +73,7 @@ $Object* allocate$GIFImageMetadataFormat($Class* clazz) {
 $IIOMetadataFormat* GIFImageMetadataFormat::instance = nullptr;
 
 void GIFImageMetadataFormat::init$() {
+	$useLocalCurrentObjectStackCache();
 	$init($GIFImageMetadata);
 	$IIOMetadataFormatImpl::init$($GIFImageMetadata::nativeMetadataFormatName, $IIOMetadataFormat::CHILD_POLICY_SOME);
 	addElement("ImageDescriptor"_s, $GIFImageMetadata::nativeMetadataFormatName, $IIOMetadataFormat::CHILD_POLICY_EMPTY);

@@ -188,6 +188,7 @@ void bug6263446::init$() {
 
 void bug6263446::main($StringArray* args) {
 	$init(bug6263446);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug6263446::robot, $new($Robot));
 	$nc(bug6263446::robot)->setAutoDelay(100);
 	$SwingUtilities::invokeAndWait($$new($bug6263446$1));
@@ -258,6 +259,7 @@ void bug6263446::click(int32_t times) {
 
 $Point* bug6263446::getClickPoint() {
 	$init(bug6263446);
+	$useLocalCurrentObjectStackCache();
 	$var($PointArray, result, $new($PointArray, 1));
 	$SwingUtilities::invokeAndWait($$new($bug6263446$2, result));
 	return result->get(0);
@@ -270,6 +272,7 @@ $TreeModel* bug6263446::createTreeModel() {
 
 void bug6263446::createAndShowGUI() {
 	$init(bug6263446);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug6263446::frame, $new($JFrame));
 	$nc(bug6263446::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$assignStatic(bug6263446::tree, $new($JTree, $(createTreeModel())));

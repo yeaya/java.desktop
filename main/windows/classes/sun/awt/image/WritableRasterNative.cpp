@@ -75,6 +75,7 @@ void WritableRasterNative::init$($SampleModel* sm, $DataBuffer* db) {
 
 WritableRasterNative* WritableRasterNative::createNativeRaster($ColorModel* cm, $SurfaceData* sd, int32_t width, int32_t height) {
 	$init(WritableRasterNative);
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, smHw, nullptr);
 	int32_t dataType = 0;
 	int32_t scanStride = width;

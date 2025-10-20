@@ -157,6 +157,7 @@ void SoftMixingMainMixer::processAudioBuffers() {
 }
 
 void SoftMixingMainMixer::init$($SoftMixingMixer* mixer) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, openLinesList, $new($ArrayList));
 	$set(this, openLines, $new($SoftMixingDataLineArray, 0));
 	$set(this, mixer, mixer);

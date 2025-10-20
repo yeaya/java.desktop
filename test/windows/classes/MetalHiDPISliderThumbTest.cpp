@@ -122,6 +122,7 @@ void MetalHiDPISliderThumbTest::main($StringArray* args) {
 }
 
 bool MetalHiDPISliderThumbTest::testSliderThumb(bool horizontal) {
+	$useLocalCurrentObjectStackCache();
 	int32_t scale = 3;
 	int32_t w = horizontal ? 100 : 20;
 	int32_t h = horizontal ? 20 : 100;
@@ -196,6 +197,7 @@ bool MetalHiDPISliderThumbTest::testSliderThumb(bool horizontal) {
 }
 
 void MetalHiDPISliderThumbTest::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 	} catch ($Exception&) {

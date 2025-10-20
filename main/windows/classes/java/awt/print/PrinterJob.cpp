@@ -166,6 +166,7 @@ $PageFormat* PrinterJob::defaultPage() {
 }
 
 $PageFormat* PrinterJob::getPageFormat($PrintRequestAttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($PrintService, service, getPrintService());
 	$var($PageFormat, pf, defaultPage());
 	if (service == nullptr || attributes == nullptr) {

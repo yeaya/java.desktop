@@ -176,6 +176,7 @@ SplashScreen* SplashScreen::getSplashScreen() {
 }
 
 void SplashScreen::setImageURL($URL* imageURL) {
+	$useLocalCurrentObjectStackCache();
 	checkVisible();
 	$var($URLConnection, connection, $nc(imageURL)->openConnection());
 	$nc(connection)->connect();
@@ -219,6 +220,7 @@ void SplashScreen::checkVisible() {
 }
 
 $URL* SplashScreen::getImageURL() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(SplashScreen::class$) {
 		checkVisible();
 		if (this->imageURL == nullptr) {
@@ -265,6 +267,7 @@ $Dimension* SplashScreen::getSize() {
 }
 
 $Graphics2D* SplashScreen::createGraphics() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(SplashScreen::class$) {
 		checkVisible();
 		if (this->image == nullptr) {
@@ -285,6 +288,7 @@ $Graphics2D* SplashScreen::createGraphics() {
 }
 
 void SplashScreen::update() {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, image, nullptr);
 	$synchronized(SplashScreen::class$) {
 		checkVisible();

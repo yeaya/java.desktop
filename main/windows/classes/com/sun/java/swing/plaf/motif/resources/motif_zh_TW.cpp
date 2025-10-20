@@ -47,6 +47,7 @@ void motif_zh_TW::init$() {
 }
 
 $ObjectArray2* motif_zh_TW::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("FileChooser.acceptAllFileFilter.textAndMnemonic"_s),

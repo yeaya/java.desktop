@@ -141,6 +141,7 @@ bool Decoration$DecorationImpl::areEqual(Object$* lhs, Object$* rhs) {
 }
 
 bool Decoration$DecorationImpl::equals(Object$* rhs) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals(rhs, this)) {
 		return true;
 	}
@@ -199,6 +200,7 @@ float Decoration$DecorationImpl::getUnderlineMaxY($CoreMetrics* cm) {
 }
 
 void Decoration$DecorationImpl::drawTextAndEmbellishments($Decoration$Label* label, $Graphics2D* g2d, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$nc(label)->handleDraw(g2d, x, y);
 	if (!this->strikethrough && this->stdUnderline == nullptr && this->imUnderline == nullptr) {
 		return;
@@ -224,6 +226,7 @@ void Decoration$DecorationImpl::drawTextAndEmbellishments($Decoration$Label* lab
 }
 
 void Decoration$DecorationImpl::drawTextAndDecorations($Decoration$Label* label, $Graphics2D* g2d, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	if (this->fgPaint == nullptr && this->bgPaint == nullptr && this->swapColors == false) {
 		drawTextAndEmbellishments(label, g2d, x, y);
 	} else {
@@ -266,6 +269,7 @@ void Decoration$DecorationImpl::drawTextAndDecorations($Decoration$Label* label,
 }
 
 $Rectangle2D* Decoration$DecorationImpl::getVisualBounds($Decoration$Label* label) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, visBounds, $nc(label)->handleGetVisualBounds());
 	if (this->swapColors || this->bgPaint != nullptr || this->strikethrough || this->stdUnderline != nullptr || this->imUnderline != nullptr) {
 		float minX = (float)0;
@@ -284,6 +288,7 @@ $Rectangle2D* Decoration$DecorationImpl::getVisualBounds($Decoration$Label* labe
 }
 
 $Shape* Decoration$DecorationImpl::getOutline($Decoration$Label* label, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->strikethrough && this->stdUnderline == nullptr && this->imUnderline == nullptr) {
 		return $nc(label)->handleGetOutline(x, y);
 	}
@@ -323,6 +328,7 @@ $Shape* Decoration$DecorationImpl::getOutline($Decoration$Label* label, float x,
 }
 
 $String* Decoration$DecorationImpl::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, $new($StringBuilder));
 	sb->append($($Decoration::toString()));
 	sb->append("["_s);

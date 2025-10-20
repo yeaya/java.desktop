@@ -80,6 +80,7 @@ $List* ExifParentTIFFTagSet::tags = nullptr;
 
 void ExifParentTIFFTagSet::initTags() {
 	$init(ExifParentTIFFTagSet);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(ExifParentTIFFTagSet::tags, $new($ArrayList, 1));
 	$nc(ExifParentTIFFTagSet::tags)->add($$new($ExifParentTIFFTagSet$ExifIFDPointer));
 	$nc(ExifParentTIFFTagSet::tags)->add($$new($ExifParentTIFFTagSet$GPSInfoIFDPointer));

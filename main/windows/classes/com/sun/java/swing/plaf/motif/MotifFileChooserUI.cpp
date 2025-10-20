@@ -316,6 +316,7 @@ $String* MotifFileChooserUI::fileNameString($File* file) {
 }
 
 $String* MotifFileChooserUI::fileNameString($FileArray* files) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, $new($StringBuilder));
 	for (int32_t i = 0; files != nullptr && i < files->length; ++i) {
 		if (i > 0) {
@@ -396,6 +397,7 @@ void MotifFileChooserUI::installUI($JComponent* c) {
 }
 
 void MotifFileChooserUI::uninstallUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$nc(c)->removePropertyChangeListener(this->filterComboBoxModel);
 	$nc(this->approveButton)->removeActionListener($(getApproveSelectionAction()));
 	$nc(this->filenameTextField)->removeActionListener($(getApproveSelectionAction()));
@@ -403,6 +405,7 @@ void MotifFileChooserUI::uninstallUI($JComponent* c) {
 }
 
 void MotifFileChooserUI::installComponents($JFileChooser* fc) {
+	$useLocalCurrentObjectStackCache();
 	$nc(fc)->setLayout($$new($BorderLayout, 10, 10));
 	$init($JComponent);
 	fc->setAlignmentX($JComponent::CENTER_ALIGNMENT);
@@ -564,6 +567,7 @@ $JPanel* MotifFileChooserUI::getBottomPanel() {
 }
 
 void MotifFileChooserUI::doControlButtonsChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($(getFileChooser()))->getControlButtonsAreShown()) {
 		$init($BorderLayout);
 		$nc($(getFileChooser()))->add(static_cast<$Component*>(this->bottomPanel), $of($BorderLayout::SOUTH));
@@ -581,6 +585,7 @@ void MotifFileChooserUI::uninstallComponents($JFileChooser* fc) {
 }
 
 void MotifFileChooserUI::installStrings($JFileChooser* fc) {
+	$useLocalCurrentObjectStackCache();
 	$BasicFileChooserUI::installStrings(fc);
 	$var($Locale, l, $nc(fc)->getLocale());
 	$set(this, enterFolderNameLabelText, $UIManager::getString($of("FileChooser.enterFolderNameLabelText"_s), l));
@@ -608,6 +613,7 @@ void MotifFileChooserUI::uninstallIcons($JFileChooser* fc) {
 }
 
 $JScrollPane* MotifFileChooserUI::createFilesList() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, fileList, $new($JList));
 	if ($nc($(getFileChooser()))->isMultiSelectionEnabled()) {
 		$nc(this->fileList)->setSelectionMode($ListSelectionModel::MULTIPLE_INTERVAL_SELECTION);
@@ -631,6 +637,7 @@ $JScrollPane* MotifFileChooserUI::createFilesList() {
 }
 
 $JScrollPane* MotifFileChooserUI::createDirectoryList() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, directoryList, $new($JList));
 	align(this->directoryList);
 	$nc(this->directoryList)->setCellRenderer($$new($MotifFileChooserUI$DirectoryCellRenderer, this));
@@ -648,6 +655,7 @@ $JScrollPane* MotifFileChooserUI::createDirectoryList() {
 }
 
 $Dimension* MotifFileChooserUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, prefSize, ($nc($(getFileChooser()))->getAccessory() != nullptr) ? MotifFileChooserUI::WITH_ACCELERATOR_PREF_SIZE : MotifFileChooserUI::PREF_SIZE);
 	$var($Dimension, d, $nc($($nc(c)->getLayout()))->preferredLayoutSize(c));
 	if (d != nullptr) {

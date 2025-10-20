@@ -79,6 +79,7 @@ void MetalComboBoxEditor$EditorBorder::init$($MetalComboBoxEditor* this$0) {
 }
 
 void MetalComboBoxEditor$EditorBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->translate(x, y);
 	if ($MetalLookAndFeel::usingOcean()) {
 		g->setColor($($MetalLookAndFeel::getControlDarkShadow()));

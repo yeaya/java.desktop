@@ -440,6 +440,7 @@ void Renderer::curveBreakIntoLinesAndAdd(double x0, double y0, $Curve* c, double
 }
 
 void Renderer::addLine(double x1, double y1, double x2, double y2) {
+	$useLocalCurrentObjectStackCache();
 	$init($MarlinConst);
 	if ($MarlinConst::DO_STATS) {
 		$nc($nc($nc(this->rdrCtx)->stats$)->stat_rdr_addLine)->add(1);
@@ -554,6 +555,7 @@ void Renderer::init$($RendererContext* rdrCtx) {
 }
 
 Renderer* Renderer::init(int32_t pix_boundsX, int32_t pix_boundsY, int32_t pix_boundsWidth, int32_t pix_boundsHeight, int32_t windingRule) {
+	$useLocalCurrentObjectStackCache();
 	this->windingRule = windingRule;
 	$init($MarlinConst);
 	this->boundsMinX = $sl(pix_boundsX, $MarlinConst::SUBPIXEL_LG_POSITIONS_X);
@@ -687,6 +689,7 @@ int64_t Renderer::getNativeConsumer() {
 }
 
 void Renderer::_endRendering(int32_t ymin, int32_t ymax) {
+	$useLocalCurrentObjectStackCache();
 	int32_t bboxx0 = this->bbox_spminX;
 	int32_t bboxx1 = this->bbox_spmaxX;
 	bool windingRuleEvenOdd = (this->windingRule == $MarlinConst::WIND_EVEN_ODD);
@@ -1083,6 +1086,7 @@ void Renderer::_endRendering(int32_t ymin, int32_t ymax) {
 }
 
 bool Renderer::endRendering() {
+	$useLocalCurrentObjectStackCache();
 	if (this->edgeMinY == $Integer::MAX_VALUE) {
 		return false;
 	}

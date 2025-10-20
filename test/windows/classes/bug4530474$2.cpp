@@ -84,6 +84,7 @@ void bug4530474$2::init$($Robot* val$robot) {
 }
 
 void bug4530474$2::run() {
+	$useLocalCurrentObjectStackCache();
 	bool passed = false;
 	$init($bug4530474);
 	$var($Point, p, $nc($bug4530474::jep)->getLocationOnScreen());

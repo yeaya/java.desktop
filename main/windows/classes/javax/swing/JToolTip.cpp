@@ -200,6 +200,7 @@ void JToolTip::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JToolTip::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, tipTextString, this->tipText != nullptr ? this->tipText : ""_s);
 	return $str({$($JComponent::paramString()), ",tipText="_s, tipTextString});
 }

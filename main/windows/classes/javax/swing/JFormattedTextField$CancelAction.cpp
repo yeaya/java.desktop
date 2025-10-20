@@ -63,6 +63,7 @@ void JFormattedTextField$CancelAction::init$() {
 }
 
 void JFormattedTextField$CancelAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getFocusedComponent());
 	if ($instanceOf($JFormattedTextField, target)) {
 		$var($JFormattedTextField, ftf, $cast($JFormattedTextField, target));
@@ -71,6 +72,7 @@ void JFormattedTextField$CancelAction::actionPerformed($ActionEvent* e) {
 }
 
 bool JFormattedTextField$CancelAction::isEnabled() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getFocusedComponent());
 	if ($instanceOf($JFormattedTextField, target)) {
 		$var($JFormattedTextField, ftf, $cast($JFormattedTextField, target));

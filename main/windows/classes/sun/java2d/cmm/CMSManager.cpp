@@ -91,6 +91,7 @@ $PCMM* CMSManager::createModule() {
 	$load(CMSManager);
 	$synchronized(class$) {
 		$load(CMSManager);
+		$useLocalCurrentObjectStackCache();
 		$beforeCallerSensitive();
 		$init(CMSManager);
 		if (CMSManager::cmmImpl != nullptr) {

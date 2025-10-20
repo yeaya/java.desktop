@@ -137,6 +137,7 @@ $Object* allocate$GlyphLayout($Class* clazz) {
 $volatile(GlyphLayout*) GlyphLayout::cache = nullptr;
 
 GlyphLayout* GlyphLayout::get($GlyphLayout$LayoutEngineFactory* lef$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($GlyphLayout$LayoutEngineFactory, lef, lef$renamed);
 	if (lef == nullptr) {
 		$assign(lef, $SunLayoutEngine::instance());
@@ -164,6 +165,7 @@ void GlyphLayout::done(GlyphLayout* gl) {
 }
 
 $StandardGlyphVector* GlyphLayout::layout($Font* font, $FontRenderContext* frc, $chars* text, int32_t offset, int32_t count, int32_t flags, $StandardGlyphVector* result) {
+	$useLocalCurrentObjectStackCache();
 	if (text == nullptr || offset < 0 || count < 0 || (count > $nc(text)->length - offset)) {
 		$throwNew($IllegalArgumentException);
 	}

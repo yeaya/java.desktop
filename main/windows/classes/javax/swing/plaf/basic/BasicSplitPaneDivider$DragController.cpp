@@ -88,6 +88,7 @@ $Object* allocate$BasicSplitPaneDivider$DragController($Class* clazz) {
 }
 
 void BasicSplitPaneDivider$DragController::init$($BasicSplitPaneDivider* this$0, $MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$var($JSplitPane, splitPane, $nc(this$0->splitPaneUI)->getSplitPane());
 	$var($Component, leftC, $nc(splitPane)->getLeftComponent());

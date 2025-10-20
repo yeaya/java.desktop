@@ -115,6 +115,7 @@ void ToolTipManager$AccessibilityKeyListener::init$($ToolTipManager* this$0) {
 }
 
 void ToolTipManager$AccessibilityKeyListener::keyPressed($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(e)->isConsumed()) {
 		$var($JComponent, source, $cast($JComponent, e->getComponent()));
 		$var($KeyStroke, keyStrokeForEvent, $KeyStroke::getKeyStrokeForEvent(e));
@@ -134,6 +135,7 @@ void ToolTipManager$AccessibilityKeyListener::menuKeyTyped($MenuKeyEvent* e) {
 }
 
 void ToolTipManager$AccessibilityKeyListener::menuKeyPressed($MenuKeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->this$0->postTip)->equals($($KeyStroke::getKeyStrokeForEvent(e)))) {
 		$var($MenuElementArray, path, $nc(e)->getPath());
 		$var($MenuElement, element, $nc(path)->get(path->length - 1));

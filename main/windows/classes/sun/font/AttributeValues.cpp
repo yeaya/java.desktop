@@ -667,6 +667,7 @@ AttributeValues* AttributeValues::merge($Map* map) {
 }
 
 AttributeValues* AttributeValues::merge($Map* map, int32_t mask) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($AttributeMap, map) && $nc(($cast($AttributeMap, map)))->getValues() != nullptr) {
 		merge($(($cast($AttributeMap, map))->getValues()), mask);
 	} else if (map != nullptr && !map->isEmpty()) {
@@ -729,6 +730,7 @@ AttributeValues* AttributeValues::fromMap($Map* map, int32_t mask) {
 }
 
 $Map* AttributeValues::toMap($Map* fill$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Map, fill, fill$renamed);
 	if (fill == nullptr) {
 		$assign(fill, $new($HashMap));
@@ -755,6 +757,7 @@ bool AttributeValues::is16Hashtable($Hashtable* ht) {
 
 AttributeValues* AttributeValues::fromSerializableHashtable($Hashtable* ht) {
 	$init(AttributeValues);
+	$useLocalCurrentObjectStackCache();
 	$var(AttributeValues, result, $new(AttributeValues));
 	if (ht != nullptr && !ht->isEmpty()) {
 		{
@@ -784,6 +787,7 @@ AttributeValues* AttributeValues::fromSerializableHashtable($Hashtable* ht) {
 }
 
 $Hashtable* AttributeValues::toSerializableHashtable() {
+	$useLocalCurrentObjectStackCache();
 	$var($Hashtable, ht, $new($Hashtable));
 	int32_t hashkey = this->defined;
 	{
@@ -822,6 +826,7 @@ bool AttributeValues::equals(Object$* rhs) {
 }
 
 bool AttributeValues::equals(AttributeValues* rhs) {
+	$useLocalCurrentObjectStackCache();
 	if (rhs == nullptr) {
 		return false;
 	}
@@ -844,6 +849,7 @@ bool AttributeValues::equals(AttributeValues* rhs) {
 }
 
 AttributeValues* AttributeValues::clone() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var(AttributeValues, result, $cast(AttributeValues, $Cloneable::clone()));
 		if (this->transform != nullptr) {
@@ -859,6 +865,7 @@ AttributeValues* AttributeValues::clone() {
 }
 
 $String* AttributeValues::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, b, $new($StringBuilder));
 	b->append(u'{');
 	{
@@ -1256,6 +1263,7 @@ bool AttributeValues::i_equals($EAttribute* a, AttributeValues* src) {
 }
 
 void AttributeValues::i_set($EAttribute* a, Object$* o) {
+	$useLocalCurrentObjectStackCache();
 	$init($AttributeValues$1);
 	switch ($nc($AttributeValues$1::$SwitchMap$sun$font$EAttribute)->get($nc((a))->ordinal())) {
 	case 1:
@@ -1637,6 +1645,7 @@ bool AttributeValues::i_validate($EAttribute* a) {
 
 float AttributeValues::getJustification($Map* map) {
 	$init(AttributeValues);
+	$useLocalCurrentObjectStackCache();
 	if (map != nullptr) {
 		if ($instanceOf($AttributeMap, map) && $nc(($cast($AttributeMap, map)))->getValues() != nullptr) {
 			return $nc($(($cast($AttributeMap, map))->getValues()))->justification;
@@ -1652,6 +1661,7 @@ float AttributeValues::getJustification($Map* map) {
 
 $NumericShaper* AttributeValues::getNumericShaping($Map* map) {
 	$init(AttributeValues);
+	$useLocalCurrentObjectStackCache();
 	if (map != nullptr) {
 		if ($instanceOf($AttributeMap, map) && $nc(($cast($AttributeMap, map)))->getValues() != nullptr) {
 			return $nc($(($cast($AttributeMap, map))->getValues()))->numericShaping;
@@ -1666,6 +1676,7 @@ $NumericShaper* AttributeValues::getNumericShaping($Map* map) {
 }
 
 AttributeValues* AttributeValues::applyIMHighlight() {
+	$useLocalCurrentObjectStackCache();
 	if (this->imHighlight != nullptr) {
 		$var($InputMethodHighlight, hl, nullptr);
 		if ($instanceOf($InputMethodHighlight, this->imHighlight)) {
@@ -1758,6 +1769,7 @@ $AffineTransform* AttributeValues::extractYRotation($AffineTransform* tx, bool a
 
 $AffineTransform* AttributeValues::extractRotation($Point2D$Double* pt, $AffineTransform* tx, bool andTranslation) {
 	$init(AttributeValues);
+	$useLocalCurrentObjectStackCache();
 	$nc(tx)->deltaTransform(pt, pt);
 	$var($AffineTransform, rtx, $AffineTransform::getRotateInstance($nc(pt)->x, pt->y));
 	try {

@@ -97,6 +97,7 @@ void Test7024235::init$() {
 
 void Test7024235::main($StringArray* args) {
 	$init(Test7024235);
+	$useLocalCurrentObjectStackCache();
 	$var(Test7024235, test, $new(Test7024235));
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
@@ -126,6 +127,7 @@ void Test7024235::main($StringArray* args) {
 }
 
 void Test7024235::run() {
+	$useLocalCurrentObjectStackCache();
 	if (this->pane == nullptr) {
 		$set(this, pane, $new($JTabbedPane));
 		$nc(this->pane)->addTab("1"_s, $$new($Container));
@@ -155,6 +157,7 @@ void Test7024235::test() {
 }
 
 void Test7024235::test($String* step) {
+	$useLocalCurrentObjectStackCache();
 	this->passed = true;
 	for (int32_t index = 0; index < $nc(this->pane)->getTabCount(); ++index) {
 		$var($Rectangle, bounds, $nc(this->pane)->getBoundsAt(index));

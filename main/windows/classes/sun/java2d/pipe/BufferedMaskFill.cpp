@@ -91,6 +91,7 @@ void BufferedMaskFill::init$($RenderQueue* rq, $SurfaceType* srcType, $Composite
 }
 
 void BufferedMaskFill::MaskFill$($SunGraphics2D* sg2d, $SurfaceData* sData, $Composite* comp$renamed, int32_t x, int32_t y, int32_t w, int32_t h, $bytes* mask, int32_t maskoff, int32_t maskscan) {
+	$useLocalCurrentObjectStackCache();
 	$var($Composite, comp, comp$renamed);
 	$var($AlphaComposite, acomp, $cast($AlphaComposite, comp));
 	if ($nc(acomp)->getRule() != $AlphaComposite::SRC_OVER) {

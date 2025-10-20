@@ -79,6 +79,7 @@ void NormalBoundsTest$3::init$($Robot* val$robot) {
 }
 
 void NormalBoundsTest$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($NormalBoundsTest);
 	$var($Point, loc, $nc($NormalBoundsTest::internalFrame)->getLocationOnScreen());
 	$var($Robot, var$0, this->val$robot);

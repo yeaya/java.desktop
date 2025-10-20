@@ -151,6 +151,7 @@ void BasicScrollBarUI$TrackListener::mouseReleased($MouseEvent* e) {
 }
 
 void BasicScrollBarUI$TrackListener::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $SwingUtilities::isRightMouseButton(e);
 	if (!var$0) {
 		bool var$1 = !this->this$0->getSupportsAbsolutePositioning();
@@ -266,6 +267,7 @@ void BasicScrollBarUI$TrackListener::mouseDragged($MouseEvent* e) {
 }
 
 void BasicScrollBarUI$TrackListener::setValueFrom($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool active = this->this$0->isThumbRollover();
 	$var($BoundedRangeModel, model, $nc(this->this$0->scrollbar)->getModel());
 	$var($Rectangle, thumbR, this->this$0->getThumbBounds());
@@ -315,6 +317,7 @@ void BasicScrollBarUI$TrackListener::setValueFrom($MouseEvent* e) {
 }
 
 int32_t BasicScrollBarUI$TrackListener::adjustValueIfNecessary(int32_t value) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JScrollPane, $($nc(this->this$0->scrollbar)->getParent()))) {
 		$var($JScrollPane, scrollpane, $cast($JScrollPane, $nc(this->this$0->scrollbar)->getParent()));
 		$var($JViewport, viewport, $nc(scrollpane)->getViewport());

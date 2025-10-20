@@ -81,6 +81,7 @@ void bug4708809$4::init$($PointArray* val$result, double val$scaleX, double val$
 }
 
 void bug4708809$4::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug4708809);
 	$var($Point, p, $nc($bug4708809::sbar)->getLocationOnScreen());
 	$var($Rectangle, rect, $nc($bug4708809::sbar)->getBounds());

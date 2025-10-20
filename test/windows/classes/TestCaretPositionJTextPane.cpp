@@ -190,6 +190,7 @@ void TestCaretPositionJTextPane::init$() {
 }
 
 void TestCaretPositionJTextPane::createUI() {
+	$useLocalCurrentObjectStackCache();
 	$init(TestCaretPositionJTextPane);
 	$assignStatic(TestCaretPositionJTextPane::f, $new($JFrame, "Test Cursor/Caret with Java 9"_s));
 	$assignStatic(TestCaretPositionJTextPane::textPane, $new($JTextPane));
@@ -203,6 +204,7 @@ void TestCaretPositionJTextPane::createUI() {
 }
 
 void TestCaretPositionJTextPane::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -230,6 +232,7 @@ void TestCaretPositionJTextPane::main($StringArray* args) {
 }
 
 void TestCaretPositionJTextPane::fillTextPane($JTextPane* textPane) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, buf, $new($StringBuilder));
 	for (int32_t i = 0; i < 30; ++i) {
 		$var($StringBuilder, row, $new($StringBuilder));

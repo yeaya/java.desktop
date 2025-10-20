@@ -76,6 +76,7 @@ void bug6994419$1::init$() {
 }
 
 void bug6994419$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JLayer, l, $new($JLayer, $$new($JButton)));
 	l->removeAll();
 	l->addPropertyChangeListener($$new($bug6994419$1$1, this));

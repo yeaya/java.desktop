@@ -158,6 +158,7 @@ void PropertyEditorSupport::removePropertyChangeListener($PropertyChangeListener
 }
 
 void PropertyEditorSupport::firePropertyChange() {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, targets, nullptr);
 	$synchronized(this) {
 		if (this->listeners == nullptr) {

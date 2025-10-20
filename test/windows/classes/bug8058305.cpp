@@ -121,6 +121,7 @@ void bug8058305::main($StringArray* args) {
 }
 
 void bug8058305::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame));
 	$var($JFormattedTextField, textField, $new($JFormattedTextField));
 	$var($NavigationFilter, navigationFilter, $new($NavigationFilter));

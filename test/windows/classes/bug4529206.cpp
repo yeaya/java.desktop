@@ -120,6 +120,7 @@ $JFrame* bug4529206::frame = nullptr;
 $JToolBar* bug4529206::jToolBar1 = nullptr;
 
 void bug4529206::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$();
 	setDefaultCloseOperation($WindowConstants::EXIT_ON_CLOSE);
 	$var($JPanel, jPanFrame, $cast($JPanel, this->getContentPane()));
@@ -140,6 +141,7 @@ void bug4529206::init$() {
 }
 
 void bug4529206::makeToolbarFloat() {
+	$useLocalCurrentObjectStackCache();
 	$var($BasicToolBarUI, ui, $cast($BasicToolBarUI, $cast($ToolBarUI, $nc(bug4529206::jToolBar1)->getUI())));
 	if (!$nc(ui)->isFloating()) {
 		ui->setFloatingLocation(100, 100);
@@ -153,6 +155,7 @@ void bug4529206::buttonPressed($ActionEvent* e) {
 
 void bug4529206::main($StringArray* args) {
 	$init(bug4529206);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($bug4529206$2));
 	$var($Robot, robot, $new($Robot));
 	robot->waitForIdle();

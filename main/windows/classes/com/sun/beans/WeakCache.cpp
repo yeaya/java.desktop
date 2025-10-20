@@ -59,6 +59,7 @@ void WeakCache::init$() {
 }
 
 $Object* WeakCache::get(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($Reference, reference, $cast($Reference, $nc(this->map)->get(key)));
 	if (reference == nullptr) {
 		return $of(nullptr);

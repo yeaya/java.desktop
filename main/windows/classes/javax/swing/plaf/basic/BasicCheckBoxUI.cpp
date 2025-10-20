@@ -69,6 +69,7 @@ void BasicCheckBoxUI::init$() {
 
 $ComponentUI* BasicCheckBoxUI::createUI($JComponent* b) {
 	$init(BasicCheckBoxUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(BasicCheckBoxUI, checkboxUI, $cast(BasicCheckBoxUI, $nc(appContext)->get(BasicCheckBoxUI::BASIC_CHECK_BOX_UI_KEY)));
 	if (checkboxUI == nullptr) {

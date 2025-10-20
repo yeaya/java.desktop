@@ -94,6 +94,7 @@ int32_t OSInfo$WindowsVersion::hashCode() {
 }
 
 $String* OSInfo$WindowsVersion::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$$str(this->major), "."_s, $$str(this->minor)});
 }
 

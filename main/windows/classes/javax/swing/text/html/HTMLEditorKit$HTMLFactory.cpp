@@ -181,6 +181,7 @@ void HTMLEditorKit$HTMLFactory::init$() {
 }
 
 $View* HTMLEditorKit$HTMLFactory::create($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attrs, $nc(elem)->getAttributes());
 	$init($AbstractDocument);
 	$var($Object, elementName, $nc(attrs)->getAttribute($AbstractDocument::ElementNameAttribute));

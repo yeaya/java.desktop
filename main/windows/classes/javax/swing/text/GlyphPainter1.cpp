@@ -106,6 +106,7 @@ void GlyphPainter1::init$() {
 }
 
 float GlyphPainter1::getSpan($GlyphView* v, int32_t p0, int32_t p1, $TabExpander* e, float x) {
+	$useLocalCurrentObjectStackCache();
 	sync(v);
 	$var($Segment, text, $nc(v)->getText(p0, p1));
 	$var($ints, justificationData, getJustificationData(v));
@@ -130,6 +131,7 @@ float GlyphPainter1::getDescent($GlyphView* v) {
 }
 
 void GlyphPainter1::paint($GlyphView* v, $Graphics* g, $Shape* a, int32_t p0, int32_t p1) {
+	$useLocalCurrentObjectStackCache();
 	sync(v);
 	$var($Segment, text, nullptr);
 	$var($TabExpander, expander, $nc(v)->getTabExpander());
@@ -152,6 +154,7 @@ void GlyphPainter1::paint($GlyphView* v, $Graphics* g, $Shape* a, int32_t p0, in
 }
 
 $Shape* GlyphPainter1::modelToView($GlyphView* v, int32_t pos, $Position$Bias* bias, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	sync(v);
 	$var($Rectangle, alloc, ($instanceOf($Rectangle, a)) ? $cast($Rectangle, a) : $nc(a)->getBounds());
 	int32_t p0 = $nc(v)->getStartOffset();
@@ -172,6 +175,7 @@ $Shape* GlyphPainter1::modelToView($GlyphView* v, int32_t pos, $Position$Bias* b
 }
 
 int32_t GlyphPainter1::viewToModel($GlyphView* v, float x, float y, $Shape* a, $Position$BiasArray* biasReturn) {
+	$useLocalCurrentObjectStackCache();
 	sync(v);
 	$var($Rectangle, alloc, ($instanceOf($Rectangle, a)) ? $cast($Rectangle, a) : $nc(a)->getBounds());
 	int32_t p0 = $nc(v)->getStartOffset();
@@ -191,6 +195,7 @@ int32_t GlyphPainter1::viewToModel($GlyphView* v, float x, float y, $Shape* a, $
 }
 
 int32_t GlyphPainter1::getBoundedPosition($GlyphView* v, int32_t p0, float x, float len) {
+	$useLocalCurrentObjectStackCache();
 	sync(v);
 	$var($TabExpander, expander, $nc(v)->getTabExpander());
 	$var($Segment, s, v->getText(p0, v->getEndOffset()));
@@ -202,6 +207,7 @@ int32_t GlyphPainter1::getBoundedPosition($GlyphView* v, int32_t p0, float x, fl
 }
 
 void GlyphPainter1::sync($GlyphView* v) {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, f, $nc(v)->getFont());
 	$var($FontMetrics, fm, nullptr);
 	$var($Container, c, v->getContainer());
@@ -215,6 +221,7 @@ void GlyphPainter1::sync($GlyphView* v) {
 }
 
 $ints* GlyphPainter1::getJustificationData($GlyphView* v) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, parent, $nc(v)->getParent());
 	$var($ints, ret, nullptr);
 	if ($instanceOf($ParagraphView$Row, parent)) {

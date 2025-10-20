@@ -183,6 +183,7 @@ $ShellFolder* ShellFolderManager::createShellFolder($File* file) {
 }
 
 $Object* ShellFolderManager::get($String* key) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(key)->equals("fileChooserDefaultFolder"_s)) {
 		$var($File, homeDir, $new($File, $($System::getProperty("user.home"_s))));
 		try {
@@ -207,6 +208,7 @@ $File* ShellFolderManager::checkFile($File* f) {
 }
 
 $File* ShellFolderManager::checkFile($File* f, $SecurityManager* sm) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$nc(sm)->checkRead($($nc(f)->getPath()));
 		if ($instanceOf($ShellFolder, f)) {
@@ -227,11 +229,13 @@ $File* ShellFolderManager::checkFile($File* f, $SecurityManager* sm) {
 }
 
 $FileArray* ShellFolderManager::checkFiles($FileArray* fs) {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	return (sm == nullptr || fs == nullptr) ? fs : checkFiles($($Stream::of(fs)), sm);
 }
 
 $FileArray* ShellFolderManager::checkFiles($Stream* fs, $SecurityManager* sm) {
+	$useLocalCurrentObjectStackCache();
 	return $fcast($FileArray, $nc($($nc(fs)->filter(static_cast<$Predicate*>($$new(ShellFolderManager$$Lambda$lambda$checkFiles$0, sm)))))->toArray(static_cast<$IntFunction*>($$new(ShellFolderManager$$Lambda$lambda$checkFiles$1$1))));
 }
 

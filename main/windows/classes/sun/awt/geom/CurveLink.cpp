@@ -67,6 +67,7 @@ $Object* allocate$CurveLink($Class* clazz) {
 }
 
 void CurveLink::init$($Curve* curve, double ystart, double yend, int32_t etag) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, curve, curve);
 	this->ytop = ystart;
 	this->ybot = yend;
@@ -82,6 +83,7 @@ bool CurveLink::absorb(CurveLink* link) {
 }
 
 bool CurveLink::absorb($Curve* curve, double ystart, double yend, int32_t etag) {
+	$useLocalCurrentObjectStackCache();
 	if (this->curve != curve || this->etag != etag || this->ybot < ystart || this->ytop > yend) {
 		return false;
 	}

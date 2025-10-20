@@ -141,6 +141,7 @@ bool PaletteBuilder::canCreatePalette($RenderedImage* image) {
 }
 
 $RenderedImage* PaletteBuilder::getIndexedImage() {
+	$useLocalCurrentObjectStackCache();
 	$var($IndexColorModel, icm, getIndexColorModel());
 	int32_t var$0 = $nc(this->src)->getWidth();
 	$var($BufferedImage, dst, $new($BufferedImage, var$0, $nc(this->src)->getHeight(), $BufferedImage::TYPE_BYTE_INDEXED, icm));
@@ -184,6 +185,7 @@ int32_t PaletteBuilder::findColorIndex($PaletteBuilder$ColorNode* aNode, $Color*
 }
 
 void PaletteBuilder::buildPalette() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, reduceList, $new($PaletteBuilder$ColorNodeArray, PaletteBuilder::MAXLEVEL + 1));
 	for (int32_t i = 0; i < $nc(this->reduceList)->length; ++i) {
 		$nc(this->reduceList)->set(i, nullptr);
@@ -216,6 +218,7 @@ void PaletteBuilder::buildPalette() {
 }
 
 $PaletteBuilder$ColorNode* PaletteBuilder::insertNode($PaletteBuilder$ColorNode* aNode$renamed, $Color* aColor, int32_t aLevel) {
+	$useLocalCurrentObjectStackCache();
 	$var($PaletteBuilder$ColorNode, aNode, aNode$renamed);
 	if (aNode == nullptr) {
 		$assign(aNode, $new($PaletteBuilder$ColorNode, this));
@@ -248,6 +251,7 @@ $PaletteBuilder$ColorNode* PaletteBuilder::insertNode($PaletteBuilder$ColorNode*
 }
 
 $IndexColorModel* PaletteBuilder::getIndexColorModel() {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = this->currSize;
 	if (this->transColor != nullptr) {
 		++size;
@@ -291,6 +295,7 @@ int32_t PaletteBuilder::findPaletteEntry($PaletteBuilder$ColorNode* aNode, int32
 }
 
 int32_t PaletteBuilder::getBranchIndex($Color* aColor, int32_t aLevel) {
+	$useLocalCurrentObjectStackCache();
 	if (aLevel > PaletteBuilder::MAXLEVEL || aLevel < 0) {
 		$throwNew($IllegalArgumentException, $$str({"Invalid octree node depth: "_s, $$str(aLevel)}));
 	}
@@ -303,6 +308,7 @@ int32_t PaletteBuilder::getBranchIndex($Color* aColor, int32_t aLevel) {
 }
 
 void PaletteBuilder::reduceTree() {
+	$useLocalCurrentObjectStackCache();
 	int32_t level = $nc(this->reduceList)->length - 1;
 	while ($nc(this->reduceList)->get(level) == nullptr && level >= 0) {
 		--level;
@@ -343,6 +349,7 @@ void PaletteBuilder::reduceTree() {
 }
 
 $PaletteBuilder$ColorNode* PaletteBuilder::freeTree($PaletteBuilder$ColorNode* aNode) {
+	$useLocalCurrentObjectStackCache();
 	if (aNode == nullptr) {
 		return nullptr;
 	}

@@ -63,6 +63,7 @@ $Object* allocate$bug7036148($Class* clazz) {
 }
 
 void bug7036148::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$();
 	$var($JMenuBar, bar, $new($JMenuBar));
 	$var($Action, menuAction, $new($bug7036148$1, this, nullptr, nullptr));

@@ -205,6 +205,7 @@ void TestSingleScreenGConfigNotify::init$() {
 
 void TestSingleScreenGConfigNotify::main($StringArray* args) {
 	$init(TestSingleScreenGConfigNotify);
+	$useLocalCurrentObjectStackCache();
 	$EventQueue::invokeAndWait(static_cast<$Runnable*>($$new(TestSingleScreenGConfigNotify$$Lambda$lambda$main$1)));
 	$init($TimeUnit);
 	bool called = $nc(TestSingleScreenGConfigNotify::go)->await(10, $TimeUnit::SECONDS);

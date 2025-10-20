@@ -50,6 +50,7 @@ void bug6438430::init$() {
 }
 
 void bug6438430::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenu, subMenu1, $new($JMenu, "Long-titled Sub Menu"_s));
 	subMenu1->add($$new($JMenuItem, "SubMenu Item"_s));
 	$var($JMenuItem, checkBoxMenuItem1, $new($JCheckBoxMenuItem, "CheckBox"_s));

@@ -68,6 +68,7 @@ void SetSelectedValueTest::main($StringArray* args) {
 }
 
 void SetSelectedValueTest::checkSelectionByList($JList* list, $List* selectionList) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, listSelection, $nc(list)->getSelectedValuesList());
 	if (!$nc(listSelection)->equals(selectionList)) {
 		$init($System);

@@ -227,6 +227,7 @@ void NimbusStyle::installDefaults($SynthContext* ctx) {
 }
 
 void NimbusStyle::validate() {
+	$useLocalCurrentObjectStackCache();
 	if (this->values != nullptr) {
 		return;
 	}
@@ -395,6 +396,7 @@ void NimbusStyle::validate() {
 }
 
 $Painter* NimbusStyle::getPainter($Map* defaults, $String* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, p, $nc(defaults)->get(key));
 	if ($instanceOf($UIDefaults$LazyValue, p)) {
 		$assign(p, $nc(($cast($UIDefaults$LazyValue, p)))->createValue($($UIManager::getDefaults())));
@@ -404,6 +406,7 @@ $Painter* NimbusStyle::getPainter($Map* defaults, $String* key) {
 }
 
 $Insets* NimbusStyle::getInsets($SynthContext* ctx, $Insets* in$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, in, in$renamed);
 	if (in == nullptr) {
 		$assign(in, $new($Insets, 0, 0, 0, 0));
@@ -441,6 +444,7 @@ $Insets* NimbusStyle::getInsets($SynthContext* ctx, $Insets* in$renamed) {
 }
 
 $Color* NimbusStyle::getColorForState($SynthContext* ctx, $ColorType* type) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, key, nullptr);
 	$init($ColorType);
 	if (type == $ColorType::BACKGROUND) {
@@ -474,6 +478,7 @@ $Color* NimbusStyle::getColorForState($SynthContext* ctx, $ColorType* type) {
 }
 
 $Font* NimbusStyle::getFontForState($SynthContext* ctx) {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, f, $cast($Font, get(ctx, "font"_s)));
 	if (f == nullptr) {
 		$assign(f, $UIManager::getFont("defaultFont"_s));
@@ -496,6 +501,7 @@ $SynthPainter* NimbusStyle::getPainter($SynthContext* ctx) {
 }
 
 bool NimbusStyle::isOpaque($SynthContext* ctx) {
+	$useLocalCurrentObjectStackCache();
 	if ("Table.cellRenderer"_s->equals($($nc($($nc(ctx)->getComponent()))->getName()))) {
 		return true;
 	}
@@ -504,6 +510,7 @@ bool NimbusStyle::isOpaque($SynthContext* ctx) {
 }
 
 $Object* NimbusStyle::get($SynthContext* ctx, Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($NimbusStyle$Values, v, getValues(ctx));
 	$var($String, fullKey, $nc($of(key))->toString());
 	$var($String, partialKey, $nc(fullKey)->substring(fullKey->indexOf((int32_t)u'.') + 1));
@@ -538,6 +545,7 @@ $Painter* NimbusStyle::paintFilter($Painter* painter) {
 }
 
 $Painter* NimbusStyle::getBackgroundPainter($SynthContext* ctx) {
+	$useLocalCurrentObjectStackCache();
 	$var($NimbusStyle$Values, v, getValues(ctx));
 	int32_t xstate = getExtendedState(ctx, v);
 	$var($Painter, p, nullptr);
@@ -564,6 +572,7 @@ $Painter* NimbusStyle::getBackgroundPainter($SynthContext* ctx) {
 }
 
 $Painter* NimbusStyle::getForegroundPainter($SynthContext* ctx) {
+	$useLocalCurrentObjectStackCache();
 	$var($NimbusStyle$Values, v, getValues(ctx));
 	int32_t xstate = getExtendedState(ctx, v);
 	$var($Painter, p, nullptr);
@@ -590,6 +599,7 @@ $Painter* NimbusStyle::getForegroundPainter($SynthContext* ctx) {
 }
 
 $Painter* NimbusStyle::getBorderPainter($SynthContext* ctx) {
+	$useLocalCurrentObjectStackCache();
 	$var($NimbusStyle$Values, v, getValues(ctx));
 	int32_t xstate = getExtendedState(ctx, v);
 	$var($Painter, p, nullptr);
@@ -633,6 +643,7 @@ bool NimbusStyle::contains($StringArray* names, $String* name) {
 }
 
 int32_t NimbusStyle::getExtendedState($SynthContext* ctx, $NimbusStyle$Values* v) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, c, $nc(ctx)->getComponent());
 	int32_t xstate = 0;
 	int32_t mask = 1;

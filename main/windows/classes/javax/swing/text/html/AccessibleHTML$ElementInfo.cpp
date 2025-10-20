@@ -138,6 +138,7 @@ void AccessibleHTML$ElementInfo::validate() {
 }
 
 void AccessibleHTML$ElementInfo::loadChildren($Element* parent) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(parent)->isLeaf()) {
 		{
 			int32_t counter = 0;
@@ -201,6 +202,7 @@ void AccessibleHTML$ElementInfo::addChild(AccessibleHTML$ElementInfo* child) {
 }
 
 $View* AccessibleHTML$ElementInfo::getView() {
+	$useLocalCurrentObjectStackCache();
 	if (!validateIfNecessary()) {
 		return nullptr;
 	}
@@ -237,6 +239,7 @@ $View* AccessibleHTML$ElementInfo::getView() {
 }
 
 $Rectangle* AccessibleHTML$ElementInfo::getBounds() {
+	$useLocalCurrentObjectStackCache();
 	if (!validateIfNecessary()) {
 		return nullptr;
 	}
@@ -286,6 +289,7 @@ $AttributeSet* AccessibleHTML$ElementInfo::getAttributes() {
 }
 
 $AttributeSet* AccessibleHTML$ElementInfo::getViewAttributes() {
+	$useLocalCurrentObjectStackCache();
 	if (validateIfNecessary()) {
 		$var($View, view, getView());
 		if (view != nullptr) {
@@ -297,6 +301,7 @@ $AttributeSet* AccessibleHTML$ElementInfo::getViewAttributes() {
 }
 
 int32_t AccessibleHTML$ElementInfo::getIntAttr($AttributeSet* attrs, Object$* key, int32_t deflt) {
+	$useLocalCurrentObjectStackCache();
 	if (attrs != nullptr && attrs->isDefined(key)) {
 		int32_t i = 0;
 		$var($String, val, $cast($String, attrs->getAttribute(key)));
@@ -316,6 +321,7 @@ int32_t AccessibleHTML$ElementInfo::getIntAttr($AttributeSet* attrs, Object$* ke
 }
 
 bool AccessibleHTML$ElementInfo::validateIfNecessary() {
+	$useLocalCurrentObjectStackCache();
 	if (!isValid() && this->canBeValid) {
 		$set(this, children, nullptr);
 		$var($Object, lock, this->this$0->lock());
@@ -337,6 +343,7 @@ bool AccessibleHTML$ElementInfo::validateIfNecessary() {
 }
 
 void AccessibleHTML$ElementInfo::invalidate(bool first) {
+	$useLocalCurrentObjectStackCache();
 	if (!isValid()) {
 		if (this->canBeValid && !first) {
 			this->canBeValid = false;
@@ -372,6 +379,7 @@ $View* AccessibleHTML$ElementInfo::getView($View* parent, $Element* e, int32_t s
 }
 
 int32_t AccessibleHTML$ElementInfo::getClosestInfoIndex(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t counter = 0; counter < getChildCount(); ++counter) {
 		$var(AccessibleHTML$ElementInfo, info, getChild(counter));
 		bool var$0 = index < $nc($($nc(info)->getElement()))->getEndOffset();
@@ -383,6 +391,7 @@ int32_t AccessibleHTML$ElementInfo::getClosestInfoIndex(int32_t index) {
 }
 
 void AccessibleHTML$ElementInfo::update($DocumentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!isValid()) {
 		return;
 	}

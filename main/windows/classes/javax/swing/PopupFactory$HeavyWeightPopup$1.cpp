@@ -83,6 +83,7 @@ void PopupFactory$HeavyWeightPopup$1::init$($Window* val$w) {
 }
 
 void PopupFactory$HeavyWeightPopup$1::windowClosed($WindowEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, popups, nullptr);
 	$load($PopupFactory$HeavyWeightPopup);
 	$synchronized($PopupFactory$HeavyWeightPopup::class$) {

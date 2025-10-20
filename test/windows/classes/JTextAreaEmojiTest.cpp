@@ -131,6 +131,7 @@ void JTextAreaEmojiTest::createControlPanelUI() {
 }
 
 void JTextAreaEmojiTest::actionPerformed($ActionEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JButton, $($nc(evt)->getSource()))) {
 		$var($JButton, btn, $cast($JButton, evt->getSource()));
 		{

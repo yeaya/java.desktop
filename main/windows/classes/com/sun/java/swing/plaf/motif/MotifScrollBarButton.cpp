@@ -80,6 +80,7 @@ $Object* allocate$MotifScrollBarButton($Class* clazz) {
 }
 
 void MotifScrollBarButton::init$(int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	$BasicArrowButton::init$(direction);
 	$set(this, darkShadow, $UIManager::getColor("controlShadow"_s));
 	$set(this, lightShadow, $UIManager::getColor("controlLtHighlight"_s));
@@ -138,6 +139,7 @@ bool MotifScrollBarButton::isFocusTraversable() {
 }
 
 void MotifScrollBarButton::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	int32_t w = getWidth();
 	int32_t h = getHeight();
 	if (isOpaque()) {

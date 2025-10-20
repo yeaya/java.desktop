@@ -185,6 +185,7 @@ void SynthDesktopPaneUI::installListeners() {
 }
 
 void SynthDesktopPaneUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	updateStyle(this->desktop);
 	if ($UIManager::getBoolean("InternalFrame.useTaskBar"_s)) {
 		$set(this, taskBar, $new($SynthDesktopPaneUI$TaskBar));
@@ -223,6 +224,7 @@ void SynthDesktopPaneUI::installDefaults() {
 }
 
 void SynthDesktopPaneUI::updateStyle($JDesktopPane* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthStyle, oldStyle, this->style);
 	$var($SynthContext, context, getContext(c, $SynthConstants::ENABLED));
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -242,6 +244,7 @@ void SynthDesktopPaneUI::uninstallListeners() {
 }
 
 void SynthDesktopPaneUI::uninstallDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(this->desktop, $SynthConstants::ENABLED));
 	$nc(this->style)->uninstallDefaults(context);
 	$set(this, style, nullptr);
@@ -305,6 +308,7 @@ int32_t SynthDesktopPaneUI::getComponentState($JComponent* c) {
 }
 
 void SynthDesktopPaneUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);

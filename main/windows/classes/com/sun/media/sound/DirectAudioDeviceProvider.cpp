@@ -106,6 +106,7 @@ void DirectAudioDeviceProvider::init$() {
 
 void DirectAudioDeviceProvider::init() {
 	$init(DirectAudioDeviceProvider);
+	$useLocalCurrentObjectStackCache();
 	int32_t numDevices = nGetNumDevices();
 	if (DirectAudioDeviceProvider::infos == nullptr || $nc(DirectAudioDeviceProvider::infos)->length != numDevices) {
 		$assignStatic(DirectAudioDeviceProvider::infos, $new($DirectAudioDeviceProvider$DirectAudioDeviceInfoArray, numDevices));
@@ -125,6 +126,7 @@ $Mixer$InfoArray* DirectAudioDeviceProvider::getMixerInfo() {
 }
 
 $Mixer* DirectAudioDeviceProvider::getMixer($Mixer$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(DirectAudioDeviceProvider::class$) {
 		if (info == nullptr) {
 			for (int32_t i = 0; i < $nc(DirectAudioDeviceProvider::infos)->length; ++i) {

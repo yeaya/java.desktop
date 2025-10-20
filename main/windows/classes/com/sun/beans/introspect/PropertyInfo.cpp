@@ -143,6 +143,7 @@ void PropertyInfo::init$() {
 }
 
 bool PropertyInfo::initialize() {
+	$useLocalCurrentObjectStackCache();
 	bool isInitedToIsGetter = false;
 	if (this->read != nullptr) {
 		$set(this, type, $nc(this->read)->type);
@@ -210,6 +211,7 @@ bool PropertyInfo::initialize() {
 }
 
 bool PropertyInfo::initialize($MethodInfo* info) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (info != nullptr) {
 		$load($BeanProperty);
@@ -294,6 +296,7 @@ PropertyInfo* PropertyInfo::getIndexed() {
 }
 
 bool PropertyInfo::isConstrained() {
+	$useLocalCurrentObjectStackCache();
 	if (this->write != nullptr) {
 		if (PropertyInfo::VETO_EXCEPTION == nullptr) {
 			{
@@ -349,6 +352,7 @@ void PropertyInfo::put($PropertyInfo$Name* name, Object$* value) {
 
 $List* PropertyInfo::add($List* list$renamed, $Method* method, $Type* type) {
 	$init(PropertyInfo);
+	$useLocalCurrentObjectStackCache();
 	$var($List, list, list$renamed);
 	if (list == nullptr) {
 		$assign(list, $new($ArrayList));
@@ -382,6 +386,7 @@ PropertyInfo* PropertyInfo::getInfo($Map* map, $String* key, bool indexed) {
 
 $Map* PropertyInfo::get($Class* type) {
 	$init(PropertyInfo);
+	$useLocalCurrentObjectStackCache();
 	$var($List, methods, $nc($($ClassInfo::get(type)))->getMethods());
 	if ($nc(methods)->isEmpty()) {
 		return $Collections::emptyMap();

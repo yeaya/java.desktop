@@ -83,6 +83,7 @@ void InternationalFormatter$IncrementAction::init$($InternationalFormatter* this
 }
 
 void InternationalFormatter$IncrementAction::actionPerformed($ActionEvent* ae) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($InternationalFormatter::access$000(this->this$0)))->isEditable()) {
 		if (this->this$0->getAllowsInvalid()) {
 			this->this$0->updateMask();

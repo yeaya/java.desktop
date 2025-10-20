@@ -169,6 +169,7 @@ void WindowsMenuUI::installDefaults() {
 }
 
 void WindowsMenuUI::paintBackground($Graphics* g, $JMenuItem* menuItem, $Color* bgColor) {
+	$useLocalCurrentObjectStackCache();
 	if ($WindowsMenuItemUI::isVistaPainting()) {
 		$WindowsMenuItemUI::paintBackground(this->accessor, g, menuItem, bgColor);
 		return;
@@ -237,6 +238,7 @@ void WindowsMenuUI::paintBackground($Graphics* g, $JMenuItem* menuItem, $Color* 
 }
 
 void WindowsMenuUI::paintText($Graphics* g, $JMenuItem* menuItem, $Rectangle* textRect, $String* text) {
+	$useLocalCurrentObjectStackCache();
 	if ($WindowsMenuItemUI::isVistaPainting()) {
 		$WindowsMenuItemUI::paintText(this->accessor, g, menuItem, textRect, text);
 		return;

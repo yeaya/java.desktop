@@ -130,6 +130,7 @@ void AbstractMidiDevice$TransmitterList::receiverChanged($AbstractMidiDevice$Bas
 }
 
 void AbstractMidiDevice$TransmitterList::close() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->transmitters) {
 		for (int32_t i = 0; i < $nc(this->transmitters)->size(); ++i) {
 			$nc(($cast($Transmitter, $($nc(this->transmitters)->get(i)))))->close();
@@ -139,6 +140,7 @@ void AbstractMidiDevice$TransmitterList::close() {
 }
 
 void AbstractMidiDevice$TransmitterList::sendMessage(int32_t packedMessage, int64_t timeStamp) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$synchronized(this->transmitters) {
 			int32_t size = $nc(this->transmitters)->size();
@@ -169,6 +171,7 @@ void AbstractMidiDevice$TransmitterList::sendMessage(int32_t packedMessage, int6
 }
 
 void AbstractMidiDevice$TransmitterList::sendMessage($bytes* data, int64_t timeStamp) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$synchronized(this->transmitters) {
 			int32_t size = $nc(this->transmitters)->size();
@@ -186,6 +189,7 @@ void AbstractMidiDevice$TransmitterList::sendMessage($bytes* data, int64_t timeS
 }
 
 void AbstractMidiDevice$TransmitterList::sendMessage($MidiMessage* message, int64_t timeStamp) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($FastShortMessage, message)) {
 		sendMessage($nc(($cast($FastShortMessage, message)))->getPackedMsg(), timeStamp);
 		return;

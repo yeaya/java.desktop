@@ -122,6 +122,7 @@ void PrinterStateReasons::init$(int32_t initialCapacity, float loadFactor) {
 }
 
 void PrinterStateReasons::init$($Map* map) {
+	$useLocalCurrentObjectStackCache();
 	PrinterStateReasons::init$();
 	{
 		$var($Iterator, i$, $nc($($nc(map)->entrySet()))->iterator());

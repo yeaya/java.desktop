@@ -88,6 +88,7 @@ void BufferedTextPipe$1::init$($BufferedTextPipe* this$0, int32_t val$totalGlyph
 }
 
 void BufferedTextPipe$1::run() {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = this->val$totalGlyphs;
 	bool var$1 = $nc(this->val$gl)->usePositions();
 	bool var$2 = $nc(this->val$gl)->isSubPixPos();

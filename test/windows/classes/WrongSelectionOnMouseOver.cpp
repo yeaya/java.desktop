@@ -187,6 +187,7 @@ void WrongSelectionOnMouseOver::init$($UIManager$LookAndFeelInfo* laf) {
 }
 
 void WrongSelectionOnMouseOver::createUI() {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println($$str({"Testing UI: "_s, this->laf}));
 	$UIManager::setLookAndFeel($($nc(this->laf)->getClassName()));
@@ -242,6 +243,7 @@ void WrongSelectionOnMouseOver::run() {
 }
 
 void WrongSelectionOnMouseOver::test() {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(100);
 	robot->waitForIdle();
@@ -266,6 +268,7 @@ void WrongSelectionOnMouseOver::test() {
 
 void WrongSelectionOnMouseOver::main($StringArray* args) {
 	$init(WrongSelectionOnMouseOver);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;

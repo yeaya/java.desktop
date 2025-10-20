@@ -94,6 +94,7 @@ $bytes* MemoryCache::getCacheBlock(int64_t blockNum) {
 }
 
 int64_t MemoryCache::loadFromStream($InputStream* stream, int64_t pos) {
+	$useLocalCurrentObjectStackCache();
 	if (pos < this->length) {
 		return pos;
 	}
@@ -161,6 +162,7 @@ void MemoryCache::writeToStream($OutputStream* stream, int64_t pos, int64_t len)
 }
 
 void MemoryCache::pad(int64_t pos) {
+	$useLocalCurrentObjectStackCache();
 	int64_t currIndex = this->cacheStart + $nc(this->cache)->size() - 1;
 	int64_t lastIndex = $div(pos, MemoryCache::BUFFER_LENGTH);
 	int64_t numNewBuffers = lastIndex - currIndex;
@@ -175,6 +177,7 @@ void MemoryCache::pad(int64_t pos) {
 }
 
 void MemoryCache::write($bytes* b, int32_t off, int32_t len, int64_t pos) {
+	$useLocalCurrentObjectStackCache();
 	if (b == nullptr) {
 		$throwNew($NullPointerException, "b == null!"_s);
 	}
@@ -227,6 +230,7 @@ int32_t MemoryCache::read(int64_t pos) {
 }
 
 void MemoryCache::read($bytes* b, int32_t off, int32_t len, int64_t pos) {
+	$useLocalCurrentObjectStackCache();
 	if (b == nullptr) {
 		$throwNew($NullPointerException, "b == null!"_s);
 	}

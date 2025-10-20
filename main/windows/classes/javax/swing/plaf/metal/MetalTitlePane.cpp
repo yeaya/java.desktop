@@ -264,6 +264,7 @@ bool MetalTitlePane::$assertionsDisabled = false;
 $Border* MetalTitlePane::handyEmptyBorder = nullptr;
 
 void MetalTitlePane::init$($JRootPane* root, $MetalRootPaneUI* ui) {
+	$useLocalCurrentObjectStackCache();
 	$JComponent::init$();
 	$set(this, inactiveBackground, $UIManager::getColor("inactiveCaption"_s));
 	$set(this, inactiveForeground, $UIManager::getColor("inactiveCaptionText"_s));
@@ -413,6 +414,7 @@ void MetalTitlePane::determineColors() {
 }
 
 void MetalTitlePane::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	setFont($($UIManager::getFont("InternalFrame.titleFont"_s, $(getLocale()))));
 }
 
@@ -428,6 +430,7 @@ $JMenuBar* MetalTitlePane::createMenuBar() {
 }
 
 void MetalTitlePane::close() {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, window, getWindow());
 	if (window != nullptr) {
 		window->dispatchEvent($$new($WindowEvent, window, $WindowEvent::WINDOW_CLOSING));
@@ -478,6 +481,7 @@ $JMenu* MetalTitlePane::createMenu() {
 }
 
 void MetalTitlePane::addMenuItems($JMenu* menu) {
+	$useLocalCurrentObjectStackCache();
 	$var($Locale, locale, $nc($(getRootPane()))->getLocale());
 	$var($JMenuItem, mi, $nc(menu)->add(this->restoreAction));
 	int32_t mnemonic = $MetalUtils::getInt("MetalTitlePane.restoreMnemonic"_s, -1);
@@ -513,6 +517,7 @@ $JButton* MetalTitlePane::createTitleButton() {
 }
 
 void MetalTitlePane::createButtons() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, closeButton, createTitleButton());
 	$nc(this->closeButton)->setAction(this->closeAction);
 	$nc(this->closeButton)->setText(nullptr);
@@ -546,6 +551,7 @@ $LayoutManager* MetalTitlePane::createLayout() {
 }
 
 void MetalTitlePane::setActive(bool isActive) {
+	$useLocalCurrentObjectStackCache();
 	$init($Boolean);
 	$var($Boolean, activeB, isActive ? $Boolean::TRUE : $Boolean::FALSE);
 	$nc(this->closeButton)->putClientProperty("paintActive"_s, activeB);
@@ -561,6 +567,7 @@ void MetalTitlePane::setState(int32_t state) {
 }
 
 void MetalTitlePane::setState(int32_t state, bool updateRegardless) {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, w, getWindow());
 	if (w != nullptr && getWindowDecorationStyle() == $JRootPane::FRAME) {
 		if (this->state == state && !updateRegardless) {
@@ -650,6 +657,7 @@ $String* MetalTitlePane::getTitle() {
 }
 
 void MetalTitlePane::paintComponent($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (getFrame() != nullptr) {
 		setState($nc($(getFrame()))->getExtendedState());
 	}
@@ -727,6 +735,7 @@ void MetalTitlePane::paintComponent($Graphics* g) {
 }
 
 void MetalTitlePane::updateSystemIcon() {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, window, getWindow());
 	if (window == nullptr) {
 		$set(this, systemIcon, nullptr);

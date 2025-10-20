@@ -396,6 +396,7 @@ void WScrollbarPeer::initialize() {
 }
 
 void WScrollbarPeer::postAdjustmentEvent(int32_t type, int32_t value, bool isAdjusting) {
+	$useLocalCurrentObjectStackCache();
 	$var($Scrollbar, sb, $cast($Scrollbar, this->target));
 	$WToolkit::executeOnEventHandlerThread(sb, $$new($WScrollbarPeer$1, this, sb, isAdjusting, value, type));
 }
@@ -428,6 +429,7 @@ void WScrollbarPeer::drag(int32_t value) {
 }
 
 void WScrollbarPeer::dragEnd(int32_t value) {
+	$useLocalCurrentObjectStackCache();
 	$var($Scrollbar, sb, $cast($Scrollbar, this->target));
 	if (!this->dragInProgress) {
 		return;

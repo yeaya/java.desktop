@@ -73,6 +73,7 @@ void D3DContext$D3DContextCaps::init$(int32_t caps, $String* adapterId) {
 }
 
 $String* D3DContext$D3DContextCaps::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, buf, $new($StringBuilder, $($ContextCapabilities::toString())));
 	if (((int32_t)(this->caps & (uint32_t)D3DContext$D3DContextCaps::CAPS_LCD_SHADER)) != 0) {
 		buf->append("CAPS_LCD_SHADER|"_s);

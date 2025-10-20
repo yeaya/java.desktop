@@ -189,6 +189,7 @@ bool FixedHeightLayoutCache::isExpanded($TreePath* path) {
 }
 
 $Rectangle* FixedHeightLayoutCache::getBounds($TreePath* path, $Rectangle* placeIn) {
+	$useLocalCurrentObjectStackCache();
 	if (path == nullptr) {
 		return nullptr;
 	}
@@ -218,6 +219,7 @@ $TreePath* FixedHeightLayoutCache::getPathForRow(int32_t row) {
 }
 
 int32_t FixedHeightLayoutCache::getRowForPath($TreePath* path) {
+	$useLocalCurrentObjectStackCache();
 	if (path == nullptr || this->root == nullptr) {
 		return -1;
 	}
@@ -251,6 +253,7 @@ int32_t FixedHeightLayoutCache::getVisibleChildCount($TreePath* path) {
 }
 
 $Enumeration* FixedHeightLayoutCache::getVisiblePathsFrom($TreePath* path) {
+	$useLocalCurrentObjectStackCache();
 	if (path == nullptr) {
 		return nullptr;
 	}
@@ -268,6 +271,7 @@ $Enumeration* FixedHeightLayoutCache::getVisiblePathsFrom($TreePath* path) {
 }
 
 void FixedHeightLayoutCache::setExpandedState($TreePath* path, bool isExpanded) {
+	$useLocalCurrentObjectStackCache();
 	if (isExpanded) {
 		ensurePathIsExpanded(path, true);
 	} else if (path != nullptr) {
@@ -298,6 +302,7 @@ bool FixedHeightLayoutCache::getExpandedState($TreePath* path) {
 }
 
 void FixedHeightLayoutCache::treeNodesChanged($TreeModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (e != nullptr) {
 		$var($ints, changedIndexs, nullptr);
 		$var($FixedHeightLayoutCache$FHTreeStateNode, changedParent, getNodeForPath($($SwingUtilities2::getTreePath(e, $(getModel()))), false, false));
@@ -327,6 +332,7 @@ void FixedHeightLayoutCache::treeNodesChanged($TreeModelEvent* e) {
 }
 
 void FixedHeightLayoutCache::treeNodesInserted($TreeModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (e != nullptr) {
 		$var($ints, changedIndexs, nullptr);
 		$var($FixedHeightLayoutCache$FHTreeStateNode, changedParent, getNodeForPath($($SwingUtilities2::getTreePath(e, $(getModel()))), false, false));
@@ -349,6 +355,7 @@ void FixedHeightLayoutCache::treeNodesInserted($TreeModelEvent* e) {
 }
 
 void FixedHeightLayoutCache::treeNodesRemoved($TreeModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (e != nullptr) {
 		$var($ints, changedIndexs, nullptr);
 		int32_t maxCounter = 0;
@@ -379,6 +386,7 @@ void FixedHeightLayoutCache::treeNodesRemoved($TreeModelEvent* e) {
 }
 
 void FixedHeightLayoutCache::treeStructureChanged($TreeModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (e != nullptr) {
 		$var($TreePath, changedPath, $SwingUtilities2::getTreePath(e, $(getModel())));
 		$var($FixedHeightLayoutCache$FHTreeStateNode, changedNode, getNodeForPath(changedPath, false, false));
@@ -422,6 +430,7 @@ void FixedHeightLayoutCache::visibleNodesChanged() {
 }
 
 $Rectangle* FixedHeightLayoutCache::getBounds($FixedHeightLayoutCache$FHTreeStateNode* parent, int32_t childIndex, $Rectangle* placeIn$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, placeIn, placeIn$renamed);
 	bool expanded = false;
 	int32_t level = 0;
@@ -502,6 +511,7 @@ int32_t FixedHeightLayoutCache::getRowContainingYLocation(int32_t location) {
 }
 
 bool FixedHeightLayoutCache::ensurePathIsExpanded($TreePath* aPath$renamed, bool expandLast) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePath, aPath, aPath$renamed);
 	if (aPath != nullptr) {
 		if ($nc(this->treeModel)->isLeaf($(aPath->getLastPathComponent()))) {
@@ -527,6 +537,7 @@ $FixedHeightLayoutCache$FHTreeStateNode* FixedHeightLayoutCache::createNodeForVa
 }
 
 $FixedHeightLayoutCache$FHTreeStateNode* FixedHeightLayoutCache::getNodeForPath($TreePath* path$renamed, bool onlyIfVisible, bool shouldCreate) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePath, path, path$renamed);
 	if (path != nullptr) {
 		$var($FixedHeightLayoutCache$FHTreeStateNode, node, nullptr);

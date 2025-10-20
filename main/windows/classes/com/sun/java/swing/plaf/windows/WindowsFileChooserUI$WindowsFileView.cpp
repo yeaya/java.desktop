@@ -79,6 +79,7 @@ void WindowsFileChooserUI$WindowsFileView::init$($WindowsFileChooserUI* this$0) 
 }
 
 $Icon* WindowsFileChooserUI$WindowsFileView::getIcon($File* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, icon, getCachedIcon(f));
 	if (icon != nullptr) {
 		return icon;

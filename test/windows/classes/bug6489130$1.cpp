@@ -88,6 +88,7 @@ void bug6489130$1::init$($bug6489130* this$0) {
 }
 
 void bug6489130$1::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	switch (this->this$0->state) {
 	case 0:
 		{}

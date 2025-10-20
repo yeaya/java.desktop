@@ -190,6 +190,7 @@ void FrameView::init$($Element* elem) {
 }
 
 $Component* FrameView::createComponent() {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, getElement());
 	$var($AttributeSet, attributes, $nc(elem)->getAttributes());
 	$init($HTML$Attribute);
@@ -268,6 +269,7 @@ void FrameView::paint($Graphics* g, $Shape* allocation) {
 }
 
 void FrameView::setMargin() {
+	$useLocalCurrentObjectStackCache();
 	int32_t margin = 0;
 	$var($Insets, in, $nc(this->htmlPane)->getMargin());
 	$var($Insets, newInsets, nullptr);
@@ -303,6 +305,7 @@ void FrameView::setMargin() {
 }
 
 void FrameView::setBorder() {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attributes, $nc($(getElement()))->getAttributes());
 	$init($HTML$Attribute);
 	$var($String, frameBorder, $cast($String, $nc(attributes)->getAttribute($HTML$Attribute::FRAMEBORDER)));
@@ -317,6 +320,7 @@ void FrameView::setBorder() {
 }
 
 void FrameView::createScrollPane() {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attributes, $nc($(getElement()))->getAttributes());
 	$init($HTML$Attribute);
 	$var($String, scrolling, $cast($String, $nc(attributes)->getAttribute($HTML$Attribute::SCROLLING)));
@@ -340,6 +344,7 @@ void FrameView::createScrollPane() {
 }
 
 $JEditorPane* FrameView::getOutermostJEditorPane() {
+	$useLocalCurrentObjectStackCache();
 	$var($View, parent, getParent());
 	$var($FrameSetView, frameSetView, nullptr);
 	while (parent != nullptr) {
@@ -355,11 +360,13 @@ $JEditorPane* FrameView::getOutermostJEditorPane() {
 }
 
 bool FrameView::inNestedFrameSet() {
+	$useLocalCurrentObjectStackCache();
 	$var($FrameSetView, parent, $cast($FrameSetView, getParent()));
 	return ($instanceOf($FrameSetView, $($nc(parent)->getParent())));
 }
 
 void FrameView::hyperlinkUpdate($HyperlinkEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, c, getOutermostJEditorPane());
 	if (c == nullptr) {
 		return;
@@ -415,6 +422,7 @@ void FrameView::hyperlinkUpdate($HyperlinkEvent* evt) {
 }
 
 void FrameView::changedUpdate($DocumentEvent* e, $Shape* a, $ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, getElement());
 	$var($AttributeSet, attributes, $nc(elem)->getAttributes());
 	$var($URL, oldPage, this->src);
@@ -444,6 +452,7 @@ void FrameView::changedUpdate($DocumentEvent* e, $Shape* a, $ViewFactory* f) {
 }
 
 $Object* FrameView::movePostData($JEditorPane* targetPane, $String* frameName$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, frameName, frameName$renamed);
 	$var($Object, postData, nullptr);
 	$var($JEditorPane, p, getOutermostJEditorPane());

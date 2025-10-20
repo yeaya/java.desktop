@@ -175,6 +175,7 @@ void TitledBorder$1::init$($TitledBorder* this$0) {
 }
 
 void TitledBorder$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($TitledBorder);
 	$assignStatic($TitledBorder::mainFrame, $new($JFrame, "Window LAF TitledBorder Test"_s));
 	$assignStatic($TitledBorder::layout, $new($GridBagLayout));

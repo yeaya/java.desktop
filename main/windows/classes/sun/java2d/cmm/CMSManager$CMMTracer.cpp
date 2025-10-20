@@ -85,6 +85,7 @@ void CMSManager$CMMTracer::init$($PCMM* tcmm) {
 }
 
 $Profile* CMSManager$CMMTracer::loadProfile($bytes* data) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::err)->print($$str({this->cName, ".loadProfile"_s}));
 	$var($Profile, p, $nc(this->tcmm)->loadProfile(data));
@@ -93,6 +94,7 @@ $Profile* CMSManager$CMMTracer::loadProfile($bytes* data) {
 }
 
 $bytes* CMSManager$CMMTracer::getProfileData($Profile* p) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::err)->print($$str({this->cName, ".getProfileData(ID="_s, p, ") "_s}));
 	$var($bytes, data, $nc(this->tcmm)->getProfileData(p));
@@ -101,6 +103,7 @@ $bytes* CMSManager$CMMTracer::getProfileData($Profile* p) {
 }
 
 $bytes* CMSManager$CMMTracer::getTagData($Profile* p, int32_t tagSignature) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::err)->printf($$str({this->cName, ".getTagData(ID=%x, TagSig=%s)"_s}), $$new($ObjectArray, {
 		$of(p),
@@ -112,6 +115,7 @@ $bytes* CMSManager$CMMTracer::getTagData($Profile* p, int32_t tagSignature) {
 }
 
 void CMSManager$CMMTracer::setTagData($Profile* p, int32_t tagSignature, $bytes* data) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::err)->print($$str({this->cName, ".setTagData(ID="_s, p, ", TagSig="_s, $$str(tagSignature), ")"_s}));
 	$nc($System::err)->println($$str({" sending "_s, $$str($nc(data)->length), " byte(s)"_s}));
@@ -132,6 +136,7 @@ $ColorTransform* CMSManager$CMMTracer::createTransform($ColorTransformArray* tra
 
 $String* CMSManager$CMMTracer::signatureToString(int32_t sig) {
 	$init(CMSManager$CMMTracer);
+	$useLocalCurrentObjectStackCache();
 	return $String::format("%c%c%c%c"_s, $$new($ObjectArray, {
 		$($of($Character::valueOf((char16_t)((int32_t)(255 & (uint32_t)(sig >> 24)))))),
 		$($of($Character::valueOf((char16_t)((int32_t)(255 & (uint32_t)(sig >> 16)))))),

@@ -322,6 +322,7 @@ void ServiceDialog::init$($GraphicsConfiguration* gc, int32_t x, int32_t y, $Pri
 }
 
 void ServiceDialog::initPrintDialog(int32_t x, int32_t y, $PrintServiceArray* services, int32_t defaultServiceIndex, $DocFlavor* flavor, $PrintRequestAttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, services, services);
 	this->defaultServiceIndex = defaultServiceIndex;
 	$set(this, asOriginal, attributes);
@@ -393,6 +394,7 @@ void ServiceDialog::init$($GraphicsConfiguration* gc, int32_t x, int32_t y, $Pri
 }
 
 void ServiceDialog::initPageDialog(int32_t x, int32_t y, $PrintService* ps, $DocFlavor* flavor, $PrintRequestAttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, psCurrent, ps);
 	$set(this, docFlavor, flavor);
 	$set(this, asOriginal, attributes);
@@ -434,6 +436,7 @@ void ServiceDialog::initPageDialog(int32_t x, int32_t y, $PrintService* ps, $Doc
 }
 
 void ServiceDialog::handleEscKey($JButton* btnCancel) {
+	$useLocalCurrentObjectStackCache();
 	$var($Action, cancelKeyAction, $new($ServiceDialog$3, this));
 	$var($KeyStroke, cancelKeyStroke, $KeyStroke::getKeyStroke((int32_t)(char16_t)$KeyEvent::VK_ESCAPE, 0));
 	$var($InputMap, inputMap, $nc(btnCancel)->getInputMap($JComponent::WHEN_IN_FOCUSED_WINDOW));
@@ -487,6 +490,7 @@ void ServiceDialog::actionPerformed($ActionEvent* e) {
 }
 
 bool ServiceDialog::showFileChooser() {
+	$useLocalCurrentObjectStackCache();
 	$load($Destination);
 	$Class* dstCategory = $Destination::class$;
 	$var($Destination, dst, $cast($Destination, $nc(this->asCurrent)->get(dstCategory)));
@@ -548,6 +552,7 @@ void ServiceDialog::initResource() {
 
 $String* ServiceDialog::getMsg($String* key) {
 	$init(ServiceDialog);
+	$useLocalCurrentObjectStackCache();
 	try {
 		return removeMnemonics($($nc(ServiceDialog::messageRB)->getString(key)));
 	} catch ($MissingResourceException&) {
@@ -559,6 +564,7 @@ $String* ServiceDialog::getMsg($String* key) {
 
 $String* ServiceDialog::removeMnemonics($String* s) {
 	$init(ServiceDialog);
+	$useLocalCurrentObjectStackCache();
 	int32_t i = $nc(s)->indexOf((int32_t)u'&');
 	int32_t len = s->length();
 	if (i < 0 || i == (len - 1)) {
@@ -583,6 +589,7 @@ $String* ServiceDialog::removeMnemonics($String* s) {
 
 char16_t ServiceDialog::getMnemonic($String* key) {
 	$init(ServiceDialog);
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, $nc($($nc(ServiceDialog::messageRB)->getString(key)))->replace(static_cast<$CharSequence*>("&&"_s), static_cast<$CharSequence*>(""_s)));
 	int32_t index = str->indexOf((int32_t)u'&');
 	if (0 <= index && index < str->length() - 1) {
@@ -595,6 +602,7 @@ char16_t ServiceDialog::getMnemonic($String* key) {
 
 int32_t ServiceDialog::getVKMnemonic($String* key) {
 	$init(ServiceDialog);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, s, $String::valueOf(getMnemonic(key)));
 	if (s == nullptr || s->length() != 1) {
@@ -616,6 +624,7 @@ int32_t ServiceDialog::getVKMnemonic($String* key) {
 
 $URL* ServiceDialog::getImageResource($String* key) {
 	$init(ServiceDialog);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($URL, url, $cast($URL, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($ServiceDialog$5, key)))));
 	if (url == nullptr) {
@@ -626,6 +635,7 @@ $URL* ServiceDialog::getImageResource($String* key) {
 
 $JButton* ServiceDialog::createButton($String* key, $ActionListener* al) {
 	$init(ServiceDialog);
+	$useLocalCurrentObjectStackCache();
 	$var($JButton, btn, $new($JButton, $(getMsg(key))));
 	btn->setMnemonic(getMnemonic(key));
 	btn->addActionListener(al);
@@ -634,6 +644,7 @@ $JButton* ServiceDialog::createButton($String* key, $ActionListener* al) {
 
 $JButton* ServiceDialog::createExitButton($String* key, $ActionListener* al) {
 	$init(ServiceDialog);
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, getMsg(key));
 	$var($JButton, btn, $new($JButton, str));
 	btn->addActionListener(al);
@@ -643,6 +654,7 @@ $JButton* ServiceDialog::createExitButton($String* key, $ActionListener* al) {
 
 $JCheckBox* ServiceDialog::createCheckBox($String* key, $ActionListener* al) {
 	$init(ServiceDialog);
+	$useLocalCurrentObjectStackCache();
 	$var($JCheckBox, cb, $new($JCheckBox, $(getMsg(key))));
 	cb->setMnemonic(getMnemonic(key));
 	cb->addActionListener(al);
@@ -651,6 +663,7 @@ $JCheckBox* ServiceDialog::createCheckBox($String* key, $ActionListener* al) {
 
 $JRadioButton* ServiceDialog::createRadioButton($String* key, $ActionListener* al) {
 	$init(ServiceDialog);
+	$useLocalCurrentObjectStackCache();
 	$var($JRadioButton, rb, $new($JRadioButton, $(getMsg(key))));
 	rb->setMnemonic(getMnemonic(key));
 	rb->addActionListener(al);
@@ -659,6 +672,7 @@ $JRadioButton* ServiceDialog::createRadioButton($String* key, $ActionListener* a
 
 void ServiceDialog::showNoPrintService($GraphicsConfiguration* gc) {
 	$init(ServiceDialog);
+	$useLocalCurrentObjectStackCache();
 	$var($Frame, dlgFrame, $new($Frame, gc));
 	$JOptionPane::showMessageDialog(dlgFrame, $(getMsg("dialog.noprintermsg"_s)));
 	dlgFrame->dispose();

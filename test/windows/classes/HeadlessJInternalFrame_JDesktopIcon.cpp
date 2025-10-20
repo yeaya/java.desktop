@@ -114,6 +114,7 @@ void HeadlessJInternalFrame_JDesktopIcon::init$() {
 }
 
 void HeadlessJInternalFrame_JDesktopIcon::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame$JDesktopIcon, jdi, $new($JInternalFrame$JDesktopIcon, $$new($JInternalFrame)));
 	jdi->getAccessibleContext();
 	jdi->isFocusTraversable();

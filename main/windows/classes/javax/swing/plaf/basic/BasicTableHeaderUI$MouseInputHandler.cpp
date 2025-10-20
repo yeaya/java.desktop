@@ -106,6 +106,7 @@ void BasicTableHeaderUI$MouseInputHandler::init$($BasicTableHeaderUI* this$0) {
 }
 
 void BasicTableHeaderUI$MouseInputHandler::mouseClicked($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->this$0->header)->isEnabled()) {
 		return;
 	}
@@ -128,6 +129,7 @@ $TableColumn* BasicTableHeaderUI$MouseInputHandler::getResizingColumn($Point* p)
 }
 
 $TableColumn* BasicTableHeaderUI$MouseInputHandler::getResizingColumn($Point* p, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	if (column == -1) {
 		return nullptr;
 	}
@@ -150,6 +152,7 @@ $TableColumn* BasicTableHeaderUI$MouseInputHandler::getResizingColumn($Point* p,
 }
 
 void BasicTableHeaderUI$MouseInputHandler::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->this$0->header)->isEnabled()) {
 		return;
 	}
@@ -188,6 +191,7 @@ void BasicTableHeaderUI$MouseInputHandler::swapCursor() {
 }
 
 void BasicTableHeaderUI$MouseInputHandler::mouseMoved($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->this$0->header)->isEnabled()) {
 		return;
 	}
@@ -199,6 +203,7 @@ void BasicTableHeaderUI$MouseInputHandler::mouseMoved($MouseEvent* e) {
 }
 
 void BasicTableHeaderUI$MouseInputHandler::mouseDragged($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->this$0->header)->isEnabled()) {
 		return;
 	}

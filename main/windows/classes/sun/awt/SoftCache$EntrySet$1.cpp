@@ -92,6 +92,7 @@ void SoftCache$EntrySet$1::init$($SoftCache$EntrySet* this$1) {
 }
 
 bool SoftCache$EntrySet$1::hasNext() {
+	$useLocalCurrentObjectStackCache();
 	while ($nc(this->hashIterator)->hasNext()) {
 		$var($Map$Entry, ent, $cast($Map$Entry, $nc(this->hashIterator)->next()));
 		$var($SoftCache$ValueCell, vc, $cast($SoftCache$ValueCell, $nc(ent)->getValue()));

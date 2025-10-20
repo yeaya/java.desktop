@@ -336,6 +336,7 @@ void bug8008657::init$() {
 }
 
 void bug8008657::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(bug8008657);
 	$assignStatic(bug8008657::robot, $new($Robot));
 	$var($UIManager$LookAndFeelInfoArray, lookAndFeelArray, $UIManager::getInstalledLookAndFeels());
@@ -353,6 +354,7 @@ void bug8008657::main($StringArray* args) {
 }
 
 void bug8008657::executeCase($String* lookAndFeelString) {
+	$useLocalCurrentObjectStackCache();
 	if (tryLookAndFeel(lookAndFeelString)) {
 		$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug8008657$$Lambda$lambda$executeCase$0)));
 		$init(bug8008657);
@@ -367,6 +369,7 @@ void bug8008657::executeCase($String* lookAndFeelString) {
 }
 
 void bug8008657::testSpinner(bool checkHorizontalAligment) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug8008657$$Lambda$lambda$testSpinner$2$2)));
 	$init(bug8008657);
 	$nc(bug8008657::robot)->waitForIdle();
@@ -386,6 +389,7 @@ $String* bug8008657::getOrientation($ComponentOrientation* orientation) {
 }
 
 void bug8008657::createDateSpinner() {
+	$useLocalCurrentObjectStackCache();
 	$var($Calendar, calendar, $Calendar::getInstance());
 	$var($Date, initDate, $nc(calendar)->getTime());
 	calendar->add($Calendar::YEAR, -1);
@@ -399,6 +403,7 @@ void bug8008657::createDateSpinner() {
 }
 
 void bug8008657::createNumberSpinner() {
+	$useLocalCurrentObjectStackCache();
 	$var($Calendar, calendar, $Calendar::getInstance());
 	$nc(calendar)->add($Calendar::YEAR, -1);
 	calendar->add($Calendar::YEAR, 1);
@@ -423,6 +428,7 @@ void bug8008657::cleanUp() {
 }
 
 bool bug8008657::tryLookAndFeel($String* lookAndFeelString) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(lookAndFeelString);
 	} catch ($UnsupportedLookAndFeelException&) {
@@ -442,6 +448,7 @@ bool bug8008657::tryLookAndFeel($String* lookAndFeelString) {
 }
 
 void bug8008657::lambda$testSpinner$4(bool checkHorizontalAligment) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextField, textField, getTextField());
 	$init($ComponentOrientation);
 	if (!$nc($of($ComponentOrientation::LEFT_TO_RIGHT))->equals($($nc(textField)->getComponentOrientation()))) {
@@ -455,6 +462,7 @@ void bug8008657::lambda$testSpinner$4(bool checkHorizontalAligment) {
 }
 
 void bug8008657::lambda$testSpinner$3(bool checkHorizontalAligment) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextField, textField, getTextField());
 	$init($ComponentOrientation);
 	if (!$nc($of($ComponentOrientation::RIGHT_TO_LEFT))->equals($($nc(textField)->getComponentOrientation()))) {

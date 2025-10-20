@@ -98,6 +98,7 @@ void bug8013566::main($StringArray* args) {
 }
 
 void bug8013566::test($JFrame* frame) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, c1, $new($JButton, "Label1"_s));
 	$var($JComponent, c2, $new($JButton, "Label22"_s));
 	$var($JComponent, c3, $new($JButton, "Label333"_s));

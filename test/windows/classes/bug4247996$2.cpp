@@ -69,6 +69,7 @@ void bug4247996$2::init$() {
 }
 
 void bug4247996$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug4247996);
 	if (!$nc($($nc($bug4247996::button)->getSize()))->equals($($nc($bug4247996::toogleButton)->getSize()))) {
 		$throwNew($RuntimeException, "Button sizes are different!"_s);

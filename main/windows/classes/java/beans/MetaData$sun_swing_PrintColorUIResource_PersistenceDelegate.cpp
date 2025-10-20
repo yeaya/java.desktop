@@ -72,6 +72,7 @@ bool MetaData$sun_swing_PrintColorUIResource_PersistenceDelegate::mutatesTo(Obje
 }
 
 $Expression* MetaData$sun_swing_PrintColorUIResource_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, color, $cast($Color, oldInstance));
 	$var($ObjectArray, args, $new($ObjectArray, {$($of($Integer::valueOf($nc(color)->getRGB())))}));
 	$load($ColorUIResource);

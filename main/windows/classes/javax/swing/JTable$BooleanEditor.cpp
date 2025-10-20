@@ -59,6 +59,7 @@ $Object* allocate$JTable$BooleanEditor($Class* clazz) {
 }
 
 void JTable$BooleanEditor::init$() {
+	$useLocalCurrentObjectStackCache();
 	$DefaultCellEditor::init$($$new($JCheckBox));
 	$var($JCheckBox, checkBox, $cast($JCheckBox, getComponent()));
 	$nc(checkBox)->setHorizontalAlignment($JCheckBox::CENTER);

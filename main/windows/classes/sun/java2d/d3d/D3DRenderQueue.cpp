@@ -102,6 +102,7 @@ D3DRenderQueue* D3DRenderQueue::getInstance() {
 
 void D3DRenderQueue::sync() {
 	$init(D3DRenderQueue);
+	$useLocalCurrentObjectStackCache();
 	if (D3DRenderQueue::theInstance != nullptr) {
 		$var($D3DScreenUpdateManager, mgr, $cast($D3DScreenUpdateManager, $ScreenUpdateManager::getInstance()));
 		$nc(mgr)->runUpdateNow();
@@ -126,6 +127,7 @@ void D3DRenderQueue::sync() {
 
 void D3DRenderQueue::restoreDevices() {
 	$init(D3DRenderQueue);
+	$useLocalCurrentObjectStackCache();
 	$var(D3DRenderQueue, rq, getInstance());
 	$nc(rq)->lock();
 	{
@@ -152,6 +154,7 @@ bool D3DRenderQueue::isRenderQueueThread() {
 
 void D3DRenderQueue::disposeGraphicsConfig(int64_t pConfigInfo) {
 	$init(D3DRenderQueue);
+	$useLocalCurrentObjectStackCache();
 	$var(D3DRenderQueue, rq, getInstance());
 	$nc(rq)->lock();
 	{

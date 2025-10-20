@@ -120,6 +120,7 @@ void JTable$BooleanRenderer::init$() {
 }
 
 $Component* JTable$BooleanRenderer::getTableCellRendererComponent($JTable* table, Object$* value, bool isSelected, bool hasFocus, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	if (isSelected) {
 		setForeground($($nc(table)->getSelectionForeground()));
 		$JCheckBox::setBackground($($nc(table)->getSelectionBackground()));

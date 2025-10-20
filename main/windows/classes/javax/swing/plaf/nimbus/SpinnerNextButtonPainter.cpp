@@ -304,6 +304,7 @@ $AbstractRegionPainter$PaintContext* SpinnerNextButtonPainter::getPaintContext()
 }
 
 void SpinnerNextButtonPainter::paintBackgroundDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint($(decodeGradient1(this->path)));
 	g->fill(this->path);
@@ -316,6 +317,7 @@ void SpinnerNextButtonPainter::paintBackgroundDisabled($Graphics2D* g) {
 }
 
 void SpinnerNextButtonPainter::paintBackgroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath3());
 	$nc(g)->setPaint($(decodeGradient3(this->path)));
 	g->fill(this->path);
@@ -328,6 +330,7 @@ void SpinnerNextButtonPainter::paintBackgroundEnabled($Graphics2D* g) {
 }
 
 void SpinnerNextButtonPainter::paintBackgroundFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath5());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->path);
@@ -343,6 +346,7 @@ void SpinnerNextButtonPainter::paintBackgroundFocused($Graphics2D* g) {
 }
 
 void SpinnerNextButtonPainter::paintBackgroundMouseOverAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath5());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->path);
@@ -358,6 +362,7 @@ void SpinnerNextButtonPainter::paintBackgroundMouseOverAndFocused($Graphics2D* g
 }
 
 void SpinnerNextButtonPainter::paintBackgroundPressedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath5());
 	$nc(g)->setPaint(this->color12);
 	g->fill(this->path);
@@ -373,6 +378,7 @@ void SpinnerNextButtonPainter::paintBackgroundPressedAndFocused($Graphics2D* g) 
 }
 
 void SpinnerNextButtonPainter::paintBackgroundMouseOver($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath3());
 	$nc(g)->setPaint($(decodeGradient6(this->path)));
 	g->fill(this->path);
@@ -385,6 +391,7 @@ void SpinnerNextButtonPainter::paintBackgroundMouseOver($Graphics2D* g) {
 }
 
 void SpinnerNextButtonPainter::paintBackgroundPressed($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath6());
 	$nc(g)->setPaint($(decodeGradient8(this->path)));
 	g->fill(this->path);
@@ -652,6 +659,7 @@ $Path2D* SpinnerNextButtonPainter::decodePath9() {
 }
 
 $Paint* SpinnerNextButtonPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -669,6 +677,7 @@ $Paint* SpinnerNextButtonPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* SpinnerNextButtonPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -686,6 +695,7 @@ $Paint* SpinnerNextButtonPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* SpinnerNextButtonPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -703,6 +713,7 @@ $Paint* SpinnerNextButtonPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* SpinnerNextButtonPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -724,6 +735,7 @@ $Paint* SpinnerNextButtonPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* SpinnerNextButtonPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -745,6 +757,7 @@ $Paint* SpinnerNextButtonPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* SpinnerNextButtonPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -762,6 +775,7 @@ $Paint* SpinnerNextButtonPainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* SpinnerNextButtonPainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -783,6 +797,7 @@ $Paint* SpinnerNextButtonPainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* SpinnerNextButtonPainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -800,6 +815,7 @@ $Paint* SpinnerNextButtonPainter::decodeGradient8($Shape* s) {
 }
 
 $Paint* SpinnerNextButtonPainter::decodeGradient9($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -821,6 +837,7 @@ $Paint* SpinnerNextButtonPainter::decodeGradient9($Shape* s) {
 }
 
 $Paint* SpinnerNextButtonPainter::decodeGradient10($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -842,6 +859,7 @@ $Paint* SpinnerNextButtonPainter::decodeGradient10($Shape* s) {
 }
 
 $Paint* SpinnerNextButtonPainter::decodeGradient11($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -863,6 +881,7 @@ $Paint* SpinnerNextButtonPainter::decodeGradient11($Shape* s) {
 }
 
 $Paint* SpinnerNextButtonPainter::decodeGradient12($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

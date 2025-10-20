@@ -249,6 +249,7 @@ void PressedIconTest::init$() {
 
 void PressedIconTest::main($StringArray* args) {
 	$init(PressedIconTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(50);
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(PressedIconTest$$Lambda$lambda$main$0)));
@@ -270,6 +271,7 @@ void PressedIconTest::main($StringArray* args) {
 
 void PressedIconTest::createAndShowGUI() {
 	$init(PressedIconTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(PressedIconTest::frame, $new($JFrame));
 	$nc(PressedIconTest::frame)->setSize(PressedIconTest::IMAGE_SIZE, PressedIconTest::IMAGE_SIZE);
 	$nc(PressedIconTest::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
@@ -312,6 +314,7 @@ bool PressedIconTest::similar(int32_t n, int32_t m) {
 
 $BufferedImage* PressedIconTest::generateImage(int32_t scale, $Color* c) {
 	$init(PressedIconTest);
+	$useLocalCurrentObjectStackCache();
 	int32_t size = PressedIconTest::IMAGE_SIZE * scale;
 	$var($BufferedImage, img, $new($BufferedImage, size, size, $BufferedImage::TYPE_INT_RGB));
 	$var($Graphics, g, img->createGraphics());
@@ -328,6 +331,7 @@ void PressedIconTest::lambda$main$2() {
 
 void PressedIconTest::lambda$main$1() {
 	$init(PressedIconTest);
+	$useLocalCurrentObjectStackCache();
 	PressedIconTest::scale = $nc($($nc($($nc(PressedIconTest::frame)->getGraphicsConfiguration()))->getDefaultTransform()))->getScaleX();
 	$var($Point, location, $nc(PressedIconTest::frame)->getLocation());
 	$var($Dimension, size, $nc(PressedIconTest::frame)->getSize());

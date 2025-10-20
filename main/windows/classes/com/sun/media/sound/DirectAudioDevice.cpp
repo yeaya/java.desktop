@@ -164,6 +164,7 @@ $Object* allocate$DirectAudioDevice($Class* clazz) {
 }
 
 void DirectAudioDevice::init$($DirectAudioDeviceProvider$DirectAudioDeviceInfo* portMixerInfo) {
+	$useLocalCurrentObjectStackCache();
 	$AbstractMixer::init$(portMixerInfo, nullptr, nullptr, nullptr);
 	$var($DirectAudioDevice$DirectDLI, srcLineInfo, createDataLineInfo(true));
 	if (srcLineInfo != nullptr) {
@@ -186,6 +187,7 @@ void DirectAudioDevice::init$($DirectAudioDeviceProvider$DirectAudioDeviceInfo* 
 }
 
 $DirectAudioDevice$DirectDLI* DirectAudioDevice::createDataLineInfo(bool isSource) {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, formats, $new($Vector));
 	$var($AudioFormatArray, hardwareFormatArray, nullptr);
 	$var($AudioFormatArray, formatArray, nullptr);
@@ -255,6 +257,7 @@ $DirectAudioDevice$DirectDLI* DirectAudioDevice::createDataLineInfo(bool isSourc
 }
 
 $Line* DirectAudioDevice::getLine($Line$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	$var($Line$Info, fullInfo, getLineInfo(info));
 	if (fullInfo == nullptr) {
 		$throwNew($IllegalArgumentException, $$str({"Line unsupported: "_s, info}));
@@ -329,6 +332,7 @@ int32_t DirectAudioDevice::getMaxSimulLines() {
 
 void DirectAudioDevice::addFormat($Vector* v, int32_t bits, int32_t frameSizeInBytes, int32_t channels, float sampleRate, int32_t encoding, bool signed$, bool bigEndian) {
 	$init(DirectAudioDevice);
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFormat$Encoding, enc, nullptr);
 	switch (encoding) {
 	case $AbstractMixer::PCM:
@@ -385,6 +389,7 @@ void DirectAudioDevice::addFormat($Vector* v, int32_t bits, int32_t frameSizeInB
 
 $AudioFormat* DirectAudioDevice::getSignOrEndianChangedFormat($AudioFormat* format) {
 	$init(DirectAudioDevice);
+	$useLocalCurrentObjectStackCache();
 	$init($AudioFormat$Encoding);
 	bool isSigned = $nc($($nc(format)->getEncoding()))->equals($AudioFormat$Encoding::PCM_SIGNED);
 	bool isUnsigned = $nc($(format->getEncoding()))->equals($AudioFormat$Encoding::PCM_UNSIGNED);

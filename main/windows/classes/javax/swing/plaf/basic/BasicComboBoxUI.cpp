@@ -326,6 +326,7 @@ void BasicComboBoxUI::init$() {
 
 $ListCellRenderer* BasicComboBoxUI::getDefaultListCellRenderer() {
 	$init(BasicComboBoxUI);
+	$useLocalCurrentObjectStackCache();
 	$var($ListCellRenderer, renderer, $cast($ListCellRenderer, $nc($($AppContext::getAppContext()))->get(BasicComboBoxUI::COMBO_UI_LIST_CELL_RENDERER_KEY)));
 	if (renderer == nullptr) {
 		$assign(renderer, $new($DefaultListCellRenderer));
@@ -336,6 +337,7 @@ $ListCellRenderer* BasicComboBoxUI::getDefaultListCellRenderer() {
 
 void BasicComboBoxUI::loadActionMap($LazyActionMap* map) {
 	$init(BasicComboBoxUI);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicComboBoxUI$Actions);
 	$nc(map)->put($$new($BasicComboBoxUI$Actions, $BasicComboBoxUI$Actions::HIDE));
 	map->put($$new($BasicComboBoxUI$Actions, $BasicComboBoxUI$Actions::PAGE_DOWN));
@@ -357,6 +359,7 @@ $ComponentUI* BasicComboBoxUI::createUI($JComponent* c) {
 }
 
 void BasicComboBoxUI::installUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	this->isMinimumSizeDirty = true;
 	$var($JComboBox, tmp, $cast($JComboBox, c));
 	$set(this, comboBox, tmp);
@@ -389,6 +392,7 @@ void BasicComboBoxUI::installUI($JComponent* c) {
 }
 
 void BasicComboBoxUI::uninstallUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	setPopupVisible(this->comboBox, false);
 	$nc(this->popup)->uninstallingUI();
 	uninstallKeyboardActions();
@@ -421,6 +425,7 @@ void BasicComboBoxUI::uninstallUI($JComponent* c) {
 }
 
 void BasicComboBoxUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$LookAndFeel::installColorsAndFont(this->comboBox, "ComboBox.background"_s, "ComboBox.foreground"_s, "ComboBox.font"_s);
 	$LookAndFeel::installBorder(this->comboBox, "ComboBox.border"_s);
 	$init($Boolean);
@@ -539,6 +544,7 @@ $BasicComboBoxUI$Handler* BasicComboBoxUI::getHandler() {
 }
 
 void BasicComboBoxUI::updateToolTipTextForChildren() {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentArray, children, $nc(this->comboBox)->getComponents());
 	for (int32_t i = 0; i < $nc(children)->length; ++i) {
 		if ($instanceOf($JComponent, children->get(i))) {
@@ -591,6 +597,7 @@ void BasicComboBoxUI::removeEditor() {
 }
 
 void BasicComboBoxUI::configureEditor() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->editor)->setEnabled($nc(this->comboBox)->isEnabled());
 	$nc(this->editor)->setFocusable($nc(this->comboBox)->isFocusable());
 	$nc(this->editor)->setFont($($nc(this->comboBox)->getFont()));
@@ -609,6 +616,7 @@ void BasicComboBoxUI::configureEditor() {
 }
 
 void BasicComboBoxUI::unconfigureEditor() {
+	$useLocalCurrentObjectStackCache();
 	if (this->focusListener != nullptr) {
 		$nc(this->editor)->removeFocusListener(this->focusListener);
 	}
@@ -618,6 +626,7 @@ void BasicComboBoxUI::unconfigureEditor() {
 }
 
 void BasicComboBoxUI::configureArrowButton() {
+	$useLocalCurrentObjectStackCache();
 	if (this->arrowButton != nullptr) {
 		$nc(this->arrowButton)->setEnabled($nc(this->comboBox)->isEnabled());
 		$nc(this->arrowButton)->setFocusable($nc(this->comboBox)->isFocusable());
@@ -631,6 +640,7 @@ void BasicComboBoxUI::configureArrowButton() {
 }
 
 void BasicComboBoxUI::unconfigureArrowButton() {
+	$useLocalCurrentObjectStackCache();
 	if (this->arrowButton != nullptr) {
 		$nc(this->arrowButton)->removeMouseListener($($nc(this->popup)->getMouseListener()));
 		$nc(this->arrowButton)->removeMouseMotionListener($($nc(this->popup)->getMouseMotionListener()));
@@ -638,6 +648,7 @@ void BasicComboBoxUI::unconfigureArrowButton() {
 }
 
 $JButton* BasicComboBoxUI::createArrowButton() {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, var$0, $UIManager::getColor("ComboBox.buttonBackground"_s));
 	$var($Color, var$1, $UIManager::getColor("ComboBox.buttonShadow"_s));
 	$var($Color, var$2, $UIManager::getColor("ComboBox.buttonDarkShadow"_s));
@@ -679,6 +690,7 @@ $Dimension* BasicComboBoxUI::getPreferredSize($JComponent* c) {
 }
 
 $Dimension* BasicComboBoxUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->isMinimumSizeDirty) {
 		return $new($Dimension, this->cachedMinimumSize);
 	}
@@ -698,6 +710,7 @@ $Dimension* BasicComboBoxUI::getMaximumSize($JComponent* c) {
 }
 
 int32_t BasicComboBoxUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$ComboBoxUI::getBaseline(c, width, height);
 	int32_t baseline = -1;
 	getDisplaySize();
@@ -739,6 +752,7 @@ int32_t BasicComboBoxUI::getBaseline($JComponent* c, int32_t width, int32_t heig
 }
 
 $Component$BaselineResizeBehavior* BasicComboBoxUI::getBaselineResizeBehavior($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$ComboBoxUI::getBaselineResizeBehavior(c);
 	getDisplaySize();
 	if ($nc(this->comboBox)->isEditable()) {
@@ -773,6 +787,7 @@ int32_t BasicComboBoxUI::getAccessibleChildrenCount($JComponent* c) {
 }
 
 $Accessible* BasicComboBoxUI::getAccessibleChild($JComponent* c, int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	switch (i) {
 	case 0:
 		{
@@ -801,6 +816,7 @@ bool BasicComboBoxUI::isNavigationKey(int32_t keyCode) {
 }
 
 bool BasicComboBoxUI::isNavigationKey(int32_t keyCode, int32_t modifiers) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMap, inputMap, $nc(this->comboBox)->getInputMap($JComponent::WHEN_ANCESTOR_OF_FOCUSED_COMPONENT));
 	$var($KeyStroke, key, $KeyStroke::getKeyStroke(keyCode, modifiers));
 	if (inputMap != nullptr && inputMap->get(key) != nullptr) {
@@ -873,6 +889,7 @@ $Insets* BasicComboBoxUI::getInsets() {
 }
 
 void BasicComboBoxUI::paintCurrentValue($Graphics* g, $Rectangle* bounds, bool hasFocus) {
+	$useLocalCurrentObjectStackCache();
 	$var($ListCellRenderer, renderer, $nc(this->comboBox)->getRenderer());
 	$var($Component, c, nullptr);
 	if (hasFocus && !isPopupVisible(this->comboBox)) {
@@ -910,6 +927,7 @@ void BasicComboBoxUI::paintCurrentValue($Graphics* g, $Rectangle* bounds, bool h
 }
 
 void BasicComboBoxUI::paintCurrentValueBackground($Graphics* g, $Rectangle* bounds, bool hasFocus) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, t, $nc(g)->getColor());
 	if ($nc(this->comboBox)->isEnabled()) {
 		g->setColor($($DefaultLookup::getColor(this->comboBox, this, "ComboBox.background"_s, nullptr)));
@@ -926,11 +944,13 @@ void BasicComboBoxUI::repaintCurrentValue() {
 }
 
 $Dimension* BasicComboBoxUI::getDefaultSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, getSizeForComponent($($nc($(getDefaultListCellRenderer()))->getListCellRendererComponent(this->listBox, " "_s, -1, false, false))));
 	return $new($Dimension, $nc(d)->width, d->height);
 }
 
 $Dimension* BasicComboBoxUI::getDisplaySize() {
+	$useLocalCurrentObjectStackCache();
 	if (!this->isDisplaySizeDirty) {
 		return $new($Dimension, this->cachedDisplaySize);
 	}
@@ -989,6 +1009,7 @@ $Dimension* BasicComboBoxUI::getDisplaySize() {
 }
 
 $Dimension* BasicComboBoxUI::getSizeForComponent($Component* comp) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->currentValuePane)->add(comp);
 	$nc(comp)->setFont($($nc(this->comboBox)->getFont()));
 	$var($Dimension, d, comp->getPreferredSize());

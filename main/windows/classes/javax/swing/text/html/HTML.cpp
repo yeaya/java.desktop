@@ -129,6 +129,7 @@ $HTML$Tag* HTML::getTagForStyleConstantsKey($StyleConstants* sc) {
 
 int32_t HTML::getIntegerAttributeValue($AttributeSet* attr, $HTML$Attribute* key, int32_t def) {
 	$init(HTML);
+	$useLocalCurrentObjectStackCache();
 	int32_t value = def;
 	$var($String, istr, $cast($String, $nc(attr)->getAttribute(key)));
 	if (istr != nullptr) {
@@ -160,6 +161,7 @@ $HTML$Attribute* HTML::getAttributeKey($String* attName) {
 }
 
 void clinit$HTML($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(HTML::NULL_ATTRIBUTE_VALUE, "#DEFAULT"_s);
 	$assignStatic(HTML::tagHashtable, $new($Hashtable, 73));
 	$assignStatic(HTML::scMapping, $new($Hashtable, 8));

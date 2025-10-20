@@ -284,6 +284,7 @@ void JApplet::finalize() {
 }
 
 void JApplet::init$() {
+	$useLocalCurrentObjectStackCache();
 	$Applet::init$();
 	this->rootPaneCheckingEnabled = false;
 	$set(this, accessibleContext, nullptr);
@@ -432,6 +433,7 @@ void JApplet::repaint(int64_t time, int32_t x, int32_t y, int32_t width, int32_t
 }
 
 $String* JApplet::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, rootPaneString, this->rootPane != nullptr ? $nc(this->rootPane)->toString() : ""_s);
 	$var($String, rootPaneCheckingEnabledString, this->rootPaneCheckingEnabled ? "true"_s : "false"_s);
 	return $str({$($Applet::paramString()), ",rootPane="_s, rootPaneString, ",rootPaneCheckingEnabled="_s, rootPaneCheckingEnabledString});

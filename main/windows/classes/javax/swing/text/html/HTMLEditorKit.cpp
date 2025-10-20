@@ -376,6 +376,7 @@ $ViewFactory* HTMLEditorKit::getViewFactory() {
 }
 
 $Document* HTMLEditorKit::createDefaultDocument() {
+	$useLocalCurrentObjectStackCache();
 	$var($StyleSheet, styles, getStyleSheet());
 	$var($StyleSheet, ss, $new($StyleSheet));
 	ss->addStyleSheet(styles);
@@ -398,6 +399,7 @@ $HTMLEditorKit$Parser* HTMLEditorKit::ensureParser($HTMLDocument* doc) {
 }
 
 void HTMLEditorKit::read($Reader* in, $Document* doc, int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($HTMLDocument, doc)) {
 		$var($HTMLDocument, hdoc, $cast($HTMLDocument, doc));
 		if (pos > $nc(doc)->getLength()) {
@@ -414,6 +416,7 @@ void HTMLEditorKit::read($Reader* in, $Document* doc, int32_t pos) {
 }
 
 void HTMLEditorKit::insertHTML($HTMLDocument* doc, int32_t offset, $String* html, int32_t popDepth, int32_t pushDepth, $HTML$Tag* insertTag) {
+	$useLocalCurrentObjectStackCache();
 	if (offset > $nc(doc)->getLength()) {
 		$throwNew($BadLocationException, "Invalid location"_s, offset);
 	}
@@ -427,6 +430,7 @@ void HTMLEditorKit::insertHTML($HTMLDocument* doc, int32_t offset, $String* html
 }
 
 void HTMLEditorKit::write($Writer* out, $Document* doc, int32_t pos, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($HTMLDocument, doc)) {
 		$var($HTMLWriter, w, $new($HTMLWriter, out, $cast($HTMLDocument, doc), pos, len));
 		w->write();
@@ -455,6 +459,7 @@ void HTMLEditorKit::deinstall($JEditorPane* c) {
 }
 
 void HTMLEditorKit::setStyleSheet($StyleSheet* s) {
+	$useLocalCurrentObjectStackCache();
 	if (s == nullptr) {
 		$nc($($AppContext::getAppContext()))->remove(HTMLEditorKit::DEFAULT_STYLES_KEY);
 	} else {
@@ -463,6 +468,7 @@ void HTMLEditorKit::setStyleSheet($StyleSheet* s) {
 }
 
 $StyleSheet* HTMLEditorKit::getStyleSheet() {
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var($StyleSheet, defaultStyles, $cast($StyleSheet, $nc(appContext)->get(HTMLEditorKit::DEFAULT_STYLES_KEY)));
 	if (defaultStyles == nullptr) {
@@ -491,6 +497,7 @@ $ActionArray* HTMLEditorKit::getActions() {
 }
 
 void HTMLEditorKit::createInputAttributes($Element* element, $MutableAttributeSet* set) {
+	$useLocalCurrentObjectStackCache();
 	$nc(set)->removeAttributes(static_cast<$AttributeSet*>(set));
 	set->addAttributes($($nc(element)->getAttributes()));
 	$init($StyleConstants);
@@ -588,6 +595,7 @@ $AccessibleContext* HTMLEditorKit::getAccessibleContext() {
 
 $Object* HTMLEditorKit::getAttrValue($AttributeSet* attr, $HTML$Attribute* key) {
 	$init(HTMLEditorKit);
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, names, $nc(attr)->getAttributeNames());
 	while ($nc(names)->hasMoreElements()) {
 		$var($Object, nextKey, names->nextElement());
@@ -606,6 +614,7 @@ $Object* HTMLEditorKit::getAttrValue($AttributeSet* attr, $HTML$Attribute* key) 
 
 int32_t HTMLEditorKit::getBodyElementStart($JTextComponent* comp) {
 	$init(HTMLEditorKit);
+	$useLocalCurrentObjectStackCache();
 	$var($Element, rootElement, $nc($($nc($($nc(comp)->getDocument()))->getRootElements()))->get(0));
 	for (int32_t i = 0; i < $nc(rootElement)->getElementCount(); ++i) {
 		$var($Element, currElement, rootElement->getElement(i));
@@ -617,6 +626,7 @@ int32_t HTMLEditorKit::getBodyElementStart($JTextComponent* comp) {
 }
 
 void clinit$HTMLEditorKit($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(HTMLEditorKit::DEFAULT_CSS, "default.css"_s);
 	$assignStatic(HTMLEditorKit::BOLD_ACTION, "html-bold-action"_s);
 	$assignStatic(HTMLEditorKit::ITALIC_ACTION, "html-italic-action"_s);

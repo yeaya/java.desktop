@@ -68,6 +68,7 @@ $Object* allocate$TIFFImageWriterSpi($Class* clazz) {
 }
 
 void TIFFImageWriterSpi::init$() {
+	$useLocalCurrentObjectStackCache();
 	$load($ImageOutputStream);
 	$init($TIFFStreamMetadata);
 	$init($TIFFImageMetadata);

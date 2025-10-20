@@ -71,6 +71,7 @@ void DefaultEditorKit$InsertTabAction::init$() {
 }
 
 void DefaultEditorKit$InsertTabAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getTextComponent(e));
 	if (target != nullptr) {
 		bool var$0 = (!target->isEditable());

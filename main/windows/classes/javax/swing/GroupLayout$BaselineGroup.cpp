@@ -147,6 +147,7 @@ int32_t GroupLayout$BaselineGroup::calculateSize(int32_t axis, int32_t type) {
 }
 
 void GroupLayout$BaselineGroup::calculateBaselineAndResizeBehavior() {
+	$useLocalCurrentObjectStackCache();
 	this->prefAscent = 0;
 	this->prefDescent = 0;
 	int32_t baselineSpringCount = 0;
@@ -191,6 +192,7 @@ void GroupLayout$BaselineGroup::calculateBaselineAndResizeBehavior() {
 }
 
 int32_t GroupLayout$BaselineGroup::calculateMaxSize() {
+	$useLocalCurrentObjectStackCache();
 	int32_t maxAscent = this->prefAscent;
 	int32_t maxDescent = this->prefDescent;
 	int32_t nonBaselineMax = 0;
@@ -239,6 +241,7 @@ int32_t GroupLayout$BaselineGroup::calculateMaxSize() {
 }
 
 int32_t GroupLayout$BaselineGroup::calculateMinSize() {
+	$useLocalCurrentObjectStackCache();
 	int32_t minAscent = 0;
 	int32_t minDescent = 0;
 	int32_t nonBaselineMin = 0;
@@ -297,6 +300,7 @@ int32_t GroupLayout$BaselineGroup::calculateMinSize() {
 }
 
 void GroupLayout$BaselineGroup::baselineLayout(int32_t origin, int32_t size) {
+	$useLocalCurrentObjectStackCache();
 	int32_t ascent = 0;
 	int32_t descent = 0;
 	if (this->baselineAnchoredToTop) {

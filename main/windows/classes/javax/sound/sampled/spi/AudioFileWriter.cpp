@@ -116,10 +116,12 @@ void AudioFileWriter::init$() {
 }
 
 bool AudioFileWriter::isFileTypeSupported($AudioFileFormat$Type* fileType) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($Arrays::stream($(getAudioFileTypes()))))->anyMatch(static_cast<$Predicate*>($$new(AudioFileWriter$$Lambda$equals, static_cast<$AudioFileFormat$Type*>($nc(fileType)))));
 }
 
 bool AudioFileWriter::isFileTypeSupported($AudioFileFormat$Type* fileType, $AudioInputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($Arrays::stream($(getAudioFileTypes(stream)))))->anyMatch(static_cast<$Predicate*>($$new(AudioFileWriter$$Lambda$equals, static_cast<$AudioFileFormat$Type*>($nc(fileType)))));
 }
 

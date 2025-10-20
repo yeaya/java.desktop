@@ -101,6 +101,7 @@ int32_t FontStrikeDesc::hashCode() {
 }
 
 bool FontStrikeDesc::equals(Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var(FontStrikeDesc, desc, $cast(FontStrikeDesc, obj));
 		bool var$0 = $nc(desc)->valuemask == this->valuemask && $nc(desc->glyphTx)->equals(this->glyphTx);
@@ -149,6 +150,7 @@ int32_t FontStrikeDesc::getAAHintIntVal(Object$* aa, $Font2D* font2D, int32_t pt
 }
 
 int32_t FontStrikeDesc::getAAHintIntVal($Font2D* font2D, $Font* font, $FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, aa, $nc(frc)->getAntiAliasingHint());
 	$init($FontUtilities);
 	$init($SunHints);
@@ -266,6 +268,7 @@ void FontStrikeDesc::init$(FontStrikeDesc* desc) {
 }
 
 $String* FontStrikeDesc::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"FontStrikeDesc: Style="_s, $$str(this->style), " AA="_s, $$str(this->aaHint), " FM="_s, $$str(this->fmHint), " devTx="_s, this->devTx, " devTx.FontTx.ptSize="_s, this->glyphTx});
 }
 

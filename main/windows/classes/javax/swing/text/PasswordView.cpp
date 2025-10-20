@@ -160,6 +160,7 @@ float PasswordView::drawUnselectedText($Graphics2D* g, float x, float y, int32_t
 }
 
 float PasswordView::drawUnselectedTextImpl($Graphics* g, float x, float y, int32_t p0, int32_t p1, bool useFPAPI) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, c, getContainer());
 	if ($instanceOf($JPasswordField, c)) {
 		$var($JPasswordField, f, $cast($JPasswordField, c));
@@ -191,6 +192,7 @@ float PasswordView::drawSelectedText($Graphics2D* g, float x, float y, int32_t p
 }
 
 float PasswordView::drawSelectedTextImpl($Graphics* g, float x, float y, int32_t p0, int32_t p1, bool useFPAPI) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor(this->selected);
 	$var($Container, c, getContainer());
 	if ($instanceOf($JPasswordField, c)) {
@@ -218,6 +220,7 @@ float PasswordView::drawEchoCharacter($Graphics2D* g, float x, float y, char16_t
 }
 
 float PasswordView::drawEchoCharacterImpl($Graphics* g, float x, float y, char16_t c, bool useFPAPI) {
+	$useLocalCurrentObjectStackCache();
 	$nc(PasswordView::ONE)->set(0, c);
 	$SwingUtilities2::drawChars($($Utilities::getJComponent(this)), g, PasswordView::ONE, 0, 1, x, y);
 	if (useFPAPI) {
@@ -229,6 +232,7 @@ float PasswordView::drawEchoCharacterImpl($Graphics* g, float x, float y, char16
 }
 
 $Shape* PasswordView::modelToView(int32_t pos, $Shape* a, $Position$Bias* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, c, getContainer());
 	if ($instanceOf($JPasswordField, c)) {
 		$var($JPasswordField, f, $cast($JPasswordField, c));
@@ -248,6 +252,7 @@ $Shape* PasswordView::modelToView(int32_t pos, $Shape* a, $Position$Bias* b) {
 }
 
 int32_t PasswordView::viewToModel(float fx, float fy, $Shape* a$renamed, $Position$BiasArray* bias) {
+	$useLocalCurrentObjectStackCache();
 	$var($Shape, a, a$renamed);
 	$init($Position$Bias);
 	$nc(bias)->set(0, $Position$Bias::Forward);
@@ -279,6 +284,7 @@ int32_t PasswordView::viewToModel(float fx, float fy, $Shape* a$renamed, $Positi
 }
 
 float PasswordView::getPreferredSpan(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Container, c, nullptr)
 		switch (axis) {

@@ -145,6 +145,7 @@ void CleanInternalStorageOnSetText::testStorage(bool makeGap, $JPasswordField* p
 }
 
 void CleanInternalStorageOnSetText::test($JPasswordField* pf, $String* text, bool makeGap) {
+	$useLocalCurrentObjectStackCache();
 	$nc(pf)->setText(text);
 	if (makeGap && $nc(text)->length() > 3) {
 		try {
@@ -211,6 +212,7 @@ void CleanInternalStorageOnSetText::test($JPasswordField* pf, $String* text, boo
 }
 
 $chars* CleanInternalStorageOnSetText::getInternalArray($JPasswordField* pf) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(pf)->getDocument());
 	int32_t nleft = $nc(doc)->getLength();
 	$var($Segment, text, $new($Segment));
@@ -226,6 +228,7 @@ $chars* CleanInternalStorageOnSetText::getInternalArray($JPasswordField* pf) {
 }
 
 void CleanInternalStorageOnSetText::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	testStorage(false, $$new($JPasswordField));
 	testStorage(true, $$new($JPasswordField));
 	$var($Document, document, $new($PlainDocument, $$new($StringContent)));

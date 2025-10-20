@@ -128,6 +128,7 @@ void AccessibleHTML$IconElementInfo::invalidate(bool first) {
 }
 
 int32_t AccessibleHTML$IconElementInfo::getImageSize(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	if (validateIfNecessary()) {
 		int32_t size = getIntAttr($(getAttributes()), key, -1);
 		if (size == -1) {

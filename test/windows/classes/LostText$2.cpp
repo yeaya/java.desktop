@@ -202,6 +202,7 @@ void LostText$2::init$($LostText* this$0) {
 }
 
 void LostText$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, description, " INSTRUCTIONS:\n A JTable will be shown.\n Try to select different rows via mouse or keyboard.\n  Please verify if text are painted properly.\n If any moment any part of the rows will not be\n  painted properly and if some text are missing in JTable,\n  then press fail else press pass"_s);
 	$init($LostText);
 	$assignStatic($LostText::dialog, $new($JDialog));

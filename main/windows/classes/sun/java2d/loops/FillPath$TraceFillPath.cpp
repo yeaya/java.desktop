@@ -71,6 +71,7 @@ $Object* allocate$FillPath$TraceFillPath($Class* clazz) {
 }
 
 void FillPath$TraceFillPath::init$($FillPath* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, var$0, $nc(target)->getSourceType());
 	$var($CompositeType, var$1, target->getCompositeType());
 	$FillPath::init$(var$0, var$1, $(target->getDestType()));

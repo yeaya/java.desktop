@@ -47,6 +47,7 @@ $Object* allocate$Test8013571($Class* clazz) {
 
 void Test8013571::main($StringArray* args) {
 	$init(Test8013571);
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultMutableTreeNode, root, create("root"_s, $$new($StringArray, 0)));
 	$nc(root)->add($(create("colors"_s, $$new($StringArray, {
 		"blue"_s,
@@ -73,6 +74,7 @@ void Test8013571::main($StringArray* args) {
 
 $DefaultMutableTreeNode* Test8013571::create($String* name, $StringArray* values) {
 	$init(Test8013571);
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultMutableTreeNode, node, $new($DefaultMutableTreeNode, name));
 	{
 		$var($StringArray, arr$, values);

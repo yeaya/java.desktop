@@ -219,6 +219,7 @@ void BasicTreeUI$Handler::init$($BasicTreeUI* this$0) {
 }
 
 void BasicTreeUI$Handler::keyTyped($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool var$1 = this->this$0->tree != nullptr && $nc(this->this$0->tree)->getRowCount() > 0;
 	bool var$0 = var$1 && $nc(this->this$0->tree)->hasFocus();
 	if (var$0 && $nc(this->this$0->tree)->isEnabled()) {
@@ -278,12 +279,14 @@ void BasicTreeUI$Handler::keyReleased($KeyEvent* e) {
 }
 
 bool BasicTreeUI$Handler::isNavigationKey($KeyEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMap, inputMap, $nc(this->this$0->tree)->getInputMap($JComponent::WHEN_ANCESTOR_OF_FOCUSED_COMPONENT));
 	$var($KeyStroke, key, $KeyStroke::getKeyStrokeForEvent(event));
 	return inputMap != nullptr && inputMap->get(key) != nullptr;
 }
 
 void BasicTreeUI$Handler::propertyChange($PropertyChangeEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals($nc(event)->getSource(), this->this$0->treeSelectionModel)) {
 		$nc(this->this$0->treeSelectionModel)->resetRowSelection();
 	} else if ($equals(event->getSource(), this->this$0->tree)) {
@@ -361,6 +364,7 @@ void BasicTreeUI$Handler::propertyChange($PropertyChangeEvent* event) {
 }
 
 void BasicTreeUI$Handler::repaintDropLocation($JTree$DropLocation* loc) {
+	$useLocalCurrentObjectStackCache();
 	if (loc == nullptr) {
 		return;
 	}
@@ -446,6 +450,7 @@ void BasicTreeUI$Handler::mousePressedDND($MouseEvent* e) {
 }
 
 void BasicTreeUI$Handler::handleSelection($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->pressedPath != nullptr) {
 		$var($Rectangle, bounds, this->this$0->getPathBounds(this->this$0->tree, this->pressedPath));
 		if (bounds == nullptr || $nc(e)->getY() >= ($nc(bounds)->y + bounds->height)) {
@@ -501,6 +506,7 @@ void BasicTreeUI$Handler::mouseReleased($MouseEvent* e) {
 }
 
 void BasicTreeUI$Handler::mouseReleasedDND($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($MouseEvent, me, $DragRecognitionSupport::mouseReleased(e));
 	if (me != nullptr) {
 		$SwingUtilities2::adjustFocus(this->this$0->tree);
@@ -522,6 +528,7 @@ void BasicTreeUI$Handler::mouseReleasedDND($MouseEvent* e) {
 }
 
 void BasicTreeUI$Handler::focusGained($FocusEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->tree != nullptr) {
 		$var($Rectangle, pBounds, nullptr);
 		$assign(pBounds, this->this$0->getPathBounds(this->this$0->tree, $($nc(this->this$0->tree)->getLeadSelectionPath())));
@@ -548,6 +555,7 @@ void BasicTreeUI$Handler::editingCanceled($ChangeEvent* e) {
 }
 
 void BasicTreeUI$Handler::valueChanged($TreeSelectionEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	this->valueChangedOnPress = true;
 	this->this$0->completeEditing();
 	if ($nc(this->this$0->tree)->getExpandsSelectedPaths() && this->this$0->treeSelectionModel != nullptr) {
@@ -627,6 +635,7 @@ void BasicTreeUI$Handler::treeCollapsed($TreeExpansionEvent* event) {
 }
 
 void BasicTreeUI$Handler::treeNodesChanged($TreeModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->treeState != nullptr && e != nullptr) {
 		$var($TreePath, parentPath, $SwingUtilities2::getTreePath(e, $(this->this$0->getModel())));
 		$var($ints, indices, e->getChildIndices());
@@ -661,6 +670,7 @@ void BasicTreeUI$Handler::treeNodesChanged($TreeModelEvent* e) {
 }
 
 void BasicTreeUI$Handler::treeNodesInserted($TreeModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->treeState != nullptr && e != nullptr) {
 		$nc(this->this$0->treeState)->treeNodesInserted(e);
 		this->this$0->updateLeadSelectionRow();
@@ -678,6 +688,7 @@ void BasicTreeUI$Handler::treeNodesInserted($TreeModelEvent* e) {
 }
 
 void BasicTreeUI$Handler::treeNodesRemoved($TreeModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->treeState != nullptr && e != nullptr) {
 		$nc(this->this$0->treeState)->treeNodesRemoved(e);
 		this->this$0->updateLeadSelectionRow();
@@ -690,6 +701,7 @@ void BasicTreeUI$Handler::treeNodesRemoved($TreeModelEvent* e) {
 }
 
 void BasicTreeUI$Handler::treeStructureChanged($TreeModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->treeState != nullptr && e != nullptr) {
 		$nc(this->this$0->treeState)->treeStructureChanged(e);
 		this->this$0->updateLeadSelectionRow();

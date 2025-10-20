@@ -80,6 +80,7 @@ void bug6670274::init$() {
 }
 
 void bug6670274::createGui() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTabbedPane, pane, $new($JTabbedPane));
 	$var($bug6670274$TestTabbedPaneUI, ui, $new($bug6670274$TestTabbedPaneUI));
 	pane->setUI(static_cast<$TabbedPaneUI*>(ui));
@@ -102,6 +103,7 @@ void bug6670274::createGui() {
 }
 
 void bug6670274::check($bug6670274$TestTabbedPaneUI* ui, $ints* indices) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc($($nc(ui)->getTabbedPane()))->getTabCount(); ++i) {
 		$init($System);
 		$nc($System::out)->print($$str({"Checking tab #"_s, $$str(i)}));

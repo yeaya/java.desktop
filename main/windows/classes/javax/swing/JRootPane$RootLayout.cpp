@@ -121,6 +121,7 @@ void JRootPane$RootLayout::init$($JRootPane* this$0) {
 }
 
 $Dimension* JRootPane$RootLayout::preferredLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, rd, nullptr);
 	$var($Dimension, mbd, nullptr);
 	$var($Insets, i, this->this$0->getInsets());
@@ -138,6 +139,7 @@ $Dimension* JRootPane$RootLayout::preferredLayoutSize($Container* parent) {
 }
 
 $Dimension* JRootPane$RootLayout::minimumLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, rd, nullptr);
 	$var($Dimension, mbd, nullptr);
 	$var($Insets, i, this->this$0->getInsets());
@@ -155,6 +157,7 @@ $Dimension* JRootPane$RootLayout::minimumLayoutSize($Container* parent) {
 }
 
 $Dimension* JRootPane$RootLayout::maximumLayoutSize($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, rd, nullptr);
 	$var($Dimension, mbd, nullptr);
 	$var($Insets, i, this->this$0->getInsets());
@@ -172,6 +175,7 @@ $Dimension* JRootPane$RootLayout::maximumLayoutSize($Container* target) {
 }
 
 void JRootPane$RootLayout::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, b, $nc(parent)->getBounds());
 	$var($Insets, i, this->this$0->getInsets());
 	int32_t contentY = 0;

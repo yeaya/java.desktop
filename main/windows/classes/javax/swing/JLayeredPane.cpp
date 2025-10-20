@@ -211,6 +211,7 @@ void JLayeredPane::init$() {
 }
 
 void JLayeredPane::validateOptimizedDrawing() {
+	$useLocalCurrentObjectStackCache();
 	bool layeredComponentFound = false;
 	$synchronized(getTreeLock()) {
 		$var($Integer, layer, nullptr);
@@ -258,6 +259,7 @@ void JLayeredPane::addImpl($Component* comp, Object$* constraints, int32_t index
 }
 
 void JLayeredPane::remove(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, getComponent(index));
 	$JComponent::remove(index);
 	if (c != nullptr && !($instanceOf($JComponent, c))) {
@@ -267,6 +269,7 @@ void JLayeredPane::remove(int32_t index) {
 }
 
 void JLayeredPane::removeAll() {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentArray, children, getComponents());
 	$var($Hashtable, cToL, getComponentToLayer());
 	for (int32_t counter = $nc(children)->length - 1; counter >= 0; --counter) {
@@ -313,6 +316,7 @@ void JLayeredPane::setLayer($Component* c, int32_t layer) {
 }
 
 void JLayeredPane::setLayer($Component* c, int32_t layer, int32_t position) {
+	$useLocalCurrentObjectStackCache();
 	$var($Integer, layerObj, nullptr);
 	$assign(layerObj, getObjectForLayer(layer));
 	bool var$0 = layer == getLayer(c);
@@ -336,6 +340,7 @@ void JLayeredPane::setLayer($Component* c, int32_t layer, int32_t position) {
 }
 
 int32_t JLayeredPane::getLayer($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Integer, i, nullptr);
 	if ($instanceOf($JComponent, c)) {
 		$assign(i, $cast($Integer, $nc(($cast($JComponent, c)))->getClientProperty(JLayeredPane::LAYER_PROPERTY)));
@@ -373,6 +378,7 @@ void JLayeredPane::setPosition($Component* c, int32_t position) {
 }
 
 int32_t JLayeredPane::getPosition($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = 0;
 	int32_t startLayer = 0;
 	int32_t curLayer = 0;
@@ -411,6 +417,7 @@ int32_t JLayeredPane::lowestLayer() {
 }
 
 int32_t JLayeredPane::getComponentCountInLayer(int32_t layer) {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = 0;
 	int32_t count = 0;
 	int32_t curLayer = 0;
@@ -428,6 +435,7 @@ int32_t JLayeredPane::getComponentCountInLayer(int32_t layer) {
 }
 
 $ComponentArray* JLayeredPane::getComponentsInLayer(int32_t layer) {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = 0;
 	int32_t count = 0;
 	int32_t curLayer = 0;
@@ -447,6 +455,7 @@ $ComponentArray* JLayeredPane::getComponentsInLayer(int32_t layer) {
 }
 
 void JLayeredPane::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (isOpaque()) {
 		$var($Rectangle, r, $nc(g)->getClipBounds());
 		$var($Color, c, getBackground());
@@ -506,6 +515,7 @@ int32_t JLayeredPane::insertIndexForLayer(int32_t layer, int32_t position) {
 }
 
 int32_t JLayeredPane::insertIndexForLayer($Component* comp, int32_t layer, int32_t position) {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = 0;
 	int32_t count = 0;
 	int32_t curLayer = 0;
@@ -553,6 +563,7 @@ int32_t JLayeredPane::insertIndexForLayer($Component* comp, int32_t layer, int32
 }
 
 $String* JLayeredPane::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, optimizedDrawingPossibleString, this->optimizedDrawingPossible ? "true"_s : "false"_s);
 	return $str({$($JComponent::paramString()), ",optimizedDrawingPossible="_s, optimizedDrawingPossibleString});
 }

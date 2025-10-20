@@ -157,6 +157,7 @@ void GridLayout::removeLayoutComponent($Component* comp) {
 }
 
 $Dimension* GridLayout::preferredLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(parent)->getTreeLock()) {
 		$var($Insets, insets, parent->getInsets());
 		int32_t ncomponents = parent->getComponentCount();
@@ -184,6 +185,7 @@ $Dimension* GridLayout::preferredLayoutSize($Container* parent) {
 }
 
 $Dimension* GridLayout::minimumLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(parent)->getTreeLock()) {
 		$var($Insets, insets, parent->getInsets());
 		int32_t ncomponents = parent->getComponentCount();
@@ -211,6 +213,7 @@ $Dimension* GridLayout::minimumLayoutSize($Container* parent) {
 }
 
 void GridLayout::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized($nc(parent)->getTreeLock()) {
 		$var($Insets, insets, parent->getInsets());
 		int32_t ncomponents = parent->getComponentCount();
@@ -272,6 +275,7 @@ void GridLayout::layoutContainer($Container* parent) {
 }
 
 $String* GridLayout::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($of(this)->getClass()->getName()), "[hgap="_s, $$str(this->hgap), ",vgap="_s, $$str(this->vgap), ",rows="_s, $$str(this->rows), ",cols="_s, $$str(this->cols), "]"_s});
 }
 

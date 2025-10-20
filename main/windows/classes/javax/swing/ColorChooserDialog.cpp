@@ -153,6 +153,7 @@ void ColorChooserDialog::init$($Frame* owner, $String* title, bool modal, $Compo
 }
 
 void ColorChooserDialog::initColorChooserDialog($Component* c, $JColorChooser* chooserPane, $ActionListener* okListener, $ActionListener* cancelListener) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, chooserPane, chooserPane);
 	$var($Locale, locale, getLocale());
 	$var($String, okString, $UIManager::getString($of("ColorChooser.okText"_s), locale));

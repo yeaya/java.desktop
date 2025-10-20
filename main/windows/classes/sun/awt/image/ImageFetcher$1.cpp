@@ -82,6 +82,7 @@ void ImageFetcher$1::init$($FetcherInfo* val$info, $ThreadGroup* val$fetcherGrou
 }
 
 $Object* ImageFetcher$1::run() {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc($nc(this->val$info)->fetchers)->length; ++i) {
 		if ($nc($nc(this->val$info)->fetchers)->get(i) == nullptr) {
 			$var($ImageFetcher, f, $new($ImageFetcher, this->val$fetcherGroup, i));

@@ -85,6 +85,7 @@ $String* CSS$FontFamily::getValue() {
 }
 
 $Object* CSS$FontFamily::parseCssValue($String* value) {
+	$useLocalCurrentObjectStackCache();
 	int32_t cIndex = $nc(value)->indexOf((int32_t)u',');
 	$var(CSS$FontFamily, ff, $new(CSS$FontFamily));
 	$set(ff, svalue, value);

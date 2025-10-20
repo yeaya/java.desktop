@@ -76,6 +76,7 @@ $Object* allocate$OGLMaskBlit($Class* clazz) {
 
 void OGLMaskBlit::register$() {
 	$init(OGLMaskBlit);
+	$useLocalCurrentObjectStackCache();
 		$init($SurfaceType);
 		$init($CompositeType);
 	$var($GraphicsPrimitiveArray, primitives, $new($GraphicsPrimitiveArray, {

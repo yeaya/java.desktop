@@ -98,6 +98,7 @@ void TIFFJPEGDecompressor::init$() {
 }
 
 void TIFFJPEGDecompressor::beginDecoding() {
+	$useLocalCurrentObjectStackCache();
 	if (this->JPEGReader == nullptr) {
 		$var($Iterator, iter, $ImageIO::getImageReadersByFormatName("jpeg"_s));
 		if (!$nc(iter)->hasNext()) {
@@ -117,6 +118,7 @@ void TIFFJPEGDecompressor::beginDecoding() {
 }
 
 void TIFFJPEGDecompressor::decodeRaw($bytes* b, int32_t dstOffset, int32_t bitsPerPixel, int32_t scanlineStride) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->stream)->seek(this->offset);
 	$var($ImageInputStream, is, nullptr);
 	if (this->hasJPEGTables) {

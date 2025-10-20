@@ -94,6 +94,7 @@ void MotifInternalFrameTitlePane$2::init$($MotifInternalFrameTitlePane* this$0) 
 }
 
 void MotifInternalFrameTitlePane$2::mousePressed($MouseEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$nc($($MotifInternalFrameTitlePane::access$000(this->this$0)))->setSelected(true);
 	} catch ($PropertyVetoException&) {

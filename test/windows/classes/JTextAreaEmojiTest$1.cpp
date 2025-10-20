@@ -105,6 +105,7 @@ void JTextAreaEmojiTest$1::init$($JTextAreaEmojiTest* this$0) {
 }
 
 void JTextAreaEmojiTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($JTextAreaEmojiTest);
 	$assignStatic($JTextAreaEmojiTest::layout, $new($GridBagLayout));
 	$assignStatic($JTextAreaEmojiTest::mainControlPanel, $new($JPanel, static_cast<$LayoutManager*>($JTextAreaEmojiTest::layout)));

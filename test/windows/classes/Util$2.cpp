@@ -79,6 +79,7 @@ void Util$2::init$($List* val$result, $Callable* val$task, $ExceptionArray* val$
 }
 
 void Util$2::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$nc(this->val$result)->add($($nc(this->val$task)->call()));
 	} catch ($Exception&) {

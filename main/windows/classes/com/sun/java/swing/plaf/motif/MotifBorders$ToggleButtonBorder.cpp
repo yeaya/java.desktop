@@ -74,6 +74,7 @@ void MotifBorders$ToggleButtonBorder::init$($Color* shadow, $Color* highlight, $
 }
 
 void MotifBorders$ToggleButtonBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($AbstractButton, c)) {
 		$var($AbstractButton, b, $cast($AbstractButton, c));
 		$var($ButtonModel, model, $nc(b)->getModel());

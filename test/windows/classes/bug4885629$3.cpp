@@ -96,6 +96,7 @@ void bug4885629$3::init$($Robot* val$robot) {
 }
 
 void bug4885629$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug4885629);
 	$var($Rectangle, rect, $nc($($nc(($cast($BasicSplitPaneUI, $($cast($SplitPaneUI, $nc($bug4885629::sp)->getUI())))))->getDivider()))->getBounds());
 	$var($Point, p, $nc(rect)->getLocation());

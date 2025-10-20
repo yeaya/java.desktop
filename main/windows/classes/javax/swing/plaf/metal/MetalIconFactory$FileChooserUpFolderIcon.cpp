@@ -96,6 +96,7 @@ void MetalIconFactory$FileChooserUpFolderIcon::init$() {
 }
 
 void MetalIconFactory$FileChooserUpFolderIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->translate(x, y);
 	g->setColor($($MetalLookAndFeel::getPrimaryControl()));
 	g->fillRect(3, 5, 12, 9);

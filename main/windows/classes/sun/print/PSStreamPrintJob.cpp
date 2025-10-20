@@ -261,6 +261,7 @@ void PSStreamPrintJob::removePrintJobListener($PrintJobListener* listener) {
 }
 
 void PSStreamPrintJob::closeDataStreams() {
+	$useLocalCurrentObjectStackCache();
 	if (this->doc == nullptr) {
 		return;
 	}
@@ -323,6 +324,7 @@ void PSStreamPrintJob::closeDataStreams() {
 }
 
 void PSStreamPrintJob::notifyEvent(int32_t reason) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this) {
 		if (this->jobListeners != nullptr) {
 			$var($PrintJobListener, listener, nullptr);
@@ -403,6 +405,7 @@ void PSStreamPrintJob::removePrintJobAttributeListener($PrintJobAttributeListene
 }
 
 void PSStreamPrintJob::print($Doc* doc, $PrintRequestAttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this) {
 		if (this->printing) {
 			$throwNew($PrintException, "already printing"_s);
@@ -495,6 +498,7 @@ void PSStreamPrintJob::print($Doc* doc, $PrintRequestAttributeSet* attributes) {
 }
 
 void PSStreamPrintJob::printableJob($Printable* printable, $PrintRequestAttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		bool return$1 = false;
@@ -550,6 +554,7 @@ void PSStreamPrintJob::printableJob($Printable* printable, $PrintRequestAttribut
 }
 
 void PSStreamPrintJob::pageableJob($Pageable* pageable, $PrintRequestAttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		bool return$1 = false;
@@ -589,6 +594,7 @@ void PSStreamPrintJob::pageableJob($Pageable* pageable, $PrintRequestAttributeSe
 
 void PSStreamPrintJob::initializeAttributeSets($Doc* doc, $PrintRequestAttributeSet* reqSet) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$set(this, reqAttrSet, $new($HashPrintRequestAttributeSet));
 		$set(this, jobAttrSet, $new($HashPrintJobAttributeSet));
 		$var($AttributeArray, attrs, nullptr);
@@ -659,6 +665,7 @@ void PSStreamPrintJob::initializeAttributeSets($Doc* doc, $PrintRequestAttribute
 }
 
 void PSStreamPrintJob::getAttributeValues($DocFlavor* flavor) {
+	$useLocalCurrentObjectStackCache();
 	$var($Attribute, attr, nullptr);
 	$Class* category = nullptr;
 	$load($Fidelity);

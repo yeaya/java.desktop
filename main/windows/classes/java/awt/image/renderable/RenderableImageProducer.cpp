@@ -143,6 +143,7 @@ void RenderableImageProducer::removeConsumer($ImageConsumer* ic) {
 
 void RenderableImageProducer::startProduction($ImageConsumer* ic) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		addConsumer(ic);
 		$var($String, name, "RenderableImageProducer Thread"_s);
 		$var($Thread, thread, $new($Thread, nullptr, this, name, 0, false));
@@ -154,6 +155,7 @@ void RenderableImageProducer::requestTopDownLeftRightResend($ImageConsumer* ic) 
 }
 
 void RenderableImageProducer::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($RenderedImage, rdrdImage, nullptr);
 	if (this->rc != nullptr) {
 		$assign(rdrdImage, $nc(this->rdblImage)->createRendering(this->rc));

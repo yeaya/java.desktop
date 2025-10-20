@@ -82,6 +82,7 @@ void D3DSurfaceDataProxy::init$($D3DGraphicsConfig* d3dgc, int32_t transparency)
 }
 
 $SurfaceData* D3DSurfaceDataProxy::validateSurfaceData($SurfaceData* srcData, $SurfaceData* cachedData$renamed, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceData, cachedData, cachedData$renamed);
 	if (cachedData == nullptr || $nc(cachedData)->isSurfaceLost()) {
 		try {

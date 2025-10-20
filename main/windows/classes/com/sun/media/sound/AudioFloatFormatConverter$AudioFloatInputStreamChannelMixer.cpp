@@ -82,6 +82,7 @@ $Object* allocate$AudioFloatFormatConverter$AudioFloatInputStreamChannelMixer($C
 }
 
 void AudioFloatFormatConverter$AudioFloatInputStreamChannelMixer::init$($AudioFloatInputStream* ais, int32_t targetChannels) {
+	$useLocalCurrentObjectStackCache();
 	$AudioFloatInputStream::init$();
 	this->sourceChannels = $nc($($nc(ais)->getFormat()))->getChannels();
 	this->targetChannels = targetChannels;

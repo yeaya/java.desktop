@@ -53,6 +53,7 @@ void Test4887836::init$() {
 }
 
 void Test4887836::init() {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::put("Label.font"_s, $$new($Font, "Perpetua"_s, 0, 36));
 	$init($Color);
 	add(static_cast<$Component*>($$new($JColorChooser, $Color::LIGHT_GRAY)));

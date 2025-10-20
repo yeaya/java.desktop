@@ -72,6 +72,7 @@ $Object* allocate$DefaultMutableTreeNode$PathBetweenNodesEnumeration($Class* cla
 }
 
 void DefaultMutableTreeNode$PathBetweenNodesEnumeration::init$($DefaultMutableTreeNode* this$0, $TreeNode* ancestor, $TreeNode* descendant) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	if (ancestor == nullptr || descendant == nullptr) {
 		$throwNew($IllegalArgumentException, "argument is null"_s);

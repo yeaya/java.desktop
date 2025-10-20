@@ -83,11 +83,13 @@ $Object* allocate$WeakIdentityHashMap$1$1($Class* clazz) {
 }
 
 void WeakIdentityHashMap$1$1::init$($WeakIdentityHashMap$1* this$1) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$1, this$1);
 	$set(this, iterator, $nc($($nc($($nc(this->this$1->this$0)->getMap()))->keySet()))->iterator());
 }
 
 bool WeakIdentityHashMap$1$1::hasNext() {
+	$useLocalCurrentObjectStackCache();
 	while ($nc(this->iterator)->hasNext()) {
 		if (($assignField(this, next$, $nc(($cast($WeakIdentityHashMap$WeakKey, $($nc(this->iterator)->next()))))->get())) != nullptr) {
 			return true;

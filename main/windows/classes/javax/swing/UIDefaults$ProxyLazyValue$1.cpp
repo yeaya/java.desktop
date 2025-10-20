@@ -89,6 +89,7 @@ void UIDefaults$ProxyLazyValue$1::init$($UIDefaults$ProxyLazyValue* this$0, $UID
 }
 
 $Object* UIDefaults$ProxyLazyValue$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$Class* c = nullptr;

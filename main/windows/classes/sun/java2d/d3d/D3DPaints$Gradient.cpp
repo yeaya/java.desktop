@@ -67,6 +67,7 @@ void D3DPaints$Gradient::init$() {
 }
 
 bool D3DPaints$Gradient::isPaintValid($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	$var($D3DSurfaceData, dstData, $cast($D3DSurfaceData, $nc(sg2d)->surfaceData));
 	$var($D3DGraphicsDevice, gd, $cast($D3DGraphicsDevice, $nc($($nc(dstData)->getDeviceConfiguration()))->getDevice()));
 	return $nc(gd)->isCapPresent(0x00010000);

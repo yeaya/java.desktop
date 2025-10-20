@@ -74,6 +74,7 @@ void bug8081019::init$() {
 
 void bug8081019::main($StringArray* args) {
 	$init(bug8081019);
+	$useLocalCurrentObjectStackCache();
 	$var($String, command, bug8081019::RUN_PROCESS);
 	if (0 < $nc(args)->length) {
 		$assign(command, args->get(0));
@@ -118,6 +119,7 @@ void bug8081019::main($StringArray* args) {
 
 void bug8081019::runTest() {
 	$init(bug8081019);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$System::setSecurityManager($$new($SecurityManager));
 	$var($Frame, f, $new($Frame, "Test frame"_s));
@@ -128,6 +130,7 @@ void bug8081019::runTest() {
 
 void bug8081019::runProcess() {
 	$init(bug8081019);
+	$useLocalCurrentObjectStackCache();
 	$var($String, javaPath, $System::getProperty("java.home"_s, ""_s));
 	$init($File);
 	$var($String, command, $str({javaPath, $File::separator, "bin"_s, $File::separator, "java -Djava.security.manager=allow "_s, $(bug8081019::class$->getName()), " "_s, bug8081019::RUN_TEST}));
@@ -144,6 +147,7 @@ void bug8081019::runProcess() {
 
 void bug8081019::dumpStream($InputStream* in, $String* name) {
 	$init(bug8081019);
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println($$str({"--- dump "_s, name, " ---"_s}));
 	$var($String, tempString, nullptr);

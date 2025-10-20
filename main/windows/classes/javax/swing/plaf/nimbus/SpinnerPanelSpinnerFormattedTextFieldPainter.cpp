@@ -192,6 +192,7 @@ $AbstractRegionPainter$PaintContext* SpinnerPanelSpinnerFormattedTextFieldPainte
 }
 
 void SpinnerPanelSpinnerFormattedTextFieldPainter::paintBackgroundDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->rect);
@@ -210,6 +211,7 @@ void SpinnerPanelSpinnerFormattedTextFieldPainter::paintBackgroundDisabled($Grap
 }
 
 void SpinnerPanelSpinnerFormattedTextFieldPainter::paintBackgroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->rect);
@@ -228,6 +230,7 @@ void SpinnerPanelSpinnerFormattedTextFieldPainter::paintBackgroundEnabled($Graph
 }
 
 void SpinnerPanelSpinnerFormattedTextFieldPainter::paintBackgroundFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect6());
 	$nc(g)->setPaint(this->color14);
 	g->fill(this->rect);
@@ -246,6 +249,7 @@ void SpinnerPanelSpinnerFormattedTextFieldPainter::paintBackgroundFocused($Graph
 }
 
 void SpinnerPanelSpinnerFormattedTextFieldPainter::paintBackgroundSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->rect);
@@ -264,6 +268,7 @@ void SpinnerPanelSpinnerFormattedTextFieldPainter::paintBackgroundSelected($Grap
 }
 
 void SpinnerPanelSpinnerFormattedTextFieldPainter::paintBackgroundSelectedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect6());
 	$nc(g)->setPaint(this->color14);
 	g->fill(this->rect);
@@ -342,6 +347,7 @@ $Rectangle2D* SpinnerPanelSpinnerFormattedTextFieldPainter::decodeRect6() {
 }
 
 $Paint* SpinnerPanelSpinnerFormattedTextFieldPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -359,6 +365,7 @@ $Paint* SpinnerPanelSpinnerFormattedTextFieldPainter::decodeGradient1($Shape* s)
 }
 
 $Paint* SpinnerPanelSpinnerFormattedTextFieldPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -376,6 +383,7 @@ $Paint* SpinnerPanelSpinnerFormattedTextFieldPainter::decodeGradient2($Shape* s)
 }
 
 $Paint* SpinnerPanelSpinnerFormattedTextFieldPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -393,6 +401,7 @@ $Paint* SpinnerPanelSpinnerFormattedTextFieldPainter::decodeGradient3($Shape* s)
 }
 
 $Paint* SpinnerPanelSpinnerFormattedTextFieldPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -410,6 +419,7 @@ $Paint* SpinnerPanelSpinnerFormattedTextFieldPainter::decodeGradient4($Shape* s)
 }
 
 $Paint* SpinnerPanelSpinnerFormattedTextFieldPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

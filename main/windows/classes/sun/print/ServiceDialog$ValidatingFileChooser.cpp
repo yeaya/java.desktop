@@ -82,6 +82,7 @@ void ServiceDialog$ValidatingFileChooser::init$($ServiceDialog* this$0) {
 }
 
 void ServiceDialog$ValidatingFileChooser::approveSelection() {
+	$useLocalCurrentObjectStackCache();
 	$var($File, selected, getSelectedFile());
 	bool exists = false;
 	try {

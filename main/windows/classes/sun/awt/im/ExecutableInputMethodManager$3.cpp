@@ -85,6 +85,7 @@ void ExecutableInputMethodManager$3::init$($ExecutableInputMethodManager* this$0
 }
 
 $Object* ExecutableInputMethodManager$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	{
 		$load($InputMethodDescriptor);

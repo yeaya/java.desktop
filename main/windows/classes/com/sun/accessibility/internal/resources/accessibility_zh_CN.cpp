@@ -45,6 +45,7 @@ void accessibility_zh_CN::init$() {
 }
 
 $ObjectArray2* accessibility_zh_CN::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("active"_s),

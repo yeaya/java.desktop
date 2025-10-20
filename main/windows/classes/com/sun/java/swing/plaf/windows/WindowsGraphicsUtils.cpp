@@ -119,6 +119,7 @@ void WindowsGraphicsUtils::init$() {
 }
 
 void WindowsGraphicsUtils::paintText($Graphics* g, $AbstractButton* b, $Rectangle* textRect, $String* text, int32_t textShiftOffset) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, fm, $SwingUtilities2::getFontMetrics(static_cast<$JComponent*>(b), g));
 	int32_t mnemIndex = $nc(b)->getDisplayedMnemonicIndex();
 	if ($WindowsLookAndFeel::isMnemonicHidden() == true) {
@@ -133,6 +134,7 @@ void WindowsGraphicsUtils::paintText($Graphics* g, $AbstractButton* b, $Rectangl
 }
 
 void WindowsGraphicsUtils::paintClassicText($AbstractButton* b, $Graphics* g, int32_t x, int32_t y, $String* text, int32_t mnemIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($ButtonModel, model, $nc(b)->getModel());
 	$var($Color, color, b->getForeground());
 	if ($nc(model)->isEnabled()) {
@@ -192,6 +194,7 @@ void WindowsGraphicsUtils::paintXPText($AbstractButton* b, $Graphics* g, int32_t
 }
 
 void WindowsGraphicsUtils::paintXPText($AbstractButton* b, $TMSchema$Part* part, $TMSchema$State* state, $Graphics* g, int32_t x, int32_t y, $String* text, int32_t mnemIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp == nullptr) {
 		return;

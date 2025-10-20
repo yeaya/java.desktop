@@ -356,6 +356,7 @@ void RTFWriteParagraphAlignTest::init$() {
 
 void RTFWriteParagraphAlignTest::main($StringArray* args) {
 	$init(RTFWriteParagraphAlignTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(RTFWriteParagraphAlignTest::rtfEditorKit, $new($RTFEditorKit));
 	$assignStatic(RTFWriteParagraphAlignTest::robot, $new($Robot));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(RTFWriteParagraphAlignTest$$Lambda$lambda$main$0)));
@@ -370,6 +371,7 @@ void RTFWriteParagraphAlignTest::main($StringArray* args) {
 
 void RTFWriteParagraphAlignTest::test(int32_t align) {
 	$init(RTFWriteParagraphAlignTest);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(RTFWriteParagraphAlignTest$$Lambda$lambda$test$2$2, align)));
 	$nc(RTFWriteParagraphAlignTest::robot)->waitForIdle();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(RTFWriteParagraphAlignTest$$Lambda$lambda$test$3$3)));
@@ -390,6 +392,7 @@ void RTFWriteParagraphAlignTest::test(int32_t align) {
 
 void RTFWriteParagraphAlignTest::lambda$test$5() {
 	$init(RTFWriteParagraphAlignTest);
+	$useLocalCurrentObjectStackCache();
 	try {
 		int32_t endOffset = $nc($($nc($nc($($nc($($nc(RTFWriteParagraphAlignTest::jTextPane)->getDocument()))->getRootElements()))->get(0))->getElement(0)))->getEndOffset();
 		RTFWriteParagraphAlignTest::position2 = $nc($($nc(RTFWriteParagraphAlignTest::jTextPane)->modelToView(endOffset - 1)))->x;
@@ -406,6 +409,7 @@ void RTFWriteParagraphAlignTest::lambda$test$4($Document* d) {
 
 void RTFWriteParagraphAlignTest::lambda$test$3() {
 	$init(RTFWriteParagraphAlignTest);
+	$useLocalCurrentObjectStackCache();
 	try {
 		int32_t endOffset = $nc($($nc($nc($($nc($($nc(RTFWriteParagraphAlignTest::jTextPane)->getDocument()))->getRootElements()))->get(0))->getElement(0)))->getEndOffset();
 		RTFWriteParagraphAlignTest::position1 = $nc($($nc(RTFWriteParagraphAlignTest::jTextPane)->modelToView(endOffset - 1)))->x;
@@ -417,6 +421,7 @@ void RTFWriteParagraphAlignTest::lambda$test$3() {
 
 void RTFWriteParagraphAlignTest::lambda$test$2(int32_t align) {
 	$init(RTFWriteParagraphAlignTest);
+	$useLocalCurrentObjectStackCache();
 	$nc(RTFWriteParagraphAlignTest::jTextPane)->setDocument($($nc(RTFWriteParagraphAlignTest::rtfEditorKit)->createDefaultDocument()));
 	try {
 		$var($InputStream, var$0, static_cast<$InputStream*>($new($ByteArrayInputStream, $($nc($nc(RTFWriteParagraphAlignTest::RTF_DATA)->get(align))->getBytes()))));

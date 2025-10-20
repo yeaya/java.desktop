@@ -175,6 +175,7 @@ MediaSize* MediaSize::getMediaSizeForName($MediaSizeName* media) {
 
 $MediaSizeName* MediaSize::findMedia(float x, float y, int32_t units) {
 	$init(MediaSize);
+	$useLocalCurrentObjectStackCache();
 	$init($MediaSize$ISO);
 	$var(MediaSize, match, $MediaSize$ISO::A4);
 	if (x <= 0.0f || y <= 0.0f || units < 1) {
@@ -217,6 +218,7 @@ $String* MediaSize::getName() {
 }
 
 void clinit$MediaSize($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(MediaSize::mediaMap, $new($HashMap, 100, (float)10));
 	$assignStatic(MediaSize::sizeVector, $new($Vector, 100, 10));
 	{

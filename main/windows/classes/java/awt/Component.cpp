@@ -1308,6 +1308,7 @@ $Container* Component::getContainer() {
 
 void Component::setDropTarget($DropTarget* dt) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (dt == this->dropTarget || (this->dropTarget != nullptr && $nc($of(this->dropTarget))->equals(dt))) {
 			return;
 		}
@@ -1392,6 +1393,7 @@ bool Component::updateChildGraphicsData($GraphicsConfiguration* gc) {
 }
 
 void Component::checkGD($String* stringID) {
+	$useLocalCurrentObjectStackCache();
 	if (this->graphicsConfig != nullptr) {
 		if (!$nc($($nc($($nc(this->graphicsConfig)->getDevice()))->getIDstring()))->equals(stringID)) {
 			$throwNew($IllegalArgumentException, "adding a container to a container on a different GraphicsDevice"_s);
@@ -1422,6 +1424,7 @@ $Toolkit* Component::getToolkitImpl() {
 }
 
 $ComponentFactory* Component::getComponentFactory() {
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, toolkit, getToolkit());
 	if ($instanceOf($ComponentFactory, toolkit)) {
 		return $cast($ComponentFactory, toolkit);
@@ -1450,6 +1453,7 @@ bool Component::isRecursivelyVisible() {
 }
 
 $Rectangle* Component::getRecursivelyVisibleBounds() {
+	$useLocalCurrentObjectStackCache();
 	$var(Component, container, getContainer());
 	$var($Rectangle, bounds, getBounds());
 	if (container == nullptr) {
@@ -1466,6 +1470,7 @@ $Point* Component::pointRelativeToComponent($Point* absolute) {
 }
 
 Component* Component::findUnderMouseInWindow($PointerInfo* pi) {
+	$useLocalCurrentObjectStackCache();
 	if (!isShowing()) {
 		return nullptr;
 	}
@@ -1484,6 +1489,7 @@ Component* Component::findUnderMouseInWindow($PointerInfo* pi) {
 }
 
 $Point* Component::getMousePosition() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if ($GraphicsEnvironment::isHeadless()) {
 		$throwNew($HeadlessException);
@@ -1523,6 +1529,7 @@ void Component::setEnabled(bool b) {
 }
 
 void Component::enable() {
+	$useLocalCurrentObjectStackCache();
 	if (!this->enabled) {
 		$synchronized(getTreeLock()) {
 			this->enabled = true;
@@ -1551,6 +1558,7 @@ void Component::enable(bool b) {
 }
 
 void Component::disable() {
+	$useLocalCurrentObjectStackCache();
 	if (this->enabled) {
 		$KeyboardFocusManager::clearMostRecentFocusOwner(this);
 		$synchronized(getTreeLock()) {
@@ -1585,6 +1593,7 @@ bool Component::isDoubleBuffered() {
 }
 
 void Component::enableInputMethods(bool enable) {
+	$useLocalCurrentObjectStackCache();
 	if (enable) {
 		if (((int64_t)(this->eventMask & (uint64_t)$AWTEvent::INPUT_METHODS_ENABLED_MASK)) != 0) {
 			return;
@@ -1614,6 +1623,7 @@ void Component::setVisible(bool b) {
 }
 
 void Component::show() {
+	$useLocalCurrentObjectStackCache();
 	if (!this->visible) {
 		$synchronized(getTreeLock()) {
 			this->visible = true;
@@ -1659,6 +1669,7 @@ void Component::clearCurrentFocusCycleRootOnHide() {
 }
 
 void Component::hide() {
+	$useLocalCurrentObjectStackCache();
 	this->isPacked = false;
 	if (this->visible) {
 		clearCurrentFocusCycleRootOnHide();
@@ -1692,6 +1703,7 @@ void Component::hide() {
 }
 
 $Color* Component::getForeground() {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, foreground, this->foreground);
 	if (foreground != nullptr) {
 		return foreground;
@@ -1701,6 +1713,7 @@ $Color* Component::getForeground() {
 }
 
 void Component::setForeground($Color* c$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, c, c$renamed);
 	$var($Color, oldColor, this->foreground);
 	$var($ComponentPeer, peer, this->peer);
@@ -1719,6 +1732,7 @@ bool Component::isForegroundSet() {
 }
 
 $Color* Component::getBackground() {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, background, this->background);
 	if (background != nullptr) {
 		return background;
@@ -1728,6 +1742,7 @@ $Color* Component::getBackground() {
 }
 
 void Component::setBackground($Color* c$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, c, c$renamed);
 	$var($Color, oldColor, this->background);
 	$var($ComponentPeer, peer, this->peer);
@@ -1750,6 +1765,7 @@ $Font* Component::getFont() {
 }
 
 $Font* Component::getFont_NoClientCode() {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, font, this->font);
 	if (font != nullptr) {
 		return font;
@@ -1759,6 +1775,7 @@ $Font* Component::getFont_NoClientCode() {
 }
 
 void Component::setFont($Font* f$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, f, f$renamed);
 	$var($Font, oldFont, nullptr);
 	$var($Font, newFont, nullptr);
@@ -1785,6 +1802,7 @@ bool Component::isFontSet() {
 }
 
 $Locale* Component::getLocale() {
+	$useLocalCurrentObjectStackCache();
 	$var($Locale, locale, this->locale);
 	if (locale != nullptr) {
 		return locale;
@@ -1805,6 +1823,7 @@ void Component::setLocale($Locale* l) {
 }
 
 $ColorModel* Component::getColorModel() {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentPeer, peer, this->peer);
 	if ((peer != nullptr) && !($instanceOf($LightweightPeer, peer))) {
 		return peer->getColorModel();
@@ -1825,6 +1844,7 @@ $Point* Component::getLocationOnScreen() {
 }
 
 $Point* Component::getLocationOnScreen_NoTreeLock() {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentPeer, peer, this->peer);
 	if (peer != nullptr && isShowing()) {
 		if ($instanceOf($LightweightPeer, peer)) {
@@ -1991,6 +2011,7 @@ void Component::reshapeNativePeer(int32_t x, int32_t y, int32_t width, int32_t h
 }
 
 void Component::notifyNewBounds(bool resized, bool moved) {
+	$useLocalCurrentObjectStackCache();
 	if (this->componentListener != nullptr || ((int64_t)(this->eventMask & (uint64_t)$AWTEvent::COMPONENT_EVENT_MASK)) != 0 || $Toolkit::enabledOnToolkit($AWTEvent::COMPONENT_EVENT_MASK)) {
 		if (resized) {
 			$var($ComponentEvent, e, $new($ComponentEvent, this, $ComponentEvent::COMPONENT_RESIZED));
@@ -2203,6 +2224,7 @@ void Component::layout() {
 }
 
 void Component::validate() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		$var($ComponentPeer, peer, this->peer);
 		bool wasValid = isValid();
@@ -2273,6 +2295,7 @@ void Component::revalidateSynchronously() {
 }
 
 $Graphics* Component::getGraphics() {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($LightweightPeer, this->peer)) {
 		if (this->parent == nullptr) {
 			return nullptr;
@@ -2296,6 +2319,7 @@ $Graphics* Component::getGraphics() {
 }
 
 $Graphics* Component::getGraphics_NoClientCode() {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentPeer, peer, this->peer);
 	if ($instanceOf($LightweightPeer, peer)) {
 		$var($Container, parent, this->parent);
@@ -2335,6 +2359,7 @@ void Component::setCursor($Cursor* cursor) {
 }
 
 void Component::updateCursorImmediately() {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($LightweightPeer, this->peer)) {
 		$var($Container, nativeContainer, getNativeContainer());
 		if (nativeContainer == nullptr) {
@@ -2354,6 +2379,7 @@ $Cursor* Component::getCursor() {
 }
 
 $Cursor* Component::getCursor_NoClientCode() {
+	$useLocalCurrentObjectStackCache();
 	$var($Cursor, cursor, this->cursor);
 	if (cursor != nullptr) {
 		return cursor;
@@ -2378,6 +2404,7 @@ void Component::update($Graphics* g) {
 }
 
 void Component::paintAll($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (isShowing()) {
 		$var($Rectangle, var$0, $new($Rectangle, 0, 0, this->width, this->height));
 		$var($Graphics, var$1, g);
@@ -2405,6 +2432,7 @@ void Component::repaint(int32_t x, int32_t y, int32_t width, int32_t height) {
 }
 
 void Component::repaint(int64_t tm, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($LightweightPeer, this->peer)) {
 		if (this->parent != nullptr) {
 			if (x < 0) {
@@ -2435,6 +2463,7 @@ void Component::print($Graphics* g) {
 }
 
 void Component::printAll($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (isShowing()) {
 		$var($Rectangle, var$0, $new($Rectangle, 0, 0, this->width, this->height));
 		$var($Graphics, var$1, g);
@@ -2450,6 +2479,7 @@ void Component::printHeavyweightComponents($Graphics* g) {
 }
 
 $Insets* Component::getInsets_NoClientCode() {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentPeer, peer, this->peer);
 	if ($instanceOf($ContainerPeer, peer)) {
 		return $cast($Insets, $nc($($nc(($cast($ContainerPeer, peer)))->getInsets()))->clone());
@@ -2526,6 +2556,7 @@ int32_t Component::checkImage($Image* image, int32_t width, int32_t height, $Ima
 }
 
 void Component::createBufferStrategy(int32_t numBuffers) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferCapabilities, bufferCaps, nullptr);
 	if (numBuffers > 1) {
 		$var($ImageCapabilities, var$0, $new($ImageCapabilities, true));
@@ -2558,6 +2589,7 @@ void Component::createBufferStrategy(int32_t numBuffers) {
 }
 
 void Component::createBufferStrategy(int32_t numBuffers, $BufferCapabilities* caps$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferCapabilities, caps, caps$renamed);
 	if (numBuffers < 1) {
 		$throwNew($IllegalArgumentException, "Number of buffers must be at least 1"_s);
@@ -2589,6 +2621,7 @@ $BufferStrategy* Component::getBufferStrategy() {
 }
 
 $Image* Component::getBackBuffer() {
+	$useLocalCurrentObjectStackCache();
 	if (this->bufferStrategy != nullptr) {
 		if ($instanceOf($Component$BltBufferStrategy, this->bufferStrategy)) {
 			$var($Component$BltBufferStrategy, bltBS, $cast($Component$BltBufferStrategy, this->bufferStrategy));
@@ -2642,6 +2675,7 @@ void Component::dispatchEvent($AWTEvent* e) {
 }
 
 void Component::dispatchEventImpl($AWTEvent* e$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($AWTEvent, e, e$renamed);
 	int32_t id = $nc(e)->getID();
 	$var($AppContext, compContext, this->appContext);
@@ -2796,6 +2830,7 @@ void Component::autoProcessMouseWheel($MouseWheelEvent* e) {
 }
 
 bool Component::dispatchMouseWheelToAncestor($MouseWheelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t newX = 0;
 	int32_t newY = 0;
 	int32_t var$0 = $nc(e)->getX();
@@ -2987,6 +3022,7 @@ bool Component::eventTypeEnabled(int32_t type) {
 }
 
 bool Component::postEvent($Event* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentPeer, peer, this->peer);
 	if (handleEvent(e)) {
 		$nc(e)->consume();
@@ -3158,6 +3194,7 @@ int32_t Component::countHierarchyMembers() {
 }
 
 int32_t Component::createHierarchyEvents(int32_t id, Component* changed, $Container* changedParent, int64_t changeFlags, bool enabledOnToolkit) {
+	$useLocalCurrentObjectStackCache();
 	switch (id) {
 	case $HierarchyEvent::HIERARCHY_CHANGED:
 		{
@@ -3460,6 +3497,7 @@ void Component::disableEvents(int64_t eventsToDisable) {
 }
 
 bool Component::checkCoalescing() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if ($of(this)->getClass()->getClassLoader() == nullptr) {
 		return false;
@@ -3478,6 +3516,7 @@ bool Component::checkCoalescing() {
 
 bool Component::isCoalesceEventsOverriden($Class* clazz) {
 	$init(Component);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (!Component::$assertionsDisabled && !$Thread::holdsLock(Component::coalesceMap)) {
 		$throwNew($AssertionError);
@@ -3856,6 +3895,7 @@ bool Component::action($Event* evt, Object$* what) {
 }
 
 void Component::addNotify() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		$var($ComponentPeer, peer, this->peer);
 		if (peer == nullptr || $instanceOf($LightweightPeer, peer)) {
@@ -3918,6 +3958,7 @@ void Component::addNotify() {
 }
 
 void Component::removeNotify() {
+	$useLocalCurrentObjectStackCache();
 	$KeyboardFocusManager::clearMostRecentFocusOwner(this);
 	if ($nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getPermanentFocusOwner() == this) {
 		$nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->setGlobalPermanentFocusOwner(nullptr);
@@ -4024,6 +4065,7 @@ $Set* Component::getFocusTraversalKeys(int32_t id) {
 }
 
 void Component::setFocusTraversalKeys_NoIDCheck(int32_t id, $Set* keystrokes) {
+	$useLocalCurrentObjectStackCache();
 	$var($Set, oldKeys, nullptr);
 	$synchronized(this) {
 		if (this->focusTraversalKeys == nullptr) {
@@ -4060,6 +4102,7 @@ void Component::setFocusTraversalKeys_NoIDCheck(int32_t id, $Set* keystrokes) {
 }
 
 $Set* Component::getFocusTraversalKeys_NoIDCheck(int32_t id) {
+	$useLocalCurrentObjectStackCache();
 	$var($Set, keystrokes, (this->focusTraversalKeys != nullptr) ? $nc(this->focusTraversalKeys)->get(id) : ($Set*)nullptr);
 	if (keystrokes != nullptr) {
 		return keystrokes;
@@ -4131,6 +4174,7 @@ bool Component::requestFocusHelper(bool temporary, bool focusedWindowChangeAllow
 }
 
 bool Component::requestFocusHelper(bool temporary, bool focusedWindowChangeAllowed, $FocusEvent$Cause* cause) {
+	$useLocalCurrentObjectStackCache();
 	$var($AWTEvent, currentEvent, $EventQueue::getCurrentEvent());
 	if ($instanceOf($MouseEvent, currentEvent) && $SunToolkit::isSystemGenerated(currentEvent)) {
 		$var(Component, source, $nc(($cast($MouseEvent, currentEvent)))->getComponent());
@@ -4202,6 +4246,7 @@ bool Component::requestFocusHelper(bool temporary, bool focusedWindowChangeAllow
 }
 
 bool Component::isRequestFocusAccepted(bool temporary, bool focusedWindowChangeAllowed, $FocusEvent$Cause* cause) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = !isFocusable();
 	if (var$0 || !isVisible()) {
 		$init($PlatformLogger$Level);
@@ -4294,6 +4339,7 @@ void Component::nextFocus() {
 }
 
 bool Component::transferFocus(bool clearOnFailure) {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(Component::focusLog)->isLoggable($PlatformLogger$Level::FINER)) {
 		$nc(Component::focusLog)->finer($$str({"clearOnFailure = "_s, $$str(clearOnFailure)}));
@@ -4317,6 +4363,7 @@ bool Component::transferFocus(bool clearOnFailure) {
 }
 
 Component* Component::getNextFocusCandidate() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, rootAncestor, getTraversalRoot());
 	$var(Component, comp, this);
 	while (true) {
@@ -4369,6 +4416,7 @@ void Component::transferFocusBackward() {
 }
 
 bool Component::transferFocusBackward(bool clearOnFailure) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, rootAncestor, getTraversalRoot());
 	$var(Component, comp, this);
 	while (true) {
@@ -4412,6 +4460,7 @@ bool Component::transferFocusBackward(bool clearOnFailure) {
 }
 
 void Component::transferFocusUpCycle() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, rootAncestor, nullptr);
 	{
 		$assign(rootAncestor, getFocusCycleRootAncestor());
@@ -4503,6 +4552,7 @@ void Component::remove($MenuComponent* popup) {
 }
 
 $String* Component::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, thisName, $Objects::toString($(getName()), ""_s));
 	$var($String, invalid, isValid() ? ""_s : ",invalid"_s);
 	$var($String, hidden, this->visible ? ""_s : ",hidden"_s);
@@ -4511,6 +4561,7 @@ $String* Component::paramString() {
 }
 
 $String* Component::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$1, $$str({$($of(this)->getClass()->getName()), $$str(u'[')}));
 	$var($String, var$0, $$concat(var$1, $(paramString())));
 	return $concat(var$0, $$str(u']'));
@@ -4639,6 +4690,7 @@ void Component::firePropertyChange($String* propertyName, int32_t oldValue, int3
 }
 
 void Component::firePropertyChange($String* propertyName, int8_t oldValue, int8_t newValue) {
+	$useLocalCurrentObjectStackCache();
 	if (this->changeSupport == nullptr || oldValue == newValue) {
 		return;
 	}
@@ -4648,6 +4700,7 @@ void Component::firePropertyChange($String* propertyName, int8_t oldValue, int8_
 }
 
 void Component::firePropertyChange($String* propertyName, char16_t oldValue, char16_t newValue) {
+	$useLocalCurrentObjectStackCache();
 	if (this->changeSupport == nullptr || oldValue == newValue) {
 		return;
 	}
@@ -4657,6 +4710,7 @@ void Component::firePropertyChange($String* propertyName, char16_t oldValue, cha
 }
 
 void Component::firePropertyChange($String* propertyName, int16_t oldValue, int16_t newValue) {
+	$useLocalCurrentObjectStackCache();
 	if (this->changeSupport == nullptr || oldValue == newValue) {
 		return;
 	}
@@ -4666,6 +4720,7 @@ void Component::firePropertyChange($String* propertyName, int16_t oldValue, int1
 }
 
 void Component::firePropertyChange($String* propertyName, int64_t oldValue, int64_t newValue) {
+	$useLocalCurrentObjectStackCache();
 	if (this->changeSupport == nullptr || oldValue == newValue) {
 		return;
 	}
@@ -4675,6 +4730,7 @@ void Component::firePropertyChange($String* propertyName, int64_t oldValue, int6
 }
 
 void Component::firePropertyChange($String* propertyName, float oldValue, float newValue) {
+	$useLocalCurrentObjectStackCache();
 	if (this->changeSupport == nullptr || oldValue == newValue) {
 		return;
 	}
@@ -4684,6 +4740,7 @@ void Component::firePropertyChange($String* propertyName, float oldValue, float 
 }
 
 void Component::firePropertyChange($String* propertyName, double oldValue, double newValue) {
+	$useLocalCurrentObjectStackCache();
 	if (this->changeSupport == nullptr || oldValue == newValue) {
 		return;
 	}
@@ -4693,6 +4750,7 @@ void Component::firePropertyChange($String* propertyName, double oldValue, doubl
 }
 
 void Component::doSwingSerialization() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (!($instanceOf($JComponent, this))) {
 		return;
@@ -4729,6 +4787,7 @@ void Component::writeObject($ObjectOutputStream* s) {
 }
 
 void Component::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, objectLock, $new($Object));
 	$set(this, acc, $AccessController::getContext());
 	$nc(s)->defaultReadObject();
@@ -4889,6 +4948,7 @@ $AccessibleContext* Component::getAccessibleContext() {
 }
 
 int32_t Component::getAccessibleIndexInParent() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		$var($AccessibleContext, accContext, getAccessibleContext());
 		if (accContext == nullptr) {
@@ -4909,6 +4969,7 @@ int32_t Component::getAccessibleIndexInParent() {
 }
 
 $AccessibleStateSet* Component::getAccessibleStateSet() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		$var($AccessibleStateSet, states, $new($AccessibleStateSet));
 		if (this->isEnabled()) {
@@ -4965,6 +5026,7 @@ $AccessibleStateSet* Component::getAccessibleStateSet() {
 
 bool Component::isInstanceOf(Object$* obj, $String* className) {
 	$init(Component);
+	$useLocalCurrentObjectStackCache();
 	if (obj == nullptr) {
 		return false;
 	}
@@ -4988,6 +5050,7 @@ bool Component::areBoundsValid() {
 }
 
 void Component::applyCompoundShape($Region* shape$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Region, shape, shape$renamed);
 	checkTreeLock();
 	if (!areBoundsValid()) {
@@ -5033,6 +5096,7 @@ $Region* Component::getAppliedShape() {
 }
 
 $Point* Component::getLocationOnWindow() {
+	$useLocalCurrentObjectStackCache();
 	checkTreeLock();
 	$var($Point, curLocation, getLocation());
 	{
@@ -5074,6 +5138,7 @@ int32_t Component::getSiblingIndexAbove() {
 }
 
 $ComponentPeer* Component::getHWPeerAboveMe() {
+	$useLocalCurrentObjectStackCache();
 	checkTreeLock();
 	$var($Container, cont, getContainer());
 	int32_t indexAbove = getSiblingIndexAbove();
@@ -5109,6 +5174,7 @@ bool Component::isNonOpaqueForMixing() {
 }
 
 $Region* Component::calculateCurrentShape() {
+	$useLocalCurrentObjectStackCache();
 	checkTreeLock();
 	$var($Region, s, getNormalShape());
 	$init($PlatformLogger$Level);
@@ -5142,6 +5208,7 @@ $Region* Component::calculateCurrentShape() {
 }
 
 void Component::applyCurrentShape() {
+	$useLocalCurrentObjectStackCache();
 	checkTreeLock();
 	if (!areBoundsValid()) {
 		$init($PlatformLogger$Level);
@@ -5159,6 +5226,7 @@ void Component::applyCurrentShape() {
 }
 
 void Component::subtractAndApplyShape($Region* s) {
+	$useLocalCurrentObjectStackCache();
 	checkTreeLock();
 	$init($PlatformLogger$Level);
 	if ($nc(Component::mixingLog)->isLoggable($PlatformLogger$Level::FINE)) {
@@ -5168,6 +5236,7 @@ void Component::subtractAndApplyShape($Region* s) {
 }
 
 void Component::applyCurrentShapeBelowMe() {
+	$useLocalCurrentObjectStackCache();
 	checkTreeLock();
 	$var($Container, parent, getContainer());
 	if (parent != nullptr && parent->isShowing()) {
@@ -5182,6 +5251,7 @@ void Component::applyCurrentShapeBelowMe() {
 }
 
 void Component::subtractAndApplyShapeBelowMe() {
+	$useLocalCurrentObjectStackCache();
 	checkTreeLock();
 	$var($Container, parent, getContainer());
 	if (parent != nullptr && isShowing()) {
@@ -5214,6 +5284,7 @@ void Component::mixOnShowing() {
 }
 
 void Component::mixOnHiding(bool isLightweight) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		$init($PlatformLogger$Level);
 		if ($nc(Component::mixingLog)->isLoggable($PlatformLogger$Level::FINE)) {
@@ -5246,6 +5317,7 @@ void Component::mixOnReshaping() {
 }
 
 void Component::mixOnZOrderChanging(int32_t oldZorder, int32_t newZorder) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		bool becameHigher = newZorder < oldZorder;
 		$var($Container, parent, getContainer());
@@ -5285,6 +5357,7 @@ void Component::mixOnValidating() {
 }
 
 bool Component::isMixingNeeded() {
+	$useLocalCurrentObjectStackCache();
 	if ($SunToolkit::getSunAwtDisableMixing()) {
 		$init($PlatformLogger$Level);
 		if ($nc(Component::mixingLog)->isLoggable($PlatformLogger$Level::FINEST)) {
@@ -5354,6 +5427,7 @@ void Component::updateZOrder() {
 }
 
 void clinit$Component($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(Component::actionListenerK, "actionL"_s);
 	$assignStatic(Component::adjustmentListenerK, "adjustmentL"_s);
 	$assignStatic(Component::componentListenerK, "componentL"_s);

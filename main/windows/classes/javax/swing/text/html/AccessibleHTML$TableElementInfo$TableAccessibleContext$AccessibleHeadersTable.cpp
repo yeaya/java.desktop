@@ -109,6 +109,7 @@ void AccessibleHTML$TableElementInfo$TableAccessibleContext$AccessibleHeadersTab
 }
 
 void AccessibleHTML$TableElementInfo$TableAccessibleContext$AccessibleHeadersTable::addHeader($AccessibleHTML$TableElementInfo$TableCellElementInfo* cellInfo, int32_t rowNumber) {
+	$useLocalCurrentObjectStackCache();
 	$var($Integer, rowInteger, $Integer::valueOf(rowNumber));
 	$var($ArrayList, list, $cast($ArrayList, $nc(this->headers)->get(rowInteger)));
 	if (list == nullptr) {
@@ -141,6 +142,7 @@ int32_t AccessibleHTML$TableElementInfo$TableAccessibleContext$AccessibleHeaders
 }
 
 $AccessibleHTML$TableElementInfo$TableCellElementInfo* AccessibleHTML$TableElementInfo$TableAccessibleContext$AccessibleHeadersTable::getElementInfoAt(int32_t r, int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, list, $cast($ArrayList, $nc(this->headers)->get($($Integer::valueOf(r)))));
 	if (list != nullptr) {
 		return $cast($AccessibleHTML$TableElementInfo$TableCellElementInfo, list->get(c));

@@ -171,6 +171,7 @@ void ServiceDialog$MediaPanel::finalize() {
 }
 
 void ServiceDialog$MediaPanel::init$($ServiceDialog* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JPanel::init$();
 	$set(this, strTitle, $ServiceDialog::getMsg("border.media"_s));
@@ -205,6 +206,7 @@ void ServiceDialog$MediaPanel::init$($ServiceDialog* this$0) {
 }
 
 $String* ServiceDialog$MediaPanel::getMediaName($String* key) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($String, newkey, $nc(key)->replace(u' ', u'-'));
 		$assign(newkey, newkey->replace(u'#', u'n'));
@@ -218,6 +220,7 @@ $String* ServiceDialog$MediaPanel::getMediaName($String* key) {
 }
 
 void ServiceDialog$MediaPanel::itemStateChanged($ItemEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, source, $nc(e)->getSource());
 	if (e->getStateChange() == $ItemEvent::SELECTED) {
 		if ($equals(source, this->cbSize)) {
@@ -270,6 +273,7 @@ void ServiceDialog$MediaPanel::addMediaListener($ServiceDialog$MarginsPanel* pnl
 }
 
 void ServiceDialog$MediaPanel::updateInfo() {
+	$useLocalCurrentObjectStackCache();
 	$load($Media);
 	$Class* mdCategory = $Media::class$;
 	$load($SunAlternateMedia);

@@ -73,6 +73,7 @@ void bug7027139$1::init$() {
 }
 
 void bug7027139$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTable, orderTable, $new($JTable, $fcast($ObjectArray2, $$new($StringArray2, {
 		$$new($StringArray, {
 			"Item 1 1"_s,

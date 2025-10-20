@@ -112,6 +112,7 @@ void HeadlessJScrollBar::init$() {
 }
 
 void HeadlessJScrollBar::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JScrollBar, sb, $new($JScrollBar));
 	sb->getAccessibleContext();
 	sb->isFocusTraversable();

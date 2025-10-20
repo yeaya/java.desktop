@@ -114,6 +114,7 @@ void PlainDocument::init$($AbstractDocument$Content* c) {
 }
 
 void PlainDocument::insertString(int32_t offs, $String* str$renamed, $AttributeSet* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, str$renamed);
 	$var($Object, filterNewlines, getProperty("filterNewlines"_s));
 	$init($Boolean);
@@ -137,6 +138,7 @@ $Element* PlainDocument::getDefaultRootElement() {
 }
 
 $AbstractDocument$AbstractElement* PlainDocument::createDefaultRoot() {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractDocument$BranchElement, map, $cast($AbstractDocument$BranchElement, createBranchElement(nullptr, nullptr)));
 	$var($Element, line, createLeafElement(map, nullptr, 0, 1));
 	$var($ElementArray, lines, $new($ElementArray, 1));
@@ -151,6 +153,7 @@ $Element* PlainDocument::getParagraphElement(int32_t pos) {
 }
 
 void PlainDocument::insertUpdate($AbstractDocument$DefaultDocumentEvent* chng, $AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->removed)->removeAllElements();
 	$nc(this->added)->removeAllElements();
 	$var($AbstractDocument$BranchElement, lineMap, $cast($AbstractDocument$BranchElement, getDefaultRootElement()));
@@ -209,6 +212,7 @@ void PlainDocument::insertUpdate($AbstractDocument$DefaultDocumentEvent* chng, $
 }
 
 void PlainDocument::removeUpdate($AbstractDocument$DefaultDocumentEvent* chng) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->removed)->removeAllElements();
 	$var($AbstractDocument$BranchElement, map, $cast($AbstractDocument$BranchElement, getDefaultRootElement()));
 	int32_t offset = $nc(chng)->getOffset();
@@ -249,6 +253,7 @@ void PlainDocument::removeUpdate($AbstractDocument$DefaultDocumentEvent* chng) {
 }
 
 void PlainDocument::insertComposedTextUpdate($AbstractDocument$DefaultDocumentEvent* chng, $AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->added)->removeAllElements();
 	$var($AbstractDocument$BranchElement, lineMap, $cast($AbstractDocument$BranchElement, getDefaultRootElement()));
 	int32_t offset = $nc(chng)->getOffset();

@@ -209,6 +209,7 @@ $AccessibleRole* JLabel$AccessibleJLabel::getAccessibleRole() {
 }
 
 $AccessibleIconArray* JLabel$AccessibleJLabel::getAccessibleIcon() {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, icon, this->this$0->getIcon());
 	if ($instanceOf($Accessible, icon)) {
 		$var($AccessibleContext, ac, $nc(($cast($Accessible, icon)))->getAccessibleContext());
@@ -220,6 +221,7 @@ $AccessibleIconArray* JLabel$AccessibleJLabel::getAccessibleIcon() {
 }
 
 $AccessibleRelationSet* JLabel$AccessibleJLabel::getAccessibleRelationSet() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleRelationSet, relationSet, $JComponent$AccessibleJComponent::getAccessibleRelationSet());
 	$init($AccessibleRelation);
 	if (!$nc(relationSet)->contains($AccessibleRelation::LABEL_FOR)) {
@@ -243,6 +245,7 @@ $AccessibleText* JLabel$AccessibleJLabel::getAccessibleText() {
 }
 
 int32_t JLabel$AccessibleJLabel::getIndexAtPoint($Point* p) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, view, $cast($View, this->this$0->getClientProperty("html"_s)));
 	if (view != nullptr) {
 		$var($Rectangle, r, getTextRectangle());
@@ -258,6 +261,7 @@ int32_t JLabel$AccessibleJLabel::getIndexAtPoint($Point* p) {
 }
 
 $Rectangle* JLabel$AccessibleJLabel::getCharacterBounds(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, view, $cast($View, this->this$0->getClientProperty("html"_s)));
 	if (view != nullptr) {
 		$var($Rectangle, r, getTextRectangle());
@@ -279,6 +283,7 @@ $Rectangle* JLabel$AccessibleJLabel::getCharacterBounds(int32_t i) {
 }
 
 int32_t JLabel$AccessibleJLabel::getCharCount() {
+	$useLocalCurrentObjectStackCache();
 	$var($View, view, $cast($View, this->this$0->getClientProperty("html"_s)));
 	if (view != nullptr) {
 		$var($Document, d, view->getDocument());
@@ -295,6 +300,7 @@ int32_t JLabel$AccessibleJLabel::getCaretPosition() {
 }
 
 $String* JLabel$AccessibleJLabel::getAtIndex(int32_t part, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index >= getCharCount()) {
 		return nullptr;
 	}
@@ -342,6 +348,7 @@ $String* JLabel$AccessibleJLabel::getAtIndex(int32_t part, int32_t index) {
 }
 
 $String* JLabel$AccessibleJLabel::getAfterIndex(int32_t part, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index >= getCharCount()) {
 		return nullptr;
 	}
@@ -406,6 +413,7 @@ $String* JLabel$AccessibleJLabel::getAfterIndex(int32_t part, int32_t index) {
 }
 
 $String* JLabel$AccessibleJLabel::getBeforeIndex(int32_t part, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index > getCharCount() - 1) {
 		return nullptr;
 	}
@@ -466,6 +474,7 @@ $String* JLabel$AccessibleJLabel::getBeforeIndex(int32_t part, int32_t index) {
 }
 
 $AttributeSet* JLabel$AccessibleJLabel::getCharacterAttribute(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, view, $cast($View, this->this$0->getClientProperty("html"_s)));
 	if (view != nullptr) {
 		$var($Document, d, view->getDocument());
@@ -493,6 +502,7 @@ $String* JLabel$AccessibleJLabel::getSelectedText() {
 }
 
 $String* JLabel$AccessibleJLabel::getText(int32_t offset, int32_t length) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, view, $cast($View, this->this$0->getClientProperty("html"_s)));
 	if (view != nullptr) {
 		$var($Document, d, view->getDocument());
@@ -505,6 +515,7 @@ $String* JLabel$AccessibleJLabel::getText(int32_t offset, int32_t length) {
 }
 
 $Rectangle* JLabel$AccessibleJLabel::getTextRectangle() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, text, this->this$0->getText());
 	$var($Icon, icon, (this->this$0->isEnabled()) ? this->this$0->getIcon() : this->this$0->getDisabledIcon());
 	if ((icon == nullptr) && (text == nullptr)) {

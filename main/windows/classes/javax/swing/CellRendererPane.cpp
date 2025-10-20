@@ -137,6 +137,7 @@ void CellRendererPane::addImpl($Component* x, Object$* constraints, int32_t inde
 }
 
 void CellRendererPane::paintComponent($Graphics* g, $Component* c, $Container* p, int32_t x, int32_t y, int32_t w, int32_t h, bool shouldValidate) {
+	$useLocalCurrentObjectStackCache();
 	if (c == nullptr) {
 		if (p != nullptr) {
 			$var($Color, oldColor, $nc(g)->getColor());

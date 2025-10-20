@@ -71,6 +71,7 @@ $Object* allocate$ExtendedBufferCapabilities($Class* clazz) {
 }
 
 void ExtendedBufferCapabilities::init$($BufferCapabilities* caps) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageCapabilities, var$0, $nc(caps)->getFrontBufferCapabilities());
 	$var($ImageCapabilities, var$1, caps->getBackBufferCapabilities());
 	$BufferCapabilities::init$(var$0, var$1, $(caps->getFlipContents()));
@@ -90,6 +91,7 @@ void ExtendedBufferCapabilities::init$($ImageCapabilities* front, $ImageCapabili
 }
 
 void ExtendedBufferCapabilities::init$($BufferCapabilities* caps, $ExtendedBufferCapabilities$VSyncType* t) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageCapabilities, var$0, $nc(caps)->getFrontBufferCapabilities());
 	$var($ImageCapabilities, var$1, caps->getBackBufferCapabilities());
 	$BufferCapabilities::init$(var$0, var$1, $(caps->getFlipContents()));

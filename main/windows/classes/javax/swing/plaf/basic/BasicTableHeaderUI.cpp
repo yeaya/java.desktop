@@ -261,6 +261,7 @@ void BasicTableHeaderUI::uninstallKeyboardActions() {
 
 void BasicTableHeaderUI::loadActionMap($LazyActionMap* map) {
 	$init(BasicTableHeaderUI);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicTableHeaderUI$Actions);
 	$nc(map)->put($$new($BasicTableHeaderUI$Actions, $BasicTableHeaderUI$Actions::TOGGLE_SORT_ORDER));
 	map->put($$new($BasicTableHeaderUI$Actions, $BasicTableHeaderUI$Actions::SELECT_COLUMN_TO_LEFT));
@@ -280,6 +281,7 @@ void BasicTableHeaderUI::rolloverColumnUpdated(int32_t oldColumn, int32_t newCol
 }
 
 void BasicTableHeaderUI::updateRolloverColumn($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(this->header)->getDraggedColumn() == nullptr;
 	if (var$0 && $nc(this->header)->contains($($nc(e)->getPoint()))) {
 		int32_t col = $nc(this->header)->columnAtPoint($($nc(e)->getPoint()));
@@ -330,6 +332,7 @@ void BasicTableHeaderUI::selectColumn(int32_t newColIndex, bool doScroll) {
 }
 
 void BasicTableHeaderUI::scrollToColumn(int32_t col) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, container, nullptr);
 	$var($JTable, table, nullptr);
 	bool var$1 = ($nc(this->header)->getParent() == nullptr);
@@ -359,6 +362,7 @@ bool BasicTableHeaderUI::canResize($TableColumn* column, $JTableHeader* header) 
 }
 
 int32_t BasicTableHeaderUI::changeColumnWidth($TableColumn* resizingColumn, $JTableHeader* th, int32_t oldWidth, int32_t newWidth) {
+	$useLocalCurrentObjectStackCache();
 	$nc(resizingColumn)->setWidth(newWidth);
 	$var($Container, container, nullptr);
 	$var($JTable, table, nullptr);
@@ -387,6 +391,7 @@ int32_t BasicTableHeaderUI::changeColumnWidth($TableColumn* resizingColumn, $JTa
 }
 
 int32_t BasicTableHeaderUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$TableHeaderUI::getBaseline(c, width, height);
 	int32_t baseline = -1;
 	$var($TableColumnModel, columnModel, $nc(this->header)->getColumnModel());
@@ -408,6 +413,7 @@ int32_t BasicTableHeaderUI::getBaseline($JComponent* c, int32_t width, int32_t h
 }
 
 void BasicTableHeaderUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc(this->header)->getColumnModel()))->getColumnCount() <= 0) {
 		return;
 	}
@@ -463,6 +469,7 @@ void BasicTableHeaderUI::paint($Graphics* g, $JComponent* c) {
 }
 
 $Component* BasicTableHeaderUI::getHeaderRenderer(int32_t columnIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($TableColumn, aColumn, $nc($($nc(this->header)->getColumnModel()))->getColumn(columnIndex));
 	$var($TableCellRenderer, renderer, $nc(aColumn)->getHeaderRenderer());
 	if (renderer == nullptr) {
@@ -491,6 +498,7 @@ int32_t BasicTableHeaderUI::viewIndexForColumn($TableColumn* aColumn) {
 }
 
 int32_t BasicTableHeaderUI::getHeaderHeight() {
+	$useLocalCurrentObjectStackCache();
 	int32_t height = 0;
 	bool accomodatedDefault = false;
 	$var($TableColumnModel, columnModel, $nc(this->header)->getColumnModel());
@@ -523,6 +531,7 @@ $Dimension* BasicTableHeaderUI::createHeaderSize(int64_t width) {
 }
 
 $Dimension* BasicTableHeaderUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	int64_t width = 0;
 	$var($Enumeration, enumeration, $nc($($nc(this->header)->getColumnModel()))->getColumns());
 	while ($nc(enumeration)->hasMoreElements()) {
@@ -533,6 +542,7 @@ $Dimension* BasicTableHeaderUI::getMinimumSize($JComponent* c) {
 }
 
 $Dimension* BasicTableHeaderUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	int64_t width = 0;
 	$var($Enumeration, enumeration, $nc($($nc(this->header)->getColumnModel()))->getColumns());
 	while ($nc(enumeration)->hasMoreElements()) {
@@ -543,6 +553,7 @@ $Dimension* BasicTableHeaderUI::getPreferredSize($JComponent* c) {
 }
 
 $Dimension* BasicTableHeaderUI::getMaximumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	int64_t width = 0;
 	$var($Enumeration, enumeration, $nc($($nc(this->header)->getColumnModel()))->getColumns());
 	while ($nc(enumeration)->hasMoreElements()) {

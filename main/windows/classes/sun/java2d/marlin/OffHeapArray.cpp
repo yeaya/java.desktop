@@ -127,6 +127,7 @@ $Unsafe* OffHeapArray::UNSAFE = nullptr;
 int32_t OffHeapArray::SIZE_INT = 0;
 
 void OffHeapArray::init$(Object$* parent, int64_t len) {
+	$useLocalCurrentObjectStackCache();
 	this->address = $nc(OffHeapArray::UNSAFE)->allocateMemory(len);
 	this->length = len;
 	this->used = 0;
@@ -138,6 +139,7 @@ void OffHeapArray::init$(Object$* parent, int64_t len) {
 }
 
 void OffHeapArray::resize(int64_t len) {
+	$useLocalCurrentObjectStackCache();
 	this->address = $nc(OffHeapArray::UNSAFE)->reallocateMemory(this->address, len);
 	this->length = len;
 	$init($MarlinConst);
@@ -147,6 +149,7 @@ void OffHeapArray::resize(int64_t len) {
 }
 
 void OffHeapArray::free() {
+	$useLocalCurrentObjectStackCache();
 	$nc(OffHeapArray::UNSAFE)->freeMemory(this->address);
 	$init($MarlinConst);
 	if ($MarlinConst::LOG_UNSAFE_MALLOC) {

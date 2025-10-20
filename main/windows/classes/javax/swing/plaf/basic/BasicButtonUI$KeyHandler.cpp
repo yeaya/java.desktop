@@ -90,6 +90,7 @@ void BasicButtonUI$KeyHandler::init$($BasicButtonUI* this$0) {
 }
 
 void BasicButtonUI$KeyHandler::keyPressed($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($AWTKeyStroke, stroke, $AWTKeyStroke::getAWTKeyStrokeForEvent(e));
 	if (stroke != nullptr && $instanceOf($JToggleButton, $($nc(e)->getSource()))) {
 		$var($JToggleButton, source, $cast($JToggleButton, e->getSource()));

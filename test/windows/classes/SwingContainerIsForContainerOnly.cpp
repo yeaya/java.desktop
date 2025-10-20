@@ -66,6 +66,7 @@ void SwingContainerIsForContainerOnly::init$() {
 }
 
 void SwingContainerIsForContainerOnly::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($FileSystem, fs, $FileSystems::getFileSystem($($URI::create("jrt:/"_s))));
 	$nc(fs)->getFileStores();
 	$var($Path, var$0, fs->getPath("/modules/java.desktop"_s, $$new($StringArray, 0)));

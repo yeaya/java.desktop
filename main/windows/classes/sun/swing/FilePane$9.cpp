@@ -82,6 +82,7 @@ $Object* allocate$FilePane$9($Class* clazz) {
 }
 
 void FilePane$9::init$($FilePane* this$0, $String* name) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$AbstractAction::init$(name);
 	{
@@ -96,6 +97,7 @@ void FilePane$9::init$($FilePane* this$0, $String* name) {
 }
 
 void FilePane$9::actionPerformed($ActionEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	if (this->basicNewFolderAction == nullptr) {
 		$set(this, basicNewFolderAction, $nc(this->this$0->fileChooserUIAccessor)->getNewFolderAction());
 	}

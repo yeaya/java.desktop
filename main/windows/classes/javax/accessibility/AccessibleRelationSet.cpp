@@ -72,6 +72,7 @@ void AccessibleRelationSet::init$($AccessibleRelationArray* relations) {
 }
 
 bool AccessibleRelationSet::add($AccessibleRelation* relation) {
+	$useLocalCurrentObjectStackCache();
 	if (this->relations == nullptr) {
 		$set(this, relations, $new($Vector));
 	}
@@ -137,6 +138,7 @@ bool AccessibleRelationSet::contains($String* key) {
 }
 
 $AccessibleRelation* AccessibleRelationSet::get($String* key) {
+	$useLocalCurrentObjectStackCache();
 	if (this->relations == nullptr) {
 		return nullptr;
 	} else {
@@ -152,6 +154,7 @@ $AccessibleRelation* AccessibleRelationSet::get($String* key) {
 }
 
 $AccessibleRelationArray* AccessibleRelationSet::toArray() {
+	$useLocalCurrentObjectStackCache();
 	if (this->relations == nullptr) {
 		return $new($AccessibleRelationArray, 0);
 	} else {
@@ -164,6 +167,7 @@ $AccessibleRelationArray* AccessibleRelationSet::toArray() {
 }
 
 $String* AccessibleRelationSet::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, ret, ""_s);
 	if ((this->relations != nullptr) && ($nc(this->relations)->size() > 0)) {
 		$assign(ret, $nc(($cast($AccessibleRelation, $($nc(this->relations)->elementAt(0)))))->toDisplayString());

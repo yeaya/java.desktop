@@ -80,6 +80,7 @@ void DefaultMetalTheme$FontDelegate::init$() {
 }
 
 $FontUIResource* DefaultMetalTheme$FontDelegate::getFont(int32_t type) {
+	$useLocalCurrentObjectStackCache();
 	int32_t mappedType = $nc(DefaultMetalTheme$FontDelegate::defaultMapping)->get(type);
 	if ($nc(this->fonts)->get(type) == nullptr) {
 		$var($Font, f, getPrivilegedFont(mappedType));

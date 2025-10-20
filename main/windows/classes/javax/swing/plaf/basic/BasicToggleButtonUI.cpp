@@ -104,6 +104,7 @@ void BasicToggleButtonUI::init$() {
 
 $ComponentUI* BasicToggleButtonUI::createUI($JComponent* b) {
 	$init(BasicToggleButtonUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(BasicToggleButtonUI, toggleButtonUI, $cast(BasicToggleButtonUI, $nc(appContext)->get(BasicToggleButtonUI::BASIC_TOGGLE_BUTTON_UI_KEY)));
 	if (toggleButtonUI == nullptr) {
@@ -118,6 +119,7 @@ $String* BasicToggleButtonUI::getPropertyPrefix() {
 }
 
 void BasicToggleButtonUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	$var($ButtonModel, model, $nc(b)->getModel());
 	$var($Dimension, size, b->getSize());
@@ -169,6 +171,7 @@ void BasicToggleButtonUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void BasicToggleButtonUI::paintIcon($Graphics* g, $AbstractButton* b, $Rectangle* iconRect) {
+	$useLocalCurrentObjectStackCache();
 	$var($ButtonModel, model, $nc(b)->getModel());
 	$var($Icon, icon, nullptr);
 	if (!$nc(model)->isEnabled()) {

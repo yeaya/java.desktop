@@ -313,6 +313,7 @@ void JobAttributes::setMultipleDocumentHandlingToDefault() {
 }
 
 $intArray2* JobAttributes::getPageRanges() {
+	$useLocalCurrentObjectStackCache();
 	if (this->pageRanges != nullptr) {
 		$var($intArray2, copy, $new($intArray2, $nc(this->pageRanges)->length, 2));
 		for (int32_t i = 0; i < $nc(this->pageRanges)->length; ++i) {
@@ -337,6 +338,7 @@ $intArray2* JobAttributes::getPageRanges() {
 }
 
 void JobAttributes::setPageRanges($intArray2* pageRanges) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, xcp, "Invalid value for attribute pageRanges"_s);
 	int32_t first = 0;
 	int32_t last = 0;
@@ -467,6 +469,7 @@ int32_t JobAttributes::hashCode() {
 }
 
 $String* JobAttributes::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($intArray2, pageRanges, getPageRanges());
 	$var($String, prStr, "["_s);
 	bool first = true;

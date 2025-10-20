@@ -117,6 +117,7 @@ $XPStyle$Skin* WindowsTreeUI$ExpandedIcon::getSkin($Component* c) {
 }
 
 void WindowsTreeUI$ExpandedIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle$Skin, skin, getSkin(c));
 	if (skin != nullptr) {
 		$init($TMSchema$State);

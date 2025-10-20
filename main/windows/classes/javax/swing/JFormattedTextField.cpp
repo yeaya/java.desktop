@@ -360,6 +360,7 @@ int32_t JFormattedTextField::getFocusLostBehavior() {
 }
 
 void JFormattedTextField::setFormatterFactory($JFormattedTextField$AbstractFormatterFactory* tf) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFormattedTextField$AbstractFormatterFactory, oldFactory, this->factory);
 	$set(this, factory, tf);
 	firePropertyChange("formatterFactory"_s, $of(oldFactory), $of(tf));
@@ -400,6 +401,7 @@ $Object* JFormattedTextField::getValue() {
 }
 
 void JFormattedTextField::commitEdit() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFormattedTextField$AbstractFormatter, format, getFormatter());
 	if (format != nullptr) {
 		setValue($(format->stringToValue($(getText()))), false, true);
@@ -407,6 +409,7 @@ void JFormattedTextField::commitEdit() {
 }
 
 void JFormattedTextField::setEditValid(bool isValid) {
+	$useLocalCurrentObjectStackCache();
 	if (isValid != this->editValid) {
 		this->editValid = isValid;
 		$var($String, var$0, "editValid"_s);
@@ -437,6 +440,7 @@ void JFormattedTextField::processInputMethodEvent($InputMethodEvent* e) {
 }
 
 void JFormattedTextField::processFocusEvent($FocusEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$JTextField::processFocusEvent(e);
 	if ($nc(e)->isTemporary()) {
 		return;
@@ -489,6 +493,7 @@ void JFormattedTextField::writeObject($ObjectOutputStream* s) {
 }
 
 void JFormattedTextField::setFormatterActions($ActionArray* actions) {
+	$useLocalCurrentObjectStackCache();
 	if (actions == nullptr) {
 		if (this->textFormatterActionMap != nullptr) {
 			$nc(this->textFormatterActionMap)->clear();
@@ -518,6 +523,7 @@ void JFormattedTextField::setFormatterActions($ActionArray* actions) {
 }
 
 void JFormattedTextField::setValue(Object$* value, bool createFormat, bool firePC) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, oldValue, this->value);
 	$set(this, value, value);
 	if (createFormat) {
@@ -547,6 +553,7 @@ bool JFormattedTextField::isEdited() {
 }
 
 $JFormattedTextField$AbstractFormatterFactory* JFormattedTextField::getDefaultFormatterFactory(Object$* type) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($DateFormat, type)) {
 		return $new($DefaultFormatterFactory, $$new($DateFormatter, $cast($DateFormat, type)));
 	}
@@ -570,6 +577,7 @@ $JFormattedTextField$AbstractFormatterFactory* JFormattedTextField::getDefaultFo
 }
 
 void clinit$JFormattedTextField($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(JFormattedTextField::uiClassID, "FormattedTextFieldUI"_s);
 	$assignStatic(JFormattedTextField::defaultActions, $new($ActionArray, {
 		static_cast<$Action*>($$new($JFormattedTextField$CommitAction)),

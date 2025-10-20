@@ -126,6 +126,7 @@ void Paint9Painter::init$(int32_t cacheCount) {
 }
 
 void Paint9Painter::paint($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, $Image* source, $Insets* sInsets, $Insets* dInsets, $Paint9Painter$PaintType* type, int32_t mask) {
+	$useLocalCurrentObjectStackCache();
 	if (source == nullptr) {
 		return;
 	}
@@ -139,6 +140,7 @@ void Paint9Painter::paint($Component* c, $Graphics* g, int32_t x, int32_t y, int
 }
 
 void Paint9Painter::paintToImage($Component* c, $Image* destImage, $Graphics* g, int32_t w, int32_t h, $ObjectArray* args) {
+	$useLocalCurrentObjectStackCache();
 	int32_t argIndex = 0;
 	while (argIndex < $nc(args)->length) {
 		$var($Image, image, $cast($Image, args->get(argIndex++)));
@@ -151,6 +153,7 @@ void Paint9Painter::paintToImage($Component* c, $Image* destImage, $Graphics* g,
 }
 
 void Paint9Painter::paint9($Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, $Image* image, $Insets* sInsets$renamed, $Insets* dInsets$renamed, $Paint9Painter$PaintType* type, int32_t componentMask) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, sInsets, sInsets$renamed);
 	$var($Insets, dInsets, dInsets$renamed);
 	if (!validImage(image)) {

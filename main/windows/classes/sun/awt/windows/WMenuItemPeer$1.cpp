@@ -84,6 +84,7 @@ void WMenuItemPeer$1::init$($WMenuItemPeer* this$0, int64_t val$when, int32_t va
 }
 
 void WMenuItemPeer$1::run() {
+	$useLocalCurrentObjectStackCache();
 	this->this$0->postEvent($$new($ActionEvent, this->this$0->target, $ActionEvent::ACTION_PERFORMED, $($nc(($cast($MenuItem, this->this$0->target)))->getActionCommand()), this->val$when, this->val$modifiers));
 }
 

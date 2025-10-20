@@ -220,6 +220,7 @@ void ExtendedTextSourceLabel::init$($TextSource* source, ExtendedTextSourceLabel
 }
 
 void ExtendedTextSourceLabel::finishInit() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, font, $nc(this->source)->getFont());
 	$var($Map, atts, $nc(this->font)->getAttributes());
 	$set(this, baseTX, $AttributeValues::getBaselineTransform(atts));
@@ -381,6 +382,7 @@ $StandardGlyphVector* ExtendedTextSourceLabel::getGV() {
 }
 
 $StandardGlyphVector* ExtendedTextSourceLabel::createGV() {
+	$useLocalCurrentObjectStackCache();
 	$var($FontRenderContext, frc, $nc(this->source)->getFRC());
 	int32_t flags = $nc(this->source)->getLayoutFlags();
 	$var($chars, context, $nc(this->source)->getChars());
@@ -455,6 +457,7 @@ $Rectangle2D* ExtendedTextSourceLabel::getCharVisualBounds(int32_t index, float 
 }
 
 void ExtendedTextSourceLabel::validate(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0) {
 		$throwNew($IllegalArgumentException, $$str({"index "_s, $$str(index), " < 0"_s}));
 	} else if (index >= $nc(this->source)->getLength()) {
@@ -502,6 +505,7 @@ float ExtendedTextSourceLabel::getAdvanceBetween(int32_t start, int32_t limit) {
 }
 
 bool ExtendedTextSourceLabel::caretAtOffsetIsValid(int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	if (offset == 0 || offset == $nc(this->source)->getLength()) {
 		return true;
 	}
@@ -527,6 +531,7 @@ $floats* ExtendedTextSourceLabel::getCharinfo() {
 }
 
 $floats* ExtendedTextSourceLabel::createCharinfo() {
+	$useLocalCurrentObjectStackCache();
 	$var($StandardGlyphVector, gv, getGV());
 	$var($floats, glyphinfo, nullptr);
 	try {
@@ -714,6 +719,7 @@ $TextLineComponent* ExtendedTextSourceLabel::getSubset(int32_t start, int32_t li
 }
 
 $String* ExtendedTextSourceLabel::toString() {
+	$useLocalCurrentObjectStackCache();
 	{
 		return $nc(this->source)->toString($TextSource::WITHOUT_CONTEXT);
 	}
@@ -748,6 +754,7 @@ int32_t ExtendedTextSourceLabel::getNumJustificationInfos() {
 }
 
 void ExtendedTextSourceLabel::getJustificationInfos($GlyphJustificationInfoArray* infos, int32_t infoStart, int32_t charStart, int32_t charLimit) {
+	$useLocalCurrentObjectStackCache();
 	$var($StandardGlyphVector, gv, getGV());
 	$var($floats, charinfo, getCharinfo());
 	float size = $nc($($nc(gv)->getFont()))->getSize2D();
@@ -791,6 +798,7 @@ void ExtendedTextSourceLabel::getJustificationInfos($GlyphJustificationInfoArray
 }
 
 $TextLineComponent* ExtendedTextSourceLabel::applyJustificationDeltas($floats* deltas, int32_t deltaStart, $booleans* flags) {
+	$useLocalCurrentObjectStackCache();
 	$var($floats, newCharinfo, $cast($floats, $nc($(getCharinfo()))->clone()));
 	$nc(flags)->set(0, false);
 	$var($StandardGlyphVector, newgv, $cast($StandardGlyphVector, $nc($(getGV()))->clone()));

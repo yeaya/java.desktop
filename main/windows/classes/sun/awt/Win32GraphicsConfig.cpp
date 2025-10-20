@@ -270,6 +270,7 @@ $AffineTransform* Win32GraphicsConfig::getNormalizingTransform() {
 }
 
 $String* Win32GraphicsConfig::toString() {
+	$useLocalCurrentObjectStackCache();
 	return ($str({$($GraphicsConfiguration::toString()), "[dev="_s, this->device, ",pixfmt="_s, $$str(this->visual), "]"_s}));
 }
 
@@ -299,6 +300,7 @@ $SurfaceData* Win32GraphicsConfig::createSurfaceData($WComponentPeer* peer, int3
 }
 
 $Image* Win32GraphicsConfig::createAcceleratedImage($Component* target, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, model, getColorModel($Transparency::OPAQUE));
 	$var($WritableRaster, wr, $nc(model)->createCompatibleWritableRaster(width, height));
 	return $new($OffScreenImage, target, model, wr, model->isAlphaPremultiplied());
@@ -309,6 +311,7 @@ void Win32GraphicsConfig::assertOperationSupported($Component* target, int32_t n
 }
 
 $VolatileImage* Win32GraphicsConfig::createBackBuffer($WComponentPeer* peer) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, target, $cast($Component, $nc(peer)->getTarget()));
 	$var($Component, var$0, target);
 	int32_t var$1 = $nc(target)->getWidth();
@@ -317,6 +320,7 @@ $VolatileImage* Win32GraphicsConfig::createBackBuffer($WComponentPeer* peer) {
 }
 
 void Win32GraphicsConfig::flip($WComponentPeer* peer, $Component* target, $VolatileImage* backBuffer, int32_t x1, int32_t y1, int32_t x2, int32_t y2, $BufferCapabilities$FlipContents* flipAction) {
+	$useLocalCurrentObjectStackCache();
 	$init($BufferCapabilities$FlipContents);
 	if (flipAction == $BufferCapabilities$FlipContents::COPIED || flipAction == $BufferCapabilities$FlipContents::UNDEFINED) {
 		$var($Graphics, g, $nc(peer)->getGraphics());

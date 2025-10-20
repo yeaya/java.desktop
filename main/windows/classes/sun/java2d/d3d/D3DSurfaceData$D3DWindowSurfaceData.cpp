@@ -105,6 +105,7 @@ $Object* allocate$D3DSurfaceData$D3DWindowSurfaceData($Class* clazz) {
 }
 
 void D3DSurfaceData$D3DWindowSurfaceData::init$($WComponentPeer* peer, $D3DGraphicsConfig* gc) {
+	$useLocalCurrentObjectStackCache();
 	$var($WComponentPeer, var$0, peer);
 	$var($D3DGraphicsConfig, var$1, gc);
 	int32_t var$2 = $nc($($nc(peer)->getBounds()))->width;
@@ -132,6 +133,7 @@ void D3DSurfaceData$D3DWindowSurfaceData::disableAccelerationForSurface() {
 }
 
 void D3DSurfaceData$D3DWindowSurfaceData::restoreSurface() {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->peer)->isAccelCapable()) {
 		$throwNew($InvalidPipeException, "Onscreen acceleration disabled for this surface"_s);
 	}

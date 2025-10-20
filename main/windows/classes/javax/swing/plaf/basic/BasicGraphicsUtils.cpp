@@ -252,6 +252,7 @@ void BasicGraphicsUtils::drawDashedRect($Graphics* g, int32_t x, int32_t y, int3
 
 $Dimension* BasicGraphicsUtils::getPreferredButtonSize($AbstractButton* b, int32_t textIconGap) {
 	$init(BasicGraphicsUtils);
+	$useLocalCurrentObjectStackCache();
 	if ($nc(b)->getComponentCount() > 0) {
 		return nullptr;
 	}

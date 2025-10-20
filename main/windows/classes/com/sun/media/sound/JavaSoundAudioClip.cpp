@@ -192,6 +192,7 @@ void JavaSoundAudioClip::init$() {
 
 JavaSoundAudioClip* JavaSoundAudioClip::create($URLConnection* uc) {
 	$init(JavaSoundAudioClip);
+	$useLocalCurrentObjectStackCache();
 	$var(JavaSoundAudioClip, clip, $new(JavaSoundAudioClip));
 	try {
 		clip->init($($nc(uc)->getInputStream()));
@@ -203,6 +204,7 @@ JavaSoundAudioClip* JavaSoundAudioClip::create($URLConnection* uc) {
 
 JavaSoundAudioClip* JavaSoundAudioClip::create($URL* url) {
 	$init(JavaSoundAudioClip);
+	$useLocalCurrentObjectStackCache();
 	$var(JavaSoundAudioClip, clip, $new(JavaSoundAudioClip));
 	try {
 		clip->init($($nc(url)->openStream()));
@@ -213,6 +215,7 @@ JavaSoundAudioClip* JavaSoundAudioClip::create($URL* url) {
 }
 
 void JavaSoundAudioClip::init($InputStream* in) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedInputStream, bis, $new($BufferedInputStream, in, JavaSoundAudioClip::STREAM_BUFFER_SIZE));
 	bis->mark(JavaSoundAudioClip::STREAM_BUFFER_SIZE);
 	try {
@@ -259,6 +262,7 @@ void JavaSoundAudioClip::loop() {
 
 void JavaSoundAudioClip::startImpl(bool loop) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		int64_t currentTime = $System::currentTimeMillis();
 		int64_t diff = currentTime - this->lastPlayCall;
 		if (diff < JavaSoundAudioClip::MINIMUM_PLAY_DELAY) {
@@ -343,6 +347,7 @@ void JavaSoundAudioClip::startImpl(bool loop) {
 
 void JavaSoundAudioClip::stop() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (!this->success) {
 			return;
 		}
@@ -468,6 +473,7 @@ void JavaSoundAudioClip::readStream($AudioInputStream* as, int64_t byteLen) {
 }
 
 void JavaSoundAudioClip::readStream($AudioInputStream* as) {
+	$useLocalCurrentObjectStackCache();
 	$var($JavaSoundAudioClip$DirectBAOS, baos, $new($JavaSoundAudioClip$DirectBAOS));
 	int32_t totalBytesRead = 0;
 	{
@@ -506,6 +512,7 @@ void JavaSoundAudioClip::readStream($AudioInputStream* as) {
 }
 
 bool JavaSoundAudioClip::createClip() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$load($Clip);
 		$var($DataLine$Info, info, $new($DataLine$Info, $Clip::class$, this->loadedAudioFormat));
@@ -541,6 +548,7 @@ bool JavaSoundAudioClip::createClip() {
 }
 
 bool JavaSoundAudioClip::createSourceDataLine() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$load($SourceDataLine);
 		$var($DataLine$Info, info, $new($DataLine$Info, $SourceDataLine::class$, this->loadedAudioFormat));
@@ -568,6 +576,7 @@ bool JavaSoundAudioClip::createSourceDataLine() {
 }
 
 bool JavaSoundAudioClip::createSequencer($BufferedInputStream* in) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$set(this, sequencer, $MidiSystem::getSequencer());
 	} catch ($MidiUnavailableException&) {

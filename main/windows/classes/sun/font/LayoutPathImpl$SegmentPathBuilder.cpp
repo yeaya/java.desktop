@@ -156,6 +156,7 @@ $LayoutPathImpl$SegmentPath* LayoutPathImpl$SegmentPathBuilder::complete() {
 }
 
 $LayoutPathImpl$SegmentPath* LayoutPathImpl$SegmentPathBuilder::complete($LayoutPathImpl$EndType* etype) {
+	$useLocalCurrentObjectStackCache();
 	$var($LayoutPathImpl$SegmentPath, result, nullptr);
 	if (this->data == nullptr || this->w < 6) {
 		return nullptr;

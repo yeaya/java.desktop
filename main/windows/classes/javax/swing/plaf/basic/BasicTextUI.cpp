@@ -422,6 +422,7 @@ $String* BasicTextUI::getKeymapName() {
 }
 
 $Keymap* BasicTextUI::createKeymap() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, nm, getKeymapName());
 	$var($Keymap, map, $JTextComponent::getKeymap(nm));
 	if (map == nullptr) {
@@ -438,6 +439,7 @@ $Keymap* BasicTextUI::createKeymap() {
 }
 
 void BasicTextUI::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc($($nc(evt)->getPropertyName()))->equals("editable"_s);
 	if (var$0 || $nc($($nc(evt)->getPropertyName()))->equals("enabled"_s)) {
 		updateBackground($cast($JTextComponent, $(evt->getSource())));
@@ -453,6 +455,7 @@ void BasicTextUI::propertyChange($PropertyChangeEvent* evt) {
 }
 
 void BasicTextUI::updateBackground($JTextComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($SynthUI, this) || ($instanceOf($JTextArea, c))) {
 		return;
 	}
@@ -482,6 +485,7 @@ void BasicTextUI::updateBackground($JTextComponent* c) {
 }
 
 void BasicTextUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prefix, getPropertyPrefix());
 	$var($Font, f, $nc(this->editor)->getFont());
 	if ((f == nullptr) || ($instanceOf($UIResource, f))) {
@@ -523,6 +527,7 @@ void BasicTextUI::installDefaults() {
 }
 
 void BasicTextUI::installDefaults2() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->editor)->addMouseListener(static_cast<$MouseListener*>(static_cast<$MouseAdapter*>(static_cast<$MouseInputAdapter*>(this->dragListener))));
 	$nc(this->editor)->addMouseMotionListener(static_cast<$MouseMotionListener*>(static_cast<$MouseAdapter*>(static_cast<$MouseInputAdapter*>(this->dragListener))));
 	$var($String, prefix, getPropertyPrefix());
@@ -544,6 +549,7 @@ void BasicTextUI::installDefaults2() {
 }
 
 void BasicTextUI::uninstallDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->editor)->removeMouseListener(static_cast<$MouseListener*>(static_cast<$MouseAdapter*>(static_cast<$MouseInputAdapter*>(this->dragListener))));
 	$nc(this->editor)->removeMouseMotionListener(static_cast<$MouseMotionListener*>(static_cast<$MouseAdapter*>(static_cast<$MouseInputAdapter*>(this->dragListener))));
 	if ($instanceOf($UIResource, $($nc(this->editor)->getCaretColor()))) {
@@ -585,6 +591,7 @@ void BasicTextUI::uninstallListeners() {
 }
 
 void BasicTextUI::installKeyboardActions() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->editor)->setKeymap($(createKeymap()));
 	$var($InputMap, km, getInputMap());
 	if (km != nullptr) {
@@ -598,6 +605,7 @@ void BasicTextUI::installKeyboardActions() {
 }
 
 $InputMap* BasicTextUI::getInputMap() {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMap, map, $new($InputMapUIResource));
 	$var($InputMap, shared, $cast($InputMap, $DefaultLookup::get(this->editor, this, $$str({$(getPropertyPrefix()), ".focusInputMap"_s}))));
 	if (shared != nullptr) {
@@ -607,6 +615,7 @@ $InputMap* BasicTextUI::getInputMap() {
 }
 
 void BasicTextUI::updateFocusAcceleratorBinding(bool changed) {
+	$useLocalCurrentObjectStackCache();
 	char16_t accelerator = $nc(this->editor)->getFocusAccelerator();
 	if (changed || accelerator != u'\0') {
 		$var($InputMap, km, $SwingUtilities::getUIInputMap(this->editor, $JComponent::WHEN_IN_FOCUSED_WINDOW));
@@ -627,6 +636,7 @@ void BasicTextUI::updateFocusAcceleratorBinding(bool changed) {
 }
 
 void BasicTextUI::updateFocusTraversalKeys() {
+	$useLocalCurrentObjectStackCache();
 	$var($EditorKit, editorKit, getEditorKit(this->editor));
 	if (editorKit != nullptr && $instanceOf($DefaultEditorKit, editorKit)) {
 		$var($Set, storedForwardTraversalKeys, $nc(this->editor)->getFocusTraversalKeys($KeyboardFocusManager::FORWARD_TRAVERSAL_KEYS));
@@ -646,6 +656,7 @@ void BasicTextUI::updateFocusTraversalKeys() {
 }
 
 void BasicTextUI::updateCursor() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = (!$nc(this->editor)->isCursorSet());
 	if (var$0 || $instanceOf($UIResource, $($nc(this->editor)->getCursor()))) {
 		$var($Cursor, cursor, ($nc(this->editor)->isEditable()) ? static_cast<$Cursor*>(BasicTextUI::textCursor) : ($Cursor*)nullptr);
@@ -658,6 +669,7 @@ $TransferHandler* BasicTextUI::getTransferHandler() {
 }
 
 $ActionMap* BasicTextUI::getActionMap() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, mapName, $str({$(getPropertyPrefix()), ".actionMap"_s}));
 	$var($ActionMap, map, $cast($ActionMap, $UIManager::get(mapName)));
 	if (map == nullptr) {
@@ -686,6 +698,7 @@ $ActionMap* BasicTextUI::getActionMap() {
 }
 
 $ActionMap* BasicTextUI::createActionMap() {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, map, $new($ActionMapUIResource));
 	$var($ActionArray, actions, $nc(this->editor)->getActions());
 	int32_t n = $nc(actions)->length;
@@ -721,6 +734,7 @@ $JTextComponent* BasicTextUI::getComponent() {
 }
 
 void BasicTextUI::modelChanged() {
+	$useLocalCurrentObjectStackCache();
 	$var($ViewFactory, f, $nc(this->rootView)->getViewFactory());
 	$var($Document, doc, $nc(this->editor)->getDocument());
 	$var($Element, elem, $nc(doc)->getDefaultRootElement());
@@ -735,6 +749,7 @@ void BasicTextUI::setView($View* v) {
 }
 
 void BasicTextUI::paintSafely($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	this->painted = true;
 	$var($Highlighter, highlighter, $nc(this->editor)->getHighlighter());
 	$var($Caret, caret, $nc(this->editor)->getCaret());
@@ -757,6 +772,7 @@ void BasicTextUI::paintSafely($Graphics* g) {
 }
 
 void BasicTextUI::installUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JTextComponent, c)) {
 		$set(this, editor, $cast($JTextComponent, c));
 		$init($Boolean);
@@ -797,6 +813,7 @@ void BasicTextUI::installUI($JComponent* c) {
 }
 
 void BasicTextUI::uninstallUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->editor)->removePropertyChangeListener(this->updateHandler);
 	$nc($($nc(this->editor)->getDocument()))->removeDocumentListener(this->updateHandler);
 	this->painted = false;
@@ -817,6 +834,7 @@ void BasicTextUI::update($Graphics* g, $JComponent* c) {
 }
 
 void BasicTextUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = ($nc(this->rootView)->getViewCount() > 0);
 	if (var$0 && ($nc(this->rootView)->getView(0) != nullptr)) {
 		$var($Document, doc, $nc(this->editor)->getDocument());
@@ -842,6 +860,7 @@ void BasicTextUI::paint($Graphics* g, $JComponent* c) {
 }
 
 $Dimension* BasicTextUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(this->editor)->getDocument());
 	$var($Insets, i, $nc(c)->getInsets());
 	$var($Dimension, d, c->getSize());
@@ -873,6 +892,7 @@ $Dimension* BasicTextUI::getPreferredSize($JComponent* c) {
 }
 
 $Dimension* BasicTextUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(this->editor)->getDocument());
 	$var($Insets, i, $nc(c)->getInsets());
 	$var($Dimension, d, $new($Dimension));
@@ -899,6 +919,7 @@ $Dimension* BasicTextUI::getMinimumSize($JComponent* c) {
 }
 
 $Dimension* BasicTextUI::getMaximumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(this->editor)->getDocument());
 	$var($Insets, i, $nc(c)->getInsets());
 	$var($Dimension, d, $new($Dimension));
@@ -925,6 +946,7 @@ $Dimension* BasicTextUI::getMaximumSize($JComponent* c) {
 }
 
 $Rectangle* BasicTextUI::getVisibleEditorRect() {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, alloc, $nc(this->editor)->getBounds());
 	if (($nc(alloc)->width > 0) && (alloc->height > 0)) {
 		alloc->x = (alloc->y = 0);
@@ -952,6 +974,7 @@ $Rectangle2D* BasicTextUI::modelToView2D($JTextComponent* tc, int32_t pos, $Posi
 }
 
 $Rectangle2D* BasicTextUI::modelToView($JTextComponent* tc, int32_t pos, $Position$Bias* bias, bool useFPAPI) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(this->editor)->getDocument());
 	if ($instanceOf($AbstractDocument, doc)) {
 		$nc(($cast($AbstractDocument, doc)))->readLock();
@@ -1003,6 +1026,7 @@ int32_t BasicTextUI::viewToModel2D($JTextComponent* tc, $Point2D* pt, $Position$
 }
 
 int32_t BasicTextUI::viewToModel($JTextComponent* tc, float x, float y, $Position$BiasArray* biasReturn) {
+	$useLocalCurrentObjectStackCache();
 	int32_t offs = -1;
 	$var($Document, doc, $nc(this->editor)->getDocument());
 	if ($instanceOf($AbstractDocument, doc)) {
@@ -1031,6 +1055,7 @@ int32_t BasicTextUI::viewToModel($JTextComponent* tc, float x, float y, $Positio
 }
 
 int32_t BasicTextUI::getNextVisualPositionFrom($JTextComponent* t, int32_t pos, $Position$Bias* b, int32_t direction, $Position$BiasArray* biasRet) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(this->editor)->getDocument());
 	if (pos < -1 || pos > $nc(doc)->getLength()) {
 		$throwNew($BadLocationException, "Invalid position"_s, pos);
@@ -1075,6 +1100,7 @@ void BasicTextUI::damageRange($JTextComponent* tc, int32_t p0, int32_t p1) {
 }
 
 void BasicTextUI::damageRange($JTextComponent* t, int32_t p0, int32_t p1, $Position$Bias* p0Bias, $Position$Bias* p1Bias) {
+	$useLocalCurrentObjectStackCache();
 	if (this->painted) {
 		$var($Rectangle, alloc, getVisibleEditorRect());
 		if (alloc != nullptr) {
@@ -1117,6 +1143,7 @@ $View* BasicTextUI::getRootView($JTextComponent* tc) {
 }
 
 $String* BasicTextUI::getToolTipText($JTextComponent* t, $Point* pt) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->painted) {
 		return nullptr;
 	}
@@ -1156,6 +1183,7 @@ $View* BasicTextUI::create($Element* elem, int32_t p0, int32_t p1) {
 
 $BasicTextUI$DragListener* BasicTextUI::getDragListener() {
 	$init(BasicTextUI);
+	$useLocalCurrentObjectStackCache();
 	$load($BasicTextUI$DragListener);
 	$synchronized($BasicTextUI$DragListener::class$) {
 		$var($BasicTextUI$DragListener, listener, $cast($BasicTextUI$DragListener, $nc($($AppContext::getAppContext()))->get($BasicTextUI$DragListener::class$)));

@@ -476,6 +476,7 @@ $String* JLabel::getText() {
 }
 
 void JLabel::setText($String* text) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, oldAccessibleName, nullptr);
 	if (this->accessibleContext != nullptr) {
 		$assign(oldAccessibleName, $nc(this->accessibleContext)->getAccessibleName());
@@ -585,6 +586,7 @@ int32_t JLabel::getDisplayedMnemonic() {
 }
 
 void JLabel::setDisplayedMnemonicIndex(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	int32_t oldValue = this->mnemonicIndex;
 	if (index == -1) {
 		this->mnemonicIndex = -1;
@@ -716,6 +718,7 @@ void JLabel::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JLabel::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, textString, this->text != nullptr ? this->text : ""_s);
 	$var($String, defaultIconString, (this->defaultIcon != nullptr) && (!$equals(this->defaultIcon, this)) ? $nc($of(this->defaultIcon))->toString() : ""_s);
 	$var($String, disabledIconString, (this->disabledIcon != nullptr) && (!$equals(this->disabledIcon, this)) ? $nc($of(this->disabledIcon))->toString() : ""_s);

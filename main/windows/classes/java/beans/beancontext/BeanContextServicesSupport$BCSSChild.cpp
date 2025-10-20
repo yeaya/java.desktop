@@ -106,6 +106,7 @@ void BeanContextServicesSupport$BCSSChild::init$($BeanContextServicesSupport* th
 
 void BeanContextServicesSupport$BCSSChild::usingService(Object$* requestor, Object$* service, $Class* serviceClass, $BeanContextServiceProvider* bcsp, bool isDelegated, $BeanContextServiceRevokedListener* bcsrl) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($BeanContextServicesSupport$BCSSChild$BCSSCServiceClassRef, serviceClassRef, nullptr);
 		if (this->serviceClasses == nullptr) {
 			$set(this, serviceClasses, $new($HashMap, 1));
@@ -145,6 +146,7 @@ void BeanContextServicesSupport$BCSSChild::usingService(Object$* requestor, Obje
 
 void BeanContextServicesSupport$BCSSChild::releaseService(Object$* requestor, Object$* service) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->serviceRequestors == nullptr) {
 			return;
 		}
@@ -183,6 +185,7 @@ void BeanContextServicesSupport$BCSSChild::releaseService(Object$* requestor, Ob
 
 void BeanContextServicesSupport$BCSSChild::revokeService($Class* serviceClass, bool isDelegated, bool revokeNow) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->serviceClasses == nullptr) {
 			return;
 		}
@@ -234,6 +237,7 @@ void BeanContextServicesSupport$BCSSChild::revokeService($Class* serviceClass, b
 }
 
 void BeanContextServicesSupport$BCSSChild::cleanupReferences() {
+	$useLocalCurrentObjectStackCache();
 	if (this->serviceRequestors == nullptr) {
 		return;
 	}
@@ -261,6 +265,7 @@ void BeanContextServicesSupport$BCSSChild::cleanupReferences() {
 }
 
 void BeanContextServicesSupport$BCSSChild::revokeAllDelegatedServicesNow() {
+	$useLocalCurrentObjectStackCache();
 	if (this->serviceClasses == nullptr) {
 		return;
 	}

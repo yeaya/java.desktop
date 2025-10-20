@@ -83,6 +83,7 @@ void bug6462008$2::init$($PointArray* val$result) {
 }
 
 void bug6462008$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6462008);
 	$var($Rectangle, r, $nc($bug6462008::list)->getCellBounds(4, 4));
 	$var($Point, p, $new($Point, $nc(r)->x + r->width / 2, r->y + r->height / 2));

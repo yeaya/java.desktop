@@ -71,6 +71,7 @@ void bug8010718$1::init$() {
 }
 
 void bug8010718$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, fileChooser, $new($JFileChooser));
 	fileChooser->addChoosableFileFilter($$new($bug8010718$1$1, this));
 	fileChooser->addChoosableFileFilter($$new($bug8010718$1$2, this));

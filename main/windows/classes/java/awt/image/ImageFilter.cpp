@@ -101,6 +101,7 @@ void ImageFilter::setDimensions(int32_t width, int32_t height) {
 }
 
 void ImageFilter::setProperties($Hashtable* props) {
+	$useLocalCurrentObjectStackCache();
 	$var($Hashtable, p, $cast($Hashtable, $nc(props)->clone()));
 	$var($Object, o, $nc(p)->get("filters"_s));
 	if (o == nullptr) {

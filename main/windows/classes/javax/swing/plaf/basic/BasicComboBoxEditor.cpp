@@ -132,6 +132,7 @@ $JTextField* BasicComboBoxEditor::createEditorComponent() {
 }
 
 void BasicComboBoxEditor::setItem(Object$* anObject) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, text, nullptr);
 	if (anObject != nullptr) {
 		$assign(text, $of(anObject)->toString());
@@ -148,6 +149,7 @@ void BasicComboBoxEditor::setItem(Object$* anObject) {
 }
 
 $Object* BasicComboBoxEditor::getItem() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, newValue, $nc(this->editor)->getText());
 	if (this->oldValue != nullptr && !($instanceOf($String, this->oldValue))) {
 		if ($nc($of(newValue))->equals($($nc($of(this->oldValue))->toString()))) {

@@ -85,6 +85,7 @@ void bug7107099$1::init$() {
 }
 
 void bug7107099$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug7107099);
 	$assignStatic($bug7107099::textarea, $new($JTextArea, "before###1###\nbefore###2###\nbefore###3###\nbefore###4###\nbefore###5###\n"_s));
 	$assignStatic($bug7107099::scrollPane, $new($JScrollPane, $bug7107099::textarea));

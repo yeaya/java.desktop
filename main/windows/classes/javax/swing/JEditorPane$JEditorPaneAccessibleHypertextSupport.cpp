@@ -183,6 +183,7 @@ void JEditorPane$JEditorPaneAccessibleHypertextSupport::finalize() {
 }
 
 void JEditorPane$JEditorPaneAccessibleHypertextSupport::buildLinkTable() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->hyperlinks)->removeAllElements();
 	$var($Document, d, this->this$0->getDocument());
 	if (d != nullptr) {
@@ -208,6 +209,7 @@ void JEditorPane$JEditorPaneAccessibleHypertextSupport::buildLinkTable() {
 }
 
 void JEditorPane$JEditorPaneAccessibleHypertextSupport::init$($JEditorPane* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JEditorPane$AccessibleJEditorPane::init$(this$0);
 	this->linksValid = false;
@@ -226,6 +228,7 @@ int32_t JEditorPane$JEditorPaneAccessibleHypertextSupport::getLinkCount() {
 }
 
 int32_t JEditorPane$JEditorPaneAccessibleHypertextSupport::getLinkIndex(int32_t charIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (this->linksValid == false) {
 		buildLinkTable();
 	}
@@ -252,6 +255,7 @@ $AccessibleHyperlink* JEditorPane$JEditorPaneAccessibleHypertextSupport::getLink
 }
 
 $String* JEditorPane$JEditorPaneAccessibleHypertextSupport::getLinkText(int32_t linkIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (this->linksValid == false) {
 		buildLinkTable();
 	}

@@ -123,6 +123,7 @@ void SynthScrollPaneUI$ViewportBorder::init$($SynthScrollPaneUI* this$0, $SynthC
 }
 
 void SynthScrollPaneUI$ViewportBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, jc, $cast($JComponent, c));
 	$var($SynthContext, context, this->this$0->getContext(jc));
 	$var($SynthStyle, style, $nc(context)->getStyle());

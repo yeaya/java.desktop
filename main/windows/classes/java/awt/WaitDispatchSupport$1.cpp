@@ -81,6 +81,7 @@ void WaitDispatchSupport$1::init$($WaitDispatchSupport* this$0) {
 }
 
 bool WaitDispatchSupport$1::evaluate() {
+	$useLocalCurrentObjectStackCache();
 	$init($WaitDispatchSupport);
 	$init($PlatformLogger$Level);
 	if ($nc($WaitDispatchSupport::log)->isLoggable($PlatformLogger$Level::FINEST)) {

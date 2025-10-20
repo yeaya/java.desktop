@@ -282,6 +282,7 @@ void bug8031573::init$() {
 
 void bug8031573::main($StringArray* args) {
 	$init(bug8031573);
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel($($UIManager::getSystemLookAndFeelClassName()));
 	{
 		$var($Throwable, var$0, nullptr);
@@ -307,6 +308,7 @@ void bug8031573::main($StringArray* args) {
 
 void bug8031573::createTestGUI() {
 	$init(bug8031573);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug8031573::frame, $new($JFrame, "bug8031573"_s));
 	$var($JMenuBar, bar, $new($JMenuBar));
 	$var($JMenu, menu, $new($JMenu, "Menu"_s));

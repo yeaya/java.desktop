@@ -168,6 +168,7 @@ OGLRenderQueue* OGLRenderQueue::getInstance() {
 
 void OGLRenderQueue::sync() {
 	$init(OGLRenderQueue);
+	$useLocalCurrentObjectStackCache();
 	if (OGLRenderQueue::theInstance != nullptr) {
 		$nc(OGLRenderQueue::theInstance)->lock();
 		{
@@ -190,6 +191,7 @@ void OGLRenderQueue::sync() {
 
 void OGLRenderQueue::disposeGraphicsConfig(int64_t pConfigInfo) {
 	$init(OGLRenderQueue);
+	$useLocalCurrentObjectStackCache();
 	$var(OGLRenderQueue, rq, getInstance());
 	$nc(rq)->lock();
 	{

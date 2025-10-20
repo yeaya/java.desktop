@@ -89,6 +89,7 @@ void bug6735293$2::init$() {
 }
 
 void bug6735293$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($Position$Bias);
 	$var($Position$BiasArray, biasRet, $new($Position$BiasArray, {$Position$Bias::Forward}));
 	{

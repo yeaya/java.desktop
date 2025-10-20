@@ -126,6 +126,7 @@ void TestTransferHandler::init$() {
 
 void TestTransferHandler::main($StringArray* args) {
 	$load(TestTransferHandler);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestTransferHandler$$Lambda$testTransferHandler)));
 	$System::setSecurityManager($$new($SecurityManager));
@@ -133,6 +134,7 @@ void TestTransferHandler::main($StringArray* args) {
 }
 
 void TestTransferHandler::testTransferHandler() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($TransferHandler, transferHandler, $new($TransferHandler, "userColor"_s));
 		$var($TestTransferHandler$UserJComponent, comp, $new($TestTransferHandler$UserJComponent));

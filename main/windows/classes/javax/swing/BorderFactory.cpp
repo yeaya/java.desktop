@@ -342,6 +342,7 @@ $Border* BorderFactory::createDashedBorder($Paint* paint, float length, float sp
 
 $Border* BorderFactory::createDashedBorder($Paint* paint, float thickness, float length, float spacing, bool rounded) {
 	$init(BorderFactory);
+	$useLocalCurrentObjectStackCache();
 	bool shared = !rounded && (paint == nullptr) && (thickness == 1.0f) && (length == 1.0f) && (spacing == 1.0f);
 	if (shared && (BorderFactory::sharedDashedBorder != nullptr)) {
 		return BorderFactory::sharedDashedBorder;

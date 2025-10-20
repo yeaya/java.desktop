@@ -70,6 +70,7 @@ void CompoundEdit::init$() {
 }
 
 void CompoundEdit::undo() {
+	$useLocalCurrentObjectStackCache();
 	$AbstractUndoableEdit::undo();
 	int32_t i = $nc(this->edits)->size();
 	while (i-- > 0) {
@@ -79,6 +80,7 @@ void CompoundEdit::undo() {
 }
 
 void CompoundEdit::redo() {
+	$useLocalCurrentObjectStackCache();
 	$AbstractUndoableEdit::redo();
 	$var($Enumeration, cursor, $nc(this->edits)->elements());
 	while ($nc(cursor)->hasMoreElements()) {
@@ -96,6 +98,7 @@ $UndoableEdit* CompoundEdit::lastEdit() {
 }
 
 void CompoundEdit::die() {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc(this->edits)->size();
 	for (int32_t i = size - 1; i >= 0; --i) {
 		$var($UndoableEdit, e, $cast($UndoableEdit, $nc(this->edits)->elementAt(i)));
@@ -140,6 +143,7 @@ bool CompoundEdit::isInProgress() {
 }
 
 bool CompoundEdit::isSignificant() {
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, cursor, $nc(this->edits)->elements());
 	while ($nc(cursor)->hasMoreElements()) {
 		if ($nc(($cast($UndoableEdit, $(cursor->nextElement()))))->isSignificant()) {
@@ -177,6 +181,7 @@ $String* CompoundEdit::getRedoPresentationName() {
 }
 
 $String* CompoundEdit::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($AbstractUndoableEdit::toString()), " inProgress: "_s, $$str(this->inProgress), " edits: "_s, this->edits});
 }
 

@@ -353,6 +353,7 @@ void BasicFileChooserUI::init$($JFileChooser* b) {
 }
 
 void BasicFileChooserUI::installUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, accessoryPanel, $new($JPanel, static_cast<$LayoutManager*>($$new($BorderLayout))));
 	$set(this, filechooser, $cast($JFileChooser, c));
 	createModel();
@@ -382,6 +383,7 @@ void BasicFileChooserUI::uninstallComponents($JFileChooser* fc) {
 }
 
 void BasicFileChooserUI::installListeners($JFileChooser* fc) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, propertyChangeListener, createPropertyChangeListener(fc));
 	if (this->propertyChangeListener != nullptr) {
 		$nc(fc)->addPropertyChangeListener(this->propertyChangeListener);
@@ -405,6 +407,7 @@ $ActionMap* BasicFileChooserUI::getActionMap() {
 }
 
 $ActionMap* BasicFileChooserUI::createActionMap() {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, map, $new($ActionMapUIResource));
 	$init($FilePane);
 	$var($Action, refreshAction, $new($BasicFileChooserUI$1, this, $FilePane::ACTION_REFRESH));
@@ -699,6 +702,7 @@ $Action* BasicFileChooserUI::getUpdateAction() {
 }
 
 void BasicFileChooserUI::resetGlobFilter() {
+	$useLocalCurrentObjectStackCache();
 	if (this->actualFileFilter != nullptr) {
 		$var($JFileChooser, chooser, getFileChooser());
 		$var($FileFilter, currentFilter, $nc(chooser)->getFileFilter());
@@ -732,6 +736,7 @@ bool BasicFileChooserUI::isGlobPattern($String* filename) {
 }
 
 void BasicFileChooserUI::changeDirectory($File* dir$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($File, dir, dir$renamed);
 	$var($JFileChooser, fc, getFileChooser());
 	if (dir != nullptr && $FilePane::usesShellFolder(fc)) {

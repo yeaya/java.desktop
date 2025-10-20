@@ -226,6 +226,7 @@ void GlyphView::finalize() {
 $GlyphView$GlyphPainter* GlyphView::defaultPainter = nullptr;
 
 void GlyphView::init$($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	$View::init$(elem);
 	$set(this, selections, nullptr);
 	this->minimumSpan = (float)-1;
@@ -241,6 +242,7 @@ void GlyphView::init$($Element* elem) {
 }
 
 $Object* GlyphView::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, o, nullptr);
 	try {
 		$assign(o, $View::clone());
@@ -260,6 +262,7 @@ void GlyphView::setGlyphPainter($GlyphView$GlyphPainter* p) {
 }
 
 $Segment* GlyphView::getText(int32_t p0, int32_t p1) {
+	$useLocalCurrentObjectStackCache();
 	$var($Segment, text, $SegmentCache::getSharedSegment());
 	try {
 		$var($Document, doc, getDocument());
@@ -272,6 +275,7 @@ $Segment* GlyphView::getText(int32_t p0, int32_t p1) {
 }
 
 $Color* GlyphView::getBackground() {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	if ($instanceOf($StyledDocument, doc)) {
 		$var($AttributeSet, attr, getAttributes());
@@ -284,6 +288,7 @@ $Color* GlyphView::getBackground() {
 }
 
 $Color* GlyphView::getForeground() {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	if ($instanceOf($StyledDocument, doc)) {
 		$var($AttributeSet, attr, getAttributes());
@@ -297,6 +302,7 @@ $Color* GlyphView::getForeground() {
 }
 
 $Font* GlyphView::getFont() {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	if ($instanceOf($StyledDocument, doc)) {
 		$var($AttributeSet, attr, getAttributes());
@@ -384,6 +390,7 @@ void GlyphView::initSelections(int32_t p0, int32_t p1) {
 }
 
 void GlyphView::paint($Graphics* g, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	checkPainter();
 	bool paintedText = false;
 	$var($Component, c, getContainer());
@@ -472,6 +479,7 @@ void GlyphView::paint($Graphics* g, $Shape* a) {
 }
 
 void GlyphView::paintTextUsingColor($Graphics* g, $Shape* a, $Color* c, int32_t p0, int32_t p1) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor(c);
 	$nc(this->painter)->paint(this, g, a, p0, p1);
 	bool underline = isUnderline();
@@ -509,6 +517,7 @@ void GlyphView::paintTextUsingColor($Graphics* g, $Shape* a, $Color* c, int32_t 
 }
 
 float GlyphView::getMinimumSpan(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	switch (axis) {
 	case $View::X_AXIS:
 		{
@@ -539,6 +548,7 @@ float GlyphView::getMinimumSpan(int32_t axis) {
 }
 
 float GlyphView::getPreferredSpan(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	if (this->impliedCR) {
 		return (float)0;
 	}
@@ -632,6 +642,7 @@ $View* GlyphView::breakView(int32_t axis, int32_t p0, float pos, float len) {
 }
 
 int32_t GlyphView::getBreakSpot(int32_t p0, int32_t p1) {
+	$useLocalCurrentObjectStackCache();
 	if (this->breakSpots == nullptr) {
 		int32_t start = getStartOffset();
 		int32_t end = getEndOffset();
@@ -671,6 +682,7 @@ int32_t GlyphView::getBreakSpot(int32_t p0, int32_t p1) {
 }
 
 $BreakIterator* GlyphView::getBreaker() {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	$init($Boolean);
 	$init($AbstractDocument);
@@ -684,6 +696,7 @@ $BreakIterator* GlyphView::getBreaker() {
 }
 
 $View* GlyphView::createFragment(int32_t p0, int32_t p1) {
+	$useLocalCurrentObjectStackCache();
 	checkPainter();
 	$var($Element, elem, getElement());
 	$var(GlyphView, v, $cast(GlyphView, clone()));
@@ -724,6 +737,7 @@ void GlyphView::changedUpdate($DocumentEvent* e, $Shape* a, $ViewFactory* f) {
 }
 
 void GlyphView::syncCR() {
+	$useLocalCurrentObjectStackCache();
 	if (this->impliedCR) {
 		$var($Element, parent, $nc($(getElement()))->getParentElement());
 		this->impliedCR = (parent != nullptr && parent->getElementCount() > 1);
@@ -735,6 +749,7 @@ void GlyphView::updateAfterChange() {
 }
 
 $GlyphView$JustificationInfo* GlyphView::getJustificationInfo(int32_t rowStartOffset) {
+	$useLocalCurrentObjectStackCache();
 	if (this->justificationInfo != nullptr) {
 		return this->justificationInfo;
 	}

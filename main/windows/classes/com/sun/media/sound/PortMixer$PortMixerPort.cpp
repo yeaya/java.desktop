@@ -161,6 +161,7 @@ void PortMixer$PortMixerPort::init$($Port$Info* info, $PortMixer* mixer, int32_t
 }
 
 void PortMixer$PortMixerPort::implOpen() {
+	$useLocalCurrentObjectStackCache();
 	int64_t newID = $nc(($cast($PortMixer, this->mixer)))->getID();
 	if ((this->id == 0) || (newID != this->id) || ($nc(this->controls)->length == 0)) {
 		this->id = newID;
@@ -178,6 +179,7 @@ void PortMixer$PortMixerPort::implOpen() {
 }
 
 void PortMixer$PortMixerPort::enableControls($ControlArray* controls, bool enable) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(controls)->length; ++i) {
 		if ($instanceOf($PortMixer$BoolCtrl, controls->get(i))) {
 			$nc(($cast($PortMixer$BoolCtrl, controls->get(i))))->closed = !enable;

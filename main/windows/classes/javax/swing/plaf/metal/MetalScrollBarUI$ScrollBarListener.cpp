@@ -78,6 +78,7 @@ void MetalScrollBarUI$ScrollBarListener::init$($MetalScrollBarUI* this$0) {
 }
 
 void MetalScrollBarUI$ScrollBarListener::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(e)->getPropertyName());
 	if ($nc(name)->equals("JScrollBar.isFreeStanding"_s)) {
 		handlePropertyChange($(e->getNewValue()));

@@ -76,6 +76,7 @@ void Kernel::initIDs() {
 }
 
 void Kernel::init$(int32_t width, int32_t height, $floats* data) {
+	$useLocalCurrentObjectStackCache();
 	this->width = width;
 	this->height = height;
 	this->xOrigin = (width - 1) >> 1;
@@ -105,6 +106,7 @@ int32_t Kernel::getHeight() {
 }
 
 $floats* Kernel::getKernelData($floats* data$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($floats, data, data$renamed);
 	if (data == nullptr) {
 		$assign(data, $new($floats, $nc(this->data)->length));

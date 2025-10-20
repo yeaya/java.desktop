@@ -98,6 +98,7 @@ void MetalFileChooserUI$5::init$($MetalFileChooserUI* this$0) {
 }
 
 void MetalFileChooserUI$5::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, s, $nc(e)->getPropertyName());
 	$init($JFileChooser);
 	if ($nc(s)->equals($JFileChooser::SELECTED_FILE_CHANGED_PROPERTY)) {

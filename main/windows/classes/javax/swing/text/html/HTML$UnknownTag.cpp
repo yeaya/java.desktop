@@ -86,6 +86,7 @@ int32_t HTML$UnknownTag::hashCode() {
 }
 
 bool HTML$UnknownTag::equals(Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf(HTML$UnknownTag, obj)) {
 		return $nc($(toString()))->equals($($nc($of(obj))->toString()));
 	}

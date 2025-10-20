@@ -104,6 +104,7 @@ $Object* allocate$D3DVolatileSurfaceManager($Class* clazz) {
 }
 
 void D3DVolatileSurfaceManager::init$($SunVolatileImage* vImg, Object$* context) {
+	$useLocalCurrentObjectStackCache();
 	$VolatileSurfaceManager::init$(vImg, context);
 	int32_t transparency = $nc(vImg)->getTransparency();
 	$var($D3DGraphicsDevice, gd, $cast($D3DGraphicsDevice, $nc($(vImg->getGraphicsConfig()))->getDevice()));
@@ -128,6 +129,7 @@ void D3DVolatileSurfaceManager::setAccelerationEnabled(bool accelerationEnabled)
 }
 
 $SurfaceData* D3DVolatileSurfaceManager::initAcceleratedSurface() {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceData, sData, nullptr);
 	$var($Component, comp, $nc(this->vImg)->getComponent());
 	$var($AWTAccessor$ComponentAccessor, acc, $AWTAccessor::getComponentAccessor());
@@ -174,6 +176,7 @@ void D3DVolatileSurfaceManager::setRestoreCountdown(int32_t count) {
 }
 
 void D3DVolatileSurfaceManager::restoreAcceleratedSurface() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this) {
 		if (this->restoreCountdown > 0) {
 			--this->restoreCountdown;
@@ -195,6 +198,7 @@ $SurfaceData* D3DVolatileSurfaceManager::restoreContents() {
 
 void D3DVolatileSurfaceManager::handleVItoScreenOp($SurfaceData* src, $SurfaceData* dst) {
 	$init(D3DVolatileSurfaceManager);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($D3DSurfaceData, src) && $instanceOf($GDIWindowSurfaceData, dst)) {
 		$var($D3DSurfaceData, d3dsd, $cast($D3DSurfaceData, src));
 		$var($SurfaceManager, mgr, $SurfaceManager::getManager($cast($Image, $($nc(d3dsd)->getDestination()))));

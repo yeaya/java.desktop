@@ -73,6 +73,7 @@ void BaseMultiResolutionImage::init$($ImageArray* resolutionVariants) {
 }
 
 void BaseMultiResolutionImage::init$(int32_t baseImageIndex, $ImageArray* resolutionVariants) {
+	$useLocalCurrentObjectStackCache();
 	$AbstractMultiResolutionImage::init$();
 	if (resolutionVariants == nullptr || $nc(resolutionVariants)->length == 0) {
 		$throwNew($IllegalArgumentException, "Null or zero-length array is passed"_s);
@@ -96,6 +97,7 @@ void BaseMultiResolutionImage::init$(int32_t baseImageIndex, $ImageArray* resolu
 }
 
 $Image* BaseMultiResolutionImage::getResolutionVariant(double destImageWidth, double destImageHeight) {
+	$useLocalCurrentObjectStackCache();
 	checkSize(destImageWidth, destImageHeight);
 	{
 		$var($ImageArray, arr$, this->resolutionVariants);
@@ -116,6 +118,7 @@ $Image* BaseMultiResolutionImage::getResolutionVariant(double destImageWidth, do
 
 void BaseMultiResolutionImage::checkSize(double width, double height) {
 	$init(BaseMultiResolutionImage);
+	$useLocalCurrentObjectStackCache();
 	if (width <= 0 || height <= 0) {
 		$throwNew($IllegalArgumentException, $($String::format("Width (%s) or height (%s) cannot be <= 0"_s, $$new($ObjectArray, {
 			$($of($Double::valueOf(width))),

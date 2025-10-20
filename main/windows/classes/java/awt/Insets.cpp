@@ -102,6 +102,7 @@ int32_t Insets::hashCode() {
 }
 
 $String* Insets::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($of(this)->getClass()->getName()), "[top="_s, $$str(this->top), ",left="_s, $$str(this->left), ",bottom="_s, $$str(this->bottom), ",right="_s, $$str(this->right), "]"_s});
 }
 

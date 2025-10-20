@@ -129,6 +129,7 @@ void JTabbedPane$AccessibleJTabbedPane::finalize() {
 }
 
 $String* JTabbedPane$AccessibleJTabbedPane::getAccessibleName() {
+	$useLocalCurrentObjectStackCache();
 	if (this->accessibleName != nullptr) {
 		return this->accessibleName;
 	}

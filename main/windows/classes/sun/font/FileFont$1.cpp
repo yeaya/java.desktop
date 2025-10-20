@@ -81,6 +81,7 @@ void FileFont$1::init$($FileFont* this$0, $File* val$f) {
 }
 
 $Object* FileFont$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($File, tmp, $new($File, $($System::getProperty("java.io.tmpdir"_s))));
 	try {
 		$var($String, tpath, tmp->getCanonicalPath());

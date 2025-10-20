@@ -190,6 +190,7 @@ void ClickMenuTestManual::init$() {
 }
 
 void ClickMenuTestManual::createControlPanelUI() {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(ClickMenuTestManual::layout, $new($GridBagLayout));
 	$assignStatic(ClickMenuTestManual::mainControlPanel, $new($JPanel, static_cast<$LayoutManager*>(ClickMenuTestManual::layout)));
 	$assignStatic(ClickMenuTestManual::instructionPanel, $new($JPanel, static_cast<$LayoutManager*>(ClickMenuTestManual::layout)));
@@ -257,6 +258,7 @@ void ClickMenuTestManual::createControlPanelUI() {
 }
 
 void ClickMenuTestManual::actionPerformed($ActionEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if ($instanceOf($JButton, $($nc(evt)->getSource()))) {
 		$var($JButton, btn, $cast($JButton, evt->getSource()));

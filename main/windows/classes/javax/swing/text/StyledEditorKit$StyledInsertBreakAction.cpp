@@ -89,6 +89,7 @@ void StyledEditorKit$StyledInsertBreakAction::init$() {
 }
 
 void StyledEditorKit$StyledInsertBreakAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, target, getEditor(e));
 	if (target != nullptr) {
 		bool var$0 = (!target->isEditable());

@@ -71,6 +71,7 @@ void bug6432565$1::init$() {
 }
 
 $Object* bug6432565$1::doInBackground() {
+	$useLocalCurrentObjectStackCache();
 	publish($$new($StringArray, {"hello"_s}));
 	publish($$new($CharSequenceArray, {static_cast<$CharSequence*>($$new($StringBuilder, "world"_s))}));
 	return $of(nullptr);

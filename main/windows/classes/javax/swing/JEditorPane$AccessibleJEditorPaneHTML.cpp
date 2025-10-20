@@ -113,6 +113,7 @@ $Accessible* JEditorPane$AccessibleJEditorPaneHTML::getAccessibleChild(int32_t i
 }
 
 $Accessible* JEditorPane$AccessibleJEditorPaneHTML::getAccessibleAt($Point* p) {
+	$useLocalCurrentObjectStackCache();
 	if (this->accessibleContext != nullptr && p != nullptr) {
 		try {
 			$var($AccessibleComponent, acomp, $nc(this->accessibleContext)->getAccessibleComponent());

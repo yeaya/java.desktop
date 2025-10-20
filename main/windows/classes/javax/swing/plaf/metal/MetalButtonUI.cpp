@@ -105,6 +105,7 @@ void MetalButtonUI::init$() {
 
 $ComponentUI* MetalButtonUI::createUI($JComponent* c) {
 	$init(MetalButtonUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(MetalButtonUI, metalButtonUI, $cast(MetalButtonUI, $nc(appContext)->get(MetalButtonUI::METAL_BUTTON_UI_KEY)));
 	if (metalButtonUI == nullptr) {
@@ -127,21 +128,25 @@ $BasicButtonListener* MetalButtonUI::createButtonListener($AbstractButton* b) {
 }
 
 $Color* MetalButtonUI::getSelectColor() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, selectColor, $UIManager::getColor($$str({$(getPropertyPrefix()), "select"_s})));
 	return this->selectColor;
 }
 
 $Color* MetalButtonUI::getDisabledTextColor() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, disabledTextColor, $UIManager::getColor($$str({$(getPropertyPrefix()), "disabledText"_s})));
 	return this->disabledTextColor;
 }
 
 $Color* MetalButtonUI::getFocusColor() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, focusColor, $UIManager::getColor($$str({$(getPropertyPrefix()), "focus"_s})));
 	return this->focusColor;
 }
 
 void MetalButtonUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, button, $cast($AbstractButton, c));
 	bool var$1 = ($instanceOf($UIResource, $($nc(c)->getBackground())));
 	bool var$0 = var$1 && $nc(button)->isContentAreaFilled();
@@ -180,6 +185,7 @@ void MetalButtonUI::update($Graphics* g, $JComponent* c) {
 }
 
 void MetalButtonUI::paintButtonPressed($Graphics* g, $AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(b)->isContentAreaFilled()) {
 		$var($Dimension, size, b->getSize());
 		$nc(g)->setColor($(getSelectColor()));
@@ -188,6 +194,7 @@ void MetalButtonUI::paintButtonPressed($Graphics* g, $AbstractButton* b) {
 }
 
 void MetalButtonUI::paintFocus($Graphics* g, $AbstractButton* b, $Rectangle* viewRect, $Rectangle* textRect, $Rectangle* iconRect) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, focusRect, $new($Rectangle));
 	$var($String, text, $nc(b)->getText());
 	bool isIcon = b->getIcon() != nullptr;
@@ -205,6 +212,7 @@ void MetalButtonUI::paintFocus($Graphics* g, $AbstractButton* b, $Rectangle* vie
 }
 
 void MetalButtonUI::paintText($Graphics* g, $JComponent* c, $Rectangle* textRect, $String* text) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	$var($ButtonModel, model, $nc(b)->getModel());
 	$var($FontMetrics, fm, $SwingUtilities2::getFontMetrics(c, g));

@@ -87,6 +87,7 @@ bool DateFormatter::getSupportsIncrement() {
 }
 
 $Object* DateFormatter::getAdjustField(int32_t start, $Map* attributes) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc($($nc(attributes)->keySet()))->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -103,6 +104,7 @@ $Object* DateFormatter::getAdjustField(int32_t start, $Map* attributes) {
 }
 
 $Object* DateFormatter::adjustValue(Object$* value$renamed, $Map* attributes, Object$* key$renamed, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, value$renamed);
 	$var($Object, key, key$renamed);
 	if (key != nullptr) {

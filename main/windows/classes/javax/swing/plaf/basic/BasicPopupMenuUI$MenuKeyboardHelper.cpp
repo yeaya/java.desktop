@@ -176,6 +176,7 @@ void BasicPopupMenuUI$MenuKeyboardHelper::init$() {
 }
 
 void BasicPopupMenuUI$MenuKeyboardHelper::removeItems() {
+	$useLocalCurrentObjectStackCache();
 	if (this->lastFocused != nullptr) {
 		if (!$nc(this->lastFocused)->requestFocusInWindow()) {
 			$var($Window, cfw, $nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusedWindow());
@@ -196,6 +197,7 @@ void BasicPopupMenuUI$MenuKeyboardHelper::removeItems() {
 }
 
 $JPopupMenu* BasicPopupMenuUI$MenuKeyboardHelper::getActivePopup($MenuElementArray* path) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = $nc(path)->length - 1; i >= 0; --i) {
 		$var($MenuElement, elem, path->get(i));
 		if ($instanceOf($JPopupMenu, elem)) {
@@ -206,6 +208,7 @@ $JPopupMenu* BasicPopupMenuUI$MenuKeyboardHelper::getActivePopup($MenuElementArr
 }
 
 void BasicPopupMenuUI$MenuKeyboardHelper::addUIInputMap($JComponent* c, $InputMap* map) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMap, lastNonUI, nullptr);
 	$var($InputMap, parent, $nc(c)->getInputMap($JComponent::WHEN_IN_FOCUSED_WINDOW));
 	while (parent != nullptr && !($instanceOf($UIResource, parent))) {
@@ -221,6 +224,7 @@ void BasicPopupMenuUI$MenuKeyboardHelper::addUIInputMap($JComponent* c, $InputMa
 }
 
 void BasicPopupMenuUI$MenuKeyboardHelper::addUIActionMap($JComponent* c, $ActionMap* map) {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, lastNonUI, nullptr);
 	$var($ActionMap, parent, $nc(c)->getActionMap());
 	while (parent != nullptr && !($instanceOf($UIResource, parent))) {
@@ -236,6 +240,7 @@ void BasicPopupMenuUI$MenuKeyboardHelper::addUIActionMap($JComponent* c, $Action
 }
 
 void BasicPopupMenuUI$MenuKeyboardHelper::removeUIInputMap($JComponent* c, $InputMap* map) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMap, im, nullptr);
 	$var($InputMap, parent, $nc(c)->getInputMap($JComponent::WHEN_IN_FOCUSED_WINDOW));
 	while (parent != nullptr) {
@@ -253,6 +258,7 @@ void BasicPopupMenuUI$MenuKeyboardHelper::removeUIInputMap($JComponent* c, $Inpu
 }
 
 void BasicPopupMenuUI$MenuKeyboardHelper::removeUIActionMap($JComponent* c, $ActionMap* map) {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, im, nullptr);
 	$var($ActionMap, parent, $nc(c)->getActionMap());
 	while (parent != nullptr) {
@@ -270,6 +276,7 @@ void BasicPopupMenuUI$MenuKeyboardHelper::removeUIActionMap($JComponent* c, $Act
 }
 
 void BasicPopupMenuUI$MenuKeyboardHelper::stateChanged($ChangeEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($BasicLookAndFeel, $($UIManager::getLookAndFeel())))) {
 		uninstall();
 		return;
@@ -354,6 +361,7 @@ void BasicPopupMenuUI$MenuKeyboardHelper::keyTyped($KeyEvent* ev) {
 }
 
 void BasicPopupMenuUI$MenuKeyboardHelper::uninstall() {
+	$useLocalCurrentObjectStackCache();
 	$init($BasicPopupMenuUI);
 	$synchronized($BasicPopupMenuUI::MENU_KEYBOARD_HELPER_KEY) {
 		$nc($($MenuSelectionManager::defaultManager()))->removeChangeListener(this);

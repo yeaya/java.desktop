@@ -164,6 +164,7 @@ void TitledBorderLabelUITest::main($StringArray* args) {
 }
 
 void TitledBorderLabelUITest::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($TitledBorderLabelUITest$TestLookAndFeel)));
 		$var($JLabel, label, $new($JLabel, "Test Label"_s));
@@ -186,6 +187,7 @@ void TitledBorderLabelUITest::createAndShowGUI() {
 }
 
 void TitledBorderLabelUITest::paintToImage($JComponent* comp) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, image, $new($BufferedImage, TitledBorderLabelUITest::SIZE, TitledBorderLabelUITest::SIZE, $BufferedImage::TYPE_INT_RGB));
 	$var($Graphics2D, g, image->createGraphics());
 	$nc(comp)->paint(g);

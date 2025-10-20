@@ -90,6 +90,7 @@ void WCheckboxPeer$1::init$($WCheckboxPeer* this$0, $Checkbox* val$cb, bool val$
 }
 
 void WCheckboxPeer$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($CheckboxGroup, chg, $nc(this->val$cb)->getCheckboxGroup());
 	bool var$0 = (chg != nullptr) && (this->val$cb == chg->getSelectedCheckbox());
 	if (var$0 && $nc(this->val$cb)->getState()) {

@@ -84,6 +84,7 @@ $String* DesktopDatatransferServiceImpl::getDefaultUnicodeEncoding() {
 }
 
 $FlavorMap* DesktopDatatransferServiceImpl::getFlavorMap($Supplier* supplier) {
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, context, $AppContext::getAppContext());
 	$var($FlavorMap, fm, $cast($FlavorMap, $nc(context)->get(DesktopDatatransferServiceImpl::FLAVOR_MAP_KEY)));
 	if (fm == nullptr) {

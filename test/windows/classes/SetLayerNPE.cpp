@@ -137,11 +137,13 @@ void SetLayerNPE::init$() {
 }
 
 void SetLayerNPE::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$EventQueue::invokeAndWait(static_cast<$Runnable*>($$new(SetLayerNPE$$Lambda$lambda$main$0)));
 	$EventQueue::invokeAndWait(static_cast<$Runnable*>($$new(SetLayerNPE$$Lambda$lambda$main$1$1)));
 }
 
 void SetLayerNPE::lambda$main$1() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($JInternalFrame, jif, $new($JInternalFrame, "My Frame"_s));
 		$$new($JDesktopPane)->add(static_cast<$Component*>(jif));

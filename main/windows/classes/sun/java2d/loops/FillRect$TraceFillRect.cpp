@@ -69,6 +69,7 @@ $Object* allocate$FillRect$TraceFillRect($Class* clazz) {
 }
 
 void FillRect$TraceFillRect::init$($FillRect* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, var$0, $nc(target)->getSourceType());
 	$var($CompositeType, var$1, target->getCompositeType());
 	$FillRect::init$(var$0, var$1, $(target->getDestType()));

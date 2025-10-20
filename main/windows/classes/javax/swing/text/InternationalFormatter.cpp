@@ -257,6 +257,7 @@ $String* InternationalFormatter::valueToString(Object$* value) {
 }
 
 $Object* InternationalFormatter::stringToValue($String* text) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, stringToValue(text, $(getFormat())));
 	bool var$0 = value != nullptr && getValueClass() != nullptr;
 	if (var$0 && !$nc(getValueClass())->isInstance(value)) {
@@ -274,6 +275,7 @@ $Object* InternationalFormatter::stringToValue($String* text) {
 }
 
 $Format$FieldArray* InternationalFormatter::getFields(int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	if (getAllowsInvalid()) {
 		updateMask();
 	}
@@ -296,6 +298,7 @@ $Object* InternationalFormatter::clone() {
 }
 
 $ActionArray* InternationalFormatter::getActions() {
+	$useLocalCurrentObjectStackCache();
 	if (getSupportsIncrement()) {
 		return $new($ActionArray, {
 			static_cast<$Action*>($$new($InternationalFormatter$IncrementAction, this, "increment"_s, 1)),
@@ -313,6 +316,7 @@ $Object* InternationalFormatter::stringToValue($String* text, $Format* f) {
 }
 
 bool InternationalFormatter::isValidValue(Object$* value, bool wantsCCE) {
+	$useLocalCurrentObjectStackCache();
 	$var($Comparable, min, getMinimum());
 	try {
 		if (min != nullptr && min->compareTo(value) > 0) {
@@ -370,6 +374,7 @@ $AttributedCharacterIterator* InternationalFormatter::getIterator() {
 }
 
 void InternationalFormatter::updateMaskIfNecessary() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = !getAllowsInvalid();
 	if (var$0 && (getFormat() != nullptr)) {
 		if (!isValidMask()) {
@@ -384,6 +389,7 @@ void InternationalFormatter::updateMaskIfNecessary() {
 }
 
 void InternationalFormatter::updateMask() {
+	$useLocalCurrentObjectStackCache();
 	if (getFormat() != nullptr) {
 		$var($Document, doc, $nc($(getFormattedTextField()))->getDocument());
 		this->validMask = false;
@@ -455,6 +461,7 @@ void InternationalFormatter::replace($DocumentFilter$FilterBypass* fb, int32_t o
 }
 
 int32_t InternationalFormatter::getNextNonliteralIndex(int32_t index, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	int32_t max = $nc($($nc($(getFormattedTextField()))->getDocument()))->getLength();
 	while (index >= 0 && index < max) {
 		if (isLiteral(index)) {
@@ -467,6 +474,7 @@ int32_t InternationalFormatter::getNextNonliteralIndex(int32_t index, int32_t di
 }
 
 bool InternationalFormatter::canReplace($DefaultFormatter$ReplaceHolder* rh) {
+	$useLocalCurrentObjectStackCache();
 	if (!getAllowsInvalid()) {
 		$var($String, text, $nc(rh)->text);
 		int32_t tl = (text != nullptr) ? $nc(text)->length() : 0;
@@ -510,6 +518,7 @@ bool InternationalFormatter::canReplace($DefaultFormatter$ReplaceHolder* rh) {
 }
 
 bool InternationalFormatter::replace($DefaultFormatter$ReplaceHolder* rh) {
+	$useLocalCurrentObjectStackCache();
 	int32_t start = -1;
 	int32_t direction = 1;
 	int32_t literalCount = -1;
@@ -573,6 +582,7 @@ bool InternationalFormatter::isLiteral($Map* attributes) {
 }
 
 void InternationalFormatter::updateMask($AttributedCharacterIterator* iterator) {
+	$useLocalCurrentObjectStackCache();
 	if (iterator != nullptr) {
 		this->validMask = true;
 		$set(this, iterator, iterator);
@@ -607,6 +617,7 @@ bool InternationalFormatter::canIncrement(Object$* field, int32_t cursorPosition
 }
 
 void InternationalFormatter::selectField(Object$* f, int32_t count) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributedCharacterIterator, iterator, getIterator());
 	if (iterator != nullptr && ($instanceOf($AttributedCharacterIterator$Attribute, f))) {
 		$var($AttributedCharacterIterator$Attribute, field, $cast($AttributedCharacterIterator$Attribute, f));
@@ -638,6 +649,7 @@ $Object* InternationalFormatter::getAdjustField(int32_t start, $Map* attributes)
 }
 
 int32_t InternationalFormatter::getFieldTypeCountTo(Object$* f, int32_t start) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributedCharacterIterator, iterator, getIterator());
 	int32_t count = 0;
 	if (iterator != nullptr && ($instanceOf($AttributedCharacterIterator$Attribute, f))) {
@@ -673,6 +685,7 @@ bool InternationalFormatter::getSupportsIncrement() {
 }
 
 void InternationalFormatter::resetValue(Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc($(getFormattedTextField()))->getDocument());
 	$var($String, string, valueToString(value));
 	{

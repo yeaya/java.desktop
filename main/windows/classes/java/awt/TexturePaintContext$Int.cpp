@@ -85,6 +85,7 @@ $Object* allocate$TexturePaintContext$Int($Class* clazz) {
 }
 
 void TexturePaintContext$Int::init$($IntegerInterleavedRaster* srcRas, $ColorModel* cm, $AffineTransform* xform, int32_t maxw, bool filter) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, var$0, cm);
 	$var($AffineTransform, var$1, xform);
 	int32_t var$2 = $nc(srcRas)->getWidth();
@@ -97,6 +98,7 @@ void TexturePaintContext$Int::init$($IntegerInterleavedRaster* srcRas, $ColorMod
 }
 
 $WritableRaster* TexturePaintContext$Int::makeRaster(int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($WritableRaster, ras, $TexturePaintContext::makeRaster(this->colorModel, this->srcRas, w, h));
 	$var($IntegerInterleavedRaster, iiRas, $cast($IntegerInterleavedRaster, ras));
 	$set(this, outData, $nc(iiRas)->getDataStorage());
@@ -106,6 +108,7 @@ $WritableRaster* TexturePaintContext$Int::makeRaster(int32_t w, int32_t h) {
 }
 
 void TexturePaintContext$Int::setRaster(int32_t x, int32_t y, int32_t xerr, int32_t yerr, int32_t w, int32_t h, int32_t bWidth, int32_t bHeight, int32_t colincx, int32_t colincxerr, int32_t colincy, int32_t colincyerr, int32_t rowincx, int32_t rowincxerr, int32_t rowincy, int32_t rowincyerr) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, inData, this->inData);
 	$var($ints, outData, this->outData);
 	int32_t out = this->outOff;

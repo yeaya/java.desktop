@@ -243,6 +243,7 @@ void ScrollPane::init$() {
 }
 
 void ScrollPane::init$(int32_t scrollbarDisplayPolicy) {
+	$useLocalCurrentObjectStackCache();
 	$Container::init$();
 	this->wheelScrollingEnabled = ScrollPane::defaultWheelScroll;
 	$GraphicsEnvironment::checkHeadless();
@@ -270,6 +271,7 @@ void ScrollPane::init$(int32_t scrollbarDisplayPolicy) {
 }
 
 $String* ScrollPane::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(ScrollPane::class$) {
 		$var($String, var$0, ScrollPane::base);
 		return $concat(var$0, $$str(ScrollPane::nameCounter++));
@@ -277,6 +279,7 @@ $String* ScrollPane::constructComponentName() {
 }
 
 void ScrollPane::addToPanel($Component* comp, Object$* constraints, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($Panel, child, $new($Panel));
 	child->setLayout($$new($BorderLayout));
 	child->add(comp);
@@ -372,6 +375,7 @@ void ScrollPane::doLayout() {
 }
 
 $Dimension* ScrollPane::calculateChildSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, getSize());
 	$var($Insets, insets, getInsets());
 	int32_t viewWidth = $nc(size)->width - $nc(insets)->left * 2;
@@ -406,6 +410,7 @@ $Dimension* ScrollPane::calculateChildSize() {
 }
 
 void ScrollPane::layout() {
+	$useLocalCurrentObjectStackCache();
 	if (getComponentCount() == 0) {
 		return;
 	}
@@ -424,6 +429,7 @@ void ScrollPane::layout() {
 }
 
 void ScrollPane::printComponents($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (getComponentCount() == 0) {
 		return;
 	}
@@ -471,6 +477,7 @@ void ScrollPane::addNotify() {
 }
 
 $String* ScrollPane::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, sdpStr, nullptr);
 	switch (this->scrollbarDisplayPolicy) {
 	case ScrollPane::SCROLLBARS_AS_NEEDED:

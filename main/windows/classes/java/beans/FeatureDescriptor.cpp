@@ -259,6 +259,7 @@ $Reference* FeatureDescriptor::getWeakReference(Object$* object) {
 
 $Class* FeatureDescriptor::getReturnType($Class* base, $Method* method) {
 	$init(FeatureDescriptor);
+	$useLocalCurrentObjectStackCache();
 	if (base == nullptr) {
 		base = $nc(method)->getDeclaringClass();
 	}
@@ -267,6 +268,7 @@ $Class* FeatureDescriptor::getReturnType($Class* base, $Method* method) {
 
 $ClassArray* FeatureDescriptor::getParameterTypes($Class* base, $Method* method) {
 	$init(FeatureDescriptor);
+	$useLocalCurrentObjectStackCache();
 	if (base == nullptr) {
 		base = $nc(method)->getDeclaringClass();
 	}
@@ -274,6 +276,7 @@ $ClassArray* FeatureDescriptor::getParameterTypes($Class* base, $Method* method)
 }
 
 $String* FeatureDescriptor::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, $new($StringBuilder, $($of(this)->getClass()->getName())));
 	sb->append("[name="_s)->append(this->name);
 	appendTo(sb, "displayName"_s, $of(this->displayName));

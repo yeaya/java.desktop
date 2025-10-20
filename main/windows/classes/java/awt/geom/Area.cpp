@@ -157,6 +157,7 @@ void Area::init$($Shape* s) {
 
 $Vector* Area::pathToCurves($PathIterator* pi) {
 	$init(Area);
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, curves, $new($Vector));
 	int32_t windingRule = $nc(pi)->getWindingRule();
 	$var($doubles, coords, $new($doubles, 23));
@@ -253,6 +254,7 @@ bool Area::isEmpty() {
 }
 
 bool Area::isPolygonal() {
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, enum_, $nc(this->curves)->elements());
 	while ($nc(enum_)->hasMoreElements()) {
 		if ($nc(($cast($Curve, $(enum_->nextElement()))))->getOrder() > 1) {
@@ -263,6 +265,7 @@ bool Area::isPolygonal() {
 }
 
 bool Area::isRectangular() {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc(this->curves)->size();
 	if (size == 0) {
 		return true;
@@ -298,6 +301,7 @@ bool Area::isRectangular() {
 }
 
 bool Area::isSingular() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->curves)->size() < 3) {
 		return true;
 	}
@@ -316,6 +320,7 @@ void Area::invalidateBounds() {
 }
 
 $Rectangle2D* Area::getCachedBounds() {
+	$useLocalCurrentObjectStackCache();
 	if (this->cachedBounds != nullptr) {
 		return this->cachedBounds;
 	}
@@ -344,6 +349,7 @@ $Object* Area::clone() {
 }
 
 bool Area::equals(Area* other) {
+	$useLocalCurrentObjectStackCache();
 	if (other == this) {
 		return true;
 	}
@@ -369,6 +375,7 @@ Area* Area::createTransformedArea($AffineTransform* t) {
 }
 
 bool Area::contains(double x, double y) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($(getCachedBounds()))->contains(x, y)) {
 		return false;
 	}
@@ -387,6 +394,7 @@ bool Area::contains($Point2D* p) {
 }
 
 bool Area::contains(double x, double y, double w, double h) {
+	$useLocalCurrentObjectStackCache();
 	if (w < 0 || h < 0) {
 		return false;
 	}
@@ -405,6 +413,7 @@ bool Area::contains($Rectangle2D* r) {
 }
 
 bool Area::intersects(double x, double y, double w, double h) {
+	$useLocalCurrentObjectStackCache();
 	if (w < 0 || h < 0) {
 		return false;
 	}

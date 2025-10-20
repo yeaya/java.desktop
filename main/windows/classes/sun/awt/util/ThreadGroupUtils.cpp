@@ -41,6 +41,7 @@ void ThreadGroupUtils::init$() {
 }
 
 $ThreadGroup* ThreadGroupUtils::getRootThreadGroup() {
+	$useLocalCurrentObjectStackCache();
 	$var($ThreadGroup, currentTG, $($Thread::currentThread())->getThreadGroup());
 	$var($ThreadGroup, parentTG, $nc(currentTG)->getParent());
 	while (parentTG != nullptr) {

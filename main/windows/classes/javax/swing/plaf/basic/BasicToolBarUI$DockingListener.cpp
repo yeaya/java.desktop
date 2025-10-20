@@ -89,12 +89,14 @@ void BasicToolBarUI$DockingListener::mouseClicked($MouseEvent* e) {
 }
 
 void BasicToolBarUI$DockingListener::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$set($nc($(this->this$0->getHandler())), tb, this->toolBar);
 	$nc($(this->this$0->getHandler()))->mousePressed(e);
 	this->isDragging = $nc($(this->this$0->getHandler()))->isDragging;
 }
 
 void BasicToolBarUI$DockingListener::mouseReleased($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$set($nc($(this->this$0->getHandler())), tb, this->toolBar);
 	$nc($(this->this$0->getHandler()))->isDragging = this->isDragging;
 	$set($nc($(this->this$0->getHandler())), origin, this->origin);
@@ -112,6 +114,7 @@ void BasicToolBarUI$DockingListener::mouseExited($MouseEvent* e) {
 }
 
 void BasicToolBarUI$DockingListener::mouseDragged($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$set($nc($(this->this$0->getHandler())), tb, this->toolBar);
 	$set($nc($(this->this$0->getHandler())), origin, this->origin);
 	$nc($(this->this$0->getHandler()))->mouseDragged(e);

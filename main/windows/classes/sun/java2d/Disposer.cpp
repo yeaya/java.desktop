@@ -190,6 +190,7 @@ void Disposer::addRecord(Object$* target, $DisposerRecord* rec) {
 
 void Disposer::add(Object$* target$renamed, $DisposerRecord* rec) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Object, target, target$renamed);
 		if ($instanceOf($DisposerTarget, target)) {
 			$assign(target, $nc(($cast($DisposerTarget, target)))->getDisposerReferent());
@@ -205,6 +206,7 @@ void Disposer::add(Object$* target$renamed, $DisposerRecord* rec) {
 }
 
 void Disposer::run() {
+	$useLocalCurrentObjectStackCache();
 	while (true) {
 		try {
 			$var($Object, obj, $nc(Disposer::queue)->remove());
@@ -224,6 +226,7 @@ void Disposer::run() {
 
 void Disposer::clearDeferredRecords() {
 	$init(Disposer);
+	$useLocalCurrentObjectStackCache();
 	if (Disposer::deferredRecords == nullptr || $nc(Disposer::deferredRecords)->isEmpty()) {
 		return;
 	}
@@ -242,6 +245,7 @@ void Disposer::clearDeferredRecords() {
 
 void Disposer::pollRemove() {
 	$init(Disposer);
+	$useLocalCurrentObjectStackCache();
 	if (Disposer::pollingQueue) {
 		return;
 	}
@@ -312,6 +316,7 @@ $ReferenceQueue* Disposer::getQueue() {
 
 $Void* Disposer::lambda$static$0() {
 	$init(Disposer);
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, "Java2D Disposer"_s);
 	$var($ThreadGroup, rootTG, $ThreadGroupUtils::getRootThreadGroup());
 	$var($Thread, t, $new($Thread, rootTG, Disposer::disposerInstance, name, 0, false));
@@ -323,6 +328,7 @@ $Void* Disposer::lambda$static$0() {
 }
 
 void clinit$Disposer($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$assignStatic(Disposer::queue, $new($ReferenceQueue));
 	$assignStatic(Disposer::records, $new($Hashtable));

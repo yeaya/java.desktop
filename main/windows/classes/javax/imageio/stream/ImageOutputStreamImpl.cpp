@@ -428,6 +428,7 @@ void ImageOutputStreamImpl::writeChars($String* s) {
 }
 
 void ImageOutputStreamImpl::writeUTF($String* s) {
+	$useLocalCurrentObjectStackCache();
 	int32_t strlen = $nc(s)->length();
 	int32_t utflen = 0;
 	$var($chars, charr, $new($chars, strlen));

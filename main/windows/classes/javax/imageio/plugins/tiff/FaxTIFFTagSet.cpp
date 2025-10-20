@@ -91,6 +91,7 @@ $List* FaxTIFFTagSet::tags = nullptr;
 
 void FaxTIFFTagSet::initTags() {
 	$init(FaxTIFFTagSet);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(FaxTIFFTagSet::tags, $new($ArrayList, 42));
 	$nc(FaxTIFFTagSet::tags)->add($$new($FaxTIFFTagSet$BadFaxLines));
 	$nc(FaxTIFFTagSet::tags)->add($$new($FaxTIFFTagSet$CleanFaxData));

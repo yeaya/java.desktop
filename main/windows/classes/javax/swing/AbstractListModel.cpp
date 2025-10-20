@@ -110,6 +110,7 @@ $ListDataListenerArray* AbstractListModel::getListDataListeners() {
 }
 
 void AbstractListModel::fireContentsChanged(Object$* source, int32_t index0, int32_t index1) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($ListDataEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -124,6 +125,7 @@ void AbstractListModel::fireContentsChanged(Object$* source, int32_t index0, int
 }
 
 void AbstractListModel::fireIntervalAdded(Object$* source, int32_t index0, int32_t index1) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($ListDataEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -138,6 +140,7 @@ void AbstractListModel::fireIntervalAdded(Object$* source, int32_t index0, int32
 }
 
 void AbstractListModel::fireIntervalRemoved(Object$* source, int32_t index0, int32_t index1) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($ListDataEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {

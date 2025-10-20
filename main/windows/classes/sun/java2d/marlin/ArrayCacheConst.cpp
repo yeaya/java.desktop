@@ -164,6 +164,7 @@ int64_t ArrayCacheConst::getNewLargeSize(int64_t curSize, int64_t needSize) {
 }
 
 void clinit$ArrayCacheConst($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	ArrayCacheConst::$assertionsDisabled = !ArrayCacheConst::class$->desiredAssertionStatus();
 	$assignStatic(ArrayCacheConst::ARRAY_SIZES, $new($ints, ArrayCacheConst::BUCKETS));
 	{

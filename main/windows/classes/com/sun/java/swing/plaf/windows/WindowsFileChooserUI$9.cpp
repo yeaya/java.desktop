@@ -80,6 +80,7 @@ void WindowsFileChooserUI$9::init$($WindowsFileChooserUI* this$0, $String* text)
 }
 
 $Dimension* WindowsFileChooserUI$9::getMaximumSize() {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc($($nc(this->this$0->approveButton)->getPreferredSize()))->width;
 	return var$0 > $nc($($nc(this->this$0->cancelButton)->getPreferredSize()))->width ? $nc(this->this$0->approveButton)->getPreferredSize() : $nc(this->this$0->cancelButton)->getPreferredSize();
 }

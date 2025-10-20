@@ -83,6 +83,7 @@ void DefaultEditorKit$EndWordAction::init$($String* nm, bool select) {
 }
 
 void DefaultEditorKit$EndWordAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getTextComponent(e));
 	if (target != nullptr) {
 		try {

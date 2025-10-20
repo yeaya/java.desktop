@@ -68,6 +68,7 @@ bool MetaData$EnumPersistenceDelegate::mutatesTo(Object$* oldInstance, Object$* 
 }
 
 $Expression* MetaData$EnumPersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Enum, e, $cast($Enum, oldInstance));
 	$load($Enum);
 	return $new($Expression, e, $Enum::class$, "valueOf"_s, $$new($ObjectArray, {

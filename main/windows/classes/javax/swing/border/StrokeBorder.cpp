@@ -121,6 +121,7 @@ void StrokeBorder::init$($BasicStroke* stroke, $Paint* paint) {
 }
 
 void StrokeBorder::paintBorder($Component* c, $Graphics* g$renamed, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, g, g$renamed);
 	float size = $nc(this->stroke)->getLineWidth();
 	if (size > 0.0f) {

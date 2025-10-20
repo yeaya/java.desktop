@@ -134,6 +134,7 @@ void PrintManualTest_FitWidthMultiple::init$($CountDownLatch* latch) {
 }
 
 void PrintManualTest_FitWidthMultiple::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		createUIandTest();
 	} catch ($Exception&) {
@@ -145,6 +146,7 @@ void PrintManualTest_FitWidthMultiple::run() {
 }
 
 void PrintManualTest_FitWidthMultiple::createUIandTest() {
+	$useLocalCurrentObjectStackCache();
 	$var($MessageFormat, header, $new($MessageFormat, "JTable Printing Header {0}"_s));
 	$var($MessageFormat, footer, $new($MessageFormat, "JTable Printing Footer {0}"_s));
 	$SwingUtilities::invokeAndWait($$new($PrintManualTest_FitWidthMultiple$1, this, header, footer));
@@ -156,6 +158,7 @@ void PrintManualTest_FitWidthMultiple::dispose() {
 }
 
 $JScrollPane* PrintManualTest_FitWidthMultiple::addInfo($String* info) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextArea, jta, $new($JTextArea, info, 8, 20));
 	jta->setEditable(false);
 	jta->setLineWrap(true);
@@ -165,6 +168,7 @@ $JScrollPane* PrintManualTest_FitWidthMultiple::addInfo($String* info) {
 
 void PrintManualTest_FitWidthMultiple::main($StringArray* argv) {
 	$init(PrintManualTest_FitWidthMultiple);
+	$useLocalCurrentObjectStackCache();
 	$var($CountDownLatch, latch, $new($CountDownLatch, 1));
 	$var(PrintManualTest_FitWidthMultiple, test, $new(PrintManualTest_FitWidthMultiple, latch));
 	$var($Thread, T1, $new($Thread, static_cast<$Runnable*>(test)));

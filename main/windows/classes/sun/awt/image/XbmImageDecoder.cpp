@@ -86,6 +86,7 @@ void XbmImageDecoder::error($String* s1) {
 }
 
 void XbmImageDecoder::produceImage() {
+	$useLocalCurrentObjectStackCache();
 	$var($chars, nm, $new($chars, 80));
 	int32_t c = 0;
 	int32_t i = 0;

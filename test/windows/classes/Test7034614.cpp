@@ -63,6 +63,7 @@ void Test7034614::init$() {
 }
 
 void Test7034614::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, g, $$new($BufferedImage, 9, 9, 9)->getGraphics());
 	$var($Test7034614$BrokenBorder, broken, $new($Test7034614$BrokenBorder));
 	$var($TitledBorder, titled, $new($TitledBorder, broken, $($of(broken)->getClass()->getName())));

@@ -81,6 +81,7 @@ void AuFileReader::init$() {
 }
 
 $StandardFileFormat* AuFileReader::getAudioFileFormatImpl($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$var($DataInputStream, dis, $new($DataInputStream, stream));
 	int32_t magic = dis->readInt();
 	if (magic != $AuFileFormat::AU_SUN_MAGIC) {

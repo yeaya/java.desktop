@@ -88,6 +88,7 @@ void bug6542335$1::init$() {
 }
 
 void bug6542335$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6542335);
 	$assignStatic($bug6542335::frame, $new($JFrame, "bug6542335"_s));
 	$nc($bug6542335::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);

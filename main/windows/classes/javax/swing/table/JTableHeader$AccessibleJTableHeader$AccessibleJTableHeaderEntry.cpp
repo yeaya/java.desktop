@@ -203,6 +203,7 @@ $AccessibleContext* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEn
 }
 
 $AccessibleContext* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getCurrentAccessibleContext() {
+	$useLocalCurrentObjectStackCache();
 	$var($TableColumnModel, tcm, $nc(this->table)->getColumnModel());
 	if (tcm != nullptr) {
 		if (this->column < 0 || this->column >= tcm->getColumnCount()) {
@@ -227,6 +228,7 @@ $AccessibleContext* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEn
 }
 
 $Component* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getCurrentComponent() {
+	$useLocalCurrentObjectStackCache();
 	$var($TableColumnModel, tcm, $nc(this->table)->getColumnModel());
 	if (tcm != nullptr) {
 		if (this->column < 0 || this->column >= tcm->getColumnCount()) {
@@ -249,6 +251,7 @@ $Component* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::get
 }
 
 $String* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getAccessibleName() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if (ac != nullptr) {
 		$var($String, name, ac->getAccessibleName());
@@ -307,6 +310,7 @@ $AccessibleRole* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry
 }
 
 $AccessibleStateSet* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getAccessibleStateSet() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if (ac != nullptr) {
 		$var($AccessibleStateSet, states, ac->getAccessibleStateSet());
@@ -334,6 +338,7 @@ int32_t JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getAcce
 }
 
 $Accessible* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getAccessibleChild(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if (ac != nullptr) {
 		$var($Accessible, accessibleChild, ac->getAccessibleChild(i));
@@ -392,6 +397,7 @@ $AccessibleValue* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntr
 }
 
 $Color* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getBackground() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->getBackground();
@@ -406,6 +412,7 @@ $Color* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getBack
 }
 
 void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::setBackground($Color* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setBackground(c);
@@ -418,6 +425,7 @@ void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::setBackgro
 }
 
 $Color* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getForeground() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->getForeground();
@@ -432,6 +440,7 @@ $Color* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getFore
 }
 
 void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::setForeground($Color* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setForeground(c);
@@ -444,6 +453,7 @@ void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::setForegro
 }
 
 $Cursor* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getCursor() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->getCursor();
@@ -463,6 +473,7 @@ $Cursor* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getCur
 }
 
 void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::setCursor($Cursor* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setCursor(c);
@@ -475,6 +486,7 @@ void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::setCursor(
 }
 
 $Font* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getFont() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->getFont();
@@ -489,6 +501,7 @@ $Font* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getFont(
 }
 
 void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::setFont($Font* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setFont(f);
@@ -501,6 +514,7 @@ void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::setFont($F
 }
 
 $FontMetrics* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getFontMetrics($Font* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->getFontMetrics(f);
@@ -515,6 +529,7 @@ $FontMetrics* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::g
 }
 
 bool JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::isEnabled() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->isEnabled();
@@ -529,6 +544,7 @@ bool JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::isEnabled(
 }
 
 void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::setEnabled(bool b) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setEnabled(b);
@@ -541,6 +557,7 @@ void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::setEnabled
 }
 
 bool JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::isVisible() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->isVisible();
@@ -555,6 +572,7 @@ bool JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::isVisible(
 }
 
 void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::setVisible(bool b) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setVisible(b);
@@ -576,6 +594,7 @@ bool JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::isShowing(
 }
 
 bool JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::contains($Point* p) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$var($Rectangle, r, $nc(($cast($AccessibleComponent, ac)))->getBounds());
@@ -592,6 +611,7 @@ bool JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::contains($
 }
 
 $Point* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getLocationOnScreen() {
+	$useLocalCurrentObjectStackCache();
 	if (this->parent != nullptr) {
 		$var($Point, parentLocation, $nc(this->parent)->getLocationOnScreen());
 		$var($Point, componentLocation, getLocation());
@@ -603,6 +623,7 @@ $Point* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getLoca
 }
 
 $Point* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::getLocation() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$var($Rectangle, r, $nc(($cast($AccessibleComponent, ac)))->getBounds());
@@ -628,6 +649,7 @@ $Rectangle* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::get
 }
 
 void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::setBounds($Rectangle* r) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setBounds(r);
@@ -644,6 +666,7 @@ $Dimension* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::get
 }
 
 void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::setSize($Dimension* d) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->setSize(d);
@@ -665,6 +688,7 @@ $Accessible* JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::ge
 }
 
 bool JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::isFocusTraversable() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		return $nc(($cast($AccessibleComponent, ac)))->isFocusTraversable();
@@ -679,6 +703,7 @@ bool JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::isFocusTra
 }
 
 void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::requestFocus() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->requestFocus();
@@ -691,6 +716,7 @@ void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::requestFoc
 }
 
 void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::addFocusListener($FocusListener* l) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->addFocusListener(l);
@@ -703,6 +729,7 @@ void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::addFocusLi
 }
 
 void JTableHeader$AccessibleJTableHeader$AccessibleJTableHeaderEntry::removeFocusListener($FocusListener* l) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, ac, getCurrentAccessibleContext());
 	if ($instanceOf($AccessibleComponent, ac)) {
 		$nc(($cast($AccessibleComponent, ac)))->removeFocusListener(l);

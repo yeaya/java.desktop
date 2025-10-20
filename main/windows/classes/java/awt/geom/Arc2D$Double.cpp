@@ -206,6 +206,7 @@ void Arc2D$Double::writeObject($ObjectOutputStream* s) {
 }
 
 void Arc2D$Double::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	try {
 		setArcType(s->readByte());

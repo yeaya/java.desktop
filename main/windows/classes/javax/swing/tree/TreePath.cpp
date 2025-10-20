@@ -126,6 +126,7 @@ void TreePath::init$() {
 }
 
 $ObjectArray* TreePath::getPath() {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = getPathCount();
 	$var($ObjectArray, result, $new($ObjectArray, i--));
 	{
@@ -153,6 +154,7 @@ int32_t TreePath::getPathCount() {
 }
 
 $Object* TreePath::getPathComponent(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pathLength = getPathCount();
 	if (index < 0 || index >= pathLength) {
 		$throwNew($IllegalArgumentException, $$str({"Index "_s, $$str(index), " is out of the specified range"_s}));
@@ -165,6 +167,7 @@ $Object* TreePath::getPathComponent(int32_t index) {
 }
 
 bool TreePath::equals(Object$* o) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals(o, this)) {
 		return true;
 	}
@@ -223,6 +226,7 @@ TreePath* TreePath::getParentPath() {
 }
 
 $String* TreePath::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, tempSpot, $new($StringBuilder, "["_s));
 	{
 		int32_t counter = 0;

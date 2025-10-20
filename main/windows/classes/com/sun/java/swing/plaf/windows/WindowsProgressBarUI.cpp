@@ -157,6 +157,7 @@ void WindowsProgressBarUI::installDefaults() {
 }
 
 int32_t WindowsProgressBarUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	int32_t baseline = $BasicProgressBarUI::getBaseline(c, width, height);
 	bool var$1 = $XPStyle::getXP() != nullptr;
 	bool var$0 = var$1 && $nc(this->progressBar)->isStringPainted();
@@ -180,6 +181,7 @@ int32_t WindowsProgressBarUI::getBaseline($JComponent* c, int32_t width, int32_t
 }
 
 $Dimension* WindowsProgressBarUI::getPreferredInnerHorizontal() {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$init($TMSchema$Part);
@@ -191,6 +193,7 @@ $Dimension* WindowsProgressBarUI::getPreferredInnerHorizontal() {
 }
 
 $Dimension* WindowsProgressBarUI::getPreferredInnerVertical() {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$init($TMSchema$Part);
@@ -202,6 +205,7 @@ $Dimension* WindowsProgressBarUI::getPreferredInnerVertical() {
 }
 
 void WindowsProgressBarUI::paintDeterminate($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		bool vertical = ($nc(this->progressBar)->getOrientation() == $JProgressBar::VERTICAL);
@@ -262,6 +266,7 @@ void WindowsProgressBarUI::paintDeterminate($Graphics* g, $JComponent* c) {
 }
 
 void WindowsProgressBarUI::setAnimationIndex(int32_t newValue) {
+	$useLocalCurrentObjectStackCache();
 	$BasicProgressBarUI::setAnimationIndex(newValue);
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
@@ -286,6 +291,7 @@ int32_t WindowsProgressBarUI::getBoxLength(int32_t availableLength, int32_t othe
 }
 
 $Rectangle* WindowsProgressBarUI::getBox($Rectangle* r) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, rect, $BasicProgressBarUI::getBox(r));
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
@@ -318,6 +324,7 @@ $Rectangle* WindowsProgressBarUI::getBox($Rectangle* r) {
 }
 
 void WindowsProgressBarUI::paintIndeterminate($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		bool vertical = ($nc(this->progressBar)->getOrientation() == $JProgressBar::VERTICAL);
@@ -360,6 +367,7 @@ $Rectangle* WindowsProgressBarUI::getFullChunkBounds($Rectangle* box) {
 }
 
 void WindowsProgressBarUI::paintIndeterminateFrame($Rectangle* box, $Graphics2D* g, bool vertical, int32_t bgwidth, int32_t bgheight) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp == nullptr) {
 		return;
@@ -398,6 +406,7 @@ void WindowsProgressBarUI::paintIndeterminateFrame($Rectangle* box, $Graphics2D*
 }
 
 void WindowsProgressBarUI::paintXPBackground($Graphics* g, bool vertical, int32_t barRectWidth, int32_t barRectHeight) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp == nullptr) {
 		return;

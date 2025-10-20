@@ -84,6 +84,7 @@ void RepaintManager$DisplayChangedHandler::paletteChanged() {
 
 void RepaintManager$DisplayChangedHandler::scheduleDisplayChanges() {
 	$init(RepaintManager$DisplayChangedHandler);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc($($AppContext::getAppContexts()))->iterator());
 		for (; $nc(i$)->hasNext();) {

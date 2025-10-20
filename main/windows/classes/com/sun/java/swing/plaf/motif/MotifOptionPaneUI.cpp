@@ -94,6 +94,7 @@ $ComponentUI* MotifOptionPaneUI::createUI($JComponent* x) {
 }
 
 $Container* MotifOptionPaneUI::createButtonArea() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, b, $BasicOptionPaneUI::createButtonArea());
 	if (b != nullptr && $instanceOf($BasicOptionPaneUI$ButtonAreaLayout, $(b->getLayout()))) {
 		$nc(($cast($BasicOptionPaneUI$ButtonAreaLayout, $(b->getLayout()))))->setCentersChildren(false);
@@ -110,6 +111,7 @@ $Container* MotifOptionPaneUI::createSeparator() {
 }
 
 void MotifOptionPaneUI::addIcon($Container* top) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, sideIcon, getIcon());
 	if (sideIcon != nullptr) {
 		$var($JLabel, iconLabel, $new($JLabel, sideIcon));

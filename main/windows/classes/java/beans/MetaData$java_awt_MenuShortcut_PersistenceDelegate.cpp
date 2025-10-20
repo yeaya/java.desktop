@@ -72,6 +72,7 @@ bool MetaData$java_awt_MenuShortcut_PersistenceDelegate::mutatesTo(Object$* oldI
 }
 
 $Expression* MetaData$java_awt_MenuShortcut_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuShortcut, m, $cast($MenuShortcut, oldInstance));
 	$var($Object, var$0, oldInstance);
 	$var($Object, var$1, $of($nc($of(m))->getClass()));

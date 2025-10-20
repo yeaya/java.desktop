@@ -114,6 +114,7 @@ void HeadlessJToggleButton::init$() {
 }
 
 void HeadlessJToggleButton::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JToggleButton, tb, $new($JToggleButton));
 	tb->getAccessibleContext();
 	tb->isFocusTraversable();

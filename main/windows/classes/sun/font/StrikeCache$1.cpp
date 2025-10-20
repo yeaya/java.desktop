@@ -73,6 +73,7 @@ void StrikeCache$1::init$() {
 }
 
 $Object* StrikeCache$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, refType, $System::getProperty("sun.java2d.font.reftype"_s, "soft"_s));
 	$init($StrikeCache);
 	$StrikeCache::cacheRefTypeWeak = $nc(refType)->equals("weak"_s);

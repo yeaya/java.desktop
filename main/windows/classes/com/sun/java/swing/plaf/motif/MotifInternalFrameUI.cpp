@@ -164,6 +164,7 @@ void MotifInternalFrameUI::installUI($JComponent* c) {
 }
 
 void MotifInternalFrameUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($Border, frameBorder, $nc(this->frame)->getBorder());
 	$nc(this->frame)->setLayout($assignField(this, internalFrameLayout, createLayoutManager()));
 	if (frameBorder == nullptr || $instanceOf($UIResource, frameBorder)) {
@@ -205,6 +206,7 @@ void MotifInternalFrameUI::uninstallKeyboardActions() {
 }
 
 void MotifInternalFrameUI::setupMenuOpenKey() {
+	$useLocalCurrentObjectStackCache();
 	$BasicInternalFrameUI::setupMenuOpenKey();
 	$var($ActionMap, map, $SwingUtilities::getUIActionMap(this->frame));
 	if (map != nullptr) {
@@ -213,6 +215,7 @@ void MotifInternalFrameUI::setupMenuOpenKey() {
 }
 
 void MotifInternalFrameUI::setupMenuCloseKey() {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, map, $SwingUtilities::getUIActionMap(this->frame));
 	if (map != nullptr) {
 		map->put("hideSystemMenu"_s, $$new($MotifInternalFrameUI$2, this));

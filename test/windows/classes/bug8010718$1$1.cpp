@@ -73,6 +73,7 @@ void bug8010718$1$1::init$($bug8010718$1* this$0) {
 }
 
 bool bug8010718$1$1::accept($File* f) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(f)->isDirectory();
 	return var$0 || $($nc($($nc(f)->getName()))->toLowerCase())->endsWith(".xml"_s);
 }

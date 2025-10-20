@@ -152,6 +152,7 @@ void BasicHTML::init$() {
 
 $View* BasicHTML::createHTMLView($JComponent* c, $String* html) {
 	$init(BasicHTML);
+	$useLocalCurrentObjectStackCache();
 	$var($BasicHTML$BasicEditorKit, kit, getFactory());
 	$var($Font, var$0, $nc(c)->getFont());
 	$var($Document, doc, $nc(kit)->createDefaultDocument(var$0, $(c->getForeground())));
@@ -206,6 +207,7 @@ int32_t BasicHTML::getBaseline($View* view, int32_t w, int32_t h) {
 
 int32_t BasicHTML::getBaseline($View* view, $Shape* bounds$renamed) {
 	$init(BasicHTML);
+	$useLocalCurrentObjectStackCache();
 	$var($Shape, bounds, bounds$renamed);
 	if ($nc(view)->getViewCount() == 0) {
 		return -1;
@@ -240,6 +242,7 @@ int32_t BasicHTML::getBaseline($View* view, $Shape* bounds$renamed) {
 
 bool BasicHTML::hasParagraph($View* view) {
 	$init(BasicHTML);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($ParagraphView, view)) {
 		return true;
 	}
@@ -275,6 +278,7 @@ bool BasicHTML::isHTMLString($String* s) {
 
 void BasicHTML::updateRenderer($JComponent* c, $String* text) {
 	$init(BasicHTML);
+	$useLocalCurrentObjectStackCache();
 	$var($View, value, nullptr);
 	$var($View, oldValue, $cast($View, $nc(c)->getClientProperty(BasicHTML::propertyKey)));
 	$var($Boolean, htmlDisabled, $cast($Boolean, c->getClientProperty(BasicHTML::htmlDisable)));

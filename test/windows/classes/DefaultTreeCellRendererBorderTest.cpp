@@ -252,6 +252,7 @@ void DefaultTreeCellRendererBorderTest::init$() {
 }
 
 void DefaultTreeCellRendererBorderTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

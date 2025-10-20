@@ -110,6 +110,7 @@ void FilePane$Handler::init$($FilePane* this$0) {
 }
 
 void FilePane$Handler::mouseClicked($MouseEvent* evt$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($MouseEvent, evt, evt$renamed);
 	$var($JComponent, source, $cast($JComponent, $nc(evt)->getSource()));
 	int32_t index = 0;
@@ -166,6 +167,7 @@ void FilePane$Handler::mouseClicked($MouseEvent* evt$renamed) {
 }
 
 void FilePane$Handler::mouseEntered($MouseEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, source, $cast($JComponent, $nc(evt)->getSource()));
 	if ($instanceOf($JTable, source)) {
 		$var($JTable, table, $cast($JTable, evt->getSource()));
@@ -186,6 +188,7 @@ void FilePane$Handler::mouseEntered($MouseEvent* evt) {
 }
 
 void FilePane$Handler::mouseExited($MouseEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JList, $($nc(evt)->getSource()))) {
 		if (getDoubleClickListener() != nullptr) {
 			$nc($(getDoubleClickListener()))->mouseExited(evt);
@@ -194,6 +197,7 @@ void FilePane$Handler::mouseExited($MouseEvent* evt) {
 }
 
 void FilePane$Handler::mousePressed($MouseEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JList, $($nc(evt)->getSource()))) {
 		if (getDoubleClickListener() != nullptr) {
 			$nc($(getDoubleClickListener()))->mousePressed(evt);
@@ -202,6 +206,7 @@ void FilePane$Handler::mousePressed($MouseEvent* evt) {
 }
 
 void FilePane$Handler::mouseReleased($MouseEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JList, $($nc(evt)->getSource()))) {
 		if (getDoubleClickListener() != nullptr) {
 			$nc($(getDoubleClickListener()))->mouseReleased(evt);

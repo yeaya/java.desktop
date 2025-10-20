@@ -76,6 +76,7 @@ void MetalIconFactory$ImageCacher::init$() {
 }
 
 $Image* MetalIconFactory$ImageCacher::getImage($GraphicsConfiguration* newGC) {
+	$useLocalCurrentObjectStackCache();
 	if ((this->currentImageGcPair == nullptr) || !($nc(this->currentImageGcPair)->hasSameConfiguration(newGC))) {
 		{
 			$var($Iterator, i$, $nc(this->images)->iterator());

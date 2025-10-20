@@ -81,6 +81,7 @@ void MetalCheckBoxUI::init$() {
 
 $ComponentUI* MetalCheckBoxUI::createUI($JComponent* b) {
 	$init(MetalCheckBoxUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(MetalCheckBoxUI, checkboxUI, $cast(MetalCheckBoxUI, $nc(appContext)->get(MetalCheckBoxUI::METAL_CHECK_BOX_UI_KEY)));
 	if (checkboxUI == nullptr) {
@@ -95,6 +96,7 @@ $String* MetalCheckBoxUI::getPropertyPrefix() {
 }
 
 void MetalCheckBoxUI::installDefaults($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$MetalRadioButtonUI::installDefaults(b);
 	if (!this->defaults_initialized) {
 		$set(this, icon, $UIManager::getIcon($$str({$(getPropertyPrefix()), "icon"_s})));

@@ -125,6 +125,7 @@ int32_t ScriptRun::getScriptCode() {
 }
 
 bool ScriptRun::next() {
+	$useLocalCurrentObjectStackCache();
 	int32_t startSP = this->parenSP;
 	if (this->scriptLimit >= this->textLimit) {
 		return false;

@@ -65,6 +65,7 @@ void SetFillPathANY::init$() {
 }
 
 void SetFillPathANY::FillPath$($SunGraphics2D* sg2d, $SurfaceData* sData, int32_t transx, int32_t transy, $Path2D$Float* p2df) {
+	$useLocalCurrentObjectStackCache();
 	$var($PixelWriter, pw, $GeneralRenderer::createSolidPixelWriter(sg2d, sData));
 	$ProcessPath::fillPath($$new($PixelWriterDrawHandler, sData, pw, $($nc(sg2d)->getCompClip()), sg2d->strokeHint), p2df, transx, transy);
 }

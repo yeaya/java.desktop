@@ -116,6 +116,7 @@ void MetalScrollPaneUI::installUI($JComponent* c) {
 }
 
 void MetalScrollPaneUI::uninstallUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$BasicScrollPaneUI::uninstallUI(c);
 	$var($JScrollPane, sp, $cast($JScrollPane, c));
 	$var($JScrollBar, hsb, $nc(sp)->getHorizontalScrollBar());
@@ -147,6 +148,7 @@ void MetalScrollPaneUI::uninstallListeners($JScrollPane* scrollPane) {
 }
 
 void MetalScrollPaneUI::updateScrollbarsFreeStanding() {
+	$useLocalCurrentObjectStackCache();
 	if (this->scrollpane == nullptr) {
 		return;
 	}

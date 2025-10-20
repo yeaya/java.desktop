@@ -131,6 +131,7 @@ void SynthDesktopPaneUI$TaskBar::finalize() {
 }
 
 void SynthDesktopPaneUI$TaskBar::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JPanel::init$();
 	setOpaque(true);
 	setLayout($$new($SynthDesktopPaneUI$TaskBar$1, this, $FlowLayout::LEFT, 0, 0));
@@ -138,6 +139,7 @@ void SynthDesktopPaneUI$TaskBar::init$() {
 }
 
 void SynthDesktopPaneUI$TaskBar::adjustSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($JDesktopPane, desktop, $cast($JDesktopPane, getParent()));
 	if (desktop != nullptr) {
 		int32_t height = $nc($(getPreferredSize()))->height;
@@ -172,6 +174,7 @@ void SynthDesktopPaneUI$TaskBar::componentShown($ComponentEvent* e) {
 }
 
 void SynthDesktopPaneUI$TaskBar::componentHidden($ComponentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JInternalFrame, $($nc(e)->getSource()))) {
 		$nc($($nc(($cast($JInternalFrame, $(e->getSource()))))->getDesktopIcon()))->setVisible(false);
 		revalidate();
@@ -179,6 +182,7 @@ void SynthDesktopPaneUI$TaskBar::componentHidden($ComponentEvent* e) {
 }
 
 void SynthDesktopPaneUI$TaskBar::componentAdded($ContainerEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JInternalFrame, $($nc(e)->getChild()))) {
 		$var($JDesktopPane, desktop, $cast($JDesktopPane, e->getSource()));
 		$var($JInternalFrame, f, $cast($JInternalFrame, e->getChild()));
@@ -205,6 +209,7 @@ void SynthDesktopPaneUI$TaskBar::componentAdded($ContainerEvent* e) {
 }
 
 void SynthDesktopPaneUI$TaskBar::componentRemoved($ContainerEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JInternalFrame, $($nc(e)->getChild()))) {
 		$var($JInternalFrame, f, $cast($JInternalFrame, e->getChild()));
 		if (!$nc(f)->isIcon()) {

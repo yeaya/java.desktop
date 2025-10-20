@@ -79,6 +79,7 @@ void ScrollableTabbedPaneTest$5::init$($String* val$shortLAF) {
 }
 
 void ScrollableTabbedPaneTest$5::run() {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = 0;
 	int32_t value = 0;
 	do {

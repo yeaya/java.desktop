@@ -167,6 +167,7 @@ void D3DBlitLoops::init$() {
 }
 
 void D3DBlitLoops::register$() {
+	$useLocalCurrentObjectStackCache();
 	$init($SurfaceType);
 	$var($Blit, blitIntArgbPreToSurface, $new($D3DSwToSurfaceBlit, $SurfaceType::IntArgbPre, $D3DSurfaceData::ST_INT_ARGB_PRE));
 	$var($Blit, blitIntArgbPreToTexture, $new($D3DSwToTextureBlit, $SurfaceType::IntArgbPre, $D3DSurfaceData::ST_INT_ARGB_PRE));
@@ -231,6 +232,7 @@ int32_t D3DBlitLoops::createPackedParams(bool isoblit, bool texture, bool rtt, b
 }
 
 void D3DBlitLoops::enqueueBlit($RenderQueue* rq, $SurfaceData* src, $SurfaceData* dst, int32_t packedParams, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, double dx1, double dy1, double dx2, double dy2) {
+	$useLocalCurrentObjectStackCache();
 	$var($RenderBuffer, buf, $nc(rq)->getBuffer());
 	rq->ensureCapacityAndAlignment(72, 24);
 	$nc(buf)->putInt(31);
@@ -244,6 +246,7 @@ void D3DBlitLoops::enqueueBlit($RenderQueue* rq, $SurfaceData* src, $SurfaceData
 }
 
 void D3DBlitLoops::Blit($SurfaceData* srcData, $SurfaceData* dstData, $Composite* comp, $Region* clip, $AffineTransform* xform, int32_t hint, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, double dx1, double dy1, double dx2, double dy2, int32_t srctype, bool texture) {
+	$useLocalCurrentObjectStackCache();
 	int32_t ctxflags = 0;
 	if ($nc(srcData)->getTransparency() == $Transparency::OPAQUE) {
 		ctxflags |= $D3DContext::SRC_IS_OPAQUE;
@@ -279,6 +282,7 @@ void D3DBlitLoops::Blit($SurfaceData* srcData, $SurfaceData* dstData, $Composite
 }
 
 void D3DBlitLoops::IsoBlit($SurfaceData* srcData, $SurfaceData* dstData, $BufferedImage* srcImg, $BufferedImageOp* biop, $Composite* comp, $Region* clip, $AffineTransform* xform, int32_t hint, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, double dx1, double dy1, double dx2, double dy2, bool texture) {
+	$useLocalCurrentObjectStackCache();
 	int32_t ctxflags = 0;
 	if ($nc(srcData)->getTransparency() == $Transparency::OPAQUE) {
 		ctxflags |= $D3DContext::SRC_IS_OPAQUE;

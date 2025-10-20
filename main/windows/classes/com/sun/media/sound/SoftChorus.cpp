@@ -209,6 +209,7 @@ void SoftChorus::processControlLogic() {
 }
 
 void SoftChorus::processAudio() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->inputA)->isSilent()) {
 		this->silentcounter += 1 / this->controlrate;
 		if (this->silentcounter > 1) {

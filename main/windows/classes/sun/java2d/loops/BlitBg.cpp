@@ -98,6 +98,7 @@ BlitBg* BlitBg::locate($SurfaceType* srctype, $CompositeType* comptype, $Surface
 
 BlitBg* BlitBg::getFromCache($SurfaceType* src, $CompositeType* comp, $SurfaceType* dst) {
 	$init(BlitBg);
+	$useLocalCurrentObjectStackCache();
 	$var($Object, o, $nc(BlitBg::blitcache)->get(src, comp, dst));
 	if (o != nullptr) {
 		return $cast(BlitBg, o);

@@ -70,6 +70,7 @@ $String* SynthCheckBoxMenuItemUI::getPropertyPrefix() {
 }
 
 void SynthCheckBoxMenuItemUI::paintBackground($SynthContext* context, $Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, var$0, context);
 	$var($Graphics, var$1, g);
 	int32_t var$2 = $nc(c)->getWidth();

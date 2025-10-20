@@ -71,6 +71,7 @@ void DefaultEditorKit$InsertContentAction::init$() {
 }
 
 void DefaultEditorKit$InsertContentAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getTextComponent(e));
 	if ((target != nullptr) && (e != nullptr)) {
 		bool var$0 = (!target->isEditable());

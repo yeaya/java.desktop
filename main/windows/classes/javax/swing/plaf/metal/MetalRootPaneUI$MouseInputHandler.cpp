@@ -127,6 +127,7 @@ void MetalRootPaneUI$MouseInputHandler::init$($MetalRootPaneUI* this$0) {
 }
 
 void MetalRootPaneUI$MouseInputHandler::mousePressed($MouseEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	$var($JRootPane, rootPane, this->this$0->getRootPane());
 	if ($nc(rootPane)->getWindowDecorationStyle() == $JRootPane::NONE) {
 		return;
@@ -174,6 +175,7 @@ void MetalRootPaneUI$MouseInputHandler::mouseReleased($MouseEvent* ev) {
 }
 
 void MetalRootPaneUI$MouseInputHandler::mouseMoved($MouseEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	$var($JRootPane, root, this->this$0->getRootPane());
 	if ($nc(root)->getWindowDecorationStyle() == $JRootPane::NONE) {
 		return;
@@ -230,6 +232,7 @@ void MetalRootPaneUI$MouseInputHandler::adjust($Rectangle* bounds, $Dimension* m
 }
 
 void MetalRootPaneUI$MouseInputHandler::mouseDragged($MouseEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, w, $cast($Window, $nc(ev)->getSource()));
 	$var($Point, pt, ev->getPoint());
 	if (this->isMovingWindow) {
@@ -307,6 +310,7 @@ void MetalRootPaneUI$MouseInputHandler::mouseExited($MouseEvent* ev) {
 }
 
 void MetalRootPaneUI$MouseInputHandler::mouseClicked($MouseEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, w, $cast($Window, $nc(ev)->getSource()));
 	$var($Frame, f, nullptr);
 	if ($instanceOf($Frame, w)) {

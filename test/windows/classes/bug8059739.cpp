@@ -106,6 +106,7 @@ void bug8059739::main($StringArray* args) {
 
 void bug8059739::runTest() {
 	$init(bug8059739);
+	$useLocalCurrentObjectStackCache();
 	$var($String, testString, "my string"_s);
 	$var($JTextField, tf, $new($JTextField, testString));
 	tf->selectAll();

@@ -84,6 +84,7 @@ void bug6742358::init$() {
 
 void bug6742358::main($StringArray* args) {
 	$init(bug6742358);
+	$useLocalCurrentObjectStackCache();
 	$MetalLookAndFeel::setCurrentTheme($$new($DefaultMetalTheme));
 	$var($JFrame, frame, $new($JFrame));
 	frame->setContentPane($$new($bug6742358$TestPanel));
@@ -94,6 +95,7 @@ void bug6742358::main($StringArray* args) {
 }
 
 void bug6742358::init() {
+	$useLocalCurrentObjectStackCache();
 	$MetalLookAndFeel::setCurrentTheme($$new($DefaultMetalTheme));
 	$var($bug6742358$TestPanel, panel, $new($bug6742358$TestPanel));
 	setContentPane(panel);
@@ -101,6 +103,7 @@ void bug6742358::init() {
 
 $JSlider* bug6742358::createSlider(bool vertical, bool enabled, bool filled, bool inverted) {
 	$init(bug6742358);
+	$useLocalCurrentObjectStackCache();
 	$var($JSlider, result, $new($JSlider, vertical ? $SwingConstants::VERTICAL : $SwingConstants::HORIZONTAL, 0, 10, 5));
 	result->setEnabled(enabled);
 	result->putClientProperty("JSlider.isFilled"_s, $($Boolean::valueOf(filled)));

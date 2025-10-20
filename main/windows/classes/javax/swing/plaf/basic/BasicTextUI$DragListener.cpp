@@ -148,6 +148,7 @@ void BasicTextUI$DragListener::mouseDragged($MouseEvent* e) {
 }
 
 bool BasicTextUI$DragListener::isDragPossible($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, c, $cast($JTextComponent, $nc(e)->getSource()));
 	if ($nc(c)->isEnabled()) {
 		$var($Caret, caret, c->getCaret());

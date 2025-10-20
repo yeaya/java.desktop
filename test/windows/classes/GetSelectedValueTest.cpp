@@ -68,6 +68,7 @@ void GetSelectedValueTest::main($StringArray* args) {
 }
 
 void GetSelectedValueTest::checkSelectedIndex($JList* list, Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, selectedObject, $nc(list)->getSelectedValue());
 	if (!$Objects::equals(value, selectedObject)) {
 		$init($System);

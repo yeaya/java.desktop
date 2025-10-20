@@ -251,6 +251,7 @@ bool FontUtilities::fontSupportsDefaultEncoding($Font* font) {
 
 $FontUIResource* FontUtilities::getCompositeFontUIResource($Font* font) {
 	$init(FontUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($FontUIResource, fuir, $new($FontUIResource, font));
 	$var($Font2D, font2D, FontUtilities::getFont2D(font));
 	if (!($instanceOf($PhysicalFont, font2D))) {
@@ -290,6 +291,7 @@ $String* FontUtilities::mapFcName($String* name) {
 
 $FontUIResource* FontUtilities::getFontConfigFUIR($String* fcFamily, int32_t style, int32_t size) {
 	$init(FontUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($String, mapped, mapFcName(fcFamily));
 	if (mapped == nullptr) {
 		$assign(mapped, "sansserif"_s);
@@ -307,6 +309,7 @@ $FontUIResource* FontUtilities::getFontConfigFUIR($String* fcFamily, int32_t sty
 
 bool FontUtilities::textLayoutIsCompatible($Font* font) {
 	$init(FontUtilities);
+	$useLocalCurrentObjectStackCache();
 	$var($Font2D, font2D, getFont2D(font));
 	if ($instanceOf($TrueTypeFont, font2D)) {
 		$var($TrueTypeFont, ttf, $cast($TrueTypeFont, font2D));
@@ -318,6 +321,7 @@ bool FontUtilities::textLayoutIsCompatible($Font* font) {
 }
 
 void clinit$FontUtilities($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	FontUtilities::debugFonts$ = false;
 	$assignStatic(FontUtilities::logger, nullptr);

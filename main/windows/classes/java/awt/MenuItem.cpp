@@ -221,6 +221,7 @@ void MenuItem::init$($String* label, $MenuShortcut* s) {
 }
 
 $String* MenuItem::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(MenuItem::class$) {
 		$var($String, var$0, MenuItem::base);
 		return $concat(var$0, $$str(MenuItem::nameCounter++));
@@ -318,10 +319,12 @@ void MenuItem::deleteShortcut($MenuShortcut* s) {
 }
 
 void MenuItem::doMenuEvent(int64_t when, int32_t modifiers) {
+	$useLocalCurrentObjectStackCache();
 	$nc($($Toolkit::getEventQueue()))->postEvent($$new($ActionEvent, this, $ActionEvent::ACTION_PERFORMED, $(getActionCommand()), when, modifiers));
 }
 
 bool MenuItem::isItemEnabled() {
+	$useLocalCurrentObjectStackCache();
 	if (!isEnabled()) {
 		return false;
 	}
@@ -340,6 +343,7 @@ bool MenuItem::isItemEnabled() {
 }
 
 bool MenuItem::handleShortcut($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc(e)->getKeyCode();
 	$var($MenuShortcut, s, $new($MenuShortcut, var$0, ((int32_t)(e->getModifiers() & (uint32_t)$InputEvent::SHIFT_MASK)) > 0));
 	int32_t var$1 = $nc(e)->getExtendedKeyCode();
@@ -441,6 +445,7 @@ void MenuItem::processActionEvent($ActionEvent* e) {
 }
 
 $String* MenuItem::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, $str({",label="_s, this->label}));
 	if (this->shortcut != nullptr) {
 		$plusAssign(str, $$str({",shortcut="_s, this->shortcut}));
@@ -456,6 +461,7 @@ void MenuItem::writeObject($ObjectOutputStream* s) {
 }
 
 void MenuItem::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	$var($Object, keyOrNull, nullptr);
 	while (nullptr != ($assign(keyOrNull, s->readObject()))) {

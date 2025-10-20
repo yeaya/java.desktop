@@ -108,6 +108,7 @@ int32_t DerivedColor::getAlphaOffset() {
 }
 
 void DerivedColor::rederiveColor() {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, src, $UIManager::getColor(this->uiDefaultParentName));
 	if (src != nullptr) {
 		int32_t var$0 = src->getRed();
@@ -186,6 +187,7 @@ int32_t DerivedColor::clamp(int32_t value) {
 }
 
 $String* DerivedColor::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, src, $UIManager::getColor(this->uiDefaultParentName));
 	$var($String, var$12, $$str({"DerivedColor(color="_s, $$str(getRed()), ","_s}));
 	$var($String, var$11, $$concat(var$12, $$str(getGreen())));

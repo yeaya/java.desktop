@@ -149,6 +149,7 @@ void SynthLookAndFeel$AATextListener::init$($LookAndFeel* laf) {
 }
 
 void SynthLookAndFeel$AATextListener::propertyChange($PropertyChangeEvent* pce) {
+	$useLocalCurrentObjectStackCache();
 	$var($UIDefaults, defaults, $UIManager::getLookAndFeelDefaults());
 	if ($nc(defaults)->getBoolean("Synth.doNotSetTextAA"_s)) {
 		dispose();
@@ -170,6 +171,7 @@ void SynthLookAndFeel$AATextListener::dispose() {
 
 void SynthLookAndFeel$AATextListener::updateWindowUI($Window* window) {
 	$init(SynthLookAndFeel$AATextListener);
+	$useLocalCurrentObjectStackCache();
 	$SynthLookAndFeel::updateStyles(window);
 	$var($WindowArray, ownedWins, $nc(window)->getOwnedWindows());
 	{
@@ -187,6 +189,7 @@ void SynthLookAndFeel$AATextListener::updateWindowUI($Window* window) {
 
 void SynthLookAndFeel$AATextListener::updateAllUIs() {
 	$init(SynthLookAndFeel$AATextListener);
+	$useLocalCurrentObjectStackCache();
 	$var($FrameArray, appFrames, $Frame::getFrames());
 	{
 		$var($FrameArray, arr$, appFrames);

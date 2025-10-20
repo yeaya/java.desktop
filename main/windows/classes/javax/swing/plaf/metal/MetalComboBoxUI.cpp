@@ -242,6 +242,7 @@ void MetalComboBoxUI::paintCurrentValue($Graphics* g, $Rectangle* bounds, bool h
 }
 
 void MetalComboBoxUI::paintCurrentValueBackground($Graphics* g, $Rectangle* bounds, bool hasFocus) {
+	$useLocalCurrentObjectStackCache();
 	if ($MetalLookAndFeel::usingOcean()) {
 		$nc(g)->setColor($($MetalLookAndFeel::getControlDarkShadow()));
 		g->drawRect($nc(bounds)->x, bounds->y, bounds->width, bounds->height - 1);
@@ -285,6 +286,7 @@ $ComboPopup* MetalComboBoxUI::createPopup() {
 }
 
 $JButton* MetalComboBoxUI::createArrowButton() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(this->comboBox)->isEditable();
 	bool iconOnly = (var$0 || $MetalLookAndFeel::usingOcean());
 	$var($JButton, button, $new($MetalComboBoxButton, this->comboBox, $$new($MetalComboBoxIcon), iconOnly, this->currentValuePane, this->listBox));
@@ -316,6 +318,7 @@ $LayoutManager* MetalComboBoxUI::createLayoutManager() {
 }
 
 void MetalComboBoxUI::layoutComboBox($Container* parent, $MetalComboBoxUI$MetalComboBoxLayoutManager* manager) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(this->comboBox)->isEditable();
 	if (var$0 && !$MetalLookAndFeel::usingOcean()) {
 		$nc(manager)->superLayout(parent);
@@ -357,6 +360,7 @@ void MetalComboBoxUI::unconfigureEditor() {
 }
 
 $Dimension* MetalComboBoxUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->isMinimumSizeDirty) {
 		return $new($Dimension, this->cachedMinimumSize);
 	}

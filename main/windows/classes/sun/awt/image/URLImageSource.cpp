@@ -75,6 +75,7 @@ $Object* allocate$URLImageSource($Class* clazz) {
 }
 
 void URLImageSource::init$($URL* u) {
+	$useLocalCurrentObjectStackCache();
 	$InputStreamImageSource::init$();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm != nullptr) {
@@ -106,6 +107,7 @@ void URLImageSource::init$($URLConnection* uc) {
 }
 
 bool URLImageSource::checkSecurity(Object$* context, bool quiet) {
+	$useLocalCurrentObjectStackCache();
 	if (this->actualHost != nullptr) {
 		try {
 			$var($SecurityManager, security, $System::getSecurityManager());
@@ -137,6 +139,7 @@ $URLConnection* URLImageSource::getConnection() {
 }
 
 $ImageDecoder* URLImageSource::getDecoder() {
+	$useLocalCurrentObjectStackCache();
 	$var($InputStream, is, nullptr);
 	$var($String, type, nullptr);
 	$var($URLConnection, c, nullptr);

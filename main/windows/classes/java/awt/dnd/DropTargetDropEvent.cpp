@@ -86,6 +86,7 @@ $Object* allocate$DropTargetDropEvent($Class* clazz) {
 $Point* DropTargetDropEvent::zero = nullptr;
 
 void DropTargetDropEvent::init$($DropTargetContext* dtc, $Point* cursorLocn, int32_t dropAction, int32_t srcActions) {
+	$useLocalCurrentObjectStackCache();
 	$DropTargetEvent::init$(dtc);
 	$set(this, location, DropTargetDropEvent::zero);
 	this->actions = $DnDConstants::ACTION_NONE;

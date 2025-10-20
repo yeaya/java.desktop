@@ -210,6 +210,7 @@ void TestJProgressBarHighlightColor::init$() {
 
 void TestJProgressBarHighlightColor::blockTillDisplayed($Component* comp) {
 	$init(TestJProgressBarHighlightColor);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	while (p == nullptr) {
 		try {
@@ -237,6 +238,7 @@ int32_t TestJProgressBarHighlightColor::getMaxColorDiff($Color* c1, $Color* c2) 
 
 void TestJProgressBarHighlightColor::main($StringArray* args) {
 	$init(TestJProgressBarHighlightColor);
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($System::getProperty("os.name"_s)))->startsWith("Linux"_s)) {
 		$init($System);
 		$nc($System::out)->println("This test is meant for Linux platform only"_s);

@@ -597,6 +597,7 @@ $Insets* Toolkit::getScreenInsets($GraphicsConfiguration* gc) {
 
 void Toolkit::initAssistiveTechnologies() {
 	$init(Toolkit);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$init($File);
 	$var($String, sep, $File::separator);
@@ -613,6 +614,7 @@ void Toolkit::newAWTError($Throwable* e, $String* s) {
 
 void Toolkit::fallbackToLoadClassForAT($String* atName) {
 	$init(Toolkit);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$Class* c = $Class::forName(atName, false, $($ClassLoader::getSystemClassLoader()));
@@ -634,6 +636,7 @@ void Toolkit::fallbackToLoadClassForAT($String* atName) {
 
 void Toolkit::loadAssistiveTechnologies() {
 	$init(Toolkit);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (Toolkit::atNames != nullptr && !$nc(Toolkit::atNames)->isBlank()) {
 		$var($ClassLoader, cl, $ClassLoader::getSystemClassLoader());
@@ -773,6 +776,7 @@ void Toolkit::loadLibraries() {
 
 void Toolkit::initStatic() {
 	$init(Toolkit);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$AWTAccessor::setToolkitAccessor($$new($Toolkit$3));
 	$AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($Toolkit$4)));
@@ -820,6 +824,7 @@ $DragGestureRecognizer* Toolkit::createDragGestureRecognizer($Class* abstractRec
 
 $Object* Toolkit::getDesktopProperty($String* propertyName) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if ($instanceOf($HeadlessToolkit, this)) {
 			return $of($nc($($nc(($cast($HeadlessToolkit, this)))->getUnderlyingToolkit()))->getDesktopProperty(propertyName));
 		}
@@ -845,6 +850,7 @@ $Object* Toolkit::getDesktopProperty($String* propertyName) {
 }
 
 void Toolkit::setDesktopProperty($String* name, Object$* newValue) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($HeadlessToolkit, this)) {
 		$nc($($nc(($cast($HeadlessToolkit, this)))->getUnderlyingToolkit()))->setDesktopProperty(name, newValue);
 		return;
@@ -899,6 +905,7 @@ $AWTEventListener* Toolkit::deProxyAWTEventListener($AWTEventListener* l) {
 }
 
 void Toolkit::addAWTEventListener($AWTEventListener* listener, int64_t eventMask) {
+	$useLocalCurrentObjectStackCache();
 	$var($AWTEventListener, localL, deProxyAWTEventListener(listener));
 	if (localL == nullptr) {
 		return;
@@ -931,6 +938,7 @@ void Toolkit::addAWTEventListener($AWTEventListener* listener, int64_t eventMask
 }
 
 void Toolkit::removeAWTEventListener($AWTEventListener* listener) {
+	$useLocalCurrentObjectStackCache();
 	$var($AWTEventListener, localL, deProxyAWTEventListener(listener));
 	if (listener == nullptr) {
 		return;
@@ -975,6 +983,7 @@ int32_t Toolkit::countAWTEventListeners(int64_t eventMask) {
 }
 
 $AWTEventListenerArray* Toolkit::getAWTEventListeners() {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, security, $System::getSecurityManager());
 	if (security != nullptr) {
 		$init($AWTPermissions);
@@ -994,6 +1003,7 @@ $AWTEventListenerArray* Toolkit::getAWTEventListeners() {
 }
 
 $AWTEventListenerArray* Toolkit::getAWTEventListeners(int64_t eventMask) {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, security, $System::getSecurityManager());
 	if (security != nullptr) {
 		$init($AWTPermissions);
@@ -1015,6 +1025,7 @@ $AWTEventListenerArray* Toolkit::getAWTEventListeners(int64_t eventMask) {
 }
 
 void Toolkit::notifyAWTEventListeners($AWTEvent* theEvent) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($HeadlessToolkit, this)) {
 		$nc($($nc(($cast($HeadlessToolkit, this)))->getUnderlyingToolkit()))->notifyAWTEventListeners(theEvent);
 		return;
@@ -1046,6 +1057,7 @@ bool Toolkit::lambda$loadAssistiveTechnologies$1($Map* providers, $String* n) {
 
 $Void* Toolkit::lambda$loadAssistiveTechnologies$0($ClassLoader* cl, $Set* names, $Map* providers) {
 	$init(Toolkit);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		{

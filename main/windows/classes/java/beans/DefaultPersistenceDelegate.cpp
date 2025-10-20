@@ -129,6 +129,7 @@ void DefaultPersistenceDelegate::init$($StringArray* constructorPropertyNames) {
 
 bool DefaultPersistenceDelegate::definesEquals($Class* type) {
 	$init(DefaultPersistenceDelegate);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$load($Object);
@@ -157,6 +158,7 @@ bool DefaultPersistenceDelegate::mutatesTo(Object$* oldInstance, Object$* newIns
 }
 
 $Expression* DefaultPersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	int32_t nArgs = $nc(this->constructor)->length;
 	$Class* type = $nc($of(oldInstance))->getClass();
 	$var($ObjectArray, constructorArgs, $new($ObjectArray, nArgs));
@@ -173,6 +175,7 @@ $Expression* DefaultPersistenceDelegate::instantiate(Object$* oldInstance, $Enco
 }
 
 $Method* DefaultPersistenceDelegate::findMethod($Class* type, $String* property) {
+	$useLocalCurrentObjectStackCache();
 	if (property == nullptr) {
 		$throwNew($IllegalArgumentException, "Property name is null"_s);
 	}
@@ -188,6 +191,7 @@ $Method* DefaultPersistenceDelegate::findMethod($Class* type, $String* property)
 }
 
 void DefaultPersistenceDelegate::doProperty($Class* type, $PropertyDescriptor* pd, Object$* oldInstance, Object$* newInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Method, getter, $nc(pd)->getReadMethod());
 	$var($Method, setter, pd->getWriteMethod());
@@ -224,6 +228,7 @@ void DefaultPersistenceDelegate::invokeStatement(Object$* instance, $String* met
 }
 
 void DefaultPersistenceDelegate::initBean($Class* type, Object$* oldInstance, Object$* newInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	{
 		$var($FieldArray, arr$, $nc(type)->getFields());
@@ -349,6 +354,7 @@ void DefaultPersistenceDelegate::initialize($Class* type, Object$* oldInstance, 
 
 $PropertyDescriptor* DefaultPersistenceDelegate::getPropertyDescriptor($Class* type, $String* property) {
 	$init(DefaultPersistenceDelegate);
+	$useLocalCurrentObjectStackCache();
 	try {
 		{
 			$var($PropertyDescriptorArray, arr$, $nc($($Introspector::getBeanInfo(type)))->getPropertyDescriptors());

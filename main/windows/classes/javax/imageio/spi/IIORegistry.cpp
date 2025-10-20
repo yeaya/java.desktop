@@ -143,6 +143,7 @@ void IIORegistry::init$() {
 
 IIORegistry* IIORegistry::getDefaultInstance() {
 	$init(IIORegistry);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, context, $AppContext::getAppContext());
 	$var(IIORegistry, registry, $cast(IIORegistry, $nc(context)->get(IIORegistry::class$)));
 	if (registry == nullptr) {
@@ -153,6 +154,7 @@ IIORegistry* IIORegistry::getDefaultInstance() {
 }
 
 void IIORegistry::registerStandardSpis() {
+	$useLocalCurrentObjectStackCache();
 	registerServiceProvider($$new($GIFImageReaderSpi));
 	registerServiceProvider($$new($GIFImageWriterSpi));
 	registerServiceProvider($$new($BMPImageReaderSpi));
@@ -175,6 +177,7 @@ void IIORegistry::registerStandardSpis() {
 }
 
 void IIORegistry::registerApplicationClasspathSpis() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($ClassLoader, loader, $($Thread::currentThread())->getContextClassLoader());
 	$var($Iterator, categories, getCategories());

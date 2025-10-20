@@ -83,6 +83,7 @@ void bug6263446$2::init$($PointArray* val$result) {
 }
 
 void bug6263446$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6263446);
 	$var($Rectangle, rect, $nc($bug6263446::tree)->getRowBounds(0));
 	$var($Point, p, $new($Point, $nc(rect)->x + rect->width / 2, rect->y + 2));

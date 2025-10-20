@@ -77,6 +77,7 @@ void DefaultEditorKit$EndParagraphAction::init$($String* nm, bool select) {
 }
 
 void DefaultEditorKit$EndParagraphAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getTextComponent(e));
 	if (target != nullptr) {
 		int32_t offs = target->getCaretPosition();

@@ -240,6 +240,7 @@ void DefaultButtonModel::setSelected(bool b) {
 }
 
 void DefaultButtonModel::setPressed(bool b) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = (isPressed() == b);
 	if (var$0 || !isEnabled()) {
 		return;

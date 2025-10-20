@@ -300,6 +300,7 @@ $AbstractRegionPainter$PaintContext* TabbedPaneTabPainter::getPaintContext() {
 }
 
 void TabbedPaneTabPainter::paintBackgroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint($(decodeGradient1(this->path)));
 	g->fill(this->path);
@@ -309,6 +310,7 @@ void TabbedPaneTabPainter::paintBackgroundEnabled($Graphics2D* g) {
 }
 
 void TabbedPaneTabPainter::paintBackgroundEnabledAndMouseOver($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint($(decodeGradient3(this->path)));
 	g->fill(this->path);
@@ -318,6 +320,7 @@ void TabbedPaneTabPainter::paintBackgroundEnabledAndMouseOver($Graphics2D* g) {
 }
 
 void TabbedPaneTabPainter::paintBackgroundEnabledAndPressed($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath3());
 	$nc(g)->setPaint($(decodeGradient5(this->path)));
 	g->fill(this->path);
@@ -327,6 +330,7 @@ void TabbedPaneTabPainter::paintBackgroundEnabledAndPressed($Graphics2D* g) {
 }
 
 void TabbedPaneTabPainter::paintBackgroundDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath5());
 	$nc(g)->setPaint($(decodeGradient7(this->path)));
 	g->fill(this->path);
@@ -336,6 +340,7 @@ void TabbedPaneTabPainter::paintBackgroundDisabled($Graphics2D* g) {
 }
 
 void TabbedPaneTabPainter::paintBackgroundSelectedAndDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath7());
 	$nc(g)->setPaint($(decodeGradient7(this->path)));
 	g->fill(this->path);
@@ -345,6 +350,7 @@ void TabbedPaneTabPainter::paintBackgroundSelectedAndDisabled($Graphics2D* g) {
 }
 
 void TabbedPaneTabPainter::paintBackgroundSelected($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath7());
 	$nc(g)->setPaint($(decodeGradient10(this->path)));
 	g->fill(this->path);
@@ -354,6 +360,7 @@ void TabbedPaneTabPainter::paintBackgroundSelected($Graphics2D* g) {
 }
 
 void TabbedPaneTabPainter::paintBackgroundSelectedAndMouseOver($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath8());
 	$nc(g)->setPaint($(decodeGradient11(this->path)));
 	g->fill(this->path);
@@ -363,6 +370,7 @@ void TabbedPaneTabPainter::paintBackgroundSelectedAndMouseOver($Graphics2D* g) {
 }
 
 void TabbedPaneTabPainter::paintBackgroundSelectedAndPressed($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath8());
 	$nc(g)->setPaint($(decodeGradient13(this->path)));
 	g->fill(this->path);
@@ -372,6 +380,7 @@ void TabbedPaneTabPainter::paintBackgroundSelectedAndPressed($Graphics2D* g) {
 }
 
 void TabbedPaneTabPainter::paintBackgroundSelectedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint($(decodeGradient10(this->path)));
 	g->fill(this->path);
@@ -384,6 +393,7 @@ void TabbedPaneTabPainter::paintBackgroundSelectedAndFocused($Graphics2D* g) {
 }
 
 void TabbedPaneTabPainter::paintBackgroundSelectedAndMouseOverAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath12());
 	$nc(g)->setPaint($(decodeGradient11(this->path)));
 	g->fill(this->path);
@@ -396,6 +406,7 @@ void TabbedPaneTabPainter::paintBackgroundSelectedAndMouseOverAndFocused($Graphi
 }
 
 void TabbedPaneTabPainter::paintBackgroundSelectedAndPressedAndFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath12());
 	$nc(g)->setPaint($(decodeGradient13(this->path)));
 	g->fill(this->path);
@@ -1000,6 +1011,7 @@ $Path2D* TabbedPaneTabPainter::decodePath14() {
 }
 
 $Paint* TabbedPaneTabPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1017,6 +1029,7 @@ $Paint* TabbedPaneTabPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* TabbedPaneTabPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1038,6 +1051,7 @@ $Paint* TabbedPaneTabPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* TabbedPaneTabPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1055,6 +1069,7 @@ $Paint* TabbedPaneTabPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* TabbedPaneTabPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1076,6 +1091,7 @@ $Paint* TabbedPaneTabPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* TabbedPaneTabPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1093,6 +1109,7 @@ $Paint* TabbedPaneTabPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* TabbedPaneTabPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1118,6 +1135,7 @@ $Paint* TabbedPaneTabPainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* TabbedPaneTabPainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1135,6 +1153,7 @@ $Paint* TabbedPaneTabPainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* TabbedPaneTabPainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1156,6 +1175,7 @@ $Paint* TabbedPaneTabPainter::decodeGradient8($Shape* s) {
 }
 
 $Paint* TabbedPaneTabPainter::decodeGradient9($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1185,6 +1205,7 @@ $Paint* TabbedPaneTabPainter::decodeGradient9($Shape* s) {
 }
 
 $Paint* TabbedPaneTabPainter::decodeGradient10($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1202,6 +1223,7 @@ $Paint* TabbedPaneTabPainter::decodeGradient10($Shape* s) {
 }
 
 $Paint* TabbedPaneTabPainter::decodeGradient11($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1219,6 +1241,7 @@ $Paint* TabbedPaneTabPainter::decodeGradient11($Shape* s) {
 }
 
 $Paint* TabbedPaneTabPainter::decodeGradient12($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1248,6 +1271,7 @@ $Paint* TabbedPaneTabPainter::decodeGradient12($Shape* s) {
 }
 
 $Paint* TabbedPaneTabPainter::decodeGradient13($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -1265,6 +1289,7 @@ $Paint* TabbedPaneTabPainter::decodeGradient13($Shape* s) {
 }
 
 $Paint* TabbedPaneTabPainter::decodeGradient14($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

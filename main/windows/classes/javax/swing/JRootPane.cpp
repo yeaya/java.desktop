@@ -289,6 +289,7 @@ bool JRootPane::LOG_DISABLE_TRUE_DOUBLE_BUFFERING = false;
 bool JRootPane::IGNORE_DISABLE_TRUE_DOUBLE_BUFFERING = false;
 
 void JRootPane::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JComponent::init$();
 	this->useTrueDoubleBuffering = true;
 	setGlassPane($(createGlassPane()));
@@ -336,12 +337,14 @@ $String* JRootPane::getUIClassID() {
 }
 
 $JLayeredPane* JRootPane::createLayeredPane() {
+	$useLocalCurrentObjectStackCache();
 	$var($JLayeredPane, p, $new($JLayeredPane));
 	p->setName($$str({$(this->getName()), ".layeredPane"_s}));
 	return p;
 }
 
 $Container* JRootPane::createContentPane() {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, c, $new($JPanel));
 	c->setName($$str({$(this->getName()), ".contentPane"_s}));
 	c->setLayout($$new($JRootPane$1, this));
@@ -349,6 +352,7 @@ $Container* JRootPane::createContentPane() {
 }
 
 $Component* JRootPane::createGlassPane() {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, c, $new($JPanel));
 	c->setName($$str({$(this->getName()), ".glassPane"_s}));
 	c->setVisible(false);
@@ -488,6 +492,7 @@ bool JRootPane::getUseTrueDoubleBuffering() {
 }
 
 void JRootPane::disableTrueDoubleBuffering() {
+	$useLocalCurrentObjectStackCache();
 	if (this->useTrueDoubleBuffering) {
 		if (!JRootPane::IGNORE_DISABLE_TRUE_DOUBLE_BUFFERING) {
 			if (JRootPane::LOG_DISABLE_TRUE_DOUBLE_BUFFERING) {
@@ -521,6 +526,7 @@ $AccessibleContext* JRootPane::getAccessibleContext() {
 }
 
 void clinit$JRootPane($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(JRootPane::uiClassID, "RootPaneUI"_s);
 	$beforeCallerSensitive();
 	{

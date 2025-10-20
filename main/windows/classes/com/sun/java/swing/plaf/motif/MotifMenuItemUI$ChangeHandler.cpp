@@ -79,6 +79,7 @@ void MotifMenuItemUI$ChangeHandler::init$($MotifMenuItemUI* this$0) {
 }
 
 void MotifMenuItemUI$ChangeHandler::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuItem, c, $cast($JMenuItem, $nc(e)->getSource()));
 	bool var$0 = $nc(c)->isArmed();
 	$LookAndFeel::installProperty(c, "borderPainted"_s, $($Boolean::valueOf(var$0 || $nc(c)->isSelected())));

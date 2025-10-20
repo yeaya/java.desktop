@@ -97,6 +97,7 @@ void TestPopupMenu$TestInternalFrameWPopup::init$($TestPopupMenu* this$0) {
 }
 
 void TestPopupMenu$TestInternalFrameWPopup::jbInit() {
+	$useLocalCurrentObjectStackCache();
 	setTitle("Test Internal Frame With Popup"_s);
 	setContentPane($(getContainerPanel()));
 	setMaximizable(true);
@@ -106,6 +107,7 @@ void TestPopupMenu$TestInternalFrameWPopup::jbInit() {
 }
 
 $JPanel* TestPopupMenu$TestInternalFrameWPopup::getContainerPanel() {
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, panel, $new($JPanel));
 	panel->setLayout($$new($GridBagLayout));
 	$set(this->this$0, label, $new($JLabel, "Test Label"_s));

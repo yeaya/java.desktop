@@ -74,6 +74,7 @@ void D3DContext::init$($RenderQueue* rq, $D3DGraphicsDevice* device) {
 
 void D3DContext::invalidateCurrentContext() {
 	$init(D3DContext);
+	$useLocalCurrentObjectStackCache();
 	$init($BufferedContext);
 	if ($BufferedContext::currentContext != nullptr) {
 		$nc($BufferedContext::currentContext)->invalidateContext();
@@ -87,6 +88,7 @@ void D3DContext::invalidateCurrentContext() {
 
 void D3DContext::setScratchSurface(D3DContext* d3dc) {
 	$init(D3DContext);
+	$useLocalCurrentObjectStackCache();
 	$init($BufferedContext);
 	if (!$equals(d3dc, $BufferedContext::currentContext)) {
 		$assignStatic($BufferedContext::currentContext, nullptr);

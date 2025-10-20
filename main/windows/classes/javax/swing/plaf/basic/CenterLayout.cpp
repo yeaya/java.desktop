@@ -85,6 +85,7 @@ void CenterLayout::removeLayoutComponent($Component* comp) {
 }
 
 $Dimension* CenterLayout::preferredLayoutSize($Container* container) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $nc(container)->getComponent(0));
 	if (c != nullptr) {
 		$var($Dimension, size, c->getPreferredSize());
@@ -100,6 +101,7 @@ $Dimension* CenterLayout::minimumLayoutSize($Container* cont) {
 }
 
 void CenterLayout::layoutContainer($Container* container) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(container)->getComponentCount() > 0) {
 		$var($Component, c, container->getComponent(0));
 		$var($Dimension, pref, $nc(c)->getPreferredSize());

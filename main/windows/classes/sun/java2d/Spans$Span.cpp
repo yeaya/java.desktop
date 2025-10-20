@@ -113,6 +113,7 @@ int32_t Spans$Span::compareTo(Spans$Span* otherSpan) {
 }
 
 $String* Spans$Span::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"Span: "_s, $$str(this->mStart), " to "_s, $$str(this->mEnd)});
 }
 

@@ -110,6 +110,7 @@ void HeadlessCellRendererPane::init$() {
 }
 
 void HeadlessCellRendererPane::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($CellRendererPane, crp, $new($CellRendererPane));
 	$var($Component, c1, crp->add(static_cast<$Component*>($$new($HeadlessCellRendererPane$1))));
 	$var($Component, c2, crp->add(static_cast<$Component*>($$new($HeadlessCellRendererPane$2))));

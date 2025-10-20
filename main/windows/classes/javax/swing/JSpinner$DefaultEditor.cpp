@@ -133,6 +133,7 @@ void JSpinner$DefaultEditor::finalize() {
 }
 
 void JSpinner$DefaultEditor::init$($JSpinner* spinner) {
+	$useLocalCurrentObjectStackCache();
 	$JPanel::init$(($LayoutManager*)nullptr);
 	$var($JFormattedTextField, ftf, $new($JFormattedTextField));
 	ftf->setName("Spinner.formattedTextField"_s);
@@ -175,11 +176,13 @@ $JFormattedTextField* JSpinner$DefaultEditor::getTextField() {
 }
 
 void JSpinner$DefaultEditor::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JSpinner, spinner, ($cast($JSpinner, $nc(e)->getSource())));
 	$nc($(getTextField()))->setValue($($nc(spinner)->getValue()));
 }
 
 void JSpinner$DefaultEditor::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JSpinner, spinner, getSpinner());
 	if (spinner == nullptr) {
 		return;
@@ -225,6 +228,7 @@ $Dimension* JSpinner$DefaultEditor::insetSize($Container* parent) {
 }
 
 $Dimension* JSpinner$DefaultEditor::preferredLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, preferredSize, insetSize(parent));
 	if ($nc(parent)->getComponentCount() > 0) {
 		$var($Dimension, childSize, $nc($(getComponent(0)))->getPreferredSize());
@@ -235,6 +239,7 @@ $Dimension* JSpinner$DefaultEditor::preferredLayoutSize($Container* parent) {
 }
 
 $Dimension* JSpinner$DefaultEditor::minimumLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, minimumSize, insetSize(parent));
 	if ($nc(parent)->getComponentCount() > 0) {
 		$var($Dimension, childSize, $nc($(getComponent(0)))->getMinimumSize());
@@ -245,6 +250,7 @@ $Dimension* JSpinner$DefaultEditor::minimumLayoutSize($Container* parent) {
 }
 
 void JSpinner$DefaultEditor::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(parent)->getComponentCount() > 0) {
 		$var($Insets, insets, parent->getInsets());
 		int32_t w = parent->getWidth() - ($nc(insets)->left + insets->right);
@@ -259,6 +265,7 @@ void JSpinner$DefaultEditor::commitEdit() {
 }
 
 int32_t JSpinner$DefaultEditor::getBaseline(int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$JPanel::getBaseline(width, height);
 	$var($Insets, insets, getInsets());
 	width = width - $nc(insets)->left - insets->right;

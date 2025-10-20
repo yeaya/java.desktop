@@ -78,6 +78,7 @@ void PageFormat::init$() {
 }
 
 $Object* PageFormat::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(PageFormat, newPage, nullptr);
 	try {
 		$assign(newPage, $cast(PageFormat, $Cloneable::clone()));

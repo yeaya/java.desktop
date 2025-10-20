@@ -99,6 +99,7 @@ void AudioInputStream$TargetDataLineInputStream::close() {
 }
 
 int32_t AudioInputStream$TargetDataLineInputStream::read() {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, b, $new($bytes, 1));
 	int32_t value = read(b, 0, 1);
 	if (value == -1) {
@@ -113,6 +114,7 @@ int32_t AudioInputStream$TargetDataLineInputStream::read() {
 }
 
 int32_t AudioInputStream$TargetDataLineInputStream::read($bytes* b, int32_t off, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc(this->line)->read(b, off, len);
 	} catch ($IllegalArgumentException&) {

@@ -183,6 +183,7 @@ float TableView$TableRow::getPreferredSpan(int32_t axis) {
 }
 
 void TableView$TableRow::layoutMajorAxis(int32_t targetSpan, int32_t axis, $ints* offsets, $ints* spans) {
+	$useLocalCurrentObjectStackCache();
 	int32_t col = 0;
 	int32_t ncells = getViewCount();
 	for (int32_t cell = 0; cell < ncells; ++cell, ++col) {
@@ -205,6 +206,7 @@ void TableView$TableRow::layoutMajorAxis(int32_t targetSpan, int32_t axis, $ints
 }
 
 void TableView$TableRow::layoutMinorAxis(int32_t targetSpan, int32_t axis, $ints* offsets, $ints* spans) {
+	$useLocalCurrentObjectStackCache();
 	$BoxView::layoutMinorAxis(targetSpan, axis, offsets, spans);
 	int32_t col = 0;
 	int32_t ncells = getViewCount();
@@ -234,6 +236,7 @@ int32_t TableView$TableRow::getResizeWeight(int32_t axis) {
 }
 
 $View* TableView$TableRow::getViewAtPosition(int32_t pos, $Rectangle* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = getViewCount();
 	for (int32_t i = 0; i < n; ++i) {
 		$var($View, v, getView(i));

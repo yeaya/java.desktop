@@ -86,6 +86,7 @@ void IconifyTest$1$1::init$($IconifyTest$1* this$0) {
 }
 
 void IconifyTest$1$1::windowIconified($WindowEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($IconifyTest);
 	$IconifyTest::windowIconifiedIsCalled = true;
 	$var($RepaintManager, rm, $RepaintManager::currentManager(($JComponent*)nullptr));

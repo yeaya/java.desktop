@@ -88,6 +88,7 @@ void SynthFileChooserUIImpl$ButtonAreaLayout::addLayoutComponent($String* string
 }
 
 void SynthFileChooserUIImpl$ButtonAreaLayout::layoutContainer($Container* container) {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentArray, children, $nc(container)->getComponents());
 	if (children != nullptr && children->length > 0) {
 		int32_t numChildren = children->length;
@@ -116,6 +117,7 @@ void SynthFileChooserUIImpl$ButtonAreaLayout::layoutContainer($Container* contai
 }
 
 $Dimension* SynthFileChooserUIImpl$ButtonAreaLayout::minimumLayoutSize($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	if (c != nullptr) {
 		$var($ComponentArray, children, c->getComponents());
 		if (children != nullptr && children->length > 0) {

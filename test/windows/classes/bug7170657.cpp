@@ -78,6 +78,7 @@ void bug7170657::init$() {
 }
 
 void bug7170657::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	int32_t mask = $InputEvent::META_DOWN_MASK | $InputEvent::CTRL_MASK;
 	$var($Frame, f, $new($Frame));
 	$var($MouseEvent, mwe, $new($MouseWheelEvent, f, 1, 1, mask, 1, 1, 1, 1, 1, true, 1, 1, 1));
@@ -106,6 +107,7 @@ void bug7170657::test($Frame* frame, $MouseEvent* me) {
 }
 
 void bug7170657::fail($MouseEvent* exp, $MouseEvent* act) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::err)->println($$str({"Expected: "_s, exp}));
 	$nc($System::err)->println($$str({"Actual: "_s, act}));

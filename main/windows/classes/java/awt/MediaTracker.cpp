@@ -153,6 +153,7 @@ bool MediaTracker::isErrorAny() {
 
 $ObjectArray* MediaTracker::getErrorsAny() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($MediaEntry, cur, this->head);
 		int32_t numerrors = 0;
 		while (cur != nullptr) {
@@ -260,6 +261,7 @@ bool MediaTracker::isErrorID(int32_t id) {
 
 $ObjectArray* MediaTracker::getErrorsID(int32_t id) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($MediaEntry, cur, this->head);
 		int32_t numerrors = 0;
 		while (cur != nullptr) {
@@ -344,6 +346,7 @@ void MediaTracker::removeImage($Image* image) {
 }
 
 void MediaTracker::removeImageImpl($Image* image) {
+	$useLocalCurrentObjectStackCache();
 	$var($MediaEntry, cur, this->head);
 	$var($MediaEntry, prev, nullptr);
 	while (cur != nullptr) {
@@ -374,6 +377,7 @@ void MediaTracker::removeImage($Image* image, int32_t id) {
 }
 
 void MediaTracker::removeImageImpl($Image* image, int32_t id) {
+	$useLocalCurrentObjectStackCache();
 	$var($MediaEntry, cur, this->head);
 	$var($MediaEntry, prev, nullptr);
 	while (cur != nullptr) {
@@ -405,6 +409,7 @@ void MediaTracker::removeImage($Image* image, int32_t id, int32_t width, int32_t
 }
 
 void MediaTracker::removeImageImpl($Image* image, int32_t id, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($MediaEntry, cur, this->head);
 	$var($MediaEntry, prev, nullptr);
 	while (cur != nullptr) {

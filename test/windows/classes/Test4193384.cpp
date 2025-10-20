@@ -49,6 +49,7 @@ void Test4193384::init$() {
 }
 
 void Test4193384::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	test($$new($ColorArray, {
 		$$new($Color, 11, 12, 13),
 		$$new($Color, 204, 0, 204),
@@ -57,6 +58,7 @@ void Test4193384::main($StringArray* args) {
 }
 
 void Test4193384::test($ColorArray* colors) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, label, $new($JLabel, "Preview Panel"_s));
 	$var($JColorChooser, chooser, $new($JColorChooser));
 	chooser->setPreviewPanel(label);

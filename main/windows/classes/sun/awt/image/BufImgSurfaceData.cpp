@@ -205,6 +205,7 @@ $SurfaceData* BufImgSurfaceData::createData($BufferedImage* bufImg) {
 
 $SurfaceData* BufImgSurfaceData::createData($BufferedImage* bufImg, double scaleX, double scaleY) {
 	$init(BufImgSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	if (bufImg == nullptr) {
 		$throwNew($NullPointerException, "BufferedImage cannot be null"_s);
 	}
@@ -426,6 +427,7 @@ $SurfaceData* BufImgSurfaceData::createData($Raster* ras, $ColorModel* cm) {
 
 $SurfaceData* BufImgSurfaceData::createDataIC($BufferedImage* bImg, $SurfaceType* sType, double scaleX, double scaleY) {
 	$init(BufImgSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	$var($IntegerComponentRaster, icRaster, $cast($IntegerComponentRaster, $nc(bImg)->getRaster()));
 	$var(BufImgSurfaceData, bisd, $new(BufImgSurfaceData, $($nc(icRaster)->getDataBuffer()), bImg, sType, scaleX, scaleY));
 	$var($Object, var$0, $of($nc(icRaster)->getDataStorage()));
@@ -439,6 +441,7 @@ $SurfaceData* BufImgSurfaceData::createDataIC($BufferedImage* bImg, $SurfaceType
 
 $SurfaceData* BufImgSurfaceData::createDataSC($BufferedImage* bImg, $SurfaceType* sType, $IndexColorModel* icm, double scaleX, double scaleY) {
 	$init(BufImgSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	$var($ShortComponentRaster, scRaster, $cast($ShortComponentRaster, $nc(bImg)->getRaster()));
 	$var(BufImgSurfaceData, bisd, $new(BufImgSurfaceData, $($nc(scRaster)->getDataBuffer()), bImg, sType, scaleX, scaleY));
 	$var($Object, var$0, $of($nc(scRaster)->getDataStorage()));
@@ -452,6 +455,7 @@ $SurfaceData* BufImgSurfaceData::createDataSC($BufferedImage* bImg, $SurfaceType
 
 $SurfaceData* BufImgSurfaceData::createDataBC($BufferedImage* bImg, $SurfaceType* sType, int32_t primaryBank, double scaleX, double scaleY) {
 	$init(BufImgSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	$var($ByteComponentRaster, bcRaster, $cast($ByteComponentRaster, $nc(bImg)->getRaster()));
 	$var(BufImgSurfaceData, bisd, $new(BufImgSurfaceData, $($nc(bcRaster)->getDataBuffer()), bImg, sType, scaleX, scaleY));
 	$var($ColorModel, cm, bImg->getColorModel());
@@ -467,6 +471,7 @@ $SurfaceData* BufImgSurfaceData::createDataBC($BufferedImage* bImg, $SurfaceType
 
 $SurfaceData* BufImgSurfaceData::createDataBP($BufferedImage* bImg, $SurfaceType* sType, double scaleX, double scaleY) {
 	$init(BufImgSurfaceData);
+	$useLocalCurrentObjectStackCache();
 	$var($BytePackedRaster, bpRaster, $cast($BytePackedRaster, $nc(bImg)->getRaster()));
 	$var(BufImgSurfaceData, bisd, $new(BufImgSurfaceData, $($nc(bpRaster)->getDataBuffer()), bImg, sType, scaleX, scaleY));
 	$var($ColorModel, cm, bImg->getColorModel());
@@ -498,6 +503,7 @@ void BufImgSurfaceData::initRaster(Object$* theArray, int32_t offset, int32_t bi
 }
 
 void BufImgSurfaceData::init$($DataBuffer* db, $BufferedImage* bufImg, $SurfaceType* sType, double scaleX, double scaleY) {
+	$useLocalCurrentObjectStackCache();
 	$var($StateTrackableDelegate, var$0, $SunWritableRaster::stealTrackable(db));
 	$var($SurfaceType, var$1, sType);
 	$SurfaceData::init$(var$0, var$1, $($nc(bufImg)->getColorModel()));
@@ -520,6 +526,7 @@ $RenderLoops* BufImgSurfaceData::getSolidLoops($SurfaceType* type) {
 	$load(BufImgSurfaceData);
 	$synchronized(class$) {
 		$init(BufImgSurfaceData);
+		$useLocalCurrentObjectStackCache();
 		for (int32_t i = BufImgSurfaceData::CACHE_SIZE - 1; i >= 0; --i) {
 			$var($SurfaceType, t, $nc(BufImgSurfaceData::typecache)->get(i));
 			if (t == type) {

@@ -95,6 +95,7 @@ $ComponentUI* WindowsToolBarSeparatorUI::createUI($JComponent* c) {
 }
 
 $Dimension* WindowsToolBarSeparatorUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, $nc(($cast($JToolBar$Separator, c)))->getSeparatorSize());
 	if (size != nullptr) {
 		$assign(size, size->getSize());
@@ -128,6 +129,7 @@ $Dimension* WindowsToolBarSeparatorUI::getMaximumSize($JComponent* c) {
 }
 
 void WindowsToolBarSeparatorUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	bool vertical = $nc(($cast($JSeparator, c)))->getOrientation() == $SwingConstants::VERTICAL;
 	$var($Dimension, size, $nc(c)->getSize());
 	$var($XPStyle, xp, $XPStyle::getXP());

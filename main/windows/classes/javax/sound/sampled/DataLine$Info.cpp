@@ -127,6 +127,7 @@ int32_t DataLine$Info::getMaxBufferSize() {
 }
 
 bool DataLine$Info::matches($Line$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	if (!($Line$Info::matches(info))) {
 		return false;
 	}
@@ -159,6 +160,7 @@ bool DataLine$Info::matches($Line$Info* info) {
 }
 
 $String* DataLine$Info::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, format, ""_s);
 	$var($AudioFormatArray, formats, getFormats());
 	if ($nc(formats)->length == 1 && formats->get(0) != nullptr) {

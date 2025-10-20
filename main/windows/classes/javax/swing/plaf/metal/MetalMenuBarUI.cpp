@@ -91,6 +91,7 @@ void MetalMenuBarUI::uninstallUI($JComponent* c) {
 }
 
 void MetalMenuBarUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	bool isOpaque = $nc(c)->isOpaque();
 	if (g == nullptr) {
 		$throwNew($NullPointerException, "Graphics must be non-null"_s);

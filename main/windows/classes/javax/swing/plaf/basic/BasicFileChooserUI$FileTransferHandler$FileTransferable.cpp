@@ -81,6 +81,7 @@ $DataFlavorArray* BasicFileChooserUI$FileTransferHandler$FileTransferable::getRi
 }
 
 $Object* BasicFileChooserUI$FileTransferHandler$FileTransferable::getRicherData($DataFlavor* flavor) {
+	$useLocalCurrentObjectStackCache();
 	$init($DataFlavor);
 	if ($nc($DataFlavor::javaFileListFlavor)->equals(flavor)) {
 		$var($ArrayList, files, $new($ArrayList));

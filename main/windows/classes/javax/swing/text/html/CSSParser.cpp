@@ -124,6 +124,7 @@ void CSSParser::init$() {
 }
 
 void CSSParser::parse($Reader* reader$renamed, $CSSParser$CSSParserCallback* callback$renamed, bool inRule) {
+	$useLocalCurrentObjectStackCache();
 	$var($Reader, reader, reader$renamed);
 	$var($CSSParser$CSSParserCallback, callback, callback$renamed);
 	$set(this, callback, callback);
@@ -266,6 +267,7 @@ void CSSParser::parseRuleSet() {
 }
 
 bool CSSParser::parseSelectors() {
+	$useLocalCurrentObjectStackCache();
 	int32_t nextToken = 0;
 	if (this->tokenBufferLength > 0) {
 		$nc(this->callback)->handleSelector($$new($String, this->tokenBuffer, 0, this->tokenBufferLength));
@@ -331,6 +333,7 @@ void CSSParser::parseDeclarationBlock() {
 }
 
 int32_t CSSParser::parseDeclaration() {
+	$useLocalCurrentObjectStackCache();
 	int32_t token = 0;
 	if ((token = parseIdentifiers(u':', false)) != CSSParser::IDENTIFIER) {
 		return token;
@@ -678,6 +681,7 @@ bool CSSParser::getIdentifier(char16_t stopChar) {
 }
 
 void CSSParser::readTill(char16_t stopChar) {
+	$useLocalCurrentObjectStackCache();
 	bool lastWasEscape = false;
 	int32_t escapeCount = 0;
 	int32_t escapeChar = 0;

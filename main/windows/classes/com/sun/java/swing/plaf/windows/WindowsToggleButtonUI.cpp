@@ -125,6 +125,7 @@ void WindowsToggleButtonUI::init$() {
 
 $ComponentUI* WindowsToggleButtonUI::createUI($JComponent* b) {
 	$init(WindowsToggleButtonUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(WindowsToggleButtonUI, windowsToggleButtonUI, $cast(WindowsToggleButtonUI, $nc(appContext)->get(WindowsToggleButtonUI::WINDOWS_TOGGLE_BUTTON_UI_KEY)));
 	if (windowsToggleButtonUI == nullptr) {
@@ -135,6 +136,7 @@ $ComponentUI* WindowsToggleButtonUI::createUI($JComponent* b) {
 }
 
 void WindowsToggleButtonUI::installDefaults($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$BasicToggleButtonUI::installDefaults(b);
 	if (!this->defaults_initialized) {
 		$var($String, pp, getPropertyPrefix());
@@ -164,6 +166,7 @@ $Color* WindowsToggleButtonUI::getFocusColor() {
 }
 
 void WindowsToggleButtonUI::paintButtonPressed($Graphics* g, $AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $XPStyle::getXP() == nullptr;
 	if (var$0 && $nc(b)->isContentAreaFilled()) {
 		$var($Color, oldColor, $nc(g)->getColor());
@@ -204,6 +207,7 @@ void WindowsToggleButtonUI::paintText($Graphics* g, $AbstractButton* b, $Rectang
 }
 
 void WindowsToggleButtonUI::paintFocus($Graphics* g, $AbstractButton* b, $Rectangle* viewRect, $Rectangle* textRect, $Rectangle* iconRect) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor($(getFocusColor()));
 	$var($Graphics, var$0, g);
 	int32_t var$1 = this->dashedRectGapX;
@@ -213,6 +217,7 @@ void WindowsToggleButtonUI::paintFocus($Graphics* g, $AbstractButton* b, $Rectan
 }
 
 $Dimension* WindowsToggleButtonUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, $BasicToggleButtonUI::getPreferredSize(c));
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	if (d != nullptr && $nc(b)->isFocusPainted()) {

@@ -84,6 +84,7 @@ void Test6933784$1::init$() {
 }
 
 void Test6933784$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($HTMLEditorKit, c, $new($HTMLEditorKit));
 	$var($HTMLDocument, doc, $new($HTMLDocument));
 	try {

@@ -130,6 +130,7 @@ int32_t ContainerOrderFocusTraversalPolicy::getComponentIndex($List* cycle, $Com
 }
 
 void ContainerOrderFocusTraversalPolicy::enumerateCycle($Container* container, $List* cycle) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(container)->isVisible();
 	if (!(var$0 && container->isDisplayable())) {
 		return;
@@ -151,6 +152,7 @@ void ContainerOrderFocusTraversalPolicy::enumerateCycle($Container* container, $
 }
 
 $Container* ContainerOrderFocusTraversalPolicy::getTopmostProvider($Container* focusCycleRoot, $Component* aComponent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, aCont, $nc(aComponent)->getParent());
 	$var($Container, ftp, nullptr);
 	while (aCont != focusCycleRoot && aCont != nullptr) {
@@ -166,6 +168,7 @@ $Container* ContainerOrderFocusTraversalPolicy::getTopmostProvider($Container* f
 }
 
 $Component* ContainerOrderFocusTraversalPolicy::getComponentDownCycle($Component* comp, int32_t traversalDirection) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, retComp, nullptr);
 	if ($instanceOf($Container, comp)) {
 		$var($Container, cont, $cast($Container, comp));
@@ -191,6 +194,7 @@ $Component* ContainerOrderFocusTraversalPolicy::getComponentDownCycle($Component
 }
 
 $Component* ContainerOrderFocusTraversalPolicy::getComponentAfter($Container* aContainer, $Component* aComponent$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, aComponent, aComponent$renamed);
 	$init($PlatformLogger$Level);
 	if ($nc(ContainerOrderFocusTraversalPolicy::log)->isLoggable($PlatformLogger$Level::FINE)) {
@@ -264,6 +268,7 @@ $Component* ContainerOrderFocusTraversalPolicy::getComponentAfter($Container* aC
 }
 
 $Component* ContainerOrderFocusTraversalPolicy::getComponentBefore($Container* aContainer, $Component* aComponent$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, aComponent, aComponent$renamed);
 	if (aContainer == nullptr || aComponent == nullptr) {
 		$throwNew($IllegalArgumentException, "aContainer and aComponent cannot be null"_s);
@@ -336,6 +341,7 @@ $Component* ContainerOrderFocusTraversalPolicy::getComponentBefore($Container* a
 }
 
 $Component* ContainerOrderFocusTraversalPolicy::getFirstComponent($Container* aContainer) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, cycle, nullptr);
 	$init($PlatformLogger$Level);
 	if ($nc(ContainerOrderFocusTraversalPolicy::log)->isLoggable($PlatformLogger$Level::FINE)) {
@@ -381,6 +387,7 @@ $Component* ContainerOrderFocusTraversalPolicy::getFirstComponent($Container* aC
 }
 
 $Component* ContainerOrderFocusTraversalPolicy::getLastComponent($Container* aContainer) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, cycle, nullptr);
 	$init($PlatformLogger$Level);
 	if ($nc(ContainerOrderFocusTraversalPolicy::log)->isLoggable($PlatformLogger$Level::FINE)) {

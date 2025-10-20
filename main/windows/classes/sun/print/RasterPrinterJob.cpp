@@ -519,6 +519,7 @@ void RasterPrinterJob::saveState($AffineTransform* at, $Shape* clip, $Rectangle2
 
 $PrintService* RasterPrinterJob::lookupDefaultPrintService() {
 	$init(RasterPrinterJob);
+	$useLocalCurrentObjectStackCache();
 	$var($PrintService, service, $PrintServiceLookup::lookupDefaultPrintService());
 	$init($DocFlavor$SERVICE_FORMATTED);
 	bool var$0 = service != nullptr && service->isDocFlavorSupported($DocFlavor$SERVICE_FORMATTED::PAGEABLE);
@@ -534,6 +535,7 @@ $PrintService* RasterPrinterJob::lookupDefaultPrintService() {
 }
 
 $PrintService* RasterPrinterJob::getPrintService() {
+	$useLocalCurrentObjectStackCache();
 	if (this->myService == nullptr) {
 		$var($PrintService, svc, $PrintServiceLookup::lookupDefaultPrintService());
 		$init($DocFlavor$SERVICE_FORMATTED);
@@ -561,6 +563,7 @@ $PrintService* RasterPrinterJob::getPrintService() {
 }
 
 void RasterPrinterJob::setPrintService($PrintService* service) {
+	$useLocalCurrentObjectStackCache();
 	if (service == nullptr) {
 		$throwNew($PrinterException, "Service cannot be null"_s);
 	} else if (!($instanceOf($StreamPrintService, service)) && $nc(service)->getName() == nullptr) {
@@ -588,6 +591,7 @@ void RasterPrinterJob::setPrintService($PrintService* service) {
 }
 
 $PageFormat* RasterPrinterJob::attributeToPageFormat($PrintService* service, $PrintRequestAttributeSet* attSet) {
+	$useLocalCurrentObjectStackCache();
 	$var($PageFormat, page, defaultPage());
 	if (service == nullptr) {
 		return page;
@@ -634,6 +638,7 @@ $PageFormat* RasterPrinterJob::attributeToPageFormat($PrintService* service, $Pr
 }
 
 $MediaSize* RasterPrinterJob::getMediaSize($Media* media$renamed, $PrintService* service, $PageFormat* page) {
+	$useLocalCurrentObjectStackCache();
 	$var($Media, media, media$renamed);
 	if (media == nullptr) {
 		$load($Media);
@@ -678,6 +683,7 @@ void RasterPrinterJob::updatePageAttributes($PrintService* service, $PageFormat*
 }
 
 void RasterPrinterJob::updateAttributesWithPageFormat($PrintService* service, $PageFormat* page, $PrintRequestAttributeSet* pageAttributes) {
+	$useLocalCurrentObjectStackCache();
 	if (service == nullptr || page == nullptr || pageAttributes == nullptr) {
 		return;
 	}
@@ -748,6 +754,7 @@ void RasterPrinterJob::updateAttributesWithPageFormat($PrintService* service, $P
 }
 
 $PageFormat* RasterPrinterJob::pageDialog($PageFormat* page) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if ($GraphicsEnvironment::isHeadless()) {
 		$throwNew($HeadlessException);
@@ -777,6 +784,7 @@ $PageFormat* RasterPrinterJob::pageDialog($PageFormat* page) {
 }
 
 $PageFormat* RasterPrinterJob::pageDialog($PrintRequestAttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if ($GraphicsEnvironment::isHeadless()) {
 		$throwNew($HeadlessException);
@@ -866,6 +874,7 @@ $PageFormat* RasterPrinterJob::pageDialog($PrintRequestAttributeSet* attributes)
 }
 
 $PageFormat* RasterPrinterJob::getPageFormatFromAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($Pageable, pageable, nullptr);
 	bool var$0 = this->attributes == nullptr || $nc(this->attributes)->isEmpty();
 	if (var$0 || !($instanceOf($OpenBook, $assign(pageable, getPageable())))) {
@@ -903,6 +912,7 @@ $PageFormat* RasterPrinterJob::getPageFormatFromAttributes() {
 }
 
 bool RasterPrinterJob::printDialog($PrintRequestAttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if ($GraphicsEnvironment::isHeadless()) {
 		$throwNew($HeadlessException);
@@ -992,6 +1002,7 @@ bool RasterPrinterJob::printDialog($PrintRequestAttributeSet* attributes) {
 }
 
 bool RasterPrinterJob::printDialog() {
+	$useLocalCurrentObjectStackCache();
 	if ($GraphicsEnvironment::isHeadless()) {
 		$throwNew($HeadlessException);
 	}
@@ -1039,10 +1050,12 @@ bool RasterPrinterJob::printDialog() {
 }
 
 void RasterPrinterJob::setPrintable($Printable* painter) {
+	$useLocalCurrentObjectStackCache();
 	setPageable($$new($OpenBook, $(defaultPage($$new($PageFormat))), painter));
 }
 
 void RasterPrinterJob::setPrintable($Printable* painter, $PageFormat* format) {
+	$useLocalCurrentObjectStackCache();
 	setPageable($$new($OpenBook, format, painter));
 	updatePageAttributes($(getPrintService()), format);
 }
@@ -1069,6 +1082,7 @@ void RasterPrinterJob::setXYRes(double x, double y) {
 }
 
 void RasterPrinterJob::setAttributes($PrintRequestAttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	setCollated(false);
 	$set(this, sidesAttr, nullptr);
 	$set(this, printerResAttr, nullptr);
@@ -1243,6 +1257,7 @@ void RasterPrinterJob::setAttributes($PrintRequestAttributeSet* attributes) {
 }
 
 void RasterPrinterJob::spoolToService($PrintService* psvc, $PrintRequestAttributeSet* attributes$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($PrintRequestAttributeSet, attributes, attributes$renamed);
 	if (psvc == nullptr) {
 		$throwNew($PrinterException, "No print service found."_s);
@@ -1274,6 +1289,7 @@ void RasterPrinterJob::debug_println($String* str) {
 }
 
 void RasterPrinterJob::print($PrintRequestAttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($PrintService, psvc, getPrintService());
 	debug_println($$str({"psvc = "_s, psvc}));
 	if (psvc == nullptr) {
@@ -1392,6 +1408,7 @@ void RasterPrinterJob::print($PrintRequestAttributeSet* attributes) {
 }
 
 void RasterPrinterJob::validateDestination($String* dest) {
+	$useLocalCurrentObjectStackCache();
 	if (dest == nullptr) {
 		return;
 	}
@@ -1468,6 +1485,7 @@ void RasterPrinterJob::validatePaper($Paper* origPaper, $Paper* newPaper) {
 }
 
 $PageFormat* RasterPrinterJob::defaultPage($PageFormat* page) {
+	$useLocalCurrentObjectStackCache();
 	$var($PageFormat, newPage, $cast($PageFormat, $nc(page)->clone()));
 	$nc(newPage)->setOrientation($PageFormat::PORTRAIT);
 	$var($Paper, newPaper, $new($Paper));
@@ -1504,6 +1522,7 @@ $PageFormat* RasterPrinterJob::defaultPage($PageFormat* page) {
 }
 
 $PageFormat* RasterPrinterJob::validatePage($PageFormat* page) {
+	$useLocalCurrentObjectStackCache();
 	$var($PageFormat, newPage, $cast($PageFormat, $nc(page)->clone()));
 	$var($Paper, newPaper, $new($Paper));
 	validatePaper($($nc(newPage)->getPaper()), newPaper);
@@ -1608,6 +1627,7 @@ int32_t RasterPrinterJob::getSelectAttrib() {
 }
 
 int32_t RasterPrinterJob::getFromPageAttrib() {
+	$useLocalCurrentObjectStackCache();
 	if (this->attributes != nullptr) {
 		$load($PageRanges);
 		$var($PageRanges, pageRangesAttr, $cast($PageRanges, $nc(this->attributes)->get($PageRanges::class$)));
@@ -1620,6 +1640,7 @@ int32_t RasterPrinterJob::getFromPageAttrib() {
 }
 
 int32_t RasterPrinterJob::getToPageAttrib() {
+	$useLocalCurrentObjectStackCache();
 	if (this->attributes != nullptr) {
 		$load($PageRanges);
 		$var($PageRanges, pageRangesAttr, $cast($PageRanges, $nc(this->attributes)->get($PageRanges::class$)));
@@ -1643,6 +1664,7 @@ int32_t RasterPrinterJob::getMinPageAttrib() {
 }
 
 int32_t RasterPrinterJob::getMaxPageAttrib() {
+	$useLocalCurrentObjectStackCache();
 	if (this->attributes != nullptr) {
 		$load($SunMinMaxPage);
 		$var($SunMinMaxPage, s, $cast($SunMinMaxPage, $nc(this->attributes)->get($SunMinMaxPage::class$)));
@@ -1696,6 +1718,7 @@ void RasterPrinterJob::setGraphicsConfigInfo($AffineTransform* at, double pw, do
 
 $PrinterGraphicsConfig* RasterPrinterJob::getPrinterGraphicsConfig() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->pgConfig != nullptr) {
 			return this->pgConfig;
 		}
@@ -1710,6 +1733,7 @@ $PrinterGraphicsConfig* RasterPrinterJob::getPrinterGraphicsConfig() {
 }
 
 int32_t RasterPrinterJob::printPage($Pageable* document, int32_t pageIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($PageFormat, page, nullptr);
 	$var($PageFormat, origPage, nullptr);
 	$var($Printable, painter, nullptr);
@@ -1926,6 +1950,7 @@ void RasterPrinterJob::throwPrintToFile() {
 }
 
 $String* RasterPrinterJob::removeControlChars($String* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($chars, in_chars, $nc(s)->toCharArray());
 	int32_t len = in_chars->length;
 	$var($chars, out_chars, $new($chars, len));
@@ -1962,6 +1987,7 @@ void RasterPrinterJob::setParentWindowID($PrintRequestAttributeSet* attrs) {
 }
 
 void clinit$RasterPrinterJob($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	RasterPrinterJob::DPI = 72.0f;
 	$assignStatic(RasterPrinterJob::FORCE_PIPE_PROP, "sun.java2d.print.pipeline"_s);
 	$assignStatic(RasterPrinterJob::FORCE_RASTER, "raster"_s);

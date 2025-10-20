@@ -169,6 +169,7 @@ void MetalToolBarUI::unregister($JComponent* c) {
 	$load(MetalToolBarUI);
 	$synchronized(class$) {
 		$init(MetalToolBarUI);
+		$useLocalCurrentObjectStackCache();
 		for (int32_t counter = $nc(MetalToolBarUI::components)->size() - 1; counter >= 0; --counter) {
 			$var($JComponent, target, $cast($JComponent, $nc(($cast($WeakReference, $($nc(MetalToolBarUI::components)->get(counter)))))->get()));
 			if (target == c || target == nullptr) {
@@ -182,6 +183,7 @@ $Object* MetalToolBarUI::findRegisteredComponentOfType($JComponent* from, $Class
 	$load(MetalToolBarUI);
 	$synchronized(class$) {
 		$init(MetalToolBarUI);
+		$useLocalCurrentObjectStackCache();
 		$var($JRootPane, rp, $SwingUtilities::getRootPane(from));
 		if (rp != nullptr) {
 			for (int32_t counter = $nc(MetalToolBarUI::components)->size() - 1; counter >= 0; --counter) {
@@ -202,6 +204,7 @@ $Object* MetalToolBarUI::findRegisteredComponentOfType($JComponent* from, $Class
 
 bool MetalToolBarUI::doesMenuBarBorderToolBar($JMenuBar* c) {
 	$init(MetalToolBarUI);
+	$useLocalCurrentObjectStackCache();
 	$load($JToolBar);
 	$var($JToolBar, tb, $cast($JToolBar, MetalToolBarUI::findRegisteredComponentOfType(c, $JToolBar::class$)));
 	if (tb != nullptr && tb->getOrientation() == $JToolBar::HORIZONTAL) {
@@ -274,6 +277,7 @@ $Border* MetalToolBarUI::createNonRolloverToggleBorder() {
 }
 
 void MetalToolBarUI::setBorderToNonRollover($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JToggleButton, c) && !($instanceOf($JCheckBox, c))) {
 		$var($JToggleButton, b, $cast($JToggleButton, c));
 		$var($Border, border, $nc(b)->getBorder());
@@ -311,6 +315,7 @@ void MetalToolBarUI::setDragOffset($Point* p) {
 }
 
 void MetalToolBarUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if (g == nullptr) {
 		$throwNew($NullPointerException, "graphics must be non-null"_s);
 	}

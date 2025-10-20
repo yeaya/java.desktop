@@ -231,6 +231,7 @@ void MotifInternalFrameTitlePane::init$($JInternalFrame* frame) {
 }
 
 void MotifInternalFrameTitlePane::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	setFont($($UIManager::getFont("InternalFrame.titleFont"_s)));
 	setPreferredSize($$new($Dimension, 100, MotifInternalFrameTitlePane::BUTTON_SIZE));
 }
@@ -252,6 +253,7 @@ $JPopupMenu* MotifInternalFrameTitlePane::getSystemMenu() {
 }
 
 void MotifInternalFrameTitlePane::assembleSystemMenu() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, systemMenu, $new($JPopupMenu));
 	$var($JMenuItem, mi, $nc(this->systemMenu)->add(this->restoreAction));
 	$nc(mi)->setMnemonic(getButtonMnemonic("restore"_s));
@@ -273,6 +275,7 @@ void MotifInternalFrameTitlePane::assembleSystemMenu() {
 
 int32_t MotifInternalFrameTitlePane::getButtonMnemonic($String* button) {
 	$init(MotifInternalFrameTitlePane);
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $Integer::parseInt($($UIManager::getString($$str({"InternalFrameTitlePane."_s, button, "Button.mnemonic"_s}))));
 	} catch ($NumberFormatException&) {
@@ -290,6 +293,7 @@ void MotifInternalFrameTitlePane::createButtons() {
 }
 
 void MotifInternalFrameTitlePane::addSubComponents() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, title, $new($MotifInternalFrameTitlePane$Title, this, $($nc(this->frame)->getTitle())));
 	$nc(this->title)->setFont($(getFont()));
 	add(static_cast<$Component*>(this->systemButton));
@@ -311,6 +315,7 @@ void MotifInternalFrameTitlePane::actionPerformed($ActionEvent* e) {
 }
 
 void MotifInternalFrameTitlePane::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prop, $nc(evt)->getPropertyName());
 	$var($JInternalFrame, f, $cast($JInternalFrame, evt->getSource()));
 	bool value = false;
@@ -358,6 +363,7 @@ $Dimension* MotifInternalFrameTitlePane::minimumLayoutSize($Container* c) {
 }
 
 void MotifInternalFrameTitlePane::layoutContainer($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	int32_t w = getWidth();
 	$nc(this->systemButton)->setBounds(0, 0, MotifInternalFrameTitlePane::BUTTON_SIZE, MotifInternalFrameTitlePane::BUTTON_SIZE);
 	int32_t x = w - MotifInternalFrameTitlePane::BUTTON_SIZE;

@@ -47,6 +47,7 @@ void basic_zh_CN::init$() {
 }
 
 $ObjectArray2* basic_zh_CN::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("AbstractButton.click.textAndMnemonic"_s),

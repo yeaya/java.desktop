@@ -62,6 +62,7 @@ void WInputMethodDescriptor::init$() {
 }
 
 $LocaleArray* WInputMethodDescriptor::getAvailableLocales() {
+	$useLocalCurrentObjectStackCache();
 	$var($LocaleArray, locales, getAvailableLocalesInternal());
 	$var($LocaleArray, tmp, $new($LocaleArray, $nc(locales)->length));
 	$System::arraycopy(locales, 0, tmp, 0, locales->length);
@@ -79,6 +80,7 @@ bool WInputMethodDescriptor::hasDynamicLocaleList() {
 
 $String* WInputMethodDescriptor::getInputMethodDisplayName($Locale* inputLocale, $Locale* displayLanguage) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($String, name, "System Input Methods"_s);
 		if ($nc($($Locale::getDefault()))->equals(displayLanguage)) {
 			$assign(name, $Toolkit::getProperty("AWT.HostInputMethodDisplayName"_s, name));

@@ -120,6 +120,7 @@ void MetalBorders$OptionDialogBorder::init$() {
 }
 
 void MetalBorders$OptionDialogBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->translate(x, y);
 	int32_t messageType = $JOptionPane::PLAIN_MESSAGE;
 	if ($instanceOf($JInternalFrame, c)) {

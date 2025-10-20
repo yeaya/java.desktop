@@ -92,6 +92,7 @@ void InputMap::put($KeyStroke* keyStroke, Object$* actionMapKey) {
 }
 
 $Object* InputMap::get($KeyStroke* keyStroke) {
+	$useLocalCurrentObjectStackCache();
 	if (this->arrayTable == nullptr) {
 		$var(InputMap, parent, getParent());
 		if (parent != nullptr) {
@@ -138,6 +139,7 @@ int32_t InputMap::size() {
 }
 
 $KeyStrokeArray* InputMap::allKeys() {
+	$useLocalCurrentObjectStackCache();
 	int32_t count = size();
 	$var(InputMap, parent, getParent());
 	if (count == 0) {
@@ -175,6 +177,7 @@ void InputMap::writeObject($ObjectOutputStream* s) {
 }
 
 void InputMap::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	for (int32_t counter = s->readInt() - 1; counter >= 0; --counter) {
 		$var($KeyStroke, var$0, $cast($KeyStroke, s->readObject()));

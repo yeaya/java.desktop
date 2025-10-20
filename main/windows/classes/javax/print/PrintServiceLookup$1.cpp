@@ -76,6 +76,7 @@ void PrintServiceLookup$1::init$() {
 }
 
 $Object* PrintServiceLookup$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$load($PrintServiceLookup);
 	$var($Iterator, iterator, $nc($($ServiceLoader::load($PrintServiceLookup::class$)))->iterator());

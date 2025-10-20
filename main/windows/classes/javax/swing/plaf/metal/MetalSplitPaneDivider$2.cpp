@@ -99,6 +99,7 @@ $Object* allocate$MetalSplitPaneDivider$2($Class* clazz) {
 }
 
 void MetalSplitPaneDivider$2::init$($MetalSplitPaneDivider* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JButton::init$();
 	$set(this, buffer, $new($intArray2, {
@@ -159,6 +160,7 @@ void MetalSplitPaneDivider$2::setBorder($Border* border) {
 }
 
 void MetalSplitPaneDivider$2::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($JSplitPane, splitPane, this->this$0->getSplitPaneFromSuper());
 	if (splitPane != nullptr) {
 		int32_t oneTouchSize = this->this$0->getOneTouchSizeFromSuper();

@@ -106,6 +106,7 @@ void WindowsRadioButtonUI::init$() {
 
 $ComponentUI* WindowsRadioButtonUI::createUI($JComponent* c) {
 	$init(WindowsRadioButtonUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(WindowsRadioButtonUI, windowsRadioButtonUI, $cast(WindowsRadioButtonUI, $nc(appContext)->get(WindowsRadioButtonUI::WINDOWS_RADIO_BUTTON_UI_KEY)));
 	if (windowsRadioButtonUI == nullptr) {
@@ -116,6 +117,7 @@ $ComponentUI* WindowsRadioButtonUI::createUI($JComponent* c) {
 }
 
 void WindowsRadioButtonUI::installDefaults($AbstractButton* b) {
+	$useLocalCurrentObjectStackCache();
 	$BasicRadioButtonUI::installDefaults(b);
 	if (!this->initialized) {
 		this->dashedRectGapX = $nc(($cast($Integer, $($UIManager::get("Button.dashedRectGapX"_s)))))->intValue();
@@ -150,6 +152,7 @@ void WindowsRadioButtonUI::paintFocus($Graphics* g, $Rectangle* textRect, $Dimen
 }
 
 $Dimension* WindowsRadioButtonUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, $BasicRadioButtonUI::getPreferredSize(c));
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	if (d != nullptr && $nc(b)->isFocusPainted()) {

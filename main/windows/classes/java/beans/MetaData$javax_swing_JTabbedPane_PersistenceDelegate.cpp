@@ -65,6 +65,7 @@ void MetaData$javax_swing_JTabbedPane_PersistenceDelegate::init$() {
 }
 
 void MetaData$javax_swing_JTabbedPane_PersistenceDelegate::initialize($Class* type, Object$* oldInstance, Object$* newInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultPersistenceDelegate::initialize(type, oldInstance, newInstance, out);
 	$var($JTabbedPane, p, $cast($JTabbedPane, oldInstance));
 	for (int32_t i = 0; i < $nc(p)->getTabCount(); ++i) {

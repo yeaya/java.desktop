@@ -91,6 +91,7 @@ bool StyleSheet$LargeConversionSet::isDefined(Object$* key) {
 }
 
 $Object* StyleSheet$LargeConversionSet::getAttribute(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($StyleConstants, key)) {
 		$var($Object, cssKey, $nc(this->this$0->css)->styleConstantsKeyToCSSKey($cast($StyleConstants, key)));
 		if (cssKey != nullptr) {

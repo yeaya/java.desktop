@@ -178,6 +178,7 @@ void BasicInternalFrameUI$Handler::windowLostFocus($WindowEvent* e) {
 }
 
 void BasicInternalFrameUI$Handler::componentResized($ComponentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, parentNewBounds, $nc(($cast($Component, $($nc(e)->getSource()))))->getBounds());
 	$var($JInternalFrame$JDesktopIcon, icon, nullptr);
 	if (this->this$0->frame != nullptr) {
@@ -246,6 +247,7 @@ void BasicInternalFrameUI$Handler::removeLayoutComponent($Component* c) {
 }
 
 $Dimension* BasicInternalFrameUI$Handler::preferredLayoutSize($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, result, nullptr);
 	$var($Insets, i, $nc(this->this$0->frame)->getInsets());
 	$assign(result, $new($Dimension, $($nc($($nc(this->this$0->frame)->getRootPane()))->getPreferredSize())));
@@ -275,6 +277,7 @@ $Dimension* BasicInternalFrameUI$Handler::preferredLayoutSize($Container* c) {
 }
 
 $Dimension* BasicInternalFrameUI$Handler::minimumLayoutSize($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, result, $new($Dimension));
 	bool var$0 = this->this$0->getNorthPane() != nullptr;
 	if (var$0 && $instanceOf($BasicInternalFrameTitlePane, $(this->this$0->getNorthPane()))) {
@@ -287,6 +290,7 @@ $Dimension* BasicInternalFrameUI$Handler::minimumLayoutSize($Container* c) {
 }
 
 void BasicInternalFrameUI$Handler::layoutContainer($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, i, $nc(this->this$0->frame)->getInsets());
 	int32_t cx = 0;
 	int32_t cy = 0;
@@ -351,6 +355,7 @@ void BasicInternalFrameUI$Handler::mouseDragged($MouseEvent* e) {
 }
 
 void BasicInternalFrameUI$Handler::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prop, $nc(evt)->getPropertyName());
 	$var($JInternalFrame, f, $cast($JInternalFrame, evt->getSource()));
 	$var($Object, newValue, evt->getNewValue());

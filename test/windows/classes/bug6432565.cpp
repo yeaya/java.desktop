@@ -80,6 +80,7 @@ void bug6432565::init$() {
 
 void bug6432565::main($StringArray* args) {
 	$init(bug6432565);
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc($($Toolkit::getDefaultToolkit()))->getSystemEventQueue()))->push($$new($bug6432565$EventProcessor));
 	$var($SwingWorker, swingWorker, $new($bug6432565$1));
 	swingWorker->execute();

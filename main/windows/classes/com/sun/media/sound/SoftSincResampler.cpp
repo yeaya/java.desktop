@@ -64,6 +64,7 @@ $Object* allocate$SoftSincResampler($Class* clazz) {
 }
 
 void SoftSincResampler::init$() {
+	$useLocalCurrentObjectStackCache();
 	$SoftAbstractResampler::init$();
 	this->sinc_scale_size = 100;
 	this->sinc_table_fsize = 800;
@@ -109,6 +110,7 @@ int32_t SoftSincResampler::getPadding() {
 }
 
 void SoftSincResampler::interpolate($floats* in, $floats* in_offset, float in_end, $floats* startpitch, float pitchstep, $floats* out, $ints* out_offset, int32_t out_end) {
+	$useLocalCurrentObjectStackCache();
 	float pitch = $nc(startpitch)->get(0);
 	float ix = $nc(in_offset)->get(0);
 	int32_t ox = $nc(out_offset)->get(0);

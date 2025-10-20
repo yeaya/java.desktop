@@ -59,6 +59,7 @@ void CustomComponent::init$() {
 }
 
 void CustomComponent::register$() {
+	$useLocalCurrentObjectStackCache();
 	$load(CustomComponent);
 	$Class* owner = CustomComponent::class$;
 		$init($Blit);
@@ -73,6 +74,7 @@ void CustomComponent::register$() {
 }
 
 $Region* CustomComponent::getRegionOfInterest($SurfaceData* src, $SurfaceData* dst, $Region* clip, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($Region, ret, $Region::getInstanceXYWH(dstx, dsty, w, h));
 	$assign(ret, $nc(ret)->getIntersection($($nc(dst)->getBounds())));
 	$var($Rectangle, r, $nc(src)->getBounds());

@@ -161,6 +161,7 @@ void ImageCache::init$() {
 }
 
 void ImageCache::flush() {
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc(this->lock)->writeLock()))->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -178,6 +179,7 @@ void ImageCache::flush() {
 }
 
 $Image* ImageCache::getImage($ImageCache$PixelsKey* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageCache$ImageSoftReference, ref, nullptr);
 	$nc($($nc(this->lock)->readLock()))->lock();
 	{
@@ -197,6 +199,7 @@ $Image* ImageCache::getImage($ImageCache$PixelsKey* key) {
 }
 
 void ImageCache::setImage($ImageCache$PixelsKey* key, $Image* image) {
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc(this->lock)->writeLock()))->lock();
 	{
 		$var($Throwable, var$0, nullptr);

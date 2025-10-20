@@ -92,6 +92,7 @@ void StyledEditorKit$FontFamilyAction::init$($String* nm, $String* family) {
 }
 
 void StyledEditorKit$FontFamilyAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, editor, getEditor(e));
 	if (editor != nullptr) {
 		$var($String, family, this->family);

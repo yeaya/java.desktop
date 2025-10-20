@@ -112,6 +112,7 @@ void bug7030332::main($StringArray* args) {
 }
 
 void bug7030332::init() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$SwingUtilities::invokeAndWait($$new($bug7030332$2, this));
 	} catch ($Exception&) {
@@ -122,6 +123,7 @@ void bug7030332::init() {
 
 $Container* bug7030332::createContentPane() {
 	$init(bug7030332);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($JPanel, result, $new($JPanel, static_cast<$LayoutManager*>($$new($GridLayout, $nc(bug7030332::HTML_SAMPLES)->length + 1, 3, 10, 10))));
 	result->add(static_cast<$Component*>($$new($JLabel, "Html code"_s)));

@@ -73,6 +73,7 @@ void Win32ShellFolder2$10::init$($Win32ShellFolder2* this$0, $String* val$filePa
 }
 
 $Object* Win32ShellFolder2$10::call() {
+	$useLocalCurrentObjectStackCache();
 	int64_t pIShellFolder = this->this$0->getIShellFolder();
 	int64_t pEnumObjects = this->this$0->getEnumObjects(true);
 	$var($Win32ShellFolder2, child, nullptr);

@@ -168,6 +168,7 @@ void StrikeMetrics::convertToUserSpace($AffineTransform* invTx) {
 }
 
 $String* StrikeMetrics::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"ascent:x="_s, $$str(this->ascentX), " y="_s, $$str(this->ascentY), " descent:x="_s, $$str(this->descentX), " y="_s, $$str(this->descentY), " baseline:x="_s, $$str(this->baselineX), " y="_s, $$str(this->baselineY), " leading:x="_s, $$str(this->leadingX), " y="_s, $$str(this->leadingY), 
 	" maxAdvance:x="_s, $$str(this->maxAdvanceX), " y="_s, $$str(this->maxAdvanceY)});
 }

@@ -147,6 +147,7 @@ void AudioFloatConverter::init$() {
 }
 
 AudioFloatConverter* AudioFloatConverter::getConverter($AudioFormat* format) {
+	$useLocalCurrentObjectStackCache();
 	$var(AudioFloatConverter, conv, nullptr);
 	if ($nc(format)->getFrameSize() == 0) {
 		return nullptr;

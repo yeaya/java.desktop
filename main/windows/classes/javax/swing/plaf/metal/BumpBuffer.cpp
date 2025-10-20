@@ -124,6 +124,7 @@ void BumpBuffer::fillBumpBuffer() {
 }
 
 void BumpBuffer::createImage() {
+	$useLocalCurrentObjectStackCache();
 	if (this->gc != nullptr) {
 		$init($MetalBumps);
 		$set(this, image, $nc(this->gc)->createCompatibleImage(BumpBuffer::IMAGE_SIZE, BumpBuffer::IMAGE_SIZE, (this->backColor != $MetalBumps::ALPHA) ? $Transparency::OPAQUE : $Transparency::BITMASK));

@@ -137,6 +137,7 @@ $ComponentUI* SynthPopupMenuUI::createUI($JComponent* x) {
 }
 
 void SynthPopupMenuUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(this->popupMenu)->getLayout() == nullptr;
 	if (var$0 || $instanceOf($UIResource, $($nc(this->popupMenu)->getLayout()))) {
 		$nc(this->popupMenu)->setLayout($$new($SynthMenuLayout, this->popupMenu, $BoxLayout::Y_AXIS));
@@ -145,6 +146,7 @@ void SynthPopupMenuUI::installDefaults() {
 }
 
 void SynthPopupMenuUI::updateStyle($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -162,6 +164,7 @@ void SynthPopupMenuUI::installListeners() {
 }
 
 void SynthPopupMenuUI::uninstallDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(this->popupMenu, $SynthConstants::ENABLED));
 	$nc(this->style)->uninstallDefaults(context);
 	$set(this, style, nullptr);
@@ -188,6 +191,7 @@ int32_t SynthPopupMenuUI::getComponentState($JComponent* c) {
 }
 
 void SynthPopupMenuUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);

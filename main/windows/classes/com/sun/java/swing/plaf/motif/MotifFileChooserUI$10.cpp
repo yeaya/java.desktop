@@ -93,6 +93,7 @@ void MotifFileChooserUI$10::init$($MotifFileChooserUI* this$0) {
 }
 
 void MotifFileChooserUI$10::mouseClicked($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, chooser, this->this$0->getFileChooser());
 	bool var$0 = $SwingUtilities::isLeftMouseButton(e);
 	if (var$0 && !$nc(chooser)->isMultiSelectionEnabled()) {

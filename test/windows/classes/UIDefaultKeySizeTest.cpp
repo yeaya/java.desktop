@@ -194,6 +194,7 @@ void UIDefaultKeySizeTest::init$() {
 }
 
 void UIDefaultKeySizeTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($UIManager$LookAndFeelInfoArray, installedLookAndFeels, nullptr);
 	$assign(installedLookAndFeels, $UIManager::getInstalledLookAndFeels());
 	{
@@ -248,6 +249,7 @@ bool UIDefaultKeySizeTest::keySizeTest() {
 }
 
 void UIDefaultKeySizeTest::lambda$keySizeTest$2() {
+	$useLocalCurrentObjectStackCache();
 	$init(UIDefaultKeySizeTest);
 	$assignStatic(UIDefaultKeySizeTest::e, $nc($($UIManager::getDefaults()))->keys());
 	$assignStatic(UIDefaultKeySizeTest::itr, $nc($($nc($($UIManager::getDefaults()))->keySet()))->iterator());

@@ -134,6 +134,7 @@ void PeekMetrics::drawImage($Graphics2D* g, $RenderableImage* image) {
 }
 
 void PeekMetrics::checkDrawingMode($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	checkPaint($($nc(g)->getPaint()));
 	checkAlpha($($nc(g)->getComposite()));
 }

@@ -123,6 +123,7 @@ void RepaintManager$PaintManager::init$() {
 }
 
 bool RepaintManager$PaintManager::paint($JComponent* paintingComponent, $JComponent* bufferComponent, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	bool paintCompleted = false;
 	$var($Image, offscreen, nullptr);
 	int32_t sw = w + 1;
@@ -174,6 +175,7 @@ void RepaintManager$PaintManager::paintDoubleBuffered($JComponent* c, $Image* im
 }
 
 void RepaintManager$PaintManager::paintDoubleBufferedImpl($JComponent* c, $Image* image, $Graphics* g, int32_t clipX, int32_t clipY, int32_t clipW, int32_t clipH) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, osg, $nc(image)->getGraphics());
 	int32_t bw = $Math::min(clipW, image->getWidth(nullptr));
 	int32_t bh = $Math::min(clipH, image->getHeight(nullptr));
@@ -223,6 +225,7 @@ void RepaintManager$PaintManager::paintDoubleBufferedImpl($JComponent* c, $Image
 }
 
 void RepaintManager$PaintManager::paintDoubleBufferedFPScales($JComponent* c, $Image* image, $Graphics* g, int32_t clipX, int32_t clipY, int32_t clipW, int32_t clipH) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, osg, $nc(image)->getGraphics());
 	$var($Graphics2D, g2d, $cast($Graphics2D, g));
 	$var($Graphics2D, osg2d, $cast($Graphics2D, osg));
@@ -318,6 +321,7 @@ void RepaintManager$PaintManager::dispose() {
 }
 
 bool RepaintManager$PaintManager::isPixelsCopying($JComponent* c, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, tx, getTransform(g));
 	$var($GraphicsConfiguration, gc, $nc(c)->getGraphicsConfiguration());
 	if (tx == nullptr || gc == nullptr || !$SwingUtilities2::isFloatingPointScale(tx)) {

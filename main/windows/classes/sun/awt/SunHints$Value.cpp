@@ -79,6 +79,7 @@ void SunHints$Value::register$($SunHints$Key* key, SunHints$Value* value) {
 	$load(SunHints$Value);
 	$synchronized(class$) {
 		$init(SunHints$Value);
+		$useLocalCurrentObjectStackCache();
 		int32_t kindex = $nc(key)->getIndex();
 		int32_t vindex = $nc(value)->getIndex();
 		if ($nc($nc(SunHints$Value::ValueObjects)->get(kindex))->get(vindex) != nullptr) {

@@ -223,6 +223,7 @@ void PNGImageDecoder::pngassert(bool b) {
 }
 
 bool PNGImageDecoder::handleChunk(int32_t key, $bytes* buf, int32_t st, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Color, c, nullptr)
 		int32_t klen = 0;
@@ -484,6 +485,7 @@ case$11:
 }
 
 void PNGImageDecoder::produceImage() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -1001,6 +1003,7 @@ int32_t PNGImageDecoder::getByte(int32_t pos) {
 }
 
 bool PNGImageDecoder::getChunk() {
+	$useLocalCurrentObjectStackCache();
 	this->chunkLength = 0;
 	if (!need(8)) {
 		return false;
@@ -1065,6 +1068,7 @@ void PNGImageDecoder::wrk(int32_t n) {
 }
 
 void PNGImageDecoder::print() {
+	$useLocalCurrentObjectStackCache();
 	wrk(this->chunkKey);
 	$init($System);
 	$nc($System::out)->print($$str({" "_s, $$str(this->chunkLength), "\n"_s}));

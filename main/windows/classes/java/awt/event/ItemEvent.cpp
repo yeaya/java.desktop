@@ -82,6 +82,7 @@ int32_t ItemEvent::getStateChange() {
 }
 
 $String* ItemEvent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, typeStr, nullptr);
 	switch (this->id) {
 	case ItemEvent::ITEM_STATE_CHANGED:

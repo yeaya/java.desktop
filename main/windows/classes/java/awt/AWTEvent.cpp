@@ -292,6 +292,7 @@ void AWTEvent::init$(Object$* source, int32_t id) {
 }
 
 void AWTEvent::setSource(Object$* newSource) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals(this->source, newSource)) {
 		return;
 	}
@@ -324,6 +325,7 @@ int32_t AWTEvent::getID() {
 }
 
 $String* AWTEvent::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, srcName, nullptr);
 	if ($instanceOf($Component, this->source)) {
 		$assign(srcName, $nc(($cast($Component, this->source)))->getName());
@@ -377,6 +379,7 @@ bool AWTEvent::isConsumed() {
 }
 
 $Event* AWTEvent::convertToOld() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, src, getSource());
 	int32_t newid = this->id;
 	{

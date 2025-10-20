@@ -87,6 +87,7 @@ $Object* allocate$SoftMixingMainMixer$1($Class* clazz) {
 }
 
 void SoftMixingMainMixer$1::init$($SoftMixingMainMixer* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$InputStream::init$();
 	$set(this, buffers, this->this$0->buffers);

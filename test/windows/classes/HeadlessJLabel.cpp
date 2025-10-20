@@ -112,6 +112,7 @@ void HeadlessJLabel::init$() {
 }
 
 void HeadlessJLabel::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, l, $new($JLabel, "<html><body><bold>Foo</bold></body></html>"_s));
 	l->getAccessibleContext();
 	l->isFocusTraversable();

@@ -367,6 +367,7 @@ bool CSS$Attribute::isInherited() {
 }
 
 void clinit$CSS$Attribute($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(CSS$Attribute::BACKGROUND, $new(CSS$Attribute, "background"_s, nullptr, false));
 	$assignStatic(CSS$Attribute::BACKGROUND_ATTACHMENT, $new(CSS$Attribute, "background-attachment"_s, "scroll"_s, false));
 	$assignStatic(CSS$Attribute::BACKGROUND_COLOR, $new(CSS$Attribute, "background-color"_s, "transparent"_s, false));

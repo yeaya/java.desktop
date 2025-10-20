@@ -295,6 +295,7 @@ $BeanContext* BeanContextSupport::getBeanContextPeer() {
 }
 
 $Object* BeanContextSupport::instantiateChild($String* beanName) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($BeanContext, bc, getBeanContextPeer());
 	return $of($Beans::instantiate($($nc($of(bc))->getClass()->getClassLoader()), beanName, bc));
@@ -325,6 +326,7 @@ bool BeanContextSupport::containsKey(Object$* o) {
 }
 
 $Iterator* BeanContextSupport::iterator() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->children) {
 		return $new($BeanContextSupport$BCSIterator, $($nc($($nc(this->children)->keySet()))->iterator()));
 	}
@@ -347,6 +349,7 @@ $BeanContextSupport$BCSChild* BeanContextSupport::createBCSChild(Object$* target
 }
 
 bool BeanContextSupport::add(Object$* targetChild) {
+	$useLocalCurrentObjectStackCache();
 	if (targetChild == nullptr) {
 		$throwNew($IllegalArgumentException);
 	}
@@ -436,6 +439,7 @@ bool BeanContextSupport::remove(Object$* targetChild) {
 }
 
 bool BeanContextSupport::remove(Object$* targetChild, bool callChildSetBC) {
+	$useLocalCurrentObjectStackCache();
 	if (targetChild == nullptr) {
 		$throwNew($IllegalArgumentException);
 	}
@@ -495,6 +499,7 @@ bool BeanContextSupport::remove(Object$* targetChild, bool callChildSetBC) {
 }
 
 bool BeanContextSupport::containsAll($Collection* c) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->children) {
 		{
 			$var($Iterator, i$, $nc(c)->iterator());
@@ -588,6 +593,7 @@ $URL* BeanContextSupport::getResource($String* name, $BeanContextChild* bcc) {
 
 void BeanContextSupport::setDesignTime(bool dTime) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->designTime != dTime) {
 			this->designTime = dTime;
 			$var($String, var$0, "designMode"_s);
@@ -622,6 +628,7 @@ $Locale* BeanContextSupport::getLocale() {
 
 bool BeanContextSupport::needsGui() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($BeanContext, bc, getBeanContextPeer());
 		if (!$equals(bc, this)) {
 			if ($instanceOf($Visibility, bc)) {
@@ -653,6 +660,7 @@ bool BeanContextSupport::needsGui() {
 
 void BeanContextSupport::dontUseGui() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->okToUseGui$) {
 			this->okToUseGui$ = false;
 			$synchronized(this->children) {
@@ -672,6 +680,7 @@ void BeanContextSupport::dontUseGui() {
 
 void BeanContextSupport::okToUseGui() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (!this->okToUseGui$) {
 			this->okToUseGui$ = true;
 			$synchronized(this->children) {
@@ -716,6 +725,7 @@ void BeanContextSupport::childDeserializedHook(Object$* child, $BeanContextSuppo
 }
 
 void BeanContextSupport::serialize($ObjectOutputStream* oos, $Collection* coll) {
+	$useLocalCurrentObjectStackCache();
 	int32_t count = 0;
 	$var($ObjectArray, objects, $nc(coll)->toArray());
 	for (int32_t i = 0; i < $nc(objects)->length; ++i) {
@@ -736,6 +746,7 @@ void BeanContextSupport::serialize($ObjectOutputStream* oos, $Collection* coll) 
 }
 
 void BeanContextSupport::deserialize($ObjectInputStream* ois, $Collection* coll) {
+	$useLocalCurrentObjectStackCache();
 	int32_t count = 0;
 	count = $nc(ois)->readInt();
 	while (count-- > 0) {
@@ -744,6 +755,7 @@ void BeanContextSupport::deserialize($ObjectInputStream* ois, $Collection* coll)
 }
 
 void BeanContextSupport::writeChildren($ObjectOutputStream* oos) {
+	$useLocalCurrentObjectStackCache();
 	if (this->serializable <= 0) {
 		return;
 	}
@@ -775,6 +787,7 @@ void BeanContextSupport::writeChildren($ObjectOutputStream* oos) {
 
 void BeanContextSupport::writeObject($ObjectOutputStream* oos) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		this->serializing = true;
 		$init($BeanContext);
 		$synchronized($BeanContext::globalHierarchyLock) {
@@ -801,6 +814,7 @@ void BeanContextSupport::writeObject($ObjectOutputStream* oos) {
 }
 
 void BeanContextSupport::readChildren($ObjectInputStream* ois) {
+	$useLocalCurrentObjectStackCache();
 	int32_t count = this->serializable;
 	while (count-- > 0) {
 		$var($Object, child, $nc(ois)->readObject());
@@ -843,6 +857,7 @@ void BeanContextSupport::readObject($ObjectInputStream* ois) {
 }
 
 void BeanContextSupport::vetoableChange($PropertyChangeEvent* pce) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propertyName, $nc(pce)->getPropertyName());
 	$var($Object, source, pce->getSource());
 	$synchronized(this->children) {
@@ -859,6 +874,7 @@ void BeanContextSupport::vetoableChange($PropertyChangeEvent* pce) {
 }
 
 void BeanContextSupport::propertyChange($PropertyChangeEvent* pce) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propertyName, $nc(pce)->getPropertyName());
 	$var($Object, source, pce->getSource());
 	$synchronized(this->children) {
@@ -947,6 +963,7 @@ $BeanContextMembershipListener* BeanContextSupport::getChildBeanContextMembershi
 
 $BeanContextChild* BeanContextSupport::getChildBeanContextChild(Object$* child) {
 	$init(BeanContextSupport);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($BeanContextChild, bcc, $cast($BeanContextChild, child));
 		if ($instanceOf($BeanContextChild, child) && $instanceOf($BeanContextProxy, child)) {
@@ -1003,6 +1020,7 @@ $ObjectArray* BeanContextSupport::copyChildren() {
 
 bool BeanContextSupport::classEquals($Class* first, $Class* second) {
 	$init(BeanContextSupport);
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc($of(first))->equals(second);
 	return var$0 || $nc($($nc(first)->getName()))->equals($($nc(second)->getName()));
 }

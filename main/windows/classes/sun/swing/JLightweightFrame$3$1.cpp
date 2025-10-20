@@ -81,6 +81,7 @@ void JLightweightFrame$3$1::init$($JLightweightFrame$3* this$1, $Rectangle* val$
 }
 
 void JLightweightFrame$3$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, c, $nc($($nc($nc(this->this$1->this$0)->contentPane)->getBounds()))->intersection(this->val$clip));
 	$nc(this->this$1->this$0)->notifyImageUpdated($nc(c)->x, c->y, c->width, c->height);
 }

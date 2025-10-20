@@ -205,6 +205,7 @@ void InternalFramePainter::paintBackgroundEnabled($Graphics2D* g) {
 }
 
 void InternalFramePainter::paintBackgroundEnabledAndWindowFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect2());
 	$nc(g)->setPaint(this->color8);
 	g->fill(this->roundRect);
@@ -609,6 +610,7 @@ $Rectangle2D* InternalFramePainter::decodeRect4() {
 }
 
 $Paint* InternalFramePainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -626,6 +628,7 @@ $Paint* InternalFramePainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* InternalFramePainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -643,6 +646,7 @@ $Paint* InternalFramePainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* InternalFramePainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

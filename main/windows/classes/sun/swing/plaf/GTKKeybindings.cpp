@@ -47,6 +47,7 @@ void GTKKeybindings::init$() {
 }
 
 void GTKKeybindings::installKeybindings($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 		$init($DefaultEditorKit);
 		$init($JTextField);
 	$var($Object, fieldInputMap, $new($UIDefaults$LazyInputMap, $$new($ObjectArray, {

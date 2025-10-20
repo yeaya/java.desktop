@@ -133,6 +133,7 @@ void TIFFFaxDecompressor::init$() {
 }
 
 void TIFFFaxDecompressor::beginDecoding() {
+	$useLocalCurrentObjectStackCache();
 	$TIFFDecompressor::beginDecoding();
 	if ($instanceOf($TIFFImageMetadata, this->metadata)) {
 		$var($TIFFImageMetadata, tmetadata, $cast($TIFFImageMetadata, this->metadata));
@@ -160,6 +161,7 @@ void TIFFFaxDecompressor::beginDecoding() {
 }
 
 void TIFFFaxDecompressor::decodeRaw($bytes* b, int32_t dstOffset, int32_t pixelBitStride, int32_t scanlineStride) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, buffer, b);
 	this->w = this->srcWidth;
 	this->h = this->srcHeight;
@@ -196,6 +198,7 @@ void TIFFFaxDecompressor::decodeRLE() {
 }
 
 void TIFFFaxDecompressor::decodeNextScanline(int32_t lineIndex) {
+	$useLocalCurrentObjectStackCache();
 	int32_t bits = 0;
 	int32_t code = 0;
 	int32_t isT = 0;
@@ -309,6 +312,7 @@ void TIFFFaxDecompressor::decodeNextScanline(int32_t lineIndex) {
 }
 
 void TIFFFaxDecompressor::decodeT4() {
+	$useLocalCurrentObjectStackCache();
 	int32_t height = this->h;
 	int32_t a0 = 0;
 	int32_t a1 = 0;
@@ -436,6 +440,7 @@ void TIFFFaxDecompressor::decodeT4() {
 
 void TIFFFaxDecompressor::decodeT6() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		int32_t height = this->h;
 		int32_t bufferOffset = 0;
 		int32_t a0 = 0;

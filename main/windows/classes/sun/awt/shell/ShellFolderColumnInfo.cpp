@@ -83,6 +83,7 @@ void ShellFolderColumnInfo::init$($String* title, $Integer* width, $Integer* ali
 }
 
 void ShellFolderColumnInfo::init$($String* title, int32_t width, int32_t alignment, bool visible) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, title);
 	$var($Integer, var$1, $Integer::valueOf(width));
 	ShellFolderColumnInfo::init$(var$0, var$1, $($Integer::valueOf(alignment)), visible, nullptr, nullptr);

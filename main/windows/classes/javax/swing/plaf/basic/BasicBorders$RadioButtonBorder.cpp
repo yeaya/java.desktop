@@ -74,6 +74,7 @@ void BasicBorders$RadioButtonBorder::init$($Color* shadow, $Color* darkShadow, $
 }
 
 void BasicBorders$RadioButtonBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($AbstractButton, c)) {
 		$var($AbstractButton, b, $cast($AbstractButton, c));
 		$var($ButtonModel, model, $nc(b)->getModel());

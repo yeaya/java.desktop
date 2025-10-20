@@ -66,6 +66,7 @@ void IntegerSyntax::init$(int32_t value) {
 }
 
 void IntegerSyntax::init$(int32_t value, int32_t lowerBound, int32_t upperBound) {
+	$useLocalCurrentObjectStackCache();
 	if (lowerBound > value || value > upperBound) {
 		$throwNew($IllegalArgumentException, $$str({"Value "_s, $$str(value), " not in range "_s, $$str(lowerBound), ".."_s, $$str(upperBound)}));
 	}

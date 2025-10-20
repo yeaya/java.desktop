@@ -71,6 +71,7 @@ void MetaData$ProxyPersistenceDelegate::init$() {
 }
 
 $Expression* MetaData$ProxyPersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$Class* type = $nc($of(oldInstance))->getClass();
 	$var($Proxy, p, $cast($Proxy, oldInstance));

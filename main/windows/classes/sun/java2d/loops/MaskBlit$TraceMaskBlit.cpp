@@ -72,6 +72,7 @@ $Object* allocate$MaskBlit$TraceMaskBlit($Class* clazz) {
 }
 
 void MaskBlit$TraceMaskBlit::init$($MaskBlit* target) {
+	$useLocalCurrentObjectStackCache();
 	int64_t var$0 = $nc(target)->getNativePrim();
 	$var($SurfaceType, var$1, target->getSourceType());
 	$var($CompositeType, var$2, target->getCompositeType());

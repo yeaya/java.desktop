@@ -127,6 +127,7 @@ void VetoableChangeSupport::init$(Object$* sourceBean) {
 }
 
 void VetoableChangeSupport::addVetoableChangeListener($VetoableChangeListener* listener) {
+	$useLocalCurrentObjectStackCache();
 	if (listener == nullptr) {
 		return;
 	}
@@ -140,6 +141,7 @@ void VetoableChangeSupport::addVetoableChangeListener($VetoableChangeListener* l
 }
 
 void VetoableChangeSupport::removeVetoableChangeListener($VetoableChangeListener* listener) {
+	$useLocalCurrentObjectStackCache();
 	if (listener == nullptr) {
 		return;
 	}
@@ -189,6 +191,7 @@ void VetoableChangeSupport::fireVetoableChange($String* propertyName, Object$* o
 }
 
 void VetoableChangeSupport::fireVetoableChange($String* propertyName, int32_t oldValue, int32_t newValue) {
+	$useLocalCurrentObjectStackCache();
 	if (oldValue != newValue) {
 		$var($String, var$0, propertyName);
 		$var($Object, var$1, $of($Integer::valueOf(oldValue)));
@@ -197,6 +200,7 @@ void VetoableChangeSupport::fireVetoableChange($String* propertyName, int32_t ol
 }
 
 void VetoableChangeSupport::fireVetoableChange($String* propertyName, bool oldValue, bool newValue) {
+	$useLocalCurrentObjectStackCache();
 	if (oldValue != newValue) {
 		$var($String, var$0, propertyName);
 		$var($Object, var$1, $of($Boolean::valueOf(oldValue)));
@@ -205,6 +209,7 @@ void VetoableChangeSupport::fireVetoableChange($String* propertyName, bool oldVa
 }
 
 void VetoableChangeSupport::fireVetoableChange($PropertyChangeEvent* event$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($PropertyChangeEvent, event, event$renamed);
 	$var($Object, oldValue, $nc(event)->getOldValue());
 	$var($Object, newValue, event->getNewValue());
@@ -250,6 +255,7 @@ bool VetoableChangeSupport::hasListeners($String* propertyName) {
 }
 
 void VetoableChangeSupport::writeObject($ObjectOutputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Hashtable, children, nullptr);
 	$var($VetoableChangeListenerArray, listeners, nullptr);
 	$synchronized(this->map) {
@@ -297,6 +303,7 @@ void VetoableChangeSupport::writeObject($ObjectOutputStream* s) {
 }
 
 void VetoableChangeSupport::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, map, $new($VetoableChangeSupport$VetoableChangeListenerMap));
 	$var($ObjectInputStream$GetField, fields, $nc(s)->readFields());
 	$var($Hashtable, children, $cast($Hashtable, $nc(fields)->get("children"_s, ($Object*)nullptr)));
@@ -330,6 +337,7 @@ void VetoableChangeSupport::readObject($ObjectInputStream* s) {
 }
 
 void clinit$VetoableChangeSupport($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 		$load($Hashtable);
 		$load($Object);
 		$init($Integer);

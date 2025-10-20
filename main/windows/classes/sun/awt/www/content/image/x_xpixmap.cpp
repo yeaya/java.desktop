@@ -61,6 +61,7 @@ $Object* x_xpixmap::getContent($URLConnection* urlc) {
 }
 
 $Object* x_xpixmap::getContent($URLConnection* urlc, $ClassArray* classes) {
+	$useLocalCurrentObjectStackCache();
 	$var($ClassArray, cls, classes);
 	for (int32_t i = 0; i < $nc(cls)->length; ++i) {
 		$load($URLImageSource);

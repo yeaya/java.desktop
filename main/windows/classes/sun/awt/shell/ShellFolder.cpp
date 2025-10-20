@@ -238,6 +238,7 @@ $FileArray* ShellFolder::listFiles() {
 }
 
 $FileArray* ShellFolder::listFiles(bool includeHiddenFiles) {
+	$useLocalCurrentObjectStackCache();
 	$var($FileArray, files, $File::listFiles());
 	if (!includeHiddenFiles) {
 		$var($Vector, v, $new($Vector));
@@ -253,6 +254,7 @@ $FileArray* ShellFolder::listFiles(bool includeHiddenFiles) {
 }
 
 int32_t ShellFolder::compareTo($File* file2) {
+	$useLocalCurrentObjectStackCache();
 	if (file2 == nullptr || !($instanceOf(ShellFolder, file2)) || (($instanceOf(ShellFolder, file2)) && $nc(($cast(ShellFolder, file2)))->isFileSystem())) {
 		if (isFileSystem()) {
 			return $File::compareTo(file2);
@@ -276,6 +278,7 @@ $Image* ShellFolder::getIcon(int32_t width, int32_t height) {
 
 ShellFolder* ShellFolder::getShellFolder($File* file) {
 	$init(ShellFolder);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf(ShellFolder, file)) {
 		return $cast(ShellFolder, file);
 	}
@@ -303,6 +306,7 @@ bool ShellFolder::isFileSystemRoot($File* dir) {
 
 $File* ShellFolder::getNormalizedFile($File* f) {
 	$init(ShellFolder);
+	$useLocalCurrentObjectStackCache();
 	$var($File, canonical, $nc(f)->getCanonicalFile());
 	if (f->equals(canonical)) {
 		return canonical;
@@ -402,6 +406,7 @@ $String* ShellFolder::toString() {
 
 $ShellFolderColumnInfoArray* ShellFolder::getFolderColumns($File* dir) {
 	$init(ShellFolder);
+	$useLocalCurrentObjectStackCache();
 	$var($ShellFolderColumnInfoArray, columns, nullptr);
 	if ($instanceOf(ShellFolder, dir)) {
 		$assign(columns, $nc(($cast(ShellFolder, dir)))->getFolderColumns());
@@ -482,6 +487,7 @@ $Object* ShellFolder::invoke($Callable* task) {
 
 $Object* ShellFolder::invoke($Callable* task, $Class* exceptionClass) {
 	$init(ShellFolder);
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $of($nc(ShellFolder::invoker)->invoke(task));
 	} catch ($Exception&) {
@@ -506,6 +512,7 @@ int32_t ShellFolder::compareTo(Object$* file2) {
 }
 
 void clinit$ShellFolder($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(ShellFolder::COLUMN_NAME, "FileChooser.fileNameHeaderText"_s);
 	$assignStatic(ShellFolder::COLUMN_SIZE, "FileChooser.fileSizeHeaderText"_s);
 	$assignStatic(ShellFolder::COLUMN_DATE, "FileChooser.fileDateHeaderText"_s);

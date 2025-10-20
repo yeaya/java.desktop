@@ -180,6 +180,7 @@ void DragGestureEvent::writeObject($ObjectOutputStream* s) {
 }
 
 void DragGestureEvent::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	$var($DragSource, newDragSource, $cast($DragSource, $nc(f)->get("dragSource"_s, ($Object*)nullptr)));
 	if (newDragSource == nullptr) {

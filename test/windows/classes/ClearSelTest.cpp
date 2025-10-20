@@ -271,6 +271,7 @@ void ClearSelTest::init$($CountDownLatch* latch) {
 }
 
 void ClearSelTest::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(ClearSelTest$$Lambda$lambda$run$0, this)));
 	} catch ($Exception&) {
@@ -290,6 +291,7 @@ void ClearSelTest::dispose() {
 
 void ClearSelTest::clearSelTest() {
 	$init(ClearSelTest);
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultTableModel, model, $new($DefaultTableModel));
 	model->addColumn($of("Test"_s), ClearSelTest::rows);
 	$var($JTable, table, $new($JTable, model));
@@ -305,6 +307,7 @@ void ClearSelTest::clearSelTest() {
 }
 
 void ClearSelTest::createUI() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, description, " INSTRUCTIONS:\n A JTable will be shown.\n Move mouse over different row to select the row.\n  Please verify if row text disappear  if mouse is moved out of table.\n If any moment any part of the rows will not be\n  painted properly and if some text are missing in JTable,\n  then press fail else press pass"_s);
 	$assignStatic(ClearSelTest::dialog, $new($JDialog));
 	$nc(ClearSelTest::dialog)->setTitle("textselectionTest"_s);

@@ -39,6 +39,7 @@ void HeadlessSpinnerNumberModel::init$() {
 }
 
 void HeadlessSpinnerNumberModel::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($SpinnerNumberModel, model, $new($SpinnerNumberModel));
 	model->setValue($($Integer::valueOf(5)));
 	model->getValue();

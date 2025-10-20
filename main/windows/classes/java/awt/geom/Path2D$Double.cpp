@@ -183,6 +183,7 @@ void Path2D$Double::init$($Shape* s) {
 }
 
 void Path2D$Double::init$($Shape* s, $AffineTransform* at) {
+	$useLocalCurrentObjectStackCache();
 	$Path2D::init$();
 	if ($instanceOf($Path2D, s)) {
 		$var($Path2D, p2d, $cast($Path2D, s));
@@ -260,6 +261,7 @@ void Path2D$Double::needRoom(bool needMove, int32_t newCoords) {
 
 $doubles* Path2D$Double::expandCoords($doubles* oldCoords, int32_t needed) {
 	$init(Path2D$Double);
+	$useLocalCurrentObjectStackCache();
 	int32_t oldSize = $nc(oldCoords)->length;
 	int32_t newSizeMin = oldSize + needed;
 	if (newSizeMin < oldSize) {

@@ -78,6 +78,7 @@ $ICC_Profile* ICC_Profile$BuiltInProfile::PYCC = nullptr;
 $ICC_Profile* ICC_Profile$BuiltInProfile::GRAY = nullptr;
 
 void clinit$ICC_Profile$BuiltInProfile($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(ICC_Profile$BuiltInProfile::SRGB, $new($ICC_ProfileRGB, $$new($ProfileDeferralInfo, "sRGB.pf"_s, $ColorSpace::TYPE_RGB, 3, 1)));
 	$assignStatic(ICC_Profile$BuiltInProfile::LRGB, $new($ICC_ProfileRGB, $$new($ProfileDeferralInfo, "LINEAR_RGB.pf"_s, $ColorSpace::TYPE_RGB, 3, 1)));
 	$assignStatic(ICC_Profile$BuiltInProfile::XYZ, $new($ICC_Profile, $$new($ProfileDeferralInfo, "CIEXYZ.pf"_s, $ColorSpace::TYPE_XYZ, 3, 5)));

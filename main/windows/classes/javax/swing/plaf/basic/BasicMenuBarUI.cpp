@@ -160,6 +160,7 @@ void BasicMenuBarUI::installUI($JComponent* c) {
 }
 
 void BasicMenuBarUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(this->menuBar)->getLayout() == nullptr;
 	if (var$0 || $instanceOf($UIResource, $($nc(this->menuBar)->getLayout()))) {
 		$nc(this->menuBar)->setLayout($$new($DefaultMenuLayout, this->menuBar, $BoxLayout::LINE_AXIS));
@@ -171,6 +172,7 @@ void BasicMenuBarUI::installDefaults() {
 }
 
 void BasicMenuBarUI::installListeners() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, containerListener, createContainerListener());
 	$set(this, changeListener, createChangeListener());
 	for (int32_t i = 0; i < $nc(this->menuBar)->getMenuCount(); ++i) {
@@ -212,6 +214,7 @@ void BasicMenuBarUI::uninstallDefaults() {
 }
 
 void BasicMenuBarUI::uninstallListeners() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->menuBar)->removeContainerListener(this->containerListener);
 	for (int32_t i = 0; i < $nc(this->menuBar)->getMenuCount(); ++i) {
 		$var($JMenu, menu, $nc(this->menuBar)->getMenu(i));

@@ -97,6 +97,7 @@ int32_t LineBreakMeasurer::nextOffset(float wrappingWidth) {
 }
 
 int32_t LineBreakMeasurer::nextOffset(float wrappingWidth, int32_t offsetLimit, bool requireNextWord) {
+	$useLocalCurrentObjectStackCache();
 	int32_t nextOffset = this->pos;
 	if (this->pos < this->limit) {
 		if (offsetLimit <= this->pos) {

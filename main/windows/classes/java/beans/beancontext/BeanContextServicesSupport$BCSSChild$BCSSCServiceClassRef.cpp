@@ -144,6 +144,7 @@ void BeanContextServicesSupport$BCSSChild$BCSSCServiceClassRef::verifyAndMaybeSe
 }
 
 $Iterator* BeanContextServicesSupport$BCSSChild$BCSSCServiceClassRef::cloneOfEntries() {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($nc(($cast($HashMap, $($nc(this->requestors)->clone()))))->entrySet()))->iterator();
 }
 

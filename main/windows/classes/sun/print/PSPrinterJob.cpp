@@ -483,6 +483,7 @@ void PSPrinterJob::initStatic() {
 
 $Properties* PSPrinterJob::initProps() {
 	$init(PSPrinterJob);
+	$useLocalCurrentObjectStackCache();
 	$var($String, jhome, $System::getProperty("java.home"_s));
 	if (jhome != nullptr) {
 		$var($String, ulocale, $nc($($SunToolkit::getStartupLocale()))->getLanguage());
@@ -527,6 +528,7 @@ void PSPrinterJob::init$() {
 }
 
 bool PSPrinterJob::printDialog() {
+	$useLocalCurrentObjectStackCache();
 	if ($GraphicsEnvironment::isHeadless()) {
 		$throwNew($HeadlessException);
 	}
@@ -586,6 +588,7 @@ bool PSPrinterJob::printDialog() {
 }
 
 void PSPrinterJob::setAttributes($PrintRequestAttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$RasterPrinterJob::setAttributes(attributes);
 	if (attributes == nullptr) {
 		return;
@@ -602,6 +605,7 @@ void PSPrinterJob::setAttributes($PrintRequestAttributeSet* attributes) {
 }
 
 void PSPrinterJob::startDoc() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($OutputStream, output, nullptr);
 	if (this->epsPrinter == nullptr) {
@@ -733,6 +737,7 @@ void PSPrinterJob::abortDoc() {
 }
 
 void PSPrinterJob::endDoc() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (this->mPSStream != nullptr) {
 		$nc(this->mPSStream)->println(PSPrinterJob::EOF_COMMENT);
@@ -766,12 +771,14 @@ void PSPrinterJob::endDoc() {
 }
 
 $String* PSPrinterJob::getCoordPrep() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$1, $$str({" 0 exch translate 1 -1 scale[72 "_s, $$str(getXRes()), " div 0 0 72 "_s}));
 	$var($String, var$0, $$concat(var$1, $$str(getYRes())));
 	return $concat(var$0, " div 0 0]concat");
 }
 
 void PSPrinterJob::startPage($PageFormat* pageFormat, $Printable* painter, int32_t index, bool paperChanged) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	double paperHeight = $nc($($nc(pageFormat)->getPaper()))->getHeight();
 	double paperWidth = $nc($(pageFormat->getPaper()))->getWidth();
@@ -798,6 +805,7 @@ void PSPrinterJob::endPage($PageFormat* format, $Printable* painter, int32_t ind
 }
 
 void PSPrinterJob::drawImageBGR($bytes* bgrData, float destX, float destY, float destWidth, float destHeight, float srcX, float srcY, float srcWidth, float srcHeight, int32_t srcBitMapWidth, int32_t srcBitMapHeight) {
+	$useLocalCurrentObjectStackCache();
 	setTransform($$new($AffineTransform));
 	prepDrawing();
 	int32_t intSrcWidth = $cast(int32_t, srcWidth);
@@ -829,6 +837,7 @@ void PSPrinterJob::drawImageBGR($bytes* bgrData, float destX, float destY, float
 }
 
 void PSPrinterJob::printBand($bytes* bgrData, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->mPSStream)->println(PSPrinterJob::IMAGE_SAVE);
 	int32_t psBytesPerRow = 3 * width;
 	while (psBytesPerRow > PSPrinterJob::MAX_PSSTR) {
@@ -855,6 +864,7 @@ void PSPrinterJob::printBand($bytes* bgrData, int32_t x, int32_t y, int32_t widt
 }
 
 $Graphics2D* PSPrinterJob::createPathGraphics($PeekGraphics* peekGraphics, $PrinterJob* printerJob, $Printable* painter, $PageFormat* pageFormat, int32_t pageIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($PSPathGraphics, pathGraphics, nullptr);
 	$var($PeekMetrics, metrics, $nc(peekGraphics)->getMetrics());
 	$init($RasterPrinterJob);
@@ -892,6 +902,7 @@ bool PSPrinterJob::setFont($Font* font) {
 }
 
 $ints* PSPrinterJob::getPSFontIndexArray($Font* font, $CharsetStringArray* charSet) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, psFont, nullptr);
 	if (PSPrinterJob::mFontProps != nullptr) {
 		$assign(psFont, $new($ints, $nc(charSet)->length));
@@ -934,6 +945,7 @@ $ints* PSPrinterJob::getPSFontIndexArray($Font* font, $CharsetStringArray* charS
 
 $String* PSPrinterJob::escapeParens($String* str) {
 	$init(PSPrinterJob);
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(str)->indexOf((int32_t)u'(') == -1;
 	if (var$0 && str->indexOf((int32_t)u')') == -1) {
 		return str;
@@ -963,6 +975,7 @@ $String* PSPrinterJob::escapeParens($String* str) {
 }
 
 int32_t PSPrinterJob::platformFontCount($Font* font, $String* str) {
+	$useLocalCurrentObjectStackCache();
 	if (PSPrinterJob::mFontProps == nullptr) {
 		return 0;
 	}
@@ -976,6 +989,7 @@ int32_t PSPrinterJob::platformFontCount($Font* font, $String* str) {
 }
 
 bool PSPrinterJob::textOut($Graphics* g, $String* str$renamed, float x, float y, $Font* mLastFont, $FontRenderContext* frc, float width) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, str$renamed);
 	bool didText = true;
 	if (PSPrinterJob::mFontProps == nullptr) {
@@ -1090,6 +1104,7 @@ void PSPrinterJob::closeSubpath() {
 }
 
 void PSPrinterJob::moveTo(float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$1, $$str({$(trunc(x)), " "_s}));
 	$var($String, var$0, $$concat(var$1, $(trunc(y))));
 	$nc(this->mPSStream)->println($$concat(var$0, PSPrinterJob::MOVETO_STR));
@@ -1100,6 +1115,7 @@ void PSPrinterJob::moveTo(float x, float y) {
 }
 
 void PSPrinterJob::lineTo(float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$1, $$str({$(trunc(x)), " "_s}));
 	$var($String, var$0, $$concat(var$1, $(trunc(y))));
 	$nc(this->mPSStream)->println($$concat(var$0, PSPrinterJob::LINETO_STR));
@@ -1108,6 +1124,7 @@ void PSPrinterJob::lineTo(float x, float y) {
 }
 
 void PSPrinterJob::bezierTo(float control1x, float control1y, float control2x, float control2y, float endX, float endY) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$9, $$str({$(trunc(control1x)), " "_s}));
 	$var($String, var$8, $$concat(var$9, $(trunc(control1y))));
 	$var($String, var$7, $$concat(var$8, " "));
@@ -1185,6 +1202,7 @@ int32_t PSPrinterJob::getCollatedCopies() {
 }
 
 $StringArray* PSPrinterJob::printExecCmd($String* printer, $String* options, bool noJobSheet, $String* jobTitle, int32_t copies, $String* spoolFile) {
+	$useLocalCurrentObjectStackCache();
 	int32_t PRINTER = 1;
 	int32_t OPTIONS = 2;
 	int32_t JOBTITLE = 4;
@@ -1311,6 +1329,7 @@ $String* PSPrinterJob::makeCharsetName($String* name, $chars* chs) {
 }
 
 void PSPrinterJob::prepDrawing() {
+	$useLocalCurrentObjectStackCache();
 	while (true) {
 		bool var$0 = isOuterGState() == false;
 		if (var$0) {
@@ -1338,6 +1357,7 @@ $PSPrinterJob$GState* PSPrinterJob::getGState() {
 }
 
 void PSPrinterJob::gsave() {
+	$useLocalCurrentObjectStackCache();
 	$var($PSPrinterJob$GState, oldGState, getGState());
 	$nc(this->mGStateStack)->add($$new($PSPrinterJob$GState, this, oldGState));
 	$nc(this->mPSStream)->println(PSPrinterJob::GSAVE_STR);
@@ -1431,6 +1451,7 @@ void PSPrinterJob::deviceFill($PathIterator* pathIter, $Color* color, $AffineTra
 }
 
 $bytes* PSPrinterJob::rlEncode($bytes* inArr) {
+	$useLocalCurrentObjectStackCache();
 	int32_t inIndex = 0;
 	int32_t outIndex = 0;
 	int32_t startIndex = 0;
@@ -1468,6 +1489,7 @@ $bytes* PSPrinterJob::rlEncode($bytes* inArr) {
 }
 
 $bytes* PSPrinterJob::ascii85Encode($bytes* inArr) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, outArr, $new($bytes, (($nc(inArr)->length + 4) * 5 / 4) + 2));
 	int64_t p1 = 85;
 	int64_t p2 = p1 * p1;

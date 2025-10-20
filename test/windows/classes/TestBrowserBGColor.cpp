@@ -235,6 +235,7 @@ $JEditorPane* TestBrowserBGColor::browser = nullptr;
 
 void TestBrowserBGColor::main($StringArray* args) {
 	$init(TestBrowserBGColor);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, r, $new($Robot));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestBrowserBGColor$$Lambda$lambda$main$0)));
 	r->waitForIdle();
@@ -243,6 +244,7 @@ void TestBrowserBGColor::main($StringArray* args) {
 }
 
 void TestBrowserBGColor::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$();
 	$set(this, htmlDoc, " <!DOCTYPE html> <html><style> body { background: #FFF; } </style> <head> <title>Title</title> </head> <body> </body> </html>"_s);
 	$assignStatic(TestBrowserBGColor::browser, $new($JEditorPane, "text/html"_s, this->htmlDoc));
@@ -253,6 +255,7 @@ void TestBrowserBGColor::init$() {
 }
 
 void TestBrowserBGColor::hyperlinkUpdate($HyperlinkEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$init($HyperlinkEvent$EventType);
 	if ($nc(e)->getEventType() == $HyperlinkEvent$EventType::ACTIVATED) {
 		$var($JEditorPane, pane, $cast($JEditorPane, e->getSource()));
@@ -273,6 +276,7 @@ void TestBrowserBGColor::hyperlinkUpdate($HyperlinkEvent* e) {
 
 void TestBrowserBGColor::lambda$main$1($Robot* r) {
 	$init(TestBrowserBGColor);
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, $nc(TestBrowserBGColor::browser)->getInsets());
 	$var($Point, loc, $nc(TestBrowserBGColor::browser)->getLocationOnScreen());
 	$var($Color, c, $nc(r)->getPixelColor($nc(loc)->x + $nc(insets)->left + 100, loc->y + insets->top + 100));
@@ -285,6 +289,7 @@ void TestBrowserBGColor::lambda$main$1($Robot* r) {
 
 void TestBrowserBGColor::lambda$main$0() {
 	$init(TestBrowserBGColor);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$assignStatic(TestBrowserBGColor::b, $new(TestBrowserBGColor));
 	} catch ($Exception&) {

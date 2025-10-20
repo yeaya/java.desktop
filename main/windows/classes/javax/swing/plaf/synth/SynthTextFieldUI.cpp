@@ -177,6 +177,7 @@ $ComponentUI* SynthTextFieldUI::createUI($JComponent* c) {
 }
 
 void SynthTextFieldUI::updateStyle($JTextComponent* comp, bool updateKBAction) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(comp, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -191,6 +192,7 @@ void SynthTextFieldUI::updateStyle($JTextComponent* comp, bool updateKBAction) {
 
 void SynthTextFieldUI::updateStyle($JTextComponent* comp, $SynthContext* context, $String* prefix) {
 	$init(SynthTextFieldUI);
+	$useLocalCurrentObjectStackCache();
 	$var($SynthStyle, style, $nc(context)->getStyle());
 	$var($Color, color, $nc(comp)->getCaretColor());
 	if (color == nullptr || $instanceOf($UIResource, color)) {
@@ -264,6 +266,7 @@ void SynthTextFieldUI::paint($SynthContext* context, $Graphics* g) {
 }
 
 void SynthTextFieldUI::paintBackground($SynthContext* context, $Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, var$0, context);
 	$var($Graphics, var$1, g);
 	int32_t var$2 = $nc(c)->getWidth();
@@ -278,6 +281,7 @@ void SynthTextFieldUI::paintBackground($Graphics* g) {
 }
 
 void SynthTextFieldUI::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc(evt)->getPropertyName()))->equals("keymap"_s)) {
 		if (evt->getNewValue() != nullptr) {
 			this->updateKBAction = false;
@@ -292,12 +296,14 @@ void SynthTextFieldUI::propertyChange($PropertyChangeEvent* evt) {
 }
 
 void SynthTextFieldUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$BasicTextFieldUI::installDefaults();
 	updateStyle($(getComponent()), true);
 	$nc($(getComponent()))->addFocusListener(this->handler);
 }
 
 void SynthTextFieldUI::uninstallDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext($(getComponent()), $SynthConstants::ENABLED));
 	$nc($(getComponent()))->putClientProperty("caretAspectRatio"_s, nullptr);
 	$nc($(getComponent()))->removeFocusListener(this->handler);

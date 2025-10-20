@@ -133,6 +133,7 @@ void MotifTextUI$MotifCaret::damage($Rectangle* r) {
 }
 
 void MotifTextUI$MotifCaret::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (isVisible()) {
 		try {
 			$var($JTextComponent, c, getComponent());

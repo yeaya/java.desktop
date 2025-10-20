@@ -156,6 +156,7 @@ bool TransferHandler$TransferAction::accept(Object$* sender) {
 }
 
 void TransferHandler$TransferAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, src, $nc(e)->getSource());
 	$var($PrivilegedAction, action, $new($TransferHandler$TransferAction$1, this, e));
 	$var($AccessControlContext, stack, $AccessController::getContext());
@@ -169,6 +170,7 @@ void TransferHandler$TransferAction::actionPerformed($ActionEvent* e) {
 }
 
 void TransferHandler$TransferAction::actionPerformedImpl($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, src, $nc(e)->getSource());
 	if ($instanceOf($JComponent, src)) {
 		$var($JComponent, c, $cast($JComponent, src));
@@ -199,6 +201,7 @@ void TransferHandler$TransferAction::actionPerformedImpl($ActionEvent* e) {
 }
 
 $Clipboard* TransferHandler$TransferAction::getClipboard($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($SwingUtilities2::canAccessSystemClipboard()) {
 		return $nc($($nc(c)->getToolkit()))->getSystemClipboard();
 	}

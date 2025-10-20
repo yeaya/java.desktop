@@ -168,6 +168,7 @@ void PixelToParallelogramConverter::fillRect($SunGraphics2D* sg2d, int32_t x, in
 }
 
 void PixelToParallelogramConverter::draw($SunGraphics2D* sg2d, $Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(sg2d)->strokeState < $SunGraphics2D::STROKE_CUSTOM) {
 		$var($BasicStroke, bs, $cast($BasicStroke, sg2d->stroke));
 		if ($instanceOf($Rectangle2D, s)) {
@@ -223,6 +224,7 @@ double PixelToParallelogramConverter::normalize(double v) {
 }
 
 bool PixelToParallelogramConverter::drawGeneralLine($SunGraphics2D* sg2d, double ux1, double uy1, double ux2, double uy2) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(sg2d)->strokeState == $SunGraphics2D::STROKE_CUSTOM || $nc(sg2d)->strokeState == $SunGraphics2D::STROKE_THINDASHED) {
 		return false;
 	}

@@ -136,6 +136,7 @@ void SynthFileChooserUIImpl$DirectoryComboBoxModel::finalize() {
 }
 
 void SynthFileChooserUIImpl$DirectoryComboBoxModel::init$($SynthFileChooserUIImpl* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$AbstractListModel::init$();
 	$set(this, directories, $new($Vector));
@@ -150,6 +151,7 @@ void SynthFileChooserUIImpl$DirectoryComboBoxModel::init$($SynthFileChooserUIImp
 }
 
 void SynthFileChooserUIImpl$DirectoryComboBoxModel::addItem($File* directory) {
+	$useLocalCurrentObjectStackCache();
 	if (directory == nullptr) {
 		return;
 	}
@@ -195,6 +197,7 @@ void SynthFileChooserUIImpl$DirectoryComboBoxModel::addItem($File* directory) {
 }
 
 void SynthFileChooserUIImpl$DirectoryComboBoxModel::calculateDepths() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, depths, $new($ints, $nc(this->directories)->size()));
 	for (int32_t i = 0; i < $nc(this->depths)->length; ++i) {
 		$var($File, dir, $cast($File, $nc(this->directories)->get(i)));

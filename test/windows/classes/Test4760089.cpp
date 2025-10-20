@@ -57,6 +57,7 @@ void Test4760089::init$() {
 }
 
 void Test4760089::init() {
+	$useLocalCurrentObjectStackCache();
 	$var($Border, border, $new($EtchedBorder));
 	$assign(border, $new($TitledBorder, border, "LEFT"_s, $TitledBorder::LEFT, $TitledBorder::TOP));
 	$assign(border, $new($TitledBorder, border, "RIGHT"_s, $TitledBorder::RIGHT, $TitledBorder::TOP));

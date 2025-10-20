@@ -265,6 +265,7 @@ void SynthScrollBarUI::configureScrollBarColors() {
 }
 
 void SynthScrollBarUI::updateStyle($JScrollBar* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthStyle, oldStyle, this->style);
 	$var($SynthContext, context, getContext(static_cast<$JComponent*>(c), $SynthConstants::ENABLED));
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -375,6 +376,7 @@ bool SynthScrollBarUI::getSupportsAbsolutePositioning() {
 }
 
 void SynthScrollBarUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -391,6 +393,7 @@ void SynthScrollBarUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void SynthScrollBarUI::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$init($Region);
 	$var($SynthContext, subcontext, getContext(static_cast<$JComponent*>(this->scrollbar), $Region::SCROLL_BAR_TRACK));
 	paintTrack(subcontext, g, $(getTrackBounds()));
@@ -403,12 +406,14 @@ void SynthScrollBarUI::paintBorder($SynthContext* context, $Graphics* g, int32_t
 }
 
 void SynthScrollBarUI::paintTrack($SynthContext* context, $Graphics* g, $Rectangle* trackBounds) {
+	$useLocalCurrentObjectStackCache();
 	$SynthLookAndFeel::updateSubregion(context, g, trackBounds);
 	$nc($($nc(context)->getPainter()))->paintScrollBarTrackBackground(context, g, $nc(trackBounds)->x, trackBounds->y, trackBounds->width, trackBounds->height, $nc(this->scrollbar)->getOrientation());
 	$nc($(context->getPainter()))->paintScrollBarTrackBorder(context, g, $nc(trackBounds)->x, trackBounds->y, trackBounds->width, trackBounds->height, $nc(this->scrollbar)->getOrientation());
 }
 
 void SynthScrollBarUI::paintThumb($SynthContext* context, $Graphics* g, $Rectangle* thumbBounds) {
+	$useLocalCurrentObjectStackCache();
 	$SynthLookAndFeel::updateSubregion(context, g, thumbBounds);
 	int32_t orientation = $nc(this->scrollbar)->getOrientation();
 	$nc($($nc(context)->getPainter()))->paintScrollBarThumbBackground(context, g, $nc(thumbBounds)->x, thumbBounds->y, thumbBounds->width, thumbBounds->height, orientation);
@@ -464,6 +469,7 @@ void SynthScrollBarUI::updateButtonDirections() {
 }
 
 void SynthScrollBarUI::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propertyName, $nc(e)->getPropertyName());
 	if ($SynthLookAndFeel::shouldUpdateStyle(e)) {
 		updateStyle($cast($JScrollBar, $(e->getSource())));

@@ -112,6 +112,7 @@ $Object* allocate$CompositeFont($Class* clazz) {
 }
 
 void CompositeFont::init$($String* name, $StringArray* compFileNames, $StringArray* compNames, int32_t metricsSlotCnt, $ints* exclRanges, $ints* maxIndexes, bool defer, $SunFontManager* fm) {
+	$useLocalCurrentObjectStackCache();
 	$Font2D::init$();
 	this->numGlyphs = 0;
 	this->localeSlot = -1;
@@ -232,6 +233,7 @@ void CompositeFont::init$($PhysicalFont* physFont, CompositeFont* compFont) {
 }
 
 void CompositeFont::doDeferredInitialisation(int32_t slot) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->deferredInitialisation)->get(slot) == false) {
 		return;
 	}
@@ -264,6 +266,7 @@ void CompositeFont::doDeferredInitialisation(int32_t slot) {
 }
 
 void CompositeFont::replaceComponentFont($PhysicalFont* oldFont, $PhysicalFont* newFont) {
+	$useLocalCurrentObjectStackCache();
 	if (this->components == nullptr) {
 		return;
 	}
@@ -310,6 +313,7 @@ int32_t CompositeFont::getNumSlots() {
 }
 
 $PhysicalFont* CompositeFont::getSlotFont(int32_t slot) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->deferredInitialisation)->get(slot)) {
 		doDeferredInitialisation(slot);
 	}
@@ -342,6 +346,7 @@ bool CompositeFont::isStdComposite() {
 }
 
 int32_t CompositeFont::getValidatedGlyphCode(int32_t glyphCode) {
+	$useLocalCurrentObjectStackCache();
 	int32_t slot = (int32_t)((uint32_t)glyphCode >> 24);
 	if (slot >= this->numSlots) {
 		return $nc($(getMapper()))->getMissingGlyphCode();
@@ -364,6 +369,7 @@ $CharToGlyphMapper* CompositeFont::getMapper() {
 }
 
 bool CompositeFont::hasSupplementaryChars() {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < this->numSlots; ++i) {
 		if ($nc($(getSlotFont(i)))->hasSupplementaryChars()) {
 			return true;
@@ -388,6 +394,7 @@ bool CompositeFont::canDisplay(char16_t c) {
 }
 
 bool CompositeFont::useAAForPtSize(int32_t ptsize) {
+	$useLocalCurrentObjectStackCache();
 	if (this->localeSlot == -1) {
 		int32_t numCoreSlots = this->numMetricsSlots;
 		if (numCoreSlots == 1 && !isStdComposite()) {
@@ -407,6 +414,7 @@ bool CompositeFont::useAAForPtSize(int32_t ptsize) {
 }
 
 $String* CompositeFont::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, ls, $System::lineSeparator());
 	$var($String, componentsStr, ""_s);
 	for (int32_t i = 0; i < this->numSlots; ++i) {

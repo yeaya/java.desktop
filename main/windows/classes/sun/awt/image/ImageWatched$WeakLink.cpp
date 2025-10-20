@@ -182,6 +182,7 @@ $ImageWatched$Link* ImageWatched$WeakLink::removeWatcher($ImageObserver* iw) {
 
 bool ImageWatched$WeakLink::update($ImageObserver* iw, $AccessControlContext* acc, $Image* img, int32_t info, int32_t x, int32_t y, int32_t w, int32_t h) {
 	$init(ImageWatched$WeakLink);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (acc != nullptr || $System::getSecurityManager() != nullptr) {
 		return $nc(($cast($Boolean, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new(ImageWatched$WeakLink$$Lambda$lambda$update$0, iw, img, info, x, y, w, h)), acc)))))->booleanValue();

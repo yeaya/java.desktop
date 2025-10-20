@@ -106,6 +106,7 @@ void MetalBorders$InternalFrameBorder::init$() {
 }
 
 void MetalBorders$InternalFrameBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, background, nullptr);
 	$var($Color, highlight, nullptr);
 	$var($Color, shadow, nullptr);

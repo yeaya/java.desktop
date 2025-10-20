@@ -83,6 +83,7 @@ void ConstructorFinder$1::init$($Cache$Kind* keyKind, $Cache$Kind* valueKind) {
 }
 
 $Constructor* ConstructorFinder$1::create($Signature* signature) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$var($ConstructorFinder, finder, $new($ConstructorFinder, $($nc(signature)->getArgs())));

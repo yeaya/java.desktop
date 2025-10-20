@@ -43,6 +43,7 @@ void HeadlessJWindow::init$() {
 }
 
 void HeadlessJWindow::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	bool exceptions = false;
 	$var($JWindow, w, nullptr);
 	try {

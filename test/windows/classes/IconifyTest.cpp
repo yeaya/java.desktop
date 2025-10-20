@@ -81,6 +81,7 @@ void IconifyTest::init$() {
 
 void IconifyTest::main($StringArray* args) {
 	$init(IconifyTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	$SwingUtilities::invokeAndWait($$new($IconifyTest$1));
 	robot->waitForIdle();

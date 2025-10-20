@@ -256,6 +256,7 @@ void BasicInternalFrameTitlePane::installTitlePane() {
 }
 
 void BasicInternalFrameTitlePane::updateProperties() {
+	$useLocalCurrentObjectStackCache();
 	$init($RenderingHints);
 	putClientProperty($RenderingHints::KEY_TEXT_ANTIALIASING, $($nc(this->frame)->getClientProperty($RenderingHints::KEY_TEXT_ANTIALIASING)));
 	putClientProperty($RenderingHints::KEY_TEXT_LCD_CONTRAST, $($nc(this->frame)->getClientProperty($RenderingHints::KEY_TEXT_LCD_CONTRAST)));
@@ -278,6 +279,7 @@ void BasicInternalFrameTitlePane::createActions() {
 }
 
 $ActionMap* BasicInternalFrameTitlePane::createActionMap() {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, map, $new($ActionMapUIResource));
 	map->put("showSystemMenu"_s, $$new($BasicInternalFrameTitlePane$ShowSystemMenuAction, this, true));
 	map->put("hideSystemMenu"_s, $$new($BasicInternalFrameTitlePane$ShowSystemMenuAction, this, false));
@@ -386,6 +388,7 @@ void BasicInternalFrameTitlePane::assembleSystemMenu() {
 }
 
 void BasicInternalFrameTitlePane::addSystemMenuItems($JMenu* systemMenu) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuItem, mi, $nc(systemMenu)->add(this->restoreAction));
 	$nc(mi)->setMnemonic(getButtonMnemonic("restore"_s));
 	$assign(mi, systemMenu->add(this->moveAction));
@@ -403,6 +406,7 @@ void BasicInternalFrameTitlePane::addSystemMenuItems($JMenu* systemMenu) {
 
 int32_t BasicInternalFrameTitlePane::getButtonMnemonic($String* button) {
 	$init(BasicInternalFrameTitlePane);
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $Integer::parseInt($($UIManager::getString($$str({"InternalFrameTitlePane."_s, button, "Button.mnemonic"_s}))));
 	} catch ($NumberFormatException&) {
@@ -427,6 +431,7 @@ void BasicInternalFrameTitlePane::showSystemMenu() {
 }
 
 void BasicInternalFrameTitlePane::paintComponent($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	paintTitleBackground(g);
 	if ($nc(this->frame)->getTitle() != nullptr) {
 		bool isSelected = $nc(this->frame)->isSelected();
@@ -487,6 +492,7 @@ $String* BasicInternalFrameTitlePane::getTitle($String* text, $FontMetrics* fm, 
 }
 
 void BasicInternalFrameTitlePane::postClosingEvent($JInternalFrame* frame) {
+	$useLocalCurrentObjectStackCache();
 	$var($InternalFrameEvent, e, $new($InternalFrameEvent, frame, $InternalFrameEvent::INTERNAL_FRAME_CLOSING));
 	try {
 		$nc($($nc($($Toolkit::getDefaultToolkit()))->getSystemEventQueue()))->postEvent(e);

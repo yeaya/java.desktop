@@ -154,6 +154,7 @@ void SunVolatileImage::finalize() {
 }
 
 void SunVolatileImage::init$($Component* comp, $GraphicsConfiguration* graphicsConfig, int32_t width, int32_t height, Object$* context, int32_t transparency, $ImageCapabilities* caps, int32_t accType) {
+	$useLocalCurrentObjectStackCache();
 	$VolatileImage::init$();
 	$set(this, comp, comp);
 	$set(this, graphicsConfig, graphicsConfig);
@@ -256,6 +257,7 @@ $Font* SunVolatileImage::getFont() {
 }
 
 $Graphics2D* SunVolatileImage::createGraphics() {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceData, var$0, $nc(this->volSurfaceManager)->getPrimarySurfaceData());
 	$var($Color, var$1, getForeground());
 	$var($Color, var$2, getBackground());
@@ -289,6 +291,7 @@ $BufferedImage* SunVolatileImage::getBackupImage(double scaleX, double scaleY) {
 }
 
 $BufferedImage* SunVolatileImage::getSnapshot() {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, bi, getBackupImage());
 	$var($Graphics2D, g, $nc(bi)->createGraphics());
 	$init($AlphaComposite);

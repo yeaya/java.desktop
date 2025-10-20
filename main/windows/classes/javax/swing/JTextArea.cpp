@@ -302,6 +302,7 @@ void JTextArea::init$($Document* doc) {
 }
 
 void JTextArea::init$($Document* doc$renamed, $String* text, int32_t rows, int32_t columns) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, doc$renamed);
 	$JTextComponent::init$();
 	this->rows = rows;
@@ -333,6 +334,7 @@ $Document* JTextArea::createDefaultModel() {
 }
 
 void JTextArea::setTabSize(int32_t size) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	if (doc != nullptr) {
 		int32_t old = getTabSize();
@@ -343,6 +345,7 @@ void JTextArea::setTabSize(int32_t size) {
 }
 
 int32_t JTextArea::getTabSize() {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = 8;
 	$var($Document, doc, getDocument());
 	if (doc != nullptr) {
@@ -376,6 +379,7 @@ bool JTextArea::getWrapStyleWord() {
 }
 
 int32_t JTextArea::getLineOfOffset(int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	if (offset < 0) {
 		$throwNew($BadLocationException, "Can\'t translate offset to line"_s, -1);
@@ -388,11 +392,13 @@ int32_t JTextArea::getLineOfOffset(int32_t offset) {
 }
 
 int32_t JTextArea::getLineCount() {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, map, $nc($(getDocument()))->getDefaultRootElement());
 	return $nc(map)->getElementCount();
 }
 
 int32_t JTextArea::getLineStartOffset(int32_t line) {
+	$useLocalCurrentObjectStackCache();
 	int32_t lineCount = getLineCount();
 	if (line < 0) {
 		$throwNew($BadLocationException, "Negative line"_s, -1);
@@ -406,6 +412,7 @@ int32_t JTextArea::getLineStartOffset(int32_t line) {
 }
 
 int32_t JTextArea::getLineEndOffset(int32_t line) {
+	$useLocalCurrentObjectStackCache();
 	int32_t lineCount = getLineCount();
 	if (line < 0) {
 		$throwNew($BadLocationException, "Negative line"_s, -1);
@@ -420,6 +427,7 @@ int32_t JTextArea::getLineEndOffset(int32_t line) {
 }
 
 void JTextArea::insert($String* str, int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	if (doc != nullptr) {
 		try {
@@ -443,6 +451,7 @@ void JTextArea::append($String* str) {
 }
 
 void JTextArea::replaceRange($String* str, int32_t start, int32_t end) {
+	$useLocalCurrentObjectStackCache();
 	if (end < start) {
 		$throwNew($IllegalArgumentException, "end before start"_s);
 	}
@@ -478,6 +487,7 @@ void JTextArea::setRows(int32_t rows) {
 }
 
 int32_t JTextArea::getRowHeight() {
+	$useLocalCurrentObjectStackCache();
 	if (this->rowHeight == 0) {
 		$var($FontMetrics, metrics, getFontMetrics($(getFont())));
 		this->rowHeight = $nc(metrics)->getHeight();
@@ -501,6 +511,7 @@ void JTextArea::setColumns(int32_t columns) {
 }
 
 int32_t JTextArea::getColumnWidth() {
+	$useLocalCurrentObjectStackCache();
 	if (this->columnWidth == 0) {
 		$var($FontMetrics, metrics, getFontMetrics($(getFont())));
 		this->columnWidth = $nc(metrics)->charWidth(u'm');
@@ -509,6 +520,7 @@ int32_t JTextArea::getColumnWidth() {
 }
 
 $Dimension* JTextArea::getPreferredSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, $JTextComponent::getPreferredSize());
 	$assign(d, (d == nullptr) ? $new($Dimension, 400, 400) : d);
 	$var($Insets, insets, getInsets());
@@ -528,6 +540,7 @@ void JTextArea::setFont($Font* f) {
 }
 
 $String* JTextArea::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, wrapString, this->wrap ? "true"_s : "false"_s);
 	$var($String, wordString, this->word ? "true"_s : "false"_s);
 	return $str({$($JTextComponent::paramString()), ",colums="_s, $$str(this->columns), ",columWidth="_s, $$str(this->columnWidth), ",rows="_s, $$str(this->rows), ",rowHeight="_s, $$str(this->rowHeight), ",word="_s, wordString, ",wrap="_s, wrapString});
@@ -538,6 +551,7 @@ bool JTextArea::getScrollableTracksViewportWidth() {
 }
 
 $Dimension* JTextArea::getPreferredScrollableViewportSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, $JTextComponent::getPreferredScrollableViewportSize());
 	$assign(size, (size == nullptr) ? $new($Dimension, 400, 400) : size);
 	$var($Insets, insets, getInsets());
@@ -547,6 +561,7 @@ $Dimension* JTextArea::getPreferredScrollableViewportSize() {
 }
 
 int32_t JTextArea::getScrollableUnitIncrement($Rectangle* visibleRect, int32_t orientation, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	switch (orientation) {
 	case $SwingConstants::VERTICAL:
 		{

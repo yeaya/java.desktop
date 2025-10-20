@@ -111,6 +111,7 @@ void MaximumSizeTest::init$() {
 }
 
 void MaximumSizeTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(MaximumSizeTest$$Lambda$lambda$main$0)));
 	} catch ($InterruptedException&) {
@@ -127,6 +128,7 @@ void MaximumSizeTest::main($StringArray* args) {
 }
 
 void MaximumSizeTest::lambda$main$0() {
+	$useLocalCurrentObjectStackCache();
 	$var($JRootPane, r, $new($JRootPane));
 	$nc($(r->getContentPane()))->add(static_cast<$Component*>($$new($JLabel, "foo"_s)));
 	$init($System);

@@ -79,6 +79,7 @@ void CSS$BackgroundPosition::init$() {
 }
 
 $Object* CSS$BackgroundPosition::parseCssValue($String* value) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringArray, strings, $CSS::parseStrings(value));
 	int32_t count = $nc(strings)->length;
 	$var(CSS$BackgroundPosition, bp, $new(CSS$BackgroundPosition));

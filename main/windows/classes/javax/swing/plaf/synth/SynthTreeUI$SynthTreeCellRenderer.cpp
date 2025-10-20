@@ -139,6 +139,7 @@ $String* SynthTreeUI$SynthTreeCellRenderer::getName() {
 }
 
 $Component* SynthTreeUI$SynthTreeCellRenderer::getTreeCellRendererComponent($JTree* tree, Object$* value, bool sel, bool expanded, bool leaf, int32_t row, bool hasFocus) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->this$0->useTreeColors && (sel || hasFocus)) {
 		$load($SynthLabelUI);
 		$var($ComponentUI, var$0, $cast($SynthLabelUI, $SynthLookAndFeel::getUIOfType($(getUI()), $SynthLabelUI::class$)));
@@ -152,6 +153,7 @@ $Component* SynthTreeUI$SynthTreeCellRenderer::getTreeCellRendererComponent($JTr
 }
 
 void SynthTreeUI$SynthTreeCellRenderer::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	paintComponent(g);
 	if (this->hasFocus$) {
 		$init($Region);

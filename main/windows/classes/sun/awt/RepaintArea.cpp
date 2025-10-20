@@ -128,6 +128,7 @@ bool RepaintArea::isEmpty() {
 
 void RepaintArea::constrain(int32_t x, int32_t y, int32_t w, int32_t h) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		for (int32_t i = 0; i < RepaintArea::RECT_COUNT; ++i) {
 			$var($Rectangle, rect, $nc(this->paintRects)->get(i));
 			if (rect != nullptr) {
@@ -169,6 +170,7 @@ void RepaintArea::subtract(int32_t x, int32_t y, int32_t w, int32_t h) {
 }
 
 void RepaintArea::paint(Object$* target, bool shouldClearRectBeforePaint) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, comp, $cast($Component, target));
 	if (isEmpty()) {
 		return;

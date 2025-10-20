@@ -83,6 +83,7 @@ $String* PNGImageReaderSpi::getDescription($Locale* locale) {
 }
 
 bool PNGImageReaderSpi::canDecodeInput(Object$* input) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($ImageInputStream, input))) {
 		return false;
 	}

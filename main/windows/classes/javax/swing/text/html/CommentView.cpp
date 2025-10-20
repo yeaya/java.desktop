@@ -115,6 +115,7 @@ void CommentView::init$($Element* e) {
 }
 
 $Component* CommentView::createComponent() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, host, getContainer());
 	if (host != nullptr && !$nc(($cast($JTextComponent, host)))->isEditable()) {
 		return nullptr;
@@ -139,6 +140,7 @@ void CommentView::resetBorder() {
 }
 
 void CommentView::_updateModelFromText() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, textC, getTextComponent());
 	$var($Document, doc, getDocument());
 	if (textC != nullptr && doc != nullptr) {
@@ -170,6 +172,7 @@ $JTextComponent* CommentView::getTextComponent() {
 }
 
 $String* CommentView::getRepresentedText() {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, as, $nc($(getElement()))->getAttributes());
 	if (as != nullptr) {
 		$init($HTML$Attribute);

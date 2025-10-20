@@ -105,6 +105,7 @@ void DocumentParser::parse($Reader* in, $HTMLEditorKit$ParserCallback* callback,
 }
 
 void DocumentParser::handleStartTag($TagElement* tag) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, $nc(tag)->getElement());
 	if (elem == $nc(this->dtd)->body) {
 		++this->inbody;
@@ -139,6 +140,7 @@ void DocumentParser::handleComment($chars* text) {
 }
 
 void DocumentParser::handleEmptyTag($TagElement* tag) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, $nc(tag)->getElement());
 	if (elem == $nc(this->dtd)->meta && !this->ignoreCharSet) {
 		$var($SimpleAttributeSet, atts, getAttributes());
@@ -178,6 +180,7 @@ void DocumentParser::handleEmptyTag($TagElement* tag) {
 }
 
 void DocumentParser::handleEndTag($TagElement* tag) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, $nc(tag)->getElement());
 	if (elem == $nc(this->dtd)->body) {
 		--this->inbody;

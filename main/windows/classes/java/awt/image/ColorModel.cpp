@@ -269,6 +269,7 @@ void ColorModel::init$(int32_t bits) {
 }
 
 void ColorModel::init$(int32_t pixel_bits, $ints* bits, $ColorSpace* cspace, bool hasAlpha, bool isAlphaPremultiplied, int32_t transparency, int32_t transferType) {
+	$useLocalCurrentObjectStackCache();
 	this->transparency = $Transparency::TRANSLUCENT;
 	this->supportsAlpha = true;
 	this->isAlphaPremultiplied$ = false;
@@ -368,6 +369,7 @@ int32_t ColorModel::getRGB(int32_t pixel) {
 }
 
 int32_t ColorModel::getRed(Object$* inData) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pixel = 0;
 	int32_t length = 0;
 	{
@@ -410,6 +412,7 @@ int32_t ColorModel::getRed(Object$* inData) {
 }
 
 int32_t ColorModel::getGreen(Object$* inData) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pixel = 0;
 	int32_t length = 0;
 	{
@@ -452,6 +455,7 @@ int32_t ColorModel::getGreen(Object$* inData) {
 }
 
 int32_t ColorModel::getBlue(Object$* inData) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pixel = 0;
 	int32_t length = 0;
 	{
@@ -494,6 +498,7 @@ int32_t ColorModel::getBlue(Object$* inData) {
 }
 
 int32_t ColorModel::getAlpha(Object$* inData) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pixel = 0;
 	int32_t length = 0;
 	{
@@ -558,6 +563,7 @@ $ints* ColorModel::getComponents(Object$* pixel, $ints* components, int32_t offs
 }
 
 $ints* ColorModel::getUnnormalizedComponents($floats* normComponents, int32_t normOffset, $ints* components$renamed, int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, components, components$renamed);
 	if (this->colorSpace == nullptr) {
 		$throwNew($UnsupportedOperationException, "This method is not supported by this color model."_s);
@@ -586,6 +592,7 @@ $ints* ColorModel::getUnnormalizedComponents($floats* normComponents, int32_t no
 }
 
 $floats* ColorModel::getNormalizedComponents($ints* components, int32_t offset, $floats* normComponents$renamed, int32_t normOffset) {
+	$useLocalCurrentObjectStackCache();
 	$var($floats, normComponents, normComponents$renamed);
 	if (this->colorSpace == nullptr) {
 		$throwNew($UnsupportedOperationException, "This method is not supported by this color model."_s);
@@ -690,6 +697,7 @@ $WritableRaster* ColorModel::getAlphaRaster($WritableRaster* raster) {
 }
 
 $String* ColorModel::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $new($String, $$str({"ColorModel: #pixelBits = "_s, $$str(this->pixel_bits), " numComponents = "_s, $$str(this->numComponents), " color space = "_s, this->colorSpace, " transparency = "_s, $$str(this->transparency), " has alpha = "_s, $$str(this->supportsAlpha), " isAlphaPre = "_s, $$str(this->isAlphaPremultiplied$)}));
 }
 
@@ -794,6 +802,7 @@ $shorts* ColorModel::getsRGB8ToLinearRGB16LUT() {
 
 $bytes* ColorModel::getGray8TosRGB8LUT($ICC_ColorSpace* grayCS) {
 	$init(ColorModel);
+	$useLocalCurrentObjectStackCache();
 	if (isLinearGRAYspace(grayCS)) {
 		return getLinearRGB8TosRGB8LUT();
 	}
@@ -830,6 +839,7 @@ $bytes* ColorModel::getGray8TosRGB8LUT($ICC_ColorSpace* grayCS) {
 
 $bytes* ColorModel::getLinearGray16ToOtherGray8LUT($ICC_ColorSpace* grayCS) {
 	$init(ColorModel);
+	$useLocalCurrentObjectStackCache();
 	if (ColorModel::lg16Toog8Map != nullptr) {
 		$var($bytes, lg16Toog8LUT, $cast($bytes, $nc(ColorModel::lg16Toog8Map)->get(grayCS)));
 		if (lg16Toog8LUT != nullptr) {
@@ -860,6 +870,7 @@ $bytes* ColorModel::getLinearGray16ToOtherGray8LUT($ICC_ColorSpace* grayCS) {
 
 $bytes* ColorModel::getGray16TosRGB8LUT($ICC_ColorSpace* grayCS) {
 	$init(ColorModel);
+	$useLocalCurrentObjectStackCache();
 	if (isLinearGRAYspace(grayCS)) {
 		return getLinearRGB16TosRGB8LUT();
 	}
@@ -897,6 +908,7 @@ $bytes* ColorModel::getGray16TosRGB8LUT($ICC_ColorSpace* grayCS) {
 
 $shorts* ColorModel::getLinearGray16ToOtherGray16LUT($ICC_ColorSpace* grayCS) {
 	$init(ColorModel);
+	$useLocalCurrentObjectStackCache();
 	if (ColorModel::lg16Toog16Map != nullptr) {
 		$var($shorts, lg16Toog16LUT, $cast($shorts, $nc(ColorModel::lg16Toog16Map)->get(grayCS)));
 		if (lg16Toog16LUT != nullptr) {

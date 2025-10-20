@@ -224,6 +224,7 @@ bool DrawImage::scaleImage($SunGraphics2D* sg, $Image* img, int32_t x, int32_t y
 }
 
 void DrawImage::transformImage($SunGraphics2D* sg, $Image* img, int32_t x, int32_t y, $AffineTransform* extraAT, int32_t interpType) {
+	$useLocalCurrentObjectStackCache();
 	int32_t txtype = $nc(extraAT)->getType();
 	int32_t imgw = $nc(img)->getWidth(nullptr);
 	int32_t imgh = img->getHeight(nullptr);
@@ -321,6 +322,7 @@ bool DrawImage::tryCopyOrScale($SunGraphics2D* sg, $Image* img, int32_t sx1, int
 }
 
 $BufferedImage* DrawImage::makeBufferedImage($Image* img, $Color* bgColor, int32_t type, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2) {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = sx2 - sx1;
 	int32_t height = sy2 - sy1;
 	$var($BufferedImage, bimg, $new($BufferedImage, width, height, type));
@@ -339,6 +341,7 @@ $BufferedImage* DrawImage::makeBufferedImage($Image* img, $Color* bgColor, int32
 }
 
 void DrawImage::renderImageXform($SunGraphics2D* sg, $Image* img$renamed, $AffineTransform* tx, int32_t interpType, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, $Color* bgColor) {
+	$useLocalCurrentObjectStackCache();
 	$var($Image, img, img$renamed);
 	$var($AffineTransform, itx, nullptr);
 	try {
@@ -440,6 +443,7 @@ void DrawImage::renderImageXform($SunGraphics2D* sg, $Image* img$renamed, $Affin
 }
 
 bool DrawImage::renderImageCopy($SunGraphics2D* sg, $Image* img, $Color* bgColor, int32_t dx, int32_t dy, int32_t sx, int32_t sy, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($Region, clip, $nc(sg)->getCompClip());
 	$var($SurfaceData, dstData, sg->surfaceData);
 	int32_t attempts = 0;
@@ -473,6 +477,7 @@ bool DrawImage::renderImageCopy($SunGraphics2D* sg, $Image* img, $Color* bgColor
 }
 
 bool DrawImage::renderImageScale($SunGraphics2D* sg, $Image* img, $Color* bgColor, int32_t interpType, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, double dx1, double dy1, double dx2, double dy2) {
+	$useLocalCurrentObjectStackCache();
 	if (interpType != $AffineTransformOp::TYPE_NEAREST_NEIGHBOR) {
 		return false;
 	}
@@ -631,6 +636,7 @@ $BufferedImage* DrawImage::getBufferedImage($Image* img) {
 }
 
 $ColorModel* DrawImage::getTransformColorModel($SunGraphics2D* sg, $BufferedImage* bImg, $AffineTransform* tx) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, cm, $nc(bImg)->getColorModel());
 	$var($ColorModel, dstCM, cm);
 	if ($nc(tx)->isIdentity()) {
@@ -678,6 +684,7 @@ $ColorModel* DrawImage::getTransformColorModel($SunGraphics2D* sg, $BufferedImag
 
 void DrawImage::blitSurfaceData($SunGraphics2D* sg, $Region* clip, $SurfaceData* srcData, $SurfaceData* dstData, int32_t sx, int32_t sy, int32_t dx, int32_t dy, int32_t w, int32_t h, $Color* bgColor) {
 	$init(DrawImage);
+	$useLocalCurrentObjectStackCache();
 	$var($CompositeType, comp, $nc(sg)->imageComp);
 	$init($CompositeType);
 	bool var$0 = $nc($CompositeType::SrcOverNoEa)->equals(comp);
@@ -709,6 +716,7 @@ void DrawImage::blitSurfaceData($SunGraphics2D* sg, $Region* clip, $SurfaceData*
 }
 
 bool DrawImage::scaleSurfaceData($SunGraphics2D* sg, $Region* clipRegion, $SurfaceData* srcData, $SurfaceData* dstData, $SurfaceType* srcType, $SurfaceType* dstType, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, double dx1, double dy1, double dx2, double dy2) {
+	$useLocalCurrentObjectStackCache();
 	$var($CompositeType, comp, $nc(sg)->imageComp);
 	$init($CompositeType);
 	bool var$0 = $nc($CompositeType::SrcOverNoEa)->equals(comp);
@@ -735,6 +743,7 @@ bool DrawImage::imageReady($ToolkitImage* sunimg, $ImageObserver* observer) {
 }
 
 bool DrawImage::copyImage($SunGraphics2D* sg, $Image* img, int32_t x, int32_t y, $Color* bgColor, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($ToolkitImage, img))) {
 		return copyImage(sg, img, x, y, bgColor);
 	} else {
@@ -748,6 +757,7 @@ bool DrawImage::copyImage($SunGraphics2D* sg, $Image* img, int32_t x, int32_t y,
 }
 
 bool DrawImage::copyImage($SunGraphics2D* sg, $Image* img, int32_t dx, int32_t dy, int32_t sx, int32_t sy, int32_t w, int32_t h, $Color* bgColor, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($ToolkitImage, img))) {
 		return copyImage(sg, img, dx, dy, sx, sy, w, h, bgColor);
 	} else {
@@ -761,6 +771,7 @@ bool DrawImage::copyImage($SunGraphics2D* sg, $Image* img, int32_t dx, int32_t d
 }
 
 bool DrawImage::scaleImage($SunGraphics2D* sg, $Image* img, int32_t x, int32_t y, int32_t width, int32_t height, $Color* bgColor, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($ToolkitImage, img))) {
 		return scaleImage(sg, img, x, y, width, height, bgColor);
 	} else {
@@ -774,6 +785,7 @@ bool DrawImage::scaleImage($SunGraphics2D* sg, $Image* img, int32_t x, int32_t y
 }
 
 bool DrawImage::scaleImage($SunGraphics2D* sg, $Image* img, int32_t dx1, int32_t dy1, int32_t dx2, int32_t dy2, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, $Color* bgColor, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($ToolkitImage, img))) {
 		return scaleImage(sg, img, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, bgColor);
 	} else {
@@ -787,6 +799,7 @@ bool DrawImage::scaleImage($SunGraphics2D* sg, $Image* img, int32_t dx1, int32_t
 }
 
 bool DrawImage::transformImage($SunGraphics2D* sg, $Image* img, $AffineTransform* atfm, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($ToolkitImage, img))) {
 		transformImage(sg, img, 0, 0, atfm, $nc(sg)->interpolationType);
 		return true;
@@ -801,6 +814,7 @@ bool DrawImage::transformImage($SunGraphics2D* sg, $Image* img, $AffineTransform
 }
 
 void DrawImage::transformImage($SunGraphics2D* sg, $BufferedImage* img$renamed, $BufferedImageOp* op, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, img, img$renamed);
 	if (op != nullptr) {
 		if ($instanceOf($AffineTransformOp, op)) {

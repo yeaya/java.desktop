@@ -138,6 +138,7 @@ void Test6541987::init$() {
 
 void Test6541987::main($StringArray* args) {
 	$init(Test6541987);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -181,6 +182,7 @@ void Test6541987::main($StringArray* args) {
 
 void Test6541987::start() {
 	$init(Test6541987);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeLater($$new(Test6541987));
 	click($$new($ints, {
 		$KeyEvent::VK_ALT,
@@ -194,6 +196,7 @@ void Test6541987::start() {
 
 void Test6541987::click($ints* keys) {
 	$init(Test6541987);
+	$useLocalCurrentObjectStackCache();
 	$nc(Test6541987::robot)->waitForIdle();
 	{
 		$var($ints, arr$, keys);
@@ -220,6 +223,7 @@ void Test6541987::click($ints* keys) {
 }
 
 void Test6541987::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, title, $of(this)->getClass()->getName());
 	$assignStatic(Test6541987::frame, $new($JFrame, title));
 	$nc(Test6541987::frame)->setLocationRelativeTo(nullptr);

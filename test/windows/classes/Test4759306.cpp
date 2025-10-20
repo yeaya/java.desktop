@@ -47,6 +47,7 @@ void Test4759306::init$() {
 }
 
 void Test4759306::init() {
+	$useLocalCurrentObjectStackCache();
 	$var($JColorChooser, chooser, $new($JColorChooser));
 	chooser->setPreviewPanel($$new($JPanel));
 	$nc($(getContentPane()))->add(static_cast<$Component*>(chooser));

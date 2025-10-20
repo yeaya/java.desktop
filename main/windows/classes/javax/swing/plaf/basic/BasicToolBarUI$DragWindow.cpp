@@ -105,6 +105,7 @@ int32_t BasicToolBarUI$DragWindow::getOrientation() {
 }
 
 void BasicToolBarUI$DragWindow::setOrientation(int32_t o) {
+	$useLocalCurrentObjectStackCache();
 	if (isShowing()) {
 		if (o == this->orientation) {
 			return;

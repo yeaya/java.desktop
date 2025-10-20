@@ -209,6 +209,7 @@ int32_t PopupFactory::getPopupType($Component* owner, $Component* contents, int3
 }
 
 $Popup* PopupFactory::getPopup($Component* owner, $Component* contents, int32_t ownerX, int32_t ownerY, int32_t popupType) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if ($GraphicsEnvironment::isHeadless()) {
 		return getHeadlessPopup(owner, contents, ownerX, ownerY);

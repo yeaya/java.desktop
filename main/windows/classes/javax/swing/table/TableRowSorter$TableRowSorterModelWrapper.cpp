@@ -93,6 +93,7 @@ $Object* TableRowSorter$TableRowSorterModelWrapper::getValueAt(int32_t row, int3
 }
 
 $String* TableRowSorter$TableRowSorterModelWrapper::getStringValueAt(int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($TableStringConverter, converter, this->this$0->getStringConverter());
 	if (converter != nullptr) {
 		$var($String, value, converter->toString(this->this$0->tableModel, row, column));

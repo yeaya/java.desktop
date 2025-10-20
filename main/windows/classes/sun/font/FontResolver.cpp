@@ -94,6 +94,7 @@ void FontResolver::init$() {
 }
 
 $FontArray* FontResolver::getAllFonts() {
+	$useLocalCurrentObjectStackCache();
 	if (this->allFonts == nullptr) {
 		$set(this, allFonts, $nc($($GraphicsEnvironment::getLocalGraphicsEnvironment()))->getAllFonts());
 		for (int32_t i = 0; i < $nc(this->allFonts)->length; ++i) {
@@ -116,6 +117,7 @@ int32_t FontResolver::getIndexFor(char16_t c) {
 }
 
 $FontArray* FontResolver::getAllSCFonts() {
+	$useLocalCurrentObjectStackCache();
 	if (this->supplementaryFonts == nullptr) {
 		$var($ArrayList, fonts, $new($ArrayList));
 		$var($ArrayList, indices, $new($ArrayList));

@@ -269,6 +269,7 @@ void LabelDotTest::init$() {
 
 void LabelDotTest::createUI() {
 	$init(LabelDotTest);
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println("BEFORE CREATION"_s);
 	$assignStatic(LabelDotTest::frame, $new($JFrame));
@@ -296,12 +297,14 @@ void LabelDotTest::createUI() {
 
 void LabelDotTest::runTest(int32_t iterations) {
 	$init(LabelDotTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	$nc($($IntStream::range(0, iterations)))->forEach(static_cast<$IntConsumer*>($$new(LabelDotTest$$Lambda$lambda$runTest$1, robot)));
 }
 
 void LabelDotTest::main($StringArray* args) {
 	$init(LabelDotTest);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -341,6 +344,7 @@ void LabelDotTest::lambda$runTest$1($Robot* robot, int32_t i) {
 
 void LabelDotTest::lambda$runTest$0() {
 	$init(LabelDotTest);
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc(LabelDotTest::label)->getText()))->equals(LabelDotTest::shortText)) {
 		$nc(LabelDotTest::label)->setText(LabelDotTest::longText);
 	} else {

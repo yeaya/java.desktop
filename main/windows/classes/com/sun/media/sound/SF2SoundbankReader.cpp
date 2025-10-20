@@ -58,6 +58,7 @@ void SF2SoundbankReader::init$() {
 }
 
 $Soundbank* SF2SoundbankReader::getSoundbank($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $new($SF2Soundbank, url);
 	} catch ($RIFFInvalidFormatException&) {

@@ -89,6 +89,7 @@ void WindowsInternalFrameTitlePane$2::init$($WindowsInternalFrameTitlePane* this
 }
 
 void WindowsInternalFrameTitlePane$2::mouseClicked($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool var$1 = $nc(e)->getClickCount() == 2;
 	bool var$0 = var$1 && $nc($($WindowsInternalFrameTitlePane::access$000(this->this$0)))->isClosable();
 	if (var$0 && !$nc($($WindowsInternalFrameTitlePane::access$100(this->this$0)))->isIcon()) {
@@ -100,6 +101,7 @@ void WindowsInternalFrameTitlePane$2::mouseClicked($MouseEvent* e) {
 }
 
 void WindowsInternalFrameTitlePane$2::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$nc($($WindowsInternalFrameTitlePane::access$300(this->this$0)))->setSelected(true);
 	} catch ($PropertyVetoException&) {

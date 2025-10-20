@@ -61,6 +61,7 @@ void JTextField$NotifyAction::init$() {
 }
 
 void JTextField$NotifyAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getFocusedComponent());
 	if ($instanceOf($JTextField, target)) {
 		$var($JTextField, field, $cast($JTextField, target));

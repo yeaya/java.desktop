@@ -162,6 +162,7 @@ void TextLayoutStrategy::layout($FlowView* fv) {
 }
 
 int32_t TextLayoutStrategy::layoutRow($FlowView* fv, int32_t rowIndex, int32_t p0) {
+	$useLocalCurrentObjectStackCache();
 	int32_t p1 = $FlowView$FlowStrategy::layoutRow(fv, rowIndex, p0);
 	$var($View, row, $nc(fv)->getView(rowIndex));
 	$var($Document, doc, fv->getDocument());
@@ -193,6 +194,7 @@ void TextLayoutStrategy::adjustRow($FlowView* fv, int32_t rowIndex, int32_t desi
 }
 
 $View* TextLayoutStrategy::createView($FlowView* fv, int32_t startOffset, int32_t spanLeft, int32_t rowIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, lv, getLogicalView(fv));
 	$var($View, row, $nc(fv)->getView(rowIndex));
 	bool requireNextWord = ($nc(this->viewBuffer)->size() == 0) ? false : true;
@@ -230,6 +232,7 @@ $View* TextLayoutStrategy::createView($FlowView* fv, int32_t startOffset, int32_
 }
 
 int32_t TextLayoutStrategy::getLimitingOffset($View* v, int32_t startOffset, int32_t spanLeft, bool requireNextWord) {
+	$useLocalCurrentObjectStackCache();
 	int32_t endOffset = $nc(v)->getEndOffset();
 	$var($Document, doc, v->getDocument());
 	if ($instanceOf($AbstractDocument, doc)) {
@@ -269,6 +272,7 @@ int32_t TextLayoutStrategy::getLimitingOffset($View* v, int32_t startOffset, int
 }
 
 void TextLayoutStrategy::sync($FlowView* fv) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, lv, getLogicalView(fv));
 	$nc(this->text)->setView(lv);
 	$var($Container, container, $nc(fv)->getContainer());

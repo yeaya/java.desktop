@@ -83,6 +83,7 @@ void bug4251579::init$() {
 }
 
 void bug4251579::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(50);
 	$SwingUtilities::invokeAndWait($$new($bug4251579$1));
@@ -91,6 +92,7 @@ void bug4251579::main($StringArray* args) {
 }
 
 void bug4251579::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, htmlText, "<html><head><style> .blue{ color:blue; } </style></head><body<P class=\"blue\"> should be rendered with BLUE class definition</P></body>"_s);
 	$var($JFrame, mainFrame, $new($JFrame, "bug4251579"_s));
 	mainFrame->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);

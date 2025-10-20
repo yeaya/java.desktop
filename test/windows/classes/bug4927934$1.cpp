@@ -85,6 +85,7 @@ void bug4927934$1::init$() {
 }
 
 void bug4927934$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug4927934);
 	$assignStatic($bug4927934::frame, $new($JFrame));
 	$var($DefaultMutableTreeNode, root, $new($DefaultMutableTreeNode, "root"_s));

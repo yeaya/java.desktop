@@ -158,6 +158,7 @@ bool InputMethodLocator::sameInputMethod(InputMethodLocator* other) {
 }
 
 $String* InputMethodLocator::getActionCommandString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, inputMethodString, $nc($of(this->descriptor))->getClass()->getName());
 	if (this->locale == nullptr) {
 		return inputMethodString;

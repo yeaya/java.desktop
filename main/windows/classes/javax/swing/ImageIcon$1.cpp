@@ -71,6 +71,7 @@ void ImageIcon$1::init$() {
 }
 
 $Object* ImageIcon$1::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($Component, component, $ImageIcon::createNoPermsComponent());
 		$nc($($AWTAccessor::getComponentAccessor()))->setAppContext(component, nullptr);

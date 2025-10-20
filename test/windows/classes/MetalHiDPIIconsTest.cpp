@@ -219,6 +219,7 @@ void MetalHiDPIIconsTest::main($StringArray* args) {
 
 void MetalHiDPIIconsTest::createUI() {
 	$init(MetalHiDPIIconsTest);
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, mainFrame, $new($JFrame, "Metal L&F icons test"_s));
 	$var($GridBagLayout, layout, $new($GridBagLayout));
 	$var($JPanel, mainControlPanel, $new($JPanel, static_cast<$LayoutManager*>(layout)));

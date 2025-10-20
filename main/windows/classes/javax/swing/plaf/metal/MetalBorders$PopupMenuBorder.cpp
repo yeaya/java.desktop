@@ -107,6 +107,7 @@ void MetalBorders$PopupMenuBorder::init$() {
 }
 
 void MetalBorders$PopupMenuBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->translate(x, y);
 	g->setColor($($MetalLookAndFeel::getPrimaryControlDarkShadow()));
 	g->drawRect(0, 0, w - 1, h - 1);

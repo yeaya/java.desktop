@@ -110,6 +110,7 @@ void UpdateUIRecursionTest::finalize() {
 }
 
 void UpdateUIRecursionTest::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$("UpdateUIRecursionTest"_s);
 	setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	setSize(400, 400);

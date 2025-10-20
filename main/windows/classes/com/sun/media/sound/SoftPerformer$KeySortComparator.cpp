@@ -61,6 +61,7 @@ void SoftPerformer$KeySortComparator::init$() {
 }
 
 int32_t SoftPerformer$KeySortComparator::compare($ModelSource* o1, $ModelSource* o2) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($nc($($nc(o1)->getIdentifier()))->toString()))->compareTo($($nc($($nc(o2)->getIdentifier()))->toString()));
 }
 

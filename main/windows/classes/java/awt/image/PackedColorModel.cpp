@@ -83,6 +83,7 @@ $Object* allocate$PackedColorModel($Class* clazz) {
 }
 
 void PackedColorModel::init$($ColorSpace* space, int32_t bits, $ints* colorMaskArray, int32_t alphaMask, bool isAlphaPremultiplied, int32_t trans, int32_t transferType) {
+	$useLocalCurrentObjectStackCache();
 	$ColorModel::init$(bits, $(PackedColorModel::createBitsArray(colorMaskArray, alphaMask)), space, (alphaMask == 0 ? false : true), isAlphaPremultiplied, trans, transferType);
 	if (bits < 1 || bits > 32) {
 		$throwNew($IllegalArgumentException, "Number of bits must be between 1 and 32."_s);
@@ -129,6 +130,7 @@ $ints* PackedColorModel::getMasks() {
 }
 
 void PackedColorModel::DecomposeMask(int32_t mask, int32_t idx, $String* componentName) {
+	$useLocalCurrentObjectStackCache();
 	int32_t off = 0;
 	int32_t count = $nc(this->nBits)->get(idx);
 	$nc(this->maskArray)->set(idx, mask);
@@ -154,6 +156,7 @@ $SampleModel* PackedColorModel::createCompatibleSampleModel(int32_t w, int32_t h
 }
 
 bool PackedColorModel::isCompatibleSampleModel($SampleModel* sm) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($SinglePixelPackedSampleModel, sm))) {
 		return false;
 	}
@@ -192,6 +195,7 @@ $WritableRaster* PackedColorModel::getAlphaRaster($WritableRaster* raster) {
 }
 
 bool PackedColorModel::equals(Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf(PackedColorModel, obj))) {
 		return false;
 	}
@@ -236,6 +240,7 @@ int32_t PackedColorModel::hashCode() {
 
 $ints* PackedColorModel::createBitsArray($ints* colorMaskArray, int32_t alphaMask) {
 	$init(PackedColorModel);
+	$useLocalCurrentObjectStackCache();
 	int32_t numColors = $nc(colorMaskArray)->length;
 	int32_t numAlpha = (alphaMask == 0 ? 0 : 1);
 	$var($ints, arr, $new($ints, numColors + numAlpha));
@@ -256,6 +261,7 @@ $ints* PackedColorModel::createBitsArray($ints* colorMaskArray, int32_t alphaMas
 
 $ints* PackedColorModel::createBitsArray(int32_t rmask, int32_t gmask, int32_t bmask, int32_t amask) {
 	$init(PackedColorModel);
+	$useLocalCurrentObjectStackCache();
 	$var($ints, arr, $new($ints, 3 + (amask == 0 ? 0 : 1)));
 	arr->set(0, countBits(rmask));
 	arr->set(1, countBits(gmask));

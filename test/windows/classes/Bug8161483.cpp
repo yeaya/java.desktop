@@ -171,6 +171,7 @@ void Bug8161483::init$() {
 
 void Bug8161483::main($StringArray* args) {
 	$init(Bug8161483);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -203,6 +204,7 @@ void Bug8161483::lambda$main$1() {
 
 void Bug8161483::lambda$main$0() {
 	$init(Bug8161483);
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultListModel, listModel, $new($DefaultListModel));
 	listModel->addElement("one"_s);
 	listModel->addElement("two"_s);

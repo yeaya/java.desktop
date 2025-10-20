@@ -109,6 +109,7 @@ void FlowView$FlowStrategy::init$() {
 }
 
 void FlowView$FlowStrategy::addDamage($FlowView* fv, int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = offset >= $nc(fv)->getStartOffset();
 	if (var$0 && offset < fv->getEndOffset()) {
 		if (this->damageStart == nullptr || offset < $nc(this->damageStart)->getOffset()) {
@@ -171,6 +172,7 @@ $View* FlowView$FlowStrategy::getLogicalView($FlowView* fv) {
 }
 
 void FlowView$FlowStrategy::layout($FlowView* fv) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, pool, getLogicalView(fv));
 	int32_t rowIndex = 0;
 	int32_t p0 = 0;
@@ -213,6 +215,7 @@ void FlowView$FlowStrategy::layout($FlowView* fv) {
 }
 
 int32_t FlowView$FlowStrategy::layoutRow($FlowView* fv, int32_t rowIndex, int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, row, $nc(fv)->getView(rowIndex));
 	float x = (float)fv->getFlowStart(rowIndex);
 	float spanLeft = (float)fv->getFlowSpan(rowIndex);
@@ -273,6 +276,7 @@ int32_t FlowView$FlowStrategy::layoutRow($FlowView* fv, int32_t rowIndex, int32_
 }
 
 void FlowView$FlowStrategy::adjustRow($FlowView* fv, int32_t rowIndex, int32_t desiredSpan, int32_t x) {
+	$useLocalCurrentObjectStackCache();
 	int32_t flowAxis = $nc(fv)->getFlowAxis();
 	$var($View, r, fv->getView(rowIndex));
 	int32_t n = $nc(r)->getViewCount();
@@ -319,6 +323,7 @@ void FlowView$FlowStrategy::adjustRow($FlowView* fv, int32_t rowIndex, int32_t d
 }
 
 void FlowView$FlowStrategy::reparentViews($View* pool, int32_t startPos) {
+	$useLocalCurrentObjectStackCache();
 	$init($Position$Bias);
 	int32_t n = $nc(pool)->getViewIndex(startPos, $Position$Bias::Forward);
 	if (n >= 0) {
@@ -329,6 +334,7 @@ void FlowView$FlowStrategy::reparentViews($View* pool, int32_t startPos) {
 }
 
 $View* FlowView$FlowStrategy::createView($FlowView* fv, int32_t startOffset, int32_t spanLeft, int32_t rowIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, lv, getLogicalView(fv));
 	$init($Position$Bias);
 	int32_t childIndex = $nc(lv)->getViewIndex(startOffset, $Position$Bias::Forward);

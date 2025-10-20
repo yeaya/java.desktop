@@ -114,6 +114,7 @@ void SynthFileChooserUI$UIBorder::init$($SynthFileChooserUI* this$0, $Insets* in
 }
 
 void SynthFileChooserUI$UIBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($JComponent, c))) {
 		return;
 	}

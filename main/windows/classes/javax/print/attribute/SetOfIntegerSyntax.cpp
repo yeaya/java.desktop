@@ -225,6 +225,7 @@ $intArray2* SetOfIntegerSyntax::parse($String* members) {
 
 void SetOfIntegerSyntax::accumulate($Vector* ranges, int32_t lb, int32_t ub) {
 	$init(SetOfIntegerSyntax);
+	$useLocalCurrentObjectStackCache();
 	if (lb <= ub) {
 		$nc(ranges)->add($$new($ints, {
 			lb,
@@ -307,6 +308,7 @@ void SetOfIntegerSyntax::init$(int32_t lowerBound, int32_t upperBound) {
 }
 
 $intArray2* SetOfIntegerSyntax::getMembers() {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = $nc(this->members)->length;
 	$var($intArray2, result, $new($intArray2, n));
 	for (int32_t i = 0; i < n; ++i) {
@@ -347,6 +349,7 @@ int32_t SetOfIntegerSyntax::next(int32_t x) {
 }
 
 bool SetOfIntegerSyntax::equals(Object$* object) {
+	$useLocalCurrentObjectStackCache();
 	if (object != nullptr && $instanceOf(SetOfIntegerSyntax, object)) {
 		$var($intArray2, myMembers, this->members);
 		$var($intArray2, otherMembers, $nc(($cast(SetOfIntegerSyntax, object)))->members);

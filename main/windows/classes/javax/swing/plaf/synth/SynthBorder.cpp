@@ -132,6 +132,7 @@ void SynthBorder::init$($SynthUI* ui) {
 }
 
 void SynthBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, jc, $cast($JComponent, c));
 	$var($SynthContext, context, $nc(this->ui)->getContext(jc));
 	$var($SynthStyle, style, $nc(context)->getStyle());
@@ -145,6 +146,7 @@ void SynthBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y,
 }
 
 $Insets* SynthBorder::getBorderInsets($Component* c, $Insets* insets$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, insets$renamed);
 	if (this->insets != nullptr) {
 		if (insets == nullptr) {

@@ -80,6 +80,7 @@ void DefaultEditorKit$PageAction::init$($String* nm, bool left, bool select) {
 }
 
 void DefaultEditorKit$PageAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getTextComponent(e));
 	if (target != nullptr) {
 		int32_t selectedIndex = 0;

@@ -132,6 +132,7 @@ void IsindexView::init$($Element* elem) {
 }
 
 $Component* IsindexView::createComponent() {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attr, $nc($(getElement()))->getAttributes());
 	$var($JPanel, panel, $new($JPanel, static_cast<$LayoutManager*>($$new($BorderLayout))));
 	panel->setBackground(nullptr);
@@ -152,6 +153,7 @@ $Component* IsindexView::createComponent() {
 }
 
 void IsindexView::actionPerformed($ActionEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, data, $nc(this->textField)->getText());
 	if (data != nullptr) {
 		$assign(data, $URLEncoder::encode(data));

@@ -89,6 +89,7 @@ void bug7107099::init$() {
 }
 
 void bug7107099::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	$SwingUtilities::invokeAndWait($$new($bug7107099$1));
 	robot->waitForIdle();

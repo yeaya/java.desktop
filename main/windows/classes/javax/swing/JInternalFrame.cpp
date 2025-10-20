@@ -695,6 +695,7 @@ $Object* JInternalFrame::PROPERTY_CHANGE_LISTENER_KEY = nullptr;
 
 void JInternalFrame::addPropertyChangeListenerIfNecessary() {
 	$init(JInternalFrame);
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($AppContext::getAppContext()))->get(JInternalFrame::PROPERTY_CHANGE_LISTENER_KEY) == nullptr) {
 		$var($PropertyChangeListener, focusListener, $new($JInternalFrame$FocusPropertyChangeListener));
 		$nc($($AppContext::getAppContext()))->put(JInternalFrame::PROPERTY_CHANGE_LISTENER_KEY, focusListener);
@@ -736,6 +737,7 @@ void JInternalFrame::init$($String* title, bool resizable, bool closable, bool m
 }
 
 void JInternalFrame::init$($String* title, bool resizable, bool closable, bool maximizable, bool iconifiable) {
+	$useLocalCurrentObjectStackCache();
 	$JComponent::init$();
 	this->rootPaneCheckingEnabled = false;
 	$set(this, normalBounds, nullptr);
@@ -794,6 +796,7 @@ void JInternalFrame::updateUI() {
 }
 
 void JInternalFrame::updateUIWhenHidden() {
+	$useLocalCurrentObjectStackCache();
 	setUI($cast($InternalFrameUI, $($UIManager::getUI(this))));
 	invalidate();
 	$var($ComponentArray, children, getComponents());
@@ -857,12 +860,14 @@ $JMenuBar* JInternalFrame::getJMenuBar() {
 }
 
 void JInternalFrame::setMenuBar($JMenuBar* m) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuBar, oldValue, getMenuBar());
 	$nc($(getRootPane()))->setJMenuBar(m);
 	firePropertyChange(JInternalFrame::MENU_BAR_PROPERTY, $of(oldValue), $of(m));
 }
 
 void JInternalFrame::setJMenuBar($JMenuBar* m) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuBar, oldValue, getMenuBar());
 	$nc($(getRootPane()))->setJMenuBar(m);
 	firePropertyChange(JInternalFrame::MENU_BAR_PROPERTY, $of(oldValue), $of(m));
@@ -873,6 +878,7 @@ $Container* JInternalFrame::getContentPane() {
 }
 
 void JInternalFrame::setContentPane($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, oldValue, getContentPane());
 	$nc($(getRootPane()))->setContentPane(c);
 	firePropertyChange(JInternalFrame::CONTENT_PANE_PROPERTY, $of(oldValue), $of(c));
@@ -883,6 +889,7 @@ $JLayeredPane* JInternalFrame::getLayeredPane() {
 }
 
 void JInternalFrame::setLayeredPane($JLayeredPane* layered) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLayeredPane, oldValue, getLayeredPane());
 	$nc($(getRootPane()))->setLayeredPane(layered);
 	firePropertyChange(JInternalFrame::LAYERED_PANE_PROPERTY, $of(oldValue), $of(layered));
@@ -893,6 +900,7 @@ $Component* JInternalFrame::getGlassPane() {
 }
 
 void JInternalFrame::setGlassPane($Component* glass) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, oldValue, getGlassPane());
 	$nc($(getRootPane()))->setGlassPane(glass);
 	firePropertyChange(JInternalFrame::GLASS_PANE_PROPERTY, $of(oldValue), $of(glass));
@@ -903,6 +911,7 @@ $JRootPane* JInternalFrame::getRootPane() {
 }
 
 void JInternalFrame::setRootPane($JRootPane* root) {
+	$useLocalCurrentObjectStackCache();
 	if (this->rootPane != nullptr) {
 		remove(static_cast<$Component*>(this->rootPane));
 	}
@@ -930,6 +939,7 @@ void JInternalFrame::setRootPane($JRootPane* root) {
 }
 
 void JInternalFrame::setClosable(bool b) {
+	$useLocalCurrentObjectStackCache();
 	$init($Boolean);
 	$var($Boolean, oldValue, this->closable ? $Boolean::TRUE : $Boolean::FALSE);
 	$var($Boolean, newValue, b ? $Boolean::TRUE : $Boolean::FALSE);
@@ -946,6 +956,7 @@ bool JInternalFrame::isClosed() {
 }
 
 void JInternalFrame::setClosed(bool b) {
+	$useLocalCurrentObjectStackCache();
 	if (this->isClosed$ == b) {
 		return;
 	}
@@ -968,6 +979,7 @@ void JInternalFrame::setClosed(bool b) {
 }
 
 void JInternalFrame::setResizable(bool b) {
+	$useLocalCurrentObjectStackCache();
 	$init($Boolean);
 	$var($Boolean, oldValue, this->resizable ? $Boolean::TRUE : $Boolean::FALSE);
 	$var($Boolean, newValue, b ? $Boolean::TRUE : $Boolean::FALSE);
@@ -980,6 +992,7 @@ bool JInternalFrame::isResizable() {
 }
 
 void JInternalFrame::setIconifiable(bool b) {
+	$useLocalCurrentObjectStackCache();
 	$init($Boolean);
 	$var($Boolean, oldValue, this->iconable ? $Boolean::TRUE : $Boolean::FALSE);
 	$var($Boolean, newValue, b ? $Boolean::TRUE : $Boolean::FALSE);
@@ -996,6 +1009,7 @@ bool JInternalFrame::isIcon() {
 }
 
 void JInternalFrame::setIcon(bool b) {
+	$useLocalCurrentObjectStackCache();
 	if (this->isIcon$ == b) {
 		return;
 	}
@@ -1014,6 +1028,7 @@ void JInternalFrame::setIcon(bool b) {
 }
 
 void JInternalFrame::setMaximizable(bool b) {
+	$useLocalCurrentObjectStackCache();
 	$init($Boolean);
 	$var($Boolean, oldValue, this->maximizable ? $Boolean::TRUE : $Boolean::FALSE);
 	$var($Boolean, newValue, b ? $Boolean::TRUE : $Boolean::FALSE);
@@ -1030,6 +1045,7 @@ bool JInternalFrame::isMaximum() {
 }
 
 void JInternalFrame::setMaximum(bool b) {
+	$useLocalCurrentObjectStackCache();
 	if (this->isMaximum$ == b) {
 		return;
 	}
@@ -1052,6 +1068,7 @@ void JInternalFrame::setTitle($String* title) {
 }
 
 void JInternalFrame::setSelected(bool selected) {
+	$useLocalCurrentObjectStackCache();
 	if (selected && this->isSelected$) {
 		restoreSubcomponentFocus();
 		return;
@@ -1097,6 +1114,7 @@ $Icon* JInternalFrame::getFrameIcon() {
 }
 
 void JInternalFrame::moveToFront() {
+	$useLocalCurrentObjectStackCache();
 	if (isIcon()) {
 		if ($instanceOf($JLayeredPane, $($nc($(getDesktopIcon()))->getParent()))) {
 			$nc(($cast($JLayeredPane, $($nc($(getDesktopIcon()))->getParent()))))->moveToFront($(getDesktopIcon()));
@@ -1107,6 +1125,7 @@ void JInternalFrame::moveToFront() {
 }
 
 void JInternalFrame::moveToBack() {
+	$useLocalCurrentObjectStackCache();
 	if (isIcon()) {
 		if ($instanceOf($JLayeredPane, $($nc($(getDesktopIcon()))->getParent()))) {
 			$nc(($cast($JLayeredPane, $($nc($(getDesktopIcon()))->getParent()))))->moveToBack($(getDesktopIcon()));
@@ -1134,6 +1153,7 @@ void JInternalFrame::setCursor($Cursor* cursor) {
 }
 
 void JInternalFrame::setLayer($Integer* layer) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = getParent() != nullptr;
 	if (var$0 && $instanceOf($JLayeredPane, $(getParent()))) {
 		$var($JLayeredPane, p, $cast($JLayeredPane, getParent()));
@@ -1159,6 +1179,7 @@ int32_t JInternalFrame::getLayer() {
 }
 
 $JDesktopPane* JInternalFrame::getDesktopPane() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, p, nullptr);
 	$assign(p, getParent());
 	while (p != nullptr && !($instanceOf($JDesktopPane, p))) {
@@ -1203,6 +1224,7 @@ $Component* JInternalFrame::getFocusOwner() {
 }
 
 $Component* JInternalFrame::getMostRecentFocusOwner() {
+	$useLocalCurrentObjectStackCache();
 	if (isSelected()) {
 		return getFocusOwner();
 	}
@@ -1221,6 +1243,7 @@ $Component* JInternalFrame::getMostRecentFocusOwner() {
 }
 
 void JInternalFrame::restoreSubcomponentFocus() {
+	$useLocalCurrentObjectStackCache();
 	if (isIcon()) {
 		$SwingUtilities2::compositeRequestFocus($(getDesktopIcon()));
 	} else {
@@ -1262,6 +1285,7 @@ $InternalFrameListenerArray* JInternalFrame::getInternalFrameListeners() {
 }
 
 void JInternalFrame::fireInternalFrameEvent(int32_t id) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($InternalFrameEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -1364,6 +1388,7 @@ int32_t JInternalFrame::getDefaultCloseOperation() {
 }
 
 void JInternalFrame::pack() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		if (isIcon()) {
 			setIcon(false);
@@ -1409,6 +1434,7 @@ void JInternalFrame::hide() {
 }
 
 void JInternalFrame::dispose() {
+	$useLocalCurrentObjectStackCache();
 	if (isVisible()) {
 		setVisible(false);
 	}
@@ -1450,6 +1476,7 @@ $String* JInternalFrame::getWarningString() {
 }
 
 void JInternalFrame::writeObject($ObjectOutputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultWriteObject();
 	if ($nc($(getUIClassID()))->equals(JInternalFrame::uiClassID)) {
 		int8_t count = $JComponent::getWriteObjCounter(this);
@@ -1493,6 +1520,7 @@ void JInternalFrame::compWriteObjectNotify() {
 }
 
 $String* JInternalFrame::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, rootPaneString, this->rootPane != nullptr ? $nc(this->rootPane)->toString() : ""_s);
 	$var($String, rootPaneCheckingEnabledString, this->rootPaneCheckingEnabled ? "true"_s : "false"_s);
 	$var($String, closableString, this->closable ? "true"_s : "false"_s);

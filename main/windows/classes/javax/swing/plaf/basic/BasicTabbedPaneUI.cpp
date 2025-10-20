@@ -466,6 +466,7 @@ $ComponentUI* BasicTabbedPaneUI::createUI($JComponent* c) {
 
 void BasicTabbedPaneUI::loadActionMap($LazyActionMap* map) {
 	$init(BasicTabbedPaneUI);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicTabbedPaneUI$Actions);
 	$nc(map)->put($$new($BasicTabbedPaneUI$Actions, $BasicTabbedPaneUI$Actions::NEXT));
 	map->put($$new($BasicTabbedPaneUI$Actions, $BasicTabbedPaneUI$Actions::PREVIOUS));
@@ -527,6 +528,7 @@ void BasicTabbedPaneUI::installComponents() {
 }
 
 void BasicTabbedPaneUI::installTabContainer() {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->tabPane)->getTabCount(); ++i) {
 		$var($Component, tabComponent, $nc(this->tabPane)->getTabComponentAt(i));
 		if (tabComponent != nullptr) {
@@ -628,6 +630,7 @@ void BasicTabbedPaneUI::uninstallDefaults() {
 }
 
 void BasicTabbedPaneUI::installListeners() {
+	$useLocalCurrentObjectStackCache();
 	if (($assignField(this, propertyChangeListener, createPropertyChangeListener())) != nullptr) {
 		$nc(this->tabPane)->addPropertyChangeListener(this->propertyChangeListener);
 	}
@@ -648,6 +651,7 @@ void BasicTabbedPaneUI::installListeners() {
 }
 
 void BasicTabbedPaneUI::uninstallListeners() {
+	$useLocalCurrentObjectStackCache();
 	if (this->mouseListener != nullptr) {
 		$nc(this->tabPane)->removeMouseListener(this->mouseListener);
 		$set(this, mouseListener, nullptr);
@@ -741,6 +745,7 @@ void BasicTabbedPaneUI::resetMnemonics() {
 }
 
 void BasicTabbedPaneUI::addMnemonic(int32_t index, int32_t mnemonic) {
+	$useLocalCurrentObjectStackCache();
 	if (this->mnemonicToIndexMap == nullptr) {
 		initMnemonics();
 	}
@@ -778,6 +783,7 @@ $Dimension* BasicTabbedPaneUI::getMaximumSize($JComponent* c) {
 }
 
 int32_t BasicTabbedPaneUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$TabbedPaneUI::getBaseline(c, width, height);
 	int32_t baseline = calculateBaselineIfNecessary();
 	if (baseline != -1) {
@@ -830,6 +836,7 @@ $Component$BaselineResizeBehavior* BasicTabbedPaneUI::getBaselineResizeBehavior(
 }
 
 int32_t BasicTabbedPaneUI::getBaseline(int32_t tab) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->tabPane)->getTabComponentAt(tab) != nullptr) {
 		int32_t offset = getBaselineOffset();
 		if (offset != 0) {
@@ -935,6 +942,7 @@ void BasicTabbedPaneUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void BasicTabbedPaneUI::paintTabArea($Graphics* g, int32_t tabPlacement, int32_t selectedIndex) {
+	$useLocalCurrentObjectStackCache();
 	int32_t tabCount = $nc(this->tabPane)->getTabCount();
 	$var($Rectangle, iconRect, $new($Rectangle));
 	$var($Rectangle, textRect, $new($Rectangle));
@@ -955,6 +963,7 @@ void BasicTabbedPaneUI::paintTabArea($Graphics* g, int32_t tabPlacement, int32_t
 }
 
 void BasicTabbedPaneUI::paintTab($Graphics* g, int32_t tabPlacement, $RectangleArray* rects, int32_t tabIndex, $Rectangle* iconRect, $Rectangle* textRect) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, tabRect, $nc(rects)->get(tabIndex));
 	int32_t selectedIndex = $nc(this->tabPane)->getSelectedIndex();
 	bool isSelected = selectedIndex == tabIndex;
@@ -995,6 +1004,7 @@ bool BasicTabbedPaneUI::isHorizontalTabPlacement() {
 
 $Polygon* BasicTabbedPaneUI::createCroppedTabShape(int32_t tabPlacement, $Rectangle* tabRect, int32_t cropline) {
 	$init(BasicTabbedPaneUI);
+	$useLocalCurrentObjectStackCache();
 	int32_t rlen = 0;
 	int32_t start = 0;
 	int32_t end = 0;
@@ -1125,6 +1135,7 @@ void BasicTabbedPaneUI::paintIcon($Graphics* g, int32_t tabPlacement, int32_t ta
 }
 
 void BasicTabbedPaneUI::paintText($Graphics* g, int32_t tabPlacement, $Font* font, $FontMetrics* metrics, int32_t tabIndex, $String* title, $Rectangle* textRect, bool isSelected) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setFont(font);
 	$var($View, v, getTextViewForTab(tabIndex));
 	if (v != nullptr) {
@@ -1152,6 +1163,7 @@ void BasicTabbedPaneUI::paintText($Graphics* g, int32_t tabPlacement, $Font* fon
 }
 
 int32_t BasicTabbedPaneUI::getTabLabelShiftX(int32_t tabPlacement, int32_t tabIndex, bool isSelected) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, tabRect, $nc(this->rects)->get(tabIndex));
 	$var($String, propKey, isSelected ? "selectedLabelShift"_s : "labelShift"_s);
 	int32_t nudge = $DefaultLookup::getInt(this->tabPane, this, $$str({"TabbedPane."_s, propKey}), 1);
@@ -1330,6 +1342,7 @@ void BasicTabbedPaneUI::paintTabBackground($Graphics* g, int32_t tabPlacement, i
 }
 
 void BasicTabbedPaneUI::paintContentBorder($Graphics* g, int32_t tabPlacement, int32_t selectedIndex) {
+	$useLocalCurrentObjectStackCache();
 	int32_t width = $nc(this->tabPane)->getWidth();
 	int32_t height = $nc(this->tabPane)->getHeight();
 	$var($Insets, insets, $nc(this->tabPane)->getInsets());
@@ -1488,6 +1501,7 @@ int32_t BasicTabbedPaneUI::tabForCoordinate($JTabbedPane* pane, int32_t x, int32
 }
 
 int32_t BasicTabbedPaneUI::tabForCoordinate($JTabbedPane* pane, int32_t x, int32_t y, bool validateIfNecessary) {
+	$useLocalCurrentObjectStackCache();
 	if (validateIfNecessary) {
 		ensureCurrentLayout();
 	}
@@ -1512,6 +1526,7 @@ int32_t BasicTabbedPaneUI::tabForCoordinate($JTabbedPane* pane, int32_t x, int32
 }
 
 $Rectangle* BasicTabbedPaneUI::getTabBounds(int32_t tabIndex, $Rectangle* dest) {
+	$useLocalCurrentObjectStackCache();
 	$nc(dest)->width = $nc($nc(this->rects)->get(tabIndex))->width;
 	dest->height = $nc($nc(this->rects)->get(tabIndex))->height;
 	if (scrollableTabLayoutEnabled()) {
@@ -1562,6 +1577,7 @@ int32_t BasicTabbedPaneUI::getClosestTab(int32_t x, int32_t y) {
 }
 
 $Point* BasicTabbedPaneUI::translatePointToTabPanel(int32_t srcx, int32_t srcy, $Point* dest) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, vpp, $nc($nc(this->tabScroller)->viewport)->getLocation());
 	$var($Point, viewp, $nc($nc(this->tabScroller)->viewport)->getViewPosition());
 	$nc(dest)->x = srcx - $nc(vpp)->x + $nc(viewp)->x;
@@ -1585,6 +1601,7 @@ void BasicTabbedPaneUI::setVisibleComponent($Component* component) {
 }
 
 void BasicTabbedPaneUI::assureRectsCreated(int32_t tabCount) {
+	$useLocalCurrentObjectStackCache();
 	int32_t rectArrayLen = $nc(this->rects)->length;
 	if (tabCount != rectArrayLen) {
 		$var($RectangleArray, tempRectArray, $new($RectangleArray, tabCount));
@@ -1654,6 +1671,7 @@ $View* BasicTabbedPaneUI::getTextViewForTab(int32_t tabIndex) {
 }
 
 int32_t BasicTabbedPaneUI::calculateTabHeight(int32_t tabPlacement, int32_t tabIndex, int32_t fontHeight) {
+	$useLocalCurrentObjectStackCache();
 	int32_t height = 0;
 	$var($Component, c, $nc(this->tabPane)->getTabComponentAt(tabIndex));
 	if (c != nullptr) {
@@ -1687,6 +1705,7 @@ int32_t BasicTabbedPaneUI::calculateMaxTabHeight(int32_t tabPlacement) {
 }
 
 int32_t BasicTabbedPaneUI::calculateTabWidth(int32_t tabPlacement, int32_t tabIndex, $FontMetrics* metrics) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, tabInsets, getTabInsets(tabPlacement, tabIndex));
 	int32_t width = $nc(tabInsets)->left + tabInsets->right + 3;
 	$var($Component, tabComponent, $nc(this->tabPane)->getTabComponentAt(tabIndex));
@@ -2105,6 +2124,7 @@ bool BasicTabbedPaneUI::requestFocusForVisibleComponent() {
 }
 
 $Vector* BasicTabbedPaneUI::createHTMLVector() {
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, htmlViews, $new($Vector));
 	int32_t count = $nc(this->tabPane)->getTabCount();
 	if (count > 0) {

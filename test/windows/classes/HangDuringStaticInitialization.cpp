@@ -65,12 +65,14 @@ void HangDuringStaticInitialization::init$() {
 }
 
 void HangDuringStaticInitialization::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($FileSystem, fs, $FileSystems::getFileSystem($($URI::create("jrt:/"_s))));
 	test(fs, "/modules/java.desktop"_s);
 	test(fs, "/modules/java.datatransfer"_s);
 }
 
 void HangDuringStaticInitialization::test($FileSystem* fs, $String* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Path, var$0, $nc(fs)->getPath(s, $$new($StringArray, 0)));
 	$Files::walkFileTree(var$0, $$new($HangDuringStaticInitialization$1));
 }

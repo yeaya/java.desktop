@@ -84,6 +84,7 @@ void MotifDesktopIconUI$DesktopIconMouseListener::init$($MotifDesktopIconUI* thi
 }
 
 void MotifDesktopIconUI$DesktopIconMouseListener::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(e)->getClickCount() > 1) {
 		try {
 			$nc($(this->this$0->getFrame()))->setIcon(false);

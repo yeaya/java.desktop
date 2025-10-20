@@ -98,6 +98,7 @@ void BasicTableUI$TableTransferHandler::init$() {
 }
 
 $Transferable* BasicTableUI$TableTransferHandler::createTransferable($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JTable, c)) {
 		$var($JTable, table, $cast($JTable, c));
 		$var($ints, rows, nullptr);

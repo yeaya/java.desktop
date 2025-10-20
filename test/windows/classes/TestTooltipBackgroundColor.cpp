@@ -216,6 +216,7 @@ void TestTooltipBackgroundColor::init$() {
 
 void TestTooltipBackgroundColor::blockTillDisplayed($Component* comp) {
 	$init(TestTooltipBackgroundColor);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	while (p == nullptr) {
 		try {
@@ -233,6 +234,7 @@ void TestTooltipBackgroundColor::blockTillDisplayed($Component* comp) {
 
 $Component* TestTooltipBackgroundColor::findSubComponent($Component* parent, $String* className) {
 	$init(TestTooltipBackgroundColor);
+	$useLocalCurrentObjectStackCache();
 	$var($String, parentClassName, $nc($of(parent))->getClass()->getName());
 	if ($nc(parentClassName)->contains(className)) {
 		return parent;
@@ -268,6 +270,7 @@ int32_t TestTooltipBackgroundColor::getMaxColorDiff($Color* c1, $Color* c2) {
 
 void TestTooltipBackgroundColor::main($StringArray* args) {
 	$init(TestTooltipBackgroundColor);
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($System::getProperty("os.name"_s)))->startsWith("Linux"_s)) {
 		$init($System);
 		$nc($System::out)->println("This test is meant for Linux platform only"_s);

@@ -310,6 +310,7 @@ Region* Region::VIEWPORT = nullptr;
 
 $Map* Region::getUItoRegionMap() {
 	$init(Region);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, context, $AppContext::getAppContext());
 	$var($Map, map, $cast($Map, $nc(context)->get(Region::UI_TO_REGION_MAP_KEY)));
 	if (map == nullptr) {
@@ -366,6 +367,7 @@ $Map* Region::getUItoRegionMap() {
 
 $Map* Region::getLowerCaseNameMap() {
 	$init(Region);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, context, $AppContext::getAppContext());
 	$var($Map, map, $cast($Map, $nc(context)->get(Region::LOWER_CASE_NAME_MAP_KEY)));
 	if (map == nullptr) {
@@ -377,11 +379,13 @@ $Map* Region::getLowerCaseNameMap() {
 
 Region* Region::getRegion($JComponent* c) {
 	$init(Region);
+	$useLocalCurrentObjectStackCache();
 	return $cast(Region, $nc($(getUItoRegionMap()))->get($($nc(c)->getUIClassID())));
 }
 
 void Region::registerUIs($UIDefaults* table) {
 	$init(Region);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc($($nc($(getUItoRegionMap()))->keySet()))->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -417,6 +421,7 @@ $String* Region::getName() {
 }
 
 $String* Region::getLowerCaseName() {
+	$useLocalCurrentObjectStackCache();
 	$var($Map, lowerCaseNameMap, getLowerCaseNameMap());
 	$var($String, lowerCaseName, $cast($String, $nc(lowerCaseNameMap)->get(this)));
 	if (lowerCaseName == nullptr) {

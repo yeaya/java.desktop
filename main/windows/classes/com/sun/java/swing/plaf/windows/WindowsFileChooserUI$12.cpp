@@ -98,6 +98,7 @@ void WindowsFileChooserUI$12::setPressed(bool b) {
 }
 
 void WindowsFileChooserUI$12::setRollover(bool b) {
+	$useLocalCurrentObjectStackCache();
 	if (b && !isRollover()) {
 		{
 			$var($ComponentArray, arr$, $nc($($nc(this->val$result)->getParent()))->getComponents());

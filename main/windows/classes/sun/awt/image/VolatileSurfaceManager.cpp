@@ -149,6 +149,7 @@ void VolatileSurfaceManager::finalize() {
 }
 
 void VolatileSurfaceManager::init$($SunVolatileImage* vImg, Object$* context) {
+	$useLocalCurrentObjectStackCache();
 	$SurfaceManager::init$();
 	$set(this, vImg, vImg);
 	$set(this, context, context);
@@ -227,6 +228,7 @@ bool VolatileSurfaceManager::contentsLost() {
 }
 
 $SurfaceData* VolatileSurfaceManager::getBackupSurface() {
+	$useLocalCurrentObjectStackCache();
 	if (this->sdBackup == nullptr) {
 		$var($GraphicsConfiguration, gc, $nc(this->vImg)->getGraphicsConfig());
 		$var($AffineTransform, tx, $nc(gc)->getDefaultTransform());
@@ -262,6 +264,7 @@ void VolatileSurfaceManager::restoreAcceleratedSurface() {
 }
 
 void VolatileSurfaceManager::displayChanged() {
+	$useLocalCurrentObjectStackCache();
 	this->lostSurface = true;
 	if (this->sdAccel != nullptr) {
 		$set(this, sdBackup, nullptr);

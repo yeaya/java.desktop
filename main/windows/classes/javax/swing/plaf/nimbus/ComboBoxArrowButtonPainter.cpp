@@ -277,6 +277,7 @@ $AbstractRegionPainter$PaintContext* ComboBoxArrowButtonPainter::getPaintContext
 }
 
 void ComboBoxArrowButtonPainter::paintBackgroundDisabledAndEditable($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->path);
@@ -292,6 +293,7 @@ void ComboBoxArrowButtonPainter::paintBackgroundDisabledAndEditable($Graphics2D*
 }
 
 void ComboBoxArrowButtonPainter::paintBackgroundEnabledAndEditable($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->path);
@@ -307,6 +309,7 @@ void ComboBoxArrowButtonPainter::paintBackgroundEnabledAndEditable($Graphics2D* 
 }
 
 void ComboBoxArrowButtonPainter::paintBackgroundMouseOverAndEditable($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->path);
@@ -322,6 +325,7 @@ void ComboBoxArrowButtonPainter::paintBackgroundMouseOverAndEditable($Graphics2D
 }
 
 void ComboBoxArrowButtonPainter::paintBackgroundPressedAndEditable($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->path);
@@ -337,6 +341,7 @@ void ComboBoxArrowButtonPainter::paintBackgroundPressedAndEditable($Graphics2D* 
 }
 
 void ComboBoxArrowButtonPainter::paintBackgroundSelectedAndEditable($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->path);
@@ -526,6 +531,7 @@ $Path2D* ComboBoxArrowButtonPainter::decodePath8() {
 }
 
 $Paint* ComboBoxArrowButtonPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -543,6 +549,7 @@ $Paint* ComboBoxArrowButtonPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* ComboBoxArrowButtonPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -568,6 +575,7 @@ $Paint* ComboBoxArrowButtonPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* ComboBoxArrowButtonPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -585,6 +593,7 @@ $Paint* ComboBoxArrowButtonPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* ComboBoxArrowButtonPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -610,6 +619,7 @@ $Paint* ComboBoxArrowButtonPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* ComboBoxArrowButtonPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -627,6 +637,7 @@ $Paint* ComboBoxArrowButtonPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* ComboBoxArrowButtonPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -652,6 +663,7 @@ $Paint* ComboBoxArrowButtonPainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* ComboBoxArrowButtonPainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -669,6 +681,7 @@ $Paint* ComboBoxArrowButtonPainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* ComboBoxArrowButtonPainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -694,6 +707,7 @@ $Paint* ComboBoxArrowButtonPainter::decodeGradient8($Shape* s) {
 }
 
 $Paint* ComboBoxArrowButtonPainter::decodeGradient9($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

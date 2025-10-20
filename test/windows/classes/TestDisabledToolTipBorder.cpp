@@ -146,6 +146,7 @@ void TestDisabledToolTipBorder::init$() {
 }
 
 void TestDisabledToolTipBorder::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($CountDownLatch, latch, $new($CountDownLatch, 1));
 	$init(TestDisabledToolTipBorder);
 	$assignStatic(TestDisabledToolTipBorder::test, $new($TestUI, latch));

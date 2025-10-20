@@ -115,6 +115,7 @@ JRobot* JRobot::getRobot() {
 
 JRobot* JRobot::getRobot(bool enableDelays) {
 	$init(JRobot);
+	$useLocalCurrentObjectStackCache();
 	$var(JRobot, robot, nullptr);
 	try {
 		$assign(robot, $new(JRobot, enableDelays));
@@ -144,6 +145,7 @@ void JRobot::hitKey($ints* keys) {
 }
 
 void JRobot::moveMouseTo($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, $nc(c)->getLocationOnScreen());
 	$var($Dimension, size, c->getSize());
 	$nc(p)->x += $nc(size)->width / 2;
@@ -242,6 +244,7 @@ bool JRobot::comparePixels($Point* p0, $Point* p1) {
 }
 
 bool JRobot::comparePixels(int32_t x0, int32_t y0, int32_t x1, int32_t y1) {
+	$useLocalCurrentObjectStackCache();
 	return ($nc($(getPixelColor(x0, y0)))->equals($(getPixelColor(x1, y1))));
 }
 

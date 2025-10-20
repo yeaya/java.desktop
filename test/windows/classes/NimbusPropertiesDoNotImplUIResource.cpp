@@ -70,6 +70,7 @@ void NimbusPropertiesDoNotImplUIResource::init$() {
 
 void NimbusPropertiesDoNotImplUIResource::main($StringArray* args) {
 	$init(NimbusPropertiesDoNotImplUIResource);
+	$useLocalCurrentObjectStackCache();
 	$var($UIManager$LookAndFeelInfoArray, installedLookAndFeels, nullptr);
 	$assign(installedLookAndFeels, $UIManager::getInstalledLookAndFeels());
 	{
@@ -117,6 +118,7 @@ void NimbusPropertiesDoNotImplUIResource::main($StringArray* args) {
 
 void NimbusPropertiesDoNotImplUIResource::verifyProperty($String* propertyKey) {
 	$init(NimbusPropertiesDoNotImplUIResource);
+	$useLocalCurrentObjectStackCache();
 	$var($Object, property, $UIManager::get(propertyKey));
 	if (property == nullptr) {
 		return;

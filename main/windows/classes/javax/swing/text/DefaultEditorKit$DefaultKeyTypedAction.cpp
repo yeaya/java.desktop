@@ -67,6 +67,7 @@ void DefaultEditorKit$DefaultKeyTypedAction::init$() {
 }
 
 void DefaultEditorKit$DefaultKeyTypedAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getTextComponent(e));
 	if ((target != nullptr) && (e != nullptr)) {
 		bool var$0 = (!target->isEditable());

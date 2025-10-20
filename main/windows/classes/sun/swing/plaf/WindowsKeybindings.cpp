@@ -47,6 +47,7 @@ void WindowsKeybindings::init$() {
 }
 
 void WindowsKeybindings::installKeybindings($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 		$init($DefaultEditorKit);
 		$init($JTextField);
 	$var($Object, fieldInputMap, $new($UIDefaults$LazyInputMap, $$new($ObjectArray, {

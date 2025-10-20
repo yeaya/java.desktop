@@ -79,6 +79,7 @@ void BooleanEditor::setAsText($String* text) {
 }
 
 $StringArray* BooleanEditor::getTags() {
+	$useLocalCurrentObjectStackCache();
 	return $new($StringArray, {
 		$(getValidName(true)),
 		$(getValidName(false))

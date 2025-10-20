@@ -112,6 +112,7 @@ void BasicRootPaneUI$Actions::init$($String* name) {
 }
 
 void BasicRootPaneUI$Actions::actionPerformed($ActionEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($JRootPane, root, $cast($JRootPane, $nc(evt)->getSource()));
 	$var($JButton, owner, $nc(root)->getDefaultButton());
 	$var($String, key, getName());
@@ -137,6 +138,7 @@ void BasicRootPaneUI$Actions::actionPerformed($ActionEvent* evt) {
 }
 
 bool BasicRootPaneUI$Actions::accept(Object$* sender) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, key, getName());
 	if (key == BasicRootPaneUI$Actions::POST_POPUP) {
 		$var($MenuElementArray, elems, $nc($($MenuSelectionManager::defaultManager()))->getSelectedPath());

@@ -134,6 +134,7 @@ bool BasicTextFieldUI$I18nFieldView::isLeftToRight($Component* c) {
 }
 
 $Shape* BasicTextFieldUI$I18nFieldView::adjustAllocation($Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	if (a != nullptr) {
 		$var($Rectangle, bounds, a->getBounds());
 		int32_t vspan = $cast(int32_t, getPreferredSpan($View::Y_AXIS));
@@ -193,6 +194,7 @@ $Shape* BasicTextFieldUI$I18nFieldView::adjustAllocation($Shape* a) {
 }
 
 void BasicTextFieldUI$I18nFieldView::updateVisibilityModel() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, getContainer());
 	if ($instanceOf($JTextField, c)) {
 		$var($JTextField, field, $cast($JTextField, c));
@@ -212,6 +214,7 @@ void BasicTextFieldUI$I18nFieldView::updateVisibilityModel() {
 }
 
 void BasicTextFieldUI$I18nFieldView::paint($Graphics* g, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, r, $cast($Rectangle, a));
 	$nc(g)->clipRect($nc(r)->x, r->y, r->width, r->height);
 	$ParagraphView::paint(g, $(adjustAllocation(a)));

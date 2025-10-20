@@ -99,6 +99,7 @@ $Object* allocate$ShortBandedRaster($Class* clazz) {
 }
 
 void ShortBandedRaster::init$($SampleModel* sampleModel, $Point* origin) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, var$0, sampleModel);
 	$var($DataBufferUShort, var$1, $cast($DataBufferUShort, $nc(sampleModel)->createDataBuffer()));
 	int32_t var$2 = $nc(origin)->x;
@@ -115,6 +116,7 @@ void ShortBandedRaster::init$($SampleModel* sampleModel, $DataBufferUShort* data
 }
 
 void ShortBandedRaster::init$($SampleModel* sampleModel, $DataBufferUShort* dataBuffer, $Rectangle* aRegion, $Point* origin, ShortBandedRaster* parent) {
+	$useLocalCurrentObjectStackCache();
 	$SunWritableRaster::init$(sampleModel, dataBuffer, aRegion, origin, parent);
 	this->maxX = this->minX + this->width;
 	this->maxY = this->minY + this->height;
@@ -180,6 +182,7 @@ $Object* ShortBandedRaster::getDataElements(int32_t x, int32_t y, Object$* obj) 
 }
 
 $Object* ShortBandedRaster::getDataElements(int32_t x, int32_t y, int32_t w, int32_t h, Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	if ((x < this->minX) || (y < this->minY) || (x + w > this->maxX) || (y + h > this->maxY)) {
 		$throwNew($ArrayIndexOutOfBoundsException, "Coordinate out of bounds!"_s);
 	}
@@ -228,6 +231,7 @@ $shorts* ShortBandedRaster::getShortData(int32_t x, int32_t y, int32_t w, int32_
 }
 
 $shorts* ShortBandedRaster::getShortData(int32_t x, int32_t y, int32_t w, int32_t h, $shorts* outData$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($shorts, outData, outData$renamed);
 	if ((x < this->minX) || (y < this->minY) || (x + w > this->maxX) || (y + h > this->maxY)) {
 		$throwNew($ArrayIndexOutOfBoundsException, "Coordinate out of bounds!"_s);
@@ -289,6 +293,7 @@ void ShortBandedRaster::setDataElements(int32_t dstX, int32_t dstY, int32_t widt
 }
 
 void ShortBandedRaster::setDataElements(int32_t x, int32_t y, int32_t w, int32_t h, Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	if ((x < this->minX) || (y < this->minY) || (x + w > this->maxX) || (y + h > this->maxY)) {
 		$throwNew($ArrayIndexOutOfBoundsException, "Coordinate out of bounds!"_s);
 	}
@@ -331,6 +336,7 @@ void ShortBandedRaster::putShortData(int32_t x, int32_t y, int32_t w, int32_t h,
 }
 
 void ShortBandedRaster::putShortData(int32_t x, int32_t y, int32_t w, int32_t h, $shorts* inData) {
+	$useLocalCurrentObjectStackCache();
 	if ((x < this->minX) || (y < this->minY) || (x + w > this->maxX) || (y + h > this->maxY)) {
 		$throwNew($ArrayIndexOutOfBoundsException, "Coordinate out of bounds!"_s);
 	}
@@ -352,6 +358,7 @@ void ShortBandedRaster::putShortData(int32_t x, int32_t y, int32_t w, int32_t h,
 }
 
 $WritableRaster* ShortBandedRaster::createWritableChild(int32_t x, int32_t y, int32_t width, int32_t height, int32_t x0, int32_t y0, $ints* bandList) {
+	$useLocalCurrentObjectStackCache();
 	if (x < this->minX) {
 		$throwNew($RasterFormatException, "x lies outside raster"_s);
 	}
@@ -383,6 +390,7 @@ $Raster* ShortBandedRaster::createChild(int32_t x, int32_t y, int32_t width, int
 }
 
 $WritableRaster* ShortBandedRaster::createCompatibleWritableRaster(int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (w <= 0 || h <= 0) {
 		$throwNew($RasterFormatException, $$str({"negative "_s, ((w <= 0) ? "width"_s : "height"_s)}));
 	}
@@ -395,6 +403,7 @@ $WritableRaster* ShortBandedRaster::createCompatibleWritableRaster() {
 }
 
 void ShortBandedRaster::verify() {
+	$useLocalCurrentObjectStackCache();
 	if (this->width <= 0 || this->height <= 0 || this->height > ($div($Integer::MAX_VALUE, this->width))) {
 		$throwNew($RasterFormatException, "Invalid raster dimension"_s);
 	}
@@ -440,6 +449,7 @@ void ShortBandedRaster::verify() {
 }
 
 $String* ShortBandedRaster::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $new($String, $$str({"ShortBandedRaster: width = "_s, $$str(this->width), " height = "_s, $$str(this->height), " #numBands "_s, $$str(this->numBands), " #dataElements "_s, $$str(this->numDataElements)}));
 }
 

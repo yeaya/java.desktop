@@ -91,6 +91,7 @@ void ActionMap::put(Object$* key, $Action* action) {
 }
 
 $Action* ActionMap::get(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($Action, value, (this->arrayTable == nullptr) ? ($Action*)nullptr : $cast($Action, $nc(this->arrayTable)->get(key)));
 	if (value == nullptr) {
 		$var(ActionMap, parent, getParent());
@@ -128,6 +129,7 @@ int32_t ActionMap::size() {
 }
 
 $ObjectArray* ActionMap::allKeys() {
+	$useLocalCurrentObjectStackCache();
 	int32_t count = size();
 	$var(ActionMap, parent, getParent());
 	if (count == 0) {
@@ -164,6 +166,7 @@ void ActionMap::writeObject($ObjectOutputStream* s) {
 }
 
 void ActionMap::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	for (int32_t counter = s->readInt() - 1; counter >= 0; --counter) {
 		$var($Object, var$0, s->readObject());

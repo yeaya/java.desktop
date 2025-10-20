@@ -73,6 +73,7 @@ void bug7141573$1::init$() {
 }
 
 void bug7141573$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, image, $new($BufferedImage, 200, 200, $BufferedImage::TYPE_INT_ARGB));
 	$var($JProgressBar, bar, $new($JProgressBar));
 	bar->setStringPainted(true);

@@ -325,11 +325,13 @@ void WPanelPeer::finalize() {
 }
 
 void WPanelPeer::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$WCanvasPeer::paint(g);
 	$nc($($SunGraphicsCallback$PaintHeavyweightComponentsCallback::getInstance()))->runComponents($($nc(($cast($Container, this->target)))->getComponents()), g, $SunGraphicsCallback::LIGHTWEIGHTS | $SunGraphicsCallback::HEAVYWEIGHTS);
 }
 
 void WPanelPeer::print($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$WCanvasPeer::print(g);
 	$nc($($SunGraphicsCallback$PrintHeavyweightComponentsCallback::getInstance()))->runComponents($($nc(($cast($Container, this->target)))->getComponents()), g, $SunGraphicsCallback::LIGHTWEIGHTS | $SunGraphicsCallback::HEAVYWEIGHTS);
 }

@@ -233,6 +233,7 @@ void TransferHandler::exportAsDrag($JComponent* comp, $InputEvent* e, int32_t ac
 }
 
 void TransferHandler::exportToClipboard($JComponent* comp, $Clipboard* clip, int32_t action) {
+	$useLocalCurrentObjectStackCache();
 	if ((action == TransferHandler::COPY || action == TransferHandler::MOVE) && ((int32_t)(getSourceActions(comp) & (uint32_t)action)) != 0) {
 		$var($Transferable, t, createTransferable(comp));
 		if (t != nullptr) {
@@ -251,6 +252,7 @@ void TransferHandler::exportToClipboard($JComponent* comp, $Clipboard* clip, int
 }
 
 bool TransferHandler::importData($TransferHandler$TransferSupport* support) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = false;
 	if ($instanceOf($JComponent, $($nc(support)->getComponent()))) {
 		$var($JComponent, var$1, $cast($JComponent, $nc(support)->getComponent()));
@@ -262,6 +264,7 @@ bool TransferHandler::importData($TransferHandler$TransferSupport* support) {
 }
 
 bool TransferHandler::importData($JComponent* comp, $Transferable* t) {
+	$useLocalCurrentObjectStackCache();
 	$var($PropertyDescriptor, prop, getPropertyDescriptor(comp));
 	if (prop != nullptr) {
 		$var($Method, writer, prop->getWriteMethod());
@@ -290,6 +293,7 @@ bool TransferHandler::importData($JComponent* comp, $Transferable* t) {
 }
 
 bool TransferHandler::canImport($TransferHandler$TransferSupport* support) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = false;
 	if ($instanceOf($JComponent, $($nc(support)->getComponent()))) {
 		$var($JComponent, var$1, $cast($JComponent, $nc(support)->getComponent()));
@@ -301,6 +305,7 @@ bool TransferHandler::canImport($TransferHandler$TransferSupport* support) {
 }
 
 bool TransferHandler::canImport($JComponent* comp, $DataFlavorArray* transferFlavors) {
+	$useLocalCurrentObjectStackCache();
 	$var($PropertyDescriptor, prop, getPropertyDescriptor(comp));
 	if (prop != nullptr) {
 		$var($Method, writer, prop->getWriteMethod());
@@ -343,6 +348,7 @@ void TransferHandler::exportDone($JComponent* source, $Transferable* data, int32
 }
 
 $PropertyDescriptor* TransferHandler::getPropertyDescriptor($JComponent* comp) {
+	$useLocalCurrentObjectStackCache();
 	if (this->propertyName == nullptr) {
 		return nullptr;
 	}
@@ -370,6 +376,7 @@ $PropertyDescriptor* TransferHandler::getPropertyDescriptor($JComponent* comp) {
 }
 
 $DataFlavor* TransferHandler::getPropertyDataFlavor($Class* k, $DataFlavorArray* flavors) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(flavors)->length; ++i) {
 		$var($DataFlavor, flavor, flavors->get(i));
 		bool var$1 = "application"_s->equals($($nc(flavor)->getPrimaryType()));
@@ -383,6 +390,7 @@ $DataFlavor* TransferHandler::getPropertyDataFlavor($Class* k, $DataFlavorArray*
 
 $DropTargetListener* TransferHandler::getDropTargetListener() {
 	$init(TransferHandler);
+	$useLocalCurrentObjectStackCache();
 	$load($TransferHandler$DropHandler);
 	$synchronized($TransferHandler$DropHandler::class$) {
 		$var($TransferHandler$DropHandler, handler, $cast($TransferHandler$DropHandler, $nc($($AppContext::getAppContext()))->get($TransferHandler$DropHandler::class$)));

@@ -233,6 +233,7 @@ $JPanel* JLayer::getGlassPane() {
 }
 
 void JLayer::setGlassPane($JPanel* glassPane) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, oldGlassPane, getGlassPane());
 	bool isGlassPaneVisible = false;
 	if (oldGlassPane != nullptr) {
@@ -303,6 +304,7 @@ bool JLayer::isPaintingOrigin() {
 }
 
 void JLayer::paintImmediately(int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->isPaintImmediatelyCalling && $cast($LayerUI, getUI()) != nullptr) {
 		this->isPaintImmediatelyCalling = true;
 		{
@@ -324,6 +326,7 @@ void JLayer::paintImmediately(int32_t x, int32_t y, int32_t w, int32_t h) {
 }
 
 bool JLayer::imageUpdate($Image* img, int32_t infoflags, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (!this->isImageUpdateCalling && $cast($LayerUI, getUI()) != nullptr) {
 		this->isImageUpdateCalling = true;
 		{
@@ -409,6 +412,7 @@ void JLayer::updateUI() {
 }
 
 $Dimension* JLayer::getPreferredScrollableViewportSize() {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Scrollable, $(getView()))) {
 		return $nc(($cast($Scrollable, $(getView()))))->getPreferredScrollableViewportSize();
 	}
@@ -416,6 +420,7 @@ $Dimension* JLayer::getPreferredScrollableViewportSize() {
 }
 
 int32_t JLayer::getScrollableBlockIncrement($Rectangle* visibleRect, int32_t orientation, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Scrollable, $(getView()))) {
 		return $nc(($cast($Scrollable, $(getView()))))->getScrollableBlockIncrement(visibleRect, orientation, direction);
 	}
@@ -423,6 +428,7 @@ int32_t JLayer::getScrollableBlockIncrement($Rectangle* visibleRect, int32_t ori
 }
 
 bool JLayer::getScrollableTracksViewportHeight() {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Scrollable, $(getView()))) {
 		return $nc(($cast($Scrollable, $(getView()))))->getScrollableTracksViewportHeight();
 	}
@@ -430,6 +436,7 @@ bool JLayer::getScrollableTracksViewportHeight() {
 }
 
 bool JLayer::getScrollableTracksViewportWidth() {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Scrollable, $(getView()))) {
 		return $nc(($cast($Scrollable, $(getView()))))->getScrollableTracksViewportWidth();
 	}
@@ -437,6 +444,7 @@ bool JLayer::getScrollableTracksViewportWidth() {
 }
 
 int32_t JLayer::getScrollableUnitIncrement($Rectangle* visibleRect, int32_t orientation, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Scrollable, $(getView()))) {
 		return $nc(($cast($Scrollable, $(getView()))))->getScrollableUnitIncrement(visibleRect, orientation, direction);
 	}
@@ -444,6 +452,7 @@ int32_t JLayer::getScrollableUnitIncrement($Rectangle* visibleRect, int32_t orie
 }
 
 void JLayer::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	$set(this, view, $cast($Component, $nc(f)->get("view"_s, ($Object*)nullptr)));
 	$set(this, glassPane, $cast($JPanel, f->get("glassPane"_s, ($Object*)nullptr)));

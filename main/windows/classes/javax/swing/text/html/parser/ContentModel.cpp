@@ -78,6 +78,7 @@ void ContentModel::init$(int32_t type, Object$* content, ContentModel* next) {
 }
 
 bool ContentModel::empty() {
+	$useLocalCurrentObjectStackCache();
 	switch (this->type) {
 	case u'*':
 		{}
@@ -153,6 +154,7 @@ void ContentModel::getElements($Vector* elemVec) {
 }
 
 bool ContentModel::first(Object$* token) {
+	$useLocalCurrentObjectStackCache();
 	switch (this->type) {
 	case u'*':
 		{}
@@ -236,6 +238,7 @@ $Element* ContentModel::first() {
 }
 
 $String* ContentModel::toString() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($chars, data, nullptr)
 		$var($String, str, nullptr)

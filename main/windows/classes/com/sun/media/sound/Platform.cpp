@@ -127,6 +127,7 @@ bool Platform::isBigEndian() {
 
 void Platform::loadLibraries() {
 	$init(Platform);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	Platform::isNativeLibLoaded = true;
 	try {

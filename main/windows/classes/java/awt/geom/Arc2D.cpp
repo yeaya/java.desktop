@@ -263,6 +263,7 @@ void Arc2D::setAngles($Point2D* p1, $Point2D* p2) {
 }
 
 void Arc2D::setArcType(int32_t type) {
+	$useLocalCurrentObjectStackCache();
 	if (type < Arc2D::OPEN || type > Arc2D::PIE) {
 		$throwNew($IllegalArgumentException, $$str({"invalid type for Arc: "_s, $$str(type)}));
 	}
@@ -410,6 +411,7 @@ bool Arc2D::contains(double x, double y) {
 }
 
 bool Arc2D::intersects(double x, double y, double w, double h) {
+	$useLocalCurrentObjectStackCache();
 	double aw = getWidth();
 	double ah = getHeight();
 	if (w <= 0 || h <= 0 || aw <= 0 || ah <= 0) {

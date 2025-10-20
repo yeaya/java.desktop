@@ -106,6 +106,7 @@ void FilePane$SortableListModel::finalize() {
 }
 
 void FilePane$SortableListModel::init$($FilePane* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$AbstractListModel::init$();
 	$nc($(this$0->getDetailsTableModel()))->addTableModelListener(this);
@@ -117,6 +118,7 @@ int32_t FilePane$SortableListModel::getSize() {
 }
 
 $Object* FilePane$SortableListModel::getElementAt(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	return $of($nc($(this->this$0->getModel()))->getElementAt($nc($(this->this$0->getRowSorter()))->convertRowIndexToModel(index)));
 }
 

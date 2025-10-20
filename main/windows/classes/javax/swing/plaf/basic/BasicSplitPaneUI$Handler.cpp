@@ -111,6 +111,7 @@ void BasicSplitPaneUI$Handler::init$($BasicSplitPaneUI* this$0) {
 }
 
 void BasicSplitPaneUI$Handler::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals($nc(e)->getSource(), this->this$0->splitPane)) {
 		$var($String, changeName, e->getPropertyName());
 		$init($JSplitPane);

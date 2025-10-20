@@ -105,6 +105,7 @@ void bug8016833$1::init$($bug8016833* this$0, bool val$underline, bool val$strik
 }
 
 void bug8016833$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextPane, comp, $new($JTextPane));
 	$var($StyledDocument, doc, comp->getStyledDocument());
 	$var($Style, style, comp->addStyle("superscript"_s, nullptr));

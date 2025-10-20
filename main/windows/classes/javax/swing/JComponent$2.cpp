@@ -73,6 +73,7 @@ void JComponent$2::init$() {
 }
 
 bool JComponent$2::acceptRequestFocus($Component* from, $Component* to, bool temporary, bool focusedWindowChangeAllowed, $FocusEvent$Cause* cause) {
+	$useLocalCurrentObjectStackCache();
 	if ((to == nullptr) || !($instanceOf($JComponent, to))) {
 		return true;
 	}

@@ -250,6 +250,7 @@ $AccessibleRole* AccessibleHTML$TextElementInfo$TextAccessibleContext::getAccess
 }
 
 int32_t AccessibleHTML$TextElementInfo$TextAccessibleContext::getIndexAtPoint($Point* p) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, v, this->this$1->getView());
 	if (v != nullptr) {
 		return v->viewToModel((float)$nc(p)->x, (float)p->y, $(getBounds()));
@@ -259,6 +260,7 @@ int32_t AccessibleHTML$TextElementInfo$TextAccessibleContext::getIndexAtPoint($P
 }
 
 $Rectangle* AccessibleHTML$TextElementInfo$TextAccessibleContext::getCharacterBounds(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($($cast($TextUI, $nc($nc(this->this$1->this$0)->editor)->getUI())))->modelToView($nc(this->this$1->this$0)->editor, i);
 	} catch ($BadLocationException&) {
@@ -278,6 +280,7 @@ int32_t AccessibleHTML$TextElementInfo$TextAccessibleContext::getCharCount() {
 }
 
 int32_t AccessibleHTML$TextElementInfo$TextAccessibleContext::getCaretPosition() {
+	$useLocalCurrentObjectStackCache();
 	$var($View, v, this->this$1->getView());
 	if (v == nullptr) {
 		return -1;
@@ -306,6 +309,7 @@ $String* AccessibleHTML$TextElementInfo$TextAccessibleContext::getBeforeIndex(in
 }
 
 $String* AccessibleHTML$TextElementInfo$TextAccessibleContext::getAtIndex(int32_t part, int32_t index, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($AbstractDocument, $nc(this->this$1->this$0)->model)) {
 		$nc(($cast($AbstractDocument, $nc(this->this$1->this$0)->model)))->readLock();
 	}
@@ -386,6 +390,7 @@ $String* AccessibleHTML$TextElementInfo$TextAccessibleContext::getAtIndex(int32_
 }
 
 $Element* AccessibleHTML$TextElementInfo$TextAccessibleContext::getParagraphElement(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($PlainDocument, $nc(this->this$1->this$0)->model)) {
 		$var($PlainDocument, sdoc, $cast($PlainDocument, $nc(this->this$1->this$0)->model));
 		return $nc(sdoc)->getParagraphElement(index);
@@ -406,6 +411,7 @@ $Element* AccessibleHTML$TextElementInfo$TextAccessibleContext::getParagraphElem
 }
 
 $AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment* AccessibleHTML$TextElementInfo$TextAccessibleContext::getParagraphElementText(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, para, getParagraphElement(index));
 	if (para != nullptr) {
 		$var($AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment, segment, $new($AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment, this));
@@ -424,6 +430,7 @@ $AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment* Accessible
 }
 
 $AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment* AccessibleHTML$TextElementInfo$TextAccessibleContext::getSegmentAt(int32_t part, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment, seg, getParagraphElementText(index));
 	if (seg == nullptr) {
 		return nullptr;
@@ -465,6 +472,7 @@ $AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment* Accessible
 }
 
 $AttributeSet* AccessibleHTML$TextElementInfo$TextAccessibleContext::getCharacterAttribute(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($StyledDocument, $nc(this->this$1->this$0)->model)) {
 		$var($StyledDocument, doc, $cast($StyledDocument, $nc(this->this$1->this$0)->model));
 		$var($Element, elem, $nc(doc)->getCharacterElement(i));

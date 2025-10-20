@@ -71,6 +71,7 @@ void bug6639507$1::init$() {
 }
 
 void bug6639507$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$bug6639507::assertEmptyTitle($$new($Dialog, ($Frame*)nullptr), "new Dialog((Frame) null)"_s);
 	$bug6639507::assertEmptyTitle($$new($Dialog, ($Frame*)nullptr, true), "new Dialog((Frame) null, true)"_s);
 	$bug6639507::assertEmptyTitle($$new($Dialog, ($Dialog*)nullptr), "new Dialog((Dialog) null)"_s);

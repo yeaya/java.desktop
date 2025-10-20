@@ -180,6 +180,7 @@ void SynthMenuItemUI::installListeners() {
 }
 
 void SynthMenuItemUI::updateStyle($JMenuItem* mi) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(static_cast<$JComponent*>(mi), $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -212,6 +213,7 @@ void SynthMenuItemUI::updateStyle($JMenuItem* mi) {
 }
 
 void SynthMenuItemUI::uninstallDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(static_cast<$JComponent*>(this->menuItem), $SynthConstants::ENABLED));
 	$nc(this->style)->uninstallDefaults(context);
 	$set(this, style, nullptr);
@@ -263,6 +265,7 @@ int32_t SynthMenuItemUI::getComponentState($JComponent* c, $Region* region) {
 }
 
 $Dimension* SynthMenuItemUI::getPreferredMenuItemSize($JComponent* c, $Icon* checkIcon, $Icon* arrowIcon, int32_t defaultTextIconGap) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$init($Region);
 	$var($SynthContext, accContext, getContext(c, $Region::MENU_ITEM_ACCELERATOR));
@@ -291,6 +294,7 @@ void SynthMenuItemUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void SynthMenuItemUI::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$init($Region);
 	$var($SynthContext, accContext, getContext(static_cast<$JComponent*>(this->menuItem), $Region::MENU_ITEM_ACCELERATOR));
 	$var($String, prefix, getPropertyPrefix());

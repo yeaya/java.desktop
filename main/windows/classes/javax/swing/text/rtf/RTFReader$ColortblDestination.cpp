@@ -88,6 +88,7 @@ void RTFReader$ColortblDestination::init$($RTFReader* this$0) {
 }
 
 void RTFReader$ColortblDestination::handleText($String* text) {
+	$useLocalCurrentObjectStackCache();
 	int32_t index = 0;
 	for (index = 0; index < $nc(text)->length(); ++index) {
 		if (text->charAt(index) == u';') {
@@ -99,6 +100,7 @@ void RTFReader$ColortblDestination::handleText($String* text) {
 }
 
 void RTFReader$ColortblDestination::close() {
+	$useLocalCurrentObjectStackCache();
 	int32_t count = $nc(this->proTemTable)->size();
 	this->this$0->warning($$str({"Done reading color table, "_s, $$str(count), " entries."_s}));
 	$set(this->this$0, colorTable, $new($ColorArray, count));

@@ -109,6 +109,7 @@ void ScrollBarThumbVisibleTest::init$() {
 }
 
 void ScrollBarThumbVisibleTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;

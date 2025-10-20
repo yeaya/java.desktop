@@ -190,6 +190,7 @@ void LightweightFrame::toBack() {
 }
 
 void LightweightFrame::addNotify() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(getTreeLock()) {
 		if (!isDisplayable()) {
 			$var($SunToolkit, stk, $cast($SunToolkit, $Toolkit::getDefaultToolkit()));
@@ -209,6 +210,7 @@ void LightweightFrame::setPeer($FramePeer* p) {
 }
 
 void LightweightFrame::emulateActivation(bool activate) {
+	$useLocalCurrentObjectStackCache();
 	$var($FramePeer, peer, $cast($FramePeer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(this)));
 	$nc(peer)->emulateActivation(activate);
 }

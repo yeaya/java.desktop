@@ -68,6 +68,7 @@ void SoftAudioBuffer::init$(int32_t size, $AudioFormat* format) {
 }
 
 void SoftAudioBuffer::swap(SoftAudioBuffer* swap) {
+	$useLocalCurrentObjectStackCache();
 	int32_t bak_size = this->size;
 	$var($floats, bak_buffer, this->buffer);
 	bool bak_empty = this->empty;
@@ -116,6 +117,7 @@ $floats* SoftAudioBuffer::array() {
 }
 
 void SoftAudioBuffer::get($bytes* buffer, int32_t channel) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc(this->format)->getFrameSize();
 	int32_t framesize_pc = ($div(var$0, $nc(this->format)->getChannels()));
 	int32_t c_len = this->size * framesize_pc;

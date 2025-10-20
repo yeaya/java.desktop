@@ -112,6 +112,7 @@ void HeadlessJMenuBar::init$() {
 }
 
 void HeadlessJMenuBar::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuBar, mb, $new($JMenuBar));
 	mb->getAccessibleContext();
 	mb->isFocusTraversable();

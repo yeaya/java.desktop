@@ -129,6 +129,7 @@ void Test8007563::init$() {
 
 void Test8007563::main($StringArray* args) {
 	$init(Test8007563);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(Test8007563::ROBOT, $new($Robot));
 	$SwingUtilities::invokeLater($$new(Test8007563));
 	$nc(Test8007563::LATCH)->await();
@@ -139,11 +140,13 @@ void Test8007563::main($StringArray* args) {
 
 void Test8007563::addOpaqueError(bool opaque) {
 	$init(Test8007563);
+	$useLocalCurrentObjectStackCache();
 	$nc(Test8007563::LIST)->add($$str({$($nc($($UIManager::getLookAndFeel()))->getName()), " opaque="_s, $$str(opaque)}));
 }
 
 bool Test8007563::updateLookAndFeel() {
 	$init(Test8007563);
+	$useLocalCurrentObjectStackCache();
 	int32_t index = (int32_t)$nc(Test8007563::LATCH)->getCount() - 1;
 	if (index >= 0) {
 		try {
@@ -161,6 +164,7 @@ bool Test8007563::updateLookAndFeel() {
 }
 
 void Test8007563::run() {
+	$useLocalCurrentObjectStackCache();
 	if (this->frame == nullptr) {
 		if (!updateLookAndFeel()) {
 			return;

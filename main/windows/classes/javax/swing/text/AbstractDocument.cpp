@@ -326,6 +326,7 @@ void AbstractDocument::init$($AbstractDocument$Content* data) {
 }
 
 void AbstractDocument::init$($AbstractDocument$Content* data, $AbstractDocument$AttributeContext* context) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$set(this, documentProperties, nullptr);
 	$set(this, listenerList, $new($EventListenerList));
@@ -372,6 +373,7 @@ void AbstractDocument::setDocumentProperties($Dictionary* x) {
 }
 
 void AbstractDocument::fireInsertUpdate($DocumentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	this->notifyingListeners = true;
 	{
 		$var($Throwable, var$0, nullptr);
@@ -395,6 +397,7 @@ void AbstractDocument::fireInsertUpdate($DocumentEvent* e) {
 }
 
 void AbstractDocument::fireChangedUpdate($DocumentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	this->notifyingListeners = true;
 	{
 		$var($Throwable, var$0, nullptr);
@@ -418,6 +421,7 @@ void AbstractDocument::fireChangedUpdate($DocumentEvent* e) {
 }
 
 void AbstractDocument::fireRemoveUpdate($DocumentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	this->notifyingListeners = true;
 	{
 		$var($Throwable, var$0, nullptr);
@@ -441,6 +445,7 @@ void AbstractDocument::fireRemoveUpdate($DocumentEvent* e) {
 }
 
 void AbstractDocument::fireUndoableEditUpdate($UndoableEditEvent* e$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($UndoableEditEvent, e, e$renamed);
 	if ($instanceOf($AbstractDocument$DefaultDocumentEvent, $($nc(e)->getEdit()))) {
 		$var($Object, var$0, e->getSource());
@@ -536,6 +541,7 @@ $Object* AbstractDocument::getProperty(Object$* key) {
 }
 
 void AbstractDocument::putProperty(Object$* key, Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	if (value != nullptr) {
 		$nc($(getDocumentProperties()))->put(key, value);
 	} else {
@@ -564,6 +570,7 @@ void AbstractDocument::putProperty(Object$* key, Object$* value) {
 }
 
 void AbstractDocument::remove(int32_t offs, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	$var($DocumentFilter, filter, getDocumentFilter());
 	writeLock();
 	{
@@ -586,6 +593,7 @@ void AbstractDocument::remove(int32_t offs, int32_t len) {
 }
 
 void AbstractDocument::handleRemove(int32_t offs, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	if (len > 0) {
 		if (offs < 0 || (offs + len) > getLength()) {
 			$throwNew($BadLocationException, "Invalid remove"_s, getLength() + 1);
@@ -609,6 +617,7 @@ void AbstractDocument::handleRemove(int32_t offs, int32_t len) {
 }
 
 void AbstractDocument::replace(int32_t offset, int32_t length, $String* text, $AttributeSet* attrs) {
+	$useLocalCurrentObjectStackCache();
 	if (length == 0 && (text == nullptr || $nc(text)->length() == 0)) {
 		return;
 	}
@@ -639,6 +648,7 @@ void AbstractDocument::replace(int32_t offset, int32_t length, $String* text, $A
 }
 
 void AbstractDocument::insertString(int32_t offs, $String* str, $AttributeSet* a) {
+	$useLocalCurrentObjectStackCache();
 	if ((str == nullptr) || ($nc(str)->length() == 0)) {
 		return;
 	}
@@ -667,6 +677,7 @@ void AbstractDocument::insertString(int32_t offs, $String* str, $AttributeSet* a
 }
 
 void AbstractDocument::handleInsertString(int32_t offs, $String* str, $AttributeSet* a) {
+	$useLocalCurrentObjectStackCache();
 	if ((str == nullptr) || ($nc(str)->length() == 0)) {
 		return;
 	}
@@ -720,6 +731,7 @@ $Position* AbstractDocument::createPosition(int32_t offs) {
 }
 
 $Position* AbstractDocument::getStartPosition() {
+	$useLocalCurrentObjectStackCache();
 	$var($Position, p, nullptr);
 	try {
 		$assign(p, createPosition(0));
@@ -731,6 +743,7 @@ $Position* AbstractDocument::getStartPosition() {
 }
 
 $Position* AbstractDocument::getEndPosition() {
+	$useLocalCurrentObjectStackCache();
 	$var($Position, p, nullptr);
 	try {
 		$assign(p, createPosition($nc(this->data)->length()));
@@ -742,6 +755,7 @@ $Position* AbstractDocument::getEndPosition() {
 }
 
 $ElementArray* AbstractDocument::getRootElements() {
+	$useLocalCurrentObjectStackCache();
 	$var($ElementArray, elems, $new($ElementArray, 2));
 	elems->set(0, $(getDefaultRootElement()));
 	elems->set(1, $(getBidiRootElement()));
@@ -761,6 +775,7 @@ $Element* AbstractDocument::getBidiRootElement() {
 
 bool AbstractDocument::isLeftToRight($Document* doc, int32_t p0, int32_t p1) {
 	$init(AbstractDocument);
+	$useLocalCurrentObjectStackCache();
 	$init($Boolean);
 	if ($nc($Boolean::TRUE)->equals($($nc(doc)->getProperty(AbstractDocument::I18NProperty)))) {
 		if ($instanceOf(AbstractDocument, doc)) {
@@ -782,6 +797,7 @@ $AbstractDocument$AttributeContext* AbstractDocument::getAttributeContext() {
 }
 
 void AbstractDocument::insertUpdate($AbstractDocument$DefaultDocumentEvent* chng, $AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$init($Boolean);
 	if ($nc($of($(getProperty(AbstractDocument::I18NProperty))))->equals($Boolean::TRUE)) {
 		updateBidi(chng);
@@ -818,6 +834,7 @@ void AbstractDocument::postRemoveUpdate($AbstractDocument$DefaultDocumentEvent* 
 }
 
 void AbstractDocument::updateBidi($AbstractDocument$DefaultDocumentEvent* chng) {
+	$useLocalCurrentObjectStackCache();
 	int32_t firstPStart = 0;
 	int32_t lastPEnd = 0;
 	$init($DocumentEvent$EventType);
@@ -908,6 +925,7 @@ void AbstractDocument::updateBidi($AbstractDocument$DefaultDocumentEvent* chng) 
 }
 
 $bytes* AbstractDocument::calculateBidiLevels(int32_t firstPStart, int32_t lastPEnd) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, levels, $new($bytes, lastPEnd - firstPStart));
 	int32_t levelsEnd = 0;
 	$var($Boolean, defaultDirection, nullptr);
@@ -1042,6 +1060,7 @@ void AbstractDocument::readUnlock() {
 }
 
 void AbstractDocument::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	$set(this, documentProperties, $cast($Dictionary, $nc(f)->get("documentProperties"_s, ($Object*)nullptr)));
 	$set(this, listenerList, $new($EventListenerList));

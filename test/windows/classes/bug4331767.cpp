@@ -78,6 +78,7 @@ void bug4331767::init$() {
 
 void bug4331767::main($StringArray* argv) {
 	$init(bug4331767);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($bug4331767$BrokenLookAndFeel)));
 	} catch ($Exception&) {

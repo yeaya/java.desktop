@@ -158,6 +158,7 @@ void FileFilterDescription::start() {
 
 void FileFilterDescription::test() {
 	$init(FileFilterDescription);
+	$useLocalCurrentObjectStackCache();
 	$var($UIManager$LookAndFeelInfoArray, infos, $UIManager::getInstalledLookAndFeels());
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, infos);
@@ -174,6 +175,7 @@ void FileFilterDescription::test() {
 
 void FileFilterDescription::setLookAndFeel($UIManager$LookAndFeelInfo* info) {
 	$init(FileFilterDescription);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(info)->getClassName()));
 	} catch ($ClassNotFoundException&) {
@@ -193,6 +195,7 @@ void FileFilterDescription::setLookAndFeel($UIManager$LookAndFeelInfo* info) {
 
 void FileFilterDescription::lambda$test$0($UIManager$LookAndFeelInfo* info) {
 	$init(FileFilterDescription);
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, chooser, $new($JFileChooser));
 	setLookAndFeel(info);
 	chooser->setAcceptAllFileFilterUsed(false);

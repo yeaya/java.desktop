@@ -227,6 +227,7 @@ void ServiceDialog$PrintServicePanel::finalize() {
 }
 
 void ServiceDialog$PrintServicePanel::init$($ServiceDialog* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JPanel::init$();
 	$set(this, strTitle, $ServiceDialog::getMsg("border.printservice"_s));
@@ -280,6 +281,7 @@ bool ServiceDialog$PrintServicePanel::isPrintToFileSelected() {
 }
 
 $JLabel* ServiceDialog$PrintServicePanel::addLabel($String* text, $GridBagLayout* gridbag, $GridBagConstraints* c) {
+	$useLocalCurrentObjectStackCache();
 	$nc(c)->gridwidth = 1;
 	$ServiceDialog::addToGB($$new($JLabel, text, $JLabel::TRAILING), this, gridbag, c);
 	c->gridwidth = $GridBagConstraints::REMAINDER;
@@ -289,6 +291,7 @@ $JLabel* ServiceDialog$PrintServicePanel::addLabel($String* text, $GridBagLayout
 }
 
 void ServiceDialog$PrintServicePanel::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, source, $nc(e)->getSource());
 	if ($equals(source, this->btnProperties)) {
 		if (this->uiFactory != nullptr) {
@@ -326,6 +329,7 @@ void ServiceDialog$PrintServicePanel::actionPerformed($ActionEvent* e) {
 }
 
 void ServiceDialog$PrintServicePanel::itemStateChanged($ItemEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(e)->getStateChange() == $ItemEvent::SELECTED) {
 		int32_t index = $nc(this->cbName)->getSelectedIndex();
 		if ((index >= 0) && (index < $nc(this->this$0->services)->length)) {
@@ -396,6 +400,7 @@ void ServiceDialog$PrintServicePanel::throwPrintToFile() {
 }
 
 void ServiceDialog$PrintServicePanel::updateInfo() {
+	$useLocalCurrentObjectStackCache();
 	$load($Destination);
 	$Class* dstCategory = $Destination::class$;
 	bool dstSupported = false;

@@ -67,6 +67,7 @@ void AppContext$2::init$() {
 }
 
 $Object* AppContext$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($ThreadGroup, currentThreadGroup, $($Thread::currentThread())->getThreadGroup());
 	$var($ThreadGroup, parentThreadGroup, $nc(currentThreadGroup)->getParent());
 	while (parentThreadGroup != nullptr) {

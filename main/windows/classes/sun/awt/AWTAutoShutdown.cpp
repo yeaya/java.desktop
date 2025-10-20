@@ -279,6 +279,7 @@ void AWTAutoShutdown::setToolkitBusy(bool busy) {
 }
 
 void AWTAutoShutdown::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($Thread, currentThread, $Thread::currentThread());
 	bool interrupted = false;
 	$synchronized(this->mainLock) {
@@ -327,6 +328,7 @@ $AWTEvent* AWTAutoShutdown::getShutdownEvent() {
 }
 
 void AWTAutoShutdown::activateBlockerThread() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$nc(($cast($Thread, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new(AWTAutoShutdown$$Lambda$lambda$activateBlockerThread$0, this)))))))->start();
 	try {
@@ -368,6 +370,7 @@ $Object* AWTAutoShutdown::getPeer(Object$* target) {
 }
 
 void AWTAutoShutdown::dumpPeers($PlatformLogger* aLog) {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc(aLog)->isLoggable($PlatformLogger$Level::FINE)) {
 		$synchronized(this->activationLock) {
@@ -389,6 +392,7 @@ void AWTAutoShutdown::dumpPeers($PlatformLogger* aLog) {
 }
 
 $Thread* AWTAutoShutdown::lambda$activateBlockerThread$0() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, "AWT-Shutdown"_s);
 	$var($Thread, thread, $new($Thread, $($ThreadGroupUtils::getRootThreadGroup()), this, name, 0, false));
 	thread->setContextClassLoader(nullptr);

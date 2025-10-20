@@ -144,6 +144,7 @@ void AccessibleHTML$TableElementInfo::validate() {
 }
 
 void AccessibleHTML$TableElementInfo::loadChildren($Element* e) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t counter = 0; counter < $nc(e)->getElementCount(); ++counter) {
 		$var($Element, child, e->getElement(counter));
 		$var($AttributeSet, attrs, $nc(child)->getAttributes());
@@ -160,6 +161,7 @@ void AccessibleHTML$TableElementInfo::loadChildren($Element* e) {
 }
 
 void AccessibleHTML$TableElementInfo::updateGrid() {
+	$useLocalCurrentObjectStackCache();
 	int32_t delta = 0;
 	int32_t maxCols = 0;
 	int32_t rows = 0;

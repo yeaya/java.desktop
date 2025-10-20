@@ -81,6 +81,7 @@ void bug6608456$1::init$() {
 }
 
 $Object* bug6608456$1::call() {
+	$useLocalCurrentObjectStackCache();
 	$RepaintManager::setCurrentManager($$new($bug6608456$TestRepaintManager));
 	$var($JFrame, frame, $new($JFrame, "test"_s));
 	frame->setLayout($$new($FlowLayout));

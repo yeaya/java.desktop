@@ -95,6 +95,7 @@ void MetalRootPaneUI$MetalRootLayout::init$() {
 }
 
 $Dimension* MetalRootPaneUI$MetalRootLayout::preferredLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, cpd, nullptr);
 	$var($Dimension, mbd, nullptr);
 	$var($Dimension, tpd, nullptr);
@@ -137,6 +138,7 @@ $Dimension* MetalRootPaneUI$MetalRootLayout::preferredLayoutSize($Container* par
 }
 
 $Dimension* MetalRootPaneUI$MetalRootLayout::minimumLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, cpd, nullptr);
 	$var($Dimension, mbd, nullptr);
 	$var($Dimension, tpd, nullptr);
@@ -179,6 +181,7 @@ $Dimension* MetalRootPaneUI$MetalRootLayout::minimumLayoutSize($Container* paren
 }
 
 $Dimension* MetalRootPaneUI$MetalRootLayout::maximumLayoutSize($Container* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, cpd, nullptr);
 	$var($Dimension, mbd, nullptr);
 	$var($Dimension, tpd, nullptr);
@@ -227,6 +230,7 @@ $Dimension* MetalRootPaneUI$MetalRootLayout::maximumLayoutSize($Container* targe
 }
 
 void MetalRootPaneUI$MetalRootLayout::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$var($JRootPane, root, $cast($JRootPane, parent));
 	$var($Rectangle, b, $nc(root)->getBounds());
 	$var($Insets, i, root->getInsets());

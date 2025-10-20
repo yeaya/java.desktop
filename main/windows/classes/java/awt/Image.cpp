@@ -116,6 +116,7 @@ void Image::init$() {
 }
 
 Image* Image::getScaledInstance(int32_t width, int32_t height, int32_t hints) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageFilter, filter, nullptr);
 	if (((int32_t)(hints & (uint32_t)(Image::SCALE_SMOOTH | Image::SCALE_AREA_AVERAGING))) != 0) {
 		$assign(filter, $new($AreaAveragingScaleFilter, width, height));

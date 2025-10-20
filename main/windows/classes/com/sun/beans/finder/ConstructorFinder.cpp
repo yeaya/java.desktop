@@ -88,6 +88,7 @@ $Cache* ConstructorFinder::CACHE = nullptr;
 
 $Constructor* ConstructorFinder::findConstructor($Class* type, $ClassArray* args) {
 	$init(ConstructorFinder);
+	$useLocalCurrentObjectStackCache();
 	if ($nc(type)->isPrimitive()) {
 		$throwNew($NoSuchMethodException, $$str({"Primitive wrapper does not contain constructors: "_s, $(type->getName())}));
 	}

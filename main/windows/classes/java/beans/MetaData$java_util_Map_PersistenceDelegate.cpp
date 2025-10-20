@@ -73,6 +73,7 @@ void MetaData$java_util_Map_PersistenceDelegate::init$() {
 }
 
 void MetaData$java_util_Map_PersistenceDelegate::initialize($Class* type, Object$* oldInstance, Object$* newInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Map, oldMap, $cast($Map, oldInstance));
 	$var($Map, newMap, $cast($Map, newInstance));
 	if (newMap != nullptr) {

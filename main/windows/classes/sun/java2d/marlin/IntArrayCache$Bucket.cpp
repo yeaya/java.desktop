@@ -98,6 +98,7 @@ $ints* IntArrayCache$Bucket::getArray() {
 }
 
 void IntArrayCache$Bucket::putArray($ints* array) {
+	$useLocalCurrentObjectStackCache();
 	$init($MarlinConst);
 	if ($MarlinConst::DO_CHECKS && ($nc(array)->length != this->arraySize)) {
 		$MarlinUtils::logInfo($$str({$($IntArrayCache::getLogPrefix(this->clean)), "IntArrayCache: bad length = "_s, $$str(array->length)}));

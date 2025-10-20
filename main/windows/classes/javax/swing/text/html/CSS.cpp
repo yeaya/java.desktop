@@ -345,6 +345,7 @@ $Hashtable* CSS::cssValueToInternalValueMap = nullptr;
 int32_t CSS::baseFontSizeIndex = 0;
 
 void CSS::init$() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, styleSheet, nullptr);
 	this->baseFontSize = CSS::baseFontSizeIndex + 1;
 	$set(this, valueConvertor, $new($Hashtable));
@@ -419,6 +420,7 @@ void CSS::setBaseFontSize(int32_t sz) {
 }
 
 void CSS::setBaseFontSize($String* size) {
+	$useLocalCurrentObjectStackCache();
 	int32_t relSize = 0;
 	int32_t absSize = 0;
 	int32_t diff = 0;
@@ -480,6 +482,7 @@ void CSS::addInternalCSSValue($MutableAttributeSet* attr, $CSS$Attribute* key, $
 }
 
 $Object* CSS::getInternalCSSValue($CSS$Attribute* key, $String* value) {
+	$useLocalCurrentObjectStackCache();
 	$var($CSS$CssValue, conv, $cast($CSS$CssValue, $nc(this->valueConvertor)->get(key)));
 	$var($Object, r, $nc(conv)->parseCssValue(value));
 	return $of(r != nullptr ? r : conv->parseCssValue($($nc(key)->getDefaultValue())));
@@ -490,6 +493,7 @@ $CSS$Attribute* CSS::styleConstantsKeyToCSSKey($StyleConstants* sc) {
 }
 
 $Object* CSS::styleConstantsValueToCSSValue($StyleConstants* sc, Object$* styleValue) {
+	$useLocalCurrentObjectStackCache();
 	$var($CSS$Attribute, cssKey, styleConstantsKeyToCSSKey(sc));
 	if (cssKey != nullptr) {
 		$var($CSS$CssValue, conv, $cast($CSS$CssValue, $nc(this->valueConvertor)->get(cssKey)));
@@ -506,6 +510,7 @@ $Object* CSS::cssValueToStyleConstantsValue($StyleConstants* key, Object$* value
 }
 
 $Font* CSS::getFont($StyleContext* sc, $AttributeSet* a, int32_t defaultSize, $StyleSheet* ss$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($StyleSheet, ss, ss$renamed);
 	$assign(ss, getStyleSheet(ss));
 	int32_t size = getFontSize(a, defaultSize, ss);
@@ -562,6 +567,7 @@ $Color* CSS::getColor($AttributeSet* a, $CSS$Attribute* key) {
 }
 
 float CSS::getPointSize($String* size, $StyleSheet* ss$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($StyleSheet, ss, ss$renamed);
 	int32_t relSize = 0;
 	int32_t absSize = 0;
@@ -584,6 +590,7 @@ float CSS::getPointSize($String* size, $StyleSheet* ss$renamed) {
 }
 
 float CSS::getLength($AttributeSet* a, $CSS$Attribute* key, $StyleSheet* ss$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($StyleSheet, ss, ss$renamed);
 	$assign(ss, getStyleSheet(ss));
 	$var($CSS$LengthValue, lv, $cast($CSS$LengthValue, $nc(a)->getAttribute(key)));
@@ -593,6 +600,7 @@ float CSS::getLength($AttributeSet* a, $CSS$Attribute* key, $StyleSheet* ss$rena
 }
 
 $AttributeSet* CSS::translateHTMLToCSS($AttributeSet* htmlAttrSet) {
+	$useLocalCurrentObjectStackCache();
 	$var($MutableAttributeSet, cssAttrSet, $new($SimpleAttributeSet));
 	$var($Element, elem, $cast($Element, htmlAttrSet));
 	$var($HTML$Tag, tag, getHTMLTag(htmlAttrSet));
@@ -646,6 +654,7 @@ $AttributeSet* CSS::translateHTMLToCSS($AttributeSet* htmlAttrSet) {
 
 int32_t CSS::getTableBorder($AttributeSet* tableAttr) {
 	$init(CSS);
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Attribute);
 	$var($String, borderValue, $cast($String, $nc(tableAttr)->getAttribute($HTML$Attribute::BORDER)));
 	$init($HTML);
@@ -681,6 +690,7 @@ $CSS$Value* CSS::getValue($String* name) {
 
 $URL* CSS::getURL($URL* base, $String* cssString$renamed) {
 	$init(CSS);
+	$useLocalCurrentObjectStackCache();
 	$var($String, cssString, cssString$renamed);
 	if (cssString == nullptr) {
 		return nullptr;
@@ -710,6 +720,7 @@ $URL* CSS::getURL($URL* base, $String* cssString$renamed) {
 
 $String* CSS::colorToHex($Color* color) {
 	$init(CSS);
+	$useLocalCurrentObjectStackCache();
 	$var($String, colorstr, "#"_s);
 	$var($String, str, $Integer::toHexString($nc(color)->getRed()));
 	if ($nc(str)->length() > 2) {
@@ -740,6 +751,7 @@ $String* CSS::colorToHex($Color* color) {
 
 $Color* CSS::hexToColor($String* value) {
 	$init(CSS);
+	$useLocalCurrentObjectStackCache();
 	$var($String, digits, nullptr);
 	int32_t n = $nc(value)->length();
 	if (value->startsWith("#"_s)) {
@@ -907,6 +919,7 @@ int32_t CSS::getIndexOfSize(float pt, $StyleSheet* ss) {
 
 $StringArray* CSS::parseStrings($String* value) {
 	$init(CSS);
+	$useLocalCurrentObjectStackCache();
 	int32_t current = 0;
 	int32_t last = 0;
 	int32_t length = (value == nullptr) ? 0 : $nc(value)->length();
@@ -938,6 +951,7 @@ $StringArray* CSS::parseStrings($String* value) {
 }
 
 float CSS::getPointSize(int32_t index, $StyleSheet* ss$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($StyleSheet, ss, ss$renamed);
 	$assign(ss, getStyleSheet(ss));
 	$init($StyleSheet);
@@ -953,6 +967,7 @@ float CSS::getPointSize(int32_t index, $StyleSheet* ss$renamed) {
 }
 
 void CSS::translateEmbeddedAttributes($AttributeSet* htmlAttrSet, $MutableAttributeSet* cssAttrSet) {
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, keys, $nc(htmlAttrSet)->getAttributeNames());
 	$init($StyleConstants);
 	$init($HTML$Tag);
@@ -974,6 +989,7 @@ void CSS::translateEmbeddedAttributes($AttributeSet* htmlAttrSet, $MutableAttrib
 }
 
 void CSS::translateAttributes($HTML$Tag* tag, $AttributeSet* htmlAttrSet, $MutableAttributeSet* cssAttrSet) {
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, names, $nc(htmlAttrSet)->getAttributeNames());
 	while ($nc(names)->hasMoreElements()) {
 		$var($Object, name, names->nextElement());
@@ -1012,6 +1028,7 @@ void CSS::translateAttributes($HTML$Tag* tag, $AttributeSet* htmlAttrSet, $Mutab
 }
 
 void CSS::translateAttribute($HTML$Attribute* key, $String* htmlAttrValue, $MutableAttributeSet* cssAttrSet) {
+	$useLocalCurrentObjectStackCache();
 	$var($CSS$AttributeArray, cssAttrList, getCssAttribute(key));
 	if (cssAttrList == nullptr || htmlAttrValue == nullptr) {
 		return;
@@ -1033,6 +1050,7 @@ void CSS::translateAttribute($HTML$Attribute* key, $String* htmlAttrValue, $Muta
 }
 
 $Object* CSS::getCssValue($CSS$Attribute* cssAttr, $String* htmlAttrValue) {
+	$useLocalCurrentObjectStackCache();
 	$var($CSS$CssValue, value, $cast($CSS$CssValue, $nc(this->valueConvertor)->get(cssAttr)));
 	$var($Object, o, $nc(value)->parseHtmlValue(htmlAttrValue));
 	return $of(o);
@@ -1048,6 +1066,7 @@ $CSS$Attribute* CSS::getCssAlignAttribute($HTML$Tag* tag, $AttributeSet* htmlAtt
 }
 
 $HTML$Tag* CSS::getHTMLTag($AttributeSet* htmlAttrSet) {
+	$useLocalCurrentObjectStackCache();
 	$init($StyleConstants);
 	$var($Object, o, $nc(htmlAttrSet)->getAttribute($StyleConstants::NameAttribute));
 	if ($instanceOf($HTML$Tag, o)) {
@@ -1107,6 +1126,7 @@ $SizeRequirements* CSS::calculateTiledRequirements($CSS$LayoutIterator* iter, $S
 
 void CSS::calculateTiledLayout($CSS$LayoutIterator* iter, int32_t targetSpan) {
 	$init(CSS);
+	$useLocalCurrentObjectStackCache();
 	int64_t preferred = 0;
 	int64_t currentPreferred = 0;
 	int32_t lastMargin = 0;
@@ -1204,6 +1224,7 @@ void CSS::calculateTiledLayout($CSS$LayoutIterator* iter, int32_t targetSpan) {
 }
 
 void CSS::writeObject($ObjectOutputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultWriteObject();
 	$var($Enumeration, keys, $nc(this->valueConvertor)->keys());
 	s->writeInt($nc(this->valueConvertor)->size());
@@ -1225,6 +1246,7 @@ void CSS::writeObject($ObjectOutputStream* s) {
 }
 
 void CSS::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	int32_t newBaseFontSize = $nc(f)->get("baseFontSize"_s, 0);
 	setBaseFontSize(newBaseFontSize);
@@ -1255,6 +1277,7 @@ $StyleSheet* CSS::getStyleSheet($StyleSheet* ss) {
 }
 
 void clinit$CSS($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(CSS::attributeMap, $new($Hashtable));
 	$assignStatic(CSS::valueMap, $new($Hashtable));
 	$assignStatic(CSS::htmlAttrToCssAttrMap, $new($Hashtable, 20));

@@ -121,6 +121,7 @@ $PhysicalStrike* CompositeStrike::getStrikeForGlyph(int32_t glyphCode) {
 }
 
 $PhysicalStrike* CompositeStrike::getStrikeForSlot(int32_t slot) {
+	$useLocalCurrentObjectStackCache();
 	if (slot >= $nc(this->strikes)->length) {
 		slot = 0;
 	}
@@ -137,6 +138,7 @@ int32_t CompositeStrike::getNumGlyphs() {
 }
 
 $StrikeMetrics* CompositeStrike::getFontMetrics() {
+	$useLocalCurrentObjectStackCache();
 	if (this->strikeMetrics == nullptr) {
 		$var($StrikeMetrics, compMetrics, $new($StrikeMetrics));
 		for (int32_t s = 0; s < $nc(this->compFont)->numMetricsSlots; ++s) {
@@ -193,6 +195,7 @@ $Rectangle2D$Float* CompositeStrike::getGlyphOutlineBounds(int32_t glyphCode) {
 }
 
 $GeneralPath* CompositeStrike::getGlyphOutline(int32_t glyphCode, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($PhysicalStrike, strike, getStrikeForGlyph(glyphCode));
 	$var($GeneralPath, path, $nc(strike)->getGlyphOutline((int32_t)(glyphCode & (uint32_t)CompositeStrike::SLOTMASK), x, y));
 	if (path == nullptr) {
@@ -203,6 +206,7 @@ $GeneralPath* CompositeStrike::getGlyphOutline(int32_t glyphCode, float x, float
 }
 
 $GeneralPath* CompositeStrike::getGlyphVectorOutline($ints* glyphs, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($GeneralPath, path, nullptr);
 	$var($GeneralPath, gp, nullptr);
 	int32_t glyphIndex = 0;

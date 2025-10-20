@@ -88,6 +88,7 @@ void OGLSurfaceToSwBlit::init$($SurfaceType* dstType, int32_t typeval) {
 
 void OGLSurfaceToSwBlit::complexClipBlit($SurfaceData* src$renamed, $SurfaceData* dst, $Composite* comp, $Region* clip, int32_t sx, int32_t sy, int32_t dx, int32_t dy, int32_t w, int32_t h) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($SurfaceData, src, src$renamed);
 		$var($SurfaceData, cachedSrc, nullptr);
 		if (this->srcTmp != nullptr) {
@@ -107,6 +108,7 @@ void OGLSurfaceToSwBlit::complexClipBlit($SurfaceData* src$renamed, $SurfaceData
 }
 
 void OGLSurfaceToSwBlit::Blit$($SurfaceData* src, $SurfaceData* dst, $Composite* comp, $Region* clip$renamed, int32_t sx, int32_t sy, int32_t dx, int32_t dy, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($Region, clip, clip$renamed);
 	if (clip != nullptr) {
 		$assign(clip, clip->getIntersectionXYWH(dx, dy, w, h));

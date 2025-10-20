@@ -106,6 +106,7 @@ $JComboBox* bug4743225::cb = nullptr;
 $volatile(bool) bug4743225::flag = false;
 
 void bug4743225::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$();
 	setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	setLayout($$new($FlowLayout));
@@ -122,6 +123,7 @@ void bug4743225::init$() {
 
 $BasicComboPopup* bug4743225::getPopup() {
 	$init(bug4743225);
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, c, $nc(bug4743225::cb)->getAccessibleContext());
 	for (int32_t i = 0; i < $nc(c)->getAccessibleChildrenCount(); ++i) {
 		if ($instanceOf($BasicComboPopup, $(c->getAccessibleChild(i)))) {
@@ -133,6 +135,7 @@ $BasicComboPopup* bug4743225::getPopup() {
 
 void bug4743225::main($StringArray* args) {
 	$init(bug4743225);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(100);
 	$SwingUtilities::invokeAndWait($$new($bug4743225$2));

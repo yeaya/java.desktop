@@ -52,6 +52,7 @@ void bug4496801::init$() {
 }
 
 void bug4496801::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($HTMLDocument, doc, $new($HTMLDocument));
 	doc->setParser($$new($ParserDelegator));
 	$var($Element, html, $nc($(doc->getRootElements()))->get(0));

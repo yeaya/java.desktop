@@ -238,12 +238,14 @@ float MarlinProperties::getQuadDecD2() {
 
 bool MarlinProperties::getBoolean($String* key, $String* def) {
 	$load(MarlinProperties);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	return $nc($($Boolean::valueOf($cast($String, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, key, def))))))))->booleanValue();
 }
 
 int32_t MarlinProperties::getInteger($String* key, int32_t def, int32_t min, int32_t max) {
 	$load(MarlinProperties);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, property, $cast($String, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, key)))));
 	int32_t value = def;
@@ -269,6 +271,7 @@ int32_t MarlinProperties::align(int32_t val, int32_t norm) {
 
 double MarlinProperties::getDouble($String* key, double def, double min, double max) {
 	$load(MarlinProperties);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	double value = def;
 	$var($String, property, $cast($String, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, key)))));

@@ -91,6 +91,7 @@ $String* EnumSyntax::toString() {
 }
 
 $Object* EnumSyntax::readResolve() {
+	$useLocalCurrentObjectStackCache();
 	$var($EnumSyntaxArray, theTable, getEnumValueTable());
 	if (theTable == nullptr) {
 		$throwNew($InvalidObjectException, $$str({"Null enumeration value table for class "_s, $of(this)->getClass()}));

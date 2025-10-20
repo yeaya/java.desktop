@@ -182,6 +182,7 @@ void SpringLayout::resetCyclicStatuses() {
 }
 
 void SpringLayout::setParent($Container* p) {
+	$useLocalCurrentObjectStackCache();
 	resetCyclicStatuses();
 	$var($SpringLayout$Constraints, pc, getConstraints(p));
 	$nc(pc)->setX($($Spring::constant(0)));
@@ -236,6 +237,7 @@ $Dimension* SpringLayout::addInsets(int32_t width, int32_t height, $Container* p
 }
 
 $Dimension* SpringLayout::minimumLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	setParent(parent);
 	$var($SpringLayout$Constraints, pc, getConstraints(parent));
 	int32_t var$0 = $nc($(abandonCycles($($nc(pc)->getWidth()))))->getMinimumValue();
@@ -243,6 +245,7 @@ $Dimension* SpringLayout::minimumLayoutSize($Container* parent) {
 }
 
 $Dimension* SpringLayout::preferredLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	setParent(parent);
 	$var($SpringLayout$Constraints, pc, getConstraints(parent));
 	int32_t var$0 = $nc($(abandonCycles($($nc(pc)->getWidth()))))->getPreferredValue();
@@ -250,6 +253,7 @@ $Dimension* SpringLayout::preferredLayoutSize($Container* parent) {
 }
 
 $Dimension* SpringLayout::maximumLayoutSize($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	setParent(parent);
 	$var($SpringLayout$Constraints, pc, getConstraints(parent));
 	int32_t var$0 = $nc($(abandonCycles($($nc(pc)->getWidth()))))->getMaximumValue();
@@ -278,6 +282,7 @@ void SpringLayout::putConstraint($String* e1, $Component* c1, int32_t pad, $Stri
 }
 
 void SpringLayout::putConstraint($String* e1, $Component* c1, $Spring* s, $String* e2, $Component* c2) {
+	$useLocalCurrentObjectStackCache();
 	putConstraint(e1, c1, $($Spring::sum(s, $(getConstraint(e2, c2)))));
 }
 
@@ -288,6 +293,7 @@ void SpringLayout::putConstraint($String* e, $Component* c, $Spring* s) {
 }
 
 $SpringLayout$Constraints* SpringLayout::applyDefaults($Component* c, $SpringLayout$Constraints* constraints$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($SpringLayout$Constraints, constraints, constraints$renamed);
 	if (constraints == nullptr) {
 		$assign(constraints, $new($SpringLayout$Constraints));
@@ -331,6 +337,7 @@ void SpringLayout::putConstraints($Component* component, $SpringLayout$Constrain
 }
 
 $SpringLayout$Constraints* SpringLayout::getConstraints($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SpringLayout$Constraints, result, $cast($SpringLayout$Constraints, $nc(this->componentConstraints)->get(c)));
 	if (result == nullptr) {
 		if ($instanceOf($JComponent, c)) {
@@ -352,6 +359,7 @@ $Spring* SpringLayout::getConstraint($String* edgeName$renamed, $Component* c) {
 }
 
 void SpringLayout::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	setParent(parent);
 	int32_t n = $nc(parent)->getComponentCount();
 	$nc($(getConstraints(parent)))->reset();

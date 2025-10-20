@@ -244,6 +244,7 @@ void DefaultBoundedRangeModel::fireStateChanged() {
 }
 
 $String* DefaultBoundedRangeModel::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$6, $$str({"value="_s, $$str(getValue()), ", extent="_s}));
 	$var($String, var$5, $$concat(var$6, $$str(getExtent())));
 	$var($String, var$4, $$concat(var$5, ", min="));

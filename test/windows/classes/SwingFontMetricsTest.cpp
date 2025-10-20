@@ -156,6 +156,7 @@ void SwingFontMetricsTest::init$() {
 
 void SwingFontMetricsTest::main($StringArray* args) {
 	$init(SwingFontMetricsTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Map, map, $cast($Map, $nc($($Toolkit::getDefaultToolkit()))->getDesktopProperty("awt.font.desktophints"_s)));
 	$init($RenderingHints);
 	$assignStatic(SwingFontMetricsTest::aaHint, $nc(map)->get($RenderingHints::KEY_TEXT_ANTIALIASING));
@@ -172,6 +173,7 @@ void SwingFontMetricsTest::main($StringArray* args) {
 
 void SwingFontMetricsTest::createAndShowGUI() {
 	$init(SwingFontMetricsTest);
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame));
 	frame->setSize(300, 300);
 	frame->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);

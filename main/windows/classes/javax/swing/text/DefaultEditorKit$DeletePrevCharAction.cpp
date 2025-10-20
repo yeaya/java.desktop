@@ -79,6 +79,7 @@ void DefaultEditorKit$DeletePrevCharAction::init$() {
 }
 
 void DefaultEditorKit$DeletePrevCharAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getTextComponent(e));
 	bool beep = true;
 	if ((target != nullptr) && (target->isEditable())) {

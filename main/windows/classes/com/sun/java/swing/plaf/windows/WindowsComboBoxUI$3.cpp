@@ -101,6 +101,7 @@ void WindowsComboBoxUI$3::init$($WindowsComboBoxUI* this$0) {
 }
 
 void WindowsComboBoxUI$3::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$BasicComboBoxUI$ComboBoxLayoutManager::layoutContainer(parent);
 	bool var$0 = $XPStyle::getXP() != nullptr;
 	if (var$0 && $WindowsComboBoxUI::access$500(this->this$0) != nullptr) {

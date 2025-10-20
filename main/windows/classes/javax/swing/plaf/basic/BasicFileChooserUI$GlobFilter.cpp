@@ -83,6 +83,7 @@ void BasicFileChooserUI$GlobFilter::init$($BasicFileChooserUI* this$0) {
 }
 
 void BasicFileChooserUI$GlobFilter::setPattern($String* globPattern) {
+	$useLocalCurrentObjectStackCache();
 	$var($chars, gPat, $nc(globPattern)->toCharArray());
 	$var($chars, rPat, $new($chars, gPat->length * 2));
 	$init($File);
@@ -198,6 +199,7 @@ void BasicFileChooserUI$GlobFilter::setPattern($String* globPattern) {
 }
 
 bool BasicFileChooserUI$GlobFilter::accept($File* f) {
+	$useLocalCurrentObjectStackCache();
 	if (f == nullptr) {
 		return false;
 	}

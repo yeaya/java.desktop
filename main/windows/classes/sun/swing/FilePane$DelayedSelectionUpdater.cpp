@@ -85,6 +85,7 @@ void FilePane$DelayedSelectionUpdater::init$($FilePane* this$0, $File* editFile)
 }
 
 void FilePane$DelayedSelectionUpdater::run() {
+	$useLocalCurrentObjectStackCache();
 	this->this$0->setFileSelected();
 	if (this->editFile != nullptr) {
 		this->this$0->editFileName($nc($(this->this$0->getRowSorter()))->convertRowIndexToView($nc($(this->this$0->getModel()))->indexOf(this->editFile)));

@@ -73,6 +73,7 @@ void OGLPaints$LinearGradient::init$() {
 }
 
 bool OGLPaints$LinearGradient::isPaintValid($SunGraphics2D* sg2d) {
+	$useLocalCurrentObjectStackCache();
 	$var($LinearGradientPaint, paint, $cast($LinearGradientPaint, $nc(sg2d)->paint));
 	bool var$1 = $nc($($nc(paint)->getFractions()))->length == 2;
 	$init($MultipleGradientPaint$CycleMethod);

@@ -174,6 +174,7 @@ int32_t SynthPanelUI::getComponentState($JComponent* c) {
 }
 
 void SynthPanelUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);

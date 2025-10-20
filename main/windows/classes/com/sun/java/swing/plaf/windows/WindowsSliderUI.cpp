@@ -195,6 +195,7 @@ $BasicSliderUI$TrackListener* WindowsSliderUI::createTrackListener($JSlider* sli
 }
 
 void WindowsSliderUI::paintTrack($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		bool vertical = ($nc(this->slider)->getOrientation() == $JSlider::VERTICAL);
@@ -214,6 +215,7 @@ void WindowsSliderUI::paintTrack($Graphics* g) {
 }
 
 void WindowsSliderUI::paintMinorTickForHorizSlider($Graphics* g, $Rectangle* tickBounds, int32_t x) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$init($TMSchema$Part);
@@ -225,6 +227,7 @@ void WindowsSliderUI::paintMinorTickForHorizSlider($Graphics* g, $Rectangle* tic
 }
 
 void WindowsSliderUI::paintMajorTickForHorizSlider($Graphics* g, $Rectangle* tickBounds, int32_t x) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$init($TMSchema$Part);
@@ -236,6 +239,7 @@ void WindowsSliderUI::paintMajorTickForHorizSlider($Graphics* g, $Rectangle* tic
 }
 
 void WindowsSliderUI::paintMinorTickForVertSlider($Graphics* g, $Rectangle* tickBounds, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$init($TMSchema$Part);
@@ -247,6 +251,7 @@ void WindowsSliderUI::paintMinorTickForVertSlider($Graphics* g, $Rectangle* tick
 }
 
 void WindowsSliderUI::paintMajorTickForVertSlider($Graphics* g, $Rectangle* tickBounds, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$init($TMSchema$Part);
@@ -258,6 +263,7 @@ void WindowsSliderUI::paintMajorTickForVertSlider($Graphics* g, $Rectangle* tick
 }
 
 void WindowsSliderUI::paintThumb($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$TMSchema$Part* part = getXPThumbPart();
@@ -282,6 +288,7 @@ void WindowsSliderUI::paintThumb($Graphics* g) {
 }
 
 $Dimension* WindowsSliderUI::getThumbSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$var($Dimension, size, $new($Dimension));
@@ -295,6 +302,7 @@ $Dimension* WindowsSliderUI::getThumbSize() {
 }
 
 $TMSchema$Part* WindowsSliderUI::getXPThumbPart() {
+	$useLocalCurrentObjectStackCache();
 	$TMSchema$Part* part = nullptr;
 	bool vertical = ($nc(this->slider)->getOrientation() == $JSlider::VERTICAL);
 	bool leftToRight = $nc($($nc(this->slider)->getComponentOrientation()))->isLeftToRight();

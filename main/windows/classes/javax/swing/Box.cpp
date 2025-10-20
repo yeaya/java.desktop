@@ -167,6 +167,7 @@ $Component* Box::createRigidArea($Dimension* d) {
 
 $Component* Box::createHorizontalStrut(int32_t width) {
 	$init(Box);
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, var$0, $new($Dimension, width, 0));
 	$var($Dimension, var$1, $new($Dimension, width, 0));
 	return $new($Box$Filler, var$0, var$1, $$new($Dimension, width, $Short::MAX_VALUE));
@@ -174,6 +175,7 @@ $Component* Box::createHorizontalStrut(int32_t width) {
 
 $Component* Box::createVerticalStrut(int32_t height) {
 	$init(Box);
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, var$0, $new($Dimension, 0, height));
 	$var($Dimension, var$1, $new($Dimension, 0, height));
 	return $new($Box$Filler, var$0, var$1, $$new($Dimension, $Short::MAX_VALUE, height));
@@ -181,6 +183,7 @@ $Component* Box::createVerticalStrut(int32_t height) {
 
 $Component* Box::createGlue() {
 	$init(Box);
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, var$0, $new($Dimension, 0, 0));
 	$var($Dimension, var$1, $new($Dimension, 0, 0));
 	return $new($Box$Filler, var$0, var$1, $$new($Dimension, $Short::MAX_VALUE, $Short::MAX_VALUE));
@@ -188,6 +191,7 @@ $Component* Box::createGlue() {
 
 $Component* Box::createHorizontalGlue() {
 	$init(Box);
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, var$0, $new($Dimension, 0, 0));
 	$var($Dimension, var$1, $new($Dimension, 0, 0));
 	return $new($Box$Filler, var$0, var$1, $$new($Dimension, $Short::MAX_VALUE, 0));
@@ -195,6 +199,7 @@ $Component* Box::createHorizontalGlue() {
 
 $Component* Box::createVerticalGlue() {
 	$init(Box);
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, var$0, $new($Dimension, 0, 0));
 	$var($Dimension, var$1, $new($Dimension, 0, 0));
 	return $new($Box$Filler, var$0, var$1, $$new($Dimension, 0, $Short::MAX_VALUE));

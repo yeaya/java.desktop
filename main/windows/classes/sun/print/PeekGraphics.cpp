@@ -479,6 +479,7 @@ void PeekGraphics::drawString($AttributedCharacterIterator* iterator, int32_t x,
 }
 
 void PeekGraphics::drawString($AttributedCharacterIterator* iterator, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	if (iterator == nullptr) {
 		$throwNew($NullPointerException, "AttributedCharacterIterator is null"_s);
 	}
@@ -598,6 +599,7 @@ void PeekGraphics::drawImage($BufferedImage* img, $BufferedImageOp* op, int32_t 
 }
 
 void PeekGraphics::drawString($String* str, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(str)->length() == 0) {
 		return;
 	}
@@ -712,6 +714,7 @@ void PeekGraphics::addDrawingRect(float x, float y, float width, float height) {
 }
 
 void PeekGraphics::addDrawingRect($Rectangle2D* rect) {
+	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, matrix, getTransform());
 	$var($Shape, transShape, $nc(matrix)->createTransformedShape(rect));
 	$var($Rectangle2D, transRect, $nc(transShape)->getBounds2D());
@@ -720,6 +723,7 @@ void PeekGraphics::addDrawingRect($Rectangle2D* rect) {
 }
 
 void PeekGraphics::addStrokeShape($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Shape, transShape, $nc($(getStroke()))->createStrokedShape(s));
 	addDrawingRect($($nc(transShape)->getBounds2D()));
 }

@@ -105,6 +105,7 @@ void FontRenderContext::init$($AffineTransform* tx, bool isAntiAliased, bool use
 }
 
 void FontRenderContext::init$($AffineTransform* tx, Object$* aaHint, Object$* fmHint) {
+	$useLocalCurrentObjectStackCache();
 	if (tx != nullptr && !tx->isIdentity()) {
 		$set(this, tx, $new($AffineTransform, tx));
 	}
@@ -203,6 +204,7 @@ bool FontRenderContext::equals(Object$* obj) {
 }
 
 bool FontRenderContext::equals(FontRenderContext* rhs) {
+	$useLocalCurrentObjectStackCache();
 	if (this == rhs) {
 		return true;
 	}
@@ -225,6 +227,7 @@ bool FontRenderContext::equals(FontRenderContext* rhs) {
 }
 
 int32_t FontRenderContext::hashCode() {
+	$useLocalCurrentObjectStackCache();
 	int32_t hash = this->tx == nullptr ? 0 : $nc(this->tx)->hashCode();
 	if (this->defaulting) {
 		hash += $nc($of($(getAntiAliasingHint())))->hashCode();

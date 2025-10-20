@@ -78,6 +78,7 @@ void FontManagerFactory$1::init$() {
 }
 
 $Object* FontManagerFactory$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$init($FontManagerFactory);

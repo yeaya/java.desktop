@@ -110,6 +110,7 @@ $ExceptionListener* Encoder::getExceptionListener() {
 }
 
 $Object* Encoder::getValue($Expression* exp) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $of((exp == nullptr) ? ($Object*)nullptr : $nc(exp)->getValue());
 	} catch ($Exception&) {
@@ -159,6 +160,7 @@ $Object* Encoder::writeObject1(Object$* oldInstance) {
 }
 
 $Statement* Encoder::cloneStatement($Statement* oldExp) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, oldTarget, $nc(oldExp)->getTarget());
 	$var($Object, newTarget, writeObject1(oldTarget));
 	$var($ObjectArray, oldArgs, oldExp->getArguments());
@@ -172,6 +174,7 @@ $Statement* Encoder::cloneStatement($Statement* oldExp) {
 }
 
 void Encoder::writeStatement($Statement* oldStm) {
+	$useLocalCurrentObjectStackCache();
 	$var($Statement, newStm, cloneStatement(oldStm));
 	if (!$equals($nc(oldStm)->getTarget(), this) && this->executeStatements) {
 		try {
@@ -184,6 +187,7 @@ void Encoder::writeStatement($Statement* oldStm) {
 }
 
 void Encoder::writeExpression($Expression* oldExp) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, oldValue, getValue(oldExp));
 	if (get(oldValue) != nullptr) {
 		return;

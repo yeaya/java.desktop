@@ -111,6 +111,7 @@ void SynthTableHeaderUI$HeaderRenderer::init$($SynthTableHeaderUI* this$0) {
 }
 
 $Component* SynthTableHeaderUI$HeaderRenderer::getTableCellRendererComponent($JTable* table, Object$* value, bool isSelected, bool hasFocus, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	bool hasRollover = (column == $SynthTableHeaderUI::access$000(this->this$0));
 	if (isSelected || hasRollover || hasFocus) {
 		bool enabled = (table == nullptr) ? true : $nc(table)->isEnabled();

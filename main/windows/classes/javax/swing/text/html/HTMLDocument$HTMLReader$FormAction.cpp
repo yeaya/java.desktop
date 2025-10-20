@@ -131,6 +131,7 @@ void HTMLDocument$HTMLReader$FormAction::init$($HTMLDocument$HTMLReader* this$1)
 }
 
 void HTMLDocument$HTMLReader$FormAction::start($HTML$Tag* t, $MutableAttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Tag);
 	if (t == $HTML$Tag::INPUT) {
 		$init($HTML$Attribute);
@@ -207,6 +208,7 @@ void HTMLDocument$HTMLReader$FormAction::end($HTML$Tag* t) {
 }
 
 void HTMLDocument$HTMLReader$FormAction::setModel($String* type, $MutableAttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	bool var$1 = $nc(type)->equals("submit"_s);
 	bool var$0 = var$1 || $nc(type)->equals("reset"_s);
 	if (var$0 || $nc(type)->equals("image"_s)) {

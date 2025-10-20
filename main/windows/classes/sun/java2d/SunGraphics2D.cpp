@@ -655,6 +655,7 @@ void SunGraphics2D::setDevClip($Rectangle* r) {
 }
 
 void SunGraphics2D::constrain(int32_t x, int32_t y, int32_t w, int32_t h, $Region* region$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Region, region, region$renamed);
 	if ((x | y) != 0) {
 		translate(x, y);
@@ -723,6 +724,7 @@ $Shape* SunGraphics2D::intersectShapes($Shape* s1, $Shape* s2, bool keep1, bool 
 }
 
 $Shape* SunGraphics2D::intersectRectShape($Rectangle2D* r, $Shape* s$renamed, bool keep1, bool keep2) {
+	$useLocalCurrentObjectStackCache();
 	$var($Shape, s, s$renamed);
 	if ($instanceOf($Rectangle2D, s)) {
 		$var($Rectangle2D, r2, $cast($Rectangle2D, s));
@@ -768,6 +770,7 @@ $Shape* SunGraphics2D::cloneShape($Shape* s) {
 }
 
 $Shape* SunGraphics2D::intersectByArea($Shape* s1, $Shape* s2$renamed, bool keep1, bool keep2) {
+	$useLocalCurrentObjectStackCache();
 	$var($Shape, s2, s2$renamed);
 	$var($Area, a1, nullptr);
 	$var($Area, a2, nullptr);
@@ -806,6 +809,7 @@ $Font* SunGraphics2D::getFont() {
 }
 
 $FontInfo* SunGraphics2D::checkFontInfo($FontInfo* info$renamed, $Font* font, $FontRenderContext* frc) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontInfo, info, info$renamed);
 	if (info == nullptr) {
 		$assign(info, $new($FontInfo));
@@ -973,6 +977,7 @@ $FontMetrics* SunGraphics2D::getFontMetrics() {
 }
 
 $FontMetrics* SunGraphics2D::getFontMetrics($Font* font) {
+	$useLocalCurrentObjectStackCache();
 	if ((this->fontMetrics != nullptr) && (font == this->font)) {
 		return this->fontMetrics;
 	}
@@ -984,6 +989,7 @@ $FontMetrics* SunGraphics2D::getFontMetrics($Font* font) {
 }
 
 bool SunGraphics2D::hit($Rectangle* rect$renamed, $Shape* s$renamed, bool onStroke) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, rect, rect$renamed);
 	$var($Shape, s, s$renamed);
 	if (onStroke) {
@@ -1010,6 +1016,7 @@ $SurfaceData* SunGraphics2D::getSurfaceData() {
 }
 
 void SunGraphics2D::setComposite($Composite* comp) {
+	$useLocalCurrentObjectStackCache();
 	if (this->composite == comp) {
 		return;
 	}
@@ -1176,6 +1183,7 @@ void SunGraphics2D::setStroke($Stroke* s) {
 }
 
 void SunGraphics2D::setRenderingHint($RenderingHints$Key* hintKey, Object$* hintValue) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(hintKey)->isCompatibleValue(hintValue)) {
 		$throwNew($IllegalArgumentException, $$str({hintValue, " is not compatible with "_s, hintKey}));
 	}
@@ -1365,6 +1373,7 @@ $Object* SunGraphics2D::getRenderingHint($RenderingHints$Key* hintKey) {
 }
 
 void SunGraphics2D::setRenderingHints($Map* hints) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, hints, nullptr);
 	this->renderHint = $SunHints::INTVAL_RENDER_DEFAULT;
 	this->antialiasHint = $SunHints::INTVAL_ANTIALIAS_OFF;
@@ -1395,6 +1404,7 @@ void SunGraphics2D::setRenderingHints($Map* hints) {
 }
 
 void SunGraphics2D::addRenderingHints($Map* hints) {
+	$useLocalCurrentObjectStackCache();
 	bool customHintPresent = false;
 	{
 		$var($Iterator, i$, $nc($($nc(hints)->keySet()))->iterator());
@@ -1428,6 +1438,7 @@ $RenderingHints* SunGraphics2D::getRenderingHints() {
 }
 
 $RenderingHints* SunGraphics2D::makeHints($Map* hints) {
+	$useLocalCurrentObjectStackCache();
 	$var($RenderingHints, model, $new($RenderingHints, nullptr));
 	if (hints != nullptr) {
 		model->putAll(hints);
@@ -1647,6 +1658,7 @@ $Rectangle* SunGraphics2D::getClipBounds() {
 }
 
 $Rectangle* SunGraphics2D::getClipBounds($Rectangle* r) {
+	$useLocalCurrentObjectStackCache();
 	if (this->clipState != SunGraphics2D::CLIP_DEVICE) {
 		if (this->transformState <= SunGraphics2D::TRANSFORM_INT_TRANSLATE) {
 			if ($instanceOf($Rectangle, this->usrClip)) {
@@ -1665,6 +1677,7 @@ $Rectangle* SunGraphics2D::getClipBounds($Rectangle* r) {
 }
 
 bool SunGraphics2D::hitClip(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (width <= 0 || height <= 0) {
 		return false;
 	}
@@ -1706,6 +1719,7 @@ bool SunGraphics2D::hitClip(int32_t x, int32_t y, int32_t width, int32_t height)
 }
 
 void SunGraphics2D::validateCompClip() {
+	$useLocalCurrentObjectStackCache();
 	int32_t origClipState = this->clipState;
 	if (this->usrClip == nullptr) {
 		this->clipState = SunGraphics2D::CLIP_DEVICE;
@@ -1754,6 +1768,7 @@ $Shape* SunGraphics2D::transformShape($Shape* s) {
 }
 
 $Shape* SunGraphics2D::untransformShape($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	if (s == nullptr) {
 		return nullptr;
 	}
@@ -1771,6 +1786,7 @@ $Shape* SunGraphics2D::untransformShape($Shape* s) {
 
 $Shape* SunGraphics2D::transformShape(int32_t tx, int32_t ty, $Shape* s) {
 	$init(SunGraphics2D);
+	$useLocalCurrentObjectStackCache();
 	if (s == nullptr) {
 		return nullptr;
 	}
@@ -1795,6 +1811,7 @@ $Shape* SunGraphics2D::transformShape(int32_t tx, int32_t ty, $Shape* s) {
 
 $Shape* SunGraphics2D::transformShape($AffineTransform* tx, $Shape* clip) {
 	$init(SunGraphics2D);
+	$useLocalCurrentObjectStackCache();
 	if (clip == nullptr) {
 		return nullptr;
 	}
@@ -1869,6 +1886,7 @@ void SunGraphics2D::setXORMode($Color* c) {
 }
 
 void SunGraphics2D::copyArea(int32_t x, int32_t y, int32_t w, int32_t h, int32_t dx, int32_t dy) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -1895,6 +1913,7 @@ void SunGraphics2D::copyArea(int32_t x, int32_t y, int32_t w, int32_t h, int32_t
 }
 
 void SunGraphics2D::doCopyArea(int32_t x, int32_t y, int32_t w, int32_t h, int32_t dx, int32_t dy) {
+	$useLocalCurrentObjectStackCache();
 	if (w <= 0 || h <= 0) {
 		return;
 	}
@@ -1969,6 +1988,7 @@ void SunGraphics2D::doCopyArea(int32_t x, int32_t y, int32_t w, int32_t h, int32
 }
 
 void SunGraphics2D::drawLine(int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -1995,6 +2015,7 @@ void SunGraphics2D::drawLine(int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
 }
 
 void SunGraphics2D::drawRoundRect(int32_t x, int32_t y, int32_t w, int32_t h, int32_t arcW, int32_t arcH) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -2021,6 +2042,7 @@ void SunGraphics2D::drawRoundRect(int32_t x, int32_t y, int32_t w, int32_t h, in
 }
 
 void SunGraphics2D::fillRoundRect(int32_t x, int32_t y, int32_t w, int32_t h, int32_t arcW, int32_t arcH) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -2047,6 +2069,7 @@ void SunGraphics2D::fillRoundRect(int32_t x, int32_t y, int32_t w, int32_t h, in
 }
 
 void SunGraphics2D::drawOval(int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -2073,6 +2096,7 @@ void SunGraphics2D::drawOval(int32_t x, int32_t y, int32_t w, int32_t h) {
 }
 
 void SunGraphics2D::fillOval(int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -2099,6 +2123,7 @@ void SunGraphics2D::fillOval(int32_t x, int32_t y, int32_t w, int32_t h) {
 }
 
 void SunGraphics2D::drawArc(int32_t x, int32_t y, int32_t w, int32_t h, int32_t startAngl, int32_t arcAngl) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -2125,6 +2150,7 @@ void SunGraphics2D::drawArc(int32_t x, int32_t y, int32_t w, int32_t h, int32_t 
 }
 
 void SunGraphics2D::fillArc(int32_t x, int32_t y, int32_t w, int32_t h, int32_t startAngl, int32_t arcAngl) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -2151,6 +2177,7 @@ void SunGraphics2D::fillArc(int32_t x, int32_t y, int32_t w, int32_t h, int32_t 
 }
 
 void SunGraphics2D::drawPolyline($ints* xPoints, $ints* yPoints, int32_t nPoints) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -2177,6 +2204,7 @@ void SunGraphics2D::drawPolyline($ints* xPoints, $ints* yPoints, int32_t nPoints
 }
 
 void SunGraphics2D::drawPolygon($ints* xPoints, $ints* yPoints, int32_t nPoints) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -2203,6 +2231,7 @@ void SunGraphics2D::drawPolygon($ints* xPoints, $ints* yPoints, int32_t nPoints)
 }
 
 void SunGraphics2D::fillPolygon($ints* xPoints, $ints* yPoints, int32_t nPoints) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -2229,6 +2258,7 @@ void SunGraphics2D::fillPolygon($ints* xPoints, $ints* yPoints, int32_t nPoints)
 }
 
 void SunGraphics2D::drawRect(int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -2255,6 +2285,7 @@ void SunGraphics2D::drawRect(int32_t x, int32_t y, int32_t w, int32_t h) {
 }
 
 void SunGraphics2D::fillRect(int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -2281,6 +2312,7 @@ void SunGraphics2D::fillRect(int32_t x, int32_t y, int32_t w, int32_t h) {
 }
 
 void SunGraphics2D::revalidateAll() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$set(this, surfaceData, $nc(this->surfaceData)->getReplacement());
 		if (this->surfaceData == nullptr) {
@@ -2301,6 +2333,7 @@ void SunGraphics2D::revalidateAll() {
 }
 
 void SunGraphics2D::clearRect(int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($Composite, c, this->composite);
 	$var($Paint, p, this->paint);
 	$init($AlphaComposite);
@@ -2312,6 +2345,7 @@ void SunGraphics2D::clearRect(int32_t x, int32_t y, int32_t w, int32_t h) {
 }
 
 void SunGraphics2D::draw($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -2338,6 +2372,7 @@ void SunGraphics2D::draw($Shape* s) {
 }
 
 void SunGraphics2D::fill($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -2387,6 +2422,7 @@ int32_t SunGraphics2D::getTileIndex(int32_t p, int32_t tileGridOffset, int32_t t
 
 $Rectangle* SunGraphics2D::getImageRegion($RenderedImage* img, $Region* compClip, $AffineTransform* transform, $AffineTransform* xform, int32_t padX, int32_t padY) {
 	$init(SunGraphics2D);
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc(img)->getMinX();
 	int32_t var$1 = img->getMinY();
 	int32_t var$2 = img->getWidth();
@@ -2434,6 +2470,7 @@ $Rectangle* SunGraphics2D::getImageRegion($RenderedImage* img, $Region* compClip
 }
 
 void SunGraphics2D::drawRenderedImage($RenderedImage* img, $AffineTransform* xform) {
+	$useLocalCurrentObjectStackCache();
 	if (img == nullptr) {
 		return;
 	}
@@ -2501,6 +2538,7 @@ bool SunGraphics2D::clipTo($Rectangle* destRect, $Rectangle* clip) {
 }
 
 void SunGraphics2D::drawTranslatedRenderedImage($RenderedImage* img, $Rectangle* region, int32_t i2uTransX, int32_t i2uTransY) {
+	$useLocalCurrentObjectStackCache();
 	int32_t tileGridXOffset = $nc(img)->getTileGridXOffset();
 	int32_t tileGridYOffset = img->getTileGridYOffset();
 	int32_t tileWidth = img->getTileWidth();
@@ -2534,6 +2572,7 @@ void SunGraphics2D::drawTranslatedRenderedImage($RenderedImage* img, $Rectangle*
 }
 
 void SunGraphics2D::drawRenderableImage($RenderableImage* img, $AffineTransform* xform) {
+	$useLocalCurrentObjectStackCache();
 	if (img == nullptr) {
 		return;
 	}
@@ -2562,6 +2601,7 @@ $Rectangle* SunGraphics2D::transformBounds($Rectangle* rect, $AffineTransform* t
 }
 
 void SunGraphics2D::drawString($String* str, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	if (str == nullptr) {
 		$throwNew($NullPointerException, "String is null"_s);
 	}
@@ -2598,6 +2638,7 @@ void SunGraphics2D::drawString($String* str, int32_t x, int32_t y) {
 }
 
 void SunGraphics2D::drawString($String* str, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	if (str == nullptr) {
 		$throwNew($NullPointerException, "String is null"_s);
 	}
@@ -2634,6 +2675,7 @@ void SunGraphics2D::drawString($String* str, float x, float y) {
 }
 
 void SunGraphics2D::drawString($AttributedCharacterIterator* iterator, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	if (iterator == nullptr) {
 		$throwNew($NullPointerException, "AttributedCharacterIterator is null"_s);
 	}
@@ -2646,6 +2688,7 @@ void SunGraphics2D::drawString($AttributedCharacterIterator* iterator, int32_t x
 }
 
 void SunGraphics2D::drawString($AttributedCharacterIterator* iterator, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	if (iterator == nullptr) {
 		$throwNew($NullPointerException, "AttributedCharacterIterator is null"_s);
 	}
@@ -2658,6 +2701,7 @@ void SunGraphics2D::drawString($AttributedCharacterIterator* iterator, float x, 
 }
 
 void SunGraphics2D::drawGlyphVector($GlyphVector* gv, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	if (gv == nullptr) {
 		$throwNew($NullPointerException, "GlyphVector is null"_s);
 	}
@@ -2687,6 +2731,7 @@ void SunGraphics2D::drawGlyphVector($GlyphVector* gv, float x, float y) {
 }
 
 void SunGraphics2D::drawChars($chars* data, int32_t offset, int32_t length, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	if (data == nullptr) {
 		$throwNew($NullPointerException, "char data is null"_s);
 	}
@@ -2728,6 +2773,7 @@ void SunGraphics2D::drawChars($chars* data, int32_t offset, int32_t length, int3
 }
 
 void SunGraphics2D::drawBytes($bytes* data, int32_t offset, int32_t length, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	if (data == nullptr) {
 		$throwNew($NullPointerException, "byte data is null"_s);
 	}
@@ -2773,6 +2819,7 @@ void SunGraphics2D::drawBytes($bytes* data, int32_t offset, int32_t length, int3
 }
 
 $Boolean* SunGraphics2D::drawHiDPIImage($Image* img$renamed, int32_t dx1, int32_t dy1, int32_t dx2, int32_t dy2, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, $Color* bgcolor, $ImageObserver* observer$renamed, $AffineTransform* xform) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageObserver, observer, observer$renamed);
 	$var($Image, img, img$renamed);
 	try {
@@ -2848,6 +2895,7 @@ $Boolean* SunGraphics2D::drawHiDPIImage($Image* img$renamed, int32_t dx1, int32_
 }
 
 bool SunGraphics2D::scaleImage($Image* img, int32_t dx1, int32_t dy1, int32_t dx2, int32_t dy2, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, $Color* bgcolor, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		bool var$2 = false;
@@ -2883,6 +2931,7 @@ bool SunGraphics2D::scaleImage($Image* img, int32_t dx1, int32_t dy1, int32_t dx
 }
 
 bool SunGraphics2D::transformImage($Image* img, $AffineTransform* xform, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		bool var$2 = false;
@@ -2918,6 +2967,7 @@ bool SunGraphics2D::transformImage($Image* img, $AffineTransform* xform, $ImageO
 }
 
 $Image* SunGraphics2D::getResolutionVariant($MultiResolutionImage* img, int32_t srcWidth, int32_t srcHeight, int32_t dx1, int32_t dy1, int32_t dx2, int32_t dy2, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, $AffineTransform* xform) {
+	$useLocalCurrentObjectStackCache();
 	if (srcWidth <= 0 || srcHeight <= 0) {
 		return nullptr;
 	}
@@ -2984,6 +3034,7 @@ bool SunGraphics2D::drawImage($Image* img, int32_t x, int32_t y, int32_t width, 
 }
 
 bool SunGraphics2D::copyImage($Image* img, int32_t dx, int32_t dy, int32_t sx, int32_t sy, int32_t width, int32_t height, $Color* bgcolor, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		bool var$2 = false;
@@ -3019,6 +3070,7 @@ bool SunGraphics2D::copyImage($Image* img, int32_t dx, int32_t dy, int32_t sx, i
 }
 
 bool SunGraphics2D::drawImage($Image* img, int32_t x, int32_t y, int32_t width, int32_t height, $Color* bg, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	if (img == nullptr) {
 		return true;
 	}
@@ -3073,6 +3125,7 @@ bool SunGraphics2D::drawImage($Image* img, int32_t x, int32_t y, $ImageObserver*
 }
 
 bool SunGraphics2D::drawImage($Image* img, int32_t x, int32_t y, $Color* bg, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	if (img == nullptr) {
 		return true;
 	}
@@ -3121,6 +3174,7 @@ bool SunGraphics2D::drawImage($Image* img, int32_t dx1, int32_t dy1, int32_t dx2
 }
 
 bool SunGraphics2D::drawImage($Image* img, int32_t dx1, int32_t dy1, int32_t dx2, int32_t dy2, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, $Color* bgcolor, $ImageObserver* observer) {
+	$useLocalCurrentObjectStackCache();
 	if (img == nullptr) {
 		return true;
 	}
@@ -3209,6 +3263,7 @@ bool SunGraphics2D::drawImage($Image* img, $AffineTransform* xform, $ImageObserv
 }
 
 void SunGraphics2D::drawImage($BufferedImage* bImg, $BufferedImageOp* op, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	if (bImg == nullptr) {
 		return;
 	}
@@ -3238,6 +3293,7 @@ void SunGraphics2D::drawImage($BufferedImage* bImg, $BufferedImageOp* op, int32_
 }
 
 $FontRenderContext* SunGraphics2D::getFontRenderContext() {
+	$useLocalCurrentObjectStackCache();
 	if (this->cachedFRC == nullptr) {
 		int32_t aahint = this->textAntialiasHint;
 		if (aahint == $SunHints::INTVAL_TEXT_ANTIALIAS_DEFAULT && this->antialiasHint == $SunHints::INTVAL_ANTIALIAS_ON) {
@@ -3280,6 +3336,7 @@ $Surface* SunGraphics2D::getDestSurface() {
 }
 
 void clinit$SunGraphics2D($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	SunGraphics2D::MinPenSizeSquared = 1.000000001;
 	SunGraphics2D::$assertionsDisabled = !SunGraphics2D::class$->desiredAssertionStatus();
 	$assignStatic(SunGraphics2D::defaultStroke, $new($BasicStroke));

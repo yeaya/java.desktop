@@ -71,6 +71,7 @@ int32_t GroupLayout$SpringDelta::compareTo(GroupLayout$SpringDelta* o) {
 }
 
 $String* GroupLayout$SpringDelta::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($Comparable::toString()), "[index="_s, $$str(this->index), ", delta="_s, $$str(this->delta), "]"_s});
 }
 

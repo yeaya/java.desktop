@@ -45,6 +45,7 @@ void GIFImageMetadataFormatResources::init$() {
 }
 
 $ObjectArray2* GIFImageMetadataFormatResources::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("ImageDescriptor"_s),

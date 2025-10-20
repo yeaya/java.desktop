@@ -95,6 +95,7 @@ void AsyncBoxView$ChildLocator::init$($AsyncBoxView* this$0) {
 
 void AsyncBoxView$ChildLocator::childChanged($AsyncBoxView$ChildState* cs) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->lastValidOffset == nullptr) {
 			$set(this, lastValidOffset, cs);
 		} else {
@@ -108,6 +109,7 @@ void AsyncBoxView$ChildLocator::childChanged($AsyncBoxView$ChildState* cs) {
 
 void AsyncBoxView$ChildLocator::paintChildren($Graphics* g) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Rectangle, clip, $nc(g)->getClipBounds());
 		float targetOffset = (float)((this->this$0->axis == 0) ? $nc(clip)->x - $nc(this->lastAlloc)->x : clip->y - $nc(this->lastAlloc)->y);
 		int32_t index = getViewIndexAtVisualOffset(targetOffset);
@@ -132,6 +134,7 @@ void AsyncBoxView$ChildLocator::paintChildren($Graphics* g) {
 
 $Shape* AsyncBoxView$ChildLocator::getChildAllocation(int32_t index, $Shape* a) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (a == nullptr) {
 			return nullptr;
 		}
@@ -187,6 +190,7 @@ void AsyncBoxView$ChildLocator::setAllocation($Shape* a) {
 }
 
 int32_t AsyncBoxView$ChildLocator::getViewIndexAtVisualOffset(float targetOffset) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = this->this$0->getViewCount();
 	if (n > 0) {
 		bool lastValid = (this->lastValidOffset != nullptr);
@@ -219,6 +223,7 @@ int32_t AsyncBoxView$ChildLocator::getViewIndexAtVisualOffset(float targetOffset
 }
 
 int32_t AsyncBoxView$ChildLocator::updateChildOffsets(float targetOffset) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = this->this$0->getViewCount();
 	int32_t targetIndex = n - 1;
 	int32_t pos = $nc($($nc(this->lastValidOffset)->getChildView()))->getStartOffset();
@@ -240,6 +245,7 @@ int32_t AsyncBoxView$ChildLocator::updateChildOffsets(float targetOffset) {
 }
 
 void AsyncBoxView$ChildLocator::updateChildOffsetsToIndex(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pos = $nc($($nc(this->lastValidOffset)->getChildView()))->getStartOffset();
 	$init($Position$Bias);
 	int32_t startIndex = this->this$0->getViewIndex(pos, $Position$Bias::Forward);

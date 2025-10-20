@@ -71,6 +71,7 @@ void bug4314199$2::init$($bug4314199* this$0, $Exception* val$e) {
 }
 
 void bug4314199$2::run() {
+	$useLocalCurrentObjectStackCache();
 	this->this$0->createAndShowMessage($$str({"Test fails because of exception: "_s, $($nc(this->val$e)->getMessage())}));
 }
 

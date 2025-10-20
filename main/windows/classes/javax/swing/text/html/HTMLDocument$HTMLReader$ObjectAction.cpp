@@ -104,6 +104,7 @@ void HTMLDocument$HTMLReader$ObjectAction::end($HTML$Tag* t) {
 }
 
 void HTMLDocument$HTMLReader$ObjectAction::addParameter($AttributeSet* a) {
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Attribute);
 	$var($String, name, $cast($String, $nc(a)->getAttribute($HTML$Attribute::NAME)));
 	$var($String, value, $cast($String, a->getAttribute($HTML$Attribute::VALUE)));

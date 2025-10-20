@@ -134,6 +134,7 @@ void Component$FlipBufferStrategy::init$($Component* this$0, int32_t numBuffers,
 }
 
 void Component$FlipBufferStrategy::createBuffers(int32_t numBuffers, $BufferCapabilities* caps$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferCapabilities, caps, caps$renamed);
 	if (numBuffers < 2) {
 		$throwNew($IllegalArgumentException, "Number of buffers cannot be less than two"_s);

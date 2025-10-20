@@ -83,6 +83,7 @@ void ProgressMonitor$ProgressOptionPane$2::init$($ProgressMonitor$ProgressOption
 }
 
 void ProgressMonitor$ProgressOptionPane$2::propertyChange($PropertyChangeEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	bool var$1 = $nc(this->val$dialog)->isVisible();
 	bool var$0 = var$1 && $equals($nc(event)->getSource(), this->this$1);
 	if (var$0) {

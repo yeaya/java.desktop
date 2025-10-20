@@ -352,6 +352,7 @@ void MenuItemLayoutHelper::setOriginalWidths() {
 }
 
 $String* MenuItemLayoutHelper::getAccText($String* acceleratorDelimiter) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, accText, ""_s);
 	$var($KeyStroke, accelerator, $nc(this->mi)->getAccelerator());
 	if (accelerator != nullptr) {
@@ -371,6 +372,7 @@ $String* MenuItemLayoutHelper::getAccText($String* acceleratorDelimiter) {
 }
 
 $Icon* MenuItemLayoutHelper::getIcon($String* propertyPrefix) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, icon, nullptr);
 	$var($MenuItemCheckIconFactory, iconFactory, $cast($MenuItemCheckIconFactory, $UIManager::get($$str({propertyPrefix, ".checkIconFactory"_s}))));
 	if (!this->isColumnLayout$ || !this->useCheckAndArrow$ || iconFactory == nullptr || !$nc(iconFactory)->isCompatible(this->checkIcon, propertyPrefix)) {
@@ -380,6 +382,7 @@ $Icon* MenuItemLayoutHelper::getIcon($String* propertyPrefix) {
 }
 
 int32_t MenuItemLayoutHelper::getMinTextOffset($String* propertyPrefix) {
+	$useLocalCurrentObjectStackCache();
 	int32_t minimumTextOffset = 0;
 	$var($Object, minimumTextOffsetObject, $UIManager::get($$str({propertyPrefix, ".minimumTextOffset"_s})));
 	if ($instanceOf($Integer, minimumTextOffsetObject)) {
@@ -389,6 +392,7 @@ int32_t MenuItemLayoutHelper::getMinTextOffset($String* propertyPrefix) {
 }
 
 int32_t MenuItemLayoutHelper::getAfterCheckIconGap($String* propertyPrefix) {
+	$useLocalCurrentObjectStackCache();
 	int32_t afterCheckIconGap = this->gap;
 	$var($Object, afterCheckIconGapObject, $UIManager::get($$str({propertyPrefix, ".afterCheckIconGap"_s})));
 	if ($instanceOf($Integer, afterCheckIconGapObject)) {
@@ -406,6 +410,7 @@ int32_t MenuItemLayoutHelper::getLeadingGap($String* propertyPrefix) {
 }
 
 int32_t MenuItemLayoutHelper::getCheckOffset($String* propertyPrefix) {
+	$useLocalCurrentObjectStackCache();
 	int32_t checkIconOffset = this->gap;
 	$var($Object, checkIconOffsetObject, $UIManager::get($$str({propertyPrefix, ".checkIconOffset"_s})));
 	if ($instanceOf($Integer, checkIconOffsetObject)) {
@@ -415,6 +420,7 @@ int32_t MenuItemLayoutHelper::getCheckOffset($String* propertyPrefix) {
 }
 
 void MenuItemLayoutHelper::calcWidthsAndHeights() {
+	$useLocalCurrentObjectStackCache();
 	if (this->icon != nullptr) {
 		$nc(this->iconSize)->width = $nc(this->icon)->getIconWidth();
 		$nc(this->iconSize)->height = $nc(this->icon)->getIconHeight();
@@ -568,6 +574,7 @@ void MenuItemLayoutHelper::calcMaxTextOffset($Rectangle* viewRect) {
 }
 
 $MenuItemLayoutHelper$LayoutResult* MenuItemLayoutHelper::layoutMenuItem() {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuItemLayoutHelper$LayoutResult, lr, createLayoutResult());
 	prepareForLayout(lr);
 	if (isColumnLayout()) {
@@ -586,6 +593,7 @@ $MenuItemLayoutHelper$LayoutResult* MenuItemLayoutHelper::layoutMenuItem() {
 }
 
 $MenuItemLayoutHelper$LayoutResult* MenuItemLayoutHelper::createLayoutResult() {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, var$0, $new($Rectangle, $nc(this->iconSize)->width, $nc(this->iconSize)->height));
 	$var($Rectangle, var$1, $new($Rectangle, $nc(this->textSize)->width, $nc(this->textSize)->height));
 	$var($Rectangle, var$2, $new($Rectangle, $nc(this->accSize)->width, $nc(this->accSize)->height));
@@ -639,6 +647,7 @@ void MenuItemLayoutHelper::fixVerticalAlignment($MenuItemLayoutHelper$LayoutResu
 }
 
 void MenuItemLayoutHelper::doLTRColumnLayout($MenuItemLayoutHelper$LayoutResult* lr, $MenuItemLayoutHelper$ColumnAlignment* alignment) {
+	$useLocalCurrentObjectStackCache();
 	$nc($nc(lr)->iconRect)->width = $nc(this->iconSize)->maxWidth;
 	$nc(lr->textRect)->width = $nc(this->textSize)->maxWidth;
 	calcXPositionsLTR($nc(this->viewRect)->x, this->leadingGap, this->gap, $$new($RectangleArray, {
@@ -664,6 +673,7 @@ void MenuItemLayoutHelper::doLTRColumnLayout($MenuItemLayoutHelper$LayoutResult*
 }
 
 void MenuItemLayoutHelper::doLTRComplexLayout($MenuItemLayoutHelper$LayoutResult* lr, $MenuItemLayoutHelper$ColumnAlignment* alignment) {
+	$useLocalCurrentObjectStackCache();
 	$nc($nc(lr)->labelRect)->width = $nc(this->labelSize)->maxWidth;
 	calcXPositionsLTR($nc(this->viewRect)->x, this->leadingGap, this->gap, $$new($RectangleArray, {
 		lr->checkRect,
@@ -686,6 +696,7 @@ void MenuItemLayoutHelper::doLTRComplexLayout($MenuItemLayoutHelper$LayoutResult
 }
 
 void MenuItemLayoutHelper::doRTLColumnLayout($MenuItemLayoutHelper$LayoutResult* lr, $MenuItemLayoutHelper$ColumnAlignment* alignment) {
+	$useLocalCurrentObjectStackCache();
 	$nc($nc(lr)->iconRect)->width = $nc(this->iconSize)->maxWidth;
 	$nc(lr->textRect)->width = $nc(this->textSize)->maxWidth;
 	calcXPositionsRTL($nc(this->viewRect)->x + $nc(this->viewRect)->width, this->leadingGap, this->gap, $$new($RectangleArray, {
@@ -711,6 +722,7 @@ void MenuItemLayoutHelper::doRTLColumnLayout($MenuItemLayoutHelper$LayoutResult*
 }
 
 void MenuItemLayoutHelper::doRTLComplexLayout($MenuItemLayoutHelper$LayoutResult* lr, $MenuItemLayoutHelper$ColumnAlignment* alignment) {
+	$useLocalCurrentObjectStackCache();
 	$nc($nc(lr)->labelRect)->width = $nc(this->labelSize)->maxWidth;
 	calcXPositionsRTL($nc(this->viewRect)->x + $nc(this->viewRect)->width, this->leadingGap, this->gap, $$new($RectangleArray, {
 		lr->checkRect,
@@ -733,6 +745,7 @@ void MenuItemLayoutHelper::doRTLComplexLayout($MenuItemLayoutHelper$LayoutResult
 }
 
 void MenuItemLayoutHelper::alignRects($MenuItemLayoutHelper$LayoutResult* lr, $MenuItemLayoutHelper$ColumnAlignment* alignment) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, var$0, $nc(lr)->checkRect);
 	int32_t var$1 = $nc(alignment)->getCheckAlignment();
 	alignRect(var$0, var$1, $nc(this->checkSize)->getOrigWidth());
@@ -758,12 +771,14 @@ void MenuItemLayoutHelper::alignRect($Rectangle* rect, int32_t alignment, int32_
 }
 
 void MenuItemLayoutHelper::layoutIconAndTextInLabelRect($MenuItemLayoutHelper$LayoutResult* lr) {
+	$useLocalCurrentObjectStackCache();
 	$nc(lr)->setTextRect($$new($Rectangle));
 	lr->setIconRect($$new($Rectangle));
 	$SwingUtilities::layoutCompoundLabel(this->mi, this->fm, this->text, this->icon, this->verticalAlignment, this->horizontalAlignment, this->verticalTextPosition, this->horizontalTextPosition, lr->labelRect, lr->iconRect, lr->textRect, this->gap);
 }
 
 void MenuItemLayoutHelper::calcXPositionsLTR(int32_t startXPos, int32_t leadingGap, int32_t gap, $RectangleArray* rects) {
+	$useLocalCurrentObjectStackCache();
 	int32_t curXPos = startXPos + leadingGap;
 	{
 		$var($RectangleArray, arr$, rects);
@@ -782,6 +797,7 @@ void MenuItemLayoutHelper::calcXPositionsLTR(int32_t startXPos, int32_t leadingG
 }
 
 void MenuItemLayoutHelper::calcXPositionsRTL(int32_t startXPos, int32_t leadingGap, int32_t gap, $RectangleArray* rects) {
+	$useLocalCurrentObjectStackCache();
 	int32_t curXPos = startXPos - leadingGap;
 	{
 		$var($RectangleArray, arr$, rects);

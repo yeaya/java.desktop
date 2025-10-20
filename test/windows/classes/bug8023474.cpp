@@ -122,6 +122,7 @@ void bug8023474::init$() {
 }
 
 void bug8023474::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(50);
 	$SwingUtilities::invokeAndWait($$new($bug8023474$1));
@@ -139,6 +140,7 @@ void bug8023474::main($StringArray* args) {
 }
 
 void bug8023474::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"_s);
 	} catch ($Exception&) {
@@ -165,6 +167,7 @@ void bug8023474::createAndShowGUI() {
 }
 
 $Point* bug8023474::getRowPointToClick(int32_t row) {
+	$useLocalCurrentObjectStackCache();
 	$var($PointArray, result, $new($PointArray, 1));
 	$SwingUtilities::invokeAndWait($$new($bug8023474$2, row, result));
 	return result->get(0);

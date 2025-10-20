@@ -86,6 +86,7 @@ void bug6868611::init$() {
 
 void bug6868611::main($StringArray* args) {
 	$init(bug6868611);
+	$useLocalCurrentObjectStackCache();
 	int32_t fileCount = 0;
 	{
 		$var($Throwable, var$0, nullptr);

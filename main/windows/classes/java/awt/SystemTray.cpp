@@ -159,6 +159,7 @@ bool SystemTray::isSupported() {
 }
 
 void SystemTray::add($TrayIcon* trayIcon) {
+	$useLocalCurrentObjectStackCache();
 	if (trayIcon == nullptr) {
 		$throwNew($NullPointerException, "adding null TrayIcon"_s);
 	}
@@ -191,6 +192,7 @@ void SystemTray::add($TrayIcon* trayIcon) {
 }
 
 void SystemTray::remove($TrayIcon* trayIcon) {
+	$useLocalCurrentObjectStackCache();
 	if (trayIcon == nullptr) {
 		return;
 	}
@@ -210,6 +212,7 @@ void SystemTray::remove($TrayIcon* trayIcon) {
 }
 
 $TrayIconArray* SystemTray::getTrayIcons() {
+	$useLocalCurrentObjectStackCache();
 	$load($TrayIcon);
 	$var($Vector, icons, $cast($Vector, $nc($($AppContext::getAppContext()))->get($TrayIcon::class$)));
 	if (icons != nullptr) {
@@ -255,6 +258,7 @@ void SystemTray::firePropertyChange($String* propertyName, Object$* oldValue, Ob
 
 $PropertyChangeSupport* SystemTray::getCurrentChangeSupport() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($PropertyChangeSupport, changeSupport, $cast($PropertyChangeSupport, $nc($($AppContext::getAppContext()))->get(SystemTray::class$)));
 		if (changeSupport == nullptr) {
 			$assign(changeSupport, $new($PropertyChangeSupport, this));
@@ -266,6 +270,7 @@ $PropertyChangeSupport* SystemTray::getCurrentChangeSupport() {
 
 void SystemTray::addNotify() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->peer == nullptr) {
 			$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());
 			if ($instanceOf($SunToolkit, toolkit)) {

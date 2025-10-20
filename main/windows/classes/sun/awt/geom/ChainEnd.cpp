@@ -78,6 +78,7 @@ ChainEnd* ChainEnd::getPartner() {
 }
 
 $CurveLink* ChainEnd::linkTo(ChainEnd* that) {
+	$useLocalCurrentObjectStackCache();
 	if (this->etag == $AreaOp::ETAG_IGNORE || $nc(that)->etag == $AreaOp::ETAG_IGNORE) {
 		$throwNew($InternalError, "ChainEnd linked more than once!"_s);
 	}

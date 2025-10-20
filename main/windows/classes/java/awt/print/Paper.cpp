@@ -80,6 +80,7 @@ void Paper::init$() {
 }
 
 $Object* Paper::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var(Paper, newPaper, nullptr);
 	try {
 		$assign(newPaper, $cast(Paper, $Cloneable::clone()));

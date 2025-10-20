@@ -58,6 +58,7 @@ void bug6739756::init$() {
 }
 
 void bug6739756::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"_s);
 	} catch ($Exception&) {

@@ -131,6 +131,7 @@ bool GraphicsDevice::isFullScreenSupported() {
 }
 
 void GraphicsDevice::setFullScreenWindow($Window* w) {
+	$useLocalCurrentObjectStackCache();
 	if (w != nullptr) {
 		if (w->getShape() != nullptr) {
 			w->setShape(nullptr);
@@ -200,6 +201,7 @@ void GraphicsDevice::setDisplayMode($DisplayMode* dm) {
 }
 
 $DisplayMode* GraphicsDevice::getDisplayMode() {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, gc, getDefaultConfiguration());
 	$var($Rectangle, r, $nc(gc)->getBounds());
 	$var($ColorModel, cm, gc->getColorModel());
@@ -261,6 +263,7 @@ bool GraphicsDevice::isWindowPerpixelTranslucencySupported() {
 }
 
 $GraphicsConfiguration* GraphicsDevice::getTranslucencyCapableGC() {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, defaultGC, getDefaultConfiguration());
 	if ($nc(defaultGC)->isTranslucencyCapable()) {
 		return defaultGC;

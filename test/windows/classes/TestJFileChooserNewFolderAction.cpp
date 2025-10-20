@@ -302,6 +302,7 @@ void TestJFileChooserNewFolderAction::init$() {
 
 void TestJFileChooserNewFolderAction::main($StringArray* args) {
 	$init(TestJFileChooserNewFolderAction);
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($System::getProperty("os.name"_s)))->startsWith("Mac"_s)) {
 		$init($System);
 		$nc($System::out)->println("This test is meant for Mac platform only"_s);
@@ -339,6 +340,7 @@ void TestJFileChooserNewFolderAction::main($StringArray* args) {
 
 void TestJFileChooserNewFolderAction::createInstructionUI() {
 	$init(TestJFileChooserNewFolderAction);
+	$useLocalCurrentObjectStackCache();
 	$var($GridBagLayout, layout, $new($GridBagLayout));
 	$var($JPanel, mainControlPanel, $new($JPanel, static_cast<$LayoutManager*>(layout)));
 	$var($JPanel, resultButtonPanel, $new($JPanel, static_cast<$LayoutManager*>(layout)));

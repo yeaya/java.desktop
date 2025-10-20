@@ -107,6 +107,7 @@ RenderingEngine* RenderingEngine::getInstance() {
 	$load(RenderingEngine);
 	$synchronized(class$) {
 		$load(RenderingEngine);
+		$useLocalCurrentObjectStackCache();
 		$beforeCallerSensitive();
 		$init(RenderingEngine);
 		if (RenderingEngine::reImpl != nullptr) {

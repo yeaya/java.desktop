@@ -103,6 +103,7 @@ void Autoscroller::init$() {
 }
 
 void Autoscroller::start($JComponent* c, $MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, screenLocation, $nc(c)->getLocationOnScreen());
 	if (Autoscroller::component != c) {
 		_stop(Autoscroller::component);
@@ -144,6 +145,7 @@ bool Autoscroller::_isRunning($JComponent* c) {
 }
 
 void Autoscroller::_processMouseDragged($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, component, $cast($JComponent, $nc(e)->getComponent()));
 	bool stop = true;
 	if ($nc(component)->isShowing()) {
@@ -159,6 +161,7 @@ void Autoscroller::_processMouseDragged($MouseEvent* e) {
 }
 
 void Autoscroller::actionPerformed($ActionEvent* x) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, component, Autoscroller::component);
 	if (component == nullptr || !$nc(component)->isShowing() || (Autoscroller::event == nullptr)) {
 		_stop(component);

@@ -67,6 +67,7 @@ void TestMemLeakComboBox$MyPanel::init$() {
 }
 
 void TestMemLeakComboBox$MyPanel::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$JPanel::paint(g);
 	{
 		$var($ComponentArray, arr$, getComponents());
@@ -82,6 +83,7 @@ void TestMemLeakComboBox$MyPanel::paint($Graphics* g) {
 }
 
 void TestMemLeakComboBox$MyPanel::verifyChild($Component* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JComboBox, c)) {
 		{
 			$var($ComponentArray, arr$, $nc(($cast($Container, c)))->getComponents());

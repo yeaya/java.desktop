@@ -186,6 +186,7 @@ $TreeSelectionModel* AbstractLayoutCache::getSelectionModel() {
 }
 
 int32_t AbstractLayoutCache::getPreferredHeight() {
+	$useLocalCurrentObjectStackCache();
 	int32_t rowCount = getRowCount();
 	if (rowCount > 0) {
 		$var($Rectangle, bounds, getBounds($(getPathForRow(rowCount - 1)), nullptr));
@@ -197,6 +198,7 @@ int32_t AbstractLayoutCache::getPreferredHeight() {
 }
 
 int32_t AbstractLayoutCache::getPreferredWidth($Rectangle* bounds) {
+	$useLocalCurrentObjectStackCache();
 	int32_t rowCount = getRowCount();
 	if (rowCount > 0) {
 		$var($TreePath, firstPath, nullptr);

@@ -85,6 +85,7 @@ void D3DBufImgOps::init$() {
 
 bool D3DBufImgOps::renderImageWithOp($SunGraphics2D* sg, $BufferedImage* img, $BufferedImageOp* biop, int32_t x, int32_t y) {
 	$init(D3DBufImgOps);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($ConvolveOp, biop)) {
 		if (!isConvolveOpValid($cast($ConvolveOp, biop))) {
 			return false;

@@ -49,6 +49,7 @@ void TableTest::init$() {
 
 void TableTest::main($StringArray* args) {
 	$load(TableTest);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$KeyboardFocusManager::getCurrentKeyboardFocusManager();
 	$System::setSecurityManager($$new($SecurityManager));

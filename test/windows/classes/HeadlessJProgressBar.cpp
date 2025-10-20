@@ -112,6 +112,7 @@ void HeadlessJProgressBar::init$() {
 }
 
 void HeadlessJProgressBar::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JProgressBar, pb, $new($JProgressBar));
 	pb->getAccessibleContext();
 	pb->isFocusTraversable();

@@ -77,6 +77,7 @@ void Win32FontManager$4::init$($String* val$pathName) {
 }
 
 $Object* Win32FontManager$4::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($File, f1, $new($File, this->val$pathName));
 	$var($StringArray, ls, f1->list($($nc($($SunFontManager::getInstance()))->getTrueTypeFilter())));
 	if (ls == nullptr) {

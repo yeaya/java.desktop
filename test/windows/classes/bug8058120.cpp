@@ -112,6 +112,7 @@ void bug8058120::init$() {
 
 void bug8058120::main($StringArray* args) {
 	$init(bug8058120);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, nullptr);
 	try {
 		$assign(robot, $new($Robot));
@@ -129,6 +130,7 @@ void bug8058120::main($StringArray* args) {
 
 void bug8058120::createAndShowGUI() {
 	$init(bug8058120);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"_s);
 	} catch ($Exception&) {

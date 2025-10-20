@@ -78,6 +78,7 @@ void SynthFileChooserUIImpl$DirectoryComboBoxAction::init$($SynthFileChooserUIIm
 }
 
 void SynthFileChooserUIImpl$DirectoryComboBoxAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->this$0->directoryComboBox)->hidePopup();
 	$var($JComponent, cb, this->this$0->getDirectoryComboBox());
 	if ($instanceOf($JComboBox, cb)) {

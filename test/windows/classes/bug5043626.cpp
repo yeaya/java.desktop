@@ -154,6 +154,7 @@ void bug5043626::init$() {
 }
 
 void bug5043626::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -196,6 +197,7 @@ void bug5043626::main($StringArray* args) {
 }
 
 $String* bug5043626::getText() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringArray, result, $new($StringArray, 1));
 	$SwingUtilities::invokeAndWait($$new($bug5043626$2, result));
 	return result->get(0);

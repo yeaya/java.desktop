@@ -95,6 +95,7 @@ $Insets* JListWithScroll::getAutoscrollInsets() {
 }
 
 void JListWithScroll::autoscroll($Point* cursorLoc) {
+	$useLocalCurrentObjectStackCache();
 	$var($JViewport, viewport, getViewport());
 	if (viewport == nullptr) {
 		return;

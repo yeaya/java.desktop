@@ -90,6 +90,7 @@ void MetalInternalFrameUI$BorderListener1::init$($MetalInternalFrameUI* this$0) 
 }
 
 $Rectangle* MetalInternalFrameUI$BorderListener1::getIconBounds() {
+	$useLocalCurrentObjectStackCache();
 	bool leftToRight = $MetalUtils::isLeftToRight($($MetalInternalFrameUI::access$000(this->this$0)));
 	int32_t xOffset = leftToRight ? 5 : $nc($($MetalInternalFrameUI::access$100(this->this$0)))->getWidth() - 5;
 	$var($Rectangle, rect, nullptr);
@@ -109,6 +110,7 @@ $Rectangle* MetalInternalFrameUI$BorderListener1::getIconBounds() {
 }
 
 void MetalInternalFrameUI$BorderListener1::mouseClicked($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool var$2 = $nc(e)->getClickCount() == 2;
 	if (var$2) {
 		var$2 = $equals(e->getSource(), this->this$0->getNorthPane());

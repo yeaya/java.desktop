@@ -110,6 +110,7 @@ void ScrollPane$PeerFixer::init$($ScrollPane* this$0, $ScrollPane* scroller) {
 }
 
 void ScrollPane$PeerFixer::adjustmentValueChanged($AdjustmentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Adjustable, adj, $nc(e)->getAdjustable());
 	int32_t value = e->getValue();
 	$var($ScrollPanePeer, peer, $cast($ScrollPanePeer, $nc(this->scroller)->peer));

@@ -90,6 +90,7 @@ void BasicOptionPaneUI$2::init$($BasicOptionPaneUI* this$0) {
 }
 
 void BasicOptionPaneUI$2::hierarchyChanged($HierarchyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (((int64_t)($nc(e)->getChangeFlags() & (uint64_t)(int64_t)$HierarchyEvent::PARENT_CHANGED)) != 0) {
 		$var($JButton, defaultButton, $cast($JButton, e->getComponent()));
 		$var($JRootPane, root, $SwingUtilities::getRootPane(defaultButton));

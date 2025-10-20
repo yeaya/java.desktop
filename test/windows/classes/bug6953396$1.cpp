@@ -68,6 +68,7 @@ void bug6953396$1::init$() {
 }
 
 void bug6953396$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($BasicViewportUI, ui, $new($bug6953396$1$1, this));
 	$var($JViewport, viewport, $new($JViewport));
 	viewport->setUI(static_cast<$ViewportUI*>(ui));

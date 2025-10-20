@@ -74,6 +74,7 @@ void bug6587742::init() {
 
 $JSlider* bug6587742::createSlider(bool vertical, $Boolean* filled, bool enabled, bool inverted) {
 	$init(bug6587742);
+	$useLocalCurrentObjectStackCache();
 	$var($JSlider, result, $new($JSlider, vertical ? $SwingConstants::VERTICAL : $SwingConstants::HORIZONTAL, 0, 100, 50));
 	result->setMajorTickSpacing(20);
 	result->setMinorTickSpacing(5);

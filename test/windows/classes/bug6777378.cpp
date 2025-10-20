@@ -130,6 +130,7 @@ void bug6777378::init$() {
 }
 
 void bug6777378::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

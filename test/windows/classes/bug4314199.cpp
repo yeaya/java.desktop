@@ -96,6 +96,7 @@ void bug4314199::init$() {
 }
 
 void bug4314199::init() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"_s);
 		$SwingUtilities::invokeAndWait($$new($bug4314199$1, this));
@@ -106,10 +107,12 @@ void bug4314199::init() {
 }
 
 void bug4314199::createAndShowMessage($String* message) {
+	$useLocalCurrentObjectStackCache();
 	$nc($(getContentPane()))->add(static_cast<$Component*>($$new($JLabel, message)));
 }
 
 void bug4314199::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuBar, mb, $new($JMenuBar));
 	mb->add($($Box::createHorizontalStrut(27)));
 	$var($JMenu, mn, $new($JMenu, "Menu"_s));

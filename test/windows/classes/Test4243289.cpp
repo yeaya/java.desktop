@@ -59,6 +59,7 @@ void Test4243289::init$() {
 }
 
 void Test4243289::init() {
+	$useLocalCurrentObjectStackCache();
 	$var($Font, font, $new($Font, "Dialog"_s, $Font::PLAIN, 12));
 	$var($TitledBorder, border, $BorderFactory::createTitledBorder($($BorderFactory::createEtchedBorder()), "Panel Title"_s, $TitledBorder::DEFAULT_JUSTIFICATION, $TitledBorder::DEFAULT_POSITION, font));
 	$var($JPanel, panel, $new($JPanel));

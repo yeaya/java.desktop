@@ -97,6 +97,7 @@ void DataTransferer$2::init$($DataTransferer* this$0, $Map* val$formatMap, int64
 }
 
 void DataTransferer$2::run() {
+	$useLocalCurrentObjectStackCache();
 	if (this->done) {
 		return;
 	}

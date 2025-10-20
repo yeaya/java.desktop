@@ -64,6 +64,7 @@ void StandardFileFormat::init$($AudioFileFormat$Type* type, $AudioFormat* format
 }
 
 void StandardFileFormat::init$($AudioFileFormat$Type* type, int64_t byteLength, $AudioFormat* format, int64_t frameLength) {
+	$useLocalCurrentObjectStackCache();
 	$var($AudioFileFormat$Type, var$0, type);
 	int32_t var$1 = clip(byteLength);
 	$var($AudioFormat, var$2, format);

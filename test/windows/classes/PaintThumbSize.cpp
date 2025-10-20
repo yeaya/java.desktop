@@ -232,6 +232,7 @@ void PaintThumbSize::init$() {
 }
 
 void PaintThumbSize::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -250,6 +251,7 @@ void PaintThumbSize::main($StringArray* args) {
 }
 
 void PaintThumbSize::test() {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, bi, $new($BufferedImage, 500, 500, 2));
 	$var($Graphics2D, g, bi->createGraphics());
 	$init($Color);
@@ -290,6 +292,7 @@ void PaintThumbSize::test() {
 }
 
 void PaintThumbSize::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($System);
 		$nc($System::err)->println($$str({"LookAndFeel: "_s, $($nc(laf)->getClassName())}));

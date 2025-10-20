@@ -83,6 +83,7 @@ void LostText$1::run() {
 }
 
 $Component* LostText$1::getComp() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTable, jTable, $new($JTable, $($LostText::testSelectionWithFilterTable())));
 	return jTable;
 }

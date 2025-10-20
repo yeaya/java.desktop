@@ -172,6 +172,7 @@ void WMenuItemPeer::setEnabled(bool b) {
 }
 
 void WMenuItemPeer::readShortcutLabel() {
+	$useLocalCurrentObjectStackCache();
 	$var($WMenuPeer, ancestor, this->parent);
 	while (ancestor != nullptr && !($instanceOf($WMenuBarPeer, ancestor))) {
 		$assign(ancestor, ancestor->parent);

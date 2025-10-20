@@ -86,6 +86,7 @@ $String* GIFImageReaderSpi::getDescription($Locale* locale) {
 }
 
 bool GIFImageReaderSpi::canDecodeInput(Object$* input) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($ImageInputStream, input))) {
 		return false;
 	}

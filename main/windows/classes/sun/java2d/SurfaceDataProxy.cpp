@@ -232,6 +232,7 @@ void SurfaceDataProxy::paletteChanged() {
 }
 
 $SurfaceData* SurfaceDataProxy::replaceData($SurfaceData* srcData, int32_t txtype, $CompositeType* comp, $Color* bgColor) {
+	$useLocalCurrentObjectStackCache();
 	if (isSupportedOperation(srcData, txtype, comp, bgColor)) {
 		if (!$nc(this->srcTracker)->isCurrent()) {
 			$synchronized(this) {
@@ -290,6 +291,7 @@ $SurfaceData* SurfaceDataProxy::replaceData($SurfaceData* srcData, int32_t txtyp
 }
 
 void SurfaceDataProxy::updateSurfaceData($SurfaceData* srcData, $SurfaceData* dstData, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, srcType, $nc(srcData)->getSurfaceType());
 	$var($SurfaceType, dstType, $nc(dstData)->getSurfaceType());
 	$init($CompositeType);
@@ -300,6 +302,7 @@ void SurfaceDataProxy::updateSurfaceData($SurfaceData* srcData, $SurfaceData* ds
 }
 
 void SurfaceDataProxy::updateSurfaceDataBg($SurfaceData* srcData, $SurfaceData* dstData, int32_t w, int32_t h, $Color* bgColor) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, srcType, $nc(srcData)->getSurfaceType());
 	$var($SurfaceType, dstType, $nc(dstData)->getSurfaceType());
 	$init($CompositeType);
@@ -310,6 +313,7 @@ void SurfaceDataProxy::updateSurfaceDataBg($SurfaceData* srcData, $SurfaceData* 
 }
 
 void clinit$SurfaceDataProxy($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	{
 		SurfaceDataProxy::cachingAllowed = true;

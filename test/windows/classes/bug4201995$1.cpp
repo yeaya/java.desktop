@@ -73,6 +73,7 @@ void bug4201995$1::init$() {
 }
 
 void bug4201995$1::run() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = "Nimbus"_s->equals($($nc($($UIManager::getLookAndFeel()))->getName()));
 	bool expectedOpaqueValue = !(var$0 || $nc($($nc($($UIManager::getLookAndFeel()))->getName()))->contains("GTK"_s));
 	$var($JSplitPane, sp, $new($JSplitPane));

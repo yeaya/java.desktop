@@ -158,6 +158,7 @@ $ColorUIResource* MetalHighContrastTheme::getAcceleratorSelectedForeground() {
 }
 
 void MetalHighContrastTheme::addCustomEntriesToTable($UIDefaults* table) {
+	$useLocalCurrentObjectStackCache();
 	$var($Border, blackLineBorder, $new($BorderUIResource, $$new($LineBorder, $(getBlack()))));
 	$var($Border, whiteLineBorder, $new($BorderUIResource, $$new($LineBorder, $(getWhite()))));
 	$var($Object, textBorder, $new($BorderUIResource, $$new($CompoundBorder, blackLineBorder, $$new($BasicBorders$MarginBorder))));

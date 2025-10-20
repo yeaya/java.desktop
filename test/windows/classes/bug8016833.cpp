@@ -116,6 +116,7 @@ void bug8016833::drawText($Graphics* g, bool underline, bool strikethrough, bool
 }
 
 void bug8016833::drawText($Graphics* g, $String* text, bool underline, bool strikethrough, bool background) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$SwingUtilities::invokeAndWait($$new($bug8016833$1, this, underline, strikethrough, background, g));
 	} catch ($InterruptedException&) {
@@ -183,6 +184,7 @@ $Rectangle* bug8016833::getPixelsOutline($BufferedImage* img) {
 }
 
 $BufferedImage* bug8016833::createImage() {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, img, $new($BufferedImage, 200, 100, $BufferedImage::TYPE_INT_ARGB));
 	try {
 		$SwingUtilities::invokeAndWait($$new($bug8016833$2, this, img));
@@ -226,6 +228,7 @@ $BufferedImage* bug8016833::subImages($BufferedImage* img1, $BufferedImage* img2
 }
 
 void bug8016833::testUnderline() {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println("  testUnderline()"_s);
 	$var($BufferedImage, img1, createImage());
@@ -253,6 +256,7 @@ void bug8016833::testUnderline() {
 }
 
 void bug8016833::testStrikthrough() {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println("  testStrikthrough()"_s);
 	$var($BufferedImage, img1, createImage());

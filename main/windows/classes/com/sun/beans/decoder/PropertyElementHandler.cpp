@@ -106,6 +106,7 @@ bool PropertyElementHandler::isArgument() {
 }
 
 $Object* PropertyElementHandler::getValue($String* name) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $of(getPropertyValue($(getContextBean()), name, this->index));
 	} catch ($Exception&) {
@@ -116,6 +117,7 @@ $Object* PropertyElementHandler::getValue($String* name) {
 }
 
 void PropertyElementHandler::setValue($String* name, Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		setPropertyValue($(getContextBean()), name, this->index, value);
 	} catch ($Exception&) {
@@ -126,6 +128,7 @@ void PropertyElementHandler::setValue($String* name, Object$* value) {
 
 $Object* PropertyElementHandler::getPropertyValue(Object$* bean, $String* name, $Integer* index) {
 	$init(PropertyElementHandler);
+	$useLocalCurrentObjectStackCache();
 	$Class* type = $nc($of(bean))->getClass();
 	if (index == nullptr) {
 		return $of($MethodUtil::invoke($(findGetter(type, name, $$new($ClassArray, 0))), bean, $$new($ObjectArray, 0)));
@@ -139,6 +142,7 @@ $Object* PropertyElementHandler::getPropertyValue(Object$* bean, $String* name, 
 
 void PropertyElementHandler::setPropertyValue(Object$* bean, $String* name, $Integer* index, Object$* value) {
 	$init(PropertyElementHandler);
+	$useLocalCurrentObjectStackCache();
 	$Class* type = $nc($of(bean))->getClass();
 	$Class* param = (value != nullptr) ? $nc($of(value))->getClass() : ($Class*)nullptr;
 	if (index == nullptr) {
@@ -159,6 +163,7 @@ void PropertyElementHandler::setPropertyValue(Object$* bean, $String* name, $Int
 
 $Method* PropertyElementHandler::findGetter($Class* type, $String* name, $ClassArray* args) {
 	$init(PropertyElementHandler);
+	$useLocalCurrentObjectStackCache();
 	if (name == nullptr) {
 		return $MethodFinder::findInstanceMethod(type, PropertyElementHandler::GETTER, args);
 	}
@@ -180,6 +185,7 @@ $Method* PropertyElementHandler::findGetter($Class* type, $String* name, $ClassA
 
 $Method* PropertyElementHandler::findSetter($Class* type, $String* name, $ClassArray* args) {
 	$init(PropertyElementHandler);
+	$useLocalCurrentObjectStackCache();
 	if (name == nullptr) {
 		return $MethodFinder::findInstanceMethod(type, PropertyElementHandler::SETTER, args);
 	}
@@ -201,6 +207,7 @@ $Method* PropertyElementHandler::findSetter($Class* type, $String* name, $ClassA
 
 $PropertyDescriptor* PropertyElementHandler::getProperty($Class* type, $String* name) {
 	$init(PropertyElementHandler);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($PropertyDescriptorArray, arr$, $nc($($Introspector::getBeanInfo(type)))->getPropertyDescriptors());
 		int32_t len$ = $nc(arr$)->length;

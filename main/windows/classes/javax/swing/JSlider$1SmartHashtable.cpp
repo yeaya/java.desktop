@@ -127,6 +127,7 @@ void JSlider$1SmartHashtable::init$($JSlider* this$0, int32_t increment, int32_t
 }
 
 void JSlider$1SmartHashtable::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc(e)->getPropertyName()))->equals("minimum"_s) && this->startAtMin) {
 		this->start = this->this$0->getMinimum();
 	}
@@ -153,6 +154,7 @@ void JSlider$1SmartHashtable::propertyChange($PropertyChangeEvent* e) {
 }
 
 void JSlider$1SmartHashtable::createLabels() {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t labelIndex = this->start; labelIndex <= this->this$0->getMaximum(); labelIndex += this->increment) {
 		$var($Object, var$0, $of($Integer::valueOf(labelIndex)));
 		put(var$0, $$new($JSlider$1SmartHashtable$LabelUIResource, this, $$str({""_s, $$str(labelIndex)}), $JLabel::CENTER));

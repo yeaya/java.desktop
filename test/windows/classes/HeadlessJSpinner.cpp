@@ -112,6 +112,7 @@ void HeadlessJSpinner::init$() {
 }
 
 void HeadlessJSpinner::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JSpinner, s, $new($JSpinner));
 	s->getAccessibleContext();
 	s->isFocusTraversable();

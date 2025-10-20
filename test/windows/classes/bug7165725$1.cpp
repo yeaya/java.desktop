@@ -111,6 +111,7 @@ void bug7165725$1::init$($bug7165725* this$0, $String* val$urlStr) {
 }
 
 void bug7165725$1::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$set(this->this$0, editorPane, $new($JEditorPane));
 		$nc(this->this$0->editorPane)->setEditorKit($$new($bug7165725$1$1, this));

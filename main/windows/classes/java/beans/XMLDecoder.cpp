@@ -139,6 +139,7 @@ void XMLDecoder::init$($InputSource* is, Object$* owner, $ExceptionListener* el,
 }
 
 void XMLDecoder::close() {
+	$useLocalCurrentObjectStackCache();
 	if (parsingComplete()) {
 		close($($nc(this->input)->getCharacterStream()));
 		close($($nc(this->input)->getByteStream()));
@@ -146,6 +147,7 @@ void XMLDecoder::close() {
 }
 
 void XMLDecoder::close($Closeable* in) {
+	$useLocalCurrentObjectStackCache();
 	if (in != nullptr) {
 		try {
 			in->close();

@@ -163,6 +163,7 @@ void bug6236162::init$() {
 }
 
 void bug6236162::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6236162);
 	$assignStatic(bug6236162::robot, $new($Robot));
 	$nc(bug6236162::robot)->setAutoDelay(100);
@@ -190,6 +191,7 @@ void bug6236162::main($StringArray* args) {
 }
 
 void bug6236162::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6236162);
 	$assignStatic(bug6236162::frame, $new($JFrame, "bug6236162"_s));
 	$assignStatic(bug6236162::combo, $new($JComboBox, $$new($StringArray, {
@@ -212,6 +214,7 @@ void bug6236162::createAndShowGUI() {
 }
 
 void bug6236162::test() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6236162);
 	$nc(bug6236162::robot)->keyPress($KeyEvent::VK_DOWN);
 	$nc(bug6236162::robot)->keyRelease($KeyEvent::VK_DOWN);

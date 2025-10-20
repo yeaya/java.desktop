@@ -160,6 +160,7 @@ void BasicTabbedPaneUI$Handler::init$($BasicTabbedPaneUI* this$0) {
 }
 
 void BasicTabbedPaneUI$Handler::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTabbedPane, pane, $cast($JTabbedPane, $nc(e)->getSource()));
 	$var($String, name, e->getPropertyName());
 	bool isScrollLayout = this->this$0->scrollableTabLayoutEnabled();
@@ -216,6 +217,7 @@ void BasicTabbedPaneUI$Handler::propertyChange($PropertyChangeEvent* e) {
 }
 
 void BasicTabbedPaneUI$Handler::updateHtmlViews(int32_t index, bool inserted) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, title, $nc(this->this$0->tabPane)->getTitleAt(index));
 	bool isHTML = $BasicHTML::isHTMLString(title);
 	if (isHTML) {
@@ -240,6 +242,7 @@ void BasicTabbedPaneUI$Handler::setHtmlView($View* v, bool inserted, int32_t ind
 }
 
 void BasicTabbedPaneUI$Handler::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTabbedPane, tabPane, $cast($JTabbedPane, $nc(e)->getSource()));
 	$nc(tabPane)->revalidate();
 	tabPane->repaint();
@@ -301,6 +304,7 @@ void BasicTabbedPaneUI$Handler::focusLost($FocusEvent* e) {
 }
 
 void BasicTabbedPaneUI$Handler::componentAdded($ContainerEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTabbedPane, tp, $cast($JTabbedPane, $nc(e)->getContainer()));
 	$var($Component, child, e->getChild());
 	if ($instanceOf($UIResource, child)) {
@@ -311,6 +315,7 @@ void BasicTabbedPaneUI$Handler::componentAdded($ContainerEvent* e) {
 }
 
 void BasicTabbedPaneUI$Handler::componentRemoved($ContainerEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTabbedPane, tp, $cast($JTabbedPane, $nc(e)->getContainer()));
 	$var($Component, child, e->getChild());
 	if ($instanceOf($UIResource, child)) {

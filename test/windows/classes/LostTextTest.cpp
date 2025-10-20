@@ -63,6 +63,7 @@ void LostTextTest::init$() {
 }
 
 void LostTextTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($CountDownLatch, latch, $new($CountDownLatch, 1));
 	$var($LostText, test, $new($LostText, latch));
 	$var($Thread, T1, $new($Thread, static_cast<$Runnable*>(test)));

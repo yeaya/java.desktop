@@ -329,6 +329,7 @@ $IIOMetadata* ImageReader::getStreamMetadata($String* formatName, $Set* nodeName
 }
 
 $IIOMetadata* ImageReader::getMetadata($String* formatName, $Set* nodeNames, bool wantStream, int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (formatName == nullptr) {
 		$throwNew($IllegalArgumentException, "formatName == null!"_s);
 	}
@@ -367,6 +368,7 @@ $BufferedImage* ImageReader::read(int32_t imageIndex) {
 }
 
 $IIOImage* ImageReader::readAll(int32_t imageIndex, $ImageReadParam* param) {
+	$useLocalCurrentObjectStackCache();
 	if (imageIndex < getMinIndex()) {
 		$throwNew($IndexOutOfBoundsException, "imageIndex < getMinIndex()!"_s);
 	}
@@ -384,6 +386,7 @@ $IIOImage* ImageReader::readAll(int32_t imageIndex, $ImageReadParam* param) {
 }
 
 $Iterator* ImageReader::readAll($Iterator* params) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, output, $new($ArrayList));
 	int32_t imageIndex = getMinIndex();
 	processSequenceStarted(imageIndex);
@@ -602,6 +605,7 @@ void ImageReader::removeAllIIOReadUpdateListeners() {
 }
 
 void ImageReader::processSequenceStarted(int32_t minIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -613,6 +617,7 @@ void ImageReader::processSequenceStarted(int32_t minIndex) {
 }
 
 void ImageReader::processSequenceComplete() {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -624,6 +629,7 @@ void ImageReader::processSequenceComplete() {
 }
 
 void ImageReader::processImageStarted(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -635,6 +641,7 @@ void ImageReader::processImageStarted(int32_t imageIndex) {
 }
 
 void ImageReader::processImageProgress(float percentageDone) {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -646,6 +653,7 @@ void ImageReader::processImageProgress(float percentageDone) {
 }
 
 void ImageReader::processImageComplete() {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -657,6 +665,7 @@ void ImageReader::processImageComplete() {
 }
 
 void ImageReader::processThumbnailStarted(int32_t imageIndex, int32_t thumbnailIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -668,6 +677,7 @@ void ImageReader::processThumbnailStarted(int32_t imageIndex, int32_t thumbnailI
 }
 
 void ImageReader::processThumbnailProgress(float percentageDone) {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -679,6 +689,7 @@ void ImageReader::processThumbnailProgress(float percentageDone) {
 }
 
 void ImageReader::processThumbnailComplete() {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -690,6 +701,7 @@ void ImageReader::processThumbnailComplete() {
 }
 
 void ImageReader::processReadAborted() {
+	$useLocalCurrentObjectStackCache();
 	if (this->progressListeners == nullptr) {
 		return;
 	}
@@ -701,6 +713,7 @@ void ImageReader::processReadAborted() {
 }
 
 void ImageReader::processPassStarted($BufferedImage* theImage, int32_t pass, int32_t minPass, int32_t maxPass, int32_t minX, int32_t minY, int32_t periodX, int32_t periodY, $ints* bands) {
+	$useLocalCurrentObjectStackCache();
 	if (this->updateListeners == nullptr) {
 		return;
 	}
@@ -712,6 +725,7 @@ void ImageReader::processPassStarted($BufferedImage* theImage, int32_t pass, int
 }
 
 void ImageReader::processImageUpdate($BufferedImage* theImage, int32_t minX, int32_t minY, int32_t width, int32_t height, int32_t periodX, int32_t periodY, $ints* bands) {
+	$useLocalCurrentObjectStackCache();
 	if (this->updateListeners == nullptr) {
 		return;
 	}
@@ -723,6 +737,7 @@ void ImageReader::processImageUpdate($BufferedImage* theImage, int32_t minX, int
 }
 
 void ImageReader::processPassComplete($BufferedImage* theImage) {
+	$useLocalCurrentObjectStackCache();
 	if (this->updateListeners == nullptr) {
 		return;
 	}
@@ -734,6 +749,7 @@ void ImageReader::processPassComplete($BufferedImage* theImage) {
 }
 
 void ImageReader::processThumbnailPassStarted($BufferedImage* theThumbnail, int32_t pass, int32_t minPass, int32_t maxPass, int32_t minX, int32_t minY, int32_t periodX, int32_t periodY, $ints* bands) {
+	$useLocalCurrentObjectStackCache();
 	if (this->updateListeners == nullptr) {
 		return;
 	}
@@ -745,6 +761,7 @@ void ImageReader::processThumbnailPassStarted($BufferedImage* theThumbnail, int3
 }
 
 void ImageReader::processThumbnailUpdate($BufferedImage* theThumbnail, int32_t minX, int32_t minY, int32_t width, int32_t height, int32_t periodX, int32_t periodY, $ints* bands) {
+	$useLocalCurrentObjectStackCache();
 	if (this->updateListeners == nullptr) {
 		return;
 	}
@@ -756,6 +773,7 @@ void ImageReader::processThumbnailUpdate($BufferedImage* theThumbnail, int32_t m
 }
 
 void ImageReader::processThumbnailPassComplete($BufferedImage* theThumbnail) {
+	$useLocalCurrentObjectStackCache();
 	if (this->updateListeners == nullptr) {
 		return;
 	}
@@ -767,6 +785,7 @@ void ImageReader::processThumbnailPassComplete($BufferedImage* theThumbnail) {
 }
 
 void ImageReader::processWarningOccurred($String* warning) {
+	$useLocalCurrentObjectStackCache();
 	if (this->warningListeners == nullptr) {
 		return;
 	}
@@ -781,6 +800,7 @@ void ImageReader::processWarningOccurred($String* warning) {
 }
 
 void ImageReader::processWarningOccurred($String* baseName, $String* keyword) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (this->warningListeners == nullptr) {
 		return;
@@ -832,6 +852,7 @@ void ImageReader::dispose() {
 }
 
 $Rectangle* ImageReader::getSourceRegion($ImageReadParam* param, int32_t srcWidth, int32_t srcHeight) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, sourceRegion, $new($Rectangle, 0, 0, srcWidth, srcHeight));
 	if (param != nullptr) {
 		$var($Rectangle, region, param->getSourceRegion());
@@ -849,6 +870,7 @@ $Rectangle* ImageReader::getSourceRegion($ImageReadParam* param, int32_t srcWidt
 }
 
 void ImageReader::computeRegions($ImageReadParam* param, int32_t srcWidth, int32_t srcHeight, $BufferedImage* image, $Rectangle* srcRegion, $Rectangle* destRegion) {
+	$useLocalCurrentObjectStackCache();
 	if (srcRegion == nullptr) {
 		$throwNew($IllegalArgumentException, "srcRegion == null!"_s);
 	}
@@ -914,6 +936,7 @@ void ImageReader::computeRegions($ImageReadParam* param, int32_t srcWidth, int32
 }
 
 void ImageReader::checkReadParamBandSettings($ImageReadParam* param, int32_t numSrcBands, int32_t numDstBands) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, srcBands, nullptr);
 	$var($ints, dstBands, nullptr);
 	if (param != nullptr) {
@@ -942,6 +965,7 @@ void ImageReader::checkReadParamBandSettings($ImageReadParam* param, int32_t num
 }
 
 $BufferedImage* ImageReader::getDestination($ImageReadParam* param, $Iterator* imageTypes, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (imageTypes == nullptr || !$nc(imageTypes)->hasNext()) {
 		$throwNew($IllegalArgumentException, "imageTypes null or empty!"_s);
 	}

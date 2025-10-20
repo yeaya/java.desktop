@@ -170,6 +170,7 @@ void SynthOptionPaneUI::installListeners() {
 }
 
 void SynthOptionPaneUI::updateStyle($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -197,6 +198,7 @@ void SynthOptionPaneUI::uninstallListeners() {
 }
 
 void SynthOptionPaneUI::installComponents() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->optionPane)->add($(static_cast<$Component*>(createMessageArea())));
 	$var($Container, separator, createSeparator());
 	if (separator != nullptr) {
@@ -221,6 +223,7 @@ int32_t SynthOptionPaneUI::getComponentState($JComponent* c) {
 }
 
 void SynthOptionPaneUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -253,6 +256,7 @@ bool SynthOptionPaneUI::getSizeButtonsToSameWidth() {
 }
 
 $Container* SynthOptionPaneUI::createMessageArea() {
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, top, $new($JPanel));
 	top->setName("OptionPane.messageArea"_s);
 	top->setLayout($$new($BorderLayout));

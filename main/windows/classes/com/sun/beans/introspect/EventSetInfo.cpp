@@ -120,6 +120,7 @@ bool EventSetInfo::isUnicast() {
 }
 
 $MethodInfo* EventSetInfo::getInfo($MethodInfo* info, $Method* method, int32_t prefix, int32_t postfix) {
+	$useLocalCurrentObjectStackCache();
 	$Class* type = (postfix > 0) ? $nc($MethodInfo::resolve(method, $($nc(method)->getGenericReturnType())))->getComponentType() : $MethodInfo::resolve(method, $nc($($nc(method)->getGenericParameterTypes()))->get(0));
 	$load($EventListener);
 	if ((type != nullptr) && $EventListener::class$->isAssignableFrom(type)) {
@@ -145,6 +146,7 @@ EventSetInfo* EventSetInfo::getInfo($Map* map, $String* key) {
 }
 
 $Map* EventSetInfo::get($Class* type) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, methods, $nc($($ClassInfo::get(type)))->getMethods());
 	if ($nc(methods)->isEmpty()) {
 		return $Collections::emptyMap();

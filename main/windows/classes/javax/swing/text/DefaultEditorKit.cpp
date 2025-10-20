@@ -417,6 +417,7 @@ $MutableAttributeSet* DefaultEditorKit::getInputAttributes() {
 }
 
 void DefaultEditorKit::read($Reader* in, $Document* doc, int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	$var($chars, buff, $new($chars, 4096));
 	int32_t nch = 0;
 	bool lastWasCR = false;
@@ -501,6 +502,7 @@ void DefaultEditorKit::read($Reader* in, $Document* doc, int32_t pos) {
 }
 
 void DefaultEditorKit::write($Writer* out, $Document* doc, int32_t pos, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	if ((pos < 0) || ((pos + len) > $nc(doc)->getLength())) {
 		$throwNew($BadLocationException, "DefaultEditorKit.write"_s, pos);
 	}
@@ -552,6 +554,7 @@ void DefaultEditorKit::write($Writer* out, $Document* doc, int32_t pos, int32_t 
 }
 
 void clinit$DefaultEditorKit($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(DefaultEditorKit::EndOfLineStringProperty, "__EndOfLine__"_s);
 	$assignStatic(DefaultEditorKit::insertContentAction, "insert-content"_s);
 	$assignStatic(DefaultEditorKit::insertBreakAction, "insert-break"_s);

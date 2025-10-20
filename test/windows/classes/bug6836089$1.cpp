@@ -74,6 +74,7 @@ void bug6836089$1::init$() {
 }
 
 void bug6836089$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextPane, htmlPane, $new($JTextPane));
 	htmlPane->setEditorKit($$new($HTMLEditorKit));
 	htmlPane->setText("<html><head></head><body>&#131072;</body></html>"_s);

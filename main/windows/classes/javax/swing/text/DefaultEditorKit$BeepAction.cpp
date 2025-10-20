@@ -71,6 +71,7 @@ void DefaultEditorKit$BeepAction::init$() {
 }
 
 void DefaultEditorKit$BeepAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getTextComponent(e));
 	$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(target);
 }

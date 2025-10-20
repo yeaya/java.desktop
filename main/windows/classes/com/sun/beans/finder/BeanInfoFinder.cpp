@@ -79,6 +79,7 @@ bool BeanInfoFinder::isValid($Class* type, $Method* method) {
 }
 
 $Object* BeanInfoFinder::instantiate($Class* type, $String* prefix$renamed, $String* name) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prefix, prefix$renamed);
 	if ($nc(BeanInfoFinder::DEFAULT)->equals(prefix)) {
 		$assign(prefix, BeanInfoFinder::DEFAULT_NEW);

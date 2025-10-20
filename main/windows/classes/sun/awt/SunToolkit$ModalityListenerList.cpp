@@ -80,6 +80,7 @@ void SunToolkit$ModalityListenerList::remove($ModalityListener* listener) {
 }
 
 void SunToolkit$ModalityListenerList::modalityPushed($ModalityEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->listeners)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -92,6 +93,7 @@ void SunToolkit$ModalityListenerList::modalityPushed($ModalityEvent* ev) {
 }
 
 void SunToolkit$ModalityListenerList::modalityPopped($ModalityEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->listeners)->iterator());
 		for (; $nc(i$)->hasNext();) {

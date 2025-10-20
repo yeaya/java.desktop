@@ -111,12 +111,14 @@ void GraphicsConfiguration::init$() {
 }
 
 $BufferedImage* GraphicsConfiguration::createCompatibleImage(int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, model, getColorModel());
 	$var($WritableRaster, raster, $nc(model)->createCompatibleWritableRaster(width, height));
 	return $new($BufferedImage, model, raster, model->isAlphaPremultiplied(), ($Hashtable*)nullptr);
 }
 
 $BufferedImage* GraphicsConfiguration::createCompatibleImage(int32_t width, int32_t height, int32_t transparency) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($(getColorModel()))->getTransparency() == transparency) {
 		return createCompatibleImage(width, height);
 	}
@@ -129,6 +131,7 @@ $BufferedImage* GraphicsConfiguration::createCompatibleImage(int32_t width, int3
 }
 
 $VolatileImage* GraphicsConfiguration::createCompatibleVolatileImage(int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($VolatileImage, vi, nullptr);
 	try {
 		$assign(vi, createCompatibleVolatileImage(width, height, nullptr, $Transparency::OPAQUE));
@@ -142,6 +145,7 @@ $VolatileImage* GraphicsConfiguration::createCompatibleVolatileImage(int32_t wid
 }
 
 $VolatileImage* GraphicsConfiguration::createCompatibleVolatileImage(int32_t width, int32_t height, int32_t transparency) {
+	$useLocalCurrentObjectStackCache();
 	$var($VolatileImage, vi, nullptr);
 	try {
 		$assign(vi, createCompatibleVolatileImage(width, height, nullptr, transparency));
@@ -159,6 +163,7 @@ $VolatileImage* GraphicsConfiguration::createCompatibleVolatileImage(int32_t wid
 }
 
 $VolatileImage* GraphicsConfiguration::createCompatibleVolatileImage(int32_t width, int32_t height, $ImageCapabilities* caps, int32_t transparency) {
+	$useLocalCurrentObjectStackCache();
 	$var($VolatileImage, vi, $new($SunVolatileImage, this, width, height, transparency, caps));
 	bool var$0 = caps != nullptr && caps->isAccelerated();
 	if (var$0 && !$nc($(vi->getCapabilities()))->isAccelerated()) {

@@ -86,6 +86,7 @@ void COMMarkerSegment::init$($String* comment) {
 }
 
 void COMMarkerSegment::init$($Node* node) {
+	$useLocalCurrentObjectStackCache();
 	$MarkerSegment::init$($JPEG::COM);
 	if ($instanceOf($IIOMetadataNode, node)) {
 		$var($IIOMetadataNode, ourNode, $cast($IIOMetadataNode, node));
@@ -111,6 +112,7 @@ $String* COMMarkerSegment::getComment() {
 }
 
 $IIOMetadataNode* COMMarkerSegment::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "com"_s));
 	node->setAttribute("comment"_s, $(getComment()));
 	if (this->data != nullptr) {
@@ -126,6 +128,7 @@ void COMMarkerSegment::write($ImageOutputStream* ios) {
 }
 
 void COMMarkerSegment::print() {
+	$useLocalCurrentObjectStackCache();
 	printTag("COM"_s);
 	$init($System);
 	$nc($System::out)->println($$str({"<"_s, $(getComment()), ">"_s}));

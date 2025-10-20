@@ -314,6 +314,7 @@ void DocumentHandler::startDocument() {
 }
 
 void DocumentHandler::startElement($String* uri, $String* localName, $String* qName, $Attributes* attributes) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($ElementHandler, parent, this->handler);
 	try {
@@ -338,6 +339,7 @@ void DocumentHandler::startElement($String* uri, $String* localName, $String* qN
 }
 
 void DocumentHandler::endElement($String* uri, $String* localName, $String* qName) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -379,6 +381,7 @@ void DocumentHandler::handleException($Exception* exception) {
 }
 
 void DocumentHandler::parse($InputSource* input) {
+	$useLocalCurrentObjectStackCache();
 	if ((this->acc == nullptr) && (nullptr != $System::getSecurityManager())) {
 		$throwNew($SecurityException, "AccessControlContext is not set"_s);
 	}
@@ -387,6 +390,7 @@ void DocumentHandler::parse($InputSource* input) {
 }
 
 $Class* DocumentHandler::findClass($String* name) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return $ClassFinder::resolveClass(name, $(getClassLoader()));
 	} catch ($ClassNotFoundException&) {

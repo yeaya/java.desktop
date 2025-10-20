@@ -119,6 +119,7 @@ void CreatedFontTracker::subBytes(int32_t sz) {
 $Semaphore* CreatedFontTracker::getCS() {
 	$load(CreatedFontTracker);
 	$synchronized(class$) {
+		$useLocalCurrentObjectStackCache();
 		$var($AppContext, appContext, $AppContext::getAppContext());
 		$load(CreatedFontTracker);
 		$var($Semaphore, cs, $cast($Semaphore, $nc(appContext)->get(CreatedFontTracker::class$)));

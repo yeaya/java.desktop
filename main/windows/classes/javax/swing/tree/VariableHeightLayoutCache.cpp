@@ -182,6 +182,7 @@ void VariableHeightLayoutCache::setModel($TreeModel* newModel) {
 }
 
 void VariableHeightLayoutCache::setRootVisible(bool rootVisible) {
+	$useLocalCurrentObjectStackCache();
 	if (isRootVisible() != rootVisible && this->root != nullptr) {
 		if (rootVisible) {
 			$nc(this->root)->updatePreferredSize(0);
@@ -347,6 +348,7 @@ bool VariableHeightLayoutCache::isExpanded($TreePath* path) {
 }
 
 void VariableHeightLayoutCache::treeNodesChanged($TreeModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (e != nullptr) {
 		$var($ints, changedIndexs, e->getChildIndices());
 		$var($VariableHeightLayoutCache$TreeStateNode, changedNode, getNodeForPath($($SwingUtilities2::getTreePath(e, $(getModel()))), false, false));
@@ -382,6 +384,7 @@ void VariableHeightLayoutCache::treeNodesChanged($TreeModelEvent* e) {
 }
 
 void VariableHeightLayoutCache::treeNodesInserted($TreeModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (e != nullptr) {
 		$var($ints, changedIndexs, e->getChildIndices());
 		$var($VariableHeightLayoutCache$TreeStateNode, changedParentNode, getNodeForPath($($SwingUtilities2::getTreePath(e, $(getModel()))), false, false));
@@ -434,6 +437,7 @@ void VariableHeightLayoutCache::treeNodesInserted($TreeModelEvent* e) {
 }
 
 void VariableHeightLayoutCache::treeNodesRemoved($TreeModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (e != nullptr) {
 		$var($ints, changedIndexs, nullptr);
 		$var($VariableHeightLayoutCache$TreeStateNode, changedParentNode, nullptr);
@@ -508,6 +512,7 @@ void VariableHeightLayoutCache::treeNodesRemoved($TreeModelEvent* e) {
 }
 
 void VariableHeightLayoutCache::treeStructureChanged($TreeModelEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (e != nullptr) {
 		$var($TreePath, changedPath, $SwingUtilities2::getTreePath(e, $(getModel())));
 		$var($VariableHeightLayoutCache$TreeStateNode, changedNode, nullptr);
@@ -587,6 +592,7 @@ $Rectangle* VariableHeightLayoutCache::getBounds(int32_t row, $Rectangle* placeI
 }
 
 void VariableHeightLayoutCache::rebuild(bool clearSelection) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, rootObject, nullptr);
 	$nc(this->treePathMapping)->clear();
 	if (this->treeModel != nullptr && ($assign(rootObject, $nc(this->treeModel)->getRoot())) != nullptr) {
@@ -620,6 +626,7 @@ void VariableHeightLayoutCache::rebuild(bool clearSelection) {
 }
 
 $VariableHeightLayoutCache$TreeStateNode* VariableHeightLayoutCache::createNodeAt($VariableHeightLayoutCache$TreeStateNode* parent, int32_t childIndex) {
+	$useLocalCurrentObjectStackCache();
 	bool isParentRoot = false;
 	$var($Object, newValue, nullptr);
 	$var($VariableHeightLayoutCache$TreeStateNode, newChildNode, nullptr);
@@ -650,6 +657,7 @@ $VariableHeightLayoutCache$TreeStateNode* VariableHeightLayoutCache::createNodeA
 }
 
 $VariableHeightLayoutCache$TreeStateNode* VariableHeightLayoutCache::getNodeForPath($TreePath* path$renamed, bool onlyIfVisible, bool shouldCreate) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePath, path, path$renamed);
 	if (path != nullptr) {
 		$var($VariableHeightLayoutCache$TreeStateNode, node, nullptr);
@@ -747,6 +755,7 @@ void VariableHeightLayoutCache::updateNodeSizes(bool updateAll) {
 }
 
 int32_t VariableHeightLayoutCache::getRowContainingYLocation(int32_t location) {
+	$useLocalCurrentObjectStackCache();
 	int32_t rows = getRowCount();
 	if (rows <= 0) {
 		return -1;
@@ -780,6 +789,7 @@ int32_t VariableHeightLayoutCache::getRowContainingYLocation(int32_t location) {
 }
 
 void VariableHeightLayoutCache::ensurePathIsExpanded($TreePath* aPath$renamed, bool expandLast) {
+	$useLocalCurrentObjectStackCache();
 	$var($TreePath, aPath, aPath$renamed);
 	if (aPath != nullptr) {
 		if ($nc(this->treeModel)->isLeaf($(aPath->getLastPathComponent()))) {

@@ -223,6 +223,7 @@ void DeserializedJFileChooserTest::init$() {
 }
 
 void DeserializedJFileChooserTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -246,6 +247,7 @@ void DeserializedJFileChooserTest::main($StringArray* args) {
 }
 
 void DeserializedJFileChooserTest::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($System);
 		$nc($System::out)->println($$str({"laf = "_s, laf}));
@@ -267,6 +269,7 @@ void DeserializedJFileChooserTest::setLookAndFeel($UIManager$LookAndFeelInfo* la
 }
 
 void DeserializedJFileChooserTest::lambda$main$2() {
+	$useLocalCurrentObjectStackCache();
 	$init(DeserializedJFileChooserTest);
 	$assignStatic(DeserializedJFileChooserTest::defaultSet, $nc($($nc(DeserializedJFileChooserTest::deserialized)->getRootPane()))->getDefaultButton());
 	$nc(DeserializedJFileChooserTest::deserialized)->setVisible(false);
@@ -274,6 +277,7 @@ void DeserializedJFileChooserTest::lambda$main$2() {
 }
 
 void DeserializedJFileChooserTest::lambda$main$1() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($JFileChooser, jfc, $new($JFileChooser));
 		$var($ByteArrayOutputStream, bos, $new($ByteArrayOutputStream));

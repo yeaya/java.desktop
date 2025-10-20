@@ -74,6 +74,7 @@ void JComboBox$AccessibleJComboBox$AccessibleEditor::init$($JComboBox$Accessible
 }
 
 $AccessibleContext* JComboBox$AccessibleJComboBox$AccessibleEditor::getAccessibleContext() {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$1->editorAccessibleContext == nullptr) {
 		$var($Component, c, $nc($($nc(this->this$1->this$0)->getEditor()))->getEditorComponent());
 		if ($instanceOf($Accessible, c)) {

@@ -171,6 +171,7 @@ void AbstractMixer::finalize() {
 }
 
 void AbstractMixer::init$($Mixer$Info* mixerInfo, $ControlArray* controls$renamed, $Line$InfoArray* sourceLineInfo, $Line$InfoArray* targetLineInfo) {
+	$useLocalCurrentObjectStackCache();
 	$var($ControlArray, controls, controls$renamed);
 	$load($Mixer);
 	$AbstractLine::init$($$new($Line$Info, $Mixer::class$), nullptr, controls);
@@ -204,6 +205,7 @@ $Line$InfoArray* AbstractMixer::getTargetLineInfo() {
 }
 
 $Line$InfoArray* AbstractMixer::getSourceLineInfo($Line$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = 0;
 	$var($Vector, vec, $new($Vector));
 	for (i = 0; i < $nc(this->sourceLineInfo)->length; ++i) {
@@ -219,6 +221,7 @@ $Line$InfoArray* AbstractMixer::getSourceLineInfo($Line$Info* info) {
 }
 
 $Line$InfoArray* AbstractMixer::getTargetLineInfo($Line$Info* info) {
+	$useLocalCurrentObjectStackCache();
 	int32_t i = 0;
 	$var($Vector, vec, $new($Vector));
 	for (i = 0; i < $nc(this->targetLineInfo)->length; ++i) {
@@ -249,6 +252,7 @@ bool AbstractMixer::isLineSupported($Line$Info* info) {
 }
 
 $LineArray* AbstractMixer::getSourceLines() {
+	$useLocalCurrentObjectStackCache();
 	$var($LineArray, localLines, nullptr);
 	$synchronized(this->sourceLines) {
 		$assign(localLines, $new($LineArray, $nc(this->sourceLines)->size()));
@@ -260,6 +264,7 @@ $LineArray* AbstractMixer::getSourceLines() {
 }
 
 $LineArray* AbstractMixer::getTargetLines() {
+	$useLocalCurrentObjectStackCache();
 	$var($LineArray, localLines, nullptr);
 	$synchronized(this->targetLines) {
 		$assign(localLines, $new($LineArray, $nc(this->targetLines)->size()));
@@ -302,6 +307,7 @@ void AbstractMixer::open(bool manual) {
 
 void AbstractMixer::open($Line* line) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if ($of(this)->equals(line)) {
 			return;
 		}
@@ -370,6 +376,7 @@ void AbstractMixer::start($Line* line) {
 
 void AbstractMixer::stop($Line* line) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if ($of(this)->equals(line)) {
 			return;
 		}

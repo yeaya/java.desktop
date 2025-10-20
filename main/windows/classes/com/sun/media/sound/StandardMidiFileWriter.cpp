@@ -139,6 +139,7 @@ $ints* StandardMidiFileWriter::getMidiFileTypes() {
 }
 
 $ints* StandardMidiFileWriter::getMidiFileTypes($Sequence* sequence) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, typesArray, nullptr);
 	$var($TrackArray, tracks, $nc(sequence)->getTracks());
 	if ($nc(tracks)->length == 1) {
@@ -174,6 +175,7 @@ int32_t StandardMidiFileWriter::write($Sequence* in, int32_t type, $File* out) {
 }
 
 $InputStream* StandardMidiFileWriter::getFileStream(int32_t type, $Sequence* sequence) {
+	$useLocalCurrentObjectStackCache();
 	$var($TrackArray, tracks, $nc(sequence)->getTracks());
 	int32_t bytesBuilt = 0;
 	int32_t headerLength = 14;
@@ -326,6 +328,7 @@ int32_t StandardMidiFileWriter::writeVarInt(int64_t value) {
 }
 
 $InputStream* StandardMidiFileWriter::writeTrack($Track* track, int32_t type) {
+	$useLocalCurrentObjectStackCache();
 	int32_t bytesWritten = 0;
 	int32_t lastBytesWritten = 0;
 	int32_t size = $nc(track)->size();

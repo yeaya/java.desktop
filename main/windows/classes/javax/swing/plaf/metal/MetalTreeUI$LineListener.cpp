@@ -66,6 +66,7 @@ void MetalTreeUI$LineListener::init$($MetalTreeUI* this$0) {
 }
 
 void MetalTreeUI$LineListener::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(e)->getPropertyName());
 	if ($nc(name)->equals("JTree.lineStyle"_s)) {
 		this->this$0->decodeLineStyle($(e->getNewValue()));

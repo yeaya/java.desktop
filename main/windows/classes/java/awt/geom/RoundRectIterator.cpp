@@ -149,6 +149,7 @@ int32_t RoundRectIterator::currentSegment($doubles* coords) {
 }
 
 void clinit$RoundRectIterator($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$init($Math);
 	RoundRectIterator::angle = $Math::PI / 4.0;
 	RoundRectIterator::a = 1.0 - $Math::cos(RoundRectIterator::angle);

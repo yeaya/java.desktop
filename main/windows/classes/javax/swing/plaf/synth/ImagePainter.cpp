@@ -234,6 +234,7 @@ $StringBuffer* ImagePainter::CACHE_KEY = nullptr;
 
 $Paint9Painter* ImagePainter::getPaint9Painter() {
 	$init(ImagePainter);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(ImagePainter::CACHE_KEY) {
 		$var($WeakReference, cacheRef, $cast($WeakReference, $nc($($AppContext::getAppContext()))->get(ImagePainter::CACHE_KEY)));
 		$var($Paint9Painter, painter, nullptr);
@@ -294,6 +295,7 @@ $Image* ImagePainter::getImage() {
 }
 
 void ImagePainter::paint($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($Image, image, getImage());
 	if ($Paint9Painter::validImage(image)) {
 		$Paint9Painter$PaintType* type = nullptr;

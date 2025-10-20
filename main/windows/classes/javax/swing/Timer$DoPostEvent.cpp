@@ -70,6 +70,7 @@ void Timer$DoPostEvent::init$($Timer* this$0) {
 }
 
 void Timer$DoPostEvent::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($Timer);
 	if ($Timer::logTimers) {
 		$init($System);

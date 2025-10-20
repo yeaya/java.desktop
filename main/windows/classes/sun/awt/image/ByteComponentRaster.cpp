@@ -117,6 +117,7 @@ void ByteComponentRaster::initIDs() {
 }
 
 void ByteComponentRaster::init$($SampleModel* sampleModel, $Point* origin) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, var$0, sampleModel);
 	$var($DataBufferByte, var$1, $cast($DataBufferByte, $nc(sampleModel)->createDataBuffer()));
 	int32_t var$2 = $nc(origin)->x;
@@ -133,6 +134,7 @@ void ByteComponentRaster::init$($SampleModel* sampleModel, $DataBufferByte* data
 }
 
 void ByteComponentRaster::init$($SampleModel* sampleModel, $DataBufferByte* dataBuffer, $Rectangle* aRegion, $Point* origin, ByteComponentRaster* parent) {
+	$useLocalCurrentObjectStackCache();
 	$SunWritableRaster::init$(sampleModel, dataBuffer, aRegion, origin, parent);
 	this->maxX = this->minX + this->width;
 	this->maxY = this->minY + this->height;
@@ -313,6 +315,7 @@ void ByteComponentRaster::setDataElements(int32_t x, int32_t y, $Raster* inRaste
 }
 
 void ByteComponentRaster::setDataElements(int32_t dstX, int32_t dstY, int32_t width, int32_t height, $Raster* inRaster) {
+	$useLocalCurrentObjectStackCache();
 	if (width <= 0 || height <= 0) {
 		return;
 	}
@@ -455,6 +458,7 @@ $Raster* ByteComponentRaster::createChild(int32_t x, int32_t y, int32_t width, i
 }
 
 $WritableRaster* ByteComponentRaster::createWritableChild(int32_t x, int32_t y, int32_t width, int32_t height, int32_t x0, int32_t y0, $ints* bandList) {
+	$useLocalCurrentObjectStackCache();
 	if (x < this->minX) {
 		$throwNew($RasterFormatException, "x lies outside the raster"_s);
 	}
@@ -482,6 +486,7 @@ $WritableRaster* ByteComponentRaster::createWritableChild(int32_t x, int32_t y, 
 }
 
 $WritableRaster* ByteComponentRaster::createCompatibleWritableRaster(int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (w <= 0 || h <= 0) {
 		$throwNew($RasterFormatException, $$str({"negative "_s, ((w <= 0) ? "width"_s : "height"_s)}));
 	}
@@ -494,6 +499,7 @@ $WritableRaster* ByteComponentRaster::createCompatibleWritableRaster() {
 }
 
 void ByteComponentRaster::verify() {
+	$useLocalCurrentObjectStackCache();
 	if (this->width <= 0 || this->height <= 0 || this->height > ($div($Integer::MAX_VALUE, this->width))) {
 		$throwNew($RasterFormatException, "Invalid raster dimension"_s);
 	}
@@ -539,6 +545,7 @@ void ByteComponentRaster::verify() {
 }
 
 $String* ByteComponentRaster::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $new($String, $$str({"ByteComponentRaster: width = "_s, $$str(this->width), " height = "_s, $$str(this->height), " #numDataElements "_s, $$str(this->numDataElements), " dataOff[0] = "_s, $$str($nc(this->dataOffsets)->get(0))}));
 }
 

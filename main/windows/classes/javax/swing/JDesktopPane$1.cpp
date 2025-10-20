@@ -84,6 +84,7 @@ void JDesktopPane$1::init$($JDesktopPane* this$0) {
 }
 
 $Component* JDesktopPane$1::getDefaultComponent($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrameArray, jifArray, this->this$0->getAllFrames());
 	$var($Component, comp, nullptr);
 	{

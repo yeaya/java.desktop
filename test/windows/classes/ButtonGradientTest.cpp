@@ -249,6 +249,7 @@ void ButtonGradientTest::init$() {
 }
 
 void ButtonGradientTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -267,6 +268,7 @@ void ButtonGradientTest::main($StringArray* args) {
 }
 
 void ButtonGradientTest::testGradient() {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(ButtonGradientTest$$Lambda$createAndShowGUI$1)));
 	$init(ButtonGradientTest);
 	$nc(ButtonGradientTest::robot)->waitForIdle();
@@ -288,6 +290,7 @@ void ButtonGradientTest::testGradient() {
 }
 
 void ButtonGradientTest::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 	} catch ($Exception&) {
@@ -306,6 +309,7 @@ void ButtonGradientTest::createAndShowGUI() {
 }
 
 void ButtonGradientTest::getImageFromRobot() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init(ButtonGradientTest);
 		$var($Point, butLoc, $nc(ButtonGradientTest::button)->getLocationOnScreen());
@@ -326,12 +330,14 @@ void ButtonGradientTest::getImageFromRobot() {
 }
 
 $Rectangle* ButtonGradientTest::getButtonBounds() {
+	$useLocalCurrentObjectStackCache();
 	$var($RectangleArray, rectangles, $new($RectangleArray, 1));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(ButtonGradientTest$$Lambda$lambda$getButtonBounds$1$2, rectangles)));
 	return rectangles->get(0);
 }
 
 $Color* ButtonGradientTest::getGradientColor(int32_t w, int32_t h, $Color* c1, $Color* c2) {
+	$useLocalCurrentObjectStackCache();
 	$var($GradientPaint, gradient, $new($GradientPaint, (float)0, (float)0, c1, (float)0, (float)h, c2, true));
 	$var($BufferedImage, img, $new($BufferedImage, w, h, $BufferedImage::TYPE_INT_RGB));
 	$var($Graphics2D, g, img->createGraphics());
@@ -361,6 +367,7 @@ bool ButtonGradientTest::similar(int32_t i1, int32_t i2) {
 }
 
 void ButtonGradientTest::lambda$getButtonBounds$1($RectangleArray* rectangles) {
+	$useLocalCurrentObjectStackCache();
 	$init(ButtonGradientTest);
 	$nc(rectangles)->set(0, $($nc(ButtonGradientTest::button)->getBounds()));
 	$nc(rectangles->get(0))->setLocation($($nc(ButtonGradientTest::button)->getLocationOnScreen()));

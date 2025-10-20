@@ -58,6 +58,7 @@ void XorDrawLineANY::init$() {
 }
 
 void XorDrawLineANY::DrawLine$($SunGraphics2D* sg2d, $SurfaceData* sData, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
+	$useLocalCurrentObjectStackCache();
 	$var($PixelWriter, pw, $GeneralRenderer::createXorPixelWriter(sg2d, sData));
 	if (y1 >= y2) {
 		$GeneralRenderer::doDrawLine(sData, pw, nullptr, $($nc(sg2d)->getCompClip()), x2, y2, x1, y1);

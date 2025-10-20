@@ -66,6 +66,7 @@ void bug6794836::main($StringArray* args) {
 }
 
 void bug6794836::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JSlider, slider, $new($JSlider, 0, $Integer::MAX_VALUE));
 	slider->setPaintLabels(true);
 	$var($JLabel, minLabel, $new($JLabel, "Min"_s));

@@ -100,6 +100,7 @@ void SoftAudioPusher::stop() {
 }
 
 void SoftAudioPusher::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, buffer, this->buffer);
 	$var($AudioInputStream, ais, this->ais);
 	$var($SourceDataLine, sourceDataLine, this->sourceDataLine);

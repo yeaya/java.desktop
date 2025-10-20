@@ -92,6 +92,7 @@ void EditorKit::init$() {
 }
 
 $Object* EditorKit::clone() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, o, nullptr);
 	try {
 		$assign(o, $Cloneable::clone());

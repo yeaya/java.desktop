@@ -72,6 +72,7 @@ void MetalDesktopIconUI$TitleListener::init$($MetalDesktopIconUI* this$0) {
 }
 
 void MetalDesktopIconUI$TitleListener::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($($nc(e)->getPropertyName()))->equals("title"_s)) {
 		$nc(this->this$0->button)->setText($cast($String, $(e->getNewValue())));
 	}

@@ -95,6 +95,7 @@ $ComponentUI* WindowsTreeUI::createUI($JComponent* c) {
 }
 
 void WindowsTreeUI::ensureRowsAreVisible(int32_t beginRow, int32_t endRow) {
+	$useLocalCurrentObjectStackCache();
 	if (this->tree != nullptr && beginRow >= 0 && endRow < getRowCount(this->tree)) {
 		$var($Rectangle, visRect, $nc(this->tree)->getVisibleRect());
 		if (beginRow == endRow) {

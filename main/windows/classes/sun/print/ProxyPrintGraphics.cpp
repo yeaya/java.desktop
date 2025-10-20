@@ -86,10 +86,12 @@ $PrintJob* ProxyPrintGraphics::getPrintJob() {
 }
 
 $Graphics* ProxyPrintGraphics::create() {
+	$useLocalCurrentObjectStackCache();
 	return $new(ProxyPrintGraphics, $($nc($(getGraphics()))->create()), this->printJob);
 }
 
 $Graphics* ProxyPrintGraphics::create(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, g, $nc($(getGraphics()))->create(x, y, width, height));
 	return $new(ProxyPrintGraphics, g, this->printJob);
 }

@@ -79,6 +79,7 @@ void WWindowPeer$ActiveWindowListener::init$() {
 }
 
 void WWindowPeer$ActiveWindowListener::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Window, w, $cast($Window, $nc(e)->getNewValue()));
 	if (w == nullptr) {
 		return;

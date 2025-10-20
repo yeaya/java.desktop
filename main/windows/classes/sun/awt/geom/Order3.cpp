@@ -165,6 +165,7 @@ void Order3::insert($Vector* curves, $doubles* tmp, double x0, double y0, double
 
 void Order3::addInstance($Vector* curves, double x0, double y0, double cx0, double cy0, double cx1, double cy1, double x1, double y1, int32_t direction) {
 	$init(Order3);
+	$useLocalCurrentObjectStackCache();
 	if (y0 > y1) {
 		$nc(curves)->add($$new(Order3, x1, y1, cx1, cy1, cx0, cy0, x0, y0, -direction));
 	} else if (y1 > y0) {
@@ -619,6 +620,7 @@ int32_t Order3::getSegment($doubles* coords) {
 }
 
 $String* Order3::controlPointString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$2, $$str({"("_s, $$str(round(getCX0())), ", "_s}));
 	$var($String, var$1, $$concat(var$2, $$str(round(getCY0()))));
 	$var($String, var$0, ($$concat(var$1, "), ")));

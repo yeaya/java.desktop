@@ -115,6 +115,7 @@ void TestJEditor::init$() {
 
 void TestJEditor::main($StringArray* args) {
 	$load(TestJEditor);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestJEditor$$Lambda$testJEditorPane)));
 	$System::setSecurityManager($$new($SecurityManager));
@@ -122,6 +123,7 @@ void TestJEditor::main($StringArray* args) {
 }
 
 void TestJEditor::testJEditorPane() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$load($TestJEditor$UserEditorKit);
 		$JEditorPane::registerEditorKitForContentType("text/html"_s, $($TestJEditor$UserEditorKit::class$->getName()));

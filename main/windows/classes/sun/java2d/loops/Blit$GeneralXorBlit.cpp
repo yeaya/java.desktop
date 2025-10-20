@@ -143,6 +143,7 @@ void Blit$GeneralXorBlit::setPrimitives($Blit* srcconverter, $Blit* dstconverter
 
 void Blit$GeneralXorBlit::Blit$($SurfaceData* srcData, $SurfaceData* dstData, $Composite* comp, $Region* clip, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t width, int32_t height) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($SurfaceData, src, nullptr);
 		$var($SurfaceData, dst, nullptr);
 		$var($Region, opclip, nullptr);

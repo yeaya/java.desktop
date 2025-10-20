@@ -72,6 +72,7 @@ void NimbusGlueTest$1::init$() {
 }
 
 void NimbusGlueTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

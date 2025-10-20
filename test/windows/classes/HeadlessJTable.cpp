@@ -127,6 +127,7 @@ void HeadlessJTable::init$() {
 }
 
 void HeadlessJTable::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTable, t, nullptr);
 	$assign(t, $new($JTable));
 	$var($ObjectArray2, data, $new($ObjectArray2, {

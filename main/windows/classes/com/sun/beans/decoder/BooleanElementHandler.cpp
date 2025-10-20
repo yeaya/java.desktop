@@ -49,6 +49,7 @@ void BooleanElementHandler::init$() {
 }
 
 $Object* BooleanElementHandler::getValue($String* argument) {
+	$useLocalCurrentObjectStackCache();
 	$init($Boolean);
 	if ($nc($($nc($Boolean::TRUE)->toString()))->equalsIgnoreCase(argument)) {
 		return $of($Boolean::TRUE);

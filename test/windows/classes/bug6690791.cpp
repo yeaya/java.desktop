@@ -54,6 +54,7 @@ void bug6690791::init$() {
 }
 
 void bug6690791::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, var$0, static_cast<$Component*>($new($JLabel)));
 	$var($MouseEvent, me, $new($MouseEvent, var$0, $MouseEvent::MOUSE_CLICKED, $System::currentTimeMillis(), $MouseEvent::ALT_MASK, 10, 10, 100, 100, 1, false, $MouseEvent::BUTTON1));
 	me->setSource($$new($Object));

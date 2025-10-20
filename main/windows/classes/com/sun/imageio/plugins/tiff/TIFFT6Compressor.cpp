@@ -144,6 +144,7 @@ int32_t TIFFT6Compressor::encodeT6($bytes* data, int32_t lineStride, int32_t col
 }
 
 int32_t TIFFT6Compressor::encode($bytes* b, int32_t off, int32_t width, int32_t height, $ints* bitsPerSample, int32_t scanlineStride) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(bitsPerSample)->length != 1 || $nc(bitsPerSample)->get(0) != 1) {
 		$throwNew($IIOException, "Bits per sample must be 1 for T6 compression!"_s);
 	}

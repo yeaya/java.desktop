@@ -78,6 +78,7 @@ void bug7142955$1::init$() {
 }
 
 void bug7142955$1::run() {
+	$useLocalCurrentObjectStackCache();
 	int32_t w = 200;
 	int32_t h = 100;
 	$var($BufferedImage, image, $new($BufferedImage, w, h, $BufferedImage::TYPE_INT_ARGB));

@@ -112,6 +112,7 @@ void HeadlessJColorChooser::init$() {
 }
 
 void HeadlessJColorChooser::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JColorChooser, cc, nullptr);
 	$assign(cc, $new($JColorChooser));
 	cc->getAccessibleContext();

@@ -65,6 +65,7 @@ void bug6925473$1::init$() {
 }
 
 void bug6925473$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTextArea, textArea, $new($JTextArea, "Copyright 2010 Sun Microsystems, Inc.  All Rights Reserved. DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER. This code is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 only, as published by the Free Software Foundation. "_s));
 	$var($Dimension, preferredSize, textArea->getPreferredSize());
 	if ($nc(preferredSize)->width <= 0 || $nc(preferredSize)->height <= 0) {

@@ -312,6 +312,7 @@ void WButtonPeer::finalize() {
 }
 
 $Dimension* WButtonPeer::getMinimumSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, fm, getFontMetrics($($nc(($cast($Button, this->target)))->getFont())));
 	$var($String, label, $nc(($cast($Button, this->target)))->getLabel());
 	if (label == nullptr) {

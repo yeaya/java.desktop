@@ -107,6 +107,7 @@ $Object* NewElementHandler::getContextBean() {
 }
 
 $ValueObject* NewElementHandler::getValueObject() {
+	$useLocalCurrentObjectStackCache();
 	if (this->arguments != nullptr) {
 		{
 			$var($Throwable, var$0, nullptr);
@@ -131,6 +132,7 @@ $ValueObject* NewElementHandler::getValueObject() {
 }
 
 $ValueObject* NewElementHandler::getValueObject($Class* type, $ObjectArray* args$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, args, args$renamed);
 	$beforeCallerSensitive();
 	if (type == nullptr) {
@@ -157,6 +159,7 @@ $ClassArray* NewElementHandler::getArgumentTypes($ObjectArray* arguments) {
 
 $ObjectArray* NewElementHandler::getArguments($ObjectArray* arguments, $ClassArray* types) {
 	$init(NewElementHandler);
+	$useLocalCurrentObjectStackCache();
 	int32_t index = $nc(types)->length - 1;
 	if (types->length == $nc(arguments)->length) {
 		$var($Object0, argument, arguments->get(index));

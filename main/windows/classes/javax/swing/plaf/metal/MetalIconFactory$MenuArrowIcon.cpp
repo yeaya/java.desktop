@@ -113,6 +113,7 @@ void MetalIconFactory$MenuArrowIcon::init$() {
 }
 
 void MetalIconFactory$MenuArrowIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuItem, b, $cast($JMenuItem, c));
 	$var($ButtonModel, model, $nc(b)->getModel());
 	$nc(g)->translate(x, y);

@@ -152,6 +152,7 @@ void TransformingPathConsumer2D$PathClipFilter::finishPath() {
 }
 
 void TransformingPathConsumer2D$PathClipFilter::finish() {
+	$useLocalCurrentObjectStackCache();
 	this->outside = false;
 	if (!$nc(this->stack)->isEmpty()) {
 		if (this->init_corners) {

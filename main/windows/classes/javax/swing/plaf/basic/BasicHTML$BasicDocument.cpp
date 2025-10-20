@@ -68,6 +68,7 @@ void BasicHTML$BasicDocument::init$($StyleSheet* s, $Font* defaultFont, $Color* 
 }
 
 void BasicHTML$BasicDocument::setFontAndColor($Font* font, $Color* fg) {
+	$useLocalCurrentObjectStackCache();
 	$nc($(getStyleSheet()))->addRule($($SwingUtilities2::displayPropertiesToCSS(font, fg)));
 }
 

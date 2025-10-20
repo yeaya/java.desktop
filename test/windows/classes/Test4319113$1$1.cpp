@@ -87,6 +87,7 @@ void Test4319113$1$1::init$($Test4319113$1* this$1) {
 }
 
 void Test4319113$1$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($UIManager$LookAndFeelInfo, lookAndFeelInfo, $cast($UIManager$LookAndFeelInfo, $nc($nc(this->this$1->this$0)->cbPlaf)->getSelectedItem()));
 	try {
 		$UIManager::setLookAndFeel($($nc(lookAndFeelInfo)->getClassName()));

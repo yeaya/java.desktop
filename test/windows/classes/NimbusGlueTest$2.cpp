@@ -82,6 +82,7 @@ void NimbusGlueTest$2::init$() {
 }
 
 void NimbusGlueTest$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($NimbusGlueTest);
 	$assignStatic($NimbusGlueTest::frame, $new($JFrame));
 	$assignStatic($NimbusGlueTest::bar, $new($JToolBar));

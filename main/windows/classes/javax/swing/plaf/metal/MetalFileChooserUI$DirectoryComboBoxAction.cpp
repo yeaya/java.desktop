@@ -75,6 +75,7 @@ void MetalFileChooserUI$DirectoryComboBoxAction::init$($MetalFileChooserUI* this
 }
 
 void MetalFileChooserUI$DirectoryComboBoxAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->this$0->directoryComboBox)->hidePopup();
 	$var($File, f, $cast($File, $nc(this->this$0->directoryComboBox)->getSelectedItem()));
 	if (!$nc($($nc($(this->this$0->getFileChooser()))->getCurrentDirectory()))->equals(f)) {

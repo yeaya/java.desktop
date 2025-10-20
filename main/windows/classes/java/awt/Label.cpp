@@ -150,6 +150,7 @@ void Label::readObject($ObjectInputStream* s) {
 }
 
 $String* Label::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(Label::class$) {
 		$var($String, var$0, Label::base);
 		return $concat(var$0, $$str(Label::nameCounter++));
@@ -171,6 +172,7 @@ int32_t Label::getAlignment() {
 
 void Label::setAlignment(int32_t alignment) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		{
 			$var($LabelPeer, peer, nullptr)
 			switch (alignment) {
@@ -215,6 +217,7 @@ void Label::setText($String* text) {
 }
 
 $String* Label::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, align, ""_s);
 	switch (this->alignment) {
 	case Label::LEFT:

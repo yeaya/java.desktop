@@ -190,6 +190,7 @@ void PageAttributes::setMedia($PageAttributes$MediaType* media) {
 }
 
 void PageAttributes::setMediaToDefault() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, defaultCountry, $nc($($Locale::getDefault()))->getCountry());
 	bool var$0 = defaultCountry != nullptr;
 	if (var$0) {
@@ -346,6 +347,7 @@ int32_t PageAttributes::hashCode() {
 }
 
 $String* PageAttributes::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$13, $$str({"color="_s, $(getColor()), ",media="_s}));
 	$var($String, var$12, $$concat(var$13, $(getMedia())));
 	$var($String, var$11, $$concat(var$12, ",orientation-requested="));

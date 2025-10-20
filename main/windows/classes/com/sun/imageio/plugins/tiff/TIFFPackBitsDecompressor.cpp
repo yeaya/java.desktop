@@ -84,6 +84,7 @@ int32_t TIFFPackBitsDecompressor::decode($bytes* srcData, int32_t srcOffset, $by
 }
 
 void TIFFPackBitsDecompressor::decodeRaw($bytes* b, int32_t dstOffset, int32_t bitsPerPixel, int32_t scanlineStride) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->stream)->seek(this->offset);
 	$var($bytes, srcData, $new($bytes, this->byteCount));
 	$nc(this->stream)->readFully(srcData);

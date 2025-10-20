@@ -116,6 +116,7 @@ void HeadlessJRadioButtonMenuItem::init$() {
 }
 
 void HeadlessJRadioButtonMenuItem::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JRadioButtonMenuItem, i, $new($JRadioButtonMenuItem));
 	i->getAccessibleContext();
 	i->isFocusTraversable();

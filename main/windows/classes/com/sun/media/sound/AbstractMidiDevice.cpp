@@ -202,6 +202,7 @@ bool AbstractMidiDevice::isOpen() {
 }
 
 void AbstractMidiDevice::implClose() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->traRecLock) {
 		if (this->receiverList != nullptr) {
 			for (int32_t i = 0; i < $nc(this->receiverList)->size(); ++i) {
@@ -236,6 +237,7 @@ int32_t AbstractMidiDevice::getMaxTransmitters() {
 }
 
 $Receiver* AbstractMidiDevice::getReceiver() {
+	$useLocalCurrentObjectStackCache();
 	$var($Receiver, receiver, nullptr);
 	$synchronized(this->traRecLock) {
 		$assign(receiver, createReceiver());
@@ -245,6 +247,7 @@ $Receiver* AbstractMidiDevice::getReceiver() {
 }
 
 $List* AbstractMidiDevice::getReceivers() {
+	$useLocalCurrentObjectStackCache();
 	$var($List, recs, nullptr);
 	$synchronized(this->traRecLock) {
 		if (this->receiverList == nullptr) {
@@ -257,6 +260,7 @@ $List* AbstractMidiDevice::getReceivers() {
 }
 
 $Transmitter* AbstractMidiDevice::getTransmitter() {
+	$useLocalCurrentObjectStackCache();
 	$var($Transmitter, transmitter, nullptr);
 	$synchronized(this->traRecLock) {
 		$assign(transmitter, createTransmitter());
@@ -266,6 +270,7 @@ $Transmitter* AbstractMidiDevice::getTransmitter() {
 }
 
 $List* AbstractMidiDevice::getTransmitters() {
+	$useLocalCurrentObjectStackCache();
 	$var($List, tras, nullptr);
 	$synchronized(this->traRecLock) {
 		if (this->transmitterList == nullptr || $nc($nc(this->transmitterList)->transmitters)->size() == 0) {

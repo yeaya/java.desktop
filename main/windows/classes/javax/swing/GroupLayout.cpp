@@ -250,6 +250,7 @@ void GroupLayout::checkLessThan(int32_t min, int32_t max) {
 }
 
 void GroupLayout::init$($Container* host) {
+	$useLocalCurrentObjectStackCache();
 	if (host == nullptr) {
 		$throwNew($IllegalArgumentException, "Container must be non-null"_s);
 	}
@@ -297,6 +298,7 @@ bool GroupLayout::getAutoCreateGaps() {
 }
 
 void GroupLayout::setAutoCreateContainerGaps(bool autoCreateContainerPadding) {
+	$useLocalCurrentObjectStackCache();
 	if (this->autocreateContainerPadding != autoCreateContainerPadding) {
 		this->autocreateContainerPadding = autoCreateContainerPadding;
 		$set(this, horizontalGroup, createTopLevelGroup($(getHorizontalGroup())));
@@ -342,6 +344,7 @@ $GroupLayout$Group* GroupLayout::getVerticalGroup() {
 }
 
 $GroupLayout$Group* GroupLayout::createTopLevelGroup($GroupLayout$Group* specifiedGroup) {
+	$useLocalCurrentObjectStackCache();
 	$var($GroupLayout$SequentialGroup, group, createSequentialGroup());
 	if (getAutoCreateContainerGaps()) {
 		$nc(group)->addSpring($$new($GroupLayout$ContainerAutoPreferredGapSpring, this));
@@ -387,6 +390,7 @@ void GroupLayout::linkSize($ComponentArray* components) {
 }
 
 void GroupLayout::linkSize(int32_t axis, $ComponentArray* components) {
+	$useLocalCurrentObjectStackCache();
 	if (components == nullptr) {
 		$throwNew($IllegalArgumentException, "Components must be non-null"_s);
 	}
@@ -486,6 +490,7 @@ $Dimension* GroupLayout::minimumLayoutSize($Container* parent) {
 }
 
 void GroupLayout::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	prepare(GroupLayout::SPECIFIC_SIZE);
 	$var($Insets, insets, $nc(parent)->getInsets());
 	int32_t width = parent->getWidth() - $nc(insets)->left - insets->right;
@@ -537,6 +542,7 @@ void GroupLayout::invalidateLayout($Container* parent) {
 }
 
 void GroupLayout::prepare(int32_t sizeType) {
+	$useLocalCurrentObjectStackCache();
 	bool visChanged = false;
 	if (!this->isValid) {
 		this->isValid = true;
@@ -609,6 +615,7 @@ void GroupLayout::calculateAutopadding($GroupLayout$Group* group, int32_t axis, 
 }
 
 void GroupLayout::checkComponents() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc($($nc(this->componentInfos)->values()))->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -626,6 +633,7 @@ void GroupLayout::checkComponents() {
 }
 
 void GroupLayout::registerComponents($GroupLayout$Group* group, int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, springs, $nc(group)->springs);
 	for (int32_t counter = $nc(springs)->size() - 1; counter >= 0; --counter) {
 		$var($GroupLayout$Spring, spring, $cast($GroupLayout$Spring, springs->get(counter)));
@@ -661,6 +669,7 @@ $GroupLayout$ComponentInfo* GroupLayout::getComponentInfo($Component* component)
 }
 
 void GroupLayout::insertAutopadding(bool insert) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, var$0, static_cast<$List*>($new($ArrayList, 1)));
 	$var($List, var$1, static_cast<$List*>($new($ArrayList, 1)));
 	$var($List, var$2, static_cast<$List*>($new($ArrayList, 1)));
@@ -672,6 +681,7 @@ void GroupLayout::insertAutopadding(bool insert) {
 }
 
 bool GroupLayout::areParallelSiblings($Component* source, $Component* target, int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	$var($GroupLayout$ComponentInfo, sourceInfo, getComponentInfo(source));
 	$var($GroupLayout$ComponentInfo, targetInfo, getComponentInfo(target));
 	$var($GroupLayout$Spring, sourceSpring, nullptr);
@@ -726,6 +736,7 @@ $String* GroupLayout::toString() {
 }
 
 void GroupLayout::createSpringDescription($StringBuilder* sb, $GroupLayout$Spring* spring, $String* indent$renamed, int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, indent, indent$renamed);
 	$var($String, origin, ""_s);
 	$var($String, padding, ""_s);

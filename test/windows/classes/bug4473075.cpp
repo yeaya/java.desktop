@@ -96,6 +96,7 @@ void bug4473075::init$() {
 }
 
 void bug4473075::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	robot->setAutoDelay(20);
 	$SwingUtilities::invokeAndWait($$new($bug4473075$1));

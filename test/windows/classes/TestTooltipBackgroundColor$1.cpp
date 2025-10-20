@@ -92,6 +92,7 @@ void TestTooltipBackgroundColor$1::init$() {
 }
 
 void TestTooltipBackgroundColor$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JPanel, panel, $new($JPanel));
 	$init($TestTooltipBackgroundColor);
 	$assignStatic($TestTooltipBackgroundColor::label, $new($TestTooltipBackgroundColor$1$1, this, "Label with tooltip"_s));

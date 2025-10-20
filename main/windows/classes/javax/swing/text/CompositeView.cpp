@@ -138,6 +138,7 @@ void CompositeView::init$($Element* elem) {
 }
 
 void CompositeView::loadChildren($ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	if (f == nullptr) {
 		return;
 	}
@@ -169,6 +170,7 @@ $View* CompositeView::getView(int32_t n) {
 }
 
 void CompositeView::replace(int32_t offset, int32_t length, $ViewArray* views$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ViewArray, views, views$renamed);
 	if (views == nullptr) {
 		$assign(views, CompositeView::ZERO);
@@ -210,6 +212,7 @@ $Shape* CompositeView::getChildAllocation(int32_t index, $Shape* a) {
 }
 
 $Shape* CompositeView::modelToView(int32_t pos, $Shape* a, $Position$Bias* b) {
+	$useLocalCurrentObjectStackCache();
 	$init($Position$Bias);
 	bool isBackward = (b == $Position$Bias::Backward);
 	int32_t testPos = (isBackward) ? $Math::max(0, pos - 1) : pos;
@@ -239,6 +242,7 @@ $Shape* CompositeView::modelToView(int32_t pos, $Shape* a, $Position$Bias* b) {
 }
 
 $Shape* CompositeView::modelToView(int32_t p0, $Position$Bias* b0, int32_t p1, $Position$Bias* b1, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = p0 == getStartOffset();
 	if (var$0 && p1 == getEndOffset()) {
 		return a;
@@ -302,6 +306,7 @@ $Shape* CompositeView::modelToView(int32_t p0, $Position$Bias* b0, int32_t p1, $
 }
 
 int32_t CompositeView::viewToModel(float x, float y, $Shape* a, $Position$BiasArray* bias) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, alloc, getInsideAllocation(a));
 	if (isBefore($cast(int32_t, x), $cast(int32_t, y), alloc)) {
 		int32_t retValue = -1;
@@ -345,6 +350,7 @@ int32_t CompositeView::viewToModel(float x, float y, $Shape* a, $Position$BiasAr
 }
 
 int32_t CompositeView::getNextVisualPositionFrom(int32_t pos, $Position$Bias* b, $Shape* a, int32_t direction, $Position$BiasArray* biasRet) {
+	$useLocalCurrentObjectStackCache();
 	if (pos < -1 || pos > $nc($(getDocument()))->getLength()) {
 		$throwNew($BadLocationException, "invalid position"_s, pos);
 	}

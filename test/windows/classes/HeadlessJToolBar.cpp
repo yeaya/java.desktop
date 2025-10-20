@@ -112,6 +112,7 @@ void HeadlessJToolBar::init$() {
 }
 
 void HeadlessJToolBar::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JToolBar, tb, $new($JToolBar));
 	tb->getAccessibleContext();
 	tb->isFocusTraversable();

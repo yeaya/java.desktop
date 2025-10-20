@@ -79,6 +79,7 @@ void SwingWorker$4::init$($SwingWorker* this$0) {
 }
 
 void SwingWorker$4::run($List* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, "progress"_s);
 	$var($Object, var$1, $nc(args)->get(0));
 	this->this$0->firePropertyChange(var$0, var$1, $(args->get(args->size() - 1)));

@@ -172,6 +172,7 @@ void DefaultTableColumnModel::removeColumn($TableColumn* column) {
 }
 
 void DefaultTableColumnModel::moveColumn(int32_t columnIndex, int32_t newIndex) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = (columnIndex < 0) || (columnIndex >= getColumnCount()) || (newIndex < 0);
 	if (var$0 || (newIndex >= getColumnCount())) {
 		$throwNew($IllegalArgumentException, "moveColumn() - Index out of range"_s);
@@ -211,6 +212,7 @@ $Enumeration* DefaultTableColumnModel::getColumns() {
 }
 
 int32_t DefaultTableColumnModel::getColumnIndex(Object$* identifier) {
+	$useLocalCurrentObjectStackCache();
 	if (identifier == nullptr) {
 		$throwNew($IllegalArgumentException, "Identifier is null"_s);
 	}
@@ -236,6 +238,7 @@ int32_t DefaultTableColumnModel::getColumnMargin() {
 }
 
 int32_t DefaultTableColumnModel::getColumnIndexAtX(int32_t x) {
+	$useLocalCurrentObjectStackCache();
 	if (x < 0) {
 		return -1;
 	}
@@ -385,6 +388,7 @@ $ListSelectionModel* DefaultTableColumnModel::createSelectionModel() {
 }
 
 void DefaultTableColumnModel::recalcWidthCache() {
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, enumeration, getColumns());
 	this->totalColumnWidth = 0;
 	while ($nc(enumeration)->hasMoreElements()) {

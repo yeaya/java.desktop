@@ -73,6 +73,7 @@ void FixedHeightLayoutCache$SearchInfo::init$($FixedHeightLayoutCache* this$0) {
 }
 
 $TreePath* FixedHeightLayoutCache$SearchInfo::getPath() {
+	$useLocalCurrentObjectStackCache();
 	if (this->node == nullptr) {
 		return nullptr;
 	}

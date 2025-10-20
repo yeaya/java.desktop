@@ -112,6 +112,7 @@ void HeadlessJComboBox::init$() {
 }
 
 void HeadlessJComboBox::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComboBox, ch, nullptr);
 	$assign(ch, $new($JComboBox));
 	ch->getAccessibleContext();

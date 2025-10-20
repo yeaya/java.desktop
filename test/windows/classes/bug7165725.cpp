@@ -105,6 +105,7 @@ void bug7165725::init$() {
 }
 
 void bug7165725::execute($String* urlStr, $bug7165725$GoldenElement* goldenElement) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println();
 	$nc($System::out)->println($$str({"***** TEST: "_s, urlStr, " *****"_s}));
@@ -120,6 +121,7 @@ void bug7165725::execute($String* urlStr, $bug7165725$GoldenElement* goldenEleme
 
 void bug7165725::main($StringArray* args) {
 	$init(bug7165725);
+	$useLocalCurrentObjectStackCache();
 	$var($String, dirURL, getDirURL());
 	$init($System);
 	$nc($System::out)->println($$str({"dirURL = "_s, dirURL}));
@@ -134,12 +136,14 @@ void bug7165725::main($StringArray* args) {
 
 $String* bug7165725::getDirURL() {
 	$init(bug7165725);
+	$useLocalCurrentObjectStackCache();
 	$init($File);
 	return $str({"file:///"_s, $($$new($File, $($System::getProperty("test.src"_s, "."_s)))->getAbsolutePath()), $File::separator});
 }
 
 $String* bug7165725::getParsedContentOneLine($String* path) {
 	$init(bug7165725);
+	$useLocalCurrentObjectStackCache();
 	$var($File, f, $new($File, path));
 	$var($FileReader, fr, $new($FileReader, f));
 	$var($ParserDelegator, pd, $new($ParserDelegator));
@@ -156,6 +160,7 @@ $String* bug7165725::getParsedContentOneLine($URL* url) {
 
 void bug7165725::checkByCallbackForSuccessiveScript() {
 	$init(bug7165725);
+	$useLocalCurrentObjectStackCache();
 	$var($String, content, getParsedContentOneLine($$new($URL, $$str({$(getDirURL()), "successive-script-tag.html"_s}))));
 	if (!$nc(content)->matches(".*<script .*/js/js1\\.js.*<script .*/js/js2\\.js.*<script .*/js/js3\\.js.*"_s)) {
 		$throwNew($RuntimeException, "Failed to lookup script tags/attributes."_s);
@@ -167,6 +172,7 @@ void bug7165725::checkByCallbackForSuccessiveScript() {
 
 void bug7165725::checkByCallbackForFalseTextAfterScript() {
 	$init(bug7165725);
+	$useLocalCurrentObjectStackCache();
 	$var($String, content, getParsedContentOneLine($$new($URL, $$str({$(getDirURL()), "false-text-after-script.html"_s}))));
 	int32_t bodyIdx = $nc(content)->indexOf("<body "_s);
 	if (bodyIdx > 0) {
@@ -181,6 +187,7 @@ void bug7165725::checkByCallbackForFalseTextAfterScript() {
 
 $bug7165725$GoldenElement* bug7165725::createSuccessiveScriptTags() {
 	$init(bug7165725);
+	$useLocalCurrentObjectStackCache();
 	return $new($bug7165725$GoldenElement, "html"_s, $$new($bug7165725$GoldenElementArray, {
 		$$new($bug7165725$GoldenElement, "head"_s, $$new($bug7165725$GoldenElementArray, {$$new($bug7165725$GoldenElement, "p-implied"_s, $$new($bug7165725$GoldenElementArray, {
 			$$new($bug7165725$GoldenElement, "title"_s, $$new($bug7165725$GoldenElementArray, 0)),
@@ -202,6 +209,7 @@ $bug7165725$GoldenElement* bug7165725::createSuccessiveScriptTags() {
 
 $bug7165725$GoldenElement* bug7165725::createFalseTextAfterScript() {
 	$init(bug7165725);
+	$useLocalCurrentObjectStackCache();
 	return $new($bug7165725$GoldenElement, "html"_s, $$new($bug7165725$GoldenElementArray, {
 		$$new($bug7165725$GoldenElement, "head"_s, $$new($bug7165725$GoldenElementArray, {$$new($bug7165725$GoldenElement, "p-implied"_s, $$new($bug7165725$GoldenElementArray, {
 			$$new($bug7165725$GoldenElement, "title"_s, $$new($bug7165725$GoldenElementArray, 0)),

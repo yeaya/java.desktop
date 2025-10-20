@@ -268,6 +268,7 @@ void JSeparator::checkOrientation(int32_t orientation) {
 }
 
 $String* JSeparator::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, orientationString, this->orientation == $SwingConstants::HORIZONTAL ? "HORIZONTAL"_s : "VERTICAL"_s);
 	return $str({$($JComponent::paramString()), ",orientation="_s, orientationString});
 }

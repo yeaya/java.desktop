@@ -74,6 +74,7 @@ void BasicFileChooserUI$GoHomeAction::init$($BasicFileChooserUI* this$0) {
 }
 
 void BasicFileChooserUI$GoHomeAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JFileChooser, fc, this->this$0->getFileChooser());
 	this->this$0->changeDirectory($($nc($($nc(fc)->getFileSystemView()))->getHomeDirectory()));
 }

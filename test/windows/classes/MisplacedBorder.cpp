@@ -167,6 +167,7 @@ void MisplacedBorder::init$() {
 
 void MisplacedBorder::main($StringArray* args) {
 	$init(MisplacedBorder);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -184,6 +185,7 @@ void MisplacedBorder::main($StringArray* args) {
 }
 
 void MisplacedBorder::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuBar, menubar, $new($JMenuBar));
 	menubar->add($$new($JMenu, ""_s));
 	menubar->add($$new($JMenu, ""_s));
@@ -214,6 +216,7 @@ void MisplacedBorder::run() {
 }
 
 $BufferedImage* MisplacedBorder::step1($JMenuBar* menubar) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, bi1, $new($BufferedImage, MisplacedBorder::W, MisplacedBorder::H, 3));
 	$var($Graphics2D, g2d, bi1->createGraphics());
 	$nc(g2d)->scale((double)2, (double)2);
@@ -226,6 +229,7 @@ $BufferedImage* MisplacedBorder::step1($JMenuBar* menubar) {
 }
 
 $BufferedImage* MisplacedBorder::step2($JMenuBar* menubar) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, bi2, $new($BufferedImage, MisplacedBorder::W, MisplacedBorder::H, 3));
 	$var($Graphics2D, g2d2, bi2->createGraphics());
 	$nc(g2d2)->scale((double)2, (double)2);
@@ -245,6 +249,7 @@ $BufferedImage* MisplacedBorder::step2($JMenuBar* menubar) {
 
 void MisplacedBorder::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(MisplacedBorder);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 		$init($System);

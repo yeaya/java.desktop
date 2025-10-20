@@ -129,6 +129,7 @@ $Object* allocate$ServiceRegistry($Class* clazz) {
 }
 
 void ServiceRegistry::init$($Iterator* categories) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, categoryMap, $new($HashMap));
 	if (categories == nullptr) {
 		$throwNew($IllegalArgumentException, "categories == null!"_s);
@@ -167,6 +168,7 @@ $Iterator* ServiceRegistry::getCategories() {
 }
 
 $Iterator* ServiceRegistry::getSubRegistries(Object$* provider) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, l, $new($ArrayList));
 	{
 		$var($Iterator, i$, $nc($($nc(this->categoryMap)->keySet()))->iterator());
@@ -197,6 +199,7 @@ bool ServiceRegistry::registerServiceProvider(Object$* provider, $Class* categor
 }
 
 void ServiceRegistry::registerServiceProvider(Object$* provider) {
+	$useLocalCurrentObjectStackCache();
 	if (provider == nullptr) {
 		$throwNew($IllegalArgumentException, "provider == null!"_s);
 	}
@@ -208,6 +211,7 @@ void ServiceRegistry::registerServiceProvider(Object$* provider) {
 }
 
 void ServiceRegistry::registerServiceProviders($Iterator* providers) {
+	$useLocalCurrentObjectStackCache();
 	if (providers == nullptr) {
 		$throwNew($IllegalArgumentException, "provider == null!"_s);
 	}
@@ -231,6 +235,7 @@ bool ServiceRegistry::deregisterServiceProvider(Object$* provider, $Class* categ
 }
 
 void ServiceRegistry::deregisterServiceProvider(Object$* provider) {
+	$useLocalCurrentObjectStackCache();
 	if (provider == nullptr) {
 		$throwNew($IllegalArgumentException, "provider == null!"_s);
 	}
@@ -242,6 +247,7 @@ void ServiceRegistry::deregisterServiceProvider(Object$* provider) {
 }
 
 bool ServiceRegistry::contains(Object$* provider) {
+	$useLocalCurrentObjectStackCache();
 	if (provider == nullptr) {
 		$throwNew($IllegalArgumentException, "provider == null!"_s);
 	}
@@ -256,6 +262,7 @@ bool ServiceRegistry::contains(Object$* provider) {
 }
 
 $Iterator* ServiceRegistry::getServiceProviders($Class* category, bool useOrdering) {
+	$useLocalCurrentObjectStackCache();
 	$var($SubRegistry, reg, $cast($SubRegistry, $nc(this->categoryMap)->get(category)));
 	if (reg == nullptr) {
 		$throwNew($IllegalArgumentException, "category unknown!"_s);
@@ -265,6 +272,7 @@ $Iterator* ServiceRegistry::getServiceProviders($Class* category, bool useOrderi
 }
 
 $Iterator* ServiceRegistry::getServiceProviders($Class* category, $ServiceRegistry$Filter* filter, bool useOrdering) {
+	$useLocalCurrentObjectStackCache();
 	$var($SubRegistry, reg, $cast($SubRegistry, $nc(this->categoryMap)->get(category)));
 	if (reg == nullptr) {
 		$throwNew($IllegalArgumentException, "category unknown!"_s);
@@ -274,6 +282,7 @@ $Iterator* ServiceRegistry::getServiceProviders($Class* category, $ServiceRegist
 }
 
 $Object* ServiceRegistry::getServiceProviderByClass($Class* providerClass) {
+	$useLocalCurrentObjectStackCache();
 	if (providerClass == nullptr) {
 		$throwNew($IllegalArgumentException, "providerClass == null!"_s);
 	}
@@ -340,6 +349,7 @@ void ServiceRegistry::deregisterAll($Class* category) {
 }
 
 void ServiceRegistry::deregisterAll() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc($($nc(this->categoryMap)->values()))->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -357,6 +367,7 @@ void ServiceRegistry::finalize() {
 }
 
 void ServiceRegistry::checkClassAllowed($Class* clazz) {
+	$useLocalCurrentObjectStackCache();
 	if (clazz == nullptr) {
 		$throwNew($IllegalArgumentException, "class must not be null"_s);
 	}

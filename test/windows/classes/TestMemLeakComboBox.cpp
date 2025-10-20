@@ -234,6 +234,7 @@ void TestMemLeakComboBox::init$() {
 
 void TestMemLeakComboBox::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(TestMemLeakComboBox);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 	} catch ($UnsupportedLookAndFeelException&) {
@@ -254,6 +255,7 @@ void TestMemLeakComboBox::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 
 void TestMemLeakComboBox::main($StringArray* args) {
 	$init(TestMemLeakComboBox);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -275,6 +277,7 @@ void TestMemLeakComboBox::main($StringArray* args) {
 
 void TestMemLeakComboBox::test() {
 	$init(TestMemLeakComboBox);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -299,6 +302,7 @@ void TestMemLeakComboBox::lambda$test$2() {
 
 void TestMemLeakComboBox::lambda$test$1() {
 	$init(TestMemLeakComboBox);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(TestMemLeakComboBox::frame, $new($JFrame));
 	$var($JPanel, panel, $new($TestMemLeakComboBox$MyPanel));
 	panel->setPreferredSize($$new($Dimension, 100, 100));

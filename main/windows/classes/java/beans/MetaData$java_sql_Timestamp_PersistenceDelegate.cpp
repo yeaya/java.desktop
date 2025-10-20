@@ -96,6 +96,7 @@ void MetaData$java_sql_Timestamp_PersistenceDelegate::init$() {
 
 $Method* MetaData$java_sql_Timestamp_PersistenceDelegate::getNanosMethod() {
 	$init(MetaData$java_sql_Timestamp_PersistenceDelegate);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$Class* c = $Class::forName("java.sql.Timestamp"_s, true, $($ClassLoader::getPlatformClassLoader()));
@@ -112,6 +113,7 @@ $Method* MetaData$java_sql_Timestamp_PersistenceDelegate::getNanosMethod() {
 
 int32_t MetaData$java_sql_Timestamp_PersistenceDelegate::getNanos(Object$* obj) {
 	$init(MetaData$java_sql_Timestamp_PersistenceDelegate);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (MetaData$java_sql_Timestamp_PersistenceDelegate::getNanosMethod$ == nullptr) {
 		$throwNew($AssertionError, $of("Should not get here"_s));
@@ -136,6 +138,7 @@ int32_t MetaData$java_sql_Timestamp_PersistenceDelegate::getNanos(Object$* obj) 
 }
 
 void MetaData$java_sql_Timestamp_PersistenceDelegate::initialize($Class* type, Object$* oldInstance, Object$* newInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	int32_t nanos = getNanos(oldInstance);
 	if (nanos != getNanos(newInstance)) {
 		$nc(out)->writeStatement($$new($Statement, oldInstance, "setNanos"_s, $$new($ObjectArray, {$($of($Integer::valueOf(nanos)))})));

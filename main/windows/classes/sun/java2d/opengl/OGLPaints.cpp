@@ -92,11 +92,13 @@ void OGLPaints::init$() {
 
 bool OGLPaints::isValid($SunGraphics2D* sg2d) {
 	$init(OGLPaints);
+	$useLocalCurrentObjectStackCache();
 	$var(OGLPaints, impl, $cast(OGLPaints, $nc(OGLPaints::impls)->get($($Integer::valueOf($nc(sg2d)->paintState)))));
 	return (impl != nullptr && impl->isPaintValid(sg2d));
 }
 
 void clinit$OGLPaints($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(OGLPaints::impls, $new($HashMap, 4, 1.0f));
 	{
 		$var($Object, var$0, $of($Integer::valueOf($SunGraphics2D::PAINT_GRADIENT)));

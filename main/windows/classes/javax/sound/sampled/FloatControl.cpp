@@ -86,6 +86,7 @@ $Object* allocate$FloatControl($Class* clazz) {
 }
 
 void FloatControl::init$($FloatControl$Type* type, float minimum, float maximum, float precision, int32_t updatePeriod, float initialValue, $String* units, $String* minLabel, $String* midLabel, $String* maxLabel) {
+	$useLocalCurrentObjectStackCache();
 	$Control::init$(type);
 	if (minimum > maximum) {
 		$throwNew($IllegalArgumentException, $$str({"Minimum value "_s, $$str(minimum), " exceeds maximum value "_s, $$str(maximum), "."_s}));
@@ -112,6 +113,7 @@ void FloatControl::init$($FloatControl$Type* type, float minimum, float maximum,
 }
 
 void FloatControl::setValue(float newValue) {
+	$useLocalCurrentObjectStackCache();
 	if (newValue > this->maximum) {
 		$throwNew($IllegalArgumentException, $$str({"Requested value "_s, $$str(newValue), " exceeds allowable maximum value "_s, $$str(this->maximum), "."_s}));
 	}
@@ -158,6 +160,7 @@ int32_t FloatControl::getUpdatePeriod() {
 }
 
 void FloatControl::shift(float from, float to, int32_t microseconds) {
+	$useLocalCurrentObjectStackCache();
 	if (from < this->minimum) {
 		$throwNew($IllegalArgumentException, $$str({"Requested value "_s, $$str(from), " smaller than allowable minimum value "_s, $$str(this->minimum), "."_s}));
 	}
@@ -168,6 +171,7 @@ void FloatControl::shift(float from, float to, int32_t microseconds) {
 }
 
 $String* FloatControl::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $String::format("%s with current value: %s %s (range: %s - %s)"_s, $$new($ObjectArray, {
 		$($of($Control::toString())),
 		$($of($Float::valueOf(getValue()))),

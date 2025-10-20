@@ -69,6 +69,7 @@ void bug8057791$2::init$() {
 }
 
 void bug8057791$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug8057791);
 	$var($Rectangle, cellBounds, $nc($bug8057791::list)->getCellBounds(0, 0));
 	$nc(cellBounds)->x += $nc($($nc($bug8057791::list)->getLocationOnScreen()))->x;

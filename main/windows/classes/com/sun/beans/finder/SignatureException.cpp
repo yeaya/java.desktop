@@ -52,6 +52,7 @@ void SignatureException::init$($Throwable* cause) {
 }
 
 $NoSuchMethodException* SignatureException::toNoSuchMethodException($String* message) {
+	$useLocalCurrentObjectStackCache();
 	$var($Throwable, throwable, getCause());
 	if ($instanceOf($NoSuchMethodException, throwable)) {
 		return $cast($NoSuchMethodException, throwable);

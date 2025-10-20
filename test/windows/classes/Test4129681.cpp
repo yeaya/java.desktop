@@ -102,6 +102,7 @@ void Test4129681::init$() {
 }
 
 void Test4129681::init() {
+	$useLocalCurrentObjectStackCache();
 	$var($JCheckBox, check, $new($JCheckBox, "disable"_s));
 	check->addItemListener(this);
 	$set(this, label, $new($JLabel, "message"_s));

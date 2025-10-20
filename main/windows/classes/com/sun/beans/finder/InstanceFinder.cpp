@@ -78,6 +78,7 @@ void InstanceFinder::setPackages($StringArray* packages) {
 }
 
 $Object* InstanceFinder::find($Class* type) {
+	$useLocalCurrentObjectStackCache();
 	if (type == nullptr) {
 		return $of(nullptr);
 	}
@@ -114,6 +115,7 @@ $Object* InstanceFinder::find($Class* type) {
 }
 
 $Object* InstanceFinder::instantiate($Class* type, $String* name) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (type != nullptr) {
 		try {
@@ -132,6 +134,7 @@ $Object* InstanceFinder::instantiate($Class* type, $String* name) {
 }
 
 $Object* InstanceFinder::instantiate($Class* type, $String* prefix, $String* name) {
+	$useLocalCurrentObjectStackCache();
 	return $of(instantiate(type, $$str({prefix, $$str(u'.'), name})));
 }
 

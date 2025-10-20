@@ -77,6 +77,7 @@ void bug6209975$2::init$($PointArray* val$result) {
 }
 
 void bug6209975$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6209975);
 	$var($Point, p, $nc($bug6209975::button)->getLocationOnScreen());
 	$var($Dimension, size, $nc($bug6209975::button)->getSize());

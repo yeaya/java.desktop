@@ -122,6 +122,7 @@ $Dimension* BasicTabbedPaneUI$TabbedPaneLayout::minimumLayoutSize($Container* pa
 }
 
 $Dimension* BasicTabbedPaneUI$TabbedPaneLayout::calculateSize(bool minimum) {
+	$useLocalCurrentObjectStackCache();
 	int32_t tabPlacement = $nc(this->this$0->tabPane)->getTabPlacement();
 	$var($Insets, insets, $nc(this->this$0->tabPane)->getInsets());
 	$var($Insets, contentInsets, this->this$0->getContentBorderInsets(tabPlacement));
@@ -212,6 +213,7 @@ int32_t BasicTabbedPaneUI$TabbedPaneLayout::preferredTabAreaWidth(int32_t tabPla
 }
 
 void BasicTabbedPaneUI$TabbedPaneLayout::layoutContainer($Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	this->this$0->setRolloverTab(-1);
 	int32_t tabPlacement = $nc(this->this$0->tabPane)->getTabPlacement();
 	$var($Insets, insets, $nc(this->this$0->tabPane)->getInsets());
@@ -312,6 +314,7 @@ void BasicTabbedPaneUI$TabbedPaneLayout::calculateLayoutInfo() {
 }
 
 void BasicTabbedPaneUI$TabbedPaneLayout::layoutTabComponents() {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->tabContainer == nullptr) {
 		return;
 	}
@@ -343,6 +346,7 @@ void BasicTabbedPaneUI$TabbedPaneLayout::layoutTabComponents() {
 }
 
 void BasicTabbedPaneUI$TabbedPaneLayout::calculateTabRects(int32_t tabPlacement, int32_t tabCount) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, metrics, this->this$0->getFontMetrics());
 	$var($Dimension, size, $nc(this->this$0->tabPane)->getSize());
 	$var($Insets, insets, $nc(this->this$0->tabPane)->getInsets());
@@ -553,6 +557,7 @@ void BasicTabbedPaneUI$TabbedPaneLayout::normalizeTabRuns(int32_t tabPlacement, 
 }
 
 void BasicTabbedPaneUI$TabbedPaneLayout::padTabRun(int32_t tabPlacement, int32_t start, int32_t end, int32_t max) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, lastRect, $nc(this->this$0->rects)->get(end));
 	if (tabPlacement == 1 || tabPlacement == 3) {
 		int32_t runWidth = ($nc(lastRect)->x + lastRect->width) - $nc($nc(this->this$0->rects)->get(start))->x;
@@ -582,6 +587,7 @@ void BasicTabbedPaneUI$TabbedPaneLayout::padTabRun(int32_t tabPlacement, int32_t
 }
 
 void BasicTabbedPaneUI$TabbedPaneLayout::padSelectedTab(int32_t tabPlacement, int32_t selectedIndex) {
+	$useLocalCurrentObjectStackCache();
 	if (selectedIndex >= 0) {
 		$var($Rectangle, selRect, $nc(this->this$0->rects)->get(selectedIndex));
 		$var($Insets, padInsets, this->this$0->getSelectedTabPadInsets(tabPlacement));

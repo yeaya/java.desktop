@@ -95,6 +95,7 @@ void CSS$FontSize::init$($CSS* this$0) {
 }
 
 int32_t CSS$FontSize::getValue($AttributeSet* a, $StyleSheet* ss$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($StyleSheet, ss, ss$renamed);
 	$assign(ss, this->this$0->getStyleSheet(ss));
 	if (this->index) {
@@ -124,6 +125,7 @@ int32_t CSS$FontSize::getValue($AttributeSet* a, $StyleSheet* ss$renamed) {
 }
 
 $Object* CSS$FontSize::parseCssValue($String* value) {
+	$useLocalCurrentObjectStackCache();
 	$var(CSS$FontSize, fs, $new(CSS$FontSize, this->this$0));
 	$set(fs, svalue, value);
 	try {
@@ -159,6 +161,7 @@ $Object* CSS$FontSize::parseCssValue($String* value) {
 }
 
 $Object* CSS$FontSize::parseHtmlValue($String* value) {
+	$useLocalCurrentObjectStackCache();
 	if ((value == nullptr) || ($nc(value)->length() == 0)) {
 		return $of(nullptr);
 	}
@@ -191,6 +194,7 @@ $Object* CSS$FontSize::parseHtmlValue($String* value) {
 }
 
 $Object* CSS$FontSize::fromStyleConstants($StyleConstants* key, Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Number, value)) {
 		$var(CSS$FontSize, fs, $new(CSS$FontSize, this->this$0));
 		$init($StyleSheet);

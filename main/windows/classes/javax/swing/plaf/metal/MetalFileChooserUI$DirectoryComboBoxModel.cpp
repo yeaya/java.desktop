@@ -135,6 +135,7 @@ void MetalFileChooserUI$DirectoryComboBoxModel::finalize() {
 }
 
 void MetalFileChooserUI$DirectoryComboBoxModel::init$($MetalFileChooserUI* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$AbstractListModel::init$();
 	$set(this, directories, $new($Vector));
@@ -149,6 +150,7 @@ void MetalFileChooserUI$DirectoryComboBoxModel::init$($MetalFileChooserUI* this$
 }
 
 void MetalFileChooserUI$DirectoryComboBoxModel::addItem($File* directory) {
+	$useLocalCurrentObjectStackCache();
 	if (directory == nullptr) {
 		return;
 	}
@@ -190,6 +192,7 @@ void MetalFileChooserUI$DirectoryComboBoxModel::addItem($File* directory) {
 }
 
 void MetalFileChooserUI$DirectoryComboBoxModel::calculateDepths() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, depths, $new($ints, $nc(this->directories)->size()));
 	for (int32_t i = 0; i < $nc(this->depths)->length; ++i) {
 		$var($File, dir, $cast($File, $nc(this->directories)->get(i)));

@@ -101,6 +101,7 @@ void DefaultSynthStyleFactory::init$() {
 
 void DefaultSynthStyleFactory::addStyle($DefaultSynthStyle* style, $String* path$renamed, int32_t type) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($String, path, path$renamed);
 		if (path == nullptr) {
 			$assign(path, ".*"_s);
@@ -115,6 +116,7 @@ void DefaultSynthStyleFactory::addStyle($DefaultSynthStyle* style, $String* path
 
 $SynthStyle* DefaultSynthStyleFactory::getStyle($JComponent* c, $Region* id) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($BakedArrayList, matches, this->_tmpList);
 		$nc(matches)->clear();
 		getMatchingStyles(matches, c, id);
@@ -143,6 +145,7 @@ $SynthStyle* DefaultSynthStyleFactory::getDefaultStyle() {
 }
 
 void DefaultSynthStyleFactory::getMatchingStyles($List* matches, $JComponent* c, $Region* id) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, idName, $nc(id)->getLowerCaseName());
 	$var($String, cName, $nc(c)->getName());
 	if (cName == nullptr) {
@@ -176,6 +179,7 @@ $SynthStyle* DefaultSynthStyleFactory::getCachedStyle($List* styles) {
 }
 
 $SynthStyle* DefaultSynthStyleFactory::mergeStyles($List* styles) {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc(styles)->size();
 	if (size == 0) {
 		return nullptr;

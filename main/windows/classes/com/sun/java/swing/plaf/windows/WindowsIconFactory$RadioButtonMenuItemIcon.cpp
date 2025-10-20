@@ -96,6 +96,7 @@ void WindowsIconFactory$RadioButtonMenuItemIcon::init$() {
 }
 
 void WindowsIconFactory$RadioButtonMenuItemIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractButton, b, $cast($AbstractButton, c));
 	$var($ButtonModel, model, $nc(b)->getModel());
 	if (b->isSelected() == true) {

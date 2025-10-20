@@ -79,6 +79,7 @@ void JComboBox$AccessibleJComboBox$AccessibleJComboBoxListSelectionListener::ini
 }
 
 void JComboBox$AccessibleJComboBox$AccessibleJComboBoxListSelectionListener::valueChanged($ListSelectionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$1->popupList == nullptr) {
 		return;
 	}

@@ -86,6 +86,7 @@ void bug8028616::init$() {
 
 void bug8028616::main($StringArray* args) {
 	$init(bug8028616);
+	$useLocalCurrentObjectStackCache();
 	$var($bug8028616$ParserCB, cb, $new($bug8028616$ParserCB));
 	$var($HTMLEditorKit, htmlKit, $new($HTMLEditorKit));
 	$var($HTMLDocument, htmlDoc, $cast($HTMLDocument, htmlKit->createDefaultDocument()));

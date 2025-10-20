@@ -92,11 +92,13 @@ void D3DPaints::init$() {
 
 bool D3DPaints::isValid($SunGraphics2D* sg2d) {
 	$init(D3DPaints);
+	$useLocalCurrentObjectStackCache();
 	$var(D3DPaints, impl, $cast(D3DPaints, $nc(D3DPaints::impls)->get($($Integer::valueOf($nc(sg2d)->paintState)))));
 	return (impl != nullptr && impl->isPaintValid(sg2d));
 }
 
 void clinit$D3DPaints($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(D3DPaints::impls, $new($HashMap, 4, 1.0f));
 	{
 		$var($Object, var$0, $of($Integer::valueOf($SunGraphics2D::PAINT_GRADIENT)));

@@ -68,6 +68,7 @@ void MetaData$java_util_Collections$SingletonMap_PersistenceDelegate::init$() {
 }
 
 $Expression* MetaData$java_util_Collections$SingletonMap_PersistenceDelegate::instantiate(Object$* oldInstance, $Encoder* out) {
+	$useLocalCurrentObjectStackCache();
 	$var($Map, map, $cast($Map, oldInstance));
 	$var($Object, key, $nc($($nc($($nc(map)->keySet()))->iterator()))->next());
 	$load($Collections);

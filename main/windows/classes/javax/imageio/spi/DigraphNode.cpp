@@ -131,6 +131,7 @@ bool DigraphNode::removeEdge(DigraphNode* node) {
 }
 
 void DigraphNode::dispose() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, inNodesArray, $nc(this->inNodes)->toArray());
 	for (int32_t i = 0; i < $nc(inNodesArray)->length; ++i) {
 		$var(DigraphNode, node, $cast(DigraphNode, inNodesArray->get(i)));

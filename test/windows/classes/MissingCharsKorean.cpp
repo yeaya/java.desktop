@@ -323,6 +323,7 @@ void MissingCharsKorean::init$() {
 
 void MissingCharsKorean::main($StringArray* args) {
 	$init(MissingCharsKorean);
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(MissingCharsKorean$$Lambda$lambda$main$0)));
 	$nc(MissingCharsKorean::testStartLatch)->await();
 	if (MissingCharsKorean::startTest) {
@@ -341,6 +342,7 @@ void MissingCharsKorean::main($StringArray* args) {
 
 void MissingCharsKorean::setupUI() {
 	$init(MissingCharsKorean);
+	$useLocalCurrentObjectStackCache();
 	$var($String, description, " 1. Go to \"System Preferences -> Keyboard -> Input Sources\" and add \"2-Set Korean\" from Korean language group \n 2. Set current IM to \"2-Set Korean\" \n 3. Try typing in the text field to ensure that Korean keyboard has been successfully selected \n 4. Now click on \"Start Test\" button \n"_s);
 	$var($String, title, "Missing Characters Korean Test (Mac OS)"_s);
 	$assignStatic(MissingCharsKorean::frame, $new($JFrame, title));
@@ -378,6 +380,7 @@ void MissingCharsKorean::setupUI() {
 
 void MissingCharsKorean::glyphTest() {
 	$init(MissingCharsKorean);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($Robot, robotKeySimulator, $new($Robot));
 		performTasks(robotKeySimulator);
@@ -391,6 +394,7 @@ void MissingCharsKorean::glyphTest() {
 
 void MissingCharsKorean::performTasks($Robot* robotForKeyInput) {
 	$init(MissingCharsKorean);
+	$useLocalCurrentObjectStackCache();
 	int32_t taskCount = 0;
 	$nc(MissingCharsKorean::lblTestStatus)->setText("Running Tests.."_s);
 	$nc(robotForKeyInput)->setAutoDelay(500);
@@ -418,6 +422,7 @@ void MissingCharsKorean::performTasks($Robot* robotForKeyInput) {
 
 bool MissingCharsKorean::setKeyInput(int32_t iCount) {
 	$init(MissingCharsKorean);
+	$useLocalCurrentObjectStackCache();
 	bool inputSet = true;
 	switch (iCount) {
 	case 0:
@@ -517,6 +522,7 @@ bool MissingCharsKorean::setKeyInput(int32_t iCount) {
 
 void MissingCharsKorean::enterInput($Robot* robotKeyInput, $intArray2* keyInputs) {
 	$init(MissingCharsKorean);
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(keyInputs)->length; ++i) {
 		$var($String, strKeyInput, "KeyPress=>"_s);
 		int32_t noOfKeyInputs = $nc(keyInputs->get(i))->length;
@@ -536,6 +542,7 @@ void MissingCharsKorean::enterInput($Robot* robotKeyInput, $intArray2* keyInputs
 
 void MissingCharsKorean::validateInput() {
 	$init(MissingCharsKorean);
+	$useLocalCurrentObjectStackCache();
 	MissingCharsKorean::testPassed = false;
 	if (MissingCharsKorean::expectedResults != nullptr) {
 		$var($String, strCurr, $nc(MissingCharsKorean::textFieldMain)->getText());
@@ -556,6 +563,7 @@ void MissingCharsKorean::validateInput() {
 
 void MissingCharsKorean::setTaskStatus(bool allTasksPerformed, int32_t taskCount) {
 	$init(MissingCharsKorean);
+	$useLocalCurrentObjectStackCache();
 	if (MissingCharsKorean::testPassed) {
 		if (allTasksPerformed) {
 			$assignStatic(MissingCharsKorean::testResult, "All Tests Passed"_s);

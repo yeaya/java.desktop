@@ -80,6 +80,7 @@ void TestCustomStyleFactory::init$() {
 
 void TestCustomStyleFactory::main($StringArray* args) {
 	$init(TestCustomStyleFactory);
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($System::getProperty("os.name"_s)))->startsWith("Linux"_s)) {
 		$init($System);
 		$nc($System::out)->println("This test is meant for Linux platform only"_s);

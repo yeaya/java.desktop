@@ -74,6 +74,7 @@ $Object* allocate$CMap$UVS($Class* clazz) {
 }
 
 void CMap$UVS::init$($ByteBuffer* buffer, int32_t offset) {
+	$useLocalCurrentObjectStackCache();
 	$nc(buffer)->position(offset + 6);
 	this->numSelectors = (int32_t)(buffer->getInt() & (uint32_t)0x7FFFFFFF);
 	if (buffer->remaining() < (11 * (int64_t)this->numSelectors)) {

@@ -181,6 +181,7 @@ void HTMLEditorKit$LinkController::init$() {
 }
 
 void HTMLEditorKit$LinkController::mouseClicked($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, editor, $cast($JEditorPane, $nc(e)->getSource()));
 	bool var$1 = !$nc(editor)->isEditable();
 	bool var$0 = var$1 && editor->isEnabled();
@@ -198,6 +199,7 @@ void HTMLEditorKit$LinkController::mouseDragged($MouseEvent* e) {
 }
 
 void HTMLEditorKit$LinkController::mouseMoved($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JEditorPane, editor, $cast($JEditorPane, $nc(e)->getSource()));
 	if (!$nc(editor)->isEnabled()) {
 		return;
@@ -270,6 +272,7 @@ void HTMLEditorKit$LinkController::mouseMoved($MouseEvent* e) {
 }
 
 $String* HTMLEditorKit$LinkController::getMapHREF($JEditorPane* html, $HTMLDocument* hdoc, $Element* elem, $AttributeSet* attr, int32_t offset, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Attribute);
 	$var($Object, useMap, $nc(attr)->getAttribute($HTML$Attribute::USEMAP));
 	if (useMap != nullptr && ($instanceOf($String, useMap))) {
@@ -299,6 +302,7 @@ $String* HTMLEditorKit$LinkController::getMapHREF($JEditorPane* html, $HTMLDocum
 }
 
 bool HTMLEditorKit$LinkController::doesElementContainLocation($JEditorPane* editor, $Element* e, int32_t offset, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	if (e != nullptr && offset > 0 && e->getStartOffset() == offset) {
 		try {
 			$var($TextUI, ui, $cast($TextUI, $nc(editor)->getUI()));
@@ -326,6 +330,7 @@ void HTMLEditorKit$LinkController::activateLink(int32_t pos, $JEditorPane* edito
 }
 
 void HTMLEditorKit$LinkController::activateLink(int32_t pos, $JEditorPane* html, $MouseEvent* mouseEvent) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(html)->getDocument());
 	if ($instanceOf($HTMLDocument, doc)) {
 		$var($HTMLDocument, hdoc, $cast($HTMLDocument, doc));
@@ -357,6 +362,7 @@ void HTMLEditorKit$LinkController::activateLink(int32_t pos, $JEditorPane* html,
 }
 
 $HyperlinkEvent* HTMLEditorKit$LinkController::createHyperlinkEvent($JEditorPane* html, $HTMLDocument* hdoc, $String* href, $AttributeSet* anchor, $Element* element, $MouseEvent* mouseEvent) {
+	$useLocalCurrentObjectStackCache();
 	$var($URL, u, nullptr);
 	try {
 		$var($URL, base, $nc(hdoc)->getBase());
@@ -393,6 +399,7 @@ $HyperlinkEvent* HTMLEditorKit$LinkController::createHyperlinkEvent($JEditorPane
 }
 
 void HTMLEditorKit$LinkController::fireEvents($JEditorPane* editor, $HTMLDocument* doc, $String* href, $Element* lastElem, $MouseEvent* mouseEvent) {
+	$useLocalCurrentObjectStackCache();
 	if (this->href != nullptr) {
 		$var($URL, u, nullptr);
 		try {

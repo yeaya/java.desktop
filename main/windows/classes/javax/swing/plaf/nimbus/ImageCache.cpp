@@ -129,6 +129,7 @@ void ImageCache::init$(int32_t maxPixelCount, int32_t maxSingleImagePixelSize) {
 }
 
 void ImageCache::flush() {
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc(this->lock)->readLock()))->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -150,6 +151,7 @@ bool ImageCache::isImageCachable(int32_t w, int32_t h) {
 }
 
 $Image* ImageCache::getImage($GraphicsConfiguration* config, int32_t w, int32_t h, $ObjectArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc(this->lock)->readLock()))->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -182,6 +184,7 @@ $Image* ImageCache::getImage($GraphicsConfiguration* config, int32_t w, int32_t 
 }
 
 bool ImageCache::setImage($Image* image, $GraphicsConfiguration* config, int32_t w, int32_t h, $ObjectArray* args) {
+	$useLocalCurrentObjectStackCache();
 	if (!isImageCachable(w, h)) {
 		return false;
 	}

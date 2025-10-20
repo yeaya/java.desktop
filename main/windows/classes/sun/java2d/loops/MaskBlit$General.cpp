@@ -146,6 +146,7 @@ void MaskBlit$General::setPrimitives($Blit* srcconverter, $Blit* dstconverter, $
 
 void MaskBlit$General::MaskBlit$($SurfaceData* srcData, $SurfaceData* dstData, $Composite* comp, $Region* clip, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t width, int32_t height, $bytes* mask, int32_t offset, int32_t scan) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($SurfaceData, src, nullptr);
 		$var($SurfaceData, dst, nullptr);
 		$var($Region, opclip, nullptr);

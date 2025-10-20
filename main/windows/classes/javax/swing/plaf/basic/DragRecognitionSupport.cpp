@@ -93,6 +93,7 @@ void DragRecognitionSupport::init$() {
 }
 
 DragRecognitionSupport* DragRecognitionSupport::getDragRecognitionSupport() {
+	$useLocalCurrentObjectStackCache();
 	$load(DragRecognitionSupport);
 	$var(DragRecognitionSupport, support, $cast(DragRecognitionSupport, $nc($($AppContext::getAppContext()))->get(DragRecognitionSupport::class$)));
 	if (support == nullptr) {

@@ -93,6 +93,7 @@ void SpinnerNumberModel::init$($Number* value, $Comparable* minimum, $Comparable
 }
 
 void SpinnerNumberModel::init$(int32_t value, int32_t minimum, int32_t maximum, int32_t stepSize) {
+	$useLocalCurrentObjectStackCache();
 	$var($Number, var$0, static_cast<$Number*>($Integer::valueOf(value)));
 	$var($Comparable, var$1, static_cast<$Comparable*>($Integer::valueOf(minimum)));
 	$var($Comparable, var$2, static_cast<$Comparable*>($Integer::valueOf(maximum)));
@@ -100,6 +101,7 @@ void SpinnerNumberModel::init$(int32_t value, int32_t minimum, int32_t maximum, 
 }
 
 void SpinnerNumberModel::init$(double value, double minimum, double maximum, double stepSize) {
+	$useLocalCurrentObjectStackCache();
 	$var($Number, var$0, static_cast<$Number*>($Double::valueOf(value)));
 	$var($Comparable, var$1, static_cast<$Comparable*>($Double::valueOf(minimum)));
 	$var($Comparable, var$2, static_cast<$Comparable*>($Double::valueOf(maximum)));
@@ -107,6 +109,7 @@ void SpinnerNumberModel::init$(double value, double minimum, double maximum, dou
 }
 
 void SpinnerNumberModel::init$() {
+	$useLocalCurrentObjectStackCache();
 	$var($Number, var$0, static_cast<$Number*>($Integer::valueOf(0)));
 	SpinnerNumberModel::init$(var$0, ($Comparable*)nullptr, ($Comparable*)nullptr, $(static_cast<$Number*>($Integer::valueOf(1))));
 }

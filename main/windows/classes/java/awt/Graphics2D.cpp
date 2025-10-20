@@ -116,6 +116,7 @@ void Graphics2D::init$() {
 }
 
 void Graphics2D::draw3DRect(int32_t x, int32_t y, int32_t width, int32_t height, bool raised) {
+	$useLocalCurrentObjectStackCache();
 	$var($Paint, p, getPaint());
 	$var($Color, c, getColor());
 	$var($Color, brighter, $nc(c)->brighter());
@@ -130,6 +131,7 @@ void Graphics2D::draw3DRect(int32_t x, int32_t y, int32_t width, int32_t height,
 }
 
 void Graphics2D::fill3DRect(int32_t x, int32_t y, int32_t width, int32_t height, bool raised) {
+	$useLocalCurrentObjectStackCache();
 	$var($Paint, p, getPaint());
 	$var($Color, c, getColor());
 	$var($Color, brighter, $nc(c)->brighter());

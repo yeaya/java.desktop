@@ -250,6 +250,7 @@ void bug6219960::init$() {
 
 void bug6219960::main($StringArray* args) {
 	$init(bug6219960);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug6219960$$Lambda$createAndShowGUI)));
 	robot->waitForIdle();
@@ -261,6 +262,7 @@ void bug6219960::main($StringArray* args) {
 
 void bug6219960::createAndShowGUI() {
 	$init(bug6219960);
+	$useLocalCurrentObjectStackCache();
 	$nc($($ToolTipManager::sharedInstance()))->setDismissDelay(10 * 60 * 1000);
 	$assignStatic(bug6219960::frame, $new($JFrame));
 	$nc(bug6219960::frame)->setLocation(20, 20);
@@ -306,6 +308,7 @@ void bug6219960::createAndShowGUI() {
 
 void bug6219960::showModal($String* msg) {
 	$init(bug6219960);
+	$useLocalCurrentObjectStackCache();
 	$$new($Thread, static_cast<$Runnable*>($$new(bug6219960$$Lambda$lambda$showModal$0$1)))->start();
 	$Thread::sleep(900);
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug6219960$$Lambda$lambda$showModal$1$2, msg)));
@@ -313,6 +316,7 @@ void bug6219960::showModal($String* msg) {
 
 $JTable* bug6219960::createTable() {
 	$init(bug6219960);
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultTableModel, model, $new($DefaultTableModel));
 	$var($JTable, table, $new($JTable, model));
 	table->setFillsViewportHeight(true);
@@ -321,6 +325,7 @@ $JTable* bug6219960::createTable() {
 
 bool bug6219960::pressOK($Component* comp) {
 	$init(bug6219960);
+	$useLocalCurrentObjectStackCache();
 	$var($JInternalFrame, internalFrame, findModalInternalFrame(comp, bug6219960::QUESTION));
 	if (internalFrame == nullptr) {
 		return false;
@@ -352,6 +357,7 @@ bool bug6219960::pressOK($Component* comp) {
 
 $JInternalFrame* bug6219960::findModalInternalFrame($Component* comp, $String* title) {
 	$init(bug6219960);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JInternalFrame, comp)) {
 		$var($JInternalFrame, internalFrame, $cast($JInternalFrame, comp));
 		if ($nc($($nc(internalFrame)->getTitle()))->equals(title)) {
@@ -372,6 +378,7 @@ $JInternalFrame* bug6219960::findModalInternalFrame($Component* comp, $String* t
 
 $JButton* bug6219960::findButton($Component* comp) {
 	$init(bug6219960);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JButton, comp)) {
 		return $cast($JButton, comp);
 	}

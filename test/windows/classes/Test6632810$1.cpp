@@ -73,6 +73,7 @@ void Test6632810$1::init$() {
 }
 
 void Test6632810$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($BasicScrollPaneUI, ui, $new($BasicScrollPaneUI));
 	ui->installUI($$new($JScrollPane));
 	try {

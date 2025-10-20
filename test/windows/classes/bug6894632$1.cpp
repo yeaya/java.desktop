@@ -71,6 +71,7 @@ void bug6894632$1::init$() {
 }
 
 void bug6894632$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$bug6894632::test($$new($ArrayList));
 	$var($List, sortKeys, $new($ArrayList));
 	$init($SortOrder);

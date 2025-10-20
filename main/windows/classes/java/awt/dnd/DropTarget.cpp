@@ -222,6 +222,7 @@ void DropTarget::init$($Component* c, int32_t ops, $DropTargetListener* dtl) {
 
 void DropTarget::setComponent($Component* c) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (this->component == c || this->component != nullptr && $nc($of(this->component))->equals(c)) {
 			return;
 		}
@@ -309,6 +310,7 @@ void DropTarget::removeDropTargetListener($DropTargetListener* dtl) {
 
 void DropTarget::dragEnter($DropTargetDragEvent* dtde) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		this->isDraggingInside = true;
 		if (!this->active) {
 			return;
@@ -380,6 +382,7 @@ void DropTarget::setFlavorMap($FlavorMap* fm) {
 }
 
 void DropTarget::addNotify() {
+	$useLocalCurrentObjectStackCache();
 	$var($AWTAccessor$ComponentAccessor, acc, $AWTAccessor::getComponentAccessor());
 	$var($ComponentPeer, peer, $nc(acc)->getPeer(this->component));
 	if (peer == nullptr || peer == this->componentPeer) {
@@ -401,6 +404,7 @@ void DropTarget::addNotify() {
 }
 
 void DropTarget::removeNotify() {
+	$useLocalCurrentObjectStackCache();
 	if (this->nativePeer != nullptr) {
 		$nc(this->nativePeer)->removeDropTarget(this);
 	}
@@ -427,6 +431,7 @@ void DropTarget::writeObject($ObjectOutputStream* s) {
 }
 
 void DropTarget::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	try {
 		$set(this, dropTargetContext, $cast($DropTargetContext, $nc(f)->get("dropTargetContext"_s, ($Object*)nullptr)));

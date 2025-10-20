@@ -51,6 +51,7 @@ void bug6484091::init$() {
 
 void bug6484091::main($StringArray* args) {
 	$load(bug6484091);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($File, dir, $nc($($FileSystemView::getFileSystemView()))->getDefaultDirectory());
 	printDirContent(dir);
@@ -64,6 +65,7 @@ void bug6484091::main($StringArray* args) {
 }
 
 void bug6484091::printDirContent($File* dir) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::out)->println($$str({"Files in "_s, $($nc(dir)->getAbsolutePath()), ":"_s}));
 	{

@@ -93,6 +93,7 @@ void DefaultRowSorterIOOBEtest::init$() {
 
 void DefaultRowSorterIOOBEtest::main($StringArray* args) {
 	$init(DefaultRowSorterIOOBEtest);
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultRowSorter, sorter, $new($DefaultRowSorterIOOBEtest$2));
 	$init($System);
 	$var($PrintStream, err, $System::err);

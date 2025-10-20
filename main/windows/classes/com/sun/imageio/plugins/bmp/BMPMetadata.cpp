@@ -185,6 +185,7 @@ $String* BMPMetadata::toISO8859($bytes* data) {
 }
 
 $Node* BMPMetadata::getNativeTree() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, root, $new($IIOMetadataNode, BMPMetadata::nativeMetadataFormatName));
 	addChildNode(root, "BMPVersion"_s, this->bmpVersion);
 	addChildNode(root, "Width"_s, $($Integer::valueOf(this->width)));
@@ -240,6 +241,7 @@ $Node* BMPMetadata::getNativeTree() {
 }
 
 $IIOMetadataNode* BMPMetadata::getStandardChromaNode() {
+	$useLocalCurrentObjectStackCache();
 	if ((this->palette != nullptr) && (this->paletteSize > 0)) {
 		$var($IIOMetadataNode, node, $new($IIOMetadataNode, "Chroma"_s));
 		$var($IIOMetadataNode, subNode, $new($IIOMetadataNode, "Palette"_s));
@@ -267,6 +269,7 @@ $IIOMetadataNode* BMPMetadata::getStandardChromaNode() {
 }
 
 $IIOMetadataNode* BMPMetadata::getStandardCompressionNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "Compression"_s));
 	$var($IIOMetadataNode, subNode, $new($IIOMetadataNode, "CompressionTypeName"_s));
 	subNode->setAttribute("value"_s, $($BMPCompressionTypes::getName(this->compression)));
@@ -275,6 +278,7 @@ $IIOMetadataNode* BMPMetadata::getStandardCompressionNode() {
 }
 
 $IIOMetadataNode* BMPMetadata::getStandardDataNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "Data"_s));
 	$var($String, bits, ""_s);
 	if (this->bitsPerPixel == 24) {
@@ -293,6 +297,7 @@ $IIOMetadataNode* BMPMetadata::getStandardDataNode() {
 }
 
 $IIOMetadataNode* BMPMetadata::getStandardDimensionNode() {
+	$useLocalCurrentObjectStackCache();
 	if (this->yPixelsPerMeter > 0.0f && this->xPixelsPerMeter > 0.0f) {
 		$var($IIOMetadataNode, node, $new($IIOMetadataNode, "Dimension"_s));
 		float ratio = (float)($div(this->yPixelsPerMeter, this->xPixelsPerMeter));
@@ -334,6 +339,7 @@ $String* BMPMetadata::countBits(int32_t num) {
 }
 
 void BMPMetadata::addXYZPoints($IIOMetadataNode* root, $String* name, double x, double y, double z) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, addChildNode(root, name, nullptr));
 	addChildNode(node, "X"_s, $($Double::valueOf(x)));
 	addChildNode(node, "Y"_s, $($Double::valueOf(y)));
@@ -341,6 +347,7 @@ void BMPMetadata::addXYZPoints($IIOMetadataNode* root, $String* name, double x, 
 }
 
 $IIOMetadataNode* BMPMetadata::addChildNode($IIOMetadataNode* root, $String* name, Object$* object) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, child, $new($IIOMetadataNode, name));
 	if (object != nullptr) {
 		child->setUserObject(object);

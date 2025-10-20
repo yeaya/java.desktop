@@ -68,6 +68,7 @@ void NimbusLookAndFeel$DefaultsListener::init$($NimbusLookAndFeel* this$0) {
 }
 
 void NimbusLookAndFeel$DefaultsListener::propertyChange($PropertyChangeEvent* ev) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, key, $nc(ev)->getPropertyName());
 	if ("UIDefaults"_s->equals(key)) {
 		$set(this->this$0, compiledDefaults, nullptr);

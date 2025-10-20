@@ -117,6 +117,7 @@ $Object* allocate$MetalSplitPaneDivider($Class* clazz) {
 }
 
 void MetalSplitPaneDivider::init$($BasicSplitPaneUI* ui) {
+	$useLocalCurrentObjectStackCache();
 	$BasicSplitPaneDivider::init$(ui);
 	$var($Color, var$0, static_cast<$Color*>($MetalLookAndFeel::getControlHighlight()));
 	$var($Color, var$1, static_cast<$Color*>($MetalLookAndFeel::getControlDarkShadow()));
@@ -130,6 +131,7 @@ void MetalSplitPaneDivider::init$($BasicSplitPaneUI* ui) {
 }
 
 void MetalSplitPaneDivider::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($MetalBumps, usedBumps, nullptr);
 	if ($nc(this->splitPane)->hasFocus()) {
 		$assign(usedBumps, this->focusBumps);
@@ -158,6 +160,7 @@ void MetalSplitPaneDivider::paint($Graphics* g) {
 }
 
 $JButton* MetalSplitPaneDivider::createLeftOneTouchButton() {
+	$useLocalCurrentObjectStackCache();
 	$var($JButton, b, $new($MetalSplitPaneDivider$1, this));
 	b->setRequestFocusEnabled(false);
 	b->setCursor($($Cursor::getPredefinedCursor($Cursor::DEFAULT_CURSOR)));
@@ -175,6 +178,7 @@ void MetalSplitPaneDivider::maybeMakeButtonOpaque($JComponent* c) {
 }
 
 $JButton* MetalSplitPaneDivider::createRightOneTouchButton() {
+	$useLocalCurrentObjectStackCache();
 	$var($JButton, b, $new($MetalSplitPaneDivider$2, this));
 	b->setCursor($($Cursor::getPredefinedCursor($Cursor::DEFAULT_CURSOR)));
 	b->setFocusPainted(false);

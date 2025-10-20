@@ -100,6 +100,7 @@ void BMPImageWriterSpi::onRegistration($ServiceRegistry* registry, $Class* categ
 }
 
 bool BMPImageWriterSpi::canEncodeImage($ImageTypeSpecifier* type) {
+	$useLocalCurrentObjectStackCache();
 	int32_t dataType = $nc($($nc(type)->getSampleModel()))->getDataType();
 	if (dataType < $DataBuffer::TYPE_BYTE || dataType > $DataBuffer::TYPE_INT) {
 		return false;

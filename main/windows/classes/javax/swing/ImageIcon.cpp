@@ -246,6 +246,7 @@ $Object* ImageIcon::TRACKER_KEY = nullptr;
 
 $Component* ImageIcon::createNoPermsComponent() {
 	$init(ImageIcon);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($PrivilegedAction, var$0, static_cast<$PrivilegedAction*>($new($ImageIcon$2)));
 	return $cast($Component, $AccessController::doPrivileged(var$0, $$new($AccessControlContext, $$new($ProtectionDomainArray, {$$new($ProtectionDomain, nullptr, nullptr)}))));
@@ -323,6 +324,7 @@ void ImageIcon::init$($bytes* imageData, $String* description) {
 }
 
 void ImageIcon::init$($bytes* imageData) {
+	$useLocalCurrentObjectStackCache();
 	this->loadStatus = 0;
 	$set(this, description, nullptr);
 	this->width = -1;
@@ -348,6 +350,7 @@ void ImageIcon::init$() {
 }
 
 void ImageIcon::loadImage($Image* image) {
+	$useLocalCurrentObjectStackCache();
 	$var($MediaTracker, mTracker, getTracker());
 	$synchronized(mTracker) {
 		int32_t id = getNextID();
@@ -373,6 +376,7 @@ int32_t ImageIcon::getNextID() {
 }
 
 $MediaTracker* ImageIcon::getTracker() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, trackerObj, nullptr);
 	$var($AppContext, ac, $AppContext::getAppContext());
 	$synchronized(ac) {
@@ -441,6 +445,7 @@ $String* ImageIcon::toString() {
 }
 
 void ImageIcon::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	$set(this, imageObserver, $cast($ImageObserver, $nc(f)->get("imageObserver"_s, ($Object*)nullptr)));
 	$set(this, description, $cast($String, f->get("description"_s, ($Object*)nullptr)));
@@ -469,6 +474,7 @@ void ImageIcon::readObject($ObjectInputStream* s) {
 }
 
 void ImageIcon::writeObject($ObjectOutputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultWriteObject();
 	int32_t w = getIconWidth();
 	int32_t h = getIconHeight();

@@ -90,11 +90,13 @@ $Object* allocate$bug6937798($Class* clazz) {
 }
 
 void bug6937798::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($NimbusLookAndFeel)));
 	$SwingUtilities::invokeAndWait($$new($bug6937798$1));
 }
 
 void bug6937798::init$() {
+	$useLocalCurrentObjectStackCache();
 	$var($JTable, table, createCountryTable());
 	$nc(table)->setShowGrid(true);
 	table->setSize(100, 100);
@@ -117,6 +119,7 @@ void bug6937798::init$() {
 }
 
 $JTable* bug6937798::createCountryTable() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringArray, headers, $new($StringArray, {
 		"Name"_s,
 		"Capital City"_s,

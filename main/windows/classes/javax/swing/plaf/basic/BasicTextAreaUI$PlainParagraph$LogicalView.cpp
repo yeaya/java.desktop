@@ -100,6 +100,7 @@ bool BasicTextAreaUI$PlainParagraph$LogicalView::updateChildren($DocumentEvent$E
 }
 
 void BasicTextAreaUI$PlainParagraph$LogicalView::loadChildren($ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, getElement());
 	if ($nc(elem)->getElementCount() > 0) {
 		$CompositeView::loadChildren(f);

@@ -242,6 +242,7 @@ void Desktop::init$() {
 }
 
 void Desktop::checkEventsProcessingPermission() {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm != nullptr) {
 		sm->checkPermission($$new($RuntimePermission, "canProcessApplicationEvents"_s));
@@ -251,6 +252,7 @@ void Desktop::checkEventsProcessingPermission() {
 Desktop* Desktop::getDesktop() {
 	$load(Desktop);
 	$synchronized(class$) {
+		$useLocalCurrentObjectStackCache();
 		if ($GraphicsEnvironment::isHeadless()) {
 			$throwNew($HeadlessException);
 		}
@@ -280,18 +282,21 @@ bool Desktop::isSupported($Desktop$Action* action) {
 }
 
 void Desktop::checkFileValidation($File* file) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(file)->exists()) {
 		$throwNew($IllegalArgumentException, $$str({"The file: "_s, $(file->getPath()), " doesn\'t exist."_s}));
 	}
 }
 
 void Desktop::checkActionSupport($Desktop$Action* actionType) {
+	$useLocalCurrentObjectStackCache();
 	if (!isSupported(actionType)) {
 		$throwNew($UnsupportedOperationException, $$str({"The "_s, $($nc(actionType)->name()), " action is not supported on the current platform!"_s}));
 	}
 }
 
 void Desktop::checkAWTPermission() {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm != nullptr) {
 		sm->checkPermission($$new($AWTPermission, "showWindowWithoutWarningBanner"_s));
@@ -299,6 +304,7 @@ void Desktop::checkAWTPermission() {
 }
 
 void Desktop::open($File* file$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($File, file, file$renamed);
 	$assign(file, $new($File, $($nc(file)->getPath())));
 	checkAWTPermission();
@@ -310,6 +316,7 @@ void Desktop::open($File* file$renamed) {
 }
 
 void Desktop::edit($File* file$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($File, file, file$renamed);
 	$assign(file, $new($File, $($nc(file)->getPath())));
 	checkAWTPermission();
@@ -325,6 +332,7 @@ void Desktop::edit($File* file$renamed) {
 }
 
 void Desktop::print($File* file$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($File, file, file$renamed);
 	$assign(file, $new($File, $($nc(file)->getPath())));
 	checkExec();
@@ -379,6 +387,7 @@ void Desktop::mail($URI* mailtoURI) {
 }
 
 void Desktop::checkExec() {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm != nullptr) {
 		$init($SecurityConstants);
@@ -387,6 +396,7 @@ void Desktop::checkExec() {
 }
 
 void Desktop::checkRead() {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm != nullptr) {
 		$init($SecurityConstants);
@@ -516,6 +526,7 @@ void Desktop::setDefaultMenuBar($JMenuBar* menuBar) {
 }
 
 void Desktop::browseFileDirectory($File* file$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($File, file, file$renamed);
 	$assign(file, $new($File, $($nc(file)->getPath())));
 	checkAWTPermission();
@@ -531,6 +542,7 @@ void Desktop::browseFileDirectory($File* file$renamed) {
 }
 
 bool Desktop::moveToTrash($File* file$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($File, file, file$renamed);
 	$beforeCallerSensitive();
 	$assign(file, $new($File, $($nc(file)->getPath())));

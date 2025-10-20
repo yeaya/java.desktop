@@ -144,6 +144,7 @@ void SynthFileChooserUIImpl$FilterComboBoxModel::setSelectedItem(Object$* filter
 }
 
 $Object* SynthFileChooserUIImpl$FilterComboBoxModel::getSelectedItem() {
+	$useLocalCurrentObjectStackCache();
 	$var($FileFilter, currentFilter, $nc($(this->this$0->getFileChooser()))->getFileFilter());
 	bool found = false;
 	if (currentFilter != nullptr) {

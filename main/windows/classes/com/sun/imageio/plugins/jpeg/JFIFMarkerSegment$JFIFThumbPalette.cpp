@@ -132,6 +132,7 @@ int32_t JFIFMarkerSegment$JFIFThumbPalette::getLength() {
 }
 
 $BufferedImage* JFIFMarkerSegment$JFIFThumbPalette::getThumbnail($ImageInputStream* iis, $JPEGImageReader* reader) {
+	$useLocalCurrentObjectStackCache();
 	$nc(iis)->mark();
 	iis->seek(this->streamPos);
 	$var($bytes, palette, $new($bytes, JFIFMarkerSegment$JFIFThumbPalette::PALETTE_SIZE));
@@ -148,6 +149,7 @@ $BufferedImage* JFIFMarkerSegment$JFIFThumbPalette::getThumbnail($ImageInputStre
 }
 
 void JFIFMarkerSegment$JFIFThumbPalette::write($ImageOutputStream* ios, $JPEGImageWriter* writer) {
+	$useLocalCurrentObjectStackCache();
 	$JFIFMarkerSegment$JFIFThumbUncompressed::write(ios, writer);
 	$var($bytes, palette, $new($bytes, 768));
 	$var($IndexColorModel, icm, $cast($IndexColorModel, $nc(this->thumbnail)->getColorModel()));

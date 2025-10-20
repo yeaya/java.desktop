@@ -81,6 +81,7 @@ $Object* allocate$Map$RectangleRegionContainment($Class* clazz) {
 }
 
 void Map$RectangleRegionContainment::init$($AttributeSet* as) {
+	$useLocalCurrentObjectStackCache();
 	$init($HTML$Attribute);
 	$var($ints, coords, $Map::extractCoords($($nc(as)->getAttribute($HTML$Attribute::COORDS))));
 	$set(this, percents, nullptr);

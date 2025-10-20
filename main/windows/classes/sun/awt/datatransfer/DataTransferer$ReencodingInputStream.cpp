@@ -118,6 +118,7 @@ $Object* allocate$DataTransferer$ReencodingInputStream($Class* clazz) {
 }
 
 void DataTransferer$ReencodingInputStream::init$($DataTransferer* this$0, $InputStream* bytestream, int64_t format, $String* targetEncoding, $Transferable* localeTransferable) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$InputStream::init$();
 	$set(this, in, $new($chars, 2));

@@ -166,6 +166,7 @@ bool MetalComboBoxButton::isFocusTraversable() {
 }
 
 void MetalComboBoxButton::setEnabled(bool enabled) {
+	$useLocalCurrentObjectStackCache();
 	$JButton::setEnabled(enabled);
 	if (enabled) {
 		setBackground($($nc(this->comboBox)->getBackground()));
@@ -177,6 +178,7 @@ void MetalComboBoxButton::setEnabled(bool enabled) {
 }
 
 void MetalComboBoxButton::paintComponent($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	bool leftToRight = $MetalUtils::isLeftToRight(this->comboBox);
 	$JButton::paintComponent(g);
 	$var($Insets, insets, getInsets());
@@ -256,6 +258,7 @@ void MetalComboBoxButton::paintComponent($Graphics* g) {
 }
 
 $Dimension* MetalComboBoxButton::getMinimumSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, ret, $new($Dimension));
 	$var($Insets, insets, getInsets());
 	ret->width = $nc(insets)->left + $nc($(getComboIcon()))->getIconWidth() + insets->right;

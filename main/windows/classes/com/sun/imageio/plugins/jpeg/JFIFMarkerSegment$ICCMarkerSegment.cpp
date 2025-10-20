@@ -138,6 +138,7 @@ void JFIFMarkerSegment$ICCMarkerSegment::init$($JFIFMarkerSegment* this$0, $JPEG
 }
 
 void JFIFMarkerSegment$ICCMarkerSegment::init$($JFIFMarkerSegment* this$0, $Node* node) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$MarkerSegment::init$($JPEG::APP2);
 	$set(this, chunks, nullptr);
@@ -160,6 +161,7 @@ $Object* JFIFMarkerSegment$ICCMarkerSegment::clone() {
 }
 
 bool JFIFMarkerSegment$ICCMarkerSegment::addData($JPEGBuffer* buffer) {
+	$useLocalCurrentObjectStackCache();
 	++$nc(buffer)->bufPtr;
 	--buffer->bufAvail;
 	int32_t dataLen = ((int32_t)($nc(buffer->buf)->get(buffer->bufPtr++) & (uint32_t)255)) << 8;
@@ -213,6 +215,7 @@ bool JFIFMarkerSegment$ICCMarkerSegment::addData($JPEGBuffer* buffer) {
 }
 
 $IIOMetadataNode* JFIFMarkerSegment$ICCMarkerSegment::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "app2ICC"_s));
 	if (this->profile != nullptr) {
 		node->setUserObject($($ICC_Profile::getInstance(this->profile)));

@@ -81,6 +81,7 @@ void SynthFileChooserUIImpl$FilterComboBoxRenderer::init$($SynthFileChooserUIImp
 }
 
 $Component* SynthFileChooserUIImpl$FilterComboBoxRenderer::getListCellRendererComponent($JList* list, $FileFilter* value, int32_t index, bool isSelected, bool cellHasFocus) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $nc(this->delegate)->getListCellRendererComponent(list, value, index, isSelected, cellHasFocus));
 	$var($String, text, nullptr);
 	if (value != nullptr) {

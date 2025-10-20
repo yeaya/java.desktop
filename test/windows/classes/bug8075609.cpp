@@ -171,6 +171,7 @@ void bug8075609::init$() {
 }
 
 void bug8075609::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -195,6 +196,7 @@ void bug8075609::main($StringArray* args) {
 }
 
 void bug8075609::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug8075609);
 	$assignStatic(bug8075609::mainFrame, $new($JFrame, "Bug 8075609 - 1 test"_s));
 	$var($JPanel, rootPanel, $new($JPanel));

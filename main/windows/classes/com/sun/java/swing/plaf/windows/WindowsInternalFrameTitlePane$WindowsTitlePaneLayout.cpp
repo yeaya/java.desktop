@@ -138,6 +138,7 @@ int32_t WindowsInternalFrameTitlePane$WindowsTitlePaneLayout::layoutButton($JCom
 }
 
 void WindowsInternalFrameTitlePane$WindowsTitlePaneLayout::layoutContainer($Container* c) {
+	$useLocalCurrentObjectStackCache();
 	bool leftToRight = $WindowsGraphicsUtils::isLeftToRight($($WindowsInternalFrameTitlePane::access$400(this->this$0)));
 	int32_t x = 0;
 	int32_t y = 0;

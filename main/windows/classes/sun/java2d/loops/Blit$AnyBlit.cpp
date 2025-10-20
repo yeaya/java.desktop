@@ -91,6 +91,7 @@ void Blit$AnyBlit::init$() {
 }
 
 void Blit$AnyBlit::Blit$($SurfaceData* srcData, $SurfaceData* dstData, $Composite* comp, $Region* clip$renamed, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Region, clip, clip$renamed);
 	$var($ColorModel, srcCM, $nc(srcData)->getColorModel());
 	$var($ColorModel, dstCM, $nc(dstData)->getColorModel());

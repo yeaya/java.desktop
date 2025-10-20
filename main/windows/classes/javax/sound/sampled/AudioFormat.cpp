@@ -161,6 +161,7 @@ $Object* AudioFormat::getProperty($String* key) {
 }
 
 bool AudioFormat::matches(AudioFormat* format) {
+	$useLocalCurrentObjectStackCache();
 	bool var$5 = $nc($($nc(format)->getEncoding()))->equals($(getEncoding()));
 	if (var$5) {
 		bool var$6 = format->getChannels() == $AudioSystem::NOT_SPECIFIED;
@@ -222,6 +223,7 @@ bool AudioFormat::matches(AudioFormat* format) {
 }
 
 $String* AudioFormat::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, sampleRate, getSampleRate() == $AudioSystem::NOT_SPECIFIED ? "unknown sample rate"_s : $str({$$str(getSampleRate()), " Hz"_s}));
 	$var($String, sampleSize, getSampleSizeInBits() == $AudioSystem::NOT_SPECIFIED ? "unknown bits per sample"_s : $str({$$str(getSampleSizeInBits()), " bit"_s}));
 

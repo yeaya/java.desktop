@@ -268,6 +268,7 @@ void JWindow::init$($GraphicsConfiguration* gc) {
 }
 
 void JWindow::init$($Frame* owner) {
+	$useLocalCurrentObjectStackCache();
 	$Window::init$(owner == nullptr ? $($SwingUtilities::getSharedOwnerFrame()) : owner);
 	this->rootPaneCheckingEnabled = false;
 	$set(this, accessibleContext, nullptr);
@@ -279,6 +280,7 @@ void JWindow::init$($Frame* owner) {
 }
 
 void JWindow::init$($Window* owner) {
+	$useLocalCurrentObjectStackCache();
 	$Window::init$(owner == nullptr ? static_cast<$Window*>($($SwingUtilities::getSharedOwnerFrame())) : owner);
 	this->rootPaneCheckingEnabled = false;
 	$set(this, accessibleContext, nullptr);
@@ -290,6 +292,7 @@ void JWindow::init$($Window* owner) {
 }
 
 void JWindow::init$($Window* owner, $GraphicsConfiguration* gc) {
+	$useLocalCurrentObjectStackCache();
 	$Window::init$(owner == nullptr ? static_cast<$Window*>($($SwingUtilities::getSharedOwnerFrame())) : owner, gc);
 	this->rootPaneCheckingEnabled = false;
 	$set(this, accessibleContext, nullptr);
@@ -301,6 +304,7 @@ void JWindow::init$($Window* owner, $GraphicsConfiguration* gc) {
 }
 
 void JWindow::windowInit() {
+	$useLocalCurrentObjectStackCache();
 	setLocale($($JComponent::getDefaultLocale()));
 	setRootPane($(createRootPane()));
 	setRootPaneCheckingEnabled(true);
@@ -428,6 +432,7 @@ void JWindow::repaint(int64_t time, int32_t x, int32_t y, int32_t width, int32_t
 }
 
 $String* JWindow::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, rootPaneCheckingEnabledString, this->rootPaneCheckingEnabled ? "true"_s : "false"_s);
 	return $str({$($Window::paramString()), ",rootPaneCheckingEnabled="_s, rootPaneCheckingEnabledString});
 }

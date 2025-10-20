@@ -73,6 +73,7 @@ $byteArray2* ByteLookupTable::getTable() {
 }
 
 $ints* ByteLookupTable::lookupPixel($ints* src, $ints* dst$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, dst, dst$renamed);
 	if (dst == nullptr) {
 		$assign(dst, $new($ints, $nc(src)->length));
@@ -98,6 +99,7 @@ $ints* ByteLookupTable::lookupPixel($ints* src, $ints* dst$renamed) {
 }
 
 $bytes* ByteLookupTable::lookupPixel($bytes* src, $bytes* dst$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, dst, dst$renamed);
 	if (dst == nullptr) {
 		$assign(dst, $new($bytes, $nc(src)->length));

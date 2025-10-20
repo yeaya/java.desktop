@@ -95,6 +95,7 @@ $Object* allocate$XPStyle$GlyphButton($Class* clazz) {
 }
 
 void XPStyle$GlyphButton::init$($Component* parent, $TMSchema$Part* part) {
+	$useLocalCurrentObjectStackCache();
 	$JButton::init$();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	$set(this, skin, xp != nullptr ? $nc(xp)->getSkin(parent, part) : ($XPStyle$Skin*)nullptr);
@@ -110,6 +111,7 @@ bool XPStyle$GlyphButton::isFocusTraversable() {
 }
 
 $TMSchema$State* XPStyle$GlyphButton::getState() {
+	$useLocalCurrentObjectStackCache();
 	$init($TMSchema$State);
 	$TMSchema$State* state = $TMSchema$State::NORMAL;
 	if (!isEnabled()) {
@@ -123,6 +125,7 @@ $TMSchema$State* XPStyle$GlyphButton::getState() {
 }
 
 void XPStyle$GlyphButton::paintComponent($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if ($XPStyle::getXP() == nullptr || this->skin == nullptr) {
 		return;
 	}

@@ -86,6 +86,7 @@ $ComponentUIArray* MultiComboBoxUI::getUIs() {
 }
 
 bool MultiComboBoxUI::isFocusTraversable($JComboBox* a) {
+	$useLocalCurrentObjectStackCache();
 	bool returnValue = $nc((($cast($ComboBoxUI, $($nc(this->uis)->elementAt(0))))))->isFocusTraversable(a);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($ComboBoxUI, $($nc(this->uis)->elementAt(i))))))->isFocusTraversable(a);
@@ -94,12 +95,14 @@ bool MultiComboBoxUI::isFocusTraversable($JComboBox* a) {
 }
 
 void MultiComboBoxUI::setPopupVisible($JComboBox* a, bool b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($ComboBoxUI, $($nc(this->uis)->elementAt(i))))))->setPopupVisible(a, b);
 	}
 }
 
 bool MultiComboBoxUI::isPopupVisible($JComboBox* a) {
+	$useLocalCurrentObjectStackCache();
 	bool returnValue = $nc((($cast($ComboBoxUI, $($nc(this->uis)->elementAt(0))))))->isPopupVisible(a);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc((($cast($ComboBoxUI, $($nc(this->uis)->elementAt(i))))))->isPopupVisible(a);
@@ -108,6 +111,7 @@ bool MultiComboBoxUI::isPopupVisible($JComboBox* a) {
 }
 
 bool MultiComboBoxUI::contains($JComponent* a, int32_t b, int32_t c) {
+	$useLocalCurrentObjectStackCache();
 	bool returnValue = $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->contains(a, b, c);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->contains(a, b, c);
@@ -116,6 +120,7 @@ bool MultiComboBoxUI::contains($JComponent* a, int32_t b, int32_t c) {
 }
 
 void MultiComboBoxUI::update($Graphics* a, $JComponent* b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->update(a, b);
 	}
@@ -128,24 +133,28 @@ $ComponentUI* MultiComboBoxUI::createUI($JComponent* a) {
 }
 
 void MultiComboBoxUI::installUI($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->installUI(a);
 	}
 }
 
 void MultiComboBoxUI::uninstallUI($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->uninstallUI(a);
 	}
 }
 
 void MultiComboBoxUI::paint($Graphics* a, $JComponent* b) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->paint(a, b);
 	}
 }
 
 $Dimension* MultiComboBoxUI::getPreferredSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getPreferredSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getPreferredSize(a);
@@ -154,6 +163,7 @@ $Dimension* MultiComboBoxUI::getPreferredSize($JComponent* a) {
 }
 
 $Dimension* MultiComboBoxUI::getMinimumSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getMinimumSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getMinimumSize(a);
@@ -162,6 +172,7 @@ $Dimension* MultiComboBoxUI::getMinimumSize($JComponent* a) {
 }
 
 $Dimension* MultiComboBoxUI::getMaximumSize($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getMaximumSize(a));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getMaximumSize(a);
@@ -170,6 +181,7 @@ $Dimension* MultiComboBoxUI::getMaximumSize($JComponent* a) {
 }
 
 int32_t MultiComboBoxUI::getAccessibleChildrenCount($JComponent* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t returnValue = $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getAccessibleChildrenCount(a);
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getAccessibleChildrenCount(a);
@@ -178,6 +190,7 @@ int32_t MultiComboBoxUI::getAccessibleChildrenCount($JComponent* a) {
 }
 
 $Accessible* MultiComboBoxUI::getAccessibleChild($JComponent* a, int32_t b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Accessible, returnValue, $nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(0)))))->getAccessibleChild(a, b));
 	for (int32_t i = 1; i < $nc(this->uis)->size(); ++i) {
 		$nc(($cast($ComponentUI, $($nc(this->uis)->elementAt(i)))))->getAccessibleChild(a, b);

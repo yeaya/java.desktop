@@ -106,6 +106,7 @@ void bug8134721::main($StringArray* args) {
 }
 
 void bug8134721::testNPE() {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, g, nullptr);
 	{
 		$var($Throwable, var$0, nullptr);

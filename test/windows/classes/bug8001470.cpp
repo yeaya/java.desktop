@@ -81,6 +81,7 @@ void bug8001470::init$() {
 }
 
 void bug8001470::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($bug8001470$1));
 	$init(bug8001470);
 	bool var$0 = $nc(bug8001470::textField1)->getHeight() < 10;

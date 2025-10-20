@@ -75,6 +75,7 @@ void WindowsFileChooserUI$DirectoryComboBoxAction::init$($WindowsFileChooserUI* 
 }
 
 void WindowsFileChooserUI$DirectoryComboBoxAction::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($File, f, $cast($File, $nc(this->this$0->directoryComboBox)->getSelectedItem()));
 	$nc($(this->this$0->getFileChooser()))->setCurrentDirectory(f);
 }

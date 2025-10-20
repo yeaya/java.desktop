@@ -102,6 +102,7 @@ void SynthSliderUI$SynthTrackListener::mouseReleased($MouseEvent* e) {
 }
 
 void SynthSliderUI$SynthTrackListener::mouseDragged($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t thumbMiddle = 0;
 	if (!$nc($($SynthSliderUI::access$100(this->this$0)))->isEnabled()) {
 		return;

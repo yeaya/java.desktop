@@ -84,6 +84,7 @@ void MetalScrollPaneUI$1::init$($MetalScrollPaneUI* this$0) {
 }
 
 void MetalScrollPaneUI$1::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, propertyName, $nc(e)->getPropertyName());
 	bool var$0 = $nc(propertyName)->equals("verticalScrollBar"_s);
 	if (var$0 || $nc(propertyName)->equals("horizontalScrollBar"_s)) {

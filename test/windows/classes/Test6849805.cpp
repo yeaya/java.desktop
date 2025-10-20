@@ -71,6 +71,7 @@ void Test6849805::init$() {
 
 void Test6849805::main($StringArray* args) {
 	$init(Test6849805);
+	$useLocalCurrentObjectStackCache();
 	$var($Test6849805$Minimbus, laf, $new($Test6849805$Minimbus));
 	$init($Color);
 	laf->test($Color::WHITE, $Color::BLACK, 0.0f);

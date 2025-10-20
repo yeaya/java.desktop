@@ -136,6 +136,7 @@ $MediaSizeName* CustomMediaSizeName::getStandardMedia() {
 
 $MediaSizeName* CustomMediaSizeName::findMedia($MediaArray* media, float x, float y, int32_t units) {
 	$init(CustomMediaSizeName);
+	$useLocalCurrentObjectStackCache();
 	if (x <= 0.0f || y <= 0.0f || units < 1) {
 		$throwNew($IllegalArgumentException, "args must be +ve values"_s);
 	}

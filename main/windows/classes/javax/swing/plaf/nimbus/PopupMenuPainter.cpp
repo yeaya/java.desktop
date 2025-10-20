@@ -196,6 +196,7 @@ $Rectangle2D* PopupMenuPainter::decodeRect4() {
 }
 
 $Paint* PopupMenuPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

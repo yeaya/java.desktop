@@ -207,6 +207,7 @@ void bug4368790::init$() {
 }
 
 void bug4368790::createGui() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug4368790);
 	$assignStatic(bug4368790::frame, $new($JFrame));
 	$nc(bug4368790::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
@@ -221,6 +222,7 @@ void bug4368790::createGui() {
 }
 
 void bug4368790::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 	} catch ($UnsupportedLookAndFeelException&) {
@@ -240,6 +242,7 @@ void bug4368790::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 }
 
 void bug4368790::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());

@@ -69,6 +69,7 @@ void SwingTest$1::init$($SwingTest* this$0) {
 }
 
 int32_t SwingTest$1::compare($Method* first, $Method* second) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($nc(first)->getName()))->compareTo($($nc(second)->getName()));
 }
 

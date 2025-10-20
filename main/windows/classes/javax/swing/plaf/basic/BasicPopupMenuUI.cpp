@@ -214,6 +214,7 @@ void BasicPopupMenuUI::installUI($JComponent* c) {
 }
 
 void BasicPopupMenuUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(this->popupMenu)->getLayout() == nullptr;
 	if (var$0 || $instanceOf($UIResource, $($nc(this->popupMenu)->getLayout()))) {
 		$nc(this->popupMenu)->setLayout($$new($DefaultMenuLayout, this->popupMenu, $BoxLayout::Y_AXIS));
@@ -225,6 +226,7 @@ void BasicPopupMenuUI::installDefaults() {
 }
 
 void BasicPopupMenuUI::installListeners() {
+	$useLocalCurrentObjectStackCache();
 	if (this->popupMenuListener == nullptr) {
 		$set(this, popupMenuListener, $new($BasicPopupMenuUI$BasicPopupMenuListener, this));
 	}
@@ -257,6 +259,7 @@ void BasicPopupMenuUI::installKeyboardActions() {
 
 $InputMap* BasicPopupMenuUI::getInputMap($JPopupMenu* popup, $JComponent* c) {
 	$init(BasicPopupMenuUI);
+	$useLocalCurrentObjectStackCache();
 	$var($InputMap, windowInputMap, nullptr);
 	$var($ObjectArray, bindings, $cast($ObjectArray, $UIManager::get("PopupMenu.selectedWindowInputMapBindings"_s)));
 	if (bindings != nullptr) {
@@ -280,6 +283,7 @@ $ActionMap* BasicPopupMenuUI::getActionMap() {
 
 void BasicPopupMenuUI::loadActionMap($LazyActionMap* map) {
 	$init(BasicPopupMenuUI);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicPopupMenuUI$Actions);
 	$nc(map)->put($$new($BasicPopupMenuUI$Actions, $BasicPopupMenuUI$Actions::CANCEL));
 	map->put($$new($BasicPopupMenuUI$Actions, $BasicPopupMenuUI$Actions::SELECT_NEXT));
@@ -317,6 +321,7 @@ void BasicPopupMenuUI::uninstallKeyboardActions() {
 
 $MenuElement* BasicPopupMenuUI::getFirstPopup() {
 	$init(BasicPopupMenuUI);
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, msm, $MenuSelectionManager::defaultManager());
 	$var($MenuElementArray, p, $nc(msm)->getSelectedPath());
 	$var($MenuElement, me, nullptr);
@@ -330,6 +335,7 @@ $MenuElement* BasicPopupMenuUI::getFirstPopup() {
 
 $JPopupMenu* BasicPopupMenuUI::getLastPopup() {
 	$init(BasicPopupMenuUI);
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, msm, $MenuSelectionManager::defaultManager());
 	$var($MenuElementArray, p, $nc(msm)->getSelectedPath());
 	$var($JPopupMenu, popup, nullptr);
@@ -343,6 +349,7 @@ $JPopupMenu* BasicPopupMenuUI::getLastPopup() {
 
 $List* BasicPopupMenuUI::getPopups() {
 	$init(BasicPopupMenuUI);
+	$useLocalCurrentObjectStackCache();
 	$var($MenuSelectionManager, msm, $MenuSelectionManager::defaultManager());
 	$var($MenuElementArray, p, $nc(msm)->getSelectedPath());
 	$var($List, list, $new($ArrayList, $nc(p)->length));
@@ -369,6 +376,7 @@ bool BasicPopupMenuUI::isPopupTrigger($MouseEvent* e) {
 
 bool BasicPopupMenuUI::checkInvokerEqual($MenuElement* present, $MenuElement* last) {
 	$init(BasicPopupMenuUI);
+	$useLocalCurrentObjectStackCache();
 	$var($Component, invokerPresent, $nc(present)->getComponent());
 	$var($Component, invokerLast, $nc(last)->getComponent());
 	if ($instanceOf($JPopupMenu, invokerPresent)) {
@@ -382,6 +390,7 @@ bool BasicPopupMenuUI::checkInvokerEqual($MenuElement* present, $MenuElement* la
 
 $MenuElement* BasicPopupMenuUI::nextEnabledChild($MenuElementArray* e, int32_t fromIndex, int32_t toIndex) {
 	$init(BasicPopupMenuUI);
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = fromIndex; i <= toIndex; ++i) {
 		if ($nc(e)->get(i) != nullptr) {
 			$var($Component, comp, $nc(e->get(i))->getComponent());
@@ -401,6 +410,7 @@ $MenuElement* BasicPopupMenuUI::nextEnabledChild($MenuElementArray* e, int32_t f
 
 $MenuElement* BasicPopupMenuUI::previousEnabledChild($MenuElementArray* e, int32_t fromIndex, int32_t toIndex) {
 	$init(BasicPopupMenuUI);
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = fromIndex; i >= toIndex; --i) {
 		if ($nc(e)->get(i) != nullptr) {
 			$var($Component, comp, $nc(e->get(i))->getComponent());

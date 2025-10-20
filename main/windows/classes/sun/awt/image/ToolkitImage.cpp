@@ -245,6 +245,7 @@ void ToolkitImage::addWatcher($ImageObserver* iw, bool load) {
 
 void ToolkitImage::reconstruct(int32_t flags) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (((int32_t)(flags & (uint32_t)~this->availinfo)) != 0) {
 			if (((int32_t)(this->availinfo & (uint32_t)$ImageObserver::ERROR)) != 0) {
 				return;

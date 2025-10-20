@@ -99,6 +99,7 @@ $Object* allocate$DefaultButtonTest$DefaultPanel($Class* clazz) {
 }
 
 void DefaultButtonTest$DefaultPanel::init$($DefaultButtonTest* this$0, $JFrame* root) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JPanel::init$();
 	$set(this, okButton, $new($JButton, "OK"_s));
@@ -124,6 +125,7 @@ $JPanel* DefaultButtonTest$DefaultPanel::createPanel() {
 }
 
 $JScrollPane* DefaultButtonTest$DefaultPanel::createInfoPanel() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuffer, txt, $new($StringBuffer, "Test for 4337071:\n"_s));
 	txt->append("ENTER pressed in NON-EDITABLE combo box should be passed to the OK button.\n"_s);
 	txt->append("For an EDITABLE combo box, the combo box should fire an action event."_s);
@@ -136,6 +138,7 @@ $JScrollPane* DefaultButtonTest$DefaultPanel::createInfoPanel() {
 }
 
 $JPanel* DefaultButtonTest$DefaultPanel::createButtonPanel($JFrame* frame) {
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc(frame)->getRootPane()))->setDefaultButton(this->okButton);
 	$nc(this->okButton)->addActionListener(this->this$0);
 	$var($JPanel, panel, $new($JPanel));

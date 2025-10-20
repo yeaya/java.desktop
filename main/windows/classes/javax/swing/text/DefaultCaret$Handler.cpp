@@ -143,6 +143,7 @@ void DefaultCaret$Handler::init$($DefaultCaret* this$0) {
 }
 
 void DefaultCaret$Handler::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->this$0->width == 0 || this->this$0->height == 0) {
 		if (this->this$0->component != nullptr) {
 			$var($TextUI, mapper, $cast($TextUI, $nc(this->this$0->component)->getUI()));
@@ -161,6 +162,7 @@ void DefaultCaret$Handler::actionPerformed($ActionEvent* e) {
 }
 
 void DefaultCaret$Handler::insertUpdate($DocumentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = this->this$0->getUpdatePolicy() == 1;
 	if (!var$0) {
 		bool var$1 = this->this$0->getUpdatePolicy() == 0;
@@ -232,6 +234,7 @@ void DefaultCaret$Handler::insertUpdate($DocumentEvent* e) {
 }
 
 void DefaultCaret$Handler::removeUpdate($DocumentEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = this->this$0->getUpdatePolicy() == 1;
 	if (!var$0) {
 		bool var$1 = this->this$0->getUpdatePolicy() == 0;
@@ -331,6 +334,7 @@ void DefaultCaret$Handler::changedUpdate($DocumentEvent* e) {
 }
 
 void DefaultCaret$Handler::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, oldValue, $nc(evt)->getOldValue());
 	$var($Object, newValue, evt->getNewValue());
 	if (($instanceOf($Document, oldValue)) || ($instanceOf($Document, newValue))) {

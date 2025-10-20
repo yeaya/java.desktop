@@ -197,6 +197,7 @@ int32_t SynthToolTipUI::getComponentState($JComponent* c) {
 }
 
 void SynthToolTipUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -216,6 +217,7 @@ void SynthToolTipUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void SynthToolTipUI::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($JToolTip, tip, $cast($JToolTip, $nc(context)->getComponent()));
 	$var($Insets, insets, $nc(tip)->getInsets());
 	$init($BasicHTML);
@@ -235,6 +237,7 @@ void SynthToolTipUI::paint($SynthContext* context, $Graphics* g) {
 }
 
 $Dimension* SynthToolTipUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$var($Insets, insets, $nc(c)->getInsets());
 	$var($Dimension, prefSize, $new($Dimension, $nc(insets)->left + insets->right, insets->top + insets->bottom));
@@ -255,6 +258,7 @@ $Dimension* SynthToolTipUI::getPreferredSize($JComponent* c) {
 }
 
 void SynthToolTipUI::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($SynthLookAndFeel::shouldUpdateStyle(e)) {
 		updateStyle($cast($JToolTip, $($nc(e)->getSource())));
 	}

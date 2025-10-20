@@ -47,6 +47,7 @@ void synth_it::init$() {
 }
 
 $ObjectArray2* synth_it::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("FileChooser.detailsViewActionLabel.textAndMnemonic"_s),

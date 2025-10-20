@@ -88,6 +88,7 @@ void Win32ShellFolder2$9::init$($Win32ShellFolder2* this$0, bool val$includeHidd
 }
 
 $Object* Win32ShellFolder2$9::call() {
+	$useLocalCurrentObjectStackCache();
 	if (!this->this$0->isDirectory()) {
 		return $of(nullptr);
 	}

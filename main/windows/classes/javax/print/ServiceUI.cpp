@@ -84,6 +84,7 @@ void ServiceUI::init$() {
 }
 
 $PrintService* ServiceUI::printDialog($GraphicsConfiguration* gc, int32_t x, int32_t y, $PrintServiceArray* services, $PrintService* defaultService, $DocFlavor* flavor, $PrintRequestAttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	int32_t defaultIndex = -1;
 	if ($GraphicsEnvironment::isHeadless()) {
 		$throwNew($HeadlessException);
@@ -168,6 +169,7 @@ $PrintService* ServiceUI::printDialog($GraphicsConfiguration* gc, int32_t x, int
 }
 
 void ServiceUI::removeUnsupportedAttributes($PrintService* ps, $DocFlavor* flavor, $AttributeSet* aset) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, asUnsupported, $nc(ps)->getUnsupportedAttributes(flavor, aset));
 	if (asUnsupported != nullptr) {
 		$var($AttributeArray, usAttrs, asUnsupported->toArray());

@@ -106,6 +106,7 @@ $String* TIFFFieldNode::getNodeName($TIFFField* f) {
 }
 
 void TIFFFieldNode::init$($TIFFField* field) {
+	$useLocalCurrentObjectStackCache();
 	$IIOMetadataNode::init$($(getNodeName(field)));
 	$init($Boolean);
 	$set(this, isInitialized, $Boolean::FALSE);
@@ -141,6 +142,7 @@ void TIFFFieldNode::init$($TIFFField* field) {
 
 void TIFFFieldNode::initialize() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if ($nc((this->isInitialized))->booleanValue()) {
 			return;
 		}

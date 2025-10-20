@@ -79,6 +79,7 @@ void bug6348946$3::init$($RectangleArray* val$result) {
 }
 
 void bug6348946$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug6348946);
 	$var($Point, var$0, $nc($bug6348946::panel)->getLocationOnScreen());
 	$nc(this->val$result)->set(0, $$new($Rectangle, var$0, $($nc($bug6348946::panel)->getSize())));

@@ -55,6 +55,7 @@ void AccessibilityProvider::init$($Void* ignore) {
 }
 
 $Void* AccessibilityProvider::checkPermission() {
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm != nullptr) {
 		sm->checkPermission($$new($RuntimePermission, "accessibilityProvider"_s));

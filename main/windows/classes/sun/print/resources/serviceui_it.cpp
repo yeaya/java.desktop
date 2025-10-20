@@ -43,6 +43,7 @@ void serviceui_it::init$() {
 }
 
 $ObjectArray2* serviceui_it::getContents() {
+	$useLocalCurrentObjectStackCache();
 	return $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("Automatic-Feeder"_s),

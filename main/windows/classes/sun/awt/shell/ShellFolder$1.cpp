@@ -83,6 +83,7 @@ void ShellFolder$1::init$($List* val$files) {
 }
 
 $Object* ShellFolder$1::call() {
+	$useLocalCurrentObjectStackCache();
 	$var($File, commonParent, nullptr);
 	{
 		$var($Iterator, i$, $nc(this->val$files)->iterator());

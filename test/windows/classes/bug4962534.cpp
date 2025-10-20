@@ -194,6 +194,7 @@ void bug4962534::init$() {
 
 void bug4962534::main($StringArray* args) {
 	$init(bug4962534);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -214,6 +215,7 @@ void bug4962534::main($StringArray* args) {
 }
 
 void bug4962534::init() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$SwingUtilities::invokeAndWait($$new($bug4962534$1, this));
 	} catch ($Exception&) {
@@ -223,6 +225,7 @@ void bug4962534::init() {
 }
 
 void bug4962534::start() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		setJLayeredPaneEDT();
 		setTitleComponentEDT();
@@ -291,6 +294,7 @@ void bug4962534::start() {
 }
 
 void bug4962534::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"_s);
 	} catch ($Exception&) {
@@ -318,6 +322,7 @@ void bug4962534::setFramePosEDT() {
 }
 
 bool bug4962534::checkFrameIsOutOfScreenEDT() {
+	$useLocalCurrentObjectStackCache();
 	$var($booleans, result, $new($booleans, 1));
 	$SwingUtilities::invokeAndWait($$new($bug4962534$5, this, result));
 	return result->get(0);
@@ -328,6 +333,7 @@ void bug4962534::setNewFrameLocationEDT() {
 }
 
 int32_t bug4962534::getJFrameWidthEDT() {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, result, $new($ints, 1));
 	$SwingUtilities::invokeAndWait($$new($bug4962534$7, this, result));
 	return result->get(0);

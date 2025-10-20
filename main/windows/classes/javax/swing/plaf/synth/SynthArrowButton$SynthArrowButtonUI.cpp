@@ -94,6 +94,7 @@ void SynthArrowButton$SynthArrowButtonUI::installDefaults($AbstractButton* b) {
 }
 
 void SynthArrowButton$SynthArrowButtonUI::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthArrowButton, button, $cast($SynthArrowButton, $nc(context)->getComponent()));
 	$var($SynthContext, var$0, context);
 	$var($Graphics, var$1, g);
@@ -103,6 +104,7 @@ void SynthArrowButton$SynthArrowButtonUI::paint($SynthContext* context, $Graphic
 }
 
 void SynthArrowButton$SynthArrowButtonUI::paintBackground($SynthContext* context, $Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, var$0, context);
 	$var($Graphics, var$1, g);
 	int32_t var$2 = $nc(c)->getWidth();
@@ -122,6 +124,7 @@ $Dimension* SynthArrowButton$SynthArrowButtonUI::getMaximumSize() {
 }
 
 $Dimension* SynthArrowButton$SynthArrowButtonUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$var($Dimension, dim, nullptr);
 	if ($nc($($nc(context)->getComponent()))->getName() == "ScrollBar.button"_s) {

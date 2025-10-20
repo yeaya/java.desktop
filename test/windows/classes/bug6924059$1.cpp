@@ -72,6 +72,7 @@ void bug6924059$1::init$() {
 }
 
 void bug6924059$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$$new($JScrollBar)->setUI(static_cast<$ScrollBarUI*>($$new($bug6924059$1$1, this)));
 	$init($bug6924059);
 	if (!$bug6924059::isMethodCalled) {

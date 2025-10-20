@@ -115,6 +115,7 @@ void BasicBorders$ButtonBorder::init$($Color* shadow, $Color* darkShadow, $Color
 }
 
 void BasicBorders$ButtonBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	bool isPressed = false;
 	bool isDefault = false;
 	if ($instanceOf($AbstractButton, c)) {

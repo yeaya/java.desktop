@@ -197,6 +197,7 @@ $Object* DefaultSynthStyle$StateInfo::clone() {
 }
 
 $String* DefaultSynthStyle$StateInfo::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, sb, $new($StringBuilder));
 	sb->append($($Object::toString()))->append(u',');
 	sb->append("state="_s)->append($($Integer::toString(this->state)))->append(u',');

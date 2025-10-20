@@ -94,6 +94,7 @@ void bug8032667::init() {
 
 $JCheckBox* bug8032667::getCheckBox($String* text, bool selected) {
 	$init(bug8032667);
+	$useLocalCurrentObjectStackCache();
 	$var($JCheckBox, checkBox, $new($JCheckBox, text));
 	checkBox->setSelected(selected);
 	checkBox->setSize($$new($Dimension, bug8032667::width, bug8032667::height));
@@ -102,6 +103,7 @@ $JCheckBox* bug8032667::getCheckBox($String* text, bool selected) {
 
 $Image* bug8032667::getImage($JComponent* component) {
 	$init(bug8032667);
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, image, $new($BufferedImage, bug8032667::scaledWidth, bug8032667::scaledHeight, $BufferedImage::TYPE_INT_ARGB));
 	$var($Graphics, g, image->getGraphics());
 	$nc(($cast($Graphics2D, g)))->scale((double)bug8032667::scale, (double)bug8032667::scale);

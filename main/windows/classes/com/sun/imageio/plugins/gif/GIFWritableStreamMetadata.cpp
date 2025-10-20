@@ -109,6 +109,7 @@ void GIFWritableStreamMetadata::reset() {
 }
 
 void GIFWritableStreamMetadata::mergeNativeTree($Node* root) {
+	$useLocalCurrentObjectStackCache();
 	$var($Node, node, root);
 	$init($GIFStreamMetadata);
 	if (!$nc($($nc(node)->getNodeName()))->equals($GIFStreamMetadata::nativeMetadataFormatName)) {
@@ -140,6 +141,7 @@ void GIFWritableStreamMetadata::mergeNativeTree($Node* root) {
 }
 
 void GIFWritableStreamMetadata::mergeStandardTree($Node* root) {
+	$useLocalCurrentObjectStackCache();
 	$var($Node, node, root);
 	$init($IIOMetadataFormatImpl);
 	if (!$nc($($nc(node)->getNodeName()))->equals($IIOMetadataFormatImpl::standardMetadataFormatName)) {

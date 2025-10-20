@@ -160,6 +160,7 @@ void JPopupMenu$AccessibleJPopupMenu::handlePopupIsVisibleEvent(bool visible) {
 }
 
 void JPopupMenu$AccessibleJPopupMenu::fireActiveDescendant() {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($BasicComboPopup, this->this$0)) {
 		$var($JList, popupList, $nc(($cast($BasicComboPopup, this->this$0)))->getList());
 		if (popupList == nullptr) {

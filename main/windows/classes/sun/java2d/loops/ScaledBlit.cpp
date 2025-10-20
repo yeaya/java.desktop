@@ -91,6 +91,7 @@ ScaledBlit* ScaledBlit::locate($SurfaceType* srctype, $CompositeType* comptype, 
 
 ScaledBlit* ScaledBlit::getFromCache($SurfaceType* src, $CompositeType* comp, $SurfaceType* dst) {
 	$init(ScaledBlit);
+	$useLocalCurrentObjectStackCache();
 	$var($Object, o, $nc(ScaledBlit::blitcache)->get(src, comp, dst));
 	if (o != nullptr) {
 		return $cast(ScaledBlit, o);

@@ -76,6 +76,7 @@ void StreamPrintServiceFactory$1::init$() {
 }
 
 $Object* StreamPrintServiceFactory$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$load($StreamPrintServiceFactory);
 	$var($Iterator, iterator, $nc($($ServiceLoader::load($StreamPrintServiceFactory::class$)))->iterator());

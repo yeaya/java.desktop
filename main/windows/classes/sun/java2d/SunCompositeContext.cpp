@@ -109,6 +109,7 @@ void SunCompositeContext::dispose() {
 }
 
 void SunCompositeContext::compose($Raster* src1, $Raster* src2, $WritableRaster* dst) {
+	$useLocalCurrentObjectStackCache();
 	$var($WritableRaster, src, nullptr);
 	int32_t w = 0;
 	int32_t h = 0;

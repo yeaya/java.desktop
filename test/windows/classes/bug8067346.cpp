@@ -109,6 +109,7 @@ void bug8067346::main($StringArray* args) {
 }
 
 void bug8067346::createUI() {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, $new($JFrame));
 	$set(this, menuBar, $new($JMenuBar));
 	$nc(this->frame)->setJMenuBar(this->menuBar);
@@ -125,6 +126,7 @@ void bug8067346::createUI() {
 }
 
 void bug8067346::performTest() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -155,6 +157,7 @@ void bug8067346::performTest() {
 }
 
 int32_t bug8067346::testMargin() {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t inx = 0; inx < $nc(this->menuClasses)->length; ++inx) {
 		$var($Insets, margin, $cast($Insets, $UIManager::get($$str({$nc(this->menuClasses)->get(inx), this->MARGIN}))));
 		if (margin != nullptr && margin->bottom == 0 && margin->left == 0 && margin->right == 0 && margin->top == 0) {
@@ -165,6 +168,7 @@ int32_t bug8067346::testMargin() {
 }
 
 int32_t bug8067346::testCheckIconOffset() {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t inx = 0; inx < $nc(this->menuClasses)->length; ++inx) {
 		$var($Object, checkIconOffset, $UIManager::get($$str({$nc(this->menuClasses)->get(inx), this->CHECKICONOFFSET})));
 		if (checkIconOffset != nullptr && $nc(($cast($Integer, checkIconOffset)))->intValue() == 0) {

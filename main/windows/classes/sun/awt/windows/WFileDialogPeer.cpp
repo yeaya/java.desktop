@@ -481,6 +481,7 @@ void WFileDialogPeer::setFilenameFilter($FilenameFilter* filter) {
 }
 
 bool WFileDialogPeer::checkFilenameFilter($String* filename) {
+	$useLocalCurrentObjectStackCache();
 	$var($FileDialog, fileDialog, $cast($FileDialog, this->target));
 	if (this->fileFilter == nullptr) {
 		return true;
@@ -530,6 +531,7 @@ void WFileDialogPeer::_hide() {
 }
 
 void WFileDialogPeer::show() {
+	$useLocalCurrentObjectStackCache();
 	$$new($Thread, nullptr, static_cast<$Runnable*>($$new(WFileDialogPeer$$Lambda$_show, this)), "FileDialog"_s, 0, false)->start();
 }
 
@@ -538,6 +540,7 @@ void WFileDialogPeer::hide() {
 }
 
 void WFileDialogPeer::setHWnd(int64_t hwnd) {
+	$useLocalCurrentObjectStackCache();
 	if (this->hwnd == hwnd) {
 		return;
 	}
@@ -558,6 +561,7 @@ void WFileDialogPeer::setHWnd(int64_t hwnd) {
 }
 
 void WFileDialogPeer::handleSelected($chars* buffer) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringArray, wFiles, ($$new($String, buffer))->split($cstr({'\0'})));
 	bool multiple = (wFiles->length > 1);
 	$var($String, jDirectory, nullptr);
@@ -592,6 +596,7 @@ void WFileDialogPeer::handleSelected($chars* buffer) {
 }
 
 void WFileDialogPeer::handleCancel() {
+	$useLocalCurrentObjectStackCache();
 	$var($FileDialog, fileDialog, $cast($FileDialog, this->target));
 	$nc($($AWTAccessor::getFileDialogAccessor()))->setFile(fileDialog, nullptr);
 	$nc($($AWTAccessor::getFileDialogAccessor()))->setFiles(fileDialog, nullptr);
@@ -614,6 +619,7 @@ void WFileDialogPeer::unblockWindow($WWindowPeer* window) {
 }
 
 void WFileDialogPeer::blockWindows($List* toBlock) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(toBlock)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -741,6 +747,7 @@ void WFileDialogPeer::replaceSurfaceData() {
 }
 
 bool WFileDialogPeer::isMultipleMode() {
+	$useLocalCurrentObjectStackCache();
 	$var($FileDialog, fileDialog, $cast($FileDialog, this->target));
 	return $nc($($AWTAccessor::getFileDialogAccessor()))->isMultipleMode(fileDialog);
 }
@@ -754,6 +761,7 @@ $Point* WFileDialogPeer::getLocationOnScreen() {
 }
 
 void clinit$WFileDialogPeer($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	{
 		WFileDialogPeer::initIDs();

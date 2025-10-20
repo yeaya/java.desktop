@@ -98,6 +98,7 @@ void BasicComboPopup$1::init$($BasicComboPopup* this$0, $ListModel* dataModel) {
 }
 
 void BasicComboPopup$1::processMouseEvent($MouseEvent* e$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($MouseEvent, e, e$renamed);
 	if ($BasicGraphicsUtils::isMenuShortcutKeyDown(e)) {
 		$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());

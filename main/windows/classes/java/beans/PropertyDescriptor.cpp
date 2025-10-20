@@ -124,6 +124,7 @@ $Object* allocate$PropertyDescriptor($Class* clazz) {
 }
 
 void PropertyDescriptor::init$($String* propertyName, $Class* beanClass) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, propertyName);
 	$Class* var$1 = beanClass;
 	$init($Introspector);
@@ -132,6 +133,7 @@ void PropertyDescriptor::init$($String* propertyName, $Class* beanClass) {
 }
 
 void PropertyDescriptor::init$($String* propertyName, $Class* beanClass, $String* readMethodName, $String* writeMethodName) {
+	$useLocalCurrentObjectStackCache();
 	$FeatureDescriptor::init$();
 	$set(this, readMethodRef, $new($MethodRef));
 	$set(this, writeMethodRef, $new($MethodRef));
@@ -173,6 +175,7 @@ void PropertyDescriptor::init$($String* propertyName, $Method* readMethod, $Meth
 }
 
 void PropertyDescriptor::init$($Map$Entry* entry, bool bound) {
+	$useLocalCurrentObjectStackCache();
 	$FeatureDescriptor::init$();
 	$set(this, readMethodRef, $new($MethodRef));
 	$set(this, writeMethodRef, $new($MethodRef));
@@ -214,6 +217,7 @@ void PropertyDescriptor::init$($Map$Entry* entry, bool bound) {
 
 $Class* PropertyDescriptor::getPropertyType() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$Class* type = getPropertyType0();
 		if (type == nullptr) {
 			try {
@@ -238,6 +242,7 @@ $Class* PropertyDescriptor::getPropertyType0() {
 
 $Method* PropertyDescriptor::getReadMethod() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Method, readMethod, $nc(this->readMethodRef)->get());
 		if (readMethod == nullptr) {
 			$Class* cls = getClass0();
@@ -291,6 +296,7 @@ void PropertyDescriptor::setReadMethod0($Method* readMethod) {
 
 $Method* PropertyDescriptor::getWriteMethod() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Method, writeMethod, $nc(this->writeMethodRef)->get());
 		if (writeMethod == nullptr) {
 			$Class* cls = getClass0();
@@ -381,6 +387,7 @@ $Class* PropertyDescriptor::getPropertyEditorClass() {
 }
 
 $PropertyEditor* PropertyDescriptor::createPropertyEditor(Object$* bean) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Object, editor, nullptr);
 	$Class* cls = getPropertyEditorClass();
@@ -410,6 +417,7 @@ $PropertyEditor* PropertyDescriptor::createPropertyEditor(Object$* bean) {
 }
 
 bool PropertyDescriptor::equals(Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals(this, obj)) {
 		return true;
 	}
@@ -449,6 +457,7 @@ bool PropertyDescriptor::compareMethods($Method* a, $Method* b) {
 }
 
 void PropertyDescriptor::init$(PropertyDescriptor* x, PropertyDescriptor* y) {
+	$useLocalCurrentObjectStackCache();
 	$FeatureDescriptor::init$(x, y);
 	$set(this, readMethodRef, $new($MethodRef));
 	$set(this, writeMethodRef, $new($MethodRef));
@@ -521,6 +530,7 @@ void PropertyDescriptor::init$(PropertyDescriptor* x, PropertyDescriptor* y) {
 }
 
 void PropertyDescriptor::init$(PropertyDescriptor* old) {
+	$useLocalCurrentObjectStackCache();
 	$FeatureDescriptor::init$(old);
 	$set(this, readMethodRef, $new($MethodRef));
 	$set(this, writeMethodRef, $new($MethodRef));
@@ -536,6 +546,7 @@ void PropertyDescriptor::init$(PropertyDescriptor* old) {
 }
 
 void PropertyDescriptor::updateGenericsFor($Class* type) {
+	$useLocalCurrentObjectStackCache();
 	setClass0(type);
 	try {
 		$var($Method, var$0, $nc(this->readMethodRef)->get());
@@ -547,6 +558,7 @@ void PropertyDescriptor::updateGenericsFor($Class* type) {
 }
 
 $Class* PropertyDescriptor::findPropertyType($Method* readMethod, $Method* writeMethod) {
+	$useLocalCurrentObjectStackCache();
 	$Class* propertyType = nullptr;
 	try {
 		if (readMethod != nullptr) {
@@ -578,6 +590,7 @@ $Class* PropertyDescriptor::findPropertyType($Method* readMethod, $Method* write
 }
 
 int32_t PropertyDescriptor::hashCode() {
+	$useLocalCurrentObjectStackCache();
 	int32_t result = 7;
 	result = 37 * result + ((getPropertyType() == nullptr) ? 0 : $nc($of(getPropertyType()))->hashCode());
 	result = 37 * result + ((getReadMethod() == nullptr) ? 0 : $nc($(getReadMethod()))->hashCode());
@@ -599,6 +612,7 @@ $String* PropertyDescriptor::getBaseName() {
 }
 
 void PropertyDescriptor::appendTo($StringBuilder* sb) {
+	$useLocalCurrentObjectStackCache();
 	$FeatureDescriptor::appendTo(sb, "bound"_s, this->bound);
 	$FeatureDescriptor::appendTo(sb, "constrained"_s, this->constrained);
 	$FeatureDescriptor::appendTo(sb, "propertyEditorClass"_s, this->propertyEditorClassRef);
@@ -608,6 +622,7 @@ void PropertyDescriptor::appendTo($StringBuilder* sb) {
 }
 
 bool PropertyDescriptor::isAssignable($Method* m1, $Method* m2) {
+	$useLocalCurrentObjectStackCache();
 	if (m1 == nullptr) {
 		return true;
 	}

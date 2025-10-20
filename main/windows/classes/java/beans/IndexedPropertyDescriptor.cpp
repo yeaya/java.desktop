@@ -101,6 +101,7 @@ $Object* allocate$IndexedPropertyDescriptor($Class* clazz) {
 }
 
 void IndexedPropertyDescriptor::init$($String* propertyName, $Class* beanClass) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, propertyName);
 	$Class* var$1 = beanClass;
 	$init($Introspector);
@@ -111,6 +112,7 @@ void IndexedPropertyDescriptor::init$($String* propertyName, $Class* beanClass) 
 }
 
 void IndexedPropertyDescriptor::init$($String* propertyName, $Class* beanClass, $String* readMethodName, $String* writeMethodName, $String* indexedReadMethodName, $String* indexedWriteMethodName) {
+	$useLocalCurrentObjectStackCache();
 	$PropertyDescriptor::init$(propertyName, beanClass, readMethodName, writeMethodName);
 	$set(this, indexedReadMethodRef, $new($MethodRef));
 	$set(this, indexedWriteMethodRef, $new($MethodRef));
@@ -136,6 +138,7 @@ void IndexedPropertyDescriptor::init$($String* propertyName, $Method* readMethod
 }
 
 void IndexedPropertyDescriptor::init$($Map$Entry* entry, bool bound) {
+	$useLocalCurrentObjectStackCache();
 	$PropertyDescriptor::init$(entry, bound);
 	$set(this, indexedReadMethodRef, $new($MethodRef));
 	$set(this, indexedWriteMethodRef, $new($MethodRef));
@@ -147,6 +150,7 @@ void IndexedPropertyDescriptor::init$($Map$Entry* entry, bool bound) {
 
 $Method* IndexedPropertyDescriptor::getIndexedReadMethod() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Method, indexedReadMethod, $nc(this->indexedReadMethodRef)->get());
 		if (indexedReadMethod == nullptr) {
 			$Class* cls = getClass0();
@@ -198,6 +202,7 @@ void IndexedPropertyDescriptor::setIndexedReadMethod0($Method* readMethod) {
 
 $Method* IndexedPropertyDescriptor::getIndexedWriteMethod() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$var($Method, indexedWriteMethod, $nc(this->indexedWriteMethodRef)->get());
 		if (indexedWriteMethod == nullptr) {
 			$Class* cls = getClass0();
@@ -261,6 +266,7 @@ void IndexedPropertyDescriptor::setIndexedWriteMethod0($Method* writeMethod) {
 
 $Class* IndexedPropertyDescriptor::getIndexedPropertyType() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		$Class* type = getIndexedPropertyType0();
 		if (type == nullptr) {
 			try {
@@ -284,6 +290,7 @@ $Class* IndexedPropertyDescriptor::getIndexedPropertyType0() {
 }
 
 $Class* IndexedPropertyDescriptor::findIndexedPropertyType($Method* indexedReadMethod, $Method* indexedWriteMethod) {
+	$useLocalCurrentObjectStackCache();
 	$Class* indexedPropertyType = nullptr;
 	if (indexedReadMethod != nullptr) {
 		$var($ClassArray, params, getParameterTypes(getClass0(), indexedReadMethod));
@@ -328,6 +335,7 @@ $Class* IndexedPropertyDescriptor::findIndexedPropertyType($Method* indexedReadM
 }
 
 bool IndexedPropertyDescriptor::equals(Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals(this, obj)) {
 		return true;
 	}
@@ -350,6 +358,7 @@ bool IndexedPropertyDescriptor::equals(Object$* obj) {
 }
 
 void IndexedPropertyDescriptor::init$($PropertyDescriptor* x, $PropertyDescriptor* y) {
+	$useLocalCurrentObjectStackCache();
 	$PropertyDescriptor::init$(x, y);
 	$set(this, indexedReadMethodRef, $new($MethodRef));
 	$set(this, indexedWriteMethodRef, $new($MethodRef));
@@ -385,6 +394,7 @@ void IndexedPropertyDescriptor::init$($PropertyDescriptor* x, $PropertyDescripto
 }
 
 void IndexedPropertyDescriptor::init$(IndexedPropertyDescriptor* old) {
+	$useLocalCurrentObjectStackCache();
 	$PropertyDescriptor::init$(old);
 	$set(this, indexedReadMethodRef, $new($MethodRef));
 	$set(this, indexedWriteMethodRef, $new($MethodRef));
@@ -396,6 +406,7 @@ void IndexedPropertyDescriptor::init$(IndexedPropertyDescriptor* old) {
 }
 
 void IndexedPropertyDescriptor::updateGenericsFor($Class* type) {
+	$useLocalCurrentObjectStackCache();
 	$PropertyDescriptor::updateGenericsFor(type);
 	try {
 		$var($Method, var$0, $nc(this->indexedReadMethodRef)->get());
@@ -415,6 +426,7 @@ int32_t IndexedPropertyDescriptor::hashCode() {
 }
 
 void IndexedPropertyDescriptor::appendTo($StringBuilder* sb) {
+	$useLocalCurrentObjectStackCache();
 	$PropertyDescriptor::appendTo(sb);
 	$FeatureDescriptor::appendTo(sb, "indexedPropertyType"_s, this->indexedPropertyTypeRef);
 	$FeatureDescriptor::appendTo(sb, "indexedReadMethod"_s, $($of($nc(this->indexedReadMethodRef)->get())));

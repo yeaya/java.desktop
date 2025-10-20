@@ -77,6 +77,7 @@ void SwingWorker$SwingWorkerPropertyChangeSupport::init$($SwingWorker* this$0, O
 }
 
 void SwingWorker$SwingWorkerPropertyChangeSupport::firePropertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if ($SwingUtilities::isEventDispatchThread()) {
 		$PropertyChangeSupport::firePropertyChange(evt);
 	} else {

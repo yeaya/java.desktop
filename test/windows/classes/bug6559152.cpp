@@ -235,6 +235,7 @@ void bug6559152::init$() {
 
 void bug6559152::main($StringArray* args) {
 	$init(bug6559152);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug6559152::robot, $new($Robot));
 	$nc(bug6559152::robot)->setAutoDelay(100);
 	{
@@ -260,6 +261,7 @@ void bug6559152::main($StringArray* args) {
 
 void bug6559152::blockTillDisplayed($JComponent* comp) {
 	$init(bug6559152);
+	$useLocalCurrentObjectStackCache();
 	while (bug6559152::p == nullptr) {
 		try {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug6559152$$Lambda$lambda$blockTillDisplayed$2$2, comp)));
@@ -276,6 +278,7 @@ void bug6559152::blockTillDisplayed($JComponent* comp) {
 
 void bug6559152::setupUI() {
 	$init(bug6559152);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(bug6559152::frame, $new($JFrame));
 	$nc(bug6559152::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 	$var($DefaultTableModel, model, $new($DefaultTableModel, 1, 1));

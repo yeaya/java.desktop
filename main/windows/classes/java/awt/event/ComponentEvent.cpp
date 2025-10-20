@@ -72,6 +72,7 @@ $Component* ComponentEvent::getComponent() {
 }
 
 $String* ComponentEvent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, typeStr, nullptr);
 	$var($Rectangle, b, this->source != nullptr ? $nc(($cast($Component, this->source)))->getBounds() : ($Rectangle*)nullptr);
 	switch (this->id) {

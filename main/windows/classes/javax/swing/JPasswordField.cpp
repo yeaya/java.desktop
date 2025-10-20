@@ -282,6 +282,7 @@ $String* JPasswordField::getText(int32_t offs, int32_t len) {
 }
 
 void JPasswordField::setText($String* t) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	int32_t nleft = $nc(doc)->getLength();
 	$var($Segment, text, $new($Segment));
@@ -301,6 +302,7 @@ void JPasswordField::setText($String* t) {
 }
 
 $chars* JPasswordField::getPassword() {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	$var($Segment, txt, $new($Segment));
 	try {
@@ -326,6 +328,7 @@ void JPasswordField::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JPasswordField::paramString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$($JTextField::paramString()), ",echoChar="_s, $$str(this->echoChar)});
 }
 

@@ -116,6 +116,7 @@ void HeadlessJCheckBox::init$() {
 }
 
 void HeadlessJCheckBox::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($JCheckBox, ch, nullptr);
 	$assign(ch, $new($JCheckBox));
 	$assign(ch, $new($JCheckBox, "Press me"_s));

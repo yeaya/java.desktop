@@ -183,6 +183,7 @@ $List* JDK13Services::getProviders($Class* serviceClass) {
 $String* JDK13Services::getDefaultProviderClassName($Class* typeClass) {
 	$load(JDK13Services);
 	$synchronized(class$) {
+		$useLocalCurrentObjectStackCache();
 		$var($String, value, nullptr);
 		$var($String, defaultProviderSpec, getDefaultProvider(typeClass));
 		if (defaultProviderSpec != nullptr) {
@@ -201,6 +202,7 @@ $String* JDK13Services::getDefaultProviderClassName($Class* typeClass) {
 $String* JDK13Services::getDefaultInstanceName($Class* typeClass) {
 	$load(JDK13Services);
 	$synchronized(class$) {
+		$useLocalCurrentObjectStackCache();
 		$var($String, value, nullptr);
 		$var($String, defaultProviderSpec, getDefaultProvider(typeClass));
 		if (defaultProviderSpec != nullptr) {
@@ -217,6 +219,7 @@ $String* JDK13Services::getDefaultProvider($Class* typeClass) {
 	$load(JDK13Services);
 	$synchronized(class$) {
 		$load(JDK13Services);
+		$useLocalCurrentObjectStackCache();
 		$beforeCallerSensitive();
 		$load($SourceDataLine);
 		bool var$6 = !$of($SourceDataLine::class$)->equals(typeClass);

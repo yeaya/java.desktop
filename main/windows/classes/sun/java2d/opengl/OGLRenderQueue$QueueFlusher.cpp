@@ -88,6 +88,7 @@ $Object* allocate$OGLRenderQueue$QueueFlusher($Class* clazz) {
 }
 
 void OGLRenderQueue$QueueFlusher::init$($OGLRenderQueue* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$var($String, name, "Java2D Queue Flusher"_s);
 	$set(this, thread, $new($Thread, $($ThreadGroupUtils::getRootThreadGroup()), this, name, 0, false));
@@ -122,6 +123,7 @@ void OGLRenderQueue$QueueFlusher::flushAndInvokeNow($Runnable* task) {
 
 void OGLRenderQueue$QueueFlusher::run() {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		bool timedOut = false;
 		while (true) {
 			while (!this->needsFlush) {

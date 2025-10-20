@@ -237,6 +237,7 @@ void Path2D::init$(int32_t rule, int32_t initialTypes) {
 
 $bytes* Path2D::expandPointTypes($bytes* oldPointTypes, int32_t needed) {
 	$init(Path2D);
+	$useLocalCurrentObjectStackCache();
 	int32_t oldSize = $nc(oldPointTypes)->length;
 	int32_t newSizeMin = oldSize + needed;
 	if (newSizeMin < oldSize) {
@@ -485,6 +486,7 @@ $PathIterator* Path2D::getPathIterator($AffineTransform* at, double flatness) {
 }
 
 void Path2D::writeObject($ObjectOutputStream* s, bool isdbl) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultWriteObject();
 	$var($floats, fCoords, nullptr);
 	$var($doubles, dCoords, nullptr);
@@ -555,6 +557,7 @@ void Path2D::writeObject($ObjectOutputStream* s, bool isdbl) {
 }
 
 void Path2D::readObject($ObjectInputStream* s, bool storedbl) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	s->readByte();
 	int32_t nT = s->readInt();

@@ -442,6 +442,7 @@ $BoundedRangeModel* JScrollBar::getModel() {
 }
 
 void JScrollBar::setModel($BoundedRangeModel* newModel) {
+	$useLocalCurrentObjectStackCache();
 	$var($Integer, oldValue, nullptr);
 	$var($BoundedRangeModel, oldModel, this->model);
 	if (this->model != nullptr) {
@@ -492,6 +493,7 @@ int32_t JScrollBar::getValue() {
 }
 
 void JScrollBar::setValue(int32_t value) {
+	$useLocalCurrentObjectStackCache();
 	$var($BoundedRangeModel, m, getModel());
 	int32_t oldValue = $nc(m)->getValue();
 	m->setValue(value);
@@ -543,6 +545,7 @@ void JScrollBar::setValueIsAdjusting(bool b) {
 }
 
 void JScrollBar::setValues(int32_t newValue, int32_t newExtent, int32_t newMin, int32_t newMax) {
+	$useLocalCurrentObjectStackCache();
 	$var($BoundedRangeModel, m, getModel());
 	int32_t oldValue = $nc(m)->getValue();
 	m->setRangeProperties(newValue, newExtent, newMin, newMax, m->getValueIsAdjusting());
@@ -574,6 +577,7 @@ void JScrollBar::fireAdjustmentValueChanged(int32_t id, int32_t type, int32_t va
 }
 
 void JScrollBar::fireAdjustmentValueChanged(int32_t id, int32_t type, int32_t value, bool isAdjusting) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($AdjustmentEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -606,6 +610,7 @@ $Dimension* JScrollBar::getMaximumSize() {
 }
 
 void JScrollBar::setEnabled(bool x) {
+	$useLocalCurrentObjectStackCache();
 	$JComponent::setEnabled(x);
 	$var($ComponentArray, children, getComponents());
 	{
@@ -633,6 +638,7 @@ void JScrollBar::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JScrollBar::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, orientationString, this->orientation == $Adjustable::HORIZONTAL ? "HORIZONTAL"_s : "VERTICAL"_s);
 	return $str({$($JComponent::paramString()), ",blockIncrement="_s, $$str(this->blockIncrement), ",orientation="_s, orientationString, ",unitIncrement="_s, $$str(this->unitIncrement)});
 }

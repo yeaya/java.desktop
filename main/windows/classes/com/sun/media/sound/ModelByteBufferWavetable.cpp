@@ -173,6 +173,7 @@ $ModelByteBuffer* ModelByteBufferWavetable::getBuffer() {
 }
 
 $AudioFormat* ModelByteBufferWavetable::getFormat() {
+	$useLocalCurrentObjectStackCache();
 	if (this->format == nullptr) {
 		if (this->buffer == nullptr) {
 			return nullptr;
@@ -195,6 +196,7 @@ $AudioFormat* ModelByteBufferWavetable::getFormat() {
 }
 
 $AudioFloatInputStream* ModelByteBufferWavetable::openStream() {
+	$useLocalCurrentObjectStackCache();
 	if (this->buffer == nullptr) {
 		return nullptr;
 	}

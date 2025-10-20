@@ -137,6 +137,7 @@ void BufferedImageFilter::convertToRGB() {
 }
 
 void BufferedImageFilter::setPixels(int32_t x, int32_t y, int32_t w, int32_t h, $ColorModel* model, $bytes* pixels, int32_t off, int32_t scansize) {
+	$useLocalCurrentObjectStackCache();
 	if (w < 0 || h < 0) {
 		$throwNew($IllegalArgumentException, $$str({"Width ("_s, $$str(w), ") and height ("_s, $$str(h), ") must be > 0"_s}));
 	}
@@ -203,6 +204,7 @@ void BufferedImageFilter::setPixels(int32_t x, int32_t y, int32_t w, int32_t h, 
 }
 
 void BufferedImageFilter::setPixels(int32_t x, int32_t y, int32_t w, int32_t h, $ColorModel* model, $ints* pixels, int32_t off, int32_t scansize) {
+	$useLocalCurrentObjectStackCache();
 	if (w < 0 || h < 0) {
 		$throwNew($IllegalArgumentException, $$str({"Width ("_s, $$str(w), ") and height ("_s, $$str(h), ") must be > 0"_s}));
 	}
@@ -271,6 +273,7 @@ void BufferedImageFilter::setPixels(int32_t x, int32_t y, int32_t w, int32_t h, 
 }
 
 void BufferedImageFilter::imageComplete(int32_t status) {
+	$useLocalCurrentObjectStackCache();
 	$var($WritableRaster, wr, nullptr);
 	{
 		$var($BufferedImage, bi, nullptr)
@@ -341,6 +344,7 @@ void BufferedImageFilter::imageComplete(int32_t status) {
 }
 
 $WritableRaster* BufferedImageFilter::createDCMraster() {
+	$useLocalCurrentObjectStackCache();
 	$var($WritableRaster, wr, nullptr);
 	$var($DirectColorModel, dcm, $cast($DirectColorModel, this->model));
 	bool hasAlpha = $nc(this->model)->hasAlpha();

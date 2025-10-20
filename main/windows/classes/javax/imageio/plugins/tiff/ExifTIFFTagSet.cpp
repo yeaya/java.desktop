@@ -573,6 +573,7 @@ $List* ExifTIFFTagSet::tags = nullptr;
 
 void ExifTIFFTagSet::initTags() {
 	$init(ExifTIFFTagSet);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(ExifTIFFTagSet::tags, $new($ArrayList, 42));
 	$nc(ExifTIFFTagSet::tags)->add($$new($ExifTIFFTagSet$ExifVersion));
 	$nc(ExifTIFFTagSet::tags)->add($$new($ExifTIFFTagSet$FlashPixVersion));

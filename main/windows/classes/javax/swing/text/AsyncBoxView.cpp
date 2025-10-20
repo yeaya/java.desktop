@@ -273,6 +273,7 @@ void AsyncBoxView::minorRequirementChange($AsyncBoxView$ChildState* cs) {
 }
 
 void AsyncBoxView::flushRequirementChanges() {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractDocument, doc, $cast($AbstractDocument, getDocument()));
 	{
 		$var($Throwable, var$0, nullptr);
@@ -348,6 +349,7 @@ void AsyncBoxView::flushRequirementChanges() {
 }
 
 void AsyncBoxView::replace(int32_t offset, int32_t length, $ViewArray* views) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->stats) {
 		for (int32_t i = 0; i < length; ++i) {
 			$var($AsyncBoxView$ChildState, cs, $cast($AsyncBoxView$ChildState, $nc(this->stats)->remove(offset)));
@@ -370,6 +372,7 @@ void AsyncBoxView::replace(int32_t offset, int32_t length, $ViewArray* views) {
 }
 
 void AsyncBoxView::loadChildren($ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, e, getElement());
 	int32_t n = $nc(e)->getElementCount();
 	if (n > 0) {
@@ -409,6 +412,7 @@ void AsyncBoxView::setParent($View* parent) {
 
 void AsyncBoxView::preferenceChanged($View* child, bool width, bool height) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		if (child == nullptr) {
 			$nc($(getParent()))->preferenceChanged(this, width, height);
 		} else {
@@ -443,6 +447,7 @@ float AsyncBoxView::getSpanOnAxis(int32_t axis) {
 }
 
 void AsyncBoxView::setSpanOnAxis(int32_t axis, float span) {
+	$useLocalCurrentObjectStackCache();
 	float margin = getInsetSpan(axis);
 	if (axis == getMinorAxis()) {
 		float targetSpan = span - margin;
@@ -531,6 +536,7 @@ int32_t AsyncBoxView::getViewIndex(int32_t pos, $Position$Bias* b) {
 }
 
 $Shape* AsyncBoxView::modelToView(int32_t pos, $Shape* a, $Position$Bias* b) {
+	$useLocalCurrentObjectStackCache();
 	int32_t index = getViewIndex(pos, b);
 	$var($Shape, ca, $nc(this->locator)->getChildAllocation(index, a));
 	$var($AsyncBoxView$ChildState, cs, getChildState(index));
@@ -542,6 +548,7 @@ $Shape* AsyncBoxView::modelToView(int32_t pos, $Shape* a, $Position$Bias* b) {
 }
 
 int32_t AsyncBoxView::viewToModel(float x, float y, $Shape* a, $Position$BiasArray* biasReturn) {
+	$useLocalCurrentObjectStackCache();
 	int32_t pos = 0;
 	int32_t index = 0;
 	$var($Shape, ca, nullptr);

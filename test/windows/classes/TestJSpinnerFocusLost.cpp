@@ -363,6 +363,7 @@ $Robot* TestJSpinnerFocusLost::robot = nullptr;
 
 void TestJSpinnerFocusLost::blockTillDisplayed($Component* comp) {
 	$init(TestJSpinnerFocusLost);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	while (p == nullptr) {
 		try {
@@ -379,6 +380,7 @@ void TestJSpinnerFocusLost::blockTillDisplayed($Component* comp) {
 }
 
 void TestJSpinnerFocusLost::init$() {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$();
 	this->spinnerGainedFocus = false;
 	this->spinnerLostFocus = false;
@@ -390,6 +392,7 @@ void TestJSpinnerFocusLost::init$() {
 }
 
 void TestJSpinnerFocusLost::doTest() {
+	$useLocalCurrentObjectStackCache();
 	blockTillDisplayed(this->spinner);
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestJSpinnerFocusLost$$Lambda$lambda$doTest$0, this)));
 	try {
@@ -420,6 +423,7 @@ void TestJSpinnerFocusLost::doTest() {
 }
 
 void TestJSpinnerFocusLost::stateChanged($ChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->changing) {
 		return;
 	}
@@ -447,6 +451,7 @@ void TestJSpinnerFocusLost::focusLost($FocusEvent* e) {
 
 void TestJSpinnerFocusLost::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(TestJSpinnerFocusLost);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 	} catch ($UnsupportedLookAndFeelException&) {
@@ -467,6 +472,7 @@ void TestJSpinnerFocusLost::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 
 void TestJSpinnerFocusLost::main($StringArray* argv) {
 	$init(TestJSpinnerFocusLost);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(TestJSpinnerFocusLost::robot, $new($Robot));
 	$nc(TestJSpinnerFocusLost::robot)->setAutoWaitForIdle(true);
 	$nc(TestJSpinnerFocusLost::robot)->setAutoDelay(250);
@@ -528,6 +534,7 @@ void TestJSpinnerFocusLost::lambda$doTest$1() {
 }
 
 void TestJSpinnerFocusLost::lambda$doTest$0() {
+	$useLocalCurrentObjectStackCache();
 	$nc($($nc(($cast($JSpinner$DefaultEditor, $($nc(this->spinner)->getEditor()))))->getTextField()))->requestFocus();
 }
 

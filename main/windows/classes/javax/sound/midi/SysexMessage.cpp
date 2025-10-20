@@ -88,6 +88,7 @@ void SysexMessage::setMessage($bytes* data, int32_t length) {
 }
 
 void SysexMessage::setMessage(int32_t status, $bytes* data, int32_t length) {
+	$useLocalCurrentObjectStackCache();
 	$MidiUtils::checkSysexStatus(status);
 	if (length < 0 || length > $nc(data)->length) {
 		$throwNew($IndexOutOfBoundsException, $$str({"length out of bounds: "_s, $$str(length)}));

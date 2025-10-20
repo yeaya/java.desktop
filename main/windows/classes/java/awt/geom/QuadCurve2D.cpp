@@ -412,6 +412,7 @@ bool QuadCurve2D::inwards(int32_t pttag, int32_t opt1tag, int32_t opt2tag) {
 }
 
 bool QuadCurve2D::intersects(double x, double y, double w, double h) {
+	$useLocalCurrentObjectStackCache();
 	if (w <= 0 || h <= 0) {
 		return false;
 	}

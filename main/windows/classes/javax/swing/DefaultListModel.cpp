@@ -269,6 +269,7 @@ void DefaultListModel::addAll($Collection* c) {
 }
 
 void DefaultListModel::addAll(int32_t index, $Collection* c) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index > getSize()) {
 		$throwNew($ArrayIndexOutOfBoundsException, $$str({"index out of range: "_s, $$str(index)}));
 	}

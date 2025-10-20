@@ -361,6 +361,7 @@ void SF2Instrument::setGlobalZone($SF2GlobalRegion* zone) {
 }
 
 $String* SF2Instrument::toString() {
+	$useLocalCurrentObjectStackCache();
 	if (this->bank == 128) {
 		return $str({"Drumkit: "_s, this->name, " preset #"_s, $$str(this->preset)});
 	} else {
@@ -369,6 +370,7 @@ $String* SF2Instrument::toString() {
 }
 
 $ModelPerformerArray* SF2Instrument::getPerformers() {
+	$useLocalCurrentObjectStackCache();
 	int32_t performercount = 0;
 	{
 		$var($Iterator, i$, $nc(this->regions)->iterator());
@@ -777,6 +779,7 @@ $ModelPerformerArray* SF2Instrument::getPerformers() {
 }
 
 void SF2Instrument::convertModulator($ModelPerformer* performer, $SF2Modulator* modulator) {
+	$useLocalCurrentObjectStackCache();
 	$var($ModelSource, src1, convertSource($nc(modulator)->getSourceOperator()));
 	$var($ModelSource, src2, convertSource($nc(modulator)->getAmountSourceOperator()));
 	if (src1 == nullptr && $nc(modulator)->getSourceOperator() != 0) {
@@ -806,6 +809,7 @@ void SF2Instrument::convertModulator($ModelPerformer* performer, $SF2Modulator* 
 
 $ModelSource* SF2Instrument::convertSource(int32_t src) {
 	$init(SF2Instrument);
+	$useLocalCurrentObjectStackCache();
 	if (src == 0) {
 		return nullptr;
 	}
@@ -867,6 +871,7 @@ $ModelSource* SF2Instrument::convertSource(int32_t src) {
 
 $ModelDestination* SF2Instrument::convertDestination(int32_t dst, $doubles* amountcorrection, $ModelSourceArray* extrasrc) {
 	$init(SF2Instrument);
+	$useLocalCurrentObjectStackCache();
 	$var($ModelIdentifier, id, nullptr);
 	switch (dst) {
 	case $SF2Region::GENERATOR_INITIALFILTERFC:
@@ -1090,6 +1095,7 @@ $ModelDestination* SF2Instrument::convertDestination(int32_t dst, $doubles* amou
 }
 
 void SF2Instrument::addTimecentValue($ModelPerformer* performer, $ModelIdentifier* dest, int16_t value) {
+	$useLocalCurrentObjectStackCache();
 	double fvalue = 0.0;
 	if (value == -12000) {
 		$init($Double);
@@ -1101,16 +1107,19 @@ void SF2Instrument::addTimecentValue($ModelPerformer* performer, $ModelIdentifie
 }
 
 void SF2Instrument::addValue($ModelPerformer* performer, $ModelIdentifier* dest, int16_t value) {
+	$useLocalCurrentObjectStackCache();
 	double fvalue = (double)value;
 	$nc($($nc(performer)->getConnectionBlocks()))->add($$new($ModelConnectionBlock, fvalue, $$new($ModelDestination, dest)));
 }
 
 void SF2Instrument::addValue($ModelPerformer* performer, $ModelIdentifier* dest, double value) {
+	$useLocalCurrentObjectStackCache();
 	double fvalue = value;
 	$nc($($nc(performer)->getConnectionBlocks()))->add($$new($ModelConnectionBlock, fvalue, $$new($ModelDestination, dest)));
 }
 
 int16_t SF2Instrument::getGeneratorValue($Map* generators, int32_t gen) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(generators)->containsKey($($Integer::valueOf(gen)))) {
 		return $nc(($cast($Short, $(generators->get($($Integer::valueOf(gen)))))))->shortValue();
 	}

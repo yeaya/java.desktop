@@ -77,6 +77,7 @@ void bug7045593$2::init$() {
 }
 
 void bug7045593$2::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($bug7045593);
 		$var($Rectangle, r, $nc($bug7045593::jtf)->modelToView(1));

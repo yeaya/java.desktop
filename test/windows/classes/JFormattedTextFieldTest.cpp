@@ -177,6 +177,7 @@ void JFormattedTextFieldTest::createUI() {
 }
 
 void JFormattedTextFieldTest::actionPerformed($ActionEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JButton, $($nc(evt)->getSource()))) {
 		$var($JButton, btn, $cast($JButton, evt->getSource()));
 		cleanUp();
@@ -219,6 +220,7 @@ void JFormattedTextFieldTest::cleanUp() {
 }
 
 void JFormattedTextFieldTest::lambda$createUI$0() {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(JFormattedTextFieldTest::mainFrame, $new($JFrame, "Window LAF JFormattedTextField Test"_s));
 	$assignStatic(JFormattedTextFieldTest::layout, $new($GridBagLayout));
 	$assignStatic(JFormattedTextFieldTest::mainControlPanel, $new($JPanel, static_cast<$LayoutManager*>(JFormattedTextFieldTest::layout)));

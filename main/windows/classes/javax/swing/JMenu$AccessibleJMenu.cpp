@@ -127,6 +127,7 @@ void JMenu$AccessibleJMenu::init$($JMenu* this$0) {
 }
 
 int32_t JMenu$AccessibleJMenu::getAccessibleChildrenCount() {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentArray, children, this->this$0->getMenuComponents());
 	int32_t count = 0;
 	{
@@ -146,6 +147,7 @@ int32_t JMenu$AccessibleJMenu::getAccessibleChildrenCount() {
 }
 
 $Accessible* JMenu$AccessibleJMenu::getAccessibleChild(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentArray, children, this->this$0->getMenuComponents());
 	int32_t count = 0;
 	{
@@ -182,6 +184,7 @@ $AccessibleSelection* JMenu$AccessibleJMenu::getAccessibleSelection() {
 }
 
 int32_t JMenu$AccessibleJMenu::getAccessibleSelectionCount() {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuElementArray, me, $nc($($MenuSelectionManager::defaultManager()))->getSelectedPath());
 	if (me != nullptr) {
 		for (int32_t i = 0; i < me->length; ++i) {
@@ -196,6 +199,7 @@ int32_t JMenu$AccessibleJMenu::getAccessibleSelectionCount() {
 }
 
 $Accessible* JMenu$AccessibleJMenu::getAccessibleSelection(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (i < 0 || i >= this->this$0->getItemCount()) {
 		return nullptr;
 	}
@@ -215,6 +219,7 @@ $Accessible* JMenu$AccessibleJMenu::getAccessibleSelection(int32_t i) {
 }
 
 bool JMenu$AccessibleJMenu::isAccessibleChildSelected(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuElementArray, me, $nc($($MenuSelectionManager::defaultManager()))->getSelectedPath());
 	if (me != nullptr) {
 		$var($JMenuItem, mi, this->this$0->getItem(i));
@@ -228,6 +233,7 @@ bool JMenu$AccessibleJMenu::isAccessibleChildSelected(int32_t i) {
 }
 
 void JMenu$AccessibleJMenu::addAccessibleSelection(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (i < 0 || i >= this->this$0->getItemCount()) {
 		return;
 	}
@@ -243,6 +249,7 @@ void JMenu$AccessibleJMenu::addAccessibleSelection(int32_t i) {
 }
 
 void JMenu$AccessibleJMenu::removeAccessibleSelection(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	if (i < 0 || i >= this->this$0->getItemCount()) {
 		return;
 	}
@@ -260,6 +267,7 @@ void JMenu$AccessibleJMenu::removeAccessibleSelection(int32_t i) {
 }
 
 void JMenu$AccessibleJMenu::clearAccessibleSelection() {
+	$useLocalCurrentObjectStackCache();
 	$var($MenuElementArray, old, $nc($($MenuSelectionManager::defaultManager()))->getSelectedPath());
 	if (old != nullptr) {
 		for (int32_t j = 0; j < old->length; ++j) {

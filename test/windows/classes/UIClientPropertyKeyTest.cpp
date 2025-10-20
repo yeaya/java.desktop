@@ -196,6 +196,7 @@ void UIClientPropertyKeyTest::init$() {
 
 void UIClientPropertyKeyTest::main($StringArray* args) {
 	$init(UIClientPropertyKeyTest);
+	$useLocalCurrentObjectStackCache();
 	$EventQueue::invokeAndWait(static_cast<$Runnable*>($$new(UIClientPropertyKeyTest$$Lambda$testSetUI)));
 	$EventQueue::invokeAndWait(static_cast<$Runnable*>($$new(UIClientPropertyKeyTest$$Lambda$testSerialization$1)));
 }
@@ -211,6 +212,7 @@ void UIClientPropertyKeyTest::testSerialization() {
 
 void UIClientPropertyKeyTest::testSetUI() {
 	$init(UIClientPropertyKeyTest);
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, comp, $new($JButton));
 	comp->putClientProperty("key1"_s, "value1"_s);
 	{
@@ -231,6 +233,7 @@ void UIClientPropertyKeyTest::testSetUI() {
 
 void UIClientPropertyKeyTest::validate($JComponent* comp) {
 	$init(UIClientPropertyKeyTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, $nc(comp)->getClientProperty("key1"_s));
 	if (!$nc($of(value))->equals("value1"_s)) {
 		$throwNew($RuntimeException, $$str({"Incorrect value: "_s, value}));
@@ -243,6 +246,7 @@ void UIClientPropertyKeyTest::validate($JComponent* comp) {
 
 void UIClientPropertyKeyTest::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(UIClientPropertyKeyTest);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 		$init($System);
@@ -265,6 +269,7 @@ void UIClientPropertyKeyTest::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 
 $JComponent* UIClientPropertyKeyTest::serializeDeserialize($JComponent* comp) {
 	$init(UIClientPropertyKeyTest);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($ByteArrayOutputStream, byteOut, $new($ByteArrayOutputStream));
 		$var($ObjectOutputStream, out, $new($ObjectOutputStream, byteOut));

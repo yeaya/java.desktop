@@ -209,6 +209,7 @@ void AbstractDataLine::init$($DataLine$Info* info, $AbstractMixer* mixer, $Contr
 }
 
 void AbstractDataLine::open($AudioFormat* format, int32_t bufferSize) {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(this->mixer) {
 		if (!isOpen()) {
 			$Toolkit::isFullySpecifiedAudioFormat(format);
@@ -321,6 +322,7 @@ void AbstractDataLine::setActive(bool active) {
 }
 
 void AbstractDataLine::setStarted(bool started) {
+	$useLocalCurrentObjectStackCache();
 	bool sendEvents = false;
 	int64_t position = getLongFramePosition();
 	if (this->started != started) {

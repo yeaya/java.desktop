@@ -104,6 +104,7 @@ void SinglePixelPackedSampleModel::initIDs() {
 }
 
 void SinglePixelPackedSampleModel::init$(int32_t dataType, int32_t w, int32_t h, $ints* bitMasks) {
+	$useLocalCurrentObjectStackCache();
 	SinglePixelPackedSampleModel::init$(dataType, w, h, w, bitMasks);
 	if (dataType != $DataBuffer::TYPE_BYTE && dataType != $DataBuffer::TYPE_USHORT && dataType != $DataBuffer::TYPE_INT) {
 		$throwNew($IllegalArgumentException, $$str({"Unsupported data type "_s, $$str(dataType)}));
@@ -111,6 +112,7 @@ void SinglePixelPackedSampleModel::init$(int32_t dataType, int32_t w, int32_t h,
 }
 
 void SinglePixelPackedSampleModel::init$(int32_t dataType, int32_t w, int32_t h, int32_t scanlineStride, $ints* bitMasks) {
+	$useLocalCurrentObjectStackCache();
 	$SampleModel::init$(dataType, w, h, $nc(bitMasks)->length);
 	if (dataType != $DataBuffer::TYPE_BYTE && dataType != $DataBuffer::TYPE_USHORT && dataType != $DataBuffer::TYPE_INT) {
 		$throwNew($IllegalArgumentException, $$str({"Unsupported data type "_s, $$str(dataType)}));
@@ -212,6 +214,7 @@ int32_t SinglePixelPackedSampleModel::getScanlineStride() {
 }
 
 $SampleModel* SinglePixelPackedSampleModel::createSubsetSampleModel($ints* bands) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(bands)->length > this->numBands) {
 		$throwNew($RasterFormatException, $$str({"There are only "_s, $$str(this->numBands), " bands"_s}));
 	}
@@ -223,6 +226,7 @@ $SampleModel* SinglePixelPackedSampleModel::createSubsetSampleModel($ints* bands
 }
 
 $Object* SinglePixelPackedSampleModel::getDataElements(int32_t x, int32_t y, Object$* obj$renamed, $DataBuffer* data) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, obj, obj$renamed);
 	if ((x < 0) || (y < 0) || (x >= this->width) || (y >= this->height)) {
 		$throwNew($ArrayIndexOutOfBoundsException, "Coordinate out of bounds!"_s);
@@ -345,6 +349,7 @@ $ints* SinglePixelPackedSampleModel::getSamples(int32_t x, int32_t y, int32_t w,
 }
 
 void SinglePixelPackedSampleModel::setDataElements(int32_t x, int32_t y, Object$* obj, $DataBuffer* data) {
+	$useLocalCurrentObjectStackCache();
 	if ((x < 0) || (y < 0) || (x >= this->width) || (y >= this->height)) {
 		$throwNew($ArrayIndexOutOfBoundsException, "Coordinate out of bounds!"_s);
 	}

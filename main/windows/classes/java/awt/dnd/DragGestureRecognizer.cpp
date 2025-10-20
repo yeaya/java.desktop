@@ -202,6 +202,7 @@ void DragGestureRecognizer::removeDragGestureListener($DragGestureListener* dgl)
 
 void DragGestureRecognizer::fireDragGestureRecognized(int32_t dragAction, $Point* p) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		{
 			$var($Throwable, var$0, nullptr);
 			try {
@@ -232,6 +233,7 @@ void DragGestureRecognizer::writeObject($ObjectOutputStream* s) {
 }
 
 void DragGestureRecognizer::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	$var($DragSource, newDragSource, $cast($DragSource, $nc(f)->get("dragSource"_s, ($Object*)nullptr)));
 	if (newDragSource == nullptr) {

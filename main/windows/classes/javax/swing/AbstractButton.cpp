@@ -894,6 +894,7 @@ void AbstractButton::doClick() {
 }
 
 void AbstractButton::doClick(int32_t pressTime) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, getSize());
 	$nc(this->model)->setArmed(true);
 	$nc(this->model)->setPressed(true);
@@ -908,6 +909,7 @@ void AbstractButton::doClick(int32_t pressTime) {
 }
 
 void AbstractButton::setMargin($Insets* m$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, m, m$renamed);
 	if ($instanceOf($UIResource, m)) {
 		$set(this, defaultMargin, m);
@@ -968,6 +970,7 @@ $Icon* AbstractButton::getPressedIcon() {
 }
 
 void AbstractButton::setPressedIcon($Icon* pressedIcon) {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, oldValue, this->pressedIcon);
 	$set(this, pressedIcon, pressedIcon);
 	firePropertyChange(AbstractButton::PRESSED_ICON_CHANGED_PROPERTY, $of(oldValue), $of(pressedIcon));
@@ -1043,6 +1046,7 @@ void AbstractButton::setRolloverSelectedIcon($Icon* rolloverSelectedIcon) {
 }
 
 $Icon* AbstractButton::getDisabledIcon() {
+	$useLocalCurrentObjectStackCache();
 	if (this->disabledIcon == nullptr) {
 		$set(this, disabledIcon, $nc($($UIManager::getLookAndFeel()))->getDisabledIcon(this, $(getIcon())));
 		if (this->disabledIcon != nullptr) {
@@ -1068,6 +1072,7 @@ void AbstractButton::setDisabledIcon($Icon* disabledIcon) {
 }
 
 $Icon* AbstractButton::getDisabledSelectedIcon() {
+	$useLocalCurrentObjectStackCache();
 	if (this->disabledSelectedIcon == nullptr) {
 		if (this->selectedIcon != nullptr) {
 			$set(this, disabledSelectedIcon, $nc($($UIManager::getLookAndFeel()))->getDisabledSelectedIcon(this, $(getSelectedIcon())));
@@ -1208,6 +1213,7 @@ void AbstractButton::setActionCommand($String* actionCommand) {
 }
 
 $String* AbstractButton::getActionCommand() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, ac, $nc($(getModel()))->getActionCommand());
 	if (ac == nullptr) {
 		$assign(ac, getText());
@@ -1318,6 +1324,7 @@ void AbstractButton::actionPropertyChanged($Action* action, $String* propertyNam
 }
 
 void AbstractButton::setDisplayedMnemonicIndexFromAction($Action* a, bool fromPropertyChange) {
+	$useLocalCurrentObjectStackCache();
 	$init($Action);
 	$var($Integer, iValue, (a == nullptr) ? ($Integer*)nullptr : $cast($Integer, $nc(a)->getValue($Action::DISPLAYED_MNEMONIC_INDEX_KEY)));
 	if (fromPropertyChange || iValue != nullptr) {
@@ -1342,6 +1349,7 @@ void AbstractButton::setMnemonicFromAction($Action* a) {
 }
 
 void AbstractButton::setTextFromAction($Action* a, bool propertyChange) {
+	$useLocalCurrentObjectStackCache();
 	bool hideText = getHideActionText();
 	if (!propertyChange) {
 		$init($Action);
@@ -1381,6 +1389,7 @@ void AbstractButton::setActionCommandFromAction($Action* a) {
 }
 
 void AbstractButton::setSelectedFromAction($Action* a) {
+	$useLocalCurrentObjectStackCache();
 	bool selected = false;
 	if (a != nullptr) {
 		selected = $AbstractAction::isSelected(a);
@@ -1488,6 +1497,7 @@ void AbstractButton::setMnemonic(char16_t mnemonic) {
 }
 
 void AbstractButton::setDisplayedMnemonicIndex(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	int32_t oldValue = this->mnemonicIndex;
 	if (index == -1) {
 		this->mnemonicIndex = -1;
@@ -1542,6 +1552,7 @@ $ButtonModel* AbstractButton::getModel() {
 }
 
 void AbstractButton::setModel($ButtonModel* newModel) {
+	$useLocalCurrentObjectStackCache();
 	$var($ButtonModel, oldModel, getModel());
 	if (oldModel != nullptr) {
 		oldModel->removeChangeListener(this->changeListener);
@@ -1653,6 +1664,7 @@ $ChangeListener* AbstractButton::createChangeListener() {
 }
 
 void AbstractButton::fireActionPerformed($ActionEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($ActionEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -1673,6 +1685,7 @@ void AbstractButton::fireActionPerformed($ActionEvent* event) {
 }
 
 void AbstractButton::fireItemStateChanged($ItemEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, listeners, $nc(this->listenerList)->getListenerList());
 	$var($ItemEvent, e, nullptr);
 	for (int32_t i = $nc(listeners)->length - 2; i >= 0; i -= 2) {
@@ -1743,6 +1756,7 @@ $ItemListenerArray* AbstractButton::getItemListeners() {
 }
 
 $ObjectArray* AbstractButton::getSelectedObjects() {
+	$useLocalCurrentObjectStackCache();
 	if (isSelected() == false) {
 		return nullptr;
 	}
@@ -1825,6 +1839,7 @@ void AbstractButton::setUIProperty($String* propertyName, Object$* value) {
 }
 
 $String* AbstractButton::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, defaultIconString, (this->defaultIcon != nullptr) && (!$equals(this->defaultIcon, this)) ? $nc($of(this->defaultIcon))->toString() : ""_s);
 	$var($String, pressedIconString, (this->pressedIcon != nullptr) && (!$equals(this->pressedIcon, this)) ? $nc($of(this->pressedIcon))->toString() : ""_s);
 	$var($String, disabledIconString, (this->disabledIcon != nullptr) && (!$equals(this->disabledIcon, this)) ? $nc($of(this->disabledIcon))->toString() : ""_s);

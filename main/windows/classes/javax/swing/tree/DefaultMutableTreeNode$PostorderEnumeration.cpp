@@ -80,6 +80,7 @@ bool DefaultMutableTreeNode$PostorderEnumeration::hasMoreElements() {
 }
 
 $Object* DefaultMutableTreeNode$PostorderEnumeration::nextElement() {
+	$useLocalCurrentObjectStackCache();
 	$var($TreeNode, retval, nullptr);
 	if ($nc(this->subtree)->hasMoreElements()) {
 		$assign(retval, $cast($TreeNode, $nc(this->subtree)->nextElement()));

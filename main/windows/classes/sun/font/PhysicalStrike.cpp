@@ -117,6 +117,7 @@ int32_t PhysicalStrike::getSlot0GlyphImagePtrs($ints* glyphCodes, $longs* images
 }
 
 $Point2D$Float* PhysicalStrike::getGlyphPoint(int32_t glyphCode, int32_t ptNumber) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point2D$Float, gp, nullptr);
 	$var($Integer, ptKey, $Integer::valueOf((glyphCode << 16) | ptNumber));
 	if (this->glyphPointMapCache == nullptr) {

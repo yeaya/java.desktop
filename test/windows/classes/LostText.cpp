@@ -98,6 +98,7 @@ void LostText::init$($CountDownLatch* latch) {
 }
 
 void LostText::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		createUI();
 		lostTextTest();
@@ -123,6 +124,7 @@ void LostText::lostTextTest() {
 
 $TableModel* LostText::testSelectionWithFilterTable() {
 	$init(LostText);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(LostText::model, $new($DefaultTableModel, 0, 1));
 	int32_t last = 10;
 	for (int32_t i = 0; i <= last; ++i) {

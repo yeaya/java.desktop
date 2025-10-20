@@ -233,6 +233,7 @@ void BasicDesktopPaneUI::uninstallUI($JComponent* c) {
 }
 
 void BasicDesktopPaneUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(this->desktop)->getBackground() == nullptr;
 	if (var$0 || $instanceOf($UIResource, $($nc(this->desktop)->getBackground()))) {
 		$nc(this->desktop)->setBackground($($UIManager::getColor("Desktop.background"_s)));
@@ -309,6 +310,7 @@ $InputMap* BasicDesktopPaneUI::createInputMap(int32_t condition) {
 
 void BasicDesktopPaneUI::loadActionMap($LazyActionMap* map) {
 	$init(BasicDesktopPaneUI);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicDesktopPaneUI$Actions);
 	$nc(map)->put($$new($BasicDesktopPaneUI$Actions, $BasicDesktopPaneUI$Actions::RESTORE));
 	map->put($$new($BasicDesktopPaneUI$Actions, $BasicDesktopPaneUI$Actions::CLOSE));

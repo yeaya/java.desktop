@@ -296,6 +296,7 @@ void HTMLDocument::access$000(HTMLDocument* x0, $AbstractDocument$DefaultDocumen
 }
 
 void HTMLDocument::init$() {
+	$useLocalCurrentObjectStackCache();
 	$var($AbstractDocument$Content, var$0, static_cast<$AbstractDocument$Content*>($new($GapContent, $DefaultStyledDocument::BUFFER_SIZE_DEFAULT)));
 	HTMLDocument::init$(var$0, $$new($StyleSheet));
 }
@@ -314,6 +315,7 @@ void HTMLDocument::init$($AbstractDocument$Content* c, $StyleSheet* styles) {
 }
 
 $HTMLEditorKit$ParserCallback* HTMLDocument::getReader(int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	$init($Document);
 	$var($Object, desc, getProperty($Document::StreamDescriptionProperty));
 	if ($instanceOf($URL, desc)) {
@@ -328,6 +330,7 @@ $HTMLEditorKit$ParserCallback* HTMLDocument::getReader(int32_t pos, int32_t popD
 }
 
 $HTMLEditorKit$ParserCallback* HTMLDocument::getReader(int32_t pos, int32_t popDepth, int32_t pushDepth, $HTML$Tag* insertTag, bool insertInsertTag) {
+	$useLocalCurrentObjectStackCache();
 	$init($Document);
 	$var($Object, desc, getProperty($Document::StreamDescriptionProperty));
 	if ($instanceOf($URL, desc)) {
@@ -371,6 +374,7 @@ void HTMLDocument::create($DefaultStyledDocument$ElementSpecArray* data) {
 }
 
 void HTMLDocument::setParagraphAttributes(int32_t offset, int32_t length, $AttributeSet* s, bool replace) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -432,6 +436,7 @@ $Element* HTMLDocument::createBranchElement($Element* parent, $AttributeSet* a) 
 }
 
 $AbstractDocument$AbstractElement* HTMLDocument::createDefaultRoot() {
+	$useLocalCurrentObjectStackCache();
 	writeLock();
 	$var($MutableAttributeSet, a, $new($SimpleAttributeSet));
 	$init($StyleConstants);
@@ -481,6 +486,7 @@ bool HTMLDocument::getPreservesUnknownTags() {
 }
 
 void HTMLDocument::processHTMLFrameHyperlinkEvent($HTMLFrameHyperlinkEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, frameName, $nc(e)->getTarget());
 	$var($Element, element, e->getSourceElement());
 	$var($String, urlStr, $nc($(e->getURL()))->toString());
@@ -497,6 +503,7 @@ void HTMLDocument::processHTMLFrameHyperlinkEvent($HTMLFrameHyperlinkEvent* e) {
 }
 
 $Element* HTMLDocument::findFrame($String* frameName) {
+	$useLocalCurrentObjectStackCache();
 	$var($ElementIterator, it, $new($ElementIterator, static_cast<$Document*>(static_cast<$AbstractDocument*>(static_cast<$DefaultStyledDocument*>(this)))));
 	$var($Element, next, nullptr);
 	while (($assign(next, it->next())) != nullptr) {
@@ -515,6 +522,7 @@ $Element* HTMLDocument::findFrame($String* frameName) {
 
 bool HTMLDocument::matchNameAttribute($AttributeSet* attr, $HTML$Tag* tag) {
 	$init(HTMLDocument);
+	$useLocalCurrentObjectStackCache();
 	$init($StyleConstants);
 	$var($Object, o, $nc(attr)->getAttribute($StyleConstants::NameAttribute));
 	if ($instanceOf($HTML$Tag, o)) {
@@ -527,6 +535,7 @@ bool HTMLDocument::matchNameAttribute($AttributeSet* attr, $HTML$Tag* tag) {
 }
 
 void HTMLDocument::updateFrameSet($Element* element, $String* url) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		int32_t startOffset = $nc(element)->getStartOffset();
 		int32_t var$0 = getLength();
@@ -546,6 +555,7 @@ void HTMLDocument::updateFrameSet($Element* element, $String* url) {
 }
 
 void HTMLDocument::updateFrame($Element* element, $String* url) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -581,6 +591,7 @@ void HTMLDocument::setFrameDocumentState(bool frameDoc) {
 }
 
 void HTMLDocument::addMap($Map* map) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(map)->getName());
 	if (name != nullptr) {
 		$var($Object, maps, getProperty(HTMLDocument::MAP_PROPERTY));
@@ -596,6 +607,7 @@ void HTMLDocument::addMap($Map* map) {
 }
 
 void HTMLDocument::removeMap($Map* map) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(map)->getName());
 	if (name != nullptr) {
 		$var($Object, maps, getProperty(HTMLDocument::MAP_PROPERTY));
@@ -616,6 +628,7 @@ $Map* HTMLDocument::getMap($String* name) {
 }
 
 $Enumeration* HTMLDocument::getMaps() {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, maps, getProperty(HTMLDocument::MAP_PROPERTY));
 	if ($instanceOf($Hashtable, maps)) {
 		$var($Hashtable, tmp, $cast($Hashtable, maps));
@@ -665,6 +678,7 @@ void HTMLDocument::setInnerHTML($Element* elem, $String* htmlText) {
 }
 
 void HTMLDocument::setOuterHTML($Element* elem, $String* htmlText) {
+	$useLocalCurrentObjectStackCache();
 	verifyParser();
 	if (elem != nullptr && elem->getParentElement() != nullptr && htmlText != nullptr) {
 		int32_t start = elem->getStartOffset();
@@ -697,6 +711,7 @@ void HTMLDocument::insertAfterStart($Element* elem, $String* htmlText) {
 }
 
 void HTMLDocument::insertBeforeEnd($Element* elem, $String* htmlText) {
+	$useLocalCurrentObjectStackCache();
 	verifyParser();
 	if (elem != nullptr && elem->isLeaf()) {
 		$throwNew($IllegalArgumentException, "Can not set inner HTML before end of leaf"_s);
@@ -722,6 +737,7 @@ void HTMLDocument::insertBeforeStart($Element* elem, $String* htmlText) {
 }
 
 void HTMLDocument::insertAfterEnd($Element* elem, $String* htmlText) {
+	$useLocalCurrentObjectStackCache();
 	verifyParser();
 	if (elem != nullptr) {
 		$var($Element, parent, elem->getParentElement());
@@ -760,6 +776,7 @@ $Element* HTMLDocument::getElement($Element* e, Object$* attribute, Object$* val
 }
 
 $Element* HTMLDocument::getElement($Element* e, Object$* attribute, Object$* value, bool searchLeafAttributes) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, attr, $nc(e)->getAttributes());
 	if (attr != nullptr && attr->isDefined(attribute)) {
 		if ($nc($of(value))->equals($(attr->getAttribute(attribute)))) {
@@ -802,12 +819,14 @@ void HTMLDocument::verifyParser() {
 }
 
 void HTMLDocument::installParserIfNecessary() {
+	$useLocalCurrentObjectStackCache();
 	if (getParser() == nullptr) {
 		setParser($($$new($HTMLEditorKit)->getParser()));
 	}
 }
 
 void HTMLDocument::insertHTML($Element* parent, int32_t offset, $String* html, bool wantsTrailingNewline) {
+	$useLocalCurrentObjectStackCache();
 	if (parent != nullptr && html != nullptr) {
 		$var($HTMLEditorKit$Parser, parser, getParser());
 		if (parser != nullptr) {
@@ -839,6 +858,7 @@ void HTMLDocument::insertHTML($Element* parent, int32_t offset, $String* html, b
 }
 
 void HTMLDocument::removeElements($Element* e, int32_t index, int32_t count) {
+	$useLocalCurrentObjectStackCache();
 	writeLock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -862,6 +882,7 @@ void HTMLDocument::removeElements($Element* e, int32_t index, int32_t count) {
 }
 
 void HTMLDocument::removeElementsAtEnd($Element* e, int32_t index, int32_t count, int32_t start, int32_t end) {
+	$useLocalCurrentObjectStackCache();
 	bool isLeaf = ($nc($($nc(e)->getElement(index - 1)))->isLeaf());
 	$init($DocumentEvent$EventType);
 	$var($AbstractDocument$DefaultDocumentEvent, dde, $new($AbstractDocument$DefaultDocumentEvent, this, start - 1, end - start + 1, $DocumentEvent$EventType::REMOVE));
@@ -889,6 +910,7 @@ void HTMLDocument::removeElementsAtEnd($Element* e, int32_t index, int32_t count
 }
 
 void HTMLDocument::replace($AbstractDocument$DefaultDocumentEvent* dde, $Element* e, int32_t index, int32_t count, int32_t start, int32_t end, bool remove, bool create) {
+	$useLocalCurrentObjectStackCache();
 	$var($ElementArray, added, nullptr);
 	$var($AttributeSet, attrs, $nc($($nc(e)->getElement(index)))->getAttributes());
 	$var($ElementArray, removed, $new($ElementArray, count));
@@ -912,6 +934,7 @@ void HTMLDocument::replace($AbstractDocument$DefaultDocumentEvent* dde, $Element
 }
 
 void HTMLDocument::removeElements($Element* e, int32_t index, int32_t count, int32_t start, int32_t end) {
+	$useLocalCurrentObjectStackCache();
 	$var($ElementArray, removed, $new($ElementArray, count));
 	$var($ElementArray, added, $new($ElementArray, 0));
 	for (int32_t counter = 0; counter < count; ++counter) {

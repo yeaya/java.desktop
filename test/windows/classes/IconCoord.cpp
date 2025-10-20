@@ -104,12 +104,14 @@ void IconCoord::init$() {
 
 void IconCoord::main($StringArray* args) {
 	$init(IconCoord);
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel($($UIManager::getCrossPlatformLookAndFeelClassName()));
 	$SwingUtilities::invokeAndWait($$new($IconCoord$1));
 	$nc(IconCoord::test)->waitTestResult();
 }
 
 void IconCoord::createAndShowGUI() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, instrText, $new($StringBuilder));
 	instrText->append("First, iconify internal frame \"Frame 1\" by clicking on its iconify button.\n"_s);
 	instrText->append("Now, maximize the top-level window \"IconCoord\".\n"_s);

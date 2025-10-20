@@ -309,6 +309,7 @@ bool PSStreamPrintService::isAttributeCategorySupported($Class* category) {
 }
 
 $Object* PSStreamPrintService::getDefaultAttributeValue($Class* category) {
+	$useLocalCurrentObjectStackCache();
 	if (category == nullptr) {
 		$throwNew($NullPointerException, "null category"_s);
 	}
@@ -405,6 +406,7 @@ $Object* PSStreamPrintService::getDefaultAttributeValue($Class* category) {
 }
 
 $Object* PSStreamPrintService::getSupportedAttributeValues($Class* category, $DocFlavor* flavor, $AttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	if (category == nullptr) {
 		$throwNew($NullPointerException, "null category"_s);
 	}
@@ -671,6 +673,7 @@ bool PSStreamPrintService::isAttributeValueSupported($Attribute* attr, $DocFlavo
 }
 
 $AttributeSet* PSStreamPrintService::getUnsupportedAttributes($DocFlavor* flavor, $AttributeSet* attributes) {
+	$useLocalCurrentObjectStackCache();
 	if (flavor != nullptr && !isDocFlavorSupported(flavor)) {
 		$throwNew($IllegalArgumentException, $$str({"flavor "_s, flavor, "is not supported"_s}));
 	}
@@ -708,6 +711,7 @@ $String* PSStreamPrintService::toString() {
 }
 
 bool PSStreamPrintService::equals(Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	return ($equals(obj, this) || ($instanceOf(PSStreamPrintService, obj) && $nc($($nc(($cast(PSStreamPrintService, obj)))->getName()))->equals($(getName()))));
 }
 

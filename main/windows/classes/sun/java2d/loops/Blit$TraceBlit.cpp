@@ -71,6 +71,7 @@ $Object* allocate$Blit$TraceBlit($Class* clazz) {
 }
 
 void Blit$TraceBlit::init$($Blit* target) {
+	$useLocalCurrentObjectStackCache();
 	$var($SurfaceType, var$0, $nc(target)->getSourceType());
 	$var($CompositeType, var$1, target->getCompositeType());
 	$Blit::init$(var$0, var$1, $(target->getDestType()));

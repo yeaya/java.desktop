@@ -87,6 +87,7 @@ void bug8071705$1::init$($booleans* val$result, $CountDownLatch* val$latch) {
 }
 
 void bug8071705$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $bug8071705::createGUI());
 	$var($GraphicsDeviceArray, devices, $bug8071705::checkScreens());
 	$var($GraphicsDevice, device, $bug8071705::checkConfigs(devices));

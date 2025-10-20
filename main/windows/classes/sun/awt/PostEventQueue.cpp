@@ -67,6 +67,7 @@ void PostEventQueue::init$($EventQueue* eq) {
 }
 
 void PostEventQueue::flush() {
+	$useLocalCurrentObjectStackCache();
 	$var($Thread, newThread, $Thread::currentThread());
 	try {
 		$var($EventQueueItem, tempQueue, nullptr);

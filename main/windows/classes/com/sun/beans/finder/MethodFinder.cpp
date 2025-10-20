@@ -109,6 +109,7 @@ $Cache* MethodFinder::CACHE = nullptr;
 
 $Method* MethodFinder::findMethod($Class* type, $String* name, $ClassArray* args) {
 	$init(MethodFinder);
+	$useLocalCurrentObjectStackCache();
 	if (name == nullptr) {
 		$throwNew($IllegalArgumentException, "Method name is not set"_s);
 	}
@@ -126,6 +127,7 @@ $Method* MethodFinder::findMethod($Class* type, $String* name, $ClassArray* args
 
 $Method* MethodFinder::findInstanceMethod($Class* type, $String* name, $ClassArray* args) {
 	$init(MethodFinder);
+	$useLocalCurrentObjectStackCache();
 	$var($Method, method, findMethod(type, name, args));
 	if ($Modifier::isStatic($nc(method)->getModifiers())) {
 		$throwNew($NoSuchMethodException, $$str({"Method \'"_s, name, "\' is static"_s}));
@@ -135,6 +137,7 @@ $Method* MethodFinder::findInstanceMethod($Class* type, $String* name, $ClassArr
 
 $Method* MethodFinder::findStaticMethod($Class* type, $String* name, $ClassArray* args) {
 	$init(MethodFinder);
+	$useLocalCurrentObjectStackCache();
 	$var($Method, method, findMethod(type, name, args));
 	if (!$Modifier::isStatic($nc(method)->getModifiers())) {
 		$throwNew($NoSuchMethodException, $$str({"Method \'"_s, name, "\' is not static"_s}));
@@ -144,6 +147,7 @@ $Method* MethodFinder::findStaticMethod($Class* type, $String* name, $ClassArray
 
 $Method* MethodFinder::findAccessibleMethod($Method* method) {
 	$init(MethodFinder);
+	$useLocalCurrentObjectStackCache();
 	$Class* type = $nc(method)->getDeclaringClass();
 	if (!$FinderUtils::isExported(type)) {
 		$throwNew($NoSuchMethodException, $$str({"Method \'"_s, $(method->getName()), "\' is not accessible"_s}));
@@ -175,6 +179,7 @@ $Method* MethodFinder::findAccessibleMethod($Method* method) {
 
 $Method* MethodFinder::findAccessibleMethod($Method* method, $Type* generic) {
 	$init(MethodFinder);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, name, $nc(method)->getName());
 	$var($ClassArray, params, method->getParameterTypes());

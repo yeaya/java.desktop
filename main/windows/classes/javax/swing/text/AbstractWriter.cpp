@@ -120,6 +120,7 @@ void AbstractWriter::init$($Writer* w, $Document* doc) {
 }
 
 void AbstractWriter::init$($Writer* w, $Document* doc, int32_t pos, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	this->indentLevel = 0;
 	this->indentSpace = 2;
 	$set(this, doc, nullptr);
@@ -431,6 +432,7 @@ void AbstractWriter::write($chars* chars, int32_t startIndex, int32_t length) {
 }
 
 void AbstractWriter::writeAttributes($AttributeSet* attr) {
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, names, $nc(attr)->getAttributeNames());
 	while ($nc(names)->hasMoreElements()) {
 		$var($Object, name, names->nextElement());

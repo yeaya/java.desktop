@@ -392,6 +392,7 @@ void BasicTableUI$Actions::calcNextPos(int32_t dx, int32_t minX, int32_t maxX, i
 }
 
 void BasicTableUI$Actions::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, key, getName());
 	$var($JTable, table, $cast($JTable, $nc(e)->getSource()));
 	$var($ListSelectionModel, rsm, $nc(table)->getSelectionModel());
@@ -555,6 +556,7 @@ void BasicTableUI$Actions::actionPerformed($ActionEvent* e) {
 }
 
 bool BasicTableUI$Actions::accept(Object$* sender) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, key, getName());
 	$init($Boolean);
 	if ($instanceOf($JTable, sender) && $nc($Boolean::TRUE)->equals($($nc(($cast($JTable, sender)))->getClientProperty("Table.isFileList"_s)))) {

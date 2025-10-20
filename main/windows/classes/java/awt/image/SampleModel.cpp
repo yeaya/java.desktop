@@ -113,6 +113,7 @@ void SampleModel::initIDs() {
 }
 
 void SampleModel::init$(int32_t dataType, int32_t w, int32_t h, int32_t numBands) {
+	$useLocalCurrentObjectStackCache();
 	int64_t size = (int64_t)w * h;
 	if (w <= 0 || h <= 0) {
 		$throwNew($IllegalArgumentException, $$str({"Width ("_s, $$str(w), ") and height ("_s, $$str(h), ") must be > 0"_s}));
@@ -166,6 +167,7 @@ $ints* SampleModel::getPixel(int32_t x, int32_t y, $ints* iArray, $DataBuffer* d
 }
 
 $Object* SampleModel::getDataElements(int32_t x, int32_t y, int32_t w, int32_t h, Object$* obj$renamed, $DataBuffer* data) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, obj, obj$renamed);
 	int32_t type = getTransferType();
 	int32_t numDataElems = getNumDataElements();
@@ -291,6 +293,7 @@ $Object* SampleModel::getDataElements(int32_t x, int32_t y, int32_t w, int32_t h
 }
 
 void SampleModel::setDataElements(int32_t x, int32_t y, int32_t w, int32_t h, Object$* obj, $DataBuffer* data) {
+	$useLocalCurrentObjectStackCache();
 	int32_t cnt = 0;
 	$var($Object, o, nullptr);
 	int32_t type = getTransferType();

@@ -130,6 +130,7 @@ void MotifBorders$MotifPopupMenuBorder::init$($Font* titleFont, $Color* bgColor,
 }
 
 void MotifBorders$MotifPopupMenuBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($JPopupMenu, c))) {
 		return;
 	}
@@ -159,6 +160,7 @@ void MotifBorders$MotifPopupMenuBorder::paintBorder($Component* c, $Graphics* g,
 }
 
 $Insets* MotifBorders$MotifPopupMenuBorder::getBorderInsets($Component* c, $Insets* insets) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($JPopupMenu, c))) {
 		return insets;
 	}

@@ -1322,6 +1322,7 @@ $JPopupMenu* JComponent::getComponentPopupMenu() {
 }
 
 void JComponent::init$() {
+	$useLocalCurrentObjectStackCache();
 	$Container::init$();
 	$set(this, listenerList, $new($EventListenerList));
 	$set(this, inputVerifier, nullptr);
@@ -1343,6 +1344,7 @@ $ComponentUI* JComponent::getUI() {
 }
 
 void JComponent::setUI($ComponentUI* newUI) {
+	$useLocalCurrentObjectStackCache();
 	uninstallUIAndProperties();
 	$init($RenderingHints);
 	$set(this, aaHint, $nc($($UIManager::getDefaults()))->get($RenderingHints::KEY_TEXT_ANTIALIASING));
@@ -1358,6 +1360,7 @@ void JComponent::setUI($ComponentUI* newUI) {
 }
 
 void JComponent::uninstallUIAndProperties() {
+	$useLocalCurrentObjectStackCache();
 	if (this->ui != nullptr) {
 		$nc(this->ui)->uninstallUI(this);
 		if (this->clientProperties != nullptr) {
@@ -1388,6 +1391,7 @@ $String* JComponent::getUIClassID() {
 }
 
 $Graphics* JComponent::getComponentGraphics($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, componentGraphics, g);
 	if (this->ui != nullptr && JComponent::DEBUG_GRAPHICS_LOADED) {
 		bool var$0 = ($DebugGraphics::debugComponentCount() != 0);
@@ -1401,6 +1405,7 @@ $Graphics* JComponent::getComponentGraphics($Graphics* g) {
 }
 
 void JComponent::paintComponent($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if (this->ui != nullptr) {
 		$var($Graphics, scratchGraphics, (g == nullptr) ? ($Graphics*)nullptr : $nc(g)->create());
 		{
@@ -1420,6 +1425,7 @@ void JComponent::paintComponent($Graphics* g) {
 }
 
 void JComponent::paintChildren($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, sg, g);
 	$synchronized(getTreeLock()) {
 		int32_t i = getComponentCount() - 1;
@@ -1525,6 +1531,7 @@ void JComponent::paintChildren($Graphics* g) {
 }
 
 void JComponent::paintBorder($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Border, border, getBorder());
 	if (border != nullptr) {
 		$var($Graphics, var$0, g);
@@ -1538,6 +1545,7 @@ void JComponent::update($Graphics* g) {
 }
 
 void JComponent::paint($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	bool shouldClearPaintFlags = false;
 	bool var$0 = (getWidth() <= 0);
 	if (var$0 || (getHeight() <= 0)) {
@@ -1637,6 +1645,7 @@ void JComponent::paint($Graphics* g) {
 }
 
 void JComponent::paintForceDoubleBuffered($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($RepaintManager, rm, $RepaintManager::currentManager(this));
 	$var($Rectangle, clip, $nc(g)->getClipBounds());
 	$nc(rm)->beginPaint();
@@ -1669,6 +1678,7 @@ bool JComponent::isPainting() {
 }
 
 void JComponent::adjustPaintFlags() {
+	$useLocalCurrentObjectStackCache();
 	$var(JComponent, jparent, nullptr);
 	$var($Container, parent, nullptr);
 	for ($assign(parent, getParent()); parent != nullptr; $assign(parent, $nc(parent)->getParent())) {
@@ -1756,6 +1766,7 @@ void JComponent::registerNextFocusableComponent() {
 }
 
 void JComponent::registerNextFocusableComponent($Component* nextFocusableComponent) {
+	$useLocalCurrentObjectStackCache();
 	if (nextFocusableComponent == nullptr) {
 		return;
 	}
@@ -1769,6 +1780,7 @@ void JComponent::registerNextFocusableComponent($Component* nextFocusableCompone
 }
 
 void JComponent::deregisterNextFocusableComponent() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, nextFocusableComponent, getNextFocusableComponent());
 	if (nextFocusableComponent == nullptr) {
 		return;
@@ -1890,6 +1902,7 @@ bool JComponent::contains(int32_t x, int32_t y) {
 }
 
 void JComponent::setBorder($Border* border) {
+	$useLocalCurrentObjectStackCache();
 	$var($Border, oldBorder, this->border);
 	$set(this, border, border);
 	firePropertyChange("border"_s, $of(oldBorder), $of(border));
@@ -1970,6 +1983,7 @@ $InputVerifier* JComponent::getInputVerifier() {
 }
 
 $Graphics* JComponent::getGraphics() {
+	$useLocalCurrentObjectStackCache();
 	if (JComponent::DEBUG_GRAPHICS_LOADED && shouldDebugGraphics() != 0) {
 		$var($DebugGraphics, graphics, $new($DebugGraphics, $($Container::getGraphics()), this));
 		return graphics;
@@ -1990,6 +2004,7 @@ int32_t JComponent::shouldDebugGraphics() {
 }
 
 void JComponent::registerKeyboardAction($ActionListener* anAction, $String* aCommand, $KeyStroke* aKeyStroke, int32_t aCondition) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMap, inputMap, getInputMap(aCondition, true));
 	if (inputMap != nullptr) {
 		$var($ActionMap, actionMap, getActionMap(true));
@@ -2002,6 +2017,7 @@ void JComponent::registerKeyboardAction($ActionListener* anAction, $String* aCom
 }
 
 void JComponent::registerWithKeyboardManager(bool onlyIfNew) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMap, inputMap, getInputMap(JComponent::WHEN_IN_FOCUSED_WINDOW, false));
 	$var($KeyStrokeArray, strokes, nullptr);
 	$var($Hashtable, registered, $cast($Hashtable, getClientProperty(JComponent::WHEN_IN_FOCUSED_WINDOW_BINDINGS)));
@@ -2042,6 +2058,7 @@ void JComponent::registerWithKeyboardManager(bool onlyIfNew) {
 }
 
 void JComponent::unregisterWithKeyboardManager() {
+	$useLocalCurrentObjectStackCache();
 	$var($Hashtable, registered, $cast($Hashtable, getClientProperty(JComponent::WHEN_IN_FOCUSED_WINDOW_BINDINGS)));
 	if (registered != nullptr && registered->size() > 0) {
 		$var($Enumeration, keys, registered->keys());
@@ -2076,6 +2093,7 @@ void JComponent::registerKeyboardAction($ActionListener* anAction, $KeyStroke* a
 }
 
 void JComponent::unregisterKeyboardAction($KeyStroke* aKeyStroke) {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, am, getActionMap(false));
 	for (int32_t counter = 0; counter < 3; ++counter) {
 		$var($InputMap, km, getInputMap(counter, false));
@@ -2090,6 +2108,7 @@ void JComponent::unregisterKeyboardAction($KeyStroke* aKeyStroke) {
 }
 
 $KeyStrokeArray* JComponent::getRegisteredKeyStrokes() {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, counts, $new($ints, 3));
 	$var($KeyStrokeArray2, strokes, $new($KeyStrokeArray2, 3));
 	for (int32_t counter = 0; counter < 3; ++counter) {
@@ -2112,6 +2131,7 @@ $KeyStrokeArray* JComponent::getRegisteredKeyStrokes() {
 }
 
 int32_t JComponent::getConditionForKeyStroke($KeyStroke* aKeyStroke) {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t counter = 0; counter < 3; ++counter) {
 		$var($InputMap, inputMap, getInputMap(counter, false));
 		if (inputMap != nullptr && inputMap->get(aKeyStroke) != nullptr) {
@@ -2122,6 +2142,7 @@ int32_t JComponent::getConditionForKeyStroke($KeyStroke* aKeyStroke) {
 }
 
 $ActionListener* JComponent::getActionForKeyStroke($KeyStroke* aKeyStroke) {
+	$useLocalCurrentObjectStackCache();
 	$var($ActionMap, am, getActionMap(false));
 	if (am == nullptr) {
 		return nullptr;
@@ -2143,6 +2164,7 @@ $ActionListener* JComponent::getActionForKeyStroke($KeyStroke* aKeyStroke) {
 }
 
 void JComponent::resetKeyboardActions() {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t counter = 0; counter < 3; ++counter) {
 		$var($InputMap, inputMap, getInputMap(counter, false));
 		if (inputMap != nullptr) {
@@ -2204,6 +2226,7 @@ $ActionMap* JComponent::getActionMap() {
 }
 
 $InputMap* JComponent::getInputMap(int32_t condition, bool create) {
+	$useLocalCurrentObjectStackCache();
 	switch (condition) {
 	case JComponent::WHEN_FOCUSED:
 		{
@@ -2278,6 +2301,7 @@ $Component$BaselineResizeBehavior* JComponent::getBaselineResizeBehavior() {
 }
 
 bool JComponent::requestDefaultFocus() {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, nearestRoot, (isFocusCycleRoot()) ? static_cast<$Container*>(this) : getFocusCycleRootAncestor());
 	if (nearestRoot == nullptr) {
 		return false;
@@ -2292,6 +2316,7 @@ bool JComponent::requestDefaultFocus() {
 }
 
 void JComponent::setVisible(bool aFlag) {
+	$useLocalCurrentObjectStackCache();
 	if (aFlag != isVisible()) {
 		$Container::setVisible(aFlag);
 		if (aFlag) {
@@ -2374,6 +2399,7 @@ void JComponent::processKeyEvent($KeyEvent* e) {
 }
 
 bool JComponent::processKeyBinding($KeyStroke* ks, $KeyEvent* e, int32_t condition, bool pressed) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMap, map, getInputMap(condition, false));
 	$var($ActionMap, am, getActionMap(false));
 	if (map != nullptr && am != nullptr && isEnabled()) {
@@ -2387,6 +2413,7 @@ bool JComponent::processKeyBinding($KeyStroke* ks, $KeyEvent* e, int32_t conditi
 }
 
 bool JComponent::processKeyBindings($KeyEvent* e, bool pressed) {
+	$useLocalCurrentObjectStackCache();
 	if (!$SwingUtilities::isValidKeyEventForKeyBindings(e)) {
 		return false;
 	}
@@ -2432,6 +2459,7 @@ bool JComponent::processKeyBindings($KeyEvent* e, bool pressed) {
 
 bool JComponent::processKeyBindingsForAllComponents($KeyEvent* e, $Container* container$renamed, bool pressed) {
 	$init(JComponent);
+	$useLocalCurrentObjectStackCache();
 	$var($Container, container, container$renamed);
 	while (true) {
 		if ($nc($($KeyboardManager::getCurrentManager()))->fireKeyboardAction(e, pressed, container)) {
@@ -2446,6 +2474,7 @@ bool JComponent::processKeyBindingsForAllComponents($KeyEvent* e, $Container* co
 }
 
 void JComponent::setToolTipText($String* text) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, oldText, getToolTipText());
 	putClientProperty(JComponent::TOOL_TIP_TEXT_KEY, text);
 	$var($ToolTipManager, toolTipManager, $ToolTipManager::sharedInstance());
@@ -2481,6 +2510,7 @@ $JToolTip* JComponent::createToolTip() {
 }
 
 void JComponent::scrollRectToVisible($Rectangle* aRect) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, parent, nullptr);
 	int32_t dx = getX();
 	int32_t dy = getY();
@@ -2617,6 +2647,7 @@ $Object* JComponent::getClientProperty(Object$* key) {
 }
 
 void JComponent::putClientProperty(Object$* key, Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	$init($RenderingHints);
 	if ($equals(key, $RenderingHints::KEY_TEXT_ANTIALIASING)) {
 		$set(this, aaHint, value);
@@ -2650,6 +2681,7 @@ void JComponent::clientPropertyChanged(Object$* key, Object$* oldValue, Object$*
 }
 
 void JComponent::setUIProperty($String* propertyName, Object$* value) {
+	$useLocalCurrentObjectStackCache();
 	if (propertyName == "opaque"_s) {
 		if (!getFlag(JComponent::OPAQUE_SET)) {
 			setOpaque($nc(($cast($Boolean, value)))->booleanValue());
@@ -2758,6 +2790,7 @@ void JComponent::setOpaque(bool isOpaque) {
 }
 
 bool JComponent::rectangleIsObscured(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	int32_t numChildren = getComponentCount();
 	for (int32_t i = 0; i < numChildren; ++i) {
 		$var($Component, child, getComponent(i));
@@ -2782,6 +2815,7 @@ bool JComponent::rectangleIsObscured(int32_t x, int32_t y, int32_t width, int32_
 
 void JComponent::computeVisibleRect($Component* c, $Rectangle* visibleRect) {
 	$init(JComponent);
+	$useLocalCurrentObjectStackCache();
 	$var($Container, p, $nc(c)->getParent());
 	$var($Rectangle, bounds, c->getBounds());
 	if (p == nullptr || $instanceOf($Window, p) || $instanceOf($Applet, p)) {
@@ -2878,6 +2912,7 @@ void JComponent::addAncestorListener($AncestorListener* listener) {
 }
 
 void JComponent::removeAncestorListener($AncestorListener* listener) {
+	$useLocalCurrentObjectStackCache();
 	$var($AncestorNotifier, ancestorNotifier, getAncestorNotifier());
 	if (ancestorNotifier == nullptr) {
 		return;
@@ -2930,6 +2965,7 @@ void JComponent::addNotify() {
 }
 
 void JComponent::removeNotify() {
+	$useLocalCurrentObjectStackCache();
 	$Container::removeNotify();
 	firePropertyChange("ancestor"_s, $($of(getParent())), ($Object*)nullptr);
 	unregisterWithKeyboardManager();
@@ -2944,6 +2980,7 @@ void JComponent::removeNotify() {
 }
 
 void JComponent::repaint(int64_t tm, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$nc($($RepaintManager::currentManager($($SunToolkit::targetToAppContext(this)))))->addDirtyRegion(this, x, y, width, height);
 }
 
@@ -2952,6 +2989,7 @@ void JComponent::repaint($Rectangle* r) {
 }
 
 void JComponent::revalidate() {
+	$useLocalCurrentObjectStackCache();
 	if (getParent() == nullptr) {
 		return;
 	}
@@ -2979,6 +3017,7 @@ bool JComponent::isPaintingOrigin() {
 }
 
 void JComponent::paintImmediately(int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, this);
 	$var($Component, parent, nullptr);
 	if (!isShowing()) {
@@ -3023,6 +3062,7 @@ void JComponent::setPaintingChild($Component* paintingChild) {
 }
 
 void JComponent::_paintImmediately(int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics, g, nullptr);
 	$var($Container, c, nullptr);
 	$var($Rectangle, b, nullptr);
@@ -3224,6 +3264,7 @@ void JComponent::paintToOffscreen($Graphics* g, int32_t x, int32_t y, int32_t w,
 }
 
 int32_t JComponent::getObscuredState(int32_t compIndex, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	int32_t retValue = JComponent::NOT_OBSCURED;
 	$var($Rectangle, tmpRect, fetchRectangle());
 	for (int32_t i = compIndex - 1; i >= 0; --i) {
@@ -3307,6 +3348,7 @@ void JComponent::compWriteObjectNotify() {
 }
 
 void JComponent::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	this->isAlignmentXSet = $nc(f)->get("isAlignmentXSet"_s, false);
 	this->alignmentX = validateAlignment(f->get("alignmentX"_s, 0.0f));
@@ -3362,6 +3404,7 @@ void JComponent::writeObject($ObjectOutputStream* s) {
 }
 
 $String* JComponent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, preferredSizeString, isPreferredSizeSet() ? $nc($(getPreferredSize()))->toString() : ""_s);
 	$var($String, minimumSizeString, isMinimumSizeSet() ? $nc($(getMinimumSize()))->toString() : ""_s);
 	$var($String, maximumSizeString, isMaximumSizeSet() ? $nc($(getMaximumSize()))->toString() : ""_s);
@@ -3370,6 +3413,7 @@ $String* JComponent::paramString() {
 }
 
 void JComponent::hide() {
+	$useLocalCurrentObjectStackCache();
 	bool showing = isShowing();
 	$Container::hide();
 	if (showing) {

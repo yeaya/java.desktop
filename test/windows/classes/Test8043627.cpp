@@ -49,6 +49,7 @@ void Test8043627::init$() {
 
 void Test8043627::main($StringArray* args) {
 	$load(Test8043627);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$System::setSecurityManager($$new($SecurityManager));
 	$$new($SynthButtonUI)->getContext($$new($JButton));

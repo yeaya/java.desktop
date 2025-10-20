@@ -79,6 +79,7 @@ void bug7199708$2::init$() {
 }
 
 void bug7199708$2::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($bug7199708);
 	$var($String, detailsTooltip, $UIManager::getString($of("FileChooser.detailsViewButtonToolTipText"_s), $($nc($bug7199708::fileChooser)->getLocale())));
 	$bug7199708::doAction($bug7199708::fileChooser, $$new($bug7199708$2$1, this, detailsTooltip));

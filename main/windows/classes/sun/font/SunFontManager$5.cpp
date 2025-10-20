@@ -80,6 +80,7 @@ void SunFontManager$5::init$($SunFontManager* this$0, $StringArray* val$files) {
 }
 
 $Object* SunFontManager$5::run() {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->val$files)->length; ++i) {
 		if ($nc(this->val$files)->get(i) == nullptr) {
 			continue;

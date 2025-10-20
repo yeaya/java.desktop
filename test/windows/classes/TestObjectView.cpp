@@ -118,6 +118,7 @@ void TestObjectView::init$() {
 
 void TestObjectView::main($StringArray* args) {
 	$load(TestObjectView);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestObjectView$$Lambda$testObjectView)));
 	$System::setSecurityManager($$new($SecurityManager));
@@ -125,6 +126,7 @@ void TestObjectView::main($StringArray* args) {
 }
 
 void TestObjectView::testObjectView() {
+	$useLocalCurrentObjectStackCache();
 	$var($TestObjectView$UserObjectView, objectView, $new($TestObjectView$UserObjectView, $$new($TestObjectView$UserElement)));
 	$var($Component, comp, objectView->createComponent());
 	if (!($instanceOf($TestObjectView$UserJComponent, comp))) {

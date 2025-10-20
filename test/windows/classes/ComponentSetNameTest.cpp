@@ -71,6 +71,7 @@ void ComponentSetNameTest::main($StringArray* args) {
 }
 
 void ComponentSetNameTest::testSetName($JComponent* component, $String* looknFeelClassName) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, bg1, $nc(component)->getBackground());
 	if (bg1 == nullptr) {
 		printTestInfo(component, looknFeelClassName);
@@ -85,6 +86,7 @@ void ComponentSetNameTest::testSetName($JComponent* component, $String* looknFee
 }
 
 void ComponentSetNameTest::printTestInfo($JComponent* component, $String* looknFeelClassName) {
+	$useLocalCurrentObjectStackCache();
 	$init($System);
 	$nc($System::err)->println("Test fails"_s);
 	$nc($System::err)->println($$str({"LookAndFeel "_s, looknFeelClassName}));

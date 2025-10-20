@@ -81,6 +81,7 @@ $ContentModel* ContentModelState::getModel() {
 }
 
 bool ContentModelState::terminate() {
+	$useLocalCurrentObjectStackCache();
 	switch ($nc(this->model)->type) {
 	case u'+':
 		{
@@ -174,6 +175,7 @@ $Element* ContentModelState::first() {
 }
 
 ContentModelState* ContentModelState::advance(Object$* token) {
+	$useLocalCurrentObjectStackCache();
 	switch ($nc(this->model)->type) {
 	case u'+':
 		{

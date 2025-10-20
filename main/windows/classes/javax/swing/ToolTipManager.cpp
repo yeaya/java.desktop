@@ -220,6 +220,7 @@ $Object* allocate$ToolTipManager($Class* clazz) {
 $Object* ToolTipManager::TOOL_TIP_MANAGER_KEY = nullptr;
 
 void ToolTipManager::init$() {
+	$useLocalCurrentObjectStackCache();
 	$MouseAdapter::init$();
 	$set(this, popupRect, nullptr);
 	$set(this, popupFrameRect, nullptr);
@@ -286,6 +287,7 @@ int32_t ToolTipManager::getReshowDelay() {
 }
 
 $GraphicsConfiguration* ToolTipManager::getDrawingGC($Point* toFind) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsEnvironment, env, $GraphicsEnvironment::getLocalGraphicsEnvironment());
 	$var($GraphicsDeviceArray, devices, $nc(env)->getScreenDevices());
 	{
@@ -307,6 +309,7 @@ $GraphicsConfiguration* ToolTipManager::getDrawingGC($Point* toFind) {
 }
 
 void ToolTipManager::showTipWindow() {
+	$useLocalCurrentObjectStackCache();
 	if (this->insideComponent == nullptr || !$nc(this->insideComponent)->isShowing()) {
 		return;
 	}
@@ -417,6 +420,7 @@ void ToolTipManager::hideTipWindow() {
 
 ToolTipManager* ToolTipManager::sharedInstance() {
 	$init(ToolTipManager);
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, $SwingUtilities::appContextGet(ToolTipManager::TOOL_TIP_MANAGER_KEY));
 	if ($instanceOf(ToolTipManager, value)) {
 		return $cast(ToolTipManager, value);
@@ -455,6 +459,7 @@ void ToolTipManager::mouseEntered($MouseEvent* event) {
 }
 
 void ToolTipManager::initiateToolTip($MouseEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals($nc(event)->getSource(), this->window)) {
 		return;
 	}
@@ -491,6 +496,7 @@ void ToolTipManager::initiateToolTip($MouseEvent* event) {
 }
 
 void ToolTipManager::mouseExited($MouseEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	bool shouldHide = true;
 	if (this->insideComponent == nullptr) {
 	}
@@ -575,6 +581,7 @@ void ToolTipManager::mouseMoved($MouseEvent* event) {
 }
 
 void ToolTipManager::checkForTipChange($MouseEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, component, $cast($JComponent, $nc(event)->getSource()));
 	$var($String, newText, $nc(component)->getToolTipText(event));
 	$var($Point, newPreferredLocation, component->getToolTipLocation(event));
@@ -623,6 +630,7 @@ $FocusListener* ToolTipManager::createFocusChangeListener() {
 }
 
 int32_t ToolTipManager::getPopupFitWidth($Rectangle* popupRectInScreen, $Component* invoker) {
+	$useLocalCurrentObjectStackCache();
 	if (invoker != nullptr) {
 		$var($Container, parent, nullptr);
 		for ($assign(parent, invoker->getParent()); parent != nullptr; $assign(parent, $nc(parent)->getParent())) {
@@ -645,6 +653,7 @@ int32_t ToolTipManager::getPopupFitWidth($Rectangle* popupRectInScreen, $Compone
 }
 
 int32_t ToolTipManager::getPopupFitHeight($Rectangle* popupRectInScreen, $Component* invoker) {
+	$useLocalCurrentObjectStackCache();
 	if (invoker != nullptr) {
 		$var($Container, parent, nullptr);
 		for ($assign(parent, invoker->getParent()); parent != nullptr; $assign(parent, $nc(parent)->getParent())) {

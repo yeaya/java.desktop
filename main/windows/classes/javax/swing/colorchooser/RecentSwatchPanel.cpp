@@ -62,6 +62,7 @@ void RecentSwatchPanel::initValues() {
 }
 
 void RecentSwatchPanel::initColors() {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, defaultRecentColor, $UIManager::getColor("ColorChooser.swatchesDefaultRecentColor"_s, $(getLocale())));
 	int32_t numColors = $nc(this->numSwatches)->width * $nc(this->numSwatches)->height;
 	$set(this, colors, $new($ColorArray, numColors));

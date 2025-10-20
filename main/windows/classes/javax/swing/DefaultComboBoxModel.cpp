@@ -170,6 +170,7 @@ void DefaultComboBoxModel::insertElementAt(Object$* anObject, int32_t index) {
 }
 
 void DefaultComboBoxModel::removeElementAt(int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals(getElementAt(index), this->selectedObject)) {
 		if (index == 0) {
 			setSelectedItem(getSize() == 1 ? ($Object*)nullptr : $(getElementAt(index + 1)));
@@ -210,6 +211,7 @@ void DefaultComboBoxModel::addAll($Collection* c) {
 }
 
 void DefaultComboBoxModel::addAll(int32_t index, $Collection* c) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index > getSize()) {
 		$throwNew($ArrayIndexOutOfBoundsException, $$str({"index out of range: "_s, $$str(index)}));
 	}

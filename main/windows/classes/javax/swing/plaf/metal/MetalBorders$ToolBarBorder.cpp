@@ -114,6 +114,7 @@ void MetalBorders$ToolBarBorder::finalize() {
 }
 
 void MetalBorders$ToolBarBorder::init$() {
+	$useLocalCurrentObjectStackCache();
 	$AbstractBorder::init$();
 	$var($Color, var$0, static_cast<$Color*>($MetalLookAndFeel::getControlHighlight()));
 	$var($Color, var$1, static_cast<$Color*>($MetalLookAndFeel::getControlDarkShadow()));
@@ -121,6 +122,7 @@ void MetalBorders$ToolBarBorder::init$() {
 }
 
 void MetalBorders$ToolBarBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($JToolBar, c))) {
 		return;
 	}
@@ -150,6 +152,7 @@ void MetalBorders$ToolBarBorder::paintBorder($Component* c, $Graphics* g, int32_
 }
 
 $Insets* MetalBorders$ToolBarBorder::getBorderInsets($Component* c, $Insets* newInsets) {
+	$useLocalCurrentObjectStackCache();
 	if ($MetalLookAndFeel::usingOcean()) {
 		$nc(newInsets)->set(1, 2, 3, 2);
 	} else {

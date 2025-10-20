@@ -217,6 +217,7 @@ void TestSelectedTextBackgroundColor::init$() {
 
 void TestSelectedTextBackgroundColor::blockTillDisplayed($Component* comp) {
 	$init(TestSelectedTextBackgroundColor);
+	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	while (p == nullptr) {
 		try {
@@ -234,6 +235,7 @@ void TestSelectedTextBackgroundColor::blockTillDisplayed($Component* comp) {
 
 $JFormattedTextField* TestSelectedTextBackgroundColor::getTextField($JSpinner* spinner) {
 	$init(TestSelectedTextBackgroundColor);
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, editor, $nc(spinner)->getEditor());
 	if ($instanceOf($JSpinner$DefaultEditor, editor)) {
 		return $nc(($cast($JSpinner$DefaultEditor, editor)))->getTextField();
@@ -256,6 +258,7 @@ int32_t TestSelectedTextBackgroundColor::getMaxColorDiff($Color* c1, $Color* c2)
 
 void TestSelectedTextBackgroundColor::main($StringArray* args) {
 	$init(TestSelectedTextBackgroundColor);
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($System::getProperty("os.name"_s)))->startsWith("Linux"_s)) {
 		$init($System);
 		$nc($System::out)->println("This test is meant for Linux platform only"_s);

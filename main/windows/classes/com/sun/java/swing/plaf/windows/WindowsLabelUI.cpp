@@ -80,6 +80,7 @@ void WindowsLabelUI::init$() {
 
 $ComponentUI* WindowsLabelUI::createUI($JComponent* c) {
 	$init(WindowsLabelUI);
+	$useLocalCurrentObjectStackCache();
 	$var($AppContext, appContext, $AppContext::getAppContext());
 	$var(WindowsLabelUI, windowsLabelUI, $cast(WindowsLabelUI, $nc(appContext)->get(WindowsLabelUI::WINDOWS_LABEL_UI_KEY)));
 	if (windowsLabelUI == nullptr) {
@@ -99,6 +100,7 @@ void WindowsLabelUI::paintEnabledText($JLabel* l, $Graphics* g, $String* s, int3
 }
 
 void WindowsLabelUI::paintDisabledText($JLabel* l, $Graphics* g, $String* s, int32_t textX, int32_t textY) {
+	$useLocalCurrentObjectStackCache();
 	int32_t mnemonicIndex = $nc(l)->getDisplayedMnemonicIndex();
 	if ($WindowsLookAndFeel::isMnemonicHidden() == true) {
 		mnemonicIndex = -1;

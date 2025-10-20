@@ -109,6 +109,7 @@ void NimbusGlueTest::init$() {
 
 void NimbusGlueTest::main($StringArray* args) {
 	$init(NimbusGlueTest);
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(NimbusGlueTest::robot, $new($Robot));
 	$var($UIManager$LookAndFeelInfoArray, lookAndFeelArray, $UIManager::getInstalledLookAndFeels());
 	{
@@ -134,6 +135,7 @@ void NimbusGlueTest::main($StringArray* args) {
 
 bool NimbusGlueTest::tryLookAndFeel($String* lookAndFeelString) {
 	$init(NimbusGlueTest);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(lookAndFeelString);
 		return true;
@@ -177,6 +179,7 @@ void NimbusGlueTest::createUI() {
 
 $JButton* NimbusGlueTest::createButton(int32_t id) {
 	$init(NimbusGlueTest);
+	$useLocalCurrentObjectStackCache();
 	$var($JButton, b, $new($JButton, $$str({"B: "_s, $$str(id)})));
 	b->setPreferredSize($$new($Dimension, 60, $nc($(b->getPreferredSize()))->height));
 	return b;

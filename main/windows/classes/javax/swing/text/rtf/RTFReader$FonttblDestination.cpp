@@ -86,6 +86,7 @@ void RTFReader$FonttblDestination::handleBinaryBlob($bytes* data) {
 }
 
 void RTFReader$FonttblDestination::handleText($String* text) {
+	$useLocalCurrentObjectStackCache();
 	int32_t semicolon = $nc(text)->indexOf((int32_t)u';');
 	$var($String, fontName, nullptr);
 	if (semicolon > -1) {
@@ -126,6 +127,7 @@ void RTFReader$FonttblDestination::endgroup($Dictionary* oldState) {
 }
 
 void RTFReader$FonttblDestination::close() {
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, nums, $nc(this->this$0->fontTable)->keys());
 	this->this$0->warning("Done reading font table."_s);
 	while ($nc(nums)->hasMoreElements()) {

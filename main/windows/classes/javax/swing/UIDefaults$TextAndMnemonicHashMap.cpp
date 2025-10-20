@@ -83,6 +83,7 @@ void UIDefaults$TextAndMnemonicHashMap::init$() {
 }
 
 $Object* UIDefaults$TextAndMnemonicHashMap::get(Object$* key) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, value, $HashMap::get(key));
 	if (value == nullptr) {
 		bool checkTitle = false;

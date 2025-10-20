@@ -215,12 +215,14 @@ void BasicLabelUI::init$() {
 
 void BasicLabelUI::loadActionMap($LazyActionMap* map) {
 	$init(BasicLabelUI);
+	$useLocalCurrentObjectStackCache();
 	$init($BasicLabelUI$Actions);
 	$nc(map)->put($$new($BasicLabelUI$Actions, $BasicLabelUI$Actions::PRESS));
 	map->put($$new($BasicLabelUI$Actions, $BasicLabelUI$Actions::RELEASE));
 }
 
 $String* BasicLabelUI::layoutCL($JLabel* label, $FontMetrics* fontMetrics, $String* text, $Icon* icon, $Rectangle* viewR, $Rectangle* iconR, $Rectangle* textR) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComponent, var$0, static_cast<$JComponent*>(label));
 	$var($FontMetrics, var$1, fontMetrics);
 	$var($String, var$2, text);
@@ -242,6 +244,7 @@ void BasicLabelUI::paintEnabledText($JLabel* l, $Graphics* g, $String* s, int32_
 }
 
 void BasicLabelUI::paintDisabledText($JLabel* l, $Graphics* g, $String* s, int32_t textX, int32_t textY) {
+	$useLocalCurrentObjectStackCache();
 	int32_t accChar = $nc(l)->getDisplayedMnemonicIndex();
 	$var($Color, background, l->getBackground());
 	$nc(g)->setColor($($nc(background)->brighter()));
@@ -251,6 +254,7 @@ void BasicLabelUI::paintDisabledText($JLabel* l, $Graphics* g, $String* s, int32
 }
 
 void BasicLabelUI::paint($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, label, $cast($JLabel, c));
 	$var($String, text, $nc(label)->getText());
 	$var($Icon, icon, (label->isEnabled()) ? label->getIcon() : label->getDisabledIcon());
@@ -283,6 +287,7 @@ void BasicLabelUI::paint($Graphics* g, $JComponent* c) {
 }
 
 $String* BasicLabelUI::layout($JLabel* label, $FontMetrics* fm, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($Insets, insets, $nc(label)->getInsets(nullptr));
 	$var($String, text, label->getText());
 	$var($Icon, icon, (label->isEnabled()) ? label->getIcon() : label->getDisabledIcon());
@@ -297,6 +302,7 @@ $String* BasicLabelUI::layout($JLabel* label, $FontMetrics* fm, int32_t width, i
 }
 
 $Dimension* BasicLabelUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($JLabel, label, $cast($JLabel, c));
 	$var($String, text, $nc(label)->getText());
 	$var($Icon, icon, (label->isEnabled()) ? label->getIcon() : label->getDisabledIcon());
@@ -332,6 +338,7 @@ $Dimension* BasicLabelUI::getPreferredSize($JComponent* c) {
 }
 
 $Dimension* BasicLabelUI::getMinimumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, getPreferredSize(c));
 	$init($BasicHTML);
 	$var($View, v, $cast($View, $nc(c)->getClientProperty($BasicHTML::propertyKey)));
@@ -343,6 +350,7 @@ $Dimension* BasicLabelUI::getMinimumSize($JComponent* c) {
 }
 
 $Dimension* BasicLabelUI::getMaximumSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, d, getPreferredSize(c));
 	$init($BasicHTML);
 	$var($View, v, $cast($View, $nc(c)->getClientProperty($BasicHTML::propertyKey)));
@@ -354,6 +362,7 @@ $Dimension* BasicLabelUI::getMaximumSize($JComponent* c) {
 }
 
 int32_t BasicLabelUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$LabelUI::getBaseline(c, width, height);
 	$var($JLabel, label, $cast($JLabel, c));
 	$var($String, text, $nc(label)->getText());
@@ -424,6 +433,7 @@ void BasicLabelUI::installComponents($JLabel* c) {
 }
 
 void BasicLabelUI::installKeyboardActions($JLabel* l) {
+	$useLocalCurrentObjectStackCache();
 	int32_t dka = $nc(l)->getDisplayedMnemonic();
 	$var($Component, lf, l->getLabelFor());
 	if ((dka != 0) && (lf != nullptr)) {
@@ -463,6 +473,7 @@ void BasicLabelUI::uninstallKeyboardActions($JLabel* c) {
 
 $ComponentUI* BasicLabelUI::createUI($JComponent* c) {
 	$init(BasicLabelUI);
+	$useLocalCurrentObjectStackCache();
 	if ($System::getSecurityManager() != nullptr) {
 		$var($AppContext, appContext, $AppContext::getAppContext());
 		$var(BasicLabelUI, safeBasicLabelUI, $cast(BasicLabelUI, $nc(appContext)->get(BasicLabelUI::BASIC_LABEL_UI_KEY)));
@@ -476,6 +487,7 @@ $ComponentUI* BasicLabelUI::createUI($JComponent* c) {
 }
 
 void BasicLabelUI::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(e)->getPropertyName());
 	if (name == "text"_s || "font"_s == name || "foreground"_s == name || $SwingUtilities2::isScaleChanged(e)) {
 		$var($JLabel, lbl, $cast($JLabel, e->getSource()));

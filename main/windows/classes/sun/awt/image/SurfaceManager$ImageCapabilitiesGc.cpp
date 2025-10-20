@@ -77,6 +77,7 @@ void SurfaceManager$ImageCapabilitiesGc::init$($SurfaceManager* this$0, $Graphic
 }
 
 bool SurfaceManager$ImageCapabilitiesGc::isAccelerated() {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, tmpGc, this->gc);
 	if (tmpGc == nullptr) {
 		$assign(tmpGc, $nc($($nc($($GraphicsEnvironment::getLocalGraphicsEnvironment()))->getDefaultScreenDevice()))->getDefaultConfiguration());

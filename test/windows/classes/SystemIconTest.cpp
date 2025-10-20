@@ -71,6 +71,7 @@ void SystemIconTest::main($StringArray* args) {
 
 void SystemIconTest::testSystemIcon() {
 	$init(SystemIconTest);
+	$useLocalCurrentObjectStackCache();
 	$var($String, os, $System::getProperty("os.name"_s));
 	if ($nc(os)->startsWith("Windows"_s)) {
 		$var($String, windir, $System::getenv("windir"_s));
@@ -84,6 +85,7 @@ void SystemIconTest::testSystemIcon() {
 
 void SystemIconTest::negativeTests() {
 	$init(SystemIconTest);
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, icon, nullptr);
 	try {
 		$assign(icon, $nc(SystemIconTest::fsv)->getSystemIcon($$new($File, "."_s), -1, 16));
@@ -99,6 +101,7 @@ void SystemIconTest::negativeTests() {
 
 void SystemIconTest::testSystemIcon($File* file, bool implComplete) {
 	$init(SystemIconTest);
+	$useLocalCurrentObjectStackCache();
 	$var($ints, sizes, $new($ints, {
 		16,
 		32,

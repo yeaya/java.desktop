@@ -170,6 +170,7 @@ void FontSetByLaF::init$() {
 }
 
 void FontSetByLaF::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -185,6 +186,7 @@ void FontSetByLaF::main($StringArray* args) {
 }
 
 void FontSetByLaF::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 		$init($System);
@@ -206,6 +208,7 @@ void FontSetByLaF::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 }
 
 void FontSetByLaF::lambda$main$1() {
+	$useLocalCurrentObjectStackCache();
 	$var($JSpinner, spinner, $new($JSpinner));
 	$var($JSpinner$DefaultEditor, editor, $cast($JSpinner$DefaultEditor, spinner->getEditor()));
 	$var($JFormattedTextField, textField, $nc(editor)->getTextField());

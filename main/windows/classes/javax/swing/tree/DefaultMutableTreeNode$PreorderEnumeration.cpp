@@ -68,6 +68,7 @@ $Object* allocate$DefaultMutableTreeNode$PreorderEnumeration($Class* clazz) {
 }
 
 void DefaultMutableTreeNode$PreorderEnumeration::init$($DefaultMutableTreeNode* this$0, $TreeNode* rootNode) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$set(this, stack, $new($Stack));
 	$var($Vector, v, $new($Vector, 1));
@@ -81,6 +82,7 @@ bool DefaultMutableTreeNode$PreorderEnumeration::hasMoreElements() {
 }
 
 $Object* DefaultMutableTreeNode$PreorderEnumeration::nextElement() {
+	$useLocalCurrentObjectStackCache();
 	$var($Enumeration, enumer, $cast($Enumeration, $nc(this->stack)->peek()));
 	$var($TreeNode, node, $cast($TreeNode, $nc(enumer)->nextElement()));
 	$var($Enumeration, children, $nc(node)->children());

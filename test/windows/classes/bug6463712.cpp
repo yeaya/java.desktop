@@ -51,6 +51,7 @@ $Object* allocate$bug6463712($Class* clazz) {
 }
 
 void bug6463712::init$() {
+	$useLocalCurrentObjectStackCache();
 	$var($SpinnerNumberModel, m1, $new($SpinnerNumberModel));
 	$var($JSpinner, s, $new($JSpinner, m1));
 	s->addChangeListener(this);

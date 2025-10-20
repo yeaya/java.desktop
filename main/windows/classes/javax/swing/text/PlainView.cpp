@@ -280,6 +280,7 @@ void PlainView::init$($Element* elem) {
 }
 
 int32_t PlainView::getTabSize() {
+	$useLocalCurrentObjectStackCache();
 	$init($PlainDocument);
 	$var($Integer, i, $cast($Integer, $nc($(getDocument()))->getProperty($PlainDocument::tabSizeAttribute)));
 	int32_t size = (i != nullptr) ? $nc(i)->intValue() : 8;
@@ -291,6 +292,7 @@ void PlainView::drawLine(int32_t lineIndex, $Graphics* g, int32_t x, int32_t y) 
 }
 
 void PlainView::drawLineImpl(int32_t lineIndex, $Graphics* g, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, line, $nc($(getElement()))->getElement(lineIndex));
 	$var($Element, elem, nullptr);
 	try {
@@ -314,6 +316,7 @@ void PlainView::drawLine(int32_t lineIndex, $Graphics2D* g, float x, float y) {
 }
 
 float PlainView::drawElement(int32_t lineIndex, $Element* elem, $Graphics* g, float x, float y) {
+	$useLocalCurrentObjectStackCache();
 	int32_t p0 = $nc(elem)->getStartOffset();
 	int32_t p1 = elem->getEndOffset();
 	p1 = $Math::min($nc($(getDocument()))->getLength(), p1);
@@ -360,6 +363,7 @@ float PlainView::callDrawUnselectedText($Graphics* g, float x, float y, int32_t 
 }
 
 float PlainView::drawUnselectedTextImpl($Graphics* g, float x, float y, int32_t p0, int32_t p1, bool useFPAPI) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor(this->unselected);
 	$var($Document, doc, getDocument());
 	$var($Segment, s, $SegmentCache::getSharedSegment());
@@ -382,6 +386,7 @@ float PlainView::callDrawSelectedText($Graphics* g, float x, float y, int32_t p0
 }
 
 float PlainView::drawSelectedTextImpl($Graphics* g, float x, float y, int32_t p0, int32_t p1, bool useFPAPI) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor(this->selected);
 	$var($Document, doc, getDocument());
 	$var($Segment, s, $SegmentCache::getSharedSegment());
@@ -403,6 +408,7 @@ $Segment* PlainView::getLineBuffer() {
 }
 
 void PlainView::updateMetrics() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, host, getContainer());
 	$var($Font, f, $nc(host)->getFont());
 	$var($FontMetrics, fm, (this->font == nullptr) ? ($FontMetrics*)nullptr : host->getFontMetrics(this->font));
@@ -420,6 +426,7 @@ void PlainView::updateMetrics() {
 }
 
 float PlainView::getPreferredSpan(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	updateMetrics();
 	switch (axis) {
 	case $View::X_AXIS:
@@ -439,6 +446,7 @@ float PlainView::getPreferredSpan(int32_t axis) {
 }
 
 void PlainView::paint($Graphics* g, $Shape* a$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($Shape, a, a$renamed);
 	$var($Shape, originalA, a);
 	$assign(a, adjustPaintRegion(a));
@@ -508,6 +516,7 @@ $Shape* PlainView::adjustPaintRegion($Shape* a) {
 }
 
 $Shape* PlainView::modelToView(int32_t pos, $Shape* a, $Position$Bias* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, getDocument());
 	$var($Element, map, getElement());
 	int32_t lineIndex = $nc(map)->getElementIndex(pos);
@@ -534,6 +543,7 @@ $Shape* PlainView::modelToView(int32_t pos, $Shape* a, $Position$Bias* b) {
 }
 
 int32_t PlainView::viewToModel(float x, float y, $Shape* a, $Position$BiasArray* bias) {
+	$useLocalCurrentObjectStackCache();
 	$init($Position$Bias);
 	$nc(bias)->set(0, $Position$Bias::Forward);
 	$var($Rectangle, alloc, $nc(a)->getBounds());
@@ -604,6 +614,7 @@ float PlainView::nextTabStop(float x, int32_t tabOffset) {
 }
 
 void PlainView::updateDamage($DocumentEvent* changes, $Shape* a, $ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, host, getContainer());
 	updateMetrics();
 	$var($Element, elem, getElement());
@@ -657,6 +668,7 @@ void PlainView::updateDamage($DocumentEvent* changes, $Shape* a, $ViewFactory* f
 }
 
 void PlainView::damageLineRange(int32_t line0, int32_t line1, $Shape* a, $Component* host) {
+	$useLocalCurrentObjectStackCache();
 	if (a != nullptr) {
 		$var($Rectangle, area0, lineToRect(a, line0));
 		$var($Rectangle, area1, lineToRect(a, line1));
@@ -670,6 +682,7 @@ void PlainView::damageLineRange(int32_t line0, int32_t line1, $Shape* a, $Compon
 }
 
 $Rectangle* PlainView::lineToRect($Shape* a, int32_t line) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, r, nullptr);
 	updateMetrics();
 	if (this->metrics != nullptr) {
@@ -687,6 +700,7 @@ $Rectangle* PlainView::lineToRect($Shape* a, int32_t line) {
 }
 
 void PlainView::calculateLongestLine() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, getContainer());
 	$set(this, font, $nc(c)->getFont());
 	$set(this, metrics, c->getFontMetrics(this->font));
@@ -705,6 +719,7 @@ void PlainView::calculateLongestLine() {
 }
 
 int32_t PlainView::getLineWidth($Element* line) {
+	$useLocalCurrentObjectStackCache();
 	if (line == nullptr) {
 		return 0;
 	}
@@ -725,6 +740,7 @@ int32_t PlainView::getLineWidth($Element* line) {
 
 bool PlainView::getFPMethodOverridden($Class* cls, $String* method, $PlainView$FPMethodArgs* methodArgs) {
 	$init(PlainView);
+	$useLocalCurrentObjectStackCache();
 	$var($HashMap, map, nullptr);
 	bool initialized = PlainView::methodsOverriddenMapRef != nullptr && ($assign(map, $cast($HashMap, $nc(PlainView::methodsOverriddenMapRef)->get()))) != nullptr;
 	if (!initialized) {
@@ -742,12 +758,14 @@ bool PlainView::getFPMethodOverridden($Class* cls, $String* method, $PlainView$F
 
 bool PlainView::checkFPMethodOverridden($Class* className, $String* methodName, $PlainView$FPMethodArgs* methodArgs) {
 	$init(PlainView);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	return $nc(($cast($Boolean, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($PlainView$1, methodName, className, methodArgs)))))))->booleanValue();
 }
 
 bool PlainView::isFPMethodOverridden($String* method, $Class* cls, $ClassArray* intTypes, $ClassArray* fpTypes) {
 	$init(PlainView);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($Module, thisModule, PlainView::class$->getModule());
 	while (!$nc($of(thisModule))->equals($($nc(cls)->getModule()))) {

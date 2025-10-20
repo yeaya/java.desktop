@@ -219,6 +219,7 @@ void RendererStats$RendererStatsHolder::init$() {
 }
 
 void RendererStats$RendererStatsHolder::add(Object$* parent, $RendererStats* stats) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->allStats)->add(stats);
 	$nc($($CleanerFactory::cleaner()))->register$(parent, static_cast<$Runnable*>($$new(RendererStats$RendererStatsHolder$$Lambda$lambda$add$1$1, this, stats)));
 }
@@ -229,6 +230,7 @@ void RendererStats$RendererStatsHolder::remove($RendererStats* stats) {
 }
 
 void RendererStats$RendererStatsHolder::dump() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->allStats)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -245,6 +247,7 @@ void RendererStats$RendererStatsHolder::lambda$add$1($RendererStats* stats) {
 }
 
 $Void* RendererStats$RendererStatsHolder::lambda$new$0() {
+	$useLocalCurrentObjectStackCache();
 	$var($ThreadGroup, var$0, $MarlinUtils::getRootThreadGroup());
 	$var($Thread, hook, $new($Thread, var$0, $$new($RendererStats$RendererStatsHolder$1, this), "MarlinStatsHook"_s));
 	hook->setContextClassLoader(nullptr);

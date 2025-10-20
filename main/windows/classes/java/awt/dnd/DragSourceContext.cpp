@@ -227,6 +227,7 @@ void DragSourceContext::finalize() {
 $Transferable* DragSourceContext::emptyTransferable = nullptr;
 
 void DragSourceContext::init$($DragGestureEvent* trigger, $Cursor* dragCursor, $Image* dragImage, $Point* offset, $Transferable* t, $DragSourceListener* dsl) {
+	$useLocalCurrentObjectStackCache();
 	$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());
 	if (!($instanceOf($ComponentFactory, toolkit))) {
 		$throwNew($AWTError, $$str({"Unsupported toolkit: "_s, toolkit}));
@@ -327,6 +328,7 @@ void DragSourceContext::transferablesFlavorsChanged() {
 }
 
 void DragSourceContext::dragEnter($DragSourceDragEvent* dsde) {
+	$useLocalCurrentObjectStackCache();
 	$var($DragSourceListener, dsl, this->listener);
 	if (dsl != nullptr) {
 		dsl->dragEnter(dsde);
@@ -337,6 +339,7 @@ void DragSourceContext::dragEnter($DragSourceDragEvent* dsde) {
 }
 
 void DragSourceContext::dragOver($DragSourceDragEvent* dsde) {
+	$useLocalCurrentObjectStackCache();
 	$var($DragSourceListener, dsl, this->listener);
 	if (dsl != nullptr) {
 		dsl->dragOver(dsde);
@@ -347,6 +350,7 @@ void DragSourceContext::dragOver($DragSourceDragEvent* dsde) {
 }
 
 void DragSourceContext::dragExit($DragSourceEvent* dse) {
+	$useLocalCurrentObjectStackCache();
 	$var($DragSourceListener, dsl, this->listener);
 	if (dsl != nullptr) {
 		dsl->dragExit(dse);
@@ -356,6 +360,7 @@ void DragSourceContext::dragExit($DragSourceEvent* dse) {
 }
 
 void DragSourceContext::dropActionChanged($DragSourceDragEvent* dsde) {
+	$useLocalCurrentObjectStackCache();
 	$var($DragSourceListener, dsl, this->listener);
 	if (dsl != nullptr) {
 		dsl->dropActionChanged(dsde);
@@ -366,6 +371,7 @@ void DragSourceContext::dropActionChanged($DragSourceDragEvent* dsde) {
 }
 
 void DragSourceContext::dragDropEnd($DragSourceDropEvent* dsde) {
+	$useLocalCurrentObjectStackCache();
 	$var($DragSourceListener, dsl, this->listener);
 	if (dsl != nullptr) {
 		dsl->dragDropEnd(dsde);
@@ -445,6 +451,7 @@ void DragSourceContext::writeObject($ObjectOutputStream* s) {
 }
 
 void DragSourceContext::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	$var($DragGestureEvent, newTrigger, $cast($DragGestureEvent, $nc(f)->get("trigger"_s, ($Object*)nullptr)));
 	if (newTrigger == nullptr) {

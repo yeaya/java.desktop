@@ -116,6 +116,7 @@ $MetalBumps* MetalIconFactory$VerticalSliderThumbIcon::controlBumps = nullptr;
 $MetalBumps* MetalIconFactory$VerticalSliderThumbIcon::primaryBumps = nullptr;
 
 void MetalIconFactory$VerticalSliderThumbIcon::init$() {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, var$0, static_cast<$Color*>($MetalLookAndFeel::getControlHighlight()));
 	$var($Color, var$1, static_cast<$Color*>($MetalLookAndFeel::getControlInfo()));
 	$assignStatic(MetalIconFactory$VerticalSliderThumbIcon::controlBumps, $new($MetalBumps, 6, 10, var$0, var$1, $($MetalLookAndFeel::getControl())));
@@ -125,6 +126,7 @@ void MetalIconFactory$VerticalSliderThumbIcon::init$() {
 }
 
 void MetalIconFactory$VerticalSliderThumbIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	bool leftToRight = $MetalUtils::isLeftToRight(c);
 	$nc(g)->translate(x, y);
 	$var($Rectangle, clip, g->getClipBounds());

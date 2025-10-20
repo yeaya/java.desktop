@@ -118,6 +118,7 @@ void BytePackedRaster::initIDs() {
 }
 
 void BytePackedRaster::init$($SampleModel* sampleModel, $Point* origin) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, var$0, sampleModel);
 	$var($DataBufferByte, var$1, $cast($DataBufferByte, $nc(sampleModel)->createDataBuffer()));
 	int32_t var$2 = $nc(origin)->x;
@@ -200,6 +201,7 @@ $Object* BytePackedRaster::getDataElements(int32_t x, int32_t y, int32_t w, int3
 }
 
 $Object* BytePackedRaster::getPixelData(int32_t x, int32_t y, int32_t w, int32_t h, Object$* obj) {
+	$useLocalCurrentObjectStackCache();
 	if ((x < this->minX) || (y < this->minY) || (x + w > this->maxX) || (y + h > this->maxY)) {
 		$throwNew($ArrayIndexOutOfBoundsException, "Coordinate out of bounds!"_s);
 	}
@@ -231,6 +233,7 @@ $bytes* BytePackedRaster::getByteData(int32_t x, int32_t y, int32_t w, int32_t h
 }
 
 $bytes* BytePackedRaster::getByteData(int32_t x, int32_t y, int32_t w, int32_t h, $bytes* outData$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, outData, outData$renamed);
 	if ((x < this->minX) || (y < this->minY) || (x + w > this->maxX) || (y + h > this->maxY)) {
 		$throwNew($ArrayIndexOutOfBoundsException, "Coordinate out of bounds!"_s);
@@ -351,6 +354,7 @@ void BytePackedRaster::setDataElements(int32_t x, int32_t y, $Raster* inRaster) 
 }
 
 void BytePackedRaster::setDataElements(int32_t dstX, int32_t dstY, int32_t srcX, int32_t srcY, int32_t width, int32_t height, BytePackedRaster* inRaster) {
+	$useLocalCurrentObjectStackCache();
 	if (width <= 0 || height <= 0) {
 		return;
 	}
@@ -629,6 +633,7 @@ void BytePackedRaster::putByteData(int32_t x, int32_t y, int32_t w, int32_t h, $
 }
 
 $ints* BytePackedRaster::getPixels(int32_t x, int32_t y, int32_t w, int32_t h, $ints* iArray$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, iArray, iArray$renamed);
 	if ((x < this->minX) || (y < this->minY) || (x + w > this->maxX) || (y + h > this->maxY)) {
 		$throwNew($ArrayIndexOutOfBoundsException, "Coordinate out of bounds!"_s);
@@ -812,6 +817,7 @@ $Raster* BytePackedRaster::createChild(int32_t x, int32_t y, int32_t width, int3
 }
 
 $WritableRaster* BytePackedRaster::createWritableChild(int32_t x, int32_t y, int32_t width, int32_t height, int32_t x0, int32_t y0, $ints* bandList) {
+	$useLocalCurrentObjectStackCache();
 	if (x < this->minX) {
 		$throwNew($RasterFormatException, "x lies outside the raster"_s);
 	}
@@ -839,6 +845,7 @@ $WritableRaster* BytePackedRaster::createWritableChild(int32_t x, int32_t y, int
 }
 
 $WritableRaster* BytePackedRaster::createCompatibleWritableRaster(int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (w <= 0 || h <= 0) {
 		$throwNew($RasterFormatException, $$str({"negative "_s, ((w <= 0) ? "width"_s : "height"_s)}));
 	}
@@ -851,6 +858,7 @@ $WritableRaster* BytePackedRaster::createCompatibleWritableRaster() {
 }
 
 void BytePackedRaster::verify(bool strictCheck) {
+	$useLocalCurrentObjectStackCache();
 	if (this->dataBitOffset < 0) {
 		$throwNew($RasterFormatException, "Data offsets must be >= 0"_s);
 	}
@@ -886,6 +894,7 @@ void BytePackedRaster::verify(bool strictCheck) {
 }
 
 $String* BytePackedRaster::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $new($String, $$str({"BytePackedRaster: width = "_s, $$str(this->width), " height = "_s, $$str(this->height), " #channels "_s, $$str(this->numBands), " xOff = "_s, $$str(this->sampleModelTranslateX), " yOff = "_s, $$str(this->sampleModelTranslateY)}));
 }
 

@@ -236,6 +236,7 @@ $String* AbstractButton$AccessibleAbstractButton::getAccessibleName() {
 }
 
 $AccessibleIconArray* AbstractButton$AccessibleAbstractButton::getAccessibleIcon() {
+	$useLocalCurrentObjectStackCache();
 	$var($Icon, defaultIcon, this->this$0->getIcon());
 	if ($instanceOf($Accessible, defaultIcon)) {
 		$var($AccessibleContext, ac, $nc(($cast($Accessible, defaultIcon)))->getAccessibleContext());
@@ -247,6 +248,7 @@ $AccessibleIconArray* AbstractButton$AccessibleAbstractButton::getAccessibleIcon
 }
 
 $AccessibleStateSet* AbstractButton$AccessibleAbstractButton::getAccessibleStateSet() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleStateSet, states, $JComponent$AccessibleJComponent::getAccessibleStateSet());
 	if ($nc($(this->this$0->getModel()))->isArmed()) {
 		$init($AccessibleState);
@@ -268,6 +270,7 @@ $AccessibleStateSet* AbstractButton$AccessibleAbstractButton::getAccessibleState
 }
 
 $AccessibleRelationSet* AbstractButton$AccessibleAbstractButton::getAccessibleRelationSet() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleRelationSet, relationSet, $JComponent$AccessibleJComponent::getAccessibleRelationSet());
 	$init($AccessibleRelation);
 	if (!$nc(relationSet)->contains($AccessibleRelation::MEMBER_OF)) {
@@ -360,6 +363,7 @@ $AccessibleText* AbstractButton$AccessibleAbstractButton::getAccessibleText() {
 }
 
 int32_t AbstractButton$AccessibleAbstractButton::getIndexAtPoint($Point* p) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, view, $cast($View, this->this$0->getClientProperty("html"_s)));
 	if (view != nullptr) {
 		$var($Rectangle, r, getTextRectangle());
@@ -375,6 +379,7 @@ int32_t AbstractButton$AccessibleAbstractButton::getIndexAtPoint($Point* p) {
 }
 
 $Rectangle* AbstractButton$AccessibleAbstractButton::getCharacterBounds(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, view, $cast($View, this->this$0->getClientProperty("html"_s)));
 	if (view != nullptr) {
 		$var($Rectangle, r, getTextRectangle());
@@ -396,6 +401,7 @@ $Rectangle* AbstractButton$AccessibleAbstractButton::getCharacterBounds(int32_t 
 }
 
 int32_t AbstractButton$AccessibleAbstractButton::getCharCount() {
+	$useLocalCurrentObjectStackCache();
 	$var($View, view, $cast($View, this->this$0->getClientProperty("html"_s)));
 	if (view != nullptr) {
 		$var($Document, d, view->getDocument());
@@ -412,6 +418,7 @@ int32_t AbstractButton$AccessibleAbstractButton::getCaretPosition() {
 }
 
 $String* AbstractButton$AccessibleAbstractButton::getAtIndex(int32_t part, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index >= getCharCount()) {
 		return nullptr;
 	}
@@ -459,6 +466,7 @@ $String* AbstractButton$AccessibleAbstractButton::getAtIndex(int32_t part, int32
 }
 
 $String* AbstractButton$AccessibleAbstractButton::getAfterIndex(int32_t part, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index >= getCharCount()) {
 		return nullptr;
 	}
@@ -523,6 +531,7 @@ $String* AbstractButton$AccessibleAbstractButton::getAfterIndex(int32_t part, in
 }
 
 $String* AbstractButton$AccessibleAbstractButton::getBeforeIndex(int32_t part, int32_t index) {
+	$useLocalCurrentObjectStackCache();
 	if (index < 0 || index > getCharCount() - 1) {
 		return nullptr;
 	}
@@ -583,6 +592,7 @@ $String* AbstractButton$AccessibleAbstractButton::getBeforeIndex(int32_t part, i
 }
 
 $AttributeSet* AbstractButton$AccessibleAbstractButton::getCharacterAttribute(int32_t i) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, view, $cast($View, this->this$0->getClientProperty("html"_s)));
 	if (view != nullptr) {
 		$var($Document, d, view->getDocument());
@@ -610,6 +620,7 @@ $String* AbstractButton$AccessibleAbstractButton::getSelectedText() {
 }
 
 $String* AbstractButton$AccessibleAbstractButton::getText(int32_t offset, int32_t length) {
+	$useLocalCurrentObjectStackCache();
 	$var($View, view, $cast($View, this->this$0->getClientProperty("html"_s)));
 	if (view != nullptr) {
 		$var($Document, d, view->getDocument());
@@ -622,6 +633,7 @@ $String* AbstractButton$AccessibleAbstractButton::getText(int32_t offset, int32_
 }
 
 $Rectangle* AbstractButton$AccessibleAbstractButton::getTextRectangle() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, text, this->this$0->getText());
 	$var($Icon, icon, (this->this$0->isEnabled()) ? this->this$0->getIcon() : this->this$0->getDisabledIcon());
 	if ((icon == nullptr) && (text == nullptr)) {

@@ -73,6 +73,7 @@ bool FileImageSource::checkSecurity(Object$* context, bool quiet) {
 }
 
 $ImageDecoder* FileImageSource::getDecoder() {
+	$useLocalCurrentObjectStackCache();
 	if (this->imagefile == nullptr) {
 		return nullptr;
 	}

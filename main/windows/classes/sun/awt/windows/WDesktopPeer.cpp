@@ -294,6 +294,7 @@ void WDesktopPeer::browse($URI* uri) {
 }
 
 void WDesktopPeer::ShellExecute($File* file, $String* verb) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, errMsg, ShellExecute($($nc(file)->getAbsolutePath()), verb));
 	if (errMsg != nullptr) {
 		$throwNew($IOException, $$str({"Failed to "_s, verb, " "_s, file, ". Error message: "_s, errMsg}));
@@ -301,6 +302,7 @@ void WDesktopPeer::ShellExecute($File* file, $String* verb) {
 }
 
 void WDesktopPeer::ShellExecute($URI* uri, $String* verb) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, errmsg, ShellExecute($($nc(uri)->toString()), verb));
 	if (errmsg != nullptr) {
 		$throwNew($IOException, $$str({"Failed to "_s, verb, " "_s, uri, ". Error message: "_s, errmsg}));
@@ -355,6 +357,7 @@ void WDesktopPeer::removeAppEventListener($SystemEventListener* listener) {
 
 void WDesktopPeer::userSessionCallback(bool activated, $UserSessionEvent$Reason* reason) {
 	$init(WDesktopPeer);
+	$useLocalCurrentObjectStackCache();
 	$load($UserSessionListener);
 	$var($UserSessionListenerArray, listeners, $fcast($UserSessionListenerArray, $nc(WDesktopPeer::listenerList)->getListeners($UserSessionListener::class$)));
 	{
@@ -372,6 +375,7 @@ void WDesktopPeer::userSessionCallback(bool activated, $UserSessionEvent$Reason*
 
 void WDesktopPeer::systemSleepCallback(bool resumed) {
 	$init(WDesktopPeer);
+	$useLocalCurrentObjectStackCache();
 	$load($SystemSleepListener);
 	$var($SystemSleepListenerArray, listeners, $fcast($SystemSleepListenerArray, $nc(WDesktopPeer::listenerList)->getListeners($SystemSleepListener::class$)));
 	{
@@ -402,6 +406,7 @@ bool WDesktopPeer::moveToTrash($String* file) {
 
 void WDesktopPeer::lambda$systemSleepCallback$1(bool resumed, $SystemSleepListener* ssl) {
 	$init(WDesktopPeer);
+	$useLocalCurrentObjectStackCache();
 	if (resumed) {
 		$nc(ssl)->systemAwoke($$new($SystemSleepEvent));
 	} else {
@@ -411,6 +416,7 @@ void WDesktopPeer::lambda$systemSleepCallback$1(bool resumed, $SystemSleepListen
 
 void WDesktopPeer::lambda$userSessionCallback$0(bool activated, $UserSessionListener* use, $UserSessionEvent$Reason* reason) {
 	$init(WDesktopPeer);
+	$useLocalCurrentObjectStackCache();
 	if (activated) {
 		$nc(use)->userSessionActivated($$new($UserSessionEvent, reason));
 	} else {

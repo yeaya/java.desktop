@@ -70,6 +70,7 @@ void CompoundPrintable::init$($List* printables) {
 }
 
 int32_t CompoundPrintable::print($Graphics* graphics, $PageFormat* pf, int32_t pageIndex) {
+	$useLocalCurrentObjectStackCache();
 	int32_t ret = $Printable::NO_SUCH_PAGE;
 	while ($nc(this->printables)->peek() != nullptr) {
 		ret = $nc(($cast($CountingPrintable, $($nc(this->printables)->peek()))))->print(graphics, pf, pageIndex - this->offset);

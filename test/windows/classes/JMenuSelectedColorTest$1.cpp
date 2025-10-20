@@ -88,6 +88,7 @@ void JMenuSelectedColorTest$1::init$() {
 }
 
 void JMenuSelectedColorTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$init($JMenuSelectedColorTest);
 	$assignStatic($JMenuSelectedColorTest::menu, $new($JMenu, "         "_s));
 	$assignStatic($JMenuSelectedColorTest::menuitem, $new($JMenuItem, "        "_s));

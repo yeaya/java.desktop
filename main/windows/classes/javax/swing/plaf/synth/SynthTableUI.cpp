@@ -219,6 +219,7 @@ $ComponentUI* SynthTableUI::createUI($JComponent* c) {
 }
 
 void SynthTableUI::installDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$load($Date);
 	$set(this, dateRenderer, installRendererIfPossible($Date::class$, nullptr));
 	$load($Number);
@@ -247,6 +248,7 @@ $TableCellRenderer* SynthTableUI::installRendererIfPossible($Class* objectClass,
 }
 
 void SynthTableUI::updateStyle($JTable* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -304,6 +306,7 @@ void SynthTableUI::installListeners() {
 }
 
 void SynthTableUI::uninstallDefaults() {
+	$useLocalCurrentObjectStackCache();
 	$load($Date);
 	$nc(this->table)->setDefaultRenderer($Date::class$, this->dateRenderer);
 	$load($Number);
@@ -342,6 +345,7 @@ $SynthContext* SynthTableUI::getContext($JComponent* c, int32_t state) {
 }
 
 void SynthTableUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);
@@ -361,6 +365,7 @@ void SynthTableUI::paint($Graphics* g, $JComponent* c) {
 }
 
 void SynthTableUI::paint($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, clip, $nc(g)->getClipBounds());
 	$var($Rectangle, bounds, $nc(this->table)->getBounds());
 	$nc(bounds)->x = (bounds->y = 0);
@@ -395,6 +400,7 @@ void SynthTableUI::paint($SynthContext* context, $Graphics* g) {
 }
 
 void SynthTableUI::paintDropLines($SynthContext* context, $Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTable$DropLocation, loc, $nc(this->table)->getDropLocation());
 	if (loc == nullptr) {
 		return;
@@ -436,6 +442,7 @@ void SynthTableUI::paintDropLines($SynthContext* context, $Graphics* g) {
 }
 
 $Rectangle* SynthTableUI::getHDropLineRect($JTable$DropLocation* loc) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(loc)->isInsertRow()) {
 		return nullptr;
 	}
@@ -460,6 +467,7 @@ $Rectangle* SynthTableUI::getHDropLineRect($JTable$DropLocation* loc) {
 }
 
 $Rectangle* SynthTableUI::getVDropLineRect($JTable$DropLocation* loc) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(loc)->isInsertColumn()) {
 		return nullptr;
 	}
@@ -504,6 +512,7 @@ $Rectangle* SynthTableUI::extendRect($Rectangle* rect, bool horizontal) {
 }
 
 void SynthTableUI::paintGrid($SynthContext* context, $Graphics* g, int32_t rMin, int32_t rMax, int32_t cMin, int32_t cMax) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor($($nc(this->table)->getGridColor()));
 	$var($Rectangle, minCell, $nc(this->table)->getCellRect(rMin, cMin, true));
 	$var($Rectangle, maxCell, $nc(this->table)->getCellRect(rMax, cMax, true));
@@ -550,6 +559,7 @@ int32_t SynthTableUI::viewIndexForColumn($TableColumn* aColumn) {
 }
 
 void SynthTableUI::paintCells($SynthContext* context, $Graphics* g, int32_t rMin, int32_t rMax, int32_t cMin, int32_t cMax) {
+	$useLocalCurrentObjectStackCache();
 	$var($JTableHeader, header, $nc(this->table)->getTableHeader());
 	$var($TableColumn, draggedColumn, (header == nullptr) ? ($TableColumn*)nullptr : $nc(header)->getDraggedColumn());
 	$var($TableColumnModel, cm, $nc(this->table)->getColumnModel());
@@ -597,6 +607,7 @@ void SynthTableUI::paintCells($SynthContext* context, $Graphics* g, int32_t rMin
 }
 
 void SynthTableUI::paintDraggedArea($SynthContext* context, $Graphics* g, int32_t rMin, int32_t rMax, $TableColumn* draggedColumn, int32_t distance) {
+	$useLocalCurrentObjectStackCache();
 	int32_t draggedColumnIndex = viewIndexForColumn(draggedColumn);
 	$var($Rectangle, minCell, $nc(this->table)->getCellRect(rMin, draggedColumnIndex, true));
 	$var($Rectangle, maxCell, $nc(this->table)->getCellRect(rMax, draggedColumnIndex, true));
@@ -635,6 +646,7 @@ void SynthTableUI::paintDraggedArea($SynthContext* context, $Graphics* g, int32_
 }
 
 void SynthTableUI::paintCell($SynthContext* context, $Graphics* g, $Rectangle* cellRect, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	bool var$1 = $nc(this->table)->isEditing();
 	bool var$0 = var$1 && $nc(this->table)->getEditingRow() == row;
 	if (var$0 && $nc(this->table)->getEditingColumn() == column) {

@@ -162,6 +162,7 @@ void FilePane$DetailsTableModel::init$($FilePane* this$0, $JFileChooser* fc) {
 }
 
 void FilePane$DetailsTableModel::updateColumnInfo() {
+	$useLocalCurrentObjectStackCache();
 	$var($File, dir, $nc(this->chooser)->getCurrentDirectory());
 	if (dir != nullptr && $FilePane::usesShellFolder(this->chooser)) {
 		try {
@@ -189,6 +190,7 @@ void FilePane$DetailsTableModel::updateColumnInfo() {
 }
 
 void FilePane$DetailsTableModel::restoreSortKeys($List* sortKeys$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($List, sortKeys, sortKeys$renamed);
 	if (sortKeys != nullptr) {
 		for (int32_t i = 0; i < $nc(sortKeys)->size(); ++i) {
@@ -221,6 +223,7 @@ $Object* FilePane$DetailsTableModel::getFileColumnValue($File* f, int32_t col) {
 }
 
 void FilePane$DetailsTableModel::setValueAt(Object$* value, int32_t row, int32_t col) {
+	$useLocalCurrentObjectStackCache();
 	if (col == 0) {
 		$var($JFileChooser, chooser, this->this$0->getFileChooser());
 		$var($File, f, $cast($File, getValueAt(row, col)));
@@ -254,6 +257,7 @@ void FilePane$DetailsTableModel::setValueAt(Object$* value, int32_t row, int32_t
 }
 
 bool FilePane$DetailsTableModel::isCellEditable(int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	$var($File, currentDirectory, $nc($(this->this$0->getFileChooser()))->getCurrentDirectory());
 	return (!this->this$0->readOnly && column == 0 && this->this$0->canWrite(currentDirectory));
 }

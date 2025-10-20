@@ -220,6 +220,7 @@ void bug4726194::init$() {
 
 void bug4726194::main($StringArray* args) {
 	$init(bug4726194);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -236,6 +237,7 @@ void bug4726194::main($StringArray* args) {
 
 void bug4726194::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(bug4726194);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($System);
 		$nc($System::out)->println($$str({"LookAndFeel: "_s, $($nc(laf)->getClassName())}));
@@ -258,6 +260,7 @@ void bug4726194::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 
 void bug4726194::test(int32_t level, bool horizontal) {
 	$init(bug4726194);
+	$useLocalCurrentObjectStackCache();
 	$var($List, result, $new($ArrayList));
 	$var($StringArray, constraints, horizontal ? bug4726194::hConstraints : bug4726194::vConstraints);
 	test(level, constraints, result, $($Arrays::asList($$new($ObjectArray, level))));
@@ -354,6 +357,7 @@ void bug4726194::test(int32_t level, bool horizontal) {
 
 $ints* bug4726194::getValues($SpringLayout$Constraints* con, $StringArray* cNames) {
 	$init(bug4726194);
+	$useLocalCurrentObjectStackCache();
 	$var($ints, result, $new($ints, $nc(cNames)->length));
 	for (int32_t i = 0; i < cNames->length; ++i) {
 		$var($String, name, cNames->get(i));
@@ -370,6 +374,7 @@ $ints* bug4726194::getValues($SpringLayout$Constraints* con, $StringArray* cName
 
 void bug4726194::test(int32_t level, $StringArray* constraints, $List* result, $List* soFar) {
 	$init(bug4726194);
+	$useLocalCurrentObjectStackCache();
 	if (level == 0) {
 		$nc(result)->add(soFar);
 		return;

@@ -140,6 +140,7 @@ void GeneralRenderer::init$() {
 }
 
 void GeneralRenderer::register$() {
+	$useLocalCurrentObjectStackCache();
 	$load(GeneralRenderer);
 	$Class* owner = GeneralRenderer::class$;
 		$init($FillRect);
@@ -210,6 +211,7 @@ void GeneralRenderer::doSetRect($SurfaceData* sData, $PixelWriter* pw, int32_t x
 }
 
 $ints* GeneralRenderer::doDrawLine($SurfaceData* sData, $PixelWriter* pw, $ints* boundPts$renamed, $Region* clip, int32_t origx1, int32_t origy1, int32_t origx2, int32_t origy2) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, boundPts, boundPts$renamed);
 	if (boundPts == nullptr) {
 		$assign(boundPts, $new($ints, 8));
@@ -331,6 +333,7 @@ $ints* GeneralRenderer::doDrawLine($SurfaceData* sData, $PixelWriter* pw, $ints*
 }
 
 void GeneralRenderer::doDrawRect($PixelWriter* pw, $SunGraphics2D* sg2d, $SurfaceData* sData, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	if (w < 0 || h < 0) {
 		return;
 	}
@@ -363,6 +366,7 @@ void GeneralRenderer::doDrawRect($PixelWriter* pw, $SunGraphics2D* sg2d, $Surfac
 }
 
 void GeneralRenderer::doDrawGlyphList($SurfaceData* sData, $PixelWriter* pw, $GlyphList* gl, int32_t fromGlyph, int32_t toGlyph, $Region* clip) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, bounds, $nc(gl)->getBounds(toGlyph));
 	$nc(clip)->clipBoxToBounds(bounds);
 	int32_t cx1 = $nc(bounds)->get(0);
@@ -593,12 +597,14 @@ bool GeneralRenderer::adjustLine($ints* boundPts, int32_t cxmin, int32_t cymin, 
 }
 
 $PixelWriter* GeneralRenderer::createSolidPixelWriter($SunGraphics2D* sg2d, $SurfaceData* sData) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, dstCM, $nc(sData)->getColorModel());
 	$var($Object, srcPixel, $nc(dstCM)->getDataElements($nc(sg2d)->eargb, nullptr));
 	return $new($SolidPixelWriter, srcPixel);
 }
 
 $PixelWriter* GeneralRenderer::createXorPixelWriter($SunGraphics2D* sg2d, $SurfaceData* sData) {
+	$useLocalCurrentObjectStackCache();
 	$var($ColorModel, dstCM, $nc(sData)->getColorModel());
 	$var($Object, srcPixel, $nc(dstCM)->getDataElements($nc(sg2d)->eargb, nullptr));
 	$var($XORComposite, comp, $cast($XORComposite, $nc(sg2d)->getComposite()));

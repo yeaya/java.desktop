@@ -83,6 +83,7 @@ void bug4252173$1::init$() {
 }
 
 void bug4252173$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$MetalLookAndFeel::setCurrentTheme($$new($DefaultMetalTheme));
 	$var($JComponent, component, $new($JLabel));
 	$var($Icon, horizontalThumbIcon, $UIManager::getIcon("Slider.horizontalThumbIcon"_s));

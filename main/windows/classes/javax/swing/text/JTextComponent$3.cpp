@@ -114,6 +114,7 @@ void JTextComponent$3::init$($JTextComponent* this$0, bool val$isEventDispatchTh
 }
 
 void JTextComponent$3::run() {
+	$useLocalCurrentObjectStackCache();
 	bool wasEnabled = false;
 	if (this->val$isEventDispatchThread) {
 		if (this->this$0->isEnabled()) {

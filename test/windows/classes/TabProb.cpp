@@ -194,6 +194,7 @@ TabProb* TabProb::tb1 = nullptr;
 TabProb* TabProb::tb2 = nullptr;
 
 void TabProb::init$(int32_t layoutPolicy) {
+	$useLocalCurrentObjectStackCache();
 	$JFrame::init$();
 	$var($JTabbedPane, tabpanel, $new($JTabbedPane));
 	tabpanel->setTabPlacement($JTabbedPane::TOP);
@@ -212,6 +213,7 @@ void TabProb::init$(int32_t layoutPolicy) {
 
 void TabProb::main($StringArray* args) {
 	$init(TabProb);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -231,6 +233,7 @@ void TabProb::main($StringArray* args) {
 
 void TabProb::test() {
 	$init(TabProb);
+	$useLocalCurrentObjectStackCache();
 	$var($Robot, robot, $new($Robot));
 	$SwingUtilities::invokeAndWait($$new($TabProb$1));
 	double tb1height = $nc($($nc(TabProb::tb1)->getPreferredSize()))->getHeight();

@@ -101,6 +101,7 @@ void BasicScrollBarUI$ScrollListener::setScrollByBlock(bool block) {
 }
 
 void BasicScrollBarUI$ScrollListener::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (this->useBlockIncrement) {
 		this->this$0->scrollByBlock(this->direction);
 		if ($nc(this->this$0->scrollbar)->getOrientation() == $JScrollBar::VERTICAL) {

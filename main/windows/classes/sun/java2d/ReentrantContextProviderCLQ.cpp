@@ -58,6 +58,7 @@ void ReentrantContextProviderCLQ::init$(int32_t refType) {
 }
 
 $ReentrantContext* ReentrantContextProviderCLQ::acquire() {
+	$useLocalCurrentObjectStackCache();
 	$var($ReentrantContext, ctx, nullptr);
 	$var($Reference, ref, nullptr);
 	while ((ctx == nullptr) && (($assign(ref, $cast($Reference, $nc(this->ctxQueue)->poll()))) != nullptr)) {

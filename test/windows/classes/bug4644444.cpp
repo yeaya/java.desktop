@@ -125,6 +125,7 @@ void bug4644444::init$() {
 }
 
 void bug4644444::init() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringArray2, instructionsSet, $new($StringArray2, {$$new($StringArray, {
 		" Note : Incase of Assertion failure,user can enter"_s,
 		" remarks by pressing \'Assertion Fail Remarks \' button"_s,

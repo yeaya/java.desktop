@@ -75,6 +75,7 @@ void PaintEvent::setUpdateRect($Rectangle* updateRect) {
 }
 
 $String* PaintEvent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, typeStr, nullptr);
 	switch (this->id) {
 	case PaintEvent::PAINT:

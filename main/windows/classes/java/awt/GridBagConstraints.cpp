@@ -192,6 +192,7 @@ void GridBagConstraints::init$(int32_t gridx, int32_t gridy, int32_t gridwidth, 
 }
 
 $Object* GridBagConstraints::clone() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var(GridBagConstraints, c, $cast(GridBagConstraints, $Cloneable::clone()));
 		$set($nc(c), insets, $cast($Insets, $nc(this->insets)->clone()));

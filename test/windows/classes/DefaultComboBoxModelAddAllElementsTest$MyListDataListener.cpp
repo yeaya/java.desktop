@@ -57,6 +57,7 @@ void DefaultComboBoxModelAddAllElementsTest$MyListDataListener::init$() {
 }
 
 void DefaultComboBoxModelAddAllElementsTest$MyListDataListener::intervalAdded($ListDataEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	int32_t var$0 = $nc(e)->getIndex1();
 	if (var$0 - e->getIndex0() != 50 - 0 - 1) {
 		$var($String, var$1, $$str({"Test case failed. Expected "_s, $$str((50 - 0)), " elements to be added, but only got "_s}));

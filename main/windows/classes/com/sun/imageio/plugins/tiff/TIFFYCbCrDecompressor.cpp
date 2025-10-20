@@ -341,6 +341,7 @@ void TIFFYCbCrDecompressor::setDestinationBands($ints* destinationBands) {
 }
 
 void TIFFYCbCrDecompressor::setImage($BufferedImage* image) {
+	$useLocalCurrentObjectStackCache();
 	if (this->decompressor != nullptr) {
 		$var($ColorModel, cm, $nc(image)->getColorModel());
 		$var($ColorModel, var$0, cm);
@@ -418,6 +419,7 @@ int8_t TIFFYCbCrDecompressor::clamp(int32_t f) {
 }
 
 void TIFFYCbCrDecompressor::beginDecoding() {
+	$useLocalCurrentObjectStackCache();
 	if (this->decompressor != nullptr) {
 		$nc(this->decompressor)->beginDecoding();
 	}
@@ -485,6 +487,7 @@ void TIFFYCbCrDecompressor::beginDecoding() {
 }
 
 void TIFFYCbCrDecompressor::decodeRaw($bytes* buf, int32_t dstOffset, int32_t bitsPerPixel, int32_t scanlineStride) {
+	$useLocalCurrentObjectStackCache();
 	int32_t elementsPerPacket = this->chromaSubsampleH * this->chromaSubsampleV + 2;
 	$var($bytes, packet, $new($bytes, elementsPerPacket));
 	if (this->decompressor != nullptr) {

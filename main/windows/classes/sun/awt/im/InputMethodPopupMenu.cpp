@@ -88,6 +88,7 @@ InputMethodPopupMenu* InputMethodPopupMenu::getInstance($Component* client, $Str
 }
 
 void InputMethodPopupMenu::addOneInputMethodToMenu($InputMethodLocator* locator, $String* currentSelection) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputMethodDescriptor, descriptor, $nc(locator)->getDescriptor());
 	$var($String, label, $nc(descriptor)->getInputMethodDisplayName(nullptr, $($Locale::getDefault())));
 	$var($String, command, locator->getActionCommandString());
@@ -136,6 +137,7 @@ bool InputMethodPopupMenu::isSelected($String* command, $String* currentSelectio
 }
 
 $String* InputMethodPopupMenu::getLocaleName($Locale* locale) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, localeString, $nc(locale)->toString());
 	$var($String, localeName, $Toolkit::getProperty($$str({"AWT.InputMethodLanguage."_s, localeString}), nullptr));
 	if (localeName == nullptr) {
@@ -148,6 +150,7 @@ $String* InputMethodPopupMenu::getLocaleName($Locale* locale) {
 }
 
 void InputMethodPopupMenu::actionPerformed($ActionEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, choice, $nc(event)->getActionCommand());
 	$nc(($cast($ExecutableInputMethodManager, $($InputMethodManager::getInstance()))))->changeInputMethod(choice);
 }

@@ -67,6 +67,7 @@ $Control$Type* Control::getType() {
 }
 
 $String* Control::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $String::format("%s control"_s, $$new($ObjectArray, {$($of(getType()))}));
 }
 

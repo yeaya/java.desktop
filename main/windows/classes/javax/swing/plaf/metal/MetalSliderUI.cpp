@@ -190,6 +190,7 @@ $Icon* MetalSliderUI::getVertThumbIcon() {
 }
 
 void MetalSliderUI::installUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	MetalSliderUI::trackWidth = $nc(($cast($Integer, $($UIManager::get("Slider.trackWidth"_s)))))->intValue();
 	MetalSliderUI::tickLength = (this->safeLength = $nc(($cast($Integer, $($UIManager::get("Slider.majorTickLength"_s)))))->intValue());
 	$assignStatic(MetalSliderUI::horizThumbIcon, ($assignStatic(MetalSliderUI::SAFE_HORIZ_THUMB_ICON, $UIManager::getIcon("Slider.horizontalThumbIcon"_s))));
@@ -215,6 +216,7 @@ void MetalSliderUI::prepareFilledSliderField() {
 }
 
 void MetalSliderUI::paintThumb($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, knobBounds, this->thumbRect);
 	$nc(g)->translate($nc(knobBounds)->x, knobBounds->y);
 	if ($nc(this->slider)->getOrientation() == $JSlider::HORIZONTAL) {
@@ -250,6 +252,7 @@ $Rectangle* MetalSliderUI::getPaintTrackRect() {
 }
 
 void MetalSliderUI::paintTrack($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	if ($MetalLookAndFeel::usingOcean()) {
 		oceanPaintTrack(g);
 		return;
@@ -336,6 +339,7 @@ void MetalSliderUI::paintTrack($Graphics* g) {
 }
 
 void MetalSliderUI::oceanPaintTrack($Graphics* g) {
+	$useLocalCurrentObjectStackCache();
 	bool leftToRight = $MetalUtils::isLeftToRight(this->slider);
 	bool drawInverted = this->drawInverted();
 	$var($Color, sliderAltTrackColor, $cast($Color, $UIManager::get("Slider.altTrackColor"_s)));
@@ -463,6 +467,7 @@ void MetalSliderUI::paintFocus($Graphics* g) {
 }
 
 $Dimension* MetalSliderUI::getThumbSize() {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, $new($Dimension));
 	if ($nc(this->slider)->getOrientation() == $JSlider::VERTICAL) {
 		size->width = $nc($(getVertThumbIcon()))->getIconWidth();
@@ -506,16 +511,19 @@ void MetalSliderUI::scrollDueToClickInTrack(int32_t dir) {
 }
 
 void MetalSliderUI::paintMinorTickForHorizSlider($Graphics* g, $Rectangle* tickBounds, int32_t x) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor($nc(this->slider)->isEnabled() ? $($nc(this->slider)->getForeground()) : $(static_cast<$Color*>($MetalLookAndFeel::getControlShadow())));
 	g->drawLine(x, this->TICK_BUFFER, x, this->TICK_BUFFER + (this->safeLength / 2));
 }
 
 void MetalSliderUI::paintMajorTickForHorizSlider($Graphics* g, $Rectangle* tickBounds, int32_t x) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor($nc(this->slider)->isEnabled() ? $($nc(this->slider)->getForeground()) : $(static_cast<$Color*>($MetalLookAndFeel::getControlShadow())));
 	g->drawLine(x, this->TICK_BUFFER, x, this->TICK_BUFFER + (this->safeLength - 1));
 }
 
 void MetalSliderUI::paintMinorTickForVertSlider($Graphics* g, $Rectangle* tickBounds, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor($nc(this->slider)->isEnabled() ? $($nc(this->slider)->getForeground()) : $(static_cast<$Color*>($MetalLookAndFeel::getControlShadow())));
 	if ($MetalUtils::isLeftToRight(this->slider)) {
 		g->drawLine(this->TICK_BUFFER, y, this->TICK_BUFFER + (this->safeLength / 2), y);
@@ -525,6 +533,7 @@ void MetalSliderUI::paintMinorTickForVertSlider($Graphics* g, $Rectangle* tickBo
 }
 
 void MetalSliderUI::paintMajorTickForVertSlider($Graphics* g, $Rectangle* tickBounds, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->setColor($nc(this->slider)->isEnabled() ? $($nc(this->slider)->getForeground()) : $(static_cast<$Color*>($MetalLookAndFeel::getControlShadow())));
 	if ($MetalUtils::isLeftToRight(this->slider)) {
 		g->drawLine(this->TICK_BUFFER, y, this->TICK_BUFFER + this->safeLength, y);

@@ -143,6 +143,7 @@ int32_t SynthRootPaneUI::getComponentState($JComponent* c) {
 }
 
 void SynthRootPaneUI::updateStyle($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c, $SynthConstants::ENABLED));
 	$var($SynthStyle, oldStyle, this->style);
 	$set(this, style, $SynthLookAndFeel::updateStyle(context, this));
@@ -155,6 +156,7 @@ void SynthRootPaneUI::updateStyle($JComponent* c) {
 }
 
 void SynthRootPaneUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	$SynthLookAndFeel::update(context, g);
 	$var($SynthContext, var$0, context);

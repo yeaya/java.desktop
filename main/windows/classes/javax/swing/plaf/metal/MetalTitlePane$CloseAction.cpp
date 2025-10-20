@@ -69,6 +69,7 @@ $Object* allocate$MetalTitlePane$CloseAction($Class* clazz) {
 }
 
 void MetalTitlePane$CloseAction::init$($MetalTitlePane* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$AbstractAction::init$($($UIManager::getString($of("MetalTitlePane.closeTitle"_s), $(this$0->getLocale()))));
 }

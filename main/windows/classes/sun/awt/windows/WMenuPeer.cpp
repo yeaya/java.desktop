@@ -123,6 +123,7 @@ void WMenuPeer::init$() {
 }
 
 void WMenuPeer::init$($Menu* target) {
+	$useLocalCurrentObjectStackCache();
 	$WMenuItemPeer::init$();
 	$set(this, target, target);
 	$var($MenuContainer, parent, $nc(target)->getParent());

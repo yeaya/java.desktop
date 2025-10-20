@@ -104,6 +104,7 @@ int64_t HierarchyEvent::getChangeFlags() {
 }
 
 $String* HierarchyEvent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, typeStr, nullptr);
 	switch (this->id) {
 	case HierarchyEvent::ANCESTOR_MOVED:

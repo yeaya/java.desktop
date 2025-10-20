@@ -269,6 +269,7 @@ int32_t SynthFileChooserUI::getComponentState($JComponent* c) {
 }
 
 void SynthFileChooserUI::updateStyle($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$init($Region);
 	$var($SynthStyle, newStyle, $nc($($SynthLookAndFeel::getStyleFactory()))->getStyle(c, $Region::FILE_CHOOSER));
 	if (newStyle != this->style) {
@@ -301,6 +302,7 @@ void SynthFileChooserUI::installUI($JComponent* c) {
 }
 
 void SynthFileChooserUI::installComponents($JFileChooser* fc) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(fc, $SynthConstants::ENABLED));
 	$set(this, cancelButton, $new($JButton, this->cancelButtonText));
 	$nc(this->cancelButton)->setName("SynthFileChooser.cancelButton"_s);
@@ -321,6 +323,7 @@ void SynthFileChooserUI::uninstallComponents($JFileChooser* fc) {
 }
 
 void SynthFileChooserUI::installListeners($JFileChooser* fc) {
+	$useLocalCurrentObjectStackCache();
 	$BasicFileChooserUI::installListeners(fc);
 	$nc($(getModel()))->addListDataListener($$new($SynthFileChooserUI$1, this));
 }
@@ -331,6 +334,7 @@ void SynthFileChooserUI::installDefaults($JFileChooser* fc) {
 }
 
 void SynthFileChooserUI::uninstallDefaults($JFileChooser* fc) {
+	$useLocalCurrentObjectStackCache();
 	$BasicFileChooserUI::uninstallDefaults(fc);
 	$var($SynthContext, context, getContext($(getFileChooser()), $SynthConstants::ENABLED));
 	$nc(this->style)->uninstallDefaults(context);
@@ -341,6 +345,7 @@ void SynthFileChooserUI::installIcons($JFileChooser* fc) {
 }
 
 void SynthFileChooserUI::update($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($SynthContext, context, getContext(c));
 	if ($nc(c)->isOpaque()) {
 		$init($ColorType);
@@ -382,12 +387,14 @@ void SynthFileChooserUI::doFileSelectionModeChanged($PropertyChangeEvent* e) {
 }
 
 void SynthFileChooserUI::doMultiSelectionChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($(getFileChooser()))->isMultiSelectionEnabled()) {
 		$nc($(getFileChooser()))->setSelectedFiles(nullptr);
 	}
 }
 
 void SynthFileChooserUI::doControlButtonsChanged($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($(getFileChooser()))->getControlButtonsAreShown()) {
 		$nc(this->approveButton)->setText($(getApproveButtonText($(getFileChooser()))));
 		$nc(this->approveButton)->setToolTipText($(getApproveButtonToolTipText($(getFileChooser()))));
@@ -403,6 +410,7 @@ $PropertyChangeListener* SynthFileChooserUI::createPropertyChangeListener($JFile
 }
 
 void SynthFileChooserUI::updateFileNameCompletion() {
+	$useLocalCurrentObjectStackCache();
 	if (this->fileNameCompletionString != nullptr) {
 		if ($nc(this->fileNameCompletionString)->equals($(getFileName()))) {
 			$var($FileArray, files, $fcast($FileArray, $nc($($nc($(getModel()))->getFiles()))->toArray($$new($FileArray, 0))));
@@ -416,6 +424,7 @@ void SynthFileChooserUI::updateFileNameCompletion() {
 }
 
 $String* SynthFileChooserUI::getCommonStartString($FileArray* files) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, nullptr);
 	$var($String, str2, nullptr);
 	int32_t i = 0;
@@ -441,6 +450,7 @@ $String* SynthFileChooserUI::getCommonStartString($FileArray* files) {
 }
 
 void SynthFileChooserUI::resetGlobFilter() {
+	$useLocalCurrentObjectStackCache();
 	if (this->actualFileFilter != nullptr) {
 		$var($JFileChooser, chooser, getFileChooser());
 		$var($FileFilter, currentFilter, $nc(chooser)->getFileFilter());

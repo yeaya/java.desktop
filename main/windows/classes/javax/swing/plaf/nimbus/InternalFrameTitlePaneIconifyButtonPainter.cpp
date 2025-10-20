@@ -258,6 +258,7 @@ $AbstractRegionPainter$PaintContext* InternalFrameTitlePaneIconifyButtonPainter:
 }
 
 void InternalFrameTitlePaneIconifyButtonPainter::paintBackgroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -276,6 +277,7 @@ void InternalFrameTitlePaneIconifyButtonPainter::paintBackgroundEnabled($Graphic
 }
 
 void InternalFrameTitlePaneIconifyButtonPainter::paintBackgroundDisabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -315,6 +317,7 @@ void InternalFrameTitlePaneIconifyButtonPainter::paintBackgroundDisabled($Graphi
 }
 
 void InternalFrameTitlePaneIconifyButtonPainter::paintBackgroundMouseOver($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -354,6 +357,7 @@ void InternalFrameTitlePaneIconifyButtonPainter::paintBackgroundMouseOver($Graph
 }
 
 void InternalFrameTitlePaneIconifyButtonPainter::paintBackgroundPressed($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -393,6 +397,7 @@ void InternalFrameTitlePaneIconifyButtonPainter::paintBackgroundPressed($Graphic
 }
 
 void InternalFrameTitlePaneIconifyButtonPainter::paintBackgroundEnabledAndWindowNotFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -432,6 +437,7 @@ void InternalFrameTitlePaneIconifyButtonPainter::paintBackgroundEnabledAndWindow
 }
 
 void InternalFrameTitlePaneIconifyButtonPainter::paintBackgroundMouseOverAndWindowNotFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -471,6 +477,7 @@ void InternalFrameTitlePaneIconifyButtonPainter::paintBackgroundMouseOverAndWind
 }
 
 void InternalFrameTitlePaneIconifyButtonPainter::paintBackgroundPressedAndWindowNotFocused($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, roundRect, decodeRoundRect1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->roundRect);
@@ -580,6 +587,7 @@ $Rectangle2D* InternalFrameTitlePaneIconifyButtonPainter::decodeRect4() {
 }
 
 $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -597,6 +605,7 @@ $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -622,6 +631,7 @@ $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -639,6 +649,7 @@ $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -664,6 +675,7 @@ $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -681,6 +693,7 @@ $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -706,6 +719,7 @@ $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -723,6 +737,7 @@ $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient7($Shape* s) {
 }
 
 $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient8($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -748,6 +763,7 @@ $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient8($Shape* s) {
 }
 
 $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient9($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -765,6 +781,7 @@ $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient9($Shape* s) {
 }
 
 $Paint* InternalFrameTitlePaneIconifyButtonPainter::decodeGradient10($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

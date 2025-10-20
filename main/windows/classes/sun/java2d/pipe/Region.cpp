@@ -246,6 +246,7 @@ Region* Region::getInstance(Region* devBounds, $Shape* s, $AffineTransform* at) 
 
 Region* Region::getInstance(Region* devBounds, bool normalize, $Shape* s, $AffineTransform* at) {
 	$init(Region);
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($RectangularShape, s) && $nc(($cast($RectangularShape, s)))->isEmpty()) {
 		return Region::EMPTY_REGION;
 	}
@@ -345,6 +346,7 @@ void Region::appendSpans($SpanIterator* si) {
 }
 
 Region* Region::getScaledRegion(double sx, double sy) {
+	$useLocalCurrentObjectStackCache();
 	if (sx == 0 || sy == 0 || this == Region::EMPTY_REGION) {
 		return Region::EMPTY_REGION;
 	}
@@ -406,6 +408,7 @@ Region* Region::getScaledRegion(double sx, double sy) {
 }
 
 Region* Region::getTranslatedRegion(int32_t dx, int32_t dy) {
+	$useLocalCurrentObjectStackCache();
 	if ((dx | dy) == 0) {
 		return this;
 	}
@@ -444,6 +447,7 @@ Region* Region::getTranslatedRegion(int32_t dx, int32_t dy) {
 }
 
 Region* Region::getSafeTranslatedRegion(int32_t dx, int32_t dy) {
+	$useLocalCurrentObjectStackCache();
 	int32_t tlox = clipAdd(this->lox, dx);
 	int32_t tloy = clipAdd(this->loy, dy);
 	int32_t thix = clipAdd(this->hix, dx);
@@ -533,6 +537,7 @@ Region* Region::getIntersectionXYXY(double lox, double loy, double hix, double h
 }
 
 Region* Region::getIntersectionXYXY(int32_t lox, int32_t loy, int32_t hix, int32_t hiy) {
+	$useLocalCurrentObjectStackCache();
 	if (isInsideXYXY(lox, loy, hix, hiy)) {
 		return this;
 	}
@@ -596,6 +601,7 @@ Region* Region::getExclusiveOr(Region* r) {
 }
 
 void Region::filterSpans(Region* ra, Region* rb, int32_t flags) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, abands, $nc(ra)->bands);
 	$var($ints, bbands, $nc(rb)->bands);
 	if (abands == nullptr) {
@@ -1105,6 +1111,7 @@ int32_t Region::hashCode() {
 }
 
 bool Region::equals(Object$* o) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals(this, o)) {
 		return true;
 	}

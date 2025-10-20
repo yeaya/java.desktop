@@ -115,6 +115,7 @@ void PopupFactory$HeavyWeightPopup::init$() {
 
 $Popup* PopupFactory$HeavyWeightPopup::getHeavyWeightPopup($Component* owner, $Component* contents, int32_t ownerX, int32_t ownerY) {
 	$init(PopupFactory$HeavyWeightPopup);
+	$useLocalCurrentObjectStackCache();
 	$var($Window, window, (owner != nullptr) ? $SwingUtilities::getWindowAncestor(owner) : ($Window*)nullptr);
 	$var(PopupFactory$HeavyWeightPopup, popup, nullptr);
 	if (window != nullptr) {
@@ -158,6 +159,7 @@ $Popup* PopupFactory$HeavyWeightPopup::getHeavyWeightPopup($Component* owner, $C
 
 PopupFactory$HeavyWeightPopup* PopupFactory$HeavyWeightPopup::getRecycledHeavyWeightPopup($Window* w) {
 	$init(PopupFactory$HeavyWeightPopup);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(PopupFactory$HeavyWeightPopup::class$) {
 		$var($List, cache, nullptr);
 		$var($Map, heavyPopupCache, getHeavyWeightPopupCache());
@@ -189,6 +191,7 @@ $Map* PopupFactory$HeavyWeightPopup::getHeavyWeightPopupCache() {
 
 void PopupFactory$HeavyWeightPopup::recycleHeavyWeightPopup(PopupFactory$HeavyWeightPopup* popup) {
 	$init(PopupFactory$HeavyWeightPopup);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(PopupFactory$HeavyWeightPopup::class$) {
 		$var($List, cache, nullptr);
 		$var($Window, window, $SwingUtilities::getWindowAncestor($($nc(popup)->getComponent())));

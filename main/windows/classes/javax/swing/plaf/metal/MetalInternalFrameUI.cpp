@@ -187,6 +187,7 @@ $ComponentUI* MetalInternalFrameUI::createUI($JComponent* c) {
 }
 
 void MetalInternalFrameUI::installUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$BasicInternalFrameUI::installUI(c);
 	$var($Object, paletteProp, $nc(c)->getClientProperty(MetalInternalFrameUI::IS_PALETTE_KEY));
 	if (paletteProp != nullptr) {
@@ -197,6 +198,7 @@ void MetalInternalFrameUI::installUI($JComponent* c) {
 }
 
 void MetalInternalFrameUI::uninstallUI($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, frame, $cast($JInternalFrame, c));
 	$var($Container, cont, $nc((($cast($JInternalFrame, c))))->getContentPane());
 	if ($instanceOf($JComponent, cont)) {
@@ -236,6 +238,7 @@ void MetalInternalFrameUI::uninstallComponents() {
 }
 
 void MetalInternalFrameUI::stripContentBorder(Object$* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JComponent, c)) {
 		$var($JComponent, contentComp, $cast($JComponent, c));
 		$var($Border, contentBorder, $nc(contentComp)->getBorder());

@@ -150,6 +150,7 @@ $String* MediaPrintableArea::getName() {
 }
 
 $String* MediaPrintableArea::toString(int32_t units, $String* unitsName$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, unitsName, unitsName$renamed);
 	if (unitsName == nullptr) {
 		$assign(unitsName, ""_s);

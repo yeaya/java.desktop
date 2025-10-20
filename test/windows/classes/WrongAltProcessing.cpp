@@ -145,6 +145,7 @@ void WrongAltProcessing::init$() {
 }
 
 void WrongAltProcessing::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel"_s);
 	} catch ($Exception&) {
@@ -160,6 +161,7 @@ void WrongAltProcessing::main($StringArray* args) {
 }
 
 void WrongAltProcessing::verify() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, c, $nc($($DefaultKeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner());
 	$init(WrongAltProcessing);
 	if (!($equals(c, WrongAltProcessing::mainFrameTf2))) {
@@ -174,6 +176,7 @@ void WrongAltProcessing::initRobot() {
 }
 
 void WrongAltProcessing::clickWindowsTitle($JFrame* frame) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, point, $nc(frame)->getLocationOnScreen());
 	$init(WrongAltProcessing);
 	int32_t var$0 = $nc(point)->x + (frame->getWidth() / 2);
@@ -214,6 +217,7 @@ void WrongAltProcessing::printABCD() {
 }
 
 void WrongAltProcessing::createWindows() {
+	$useLocalCurrentObjectStackCache();
 	$init(WrongAltProcessing);
 	$assignStatic(WrongAltProcessing::firstFrame, $new($JFrame, "Frame"_s));
 	$nc(WrongAltProcessing::firstFrame)->setLayout($$new($FlowLayout));

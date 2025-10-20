@@ -100,6 +100,7 @@ void GlyphLayout$GVData::grow() {
 }
 
 void GlyphLayout$GVData::grow(int32_t delta) {
+	$useLocalCurrentObjectStackCache();
 	int32_t size = $nc(this->_glyphs)->length + delta;
 	$var($ints, nglyphs, $new($ints, size));
 	$System::arraycopy(this->_glyphs, 0, nglyphs, 0, this->_count);
@@ -113,6 +114,7 @@ void GlyphLayout$GVData::grow(int32_t delta) {
 }
 
 $StandardGlyphVector* GlyphLayout$GVData::createGlyphVector($Font* font, $FontRenderContext* frc, $StandardGlyphVector* result$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($StandardGlyphVector, result, result$renamed);
 	if (this->_flags == GlyphLayout$GVData::UNINITIALIZED_FLAGS) {
 		this->_flags = 0;

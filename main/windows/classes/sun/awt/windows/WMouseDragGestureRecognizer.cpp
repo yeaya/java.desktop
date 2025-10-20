@@ -145,6 +145,7 @@ void WMouseDragGestureRecognizer::mouseExited($MouseEvent* e) {
 }
 
 void WMouseDragGestureRecognizer::mouseDragged($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->events)->isEmpty()) {
 		int32_t dop = mapDragOperationFromModifiers(e);
 		if (dop == $DnDConstants::ACTION_NONE) {

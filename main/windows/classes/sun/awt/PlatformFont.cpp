@@ -164,6 +164,7 @@ $CharsetStringArray* PlatformFont::makeMultiCharsetString($chars* str, int32_t o
 }
 
 $CharsetStringArray* PlatformFont::makeMultiCharsetString($chars* str, int32_t offset, int32_t len, bool allowDefault) {
+	$useLocalCurrentObjectStackCache();
 	if (len < 1) {
 		return $new($CharsetStringArray, 0);
 	}
@@ -242,6 +243,7 @@ $ObjectArray* PlatformFont::makeConvertedMultiFontString($String* str) {
 }
 
 $ObjectArray* PlatformFont::makeConvertedMultiFontChars($chars* data, int32_t start, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, result, $new($ObjectArray, 2));
 	$var($ObjectArray, workingCache, nullptr);
 	$var($bytes, convertedData, nullptr);

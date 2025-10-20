@@ -148,6 +148,7 @@ void InvocationEvent::init$(Object$* source, int32_t id, $Runnable* runnable, Ob
 }
 
 void InvocationEvent::dispatch() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
@@ -204,6 +205,7 @@ void InvocationEvent::finishedDispatching(bool dispatched) {
 }
 
 $String* InvocationEvent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, typeStr, nullptr);
 	switch (this->id) {
 	case InvocationEvent::INVOCATION_DEFAULT:

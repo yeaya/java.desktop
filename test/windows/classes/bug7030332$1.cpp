@@ -69,6 +69,7 @@ void bug7030332$1::init$() {
 }
 
 void bug7030332$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($JFrame, frame, $new($JFrame));
 	frame->setContentPane($($bug7030332::createContentPane()));
 	frame->setDefaultCloseOperation($JFrame::DISPOSE_ON_CLOSE);

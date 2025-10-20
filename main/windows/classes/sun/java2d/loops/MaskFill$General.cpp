@@ -92,6 +92,7 @@ void MaskFill$General::init$($SurfaceType* srctype, $CompositeType* comptype, $S
 }
 
 void MaskFill$General::MaskFill$($SunGraphics2D* sg2d, $SurfaceData* sData, $Composite* comp, int32_t x, int32_t y, int32_t w, int32_t h, $bytes* mask, int32_t offset, int32_t scan) {
+	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, dstBI, $new($BufferedImage, w, h, $BufferedImage::TYPE_INT_ARGB));
 	$var($SurfaceData, tmpData, $BufImgSurfaceData::createData(dstBI));
 	$var($Region, clip, $nc(sg2d)->clipRegion);

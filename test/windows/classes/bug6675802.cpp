@@ -47,6 +47,7 @@ void bug6675802::init$() {
 
 void bug6675802::main($StringArray* args) {
 	$load(bug6675802);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$System::setSecurityManager($$new($SecurityManager));
 	$var($JPopupMenu, popupMenu, $new($JPopupMenu));

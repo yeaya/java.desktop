@@ -196,6 +196,7 @@ void bug4936917::init$() {
 }
 
 void bug4936917::init() {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($bug4936917$1, this));
 	blockTillDisplayed(this->editorPane);
 	$var($Robot, robot, $new($Robot));
@@ -221,6 +222,7 @@ void bug4936917::init() {
 }
 
 void bug4936917::blockTillDisplayed($JComponent* comp) {
+	$useLocalCurrentObjectStackCache();
 	while (this->p == nullptr) {
 		try {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4936917$$Lambda$lambda$blockTillDisplayed$0, this, comp)));

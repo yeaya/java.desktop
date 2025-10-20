@@ -184,6 +184,7 @@ float ParagraphView$Row::getAlignment(int32_t axis) {
 }
 
 $Shape* ParagraphView$Row::modelToView(int32_t pos, $Shape* a, $Position$Bias* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, r, $nc(a)->getBounds());
 	$var($View, v, getViewAtPosition(pos, r));
 	if ((v != nullptr) && (!$nc($(v->getElement()))->isLeaf())) {
@@ -201,6 +202,7 @@ $Shape* ParagraphView$Row::modelToView(int32_t pos, $Shape* a, $Position$Bias* b
 }
 
 int32_t ParagraphView$Row::getStartOffset() {
+	$useLocalCurrentObjectStackCache();
 	int32_t offs = $Integer::MAX_VALUE;
 	int32_t n = getViewCount();
 	for (int32_t i = 0; i < n; ++i) {
@@ -211,6 +213,7 @@ int32_t ParagraphView$Row::getStartOffset() {
 }
 
 int32_t ParagraphView$Row::getEndOffset() {
+	$useLocalCurrentObjectStackCache();
 	int32_t offs = 0;
 	int32_t n = getViewCount();
 	for (int32_t i = 0; i < n; ++i) {
@@ -247,6 +250,7 @@ bool ParagraphView$Row::isBrokenRow() {
 }
 
 bool ParagraphView$Row::isJustifiableDocument() {
+	$useLocalCurrentObjectStackCache();
 	$init($Boolean);
 	$init($AbstractDocument);
 	return (!$nc($Boolean::TRUE)->equals($($nc($(getDocument()))->getProperty($AbstractDocument::I18NProperty))));
@@ -261,6 +265,7 @@ bool ParagraphView$Row::isJustifyEnabled() {
 }
 
 $SizeRequirements* ParagraphView$Row::calculateMajorAxisRequirements(int32_t axis, $SizeRequirements* r) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, oldJustficationData, this->justificationData);
 	$set(this, justificationData, nullptr);
 	$var($SizeRequirements, ret, $BoxView::calculateMajorAxisRequirements(axis, r));
@@ -271,6 +276,7 @@ $SizeRequirements* ParagraphView$Row::calculateMajorAxisRequirements(int32_t axi
 }
 
 void ParagraphView$Row::layoutMajorAxis(int32_t targetSpan, int32_t axis, $ints* offsets, $ints* spans) {
+	$useLocalCurrentObjectStackCache();
 	$var($ints, oldJustficationData, this->justificationData);
 	$set(this, justificationData, nullptr);
 	$BoxView::layoutMajorAxis(targetSpan, axis, offsets, spans);
@@ -367,6 +373,7 @@ float ParagraphView$Row::getMaximumSpan(int32_t axis) {
 }
 
 int32_t ParagraphView$Row::getViewIndexAtPosition(int32_t pos) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = pos < getStartOffset();
 	if (var$0 || pos >= getEndOffset()) {
 		return -1;

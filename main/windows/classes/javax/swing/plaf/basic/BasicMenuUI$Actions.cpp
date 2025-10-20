@@ -106,6 +106,7 @@ $JMenu* BasicMenuUI$Actions::getMenu($ActionEvent* e) {
 }
 
 void BasicMenuUI$Actions::actionPerformed($ActionEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenu, menu, getMenu(e));
 	$init($BasicMenuUI);
 	if (!$BasicMenuUI::crossMenuMnemonic) {

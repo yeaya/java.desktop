@@ -108,6 +108,7 @@ void bug6823603::main($StringArray* args) {
 
 void bug6823603::testRawSignatures() {
 	$init(bug6823603);
+	$useLocalCurrentObjectStackCache();
 	$var($ListModel, rawTestModel, $new($DefaultListModel));
 	$new($JList);
 	$new($JList, rawTestModel);
@@ -153,6 +154,7 @@ void bug6823603::testRawSignatures() {
 
 void bug6823603::testGenericSignatures() {
 	$init(bug6823603);
+	$useLocalCurrentObjectStackCache();
 	$var($ListModel, stringListModel, $new($DefaultListModel));
 	$new($JList);
 	$new($JList, stringListModel);
@@ -199,6 +201,7 @@ void bug6823603::testGenericSignatures() {
 
 void bug6823603::testGetSelectedValuesList() {
 	$init(bug6823603);
+	$useLocalCurrentObjectStackCache();
 	$var($Vector, data, $new($Vector));
 	for (int32_t i = 0; i < 10; ++i) {
 		data->add($($Integer::valueOf(i)));
@@ -220,6 +223,7 @@ void bug6823603::testGetSelectedValuesList() {
 
 void bug6823603::assertEquals($ObjectArray* expectedArray, $ObjectArray* actualArray) {
 	$init(bug6823603);
+	$useLocalCurrentObjectStackCache();
 	if (!$Arrays::equals(expectedArray, actualArray)) {
 		$var($String, var$0, $$str({"Expected: "_s, $($Arrays::toString(expectedArray)), " but was: "_s}));
 		$throwNew($RuntimeException, $$concat(var$0, $($Arrays::toString(actualArray))));

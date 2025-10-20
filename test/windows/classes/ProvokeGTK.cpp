@@ -155,6 +155,7 @@ void ProvokeGTK::createAndShow() {
 }
 
 void ProvokeGTK::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(ProvokeGTK$$Lambda$createAndShow)));
 	$Thread::sleep(1000);
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(ProvokeGTK$$Lambda$lambda$main$0$1)));

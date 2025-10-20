@@ -82,6 +82,7 @@ void SwingContainerIsForContainerOnly$1::init$() {
 }
 
 $FileVisitResult* SwingContainerIsForContainerOnly$1::visitFile($Path* file$renamed, $BasicFileAttributes* attrs) {
+	$useLocalCurrentObjectStackCache();
 	$var($Path, file, file$renamed);
 	$beforeCallerSensitive();
 	$assign(file, $nc(file)->subpath(2, file->getNameCount()));

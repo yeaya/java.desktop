@@ -79,6 +79,7 @@ void WaveFileReader::init$() {
 }
 
 $StandardFileFormat* WaveFileReader::getAudioFileFormatImpl($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	int32_t nread = 0;
 	int32_t fmt = 0;
 	int32_t length = 0;

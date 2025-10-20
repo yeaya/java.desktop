@@ -73,6 +73,7 @@ void SunFontManager$1::init$() {
 }
 
 $Object* SunFontManager$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$FontManagerNativeLibrary::load();
 	$SunFontManager::initIDs();
 	$init($StrikeCache);

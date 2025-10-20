@@ -86,6 +86,7 @@ void CSS$LengthUnit::init$($String* value, int16_t defaultType, float defaultVal
 }
 
 void CSS$LengthUnit::parse($String* value, int16_t defaultType, float defaultValue) {
+	$useLocalCurrentObjectStackCache();
 	this->type = defaultType;
 	this->value = defaultValue;
 	int32_t length = $nc(value)->length();
@@ -144,6 +145,7 @@ void CSS$LengthUnit::parse($String* value, int16_t defaultType, float defaultVal
 }
 
 float CSS$LengthUnit::getValue(bool w3cLengthUnits) {
+	$useLocalCurrentObjectStackCache();
 	$var($Hashtable, mapping, (w3cLengthUnits) ? CSS$LengthUnit::w3cLengthMapping : CSS$LengthUnit::lengthMapping);
 	float scale = (float)1;
 	if (this->units != nullptr) {
@@ -157,6 +159,7 @@ float CSS$LengthUnit::getValue(bool w3cLengthUnits) {
 
 float CSS$LengthUnit::getValue(float value, $String* units, $Boolean* w3cLengthUnits) {
 	$init(CSS$LengthUnit);
+	$useLocalCurrentObjectStackCache();
 	$var($Hashtable, mapping, $nc((w3cLengthUnits))->booleanValue() ? CSS$LengthUnit::w3cLengthMapping : CSS$LengthUnit::lengthMapping);
 	float scale = (float)1;
 	if (units != nullptr) {
@@ -169,10 +172,12 @@ float CSS$LengthUnit::getValue(float value, $String* units, $Boolean* w3cLengthU
 }
 
 $String* CSS$LengthUnit::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({$$str(this->type), " "_s, $$str(this->value)});
 }
 
 void clinit$CSS$LengthUnit($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(CSS$LengthUnit::lengthMapping, $new($Hashtable, 6));
 	$assignStatic(CSS$LengthUnit::w3cLengthMapping, $new($Hashtable, 6));
 	{

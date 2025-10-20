@@ -148,6 +148,7 @@ void bug6510999::init$() {
 }
 
 void bug6510999::createGui() {
+	$useLocalCurrentObjectStackCache();
 	$init(bug6510999);
 	$assignStatic(bug6510999::frame, $new($JFrame));
 	$nc(bug6510999::frame)->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
@@ -167,6 +168,7 @@ void bug6510999::createGui() {
 }
 
 void bug6510999::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

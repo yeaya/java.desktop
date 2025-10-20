@@ -80,6 +80,7 @@ void HTMLEditorKit$NavigateLinkAction$FocusHighlightPainter::init$($Color* color
 }
 
 $Shape* HTMLEditorKit$NavigateLinkAction$FocusHighlightPainter::paintLayer($Graphics* g, int32_t offs0, int32_t offs1, $Shape* bounds, $JTextComponent* c, $View* view) {
+	$useLocalCurrentObjectStackCache();
 	$var($Color, color, getColor());
 	if (color == nullptr) {
 		$nc(g)->setColor($($nc(c)->getSelectionColor()));

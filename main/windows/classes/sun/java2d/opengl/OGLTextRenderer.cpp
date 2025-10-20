@@ -96,6 +96,7 @@ void OGLTextRenderer::drawGlyphList(int32_t numGlyphs, bool usePositions, bool s
 }
 
 void OGLTextRenderer::validateContext($SunGraphics2D* sg2d, $Composite* comp) {
+	$useLocalCurrentObjectStackCache();
 	$var($OGLSurfaceData, oglDst, $cast($OGLSurfaceData, $nc(sg2d)->surfaceData));
 	$OGLContext::validateContext(oglDst, oglDst, $(sg2d->getCompClip()), comp, nullptr, sg2d->paint, sg2d, $OGLContext::NO_CONTEXT_FLAGS);
 }

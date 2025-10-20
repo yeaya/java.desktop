@@ -112,6 +112,7 @@ void bug7146377::init$() {
 }
 
 void bug7146377::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($bug7146377$1));
 	$var($Robot, robot, $new($Robot));
 	robot->waitForIdle();
@@ -150,6 +151,7 @@ void bug7146377::main($StringArray* args) {
 }
 
 void bug7146377::checkEvent($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, eventAsStr, eventToString(e));
 	$init($System);
 	$nc($System::out)->println($$str({"Checking event "_s, eventAsStr}));
@@ -165,12 +167,14 @@ void bug7146377::checkEvent($MouseEvent* e) {
 }
 
 void bug7146377::check($String* methodName, bool newValue, bool oldValue, $String* eventAsStr) {
+	$useLocalCurrentObjectStackCache();
 	if (newValue != oldValue) {
 		$throwNew($RuntimeException, $$str({"Regression on "_s, methodName, ", newValue = "_s, $$str(newValue), ", oldValue = "_s, $$str(oldValue), ", e = "_s, eventAsStr}));
 	}
 }
 
 $String* bug7146377::eventToString($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, result, $new($StringBuilder));
 	switch ($nc(e)->getID()) {
 	case $MouseEvent::MOUSE_PRESSED:

@@ -85,6 +85,7 @@ void MetaData$1::init$($String* val$className, $String* val$fieldName) {
 }
 
 $Object* MetaData$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$var($Field, field, $Class::forName(this->val$className)->getDeclaredField(this->val$fieldName));

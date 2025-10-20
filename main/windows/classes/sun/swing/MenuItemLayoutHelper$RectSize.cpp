@@ -111,6 +111,7 @@ void MenuItemLayoutHelper$RectSize::setMaxWidth(int32_t maxWidth) {
 }
 
 $String* MenuItemLayoutHelper$RectSize::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $str({"[w="_s, $$str(this->width), ",h="_s, $$str(this->height), ",ow="_s, $$str(this->origWidth), ",mw="_s, $$str(this->maxWidth), "]"_s});
 }
 

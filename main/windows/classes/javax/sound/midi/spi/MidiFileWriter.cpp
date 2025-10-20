@@ -116,10 +116,12 @@ void MidiFileWriter::init$() {
 }
 
 bool MidiFileWriter::isFileTypeSupported(int32_t fileType) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($Arrays::stream($(getMidiFileTypes()))))->anyMatch(static_cast<$IntPredicate*>($$new(MidiFileWriter$$Lambda$lambda$isFileTypeSupported$0, fileType)));
 }
 
 bool MidiFileWriter::isFileTypeSupported(int32_t fileType, $Sequence* sequence) {
+	$useLocalCurrentObjectStackCache();
 	return $nc($($Arrays::stream($(getMidiFileTypes(sequence)))))->anyMatch(static_cast<$IntPredicate*>($$new(MidiFileWriter$$Lambda$lambda$isFileTypeSupported$0, fileType)));
 }
 

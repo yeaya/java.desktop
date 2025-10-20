@@ -314,6 +314,7 @@ $PlatformLogger* EventQueue::getEventLog() {
 }
 
 void EventQueue::init$() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$set(this, queues, $new($QueueArray, EventQueue::NUM_PRIORITIES));
 	$set(this, threadGroup, $($Thread::currentThread())->getThreadGroup());
@@ -391,6 +392,7 @@ int32_t EventQueue::getPriority($AWTEvent* theEvent) {
 }
 
 void EventQueue::postEvent($AWTEvent* theEvent, int32_t priority) {
+	$useLocalCurrentObjectStackCache();
 	if (coalesceEvent(theEvent, priority)) {
 		return;
 	}
@@ -418,6 +420,7 @@ void EventQueue::postEvent($AWTEvent* theEvent, int32_t priority) {
 }
 
 bool EventQueue::coalescePaintEvent($PaintEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($ComponentPeer, sourcePeer, $nc(($cast($Component, $($nc(e)->getSource()))))->peer);
 	if (sourcePeer != nullptr) {
 		sourcePeer->coalescePaintEvent(e);
@@ -438,6 +441,7 @@ bool EventQueue::coalescePaintEvent($PaintEvent* e) {
 }
 
 $PaintEvent* EventQueue::mergePaintEvents($PaintEvent* a, $PaintEvent* b) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, aRect, $nc(a)->getUpdateRect());
 	$var($Rectangle, bRect, $nc(b)->getUpdateRect());
 	if ($nc(bRect)->contains(aRect)) {
@@ -450,6 +454,7 @@ $PaintEvent* EventQueue::mergePaintEvents($PaintEvent* a, $PaintEvent* b) {
 }
 
 bool EventQueue::coalesceMouseEvent($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($EventQueueItemArray, cache, $nc(($cast($Component, $($nc(e)->getSource()))))->eventCache);
 	if (cache == nullptr) {
 		return false;
@@ -463,6 +468,7 @@ bool EventQueue::coalesceMouseEvent($MouseEvent* e) {
 }
 
 bool EventQueue::coalescePeerEvent($PeerEvent* e$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($PeerEvent, e, e$renamed);
 	$var($EventQueueItemArray, cache, $nc(($cast($Component, $($nc(e)->getSource()))))->eventCache);
 	if (cache == nullptr) {
@@ -482,6 +488,7 @@ bool EventQueue::coalescePeerEvent($PeerEvent* e$renamed) {
 }
 
 bool EventQueue::coalesceOtherEvent($AWTEvent* e, int32_t priority) {
+	$useLocalCurrentObjectStackCache();
 	int32_t id = $nc(e)->getID();
 	$var($Component, source, $cast($Component, e->getSource()));
 	{
@@ -501,6 +508,7 @@ bool EventQueue::coalesceOtherEvent($AWTEvent* e, int32_t priority) {
 }
 
 bool EventQueue::coalesceEvent($AWTEvent* e, int32_t priority) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($Component, $($nc(e)->getSource())))) {
 		return false;
 	}
@@ -521,6 +529,7 @@ bool EventQueue::coalesceEvent($AWTEvent* e, int32_t priority) {
 }
 
 void EventQueue::cacheEQItem($EventQueueItem* entry) {
+	$useLocalCurrentObjectStackCache();
 	int32_t index = eventToCacheIndex($nc(entry)->event);
 	if (index != -1 && $instanceOf($Component, $($nc($nc(entry)->event)->getSource()))) {
 		$var($Component, source, $cast($Component, $nc(entry->event)->getSource()));
@@ -532,6 +541,7 @@ void EventQueue::cacheEQItem($EventQueueItem* entry) {
 }
 
 void EventQueue::uncacheEQItem($EventQueueItem* entry) {
+	$useLocalCurrentObjectStackCache();
 	int32_t index = eventToCacheIndex($nc(entry)->event);
 	if (index != -1 && $instanceOf($Component, $($nc($nc(entry)->event)->getSource()))) {
 		$var($Component, source, $cast($Component, $nc(entry->event)->getSource()));
@@ -578,6 +588,7 @@ bool EventQueue::noEvents() {
 }
 
 $AWTEvent* EventQueue::getNextEvent() {
+	$useLocalCurrentObjectStackCache();
 	do {
 		$SunToolkit::flushPendingEvents(this->appContext);
 		$nc(this->pushPopLock)->lock();
@@ -611,6 +622,7 @@ $AWTEvent* EventQueue::getNextEvent() {
 }
 
 $AWTEvent* EventQueue::getNextEventPrivate() {
+	$useLocalCurrentObjectStackCache();
 	for (int32_t i = EventQueue::NUM_PRIORITIES - 1; i >= 0; --i) {
 		if ($nc($nc(this->queues)->get(i))->head != nullptr) {
 			$var($EventQueueItem, entry, $nc($nc(this->queues)->get(i))->head);
@@ -626,6 +638,7 @@ $AWTEvent* EventQueue::getNextEventPrivate() {
 }
 
 $AWTEvent* EventQueue::getNextEvent(int32_t id) {
+	$useLocalCurrentObjectStackCache();
 	do {
 		$SunToolkit::flushPendingEvents(this->appContext);
 		$nc(this->pushPopLock)->lock();
@@ -676,6 +689,7 @@ $AWTEvent* EventQueue::getNextEvent(int32_t id) {
 }
 
 $AWTEvent* EventQueue::peekEvent() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->pushPopLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -705,6 +719,7 @@ $AWTEvent* EventQueue::peekEvent() {
 }
 
 $AWTEvent* EventQueue::peekEvent(int32_t id) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->pushPopLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -737,6 +752,7 @@ $AWTEvent* EventQueue::peekEvent(int32_t id) {
 }
 
 void EventQueue::dispatchEvent($AWTEvent* event) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, src, $nc(event)->getSource());
 	$var($PrivilegedAction, action, $new($EventQueue$4, this, event, src));
 	$var($AccessControlContext, stack, $AccessController::getContext());
@@ -755,6 +771,7 @@ $AccessControlContext* EventQueue::getAccessControlContextFrom(Object$* src) {
 }
 
 void EventQueue::dispatchEventImpl($AWTEvent* event, Object$* src) {
+	$useLocalCurrentObjectStackCache();
 	$nc(event)->isPosted = true;
 	if ($instanceOf($ActiveEvent, event)) {
 		setCurrentEventAndMostRecentTimeImpl(event);
@@ -839,6 +856,7 @@ $AWTEvent* EventQueue::getCurrentEvent() {
 }
 
 $AWTEvent* EventQueue::getCurrentEventImpl() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->pushPopLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -869,6 +887,7 @@ $AWTEvent* EventQueue::getCurrentEventImpl() {
 }
 
 void EventQueue::push(EventQueue* newEventQueue) {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc($(getEventLog()))->isLoggable($PlatformLogger$Level::FINE)) {
 		$nc($(getEventLog()))->fine($$str({"EventQueue.push("_s, newEventQueue, ")"_s}));
@@ -920,6 +939,7 @@ void EventQueue::push(EventQueue* newEventQueue) {
 }
 
 void EventQueue::pop() {
+	$useLocalCurrentObjectStackCache();
 	$init($PlatformLogger$Level);
 	if ($nc($(getEventLog()))->isLoggable($PlatformLogger$Level::FINE)) {
 		$nc($(getEventLog()))->fine($$str({"EventQueue.pop("_s, this, ")"_s}));
@@ -974,6 +994,7 @@ $SecondaryLoop* EventQueue::createSecondaryLoop() {
 }
 
 $SecondaryLoop* EventQueue::createSecondaryLoop($Conditional* cond, $EventFilter* filter, int64_t interval) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->pushPopLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -1018,6 +1039,7 @@ bool EventQueue::isDispatchThread() {
 }
 
 bool EventQueue::isDispatchThreadImpl() {
+	$useLocalCurrentObjectStackCache();
 	$var(EventQueue, eq, this);
 	$nc(this->pushPopLock)->lock();
 	{
@@ -1054,6 +1076,7 @@ bool EventQueue::isDispatchThreadImpl() {
 }
 
 void EventQueue::initDispatchThread() {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$nc(this->pushPopLock)->lock();
 	{
@@ -1076,6 +1099,7 @@ void EventQueue::initDispatchThread() {
 }
 
 void EventQueue::detachDispatchThread($EventDispatchThread* edt) {
+	$useLocalCurrentObjectStackCache();
 	$SunToolkit::flushPendingEvents(this->appContext);
 	$nc(this->pushPopLock)->lock();
 	{
@@ -1100,6 +1124,7 @@ void EventQueue::detachDispatchThread($EventDispatchThread* edt) {
 }
 
 $EventDispatchThread* EventQueue::getDispatchThread() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->pushPopLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -1125,6 +1150,7 @@ $EventDispatchThread* EventQueue::getDispatchThread() {
 }
 
 void EventQueue::removeSourceEvents(Object$* source, bool removeAllEvents) {
+	$useLocalCurrentObjectStackCache();
 	$SunToolkit::flushPendingEvents(this->appContext);
 	$nc(this->pushPopLock)->lock();
 	{
@@ -1204,6 +1230,7 @@ void EventQueue::setCurrentEventAndMostRecentTime($AWTEvent* e) {
 }
 
 void EventQueue::setCurrentEventAndMostRecentTimeImpl($AWTEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->pushPopLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -1248,6 +1275,7 @@ void EventQueue::setCurrentEventAndMostRecentTimeImpl($AWTEvent* e) {
 
 void EventQueue::invokeLater($Runnable* runnable) {
 	$init(EventQueue);
+	$useLocalCurrentObjectStackCache();
 	$nc($($Toolkit::getEventQueue()))->postEvent($$new($InvocationEvent, $($Toolkit::getDefaultToolkit()), runnable));
 }
 
@@ -1258,6 +1286,7 @@ void EventQueue::invokeAndWait($Runnable* runnable) {
 
 void EventQueue::invokeAndWait(Object$* source, $Runnable* runnable) {
 	$init(EventQueue);
+	$useLocalCurrentObjectStackCache();
 	if (EventQueue::isDispatchThread()) {
 		$throwNew($Error, "Cannot call invokeAndWait from the event dispatcher thread"_s);
 	}
@@ -1309,6 +1338,7 @@ void EventQueue::setFwDispatcher($FwDispatcher* dispatcher) {
 }
 
 void clinit$EventQueue($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$assignStatic(EventQueue::threadInitNumber, $new($AtomicInteger));
 	$assignStatic(EventQueue::dummyRunnable, $new($EventQueue$1));

@@ -133,6 +133,7 @@ void MotifFileChooserUI$1::init$($MotifFileChooserUI* this$0) {
 }
 
 void MotifFileChooserUI$1::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, prop, $nc(e)->getPropertyName());
 	$init($JFileChooser);
 	if ($nc(prop)->equals($JFileChooser::SELECTED_FILE_CHANGED_PROPERTY)) {

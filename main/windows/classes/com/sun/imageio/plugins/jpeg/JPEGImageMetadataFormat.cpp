@@ -75,6 +75,7 @@ $Object* allocate$JPEGImageMetadataFormat($Class* clazz) {
 JPEGImageMetadataFormat* JPEGImageMetadataFormat::theInstance = nullptr;
 
 void JPEGImageMetadataFormat::init$() {
+	$useLocalCurrentObjectStackCache();
 	$init($JPEG);
 	$JPEGMetadataFormat::init$($JPEG::nativeImageMetadataFormatName, $IIOMetadataFormat::CHILD_POLICY_ALL);
 	addElement("JPEGvariety"_s, $JPEG::nativeImageMetadataFormatName, $IIOMetadataFormat::CHILD_POLICY_CHOICE);

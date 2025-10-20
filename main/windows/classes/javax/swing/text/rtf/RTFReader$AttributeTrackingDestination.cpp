@@ -144,6 +144,7 @@ void RTFReader$AttributeTrackingDestination::handleBinaryBlob($bytes* data) {
 }
 
 void RTFReader$AttributeTrackingDestination::begingroup() {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, characterParent, currentTextAttributes());
 	$var($AttributeSet, paragraphParent, currentParagraphAttributes());
 	$var($AttributeSet, sectionParent, currentSectionAttributes());
@@ -231,6 +232,7 @@ bool RTFReader$AttributeTrackingDestination::handleKeyword($String* keyword) {
 }
 
 bool RTFReader$AttributeTrackingDestination::handleKeyword($String* keyword$renamed, int32_t parameter) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, keyword, keyword$renamed);
 	bool booleanParameter = (parameter != 0);
 	if ($nc(keyword)->equals("fc"_s)) {
@@ -360,6 +362,7 @@ bool RTFReader$AttributeTrackingDestination::handleKeyword($String* keyword$rena
 }
 
 $MutableAttributeSet* RTFReader$AttributeTrackingDestination::rootCharacterAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($MutableAttributeSet, set, $new($SimpleAttributeSet));
 	$StyleConstants::setItalic(set, false);
 	$StyleConstants::setBold(set, false);
@@ -369,6 +372,7 @@ $MutableAttributeSet* RTFReader$AttributeTrackingDestination::rootCharacterAttri
 }
 
 $MutableAttributeSet* RTFReader$AttributeTrackingDestination::rootParagraphAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($MutableAttributeSet, set, $new($SimpleAttributeSet));
 	$StyleConstants::setLeftIndent(set, 0.0f);
 	$StyleConstants::setRightIndent(set, 0.0f);
@@ -384,6 +388,7 @@ $MutableAttributeSet* RTFReader$AttributeTrackingDestination::rootSectionAttribu
 }
 
 $MutableAttributeSet* RTFReader$AttributeTrackingDestination::currentTextAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($MutableAttributeSet, attributes, $new($SimpleAttributeSet, this->characterAttributes));
 	$var($Integer, fontnum, nullptr);
 	$var($Integer, stateItem, nullptr);
@@ -429,6 +434,7 @@ $MutableAttributeSet* RTFReader$AttributeTrackingDestination::currentTextAttribu
 }
 
 $MutableAttributeSet* RTFReader$AttributeTrackingDestination::currentParagraphAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($MutableAttributeSet, bld, $new($SimpleAttributeSet, this->paragraphAttributes));
 	$var($Integer, stateItem, nullptr);
 	$var($TabStopArray, tabs, nullptr);
@@ -456,6 +462,7 @@ $MutableAttributeSet* RTFReader$AttributeTrackingDestination::currentParagraphAt
 }
 
 $AttributeSet* RTFReader$AttributeTrackingDestination::currentSectionAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($MutableAttributeSet, attributes, $new($SimpleAttributeSet, this->sectionAttributes));
 	$var($Style, sectionStyle, $cast($Style, $nc(this->this$0->parserState)->get("sectionStyle"_s)));
 	if (sectionStyle != nullptr) {
@@ -465,6 +472,7 @@ $AttributeSet* RTFReader$AttributeTrackingDestination::currentSectionAttributes(
 }
 
 void RTFReader$AttributeTrackingDestination::resetCharacterAttributes() {
+	$useLocalCurrentObjectStackCache();
 	handleKeyword("f"_s, 0);
 	handleKeyword("cf"_s, 0);
 	handleKeyword("fs"_s, 24);
@@ -481,6 +489,7 @@ void RTFReader$AttributeTrackingDestination::resetCharacterAttributes() {
 }
 
 void RTFReader$AttributeTrackingDestination::resetParagraphAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$nc(this->this$0->parserState)->remove("_tabs"_s);
 	$nc(this->this$0->parserState)->remove("_tabs_immutable"_s);
 	$nc(this->this$0->parserState)->remove("paragraphStyle"_s);
@@ -496,6 +505,7 @@ void RTFReader$AttributeTrackingDestination::resetParagraphAttributes() {
 }
 
 void RTFReader$AttributeTrackingDestination::resetSectionAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$init($RTFReader);
 	$var($Enumeration, attributes, $nc($RTFReader::straightforwardAttributes)->elements());
 	while ($nc(attributes)->hasMoreElements()) {

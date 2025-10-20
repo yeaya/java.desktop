@@ -96,6 +96,7 @@ int32_t RowFilter::paethPredictor(int32_t a, int32_t b, int32_t c) {
 }
 
 int32_t RowFilter::filterRow(int32_t colorType, $bytes* currRow, $bytes* prevRow, $byteArray2* scratchRows, int32_t bytesPerRow, int32_t bytesPerPixel) {
+	$useLocalCurrentObjectStackCache();
 	if (colorType != $PNGImageReader::PNG_COLOR_PALETTE) {
 		$System::arraycopy(currRow, bytesPerPixel, $nc(scratchRows)->get(0), bytesPerPixel, bytesPerRow);
 		return 0;

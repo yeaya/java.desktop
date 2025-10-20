@@ -202,6 +202,7 @@ void StrikeCache::refStrike($FontStrike* strike) {
 
 void StrikeCache::doDispose($FontStrikeDisposer* disposer) {
 	$init(StrikeCache);
+	$useLocalCurrentObjectStackCache();
 	if ($nc(disposer)->intGlyphImages != nullptr) {
 		freeCachedIntMemory(disposer->intGlyphImages, disposer->pScalerContext);
 	} else if (disposer->longGlyphImages != nullptr) {
@@ -244,6 +245,7 @@ bool StrikeCache::longAddresses() {
 
 void StrikeCache::disposeStrike($FontStrikeDisposer* disposer) {
 	$init(StrikeCache);
+	$useLocalCurrentObjectStackCache();
 	$init($Disposer);
 	if ($Disposer::pollingQueue) {
 		doDispose(disposer);
@@ -311,6 +313,7 @@ void StrikeCache::freeLongMemory($longs* glyphPtrs, int64_t pContext) {
 
 void StrikeCache::freeCachedIntMemory($ints* glyphPtrs, int64_t pContext) {
 	$init(StrikeCache);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(StrikeCache::disposeListeners) {
 		if ($nc(StrikeCache::disposeListeners)->size() > 0) {
 			$var($ArrayList, gids, nullptr);
@@ -332,6 +335,7 @@ void StrikeCache::freeCachedIntMemory($ints* glyphPtrs, int64_t pContext) {
 
 void StrikeCache::freeCachedLongMemory($longs* glyphPtrs, int64_t pContext) {
 	$init(StrikeCache);
+	$useLocalCurrentObjectStackCache();
 	$synchronized(StrikeCache::disposeListeners) {
 		if ($nc(StrikeCache::disposeListeners)->size() > 0) {
 			$var($ArrayList, gids, nullptr);
@@ -360,6 +364,7 @@ void StrikeCache::addGlyphDisposedListener($GlyphDisposedListener* listener) {
 
 void StrikeCache::notifyDisposeListeners($ArrayList* glyphs) {
 	$init(StrikeCache);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(StrikeCache::disposeListeners)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -393,6 +398,7 @@ $Reference* StrikeCache::getStrikeRef($FontStrike* strike, bool weak) {
 }
 
 void clinit$StrikeCache($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$assignStatic(StrikeCache::unsafe, $Unsafe::getUnsafe());
 	$assignStatic(StrikeCache::refQueue, $Disposer::getQueue());

@@ -122,6 +122,7 @@ $Object* SOFMarkerSegment$ComponentSpec::clone() {
 }
 
 $IIOMetadataNode* SOFMarkerSegment$ComponentSpec::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "componentSpec"_s));
 	node->setAttribute("componentId"_s, $($Integer::toString(this->componentId)));
 	node->setAttribute("HsamplingFactor"_s, $($Integer::toString(this->HsamplingFactor)));

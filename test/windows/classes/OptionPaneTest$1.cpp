@@ -84,6 +84,7 @@ void OptionPaneTest$1::init$() {
 }
 
 void OptionPaneTest$1::run() {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {

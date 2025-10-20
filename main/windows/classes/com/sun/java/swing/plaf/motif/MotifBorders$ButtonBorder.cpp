@@ -120,6 +120,7 @@ void MotifBorders$ButtonBorder::init$($Color* shadow, $Color* highlight, $Color*
 }
 
 void MotifBorders$ButtonBorder::paintBorder($Component* c, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	bool isPressed = false;
 	bool hasFocus = false;
 	bool canBeDefault = false;

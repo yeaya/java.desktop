@@ -516,6 +516,7 @@ void TitledBorderLabel::init$() {
 
 void TitledBorderLabel::main($StringArray* args) {
 	$init(TitledBorderLabel);
+	$useLocalCurrentObjectStackCache();
 	$System::setProperty("sun.java2d.uiScale"_s, "1.5"_s);
 	$SwingUtilities::invokeLater(static_cast<$Runnable*>($$new(TitledBorderLabel$$Lambda$lambda$main$0)));
 	{
@@ -552,6 +553,7 @@ void TitledBorderLabel::main($StringArray* args) {
 
 void TitledBorderLabel::doTest() {
 	$init(TitledBorderLabel);
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel("javax.swing.plaf.synth.SynthLookAndFeel"_s);
 	$assignStatic(TitledBorderLabel::frame, $new($JFrame, "TitledBorderLabelTester"_s));
 	$var($JPanel, panel, $new($JPanel));
@@ -579,6 +581,7 @@ void TitledBorderLabel::fail($String* failureMsg) {
 
 $String* TitledBorderLabel::convertMillisToTimeStr(int32_t millis) {
 	$init(TitledBorderLabel);
+	$useLocalCurrentObjectStackCache();
 	if (millis < 0) {
 		return "00:00:00"_s;
 	}
@@ -594,6 +597,7 @@ $String* TitledBorderLabel::convertMillisToTimeStr(int32_t millis) {
 
 void TitledBorderLabel::createAndShowTestDialog() {
 	$init(TitledBorderLabel);
+	$useLocalCurrentObjectStackCache();
 	$var($String, description, " 1. Click on \"Start Test\" button.\r\n 2. A TitledBorder with text \"CERTIFICATE CERTIFICATE CERTIFICATE CERTIFICATE\" is shown. \r\n 3. Please verify if the text is shown fully and not truncated \r\n If the titledborder text is displayed fully,\r\n  click on \"PASS\" button, otherwise click on \"FAIL\" button."_s);
 	$var($JDialog, dialog, $new($JDialog));
 	dialog->setDefaultCloseOperation($WindowConstants::DISPOSE_ON_CLOSE);
@@ -644,12 +648,14 @@ void TitledBorderLabel::lambda$createAndShowTestDialog$6($JDialog* dialog, $Acti
 
 void TitledBorderLabel::lambda$createAndShowTestDialog$5($JButton* testButton, $JButton* passButton, $JButton* failButton, $JDialog* dialog, $ActionEvent* e) {
 	$init(TitledBorderLabel);
+	$useLocalCurrentObjectStackCache();
 	$nc(testButton)->setEnabled(false);
 	$$new($Thread, static_cast<$Runnable*>($$new(TitledBorderLabel$$Lambda$lambda$createAndShowTestDialog$4$6, passButton, failButton, dialog)))->start();
 }
 
 void TitledBorderLabel::lambda$createAndShowTestDialog$4($JButton* passButton, $JButton* failButton, $JDialog* dialog) {
 	$init(TitledBorderLabel);
+	$useLocalCurrentObjectStackCache();
 	try {
 		doTest();
 		$SwingUtilities::invokeLater(static_cast<$Runnable*>($$new(TitledBorderLabel$$Lambda$lambda$createAndShowTestDialog$3$7, passButton, failButton)));
@@ -669,6 +675,7 @@ void TitledBorderLabel::lambda$createAndShowTestDialog$3($JButton* passButton, $
 
 void TitledBorderLabel::lambda$createAndShowTestDialog$2(int64_t startTime, $Timer* timer, $JDialog* dialog, $JLabel* testTimeoutLabel, $ActionEvent* e) {
 	$init(TitledBorderLabel);
+	$useLocalCurrentObjectStackCache();
 	int32_t leftTime = TitledBorderLabel::testTimeout - (int32_t)($System::currentTimeMillis() - startTime);
 	if ((leftTime < 0) || TitledBorderLabel::testFinished) {
 		$nc(timer)->stop();

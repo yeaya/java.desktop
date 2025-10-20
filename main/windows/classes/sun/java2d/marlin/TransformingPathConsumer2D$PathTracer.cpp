@@ -82,21 +82,25 @@ TransformingPathConsumer2D$PathTracer* TransformingPathConsumer2D$PathTracer::in
 }
 
 void TransformingPathConsumer2D$PathTracer::moveTo(double x0, double y0) {
+	$useLocalCurrentObjectStackCache();
 	log($$str({"p.moveTo("_s, $$str(x0), ", "_s, $$str(y0), ");"_s}));
 	$nc(this->out)->moveTo(x0, y0);
 }
 
 void TransformingPathConsumer2D$PathTracer::lineTo(double x1, double y1) {
+	$useLocalCurrentObjectStackCache();
 	log($$str({"p.lineTo("_s, $$str(x1), ", "_s, $$str(y1), ");"_s}));
 	$nc(this->out)->lineTo(x1, y1);
 }
 
 void TransformingPathConsumer2D$PathTracer::curveTo(double x1, double y1, double x2, double y2, double x3, double y3) {
+	$useLocalCurrentObjectStackCache();
 	log($$str({"p.curveTo("_s, $$str(x1), ", "_s, $$str(y1), ", "_s, $$str(x2), ", "_s, $$str(y2), ", "_s, $$str(x3), ", "_s, $$str(y3), ");"_s}));
 	$nc(this->out)->curveTo(x1, y1, x2, y2, x3, y3);
 }
 
 void TransformingPathConsumer2D$PathTracer::quadTo(double x1, double y1, double x2, double y2) {
+	$useLocalCurrentObjectStackCache();
 	log($$str({"p.quadTo("_s, $$str(x1), ", "_s, $$str(y1), ", "_s, $$str(x2), ", "_s, $$str(y2), ");"_s}));
 	$nc(this->out)->quadTo(x1, y1, x2, y2);
 }

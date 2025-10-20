@@ -91,6 +91,7 @@ void GifFrame::setPixels(int32_t x, int32_t y, int32_t w, int32_t h, $ColorModel
 }
 
 bool GifFrame::dispose() {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(this->decoder)->imageComplete($ImageConsumer::SINGLEFRAMEDONE, false) == 0) {
 		return false;
 	} else {

@@ -121,6 +121,7 @@ void Panel::init$($LayoutManager* layout) {
 }
 
 $String* Panel::constructComponentName() {
+	$useLocalCurrentObjectStackCache();
 	$synchronized(Panel::class$) {
 		$var($String, var$0, Panel::base);
 		return $concat(var$0, $$str(Panel::nameCounter++));

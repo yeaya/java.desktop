@@ -99,6 +99,7 @@ $Node* WBMPMetadata::getAsTree($String* formatName) {
 }
 
 $Node* WBMPMetadata::getNativeTree() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, root, $new($IIOMetadataNode, WBMPMetadata::nativeMetadataFormatName));
 	addChildNode(root, "WBMPType"_s, $($Integer::valueOf(this->wbmpType)));
 	addChildNode(root, "Width"_s, $($Integer::valueOf(this->width)));
@@ -119,6 +120,7 @@ void WBMPMetadata::reset() {
 }
 
 $IIOMetadataNode* WBMPMetadata::addChildNode($IIOMetadataNode* root, $String* name, Object$* object) {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, child, $new($IIOMetadataNode, name));
 	if (object != nullptr) {
 		child->setUserObject(object);
@@ -129,6 +131,7 @@ $IIOMetadataNode* WBMPMetadata::addChildNode($IIOMetadataNode* root, $String* na
 }
 
 $IIOMetadataNode* WBMPMetadata::getStandardChromaNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "Chroma"_s));
 	$var($IIOMetadataNode, subNode, $new($IIOMetadataNode, "BlackIsZero"_s));
 	subNode->setAttribute("value"_s, "TRUE"_s);
@@ -137,6 +140,7 @@ $IIOMetadataNode* WBMPMetadata::getStandardChromaNode() {
 }
 
 $IIOMetadataNode* WBMPMetadata::getStandardDimensionNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, dimension_node, $new($IIOMetadataNode, "Dimension"_s));
 	$var($IIOMetadataNode, node, nullptr);
 	$assign(node, $new($IIOMetadataNode, "ImageOrientation"_s));

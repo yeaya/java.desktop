@@ -117,6 +117,7 @@ $GlyphView$GlyphPainter* GlyphPainter2::getPainter($GlyphView* v, int32_t p0, in
 }
 
 float GlyphPainter2::getSpan($GlyphView* v, int32_t p0, int32_t p1, $TabExpander* e, float x) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = (p0 == $nc(v)->getStartOffset());
 	if (var$0 && (p1 == v->getEndOffset())) {
 		return $nc(this->layout)->getAdvance();
@@ -148,6 +149,7 @@ float GlyphPainter2::getDescent($GlyphView* v) {
 }
 
 void GlyphPainter2::paint($GlyphView* v, $Graphics* g, $Shape* a, int32_t p0, int32_t p1) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($Graphics2D, g)) {
 		$var($Rectangle2D, alloc, $nc(a)->getBounds2D());
 		$var($Graphics2D, g2d, $cast($Graphics2D, g));
@@ -174,6 +176,7 @@ void GlyphPainter2::paint($GlyphView* v, $Graphics* g, $Shape* a, int32_t p0, in
 }
 
 $Shape* GlyphPainter2::modelToView($GlyphView* v, int32_t pos, $Position$Bias* bias, $Shape* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t offs = pos - $nc(v)->getStartOffset();
 	$var($Rectangle2D, alloc, $nc(a)->getBounds2D());
 	$init($Position$Bias);
@@ -187,6 +190,7 @@ $Shape* GlyphPainter2::modelToView($GlyphView* v, int32_t pos, $Position$Bias* b
 }
 
 int32_t GlyphPainter2::viewToModel($GlyphView* v, float x, float y, $Shape* a, $Position$BiasArray* biasReturn) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, alloc, ($instanceOf($Rectangle2D, a)) ? $cast($Rectangle2D, a) : $nc(a)->getBounds2D());
 	$var($TextHitInfo, hit, $nc(this->layout)->hitTestChar(x - (float)$nc(alloc)->getX(), (float)0));
 	int32_t pos = $nc(hit)->getInsertionIndex();
@@ -213,6 +217,7 @@ int32_t GlyphPainter2::getBoundedPosition($GlyphView* v, int32_t p0, float x, fl
 }
 
 int32_t GlyphPainter2::getNextVisualPositionFrom($GlyphView* v, int32_t pos, $Position$Bias* b, $Shape* a, int32_t direction, $Position$BiasArray* biasRet) {
+	$useLocalCurrentObjectStackCache();
 	$var($Document, doc, $nc(v)->getDocument());
 	int32_t startOffset = v->getStartOffset();
 	int32_t endOffset = v->getEndOffset();

@@ -100,6 +100,7 @@ void MetalLookAndFeel$MetalLayoutStyle::init$() {
 }
 
 int32_t MetalLookAndFeel$MetalLayoutStyle::getPreferredGap($JComponent* component1, $JComponent* component2, $LayoutStyle$ComponentPlacement* type, int32_t position, $Container* parent) {
+	$useLocalCurrentObjectStackCache();
 	$DefaultLayoutStyle::getPreferredGap(component1, component2, type, position, parent);
 	int32_t offset = 0;
 	$init($MetalLookAndFeel$1);
@@ -169,6 +170,7 @@ int32_t MetalLookAndFeel$MetalLayoutStyle::getButtonGap($JComponent* source, $JC
 }
 
 int32_t MetalLookAndFeel$MetalLayoutStyle::getButtonAdjustment($JComponent* source, int32_t edge) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, classID, $nc(source)->getUIClassID());
 	if (classID == "ButtonUI"_s || classID == "ToggleButtonUI"_s) {
 		if (!$MetalLookAndFeel::usingOcean() && (edge == $SwingConstants::EAST || edge == $SwingConstants::SOUTH)) {

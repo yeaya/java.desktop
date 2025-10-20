@@ -143,6 +143,7 @@ void MetalIconFactory$OceanVerticalSliderThumbIcon::init$() {
 }
 
 void MetalIconFactory$OceanVerticalSliderThumbIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($Graphics2D, g))) {
 		return;
 	}
@@ -161,6 +162,7 @@ void MetalIconFactory$OceanVerticalSliderThumbIcon::paintIcon($Component* c, $Gr
 }
 
 void MetalIconFactory$OceanVerticalSliderThumbIcon::paintToImage($Component* c, $Image* image, $Graphics* g2, int32_t w, int32_t h, $ObjectArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($Graphics2D, g, $cast($Graphics2D, g2));
 	bool leftToRight = $nc(($cast($Boolean, $nc(args)->get(0))))->booleanValue();
 	bool hasFocus = $nc(($cast($Boolean, args->get(1))))->booleanValue();
@@ -232,6 +234,7 @@ $Image* MetalIconFactory$OceanVerticalSliderThumbIcon::createImage($Component* c
 }
 
 void clinit$MetalIconFactory$OceanVerticalSliderThumbIcon($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$assignStatic(MetalIconFactory$OceanVerticalSliderThumbIcon::LTR_THUMB_SHAPE, $new($Polygon, $$new($ints, {
 			0,

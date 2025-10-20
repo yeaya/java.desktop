@@ -223,6 +223,7 @@ void ParsedSynthStyle$AggregatePainter::addPainter($SynthPainter* painter) {
 }
 
 void ParsedSynthStyle$AggregatePainter::paintArrowButtonBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -235,6 +236,7 @@ void ParsedSynthStyle$AggregatePainter::paintArrowButtonBackground($SynthContext
 }
 
 void ParsedSynthStyle$AggregatePainter::paintArrowButtonBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -247,6 +249,7 @@ void ParsedSynthStyle$AggregatePainter::paintArrowButtonBorder($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintArrowButtonForeground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t direction) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -259,6 +262,7 @@ void ParsedSynthStyle$AggregatePainter::paintArrowButtonForeground($SynthContext
 }
 
 void ParsedSynthStyle$AggregatePainter::paintButtonBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -271,6 +275,7 @@ void ParsedSynthStyle$AggregatePainter::paintButtonBackground($SynthContext* con
 }
 
 void ParsedSynthStyle$AggregatePainter::paintButtonBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -283,6 +288,7 @@ void ParsedSynthStyle$AggregatePainter::paintButtonBorder($SynthContext* context
 }
 
 void ParsedSynthStyle$AggregatePainter::paintCheckBoxMenuItemBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -295,6 +301,7 @@ void ParsedSynthStyle$AggregatePainter::paintCheckBoxMenuItemBackground($SynthCo
 }
 
 void ParsedSynthStyle$AggregatePainter::paintCheckBoxMenuItemBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -307,6 +314,7 @@ void ParsedSynthStyle$AggregatePainter::paintCheckBoxMenuItemBorder($SynthContex
 }
 
 void ParsedSynthStyle$AggregatePainter::paintCheckBoxBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -319,6 +327,7 @@ void ParsedSynthStyle$AggregatePainter::paintCheckBoxBackground($SynthContext* c
 }
 
 void ParsedSynthStyle$AggregatePainter::paintCheckBoxBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -331,6 +340,7 @@ void ParsedSynthStyle$AggregatePainter::paintCheckBoxBorder($SynthContext* conte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintColorChooserBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -343,6 +353,7 @@ void ParsedSynthStyle$AggregatePainter::paintColorChooserBackground($SynthContex
 }
 
 void ParsedSynthStyle$AggregatePainter::paintColorChooserBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -355,6 +366,7 @@ void ParsedSynthStyle$AggregatePainter::paintColorChooserBorder($SynthContext* c
 }
 
 void ParsedSynthStyle$AggregatePainter::paintComboBoxBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -367,6 +379,7 @@ void ParsedSynthStyle$AggregatePainter::paintComboBoxBackground($SynthContext* c
 }
 
 void ParsedSynthStyle$AggregatePainter::paintComboBoxBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -379,6 +392,7 @@ void ParsedSynthStyle$AggregatePainter::paintComboBoxBorder($SynthContext* conte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintDesktopIconBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -391,6 +405,7 @@ void ParsedSynthStyle$AggregatePainter::paintDesktopIconBackground($SynthContext
 }
 
 void ParsedSynthStyle$AggregatePainter::paintDesktopIconBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -403,6 +418,7 @@ void ParsedSynthStyle$AggregatePainter::paintDesktopIconBorder($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintDesktopPaneBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -415,6 +431,7 @@ void ParsedSynthStyle$AggregatePainter::paintDesktopPaneBackground($SynthContext
 }
 
 void ParsedSynthStyle$AggregatePainter::paintDesktopPaneBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -427,6 +444,7 @@ void ParsedSynthStyle$AggregatePainter::paintDesktopPaneBorder($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintEditorPaneBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -439,6 +457,7 @@ void ParsedSynthStyle$AggregatePainter::paintEditorPaneBackground($SynthContext*
 }
 
 void ParsedSynthStyle$AggregatePainter::paintEditorPaneBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -451,6 +470,7 @@ void ParsedSynthStyle$AggregatePainter::paintEditorPaneBorder($SynthContext* con
 }
 
 void ParsedSynthStyle$AggregatePainter::paintFileChooserBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -463,6 +483,7 @@ void ParsedSynthStyle$AggregatePainter::paintFileChooserBackground($SynthContext
 }
 
 void ParsedSynthStyle$AggregatePainter::paintFileChooserBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -475,6 +496,7 @@ void ParsedSynthStyle$AggregatePainter::paintFileChooserBorder($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintFormattedTextFieldBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -487,6 +509,7 @@ void ParsedSynthStyle$AggregatePainter::paintFormattedTextFieldBackground($Synth
 }
 
 void ParsedSynthStyle$AggregatePainter::paintFormattedTextFieldBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -499,6 +522,7 @@ void ParsedSynthStyle$AggregatePainter::paintFormattedTextFieldBorder($SynthCont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintInternalFrameTitlePaneBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -511,6 +535,7 @@ void ParsedSynthStyle$AggregatePainter::paintInternalFrameTitlePaneBackground($S
 }
 
 void ParsedSynthStyle$AggregatePainter::paintInternalFrameTitlePaneBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -523,6 +548,7 @@ void ParsedSynthStyle$AggregatePainter::paintInternalFrameTitlePaneBorder($Synth
 }
 
 void ParsedSynthStyle$AggregatePainter::paintInternalFrameBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -535,6 +561,7 @@ void ParsedSynthStyle$AggregatePainter::paintInternalFrameBackground($SynthConte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintInternalFrameBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -547,6 +574,7 @@ void ParsedSynthStyle$AggregatePainter::paintInternalFrameBorder($SynthContext* 
 }
 
 void ParsedSynthStyle$AggregatePainter::paintLabelBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -559,6 +587,7 @@ void ParsedSynthStyle$AggregatePainter::paintLabelBackground($SynthContext* cont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintLabelBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -571,6 +600,7 @@ void ParsedSynthStyle$AggregatePainter::paintLabelBorder($SynthContext* context,
 }
 
 void ParsedSynthStyle$AggregatePainter::paintListBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -583,6 +613,7 @@ void ParsedSynthStyle$AggregatePainter::paintListBackground($SynthContext* conte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintListBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -595,6 +626,7 @@ void ParsedSynthStyle$AggregatePainter::paintListBorder($SynthContext* context, 
 }
 
 void ParsedSynthStyle$AggregatePainter::paintMenuBarBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -607,6 +639,7 @@ void ParsedSynthStyle$AggregatePainter::paintMenuBarBackground($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintMenuBarBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -619,6 +652,7 @@ void ParsedSynthStyle$AggregatePainter::paintMenuBarBorder($SynthContext* contex
 }
 
 void ParsedSynthStyle$AggregatePainter::paintMenuItemBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -631,6 +665,7 @@ void ParsedSynthStyle$AggregatePainter::paintMenuItemBackground($SynthContext* c
 }
 
 void ParsedSynthStyle$AggregatePainter::paintMenuItemBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -643,6 +678,7 @@ void ParsedSynthStyle$AggregatePainter::paintMenuItemBorder($SynthContext* conte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintMenuBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -655,6 +691,7 @@ void ParsedSynthStyle$AggregatePainter::paintMenuBackground($SynthContext* conte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintMenuBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -667,6 +704,7 @@ void ParsedSynthStyle$AggregatePainter::paintMenuBorder($SynthContext* context, 
 }
 
 void ParsedSynthStyle$AggregatePainter::paintOptionPaneBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -679,6 +717,7 @@ void ParsedSynthStyle$AggregatePainter::paintOptionPaneBackground($SynthContext*
 }
 
 void ParsedSynthStyle$AggregatePainter::paintOptionPaneBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -691,6 +730,7 @@ void ParsedSynthStyle$AggregatePainter::paintOptionPaneBorder($SynthContext* con
 }
 
 void ParsedSynthStyle$AggregatePainter::paintPanelBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -703,6 +743,7 @@ void ParsedSynthStyle$AggregatePainter::paintPanelBackground($SynthContext* cont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintPanelBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -715,6 +756,7 @@ void ParsedSynthStyle$AggregatePainter::paintPanelBorder($SynthContext* context,
 }
 
 void ParsedSynthStyle$AggregatePainter::paintPasswordFieldBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -727,6 +769,7 @@ void ParsedSynthStyle$AggregatePainter::paintPasswordFieldBackground($SynthConte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintPasswordFieldBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -739,6 +782,7 @@ void ParsedSynthStyle$AggregatePainter::paintPasswordFieldBorder($SynthContext* 
 }
 
 void ParsedSynthStyle$AggregatePainter::paintPopupMenuBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -751,6 +795,7 @@ void ParsedSynthStyle$AggregatePainter::paintPopupMenuBackground($SynthContext* 
 }
 
 void ParsedSynthStyle$AggregatePainter::paintPopupMenuBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -763,6 +808,7 @@ void ParsedSynthStyle$AggregatePainter::paintPopupMenuBorder($SynthContext* cont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintProgressBarBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -775,6 +821,7 @@ void ParsedSynthStyle$AggregatePainter::paintProgressBarBackground($SynthContext
 }
 
 void ParsedSynthStyle$AggregatePainter::paintProgressBarBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -787,6 +834,7 @@ void ParsedSynthStyle$AggregatePainter::paintProgressBarBackground($SynthContext
 }
 
 void ParsedSynthStyle$AggregatePainter::paintProgressBarBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -799,6 +847,7 @@ void ParsedSynthStyle$AggregatePainter::paintProgressBarBorder($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintProgressBarBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -811,6 +860,7 @@ void ParsedSynthStyle$AggregatePainter::paintProgressBarBorder($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintProgressBarForeground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -823,6 +873,7 @@ void ParsedSynthStyle$AggregatePainter::paintProgressBarForeground($SynthContext
 }
 
 void ParsedSynthStyle$AggregatePainter::paintRadioButtonMenuItemBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -835,6 +886,7 @@ void ParsedSynthStyle$AggregatePainter::paintRadioButtonMenuItemBackground($Synt
 }
 
 void ParsedSynthStyle$AggregatePainter::paintRadioButtonMenuItemBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -847,6 +899,7 @@ void ParsedSynthStyle$AggregatePainter::paintRadioButtonMenuItemBorder($SynthCon
 }
 
 void ParsedSynthStyle$AggregatePainter::paintRadioButtonBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -859,6 +912,7 @@ void ParsedSynthStyle$AggregatePainter::paintRadioButtonBackground($SynthContext
 }
 
 void ParsedSynthStyle$AggregatePainter::paintRadioButtonBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -871,6 +925,7 @@ void ParsedSynthStyle$AggregatePainter::paintRadioButtonBorder($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintRootPaneBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -883,6 +938,7 @@ void ParsedSynthStyle$AggregatePainter::paintRootPaneBackground($SynthContext* c
 }
 
 void ParsedSynthStyle$AggregatePainter::paintRootPaneBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -895,6 +951,7 @@ void ParsedSynthStyle$AggregatePainter::paintRootPaneBorder($SynthContext* conte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintScrollBarBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -907,6 +964,7 @@ void ParsedSynthStyle$AggregatePainter::paintScrollBarBackground($SynthContext* 
 }
 
 void ParsedSynthStyle$AggregatePainter::paintScrollBarBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -919,6 +977,7 @@ void ParsedSynthStyle$AggregatePainter::paintScrollBarBackground($SynthContext* 
 }
 
 void ParsedSynthStyle$AggregatePainter::paintScrollBarBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -931,6 +990,7 @@ void ParsedSynthStyle$AggregatePainter::paintScrollBarBorder($SynthContext* cont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintScrollBarBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -943,6 +1003,7 @@ void ParsedSynthStyle$AggregatePainter::paintScrollBarBorder($SynthContext* cont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintScrollBarThumbBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -955,6 +1016,7 @@ void ParsedSynthStyle$AggregatePainter::paintScrollBarThumbBackground($SynthCont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintScrollBarThumbBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -967,6 +1029,7 @@ void ParsedSynthStyle$AggregatePainter::paintScrollBarThumbBorder($SynthContext*
 }
 
 void ParsedSynthStyle$AggregatePainter::paintScrollBarTrackBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -979,6 +1042,7 @@ void ParsedSynthStyle$AggregatePainter::paintScrollBarTrackBackground($SynthCont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintScrollBarTrackBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -991,6 +1055,7 @@ void ParsedSynthStyle$AggregatePainter::paintScrollBarTrackBackground($SynthCont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintScrollBarTrackBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1003,6 +1068,7 @@ void ParsedSynthStyle$AggregatePainter::paintScrollBarTrackBorder($SynthContext*
 }
 
 void ParsedSynthStyle$AggregatePainter::paintScrollBarTrackBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1015,6 +1081,7 @@ void ParsedSynthStyle$AggregatePainter::paintScrollBarTrackBorder($SynthContext*
 }
 
 void ParsedSynthStyle$AggregatePainter::paintScrollPaneBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1027,6 +1094,7 @@ void ParsedSynthStyle$AggregatePainter::paintScrollPaneBackground($SynthContext*
 }
 
 void ParsedSynthStyle$AggregatePainter::paintScrollPaneBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1039,6 +1107,7 @@ void ParsedSynthStyle$AggregatePainter::paintScrollPaneBorder($SynthContext* con
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSeparatorBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1051,6 +1120,7 @@ void ParsedSynthStyle$AggregatePainter::paintSeparatorBackground($SynthContext* 
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSeparatorBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1063,6 +1133,7 @@ void ParsedSynthStyle$AggregatePainter::paintSeparatorBackground($SynthContext* 
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSeparatorBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1075,6 +1146,7 @@ void ParsedSynthStyle$AggregatePainter::paintSeparatorBorder($SynthContext* cont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSeparatorBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1087,6 +1159,7 @@ void ParsedSynthStyle$AggregatePainter::paintSeparatorBorder($SynthContext* cont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSeparatorForeground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1099,6 +1172,7 @@ void ParsedSynthStyle$AggregatePainter::paintSeparatorForeground($SynthContext* 
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSliderBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1111,6 +1185,7 @@ void ParsedSynthStyle$AggregatePainter::paintSliderBackground($SynthContext* con
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSliderBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1123,6 +1198,7 @@ void ParsedSynthStyle$AggregatePainter::paintSliderBackground($SynthContext* con
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSliderBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1135,6 +1211,7 @@ void ParsedSynthStyle$AggregatePainter::paintSliderBorder($SynthContext* context
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSliderBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1147,6 +1224,7 @@ void ParsedSynthStyle$AggregatePainter::paintSliderBorder($SynthContext* context
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSliderThumbBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1159,6 +1237,7 @@ void ParsedSynthStyle$AggregatePainter::paintSliderThumbBackground($SynthContext
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSliderThumbBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1171,6 +1250,7 @@ void ParsedSynthStyle$AggregatePainter::paintSliderThumbBorder($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSliderTrackBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1183,6 +1263,7 @@ void ParsedSynthStyle$AggregatePainter::paintSliderTrackBackground($SynthContext
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSliderTrackBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1195,6 +1276,7 @@ void ParsedSynthStyle$AggregatePainter::paintSliderTrackBackground($SynthContext
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSliderTrackBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1207,6 +1289,7 @@ void ParsedSynthStyle$AggregatePainter::paintSliderTrackBorder($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSliderTrackBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1219,6 +1302,7 @@ void ParsedSynthStyle$AggregatePainter::paintSliderTrackBorder($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSpinnerBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1231,6 +1315,7 @@ void ParsedSynthStyle$AggregatePainter::paintSpinnerBackground($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSpinnerBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1243,6 +1328,7 @@ void ParsedSynthStyle$AggregatePainter::paintSpinnerBorder($SynthContext* contex
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSplitPaneDividerBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1255,6 +1341,7 @@ void ParsedSynthStyle$AggregatePainter::paintSplitPaneDividerBackground($SynthCo
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSplitPaneDividerBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1267,6 +1354,7 @@ void ParsedSynthStyle$AggregatePainter::paintSplitPaneDividerBackground($SynthCo
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSplitPaneDividerForeground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1279,6 +1367,7 @@ void ParsedSynthStyle$AggregatePainter::paintSplitPaneDividerForeground($SynthCo
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSplitPaneDragDivider($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1291,6 +1380,7 @@ void ParsedSynthStyle$AggregatePainter::paintSplitPaneDragDivider($SynthContext*
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSplitPaneBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1303,6 +1393,7 @@ void ParsedSynthStyle$AggregatePainter::paintSplitPaneBackground($SynthContext* 
 }
 
 void ParsedSynthStyle$AggregatePainter::paintSplitPaneBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1315,6 +1406,7 @@ void ParsedSynthStyle$AggregatePainter::paintSplitPaneBorder($SynthContext* cont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTabbedPaneBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1327,6 +1419,7 @@ void ParsedSynthStyle$AggregatePainter::paintTabbedPaneBackground($SynthContext*
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTabbedPaneBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1339,6 +1432,7 @@ void ParsedSynthStyle$AggregatePainter::paintTabbedPaneBorder($SynthContext* con
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabAreaBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1351,6 +1445,7 @@ void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabAreaBackground($SynthC
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabAreaBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1363,6 +1458,7 @@ void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabAreaBackground($SynthC
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabAreaBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1375,6 +1471,7 @@ void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabAreaBorder($SynthConte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabAreaBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1387,6 +1484,7 @@ void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabAreaBorder($SynthConte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t tabIndex) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1399,6 +1497,7 @@ void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabBackground($SynthConte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t tabIndex, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1411,6 +1510,7 @@ void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabBackground($SynthConte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t tabIndex) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1423,6 +1523,7 @@ void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabBorder($SynthContext* 
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t tabIndex, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1435,6 +1536,7 @@ void ParsedSynthStyle$AggregatePainter::paintTabbedPaneTabBorder($SynthContext* 
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTabbedPaneContentBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1447,6 +1549,7 @@ void ParsedSynthStyle$AggregatePainter::paintTabbedPaneContentBackground($SynthC
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTabbedPaneContentBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1459,6 +1562,7 @@ void ParsedSynthStyle$AggregatePainter::paintTabbedPaneContentBorder($SynthConte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTableHeaderBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1471,6 +1575,7 @@ void ParsedSynthStyle$AggregatePainter::paintTableHeaderBackground($SynthContext
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTableHeaderBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1483,6 +1588,7 @@ void ParsedSynthStyle$AggregatePainter::paintTableHeaderBorder($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTableBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1495,6 +1601,7 @@ void ParsedSynthStyle$AggregatePainter::paintTableBackground($SynthContext* cont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTableBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1507,6 +1614,7 @@ void ParsedSynthStyle$AggregatePainter::paintTableBorder($SynthContext* context,
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTextAreaBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1519,6 +1627,7 @@ void ParsedSynthStyle$AggregatePainter::paintTextAreaBackground($SynthContext* c
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTextAreaBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1531,6 +1640,7 @@ void ParsedSynthStyle$AggregatePainter::paintTextAreaBorder($SynthContext* conte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTextPaneBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1543,6 +1653,7 @@ void ParsedSynthStyle$AggregatePainter::paintTextPaneBackground($SynthContext* c
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTextPaneBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1555,6 +1666,7 @@ void ParsedSynthStyle$AggregatePainter::paintTextPaneBorder($SynthContext* conte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTextFieldBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1567,6 +1679,7 @@ void ParsedSynthStyle$AggregatePainter::paintTextFieldBackground($SynthContext* 
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTextFieldBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1579,6 +1692,7 @@ void ParsedSynthStyle$AggregatePainter::paintTextFieldBorder($SynthContext* cont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToggleButtonBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1591,6 +1705,7 @@ void ParsedSynthStyle$AggregatePainter::paintToggleButtonBackground($SynthContex
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToggleButtonBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1603,6 +1718,7 @@ void ParsedSynthStyle$AggregatePainter::paintToggleButtonBorder($SynthContext* c
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToolBarBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1615,6 +1731,7 @@ void ParsedSynthStyle$AggregatePainter::paintToolBarBackground($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToolBarBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1627,6 +1744,7 @@ void ParsedSynthStyle$AggregatePainter::paintToolBarBackground($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToolBarBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1639,6 +1757,7 @@ void ParsedSynthStyle$AggregatePainter::paintToolBarBorder($SynthContext* contex
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToolBarBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1651,6 +1770,7 @@ void ParsedSynthStyle$AggregatePainter::paintToolBarBorder($SynthContext* contex
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToolBarContentBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1663,6 +1783,7 @@ void ParsedSynthStyle$AggregatePainter::paintToolBarContentBackground($SynthCont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToolBarContentBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1675,6 +1796,7 @@ void ParsedSynthStyle$AggregatePainter::paintToolBarContentBackground($SynthCont
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToolBarContentBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1687,6 +1809,7 @@ void ParsedSynthStyle$AggregatePainter::paintToolBarContentBorder($SynthContext*
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToolBarContentBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1699,6 +1822,7 @@ void ParsedSynthStyle$AggregatePainter::paintToolBarContentBorder($SynthContext*
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToolBarDragWindowBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1711,6 +1835,7 @@ void ParsedSynthStyle$AggregatePainter::paintToolBarDragWindowBackground($SynthC
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToolBarDragWindowBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1723,6 +1848,7 @@ void ParsedSynthStyle$AggregatePainter::paintToolBarDragWindowBackground($SynthC
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToolBarDragWindowBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1735,6 +1861,7 @@ void ParsedSynthStyle$AggregatePainter::paintToolBarDragWindowBorder($SynthConte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToolBarDragWindowBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h, int32_t orientation) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1747,6 +1874,7 @@ void ParsedSynthStyle$AggregatePainter::paintToolBarDragWindowBorder($SynthConte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToolTipBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1759,6 +1887,7 @@ void ParsedSynthStyle$AggregatePainter::paintToolTipBackground($SynthContext* co
 }
 
 void ParsedSynthStyle$AggregatePainter::paintToolTipBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1771,6 +1900,7 @@ void ParsedSynthStyle$AggregatePainter::paintToolTipBorder($SynthContext* contex
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTreeBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1783,6 +1913,7 @@ void ParsedSynthStyle$AggregatePainter::paintTreeBackground($SynthContext* conte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTreeBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1795,6 +1926,7 @@ void ParsedSynthStyle$AggregatePainter::paintTreeBorder($SynthContext* context, 
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTreeCellBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1807,6 +1939,7 @@ void ParsedSynthStyle$AggregatePainter::paintTreeCellBackground($SynthContext* c
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTreeCellBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1819,6 +1952,7 @@ void ParsedSynthStyle$AggregatePainter::paintTreeCellBorder($SynthContext* conte
 }
 
 void ParsedSynthStyle$AggregatePainter::paintTreeCellFocus($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1831,6 +1965,7 @@ void ParsedSynthStyle$AggregatePainter::paintTreeCellFocus($SynthContext* contex
 }
 
 void ParsedSynthStyle$AggregatePainter::paintViewportBackground($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {
@@ -1843,6 +1978,7 @@ void ParsedSynthStyle$AggregatePainter::paintViewportBackground($SynthContext* c
 }
 
 void ParsedSynthStyle$AggregatePainter::paintViewportBorder($SynthContext* context, $Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($Iterator, i$, $nc(this->painters)->iterator());
 		for (; $nc(i$)->hasNext();) {

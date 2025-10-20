@@ -94,6 +94,7 @@ $Map* DataTransferer$1::getFlavorsForNatives($StringArray* natives) {
 }
 
 $List* DataTransferer$1::getNativesForFlavor($DataFlavor* flav) {
+	$useLocalCurrentObjectStackCache();
 	$var($Map, natives, getNativesForFlavors($$new($DataFlavorArray, {flav})));
 	$var($String, nat, $cast($String, $nc(natives)->get(flav)));
 	if (nat != nullptr) {
@@ -104,6 +105,7 @@ $List* DataTransferer$1::getNativesForFlavor($DataFlavor* flav) {
 }
 
 $List* DataTransferer$1::getFlavorsForNative($String* nat) {
+	$useLocalCurrentObjectStackCache();
 	$var($Map, flavors, getFlavorsForNatives($$new($StringArray, {nat})));
 	$var($DataFlavor, flavor, $cast($DataFlavor, $nc(flavors)->get(nat)));
 	if (flavor != nullptr) {

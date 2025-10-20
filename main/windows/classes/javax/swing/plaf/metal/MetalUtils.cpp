@@ -131,6 +131,7 @@ void MetalUtils::drawFlush3DBorder($Graphics* g, $Rectangle* r) {
 }
 
 void MetalUtils::drawFlush3DBorder($Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->translate(x, y);
 	g->setColor($($MetalLookAndFeel::getControlDarkShadow()));
 	g->drawRect(0, 0, w - 2, h - 2);
@@ -167,6 +168,7 @@ void MetalUtils::drawDark3DBorder($Graphics* g, $Rectangle* r) {
 }
 
 void MetalUtils::drawDark3DBorder($Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	$nc(g)->translate(x, y);
 	drawFlush3DBorder(g, 0, 0, w, h);
 	g->setColor($($MetalLookAndFeel::getControl()));
@@ -187,6 +189,7 @@ void MetalUtils::drawButtonBorder($Graphics* g, int32_t x, int32_t y, int32_t w,
 }
 
 void MetalUtils::drawActiveButtonBorder($Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	drawFlush3DBorder(g, x, y, w, h);
 	$nc(g)->setColor($($MetalLookAndFeel::getPrimaryControl()));
 	g->drawLine(x + 1, y + 1, x + 1, h - 3);
@@ -207,6 +210,7 @@ void MetalUtils::drawDefaultButtonBorder($Graphics* g, int32_t x, int32_t y, int
 }
 
 void MetalUtils::drawDefaultButtonPressedBorder($Graphics* g, int32_t x, int32_t y, int32_t w, int32_t h) {
+	$useLocalCurrentObjectStackCache();
 	drawPressed3DBorder(g, x + 1, y + 1, w - 1, h - 1);
 	$nc(g)->translate(x, y);
 	g->setColor($($MetalLookAndFeel::getControlDarkShadow()));
@@ -256,12 +260,14 @@ bool MetalUtils::isToolBarButton($JComponent* c) {
 }
 
 $Icon* MetalUtils::getOceanToolBarIcon($Image* i) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageProducer, var$0, $nc(i)->getSource());
 	$var($ImageProducer, prod, $new($FilteredImageSource, var$0, $$new($MetalUtils$OceanToolBarImageFilter)));
 	return $new($ImageIconUIResource, $($nc($($Toolkit::getDefaultToolkit()))->createImage(prod)));
 }
 
 $Icon* MetalUtils::getOceanDisabledButtonIcon($Image* image) {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, range, $cast($ObjectArray, $UIManager::get("Button.disabledGrayRange"_s)));
 	int32_t min = 180;
 	int32_t max = 215;

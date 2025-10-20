@@ -135,6 +135,7 @@ $Insets* FilePane$DetailsTableCellRenderer::getInsets($Insets* i$renamed) {
 }
 
 $Component* FilePane$DetailsTableCellRenderer::getTableCellRendererComponent($JTable* table, Object$* value, bool isSelected, bool hasFocus, int32_t row, int32_t column) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(table)->convertColumnIndexToModel(column) != 0;
 	if ((var$0 || (this->this$0->listViewWindowsStyle && !$nc(table)->isFocusOwner())) && !this->this$0->fullRowSelection) {
 		isSelected = false;

@@ -42,6 +42,7 @@ void FinderUtils::init$() {
 }
 
 bool FinderUtils::isExported($Class* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, pn, packageName(c));
 	return $nc($($nc(c)->getModule()))->isExported(pn);
 }

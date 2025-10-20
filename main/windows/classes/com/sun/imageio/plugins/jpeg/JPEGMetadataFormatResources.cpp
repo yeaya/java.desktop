@@ -53,6 +53,7 @@ void JPEGMetadataFormatResources::init$() {
 }
 
 void clinit$JPEGMetadataFormatResources($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(JPEGMetadataFormatResources::commonContents, $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("dqt"_s),

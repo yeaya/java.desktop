@@ -148,6 +148,7 @@ void BasicComboPopup$Handler::mouseClicked($MouseEvent* e) {
 }
 
 void BasicComboPopup$Handler::mousePressed($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals($nc(e)->getSource(), this->this$0->list$)) {
 		return;
 	}
@@ -167,6 +168,7 @@ void BasicComboPopup$Handler::mousePressed($MouseEvent* e) {
 }
 
 void BasicComboPopup$Handler::mouseReleased($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals($nc(e)->getSource(), this->this$0->list$)) {
 		if ($nc($($nc(this->this$0->list$)->getModel()))->getSize() > 0) {
 			int32_t var$0 = $nc(this->this$0->comboBox)->getSelectedIndex();
@@ -211,6 +213,7 @@ void BasicComboPopup$Handler::mouseExited($MouseEvent* e) {
 }
 
 void BasicComboPopup$Handler::mouseMoved($MouseEvent* anEvent) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals($nc(anEvent)->getSource(), this->this$0->list$)) {
 		$var($Point, location, anEvent->getPoint());
 		$var($Rectangle, r, $new($Rectangle));
@@ -222,6 +225,7 @@ void BasicComboPopup$Handler::mouseMoved($MouseEvent* anEvent) {
 }
 
 void BasicComboPopup$Handler::mouseDragged($MouseEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	if ($equals($nc(e)->getSource(), this->this$0->list$)) {
 		return;
 	}
@@ -255,6 +259,7 @@ void BasicComboPopup$Handler::mouseDragged($MouseEvent* e) {
 }
 
 void BasicComboPopup$Handler::propertyChange($PropertyChangeEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($JComboBox, comboBox, $cast($JComboBox, $nc(e)->getSource()));
 	$var($String, propertyName, e->getPropertyName());
 	if (propertyName == "model"_s) {

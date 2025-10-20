@@ -206,6 +206,7 @@ void Arc2D$Float::writeObject($ObjectOutputStream* s) {
 }
 
 void Arc2D$Float::readObject($ObjectInputStream* s) {
+	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	try {
 		setArcType(s->readByte());

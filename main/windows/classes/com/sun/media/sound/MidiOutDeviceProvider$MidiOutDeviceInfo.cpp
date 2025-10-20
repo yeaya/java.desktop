@@ -61,6 +61,7 @@ $Object* allocate$MidiOutDeviceProvider$MidiOutDeviceInfo($Class* clazz) {
 }
 
 void MidiOutDeviceProvider$MidiOutDeviceInfo::init$(int32_t index, $Class* providerClass) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $MidiOutDeviceProvider::nGetName(index));
 	$var($String, var$1, $MidiOutDeviceProvider::nGetVendor(index));
 	$var($String, var$2, $MidiOutDeviceProvider::nGetDescription(index));

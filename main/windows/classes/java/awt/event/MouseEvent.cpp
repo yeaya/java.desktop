@@ -183,6 +183,7 @@ int32_t MouseEvent::getYOnScreen() {
 }
 
 void MouseEvent::init$($Component* source, int32_t id, int64_t when, int32_t modifiers, int32_t x, int32_t y, int32_t clickCount, bool popupTrigger, int32_t button) {
+	$useLocalCurrentObjectStackCache();
 	MouseEvent::init$(source, id, when, modifiers, x, y, 0, 0, clickCount, popupTrigger, button);
 	$var($Point, eventLocationOnScreen, $new($Point, 0, 0));
 	try {
@@ -209,6 +210,7 @@ int32_t MouseEvent::getModifiersEx() {
 }
 
 void MouseEvent::init$($Component* source, int32_t id, int64_t when, int32_t modifiers, int32_t x, int32_t y, int32_t xAbs, int32_t yAbs, int32_t clickCount, bool popupTrigger, int32_t button) {
+	$useLocalCurrentObjectStackCache();
 	$InputEvent::init$(source, id, when, modifiers);
 	this->popupTrigger = false;
 	this->shouldExcludeButtonFromExtModifiers = false;
@@ -284,6 +286,7 @@ bool MouseEvent::isPopupTrigger() {
 
 $String* MouseEvent::getMouseModifiersText(int32_t modifiers) {
 	$init(MouseEvent);
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, buf, $new($StringBuilder));
 	if (((int32_t)(modifiers & (uint32_t)$InputEvent::ALT_MASK)) != 0) {
 		buf->append($($Toolkit::getProperty("AWT.alt"_s, "Alt"_s)));
@@ -332,6 +335,7 @@ $String* MouseEvent::getMouseModifiersText(int32_t modifiers) {
 }
 
 $String* MouseEvent::paramString() {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, str, $new($StringBuilder, 80));
 	switch (this->id) {
 	case MouseEvent::MOUSE_PRESSED:
@@ -498,6 +502,7 @@ void MouseEvent::readObject($ObjectInputStream* s) {
 }
 
 void clinit$MouseEvent($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$NativeLibLoader::loadLibraries();
 		if (!$GraphicsEnvironment::isHeadless()) {

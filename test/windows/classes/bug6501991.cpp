@@ -52,6 +52,7 @@ void bug6501991::init$() {
 }
 
 void bug6501991::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($JLabel, l, $new($JLabel, u"\u0634\u0634\u0634\u0634\u0634\u0634\u0634"_s));
 		l->setSize(5, 22);

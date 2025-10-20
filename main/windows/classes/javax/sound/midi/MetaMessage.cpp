@@ -85,6 +85,7 @@ void MetaMessage::init$($bytes* data) {
 }
 
 void MetaMessage::setMessage(int32_t type, $bytes* data, int32_t length) {
+	$useLocalCurrentObjectStackCache();
 	if (type >= 128 || type < 0) {
 		$throwNew($InvalidMidiDataException, $$str({"Invalid meta event with type "_s, $$str(type)}));
 	}

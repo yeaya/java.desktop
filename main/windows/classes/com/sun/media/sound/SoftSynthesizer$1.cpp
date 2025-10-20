@@ -83,6 +83,7 @@ void SoftSynthesizer$1::init$($SoftSynthesizer* this$0) {
 }
 
 $Object* SoftSynthesizer$1::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($File, javahome, $new($File, $($nc($($System::getProperties()))->getProperty("java.home"_s))));
 	$var($File, libaudio, $new($File, $$new($File, javahome, "lib"_s), "audio"_s));
 	if (libaudio->isDirectory()) {

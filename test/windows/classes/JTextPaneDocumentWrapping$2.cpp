@@ -80,6 +80,7 @@ void JTextPaneDocumentWrapping$2::init$() {
 }
 
 void JTextPaneDocumentWrapping$2::run() {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$init($JTextPaneDocumentWrapping);
 		$JTextPaneDocumentWrapping::position = $nc($($nc($JTextPaneDocumentWrapping::jTextPane)->modelToView(100)))->y;

@@ -81,6 +81,7 @@ $TreePath* JTree$DropLocation::getPath() {
 }
 
 $String* JTree$DropLocation::toString() {
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$5, $$str({$($of(this)->getClass()->getName()), "[dropPoint="_s}));
 	$var($String, var$4, $$concat(var$5, $(getDropPoint())));
 	$var($String, var$3, $$concat(var$4, ",path="));

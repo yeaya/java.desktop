@@ -95,6 +95,7 @@ $MidiFileFormat* StandardMidiFileReader::getMidiFileFormat($InputStream* stream)
 }
 
 $MidiFileFormat* StandardMidiFileReader::getMidiFileFormatFromStream($InputStream* stream, int32_t fileLength, $SMFParser* smfParser) {
+	$useLocalCurrentObjectStackCache();
 	int32_t maxReadLength = 16;
 	int32_t duration = $MidiFileFormat::UNKNOWN_LENGTH;
 	$var($DataInputStream, dis, nullptr);
@@ -181,6 +182,7 @@ $MidiFileFormat* StandardMidiFileReader::getMidiFileFormatFromStream($InputStrea
 }
 
 $MidiFileFormat* StandardMidiFileReader::getMidiFileFormat($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputStream, urlStream, $nc(url)->openStream());
 	$var($BufferedInputStream, bis, $new($BufferedInputStream, urlStream, StandardMidiFileReader::bisBufferSize));
 	$var($MidiFileFormat, fileFormat, nullptr);
@@ -201,6 +203,7 @@ $MidiFileFormat* StandardMidiFileReader::getMidiFileFormat($URL* url) {
 }
 
 $MidiFileFormat* StandardMidiFileReader::getMidiFileFormat($File* file) {
+	$useLocalCurrentObjectStackCache();
 	$var($FileInputStream, fis, $new($FileInputStream, file));
 	$var($BufferedInputStream, bis, $new($BufferedInputStream, fis, StandardMidiFileReader::bisBufferSize));
 	int64_t length = $nc(file)->length();
@@ -225,6 +228,7 @@ $MidiFileFormat* StandardMidiFileReader::getMidiFileFormat($File* file) {
 }
 
 $Sequence* StandardMidiFileReader::getSequence($InputStream* stream) {
+	$useLocalCurrentObjectStackCache();
 	$var($SMFParser, smfParser, $new($SMFParser));
 	$var($MidiFileFormat, format, getMidiFileFormatFromStream(stream, $MidiFileFormat::UNKNOWN_LENGTH, smfParser));
 	bool var$0 = ($nc(format)->getType() != 0);
@@ -244,6 +248,7 @@ $Sequence* StandardMidiFileReader::getSequence($InputStream* stream) {
 }
 
 $Sequence* StandardMidiFileReader::getSequence($URL* url) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputStream, is, $nc(url)->openStream());
 	$assign(is, $new($BufferedInputStream, is, StandardMidiFileReader::bisBufferSize));
 	$var($Sequence, seq, nullptr);
@@ -264,6 +269,7 @@ $Sequence* StandardMidiFileReader::getSequence($URL* url) {
 }
 
 $Sequence* StandardMidiFileReader::getSequence($File* file) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputStream, is, $new($FileInputStream, file));
 	$assign(is, $new($BufferedInputStream, is, StandardMidiFileReader::bisBufferSize));
 	$var($Sequence, seq, nullptr);

@@ -103,6 +103,7 @@ void bug8071705::init$() {
 }
 
 void bug8071705::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$var($CountDownLatch, latch, $new($CountDownLatch, 1));
 	$var($booleans, result, $new($booleans, 1));
 	$SwingUtilities::invokeLater($$new($bug8071705$1, result, latch));
@@ -120,6 +121,7 @@ $GraphicsDeviceArray* bug8071705::checkScreens() {
 }
 
 $JFrame* bug8071705::createGUI() {
+	$useLocalCurrentObjectStackCache();
 	$var($JMenuBar, menuBar, $new($JMenuBar));
 	$var($JMenu, menu, $new($JMenu, "Some menu"_s));
 	menuBar->add(menu);
@@ -134,6 +136,7 @@ $JFrame* bug8071705::createGUI() {
 }
 
 $GraphicsDevice* bug8071705::checkConfigs($GraphicsDeviceArray* devices) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsDevice, correctDevice, nullptr);
 	if ($nc(devices)->length < 2) {
 		return correctDevice;
@@ -155,6 +158,7 @@ $GraphicsDevice* bug8071705::checkConfigs($GraphicsDeviceArray* devices) {
 }
 
 $Rectangle* bug8071705::setLocation($JFrame* frame, $GraphicsDevice* device) {
+	$useLocalCurrentObjectStackCache();
 	$var($GraphicsConfiguration, conf, $nc(device)->getDefaultConfiguration());
 	$var($Rectangle, bounds, $nc(conf)->getBounds());
 	int32_t x = $nc(bounds)->x + bounds->width / 2;
@@ -164,6 +168,7 @@ $Rectangle* bug8071705::setLocation($JFrame* frame, $GraphicsDevice* device) {
 }
 
 void bug8071705::runActualTest($GraphicsDevice* device, $CountDownLatch* latch, $JFrame* frame, $booleans* result) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, screenBounds, setLocation(frame, device));
 	$var($JMenu, menu, $nc($($nc(frame)->getJMenuBar()))->getMenu(0));
 	$nc(menu)->doClick();

@@ -54,6 +54,7 @@ void DerivedColorHueTest::init$() {
 }
 
 void DerivedColorHueTest::main($StringArray* args) {
+	$useLocalCurrentObjectStackCache();
 	$UIManager::setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel"_s);
 	$var($Color, base, $UIManager::getColor("nimbusBlueGrey"_s));
 	$var($floats, hsbBase, hsb(base));
@@ -83,6 +84,7 @@ $floats* DerivedColorHueTest::hsb($Color* c) {
 }
 
 $String* DerivedColorHueTest::hsbString($Color* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($floats, hsb, DerivedColorHueTest::hsb(c));
 	return $String::format("H=%.2f, S=%.2f, B=%.2f"_s, $$new($ObjectArray, {
 		$($of($Float::valueOf($nc(hsb)->get(0)))),

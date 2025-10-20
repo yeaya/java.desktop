@@ -81,6 +81,7 @@ void FocusTraversal$3::init$($Component* val$queriedFocusOwner, $String* val$dir
 }
 
 void FocusTraversal$3::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, actualFocusOwner, $nc($($FocusManager::getCurrentManager()))->getFocusOwner());
 	if (actualFocusOwner != this->val$queriedFocusOwner) {
 		$init($FocusTraversal);

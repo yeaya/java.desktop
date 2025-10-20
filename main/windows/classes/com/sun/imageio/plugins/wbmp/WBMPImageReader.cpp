@@ -130,6 +130,7 @@ void WBMPImageReader::setInput(Object$* input, bool seekForwardOnly, bool ignore
 }
 
 int32_t WBMPImageReader::getNumImages(bool allowSearch) {
+	$useLocalCurrentObjectStackCache();
 	if (this->iis == nullptr) {
 		$throwNew($IllegalStateException, $($I18N::getString("GetNumImages0"_s)));
 	}
@@ -184,6 +185,7 @@ void WBMPImageReader::readHeader() {
 }
 
 $Iterator* WBMPImageReader::getImageTypes(int32_t imageIndex) {
+	$useLocalCurrentObjectStackCache();
 	checkIndex(imageIndex);
 	readHeader();
 	$var($BufferedImage, bi, $new($BufferedImage, 1, 1, $BufferedImage::TYPE_BYTE_BINARY));
@@ -209,6 +211,7 @@ $IIOMetadata* WBMPImageReader::getStreamMetadata() {
 }
 
 $BufferedImage* WBMPImageReader::read(int32_t imageIndex, $ImageReadParam* param$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($ImageReadParam, param, param$renamed);
 	if (this->iis == nullptr) {
 		$throwNew($IllegalStateException, $($I18N::getString("WBMPImageReader1"_s)));

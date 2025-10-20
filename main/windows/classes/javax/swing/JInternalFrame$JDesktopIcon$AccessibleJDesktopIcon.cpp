@@ -119,6 +119,7 @@ $AccessibleValue* JInternalFrame$JDesktopIcon$AccessibleJDesktopIcon::getAccessi
 }
 
 $Number* JInternalFrame$JDesktopIcon$AccessibleJDesktopIcon::getCurrentAccessibleValue() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, a, $nc($(this->this$0->getInternalFrame()))->getAccessibleContext());
 	$var($AccessibleValue, v, $nc(a)->getAccessibleValue());
 	if (v != nullptr) {
@@ -129,6 +130,7 @@ $Number* JInternalFrame$JDesktopIcon$AccessibleJDesktopIcon::getCurrentAccessibl
 }
 
 bool JInternalFrame$JDesktopIcon$AccessibleJDesktopIcon::setCurrentAccessibleValue($Number* n) {
+	$useLocalCurrentObjectStackCache();
 	if (n == nullptr) {
 		return false;
 	}
@@ -142,6 +144,7 @@ bool JInternalFrame$JDesktopIcon$AccessibleJDesktopIcon::setCurrentAccessibleVal
 }
 
 $Number* JInternalFrame$JDesktopIcon$AccessibleJDesktopIcon::getMinimumAccessibleValue() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, a, $nc($(this->this$0->getInternalFrame()))->getAccessibleContext());
 	if ($instanceOf($AccessibleValue, a)) {
 		return $nc(($cast($AccessibleValue, a)))->getMinimumAccessibleValue();
@@ -151,6 +154,7 @@ $Number* JInternalFrame$JDesktopIcon$AccessibleJDesktopIcon::getMinimumAccessibl
 }
 
 $Number* JInternalFrame$JDesktopIcon$AccessibleJDesktopIcon::getMaximumAccessibleValue() {
+	$useLocalCurrentObjectStackCache();
 	$var($AccessibleContext, a, $nc($(this->this$0->getInternalFrame()))->getAccessibleContext());
 	if ($instanceOf($AccessibleValue, a)) {
 		return $nc(($cast($AccessibleValue, a)))->getMaximumAccessibleValue();

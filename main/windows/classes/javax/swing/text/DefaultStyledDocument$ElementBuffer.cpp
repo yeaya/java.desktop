@@ -163,6 +163,7 @@ void DefaultStyledDocument$ElementBuffer::insert(int32_t offset, int32_t length,
 }
 
 void DefaultStyledDocument$ElementBuffer::create(int32_t length, $DefaultStyledDocument$ElementSpecArray* data, $AbstractDocument$DefaultDocumentEvent* de) {
+	$useLocalCurrentObjectStackCache();
 	this->insertOp = true;
 	beginEdits(this->offset, length);
 	$var($Element, elem, this->root);
@@ -219,6 +220,7 @@ void DefaultStyledDocument$ElementBuffer::change(int32_t offset, int32_t length,
 }
 
 void DefaultStyledDocument$ElementBuffer::insertUpdate($DefaultStyledDocument$ElementSpecArray* data) {
+	$useLocalCurrentObjectStackCache();
 	$var($Element, elem, this->root);
 	int32_t index = $nc(elem)->getElementIndex(this->offset);
 	while (!elem->isLeaf()) {
@@ -292,6 +294,7 @@ void DefaultStyledDocument$ElementBuffer::changeUpdate() {
 }
 
 bool DefaultStyledDocument$ElementBuffer::split(int32_t offs, int32_t len) {
+	$useLocalCurrentObjectStackCache();
 	bool splitEnd = false;
 	$var($Element, e, this->root);
 	int32_t index = $nc(e)->getElementIndex(offs);
@@ -366,6 +369,7 @@ bool DefaultStyledDocument$ElementBuffer::split(int32_t offs, int32_t len) {
 }
 
 void DefaultStyledDocument$ElementBuffer::endEdits($AbstractDocument$DefaultDocumentEvent* de) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = $nc(this->changes)->size();
 	for (int32_t i = 0; i < n; ++i) {
 		$var($DefaultStyledDocument$ElementBuffer$ElemChanges, ec, $cast($DefaultStyledDocument$ElementBuffer$ElemChanges, $nc(this->changes)->elementAt(i)));
@@ -412,6 +416,7 @@ void DefaultStyledDocument$ElementBuffer::push($Element* e, int32_t index) {
 }
 
 void DefaultStyledDocument$ElementBuffer::pop() {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultStyledDocument$ElementBuffer$ElemChanges, ec, $cast($DefaultStyledDocument$ElementBuffer$ElemChanges, $nc(this->path)->peek()));
 	$nc(this->path)->pop();
 	bool var$0 = ($nc($nc(ec)->added)->size() > 0);
@@ -431,6 +436,7 @@ void DefaultStyledDocument$ElementBuffer::advance(int32_t n) {
 }
 
 void DefaultStyledDocument$ElementBuffer::insertElement($DefaultStyledDocument$ElementSpec* es) {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultStyledDocument$ElementBuffer$ElemChanges, ec, $cast($DefaultStyledDocument$ElementBuffer$ElemChanges, $nc(this->path)->peek()));
 	{
 		int32_t len = 0;
@@ -526,6 +532,7 @@ void DefaultStyledDocument$ElementBuffer::insertElement($DefaultStyledDocument$E
 }
 
 bool DefaultStyledDocument$ElementBuffer::removeElements($Element* elem, int32_t rmOffs0, int32_t rmOffs1) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc(elem)->isLeaf()) {
 		int32_t index0 = elem->getElementIndex(rmOffs0);
 		int32_t index1 = elem->getElementIndex(rmOffs1);
@@ -598,6 +605,7 @@ bool DefaultStyledDocument$ElementBuffer::removeElements($Element* elem, int32_t
 }
 
 bool DefaultStyledDocument$ElementBuffer::canJoin($Element* e0, $Element* e1) {
+	$useLocalCurrentObjectStackCache();
 	if ((e0 == nullptr) || (e1 == nullptr)) {
 		return false;
 	}
@@ -621,6 +629,7 @@ bool DefaultStyledDocument$ElementBuffer::canJoin($Element* e0, $Element* e1) {
 }
 
 $Element* DefaultStyledDocument$ElementBuffer::join($Element* p, $Element* left, $Element* right, int32_t rmOffs0, int32_t rmOffs1) {
+	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(left)->isLeaf();
 	if (var$0 && $nc(right)->isLeaf()) {
 		$var($Element, var$1, p);
@@ -671,6 +680,7 @@ $Element* DefaultStyledDocument$ElementBuffer::join($Element* p, $Element* left,
 }
 
 $Element* DefaultStyledDocument$ElementBuffer::clone($Element* parent, $Element* clonee) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(clonee)->isLeaf()) {
 		$var($Element, var$0, parent);
 		$var($AttributeSet, var$1, clonee->getAttributes());
@@ -688,6 +698,7 @@ $Element* DefaultStyledDocument$ElementBuffer::clone($Element* parent, $Element*
 }
 
 $Element* DefaultStyledDocument$ElementBuffer::cloneAsNecessary($Element* parent, $Element* clonee, int32_t rmOffs0, int32_t rmOffs1) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(clonee)->isLeaf()) {
 		$var($Element, var$0, parent);
 		$var($AttributeSet, var$1, clonee->getAttributes());
@@ -711,6 +722,7 @@ $Element* DefaultStyledDocument$ElementBuffer::cloneAsNecessary($Element* parent
 }
 
 void DefaultStyledDocument$ElementBuffer::fracture(int32_t depth) {
+	$useLocalCurrentObjectStackCache();
 	int32_t cLength = $nc(this->insertPath)->length;
 	int32_t lastIndex = -1;
 	bool needRecreate = this->recreateLeafs;
@@ -744,6 +756,7 @@ void DefaultStyledDocument$ElementBuffer::fracture(int32_t depth) {
 }
 
 void DefaultStyledDocument$ElementBuffer::fractureFrom($DefaultStyledDocument$ElementBuffer$ElemChangesArray* changed, int32_t startIndex, int32_t endFractureIndex) {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultStyledDocument$ElementBuffer$ElemChanges, change, $nc(changed)->get(startIndex));
 	$var($Element, child, nullptr);
 	$var($Element, newChild, nullptr);
@@ -823,6 +836,7 @@ void DefaultStyledDocument$ElementBuffer::fractureFrom($DefaultStyledDocument$El
 }
 
 $Element* DefaultStyledDocument$ElementBuffer::recreateFracturedElement($Element* parent, $Element* toDuplicate) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(toDuplicate)->isLeaf()) {
 		$var($Element, var$0, parent);
 		$var($AttributeSet, var$1, toDuplicate->getAttributes());
@@ -840,6 +854,7 @@ $Element* DefaultStyledDocument$ElementBuffer::recreateFracturedElement($Element
 }
 
 void DefaultStyledDocument$ElementBuffer::fractureDeepestLeaf($DefaultStyledDocument$ElementSpecArray* specs) {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultStyledDocument$ElementBuffer$ElemChanges, ec, $cast($DefaultStyledDocument$ElementBuffer$ElemChanges, $nc(this->path)->peek()));
 	$var($Element, child, $nc($nc(ec)->parent)->getElement(ec->index));
 	if (this->offset != 0) {
@@ -857,6 +872,7 @@ void DefaultStyledDocument$ElementBuffer::fractureDeepestLeaf($DefaultStyledDocu
 }
 
 void DefaultStyledDocument$ElementBuffer::insertFirstContent($DefaultStyledDocument$ElementSpecArray* specs) {
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultStyledDocument$ElementSpec, firstSpec, $nc(specs)->get(0));
 	$var($DefaultStyledDocument$ElementBuffer$ElemChanges, ec, $cast($DefaultStyledDocument$ElementBuffer$ElemChanges, $nc(this->path)->peek()));
 	$var($Element, child, $nc($nc(ec)->parent)->getElement(ec->index));

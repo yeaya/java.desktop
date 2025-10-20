@@ -167,6 +167,7 @@ void SerializationTest::init$() {
 }
 
 void SerializationTest::main($StringArray* argv) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($UIManager$LookAndFeelInfoArray, arr$, $UIManager::getInstalledLookAndFeels());
 		int32_t len$ = $nc(arr$)->length;
@@ -182,6 +183,7 @@ void SerializationTest::main($StringArray* argv) {
 }
 
 $Object* SerializationTest::createCopy($Serializable* objectToCopy) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$var($ByteArrayOutputStream, baos, $new($ByteArrayOutputStream));
 		$var($ObjectOutputStream, oos, $new($ObjectOutputStream, baos));
@@ -197,6 +199,7 @@ $Object* SerializationTest::createCopy($Serializable* objectToCopy) {
 }
 
 void SerializationTest::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 	} catch ($UnsupportedLookAndFeelException&) {
@@ -210,6 +213,7 @@ void SerializationTest::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 }
 
 void SerializationTest::lambda$main$1() {
+	$useLocalCurrentObjectStackCache();
 	$var($JSpinner, spinner, $new($JSpinner));
 	$var($JSpinner, firstCopy, $cast($JSpinner, createCopy(spinner)));
 	$var($JSpinner, secondCopy, $cast($JSpinner, createCopy(firstCopy)));

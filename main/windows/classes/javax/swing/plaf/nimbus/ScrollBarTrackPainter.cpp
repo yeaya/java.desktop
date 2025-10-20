@@ -176,6 +176,7 @@ void ScrollBarTrackPainter::paintBackgroundDisabled($Graphics2D* g) {
 }
 
 void ScrollBarTrackPainter::paintBackgroundEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, rect, decodeRect1());
 	$nc(g)->setPaint($(decodeGradient2(this->rect)));
 	g->fill(this->rect);
@@ -320,6 +321,7 @@ $Path2D* ScrollBarTrackPainter::decodePath4() {
 }
 
 $Paint* ScrollBarTrackPainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -345,6 +347,7 @@ $Paint* ScrollBarTrackPainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* ScrollBarTrackPainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -374,6 +377,7 @@ $Paint* ScrollBarTrackPainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* ScrollBarTrackPainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -391,6 +395,7 @@ $Paint* ScrollBarTrackPainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* ScrollBarTrackPainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -408,6 +413,7 @@ $Paint* ScrollBarTrackPainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* ScrollBarTrackPainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -425,6 +431,7 @@ $Paint* ScrollBarTrackPainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* ScrollBarTrackPainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

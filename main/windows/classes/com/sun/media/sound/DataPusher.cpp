@@ -180,6 +180,7 @@ void DataPusher::close() {
 }
 
 void DataPusher::run() {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, buffer, nullptr);
 	bool useStream = (this->ais != nullptr);
 	if (useStream) {

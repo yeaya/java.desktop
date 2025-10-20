@@ -625,6 +625,7 @@ $FlavorTable* DataTransferer::adaptFlavorMap($FlavorMap* map) {
 }
 
 void DataTransferer::registerTextFlavorProperties($String* nat, $String* charset, $String* eoln, $String* terminators) {
+	$useLocalCurrentObjectStackCache();
 	$var($Long, format, getFormatForNativeAsLong(nat));
 	$nc(DataTransferer::textNatives)->add(format);
 	$nc(DataTransferer::nativeCharsets)->put(format, (charset != nullptr && charset->length() != 0) ? charset : $($nc($($Charset::defaultCharset()))->name()));
@@ -661,6 +662,7 @@ $SortedMap* DataTransferer::getFormatsForTransferable($Transferable* contents, $
 }
 
 $SortedMap* DataTransferer::getFormatsForFlavors($DataFlavorArray* flavors, $FlavorTable* map) {
+	$useLocalCurrentObjectStackCache();
 	$var($Map, formatMap, $new($HashMap, $nc(flavors)->length));
 	$var($Map, textPlainMap, $new($HashMap, $nc(flavors)->length));
 	$var($Map, indexMap, $new($HashMap, $nc(flavors)->length));
@@ -713,6 +715,7 @@ $longs* DataTransferer::getFormatsForTransferableAsArray($Transferable* contents
 }
 
 $Map* DataTransferer::getFlavorsForFormats($longs* formats, $FlavorTable* map) {
+	$useLocalCurrentObjectStackCache();
 	$var($Map, flavorMap, $new($HashMap, $nc(formats)->length));
 	$var($Set, mappingSet, $new($HashSet, $nc(formats)->length));
 	$var($Set, flavorSet, $new($HashSet, $nc(formats)->length));
@@ -773,6 +776,7 @@ $Map* DataTransferer::getFlavorsForFormats($longs* formats, $FlavorTable* map) {
 }
 
 $Set* DataTransferer::getFlavorsForFormatsAsSet($longs* formats, $FlavorTable* map) {
+	$useLocalCurrentObjectStackCache();
 	$var($Set, flavorSet, $new($HashSet, $nc(formats)->length));
 	{
 		$var($longs, arr$, formats);
@@ -809,6 +813,7 @@ $DataFlavorArray* DataTransferer::getFlavorsForFormatsAsArray($longs* formats, $
 }
 
 $String* DataTransferer::getBestCharsetForTextFormat($Long* lFormat, $Transferable* localeTransferable) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, charset, nullptr);
 	bool var$0 = localeTransferable != nullptr && isLocaleDependentTextFormat($nc(lFormat)->longValue());
 	if (var$0 && localeTransferable->isDataFlavorSupported(DataTransferer::javaTextEncodingFlavor)) {
@@ -829,6 +834,7 @@ $String* DataTransferer::getBestCharsetForTextFormat($Long* lFormat, $Transferab
 }
 
 $bytes* DataTransferer::translateTransferableString($String* str$renamed, int64_t format) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, str, str$renamed);
 	$var($Long, lFormat, $Long::valueOf(format));
 	$var($String, charset, getBestCharsetForTextFormat(lFormat, nullptr));
@@ -866,6 +872,7 @@ $bytes* DataTransferer::translateTransferableString($String* str$renamed, int64_
 }
 
 $String* DataTransferer::translateBytesToString($bytes* bytes, int64_t format, $Transferable* localeTransferable) {
+	$useLocalCurrentObjectStackCache();
 	$var($Long, lFormat, $Long::valueOf(format));
 	$var($String, charset, getBestCharsetForTextFormat(lFormat, localeTransferable));
 	$var($String, eoln, $cast($String, $nc(DataTransferer::nativeEOLNs)->get(lFormat)));
@@ -927,6 +934,7 @@ $String* DataTransferer::translateBytesToString($bytes* bytes, int64_t format, $
 }
 
 $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlavor* flavor, int64_t format) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, obj, nullptr);
 	bool stringSelectionHack = false;
 	try {
@@ -1264,6 +1272,7 @@ $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlav
 
 $bytes* DataTransferer::convertObjectToBytes(Object$* object) {
 	$init(DataTransferer);
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($ByteArrayOutputStream, bos, $new($ByteArrayOutputStream));
 		{
@@ -1334,6 +1343,7 @@ $bytes* DataTransferer::convertObjectToBytes(Object$* object) {
 }
 
 $String* DataTransferer::removeSuspectedData($DataFlavor* flavor, $Transferable* contents, $String* str) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	bool var$0 = nullptr == $System::getSecurityManager();
 	if (var$0 || !$nc(flavor)->isMimeTypeEqual("text/uri-list"_s)) {
@@ -1355,6 +1365,7 @@ $ProtectionDomain* DataTransferer::getUserProtectionDomain($Transferable* conten
 }
 
 bool DataTransferer::isForbiddenToRead($File* file, $ProtectionDomain* protectionDomain) {
+	$useLocalCurrentObjectStackCache();
 	if (nullptr == protectionDomain) {
 		return false;
 	}
@@ -1370,6 +1381,7 @@ bool DataTransferer::isForbiddenToRead($File* file, $ProtectionDomain* protectio
 }
 
 $ArrayList* DataTransferer::castToFiles($List* files, $ProtectionDomain* userProtectionDomain) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		return $cast($ArrayList, $AccessController::doPrivileged(static_cast<$PrivilegedExceptionAction*>($$new(DataTransferer$$Lambda$lambda$castToFiles$1$1, this, files, userProtectionDomain))));
@@ -1394,6 +1406,7 @@ $File* DataTransferer::castToFile(Object$* fileObject) {
 
 bool DataTransferer::isFileInWebstartedCache($File* f) {
 	$init(DataTransferer);
+	$useLocalCurrentObjectStackCache();
 	if ($nc(DataTransferer::deploymentCacheDirectoryList)->isEmpty()) {
 		{
 			$var($StringArray, arr$, DataTransferer::DEPLOYMENT_CACHE_PROPERTIES);
@@ -1437,6 +1450,7 @@ bool DataTransferer::isFileInWebstartedCache($File* f) {
 }
 
 $Object* DataTransferer::translateBytes($bytes* bytes$renamed, $DataFlavor* flavor, int64_t format, $Transferable* localeTransferable) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, bytes, bytes$renamed);
 	$var($Object, theObject, nullptr);
 	if (isFileFormat(format)) {
@@ -1706,6 +1720,7 @@ $Object* DataTransferer::translateBytes($bytes* bytes$renamed, $DataFlavor* flav
 }
 
 $Object* DataTransferer::translateStream($InputStream* str, $DataFlavor* flavor, int64_t format, $Transferable* localeTransferable) {
+	$useLocalCurrentObjectStackCache();
 	$var($Object, theObject, nullptr);
 	bool var$0 = isURIListFormat(format);
 	$init($DataFlavor);
@@ -1841,6 +1856,7 @@ $Object* DataTransferer::translateStream($InputStream* str, $DataFlavor* flavor,
 }
 
 $Object* DataTransferer::translateStreamToInputStream($InputStream* str$renamed, $DataFlavor* flavor, int64_t format, $Transferable* localeTransferable) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputStream, str, str$renamed);
 	bool var$0 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
 	if (var$0 && isTextFormat(format)) {
@@ -1851,6 +1867,7 @@ $Object* DataTransferer::translateStreamToInputStream($InputStream* str$renamed,
 }
 
 $Object* DataTransferer::constructFlavoredObject(Object$* arg, $DataFlavor* flavor, $Class* clazz) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$Class* dfrc = $nc(flavor)->getRepresentationClass();
 	if ($nc($of(clazz))->equals(dfrc)) {
@@ -1880,6 +1897,7 @@ $URIArray* DataTransferer::dragQueryURIs($InputStream* stream, int64_t format, $
 }
 
 $Image* DataTransferer::standardImageBytesToImage($bytes* bytes, $String* mimeType) {
+	$useLocalCurrentObjectStackCache();
 	$var($Iterator, readerIterator, $ImageIO::getImageReadersByMIMEType(mimeType));
 	if (!$nc(readerIterator)->hasNext()) {
 		$throwNew($IOException, $$str({"No registered service provider can decode  an image from "_s, mimeType}));
@@ -1993,6 +2011,7 @@ $Image* DataTransferer::standardImageBytesToImage($bytes* bytes, $String* mimeTy
 }
 
 $bytes* DataTransferer::imageToStandardBytes($Image* image, $String* mimeType) {
+	$useLocalCurrentObjectStackCache();
 	$var($IOException, originalIOE, nullptr);
 	$var($Iterator, writerIterator, $ImageIO::getImageWritersByMIMEType(mimeType));
 	if (!$nc(writerIterator)->hasNext()) {
@@ -2048,6 +2067,7 @@ $bytes* DataTransferer::imageToStandardBytes($Image* image, $String* mimeType) {
 }
 
 $bytes* DataTransferer::imageToStandardBytesImpl($RenderedImage* renderedImage, $String* mimeType) {
+	$useLocalCurrentObjectStackCache();
 	$var($Iterator, writerIterator, $ImageIO::getImageWritersByMIMEType(mimeType));
 	$var($ImageTypeSpecifier, typeSpecifier, $new($ImageTypeSpecifier, renderedImage));
 	$var($ByteArrayOutputStream, baos, $new($ByteArrayOutputStream));
@@ -2111,6 +2131,7 @@ $bytes* DataTransferer::imageToStandardBytesImpl($RenderedImage* renderedImage, 
 }
 
 $Object* DataTransferer::concatData(Object$* obj1, Object$* obj2) {
+	$useLocalCurrentObjectStackCache();
 	$var($InputStream, str1, nullptr);
 	$var($InputStream, str2, nullptr);
 	if ($instanceOf($bytes, obj1)) {
@@ -2137,6 +2158,7 @@ $Object* DataTransferer::concatData(Object$* obj1, Object$* obj2) {
 }
 
 $bytes* DataTransferer::convertData(Object$* source, $Transferable* contents, int64_t format, $Map* formatMap, bool isToolkitThread) {
+	$useLocalCurrentObjectStackCache();
 	$var($bytes, ret, nullptr);
 	if (isToolkitThread) {
 		{
@@ -2176,6 +2198,7 @@ $bytes* DataTransferer::convertData(Object$* source, $Transferable* contents, in
 }
 
 void DataTransferer::processDataConversionRequests() {
+	$useLocalCurrentObjectStackCache();
 	if ($EventQueue::isDispatchThread()) {
 		$var($AppContext, appContext, $AppContext::getAppContext());
 		$nc($(getToolkitThreadBlockedHandler()))->lock();
@@ -2201,6 +2224,7 @@ void DataTransferer::processDataConversionRequests() {
 
 $longs* DataTransferer::keysToLongArray($SortedMap* map) {
 	$init(DataTransferer);
+	$useLocalCurrentObjectStackCache();
 	$var($Set, keySet, $nc(map)->keySet());
 	$var($longs, retval, $new($longs, $nc(keySet)->size()));
 	int32_t i = 0;
@@ -2215,6 +2239,7 @@ $longs* DataTransferer::keysToLongArray($SortedMap* map) {
 
 $DataFlavorArray* DataTransferer::setToSortedDataFlavorArray($Set* flavorsSet) {
 	$init(DataTransferer);
+	$useLocalCurrentObjectStackCache();
 	$var($DataFlavorArray, flavors, $new($DataFlavorArray, $nc(flavorsSet)->size()));
 	flavorsSet->toArray(flavors);
 	$var($Comparator, comparator, $nc($($DataFlavorUtil::getDataFlavorComparator()))->reversed());
@@ -2237,6 +2262,7 @@ $LinkedHashSet* DataTransferer::getPlatformMappingsForFlavor($DataFlavor* df) {
 
 $IOException* DataTransferer::lambda$constructFlavoredObject$4($Class* clazz, $Class* dfrc) {
 	$init(DataTransferer);
+	$useLocalCurrentObjectStackCache();
 	$var($String, var$0, $$str({"can\'t find <init>(L"_s, clazz, ";)V for class: "_s}));
 	return $new($IOException, $$concat(var$0, $($nc(dfrc)->getName())));
 }
@@ -2253,6 +2279,7 @@ bool DataTransferer::lambda$constructFlavoredObject$2($Constructor* c) {
 }
 
 $ArrayList* DataTransferer::lambda$castToFiles$1($List* files, $ProtectionDomain* userProtectionDomain) {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, fileList, $new($ArrayList));
 	{
 		$var($Iterator, i$, $nc(files)->iterator());
@@ -2279,6 +2306,7 @@ $ArrayList* DataTransferer::lambda$castToFiles$1($List* files, $ProtectionDomain
 }
 
 $String* DataTransferer::lambda$removeSuspectedData$0($String* str, $ProtectionDomain* userProtectionDomain) {
+	$useLocalCurrentObjectStackCache();
 	$var($StringBuilder, allowedFiles, $new($StringBuilder, $nc(str)->length()));
 	$var($StringArray, uriArray, $nc(str)->split("(\\s)+"_s));
 	{
@@ -2307,6 +2335,7 @@ $String* DataTransferer::lambda$removeSuspectedData$0($String* str, $ProtectionD
 }
 
 void clinit$DataTransferer($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(DataTransferer::DATA_CONVERTER_KEY, "DATA_CONVERTER_KEY"_s);
 	$assignStatic(DataTransferer::textNatives, $Collections::synchronizedSet($$new($HashSet)));
 	$assignStatic(DataTransferer::nativeCharsets, $Collections::synchronizedMap($$new($HashMap)));

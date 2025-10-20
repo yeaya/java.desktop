@@ -118,6 +118,7 @@ $Object* SOSMarkerSegment$ScanComponentSpec::clone() {
 }
 
 $IIOMetadataNode* SOSMarkerSegment$ScanComponentSpec::getNativeNode() {
+	$useLocalCurrentObjectStackCache();
 	$var($IIOMetadataNode, node, $new($IIOMetadataNode, "scanComponentSpec"_s));
 	node->setAttribute("componentSelector"_s, $($Integer::toString(this->componentSelector)));
 	node->setAttribute("dcHuffTable"_s, $($Integer::toString(this->dcHuffTable)));

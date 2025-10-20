@@ -287,6 +287,7 @@ void Win32ShellFolderManager2::init$() {
 }
 
 $ShellFolder* Win32ShellFolderManager2::createShellFolder($File* file) {
+	$useLocalCurrentObjectStackCache();
 	try {
 		return createShellFolder($(getDesktop()), file);
 	} catch ($InterruptedException&) {
@@ -298,6 +299,7 @@ $ShellFolder* Win32ShellFolderManager2::createShellFolder($File* file) {
 
 $Win32ShellFolder2* Win32ShellFolderManager2::createShellFolder($Win32ShellFolder2* parent, $File* file) {
 	$init(Win32ShellFolderManager2);
+	$useLocalCurrentObjectStackCache();
 	int64_t pIDL = 0;
 	try {
 		pIDL = $nc(parent)->parseDisplayName($($nc(file)->getCanonicalPath()));
@@ -348,6 +350,7 @@ $Win32ShellFolder2* Win32ShellFolderManager2::createShellFolderFromRelativePIDL(
 
 $Image* Win32ShellFolderManager2::getStandardViewButton(int32_t iconIndex) {
 	$init(Win32ShellFolderManager2);
+	$useLocalCurrentObjectStackCache();
 	$var($Image, result, $nc(Win32ShellFolderManager2::STANDARD_VIEW_BUTTONS)->get(iconIndex));
 	if (result != nullptr) {
 		return result;
@@ -364,6 +367,7 @@ $Image* Win32ShellFolderManager2::getStandardViewButton(int32_t iconIndex) {
 
 $Win32ShellFolder2* Win32ShellFolderManager2::getDesktop() {
 	$init(Win32ShellFolderManager2);
+	$useLocalCurrentObjectStackCache();
 	if (Win32ShellFolderManager2::desktop == nullptr) {
 		try {
 			$assignStatic(Win32ShellFolderManager2::desktop, $new($Win32ShellFolder2, 0));
@@ -388,6 +392,7 @@ $Win32ShellFolder2* Win32ShellFolderManager2::getDesktop() {
 
 $Win32ShellFolder2* Win32ShellFolderManager2::getDrives() {
 	$init(Win32ShellFolderManager2);
+	$useLocalCurrentObjectStackCache();
 	if (Win32ShellFolderManager2::drives == nullptr) {
 		try {
 			$assignStatic(Win32ShellFolderManager2::drives, $new($Win32ShellFolder2, 17));
@@ -412,6 +417,7 @@ $Win32ShellFolder2* Win32ShellFolderManager2::getDrives() {
 
 $Win32ShellFolder2* Win32ShellFolderManager2::getRecent() {
 	$init(Win32ShellFolderManager2);
+	$useLocalCurrentObjectStackCache();
 	if (Win32ShellFolderManager2::recent == nullptr) {
 		try {
 			$var($String, path, $Win32ShellFolder2::getFileSystemPath(8));
@@ -440,6 +446,7 @@ $Win32ShellFolder2* Win32ShellFolderManager2::getRecent() {
 
 $Win32ShellFolder2* Win32ShellFolderManager2::getNetwork() {
 	$init(Win32ShellFolderManager2);
+	$useLocalCurrentObjectStackCache();
 	if (Win32ShellFolderManager2::network == nullptr) {
 		try {
 			$assignStatic(Win32ShellFolderManager2::network, $new($Win32ShellFolder2, 18));
@@ -464,6 +471,7 @@ $Win32ShellFolder2* Win32ShellFolderManager2::getNetwork() {
 
 $Win32ShellFolder2* Win32ShellFolderManager2::getPersonal() {
 	$init(Win32ShellFolderManager2);
+	$useLocalCurrentObjectStackCache();
 	if (Win32ShellFolderManager2::personal == nullptr) {
 		try {
 			$var($String, path, $Win32ShellFolder2::getFileSystemPath(5));
@@ -498,6 +506,7 @@ $Win32ShellFolder2* Win32ShellFolderManager2::getPersonal() {
 }
 
 $Object* Win32ShellFolderManager2::get($String* key) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc(key)->equals("fileChooserDefaultFolder"_s)) {
 		$var($File, file, getPersonal());
 		if (file == nullptr) {
@@ -667,6 +676,7 @@ $File* Win32ShellFolderManager2::checkFile($File* file) {
 
 $File* Win32ShellFolderManager2::checkFile($File* file, $SecurityManager* sm) {
 	$init(Win32ShellFolderManager2);
+	$useLocalCurrentObjectStackCache();
 	try {
 		$nc(sm)->checkRead($($nc(file)->getPath()));
 		if ($instanceOf($Win32ShellFolder2, file)) {
@@ -688,6 +698,7 @@ $File* Win32ShellFolderManager2::checkFile($File* file, $SecurityManager* sm) {
 
 $FileArray* Win32ShellFolderManager2::checkFiles($FileArray* files) {
 	$init(Win32ShellFolderManager2);
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm == nullptr || files == nullptr || $nc(files)->length == 0) {
 		return files;
@@ -697,6 +708,7 @@ $FileArray* Win32ShellFolderManager2::checkFiles($FileArray* files) {
 
 $FileArray* Win32ShellFolderManager2::checkFiles($List* files) {
 	$init(Win32ShellFolderManager2);
+	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, sm, $System::getSecurityManager());
 	if (sm == nullptr || $nc(files)->isEmpty()) {
 		return $fcast($FileArray, files->toArray($$new($FileArray, files->size())));
@@ -706,10 +718,12 @@ $FileArray* Win32ShellFolderManager2::checkFiles($List* files) {
 
 $FileArray* Win32ShellFolderManager2::checkFiles($Stream* filesStream, $SecurityManager* sm) {
 	$init(Win32ShellFolderManager2);
+	$useLocalCurrentObjectStackCache();
 	return $fcast($FileArray, $nc($($nc(filesStream)->filter(static_cast<$Predicate*>($$new(Win32ShellFolderManager2$$Lambda$lambda$checkFiles$0, sm)))))->toArray(static_cast<$IntFunction*>($$new(Win32ShellFolderManager2$$Lambda$lambda$checkFiles$1$1))));
 }
 
 bool Win32ShellFolderManager2::isComputerNode($File* dir) {
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	if (dir != nullptr && $equals(dir, getDrives())) {
 		return true;
@@ -721,6 +735,7 @@ bool Win32ShellFolderManager2::isComputerNode($File* dir) {
 }
 
 bool Win32ShellFolderManager2::isFileSystemRoot($File* dir) {
+	$useLocalCurrentObjectStackCache();
 	if (dir != nullptr) {
 		if ($instanceOf($Win32ShellFolder2, dir)) {
 			$var($Win32ShellFolder2, sf, $cast($Win32ShellFolder2, dir));
@@ -741,6 +756,7 @@ bool Win32ShellFolderManager2::isFileSystemRoot($File* dir) {
 }
 
 bool Win32ShellFolderManager2::isDrive($File* dir) {
+	$useLocalCurrentObjectStackCache();
 	$var($String, path, $nc(dir)->getPath());
 	bool var$0 = $nc(path)->length() != 3;
 	if (var$0 || $nc(path)->charAt(1) != u':') {
@@ -752,6 +768,7 @@ bool Win32ShellFolderManager2::isDrive($File* dir) {
 
 int32_t Win32ShellFolderManager2::compareShellFolders($Win32ShellFolder2* sf1, $Win32ShellFolder2* sf2) {
 	$init(Win32ShellFolderManager2);
+	$useLocalCurrentObjectStackCache();
 	bool special1 = $nc(sf1)->isSpecial();
 	bool special2 = $nc(sf2)->isSpecial();
 	if (special1 || special2) {

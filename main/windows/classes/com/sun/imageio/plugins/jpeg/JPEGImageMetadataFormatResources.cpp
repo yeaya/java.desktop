@@ -69,6 +69,7 @@ $ObjectArray2* JPEGImageMetadataFormatResources::getContents() {
 }
 
 void clinit$JPEGImageMetadataFormatResources($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$assignStatic(JPEGImageMetadataFormatResources::imageContents, $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of("JPEGvariety"_s),

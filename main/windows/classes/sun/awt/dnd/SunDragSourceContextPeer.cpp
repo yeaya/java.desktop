@@ -191,6 +191,7 @@ void SunDragSourceContextPeer::quitSecondaryEventLoop() {
 }
 
 void SunDragSourceContextPeer::startDrag($DragSourceContext* dsc, $Cursor* c, $Image* di, $Point* p) {
+	$useLocalCurrentObjectStackCache();
 	if ($nc($(getTrigger()))->getTriggerEvent() == nullptr) {
 		$throwNew($InvalidDnDOperationException, "DragGestureEvent has a null trigger"_s);
 	}
@@ -272,6 +273,7 @@ void SunDragSourceContextPeer::transferablesFlavorsChanged() {
 }
 
 void SunDragSourceContextPeer::postDragSourceDragEvent(int32_t targetAction, int32_t modifiers, int32_t x, int32_t y, int32_t dispatchType) {
+	$useLocalCurrentObjectStackCache();
 	int32_t dropAction = SunDragSourceContextPeer::convertModifiersToDropAction(modifiers, this->sourceActions);
 	$var($DragSourceDragEvent, event, $new($DragSourceDragEvent, $(getDragSourceContext()), dropAction, (int32_t)(targetAction & (uint32_t)this->sourceActions), modifiers, x, y));
 	$var($SunDragSourceContextPeer$EventDispatcher, dispatcher, $new($SunDragSourceContextPeer$EventDispatcher, this, dispatchType, event));
@@ -292,6 +294,7 @@ void SunDragSourceContextPeer::operationChanged(int32_t targetActions, int32_t m
 }
 
 void SunDragSourceContextPeer::dragExit(int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($DragSourceEvent, event, $new($DragSourceEvent, $(getDragSourceContext()), x, y));
 	$var($SunDragSourceContextPeer$EventDispatcher, dispatcher, $new($SunDragSourceContextPeer$EventDispatcher, this, SunDragSourceContextPeer::DISPATCH_EXIT, event));
 	$SunToolkit::invokeLaterOnAppContext($($SunToolkit::targetToAppContext($(getComponent()))), dispatcher);
@@ -303,6 +306,7 @@ void SunDragSourceContextPeer::dragMouseMoved(int32_t targetActions, int32_t mod
 }
 
 void SunDragSourceContextPeer::dragDropFinished(bool success, int32_t operations, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($DragSourceEvent, event, $new($DragSourceDropEvent, $(getDragSourceContext()), (int32_t)(operations & (uint32_t)this->sourceActions), success, x, y));
 	$var($SunDragSourceContextPeer$EventDispatcher, dispatcher, $new($SunDragSourceContextPeer$EventDispatcher, this, SunDragSourceContextPeer::DISPATCH_FINISH, event));
 	$SunToolkit::invokeLaterOnAppContext($($SunToolkit::targetToAppContext($(getComponent()))), dispatcher);

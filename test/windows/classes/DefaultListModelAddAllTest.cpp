@@ -430,6 +430,7 @@ void DefaultListModelAddAllTest::main($StringArray* args) {
 
 void DefaultListModelAddAllTest::checkAddAll() {
 	$init(DefaultListModelAddAllTest);
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultListModel, lm, $new($DefaultListModel));
 	lm->addListDataListener($$new($DefaultListModelAddAllTest$MyListDataListener));
 	try {
@@ -444,6 +445,7 @@ void DefaultListModelAddAllTest::checkAddAll() {
 
 void DefaultListModelAddAllTest::checkAddAllWithIndex() {
 	$init(DefaultListModelAddAllTest);
+	$useLocalCurrentObjectStackCache();
 	$var($DefaultListModel, lm, $new($DefaultListModel));
 	lm->addListDataListener($$new($DefaultListModelAddAllTest$MyListDataListener));
 	lm->addAll(static_cast<$Collection*>(static_cast<$AbstractCollection*>(static_cast<$AbstractSet*>(DefaultListModelAddAllTest::set))));
@@ -474,6 +476,7 @@ void DefaultListModelAddAllTest::checkAddAllWithIndex() {
 }
 
 void clinit$DefaultListModelAddAllTest($Class* class$) {
+	$useLocalCurrentObjectStackCache();
 	$var($Supplier, var$0, static_cast<$Supplier*>($new(DefaultListModelAddAllTest$$Lambda$Vector)));
 	$var($ObjIntConsumer, var$1, static_cast<$ObjIntConsumer*>($new(DefaultListModelAddAllTest$$Lambda$add$1)));
 	$assignStatic(DefaultListModelAddAllTest::vector, $cast($Vector, $nc($($IntStream::range(DefaultListModelAddAllTest::START, DefaultListModelAddAllTest::END)))->collect(var$0, var$1, static_cast<$BiConsumer*>($$new(DefaultListModelAddAllTest$$Lambda$addAll$2)))));

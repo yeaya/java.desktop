@@ -251,6 +251,7 @@ $Container* EmbeddedFrame::getParent() {
 }
 
 void EmbeddedFrame::propertyChange($PropertyChangeEvent* evt) {
+	$useLocalCurrentObjectStackCache();
 	if (!$nc($($nc(evt)->getPropertyName()))->equals("managingFocus"_s)) {
 		return;
 	}
@@ -300,6 +301,7 @@ void EmbeddedFrame::hide() {
 }
 
 bool EmbeddedFrame::dispatchKeyEvent($KeyEvent* e) {
+	$useLocalCurrentObjectStackCache();
 	$var($Container, currentRoot, $nc($($AWTAccessor::getKeyboardFocusManagerAccessor()))->getCurrentFocusCycleRoot());
 	if (!$equals(this, currentRoot)) {
 		return false;
@@ -338,6 +340,7 @@ bool EmbeddedFrame::dispatchKeyEvent($KeyEvent* e) {
 }
 
 bool EmbeddedFrame::traverseIn(bool direction) {
+	$useLocalCurrentObjectStackCache();
 	$var($Component, comp, nullptr);
 	if (direction == EmbeddedFrame::FORWARD) {
 		$assign(comp, $nc($(getFocusTraversalPolicy()))->getFirstComponent(this));
@@ -387,6 +390,7 @@ void EmbeddedFrame::addNotify() {
 }
 
 void EmbeddedFrame::setCursorAllowed(bool isCursorAllowed) {
+	$useLocalCurrentObjectStackCache();
 	this->isCursorAllowed$ = isCursorAllowed;
 	$var($FramePeer, peer, $cast($FramePeer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(this)));
 	$nc(peer)->updateCursorImmediately();
@@ -418,6 +422,7 @@ $Point* EmbeddedFrame::getLocationPrivate() {
 }
 
 void EmbeddedFrame::setBoundsPrivate(int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($FramePeer, peer, $cast($FramePeer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(this)));
 	if (peer != nullptr) {
 		peer->setBoundsPrivate(x, y, width, height);
@@ -425,6 +430,7 @@ void EmbeddedFrame::setBoundsPrivate(int32_t x, int32_t y, int32_t width, int32_
 }
 
 $Rectangle* EmbeddedFrame::getBoundsPrivate() {
+	$useLocalCurrentObjectStackCache();
 	$var($FramePeer, peer, $cast($FramePeer, $nc($($AWTAccessor::getComponentAccessor()))->getPeer(this)));
 	if (peer != nullptr) {
 		return peer->getBoundsPrivate();
@@ -441,6 +447,7 @@ void EmbeddedFrame::toBack() {
 
 $Applet* EmbeddedFrame::getAppletIfAncestorOf($Component* comp) {
 	$init(EmbeddedFrame);
+	$useLocalCurrentObjectStackCache();
 	$var($Container, parent, $nc(comp)->getParent());
 	$var($Applet, applet, nullptr);
 	while (parent != nullptr && !($instanceOf(EmbeddedFrame, parent))) {

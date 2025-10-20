@@ -253,6 +253,7 @@ $AbstractRegionPainter$PaintContext* TreePainter::getPaintContext() {
 }
 
 void TreePainter::paintleafIconEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath1());
 	$nc(g)->setPaint(this->color1);
 	g->fill(this->path);
@@ -274,6 +275,7 @@ void TreePainter::paintleafIconEnabled($Graphics2D* g) {
 }
 
 void TreePainter::paintclosedIconEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath6());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->path);
@@ -304,6 +306,7 @@ void TreePainter::paintclosedIconEnabled($Graphics2D* g) {
 }
 
 void TreePainter::paintopenIconEnabled($Graphics2D* g) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, path, decodePath6());
 	$nc(g)->setPaint(this->color9);
 	g->fill(this->path);
@@ -858,6 +861,7 @@ $Path2D* TreePainter::decodePath17() {
 }
 
 $Paint* TreePainter::decodeGradient1($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -875,6 +879,7 @@ $Paint* TreePainter::decodeGradient1($Shape* s) {
 }
 
 $Paint* TreePainter::decodeGradient2($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -892,6 +897,7 @@ $Paint* TreePainter::decodeGradient2($Shape* s) {
 }
 
 $Paint* TreePainter::decodeGradient3($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -917,6 +923,7 @@ $Paint* TreePainter::decodeGradient3($Shape* s) {
 }
 
 $Paint* TreePainter::decodeGradient4($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -934,6 +941,7 @@ $Paint* TreePainter::decodeGradient4($Shape* s) {
 }
 
 $Paint* TreePainter::decodeGradient5($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -951,6 +959,7 @@ $Paint* TreePainter::decodeGradient5($Shape* s) {
 }
 
 $Paint* TreePainter::decodeGradient6($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();
@@ -972,6 +981,7 @@ $Paint* TreePainter::decodeGradient6($Shape* s) {
 }
 
 $Paint* TreePainter::decodeGradient7($Shape* s) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle2D, bounds, $nc(s)->getBounds2D());
 	float x = (float)$nc(bounds)->getX();
 	float y = (float)bounds->getY();

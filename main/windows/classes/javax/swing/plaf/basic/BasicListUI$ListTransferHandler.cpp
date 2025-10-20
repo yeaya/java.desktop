@@ -98,6 +98,7 @@ void BasicListUI$ListTransferHandler::init$() {
 }
 
 $Transferable* BasicListUI$ListTransferHandler::createTransferable($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if ($instanceOf($JList, c)) {
 		$var($JList, list, $cast($JList, c));
 		$var($ObjectArray, values, $nc(list)->getSelectedValues());

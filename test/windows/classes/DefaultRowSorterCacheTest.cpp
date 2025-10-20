@@ -71,6 +71,7 @@ void DefaultRowSorterCacheTest::init$() {
 }
 
 void DefaultRowSorterCacheTest::testSort() {
+	$useLocalCurrentObjectStackCache();
 	$var($ObjectArray, values, $new($ObjectArray, {
 		$($of($Integer::valueOf(1))),
 		$($of($Integer::valueOf(2))),

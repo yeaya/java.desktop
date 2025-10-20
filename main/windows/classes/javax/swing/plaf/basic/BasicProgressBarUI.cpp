@@ -296,6 +296,7 @@ void BasicProgressBarUI::uninstallListeners() {
 }
 
 int32_t BasicProgressBarUI::getBaseline($JComponent* c, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$ProgressBarUI::getBaseline(c, width, height);
 	bool var$0 = $nc(this->progressBar)->isStringPainted();
 	if (var$0 && $nc(this->progressBar)->getOrientation() == $JProgressBar::HORIZONTAL) {
@@ -471,6 +472,7 @@ int32_t BasicProgressBarUI::getBoxLength(int32_t availableLength, int32_t otherD
 }
 
 void BasicProgressBarUI::paintIndeterminate($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($Graphics2D, g))) {
 		return;
 	}
@@ -496,6 +498,7 @@ void BasicProgressBarUI::paintIndeterminate($Graphics* g, $JComponent* c) {
 }
 
 void BasicProgressBarUI::paintDeterminate($Graphics* g, $JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($Graphics2D, g))) {
 		return;
 	}
@@ -561,6 +564,7 @@ void BasicProgressBarUI::paintString($Graphics* g, int32_t x, int32_t y, int32_t
 }
 
 void BasicProgressBarUI::paintString($Graphics* g, int32_t x, int32_t y, int32_t width, int32_t height, int32_t fillStart, int32_t amountFull, $Insets* b) {
+	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($Graphics2D, g))) {
 		return;
 	}
@@ -590,6 +594,7 @@ void BasicProgressBarUI::paintString($Graphics* g, int32_t x, int32_t y, int32_t
 }
 
 $Point* BasicProgressBarUI::getStringPlacement($Graphics* g, $String* progressString, int32_t x, int32_t y, int32_t width, int32_t height) {
+	$useLocalCurrentObjectStackCache();
 	$var($FontMetrics, fontSizer, $SwingUtilities2::getFontMetrics(this->progressBar, g, $($nc(this->progressBar)->getFont())));
 	int32_t stringWidth = $SwingUtilities2::stringWidth(this->progressBar, fontSizer, progressString);
 	if ($nc(this->progressBar)->getOrientation() == $JProgressBar::HORIZONTAL) {
@@ -610,6 +615,7 @@ $Point* BasicProgressBarUI::getStringPlacement($Graphics* g, $String* progressSt
 }
 
 $Dimension* BasicProgressBarUI::getPreferredSize($JComponent* c) {
+	$useLocalCurrentObjectStackCache();
 	$var($Dimension, size, nullptr);
 	$var($Insets, border, $nc(this->progressBar)->getInsets());
 	$var($FontMetrics, fontSizer, $nc(this->progressBar)->getFontMetrics($($nc(this->progressBar)->getFont())));

@@ -253,6 +253,7 @@ void TableView::init$($Element* elem) {
 }
 
 $TableView$RowView* TableView::createTableRow($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	$init($StyleConstants);
 	$var($Object, o, $nc($($nc(elem)->getAttributes()))->getAttribute($StyleConstants::NameAttribute));
 	$init($HTML$Tag);
@@ -278,6 +279,7 @@ int32_t TableView::getRowCount() {
 }
 
 int32_t TableView::getMultiRowSpan(int32_t row0, int32_t row1) {
+	$useLocalCurrentObjectStackCache();
 	$var($TableView$RowView, rv0, getRow(row0));
 	$var($TableView$RowView, rv1, getRow(row1));
 	if ((rv0 != nullptr) && (rv1 != nullptr)) {
@@ -307,6 +309,7 @@ $TableView$RowView* TableView::getRow(int32_t row) {
 }
 
 $View* TableView::getViewAtPoint(int32_t x, int32_t y, $Rectangle* alloc) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = getViewCount();
 	$var($View, v, nullptr);
 	$var($Rectangle, allocation, $new($Rectangle));
@@ -326,6 +329,7 @@ $View* TableView::getViewAtPoint(int32_t x, int32_t y, $Rectangle* alloc) {
 }
 
 int32_t TableView::getColumnsOccupied($View* v) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, a, $nc($($nc(v)->getElement()))->getAttributes());
 	$init($HTML$Attribute);
 	if ($nc(a)->isDefined($HTML$Attribute::COLSPAN)) {
@@ -342,6 +346,7 @@ int32_t TableView::getColumnsOccupied($View* v) {
 }
 
 int32_t TableView::getRowsOccupied($View* v) {
+	$useLocalCurrentObjectStackCache();
 	$var($AttributeSet, a, $nc($($nc(v)->getElement()))->getAttributes());
 	$init($HTML$Attribute);
 	if ($nc(a)->isDefined($HTML$Attribute::ROWSPAN)) {
@@ -367,6 +372,7 @@ $StyleSheet* TableView::getStyleSheet() {
 }
 
 void TableView::updateInsets() {
+	$useLocalCurrentObjectStackCache();
 	int16_t top = $cast(int16_t, $nc(this->painter)->getInset($SwingConstants::TOP, this));
 	int16_t bottom = $cast(int16_t, $nc(this->painter)->getInset($SwingConstants::BOTTOM, this));
 	if (this->captionIndex != -1) {
@@ -388,6 +394,7 @@ void TableView::updateInsets() {
 }
 
 void TableView::setPropertiesFromAttributes() {
+	$useLocalCurrentObjectStackCache();
 	$var($StyleSheet, sheet, getStyleSheet());
 	$set(this, attr, $nc(sheet)->getViewAttributes(this));
 	$set(this, painter, sheet->getBoxPainter(this->attr));
@@ -413,6 +420,7 @@ void TableView::setPropertiesFromAttributes() {
 }
 
 void TableView::updateGrid() {
+	$useLocalCurrentObjectStackCache();
 	if (!this->gridValid) {
 		this->relativeCells = false;
 		this->multiRowCells = false;
@@ -504,6 +512,7 @@ void TableView::layoutColumns(int32_t targetSpan, $ints* offsets, $ints* spans, 
 }
 
 void TableView::calculateColumnRequirements(int32_t axis) {
+	$useLocalCurrentObjectStackCache();
 	{
 		$var($SizeRequirementsArray, arr$, this->columnRequirements);
 		int32_t len$ = $nc(arr$)->length;
@@ -579,6 +588,7 @@ void TableView::checkSingleColumnCell(int32_t axis, int32_t col, $View* v) {
 }
 
 void TableView::checkMultiColumnCell(int32_t axis, int32_t col, int32_t ncols, $View* v) {
+	$useLocalCurrentObjectStackCache();
 	int64_t min = 0;
 	int64_t pref = 0;
 	int64_t max = 0;
@@ -622,6 +632,7 @@ void TableView::checkMultiColumnCell(int32_t axis, int32_t col, int32_t ncols, $
 }
 
 $SizeRequirements* TableView::calculateMinorAxisRequirements(int32_t axis, $SizeRequirements* r$renamed) {
+	$useLocalCurrentObjectStackCache();
 	$var($SizeRequirements, r, r$renamed);
 	updateGrid();
 	calculateColumnRequirements(axis);
@@ -681,6 +692,7 @@ $SizeRequirements* TableView::calculateMajorAxisRequirements(int32_t axis, $Size
 }
 
 void TableView::layoutMinorAxis(int32_t targetSpan, int32_t axis, $ints* offsets, $ints* spans) {
+	$useLocalCurrentObjectStackCache();
 	updateGrid();
 	int32_t n = getRowCount();
 	for (int32_t i = 0; i < n; ++i) {
@@ -708,6 +720,7 @@ void TableView::layoutMajorAxis(int32_t targetSpan, int32_t axis, $ints* offsets
 }
 
 $View* TableView::getViewAtPosition(int32_t pos, $Rectangle* a) {
+	$useLocalCurrentObjectStackCache();
 	int32_t n = getViewCount();
 	for (int32_t i = 0; i < n; ++i) {
 		$var($View, v, getView(i));
@@ -739,6 +752,7 @@ $AttributeSet* TableView::getAttributes() {
 }
 
 void TableView::paint($Graphics* g, $Shape* allocation) {
+	$useLocalCurrentObjectStackCache();
 	$var($Rectangle, a, $nc(allocation)->getBounds());
 	setSize((float)$nc(a)->width, (float)a->height);
 	if (this->captionIndex != -1) {
@@ -784,6 +798,7 @@ void TableView::changedUpdate($DocumentEvent* e, $Shape* a, $ViewFactory* f) {
 }
 
 void TableView::forwardUpdate($DocumentEvent$ElementChange* ec, $DocumentEvent* e, $Shape* a, $ViewFactory* f) {
+	$useLocalCurrentObjectStackCache();
 	$BoxView::forwardUpdate(ec, e, a, f);
 	if (a != nullptr) {
 		$var($Component, c, getContainer());
@@ -800,6 +815,7 @@ void TableView::replace(int32_t offset, int32_t length, $ViewArray* views) {
 }
 
 $View* TableView::create($Element* elem) {
+	$useLocalCurrentObjectStackCache();
 	$init($StyleConstants);
 	$var($Object, o, $nc($($nc(elem)->getAttributes()))->getAttribute($StyleConstants::NameAttribute));
 	if ($instanceOf($HTML$Tag, o)) {

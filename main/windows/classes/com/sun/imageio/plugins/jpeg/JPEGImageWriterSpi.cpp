@@ -82,6 +82,7 @@ bool JPEGImageWriterSpi::isFormatLossless() {
 }
 
 bool JPEGImageWriterSpi::canEncodeImage($ImageTypeSpecifier* type) {
+	$useLocalCurrentObjectStackCache();
 	$var($SampleModel, sampleModel, $nc(type)->getSampleModel());
 	$var($ColorModel, cm, type->getColorModel());
 	if ($nc(cm)->hasAlpha()) {

@@ -91,6 +91,7 @@ $Object* allocate$ServiceDialog$GeneralPanel($Class* clazz) {
 }
 
 void ServiceDialog$GeneralPanel::init$($ServiceDialog* this$0) {
+	$useLocalCurrentObjectStackCache();
 	$set(this, this$0, this$0);
 	$JPanel::init$();
 	$var($GridBagLayout, gridbag, $new($GridBagLayout));

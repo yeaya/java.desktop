@@ -91,6 +91,7 @@ void BasicDirectoryModel$FilesLoader$1::init$($BasicDirectoryModel$FilesLoader* 
 }
 
 $Object* BasicDirectoryModel$FilesLoader$1::call() {
+	$useLocalCurrentObjectStackCache();
 	int32_t newSize = $nc(this->val$newFileCache)->size();
 	int32_t oldSize = $nc($nc(this->this$1->this$0)->fileCache)->size();
 	if (newSize > oldSize) {

@@ -70,6 +70,7 @@ void RenderCache::init$(int32_t size) {
 
 $Object* RenderCache::get($SurfaceType* src, $CompositeType* comp, $SurfaceType* dst) {
 	$synchronized(this) {
+		$useLocalCurrentObjectStackCache();
 		int32_t max = $nc(this->entries)->length - 1;
 		for (int32_t i = max; i >= 0; --i) {
 			$var($RenderCache$Entry, e, $nc(this->entries)->get(i));

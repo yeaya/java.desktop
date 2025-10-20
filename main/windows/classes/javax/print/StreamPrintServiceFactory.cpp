@@ -85,6 +85,7 @@ void StreamPrintServiceFactory::init$() {
 }
 
 $StreamPrintServiceFactory$Services* StreamPrintServiceFactory::getServices() {
+	$useLocalCurrentObjectStackCache();
 	$load($StreamPrintServiceFactory$Services);
 	$var($StreamPrintServiceFactory$Services, services, $cast($StreamPrintServiceFactory$Services, $nc($($AppContext::getAppContext()))->get($StreamPrintServiceFactory$Services::class$)));
 	if (services == nullptr) {
@@ -99,18 +100,21 @@ $ArrayList* StreamPrintServiceFactory::getListOfFactories() {
 }
 
 $ArrayList* StreamPrintServiceFactory::initListOfFactories() {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, listOfFactories, $new($ArrayList));
 	$set($nc($(getServices())), listOfFactories, listOfFactories);
 	return listOfFactories;
 }
 
 $StreamPrintServiceFactoryArray* StreamPrintServiceFactory::lookupStreamPrintServiceFactories($DocFlavor* flavor, $String* outputMimeType) {
+	$useLocalCurrentObjectStackCache();
 	$var($ArrayList, list, getFactories(flavor, outputMimeType));
 	return $fcast($StreamPrintServiceFactoryArray, $nc(list)->toArray($$new($StreamPrintServiceFactoryArray, list->size())));
 }
 
 $ArrayList* StreamPrintServiceFactory::getAllFactories() {
 	$load(StreamPrintServiceFactory);
+	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$synchronized(StreamPrintServiceFactory::class$) {
 		$var($ArrayList, listOfFactories, getListOfFactories());
@@ -138,6 +142,7 @@ bool StreamPrintServiceFactory::isMember($DocFlavor* flavor, $DocFlavorArray* fl
 }
 
 $ArrayList* StreamPrintServiceFactory::getFactories($DocFlavor* flavor, $String* outType) {
+	$useLocalCurrentObjectStackCache();
 	if (flavor == nullptr && outType == nullptr) {
 		return getAllFactories();
 	}

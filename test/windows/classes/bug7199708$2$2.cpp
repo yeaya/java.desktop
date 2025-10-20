@@ -86,6 +86,7 @@ bool bug7199708$2$2::accept($Component* component) {
 }
 
 void bug7199708$2$2::perform($Component* component) {
+	$useLocalCurrentObjectStackCache();
 	$var($Point, tableLocation, $nc(component)->getLocationOnScreen());
 	$init($bug7199708);
 	$bug7199708::locationX = $cast(int32_t, $nc(tableLocation)->getX());

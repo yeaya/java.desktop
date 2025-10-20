@@ -220,6 +220,7 @@ EAttribute* EAttribute::forAttribute($AttributedCharacterIterator$Attribute* ta)
 }
 
 $String* EAttribute::toString() {
+	$useLocalCurrentObjectStackCache();
 	return $($nc($(name()))->substring(1))->toLowerCase();
 }
 

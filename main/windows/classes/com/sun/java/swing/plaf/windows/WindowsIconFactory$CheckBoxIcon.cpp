@@ -129,6 +129,7 @@ void WindowsIconFactory$CheckBoxIcon::init$() {
 }
 
 void WindowsIconFactory$CheckBoxIcon::paintIcon($Component* c, $Graphics* g, int32_t x, int32_t y) {
+	$useLocalCurrentObjectStackCache();
 	$var($JCheckBox, cb, $cast($JCheckBox, c));
 	$var($ButtonModel, model, $nc(cb)->getModel());
 	$var($XPStyle, xp, $XPStyle::getXP());
@@ -241,6 +242,7 @@ void WindowsIconFactory$CheckBoxIcon::paintIcon($Component* c, $Graphics* g, int
 }
 
 int32_t WindowsIconFactory$CheckBoxIcon::getIconWidth() {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$init($TMSchema$Part);
@@ -251,6 +253,7 @@ int32_t WindowsIconFactory$CheckBoxIcon::getIconWidth() {
 }
 
 int32_t WindowsIconFactory$CheckBoxIcon::getIconHeight() {
+	$useLocalCurrentObjectStackCache();
 	$var($XPStyle, xp, $XPStyle::getXP());
 	if (xp != nullptr) {
 		$init($TMSchema$Part);
