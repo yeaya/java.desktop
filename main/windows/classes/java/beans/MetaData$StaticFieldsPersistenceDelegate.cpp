@@ -4,17 +4,7 @@
 #include <java/beans/Expression.h>
 #include <java/beans/MetaData.h>
 #include <java/beans/PersistenceDelegate.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <java/lang/reflect/Modifier.h>
 #include <sun/reflect/misc/ReflectUtil.h>
 #include <jcpp.h>
@@ -83,7 +73,6 @@ void MetaData$StaticFieldsPersistenceDelegate::installFields($Encoder* out, $Cla
 		$var($FieldArray, fields, $nc(cls)->getFields());
 		for (int32_t i = 0; i < $nc(fields)->length; ++i) {
 			$var($Field, field, fields->get(i));
-			$load($Object);
 			if ($Object::class$->isAssignableFrom($nc(field)->getType())) {
 				$nc(out)->writeExpression($$new($Expression, field, "get"_s, $$new($ObjectArray, {($Object*)nullptr})));
 			}

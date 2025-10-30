@@ -2,21 +2,8 @@
 
 #include <java/awt/Dimension.h>
 #include <java/awt/Insets.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
 #include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/UIDefaults.h>
 #include <javax/swing/plaf/nimbus/AbstractRegionPainter$PaintContext$CacheMode.h>
 #include <javax/swing/plaf/nimbus/AbstractRegionPainter$PaintContext.h>
@@ -121,8 +108,8 @@ $Object* NimbusDefaults$LazyPainter::createValue($UIDefaults* table) {
 			}
 		}
 		c = $Class::forName(this->className, true, $cast($ClassLoader, cl));
-			$load($AbstractRegionPainter$PaintContext);
-			$init($Integer);
+		$load($AbstractRegionPainter$PaintContext);
+		$init($Integer);
 		$var($Constructor, constructor, $nc(c)->getConstructor($$new($ClassArray, {
 			$AbstractRegionPainter$PaintContext::class$,
 			$Integer::TYPE
@@ -134,8 +121,7 @@ $Object* NimbusDefaults$LazyPainter::createValue($UIDefaults* table) {
 			$of(this->ctx),
 			$($of($Integer::valueOf(this->which)))
 		})));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		e->printStackTrace();
 		return $of(nullptr);
 	}

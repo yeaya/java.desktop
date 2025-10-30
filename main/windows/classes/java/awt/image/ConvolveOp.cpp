@@ -19,16 +19,6 @@
 #include <java/awt/image/Raster.h>
 #include <java/awt/image/RasterOp.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Hashtable.h>
 #include <sun/awt/image/ImagingLib.h>
 #include <jcpp.h>
@@ -197,8 +187,8 @@ $BufferedImage* ConvolveOp::filter($BufferedImage* src$renamed, $BufferedImage* 
 			$var($Throwable, var$1, nullptr);
 			try {
 				$nc(g)->drawImage(dst, 0, 0, nullptr);
-			} catch ($Throwable&) {
-				$assign(var$1, $catch());
+			} catch ($Throwable& var$2) {
+				$assign(var$1, var$2);
 			} /*finally*/ {
 				$nc(g)->dispose();
 			}

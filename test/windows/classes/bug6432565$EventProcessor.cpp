@@ -3,14 +3,6 @@
 #include <bug6432565.h>
 #include <java/awt/AWTEvent.h>
 #include <java/awt/EventQueue.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/atomic/AtomicReference.h>
 #include <jcpp.h>
 
@@ -60,8 +52,7 @@ void bug6432565$EventProcessor::init$() {
 void bug6432565$EventProcessor::dispatchEvent($AWTEvent* event) {
 	try {
 		$EventQueue::dispatchEvent(event);
-	} catch ($Throwable&) {
-		$var($Throwable, e, $catch());
+	} catch ($Throwable& e) {
 		e->printStackTrace();
 		$init($bug6432565);
 		$nc($bug6432565::throwable)->set(e);

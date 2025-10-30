@@ -11,20 +11,8 @@
 #include <java/awt/peer/SystemTrayPeer.h>
 #include <java/beans/PropertyChangeListener.h>
 #include <java/beans/PropertyChangeSupport.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/BasicPermission.h>
 #include <java/security/Permission.h>
 #include <java/util/Vector.h>
@@ -183,8 +171,7 @@ void SystemTray::add($TrayIcon* trayIcon) {
 	}
 	try {
 		$nc(trayIcon)->addNotify();
-	} catch ($AWTException&) {
-		$var($AWTException, e, $catch());
+	} catch ($AWTException& e) {
 		$nc(icons)->remove($of(trayIcon));
 		$throw(e);
 	}

@@ -1,18 +1,8 @@
 #include <sun/awt/CausedFocusEvent$2.h>
 
 #include <java/awt/event/FocusEvent.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/CausedFocusEvent.h>
 #include <jcpp.h>
 
@@ -86,8 +76,7 @@ $Object* CausedFocusEvent$2::run() {
 	$nc(this->val$consumedField)->setAccessible(true);
 	try {
 		$nc(this->val$consumedField)->set(this->val$focusEvent, $($Boolean::valueOf($CausedFocusEvent::access$000(this->this$0))));
-	} catch ($IllegalAccessException&) {
-		$catch();
+	} catch ($IllegalAccessException& e) {
 	}
 	return $of(nullptr);
 }

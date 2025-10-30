@@ -8,14 +8,6 @@
 #include <java/awt/event/InputEvent.h>
 #include <java/awt/event/ItemEvent.h>
 #include <java/awt/event/ItemListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <javax/swing/ButtonGroup.h>
 #include <javax/swing/ButtonModel.h>

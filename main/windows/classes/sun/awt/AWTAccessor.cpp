@@ -17,18 +17,10 @@
 #include <java/awt/dnd/DropTargetContext.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/awt/event/MouseEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodHandles.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleBundle.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <sun/awt/AWTAccessor$AWTEventAccessor.h>
@@ -652,8 +644,7 @@ $AWTAccessor$SequencedEventAccessor* AWTAccessor::getSequencedEventAccessor() {
 	if (AWTAccessor::sequencedEventAccessor == nullptr) {
 		try {
 			ensureClassInitialized($Class::forName("java.awt.SequencedEvent"_s));
-		} catch ($ClassNotFoundException&) {
-			$catch();
+		} catch ($ClassNotFoundException& ignore) {
 		}
 	}
 	return AWTAccessor::sequencedEventAccessor;
@@ -758,8 +749,7 @@ void AWTAccessor::ensureClassInitialized($Class* c) {
 	$beforeCallerSensitive();
 	try {
 		$nc($($MethodHandles::lookup()))->ensureInitialized(c);
-	} catch ($IllegalAccessException&) {
-		$catch();
+	} catch ($IllegalAccessException& e) {
 	}
 }
 

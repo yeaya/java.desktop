@@ -4,14 +4,6 @@
 #include <java/applet/AudioClip.h>
 #include <java/awt/Image.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/util/Enumeration.h>
 #include <java/util/Iterator.h>
@@ -37,11 +29,11 @@ $NamedAttribute AppletContext_Attribute_var$0[] = {
 	{"forRemoval", 'Z', "true"},
 	{}
 };
+
 $CompoundAttribute _AppletContext_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", AppletContext_Attribute_var$0},
 	{}
 };
-
 
 $MethodInfo _AppletContext_MethodInfo_[] = {
 	{"getApplet", "(Ljava/lang/String;)Ljava/applet/Applet;", nullptr, $PUBLIC | $ABSTRACT},

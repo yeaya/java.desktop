@@ -2,18 +2,9 @@
 
 #include <java/awt/Component$BaselineResizeBehavior.h>
 #include <java/awt/Insets.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
 #include <java/lang/Cloneable.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef ABOVE_BASELINE
@@ -192,13 +183,11 @@ void GridBagConstraints::init$(int32_t gridx, int32_t gridy, int32_t gridwidth, 
 }
 
 $Object* GridBagConstraints::clone() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$var(GridBagConstraints, c, $cast(GridBagConstraints, $Cloneable::clone()));
 		$set($nc(c), insets, $cast($Insets, $nc(this->insets)->clone()));
 		return $of(c);
-	} catch ($CloneNotSupportedException&) {
-		$var($CloneNotSupportedException, e, $catch());
+	} catch ($CloneNotSupportedException& e) {
 		$throwNew($InternalError, static_cast<$Throwable*>(e));
 	}
 	$shouldNotReachHere();

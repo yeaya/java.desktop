@@ -13,25 +13,11 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/StreamCorruptedException.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/OutOfMemoryError.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <sun/awt/geom/Curve.h>
 #include <jcpp.h>
@@ -237,7 +223,6 @@ void Path2D::init$(int32_t rule, int32_t initialTypes) {
 
 $bytes* Path2D::expandPointTypes($bytes* oldPointTypes, int32_t needed) {
 	$init(Path2D);
-	$useLocalCurrentObjectStackCache();
 	int32_t oldSize = $nc(oldPointTypes)->length;
 	int32_t newSizeMin = oldSize + needed;
 	if (newSizeMin < oldSize) {
@@ -259,8 +244,7 @@ $bytes* Path2D::expandPointTypes($bytes* oldPointTypes, int32_t needed) {
 	while (true) {
 		try {
 			return $Arrays::copyOf(oldPointTypes, newSize);
-		} catch ($OutOfMemoryError&) {
-			$var($OutOfMemoryError, oome, $catch());
+		} catch ($OutOfMemoryError& oome) {
 			if (newSize == newSizeMin) {
 				$throw(oome);
 			}
@@ -557,15 +541,13 @@ void Path2D::writeObject($ObjectOutputStream* s, bool isdbl) {
 }
 
 void Path2D::readObject($ObjectInputStream* s, bool storedbl) {
-	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	s->readByte();
 	int32_t nT = s->readInt();
 	int32_t nC = s->readInt();
 	try {
 		setWindingRule(s->readByte());
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, iae, $catch());
+	} catch ($IllegalArgumentException& iae) {
 		$throwNew($InvalidObjectException, $(iae->getMessage()));
 	}
 	$set(this, pointTypes, $new($bytes, (nT < 0 || nT > Path2D::INIT_SIZE) ? Path2D::INIT_SIZE : nT));

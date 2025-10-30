@@ -1,16 +1,7 @@
 #include <java/awt/event/FocusEvent$Cause.h>
 
 #include <java/awt/event/FocusEvent.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef ACTIVATION
@@ -86,27 +77,16 @@ $Object* allocate$FocusEvent$Cause($Class* clazz) {
 	return $of($alloc(FocusEvent$Cause));
 }
 
-
 FocusEvent$Cause* FocusEvent$Cause::UNKNOWN = nullptr;
-
 FocusEvent$Cause* FocusEvent$Cause::MOUSE_EVENT = nullptr;
-
 FocusEvent$Cause* FocusEvent$Cause::TRAVERSAL = nullptr;
-
 FocusEvent$Cause* FocusEvent$Cause::TRAVERSAL_UP = nullptr;
-
 FocusEvent$Cause* FocusEvent$Cause::TRAVERSAL_DOWN = nullptr;
-
 FocusEvent$Cause* FocusEvent$Cause::TRAVERSAL_FORWARD = nullptr;
-
 FocusEvent$Cause* FocusEvent$Cause::TRAVERSAL_BACKWARD = nullptr;
-
 FocusEvent$Cause* FocusEvent$Cause::ROLLBACK = nullptr;
-
 FocusEvent$Cause* FocusEvent$Cause::UNEXPECTED = nullptr;
-
 FocusEvent$Cause* FocusEvent$Cause::ACTIVATION = nullptr;
-
 FocusEvent$Cause* FocusEvent$Cause::CLEAR_GLOBAL_FOCUS_OWNER = nullptr;
 $FocusEvent$CauseArray* FocusEvent$Cause::$VALUES = nullptr;
 

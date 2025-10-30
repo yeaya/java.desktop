@@ -5,15 +5,6 @@
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/OutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $SerializationTester$1 = ::java::awt::dnd::SerializationTester$1;
@@ -69,7 +60,6 @@ $ObjectOutputStream* SerializationTester::stream = nullptr;
 
 bool SerializationTester::test(Object$* obj) {
 	$init(SerializationTester);
-	$useLocalCurrentObjectStackCache();
 	if (!($instanceOf($Serializable, obj))) {
 		return false;
 	}
@@ -80,19 +70,17 @@ bool SerializationTester::test(Object$* obj) {
 		try {
 			try {
 				$nc(SerializationTester::stream)->writeObject(obj);
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				var$2 = false;
 				return$1 = true;
 				goto $finally;
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			try {
 				$nc(SerializationTester::stream)->reset();
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& e) {
 			}
 		}
 		if (var$0 != nullptr) {
@@ -112,8 +100,7 @@ void clinit$SerializationTester($Class* class$) {
 	{
 		try {
 			$assignStatic(SerializationTester::stream, $new($ObjectOutputStream, $$new($SerializationTester$1)));
-		} catch ($IOException&) {
-			$catch();
+		} catch ($IOException& cannotHappen) {
 		}
 	}
 }

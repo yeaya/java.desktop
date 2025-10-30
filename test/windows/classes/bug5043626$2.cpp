@@ -1,17 +1,6 @@
 #include <bug5043626$2.h>
 
 #include <bug5043626.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/BadLocationException.h>
 #include <javax/swing/text/Document.h>
 #include <jcpp.h>
@@ -77,8 +66,7 @@ void bug5043626$2::run() {
 	try {
 		$init($bug5043626);
 		$nc(this->val$result)->set(0, $($nc($($nc($bug5043626::doc)->getText(0, $nc($bug5043626::doc)->getLength())))->trim()));
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, ex, $catch());
+	} catch ($BadLocationException& ex) {
 		ex->printStackTrace();
 	}
 }

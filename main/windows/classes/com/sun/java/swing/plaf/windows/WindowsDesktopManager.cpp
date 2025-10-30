@@ -1,14 +1,7 @@
 #include <com/sun/java/swing/plaf/windows/WindowsDesktopManager.h>
 
 #include <java/beans/PropertyVetoException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/DefaultDesktopManager.h>
 #include <javax/swing/JInternalFrame.h>
 #include <jcpp.h>
@@ -115,8 +108,7 @@ void WindowsDesktopManager::activateFrame($JInternalFrame* f) {
 		if (!$nc(f)->isSelected()) {
 			f->setSelected(true);
 		}
-	} catch ($PropertyVetoException&) {
-		$catch();
+	} catch ($PropertyVetoException& e) {
 	}
 	if (f != currentFrame) {
 		$set(this, currentFrameRef, $new($WeakReference, f));

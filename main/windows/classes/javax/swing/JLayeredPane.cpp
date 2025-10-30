@@ -8,18 +8,6 @@
 #include <java/awt/Graphics.h>
 #include <java/awt/LayoutManager.h>
 #include <java/awt/Rectangle.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Hashtable.h>
 #include <javax/accessibility/AccessibleContext.h>
@@ -69,6 +57,7 @@ $NamedAttribute JLayeredPane_Attribute_var$0[] = {
 	{"defaultProperty", 's', "accessibleContext"},
 	{}
 };
+
 $CompoundAttribute _JLayeredPane_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JLayeredPane_Attribute_var$0},
 	{}
@@ -93,7 +82,6 @@ $CompoundAttribute _JLayeredPane_MethodAnnotations_isOptimizedDrawingEnabled15[]
 	{"Ljava/beans/BeanProperty;", JLayeredPane_Attribute_var$2},
 	{}
 };
-
 
 $FieldInfo _JLayeredPane_FieldInfo_[] = {
 	{"DEFAULT_LAYER", "Ljava/lang/Integer;", nullptr, $PUBLIC | $STATIC | $FINAL, $staticField(JLayeredPane, DEFAULT_LAYER)},
@@ -189,19 +177,12 @@ void JLayeredPane::finalize() {
 	this->$JComponent::finalize();
 }
 
-
 $Integer* JLayeredPane::DEFAULT_LAYER = nullptr;
-
 $Integer* JLayeredPane::PALETTE_LAYER = nullptr;
-
 $Integer* JLayeredPane::MODAL_LAYER = nullptr;
-
 $Integer* JLayeredPane::POPUP_LAYER = nullptr;
-
 $Integer* JLayeredPane::DRAG_LAYER = nullptr;
-
 $Integer* JLayeredPane::FRAME_CONTENT_LAYER = nullptr;
-
 $String* JLayeredPane::LAYER_PROPERTY = nullptr;
 
 void JLayeredPane::init$() {

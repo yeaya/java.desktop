@@ -2,23 +2,9 @@
 
 #include <java/awt/Component.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/Callable.h>
 #include <java/util/concurrent/ExecutionException.h>
 #include <java/util/concurrent/Future.h>
@@ -124,11 +110,9 @@ void JTextComponent$3::run() {
 	} else {
 		try {
 			wasEnabled = $nc(($cast($Boolean, $($nc($($SwingUtilities2::submit($$new($JTextComponent$3$1, this))))->get()))))->booleanValue();
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, e, $catch());
+		} catch ($InterruptedException& e) {
 			$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-		} catch ($ExecutionException&) {
-			$var($ExecutionException, e, $catch());
+		} catch ($ExecutionException& e) {
 			$var($Throwable, cause, e->getCause());
 			if ($instanceOf($Error, cause)) {
 				$throw($cast($Error, cause));
@@ -146,11 +130,9 @@ void JTextComponent$3::run() {
 		} else {
 			try {
 				$nc($($SwingUtilities2::submit($$new($JTextComponent$3$2, this), nullptr)))->get();
-			} catch ($InterruptedException&) {
-				$var($InterruptedException, e, $catch());
+			} catch ($InterruptedException& e) {
 				$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-			} catch ($ExecutionException&) {
-				$var($ExecutionException, e, $catch());
+			} catch ($ExecutionException& e) {
 				$var($Throwable, cause, e->getCause());
 				if ($instanceOf($Error, cause)) {
 					$throw($cast($Error, cause));

@@ -1,12 +1,6 @@
 #include <sun/awt/www/content/audio/basic.h>
 
 #include <com/sun/media/sound/JavaSoundAudioClip.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/ContentHandler.h>
 #include <java/net/URLConnection.h>
 #include <jcpp.h>

@@ -2,17 +2,6 @@
 
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/AudioFormat$Encoding.h>
 #include <javax/sound/sampled/AudioFormat.h>
 #include <javax/sound/sampled/AudioInputStream.h>
@@ -114,11 +103,9 @@ int32_t AudioInputStream$TargetDataLineInputStream::read() {
 }
 
 int32_t AudioInputStream$TargetDataLineInputStream::read($bytes* b, int32_t off, int32_t len) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc(this->line)->read(b, off, len);
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		$throwNew($IOException, $(e->getMessage()));
 	}
 	$shouldNotReachHere();

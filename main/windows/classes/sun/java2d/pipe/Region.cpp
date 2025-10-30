@@ -6,21 +6,8 @@
 #include <java/awt/geom/PathIterator.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/pipe/RegionClipSpanIterator.h>
 #include <sun/java2d/pipe/RegionIterator.h>
 #include <sun/java2d/pipe/RegionSpanIterator.h>
@@ -263,8 +250,8 @@ Region* Region::getInstance(Region* devBounds, bool normalize, $Shape* s, $Affin
 			$assign(var$2, Region::getInstance(box, static_cast<$SpanIterator*>(sr)));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			sr->dispose();
 		}

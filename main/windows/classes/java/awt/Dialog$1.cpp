@@ -2,16 +2,7 @@
 
 #include <java/awt/Dialog$ModalityType.h>
 #include <java/awt/Dialog.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef APPLICATION_MODAL
@@ -75,23 +66,19 @@ void clinit$Dialog$1($Class* class$) {
 	{
 		try {
 			$nc(Dialog$1::$SwitchMap$java$awt$Dialog$ModalityType)->set($Dialog$ModalityType::MODELESS->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(Dialog$1::$SwitchMap$java$awt$Dialog$ModalityType)->set($Dialog$ModalityType::DOCUMENT_MODAL->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(Dialog$1::$SwitchMap$java$awt$Dialog$ModalityType)->set($Dialog$ModalityType::APPLICATION_MODAL->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(Dialog$1::$SwitchMap$java$awt$Dialog$ModalityType)->set($Dialog$ModalityType::TOOLKIT_MODAL->ordinal(), 4);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

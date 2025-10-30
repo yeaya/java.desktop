@@ -1,14 +1,6 @@
 #include <sun/awt/image/PNGImageDecoder$PNGException.h>
 
 #include <java/io/IOException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/image/PNGImageDecoder.h>
 #include <jcpp.h>
 
@@ -66,16 +58,10 @@ void PNGImageDecoder$PNGException::init$($PNGImageDecoder* this$0, $String* s) {
 PNGImageDecoder$PNGException::PNGImageDecoder$PNGException() {
 }
 
-PNGImageDecoder$PNGException::PNGImageDecoder$PNGException(const PNGImageDecoder$PNGException& e) {
+PNGImageDecoder$PNGException::PNGImageDecoder$PNGException(const PNGImageDecoder$PNGException& e) : $IOException(e) {
 }
 
-PNGImageDecoder$PNGException PNGImageDecoder$PNGException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void PNGImageDecoder$PNGException::throwWrapper$() {
-	$pendingException(this);
+void PNGImageDecoder$PNGException::throw$() {
 	throw *this;
 }
 

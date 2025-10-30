@@ -9,17 +9,6 @@
 #include <java/awt/geom/RectangularShape.h>
 #include <java/io/Reader.h>
 #include <java/io/StringReader.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/JComponent.h>
@@ -134,17 +123,11 @@ $Object* allocate$BasicHTML($Class* clazz) {
 	return $of($alloc(BasicHTML));
 }
 
-
 $String* BasicHTML::htmlDisable = nullptr;
-
 $String* BasicHTML::propertyKey = nullptr;
-
 $String* BasicHTML::documentBaseKey = nullptr;
-
 $BasicHTML$BasicEditorKit* BasicHTML::basicHTMLFactory = nullptr;
-
 $ViewFactory* BasicHTML::basicHTMLViewFactory = nullptr;
-
 $String* BasicHTML::styleChanges = nullptr;
 
 void BasicHTML::init$() {
@@ -163,8 +146,7 @@ $View* BasicHTML::createHTMLView($JComponent* c, $String* html) {
 	$var($Reader, r, $new($StringReader, html));
 	try {
 		kit->read(r, doc, 0);
-	} catch ($Throwable&) {
-		$catch();
+	} catch ($Throwable& e) {
 	}
 	$var($ViewFactory, f, kit->getViewFactory());
 	$var($View, hview, $nc(f)->create($($nc(doc)->getDefaultRootElement())));
@@ -298,8 +280,7 @@ void BasicHTML::updateRenderer($JComponent* c, $String* text) {
 	if (currentAccessibleNameProperty != nullptr && oldValue != nullptr) {
 		try {
 			$assign(previousParsedText, $nc(($($nc($(oldValue->getDocument()))->getText(0, $nc($(oldValue->getDocument()))->getLength()))))->strip());
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& e) {
 		}
 	}
 	if (currentAccessibleNameProperty == nullptr || $nc(currentAccessibleNameProperty)->equals(previousParsedText)) {
@@ -307,8 +288,7 @@ void BasicHTML::updateRenderer($JComponent* c, $String* text) {
 		if (value != nullptr) {
 			try {
 				$assign(parsedText, $nc(($($nc($(value->getDocument()))->getText(0, $nc($(value->getDocument()))->getLength()))))->strip());
-			} catch ($BadLocationException&) {
-				$catch();
+			} catch ($BadLocationException& e) {
 			}
 		}
 		c->putClientProperty($AccessibleContext::ACCESSIBLE_NAME_PROPERTY, parsedText);

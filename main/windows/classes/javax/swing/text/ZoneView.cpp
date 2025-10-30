@@ -1,18 +1,7 @@
 #include <javax/swing/text/ZoneView.h>
 
 #include <java/awt/Shape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Vector.h>
 #include <javax/swing/event/DocumentEvent$ElementChange.h>
 #include <javax/swing/event/DocumentEvent.h>
@@ -175,8 +164,7 @@ $View* ZoneView::createZone(int32_t p0, int32_t p1) {
 		$var($Element, var$0, getElement());
 		$var($Position, var$1, $nc(doc)->createPosition(p0));
 		$assign(zone, $new($ZoneView$Zone, this, var$0, var$1, $(doc->createPosition(p1))));
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, ble, $catch());
+	} catch ($BadLocationException& ble) {
 		$throwNew($StateInvariantError, $(ble->getMessage()));
 	}
 	return zone;

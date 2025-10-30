@@ -1,18 +1,7 @@
 #include <bug7141573.h>
 
 #include <bug7141573$1.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SwingUtilities.h>
 #include <javax/swing/UIManager.h>
 #include <jcpp.h>
@@ -61,12 +50,9 @@ void bug7141573::init$() {
 }
 
 void bug7141573::main($StringArray* args) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel"_s);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
-		$init($System);
+	} catch ($Exception& e) {
 		$nc($System::out)->println("WindowsLookAndFeel is not supported. The test bug7141573 is skipped."_s);
 		return;
 	}

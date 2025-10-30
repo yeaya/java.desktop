@@ -16,19 +16,7 @@
 #include <java/beans/IntrospectionException.h>
 #include <java/beans/Introspector.h>
 #include <java/beans/PropertyDescriptor.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <javax/swing/Action.h>
 #include <javax/swing/Icon.h>
@@ -233,7 +221,6 @@ void TransferHandler::exportAsDrag($JComponent* comp, $InputEvent* e, int32_t ac
 }
 
 void TransferHandler::exportToClipboard($JComponent* comp, $Clipboard* clip, int32_t action) {
-	$useLocalCurrentObjectStackCache();
 	if ((action == TransferHandler::COPY || action == TransferHandler::MOVE) && ((int32_t)(getSourceActions(comp) & (uint32_t)action)) != 0) {
 		$var($Transferable, t, createTransferable(comp));
 		if (t != nullptr) {
@@ -241,8 +228,7 @@ void TransferHandler::exportToClipboard($JComponent* comp, $Clipboard* clip, int
 				$nc(clip)->setContents(t, nullptr);
 				exportDone(comp, t, action);
 				return;
-			} catch ($IllegalStateException&) {
-				$var($IllegalStateException, ise, $catch());
+			} catch ($IllegalStateException& ise) {
 				exportDone(comp, t, TransferHandler::NONE);
 				$throw(ise);
 			}
@@ -282,9 +268,7 @@ bool TransferHandler::importData($JComponent* comp, $Transferable* t) {
 				$var($ObjectArray, args, $new($ObjectArray, {value}));
 				$MethodUtil::invoke(writer, comp, args);
 				return true;
-			} catch ($Exception&) {
-				$var($Exception, ex, $catch());
-				$init($System);
+			} catch ($Exception& ex) {
 				$nc($System::err)->println("Invocation failed"_s);
 			}
 		}
@@ -356,8 +340,7 @@ $PropertyDescriptor* TransferHandler::getPropertyDescriptor($JComponent* comp) {
 	$var($BeanInfo, bi, nullptr);
 	try {
 		$assign(bi, $Introspector::getBeanInfo(k));
-	} catch ($IntrospectionException&) {
-		$var($IntrospectionException, ex, $catch());
+	} catch ($IntrospectionException& ex) {
 		return nullptr;
 	}
 	$var($PropertyDescriptorArray, props, $nc(bi)->getPropertyDescriptors());

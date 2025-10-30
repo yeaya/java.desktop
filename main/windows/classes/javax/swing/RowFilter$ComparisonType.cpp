@@ -1,15 +1,6 @@
 #include <javax/swing/RowFilter$ComparisonType.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/RowFilter.h>
 #include <jcpp.h>
 
@@ -71,13 +62,9 @@ $Object* allocate$RowFilter$ComparisonType($Class* clazz) {
 	return $of($alloc(RowFilter$ComparisonType));
 }
 
-
 RowFilter$ComparisonType* RowFilter$ComparisonType::BEFORE = nullptr;
-
 RowFilter$ComparisonType* RowFilter$ComparisonType::AFTER = nullptr;
-
 RowFilter$ComparisonType* RowFilter$ComparisonType::EQUAL = nullptr;
-
 RowFilter$ComparisonType* RowFilter$ComparisonType::NOT_EQUAL = nullptr;
 $RowFilter$ComparisonTypeArray* RowFilter$ComparisonType::$VALUES = nullptr;
 

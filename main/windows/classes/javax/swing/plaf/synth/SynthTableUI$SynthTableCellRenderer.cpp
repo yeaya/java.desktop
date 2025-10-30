@@ -3,17 +3,7 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/awt/Graphics.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/DateFormat.h>
 #include <java/text/Format.h>
 #include <java/text/NumberFormat.h>
@@ -165,7 +155,6 @@ $Component* SynthTableUI$SynthTableCellRenderer::getTableCellRendererComponent($
 
 void SynthTableUI$SynthTableCellRenderer::configureValue(Object$* value, $Class* columnClass) {
 	$useLocalCurrentObjectStackCache();
-	$load($Object);
 	if (columnClass == $Object::class$ || columnClass == nullptr) {
 		setHorizontalAlignment($JLabel::LEADING);
 	} else {

@@ -9,25 +9,10 @@
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
 #include <java/io/OutputStream.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Boolean.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/Short.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
 #include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/charset/Charset.h>
 #include <java/nio/charset/CharsetEncoder.h>
 #include <java/security/AccessController.h>
@@ -507,8 +492,7 @@ void FontConfiguration::readFontConfigFile($File* f) {
 			if ($FontUtilities::debugFonts()) {
 				$nc(FontConfiguration::logger)->config($$str({"Read logical font configuration from "_s, f}));
 			}
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			if ($FontUtilities::debugFonts()) {
 				$nc(FontConfiguration::logger)->config($$str({"Failed to read logical font configuration from "_s, f}));
 			}
@@ -1144,8 +1128,7 @@ $CharsetEncoder* FontConfiguration::getFontCharsetEncoder($String* charsetName, 
 		if (fcc != nullptr) {
 			try {
 				$assign(fc, $cast($Charset, $nc($(fcc->getDeclaredConstructor($$new($ClassArray, 0))))->newInstance($$new($ObjectArray, 0))));
-			} catch ($Exception&) {
-				$catch();
+			} catch ($Exception& e) {
 			}
 		}
 	}
@@ -1341,12 +1324,10 @@ void FontConfiguration::sanityCheck() {
 	for (int32_t ii = 1; ii < $nc(FontConfiguration::table_filenames)->length; ++ii) {
 		if ($nc(FontConfiguration::table_filenames)->get(ii) == -1) {
 			if ($nc(osName)->contains("Windows"_s)) {
-				$init($System);
 				$nc($System::err)->println($$str({"\n Error: <filename."_s, $(getString($nc(FontConfiguration::table_componentFontNameIDs)->get(ii))), "> entry is missing!!!"_s}));
 				++errors;
 			} else {
 				if (FontConfiguration::verbose && !isEmpty(FontConfiguration::table_filenames)) {
-					$init($System);
 					$nc($System::err)->println($$str({"\n Note: \'filename\' entry is undefined for \""_s, $(getString($nc(FontConfiguration::table_componentFontNameIDs)->get(ii))), "\""_s}));
 				}
 			}
@@ -1355,7 +1336,6 @@ void FontConfiguration::sanityCheck() {
 	for (int32_t ii = 0; ii < $nc(FontConfiguration::table_scriptIDs)->length; ++ii) {
 		int16_t fid = $nc(FontConfiguration::table_scriptFonts)->get(ii);
 		if (fid == 0) {
-			$init($System);
 			$nc($System::out)->println($$str({"\n Error: <allfonts."_s, $(getString($nc(FontConfiguration::table_scriptIDs)->get(ii))), "> entry is missing!!!"_s}));
 			++errors;
 			continue;
@@ -1366,7 +1346,6 @@ void FontConfiguration::sanityCheck() {
 					int32_t jj = iii * FontConfiguration::NUM_STYLES + iij;
 					int16_t ffid = $nc(FontConfiguration::table_scriptFonts)->get(fid + jj);
 					if (ffid == 0) {
-						$init($System);
 						$var($String, var$3, $$str({"\n Error: <"_s, $(getFontName(iii)), "."_s}));
 						$var($String, var$2, $$concat(var$3, $(getStyleName(iij))));
 						$var($String, var$1, $$concat(var$2, "."));
@@ -1379,7 +1358,6 @@ void FontConfiguration::sanityCheck() {
 		}
 	}
 	if (errors != 0) {
-		$init($System);
 		$nc($System::err)->println($$str({"!!THERE ARE "_s, $$str(errors), " ERROR(S) IN THE FONTCONFIG FILE, PLEASE CHECK ITS CONTENT!!\n"_s}));
 		$System::exit(1);
 	}
@@ -1406,7 +1384,6 @@ bool FontConfiguration::isEmpty($shorts* a) {
 void FontConfiguration::dump() {
 	$init(FontConfiguration);
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println("\n----Head Table------------"_s);
 	for (int32_t ii = 0; ii < FontConfiguration::HEAD_LENGTH; ++ii) {
 		$nc($System::out)->println($$str({"  "_s, $$str(ii), " : "_s, $$str($nc(FontConfiguration::head)->get(ii))}));
@@ -1598,7 +1575,6 @@ void FontConfiguration::printTable($shorts* list, int32_t start) {
 	$init(FontConfiguration);
 	$useLocalCurrentObjectStackCache();
 	for (int32_t i = start; i < $nc(list)->length; ++i) {
-		$init($System);
 		$nc($System::out)->println($$str({"  "_s, $$str(i), " : "_s, $(getString(list->get(i)))}));
 	}
 }
@@ -1720,7 +1696,7 @@ void clinit$FontConfiguration($Class* class$) {
 		"dialog"_s,
 		"dialoginput"_s
 	}));
-		$init($Font);
+	$init($Font);
 	$assignStatic(FontConfiguration::publicFontNames, $new($StringArray, {
 		$Font::SERIF,
 		$Font::SANS_SERIF,

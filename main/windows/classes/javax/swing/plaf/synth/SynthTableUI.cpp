@@ -10,18 +10,7 @@
 #include <java/awt/Rectangle.h>
 #include <java/beans/PropertyChangeEvent.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Date.h>
 #include <javax/swing/CellRendererPane.h>
 #include <javax/swing/Icon.h>
@@ -234,7 +223,6 @@ void SynthTableUI::installDefaults() {
 	$set(this, imageIconRenderer, installRendererIfPossible($ImageIcon::class$, nullptr));
 	$load($Boolean);
 	$set(this, booleanRenderer, installRendererIfPossible($Boolean::class$, $$new($SynthTableUI$SynthBooleanTableCellRenderer, this)));
-	$load($Object);
 	$set(this, objectRenderer, installRendererIfPossible($Object::class$, $$new($SynthTableUI$SynthTableCellRenderer, this)));
 	updateStyle(this->table);
 }
@@ -321,7 +309,6 @@ void SynthTableUI::uninstallDefaults() {
 	$nc(this->table)->setDefaultRenderer($ImageIcon::class$, this->imageIconRenderer);
 	$load($Boolean);
 	$nc(this->table)->setDefaultRenderer($Boolean::class$, this->booleanRenderer);
-	$load($Object);
 	$nc(this->table)->setDefaultRenderer($Object::class$, this->objectRenderer);
 	if ($instanceOf($UIResource, $($nc(this->table)->getTransferHandler()))) {
 		$nc(this->table)->setTransferHandler(nullptr);

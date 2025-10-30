@@ -4,15 +4,7 @@
 #include <java/awt/geom/PathIterator.h>
 #include <java/awt/geom/RectangularShape.h>
 #include <java/awt/geom/RoundRectIterator.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $AffineTransform = ::java::awt::geom::AffineTransform;

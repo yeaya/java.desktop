@@ -15,17 +15,8 @@
 #include <java/awt/image/ImageObserver.h>
 #include <java/awt/image/VolatileImage.h>
 #include <java/awt/peer/ComponentPeer.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/image/VSyncedBSManager.h>
 #include <sun/java2d/pipe/hw/ExtendedBufferCapabilities$VSyncType.h>
 #include <sun/java2d/pipe/hw/ExtendedBufferCapabilities.h>
@@ -232,8 +223,7 @@ void Component$FlipBufferStrategy::revalidate() {
 	if (var$0 || this->this$0->getHeight() != this->height || this->drawBuffer == nullptr) {
 		try {
 			createBuffers(this->numBuffers, this->caps);
-		} catch ($AWTException&) {
-			$catch();
+		} catch ($AWTException& e) {
 		}
 		this->validatedContents = true;
 	}
@@ -244,8 +234,7 @@ void Component$FlipBufferStrategy::revalidate() {
 		if (returnCode == $VolatileImage::IMAGE_INCOMPATIBLE) {
 			try {
 				createBuffers(this->numBuffers, this->caps);
-			} catch ($AWTException&) {
-				$catch();
+			} catch ($AWTException& e) {
 			}
 			if (this->drawVBuffer != nullptr) {
 				$nc(this->drawVBuffer)->validate(gc);

@@ -15,8 +15,10 @@ public:
 	StateInvariantError();
 	void init$($String* s);
 	StateInvariantError(const StateInvariantError& e);
-	StateInvariantError wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline StateInvariantError* operator ->() {
+		return (StateInvariantError*)throwing$;
+	}
 };
 
 		} // text

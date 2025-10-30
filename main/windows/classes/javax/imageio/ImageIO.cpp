@@ -7,24 +7,11 @@
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchMethodException.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/security/AccessController.h>
@@ -286,8 +273,7 @@ bool ImageIO::hasCachePermission() {
 				$plusAssign(filepath, "*"_s);
 				security->checkPermission($$new($FilePermission, filepath, "read, write, delete"_s));
 			}
-		} catch ($SecurityException&) {
-			$var($SecurityException, e, $catch());
+		} catch ($SecurityException& e) {
 			$init($Boolean);
 			$nc($(getCacheInfo()))->setHasPermission($Boolean::FALSE);
 			return false;
@@ -333,8 +319,7 @@ $ImageInputStream* ImageIO::createImageInputStream(Object$* input) {
 	try {
 		$load($ImageInputStreamSpi);
 		$assign(iter, $nc(ImageIO::theRegistry)->getServiceProviders($ImageInputStreamSpi::class$, true));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		return nullptr;
 	}
 	bool var$0 = getUseCache();
@@ -344,8 +329,7 @@ $ImageInputStream* ImageIO::createImageInputStream(Object$* input) {
 		if ($nc($nc(spi)->getInputClass())->isInstance(input)) {
 			try {
 				return spi->createInputStreamInstance(input, usecache, $(getCacheDirectory()));
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				$throwNew($IIOException, "Can\'t create cache file!"_s, e);
 			}
 		}
@@ -363,8 +347,7 @@ $ImageOutputStream* ImageIO::createImageOutputStream(Object$* output) {
 	try {
 		$load($ImageOutputStreamSpi);
 		$assign(iter, $nc(ImageIO::theRegistry)->getServiceProviders($ImageOutputStreamSpi::class$, true));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		return nullptr;
 	}
 	bool var$0 = getUseCache();
@@ -374,8 +357,7 @@ $ImageOutputStream* ImageIO::createImageOutputStream(Object$* output) {
 		if ($nc($nc(spi)->getOutputClass())->isInstance(output)) {
 			try {
 				return spi->createOutputStreamInstance(output, usecache, $(getCacheDirectory()));
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				$throwNew($IIOException, "Can\'t create cache file!"_s, e);
 			}
 		}
@@ -389,8 +371,7 @@ $StringArray* ImageIO::getReaderWriterInfo($Class* spiClass, $ImageIO$SpiInfo* s
 	$var($Iterator, iter, nullptr);
 	try {
 		$assign(iter, $nc(ImageIO::theRegistry)->getServiceProviders(spiClass, true));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		return $new($StringArray, 0);
 	}
 	$var($HashSet, s, $new($HashSet));
@@ -435,8 +416,7 @@ $Iterator* ImageIO::getImageReaders(Object$* input) {
 	try {
 		$load($ImageReaderSpi);
 		$assign(iter, $nc(ImageIO::theRegistry)->getServiceProviders($ImageReaderSpi::class$, $$new($ImageIO$CanDecodeInputFilter, input), true));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		return $Collections::emptyIterator();
 	}
 	return $new($ImageIO$ImageReaderIterator, iter);
@@ -452,8 +432,7 @@ $Iterator* ImageIO::getImageReadersByFormatName($String* formatName) {
 	try {
 		$load($ImageReaderSpi);
 		$assign(iter, $nc(ImageIO::theRegistry)->getServiceProviders($ImageReaderSpi::class$, $$new($ImageIO$ContainsFilter, ImageIO::readerFormatNamesMethod, formatName), true));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		return $Collections::emptyIterator();
 	}
 	return $new($ImageIO$ImageReaderIterator, iter);
@@ -469,8 +448,7 @@ $Iterator* ImageIO::getImageReadersBySuffix($String* fileSuffix) {
 	try {
 		$load($ImageReaderSpi);
 		$assign(iter, $nc(ImageIO::theRegistry)->getServiceProviders($ImageReaderSpi::class$, $$new($ImageIO$ContainsFilter, ImageIO::readerFileSuffixesMethod, fileSuffix), true));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		return $Collections::emptyIterator();
 	}
 	return $new($ImageIO$ImageReaderIterator, iter);
@@ -486,8 +464,7 @@ $Iterator* ImageIO::getImageReadersByMIMEType($String* MIMEType) {
 	try {
 		$load($ImageReaderSpi);
 		$assign(iter, $nc(ImageIO::theRegistry)->getServiceProviders($ImageReaderSpi::class$, $$new($ImageIO$ContainsFilter, ImageIO::readerMIMETypesMethod, MIMEType), true));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		return $Collections::emptyIterator();
 	}
 	return $new($ImageIO$ImageReaderIterator, iter);
@@ -534,8 +511,7 @@ $Iterator* ImageIO::getImageWritersByFormatName($String* formatName) {
 	try {
 		$load($ImageWriterSpi);
 		$assign(iter, $nc(ImageIO::theRegistry)->getServiceProviders($ImageWriterSpi::class$, $$new($ImageIO$ContainsFilter, ImageIO::writerFormatNamesMethod, formatName), true));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		return $Collections::emptyIterator();
 	}
 	return $new($ImageIO$ImageWriterIterator, iter);
@@ -551,8 +527,7 @@ $Iterator* ImageIO::getImageWritersBySuffix($String* fileSuffix) {
 	try {
 		$load($ImageWriterSpi);
 		$assign(iter, $nc(ImageIO::theRegistry)->getServiceProviders($ImageWriterSpi::class$, $$new($ImageIO$ContainsFilter, ImageIO::writerFileSuffixesMethod, fileSuffix), true));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		return $Collections::emptyIterator();
 	}
 	return $new($ImageIO$ImageWriterIterator, iter);
@@ -568,8 +543,7 @@ $Iterator* ImageIO::getImageWritersByMIMEType($String* MIMEType) {
 	try {
 		$load($ImageWriterSpi);
 		$assign(iter, $nc(ImageIO::theRegistry)->getServiceProviders($ImageWriterSpi::class$, $$new($ImageIO$ContainsFilter, ImageIO::writerMIMETypesMethod, MIMEType), true));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		return $Collections::emptyIterator();
 	}
 	return $new($ImageIO$ImageWriterIterator, iter);
@@ -588,8 +562,7 @@ $ImageWriter* ImageIO::getImageWriter($ImageReader* reader) {
 		try {
 			$load($ImageReaderSpi);
 			$assign(readerSpiIter, $nc(ImageIO::theRegistry)->getServiceProviders($ImageReaderSpi::class$, false));
-		} catch ($IllegalArgumentException&) {
-			$var($IllegalArgumentException, e, $catch());
+		} catch ($IllegalArgumentException& e) {
 			return nullptr;
 		}
 		while ($nc(readerSpiIter)->hasNext()) {
@@ -610,8 +583,7 @@ $ImageWriter* ImageIO::getImageWriter($ImageReader* reader) {
 	$Class* writerSpiClass = nullptr;
 	try {
 		writerSpiClass = $Class::forName($nc(writerNames)->get(0), true, $($ClassLoader::getSystemClassLoader()));
-	} catch ($ClassNotFoundException&) {
-		$var($ClassNotFoundException, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		return nullptr;
 	}
 	$var($ImageWriterSpi, writerSpi, $cast($ImageWriterSpi, $nc(ImageIO::theRegistry)->getServiceProviderByClass(writerSpiClass)));
@@ -620,8 +592,7 @@ $ImageWriter* ImageIO::getImageWriter($ImageReader* reader) {
 	}
 	try {
 		return $nc(writerSpi)->createWriterInstance();
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$load($ImageWriterSpi);
 		$nc(ImageIO::theRegistry)->deregisterServiceProvider(writerSpi, $ImageWriterSpi::class$);
 		return nullptr;
@@ -642,8 +613,7 @@ $ImageReader* ImageIO::getImageReader($ImageWriter* writer) {
 		try {
 			$load($ImageWriterSpi);
 			$assign(writerSpiIter, $nc(ImageIO::theRegistry)->getServiceProviders($ImageWriterSpi::class$, false));
-		} catch ($IllegalArgumentException&) {
-			$var($IllegalArgumentException, e, $catch());
+		} catch ($IllegalArgumentException& e) {
 			return nullptr;
 		}
 		while ($nc(writerSpiIter)->hasNext()) {
@@ -664,8 +634,7 @@ $ImageReader* ImageIO::getImageReader($ImageWriter* writer) {
 	$Class* readerSpiClass = nullptr;
 	try {
 		readerSpiClass = $Class::forName($nc(readerNames)->get(0), true, $($ClassLoader::getSystemClassLoader()));
-	} catch ($ClassNotFoundException&) {
-		$var($ClassNotFoundException, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		return nullptr;
 	}
 	$var($ImageReaderSpi, readerSpi, $cast($ImageReaderSpi, $nc(ImageIO::theRegistry)->getServiceProviderByClass(readerSpiClass)));
@@ -674,8 +643,7 @@ $ImageReader* ImageIO::getImageReader($ImageWriter* writer) {
 	}
 	try {
 		return $nc(readerSpi)->createReaderInstance();
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$load($ImageReaderSpi);
 		$nc(ImageIO::theRegistry)->deregisterServiceProvider(readerSpi, $ImageReaderSpi::class$);
 		return nullptr;
@@ -696,8 +664,7 @@ $Iterator* ImageIO::getImageWriters($ImageTypeSpecifier* type, $String* formatNa
 	try {
 		$load($ImageWriterSpi);
 		$assign(iter, $nc(ImageIO::theRegistry)->getServiceProviders($ImageWriterSpi::class$, $$new($ImageIO$CanEncodeImageAndFormatFilter, type, formatName), true));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		return $Collections::emptyIterator();
 	}
 	return $new($ImageIO$ImageWriterIterator, iter);
@@ -719,8 +686,7 @@ $Iterator* ImageIO::getImageTranscoders($ImageReader* reader, $ImageWriter* writ
 	try {
 		$load($ImageTranscoderSpi);
 		$assign(iter, $nc(ImageIO::theRegistry)->getServiceProviders($ImageTranscoderSpi::class$, filter, true));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		return $Collections::emptyIterator();
 	}
 	return $new($ImageIO$ImageTranscoderIterator, iter);
@@ -772,8 +738,7 @@ $BufferedImage* ImageIO::read($URL* input) {
 	$var($InputStream, istream, nullptr);
 	try {
 		$assign(istream, $nc(input)->openStream());
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$throwNew($IIOException, "Can\'t get input stream from URL!"_s, e);
 	}
 	$var($ImageInputStream, stream, createImageInputStream(istream));
@@ -789,8 +754,8 @@ $BufferedImage* ImageIO::read($URL* input) {
 			if (bi == nullptr) {
 				$nc(stream)->close();
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(istream)->close();
 		}
@@ -819,8 +784,8 @@ $BufferedImage* ImageIO::read($ImageInputStream* stream) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$assign(bi, reader->read(0, param));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			reader->dispose();
 			$nc(stream)->close();
@@ -869,8 +834,8 @@ bool ImageIO::write($RenderedImage* im, $String* formatName, $File* output) {
 			var$2 = doWrite(im, writer, stream);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(stream)->close();
 		}
@@ -902,8 +867,8 @@ bool ImageIO::write($RenderedImage* im, $String* formatName, $OutputStream* outp
 			var$2 = doWrite(im, $(getWriter(im, formatName)), stream);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(stream)->close();
 		}
@@ -939,8 +904,8 @@ bool ImageIO::doWrite($RenderedImage* im, $ImageWriter* writer, $ImageOutputStre
 		$var($Throwable, var$0, nullptr);
 		try {
 			writer->write(im);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			writer->dispose();
 			$nc(output)->flush();
@@ -966,8 +931,7 @@ void clinit$ImageIO($Class* class$) {
 			$assignStatic(ImageIO::writerFormatNamesMethod, $ImageWriterSpi::class$->getMethod("getFormatNames"_s, $$new($ClassArray, 0)));
 			$assignStatic(ImageIO::writerFileSuffixesMethod, $ImageWriterSpi::class$->getMethod("getFileSuffixes"_s, $$new($ClassArray, 0)));
 			$assignStatic(ImageIO::writerMIMETypesMethod, $ImageWriterSpi::class$->getMethod("getMIMETypes"_s, $$new($ClassArray, 0)));
-		} catch ($NoSuchMethodException&) {
-			$var($NoSuchMethodException, e, $catch());
+		} catch ($NoSuchMethodException& e) {
 			e->printStackTrace();
 		}
 	}

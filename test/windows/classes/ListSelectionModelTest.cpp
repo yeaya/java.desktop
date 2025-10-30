@@ -1,18 +1,7 @@
 #include <ListSelectionModelTest.h>
 
 #include <ListSelectionModelTest$1.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <javax/swing/AbstractListModel.h>
 #include <javax/swing/DefaultListModel.h>
@@ -157,7 +146,6 @@ void ListSelectionModelTest::CreateGUIAndTest($String* lookAndFeel) {
 		6,
 		7
 	}), lookAndFeel);
-	$init($System);
 	$nc($System::out)->println($$str({"Test passed for "_s, lookAndFeel}));
 }
 
@@ -165,7 +153,6 @@ void ListSelectionModelTest::checkSelection($JList* list, $ints* selectionArray,
 	$useLocalCurrentObjectStackCache();
 	$var($ints, listSelection, $nc(list)->getSelectedIndices());
 	if ($nc(listSelection)->length != $nc(selectionArray)->length) {
-		$init($System);
 		$nc($System::out)->println($$str({"Expected: "_s, $($Arrays::toString(selectionArray))}));
 		$nc($System::out)->println($$str({"Actual: "_s, $($Arrays::toString(listSelection))}));
 		$throwNew($RuntimeException, $$str({"Wrong selection for "_s, lookAndFeel}));
@@ -173,7 +160,6 @@ void ListSelectionModelTest::checkSelection($JList* list, $ints* selectionArray,
 	$Arrays::sort(listSelection);
 	$Arrays::sort(selectionArray);
 	if (!$Arrays::equals(listSelection, selectionArray)) {
-		$init($System);
 		$nc($System::out)->println($$str({"Expected: "_s, $($Arrays::toString(selectionArray))}));
 		$nc($System::out)->println($$str({"Actual: "_s, $($Arrays::toString(listSelection))}));
 		$throwNew($RuntimeException, $$str({"Wrong selection for "_s, lookAndFeel}));

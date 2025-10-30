@@ -1,13 +1,6 @@
 #include <TableHeaderRendererExceptionTest.h>
 
 #include <java/awt/Component.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTable.h>
 #include <javax/swing/UIManager$LookAndFeelInfo.h>
 #include <javax/swing/UIManager.h>
@@ -62,8 +55,7 @@ void TableHeaderRendererExceptionTest::main($StringArray* args) {
 				$var($String, lookAndFeelString, $nc(lookAndFeelItem)->getClassName());
 				try {
 					$UIManager::setLookAndFeel(lookAndFeelString);
-				} catch ($UnsupportedLookAndFeelException&) {
-					$var($UnsupportedLookAndFeelException, ignored, $catch());
+				} catch ($UnsupportedLookAndFeelException& ignored) {
 					continue;
 				}
 				$var($JTableHeader, header, $new($JTableHeader));

@@ -6,15 +6,7 @@
 #include <java/awt/Shape.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/plaf/ComponentUI.h>
 #include <javax/swing/plaf/TextUI.h>
 #include <javax/swing/text/BadLocationException.h>
@@ -120,8 +112,7 @@ void DefaultHighlighter$DefaultHighlightPainter::paint($Graphics* g, int32_t off
 			}
 			g->fillRect(alloc->x, p1->y, (p1->x - alloc->x), p1->height);
 		}
-	} catch ($BadLocationException&) {
-		$catch();
+	} catch ($BadLocationException& e) {
 	}
 }
 
@@ -146,8 +137,7 @@ $Shape* DefaultHighlighter$DefaultHighlightPainter::paintLayer($Graphics* g, int
 			$init($Position$Bias);
 			$var($Shape, shape, view->modelToView(offs0, $Position$Bias::Forward, offs1, $Position$Bias::Backward, bounds));
 			$assign(r, ($instanceOf($Rectangle, shape)) ? $cast($Rectangle, shape) : $nc(shape)->getBounds());
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			$assign(r, nullptr);
 		}
 	}

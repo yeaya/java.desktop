@@ -1,13 +1,5 @@
 #include <sun/java2d/StateTracker.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/StateTracker$1.h>
 #include <sun/java2d/StateTracker$2.h>
 #include <jcpp.h>
@@ -61,9 +53,7 @@ $Object* allocate$StateTracker($Class* clazz) {
 	return $of($alloc(StateTracker));
 }
 
-
 StateTracker* StateTracker::ALWAYS_CURRENT = nullptr;
-
 StateTracker* StateTracker::NEVER_CURRENT = nullptr;
 
 void clinit$StateTracker($Class* class$) {

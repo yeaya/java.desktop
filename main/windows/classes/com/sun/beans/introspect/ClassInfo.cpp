@@ -6,15 +6,7 @@
 #include <com/sun/beans/introspect/PropertyInfo.h>
 #include <com/sun/beans/util/Cache$Kind.h>
 #include <com/sun/beans/util/Cache.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/List.h>
 #include <java/util/Map.h>
 #include <sun/reflect/misc/ReflectUtil.h>
@@ -101,8 +93,7 @@ ClassInfo* ClassInfo::get($Class* type) {
 	try {
 		$ReflectUtil::checkPackageAccess(type);
 		return $cast(ClassInfo, $nc(ClassInfo::CACHE)->get(type));
-	} catch ($SecurityException&) {
-		$var($SecurityException, exception, $catch());
+	} catch ($SecurityException& exception) {
 		return ClassInfo::DEFAULT;
 	}
 	$shouldNotReachHere();

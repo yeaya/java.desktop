@@ -16,8 +16,10 @@ public:
 	void init$($String* s);
 	static const int64_t serialVersionUID = (int64_t)0x552BCDD6FECD38C2;
 	NoninvertibleTransformException(const NoninvertibleTransformException& e);
-	NoninvertibleTransformException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline NoninvertibleTransformException* operator ->() {
+		return (NoninvertibleTransformException*)throwing$;
+	}
 };
 
 		} // geom

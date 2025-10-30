@@ -4,15 +4,8 @@
 #include <java/awt/ComponentOrientation.h>
 #include <java/awt/Container.h>
 #include <java/awt/Window.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Comparator.h>
 #include <java/util/LinkedList.h>
 #include <java/util/ListIterator.h>

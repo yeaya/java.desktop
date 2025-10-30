@@ -7,17 +7,6 @@
 #include <java/awt/FlowLayout.h>
 #include <java/awt/LayoutManager.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/JComponent$AccessibleJComponent.h>
 #include <javax/swing/JComponent.h>
@@ -60,6 +49,7 @@ $NamedAttribute JPanel_Attribute_var$0[] = {
 	{"description", 's', "A generic lightweight container."},
 	{}
 };
+
 $CompoundAttribute _JPanel_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JPanel_Attribute_var$0},
 	{}
@@ -98,7 +88,6 @@ $CompoundAttribute _JPanel_MethodAnnotations_setUI8[] = {
 	{"Ljava/beans/BeanProperty;", JPanel_Attribute_var$3},
 	{}
 };
-
 
 $FieldInfo _JPanel_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JPanel, uiClassID)},
@@ -168,7 +157,6 @@ $Object* JPanel::clone() {
 void JPanel::finalize() {
 	this->$JComponent::finalize();
 }
-
 
 $String* JPanel::uiClassID = nullptr;
 

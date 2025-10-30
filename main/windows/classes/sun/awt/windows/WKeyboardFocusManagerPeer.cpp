@@ -4,14 +4,6 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/FocusEvent$Cause.h>
 #include <java/awt/peer/ComponentPeer.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/AWTAccessor$ComponentAccessor.h>
 #include <sun/awt/AWTAccessor.h>
 #include <sun/awt/KeyboardFocusManagerPeerImpl.h>

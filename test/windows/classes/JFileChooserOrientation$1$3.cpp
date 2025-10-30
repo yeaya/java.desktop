@@ -3,17 +3,6 @@
 #include <JFileChooserOrientation$1.h>
 #include <JFileChooserOrientation.h>
 #include <java/awt/event/ActionEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/logging/Level.h>
 #include <java/util/logging/Logger.h>
 #include <jcpp.h>
@@ -85,8 +74,7 @@ void JFileChooserOrientation$1$3::actionPerformed($ActionEvent* e) {
 	$beforeCallerSensitive();
 	try {
 		$JFileChooserOrientation::fail();
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$load($JFileChooserOrientation);
 		$init($Level);
 		$nc($($Logger::getLogger($($JFileChooserOrientation::class$->getName()))))->log($Level::SEVERE, ($String*)nullptr, static_cast<$Throwable*>(ex));

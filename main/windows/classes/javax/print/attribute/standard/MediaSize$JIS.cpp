@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/MediaSize$JIS.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/Size2DSyntax.h>
 #include <javax/print/attribute/standard/MediaSize.h>
 #include <javax/print/attribute/standard/MediaSizeName.h>
@@ -132,75 +124,40 @@ $Object* allocate$MediaSize$JIS($Class* clazz) {
 	return $of($alloc(MediaSize$JIS));
 }
 
-
 $MediaSize* MediaSize$JIS::B0 = nullptr;
-
 $MediaSize* MediaSize$JIS::B1 = nullptr;
-
 $MediaSize* MediaSize$JIS::B2 = nullptr;
-
 $MediaSize* MediaSize$JIS::B3 = nullptr;
-
 $MediaSize* MediaSize$JIS::B4 = nullptr;
-
 $MediaSize* MediaSize$JIS::B5 = nullptr;
-
 $MediaSize* MediaSize$JIS::B6 = nullptr;
-
 $MediaSize* MediaSize$JIS::B7 = nullptr;
-
 $MediaSize* MediaSize$JIS::B8 = nullptr;
-
 $MediaSize* MediaSize$JIS::B9 = nullptr;
-
 $MediaSize* MediaSize$JIS::B10 = nullptr;
-
 $MediaSize* MediaSize$JIS::CHOU_1 = nullptr;
-
 $MediaSize* MediaSize$JIS::CHOU_2 = nullptr;
-
 $MediaSize* MediaSize$JIS::CHOU_3 = nullptr;
-
 $MediaSize* MediaSize$JIS::CHOU_4 = nullptr;
-
 $MediaSize* MediaSize$JIS::CHOU_30 = nullptr;
-
 $MediaSize* MediaSize$JIS::CHOU_40 = nullptr;
-
 $MediaSize* MediaSize$JIS::KAKU_0 = nullptr;
-
 $MediaSize* MediaSize$JIS::KAKU_1 = nullptr;
-
 $MediaSize* MediaSize$JIS::KAKU_2 = nullptr;
-
 $MediaSize* MediaSize$JIS::KAKU_3 = nullptr;
-
 $MediaSize* MediaSize$JIS::KAKU_4 = nullptr;
-
 $MediaSize* MediaSize$JIS::KAKU_5 = nullptr;
-
 $MediaSize* MediaSize$JIS::KAKU_6 = nullptr;
-
 $MediaSize* MediaSize$JIS::KAKU_7 = nullptr;
-
 $MediaSize* MediaSize$JIS::KAKU_8 = nullptr;
-
 $MediaSize* MediaSize$JIS::KAKU_20 = nullptr;
-
 $MediaSize* MediaSize$JIS::KAKU_A4 = nullptr;
-
 $MediaSize* MediaSize$JIS::YOU_1 = nullptr;
-
 $MediaSize* MediaSize$JIS::YOU_2 = nullptr;
-
 $MediaSize* MediaSize$JIS::YOU_3 = nullptr;
-
 $MediaSize* MediaSize$JIS::YOU_4 = nullptr;
-
 $MediaSize* MediaSize$JIS::YOU_5 = nullptr;
-
 $MediaSize* MediaSize$JIS::YOU_6 = nullptr;
-
 $MediaSize* MediaSize$JIS::YOU_7 = nullptr;
 
 void MediaSize$JIS::init$() {

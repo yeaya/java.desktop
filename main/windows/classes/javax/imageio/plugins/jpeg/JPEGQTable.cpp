@@ -1,18 +1,5 @@
 #include <javax/imageio/plugins/jpeg/JPEGQTable.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <jcpp.h>
 
@@ -68,13 +55,9 @@ $ints* JPEGQTable::k1 = nullptr;
 $ints* JPEGQTable::k1div2 = nullptr;
 $ints* JPEGQTable::k2 = nullptr;
 $ints* JPEGQTable::k2div2 = nullptr;
-
 JPEGQTable* JPEGQTable::K1Luminance = nullptr;
-
 JPEGQTable* JPEGQTable::K1Div2Luminance = nullptr;
-
 JPEGQTable* JPEGQTable::K2Chrominance = nullptr;
-
 JPEGQTable* JPEGQTable::K2Div2Chrominance = nullptr;
 
 void JPEGQTable::init$($ints* table, bool copy) {

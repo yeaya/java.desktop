@@ -9,29 +9,13 @@
 #include <java/awt/LayoutManager2.h>
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Date.h>
 #include <javax/swing/DefaultDesktopManager.h>
 #include <javax/swing/DesktopManager.h>
@@ -196,8 +180,8 @@ void InternalFrameIsNotCollectedTest::main($StringArray* args) {
 			if (!$InternalFrameIsNotCollectedTest$CustomInternalFrame::finalized) {
 				$throwNew($RuntimeException, "Closed internal frame wasn\'t collected"_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} /*finally*/ {
 			$init(InternalFrameIsNotCollectedTest);
 			if (InternalFrameIsNotCollectedTest::frame != nullptr) {
@@ -243,15 +227,13 @@ void InternalFrameIsNotCollectedTest::initUI() {
 
 void InternalFrameIsNotCollectedTest::invokeGC() {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println("Firing garbage collection!"_s);
 	try {
 		$var($StringBuilder, sb, $new($StringBuilder));
 		while (true) {
 			sb->append($$str({"any string. some test. a little bit more text."_s, $(sb->toString())}));
 		}
-	} catch ($Throwable&) {
-		$catch();
+	} catch ($Throwable& e) {
 	}
 }
 

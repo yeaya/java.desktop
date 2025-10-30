@@ -4,17 +4,6 @@
 #include <com/sun/media/sound/WaveFloatFileWriter$NoCloseOutputStream.h>
 #include <java/io/File.h>
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Objects.h>
 #include <javax/sound/sampled/AudioFileFormat$Type.h>
 #include <javax/sound/sampled/AudioFormat$Encoding.h>
@@ -134,20 +123,18 @@ void WaveFloatFileWriter::write($AudioInputStream* stream, $RIFFWriter* writer) 
 					fmt_chunk->writeUnsignedInt(var$1 * format->getFrameSize());
 					fmt_chunk->writeUnsignedShort($nc(format)->getFrameSize());
 					fmt_chunk->writeUnsignedShort($nc(format)->getSampleSizeInBits());
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					if (fmt_chunk != nullptr) {
 						try {
 							fmt_chunk->close();
-						} catch ($Throwable&) {
-							$var($Throwable, x2, $catch());
+						} catch ($Throwable& x2) {
 							t$->addSuppressed(x2);
 						}
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$2) {
+				$assign(var$0, var$2);
 			} /*finally*/ {
 				if (fmt_chunk != nullptr) {
 					fmt_chunk->close();
@@ -161,31 +148,29 @@ void WaveFloatFileWriter::write($AudioInputStream* stream, $RIFFWriter* writer) 
 	{
 		$var($RIFFWriter, data_chunk, $nc(writer)->writeChunk("data"_s));
 		{
-			$var($Throwable, var$2, nullptr);
+			$var($Throwable, var$3, nullptr);
 			try {
 				try {
 					$nc(stream)->transferTo(data_chunk);
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					if (data_chunk != nullptr) {
 						try {
 							data_chunk->close();
-						} catch ($Throwable&) {
-							$var($Throwable, x2, $catch());
+						} catch ($Throwable& x2) {
 							t$->addSuppressed(x2);
 						}
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$2, $catch());
+			} catch ($Throwable& var$4) {
+				$assign(var$3, var$4);
 			} /*finally*/ {
 				if (data_chunk != nullptr) {
 					data_chunk->close();
 				}
 			}
-			if (var$2 != nullptr) {
-				$throw(var$2);
+			if (var$3 != nullptr) {
+				$throw(var$3);
 			}
 		}
 	}
@@ -225,18 +210,16 @@ int32_t WaveFloatFileWriter::write($AudioInputStream* stream$renamed, $AudioFile
 					var$2 = (int32_t)writer->getFilePointer();
 					return$1 = true;
 					goto $finally;
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					try {
 						writer->close();
-					} catch ($Throwable&) {
-						$var($Throwable, x2, $catch());
+					} catch ($Throwable& x2) {
 						t$->addSuppressed(x2);
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} $finally: {
 				writer->close();
 			}
@@ -273,18 +256,16 @@ int32_t WaveFloatFileWriter::write($AudioInputStream* stream$renamed, $AudioFile
 					var$2 = (int32_t)writer->getFilePointer();
 					return$1 = true;
 					goto $finally;
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					try {
 						writer->close();
-					} catch ($Throwable&) {
-						$var($Throwable, x2, $catch());
+					} catch ($Throwable& x2) {
 						t$->addSuppressed(x2);
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} $finally: {
 				writer->close();
 			}

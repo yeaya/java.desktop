@@ -1,32 +1,18 @@
 #include <javax/swing/TimerQueue.h>
 
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadDeath.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/Iterator.h>
@@ -179,7 +165,6 @@ bool TimerQueue::$assertionsDisabled = false;
 $Object* TimerQueue::sharedInstanceKey = nullptr;
 $Object* TimerQueue::expiredTimersKey = nullptr;
 $Object* TimerQueue::classLock = nullptr;
-
 int64_t TimerQueue::NANO_ORIGIN = 0;
 
 void TimerQueue::init$() {
@@ -214,8 +199,8 @@ void TimerQueue::startIfNeeded() {
 				$var($ThreadGroup, threadGroup, $nc($($AppContext::getAppContext()))->getThreadGroup());
 				$AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new(TimerQueue$$Lambda$lambda$startIfNeeded$0, this, threadGroup)));
 				this->running = true;
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(this->runningLock)->unlock();
 			}
@@ -237,8 +222,8 @@ void TimerQueue::addTimer($Timer* timer, int64_t delayMillis) {
 				int64_t var$1 = $TimeUnit::MILLISECONDS->toNanos(delayMillis);
 				addTimer($$new($TimerQueue$DelayedTimer, timer, var$1 + now()));
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} /*finally*/ {
 			$nc($(timer->getLock()))->unlock();
 		}
@@ -260,8 +245,8 @@ void TimerQueue::addTimer($TimerQueue$DelayedTimer* delayedTimer) {
 		try {
 			$set(timer, delayedTimer, delayedTimer);
 			$nc(this->queue)->add(static_cast<$Delayed*>(delayedTimer));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc($(timer->getLock()))->unlock();
 		}
@@ -281,8 +266,8 @@ void TimerQueue::removeTimer($Timer* timer) {
 				$nc(this->queue)->remove(timer->delayedTimer);
 				$set(timer, delayedTimer, nullptr);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc($(timer->getLock()))->unlock();
 		}
@@ -303,8 +288,8 @@ bool TimerQueue::containsTimer($Timer* timer) {
 			var$2 = timer->delayedTimer != nullptr;
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc($(timer->getLock()))->unlock();
 		}
@@ -346,11 +331,10 @@ void TimerQueue::run() {
 										}
 									}
 									$nc($($nc($(timer->getLock()))->newCondition()))->awaitNanos(1);
-								} catch ($SecurityException&) {
-									$catch();
+								} catch ($SecurityException& ignore) {
 								}
-							} catch ($Throwable&) {
-								$assign(var$1, $catch());
+							} catch ($Throwable& var$3) {
+								$assign(var$1, var$3);
 							} /*finally*/ {
 								$nc($(timer->getLock()))->unlock();
 							}
@@ -358,15 +342,13 @@ void TimerQueue::run() {
 								$throw(var$1);
 							}
 						}
-					} catch ($InterruptedException&) {
-						$var($InterruptedException, ie, $catch());
+					} catch ($InterruptedException& ie) {
 						if ($nc($($AppContext::getAppContext()))->isDisposed()) {
 							break;
 						}
 					}
 				}
-			} catch ($ThreadDeath&) {
-				$var($ThreadDeath, td, $catch());
+			} catch ($ThreadDeath& td) {
 				{
 					$var($Iterator, i$, $nc(this->queue)->iterator());
 					for (; $nc(i$)->hasNext();) {
@@ -378,8 +360,8 @@ void TimerQueue::run() {
 				}
 				$throw(td);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$4) {
+			$assign(var$0, var$4);
 		} /*finally*/ {
 			this->running = false;
 			$nc(this->runningLock)->unlock();

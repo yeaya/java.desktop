@@ -14,18 +14,8 @@
 #include <java/awt/event/WindowEvent.h>
 #include <java/awt/event/WindowListener.h>
 #include <java/awt/image/BufferStrategy.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <javax/swing/BufferStrategyPaintManager.h>
 #include <sun/awt/AWTAccessor$ComponentAccessor.h>
@@ -284,8 +274,7 @@ $BufferStrategy* BufferStrategyPaintManager$BufferInfo::createBufferStrategy($Co
 			$var($AWTAccessor$ComponentAccessor, componentAccessor, $AWTAccessor::getComponentAccessor());
 			$nc(componentAccessor)->createBufferStrategy(root, 2, caps);
 			$assign(bs, componentAccessor->getBufferStrategy(root));
-		} catch ($AWTException&) {
-			$var($AWTException, e, $catch());
+		} catch ($AWTException& e) {
 			$init($BufferStrategyPaintManager);
 			$init($PlatformLogger$Level);
 			if ($nc($BufferStrategyPaintManager::LOGGER)->isLoggable($PlatformLogger$Level::FINER)) {
@@ -296,8 +285,7 @@ $BufferStrategy* BufferStrategyPaintManager$BufferInfo::createBufferStrategy($Co
 		try {
 			$nc(($cast($Window, root)))->createBufferStrategy(2, caps);
 			$assign(bs, ($cast($Window, root))->getBufferStrategy());
-		} catch ($AWTException&) {
-			$var($AWTException, e, $catch());
+		} catch ($AWTException& e) {
 			$init($BufferStrategyPaintManager);
 			$init($PlatformLogger$Level);
 			if ($nc($BufferStrategyPaintManager::LOGGER)->isLoggable($PlatformLogger$Level::FINER)) {
@@ -348,8 +336,7 @@ void BufferStrategyPaintManager$BufferInfo::windowClosed($WindowEvent* e) {
 		while (this->this$0->showing) {
 			try {
 				$of(this->this$0)->wait();
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& ie) {
 			}
 		}
 		$nc(this->this$0->bufferInfos)->remove($of(this));

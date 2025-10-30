@@ -6,17 +6,6 @@
 #include <com/sun/media/sound/SunFileReader.h>
 #include <java/io/EOFException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Map.h>
 #include <javax/sound/midi/InvalidMidiDataException.h>
 #include <javax/sound/midi/MetaMessage.h>
@@ -120,8 +109,7 @@ $AudioInputStream* SoftMidiAudioFileReader::getAudioInputStream($Sequence* seq) 
 	try {
 		$assign(stream, synth->openStream(SoftMidiAudioFileReader::format, nullptr));
 		$assign(recv, synth->getReceiver());
-	} catch ($MidiUnavailableException&) {
-		$var($MidiUnavailableException, e, $catch());
+	} catch ($MidiUnavailableException& e) {
 		$throwNew($InvalidMidiDataException, $(e->toString()));
 	}
 	float divtype = $nc(seq)->getDivisionType();
@@ -183,16 +171,13 @@ $AudioInputStream* SoftMidiAudioFileReader::getAudioInputStream($Sequence* seq) 
 }
 
 $AudioInputStream* SoftMidiAudioFileReader::getAudioInputStream($InputStream* stream) {
-	$useLocalCurrentObjectStackCache();
 	$nc(stream)->mark(200);
 	try {
 		return getAudioInputStream($($MidiSystem::getSequence(stream)));
-	} catch ($InvalidMidiDataException&) {
-		$var($Exception, ignored, $catch());
+	} catch ($InvalidMidiDataException& ignored) {
 		stream->reset();
 		$throwNew($UnsupportedAudioFileException);
-	} catch ($EOFException&) {
-		$var($Exception, ignored, $catch());
+	} catch ($EOFException& ignored) {
 		stream->reset();
 		$throwNew($UnsupportedAudioFileException);
 	}
@@ -200,11 +185,9 @@ $AudioInputStream* SoftMidiAudioFileReader::getAudioInputStream($InputStream* st
 }
 
 $StandardFileFormat* SoftMidiAudioFileReader::getAudioFileFormatImpl($InputStream* stream) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return getAudioFileFormat($($MidiSystem::getSequence(stream)));
-	} catch ($InvalidMidiDataException&) {
-		$var($InvalidMidiDataException, ignored, $catch());
+	} catch ($InvalidMidiDataException& ignored) {
 		$throwNew($UnsupportedAudioFileException);
 	}
 	$shouldNotReachHere();

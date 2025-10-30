@@ -6,29 +6,14 @@
 #include <java/awt/Dimension.h>
 #include <java/awt/Font.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Iterable.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Arrays.h>
@@ -265,7 +250,6 @@ void BodyInheritedFontSize::main($StringArray* args) {
 	$var($List, exceptions, $new($ArrayList, 2));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(BodyInheritedFontSize$$Lambda$lambda$main$0, showFrame, debugPrint, exceptions)));
 	if (exceptions->size() > 0) {
-		$init($System);
 		exceptions->forEach(static_cast<$Consumer*>($$new(BodyInheritedFontSize$$Lambda$println$1, static_cast<$PrintStream*>($nc($System::err)))));
 		$var($String, var$0, $str({"Test failed: "_s, $($nc(($cast($Exception, $(exceptions->get(0)))))->getMessage())}));
 		$throwNew($RuntimeException, var$0, $cast($Throwable, $(exceptions->get(0))));
@@ -292,7 +276,6 @@ void BodyInheritedFontSize::checkFontSize($JEditorPane* htmlPane, bool w3cUnits,
 	int32_t fontSizeInherited = getViewFontSize($($nc(bodyView)->getView(1)), debugPrint);
 	int32_t fontSizeExplicit = getViewFontSize($($nc(bodyView)->getView(2)), debugPrint);
 	if (debugPrint) {
-		$init($System);
 		$nc($System::out)->println($$str({"w3cUnits: "_s, $$str(w3cUnits), "\nPercentage: "_s, $$str(fontSizePercentage), "\nInherited: "_s, $$str(fontSizeInherited), "\nExplicit: "_s, $$str(fontSizeExplicit), "\n"_s}));
 	}
 	if (fontSizeInherited != fontSizeExplicit || fontSizePercentage != fontSizeExplicit) {
@@ -306,7 +289,6 @@ int32_t BodyInheritedFontSize::getViewFontSize($View* paragraphView, bool debugP
 	$var($GlyphView, inlineView, findFirstTextRun(paragraphView));
 	int32_t fontSize = $nc($($nc(inlineView)->getFont()))->getSize();
 	if (debugPrint) {
-		$init($System);
 		$nc(($cast($AbstractDocument$AbstractElement, $(inlineView->getElement()))))->dump($System::out, 1);
 	}
 	return fontSize;
@@ -343,8 +325,7 @@ void BodyInheritedFontSize::lambda$main$0(bool showFrame, bool debugPrint, $List
 				$var($JEditorPane, htmlPane, createEditorPane(w3cUnits, showFrame));
 				try {
 					checkFontSize(htmlPane, w3cUnits, debugPrint);
-				} catch ($Exception&) {
-					$var($Exception, e, $catch());
+				} catch ($Exception& e) {
 					$nc(exceptions)->add(e);
 				}
 			}

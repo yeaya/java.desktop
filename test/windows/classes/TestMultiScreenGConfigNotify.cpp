@@ -8,27 +8,14 @@
 #include <java/awt/Window.h>
 #include <java/beans/PropertyChangeEvent.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/SwingUtilities.h>
 #include <jcpp.h>
@@ -248,8 +235,7 @@ void TestMultiScreenGConfigNotify::lambda$main$1($GraphicsConfiguration* gc, $Gr
 	$nc(TestMultiScreenGConfigNotify::f)->addPropertyChangeListener(static_cast<$PropertyChangeListener*>($$new(TestMultiScreenGConfigNotify$$Lambda$lambda$main$0$2)));
 	try {
 		$Thread::sleep(2000);
-	} catch ($InterruptedException&) {
-		$catch();
+	} catch ($InterruptedException& ex) {
 	}
 	int32_t var$3 = $nc($($nc(gc2)->getBounds()))->x;
 	int32_t var$4 = $nc($(gc2->getBounds()))->y;
@@ -261,7 +247,6 @@ void TestMultiScreenGConfigNotify::lambda$main$0($PropertyChangeEvent* evt) {
 	$init(TestMultiScreenGConfigNotify);
 	$useLocalCurrentObjectStackCache();
 	$var($String, name, $nc(evt)->getPropertyName());
-	$init($System);
 	$nc($System::out)->println($$str({"propertyChange "_s, name}));
 	$nc(TestMultiScreenGConfigNotify::propName)->set(TestMultiScreenGConfigNotify::propCount, name);
 	++TestMultiScreenGConfigNotify::propCount;

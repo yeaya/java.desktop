@@ -1,13 +1,6 @@
 #include <javax/swing/text/Document.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/event/DocumentListener.h>
 #include <javax/swing/event/UndoableEditListener.h>
 #include <javax/swing/text/AttributeSet.h>
@@ -72,9 +65,7 @@ $Object* allocate$Document($Class* clazz) {
 	return $of($alloc(Document));
 }
 
-
 $String* Document::StreamDescriptionProperty = nullptr;
-
 $String* Document::TitleProperty = nullptr;
 
 void clinit$Document($Class* class$) {

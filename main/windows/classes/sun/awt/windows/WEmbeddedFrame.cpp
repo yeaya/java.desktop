@@ -17,23 +17,9 @@
 #include <java/awt/image/WritableRaster.h>
 #include <java/awt/peer/ComponentPeer.h>
 #include <java/awt/peer/FramePeer.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <sun/awt/AWTAccessor$ComponentAccessor.h>
@@ -276,8 +262,7 @@ int32_t WEmbeddedFrame::getPrintScaleFactor() {
 			if (scale > 8 || scale < 1) {
 				scale = default_printDC_scale;
 			}
-		} catch ($NumberFormatException&) {
-			$catch();
+		} catch ($NumberFormatException& nfe) {
 		}
 	}
 	WEmbeddedFrame::pScale = scale;
@@ -332,9 +317,7 @@ void WEmbeddedFrame::notifyModalBlocked($Dialog* blocker, bool blocked) {
 		$var($ComponentPeer, thisPeer, $cast($ComponentPeer, $WToolkit::targetToPeer(this)));
 		$var($ComponentPeer, blockerPeer, $cast($ComponentPeer, $WToolkit::targetToPeer(blocker)));
 		notifyModalBlockedImpl($cast($WEmbeddedFramePeer, thisPeer), $cast($WWindowPeer, blockerPeer), blocked);
-	} catch ($Exception&) {
-		$var($Exception, z, $catch());
-		$init($System);
+	} catch ($Exception& z) {
 		z->printStackTrace($System::err);
 	}
 }

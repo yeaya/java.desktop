@@ -1,13 +1,5 @@
 #include <javax/sound/sampled/LineEvent$Type.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/LineEvent.h>
 #include <jcpp.h>
 
@@ -68,13 +60,9 @@ $Object* allocate$LineEvent$Type($Class* clazz) {
 	return $of($alloc(LineEvent$Type));
 }
 
-
 LineEvent$Type* LineEvent$Type::OPEN = nullptr;
-
 LineEvent$Type* LineEvent$Type::CLOSE = nullptr;
-
 LineEvent$Type* LineEvent$Type::START = nullptr;
-
 LineEvent$Type* LineEvent$Type::STOP = nullptr;
 
 void LineEvent$Type::init$($String* name) {

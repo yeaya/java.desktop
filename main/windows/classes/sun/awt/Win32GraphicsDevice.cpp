@@ -15,22 +15,10 @@
 #include <java/awt/image/ColorModel.h>
 #include <java/awt/peer/ComponentPeer.h>
 #include <java/awt/peer/WindowPeer.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/BasicPermission.h>
 #include <java/security/Permission.h>
@@ -423,13 +411,10 @@ $GraphicsConfiguration* Win32GraphicsDevice::getDefaultConfiguration() {
 			$set(this, defaultConfig, $WGLGraphicsConfig::getConfig(this, defPixID));
 			if ($WindowsFlags::isOGLVerbose()) {
 				if (this->defaultConfig != nullptr) {
-					$init($System);
 					$nc($System::out)->print("OpenGL pipeline enabled"_s);
 				} else {
-					$init($System);
 					$nc($System::out)->print("Could not enable OpenGL pipeline"_s);
 				}
-				$init($System);
 				$nc($System::out)->println($$str({" for default config on screen "_s, $$str(this->screen)}));
 			}
 		}
@@ -450,7 +435,6 @@ bool Win32GraphicsDevice::isDefaultDevice() {
 
 bool Win32GraphicsDevice::isFSExclusiveModeAllowed() {
 	$init(Win32GraphicsDevice);
-	$useLocalCurrentObjectStackCache();
 	$var($SecurityManager, security, $System::getSecurityManager());
 	if (security != nullptr) {
 		if (Win32GraphicsDevice::fullScreenExclusivePermission == nullptr) {
@@ -458,8 +442,7 @@ bool Win32GraphicsDevice::isFSExclusiveModeAllowed() {
 		}
 		try {
 			security->checkPermission(Win32GraphicsDevice::fullScreenExclusivePermission);
-		} catch ($SecurityException&) {
-			$var($SecurityException, e, $catch());
+		} catch ($SecurityException& e) {
 			return false;
 		}
 	}

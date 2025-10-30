@@ -31,29 +31,10 @@
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
 #include <java/io/OutputStream.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URI.h>
 #include <java/nio/ByteBuffer.h>
 #include <java/nio/CharBuffer.h>
@@ -445,33 +426,19 @@ $String* PSPrinterJob::IMAGE_STR = nullptr;
 $String* PSPrinterJob::IMAGE_RESTORE = nullptr;
 $String* PSPrinterJob::SetFontName = nullptr;
 $String* PSPrinterJob::DrawStringName = nullptr;
-
 $String* PSPrinterJob::EVEN_ODD_FILL_STR = nullptr;
-
 $String* PSPrinterJob::WINDING_FILL_STR = nullptr;
-
 $String* PSPrinterJob::EVEN_ODD_CLIP_STR = nullptr;
-
 $String* PSPrinterJob::WINDING_CLIP_STR = nullptr;
-
 $String* PSPrinterJob::MOVETO_STR = nullptr;
-
 $String* PSPrinterJob::LINETO_STR = nullptr;
-
 $String* PSPrinterJob::CURVETO_STR = nullptr;
-
 $String* PSPrinterJob::GRESTORE_STR = nullptr;
-
 $String* PSPrinterJob::GSAVE_STR = nullptr;
-
 $String* PSPrinterJob::NEWPATH_STR = nullptr;
-
 $String* PSPrinterJob::CLOSEPATH_STR = nullptr;
-
 $String* PSPrinterJob::SETRGBCOLOR_STR = nullptr;
-
 $String* PSPrinterJob::SETGRAY_STR = nullptr;
-
 $Properties* PSPrinterJob::mFontProps = nullptr;
 bool PSPrinterJob::isMac = false;
 
@@ -507,8 +474,7 @@ $Properties* PSPrinterJob::initProps() {
 			props->load(in);
 			in->close();
 			return props;
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			return ($Properties*)nullptr;
 		}
 	}
@@ -565,8 +531,7 @@ bool PSPrinterJob::printDialog() {
 			try {
 				this->mDestType = $RasterPrinterJob::FILE;
 				$set(this, mDestination, ($$new($File, $(dest->getURI())))->getPath());
-			} catch ($Exception&) {
-				$var($Exception, e, $catch());
+			} catch ($Exception& e) {
 				$set(this, mDestination, "out.ps"_s);
 			}
 		} else {
@@ -629,8 +594,7 @@ void PSPrinterJob::startDoc() {
 				try {
 					$set(this, spoolFile, $new($File, this->mDestination));
 					$assign(output, $new($FileOutputStream, this->spoolFile));
-				} catch ($IOException&) {
-					$var($IOException, ex, $catch());
+				} catch ($IOException& ex) {
 					abortDoc();
 					$throwNew($PrinterIOException, ex);
 				}
@@ -830,8 +794,7 @@ void PSPrinterJob::drawImageBGR($bytes* bgrData, float destX, float destY, float
 			$nc(this->mPSStream)->write(asciiData);
 			$nc(this->mPSStream)->println(""_s);
 		}
-	} catch ($IOException&) {
-		$catch();
+	} catch ($IOException& e) {
 	}
 	$nc(this->mPSStream)->println(PSPrinterJob::IMAGE_RESTORE);
 }
@@ -856,8 +819,7 @@ void PSPrinterJob::printBand($bytes* bgrData, int32_t x, int32_t y, int32_t widt
 			$nc(this->mPSStream)->write(asciiData);
 			$nc(this->mPSStream)->println(""_s);
 		}
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$throwNew($PrinterIOException, e);
 	}
 	$nc(this->mPSStream)->println(PSPrinterJob::IMAGE_RESTORE);
@@ -932,8 +894,7 @@ $ints* PSPrinterJob::getPSFontIndexArray($Font* font, $CharsetStringArray* charS
 		if (psName != nullptr) {
 			try {
 				psFont->set(i, $Integer::parseInt($($nc(PSPrinterJob::mFontProps)->getProperty(psName))));
-			} catch ($NumberFormatException&) {
-				$var($NumberFormatException, e, $catch());
+			} catch ($NumberFormatException& e) {
 				$assign(psFont, nullptr);
 			}
 		} else {
@@ -1018,11 +979,9 @@ bool PSPrinterJob::textOut($Graphics* g, $String* str$renamed, float x, float y,
 					$nc(fontCS)->encode($($CharBuffer::wrap(cs->charsetChars, cs->offset, cs->length)), bb, true);
 					$nc(bb)->flip();
 					len = bb->limit();
-				} catch ($IllegalStateException&) {
-					$var($IllegalStateException, xx, $catch());
+				} catch ($IllegalStateException& xx) {
 					continue;
-				} catch ($CoderMalfunctionError&) {
-					$var($CoderMalfunctionError, xx, $catch());
+				} catch ($CoderMalfunctionError& xx) {
 					continue;
 				}
 				float desiredWidth = 0.0;

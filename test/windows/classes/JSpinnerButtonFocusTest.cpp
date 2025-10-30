@@ -13,24 +13,12 @@
 #include <java/awt/event/FocusAdapter.h>
 #include <java/awt/event/FocusListener.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <java/util/concurrent/TimeUnit.h>
 #include <javax/swing/JComponent.h>
@@ -311,8 +299,8 @@ void JSpinnerButtonFocusTest::main($StringArray* args) {
 						if (!JSpinnerButtonFocusTest::isJTextFieldFocused) {
 							$throwNew($RuntimeException, $$str({$($nc(LF)->getClassName()), ": Spinner\'s Text Field doesn\'t have focus "_s}));
 						}
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$1) {
+						$assign(var$0, var$1);
 					} /*finally*/ {
 						if (JSpinnerButtonFocusTest::frame != nullptr) {
 							$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(JSpinnerButtonFocusTest$$Lambda$dispose$3, static_cast<$JFrame*>($nc(JSpinnerButtonFocusTest::frame)))));

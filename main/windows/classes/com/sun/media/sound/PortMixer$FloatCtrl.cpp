@@ -2,15 +2,6 @@
 
 #include <com/sun/media/sound/PortMixer$FloatCtrl$FCT.h>
 #include <com/sun/media/sound/PortMixer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/FloatControl$Type.h>
 #include <javax/sound/sampled/FloatControl.h>
 #include <jcpp.h>
@@ -108,7 +99,7 @@ float PortMixer$FloatCtrl::getValue() {
 }
 
 void clinit$PortMixer$FloatCtrl($Class* class$) {
-		$init($FloatControl$Type);
+	$init($FloatControl$Type);
 	$assignStatic(PortMixer$FloatCtrl::FLOAT_CONTROL_TYPES, $new($FloatControl$TypeArray, {
 		($FloatControl$Type*)nullptr,
 		$FloatControl$Type::BALANCE,

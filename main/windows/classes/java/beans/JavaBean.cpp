@@ -1,14 +1,5 @@
 #include <java/beans/JavaBean.h>
 
-#include <java/lang/Attribute.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $Attribute = ::java::lang::Attribute;
@@ -35,19 +26,25 @@ $NamedAttribute JavaBean_Attribute_var$2[] = {
 	{"value", 'e', "Ljava/lang/annotation/RetentionPolicy; RUNTIME"},
 	{}
 };
+
 $CompoundAttribute _JavaBean_Annotations_[] = {
 	{"Ljava/lang/annotation/Documented;", nullptr},
 	{"Ljava/lang/annotation/Target;", JavaBean_Attribute_var$0},
 	{"Ljava/lang/annotation/Retention;", JavaBean_Attribute_var$2},
 	{}
 };
-$Attribute _JavaBean_DefaultValue_defaultEventSet0 = {
-'s', ""};
-$Attribute _JavaBean_DefaultValue_defaultProperty1 = {
-'s', ""};
-$Attribute _JavaBean_DefaultValue_description2 = {
-'s', ""};
 
+$Attribute _JavaBean_DefaultValue_defaultEventSet0 = {
+	's', ""
+};
+
+$Attribute _JavaBean_DefaultValue_defaultProperty1 = {
+	's', ""
+};
+
+$Attribute _JavaBean_DefaultValue_description2 = {
+	's', ""
+};
 
 $MethodInfo _JavaBean_MethodInfo_[] = {
 	{"defaultEventSet", "()Ljava/lang/String;", nullptr, $PUBLIC | $ABSTRACT, nullptr, nullptr, &_JavaBean_DefaultValue_defaultEventSet0},

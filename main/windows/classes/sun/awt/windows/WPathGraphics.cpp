@@ -38,20 +38,8 @@
 #include <java/awt/print/Paper.h>
 #include <java/awt/print/Printable.h>
 #include <java/awt/print/PrinterJob.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/Arrays.h>
@@ -271,8 +259,7 @@ void WPathGraphics::draw($Shape* s) {
 				$var($floats, var$6, lineStroke->getDashArray());
 				$assign(minLineStroke, $new($BasicStroke, var$2, var$3, var$4, var$5, var$6, lineStroke->getDashPhase()));
 				setStroke(minLineStroke);
-			} catch ($NoninvertibleTransformException&) {
-				$catch();
+			} catch ($NoninvertibleTransformException& e) {
 			}
 		}
 		$PathGraphics::draw(s);
@@ -394,8 +381,7 @@ void WPathGraphics::drawString($String* str, float x, float y, $Font* font, $Fon
 	$var($WPrinterJob, wPrinterJob, $cast($WPrinterJob, getPrinterJob()));
 	try {
 		$nc(wPrinterJob)->setTextColor($cast($Color, $(getPaint())));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		directToGDI = false;
 	}
 	if (!directToGDI) {
@@ -504,8 +490,7 @@ bool WPathGraphics::printGlyphVector($GlyphVector* gv, float x, float y) {
 	$var($WPrinterJob, wPrinterJob, $cast($WPrinterJob, getPrinterJob()));
 	try {
 		$nc(wPrinterJob)->setTextColor($cast($Color, $(getPaint())));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		directToGDI = false;
 	}
 	$init($WPrinterJob);

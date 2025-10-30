@@ -4,16 +4,7 @@
 #include <java/awt/datatransfer/UnsupportedFlavorException.h>
 #include <java/beans/PropertyDescriptor.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/TransferHandler.h>
@@ -93,8 +84,7 @@ $DataFlavorArray* TransferHandler$PropertyTransferable::getTransferDataFlavors()
 	$var($String, mimeType, $str({$DataFlavor::javaJVMLocalObjectMimeType, ";class="_s, $($nc(propertyType)->getName())}));
 	try {
 		flavors->set(0, $$new($DataFlavor, mimeType));
-	} catch ($ClassNotFoundException&) {
-		$var($ClassNotFoundException, cnfe, $catch());
+	} catch ($ClassNotFoundException& cnfe) {
 		$assign(flavors, $new($DataFlavorArray, 0));
 	}
 	return flavors;
@@ -120,8 +110,7 @@ $Object* TransferHandler$PropertyTransferable::getTransferData($DataFlavor* flav
 	$var($Object, value, nullptr);
 	try {
 		$assign(value, $MethodUtil::invoke(reader, this->component, ($ObjectArray*)nullptr));
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$throwNew($IOException, $$str({"Property read failed: "_s, $($nc(this->property)->getName())}));
 	}
 	return $of(value);

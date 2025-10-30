@@ -5,19 +5,9 @@
 #include <java/beans/Expression.h>
 #include <java/beans/MetaData.h>
 #include <java/beans/PersistenceDelegate.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchFieldException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $PrimitiveWrapperMap = ::com::sun::beans::finder::PrimitiveWrapperMap;
@@ -85,26 +75,18 @@ $Expression* MetaData$java_lang_Class_PersistenceDelegate::instantiate(Object$* 
 		$var($Field, field, nullptr);
 		try {
 			$assign(field, $nc($PrimitiveWrapperMap::getType($(c->getName())))->getDeclaredField("TYPE"_s));
-		} catch ($NoSuchFieldException&) {
-			$var($NoSuchFieldException, ex, $catch());
-			$init($System);
+		} catch ($NoSuchFieldException& ex) {
 			$nc($System::err)->println($$str({"Unknown primitive type: "_s, c}));
 		}
 		return $new($Expression, oldInstance, field, "get"_s, $$new($ObjectArray, {($Object*)nullptr}));
+	} else if ($equals(oldInstance, $String::class$)) {
+		return $new($Expression, oldInstance, ""_s, "getClass"_s, $$new($ObjectArray, 0));
+	} else if ($equals(oldInstance, $Class::class$)) {
+		return $new($Expression, oldInstance, $String::class$, "getClass"_s, $$new($ObjectArray, 0));
 	} else {
-		$load($String);
-		if ($equals(oldInstance, $String::class$)) {
-			return $new($Expression, oldInstance, ""_s, "getClass"_s, $$new($ObjectArray, 0));
-		} else {
-			$load($Class);
-			if ($equals(oldInstance, $Class::class$)) {
-				return $new($Expression, oldInstance, $String::class$, "getClass"_s, $$new($ObjectArray, 0));
-			} else {
-				$var($Expression, newInstance, $new($Expression, oldInstance, $Class::class$, "forName"_s, $$new($ObjectArray, {$($of(c->getName()))})));
-				$set(newInstance, loader, c->getClassLoader());
-				return newInstance;
-			}
-		}
+		$var($Expression, newInstance, $new($Expression, oldInstance, $Class::class$, "forName"_s, $$new($ObjectArray, {$($of(c->getName()))})));
+		$set(newInstance, loader, c->getClassLoader());
+		return newInstance;
 	}
 }
 

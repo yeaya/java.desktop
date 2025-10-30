@@ -5,17 +5,7 @@
 #include <java/awt/RenderingHints.h>
 #include <java/awt/font/FontRenderContext.h>
 #include <java/awt/font/GlyphVector.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/swing/SwingUtilities2.h>
 #include <jcpp.h>
 

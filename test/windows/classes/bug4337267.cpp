@@ -14,27 +14,13 @@
 #include <java/awt/font/NumericShaper.h>
 #include <java/awt/font/TextAttribute.h>
 #include <java/awt/image/BufferedImage.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/BoxLayout.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
@@ -221,7 +207,6 @@ void bug4337267::assertEquals(Object$* o1, Object$* o2) {
 
 void bug4337267::testTextComponent() {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println("testTextComponent:"_s);
 	$var($JTextArea, area1, $new($JTextArea));
 	injectComponent(this->p1, area1, false);
@@ -242,7 +227,6 @@ void bug4337267::testTextComponent() {
 
 void bug4337267::testNonTextComponentHTML() {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println("testNonTextComponentHTML:"_s);
 	$var($JLabel, label1, $new($JLabel));
 	injectComponent(this->p1, label1, false);
@@ -263,7 +247,6 @@ void bug4337267::testNonTextComponentHTML() {
 
 void bug4337267::testNonTextComponentPlain() {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println("testNonTextComponentPlain:"_s);
 	$var($JLabel, label1, $new($JLabel));
 	injectComponent(this->p1, label1, false);
@@ -331,10 +314,9 @@ void bug4337267::main($StringArray* args) {
 			if (bug4337267::testFailed) {
 				$throwNew($RuntimeException, "FAIL"_s);
 			}
-			$init($System);
 			$nc($System::out)->println("OK"_s);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (bug4337267::window != nullptr) {
 				$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4337267$$Lambda$lambda$main$0)));

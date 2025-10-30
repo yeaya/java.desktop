@@ -5,20 +5,6 @@
 #include <java/awt/Container$AccessibleAWTContainer.h>
 #include <java/awt/Graphics.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/Format.h>
 #include <java/text/NumberFormat.h>
 #include <java/util/EventListener.h>
@@ -93,6 +79,7 @@ $NamedAttribute JProgressBar_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JProgressBar_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JProgressBar_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JProgressBar_Attribute_var$1},
@@ -259,7 +246,6 @@ $CompoundAttribute _JProgressBar_MethodAnnotations_setValue34[] = {
 	{}
 };
 
-
 $FieldInfo _JProgressBar_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JProgressBar, uiClassID)},
 	{"orientation", "I", nullptr, $PROTECTED, $field(JProgressBar, orientation)},
@@ -367,7 +353,6 @@ $Object* JProgressBar::clone() {
 void JProgressBar::finalize() {
 	this->$JComponent::finalize();
 }
-
 
 $String* JProgressBar::uiClassID = nullptr;
 

@@ -4,21 +4,7 @@
 #include <java/io/IOException.h>
 #include <java/io/RandomAccessFile.h>
 #include <java/io/UnsupportedEncodingException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/BufferUnderflowException.h>
 #include <java/nio/ByteBuffer.h>
 #include <java/nio/ByteOrder.h>
@@ -166,15 +152,13 @@ void Type1Font::init$($String* platname, Object$* nativeNames) {
 }
 
 void Type1Font::init$($String* platname, Object$* nativeNames, bool createdCopy) {
-	$useLocalCurrentObjectStackCache();
 	$FileFont::init$(platname, nativeNames);
 	$set(this, bufferRef, $new($WeakReference, nullptr));
 	$set(this, psName, nullptr);
 	this->fontRank = $Font2D::TYPE1_RANK;
 	try {
 		verify();
-	} catch ($Throwable&) {
-		$var($Throwable, t, $catch());
+	} catch ($Throwable& t) {
 		if (createdCopy) {
 			$var($Type1Font$T1DisposerRecord, ref, $new($Type1Font$T1DisposerRecord, platname));
 			$Disposer::addObjectRecord(this->bufferRef, ref);
@@ -203,15 +187,12 @@ $ByteBuffer* Type1Font::getBuffer() {
 				$nc(bbuf)->position(0);
 				$set(this, bufferRef, $new($WeakReference, bbuf));
 				fc->close();
-			} catch ($NullPointerException&) {
-				$var($NullPointerException, e, $catch());
+			} catch ($NullPointerException& e) {
 				$throwNew($FontFormatException, $(e->toString()));
-			} catch ($ClosedChannelException&) {
-				$var($ClosedChannelException, e, $catch());
+			} catch ($ClosedChannelException& e) {
 				$Thread::interrupted();
 				return getBuffer();
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				$throwNew($FontFormatException, $(e->toString()));
 			}
 		}
@@ -241,31 +222,26 @@ void Type1Font::readFile($ByteBuffer* buffer) {
 					{
 					}
 				}
-			} catch ($NullPointerException&) {
-				$catch();
-			} catch ($ClosedChannelException&) {
-				$var($ClosedChannelException, e, $catch());
+			} catch ($NullPointerException& npe) {
+			} catch ($ClosedChannelException& e) {
 				try {
 					if (raf != nullptr) {
 						raf->close();
 						$assign(raf, nullptr);
 					}
-				} catch ($IOException&) {
-					$catch();
+				} catch ($IOException& ioe) {
 				}
 				$Thread::interrupted();
 				readFile(buffer);
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& e) {
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} /*finally*/ {
 			if (raf != nullptr) {
 				try {
 					raf->close();
-				} catch ($IOException&) {
-					$catch();
+				} catch ($IOException& e) {
 				}
 			}
 		}
@@ -277,7 +253,6 @@ void Type1Font::readFile($ByteBuffer* buffer) {
 
 $ByteBuffer* Type1Font::readBlock(int32_t offset, int32_t length) {
 	$synchronized(this) {
-		$useLocalCurrentObjectStackCache();
 		$var($ByteBuffer, bbuf, nullptr);
 		try {
 			$assign(bbuf, getBuffer());
@@ -286,8 +261,7 @@ $ByteBuffer* Type1Font::readBlock(int32_t offset, int32_t length) {
 			}
 			$nc(bbuf)->position(offset);
 			return bbuf->slice();
-		} catch ($FontFormatException&) {
-			$var($FontFormatException, e, $catch());
+		} catch ($FontFormatException& e) {
 			return nullptr;
 		}
 	}
@@ -318,8 +292,7 @@ int32_t Type1Font::getFileSize() {
 	if (this->fileSize == 0) {
 		try {
 			getBuffer();
-		} catch ($FontFormatException&) {
-			$catch();
+		} catch ($FontFormatException& e) {
 		}
 	}
 	return this->fileSize;
@@ -351,11 +324,9 @@ void Type1Font::verifyPFB($ByteBuffer* bb) {
 			} else {
 				$throwNew($FontFormatException, "bad pfb file"_s);
 			}
-		} catch ($BufferUnderflowException&) {
-			$var($BufferUnderflowException, bue, $catch());
+		} catch ($BufferUnderflowException& bue) {
 			$throwNew($FontFormatException, $(bue->toString()));
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$throwNew($FontFormatException, $(e->toString()));
 		}
 	}
@@ -398,8 +369,7 @@ void Type1Font::initNames($ByteBuffer* bb) {
 				eof = true;
 			}
 		}
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($FontFormatException, $(e->toString()));
 	}
 	if (!"1"_s->equals(fontType)) {
@@ -546,15 +516,13 @@ int32_t Type1Font::nextTokenType($ByteBuffer* bb) {
 				b = $nc(bb)->get();
 			}
 		}
-	} catch ($BufferUnderflowException&) {
-		$var($BufferUnderflowException, e, $catch());
+	} catch ($BufferUnderflowException& e) {
 		return Type1Font::PSEOFTOKEN;
 	}
 	$shouldNotReachHere();
 }
 
 $String* Type1Font::getSimpleToken($ByteBuffer* bb) {
-	$useLocalCurrentObjectStackCache();
 	while ($nc(bb)->get() <= u' ') {
 	}
 	int32_t pos1 = $nc(bb)->position() - 1;
@@ -566,15 +534,13 @@ $String* Type1Font::getSimpleToken($ByteBuffer* bb) {
 	bb->get(nameBytes);
 	try {
 		return $new($String, nameBytes, "US-ASCII"_s);
-	} catch ($UnsupportedEncodingException&) {
-		$var($UnsupportedEncodingException, e, $catch());
+	} catch ($UnsupportedEncodingException& e) {
 		return $new($String, nameBytes);
 	}
 	$shouldNotReachHere();
 }
 
 $String* Type1Font::getString($ByteBuffer* bb) {
-	$useLocalCurrentObjectStackCache();
 	int32_t pos1 = $nc(bb)->position();
 	while (bb->get() != u')') {
 	}
@@ -584,8 +550,7 @@ $String* Type1Font::getString($ByteBuffer* bb) {
 	bb->get(nameBytes);
 	try {
 		return $new($String, nameBytes, "US-ASCII"_s);
-	} catch ($UnsupportedEncodingException&) {
-		$var($UnsupportedEncodingException, e, $catch());
+	} catch ($UnsupportedEncodingException& e) {
 		return $new($String, nameBytes);
 	}
 	$shouldNotReachHere();
@@ -612,11 +577,9 @@ $CharToGlyphMapper* Type1Font::getMapper() {
 }
 
 int32_t Type1Font::getNumGlyphs() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getNumGlyphs();
-	} catch ($FontScalerException&) {
-		$var($FontScalerException, e, $catch());
+	} catch ($FontScalerException& e) {
 		$set(this, scaler, $FontScaler::getNullScaler());
 		return getNumGlyphs();
 	}
@@ -624,11 +587,9 @@ int32_t Type1Font::getNumGlyphs() {
 }
 
 int32_t Type1Font::getMissingGlyphCode() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getMissingGlyphCode();
-	} catch ($FontScalerException&) {
-		$var($FontScalerException, e, $catch());
+	} catch ($FontScalerException& e) {
 		$set(this, scaler, $FontScaler::getNullScaler());
 		return getMissingGlyphCode();
 	}
@@ -636,11 +597,9 @@ int32_t Type1Font::getMissingGlyphCode() {
 }
 
 int32_t Type1Font::getGlyphCode(char16_t charCode) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getGlyphCode(charCode);
-	} catch ($FontScalerException&) {
-		$var($FontScalerException, e, $catch());
+	} catch ($FontScalerException& e) {
 		$set(this, scaler, $FontScaler::getNullScaler());
 		return getGlyphCode(charCode);
 	}

@@ -5,12 +5,6 @@
 #include <java/io/File.h>
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <javax/sound/midi/Soundbank.h>
 #include <javax/sound/midi/spi/SoundbankReader.h>
@@ -58,14 +52,11 @@ void DLSSoundbankReader::init$() {
 }
 
 $Soundbank* DLSSoundbankReader::getSoundbank($URL* url) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $new($DLSSoundbank, url);
-	} catch ($RIFFInvalidFormatException&) {
-		$var($RIFFInvalidFormatException, e, $catch());
+	} catch ($RIFFInvalidFormatException& e) {
 		return nullptr;
-	} catch ($IOException&) {
-		$var($IOException, ioe, $catch());
+	} catch ($IOException& ioe) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -75,8 +66,7 @@ $Soundbank* DLSSoundbankReader::getSoundbank($InputStream* stream) {
 	try {
 		$nc(stream)->mark(512);
 		return $new($DLSSoundbank, stream);
-	} catch ($RIFFInvalidFormatException&) {
-		$var($RIFFInvalidFormatException, e, $catch());
+	} catch ($RIFFInvalidFormatException& e) {
 		$nc(stream)->reset();
 		return nullptr;
 	}
@@ -86,8 +76,7 @@ $Soundbank* DLSSoundbankReader::getSoundbank($InputStream* stream) {
 $Soundbank* DLSSoundbankReader::getSoundbank($File* file) {
 	try {
 		return $new($DLSSoundbank, file);
-	} catch ($RIFFInvalidFormatException&) {
-		$var($RIFFInvalidFormatException, e, $catch());
+	} catch ($RIFFInvalidFormatException& e) {
 		return nullptr;
 	}
 	$shouldNotReachHere();

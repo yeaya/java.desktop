@@ -1,13 +1,5 @@
 #include <javax/imageio/plugins/tiff/ExifTIFFTagSet.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/List.h>
@@ -565,9 +557,7 @@ $Object* allocate$ExifTIFFTagSet($Class* clazz) {
 }
 
 ExifTIFFTagSet* ExifTIFFTagSet::theInstance = nullptr;
-
 $String* ExifTIFFTagSet::EXIF_VERSION_2_1 = nullptr;
-
 $String* ExifTIFFTagSet::EXIF_VERSION_2_2 = nullptr;
 $List* ExifTIFFTagSet::tags = nullptr;
 

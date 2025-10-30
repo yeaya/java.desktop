@@ -1,19 +1,6 @@
 #include <AbstractDocumentUndoConcurrentTest$3.h>
 
 #include <AbstractDocumentUndoConcurrentTest.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CyclicBarrier.h>
 #include <javax/swing/undo/UndoManager.h>
 #include <jcpp.h>
@@ -80,8 +67,7 @@ void AbstractDocumentUndoConcurrentTest$3::run() {
 	try {
 		$init($AbstractDocumentUndoConcurrentTest);
 		$nc($AbstractDocumentUndoConcurrentTest::barrier)->await();
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		e->printStackTrace();
 	}
 	for (int32_t i = 0; i < 1000; ++i) {
@@ -92,7 +78,6 @@ void AbstractDocumentUndoConcurrentTest$3::run() {
 			$nc(this->val$undoManager)->undo();
 		}
 	}
-	$init($System);
 	$nc($System::out)->println("t3 done"_s);
 }
 

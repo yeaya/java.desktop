@@ -1,14 +1,5 @@
 #include <javax/swing/text/html/HTML$Attribute.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/html/HTML.h>
 #include <jcpp.h>
 
@@ -224,165 +215,85 @@ $Object* allocate$HTML$Attribute($Class* clazz) {
 	return $of($alloc(HTML$Attribute));
 }
 
-
 HTML$Attribute* HTML$Attribute::SIZE = nullptr;
-
 HTML$Attribute* HTML$Attribute::COLOR = nullptr;
-
 HTML$Attribute* HTML$Attribute::CLEAR = nullptr;
-
 HTML$Attribute* HTML$Attribute::BACKGROUND = nullptr;
-
 HTML$Attribute* HTML$Attribute::BGCOLOR = nullptr;
-
 HTML$Attribute* HTML$Attribute::TEXT = nullptr;
-
 HTML$Attribute* HTML$Attribute::LINK = nullptr;
-
 HTML$Attribute* HTML$Attribute::VLINK = nullptr;
-
 HTML$Attribute* HTML$Attribute::ALINK = nullptr;
-
 HTML$Attribute* HTML$Attribute::WIDTH = nullptr;
-
 HTML$Attribute* HTML$Attribute::HEIGHT = nullptr;
-
 HTML$Attribute* HTML$Attribute::ALIGN = nullptr;
-
 HTML$Attribute* HTML$Attribute::NAME = nullptr;
-
 HTML$Attribute* HTML$Attribute::HREF = nullptr;
-
 HTML$Attribute* HTML$Attribute::REL = nullptr;
-
 HTML$Attribute* HTML$Attribute::REV = nullptr;
-
 HTML$Attribute* HTML$Attribute::TITLE = nullptr;
-
 HTML$Attribute* HTML$Attribute::TARGET = nullptr;
-
 HTML$Attribute* HTML$Attribute::SHAPE = nullptr;
-
 HTML$Attribute* HTML$Attribute::COORDS = nullptr;
-
 HTML$Attribute* HTML$Attribute::ISMAP = nullptr;
-
 HTML$Attribute* HTML$Attribute::NOHREF = nullptr;
-
 HTML$Attribute* HTML$Attribute::ALT = nullptr;
-
 HTML$Attribute* HTML$Attribute::ID = nullptr;
-
 HTML$Attribute* HTML$Attribute::SRC = nullptr;
-
 HTML$Attribute* HTML$Attribute::HSPACE = nullptr;
-
 HTML$Attribute* HTML$Attribute::VSPACE = nullptr;
-
 HTML$Attribute* HTML$Attribute::USEMAP = nullptr;
-
 HTML$Attribute* HTML$Attribute::LOWSRC = nullptr;
-
 HTML$Attribute* HTML$Attribute::CODEBASE = nullptr;
-
 HTML$Attribute* HTML$Attribute::CODE = nullptr;
-
 HTML$Attribute* HTML$Attribute::ARCHIVE = nullptr;
-
 HTML$Attribute* HTML$Attribute::VALUE = nullptr;
-
 HTML$Attribute* HTML$Attribute::VALUETYPE = nullptr;
-
 HTML$Attribute* HTML$Attribute::TYPE = nullptr;
-
 HTML$Attribute* HTML$Attribute::CLASS = nullptr;
-
 HTML$Attribute* HTML$Attribute::STYLE = nullptr;
-
 HTML$Attribute* HTML$Attribute::LANG = nullptr;
-
 HTML$Attribute* HTML$Attribute::FACE = nullptr;
-
 HTML$Attribute* HTML$Attribute::DIR = nullptr;
-
 HTML$Attribute* HTML$Attribute::DECLARE = nullptr;
-
 HTML$Attribute* HTML$Attribute::CLASSID = nullptr;
-
 HTML$Attribute* HTML$Attribute::DATA = nullptr;
-
 HTML$Attribute* HTML$Attribute::CODETYPE = nullptr;
-
 HTML$Attribute* HTML$Attribute::STANDBY = nullptr;
-
 HTML$Attribute* HTML$Attribute::BORDER = nullptr;
-
 HTML$Attribute* HTML$Attribute::SHAPES = nullptr;
-
 HTML$Attribute* HTML$Attribute::NOSHADE = nullptr;
-
 HTML$Attribute* HTML$Attribute::COMPACT = nullptr;
-
 HTML$Attribute* HTML$Attribute::START = nullptr;
-
 HTML$Attribute* HTML$Attribute::ACTION = nullptr;
-
 HTML$Attribute* HTML$Attribute::METHOD = nullptr;
-
 HTML$Attribute* HTML$Attribute::ENCTYPE = nullptr;
-
 HTML$Attribute* HTML$Attribute::CHECKED = nullptr;
-
 HTML$Attribute* HTML$Attribute::MAXLENGTH = nullptr;
-
 HTML$Attribute* HTML$Attribute::MULTIPLE = nullptr;
-
 HTML$Attribute* HTML$Attribute::SELECTED = nullptr;
-
 HTML$Attribute* HTML$Attribute::ROWS = nullptr;
-
 HTML$Attribute* HTML$Attribute::COLS = nullptr;
-
 HTML$Attribute* HTML$Attribute::DUMMY = nullptr;
-
 HTML$Attribute* HTML$Attribute::CELLSPACING = nullptr;
-
 HTML$Attribute* HTML$Attribute::CELLPADDING = nullptr;
-
 HTML$Attribute* HTML$Attribute::VALIGN = nullptr;
-
 HTML$Attribute* HTML$Attribute::HALIGN = nullptr;
-
 HTML$Attribute* HTML$Attribute::NOWRAP = nullptr;
-
 HTML$Attribute* HTML$Attribute::ROWSPAN = nullptr;
-
 HTML$Attribute* HTML$Attribute::COLSPAN = nullptr;
-
 HTML$Attribute* HTML$Attribute::PROMPT = nullptr;
-
 HTML$Attribute* HTML$Attribute::HTTPEQUIV = nullptr;
-
 HTML$Attribute* HTML$Attribute::CONTENT = nullptr;
-
 HTML$Attribute* HTML$Attribute::LANGUAGE = nullptr;
-
 HTML$Attribute* HTML$Attribute::VERSION = nullptr;
-
 HTML$Attribute* HTML$Attribute::N = nullptr;
-
 HTML$Attribute* HTML$Attribute::FRAMEBORDER = nullptr;
-
 HTML$Attribute* HTML$Attribute::MARGINWIDTH = nullptr;
-
 HTML$Attribute* HTML$Attribute::MARGINHEIGHT = nullptr;
-
 HTML$Attribute* HTML$Attribute::SCROLLING = nullptr;
-
 HTML$Attribute* HTML$Attribute::NORESIZE = nullptr;
-
 HTML$Attribute* HTML$Attribute::ENDTAG = nullptr;
-
 HTML$Attribute* HTML$Attribute::COMMENT = nullptr;
 HTML$Attribute* HTML$Attribute::MEDIA = nullptr;
 $HTML$AttributeArray* HTML$Attribute::allAttributes = nullptr;

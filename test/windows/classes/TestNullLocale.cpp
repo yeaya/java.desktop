@@ -1,15 +1,5 @@
 #include <TestNullLocale.h>
 
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/swing/JComponent.h>
 #include <jcpp.h>
@@ -53,7 +43,6 @@ void TestNullLocale::main($StringArray* args) {
 	$JComponent::setDefaultLocale(nullptr);
 	$var($Locale, currentLocale, $JComponent::getDefaultLocale());
 	if (defaultLocale != currentLocale) {
-		$init($System);
 		$nc($System::out)->println($$str({"currentLocale "_s, currentLocale}));
 		$nc($System::out)->println($$str({"defaultLocale "_s, defaultLocale}));
 		$throwNew($RuntimeException, "locale not reset to default locale"_s);

@@ -1,13 +1,5 @@
 #include <javax/print/DocFlavor$STRING.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/DocFlavor.h>
 #include <jcpp.h>
 
@@ -60,9 +52,7 @@ $Object* allocate$DocFlavor$STRING($Class* clazz) {
 	return $of($alloc(DocFlavor$STRING));
 }
 
-
 DocFlavor$STRING* DocFlavor$STRING::TEXT_PLAIN = nullptr;
-
 DocFlavor$STRING* DocFlavor$STRING::TEXT_HTML = nullptr;
 
 void DocFlavor$STRING::init$($String* mimeType) {

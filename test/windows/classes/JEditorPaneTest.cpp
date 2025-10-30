@@ -8,16 +8,7 @@
 #include <java/io/IOException.h>
 #include <java/io/OutputStreamWriter.h>
 #include <java/io/Writer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SwingUtilities.h>
 #include <jcpp.h>
 
@@ -83,8 +74,7 @@ void JEditorPaneTest::main($StringArray* args) {
 			file->delete$();
 			$throwNew($RuntimeException, "Test Failed"_s);
 		}
-	} catch ($IOException&) {
-		$var($IOException, ex, $catch());
+	} catch ($IOException& ex) {
 		$throwNew($RuntimeException, $$str({"Failed to create File"_s, ex}));
 	}
 }
@@ -97,8 +87,7 @@ void JEditorPaneTest::writeFile($File* file) {
 		$var($BufferedWriter, bw, $new($BufferedWriter, fw));
 		bw->write("Test Text"_s);
 		bw->close();
-	} catch ($IOException&) {
-		$var($IOException, ex, $catch());
+	} catch ($IOException& ex) {
 		$throwNew($RuntimeException, $$str({"Failed to write File"_s, ex}));
 	}
 }

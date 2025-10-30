@@ -1,19 +1,8 @@
 #include <javax/swing/text/html/CSS$FontSize.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/AttributeSet.h>
 #include <javax/swing/text/StyleConstants.h>
 #include <javax/swing/text/View.h>
@@ -125,7 +114,6 @@ int32_t CSS$FontSize::getValue($AttributeSet* a, $StyleSheet* ss$renamed) {
 }
 
 $Object* CSS$FontSize::parseCssValue($String* value) {
-	$useLocalCurrentObjectStackCache();
 	$var(CSS$FontSize, fs, $new(CSS$FontSize, this->this$0));
 	$set(fs, svalue, value);
 	try {
@@ -153,8 +141,7 @@ $Object* CSS$FontSize::parseCssValue($String* value) {
 		} else {
 			$set(fs, lu, $new($CSS$LengthUnit, value, (int16_t)1, 1.0f));
 		}
-	} catch ($NumberFormatException&) {
-		$var($NumberFormatException, nfe, $catch());
+	} catch ($NumberFormatException& nfe) {
 		$assign(fs, nullptr);
 	}
 	return $of(fs);
@@ -186,8 +173,7 @@ $Object* CSS$FontSize::parseHtmlValue($String* value) {
 			}
 			fs->index = true;
 		}
-	} catch ($NumberFormatException&) {
-		$var($NumberFormatException, nfe, $catch());
+	} catch ($NumberFormatException& nfe) {
 		$assign(fs, nullptr);
 	}
 	return $of(fs);

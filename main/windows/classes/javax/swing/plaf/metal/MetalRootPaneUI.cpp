@@ -9,16 +9,6 @@
 #include <java/awt/event/MouseListener.h>
 #include <java/awt/event/MouseMotionListener.h>
 #include <java/beans/PropertyChangeEvent.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JLayeredPane.h>
 #include <javax/swing/JRootPane.h>
@@ -143,9 +133,7 @@ $Object* allocate$MetalRootPaneUI($Class* clazz) {
 	return $of($alloc(MetalRootPaneUI));
 }
 
-
 $StringArray* MetalRootPaneUI::borderKeys = nullptr;
-
 $ints* MetalRootPaneUI::cursorMapping = nullptr;
 
 void MetalRootPaneUI::init$() {

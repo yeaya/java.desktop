@@ -47,36 +47,15 @@
 #include <java/io/InputStream.h>
 #include <java/io/OutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Byte.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Number.h>
 #include <java/lang/NumberFormatException.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/Short.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/AbstractCollection.h>
@@ -555,8 +534,7 @@ bool SoftSynthesizer::loadSamples($List* instruments) {
 	}
 	try {
 		$ModelByteBuffer::loadAll(buffers);
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		return false;
 	}
 	return true;
@@ -951,8 +929,8 @@ $Soundbank* SoftSynthesizer::getDefaultSoundbank() {
 							$var($Throwable, var$0, nullptr);
 							try {
 								$assign(sbk, $MidiSystem::getSoundbank(static_cast<$InputStream*>($$new($BufferedInputStream, is))));
-							} catch ($Throwable&) {
-								$assign(var$0, $catch());
+							} catch ($Throwable& var$1) {
+								$assign(var$0, var$1);
 							} /*finally*/ {
 								$nc(is)->close();
 							}
@@ -964,16 +942,14 @@ $Soundbank* SoftSynthesizer::getDefaultSoundbank() {
 							$assignStatic(SoftSynthesizer::defaultSoundBank, sbk);
 							return SoftSynthesizer::defaultSoundBank;
 						}
-					} catch ($Exception&) {
-						$catch();
+					} catch ($Exception& e) {
 					}
 				}
 			}
 		}
 		try {
 			$assignStatic(SoftSynthesizer::defaultSoundBank, $EmergencySoundbank::createSoundbank());
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& e) {
 		}
 		if (SoftSynthesizer::defaultSoundBank != nullptr) {
 			$var($OutputStream, out, $cast($OutputStream, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new(SoftSynthesizer$$Lambda$lambda$getDefaultSoundbank$0)))));
@@ -981,8 +957,7 @@ $Soundbank* SoftSynthesizer::getDefaultSoundbank() {
 				try {
 					$nc(($cast($SF2Soundbank, SoftSynthesizer::defaultSoundBank)))->save(out);
 					out->close();
-				} catch ($IOException&) {
-					$catch();
+				} catch ($IOException& ignored) {
 				}
 			}
 		}
@@ -1226,8 +1201,7 @@ $AudioSynthesizerPropertyInfoArray* SoftSynthesizer::getPropertyInfo($Map* info)
 										$assign(prevToken, token);
 									}
 									$set(item2, value, $new($AudioFormat, sampleRate, bits, channels, signed$, bigendian));
-								} catch ($NumberFormatException&) {
-									$catch();
+								} catch ($NumberFormatException& e) {
 								}
 							} else {
 								try {
@@ -1257,8 +1231,7 @@ $AudioSynthesizerPropertyInfoArray* SoftSynthesizer::getPropertyInfo($Map* info)
 											}
 										}
 									}
-								} catch ($NumberFormatException&) {
-									$catch();
+								} catch ($NumberFormatException& e) {
 								}
 							}
 						}
@@ -1340,8 +1313,7 @@ void SoftSynthesizer::open($SourceDataLine* line$renamed, $Map* info) {
 			int32_t controlbuffersize = 512;
 			try {
 				controlbuffersize = $nc(ais)->available();
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& e) {
 			}
 			int32_t buffersize = $nc(line)->getBufferSize();
 			buffersize -= $mod(buffersize, controlbuffersize);
@@ -1361,24 +1333,21 @@ void SoftSynthesizer::open($SourceDataLine* line$renamed, $Map* info) {
 				$set($nc(this->weakstream), pusher, this->pusher);
 				$set($nc(this->weakstream), sourceDataLine, this->sourceDataLine);
 			}
-		} catch ($LineUnavailableException&) {
-			$var($Exception, e, $catch());
+		} catch ($LineUnavailableException& e) {
 			if (isOpen()) {
 				close();
 			}
 			$var($MidiUnavailableException, ex, $new($MidiUnavailableException, "Can not open line"_s));
 			ex->initCause(e);
 			$throw(ex);
-		} catch ($SecurityException&) {
-			$var($Exception, e, $catch());
+		} catch ($SecurityException& e) {
 			if (isOpen()) {
 				close();
 			}
 			$var($MidiUnavailableException, ex, $new($MidiUnavailableException, "Can not open line"_s));
 			ex->initCause(e);
 			$throw(ex);
-		} catch ($IllegalArgumentException&) {
-			$var($Exception, e, $catch());
+		} catch ($IllegalArgumentException& e) {
 			if (isOpen()) {
 				close();
 			}
@@ -1483,8 +1452,7 @@ void SoftSynthesizer::close() {
 		pusher_to_be_closed->stop();
 		try {
 			$nc(pusher_stream_to_be_closed)->close();
-		} catch ($IOException&) {
-			$catch();
+		} catch ($IOException& e) {
 		}
 	}
 	$synchronized(this->control_mutex) {
@@ -1603,8 +1571,7 @@ $Properties* SoftSynthesizer::lambda$getStoredProperties$1() {
 				}
 			}
 		}
-	} catch ($BackingStoreException&) {
-		$catch();
+	} catch ($BackingStoreException& ignored) {
 	}
 	return p;
 }
@@ -1624,8 +1591,7 @@ $OutputStream* SoftSynthesizer::lambda$getDefaultSoundbank$0() {
 			return nullptr;
 		}
 		return $new($FileOutputStream, emg_soundbank_file);
-	} catch ($FileNotFoundException&) {
-		$catch();
+	} catch ($FileNotFoundException& ignored) {
 	}
 	return nullptr;
 }

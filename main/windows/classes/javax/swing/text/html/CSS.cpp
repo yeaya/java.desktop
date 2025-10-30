@@ -6,22 +6,8 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/MalformedURLException.h>
 #include <java/net/URL.h>
 #include <java/util/Enumeration.h>
@@ -334,13 +320,9 @@ $Object* allocate$CSS($Class* clazz) {
 
 $Hashtable* CSS::attributeMap = nullptr;
 $Hashtable* CSS::valueMap = nullptr;
-
 $Hashtable* CSS::htmlAttrToCssAttrMap = nullptr;
-
 $Hashtable* CSS::styleConstantToCssMap = nullptr;
-
 $Hashtable* CSS::htmlValueToCssValueMap = nullptr;
-
 $Hashtable* CSS::cssValueToInternalValueMap = nullptr;
 int32_t CSS::baseFontSizeIndex = 0;
 
@@ -654,7 +636,6 @@ $AttributeSet* CSS::translateHTMLToCSS($AttributeSet* htmlAttrSet) {
 
 int32_t CSS::getTableBorder($AttributeSet* tableAttr) {
 	$init(CSS);
-	$useLocalCurrentObjectStackCache();
 	$init($HTML$Attribute);
 	$var($String, borderValue, $cast($String, $nc(tableAttr)->getAttribute($HTML$Attribute::BORDER)));
 	$init($HTML);
@@ -663,8 +644,7 @@ int32_t CSS::getTableBorder($AttributeSet* tableAttr) {
 	}
 	try {
 		return $Integer::parseInt(borderValue);
-	} catch ($NumberFormatException&) {
-		$var($NumberFormatException, e, $catch());
+	} catch ($NumberFormatException& e) {
 		return 0;
 	}
 	$shouldNotReachHere();
@@ -704,15 +684,13 @@ $URL* CSS::getURL($URL* base, $String* cssString$renamed) {
 		if (url != nullptr) {
 			return url;
 		}
-	} catch ($MalformedURLException&) {
-		$catch();
+	} catch ($MalformedURLException& mue) {
 	}
 	if (base != nullptr) {
 		try {
 			$var($URL, url, $new($URL, base, cssString));
 			return url;
-		} catch ($MalformedURLException&) {
-			$catch();
+		} catch ($MalformedURLException& muee) {
 		}
 	}
 	return nullptr;
@@ -776,8 +754,7 @@ $Color* CSS::hexToColor($String* value) {
 	$var($Color, c, nullptr);
 	try {
 		$assign(c, $Color::decode(hstr));
-	} catch ($NumberFormatException&) {
-		$var($NumberFormatException, nfe, $catch());
+	} catch ($NumberFormatException& nfe) {
 		$assign(c, nullptr);
 	}
 	return c;
@@ -893,8 +870,7 @@ float CSS::getColorComponent($String* string, $ints* index) {
 				value = value * 255.0f / 100.0f;
 			}
 			return $Math::min(255.0f, $Math::max((float)0, value));
-		} catch ($NumberFormatException&) {
-			$catch();
+		} catch ($NumberFormatException& nfe) {
 		}
 	}
 	return (float)0;
@@ -1388,8 +1364,7 @@ void clinit$CSS($Class* class$) {
 					}
 				}
 			}
-		} catch ($Throwable&) {
-			$var($Throwable, e, $catch());
+		} catch ($Throwable& e) {
 			e->printStackTrace();
 		}
 		$assign(keys, $CSS$Value::allValues);
@@ -1405,8 +1380,7 @@ void clinit$CSS($Class* class$) {
 					}
 				}
 			}
-		} catch ($Throwable&) {
-			$var($Throwable, e, $catch());
+		} catch ($Throwable& e) {
 			e->printStackTrace();
 		}
 	}

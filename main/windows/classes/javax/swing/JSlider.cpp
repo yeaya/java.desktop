@@ -9,20 +9,6 @@
 #include <java/awt/Image.h>
 #include <java/beans/PropertyChangeListener.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Dictionary.h>
 #include <java/util/Enumeration.h>
 #include <java/util/EventListener.h>
@@ -112,6 +98,7 @@ $NamedAttribute JSlider_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JSlider_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JSlider_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JSlider_Attribute_var$1},
@@ -345,7 +332,6 @@ $CompoundAttribute _JSlider_MethodAnnotations_setValueIsAdjusting52[] = {
 	{}
 };
 
-
 $FieldInfo _JSlider_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JSlider, uiClassID)},
 	{"paintTicks", "Z", nullptr, $PRIVATE, $field(JSlider, paintTicks)},
@@ -475,7 +461,6 @@ $Object* JSlider::clone() {
 void JSlider::finalize() {
 	this->$JComponent::finalize();
 }
-
 
 $String* JSlider::uiClassID = nullptr;
 

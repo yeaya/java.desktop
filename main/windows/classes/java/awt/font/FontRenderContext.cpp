@@ -3,16 +3,7 @@
 #include <java/awt/RenderingHints$Key.h>
 #include <java/awt/RenderingHints.h>
 #include <java/awt/geom/AffineTransform.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef KEY_FRACTIONALMETRICS
@@ -116,8 +107,7 @@ void FontRenderContext::init$($AffineTransform* tx, Object$* aaHint, Object$* fm
 		} else {
 			$throwNew($IllegalArgumentException, $$str({"AA hint:"_s, aaHint}));
 		}
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($IllegalArgumentException, $$str({"AA hint:"_s, aaHint}));
 	}
 	try {
@@ -127,8 +117,7 @@ void FontRenderContext::init$($AffineTransform* tx, Object$* aaHint, Object$* fm
 		} else {
 			$throwNew($IllegalArgumentException, $$str({"FM hint:"_s, fmHint}));
 		}
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($IllegalArgumentException, $$str({"FM hint:"_s, fmHint}));
 	}
 }
@@ -196,8 +185,7 @@ $Object* FontRenderContext::getFractionalMetricsHint() {
 bool FontRenderContext::equals(Object$* obj) {
 	try {
 		return equals($cast(FontRenderContext, obj));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		return false;
 	}
 	$shouldNotReachHere();

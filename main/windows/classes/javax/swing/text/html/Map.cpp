@@ -1,18 +1,6 @@
 #include <javax/swing/text/html/Map.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/StringTokenizer.h>
 #include <java/util/Vector.h>
 #include <javax/swing/text/AttributeSet.h>
@@ -185,8 +173,7 @@ $Map$RegionContainment* Map::createRegionContainment($AttributeSet* attributes) 
 			} else if (shapeString->equals("default"_s)) {
 				$assign(rc, $Map$DefaultRegionContainment::sharedInstance());
 			}
-		} catch ($RuntimeException&) {
-			$var($RuntimeException, re, $catch());
+		} catch ($RuntimeException& re) {
 			$assign(rc, nullptr);
 		}
 		return rc;
@@ -222,8 +209,7 @@ $ints* Map::extractCoords(Object$* stringCoords) {
 				$assign(retValue, temp);
 			}
 			$nc(retValue)->set(numCoords++, intValue * scale);
-		} catch ($NumberFormatException&) {
-			$var($NumberFormatException, nfe, $catch());
+		} catch ($NumberFormatException& nfe) {
 			return nullptr;
 		}
 	}

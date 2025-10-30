@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/OrientationRequested.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -90,17 +82,11 @@ void OrientationRequested::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 OrientationRequested* OrientationRequested::PORTRAIT = nullptr;
-
 OrientationRequested* OrientationRequested::LANDSCAPE = nullptr;
-
 OrientationRequested* OrientationRequested::REVERSE_LANDSCAPE = nullptr;
-
 OrientationRequested* OrientationRequested::REVERSE_PORTRAIT = nullptr;
-
 $StringArray* OrientationRequested::myStringTable = nullptr;
-
 $OrientationRequestedArray* OrientationRequested::myEnumValueTable = nullptr;
 
 void OrientationRequested::init$(int32_t value) {

@@ -8,14 +8,6 @@
 #include <java/beans/beancontext/BeanContextServices.h>
 #include <java/beans/beancontext/BeanContextServicesSupport$BCSSChild.h>
 #include <java/beans/beancontext/BeanContextServicesSupport.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Iterator.h>
 #include <java/util/TooManyListenersException.h>
 #include <jcpp.h>
@@ -111,12 +103,10 @@ void BeanContextServicesSupport$BCSSProxyServiceProvider::init$($BeanContextServ
 }
 
 $Object* BeanContextServicesSupport$BCSSProxyServiceProvider::getService($BeanContextServices* bcs, Object$* requestor, $Class* serviceClass, Object$* serviceSelector) {
-	$useLocalCurrentObjectStackCache();
 	$var($Object, service, nullptr);
 	try {
 		$assign(service, $nc(this->nestingCtxt)->getService(bcs, requestor, serviceClass, serviceSelector, this));
-	} catch ($TooManyListenersException&) {
-		$var($TooManyListenersException, tmle, $catch());
+	} catch ($TooManyListenersException& tmle) {
 		return $of(nullptr);
 	}
 	return $of(service);

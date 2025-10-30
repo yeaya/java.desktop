@@ -9,26 +9,13 @@
 #include <java/awt/event/ActionListener.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JMenu.h>
 #include <javax/swing/JMenuBar.h>
@@ -231,8 +218,8 @@ void bug6249972::main($StringArray* args) {
 			$nc(bug6249972::robot)->waitForIdle();
 			$nc(bug6249972::robot)->delay(1000);
 			bugTest->test();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (bug6249972::frame != nullptr) {
 				$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug6249972$$Lambda$lambda$main$0)));
@@ -268,7 +255,6 @@ void bug6249972::test() {
 	if (!this->testPassed) {
 		$throwNew($RuntimeException, "JMenuItem(String,int) does not handle lower-case mnemonics properly."_s);
 	}
-	$init($System);
 	$nc($System::out)->println("Test passed"_s);
 }
 

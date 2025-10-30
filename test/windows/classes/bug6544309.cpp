@@ -9,20 +9,7 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/ActionListener.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JDialog.h>
 #include <javax/swing/JMenuItem.h>
 #include <javax/swing/JPopupMenu.h>
@@ -117,10 +104,9 @@ void bug6544309::main($StringArray* args) {
 			$nc(bug6544309::robot)->waitForIdle();
 			$nc(bug6544309::robot)->delay(1000);
 			test->test();
-			$init($System);
 			$nc($System::out)->println("Test passed"_s);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (test->dialog != nullptr) {
 				$nc(test->dialog)->dispose();
@@ -155,7 +141,6 @@ void bug6544309::test() {
 
 void bug6544309::testImpl() {
 	$nc(bug6544309::robot)->waitForIdle();
-	$init($System);
 	$nc($System::out)->println("Pressing DOWN ARROW"_s);
 	$nc(bug6544309::robot)->keyPress($KeyEvent::VK_DOWN);
 	$nc(bug6544309::robot)->keyRelease($KeyEvent::VK_DOWN);

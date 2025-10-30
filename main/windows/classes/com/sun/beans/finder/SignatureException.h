@@ -25,8 +25,10 @@ public:
 	::java::lang::NoSuchMethodException* toNoSuchMethodException($String* message);
 	static const int64_t serialVersionUID = (int64_t)0x3EF375688C7AA749;
 	SignatureException(const SignatureException& e);
-	SignatureException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline SignatureException* operator ->() {
+		return (SignatureException*)throwing$;
+	}
 };
 
 			} // finder

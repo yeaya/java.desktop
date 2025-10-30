@@ -10,14 +10,6 @@
 #include <java/awt/event/MouseEvent.h>
 #include <java/awt/event/MouseWheelEvent.h>
 #include <java/beans/PropertyChangeEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/ComboBoxEditor.h>
 #include <javax/swing/ComboBoxModel.h>
 #include <javax/swing/JComboBox.h>

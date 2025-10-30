@@ -1,15 +1,6 @@
 #include <java/awt/color/ICC_ProfileRGB.h>
 
 #include <java/awt/color/ICC_Profile.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/cmm/Profile.h>
 #include <sun/java2d/cmm/ProfileDeferralInfo.h>
 #include <jcpp.h>

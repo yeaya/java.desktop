@@ -1,14 +1,5 @@
 #include <javax/swing/tree/DefaultMutableTreeNode$PathBetweenNodesEnumeration.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EmptyStackException.h>
 #include <java/util/NoSuchElementException.h>
 #include <java/util/Stack.h>
@@ -97,8 +88,7 @@ bool DefaultMutableTreeNode$PathBetweenNodesEnumeration::hasMoreElements() {
 $Object* DefaultMutableTreeNode$PathBetweenNodesEnumeration::nextElement() {
 	try {
 		return $of($cast($TreeNode, $nc(this->stack)->pop()));
-	} catch ($EmptyStackException&) {
-		$var($EmptyStackException, e, $catch());
+	} catch ($EmptyStackException& e) {
 		$throwNew($NoSuchElementException, "No more elements"_s);
 	}
 	$shouldNotReachHere();

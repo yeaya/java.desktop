@@ -4,16 +4,8 @@
 #include <java/awt/font/FontRenderContext.h>
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/geom/Point2D$Float.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/ref/SoftReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/ConcurrentHashMap.h>
 #include <sun/font/Font2D.h>
 #include <sun/font/FontStrikeDesc.h>

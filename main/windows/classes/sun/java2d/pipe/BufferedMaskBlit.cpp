@@ -2,16 +2,7 @@
 
 #include <java/awt/AlphaComposite.h>
 #include <java/awt/Composite.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SurfaceData.h>
 #include <sun/java2d/loops/Blit.h>
 #include <sun/java2d/loops/CompositeType.h>
@@ -139,8 +130,8 @@ void BufferedMaskBlit::MaskBlit$($SurfaceData* src, $SurfaceData* dst, $Composit
 			$var($SurfaceData, var$5, src);
 			int32_t newpos = enqueueTile(var$3, var$4, var$5, $nc(src)->getNativeOps(), this->srcTypeVal, mask, $nc(mask)->length, maskoff, maskscan, srcx, srcy, dstx, dsty, width, height);
 			$nc(buf)->position(newpos);
-		} catch ($Throwable&) {
-			$assign(var$2, $catch());
+		} catch ($Throwable& var$6) {
+			$assign(var$2, var$6);
 		} /*finally*/ {
 			$nc(this->rq)->unlock();
 		}

@@ -9,15 +9,6 @@
 #include <java/awt/LayoutManager.h>
 #include <java/awt/Rectangle.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/CellRendererPane$AccessibleCellRendererPane.h>
 #include <javax/swing/JComponent.h>
@@ -164,8 +155,8 @@ void CellRendererPane::paintComponent($Graphics* g, $Component* c, $Container* p
 		$var($Throwable, var$0, nullptr);
 		try {
 			c->paint(cg);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(cg)->dispose();
 		}

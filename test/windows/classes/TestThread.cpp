@@ -2,16 +2,7 @@
 
 #include <java/awt/Robot.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef VK_ESCAPE
@@ -59,8 +50,7 @@ void TestThread::run() {
 		$nc(this->testRobot)->keyPress($KeyEvent::VK_ESCAPE);
 		$nc(this->testRobot)->delay(20);
 		$nc(this->testRobot)->keyRelease($KeyEvent::VK_ESCAPE);
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, ex, $catch());
+	} catch ($InterruptedException& ex) {
 		$throwNew($RuntimeException, "Exception in TestThread"_s);
 	}
 }

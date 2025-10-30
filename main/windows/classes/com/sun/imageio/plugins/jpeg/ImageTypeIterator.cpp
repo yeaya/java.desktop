@@ -1,13 +1,6 @@
 #include <com/sun/imageio/plugins/jpeg/ImageTypeIterator.h>
 
 #include <com/sun/imageio/plugins/jpeg/ImageTypeProducer.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Iterator.h>
 #include <java/util/NoSuchElementException.h>
 #include <javax/imageio/ImageTypeSpecifier.h>

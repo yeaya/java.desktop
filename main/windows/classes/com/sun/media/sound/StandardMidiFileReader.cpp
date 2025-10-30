@@ -7,15 +7,6 @@
 #include <java/io/FileInputStream.h>
 #include <java/io/FilterInputStream.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <javax/sound/midi/InvalidMidiDataException.h>
 #include <javax/sound/midi/MidiFileFormat.h>
@@ -166,8 +157,8 @@ $MidiFileFormat* StandardMidiFileReader::getMidiFileFormatFromStream($InputStrea
 				dis->skip(bytesRemaining);
 				smfParser->tracks = numtracks;
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (smfParser == nullptr) {
 				$nc(dis)->reset();
@@ -190,8 +181,8 @@ $MidiFileFormat* StandardMidiFileReader::getMidiFileFormat($URL* url) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$assign(fileFormat, getMidiFileFormat(static_cast<$InputStream*>(bis)));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			bis->close();
 		}
@@ -215,8 +206,8 @@ $MidiFileFormat* StandardMidiFileReader::getMidiFileFormat($File* file) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$assign(fileFormat, getMidiFileFormatFromStream(bis, (int32_t)length, nullptr));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			bis->close();
 		}
@@ -256,8 +247,8 @@ $Sequence* StandardMidiFileReader::getSequence($URL* url) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$assign(seq, getSequence(is));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			is->close();
 		}
@@ -277,8 +268,8 @@ $Sequence* StandardMidiFileReader::getSequence($File* file) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$assign(seq, getSequence(is));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			is->close();
 		}

@@ -1,15 +1,7 @@
 #include <sun/awt/util/IdentityLinkedList$ListItr.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ConcurrentModificationException.h>
 #include <java/util/NoSuchElementException.h>
 #include <sun/awt/util/IdentityLinkedList$Entry.h>
@@ -125,7 +117,7 @@ $Object* IdentityLinkedList$ListItr::previous() {
 	if (this->nextIndex$ == 0) {
 		$throwNew($NoSuchElementException);
 	}
-	$set(this, lastReturned, ($assignField(this, next$, $nc(this->next$)->previous)));
+	$set(this, lastReturned, ($set(this, next$, $nc(this->next$)->previous)));
 	--this->nextIndex$;
 	checkForComodification();
 	return $of($nc(this->lastReturned)->element);
@@ -140,13 +132,11 @@ int32_t IdentityLinkedList$ListItr::previousIndex() {
 }
 
 void IdentityLinkedList$ListItr::remove() {
-	$useLocalCurrentObjectStackCache();
 	checkForComodification();
 	$var($IdentityLinkedList$Entry, lastNext, $nc(this->lastReturned)->next);
 	try {
 		this->this$0->remove(this->lastReturned);
-	} catch ($NoSuchElementException&) {
-		$var($NoSuchElementException, e, $catch());
+	} catch ($NoSuchElementException& e) {
 		$throwNew($IllegalStateException);
 	}
 	if (this->next$ == this->lastReturned) {

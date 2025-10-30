@@ -1,16 +1,6 @@
 #include <javax/swing/text/html/CSS$FontWeight.h>
 
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/StyleConstants.h>
 #include <javax/swing/text/View.h>
 #include <javax/swing/text/html/CSS$CssValue.h>
@@ -87,7 +77,6 @@ int32_t CSS$FontWeight::getValue() {
 }
 
 $Object* CSS$FontWeight::parseCssValue($String* value) {
-	$useLocalCurrentObjectStackCache();
 	$var(CSS$FontWeight, fw, $new(CSS$FontWeight));
 	$set(fw, svalue, value);
 	if ($nc(value)->equals("bold"_s)) {
@@ -97,8 +86,7 @@ $Object* CSS$FontWeight::parseCssValue($String* value) {
 	} else {
 		try {
 			fw->weight = $Integer::parseInt(value);
-		} catch ($NumberFormatException&) {
-			$var($NumberFormatException, nfe, $catch());
+		} catch ($NumberFormatException& nfe) {
 			$assign(fw, nullptr);
 		}
 	}

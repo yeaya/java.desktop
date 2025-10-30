@@ -1,17 +1,6 @@
 #include <Util$2.h>
 
 #include <Util.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/List.h>
 #include <java/util/concurrent/Callable.h>
 #include <jcpp.h>
@@ -79,11 +68,9 @@ void Util$2::init$($List* val$result, $Callable* val$task, $ExceptionArray* val$
 }
 
 void Util$2::run() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$nc(this->val$result)->add($($nc(this->val$task)->call()));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$nc(this->val$exception)->set(0, e);
 	}
 }

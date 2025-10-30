@@ -5,16 +5,7 @@
 #include <java/awt/Stroke.h>
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/geom/Path2D$Float.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/InvalidPipeException.h>
 #include <sun/java2d/SunGraphics2D.h>
 #include <sun/java2d/SurfaceData.h>
@@ -170,8 +161,7 @@ void GDIRenderer::drawLine($SunGraphics2D* sg2d, int32_t x1, int32_t y1, int32_t
 	int32_t transy = sg2d->transY;
 	try {
 		doDrawLine($cast($GDIWindowSurfaceData, sg2d->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x1 + transx, y1 + transy, x2 + transx, y2 + transy);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, sg2d->surfaceData}));
 	}
 }
@@ -186,8 +176,7 @@ void GDIRenderer::drawRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w
 	$useLocalCurrentObjectStackCache();
 	try {
 		doDrawRect($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 }
@@ -202,8 +191,7 @@ void GDIRenderer::drawRoundRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int3
 	$useLocalCurrentObjectStackCache();
 	try {
 		doDrawRoundRect($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height, arcWidth, arcHeight);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 }
@@ -218,8 +206,7 @@ void GDIRenderer::drawOval($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w
 	$useLocalCurrentObjectStackCache();
 	try {
 		doDrawOval($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 }
@@ -234,8 +221,7 @@ void GDIRenderer::drawArc($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t wi
 	$useLocalCurrentObjectStackCache();
 	try {
 		doDrawArc($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height, startAngle, arcAngle);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 }
@@ -250,8 +236,7 @@ void GDIRenderer::drawPolyline($SunGraphics2D* sg2d, $ints* xpoints, $ints* ypoi
 	$useLocalCurrentObjectStackCache();
 	try {
 		doDrawPoly($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, sg2d->transX, sg2d->transY, xpoints, ypoints, npoints, false);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 }
@@ -260,8 +245,7 @@ void GDIRenderer::drawPolygon($SunGraphics2D* sg2d, $ints* xpoints, $ints* ypoin
 	$useLocalCurrentObjectStackCache();
 	try {
 		doDrawPoly($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, sg2d->transX, sg2d->transY, xpoints, ypoints, npoints, true);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 }
@@ -276,8 +260,7 @@ void GDIRenderer::fillRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w
 	$useLocalCurrentObjectStackCache();
 	try {
 		doFillRect($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 }
@@ -292,8 +275,7 @@ void GDIRenderer::fillRoundRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int3
 	$useLocalCurrentObjectStackCache();
 	try {
 		doFillRoundRect($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height, arcWidth, arcHeight);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 }
@@ -308,8 +290,7 @@ void GDIRenderer::fillOval($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w
 	$useLocalCurrentObjectStackCache();
 	try {
 		doFillOval($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 }
@@ -324,8 +305,7 @@ void GDIRenderer::fillArc($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t wi
 	$useLocalCurrentObjectStackCache();
 	try {
 		doFillArc($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, x + sg2d->transX, y + sg2d->transY, width, height, startAngle, arcAngle);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 }
@@ -340,8 +320,7 @@ void GDIRenderer::fillPolygon($SunGraphics2D* sg2d, $ints* xpoints, $ints* ypoin
 	$useLocalCurrentObjectStackCache();
 	try {
 		doFillPoly($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, sg2d->transX, sg2d->transY, xpoints, ypoints, npoints);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 }
@@ -372,8 +351,7 @@ void GDIRenderer::doShape($SunGraphics2D* sg2d, $Shape* s, bool isfill) {
 	}
 	try {
 		doShape($cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData), $(sg2d->getCompClip()), sg2d->composite, sg2d->eargb, transX, transY, p2df, isfill);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 }
@@ -384,8 +362,7 @@ void GDIRenderer::doFillSpans($SunGraphics2D* sg2d, $SpanIterator* si) {
 	$var($GDIWindowSurfaceData, sd, nullptr);
 	try {
 		$assign(sd, $cast($GDIWindowSurfaceData, $nc(sg2d)->surfaceData));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 	$var($Region, clip, $nc(sg2d)->getCompClip());
@@ -406,8 +383,8 @@ void GDIRenderer::draw($SunGraphics2D* sg2d, $Shape* s) {
 			$var($Throwable, var$0, nullptr);
 			try {
 				doFillSpans(sg2d, si);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(si)->dispose();
 			}

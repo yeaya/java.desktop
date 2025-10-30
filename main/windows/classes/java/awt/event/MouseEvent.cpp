@@ -10,16 +10,6 @@
 #include <java/awt/event/MouseEvent$1.h>
 #include <java/awt/event/NativeLibLoader.h>
 #include <java/io/ObjectInputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/AWTAccessor$MouseEventAccessor.h>
 #include <sun/awt/AWTAccessor.h>
 #include <sun/awt/SunToolkit.h>
@@ -160,7 +150,6 @@ $Object* allocate$MouseEvent($Class* clazz) {
 	return $of($alloc(MouseEvent));
 }
 
-
 int32_t MouseEvent::cachedNumberOfButtons = 0;
 
 void MouseEvent::initIDs() {
@@ -183,15 +172,13 @@ int32_t MouseEvent::getYOnScreen() {
 }
 
 void MouseEvent::init$($Component* source, int32_t id, int64_t when, int32_t modifiers, int32_t x, int32_t y, int32_t clickCount, bool popupTrigger, int32_t button) {
-	$useLocalCurrentObjectStackCache();
 	MouseEvent::init$(source, id, when, modifiers, x, y, 0, 0, clickCount, popupTrigger, button);
 	$var($Point, eventLocationOnScreen, $new($Point, 0, 0));
 	try {
 		$assign(eventLocationOnScreen, $nc(source)->getLocationOnScreen());
 		this->xAbs = $nc(eventLocationOnScreen)->x + x;
 		this->yAbs = eventLocationOnScreen->y + y;
-	} catch ($IllegalComponentStateException&) {
-		$var($IllegalComponentStateException, e, $catch());
+	} catch ($IllegalComponentStateException& e) {
 		this->xAbs = 0;
 		this->yAbs = 0;
 	}

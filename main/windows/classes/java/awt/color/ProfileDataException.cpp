@@ -1,13 +1,5 @@
 #include <java/awt/color/ProfileDataException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -49,16 +41,10 @@ void ProfileDataException::init$($String* s) {
 ProfileDataException::ProfileDataException() {
 }
 
-ProfileDataException::ProfileDataException(const ProfileDataException& e) {
+ProfileDataException::ProfileDataException(const ProfileDataException& e) : $RuntimeException(e) {
 }
 
-ProfileDataException ProfileDataException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void ProfileDataException::throwWrapper$() {
-	$pendingException(this);
+void ProfileDataException::throw$() {
 	throw *this;
 }
 

@@ -13,20 +13,6 @@
 #include <java/awt/event/ComponentAdapter.h>
 #include <java/awt/event/ComponentListener.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/ColorChooserDialog$DisposeOnClose.h>
@@ -103,6 +89,7 @@ $NamedAttribute JColorChooser_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JColorChooser_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JColorChooser_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JColorChooser_Attribute_var$1},
@@ -194,7 +181,6 @@ $CompoundAttribute _JColorChooser_MethodAnnotations_setUI22[] = {
 	{"Ljava/beans/BeanProperty;", JColorChooser_Attribute_var$9},
 	{}
 };
-
 
 $FieldInfo _JColorChooser_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JColorChooser, uiClassID)},
@@ -289,13 +275,9 @@ void JColorChooser::finalize() {
 	this->$JComponent::finalize();
 }
 
-
 $String* JColorChooser::uiClassID = nullptr;
-
 $String* JColorChooser::SELECTION_MODEL_PROPERTY = nullptr;
-
 $String* JColorChooser::PREVIEW_PANEL_PROPERTY = nullptr;
-
 $String* JColorChooser::CHOOSER_PANELS_PROPERTY = nullptr;
 
 $Color* JColorChooser::showDialog($Component* component, $String* title, $Color* initialColor) {

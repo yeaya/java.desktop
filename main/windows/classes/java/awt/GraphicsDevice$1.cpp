@@ -2,16 +2,7 @@
 
 #include <java/awt/GraphicsDevice$WindowTranslucency.h>
 #include <java/awt/GraphicsDevice.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef PERPIXEL_TRANSLUCENT
@@ -74,18 +65,15 @@ void clinit$GraphicsDevice$1($Class* class$) {
 	{
 		try {
 			$nc(GraphicsDevice$1::$SwitchMap$java$awt$GraphicsDevice$WindowTranslucency)->set($GraphicsDevice$WindowTranslucency::PERPIXEL_TRANSPARENT->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(GraphicsDevice$1::$SwitchMap$java$awt$GraphicsDevice$WindowTranslucency)->set($GraphicsDevice$WindowTranslucency::TRANSLUCENT->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(GraphicsDevice$1::$SwitchMap$java$awt$GraphicsDevice$WindowTranslucency)->set($GraphicsDevice$WindowTranslucency::PERPIXEL_TRANSLUCENT->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

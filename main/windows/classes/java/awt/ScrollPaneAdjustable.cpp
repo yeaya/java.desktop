@@ -12,17 +12,7 @@
 #include <java/awt/event/AdjustmentListener.h>
 #include <java/awt/peer/ComponentPeer.h>
 #include <java/awt/peer/ScrollPanePeer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <sun/awt/AWTAccessor$ScrollPaneAdjustableAccessor.h>
 #include <sun/awt/AWTAccessor.h>
@@ -150,7 +140,6 @@ $Object* ScrollPaneAdjustable::clone() {
 void ScrollPaneAdjustable::finalize() {
 	this->$Adjustable::finalize();
 }
-
 
 $String* ScrollPaneAdjustable::SCROLLPANE_ONLY = nullptr;
 

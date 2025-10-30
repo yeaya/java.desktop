@@ -11,20 +11,8 @@
 #include <java/awt/image/BufferedImage.h>
 #include <java/beans/PropertyChangeEvent.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/AbstractMap.h>
@@ -204,7 +192,6 @@ $ClassInfo _NimbusLookAndFeel_ClassInfo_ = {
 $Object* allocate$NimbusLookAndFeel($Class* clazz) {
 	return $of($alloc(NimbusLookAndFeel));
 }
-
 
 $StringArray* NimbusLookAndFeel::COMPONENT_KEYS = nullptr;
 

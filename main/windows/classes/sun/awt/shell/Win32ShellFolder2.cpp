@@ -8,29 +8,15 @@
 #include <java/io/FileNotFoundException.h>
 #include <java/io/IOException.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/Long.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/HashMap.h>
 #include <java/util/Iterator.h>
@@ -679,8 +665,7 @@ int64_t Win32ShellFolder2::getIShellFolder() {
 		try {
 			$load($RuntimeException);
 			$nc(this->disposer)->pIShellFolder = $nc(($cast($Long, $(invoke($$new($Win32ShellFolder2$4, this), $RuntimeException::class$)))))->longValue();
-		} catch ($InterruptedException&) {
-			$catch();
+		} catch ($InterruptedException& e) {
 		}
 	}
 	return $nc(this->disposer)->pIShellFolder;
@@ -748,8 +733,7 @@ bool Win32ShellFolder2::equals(Object$* o) {
 	if (this->parent == $nc(rhs)->parent || $nc(this->parent)->equals($nc(rhs)->parent)) {
 		try {
 			return pidlsEqual(getParentIShellFolder(), $nc(this->disposer)->relativePIDL, $nc($nc(rhs)->disposer)->relativePIDL);
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, e, $catch());
+		} catch ($InterruptedException& e) {
 			return false;
 		}
 	}
@@ -931,8 +915,7 @@ $FileArray* Win32ShellFolder2::listFiles(bool includeHiddenFiles) {
 		$load($InterruptedException);
 		$var($FileArray, files, $cast($FileArray, invoke($$new($Win32ShellFolder2$9, this, includeHiddenFiles), $InterruptedException::class$)));
 		return $Win32ShellFolderManager2::checkFiles(files);
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, e, $catch());
+	} catch ($InterruptedException& e) {
 		return $new($FileArray, 0);
 	}
 	$shouldNotReachHere();
@@ -1247,8 +1230,7 @@ $ShellFolder* Win32ShellFolder2::resolveLibrary() {
 				if ($instanceOf(Win32ShellFolder2, f) && $nc(($cast(Win32ShellFolder2, f)))->isLibrary()) {
 					try {
 						return getShellFolder($$new($File, $(getPath())));
-					} catch ($FileNotFoundException&) {
-						$catch();
+					} catch ($FileNotFoundException& e) {
 					}
 				}
 				break;

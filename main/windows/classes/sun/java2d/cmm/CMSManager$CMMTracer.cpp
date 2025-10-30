@@ -1,18 +1,6 @@
 #include <sun/java2d/cmm/CMSManager$CMMTracer.h>
 
 #include <java/awt/color/ICC_Profile.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/cmm/CMSManager.h>
 #include <sun/java2d/cmm/ColorTransform.h>
 #include <sun/java2d/cmm/PCMM.h>
@@ -86,7 +74,6 @@ void CMSManager$CMMTracer::init$($PCMM* tcmm) {
 
 $Profile* CMSManager$CMMTracer::loadProfile($bytes* data) {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::err)->print($$str({this->cName, ".loadProfile"_s}));
 	$var($Profile, p, $nc(this->tcmm)->loadProfile(data));
 	$nc($System::err)->printf("(ID=%s)\n"_s, $$new($ObjectArray, {$($of($nc($of(p))->toString()))}));
@@ -95,7 +82,6 @@ $Profile* CMSManager$CMMTracer::loadProfile($bytes* data) {
 
 $bytes* CMSManager$CMMTracer::getProfileData($Profile* p) {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::err)->print($$str({this->cName, ".getProfileData(ID="_s, p, ") "_s}));
 	$var($bytes, data, $nc(this->tcmm)->getProfileData(p));
 	$nc($System::err)->println($$str({"requested "_s, $$str($nc(data)->length), " byte(s)"_s}));
@@ -104,7 +90,6 @@ $bytes* CMSManager$CMMTracer::getProfileData($Profile* p) {
 
 $bytes* CMSManager$CMMTracer::getTagData($Profile* p, int32_t tagSignature) {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::err)->printf($$str({this->cName, ".getTagData(ID=%x, TagSig=%s)"_s}), $$new($ObjectArray, {
 		$of(p),
 		$($of(signatureToString(tagSignature)))
@@ -116,20 +101,17 @@ $bytes* CMSManager$CMMTracer::getTagData($Profile* p, int32_t tagSignature) {
 
 void CMSManager$CMMTracer::setTagData($Profile* p, int32_t tagSignature, $bytes* data) {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::err)->print($$str({this->cName, ".setTagData(ID="_s, p, ", TagSig="_s, $$str(tagSignature), ")"_s}));
 	$nc($System::err)->println($$str({" sending "_s, $$str($nc(data)->length), " byte(s)"_s}));
 	$nc(this->tcmm)->setTagData(p, tagSignature, data);
 }
 
 $ColorTransform* CMSManager$CMMTracer::createTransform($ICC_Profile* profile, int32_t renderType, int32_t transformType) {
-	$init($System);
 	$nc($System::err)->println($$str({this->cName, ".createTransform(ICC_Profile,int,int)"_s}));
 	return $nc(this->tcmm)->createTransform(profile, renderType, transformType);
 }
 
 $ColorTransform* CMSManager$CMMTracer::createTransform($ColorTransformArray* transforms) {
-	$init($System);
 	$nc($System::err)->println($$str({this->cName, ".createTransform(ColorTransform[])"_s}));
 	return $nc(this->tcmm)->createTransform(transforms);
 }

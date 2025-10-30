@@ -6,20 +6,8 @@
 #include <bug6848475$4.h>
 #include <java/awt/Rectangle.h>
 #include <java/awt/Robot.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JSlider.h>
 #include <javax/swing/SwingUtilities.h>
@@ -123,8 +111,7 @@ $Rectangle* bug6848475::getThumbRectField() {
 		$var($Field, field, $BasicSliderUI::class$->getDeclaredField("thumbRect"_s));
 		$nc(field)->setAccessible(true);
 		return $cast($Rectangle, field->get(ui));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 	$shouldNotReachHere();

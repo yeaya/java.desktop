@@ -5,15 +5,6 @@
 #include <java/awt/EventQueue.h>
 #include <java/awt/font/TextHitInfo.h>
 #include <java/io/ObjectInputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/text/CharacterIterator.h>
 #include <sun/awt/AWTAccessor$EventQueueAccessor.h>

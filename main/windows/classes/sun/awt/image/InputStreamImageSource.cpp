@@ -6,19 +6,8 @@
 #include <java/io/FilterInputStream.h>
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/image/GifImageDecoder.h>
 #include <sun/awt/image/ImageConsumerQueue.h>
 #include <sun/awt/image/ImageDecoder.h>
@@ -173,7 +162,6 @@ void InputStreamImageSource::printQueue($ImageConsumerQueue* cq$renamed, $String
 		$useLocalCurrentObjectStackCache();
 		$var($ImageConsumerQueue, cq, cq$renamed);
 		while (cq != nullptr) {
-			$init($System);
 			$nc($System::out)->println($$str({prefix, cq}));
 			$assign(cq, cq->next);
 		}
@@ -183,7 +171,6 @@ void InputStreamImageSource::printQueue($ImageConsumerQueue* cq$renamed, $String
 void InputStreamImageSource::printQueues($String* title) {
 	$synchronized(this) {
 		$useLocalCurrentObjectStackCache();
-		$init($System);
 		$nc($System::out)->println($$str({title, "[ -----------"_s}));
 		printQueue(this->consumers, "  "_s);
 		{
@@ -343,8 +330,7 @@ $ImageDecoder* InputStreamImageSource::getDecoder($InputStream* is$renamed) {
 		} else if (c1 == 137 && c2 == 80 && c3 == 78 && c4 == 71 && c5 == 13 && c6 == 10 && c7 == 26 && c8 == 10) {
 			return $new($PNGImageDecoder, this, is);
 		}
-	} catch ($IOException&) {
-		$catch();
+	} catch ($IOException& e) {
 	}
 	return nullptr;
 }
@@ -367,19 +353,17 @@ void InputStreamImageSource::doFetch() {
 			try {
 				try {
 					$nc(imgd)->produceImage();
-				} catch ($IOException&) {
-					$var($IOException, e, $catch());
+				} catch ($IOException& e) {
 					e->printStackTrace();
-				} catch ($ImageFormatException&) {
-					$var($ImageFormatException, e, $catch());
+				} catch ($ImageFormatException& e) {
 					e->printStackTrace();
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				removeDecoder(imgd);
-				bool var$1 = $($Thread::currentThread())->isInterrupted();
-				if (var$1 || !$($Thread::currentThread())->isAlive()) {
+				bool var$2 = $($Thread::currentThread())->isInterrupted();
+				if (var$2 || !$($Thread::currentThread())->isAlive()) {
 					errorAllConsumers($nc(imgd)->queue, true);
 				} else {
 					errorAllConsumers($nc(imgd)->queue, false);

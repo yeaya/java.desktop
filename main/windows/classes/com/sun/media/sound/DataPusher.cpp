@@ -3,18 +3,8 @@
 #include <com/sun/media/sound/JSSecurityManager.h>
 #include <com/sun/media/sound/Printer.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <javax/sound/sampled/AudioFormat.h>
 #include <javax/sound/sampled/AudioInputStream.h>
@@ -140,8 +130,7 @@ void DataPusher::start(bool loop) {
 				$set(this, pushThread, $JSSecurityManager::createThread(this, nullptr, false, -1, true));
 			}
 			$of(this)->notifyAll();
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$init($Printer);
 			if ($Printer::err$) {
 				e->printStackTrace();
@@ -164,8 +153,7 @@ void DataPusher::stop() {
 		while ((maxWaitCount-- >= 0) && (this->threadState == this->STATE_PLAYING)) {
 			try {
 				$of(this)->wait(100);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& e) {
 			}
 		}
 	}
@@ -180,7 +168,6 @@ void DataPusher::close() {
 }
 
 void DataPusher::run() {
-	$useLocalCurrentObjectStackCache();
 	$var($bytes, buffer, nullptr);
 	bool useStream = (this->ais != nullptr);
 	if (useStream) {
@@ -196,8 +183,7 @@ void DataPusher::run() {
 					this->wantedState = this->STATE_STOPPING;
 					$of(this)->wait(DataPusher::AUTO_CLOSE_TIME);
 				}
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& ie) {
 			}
 			continue;
 		}
@@ -211,8 +197,7 @@ void DataPusher::run() {
 			try {
 				this->pos = 0;
 				toWrite = $nc(this->ais)->read(buffer, 0, $nc(buffer)->length);
-			} catch ($IOException&) {
-				$var($IOException, ioe, $catch());
+			} catch ($IOException& ioe) {
 				toWrite = -1;
 			}
 		} else {

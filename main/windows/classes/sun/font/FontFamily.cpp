@@ -3,15 +3,7 @@
 #include <java/awt/Font.h>
 #include <java/io/File.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Collection.h>
 #include <java/util/HashMap.h>
 #include <java/util/Locale.h>
@@ -193,15 +185,13 @@ bool FontFamily::isFromSameSource($Font2D* font) {
 	if (existDir != nullptr) {
 		try {
 			$assign(existDir, existDir->getCanonicalFile());
-		} catch ($IOException&) {
-			$catch();
+		} catch ($IOException& ignored) {
 		}
 	}
 	if (newDir != nullptr) {
 		try {
 			$assign(newDir, newDir->getCanonicalFile());
-		} catch ($IOException&) {
-			$catch();
+		} catch ($IOException& ignored) {
 		}
 	}
 	return $Objects::equals(newDir, existDir);
@@ -223,7 +213,7 @@ bool FontFamily::preferredWidth($Font2D* font) {
 			$FontUtilities::logInfo($$str({"Found more preferred width. New width = "_s, $$str(newWidth), " Old width = "_s, $$str(this->familyWidth), " in font "_s, font, " nulling out fonts plain: "_s, this->plain, " bold: "_s, this->bold, " italic: "_s, this->italic, " bolditalic: "_s, this->bolditalic}));
 		}
 		this->familyWidth = newWidth;
-		$set(this, plain, ($assignField(this, bold, ($assignField(this, italic, ($assignField(this, bolditalic, nullptr)))))));
+		$set(this, plain, ($set(this, bold, ($set(this, italic, ($set(this, bolditalic, nullptr)))))));
 		return true;
 	} else if ($FontUtilities::debugFonts()) {
 		$FontUtilities::logInfo($$str({"Family rejecting font "_s, font, " of less preferred width "_s, $$str(newWidth)}));

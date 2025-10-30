@@ -4,17 +4,7 @@
 #include <bug4760494.h>
 #include <java/awt/event/WindowAdapter.h>
 #include <java/awt/event/WindowEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $bug4760494 = ::bug4760494;
@@ -67,8 +57,7 @@ void bug4760494$TestStateListener::windowOpened($WindowEvent* ev) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$$new($Thread, static_cast<$Runnable*>($$new($bug4760494$RobotThread)))->start();
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$throwNew($RuntimeException, "Thread Exception"_s);
 	}
 }

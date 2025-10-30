@@ -3,28 +3,13 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/Accessible.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/accessibility/AccessibleSelection.h>
@@ -177,21 +162,18 @@ void Bug8154069::main($StringArray* args) {
 		try {
 			try {
 				$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($NimbusLookAndFeel)));
-			} catch ($Exception&) {
-				$var($Exception, e, $catch());
+			} catch ($Exception& e) {
 				$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 			}
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(Bug8154069$$Lambda$lambda$main$0)));
 			if (Bug8154069::exception != nullptr) {
-				$init($System);
 				$nc($System::out)->println($$str({"Test failed: "_s, $($nc(Bug8154069::exception)->getMessage())}));
 				$throw(Bug8154069::exception);
 			} else {
-				$init($System);
 				$nc($System::out)->println("Test passed."_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(Bug8154069$$Lambda$lambda$main$1$1)));
 		}
@@ -240,8 +222,7 @@ void Bug8154069::lambda$main$0() {
 		if (a != nullptr) {
 			$throwNew($RuntimeException, "getAccessibleSelection(0) is not null"_s);
 		}
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$assignStatic(Bug8154069::exception, e);
 	}
 }

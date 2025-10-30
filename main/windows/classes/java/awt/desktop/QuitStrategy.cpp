@@ -1,14 +1,6 @@
 #include <java/awt/desktop/QuitStrategy.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef CLOSE_ALL_WINDOWS
@@ -53,9 +45,7 @@ $Object* allocate$QuitStrategy($Class* clazz) {
 	return $of($alloc(QuitStrategy));
 }
 
-
 QuitStrategy* QuitStrategy::NORMAL_EXIT = nullptr;
-
 QuitStrategy* QuitStrategy::CLOSE_ALL_WINDOWS = nullptr;
 $QuitStrategyArray* QuitStrategy::$VALUES = nullptr;
 

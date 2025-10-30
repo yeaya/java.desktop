@@ -39,33 +39,12 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/Reader.h>
 #include <java/io/Writer.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/text/AttributedString.h>
 #include <java/text/CharacterIterator.h>
@@ -319,6 +298,7 @@ $NamedAttribute JTextComponent_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JTextComponent_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JTextComponent_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JTextComponent_Attribute_var$1},
@@ -627,7 +607,6 @@ $CompoundAttribute _JTextComponent_MethodAnnotations_viewToModel99[] = {
 	{}
 };
 
-
 $FieldInfo _JTextComponent_FieldInfo_[] = {
 	{"FOCUS_ACCELERATOR_KEY", "Ljava/lang/String;", nullptr, $PUBLIC | $STATIC | $FINAL, $staticField(JTextComponent, FOCUS_ACCELERATOR_KEY)},
 	{"model", "Ljavax/swing/text/Document;", nullptr, $PRIVATE, $field(JTextComponent, model)},
@@ -835,15 +814,11 @@ void JTextComponent::finalize() {
 	this->$JComponent::finalize();
 }
 
-
 $String* JTextComponent::FOCUS_ACCELERATOR_KEY = nullptr;
-
 $JTextComponent$DefaultTransferHandler* JTextComponent::defaultTransferHandler = nullptr;
-
 $Cache* JTextComponent::METHOD_OVERRIDDEN = nullptr;
 $Object* JTextComponent::KEYMAP_TABLE = nullptr;
 $Object* JTextComponent::FOCUSED_COMPONENT = nullptr;
-
 $String* JTextComponent::DEFAULT_KEYMAP = nullptr;
 
 void JTextComponent::init$() {
@@ -920,8 +895,8 @@ void JTextComponent::setDocument($Document* doc) {
 				doc->putProperty($TextAttribute::RUN_DIRECTION, runDir);
 			}
 			firePropertyChange("document"_s, $of(old), $of(doc));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if ($instanceOf($AbstractDocument, old)) {
 				$nc(($cast($AbstractDocument, old)))->readUnlock();
@@ -1342,8 +1317,7 @@ void JTextComponent::replaceSelection($String* content) {
 			if (composedTextSaved) {
 				restoreComposedText();
 			}
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this);
 		}
 	}
@@ -1449,8 +1423,7 @@ void JTextComponent::read($Reader* in, Object$* desc) {
 	try {
 		kit->read(in, doc, 0);
 		setDocument(doc);
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		$throwNew($IOException, $(e->getMessage()));
 	}
 }
@@ -1460,8 +1433,7 @@ void JTextComponent::write($Writer* out) {
 	$var($Document, doc, getDocument());
 	try {
 		$nc($($nc($($cast($TextUI, getUI())))->getEditorKit(this)))->write(out, doc, 0, $nc(doc)->getLength());
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		$throwNew($IOException, $(e->getMessage()));
 	}
 }
@@ -1498,8 +1470,7 @@ void JTextComponent::setText($String* t) {
 			$nc(doc)->remove(0, doc->getLength());
 			doc->insertString(0, t, nullptr);
 		}
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this);
 	}
 }
@@ -1510,8 +1481,7 @@ $String* JTextComponent::getText() {
 	$var($String, txt, nullptr);
 	try {
 		$assign(txt, $nc(doc)->getText(0, doc->getLength()));
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		$assign(txt, nullptr);
 	}
 	return txt;
@@ -1528,8 +1498,7 @@ $String* JTextComponent::getSelectedText() {
 		try {
 			$var($Document, doc, getDocument());
 			$assign(txt, $nc(doc)->getText(p0, p1 - p0));
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			$throwNew($IllegalArgumentException, $(e->getMessage()));
 		}
 	}
@@ -1717,11 +1686,9 @@ bool JTextComponent::print($MessageFormat* headerFormat, $MessageFormat* footerF
 	}
 	try {
 		futurePrinting->get();
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, e, $catch());
+	} catch ($InterruptedException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($ExecutionException&) {
-		$var($ExecutionException, e, $catch());
+	} catch ($ExecutionException& e) {
 		$var($Throwable, cause, e->getCause());
 		if ($instanceOf($PrinterAbortException, cause)) {
 			if (printingStatus != nullptr && printingStatus->isAborted()) {
@@ -1864,10 +1831,9 @@ void JTextComponent::replaceInputMethodText($InputMethodEvent* e) {
 			int32_t var$0 = $nc(this->composedTextStart)->getOffset();
 			int32_t var$1 = $nc(this->composedTextEnd)->getOffset();
 			$nc(doc)->remove(var$0, var$1 - $nc(this->composedTextStart)->getOffset());
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& ble) {
 		}
-		$set(this, composedTextStart, ($assignField(this, composedTextEnd, nullptr)));
+		$set(this, composedTextStart, ($set(this, composedTextEnd, nullptr)));
 		$set(this, composedTextAttribute, nullptr);
 		$set(this, composedTextContent, nullptr);
 	}
@@ -1900,9 +1866,8 @@ void JTextComponent::replaceInputMethodText($InputMethodEvent* e) {
 				int32_t var$2 = $nc(this->caret)->getDot();
 				$set(this, composedTextStart, doc->createPosition(var$2 - $nc(this->composedTextContent)->length()));
 				$set(this, composedTextEnd, doc->createPosition($nc(this->caret)->getDot()));
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, ble, $catch());
-				$set(this, composedTextStart, ($assignField(this, composedTextEnd, nullptr)));
+			} catch ($BadLocationException& ble) {
+				$set(this, composedTextStart, ($set(this, composedTextEnd, nullptr)));
 				$set(this, composedTextAttribute, nullptr);
 				$set(this, composedTextContent, nullptr);
 			}
@@ -1911,12 +1876,11 @@ void JTextComponent::replaceInputMethodText($InputMethodEvent* e) {
 			try {
 				$set(this, latestCommittedTextStart, $nc(doc)->createPosition(committedTextStartIndex));
 				$set(this, latestCommittedTextEnd, doc->createPosition(committedTextEndIndex));
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, ble, $catch());
-				$set(this, latestCommittedTextStart, ($assignField(this, latestCommittedTextEnd, nullptr)));
+			} catch ($BadLocationException& ble) {
+				$set(this, latestCommittedTextStart, ($set(this, latestCommittedTextEnd, nullptr)));
 			}
 		} else {
-			$set(this, latestCommittedTextStart, ($assignField(this, latestCommittedTextEnd, nullptr)));
+			$set(this, latestCommittedTextStart, ($set(this, latestCommittedTextEnd, nullptr)));
 		}
 	}
 }
@@ -1943,8 +1907,7 @@ bool JTextComponent::saveComposedText(int32_t pos) {
 			try {
 				$nc($(getDocument()))->remove(start, len);
 				return true;
-			} catch ($BadLocationException&) {
-				$catch();
+			} catch ($BadLocationException& ble) {
 			}
 		}
 	}
@@ -1958,8 +1921,7 @@ void JTextComponent::restoreComposedText() {
 		int32_t var$0 = $nc(this->caret)->getDot();
 		$set(this, composedTextStart, doc->createPosition(var$0 - $nc(this->composedTextContent)->length()));
 		$set(this, composedTextEnd, doc->createPosition($nc(this->caret)->getDot()));
-	} catch ($BadLocationException&) {
-		$catch();
+	} catch ($BadLocationException& ble) {
 	}
 }
 
@@ -2007,8 +1969,7 @@ void JTextComponent::setInputMethodCaretPosition($InputMethodEvent* e) {
 					$var($Rectangle, b, getBounds());
 					$nc(d)->x += $Math::min($nc(end)->x - d->x, $nc(b)->width);
 					scrollRectToVisible(d);
-				} catch ($BadLocationException&) {
-					$catch();
+				} catch ($BadLocationException& ble) {
 				}
 			}
 		}

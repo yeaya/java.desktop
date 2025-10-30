@@ -1,18 +1,6 @@
 #include <bug7165725$GoldenElement.h>
 
 #include <bug7165725.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Arrays.h>
@@ -93,7 +81,6 @@ void bug7165725$GoldenElement::checkStructureEquivalence($AbstractDocument$Abstr
 	int32_t goldenChildCount = $nc(this->goldenChildren)->size();
 	int32_t childCount = elem->getChildCount();
 	if (childCount != goldenChildCount) {
-		$init($System);
 		$nc($System::out)->print("D: children: "_s);
 		for (int32_t i = 0; i < childCount; ++i) {
 			$nc($System::out)->print($$str({" "_s, $($nc($(elem->getElement(i)))->getName())}));

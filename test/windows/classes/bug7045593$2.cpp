@@ -3,19 +3,6 @@
 #include <bug7045593.h>
 #include <java/awt/Point.h>
 #include <java/awt/Rectangle.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTextField.h>
 #include <javax/swing/text/BadLocationException.h>
 #include <javax/swing/text/JTextComponent.h>
@@ -85,10 +72,8 @@ void bug7045593$2::run() {
 		for (int32_t x = $nc(r)->x - delta; x < r->x + delta; ++x) {
 			$bug7045593::assertEquals($nc($bug7045593::jtf)->viewToModel($$new($Point, x, r->y)), 1);
 		}
-		$init($System);
 		$nc($System::out)->println("Passed."_s);
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		$throwNew($RuntimeException, "Test failed"_s, e);
 	}
 }

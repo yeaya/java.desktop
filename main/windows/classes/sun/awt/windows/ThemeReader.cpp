@@ -4,17 +4,7 @@
 #include <java/awt/Dimension.h>
 #include <java/awt/Insets.h>
 #include <java/awt/Point.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/Collection.h>
 #include <java/util/HashMap.h>
@@ -166,8 +156,8 @@ bool ThemeReader::isThemed() {
 			var$2 = ThemeReader::isThemed$;
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(ThemeReader::writeLock)->unlock();
 		}
@@ -229,8 +219,8 @@ $Long* ThemeReader::getTheme($String* widget) {
 					$nc(ThemeReader::widgetToTheme)->clear();
 					ThemeReader::valid = true;
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(ThemeReader::readLock)->lock();
 				$nc(ThemeReader::writeLock)->unlock();
@@ -245,17 +235,17 @@ $Long* ThemeReader::getTheme($String* widget) {
 		$nc(ThemeReader::readLock)->unlock();
 		$nc(ThemeReader::writeLock)->lock();
 		{
-			$var($Throwable, var$1, nullptr);
+			$var($Throwable, var$2, nullptr);
 			try {
 				$assign(theme, getThemeImpl(widget));
-			} catch ($Throwable&) {
-				$assign(var$1, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$2, var$3);
 			} /*finally*/ {
 				$nc(ThemeReader::readLock)->lock();
 				$nc(ThemeReader::writeLock)->unlock();
 			}
-			if (var$1 != nullptr) {
-				$throw(var$1);
+			if (var$2 != nullptr) {
+				$throw(var$2);
 			}
 		}
 	}
@@ -277,8 +267,8 @@ void ThemeReader::paintBackground($ints* buffer, $String* widget, int32_t part, 
 		$var($Throwable, var$0, nullptr);
 		try {
 			paintBackground(buffer, $nc($(getTheme(widget)))->longValue(), part, state, x, y, w, h, stride);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(ThemeReader::readLock)->unlock();
 		}
@@ -309,8 +299,8 @@ $Insets* ThemeReader::getThemeMargins($String* widget, int32_t part, int32_t sta
 			$assign(var$2, getThemeMargins($nc($(getTheme(widget)))->longValue(), part, state, marginType));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(ThemeReader::readLock)->unlock();
 		}
@@ -345,8 +335,8 @@ bool ThemeReader::isThemePartDefined($String* widget, int32_t part, int32_t stat
 			var$2 = isThemePartDefined($nc($(getTheme(widget)))->longValue(), part, state);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(ThemeReader::readLock)->unlock();
 		}
@@ -381,8 +371,8 @@ $Color* ThemeReader::getColor($String* widget, int32_t part, int32_t state, int3
 			$assign(var$2, getColor($nc($(getTheme(widget)))->longValue(), part, state, property));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(ThemeReader::readLock)->unlock();
 		}
@@ -417,8 +407,8 @@ int32_t ThemeReader::getInt($String* widget, int32_t part, int32_t state, int32_
 			var$2 = getInt($nc($(getTheme(widget)))->longValue(), part, state, property);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(ThemeReader::readLock)->unlock();
 		}
@@ -453,8 +443,8 @@ int32_t ThemeReader::getEnum($String* widget, int32_t part, int32_t state, int32
 			var$2 = getEnum($nc($(getTheme(widget)))->longValue(), part, state, property);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(ThemeReader::readLock)->unlock();
 		}
@@ -489,8 +479,8 @@ bool ThemeReader::getBoolean($String* widget, int32_t part, int32_t state, int32
 			var$2 = getBoolean($nc($(getTheme(widget)))->longValue(), part, state, property);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(ThemeReader::readLock)->unlock();
 		}
@@ -525,8 +515,8 @@ bool ThemeReader::getSysBoolean($String* widget, int32_t property) {
 			var$2 = getSysBoolean($nc($(getTheme(widget)))->longValue(), property);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(ThemeReader::readLock)->unlock();
 		}
@@ -561,8 +551,8 @@ $Point* ThemeReader::getPoint($String* widget, int32_t part, int32_t state, int3
 			$assign(var$2, getPoint($nc($(getTheme(widget)))->longValue(), part, state, property));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(ThemeReader::readLock)->unlock();
 		}
@@ -597,8 +587,8 @@ $Dimension* ThemeReader::getPosition($String* widget, int32_t part, int32_t stat
 			$assign(var$2, getPosition($nc($(getTheme(widget)))->longValue(), part, state, property));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(ThemeReader::readLock)->unlock();
 		}
@@ -633,8 +623,8 @@ $Dimension* ThemeReader::getPartSize($String* widget, int32_t part, int32_t stat
 			$assign(var$2, getPartSize($nc($(getTheme(widget)))->longValue(), part, state));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(ThemeReader::readLock)->unlock();
 		}
@@ -692,8 +682,8 @@ int64_t ThemeReader::getThemeTransitionDuration($String* widget, int32_t part, i
 			var$2 = getThemeTransitionDuration($nc($(getTheme(widget)))->longValue(), part, stateFrom, stateTo, propId);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(ThemeReader::readLock)->unlock();
 		}
@@ -728,8 +718,8 @@ $Insets* ThemeReader::getThemeBackgroundContentMargins($String* widget, int32_t 
 			$assign(var$2, getThemeBackgroundContentMargins($nc($(getTheme(widget)))->longValue(), part, state, boundingWidth, boundingHeight));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(ThemeReader::readLock)->unlock();
 		}

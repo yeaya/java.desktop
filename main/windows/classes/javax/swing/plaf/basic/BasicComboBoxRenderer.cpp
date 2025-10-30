@@ -5,16 +5,7 @@
 #include <java/awt/Container.h>
 #include <java/awt/Dimension.h>
 #include <java/awt/Font.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JLabel.h>
@@ -112,7 +103,6 @@ $Object* BasicComboBoxRenderer::clone() {
 void BasicComboBoxRenderer::finalize() {
 	this->$JLabel::finalize();
 }
-
 
 $Border* BasicComboBoxRenderer::noFocusBorder = nullptr;
 $Border* BasicComboBoxRenderer::SAFE_NO_FOCUS_BORDER = nullptr;

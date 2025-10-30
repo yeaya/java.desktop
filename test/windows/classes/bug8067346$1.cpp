@@ -1,17 +1,9 @@
 #include <bug8067346$1.h>
 
 #include <bug8067346.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/EnclosingMethodInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InstantiationException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/UIManager.h>
 #include <javax/swing/UnsupportedLookAndFeelException.h>
 #include <jcpp.h>
@@ -74,20 +66,16 @@ void bug8067346$1::run() {
 	try {
 		$var($String, lnf, "com.sun.java.swing.plaf.windows.WindowsLookAndFeel"_s);
 		$UIManager::setLookAndFeel(lnf);
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($UnsupportedLookAndFeelException, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& e) {
 		$init($bug8067346);
 		$bug8067346::runTest = false;
-	} catch ($ClassNotFoundException&) {
-		$var($ClassNotFoundException, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		$init($bug8067346);
 		$bug8067346::runTest = false;
-	} catch ($InstantiationException&) {
-		$var($InstantiationException, e, $catch());
+	} catch ($InstantiationException& e) {
 		$init($bug8067346);
 		$bug8067346::runTest = false;
-	} catch ($IllegalAccessException&) {
-		$var($IllegalAccessException, e, $catch());
+	} catch ($IllegalAccessException& e) {
 		$init($bug8067346);
 		$bug8067346::runTest = false;
 	}

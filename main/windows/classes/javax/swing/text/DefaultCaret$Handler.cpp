@@ -7,20 +7,8 @@
 #include <java/awt/event/ActionEvent.h>
 #include <java/beans/PropertyChangeEvent.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SwingUtilities.h>
 #include <javax/swing/event/DocumentEvent.h>
 #include <javax/swing/event/DocumentListener.h>
@@ -152,8 +140,7 @@ void DefaultCaret$Handler::actionPerformed($ActionEvent* e) {
 				if (r != nullptr && r->width != 0 && r->height != 0) {
 					this->this$0->damage(r);
 				}
-			} catch ($BadLocationException&) {
-				$catch();
+			} catch ($BadLocationException& ble) {
 			}
 		}
 	}
@@ -175,8 +162,7 @@ void DefaultCaret$Handler::insertUpdate($DocumentEvent* e) {
 				$var($Object, var$3, this->this$0->selectionTag);
 				int32_t var$4 = $Math::min(this->this$0->dot, this->this$0->mark);
 				$nc($($nc(this->this$0->component)->getHighlighter()))->changeHighlight(var$3, var$4, $Math::max(this->this$0->dot, this->this$0->mark));
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e1, $catch());
+			} catch ($BadLocationException& e1) {
 				e1->printStackTrace();
 			}
 		}
@@ -208,8 +194,7 @@ void DefaultCaret$Handler::insertUpdate($DocumentEvent* e) {
 				$var($Segment, s, $new($Segment));
 				$nc(doc)->getText(newDot - 1, 1, s);
 				isNewline = (s->count > 0 && $nc(s->array)->get(s->offset) == u'\n');
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, ble, $catch());
+			} catch ($BadLocationException& ble) {
 				isNewline = false;
 			}
 			if (isNewline) {
@@ -250,8 +235,7 @@ void DefaultCaret$Handler::removeUpdate($DocumentEvent* e) {
 				$var($Object, var$3, this->this$0->selectionTag);
 				int32_t var$4 = $Math::min(this->this$0->dot, this->this$0->mark);
 				$nc($($nc(this->this$0->component)->getHighlighter()))->changeHighlight(var$3, var$4, $Math::max(this->this$0->dot, this->this$0->mark));
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e1, $catch());
+			} catch ($BadLocationException& e1) {
 				e1->printStackTrace();
 			}
 		}
@@ -291,8 +275,8 @@ void DefaultCaret$Handler::removeUpdate($DocumentEvent* e) {
 			$var($Throwable, var$5, nullptr);
 			try {
 				this->this$0->setDot(newDot, $(this->this$0->guessBiasForOffset(newDot, this->this$0->dotBias, this->this$0->dotLTR)));
-			} catch ($Throwable&) {
-				$assign(var$5, $catch());
+			} catch ($Throwable& var$6) {
+				$assign(var$5, var$6);
 			} /*finally*/ {
 				this->this$0->forceCaretPositionChange = false;
 			}

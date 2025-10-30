@@ -4,15 +4,6 @@
 #include <java/io/File.h>
 #include <java/io/FileNotFoundException.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <java/util/Collection.h>
 #include <java/util/List.h>
@@ -163,8 +154,7 @@ void WindowsFileChooserUI$DirectoryComboBoxModel::addItem($File* directory) {
 	$var($File, canonical, nullptr);
 	try {
 		$assign(canonical, $nc(directory)->getCanonicalFile());
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$assign(canonical, directory);
 	}
 	try {
@@ -187,8 +177,7 @@ void WindowsFileChooserUI$DirectoryComboBoxModel::addItem($File* directory) {
 		}
 		calculateDepths();
 		setSelectedItem(sf);
-	} catch ($FileNotFoundException&) {
-		$var($FileNotFoundException, ex, $catch());
+	} catch ($FileNotFoundException& ex) {
 		calculateDepths();
 	}
 }

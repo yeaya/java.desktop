@@ -1,17 +1,7 @@
 #include <java/awt/SequencedEvent$3.h>
 
 #include <java/awt/SequencedEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $SequencedEvent = ::java::awt::SequencedEvent;
@@ -73,12 +63,10 @@ void SequencedEvent$3::init$($SequencedEvent* this$0) {
 }
 
 void SequencedEvent$3::run() {
-	$useLocalCurrentObjectStackCache();
 	while (!this->this$0->isFirstOrDisposed()) {
 		try {
 			$Thread::sleep(100);
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, e, $catch());
+		} catch ($InterruptedException& e) {
 			break;
 		}
 	}

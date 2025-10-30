@@ -2,15 +2,6 @@
 
 #include <java/io/FileNotFoundException.h>
 #include <java/io/RandomAccessFile.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/PhysicalFont.h>
 #include <sun/font/Type1Font.h>
 #include <jcpp.h>
@@ -78,8 +69,7 @@ void Type1Font$2::init$($Type1Font* this$0) {
 $Object* Type1Font$2::run() {
 	try {
 		return $of($new($RandomAccessFile, this->this$0->platName, "r"_s));
-	} catch ($FileNotFoundException&) {
-		$catch();
+	} catch ($FileNotFoundException& fnfe) {
 	}
 	return $of(nullptr);
 }

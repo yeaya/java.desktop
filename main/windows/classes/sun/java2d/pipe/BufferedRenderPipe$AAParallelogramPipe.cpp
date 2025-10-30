@@ -1,14 +1,5 @@
 #include <sun/java2d/pipe/BufferedRenderPipe$AAParallelogramPipe.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SunGraphics2D.h>
 #include <sun/java2d/pipe/BufferedRenderPipe.h>
 #include <sun/java2d/pipe/RenderBuffer.h>
@@ -84,8 +75,8 @@ void BufferedRenderPipe$AAParallelogramPipe::fillParallelogram($SunGraphics2D* s
 			$nc(this->this$0->buf)->putFloat((float)dy1);
 			$nc(this->this$0->buf)->putFloat((float)dx2);
 			$nc(this->this$0->buf)->putFloat((float)dy2);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->this$0->rq)->unlock();
 		}
@@ -111,8 +102,8 @@ void BufferedRenderPipe$AAParallelogramPipe::drawParallelogram($SunGraphics2D* s
 			$nc(this->this$0->buf)->putFloat((float)dy2);
 			$nc(this->this$0->buf)->putFloat((float)lw1);
 			$nc(this->this$0->buf)->putFloat((float)lw2);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->this$0->rq)->unlock();
 		}

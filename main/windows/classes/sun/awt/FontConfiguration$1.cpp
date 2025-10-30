@@ -1,17 +1,6 @@
 #include <sun/awt/FontConfiguration$1.h>
 
 #include <java/io/File.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/FontConfiguration.h>
 #include <jcpp.h>
 
@@ -80,12 +69,10 @@ void FontConfiguration$1::init$($FontConfiguration* this$0, $String* val$fileNam
 }
 
 $Object* FontConfiguration$1::run() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$var($File, f, $new($File, this->val$fileName));
 		return $of($Boolean::valueOf(f->exists()));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$init($Boolean);
 		return $of($Boolean::FALSE);
 	}

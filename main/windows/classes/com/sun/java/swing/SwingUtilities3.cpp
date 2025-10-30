@@ -5,15 +5,6 @@
 #include <java/awt/Container.h>
 #include <java/awt/Window.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/Collections.h>
 #include <java/util/Map.h>
@@ -80,7 +71,6 @@ $Object* allocate$SwingUtilities3($Class* clazz) {
 }
 
 bool SwingUtilities3::$assertionsDisabled = false;
-
 $Object* SwingUtilities3::DELEGATE_REPAINT_MANAGER_KEY = nullptr;
 $Map* SwingUtilities3::vsyncedMap = nullptr;
 

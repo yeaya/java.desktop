@@ -1,14 +1,6 @@
 #include <bug4496801.h>
 
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/AbstractDocument.h>
 #include <javax/swing/text/BadLocationException.h>
 #include <javax/swing/text/Element.h>
@@ -59,10 +51,8 @@ void bug4496801::main($StringArray* args) {
 	$var($Element, body, $nc(html)->getElement(0));
 	try {
 		doc->insertBeforeEnd(body, "<h2>foo</h2>"_s);
-	} catch ($IOException&) {
-		$catch();
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($IOException& e) {
+	} catch ($BadLocationException& e) {
 		$throwNew($RuntimeException, "Insertion failed"_s);
 	}
 }

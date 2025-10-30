@@ -1,16 +1,6 @@
 #include <com/sun/media/sound/MidiUtils$TempoCache.h>
 
 #include <com/sun/media/sound/MidiUtils.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <javax/sound/midi/MidiEvent.h>
 #include <javax/sound/midi/MidiMessage.h>

@@ -2,14 +2,6 @@
 
 #include <TestDialog4bug4644444.h>
 #include <java/awt/Frame.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $TestDialog4bug4644444 = ::TestDialog4bug4644444;

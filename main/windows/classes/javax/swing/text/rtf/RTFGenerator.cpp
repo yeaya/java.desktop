@@ -2,22 +2,9 @@
 
 #include <java/awt/Color.h>
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Dictionary.h>
 #include <java/util/Enumeration.h>
 #include <java/util/Hashtable.h>
@@ -182,7 +169,6 @@ $ClassInfo _RTFGenerator_ClassInfo_ = {
 $Object* allocate$RTFGenerator($Class* clazz) {
 	return $of($alloc(RTFGenerator));
 }
-
 
 $Color* RTFGenerator::defaultRTFColor = nullptr;
 float RTFGenerator::defaultFontSize = 0.0;
@@ -791,8 +777,7 @@ void RTFGenerator::writeTextElement($Element* el) {
 			int32_t var$0 = el->getStartOffset();
 			int32_t var$1 = el->getEndOffset();
 			$nc($(el->getDocument()))->getText(var$0, var$1 - el->getStartOffset(), this->workingSegment);
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, ble, $catch());
+		} catch ($BadLocationException& ble) {
 			ble->printStackTrace();
 			$throwNew($InternalError, $(ble->getMessage()));
 		}

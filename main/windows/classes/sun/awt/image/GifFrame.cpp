@@ -3,16 +3,7 @@
 #include <java/awt/image/ColorModel.h>
 #include <java/awt/image/ImageConsumer.h>
 #include <java/awt/image/IndexColorModel.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/image/GifImageDecoder.h>
 #include <jcpp.h>
 
@@ -98,8 +89,7 @@ bool GifFrame::dispose() {
 		if (this->delay > 0) {
 			try {
 				$Thread::sleep(this->delay);
-			} catch ($InterruptedException&) {
-				$var($InterruptedException, e, $catch());
+			} catch ($InterruptedException& e) {
 				return false;
 			}
 		} else {

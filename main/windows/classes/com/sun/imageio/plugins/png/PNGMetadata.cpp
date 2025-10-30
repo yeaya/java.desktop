@@ -5,30 +5,14 @@
 #include <java/awt/image/IndexColorModel.h>
 #include <java/awt/image/SampleModel.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/time/LocalDateTime.h>
 #include <java/time/OffsetDateTime.h>
 #include <java/time/ZoneId.h>
@@ -564,12 +548,10 @@ $ArrayList* PNGMetadata::cloneBytesArrayList($ArrayList* in) {
 }
 
 $Object* PNGMetadata::clone() {
-	$useLocalCurrentObjectStackCache();
 	$var(PNGMetadata, metadata, nullptr);
 	try {
 		$assign(metadata, $cast(PNGMetadata, $IIOMetadata::clone()));
-	} catch ($CloneNotSupportedException&) {
-		$var($CloneNotSupportedException, e, $catch());
+	} catch ($CloneNotSupportedException& e) {
 		return $of(nullptr);
 	}
 	$set($nc(metadata), unknownChunkData, cloneBytesArrayList(this->unknownChunkData));
@@ -1879,8 +1861,7 @@ $OffsetDateTime* PNGMetadata::parseEncodedTime($String* encodedTime) {
 		$init($DateTimeFormatter);
 		$assign(retVal, $OffsetDateTime::parse(encodedTime, $DateTimeFormatter::RFC_1123_DATE_TIME));
 		timeDecoded = true;
-	} catch ($DateTimeParseException&) {
-		$catch();
+	} catch ($DateTimeParseException& exception) {
 	}
 	if (timeDecoded == false) {
 		try {
@@ -1897,8 +1878,7 @@ $OffsetDateTime* PNGMetadata::parseEncodedTime($String* encodedTime) {
 				$init($ZoneOffset);
 				$assign(retVal, $OffsetDateTime::of(locDT, $ZoneOffset::UTC));
 			}
-		} catch ($DateTimeParseException&) {
-			$catch();
+		} catch ($DateTimeParseException& exception) {
 		}
 	}
 	return retVal;

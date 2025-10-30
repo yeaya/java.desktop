@@ -6,12 +6,6 @@
 #include <java/io/DataInputStream.h>
 #include <java/io/EOFException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/AudioFileFormat$Type.h>
 #include <javax/sound/sampled/AudioFormat$Encoding.h>
 #include <javax/sound/sampled/AudioFormat.h>
@@ -118,8 +112,7 @@ $StandardFileFormat* WaveFileReader::getAudioFileFormatImpl($InputStream* stream
 				}
 				nread += dis->skipBytes(length);
 			}
-		} catch ($EOFException&) {
-			$var($EOFException, eof, $catch());
+		} catch ($EOFException& eof) {
 			$throwNew($UnsupportedAudioFileException, "Not a valid WAV file"_s);
 		}
 	}
@@ -181,8 +174,7 @@ $StandardFileFormat* WaveFileReader::getAudioFileFormatImpl($InputStream* stream
 				}
 				nread += dis->skipBytes(thisLength);
 			}
-		} catch ($EOFException&) {
-			$var($EOFException, eof, $catch());
+		} catch ($EOFException& eof) {
 			$throwNew($UnsupportedAudioFileException, "Not a valid WAV file"_s);
 		}
 	}

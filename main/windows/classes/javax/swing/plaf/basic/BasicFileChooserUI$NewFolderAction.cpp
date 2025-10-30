@@ -5,15 +5,6 @@
 #include <java/awt/event/ActionEvent.h>
 #include <java/io/File.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractAction.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFileChooser.h>
@@ -111,8 +102,7 @@ void BasicFileChooserUI$NewFolderAction::actionPerformed($ActionEvent* e) {
 		} else {
 			fc->setSelectedFile(newFolder);
 		}
-	} catch ($IOException&) {
-		$var($IOException, exc, $catch());
+	} catch ($IOException& exc) {
 		$JOptionPane::showMessageDialog(fc, $$str({this->this$0->newFolderErrorText, this->this$0->newFolderErrorSeparator, exc}), this->this$0->newFolderErrorText, $JOptionPane::ERROR_MESSAGE);
 		return;
 	}

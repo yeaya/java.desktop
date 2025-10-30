@@ -16,25 +16,10 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Collection.h>
 #include <java/util/Collections.h>
 #include <java/util/Enumeration.h>
@@ -224,6 +209,7 @@ $NamedAttribute JTree_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JTree_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JTree_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JTree_Attribute_var$1},
@@ -628,7 +614,6 @@ $CompoundAttribute _JTree_MethodAnnotations_setVisibleRowCount148[] = {
 	{}
 };
 
-
 $FieldInfo _JTree_FieldInfo_[] = {
 	{"$assertionsDisabled", "Z", nullptr, $STATIC | $FINAL | $SYNTHETIC, $staticField(JTree, $assertionsDisabled)},
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JTree, uiClassID)},
@@ -900,41 +885,23 @@ void JTree::finalize() {
 }
 
 bool JTree::$assertionsDisabled = false;
-
 $String* JTree::uiClassID = nullptr;
-
 int32_t JTree::TEMP_STACK_SIZE = 0;
-
 $String* JTree::CELL_RENDERER_PROPERTY = nullptr;
-
 $String* JTree::TREE_MODEL_PROPERTY = nullptr;
-
 $String* JTree::ROOT_VISIBLE_PROPERTY = nullptr;
-
 $String* JTree::SHOWS_ROOT_HANDLES_PROPERTY = nullptr;
-
 $String* JTree::ROW_HEIGHT_PROPERTY = nullptr;
-
 $String* JTree::CELL_EDITOR_PROPERTY = nullptr;
-
 $String* JTree::EDITABLE_PROPERTY = nullptr;
-
 $String* JTree::LARGE_MODEL_PROPERTY = nullptr;
-
 $String* JTree::SELECTION_MODEL_PROPERTY = nullptr;
-
 $String* JTree::VISIBLE_ROW_COUNT_PROPERTY = nullptr;
-
 $String* JTree::INVOKES_STOP_CELL_EDITING_PROPERTY = nullptr;
-
 $String* JTree::SCROLLS_ON_EXPAND_PROPERTY = nullptr;
-
 $String* JTree::TOGGLE_CLICK_COUNT_PROPERTY = nullptr;
-
 $String* JTree::LEAD_SELECTION_PATH_PROPERTY = nullptr;
-
 $String* JTree::ANCHOR_SELECTION_PATH_PROPERTY = nullptr;
-
 $String* JTree::EXPANDS_SELECTED_PATHS_PROPERTY = nullptr;
 
 $TreeModel* JTree::getDefaultTreeModel() {
@@ -1043,8 +1010,8 @@ void JTree::setUI($TreeUI* ui) {
 			$var($Throwable, var$0, nullptr);
 			try {
 				$JComponent::setUI(ui);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				this->settingUI = false;
 			}
@@ -1065,8 +1032,8 @@ void JTree::updateUI() {
 				setUI($cast($TreeUI, $($UIManager::getUI(this))));
 				$SwingUtilities::updateRendererOrEditorUI($(getCellRenderer()));
 				$SwingUtilities::updateRendererOrEditorUI($(getCellEditor()));
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				this->updateInProgress = false;
 			}
@@ -1308,7 +1275,7 @@ $TransferHandler$DropLocation* JTree::dropLocationForPoint($Point* p) {
 	$var($TreePath, child, nullptr);
 	$var($TreePath, parent, nullptr);
 	bool outside = row == -1 || $nc(p)->y < $nc(bounds)->y || $nc(p)->y >= $nc(bounds)->y + bounds->height;
-		$init($JTree$1);
+	$init($JTree$1);
 	{
 		bool checkOn = false;
 		$var($SwingUtilities2$Section, section, nullptr)
@@ -2285,8 +2252,7 @@ $Object* JTree::getArchivableExpandedState() {
 				$var($Object, archivePath, nullptr);
 				try {
 					$assign(archivePath, getModelIndexsForPath(path));
-				} catch ($Error&) {
-					$var($Error, error, $catch());
+				} catch ($Error& error) {
 					$assign(archivePath, nullptr);
 				}
 				if (archivePath != nullptr) {
@@ -2312,8 +2278,7 @@ void JTree::unarchiveExpandedState(Object$* state) {
 				if (path != nullptr) {
 					$nc(this->expandedState)->put(path, eState);
 				}
-			} catch ($Error&) {
-				$catch();
+			} catch ($Error& error) {
 			}
 		}
 	}
@@ -2470,8 +2435,7 @@ void JTree::setExpandedState($TreePath* path, bool state) {
 					if (!isExpanded(parentPath)) {
 						try {
 							fireTreeWillExpand(parentPath);
-						} catch ($ExpandVetoException&) {
-							$var($ExpandVetoException, eve, $catch());
+						} catch ($ExpandVetoException& eve) {
 							return;
 						}
 						$init($Boolean);
@@ -2482,8 +2446,8 @@ void JTree::setExpandedState($TreePath* path, bool state) {
 						}
 					}
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$2) {
+				$assign(var$0, var$2);
 			} /*finally*/ {
 				if ($nc(this->expandedStack)->size() < JTree::TEMP_STACK_SIZE) {
 					$nc(stack)->removeAllElements();
@@ -2502,15 +2466,14 @@ void JTree::setExpandedState($TreePath* path, bool state) {
 			if (cValue != nullptr && $nc(($cast($Boolean, cValue)))->booleanValue()) {
 				try {
 					fireTreeWillCollapse(path);
-				} catch ($ExpandVetoException&) {
-					$var($ExpandVetoException, eve, $catch());
+				} catch ($ExpandVetoException& eve) {
 					return;
 				}
 				$init($Boolean);
 				$nc(this->expandedState)->put(path, $Boolean::FALSE);
 				fireTreeCollapsed(path);
-				bool var$2 = removeDescendantSelectedPaths(path, false);
-				if (var$2 && !isPathSelected(path)) {
+				bool var$3 = removeDescendantSelectedPaths(path, false);
+				if (var$3 && !isPathSelected(path)) {
 					addSelectionPath(path);
 				}
 				if (this->accessibleContext != nullptr) {
@@ -2522,8 +2485,7 @@ void JTree::setExpandedState($TreePath* path, bool state) {
 			if (cValue == nullptr || !$nc(($cast($Boolean, cValue)))->booleanValue()) {
 				try {
 					fireTreeWillExpand(path);
-				} catch ($ExpandVetoException&) {
-					$var($ExpandVetoException, eve, $catch());
+				} catch ($ExpandVetoException& eve) {
 					return;
 				}
 				$init($Boolean);

@@ -1,20 +1,7 @@
 #include <sun/print/PSStreamPrintService.h>
 
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/print/CancelablePrintJob.h>
 #include <javax/print/DocFlavor$BYTE_ARRAY.h>
@@ -691,8 +678,7 @@ $AttributeSet* PSStreamPrintService::getUnsupportedAttributes($DocFlavor* flavor
 			} else if (!isAttributeValueSupported(attr, flavor, attributes)) {
 				unsupp->add(attr);
 			}
-		} catch ($ClassCastException&) {
-			$catch();
+		} catch ($ClassCastException& e) {
 		}
 	}
 	if (unsupp->isEmpty()) {
@@ -721,17 +707,17 @@ int32_t PSStreamPrintService::hashCode() {
 }
 
 void clinit$PSStreamPrintService($Class* class$) {
-		$load($Chromaticity);
-		$load($Copies);
-		$load($Fidelity);
-		$load($JobName);
-		$load($Media);
-		$load($MediaPrintableArea);
-		$load($OrientationRequested);
-		$load($PageRanges);
-		$load($RequestingUserName);
-		$load($SheetCollate);
-		$load($Sides);
+	$load($Chromaticity);
+	$load($Copies);
+	$load($Fidelity);
+	$load($JobName);
+	$load($Media);
+	$load($MediaPrintableArea);
+	$load($OrientationRequested);
+	$load($PageRanges);
+	$load($RequestingUserName);
+	$load($SheetCollate);
+	$load($Sides);
 	$assignStatic(PSStreamPrintService::suppAttrCats, $new($ClassArray, {
 		$Chromaticity::class$,
 		$Copies::class$,
@@ -746,7 +732,7 @@ void clinit$PSStreamPrintService($Class* class$) {
 		$Sides::class$
 	}));
 	PSStreamPrintService::MAXCOPIES = 1000;
-		$init($MediaSizeName);
+	$init($MediaSizeName);
 	$assignStatic(PSStreamPrintService::mediaSizes, $new($MediaSizeNameArray, {
 		$MediaSizeName::NA_LETTER,
 		$MediaSizeName::TABLOID,

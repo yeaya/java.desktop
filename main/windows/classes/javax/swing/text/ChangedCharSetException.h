@@ -19,8 +19,10 @@ public:
 	$String* charSetSpec = nullptr;
 	bool charSetKey = false;
 	ChangedCharSetException(const ChangedCharSetException& e);
-	ChangedCharSetException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline ChangedCharSetException* operator ->() {
+		return (ChangedCharSetException*)throwing$;
+	}
 };
 
 		} // text

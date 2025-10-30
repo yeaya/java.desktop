@@ -5,20 +5,9 @@
 #include <java/awt/print/Printable.h>
 #include <java/awt/print/PrinterException.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTable$ThreadSafePrintable$1.h>
 #include <javax/swing/JTable.h>
 #include <javax/swing/SwingUtilities.h>
@@ -99,8 +88,7 @@ int32_t JTable$ThreadSafePrintable::print($Graphics* graphics, $PageFormat* page
 		while (this->retVal == -1 && this->retThrowable == nullptr) {
 			try {
 				$of(runnable)->wait();
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& ie) {
 			}
 		}
 		if (this->retThrowable != nullptr) {

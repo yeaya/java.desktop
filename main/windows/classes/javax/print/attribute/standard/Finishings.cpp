@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/Finishings.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -118,45 +110,25 @@ void Finishings::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 Finishings* Finishings::NONE = nullptr;
-
 Finishings* Finishings::STAPLE = nullptr;
-
 Finishings* Finishings::COVER = nullptr;
-
 Finishings* Finishings::BIND = nullptr;
-
 Finishings* Finishings::SADDLE_STITCH = nullptr;
-
 Finishings* Finishings::EDGE_STITCH = nullptr;
-
 Finishings* Finishings::STAPLE_TOP_LEFT = nullptr;
-
 Finishings* Finishings::STAPLE_BOTTOM_LEFT = nullptr;
-
 Finishings* Finishings::STAPLE_TOP_RIGHT = nullptr;
-
 Finishings* Finishings::STAPLE_BOTTOM_RIGHT = nullptr;
-
 Finishings* Finishings::EDGE_STITCH_LEFT = nullptr;
-
 Finishings* Finishings::EDGE_STITCH_TOP = nullptr;
-
 Finishings* Finishings::EDGE_STITCH_RIGHT = nullptr;
-
 Finishings* Finishings::EDGE_STITCH_BOTTOM = nullptr;
-
 Finishings* Finishings::STAPLE_DUAL_LEFT = nullptr;
-
 Finishings* Finishings::STAPLE_DUAL_TOP = nullptr;
-
 Finishings* Finishings::STAPLE_DUAL_RIGHT = nullptr;
-
 Finishings* Finishings::STAPLE_DUAL_BOTTOM = nullptr;
-
 $StringArray* Finishings::myStringTable = nullptr;
-
 $FinishingsArray* Finishings::myEnumValueTable = nullptr;
 
 void Finishings::init$(int32_t value) {

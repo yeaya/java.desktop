@@ -22,15 +22,7 @@
 #include <java/awt/peer/ComponentPeer.h>
 #include <java/awt/peer/ContainerPeer.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/PeerEvent.h>
 #include <sun/awt/windows/WComponentPeer.h>
 #include <sun/awt/windows/WPanelPeer.h>
@@ -505,8 +497,7 @@ $Component* WScrollPanePeer::getScrollChild() {
 	$var($Component, child, nullptr);
 	try {
 		$assign(child, $nc(sp)->getComponent(0));
-	} catch ($ArrayIndexOutOfBoundsException&) {
-		$catch();
+	} catch ($ArrayIndexOutOfBoundsException& e) {
 	}
 	return child;
 }

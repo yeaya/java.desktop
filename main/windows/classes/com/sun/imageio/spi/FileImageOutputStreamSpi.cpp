@@ -1,15 +1,6 @@
 #include <com/sun/imageio/spi/FileImageOutputStreamSpi.h>
 
 #include <java/io/File.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/imageio/spi/ImageOutputStreamSpi.h>
 #include <javax/imageio/stream/FileImageOutputStream.h>
@@ -77,8 +68,7 @@ $ImageOutputStream* FileImageOutputStreamSpi::createOutputStreamInstance(Object$
 	if ($instanceOf($File, output)) {
 		try {
 			return $new($FileImageOutputStream, $cast($File, output));
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			e->printStackTrace();
 			return nullptr;
 		}

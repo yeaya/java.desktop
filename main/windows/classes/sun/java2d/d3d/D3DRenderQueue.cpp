@@ -1,16 +1,6 @@
 #include <sun/java2d/d3d/D3DRenderQueue.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Set.h>
 #include <sun/java2d/ScreenUpdateManager.h>
 #include <sun/java2d/d3d/D3DRenderQueue$1.h>
@@ -113,8 +103,8 @@ void D3DRenderQueue::sync() {
 				$nc(D3DRenderQueue::theInstance)->ensureCapacity(4);
 				$nc($($nc(D3DRenderQueue::theInstance)->getBuffer()))->putInt(76);
 				$nc(D3DRenderQueue::theInstance)->flushNow();
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(D3DRenderQueue::theInstance)->unlock();
 			}
@@ -136,8 +126,8 @@ void D3DRenderQueue::restoreDevices() {
 			rq->ensureCapacity(4);
 			$nc($(rq->getBuffer()))->putInt(77);
 			rq->flushNow();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}
@@ -165,8 +155,8 @@ void D3DRenderQueue::disposeGraphicsConfig(int64_t pConfigInfo) {
 			$nc(buf)->putInt(74);
 			buf->putLong(pConfigInfo);
 			rq->flushNow();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}

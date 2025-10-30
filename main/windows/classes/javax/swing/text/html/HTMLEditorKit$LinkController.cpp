@@ -10,15 +10,6 @@
 #include <java/awt/event/MouseEvent.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/MalformedURLException.h>
 #include <java/net/URL.h>
 #include <javax/swing/JEditorPane.h>
@@ -286,8 +277,7 @@ $String* HTMLEditorKit$LinkController::getMapHREF($JEditorPane* html, $HTMLDocum
 				$var($Shape, rBounds, ui->modelToView(html, offset + 1, $Position$Bias::Backward));
 				$assign(bounds, $nc(lBounds)->getBounds());
 				$nc(bounds)->add(($instanceOf($Rectangle, rBounds)) ? $cast($Rectangle, rBounds) : $($nc(rBounds)->getBounds()));
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, ble, $catch());
+			} catch ($BadLocationException& ble) {
 				$assign(bounds, nullptr);
 			}
 			if (bounds != nullptr) {
@@ -318,8 +308,7 @@ bool HTMLEditorKit$LinkController::doesElementContainLocation($JEditorPane* edit
 				$nc(r1)->add(r2);
 			}
 			return $nc(r1)->contains(x, y);
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& ble) {
 		}
 	}
 	return true;
@@ -375,8 +364,7 @@ $HyperlinkEvent* HTMLEditorKit$LinkController::createHyperlinkEvent($JEditorPane
 				$assign(u, $new($URL, base, $$str({baseFile, href})));
 			}
 		}
-	} catch ($MalformedURLException&) {
-		$var($MalformedURLException, m, $catch());
+	} catch ($MalformedURLException& m) {
 		$assign(u, nullptr);
 	}
 	$var($HyperlinkEvent, linkEvent, nullptr);
@@ -404,8 +392,7 @@ void HTMLEditorKit$LinkController::fireEvents($JEditorPane* editor, $HTMLDocumen
 		$var($URL, u, nullptr);
 		try {
 			$assign(u, $new($URL, $($nc(doc)->getBase()), this->href));
-		} catch ($MalformedURLException&) {
-			$var($MalformedURLException, m, $catch());
+		} catch ($MalformedURLException& m) {
 			$assign(u, nullptr);
 		}
 		$init($HyperlinkEvent$EventType);
@@ -416,8 +403,7 @@ void HTMLEditorKit$LinkController::fireEvents($JEditorPane* editor, $HTMLDocumen
 		$var($URL, u, nullptr);
 		try {
 			$assign(u, $new($URL, $($nc(doc)->getBase()), href));
-		} catch ($MalformedURLException&) {
-			$var($MalformedURLException, m, $catch());
+		} catch ($MalformedURLException& m) {
 			$assign(u, nullptr);
 		}
 		$init($HyperlinkEvent$EventType);

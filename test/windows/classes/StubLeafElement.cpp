@@ -1,12 +1,5 @@
 #include <StubLeafElement.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/AbstractDocument.h>
 #include <javax/swing/text/AttributeSet.h>
 #include <javax/swing/text/BadLocationException.h>
@@ -72,8 +65,7 @@ void StubLeafElement::init$($String* context, $Element* parent, int32_t position
 	this->position = position;
 	try {
 		$nc(this->document)->insertString(0, context, $$new($SimpleAttributeSet));
-	} catch ($BadLocationException&) {
-		$catch();
+	} catch ($BadLocationException& e) {
 	}
 }
 

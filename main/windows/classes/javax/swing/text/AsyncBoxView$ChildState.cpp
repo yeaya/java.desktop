@@ -1,16 +1,6 @@
 #include <javax/swing/text/AsyncBoxView$ChildState.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/AbstractDocument.h>
 #include <javax/swing/text/AsyncBoxView$ChildLocator.h>
 #include <javax/swing/text/AsyncBoxView.h>
@@ -124,8 +114,8 @@ void AsyncBoxView$ChildState::run() {
 				}
 				updateChild();
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} $finally: {
 			$nc(doc)->readUnlock();
 		}

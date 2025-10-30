@@ -7,16 +7,8 @@
 #include <java/io/InputStream.h>
 #include <java/io/InputStreamReader.h>
 #include <java/io/Reader.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/ReflectiveOperationException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URI.h>
 #include <java/net/URL.h>
 #include <java/net/URLClassLoader.h>
@@ -97,8 +89,8 @@ bool JARSoundbankReader::isZIP($URL* url) {
 				if (ok) {
 					ok = (buff->get(0) == 80 && buff->get(1) == 75 && buff->get(2) == 3 && buff->get(3) == 4);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(stream)->close();
 			}
@@ -106,8 +98,7 @@ bool JARSoundbankReader::isZIP($URL* url) {
 				$throw(var$0);
 			}
 		}
-	} catch ($IOException&) {
-		$catch();
+	} catch ($IOException& e) {
 	}
 	return ok;
 }
@@ -139,14 +130,13 @@ $Soundbank* JARSoundbankReader::getSoundbank($URL* url) {
 							$var($Object, o, $nc(c)->newInstance());
 							soundbanks->add($cast($Soundbank, o));
 						}
-					} catch ($ReflectiveOperationException&) {
-						$catch();
+					} catch ($ReflectiveOperationException& ignored) {
 					}
 				}
 				$assign(line, r->readLine());
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(stream)->close();
 		}

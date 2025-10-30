@@ -4,31 +4,12 @@
 #include <java/beans/EventHandler$2.h>
 #include <java/beans/NameGenerator.h>
 #include <java/beans/Statement.h>
-#include <java/lang/Array.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/ReflectiveOperationException.h>
-#include <java/lang/RuntimeException.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
 #include <java/lang/reflect/Method.h>
 #include <java/security/AccessControlContext.h>
@@ -202,8 +183,7 @@ $Object* EventHandler::applyGetters(Object$* target, $String* getters) {
 		}
 		$var($Object, newTarget, $MethodUtil::invoke(getter, target, $$new($ObjectArray, 0)));
 		return $of(applyGetters(newTarget, rest));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, $$str({"Failed to call method: "_s, first, " on "_s, target}), e);
 	}
 	$shouldNotReachHere();
@@ -222,7 +202,6 @@ $Object* EventHandler::invoke(Object$* proxy, $Method* method, $ObjectArray* arg
 $Object* EventHandler::invokeInternal(Object$* proxy, $Method* method, $ObjectArray* arguments) {
 	$useLocalCurrentObjectStackCache();
 	$var($String, methodName, $nc(method)->getName());
-	$load($Object);
 	if (method->getDeclaringClass() == $Object::class$) {
 		if ($nc(methodName)->equals("hashCode"_s)) {
 			return $of($Integer::valueOf($System::identityHashCode(proxy)));
@@ -261,11 +240,9 @@ $Object* EventHandler::invokeInternal(Object$* proxy, $Method* method, $ObjectAr
 				$throwNew($RuntimeException, $$str({"No method called "_s, this->action, " on "_s, $nc($of(this->target))->getClass(), argTypeString}));
 			}
 			return $of($MethodUtil::invoke(targetMethod, this->target, newArgs));
-		} catch ($IllegalAccessException&) {
-			$var($IllegalAccessException, ex, $catch());
+		} catch ($IllegalAccessException& ex) {
 			$throwNew($RuntimeException, static_cast<$Throwable*>(ex));
-		} catch ($InvocationTargetException&) {
-			$var($InvocationTargetException, ex, $catch());
+		} catch ($InvocationTargetException& ex) {
 			$var($Throwable, th, ex->getCause());
 			$throw(($instanceOf($RuntimeException, th)) ? $cast($RuntimeException, th) : $$new($RuntimeException, th));
 		}

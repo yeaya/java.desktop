@@ -1,15 +1,6 @@
 #include <javax/swing/plaf/nimbus/ImageScalingHelper$PaintType.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/plaf/nimbus/ImageScalingHelper.h>
 #include <jcpp.h>
 
@@ -73,13 +64,9 @@ $Object* allocate$ImageScalingHelper$PaintType($Class* clazz) {
 	return $of($alloc(ImageScalingHelper$PaintType));
 }
 
-
 ImageScalingHelper$PaintType* ImageScalingHelper$PaintType::CENTER = nullptr;
-
 ImageScalingHelper$PaintType* ImageScalingHelper$PaintType::TILE = nullptr;
-
 ImageScalingHelper$PaintType* ImageScalingHelper$PaintType::PAINT9_STRETCH = nullptr;
-
 ImageScalingHelper$PaintType* ImageScalingHelper$PaintType::PAINT9_TILE = nullptr;
 $ImageScalingHelper$PaintTypeArray* ImageScalingHelper$PaintType::$VALUES = nullptr;
 

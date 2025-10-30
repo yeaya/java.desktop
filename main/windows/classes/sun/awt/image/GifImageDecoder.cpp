@@ -5,19 +5,6 @@
 #include <java/awt/image/IndexColorModel.h>
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Hashtable.h>
 #include <sun/awt/image/GifFrame.h>
 #include <sun/awt/image/ImageDecoder.h>
@@ -140,7 +127,6 @@ void GifImageDecoder::error($String* s1) {
 }
 
 int32_t GifImageDecoder::readBytes($bytes* buf, int32_t off, int32_t len) {
-	$useLocalCurrentObjectStackCache();
 	while (len > 0) {
 		try {
 			int32_t n = $nc(this->input)->read(buf, off, len);
@@ -149,8 +135,7 @@ int32_t GifImageDecoder::readBytes($bytes* buf, int32_t off, int32_t len) {
 			}
 			off += n;
 			len -= n;
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			break;
 		}
 	}
@@ -281,8 +266,7 @@ void GifImageDecoder::produceImage() {
 							if (!readImage(totalframes == 0, disposal_method, delay)) {
 								return;
 							}
-						} catch ($Exception&) {
-							$var($Exception, e, $catch());
+						} catch ($Exception& e) {
 							return;
 						}
 						++frameno;
@@ -312,8 +296,7 @@ void GifImageDecoder::produceImage() {
 								$set(this, saved_model, nullptr);
 								frameno = 0;
 								break;
-							} catch ($IOException&) {
-								$var($IOException, e, $catch());
+							} catch ($IOException& e) {
 								return;
 							}
 						}
@@ -323,8 +306,8 @@ void GifImageDecoder::produceImage() {
 					}
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			close();
 		}

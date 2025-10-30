@@ -1,12 +1,5 @@
 #include <sun/swing/plaf/GTKKeybindings.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTextField.h>
 #include <javax/swing/UIDefaults$LazyInputMap.h>
 #include <javax/swing/UIDefaults.h>
@@ -48,8 +41,8 @@ void GTKKeybindings::init$() {
 
 void GTKKeybindings::installKeybindings($UIDefaults* table) {
 	$useLocalCurrentObjectStackCache();
-		$init($DefaultEditorKit);
-		$init($JTextField);
+	$init($DefaultEditorKit);
+	$init($JTextField);
 	$var($Object, fieldInputMap, $new($UIDefaults$LazyInputMap, $$new($ObjectArray, {
 		$of("ctrl C"_s),
 		$of($DefaultEditorKit::copyAction),

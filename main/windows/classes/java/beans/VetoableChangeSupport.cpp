@@ -11,19 +11,6 @@
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/ObjectStreamField.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <java/util/Hashtable.h>
 #include <java/util/Iterator.h>
@@ -114,7 +101,6 @@ $ClassInfo _VetoableChangeSupport_ClassInfo_ = {
 $Object* allocate$VetoableChangeSupport($Class* clazz) {
 	return $of($alloc(VetoableChangeSupport));
 }
-
 
 $ObjectStreamFieldArray* VetoableChangeSupport::serialPersistentFields = nullptr;
 
@@ -234,14 +220,12 @@ void VetoableChangeSupport::fireVetoableChange($PropertyChangeEvent* event$renam
 					$nc(listeners->get(current))->vetoableChange(event);
 					++current;
 				}
-			} catch ($PropertyVetoException&) {
-				$var($PropertyVetoException, veto, $catch());
+			} catch ($PropertyVetoException& veto) {
 				$assign(event, $new($PropertyChangeEvent, this->source, name, newValue, oldValue));
 				for (int32_t i = 0; i < current; ++i) {
 					try {
 						$nc(listeners->get(i))->vetoableChange(event);
-					} catch ($PropertyVetoException&) {
-						$catch();
+					} catch ($PropertyVetoException& exception) {
 					}
 				}
 				$throw(veto);
@@ -338,9 +322,8 @@ void VetoableChangeSupport::readObject($ObjectInputStream* s) {
 
 void clinit$VetoableChangeSupport($Class* class$) {
 	$useLocalCurrentObjectStackCache();
-		$load($Hashtable);
-		$load($Object);
-		$init($Integer);
+	$load($Hashtable);
+	$init($Integer);
 	$assignStatic(VetoableChangeSupport::serialPersistentFields, $new($ObjectStreamFieldArray, {
 		$$new($ObjectStreamField, "children"_s, $Hashtable::class$),
 		$$new($ObjectStreamField, "source"_s, $Object::class$),

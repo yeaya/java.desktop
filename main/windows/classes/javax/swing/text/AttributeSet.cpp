@@ -1,13 +1,5 @@
 #include <javax/swing/text/AttributeSet.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Enumeration.h>
 #include <javax/swing/text/StyleConstants.h>
 #include <jcpp.h>
@@ -69,9 +61,7 @@ $Object* allocate$AttributeSet($Class* clazz) {
 	return $of($alloc(AttributeSet));
 }
 
-
 $Object* AttributeSet::NameAttribute = nullptr;
-
 $Object* AttributeSet::ResolveAttribute = nullptr;
 
 void clinit$AttributeSet($Class* class$) {

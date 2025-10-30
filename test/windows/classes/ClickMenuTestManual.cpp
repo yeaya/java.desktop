@@ -11,24 +11,12 @@
 #include <java/awt/event/ActionEvent.h>
 #include <java/awt/event/ActionListener.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventObject.h>
 #include <java/util/logging/Level.h>
 #include <java/util/logging/Logger.h>
@@ -265,16 +253,14 @@ void ClickMenuTestManual::actionPerformed($ActionEvent* evt) {
 		if ($nc($($nc(btn)->getActionCommand()))->equals("Pass"_s)) {
 			try {
 				cleanUp();
-			} catch ($Exception&) {
-				$var($Exception, ex, $catch());
+			} catch ($Exception& ex) {
 				$init($Level);
 				$nc($($Logger::getLogger($(ClickMenuTestManual::class$->getName()))))->log($Level::SEVERE, ($String*)nullptr, static_cast<$Throwable*>(ex));
 			}
 		} else if ($nc($(btn->getActionCommand()))->equals("Fail"_s)) {
 			try {
 				cleanUp();
-			} catch ($Exception&) {
-				$var($Exception, ex, $catch());
+			} catch ($Exception& ex) {
 				$init($Level);
 				$nc($($Logger::getLogger($(ClickMenuTestManual::class$->getName()))))->log($Level::SEVERE, ($String*)nullptr, static_cast<$Throwable*>(ex));
 			}

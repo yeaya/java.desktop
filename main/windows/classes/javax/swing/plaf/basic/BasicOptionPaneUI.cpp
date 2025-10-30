@@ -16,20 +16,8 @@
 #include <java/awt/event/HierarchyListener.h>
 #include <java/awt/event/MouseListener.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/Action.h>
@@ -328,7 +316,7 @@ $LayoutManager* BasicOptionPaneUI::createLayoutManager() {
 }
 
 void BasicOptionPaneUI::installListeners() {
-	if (($assignField(this, propertyChangeListener, createPropertyChangeListener())) != nullptr) {
+	if (($set(this, propertyChangeListener, createPropertyChangeListener())) != nullptr) {
 		$nc(this->optionPane)->addPropertyChangeListener(this->propertyChangeListener);
 	}
 }
@@ -561,7 +549,7 @@ $Object* BasicOptionPaneUI::getMessage() {
 					tf->setSelectionEnd($nc(inputString)->length());
 				}
 				tf->addActionListener($(getHandler()));
-				$assign(toAdd, ($assignField(this, inputComponent, tf)));
+				$assign(toAdd, ($set(this, inputComponent, tf)));
 			}
 			$var($ObjectArray, newMessage, nullptr);
 			if (message == nullptr) {
@@ -804,8 +792,7 @@ int32_t BasicOptionPaneUI::getMnemonic($String* key, $Locale* l) {
 	}
 	try {
 		return $Integer::parseInt(value);
-	} catch ($NumberFormatException&) {
-		$catch();
+	} catch ($NumberFormatException& nfe) {
 	}
 	return 0;
 }

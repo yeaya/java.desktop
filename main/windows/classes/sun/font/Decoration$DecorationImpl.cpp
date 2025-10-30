@@ -15,17 +15,8 @@
 #include <java/awt/geom/Rectangle2D$Float.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/CoreMetrics.h>
 #include <sun/font/Decoration$Label.h>
 #include <sun/font/Decoration.h>
@@ -141,7 +132,6 @@ bool Decoration$DecorationImpl::areEqual(Object$* lhs, Object$* rhs) {
 }
 
 bool Decoration$DecorationImpl::equals(Object$* rhs) {
-	$useLocalCurrentObjectStackCache();
 	if ($equals(rhs, this)) {
 		return true;
 	}
@@ -151,8 +141,7 @@ bool Decoration$DecorationImpl::equals(Object$* rhs) {
 	$var(Decoration$DecorationImpl, other, nullptr);
 	try {
 		$assign(other, $cast(Decoration$DecorationImpl, rhs));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		return false;
 	}
 	if (!(this->swapColors == $nc(other)->swapColors && this->strikethrough == other->strikethrough)) {

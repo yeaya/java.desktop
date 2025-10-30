@@ -8,26 +8,13 @@
 #include <java/awt/Point.h>
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JEditorPane.h>
@@ -263,7 +250,6 @@ void ImageViewTest::main($StringArray* args) {
 	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, ABSOLUTE_FILE_PATH, $nc($(ImageViewTest::class$->getResource("circle.png"_s)))->getPath());
-	$init($System);
 	$nc($System::out)->println(ABSOLUTE_FILE_PATH);
 	$var($Robot, r, $new($Robot));
 	$var($JEditorPaneArray, editorPanes, $new($JEditorPaneArray, 11));
@@ -323,7 +309,6 @@ void ImageViewTest::lambda$test$1($JEditorPane* editorPane, $Robot* r, int32_t W
 	$var($Color, top, r->getPixelColor($nc(loc)->x + $nc(insets)->left + WIDTH / 2, loc->y + insets->top + offset));
 	$init(ImageViewTest);
 	$nc(ImageViewTest::f)->dispose();
-	$init($System);
 	$nc($System::out)->println($$str({"center color: "_s, center}));
 	$nc($System::out)->println($$str({"left color: "_s, left}));
 	$nc($System::out)->println($$str({"right color: "_s, right}));

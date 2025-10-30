@@ -7,14 +7,6 @@
 #include <java/awt/event/ComponentListener.h>
 #include <java/beans/PropertyChangeEvent.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JInternalFrame.h>
@@ -162,12 +154,12 @@ void SynthInternalFrameUI::finalize() {
 
 $JInternalFrame* SynthInternalFrameUI::access$602(SynthInternalFrameUI* x0, $JInternalFrame* x1) {
 	$init(SynthInternalFrameUI);
-	return $assignField($nc(x0), frame, x1);
+	return $set($nc(x0), frame, x1);
 }
 
 $JInternalFrame* SynthInternalFrameUI::access$502(SynthInternalFrameUI* x0, $JInternalFrame* x1) {
 	$init(SynthInternalFrameUI);
-	return $assignField($nc(x0), frame, x1);
+	return $set($nc(x0), frame, x1);
 }
 
 $JInternalFrame* SynthInternalFrameUI::access$400(SynthInternalFrameUI* x0) {
@@ -205,7 +197,7 @@ void SynthInternalFrameUI::init$($JInternalFrame* b) {
 }
 
 void SynthInternalFrameUI::installDefaults() {
-	$nc(this->frame)->setLayout($assignField(this, internalFrameLayout, createLayoutManager()));
+	$nc(this->frame)->setLayout($set(this, internalFrameLayout, createLayoutManager()));
 	updateStyle(this->frame);
 }
 

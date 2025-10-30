@@ -12,29 +12,14 @@
 #include <java/io/FilterOutputStream.h>
 #include <java/io/IOException.h>
 #include <java/io/OutputStream.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <java/util/List.h>
 #include <java/util/concurrent/atomic/AtomicReference.h>
@@ -284,14 +269,12 @@ void TestWrongCSSFontSize::assertFontSize($GlyphView* child) {
 void TestWrongCSSFontSize::printSource($View* textRun) {
 	$useLocalCurrentObjectStackCache();
 	try {
-		$init($System);
 		$var($OutputStream, var$0, static_cast<$OutputStream*>($System::out));
 		$var($Document, var$1, $nc(this->editor)->getDocument());
 		int32_t var$2 = $nc(textRun)->getStartOffset();
 		int32_t var$3 = textRun->getEndOffset();
 		$nc($($nc(this->editor)->getEditorKit()))->write(var$0, var$1, var$2, var$3 - textRun->getStartOffset());
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		e->printStackTrace();
 	}
 }
@@ -306,8 +289,7 @@ void TestWrongCSSFontSize::captureImage($Component* comp, $String* suffix) {
 		$nc(comp)->paint(g);
 		$nc(g)->dispose();
 		$ImageIO::write(static_cast<$RenderedImage*>(capture), "png"_s, $$new($File, $$str({$(TestWrongCSSFontSize::class$->getSimpleName()), suffix, ".png"_s})));
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		e->printStackTrace();
 	}
 }
@@ -342,12 +324,11 @@ void TestWrongCSSFontSize::lambda$main$0(TestWrongCSSFontSize* test, $AtomicRefe
 			try {
 				$nc(test)->setUp();
 				test->run();
-			} catch ($Throwable&) {
-				$var($Throwable, e, $catch());
+			} catch ($Throwable& e) {
 				$nc(failure)->set(e);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$var($String, suffix, $nc(test)->w3cUnits ? "-w3cUnits"_s : ""_s);
 			if ($nc(failure)->get() != nullptr) {

@@ -1,16 +1,6 @@
 #include <java/awt/font/TextJustifier.h>
 
 #include <java/awt/font/GlyphJustificationInfo.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef DEBUG
@@ -63,7 +53,6 @@ void TextJustifier::init$($GlyphJustificationInfoArray* info, int32_t start, int
 	this->start = start;
 	this->limit = limit;
 	if (TextJustifier::DEBUG) {
-		$init($System);
 		$nc($System::out)->println($$str({"start: "_s, $$str(start), ", limit: "_s, $$str(limit)}));
 		for (int32_t i = start; i < limit; ++i) {
 			$var($GlyphJustificationInfo, gji, $nc(info)->get(i));
@@ -77,7 +66,6 @@ $floats* TextJustifier::justify(float delta) {
 	$var($floats, deltas, $new($floats, $nc(this->info)->length * 2));
 	bool grow = delta > 0;
 	if (TextJustifier::DEBUG) {
-		$init($System);
 		$nc($System::out)->println($$str({"delta: "_s, $$str(delta)}));
 	}
 	int32_t fallbackPriority = -1;
@@ -139,7 +127,6 @@ $floats* TextJustifier::justify(float delta) {
 			weightedAbsorb = (delta - gslimit) / absorbweight;
 		}
 		if (TextJustifier::DEBUG) {
-			$init($System);
 			$nc($System::out)->println($$str({"pass: "_s, $$str(p), ", d: "_s, $$str(delta), ", l: "_s, $$str(gslimit), ", w: "_s, $$str(weight), ", aw: "_s, $$str(absorbweight), ", wd: "_s, $$str(weightedDelta), ", wa: "_s, $$str(weightedAbsorb), ", hit: "_s, (hitLimit ? "y"_s : "n"_s)}));
 		}
 		int32_t n = this->start * 2;
@@ -186,13 +173,11 @@ $floats* TextJustifier::justify(float delta) {
 		float total = (float)0;
 		for (int32_t i = 0; i < deltas->length; ++i) {
 			total += deltas->get(i);
-			$init($System);
 			$nc($System::out)->print($$str({$$str(deltas->get(i)), ", "_s}));
 			if (i % 20 == 9) {
 				$nc($System::out)->println();
 			}
 		}
-		$init($System);
 		$nc($System::out)->println($$str({"\ntotal: "_s, $$str(total)}));
 		$nc($System::out)->println();
 	}

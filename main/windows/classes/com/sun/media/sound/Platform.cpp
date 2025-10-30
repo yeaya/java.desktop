@@ -2,22 +2,11 @@
 
 #include <com/sun/media/sound/Printer.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <jcpp.h>
@@ -132,8 +121,7 @@ void Platform::loadLibraries() {
 	Platform::isNativeLibLoaded = true;
 	try {
 		$AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new(Platform$$Lambda$lambda$loadLibraries$0)));
-	} catch ($Throwable&) {
-		$var($Throwable, t, $catch());
+	} catch ($Throwable& t) {
 		$init($Printer);
 		if ($Printer::err$) {
 			$Printer::err($$str({"Couldn\'t load library "_s, Platform::libName, ": "_s, $(t->toString())}));

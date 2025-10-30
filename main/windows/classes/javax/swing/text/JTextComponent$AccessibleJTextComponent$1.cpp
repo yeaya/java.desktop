@@ -5,15 +5,6 @@
 #include <java/awt/Point.h>
 #include <java/awt/event/ComponentAdapter.h>
 #include <java/awt/event/ComponentEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/text/JTextComponent$AccessibleJTextComponent.h>
 #include <javax/swing/text/JTextComponent.h>
@@ -92,8 +83,7 @@ void JTextComponent$AccessibleJTextComponent$1::componentMoved($ComponentEvent* 
 		$var($Point, newLocationOnScreen, this->this$1->getLocationOnScreen());
 		this->this$1->firePropertyChange("AccessibleVisibleData"_s, this->this$1->oldLocationOnScreen, newLocationOnScreen);
 		$set(this->this$1, oldLocationOnScreen, newLocationOnScreen);
-	} catch ($IllegalComponentStateException&) {
-		$catch();
+	} catch ($IllegalComponentStateException& iae) {
 	}
 }
 

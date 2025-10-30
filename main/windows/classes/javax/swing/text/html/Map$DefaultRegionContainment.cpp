@@ -1,13 +1,5 @@
 #include <javax/swing/text/html/Map$DefaultRegionContainment.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/html/Map.h>
 #include <jcpp.h>
 
@@ -60,7 +52,6 @@ $ClassInfo _Map$DefaultRegionContainment_ClassInfo_ = {
 $Object* allocate$Map$DefaultRegionContainment($Class* clazz) {
 	return $of($alloc(Map$DefaultRegionContainment));
 }
-
 
 Map$DefaultRegionContainment* Map$DefaultRegionContainment::si = nullptr;
 

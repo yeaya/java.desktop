@@ -1,13 +1,5 @@
 #include <javax/swing/JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/MalformedURLException.h>
 #include <java/net/URL.h>
 #include <javax/accessibility/AccessibleHyperlink.h>
@@ -124,7 +116,6 @@ bool JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink::doAccessibleAct
 }
 
 $String* JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink::getAccessibleActionDescription(int32_t i) {
-	$useLocalCurrentObjectStackCache();
 	if (i == 0 && isValid() == true) {
 		$var($Document, d, $nc(this->this$1->this$0)->getDocument());
 		if (d != nullptr) {
@@ -132,8 +123,7 @@ $String* JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink::getAccessib
 				int32_t var$0 = getStartIndex();
 				int32_t var$1 = getEndIndex();
 				return d->getText(var$0, var$1 - getStartIndex());
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, exception, $catch());
+			} catch ($BadLocationException& exception) {
 				return nullptr;
 			}
 		}
@@ -153,8 +143,7 @@ $Object* JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink::getAccessib
 			$var($URL, u, nullptr);
 			try {
 				$assign(u, $new($URL, $($nc(this->this$1->this$0)->getPage()), href));
-			} catch ($MalformedURLException&) {
-				$var($MalformedURLException, m, $catch());
+			} catch ($MalformedURLException& m) {
 				$assign(u, nullptr);
 			}
 			return $of(u);

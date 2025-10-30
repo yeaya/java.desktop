@@ -28,28 +28,14 @@
 #include <java/beans/ExceptionListener.h>
 #include <java/io/Reader.h>
 #include <java/io/StringReader.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/ReflectiveOperationException.h>
-#include <java/lang/RuntimeException.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/ref/Reference.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessControlContext.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
@@ -321,8 +307,7 @@ void DocumentHandler::startElement($String* uri, $String* localName, $String* qN
 		$set(this, handler, $cast($ElementHandler, $nc(getElementHandler(qName))->newInstance()));
 		$nc(this->handler)->setOwner(this);
 		$nc(this->handler)->setParent(parent);
-	} catch ($Exception&) {
-		$var($Exception, exception, $catch());
+	} catch ($Exception& exception) {
 		$throwNew($SAXException, exception);
 	}
 	for (int32_t i = 0; i < $nc(attributes)->getLength(); ++i) {
@@ -330,8 +315,7 @@ void DocumentHandler::startElement($String* uri, $String* localName, $String* qN
 			$var($String, name, attributes->getQName(i));
 			$var($String, value, attributes->getValue(i));
 			$nc(this->handler)->addAttribute(name, value);
-		} catch ($RuntimeException&) {
-			$var($RuntimeException, exception, $catch());
+		} catch ($RuntimeException& exception) {
 			handleException(exception);
 		}
 	}
@@ -339,18 +323,16 @@ void DocumentHandler::startElement($String* uri, $String* localName, $String* qN
 }
 
 void DocumentHandler::endElement($String* uri, $String* localName, $String* qName) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(this->handler)->endElement();
-			} catch ($RuntimeException&) {
-				$var($RuntimeException, exception, $catch());
+			} catch ($RuntimeException& exception) {
 				handleException(exception);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$set(this, handler, $nc(this->handler)->getParent());
 		}
@@ -366,8 +348,7 @@ void DocumentHandler::characters($chars* chars, int32_t start, int32_t length) {
 			while (0 < length--) {
 				$nc(this->handler)->addCharacter($nc(chars)->get(start++));
 			}
-		} catch ($RuntimeException&) {
-			$var($RuntimeException, exception, $catch());
+		} catch ($RuntimeException& exception) {
 			handleException(exception);
 		}
 	}
@@ -390,11 +371,9 @@ void DocumentHandler::parse($InputSource* input) {
 }
 
 $Class* DocumentHandler::findClass($String* name) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $ClassFinder::resolveClass(name, $(getClassLoader()));
-	} catch ($ClassNotFoundException&) {
-		$var($ClassNotFoundException, exception, $catch());
+	} catch ($ClassNotFoundException& exception) {
 		handleException(exception);
 		return nullptr;
 	}

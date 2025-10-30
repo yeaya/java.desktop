@@ -4,16 +4,6 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/awt/Window.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JToolBar.h>
 #include <jcpp.h>
@@ -93,8 +83,8 @@ void NimbusGlueTest$1::run() {
 				$init($NimbusGlueTest);
 				$assignStatic($NimbusGlueTest::errorMessage, "Test Failed"_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$init($NimbusGlueTest);
 			$nc($NimbusGlueTest::frame)->dispose();

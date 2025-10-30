@@ -1,18 +1,6 @@
 #include <bug7003777$1.h>
 
 #include <bug7003777.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTextPane.h>
 #include <javax/swing/text/BadLocationException.h>
 #include <javax/swing/text/Document.h>
@@ -91,8 +79,7 @@ void bug7003777$1::run() {
 				$var($String, parsedText, nullptr);
 				try {
 					$assign(parsedText, $nc($(pane->getDocument()))->getText(0, $nc($(pane->getDocument()))->getLength()));
-				} catch ($BadLocationException&) {
-					$var($BadLocationException, e, $catch());
+				} catch ($BadLocationException& e) {
 					$throwNew($RuntimeException, "The test failed."_s, e);
 				}
 				if ($nc(parsedText)->charAt(0) != u'\n') {

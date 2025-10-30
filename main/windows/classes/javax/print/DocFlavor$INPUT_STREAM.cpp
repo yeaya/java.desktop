@@ -1,13 +1,5 @@
 #include <javax/print/DocFlavor$INPUT_STREAM.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/DocFlavor.h>
 #include <jcpp.h>
 
@@ -94,43 +86,24 @@ $Object* allocate$DocFlavor$INPUT_STREAM($Class* clazz) {
 	return $of($alloc(DocFlavor$INPUT_STREAM));
 }
 
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::TEXT_PLAIN_HOST = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::TEXT_PLAIN_UTF_8 = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::TEXT_PLAIN_UTF_16 = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::TEXT_PLAIN_UTF_16BE = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::TEXT_PLAIN_UTF_16LE = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::TEXT_PLAIN_US_ASCII = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::TEXT_HTML_HOST = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::TEXT_HTML_UTF_8 = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::TEXT_HTML_UTF_16 = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::TEXT_HTML_UTF_16BE = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::TEXT_HTML_UTF_16LE = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::TEXT_HTML_US_ASCII = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::PDF = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::POSTSCRIPT = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::PCL = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::GIF = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::JPEG = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::PNG = nullptr;
-
 DocFlavor$INPUT_STREAM* DocFlavor$INPUT_STREAM::AUTOSENSE = nullptr;
 
 void DocFlavor$INPUT_STREAM::init$($String* mimeType) {

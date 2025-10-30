@@ -1,19 +1,7 @@
 #include <Test7149090.h>
 
 #include <Test7149090$1.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SwingUtilities.h>
 #include <javax/swing/UIManager$LookAndFeelInfo.h>
 #include <javax/swing/UIManager.h>
@@ -100,7 +88,6 @@ void Test7149090::main($StringArray* args) {
 								$UIManager::setLookAndFeel($($nc(lookAndFeel)->getClassName()));
 								int32_t expectedPosition = $nc(($cast($Integer, defaultTitlePosition->get(1))))->intValue();
 								$SwingUtilities::invokeAndWait($$new($Test7149090$1, expectedPosition));
-								$init($System);
 								$nc($System::out)->println($$str({"Test passed for LookAndFeel "_s, $($nc(lookAndFeel)->getName())}));
 							}
 						}

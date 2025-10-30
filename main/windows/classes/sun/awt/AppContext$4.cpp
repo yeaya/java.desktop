@@ -2,17 +2,6 @@
 
 #include <java/awt/Window.h>
 #include <java/beans/PropertyChangeSupport.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <sun/awt/AppContext$4$1.h>
@@ -102,8 +91,7 @@ void AppContext$4::run() {
 			{
 				try {
 					$nc(w)->dispose();
-				} catch ($Throwable&) {
-					$var($Throwable, t, $catch());
+				} catch ($Throwable& t) {
 					$init($AppContext);
 					$nc($AppContext::log)->finer("exception occurred while disposing app context"_s, t);
 				}

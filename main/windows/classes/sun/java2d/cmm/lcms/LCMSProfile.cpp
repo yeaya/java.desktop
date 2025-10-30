@@ -1,21 +1,11 @@
 #include <sun/java2d/cmm/lcms/LCMSProfile.h>
 
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/Map.h>
 #include <java/util/concurrent/ConcurrentHashMap.h>
@@ -140,8 +130,8 @@ $bytes* LCMSProfile::getProfileData() {
 			$assign(var$2, $LCMS::getProfileDataNative(getNativePtr()));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->lock)->unlockRead(stamp);
 		}
@@ -171,8 +161,8 @@ $bytes* LCMSProfile::getTag(int32_t sig) {
 			$assign(var$2, $cast($bytes, $nc(this->tags)->computeIfAbsent(var$3, static_cast<$Function*>($$new(LCMSProfile$$Lambda$lambda$getTag$0, this)))));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$4) {
+			$assign(var$0, var$4);
 		} $finally: {
 			$nc(this->lock)->unlockRead(stamp);
 		}
@@ -193,8 +183,8 @@ void LCMSProfile::setTag(int32_t tagSignature, $bytes* data) {
 		try {
 			$nc(this->tags)->clear();
 			$LCMS::setTagDataNative(getNativePtr(), tagSignature, data);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->lock)->unlockWrite(stamp);
 		}

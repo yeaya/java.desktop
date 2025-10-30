@@ -7,17 +7,7 @@
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/SunHints.h>
 #include <sun/java2d/ReentrantContext.h>
 #include <sun/java2d/ReentrantContextProvider.h>
@@ -171,8 +161,8 @@ void AAShapePipe::fillParallelogram($SunGraphics2D* sg, double ux1, double uy1, 
 			if (aatg != nullptr) {
 				renderTiles(sg, $(ts->computeBBox(ux1, uy1, ux2, uy2)), aatg, abox, ts);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(AAShapePipe::TILE_STATE_PROVIDER)->release(ts);
 		}
@@ -193,8 +183,8 @@ void AAShapePipe::drawParallelogram($SunGraphics2D* sg, double ux1, double uy1, 
 			if (aatg != nullptr) {
 				renderTiles(sg, $(ts->computeBBox(ux1, uy1, ux2, uy2)), aatg, abox, ts);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(AAShapePipe::TILE_STATE_PROVIDER)->release(ts);
 		}
@@ -217,8 +207,8 @@ void AAShapePipe::renderPath($SunGraphics2D* sg, $Shape* s, $BasicStroke* bs) {
 			if (aatg != nullptr) {
 				renderTiles(sg, s, aatg, abox, ts);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(AAShapePipe::TILE_STATE_PROVIDER)->release(ts);
 		}
@@ -263,8 +253,8 @@ void AAShapePipe::renderTiles($SunGraphics2D* sg, $Shape* s, $AATileGenerator* a
 					$nc(this->outpipe)->renderPathTile(context, atile, 0, tw, x, y, w, h);
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(aatg)->dispose();
 			if (context != nullptr) {

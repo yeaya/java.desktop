@@ -3,17 +3,6 @@
 #include <bug7165725$GoldenElement.h>
 #include <bug7165725.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JEditorPane.h>
 #include <javax/swing/text/AbstractDocument$AbstractElement.h>
 #include <javax/swing/text/AbstractDocument.h>
@@ -94,7 +83,6 @@ void bug7165725$2::init$($bug7165725* this$0, $bug7165725$GoldenElement* val$gol
 void bug7165725$2::run() {
 	$useLocalCurrentObjectStackCache();
 	$var($HTMLDocument, doc, $cast($HTMLDocument, $nc(this->this$0->editorPane)->getDocument()));
-	$init($System);
 	$nc(doc)->dump($System::out);
 	$nc(this->val$goldenElement)->checkStructureEquivalence($cast($AbstractDocument$AbstractElement, $(doc->getDefaultRootElement())));
 	this->this$0->dispose();

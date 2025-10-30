@@ -6,29 +6,14 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/FocusEvent.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JTree.h>
 #include <javax/swing/LookAndFeel.h>
@@ -227,12 +212,10 @@ void bug4927934::main($StringArray* args) {
 			$SwingUtilities::invokeLater($$new($bug4927934$2));
 			$synchronized(bug4927934::listener) {
 				if (!bug4927934::focusGained$) {
-					$init($System);
 					$nc($System::out)->println("waiting focusGained..."_s);
 					try {
 						$nc($of(bug4927934::listener))->wait(10000);
-					} catch ($InterruptedException&) {
-						$var($InterruptedException, e, $catch());
+					} catch ($InterruptedException& e) {
 						e->printStackTrace();
 					}
 				}
@@ -290,8 +273,8 @@ void bug4927934::main($StringArray* args) {
 			if (!isTreeCollapsed()) {
 				$throwNew($RuntimeException, "Root should be collapsed"_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (bug4927934::frame != nullptr) {
 				$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4927934$$Lambda$dispose, static_cast<$JFrame*>($nc(bug4927934::frame)))));
@@ -311,7 +294,6 @@ void bug4927934::focusLost($FocusEvent* e) {
 void bug4927934::focusGained($FocusEvent* e) {
 	$synchronized(this) {
 		bug4927934::focusGained$ = true;
-		$init($System);
 		$nc($System::out)->println("focusGained"_s);
 		$nc($of(bug4927934::listener))->notifyAll();
 	}
@@ -330,7 +312,6 @@ void bug4927934::createNodes($DefaultMutableTreeNode* root) {
 void bug4927934::valueChanged($TreeSelectionEvent* e) {
 	$synchronized(this) {
 		bug4927934::selectionChanged = true;
-		$init($System);
 		$nc($System::out)->println("selectionChanged"_s);
 		$of(this)->notifyAll();
 	}
@@ -338,7 +319,6 @@ void bug4927934::valueChanged($TreeSelectionEvent* e) {
 
 void bug4927934::treeCollapsed($TreeExpansionEvent* e) {
 	$synchronized(this) {
-		$init($System);
 		$nc($System::out)->println("treeCollapsed"_s);
 		bug4927934::treeCollapsed$ = true;
 		$of(this)->notifyAll();
@@ -347,7 +327,6 @@ void bug4927934::treeCollapsed($TreeExpansionEvent* e) {
 
 void bug4927934::treeExpanded($TreeExpansionEvent* e) {
 	$synchronized(this) {
-		$init($System);
 		$nc($System::out)->println("treeExpanded"_s);
 		bug4927934::treeExpanded$ = true;
 		$of(this)->notifyAll();
@@ -357,7 +336,6 @@ void bug4927934::treeExpanded($TreeExpansionEvent* e) {
 void bug4927934::hitKey(int32_t key) {
 	$init(bug4927934);
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println($$str({"key "_s, $$str(key), " pressed"_s}));
 	$nc(bug4927934::robot)->keyPress(key);
 	$nc(bug4927934::robot)->keyRelease(key);
@@ -368,18 +346,15 @@ bool bug4927934::checkSelectionChanged($JTree* tree, int32_t shouldBeSel) {
 	$useLocalCurrentObjectStackCache();
 	$synchronized(bug4927934::listener) {
 		if (!bug4927934::selectionChanged) {
-			$init($System);
 			$nc($System::out)->println("waiting for selectionChanged..."_s);
 			try {
 				$nc($of(bug4927934::listener))->wait(5000);
-			} catch ($InterruptedException&) {
-				$var($InterruptedException, e, $catch());
+			} catch ($InterruptedException& e) {
 				e->printStackTrace();
 			}
 		}
 	}
 	int32_t selRow = $nc(tree)->getLeadSelectionRow();
-	$init($System);
 	$nc($System::out)->println($$str({"Selected row: "_s, $$str(selRow)}));
 	return selRow == shouldBeSel;
 }
@@ -388,12 +363,10 @@ bool bug4927934::isTreeExpanded() {
 	$init(bug4927934);
 	$synchronized(bug4927934::listener) {
 		if (!bug4927934::treeExpanded$) {
-			$init($System);
 			$nc($System::out)->println("waiting for treeExpanded..."_s);
 			try {
 				$nc($of(bug4927934::listener))->wait(5000);
-			} catch ($InterruptedException&) {
-				$var($InterruptedException, e, $catch());
+			} catch ($InterruptedException& e) {
 				e->printStackTrace();
 			}
 		}
@@ -405,12 +378,10 @@ bool bug4927934::isTreeCollapsed() {
 	$init(bug4927934);
 	$synchronized(bug4927934::listener) {
 		if (!bug4927934::treeCollapsed$) {
-			$init($System);
 			$nc($System::out)->println("waiting for treeCollapsed..."_s);
 			try {
 				$nc($of(bug4927934::listener))->wait(5000);
-			} catch ($InterruptedException&) {
-				$var($InterruptedException, e, $catch());
+			} catch ($InterruptedException& e) {
 				e->printStackTrace();
 			}
 		}

@@ -2,16 +2,6 @@
 
 #include <java/awt/Color.h>
 #include <java/awt/Font.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/UIDefaults.h>
 #include <javax/swing/UIManager$LookAndFeelInfo.h>
 #include <javax/swing/UIManager.h>
@@ -75,7 +65,6 @@ void Test7022041::main($StringArray* args) {
 			$var($UIManager$LookAndFeelInfo, lookAndFeel, arr$->get(i$));
 			{
 				$var($String, name, $nc(lookAndFeel)->getName());
-				$init($System);
 				$nc($System::out)->println($$str({"Testing "_s, name}));
 				try {
 					$UIManager::setLookAndFeel($(lookAndFeel->getClassName()));
@@ -83,8 +72,7 @@ void Test7022041::main($StringArray* args) {
 					$nc($System::out)->println("    titleColor test ok"_s);
 					checkTitleFont();
 					$nc($System::out)->println("    titleFont test ok"_s);
-				} catch ($UnsupportedLookAndFeelException&) {
-					$var($UnsupportedLookAndFeelException, e, $catch());
+				} catch ($UnsupportedLookAndFeelException& e) {
 					$nc($System::out)->println($$str({"    Note: LookAndFeel "_s, name, " is not supported on this configuration"_s}));
 				}
 			}

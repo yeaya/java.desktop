@@ -5,24 +5,9 @@
 #include <java/beans/PropertyChangeListener.h>
 #include <java/io/File.h>
 #include <java/io/FileNotFoundException.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
@@ -31,8 +16,6 @@
 #include <java/lang/ref/Cleaner$Cleanable.h>
 #include <java/lang/ref/Cleaner.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/List.h>
@@ -317,8 +300,7 @@ $String* FileSystemView::getSystemDisplayName($File* f) {
 	if (var$0 && ($instanceOf($ShellFolder, f) || f->exists())) {
 		try {
 			$assign(name, $nc($(getShellFolder(f)))->getDisplayName());
-		} catch ($FileNotFoundException&) {
-			$var($FileNotFoundException, e, $catch());
+		} catch ($FileNotFoundException& e) {
 			return nullptr;
 		}
 		if (name == nullptr || $nc(name)->length() == 0) {
@@ -340,8 +322,7 @@ $Icon* FileSystemView::getSystemIcon($File* f) {
 	$var($ShellFolder, sf, nullptr);
 	try {
 		$assign(sf, getShellFolder(f));
-	} catch ($FileNotFoundException&) {
-		$var($FileNotFoundException, e, $catch());
+	} catch ($FileNotFoundException& e) {
 		return nullptr;
 	}
 	$var($Image, img, $nc(sf)->getIcon(false));
@@ -366,8 +347,7 @@ $Icon* FileSystemView::getSystemIcon($File* f, int32_t width, int32_t height) {
 	$var($ShellFolder, sf, nullptr);
 	try {
 		$assign(sf, $ShellFolder::getShellFolder(f));
-	} catch ($FileNotFoundException&) {
-		$var($FileNotFoundException, e, $catch());
+	} catch ($FileNotFoundException& e) {
 		return nullptr;
 	}
 	$var($Image, img, $nc(sf)->getIcon(width, height));
@@ -508,8 +488,7 @@ $FileArray* FileSystemView::getFiles($File* dir$renamed, bool useFileHiding) {
 	if (!($instanceOf($ShellFolder, dir))) {
 		try {
 			$assign(dir, getShellFolder(dir));
-		} catch ($FileNotFoundException&) {
-			$var($FileNotFoundException, e, $catch());
+		} catch ($FileNotFoundException& e) {
 			return $new($FileArray, 0);
 		}
 	}
@@ -533,11 +512,9 @@ $FileArray* FileSystemView::getFiles($File* dir$renamed, bool useFileHiding) {
 					}
 					try {
 						$assign(f, $ShellFolder::getShellFolder(f));
-					} catch ($FileNotFoundException&) {
-						$var($FileNotFoundException, e, $catch());
+					} catch ($FileNotFoundException& e) {
 						continue;
-					} catch ($InternalError&) {
-						$var($InternalError, e, $catch());
+					} catch ($InternalError& e) {
 						continue;
 					}
 				}
@@ -558,8 +535,7 @@ $File* FileSystemView::getParentDirectory($File* dir) {
 	$var($ShellFolder, sf, nullptr);
 	try {
 		$assign(sf, getShellFolder(dir));
-	} catch ($FileNotFoundException&) {
-		$var($FileNotFoundException, e, $catch());
+	} catch ($FileNotFoundException& e) {
 		return nullptr;
 	}
 	$var($File, psf, $nc(sf)->getParentFile());
@@ -589,29 +565,25 @@ $FileArray* FileSystemView::getChooserShortcutPanelFiles() {
 }
 
 bool FileSystemView::isLink($File* file) {
-	$useLocalCurrentObjectStackCache();
 	if (file == nullptr) {
 		$throwNew($NullPointerException, "file is null"_s);
 	}
 	try {
 		return $nc($($ShellFolder::getShellFolder(file)))->isLink();
-	} catch ($FileNotFoundException&) {
-		$var($FileNotFoundException, e, $catch());
+	} catch ($FileNotFoundException& e) {
 		return false;
 	}
 	$shouldNotReachHere();
 }
 
 $File* FileSystemView::getLinkLocation($File* file) {
-	$useLocalCurrentObjectStackCache();
 	if (file == nullptr) {
 		$throwNew($NullPointerException, "file is null"_s);
 	}
 	$var($ShellFolder, shellFolder, nullptr);
 	try {
 		$assign(shellFolder, $ShellFolder::getShellFolder(file));
-	} catch ($FileNotFoundException&) {
-		$var($FileNotFoundException, e, $catch());
+	} catch ($FileNotFoundException& e) {
 		return nullptr;
 	}
 	return $nc(shellFolder)->isLink() ? static_cast<$File*>($nc(shellFolder)->getLinkLocation()) : ($File*)nullptr;
@@ -625,9 +597,7 @@ $ShellFolder* FileSystemView::getShellFolder($File* f$renamed) {
 	}
 	try {
 		return $ShellFolder::getShellFolder(f);
-	} catch ($InternalError&) {
-		$var($InternalError, e, $catch());
-		$init($System);
+	} catch ($InternalError& e) {
 		$nc($System::err)->println($$str({"FileSystemView.getShellFolder: f="_s, f}));
 		e->printStackTrace();
 		return nullptr;

@@ -14,18 +14,8 @@
 #include <java/awt/Shape.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/MalformedURLException.h>
 #include <java/net/URL.h>
 #include <java/util/StringTokenizer.h>
@@ -196,14 +186,12 @@ void StyleSheet$ListPainter::init$($AttributeSet* attr, $StyleSheet* ss) {
 			}
 			$var($URL, u, $new($URL, tmpstr));
 			$set(this, img, $new($ImageIcon, u));
-		} catch ($MalformedURLException&) {
-			$var($MalformedURLException, e, $catch());
+		} catch ($MalformedURLException& e) {
 			if (tmpstr != nullptr && ss != nullptr && ss->getBase() != nullptr) {
 				try {
 					$var($URL, u, $new($URL, $(ss->getBase()), tmpstr));
 					$set(this, img, $new($ImageIcon, u));
-				} catch ($MalformedURLException&) {
-					$var($MalformedURLException, murle, $catch());
+				} catch ($MalformedURLException& murle) {
 					$set(this, img, nullptr);
 				}
 			} else {
@@ -253,8 +241,7 @@ void StyleSheet$ListPainter::getStart($View* parent) {
 		if (var$0 && ($assign(startValue, attr->getAttribute($HTML$Attribute::START))) != nullptr && ($instanceOf($String, startValue))) {
 			try {
 				this->start = $Integer::parseInt($cast($String, startValue));
-			} catch ($NumberFormatException&) {
-				$catch();
+			} catch ($NumberFormatException& nfe) {
 			}
 		}
 	}
@@ -280,8 +267,7 @@ int32_t StyleSheet$ListPainter::getRenderIndex($View* parentView, int32_t childI
 					try {
 						int32_t iValue = $Integer::parseInt($cast($String, value));
 						return retIndex - counter + iValue;
-					} catch ($NumberFormatException&) {
-						$catch();
+					} catch ($NumberFormatException& nfe) {
 					}
 				}
 			}

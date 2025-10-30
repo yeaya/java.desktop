@@ -14,21 +14,9 @@
 #include <java/awt/event/ComponentListener.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/BreakIterator.h>
 #include <java/text/CharacterIterator.h>
 #include <java/util/Locale.h>
@@ -280,8 +268,7 @@ void JTextComponent$AccessibleJTextComponent::init$($JTextComponent* this$0) {
 	this->caretPos = getCaretPosition();
 	try {
 		$set(this, oldLocationOnScreen, getLocationOnScreen());
-	} catch ($IllegalComponentStateException&) {
-		$catch();
+	} catch ($IllegalComponentStateException& iae) {
 	}
 	this$0->addComponentListener($$new($JTextComponent$AccessibleJTextComponent$1, this, this$0));
 }
@@ -298,8 +285,7 @@ void JTextComponent$AccessibleJTextComponent::caretUpdate($CaretEvent* e) {
 		this->caretPos = dot;
 		try {
 			$set(this, oldLocationOnScreen, getLocationOnScreen());
-		} catch ($IllegalComponentStateException&) {
-			$catch();
+		} catch ($IllegalComponentStateException& iae) {
 		}
 	}
 	if (mark != dot) {
@@ -412,11 +398,10 @@ $Rectangle* JTextComponent$AccessibleJTextComponent::getCharacterBounds(int32_t 
 					$var($Shape, bounds, rootView->modelToView(i, $Position$Bias::Forward, i + 1, $Position$Bias::Backward, alloc));
 					$assign(rect, ($instanceOf($Rectangle, bounds)) ? $cast($Rectangle, bounds) : $nc(bounds)->getBounds());
 				}
-			} catch ($BadLocationException&) {
-				$catch();
+			} catch ($BadLocationException& e) {
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if ($instanceOf($AbstractDocument, this->this$0->model)) {
 				$nc(($cast($AbstractDocument, this->this$0->model)))->readUnlock();
@@ -450,8 +435,8 @@ $AttributeSet* JTextComponent$AccessibleJTextComponent::getCharacterAttribute(in
 				int32_t index = $nc(e)->getElementIndex(i);
 				$assign(e, e->getElement(index));
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if ($instanceOf($AbstractDocument, this->this$0->model)) {
 				$nc(($cast($AbstractDocument, this->this$0->model)))->readUnlock();
@@ -549,11 +534,10 @@ $String* JTextComponent$AccessibleJTextComponent::getAtIndex(int32_t part, int32
 						}
 					}
 				}
-			} catch ($BadLocationException&) {
-				$catch();
+			} catch ($BadLocationException& e) {
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			if ($instanceOf($AbstractDocument, this->this$0->model)) {
 				$nc(($cast($AbstractDocument, this->this$0->model)))->readUnlock();
@@ -599,8 +583,7 @@ $JTextComponent$AccessibleJTextComponent$IndexedSegment* JTextComponent$Accessib
 			int32_t var$0 = para->getEndOffset();
 			int32_t length = var$0 - para->getStartOffset();
 			$nc(this->this$0->model)->getText(para->getStartOffset(), length, segment);
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			return nullptr;
 		}
 		segment->modelOffset = para->getStartOffset();
@@ -671,8 +654,7 @@ void JTextComponent$AccessibleJTextComponent::insertTextAtIndex(int32_t index, $
 					this->this$0->restoreComposedText();
 				}
 			}
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this->this$0);
 		}
 	}
@@ -687,8 +669,7 @@ $String* JTextComponent$AccessibleJTextComponent::getTextRange(int32_t startInde
 		try {
 			$var($Document, doc, this->this$0->getDocument());
 			$assign(txt, $nc(doc)->getText(p0, p1 - p0));
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			$throwNew($IllegalArgumentException, $(e->getMessage()));
 		}
 	}
@@ -706,8 +687,7 @@ void JTextComponent$AccessibleJTextComponent::delete$(int32_t startIndex, int32_
 				$var($Document, doc, this->this$0->getDocument());
 				$nc(doc)->remove(p0, p1 - p0);
 			}
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& e) {
 		}
 	} else {
 		$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this->this$0);
@@ -773,11 +753,10 @@ $AccessibleTextSequence* JTextComponent$AccessibleJTextComponent::getSequenceAtI
 							if (index + direction < $nc(this->this$0->model)->getLength() && index + direction >= 0) {
 								$assign(charSequence, $new($AccessibleTextSequence, index + direction, index + direction + 1, $($nc(this->this$0->model)->getText(index + direction, 1))));
 							}
-						} catch ($BadLocationException&) {
-							$catch();
+						} catch ($BadLocationException& e) {
 						}
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$1) {
+						$assign(var$0, var$1);
 					} /*finally*/ {
 						if ($instanceOf($AbstractDocument, this->this$0->model)) {
 							$nc(($cast($AbstractDocument, this->this$0->model)))->readUnlock();
@@ -798,7 +777,7 @@ $AccessibleTextSequence* JTextComponent$AccessibleJTextComponent::getSequenceAtI
 				}
 				$assign(rangeSequence, nullptr);
 				{
-					$var($Throwable, var$1, nullptr);
+					$var($Throwable, var$2, nullptr);
 					try {
 						try {
 							$var($JTextComponent$AccessibleJTextComponent$IndexedSegment, seg, getSegmentAt(part, index));
@@ -820,18 +799,17 @@ $AccessibleTextSequence* JTextComponent$AccessibleJTextComponent::getSequenceAtI
 									$assign(rangeSequence, $new($AccessibleTextSequence, seg->offset, seg->offset + seg->count, $$new($String, seg->array, seg->offset, seg->count)));
 								}
 							}
-						} catch ($BadLocationException&) {
-							$catch();
+						} catch ($BadLocationException& e) {
 						}
-					} catch ($Throwable&) {
-						$assign(var$1, $catch());
+					} catch ($Throwable& var$3) {
+						$assign(var$2, var$3);
 					} /*finally*/ {
 						if ($instanceOf($AbstractDocument, this->this$0->model)) {
 							$nc(($cast($AbstractDocument, this->this$0->model)))->readUnlock();
 						}
 					}
-					if (var$1 != nullptr) {
-						$throw(var$1);
+					if (var$2 != nullptr) {
+						$throw(var$2);
 					}
 				}
 				return rangeSequence;
@@ -843,7 +821,7 @@ $AccessibleTextSequence* JTextComponent$AccessibleJTextComponent::getSequenceAtI
 					$nc(($cast($AbstractDocument, this->this$0->model)))->readLock();
 				}
 				{
-					$var($Throwable, var$2, nullptr);
+					$var($Throwable, var$4, nullptr);
 					try {
 						try {
 							int32_t startIndex = $Utilities::getRowStart(this->this$0, index);
@@ -865,18 +843,17 @@ $AccessibleTextSequence* JTextComponent$AccessibleJTextComponent::getSequenceAtI
 									}
 								}
 							}
-						} catch ($BadLocationException&) {
-							$catch();
+						} catch ($BadLocationException& e) {
 						}
-					} catch ($Throwable&) {
-						$assign(var$2, $catch());
+					} catch ($Throwable& var$5) {
+						$assign(var$4, var$5);
 					} /*finally*/ {
 						if ($instanceOf($AbstractDocument, this->this$0->model)) {
 							$nc(($cast($AbstractDocument, this->this$0->model)))->readUnlock();
 						}
 					}
-					if (var$2 != nullptr) {
-						$throw(var$2);
+					if (var$4 != nullptr) {
+						$throw(var$4);
 					}
 				}
 				return lineSequence;
@@ -888,9 +865,9 @@ $AccessibleTextSequence* JTextComponent$AccessibleJTextComponent::getSequenceAtI
 					$nc(($cast($AbstractDocument, this->this$0->model)))->readLock();
 				}
 				{
-					$var($Throwable, var$3, nullptr);
-					$var($AccessibleTextSequence, var$5, nullptr);
-					bool return$4 = false;
+					$var($Throwable, var$6, nullptr);
+					$var($AccessibleTextSequence, var$8, nullptr);
+					bool return$7 = false;
 					try {
 						try {
 							attributeRunStartIndex = (attributeRunEndIndex = $Integer::MIN_VALUE);
@@ -920,24 +897,23 @@ $AccessibleTextSequence* JTextComponent$AccessibleJTextComponent::getSequenceAtI
 							attributeRunStartIndex = (attributeRunStartIndex != $Integer::MIN_VALUE) ? attributeRunStartIndex : getRunEdge(tempIndex, -1);
 							attributeRunEndIndex = (attributeRunEndIndex != $Integer::MIN_VALUE) ? attributeRunEndIndex : getRunEdge(tempIndex, 1);
 							$assign(runText, $nc(this->this$0->model)->getText(attributeRunStartIndex, attributeRunEndIndex - attributeRunStartIndex));
-						} catch ($BadLocationException&) {
-							$var($BadLocationException, e, $catch());
-							$assign(var$5, nullptr);
-							return$4 = true;
+						} catch ($BadLocationException& e) {
+							$assign(var$8, nullptr);
+							return$7 = true;
 							goto $finally3;
 						}
-					} catch ($Throwable&) {
-						$assign(var$3, $catch());
+					} catch ($Throwable& var$9) {
+						$assign(var$6, var$9);
 					} $finally3: {
 						if ($instanceOf($AbstractDocument, this->this$0->model)) {
 							$nc(($cast($AbstractDocument, this->this$0->model)))->readUnlock();
 						}
 					}
-					if (var$3 != nullptr) {
-						$throw(var$3);
+					if (var$6 != nullptr) {
+						$throw(var$6);
 					}
-					if (return$4) {
-						return var$5;
+					if (return$7) {
+						return var$8;
 					}
 				}
 				return $new($AccessibleTextSequence, attributeRunStartIndex, attributeRunEndIndex, runText);
@@ -1046,11 +1022,10 @@ $Rectangle* JTextComponent$AccessibleJTextComponent::getTextBounds(int32_t start
 					$var($Shape, bounds, rootView->modelToView(startIndex, $Position$Bias::Forward, endIndex, $Position$Bias::Backward, alloc));
 					$assign(rect, ($instanceOf($Rectangle, bounds)) ? $cast($Rectangle, bounds) : $nc(bounds)->getBounds());
 				}
-			} catch ($BadLocationException&) {
-				$catch();
+			} catch ($BadLocationException& e) {
 			}
-		} catch ($Throwable&) {
-			$assign(var$1, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$1, var$2);
 		} /*finally*/ {
 			if ($instanceOf($AbstractDocument, this->this$0->model)) {
 				$nc(($cast($AbstractDocument, this->this$0->model)))->readUnlock();

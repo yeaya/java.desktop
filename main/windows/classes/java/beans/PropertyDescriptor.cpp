@@ -10,17 +10,6 @@
 #include <java/beans/PropertyChangeListener.h>
 #include <java/beans/PropertyEditor.h>
 #include <java/beans/Transient.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/Void.h>
 #include <java/lang/annotation/Annotation.h>
 #include <java/lang/ref/Reference.h>
 #include <java/lang/reflect/Constructor.h>
@@ -224,8 +213,7 @@ $Class* PropertyDescriptor::getPropertyType() {
 				$var($Method, var$0, getReadMethod());
 				type = findPropertyType(var$0, $(getWriteMethod()));
 				setPropertyType(type);
-			} catch ($IntrospectionException&) {
-				$catch();
+			} catch ($IntrospectionException& ex) {
 			}
 		}
 		return type;
@@ -267,8 +255,7 @@ $Method* PropertyDescriptor::getReadMethod() {
 			}
 			try {
 				setReadMethod(readMethod);
-			} catch ($IntrospectionException&) {
-				$catch();
+			} catch ($IntrospectionException& ex) {
 			}
 		}
 		return readMethod;
@@ -308,8 +295,7 @@ $Method* PropertyDescriptor::getWriteMethod() {
 				try {
 					type = findPropertyType($(getReadMethod()), nullptr);
 					setPropertyType(type);
-				} catch ($IntrospectionException&) {
-					$var($IntrospectionException, ex, $catch());
+				} catch ($IntrospectionException& ex) {
 					return nullptr;
 				}
 			}
@@ -327,8 +313,7 @@ $Method* PropertyDescriptor::getWriteMethod() {
 			}
 			try {
 				setWriteMethod(writeMethod);
-			} catch ($IntrospectionException&) {
-				$catch();
+			} catch ($IntrospectionException& ex) {
 			}
 		}
 		return writeMethod;
@@ -397,10 +382,8 @@ $PropertyEditor* PropertyDescriptor::createPropertyEditor(Object$* bean) {
 		$var($Constructor, ctor, nullptr);
 		if (bean != nullptr) {
 			try {
-				$load($Object);
 				$assign(ctor, cls->getConstructor($$new($ClassArray, {$Object::class$})));
-			} catch ($Exception&) {
-				$catch();
+			} catch ($Exception& ex) {
 			}
 		}
 		try {
@@ -409,8 +392,7 @@ $PropertyEditor* PropertyDescriptor::createPropertyEditor(Object$* bean) {
 			} else {
 				$assign(editor, $nc(ctor)->newInstance($$new($ObjectArray, {bean})));
 			}
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& ex) {
 		}
 	}
 	return $cast($PropertyEditor, editor);
@@ -489,8 +471,7 @@ void PropertyDescriptor::init$(PropertyDescriptor* x, PropertyDescriptor* y) {
 		} else {
 			setReadMethod(xr);
 		}
-	} catch ($IntrospectionException&) {
-		$catch();
+	} catch ($IntrospectionException& ex) {
 	}
 	bool var$4 = xr != nullptr && yr != nullptr;
 	if (var$4) {
@@ -505,8 +486,7 @@ void PropertyDescriptor::init$(PropertyDescriptor* x, PropertyDescriptor* y) {
 	if (var$0 && $nc($(yr->getName()))->indexOf($Introspector::GET_PREFIX) == 0) {
 		try {
 			setReadMethod(xr);
-		} catch ($IntrospectionException&) {
-			$catch();
+		} catch ($IntrospectionException& ex) {
 		}
 	}
 	$var($Method, xw, x->getWriteMethod());
@@ -517,8 +497,7 @@ void PropertyDescriptor::init$(PropertyDescriptor* x, PropertyDescriptor* y) {
 		} else {
 			setWriteMethod(xw);
 		}
-	} catch ($IntrospectionException&) {
-		$catch();
+	} catch ($IntrospectionException& ex) {
 	}
 	if (y->getPropertyEditorClass() != nullptr) {
 		setPropertyEditorClass(y->getPropertyEditorClass());
@@ -551,8 +530,7 @@ void PropertyDescriptor::updateGenericsFor($Class* type) {
 	try {
 		$var($Method, var$0, $nc(this->readMethodRef)->get());
 		setPropertyType(findPropertyType(var$0, $($nc(this->writeMethodRef)->get())));
-	} catch ($IntrospectionException&) {
-		$var($IntrospectionException, exception, $catch());
+	} catch ($IntrospectionException& exception) {
 		setPropertyType(nullptr);
 	}
 }
@@ -582,8 +560,7 @@ $Class* PropertyDescriptor::findPropertyType($Method* readMethod, $Method* write
 			}
 			propertyType = $nc(params)->get(0);
 		}
-	} catch ($IntrospectionException&) {
-		$var($IntrospectionException, ex, $catch());
+	} catch ($IntrospectionException& ex) {
 		$throw(ex);
 	}
 	return propertyType;

@@ -2,17 +2,7 @@
 
 #include <java/awt/Font.h>
 #include <java/awt/font/TextAttribute.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator$Attribute.h>
 #include <java/util/AbstractSet.h>
 #include <java/util/HashSet.h>
@@ -194,15 +184,13 @@ $View* TextLayoutStrategy$AttributedSegment::getView() {
 }
 
 void TextLayoutStrategy$AttributedSegment::setView($View* v) {
-	$useLocalCurrentObjectStackCache();
 	$set(this, v, v);
 	$var($Document, doc, $nc(v)->getDocument());
 	int32_t p0 = v->getStartOffset();
 	int32_t p1 = v->getEndOffset();
 	try {
 		$nc(doc)->getText(p0, p1 - p0, this);
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, bl, $catch());
+	} catch ($BadLocationException& bl) {
 		$throwNew($IllegalArgumentException, "Invalid view"_s);
 	}
 	first();

@@ -3,20 +3,8 @@
 #include <java/awt/GraphicsConfiguration.h>
 #include <java/awt/Image.h>
 #include <java/awt/image/ImageObserver.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/ref/Reference.h>
 #include <java/lang/ref/ReferenceQueue.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <java/util/Iterator.h>
 #include <java/util/LinkedHashMap.h>
@@ -135,8 +123,8 @@ void ImageCache::flush() {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$nc(this->map)->clear();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc($($nc(this->lock)->readLock()))->unlock();
 		}
@@ -168,8 +156,8 @@ $Image* ImageCache::getImage($GraphicsConfiguration* config, int32_t w, int32_t 
 				return$1 = true;
 				goto $finally;
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc($($nc(this->lock)->readLock()))->unlock();
 		}
@@ -231,8 +219,8 @@ bool ImageCache::setImage($Image* image, $GraphicsConfiguration* config, int32_t
 			var$2 = true;
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$5) {
+			$assign(var$0, var$5);
 		} $finally: {
 			$nc($($nc(this->lock)->writeLock()))->unlock();
 		}

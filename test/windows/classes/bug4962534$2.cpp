@@ -1,17 +1,6 @@
 #include <bug4962534$2.h>
 
 #include <bug4962534.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JLayeredPane.h>
 #include <jcpp.h>
@@ -76,7 +65,6 @@ void bug4962534$2::init$($bug4962534* this$0) {
 void bug4962534$2::run() {
 	$init($bug4962534);
 	$set(this->this$0, lPane, $nc($bug4962534::frame)->getLayeredPane());
-	$init($System);
 	$nc($System::out)->println($$str({"JFrame\'s LayeredPane "_s, this->this$0->lPane}));
 }
 

@@ -2,17 +2,6 @@
 
 #include <bug7082443$TestComboBox.h>
 #include <bug7082443.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $bug7082443 = ::bug7082443;
@@ -69,7 +58,6 @@ void bug7082443$1::run() {
 	$useLocalCurrentObjectStackCache();
 	$var($bug7082443$TestComboBox, testComboBox, $new($bug7082443$TestComboBox));
 	if (testComboBox->isOldRendererOpaque()) {
-		$init($System);
 		$nc($System::out)->println($$str({"Passed for "_s, "GTKLookAndFeel"_s}));
 	} else {
 		$throwNew($RuntimeException, $$str({"Failed for "_s, "GTKLookAndFeel"_s}));

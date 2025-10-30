@@ -11,16 +11,8 @@
 #include <java/awt/image/ImageObserver.h>
 #include <java/awt/image/ImageProducer.h>
 #include <java/awt/image/PixelGrabber.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IndexOutOfBoundsException.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef SCALE_DEFAULT
@@ -80,8 +72,7 @@ void CustomCursor::init$($Image* cursor$renamed, $Point* hotSpot, $String* name)
 	tracker->addImage(cursor, 0);
 	try {
 		tracker->waitForAll();
-	} catch ($InterruptedException&) {
-		$catch();
+	} catch ($InterruptedException& e) {
 	}
 	int32_t width = $nc(cursor)->getWidth(c);
 	int32_t height = cursor->getHeight(c);
@@ -102,8 +93,7 @@ void CustomCursor::init$($Image* cursor$renamed, $Point* hotSpot, $String* name)
 	$var($PixelGrabber, pg, $new($PixelGrabber, ip, 0, 0, width, height, pixels, 0, width));
 	try {
 		pg->grabPixels();
-	} catch ($InterruptedException&) {
-		$catch();
+	} catch ($InterruptedException& e) {
 	}
 	createNativeCursor(this->image, pixels, width, height, $nc(hotSpot)->x, hotSpot->y);
 }

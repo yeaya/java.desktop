@@ -17,8 +17,10 @@ public:
 	void init$($String* msg);
 	static const int64_t serialVersionUID = (int64_t)0x41932C31C3078DF8;
 	PrinterAbortException(const PrinterAbortException& e);
-	PrinterAbortException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline PrinterAbortException* operator ->() {
+		return (PrinterAbortException*)throwing$;
+	}
 };
 
 		} // print

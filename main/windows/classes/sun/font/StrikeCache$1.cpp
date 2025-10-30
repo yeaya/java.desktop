@@ -1,17 +1,6 @@
 #include <sun/font/StrikeCache$1.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/FontStrike.h>
 #include <sun/font/StrikeCache.h>
 #include <jcpp.h>
@@ -84,8 +73,7 @@ $Object* StrikeCache$1::run() {
 			if ($StrikeCache::MINSTRIKES <= 0) {
 				$StrikeCache::MINSTRIKES = 1;
 			}
-		} catch ($NumberFormatException&) {
-			$catch();
+		} catch ($NumberFormatException& e) {
 		}
 	}
 	$assignStatic($StrikeCache::recentStrikes, $new($FontStrikeArray, $StrikeCache::MINSTRIKES));

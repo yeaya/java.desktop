@@ -8,16 +8,6 @@
 #include <java/awt/Rectangle.h>
 #include <java/awt/Shape.h>
 #include <java/awt/geom/Rectangle2D.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/ConstrainableGraphics.h>
 #include <sun/util/logging/PlatformLogger$Level.h>
 #include <sun/util/logging/PlatformLogger.h>
@@ -130,8 +120,8 @@ void SunGraphicsCallback::runOneComponent($Component* comp, $Rectangle* bounds$r
 					$nc(($cast($Graphics2D, cg)))->setBackground($(comp->getBackground()));
 				}
 				run(comp, cg);
-			} catch ($Throwable&) {
-				$assign(var$1, $catch());
+			} catch ($Throwable& var$2) {
+				$assign(var$1, var$2);
 			} /*finally*/ {
 				$nc(cg)->dispose();
 			}

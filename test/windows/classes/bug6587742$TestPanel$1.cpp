@@ -7,16 +7,6 @@
 #include <java/awt/Container.h>
 #include <java/awt/Panel.h>
 #include <java/awt/event/ItemEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JApplet.h>
 #include <javax/swing/JComboBox.h>
 #include <javax/swing/JComponent.h>
@@ -115,8 +105,7 @@ void bug6587742$TestPanel$1::itemStateChanged($ItemEvent* e) {
 		$MetalLookAndFeel::setCurrentTheme(theme);
 		try {
 			$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
-		} catch ($UnsupportedLookAndFeelException&) {
-			$var($UnsupportedLookAndFeelException, e1, $catch());
+		} catch ($UnsupportedLookAndFeelException& e1) {
 			$JOptionPane::showMessageDialog(this->this$1, $$str({"Can\'t change theme: "_s, $(e1->getMessage())}), "Error"_s, $JOptionPane::ERROR_MESSAGE);
 			return;
 		}

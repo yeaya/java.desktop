@@ -1,15 +1,6 @@
 #include <javax/swing/text/html/FormSubmitEvent$MethodType.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/html/FormSubmitEvent.h>
 #include <jcpp.h>
 
@@ -69,9 +60,7 @@ $Object* allocate$FormSubmitEvent$MethodType($Class* clazz) {
 	return $of($alloc(FormSubmitEvent$MethodType));
 }
 
-
 FormSubmitEvent$MethodType* FormSubmitEvent$MethodType::GET = nullptr;
-
 FormSubmitEvent$MethodType* FormSubmitEvent$MethodType::POST = nullptr;
 $FormSubmitEvent$MethodTypeArray* FormSubmitEvent$MethodType::$VALUES = nullptr;
 

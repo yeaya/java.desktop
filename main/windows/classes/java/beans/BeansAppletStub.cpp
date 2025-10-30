@@ -2,15 +2,6 @@
 
 #include <java/applet/Applet.h>
 #include <java/applet/AppletContext.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <jcpp.h>
 
@@ -32,11 +23,11 @@ $NamedAttribute BeansAppletStub_Attribute_var$0[] = {
 	{"forRemoval", 'Z', "true"},
 	{}
 };
+
 $CompoundAttribute _BeansAppletStub_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", BeansAppletStub_Attribute_var$0},
 	{}
 };
-
 
 $FieldInfo _BeansAppletStub_FieldInfo_[] = {
 	{"active", "Z", nullptr, $TRANSIENT, $field(BeansAppletStub, active)},

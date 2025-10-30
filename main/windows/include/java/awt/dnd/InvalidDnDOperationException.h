@@ -18,8 +18,10 @@ public:
 	static const int64_t serialVersionUID = (int64_t)0xABDD6DD9CABF42BA;
 	static $String* dft_msg;
 	InvalidDnDOperationException(const InvalidDnDOperationException& e);
-	InvalidDnDOperationException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline InvalidDnDOperationException* operator ->() {
+		return (InvalidDnDOperationException*)throwing$;
+	}
 };
 
 		} // dnd

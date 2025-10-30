@@ -3,18 +3,8 @@
 #include <java/awt/EventQueue.h>
 #include <java/awt/Graphics.h>
 #include <java/awt/Rectangle.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JPanel.h>
 #include <sun/swing/JLightweightFrame$3$1.h>
@@ -113,8 +103,8 @@ void JLightweightFrame$3::paint($Graphics* g) {
 			clip->width = $Math::min($nc(this->this$0->contentPane)->getWidth(), clip->width);
 			clip->height = $Math::min($nc(this->this$0->contentPane)->getHeight(), clip->height);
 			$EventQueue::invokeLater($$new($JLightweightFrame$3$1, this, clip));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} /*finally*/ {
 			if (!$JLightweightFrame::copyBufferEnabled) {
 				$nc(this->this$0->content)->paintUnlock();

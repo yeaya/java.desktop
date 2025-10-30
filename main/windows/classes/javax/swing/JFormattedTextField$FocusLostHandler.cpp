@@ -1,14 +1,6 @@
 #include <javax/swing/JFormattedTextField$FocusLostHandler.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/ParseException.h>
 #include <javax/swing/JFormattedTextField.h>
 #include <jcpp.h>
@@ -101,8 +93,7 @@ void JFormattedTextField$FocusLostHandler::run() {
 		try {
 			this->this$0->commitEdit();
 			this->this$0->setValue($(this->this$0->getValue()), true, true);
-		} catch ($ParseException&) {
-			$var($ParseException, pe, $catch());
+		} catch ($ParseException& pe) {
 			if (fb == $JFormattedTextField::COMMIT_OR_REVERT) {
 				this->this$0->setValue($(this->this$0->getValue()), true, true);
 			}

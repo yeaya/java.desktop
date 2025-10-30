@@ -11,20 +11,9 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JEditorPane.h>
 #include <javax/swing/JFrame.h>
@@ -137,15 +126,12 @@ void bug4506788::main($StringArray* args) {
 }
 
 void bug4506788::init() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$SwingUtilities::invokeAndWait($$new($bug4506788$1, this));
-	} catch ($InterruptedException&) {
-		$var($Exception, ex, $catch());
+	} catch ($InterruptedException& ex) {
 		ex->printStackTrace();
 		$throwNew($RuntimeException, "FAILED: SwingUtilities.invokeAndWait method failed then creating and showing GUI"_s);
-	} catch ($InvocationTargetException&) {
-		$var($Exception, ex, $catch());
+	} catch ($InvocationTargetException& ex) {
 		ex->printStackTrace();
 		$throwNew($RuntimeException, "FAILED: SwingUtilities.invokeAndWait method failed then creating and showing GUI"_s);
 	}
@@ -157,16 +143,14 @@ void bug4506788::start() {
 	try {
 		$assign(robot, $new($Robot));
 		robot->setAutoDelay(100);
-	} catch ($AWTException&) {
-		$var($AWTException, e, $catch());
+	} catch ($AWTException& e) {
 		$throwNew($RuntimeException, "Robot could not be created"_s);
 	}
 	$nc(robot)->waitForIdle();
 	$var($Point, p, nullptr);
 	try {
 		$assign(p, getJEPLocOnScreen());
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, "Could not get JEditorPane location on screen"_s);
 	}
 	robot->mouseMove($nc(p)->x, p->y);

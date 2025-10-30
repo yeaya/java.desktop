@@ -17,27 +17,12 @@
 #include <java/awt/print/PageFormat.h>
 #include <java/awt/print/Printable.h>
 #include <java/awt/print/PrinterException.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/MessageFormat.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
@@ -333,15 +318,13 @@ void TextComponentPrintable::getFrames($Container* container, $List* list) {
 
 void TextComponentPrintable::createFrames($JEditorPane* editor) {
 	$init(TextComponentPrintable);
-	$useLocalCurrentObjectStackCache();
 	$var($Runnable, doCreateFrames, $new($TextComponentPrintable$1, editor));
 	if ($SwingUtilities::isEventDispatchThread()) {
 		doCreateFrames->run();
 	} else {
 		try {
 			$SwingUtilities::invokeAndWait(doCreateFrames);
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			if ($instanceOf($RuntimeException, e)) {
 				$throw($cast($RuntimeException, e));
 			} else {
@@ -375,11 +358,9 @@ $JTextComponent* TextComponentPrintable::createPrintShell($JTextComponent* textC
 		$SwingUtilities::invokeLater(futureCreateShell);
 		try {
 			return $cast($JTextComponent, futureCreateShell->get());
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, e, $catch());
+		} catch ($InterruptedException& e) {
 			$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-		} catch ($ExecutionException&) {
-			$var($ExecutionException, e, $catch());
+		} catch ($ExecutionException& e) {
 			$var($Throwable, cause, e->getCause());
 			if ($instanceOf($Error, cause)) {
 				$throw($cast($Error, cause));
@@ -448,11 +429,9 @@ int32_t TextComponentPrintable::print($Graphics* graphics, $PageFormat* pf, int3
 		$SwingUtilities::invokeLater(futurePrintOnEDT);
 		try {
 			ret = $nc(($cast($Integer, $(futurePrintOnEDT->get()))))->intValue();
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, e, $catch());
+		} catch ($InterruptedException& e) {
 			$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-		} catch ($ExecutionException&) {
-			$var($ExecutionException, e, $catch());
+		} catch ($ExecutionException& e) {
 			$var($Throwable, cause, e->getCause());
 			if ($instanceOf($PrinterException, cause)) {
 				$throw($cast($PrinterException, cause));
@@ -529,8 +508,7 @@ void TextComponentPrintable::releaseReadLock() {
 		try {
 			$nc(($cast($AbstractDocument, document)))->readUnlock();
 			this->needReadLock = true;
-		} catch ($Error&) {
-			$catch();
+		} catch ($Error& ignore) {
 		}
 	}
 }
@@ -543,10 +521,8 @@ void TextComponentPrintable::acquireReadLock() {
 	if (this->needReadLock) {
 		try {
 			$SwingUtilities::invokeAndWait($$new($TextComponentPrintable$9, this));
-		} catch ($InterruptedException&) {
-			$catch();
-		} catch ($InvocationTargetException&) {
-			$catch();
+		} catch ($InterruptedException& ignore) {
+		} catch ($InvocationTargetException& ignore) {
 		}
 		$var($Document, document, $nc(this->textComponentToPrint)->getDocument());
 		$nc(($cast($AbstractDocument, document)))->readLock();
@@ -566,11 +542,9 @@ void TextComponentPrintable::layout(int32_t width) {
 			try {
 				try {
 					futureLayoutOnEDT->get();
-				} catch ($InterruptedException&) {
-					$var($InterruptedException, e, $catch());
+				} catch ($InterruptedException& e) {
 					$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-				} catch ($ExecutionException&) {
-					$var($ExecutionException, e, $catch());
+				} catch ($ExecutionException& e) {
 					$var($Throwable, cause, e->getCause());
 					if ($instanceOf($RuntimeException, cause)) {
 						$throw($cast($RuntimeException, cause));
@@ -580,8 +554,8 @@ void TextComponentPrintable::layout(int32_t width) {
 						$throwNew($RuntimeException, cause);
 					}
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				acquireReadLock();
 			}
@@ -671,8 +645,7 @@ void TextComponentPrintable::calculateRowsMetrics() {
 						documentMetrics->add($$new($TextComponentPrintable$IntegerSegment, y, y + height - 1));
 					}
 				}
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				if (!TextComponentPrintable::$assertionsDisabled) {
 					$throwNew($AssertionError);
 				}

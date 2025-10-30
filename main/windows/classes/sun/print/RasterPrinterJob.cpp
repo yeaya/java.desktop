@@ -34,27 +34,9 @@
 #include <java/io/FilePermission.h>
 #include <java/io/IOException.h>
 #include <java/io/OutputStream.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URI.h>
 #include <java/security/AccessController.h>
 #include <java/security/Permission.h>
@@ -469,15 +451,10 @@ $Object* allocate$RasterPrinterJob($Class* clazz) {
 }
 
 float RasterPrinterJob::DPI = 0.0;
-
 $String* RasterPrinterJob::FORCE_PIPE_PROP = nullptr;
-
 $String* RasterPrinterJob::FORCE_RASTER = nullptr;
-
 $String* RasterPrinterJob::FORCE_PDL = nullptr;
-
 $String* RasterPrinterJob::SHAPE_TEXT_PROP = nullptr;
-
 bool RasterPrinterJob::forcePDL = false;
 bool RasterPrinterJob::forceRaster = false;
 bool RasterPrinterJob::shapeTextProp = false;
@@ -543,8 +520,7 @@ $PrintService* RasterPrinterJob::getPrintService() {
 			try {
 				setPrintService(svc);
 				$set(this, myService, svc);
-			} catch ($PrinterException&) {
-				$catch();
+			} catch ($PrinterException& e) {
 			}
 		}
 		if (this->myService == nullptr) {
@@ -553,8 +529,7 @@ $PrintService* RasterPrinterJob::getPrintService() {
 				try {
 					setPrintService(svcs->get(0));
 					$set(this, myService, svcs->get(0));
-				} catch ($PrinterException&) {
-					$catch();
+				} catch ($PrinterException& e) {
 				}
 			}
 		}
@@ -694,8 +669,7 @@ void RasterPrinterJob::updateAttributesWithPageFormat($PrintService* service, $P
 	$var($Media, media, nullptr);
 	try {
 		$assign(media, $CustomMediaSizeName::findMedia(mediaList, x, y, $Size2DSyntax::INCH));
-	} catch ($IllegalArgumentException&) {
-		$catch();
+	} catch ($IllegalArgumentException& iae) {
 	}
 	if ((media == nullptr) || !(service->isAttributeValueSupported(static_cast<$Attribute*>(static_cast<$DocAttribute*>(media)), nullptr, nullptr))) {
 		$assign(media, $cast($Media, service->getDefaultAttributeValue($Media::class$)));
@@ -748,8 +722,7 @@ void RasterPrinterJob::updateAttributesWithPageFormat($PrintService* service, $P
 	}
 	try {
 		pageAttributes->add(static_cast<$Attribute*>(static_cast<$DocAttribute*>($$new($MediaPrintableArea, ix, iy, iw, ih, $MediaPrintableArea::INCH))));
-	} catch ($IllegalArgumentException&) {
-		$catch();
+	} catch ($IllegalArgumentException& iae) {
 	}
 }
 
@@ -835,8 +808,7 @@ $PageFormat* RasterPrinterJob::pageDialog($PrintRequestAttributeSet* attributes)
 	if (setOnTop) {
 		try {
 			pageDialog->setAlwaysOnTop(true);
-		} catch ($SecurityException&) {
-			$catch();
+		} catch ($SecurityException& e) {
 		}
 	}
 	$var($Rectangle, dlgBounds, pageDialog->getBounds());
@@ -925,8 +897,7 @@ bool RasterPrinterJob::printDialog($PrintRequestAttributeSet* attributes) {
 		try {
 			debug_println("calling setAttributes in printDialog"_s);
 			setAttributes(attributes);
-		} catch ($PrinterException&) {
-			$catch();
+		} catch ($PrinterException& e) {
 		}
 		setParentWindowID(attributes);
 		bool ret = printDialog();
@@ -978,8 +949,7 @@ bool RasterPrinterJob::printDialog($PrintRequestAttributeSet* attributes) {
 	try {
 		$init($DocFlavor$SERVICE_FORMATTED);
 		$assign(newService, $ServiceUI::printDialog(gc, x, y, services, service, $DocFlavor$SERVICE_FORMATTED::PAGEABLE, attributes));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, iae, $catch());
+	} catch ($IllegalArgumentException& iae) {
 		$init($DocFlavor$SERVICE_FORMATTED);
 		$assign(newService, $ServiceUI::printDialog(gc, x, y, services, $nc(services)->get(0), $DocFlavor$SERVICE_FORMATTED::PAGEABLE, attributes));
 	}
@@ -993,8 +963,7 @@ bool RasterPrinterJob::printDialog($PrintRequestAttributeSet* attributes) {
 	if (!$nc(service)->equals(newService)) {
 		try {
 			setPrintService(newService);
-		} catch ($PrinterException&) {
-			$var($PrinterException, e, $catch());
+		} catch ($PrinterException& e) {
 			$set(this, myService, newService);
 		}
 	}
@@ -1027,8 +996,7 @@ bool RasterPrinterJob::printDialog() {
 			try {
 				this->mDestType = RasterPrinterJob::FILE;
 				$set(this, mDestination, ($$new($File, $(dest->getURI())))->getPath());
-			} catch ($Exception&) {
-				$var($Exception, e, $catch());
+			} catch ($Exception& e) {
 				$set(this, mDestination, "out.prn"_s);
 				$var($PrintService, ps, getPrintService());
 				if (ps != nullptr) {
@@ -1162,8 +1130,7 @@ void RasterPrinterJob::setAttributes($PrintRequestAttributeSet* attributes) {
 	if (isSupportedValue(static_cast<$Attribute*>(static_cast<$PrintJobAttribute*>(destination)), attributes)) {
 		try {
 			$set(this, destinationAttr, $str({""_s, $$new($File, $($nc($($nc(destination)->getURI()))->getSchemeSpecificPart()))}));
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$var($Destination, defaultDest, $cast($Destination, $nc(service)->getDefaultAttributeValue($Destination::class$)));
 			if (defaultDest != nullptr) {
 				$set(this, destinationAttr, $str({""_s, $$new($File, $($nc($(defaultDest->getURI()))->getSchemeSpecificPart()))}));
@@ -1191,8 +1158,7 @@ void RasterPrinterJob::setAttributes($PrintRequestAttributeSet* attributes) {
 	} else {
 		try {
 			$set(this, userNameAttr, getUserName());
-		} catch ($SecurityException&) {
-			$var($SecurityException, e, $catch());
+		} catch ($SecurityException& e) {
 			$set(this, userNameAttr, ""_s);
 		}
 	}
@@ -1271,8 +1237,7 @@ void RasterPrinterJob::spoolToService($PrintService* psvc, $PrintRequestAttribut
 	}
 	try {
 		$nc(job)->print(doc, attributes);
-	} catch ($PrintException&) {
-		$var($PrintException, e, $catch());
+	} catch ($PrintException& e) {
 		$throwNew($PrinterException, $(e->toString()));
 	}
 }
@@ -1283,7 +1248,6 @@ void RasterPrinterJob::print() {
 
 void RasterPrinterJob::debug_println($String* str) {
 	if (RasterPrinterJob::debugPrint) {
-		$init($System);
 		$nc($System::out)->println($$str({"RasterPrinterJob "_s, str, " "_s, this}));
 	}
 }
@@ -1389,8 +1353,8 @@ void RasterPrinterJob::print($PrintRequestAttributeSet* attributes) {
 			if (isCancelled()) {
 				cancelDoc();
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$set(this, previousPaper, nullptr);
 			$synchronized(this) {
@@ -1417,11 +1381,9 @@ void RasterPrinterJob::validateDestination($String* dest) {
 		if (f->createNewFile()) {
 			f->delete$();
 		}
-	} catch ($IOException&) {
-		$var($IOException, ioe, $catch());
+	} catch ($IOException& ioe) {
 		$throwNew($PrinterException, $$str({"Cannot write to file:"_s, dest}));
-	} catch ($SecurityException&) {
-		$catch();
+	} catch ($SecurityException& se) {
 	}
 	$var($File, pFile, f->getParentFile());
 	bool var$1 = f->exists();
@@ -1552,8 +1514,7 @@ $String* RasterPrinterJob::getUserNameInt() {
 	} else {
 		try {
 			return getUserName();
-		} catch ($SecurityException&) {
-			$var($SecurityException, e, $catch());
+		} catch ($SecurityException& e) {
 			return ""_s;
 		}
 	}
@@ -1741,8 +1702,7 @@ int32_t RasterPrinterJob::printPage($Pageable* document, int32_t pageIndex) {
 		$assign(origPage, $nc(document)->getPageFormat(pageIndex));
 		$assign(page, $cast($PageFormat, $nc(origPage)->clone()));
 		$assign(painter, document->getPrintable(pageIndex));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$var($PrinterException, pe, $new($PrinterException, $$str({"Error getting page or printable.[ "_s, e, " ]"_s})));
 		pe->initCause(e);
 		$throw(pe);
@@ -1932,8 +1892,7 @@ bool RasterPrinterJob::checkAllowedToPrintToFile() {
 	try {
 		throwPrintToFile();
 		return true;
-	} catch ($SecurityException&) {
-		$var($SecurityException, e, $catch());
+	} catch ($SecurityException& e) {
 		return false;
 	}
 	$shouldNotReachHere();

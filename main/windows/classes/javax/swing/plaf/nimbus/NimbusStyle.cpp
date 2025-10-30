@@ -4,22 +4,9 @@
 #include <java/awt/Component.h>
 #include <java/awt/Font.h>
 #include <java/awt/Insets.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/ArrayList.h>
@@ -192,23 +179,14 @@ $Object* allocate$NimbusStyle($Class* clazz) {
 }
 
 bool NimbusStyle::$assertionsDisabled = false;
-
 $String* NimbusStyle::LARGE_KEY = nullptr;
-
 $String* NimbusStyle::SMALL_KEY = nullptr;
-
 $String* NimbusStyle::MINI_KEY = nullptr;
-
 double NimbusStyle::LARGE_SCALE = 0.0;
-
 double NimbusStyle::SMALL_SCALE = 0.0;
-
 double NimbusStyle::MINI_SCALE = 0.0;
-
 $Object* NimbusStyle::NULL = nullptr;
-
 $Color* NimbusStyle::DEFAULT_COLOR = nullptr;
-
 $Comparator* NimbusStyle::STATE_COMPARATOR = nullptr;
 
 void NimbusStyle::init$($String* prefix, $JComponent* c) {

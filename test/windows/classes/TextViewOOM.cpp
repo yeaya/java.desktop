@@ -4,28 +4,15 @@
 #include <java/awt/Container.h>
 #include <java/awt/EventQueue.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
 #include <java/lang/Runtime.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JScrollPane.h>
@@ -234,7 +221,6 @@ void TextViewOOM::main($StringArray* args) {
 	}
 	int64_t var$0 = $nc($($Runtime::getRuntime()))->totalMemory();
 	int64_t mem = var$0 - $nc($($Runtime::getRuntime()))->freeMemory();
-	$init($System);
 	$nc($System::err)->println($$str({"Memory before creating the text: "_s, $$str(mem)}));
 	$var($StringBuilder, sb, $new($StringBuilder, TextViewOOM::N * $nc(TextViewOOM::STRING)->length()));
 	for (int32_t i = 0; i < TextViewOOM::N; ++i) {
@@ -266,13 +252,11 @@ void TextViewOOM::lambda$main$0($StringBuilder* sb) {
 		$System::gc();
 		try {
 			$Thread::sleep(200);
-		} catch ($InterruptedException&) {
-			$catch();
+		} catch ($InterruptedException& iex) {
 		}
 	}
 	int64_t var$0 = $nc($($Runtime::getRuntime()))->totalMemory();
 	int64_t mem1 = var$0 - $nc($($Runtime::getRuntime()))->freeMemory();
-	$init($System);
 	$nc($System::err)->println($$str({"Memory after  setting the text: "_s, $$str(mem1)}));
 }
 

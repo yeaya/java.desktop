@@ -26,20 +26,8 @@
 #include <java/beans/PropertyChangeListener.h>
 #include <java/io/File.h>
 #include <java/io/FileNotFoundException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/MessageFormat.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Arrays.h>
@@ -794,7 +782,6 @@ $JPanel* FilePane::createDetailsView() {
 	$var($TableCellRenderer, headerRenderer, $new($FilePane$AlignableTableHeaderRenderer, this, $($nc($(detailsTable->getTableHeader()))->getDefaultRenderer())));
 	$nc($(detailsTable->getTableHeader()))->setDefaultRenderer(headerRenderer);
 	$var($TableCellRenderer, cellRenderer, $new($FilePane$DetailsTableCellRenderer, this, chooser));
-	$load($Object);
 	detailsTable->setDefaultRenderer($Object::class$, cellRenderer);
 	$nc($($nc($(detailsTable->getColumnModel()))->getSelectionModel()))->setSelectionMode($ListSelectionModel::SINGLE_SELECTION);
 	detailsTable->addMouseListener($(getMouseHandler()));
@@ -994,8 +981,8 @@ void FilePane::setFileSelected() {
 					$nc(($cast($DefaultListSelectionModel, this->listSelectionModel)))->moveLeadSelectionIndex(lead);
 					$nc(this->listSelectionModel)->setAnchorSelectionIndex(anchor);
 				}
-			} catch ($Throwable&) {
-				$assign(var$1, $catch());
+			} catch ($Throwable& var$2) {
+				$assign(var$1, var$2);
 			} /*finally*/ {
 				$nc(this->listSelectionModel)->setValueIsAdjusting(false);
 			}
@@ -1311,15 +1298,13 @@ bool FilePane::canWrite($File* f) {
 		} else if (usesShellFolder($(getFileChooser()))) {
 			try {
 				return $nc($($ShellFolder::getShellFolder(f)))->canWrite();
-			} catch ($FileNotFoundException&) {
-				$var($FileNotFoundException, ex, $catch());
+			} catch ($FileNotFoundException& ex) {
 				return false;
 			}
 		} else {
 			return $nc(f)->canWrite();
 		}
-	} catch ($SecurityException&) {
-		$var($SecurityException, e, $catch());
+	} catch ($SecurityException& e) {
 		return false;
 	}
 	$shouldNotReachHere();

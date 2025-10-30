@@ -5,13 +5,6 @@
 #include <java/awt/Font.h>
 #include <java/awt/Image.h>
 #include <java/awt/Toolkit.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/ComponentInputMap.h>
 #include <javax/swing/GrayFilter.h>
 #include <javax/swing/Icon.h>

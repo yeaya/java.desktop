@@ -3,16 +3,6 @@
 #include <java/beans/BeanInfo.h>
 #include <java/beans/Introspector.h>
 #include <java/beans/PropertyDescriptor.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JPasswordField.h>
 #include <javax/swing/JTextArea.h>
 #include <javax/swing/JTextField.h>
@@ -78,7 +68,6 @@ void TextBeanProperty::test($Class* beanClass) {
 		}
 	}
 	if ($nc($nc(pd)->get(i))->isBound()) {
-		$init($System);
 		$nc($System::err)->println($$str({"Property: "_s, pd->get(i)}));
 		$throwNew($RuntimeException, "text property is flagged as bound"_s);
 	}

@@ -1,12 +1,5 @@
 #include <javax/swing/plaf/basic/BasicColorChooserUI$ColorTransferHandler.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/TransferHandler.h>
 #include <javax/swing/plaf/basic/BasicColorChooserUI.h>
 #include <jcpp.h>

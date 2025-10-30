@@ -7,18 +7,6 @@
 #include <java/awt/Container.h>
 #include <java/awt/Panel.h>
 #include <java/awt/event/ActionEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JApplet.h>
 #include <javax/swing/SwingUtilities.h>
 #include <javax/swing/UIManager$LookAndFeelInfo.h>
@@ -102,9 +90,7 @@ void bug4987336$LafRadioButton$1::actionPerformed($ActionEvent* e) {
 	try {
 		$UIManager::setLookAndFeel($($nc(this->val$lafInfo)->getClassName()));
 		$SwingUtilities::updateComponentTreeUI(this->this$1->this$0);
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
-		$init($System);
+	} catch ($Exception& ex) {
 		$nc($System::out)->println($$str({"Cannot set LAF "_s, $($nc(this->val$lafInfo)->getName())}));
 	}
 }

@@ -9,14 +9,7 @@
 #include <java/awt/image/DirectColorModel.h>
 #include <java/awt/image/IndexColorModel.h>
 #include <java/awt/image/Raster.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/SunHints.h>
 #include <sun/awt/Win32GraphicsConfig.h>
 #include <sun/awt/Win32GraphicsDevice.h>

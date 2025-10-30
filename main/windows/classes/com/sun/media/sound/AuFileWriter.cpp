@@ -15,18 +15,6 @@
 #include <java/io/OutputStream.h>
 #include <java/io/RandomAccessFile.h>
 #include <java/io/SequenceInputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Objects.h>
 #include <javax/sound/sampled/AudioFileFormat$Type.h>
 #include <javax/sound/sampled/AudioFileFormat.h>
@@ -161,18 +149,16 @@ int32_t AuFileWriter::write($AudioInputStream* stream, $AudioFileFormat$Type* fi
 						try {
 							try {
 								bytesWritten = writeAuFile(stream, auFileFormat, bos);
-							} catch ($Throwable&) {
-								$var($Throwable, t$, $catch());
+							} catch ($Throwable& t$) {
 								try {
 									bos->close();
-								} catch ($Throwable&) {
-									$var($Throwable, x2, $catch());
+								} catch ($Throwable& x2) {
 									t$->addSuppressed(x2);
 								}
 								$throw(t$);
 							}
-						} catch ($Throwable&) {
-							$assign(var$1, $catch());
+						} catch ($Throwable& var$2) {
+							$assign(var$1, var$2);
 						} /*finally*/ {
 							bos->close();
 						}
@@ -180,18 +166,16 @@ int32_t AuFileWriter::write($AudioInputStream* stream, $AudioFileFormat$Type* fi
 							$throw(var$1);
 						}
 					}
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					try {
 						fos->close();
-					} catch ($Throwable&) {
-						$var($Throwable, x2, $catch());
+					} catch ($Throwable& x2) {
 						t$->addSuppressed(x2);
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} /*finally*/ {
 				fos->close();
 			}
@@ -204,30 +188,28 @@ int32_t AuFileWriter::write($AudioInputStream* stream, $AudioFileFormat$Type* fi
 		{
 			$var($RandomAccessFile, raf, $new($RandomAccessFile, out, "rw"_s));
 			{
-				$var($Throwable, var$2, nullptr);
+				$var($Throwable, var$4, nullptr);
 				try {
 					try {
 						if (raf->length() <= (int64_t)2147483647) {
 							raf->skipBytes(8);
 							raf->writeInt(bytesWritten - $AuFileFormat::AU_HEADERSIZE);
 						}
-					} catch ($Throwable&) {
-						$var($Throwable, t$, $catch());
+					} catch ($Throwable& t$) {
 						try {
 							raf->close();
-						} catch ($Throwable&) {
-							$var($Throwable, x2, $catch());
+						} catch ($Throwable& x2) {
 							t$->addSuppressed(x2);
 						}
 						$throw(t$);
 					}
-				} catch ($Throwable&) {
-					$assign(var$2, $catch());
+				} catch ($Throwable& var$5) {
+					$assign(var$4, var$5);
 				} /*finally*/ {
 					raf->close();
 				}
-				if (var$2 != nullptr) {
-					$throw(var$2);
+				if (var$4 != nullptr) {
+					$throw(var$4);
 				}
 			}
 		}
@@ -296,18 +278,16 @@ $InputStream* AuFileWriter::getFileStream($AuFileFormat* auFileFormat, $AudioInp
 								dos->writeInt(sampleRate);
 								dos->writeInt(channels);
 								$assign(header, baos->toByteArray());
-							} catch ($Throwable&) {
-								$var($Throwable, t$, $catch());
+							} catch ($Throwable& t$) {
 								try {
 									dos->close();
-								} catch ($Throwable&) {
-									$var($Throwable, x2, $catch());
+								} catch ($Throwable& x2) {
 									t$->addSuppressed(x2);
 								}
 								$throw(t$);
 							}
-						} catch ($Throwable&) {
-							$assign(var$1, $catch());
+						} catch ($Throwable& var$2) {
+							$assign(var$1, var$2);
 						} /*finally*/ {
 							dos->close();
 						}
@@ -315,18 +295,16 @@ $InputStream* AuFileWriter::getFileStream($AuFileFormat* auFileFormat, $AudioInp
 							$throw(var$1);
 						}
 					}
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					try {
 						baos->close();
-					} catch ($Throwable&) {
-						$var($Throwable, x2, $catch());
+					} catch ($Throwable& x2) {
 						t$->addSuppressed(x2);
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} /*finally*/ {
 				baos->close();
 			}
@@ -335,8 +313,8 @@ $InputStream* AuFileWriter::getFileStream($AuFileFormat* auFileFormat, $AudioInp
 			}
 		}
 	}
-	$var($InputStream, var$2, static_cast<$InputStream*>($new($ByteArrayInputStream, header)));
-	return $new($SequenceInputStream, var$2, $$new($SunFileWriter$NoCloseInputStream, this, audioStream));
+	$var($InputStream, var$4, static_cast<$InputStream*>($new($ByteArrayInputStream, header)));
+	return $new($SequenceInputStream, var$4, $$new($SunFileWriter$NoCloseInputStream, this, audioStream));
 }
 
 int32_t AuFileWriter::writeAuFile($AudioInputStream* in, $AuFileFormat* auFileFormat, $OutputStream* out) {

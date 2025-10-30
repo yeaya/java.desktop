@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/JobStateReason.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -137,67 +129,36 @@ void JobStateReason::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 JobStateReason* JobStateReason::JOB_INCOMING = nullptr;
-
 JobStateReason* JobStateReason::JOB_DATA_INSUFFICIENT = nullptr;
-
 JobStateReason* JobStateReason::DOCUMENT_ACCESS_ERROR = nullptr;
-
 JobStateReason* JobStateReason::SUBMISSION_INTERRUPTED = nullptr;
-
 JobStateReason* JobStateReason::JOB_OUTGOING = nullptr;
-
 JobStateReason* JobStateReason::JOB_HOLD_UNTIL_SPECIFIED = nullptr;
-
 JobStateReason* JobStateReason::RESOURCES_ARE_NOT_READY = nullptr;
-
 JobStateReason* JobStateReason::PRINTER_STOPPED_PARTLY = nullptr;
-
 JobStateReason* JobStateReason::PRINTER_STOPPED = nullptr;
-
 JobStateReason* JobStateReason::JOB_INTERPRETING = nullptr;
-
 JobStateReason* JobStateReason::JOB_QUEUED = nullptr;
-
 JobStateReason* JobStateReason::JOB_TRANSFORMING = nullptr;
-
 JobStateReason* JobStateReason::JOB_QUEUED_FOR_MARKER = nullptr;
-
 JobStateReason* JobStateReason::JOB_PRINTING = nullptr;
-
 JobStateReason* JobStateReason::JOB_CANCELED_BY_USER = nullptr;
-
 JobStateReason* JobStateReason::JOB_CANCELED_BY_OPERATOR = nullptr;
-
 JobStateReason* JobStateReason::JOB_CANCELED_AT_DEVICE = nullptr;
-
 JobStateReason* JobStateReason::ABORTED_BY_SYSTEM = nullptr;
-
 JobStateReason* JobStateReason::UNSUPPORTED_COMPRESSION = nullptr;
-
 JobStateReason* JobStateReason::COMPRESSION_ERROR = nullptr;
-
 JobStateReason* JobStateReason::UNSUPPORTED_DOCUMENT_FORMAT = nullptr;
-
 JobStateReason* JobStateReason::DOCUMENT_FORMAT_ERROR = nullptr;
-
 JobStateReason* JobStateReason::PROCESSING_TO_STOP_POINT = nullptr;
-
 JobStateReason* JobStateReason::SERVICE_OFF_LINE = nullptr;
-
 JobStateReason* JobStateReason::JOB_COMPLETED_SUCCESSFULLY = nullptr;
-
 JobStateReason* JobStateReason::JOB_COMPLETED_WITH_WARNINGS = nullptr;
-
 JobStateReason* JobStateReason::JOB_COMPLETED_WITH_ERRORS = nullptr;
-
 JobStateReason* JobStateReason::JOB_RESTARTABLE = nullptr;
-
 JobStateReason* JobStateReason::QUEUED_IN_DEVICE = nullptr;
-
 $StringArray* JobStateReason::myStringTable = nullptr;
-
 $JobStateReasonArray* JobStateReason::myEnumValueTable = nullptr;
 
 void JobStateReason::init$(int32_t value) {

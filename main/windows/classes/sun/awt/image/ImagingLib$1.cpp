@@ -1,16 +1,6 @@
 #include <sun/awt/image/ImagingLib$1.h>
 
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
 #include <java/lang/UnsatisfiedLinkError.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/image/ImagingLib.h>
 #include <jcpp.h>
 
@@ -70,13 +60,11 @@ void ImagingLib$1::init$() {
 }
 
 $Object* ImagingLib$1::run() {
-	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var($String, arch, $System::getProperty("os.arch"_s));
 	try {
 		$System::loadLibrary("mlib_image"_s);
-	} catch ($UnsatisfiedLinkError&) {
-		$var($UnsatisfiedLinkError, e, $catch());
+	} catch ($UnsatisfiedLinkError& e) {
 		$init($Boolean);
 		return $of($Boolean::FALSE);
 	}

@@ -1,14 +1,5 @@
 #include <javax/swing/text/TableView$TableCell.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/BoxView.h>
 #include <javax/swing/text/Element.h>
 #include <javax/swing/text/TableView.h>
@@ -31,11 +22,11 @@ using $View = ::javax::swing::text::View;
 namespace javax {
 	namespace swing {
 		namespace text {
+
 $CompoundAttribute _TableView$TableCell_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", nullptr},
 	{}
 };
-
 
 $FieldInfo _TableView$TableCell_FieldInfo_[] = {
 	{"this$0", "Ljavax/swing/text/TableView;", nullptr, $FINAL | $SYNTHETIC, $field(TableView$TableCell, this$0)},

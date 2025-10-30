@@ -3,14 +3,6 @@
 #include <com/sun/media/sound/AbstractMidiDevice$BasicTransmitter.h>
 #include <com/sun/media/sound/AbstractMidiDevice.h>
 #include <com/sun/media/sound/RealTimeSequencer.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $AbstractMidiDevice = ::com::sun::media::sound::AbstractMidiDevice;

@@ -25,24 +25,13 @@
 #include <java/awt/image/BaseMultiResolutionImage.h>
 #include <java/awt/image/BufferedImage.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <java/util/concurrent/TimeUnit.h>
 #include <javax/swing/AbstractButton.h>
@@ -369,7 +358,7 @@ void RepaintManagerFPUIScaleTest::lambda$createUI$0($JFrame* mainFrame, $ActionE
 void clinit$RepaintManagerFPUIScaleTest($Class* class$) {
 	$assignStatic(RepaintManagerFPUIScaleTest::INSTRUCTIONS, "INSTRUCTIONS:\nCheck JScrollPane correctly repaints the view when UI scale has floating point value:\n\n1. Scroll down the JScrollPane\n2. Select some values\nIf the scrolled selected value is painted without artifacts,press PASS, else press FAIL."_s);
 	RepaintManagerFPUIScaleTest::testResult = false;
-		$init($Color);
+	$init($Color);
 	$assignStatic(RepaintManagerFPUIScaleTest::COLORS, $new($ColorArray, {
 		$Color::RED,
 		$Color::ORANGE,

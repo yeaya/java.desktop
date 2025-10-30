@@ -7,17 +7,8 @@
 #include <java/awt/image/ImageConsumer.h>
 #include <java/awt/image/ImageObserver.h>
 #include <java/awt/image/ImageProducer.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Hashtable.h>
 #include <sun/awt/image/ImageRepresentation.h>
 #include <sun/awt/image/InputStreamImageSource.h>
@@ -255,8 +246,7 @@ void ToolkitImage::reconstruct(int32_t flags) {
 			while (((int32_t)(flags & (uint32_t)~this->availinfo)) != 0) {
 				try {
 					$of(this)->wait();
-				} catch ($InterruptedException&) {
-					$var($InterruptedException, e, $catch());
+				} catch ($InterruptedException& e) {
 					$($Thread::currentThread())->interrupt();
 					return;
 				}

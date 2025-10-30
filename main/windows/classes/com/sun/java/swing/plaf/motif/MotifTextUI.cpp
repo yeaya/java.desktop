@@ -3,15 +3,6 @@
 #include <com/sun/java/swing/plaf/motif/MotifTextUI$MotifCaret.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/KeyStroke.h>
 #include <javax/swing/text/Caret.h>
 #include <javax/swing/text/DefaultCaret.h>
@@ -82,7 +73,6 @@ $Object* allocate$MotifTextUI($Class* clazz) {
 	return $of($alloc(MotifTextUI));
 }
 
-
 $JTextComponent$KeyBindingArray* MotifTextUI::defaultBindings = nullptr;
 
 void MotifTextUI::init$() {
@@ -95,7 +85,7 @@ $Caret* MotifTextUI::createCaret() {
 
 void clinit$MotifTextUI($Class* class$) {
 	$useLocalCurrentObjectStackCache();
-		$init($DefaultEditorKit);
+	$init($DefaultEditorKit);
 	$assignStatic(MotifTextUI::defaultBindings, $new($JTextComponent$KeyBindingArray, {
 		$$new($JTextComponent$KeyBinding, $($KeyStroke::getKeyStroke($KeyEvent::VK_INSERT, $InputEvent::CTRL_MASK)), $DefaultEditorKit::copyAction),
 		$$new($JTextComponent$KeyBinding, $($KeyStroke::getKeyStroke($KeyEvent::VK_INSERT, $InputEvent::SHIFT_MASK)), $DefaultEditorKit::pasteAction),

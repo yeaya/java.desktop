@@ -4,12 +4,6 @@
 #include <java/beans/beancontext/BeanContextChild.h>
 #include <java/beans/beancontext/BeanContextServiceProvider.h>
 #include <java/beans/beancontext/BeanContextServiceRevokedListener.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Iterator.h>
 #include <jcpp.h>
 

@@ -11,16 +11,7 @@
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/image/ColorModel.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef A
@@ -91,7 +82,6 @@ $ClassInfo _RadialGradientPaintContext_ClassInfo_ = {
 $Object* allocate$RadialGradientPaintContext($Class* clazz) {
 	return $of($alloc(RadialGradientPaintContext));
 }
-
 
 float RadialGradientPaintContext::SCALEBACK = 0.0;
 $floats* RadialGradientPaintContext::sqrtLut = nullptr;

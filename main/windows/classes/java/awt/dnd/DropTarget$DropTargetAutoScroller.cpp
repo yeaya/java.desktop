@@ -10,17 +10,7 @@
 #include <java/awt/dnd/DropTarget.h>
 #include <java/awt/event/ActionEvent.h>
 #include <java/awt/event/ActionListener.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/Timer.h>
 #include <jcpp.h>
 
@@ -105,13 +95,11 @@ void DropTarget$DropTargetAutoScroller::init$($Component* c, $Point* p) {
 	$var($Integer, interval, $Integer::valueOf(100));
 	try {
 		$assign(initial, $cast($Integer, $nc(t)->getDesktopProperty("DnD.Autoscroll.initialDelay"_s)));
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 	try {
 		$assign(interval, $cast($Integer, $nc(t)->getDesktopProperty("DnD.Autoscroll.interval"_s)));
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 	$set(this, timer, $new($Timer, $nc(interval)->intValue(), this));
 	$nc(this->timer)->setCoalesce(true);
@@ -120,8 +108,7 @@ void DropTarget$DropTargetAutoScroller::init$($Component* c, $Point* p) {
 	$set(this, prev, p);
 	try {
 		this->hysteresis = $nc(($cast($Integer, $($nc(t)->getDesktopProperty("DnD.Autoscroll.cursorHysteresis"_s)))))->intValue();
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 	$nc(this->timer)->start();
 }

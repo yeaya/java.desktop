@@ -12,25 +12,12 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JLabel.h>
@@ -186,8 +173,8 @@ void bug4708809::main($StringArray* args) {
 			if (!bug4708809::do_test || !bug4708809::passed) {
 				$throwNew($Exception, "The scrollbar moved with incorrect direction"_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (bug4708809::fr != nullptr) {
 				$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4708809$$Lambda$lambda$main$0)));

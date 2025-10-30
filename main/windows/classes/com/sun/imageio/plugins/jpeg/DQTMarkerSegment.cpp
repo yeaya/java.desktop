@@ -4,18 +4,6 @@
 #include <com/sun/imageio/plugins/jpeg/JPEG.h>
 #include <com/sun/imageio/plugins/jpeg/JPEGBuffer.h>
 #include <com/sun/imageio/plugins/jpeg/MarkerSegment.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Iterator.h>
@@ -182,7 +170,6 @@ void DQTMarkerSegment::write($ImageOutputStream* ios) {
 void DQTMarkerSegment::print() {
 	$useLocalCurrentObjectStackCache();
 	printTag("DQT"_s);
-	$init($System);
 	$nc($System::out)->println($$str({"Num tables: "_s, $($Integer::toString($nc(this->tables)->size()))}));
 	for (int32_t i = 0; i < $nc(this->tables)->size(); ++i) {
 		$var($DQTMarkerSegment$Qtable, table, $cast($DQTMarkerSegment$Qtable, $nc(this->tables)->get(i)));

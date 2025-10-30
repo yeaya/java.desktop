@@ -1,14 +1,6 @@
 #include <javax/swing/text/html/StyleSheet$SearchBuffer.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EmptyStackException.h>
 #include <java/util/Hashtable.h>
 #include <java/util/Stack.h>
@@ -76,7 +68,6 @@ $Object* allocate$StyleSheet$SearchBuffer($Class* clazz) {
 	return $of($alloc(StyleSheet$SearchBuffer));
 }
 
-
 $Stack* StyleSheet$SearchBuffer::searchBuffers = nullptr;
 
 void StyleSheet$SearchBuffer::init$() {
@@ -87,7 +78,6 @@ void StyleSheet$SearchBuffer::init$() {
 
 StyleSheet$SearchBuffer* StyleSheet$SearchBuffer::obtainSearchBuffer() {
 	$init(StyleSheet$SearchBuffer);
-	$useLocalCurrentObjectStackCache();
 	$var(StyleSheet$SearchBuffer, sb, nullptr);
 	try {
 		if (!$nc(StyleSheet$SearchBuffer::searchBuffers)->empty()) {
@@ -95,8 +85,7 @@ StyleSheet$SearchBuffer* StyleSheet$SearchBuffer::obtainSearchBuffer() {
 		} else {
 			$assign(sb, $new(StyleSheet$SearchBuffer));
 		}
-	} catch ($EmptyStackException&) {
-		$var($EmptyStackException, ese, $catch());
+	} catch ($EmptyStackException& ese) {
 		$assign(sb, $new(StyleSheet$SearchBuffer));
 	}
 	return sb;

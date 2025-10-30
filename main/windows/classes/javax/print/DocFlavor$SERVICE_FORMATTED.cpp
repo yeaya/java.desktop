@@ -1,13 +1,5 @@
 #include <javax/print/DocFlavor$SERVICE_FORMATTED.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/DocFlavor.h>
 #include <jcpp.h>
 
@@ -62,11 +54,8 @@ $Object* allocate$DocFlavor$SERVICE_FORMATTED($Class* clazz) {
 	return $of($alloc(DocFlavor$SERVICE_FORMATTED));
 }
 
-
 DocFlavor$SERVICE_FORMATTED* DocFlavor$SERVICE_FORMATTED::RENDERABLE_IMAGE = nullptr;
-
 DocFlavor$SERVICE_FORMATTED* DocFlavor$SERVICE_FORMATTED::PRINTABLE = nullptr;
-
 DocFlavor$SERVICE_FORMATTED* DocFlavor$SERVICE_FORMATTED::PAGEABLE = nullptr;
 
 void DocFlavor$SERVICE_FORMATTED::init$($String* className) {

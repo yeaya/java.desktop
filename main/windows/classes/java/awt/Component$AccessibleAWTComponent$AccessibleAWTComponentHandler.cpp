@@ -4,14 +4,6 @@
 #include <java/awt/Component.h>
 #include <java/awt/event/ComponentEvent.h>
 #include <java/awt/event/ComponentListener.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/accessibility/AccessibleState.h>
 #include <jcpp.h>

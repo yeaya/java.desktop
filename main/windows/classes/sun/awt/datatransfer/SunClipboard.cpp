@@ -16,27 +16,14 @@
 #include <java/beans/PropertyChangeEvent.h>
 #include <java/beans/PropertyChangeListener.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractSet.h>
 #include <java/util/Arrays.h>
 #include <java/util/HashSet.h>
@@ -345,8 +332,8 @@ void SunClipboard::setContents($Transferable* contents, $ClipboardOwner* owner) 
 				$set(this, owner, owner);
 				$set(this, contents, $new($TransferableProxy, contents, true));
 				setContentsNative(contents);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				if (oldOwner != nullptr && oldOwner != owner) {
 					$EventQueue::invokeLater(static_cast<$Runnable*>($$new(SunClipboard$$Lambda$lambda$setContents$0, this, oldOwner, oldContents)));
@@ -442,8 +429,8 @@ $Object* SunClipboard::getData($DataFlavor* flavor) {
 			if ($nc($($DataTransferer::getInstance()))->isLocaleDependentTextFormat(format)) {
 				$assign(localeTransferable, createLocaleTransferable(formats));
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			closeClipboard();
 		}
@@ -527,8 +514,8 @@ $longs* SunClipboard::getClipboardFormatsOpenClose() {
 			$assign(var$2, getClipboardFormats());
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			closeClipboard();
 		}
@@ -569,11 +556,10 @@ void SunClipboard::addFlavorListener($FlavorListener* listener) {
 					try {
 						openClipboard(nullptr);
 						$assign(currentFormats, getClipboardFormats());
-					} catch ($IllegalStateException&) {
-						$catch();
+					} catch ($IllegalStateException& ignored) {
 					}
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$1) {
+					$assign(var$0, var$1);
 				} /*finally*/ {
 					closeClipboard();
 				}

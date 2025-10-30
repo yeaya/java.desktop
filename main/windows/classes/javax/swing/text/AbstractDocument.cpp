@@ -4,24 +4,10 @@
 #include <java/io/ObjectInputStream$GetField.h>
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectInputValidation.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/text/Bidi.h>
@@ -302,23 +288,14 @@ void AbstractDocument::finalize() {
 
 $Boolean* AbstractDocument::defaultI18NProperty = nullptr;
 $String* AbstractDocument::BAD_LOCK_STATE = nullptr;
-
 $String* AbstractDocument::BAD_LOCATION = nullptr;
-
 $String* AbstractDocument::ParagraphElementName = nullptr;
-
 $String* AbstractDocument::ContentElementName = nullptr;
-
 $String* AbstractDocument::SectionElementName = nullptr;
-
 $String* AbstractDocument::BidiElementName = nullptr;
-
 $String* AbstractDocument::ElementNameAttribute = nullptr;
-
 $String* AbstractDocument::I18NProperty = nullptr;
-
 $Object* AbstractDocument::MultiByteProperty = nullptr;
-
 $String* AbstractDocument::AsyncLoadPriority = nullptr;
 
 void AbstractDocument::init$($AbstractDocument$Content* data) {
@@ -350,8 +327,8 @@ void AbstractDocument::init$($AbstractDocument$Content* data, $AbstractDocument$
 			$var($ElementArray, p, $new($ElementArray, 1));
 			p->set(0, $$new($AbstractDocument$BidiElement, this, this->bidiRoot, 0, 1, 0));
 			$nc(this->bidiRoot)->replace(0, 0, p);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			writeUnlock();
 		}
@@ -385,8 +362,8 @@ void AbstractDocument::fireInsertUpdate($DocumentEvent* e) {
 					$nc(($cast($DocumentListener, listeners->get(i + 1))))->insertUpdate(e);
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->notifyingListeners = false;
 		}
@@ -409,8 +386,8 @@ void AbstractDocument::fireChangedUpdate($DocumentEvent* e) {
 					$nc(($cast($DocumentListener, listeners->get(i + 1))))->changedUpdate(e);
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->notifyingListeners = false;
 		}
@@ -433,8 +410,8 @@ void AbstractDocument::fireRemoveUpdate($DocumentEvent* e) {
 					$nc(($cast($DocumentListener, listeners->get(i + 1))))->removeUpdate(e);
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->notifyingListeners = false;
 		}
@@ -491,8 +468,8 @@ void AbstractDocument::render($Runnable* r) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$nc(r)->run();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			readUnlock();
 		}
@@ -557,8 +534,8 @@ void AbstractDocument::putProperty(Object$* key, Object$* value) {
 				$init($DocumentEvent$EventType);
 				$var($AbstractDocument$DefaultDocumentEvent, e, $new($AbstractDocument$DefaultDocumentEvent, this, 0, getLength(), $DocumentEvent$EventType::INSERT));
 				updateBidi(e);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				writeUnlock();
 			}
@@ -581,8 +558,8 @@ void AbstractDocument::remove(int32_t offs, int32_t len) {
 			} else {
 				handleRemove(offs, len);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			writeUnlock();
 		}
@@ -636,8 +613,8 @@ void AbstractDocument::replace(int32_t offset, int32_t length, $String* text, $A
 					insertString(offset, text, attrs);
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			writeUnlock();
 		}
@@ -665,8 +642,8 @@ void AbstractDocument::insertString(int32_t offs, $String* str, $AttributeSet* a
 			} else {
 				handleInsertString(offs, str, a);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			writeUnlock();
 		}
@@ -731,24 +708,20 @@ $Position* AbstractDocument::createPosition(int32_t offs) {
 }
 
 $Position* AbstractDocument::getStartPosition() {
-	$useLocalCurrentObjectStackCache();
 	$var($Position, p, nullptr);
 	try {
 		$assign(p, createPosition(0));
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, bl, $catch());
+	} catch ($BadLocationException& bl) {
 		$assign(p, nullptr);
 	}
 	return p;
 }
 
 $Position* AbstractDocument::getEndPosition() {
-	$useLocalCurrentObjectStackCache();
 	$var($Position, p, nullptr);
 	try {
 		$assign(p, createPosition($nc(this->data)->length()));
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, bl, $catch());
+	} catch ($BadLocationException& bl) {
 		$assign(p, nullptr);
 	}
 	return p;
@@ -816,8 +789,7 @@ void AbstractDocument::insertUpdate($AbstractDocument$DefaultDocumentEvent* chng
 					break;
 				}
 			} while (segment->next() != $Segment::DONE);
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& ble) {
 		}
 		$SegmentCache::releaseSharedSegment(segment);
 	}
@@ -946,8 +918,7 @@ $bytes* AbstractDocument::calculateBidiLevels(int32_t firstPStart, int32_t lastP
 		$var($Segment, seg, $SegmentCache::getSharedSegment());
 		try {
 			getText(pStart, pEnd - pStart, seg);
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			$throwNew($Error, $$str({"Internal error: "_s, $(e->toString())}));
 		}
 		$var($Bidi, bidiAnalyzer, nullptr);
@@ -1012,8 +983,7 @@ void AbstractDocument::writeLock() {
 			}
 			$set(this, currWriter, $Thread::currentThread());
 			this->numWriters = 1;
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, e, $catch());
+		} catch ($InterruptedException& e) {
 			$throwNew($Error, "Interrupted attempt to acquire write lock"_s);
 		}
 	}
@@ -1039,8 +1009,7 @@ void AbstractDocument::readLock() {
 				$of(this)->wait();
 			}
 			this->numReaders += 1;
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, e, $catch());
+		} catch ($InterruptedException& e) {
 			$throwNew($Error, "Interrupted attempt to acquire read lock"_s);
 		}
 	}
@@ -1075,8 +1044,8 @@ void AbstractDocument::readObject($ObjectInputStream* s) {
 			$var($ElementArray, p, $new($ElementArray, 1));
 			p->set(0, $$new($AbstractDocument$BidiElement, this, this->bidiRoot, 0, 1, 0));
 			$nc(this->bidiRoot)->replace(0, 0, p);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			writeUnlock();
 		}

@@ -1,14 +1,5 @@
 #include <sun/java2d/loops/ProcessPath$ActiveEdgeList.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/loops/ProcessPath$Edge.h>
 #include <sun/java2d/loops/ProcessPath$Point.h>
 #include <sun/java2d/loops/ProcessPath.h>
@@ -113,7 +104,7 @@ void ProcessPath$ActiveEdgeList::insert($ProcessPath$Point* pnt, int32_t cy) {
 	if (this->head != nullptr) {
 		$set($nc(this->head), prev, ne);
 	}
-	$set(this, head, ($assignField(pnt, edge, ne)));
+	$set(this, head, ($set(pnt, edge, ne)));
 }
 
 void ProcessPath$ActiveEdgeList::delete$($ProcessPath$Edge* e) {

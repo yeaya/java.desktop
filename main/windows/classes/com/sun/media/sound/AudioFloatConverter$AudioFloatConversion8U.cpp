@@ -1,15 +1,6 @@
 #include <com/sun/media/sound/AudioFloatConverter$AudioFloatConversion8U.h>
 
 #include <com/sun/media/sound/AudioFloatConverter.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $AudioFloatConverter = ::com::sun::media::sound::AudioFloatConverter;

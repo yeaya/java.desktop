@@ -7,18 +7,8 @@
 #include <com/sun/media/sound/JSSecurityManager.h>
 #include <com/sun/media/sound/MidiInDevice$MidiInTransmitter.h>
 #include <com/sun/media/sound/MidiInDeviceProvider$MidiInDeviceInfo.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/midi/MidiDevice$Info.h>
 #include <javax/sound/midi/MidiDeviceTransmitter.h>
 #include <javax/sound/midi/MidiUnavailableException.h>
@@ -155,8 +145,7 @@ void MidiInDevice::implClose() {
 		if (this->midiInThread != nullptr) {
 			try {
 				$nc(this->midiInThread)->join(1000);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& e) {
 			}
 		}
 		nClose(oldId);
@@ -185,8 +174,7 @@ void MidiInDevice::run() {
 		if (this->id != 0) {
 			try {
 				$Thread::sleep(1);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& e) {
 			}
 		}
 	}

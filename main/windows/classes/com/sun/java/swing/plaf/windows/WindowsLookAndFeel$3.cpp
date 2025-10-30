@@ -1,16 +1,7 @@
 #include <com/sun/java/swing/plaf/windows/WindowsLookAndFeel$3.h>
 
 #include <com/sun/java/swing/plaf/windows/WindowsLookAndFeel.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/LayoutStyle$ComponentPlacement.h>
 #include <javax/swing/LayoutStyle.h>
 #include <jcpp.h>
@@ -80,18 +71,15 @@ void clinit$WindowsLookAndFeel$3($Class* class$) {
 	{
 		try {
 			$nc(WindowsLookAndFeel$3::$SwitchMap$javax$swing$LayoutStyle$ComponentPlacement)->set($LayoutStyle$ComponentPlacement::INDENT->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WindowsLookAndFeel$3::$SwitchMap$javax$swing$LayoutStyle$ComponentPlacement)->set($LayoutStyle$ComponentPlacement::RELATED->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WindowsLookAndFeel$3::$SwitchMap$javax$swing$LayoutStyle$ComponentPlacement)->set($LayoutStyle$ComponentPlacement::UNRELATED->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

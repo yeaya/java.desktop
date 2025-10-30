@@ -1,14 +1,5 @@
 #include <javax/print/attribute/standard/MediaSize$NA.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/Size2DSyntax.h>
 #include <javax/print/attribute/standard/MediaSize.h>
 #include <javax/print/attribute/standard/MediaSizeName.h>
@@ -94,37 +85,21 @@ $Object* allocate$MediaSize$NA($Class* clazz) {
 	return $of($alloc(MediaSize$NA));
 }
 
-
 $MediaSize* MediaSize$NA::LETTER = nullptr;
-
 $MediaSize* MediaSize$NA::LEGAL = nullptr;
-
 $MediaSize* MediaSize$NA::NA_5X7 = nullptr;
-
 $MediaSize* MediaSize$NA::NA_8X10 = nullptr;
-
 $MediaSize* MediaSize$NA::NA_NUMBER_9_ENVELOPE = nullptr;
-
 $MediaSize* MediaSize$NA::NA_NUMBER_10_ENVELOPE = nullptr;
-
 $MediaSize* MediaSize$NA::NA_NUMBER_11_ENVELOPE = nullptr;
-
 $MediaSize* MediaSize$NA::NA_NUMBER_12_ENVELOPE = nullptr;
-
 $MediaSize* MediaSize$NA::NA_NUMBER_14_ENVELOPE = nullptr;
-
 $MediaSize* MediaSize$NA::NA_6X9_ENVELOPE = nullptr;
-
 $MediaSize* MediaSize$NA::NA_7X9_ENVELOPE = nullptr;
-
 $MediaSize* MediaSize$NA::NA_9x11_ENVELOPE = nullptr;
-
 $MediaSize* MediaSize$NA::NA_9x12_ENVELOPE = nullptr;
-
 $MediaSize* MediaSize$NA::NA_10x13_ENVELOPE = nullptr;
-
 $MediaSize* MediaSize$NA::NA_10x14_ENVELOPE = nullptr;
-
 $MediaSize* MediaSize$NA::NA_10X15_ENVELOPE = nullptr;
 
 void MediaSize$NA::init$() {

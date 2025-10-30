@@ -6,17 +6,6 @@
 #include <java/awt/Container.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Enumeration.h>
 #include <java/util/Hashtable.h>
 #include <java/util/Vector.h>
@@ -146,7 +135,6 @@ void KeyboardManager::registerKeyStroke($KeyStroke* k, $JComponent* c) {
 			keyMap->put(k, v);
 		}
 	} else {
-		$init($System);
 		$nc($System::out)->println("Unexpected condition in registerKeyStroke"_s);
 		$Thread::dumpStack();
 	}
@@ -207,7 +195,6 @@ void KeyboardManager::unregisterKeyStroke($KeyStroke* ks, $JComponent* c) {
 bool KeyboardManager::fireKeyboardAction($KeyEvent* e, bool pressed, $Container* topAncestor) {
 	$useLocalCurrentObjectStackCache();
 	if ($nc(e)->isConsumed()) {
-		$init($System);
 		$nc($System::out)->println("Acquired pre-used event!"_s);
 		$Thread::dumpStack();
 	}
@@ -256,7 +243,6 @@ bool KeyboardManager::fireKeyboardAction($KeyEvent* e, bool pressed, $Container*
 				}
 			}
 		} else {
-			$init($System);
 			$nc($System::out)->println($$str({"Unexpected condition in fireKeyboardAction "_s, tmp}));
 			$Thread::dumpStack();
 		}

@@ -3,17 +3,7 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/awt/Rectangle.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Vector.h>
 #include <javax/swing/event/DocumentEvent.h>
 #include <javax/swing/text/BadLocationException.h>
@@ -109,14 +99,12 @@ void FlowView$FlowStrategy::init$() {
 }
 
 void FlowView$FlowStrategy::addDamage($FlowView* fv, int32_t offset) {
-	$useLocalCurrentObjectStackCache();
 	bool var$0 = offset >= $nc(fv)->getStartOffset();
 	if (var$0 && offset < fv->getEndOffset()) {
 		if (this->damageStart == nullptr || offset < $nc(this->damageStart)->getOffset()) {
 			try {
 				$set(this, damageStart, $nc($(fv->getDocument()))->createPosition(offset));
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				if (!FlowView$FlowStrategy::$assertionsDisabled) {
 					$throwNew($AssertionError);
 				}

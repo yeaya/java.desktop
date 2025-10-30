@@ -1,15 +1,6 @@
 #include <sun/awt/im/InputContext$2.h>
 
 #include <java/awt/AWTKeyStroke.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/prefs/Preferences.h>
 #include <sun/awt/im/InputContext.h>
 #include <jcpp.h>

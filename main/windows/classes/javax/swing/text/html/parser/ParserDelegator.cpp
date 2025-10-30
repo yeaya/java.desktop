@@ -6,18 +6,7 @@
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
 #include <java/io/ObjectInputStream.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Reader.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <javax/swing/text/html/HTMLEditorKit$Parser.h>
@@ -144,9 +133,7 @@ $DTD* ParserDelegator::getDefaultDTD() {
 			$var($String, nm, "html32"_s);
 			try {
 				$assign(_dtd, $DTD::getDTD(nm));
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
-				$init($System);
+			} catch ($IOException& e) {
 				$nc($System::out)->println($$str({"Throw an exception: could not get default dtd: "_s, nm}));
 			}
 			$assign(dtd, createDTD(_dtd, nm));
@@ -168,9 +155,7 @@ $DTD* ParserDelegator::createDTD($DTD* dtd, $String* name) {
 			$nc(dtd)->read($$new($DataInputStream, $$new($BufferedInputStream, in)));
 			$DTD::putDTDHash(name, dtd);
 		}
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
-		$init($System);
+	} catch ($Exception& e) {
 		$nc($System::out)->println($of(e));
 	}
 	return dtd;

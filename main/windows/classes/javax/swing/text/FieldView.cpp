@@ -9,14 +9,7 @@
 #include <java/awt/Shape.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/BoundedRangeModel.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JTextField.h>
@@ -230,8 +223,7 @@ float FieldView::getPreferredSpan(int32_t axis) {
 					} else {
 						this->firstLineOffset = 0;
 					}
-				} catch ($BadLocationException&) {
-					$var($BadLocationException, bl, $catch());
+				} catch ($BadLocationException& bl) {
 					width = 0;
 				}
 				$SegmentCache::releaseSharedSegment(buff);

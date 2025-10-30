@@ -1,24 +1,10 @@
 #include <sun/awt/image/ImageFetcher.h>
 
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/Vector.h>
@@ -185,14 +171,13 @@ $ImageFetchable* ImageFetcher::nextImage() {
 						try {
 							++info->numWaiting;
 							$nc($of(info->waitList))->wait(end - now);
-						} catch ($InterruptedException&) {
-							$var($InterruptedException, e, $catch());
+						} catch ($InterruptedException& e) {
 							$assign(var$2, nullptr);
 							return$1 = true;
 							goto $finally;
 						}
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$3) {
+						$assign(var$0, var$3);
 					} $finally: {
 						--info->numWaiting;
 					}
@@ -219,12 +204,11 @@ void ImageFetcher::run() {
 		try {
 			try {
 				fetchloop();
-			} catch ($Exception&) {
-				$var($Exception, e, $catch());
+			} catch ($Exception& e) {
 				e->printStackTrace();
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$synchronized($nc(info)->waitList) {
 				$var($Thread, me, $Thread::currentThread());
@@ -254,9 +238,7 @@ void ImageFetcher::fetchloop() {
 		}
 		try {
 			$nc(src)->doFetch();
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
-			$init($System);
+		} catch ($Exception& e) {
 			$nc($System::err)->println("Uncaught error fetching image:"_s);
 			e->printStackTrace();
 		}
@@ -328,8 +310,7 @@ void ImageFetcher::createFetchers($FetcherInfo* info) {
 			}
 			$assign(fetcherThreadGroup, threadGroup);
 		}
-	} catch ($SecurityException&) {
-		$var($SecurityException, e, $catch());
+	} catch ($SecurityException& e) {
 		$assign(fetcherThreadGroup, appContext->getThreadGroup());
 	}
 	$var($ThreadGroup, fetcherGroup, fetcherThreadGroup);

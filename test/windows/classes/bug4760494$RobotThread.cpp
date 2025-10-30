@@ -4,15 +4,7 @@
 #include <java/awt/Robot.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JPopupMenu.h>
 #include <jcpp.h>
 
@@ -74,14 +66,12 @@ void bug4760494$RobotThread::run() {
 	$nc($bug4760494::robot)->waitForIdle();
 	try {
 		$Thread::sleep(2000);
-	} catch ($InterruptedException&) {
-		$catch();
+	} catch ($InterruptedException& e) {
 	}
 	while (!$nc($bug4760494::popup)->isVisible()) {
 		try {
 			$Thread::sleep(2000);
-		} catch ($InterruptedException&) {
-			$catch();
+		} catch ($InterruptedException& e) {
 		}
 	}
 	$nc($bug4760494::robot)->keyPress($KeyEvent::VK_T);

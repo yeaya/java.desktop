@@ -1,20 +1,8 @@
 #include <javax/swing/text/InternationalFormatter.h>
 
 #include <java/io/ObjectInputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Comparable.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator$Attribute.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/text/CharacterIterator.h>
@@ -176,7 +164,6 @@ $Object* allocate$InternationalFormatter($Class* clazz) {
 	return $of($alloc(InternationalFormatter));
 }
 
-
 $Format$FieldArray* InternationalFormatter::EMPTY_FIELD_ARRAY = nullptr;
 
 void InternationalFormatter::access$300(InternationalFormatter* x0) {
@@ -267,8 +254,7 @@ $Object* InternationalFormatter::stringToValue($String* text) {
 		if (!isValidValue(value, true)) {
 			$throwNew($ParseException, "Value not within min/max range"_s, 0);
 		}
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, cce, $catch());
+	} catch ($ClassCastException& cce) {
 		$throwNew($ParseException, $$str({"Class cast exception comparing values: "_s, cce}), 0);
 	}
 	return $of(value);
@@ -322,8 +308,7 @@ bool InternationalFormatter::isValidValue(Object$* value, bool wantsCCE) {
 		if (min != nullptr && min->compareTo(value) > 0) {
 			return false;
 		}
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, cce, $catch());
+	} catch ($ClassCastException& cce) {
 		if (wantsCCE) {
 			$throw(cce);
 		}
@@ -334,8 +319,7 @@ bool InternationalFormatter::isValidValue(Object$* value, bool wantsCCE) {
 		if (max != nullptr && max->compareTo(value) < 0) {
 			return false;
 		}
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, cce, $catch());
+	} catch ($ClassCastException& cce) {
 		if (wantsCCE) {
 			$throw(cce);
 		}
@@ -396,8 +380,7 @@ void InternationalFormatter::updateMask() {
 		if (doc != nullptr) {
 			try {
 				$set(this, string, doc->getText(0, doc->getLength()));
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, ble, $catch());
+			} catch ($BadLocationException& ble) {
 				$set(this, string, nullptr);
 			}
 			if (this->string != nullptr) {
@@ -405,12 +388,9 @@ void InternationalFormatter::updateMask() {
 					$var($Object, value, stringToValue(this->string));
 					$var($AttributedCharacterIterator, iterator, $nc($(getFormat()))->formatToCharacterIterator(value));
 					updateMask(iterator);
-				} catch ($ParseException&) {
-					$catch();
-				} catch ($IllegalArgumentException&) {
-					$catch();
-				} catch ($NullPointerException&) {
-					$catch();
+				} catch ($ParseException& pe) {
+				} catch ($IllegalArgumentException& iae) {
+				} catch ($NullPointerException& npe) {
 				}
 			}
 		}
@@ -694,8 +674,8 @@ void InternationalFormatter::resetValue(Object$* value) {
 			this->ignoreDocumentMutate = true;
 			$nc(doc)->remove(0, doc->getLength());
 			doc->insertString(0, string, nullptr);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->ignoreDocumentMutate = false;
 		}

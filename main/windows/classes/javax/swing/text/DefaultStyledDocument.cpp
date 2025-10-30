@@ -5,22 +5,8 @@
 #include <java/awt/font/TextAttribute.h>
 #include <java/io/ObjectInputStream$GetField.h>
 #include <java/io/ObjectInputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Enumeration.h>
 #include <java/util/Iterator.h>
 #include <java/util/List.h>
@@ -375,12 +361,11 @@ void DefaultStyledDocument::create($DefaultStyledDocument$ElementSpecArray* data
 				evnt->end();
 				fireInsertUpdate(evnt);
 				fireUndoableEditUpdate($$new($UndoableEditEvent, this, evnt));
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, ble, $catch());
+			} catch ($BadLocationException& ble) {
 				$throwNew($StateInvariantError, "problem initializing"_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} /*finally*/ {
 			writeUnlock();
 		}
@@ -425,8 +410,8 @@ void DefaultStyledDocument::insert(int32_t offset, $DefaultStyledDocument$Elemen
 			evnt->end();
 			fireInsertUpdate(evnt);
 			fireUndoableEditUpdate($$new($UndoableEditEvent, this, evnt));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$4) {
+			$assign(var$0, var$4);
 		} $finally: {
 			writeUnlock();
 		}
@@ -445,8 +430,8 @@ void DefaultStyledDocument::removeElement($Element* elem) {
 		try {
 			writeLock();
 			removeElementImpl(elem);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			writeUnlock();
 		}
@@ -483,8 +468,7 @@ void DefaultStyledDocument::removeElementImpl($Element* elem$renamed) {
 			if ($nc($($nc(content)->getString(startOffset - 1, 1)))->charAt(0) == u'\n') {
 				--removeFrom;
 			}
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, ble, $catch());
+		} catch ($BadLocationException& ble) {
 			$throwNew($IllegalStateException, static_cast<$Throwable*>(ble));
 		}
 		atEnd = true;
@@ -511,8 +495,7 @@ void DefaultStyledDocument::removeElementImpl($Element* elem$renamed) {
 			if (ue != nullptr) {
 				dde->addEdit(ue);
 			}
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, ble, $catch());
+		} catch ($BadLocationException& ble) {
 			$throwNew($IllegalStateException, static_cast<$Throwable*>(ble));
 		}
 		lastEndOffset -= length;
@@ -580,8 +563,8 @@ void DefaultStyledDocument::setLogicalStyle(int32_t pos, $Style* s) {
 				e->end();
 				fireChangedUpdate(e);
 				fireUndoableEditUpdate($$new($UndoableEditEvent, this, e));
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				writeUnlock();
 			}
@@ -636,8 +619,8 @@ void DefaultStyledDocument::setCharacterAttributes(int32_t offset, int32_t lengt
 			changes->end();
 			fireChangedUpdate(changes);
 			fireUndoableEditUpdate($$new($UndoableEditEvent, this, changes));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			writeUnlock();
 		}
@@ -682,8 +665,8 @@ void DefaultStyledDocument::setParagraphAttributes(int32_t offset, int32_t lengt
 			changes->end();
 			fireChangedUpdate(changes);
 			fireUndoableEditUpdate($$new($UndoableEditEvent, this, changes));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			writeUnlock();
 		}
@@ -823,8 +806,7 @@ void DefaultStyledDocument::insertUpdate($AbstractDocument$DefaultDocumentEvent*
 		$var($DefaultStyledDocument$ElementSpecArray, spec, $new($DefaultStyledDocument$ElementSpecArray, parseBuffer->size()));
 		parseBuffer->copyInto(spec);
 		$nc(this->buffer)->insert(offset, length, spec, chng);
-	} catch ($BadLocationException&) {
-		$catch();
+	} catch ($BadLocationException& bl) {
 	}
 	$AbstractDocument::insertUpdate(chng, attr);
 }

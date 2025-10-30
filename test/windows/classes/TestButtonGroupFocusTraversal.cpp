@@ -9,30 +9,15 @@
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JCheckBox.h>
 #include <javax/swing/JComponent.h>
@@ -240,17 +225,14 @@ void TestButtonGroupFocusTraversal::init$() {
 }
 
 void TestButtonGroupFocusTraversal::blockTillDisplayed($Component* comp) {
-	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	while (p == nullptr) {
 		try {
 			$assign(p, $nc(comp)->getLocationOnScreen());
-		} catch ($IllegalStateException&) {
-			$var($IllegalStateException, e, $catch());
+		} catch ($IllegalStateException& e) {
 			try {
 				$Thread::sleep(500);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& ie) {
 			}
 		}
 	}
@@ -279,7 +261,6 @@ void TestButtonGroupFocusTraversal::checkFocusedComponent($Component* component)
 	$useLocalCurrentObjectStackCache();
 	$var($Component, focusedComponent, $nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner());
 	if (!$nc($of(focusedComponent))->equals(component)) {
-		$init($System);
 		$nc($System::out)->println($of(component));
 		$nc($System::out)->println($of(focusedComponent));
 		$throwNew($RuntimeException, "Wrong Component Selected"_s);
@@ -314,7 +295,6 @@ void TestButtonGroupFocusTraversal::main($StringArray* args) {
 			$var($UIManager$LookAndFeelInfo, info, arr$->get(i$));
 			{
 				$UIManager::setLookAndFeel($($nc(info)->getClassName()));
-				$init($System);
 				$nc($System::out)->println($($nc(info)->getClassName()));
 				{
 					$var($Throwable, var$0, nullptr);
@@ -327,8 +307,7 @@ void TestButtonGroupFocusTraversal::main($StringArray* args) {
 						if (!$nc($of(TestButtonGroupFocusTraversal::textFieldFirst))->equals($($nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner()))) {
 							try {
 								$Thread::sleep(100);
-							} catch ($InterruptedException&) {
-								$var($InterruptedException, e, $catch());
+							} catch ($InterruptedException& e) {
 								e->printStackTrace();
 							}
 							$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestButtonGroupFocusTraversal$$Lambda$requestFocus, static_cast<$JTextField*>($nc(TestButtonGroupFocusTraversal::textFieldFirst)))));
@@ -401,8 +380,8 @@ void TestButtonGroupFocusTraversal::main($StringArray* args) {
 						pressKey($$new($ints, {$KeyEvent::VK_DOWN}));
 						checkCheckboxActionPerformed();
 						checkFocusedComponent(TestButtonGroupFocusTraversal::checkBox2);
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$1) {
+						$assign(var$0, var$1);
 					} /*finally*/ {
 						if (TestButtonGroupFocusTraversal::frame != nullptr) {
 							$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestButtonGroupFocusTraversal$$Lambda$dispose$1, static_cast<$JFrame*>($nc(TestButtonGroupFocusTraversal::frame)))));

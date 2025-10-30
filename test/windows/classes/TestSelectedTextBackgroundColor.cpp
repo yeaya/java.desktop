@@ -8,32 +8,17 @@
 #include <java/awt/Rectangle.h>
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFormattedTextField.h>
 #include <javax/swing/JFrame.h>
@@ -217,17 +202,14 @@ void TestSelectedTextBackgroundColor::init$() {
 
 void TestSelectedTextBackgroundColor::blockTillDisplayed($Component* comp) {
 	$init(TestSelectedTextBackgroundColor);
-	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	while (p == nullptr) {
 		try {
 			$assign(p, $nc(comp)->getLocationOnScreen());
-		} catch ($IllegalStateException&) {
-			$var($IllegalStateException, e, $catch());
+		} catch ($IllegalStateException& e) {
 			try {
 				$Thread::sleep(500);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& ie) {
 			}
 		}
 	}
@@ -240,7 +222,6 @@ $JFormattedTextField* TestSelectedTextBackgroundColor::getTextField($JSpinner* s
 	if ($instanceOf($JSpinner$DefaultEditor, editor)) {
 		return $nc(($cast($JSpinner$DefaultEditor, editor)))->getTextField();
 	} else {
-		$init($System);
 		$nc($System::err)->println($$str({"Unexpected editor type: "_s, $nc($of($(spinner->getEditor())))->getClass(), " isn\'t a descendant of DefaultEditor"_s}));
 		return nullptr;
 	}
@@ -260,7 +241,6 @@ void TestSelectedTextBackgroundColor::main($StringArray* args) {
 	$init(TestSelectedTextBackgroundColor);
 	$useLocalCurrentObjectStackCache();
 	if (!$nc($($System::getProperty("os.name"_s)))->startsWith("Linux"_s)) {
-		$init($System);
 		$nc($System::out)->println("This test is meant for Linux platform only"_s);
 		return;
 	}
@@ -274,8 +254,7 @@ void TestSelectedTextBackgroundColor::main($StringArray* args) {
 				if ($nc($($nc(lookAndFeelInfo)->getClassName()))->contains(TestSelectedTextBackgroundColor::GTK_LAF_CLASS)) {
 					try {
 						$UIManager::setLookAndFeel($(lookAndFeelInfo->getClassName()));
-					} catch ($UnsupportedLookAndFeelException&) {
-						$var($UnsupportedLookAndFeelException, ignored, $catch());
+					} catch ($UnsupportedLookAndFeelException& ignored) {
 						$nc($System::out)->println("GTK L&F could not be set, so this test can not be run in this scenario "_s);
 						return;
 					}
@@ -309,8 +288,8 @@ void TestSelectedTextBackgroundColor::main($StringArray* args) {
 			if (actualColorDifference < TestSelectedTextBackgroundColor::minColorDifference) {
 				$throwNew($RuntimeException, "The expected background color for Selected Text was not found"_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (TestSelectedTextBackgroundColor::frame != nullptr) {
 				$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestSelectedTextBackgroundColor$$Lambda$dispose$1, static_cast<$JFrame*>($nc(TestSelectedTextBackgroundColor::frame)))));

@@ -8,19 +8,6 @@
 #include <java/io/File.h>
 #include <java/io/InputStream.h>
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/util/AbstractList.h>
 #include <java/util/AbstractSet.h>
@@ -250,8 +237,8 @@ $Sequencer* MidiSystem::getSequencer(bool connected) {
 					$var($Throwable, var$0, nullptr);
 					try {
 						$assign(rec, synth->getReceiver());
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$1) {
+						$assign(var$0, var$1);
 					} /*finally*/ {
 						if (rec == nullptr) {
 							synth->close();
@@ -262,8 +249,7 @@ $Sequencer* MidiSystem::getSequencer(bool connected) {
 					}
 				}
 			}
-		} catch ($MidiUnavailableException&) {
-			$var($MidiUnavailableException, e, $catch());
+		} catch ($MidiUnavailableException& e) {
 			if ($instanceOf($MidiUnavailableException, e)) {
 				$assign(mue, e);
 			}
@@ -271,8 +257,7 @@ $Sequencer* MidiSystem::getSequencer(bool connected) {
 		if (rec == nullptr) {
 			try {
 				$assign(rec, MidiSystem::getReceiver());
-			} catch ($Exception&) {
-				$var($Exception, e, $catch());
+			} catch ($Exception& e) {
 				if ($instanceOf($MidiUnavailableException, e)) {
 					$assign(mue, $cast($MidiUnavailableException, e));
 				}
@@ -351,8 +336,7 @@ $MidiFileFormat* MidiSystem::getMidiFileFormat($InputStream* stream) {
 		try {
 			$assign(format, $nc(reader)->getMidiFileFormat(stream));
 			break;
-		} catch ($InvalidMidiDataException&) {
-			$var($InvalidMidiDataException, e, $catch());
+		} catch ($InvalidMidiDataException& e) {
 			continue;
 		}
 	}
@@ -373,8 +357,7 @@ $MidiFileFormat* MidiSystem::getMidiFileFormat($URL* url) {
 		try {
 			$assign(format, $nc(reader)->getMidiFileFormat(url));
 			break;
-		} catch ($InvalidMidiDataException&) {
-			$var($InvalidMidiDataException, e, $catch());
+		} catch ($InvalidMidiDataException& e) {
 			continue;
 		}
 	}
@@ -395,8 +378,7 @@ $MidiFileFormat* MidiSystem::getMidiFileFormat($File* file) {
 		try {
 			$assign(format, $nc(reader)->getMidiFileFormat(file));
 			break;
-		} catch ($InvalidMidiDataException&) {
-			$var($InvalidMidiDataException, e, $catch());
+		} catch ($InvalidMidiDataException& e) {
 			continue;
 		}
 	}
@@ -417,8 +399,7 @@ $Sequence* MidiSystem::getSequence($InputStream* stream) {
 		try {
 			$assign(sequence, $nc(reader)->getSequence(stream));
 			break;
-		} catch ($InvalidMidiDataException&) {
-			$var($InvalidMidiDataException, e, $catch());
+		} catch ($InvalidMidiDataException& e) {
 			continue;
 		}
 	}
@@ -439,8 +420,7 @@ $Sequence* MidiSystem::getSequence($URL* url) {
 		try {
 			$assign(sequence, $nc(reader)->getSequence(url));
 			break;
-		} catch ($InvalidMidiDataException&) {
-			$var($InvalidMidiDataException, e, $catch());
+		} catch ($InvalidMidiDataException& e) {
 			continue;
 		}
 	}
@@ -461,8 +441,7 @@ $Sequence* MidiSystem::getSequence($File* file) {
 		try {
 			$assign(sequence, $nc(reader)->getSequence(file));
 			break;
-		} catch ($InvalidMidiDataException&) {
-			$var($InvalidMidiDataException, e, $catch());
+		} catch ($InvalidMidiDataException& e) {
 			continue;
 		}
 	}
@@ -608,11 +587,9 @@ $List* MidiSystem::getMidiFileReaders() {
 }
 
 $MidiDevice* MidiSystem::getDefaultDeviceWrapper($Class* deviceClass) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return getDefaultDevice(deviceClass);
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, iae, $catch());
+	} catch ($IllegalArgumentException& iae) {
 		$var($MidiUnavailableException, mae, $new($MidiUnavailableException));
 		mae->initCause(iae);
 		$throw(mae);

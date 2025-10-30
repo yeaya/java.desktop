@@ -1,16 +1,5 @@
 #include <javax/imageio/plugins/jpeg/JPEGHuffmanTable.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <jcpp.h>
 
@@ -74,13 +63,9 @@ $shorts* JPEGHuffmanTable::StdACLuminanceLengths = nullptr;
 $shorts* JPEGHuffmanTable::StdACLuminanceValues = nullptr;
 $shorts* JPEGHuffmanTable::StdACChrominanceLengths = nullptr;
 $shorts* JPEGHuffmanTable::StdACChrominanceValues = nullptr;
-
 JPEGHuffmanTable* JPEGHuffmanTable::StdDCLuminance = nullptr;
-
 JPEGHuffmanTable* JPEGHuffmanTable::StdDCChrominance = nullptr;
-
 JPEGHuffmanTable* JPEGHuffmanTable::StdACLuminance = nullptr;
-
 JPEGHuffmanTable* JPEGHuffmanTable::StdACChrominance = nullptr;
 
 void JPEGHuffmanTable::init$($shorts* lengths, $shorts* values) {

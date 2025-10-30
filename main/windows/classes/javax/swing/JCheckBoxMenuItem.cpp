@@ -4,17 +4,6 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container$AccessibleAWTContainer.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/AbstractButton$AccessibleAbstractButton.h>
 #include <javax/swing/AbstractButton.h>
@@ -68,6 +57,7 @@ $NamedAttribute JCheckBoxMenuItem_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JCheckBoxMenuItem_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JCheckBoxMenuItem_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JCheckBoxMenuItem_Attribute_var$1},
@@ -116,7 +106,6 @@ $CompoundAttribute _JCheckBoxMenuItem_MethodAnnotations_setState12[] = {
 	{}
 };
 
-
 $FieldInfo _JCheckBoxMenuItem_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JCheckBoxMenuItem, uiClassID)},
 	{}
@@ -164,7 +153,6 @@ $ClassInfo _JCheckBoxMenuItem_ClassInfo_ = {
 $Object* allocate$JCheckBoxMenuItem($Class* clazz) {
 	return $of($alloc(JCheckBoxMenuItem));
 }
-
 
 $String* JCheckBoxMenuItem::uiClassID = nullptr;
 

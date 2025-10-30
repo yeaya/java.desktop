@@ -2,22 +2,10 @@
 
 #include <bug6263446.h>
 #include <java/awt/Component.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchFieldException.h>
 #include <java/lang/ReflectiveOperationException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/DefaultCellEditor.h>
 #include <javax/swing/JTextField.h>
 #include <javax/swing/JTree.h>
@@ -111,11 +99,9 @@ void bug6263446$6::run() {
 		} else if (!$nc(this->val$sel)->equals(text)) {
 			$throwNew($RuntimeException, $$str({"\""_s, this->val$sel, "\" should be selected, but \""_s, text, "\" is selected."_s}));
 		}
-	} catch ($IllegalAccessException&) {
-		$var($IllegalAccessException, e, $catch());
+	} catch ($IllegalAccessException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($NoSuchFieldException&) {
-		$var($NoSuchFieldException, e, $catch());
+	} catch ($NoSuchFieldException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }

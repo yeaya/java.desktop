@@ -5,16 +5,6 @@
 #include <com/sun/beans/finder/SignatureException.h>
 #include <com/sun/beans/util/Cache$Kind.h>
 #include <com/sun/beans/util/Cache.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Executable.h>
 #include <java/lang/reflect/Method.h>
 #include <jcpp.h>
@@ -89,8 +79,7 @@ $Method* MethodFinder$1::create($Signature* signature) {
 		$var($String, var$0, $nc(signature)->getName());
 		$var($MethodFinder, finder, $new($MethodFinder, var$0, $(signature->getArgs())));
 		return $MethodFinder::findAccessibleMethod($cast($Method, $(finder->find($($fcast($ExecutableArray, $nc($nc(signature)->getType())->getMethods()))))));
-	} catch ($Exception&) {
-		$var($Exception, exception, $catch());
+	} catch ($Exception& exception) {
 		$throwNew($SignatureException, exception);
 	}
 	$shouldNotReachHere();

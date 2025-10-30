@@ -4,20 +4,11 @@
 #include <java/awt/GraphicsEnvironment.h>
 #include <java/awt/Toolkit.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/AWTAccessor$SystemColorAccessor.h>
 #include <sun/awt/AWTAccessor.h>
 #include <jcpp.h>
@@ -186,59 +177,32 @@ $Object* allocate$SystemColor($Class* clazz) {
 	return $of($alloc(SystemColor));
 }
 
-
 $ints* SystemColor::systemColors = nullptr;
-
 SystemColor* SystemColor::desktop = nullptr;
-
 SystemColor* SystemColor::activeCaption = nullptr;
-
 SystemColor* SystemColor::activeCaptionText = nullptr;
-
 SystemColor* SystemColor::activeCaptionBorder = nullptr;
-
 SystemColor* SystemColor::inactiveCaption = nullptr;
-
 SystemColor* SystemColor::inactiveCaptionText = nullptr;
-
 SystemColor* SystemColor::inactiveCaptionBorder = nullptr;
-
 SystemColor* SystemColor::window = nullptr;
-
 SystemColor* SystemColor::windowBorder = nullptr;
-
 SystemColor* SystemColor::windowText = nullptr;
-
 SystemColor* SystemColor::menu = nullptr;
-
 SystemColor* SystemColor::menuText = nullptr;
-
 SystemColor* SystemColor::text = nullptr;
-
 SystemColor* SystemColor::textText = nullptr;
-
 SystemColor* SystemColor::textHighlight = nullptr;
-
 SystemColor* SystemColor::textHighlightText = nullptr;
-
 SystemColor* SystemColor::textInactiveText = nullptr;
-
 SystemColor* SystemColor::control = nullptr;
-
 SystemColor* SystemColor::controlText = nullptr;
-
 SystemColor* SystemColor::controlHighlight = nullptr;
-
 SystemColor* SystemColor::controlLtHighlight = nullptr;
-
 SystemColor* SystemColor::controlShadow = nullptr;
-
 SystemColor* SystemColor::controlDkShadow = nullptr;
-
 SystemColor* SystemColor::scrollbar = nullptr;
-
 SystemColor* SystemColor::info = nullptr;
-
 SystemColor* SystemColor::infoText = nullptr;
 $SystemColorArray* SystemColor::systemColorObjects = nullptr;
 

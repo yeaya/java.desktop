@@ -23,24 +23,11 @@
 #include <java/awt/event/MouseEvent.h>
 #include <java/awt/event/MouseWheelEvent.h>
 #include <java/awt/event/WindowListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/CompoundAttribute.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <javax/accessibility/Accessible.h>
@@ -297,9 +284,7 @@ $Object* allocate$SwingUtilities($Class* clazz) {
 
 bool SwingUtilities::canAccessEventQueue = false;
 bool SwingUtilities::eventQueueTested = false;
-
 bool SwingUtilities::suppressDropSupport = false;
-
 bool SwingUtilities::checkedSuppressDropSupport = false;
 $Object* SwingUtilities::sharedOwnerFrameKey = nullptr;
 
@@ -548,8 +533,7 @@ void SwingUtilities::convertPointToScreen($Point* p, $Component* c$renamed) {
 				$var($Point, pp, $nc(c)->getLocationOnScreen());
 				x = $nc(pp)->x;
 				y = pp->y;
-			} catch ($IllegalComponentStateException&) {
-				$var($IllegalComponentStateException, icse, $catch());
+			} catch ($IllegalComponentStateException& icse) {
 				x = $nc(c)->getX();
 				y = c->getY();
 			}
@@ -582,8 +566,7 @@ void SwingUtilities::convertPointFromScreen($Point* p, $Component* c$renamed) {
 				$var($Point, pp, $nc(c)->getLocationOnScreen());
 				x = $nc(pp)->x;
 				y = pp->y;
-			} catch ($IllegalComponentStateException&) {
-				$var($IllegalComponentStateException, icse, $catch());
+			} catch ($IllegalComponentStateException& icse) {
 				x = $nc(c)->getX();
 				y = c->getY();
 			}

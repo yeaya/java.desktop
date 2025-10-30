@@ -1,15 +1,7 @@
 #include <javax/imageio/ImageIO$ImageReaderIterator.h>
 
 #include <java/io/IOException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Iterator.h>
 #include <javax/imageio/ImageIO.h>
 #include <javax/imageio/ImageReader.h>
@@ -81,13 +73,11 @@ bool ImageIO$ImageReaderIterator::hasNext() {
 }
 
 $Object* ImageIO$ImageReaderIterator::next() {
-	$useLocalCurrentObjectStackCache();
 	$var($ImageReaderSpi, spi, nullptr);
 	try {
 		$assign(spi, $cast($ImageReaderSpi, $nc(this->iter)->next()));
 		return $of($nc(spi)->createReaderInstance());
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$init($ImageIO);
 		$load($ImageReaderSpi);
 		$nc($ImageIO::theRegistry)->deregisterServiceProvider(spi, $ImageReaderSpi::class$);

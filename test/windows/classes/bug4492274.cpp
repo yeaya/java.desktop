@@ -9,26 +9,12 @@
 #include <java/awt/Window.h>
 #include <java/io/File.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URI.h>
 #include <java/net/URL.h>
 #include <javax/swing/JComponent.h>
@@ -173,8 +159,8 @@ void bug4492274::main($StringArray* args) {
 			if (getPageAnchor() == nullptr) {
 				$throwNew($RuntimeException, "JEditorPane.getPage() returns null anchor reference"_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$init(bug4492274);
 			if (bug4492274::f != nullptr) {
@@ -209,8 +195,7 @@ void bug4492274::createAndShowGUI() {
 		$nc($($nc(bug4492274::f)->getContentPane()))->add(static_cast<$Component*>(sp));
 		$nc(bug4492274::f)->setSize(500, 500);
 		$nc(bug4492274::f)->setVisible(true);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }

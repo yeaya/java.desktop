@@ -21,18 +21,6 @@
 #include <java/awt/Color.h>
 #include <java/awt/Font.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTextField.h>
 #include <javax/swing/UIDefaults$LazyInputMap.h>
 #include <javax/swing/UIDefaults.h>
@@ -123,11 +111,11 @@ $NamedAttribute MotifLookAndFeel_Attribute_var$0[] = {
 	{"forRemoval", 'Z', "true"},
 	{}
 };
+
 $CompoundAttribute _MotifLookAndFeel_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", MotifLookAndFeel_Attribute_var$0},
 	{}
 };
-
 
 $MethodInfo _MotifLookAndFeel_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PUBLIC, $method(static_cast<void(MotifLookAndFeel::*)()>(&MotifLookAndFeel::init$))},
@@ -389,8 +377,8 @@ void MotifLookAndFeel::initComponentDefaults($UIDefaults* table) {
 	$var($Object, unselectedTabForeground, $new($MotifLookAndFeel$7, this));
 	$var($Object, unselectedTabShadow, $new($MotifLookAndFeel$8, this));
 	$var($Object, unselectedTabHighlight, $new($MotifLookAndFeel$9, this));
-		$init($DefaultEditorKit);
-		$init($JTextField);
+	$init($DefaultEditorKit);
+	$init($JTextField);
 	$var($Object, fieldInputMap, $new($UIDefaults$LazyInputMap, $$new($ObjectArray, {
 		$of("COPY"_s),
 		$of($DefaultEditorKit::copyAction),
@@ -651,7 +639,7 @@ void MotifLookAndFeel::initComponentDefaults($UIDefaults* table) {
 	$var($Object, optionPaneButtonAreaBorder, $new($BorderUIResource$EmptyBorderUIResource, 10, 10, 10, 10));
 	$var($Object, optionPaneMessageAreaBorder, $new($BorderUIResource$EmptyBorderUIResource, 10, 10, 12, 10));
 	int32_t metaMask = $KeyEvent::META_MASK;
-		$init($Boolean);
+	$init($Boolean);
 	$var($ObjectArray, defaults, $new($ObjectArray, {
 		$of("Desktop.background"_s),
 		$($nc(table)->get("desktop"_s)),

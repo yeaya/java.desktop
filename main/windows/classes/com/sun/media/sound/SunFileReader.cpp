@@ -9,17 +9,7 @@
 #include <java/io/FilterInputStream.h>
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/ArithmeticException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <javax/sound/sampled/AudioFileFormat.h>
 #include <javax/sound/sampled/AudioFormat.h>
@@ -102,12 +92,11 @@ $AudioFileFormat* SunFileReader::getAudioFileFormat($InputStream* stream) {
 				$assign(var$2, getAudioFileFormatImpl(stream));
 				return$1 = true;
 				goto $finally;
-			} catch ($EOFException&) {
-				$var($EOFException, ignored, $catch());
+			} catch ($EOFException& ignored) {
 				$throwNew($UnsupportedAudioFileException);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			stream->reset();
 		}
@@ -134,20 +123,18 @@ $AudioFileFormat* SunFileReader::getAudioFileFormat($URL* url) {
 					$assign(var$2, getAudioFileFormatImpl($$new($BufferedInputStream, is)));
 					return$1 = true;
 					goto $finally;
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					if (is != nullptr) {
 						try {
 							is->close();
-						} catch ($Throwable&) {
-							$var($Throwable, x2, $catch());
+						} catch ($Throwable& x2) {
 							t$->addSuppressed(x2);
 						}
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} $finally: {
 				if (is != nullptr) {
 					is->close();
@@ -160,8 +147,7 @@ $AudioFileFormat* SunFileReader::getAudioFileFormat($URL* url) {
 				return var$2;
 			}
 		}
-	} catch ($EOFException&) {
-		$var($EOFException, ignored, $catch());
+	} catch ($EOFException& ignored) {
 		$throwNew($UnsupportedAudioFileException);
 	}
 	$shouldNotReachHere();
@@ -180,18 +166,16 @@ $AudioFileFormat* SunFileReader::getAudioFileFormat($File* file) {
 					$assign(var$2, getAudioFileFormatImpl($$new($BufferedInputStream, is)));
 					return$1 = true;
 					goto $finally;
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					try {
 						is->close();
-					} catch ($Throwable&) {
-						$var($Throwable, x2, $catch());
+					} catch ($Throwable& x2) {
 						t$->addSuppressed(x2);
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} $finally: {
 				is->close();
 			}
@@ -202,8 +186,7 @@ $AudioFileFormat* SunFileReader::getAudioFileFormat($File* file) {
 				return var$2;
 			}
 		}
-	} catch ($EOFException&) {
-		$var($EOFException, ignored, $catch());
+	} catch ($EOFException& ignored) {
 		$throwNew($UnsupportedAudioFileException);
 	}
 	$shouldNotReachHere();
@@ -217,12 +200,10 @@ $AudioInputStream* SunFileReader::getAudioInputStream($InputStream* stream) {
 		$var($InputStream, var$0, stream);
 		$var($AudioFormat, var$1, $nc(format)->getFormat());
 		return $new($AudioInputStream, var$0, var$1, format->getLongFrameLength());
-	} catch ($UnsupportedAudioFileException&) {
-		$var($Exception, ignored, $catch());
+	} catch ($UnsupportedAudioFileException& ignored) {
 		stream->reset();
 		$throwNew($UnsupportedAudioFileException);
-	} catch ($EOFException&) {
-		$var($Exception, ignored, $catch());
+	} catch ($EOFException& ignored) {
 		stream->reset();
 		$throwNew($UnsupportedAudioFileException);
 	}
@@ -234,8 +215,7 @@ $AudioInputStream* SunFileReader::getAudioInputStream($URL* url) {
 	$var($InputStream, urlStream, $nc(url)->openStream());
 	try {
 		return getAudioInputStream(static_cast<$InputStream*>($$new($BufferedInputStream, urlStream)));
-	} catch ($Throwable&) {
-		$var($Throwable, e, $catch());
+	} catch ($Throwable& e) {
 		closeSilently(urlStream);
 		$throw(e);
 	}
@@ -247,8 +227,7 @@ $AudioInputStream* SunFileReader::getAudioInputStream($File* file) {
 	$var($InputStream, fileStream, $new($FileInputStream, file));
 	try {
 		return getAudioInputStream(static_cast<$InputStream*>($$new($BufferedInputStream, fileStream)));
-	} catch ($Throwable&) {
-		$var($Throwable, e, $catch());
+	} catch ($Throwable& e) {
 		closeSilently(fileStream);
 		$throw(e);
 	}
@@ -259,8 +238,7 @@ void SunFileReader::closeSilently($InputStream* is) {
 	$init(SunFileReader);
 	try {
 		$nc(is)->close();
-	} catch ($IOException&) {
-		$catch();
+	} catch ($IOException& ignored) {
 	}
 }
 
@@ -316,8 +294,7 @@ int32_t SunFileReader::calculatePCMFrameSize(int32_t sampleSizeInBits, int32_t c
 	$init(SunFileReader);
 	try {
 		return $Math::multiplyExact((sampleSizeInBits + 7) / 8, channels);
-	} catch ($ArithmeticException&) {
-		$var($ArithmeticException, ignored, $catch());
+	} catch ($ArithmeticException& ignored) {
 		return 0;
 	}
 	$shouldNotReachHere();

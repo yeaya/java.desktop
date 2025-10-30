@@ -45,37 +45,20 @@
 #include <java/beans/PropertyChangeSupport.h>
 #include <java/io/File.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InstantiationException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/ReflectiveOperationException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
 #include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/security/AccessController.h>
 #include <java/security/BasicPermission.h>
@@ -538,14 +521,10 @@ $Object* allocate$Toolkit($Class* clazz) {
 }
 
 bool Toolkit::$assertionsDisabled = false;
-
 Toolkit* Toolkit::toolkit = nullptr;
-
 $String* Toolkit::atNames = nullptr;
-
 $ResourceBundle* Toolkit::resources = nullptr;
 $ResourceBundle* Toolkit::platformResources = nullptr;
-
 bool Toolkit::loaded = false;
 $volatile(int64_t) Toolkit::enabledOnToolkitMask = 0;
 
@@ -619,17 +598,13 @@ void Toolkit::fallbackToLoadClassForAT($String* atName) {
 	try {
 		$Class* c = $Class::forName(atName, false, $($ClassLoader::getSystemClassLoader()));
 		$nc($($nc(c)->getConstructor($$new($ClassArray, 0))))->newInstance($$new($ObjectArray, 0));
-	} catch ($ClassNotFoundException&) {
-		$var($ClassNotFoundException, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		newAWTError(e, $$str({"Assistive Technology not found: "_s, atName}));
-	} catch ($InstantiationException&) {
-		$var($InstantiationException, e, $catch());
+	} catch ($InstantiationException& e) {
 		newAWTError(e, $$str({"Could not instantiate Assistive Technology: "_s, atName}));
-	} catch ($IllegalAccessException&) {
-		$var($IllegalAccessException, e, $catch());
+	} catch ($IllegalAccessException& e) {
 		newAWTError(e, $$str({"Could not access Assistive Technology: "_s, atName}));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		newAWTError(e, $$str({"Error trying to install Assistive Technology: "_s, atName}));
 	}
 }
@@ -790,15 +765,13 @@ $String* Toolkit::getProperty($String* key, $String* defaultValue) {
 	if (Toolkit::platformResources != nullptr) {
 		try {
 			return $nc(Toolkit::platformResources)->getString(key);
-		} catch ($MissingResourceException&) {
-			$catch();
+		} catch ($MissingResourceException& e) {
 		}
 	}
 	if (Toolkit::resources != nullptr) {
 		try {
 			return $nc(Toolkit::resources)->getString(key);
-		} catch ($MissingResourceException&) {
-			$catch();
+		} catch ($MissingResourceException& e) {
 		}
 	}
 	return defaultValue;
@@ -1075,11 +1048,9 @@ $Void* Toolkit::lambda$loadAssistiveTechnologies$0($ClassLoader* cl, $Set* names
 				}
 			}
 		}
-	} catch ($ServiceConfigurationError&) {
-		$var($Throwable, e, $catch());
+	} catch ($ServiceConfigurationError& e) {
 		newAWTError(e, "Could not load or activate service provider"_s);
-	} catch ($Exception&) {
-		$var($Throwable, e, $catch());
+	} catch ($Exception& e) {
 		newAWTError(e, "Could not load or activate service provider"_s);
 	}
 	return nullptr;

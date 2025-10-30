@@ -4,20 +4,9 @@
 #include <java/awt/geom/Point2D$Float.h>
 #include <java/awt/geom/Rectangle2D$Float.h>
 #include <java/io/File.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
 #include <java/lang/ref/Reference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/ByteBuffer.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedActionException.h>
@@ -198,11 +187,9 @@ void FileFont::deregisterFontAndClearStrikeCache() {
 }
 
 $StrikeMetrics* FileFont::getFontMetrics(int64_t pScalerContext) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getFontMetrics(pScalerContext);
-	} catch ($FontScalerException&) {
-		$var($FontScalerException, fe, $catch());
+	} catch ($FontScalerException& fe) {
 		$set(this, scaler, $FontScaler::getNullScaler());
 		return getFontMetrics(pScalerContext);
 	}
@@ -210,11 +197,9 @@ $StrikeMetrics* FileFont::getFontMetrics(int64_t pScalerContext) {
 }
 
 float FileFont::getGlyphAdvance(int64_t pScalerContext, int32_t glyphCode) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getGlyphAdvance(pScalerContext, glyphCode);
-	} catch ($FontScalerException&) {
-		$var($FontScalerException, fe, $catch());
+	} catch ($FontScalerException& fe) {
 		$set(this, scaler, $FontScaler::getNullScaler());
 		return getGlyphAdvance(pScalerContext, glyphCode);
 	}
@@ -222,22 +207,18 @@ float FileFont::getGlyphAdvance(int64_t pScalerContext, int32_t glyphCode) {
 }
 
 void FileFont::getGlyphMetrics(int64_t pScalerContext, int32_t glyphCode, $Point2D$Float* metrics) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$nc($(getScaler()))->getGlyphMetrics(pScalerContext, glyphCode, metrics);
-	} catch ($FontScalerException&) {
-		$var($FontScalerException, fe, $catch());
+	} catch ($FontScalerException& fe) {
 		$set(this, scaler, $FontScaler::getNullScaler());
 		getGlyphMetrics(pScalerContext, glyphCode, metrics);
 	}
 }
 
 int64_t FileFont::getGlyphImage(int64_t pScalerContext, int32_t glyphCode) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getGlyphImage(pScalerContext, glyphCode);
-	} catch ($FontScalerException&) {
-		$var($FontScalerException, fe, $catch());
+	} catch ($FontScalerException& fe) {
 		$set(this, scaler, $FontScaler::getNullScaler());
 		return getGlyphImage(pScalerContext, glyphCode);
 	}
@@ -245,11 +226,9 @@ int64_t FileFont::getGlyphImage(int64_t pScalerContext, int32_t glyphCode) {
 }
 
 $Rectangle2D$Float* FileFont::getGlyphOutlineBounds(int64_t pScalerContext, int32_t glyphCode) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getGlyphOutlineBounds(pScalerContext, glyphCode);
-	} catch ($FontScalerException&) {
-		$var($FontScalerException, fe, $catch());
+	} catch ($FontScalerException& fe) {
 		$set(this, scaler, $FontScaler::getNullScaler());
 		return getGlyphOutlineBounds(pScalerContext, glyphCode);
 	}
@@ -257,11 +236,9 @@ $Rectangle2D$Float* FileFont::getGlyphOutlineBounds(int64_t pScalerContext, int3
 }
 
 $GeneralPath* FileFont::getGlyphOutline(int64_t pScalerContext, int32_t glyphCode, float x, float y) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getGlyphOutline(pScalerContext, glyphCode, x, y);
-	} catch ($FontScalerException&) {
-		$var($FontScalerException, fe, $catch());
+	} catch ($FontScalerException& fe) {
 		$set(this, scaler, $FontScaler::getNullScaler());
 		return getGlyphOutline(pScalerContext, glyphCode, x, y);
 	}
@@ -269,11 +246,9 @@ $GeneralPath* FileFont::getGlyphOutline(int64_t pScalerContext, int32_t glyphCod
 }
 
 $GeneralPath* FileFont::getGlyphVectorOutline(int64_t pScalerContext, $ints* glyphs, int32_t numGlyphs, float x, float y) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getGlyphVectorOutline(pScalerContext, glyphs, numGlyphs, x, y);
-	} catch ($FontScalerException&) {
-		$var($FontScalerException, fe, $catch());
+	} catch ($FontScalerException& fe) {
 		$set(this, scaler, $FontScaler::getNullScaler());
 		return getGlyphVectorOutline(pScalerContext, glyphs, numGlyphs, x, y);
 	}
@@ -294,8 +269,7 @@ $String* FileFont::getPublicFileName() {
 	bool canReadProperty = true;
 	try {
 		$nc(sm)->checkPropertyAccess("java.io.tmpdir"_s);
-	} catch ($SecurityException&) {
-		$var($SecurityException, e, $catch());
+	} catch ($SecurityException& e) {
 		canReadProperty = false;
 	}
 	if (canReadProperty) {
@@ -306,8 +280,7 @@ $String* FileFont::getPublicFileName() {
 	$var($Boolean, isTmpFile, $Boolean::FALSE);
 	try {
 		$assign(isTmpFile, $cast($Boolean, $AccessController::doPrivileged(static_cast<$PrivilegedExceptionAction*>($$new($FileFont$1, this, f)))));
-	} catch ($PrivilegedActionException&) {
-		$var($PrivilegedActionException, e, $catch());
+	} catch ($PrivilegedActionException& e) {
 		$assign(isTmpFile, $Boolean::TRUE);
 	}
 	return $nc(isTmpFile)->booleanValue() ? "temp file"_s : this->platName;

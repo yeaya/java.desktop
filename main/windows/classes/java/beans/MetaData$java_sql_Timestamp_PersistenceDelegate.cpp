@@ -4,24 +4,12 @@
 #include <java/beans/MetaData$java_util_Date_PersistenceDelegate.h>
 #include <java/beans/MetaData.h>
 #include <java/beans/Statement.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
 #include <java/lang/ClassNotFoundException.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchMethodException.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
 #include <java/lang/reflect/Method.h>
 #include <jcpp.h>
@@ -101,11 +89,9 @@ $Method* MetaData$java_sql_Timestamp_PersistenceDelegate::getNanosMethod() {
 	try {
 		$Class* c = $Class::forName("java.sql.Timestamp"_s, true, $($ClassLoader::getPlatformClassLoader()));
 		return $nc(c)->getMethod("getNanos"_s, $$new($ClassArray, 0));
-	} catch ($ClassNotFoundException&) {
-		$var($ClassNotFoundException, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		return nullptr;
-	} catch ($NoSuchMethodException&) {
-		$var($NoSuchMethodException, e, $catch());
+	} catch ($NoSuchMethodException& e) {
 		$throwNew($AssertionError, $of(e));
 	}
 	$shouldNotReachHere();
@@ -120,8 +106,7 @@ int32_t MetaData$java_sql_Timestamp_PersistenceDelegate::getNanos(Object$* obj) 
 	}
 	try {
 		return $nc(($cast($Integer, $($nc(MetaData$java_sql_Timestamp_PersistenceDelegate::getNanosMethod$)->invoke(obj, $$new($ObjectArray, 0))))))->intValue();
-	} catch ($InvocationTargetException&) {
-		$var($InvocationTargetException, e, $catch());
+	} catch ($InvocationTargetException& e) {
 		$var($Throwable, cause, e->getCause());
 		if ($instanceOf($RuntimeException, cause)) {
 			$throw($cast($RuntimeException, cause));
@@ -130,8 +115,7 @@ int32_t MetaData$java_sql_Timestamp_PersistenceDelegate::getNanos(Object$* obj) 
 			$throw($cast($Error, cause));
 		}
 		$throwNew($AssertionError, $of(e));
-	} catch ($IllegalAccessException&) {
-		$var($IllegalAccessException, iae, $catch());
+	} catch ($IllegalAccessException& iae) {
 		$throwNew($AssertionError, $of(iae));
 	}
 	$shouldNotReachHere();

@@ -1,13 +1,5 @@
 #include <javax/sound/midi/Sequencer$SyncMode.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/midi/Sequencer.h>
 #include <jcpp.h>
 
@@ -68,13 +60,9 @@ $Object* allocate$Sequencer$SyncMode($Class* clazz) {
 	return $of($alloc(Sequencer$SyncMode));
 }
 
-
 Sequencer$SyncMode* Sequencer$SyncMode::INTERNAL_CLOCK = nullptr;
-
 Sequencer$SyncMode* Sequencer$SyncMode::MIDI_SYNC = nullptr;
-
 Sequencer$SyncMode* Sequencer$SyncMode::MIDI_TIME_CODE = nullptr;
-
 Sequencer$SyncMode* Sequencer$SyncMode::NO_SYNC = nullptr;
 
 void Sequencer$SyncMode::init$($String* name) {

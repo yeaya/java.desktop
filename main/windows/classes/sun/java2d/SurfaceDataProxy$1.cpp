@@ -1,15 +1,7 @@
 #include <sun/java2d/SurfaceDataProxy$1.h>
 
 #include <java/awt/Color.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SurfaceData.h>
 #include <sun/java2d/SurfaceDataProxy.h>
 #include <sun/java2d/loops/CompositeType.h>

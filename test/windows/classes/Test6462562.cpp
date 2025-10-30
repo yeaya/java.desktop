@@ -2,22 +2,8 @@
 
 #include <Test6462562$1.h>
 #include <Test6462562$TestFormattedTextField.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/DateFormat.h>
 #include <java/text/NumberFormat.h>
 #include <java/text/ParseException.h>
@@ -119,7 +105,6 @@ void Test6462562::test() {
 	if (this->failed) {
 		$throwNew($RuntimeException, "Some testcases failed, see output above"_s);
 	}
-	$init($System);
 	$nc($System::err)->println("(-;  All testcases passed  ;-)"_s);
 }
 
@@ -145,7 +130,6 @@ void Test6462562::testPercentFormat() {
 	$var($NumberFormat, format, $NumberFormat::getPercentInstance($Locale::US));
 	$var($Test6462562$TestFormattedTextField, ftf, create(format));
 	$nc(ftf)->setValue($($Double::valueOf(0.34)));
-	$init($System);
 	$nc($System::err)->println("Testing NumberFormat.getPercentInstance(Locale.US)"_s);
 	ftf->test(0, 0, "1"_s, $($Double::valueOf(0.14)));
 	ftf->test(2, 0, "2"_s, $($Double::valueOf(1.42)));
@@ -190,7 +174,6 @@ void Test6462562::testCurrencyFormat() {
 	$var($NumberFormat, format, $NumberFormat::getCurrencyInstance($Locale::US));
 	$var($Test6462562$TestFormattedTextField, ftf, create(format));
 	$nc(ftf)->setValue($($Long::valueOf((int64_t)56)));
-	$init($System);
 	$nc($System::err)->println("Testing NumberFormat.getCurrencyInstance(Locale.US)"_s);
 	ftf->test(1, 0, "1"_s, $($Long::valueOf((int64_t)16)));
 	ftf->test(3, 0, "2"_s, $($Long::valueOf((int64_t)162)));
@@ -231,7 +214,6 @@ void Test6462562::testIntegerFormat() {
 	$var($NumberFormat, format, $NumberFormat::getIntegerInstance($Locale::US));
 	$var($Test6462562$TestFormattedTextField, ftf, create(format));
 	$nc(ftf)->setValue($($Long::valueOf((int64_t)56)));
-	$init($System);
 	$nc($System::err)->println("Testing NumberFormat.getIntegerInstance(Locale.US)"_s);
 	ftf->test(0, 0, "1"_s, $($Long::valueOf((int64_t)16)));
 	ftf->test(2, 0, "2"_s, $($Long::valueOf((int64_t)162)));
@@ -269,8 +251,7 @@ void Test6462562::testIntegerFormat() {
 $Date* Test6462562::date($DateFormat* format, $String* spec) {
 	try {
 		return $nc(format)->parse(spec);
-	} catch ($ParseException&) {
-		$var($ParseException, e, $catch());
+	} catch ($ParseException& e) {
 		$throwNew($Error, "Error in test"_s);
 	}
 	$shouldNotReachHere();
@@ -282,7 +263,6 @@ void Test6462562::testDateFormat() {
 	$var($DateFormat, format, $new($SimpleDateFormat, "MM/dd/yyyy"_s, $Locale::US));
 	$var($Test6462562$TestFormattedTextField, ftf, create(format));
 	$nc(ftf)->setValue($(date(format, "12/05/2005"_s)));
-	$init($System);
 	$nc($System::err)->println("Testing SimpleDateFormat(\"MM/dd/yyyy\", Locale.US)"_s);
 	ftf->test(0, 0, "0"_s, $(date(format, "02/05/2005"_s)));
 	ftf->test(4, 0, "4"_s, $(date(format, "02/04/2005"_s)));

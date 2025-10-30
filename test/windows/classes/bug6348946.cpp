@@ -13,20 +13,7 @@
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/InputEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JPanel.h>
@@ -137,8 +124,8 @@ void bug6348946::main($StringArray* args) {
 			clickOnSlider();
 			$nc(bug6348946::robot)->waitForIdle();
 			checkResult();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			stopEDT();
 		}
@@ -177,7 +164,6 @@ void bug6348946::clickOnSlider() {
 void bug6348946::checkResult() {
 	$init(bug6348946);
 	if (bug6348946::passed) {
-		$init($System);
 		$nc($System::out)->println("Test passed"_s);
 	} else {
 		$throwNew($RuntimeException, "The thumb moved to the right instead of the left!"_s);

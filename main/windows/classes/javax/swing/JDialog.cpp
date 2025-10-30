@@ -18,21 +18,7 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/WindowEvent.h>
 #include <java/awt/event/WindowListener.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/JComponent.h>
@@ -120,6 +106,7 @@ $NamedAttribute JDialog_Attribute_var$1[] = {
 	{"delegate", 's', "getContentPane"},
 	{}
 };
+
 $CompoundAttribute _JDialog_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JDialog_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JDialog_Attribute_var$1},
@@ -237,7 +224,6 @@ $CompoundAttribute _JDialog_MethodAnnotations_setTransferHandler43[] = {
 	{}
 };
 
-
 $FieldInfo _JDialog_FieldInfo_[] = {
 	{"defaultLookAndFeelDecoratedKey", "Ljava/lang/Object;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JDialog, defaultLookAndFeelDecoratedKey)},
 	{"defaultCloseOperation", "I", nullptr, $PRIVATE, $field(JDialog, defaultCloseOperation)},
@@ -346,7 +332,6 @@ $Object* JDialog::clone() {
 void JDialog::finalize() {
 	this->$Dialog::finalize();
 }
-
 
 $Object* JDialog::defaultLookAndFeelDecoratedKey = nullptr;
 
@@ -582,8 +567,8 @@ void JDialog::setRootPane($JRootPane* root) {
 				setRootPaneCheckingEnabled(false);
 				$init($BorderLayout);
 				add(static_cast<$Component*>(this->rootPane), $of($BorderLayout::CENTER));
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				setRootPaneCheckingEnabled(checkingEnabled);
 			}

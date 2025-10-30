@@ -10,17 +10,7 @@
 #include <java/awt/image/BufferStrategy.h>
 #include <java/awt/image/ImageObserver.h>
 #include <java/awt/image/VolatileImage.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SunGraphics2D.h>
 #include <jcpp.h>
 
@@ -203,8 +193,8 @@ void Component$BltBufferStrategy::showSubRegion(int32_t x1, int32_t y1, int32_t 
 				$assign(g, nullptr);
 				$assign(g, $nc($nc(this->backBuffers)->get(i))->getGraphics());
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (g != nullptr) {
 				g->dispose();

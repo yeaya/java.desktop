@@ -4,14 +4,7 @@
 #include <java/awt/Graphics.h>
 #include <java/awt/Window$Type.h>
 #include <java/awt/Window.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JRootPane.h>
 #include <javax/swing/JWindow.h>
 #include <javax/swing/Popup.h>
@@ -100,8 +93,7 @@ void Popup$HeavyWeightWindow::init$($Window* parent) {
 	$nc($(getRootPane()))->setUseTrueDoubleBuffering(false);
 	try {
 		setAlwaysOnTop(true);
-	} catch ($SecurityException&) {
-		$catch();
+	} catch ($SecurityException& se) {
 	}
 }
 

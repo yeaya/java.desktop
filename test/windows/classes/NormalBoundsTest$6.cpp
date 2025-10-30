@@ -3,15 +3,6 @@
 #include <NormalBoundsTest.h>
 #include <java/awt/Window.h>
 #include <java/beans/PropertyVetoException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JInternalFrame.h>
 #include <jcpp.h>
@@ -72,8 +63,7 @@ void NormalBoundsTest$6::run() {
 	try {
 		$init($NormalBoundsTest);
 		$nc($NormalBoundsTest::internalFrame)->setIcon(true);
-	} catch ($PropertyVetoException&) {
-		$var($PropertyVetoException, ex, $catch());
+	} catch ($PropertyVetoException& ex) {
 		$init($NormalBoundsTest);
 		$nc($NormalBoundsTest::mainFrame)->dispose();
 		$throwNew($RuntimeException, "Iconize InternalFrame Failed"_s);

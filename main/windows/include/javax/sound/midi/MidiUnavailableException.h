@@ -17,8 +17,10 @@ public:
 	void init$($String* message);
 	static const int64_t serialVersionUID = (int64_t)0x54918F867F0D11C3;
 	MidiUnavailableException(const MidiUnavailableException& e);
-	MidiUnavailableException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline MidiUnavailableException* operator ->() {
+		return (MidiUnavailableException*)throwing$;
+	}
 };
 
 		} // midi

@@ -1,12 +1,5 @@
 #include <sun/awt/image/ImageFormatException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -42,16 +35,10 @@ void ImageFormatException::init$($String* s) {
 ImageFormatException::ImageFormatException() {
 }
 
-ImageFormatException::ImageFormatException(const ImageFormatException& e) {
+ImageFormatException::ImageFormatException(const ImageFormatException& e) : $Exception(e) {
 }
 
-ImageFormatException ImageFormatException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void ImageFormatException::throwWrapper$() {
-	$pendingException(this);
+void ImageFormatException::throw$() {
 	throw *this;
 }
 

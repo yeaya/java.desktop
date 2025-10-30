@@ -13,24 +13,6 @@
 #include <java/awt/Shape.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <javax/accessibility/AccessibleContext.h>
@@ -283,9 +265,7 @@ void JRootPane::finalize() {
 }
 
 $String* JRootPane::uiClassID = nullptr;
-
 bool JRootPane::LOG_DISABLE_TRUE_DOUBLE_BUFFERING = false;
-
 bool JRootPane::IGNORE_DISABLE_TRUE_DOUBLE_BUFFERING = false;
 
 void JRootPane::init$() {
@@ -496,7 +476,6 @@ void JRootPane::disableTrueDoubleBuffering() {
 	if (this->useTrueDoubleBuffering) {
 		if (!JRootPane::IGNORE_DISABLE_TRUE_DOUBLE_BUFFERING) {
 			if (JRootPane::LOG_DISABLE_TRUE_DOUBLE_BUFFERING) {
-				$init($System);
 				$nc($System::out)->println($$str({"Disabling true double buffering for "_s, this}));
 				$Thread::dumpStack();
 			}

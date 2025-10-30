@@ -1,13 +1,5 @@
 #include <javax/imageio/plugins/tiff/ExifGPSTagSet.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/List.h>
@@ -262,39 +254,22 @@ $Object* allocate$ExifGPSTagSet($Class* clazz) {
 }
 
 ExifGPSTagSet* ExifGPSTagSet::theInstance = nullptr;
-
 $String* ExifGPSTagSet::GPS_VERSION_2_2 = nullptr;
-
 $String* ExifGPSTagSet::LATITUDE_REF_NORTH = nullptr;
-
 $String* ExifGPSTagSet::LATITUDE_REF_SOUTH = nullptr;
-
 $String* ExifGPSTagSet::LONGITUDE_REF_EAST = nullptr;
-
 $String* ExifGPSTagSet::LONGITUDE_REF_WEST = nullptr;
-
 $String* ExifGPSTagSet::STATUS_MEASUREMENT_IN_PROGRESS = nullptr;
-
 $String* ExifGPSTagSet::STATUS_MEASUREMENT_INTEROPERABILITY = nullptr;
-
 $String* ExifGPSTagSet::MEASURE_MODE_2D = nullptr;
-
 $String* ExifGPSTagSet::MEASURE_MODE_3D = nullptr;
-
 $String* ExifGPSTagSet::SPEED_REF_KILOMETERS_PER_HOUR = nullptr;
-
 $String* ExifGPSTagSet::SPEED_REF_MILES_PER_HOUR = nullptr;
-
 $String* ExifGPSTagSet::SPEED_REF_KNOTS = nullptr;
-
 $String* ExifGPSTagSet::DIRECTION_REF_TRUE = nullptr;
-
 $String* ExifGPSTagSet::DIRECTION_REF_MAGNETIC = nullptr;
-
 $String* ExifGPSTagSet::DEST_DISTANCE_REF_KILOMETERS = nullptr;
-
 $String* ExifGPSTagSet::DEST_DISTANCE_REF_MILES = nullptr;
-
 $String* ExifGPSTagSet::DEST_DISTANCE_REF_KNOTS = nullptr;
 
 $List* ExifGPSTagSet::initTags() {

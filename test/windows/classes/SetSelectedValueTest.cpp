@@ -1,18 +1,7 @@
 #include <SetSelectedValueTest.h>
 
 #include <SetSelectedValueTest$1.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/List.h>
 #include <javax/swing/JList.h>
 #include <javax/swing/SwingUtilities.h>
@@ -71,7 +60,6 @@ void SetSelectedValueTest::checkSelectionByList($JList* list, $List* selectionLi
 	$useLocalCurrentObjectStackCache();
 	$var($List, listSelection, $nc(list)->getSelectedValuesList());
 	if (!$nc(listSelection)->equals(selectionList)) {
-		$init($System);
 		$nc($System::out)->println($$str({"Expected: "_s, selectionList}));
 		$nc($System::out)->println($$str({"Actual: "_s, listSelection}));
 		$throwNew($RuntimeException, "Wrong selection"_s);

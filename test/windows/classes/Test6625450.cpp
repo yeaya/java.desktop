@@ -2,21 +2,7 @@
 
 #include <Test6625450$1.h>
 #include <java/awt/Component.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/border/TitledBorder.h>
 #include <jcpp.h>
 
@@ -100,8 +86,7 @@ void Test6625450::test(bool expected, int32_t width, int32_t height) {
 		if (expected) {
 			$throwNew($Error, "expected IllegalArgumentException"_s);
 		}
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, exception, $catch());
+	} catch ($IllegalArgumentException& exception) {
 		if (!expected) {
 			$throwNew($Error, "unexpected exception"_s, exception);
 		}

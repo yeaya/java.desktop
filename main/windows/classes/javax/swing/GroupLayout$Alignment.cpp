@@ -1,15 +1,6 @@
 #include <javax/swing/GroupLayout$Alignment.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/GroupLayout.h>
 #include <jcpp.h>
 
@@ -71,13 +62,9 @@ $Object* allocate$GroupLayout$Alignment($Class* clazz) {
 	return $of($alloc(GroupLayout$Alignment));
 }
 
-
 GroupLayout$Alignment* GroupLayout$Alignment::LEADING = nullptr;
-
 GroupLayout$Alignment* GroupLayout$Alignment::TRAILING = nullptr;
-
 GroupLayout$Alignment* GroupLayout$Alignment::CENTER = nullptr;
-
 GroupLayout$Alignment* GroupLayout$Alignment::BASELINE = nullptr;
 $GroupLayout$AlignmentArray* GroupLayout$Alignment::$VALUES = nullptr;
 

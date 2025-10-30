@@ -1,13 +1,5 @@
 #include <javax/swing/text/StringContent$InsertUndo.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Vector.h>
 #include <javax/swing/text/BadLocationException.h>
 #include <javax/swing/text/StringContent.h>
@@ -91,8 +83,7 @@ void StringContent$InsertUndo::undo() {
 			$set(this, string, this->this$0->getString(this->offset, this->length));
 			this->this$0->remove(this->offset, this->length);
 		}
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, bl, $catch());
+	} catch ($BadLocationException& bl) {
 		$throwNew($CannotUndoException);
 	}
 }
@@ -108,8 +99,7 @@ void StringContent$InsertUndo::redo() {
 				$set(this, posRefs, nullptr);
 			}
 		}
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, bl, $catch());
+	} catch ($BadLocationException& bl) {
 		$throwNew($CannotRedoException);
 	}
 }

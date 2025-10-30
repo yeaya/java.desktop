@@ -4,15 +4,6 @@
 #include <java/awt/color/ColorSpace.h>
 #include <java/awt/image/BufferedImage.h>
 #include <java/awt/image/DataBuffer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/ImageTypeSpecifier.h>
 #include <jcpp.h>
 
@@ -87,8 +78,7 @@ $ImageTypeSpecifier* ImageTypeProducer::getType() {
 		if (!this->failed && this->type == nullptr) {
 			try {
 				$set(this, type, produce());
-			} catch ($Throwable&) {
-				$var($Throwable, e, $catch());
+			} catch ($Throwable& e) {
 				this->failed = true;
 			}
 		}

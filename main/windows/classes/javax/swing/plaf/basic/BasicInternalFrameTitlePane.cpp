@@ -16,17 +16,8 @@
 #include <java/awt/Toolkit.h>
 #include <java/awt/event/ActionListener.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractAction.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/Action.h>
@@ -223,17 +214,11 @@ $Object* allocate$BasicInternalFrameTitlePane($Class* clazz) {
 	return $of($alloc(BasicInternalFrameTitlePane));
 }
 
-
 $String* BasicInternalFrameTitlePane::CLOSE_CMD = nullptr;
-
 $String* BasicInternalFrameTitlePane::ICONIFY_CMD = nullptr;
-
 $String* BasicInternalFrameTitlePane::RESTORE_CMD = nullptr;
-
 $String* BasicInternalFrameTitlePane::MAXIMIZE_CMD = nullptr;
-
 $String* BasicInternalFrameTitlePane::MOVE_CMD = nullptr;
-
 $String* BasicInternalFrameTitlePane::SIZE_CMD = nullptr;
 
 void BasicInternalFrameTitlePane::init$($JInternalFrame* f) {
@@ -409,8 +394,7 @@ int32_t BasicInternalFrameTitlePane::getButtonMnemonic($String* button) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		return $Integer::parseInt($($UIManager::getString($$str({"InternalFrameTitlePane."_s, button, "Button.mnemonic"_s}))));
-	} catch ($NumberFormatException&) {
-		$var($NumberFormatException, e, $catch());
+	} catch ($NumberFormatException& e) {
 		return -1;
 	}
 	$shouldNotReachHere();
@@ -496,8 +480,7 @@ void BasicInternalFrameTitlePane::postClosingEvent($JInternalFrame* frame) {
 	$var($InternalFrameEvent, e, $new($InternalFrameEvent, frame, $InternalFrameEvent::INTERNAL_FRAME_CLOSING));
 	try {
 		$nc($($nc($($Toolkit::getDefaultToolkit()))->getSystemEventQueue()))->postEvent(e);
-	} catch ($SecurityException&) {
-		$var($SecurityException, se, $catch());
+	} catch ($SecurityException& se) {
 		$nc(frame)->dispatchEvent(e);
 	}
 }

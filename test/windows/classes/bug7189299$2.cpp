@@ -2,15 +2,6 @@
 
 #include <bug7189299.h>
 #include <java/awt/Window.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <jcpp.h>
 
@@ -70,8 +61,8 @@ void bug7189299$2::run() {
 			$bug7189299::verifySingleDefaultButtonModelListener();
 			$bug7189299::doTest();
 			$bug7189299::verifySingleDefaultButtonModelListener();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$init($bug7189299);
 			$nc($bug7189299::frame)->dispose();

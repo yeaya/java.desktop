@@ -1,19 +1,8 @@
 #include <Test8030118.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <java/util/concurrent/TimeUnit.h>
 #include <javax/swing/event/DocumentEvent.h>
@@ -107,8 +96,7 @@ void Test8030118::init$($String* string) {
 void Test8030118::run() {
 	try {
 		$nc(this->doc)->remove(0, $nc(this->doc)->getLength());
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, exception, $catch());
+	} catch ($BadLocationException& exception) {
 		$throwNew($Error, "unexpected"_s, exception);
 	}
 	$nc(this->latch)->countDown();
@@ -120,15 +108,13 @@ void Test8030118::insertUpdate($DocumentEvent* event) {
 	try {
 		$init($TimeUnit);
 		$nc(this->latch)->await(10, $TimeUnit::SECONDS);
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, exception, $catch());
+	} catch ($InterruptedException& exception) {
 		$throwNew($Error, "unexpected"_s, exception);
 	}
 	try {
 		int32_t var$0 = event->getOffset();
 		$nc($($nc(event)->getDocument()))->getText(var$0, event->getLength());
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, exception, $catch());
+	} catch ($BadLocationException& exception) {
 		$throwNew($Error, "concurrent modification"_s, exception);
 	}
 }

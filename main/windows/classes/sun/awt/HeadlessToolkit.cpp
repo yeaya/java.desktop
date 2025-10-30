@@ -34,20 +34,6 @@
 #include <java/awt/peer/SystemTrayPeer.h>
 #include <java/awt/peer/TrayIconPeer.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/util/Map.h>
 #include <java/util/Properties.h>
@@ -378,7 +364,6 @@ void HeadlessToolkit::sync() {
 }
 
 void HeadlessToolkit::beep() {
-	$init($System);
 	$nc($System::out)->write(7);
 }
 

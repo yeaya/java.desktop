@@ -14,29 +14,14 @@
 #include <java/awt/font/FontRenderContext.h>
 #include <java/awt/image/BufferedImage.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/HashSet.h>
 #include <java/util/Map.h>
 #include <javax/swing/JLabel.h>
@@ -211,8 +196,7 @@ void bug6302464::testCustomLAF() {
 	try {
 		testCustomLAF(false);
 		testCustomLAF(true);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }
@@ -279,8 +263,7 @@ void bug6302464::testAntialiasingHints() {
 			try {
 				int32_t v = $Integer::parseInt(version);
 				isMacOSX14 = (v >= 14);
-			} catch ($NumberFormatException&) {
-				$catch();
+			} catch ($NumberFormatException& e) {
 			}
 		} else if (version->startsWith("11."_s)) {
 			isMacOSXBigSur = true;
@@ -343,10 +326,8 @@ void bug6302464::setLookAndFeel($String* lafClass) {
 	$init(bug6302464);
 	try {
 		$UIManager::setLookAndFeel(lafClass);
-	} catch ($UnsupportedLookAndFeelException&) {
-		$catch();
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& ignored) {
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }
@@ -412,7 +393,7 @@ void bug6302464::testLAFAAHints($UIManager$LookAndFeelInfo* lafInfo) {
 }
 
 void clinit$bug6302464($Class* class$) {
-		$init($RenderingHints);
+	$init($RenderingHints);
 	$assignStatic(bug6302464::ANTIALIASING_HINTS, $new($ObjectArray, {
 		$RenderingHints::VALUE_TEXT_ANTIALIAS_GASP,
 		$RenderingHints::VALUE_TEXT_ANTIALIAS_LCD_HRGB,

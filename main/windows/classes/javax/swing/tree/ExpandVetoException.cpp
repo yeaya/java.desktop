@@ -1,13 +1,5 @@
 #include <javax/swing/tree/ExpandVetoException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/event/TreeExpansionEvent.h>
 #include <jcpp.h>
 
@@ -57,16 +49,10 @@ void ExpandVetoException::init$($TreeExpansionEvent* event, $String* message) {
 ExpandVetoException::ExpandVetoException() {
 }
 
-ExpandVetoException::ExpandVetoException(const ExpandVetoException& e) {
+ExpandVetoException::ExpandVetoException(const ExpandVetoException& e) : $Exception(e) {
 }
 
-ExpandVetoException ExpandVetoException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void ExpandVetoException::throwWrapper$() {
-	$pendingException(this);
+void ExpandVetoException::throw$() {
 	throw *this;
 }
 

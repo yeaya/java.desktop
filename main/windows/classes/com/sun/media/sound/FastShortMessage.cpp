@@ -1,13 +1,5 @@
 #include <com/sun/media/sound/FastShortMessage.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/midi/InvalidMidiDataException.h>
 #include <javax/sound/midi/MidiMessage.h>
 #include <javax/sound/midi/ShortMessage.h>
@@ -82,8 +74,7 @@ $bytes* FastShortMessage::getMessage() {
 	int32_t length = 0;
 	try {
 		length = getDataLength((int32_t)(this->packedMsg & (uint32_t)255)) + 1;
-	} catch ($InvalidMidiDataException&) {
-		$catch();
+	} catch ($InvalidMidiDataException& imde) {
 	}
 	$var($bytes, returnedArray, $new($bytes, length));
 	if (length > 0) {
@@ -101,8 +92,7 @@ $bytes* FastShortMessage::getMessage() {
 int32_t FastShortMessage::getLength() {
 	try {
 		return getDataLength((int32_t)(this->packedMsg & (uint32_t)255)) + 1;
-	} catch ($InvalidMidiDataException&) {
-		$catch();
+	} catch ($InvalidMidiDataException& imde) {
 	}
 	return 0;
 }
@@ -148,8 +138,7 @@ int32_t FastShortMessage::getStatus() {
 $Object* FastShortMessage::clone() {
 	try {
 		return $of($new(FastShortMessage, this->packedMsg));
-	} catch ($InvalidMidiDataException&) {
-		$catch();
+	} catch ($InvalidMidiDataException& imde) {
 	}
 	return $of(nullptr);
 }

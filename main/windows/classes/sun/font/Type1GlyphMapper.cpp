@@ -1,13 +1,5 @@
 #include <sun/font/Type1GlyphMapper.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/CharToGlyphMapper.h>
 #include <sun/font/FontScaler.h>
 #include <sun/font/FontScalerException.h>
@@ -74,17 +66,14 @@ void Type1GlyphMapper::init$($Type1Font* font) {
 }
 
 void Type1GlyphMapper::initMapper() {
-	$useLocalCurrentObjectStackCache();
 	$set(this, scaler, $nc(this->font)->getScaler());
 	try {
 		this->missingGlyph = $nc(this->scaler)->getMissingGlyphCode();
-	} catch ($FontScalerException&) {
-		$var($FontScalerException, fe, $catch());
+	} catch ($FontScalerException& fe) {
 		$set(this, scaler, $FontScaler::getNullScaler());
 		try {
 			this->missingGlyph = $nc(this->scaler)->getMissingGlyphCode();
-		} catch ($FontScalerException&) {
-			$var($FontScalerException, e, $catch());
+		} catch ($FontScalerException& e) {
 			this->missingGlyph = 0;
 		}
 	}
@@ -93,8 +82,7 @@ void Type1GlyphMapper::initMapper() {
 int32_t Type1GlyphMapper::getNumGlyphs() {
 	try {
 		return $nc(this->scaler)->getNumGlyphs();
-	} catch ($FontScalerException&) {
-		$var($FontScalerException, e, $catch());
+	} catch ($FontScalerException& e) {
 		$set(this, scaler, $FontScaler::getNullScaler());
 		return getNumGlyphs();
 	}
@@ -108,8 +96,7 @@ int32_t Type1GlyphMapper::getMissingGlyphCode() {
 bool Type1GlyphMapper::canDisplay(char16_t ch) {
 	try {
 		return $nc(this->scaler)->getGlyphCode(ch) != this->missingGlyph;
-	} catch ($FontScalerException&) {
-		$var($FontScalerException, e, $catch());
+	} catch ($FontScalerException& e) {
 		$set(this, scaler, $FontScaler::getNullScaler());
 		return canDisplay(ch);
 	}
@@ -119,8 +106,7 @@ bool Type1GlyphMapper::canDisplay(char16_t ch) {
 int32_t Type1GlyphMapper::charToGlyph(char16_t ch) {
 	try {
 		return $nc(this->scaler)->getGlyphCode(ch);
-	} catch ($FontScalerException&) {
-		$var($FontScalerException, e, $catch());
+	} catch ($FontScalerException& e) {
 		$set(this, scaler, $FontScaler::getNullScaler());
 		return charToGlyph(ch);
 	}
@@ -133,8 +119,7 @@ int32_t Type1GlyphMapper::charToGlyph(int32_t ch) {
 	} else {
 		try {
 			return $nc(this->scaler)->getGlyphCode((char16_t)ch);
-		} catch ($FontScalerException&) {
-			$var($FontScalerException, e, $catch());
+		} catch ($FontScalerException& e) {
 			$set(this, scaler, $FontScaler::getNullScaler());
 			return charToGlyph(ch);
 		}

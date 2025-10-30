@@ -7,19 +7,7 @@
 #include <java/awt/Container.h>
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JEditorPane.h>
 #include <javax/swing/JFrame.h>
@@ -116,8 +104,7 @@ void bug8058120::main($StringArray* args) {
 	$var($Robot, robot, nullptr);
 	try {
 		$assign(robot, $new($Robot));
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		ex->printStackTrace();
 		$throwNew($RuntimeException, "Unexpected failure"_s);
 	}
@@ -133,8 +120,7 @@ void bug8058120::createAndShowGUI() {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"_s);
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(ex));
 	}
 	$var($JFrame, frame, $new($JFrame, "bug8058120"_s));

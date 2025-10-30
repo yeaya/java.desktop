@@ -2,16 +2,7 @@
 
 #include <java/awt/font/GraphicAttribute.h>
 #include <java/awt/font/LineMetrics.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/FontLineMetrics.h>
 #include <jcpp.h>
 
@@ -95,8 +86,7 @@ int32_t CoreMetrics::hashCode() {
 bool CoreMetrics::equals(Object$* rhs) {
 	try {
 		return equals($cast(CoreMetrics, rhs));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		return false;
 	}
 	$shouldNotReachHere();

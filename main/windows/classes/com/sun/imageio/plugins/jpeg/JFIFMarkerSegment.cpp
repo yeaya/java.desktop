@@ -21,19 +21,7 @@
 #include <java/awt/image/IndexColorModel.h>
 #include <java/awt/image/Raster.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Iterator.h>
 #include <java/util/List.h>
@@ -559,12 +547,10 @@ void JFIFMarkerSegment::writeThumb($ImageOutputStream* ios, $BufferedImage* thum
 }
 
 void JFIFMarkerSegment::writeJFXXSegment(int32_t index, $BufferedImage* thumbnail, $ImageOutputStream* ios, $JPEGImageWriter* writer) {
-	$useLocalCurrentObjectStackCache();
 	$var($JFIFMarkerSegment$JFIFExtensionMarkerSegment, jfxx, nullptr);
 	try {
 		$assign(jfxx, $new($JFIFMarkerSegment$JFIFExtensionMarkerSegment, this, thumbnail));
-	} catch ($JFIFMarkerSegment$IllegalThumbException&) {
-		$var($JFIFMarkerSegment$IllegalThumbException, e, $catch());
+	} catch ($JFIFMarkerSegment$IllegalThumbException& e) {
 		$nc(writer)->warningOccurred($JPEGImageWriter::WARNING_ILLEGAL_THUMBNAIL);
 		return;
 	}
@@ -595,7 +581,6 @@ void JFIFMarkerSegment::writeDefaultJFIF($ImageOutputStream* ios, $List* thumbna
 void JFIFMarkerSegment::print() {
 	$useLocalCurrentObjectStackCache();
 	printTag("JFIF"_s);
-	$init($System);
 	$nc($System::out)->print("Version "_s);
 	$nc($System::out)->print(this->majorVersion);
 	$nc($System::out)->println($$str({".0"_s, $($Integer::toString(this->minorVersion))}));

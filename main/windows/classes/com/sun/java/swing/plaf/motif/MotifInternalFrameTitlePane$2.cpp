@@ -5,15 +5,6 @@
 #include <java/awt/event/MouseAdapter.h>
 #include <java/awt/event/MouseEvent.h>
 #include <java/beans/PropertyVetoException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventObject.h>
 #include <javax/swing/Action.h>
 #include <javax/swing/JInternalFrame.h>
@@ -97,8 +88,7 @@ void MotifInternalFrameTitlePane$2::mousePressed($MouseEvent* evt) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$nc($($MotifInternalFrameTitlePane::access$000(this->this$0)))->setSelected(true);
-	} catch ($PropertyVetoException&) {
-		$catch();
+	} catch ($PropertyVetoException& pve) {
 	}
 	if ($nc(evt)->getClickCount() == 2) {
 		$var($Object, var$0, evt->getSource());

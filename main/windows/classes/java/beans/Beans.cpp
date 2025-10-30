@@ -15,22 +15,10 @@
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
 #include <java/io/ObjectInputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Exception.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/lang/reflect/Modifier.h>
 #include <java/net/URL.h>
 #include <jcpp.h>
@@ -130,8 +118,7 @@ $Object* Beans::instantiate($ClassLoader* cls$renamed, $String* beanName, $BeanC
 	if (cls == nullptr) {
 		try {
 			$assign(cls, $ClassLoader::getSystemClassLoader());
-		} catch ($SecurityException&) {
-			$catch();
+		} catch ($SecurityException& ex) {
 		}
 	}
 	$var($String, serName, $($nc(beanName)->replace(u'.', u'/'))->concat(".ser"_s));
@@ -150,12 +137,10 @@ $Object* Beans::instantiate($ClassLoader* cls$renamed, $String* beanName, $BeanC
 			$assign(result, $nc(oins)->readObject());
 			serialized = true;
 			oins->close();
-		} catch ($IOException&) {
-			$var($IOException, ex, $catch());
+		} catch ($IOException& ex) {
 			ins->close();
 			$assign(serex, ex);
-		} catch ($ClassNotFoundException&) {
-			$var($ClassNotFoundException, ex, $catch());
+		} catch ($ClassNotFoundException& ex) {
 			ins->close();
 			$throw(ex);
 		}
@@ -164,8 +149,7 @@ $Object* Beans::instantiate($ClassLoader* cls$renamed, $String* beanName, $BeanC
 		$Class* cl = nullptr;
 		try {
 			cl = $ClassFinder::findClass(beanName, cls);
-		} catch ($ClassNotFoundException&) {
-			$var($ClassNotFoundException, ex, $catch());
+		} catch ($ClassNotFoundException& ex) {
 			if (serex != nullptr) {
 				$throw(serex);
 			}
@@ -176,8 +160,7 @@ $Object* Beans::instantiate($ClassLoader* cls$renamed, $String* beanName, $BeanC
 		}
 		try {
 			$assign(result, $nc(cl)->newInstance());
-		} catch ($Exception&) {
-			$var($Exception, ex, $catch());
+		} catch ($Exception& ex) {
 			$throwNew($ClassNotFoundException, $$str({""_s, cl, " : "_s, ex}), ex);
 		}
 	}

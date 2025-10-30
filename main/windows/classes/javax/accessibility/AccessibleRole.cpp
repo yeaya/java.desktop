@@ -1,12 +1,5 @@
 #include <javax/accessibility/AccessibleRole.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleBundle.h>
 #include <jcpp.h>
 
@@ -167,131 +160,68 @@ $Object* allocate$AccessibleRole($Class* clazz) {
 	return $of($alloc(AccessibleRole));
 }
 
-
 AccessibleRole* AccessibleRole::ALERT = nullptr;
-
 AccessibleRole* AccessibleRole::COLUMN_HEADER = nullptr;
-
 AccessibleRole* AccessibleRole::CANVAS = nullptr;
-
 AccessibleRole* AccessibleRole::COMBO_BOX = nullptr;
-
 AccessibleRole* AccessibleRole::DESKTOP_ICON = nullptr;
-
 AccessibleRole* AccessibleRole::HTML_CONTAINER = nullptr;
-
 AccessibleRole* AccessibleRole::INTERNAL_FRAME = nullptr;
-
 AccessibleRole* AccessibleRole::DESKTOP_PANE = nullptr;
-
 AccessibleRole* AccessibleRole::OPTION_PANE = nullptr;
-
 AccessibleRole* AccessibleRole::WINDOW = nullptr;
-
 AccessibleRole* AccessibleRole::FRAME = nullptr;
-
 AccessibleRole* AccessibleRole::DIALOG = nullptr;
-
 AccessibleRole* AccessibleRole::COLOR_CHOOSER = nullptr;
-
 AccessibleRole* AccessibleRole::DIRECTORY_PANE = nullptr;
-
 AccessibleRole* AccessibleRole::FILE_CHOOSER = nullptr;
-
 AccessibleRole* AccessibleRole::FILLER = nullptr;
-
 AccessibleRole* AccessibleRole::HYPERLINK = nullptr;
-
 AccessibleRole* AccessibleRole::ICON = nullptr;
-
 AccessibleRole* AccessibleRole::LABEL = nullptr;
-
 AccessibleRole* AccessibleRole::ROOT_PANE = nullptr;
-
 AccessibleRole* AccessibleRole::GLASS_PANE = nullptr;
-
 AccessibleRole* AccessibleRole::LAYERED_PANE = nullptr;
-
 AccessibleRole* AccessibleRole::LIST = nullptr;
-
 AccessibleRole* AccessibleRole::LIST_ITEM = nullptr;
-
 AccessibleRole* AccessibleRole::MENU_BAR = nullptr;
-
 AccessibleRole* AccessibleRole::POPUP_MENU = nullptr;
-
 AccessibleRole* AccessibleRole::MENU = nullptr;
-
 AccessibleRole* AccessibleRole::MENU_ITEM = nullptr;
-
 AccessibleRole* AccessibleRole::SEPARATOR = nullptr;
-
 AccessibleRole* AccessibleRole::PAGE_TAB_LIST = nullptr;
-
 AccessibleRole* AccessibleRole::PAGE_TAB = nullptr;
-
 AccessibleRole* AccessibleRole::PANEL = nullptr;
-
 AccessibleRole* AccessibleRole::PROGRESS_BAR = nullptr;
-
 AccessibleRole* AccessibleRole::PASSWORD_TEXT = nullptr;
-
 AccessibleRole* AccessibleRole::PUSH_BUTTON = nullptr;
-
 AccessibleRole* AccessibleRole::TOGGLE_BUTTON = nullptr;
-
 AccessibleRole* AccessibleRole::CHECK_BOX = nullptr;
-
 AccessibleRole* AccessibleRole::RADIO_BUTTON = nullptr;
-
 AccessibleRole* AccessibleRole::ROW_HEADER = nullptr;
-
 AccessibleRole* AccessibleRole::SCROLL_PANE = nullptr;
-
 AccessibleRole* AccessibleRole::SCROLL_BAR = nullptr;
-
 AccessibleRole* AccessibleRole::VIEWPORT = nullptr;
-
 AccessibleRole* AccessibleRole::SLIDER = nullptr;
-
 AccessibleRole* AccessibleRole::SPLIT_PANE = nullptr;
-
 AccessibleRole* AccessibleRole::TABLE = nullptr;
-
 AccessibleRole* AccessibleRole::TEXT = nullptr;
-
 AccessibleRole* AccessibleRole::TREE = nullptr;
-
 AccessibleRole* AccessibleRole::TOOL_BAR = nullptr;
-
 AccessibleRole* AccessibleRole::TOOL_TIP = nullptr;
-
 AccessibleRole* AccessibleRole::AWT_COMPONENT = nullptr;
-
 AccessibleRole* AccessibleRole::SWING_COMPONENT = nullptr;
-
 AccessibleRole* AccessibleRole::UNKNOWN = nullptr;
-
 AccessibleRole* AccessibleRole::STATUS_BAR = nullptr;
-
 AccessibleRole* AccessibleRole::DATE_EDITOR = nullptr;
-
 AccessibleRole* AccessibleRole::SPIN_BOX = nullptr;
-
 AccessibleRole* AccessibleRole::FONT_CHOOSER = nullptr;
-
 AccessibleRole* AccessibleRole::GROUP_BOX = nullptr;
-
 AccessibleRole* AccessibleRole::HEADER = nullptr;
-
 AccessibleRole* AccessibleRole::FOOTER = nullptr;
-
 AccessibleRole* AccessibleRole::PARAGRAPH = nullptr;
-
 AccessibleRole* AccessibleRole::RULER = nullptr;
-
 AccessibleRole* AccessibleRole::EDITBAR = nullptr;
-
 AccessibleRole* AccessibleRole::PROGRESS_MONITOR = nullptr;
 
 void AccessibleRole::init$($String* key) {

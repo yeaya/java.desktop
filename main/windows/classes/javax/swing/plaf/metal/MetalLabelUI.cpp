@@ -2,15 +2,7 @@
 
 #include <java/awt/Color.h>
 #include <java/awt/Graphics.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JLabel.h>
 #include <javax/swing/UIManager.h>
@@ -68,7 +60,6 @@ $ClassInfo _MetalLabelUI_ClassInfo_ = {
 $Object* allocate$MetalLabelUI($Class* clazz) {
 	return $of($alloc(MetalLabelUI));
 }
-
 
 MetalLabelUI* MetalLabelUI::metalLabelUI = nullptr;
 $Object* MetalLabelUI::METAL_LABEL_UI_KEY = nullptr;

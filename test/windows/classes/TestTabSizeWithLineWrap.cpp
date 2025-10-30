@@ -7,27 +7,13 @@
 #include <java/awt/LayoutManager2.h>
 #include <java/awt/Window.h>
 #include <java/awt/geom/Rectangle2D.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/Short.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/GroupLayout$Alignment.h>
 #include <javax/swing/GroupLayout$Group.h>
 #include <javax/swing/GroupLayout$ParallelGroup.h>
@@ -194,18 +180,16 @@ void TestTabSizeWithLineWrap::lambda$main$0() {
 				$nc(TestTabSizeWithLineWrap::jTextArea1)->setCaretPosition(first);
 				$var($Caret, caret, $nc(TestTabSizeWithLineWrap::jTextArea1)->getCaret());
 				$assignStatic(TestTabSizeWithLineWrap::rect, $nc(TestTabSizeWithLineWrap::jTextArea1)->modelToView2D($nc(caret)->getDot()));
-				$init($System);
 				$nc($System::out)->println($$str({"caret x position "_s, $$str($nc(TestTabSizeWithLineWrap::rect)->getX())}));
 				$nc(TestTabSizeWithLineWrap::jTextArea1)->setCaretPosition(str->indexOf("#"_s, first + 1));
 				$assign(caret, $nc(TestTabSizeWithLineWrap::jTextArea1)->getCaret());
 				$assignStatic(TestTabSizeWithLineWrap::rect1, $nc(TestTabSizeWithLineWrap::jTextArea1)->modelToView2D($nc(caret)->getDot()));
 				$nc($System::out)->println($$str({"2nd caret x position "_s, $$str($nc(TestTabSizeWithLineWrap::rect1)->getX())}));
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, ex, $catch());
+			} catch ($BadLocationException& ex) {
 				TestTabSizeWithLineWrap::excpnthrown = true;
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (TestTabSizeWithLineWrap::f != nullptr) {
 				$nc(TestTabSizeWithLineWrap::f)->dispose();

@@ -8,17 +8,7 @@
 #include <java/awt/Rectangle.h>
 #include <java/awt/event/MouseEvent.h>
 #include <java/awt/im/InputContext.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/AttributeSet.h>
 #include <javax/swing/text/BadLocationException.h>
 #include <javax/swing/text/DefaultCaret.h>
@@ -124,8 +114,7 @@ void JTextComponent$ComposedTextCaret::paint($Graphics* g) {
 			$nc(g)->setXORMode(this->bg);
 			g->drawLine($nc(r)->x, r->y, r->x, r->y + r->height - 1);
 			g->setPaintMode();
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& e) {
 		}
 	}
 }
@@ -142,9 +131,7 @@ void JTextComponent$ComposedTextCaret::positionCaret($MouseEvent* me) {
 			$var($Position, newPos, $nc($(host->getDocument()))->createPosition(offset));
 			$nc($(host->getInputContext()))->endComposition();
 			$EventQueue::invokeLater($$new($JTextComponent$DoSetCaretPosition, this->this$0, host, newPos));
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, ble, $catch());
-			$init($System);
+		} catch ($BadLocationException& ble) {
 			$nc($System::err)->println($of(ble));
 		}
 	} else {

@@ -1,15 +1,7 @@
 #include <sun/java2d/loops/SurfaceType.h>
 
 #include <java/awt/image/ColorModel.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/HashMap.h>
 #include <sun/awt/image/PixelConverter$Argb.h>
 #include <sun/awt/image/PixelConverter$ArgbBm.h>
@@ -234,9 +226,7 @@ $Object* allocate$SurfaceType($Class* clazz) {
 
 int32_t SurfaceType::unusedUID = 0;
 $HashMap* SurfaceType::surfaceUIDMap = nullptr;
-
 $String* SurfaceType::DESC_ANY = nullptr;
-
 $String* SurfaceType::DESC_INT_RGB = nullptr;
 $String* SurfaceType::DESC_INT_ARGB = nullptr;
 $String* SurfaceType::DESC_INT_ARGB_PRE = nullptr;
@@ -253,35 +243,23 @@ $String* SurfaceType::DESC_USHORT_INDEXED = nullptr;
 $String* SurfaceType::DESC_USHORT_GRAY = nullptr;
 $String* SurfaceType::DESC_BYTE_BINARY = nullptr;
 $String* SurfaceType::DESC_BYTE_INDEXED = nullptr;
-
 $String* SurfaceType::DESC_ANY_INT = nullptr;
-
 $String* SurfaceType::DESC_ANY_SHORT = nullptr;
-
 $String* SurfaceType::DESC_ANY_BYTE = nullptr;
-
 $String* SurfaceType::DESC_ANY_3BYTE = nullptr;
-
 $String* SurfaceType::DESC_ANY_4BYTE = nullptr;
-
 $String* SurfaceType::DESC_ANY_INT_DCM = nullptr;
-
 $String* SurfaceType::DESC_INT_RGBx = nullptr;
 $String* SurfaceType::DESC_INT_BGRx = nullptr;
-
 $String* SurfaceType::DESC_3BYTE_RGB = nullptr;
-
 $String* SurfaceType::DESC_INT_ARGB_BM = nullptr;
 $String* SurfaceType::DESC_BYTE_INDEXED_BM = nullptr;
-
 $String* SurfaceType::DESC_BYTE_INDEXED_OPAQUE = nullptr;
-
 $String* SurfaceType::DESC_INDEX8_GRAY = nullptr;
 $String* SurfaceType::DESC_INDEX12_GRAY = nullptr;
 $String* SurfaceType::DESC_BYTE_BINARY_1BIT = nullptr;
 $String* SurfaceType::DESC_BYTE_BINARY_2BIT = nullptr;
 $String* SurfaceType::DESC_BYTE_BINARY_4BIT = nullptr;
-
 $String* SurfaceType::DESC_ANY_PAINT = nullptr;
 $String* SurfaceType::DESC_ANY_COLOR = nullptr;
 $String* SurfaceType::DESC_OPAQUE_COLOR = nullptr;
@@ -293,7 +271,6 @@ $String* SurfaceType::DESC_LINEAR_GRADIENT_PAINT = nullptr;
 $String* SurfaceType::DESC_OPAQUE_LINEAR_GRADIENT_PAINT = nullptr;
 $String* SurfaceType::DESC_RADIAL_GRADIENT_PAINT = nullptr;
 $String* SurfaceType::DESC_OPAQUE_RADIAL_GRADIENT_PAINT = nullptr;
-
 SurfaceType* SurfaceType::Any = nullptr;
 SurfaceType* SurfaceType::AnyInt = nullptr;
 SurfaceType* SurfaceType::AnyShort = nullptr;

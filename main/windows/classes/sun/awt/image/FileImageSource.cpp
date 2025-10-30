@@ -5,15 +5,7 @@
 #include <java/io/FileNotFoundException.h>
 #include <java/io/FilterInputStream.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/image/ImageDecoder.h>
 #include <sun/awt/image/InputStreamImageSource.h>
 #include <jcpp.h>
@@ -80,8 +72,7 @@ $ImageDecoder* FileImageSource::getDecoder() {
 	$var($InputStream, is, nullptr);
 	try {
 		$assign(is, $new($BufferedInputStream, $$new($FileInputStream, this->imagefile)));
-	} catch ($FileNotFoundException&) {
-		$var($FileNotFoundException, e, $catch());
+	} catch ($FileNotFoundException& e) {
 		return nullptr;
 	}
 	return getDecoder(is);

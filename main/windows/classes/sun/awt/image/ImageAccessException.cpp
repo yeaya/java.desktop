@@ -1,12 +1,5 @@
 #include <sun/awt/image/ImageAccessException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -42,16 +35,10 @@ void ImageAccessException::init$($String* s) {
 ImageAccessException::ImageAccessException() {
 }
 
-ImageAccessException::ImageAccessException(const ImageAccessException& e) {
+ImageAccessException::ImageAccessException(const ImageAccessException& e) : $Exception(e) {
 }
 
-ImageAccessException ImageAccessException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void ImageAccessException::throwWrapper$() {
-	$pendingException(this);
+void ImageAccessException::throw$() {
 	throw *this;
 }
 

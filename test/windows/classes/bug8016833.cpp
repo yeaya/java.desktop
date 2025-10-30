@@ -8,24 +8,10 @@
 #include <java/awt/Graphics.h>
 #include <java/awt/Rectangle.h>
 #include <java/awt/image/BufferedImage.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/ReflectiveOperationException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SwingUtilities.h>
 #include <javax/swing/text/MutableAttributeSet.h>
 #include <javax/swing/text/Style.h>
@@ -116,14 +102,11 @@ void bug8016833::drawText($Graphics* g, bool underline, bool strikethrough, bool
 }
 
 void bug8016833::drawText($Graphics* g, $String* text, bool underline, bool strikethrough, bool background) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$SwingUtilities::invokeAndWait($$new($bug8016833$1, this, underline, strikethrough, background, g));
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, e, $catch());
+	} catch ($InterruptedException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($InvocationTargetException&) {
-		$var($InvocationTargetException, e, $catch());
+	} catch ($InvocationTargetException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }
@@ -188,11 +171,9 @@ $BufferedImage* bug8016833::createImage() {
 	$var($BufferedImage, img, $new($BufferedImage, 200, 100, $BufferedImage::TYPE_INT_ARGB));
 	try {
 		$SwingUtilities::invokeAndWait($$new($bug8016833$2, this, img));
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, e, $catch());
+	} catch ($InterruptedException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($InvocationTargetException&) {
-		$var($InvocationTargetException, e, $catch());
+	} catch ($InvocationTargetException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 	return img;
@@ -229,7 +210,6 @@ $BufferedImage* bug8016833::subImages($BufferedImage* img1, $BufferedImage* img2
 
 void bug8016833::testUnderline() {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println("  testUnderline()"_s);
 	$var($BufferedImage, img1, createImage());
 	drawText($($nc(img1)->getGraphics()), true, false, false);
@@ -257,7 +237,6 @@ void bug8016833::testUnderline() {
 
 void bug8016833::testStrikthrough() {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println("  testStrikthrough()"_s);
 	$var($BufferedImage, img1, createImage());
 	drawText($($nc(img1)->getGraphics()), false, true, false);
@@ -288,7 +267,6 @@ void bug8016833::assertTrue(bool b) {
 }
 
 void bug8016833::testSuperScript() {
-	$init($System);
 	$nc($System::out)->println("testSuperScript()"_s);
 	$var(bug8016833, b, $new($bug8016833$3));
 	b->testUnderline();
@@ -296,7 +274,6 @@ void bug8016833::testSuperScript() {
 }
 
 void bug8016833::testSubScript() {
-	$init($System);
 	$nc($System::out)->println("testSubScript()"_s);
 	$var(bug8016833, b, $new($bug8016833$4));
 	b->testUnderline();
@@ -304,7 +281,6 @@ void bug8016833::testSubScript() {
 }
 
 void bug8016833::testNormalScript() {
-	$init($System);
 	$nc($System::out)->println("testNormalScript()"_s);
 	$var(bug8016833, b, $new($bug8016833$5));
 	b->testUnderline();

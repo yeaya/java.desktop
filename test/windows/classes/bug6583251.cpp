@@ -17,18 +17,7 @@
 #include <java/awt/event/InputEvent.h>
 #include <java/awt/event/MouseEvent.h>
 #include <java/awt/image/BufferedImage.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JComponent.h>
@@ -150,7 +139,6 @@ void bug6583251::main($StringArray* args) {
 		$nc($($nc($($Toolkit::getDefaultToolkit()))->getSystemEventQueue()))->postEvent(ev);
 		$SwingUtilities::invokeAndWait($$new($bug6583251$2));
 	} else {
-		$init($System);
 		$nc($System::out)->println("SystemTray not supported. Skipping the test."_s);
 	}
 }

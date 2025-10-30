@@ -14,24 +14,12 @@
 #include <java/awt/SequencedEvent$SequencedEventsFilter.h>
 #include <java/awt/Toolkit.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/AbstractCollection.h>
@@ -237,8 +225,7 @@ void SequencedEvent::dispatch() {
 						$nc(this->fxCheckSequenceThread)->start();
 						try {
 							$nc(this->fxCheckSequenceThread)->join(500);
-						} catch ($InterruptedException&) {
-							$catch();
+						} catch ($InterruptedException& e) {
 						}
 					}
 				} else {
@@ -246,8 +233,7 @@ void SequencedEvent::dispatch() {
 						$synchronized(SequencedEvent::class$) {
 							try {
 								$of(SequencedEvent::class$)->wait(1000);
-							} catch ($InterruptedException&) {
-								$var($InterruptedException, e, $catch());
+							} catch ($InterruptedException& e) {
 								break;
 							}
 						}
@@ -258,8 +244,8 @@ void SequencedEvent::dispatch() {
 				$nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->setCurrentSequencedEvent(this);
 				$nc($($Toolkit::getEventQueue()))->dispatchEvent(this->nested);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} /*finally*/ {
 			dispose();
 		}

@@ -30,8 +30,10 @@ public:
 	static const int64_t serialVersionUID = (int64_t)0x513277E9D700C52E;
 	::java::io::IOException* mException = nullptr;
 	PrinterIOException(const PrinterIOException& e);
-	PrinterIOException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline PrinterIOException* operator ->() {
+		return (PrinterIOException*)throwing$;
+	}
 };
 
 		} // print

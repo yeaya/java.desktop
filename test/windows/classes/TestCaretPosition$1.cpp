@@ -4,18 +4,7 @@
 #include <java/awt/Point.h>
 #include <java/awt/event/MouseEvent.h>
 #include <java/awt/geom/Rectangle2D.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTextArea.h>
 #include <javax/swing/text/BadLocationException.h>
 #include <javax/swing/text/Caret.h>
@@ -95,13 +84,11 @@ void TestCaretPosition$1::mousePressed($MouseEvent* e) {
 		$var($Rectangle2D, rect, $nc($TestCaretPosition::jTextArea1)->modelToView2D($nc(caret)->getDot()));
 		int32_t var$0 = $nc($($nc(e)->getPoint()))->x;
 		if ($Math::abs(var$0 - $nc(rect)->getX()) > 5) {
-			$init($System);
 			$nc($System::out)->println($$str({"mouse point "_s, $($nc(e)->getPoint())}));
 			$nc($System::out)->println($$str({"caret position "_s, rect}));
 			$throwNew($RuntimeException, " Wrong caret position"_s);
 		}
-	} catch ($BadLocationException&) {
-		$catch();
+	} catch ($BadLocationException& ex) {
 	}
 }
 

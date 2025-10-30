@@ -17,26 +17,9 @@
 #include <java/awt/image/WritableRaster.h>
 #include <java/io/EOFException.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/Long.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/ByteOrder.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
@@ -522,15 +505,13 @@ void GIFImageReader::readHeader() {
 			$set($nc(this->streamMetadata), globalColorTable, nullptr);
 		}
 		$nc(this->imageStartPosition)->add($($Long::valueOf($nc(this->stream)->getStreamPosition())));
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$throwNew($IIOException, "I/O error reading header!"_s, e);
 	}
 	this->gotHeader = true;
 }
 
 bool GIFImageReader::skipImage() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		while (true) {
 			int32_t blockType = $nc(this->stream)->readUnsignedByte();
@@ -567,11 +548,9 @@ bool GIFImageReader::skipImage() {
 				} while (length > 0);
 			}
 		}
-	} catch ($EOFException&) {
-		$var($EOFException, e, $catch());
+	} catch ($EOFException& e) {
 		return false;
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$throwNew($IIOException, "I/O error locating image!"_s, e);
 	}
 	$shouldNotReachHere();
@@ -593,8 +572,7 @@ int32_t GIFImageReader::locateImage(int32_t imageIndex) {
 			$nc(this->imageStartPosition)->add(l1);
 			++index;
 		}
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$throwNew($IIOException, "Couldn\'t seek!"_s, e);
 	}
 	if (this->currIndex != imageIndex) {
@@ -714,11 +692,9 @@ void GIFImageReader::readMetadata() {
 				$throwNew($IIOException, $$str({"Unexpected block type "_s, $$str(blockType), "!"_s}));
 			}
 		}
-	} catch ($IIOException&) {
-		$var($IIOException, iioe, $catch());
+	} catch ($IIOException& iioe) {
 		$throw(iioe);
-	} catch ($IOException&) {
-		$var($IOException, ioe, $catch());
+	} catch ($IOException& ioe) {
 		$throwNew($IIOException, "I/O error reading image metadata!"_s, ioe);
 	}
 }
@@ -871,8 +847,7 @@ $BufferedImage* GIFImageReader::read(int32_t imageIndex, $ImageReadParam* param$
 		} while (!abortRequested());
 		processReadAborted();
 		return this->theImage;
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$throwNew($IIOException, "I/O error reading image!"_s, e);
 	}
 	$shouldNotReachHere();

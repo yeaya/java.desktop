@@ -2,12 +2,6 @@
 
 #include <com/sun/java/swing/plaf/windows/TMSchema$Part.h>
 #include <com/sun/java/swing/plaf/windows/TMSchema$State.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JMenuItem.h>
 #include <jcpp.h>
 

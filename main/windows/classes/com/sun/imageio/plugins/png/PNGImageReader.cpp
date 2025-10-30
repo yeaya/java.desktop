@@ -22,26 +22,9 @@
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
 #include <java/io/SequenceInputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Arrays.h>
 #include <java/util/Enumeration.h>
@@ -311,7 +294,6 @@ $String* PNGImageReader::readNullTerminatedString($String* charset, int32_t maxL
 }
 
 void PNGImageReader::readHeader() {
-	$useLocalCurrentObjectStackCache();
 	if (this->gotHeader) {
 		return;
 	}
@@ -379,8 +361,7 @@ void PNGImageReader::readHeader() {
 		$nc(this->metadata)->IHDR_filterMethod = filterMethod;
 		$nc(this->metadata)->IHDR_interlaceMethod = interlaceMethod;
 		this->gotHeader = true;
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$throwNew($IIOException, "I/O error reading PNG header!"_s, e);
 	}
 }
@@ -672,8 +653,8 @@ $bytes* PNGImageReader::inflate($bytes* b) {
 			while ((c = iis->read()) != -1) {
 				baos->write(c);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			iis->close();
 		}
@@ -730,8 +711,7 @@ void PNGImageReader::readMetadata() {
 					$nc(this->stream)->skipBytes(chunkLength + 4);
 				}
 			}
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			$throwNew($IIOException, "Error skipping PNG metadata"_s, e);
 		}
 		this->gotMetadata = true;
@@ -753,8 +733,7 @@ void PNGImageReader::readMetadata() {
 					chunkCRC = $nc(this->stream)->readInt();
 					$nc(this->stream)->reset();
 				}
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				$throwNew($IIOException, $$str({"Invalid chunk length "_s, $$str(chunkLength)}));
 			}
 			{
@@ -884,14 +863,12 @@ void PNGImageReader::readMetadata() {
 
 				if (loop$break) {
 					break;
-				}
-			}
+				}			}
 			if (chunkCRC != $nc(this->stream)->readInt()) {
 				$throwNew($IIOException, $$str({"Failed to read a chunk of type "_s, $$str(chunkType)}));
 			}
 		}
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$throwNew($IIOException, "Error reading PNG metadata"_s, e);
 	}
 	this->gotMetadata = true;
@@ -1097,8 +1074,7 @@ void PNGImageReader::decodePass(int32_t passNum, int32_t xStart, int32_t yStart,
 			$assign(prior, curr);
 			$assign(curr, tmp);
 			$nc(this->pixelStream)->readFully(curr, 0, bytesPerRow);
-		} catch ($ZipException&) {
-			$var($ZipException, ze, $catch());
+		} catch ($ZipException& ze) {
 			$throw(ze);
 		}
 		switch (filter) {
@@ -1279,12 +1255,11 @@ void PNGImageReader::readImage($ImageReadParam* param) {
 						processImageComplete();
 					}
 				}
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				$throwNew($IIOException, "Error reading PNG image data"_s, e);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} /*finally*/ {
 			if (inf != nullptr) {
 				inf->end();
@@ -1475,23 +1450,18 @@ $IIOMetadata* PNGImageReader::getImageMetadata(int32_t imageIndex) {
 }
 
 $BufferedImage* PNGImageReader::read(int32_t imageIndex, $ImageReadParam* param) {
-	$useLocalCurrentObjectStackCache();
 	if (imageIndex != 0) {
 		$throwNew($IndexOutOfBoundsException, "imageIndex != 0!"_s);
 	}
 	try {
 		readImage(param);
-	} catch ($IOException&) {
-		$var($Exception, e, $catch());
+	} catch ($IOException& e) {
 		$throw(e);
-	} catch ($IllegalStateException&) {
-		$var($Exception, e, $catch());
+	} catch ($IllegalStateException& e) {
 		$throw(e);
-	} catch ($IllegalArgumentException&) {
-		$var($Exception, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		$throw(e);
-	} catch ($Throwable&) {
-		$var($Throwable, e, $catch());
+	} catch ($Throwable& e) {
 		$throwNew($IIOException, "Caught exception during read: "_s, e);
 	}
 	return this->theImage;

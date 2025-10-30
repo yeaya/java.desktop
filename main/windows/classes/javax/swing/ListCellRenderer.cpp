@@ -1,12 +1,6 @@
 #include <javax/swing/ListCellRenderer.h>
 
 #include <java/awt/Component.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JList.h>
 #include <jcpp.h>
 

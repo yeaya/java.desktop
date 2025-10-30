@@ -16,26 +16,13 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComboBox.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
@@ -299,8 +286,8 @@ void JComboBoxPopupLocation::step($GraphicsDeviceArray* sds, $UIManager$LookAndF
 								validate(JComboBoxPopupLocation::comboBox);
 								$nc(JComboBoxPopupLocation::robot)->waitForIdle();
 								point->translate(bounds->width / 5, 0);
-							} catch ($Throwable&) {
-								$assign(var$0, $catch());
+							} catch ($Throwable& var$1) {
+								$assign(var$0, var$1);
 							} /*finally*/ {
 								dispose();
 							}
@@ -318,20 +305,20 @@ void JComboBoxPopupLocation::step($GraphicsDeviceArray* sds, $UIManager$LookAndF
 		$var($Point, finalLeft, left);
 		finalLeft->translate(-50, 0);
 		{
-			$var($Throwable, var$1, nullptr);
+			$var($Throwable, var$2, nullptr);
 			try {
 				$EventQueue::invokeAndWait(static_cast<$Runnable*>($$new(JComboBoxPopupLocation$$Lambda$lambda$step$0, finalLeft)));
 				$nc(JComboBoxPopupLocation::robot)->waitForIdle();
 				test(JComboBoxPopupLocation::comboBox);
 				$nc(JComboBoxPopupLocation::robot)->waitForIdle();
 				validate(JComboBoxPopupLocation::comboBox);
-			} catch ($Throwable&) {
-				$assign(var$1, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$2, var$3);
 			} /*finally*/ {
 				dispose();
 			}
-			if (var$1 != nullptr) {
-				$throw(var$1);
+			if (var$2 != nullptr) {
+				$throw(var$2);
 			}
 		}
 	}

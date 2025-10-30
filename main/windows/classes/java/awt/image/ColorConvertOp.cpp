@@ -21,18 +21,6 @@
 #include <java/awt/image/Raster.h>
 #include <java/awt/image/SampleModel.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Hashtable.h>
 #include <sun/java2d/cmm/CMSManager.h>
 #include <sun/java2d/cmm/ColorTransform.h>
@@ -263,8 +251,8 @@ $BufferedImage* ColorConvertOp::filter($BufferedImage* src$renamed, $BufferedIma
 			$var($Throwable, var$0, nullptr);
 			try {
 				$nc(big)->drawImage(dest, 0, 0, nullptr);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(big)->dispose();
 			}
@@ -317,8 +305,8 @@ $BufferedImage* ColorConvertOp::ICCBIFilter($BufferedImage* src, $ColorSpace* sr
 				$var($Throwable, var$3, nullptr);
 				try {
 					$nc(g)->drawImage(src, 0, 0, nullptr);
-				} catch ($Throwable&) {
-					$assign(var$3, $catch());
+				} catch ($Throwable& var$4) {
+					$assign(var$3, var$4);
 				} /*finally*/ {
 					$nc(g)->dispose();
 				}

@@ -13,15 +13,6 @@
 #include <java/awt/image/VolatileImage.h>
 #include <java/awt/image/WritableRaster.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Hashtable.h>
 #include <sun/awt/image/SunVolatileImage.h>
 #include <jcpp.h>
@@ -131,12 +122,10 @@ $BufferedImage* GraphicsConfiguration::createCompatibleImage(int32_t width, int3
 }
 
 $VolatileImage* GraphicsConfiguration::createCompatibleVolatileImage(int32_t width, int32_t height) {
-	$useLocalCurrentObjectStackCache();
 	$var($VolatileImage, vi, nullptr);
 	try {
 		$assign(vi, createCompatibleVolatileImage(width, height, nullptr, $Transparency::OPAQUE));
-	} catch ($AWTException&) {
-		$var($AWTException, e, $catch());
+	} catch ($AWTException& e) {
 		if (!GraphicsConfiguration::$assertionsDisabled) {
 			$throwNew($AssertionError);
 		}
@@ -145,12 +134,10 @@ $VolatileImage* GraphicsConfiguration::createCompatibleVolatileImage(int32_t wid
 }
 
 $VolatileImage* GraphicsConfiguration::createCompatibleVolatileImage(int32_t width, int32_t height, int32_t transparency) {
-	$useLocalCurrentObjectStackCache();
 	$var($VolatileImage, vi, nullptr);
 	try {
 		$assign(vi, createCompatibleVolatileImage(width, height, nullptr, transparency));
-	} catch ($AWTException&) {
-		$var($AWTException, e, $catch());
+	} catch ($AWTException& e) {
 		if (!GraphicsConfiguration::$assertionsDisabled) {
 			$throwNew($AssertionError);
 		}

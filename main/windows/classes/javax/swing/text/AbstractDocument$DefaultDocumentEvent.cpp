@@ -1,14 +1,5 @@
 #include <javax/swing/text/AbstractDocument$DefaultDocumentEvent.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Hashtable.h>
 #include <java/util/Vector.h>
 #include <javax/swing/UIManager.h>
@@ -169,8 +160,8 @@ void AbstractDocument$DefaultDocumentEvent::redo() {
 					this->this$0->fireChangedUpdate(ev);
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->this$0->writeUnlock();
 		}
@@ -198,8 +189,8 @@ void AbstractDocument$DefaultDocumentEvent::undo() {
 					this->this$0->fireChangedUpdate(ev);
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->this$0->writeUnlock();
 		}

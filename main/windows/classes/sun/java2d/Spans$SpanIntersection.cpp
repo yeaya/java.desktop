@@ -1,13 +1,5 @@
 #include <sun/java2d/Spans$SpanIntersection.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/Spans$Span.h>
 #include <sun/java2d/Spans.h>
 #include <jcpp.h>
@@ -60,7 +52,6 @@ $ClassInfo _Spans$SpanIntersection_ClassInfo_ = {
 $Object* allocate$Spans$SpanIntersection($Class* clazz) {
 	return $of($alloc(Spans$SpanIntersection));
 }
-
 
 Spans$SpanIntersection* Spans$SpanIntersection::instance = nullptr;
 

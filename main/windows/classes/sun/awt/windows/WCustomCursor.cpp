@@ -9,14 +9,6 @@
 #include <java/awt/image/ImageObserver.h>
 #include <java/awt/image/Raster.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/CustomCursor.h>
 #include <sun/awt/image/ImageRepresentation.h>
 #include <sun/awt/image/IntegerComponentRaster.h>
@@ -88,8 +80,8 @@ void WCustomCursor::createNativeCursor($Image* im, $ints* pixels, int32_t w, int
 				$nc(ir)->reconstruct($ImageObserver::ALLBITS);
 			}
 			$nc(g)->drawImage(im, 0, 0, w, h, nullptr);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(g)->dispose();
 		}
@@ -114,11 +106,11 @@ void WCustomCursor::createNativeCursor($Image* im, $ints* pixels, int32_t w, int
 		if ($instanceOf($IntegerComponentRaster, raster)) {
 			ficW = $nc(($cast($IntegerComponentRaster, raster)))->getScanlineStride();
 		}
-		$var($ints, var$1, $nc(($cast($DataBufferInt, $($nc($(bimage->getRaster()))->getDataBuffer()))))->getData());
-		$var($bytes, var$2, andMask);
-		int32_t var$3 = ficW;
-		int32_t var$4 = raster->getWidth();
-		createCursorIndirect(var$1, var$2, var$3, var$4, raster->getHeight(), xHotSpot, yHotSpot);
+		$var($ints, var$2, $nc(($cast($DataBufferInt, $($nc($(bimage->getRaster()))->getDataBuffer()))))->getData());
+		$var($bytes, var$3, andMask);
+		int32_t var$4 = ficW;
+		int32_t var$5 = raster->getWidth();
+		createCursorIndirect(var$2, var$3, var$4, var$5, raster->getHeight(), xHotSpot, yHotSpot);
 	}
 }
 

@@ -7,17 +7,6 @@
 #include <java/awt/image/ImageConsumer.h>
 #include <java/awt/image/IndexColorModel.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Hashtable.h>
 #include <sun/awt/image/ByteComponentRaster.h>
 #include <sun/awt/image/BytePackedRaster.h>
@@ -223,7 +212,6 @@ void OffScreenImageSource::sendPixels() {
 }
 
 void OffScreenImageSource::produce() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		int32_t var$0 = $nc(this->image)->getWidth();
 		$nc(this->theConsumer)->setDimensions(var$0, $nc(this->image)->getHeight());
@@ -233,13 +221,11 @@ void OffScreenImageSource::produce() {
 		if (this->theConsumer != nullptr) {
 			try {
 				$nc(this->theConsumer)->imageComplete($ImageConsumer::STATICIMAGEDONE);
-			} catch ($RuntimeException&) {
-				$var($RuntimeException, e, $catch());
+			} catch ($RuntimeException& e) {
 				e->printStackTrace();
 			}
 		}
-	} catch ($NullPointerException&) {
-		$var($NullPointerException, e, $catch());
+	} catch ($NullPointerException& e) {
 		e->printStackTrace();
 		if (this->theConsumer != nullptr) {
 			$nc(this->theConsumer)->imageComplete($ImageConsumer::IMAGEERROR);

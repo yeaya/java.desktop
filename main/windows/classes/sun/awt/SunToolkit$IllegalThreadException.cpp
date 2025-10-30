@@ -1,13 +1,5 @@
 #include <sun/awt/SunToolkit$IllegalThreadException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/SunToolkit.h>
 #include <jcpp.h>
 
@@ -62,16 +54,10 @@ void SunToolkit$IllegalThreadException::init$() {
 SunToolkit$IllegalThreadException::SunToolkit$IllegalThreadException() {
 }
 
-SunToolkit$IllegalThreadException::SunToolkit$IllegalThreadException(const SunToolkit$IllegalThreadException& e) {
+SunToolkit$IllegalThreadException::SunToolkit$IllegalThreadException(const SunToolkit$IllegalThreadException& e) : $RuntimeException(e) {
 }
 
-SunToolkit$IllegalThreadException SunToolkit$IllegalThreadException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void SunToolkit$IllegalThreadException::throwWrapper$() {
-	$pendingException(this);
+void SunToolkit$IllegalThreadException::throw$() {
 	throw *this;
 }
 

@@ -2,19 +2,9 @@
 
 #include <java/awt/font/FontRenderContext.h>
 #include <java/awt/font/LineMetrics.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/CoreMetrics.h>
 #include <jcpp.h>
 
@@ -140,8 +130,7 @@ int32_t FontLineMetrics::hashCode() {
 bool FontLineMetrics::equals(Object$* rhs) {
 	try {
 		return $nc(this->cm)->equals($nc(($cast(FontLineMetrics, rhs)))->cm);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		return false;
 	}
 	$shouldNotReachHere();
@@ -150,8 +139,7 @@ bool FontLineMetrics::equals(Object$* rhs) {
 $Object* FontLineMetrics::clone() {
 	try {
 		return $of($LineMetrics::clone());
-	} catch ($CloneNotSupportedException&) {
-		$var($CloneNotSupportedException, e, $catch());
+	} catch ($CloneNotSupportedException& e) {
 		$throwNew($InternalError, static_cast<$Throwable*>(e));
 	}
 	$shouldNotReachHere();

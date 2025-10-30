@@ -5,16 +5,6 @@
 #include <java/awt/Container.h>
 #include <java/awt/Insets.h>
 #include <java/awt/Window.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JDialog.h>
@@ -128,8 +118,8 @@ void OptionPaneTest$1::run() {
 			if (width > optionPane->getWidth()) {
 				$OptionPaneTest::testFailed = true;
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$init($OptionPaneTest);
 			$nc($OptionPaneTest::dialog)->dispose();

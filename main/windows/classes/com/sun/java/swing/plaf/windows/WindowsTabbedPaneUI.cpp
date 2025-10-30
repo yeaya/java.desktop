@@ -13,16 +13,7 @@
 #include <java/awt/Rectangle.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractSet.h>
 #include <java/util/HashSet.h>
 #include <java/util/Set.h>
@@ -122,9 +113,7 @@ $Object* allocate$WindowsTabbedPaneUI($Class* clazz) {
 	return $of($alloc(WindowsTabbedPaneUI));
 }
 
-
 $Set* WindowsTabbedPaneUI::managingFocusForwardTraversalKeys = nullptr;
-
 $Set* WindowsTabbedPaneUI::managingFocusBackwardTraversalKeys = nullptr;
 
 void WindowsTabbedPaneUI::init$() {

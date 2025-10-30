@@ -1,29 +1,13 @@
 #include <DefaultListModelAddAllTest.h>
 
 #include <DefaultListModelAddAllTest$MyListDataListener.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractCollection.h>
 #include <java/util/AbstractList.h>
 #include <java/util/AbstractSet.h>
@@ -424,7 +408,6 @@ void DefaultListModelAddAllTest::main($StringArray* args) {
 	$init(DefaultListModelAddAllTest);
 	checkAddAll();
 	checkAddAllWithIndex();
-	$init($System);
 	$nc($System::out)->println("Test case passed."_s);
 }
 
@@ -435,10 +418,8 @@ void DefaultListModelAddAllTest::checkAddAll() {
 	lm->addListDataListener($$new($DefaultListModelAddAllTest$MyListDataListener));
 	try {
 		lm->addAll(static_cast<$Collection*>(static_cast<$AbstractCollection*>(static_cast<$AbstractList*>(DefaultListModelAddAllTest::arrayList))));
-		$init($System);
 		$nc($System::out)->println($$str({"Successfully added "_s, $$str((DefaultListModelAddAllTest::END - DefaultListModelAddAllTest::START)), "elements."_s}));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, $$str({"Test case failed. "_s, $(e->getMessage())}));
 	}
 }
@@ -452,25 +433,19 @@ void DefaultListModelAddAllTest::checkAddAllWithIndex() {
 	try {
 		lm->addAll(DefaultListModelAddAllTest::START - 1, static_cast<$Collection*>(static_cast<$AbstractCollection*>(static_cast<$AbstractList*>(DefaultListModelAddAllTest::vector))));
 		$throwNew($RuntimeException, "Test case failed. Expected failure not reported."_s);
-	} catch ($ArrayIndexOutOfBoundsException&) {
-		$var($ArrayIndexOutOfBoundsException, e, $catch());
-		$init($System);
+	} catch ($ArrayIndexOutOfBoundsException& e) {
 		$nc($System::out)->println("Encountered exception as expected, when trying to add elementsbefore the start of the list."_s);
 	}
 	try {
 		lm->addAll(15, static_cast<$Collection*>(static_cast<$AbstractCollection*>(static_cast<$AbstractList*>(DefaultListModelAddAllTest::vector))));
-		$init($System);
 		$nc($System::out)->println("Successfully added elements at a particular index"_s);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, $$str({"Unexpected failure: "_s, $(e->getMessage())}));
 	}
 	try {
 		lm->addAll(lm->getSize() + 1, static_cast<$Collection*>(static_cast<$AbstractCollection*>(static_cast<$AbstractList*>(DefaultListModelAddAllTest::vector))));
 		$throwNew($RuntimeException, "Test case failed. Expected failure not reported."_s);
-	} catch ($ArrayIndexOutOfBoundsException&) {
-		$var($ArrayIndexOutOfBoundsException, e, $catch());
-		$init($System);
+	} catch ($ArrayIndexOutOfBoundsException& e) {
 		$nc($System::out)->println("Encountered exception as expected, when trying to add elementsafter the end of the list."_s);
 	}
 }

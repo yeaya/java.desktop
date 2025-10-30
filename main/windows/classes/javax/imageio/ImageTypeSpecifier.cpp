@@ -12,18 +12,7 @@
 #include <java/awt/image/RenderedImage.h>
 #include <java/awt/image/SampleModel.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NegativeArraySizeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Hashtable.h>
 #include <javax/imageio/ImageTypeSpecifier$Banded.h>
 #include <javax/imageio/ImageTypeSpecifier$Grayscale.h>
@@ -146,7 +135,6 @@ $ClassInfo _ImageTypeSpecifier_ClassInfo_ = {
 $Object* allocate$ImageTypeSpecifier($Class* clazz) {
 	return $of($alloc(ImageTypeSpecifier));
 }
-
 
 $ImageTypeSpecifierArray* ImageTypeSpecifier::BISpecifier = nullptr;
 $ColorSpace* ImageTypeSpecifier::sRGB = nullptr;
@@ -286,8 +274,7 @@ $BufferedImage* ImageTypeSpecifier::createBufferedImage(int32_t width, int32_t h
 		$var($WritableRaster, var$1, raster);
 		bool var$2 = $nc(this->colorModel)->isAlphaPremultiplied();
 		return $new($BufferedImage, var$0, var$1, var$2, $$new($Hashtable));
-	} catch ($NegativeArraySizeException&) {
-		$var($NegativeArraySizeException, e, $catch());
+	} catch ($NegativeArraySizeException& e) {
 		$throwNew($IllegalArgumentException, "Array size > Integer.MAX_VALUE!"_s);
 	}
 	$shouldNotReachHere();

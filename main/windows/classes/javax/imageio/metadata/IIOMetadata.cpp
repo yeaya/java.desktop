@@ -1,27 +1,15 @@
 #include <javax/imageio/metadata/IIOMetadata.h>
 
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Module.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
@@ -280,8 +268,7 @@ $IIOMetadataFormat* IIOMetadata::getMetadataFormat($String* formatName) {
 		$Class* cls = $cast($Class, $AccessController::doPrivileged(pa));
 		$var($Method, meth, $nc(cls)->getMethod("getInstance"_s, $$new($ClassArray, 0)));
 		return $cast($IIOMetadataFormat, $nc(meth)->invoke(nullptr, $$new($ObjectArray, 0)));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$var($RuntimeException, ex, $new($IllegalStateException, "Can\'t obtain format"_s));
 		ex->initCause(e);
 		$throw(ex);
@@ -302,8 +289,7 @@ $Class* IIOMetadata::getMetadataFormatClass($String* formatClassName) {
 		if (!$IIOMetadataFormat::class$->isAssignableFrom(c)) {
 			return nullptr;
 		}
-	} catch ($ClassNotFoundException&) {
-		$catch();
+	} catch ($ClassNotFoundException& e) {
 	}
 	if ($nc($of(thisModule))->equals(targetModule) || c == nullptr) {
 		return c;

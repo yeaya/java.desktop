@@ -3,16 +3,6 @@
 #include <bug4666224.h>
 #include <java/awt/Rectangle.h>
 #include <java/awt/event/ActionEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractAction.h>
 #include <javax/swing/JTabbedPane.h>
 #include <javax/swing/plaf/ComponentUI.h>
@@ -75,7 +65,6 @@ void bug4666224$DumpAction::init$($bug4666224* this$0) {
 void bug4666224$DumpAction::actionPerformed($ActionEvent* e) {
 	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc(this->this$0->tabPane)->getTabCount(); ++i) {
-		$init($System);
 		$nc($System::out)->println($$str({"Tab: "_s, $$str(i), " "_s, $($nc($($cast($TabbedPaneUI, $nc(this->this$0->tabPane)->getUI())))->getTabBounds(this->this$0->tabPane, i))}));
 	}
 }

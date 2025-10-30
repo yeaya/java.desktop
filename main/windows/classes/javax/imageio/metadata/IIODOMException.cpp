@@ -1,12 +1,5 @@
 #include <javax/imageio/metadata/IIODOMException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <org/w3c/dom/DOMException.h>
 #include <jcpp.h>
 
@@ -49,16 +42,10 @@ void IIODOMException::init$(int16_t code, $String* message) {
 IIODOMException::IIODOMException() {
 }
 
-IIODOMException::IIODOMException(const IIODOMException& e) {
+IIODOMException::IIODOMException(const IIODOMException& e) : $DOMException(e) {
 }
 
-IIODOMException IIODOMException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void IIODOMException::throwWrapper$() {
-	$pendingException(this);
+void IIODOMException::throw$() {
 	throw *this;
 }
 

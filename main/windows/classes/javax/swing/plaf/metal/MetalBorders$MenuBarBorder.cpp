@@ -4,14 +4,6 @@
 #include <java/awt/Component.h>
 #include <java/awt/Graphics.h>
 #include <java/awt/Insets.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JMenuBar.h>
 #include <javax/swing/UIManager.h>
 #include <javax/swing/border/AbstractBorder.h>
@@ -106,7 +98,6 @@ $String* MetalBorders$MenuBarBorder::toString() {
 void MetalBorders$MenuBarBorder::finalize() {
 	this->$AbstractBorder::finalize();
 }
-
 
 $Insets* MetalBorders$MenuBarBorder::borderInsets = nullptr;
 

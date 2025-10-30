@@ -25,17 +25,6 @@
 #include <java/io/File.h>
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/nio/charset/Charset.h>
 #include <java/util/AbstractMap.h>
@@ -294,8 +283,7 @@ $Object* WDataTransferer::translateBytes($bytes* bytes, $DataFlavor* flavor, int
 		if (localeTransferable != nullptr && localeTransferable->isDataFlavorSupported($DataTransferer::javaTextEncodingFlavor)) {
 			try {
 				$assign(charset, $new($String, $cast($bytes, $(localeTransferable->getTransferData($DataTransferer::javaTextEncodingFlavor))), "UTF-8"_s));
-			} catch ($UnsupportedFlavorException&) {
-				$catch();
+			} catch ($UnsupportedFlavorException& cannotHappen) {
 			}
 		}
 		return $of($new($URL, $$new($String, bytes, charset)));
@@ -393,8 +381,8 @@ $bytes* WDataTransferer::imageToPlatformBytes($Image* image, int64_t format) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$nc(g2d)->drawImage(image, imageFlipTransform, nullptr);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(g2d)->dispose();
 		}

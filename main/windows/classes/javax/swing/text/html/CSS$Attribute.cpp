@@ -1,15 +1,5 @@
 #include <javax/swing/text/html/CSS$Attribute.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/html/CSS.h>
 #include <jcpp.h>
 
@@ -213,131 +203,70 @@ $Object* allocate$CSS$Attribute($Class* clazz) {
 	return $of($alloc(CSS$Attribute));
 }
 
-
 CSS$Attribute* CSS$Attribute::BACKGROUND = nullptr;
-
 CSS$Attribute* CSS$Attribute::BACKGROUND_ATTACHMENT = nullptr;
-
 CSS$Attribute* CSS$Attribute::BACKGROUND_COLOR = nullptr;
-
 CSS$Attribute* CSS$Attribute::BACKGROUND_IMAGE = nullptr;
-
 CSS$Attribute* CSS$Attribute::BACKGROUND_POSITION = nullptr;
-
 CSS$Attribute* CSS$Attribute::BACKGROUND_REPEAT = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_BOTTOM = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_BOTTOM_COLOR = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_BOTTOM_STYLE = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_BOTTOM_WIDTH = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_COLOR = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_LEFT = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_LEFT_COLOR = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_LEFT_STYLE = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_LEFT_WIDTH = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_RIGHT = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_RIGHT_COLOR = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_RIGHT_STYLE = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_RIGHT_WIDTH = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_STYLE = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_TOP = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_TOP_COLOR = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_TOP_STYLE = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_TOP_WIDTH = nullptr;
-
 CSS$Attribute* CSS$Attribute::BORDER_WIDTH = nullptr;
-
 CSS$Attribute* CSS$Attribute::CLEAR = nullptr;
-
 CSS$Attribute* CSS$Attribute::COLOR = nullptr;
-
 CSS$Attribute* CSS$Attribute::DISPLAY = nullptr;
-
 CSS$Attribute* CSS$Attribute::FLOAT = nullptr;
-
 CSS$Attribute* CSS$Attribute::FONT = nullptr;
-
 CSS$Attribute* CSS$Attribute::FONT_FAMILY = nullptr;
-
 CSS$Attribute* CSS$Attribute::FONT_SIZE = nullptr;
-
 CSS$Attribute* CSS$Attribute::FONT_STYLE = nullptr;
-
 CSS$Attribute* CSS$Attribute::FONT_VARIANT = nullptr;
-
 CSS$Attribute* CSS$Attribute::FONT_WEIGHT = nullptr;
-
 CSS$Attribute* CSS$Attribute::HEIGHT = nullptr;
-
 CSS$Attribute* CSS$Attribute::LETTER_SPACING = nullptr;
-
 CSS$Attribute* CSS$Attribute::LINE_HEIGHT = nullptr;
-
 CSS$Attribute* CSS$Attribute::LIST_STYLE = nullptr;
-
 CSS$Attribute* CSS$Attribute::LIST_STYLE_IMAGE = nullptr;
-
 CSS$Attribute* CSS$Attribute::LIST_STYLE_POSITION = nullptr;
-
 CSS$Attribute* CSS$Attribute::LIST_STYLE_TYPE = nullptr;
-
 CSS$Attribute* CSS$Attribute::MARGIN = nullptr;
-
 CSS$Attribute* CSS$Attribute::MARGIN_BOTTOM = nullptr;
-
 CSS$Attribute* CSS$Attribute::MARGIN_LEFT = nullptr;
-
 CSS$Attribute* CSS$Attribute::MARGIN_RIGHT = nullptr;
 CSS$Attribute* CSS$Attribute::MARGIN_LEFT_LTR = nullptr;
 CSS$Attribute* CSS$Attribute::MARGIN_LEFT_RTL = nullptr;
 CSS$Attribute* CSS$Attribute::MARGIN_RIGHT_LTR = nullptr;
 CSS$Attribute* CSS$Attribute::MARGIN_RIGHT_RTL = nullptr;
-
 CSS$Attribute* CSS$Attribute::MARGIN_TOP = nullptr;
-
 CSS$Attribute* CSS$Attribute::PADDING = nullptr;
-
 CSS$Attribute* CSS$Attribute::PADDING_BOTTOM = nullptr;
-
 CSS$Attribute* CSS$Attribute::PADDING_LEFT = nullptr;
-
 CSS$Attribute* CSS$Attribute::PADDING_RIGHT = nullptr;
-
 CSS$Attribute* CSS$Attribute::PADDING_TOP = nullptr;
-
 CSS$Attribute* CSS$Attribute::TEXT_ALIGN = nullptr;
-
 CSS$Attribute* CSS$Attribute::TEXT_DECORATION = nullptr;
-
 CSS$Attribute* CSS$Attribute::TEXT_INDENT = nullptr;
-
 CSS$Attribute* CSS$Attribute::TEXT_TRANSFORM = nullptr;
-
 CSS$Attribute* CSS$Attribute::VERTICAL_ALIGN = nullptr;
-
 CSS$Attribute* CSS$Attribute::WORD_SPACING = nullptr;
-
 CSS$Attribute* CSS$Attribute::WHITE_SPACE = nullptr;
-
 CSS$Attribute* CSS$Attribute::WIDTH = nullptr;
 CSS$Attribute* CSS$Attribute::BORDER_SPACING = nullptr;
 CSS$Attribute* CSS$Attribute::CAPTION_SIDE = nullptr;

@@ -2,16 +2,7 @@
 
 #include <CloseOnMouseClickPropertyTest$TestType.h>
 #include <CloseOnMouseClickPropertyTest.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef CHECK_BOX_MENU_ITEM
@@ -71,18 +62,15 @@ void clinit$CloseOnMouseClickPropertyTest$1($Class* class$) {
 	{
 		try {
 			$nc(CloseOnMouseClickPropertyTest$1::$SwitchMap$CloseOnMouseClickPropertyTest$TestType)->set($CloseOnMouseClickPropertyTest$TestType::MENU_ITEM->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(CloseOnMouseClickPropertyTest$1::$SwitchMap$CloseOnMouseClickPropertyTest$TestType)->set($CloseOnMouseClickPropertyTest$TestType::CHECK_BOX_MENU_ITEM->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(CloseOnMouseClickPropertyTest$1::$SwitchMap$CloseOnMouseClickPropertyTest$TestType)->set($CloseOnMouseClickPropertyTest$TestType::RADIO_BUTTON_MENU_ITEM->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

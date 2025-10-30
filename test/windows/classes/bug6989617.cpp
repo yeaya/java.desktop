@@ -9,23 +9,12 @@
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/SwingUtilities.h>
@@ -153,8 +142,8 @@ void bug6989617::main($StringArray* args) {
 			$SwingUtilities::invokeAndWait($$new($bug6989617$4));
 			robot->waitForIdle();
 			$SwingUtilities::invokeAndWait($$new($bug6989617$5));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$init(bug6989617);
 			if (bug6989617::frame != nullptr) {

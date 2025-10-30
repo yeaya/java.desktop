@@ -1,17 +1,6 @@
 #include <javax/swing/text/html/HTML.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Hashtable.h>
 #include <javax/swing/text/AttributeSet.h>
 #include <javax/swing/text/StyleConstants.h>
@@ -99,9 +88,7 @@ $Object* allocate$HTML($Class* clazz) {
 }
 
 $Hashtable* HTML::tagHashtable = nullptr;
-
 $Hashtable* HTML::scMapping = nullptr;
-
 $String* HTML::NULL_ATTRIBUTE_VALUE = nullptr;
 $Hashtable* HTML::attHashtable = nullptr;
 
@@ -135,8 +122,7 @@ int32_t HTML::getIntegerAttributeValue($AttributeSet* attr, $HTML$Attribute* key
 	if (istr != nullptr) {
 		try {
 			value = $nc($($Integer::valueOf(istr)))->intValue();
-		} catch ($NumberFormatException&) {
-			$var($NumberFormatException, e, $catch());
+		} catch ($NumberFormatException& e) {
 			value = def;
 		}
 	}

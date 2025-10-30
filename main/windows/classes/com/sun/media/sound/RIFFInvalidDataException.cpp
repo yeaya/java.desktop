@@ -1,13 +1,6 @@
 #include <com/sun/media/sound/RIFFInvalidDataException.h>
 
 #include <com/sun/media/sound/InvalidDataException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $InvalidDataException = ::com::sun::media::sound::InvalidDataException;
@@ -55,16 +48,10 @@ void RIFFInvalidDataException::init$($String* s) {
 RIFFInvalidDataException::RIFFInvalidDataException() {
 }
 
-RIFFInvalidDataException::RIFFInvalidDataException(const RIFFInvalidDataException& e) {
+RIFFInvalidDataException::RIFFInvalidDataException(const RIFFInvalidDataException& e) : $InvalidDataException(e) {
 }
 
-RIFFInvalidDataException RIFFInvalidDataException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void RIFFInvalidDataException::throwWrapper$() {
-	$pendingException(this);
+void RIFFInvalidDataException::throw$() {
 	throw *this;
 }
 

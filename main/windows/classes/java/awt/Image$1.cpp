@@ -1,14 +1,6 @@
 #include <java/awt/Image$1.h>
 
 #include <java/awt/Image.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/image/SurfaceManager$ImageAccessor.h>
 #include <sun/awt/image/SurfaceManager.h>
 #include <jcpp.h>

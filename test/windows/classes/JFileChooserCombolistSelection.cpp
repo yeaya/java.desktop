@@ -2,23 +2,9 @@
 
 #include <JFileChooserCombolistSelection$1.h>
 #include <Sysout4JFileChooserCombolistSelection.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFileChooser.h>
 #include <javax/swing/SwingUtilities.h>
 #include <javax/swing/UIManager.h>
@@ -106,21 +92,18 @@ void JFileChooserCombolistSelection::main($StringArray* args) {
 	}
 	try {
 		$UIManager::setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel"_s);
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		return;
 	}
 	$assignStatic(JFileChooserCombolistSelection::mainThread, $Thread::currentThread());
 	try {
 		init();
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		return;
 	}
 	try {
 		$nc(JFileChooserCombolistSelection::mainThread)->sleep(JFileChooserCombolistSelection::sleepTime);
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, ex, $catch());
+	} catch ($InterruptedException& ex) {
 		$Sysout4JFileChooserCombolistSelection::dispose();
 		if (!JFileChooserCombolistSelection::theTestPassed && JFileChooserCombolistSelection::testGeneratedInterrupt) {
 			$throwNew($RuntimeException, "Test Failed"_s);

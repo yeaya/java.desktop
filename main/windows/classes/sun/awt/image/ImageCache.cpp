@@ -2,15 +2,6 @@
 
 #include <java/awt/Image.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
@@ -18,8 +9,6 @@
 #include <java/lang/invoke/MethodType.h>
 #include <java/lang/ref/Reference.h>
 #include <java/lang/ref/ReferenceQueue.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Iterator.h>
 #include <java/util/LinkedHashMap.h>
 #include <java/util/Map$Entry.h>
@@ -167,8 +156,8 @@ void ImageCache::flush() {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$nc(this->map)->clear();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc($($nc(this->lock)->writeLock()))->unlock();
 		}
@@ -186,8 +175,8 @@ $Image* ImageCache::getImage($ImageCache$PixelsKey* key) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$assign(ref, $cast($ImageCache$ImageSoftReference, $nc(this->map)->get(key)));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc($($nc(this->lock)->readLock()))->unlock();
 		}
@@ -235,8 +224,8 @@ void ImageCache::setImage($ImageCache$PixelsKey* key, $Image* image) {
 				}
 			}
 			$nc(this->map)->put(key, $$new($ImageCache$ImageSoftReference, key, image, this->referenceQueue));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} $finally: {
 			$nc($($nc(this->lock)->writeLock()))->unlock();
 		}

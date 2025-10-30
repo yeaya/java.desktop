@@ -4,18 +4,7 @@
 #include <bug6670274$TestTabbedPaneUI.h>
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JPanel.h>
 #include <javax/swing/JTabbedPane.h>
@@ -105,7 +94,6 @@ void bug6670274::createGui() {
 void bug6670274::check($bug6670274$TestTabbedPaneUI* ui, $ints* indices) {
 	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < $nc($($nc(ui)->getTabbedPane()))->getTabCount(); ++i) {
-		$init($System);
 		$nc($System::out)->print($$str({"Checking tab #"_s, $$str(i)}));
 		$var($View, view, ui->getTextViewForTab(i));
 		bool found = false;
@@ -125,7 +113,6 @@ void bug6670274::check($bug6670274$TestTabbedPaneUI* ui, $ints* indices) {
 		}
 		$nc($System::out)->println(" ok"_s);
 	}
-	$init($System);
 	$nc($System::out)->println(""_s);
 }
 

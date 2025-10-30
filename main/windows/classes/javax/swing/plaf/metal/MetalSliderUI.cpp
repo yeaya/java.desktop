@@ -7,19 +7,7 @@
 #include <java/awt/Graphics.h>
 #include <java/awt/Rectangle.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JSlider.h>
@@ -143,19 +131,12 @@ $Object* allocate$MetalSliderUI($Class* clazz) {
 	return $of($alloc(MetalSliderUI));
 }
 
-
 $Color* MetalSliderUI::thumbColor = nullptr;
-
 $Color* MetalSliderUI::highlightColor = nullptr;
-
 $Color* MetalSliderUI::darkShadowColor = nullptr;
-
 int32_t MetalSliderUI::trackWidth = 0;
-
 int32_t MetalSliderUI::tickLength = 0;
-
 $Icon* MetalSliderUI::horizThumbIcon = nullptr;
-
 $Icon* MetalSliderUI::vertThumbIcon = nullptr;
 $Icon* MetalSliderUI::SAFE_HORIZ_THUMB_ICON = nullptr;
 $Icon* MetalSliderUI::SAFE_VERT_THUMB_ICON = nullptr;

@@ -10,20 +10,7 @@
 #include <java/awt/Point.h>
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JProgressBar.h>
@@ -117,15 +104,14 @@ void bug8041642::main($StringArray* args) {
 			$SwingUtilities::invokeAndWait($$new($bug8041642$2));
 			$init(bug8041642);
 			$var($Color, color, robot->getPixelColor($nc(bug8041642::point)->x + 1, $nc(bug8041642::point)->y + 7));
-			$init($System);
 			$nc($System::out)->println($of(color));
 			bool var$2 = $nc(color)->getGreen() < 150;
 			bool var$1 = var$2 || $nc(color)->getBlue() > 30;
 			if (var$1 || $nc(color)->getRed() > 200) {
 				$throwNew($RuntimeException, "Bar padding color should be green"_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} /*finally*/ {
 			$SwingUtilities::invokeAndWait($$new($bug8041642$3));
 		}
@@ -133,7 +119,6 @@ void bug8041642::main($StringArray* args) {
 			$throw(var$0);
 		}
 	}
-	$init($System);
 	$nc($System::out)->println("ok"_s);
 }
 

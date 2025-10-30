@@ -2,15 +2,6 @@
 
 #include <bug8013566.h>
 #include <java/awt/Window.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <jcpp.h>
 
@@ -75,8 +66,8 @@ void bug8013566$1::run() {
 			frame->setUndecorated(true);
 			frame->setDefaultCloseOperation($JFrame::EXIT_ON_CLOSE);
 			$bug8013566::test(frame);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			frame->dispose();
 		}

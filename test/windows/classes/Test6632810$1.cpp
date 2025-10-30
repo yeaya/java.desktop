@@ -1,18 +1,6 @@
 #include <Test6632810$1.h>
 
 #include <Test6632810.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JScrollPane.h>
 #include <javax/swing/plaf/basic/BasicScrollPaneUI.h>
@@ -79,8 +67,7 @@ void Test6632810$1::run() {
 	try {
 		ui->getBaseline(nullptr, 1, 1);
 		$throwNew($RuntimeException, "getBaseline(null, 1, 1) does not throw NPE"_s);
-	} catch ($NullPointerException&) {
-		$catch();
+	} catch ($NullPointerException& e) {
 	}
 	$var($intArray2, illegelParams, $new($intArray2, {
 		$$new($ints, {
@@ -108,8 +95,7 @@ void Test6632810$1::run() {
 					int32_t height = illegelParam->get(1);
 					ui->getBaseline($$new($JScrollPane), width, height);
 					$throwNew($RuntimeException, $$str({"getBaseline(new JScrollPane(), "_s, $$str(width), ", "_s, $$str(height), ") does not throw IAE"_s}));
-				} catch ($IllegalArgumentException&) {
-					$catch();
+				} catch ($IllegalArgumentException& e) {
 				}
 			}
 		}

@@ -1,15 +1,7 @@
 #include <sun/print/PrintJob2D$MessageQ.h>
 
 #include <java/awt/Graphics2D.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <sun/print/PrintJob2D.h>
 #include <jcpp.h>
@@ -80,8 +72,7 @@ void PrintJob2D$MessageQ::closeWhenEmpty() {
 		while (this->queue != nullptr && $nc(this->queue)->size() > 0) {
 			try {
 				$of(this)->wait(1000);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& e) {
 			}
 		}
 		$set(this, queue, nullptr);
@@ -118,8 +109,7 @@ $Graphics2D* PrintJob2D$MessageQ::pop() {
 			} else {
 				try {
 					$of(this)->wait(2000);
-				} catch ($InterruptedException&) {
-					$catch();
+				} catch ($InterruptedException& e) {
 				}
 			}
 		}

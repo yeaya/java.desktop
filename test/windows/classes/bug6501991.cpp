@@ -4,15 +4,7 @@
 #include <java/awt/Graphics.h>
 #include <java/awt/Graphics2D.h>
 #include <java/awt/image/BufferedImage.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JLabel.h>
 #include <jcpp.h>
 
@@ -58,8 +50,7 @@ void bug6501991::main($StringArray* args) {
 		l->setSize(5, 22);
 		$var($BufferedImage, image, $new($BufferedImage, 50, 50, $BufferedImage::TYPE_INT_RGB));
 		l->paint($(image->createGraphics()));
-	} catch ($ArrayIndexOutOfBoundsException&) {
-		$var($ArrayIndexOutOfBoundsException, e, $catch());
+	} catch ($ArrayIndexOutOfBoundsException& e) {
 		$throwNew($RuntimeException, "failed"_s);
 	}
 }

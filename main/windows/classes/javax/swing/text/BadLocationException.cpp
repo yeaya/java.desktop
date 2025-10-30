@@ -1,13 +1,5 @@
 #include <javax/swing/text/BadLocationException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -55,16 +47,10 @@ int32_t BadLocationException::offsetRequested() {
 BadLocationException::BadLocationException() {
 }
 
-BadLocationException::BadLocationException(const BadLocationException& e) {
+BadLocationException::BadLocationException(const BadLocationException& e) : $Exception(e) {
 }
 
-BadLocationException BadLocationException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void BadLocationException::throwWrapper$() {
-	$pendingException(this);
+void BadLocationException::throw$() {
 	throw *this;
 }
 

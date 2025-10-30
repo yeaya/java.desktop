@@ -3,18 +3,6 @@
 #include <java/io/File.h>
 #include <java/io/FileNotFoundException.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/text/MessageFormat.h>
@@ -125,14 +113,12 @@ $File* WindowsFileSystemView::getChild($File* parent, $String* fileName) {
 }
 
 $String* WindowsFileSystemView::getSystemTypeDescription($File* f) {
-	$useLocalCurrentObjectStackCache();
 	if (f == nullptr) {
 		return nullptr;
 	}
 	try {
 		return $nc($(getShellFolder(f)))->getFolderType();
-	} catch ($FileNotFoundException&) {
-		$var($FileNotFoundException, e, $catch());
+	} catch ($FileNotFoundException& e) {
 		return nullptr;
 	}
 	$shouldNotReachHere();

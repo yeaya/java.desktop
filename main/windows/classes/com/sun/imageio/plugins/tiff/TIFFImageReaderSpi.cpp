@@ -3,14 +3,6 @@
 #include <com/sun/imageio/plugins/tiff/TIFFImageMetadata.h>
 #include <com/sun/imageio/plugins/tiff/TIFFImageReader.h>
 #include <com/sun/imageio/plugins/tiff/TIFFStreamMetadata.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/imageio/ImageReader.h>
 #include <javax/imageio/spi/ImageReaderSpi.h>

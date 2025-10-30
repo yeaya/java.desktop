@@ -1,12 +1,5 @@
 #include <sun/font/StrikeCache$DisposableStrike.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/FontStrikeDisposer.h>
 #include <sun/font/StrikeCache.h>
 #include <jcpp.h>

@@ -2,17 +2,7 @@
 
 #include <java/io/ObjectInputStream$GetField.h>
 #include <java/io/ObjectInputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/ParseException.h>
 #include <java/util/ArrayList.h>
 #include <javax/swing/JFormattedTextField$AbstractFormatter.h>
@@ -240,8 +230,7 @@ void MaskFormatter::install($JFormattedTextField* ftf) {
 		$var($Object, value, ftf->getValue());
 		try {
 			stringToValue($(valueToString(value)));
-		} catch ($ParseException&) {
-			$var($ParseException, pe, $catch());
+		} catch ($ParseException& pe) {
 			setEditValid(false);
 		}
 	}
@@ -434,8 +423,7 @@ void MaskFormatter::readObject($ObjectInputStream* s) {
 	$set(this, mask, $cast($String, f->get("mask"_s, ($Object*)nullptr)));
 	try {
 		updateInternalMask();
-	} catch ($ParseException&) {
-		$catch();
+	} catch ($ParseException& pe) {
 	}
 }
 
@@ -448,14 +436,12 @@ bool MaskFormatter::isNavigatable(int32_t offset) {
 }
 
 bool MaskFormatter::isValidEdit($DefaultFormatter$ReplaceHolder* rh) {
-	$useLocalCurrentObjectStackCache();
 	if (!getAllowsInvalid()) {
 		$var($String, newString, getReplaceString($nc(rh)->offset, rh->length, rh->text));
 		try {
 			$set($nc(rh), value, stringToValue(newString, false));
 			return true;
-		} catch ($ParseException&) {
-			$var($ParseException, pe, $catch());
+		} catch ($ParseException& pe) {
 			return false;
 		}
 	}

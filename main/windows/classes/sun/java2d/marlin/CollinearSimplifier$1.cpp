@@ -1,15 +1,6 @@
 #include <sun/java2d/marlin/CollinearSimplifier$1.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/marlin/CollinearSimplifier$SimplifierState.h>
 #include <sun/java2d/marlin/CollinearSimplifier.h>
 #include <jcpp.h>
@@ -71,18 +62,15 @@ void clinit$CollinearSimplifier$1($Class* class$) {
 	{
 		try {
 			$nc(CollinearSimplifier$1::$SwitchMap$sun$java2d$marlin$CollinearSimplifier$SimplifierState)->set($CollinearSimplifier$SimplifierState::Empty->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(CollinearSimplifier$1::$SwitchMap$sun$java2d$marlin$CollinearSimplifier$SimplifierState)->set($CollinearSimplifier$SimplifierState::PreviousPoint->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(CollinearSimplifier$1::$SwitchMap$sun$java2d$marlin$CollinearSimplifier$SimplifierState)->set($CollinearSimplifier$SimplifierState::PreviousLine->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

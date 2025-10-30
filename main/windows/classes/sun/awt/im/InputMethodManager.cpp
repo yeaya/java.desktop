@@ -1,16 +1,8 @@
 #include <sun/awt/im/InputMethodManager.h>
 
 #include <java/awt/Component.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <sun/awt/im/ExecutableInputMethodManager.h>
 #include <sun/awt/im/InputContext.h>
@@ -68,11 +60,8 @@ $Object* allocate$InputMethodManager($Class* clazz) {
 	return $of($alloc(InputMethodManager));
 }
 
-
 $String* InputMethodManager::threadName = nullptr;
-
 $Object* InputMethodManager::LOCK = nullptr;
-
 InputMethodManager* InputMethodManager::inputMethodManager = nullptr;
 
 void InputMethodManager::init$() {

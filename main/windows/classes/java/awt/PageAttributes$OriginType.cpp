@@ -2,15 +2,6 @@
 
 #include <java/awt/AttributeValue.h>
 #include <java/awt/PageAttributes.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef I_PHYSICAL
@@ -71,9 +62,7 @@ $Object* allocate$PageAttributes$OriginType($Class* clazz) {
 }
 
 $StringArray* PageAttributes$OriginType::NAMES = nullptr;
-
 PageAttributes$OriginType* PageAttributes$OriginType::PHYSICAL = nullptr;
-
 PageAttributes$OriginType* PageAttributes$OriginType::PRINTABLE = nullptr;
 
 void PageAttributes$OriginType::init$(int32_t type) {

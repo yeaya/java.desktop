@@ -18,21 +18,9 @@
 #include <java/awt/image/SampleModel.h>
 #include <java/awt/image/SinglePixelPackedSampleModel.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
 #include <java/lang/ref/SoftReference.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef GRADIENT_SIZE
@@ -138,13 +126,9 @@ $Object* allocate$MultipleGradientPaintContext($Class* clazz) {
 	return $of($alloc(MultipleGradientPaintContext));
 }
 
-
 $ColorModel* MultipleGradientPaintContext::xrgbmodel = nullptr;
-
 $ColorModel* MultipleGradientPaintContext::cachedModel = nullptr;
-
 $WeakReference* MultipleGradientPaintContext::cached = nullptr;
-
 $ints* MultipleGradientPaintContext::SRGBtoLinearRGB = nullptr;
 $ints* MultipleGradientPaintContext::LinearRGBtoSRGB = nullptr;
 
@@ -166,8 +150,7 @@ void MultipleGradientPaintContext::init$($MultipleGradientPaint* mgp, $ColorMode
 	try {
 		$nc(t)->invert();
 		$assign(tInv, t);
-	} catch ($NoninvertibleTransformException&) {
-		$var($NoninvertibleTransformException, e, $catch());
+	} catch ($NoninvertibleTransformException& e) {
 		$assign(tInv, $new($AffineTransform));
 	}
 	$var($doubles, m, $new($doubles, 6));

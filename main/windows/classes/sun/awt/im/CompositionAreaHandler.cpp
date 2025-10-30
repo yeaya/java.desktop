@@ -8,15 +8,7 @@
 #include <java/awt/font/TextAttribute.h>
 #include <java/awt/font/TextHitInfo.h>
 #include <java/awt/im/InputMethodRequests.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator$Attribute.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/text/AttributedString.h>

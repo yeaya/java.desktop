@@ -6,19 +6,8 @@
 #include <java/awt/Dimension.h>
 #include <java/awt/Graphics.h>
 #include <java/awt/image/BufferedImage.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JComponent.h>
@@ -114,8 +103,7 @@ void Test4783068::test() {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($UnsupportedLookAndFeelException, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& e) {
 		$throwNew($Error, "Cannot set Metal LAF"_s);
 	}
 	$UIManager::put("textInactiveText"_s, Test4783068::TEST_COLOR);

@@ -1,25 +1,12 @@
 #include <I18NViewNoWrapMinSpan.h>
 
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTextField.h>
 #include <javax/swing/SwingUtilities.h>
 #include <javax/swing/plaf/ComponentUI.h>
@@ -111,7 +98,6 @@ void I18NViewNoWrapMinSpan::init$() {
 
 void I18NViewNoWrapMinSpan::main($StringArray* args) {
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(I18NViewNoWrapMinSpan$$Lambda$lambda$main$0)));
-	$init($System);
 	$nc($System::out)->println("ok"_s);
 }
 
@@ -125,8 +111,7 @@ void I18NViewNoWrapMinSpan::lambda$main$0() {
 		if (noSpaceMin > $nc($($nc($($cast($TextUI, textField->getUI())))->getRootView(textField)))->getMinimumSpan(0)) {
 			$throwNew($RuntimeException, "Minimum span is calculated for wrapped text"_s);
 		}
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }

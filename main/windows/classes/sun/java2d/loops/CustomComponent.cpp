@@ -1,13 +1,6 @@
 #include <sun/java2d/loops/CustomComponent.h>
 
 #include <java/awt/Rectangle.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SurfaceData.h>
 #include <sun/java2d/loops/Blit.h>
 #include <sun/java2d/loops/CompositeType.h>
@@ -62,9 +55,9 @@ void CustomComponent::register$() {
 	$useLocalCurrentObjectStackCache();
 	$load(CustomComponent);
 	$Class* owner = CustomComponent::class$;
-		$init($Blit);
-		$init($SurfaceType);
-		$init($CompositeType);
+	$init($Blit);
+	$init($SurfaceType);
+	$init($CompositeType);
 	$var($GraphicsPrimitiveArray, primitives, $new($GraphicsPrimitiveArray, {
 		static_cast<$GraphicsPrimitive*>($$new($GraphicsPrimitiveProxy, owner, "OpaqueCopyAnyToArgb"_s, $Blit::methodSignature, $Blit::primTypeID, $SurfaceType::Any, $CompositeType::SrcNoEa, $SurfaceType::IntArgb)),
 		static_cast<$GraphicsPrimitive*>($$new($GraphicsPrimitiveProxy, owner, "OpaqueCopyArgbToAny"_s, $Blit::methodSignature, $Blit::primTypeID, $SurfaceType::IntArgb, $CompositeType::SrcNoEa, $SurfaceType::Any)),

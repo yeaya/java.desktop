@@ -4,28 +4,13 @@
 #include <java/awt/Toolkit.h>
 #include <java/io/File.h>
 #include <java/io/FileNotFoundException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
 #include <java/lang/ClassNotFoundException.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/ReflectiveOperationException.h>
-#include <java/lang/RuntimeException.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URI.h>
 #include <java/nio/file/Files.h>
 #include <java/nio/file/LinkOption.h>
@@ -199,7 +184,6 @@ $String* ShellFolder::COLUMN_SIZE = nullptr;
 $String* ShellFolder::COLUMN_DATE = nullptr;
 $ShellFolderManager* ShellFolder::shellFolderManager = nullptr;
 $ShellFolder$Invoker* ShellFolder::invoker = nullptr;
-
 $Comparator* ShellFolder::DEFAULT_COMPARATOR = nullptr;
 $Comparator* ShellFolder::FILE_COMPARATOR = nullptr;
 
@@ -412,12 +396,12 @@ $ShellFolderColumnInfoArray* ShellFolder::getFolderColumns($File* dir) {
 		$assign(columns, $nc(($cast(ShellFolder, dir)))->getFolderColumns());
 	}
 	if (columns == nullptr) {
-			$var($String, var$0, ShellFolder::COLUMN_NAME);
-			$var($Integer, var$1, $Integer::valueOf(150));
-			$var($String, var$2, ShellFolder::COLUMN_SIZE);
-			$var($Integer, var$3, $Integer::valueOf(75));
-			$var($String, var$4, ShellFolder::COLUMN_DATE);
-			$var($Integer, var$5, $Integer::valueOf(130));
+		$var($String, var$0, ShellFolder::COLUMN_NAME);
+		$var($Integer, var$1, $Integer::valueOf(150));
+		$var($String, var$2, ShellFolder::COLUMN_SIZE);
+		$var($Integer, var$3, $Integer::valueOf(75));
+		$var($String, var$4, ShellFolder::COLUMN_DATE);
+		$var($Integer, var$5, $Integer::valueOf(130));
 		$assign(columns, $new($ShellFolderColumnInfoArray, {
 			$$new($ShellFolderColumnInfo, var$0, var$1, $($Integer::valueOf($SwingConstants::LEADING)), true, nullptr, ShellFolder::FILE_COMPARATOR),
 			$$new($ShellFolderColumnInfo, var$2, var$3, $($Integer::valueOf($SwingConstants::RIGHT)), true, nullptr, ShellFolder::DEFAULT_COMPARATOR, true),
@@ -478,8 +462,7 @@ $Object* ShellFolder::invoke($Callable* task) {
 	try {
 		$load($RuntimeException);
 		return $of(invoke(task, $RuntimeException::class$));
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, e, $catch());
+	} catch ($InterruptedException& e) {
 		return $of(nullptr);
 	}
 	$shouldNotReachHere();
@@ -490,8 +473,7 @@ $Object* ShellFolder::invoke($Callable* task, $Class* exceptionClass) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		return $of($nc(ShellFolder::invoker)->invoke(task));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		if ($instanceOf($RuntimeException, e)) {
 			$throw($cast($RuntimeException, e));
 		}
@@ -526,12 +508,9 @@ void clinit$ShellFolder($Class* class$) {
 			if (!$ShellFolderManager::class$->isAssignableFrom(managerClass)) {
 				managerClass = nullptr;
 			}
-		} catch ($ClassNotFoundException&) {
-			$catch();
-		} catch ($NullPointerException&) {
-			$catch();
-		} catch ($SecurityException&) {
-			$catch();
+		} catch ($ClassNotFoundException& e) {
+		} catch ($NullPointerException& e) {
+		} catch ($SecurityException& e) {
 		}
 		if (managerClass == nullptr) {
 			$load($ShellFolderManager);
@@ -539,8 +518,7 @@ void clinit$ShellFolder($Class* class$) {
 		}
 		try {
 			$assignStatic(ShellFolder::shellFolderManager, $cast($ShellFolderManager, $nc($($nc(managerClass)->getDeclaredConstructor($$new($ClassArray, 0))))->newInstance($$new($ObjectArray, 0))));
-		} catch ($ReflectiveOperationException&) {
-			$var($ReflectiveOperationException, e, $catch());
+		} catch ($ReflectiveOperationException& e) {
 			$throwNew($Error, $$str({"Could not instantiate Shell Folder Manager: "_s, $($nc(managerClass)->getName())}));
 		}
 		$assignStatic(ShellFolder::invoker, $nc(ShellFolder::shellFolderManager)->createInvoker());

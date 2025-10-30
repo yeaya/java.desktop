@@ -1,13 +1,5 @@
 #include <javax/swing/event/DocumentEvent$EventType.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/event/DocumentEvent.h>
 #include <jcpp.h>
 
@@ -64,11 +56,8 @@ $Object* allocate$DocumentEvent$EventType($Class* clazz) {
 	return $of($alloc(DocumentEvent$EventType));
 }
 
-
 DocumentEvent$EventType* DocumentEvent$EventType::INSERT = nullptr;
-
 DocumentEvent$EventType* DocumentEvent$EventType::REMOVE = nullptr;
-
 DocumentEvent$EventType* DocumentEvent$EventType::CHANGE = nullptr;
 
 void DocumentEvent$EventType::init$($String* s) {

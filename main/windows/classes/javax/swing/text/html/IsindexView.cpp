@@ -9,14 +9,6 @@
 #include <java/awt/event/ActionEvent.h>
 #include <java/awt/event/ActionListener.h>
 #include <java/io/IOException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/MalformedURLException.h>
 #include <java/net/URL.h>
 #include <java/net/URLEncoder.h>
@@ -169,10 +161,8 @@ void IsindexView::actionPerformed($ActionEvent* evt) {
 		$var($URL, url, $new($URL, $$str({action, "?"_s, data})));
 		$var($JEditorPane, pane, $cast($JEditorPane, getContainer()));
 		$nc(pane)->setPage(url);
-	} catch ($MalformedURLException&) {
-		$catch();
-	} catch ($IOException&) {
-		$catch();
+	} catch ($MalformedURLException& e1) {
+	} catch ($IOException& e2) {
 	}
 }
 

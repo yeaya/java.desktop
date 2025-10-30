@@ -3,20 +3,8 @@
 #include <com/sun/imageio/plugins/jpeg/DHTMarkerSegment.h>
 #include <com/sun/imageio/plugins/jpeg/JPEGBuffer.h>
 #include <com/sun/imageio/plugins/jpeg/MarkerSegment.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
 #include <java/lang/Cloneable.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/metadata/IIOInvalidTreeException.h>
 #include <javax/imageio/metadata/IIOMetadataNode.h>
 #include <javax/imageio/plugins/jpeg/JPEGHuffmanTable.h>
@@ -153,8 +141,7 @@ $Object* DHTMarkerSegment$Htable::clone() {
 	$var(DHTMarkerSegment$Htable, newGuy, nullptr);
 	try {
 		$assign(newGuy, $cast(DHTMarkerSegment$Htable, $Cloneable::clone()));
-	} catch ($CloneNotSupportedException&) {
-		$catch();
+	} catch ($CloneNotSupportedException& e) {
 	}
 	if (this->numCodes != nullptr) {
 		$set($nc(newGuy), numCodes, $cast($shorts, $nc(this->numCodes)->clone()));
@@ -176,7 +163,6 @@ $IIOMetadataNode* DHTMarkerSegment$Htable::getNativeNode() {
 
 void DHTMarkerSegment$Htable::print() {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println("Huffman Table"_s);
 	$nc($System::out)->println($$str({"table class: "_s, ((this->tableClass == 0) ? "DC"_s : "AC"_s)}));
 	$nc($System::out)->println($$str({"table id: "_s, $($Integer::toString(this->tableID))}));

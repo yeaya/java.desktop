@@ -1,15 +1,6 @@
 #include <bug7032791.h>
 
 #include <java/awt/Component.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTable.h>
 #include <javax/swing/LookAndFeel.h>
 #include <javax/swing/UIManager.h>
@@ -56,10 +47,8 @@ void bug7032791::main($StringArray* args) {
 	$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($SynthLookAndFeel)));
 	$var($Object, value, "Test value"_s);
 	$var($JTable, table, $new($JTable, 1, 1));
-	$load($Object);
 	$var($TableCellRenderer, renderer, table->getDefaultRenderer($Object::class$));
 	$nc(renderer)->getTableCellRendererComponent(nullptr, value, true, true, 0, 0);
-	$init($System);
 	$nc($System::out)->println("OK"_s);
 }
 

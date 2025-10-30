@@ -1,15 +1,6 @@
 #include <javax/swing/plaf/metal/MetalFontDesktopProperty.h>
 
 #include <java/awt/Font.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/plaf/metal/DefaultMetalTheme.h>
 #include <sun/swing/plaf/DesktopProperty.h>
 #include <jcpp.h>
@@ -53,7 +44,6 @@ $ClassInfo _MetalFontDesktopProperty_ClassInfo_ = {
 $Object* allocate$MetalFontDesktopProperty($Class* clazz) {
 	return $of($alloc(MetalFontDesktopProperty));
 }
-
 
 $StringArray* MetalFontDesktopProperty::propertyMapping = nullptr;
 

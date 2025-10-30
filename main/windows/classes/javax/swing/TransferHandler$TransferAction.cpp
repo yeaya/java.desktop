@@ -7,15 +7,7 @@
 #include <java/awt/datatransfer/Clipboard.h>
 #include <java/awt/datatransfer/Transferable.h>
 #include <java/awt/event/ActionEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessControlContext.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
@@ -144,7 +136,6 @@ void TransferHandler$TransferAction::finalize() {
 }
 
 $JavaSecurityAccess* TransferHandler$TransferAction::javaSecurityAccess = nullptr;
-
 $Object* TransferHandler$TransferAction::SandboxClipboardKey = nullptr;
 
 void TransferHandler$TransferAction::init$($String* name) {
@@ -189,8 +180,7 @@ void TransferHandler$TransferAction::actionPerformedImpl($ActionEvent* e) {
 					$assign(trans, clipboard->getContents(nullptr));
 				}
 			}
-		} catch ($IllegalStateException&) {
-			$var($IllegalStateException, ise, $catch());
+		} catch ($IllegalStateException& ise) {
 			$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(c);
 			return;
 		}

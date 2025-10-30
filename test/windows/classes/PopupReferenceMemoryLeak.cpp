@@ -9,30 +9,14 @@
 #include <java/awt/event/ActionListener.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <javax/swing/AbstractAction.h>
 #include <javax/swing/Action.h>
@@ -194,7 +178,6 @@ void PopupReferenceMemoryLeak::main($StringArray* args) {
 			$var($UIManager$LookAndFeelInfo, laf, arr$->get(i$));
 			{
 				$var($String, lafName, $nc(laf)->getName());
-				$init($System);
 				$nc($System::out)->println($$str({"Testing LaF: "_s, lafName}));
 				if (lafName == nullptr || $nc(lafName)->startsWith("Mac OS X"_s)) {
 					continue;
@@ -238,8 +221,7 @@ void PopupReferenceMemoryLeak::main($StringArray* args) {
 									while (true) {
 										gc->add($$new($ints, 0x000186A0));
 									}
-								} catch ($Throwable&) {
-									$catch();
+								} catch ($Throwable& ignore) {
 								}
 								$System::gc();
 								robot->waitForIdle();
@@ -266,8 +248,7 @@ void PopupReferenceMemoryLeak::main($StringArray* args) {
 										while (true) {
 											gc->add($$new($ints, 0x000186A0));
 										}
-									} catch ($Throwable&) {
-										$catch();
+									} catch ($Throwable& ignore) {
 									}
 									robot->waitForIdle();
 									$Thread::sleep(1000);
@@ -278,12 +259,11 @@ void PopupReferenceMemoryLeak::main($StringArray* args) {
 								}
 								$throwNew($RuntimeException, "Test finished but menu has not cleared the reference!"_s);
 							}
-						} catch ($Exception&) {
-							$var($Exception, re, $catch());
+						} catch ($Exception& re) {
 							$throwNew($RuntimeException, $(re->getLocalizedMessage()));
 						}
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$1) {
+						$assign(var$0, var$1);
 					} /*finally*/ {
 						$init(PopupReferenceMemoryLeak);
 						if (PopupReferenceMemoryLeak::frame2 != nullptr) {
@@ -304,12 +284,9 @@ void PopupReferenceMemoryLeak::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($UnsupportedLookAndFeelException, ignored, $catch());
-		$init($System);
+	} catch ($UnsupportedLookAndFeelException& ignored) {
 		$nc($System::out)->println($$str({"Unsupported LookAndFeel: "_s, $($nc(laf)->getClassName())}));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }

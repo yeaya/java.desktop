@@ -5,15 +5,7 @@
 #include <java/awt/Font.h>
 #include <java/awt/HeadlessException.h>
 #include <java/awt/Toolkit.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/LayoutStyle.h>
 #include <javax/swing/LookAndFeel.h>
 #include <javax/swing/plaf/FontUIResource.h>
@@ -98,8 +90,7 @@ $Object* WindowsLookAndFeel$WindowsFontProperty::configureValue(Object$* value) 
 			int32_t dpi = 0;
 			try {
 				dpi = $nc($($Toolkit::getDefaultToolkit()))->getScreenResolution();
-			} catch ($HeadlessException&) {
-				$var($HeadlessException, ex, $catch());
+			} catch ($HeadlessException& ex) {
 				dpi = 96;
 			}
 			if ($Math::round(size * 72.0f / dpi) < 8) {

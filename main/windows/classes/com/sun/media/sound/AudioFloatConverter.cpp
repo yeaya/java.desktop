@@ -23,15 +23,6 @@
 #include <com/sun/media/sound/AudioFloatConverter$AudioFloatConversion8S.h>
 #include <com/sun/media/sound/AudioFloatConverter$AudioFloatConversion8U.h>
 #include <com/sun/media/sound/AudioFloatConverter$AudioFloatLSBFilter.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/AudioFormat$Encoding.h>
 #include <javax/sound/sampled/AudioFormat.h>
 #include <jcpp.h>

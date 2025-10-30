@@ -8,26 +8,12 @@
 #include <java/awt/event/WindowListener.h>
 #include <java/awt/print/Printable.h>
 #include <java/awt/print/PrinterJob.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/NumberFormatException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/MessageFormat.h>
 #include <java/util/concurrent/atomic/AtomicBoolean.h>
 #include <javax/swing/AbstractAction.h>
@@ -207,11 +193,9 @@ void PrintingStatus::showModal(bool isModal) {
 	} else {
 		try {
 			$SwingUtilities::invokeAndWait($$new($PrintingStatus$3, this, isModal));
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, e, $catch());
+		} catch ($InterruptedException& e) {
 			$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-		} catch ($InvocationTargetException&) {
-			$var($InvocationTargetException, e, $catch());
+		} catch ($InvocationTargetException& e) {
 			$var($Throwable, cause, e->getCause());
 			if ($instanceOf($RuntimeException, cause)) {
 				$throw($cast($RuntimeException, cause));
@@ -269,8 +253,7 @@ int32_t PrintingStatus::getInt(Object$* key, int32_t defaultValue) {
 	if ($instanceOf($String, value)) {
 		try {
 			return $Integer::parseInt($cast($String, value));
-		} catch ($NumberFormatException&) {
-			$catch();
+		} catch ($NumberFormatException& nfe) {
 		}
 	}
 	return defaultValue;

@@ -1,16 +1,6 @@
 #include <bug4331767$BrokenUIDefaults.h>
 
 #include <bug4331767.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/swing/UIDefaults.h>
 #include <jcpp.h>
@@ -69,7 +59,6 @@ void bug4331767$BrokenUIDefaults::init$($UIDefaults* def) {
 
 $Object* bug4331767$BrokenUIDefaults::get(Object$* key) {
 	if ("ButtonUI"_s->equals(key)) {
-		$init($System);
 		$nc($System::err)->println("[II]  Called BrokenUIDefaults.get(Object)"_s);
 		return $of("a nonexistent class"_s);
 	}
@@ -78,7 +67,6 @@ $Object* bug4331767$BrokenUIDefaults::get(Object$* key) {
 
 $Object* bug4331767$BrokenUIDefaults::get(Object$* key, $Locale* l) {
 	if ("ButtonUI"_s->equals(key)) {
-		$init($System);
 		$nc($System::err)->println("[II]  Called BrokenUIDefaults.get(Object, Locale)"_s);
 		return $of("a nonexistent class"_s);
 	}
@@ -86,7 +74,6 @@ $Object* bug4331767$BrokenUIDefaults::get(Object$* key, $Locale* l) {
 }
 
 void bug4331767$BrokenUIDefaults::getUIError($String* msg) {
-	$init($System);
 	$nc($System::err)->println("[II]  BrokenUIDefaults.getUIError() called, test passes"_s);
 	$init($bug4331767);
 	$bug4331767::passed = true;

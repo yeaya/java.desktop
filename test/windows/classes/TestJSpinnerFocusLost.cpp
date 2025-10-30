@@ -9,35 +9,19 @@
 #include <java/awt/event/FocusEvent.h>
 #include <java/awt/event/FocusListener.h>
 #include <java/awt/event/InputEvent.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
 #include <java/lang/IllegalStateException.h>
 #include <java/lang/InstantiationException.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/ReflectiveOperationException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractSpinnerModel.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFormattedTextField.h>
@@ -363,17 +347,14 @@ $Robot* TestJSpinnerFocusLost::robot = nullptr;
 
 void TestJSpinnerFocusLost::blockTillDisplayed($Component* comp) {
 	$init(TestJSpinnerFocusLost);
-	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	while (p == nullptr) {
 		try {
 			$assign(p, $nc(comp)->getLocationOnScreen());
-		} catch ($IllegalStateException&) {
-			$var($IllegalStateException, e, $catch());
+		} catch ($IllegalStateException& e) {
 			try {
 				$Thread::sleep(1000);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& ie) {
 			}
 		}
 	}
@@ -411,12 +392,10 @@ void TestJSpinnerFocusLost::doTest() {
 				$of(this)->wait(2000);
 			}
 		}
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		ex->printStackTrace();
 	}
 	if ($nc(($cast($Integer, $($nc(this->spinner)->getValue()))))->intValue() != 11) {
-		$init($System);
 		$nc($System::out)->println($$str({"spinner value "_s, $$str($nc(($cast($Integer, $($nc(this->spinner)->getValue()))))->intValue())}));
 		$throwNew($RuntimeException, "Spinner value shouldn\'t be other than 11"_s);
 	}
@@ -454,18 +433,13 @@ void TestJSpinnerFocusLost::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($UnsupportedLookAndFeelException, ignored, $catch());
-		$init($System);
+	} catch ($UnsupportedLookAndFeelException& ignored) {
 		$nc($System::out)->println($$str({"Unsupported L&F: "_s, $($nc(laf)->getClassName())}));
-	} catch ($ClassNotFoundException&) {
-		$var($ReflectiveOperationException, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($InstantiationException&) {
-		$var($ReflectiveOperationException, e, $catch());
+	} catch ($InstantiationException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($IllegalAccessException&) {
-		$var($ReflectiveOperationException, e, $catch());
+	} catch ($IllegalAccessException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }
@@ -483,7 +457,6 @@ void TestJSpinnerFocusLost::main($StringArray* argv) {
 		for (; i$ < len$; ++i$) {
 			$var($UIManager$LookAndFeelInfo, laf, arr$->get(i$));
 			{
-				$init($System);
 				$nc($System::out)->println($$str({"Testing L&F: "_s, $($nc(laf)->getClassName())}));
 				$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestJSpinnerFocusLost$$Lambda$lambda$main$2$2, laf)));
 				{
@@ -493,8 +466,8 @@ void TestJSpinnerFocusLost::main($StringArray* argv) {
 						$nc(TestJSpinnerFocusLost::robot)->waitForIdle();
 						$nc(TestJSpinnerFocusLost::b)->doTest();
 						$nc(TestJSpinnerFocusLost::robot)->delay(500);
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$1) {
+						$assign(var$0, var$1);
 					} /*finally*/ {
 						$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestJSpinnerFocusLost$$Lambda$lambda$main$4$4)));
 					}

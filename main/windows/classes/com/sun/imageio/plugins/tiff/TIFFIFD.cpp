@@ -2,21 +2,7 @@
 
 #include <com/sun/imageio/plugins/tiff/TIFFIFD$TIFFIFDEntry.h>
 #include <java/io/EOFException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/charset/Charset.h>
 #include <java/nio/charset/StandardCharsets.h>
 #include <java/util/AbstractList.h>
@@ -1096,8 +1082,7 @@ void TIFFIFD::initialize($ImageInputStream* stream, bool isPrimaryIFD, bool igno
 		int32_t sizeOfType = 0;
 		try {
 			sizeOfType = $TIFFTag::getSizeOfType(type);
-		} catch ($IllegalArgumentException&) {
-			$var($IllegalArgumentException, ignored, $catch());
+		} catch ($IllegalArgumentException& ignored) {
 			stream->skipBytes(4);
 			continue;
 		}
@@ -1144,8 +1129,7 @@ void TIFFIFD::initialize($ImageInputStream* stream, bool isPrimaryIFD, bool igno
 			try {
 				count = readFieldValue(stream, type, count, entryData);
 				$assign(obj, entryData->get(0));
-			} catch ($EOFException&) {
-				$var($EOFException, eofe, $catch());
+			} catch ($EOFException& eofe) {
 				if ($nc($($BaselineTIFFTagSet::getInstance()))->getTag(tagNumber) == nullptr) {
 					$throw(eofe);
 				}
@@ -1189,8 +1173,7 @@ void TIFFIFD::initialize($ImageInputStream* stream, bool isPrimaryIFD, bool igno
 						try {
 							count = readFieldValue(stream, type, count, fieldData);
 							$assign(obj, fieldData->get(0));
-						} catch ($EOFException&) {
-							$var($EOFException, eofe, $catch());
+						} catch ($EOFException& eofe) {
 							if ($nc($($BaselineTIFFTagSet::getInstance()))->getTag(tagNumber) != nullptr) {
 								$throw(eofe);
 							}
@@ -1367,8 +1350,7 @@ TIFFIFD* TIFFIFD::getShallowClone() {
 				default:
 					{}
 				}
-			} catch ($Exception&) {
-				$catch();
+			} catch ($Exception& e) {
 			}
 			$var($TIFFTag, var$0, field->getTag());
 			int32_t var$1 = fieldType;

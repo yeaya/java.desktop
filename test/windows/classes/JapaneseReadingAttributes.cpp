@@ -17,27 +17,13 @@
 #include <java/awt/event/KeyEvent.h>
 #include <java/awt/event/WindowAdapter.h>
 #include <java/awt/event/WindowListener.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <javax/swing/AbstractButton.h>
@@ -367,7 +353,6 @@ void JapaneseReadingAttributes::main($StringArray* args) {
 		glyphTest();
 		$nc(JapaneseReadingAttributes::frame)->dispose();
 		if (JapaneseReadingAttributes::testPassed) {
-			$init($System);
 			$nc($System::out)->println(JapaneseReadingAttributes::testResult);
 		} else {
 			$throwNew($RuntimeException, JapaneseReadingAttributes::testResult);
@@ -476,7 +461,6 @@ void JapaneseReadingAttributes::enterInput($Robot* robotKeyInput, $ArrayList* ke
 		robotKeyInput->keyRelease(keyToUse);
 		$plusAssign(strKeyInput, $$str({($($Integer::toHexString(keyToUse))), ":"_s}));
 	}
-	$init($System);
 	$nc($System::out)->println(strKeyInput);
 }
 

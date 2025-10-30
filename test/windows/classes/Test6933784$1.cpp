@@ -3,17 +3,6 @@
 #include <Test6933784.h>
 #include <java/io/Reader.h>
 #include <java/io/StringReader.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/text/AbstractDocument.h>
 #include <javax/swing/text/DefaultStyledDocument.h>
@@ -89,8 +78,7 @@ void Test6933784$1::run() {
 	$var($HTMLDocument, doc, $new($HTMLDocument));
 	try {
 		c->read(static_cast<$Reader*>($$new($StringReader, "<HTML><TITLE>Test</TITLE><BODY><IMG id=test></BODY></HTML>"_s)), static_cast<$Document*>(static_cast<$AbstractDocument*>(static_cast<$DefaultStyledDocument*>(doc))), 0);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, "The test failed"_s, e);
 	}
 	$var($Element, elem, doc->getElement("test"_s));

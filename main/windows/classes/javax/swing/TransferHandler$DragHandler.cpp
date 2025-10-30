@@ -12,15 +12,6 @@
 #include <java/awt/dnd/DragSourceDropEvent.h>
 #include <java/awt/dnd/DragSourceEvent.h>
 #include <java/awt/dnd/DragSourceListener.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/TransferHandler.h>
 #include <jcpp.h>
@@ -133,8 +124,7 @@ void TransferHandler$DragHandler::dragGestureRecognized($DragGestureEvent* dge) 
 				dge->startDrag(nullptr, im, $(th->getDragImageOffset()), t, this);
 			}
 			return;
-		} catch ($RuntimeException&) {
-			$var($RuntimeException, re, $catch());
+		} catch ($RuntimeException& re) {
 			c->setAutoscrolls(this->scrolls);
 		}
 	}

@@ -6,19 +6,8 @@
 #include <java/awt/Rectangle.h>
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JCheckBox.h>
@@ -107,7 +96,6 @@ void Test7024235::main($StringArray* args) {
 			$var($UIManager$LookAndFeelInfo, info, arr$->get(i$));
 			{
 				$var($String, className, $nc(info)->getClassName());
-				$init($System);
 				$nc($System::out)->println($$str({"className = "_s, className}));
 				$UIManager::setLookAndFeel(className);
 				test->test();
@@ -115,8 +103,7 @@ void Test7024235::main($StringArray* args) {
 					$var($Robot, robot, $new($Robot));
 					robot->waitForIdle();
 					robot->delay(1000);
-				} catch ($Exception&) {
-					$var($Exception, ex, $catch());
+				} catch ($Exception& ex) {
 					ex->printStackTrace();
 					$throwNew($Error, "Unexpected Failure"_s);
 				}
@@ -168,7 +155,6 @@ void Test7024235::test($String* step) {
 		int32_t centerY = bounds->y + bounds->height / 2;
 		int32_t actual = $nc(this->pane)->indexAtLocation(centerX, centerY);
 		if (index != actual) {
-			$init($System);
 			$nc($System::out)->println($$str({"name = "_s, $($nc($($UIManager::getLookAndFeel()))->getName())}));
 			$nc($System::out)->println($$str({"step = "_s, step}));
 			$nc($System::out)->println($$str({"index = "_s, $$str(index)}));

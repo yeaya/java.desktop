@@ -8,20 +8,9 @@
 #include <java/beans/NameGenerator.h>
 #include <java/beans/PropertyDescriptor.h>
 #include <java/beans/Transient.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/Void.h>
 #include <java/lang/annotation/Annotation.h>
 #include <java/lang/ref/Reference.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <java/util/Map$Entry.h>
 #include <jcpp.h>
@@ -214,8 +203,7 @@ $Method* IndexedPropertyDescriptor::getIndexedWriteMethod() {
 				try {
 					type = findIndexedPropertyType($(getIndexedReadMethod()), nullptr);
 					setIndexedPropertyType(type);
-				} catch ($IntrospectionException&) {
-					$var($IntrospectionException, ex, $catch());
+				} catch ($IntrospectionException& ex) {
 					$Class* propType = getPropertyType();
 					if ($nc(propType)->isArray()) {
 						type = propType->getComponentType();
@@ -226,7 +214,7 @@ $Method* IndexedPropertyDescriptor::getIndexedWriteMethod() {
 				$init($Introspector);
 				$set(this, indexedWriteMethodName, $str({$Introspector::SET_PREFIX, $(getBaseName())}));
 			}
-				$init($Integer);
+			$init($Integer);
 			$var($ClassArray, args, (type == nullptr) ? ($ClassArray*)nullptr : $new($ClassArray, {
 				$Integer::TYPE,
 				type
@@ -273,8 +261,7 @@ $Class* IndexedPropertyDescriptor::getIndexedPropertyType() {
 				$var($Method, var$0, getIndexedReadMethod());
 				type = findIndexedPropertyType(var$0, $(getIndexedWriteMethod()));
 				setIndexedPropertyType(type);
-			} catch ($IntrospectionException&) {
-				$catch();
+			} catch ($IntrospectionException& ex) {
 			}
 		}
 		return type;
@@ -387,8 +374,7 @@ void IndexedPropertyDescriptor::init$($PropertyDescriptor* x, $PropertyDescripto
 		if (tw != nullptr) {
 			setIndexedWriteMethod(tw);
 		}
-	} catch ($IntrospectionException&) {
-		$var($IntrospectionException, ex, $catch());
+	} catch ($IntrospectionException& ex) {
 		$throwNew($AssertionError, $of(ex));
 	}
 }
@@ -411,8 +397,7 @@ void IndexedPropertyDescriptor::updateGenericsFor($Class* type) {
 	try {
 		$var($Method, var$0, $nc(this->indexedReadMethodRef)->get());
 		setIndexedPropertyType(findIndexedPropertyType(var$0, $($nc(this->indexedWriteMethodRef)->get())));
-	} catch ($IntrospectionException&) {
-		$var($IntrospectionException, exception, $catch());
+	} catch ($IntrospectionException& exception) {
 		setIndexedPropertyType(nullptr);
 	}
 }

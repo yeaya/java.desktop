@@ -4,20 +4,9 @@
 #include <java/awt/Toolkit.h>
 #include <java/awt/font/TextAttribute.h>
 #include <java/awt/im/InputMethodHighlight.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchMethodError.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/Annotation.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/util/AbstractMap.h>
@@ -324,8 +313,7 @@ $Map* StyledParagraph::addInputMethodAttrs($Map* oldStyles) {
 			$var($Map, imStyles, nullptr);
 			try {
 				$assign(imStyles, hl->getStyle());
-			} catch ($NoSuchMethodError&) {
-				$catch();
+			} catch ($NoSuchMethodError& e) {
 			}
 			if (imStyles == nullptr) {
 				$var($Toolkit, tk, $Toolkit::getDefaultToolkit());
@@ -338,8 +326,7 @@ $Map* StyledParagraph::addInputMethodAttrs($Map* oldStyles) {
 				return newStyles;
 			}
 		}
-	} catch ($ClassCastException&) {
-		$catch();
+	} catch ($ClassCastException& e) {
 	}
 	return oldStyles;
 }

@@ -1,17 +1,9 @@
 #include <Test5062055.h>
 
 #include <java/awt/Dimension.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JEditorPane.h>
 #include <javax/swing/SwingUtilities.h>
@@ -53,12 +45,10 @@ void Test5062055::init$() {
 
 void Test5062055::main($StringArray* argv) {
 	$init(Test5062055);
-	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeLater($$new(Test5062055));
 	try {
 		$Thread::sleep(5000);
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, ex, $catch());
+	} catch ($InterruptedException& ex) {
 		$throwNew($Error, "Wait interrupted"_s);
 	}
 }

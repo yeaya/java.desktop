@@ -7,16 +7,6 @@
 #include <com/sun/media/sound/ModelWavetable.h>
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/AudioFileFormat.h>
 #include <javax/sound/sampled/AudioFormat$Encoding.h>
 #include <javax/sound/sampled/AudioFormat.h>
@@ -182,13 +172,11 @@ $AudioFormat* ModelByteBufferWavetable::getFormat() {
 		$var($AudioFormat, format, nullptr);
 		try {
 			$assign(format, $nc($($AudioSystem::getAudioFileFormat(is)))->getFormat());
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& e) {
 		}
 		try {
 			$nc(is)->close();
-		} catch ($IOException&) {
-			$catch();
+		} catch ($IOException& e) {
 		}
 		return format;
 	}
@@ -205,8 +193,7 @@ $AudioFloatInputStream* ModelByteBufferWavetable::openStream() {
 		$var($AudioInputStream, ais, nullptr);
 		try {
 			$assign(ais, $AudioSystem::getAudioInputStream(is));
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			return nullptr;
 		}
 		return $AudioFloatInputStream::getInputStream(ais);

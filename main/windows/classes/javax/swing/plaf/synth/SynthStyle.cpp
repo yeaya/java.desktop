@@ -4,16 +4,7 @@
 #include <java/awt/Component.h>
 #include <java/awt/Font.h>
 #include <java/awt/Insets.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/HashMap.h>
 #include <java/util/Map.h>
@@ -138,9 +129,7 @@ $Object* allocate$SynthStyle($Class* clazz) {
 	return $of($alloc(SynthStyle));
 }
 
-
 $Map* SynthStyle::DEFAULT_VALUES = nullptr;
-
 $SynthGraphicsUtils* SynthStyle::SYNTH_GRAPHICS = nullptr;
 
 void SynthStyle::populateDefaultValues() {
@@ -162,7 +151,7 @@ void SynthStyle::populateDefaultValues() {
 	$nc(SynthStyle::DEFAULT_VALUES)->put("Tree.dropLineColor"_s, $Color::BLACK);
 	$nc(SynthStyle::DEFAULT_VALUES)->put("Table.dropLineColor"_s, $Color::BLACK);
 	$nc(SynthStyle::DEFAULT_VALUES)->put("Table.dropLineShortColor"_s, $Color::RED);
-		$init($DefaultEditorKit);
+	$init($DefaultEditorKit);
 	$var($Object, multilineInputMap, $new($UIDefaults$LazyInputMap, $$new($ObjectArray, {
 		$of("ctrl C"_s),
 		$of($DefaultEditorKit::copyAction),
@@ -290,7 +279,7 @@ void SynthStyle::populateDefaultValues() {
 	$nc(SynthStyle::DEFAULT_VALUES)->put("EditorPane.focusInputMap"_s, multilineInputMap);
 	$nc(SynthStyle::DEFAULT_VALUES)->put("TextArea.focusInputMap"_s, multilineInputMap);
 	$nc(SynthStyle::DEFAULT_VALUES)->put("TextPane.focusInputMap"_s, multilineInputMap);
-		$init($JTextField);
+	$init($JTextField);
 	$var($Object, fieldInputMap, $new($UIDefaults$LazyInputMap, $$new($ObjectArray, {
 		$of("ctrl C"_s),
 		$of($DefaultEditorKit::copyAction),

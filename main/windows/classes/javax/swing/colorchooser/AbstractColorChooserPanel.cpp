@@ -5,19 +5,7 @@
 #include <java/awt/Container.h>
 #include <java/awt/Graphics.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/JColorChooser.h>
@@ -118,7 +106,6 @@ $Object* allocate$AbstractColorChooserPanel($Class* clazz) {
 	return $of($alloc(AbstractColorChooserPanel));
 }
 
-
 $String* AbstractColorChooserPanel::TRANSPARENCY_ENABLED_PROPERTY = nullptr;
 
 void AbstractColorChooserPanel::init$() {
@@ -186,8 +173,7 @@ int32_t AbstractColorChooserPanel::getInt(Object$* key, int32_t defaultValue) {
 	if ($instanceOf($String, value)) {
 		try {
 			return $Integer::parseInt($cast($String, value));
-		} catch ($NumberFormatException&) {
-			$catch();
+		} catch ($NumberFormatException& nfe) {
 		}
 	}
 	return defaultValue;

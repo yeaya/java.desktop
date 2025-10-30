@@ -15,20 +15,8 @@
 #include <java/io/File.h>
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/MalformedURLException.h>
 #include <java/net/URL.h>
 #include <java/net/URLConnection.h>
@@ -149,7 +137,6 @@ $Object* allocate$SplashScreen($Class* clazz) {
 
 bool SplashScreen::$assertionsDisabled = false;
 bool SplashScreen::wasClosed = false;
-
 SplashScreen* SplashScreen::theInstance = nullptr;
 $PlatformLogger* SplashScreen::log = nullptr;
 
@@ -234,8 +221,7 @@ $URL* SplashScreen::getImageURL() {
 						$set(this, imageURL, $$new($File, fileName)->toURL());
 					}
 				}
-			} catch ($MalformedURLException&) {
-				$var($MalformedURLException, e, $catch());
+			} catch ($MalformedURLException& e) {
 				$init($PlatformLogger$Level);
 				if ($nc(SplashScreen::log)->isLoggable($PlatformLogger$Level::FINE)) {
 					$nc(SplashScreen::log)->fine("MalformedURLException caught in the getImageURL() method"_s, static_cast<$Throwable*>(e));

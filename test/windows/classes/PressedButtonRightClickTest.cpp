@@ -11,17 +11,7 @@
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/InputEvent.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/ButtonModel.h>
 #include <javax/swing/JButton.h>
@@ -107,13 +97,11 @@ void PressedButtonRightClickTest::init$() {
 }
 
 void PressedButtonRightClickTest::main($StringArray* args) {
-	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait($$new($PressedButtonRightClickTest$1));
 	try {
 		$init(PressedButtonRightClickTest);
 		$assignStatic(PressedButtonRightClickTest::testRobot, $new($Robot));
-	} catch ($AWTException&) {
-		$var($AWTException, ex, $catch());
+	} catch ($AWTException& ex) {
 		$throwNew($RuntimeException, "Exception in Robot creation"_s);
 	}
 	$init(PressedButtonRightClickTest);

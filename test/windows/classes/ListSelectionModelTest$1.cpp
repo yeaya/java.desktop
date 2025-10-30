@@ -1,17 +1,6 @@
 #include <ListSelectionModelTest$1.h>
 
 #include <ListSelectionModelTest.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/UIManager$LookAndFeelInfo.h>
 #include <jcpp.h>
 
@@ -73,11 +62,9 @@ void ListSelectionModelTest$1::init$($UIManager$LookAndFeelInfo* val$lookAndFeel
 }
 
 void ListSelectionModelTest$1::run() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$ListSelectionModelTest::CreateGUIAndTest($($nc(this->val$lookAndFeelInfo)->getClassName()));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		e->printStackTrace();
 		$throwNew($RuntimeException, "Exception while running test"_s);
 	}

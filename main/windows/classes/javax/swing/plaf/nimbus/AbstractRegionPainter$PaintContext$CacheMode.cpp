@@ -1,15 +1,6 @@
 #include <javax/swing/plaf/nimbus/AbstractRegionPainter$PaintContext$CacheMode.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/plaf/nimbus/AbstractRegionPainter$PaintContext.h>
 #include <javax/swing/plaf/nimbus/AbstractRegionPainter.h>
 #include <jcpp.h>
@@ -74,11 +65,8 @@ $Object* allocate$AbstractRegionPainter$PaintContext$CacheMode($Class* clazz) {
 	return $of($alloc(AbstractRegionPainter$PaintContext$CacheMode));
 }
 
-
 AbstractRegionPainter$PaintContext$CacheMode* AbstractRegionPainter$PaintContext$CacheMode::NO_CACHING = nullptr;
-
 AbstractRegionPainter$PaintContext$CacheMode* AbstractRegionPainter$PaintContext$CacheMode::FIXED_SIZES = nullptr;
-
 AbstractRegionPainter$PaintContext$CacheMode* AbstractRegionPainter$PaintContext$CacheMode::NINE_SQUARE_SCALE = nullptr;
 $AbstractRegionPainter$PaintContext$CacheModeArray* AbstractRegionPainter$PaintContext$CacheMode::$VALUES = nullptr;
 

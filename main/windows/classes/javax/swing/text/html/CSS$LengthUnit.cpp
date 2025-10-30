@@ -1,16 +1,6 @@
 #include <javax/swing/text/html/CSS$LengthUnit.h>
 
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Hashtable.h>
 #include <javax/swing/text/html/CSS.h>
 #include <jcpp.h>
@@ -97,8 +87,7 @@ void CSS$LengthUnit::parse($String* value, int16_t defaultType, float defaultVal
 		try {
 			this->value = $Float::parseFloat($(value->substring(0, length - 1))) / 100.0f;
 			this->type = (int16_t)1;
-		} catch ($NumberFormatException&) {
-			$catch();
+		} catch ($NumberFormatException& nfe) {
 		}
 	} else if (length >= 2) {
 		$set(this, units, value->substring(length - 2, length));
@@ -107,8 +96,7 @@ void CSS$LengthUnit::parse($String* value, int16_t defaultType, float defaultVal
 			try {
 				this->value = $Float::parseFloat($(value->substring(0, length - 2)));
 				this->type = (int16_t)0;
-			} catch ($NumberFormatException&) {
-				$catch();
+			} catch ($NumberFormatException& nfe) {
 			}
 		} else {
 			bool var$1 = $nc(this->units)->equals("em"_s);
@@ -116,8 +104,7 @@ void CSS$LengthUnit::parse($String* value, int16_t defaultType, float defaultVal
 				try {
 					this->value = $Float::parseFloat($(value->substring(0, length - 2)));
 					this->type = (int16_t)3;
-				} catch ($NumberFormatException&) {
-					$catch();
+				} catch ($NumberFormatException& nfe) {
 				}
 			} else if (value->equals("larger"_s)) {
 				this->value = 2.0f;
@@ -129,8 +116,7 @@ void CSS$LengthUnit::parse($String* value, int16_t defaultType, float defaultVal
 				try {
 					this->value = $Float::parseFloat(value);
 					this->type = (int16_t)0;
-				} catch ($NumberFormatException&) {
-					$catch();
+				} catch ($NumberFormatException& nfe) {
 				}
 			}
 		}
@@ -138,8 +124,7 @@ void CSS$LengthUnit::parse($String* value, int16_t defaultType, float defaultVal
 		try {
 			this->value = $Float::parseFloat(value);
 			this->type = (int16_t)0;
-		} catch ($NumberFormatException&) {
-			$catch();
+		} catch ($NumberFormatException& nfe) {
 		}
 	}
 }

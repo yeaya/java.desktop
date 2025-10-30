@@ -2,25 +2,13 @@
 
 #include <CheckCommonUseCases$1.h>
 #include <java/awt/EventQueue.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <java/util/concurrent/atomic/AtomicInteger.h>
 #include <javax/swing/JPasswordField.h>
@@ -134,7 +122,6 @@ void CheckCommonUseCases::countListeners($JPasswordField* pf) {
 	bool var$1 = remove->get() != 0;
 	bool var$0 = var$1 || update->get() != 0;
 	if (var$0 || insert->get() > 1) {
-		$init($System);
 		$nc($System::err)->println($$str({"remove = "_s, remove}));
 		$nc($System::err)->println($$str({"update = "_s, update}));
 		$nc($System::err)->println($$str({"insert = "_s, insert}));
@@ -147,7 +134,6 @@ void CheckCommonUseCases::countListeners($JPasswordField* pf) {
 	bool var$3 = remove->get() > 1;
 	bool var$2 = var$3 || update->get() > 1;
 	if (var$2 || insert->get() > 1) {
-		$init($System);
 		$nc($System::err)->println($$str({"remove = "_s, remove}));
 		$nc($System::err)->println($$str({"update = "_s, update}));
 		$nc($System::err)->println($$str({"insert = "_s, insert}));
@@ -160,7 +146,6 @@ void CheckCommonUseCases::countListeners($JPasswordField* pf) {
 	bool var$5 = remove->get() > 1;
 	bool var$4 = var$5 || update->get() > 0;
 	if (var$4 || insert->get() > 0) {
-		$init($System);
 		$nc($System::err)->println($$str({"remove = "_s, remove}));
 		$nc($System::err)->println($$str({"update = "_s, update}));
 		$nc($System::err)->println($$str({"insert = "_s, insert}));
@@ -175,7 +160,6 @@ void CheckCommonUseCases::checkDifferentTextLength($JPasswordField* pf) {
 		$nc(pf)->setText(expected);
 		$var($String, actual, $Arrays::toString($(pf->getPassword())));
 		if ($nc(actual)->equals(expected)) {
-			$init($System);
 			$nc($System::err)->println($$str({"Expected: "_s, expected}));
 			$nc($System::err)->println($$str({"Actual: "_s, actual}));
 			$throwNew($RuntimeException);
@@ -186,7 +170,6 @@ void CheckCommonUseCases::checkDifferentTextLength($JPasswordField* pf) {
 		$nc(pf)->setText(expected);
 		$var($String, actual, $Arrays::toString($(pf->getPassword())));
 		if ($nc(actual)->equals(expected)) {
-			$init($System);
 			$nc($System::err)->println($$str({"Expected: "_s, expected}));
 			$nc($System::err)->println($$str({"Actual: "_s, actual}));
 			$throwNew($RuntimeException);

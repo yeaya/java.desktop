@@ -7,20 +7,7 @@
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
 #include <java/io/OutputStream.h>
-#include <java/io/PrintStream.h>
 #include <java/io/StringBufferInputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/AbstractList.h>
@@ -205,8 +192,7 @@ void DebugSettings::loadDefaultProperties() {
 			$nc(this->props)->load(static_cast<$InputStream*>(in));
 			in->close();
 		}
-	} catch ($IOException&) {
-		$catch();
+	} catch ($IOException& ioe) {
 	}
 }
 
@@ -225,11 +211,9 @@ void DebugSettings::loadFileProperties() {
 		$var($FileInputStream, fin, $new($FileInputStream, propFile));
 		$nc(this->props)->load(static_cast<$InputStream*>(fin));
 		fin->close();
-	} catch ($FileNotFoundException&) {
-		$var($FileNotFoundException, fne, $catch());
+	} catch ($FileNotFoundException& fne) {
 		println("Did not find settings file."_s);
-	} catch ($IOException&) {
-		$var($IOException, ioe, $catch());
+	} catch ($IOException& ioe) {
 		println($$str({"Problem reading settings, IOException: "_s, $(ioe->getMessage())}));
 	}
 }

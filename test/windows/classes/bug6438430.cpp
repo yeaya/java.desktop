@@ -1,16 +1,6 @@
 #include <bug6438430.h>
 
 #include <java/awt/Dimension.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JCheckBoxMenuItem.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JMenu.h>
@@ -59,7 +49,6 @@ void bug6438430::main($StringArray* args) {
 	menu1->add(static_cast<$JMenuItem*>(subMenu1));
 	checkBoxMenuItem1->getPreferredSize();
 	int32_t width1 = $nc($(subMenu1->getPreferredSize()))->width;
-	$init($System);
 	$nc($System::out)->println($$str({"width1 = "_s, $$str(width1)}));
 	$var($JMenu, subMenu2, $new($JMenu, "Long-titled Sub Menu"_s));
 	subMenu2->add($$new($JMenuItem, "SubMenu Item"_s));

@@ -6,13 +6,6 @@
 #include <java/awt/Shape.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/BadLocationException.h>
 #include <javax/swing/text/DefaultHighlighter$DefaultHighlightPainter.h>
 #include <javax/swing/text/JTextComponent.h>
@@ -104,8 +97,7 @@ $Shape* HTMLEditorKit$NavigateLinkAction$FocusHighlightPainter::paintLayer($Grap
 			$var($Rectangle, r, ($instanceOf($Rectangle, shape)) ? $cast($Rectangle, shape) : $nc(shape)->getBounds());
 			$nc(g)->drawRect($nc(r)->x, r->y, r->width - 1, r->height);
 			return r;
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& e) {
 		}
 	}
 	return nullptr;

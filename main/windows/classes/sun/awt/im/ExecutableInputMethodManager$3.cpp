@@ -1,16 +1,7 @@
 #include <sun/awt/im/ExecutableInputMethodManager$3.h>
 
 #include <java/awt/im/spi/InputMethodDescriptor.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Iterator.h>
 #include <java/util/Locale.h>
 #include <java/util/ServiceLoader.h>

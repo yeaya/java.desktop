@@ -8,18 +8,9 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/ReflectiveOperationException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Random.h>
 #include <javax/swing/JColorChooser.h>
 #include <jcpp.h>
@@ -78,14 +69,11 @@ void Test4165217::main($StringArray* args) {
 }
 
 $JColorChooser* Test4165217::copy($JColorChooser* chooser) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $cast($JColorChooser, deserialize($(serialize(chooser))));
-	} catch ($ClassNotFoundException&) {
-		$var($ClassNotFoundException, exception, $catch());
+	} catch ($ClassNotFoundException& exception) {
 		$throwNew($Error, "unexpected exception during class creation"_s, exception);
-	} catch ($IOException&) {
-		$var($IOException, exception, $catch());
+	} catch ($IOException& exception) {
 		$throwNew($Error, "unexpected exception during serialization"_s, exception);
 	}
 	$shouldNotReachHere();

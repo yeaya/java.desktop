@@ -3,20 +3,8 @@
 #include <com/sun/imageio/plugins/jpeg/JPEGBuffer.h>
 #include <com/sun/imageio/plugins/jpeg/MarkerSegment.h>
 #include <com/sun/imageio/plugins/jpeg/SOFMarkerSegment.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
 #include <java/lang/Cloneable.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/metadata/IIOMetadataNode.h>
 #include <org/w3c/dom/NamedNodeMap.h>
 #include <org/w3c/dom/Node.h>
@@ -115,8 +103,7 @@ void SOFMarkerSegment$ComponentSpec::init$($SOFMarkerSegment* this$0, $Node* nod
 $Object* SOFMarkerSegment$ComponentSpec::clone() {
 	try {
 		return $of($Cloneable::clone());
-	} catch ($CloneNotSupportedException&) {
-		$catch();
+	} catch ($CloneNotSupportedException& e) {
 	}
 	return $of(nullptr);
 }
@@ -132,7 +119,6 @@ $IIOMetadataNode* SOFMarkerSegment$ComponentSpec::getNativeNode() {
 }
 
 void SOFMarkerSegment$ComponentSpec::print() {
-	$init($System);
 	$nc($System::out)->print("Component ID: "_s);
 	$nc($System::out)->println(this->componentId);
 	$nc($System::out)->print("H sampling factor: "_s);

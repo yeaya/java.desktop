@@ -4,20 +4,10 @@
 #include <java/io/DataInputStream.h>
 #include <java/io/EOFException.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/OutOfMemoryError.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/VirtualMachineError.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/midi/InvalidMidiDataException.h>
 #include <javax/sound/midi/MetaMessage.h>
 #include <javax/sound/midi/MidiEvent.h>
@@ -119,15 +109,13 @@ int64_t SMFParser::readVarInt() {
 int32_t SMFParser::readIntFromStream() {
 	try {
 		return $nc(this->stream)->readInt();
-	} catch ($EOFException&) {
-		$var($EOFException, eof, $catch());
+	} catch ($EOFException& eof) {
 		$throwNew($EOFException, "invalid MIDI file"_s);
 	}
 	$shouldNotReachHere();
 }
 
 bool SMFParser::nextTrack() {
-	$useLocalCurrentObjectStackCache();
 	int32_t magic = 0;
 	this->trackLength = 0;
 	do {
@@ -147,14 +135,12 @@ bool SMFParser::nextTrack() {
 	}
 	try {
 		$set(this, trackData, $new($bytes, this->trackLength));
-	} catch ($OutOfMemoryError&) {
-		$var($OutOfMemoryError, oom, $catch());
+	} catch ($OutOfMemoryError& oom) {
 		$throwNew($IOException, "Track length too big"_s, oom);
 	}
 	try {
 		$nc(this->stream)->readFully(this->trackData);
-	} catch ($EOFException&) {
-		$var($EOFException, eof, $catch());
+	} catch ($EOFException& eof) {
 		{
 			return false;
 		}
@@ -242,8 +228,7 @@ void SMFParser::readTrack($Track* track) {
 								metaLength = (int32_t)readVarInt();
 								try {
 									$assign(metaData, $new($bytes, metaLength));
-								} catch ($OutOfMemoryError&) {
-									$var($OutOfMemoryError, oom, $catch());
+								} catch ($OutOfMemoryError& oom) {
 									$throwNew($IOException, "Meta length too big"_s, oom);
 								}
 								read(metaData);
@@ -270,8 +255,7 @@ void SMFParser::readTrack($Track* track) {
 			}
 			$nc(track)->add($$new($MidiEvent, message, tick));
 		}
-	} catch ($ArrayIndexOutOfBoundsException&) {
-		$var($ArrayIndexOutOfBoundsException, e, $catch());
+	} catch ($ArrayIndexOutOfBoundsException& e) {
 		$throwNew($EOFException, "invalid MIDI file"_s);
 	}
 }

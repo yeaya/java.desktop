@@ -8,30 +8,16 @@
 #include <java/io/FileNotFoundException.h>
 #include <java/io/IOException.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/AbstractList.h>
@@ -287,11 +273,9 @@ void Win32ShellFolderManager2::init$() {
 }
 
 $ShellFolder* Win32ShellFolderManager2::createShellFolder($File* file) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return createShellFolder($(getDesktop()), file);
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, e, $catch());
+	} catch ($InterruptedException& e) {
 		$throwNew($FileNotFoundException, "Execution was interrupted"_s);
 	}
 	$shouldNotReachHere();
@@ -303,8 +287,7 @@ $Win32ShellFolder2* Win32ShellFolderManager2::createShellFolder($Win32ShellFolde
 	int64_t pIDL = 0;
 	try {
 		pIDL = $nc(parent)->parseDisplayName($($nc(file)->getCanonicalPath()));
-	} catch ($IOException&) {
-		$var($IOException, ex, $catch());
+	} catch ($IOException& ex) {
 		pIDL = 0;
 	}
 	if (pIDL == 0) {
@@ -318,8 +301,8 @@ $Win32ShellFolder2* Win32ShellFolderManager2::createShellFolder($Win32ShellFolde
 			$assign(var$2, createShellFolderFromRelativePIDL(parent, pIDL));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$Win32ShellFolder2::releasePIDL(pIDL);
 		}
@@ -367,20 +350,16 @@ $Image* Win32ShellFolderManager2::getStandardViewButton(int32_t iconIndex) {
 
 $Win32ShellFolder2* Win32ShellFolderManager2::getDesktop() {
 	$init(Win32ShellFolderManager2);
-	$useLocalCurrentObjectStackCache();
 	if (Win32ShellFolderManager2::desktop == nullptr) {
 		try {
 			$assignStatic(Win32ShellFolderManager2::desktop, $new($Win32ShellFolder2, 0));
-		} catch ($SecurityException&) {
-			$catch();
-		} catch ($IOException&) {
-			$var($Exception, e, $catch());
+		} catch ($SecurityException& ignored) {
+		} catch ($IOException& e) {
 			$init($PlatformLogger$Level);
 			if ($nc(Win32ShellFolderManager2::log)->isLoggable($PlatformLogger$Level::WARNING)) {
 				$nc(Win32ShellFolderManager2::log)->warning("Cannot access \'Desktop\'"_s, static_cast<$Throwable*>(e));
 			}
-		} catch ($InterruptedException&) {
-			$var($Exception, e, $catch());
+		} catch ($InterruptedException& e) {
 			$init($PlatformLogger$Level);
 			if ($nc(Win32ShellFolderManager2::log)->isLoggable($PlatformLogger$Level::WARNING)) {
 				$nc(Win32ShellFolderManager2::log)->warning("Cannot access \'Desktop\'"_s, static_cast<$Throwable*>(e));
@@ -392,20 +371,16 @@ $Win32ShellFolder2* Win32ShellFolderManager2::getDesktop() {
 
 $Win32ShellFolder2* Win32ShellFolderManager2::getDrives() {
 	$init(Win32ShellFolderManager2);
-	$useLocalCurrentObjectStackCache();
 	if (Win32ShellFolderManager2::drives == nullptr) {
 		try {
 			$assignStatic(Win32ShellFolderManager2::drives, $new($Win32ShellFolder2, 17));
-		} catch ($SecurityException&) {
-			$catch();
-		} catch ($IOException&) {
-			$var($Exception, e, $catch());
+		} catch ($SecurityException& ignored) {
+		} catch ($IOException& e) {
 			$init($PlatformLogger$Level);
 			if ($nc(Win32ShellFolderManager2::log)->isLoggable($PlatformLogger$Level::WARNING)) {
 				$nc(Win32ShellFolderManager2::log)->warning("Cannot access \'Drives\'"_s, static_cast<$Throwable*>(e));
 			}
-		} catch ($InterruptedException&) {
-			$var($Exception, e, $catch());
+		} catch ($InterruptedException& e) {
 			$init($PlatformLogger$Level);
 			if ($nc(Win32ShellFolderManager2::log)->isLoggable($PlatformLogger$Level::WARNING)) {
 				$nc(Win32ShellFolderManager2::log)->warning("Cannot access \'Drives\'"_s, static_cast<$Throwable*>(e));
@@ -425,16 +400,13 @@ $Win32ShellFolder2* Win32ShellFolderManager2::getRecent() {
 				$var($Win32ShellFolder2, var$0, getDesktop());
 				$assignStatic(Win32ShellFolderManager2::recent, createShellFolder(var$0, $$new($File, path)));
 			}
-		} catch ($SecurityException&) {
-			$catch();
-		} catch ($InterruptedException&) {
-			$var($Exception, e, $catch());
+		} catch ($SecurityException& ignored) {
+		} catch ($InterruptedException& e) {
 			$init($PlatformLogger$Level);
 			if ($nc(Win32ShellFolderManager2::log)->isLoggable($PlatformLogger$Level::WARNING)) {
 				$nc(Win32ShellFolderManager2::log)->warning("Cannot access \'Recent\'"_s, static_cast<$Throwable*>(e));
 			}
-		} catch ($IOException&) {
-			$var($Exception, e, $catch());
+		} catch ($IOException& e) {
 			$init($PlatformLogger$Level);
 			if ($nc(Win32ShellFolderManager2::log)->isLoggable($PlatformLogger$Level::WARNING)) {
 				$nc(Win32ShellFolderManager2::log)->warning("Cannot access \'Recent\'"_s, static_cast<$Throwable*>(e));
@@ -446,20 +418,16 @@ $Win32ShellFolder2* Win32ShellFolderManager2::getRecent() {
 
 $Win32ShellFolder2* Win32ShellFolderManager2::getNetwork() {
 	$init(Win32ShellFolderManager2);
-	$useLocalCurrentObjectStackCache();
 	if (Win32ShellFolderManager2::network == nullptr) {
 		try {
 			$assignStatic(Win32ShellFolderManager2::network, $new($Win32ShellFolder2, 18));
-		} catch ($SecurityException&) {
-			$catch();
-		} catch ($IOException&) {
-			$var($Exception, e, $catch());
+		} catch ($SecurityException& ignored) {
+		} catch ($IOException& e) {
 			$init($PlatformLogger$Level);
 			if ($nc(Win32ShellFolderManager2::log)->isLoggable($PlatformLogger$Level::WARNING)) {
 				$nc(Win32ShellFolderManager2::log)->warning("Cannot access \'Network\'"_s, static_cast<$Throwable*>(e));
 			}
-		} catch ($InterruptedException&) {
-			$var($Exception, e, $catch());
+		} catch ($InterruptedException& e) {
 			$init($PlatformLogger$Level);
 			if ($nc(Win32ShellFolderManager2::log)->isLoggable($PlatformLogger$Level::WARNING)) {
 				$nc(Win32ShellFolderManager2::log)->warning("Cannot access \'Network\'"_s, static_cast<$Throwable*>(e));
@@ -486,16 +454,13 @@ $Win32ShellFolder2* Win32ShellFolderManager2::getPersonal() {
 					$nc(Win32ShellFolderManager2::personal)->setIsPersonal();
 				}
 			}
-		} catch ($SecurityException&) {
-			$catch();
-		} catch ($InterruptedException&) {
-			$var($Exception, e, $catch());
+		} catch ($SecurityException& ignored) {
+		} catch ($InterruptedException& e) {
 			$init($PlatformLogger$Level);
 			if ($nc(Win32ShellFolderManager2::log)->isLoggable($PlatformLogger$Level::WARNING)) {
 				$nc(Win32ShellFolderManager2::log)->warning("Cannot access \'Personal\'"_s, static_cast<$Throwable*>(e));
 			}
-		} catch ($IOException&) {
-			$var($Exception, e, $catch());
+		} catch ($IOException& e) {
 			$init($PlatformLogger$Level);
 			if ($nc(Win32ShellFolderManager2::log)->isLoggable($PlatformLogger$Level::WARNING)) {
 				$nc(Win32ShellFolderManager2::log)->warning("Cannot access \'Personal\'"_s, static_cast<$Throwable*>(e));
@@ -580,14 +545,12 @@ $Object* Win32ShellFolderManager2::get($String* key) {
 				} else if ($instanceOf($String, value)) {
 					folders->add($(createShellFolder($$new($File, $cast($String, value)))));
 				}
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				$init($PlatformLogger$Level);
 				if ($nc(Win32ShellFolderManager2::log)->isLoggable($PlatformLogger$Level::WARNING)) {
 					$nc(Win32ShellFolderManager2::log)->warning($$str({"Cannot read value = "_s, value}), static_cast<$Throwable*>(e));
 				}
-			} catch ($InterruptedException&) {
-				$var($InterruptedException, e, $catch());
+			} catch ($InterruptedException& e) {
 				$init($PlatformLogger$Level);
 				if ($nc(Win32ShellFolderManager2::log)->isLoggable($PlatformLogger$Level::WARNING)) {
 					$nc(Win32ShellFolderManager2::log)->warning($$str({"Cannot read value = "_s, value}), static_cast<$Throwable*>(e));
@@ -660,8 +623,7 @@ $Object* Win32ShellFolderManager2::get($String* key) {
 				if (i >= 0) {
 					return $of($Win32ShellFolder2::getShell32Icon(i, key->startsWith("shell32LargeIcon "_s) ? 32 : 16));
 				}
-			} catch ($NumberFormatException&) {
-				$catch();
+			} catch ($NumberFormatException& ex) {
 			}
 		}
 	}
@@ -689,8 +651,7 @@ $File* Win32ShellFolderManager2::checkFile($File* file, $SecurityManager* sm) {
 			}
 		}
 		return file;
-	} catch ($SecurityException&) {
-		$var($SecurityException, se, $catch());
+	} catch ($SecurityException& se) {
 		return nullptr;
 	}
 	$shouldNotReachHere();

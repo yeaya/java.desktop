@@ -1,14 +1,6 @@
 #include <javax/swing/plaf/metal/MetalBorders.h>
 
 #include <java/awt/Color.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/border/AbstractBorder.h>
 #include <javax/swing/border/Border.h>
 #include <javax/swing/border/CompoundBorder.h>
@@ -121,7 +113,6 @@ $ClassInfo _MetalBorders_ClassInfo_ = {
 $Object* allocate$MetalBorders($Class* clazz) {
 	return $of($alloc(MetalBorders));
 }
-
 
 $Object* MetalBorders::NO_BUTTON_ROLLOVER = nullptr;
 $Border* MetalBorders::buttonBorder = nullptr;

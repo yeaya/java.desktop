@@ -3,18 +3,6 @@
 #include <bug6794831.h>
 #include <java/awt/Graphics.h>
 #include <java/awt/image/BufferedImage.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <javax/swing/JSlider.h>
 #include <javax/swing/UIManager$LookAndFeelInfo.h>
@@ -104,8 +92,7 @@ void bug6794831$1::run() {
 			{
 				try {
 					$UIManager::setLookAndFeel($($nc(lookAndFeelInfo)->getClassName()));
-				} catch ($Exception&) {
-					$var($Exception, e, $catch());
+				} catch ($Exception& e) {
 					$bug6794831::fail($(e->getMessage()));
 				}
 				$var($BufferedImage, image, $new($BufferedImage, 300, 200, $BufferedImage::TYPE_INT_ARGB));

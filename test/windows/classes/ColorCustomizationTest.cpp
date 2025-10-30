@@ -6,21 +6,8 @@
 #include <java/awt/Container.h>
 #include <java/awt/Graphics.h>
 #include <java/awt/image/BufferedImage.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JLabel.h>
 #include <javax/swing/LookAndFeel.h>
@@ -125,13 +112,11 @@ void ColorCustomizationTest::init$() {
 }
 
 void ColorCustomizationTest::main($StringArray* args) {
-	$useLocalCurrentObjectStackCache();
 	$init(ColorCustomizationTest);
 	$assignStatic(ColorCustomizationTest::nimbus, $new($NimbusLookAndFeel));
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>(ColorCustomizationTest::nimbus));
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($UnsupportedLookAndFeelException, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& e) {
 		$throwNew($Error, "Unable to set Nimbus LAF"_s);
 	}
 	$SwingUtilities::invokeAndWait($$new($ColorCustomizationTest$1));
@@ -143,7 +128,6 @@ void ColorCustomizationTest::check($Color* c) {
 	$nc(this->label)->paint(this->g);
 	int32_t var$0 = $nc($($nc(this->label)->getBackground()))->getRGB();
 	if (var$0 != $nc(c)->getRGB()) {
-		$init($System);
 		$nc($System::err)->println("Color mismatch!"_s);
 		$nc($System::err)->println($$str({"   found: "_s, $($nc(this->label)->getBackground())}));
 		$nc($System::err)->println($$str({"   expected: "_s, c}));

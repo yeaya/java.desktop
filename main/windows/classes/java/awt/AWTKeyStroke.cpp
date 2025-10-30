@@ -5,24 +5,10 @@
 #include <java/awt/VKCollection.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchFieldException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <java/lang/reflect/Modifier.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/Collections.h>
@@ -156,7 +142,6 @@ $Object* allocate$AWTKeyStroke($Class* clazz) {
 
 bool AWTKeyStroke::$assertionsDisabled = false;
 $Map* AWTKeyStroke::modifierKeywords = nullptr;
-
 $VKCollection* AWTKeyStroke::vks = nullptr;
 $Object* AWTKeyStroke::APP_CONTEXT_CACHE_KEY = nullptr;
 AWTKeyStroke* AWTKeyStroke::APP_CONTEXT_KEYSTROKE_KEY = nullptr;
@@ -340,11 +325,9 @@ int32_t AWTKeyStroke::getVKValue($String* key) {
 		try {
 			$load($KeyEvent);
 			keyCode = $nc($($KeyEvent::class$->getField(key)))->getInt($KeyEvent::class$);
-		} catch ($NoSuchFieldException&) {
-			$var($NoSuchFieldException, nsfe, $catch());
+		} catch ($NoSuchFieldException& nsfe) {
 			$throwNew($IllegalArgumentException, errmsg);
-		} catch ($IllegalAccessException&) {
-			$var($IllegalAccessException, iae, $catch());
+		} catch ($IllegalAccessException& iae) {
 			$throwNew($IllegalArgumentException, errmsg);
 		}
 		$assign(value, $Integer::valueOf(keyCode));
@@ -452,8 +435,7 @@ $String* AWTKeyStroke::getVKText(int32_t keyCode) {
 				vkCollect->put(name, key);
 				return $nc(name)->substring(3);
 			}
-		} catch ($IllegalAccessException&) {
-			$var($IllegalAccessException, e, $catch());
+		} catch ($IllegalAccessException& e) {
 			if (!AWTKeyStroke::$assertionsDisabled) {
 				$throwNew($AssertionError);
 			}

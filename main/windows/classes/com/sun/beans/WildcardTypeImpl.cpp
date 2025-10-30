@@ -1,14 +1,5 @@
 #include <com/sun/beans/WildcardTypeImpl.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/lang/reflect/Type.h>
 #include <java/lang/reflect/WildcardType.h>
 #include <java/util/Arrays.h>
@@ -88,7 +79,6 @@ $String* WildcardTypeImpl::toString() {
 	$var($StringBuilder, sb, nullptr);
 	$var($TypeArray, bounds, nullptr);
 	if ($nc(this->lowerBounds)->length == 0) {
-		$load($Object);
 		if ($nc(this->upperBounds)->length == 0 || $equals($Object::class$, $nc(this->upperBounds)->get(0))) {
 			return "?"_s;
 		}

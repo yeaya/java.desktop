@@ -5,16 +5,6 @@
 #include <java/awt/Insets.h>
 #include <java/awt/Rectangle.h>
 #include <java/beans/PropertyVetoException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/DefaultDesktopManager.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JDesktopPane.h>
@@ -126,8 +116,7 @@ void SynthDesktopPaneUI$SynthDesktopManager::maximizeFrame($JInternalFrame* f) {
 	if ($nc(f)->isIcon()) {
 		try {
 			f->setIcon(false);
-		} catch ($PropertyVetoException&) {
-			$catch();
+		} catch ($PropertyVetoException& e2) {
 		}
 	} else {
 		f->setNormalBounds($(f->getBounds()));
@@ -139,8 +128,7 @@ void SynthDesktopPaneUI$SynthDesktopManager::maximizeFrame($JInternalFrame* f) {
 	}
 	try {
 		$nc(f)->setSelected(true);
-	} catch ($PropertyVetoException&) {
-		$catch();
+	} catch ($PropertyVetoException& e2) {
 	}
 }
 
@@ -168,8 +156,7 @@ void SynthDesktopPaneUI$SynthDesktopManager::iconifyFrame($JInternalFrame* f) {
 	c->repaint(var$0, var$1, var$2, f->getHeight());
 	try {
 		f->setSelected(false);
-	} catch ($PropertyVetoException&) {
-		$catch();
+	} catch ($PropertyVetoException& e2) {
 	}
 	if (findNext) {
 		{
@@ -182,8 +169,7 @@ void SynthDesktopPaneUI$SynthDesktopManager::iconifyFrame($JInternalFrame* f) {
 					if ($instanceOf($JInternalFrame, comp)) {
 						try {
 							$nc(($cast($JInternalFrame, comp)))->setSelected(true);
-						} catch ($PropertyVetoException&) {
-							$catch();
+						} catch ($PropertyVetoException& e2) {
 						}
 						$nc(($cast($JInternalFrame, comp)))->moveToFront();
 						return;
@@ -216,8 +202,7 @@ void SynthDesktopPaneUI$SynthDesktopManager::deiconifyFrame($JInternalFrame* f) 
 			} else {
 				try {
 					f->setSelected(true);
-				} catch ($PropertyVetoException&) {
-					$catch();
+				} catch ($PropertyVetoException& e2) {
 				}
 			}
 		}

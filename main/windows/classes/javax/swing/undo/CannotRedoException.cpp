@@ -1,12 +1,5 @@
 #include <javax/swing/undo/CannotRedoException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -42,16 +35,10 @@ void CannotRedoException::init$() {
 CannotRedoException::CannotRedoException() {
 }
 
-CannotRedoException::CannotRedoException(const CannotRedoException& e) {
+CannotRedoException::CannotRedoException(const CannotRedoException& e) : $RuntimeException(e) {
 }
 
-CannotRedoException CannotRedoException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void CannotRedoException::throwWrapper$() {
-	$pendingException(this);
+void CannotRedoException::throw$() {
 	throw *this;
 }
 

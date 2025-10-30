@@ -9,17 +9,6 @@
 #include <java/awt/Toolkit.h>
 #include <java/awt/Window$Type.h>
 #include <java/awt/Window.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComboBox.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/event/PopupMenuEvent.h>

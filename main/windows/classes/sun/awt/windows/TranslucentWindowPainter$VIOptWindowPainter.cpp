@@ -2,16 +2,7 @@
 
 #include <java/awt/Image.h>
 #include <java/awt/Rectangle.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/windows/TranslucentWindowPainter$BIWindowPainter.h>
 #include <sun/awt/windows/TranslucentWindowPainter$VIOptWindowPainter$1.h>
 #include <sun/awt/windows/TranslucentWindowPainter$VIWindowPainter.h>
@@ -103,11 +94,10 @@ bool TranslucentWindowPainter$VIOptWindowPainter::update($Image* bb) {
 					try {
 						$BufferedContext::validateContext(as);
 						rq->flushAndInvokeNow($$new($TranslucentWindowPainter$VIOptWindowPainter$1, this, as, arr, w, h));
-					} catch ($InvalidPipeException&) {
-						$catch();
+					} catch ($InvalidPipeException& e) {
 					}
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$1) {
+					$assign(var$0, var$1);
 				} /*finally*/ {
 					rq->unlock();
 				}

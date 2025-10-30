@@ -7,15 +7,6 @@
 #include <java/awt/Graphics2D.h>
 #include <java/awt/Image.h>
 #include <java/awt/image/BufferedImage.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/ImageIcon.h>
 #include <javax/swing/JButton.h>
@@ -100,8 +91,7 @@ void bug6604281$1::run() {
 	$var($SynthLookAndFeel, laf, $new($SynthLookAndFeel));
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>(laf));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$bug6604281::fail($(e->getMessage()));
 	}
 	$var($BufferedImage, image, $new($BufferedImage, 32, 32, $BufferedImage::TYPE_INT_RGB));

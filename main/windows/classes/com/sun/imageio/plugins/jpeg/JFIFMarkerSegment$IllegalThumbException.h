@@ -30,8 +30,10 @@ public:
 	void init$(::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment* this$0);
 	::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment* this$0 = nullptr;
 	JFIFMarkerSegment$IllegalThumbException(const JFIFMarkerSegment$IllegalThumbException& e);
-	JFIFMarkerSegment$IllegalThumbException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline JFIFMarkerSegment$IllegalThumbException* operator ->() {
+		return (JFIFMarkerSegment$IllegalThumbException*)throwing$;
+	}
 };
 
 				} // jpeg

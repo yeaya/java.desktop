@@ -3,16 +3,6 @@
 #include <java/awt/GraphicsEnvironment.h>
 #include <java/awt/Toolkit.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef ACTION_EVENT
@@ -119,11 +109,11 @@ $NamedAttribute Event_Attribute_var$0[] = {
 	{"since", 's', "9"},
 	{}
 };
+
 $CompoundAttribute _Event_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", Event_Attribute_var$0},
 	{}
 };
-
 
 $FieldInfo _Event_FieldInfo_[] = {
 	{"data", "J", nullptr, $PRIVATE | $TRANSIENT, $field(Event, data)},

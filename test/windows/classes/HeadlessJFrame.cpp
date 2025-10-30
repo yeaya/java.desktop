@@ -1,14 +1,6 @@
 #include <HeadlessJFrame.h>
 
 #include <java/awt/HeadlessException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <jcpp.h>
 
@@ -45,8 +37,7 @@ void HeadlessJFrame::main($StringArray* args) {
 	bool exceptions = false;
 	try {
 		$var($JFrame, b, $new($JFrame));
-	} catch ($HeadlessException&) {
-		$var($HeadlessException, e, $catch());
+	} catch ($HeadlessException& e) {
 		exceptions = true;
 	}
 	if (!exceptions) {
@@ -55,8 +46,7 @@ void HeadlessJFrame::main($StringArray* args) {
 	exceptions = false;
 	try {
 		$var($JFrame, b, $new($JFrame, "Swingin\' in the window"_s));
-	} catch ($HeadlessException&) {
-		$var($HeadlessException, e, $catch());
+	} catch ($HeadlessException& e) {
 		exceptions = true;
 	}
 	if (!exceptions) {

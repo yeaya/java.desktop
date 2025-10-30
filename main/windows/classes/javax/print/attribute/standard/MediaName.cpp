@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/MediaName.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <javax/print/attribute/standard/Media.h>
 #include <jcpp.h>
@@ -61,17 +53,11 @@ $Object* allocate$MediaName($Class* clazz) {
 	return $of($alloc(MediaName));
 }
 
-
 MediaName* MediaName::NA_LETTER_WHITE = nullptr;
-
 MediaName* MediaName::NA_LETTER_TRANSPARENT = nullptr;
-
 MediaName* MediaName::ISO_A4_WHITE = nullptr;
-
 MediaName* MediaName::ISO_A4_TRANSPARENT = nullptr;
-
 $StringArray* MediaName::myStringTable = nullptr;
-
 $MediaNameArray* MediaName::myEnumValueTable = nullptr;
 
 void MediaName::init$(int32_t value) {

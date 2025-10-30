@@ -18,8 +18,10 @@ public:
 	void init$($String* s, ::java::lang::Exception* e);
 	static const int64_t serialVersionUID = (int64_t)0xADAB69FD7BD5D699;
 	PrintException(const PrintException& e);
-	PrintException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline PrintException* operator ->() {
+		return (PrintException*)throwing$;
+	}
 };
 
 	} // print

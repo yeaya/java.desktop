@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/Fidelity.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -84,13 +76,9 @@ void Fidelity::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 Fidelity* Fidelity::FIDELITY_TRUE = nullptr;
-
 Fidelity* Fidelity::FIDELITY_FALSE = nullptr;
-
 $StringArray* Fidelity::myStringTable = nullptr;
-
 $FidelityArray* Fidelity::myEnumValueTable = nullptr;
 
 void Fidelity::init$(int32_t value) {

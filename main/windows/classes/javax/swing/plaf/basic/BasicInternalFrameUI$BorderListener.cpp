@@ -12,14 +12,6 @@
 #include <java/awt/event/MouseEvent.h>
 #include <java/awt/event/WindowFocusListener.h>
 #include <java/beans/PropertyVetoException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventObject.h>
 #include <javax/swing/DesktopManager.h>
 #include <javax/swing/JComponent.h>
@@ -176,21 +168,18 @@ void BasicInternalFrameUI$BorderListener::mouseClicked($MouseEvent* e) {
 		if (var$1 && $nc(this->this$0->frame)->isIcon()) {
 			try {
 				$nc(this->this$0->frame)->setIcon(false);
-			} catch ($PropertyVetoException&) {
-				$catch();
+			} catch ($PropertyVetoException& e2) {
 			}
 		} else if ($nc(this->this$0->frame)->isMaximizable()) {
 			if (!$nc(this->this$0->frame)->isMaximum()) {
 				try {
 					$nc(this->this$0->frame)->setMaximum(true);
-				} catch ($PropertyVetoException&) {
-					$catch();
+				} catch ($PropertyVetoException& e2) {
 				}
 			} else {
 				try {
 					$nc(this->this$0->frame)->setMaximum(false);
-				} catch ($PropertyVetoException&) {
-					$catch();
+				} catch ($PropertyVetoException& e3) {
 				}
 			}
 		}
@@ -248,8 +237,7 @@ void BasicInternalFrameUI$BorderListener::mousePressed($MouseEvent* e) {
 	this->discardRelease = false;
 	try {
 		$nc(this->this$0->frame)->setSelected(true);
-	} catch ($PropertyVetoException&) {
-		$catch();
+	} catch ($PropertyVetoException& e1) {
 	}
 	$var($Insets, i, $nc(this->this$0->frame)->getInsets());
 	$var($Point, ep, $new($Point, this->__x, this->__y));

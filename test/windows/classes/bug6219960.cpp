@@ -13,27 +13,13 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JComponent.h>
@@ -288,8 +274,7 @@ void bug6219960::createAndShowGUI() {
 	$nc(bug6219960::frame)->setVisible(true);
 	try {
 		iframe->setSelected(true);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($AssertionError, $of(e));
 	}
 	try {
@@ -300,8 +285,7 @@ void bug6219960::createAndShowGUI() {
 		double var$1 = bounds->getY();
 		int32_t centerY = $cast(int32_t, (var$1 + bounds->getHeight() / 6));
 		robot->mouseMove(centerX, centerY);
-	} catch ($AWTException&) {
-		$var($AWTException, e, $catch());
+	} catch ($AWTException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }
@@ -345,11 +329,9 @@ bool bug6219960::pressOK($Component* comp) {
 		robot->mouseMove(centerX, centerY);
 		robot->mousePress($InputEvent::BUTTON1_MASK);
 		robot->mouseRelease($InputEvent::BUTTON1_MASK);
-	} catch ($IllegalComponentStateException&) {
-		$var($IllegalComponentStateException, ignore, $catch());
+	} catch ($IllegalComponentStateException& ignore) {
 		return false;
-	} catch ($AWTException&) {
-		$var($AWTException, e, $catch());
+	} catch ($AWTException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 	return true;

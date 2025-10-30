@@ -4,16 +4,7 @@
 #include <com/sun/java/swing/plaf/windows/TMSchema$Part.h>
 #include <com/sun/java/swing/plaf/windows/TMSchema$Prop.h>
 #include <com/sun/java/swing/plaf/windows/TMSchema.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EnumMap.h>
 #include <sun/awt/windows/ThemeReader.h>
 #include <jcpp.h>
@@ -353,7 +344,6 @@ TMSchema$State* TMSchema$State::SORTEDNORMAL = nullptr;
 TMSchema$State* TMSchema$State::SORTEDPRESSED = nullptr;
 TMSchema$State* TMSchema$State::SORTEDUP = nullptr;
 $TMSchema$StateArray* TMSchema$State::$VALUES = nullptr;
-
 $EnumMap* TMSchema$State::stateMap = nullptr;
 
 $TMSchema$StateArray* TMSchema$State::$values() {

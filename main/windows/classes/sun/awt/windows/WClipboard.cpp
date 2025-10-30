@@ -5,18 +5,7 @@
 #include <java/awt/datatransfer/Transferable.h>
 #include <java/io/IOException.h>
 #include <java/io/NotSerializableException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Iterator.h>
 #include <java/util/Map.h>
 #include <java/util/Set.h>
@@ -134,8 +123,7 @@ void WClipboard::setContentsNative($Transferable* contents) {
 						try {
 							$var($bytes, bytes, $nc($($WDataTransferer::getInstance()))->translateTransferable(contents, flavor, $nc(format)->longValue()));
 							publishClipboardData($nc(format)->longValue(), bytes);
-						} catch ($IOException&) {
-							$var($IOException, e, $catch());
+						} catch ($IOException& e) {
 							$init($DataFlavor);
 							if (!($nc(flavor)->isMimeTypeEqual($DataFlavor::javaJVMLocalObjectMimeType) && $instanceOf($NotSerializableException, e))) {
 								e->printStackTrace();
@@ -144,8 +132,8 @@ void WClipboard::setContentsNative($Transferable* contents) {
 					}
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			closeClipboard();
 		}
@@ -231,11 +219,10 @@ void WClipboard::handleContentsChanged() {
 			try {
 				openClipboard(nullptr);
 				$assign(formats, getClipboardFormats());
-			} catch ($IllegalStateException&) {
-				$catch();
+			} catch ($IllegalStateException& exc) {
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			closeClipboard();
 		}
@@ -261,8 +248,7 @@ $Transferable* WClipboard::createLocaleTransferable($longs* formats) {
 	$var($bytes, localeData, nullptr);
 	try {
 		$assign(localeData, getClipboardData($WDataTransferer::CF_LOCALE));
-	} catch ($IOException&) {
-		$var($IOException, ioexc, $catch());
+	} catch ($IOException& ioexc) {
 		return nullptr;
 	}
 	$var($bytes, localeDataFinal, localeData);

@@ -12,15 +12,6 @@
 #include <java/io/ObjectInputStream$GetField.h>
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/List.h>
@@ -115,8 +106,7 @@ void DragGestureRecognizer::init$($DragSource* ds, $Component* c, int32_t sa, $D
 		if (dgl != nullptr) {
 			addDragGestureListener(dgl);
 		}
-	} catch ($TooManyListenersException&) {
-		$catch();
+	} catch ($TooManyListenersException& tmle) {
 	}
 }
 
@@ -209,8 +199,8 @@ void DragGestureRecognizer::fireDragGestureRecognized(int32_t dragAction, $Point
 				if (this->dragGestureListener != nullptr) {
 					$nc(this->dragGestureListener)->dragGestureRecognized($$new($DragGestureEvent, this, dragAction, p, this->events));
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(this->events)->clear();
 			}

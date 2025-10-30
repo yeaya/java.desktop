@@ -4,16 +4,6 @@
 #include <java/awt/geom/GeneralPath.h>
 #include <java/awt/geom/Point2D$Float.h>
 #include <java/awt/geom/Rectangle2D$Float.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/FontStrikeDesc.h>
 #include <sun/font/NativeFont.h>
 #include <sun/font/PhysicalFont.h>

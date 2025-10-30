@@ -2,28 +2,12 @@
 
 #include <com/sun/imageio/plugins/tiff/TIFFIFD.h>
 #include <com/sun/imageio/plugins/tiff/TIFFImageWriter.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchMethodException.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/ReflectiveOperationException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
 #include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
@@ -690,8 +674,7 @@ $IIOMetadataNode* TIFFImageMetadata::getStandardDocumentNode() {
 				node->setAttribute("minute"_s, $(s->substring(14, 16)));
 				node->setAttribute("second"_s, $(s->substring(17, 19)));
 				appendNode = true;
-			} catch ($IndexOutOfBoundsException&) {
-				$var($IndexOutOfBoundsException, e, $catch());
+			} catch ($IndexOutOfBoundsException& e) {
 				appendNode = false;
 			}
 			if (appendNode) {
@@ -1327,17 +1310,13 @@ $TIFFIFD* TIFFImageMetadata::parseIFD($Node* node$renamed) {
 				}
 				$var($Method, getInstanceMethod, $nc(setClass)->getMethod("getInstance"_s, ($ClassArray*)nullptr));
 				$assign(o, $nc(getInstanceMethod)->invoke(nullptr, ($ObjectArray*)nullptr));
-			} catch ($NoSuchMethodException&) {
-				$var($NoSuchMethodException, e, $catch());
+			} catch ($NoSuchMethodException& e) {
 				$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-			} catch ($IllegalAccessException&) {
-				$var($IllegalAccessException, e, $catch());
+			} catch ($IllegalAccessException& e) {
 				$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-			} catch ($InvocationTargetException&) {
-				$var($InvocationTargetException, e, $catch());
+			} catch ($InvocationTargetException& e) {
 				$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-			} catch ($ClassNotFoundException&) {
-				$var($ClassNotFoundException, e, $catch());
+			} catch ($ClassNotFoundException& e) {
 				$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 			}
 			if (!($instanceOf($TIFFTagSet, o))) {

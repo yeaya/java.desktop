@@ -12,17 +12,7 @@
 #include <java/awt/dnd/DropTargetListener.h>
 #include <java/awt/event/ActionEvent.h>
 #include <java/awt/event/ActionListener.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/Scrollable.h>
 #include <javax/swing/SwingConstants.h>
@@ -291,7 +281,6 @@ void TransferHandler$DropHandler::dragExit($DropTargetEvent* e) {
 }
 
 void TransferHandler$DropHandler::drop($DropTargetDropEvent* e) {
-	$useLocalCurrentObjectStackCache();
 	$var($TransferHandler, importer, $nc(($cast($TransferHandler$HasGetTransferHandler, this->component)))->getTransferHandler());
 	if (importer == nullptr) {
 		$nc(e)->rejectDrop();
@@ -307,8 +296,7 @@ void TransferHandler$DropHandler::drop($DropTargetDropEvent* e) {
 		bool success = false;
 		try {
 			success = importer->importData(this->support);
-		} catch ($RuntimeException&) {
-			$var($RuntimeException, re, $catch());
+		} catch ($RuntimeException& re) {
 			success = false;
 		}
 		e->dropComplete(success);

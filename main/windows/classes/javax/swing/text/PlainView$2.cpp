@@ -1,15 +1,6 @@
 #include <javax/swing/text/PlainView$2.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/PlainView$FPMethodArgs.h>
 #include <javax/swing/text/PlainView.h>
 #include <jcpp.h>
@@ -76,23 +67,19 @@ void clinit$PlainView$2($Class* class$) {
 	{
 		try {
 			$nc(PlainView$2::$SwitchMap$javax$swing$text$PlainView$FPMethodArgs)->set($PlainView$FPMethodArgs::IGNN->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(PlainView$2::$SwitchMap$javax$swing$text$PlainView$FPMethodArgs)->set($PlainView$FPMethodArgs::IIGNN->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(PlainView$2::$SwitchMap$javax$swing$text$PlainView$FPMethodArgs)->set($PlainView$FPMethodArgs::GNNII->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(PlainView$2::$SwitchMap$javax$swing$text$PlainView$FPMethodArgs)->set($PlainView$FPMethodArgs::GNNC->ordinal(), 4);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

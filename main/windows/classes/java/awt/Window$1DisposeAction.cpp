@@ -5,18 +5,7 @@
 #include <java/awt/GraphicsDevice.h>
 #include <java/awt/Window.h>
 #include <java/awt/im/InputContext.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Vector.h>
 #include <jcpp.h>
 
@@ -116,8 +105,8 @@ void Window$1DisposeAction::run() {
 				}
 			}
 			this->this$0->clearCurrentFocusCycleRootOnHide();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->this$0->disposing = false;
 		}

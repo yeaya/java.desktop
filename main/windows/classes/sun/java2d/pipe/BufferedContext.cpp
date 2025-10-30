@@ -5,17 +5,9 @@
 #include <java/awt/Composite.h>
 #include <java/awt/Paint.h>
 #include <java/awt/geom/AffineTransform.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/ref/Reference.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/InvalidPipeException.h>
 #include <sun/java2d/SunGraphics2D.h>
 #include <sun/java2d/loops/XORComposite.h>
@@ -106,7 +98,6 @@ $ClassInfo _BufferedContext_ClassInfo_ = {
 $Object* allocate$BufferedContext($Class* clazz) {
 	return $of($alloc(BufferedContext));
 }
-
 
 BufferedContext* BufferedContext::currentContext = nullptr;
 

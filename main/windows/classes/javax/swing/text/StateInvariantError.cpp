@@ -1,12 +1,6 @@
 #include <javax/swing/text/StateInvariantError.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -42,16 +36,10 @@ void StateInvariantError::init$($String* s) {
 StateInvariantError::StateInvariantError() {
 }
 
-StateInvariantError::StateInvariantError(const StateInvariantError& e) {
+StateInvariantError::StateInvariantError(const StateInvariantError& e) : $Error(e) {
 }
 
-StateInvariantError StateInvariantError::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void StateInvariantError::throwWrapper$() {
-	$pendingException(this);
+void StateInvariantError::throw$() {
 	throw *this;
 }
 

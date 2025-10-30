@@ -11,24 +11,11 @@
 #include <com/sun/media/sound/JSSecurityManager.h>
 #include <com/sun/media/sound/Toolkit.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/OutOfMemoryError.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/AudioFormat.h>
 #include <javax/sound/sampled/AudioInputStream.h>
 #include <javax/sound/sampled/AudioSystem.h>
@@ -318,12 +305,10 @@ void DirectAudioDevice$DirectClip::open($AudioFormat* format, $bytes* data, int3
 			this->loopCount = 0;
 			try {
 				open(format, (int32_t)$Toolkit::millis2bytes(format, 1000));
-			} catch ($LineUnavailableException&) {
-				$var($LineUnavailableException, lue, $catch());
+			} catch ($LineUnavailableException& lue) {
 				$set(this, audioData, nullptr);
 				$throw(lue);
-			} catch ($IllegalArgumentException&) {
-				$var($IllegalArgumentException, iae, $catch());
+			} catch ($IllegalArgumentException& iae) {
 				$set(this, audioData, nullptr);
 				$throw(iae);
 			}
@@ -356,8 +341,7 @@ void DirectAudioDevice$DirectClip::open($AudioInputStream* stream) {
 			}
 			try {
 				$assign(streamData, $new($bytes, arraysize));
-			} catch ($OutOfMemoryError&) {
-				$var($OutOfMemoryError, e, $catch());
+			} catch ($OutOfMemoryError& e) {
 				$throwNew($IOException, "Audio data is too big"_s);
 			}
 			int32_t bytesRemaining = arraysize;
@@ -377,8 +361,7 @@ void DirectAudioDevice$DirectClip::open($AudioInputStream* stream) {
 			$var($bytes, tmp, nullptr);
 			try {
 				$assign(tmp, $new($bytes, maxReadLimit));
-			} catch ($OutOfMemoryError&) {
-				$var($OutOfMemoryError, e, $catch());
+			} catch ($OutOfMemoryError& e) {
 				$throwNew($IOException, "Audio data is too big"_s);
 			}
 			int32_t thisRead = 0;
@@ -479,8 +462,7 @@ void DirectAudioDevice$DirectClip::implClose() {
 		}
 		try {
 			oldThread->join(2000);
-		} catch ($InterruptedException&) {
-			$catch();
+		} catch ($InterruptedException& ie) {
 		}
 	}
 	$DirectAudioDevice$DirectDL::implClose();
@@ -505,8 +487,7 @@ void DirectAudioDevice$DirectClip::run() {
 			while (!this->doIO && this->thread == curThread) {
 				try {
 					$nc($of(this->lock))->wait();
-				} catch ($InterruptedException&) {
-					$catch();
+				} catch ($InterruptedException& ignored) {
 				}
 			}
 		}

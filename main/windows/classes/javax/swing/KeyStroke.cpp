@@ -2,17 +2,6 @@
 
 #include <java/awt/AWTKeyStroke.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/KeyStroke$1.h>
 #include <sun/swing/SwingAccessor$KeyStrokeAccessor.h>
 #include <sun/swing/SwingAccessor.h>
@@ -145,8 +134,7 @@ KeyStroke* KeyStroke::getKeyStroke($String* s) {
 	$synchronized($AWTKeyStroke::class$) {
 		try {
 			return $cast(KeyStroke, getAWTKeyStroke(s));
-		} catch ($IllegalArgumentException&) {
-			$var($IllegalArgumentException, e, $catch());
+		} catch ($IllegalArgumentException& e) {
 			return nullptr;
 		}
 	}

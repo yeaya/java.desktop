@@ -1,16 +1,7 @@
 #include <sun/java2d/loops/CompositeType.h>
 
 #include <java/awt/AlphaComposite.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/HashMap.h>
 #include <jcpp.h>
 
@@ -132,11 +123,8 @@ $Object* allocate$CompositeType($Class* clazz) {
 
 int32_t CompositeType::unusedUID = 0;
 $HashMap* CompositeType::compositeUIDMap = nullptr;
-
 $String* CompositeType::DESC_ANY = nullptr;
-
 $String* CompositeType::DESC_XOR = nullptr;
-
 $String* CompositeType::DESC_CLEAR = nullptr;
 $String* CompositeType::DESC_SRC = nullptr;
 $String* CompositeType::DESC_DST = nullptr;
@@ -149,12 +137,9 @@ $String* CompositeType::DESC_DST_OUT = nullptr;
 $String* CompositeType::DESC_SRC_ATOP = nullptr;
 $String* CompositeType::DESC_DST_ATOP = nullptr;
 $String* CompositeType::DESC_ALPHA_XOR = nullptr;
-
 $String* CompositeType::DESC_SRC_NO_EA = nullptr;
 $String* CompositeType::DESC_SRC_OVER_NO_EA = nullptr;
-
 $String* CompositeType::DESC_ANY_ALPHA = nullptr;
-
 CompositeType* CompositeType::Any = nullptr;
 CompositeType* CompositeType::General = nullptr;
 CompositeType* CompositeType::AnyAlpha = nullptr;

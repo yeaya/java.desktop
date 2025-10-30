@@ -23,23 +23,8 @@
 #include <java/awt/event/MouseEvent.h>
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
 #include <java/lang/Thread$UncaughtExceptionHandler.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/BasicPermission.h>
 #include <java/security/Permission.h>
 #include <java/util/Map.h>
@@ -305,8 +290,7 @@ $Object* SunDropTargetContextPeer::getTransferData($DataFlavor* df) {
 			$init($AWTPermissions);
 			sm->checkPermission($AWTPermissions::ACCESS_CLIPBOARD_PERMISSION);
 		}
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$var($Thread, currentThread, $Thread::currentThread());
 		$nc($(currentThread->getUncaughtExceptionHandler()))->uncaughtException(currentThread, e);
 		return $of(nullptr);
@@ -332,15 +316,13 @@ $Object* SunDropTargetContextPeer::getTransferData($DataFlavor* df) {
 	if ($instanceOf($bytes, ret)) {
 		try {
 			return $of($nc($($DataTransferer::getInstance()))->translateBytes($cast($bytes, ret), df, format, this));
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			$throwNew($InvalidDnDOperationException, $(e->getMessage()));
 		}
 	} else if ($instanceOf($InputStream, ret)) {
 		try {
 			return $of($nc($($DataTransferer::getInstance()))->translateStream($cast($InputStream, ret), df, format, this));
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			$throwNew($InvalidDnDOperationException, $(e->getMessage()));
 		}
 	} else {
@@ -376,8 +358,7 @@ void SunDropTargetContextPeer::processEnterMessage($SunDropTargetEvent* event) {
 		this->currentA = dt->getDefaultActions();
 		try {
 			$nc((static_cast<$DropTargetListener*>(dt)))->dragEnter($$new($DropTargetDragEvent, this->currentDTC, hots, this->currentDA, this->currentSA));
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			e->printStackTrace();
 			this->currentDA = $DnDConstants::ACTION_NONE;
 		}
@@ -424,12 +405,11 @@ void SunDropTargetContextPeer::processExitMessage($SunDropTargetEvent* event) {
 			try {
 				try {
 					$nc((static_cast<$DropTargetListener*>(dt)))->dragExit($$new($DropTargetEvent, dtc));
-				} catch ($Exception&) {
-					$var($Exception, e, $catch());
+				} catch ($Exception& e) {
 					e->printStackTrace();
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				this->currentA = $DnDConstants::ACTION_NONE;
 				this->currentSA = $DnDConstants::ACTION_NONE;
@@ -489,8 +469,7 @@ void SunDropTargetContextPeer::processMotionMessage($SunDropTargetEvent* event, 
 			if (this->dragRejected) {
 				this->currentDA = $DnDConstants::ACTION_NONE;
 			}
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			e->printStackTrace();
 			this->currentDA = $DnDConstants::ACTION_NONE;
 		}
@@ -522,7 +501,7 @@ void SunDropTargetContextPeer::processDropMessage($SunDropTargetEvent* event) {
 		$nc(acc)->setDropTargetContextPeer(this->currentDTC, this);
 		this->currentA = dt->getDefaultActions();
 		$synchronized(SunDropTargetContextPeer::_globalLock) {
-			if (($assignField(this, local, getJVMLocalSourceTransferable())) != nullptr) {
+			if (($set(this, local, getJVMLocalSourceTransferable())) != nullptr) {
 				setCurrentJVMLocalSourceTransferable(nullptr);
 			}
 		}
@@ -531,8 +510,8 @@ void SunDropTargetContextPeer::processDropMessage($SunDropTargetEvent* event) {
 			$var($Throwable, var$1, nullptr);
 			try {
 				$nc((static_cast<$DropTargetListener*>(dt)))->drop($$new($DropTargetDropEvent, dtc, hots, this->currentDA, this->currentSA, this->local != nullptr));
-			} catch ($Throwable&) {
-				$assign(var$1, $catch());
+			} catch ($Throwable& var$2) {
+				$assign(var$1, var$2);
 			} /*finally*/ {
 				if (this->dropStatus == SunDropTargetContextPeer::STATUS_WAIT) {
 					rejectDrop();
@@ -657,8 +636,8 @@ void SunDropTargetContextPeer::dropComplete(bool success) {
 			$var($Throwable, var$0, nullptr);
 			try {
 				doDropDone(success, this->currentDA, this->local != nullptr);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				this->currentDA = $DnDConstants::ACTION_NONE;
 				this->nativeDragContext = 0;

@@ -4,19 +4,6 @@
 #include <java/awt/Container.h>
 #include <java/awt/Dimension.h>
 #include <java/awt/Insets.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/AbstractSet.h>
 #include <java/util/Collections.h>
@@ -150,23 +137,14 @@ $Object* allocate$SpringLayout($Class* clazz) {
 	return $of($alloc(SpringLayout));
 }
 
-
 $String* SpringLayout::NORTH = nullptr;
-
 $String* SpringLayout::SOUTH = nullptr;
-
 $String* SpringLayout::EAST = nullptr;
-
 $String* SpringLayout::WEST = nullptr;
-
 $String* SpringLayout::HORIZONTAL_CENTER = nullptr;
-
 $String* SpringLayout::VERTICAL_CENTER = nullptr;
-
 $String* SpringLayout::BASELINE = nullptr;
-
 $String* SpringLayout::WIDTH = nullptr;
-
 $String* SpringLayout::HEIGHT = nullptr;
 $StringArray* SpringLayout::ALL_HORIZONTAL = nullptr;
 $StringArray* SpringLayout::ALL_VERTICAL = nullptr;
@@ -213,7 +191,6 @@ bool SpringLayout::isCyclic($Spring* s) {
 		$nc(this->acyclicSprings)->add(s);
 		$nc(this->cyclicSprings)->remove(s);
 	} else {
-		$init($System);
 		$nc($System::err)->println($$str({s, " is cyclic. "_s}));
 	}
 	return result;

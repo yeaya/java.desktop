@@ -1,12 +1,6 @@
 #include <sun/font/ExtendedTextLabel.h>
 
 #include <java/awt/geom/Rectangle2D.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/TextLabel.h>
 #include <jcpp.h>
 

@@ -16,20 +16,8 @@
 #include <java/awt/event/KeyEvent.h>
 #include <java/beans/PropertyChangeListener.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <java/util/Vector.h>
 #include <javax/accessibility/AccessibleContext.h>
@@ -142,6 +130,7 @@ $NamedAttribute JMenu_Attribute_var$0[] = {
 	{"description", 's', "A popup window containing menu items displayed in a menu bar."},
 	{}
 };
+
 $CompoundAttribute _JMenu_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JMenu_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", nullptr},
@@ -285,7 +274,6 @@ $CompoundAttribute _JMenu_MethodAnnotations_setSelected61[] = {
 	{}
 };
 
-
 $FieldInfo _JMenu_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JMenu, uiClassID)},
 	{"popupMenu", "Ljavax/swing/JPopupMenu;", nullptr, $PRIVATE, $field(JMenu, popupMenu)},
@@ -396,7 +384,6 @@ $ClassInfo _JMenu_ClassInfo_ = {
 $Object* allocate$JMenu($Class* clazz) {
 	return $of($alloc(JMenu));
 }
-
 
 $String* JMenu::uiClassID = nullptr;
 

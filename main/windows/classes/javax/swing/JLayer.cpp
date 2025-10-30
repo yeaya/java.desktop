@@ -15,17 +15,7 @@
 #include <java/beans/PropertyChangeEvent.h>
 #include <java/io/ObjectInputStream$GetField.h>
 #include <java/io/ObjectInputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/JComponent$AccessibleJComponent.h>
 #include <javax/swing/JComponent.h>
@@ -311,8 +301,8 @@ void JLayer::paintImmediately(int32_t x, int32_t y, int32_t w, int32_t h) {
 			$var($Throwable, var$0, nullptr);
 			try {
 				$nc($($cast($LayerUI, getUI())))->paintImmediately(x, y, w, h, this);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				this->isPaintImmediatelyCalling = false;
 			}
@@ -337,8 +327,8 @@ bool JLayer::imageUpdate($Image* img, int32_t infoflags, int32_t x, int32_t y, i
 				var$2 = $nc($($cast($LayerUI, getUI())))->imageUpdate(img, infoflags, x, y, w, h, this);
 				return$1 = true;
 				goto $finally;
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} $finally: {
 				this->isImageUpdateCalling = false;
 			}
@@ -361,8 +351,8 @@ void JLayer::paint($Graphics* g) {
 			$var($Throwable, var$0, nullptr);
 			try {
 				$JComponent::paintComponent(g);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				this->isPaintCalling = false;
 			}

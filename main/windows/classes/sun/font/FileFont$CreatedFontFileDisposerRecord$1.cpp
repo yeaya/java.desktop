@@ -1,16 +1,6 @@
 #include <sun/font/FileFont$CreatedFontFileDisposerRecord$1.h>
 
 #include <java/io/File.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Vector.h>
 #include <sun/font/CreatedFontTracker.h>
 #include <sun/font/FileFont$CreatedFontFileDisposerRecord.h>
@@ -94,8 +84,7 @@ $Object* FileFont$CreatedFontFileDisposerRecord$1::run() {
 			}
 			$nc(this->this$0->fontFile)->delete$();
 			$nc($nc($($SunFontManager::getInstance()))->tmpFontFiles)->remove($of(this->this$0->fontFile));
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& e) {
 		}
 	}
 	return $of(nullptr);

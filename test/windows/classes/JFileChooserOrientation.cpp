@@ -7,22 +7,10 @@
 #include <java/awt/Frame.h>
 #include <java/awt/GridBagLayout.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InstantiationException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JComboBox.h>
 #include <javax/swing/JFileChooser.h>
@@ -170,7 +158,6 @@ void JFileChooserOrientation::fail() {
 	$init(JFileChooserOrientation);
 	$useLocalCurrentObjectStackCache();
 	$nc(JFileChooserOrientation::frame)->dispose();
-	$init($System);
 	$nc($System::err)->println($$str({$($nc($of($($nc(JFileChooserOrientation::lookAndFeelComboBox)->getSelectedItem())))->toString()), " : Incorrect Orientation"_s}));
 }
 
@@ -220,20 +207,15 @@ void JFileChooserOrientation::showFileChooser() {
 
 bool JFileChooserOrientation::tryLookAndFeel($String* lookAndFeelString) {
 	$init(JFileChooserOrientation);
-	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(lookAndFeelString);
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($Exception, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& e) {
 		return false;
-	} catch ($ClassNotFoundException&) {
-		$var($Exception, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		return false;
-	} catch ($InstantiationException&) {
-		$var($Exception, e, $catch());
+	} catch ($InstantiationException& e) {
 		return false;
-	} catch ($IllegalAccessException&) {
-		$var($Exception, e, $catch());
+	} catch ($IllegalAccessException& e) {
 		return false;
 	}
 	return true;

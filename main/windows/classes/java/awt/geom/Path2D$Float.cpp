@@ -15,22 +15,10 @@
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/OutOfMemoryError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <sun/awt/geom/Curve.h>
 #include <jcpp.h>
@@ -267,7 +255,6 @@ void Path2D$Float::needRoom(bool needMove, int32_t newCoords) {
 
 $floats* Path2D$Float::expandCoords($floats* oldCoords, int32_t needed) {
 	$init(Path2D$Float);
-	$useLocalCurrentObjectStackCache();
 	int32_t oldSize = $nc(oldCoords)->length;
 	int32_t newSizeMin = oldSize + needed;
 	if (newSizeMin < oldSize) {
@@ -289,8 +276,7 @@ $floats* Path2D$Float::expandCoords($floats* oldCoords, int32_t needed) {
 	while (true) {
 		try {
 			return $Arrays::copyOf(oldCoords, newSize);
-		} catch ($OutOfMemoryError&) {
-			$var($OutOfMemoryError, oome, $catch());
+		} catch ($OutOfMemoryError& oome) {
 			if (newSize == newSizeMin) {
 				$throw(oome);
 			}

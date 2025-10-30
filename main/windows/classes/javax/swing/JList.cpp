@@ -16,23 +16,8 @@
 #include <java/awt/Rectangle.h>
 #include <java/awt/event/MouseEvent.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Collections.h>
@@ -171,6 +156,7 @@ $NamedAttribute JList_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JList_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JList_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JList_Attribute_var$1},
@@ -529,7 +515,6 @@ $CompoundAttribute _JList_MethodAnnotations_setVisibleRowCount78[] = {
 	{}
 };
 
-
 $FieldInfo _JList_FieldInfo_[] = {
 	{"$assertionsDisabled", "Z", nullptr, $STATIC | $FINAL | $SYNTHETIC, $staticField(JList, $assertionsDisabled)},
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JList, uiClassID)},
@@ -699,7 +684,6 @@ void JList::finalize() {
 }
 
 bool JList::$assertionsDisabled = false;
-
 $String* JList::uiClassID = nullptr;
 
 void JList::init$($ListModel* dataModel) {
@@ -754,8 +738,8 @@ void JList::updateUI() {
 				if ($instanceOf($Component, renderer)) {
 					$SwingUtilities::updateComponentTreeUI($cast($Component, renderer));
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				this->updateInProgress = false;
 			}
@@ -1007,7 +991,7 @@ $TransferHandler$DropLocation* JList::dropLocationForPoint($Point* p) {
 	if (index != -1) {
 		$assign(rect, getCellBounds(index, index));
 	}
-		$init($JList$6);
+	$init($JList$6);
 	{
 		bool between = false;
 		switch ($nc($JList$6::$SwitchMap$javax$swing$DropMode)->get($nc((this->dropMode))->ordinal())) {

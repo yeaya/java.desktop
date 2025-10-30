@@ -1,19 +1,9 @@
 #include <java/awt/print/PageFormat.h>
 
 #include <java/awt/print/Paper.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
 #include <java/lang/Cloneable.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef LANDSCAPE
@@ -78,13 +68,11 @@ void PageFormat::init$() {
 }
 
 $Object* PageFormat::clone() {
-	$useLocalCurrentObjectStackCache();
 	$var(PageFormat, newPage, nullptr);
 	try {
 		$assign(newPage, $cast(PageFormat, $Cloneable::clone()));
 		$set($nc(newPage), mPaper, $cast($Paper, $nc(this->mPaper)->clone()));
-	} catch ($CloneNotSupportedException&) {
-		$var($CloneNotSupportedException, e, $catch());
+	} catch ($CloneNotSupportedException& e) {
 		e->printStackTrace();
 		$assign(newPage, nullptr);
 	}

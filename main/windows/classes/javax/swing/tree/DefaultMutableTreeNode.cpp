@@ -4,22 +4,11 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
 #include <java/lang/Cloneable.h>
-#include <java/lang/CompoundAttribute.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Collections.h>
 #include <java/util/Enumeration.h>
 #include <java/util/NoSuchElementException.h>
@@ -181,7 +170,6 @@ bool DefaultMutableTreeNode::equals(Object$* arg0) {
 void DefaultMutableTreeNode::finalize() {
 	this->$Cloneable::finalize();
 }
-
 
 $Enumeration* DefaultMutableTreeNode::EMPTY_ENUMERATION = nullptr;
 
@@ -710,8 +698,7 @@ $Object* DefaultMutableTreeNode::clone() {
 		$assign(newNode, $cast(DefaultMutableTreeNode, $Cloneable::clone()));
 		$set($nc(newNode), children$, nullptr);
 		$set(newNode, parent, nullptr);
-	} catch ($CloneNotSupportedException&) {
-		$var($CloneNotSupportedException, e, $catch());
+	} catch ($CloneNotSupportedException& e) {
 		$throwNew($Error, $(e->toString()));
 	}
 	return $of(newNode);

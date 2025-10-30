@@ -1,16 +1,5 @@
 #include <sun/print/PSPrinterJob$2.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <javax/print/PrintService.h>
 #include <sun/print/PSPrinterJob.h>
@@ -88,8 +77,7 @@ $Object* PSPrinterJob$2::run() {
 			$var($Method, isPSMethod, psClass->getMethod("isPostscript"_s, ($ClassArray*)nullptr));
 			return $of($cast($Boolean, $nc(isPSMethod)->invoke(this->val$pservice, ($ObjectArray*)nullptr)));
 		}
-	} catch ($Throwable&) {
-		$catch();
+	} catch ($Throwable& t) {
 	}
 	$init($Boolean);
 	return $of($Boolean::TRUE);

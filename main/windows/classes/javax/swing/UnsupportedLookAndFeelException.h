@@ -14,8 +14,10 @@ public:
 	UnsupportedLookAndFeelException();
 	void init$($String* s);
 	UnsupportedLookAndFeelException(const UnsupportedLookAndFeelException& e);
-	UnsupportedLookAndFeelException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline UnsupportedLookAndFeelException* operator ->() {
+		return (UnsupportedLookAndFeelException*)throwing$;
+	}
 };
 
 	} // swing

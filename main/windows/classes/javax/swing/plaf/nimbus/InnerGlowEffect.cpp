@@ -1,12 +1,6 @@
 #include <javax/swing/plaf/nimbus/InnerGlowEffect.h>
 
 #include <java/awt/Color.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/plaf/nimbus/InnerShadowEffect.h>
 #include <javax/swing/plaf/nimbus/ShadowEffect.h>
 #include <jcpp.h>

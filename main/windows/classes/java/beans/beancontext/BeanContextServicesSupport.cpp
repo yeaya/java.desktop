@@ -23,19 +23,8 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/util/AbstractCollection.h>
 #include <java/util/AbstractList.h>
@@ -523,7 +512,6 @@ void BeanContextServicesSupport::revokeService($Class* serviceClass, $BeanContex
 
 bool BeanContextServicesSupport::hasService($Class* serviceClass) {
 	$synchronized(this) {
-		$useLocalCurrentObjectStackCache();
 		if (serviceClass == nullptr) {
 			$throwNew($NullPointerException, "serviceClass"_s);
 		}
@@ -535,8 +523,7 @@ bool BeanContextServicesSupport::hasService($Class* serviceClass) {
 			$var($BeanContextServices, bcs, nullptr);
 			try {
 				$assign(bcs, $cast($BeanContextServices, getBeanContext()));
-			} catch ($ClassCastException&) {
-				$var($ClassCastException, cce, $catch());
+			} catch ($ClassCastException& cce) {
 				return false;
 			}
 			return bcs == nullptr ? false : $nc(bcs)->hasService(serviceClass);
@@ -576,12 +563,10 @@ $Object* BeanContextServicesSupport::getService($BeanContextChild* child, Object
 			if (service != nullptr) {
 				try {
 					$nc(bcsc)->usingService(requestor, service, serviceClass, bcsp, false, bcsrl);
-				} catch ($TooManyListenersException&) {
-					$var($TooManyListenersException, tmle, $catch());
+				} catch ($TooManyListenersException& tmle) {
 					bcsp->releaseService(bcssp, requestor, service);
 					$throw(tmle);
-				} catch ($UnsupportedOperationException&) {
-					$var($UnsupportedOperationException, uope, $catch());
+				} catch ($UnsupportedOperationException& uope) {
 					bcsp->releaseService(bcssp, requestor, service);
 					$throw(uope);
 				}
@@ -593,12 +578,10 @@ $Object* BeanContextServicesSupport::getService($BeanContextChild* child, Object
 			if (service != nullptr) {
 				try {
 					$nc(bcsc)->usingService(requestor, service, serviceClass, this->proxy, true, bcsrl);
-				} catch ($TooManyListenersException&) {
-					$var($TooManyListenersException, tmle, $catch());
+				} catch ($TooManyListenersException& tmle) {
 					$nc(this->proxy)->releaseService(bcssp, requestor, service);
 					$throw(tmle);
-				} catch ($UnsupportedOperationException&) {
-					$var($UnsupportedOperationException, uope, $catch());
+				} catch ($UnsupportedOperationException& uope) {
 					$nc(this->proxy)->releaseService(bcssp, requestor, service);
 					$throw(uope);
 				}
@@ -690,8 +673,7 @@ $BeanContextServicesListener* BeanContextServicesSupport::getChildBeanContextSer
 	$init(BeanContextServicesSupport);
 	try {
 		return $cast($BeanContextServicesListener, child);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, cce, $catch());
+	} catch ($ClassCastException& cce) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -731,8 +713,7 @@ void BeanContextServicesSupport::initializeBeanContextResources() {
 		try {
 			$var($BeanContextServices, bcs, $cast($BeanContextServices, nbc));
 			$set(this, proxy, $new($BeanContextServicesSupport$BCSSProxyServiceProvider, this, bcs));
-		} catch ($ClassCastException&) {
-			$catch();
+		} catch ($ClassCastException& cce) {
 		}
 	}
 }
@@ -789,8 +770,7 @@ void BeanContextServicesSupport::bcsPreSerializationHook($ObjectOutputStream* oo
 			$var($BeanContextServicesSupport$BCSSServiceProvider, bcsp, nullptr);
 			try {
 				$assign(bcsp, $cast($BeanContextServicesSupport$BCSSServiceProvider, $nc(entry)->getValue()));
-			} catch ($ClassCastException&) {
-				$var($ClassCastException, cce, $catch());
+			} catch ($ClassCastException& cce) {
 				continue;
 			}
 			if ($instanceOf($Serializable, $($nc(bcsp)->getServiceProvider()))) {

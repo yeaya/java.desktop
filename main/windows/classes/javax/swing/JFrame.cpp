@@ -16,23 +16,8 @@
 #include <java/awt/Window$AccessibleAWTWindow.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/WindowEvent.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/JComponent.h>
@@ -119,6 +104,7 @@ $NamedAttribute JFrame_Attribute_var$1[] = {
 	{"delegate", 's', "getContentPane"},
 	{}
 };
+
 $CompoundAttribute _JFrame_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JFrame_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JFrame_Attribute_var$1},
@@ -237,7 +223,6 @@ $CompoundAttribute _JFrame_MethodAnnotations_setTransferHandler32[] = {
 	{}
 };
 
-
 $FieldInfo _JFrame_FieldInfo_[] = {
 	{"defaultLookAndFeelDecoratedKey", "Ljava/lang/Object;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JFrame, defaultLookAndFeelDecoratedKey)},
 	{"defaultCloseOperation", "I", nullptr, $PRIVATE, $field(JFrame, defaultCloseOperation)},
@@ -335,7 +320,6 @@ $Object* JFrame::clone() {
 void JFrame::finalize() {
 	this->$Frame::finalize();
 }
-
 
 $Object* JFrame::defaultLookAndFeelDecoratedKey = nullptr;
 
@@ -514,8 +498,8 @@ void JFrame::setRootPane($JRootPane* root) {
 				setRootPaneCheckingEnabled(false);
 				$init($BorderLayout);
 				add(static_cast<$Component*>(this->rootPane), $of($BorderLayout::CENTER));
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				setRootPaneCheckingEnabled(checkingEnabled);
 			}

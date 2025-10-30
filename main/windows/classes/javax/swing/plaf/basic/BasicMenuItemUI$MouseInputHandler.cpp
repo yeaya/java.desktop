@@ -1,16 +1,6 @@
 #include <javax/swing/plaf/basic/BasicMenuItemUI$MouseInputHandler.h>
 
 #include <java/awt/event/MouseEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/plaf/basic/BasicMenuItemUI$Handler.h>
 #include <javax/swing/plaf/basic/BasicMenuItemUI.h>
 #include <jcpp.h>
@@ -35,11 +25,11 @@ $NamedAttribute BasicMenuItemUI$MouseInputHandler_Attribute_var$0[] = {
 	{"since", 's', "17"},
 	{}
 };
+
 $CompoundAttribute _BasicMenuItemUI$MouseInputHandler_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", BasicMenuItemUI$MouseInputHandler_Attribute_var$0},
 	{}
 };
-
 
 $FieldInfo _BasicMenuItemUI$MouseInputHandler_FieldInfo_[] = {
 	{"this$0", "Ljavax/swing/plaf/basic/BasicMenuItemUI;", nullptr, $FINAL | $SYNTHETIC, $field(BasicMenuItemUI$MouseInputHandler, this$0)},

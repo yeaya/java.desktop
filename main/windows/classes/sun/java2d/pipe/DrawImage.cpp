@@ -20,18 +20,7 @@
 #include <java/awt/image/Raster.h>
 #include <java/awt/image/VolatileImage.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/SunHints.h>
 #include <sun/awt/image/BytePackedRaster.h>
 #include <sun/awt/image/ImageRepresentation.h>
@@ -171,7 +160,6 @@ $ClassInfo _DrawImage_ClassInfo_ = {
 $Object* allocate$DrawImage($Class* clazz) {
 	return $of($alloc(DrawImage));
 }
-
 
 double DrawImage::MAX_TX_ERROR = 0.0;
 
@@ -346,8 +334,7 @@ void DrawImage::renderImageXform($SunGraphics2D* sg, $Image* img$renamed, $Affin
 	$var($AffineTransform, itx, nullptr);
 	try {
 		$assign(itx, $nc(tx)->createInverse());
-	} catch ($NoninvertibleTransformException&) {
-		$var($NoninvertibleTransformException, ignored, $catch());
+	} catch ($NoninvertibleTransformException& ignored) {
 		return;
 	}
 	$var($doubles, coords, $new($doubles, 8));
@@ -455,15 +442,13 @@ bool DrawImage::renderImageCopy($SunGraphics2D* sg, $Image* img, $Color* bgColor
 		try {
 			blitSurfaceData(sg, clip, srcData, dstData, sx, sy, dx, dy, w, h, bgColor);
 			return true;
-		} catch ($NullPointerException&) {
-			$var($NullPointerException, e, $catch());
+		} catch ($NullPointerException& e) {
 			bool var$0 = $SurfaceData::isNull(dstData);
 			if (!(var$0 || $SurfaceData::isNull(srcData))) {
 				$throw(e);
 			}
 			return false;
-		} catch ($InvalidPipeException&) {
-			$var($InvalidPipeException, e, $catch());
+		} catch ($InvalidPipeException& e) {
 			++attempts;
 			$assign(clip, sg->getCompClip());
 			$assign(dstData, sg->surfaceData);
@@ -493,14 +478,12 @@ bool DrawImage::renderImageScale($SunGraphics2D* sg, $Image* img, $Color* bgColo
 			$var($SurfaceType, srcType, $nc(srcData)->getSurfaceType());
 			$var($SurfaceType, dstType, dstData->getSurfaceType());
 			return scaleSurfaceData(sg, clip, srcData, dstData, srcType, dstType, sx1, sy1, sx2, sy2, dx1, dy1, dx2, dy2);
-		} catch ($NullPointerException&) {
-			$var($NullPointerException, e, $catch());
+		} catch ($NullPointerException& e) {
 			if (!$SurfaceData::isNull(dstData)) {
 				$throw(e);
 			}
 			return false;
-		} catch ($InvalidPipeException&) {
-			$var($InvalidPipeException, e, $catch());
+		} catch ($InvalidPipeException& e) {
 			++attempts;
 			$assign(clip, sg->getCompClip());
 			$assign(dstData, sg->surfaceData);

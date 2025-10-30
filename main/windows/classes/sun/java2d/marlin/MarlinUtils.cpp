@@ -1,17 +1,6 @@
 #include <sun/java2d/marlin/MarlinUtils.h>
 
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/marlin/MarlinConst.h>
 #include <sun/util/logging/PlatformLogger.h>
 #include <jcpp.h>
@@ -70,7 +59,6 @@ void MarlinUtils::logInfo($String* msg) {
 		$nc(MarlinUtils::LOG)->info(msg);
 	} else {
 		if ($MarlinConst::ENABLE_LOGS) {
-			$init($System);
 			$nc($System::out)->print("INFO: "_s);
 			$nc($System::out)->println(msg);
 		}
@@ -84,7 +72,6 @@ void MarlinUtils::logException($String* msg, $Throwable* th) {
 		$nc(MarlinUtils::LOG)->warning(msg, th);
 	} else {
 		if ($MarlinConst::ENABLE_LOGS) {
-			$init($System);
 			$nc($System::out)->print("WARNING: "_s);
 			$nc($System::out)->println(msg);
 			$nc(th)->printStackTrace($System::err);

@@ -3,17 +3,7 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Map.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/JComponent.h>
@@ -76,6 +66,7 @@ $NamedAttribute JTextPane_Attribute_var$0[] = {
 	{"description", 's', "A text component that can be marked up with attributes that are graphically represented."},
 	{}
 };
+
 $CompoundAttribute _JTextPane_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JTextPane_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", nullptr},
@@ -121,7 +112,6 @@ $CompoundAttribute _JTextPane_MethodAnnotations_getUIClassID11[] = {
 	{"Ljava/beans/BeanProperty;", JTextPane_Attribute_var$4},
 	{}
 };
-
 
 $FieldInfo _JTextPane_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JTextPane, uiClassID)},
@@ -173,7 +163,6 @@ $ClassInfo _JTextPane_ClassInfo_ = {
 $Object* allocate$JTextPane($Class* clazz) {
 	return $of($alloc(JTextPane));
 }
-
 
 $String* JTextPane::uiClassID = nullptr;
 
@@ -251,8 +240,7 @@ void JTextPane::replaceSelection($String* content, bool checkEditable) {
 			if (composedTextSaved) {
 				restoreComposedText();
 			}
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this);
 		}
 	}

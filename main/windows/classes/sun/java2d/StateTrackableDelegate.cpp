@@ -1,16 +1,7 @@
 #include <sun/java2d/StateTrackableDelegate.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/StateTrackable$State.h>
 #include <sun/java2d/StateTrackableDelegate$1.h>
 #include <sun/java2d/StateTrackableDelegate$2.h>
@@ -89,9 +80,7 @@ $Object* allocate$StateTrackableDelegate($Class* clazz) {
 	return $of($alloc(StateTrackableDelegate));
 }
 
-
 StateTrackableDelegate* StateTrackableDelegate::UNTRACKABLE_DELEGATE = nullptr;
-
 StateTrackableDelegate* StateTrackableDelegate::IMMUTABLE_DELEGATE = nullptr;
 
 StateTrackableDelegate* StateTrackableDelegate::createInstance($StateTrackable$State* state) {

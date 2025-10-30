@@ -5,27 +5,14 @@
 #include <java/awt/Font.h>
 #include <java/awt/FontMetrics.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JComponent.h>
@@ -164,11 +151,9 @@ void TestGlyphBreak::main($StringArray* args) {
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestGlyphBreak$$Lambda$lambda$main$0)));
 	try {
 		$Thread::sleep(2000);
-	} catch ($InterruptedException&) {
-		$catch();
+	} catch ($InterruptedException& ex) {
 	}
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestGlyphBreak$$Lambda$lambda$main$1$1)));
-	$init($System);
 	$init(TestGlyphBreak);
 	$nc($System::out)->println($$str({"metrics getHeight "_s, $$str($nc(TestGlyphBreak::fm)->getHeight()), " button height "_s, $$str(TestGlyphBreak::btnHeight)}));
 	if (TestGlyphBreak::btnHeight > 2 * $nc(TestGlyphBreak::fm)->getHeight()) {

@@ -20,22 +20,11 @@
 #include <java/awt/event/WindowAdapter.h>
 #include <java/awt/event/WindowListener.h>
 #include <java/io/File.h>
-#include <java/lang/Array.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URI.h>
 #include <java/net/URISyntaxException.h>
 #include <java/net/URL.h>
@@ -311,7 +300,6 @@ $String* ServiceDialog::strBundle = nullptr;
 $Insets* ServiceDialog::panelInsets = nullptr;
 $Insets* ServiceDialog::compInsets = nullptr;
 $ResourceBundle* ServiceDialog::messageRB = nullptr;
-
 $Class* ServiceDialog::_keyEventClazz = nullptr;
 
 void ServiceDialog::init$($GraphicsConfiguration* gc, int32_t x, int32_t y, $PrintServiceArray* services, int32_t defaultServiceIndex, $DocFlavor* flavor, $PrintRequestAttributeSet* attributes, $Window* window) {
@@ -344,8 +332,7 @@ void ServiceDialog::initPrintDialog(int32_t x, int32_t y, $PrintServiceArray* se
 		if (var$0) {
 			try {
 				setAlwaysOnTop(true);
-			} catch ($SecurityException&) {
-				$catch();
+			} catch ($SecurityException& e) {
 			}
 		}
 	}
@@ -409,8 +396,7 @@ void ServiceDialog::initPageDialog(int32_t x, int32_t y, $PrintService* ps, $Doc
 		if (var$0) {
 			try {
 				setAlwaysOnTop(true);
-			} catch ($SecurityException&) {
-				$catch();
+			} catch ($SecurityException& e) {
 			}
 		}
 	}
@@ -501,8 +487,7 @@ bool ServiceDialog::showFileChooser() {
 			if (dst == nullptr) {
 				try {
 					$assign(dst, $new($Destination, $$new($URI, "file:out.prn"_s)));
-				} catch ($URISyntaxException&) {
-					$catch();
+				} catch ($URISyntaxException& e) {
 				}
 			}
 		}
@@ -511,8 +496,7 @@ bool ServiceDialog::showFileChooser() {
 	if (dst != nullptr) {
 		try {
 			$assign(fileDest, $new($File, $(dst->getURI())));
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$assign(fileDest, $new($File, "out.prn"_s));
 		}
 	} else {
@@ -528,8 +512,7 @@ bool ServiceDialog::showFileChooser() {
 		$assign(fileDest, jfc->getSelectedFile());
 		try {
 			$nc(this->asCurrent)->add(static_cast<$Attribute*>(static_cast<$PrintJobAttribute*>($$new($Destination, $($nc(fileDest)->toURI())))));
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$nc(this->asCurrent)->remove(dstCategory);
 		}
 	} else {
@@ -555,8 +538,7 @@ $String* ServiceDialog::getMsg($String* key) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		return removeMnemonics($($nc(ServiceDialog::messageRB)->getString(key)));
-	} catch ($MissingResourceException&) {
-		$var($MissingResourceException, e, $catch());
+	} catch ($MissingResourceException& e) {
 		$throwNew($Error, $$str({"Fatal: Resource for ServiceUI is broken; there is no "_s, key, " key in resource"_s}));
 	}
 	$shouldNotReachHere();
@@ -616,8 +598,7 @@ int32_t ServiceDialog::getVKMnemonic($String* key) {
 		$var($Field, field, $nc(ServiceDialog::_keyEventClazz)->getDeclaredField(vkString));
 		int32_t value = $nc(field)->getInt(nullptr);
 		return value;
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 	return 0;
 }

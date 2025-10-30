@@ -18,20 +18,8 @@
 #include <java/awt/event/MouseListener.h>
 #include <java/awt/event/MouseMotionListener.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Long.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/Short.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/Accessible.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/AbstractButton.h>
@@ -438,29 +426,29 @@ void BasicComboBoxUI::installDefaults() {
 }
 
 void BasicComboBoxUI::installListeners() {
-	if (($assignField(this, itemListener, createItemListener())) != nullptr) {
+	if (($set(this, itemListener, createItemListener())) != nullptr) {
 		$nc(this->comboBox)->addItemListener(this->itemListener);
 	}
-	if (($assignField(this, propertyChangeListener, createPropertyChangeListener())) != nullptr) {
+	if (($set(this, propertyChangeListener, createPropertyChangeListener())) != nullptr) {
 		$nc(this->comboBox)->addPropertyChangeListener(this->propertyChangeListener);
 	}
-	if (($assignField(this, keyListener, createKeyListener())) != nullptr) {
+	if (($set(this, keyListener, createKeyListener())) != nullptr) {
 		$nc(this->comboBox)->addKeyListener(this->keyListener);
 	}
-	if (($assignField(this, focusListener, createFocusListener())) != nullptr) {
+	if (($set(this, focusListener, createFocusListener())) != nullptr) {
 		$nc(this->comboBox)->addFocusListener(this->focusListener);
 	}
-	if (($assignField(this, popupMouseListener, $nc(this->popup)->getMouseListener())) != nullptr) {
+	if (($set(this, popupMouseListener, $nc(this->popup)->getMouseListener())) != nullptr) {
 		$nc(this->comboBox)->addMouseListener(this->popupMouseListener);
 	}
-	if (($assignField(this, popupMouseMotionListener, $nc(this->popup)->getMouseMotionListener())) != nullptr) {
+	if (($set(this, popupMouseMotionListener, $nc(this->popup)->getMouseMotionListener())) != nullptr) {
 		$nc(this->comboBox)->addMouseMotionListener(this->popupMouseMotionListener);
 	}
-	if (($assignField(this, popupKeyListener, $nc(this->popup)->getKeyListener())) != nullptr) {
+	if (($set(this, popupKeyListener, $nc(this->popup)->getKeyListener())) != nullptr) {
 		$nc(this->comboBox)->addKeyListener(this->popupKeyListener);
 	}
 	if ($nc(this->comboBox)->getModel() != nullptr) {
-		if (($assignField(this, listDataListener, createListDataListener())) != nullptr) {
+		if (($set(this, listDataListener, createListDataListener())) != nullptr) {
 			$nc($($nc(this->comboBox)->getModel()))->addListDataListener(this->listDataListener);
 		}
 	}

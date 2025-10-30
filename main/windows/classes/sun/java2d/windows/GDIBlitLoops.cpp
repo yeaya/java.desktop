@@ -1,14 +1,6 @@
 #include <sun/java2d/windows/GDIBlitLoops.h>
 
 #include <java/awt/Composite.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SurfaceData.h>
 #include <sun/java2d/loops/Blit.h>
 #include <sun/java2d/loops/CompositeType.h>
@@ -73,8 +65,8 @@ $Object* allocate$GDIBlitLoops($Class* clazz) {
 void GDIBlitLoops::register$() {
 	$init(GDIBlitLoops);
 	$useLocalCurrentObjectStackCache();
-		$init($SurfaceType);
-		$init($GDIWindowSurfaceData);
+	$init($SurfaceType);
+	$init($GDIWindowSurfaceData);
 	$var($GraphicsPrimitiveArray, primitives, $new($GraphicsPrimitiveArray, {
 		static_cast<$GraphicsPrimitive*>($$new(GDIBlitLoops, $SurfaceType::IntRgb, $GDIWindowSurfaceData::AnyGdi)),
 		static_cast<$GraphicsPrimitive*>($$new(GDIBlitLoops, $SurfaceType::Ushort555Rgb, $GDIWindowSurfaceData::AnyGdi, 31744, 992, 31)),

@@ -3,14 +3,7 @@
 #include <java/awt/CheckboxMenuItem.h>
 #include <java/awt/Font.h>
 #include <java/awt/MenuItem.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/windows/WCheckboxMenuItemPeer$1.h>
 #include <sun/awt/windows/WMenuItemPeer.h>
 #include <sun/awt/windows/WObjectPeer.h>

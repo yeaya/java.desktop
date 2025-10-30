@@ -32,18 +32,8 @@
 #include <java/awt/image/WritableRenderedImage.h>
 #include <java/awt/image/renderable/RenderableImage.h>
 #include <java/awt/print/PrinterJob.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/util/Map.h>
 #include <sun/java2d/Spans.h>
@@ -294,8 +284,7 @@ $Graphics* PeekGraphics::create() {
 	try {
 		$assign(newGraphics, $cast(PeekGraphics, clone()));
 		$set($nc(newGraphics), mGraphics, $cast($Graphics2D, $nc(this->mGraphics)->create()));
-	} catch ($CloneNotSupportedException&) {
-		$catch();
+	} catch ($CloneNotSupportedException& e) {
 	}
 	return newGraphics;
 }
@@ -744,8 +733,7 @@ int32_t PeekGraphics::getImageWidth($Image* img) {
 		while ($nc(img)->getWidth(this) == -1) {
 			try {
 				$of(this)->wait();
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& e) {
 			}
 		}
 		return $nc(img)->getWidth(this);
@@ -757,8 +745,7 @@ int32_t PeekGraphics::getImageHeight($Image* img) {
 		while ($nc(img)->getHeight(this) == -1) {
 			try {
 				$of(this)->wait();
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& e) {
 			}
 		}
 		return $nc(img)->getHeight(this);

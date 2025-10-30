@@ -1,13 +1,5 @@
 #include <javax/sound/sampled/UnsupportedAudioFileException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -54,16 +46,10 @@ void UnsupportedAudioFileException::init$($String* message) {
 UnsupportedAudioFileException::UnsupportedAudioFileException() {
 }
 
-UnsupportedAudioFileException::UnsupportedAudioFileException(const UnsupportedAudioFileException& e) {
+UnsupportedAudioFileException::UnsupportedAudioFileException(const UnsupportedAudioFileException& e) : $Exception(e) {
 }
 
-UnsupportedAudioFileException UnsupportedAudioFileException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void UnsupportedAudioFileException::throwWrapper$() {
-	$pendingException(this);
+void UnsupportedAudioFileException::throw$() {
 	throw *this;
 }
 

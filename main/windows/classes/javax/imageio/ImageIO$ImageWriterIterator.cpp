@@ -1,15 +1,7 @@
 #include <javax/imageio/ImageIO$ImageWriterIterator.h>
 
 #include <java/io/IOException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Iterator.h>
 #include <javax/imageio/ImageIO.h>
 #include <javax/imageio/ImageWriter.h>
@@ -81,13 +73,11 @@ bool ImageIO$ImageWriterIterator::hasNext() {
 }
 
 $Object* ImageIO$ImageWriterIterator::next() {
-	$useLocalCurrentObjectStackCache();
 	$var($ImageWriterSpi, spi, nullptr);
 	try {
 		$assign(spi, $cast($ImageWriterSpi, $nc(this->iter)->next()));
 		return $of($nc(spi)->createWriterInstance());
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$init($ImageIO);
 		$load($ImageWriterSpi);
 		$nc($ImageIO::theRegistry)->deregisterServiceProvider(spi, $ImageWriterSpi::class$);

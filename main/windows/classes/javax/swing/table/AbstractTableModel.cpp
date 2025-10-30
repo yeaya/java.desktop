@@ -1,13 +1,5 @@
 #include <javax/swing/table/AbstractTableModel.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <javax/swing/event/EventListenerList.h>
 #include <javax/swing/event/TableModelEvent.h>
@@ -125,7 +117,6 @@ int32_t AbstractTableModel::findColumn($String* columnName) {
 }
 
 $Class* AbstractTableModel::getColumnClass(int32_t columnIndex) {
-	$load($Object);
 	return $Object::class$;
 }
 

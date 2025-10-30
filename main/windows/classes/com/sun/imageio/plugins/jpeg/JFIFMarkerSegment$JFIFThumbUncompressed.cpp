@@ -8,20 +8,7 @@
 #include <com/sun/imageio/plugins/jpeg/MarkerSegment.h>
 #include <java/awt/image/BufferedImage.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/metadata/IIOInvalidTreeException.h>
 #include <javax/imageio/metadata/IIOMetadataNode.h>
 #include <javax/imageio/stream/ImageInputStream.h>
@@ -205,7 +192,6 @@ void JFIFMarkerSegment$JFIFThumbUncompressed::writePixels($ImageOutputStream* io
 
 void JFIFMarkerSegment$JFIFThumbUncompressed::print() {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->print($$str({this->name, " width: "_s}));
 	$nc($System::out)->println(this->thumbWidth);
 	$nc($System::out)->print($$str({this->name, " height: "_s}));

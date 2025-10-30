@@ -17,30 +17,13 @@
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/OutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/OutOfMemoryError.h>
 #include <java/lang/RuntimePermission.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessControlContext.h>
 #include <java/security/AccessController.h>
 #include <java/security/BasicPermission.h>
@@ -406,8 +389,7 @@ ICC_Profile* ICC_Profile::getInstance($bytes* data) {
 	$var($Profile, p, nullptr);
 	try {
 		$assign(p, $nc($($CMSManager::getModule()))->loadProfile(data));
-	} catch ($CMMException&) {
-		$var($CMMException, c, $catch());
+	} catch ($CMMException& c) {
 		$throwNew($IllegalArgumentException, "Invalid ICC Profile Data"_s);
 	}
 	try {
@@ -426,8 +408,7 @@ ICC_Profile* ICC_Profile::getInstance($bytes* data) {
 		if (var$2 && getData(p, ICC_Profile::icSigBlueTRCTag) != nullptr) {
 			return $new($ICC_ProfileRGB, p);
 		}
-	} catch ($CMMException&) {
-		$catch();
+	} catch ($CMMException& c) {
 	}
 	return $new(ICC_Profile, p);
 }
@@ -501,20 +482,18 @@ ICC_Profile* ICC_Profile::getInstance($String* fileName) {
 					$assign(var$2, getInstance(is));
 					return$1 = true;
 					goto $finally;
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					if (twrVar0$ != nullptr) {
 						try {
 							twrVar0$->close();
-						} catch ($Throwable&) {
-							$var($Throwable, x2, $catch());
+						} catch ($Throwable& x2) {
 							t$->addSuppressed(x2);
 						}
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} $finally: {
 				if (twrVar0$ != nullptr) {
 					twrVar0$->close();
@@ -549,8 +528,7 @@ $bytes* ICC_Profile::getProfileDataFromStream($InputStream* s) {
 	bis->reset();
 	try {
 		return bis->readNBytes(profileSize);
-	} catch ($OutOfMemoryError&) {
-		$var($OutOfMemoryError, e, $catch());
+	} catch ($OutOfMemoryError& e) {
 		$throwNew($IOException, "Color profile is too big"_s);
 	}
 	$shouldNotReachHere();
@@ -578,23 +556,21 @@ $Profile* ICC_Profile::cmmProfile() {
 					try {
 						$var($bytes, data, getProfileDataFromStream(is));
 						if (data != nullptr) {
-							$assign(p, ($assignField(this, cmmProfile$, $nc($($CMSManager::getModule()))->loadProfile(data))));
+							$assign(p, ($set(this, cmmProfile$, $nc($($CMSManager::getModule()))->loadProfile(data))));
 							$set(this, deferralInfo, nullptr);
 						}
-					} catch ($Throwable&) {
-						$var($Throwable, t$, $catch());
+					} catch ($Throwable& t$) {
 						if (twrVar0$ != nullptr) {
 							try {
 								twrVar0$->close();
-							} catch ($Throwable&) {
-								$var($Throwable, x2, $catch());
+							} catch ($Throwable& x2) {
 								t$->addSuppressed(x2);
 							}
 						}
 						$throw(t$);
 					}
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$1) {
+					$assign(var$0, var$1);
 				} /*finally*/ {
 					if (twrVar0$ != nullptr) {
 						twrVar0$->close();
@@ -604,10 +580,8 @@ $Profile* ICC_Profile::cmmProfile() {
 					$throw(var$0);
 				}
 			}
-		} catch ($CMMException&) {
-			$var($Exception, ignore, $catch());
-		} catch ($IOException&) {
-			$var($Exception, ignore, $catch());
+		} catch ($CMMException& ignore) {
+		} catch ($IOException& ignore) {
 		}
 	}
 	return p;
@@ -708,18 +682,16 @@ void ICC_Profile::write($String* fileName) {
 			try {
 				try {
 					write(out);
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					try {
 						out->close();
-					} catch ($Throwable&) {
-						$var($Throwable, x2, $catch());
+					} catch ($Throwable& x2) {
 						t$->addSuppressed(x2);
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				out->close();
 			}
@@ -747,11 +719,9 @@ $bytes* ICC_Profile::getData(int32_t tagSignature) {
 
 $bytes* ICC_Profile::getData($Profile* p, int32_t tagSignature) {
 	$init(ICC_Profile);
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($($CMSManager::getModule()))->getTagData(p, tagSignature);
-	} catch ($CMMException&) {
-		$var($CMMException, c, $catch());
+	} catch ($CMMException& c) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -1145,8 +1115,7 @@ bool ICC_Profile::isChildOf($File* f, $String* dirName) {
 		}
 		$var($String, canonicalFileName, $nc(f)->getCanonicalPath());
 		return $nc(canonicalFileName)->startsWith(canonicalDirName);
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		return false;
 	}
 	$shouldNotReachHere();

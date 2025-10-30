@@ -2,15 +2,6 @@
 
 #include <java/awt/AttributeValue.h>
 #include <java/awt/PageAttributes.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef A
@@ -465,299 +456,152 @@ $Object* allocate$PageAttributes$MediaType($Class* clazz) {
 }
 
 $StringArray* PageAttributes$MediaType::NAMES = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_4A0 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_2A0 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_A0 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_A1 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_A2 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_A3 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_A4 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_A5 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_A6 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_A7 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_A8 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_A9 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_A10 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_B0 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_B1 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_B2 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_B3 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_B4 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_B5 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_B6 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_B7 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_B8 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_B9 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_B10 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::JIS_B0 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::JIS_B1 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::JIS_B2 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::JIS_B3 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::JIS_B4 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::JIS_B5 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::JIS_B6 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::JIS_B7 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::JIS_B8 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::JIS_B9 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::JIS_B10 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C0 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C1 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C2 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C3 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C4 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C5 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C6 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C7 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C8 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C9 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C10 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_DESIGNATED_LONG = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::EXECUTIVE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::FOLIO = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::INVOICE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::LEDGER = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::NA_LETTER = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::NA_LEGAL = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::QUARTO = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::A = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::B = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::C = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::D = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::E = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::NA_10X15_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::NA_10X14_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::NA_10X13_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::NA_9X12_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::NA_9X11_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::NA_7X9_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::NA_6X9_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::NA_NUMBER_9_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::NA_NUMBER_10_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::NA_NUMBER_11_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::NA_NUMBER_12_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::NA_NUMBER_14_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::INVITE_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ITALY_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::MONARCH_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::PERSONAL_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::A0 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::A1 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::A2 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::A3 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::A4 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::A5 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::A6 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::A7 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::A8 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::A9 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::A10 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::B0 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::B1 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::B2 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::B3 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::B4 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_B4_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::B5 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_B5_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::B6 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::B7 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::B8 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::B9 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::B10 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::C0 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C0_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::C1 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C1_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::C2 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C2_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::C3 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C3_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::C4 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C4_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::C5 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C5_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::C6 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C6_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::C7 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C7_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::C8 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C8_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::C9 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C9_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::C10 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_C10_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ISO_DESIGNATED_LONG_ENVELOPE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::STATEMENT = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::TABLOID = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::LETTER = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::NOTE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::LEGAL = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_10X15 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_10X14 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_10X13 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_9X12 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_9X11 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_7X9 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_6X9 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_9 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_10 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_11 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_12 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_14 = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_INVITE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_ITALY = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_MONARCH = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ENV_PERSONAL = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::INVITE = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::ITALY = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::MONARCH = nullptr;
-
 PageAttributes$MediaType* PageAttributes$MediaType::PERSONAL = nullptr;
 
 void PageAttributes$MediaType::init$(int32_t type) {

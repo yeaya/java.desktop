@@ -6,18 +6,7 @@
 #include <com/sun/media/sound/AudioFloatFormatConverter$AudioFloatInputStreamResampler.h>
 #include <com/sun/media/sound/AudioFloatInputStream.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Objects.h>
 #include <javax/sound/sampled/AudioFormat$Encoding.h>
@@ -107,7 +96,7 @@ $Object* allocate$AudioFloatFormatConverter($Class* clazz) {
 
 void AudioFloatFormatConverter::init$() {
 	$FormatConversionProvider::init$();
-		$init($AudioFormat$Encoding);
+	$init($AudioFormat$Encoding);
 	$set(this, formats, $new($AudioFormat$EncodingArray, {
 		$AudioFormat$Encoding::PCM_SIGNED,
 		$AudioFormat$Encoding::PCM_UNSIGNED,
@@ -167,7 +156,7 @@ $AudioInputStream* AudioFloatFormatConverter::getAudioInputStream($AudioFormat* 
 }
 
 $AudioFormat$EncodingArray* AudioFloatFormatConverter::getSourceEncodings() {
-		$init($AudioFormat$Encoding);
+	$init($AudioFormat$Encoding);
 	return $new($AudioFormat$EncodingArray, {
 		$AudioFormat$Encoding::PCM_SIGNED,
 		$AudioFormat$Encoding::PCM_UNSIGNED,
@@ -183,7 +172,7 @@ $AudioFormat$EncodingArray* AudioFloatFormatConverter::getTargetEncodings($Audio
 	if ($AudioFloatConverter::getConverter(sourceFormat) == nullptr) {
 		return $new($AudioFormat$EncodingArray, 0);
 	}
-		$init($AudioFormat$Encoding);
+	$init($AudioFormat$Encoding);
 	return $new($AudioFormat$EncodingArray, {
 		$AudioFormat$Encoding::PCM_SIGNED,
 		$AudioFormat$Encoding::PCM_UNSIGNED,

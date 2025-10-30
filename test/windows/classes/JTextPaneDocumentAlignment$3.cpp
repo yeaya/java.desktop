@@ -3,15 +3,6 @@
 #include <JTextPaneDocumentAlignment.h>
 #include <java/awt/Rectangle.h>
 #include <java/awt/Window.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JTextPane.h>
 #include <javax/swing/text/BadLocationException.h>
@@ -72,12 +63,10 @@ void JTextPaneDocumentAlignment$3::init$() {
 }
 
 void JTextPaneDocumentAlignment$3::run() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$init($JTextPaneDocumentAlignment);
 		$JTextPaneDocumentAlignment::position = $nc($($nc($JTextPaneDocumentAlignment::jTextPane)->modelToView(1)))->x;
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		e->printStackTrace();
 	}
 	$init($JTextPaneDocumentAlignment);

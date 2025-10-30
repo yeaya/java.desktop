@@ -3,13 +3,6 @@
 #include <com/sun/media/sound/ModelIdentifier.h>
 #include <com/sun/media/sound/ModelSource.h>
 #include <com/sun/media/sound/SoftPerformer.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ModelIdentifier = ::com::sun::media::sound::ModelIdentifier;

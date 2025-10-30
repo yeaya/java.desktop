@@ -1,17 +1,6 @@
 #include <sun/awt/windows/WMenuItemPeer$2.h>
 
 #include <java/awt/Font.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/MissingResourceException.h>
 #include <java/util/ResourceBundle.h>
 #include <sun/awt/windows/WMenuItemPeer.h>
@@ -86,8 +75,7 @@ $Object* WMenuItemPeer$2::run() {
 	try {
 		$var($ResourceBundle, rb, $ResourceBundle::getBundle("sun.awt.windows.awtLocalization"_s));
 		return $of($Font::decode($($nc(rb)->getString("menuFont"_s))));
-	} catch ($MissingResourceException&) {
-		$var($MissingResourceException, e, $catch());
+	} catch ($MissingResourceException& e) {
 		$init($WMenuItemPeer);
 		$init($PlatformLogger$Level);
 		if ($nc($WMenuItemPeer::log)->isLoggable($PlatformLogger$Level::FINE)) {

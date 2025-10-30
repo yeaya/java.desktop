@@ -2,15 +2,6 @@
 
 #include <java/awt/AttributeValue.h>
 #include <java/awt/BufferCapabilities.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef BACKGROUND
@@ -83,13 +74,9 @@ int32_t BufferCapabilities$FlipContents::I_BACKGROUND = 0;
 int32_t BufferCapabilities$FlipContents::I_PRIOR = 0;
 int32_t BufferCapabilities$FlipContents::I_COPIED = 0;
 $StringArray* BufferCapabilities$FlipContents::NAMES = nullptr;
-
 BufferCapabilities$FlipContents* BufferCapabilities$FlipContents::UNDEFINED = nullptr;
-
 BufferCapabilities$FlipContents* BufferCapabilities$FlipContents::BACKGROUND = nullptr;
-
 BufferCapabilities$FlipContents* BufferCapabilities$FlipContents::PRIOR = nullptr;
-
 BufferCapabilities$FlipContents* BufferCapabilities$FlipContents::COPIED = nullptr;
 
 void BufferCapabilities$FlipContents::init$(int32_t type) {

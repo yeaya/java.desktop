@@ -11,21 +11,7 @@
 #include <java/awt/Point.h>
 #include <java/awt/Rectangle.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/JComponent$AccessibleJComponent.h>
 #include <javax/swing/JComponent.h>
@@ -118,6 +104,7 @@ $NamedAttribute JScrollPane_Attribute_var$1[] = {
 	{"delegate", 's', "getViewport"},
 	{}
 };
+
 $CompoundAttribute _JScrollPane_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JScrollPane_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JScrollPane_Attribute_var$1},
@@ -322,7 +309,6 @@ $CompoundAttribute _JScrollPane_MethodAnnotations_setWheelScrollingEnabled38[] =
 	{}
 };
 
-
 $FieldInfo _JScrollPane_FieldInfo_[] = {
 	{"viewportBorder", "Ljavax/swing/border/Border;", nullptr, $PRIVATE, $field(JScrollPane, viewportBorder)},
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JScrollPane, uiClassID)},
@@ -435,7 +421,6 @@ $Object* JScrollPane::clone() {
 void JScrollPane::finalize() {
 	this->$JComponent::finalize();
 }
-
 
 $String* JScrollPane::uiClassID = nullptr;
 

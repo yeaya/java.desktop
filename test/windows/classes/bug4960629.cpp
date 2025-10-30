@@ -5,20 +5,7 @@
 #include <java/awt/Container.h>
 #include <java/awt/Font.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JLabel.h>
@@ -104,15 +91,14 @@ void bug4960629::createAndShowGUI() {
 		try {
 			$UIManager::setLookAndFeel($($UIManager::getCrossPlatformLookAndFeelClassName()));
 			$set(this, label, $new($JLabel, "<html><P>This is a test of the</P></html>"_s));
-			$init($System);
 			$nc($System::out)->println($$str({"UIManager.getLookAndFeel()"_s, $nc($of($($UIManager::getLookAndFeel())))->getClass()}));
 			$set(this, f, $new($JFrame));
 			$nc($($nc(this->f)->getContentPane()))->add(static_cast<$Component*>(this->label));
 			$nc(this->f)->pack();
 			$nc(this->f)->setVisible(true);
 			test();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (this->f != nullptr) {
 				$nc(this->f)->dispose();
@@ -140,7 +126,6 @@ void bug4960629::test() {
 	$var($AttributeSet, attrs, $nc(v)->getAttributes());
 	$var($StyleSheet, ss, $nc(($cast($HTMLDocument, $(v->getDocument()))))->getStyleSheet());
 	$var($Font, font, $nc(ss)->getFont(attrs));
-	$init($System);
 	$nc($System::out)->println($nc(font)->getSize());
 	this->passed = ($nc(font)->getSize() == 12);
 	if (!this->passed) {

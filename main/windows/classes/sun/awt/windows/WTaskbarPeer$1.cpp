@@ -1,16 +1,7 @@
 #include <sun/awt/windows/WTaskbarPeer$1.h>
 
 #include <java/awt/Taskbar$Feature.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/windows/WTaskbarPeer.h>
 #include <jcpp.h>
 
@@ -76,23 +67,19 @@ void clinit$WTaskbarPeer$1($Class* class$) {
 	{
 		try {
 			$nc(WTaskbarPeer$1::$SwitchMap$java$awt$Taskbar$Feature)->set($Taskbar$Feature::ICON_BADGE_IMAGE_WINDOW->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WTaskbarPeer$1::$SwitchMap$java$awt$Taskbar$Feature)->set($Taskbar$Feature::PROGRESS_STATE_WINDOW->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WTaskbarPeer$1::$SwitchMap$java$awt$Taskbar$Feature)->set($Taskbar$Feature::PROGRESS_VALUE_WINDOW->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WTaskbarPeer$1::$SwitchMap$java$awt$Taskbar$Feature)->set($Taskbar$Feature::USER_ATTENTION_WINDOW->ordinal(), 4);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

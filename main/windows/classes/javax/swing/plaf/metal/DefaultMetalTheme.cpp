@@ -1,16 +1,6 @@
 #include <javax/swing/plaf/metal/DefaultMetalTheme.h>
 
 #include <java/awt/Font.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <javax/swing/UIManager.h>
@@ -128,15 +118,10 @@ $Object* allocate$DefaultMetalTheme($Class* clazz) {
 	return $of($alloc(DefaultMetalTheme));
 }
 
-
 bool DefaultMetalTheme::PLAIN_FONTS = false;
-
 $StringArray* DefaultMetalTheme::fontNames = nullptr;
-
 $ints* DefaultMetalTheme::fontStyles = nullptr;
-
 $ints* DefaultMetalTheme::fontSizes = nullptr;
-
 $StringArray* DefaultMetalTheme::defaultNames = nullptr;
 $ColorUIResource* DefaultMetalTheme::primary1 = nullptr;
 $ColorUIResource* DefaultMetalTheme::primary2 = nullptr;
@@ -260,7 +245,7 @@ bool DefaultMetalTheme::isSystemTheme() {
 void clinit$DefaultMetalTheme($Class* class$) {
 	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
-		$init($Font);
+	$init($Font);
 	$assignStatic(DefaultMetalTheme::fontNames, $new($StringArray, {
 		$Font::DIALOG,
 		$Font::DIALOG,

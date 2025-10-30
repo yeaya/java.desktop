@@ -1,17 +1,8 @@
 #include <javax/swing/text/DefaultFormatter.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchMethodException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/ParseException.h>
 #include <javax/swing/JFormattedTextField$AbstractFormatter.h>
 #include <javax/swing/JFormattedTextField.h>
@@ -255,18 +246,15 @@ $Object* DefaultFormatter::stringToValue($String* string) {
 		try {
 			$ReflectUtil::checkPackageAccess(vc);
 			$SwingUtilities2::checkAccess(vc->getModifiers());
-			$load($String);
 			$assign(cons, vc->getConstructor($$new($ClassArray, {$String::class$})));
-		} catch ($NoSuchMethodException&) {
-			$var($NoSuchMethodException, nsme, $catch());
+		} catch ($NoSuchMethodException& nsme) {
 			$assign(cons, nullptr);
 		}
 		if (cons != nullptr) {
 			try {
 				$SwingUtilities2::checkAccess(cons->getModifiers());
 				return $of(cons->newInstance($$new($ObjectArray, {$of(string)})));
-			} catch ($Throwable&) {
-				$var($Throwable, ex, $catch());
+			} catch ($Throwable& ex) {
 				$throwNew($ParseException, "Error creating instance"_s, 0);
 			}
 		}
@@ -349,14 +337,12 @@ $String* DefaultFormatter::getReplaceString(int32_t offset, int32_t deleteLength
 }
 
 bool DefaultFormatter::isValidEdit($DefaultFormatter$ReplaceHolder* rh) {
-	$useLocalCurrentObjectStackCache();
 	if (!getAllowsInvalid()) {
 		$var($String, newString, getReplaceString($nc(rh)->offset, rh->length, rh->text));
 		try {
 			$set($nc(rh), value, stringToValue(newString));
 			return true;
-		} catch ($ParseException&) {
-			$var($ParseException, pe, $catch());
+		} catch ($ParseException& pe) {
 			return false;
 		}
 	}
@@ -386,8 +372,7 @@ void DefaultFormatter::updateValue(Object$* value$renamed) {
 			commitEdit();
 		}
 		setEditValid(true);
-	} catch ($ParseException&) {
-		$var($ParseException, pe, $catch());
+	} catch ($ParseException& pe) {
 		setEditValid(false);
 	}
 }

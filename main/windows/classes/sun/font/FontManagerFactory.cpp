@@ -1,13 +1,5 @@
 #include <sun/font/FontManagerFactory.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <sun/font/FontManager.h>
@@ -65,7 +57,6 @@ $ClassInfo _FontManagerFactory_ClassInfo_ = {
 $Object* allocate$FontManagerFactory($Class* clazz) {
 	return $of($alloc(FontManagerFactory));
 }
-
 
 $FontManager* FontManagerFactory::instance = nullptr;
 $String* FontManagerFactory::DEFAULT_CLASS = nullptr;

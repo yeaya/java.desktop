@@ -20,21 +20,9 @@
 #include <java/awt/image/PackedColorModel.h>
 #include <java/awt/image/Raster.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InterruptedException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Hashtable.h>
 #include <sun/awt/image/ByteComponentRaster.h>
 #include <sun/awt/image/ImageWatched.h>
@@ -257,15 +245,14 @@ void ImageRepresentation::reconstruct(int32_t flags) {
 					while (((int32_t)(this->availinfo & (uint32_t)$ImageObserver::ERROR)) == 0 && missinginfo != 0) {
 						try {
 							$of(this)->wait();
-						} catch ($InterruptedException&) {
-							$var($InterruptedException, e, $catch());
+						} catch ($InterruptedException& e) {
 							$($Thread::currentThread())->interrupt();
 							return;
 						}
 						missinginfo = (int32_t)(flags & (uint32_t)~this->availinfo);
 					}
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$2) {
+					$assign(var$0, var$2);
 				} /*finally*/ {
 					decrementWaiters();
 				}
@@ -362,13 +349,11 @@ void ImageRepresentation::setColorModel($ColorModel* model) {
 }
 
 void ImageRepresentation::createBufferedImage() {
-	$useLocalCurrentObjectStackCache();
 	this->isDefaultBI = false;
 	try {
 		$set(this, biRaster, $nc(this->cmodel)->createCompatibleWritableRaster(this->width, this->height));
 		$set(this, bimage, createImage(this->cmodel, this->biRaster, $nc(this->cmodel)->isAlphaPremultiplied(), nullptr));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$set(this, cmodel, $ColorModel::getRGBdefault());
 		$set(this, biRaster, $nc(this->cmodel)->createCompatibleWritableRaster(this->width, this->height));
 		$set(this, bimage, createImage(this->cmodel, this->biRaster, false, nullptr));
@@ -695,8 +680,7 @@ $BufferedImage* ImageRepresentation::getOpaqueRGBImage() {
 		try {
 			$var($BufferedImage, opImage, createImage(opModel, opRaster, false, nullptr));
 			return opImage;
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			return this->bimage;
 		}
 	}

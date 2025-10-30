@@ -1,17 +1,7 @@
 #include <bug7027139.h>
 
 #include <bug7027139$1.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SwingUtilities.h>
 #include <jcpp.h>
 
@@ -58,7 +48,6 @@ void bug7027139::init$() {
 
 void bug7027139::main($StringArray* args) {
 	$SwingUtilities::invokeAndWait($$new($bug7027139$1));
-	$init($System);
 	$nc($System::out)->println("Test bug7027139 passed"_s);
 }
 

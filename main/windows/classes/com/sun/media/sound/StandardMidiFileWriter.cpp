@@ -11,17 +11,6 @@
 #include <java/io/PipedInputStream.h>
 #include <java/io/PipedOutputStream.h>
 #include <java/io/SequenceInputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Objects.h>
 #include <javax/sound/midi/InvalidMidiDataException.h>
 #include <javax/sound/midi/MetaMessage.h>
@@ -125,7 +114,6 @@ $Object* allocate$StandardMidiFileWriter($Class* clazz) {
 	return $of($alloc(StandardMidiFileWriter));
 }
 
-
 $ints* StandardMidiFileWriter::types = nullptr;
 
 void StandardMidiFileWriter::init$() {
@@ -209,8 +197,7 @@ $InputStream* StandardMidiFileWriter::getFileStream(int32_t type, $Sequence* seq
 		try {
 			trackStreams->set(trackCount, $(writeTrack(tracks->get(i), type)));
 			++trackCount;
-		} catch ($InvalidMidiDataException&) {
-			$var($InvalidMidiDataException, e, $catch());
+		} catch ($InvalidMidiDataException& e) {
 			$init($Printer);
 			if ($Printer::err$) {
 				$Printer::err($$str({"Exception in write: "_s, $(e->getMessage())}));

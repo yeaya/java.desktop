@@ -46,24 +46,11 @@
 #include <java/awt/print/PageFormat.h>
 #include <java/awt/print/Printable.h>
 #include <java/awt/print/PrinterJob.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/ref/SoftReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/util/Hashtable.h>
 #include <java/util/Map.h>
@@ -293,8 +280,7 @@ void PathGraphics::drawLine(int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
 			deviceClip($($nc($(getClip()))->getPathIterator(deviceTransform)));
 		}
 		deviceDrawLine(x1, y1, x2, y2, $cast($Color, paint));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($IllegalArgumentException, "Expected a Color instance"_s);
 	}
 }
@@ -308,8 +294,7 @@ void PathGraphics::drawRect(int32_t x, int32_t y, int32_t width, int32_t height)
 			deviceClip($($nc($(getClip()))->getPathIterator(deviceTransform)));
 		}
 		deviceFrameRect(x, y, width, height, $cast($Color, paint));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($IllegalArgumentException, "Expected a Color instance"_s);
 	}
 }
@@ -323,8 +308,7 @@ void PathGraphics::fillRect(int32_t x, int32_t y, int32_t width, int32_t height)
 			deviceClip($($nc($(getClip()))->getPathIterator(deviceTransform)));
 		}
 		deviceFillRect(x, y, width, height, $cast($Color, paint));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($IllegalArgumentException, "Expected a Color instance"_s);
 	}
 }
@@ -441,8 +425,8 @@ void PathGraphics::drawGlyphVector($GlyphVector* g, float x, float y) {
 			if ($RasterPrinterJob::shapeTextProp || !printedSimpleGlyphVector(g, x, y)) {
 				fill($($nc(g)->getOutline(x, y)));
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->printingGlyphVector = false;
 		}
@@ -680,12 +664,10 @@ void PathGraphics::draw($Shape* s) {
 }
 
 void PathGraphics::fill($Shape* s) {
-	$useLocalCurrentObjectStackCache();
 	$var($Paint, paint, getPaint());
 	try {
 		fill(s, $cast($Color, paint));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($IllegalArgumentException, "Expected a Color instance"_s);
 	}
 }

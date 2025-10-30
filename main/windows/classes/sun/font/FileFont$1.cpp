@@ -2,17 +2,6 @@
 
 #include <java/io/File.h>
 #include <java/io/IOException.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/FileFont.h>
 #include <jcpp.h>
 
@@ -87,8 +76,7 @@ $Object* FileFont$1::run() {
 		$var($String, tpath, tmp->getCanonicalPath());
 		$var($String, fpath, $nc(this->val$f)->getCanonicalPath());
 		return $of($Boolean::valueOf((fpath == nullptr) || $nc(fpath)->startsWith(tpath)));
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$init($Boolean);
 		return $of($Boolean::TRUE);
 	}

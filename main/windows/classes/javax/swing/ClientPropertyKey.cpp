@@ -1,15 +1,6 @@
 #include <javax/swing/ClientPropertyKey.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/ClientPropertyKey$1.h>
 #include <sun/awt/AWTAccessor$ClientPropertyKeyAccessor.h>
 #include <sun/awt/AWTAccessor.h>
@@ -72,13 +63,9 @@ $Object* allocate$ClientPropertyKey($Class* clazz) {
 	return $of($alloc(ClientPropertyKey));
 }
 
-
 ClientPropertyKey* ClientPropertyKey::JComponent_INPUT_VERIFIER = nullptr;
-
 ClientPropertyKey* ClientPropertyKey::JComponent_TRANSFER_HANDLER = nullptr;
-
 ClientPropertyKey* ClientPropertyKey::JComponent_ANCESTOR_NOTIFIER = nullptr;
-
 ClientPropertyKey* ClientPropertyKey::PopupFactory_FORCE_HEAVYWEIGHT_POPUP = nullptr;
 $ClientPropertyKeyArray* ClientPropertyKey::$VALUES = nullptr;
 

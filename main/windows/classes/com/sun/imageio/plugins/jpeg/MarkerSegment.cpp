@@ -1,22 +1,8 @@
 #include <com/sun/imageio/plugins/jpeg/MarkerSegment.h>
 
 #include <com/sun/imageio/plugins/jpeg/JPEGBuffer.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
 #include <java/lang/Cloneable.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/IIOException.h>
 #include <javax/imageio/metadata/IIOInvalidTreeException.h>
 #include <javax/imageio/metadata/IIOMetadataNode.h>
@@ -121,8 +107,7 @@ void MarkerSegment::init$($Node* node) {
 		$var($IIOMetadataNode, iioNode, $cast($IIOMetadataNode, node));
 		try {
 			$set(this, data, $cast($bytes, $nc(iioNode)->getUserObject()));
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$var($IIOInvalidTreeException, newGuy, $new($IIOInvalidTreeException, "Can\'t get User Object"_s, node));
 			newGuy->initCause(e);
 			$throw(newGuy);
@@ -136,8 +121,7 @@ $Object* MarkerSegment::clone() {
 	$var(MarkerSegment, newGuy, nullptr);
 	try {
 		$assign(newGuy, $cast(MarkerSegment, $Cloneable::clone()));
-	} catch ($CloneNotSupportedException&) {
-		$catch();
+	} catch ($CloneNotSupportedException& e) {
 	}
 	if (this->data != nullptr) {
 		$set($nc(newGuy), data, $cast($bytes, $nc(this->data)->clone()));
@@ -202,7 +186,6 @@ void MarkerSegment::write2bytes($ImageOutputStream* ios, int32_t value) {
 
 void MarkerSegment::printTag($String* prefix) {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println($$str({prefix, " marker segment - marker = 0x"_s, $($Integer::toHexString(this->tag))}));
 	$nc($System::out)->println($$str({"length: "_s, $$str(this->length)}));
 }
@@ -211,7 +194,6 @@ void MarkerSegment::print() {
 	$useLocalCurrentObjectStackCache();
 	printTag("Unknown"_s);
 	if (this->length > 10) {
-		$init($System);
 		$nc($System::out)->print("First 5 bytes:"_s);
 		for (int32_t i = 0; i < 5; ++i) {
 			$nc($System::out)->print($$str({" Ox"_s, $($Integer::toHexString((int32_t)$nc(this->data)->get(i)))}));
@@ -221,13 +203,11 @@ void MarkerSegment::print() {
 			$nc($System::out)->print($$str({" Ox"_s, $($Integer::toHexString((int32_t)$nc(this->data)->get(i)))}));
 		}
 	} else {
-		$init($System);
 		$nc($System::out)->print("Data:"_s);
 		for (int32_t i = 0; i < $nc(this->data)->length; ++i) {
 			$nc($System::out)->print($$str({" Ox"_s, $($Integer::toHexString((int32_t)$nc(this->data)->get(i)))}));
 		}
 	}
-	$init($System);
 	$nc($System::out)->println();
 }
 

@@ -1,18 +1,7 @@
 #include <sun/awt/OSInfo.h>
 
-#include <java/lang/Array.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/HashMap.h>
@@ -168,8 +157,7 @@ $OSInfo$WindowsVersion* OSInfo::getWindowsVersion() {
 				try {
 					int32_t var$0 = $Integer::parseInt(arr->get(0));
 					$assign(result, $new($OSInfo$WindowsVersion, var$0, $Integer::parseInt(arr->get(1))));
-				} catch ($NumberFormatException&) {
-					$var($NumberFormatException, e, $catch());
+				} catch ($NumberFormatException& e) {
 					return OSInfo::WINDOWS_UNKNOWN;
 				}
 			} else {

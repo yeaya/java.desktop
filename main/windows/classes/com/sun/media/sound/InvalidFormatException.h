@@ -18,8 +18,10 @@ public:
 	void init$($String* s);
 	static const int64_t serialVersionUID = (int64_t)1;
 	InvalidFormatException(const InvalidFormatException& e);
-	InvalidFormatException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline InvalidFormatException* operator ->() {
+		return (InvalidFormatException*)throwing$;
+	}
 };
 
 			} // sound

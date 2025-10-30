@@ -1,13 +1,5 @@
 #include <javax/accessibility/AccessibleRelation.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleBundle.h>
 #include <jcpp.h>
 
@@ -97,53 +89,29 @@ $Object* allocate$AccessibleRelation($Class* clazz) {
 	return $of($alloc(AccessibleRelation));
 }
 
-
 $String* AccessibleRelation::LABEL_FOR = nullptr;
-
 $String* AccessibleRelation::LABELED_BY = nullptr;
-
 $String* AccessibleRelation::MEMBER_OF = nullptr;
-
 $String* AccessibleRelation::CONTROLLER_FOR = nullptr;
-
 $String* AccessibleRelation::CONTROLLED_BY = nullptr;
-
 $String* AccessibleRelation::FLOWS_TO = nullptr;
-
 $String* AccessibleRelation::FLOWS_FROM = nullptr;
-
 $String* AccessibleRelation::SUBWINDOW_OF = nullptr;
-
 $String* AccessibleRelation::PARENT_WINDOW_OF = nullptr;
-
 $String* AccessibleRelation::EMBEDS = nullptr;
-
 $String* AccessibleRelation::EMBEDDED_BY = nullptr;
-
 $String* AccessibleRelation::CHILD_NODE_OF = nullptr;
-
 $String* AccessibleRelation::LABEL_FOR_PROPERTY = nullptr;
-
 $String* AccessibleRelation::LABELED_BY_PROPERTY = nullptr;
-
 $String* AccessibleRelation::MEMBER_OF_PROPERTY = nullptr;
-
 $String* AccessibleRelation::CONTROLLER_FOR_PROPERTY = nullptr;
-
 $String* AccessibleRelation::CONTROLLED_BY_PROPERTY = nullptr;
-
 $String* AccessibleRelation::FLOWS_TO_PROPERTY = nullptr;
-
 $String* AccessibleRelation::FLOWS_FROM_PROPERTY = nullptr;
-
 $String* AccessibleRelation::SUBWINDOW_OF_PROPERTY = nullptr;
-
 $String* AccessibleRelation::PARENT_WINDOW_OF_PROPERTY = nullptr;
-
 $String* AccessibleRelation::EMBEDS_PROPERTY = nullptr;
-
 $String* AccessibleRelation::EMBEDDED_BY_PROPERTY = nullptr;
-
 $String* AccessibleRelation::CHILD_NODE_OF_PROPERTY = nullptr;
 
 void AccessibleRelation::init$($String* key) {

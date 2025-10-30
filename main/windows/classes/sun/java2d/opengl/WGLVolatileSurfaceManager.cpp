@@ -9,16 +9,7 @@
 #include <java/awt/image/ColorModel.h>
 #include <java/awt/image/VolatileImage.h>
 #include <java/awt/peer/ComponentPeer.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/OutOfMemoryError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/AWTAccessor$ComponentAccessor.h>
 #include <sun/awt/AWTAccessor.h>
 #include <sun/awt/image/SunVolatileImage.h>
@@ -152,11 +143,9 @@ $SurfaceData* WGLVolatileSurfaceManager::initAcceleratedSurface() {
 				$assign(sData, $WGLSurfaceData::createData(var$1, var$2, $nc(this->vImg)->getHeight(), cm, this->vImg, type));
 			}
 		}
-	} catch ($NullPointerException&) {
-		$var($NullPointerException, ex, $catch());
+	} catch ($NullPointerException& ex) {
 		$assign(sData, nullptr);
-	} catch ($OutOfMemoryError&) {
-		$var($OutOfMemoryError, er, $catch());
+	} catch ($OutOfMemoryError& er) {
 		$assign(sData, nullptr);
 	}
 	return sData;

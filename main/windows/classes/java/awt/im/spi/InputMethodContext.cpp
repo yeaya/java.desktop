@@ -3,12 +3,6 @@
 #include <java/awt/Window.h>
 #include <java/awt/font/TextHitInfo.h>
 #include <java/awt/im/spi/InputMethod.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <javax/swing/JFrame.h>
 #include <jcpp.h>

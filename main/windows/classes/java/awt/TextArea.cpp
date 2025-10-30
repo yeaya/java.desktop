@@ -13,16 +13,6 @@
 #include <java/awt/peer/TextAreaPeer.h>
 #include <java/awt/peer/TextComponentPeer.h>
 #include <java/io/ObjectInputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractSet.h>
 #include <java/util/HashSet.h>
 #include <java/util/Set.h>
@@ -179,9 +169,7 @@ $Object* allocate$TextArea($Class* clazz) {
 
 $String* TextArea::base = nullptr;
 int32_t TextArea::nameCounter = 0;
-
 $Set* TextArea::forwardTraversalKeys = nullptr;
-
 $Set* TextArea::backwardTraversalKeys = nullptr;
 
 void TextArea::initIDs() {

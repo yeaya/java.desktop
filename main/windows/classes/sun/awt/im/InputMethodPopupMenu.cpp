@@ -5,13 +5,6 @@
 #include <java/awt/Toolkit.h>
 #include <java/awt/event/ActionEvent.h>
 #include <java/awt/im/spi/InputMethodDescriptor.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/swing/JDialog.h>
 #include <javax/swing/JFrame.h>
@@ -97,8 +90,7 @@ void InputMethodPopupMenu::addOneInputMethodToMenu($InputMethodLocator* locator,
 	try {
 		$assign(locales, descriptor->getAvailableLocales());
 		localeCount = $nc(locales)->length;
-	} catch ($AWTException&) {
-		$var($AWTException, e, $catch());
+	} catch ($AWTException& e) {
 		localeCount = 0;
 	}
 	if (localeCount == 0) {

@@ -7,12 +7,6 @@
 #include <java/awt/MenuBar.h>
 #include <java/awt/Rectangle.h>
 #include <java/awt/peer/ComponentPeer.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/EmbeddedFrame.h>
 #include <sun/awt/Win32GraphicsEnvironment.h>
 #include <sun/awt/windows/WComponentPeer.h>

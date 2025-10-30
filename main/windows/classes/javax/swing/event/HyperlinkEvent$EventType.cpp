@@ -1,13 +1,5 @@
 #include <javax/swing/event/HyperlinkEvent$EventType.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/event/HyperlinkEvent.h>
 #include <jcpp.h>
 
@@ -64,11 +56,8 @@ $Object* allocate$HyperlinkEvent$EventType($Class* clazz) {
 	return $of($alloc(HyperlinkEvent$EventType));
 }
 
-
 HyperlinkEvent$EventType* HyperlinkEvent$EventType::ENTERED = nullptr;
-
 HyperlinkEvent$EventType* HyperlinkEvent$EventType::EXITED = nullptr;
-
 HyperlinkEvent$EventType* HyperlinkEvent$EventType::ACTIVATED = nullptr;
 
 void HyperlinkEvent$EventType::init$($String* s) {

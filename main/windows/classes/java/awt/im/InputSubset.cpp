@@ -1,14 +1,6 @@
 #include <java/awt/im/InputSubset.h>
 
 #include <java/lang/Character$Subset.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef FULLWIDTH_DIGITS
@@ -70,23 +62,14 @@ $Object* allocate$InputSubset($Class* clazz) {
 	return $of($alloc(InputSubset));
 }
 
-
 InputSubset* InputSubset::LATIN = nullptr;
-
 InputSubset* InputSubset::LATIN_DIGITS = nullptr;
-
 InputSubset* InputSubset::TRADITIONAL_HANZI = nullptr;
-
 InputSubset* InputSubset::SIMPLIFIED_HANZI = nullptr;
-
 InputSubset* InputSubset::KANJI = nullptr;
-
 InputSubset* InputSubset::HANJA = nullptr;
-
 InputSubset* InputSubset::HALFWIDTH_KATAKANA = nullptr;
-
 InputSubset* InputSubset::FULLWIDTH_LATIN = nullptr;
-
 InputSubset* InputSubset::FULLWIDTH_DIGITS = nullptr;
 
 void InputSubset::init$($String* name) {

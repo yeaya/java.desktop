@@ -9,14 +9,7 @@
 #include <java/awt/image/SampleModel.h>
 #include <java/awt/image/SinglePixelPackedSampleModel.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/image/DataBufferNative.h>
 #include <sun/java2d/SurfaceData.h>
 #include <jcpp.h>

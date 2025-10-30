@@ -1,16 +1,7 @@
 #include <bug6739756.h>
 
 #include <bug6739756$1.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SwingUtilities.h>
 #include <javax/swing/UIManager.h>
 #include <jcpp.h>
@@ -58,11 +49,9 @@ void bug6739756::init$() {
 }
 
 void bug6739756::main($StringArray* args) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"_s);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		e->printStackTrace();
 		return;
 	}

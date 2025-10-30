@@ -2,16 +2,7 @@
 
 #include <java/awt/AWTEvent.h>
 #include <java/awt/EventQueue.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/AWTAutoShutdown.h>
 #include <sun/awt/EventQueueItem.h>
 #include <sun/awt/SunToolkit.h>
@@ -83,7 +74,7 @@ void PostEventQueue::flush() {
 			}
 			$set(this, flushThread, newThread);
 			$assign(tempQueue, this->queueHead);
-			$set(this, queueHead, ($assignField(this, queueTail, nullptr)));
+			$set(this, queueHead, ($set(this, queueTail, nullptr)));
 		}
 		{
 			$var($Throwable, var$0, nullptr);
@@ -92,8 +83,8 @@ void PostEventQueue::flush() {
 					$nc(this->eventQueue)->postEvent(tempQueue->event);
 					$assign(tempQueue, tempQueue->next);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$synchronized(this) {
 					$set(this, flushThread, nullptr);
@@ -104,8 +95,7 @@ void PostEventQueue::flush() {
 				$throw(var$0);
 			}
 		}
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, e, $catch());
+	} catch ($InterruptedException& e) {
 		newThread->interrupt();
 	}
 }
@@ -114,7 +104,7 @@ void PostEventQueue::postEvent($AWTEvent* event) {
 	$var($EventQueueItem, item, $new($EventQueueItem, event));
 	$synchronized(this) {
 		if (this->queueHead == nullptr) {
-			$set(this, queueHead, ($assignField(this, queueTail, item)));
+			$set(this, queueHead, ($set(this, queueTail, item)));
 		} else {
 			$set($nc(this->queueTail), next, item);
 			$set(this, queueTail, item);

@@ -24,8 +24,10 @@ public:
 	void init$(::sun::awt::image::PNGImageDecoder* this$0, $String* s);
 	::sun::awt::image::PNGImageDecoder* this$0 = nullptr;
 	PNGImageDecoder$PNGException(const PNGImageDecoder$PNGException& e);
-	PNGImageDecoder$PNGException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline PNGImageDecoder$PNGException* operator ->() {
+		return (PNGImageDecoder$PNGException*)throwing$;
+	}
 };
 
 		} // image

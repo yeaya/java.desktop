@@ -5,18 +5,7 @@
 #include <java/io/InputStream.h>
 #include <java/io/Reader.h>
 #include <java/io/StringReader.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/DocFlavor.h>
 #include <javax/print/attribute/AttributeSetUtilities.h>
 #include <javax/print/attribute/DocAttributeSet.h>
@@ -85,8 +74,7 @@ void SimpleDoc::init$(Object$* printData, $DocFlavor* flavor, $DocAttributeSet* 
 		$var($String, className, $nc(flavor)->getRepresentationClassName());
 		$ReflectUtil::checkPackageAccess(className);
 		repClass = $Class::forName(className, false, $($($Thread::currentThread())->getContextClassLoader()));
-	} catch ($Throwable&) {
-		$var($Throwable, e, $catch());
+	} catch ($Throwable& e) {
 		$throwNew($IllegalArgumentException, "unknown representation class"_s);
 	}
 	if (!$nc(repClass)->isInstance(printData)) {

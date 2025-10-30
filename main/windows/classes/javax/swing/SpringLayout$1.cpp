@@ -2,16 +2,7 @@
 
 #include <java/awt/Component$BaselineResizeBehavior.h>
 #include <java/awt/Component.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SpringLayout.h>
 #include <jcpp.h>
 
@@ -76,18 +67,15 @@ void clinit$SpringLayout$1($Class* class$) {
 	{
 		try {
 			$nc(SpringLayout$1::$SwitchMap$java$awt$Component$BaselineResizeBehavior)->set($Component$BaselineResizeBehavior::CONSTANT_DESCENT->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(SpringLayout$1::$SwitchMap$java$awt$Component$BaselineResizeBehavior)->set($Component$BaselineResizeBehavior::CENTER_OFFSET->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(SpringLayout$1::$SwitchMap$java$awt$Component$BaselineResizeBehavior)->set($Component$BaselineResizeBehavior::CONSTANT_ASCENT->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

@@ -10,20 +10,9 @@
 #include <java/awt/geom/Point2D.h>
 #include <java/awt/geom/QuadCurve2D.h>
 #include <java/awt/geom/Rectangle2D.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <sun/awt/geom/Curve.h>
 #include <jcpp.h>
@@ -685,8 +674,7 @@ $PathIterator* CubicCurve2D::getPathIterator($AffineTransform* at, double flatne
 $Object* CubicCurve2D::clone() {
 	try {
 		return $of($Shape::clone());
-	} catch ($CloneNotSupportedException&) {
-		$var($CloneNotSupportedException, e, $catch());
+	} catch ($CloneNotSupportedException& e) {
 		$throwNew($InternalError, static_cast<$Throwable*>(e));
 	}
 	$shouldNotReachHere();

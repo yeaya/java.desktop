@@ -10,17 +10,6 @@
 #include <java/awt/image/WritableRenderedImage.h>
 #include <java/io/File.h>
 #include <java/io/IOException.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/ImageIO.h>
 #include <javax/swing/JTree.h>
 #include <javax/swing/tree/DefaultMutableTreeNode.h>
@@ -118,14 +107,12 @@ void TreeClipTest$1::run() {
 		tree->paint(ig);
 		ig->dispose();
 		if (!$TreeClipTest::checkImage(img, clipY)) {
-			$init($System);
 			$nc($System::err)->println($$str({"Failed with clipY="_s, $$str(clipY)}));
 			$init($TreeClipTest);
 			$TreeClipTest::passed = false;
 			try {
 				$ImageIO::write(static_cast<$RenderedImage*>(img), "PNG"_s, $$new($File, "failedResult.png"_s));
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				e->printStackTrace();
 			}
 			return;

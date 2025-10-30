@@ -9,17 +9,7 @@
 #include <com/sun/beans/finder/SignatureException.h>
 #include <com/sun/beans/util/Cache$Kind.h>
 #include <com/sun/beans/util/Cache.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchMethodException.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Executable.h>
 #include <java/lang/reflect/Method.h>
 #include <java/lang/reflect/Modifier.h>
@@ -118,8 +108,7 @@ $Method* MethodFinder::findMethod($Class* type, $String* name, $ClassArray* args
 	try {
 		$var($Method, method, $cast($Method, $nc(MethodFinder::CACHE)->get(signature)));
 		return (method == nullptr) || $ReflectUtil::isPackageAccessible($nc(method)->getDeclaringClass()) ? method : $cast($Method, $nc(MethodFinder::CACHE)->create(signature));
-	} catch ($SignatureException&) {
-		$var($SignatureException, exception, $catch());
+	} catch ($SignatureException& exception) {
 		$throw($(exception->toNoSuchMethodException($$str({"Method \'"_s, name, "\' is not found"_s}))));
 	}
 	$shouldNotReachHere();
@@ -168,8 +157,7 @@ $Method* MethodFinder::findAccessibleMethod($Method* method) {
 			{
 				try {
 					return findAccessibleMethod(method, generic);
-				} catch ($NoSuchMethodException&) {
-					$catch();
+				} catch ($NoSuchMethodException& exception) {
 				}
 			}
 		}

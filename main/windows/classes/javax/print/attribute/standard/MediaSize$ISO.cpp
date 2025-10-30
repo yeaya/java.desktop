@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/MediaSize$ISO.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/Size2DSyntax.h>
 #include <javax/print/attribute/standard/MediaSize.h>
 #include <javax/print/attribute/standard/MediaSizeName.h>
@@ -117,59 +109,32 @@ $Object* allocate$MediaSize$ISO($Class* clazz) {
 	return $of($alloc(MediaSize$ISO));
 }
 
-
 $MediaSize* MediaSize$ISO::A0 = nullptr;
-
 $MediaSize* MediaSize$ISO::A1 = nullptr;
-
 $MediaSize* MediaSize$ISO::A2 = nullptr;
-
 $MediaSize* MediaSize$ISO::A3 = nullptr;
-
 $MediaSize* MediaSize$ISO::A4 = nullptr;
-
 $MediaSize* MediaSize$ISO::A5 = nullptr;
-
 $MediaSize* MediaSize$ISO::A6 = nullptr;
-
 $MediaSize* MediaSize$ISO::A7 = nullptr;
-
 $MediaSize* MediaSize$ISO::A8 = nullptr;
-
 $MediaSize* MediaSize$ISO::A9 = nullptr;
-
 $MediaSize* MediaSize$ISO::A10 = nullptr;
-
 $MediaSize* MediaSize$ISO::B0 = nullptr;
-
 $MediaSize* MediaSize$ISO::B1 = nullptr;
-
 $MediaSize* MediaSize$ISO::B2 = nullptr;
-
 $MediaSize* MediaSize$ISO::B3 = nullptr;
-
 $MediaSize* MediaSize$ISO::B4 = nullptr;
-
 $MediaSize* MediaSize$ISO::B5 = nullptr;
-
 $MediaSize* MediaSize$ISO::B6 = nullptr;
-
 $MediaSize* MediaSize$ISO::B7 = nullptr;
-
 $MediaSize* MediaSize$ISO::B8 = nullptr;
-
 $MediaSize* MediaSize$ISO::B9 = nullptr;
-
 $MediaSize* MediaSize$ISO::B10 = nullptr;
-
 $MediaSize* MediaSize$ISO::C3 = nullptr;
-
 $MediaSize* MediaSize$ISO::C4 = nullptr;
-
 $MediaSize* MediaSize$ISO::C5 = nullptr;
-
 $MediaSize* MediaSize$ISO::C6 = nullptr;
-
 $MediaSize* MediaSize$ISO::DESIGNATED_LONG = nullptr;
 
 void MediaSize$ISO::init$() {

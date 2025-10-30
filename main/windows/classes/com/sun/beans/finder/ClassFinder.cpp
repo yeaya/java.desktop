@@ -1,16 +1,9 @@
 #include <com/sun/beans/finder/ClassFinder.h>
 
 #include <com/sun/beans/finder/PrimitiveTypeMap.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/reflect/misc/ReflectUtil.h>
 #include <jcpp.h>
 
@@ -62,10 +55,8 @@ $Class* ClassFinder::findClass($String* name) {
 		if (loader != nullptr) {
 			return $Class::forName(name, false, loader);
 		}
-	} catch ($ClassNotFoundException&) {
-		$catch();
-	} catch ($SecurityException&) {
-		$catch();
+	} catch ($ClassNotFoundException& exception) {
+	} catch ($SecurityException& exception) {
 	}
 	return $Class::forName(name);
 }
@@ -77,10 +68,8 @@ $Class* ClassFinder::findClass($String* name, $ClassLoader* loader) {
 	if (loader != nullptr) {
 		try {
 			return $Class::forName(name, false, loader);
-		} catch ($ClassNotFoundException&) {
-			$catch();
-		} catch ($SecurityException&) {
-			$catch();
+		} catch ($ClassNotFoundException& exception) {
+		} catch ($SecurityException& exception) {
 		}
 	}
 	return findClass(name);

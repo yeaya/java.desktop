@@ -2,17 +2,6 @@
 
 #include <SliderTickTest.h>
 #include <TestUI.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $SliderTickTest = ::SliderTickTest;
@@ -75,8 +64,7 @@ void SliderTickTest$2::init$($TestUI* val$test) {
 void SliderTickTest$2::run() {
 	try {
 		$nc(this->val$test)->disposeUI();
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$throwNew($RuntimeException, "Exception while disposing UI"_s);
 	}
 }

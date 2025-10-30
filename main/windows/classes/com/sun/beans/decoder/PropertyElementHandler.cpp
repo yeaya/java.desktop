@@ -9,16 +9,7 @@
 #include <java/beans/IntrospectionException.h>
 #include <java/beans/Introspector.h>
 #include <java/beans/PropertyDescriptor.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/reflect/Array.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <sun/reflect/misc/MethodUtil.h>
 #include <jcpp.h>
@@ -109,8 +100,7 @@ $Object* PropertyElementHandler::getValue($String* name) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		return $of(getPropertyValue($(getContextBean()), name, this->index));
-	} catch ($Exception&) {
-		$var($Exception, exception, $catch());
+	} catch ($Exception& exception) {
 		$nc($(getOwner()))->handleException(exception);
 	}
 	return $of(nullptr);
@@ -120,8 +110,7 @@ void PropertyElementHandler::setValue($String* name, Object$* value) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		setPropertyValue($(getContextBean()), name, this->index, value);
-	} catch ($Exception&) {
-		$var($Exception, exception, $catch());
+	} catch ($Exception& exception) {
 		$nc($(getOwner()))->handleException(exception);
 	}
 }
@@ -150,7 +139,7 @@ void PropertyElementHandler::setPropertyValue(Object$* bean, $String* name, $Int
 	} else if ($nc(type)->isArray() && (name == nullptr)) {
 		$1Array::set(bean, $nc(index)->intValue(), value);
 	} else {
-			$init($Integer);
+		$init($Integer);
 		$MethodUtil::invoke($(findSetter(type, name, $$new($ClassArray, {
 			$Integer::TYPE,
 			param

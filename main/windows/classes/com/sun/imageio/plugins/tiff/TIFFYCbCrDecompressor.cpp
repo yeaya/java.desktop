@@ -9,15 +9,6 @@
 #include <java/io/ByteArrayInputStream.h>
 #include <java/io/EOFException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Hashtable.h>
 #include <javax/imageio/ImageReader.h>
 #include <javax/imageio/metadata/IIOMetadata.h>
@@ -503,8 +494,7 @@ void TIFFYCbCrDecompressor::decodeRaw($bytes* buf, int32_t dstOffset, int32_t bi
 		for (int32_t x = this->srcMinX; x < this->srcMinX + this->srcWidth; x += this->chromaSubsampleH) {
 			try {
 				$nc(this->stream)->readFully(packet);
-			} catch ($EOFException&) {
-				$var($EOFException, e, $catch());
+			} catch ($EOFException& e) {
 				return;
 			}
 			int8_t Cb = packet->get(elementsPerPacket - 2);

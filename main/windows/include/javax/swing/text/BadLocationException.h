@@ -17,8 +17,10 @@ public:
 	virtual int32_t offsetRequested();
 	int32_t offs = 0;
 	BadLocationException(const BadLocationException& e);
-	BadLocationException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline BadLocationException* operator ->() {
+		return (BadLocationException*)throwing$;
+	}
 };
 
 		} // text

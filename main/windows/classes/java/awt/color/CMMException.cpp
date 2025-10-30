@@ -1,13 +1,5 @@
 #include <java/awt/color/CMMException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -49,16 +41,10 @@ void CMMException::init$($String* s) {
 CMMException::CMMException() {
 }
 
-CMMException::CMMException(const CMMException& e) {
+CMMException::CMMException(const CMMException& e) : $RuntimeException(e) {
 }
 
-CMMException CMMException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void CMMException::throwWrapper$() {
-	$pendingException(this);
+void CMMException::throw$() {
 	throw *this;
 }
 

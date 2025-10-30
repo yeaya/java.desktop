@@ -4,13 +4,6 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/awt/KeyboardFocusManager.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JTextField.h>
 #include <javax/swing/UIManager.h>

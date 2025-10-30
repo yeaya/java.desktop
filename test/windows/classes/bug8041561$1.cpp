@@ -1,17 +1,6 @@
 #include <bug8041561$1.h>
 
 #include <bug8041561.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/LookAndFeel.h>
 #include <javax/swing/UIManager.h>
 #include <javax/swing/UnsupportedLookAndFeelException.h>
@@ -83,8 +72,7 @@ void bug8041561$1::run() {
 		$MetalLookAndFeel::setCurrentTheme($$new($DefaultMetalTheme));
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 		$bug8041561::createAndShowGUI();
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($UnsupportedLookAndFeelException, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }

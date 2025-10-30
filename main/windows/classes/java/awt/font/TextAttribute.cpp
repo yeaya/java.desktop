@@ -2,17 +2,6 @@
 
 #include <java/awt/font/JavaAWTFontAccessImpl.h>
 #include <java/io/InvalidObjectException.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator$Attribute.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/HashMap.h>
@@ -196,123 +185,64 @@ $Object* allocate$TextAttribute($Class* clazz) {
 }
 
 $Map* TextAttribute::instanceMap = nullptr;
-
 TextAttribute* TextAttribute::FAMILY = nullptr;
-
 TextAttribute* TextAttribute::WEIGHT = nullptr;
-
 $Float* TextAttribute::WEIGHT_EXTRA_LIGHT = nullptr;
-
 $Float* TextAttribute::WEIGHT_LIGHT = nullptr;
-
 $Float* TextAttribute::WEIGHT_DEMILIGHT = nullptr;
-
 $Float* TextAttribute::WEIGHT_REGULAR = nullptr;
-
 $Float* TextAttribute::WEIGHT_SEMIBOLD = nullptr;
-
 $Float* TextAttribute::WEIGHT_MEDIUM = nullptr;
-
 $Float* TextAttribute::WEIGHT_DEMIBOLD = nullptr;
-
 $Float* TextAttribute::WEIGHT_BOLD = nullptr;
-
 $Float* TextAttribute::WEIGHT_HEAVY = nullptr;
-
 $Float* TextAttribute::WEIGHT_EXTRABOLD = nullptr;
-
 $Float* TextAttribute::WEIGHT_ULTRABOLD = nullptr;
-
 TextAttribute* TextAttribute::WIDTH = nullptr;
-
 $Float* TextAttribute::WIDTH_CONDENSED = nullptr;
-
 $Float* TextAttribute::WIDTH_SEMI_CONDENSED = nullptr;
-
 $Float* TextAttribute::WIDTH_REGULAR = nullptr;
-
 $Float* TextAttribute::WIDTH_SEMI_EXTENDED = nullptr;
-
 $Float* TextAttribute::WIDTH_EXTENDED = nullptr;
-
 TextAttribute* TextAttribute::POSTURE = nullptr;
-
 $Float* TextAttribute::POSTURE_REGULAR = nullptr;
-
 $Float* TextAttribute::POSTURE_OBLIQUE = nullptr;
-
 TextAttribute* TextAttribute::SIZE = nullptr;
-
 TextAttribute* TextAttribute::TRANSFORM = nullptr;
-
 TextAttribute* TextAttribute::SUPERSCRIPT = nullptr;
-
 $Integer* TextAttribute::SUPERSCRIPT_SUPER = nullptr;
-
 $Integer* TextAttribute::SUPERSCRIPT_SUB = nullptr;
-
 TextAttribute* TextAttribute::FONT = nullptr;
-
 TextAttribute* TextAttribute::CHAR_REPLACEMENT = nullptr;
-
 TextAttribute* TextAttribute::FOREGROUND = nullptr;
-
 TextAttribute* TextAttribute::BACKGROUND = nullptr;
-
 TextAttribute* TextAttribute::UNDERLINE = nullptr;
-
 $Integer* TextAttribute::UNDERLINE_ON = nullptr;
-
 TextAttribute* TextAttribute::STRIKETHROUGH = nullptr;
-
 $Boolean* TextAttribute::STRIKETHROUGH_ON = nullptr;
-
 TextAttribute* TextAttribute::RUN_DIRECTION = nullptr;
-
 $Boolean* TextAttribute::RUN_DIRECTION_LTR = nullptr;
-
 $Boolean* TextAttribute::RUN_DIRECTION_RTL = nullptr;
-
 TextAttribute* TextAttribute::BIDI_EMBEDDING = nullptr;
-
 TextAttribute* TextAttribute::JUSTIFICATION = nullptr;
-
 $Float* TextAttribute::JUSTIFICATION_FULL = nullptr;
-
 $Float* TextAttribute::JUSTIFICATION_NONE = nullptr;
-
 TextAttribute* TextAttribute::INPUT_METHOD_HIGHLIGHT = nullptr;
-
 TextAttribute* TextAttribute::INPUT_METHOD_UNDERLINE = nullptr;
-
 $Integer* TextAttribute::UNDERLINE_LOW_ONE_PIXEL = nullptr;
-
 $Integer* TextAttribute::UNDERLINE_LOW_TWO_PIXEL = nullptr;
-
 $Integer* TextAttribute::UNDERLINE_LOW_DOTTED = nullptr;
-
 $Integer* TextAttribute::UNDERLINE_LOW_GRAY = nullptr;
-
 $Integer* TextAttribute::UNDERLINE_LOW_DASHED = nullptr;
-
 TextAttribute* TextAttribute::SWAP_COLORS = nullptr;
-
 $Boolean* TextAttribute::SWAP_COLORS_ON = nullptr;
-
 TextAttribute* TextAttribute::NUMERIC_SHAPING = nullptr;
-
 TextAttribute* TextAttribute::KERNING = nullptr;
-
 $Integer* TextAttribute::KERNING_ON = nullptr;
-
 TextAttribute* TextAttribute::LIGATURES = nullptr;
-
 $Integer* TextAttribute::LIGATURES_ON = nullptr;
-
 TextAttribute* TextAttribute::TRACKING = nullptr;
-
 $Float* TextAttribute::TRACKING_TIGHT = nullptr;
-
 $Float* TextAttribute::TRACKING_LOOSE = nullptr;
 
 void TextAttribute::init$($String* name) {

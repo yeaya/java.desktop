@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/PrinterState.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -87,17 +79,11 @@ void PrinterState::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 PrinterState* PrinterState::UNKNOWN = nullptr;
-
 PrinterState* PrinterState::IDLE = nullptr;
-
 PrinterState* PrinterState::PROCESSING = nullptr;
-
 PrinterState* PrinterState::STOPPED = nullptr;
-
 $StringArray* PrinterState::myStringTable = nullptr;
-
 $PrinterStateArray* PrinterState::myEnumValueTable = nullptr;
 
 void PrinterState::init$(int32_t value) {

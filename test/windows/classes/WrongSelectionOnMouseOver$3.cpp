@@ -1,17 +1,6 @@
 #include <WrongSelectionOnMouseOver$3.h>
 
 #include <WrongSelectionOnMouseOver.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <javax/swing/event/MenuEvent.h>
 #include <jcpp.h>
@@ -77,17 +66,14 @@ void WrongSelectionOnMouseOver$3::init$($WrongSelectionOnMouseOver* this$0) {
 
 void WrongSelectionOnMouseOver$3::menuSelected($MenuEvent* e) {
 	$nc(this->this$0->secondMenuSelected)->countDown();
-	$init($System);
 	$nc($System::out)->println("Menu2: menuSelected"_s);
 }
 
 void WrongSelectionOnMouseOver$3::menuDeselected($MenuEvent* e) {
-	$init($System);
 	$nc($System::out)->println("Menu2: menuDeselected"_s);
 }
 
 void WrongSelectionOnMouseOver$3::menuCanceled($MenuEvent* e) {
-	$init($System);
 	$nc($System::out)->println("Menu2: menuCanceled"_s);
 }
 

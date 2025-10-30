@@ -12,33 +12,17 @@
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/InputEvent.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InstantiationException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractSpinnerModel.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
@@ -334,8 +318,8 @@ void bug4788637::main($StringArray* args) {
 						$nc(bug4788637::robot)->waitForIdle();
 						$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4788637$$Lambda$lambda$main$1$2)));
 						app->start();
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$1) {
+						$assign(var$0, var$1);
 					} /*finally*/ {
 						$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4788637$$Lambda$destroy$3, static_cast<bug4788637*>(app))));
 					}
@@ -387,8 +371,7 @@ void bug4788637::start() {
 			}
 		}
 		$nc(bug4788637::robot)->mouseRelease($InputEvent::BUTTON1_MASK);
-	} catch ($Throwable&) {
-		$var($Throwable, t, $catch());
+	} catch ($Throwable& t) {
 		$throwNew($RuntimeException, t);
 	}
 }
@@ -406,19 +389,14 @@ void bug4788637::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
-		$init($System);
 		$nc($System::out)->println($$str({"LookAndFeel: "_s, $($nc(laf)->getClassName())}));
-	} catch ($ClassNotFoundException&) {
-		$var($Exception, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($InstantiationException&) {
-		$var($Exception, e, $catch());
+	} catch ($InstantiationException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($Exception, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($IllegalAccessException&) {
-		$var($Exception, e, $catch());
+	} catch ($IllegalAccessException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }

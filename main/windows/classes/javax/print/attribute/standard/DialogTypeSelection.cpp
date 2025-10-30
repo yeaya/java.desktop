@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/DialogTypeSelection.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -83,13 +75,9 @@ void DialogTypeSelection::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 DialogTypeSelection* DialogTypeSelection::NATIVE = nullptr;
-
 DialogTypeSelection* DialogTypeSelection::COMMON = nullptr;
-
 $StringArray* DialogTypeSelection::myStringTable = nullptr;
-
 $DialogTypeSelectionArray* DialogTypeSelection::myEnumValueTable = nullptr;
 
 void DialogTypeSelection::init$(int32_t value) {

@@ -4,14 +4,6 @@
 #include <com/sun/imageio/plugins/tiff/TIFFImageMetadata.h>
 #include <com/sun/imageio/plugins/tiff/TIFFImageReader.h>
 #include <java/io/EOFException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/IIOException.h>
 #include <javax/imageio/ImageReader.h>
 #include <javax/imageio/metadata/IIOMetadata.h>
@@ -340,8 +332,7 @@ void TIFFFaxDecompressor::decodeT4() {
 		try {
 			modeFlag = findNextLine();
 			++lines;
-		} catch ($EOFException&) {
-			$var($EOFException, eofe, $catch());
+		} catch ($EOFException& eofe) {
 			$throwNew($IIOException, "No reference line present."_s);
 		}
 	}
@@ -352,8 +343,7 @@ void TIFFFaxDecompressor::decodeT4() {
 	while (lines < height) {
 		try {
 			modeFlag = findNextLine();
-		} catch ($EOFException&) {
-			$var($EOFException, eofe, $catch());
+		} catch ($EOFException& eofe) {
 			warning($$str({"Input exhausted before EOL found at line "_s, $$str((this->srcMinY + lines)), ": read 0 of "_s, $$str(this->w), " expected pixels."_s}));
 			break;
 		}
@@ -417,8 +407,7 @@ void TIFFFaxDecompressor::decodeT4() {
 						try {
 							modeFlag = findNextLine();
 							++numLinesTested;
-						} catch ($EOFException&) {
-							$var($EOFException, eofe, $catch());
+						} catch ($EOFException& eofe) {
 							warning($$str({"Sync loss at line "_s, $$str((this->srcMinY + lines)), ": read "_s, $$str(lines), " of "_s, $$str(height), " lines."_s}));
 							return;
 						}
@@ -465,7 +454,7 @@ void TIFFFaxDecompressor::decodeT6() {
 			isWhite = true;
 			$assign(temp, this->prevChangingElems);
 			$set(this, prevChangingElems, this->currChangingElems);
-			$assign(cce, ($assignField(this, currChangingElems, temp)));
+			$assign(cce, ($set(this, currChangingElems, temp)));
 			currIndex = 0;
 			bitOffset = 0;
 			this->lastChangingElement = 0;

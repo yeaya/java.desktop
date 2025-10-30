@@ -3,17 +3,8 @@
 #include <com/sun/media/sound/AbstractDataLine.h>
 #include <com/sun/media/sound/DirectAudioDevice$DirectDL.h>
 #include <com/sun/media/sound/DirectAudioDevice.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/AudioFormat.h>
 #include <javax/sound/sampled/Control$Type.h>
 #include <javax/sound/sampled/Control.h>
@@ -276,8 +267,7 @@ int32_t DirectAudioDevice$DirectTDL::read($bytes* b, int32_t off, int32_t len) {
 			$synchronized(this->lock) {
 				try {
 					$nc($of(this->lock))->wait(this->waitTime);
-				} catch ($InterruptedException&) {
-					$catch();
+				} catch ($InterruptedException& ie) {
 				}
 			}
 		} else {

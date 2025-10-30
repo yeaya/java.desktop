@@ -1,12 +1,6 @@
 #include <java/awt/event/ItemListener.h>
 
 #include <java/awt/event/ItemEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ItemEvent = ::java::awt::event::ItemEvent;

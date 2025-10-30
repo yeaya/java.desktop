@@ -19,28 +19,13 @@
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/InputEvent.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Random.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JLayeredPane.h>
@@ -201,8 +186,8 @@ void bug4962534::main($StringArray* args) {
 			$var(bug4962534, app, $new(bug4962534));
 			app->init();
 			app->start();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (bug4962534::frame != nullptr) {
 				$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4962534$$Lambda$lambda$main$0)));
@@ -218,8 +203,7 @@ void bug4962534::init() {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$SwingUtilities::invokeAndWait($$new($bug4962534$1, this));
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$throwNew($RuntimeException, $$str({"Init failed. "_s, $(ex->getMessage())}));
 	}
 }
@@ -229,8 +213,7 @@ void bug4962534::start() {
 	try {
 		setJLayeredPaneEDT();
 		setTitleComponentEDT();
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		ex->printStackTrace();
 		$throwNew($RuntimeException, $$str({"Test failed. "_s, $(ex->getMessage())}));
 	}
@@ -241,8 +224,7 @@ void bug4962534::start() {
 	for (int32_t iteration = 0; iteration < 10; ++iteration) {
 		try {
 			setFramePosEDT();
-		} catch ($Exception&) {
-			$var($Exception, ex, $catch());
+		} catch ($Exception& ex) {
 			ex->printStackTrace();
 			$throwNew($RuntimeException, "Test failed."_s);
 		}
@@ -265,23 +247,19 @@ void bug4962534::start() {
 			}
 			$nc(this->robot)->mouseRelease($InputEvent::BUTTON1_MASK);
 			$nc(this->robot)->waitForIdle();
-		} catch ($AWTException&) {
-			$var($AWTException, e, $catch());
+		} catch ($AWTException& e) {
 			$throwNew($RuntimeException, $$str({"Test Failed. AWTException thrown."_s, $(e->getMessage())}));
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			e->printStackTrace();
 			$throwNew($RuntimeException, "Test Failed."_s);
 		}
-		$init($System);
 		$nc($System::out)->println($$str({"Mouse  lies in "_s, $($nc($($MouseInfo::getPointerInfo()))->getLocation())}));
 		bool frameIsOutOfScreen = false;
 		try {
 			setNewFrameLocationEDT();
 			$nc($System::out)->println($$str({"Now Frame lies in "_s, this->newFrameLocation}));
 			frameIsOutOfScreen = checkFrameIsOutOfScreenEDT();
-		} catch ($Exception&) {
-			$var($Exception, ex, $catch());
+		} catch ($Exception& ex) {
 			ex->printStackTrace();
 			$throwNew($RuntimeException, "Test Failed."_s);
 		}
@@ -289,16 +267,13 @@ void bug4962534::start() {
 			$throwNew($RuntimeException, "Test failed. JFrame is out of screen."_s);
 		}
 	}
-	$init($System);
 	$nc($System::out)->println("Test passed."_s);
 }
 
 void bug4962534::createAndShowGUI() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"_s);
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$throwNew($RuntimeException, $(ex->getMessage()));
 	}
 	$JFrame::setDefaultLookAndFeelDecorated(true);

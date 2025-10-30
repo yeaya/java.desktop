@@ -3,15 +3,6 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractAction.h>
 #include <javax/swing/Action.h>
 #include <javax/swing/JEditorPane.h>
@@ -198,7 +189,7 @@ $ViewFactory* StyledEditorKit::getViewFactory() {
 
 $Object* StyledEditorKit::clone() {
 	$var(StyledEditorKit, o, $cast(StyledEditorKit, $DefaultEditorKit::clone()));
-	$set($nc(o), currentRun, ($assignField(o, currentParagraph, nullptr)));
+	$set($nc(o), currentRun, ($set(o, currentParagraph, nullptr)));
 	o->createInputAttributeUpdated();
 	o->createInputAttributes();
 	return $of(o);

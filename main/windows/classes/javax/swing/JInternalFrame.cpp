@@ -20,22 +20,7 @@
 #include <java/beans/PropertyChangeListener.h>
 #include <java/beans/PropertyVetoException.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/Icon.h>
@@ -170,6 +155,7 @@ $NamedAttribute JInternalFrame_Attribute_var$1[] = {
 	{"delegate", 's', "getContentPane"},
 	{}
 };
+
 $CompoundAttribute _JInternalFrame_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JInternalFrame_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JInternalFrame_Attribute_var$1},
@@ -484,7 +470,6 @@ $CompoundAttribute _JInternalFrame_MethodAnnotations_setUI82[] = {
 	{}
 };
 
-
 $FieldInfo _JInternalFrame_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JInternalFrame, uiClassID)},
 	{"rootPane", "Ljavax/swing/JRootPane;", nullptr, $PROTECTED, $field(JInternalFrame, rootPane)},
@@ -667,29 +652,17 @@ void JInternalFrame::finalize() {
 	this->$JComponent::finalize();
 }
 
-
 $String* JInternalFrame::uiClassID = nullptr;
-
 $String* JInternalFrame::CONTENT_PANE_PROPERTY = nullptr;
-
 $String* JInternalFrame::MENU_BAR_PROPERTY = nullptr;
-
 $String* JInternalFrame::TITLE_PROPERTY = nullptr;
-
 $String* JInternalFrame::LAYERED_PANE_PROPERTY = nullptr;
-
 $String* JInternalFrame::ROOT_PANE_PROPERTY = nullptr;
-
 $String* JInternalFrame::GLASS_PANE_PROPERTY = nullptr;
-
 $String* JInternalFrame::FRAME_ICON_PROPERTY = nullptr;
-
 $String* JInternalFrame::IS_SELECTED_PROPERTY = nullptr;
-
 $String* JInternalFrame::IS_CLOSED_PROPERTY = nullptr;
-
 $String* JInternalFrame::IS_MAXIMUM_PROPERTY = nullptr;
-
 $String* JInternalFrame::IS_ICON_PROPERTY = nullptr;
 $Object* JInternalFrame::PROPERTY_CHANGE_LISTENER_KEY = nullptr;
 
@@ -776,8 +749,8 @@ void JInternalFrame::setUI($InternalFrameUI* ui) {
 		try {
 			setRootPaneCheckingEnabled(false);
 			$JComponent::setUI(ui);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			setRootPaneCheckingEnabled(checkingEnabled);
 		}
@@ -925,8 +898,8 @@ void JInternalFrame::setRootPane($JRootPane* root) {
 				setRootPaneCheckingEnabled(false);
 				$init($BorderLayout);
 				add(static_cast<$Component*>(this->rootPane), $of($BorderLayout::CENTER));
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				setRootPaneCheckingEnabled(checkingEnabled);
 			}
@@ -1091,8 +1064,7 @@ void JInternalFrame::setSelected(bool selected) {
 		fireInternalFrameEvent($InternalFrameEvent::INTERNAL_FRAME_DEACTIVATED);
 		try {
 			$nc($($nc($($Toolkit::getDefaultToolkit()))->getSystemEventQueue()))->postEvent($$new($UngrabEvent, this));
-		} catch ($SecurityException&) {
-			$var($SecurityException, e, $catch());
+		} catch ($SecurityException& e) {
 			this->dispatchEvent($$new($UngrabEvent, this));
 		}
 	}
@@ -1352,8 +1324,7 @@ void JInternalFrame::doDefaultCloseAction() {
 			if (isSelected()) {
 				try {
 					setSelected(false);
-				} catch ($PropertyVetoException&) {
-					$catch();
+				} catch ($PropertyVetoException& pve) {
 				}
 			}
 			break;
@@ -1367,8 +1338,7 @@ void JInternalFrame::doDefaultCloseAction() {
 				setVisible(false);
 				firePropertyChange(JInternalFrame::IS_CLOSED_PROPERTY, $of($Boolean::FALSE), $of($Boolean::TRUE));
 				dispose();
-			} catch ($PropertyVetoException&) {
-				$catch();
+			} catch ($PropertyVetoException& pve) {
 			}
 			break;
 		}
@@ -1388,15 +1358,13 @@ int32_t JInternalFrame::getDefaultCloseOperation() {
 }
 
 void JInternalFrame::pack() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		if (isIcon()) {
 			setIcon(false);
 		} else if (isMaximum()) {
 			setMaximum(false);
 		}
-	} catch ($PropertyVetoException&) {
-		$var($PropertyVetoException, e, $catch());
+	} catch ($PropertyVetoException& e) {
 		return;
 	}
 	setSize($(getPreferredSize()));
@@ -1420,8 +1388,7 @@ void JInternalFrame::show() {
 	if (!isSelected()) {
 		try {
 			setSelected(true);
-		} catch ($PropertyVetoException&) {
-			$catch();
+		} catch ($PropertyVetoException& pve) {
 		}
 	}
 }
@@ -1446,8 +1413,7 @@ void JInternalFrame::dispose() {
 	fireInternalFrameEvent($InternalFrameEvent::INTERNAL_FRAME_CLOSED);
 	try {
 		$nc($($nc($($Toolkit::getDefaultToolkit()))->getSystemEventQueue()))->postEvent($$new($UngrabEvent, this));
-	} catch ($SecurityException&) {
-		$var($SecurityException, e, $catch());
+	} catch ($SecurityException& e) {
 		this->dispatchEvent($$new($UngrabEvent, this));
 	}
 }
@@ -1488,8 +1454,8 @@ void JInternalFrame::writeObject($ObjectOutputStream* s) {
 				try {
 					setRootPaneCheckingEnabled(false);
 					$nc(this->ui)->installUI(this);
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$1) {
+					$assign(var$0, var$1);
 				} /*finally*/ {
 					setRootPaneCheckingEnabled(old);
 				}
@@ -1508,8 +1474,8 @@ void JInternalFrame::compWriteObjectNotify() {
 		try {
 			setRootPaneCheckingEnabled(false);
 			$JComponent::compWriteObjectNotify();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			setRootPaneCheckingEnabled(old);
 		}

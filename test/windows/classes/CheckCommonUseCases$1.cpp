@@ -1,17 +1,6 @@
 #include <CheckCommonUseCases$1.h>
 
 #include <CheckCommonUseCases.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/atomic/AtomicInteger.h>
 #include <javax/swing/event/DocumentEvent.h>
 #include <jcpp.h>
@@ -81,19 +70,16 @@ void CheckCommonUseCases$1::init$($AtomicInteger* val$insert, $AtomicInteger* va
 
 void CheckCommonUseCases$1::insertUpdate($DocumentEvent* e) {
 	$nc(this->val$insert)->incrementAndGet();
-	$init($System);
 	$nc($System::err)->println($$str({"e = "_s, e}));
 }
 
 void CheckCommonUseCases$1::removeUpdate($DocumentEvent* e) {
 	$nc(this->val$remove)->incrementAndGet();
-	$init($System);
 	$nc($System::err)->println($$str({"e = "_s, e}));
 }
 
 void CheckCommonUseCases$1::changedUpdate($DocumentEvent* e) {
 	$nc(this->val$update)->incrementAndGet();
-	$init($System);
 	$nc($System::err)->println($$str({"e = "_s, e}));
 }
 

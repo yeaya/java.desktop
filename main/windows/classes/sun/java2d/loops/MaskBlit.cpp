@@ -1,18 +1,7 @@
 #include <sun/java2d/loops/MaskBlit.h>
 
 #include <java/awt/Composite.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SurfaceData.h>
 #include <sun/java2d/loops/CompositeType.h>
 #include <sun/java2d/loops/GraphicsPrimitive$GeneralBinaryOp.h>
@@ -110,7 +99,6 @@ MaskBlit* MaskBlit::getFromCache($SurfaceType* src, $CompositeType* comp, $Surfa
 	}
 	$var(MaskBlit, blit, locate(src, comp, dst));
 	if (blit == nullptr) {
-		$init($System);
 		$nc($System::out)->println("mask blit loop not found for:"_s);
 		$nc($System::out)->println($$str({"src:  "_s, src}));
 		$nc($System::out)->println($$str({"comp: "_s, comp}));

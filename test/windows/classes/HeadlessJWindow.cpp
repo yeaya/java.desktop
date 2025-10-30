@@ -2,14 +2,6 @@
 
 #include <java/awt/Frame.h>
 #include <java/awt/HeadlessException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JWindow.h>
 #include <jcpp.h>
 
@@ -48,8 +40,7 @@ void HeadlessJWindow::main($StringArray* args) {
 	$var($JWindow, w, nullptr);
 	try {
 		$assign(w, $new($JWindow));
-	} catch ($HeadlessException&) {
-		$var($HeadlessException, e, $catch());
+	} catch ($HeadlessException& e) {
 		exceptions = true;
 	}
 	if (!exceptions) {
@@ -58,8 +49,7 @@ void HeadlessJWindow::main($StringArray* args) {
 	exceptions = false;
 	try {
 		$assign(w, $new($JWindow, $$new($Frame, "Frame title"_s)));
-	} catch ($HeadlessException&) {
-		$var($HeadlessException, e, $catch());
+	} catch ($HeadlessException& e) {
 		exceptions = true;
 	}
 	if (!exceptions) {

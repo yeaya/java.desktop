@@ -1,16 +1,6 @@
 #include <javax/swing/Timer$DoPostEvent.h>
 
 #include <java/awt/event/ActionEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/atomic/AtomicBoolean.h>
 #include <javax/swing/Timer.h>
 #include <jcpp.h>
@@ -73,7 +63,6 @@ void Timer$DoPostEvent::run() {
 	$useLocalCurrentObjectStackCache();
 	$init($Timer);
 	if ($Timer::logTimers) {
-		$init($System);
 		$nc($System::out)->println($$str({"Timer ringing: "_s, this->this$0}));
 	}
 	if ($nc(this->this$0->notify$)->get()) {

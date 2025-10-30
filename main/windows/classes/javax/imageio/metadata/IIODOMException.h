@@ -16,8 +16,10 @@ public:
 	void init$(int16_t code, $String* message);
 	static const int64_t serialVersionUID = (int64_t)0xC35C61AD2B9A6954;
 	IIODOMException(const IIODOMException& e);
-	IIODOMException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline IIODOMException* operator ->() {
+		return (IIODOMException*)throwing$;
+	}
 };
 
 		} // metadata

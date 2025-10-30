@@ -1,12 +1,5 @@
 #include <javax/swing/plaf/basic/BasicPasswordFieldUI.h>
 
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/Action.h>
 #include <javax/swing/ActionMap.h>
 #include <javax/swing/JComponent.h>

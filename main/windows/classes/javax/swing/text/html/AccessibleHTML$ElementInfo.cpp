@@ -4,18 +4,8 @@
 #include <java/awt/Shape.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Iterator.h>
 #include <javax/swing/event/DocumentEvent$ElementChange.h>
@@ -223,8 +213,8 @@ $View* AccessibleHTML$ElementInfo::getView() {
 			$assign(var$2, nullptr);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			this->this$0->unlock(lock);
 		}
@@ -258,12 +248,11 @@ $Rectangle* AccessibleHTML$ElementInfo::getBounds() {
 					$init($Position$Bias);
 					$var($Position$Bias, var$4, $Position$Bias::Forward);
 					return $nc($(rootView->modelToView(var$3, var$4, e->getEndOffset(), $Position$Bias::Backward, bounds)))->getBounds();
-				} catch ($BadLocationException&) {
-					$catch();
+				} catch ($BadLocationException& ble) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$5) {
+			$assign(var$0, var$5);
 		} /*finally*/ {
 			this->this$0->unlock(lock);
 		}
@@ -301,7 +290,6 @@ $AttributeSet* AccessibleHTML$ElementInfo::getViewAttributes() {
 }
 
 int32_t AccessibleHTML$ElementInfo::getIntAttr($AttributeSet* attrs, Object$* key, int32_t deflt) {
-	$useLocalCurrentObjectStackCache();
 	if (attrs != nullptr && attrs->isDefined(key)) {
 		int32_t i = 0;
 		$var($String, val, $cast($String, attrs->getAttribute(key)));
@@ -310,8 +298,7 @@ int32_t AccessibleHTML$ElementInfo::getIntAttr($AttributeSet* attrs, Object$* ke
 		} else {
 			try {
 				i = $Math::max(0, $Integer::parseInt(val));
-			} catch ($NumberFormatException&) {
-				$var($NumberFormatException, x, $catch());
+			} catch ($NumberFormatException& x) {
 				i = deflt;
 			}
 		}
@@ -329,8 +316,8 @@ bool AccessibleHTML$ElementInfo::validateIfNecessary() {
 			$var($Throwable, var$0, nullptr);
 			try {
 				validate();
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				this->this$0->unlock(lock);
 			}

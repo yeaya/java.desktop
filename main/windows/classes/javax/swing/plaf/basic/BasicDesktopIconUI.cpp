@@ -10,16 +10,6 @@
 #include <java/awt/event/MouseListener.h>
 #include <java/awt/event/MouseMotionListener.h>
 #include <java/beans/PropertyVetoException.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/DefaultDesktopManager.h>
 #include <javax/swing/DesktopManager.h>
 #include <javax/swing/JComponent.h>
@@ -251,8 +241,7 @@ $Insets* BasicDesktopIconUI::getInsets($JComponent* c) {
 void BasicDesktopIconUI::deiconize() {
 	try {
 		$nc(this->frame)->setIcon(false);
-	} catch ($PropertyVetoException&) {
-		$catch();
+	} catch ($PropertyVetoException& e2) {
 	}
 }
 

@@ -1,12 +1,6 @@
 #include <sun/java2d/d3d/D3DSurfaceToGDIWindowSurfaceScale.h>
 
 #include <java/awt/Composite.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SurfaceData.h>
 #include <sun/java2d/d3d/D3DSurfaceData.h>
 #include <sun/java2d/d3d/D3DVolatileSurfaceManager.h>

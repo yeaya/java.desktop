@@ -11,29 +11,15 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <java/util/Collections.h>
 #include <java/util/List.h>
@@ -217,17 +203,14 @@ void Test8003400::init$() {
 
 void Test8003400::blockTillDisplayed($Component* comp) {
 	$init(Test8003400);
-	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	while (p == nullptr) {
 		try {
 			$assign(p, $nc(comp)->getLocationOnScreen());
-		} catch ($IllegalStateException&) {
-			$var($IllegalStateException, e, $catch());
+		} catch ($IllegalStateException& e) {
 			try {
 				$Thread::sleep(500);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& ie) {
 			}
 		}
 	}
@@ -258,7 +241,6 @@ void Test8003400::main($StringArray* args) {
 			$var($UIManager$LookAndFeelInfo, info, arr$->get(i$));
 			{
 				$UIManager::setLookAndFeel($($nc(info)->getClassName()));
-				$init($System);
 				$nc($System::out)->println($($nc(info)->getClassName()));
 				{
 					$var($Throwable, var$0, nullptr);
@@ -280,8 +262,8 @@ void Test8003400::main($StringArray* args) {
 						robot->waitForIdle();
 						robot->delay(1000);
 						$SwingUtilities::invokeAndWait($$new($Test8003400$2));
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$1) {
+						$assign(var$0, var$1);
 					} /*finally*/ {
 						if (Test8003400::frame != nullptr) {
 							$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(Test8003400$$Lambda$dispose$1, static_cast<$JFrame*>($nc(Test8003400::frame)))));

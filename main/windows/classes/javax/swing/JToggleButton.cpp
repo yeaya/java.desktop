@@ -5,17 +5,6 @@
 #include <java/awt/Container$AccessibleAWTContainer.h>
 #include <java/awt/event/FocusEvent$Cause.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Enumeration.h>
 #include <java/util/Iterator.h>
 #include <javax/accessibility/AccessibleContext.h>
@@ -81,6 +70,7 @@ $NamedAttribute JToggleButton_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JToggleButton_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JToggleButton_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JToggleButton_Attribute_var$1},
@@ -109,7 +99,6 @@ $CompoundAttribute _JToggleButton_MethodAnnotations_getUIClassID13[] = {
 	{"Ljava/beans/BeanProperty;", JToggleButton_Attribute_var$3},
 	{}
 };
-
 
 $FieldInfo _JToggleButton_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JToggleButton, uiClassID)},
@@ -193,7 +182,6 @@ void JToggleButton::finalize() {
 	this->$AbstractButton::finalize();
 }
 
-
 $String* JToggleButton::uiClassID = nullptr;
 
 $AccessibleContext* JToggleButton::access$200(JToggleButton* x0) {
@@ -261,7 +249,7 @@ bool JToggleButton::shouldUpdateSelectedStateFromAction() {
 
 JToggleButton* JToggleButton::getGroupSelection($FocusEvent$Cause* cause) {
 	$useLocalCurrentObjectStackCache();
-		$init($JToggleButton$1);
+	$init($JToggleButton$1);
 	{
 		$var($ButtonModel, model, nullptr)
 		$var(JToggleButton, selection, nullptr)

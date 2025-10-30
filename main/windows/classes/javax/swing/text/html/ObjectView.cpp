@@ -7,18 +7,7 @@
 #include <java/beans/IntrospectionException.h>
 #include <java/beans/Introspector.h>
 #include <java/beans/PropertyDescriptor.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/Exception.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JLabel.h>
@@ -103,8 +92,7 @@ $Component* ObjectView::createComponent() {
 			setParameters(comp, attr);
 			return comp;
 		}
-	} catch ($Throwable&) {
-		$catch();
+	} catch ($Throwable& e) {
 	}
 	return getUnloadableRepresentation();
 }
@@ -122,9 +110,7 @@ void ObjectView::setParameters($Component* comp, $AttributeSet* attr) {
 	$var($BeanInfo, bi, nullptr);
 	try {
 		$assign(bi, $Introspector::getBeanInfo(k));
-	} catch ($IntrospectionException&) {
-		$var($IntrospectionException, ex, $catch());
-		$init($System);
+	} catch ($IntrospectionException& ex) {
 		$nc($System::err)->println($$str({"introspector failed, ex: "_s, ex}));
 		return;
 	}
@@ -144,9 +130,7 @@ void ObjectView::setParameters($Component* comp, $AttributeSet* attr) {
 			$var($ObjectArray, args, $new($ObjectArray, {$of(value)}));
 			try {
 				$MethodUtil::invoke(writer, comp, args);
-			} catch ($Exception&) {
-				$var($Exception, ex, $catch());
-				$init($System);
+			} catch ($Exception& ex) {
 				$nc($System::err)->println("Invocation failed"_s);
 			}
 		}

@@ -1,16 +1,7 @@
 #include <javax/swing/GroupLayout$1.h>
 
 #include <java/awt/Component$BaselineResizeBehavior.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/GroupLayout$Alignment.h>
 #include <javax/swing/GroupLayout.h>
 #include <jcpp.h>
@@ -81,26 +72,22 @@ void clinit$GroupLayout$1($Class* class$) {
 	{
 		try {
 			$nc(GroupLayout$1::$SwitchMap$java$awt$Component$BaselineResizeBehavior)->set($Component$BaselineResizeBehavior::CONSTANT_ASCENT->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(GroupLayout$1::$SwitchMap$java$awt$Component$BaselineResizeBehavior)->set($Component$BaselineResizeBehavior::CONSTANT_DESCENT->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 	$assignStatic(GroupLayout$1::$SwitchMap$javax$swing$GroupLayout$Alignment, $new($ints, $($GroupLayout$Alignment::values())->length));
 	{
 		try {
 			$nc(GroupLayout$1::$SwitchMap$javax$swing$GroupLayout$Alignment)->set($GroupLayout$Alignment::TRAILING->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(GroupLayout$1::$SwitchMap$javax$swing$GroupLayout$Alignment)->set($GroupLayout$Alignment::CENTER->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

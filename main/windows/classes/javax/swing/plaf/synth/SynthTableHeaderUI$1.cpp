@@ -1,15 +1,6 @@
 #include <javax/swing/plaf/synth/SynthTableHeaderUI$1.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SortOrder.h>
 #include <javax/swing/plaf/synth/SynthTableHeaderUI.h>
 #include <jcpp.h>
@@ -76,18 +67,15 @@ void clinit$SynthTableHeaderUI$1($Class* class$) {
 	{
 		try {
 			$nc(SynthTableHeaderUI$1::$SwitchMap$javax$swing$SortOrder)->set($SortOrder::ASCENDING->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(SynthTableHeaderUI$1::$SwitchMap$javax$swing$SortOrder)->set($SortOrder::DESCENDING->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(SynthTableHeaderUI$1::$SwitchMap$javax$swing$SortOrder)->set($SortOrder::UNSORTED->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

@@ -4,21 +4,12 @@
 #include <java/awt/Graphics2D.h>
 #include <java/awt/image/BufferedImage.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SwingUtilities.h>
 #include <javax/swing/text/Segment.h>
 #include <javax/swing/text/TabExpander.h>
@@ -117,8 +108,8 @@ void bug8134721::testNPE() {
 			$var($chars, var$1, test->toCharArray());
 			$var($Segment, segment, $new($Segment, var$1, 0, test->length()));
 			$Utilities::drawTabbedText(segment, 0, 0, g, ($TabExpander*)nullptr, 0);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} /*finally*/ {
 			if (g != nullptr) {
 				g->dispose();

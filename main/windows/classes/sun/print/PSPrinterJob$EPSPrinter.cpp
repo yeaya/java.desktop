@@ -5,19 +5,7 @@
 #include <java/awt/print/Paper.h>
 #include <java/awt/print/Printable.h>
 #include <java/awt/print/PrinterException.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Date.h>
 #include <sun/print/PSPrinterJob.h>
 #include <sun/print/RasterPrinterJob.h>
@@ -127,16 +115,15 @@ void PSPrinterJob$EPSPrinter::print() {
 		try {
 			try {
 				$nc(this->job)->printPage(this, 0);
-			} catch ($Throwable&) {
-				$var($Throwable, t, $catch());
+			} catch ($Throwable& t) {
 				if ($instanceOf($PrinterException, t)) {
 					$throw($cast($PrinterException, t));
 				} else {
 					$throwNew($PrinterException, $(t->toString()));
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->stream)->println("cleartomark"_s);
 			$nc(this->stream)->println("pluginSave restore"_s);

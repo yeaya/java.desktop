@@ -7,18 +7,6 @@
 #include <java/awt/event/InputEvent.h>
 #include <java/awt/event/KeyEvent.h>
 #include <java/awt/event/MouseEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <java/util/Vector.h>
 #include <javax/swing/JComponent.h>
@@ -350,7 +338,6 @@ void MenuSelectionManager::printMenuElementArray($MenuElementArray* path) {
 
 void MenuSelectionManager::printMenuElementArray($MenuElementArray* path, bool dumpStack) {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println("Path is("_s);
 	int32_t i = 0;
 	int32_t j = 0;

@@ -2,23 +2,12 @@
 
 #include <java/awt/EventQueue.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/LookAndFeel.h>
 #include <javax/swing/UIDefaults.h>
 #include <javax/swing/UIManager.h>
@@ -120,8 +109,7 @@ void InternalResourceBundle::lambda$main$0() {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($NimbusLookAndFeel)));
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($UnsupportedLookAndFeelException, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 	$var($UIDefaults, defaults, $UIManager::getDefaults());
@@ -132,8 +120,7 @@ void InternalResourceBundle::lambda$main$0() {
 	}
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($UnsupportedLookAndFeelException, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 	$assign(value, getValue(defaults));

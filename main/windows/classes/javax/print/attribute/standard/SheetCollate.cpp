@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/SheetCollate.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -85,13 +77,9 @@ void SheetCollate::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 SheetCollate* SheetCollate::UNCOLLATED = nullptr;
-
 SheetCollate* SheetCollate::COLLATED = nullptr;
-
 $StringArray* SheetCollate::myStringTable = nullptr;
-
 $SheetCollateArray* SheetCollate::myEnumValueTable = nullptr;
 
 void SheetCollate::init$(int32_t value) {

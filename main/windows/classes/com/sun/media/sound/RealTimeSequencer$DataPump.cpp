@@ -5,19 +5,7 @@
 #include <com/sun/media/sound/MidiUtils.h>
 #include <com/sun/media/sound/Printer.h>
 #include <com/sun/media/sound/RealTimeSequencer.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/midi/MetaMessage.h>
 #include <javax/sound/midi/MidiEvent.h>
 #include <javax/sound/midi/MidiMessage.h>
@@ -341,8 +329,7 @@ void RealTimeSequencer$DataPump::sendNoteOffIfOn($Track* track, int64_t endTick)
 				}
 			}
 		}
-	} catch ($ArrayIndexOutOfBoundsException&) {
-		$catch();
+	} catch ($ArrayIndexOutOfBoundsException& aioobe) {
 	}
 }
 
@@ -409,8 +396,7 @@ void RealTimeSequencer$DataPump::chaseTrackEvents(int32_t trackNum, int64_t star
 				}
 			}
 		}
-	} catch ($ArrayIndexOutOfBoundsException&) {
-		$catch();
+	} catch ($ArrayIndexOutOfBoundsException& aioobe) {
 	}
 	int32_t numControllersSent = 0;
 	for (int32_t ch = 0; ch < 16; ++ch) {
@@ -583,8 +569,7 @@ bool RealTimeSequencer$DataPump::pump() {
 						++finishedTracks;
 					}
 					$nc(this->trackReadPos)->set(t, readPos);
-				} catch ($Exception&) {
-					$var($Exception, e, $catch());
+				} catch ($Exception& e) {
 					$init($Printer);
 					if ($Printer::err$) {
 						e->printStackTrace();

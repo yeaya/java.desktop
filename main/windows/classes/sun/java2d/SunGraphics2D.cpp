@@ -50,26 +50,11 @@
 #include <java/awt/image/WritableRaster.h>
 #include <java/awt/image/renderable/RenderContext.h>
 #include <java/awt/image/renderable/RenderableImage.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/util/Hashtable.h>
 #include <java/util/Iterator.h>
@@ -630,8 +615,7 @@ $Object* SunGraphics2D::clone() {
 			$set(g, glyphVectorFRC, this->glyphVectorFRC);
 		}
 		return $of(g);
-	} catch ($CloneNotSupportedException&) {
-		$catch();
+	} catch ($CloneNotSupportedException& e) {
 	}
 	return $of(nullptr);
 }
@@ -826,14 +810,14 @@ $FontInfo* SunGraphics2D::checkFontInfo($FontInfo* info$renamed, $Font* font, $F
 		info->originY = (float)textAt->getTranslateY();
 		textAt->translate(-info->originX, -info->originY);
 		if (this->transformState >= SunGraphics2D::TRANSFORM_TRANSLATESCALE) {
-			$nc(this->transform$)->getMatrix($assignField(info, devTx, $new($doubles, 4)));
+			$nc(this->transform$)->getMatrix($set(info, devTx, $new($doubles, 4)));
 			$assign(devAt, $new($AffineTransform, info->devTx));
 			textAt->preConcatenate(devAt);
 		} else {
 			$set(info, devTx, SunGraphics2D::IDENT_MATRIX);
 			$assign(devAt, SunGraphics2D::IDENT_ATX);
 		}
-		textAt->getMatrix($assignField(info, glyphTx, $new($doubles, 4)));
+		textAt->getMatrix($set(info, glyphTx, $new($doubles, 4)));
 		double shearx = textAt->getShearX();
 		double scaley = textAt->getScaleY();
 		if (shearx != 0) {
@@ -844,7 +828,7 @@ $FontInfo* SunGraphics2D::checkFontInfo($FontInfo* info$renamed, $Font* font, $F
 		txFontType = $AffineTransform::TYPE_IDENTITY;
 		$nc(info)->originX = (info->originY = (float)0);
 		if (this->transformState >= SunGraphics2D::TRANSFORM_TRANSLATESCALE) {
-			$nc(this->transform$)->getMatrix($assignField(info, devTx, $new($doubles, 4)));
+			$nc(this->transform$)->getMatrix($set(info, devTx, $new($doubles, 4)));
 			$assign(devAt, $new($AffineTransform, info->devTx));
 			$set(info, glyphTx, $new($doubles, 4));
 			for (int32_t i = 0; i < 4; ++i) {
@@ -965,7 +949,7 @@ $FontInfo* SunGraphics2D::getGVFontInfo($Font* font, $FontRenderContext* frc) {
 		return this->glyphVectorFontInfo;
 	} else {
 		$set(this, glyphVectorFRC, frc);
-		return $assignField(this, glyphVectorFontInfo, checkFontInfo(this->glyphVectorFontInfo, font, frc));
+		return $set(this, glyphVectorFontInfo, checkFontInfo(this->glyphVectorFontInfo, font, frc));
 	}
 }
 
@@ -973,7 +957,7 @@ $FontMetrics* SunGraphics2D::getFontMetrics() {
 	if (this->fontMetrics != nullptr) {
 		return this->fontMetrics;
 	}
-	return $assignField(this, fontMetrics, $FontDesignMetrics::getMetrics(this->font, $(getFontRenderContext())));
+	return $set(this, fontMetrics, $FontDesignMetrics::getMetrics(this->font, $(getFontRenderContext())));
 }
 
 $FontMetrics* SunGraphics2D::getFontMetrics($Font* font) {
@@ -1613,7 +1597,7 @@ void SunGraphics2D::setColor($Color* color) {
 	if (color == nullptr || $equals(color, this->paint)) {
 		return;
 	}
-	$set(this, paint, ($assignField(this, foregroundColor, color)));
+	$set(this, paint, ($set(this, foregroundColor, color)));
 	validateColor();
 	if ((this->eargb >> 24) == -1) {
 		if (this->paintState == SunGraphics2D::PAINT_OPAQUECOLOR) {
@@ -1711,8 +1695,7 @@ bool SunGraphics2D::hitClip(int32_t x, int32_t y, int32_t width, int32_t height)
 		if (!$nc($(getCompClip()))->intersectsQuickCheckXYXY(x, y, width, height)) {
 			return false;
 		}
-	} catch ($InvalidPipeException&) {
-		$var($InvalidPipeException, e, $catch());
+	} catch ($InvalidPipeException& e) {
 		return false;
 	}
 	return true;
@@ -1740,8 +1723,8 @@ void SunGraphics2D::validateCompClip() {
 				$var($Region, r, $Region::getInstance(box, static_cast<$SpanIterator*>(sr)));
 				$set(this, clipRegion, r);
 				this->clipState = $nc(r)->isRectangular() ? SunGraphics2D::CLIP_RECTANGULAR : SunGraphics2D::CLIP_SHAPE;
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(sr)->dispose();
 			}
@@ -1768,15 +1751,13 @@ $Shape* SunGraphics2D::transformShape($Shape* s) {
 }
 
 $Shape* SunGraphics2D::untransformShape($Shape* s) {
-	$useLocalCurrentObjectStackCache();
 	if (s == nullptr) {
 		return nullptr;
 	}
 	if (this->transformState > SunGraphics2D::TRANSFORM_INT_TRANSLATE) {
 		try {
 			return transformShape($($nc(this->transform$)->createInverse()), s);
-		} catch ($NoninvertibleTransformException&) {
-			$var($NoninvertibleTransformException, e, $catch());
+		} catch ($NoninvertibleTransformException& e) {
 			return nullptr;
 		}
 	} else {
@@ -1886,23 +1867,20 @@ void SunGraphics2D::setXORMode($Color* c) {
 }
 
 void SunGraphics2D::copyArea(int32_t x, int32_t y, int32_t w, int32_t h, int32_t dx, int32_t dy) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				doCopyArea(x, y, w, h, dx, dy);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					doCopyArea(x, y, w, h, dx, dy);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -1988,23 +1966,20 @@ void SunGraphics2D::doCopyArea(int32_t x, int32_t y, int32_t w, int32_t h, int32
 }
 
 void SunGraphics2D::drawLine(int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(this->drawpipe)->drawLine(this, x1, y1, x2, y2);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->drawpipe)->drawLine(this, x1, y1, x2, y2);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2015,23 +1990,20 @@ void SunGraphics2D::drawLine(int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
 }
 
 void SunGraphics2D::drawRoundRect(int32_t x, int32_t y, int32_t w, int32_t h, int32_t arcW, int32_t arcH) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(this->drawpipe)->drawRoundRect(this, x, y, w, h, arcW, arcH);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->drawpipe)->drawRoundRect(this, x, y, w, h, arcW, arcH);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2042,23 +2014,20 @@ void SunGraphics2D::drawRoundRect(int32_t x, int32_t y, int32_t w, int32_t h, in
 }
 
 void SunGraphics2D::fillRoundRect(int32_t x, int32_t y, int32_t w, int32_t h, int32_t arcW, int32_t arcH) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(this->fillpipe)->fillRoundRect(this, x, y, w, h, arcW, arcH);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->fillpipe)->fillRoundRect(this, x, y, w, h, arcW, arcH);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2069,23 +2038,20 @@ void SunGraphics2D::fillRoundRect(int32_t x, int32_t y, int32_t w, int32_t h, in
 }
 
 void SunGraphics2D::drawOval(int32_t x, int32_t y, int32_t w, int32_t h) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(this->drawpipe)->drawOval(this, x, y, w, h);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->drawpipe)->drawOval(this, x, y, w, h);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2096,23 +2062,20 @@ void SunGraphics2D::drawOval(int32_t x, int32_t y, int32_t w, int32_t h) {
 }
 
 void SunGraphics2D::fillOval(int32_t x, int32_t y, int32_t w, int32_t h) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(this->fillpipe)->fillOval(this, x, y, w, h);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->fillpipe)->fillOval(this, x, y, w, h);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2123,23 +2086,20 @@ void SunGraphics2D::fillOval(int32_t x, int32_t y, int32_t w, int32_t h) {
 }
 
 void SunGraphics2D::drawArc(int32_t x, int32_t y, int32_t w, int32_t h, int32_t startAngl, int32_t arcAngl) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(this->drawpipe)->drawArc(this, x, y, w, h, startAngl, arcAngl);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->drawpipe)->drawArc(this, x, y, w, h, startAngl, arcAngl);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2150,23 +2110,20 @@ void SunGraphics2D::drawArc(int32_t x, int32_t y, int32_t w, int32_t h, int32_t 
 }
 
 void SunGraphics2D::fillArc(int32_t x, int32_t y, int32_t w, int32_t h, int32_t startAngl, int32_t arcAngl) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(this->fillpipe)->fillArc(this, x, y, w, h, startAngl, arcAngl);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->fillpipe)->fillArc(this, x, y, w, h, startAngl, arcAngl);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2177,23 +2134,20 @@ void SunGraphics2D::fillArc(int32_t x, int32_t y, int32_t w, int32_t h, int32_t 
 }
 
 void SunGraphics2D::drawPolyline($ints* xPoints, $ints* yPoints, int32_t nPoints) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(this->drawpipe)->drawPolyline(this, xPoints, yPoints, nPoints);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->drawpipe)->drawPolyline(this, xPoints, yPoints, nPoints);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2204,23 +2158,20 @@ void SunGraphics2D::drawPolyline($ints* xPoints, $ints* yPoints, int32_t nPoints
 }
 
 void SunGraphics2D::drawPolygon($ints* xPoints, $ints* yPoints, int32_t nPoints) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(this->drawpipe)->drawPolygon(this, xPoints, yPoints, nPoints);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->drawpipe)->drawPolygon(this, xPoints, yPoints, nPoints);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2231,23 +2182,20 @@ void SunGraphics2D::drawPolygon($ints* xPoints, $ints* yPoints, int32_t nPoints)
 }
 
 void SunGraphics2D::fillPolygon($ints* xPoints, $ints* yPoints, int32_t nPoints) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(this->fillpipe)->fillPolygon(this, xPoints, yPoints, nPoints);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->fillpipe)->fillPolygon(this, xPoints, yPoints, nPoints);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2258,23 +2206,20 @@ void SunGraphics2D::fillPolygon($ints* xPoints, $ints* yPoints, int32_t nPoints)
 }
 
 void SunGraphics2D::drawRect(int32_t x, int32_t y, int32_t w, int32_t h) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(this->drawpipe)->drawRect(this, x, y, w, h);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->drawpipe)->drawRect(this, x, y, w, h);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2285,23 +2230,20 @@ void SunGraphics2D::drawRect(int32_t x, int32_t y, int32_t w, int32_t h) {
 }
 
 void SunGraphics2D::fillRect(int32_t x, int32_t y, int32_t w, int32_t h) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(this->fillpipe)->fillRect(this, x, y, w, h);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->fillpipe)->fillRect(this, x, y, w, h);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2345,23 +2287,20 @@ void SunGraphics2D::clearRect(int32_t x, int32_t y, int32_t w, int32_t h) {
 }
 
 void SunGraphics2D::draw($Shape* s) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(this->shapepipe)->draw(this, s);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->shapepipe)->draw(this, s);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2372,23 +2311,20 @@ void SunGraphics2D::draw($Shape* s) {
 }
 
 void SunGraphics2D::fill($Shape* s) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(this->shapepipe)->fill(this, s);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->shapepipe)->fill(this, s);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2462,8 +2398,7 @@ $Rectangle* SunGraphics2D::getImageRegion($RenderedImage* img, $Region* compClip
 		int32_t h = $cast(int32_t, (y1 - y0 + 2 * padY));
 		$var($Rectangle, clipRect, $new($Rectangle, x, y, w, h));
 		$assign(result, clipRect->intersection(imageRect));
-	} catch ($NoninvertibleTransformException&) {
-		$var($NoninvertibleTransformException, nte, $catch());
+	} catch ($NoninvertibleTransformException& nte) {
 		$assign(result, imageRect);
 	}
 	return result;
@@ -2484,8 +2419,7 @@ void SunGraphics2D::drawRenderedImage($RenderedImage* img, $AffineTransform* xfo
 	$var($Region, clip, nullptr);
 	try {
 		$assign(clip, getCompClip());
-	} catch ($InvalidPipeException&) {
-		$var($InvalidPipeException, e, $catch());
+	} catch ($InvalidPipeException& e) {
 		return;
 	}
 	$var($Rectangle, region, getImageRegion(img, clip, this->transform$, xform, pad, pad));
@@ -2583,8 +2517,7 @@ void SunGraphics2D::drawRenderableImage($RenderableImage* img, $AffineTransform*
 	$var($RenderContext, rc, $new($RenderContext, concatTransform));
 	try {
 		$assign(reverseTransform, $nc(pipeTransform)->createInverse());
-	} catch ($NoninvertibleTransformException&) {
-		$var($NoninvertibleTransformException, nte, $catch());
+	} catch ($NoninvertibleTransformException& nte) {
 		$assign(rc, $new($RenderContext, pipeTransform));
 		$assign(reverseTransform, $new($AffineTransform));
 	}
@@ -2617,17 +2550,15 @@ void SunGraphics2D::drawString($String* str, int32_t x, int32_t y) {
 		try {
 			try {
 				$nc(this->textpipe)->drawString(this, str, (double)x, (double)y);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->textpipe)->drawString(this, str, (double)x, (double)y);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2654,17 +2585,15 @@ void SunGraphics2D::drawString($String* str, float x, float y) {
 		try {
 			try {
 				$nc(this->textpipe)->drawString(this, str, x, y);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->textpipe)->drawString(this, str, x, y);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2701,7 +2630,6 @@ void SunGraphics2D::drawString($AttributedCharacterIterator* iterator, float x, 
 }
 
 void SunGraphics2D::drawGlyphVector($GlyphVector* gv, float x, float y) {
-	$useLocalCurrentObjectStackCache();
 	if (gv == nullptr) {
 		$throwNew($NullPointerException, "GlyphVector is null"_s);
 	}
@@ -2710,17 +2638,15 @@ void SunGraphics2D::drawGlyphVector($GlyphVector* gv, float x, float y) {
 		try {
 			try {
 				$nc(this->textpipe)->drawGlyphVector(this, gv, x, y);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->textpipe)->drawGlyphVector(this, gv, x, y);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2752,17 +2678,15 @@ void SunGraphics2D::drawChars($chars* data, int32_t offset, int32_t length, int3
 		try {
 			try {
 				$nc(this->textpipe)->drawChars(this, data, offset, length, x, y);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->textpipe)->drawChars(this, data, offset, length, x, y);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$2, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$2, var$3);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2798,17 +2722,15 @@ void SunGraphics2D::drawBytes($bytes* data, int32_t offset, int32_t length, int3
 		try {
 			try {
 				$nc(this->textpipe)->drawChars(this, chData, 0, length, x, y);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->textpipe)->drawChars(this, chData, 0, length, x, y);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$2, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$2, var$3);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2887,15 +2809,13 @@ $Boolean* SunGraphics2D::drawHiDPIImage($Image* img$renamed, int32_t dx1, int32_
 				}
 			}
 		}
-	} catch ($InvalidPipeException&) {
-		$var($InvalidPipeException, e, $catch());
+	} catch ($InvalidPipeException& e) {
 		return $Boolean::valueOf(false);
 	}
 	return nullptr;
 }
 
 bool SunGraphics2D::scaleImage($Image* img, int32_t dx1, int32_t dy1, int32_t dx2, int32_t dy2, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, $Color* bgcolor, $ImageObserver* observer) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		bool var$2 = false;
@@ -2905,18 +2825,16 @@ bool SunGraphics2D::scaleImage($Image* img, int32_t dx1, int32_t dy1, int32_t dx
 				var$2 = $nc(this->imagepipe)->scaleImage(this, img, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, bgcolor, observer);
 				return$1 = true;
 				goto $finally;
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					return $nc(this->imagepipe)->scaleImage(this, img, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, bgcolor, observer);
-				} catch ($InvalidPipeException&) {
-					$var($InvalidPipeException, e2, $catch());
+				} catch ($InvalidPipeException& e2) {
 					return false;
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -2931,7 +2849,6 @@ bool SunGraphics2D::scaleImage($Image* img, int32_t dx1, int32_t dy1, int32_t dx
 }
 
 bool SunGraphics2D::transformImage($Image* img, $AffineTransform* xform, $ImageObserver* observer) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		bool var$2 = false;
@@ -2941,18 +2858,16 @@ bool SunGraphics2D::transformImage($Image* img, $AffineTransform* xform, $ImageO
 				var$2 = $nc(this->imagepipe)->transformImage(this, img, xform, observer);
 				return$1 = true;
 				goto $finally;
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					return $nc(this->imagepipe)->transformImage(this, img, xform, observer);
-				} catch ($InvalidPipeException&) {
-					$var($InvalidPipeException, e2, $catch());
+				} catch ($InvalidPipeException& e2) {
 					return false;
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -3034,7 +2949,6 @@ bool SunGraphics2D::drawImage($Image* img, int32_t x, int32_t y, int32_t width, 
 }
 
 bool SunGraphics2D::copyImage($Image* img, int32_t dx, int32_t dy, int32_t sx, int32_t sy, int32_t width, int32_t height, $Color* bgcolor, $ImageObserver* observer) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		bool var$2 = false;
@@ -3044,18 +2958,16 @@ bool SunGraphics2D::copyImage($Image* img, int32_t dx, int32_t dy, int32_t sx, i
 				var$2 = $nc(this->imagepipe)->copyImage(this, img, dx, dy, sx, sy, width, height, bgcolor, observer);
 				return$1 = true;
 				goto $finally;
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					return $nc(this->imagepipe)->copyImage(this, img, dx, dy, sx, sy, width, height, bgcolor, observer);
-				} catch ($InvalidPipeException&) {
-					$var($InvalidPipeException, e2, $catch());
+				} catch ($InvalidPipeException& e2) {
 					return false;
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -3095,18 +3007,16 @@ bool SunGraphics2D::drawImage($Image* img, int32_t x, int32_t y, int32_t width, 
 				var$2 = $nc(this->imagepipe)->scaleImage(this, img, x, y, width, height, bg, observer);
 				return$1 = true;
 				goto $finally;
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					return $nc(this->imagepipe)->scaleImage(this, img, x, y, width, height, bg, observer);
-				} catch ($InvalidPipeException&) {
-					$var($InvalidPipeException, e2, $catch());
+				} catch ($InvalidPipeException& e2) {
 					return false;
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -3144,18 +3054,16 @@ bool SunGraphics2D::drawImage($Image* img, int32_t x, int32_t y, $Color* bg, $Im
 				var$2 = $nc(this->imagepipe)->copyImage(this, img, x, y, bg, observer);
 				return$1 = true;
 				goto $finally;
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					return $nc(this->imagepipe)->copyImage(this, img, x, y, bg, observer);
-				} catch ($InvalidPipeException&) {
-					$var($InvalidPipeException, e2, $catch());
+				} catch ($InvalidPipeException& e2) {
 					return false;
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -3221,18 +3129,16 @@ bool SunGraphics2D::drawImage($Image* img, int32_t dx1, int32_t dy1, int32_t dx2
 				var$2 = $nc(this->imagepipe)->scaleImage(this, img, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, bgcolor, observer);
 				return$1 = true;
 				goto $finally;
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					return $nc(this->imagepipe)->scaleImage(this, img, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, bgcolor, observer);
-				} catch ($InvalidPipeException&) {
-					$var($InvalidPipeException, e2, $catch());
+				} catch ($InvalidPipeException& e2) {
 					return false;
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->surfaceData)->markDirty();
 		}
@@ -3263,7 +3169,6 @@ bool SunGraphics2D::drawImage($Image* img, $AffineTransform* xform, $ImageObserv
 }
 
 void SunGraphics2D::drawImage($BufferedImage* bImg, $BufferedImageOp* op, int32_t x, int32_t y) {
-	$useLocalCurrentObjectStackCache();
 	if (bImg == nullptr) {
 		return;
 	}
@@ -3272,17 +3177,15 @@ void SunGraphics2D::drawImage($BufferedImage* bImg, $BufferedImageOp* op, int32_
 		try {
 			try {
 				$nc(this->imagepipe)->transformImage(this, bImg, op, x, y);
-			} catch ($InvalidPipeException&) {
-				$var($InvalidPipeException, e, $catch());
+			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
 					$nc(this->imagepipe)->transformImage(this, bImg, op, x, y);
-				} catch ($InvalidPipeException&) {
-					$catch();
+				} catch ($InvalidPipeException& e2) {
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->surfaceData)->markDirty();
 		}

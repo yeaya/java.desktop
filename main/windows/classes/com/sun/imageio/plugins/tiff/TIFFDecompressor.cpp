@@ -28,19 +28,6 @@
 #include <java/awt/image/WritableRenderedImage.h>
 #include <java/io/ByteArrayInputStream.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/Short.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/ByteOrder.h>
 #include <javax/imageio/IIOException.h>
 #include <javax/imageio/ImageReader.h>
@@ -696,8 +683,7 @@ $ImageTypeSpecifier* TIFFDecompressor::getRawImageTypeSpecifier(int32_t photomet
 			int32_t dataTypeSize = 0;
 			try {
 				dataTypeSize = getDataTypeSize(dataType);
-			} catch ($IIOException&) {
-				$var($IIOException, ignored, $catch());
+			} catch ($IIOException& ignored) {
 				dataTypeSize = maxBitsPerSample;
 			}
 			if (totalBits <= 32 && !isSigned) {

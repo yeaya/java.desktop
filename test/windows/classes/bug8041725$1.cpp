@@ -4,17 +4,6 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JList.h>
@@ -86,7 +75,6 @@ void bug8041725$1::run() {
 	$nc($(frame->getContentPane()))->add(static_cast<$Component*>(list));
 	frame->pack();
 	frame->setVisible(true);
-	$init($System);
 	$nc($System::err)->println("Test #1: No items are selected, list is enabled."_s);
 	$bug8041725::testSelectionColors(list);
 	$nc($System::err)->println("Test #2: No items are selected, list is disabled."_s);

@@ -3,17 +3,7 @@
 #include <com/sun/imageio/plugins/jpeg/JPEG.h>
 #include <com/sun/imageio/plugins/jpeg/JPEGBuffer.h>
 #include <com/sun/imageio/plugins/jpeg/MarkerSegment.h>
-#include <java/io/PrintStream.h>
 #include <java/io/UnsupportedEncodingException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/metadata/IIOInvalidTreeException.h>
 #include <javax/imageio/metadata/IIOMetadataNode.h>
 #include <javax/imageio/stream/ImageOutputStream.h>
@@ -105,8 +95,7 @@ void COMMarkerSegment::init$($Node* node) {
 $String* COMMarkerSegment::getComment() {
 	try {
 		return $new($String, this->data, COMMarkerSegment::ENCODING);
-	} catch ($UnsupportedEncodingException&) {
-		$catch();
+	} catch ($UnsupportedEncodingException& e) {
 	}
 	return nullptr;
 }
@@ -130,7 +119,6 @@ void COMMarkerSegment::write($ImageOutputStream* ios) {
 void COMMarkerSegment::print() {
 	$useLocalCurrentObjectStackCache();
 	printTag("COM"_s);
-	$init($System);
 	$nc($System::out)->println($$str({"<"_s, $(getComment()), ">"_s}));
 }
 

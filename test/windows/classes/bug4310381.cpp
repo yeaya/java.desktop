@@ -5,30 +5,16 @@
 #include <java/awt/Container.h>
 #include <java/awt/Dimension.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
 #include <java/lang/InstantiationException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <java/util/concurrent/TimeUnit.h>
 #include <javax/swing/JComponent.h>
@@ -309,7 +295,6 @@ void bug4310381::main($StringArray* args) {
 	$init($TimeUnit);
 	bool status = $nc(bug4310381::testLatch)->await(1, $TimeUnit::MINUTES);
 	if (!status) {
-		$init($System);
 		$nc($System::out)->println("Test timed out."_s);
 	}
 	if ($nc(bug4310381::test)->testResult == false) {
@@ -325,23 +310,18 @@ void bug4310381::disposeUI() {
 
 void bug4310381::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(bug4310381);
-	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
-	} catch ($ClassNotFoundException&) {
-		$var($Exception, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		disposeUI();
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($InstantiationException&) {
-		$var($Exception, e, $catch());
+	} catch ($InstantiationException& e) {
 		disposeUI();
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($Exception, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& e) {
 		disposeUI();
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($IllegalAccessException&) {
-		$var($Exception, e, $catch());
+	} catch ($IllegalAccessException& e) {
 		disposeUI();
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
@@ -391,8 +371,7 @@ void bug4310381::lambda$main$0() {
 	$init(bug4310381);
 	try {
 		$nc(bug4310381::test)->createUI();
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$throwNew($RuntimeException, "Exception while creating UI"_s);
 	}
 }

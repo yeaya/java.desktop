@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/Sides.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -91,19 +83,12 @@ void Sides::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 Sides* Sides::ONE_SIDED = nullptr;
-
 Sides* Sides::TWO_SIDED_LONG_EDGE = nullptr;
-
 Sides* Sides::TWO_SIDED_SHORT_EDGE = nullptr;
-
 Sides* Sides::DUPLEX = nullptr;
-
 Sides* Sides::TUMBLE = nullptr;
-
 $StringArray* Sides::myStringTable = nullptr;
-
 $SidesArray* Sides::myEnumValueTable = nullptr;
 
 void Sides::init$(int32_t value) {

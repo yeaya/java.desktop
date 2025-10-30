@@ -2,18 +2,7 @@
 
 #include <bug4714674.h>
 #include <java/io/IOException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JEditorPane.h>
 #include <javax/swing/text/AbstractDocument.h>
 #include <javax/swing/text/Document.h>
@@ -88,8 +77,7 @@ void bug4714674$1::run() {
 		$var($JEditorPane, pane, $new($JEditorPane));
 		$nc(($cast($AbstractDocument, $(pane->getDocument()))))->setAsynchronousLoadPriority(1);
 		pane->setPage(this->val$baseURL);
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$throwNew($Error, static_cast<$Throwable*>(e));
 	}
 }

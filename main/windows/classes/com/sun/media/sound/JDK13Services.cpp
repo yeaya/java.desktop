@@ -2,20 +2,11 @@
 
 #include <com/sun/media/sound/JSSecurityManager.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/AbstractList.h>
@@ -148,7 +139,6 @@ $ClassInfo _JDK13Services_ClassInfo_ = {
 $Object* allocate$JDK13Services($Class* clazz) {
 	return $of($alloc(JDK13Services));
 }
-
 
 $Properties* JDK13Services::properties = nullptr;
 

@@ -13,16 +13,7 @@
 #include <java/awt/image/ImageFilter.h>
 #include <java/awt/image/ImageProducer.h>
 #include <java/awt/image/RGBImageFilter.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/List.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/ImageIcon.h>
@@ -235,8 +226,7 @@ int32_t MetalUtils::getInt(Object$* key, int32_t defaultValue) {
 	if ($instanceOf($String, value)) {
 		try {
 			return $Integer::parseInt($cast($String, value));
-		} catch ($NumberFormatException&) {
-			$catch();
+		} catch ($NumberFormatException& nfe) {
 		}
 	}
 	return defaultValue;

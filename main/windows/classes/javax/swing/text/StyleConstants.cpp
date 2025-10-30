@@ -2,18 +2,6 @@
 
 #include <java/awt/Color.h>
 #include <java/awt/Component.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/text/AbstractDocument.h>
 #include <javax/swing/text/AttributeSet.h>
@@ -168,65 +156,35 @@ $Object* allocate$StyleConstants($Class* clazz) {
 	return $of($alloc(StyleConstants));
 }
 
-
 $String* StyleConstants::ComponentElementName = nullptr;
-
 $String* StyleConstants::IconElementName = nullptr;
-
 $Object* StyleConstants::NameAttribute = nullptr;
-
 $Object* StyleConstants::ResolveAttribute = nullptr;
-
 $Object* StyleConstants::ModelAttribute = nullptr;
-
 $Object* StyleConstants::BidiLevel = nullptr;
-
 $Object* StyleConstants::FontFamily = nullptr;
-
 $Object* StyleConstants::Family = nullptr;
-
 $Object* StyleConstants::FontSize = nullptr;
-
 $Object* StyleConstants::Size = nullptr;
-
 $Object* StyleConstants::Bold = nullptr;
-
 $Object* StyleConstants::Italic = nullptr;
-
 $Object* StyleConstants::Underline = nullptr;
-
 $Object* StyleConstants::StrikeThrough = nullptr;
-
 $Object* StyleConstants::Superscript = nullptr;
-
 $Object* StyleConstants::Subscript = nullptr;
-
 $Object* StyleConstants::Foreground = nullptr;
-
 $Object* StyleConstants::Background = nullptr;
-
 $Object* StyleConstants::ComponentAttribute = nullptr;
-
 $Object* StyleConstants::IconAttribute = nullptr;
-
 $Object* StyleConstants::ComposedTextAttribute = nullptr;
-
 $Object* StyleConstants::FirstLineIndent = nullptr;
-
 $Object* StyleConstants::LeftIndent = nullptr;
-
 $Object* StyleConstants::RightIndent = nullptr;
-
 $Object* StyleConstants::LineSpacing = nullptr;
-
 $Object* StyleConstants::SpaceAbove = nullptr;
-
 $Object* StyleConstants::SpaceBelow = nullptr;
-
 $Object* StyleConstants::Alignment = nullptr;
-
 $Object* StyleConstants::TabSet = nullptr;
-
 $Object* StyleConstants::Orientation = nullptr;
 $ObjectArray* StyleConstants::keys = nullptr;
 

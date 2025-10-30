@@ -1,14 +1,6 @@
 #include <javax/print/StreamPrintServiceFactory.h>
 
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedActionException.h>
 #include <java/security/PrivilegedExceptionAction.h>
@@ -125,8 +117,7 @@ $ArrayList* StreamPrintServiceFactory::getAllFactories() {
 		}
 		try {
 			$AccessController::doPrivileged(static_cast<$PrivilegedExceptionAction*>($$new($StreamPrintServiceFactory$1)));
-		} catch ($PrivilegedActionException&) {
-			$catch();
+		} catch ($PrivilegedActionException& e) {
 		}
 		return listOfFactories;
 	}

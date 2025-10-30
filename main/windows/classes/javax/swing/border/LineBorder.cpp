@@ -13,17 +13,6 @@
 #include <java/awt/geom/RectangularShape.h>
 #include <java/awt/geom/RoundRectangle2D$Float.h>
 #include <java/awt/geom/RoundRectangle2D.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/border/AbstractBorder.h>
 #include <javax/swing/border/Border.h>
 #include <jcpp.h>

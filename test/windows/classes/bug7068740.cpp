@@ -9,20 +9,9 @@
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/atomic/AtomicInteger.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
@@ -142,23 +131,19 @@ void bug7068740::init$() {
 
 void bug7068740::setUp() {
 	$init(bug7068740);
-	$useLocalCurrentObjectStackCache();
 	try {
 		if (bug7068740::robot == nullptr) {
 			$assignStatic(bug7068740::robot, $new($Robot));
 			$nc(bug7068740::robot)->setAutoDelay(50);
 		}
 		$SwingUtilities::invokeAndWait($$new($bug7068740$2));
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, e, $catch());
+	} catch ($InterruptedException& e) {
 		e->printStackTrace();
 		$throwNew($RuntimeException, "Test failed"_s);
-	} catch ($InvocationTargetException&) {
-		$var($InvocationTargetException, e, $catch());
+	} catch ($InvocationTargetException& e) {
 		e->printStackTrace();
 		$throwNew($RuntimeException, "Test failed"_s);
-	} catch ($AWTException&) {
-		$var($AWTException, e, $catch());
+	} catch ($AWTException& e) {
 		e->printStackTrace();
 		$throwNew($RuntimeException, "Test failed"_s);
 	}
@@ -191,13 +176,11 @@ void bug7068740::doTest() {
 
 void bug7068740::main($StringArray* args) {
 	$init(bug7068740);
-	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
 		setUp();
 		doTest();
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($UnsupportedLookAndFeelException, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& e) {
 		e->printStackTrace();
 		$throwNew($RuntimeException, "Test failed"_s);
 	}

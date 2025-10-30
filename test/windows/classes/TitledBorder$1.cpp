@@ -12,25 +12,12 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/ActionEvent.h>
 #include <java/awt/event/ActionListener.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/BorderFactory.h>
@@ -215,7 +202,6 @@ void TitledBorder$1::run() {
 }
 
 void TitledBorder$1::lambda$run$0($ActionEvent* e) {
-	$init($System);
 	$nc($System::out)->println("Pass Button pressed!"_s);
 	this->this$0->testResult = true;
 	$init($TitledBorder);

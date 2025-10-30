@@ -3,18 +3,7 @@
 #include <SliderTickTest$1.h>
 #include <SliderTickTest$2.h>
 #include <TestUI.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <java/util/concurrent/TimeUnit.h>
 #include <javax/swing/SwingUtilities.h>
@@ -77,7 +66,6 @@ void SliderTickTest::main($StringArray* args) {
 	$init($TimeUnit);
 	bool status = latch->await(5, $TimeUnit::MINUTES);
 	if (!status) {
-		$init($System);
 		$nc($System::out)->println("Test timed out."_s);
 	}
 	$SwingUtilities::invokeAndWait($$new($SliderTickTest$2, test));

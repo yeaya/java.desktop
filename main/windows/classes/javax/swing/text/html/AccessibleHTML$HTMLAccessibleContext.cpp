@@ -11,15 +11,6 @@
 #include <java/awt/Rectangle.h>
 #include <java/awt/event/FocusListener.h>
 #include <java/beans/PropertyChangeEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/accessibility/Accessible.h>
 #include <javax/accessibility/AccessibleComponent.h>
@@ -408,8 +399,7 @@ void AccessibleHTML$HTMLAccessibleContext::requestFocus() {
 				$var($PropertyChangeEvent, pce, $new($PropertyChangeEvent, this, $AccessibleContext::ACCESSIBLE_STATE_PROPERTY, nullptr, $AccessibleState::FOCUSED));
 				$nc(ac)->firePropertyChange($AccessibleContext::ACCESSIBLE_STATE_PROPERTY, nullptr, pce);
 			}
-		} catch ($IllegalArgumentException&) {
-			$catch();
+		} catch ($IllegalArgumentException& e) {
 		}
 	}
 }

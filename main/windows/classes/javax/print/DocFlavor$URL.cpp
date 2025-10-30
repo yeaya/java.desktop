@@ -1,13 +1,5 @@
 #include <javax/print/DocFlavor$URL.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/DocFlavor.h>
 #include <jcpp.h>
 
@@ -94,43 +86,24 @@ $Object* allocate$DocFlavor$URL($Class* clazz) {
 	return $of($alloc(DocFlavor$URL));
 }
 
-
 DocFlavor$URL* DocFlavor$URL::TEXT_PLAIN_HOST = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::TEXT_PLAIN_UTF_8 = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::TEXT_PLAIN_UTF_16 = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::TEXT_PLAIN_UTF_16BE = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::TEXT_PLAIN_UTF_16LE = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::TEXT_PLAIN_US_ASCII = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::TEXT_HTML_HOST = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::TEXT_HTML_UTF_8 = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::TEXT_HTML_UTF_16 = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::TEXT_HTML_UTF_16BE = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::TEXT_HTML_UTF_16LE = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::TEXT_HTML_US_ASCII = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::PDF = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::POSTSCRIPT = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::PCL = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::GIF = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::JPEG = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::PNG = nullptr;
-
 DocFlavor$URL* DocFlavor$URL::AUTOSENSE = nullptr;
 
 void DocFlavor$URL::init$($String* mimeType) {

@@ -5,18 +5,6 @@
 #include <com/sun/media/sound/PortMixer$PortMixerPort.h>
 #include <com/sun/media/sound/PortMixerProvider$PortMixerInfo.h>
 #include <com/sun/media/sound/Printer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Vector.h>
 #include <javax/sound/sampled/Control.h>
 #include <javax/sound/sampled/Line$Info.h>
@@ -169,8 +157,7 @@ void PortMixer::init$($PortMixerProvider$PortMixerInfo* portMixerInfo) {
 						count = 0;
 					}
 				}
-			} catch ($Exception&) {
-				$catch();
+			} catch ($Exception& e) {
 			}
 			$set(this, portInfos, $new($Port$InfoArray, count));
 			for (int32_t i = 0; i < count; ++i) {
@@ -179,8 +166,8 @@ void PortMixer::init$($PortMixerProvider$PortMixerInfo* portMixerInfo) {
 				dstLineCount += (((int32_t)(type & (uint32_t)PortMixer::DST_MASK)) != 0) ? 1 : 0;
 				$nc(this->portInfos)->set(i, $(getPortInfo(i, type)));
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (this->id != 0) {
 				nClose(this->id);

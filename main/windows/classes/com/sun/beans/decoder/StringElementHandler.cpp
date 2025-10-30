@@ -4,18 +4,7 @@
 #include <com/sun/beans/decoder/ElementHandler.h>
 #include <com/sun/beans/decoder/ValueObject.h>
 #include <com/sun/beans/decoder/ValueObjectImpl.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef NULL
@@ -93,12 +82,11 @@ $ValueObject* StringElementHandler::getValueObject() {
 			try {
 				try {
 					$set(this, value, $ValueObjectImpl::create($(getValue($($nc(this->sb)->toString())))));
-				} catch ($RuntimeException&) {
-					$var($RuntimeException, exception, $catch());
+				} catch ($RuntimeException& exception) {
 					$nc($(getOwner()))->handleException(exception);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$set(this, sb, nullptr);
 			}

@@ -23,23 +23,10 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/util/AbstractCollection.h>
 #include <java/util/AbstractList.h>
@@ -385,8 +372,7 @@ bool BeanContextSupport::add(Object$* targetChild) {
 				$synchronized(cbcc) {
 					try {
 						cbcc->setBeanContext($(getBeanContextPeer()));
-					} catch ($PropertyVetoException&) {
-						$var($PropertyVetoException, pve, $catch());
+					} catch ($PropertyVetoException& pve) {
 						$synchronized(this->children) {
 							$nc(this->children)->remove(targetChild);
 							if (bccp != nullptr) {
@@ -463,8 +449,7 @@ bool BeanContextSupport::remove(Object$* targetChild, bool callChildSetBC) {
 						cbcc->removeVetoableChangeListener("beanContext"_s, this->childVCL);
 						try {
 							cbcc->setBeanContext(nullptr);
-						} catch ($PropertyVetoException&) {
-							$var($PropertyVetoException, pve1, $catch());
+						} catch ($PropertyVetoException& pve1) {
 							cbcc->addPropertyChangeListener("beanContext"_s, this->childPCL);
 							cbcc->addVetoableChangeListener("beanContext"_s, this->childVCL);
 							$throwNew($IllegalStateException);
@@ -645,8 +630,7 @@ bool BeanContextSupport::needsGui() {
 					$var($Object, c, i->next());
 					try {
 						return $nc(($cast($Visibility, c)))->needsGui();
-					} catch ($ClassCastException&) {
-						$catch();
+					} catch ($ClassCastException& cce) {
 					}
 					if ($instanceOf($Container, c) || $instanceOf($Component, c)) {
 						return true;
@@ -770,8 +754,7 @@ void BeanContextSupport::writeChildren($ObjectOutputStream* oos) {
 				try {
 					$nc(oos)->writeObject($(entry->getKey()));
 					oos->writeObject($(entry->getValue()));
-				} catch ($IOException&) {
-					$var($IOException, ioe, $catch());
+				} catch ($IOException& ioe) {
 					this->serializing = prev;
 					$throw(ioe);
 				}
@@ -800,8 +783,8 @@ void BeanContextSupport::writeObject($ObjectOutputStream* oos) {
 						writeChildren(oos);
 					}
 					serialize(oos, static_cast<$Collection*>(static_cast<$AbstractCollection*>(static_cast<$AbstractList*>(this->bcmListeners))));
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$1) {
+					$assign(var$0, var$1);
 				} /*finally*/ {
 					this->serializing = false;
 				}
@@ -823,16 +806,14 @@ void BeanContextSupport::readChildren($ObjectInputStream* ois) {
 			$var($BeanContextChild, bcc, nullptr);
 			try {
 				$assign(bcc, $cast($BeanContextChild, child));
-			} catch ($ClassCastException&) {
-				$catch();
+			} catch ($ClassCastException& cce) {
 			}
 			if (bcc != nullptr) {
 				try {
 					bcc->setBeanContext($(getBeanContextPeer()));
 					bcc->addPropertyChangeListener("beanContext"_s, this->childPCL);
 					bcc->addVetoableChangeListener("beanContext"_s, this->childVCL);
-				} catch ($PropertyVetoException&) {
-					$var($PropertyVetoException, pve, $catch());
+				} catch ($PropertyVetoException& pve) {
 					continue;
 				}
 			}
@@ -851,7 +832,7 @@ void BeanContextSupport::readObject($ObjectInputStream* ois) {
 			if (this->serializable > 0 && $of(this)->equals($(getBeanContextPeer()))) {
 				readChildren(ois);
 			}
-			deserialize(ois, static_cast<$Collection*>(static_cast<$AbstractCollection*>(static_cast<$AbstractList*>(($assignField(this, bcmListeners, $new($ArrayList, 1)))))));
+			deserialize(ois, static_cast<$Collection*>(static_cast<$AbstractCollection*>(static_cast<$AbstractList*>(($set(this, bcmListeners, $new($ArrayList, 1)))))));
 		}
 	}
 }
@@ -910,8 +891,7 @@ $Visibility* BeanContextSupport::getChildVisibility(Object$* child) {
 	$init(BeanContextSupport);
 	try {
 		return $cast($Visibility, child);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, cce, $catch());
+	} catch ($ClassCastException& cce) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -921,8 +901,7 @@ $Serializable* BeanContextSupport::getChildSerializable(Object$* child) {
 	$init(BeanContextSupport);
 	try {
 		return $cast($Serializable, child);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, cce, $catch());
+	} catch ($ClassCastException& cce) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -932,8 +911,7 @@ $PropertyChangeListener* BeanContextSupport::getChildPropertyChangeListener(Obje
 	$init(BeanContextSupport);
 	try {
 		return $cast($PropertyChangeListener, child);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, cce, $catch());
+	} catch ($ClassCastException& cce) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -943,8 +921,7 @@ $VetoableChangeListener* BeanContextSupport::getChildVetoableChangeListener(Obje
 	$init(BeanContextSupport);
 	try {
 		return $cast($VetoableChangeListener, child);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, cce, $catch());
+	} catch ($ClassCastException& cce) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -954,8 +931,7 @@ $BeanContextMembershipListener* BeanContextSupport::getChildBeanContextMembershi
 	$init(BeanContextSupport);
 	try {
 		return $cast($BeanContextMembershipListener, child);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, cce, $catch());
+	} catch ($ClassCastException& cce) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -963,7 +939,6 @@ $BeanContextMembershipListener* BeanContextSupport::getChildBeanContextMembershi
 
 $BeanContextChild* BeanContextSupport::getChildBeanContextChild(Object$* child) {
 	$init(BeanContextSupport);
-	$useLocalCurrentObjectStackCache();
 	try {
 		$var($BeanContextChild, bcc, $cast($BeanContextChild, child));
 		if ($instanceOf($BeanContextChild, child) && $instanceOf($BeanContextProxy, child)) {
@@ -971,12 +946,10 @@ $BeanContextChild* BeanContextSupport::getChildBeanContextChild(Object$* child) 
 		} else {
 			return bcc;
 		}
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, cce, $catch());
+	} catch ($ClassCastException& cce) {
 		try {
 			return $nc(($cast($BeanContextProxy, child)))->getBeanContextProxy();
-		} catch ($ClassCastException&) {
-			$var($ClassCastException, cce1, $catch());
+		} catch ($ClassCastException& cce1) {
 			return nullptr;
 		}
 	}

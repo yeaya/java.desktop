@@ -19,26 +19,13 @@
 #include <java/awt/geom/Rectangle2D$Float.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/System.h>
 #include <java/lang/ref/SoftReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/CharacterIterator.h>
 #include <java/util/Map.h>
 #include <sun/awt/SunHints.h>
@@ -697,7 +684,6 @@ $GlyphJustificationInfo* StandardGlyphVector::getGlyphJustificationInfo(int32_t 
 }
 
 bool StandardGlyphVector::equals($GlyphVector* rhs) {
-	$useLocalCurrentObjectStackCache();
 	if ($equals(this, rhs)) {
 		return true;
 	}
@@ -739,8 +725,7 @@ bool StandardGlyphVector::equals($GlyphVector* rhs) {
 		} else {
 			return $nc(this->gti)->equals($nc(other)->gti);
 		}
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		return false;
 	}
 	$shouldNotReachHere();
@@ -753,8 +738,7 @@ int32_t StandardGlyphVector::hashCode() {
 bool StandardGlyphVector::equals(Object$* rhs) {
 	try {
 		return equals($cast($GlyphVector, rhs));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		return false;
 	}
 	$shouldNotReachHere();
@@ -775,8 +759,7 @@ $Object* StandardGlyphVector::clone() {
 			$set(result, gti, $new($StandardGlyphVector$GlyphTransformInfo, result, this->gti));
 		}
 		return $of(result);
-	} catch ($CloneNotSupportedException&) {
-		$catch();
+	} catch ($CloneNotSupportedException& e) {
 	}
 	return $of(this);
 }
@@ -971,8 +954,7 @@ void StandardGlyphVector::resetDTX($AffineTransform* at) {
 	if (!$nc(this->dtx)->isIdentity()) {
 		try {
 			$set(this, invdtx, $nc(this->dtx)->createInverse());
-		} catch ($NoninvertibleTransformException&) {
-			$catch();
+		} catch ($NoninvertibleTransformException& e) {
 		}
 	}
 	if (this->gti != nullptr) {
@@ -1298,8 +1280,7 @@ $StringBuffer* StandardGlyphVector::appendString($StringBuffer* buf$renamed) {
 				buf->append(" complex"_s);
 			}
 		}
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$nc(buf)->append(u' ')->append($(e->getMessage()));
 	}
 	$nc(buf)->append(u'}');

@@ -4,15 +4,7 @@
 #include <java/awt/Container.h>
 #include <java/io/File.h>
 #include <java/io/IOException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFileChooser.h>
 #include <javax/swing/JOptionPane.h>
@@ -87,8 +79,7 @@ void ServiceDialog$ValidatingFileChooser::approveSelection() {
 	bool exists = false;
 	try {
 		exists = $nc(selected)->exists();
-	} catch ($SecurityException&) {
-		$var($SecurityException, e, $catch());
+	} catch ($SecurityException& e) {
 		exists = false;
 	}
 	if (exists) {
@@ -103,13 +94,11 @@ void ServiceDialog$ValidatingFileChooser::approveSelection() {
 		if ($nc(selected)->createNewFile()) {
 			selected->delete$();
 		}
-	} catch ($IOException&) {
-		$var($IOException, ioe, $catch());
+	} catch ($IOException& ioe) {
 		$var($Object, var$1, $of($str({$($ServiceDialog::getMsg("dialog.writeerror"_s)), " "_s, selected})));
 		$JOptionPane::showMessageDialog(this, var$1, $($ServiceDialog::getMsg("dialog.owtitle"_s)), $JOptionPane::WARNING_MESSAGE);
 		return;
-	} catch ($SecurityException&) {
-		$catch();
+	} catch ($SecurityException& se) {
 	}
 	$var($File, pFile, $nc(selected)->getParentFile());
 	bool var$3 = selected->exists();

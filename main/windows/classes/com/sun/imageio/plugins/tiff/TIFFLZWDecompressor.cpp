@@ -2,17 +2,8 @@
 
 #include <com/sun/imageio/plugins/tiff/TIFFDecompressor.h>
 #include <com/sun/imageio/plugins/tiff/TIFFFaxDecompressor.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/IIOException.h>
 #include <javax/imageio/plugins/tiff/BaselineTIFFTagSet.h>
 #include <javax/imageio/stream/ImageInputStream.h>
@@ -259,8 +250,7 @@ int32_t TIFFLZWDecompressor::getNextCode() {
 		int32_t code = (int32_t)(($sr(this->nextData, this->nextBits - this->bitsToGet)) & (uint32_t)$nc(TIFFLZWDecompressor::andTable)->get(this->bitsToGet - 9));
 		this->nextBits -= this->bitsToGet;
 		return code;
-	} catch ($ArrayIndexOutOfBoundsException&) {
-		$var($ArrayIndexOutOfBoundsException, e, $catch());
+	} catch ($ArrayIndexOutOfBoundsException& e) {
 		return TIFFLZWDecompressor::EOI_CODE;
 	}
 	$shouldNotReachHere();

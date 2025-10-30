@@ -7,20 +7,9 @@
 #include <java/awt/Transparency.h>
 #include <java/awt/image/ColorModel.h>
 #include <java/awt/image/Raster.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/OutOfMemoryError.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <sun/awt/SunHints.h>
@@ -302,20 +291,15 @@ void OGLSurfaceData::finalize() {
 	this->$SurfaceData::finalize();
 }
 
-
 $String* OGLSurfaceData::DESC_OPENGL_SURFACE = nullptr;
 $String* OGLSurfaceData::DESC_OPENGL_SURFACE_RTT = nullptr;
 $String* OGLSurfaceData::DESC_OPENGL_TEXTURE = nullptr;
 $SurfaceType* OGLSurfaceData::OpenGLSurface = nullptr;
 $SurfaceType* OGLSurfaceData::OpenGLSurfaceRTT = nullptr;
 $SurfaceType* OGLSurfaceData::OpenGLTexture = nullptr;
-
 bool OGLSurfaceData::isFBObjectEnabled = false;
-
 bool OGLSurfaceData::isLCDShaderEnabled = false;
-
 bool OGLSurfaceData::isBIOpShaderEnabled = false;
-
 bool OGLSurfaceData::isGradShaderEnabled = false;
 $OGLRenderer* OGLSurfaceData::oglRenderPipe = nullptr;
 $PixelToParallelogramConverter* OGLSurfaceData::oglTxRenderPipe = nullptr;
@@ -449,8 +433,8 @@ void OGLSurfaceData::initSurface(int32_t width, int32_t height) {
 				}
 			}
 			rq->flushAndInvokeNow($$new($OGLSurfaceData$1, this, width, height));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}
@@ -599,8 +583,8 @@ void OGLSurfaceData::flush() {
 			$nc(buf)->putInt(72);
 			buf->putLong(getNativeOps());
 			rq->flushNow();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}
@@ -624,8 +608,8 @@ void OGLSurfaceData::dispose(int64_t pData, $OGLGraphicsConfig* gc) {
 			$nc(buf)->putInt(73);
 			buf->putLong(pData);
 			rq->flushNow();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}
@@ -648,8 +632,8 @@ void OGLSurfaceData::swapBuffers(int64_t window) {
 			$nc(buf)->putInt(80);
 			buf->putLong(window);
 			rq->flushNow();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}
@@ -679,8 +663,8 @@ $Rectangle* OGLSurfaceData::getNativeBounds() {
 			$assign(var$2, $new($Rectangle, this->nativeWidth, this->nativeHeight));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			rq->unlock();
 		}

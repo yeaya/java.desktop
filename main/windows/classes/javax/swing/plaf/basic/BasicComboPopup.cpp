@@ -21,16 +21,7 @@
 #include <java/awt/event/MouseMotionListener.h>
 #include <java/awt/event/MouseWheelListener.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventObject.h>
 #include <javax/accessibility/Accessible.h>
 #include <javax/accessibility/AccessibleContext.h>
@@ -467,13 +458,13 @@ void BasicComboPopup::configureList() {
 }
 
 void BasicComboPopup::installListListeners() {
-	if (($assignField(this, listMouseListener, createListMouseListener())) != nullptr) {
+	if (($set(this, listMouseListener, createListMouseListener())) != nullptr) {
 		$nc(this->list$)->addMouseListener(this->listMouseListener);
 	}
-	if (($assignField(this, listMouseMotionListener, createListMouseMotionListener())) != nullptr) {
+	if (($set(this, listMouseMotionListener, createListMouseMotionListener())) != nullptr) {
 		$nc(this->list$)->addMouseMotionListener(this->listMouseMotionListener);
 	}
-	if (($assignField(this, listSelectionListener, createListSelectionListener())) != nullptr) {
+	if (($set(this, listSelectionListener, createListSelectionListener())) != nullptr) {
 		$nc(this->list$)->addListSelectionListener(this->listSelectionListener);
 	}
 }
@@ -532,17 +523,17 @@ void BasicComboPopup::uninstallScrollerListeners() {
 }
 
 void BasicComboPopup::installComboBoxListeners() {
-	if (($assignField(this, propertyChangeListener, createPropertyChangeListener())) != nullptr) {
+	if (($set(this, propertyChangeListener, createPropertyChangeListener())) != nullptr) {
 		$nc(this->comboBox)->addPropertyChangeListener(this->propertyChangeListener);
 	}
-	if (($assignField(this, itemListener, createItemListener())) != nullptr) {
+	if (($set(this, itemListener, createItemListener())) != nullptr) {
 		$nc(this->comboBox)->addItemListener(this->itemListener);
 	}
 	installComboBoxModelListeners($($nc(this->comboBox)->getModel()));
 }
 
 void BasicComboPopup::installComboBoxModelListeners($ComboBoxModel* model) {
-	if (model != nullptr && ($assignField(this, listDataListener, createListDataListener())) != nullptr) {
+	if (model != nullptr && ($set(this, listDataListener, createListDataListener())) != nullptr) {
 		model->addListDataListener(this->listDataListener);
 	}
 }

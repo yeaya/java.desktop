@@ -17,8 +17,10 @@ public:
 	virtual $String* getMessage() override;
 	static const int64_t serialVersionUID = (int64_t)0x0251F4A3A929DCA3;
 	HeadlessException(const HeadlessException& e);
-	HeadlessException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline HeadlessException* operator ->() {
+		return (HeadlessException*)throwing$;
+	}
 };
 
 	} // awt

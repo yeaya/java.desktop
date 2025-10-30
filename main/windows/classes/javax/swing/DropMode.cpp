@@ -1,14 +1,6 @@
 #include <javax/swing/DropMode.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef INSERT
@@ -64,21 +56,13 @@ $Object* allocate$DropMode($Class* clazz) {
 	return $of($alloc(DropMode));
 }
 
-
 DropMode* DropMode::USE_SELECTION = nullptr;
-
 DropMode* DropMode::ON = nullptr;
-
 DropMode* DropMode::INSERT = nullptr;
-
 DropMode* DropMode::INSERT_ROWS = nullptr;
-
 DropMode* DropMode::INSERT_COLS = nullptr;
-
 DropMode* DropMode::ON_OR_INSERT = nullptr;
-
 DropMode* DropMode::ON_OR_INSERT_ROWS = nullptr;
-
 DropMode* DropMode::ON_OR_INSERT_COLS = nullptr;
 $DropModeArray* DropMode::$VALUES = nullptr;
 

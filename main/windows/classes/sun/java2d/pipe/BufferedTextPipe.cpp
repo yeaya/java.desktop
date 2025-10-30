@@ -2,18 +2,7 @@
 
 #include <java/awt/AlphaComposite.h>
 #include <java/awt/Composite.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/GlyphList.h>
 #include <sun/java2d/SunGraphics2D.h>
 #include <sun/java2d/pipe/BufferedTextPipe$1.h>
@@ -118,8 +107,8 @@ void BufferedTextPipe::drawGlyphList($SunGraphics2D* sg2d, $GlyphList* gl) {
 		try {
 			validateContext(sg2d, comp);
 			enqueueGlyphList(sg2d, gl);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->rq)->unlock();
 		}

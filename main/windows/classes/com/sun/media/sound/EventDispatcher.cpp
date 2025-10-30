@@ -6,19 +6,8 @@
 #include <com/sun/media/sound/EventDispatcher$LineMonitor.h>
 #include <com/sun/media/sound/JSSecurityManager.h>
 #include <com/sun/media/sound/Printer.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <java/util/List.h>
 #include <javax/sound/midi/ControllerEventListener.h>
@@ -140,8 +129,7 @@ void EventDispatcher::processEvent($EventDispatcher$EventInfo* eventInfo) {
 		for (int32_t i = 0; i < count; ++i) {
 			try {
 				$nc(($cast($LineListener, $(eventInfo->getListener(i)))))->update(event);
-			} catch ($Throwable&) {
-				$var($Throwable, t, $catch());
+			} catch ($Throwable& t) {
 				$init($Printer);
 				if ($Printer::err$) {
 					t->printStackTrace();
@@ -155,8 +143,7 @@ void EventDispatcher::processEvent($EventDispatcher$EventInfo* eventInfo) {
 		for (int32_t i = 0; i < count; ++i) {
 			try {
 				$nc(($cast($MetaEventListener, $(eventInfo->getListener(i)))))->meta(event);
-			} catch ($Throwable&) {
-				$var($Throwable, t, $catch());
+			} catch ($Throwable& t) {
 				$init($Printer);
 				if ($Printer::err$) {
 					t->printStackTrace();
@@ -172,8 +159,7 @@ void EventDispatcher::processEvent($EventDispatcher$EventInfo* eventInfo) {
 			for (int32_t i = 0; i < count; ++i) {
 				try {
 					$nc(($cast($ControllerEventListener, $(eventInfo->getListener(i)))))->controlChange(event);
-				} catch ($Throwable&) {
-					$var($Throwable, t, $catch());
+				} catch ($Throwable& t) {
 					$init($Printer);
 					if ($Printer::err$) {
 						t->printStackTrace();
@@ -202,8 +188,7 @@ void EventDispatcher::dispatchEvents() {
 					$of(this)->wait();
 				}
 			}
-		} catch ($InterruptedException&) {
-			$catch();
+		} catch ($InterruptedException& e) {
 		}
 		if ($nc(this->eventQueue)->size() > 0) {
 			$assign(eventInfo, $cast($EventDispatcher$EventInfo, $nc(this->eventQueue)->remove(0)));
@@ -229,12 +214,10 @@ void EventDispatcher::postEvent($EventDispatcher$EventInfo* eventInfo) {
 }
 
 void EventDispatcher::run() {
-	$useLocalCurrentObjectStackCache();
 	while (true) {
 		try {
 			dispatchEvents();
-		} catch ($Throwable&) {
-			$var($Throwable, t, $catch());
+		} catch ($Throwable& t) {
 			$init($Printer);
 			if ($Printer::err$) {
 				t->printStackTrace();

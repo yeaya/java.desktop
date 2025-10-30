@@ -3,24 +3,13 @@
 #include <java/awt/Component.h>
 #include <java/awt/EventQueue.h>
 #include <java/awt/Font.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JApplet.h>
 #include <javax/swing/JOptionPane.h>
 #include <javax/swing/UIDefaults.h>
@@ -107,11 +96,9 @@ void bug4174551::init$() {
 }
 
 void bug4174551::init() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$EventQueue::invokeLater(static_cast<$Runnable*>($$new(bug4174551$$Lambda$lambda$init$0)));
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		ex->printStackTrace();
 	}
 }
@@ -122,7 +109,6 @@ void bug4174551::lambda$init$0() {
 	$nc($($UIManager::getDefaults()))->put("OptionPane.buttonFont"_s, $$new($Font, "Dialog"_s, $Font::PLAIN, 10));
 	$nc($($UIManager::getDefaults()))->put("OptionPane.messageFont"_s, $$new($Font, "Dialog"_s, $Font::PLAIN, 24));
 	$JOptionPane::showMessageDialog(nullptr, "HI 24!"_s);
-	$init($System);
 	$nc($System::out)->println($($nc($($UIManager::getDefaults()))->get("OptionPane.buttonFont"_s)));
 	$nc($System::out)->println($($nc($($UIManager::getDefaults()))->get("OptionPane.messageFont"_s)));
 }

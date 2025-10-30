@@ -11,23 +11,10 @@
 #include <java/awt/Toolkit.h>
 #include <java/beans/PropertyChangeListener.h>
 #include <java/io/File.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Module.h>
 #include <java/lang/ReflectiveOperationException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/ArrayList.h>
@@ -259,7 +246,6 @@ $String* UIManager::auxiliaryLAFsKey = nullptr;
 $String* UIManager::multiplexingLAFKey = nullptr;
 $String* UIManager::installedLAFsKey = nullptr;
 $String* UIManager::disableMnemonicKey = nullptr;
-
 $UIManager$LookAndFeelInfoArray* UIManager::installedLAFs = nullptr;
 
 void UIManager::init$() {
@@ -369,10 +355,8 @@ $LookAndFeel* UIManager::createLookAndFeel($String* name$renamed) {
 				}
 			}
 		}
-	} catch ($ReflectiveOperationException&) {
-		$var($Exception, ignore, $catch());
-	} catch ($IllegalArgumentException&) {
-		$var($Exception, ignore, $catch());
+	} catch ($ReflectiveOperationException& ignore) {
+	} catch ($IllegalArgumentException& ignore) {
 	}
 	$throwNew($UnsupportedLookAndFeelException, name);
 	$shouldNotReachHere();
@@ -608,9 +592,7 @@ $LookAndFeel* UIManager::getMultiLookAndFeel() {
 		try {
 			$Class* lnfClass = $SwingUtilities::loadSystemClass(className);
 			$assign(multiLookAndFeel, $cast($LookAndFeel, $nc(lnfClass)->newInstance()));
-		} catch ($Exception&) {
-			$var($Exception, exc, $catch());
-			$init($System);
+		} catch ($Exception& exc) {
 			$nc($System::err)->println($$str({"UIManager: failed loading "_s, className}));
 		}
 	}
@@ -771,8 +753,7 @@ void UIManager::initializeDefaultLAF($Properties* swingProps) {
 	$assign(lafName, $nc(swingProps)->getProperty(UIManager::defaultLAFKey, lafName));
 	try {
 		setLookAndFeel(lafName);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($Error, $$str({"Cannot load "_s, lafName}));
 	}
 	if (lafData != nullptr) {
@@ -806,9 +787,7 @@ void UIManager::initializeAuxiliaryLAFs($Properties* swingProps) {
 			$var($LookAndFeel, newLAF, $cast($LookAndFeel, $nc(lnfClass)->newInstance()));
 			$nc(newLAF)->initialize();
 			auxLookAndFeels->addElement(newLAF);
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
-			$init($System);
+		} catch ($Exception& e) {
 			$nc($System::err)->println($$str({"UIManager: failed loading auxiliary look and feel "_s, className}));
 		}
 	}

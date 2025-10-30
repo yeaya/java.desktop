@@ -2,15 +2,7 @@
 
 #include <java/awt/Font.h>
 #include <java/awt/font/FontRenderContext.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/GlyphLayout$SDCache.h>
 #include <jcpp.h>
 
@@ -82,8 +74,7 @@ bool GlyphLayout$SDCache$SDKey::equals(Object$* o) {
 		$var(GlyphLayout$SDCache$SDKey, rhs, $cast(GlyphLayout$SDCache$SDKey, o));
 		bool var$0 = this->hash == $nc(rhs)->hash && $nc(this->font)->equals(rhs->font);
 		return var$0 && $nc(this->frc)->equals(rhs->frc);
-	} catch ($ClassCastException&) {
-		$catch();
+	} catch ($ClassCastException& e) {
 	}
 	return false;
 }

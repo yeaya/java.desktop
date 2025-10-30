@@ -1,15 +1,6 @@
 #include <javax/swing/ImageIcon$1.h>
 
 #include <java/awt/Component.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/ImageIcon.h>
 #include <sun/awt/AWTAccessor$ComponentAccessor.h>
 #include <sun/awt/AWTAccessor.h>
@@ -76,8 +67,7 @@ $Object* ImageIcon$1::run() {
 		$var($Component, component, $ImageIcon::createNoPermsComponent());
 		$nc($($AWTAccessor::getComponentAccessor()))->setAppContext(component, nullptr);
 		return $of(component);
-	} catch ($Throwable&) {
-		$var($Throwable, e, $catch());
+	} catch ($Throwable& e) {
 		e->printStackTrace();
 		return $of(nullptr);
 	}

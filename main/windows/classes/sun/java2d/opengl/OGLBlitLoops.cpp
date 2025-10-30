@@ -6,15 +6,6 @@
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/image/BufferedImage.h>
 #include <java/awt/image/BufferedImageOp.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SunGraphics2D.h>
 #include <sun/java2d/SurfaceData.h>
 #include <sun/java2d/loops/Blit.h>
@@ -170,8 +161,8 @@ void OGLBlitLoops::register$() {
 	$var($Blit, blitIntArgbPreToTexture, $new($OGLSwToTextureBlit, $SurfaceType::IntArgbPre, $OGLSurfaceData::PF_INT_ARGB_PRE));
 	$var($TransformBlit, transformBlitIntArgbPreToSurface, $new($OGLSwToSurfaceTransform, $SurfaceType::IntArgbPre, $OGLSurfaceData::PF_INT_ARGB_PRE));
 	$var($OGLSurfaceToSwBlit, blitSurfaceToIntArgbPre, $new($OGLSurfaceToSwBlit, $SurfaceType::IntArgbPre, $OGLSurfaceData::PF_INT_ARGB_PRE));
-		$init($OGLSurfaceData);
-		$init($CompositeType);
+	$init($OGLSurfaceData);
+	$init($CompositeType);
 	$var($GraphicsPrimitiveArray, primitives, $new($GraphicsPrimitiveArray, {
 		static_cast<$GraphicsPrimitive*>($$new($OGLSurfaceToSurfaceBlit)),
 		static_cast<$GraphicsPrimitive*>($$new($OGLSurfaceToSurfaceScale)),
@@ -277,8 +268,8 @@ void OGLBlitLoops::Blit($SurfaceData* srcData, $SurfaceData* dstData, $Composite
 			int32_t packedParams = createPackedParams(false, texture, false, xform != nullptr, hint, srctype);
 			enqueueBlit(rq, srcData, dstData, packedParams, sx1, sy1, sx2, sy2, dx1, dy1, dx2, dy2);
 			rq->flushNow();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}
@@ -327,8 +318,8 @@ void OGLBlitLoops::IsoBlit($SurfaceData* srcData, $SurfaceData* dstData, $Buffer
 			if (rtt && $nc(oglDst)->isOnScreen()) {
 				rq->flushNow();
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}

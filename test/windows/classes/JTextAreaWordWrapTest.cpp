@@ -6,28 +6,14 @@
 #include <java/awt/LayoutManager.h>
 #include <java/awt/LayoutManager2.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JScrollPane.h>
@@ -326,8 +312,8 @@ void JTextAreaWordWrapTest::main($StringArray* args) {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(JTextAreaWordWrapTest$$Lambda$lambda$main$1$1)));
 			$Thread::sleep(500);
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(JTextAreaWordWrapTest$$Lambda$lambda$main$2$2)));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(JTextAreaWordWrapTest$$Lambda$lambda$main$3$3)));
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(JTextAreaWordWrapTest$$Lambda$lambda$main$4$4)));
@@ -352,7 +338,6 @@ void JTextAreaWordWrapTest::lambda$main$2() {
 	$useLocalCurrentObjectStackCache();
 	$init(JTextAreaWordWrapTest);
 	int32_t wraponHeight = $nc(JTextAreaWordWrapTest::textArea)->getHeight();
-	$init($System);
 	$nc($System::out)->println($$str({"wraponheight "_s, $$str(wraponHeight)}));
 	int32_t wrapoffHeight = $nc(JTextAreaWordWrapTest::textArea1)->getHeight();
 	$nc($System::out)->println($$str({"wrapoffheight "_s, $$str(wrapoffHeight)}));

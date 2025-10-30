@@ -8,19 +8,7 @@
 #include <java/io/InputStreamReader.h>
 #include <java/io/Reader.h>
 #include <java/io/UnsupportedEncodingException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <sun/awt/windows/EHTMLReadMode.h>
 #include <sun/awt/windows/HTMLCodec$1.h>
@@ -233,8 +221,7 @@ $bytes* HTMLCodec::convertToHTMLFormat($bytes* bytes) {
 	try {
 		$assign(headerBytes, $nc($(header->toString()))->getBytes(HTMLCodec::ENCODING));
 		$assign(trailerBytes, htmlSuffix->getBytes(HTMLCodec::ENCODING));
-	} catch ($UnsupportedEncodingException&) {
-		$catch();
+	} catch ($UnsupportedEncodingException& cannotHappen) {
 	}
 	$var($bytes, retval, $new($bytes, $nc(headerBytes)->length + bytes->length + $nc(trailerBytes)->length));
 	$System::arraycopy(headerBytes, 0, retval, 0, headerBytes->length);
@@ -346,8 +333,7 @@ void HTMLCodec::parseDescription() {
 							break;
 						}
 					}
-				} catch ($NumberFormatException&) {
-					$var($NumberFormatException, e, $catch());
+				} catch ($NumberFormatException& e) {
 					$throwNew($IOException, $$str({HTMLCodec::FAILURE_MSG, astEntries->get(iEntry), " value "_s, e, HTMLCodec::INVALID_MSG}));
 				}
 			}

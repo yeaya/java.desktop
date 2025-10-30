@@ -5,14 +5,7 @@
 #include <com/sun/media/sound/SunFileReader.h>
 #include <java/io/DataInputStream.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/AudioFileFormat$Type.h>
 #include <javax/sound/sampled/AudioFormat$Encoding.h>
 #include <javax/sound/sampled/AudioFormat.h>

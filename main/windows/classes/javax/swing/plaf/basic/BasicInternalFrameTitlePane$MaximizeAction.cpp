@@ -2,14 +2,6 @@
 
 #include <java/awt/event/ActionEvent.h>
 #include <java/beans/PropertyVetoException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractAction.h>
 #include <javax/swing/JInternalFrame.h>
 #include <javax/swing/UIManager.h>
@@ -79,20 +71,17 @@ void BasicInternalFrameTitlePane$MaximizeAction::actionPerformed($ActionEvent* e
 		if (var$0 && $nc(this->this$0->frame)->isIcon()) {
 			try {
 				$nc(this->this$0->frame)->setIcon(false);
-			} catch ($PropertyVetoException&) {
-				$catch();
+			} catch ($PropertyVetoException& e) {
 			}
 		} else if (!$nc(this->this$0->frame)->isMaximum()) {
 			try {
 				$nc(this->this$0->frame)->setMaximum(true);
-			} catch ($PropertyVetoException&) {
-				$catch();
+			} catch ($PropertyVetoException& e) {
 			}
 		} else {
 			try {
 				$nc(this->this$0->frame)->setMaximum(false);
-			} catch ($PropertyVetoException&) {
-				$catch();
+			} catch ($PropertyVetoException& e) {
 			}
 		}
 	}

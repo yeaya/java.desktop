@@ -2,28 +2,14 @@
 
 #include <TestDefaultFormatter$1.h>
 #include <TestDefaultFormatter$UserValueClass.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/ParseException.h>
 #include <javax/swing/SwingUtilities.h>
 #include <javax/swing/text/DefaultFormatter.h>
@@ -137,7 +123,6 @@ void TestDefaultFormatter::testDefaultFormatter() {
 void TestDefaultFormatter::testDefaultFormatter($DefaultFormatter* formatter) {
 	$useLocalCurrentObjectStackCache();
 	try {
-		$init($System);
 		$nc($System::out)->println($$str({"formatter: "_s, $nc($of(formatter))->getClass()}));
 		$load($TestDefaultFormatter$UserValueClass);
 		$nc(formatter)->setValueClass($TestDefaultFormatter$UserValueClass::class$);
@@ -145,8 +130,7 @@ void TestDefaultFormatter::testDefaultFormatter($DefaultFormatter* formatter) {
 		if (!$nc($nc(userValue)->str)->equals("test"_s)) {
 			$throwNew($RuntimeException, "String value is wrong!"_s);
 		}
-	} catch ($ParseException&) {
-		$var($ParseException, ex, $catch());
+	} catch ($ParseException& ex) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(ex));
 	}
 }

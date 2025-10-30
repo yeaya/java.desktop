@@ -4,25 +4,8 @@
 #include <java/io/DataInputStream.h>
 #include <java/io/EOFException.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/Long.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/ByteOrder.h>
 #include <java/util/Stack.h>
 #include <javax/imageio/IIOException.h>
@@ -323,8 +306,7 @@ $String* ImageInputStreamImpl::readUTF() {
 	$var($String, ret, nullptr);
 	try {
 		$assign(ret, $DataInputStream::readUTF(this));
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		setByteOrder(oldByteOrder);
 		$throw(e);
 	}
@@ -684,8 +666,7 @@ void ImageInputStreamImpl::mark() {
 	try {
 		$nc(this->markByteStack)->push($($Long::valueOf(getStreamPosition())));
 		$nc(this->markBitStack)->push($($Integer::valueOf(getBitOffset())));
-	} catch ($IOException&) {
-		$catch();
+	} catch ($IOException& e) {
 	}
 }
 
@@ -743,8 +724,7 @@ void ImageInputStreamImpl::finalize() {
 	if (!this->isClosed) {
 		try {
 			close();
-		} catch ($IOException&) {
-			$catch();
+		} catch ($IOException& e) {
 		}
 	}
 	$ImageInputStream::finalize();

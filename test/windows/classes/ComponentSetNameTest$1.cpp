@@ -1,21 +1,9 @@
 #include <ComponentSetNameTest$1.h>
 
 #include <ComponentSetNameTest.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InstantiationException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JCheckBox.h>
@@ -126,17 +114,13 @@ void ComponentSetNameTest$1::run() {
 			{
 				try {
 					$UIManager::setLookAndFeel($($nc(look)->getClassName()));
-				} catch ($ClassNotFoundException&) {
-					$var($Exception, e, $catch());
+				} catch ($ClassNotFoundException& e) {
 					$throwNew($RuntimeException, $$str({"Failed to set LookAndFeel "_s, $($nc(look)->getClassName())}), e);
-				} catch ($InstantiationException&) {
-					$var($Exception, e, $catch());
+				} catch ($InstantiationException& e) {
 					$throwNew($RuntimeException, $$str({"Failed to set LookAndFeel "_s, $($nc(look)->getClassName())}), e);
-				} catch ($UnsupportedLookAndFeelException&) {
-					$var($Exception, e, $catch());
+				} catch ($UnsupportedLookAndFeelException& e) {
 					$throwNew($RuntimeException, $$str({"Failed to set LookAndFeel "_s, $($nc(look)->getClassName())}), e);
-				} catch ($IllegalAccessException&) {
-					$var($Exception, e, $catch());
+				} catch ($IllegalAccessException& e) {
 					$throwNew($RuntimeException, $$str({"Failed to set LookAndFeel "_s, $($nc(look)->getClassName())}), e);
 				}
 				$var($JComponentArray, components, $new($JComponentArray, {

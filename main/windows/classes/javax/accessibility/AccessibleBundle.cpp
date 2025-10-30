@@ -1,15 +1,6 @@
 #include <javax/accessibility/AccessibleBundle.h>
 
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <java/util/MissingResourceException.h>
 #include <java/util/ResourceBundle.h>
@@ -79,15 +70,12 @@ void AccessibleBundle::init$() {
 }
 
 $String* AccessibleBundle::toDisplayString($String* name, $Locale* locale) {
-	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		return $nc($($ResourceBundle::getBundle(name, locale)))->getString(this->key);
-	} catch ($ClassCastException&) {
-		$var($RuntimeException, ignored, $catch());
+	} catch ($ClassCastException& ignored) {
 		return this->key;
-	} catch ($MissingResourceException&) {
-		$var($RuntimeException, ignored, $catch());
+	} catch ($MissingResourceException& ignored) {
 		return this->key;
 	}
 	$shouldNotReachHere();

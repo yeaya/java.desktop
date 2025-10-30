@@ -5,20 +5,9 @@
 #include <java/awt/Insets.h>
 #include <java/awt/event/ComponentEvent.h>
 #include <java/awt/event/ComponentListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/ref/Reference.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventObject.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JEditorPane.h>
@@ -222,8 +211,8 @@ void HTMLEditorKit$HTMLFactory$BodyBlockView::componentResized($ComponentEvent* 
 				try {
 					layoutChanged($View::X_AXIS);
 					preferenceChanged(nullptr, true, true);
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$1) {
+					$assign(var$0, var$1);
 				} /*finally*/ {
 					document->readUnlock();
 				}

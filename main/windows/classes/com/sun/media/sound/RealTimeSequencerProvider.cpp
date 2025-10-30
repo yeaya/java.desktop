@@ -3,15 +3,6 @@
 #include <com/sun/media/sound/AbstractMidiDevice.h>
 #include <com/sun/media/sound/MidiUtils.h>
 #include <com/sun/media/sound/RealTimeSequencer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Objects.h>
 #include <javax/sound/midi/MidiDevice$Info.h>
 #include <javax/sound/midi/MidiDevice.h>

@@ -1,17 +1,7 @@
 #include <TestCCEOnEditEvent$4.h>
 
 #include <TestCCEOnEditEvent.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/event/DocumentEvent$EventType.h>
 #include <javax/swing/event/UndoableEditEvent.h>
 #include <javax/swing/text/AbstractDocument$DefaultDocumentEvent.h>
@@ -87,8 +77,7 @@ void TestCCEOnEditEvent$4::undoableEditHappened($UndoableEditEvent* event) {
 	$var($CompoundEdit, edit, nullptr);
 	try {
 		$assign(edit, $cast($CompoundEdit, $nc(event)->getEdit()));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($RuntimeException, "Class Cast Exception is thrown on (CompoundEdit) UndoableEditEvent.getEdit()"_s);
 	}
 	$var($AbstractDocument$DefaultDocumentEvent, documentEvent, $cast($AbstractDocument$DefaultDocumentEvent, edit));

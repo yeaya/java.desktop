@@ -16,19 +16,7 @@
 #include <java/io/ByteArrayOutputStream.h>
 #include <java/io/IOException.h>
 #include <java/io/OutputStream.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/List.h>
 #include <javax/imageio/IIOImage.h>
 #include <javax/imageio/ImageReadParam.h>
@@ -210,8 +198,7 @@ void JFIFMarkerSegment$JFIFThumbJPEG::init$($JFIFMarkerSegment* this$0, $Buffere
 			$throwNew($JFIFMarkerSegment$IllegalThumbException, this$0);
 		}
 		$set(this, data, baos->toByteArray());
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$throwNew($JFIFMarkerSegment$IllegalThumbException, this$0);
 	}
 }
@@ -292,7 +279,6 @@ void JFIFMarkerSegment$JFIFThumbJPEG::write($ImageOutputStream* ios, $JPEGImageW
 }
 
 void JFIFMarkerSegment$JFIFThumbJPEG::print() {
-	$init($System);
 	$nc($System::out)->println("JFIF thumbnail stored as JPEG"_s);
 }
 

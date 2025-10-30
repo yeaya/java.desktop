@@ -27,19 +27,7 @@
 #include <com/sun/media/sound/SoftVoice$3.h>
 #include <com/sun/media/sound/SoftVoice$4.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/Arrays.h>
 #include <java/util/HashMap.h>
@@ -776,8 +764,7 @@ void SoftVoice::processControlLogic() {
 		if (this->osc_stream != nullptr) {
 			try {
 				$nc(this->osc_stream)->close();
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& e) {
 			}
 		}
 		if (this->stealer_channel != nullptr) {
@@ -800,8 +787,7 @@ void SoftVoice::processControlLogic() {
 			try {
 				$nc(this->resampler)->open($cast($ModelWavetable, osc), $nc($($nc(this->synthesizer)->getFormat()))->getSampleRate());
 				$set(this, osc_stream, this->resampler);
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& e) {
 			}
 		} else {
 			$set(this, osc_stream, $nc(osc)->open($nc($($nc(this->synthesizer)->getFormat()))->getSampleRate()));
@@ -991,8 +977,7 @@ void SoftVoice::processAudioLogic($SoftAudioBufferArray* buffer) {
 				$Arrays::fill($nc(this->osc_buff)->get(1), ret, bufferlen, 0.0f);
 			}
 		}
-	} catch ($IOException&) {
-		$catch();
+	} catch ($IOException& e) {
 	}
 	$var($SoftAudioBuffer, left, buffer->get($SoftMainMixer::CHANNEL_LEFT));
 	$var($SoftAudioBuffer, right, buffer->get($SoftMainMixer::CHANNEL_RIGHT));

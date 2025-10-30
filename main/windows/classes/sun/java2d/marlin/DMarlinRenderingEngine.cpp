@@ -6,19 +6,7 @@
 #include <java/awt/geom/Path2D$Double.h>
 #include <java/awt/geom/Path2D.h>
 #include <java/awt/geom/PathIterator.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/Arrays.h>
@@ -283,8 +271,8 @@ $Shape* DMarlinRenderingEngine::createStrokedShape($Shape* src, float width, int
 			$assign(var$2, $new($Path2D$Double, static_cast<$Shape*>(p2d)));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			returnRendererContext(rdrCtx);
 		}
@@ -329,8 +317,8 @@ void DMarlinRenderingEngine::strokeTo($Shape* src, $AffineTransform* at, $Region
 				rdrCtx->doClip = true;
 			}
 			strokeTo(rdrCtx, src, _at, bs, thin, norm, antialias, $(static_cast<$DPathConsumer2D*>($nc($nc(rdrCtx)->p2dAdapter)->init(consumer))));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} /*finally*/ {
 			returnRendererContext(rdrCtx);
 		}
@@ -589,8 +577,8 @@ $AATileGenerator* DMarlinRenderingEngine::getAATileGenerator($Shape* s, $AffineT
 				$nc(ptg)->getBbox(bbox);
 				$assign(r, nullptr);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$10) {
+			$assign(var$0, var$10);
 		} /*finally*/ {
 			if (r != nullptr) {
 				r->dispose();
@@ -661,8 +649,8 @@ $AATileGenerator* DMarlinRenderingEngine::getAATileGenerator(double x, double y,
 				$nc(ptg)->getBbox(bbox);
 				$assign(r, nullptr);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$4) {
+			$assign(var$0, var$4);
 		} /*finally*/ {
 			if (r != nullptr) {
 				r->dispose();

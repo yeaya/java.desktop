@@ -3,15 +3,6 @@
 #include <java/awt/Dimension.h>
 #include <java/awt/Graphics2D.h>
 #include <java/awt/Insets.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/plaf/nimbus/AbstractRegionPainter$PaintContext$CacheMode.h>
 #include <javax/swing/plaf/nimbus/AbstractRegionPainter$PaintContext.h>
@@ -69,8 +60,7 @@ void PaintContextScaleValidation::test(double maxH, double maxV) {
 	try {
 		$var($Insets, var$0, $new($Insets, 1, 1, 1, 1));
 		$new($AbstractRegionPainter$PaintContext, var$0, $$new($Dimension, 1, 1), false, nullptr, maxH, maxV);
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, ignored, $catch());
+	} catch ($IllegalArgumentException& ignored) {
 		return;
 	}
 	$throwNew($RuntimeException, "IllegalArgumentException was not thrown"_s);

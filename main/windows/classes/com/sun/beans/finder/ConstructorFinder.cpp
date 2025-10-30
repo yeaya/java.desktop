@@ -8,17 +8,8 @@
 #include <com/sun/beans/finder/SignatureException.h>
 #include <com/sun/beans/util/Cache$Kind.h>
 #include <com/sun/beans/util/Cache.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchMethodException.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
 #include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/lang/reflect/Modifier.h>
 #include <sun/reflect/misc/ReflectUtil.h>
 #include <jcpp.h>
@@ -109,8 +100,7 @@ $Constructor* ConstructorFinder::findConstructor($Class* type, $ClassArray* args
 	$var($Signature, signature, $new($Signature, type, args));
 	try {
 		return $cast($Constructor, $nc(ConstructorFinder::CACHE)->get(signature));
-	} catch ($SignatureException&) {
-		$var($SignatureException, exception, $catch());
+	} catch ($SignatureException& exception) {
 		$throw($(exception->toNoSuchMethodException("Constructor is not found"_s)));
 	}
 	$shouldNotReachHere();

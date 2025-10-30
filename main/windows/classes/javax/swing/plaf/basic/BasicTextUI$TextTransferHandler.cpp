@@ -7,18 +7,6 @@
 #include <java/awt/im/InputContext.h>
 #include <java/io/IOException.h>
 #include <java/io/Reader.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/DropMode.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JEditorPane.h>
@@ -346,8 +334,8 @@ bool BasicTextUI$TextTransferHandler::importData($TransferHandler$TransferSuppor
 			var$2 = $TransferHandler::importData(support);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			this->isDrop = false;
 			this->modeBetween = false;
@@ -411,12 +399,9 @@ bool BasicTextUI$TextTransferHandler::importData($JComponent* comp, $Transferabl
 				}
 			}
 			imported = true;
-		} catch ($UnsupportedFlavorException&) {
-			$catch();
-		} catch ($BadLocationException&) {
-			$catch();
-		} catch ($IOException&) {
-			$catch();
+		} catch ($UnsupportedFlavorException& ufe) {
+		} catch ($BadLocationException& ble) {
+		} catch ($IOException& ioe) {
 		}
 	}
 	return imported;

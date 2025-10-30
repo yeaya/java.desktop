@@ -25,31 +25,14 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/NumberFormatException.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/ref/SoftReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/file/Files.h>
 #include <java/nio/file/Path.h>
 #include <java/nio/file/attribute/FileAttribute.h>
@@ -400,24 +383,15 @@ $Object* allocate$Font($Class* clazz) {
 	return $of($alloc(Font));
 }
 
-
 $String* Font::DIALOG = nullptr;
-
 $String* Font::DIALOG_INPUT = nullptr;
-
 $String* Font::SANS_SERIF = nullptr;
-
 $String* Font::SERIF = nullptr;
-
 $String* Font::MONOSPACED = nullptr;
 $AffineTransform* Font::identityTx = nullptr;
-
 int32_t Font::RECOGNIZED_MASK = 0;
-
 int32_t Font::PRIMARY_MASK = 0;
-
 int32_t Font::SECONDARY_MASK = 0;
-
 int32_t Font::LAYOUT_MASK = 0;
 int32_t Font::EXTRA_MASK = 0;
 $floats* Font::ssinfo = nullptr;
@@ -636,8 +610,7 @@ bool Font::hasTempPermission() {
 		$nc(f)->delete$();
 		$assign(f, nullptr);
 		hasPerm = true;
-	} catch ($Throwable&) {
-		$catch();
+	} catch ($Throwable& t) {
 	}
 	return hasPerm;
 }
@@ -664,12 +637,11 @@ $FontArray* Font::createFonts($InputStream* fontStream) {
 				$assign(var$2, createFont0(fontFormat, fontStream, true, tracker));
 				return$1 = true;
 				goto $finally;
-			} catch ($InterruptedException&) {
-				$var($InterruptedException, e, $catch());
+			} catch ($InterruptedException& e) {
 				$throwNew($IOException, "Problem reading font data."_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			if (acquired) {
 				$nc(tracker)->releasePermit();
@@ -733,12 +705,11 @@ Font* Font::createFont(int32_t fontFormat, $InputStream* fontStream) {
 				$assign(var$2, $nc($(createFont0(fontFormat, fontStream, false, tracker)))->get(0));
 				return$1 = true;
 				goto $finally;
-			} catch ($InterruptedException&) {
-				$var($InterruptedException, e, $catch());
+			} catch ($InterruptedException& e) {
 				$throwNew($IOException, "Problem reading font data."_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			if (acquired) {
 				$nc(tracker)->releasePermit();
@@ -798,8 +769,8 @@ $FontArray* Font::createFont0(int32_t fontFormat, $InputStream* fontStream, bool
 							}
 							$nc(outStream)->write(buf, 0, bytesRead);
 						}
-					} catch ($Throwable&) {
-						$assign(var$3, $catch());
+					} catch ($Throwable& var$4) {
+						$assign(var$3, var$4);
 					} /*finally*/ {
 						$nc(outStream)->close();
 					}
@@ -818,8 +789,8 @@ $FontArray* Font::createFont0(int32_t fontFormat, $InputStream* fontStream, bool
 				$assign(var$2, fonts);
 				return$1 = true;
 				goto $finally;
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$5) {
+				$assign(var$0, var$5);
 			} $finally: {
 				if (tracker != nullptr) {
 					tracker->remove(tFile);
@@ -838,8 +809,7 @@ $FontArray* Font::createFont0(int32_t fontFormat, $InputStream* fontStream, bool
 				return var$2;
 			}
 		}
-	} catch ($Throwable&) {
-		$var($Throwable, t, $catch());
+	} catch ($Throwable& t) {
 		if ($instanceOf($FontFormatException, t)) {
 			$throw($cast($FontFormatException, t));
 		}
@@ -1007,8 +977,7 @@ Font* Font::decode($String* str) {
 			if (fontSize <= 0) {
 				fontSize = 12;
 			}
-		} catch ($NumberFormatException&) {
-			$var($NumberFormatException, e, $catch());
+		} catch ($NumberFormatException& e) {
 			styleIndex = sizeIndex;
 			sizeIndex = strlen;
 			if (str->charAt(sizeIndex - 1) == sepChar) {
@@ -1055,8 +1024,7 @@ Font* Font::getFont($String* nm, Font* font) {
 	$var($String, str, nullptr);
 	try {
 		$assign(str, $System::getProperty(nm));
-	} catch ($SecurityException&) {
-		$catch();
+	} catch ($SecurityException& e) {
 	}
 	if (str == nullptr) {
 		return font;
@@ -1146,12 +1114,11 @@ void Font::readObject($ObjectInputStream* s) {
 					$set(this, values, $nc($(getAttributeValues()))->merge(extras));
 					this->nonIdentityTx = $nc(this->values)->anyNonDefault(Font::EXTRA_MASK);
 					this->hasLayoutAttributes$ = $nc(this->values)->anyNonDefault(Font::LAYOUT_MASK);
-				} catch ($Throwable&) {
-					$var($Throwable, t, $catch());
+				} catch ($Throwable& t) {
 					$throwNew($IOException, t);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$set(this, fRequestedAttributes, nullptr);
 			}
@@ -1179,7 +1146,7 @@ $Map* Font::getAttributes() {
 }
 
 $AttributedCharacterIterator$AttributeArray* Font::getAvailableAttributes() {
-		$init($TextAttribute);
+	$init($TextAttribute);
 	$var($AttributedCharacterIterator$AttributeArray, attributes, $new($AttributedCharacterIterator$AttributeArray, {
 		static_cast<$AttributedCharacterIterator$Attribute*>($TextAttribute::FAMILY),
 		static_cast<$AttributedCharacterIterator$Attribute*>($TextAttribute::WEIGHT),

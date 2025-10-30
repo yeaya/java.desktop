@@ -2,19 +2,7 @@
 
 #include <com/sun/media/sound/Platform.h>
 #include <com/sun/media/sound/Printer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/AudioFormat$Encoding.h>
 #include <javax/sound/sampled/AudioFormat.h>
 #include <javax/sound/sampled/AudioInputStream.h>
@@ -222,8 +210,7 @@ $AudioInputStream* Toolkit::getPCMConvertedAudioInputStream($AudioInputStream* a
 			float var$5 = af->getSampleRate();
 			$var($AudioFormat, newFormat, $new($AudioFormat, var$1, var$2, 16, var$3, var$4, var$5, $Platform::isBigEndian()));
 			$assign(ais, $AudioSystem::getAudioInputStream(newFormat, ais));
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$init($Printer);
 			if ($Printer::err$) {
 				e->printStackTrace();

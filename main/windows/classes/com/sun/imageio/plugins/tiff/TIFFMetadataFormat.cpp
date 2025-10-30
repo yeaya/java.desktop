@@ -2,18 +2,8 @@
 
 #include <com/sun/imageio/plugins/tiff/TIFFAttrInfo.h>
 #include <com/sun/imageio/plugins/tiff/TIFFElementInfo.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Comparable.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Module.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/HashMap.h>
 #include <java/util/Locale.h>
@@ -116,8 +106,7 @@ $String* TIFFMetadataFormat::getResource($String* key, $Locale* locale$renamed) 
 	try {
 		$var($ResourceBundle, bundle, $ResourceBundle::getBundle(this->resourceBaseName, locale, $($of(this)->getClass()->getModule())));
 		return $nc(bundle)->getString(key);
-	} catch ($MissingResourceException&) {
-		$var($MissingResourceException, e, $catch());
+	} catch ($MissingResourceException& e) {
 		return nullptr;
 	}
 	$shouldNotReachHere();

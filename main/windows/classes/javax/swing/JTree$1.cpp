@@ -1,15 +1,6 @@
 #include <javax/swing/JTree$1.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/DropMode.h>
 #include <javax/swing/JTree.h>
 #include <jcpp.h>
@@ -75,23 +66,19 @@ void clinit$JTree$1($Class* class$) {
 	{
 		try {
 			$nc(JTree$1::$SwitchMap$javax$swing$DropMode)->set($DropMode::USE_SELECTION->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(JTree$1::$SwitchMap$javax$swing$DropMode)->set($DropMode::ON->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(JTree$1::$SwitchMap$javax$swing$DropMode)->set($DropMode::INSERT->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(JTree$1::$SwitchMap$javax$swing$DropMode)->set($DropMode::ON_OR_INSERT->ordinal(), 4);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

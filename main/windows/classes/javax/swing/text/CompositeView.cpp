@@ -4,17 +4,7 @@
 #include <java/awt/Shape.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractSet.h>
 #include <java/util/Arrays.h>
 #include <java/util/Collection.h>
@@ -313,10 +303,8 @@ int32_t CompositeView::viewToModel(float x, float y, $Shape* a, $Position$BiasAr
 		try {
 			$init($Position$Bias);
 			retValue = getNextVisualPositionFrom(-1, $Position$Bias::Forward, a, $SwingConstants::EAST, bias);
-		} catch ($BadLocationException&) {
-			$catch();
-		} catch ($IllegalArgumentException&) {
-			$catch();
+		} catch ($BadLocationException& ble) {
+		} catch ($IllegalArgumentException& iae) {
 		}
 		if (retValue == -1) {
 			retValue = getStartOffset();
@@ -329,10 +317,8 @@ int32_t CompositeView::viewToModel(float x, float y, $Shape* a, $Position$BiasAr
 		try {
 			$init($Position$Bias);
 			retValue = getNextVisualPositionFrom(-1, $Position$Bias::Forward, a, $SwingConstants::WEST, bias);
-		} catch ($BadLocationException&) {
-			$catch();
-		} catch ($IllegalArgumentException&) {
-			$catch();
+		} catch ($BadLocationException& ble) {
+		} catch ($IllegalArgumentException& iae) {
 		}
 		if (retValue == -1) {
 			retValue = getEndOffset() - 1;

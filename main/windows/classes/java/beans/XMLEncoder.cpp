@@ -11,33 +11,9 @@
 #include <java/io/IOException.h>
 #include <java/io/OutputStream.h>
 #include <java/io/OutputStreamWriter.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Byte.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/Short.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/reflect/Array.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <java/lang/reflect/Modifier.h>
 #include <java/nio/charset/Charset.h>
 #include <java/nio/charset/CharsetEncoder.h>
@@ -255,7 +231,6 @@ void XMLEncoder::mark(Object$* o, bool isArgument) {
 	}
 	$var($XMLEncoder$ValueData, d, getValueData(o));
 	$var($Expression, exp, $nc(d)->exp);
-	$load($String);
 	if ($nc($of(o))->getClass() == $String::class$ && exp == nullptr) {
 		return;
 	}
@@ -303,8 +278,7 @@ void XMLEncoder::writeStatement($Statement* oldStm) {
 			}
 		}
 		$nc($(statementList(target)))->add(oldStm);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$nc($(getExceptionListener()))->exceptionThrown($$new($Exception, $$str({"XMLEncoder: discarding statement "_s, oldStm}), e));
 	}
 	this->internal = internal;
@@ -354,8 +328,7 @@ void XMLEncoder::flush() {
 	}
 	try {
 		$nc(this->out)->flush();
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$nc($(getExceptionListener()))->exceptionThrown(e);
 	}
 	clear();
@@ -388,13 +361,11 @@ $Statement* XMLEncoder::getMissedStatement() {
 }
 
 void XMLEncoder::close() {
-	$useLocalCurrentObjectStackCache();
 	flush();
 	writeln("</java>"_s);
 	try {
 		$nc(this->out)->close();
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$nc($(getExceptionListener()))->exceptionThrown(e);
 	}
 }
@@ -427,8 +398,7 @@ void XMLEncoder::writeln($String* exp) {
 		sb->append(exp);
 		sb->append(u'\n');
 		$nc(this->out)->write($(sb->toString()));
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$nc($(getExceptionListener()))->exceptionThrown(e);
 	}
 }
@@ -581,25 +551,22 @@ void XMLEncoder::outputStatement($Statement* exp, Object$* outer, bool isArgumen
 			$assign(attributes, $str({attributes, " class="_s, $(quote($($nc(($cast($Class, $nc(args)->get(0))))->getName())))}));
 			$assign(attributes, $str({attributes, " length="_s, $(quote($($nc($of($nc(args)->get(1)))->toString())))}));
 			$assign(args, $new($ObjectArray, 0));
+		} else if ($of(target)->getClass() == $Class::class$) {
+			$assign(attributes, $str({attributes, " class="_s, $(quote($($nc(($cast($Class, target)))->getName())))}));
 		} else {
-			$load($Class);
-			if ($of(target)->getClass() == $Class::class$) {
-				$assign(attributes, $str({attributes, " class="_s, $(quote($($nc(($cast($Class, target)))->getName())))}));
-			} else {
-				$nc(d)->refs = 2;
-				if (d->name == nullptr) {
-					++$nc($(getValueData(target)))->refs;
-					$var($List, statements, statementList(target));
-					if (!$nc(statements)->contains(exp)) {
-						statements->add(exp);
-					}
-					outputValue(target, outer, false);
+			$nc(d)->refs = 2;
+			if (d->name == nullptr) {
+				++$nc($(getValueData(target)))->refs;
+				$var($List, statements, statementList(target));
+				if (!$nc(statements)->contains(exp)) {
+					statements->add(exp);
 				}
-				if (expression) {
-					outputValue(value, outer, isArgument);
-				}
-				return;
+				outputValue(target, outer, false);
 			}
+			if (expression) {
+				outputValue(value, outer, isArgument);
+			}
+			return;
 		}
 	}
 	if (expression && ($nc(d)->refs > 1)) {

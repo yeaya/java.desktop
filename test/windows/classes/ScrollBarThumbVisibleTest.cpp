@@ -10,21 +10,7 @@
 #include <java/awt/Point.h>
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JScrollBar.h>
@@ -120,8 +106,7 @@ void ScrollBarThumbVisibleTest::main($StringArray* args) {
 				if ("Nimbus"_s->equals($($nc(info)->getName()))) {
 					try {
 						$UIManager::setLookAndFeel($($nc(info)->getClassName()));
-					} catch ($Exception&) {
-						$catch();
+					} catch ($Exception& ex) {
 					}
 					break;
 				}
@@ -139,14 +124,13 @@ void ScrollBarThumbVisibleTest::main($StringArray* args) {
 			$init(ScrollBarThumbVisibleTest);
 			$var($Color, color1, robot->getPixelColor($nc(ScrollBarThumbVisibleTest::point)->x + 48, $nc(ScrollBarThumbVisibleTest::point)->y + 55));
 			$var($Color, color2, robot->getPixelColor($nc(ScrollBarThumbVisibleTest::point)->x + 48, $nc(ScrollBarThumbVisibleTest::point)->y + 125));
-			$init($System);
 			$nc($System::out)->println($of(color1));
 			$nc($System::out)->println($of(color2));
 			if ($nc(color1)->equals(color2)) {
 				$throwNew($RuntimeException, "Thump is not visible"_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$SwingUtilities::invokeAndWait($$new($ScrollBarThumbVisibleTest$3));
 		}
@@ -154,7 +138,6 @@ void ScrollBarThumbVisibleTest::main($StringArray* args) {
 			$throw(var$0);
 		}
 	}
-	$init($System);
 	$nc($System::out)->println("ok"_s);
 }
 

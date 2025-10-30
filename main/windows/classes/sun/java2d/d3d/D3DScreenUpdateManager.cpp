@@ -10,28 +10,16 @@
 #include <java/awt/Window.h>
 #include <java/awt/peer/ComponentPeer.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
 #include <java/lang/Runtime.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/ArrayList.h>
@@ -312,7 +300,6 @@ void D3DScreenUpdateManager::init$() {
 }
 
 $SurfaceData* D3DScreenUpdateManager::createScreenSurface($Win32GraphicsConfig* gc, $WComponentPeer* peer, int32_t bbNum, bool isResize) {
-	$useLocalCurrentObjectStackCache();
 	if (this->done || !($instanceOf($D3DGraphicsConfig, gc))) {
 		return $ScreenUpdateManager::createScreenSurface(gc, peer, bbNum, isResize);
 	}
@@ -320,8 +307,7 @@ $SurfaceData* D3DScreenUpdateManager::createScreenSurface($Win32GraphicsConfig* 
 	if (canUseD3DOnScreen(peer, gc, bbNum)) {
 		try {
 			$assign(sd, $D3DSurfaceData::createData(peer));
-		} catch ($InvalidPipeException&) {
-			$var($InvalidPipeException, ipe, $catch());
+		} catch ($InvalidPipeException& ipe) {
 			$assign(sd, nullptr);
 		}
 	}
@@ -454,8 +440,7 @@ void D3DScreenUpdateManager::runUpdateNow() {
 		while (this->needsUpdateNow) {
 			try {
 				$nc($of(this->runLock))->wait();
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& e) {
 			}
 		}
 	}
@@ -469,8 +454,7 @@ void D3DScreenUpdateManager::run() {
 			if (!this->needsUpdateNow) {
 				try {
 					$nc($of(this->runLock))->wait(timeout);
-				} catch ($InterruptedException&) {
-					$catch();
+				} catch ($InterruptedException& e) {
 				}
 			}
 		}
@@ -500,8 +484,8 @@ void D3DScreenUpdateManager::run() {
 									$var($Rectangle, r, sd->getBounds());
 									$D3DSurfaceData::swapBuffers(sd, 0, 0, $nc(r)->width, r->height);
 									sd->markClean();
-								} catch ($Throwable&) {
-									$assign(var$2, $catch());
+								} catch ($Throwable& var$3) {
+									$assign(var$2, var$3);
 								} /*finally*/ {
 									rq->unlock();
 								}
@@ -535,8 +519,7 @@ bool D3DScreenUpdateManager::validate($D3DSurfaceData$D3DWindowSurfaceData* sd) 
 			sg2d->dispose();
 			sd->markClean();
 			repaintPeerTarget($(sd->getPeer()));
-		} catch ($InvalidPipeException&) {
-			$var($InvalidPipeException, ipe, $catch());
+		} catch ($InvalidPipeException& ipe) {
 			return false;
 		}
 	}
@@ -597,8 +580,7 @@ $Void* D3DScreenUpdateManager::lambda$new$1() {
 	shutdown->setContextClassLoader(nullptr);
 	try {
 		$nc($($Runtime::getRuntime()))->addShutdownHook(shutdown);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		this->done = true;
 	}
 	return nullptr;

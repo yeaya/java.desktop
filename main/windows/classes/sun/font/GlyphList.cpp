@@ -1,18 +1,8 @@
 #include <sun/font/GlyphList.h>
 
 #include <java/awt/font/GlyphVector.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/atomic/AtomicBoolean.h>
 #include <jdk/internal/misc/Unsafe.h>
 #include <sun/font/CharToGlyphMapper.h>

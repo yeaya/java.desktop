@@ -28,21 +28,7 @@
 #include <java/awt/image/AbstractMultiResolutionImage.h>
 #include <java/awt/image/ImageObserver.h>
 #include <java/awt/peer/ComponentPeer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/JComponent$AccessibleJComponent.h>
@@ -336,9 +322,7 @@ void JViewport::finalize() {
 	this->$JComponent::finalize();
 }
 
-
 $String* JViewport::uiClassID = nullptr;
-
 $Object* JViewport::EnableWindowBlit = nullptr;
 
 void JViewport::init$() {
@@ -495,8 +479,8 @@ void JViewport::paintViaBackingStore($Graphics* g) {
 		try {
 			$JComponent::paint(bsg);
 			$nc(g)->drawImage(this->backingStoreImage, 0, 0, this);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(bsg)->dispose();
 		}
@@ -515,8 +499,8 @@ void JViewport::paintViaBackingStore($Graphics* g, $Rectangle* oClip) {
 			$JComponent::paint(bsg);
 			$nc(g)->setClip(oClip);
 			g->drawImage(this->backingStoreImage, 0, 0, this);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(bsg)->dispose();
 		}
@@ -665,8 +649,8 @@ void JViewport::paint($Graphics* g) {
 					bsg->setClip(r);
 					$JComponent::paint(bsg);
 					g->drawImage(this->backingStoreImage, 0, 0, this);
-				} catch ($Throwable&) {
-					$assign(var$10, $catch());
+				} catch ($Throwable& var$11) {
+					$assign(var$10, var$11);
 				} /*finally*/ {
 					$nc(bsg)->dispose();
 				}
@@ -847,8 +831,8 @@ void JViewport::setViewPosition($Point* p) {
 						rm->markCompletelyClean($cast($JComponent, $(getParent())));
 						rm->markCompletelyClean(this);
 						rm->markCompletelyClean(jview);
-					} catch ($Throwable&) {
-						$assign(var$1, $catch());
+					} catch ($Throwable& var$5) {
+						$assign(var$1, var$5);
 					} /*finally*/ {
 						rm->endPaint();
 					}
@@ -1126,8 +1110,8 @@ void JViewport::paintView($Graphics* g) {
 			try {
 				this->inBlitPaint = true;
 				paintForceDoubleBuffered(g);
-			} catch ($Throwable&) {
-				$assign(var$1, $catch());
+			} catch ($Throwable& var$2) {
+				$assign(var$1, var$2);
 			} /*finally*/ {
 				this->inBlitPaint = false;
 			}

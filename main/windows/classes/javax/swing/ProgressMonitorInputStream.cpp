@@ -5,15 +5,6 @@
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
 #include <java/io/InterruptedIOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/ProgressMonitor.h>
 #include <jcpp.h>
 
@@ -69,8 +60,7 @@ void ProgressMonitorInputStream::init$($Component* parentComponent, Object$* mes
 	this->size = 0;
 	try {
 		this->size = $nc(in)->available();
-	} catch ($IOException&) {
-		$var($IOException, ioe, $catch());
+	} catch ($IOException& ioe) {
 		this->size = 0;
 	}
 	$set(this, monitor, $new($ProgressMonitor, parentComponent, message, nullptr, 0, this->size));

@@ -15,20 +15,8 @@
 #include <java/awt/event/ItemListener.h>
 #include <java/awt/print/PrinterJob.h>
 #include <java/io/FilePermission.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/MalformedURLException.h>
 #include <java/net/URI.h>
 #include <java/net/URISyntaxException.h>
@@ -304,8 +292,7 @@ void ServiceDialog$PrintServicePanel::actionPerformed($ActionEvent* e) {
 				try {
 					$init($DocumentPropertiesUI);
 					$assign(docPropertiesUI, $cast($DocumentPropertiesUI, $nc(this->uiFactory)->getUI($DocumentPropertiesUI::DOCUMENTPROPERTIES_ROLE, $DocumentPropertiesUI::DOCPROPERTIESCLASSNAME)));
-				} catch ($Exception&) {
-					$catch();
+				} catch ($Exception& ex) {
 				}
 				if (docPropertiesUI != nullptr) {
 					$load($PrinterJobWrapper);
@@ -348,8 +335,7 @@ void ServiceDialog$PrintServicePanel::itemStateChanged($ItemEvent* e) {
 						if (dest == nullptr) {
 							try {
 								$assign(dest, $new($Destination, $$new($URI, "file:out.prn"_s)));
-							} catch ($URISyntaxException&) {
-								$catch();
+							} catch ($URISyntaxException& ue) {
 							}
 						}
 						if (dest != nullptr) {
@@ -382,8 +368,7 @@ bool ServiceDialog$PrintServicePanel::allowedToPrintToFile() {
 	try {
 		throwPrintToFile();
 		return true;
-	} catch ($SecurityException&) {
-		$var($SecurityException, e, $catch());
+	} catch ($SecurityException& e) {
 		return false;
 	}
 	$shouldNotReachHere();
@@ -414,8 +399,7 @@ void ServiceDialog$PrintServicePanel::updateInfo() {
 				dstSupported = true;
 				dstSelected = true;
 			}
-		} catch ($MalformedURLException&) {
-			$var($MalformedURLException, ex, $catch());
+		} catch ($MalformedURLException& ex) {
 			dstSupported = true;
 		}
 	} else if ($nc(this->this$0->psCurrent)->isAttributeCategorySupported(dstCategory)) {

@@ -8,23 +8,13 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/KeyEvent.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JColorChooser.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/SwingUtilities.h>
@@ -167,8 +157,8 @@ void Test6541987::main($StringArray* args) {
 					}
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (Test6541987::frame != nullptr) {
 				$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(Test6541987$$Lambda$dispose, static_cast<$JFrame*>($nc(Test6541987::frame)))));

@@ -1,14 +1,5 @@
 #include <javax/swing/text/html/HTMLEditorKit$ParserCallback.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/MutableAttributeSet.h>
 #include <javax/swing/text/html/HTML$Tag.h>
 #include <javax/swing/text/html/HTMLEditorKit.h>
@@ -71,7 +62,6 @@ $ClassInfo _HTMLEditorKit$ParserCallback_ClassInfo_ = {
 $Object* allocate$HTMLEditorKit$ParserCallback($Class* clazz) {
 	return $of($alloc(HTMLEditorKit$ParserCallback));
 }
-
 
 $Object* HTMLEditorKit$ParserCallback::IMPLIED = nullptr;
 

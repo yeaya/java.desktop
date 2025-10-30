@@ -13,21 +13,8 @@
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JEditorPane.h>
 #include <javax/swing/JFrame.h>
@@ -179,8 +166,7 @@ void TableViewLayoutTest::initCodeBug() {
 	$var($CodeBugDocument, doc, $cast($CodeBugDocument, $nc(TableViewLayoutTest::edit)->getDocument()));
 	try {
 		$nc(doc)->insertString(0, "TextB  TextE"_s, nullptr);
-	} catch ($BadLocationException&) {
-		$catch();
+	} catch ($BadLocationException& ex) {
 	}
 	$nc(doc)->insertTable(6, 4, 3);
 	try {
@@ -196,8 +182,7 @@ void TableViewLayoutTest::initCodeBug() {
 		doc->insertString(70, "Cell41"_s, nullptr);
 		doc->insertString(77, "Cell42"_s, nullptr);
 		doc->insertString(84, "Cell43"_s, nullptr);
-	} catch ($BadLocationException&) {
-		$catch();
+	} catch ($BadLocationException& ex) {
 	}
 }
 
@@ -241,7 +226,6 @@ void TableViewLayoutTest::main($StringArray* args) {
 	if (TableViewLayoutTest::isTabWrong) {
 		$throwNew($RuntimeException, TableViewLayoutTest::Prop);
 	}
-	$init($System);
 	$nc($System::out)->println("ok"_s);
 }
 

@@ -1,15 +1,7 @@
 #include <sun/awt/windows/WObjectPeer.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/Iterator.h>
 #include <java/util/Map.h>
@@ -148,8 +140,7 @@ void WObjectPeer::disposeChildPeers() {
 					if (child != nullptr) {
 						try {
 							child->dispose();
-						} catch ($Exception&) {
-							$catch();
+						} catch ($Exception& e) {
 						}
 					}
 				}

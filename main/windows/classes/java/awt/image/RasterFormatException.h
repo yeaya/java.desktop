@@ -16,8 +16,10 @@ public:
 	void init$($String* s);
 	static const int64_t serialVersionUID = (int64_t)0x015730467129CEDB;
 	RasterFormatException(const RasterFormatException& e);
-	RasterFormatException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline RasterFormatException* operator ->() {
+		return (RasterFormatException*)throwing$;
+	}
 };
 
 		} // image

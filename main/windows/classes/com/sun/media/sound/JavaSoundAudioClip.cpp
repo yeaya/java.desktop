@@ -11,19 +11,6 @@
 #include <java/io/FilterInputStream.h>
 #include <java/io/InputStream.h>
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/net/URLConnection.h>
 #include <javax/sound/midi/InvalidMidiDataException.h>
@@ -196,8 +183,7 @@ JavaSoundAudioClip* JavaSoundAudioClip::create($URLConnection* uc) {
 	$var(JavaSoundAudioClip, clip, $new(JavaSoundAudioClip));
 	try {
 		clip->init($($nc(uc)->getInputStream()));
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& ignored) {
 	}
 	return clip;
 }
@@ -208,8 +194,7 @@ JavaSoundAudioClip* JavaSoundAudioClip::create($URL* url) {
 	$var(JavaSoundAudioClip, clip, $new(JavaSoundAudioClip));
 	try {
 		clip->init($($nc(url)->openStream()));
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& ignored) {
 	}
 	return clip;
 }
@@ -230,13 +215,11 @@ void JavaSoundAudioClip::init($InputStream* in) {
 				this->success = createSourceDataLine();
 			}
 		}
-	} catch ($UnsupportedAudioFileException&) {
-		$var($UnsupportedAudioFileException, e, $catch());
+	} catch ($UnsupportedAudioFileException& e) {
 		try {
 			$var($MidiFileFormat, mff, $MidiSystem::getMidiFileFormat(static_cast<$InputStream*>(bis)));
 			this->success = createSequencer(bis);
-		} catch ($InvalidMidiDataException&) {
-			$var($InvalidMidiDataException, e1, $catch());
+		} catch ($InvalidMidiDataException& e1) {
 			this->success = false;
 		}
 	}
@@ -262,7 +245,6 @@ void JavaSoundAudioClip::loop() {
 
 void JavaSoundAudioClip::startImpl(bool loop) {
 	$synchronized(this) {
-		$useLocalCurrentObjectStackCache();
 		int64_t currentTime = $System::currentTimeMillis();
 		int64_t diff = currentTime - this->lastPlayCall;
 		if (diff < JavaSoundAudioClip::MINIMUM_PLAY_DELAY) {
@@ -290,8 +272,8 @@ void JavaSoundAudioClip::startImpl(bool loop) {
 							$nc(this->clip)->start();
 						}
 						this->clipLooping = loop;
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$1) {
+						$assign(var$0, var$1);
 					} /*finally*/ {
 						$nc(this->clip)->setAutoClosing(true);
 					}
@@ -310,14 +292,12 @@ void JavaSoundAudioClip::startImpl(bool loop) {
 					try {
 						$nc(this->sequencer)->open();
 						$nc(this->sequencer)->setSequence(this->sequence);
-					} catch ($InvalidMidiDataException&) {
-						$var($InvalidMidiDataException, e1, $catch());
+					} catch ($InvalidMidiDataException& e1) {
 						$init($Printer);
 						if ($Printer::err$) {
 							e1->printStackTrace();
 						}
-					} catch ($MidiUnavailableException&) {
-						$var($MidiUnavailableException, e2, $catch());
+					} catch ($MidiUnavailableException& e2) {
 						$init($Printer);
 						if ($Printer::err$) {
 							e2->printStackTrace();
@@ -327,16 +307,14 @@ void JavaSoundAudioClip::startImpl(bool loop) {
 				$nc(this->sequencer)->addMetaEventListener(this);
 				try {
 					$nc(this->sequencer)->start();
-				} catch ($Exception&) {
-					$var($Exception, e, $catch());
+				} catch ($Exception& e) {
 					$init($Printer);
 					if ($Printer::err$) {
 						e->printStackTrace();
 					}
 				}
 			}
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$init($Printer);
 			if ($Printer::err$) {
 				e->printStackTrace();
@@ -347,7 +325,6 @@ void JavaSoundAudioClip::startImpl(bool loop) {
 
 void JavaSoundAudioClip::stop() {
 	$synchronized(this) {
-		$useLocalCurrentObjectStackCache();
 		if (!this->success) {
 			return;
 		}
@@ -355,8 +332,7 @@ void JavaSoundAudioClip::stop() {
 		if (this->clip != nullptr) {
 			try {
 				$nc(this->clip)->flush();
-			} catch ($Exception&) {
-				$var($Exception, e1, $catch());
+			} catch ($Exception& e1) {
 				$init($Printer);
 				if ($Printer::err$) {
 					e1->printStackTrace();
@@ -364,8 +340,7 @@ void JavaSoundAudioClip::stop() {
 			}
 			try {
 				$nc(this->clip)->stop();
-			} catch ($Exception&) {
-				$var($Exception, e2, $catch());
+			} catch ($Exception& e2) {
 				$init($Printer);
 				if ($Printer::err$) {
 					e2->printStackTrace();
@@ -378,8 +353,7 @@ void JavaSoundAudioClip::stop() {
 				this->sequencerloop = false;
 				$nc(this->sequencer)->removeMetaEventListener(this);
 				$nc(this->sequencer)->stop();
-			} catch ($Exception&) {
-				$var($Exception, e3, $catch());
+			} catch ($Exception& e3) {
 				$init($Printer);
 				if ($Printer::err$) {
 					e3->printStackTrace();
@@ -387,8 +361,7 @@ void JavaSoundAudioClip::stop() {
 			}
 			try {
 				$nc(this->sequencer)->close();
-			} catch ($Exception&) {
-				$var($Exception, e4, $catch());
+			} catch ($Exception& e4) {
 				$init($Printer);
 				if ($Printer::err$) {
 					e4->printStackTrace();
@@ -483,20 +456,18 @@ void JavaSoundAudioClip::readStream($AudioInputStream* as) {
 			try {
 				try {
 					totalBytesRead = (int32_t)$nc(as)->transferTo(baos);
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					if (twrVar0$ != nullptr) {
 						try {
 							twrVar0$->close();
-						} catch ($Throwable&) {
-							$var($Throwable, x2, $catch());
+						} catch ($Throwable& x2) {
 							t$->addSuppressed(x2);
 						}
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				if (twrVar0$ != nullptr) {
 					twrVar0$->close();
@@ -533,8 +504,7 @@ bool JavaSoundAudioClip::createClip() {
 		}
 		$set(this, clip, $cast($AutoClosingClip, line));
 		$nc(this->clip)->setAutoClosing(true);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$init($Printer);
 		if ($Printer::err$) {
 			e->printStackTrace();
@@ -561,8 +531,7 @@ bool JavaSoundAudioClip::createSourceDataLine() {
 		}
 		$var($SourceDataLine, source, $cast($SourceDataLine, $AudioSystem::getLine(info)));
 		$set(this, datapusher, $new($DataPusher, source, this->loadedAudioFormat, this->loadedAudio, this->loadedAudioByteLength));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$init($Printer);
 		if ($Printer::err$) {
 			e->printStackTrace();
@@ -576,11 +545,9 @@ bool JavaSoundAudioClip::createSourceDataLine() {
 }
 
 bool JavaSoundAudioClip::createSequencer($BufferedInputStream* in) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$set(this, sequencer, $MidiSystem::getSequencer());
-	} catch ($MidiUnavailableException&) {
-		$var($MidiUnavailableException, me, $catch());
+	} catch ($MidiUnavailableException& me) {
 		$init($Printer);
 		if ($Printer::err$) {
 			me->printStackTrace();
@@ -595,8 +562,7 @@ bool JavaSoundAudioClip::createSequencer($BufferedInputStream* in) {
 		if (this->sequence == nullptr) {
 			return false;
 		}
-	} catch ($InvalidMidiDataException&) {
-		$var($InvalidMidiDataException, e, $catch());
+	} catch ($InvalidMidiDataException& e) {
 		$init($Printer);
 		if ($Printer::err$) {
 			e->printStackTrace();

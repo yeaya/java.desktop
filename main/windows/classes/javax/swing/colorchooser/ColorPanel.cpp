@@ -11,18 +11,7 @@
 #include <java/awt/LayoutManager2.h>
 #include <java/awt/event/ActionEvent.h>
 #include <java/awt/event/ActionListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/ButtonGroup.h>
@@ -236,8 +225,7 @@ void ColorPanel::actionPerformed($ActionEvent* event) {
 		this->y = (this->z != 2) ? 2 : 1;
 		this->x = (this->z != 0) ? 0 : 1;
 		$nc($(getParent()))->repaint();
-	} catch ($NumberFormatException&) {
-		$catch();
+	} catch ($NumberFormatException& exception) {
 	}
 }
 

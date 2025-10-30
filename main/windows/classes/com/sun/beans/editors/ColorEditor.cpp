@@ -15,17 +15,6 @@
 #include <java/awt/TextField.h>
 #include <java/beans/PropertyChangeListener.h>
 #include <java/beans/PropertyChangeSupport.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ColorArray = $Array<::java::awt::Color>;
@@ -150,7 +139,7 @@ void ColorEditor::init$() {
 		"cyan"_s,
 		"blue"_s
 	}));
-		$init($Color);
+	$init($Color);
 	$set(this, colors, $new($ColorArray, {
 		($Color*)nullptr,
 		$Color::white,
@@ -210,8 +199,7 @@ bool ColorEditor::keyUp($Event* e, int32_t key) {
 	if ($equals($nc(e)->target, this->text)) {
 		try {
 			setAsText($($nc(this->text)->getText()));
-		} catch ($IllegalArgumentException&) {
-			$catch();
+		} catch ($IllegalArgumentException& ex) {
 		}
 	}
 	return (false);
@@ -234,8 +222,7 @@ void ColorEditor::setAsText($String* s) {
 		int32_t b = $Integer::parseInt($(s->substring(c2 + 1)));
 		$var($Color, c, $new($Color, r, g, b));
 		changeColor(c);
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$throwNew($IllegalArgumentException, s);
 	}
 }

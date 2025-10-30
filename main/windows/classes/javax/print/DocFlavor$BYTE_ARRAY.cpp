@@ -1,13 +1,5 @@
 #include <javax/print/DocFlavor$BYTE_ARRAY.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/DocFlavor.h>
 #include <jcpp.h>
 
@@ -94,43 +86,24 @@ $Object* allocate$DocFlavor$BYTE_ARRAY($Class* clazz) {
 	return $of($alloc(DocFlavor$BYTE_ARRAY));
 }
 
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::TEXT_PLAIN_HOST = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::TEXT_PLAIN_UTF_8 = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::TEXT_PLAIN_UTF_16 = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::TEXT_PLAIN_UTF_16BE = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::TEXT_PLAIN_UTF_16LE = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::TEXT_PLAIN_US_ASCII = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::TEXT_HTML_HOST = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::TEXT_HTML_UTF_8 = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::TEXT_HTML_UTF_16 = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::TEXT_HTML_UTF_16BE = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::TEXT_HTML_UTF_16LE = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::TEXT_HTML_US_ASCII = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::PDF = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::POSTSCRIPT = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::PCL = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::GIF = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::JPEG = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::PNG = nullptr;
-
 DocFlavor$BYTE_ARRAY* DocFlavor$BYTE_ARRAY::AUTOSENSE = nullptr;
 
 void DocFlavor$BYTE_ARRAY::init$($String* mimeType) {

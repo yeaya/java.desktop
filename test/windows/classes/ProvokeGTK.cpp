@@ -2,23 +2,12 @@
 
 #include <java/awt/Window.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/SwingUtilities.h>
 #include <javax/swing/UIManager.h>
@@ -143,8 +132,7 @@ void ProvokeGTK::init$() {
 void ProvokeGTK::createAndShow() {
 	try {
 		$UIManager::setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel"_s);
-	} catch ($Exception&) {
-		$var($Exception, cnf, $catch());
+	} catch ($Exception& cnf) {
 		cnf->printStackTrace();
 	}
 	$init(ProvokeGTK);

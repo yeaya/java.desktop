@@ -8,14 +8,6 @@
 #include <java/awt/Rectangle.h>
 #include <java/awt/event/MouseEvent.h>
 #include <java/beans/PropertyVetoException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventObject.h>
 #include <javax/swing/DesktopManager.h>
 #include <javax/swing/JComponent.h>
@@ -137,8 +129,7 @@ void BasicDesktopIconUI$MouseInputHandler::mousePressed($MouseEvent* e) {
 	}
 	try {
 		$nc(this->this$0->frame)->setSelected(true);
-	} catch ($PropertyVetoException&) {
-		$catch();
+	} catch ($PropertyVetoException& e1) {
 	}
 	if ($instanceOf($JLayeredPane, $($nc(this->this$0->desktopIcon)->getParent()))) {
 		$nc(($cast($JLayeredPane, $($nc(this->this$0->desktopIcon)->getParent()))))->moveToFront(this->this$0->desktopIcon);

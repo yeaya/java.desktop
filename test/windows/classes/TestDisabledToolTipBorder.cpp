@@ -1,26 +1,13 @@
 #include <TestDisabledToolTipBorder.h>
 
 #include <TestUI.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <java/util/concurrent/TimeUnit.h>
 #include <javax/swing/SwingUtilities.h>
@@ -154,7 +141,6 @@ void TestDisabledToolTipBorder::main($StringArray* args) {
 	$init($TimeUnit);
 	bool status = latch->await(2, $TimeUnit::MINUTES);
 	if (!status) {
-		$init($System);
 		$nc($System::out)->println("Test timed out."_s);
 	}
 	if ($nc(TestDisabledToolTipBorder::test)->testResult == false) {
@@ -173,8 +159,7 @@ void TestDisabledToolTipBorder::lambda$disposeUI$1() {
 		if (TestDisabledToolTipBorder::test != nullptr) {
 			$nc(TestDisabledToolTipBorder::test)->disposeUI();
 		}
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$throwNew($RuntimeException, "Exception while disposing UI"_s);
 	}
 }
@@ -183,8 +168,7 @@ void TestDisabledToolTipBorder::lambda$main$0() {
 	try {
 		$init(TestDisabledToolTipBorder);
 		$nc(TestDisabledToolTipBorder::test)->createUI();
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$throwNew($RuntimeException, "Exception while creating UI"_s);
 	}
 }

@@ -10,21 +10,9 @@
 #include <java/awt/geom/Point2D.h>
 #include <java/awt/geom/Rectangle2D$Float.h>
 #include <java/awt/geom/Rectangle2D.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/ref/SoftReference.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <java/util/concurrent/ConcurrentHashMap.h>
 #include <jdk/internal/misc/Unsafe.h>
@@ -221,8 +209,7 @@ void FileFontStrike::init$($FileFont* fileFont, $FontStrikeDesc* desc) {
 	if (var$0 && $nc(desc->devTx)->getType() != $AffineTransform::TYPE_TRANSLATION) {
 		try {
 			$set(this, invertDevTx, $nc(desc->devTx)->createInverse());
-		} catch ($NoninvertibleTransformException&) {
-			$catch();
+		} catch ($NoninvertibleTransformException& e) {
 		}
 	}
 	bool var$4 = $Double::isNaN(matrix->get(0));
@@ -408,11 +395,9 @@ int32_t FileFontStrike::getSlot0GlyphImagePtrs($ints* glyphCodes, $longs* images
 }
 
 int64_t FileFontStrike::getCachedGlyphPtr(int32_t glyphCode) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return getCachedGlyphPtrInternal(glyphCode);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$var($NullFontScaler, nullScaler, $cast($NullFontScaler, $FontScaler::getNullScaler()));
 		int64_t nullSC = $NullFontScaler::getNullScalerContext();
 		return $nc(nullScaler)->getGlyphImage(nullSC, glyphCode);
@@ -459,11 +444,9 @@ int64_t FileFontStrike::getCachedGlyphPtrInternal(int32_t glyphCode) {
 
 int64_t FileFontStrike::setCachedGlyphPtr(int32_t glyphCode, int64_t glyphPtr) {
 	$synchronized(this) {
-		$useLocalCurrentObjectStackCache();
 		try {
 			return setCachedGlyphPtrInternal(glyphCode, glyphPtr);
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			switch (this->glyphCacheFormat) {
 			case FileFontStrike::INTARRAY:
 				{}

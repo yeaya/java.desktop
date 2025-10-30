@@ -15,8 +15,10 @@ public:
 	void init$($String* reason);
 	static const int64_t serialVersionUID = (int64_t)0xC1CF425A7C3EFE08;
 	FontFormatException(const FontFormatException& e);
-	FontFormatException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline FontFormatException* operator ->() {
+		return (FontFormatException*)throwing$;
+	}
 };
 
 	} // awt

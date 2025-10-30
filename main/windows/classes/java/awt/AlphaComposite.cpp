@@ -3,15 +3,6 @@
 #include <java/awt/CompositeContext.h>
 #include <java/awt/RenderingHints.h>
 #include <java/awt/image/ColorModel.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SunCompositeContext.h>
 #include <jcpp.h>
 
@@ -104,29 +95,17 @@ $Object* allocate$AlphaComposite($Class* clazz) {
 	return $of($alloc(AlphaComposite));
 }
 
-
 AlphaComposite* AlphaComposite::Clear = nullptr;
-
 AlphaComposite* AlphaComposite::Src = nullptr;
-
 AlphaComposite* AlphaComposite::Dst = nullptr;
-
 AlphaComposite* AlphaComposite::SrcOver = nullptr;
-
 AlphaComposite* AlphaComposite::DstOver = nullptr;
-
 AlphaComposite* AlphaComposite::SrcIn = nullptr;
-
 AlphaComposite* AlphaComposite::DstIn = nullptr;
-
 AlphaComposite* AlphaComposite::SrcOut = nullptr;
-
 AlphaComposite* AlphaComposite::DstOut = nullptr;
-
 AlphaComposite* AlphaComposite::SrcAtop = nullptr;
-
 AlphaComposite* AlphaComposite::DstAtop = nullptr;
-
 AlphaComposite* AlphaComposite::Xor = nullptr;
 
 void AlphaComposite::init$(int32_t rule) {

@@ -2,12 +2,6 @@
 
 #include <java/awt/dnd/DropTargetDragEvent.h>
 #include <java/awt/dnd/DropTargetDropEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $DropTargetDragEvent = ::java::awt::dnd::DropTargetDragEvent;

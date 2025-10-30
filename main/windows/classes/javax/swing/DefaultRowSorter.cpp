@@ -1,19 +1,7 @@
 #include <javax/swing/DefaultRowSorter.h>
 
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/Collator.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
@@ -339,7 +327,6 @@ int32_t DefaultRowSorter::convertUnsortedUnfiltered(int32_t index) {
 		if (index >= this->modelRowCount && index < $nc($(getModelWrapper()))->getRowCount()) {
 			if (DefaultRowSorter::warning8160087) {
 				DefaultRowSorter::warning8160087 = false;
-				$init($System);
 				$nc($System::err)->println("WARNING: row index is bigger than sorter\'s row count. Most likely this is a wrong sorter usage."_s);
 			}
 		} else {

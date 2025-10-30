@@ -1,13 +1,5 @@
 #include <sun/awt/windows/WFileDialogPeer$3.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/MissingResourceException.h>
 #include <java/util/ResourceBundle.h>
 #include <sun/awt/windows/WFileDialogPeer.h>
@@ -67,13 +59,11 @@ void WFileDialogPeer$3::init$() {
 }
 
 $Object* WFileDialogPeer$3::run() {
-	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$var($ResourceBundle, rb, $ResourceBundle::getBundle("sun.awt.windows.awtLocalization"_s));
 		return $of($nc(rb)->getString("allFiles"_s));
-	} catch ($MissingResourceException&) {
-		$var($MissingResourceException, e, $catch());
+	} catch ($MissingResourceException& e) {
 		return $of("All Files"_s);
 	}
 	$shouldNotReachHere();

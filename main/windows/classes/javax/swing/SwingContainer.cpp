@@ -1,14 +1,5 @@
 #include <javax/swing/SwingContainer.h>
 
-#include <java/lang/Attribute.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $Attribute = ::java::lang::Attribute;
@@ -35,16 +26,20 @@ $NamedAttribute SwingContainer_Attribute_var$2[] = {
 	{"value", 'e', "Ljava/lang/annotation/RetentionPolicy; RUNTIME"},
 	{}
 };
+
 $CompoundAttribute _SwingContainer_Annotations_[] = {
 	{"Ljava/lang/annotation/Target;", SwingContainer_Attribute_var$0},
 	{"Ljava/lang/annotation/Retention;", SwingContainer_Attribute_var$2},
 	{}
 };
-$Attribute _SwingContainer_DefaultValue_delegate0 = {
-'s', ""};
-$Attribute _SwingContainer_DefaultValue_value1 = {
-'Z', "true"};
 
+$Attribute _SwingContainer_DefaultValue_delegate0 = {
+	's', ""
+};
+
+$Attribute _SwingContainer_DefaultValue_value1 = {
+	'Z', "true"
+};
 
 $MethodInfo _SwingContainer_MethodInfo_[] = {
 	{"delegate", "()Ljava/lang/String;", nullptr, $PUBLIC | $ABSTRACT, nullptr, nullptr, &_SwingContainer_DefaultValue_delegate0},

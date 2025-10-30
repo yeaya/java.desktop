@@ -3,28 +3,15 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Iterator.h>
 #include <javax/swing/JComponent.h>
@@ -192,7 +179,6 @@ void TestTitledBorderLeak::main($StringArray* args) {
 	$var($JFrameArray, frame, $new($JFrameArray, TestTitledBorderLeak::TOTAL_TITLEDBORDER));
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestTitledBorderLeak$$Lambda$lambda$main$0, frame)));
 	if (TestTitledBorderLeak::TOTAL_TITLEDBORDER != $nc(TestTitledBorderLeak::weakRefArrTB)->size()) {
-		$init($System);
 		$nc($System::err)->println("TOTAL_TITLEDBORDER != weakRefArrTB.size()"_s);
 	}
 	$Thread::sleep(3000);
@@ -202,13 +188,11 @@ void TestTitledBorderLeak::main($StringArray* args) {
 	if (TestTitledBorderLeak::TOTAL_TITLEDBORDER != getCleanedUpTitledBorderCount()) {
 		$throwNew($RuntimeException, $$str({"Expected Total TitledBorder to be freed : "_s, $$str(TestTitledBorderLeak::TOTAL_TITLEDBORDER), " Freed "_s, $$str(getCleanedUpTitledBorderCount())}));
 	}
-	$init($System);
 	$nc($System::out)->println("OK"_s);
 }
 
 void TestTitledBorderLeak::attemptGCTitledBorder() {
 	$init(TestTitledBorderLeak);
-	$useLocalCurrentObjectStackCache();
 	for (int32_t i = 0; i < TestTitledBorderLeak::GC_ATTEMPTS; ++i) {
 		$System::gc();
 		$System::runFinalization();
@@ -217,8 +201,7 @@ void TestTitledBorderLeak::attemptGCTitledBorder() {
 		}
 		try {
 			$Thread::sleep(500);
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, e, $catch());
+		} catch ($InterruptedException& e) {
 			$nc($System::err)->println("InterruptedException occurred during Thread.sleep()"_s);
 		}
 	}

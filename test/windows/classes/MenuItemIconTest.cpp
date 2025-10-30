@@ -12,26 +12,15 @@
 #include <java/awt/Window.h>
 #include <java/awt/image/BufferedImage.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
 #include <java/lang/InstantiationException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/ImageIcon.h>
@@ -166,22 +155,17 @@ void MenuItemIconTest::init$() {
 
 void MenuItemIconTest::main($StringArray* args) {
 	$init(MenuItemIconTest);
-	$useLocalCurrentObjectStackCache();
 	$assignStatic(MenuItemIconTest::robot, $new($Robot));
 	$var($String, name, $UIManager::getSystemLookAndFeelClassName());
 	try {
 		$UIManager::setLookAndFeel(name);
-	} catch ($ClassNotFoundException&) {
-		$var($Exception, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		$throwNew($RuntimeException, "Test Failed"_s);
-	} catch ($InstantiationException&) {
-		$var($Exception, e, $catch());
+	} catch ($InstantiationException& e) {
 		$throwNew($RuntimeException, "Test Failed"_s);
-	} catch ($IllegalAccessException&) {
-		$var($Exception, e, $catch());
+	} catch ($IllegalAccessException& e) {
 		$throwNew($RuntimeException, "Test Failed"_s);
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($Exception, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& e) {
 		$throwNew($RuntimeException, "Test Failed"_s);
 	}
 	createUI();

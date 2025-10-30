@@ -2,14 +2,6 @@
 
 #include <com/sun/imageio/plugins/tiff/TIFFCompressor.h>
 #include <com/sun/imageio/plugins/tiff/TIFFImageMetadata.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/metadata/IIOMetadata.h>
 #include <javax/imageio/plugins/tiff/BaselineTIFFTagSet.h>
 #include <javax/imageio/plugins/tiff/TIFFField.h>
@@ -84,29 +76,17 @@ $Object* allocate$TIFFFaxCompressor($Class* clazz) {
 }
 
 $bytes* TIFFFaxCompressor::byteTable = nullptr;
-
 $ints* TIFFFaxCompressor::termCodesBlack = nullptr;
-
 $ints* TIFFFaxCompressor::termCodesWhite = nullptr;
-
 $ints* TIFFFaxCompressor::makeupCodesBlack = nullptr;
-
 $ints* TIFFFaxCompressor::makeupCodesWhite = nullptr;
-
 $ints* TIFFFaxCompressor::passMode = nullptr;
-
 $ints* TIFFFaxCompressor::vertMode = nullptr;
-
 $ints* TIFFFaxCompressor::horzMode = nullptr;
-
 $intArray2* TIFFFaxCompressor::termCodes = nullptr;
-
 $intArray2* TIFFFaxCompressor::makeupCodes = nullptr;
-
 $intArray2* TIFFFaxCompressor::pass = nullptr;
-
 $intArray2* TIFFFaxCompressor::vert = nullptr;
-
 $intArray2* TIFFFaxCompressor::horz = nullptr;
 
 void TIFFFaxCompressor::init$($String* compressionType, int32_t compressionTagValue, bool isCompressionLossless) {

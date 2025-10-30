@@ -2,17 +2,8 @@
 
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/HttpURLConnection.h>
 #include <java/net/URL.h>
 #include <java/net/URLConnection.h>
@@ -84,8 +75,7 @@ void URLImageSource::init$($URL* u) {
 			if (perm != nullptr) {
 				sm->checkPermission(perm);
 			}
-		} catch ($IOException&) {
-			$var($IOException, ioe, $catch());
+		} catch ($IOException& ioe) {
 			$var($String, var$0, $nc(u)->getHost());
 			sm->checkConnect(var$0, u->getPort());
 		}
@@ -107,15 +97,13 @@ void URLImageSource::init$($URLConnection* uc) {
 }
 
 bool URLImageSource::checkSecurity(Object$* context, bool quiet) {
-	$useLocalCurrentObjectStackCache();
 	if (this->actualHost != nullptr) {
 		try {
 			$var($SecurityManager, security, $System::getSecurityManager());
 			if (security != nullptr) {
 				security->checkConnect(this->actualHost, this->actualPort, context);
 			}
-		} catch ($SecurityException&) {
-			$var($SecurityException, e, $catch());
+		} catch ($SecurityException& e) {
 			if (!quiet) {
 				$throw(e);
 			}
@@ -169,13 +157,11 @@ $ImageDecoder* URLImageSource::getDecoder() {
 			$set(this, actualHost, u->getHost());
 			this->actualPort = u->getPort();
 		}
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		if (is != nullptr) {
 			try {
 				is->close();
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& e2) {
 			}
 		} else if ($instanceOf($HttpURLConnection, c)) {
 			$nc(($cast($HttpURLConnection, c)))->disconnect();
@@ -190,8 +176,7 @@ $ImageDecoder* URLImageSource::getDecoder() {
 		if (is != nullptr) {
 			try {
 				is->close();
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& e) {
 			}
 		} else if ($instanceOf($HttpURLConnection, c)) {
 			$nc(($cast($HttpURLConnection, c)))->disconnect();

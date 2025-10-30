@@ -15,26 +15,11 @@
 #include <java/awt/event/InputEvent.h>
 #include <java/awt/event/KeyEvent.h>
 #include <java/awt/image/BufferedImage.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/OutOfMemoryError.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/AbstractSequentialList.h>
 #include <java/util/ArrayList.h>
@@ -183,7 +168,6 @@ void Util::generateOOME() {
 	$useLocalCurrentObjectStackCache();
 	$var($List, bigLeak, $new($LinkedList));
 	bool oome = false;
-	$init($System);
 	$nc($System::out)->print("Filling the heap"_s);
 	try {
 		for (int32_t i = 0; true; ++i) {
@@ -193,14 +177,12 @@ void Util::generateOOME() {
 				$System::gc();
 				try {
 					$Thread::sleep(100);
-				} catch ($InterruptedException&) {
-					$var($InterruptedException, e, $catch());
+				} catch ($InterruptedException& e) {
 					e->printStackTrace();
 				}
 			}
 		}
-	} catch ($OutOfMemoryError&) {
-		$var($OutOfMemoryError, e, $catch());
+	} catch ($OutOfMemoryError& e) {
 		$assign(bigLeak, nullptr);
 		oome = true;
 	}

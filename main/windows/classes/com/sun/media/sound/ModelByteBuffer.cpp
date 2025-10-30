@@ -8,18 +8,7 @@
 #include <java/io/InputStream.h>
 #include <java/io/OutputStream.h>
 #include <java/io/RandomAccessFile.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Collection.h>
 #include <java/util/Iterator.h>
 #include <jcpp.h>
@@ -177,20 +166,18 @@ void ModelByteBuffer::writeTo($OutputStream* out) {
 				try {
 					try {
 						$nc(is)->transferTo(out);
-					} catch ($Throwable&) {
-						$var($Throwable, t$, $catch());
+					} catch ($Throwable& t$) {
 						if (is != nullptr) {
 							try {
 								is->close();
-							} catch ($Throwable&) {
-								$var($Throwable, x2, $catch());
+							} catch ($Throwable& x2) {
 								t$->addSuppressed(x2);
 							}
 						}
 						$throw(t$);
 					}
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$1) {
+					$assign(var$0, var$1);
 				} /*finally*/ {
 					if (is != nullptr) {
 						is->close();
@@ -202,19 +189,17 @@ void ModelByteBuffer::writeTo($OutputStream* out) {
 			}
 		}
 	} else {
-		$var($bytes, var$1, array());
-		int32_t var$2 = (int32_t)arrayOffset();
-		$nc(out)->write(var$1, var$2, (int32_t)capacity());
+		$var($bytes, var$2, array());
+		int32_t var$3 = (int32_t)arrayOffset();
+		$nc(out)->write(var$2, var$3, (int32_t)capacity());
 	}
 }
 
 $InputStream* ModelByteBuffer::getInputStream() {
-	$useLocalCurrentObjectStackCache();
 	if ($nc(this->root)->file != nullptr && $nc(this->root)->buffer == nullptr) {
 		try {
 			return $new($ModelByteBuffer$RandomFileInputStream, this);
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			return nullptr;
 		}
 	}
@@ -307,8 +292,8 @@ void ModelByteBuffer::loadAll($Collection* col) {
 					}
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (raf != nullptr) {
 				raf->close();

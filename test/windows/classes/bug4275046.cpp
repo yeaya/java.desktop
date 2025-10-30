@@ -13,19 +13,7 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/DefaultCellEditor.h>
 #include <javax/swing/JComboBox.h>
 #include <javax/swing/JComponent.h>
@@ -179,8 +167,8 @@ void bug4275046::test() {
 			$SwingUtilities::invokeAndWait($$new($bug4275046$1, this));
 			runTest();
 			checkResult();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$SwingUtilities::invokeAndWait($$new($bug4275046$2, this));
 		}

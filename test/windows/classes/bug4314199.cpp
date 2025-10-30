@@ -4,16 +4,7 @@
 #include <bug4314199$2.h>
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/Box.h>
 #include <javax/swing/JApplet.h>
 #include <javax/swing/JComponent.h>
@@ -100,8 +91,7 @@ void bug4314199::init() {
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"_s);
 		$SwingUtilities::invokeAndWait($$new($bug4314199$1, this));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$SwingUtilities::invokeLater($$new($bug4314199$2, this, e));
 	}
 }

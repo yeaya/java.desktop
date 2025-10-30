@@ -9,24 +9,12 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
@@ -362,31 +350,31 @@ void clinit$CloseOnMouseClickPropertyTest($Class* class$) {
 	$useLocalCurrentObjectStackCache();
 	$assignStatic(CloseOnMouseClickPropertyTest::CHECK_BOX_PROP, "CheckBoxMenuItem.doNotCloseOnMouseClick"_s);
 	$assignStatic(CloseOnMouseClickPropertyTest::RADIO_BUTTON_PROP, "RadioButtonMenuItem.doNotCloseOnMouseClick"_s);
-		$init($CloseOnMouseClickPropertyTest$TestType);
-		$var($CloseOnMouseClickPropertyTest$TestType, var$0, $CloseOnMouseClickPropertyTest$TestType::CHECK_BOX_MENU_ITEM);
-		$var($Boolean, var$1, $Boolean::valueOf(true));
-		$var($CloseOnMouseClickPropertyTest$TestType, var$2, $CloseOnMouseClickPropertyTest$TestType::CHECK_BOX_MENU_ITEM);
-		$var($Boolean, var$3, $Boolean::valueOf(true));
-		$var($CloseOnMouseClickPropertyTest$TestType, var$4, $CloseOnMouseClickPropertyTest$TestType::CHECK_BOX_MENU_ITEM);
-		$var($Boolean, var$5, $Boolean::valueOf(false));
-		$var($CloseOnMouseClickPropertyTest$TestType, var$6, $CloseOnMouseClickPropertyTest$TestType::CHECK_BOX_MENU_ITEM);
-		$var($Boolean, var$7, $Boolean::valueOf(false));
-		$var($CloseOnMouseClickPropertyTest$TestType, var$8, $CloseOnMouseClickPropertyTest$TestType::RADIO_BUTTON_MENU_ITEM);
-		$var($Boolean, var$9, $Boolean::valueOf(true));
-		$var($CloseOnMouseClickPropertyTest$TestType, var$10, $CloseOnMouseClickPropertyTest$TestType::RADIO_BUTTON_MENU_ITEM);
-		$var($Boolean, var$11, $Boolean::valueOf(true));
-		$var($CloseOnMouseClickPropertyTest$TestType, var$12, $CloseOnMouseClickPropertyTest$TestType::RADIO_BUTTON_MENU_ITEM);
-		$var($Boolean, var$13, $Boolean::valueOf(false));
-		$var($CloseOnMouseClickPropertyTest$TestType, var$14, $CloseOnMouseClickPropertyTest$TestType::RADIO_BUTTON_MENU_ITEM);
-		$var($Boolean, var$15, $Boolean::valueOf(false));
-		$var($CloseOnMouseClickPropertyTest$TestType, var$16, $CloseOnMouseClickPropertyTest$TestType::MENU_ITEM);
-		$var($Boolean, var$17, $Boolean::valueOf(true));
-		$var($CloseOnMouseClickPropertyTest$TestType, var$18, $CloseOnMouseClickPropertyTest$TestType::MENU_ITEM);
-		$var($Boolean, var$19, $Boolean::valueOf(true));
-		$var($CloseOnMouseClickPropertyTest$TestType, var$20, $CloseOnMouseClickPropertyTest$TestType::MENU_ITEM);
-		$var($Boolean, var$21, $Boolean::valueOf(false));
-		$var($CloseOnMouseClickPropertyTest$TestType, var$22, $CloseOnMouseClickPropertyTest$TestType::MENU_ITEM);
-		$var($Boolean, var$23, $Boolean::valueOf(false));
+	$init($CloseOnMouseClickPropertyTest$TestType);
+	$var($CloseOnMouseClickPropertyTest$TestType, var$0, $CloseOnMouseClickPropertyTest$TestType::CHECK_BOX_MENU_ITEM);
+	$var($Boolean, var$1, $Boolean::valueOf(true));
+	$var($CloseOnMouseClickPropertyTest$TestType, var$2, $CloseOnMouseClickPropertyTest$TestType::CHECK_BOX_MENU_ITEM);
+	$var($Boolean, var$3, $Boolean::valueOf(true));
+	$var($CloseOnMouseClickPropertyTest$TestType, var$4, $CloseOnMouseClickPropertyTest$TestType::CHECK_BOX_MENU_ITEM);
+	$var($Boolean, var$5, $Boolean::valueOf(false));
+	$var($CloseOnMouseClickPropertyTest$TestType, var$6, $CloseOnMouseClickPropertyTest$TestType::CHECK_BOX_MENU_ITEM);
+	$var($Boolean, var$7, $Boolean::valueOf(false));
+	$var($CloseOnMouseClickPropertyTest$TestType, var$8, $CloseOnMouseClickPropertyTest$TestType::RADIO_BUTTON_MENU_ITEM);
+	$var($Boolean, var$9, $Boolean::valueOf(true));
+	$var($CloseOnMouseClickPropertyTest$TestType, var$10, $CloseOnMouseClickPropertyTest$TestType::RADIO_BUTTON_MENU_ITEM);
+	$var($Boolean, var$11, $Boolean::valueOf(true));
+	$var($CloseOnMouseClickPropertyTest$TestType, var$12, $CloseOnMouseClickPropertyTest$TestType::RADIO_BUTTON_MENU_ITEM);
+	$var($Boolean, var$13, $Boolean::valueOf(false));
+	$var($CloseOnMouseClickPropertyTest$TestType, var$14, $CloseOnMouseClickPropertyTest$TestType::RADIO_BUTTON_MENU_ITEM);
+	$var($Boolean, var$15, $Boolean::valueOf(false));
+	$var($CloseOnMouseClickPropertyTest$TestType, var$16, $CloseOnMouseClickPropertyTest$TestType::MENU_ITEM);
+	$var($Boolean, var$17, $Boolean::valueOf(true));
+	$var($CloseOnMouseClickPropertyTest$TestType, var$18, $CloseOnMouseClickPropertyTest$TestType::MENU_ITEM);
+	$var($Boolean, var$19, $Boolean::valueOf(true));
+	$var($CloseOnMouseClickPropertyTest$TestType, var$20, $CloseOnMouseClickPropertyTest$TestType::MENU_ITEM);
+	$var($Boolean, var$21, $Boolean::valueOf(false));
+	$var($CloseOnMouseClickPropertyTest$TestType, var$22, $CloseOnMouseClickPropertyTest$TestType::MENU_ITEM);
+	$var($Boolean, var$23, $Boolean::valueOf(false));
 	$assignStatic(CloseOnMouseClickPropertyTest::TEST_ITEMS, $new($CloseOnMouseClickPropertyTest$TestItemArray, {
 		$$new($CloseOnMouseClickPropertyTest$TestItem, var$0, var$1, $($Boolean::valueOf(true))),
 		$$new($CloseOnMouseClickPropertyTest$TestItem, var$2, var$3, $($Boolean::valueOf(false))),

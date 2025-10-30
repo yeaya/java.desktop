@@ -2,18 +2,9 @@
 
 #include <com/sun/beans/WeakCache.h>
 #include <com/sun/beans/WildcardTypeImpl.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/reflect/Array.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/GenericArrayType.h>
-#include <java/lang/reflect/Method.h>
 #include <java/lang/reflect/ParameterizedType.h>
 #include <java/lang/reflect/Type.h>
 #include <java/lang/reflect/TypeVariable.h>
@@ -175,13 +166,11 @@ $Class* TypeResolver::erase($Type* type) {
 	if ($instanceOf($TypeVariable, type)) {
 		$var($TypeVariable, tv, $cast($TypeVariable, type));
 		$var($TypeArray, bounds, $nc(tv)->getBounds());
-		$load($Object);
 		return (0 < $nc(bounds)->length) ? erase($nc(bounds)->get(0)) : $Object::class$;
 	}
 	if ($instanceOf($WildcardType, type)) {
 		$var($WildcardType, wt, $cast($WildcardType, type));
 		$var($TypeArray, bounds, $nc(wt)->getUpperBounds());
-		$load($Object);
 		return (0 < $nc(bounds)->length) ? erase($nc(bounds)->get(0)) : $Object::class$;
 	}
 	if ($instanceOf($GenericArrayType, type)) {

@@ -8,16 +8,6 @@
 #include <java/awt/Point.h>
 #include <java/awt/Rectangle.h>
 #include <java/awt/event/FocusListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <java/util/Vector.h>
 #include <javax/accessibility/Accessible.h>
@@ -479,8 +469,7 @@ $String* AccessibleHTML$TableElementInfo$TableAccessibleContext::getAccessibleRo
 					int32_t var$0 = v->getStartOffset();
 					int32_t var$1 = v->getEndOffset();
 					return $nc($nc(this->this$1->this$0)->model)->getText(var$0, var$1 - v->getStartOffset());
-				} catch ($BadLocationException&) {
-					$var($BadLocationException, e, $catch());
+				} catch ($BadLocationException& e) {
 					return nullptr;
 				}
 			}
@@ -500,8 +489,7 @@ $String* AccessibleHTML$TableElementInfo$TableAccessibleContext::getAccessibleCo
 					int32_t var$0 = v->getStartOffset();
 					int32_t var$1 = v->getEndOffset();
 					return $nc($nc(this->this$1->this$0)->model)->getText(var$0, var$1 - v->getStartOffset());
-				} catch ($BadLocationException&) {
-					$var($BadLocationException, e, $catch());
+				} catch ($BadLocationException& e) {
 					return nullptr;
 				}
 			}

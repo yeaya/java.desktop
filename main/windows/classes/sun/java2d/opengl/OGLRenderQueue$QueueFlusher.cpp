@@ -1,23 +1,9 @@
 #include <sun/java2d/opengl/OGLRenderQueue$QueueFlusher.h>
 
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/util/ThreadGroupUtils.h>
 #include <sun/java2d/opengl/OGLRenderQueue.h>
 #include <sun/java2d/pipe/RenderBuffer.h>
@@ -104,8 +90,7 @@ void OGLRenderQueue$QueueFlusher::flushNow() {
 		while (this->needsFlush) {
 			try {
 				$of(this)->wait();
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& e) {
 			}
 		}
 		if (this->error != nullptr) {
@@ -137,8 +122,7 @@ void OGLRenderQueue$QueueFlusher::run() {
 							this->this$0->unlock();
 						}
 					}
-				} catch ($InterruptedException&) {
-					$catch();
+				} catch ($InterruptedException& e) {
 				}
 			}
 			{
@@ -150,17 +134,14 @@ void OGLRenderQueue$QueueFlusher::run() {
 						if (this->task != nullptr) {
 							$nc(this->task)->run();
 						}
-					} catch ($Error&) {
-						$var($Error, e, $catch());
+					} catch ($Error& e) {
 						$set(this, error, e);
-					} catch ($Exception&) {
-						$var($Exception, x, $catch());
-						$init($System);
+					} catch ($Exception& x) {
 						$nc($System::err)->println("exception in QueueFlusher:"_s);
 						x->printStackTrace();
 					}
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$1) {
+					$assign(var$0, var$1);
 				} /*finally*/ {
 					if (timedOut) {
 						this->this$0->unlock();

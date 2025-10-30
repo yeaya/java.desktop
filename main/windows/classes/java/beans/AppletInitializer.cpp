@@ -2,14 +2,6 @@
 
 #include <java/applet/Applet.h>
 #include <java/beans/beancontext/BeanContext.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $Applet = ::java::applet::Applet;
@@ -27,11 +19,11 @@ $NamedAttribute AppletInitializer_Attribute_var$0[] = {
 	{"forRemoval", 'Z', "true"},
 	{}
 };
+
 $CompoundAttribute _AppletInitializer_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", AppletInitializer_Attribute_var$0},
 	{}
 };
-
 
 $MethodInfo _AppletInitializer_MethodInfo_[] = {
 	{"activate", "(Ljava/applet/Applet;)V", nullptr, $PUBLIC | $ABSTRACT},

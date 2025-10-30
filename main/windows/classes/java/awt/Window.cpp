@@ -67,35 +67,18 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/OptionalDataException.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Double.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Module.h>
 #include <java/lang/Runnable.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/UnsupportedOperationException.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/BasicPermission.h>
 #include <java/security/Permission.h>
@@ -595,7 +578,6 @@ void Window::finalize() {
 }
 
 bool Window::systemSyncLWRequests = false;
-
 $IdentityArrayList* Window::allWindows = nullptr;
 $String* Window::base = nullptr;
 int32_t Window::nameCounter = 0;
@@ -722,8 +704,7 @@ void Window::ownedInit(Window* owner) {
 		if (owner->isAlwaysOnTop()) {
 			try {
 				setAlwaysOnTop(true);
-			} catch ($SecurityException&) {
-				$catch();
+			} catch ($SecurityException& ignore) {
 			}
 		}
 	}
@@ -972,7 +953,6 @@ void Window::disposeImpl() {
 }
 
 void Window::doDispose() {
-	$useLocalCurrentObjectStackCache();
 	{
 	}
 	bool fireWindowClosedEvent = isDisplayable();
@@ -982,14 +962,10 @@ void Window::doDispose() {
 	} else {
 		try {
 			$EventQueue::invokeAndWait(this, action);
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, e, $catch());
-			$init($System);
+		} catch ($InterruptedException& e) {
 			$nc($System::err)->println("Disposal was interrupted:"_s);
 			e->printStackTrace();
-		} catch ($InvocationTargetException&) {
-			$var($InvocationTargetException, e, $catch());
-			$init($System);
+		} catch ($InvocationTargetException& e) {
 			$nc($System::err)->println("Exception during disposal:"_s);
 			e->printStackTrace();
 		}
@@ -1029,8 +1005,7 @@ void Window::toBack_NoClientCode() {
 	if (isAlwaysOnTop()) {
 		try {
 			setAlwaysOnTop(false);
-		} catch ($SecurityException&) {
-			$catch();
+		} catch ($SecurityException& e) {
 		}
 	}
 	if (this->visible) {
@@ -1058,8 +1033,7 @@ void Window::setWarningString() {
 		try {
 			$init($AWTPermissions);
 			sm->checkPermission($AWTPermissions::TOPLEVEL_WINDOW_PERMISSION);
-		} catch ($SecurityException&) {
-			$var($SecurityException, se, $catch());
+		} catch ($SecurityException& se) {
 			$set(this, warningString, $cast($String, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, "awt.appletWarning"_s, "Java Applet Window"_s)))));
 		}
 	}
@@ -1581,7 +1555,6 @@ void Window::preProcessKeyEvent($KeyEvent* e) {
 		bool var$1 = var$2 && e->isControlDown();
 		bool var$0 = var$1 && e->isShiftDown();
 		if (var$0 && e->getID() == $KeyEvent::KEY_PRESSED) {
-			$init($System);
 			list($System::out, 0);
 		}
 	}
@@ -1634,8 +1607,7 @@ void Window::setOwnedWindowsAlwaysOnTop(bool alwaysOnTop) {
 				if (window != nullptr) {
 					try {
 						window->setAlwaysOnTop(alwaysOnTop);
-					} catch ($SecurityException&) {
-						$catch();
+					} catch ($SecurityException& ignore) {
 					}
 				}
 			}
@@ -1979,8 +1951,7 @@ void Window::deserializeResources($ObjectInputStream* s) {
 			}
 			$assign(obj, s->readObject());
 		}
-	} catch ($OptionalDataException&) {
-		$catch();
+	} catch ($OptionalDataException& e) {
 	}
 }
 
@@ -2271,8 +2242,8 @@ void Window::paint($Graphics* g) {
 					int32_t var$1 = getWidth();
 					gg->fillRect(0, 0, var$1, getHeight());
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$2) {
+				$assign(var$0, var$2);
 			} /*finally*/ {
 				$nc(gg)->dispose();
 			}

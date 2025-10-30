@@ -1,15 +1,6 @@
 #include <com/sun/media/sound/SoftTuning.h>
 
 #include <java/io/UnsupportedEncodingException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <javax/sound/midi/Patch.h>
 #include <jcpp.h>
@@ -131,8 +122,7 @@ void SoftTuning::load($bytes* data) {
 								{
 									try {
 										$set(this, name, $new($String, data, 6, 16, "ascii"_s));
-									} catch ($UnsupportedEncodingException&) {
-										$var($UnsupportedEncodingException, e, $catch());
+									} catch ($UnsupportedEncodingException& e) {
 										$set(this, name, nullptr);
 									}
 									int32_t r = 22;
@@ -172,8 +162,7 @@ void SoftTuning::load($bytes* data) {
 									}
 									try {
 										$set(this, name, $new($String, data, 7, 16, "ascii"_s));
-									} catch ($UnsupportedEncodingException&) {
-										$var($UnsupportedEncodingException, e, $catch());
+									} catch ($UnsupportedEncodingException& e) {
 										$set(this, name, nullptr);
 									}
 									int32_t r = 23;
@@ -196,8 +185,7 @@ void SoftTuning::load($bytes* data) {
 									}
 									try {
 										$set(this, name, $new($String, data, 7, 16, "ascii"_s));
-									} catch ($UnsupportedEncodingException&) {
-										$var($UnsupportedEncodingException, e, $catch());
+									} catch ($UnsupportedEncodingException& e) {
 										$set(this, name, nullptr);
 									}
 									$var($ints, octave_tuning, $new($ints, 12));
@@ -218,8 +206,7 @@ void SoftTuning::load($bytes* data) {
 									}
 									try {
 										$set(this, name, $new($String, data, 7, 16, "ascii"_s));
-									} catch ($UnsupportedEncodingException&) {
-										$var($UnsupportedEncodingException, e, $catch());
+									} catch ($UnsupportedEncodingException& e) {
 										$set(this, name, nullptr);
 									}
 									$var($doubles, octave_tuning, $new($doubles, 12));

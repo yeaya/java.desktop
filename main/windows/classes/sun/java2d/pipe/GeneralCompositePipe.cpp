@@ -14,14 +14,6 @@
 #include <java/awt/image/ColorModel.h>
 #include <java/awt/image/Raster.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Hashtable.h>
 #include <sun/awt/image/BufImgSurfaceData.h>
 #include <sun/java2d/SunGraphics2D.h>

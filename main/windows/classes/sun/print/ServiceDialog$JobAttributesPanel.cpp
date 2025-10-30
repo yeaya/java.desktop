@@ -11,17 +11,7 @@
 #include <java/awt/event/ActionListener.h>
 #include <java/awt/event/FocusEvent.h>
 #include <java/awt/event/FocusListener.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/print/PrintService.h>

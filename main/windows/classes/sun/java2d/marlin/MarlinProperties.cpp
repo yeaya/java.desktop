@@ -1,16 +1,6 @@
 #include <sun/java2d/marlin/MarlinProperties.h>
 
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Float.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <sun/java2d/marlin/FloatMath.h>
@@ -252,8 +242,7 @@ int32_t MarlinProperties::getInteger($String* key, int32_t def, int32_t min, int
 	if (property != nullptr) {
 		try {
 			value = $nc($($Integer::decode(property)))->intValue();
-		} catch ($NumberFormatException&) {
-			$var($NumberFormatException, e, $catch());
+		} catch ($NumberFormatException& e) {
 			$MarlinUtils::logInfo($$str({"Invalid integer value for "_s, key, " = "_s, property}));
 		}
 	}
@@ -278,8 +267,7 @@ double MarlinProperties::getDouble($String* key, double def, double min, double 
 	if (property != nullptr) {
 		try {
 			value = $Double::parseDouble(property);
-		} catch ($NumberFormatException&) {
-			$var($NumberFormatException, nfe, $catch());
+		} catch ($NumberFormatException& nfe) {
 			$MarlinUtils::logInfo($$str({"Invalid value for "_s, key, " = "_s, property, " !"_s}));
 		}
 	}

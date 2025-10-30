@@ -4,24 +4,10 @@
 #include <java/awt/Toolkit.h>
 #include <java/awt/Window.h>
 #include <java/io/File.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URI.h>
 #include <java/net/URISyntaxException.h>
 #include <java/util/ArrayList.h>
@@ -738,8 +724,7 @@ $MediaPrintableAreaArray* Win32PrintService::getMediaPrintables($MediaSizeName* 
 					try {
 						$assign(printableArea, $new($MediaPrintableArea, prnArea->get(0), prnArea->get(1), prnArea->get(2), prnArea->get(3), $MediaPrintableArea::INCH));
 						$nc(this->mpaMap)->put(mediaName, printableArea);
-					} catch ($IllegalArgumentException&) {
-						$catch();
+					} catch ($IllegalArgumentException& e) {
 					}
 				} else {
 					$var($MediaSize, ms, $MediaSize::getMediaSizeForName(mediaName));
@@ -748,8 +733,7 @@ $MediaPrintableAreaArray* Win32PrintService::getMediaPrintables($MediaSizeName* 
 							float var$0 = ms->getX($MediaSize::INCH);
 							$assign(printableArea, $new($MediaPrintableArea, (float)0, (float)0, var$0, ms->getY($MediaSize::INCH), $MediaPrintableArea::INCH));
 							$nc(this->mpaMap)->put(mediaName, printableArea);
-						} catch ($IllegalArgumentException&) {
-							$catch();
+						} catch ($IllegalArgumentException& e) {
 						}
 					}
 				}
@@ -890,8 +874,7 @@ $MediaSizeArray* Win32PrintService::getMediaSizes($ArrayList* idList, $ints* med
 				$assign(ms, $new($MediaSize, wid, ht, $MediaSize::MM, static_cast<$MediaSizeName*>(wms)));
 				msList->add(ms);
 				$nc(dmPaperNameList)->add($nc(winMediaNames)->get(i));
-			} catch ($IllegalArgumentException&) {
-				$var($IllegalArgumentException, e, $catch());
+			} catch ($IllegalArgumentException& e) {
 				if (nMedia == $nc(media)->length) {
 					$var($Integer, remObj, $Integer::valueOf(media->get(i)));
 					$nc(idList)->remove(idList->indexOf(remObj));
@@ -1049,8 +1032,7 @@ $PrinterResolutionArray* Win32PrintService::getPrintResolutions() {
 				try {
 					$assign(pr, $new($PrinterResolution, prnRes->get(i * 2), prnRes->get(i * 2 + 1), $PrinterResolution::DPI));
 					arrList->add(pr);
-				} catch ($IllegalArgumentException&) {
-					$catch();
+				} catch ($IllegalArgumentException& e) {
 				}
 			}
 			$set(this, printRes, $fcast($PrinterResolutionArray, arrList->toArray($$new($PrinterResolutionArray, arrList->size()))));
@@ -1389,8 +1371,7 @@ $Object* Win32PrintService::getDefaultAttributeValue($Class* category) {
 									$var($MediaPrintableArea, printableArea, nullptr);
 									try {
 										$assign(printableArea, $new($MediaPrintableArea, prnArea->get(0), prnArea->get(1), prnArea->get(2), prnArea->get(3), $MediaPrintableArea::INCH));
-									} catch ($IllegalArgumentException&) {
-										$catch();
+									} catch ($IllegalArgumentException& e) {
 									}
 									return $of(printableArea);
 								}
@@ -1404,12 +1385,10 @@ $Object* Win32PrintService::getDefaultAttributeValue($Class* category) {
 									if (category == $Destination::class$) {
 										try {
 											return $of($new($Destination, $(($$new($File, "out.prn"_s))->toURI())));
-										} catch ($SecurityException&) {
-											$var($SecurityException, se, $catch());
+										} catch ($SecurityException& se) {
 											try {
 												return $of($new($Destination, $$new($URI, "file:out.prn"_s)));
-											} catch ($URISyntaxException&) {
-												$var($URISyntaxException, e, $catch());
+											} catch ($URISyntaxException& e) {
 												return $of(nullptr);
 											}
 										}
@@ -1485,8 +1464,7 @@ $Object* Win32PrintService::getDefaultAttributeValue($Class* category) {
 															$var($String, userName, ""_s);
 															try {
 																$assign(userName, $System::getProperty("user.name"_s, ""_s));
-															} catch ($SecurityException&) {
-																$catch();
+															} catch ($SecurityException& se) {
 															}
 															return $of($new($RequestingUserName, userName, nullptr));
 														} else {
@@ -1594,8 +1572,7 @@ $Object* Win32PrintService::getSupportedAttributeValues($Class* category, $DocFl
 			$var($String, userName, ""_s);
 			try {
 				$assign(userName, $System::getProperty("user.name"_s, ""_s));
-			} catch ($SecurityException&) {
-				$catch();
+			} catch ($SecurityException& se) {
 			}
 			return $of($new($RequestingUserName, userName, nullptr));
 		} else {
@@ -1648,12 +1625,10 @@ $Object* Win32PrintService::getSupportedAttributeValues($Class* category, $DocFl
 					if (category == $Destination::class$) {
 						try {
 							return $of($new($Destination, $(($$new($File, "out.prn"_s))->toURI())));
-						} catch ($SecurityException&) {
-							$var($SecurityException, se, $catch());
+						} catch ($SecurityException& se) {
 							try {
 								return $of($new($Destination, $$new($URI, "file:out.prn"_s)));
-							} catch ($URISyntaxException&) {
-								$var($URISyntaxException, e, $catch());
+							} catch ($URISyntaxException& e) {
 								return $of(nullptr);
 							}
 						}
@@ -2017,8 +1992,7 @@ $AttributeSet* Win32PrintService::getUnsupportedAttributes($DocFlavor* flavor, $
 			} else if (!isAttributeValueSupported(attr, flavor, attributes)) {
 				unsupp->add(attr);
 			}
-		} catch ($ClassCastException&) {
-			$catch();
+		} catch ($ClassCastException& e) {
 		}
 	}
 	if (unsupp->isEmpty()) {
@@ -2160,10 +2134,10 @@ $String* Win32PrintService::getPrinterPort($String* printerName) {
 
 void clinit$Win32PrintService($Class* class$) {
 	$assignStatic(Win32PrintService::predefMedia, $Win32MediaSize::getPredefMedia());
-		$init($DocFlavor$BYTE_ARRAY);
-		$init($DocFlavor$INPUT_STREAM);
-		$init($DocFlavor$URL);
-		$init($DocFlavor$SERVICE_FORMATTED);
+	$init($DocFlavor$BYTE_ARRAY);
+	$init($DocFlavor$INPUT_STREAM);
+	$init($DocFlavor$URL);
+	$init($DocFlavor$SERVICE_FORMATTED);
 	$assignStatic(Win32PrintService::supportedFlavors, $new($DocFlavorArray, {
 		static_cast<$DocFlavor*>($DocFlavor$BYTE_ARRAY::GIF),
 		static_cast<$DocFlavor*>($DocFlavor$INPUT_STREAM::GIF),
@@ -2180,28 +2154,28 @@ void clinit$Win32PrintService($Class* class$) {
 		static_cast<$DocFlavor*>($DocFlavor$URL::AUTOSENSE),
 		static_cast<$DocFlavor*>($DocFlavor$INPUT_STREAM::AUTOSENSE)
 	}));
-		$load($PrinterName);
-		$load($PrinterIsAcceptingJobs);
-		$load($QueuedJobCount);
-		$load($ColorSupported);
+	$load($PrinterName);
+	$load($PrinterIsAcceptingJobs);
+	$load($QueuedJobCount);
+	$load($ColorSupported);
 	$assignStatic(Win32PrintService::serviceAttrCats, $new($ClassArray, {
 		$PrinterName::class$,
 		$PrinterIsAcceptingJobs::class$,
 		$QueuedJobCount::class$,
 		$ColorSupported::class$
 	}));
-		$load($JobName);
-		$load($RequestingUserName);
-		$load($Copies);
-		$load($Destination);
-		$load($OrientationRequested);
-		$load($PageRanges);
-		$load($Media);
-		$load($MediaPrintableArea);
-		$load($Fidelity);
-		$load($SheetCollate);
-		$load($SunAlternateMedia);
-		$load($Chromaticity);
+	$load($JobName);
+	$load($RequestingUserName);
+	$load($Copies);
+	$load($Destination);
+	$load($OrientationRequested);
+	$load($PageRanges);
+	$load($Media);
+	$load($MediaPrintableArea);
+	$load($Fidelity);
+	$load($SheetCollate);
+	$load($SunAlternateMedia);
+	$load($Chromaticity);
 	$assignStatic(Win32PrintService::otherAttrCats, $new($ClassArray, {
 		$JobName::class$,
 		$RequestingUserName::class$,
@@ -2216,7 +2190,7 @@ void clinit$Win32PrintService($Class* class$) {
 		$SunAlternateMedia::class$,
 		$Chromaticity::class$
 	}));
-		$init($MediaSizeName);
+	$init($MediaSizeName);
 	$assignStatic(Win32PrintService::dmPaperToPrintService, $new($MediaSizeNameArray, {
 		$MediaSizeName::NA_LETTER,
 		$MediaSizeName::NA_LETTER,
@@ -2263,8 +2237,8 @@ void clinit$Win32PrintService($Class* class$) {
 		$MediaSizeName::JAPANESE_POSTCARD,
 		$MediaSizeName::NA_9X11_ENVELOPE
 	}));
-		$init($MediaTray);
-		$init($Win32MediaTray);
+	$init($MediaTray);
+	$init($Win32MediaTray);
 	$assignStatic(Win32PrintService::dmPaperBinToPrintService, $new($MediaTrayArray, {
 		$MediaTray::TOP,
 		$MediaTray::BOTTOM,

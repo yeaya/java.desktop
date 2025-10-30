@@ -1,13 +1,5 @@
 #include <javax/swing/text/html/HTMLDocument$HTMLReader$FormAction.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/HashMap.h>
 #include <javax/swing/ButtonGroup.h>
 #include <javax/swing/DefaultButtonModel.h>
@@ -228,8 +220,7 @@ void HTMLDocument$HTMLReader$FormAction::setModel($String* type, $MutableAttribu
 			$var($String, value, $cast($String, $nc(attr)->getAttribute($HTML$Attribute::VALUE)));
 			try {
 				$nc(doc)->insertString(0, value, nullptr);
-			} catch ($BadLocationException&) {
-				$catch();
+			} catch ($BadLocationException& e) {
 			}
 			$init($StyleConstants);
 			attr->addAttribute($StyleConstants::ModelAttribute, doc);

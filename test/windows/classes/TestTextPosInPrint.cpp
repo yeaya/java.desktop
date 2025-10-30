@@ -19,32 +19,14 @@
 #include <java/awt/print/Printable.h>
 #include <java/awt/print/PrinterException.h>
 #include <java/awt/print/PrinterJob.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <java/util/concurrent/TimeUnit.h>
 #include <javax/print/PrintService.h>
@@ -535,7 +517,6 @@ void TestTextPosInPrint::main($StringArray* args) {
 	$useLocalCurrentObjectStackCache();
 	$assignStatic(TestTextPosInPrint::job, $PrinterJob::getPrinterJob());
 	if ($nc(TestTextPosInPrint::job)->getPrintService() == nullptr) {
-		$init($System);
 		$nc($System::out)->println("This test requires printers to be installed. Exiting."_s);
 		return;
 	}
@@ -556,12 +537,11 @@ void TestTextPosInPrint::main($StringArray* args) {
 						$throwNew($RuntimeException, "Test failed."_s);
 					}
 				}
-			} catch ($InterruptedException&) {
-				$var($InterruptedException, ie, $catch());
+			} catch ($InterruptedException& ie) {
 				$throwNew($RuntimeException, static_cast<$Throwable*>(ie));
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			TestTextPosInPrint::testFinished = true;
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestTextPosInPrint$$Lambda$lambda$main$1$1)));
@@ -598,8 +578,7 @@ void TestTextPosInPrint::doTest() {
 	if ($nc(TestTextPosInPrint::job)->printDialog()) {
 		try {
 			$nc(TestTextPosInPrint::job)->print();
-		} catch ($PrinterException&) {
-			$var($PrinterException, pe, $catch());
+		} catch ($PrinterException& pe) {
 			$throwNew($RuntimeException, static_cast<$Throwable*>(pe));
 		}
 	}
@@ -706,12 +685,10 @@ void TestTextPosInPrint::lambda$createAndShowTestDialog$5($JButton* testButton, 
 
 void TestTextPosInPrint::lambda$createAndShowTestDialog$4($JButton* passButton, $JButton* failButton, $JDialog* dialog) {
 	$init(TestTextPosInPrint);
-	$useLocalCurrentObjectStackCache();
 	try {
 		doTest();
 		$SwingUtilities::invokeLater(static_cast<$Runnable*>($$new(TestTextPosInPrint$$Lambda$lambda$createAndShowTestDialog$3$7, passButton, failButton)));
-	} catch ($Throwable&) {
-		$var($Throwable, t, $catch());
+	} catch ($Throwable& t) {
 		t->printStackTrace();
 		$nc(dialog)->dispose();
 		fail("Exception occurred in a thread executing the test."_s);

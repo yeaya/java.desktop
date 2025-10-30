@@ -1,15 +1,5 @@
 #include <javax/swing/plaf/basic/BasicScrollPaneUI$ViewportChangeHandler.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/event/ChangeEvent.h>
 #include <javax/swing/plaf/basic/BasicScrollPaneUI$Handler.h>
 #include <javax/swing/plaf/basic/BasicScrollPaneUI.h>
@@ -35,11 +25,11 @@ $NamedAttribute BasicScrollPaneUI$ViewportChangeHandler_Attribute_var$0[] = {
 	{"since", 's', "17"},
 	{}
 };
+
 $CompoundAttribute _BasicScrollPaneUI$ViewportChangeHandler_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", BasicScrollPaneUI$ViewportChangeHandler_Attribute_var$0},
 	{}
 };
-
 
 $FieldInfo _BasicScrollPaneUI$ViewportChangeHandler_FieldInfo_[] = {
 	{"this$0", "Ljavax/swing/plaf/basic/BasicScrollPaneUI;", nullptr, $FINAL | $SYNTHETIC, $field(BasicScrollPaneUI$ViewportChangeHandler, this$0)},

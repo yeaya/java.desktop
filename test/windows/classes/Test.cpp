@@ -1,14 +1,5 @@
 #include <Test.h>
 
-#include <java/lang/Attribute.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $Attribute = ::java::lang::Attribute;
@@ -32,14 +23,16 @@ $NamedAttribute Test_Attribute_var$1[] = {
 	{"value", '[', Test_Attribute_var$2},
 	{}
 };
+
 $CompoundAttribute _Test_Annotations_[] = {
 	{"Ljava/lang/annotation/Retention;", Test_Attribute_var$0},
 	{"Ljava/lang/annotation/Target;", Test_Attribute_var$1},
 	{}
 };
-$Attribute _Test_DefaultValue_onEDT0 = {
-'Z', "true"};
 
+$Attribute _Test_DefaultValue_onEDT0 = {
+	'Z', "true"
+};
 
 $MethodInfo _Test_MethodInfo_[] = {
 	{"onEDT", "()Z", nullptr, $PUBLIC | $ABSTRACT, nullptr, nullptr, &_Test_DefaultValue_onEDT0},

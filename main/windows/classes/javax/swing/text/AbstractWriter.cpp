@@ -1,17 +1,7 @@
 #include <javax/swing/text/AbstractWriter.h>
 
 #include <java/io/Writer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Enumeration.h>
 #include <javax/swing/text/AttributeSet.h>
 #include <javax/swing/text/DefaultEditorKit.h>

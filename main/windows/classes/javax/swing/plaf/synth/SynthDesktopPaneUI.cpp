@@ -9,16 +9,6 @@
 #include <java/awt/event/ContainerListener.h>
 #include <java/beans/PropertyChangeEvent.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/DefaultDesktopManager.h>
 #include <javax/swing/DesktopManager.h>
 #include <javax/swing/JComponent.h>
@@ -274,7 +264,7 @@ void SynthDesktopPaneUI::uninstallDefaults() {
 
 void SynthDesktopPaneUI::installDesktopManager() {
 	if ($UIManager::getBoolean("InternalFrame.useTaskBar"_s)) {
-		$set(this, desktopManager, ($assignField(this, oldDesktopManager, $nc(this->desktop)->getDesktopManager())));
+		$set(this, desktopManager, ($set(this, oldDesktopManager, $nc(this->desktop)->getDesktopManager())));
 		if (!($instanceOf($SynthDesktopPaneUI$SynthDesktopManager, this->desktopManager))) {
 			$set(this, desktopManager, $new($SynthDesktopPaneUI$SynthDesktopManager, this));
 			$nc(this->desktop)->setDesktopManager(this->desktopManager);

@@ -2,18 +2,7 @@
 
 #include <com/sun/imageio/plugins/gif/GIFMetadata.h>
 #include <java/io/UnsupportedEncodingException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Iterator.h>
 #include <java/util/List.h>
 #include <javax/imageio/metadata/IIOMetadata.h>
@@ -156,8 +145,7 @@ $Node* GIFImageMetadata::getAsTree($String* formatName) {
 $String* GIFImageMetadata::toISO8859($bytes* data) {
 	try {
 		return $new($String, data, "ISO-8859-1"_s);
-	} catch ($UnsupportedEncodingException&) {
-		$var($UnsupportedEncodingException, e, $catch());
+	} catch ($UnsupportedEncodingException& e) {
 		return ""_s;
 	}
 	$shouldNotReachHere();
@@ -328,8 +316,7 @@ $IIOMetadataNode* GIFImageMetadata::getStandardTextNode() {
 		$var($String, s, nullptr);
 		try {
 			$assign(s, $new($String, comment, "ISO-8859-1"_s));
-		} catch ($UnsupportedEncodingException&) {
-			$var($UnsupportedEncodingException, e, $catch());
+		} catch ($UnsupportedEncodingException& e) {
 			$throwNew($RuntimeException, "Encoding ISO-8859-1 unknown!"_s);
 		}
 		$assign(node, $new($IIOMetadataNode, "TextEntry"_s));

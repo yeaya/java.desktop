@@ -20,18 +20,6 @@
 #include <java/awt/peer/ContainerPeer.h>
 #include <java/awt/peer/FramePeer.h>
 #include <java/awt/peer/WindowPeer.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/List.h>
 #include <sun/awt/AWTAccessor$ComponentAccessor.h>
 #include <sun/awt/AWTAccessor.h>
@@ -196,8 +184,7 @@ void LightweightFrame::addNotify() {
 			$var($SunToolkit, stk, $cast($SunToolkit, $Toolkit::getDefaultToolkit()));
 			try {
 				setPeer($($nc(stk)->createLightweightFrame(this)));
-			} catch ($Exception&) {
-				$var($Exception, e, $catch());
+			} catch ($Exception& e) {
 				$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 			}
 		}

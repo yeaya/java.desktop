@@ -14,18 +14,6 @@
 #include <java/awt/event/MouseMotionListener.h>
 #include <java/awt/event/WindowFocusListener.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/Action.h>
 #include <javax/swing/ActionMap.h>
 #include <javax/swing/ComponentInputMap.h>
@@ -299,7 +287,7 @@ void BasicInternalFrameUI::installDefaults() {
 			contentPane->setBackground(nullptr);
 		}
 	}
-	$nc(this->frame)->setLayout($assignField(this, internalFrameLayout, createLayoutManager()));
+	$nc(this->frame)->setLayout($set(this, internalFrameLayout, createLayoutManager()));
 	$nc(this->frame)->setBackground($($nc($($UIManager::getLookAndFeelDefaults()))->getColor("control"_s)));
 	$LookAndFeel::installBorder(this->frame, "InternalFrame.border"_s);
 }

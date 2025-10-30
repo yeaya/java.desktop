@@ -1,18 +1,6 @@
 #include <sun/awt/PlatformFont.h>
 
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/ByteBuffer.h>
 #include <java/nio/CharBuffer.h>
 #include <java/nio/charset/CharsetEncoder.h>
@@ -302,9 +290,7 @@ $ObjectArray* PlatformFont::makeConvertedMultiFontChars($chars* data, int32_t st
 				$set(theChar, fontDescriptor, currentFontDescriptor);
 				theChar->uniChar = data->get(stringIndex);
 				$nc($(getFontCache()))->set(cacheIndex, theChar);
-			} catch ($Exception&) {
-				$var($Exception, e, $catch());
-				$init($System);
+			} catch ($Exception& e) {
 				$nc($System::err)->println($of(e));
 				e->printStackTrace();
 				return nullptr;

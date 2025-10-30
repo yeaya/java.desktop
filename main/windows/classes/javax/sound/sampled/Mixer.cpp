@@ -1,12 +1,5 @@
 #include <javax/sound/sampled/Mixer.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/Line$Info.h>
 #include <javax/sound/sampled/Line.h>
 #include <javax/sound/sampled/Mixer$Info.h>

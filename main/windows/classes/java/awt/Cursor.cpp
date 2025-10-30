@@ -9,29 +9,12 @@
 #include <java/awt/Toolkit.h>
 #include <java/io/InputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/security/PrivilegedExceptionAction.h>
@@ -289,9 +272,7 @@ $Object* allocate$Cursor($Class* clazz) {
 	return $of($alloc(Cursor));
 }
 
-
 $CursorArray* Cursor::predefined = nullptr;
-
 $CursorArray* Cursor::predefinedPrivate = nullptr;
 $StringArray2* Cursor::cursorProperties = nullptr;
 $Hashtable* Cursor::systemCustomCursors = nullptr;
@@ -377,8 +358,7 @@ Cursor* Cursor::getSystemCustomCursor($String* name) {
 		try {
 			int32_t var$0 = $Integer::parseInt($(st->nextToken()));
 			$assign(hotPoint, $new($Point, var$0, $Integer::parseInt($(st->nextToken()))));
-		} catch ($NumberFormatException&) {
-			$var($NumberFormatException, nfe, $catch());
+		} catch ($NumberFormatException& nfe) {
 			$throwNew($AWTException, $$str({"failed to parse hotspot property for cursor: "_s, name}));
 		}
 		$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());
@@ -392,20 +372,18 @@ Cursor* Cursor::getSystemCustomCursor($String* name) {
 					try {
 						$var($Image, image, $nc(toolkit)->createImage($($nc(in)->readAllBytes())));
 						$assign(cursor, toolkit->createCustomCursor(image, hotPoint, localized));
-					} catch ($Throwable&) {
-						$var($Throwable, t$, $catch());
+					} catch ($Throwable& t$) {
 						if (twrVar0$ != nullptr) {
 							try {
 								twrVar0$->close();
-							} catch ($Throwable&) {
-								$var($Throwable, x2, $catch());
+							} catch ($Throwable& x2) {
 								t$->addSuppressed(x2);
 							}
 						}
 						$throw(t$);
 					}
-				} catch ($Throwable&) {
-					$assign(var$1, $catch());
+				} catch ($Throwable& var$2) {
+					$assign(var$1, var$2);
 				} /*finally*/ {
 					if (twrVar0$ != nullptr) {
 						twrVar0$->close();
@@ -415,12 +393,11 @@ Cursor* Cursor::getSystemCustomCursor($String* name) {
 					$throw(var$1);
 				}
 			}
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
-			$var($String, var$4, $$str({"Exception: "_s, $of(e)->getClass(), " "_s}));
-			$var($String, var$3, $$concat(var$4, $(e->getMessage())));
-			$var($String, var$2, $$concat(var$3, " occurred while creating cursor "));
-			$throwNew($AWTException, $$concat(var$2, name));
+		} catch ($Exception& e) {
+			$var($String, var$5, $$str({"Exception: "_s, $of(e)->getClass(), " "_s}));
+			$var($String, var$4, $$concat(var$5, $(e->getMessage())));
+			$var($String, var$3, $$concat(var$4, " occurred while creating cursor "));
+			$throwNew($AWTException, $$concat(var$3, name));
 		}
 		if (cursor == nullptr) {
 			$init($PlatformLogger$Level);
@@ -479,8 +456,7 @@ void Cursor::loadSystemCustomCursorProperties() {
 		$assignStatic(Cursor::systemCustomCursorProperties, $new($Properties));
 		try {
 			$AccessController::doPrivileged(static_cast<$PrivilegedExceptionAction*>($$new(Cursor$$Lambda$lambda$loadSystemCustomCursorProperties$1$1)));
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$assignStatic(Cursor::systemCustomCursorProperties, nullptr);
 			$var($String, var$2, $$str({"Exception: "_s, $of(e)->getClass(), " "_s}));
 			$var($String, var$1, $$concat(var$2, $(e->getMessage())));
@@ -508,20 +484,18 @@ $Object* Cursor::lambda$loadSystemCustomCursorProperties$1() {
 			try {
 				try {
 					$nc(Cursor::systemCustomCursorProperties)->load(is);
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					if (is != nullptr) {
 						try {
 							is->close();
-						} catch ($Throwable&) {
-							$var($Throwable, x2, $catch());
+						} catch ($Throwable& x2) {
 							t$->addSuppressed(x2);
 						}
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				if (is != nullptr) {
 					is->close();

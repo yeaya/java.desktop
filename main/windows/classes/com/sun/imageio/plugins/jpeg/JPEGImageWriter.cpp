@@ -36,24 +36,8 @@
 #include <java/awt/image/RenderedImage.h>
 #include <java/awt/image/SampleModel.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/AbstractList.h>
@@ -423,8 +407,8 @@ void JPEGImageWriter::setOutput(Object$* output) {
 			resetInternalState();
 			$set(this, ios, $cast($ImageOutputStream, output));
 			setDest(this->structPointer);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			clearThreadLock();
 		}
@@ -449,8 +433,8 @@ $IIOMetadata* JPEGImageWriter::getDefaultStreamMetadata($ImageWriteParam* param)
 			$assign(var$2, $new($JPEGMetadata, param, this));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			clearThreadLock();
 		}
@@ -475,8 +459,8 @@ $IIOMetadata* JPEGImageWriter::getDefaultImageMetadata($ImageTypeSpecifier* imag
 			$assign(var$2, $new($JPEGMetadata, imageType, param, this));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			clearThreadLock();
 		}
@@ -511,8 +495,8 @@ $IIOMetadata* JPEGImageWriter::convertImageMetadata($IIOMetadata* inData, $Image
 			$assign(var$2, convertImageMetadataOnThread(inData, imageType, param));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			clearThreadLock();
 		}
@@ -544,8 +528,7 @@ $IIOMetadata* JPEGImageWriter::convertImageMetadataOnThread($IIOMetadata* inData
 			$var($JPEGMetadata, jpegData, $new($JPEGMetadata, imageType, param, this));
 			try {
 				jpegData->setFromTree(formatName, tree);
-			} catch ($IIOInvalidTreeException&) {
-				$var($IIOInvalidTreeException, e, $catch());
+			} catch ($IIOInvalidTreeException& e) {
 				return nullptr;
 			}
 			return jpegData;
@@ -601,8 +584,8 @@ void JPEGImageWriter::write($IIOMetadata* streamMetadata, $IIOImage* image, $Ima
 		try {
 			$nc(this->cbLock)->check();
 			writeOnThread(streamMetadata, image, param);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			clearThreadLock();
 		}
@@ -722,7 +705,6 @@ void JPEGImageWriter::writeOnThread($IIOMetadata* streamMetadata, $IIOImage* ima
 		}
 	}
 	if (this->debug) {
-		$init($System);
 		$nc($System::out)->println($$str({"numSrcBands is "_s, $$str(numSrcBands)}));
 		$nc($System::out)->println($$str({"numBandsUsed is "_s, $$str(numBandsUsed)}));
 		$nc($System::out)->println($$str({"usingBandSubset is "_s, $$str(usingBandSubset)}));
@@ -817,7 +799,6 @@ void JPEGImageWriter::writeOnThread($IIOMetadata* streamMetadata, $IIOImage* ima
 		if ($instanceOf($JPEGMetadata, mdata)) {
 			$set(this, metadata, $cast($JPEGMetadata, mdata));
 			if (this->debug) {
-				$init($System);
 				$nc($System::out)->println("We have metadata, and it\'s JPEG metadata"_s);
 			}
 		} else if (!rasterOnly) {
@@ -1098,8 +1079,8 @@ void JPEGImageWriter::writeOnThread($IIOMetadata* streamMetadata, $IIOImage* ima
 		$var($Throwable, var$11, nullptr);
 		try {
 			processImageStarted(this->currentImage);
-		} catch ($Throwable&) {
-			$assign(var$11, $catch());
+		} catch ($Throwable& var$12) {
+			$assign(var$11, var$12);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -1109,14 +1090,13 @@ void JPEGImageWriter::writeOnThread($IIOMetadata* streamMetadata, $IIOImage* ima
 	}
 	bool aborted = false;
 	if (this->debug) {
-		$init($System);
 		$nc($System::out)->println($$str({"inCsType: "_s, $$str(inCsType)}));
 		$nc($System::out)->println($$str({"outCsType: "_s, $$str(outCsType)}));
 	}
 	aborted = writeImage(this->structPointer, $(buffer->getData()), inCsType, outCsType, numBandsUsed, bandSizes, this->sourceWidth, destWidth, destHeight, periodX, periodY, qTables, writeDQT, DCHuffmanTables, ACHuffmanTables, writeDHT, optimizeHuffman, (progressiveMode != $ImageWriteParam::MODE_DISABLED), this->numScans, scans, componentIds, HsamplingFactors, VsamplingFactors, QtableSelectors, haveMetadata, restartInterval);
 	$nc(this->cbLock)->lock();
 	{
-		$var($Throwable, var$12, nullptr);
+		$var($Throwable, var$13, nullptr);
 		try {
 			if (aborted) {
 				processWriteAborted();
@@ -1124,13 +1104,13 @@ void JPEGImageWriter::writeOnThread($IIOMetadata* streamMetadata, $IIOImage* ima
 				processImageComplete();
 			}
 			$nc(this->ios)->flush();
-		} catch ($Throwable&) {
-			$assign(var$12, $catch());
+		} catch ($Throwable& var$14) {
+			$assign(var$13, var$14);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
-		if (var$12 != nullptr) {
-			$throw(var$12);
+		if (var$13 != nullptr) {
+			$throw(var$13);
 		}
 	}
 	++this->currentImage;
@@ -1147,8 +1127,8 @@ void JPEGImageWriter::prepareWriteSequence($IIOMetadata* streamMetadata) {
 		try {
 			$nc(this->cbLock)->check();
 			prepareWriteSequenceOnThread(streamMetadata);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			clearThreadLock();
 		}
@@ -1177,7 +1157,6 @@ void JPEGImageWriter::prepareWriteSequenceOnThread($IIOMetadata* streamMetadata)
 			}
 			$set(this, streamQTables, collectQTablesFromMetadata(jmeta));
 			if (this->debug) {
-				$init($System);
 				$nc($System::out)->println($$str({"after collecting from stream metadata, streamQTables.length is "_s, $$str($nc(this->streamQTables)->length)}));
 			}
 			if (this->streamQTables == nullptr) {
@@ -1209,8 +1188,8 @@ void JPEGImageWriter::writeToSequence($IIOImage* image, $ImageWriteParam* param)
 				$throwNew($IllegalStateException, "sequencePrepared not called!"_s);
 			}
 			write(nullptr, image, param);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			clearThreadLock();
 		}
@@ -1230,8 +1209,8 @@ void JPEGImageWriter::endWriteSequence() {
 				$throwNew($IllegalStateException, "sequencePrepared not called!"_s);
 			}
 			this->sequencePrepared = false;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			clearThreadLock();
 		}
@@ -1249,8 +1228,8 @@ void JPEGImageWriter::abort() {
 			try {
 				$ImageWriter::abort();
 				abortWrite(this->structPointer);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				clearThreadLock();
 			}
@@ -1273,8 +1252,8 @@ void JPEGImageWriter::clearAbortRequest() {
 					resetWriter(this->structPointer);
 					setDest(this->structPointer);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				clearThreadLock();
 			}
@@ -1302,8 +1281,8 @@ void JPEGImageWriter::reset() {
 		try {
 			$nc(this->cbLock)->check();
 			$ImageWriter::reset();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			clearThreadLock();
 		}
@@ -1323,8 +1302,8 @@ void JPEGImageWriter::dispose() {
 				$nc(this->disposerRecord)->dispose();
 				this->structPointer = 0;
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			clearThreadLock();
 		}
@@ -1344,8 +1323,8 @@ void JPEGImageWriter::warningOccurred(int32_t code) {
 				$throwNew($InternalError, "Invalid warning index"_s);
 			}
 			processWarningOccurred(this->currentImage, "com.sun.imageio.plugins.jpeg.JPEGImageWriterResources"_s, $($Integer::toString(code)));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -1361,8 +1340,8 @@ void JPEGImageWriter::warningWithMessage($String* msg) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			processWarningOccurred(this->currentImage, msg);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -1378,8 +1357,8 @@ void JPEGImageWriter::thumbnailStarted(int32_t thumbnailIndex) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			processThumbnailStarted(this->currentImage, thumbnailIndex);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -1395,8 +1374,8 @@ void JPEGImageWriter::thumbnailProgress(float percentageDone) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			processThumbnailProgress(percentageDone);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -1412,8 +1391,8 @@ void JPEGImageWriter::thumbnailComplete() {
 		$var($Throwable, var$0, nullptr);
 		try {
 			processThumbnailComplete();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -1745,7 +1724,6 @@ void JPEGImageWriter::grabPixels(int32_t y) {
 	}
 	if (this->convertTosRGB) {
 		if (this->debug) {
-			$init($System);
 			$nc($System::out)->println("Converting to sRGB"_s);
 		}
 		$set(this, converted, $nc(this->convertOp)->filter(sourceLine, this->converted));
@@ -1775,8 +1753,8 @@ void JPEGImageWriter::grabPixels(int32_t y) {
 			$var($Throwable, var$9, nullptr);
 			try {
 				processImageProgress((float)y / (float)this->sourceHeight * 100.0f);
-			} catch ($Throwable&) {
-				$assign(var$9, $catch());
+			} catch ($Throwable& var$10) {
+				$assign(var$9, var$10);
 			} /*finally*/ {
 				$nc(this->cbLock)->unlock();
 			}
@@ -1812,8 +1790,8 @@ void JPEGImageWriter::writeOutputData($bytes* data, int32_t offset, int32_t len)
 		$var($Throwable, var$0, nullptr);
 		try {
 			$nc(this->ios)->write(data, offset, len);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}

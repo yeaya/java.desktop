@@ -5,16 +5,7 @@
 #include <java/awt/Transparency.h>
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/geom/Path2D$Float.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/InvalidPipeException.h>
 #include <sun/java2d/SunGraphics2D.h>
 #include <sun/java2d/SurfaceData.h>
@@ -136,8 +127,7 @@ void OGLRenderer::validateContext($SunGraphics2D* sg2d) {
 	$var($OGLSurfaceData, dstData, nullptr);
 	try {
 		$assign(dstData, $cast($OGLSurfaceData, $nc(sg2d)->surfaceData));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 	$OGLContext::validateContext(dstData, dstData, $($nc(sg2d)->getCompClip()), sg2d->composite, nullptr, sg2d->paint, sg2d, ctxflags);
@@ -149,8 +139,7 @@ void OGLRenderer::validateContextAA($SunGraphics2D* sg2d) {
 	$var($OGLSurfaceData, dstData, nullptr);
 	try {
 		$assign(dstData, $cast($OGLSurfaceData, $nc(sg2d)->surfaceData));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 	$OGLContext::validateContext(dstData, dstData, $($nc(sg2d)->getCompClip()), sg2d->composite, nullptr, sg2d->paint, sg2d, ctxflags);
@@ -166,8 +155,7 @@ void OGLRenderer::copyArea($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w
 			$var($OGLSurfaceData, dstData, nullptr);
 			try {
 				$assign(dstData, $cast($OGLSurfaceData, $nc(sg2d)->surfaceData));
-			} catch ($ClassCastException&) {
-				$var($ClassCastException, e, $catch());
+			} catch ($ClassCastException& e) {
 				$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 			}
 			$OGLContext::validateContext(dstData, dstData, $($nc(sg2d)->getCompClip()), sg2d->composite, nullptr, nullptr, nullptr, ctxflags);
@@ -175,8 +163,8 @@ void OGLRenderer::copyArea($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w
 			$nc(this->buf)->putInt(30);
 			$nc($($nc($($nc($($nc(this->buf)->putInt(x)))->putInt(y)))->putInt(w)))->putInt(h);
 			$nc($($nc(this->buf)->putInt(dx)))->putInt(dy);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->rq)->unlock();
 		}

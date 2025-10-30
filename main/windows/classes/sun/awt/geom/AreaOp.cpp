@@ -1,17 +1,6 @@
 #include <sun/awt/geom/AreaOp.h>
 
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <java/util/Comparator.h>
 #include <java/util/Enumeration.h>
@@ -260,7 +249,6 @@ $Vector* AreaOp::pruneEdges($Vector* edges) {
 			}
 		}
 		if (getState() != AreaOp::RSTAG_OUTSIDE) {
-			$init($System);
 			$nc($System::out)->println("Still inside at end of active edge list!"_s);
 			$nc($System::out)->println($$str({"num curves = "_s, $$str((right - left))}));
 			$nc($System::out)->println($$str({"num links = "_s, $$str(links->size())}));
@@ -410,7 +398,6 @@ void AreaOp::resolveLinks($Vector* subcurves, $Vector* chains, $Vector* links) {
 		}
 	}
 	if (((int32_t)(chains->size() & (uint32_t)1)) != 0) {
-		$init($System);
 		$nc($System::out)->println("Odd number of chains!"_s);
 	}
 }

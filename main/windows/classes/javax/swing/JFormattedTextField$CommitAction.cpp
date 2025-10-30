@@ -1,13 +1,6 @@
 #include <javax/swing/JFormattedTextField$CommitAction.h>
 
 #include <java/awt/event/ActionEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/ParseException.h>
 #include <javax/swing/JFormattedTextField.h>
 #include <javax/swing/JTextField$NotifyAction.h>
@@ -66,13 +59,11 @@ void JFormattedTextField$CommitAction::init$() {
 }
 
 void JFormattedTextField$CommitAction::actionPerformed($ActionEvent* e) {
-	$useLocalCurrentObjectStackCache();
 	$var($JTextComponent, target, getFocusedComponent());
 	if ($instanceOf($JFormattedTextField, target)) {
 		try {
 			$nc(($cast($JFormattedTextField, target)))->commitEdit();
-		} catch ($ParseException&) {
-			$var($ParseException, pe, $catch());
+		} catch ($ParseException& pe) {
 			$nc(($cast($JFormattedTextField, target)))->invalidEdit();
 			return;
 		}

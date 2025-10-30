@@ -38,28 +38,11 @@
 #include <java/beans/PropertyVetoException.h>
 #include <java/beans/VetoableChangeListener.h>
 #include <java/beans/VetoableChangeSupport.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/BasicPermission.h>
 #include <java/security/Permission.h>
@@ -403,21 +386,13 @@ void KeyboardFocusManager::finalize() {
 bool KeyboardFocusManager::$assertionsDisabled = false;
 $PlatformLogger* KeyboardFocusManager::focusLog = nullptr;
 $PlatformLogger* KeyboardFocusManager::log = nullptr;
-
 $Component* KeyboardFocusManager::focusOwner = nullptr;
-
 $Component* KeyboardFocusManager::permanentFocusOwner = nullptr;
-
 $Window* KeyboardFocusManager::focusedWindow = nullptr;
-
 $Window* KeyboardFocusManager::activeWindow = nullptr;
-
 $StringArray* KeyboardFocusManager::defaultFocusTraversalKeyPropertyNames = nullptr;
-
 $Container* KeyboardFocusManager::currentFocusCycleRoot = nullptr;
-
 $Map* KeyboardFocusManager::mostRecentFocusOwners = nullptr;
-
 $AWTPermission* KeyboardFocusManager::replaceKeyboardFocusManagerPermission = nullptr;
 $LinkedList* KeyboardFocusManager::heavyweightRequests = nullptr;
 $LinkedList* KeyboardFocusManager::currentLightweightRequests = nullptr;
@@ -563,8 +538,7 @@ void KeyboardFocusManager::setGlobalFocusOwner($Component* focusOwner) {
 			$assign(oldFocusOwner, getFocusOwner());
 			try {
 				fireVetoableChange("focusOwner"_s, oldFocusOwner, focusOwner);
-			} catch ($PropertyVetoException&) {
-				$var($PropertyVetoException, e, $catch());
+			} catch ($PropertyVetoException& e) {
 				return;
 			}
 			$assignStatic(KeyboardFocusManager::focusOwner, focusOwner);
@@ -651,7 +625,6 @@ $Component* KeyboardFocusManager::getGlobalPermanentFocusOwner() {
 }
 
 void KeyboardFocusManager::setGlobalPermanentFocusOwner($Component* permanentFocusOwner) {
-	$useLocalCurrentObjectStackCache();
 	$var($Component, oldPermanentFocusOwner, nullptr);
 	bool shouldFire = false;
 	if (permanentFocusOwner == nullptr || $nc(permanentFocusOwner)->isFocusable()) {
@@ -660,8 +633,7 @@ void KeyboardFocusManager::setGlobalPermanentFocusOwner($Component* permanentFoc
 			$assign(oldPermanentFocusOwner, getPermanentFocusOwner());
 			try {
 				fireVetoableChange("permanentFocusOwner"_s, oldPermanentFocusOwner, permanentFocusOwner);
-			} catch ($PropertyVetoException&) {
-				$var($PropertyVetoException, e, $catch());
+			} catch ($PropertyVetoException& e) {
 				return;
 			}
 			$assignStatic(KeyboardFocusManager::permanentFocusOwner, permanentFocusOwner);
@@ -691,7 +663,6 @@ $Window* KeyboardFocusManager::getGlobalFocusedWindow() {
 }
 
 void KeyboardFocusManager::setGlobalFocusedWindow($Window* focusedWindow) {
-	$useLocalCurrentObjectStackCache();
 	$var($Window, oldFocusedWindow, nullptr);
 	bool shouldFire = false;
 	if (focusedWindow == nullptr || $nc(focusedWindow)->isFocusableWindow()) {
@@ -700,8 +671,7 @@ void KeyboardFocusManager::setGlobalFocusedWindow($Window* focusedWindow) {
 			$assign(oldFocusedWindow, getFocusedWindow());
 			try {
 				fireVetoableChange("focusedWindow"_s, oldFocusedWindow, focusedWindow);
-			} catch ($PropertyVetoException&) {
-				$var($PropertyVetoException, e, $catch());
+			} catch ($PropertyVetoException& e) {
 				return;
 			}
 			$assignStatic(KeyboardFocusManager::focusedWindow, focusedWindow);
@@ -741,8 +711,7 @@ void KeyboardFocusManager::setGlobalActiveWindow($Window* activeWindow) {
 		}
 		try {
 			fireVetoableChange("activeWindow"_s, oldActiveWindow, activeWindow);
-		} catch ($PropertyVetoException&) {
-			$var($PropertyVetoException, e, $catch());
+		} catch ($PropertyVetoException& e) {
 			return;
 		}
 		$assignStatic(KeyboardFocusManager::activeWindow, activeWindow);
@@ -1130,7 +1099,6 @@ void KeyboardFocusManager::downFocusCycle() {
 
 void KeyboardFocusManager::dumpRequests() {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::err)->println($$str({">>> Requests dump, time: "_s, $$str($System::currentTimeMillis())}));
 	$synchronized(KeyboardFocusManager::heavyweightRequests) {
 		{
@@ -1197,8 +1165,8 @@ bool KeyboardFocusManager::processSynchronousLightweightTransfer($Component* hea
 					result = true;
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			KeyboardFocusManager::clearingCurrentLightweightRequests = clearing;
 		}
@@ -1353,15 +1321,12 @@ bool KeyboardFocusManager::isAutoFocusTransferEnabledFor($Component* comp) {
 
 $Throwable* KeyboardFocusManager::dispatchAndCatchException($Throwable* ex, $Component* comp, $FocusEvent* event) {
 	$init(KeyboardFocusManager);
-	$useLocalCurrentObjectStackCache();
 	$var($Throwable, retEx, nullptr);
 	try {
 		$nc(comp)->dispatchEvent(event);
-	} catch ($RuntimeException&) {
-		$var($RuntimeException, re, $catch());
+	} catch ($RuntimeException& re) {
 		$assign(retEx, re);
-	} catch ($Error&) {
-		$var($Error, er, $catch());
+	} catch ($Error& er) {
 		$assign(retEx, er);
 	}
 	if (retEx != nullptr) {
@@ -1430,8 +1395,8 @@ void KeyboardFocusManager::processCurrentLightweightRequests() {
 					}
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			KeyboardFocusManager::clearingCurrentLightweightRequests = false;
 			KeyboardFocusManager::disableRestoreFocus = false;

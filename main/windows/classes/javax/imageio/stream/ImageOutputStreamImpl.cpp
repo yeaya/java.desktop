@@ -1,17 +1,7 @@
 #include <javax/imageio/stream/ImageOutputStreamImpl.h>
 
 #include <java/io/UTFDataFormatException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/ByteOrder.h>
 #include <javax/imageio/stream/IIOByteBuffer.h>
 #include <javax/imageio/stream/ImageInputStreamImpl.h>

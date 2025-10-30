@@ -3,21 +3,7 @@
 #include <com/sun/media/sound/SoftJitterCorrector$JitterStream.h>
 #include <java/io/EOFException.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/AudioFormat.h>
 #include <javax/sound/sampled/AudioInputStream.h>
 #include <jcpp.h>
@@ -138,8 +124,7 @@ void SoftJitterCorrector$JitterStream$1::run() {
 			}
 			try {
 				$Thread::sleep(1);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& e) {
 			}
 		}
 		if (correction < 0) {
@@ -158,8 +143,7 @@ void SoftJitterCorrector$JitterStream$1::run() {
 					}
 					n += s;
 				}
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& e1) {
 			}
 			this->this$0->commit();
 		}
@@ -172,8 +156,7 @@ void SoftJitterCorrector$JitterStream$1::run() {
 		if (wait > 0) {
 			try {
 				$Thread::sleep($div(wait, (int64_t)1000000));
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& e) {
 			}
 		}
 		next += nanos;

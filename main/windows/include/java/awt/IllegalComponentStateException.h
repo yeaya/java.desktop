@@ -16,8 +16,10 @@ public:
 	void init$($String* s);
 	static const int64_t serialVersionUID = (int64_t)0xE5C7B7A7D4601A92;
 	IllegalComponentStateException(const IllegalComponentStateException& e);
-	IllegalComponentStateException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline IllegalComponentStateException* operator ->() {
+		return (IllegalComponentStateException*)throwing$;
+	}
 };
 
 	} // awt

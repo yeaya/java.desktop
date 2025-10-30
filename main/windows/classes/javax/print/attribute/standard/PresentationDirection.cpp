@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/PresentationDirection.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -96,25 +88,15 @@ void PresentationDirection::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 PresentationDirection* PresentationDirection::TOBOTTOM_TORIGHT = nullptr;
-
 PresentationDirection* PresentationDirection::TOBOTTOM_TOLEFT = nullptr;
-
 PresentationDirection* PresentationDirection::TOTOP_TORIGHT = nullptr;
-
 PresentationDirection* PresentationDirection::TOTOP_TOLEFT = nullptr;
-
 PresentationDirection* PresentationDirection::TORIGHT_TOBOTTOM = nullptr;
-
 PresentationDirection* PresentationDirection::TORIGHT_TOTOP = nullptr;
-
 PresentationDirection* PresentationDirection::TOLEFT_TOBOTTOM = nullptr;
-
 PresentationDirection* PresentationDirection::TOLEFT_TOTOP = nullptr;
-
 $StringArray* PresentationDirection::myStringTable = nullptr;
-
 $PresentationDirectionArray* PresentationDirection::myEnumValueTable = nullptr;
 
 void PresentationDirection::init$(int32_t value) {

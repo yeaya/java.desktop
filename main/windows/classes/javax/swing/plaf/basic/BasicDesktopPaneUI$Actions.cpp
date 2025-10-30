@@ -9,15 +9,6 @@
 #include <java/awt/Point.h>
 #include <java/awt/event/ActionEvent.h>
 #include <java/beans/PropertyVetoException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventObject.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JDesktopPane.h>
@@ -303,8 +294,8 @@ void BasicDesktopPaneUI$Actions::actionPerformed($ActionEvent* e) {
 						} else {
 							$nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->focusPreviousComponent(dp);
 						}
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$1) {
+						$assign(var$0, var$1);
 					} /*finally*/ {
 						sPolicy->setImplicitDownCycleTraversal(idc);
 					}
@@ -335,14 +326,12 @@ void BasicDesktopPaneUI$Actions::setState($JDesktopPane* dp, $String* state) {
 				try {
 					f->setIcon(false);
 					f->setMaximum(true);
-				} catch ($PropertyVetoException&) {
-					$catch();
+				} catch ($PropertyVetoException& pve) {
 				}
 			} else {
 				try {
 					f->setMaximum(true);
-				} catch ($PropertyVetoException&) {
-					$catch();
+				} catch ($PropertyVetoException& pve) {
 				}
 			}
 		}
@@ -354,8 +343,7 @@ void BasicDesktopPaneUI$Actions::setState($JDesktopPane* dp, $String* state) {
 		if (!$nc(f)->isIcon()) {
 			try {
 				f->setIcon(true);
-			} catch ($PropertyVetoException&) {
-				$catch();
+			} catch ($PropertyVetoException& pve) {
 			}
 		}
 	} else if (state == BasicDesktopPaneUI$Actions::RESTORE) {
@@ -370,8 +358,7 @@ void BasicDesktopPaneUI$Actions::setState($JDesktopPane* dp, $String* state) {
 				f->setMaximum(false);
 			}
 			$nc(f)->setSelected(true);
-		} catch ($PropertyVetoException&) {
-			$catch();
+		} catch ($PropertyVetoException& pve) {
 		}
 	}
 }

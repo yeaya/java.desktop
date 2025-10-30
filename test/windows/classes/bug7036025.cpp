@@ -1,18 +1,7 @@
 #include <bug7036025.h>
 
 #include <java/io/File.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFileChooser.h>
 #include <javax/swing/LookAndFeel.h>
 #include <javax/swing/UIManager.h>
@@ -65,7 +54,6 @@ void bug7036025::main($StringArray* args) {
 	$useLocalCurrentObjectStackCache();
 	$var($String, systemLookAndFeelClassName, $UIManager::getSystemLookAndFeelClassName());
 	if (!$($nc(systemLookAndFeelClassName)->toLowerCase())->contains("windows"_s)) {
-		$init($System);
 		$nc($System::out)->println("The test is only for Windows OS."_s);
 		return;
 	}
@@ -78,7 +66,6 @@ void bug7036025::main($StringArray* args) {
 	}
 	$UIManager::setLookAndFeel(systemLookAndFeelClassName);
 	$new($JFileChooser, file);
-	$init($System);
 	$nc($System::out)->println($$str({"Test passed for LookAndFeel "_s, $($nc($($UIManager::getLookAndFeel()))->getName())}));
 }
 

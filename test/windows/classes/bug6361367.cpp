@@ -7,19 +7,7 @@
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <java/util/Iterator.h>
 #include <java/util/List.h>
@@ -144,7 +132,6 @@ void bug6361367::main($StringArray* args) {
 			$var($UIManager$LookAndFeelInfo, info, arr$->get(i$));
 			{
 				$UIManager::setLookAndFeel($($nc(info)->getClassName()));
-				$init($System);
 				$nc($System::out)->println($of(info));
 				{
 					$var($Iterator, i$, $nc(bug6361367::textClasses)->iterator());
@@ -219,12 +206,12 @@ void bug6361367::waitForFocus($JComponent* component) {
 void clinit$bug6361367($Class* class$) {
 	$assignStatic(bug6361367::testString, "123 456 789"_s);
 	$assignStatic(bug6361367::resultString, "123 456 78"_s);
-		$load($JTextArea);
-		$load($JEditorPane);
-		$load($JTextPane);
-		$load($JTextField);
-		$load($JFormattedTextField);
-		$load($JPasswordField);
+	$load($JTextArea);
+	$load($JEditorPane);
+	$load($JTextPane);
+	$load($JTextField);
+	$load($JFormattedTextField);
+	$load($JPasswordField);
 	$assignStatic(bug6361367::textClasses, $Arrays::asList($$new($ClassArray, {
 		$JTextArea::class$,
 		$JEditorPane::class$,

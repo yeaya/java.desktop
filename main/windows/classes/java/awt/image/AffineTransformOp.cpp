@@ -24,20 +24,8 @@
 #include <java/awt/image/RasterFormatException.h>
 #include <java/awt/image/RasterOp.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Hashtable.h>
 #include <sun/awt/image/ImagingLib.h>
 #include <jcpp.h>
@@ -292,8 +280,8 @@ $BufferedImage* AffineTransformOp::filter($BufferedImage* src$renamed, $Buffered
 				$init($AlphaComposite);
 				$nc(g)->setComposite($AlphaComposite::Src);
 				g->drawImage(dst, 0, 0, nullptr);
-			} catch ($Throwable&) {
-				$assign(var$2, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$2, var$3);
 			} /*finally*/ {
 				$nc(g)->dispose();
 			}

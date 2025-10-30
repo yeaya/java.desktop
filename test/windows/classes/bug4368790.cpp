@@ -8,32 +8,17 @@
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InstantiationException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/ReflectiveOperationException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/ButtonModel.h>
 #include <javax/swing/JButton.h>
@@ -225,18 +210,13 @@ void bug4368790::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($UnsupportedLookAndFeelException, ignored, $catch());
-		$init($System);
+	} catch ($UnsupportedLookAndFeelException& ignored) {
 		$nc($System::out)->println($$str({"Unsupported L&F: "_s, $($nc(laf)->getClassName())}));
-	} catch ($ClassNotFoundException&) {
-		$var($ReflectiveOperationException, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($InstantiationException&) {
-		$var($ReflectiveOperationException, e, $catch());
+	} catch ($InstantiationException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($IllegalAccessException&) {
-		$var($ReflectiveOperationException, e, $catch());
+	} catch ($IllegalAccessException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }
@@ -251,7 +231,6 @@ void bug4368790::main($StringArray* args) {
 		for (; i$ < len$; ++i$) {
 			$var($UIManager$LookAndFeelInfo, laf, arr$->get(i$));
 			{
-				$init($System);
 				$nc($System::out)->println($$str({"Testing L&F: "_s, laf}));
 				$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4368790$$Lambda$lambda$main$0, laf)));
 				{
@@ -269,8 +248,8 @@ void bug4368790::main($StringArray* args) {
 						if ($nc($($nc(bug4368790::b1)->getModel()))->isPressed()) {
 							$throwNew($RuntimeException, "The button is unexpectedly pressed"_s);
 						}
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$1) {
+						$assign(var$0, var$1);
 					} /*finally*/ {
 						$init(bug4368790);
 						if (bug4368790::frame != nullptr) {

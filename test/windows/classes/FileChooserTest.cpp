@@ -2,20 +2,8 @@
 
 #include <FileChooserTest$1.h>
 #include <Sysout4FileChooserTest.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFileChooser.h>
 #include <javax/swing/SwingUtilities.h>
 #include <jcpp.h>
@@ -91,18 +79,15 @@ void FileChooserTest::init() {
 
 void FileChooserTest::main($StringArray* args) {
 	$init(FileChooserTest);
-	$useLocalCurrentObjectStackCache();
 	$assignStatic(FileChooserTest::mainThread, $Thread::currentThread());
 	try {
 		init();
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		return;
 	}
 	try {
 		$nc(FileChooserTest::mainThread)->sleep(FileChooserTest::sleepTime);
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, ex, $catch());
+	} catch ($InterruptedException& ex) {
 		$Sysout4FileChooserTest::dispose();
 		if (!FileChooserTest::theTestPassed && FileChooserTest::testGeneratedInterrupt) {
 			$throwNew($RuntimeException, "Test Failed"_s);

@@ -13,23 +13,9 @@
 #include <java/awt/geom/Rectangle2D$Float.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Module.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
 #include <java/lang/ref/SoftReference.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
@@ -305,8 +291,7 @@ void PlainView::drawLineImpl(int32_t lineIndex, $Graphics* g, float x, float y) 
 				x = drawElement(lineIndex, elem, g, x, y);
 			}
 		}
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		$throwNew($StateInvariantError, $$str({"Can\'t render line: "_s, $$str(lineIndex)}));
 	}
 }
@@ -579,8 +564,7 @@ int32_t PlainView::viewToModel(float x, float y, $Shape* a, $Position$BiasArray*
 				int32_t offs = p0 + $Utilities::getTabbedTextOffset(s, this->metrics, (float)this->tabBase, x, static_cast<$TabExpander*>(this), p0, true);
 				$SegmentCache::releaseSharedSegment(s);
 				return offs;
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return -1;
 			}
 		}
@@ -730,8 +714,7 @@ int32_t PlainView::getLineWidth($Element* line) {
 	try {
 		$nc($(line->getDocument()))->getText(p0, p1 - p0, s);
 		w = $Utilities::getTabbedTextWidth(s, this->metrics, this->tabBase, static_cast<$TabExpander*>(this), p0);
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, ble, $catch());
+	} catch ($BadLocationException& ble) {
 		w = 0;
 	}
 	$SegmentCache::releaseSharedSegment(s);
@@ -772,13 +755,11 @@ bool PlainView::isFPMethodOverridden($String* method, $Class* cls, $ClassArray* 
 		try {
 			$nc(cls)->getDeclaredMethod(method, fpTypes);
 			return true;
-		} catch ($Exception&) {
-			$var($Exception, e1, $catch());
+		} catch ($Exception& e1) {
 			try {
 				$nc(cls)->getDeclaredMethod(method, intTypes);
 				return false;
-			} catch ($Exception&) {
-				$var($Exception, e2, $catch());
+			} catch ($Exception& e2) {
 				cls = $nc(cls)->getSuperclass();
 			}
 		}

@@ -1,26 +1,12 @@
 #include <sun/java2d/opengl/OGLRenderQueue.h>
 
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/Set.h>
@@ -177,8 +163,8 @@ void OGLRenderQueue::sync() {
 				$nc(OGLRenderQueue::theInstance)->ensureCapacity(4);
 				$nc($($nc(OGLRenderQueue::theInstance)->getBuffer()))->putInt(76);
 				$nc(OGLRenderQueue::theInstance)->flushNow();
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(OGLRenderQueue::theInstance)->unlock();
 			}
@@ -203,8 +189,8 @@ void OGLRenderQueue::disposeGraphicsConfig(int64_t pConfigInfo) {
 			$nc(buf)->putInt(74);
 			buf->putLong(pConfigInfo);
 			rq->flushNow();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}
@@ -222,9 +208,7 @@ bool OGLRenderQueue::isQueueFlusherThread() {
 void OGLRenderQueue::flushNow() {
 	try {
 		$nc(this->flusher)->flushNow();
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
-		$init($System);
+	} catch ($Exception& e) {
 		$nc($System::err)->println("exception in flushNow:"_s);
 		e->printStackTrace();
 	}
@@ -233,9 +217,7 @@ void OGLRenderQueue::flushNow() {
 void OGLRenderQueue::flushAndInvokeNow($Runnable* r) {
 	try {
 		$nc(this->flusher)->flushAndInvokeNow(r);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
-		$init($System);
+	} catch ($Exception& e) {
 		$nc($System::err)->println("exception in flushAndInvokeNow:"_s);
 		e->printStackTrace();
 	}

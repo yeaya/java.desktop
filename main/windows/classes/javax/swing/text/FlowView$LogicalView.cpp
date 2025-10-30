@@ -3,15 +3,7 @@
 #include <java/awt/Graphics.h>
 #include <java/awt/Rectangle.h>
 #include <java/awt/Shape.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/event/DocumentEvent$ElementChange.h>
 #include <javax/swing/event/DocumentEvent$EventType.h>
 #include <javax/swing/event/DocumentEvent.h>

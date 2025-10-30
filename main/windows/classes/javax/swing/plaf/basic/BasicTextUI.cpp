@@ -23,23 +23,9 @@
 #include <java/awt/geom/RectangularShape.h>
 #include <java/beans/PropertyChangeEvent.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractSet.h>
 #include <java/util/Collection.h>
 #include <java/util/HashSet.h>
@@ -845,8 +831,8 @@ void BasicTextUI::paint($Graphics* g, $JComponent* c) {
 			$var($Throwable, var$1, nullptr);
 			try {
 				paintSafely(g);
-			} catch ($Throwable&) {
-				$assign(var$1, $catch());
+			} catch ($Throwable& var$2) {
+				$assign(var$1, var$2);
 			} /*finally*/ {
 				if ($instanceOf($AbstractDocument, doc)) {
 					$nc(($cast($AbstractDocument, doc)))->readUnlock();
@@ -877,8 +863,8 @@ $Dimension* BasicTextUI::getPreferredSize($JComponent* c) {
 			}
 			$nc(d)->width = (int32_t)$Math::min($cast(int64_t, $nc(this->rootView)->getPreferredSpan($View::X_AXIS)) + (int64_t)$nc(i)->left + (int64_t)i->right + this->caretMargin, (int64_t)$Integer::MAX_VALUE);
 			d->height = (int32_t)$Math::min($cast(int64_t, $nc(this->rootView)->getPreferredSpan($View::Y_AXIS)) + (int64_t)$nc(i)->top + (int64_t)i->bottom, (int64_t)$Integer::MAX_VALUE);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if ($instanceOf($AbstractDocument, doc)) {
 				$nc(($cast($AbstractDocument, doc)))->readUnlock();
@@ -904,8 +890,8 @@ $Dimension* BasicTextUI::getMinimumSize($JComponent* c) {
 		try {
 			d->width = $cast(int32_t, $nc(this->rootView)->getMinimumSpan($View::X_AXIS)) + $nc(i)->left + i->right + this->caretMargin;
 			d->height = $cast(int32_t, $nc(this->rootView)->getMinimumSpan($View::Y_AXIS)) + i->top + i->bottom;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if ($instanceOf($AbstractDocument, doc)) {
 				$nc(($cast($AbstractDocument, doc)))->readUnlock();
@@ -931,8 +917,8 @@ $Dimension* BasicTextUI::getMaximumSize($JComponent* c) {
 		try {
 			d->width = (int32_t)$Math::min($cast(int64_t, $nc(this->rootView)->getMaximumSpan($View::X_AXIS)) + (int64_t)$nc(i)->left + (int64_t)i->right + this->caretMargin, (int64_t)$Integer::MAX_VALUE);
 			d->height = (int32_t)$Math::min($cast(int64_t, $nc(this->rootView)->getMaximumSpan($View::Y_AXIS)) + (int64_t)$nc(i)->top + (int64_t)i->bottom, (int64_t)$Integer::MAX_VALUE);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if ($instanceOf($AbstractDocument, doc)) {
 				$nc(($cast($AbstractDocument, doc)))->readUnlock();
@@ -994,8 +980,8 @@ $Rectangle2D* BasicTextUI::modelToView($JTextComponent* tc, int32_t pos, $Positi
 					goto $finally;
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			if ($instanceOf($AbstractDocument, doc)) {
 				$nc(($cast($AbstractDocument, doc)))->readUnlock();
@@ -1040,8 +1026,8 @@ int32_t BasicTextUI::viewToModel($JTextComponent* tc, float x, float y, $Positio
 				$nc(this->rootView)->setSize((float)alloc->width, (float)alloc->height);
 				offs = $nc(this->rootView)->viewToModel(x, y, alloc, biasReturn);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if ($instanceOf($AbstractDocument, doc)) {
 				$nc(($cast($AbstractDocument, doc)))->readUnlock();
@@ -1077,8 +1063,8 @@ int32_t BasicTextUI::getNextVisualPositionFrom($JTextComponent* t, int32_t pos, 
 				return$1 = true;
 				goto $finally;
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			if ($instanceOf($AbstractDocument, doc)) {
 				$nc(($cast($AbstractDocument, doc)))->readUnlock();
@@ -1116,11 +1102,10 @@ void BasicTextUI::damageRange($JTextComponent* t, int32_t p0, int32_t p1, $Posit
 						$var($Shape, toDamage, $nc(this->rootView)->modelToView(p0, p0Bias, p1, p1Bias, alloc));
 						$var($Rectangle, rect, ($instanceOf($Rectangle, toDamage)) ? $cast($Rectangle, toDamage) : $nc(toDamage)->getBounds());
 						$nc(this->editor)->repaint($nc(rect)->x, rect->y, rect->width, rect->height);
-					} catch ($BadLocationException&) {
-						$catch();
+					} catch ($BadLocationException& e) {
 					}
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$1) {
+					$assign(var$0, var$1);
 				} /*finally*/ {
 					if ($instanceOf($AbstractDocument, doc)) {
 						$nc(($cast($AbstractDocument, doc)))->readUnlock();
@@ -1158,8 +1143,8 @@ $String* BasicTextUI::getToolTipText($JTextComponent* t, $Point* pt) {
 			$var($Throwable, var$0, nullptr);
 			try {
 				$assign(tt, $nc(this->rootView)->getToolTipText((float)$nc(pt)->x, (float)pt->y, alloc));
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				if ($instanceOf($AbstractDocument, doc)) {
 					$nc(($cast($AbstractDocument, doc)))->readUnlock();

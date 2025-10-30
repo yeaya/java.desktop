@@ -1,13 +1,5 @@
 #include <javax/print/DocFlavor$READER.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/DocFlavor.h>
 #include <jcpp.h>
 
@@ -60,9 +52,7 @@ $Object* allocate$DocFlavor$READER($Class* clazz) {
 	return $of($alloc(DocFlavor$READER));
 }
 
-
 DocFlavor$READER* DocFlavor$READER::TEXT_PLAIN = nullptr;
-
 DocFlavor$READER* DocFlavor$READER::TEXT_HTML = nullptr;
 
 void DocFlavor$READER::init$($String* mimeType) {

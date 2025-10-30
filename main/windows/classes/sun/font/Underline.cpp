@@ -3,17 +3,6 @@
 #include <java/awt/Graphics2D.h>
 #include <java/awt/Shape.h>
 #include <java/awt/font/TextAttribute.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/ConcurrentHashMap.h>
 #include <sun/font/Underline$IMGrayUnderline.h>
 #include <sun/font/Underline$StandardUnderline.h>

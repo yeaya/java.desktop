@@ -2,14 +2,6 @@
 
 #include <com/sun/java/swing/plaf/windows/WindowsDesktopProperty.h>
 #include <com/sun/java/swing/plaf/windows/WindowsLookAndFeel.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/swing/plaf/DesktopProperty.h>
 #include <jcpp.h>
 

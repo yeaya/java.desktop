@@ -2,19 +2,6 @@
 
 #include <bug7071166.h>
 #include <java/awt/Container.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JComponent.h>
@@ -84,7 +71,6 @@ void bug7071166$1::init$() {
 void bug7071166$1::run() {
 	$useLocalCurrentObjectStackCache();
 	$var($LayoutStyle, layoutStyle, $LayoutStyle::getInstance());
-	$init($System);
 	$nc($System::out)->println($$str({"LayoutStyle: "_s, layoutStyle}));
 	$init($bug7071166);
 	for (int32_t i = 0; i < $nc($bug7071166::POSITIONS)->length; ++i) {
@@ -99,8 +85,7 @@ void bug7071166$1::run() {
 			if (i > 3) {
 				$throwNew($RuntimeException, $$str({"IllegalArgumentException is not thrown for position "_s, $$str(position)}));
 			}
-		} catch ($IllegalArgumentException&) {
-			$var($IllegalArgumentException, e, $catch());
+		} catch ($IllegalArgumentException& e) {
 			if (i <= 3) {
 				$throwNew($RuntimeException, $$str({"IllegalArgumentException is thrown for position "_s, $$str(position)}));
 			}

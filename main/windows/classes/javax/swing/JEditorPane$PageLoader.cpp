@@ -4,18 +4,9 @@
 #include <java/awt/Container.h>
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JEditorPane$PageLoader$1.h>
@@ -132,12 +123,10 @@ $Object* JEditorPane$PageLoader::doInBackground() {
 				if (this->doc == nullptr) {
 					try {
 						$SwingUtilities::invokeAndWait($$new($JEditorPane$PageLoader$1, this));
-					} catch ($InvocationTargetException&) {
-						$var($InvocationTargetException, ex, $catch());
+					} catch ($InvocationTargetException& ex) {
 						$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this->this$0);
 						return $of(this->old);
-					} catch ($InterruptedException&) {
-						$var($InterruptedException, ex, $catch());
+					} catch ($InterruptedException& ex) {
 						$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this->this$0);
 						return $of(this->old);
 					}
@@ -151,12 +140,11 @@ $Object* JEditorPane$PageLoader::doInBackground() {
 					$SwingUtilities::invokeLater(callScrollToReference);
 				}
 				pageLoaded = true;
-			} catch ($IOException&) {
-				$var($IOException, ioe, $catch());
+			} catch ($IOException& ioe) {
 				$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this->this$0);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			if (pageLoaded) {
 				$SwingUtilities::invokeLater($$new($JEditorPane$PageLoader$3, this));

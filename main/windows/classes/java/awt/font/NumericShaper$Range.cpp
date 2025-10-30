@@ -2,16 +2,7 @@
 
 #include <java/awt/font/NumericShaper$Range$1.h>
 #include <java/awt/font/NumericShaper.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractSet.h>
 #include <java/util/EnumSet.h>
 #include <java/util/Iterator.h>
@@ -159,79 +150,42 @@ $Object* allocate$NumericShaper$Range($Class* clazz) {
 	return $of($alloc(NumericShaper$Range));
 }
 
-
 NumericShaper$Range* NumericShaper$Range::EUROPEAN = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::ARABIC = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::EASTERN_ARABIC = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::DEVANAGARI = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::BENGALI = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::GURMUKHI = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::GUJARATI = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::ORIYA = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::TAMIL = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::TELUGU = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::KANNADA = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::MALAYALAM = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::THAI = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::LAO = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::TIBETAN = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::MYANMAR = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::ETHIOPIC = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::KHMER = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::MONGOLIAN = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::NKO = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::MYANMAR_SHAN = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::LIMBU = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::NEW_TAI_LUE = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::BALINESE = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::SUNDANESE = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::LEPCHA = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::OL_CHIKI = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::VAI = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::SAURASHTRA = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::KAYAH_LI = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::CHAM = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::TAI_THAM_HORA = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::TAI_THAM_THAM = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::JAVANESE = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::MEETEI_MAYEK = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::SINHALA = nullptr;
-
 NumericShaper$Range* NumericShaper$Range::MYANMAR_TAI_LAING = nullptr;
 $NumericShaper$RangeArray* NumericShaper$Range::$VALUES = nullptr;
 

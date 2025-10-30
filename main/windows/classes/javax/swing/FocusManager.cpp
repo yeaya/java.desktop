@@ -5,14 +5,6 @@
 #include <java/awt/DefaultKeyboardFocusManager.h>
 #include <java/awt/FocusTraversalPolicy.h>
 #include <java/awt/KeyboardFocusManager.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/DefaultFocusManager.h>
 #include <javax/swing/DelegatingDefaultFocusManager.h>
 #include <jcpp.h>
@@ -71,7 +63,6 @@ $ClassInfo _FocusManager_ClassInfo_ = {
 $Object* allocate$FocusManager($Class* clazz) {
 	return $of($alloc(FocusManager));
 }
-
 
 $String* FocusManager::FOCUS_MANAGER_CLASS_PROPERTY = nullptr;
 bool FocusManager::enabled = false;

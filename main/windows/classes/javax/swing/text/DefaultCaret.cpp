@@ -28,25 +28,11 @@
 #include <java/io/ObjectInputStream$GetField.h>
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
 #include <java/lang/Runnable.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <javax/swing/AbstractAction.h>
 #include <javax/swing/Action.h>
@@ -533,8 +519,7 @@ void DefaultCaret::mouseClicked($MouseEvent* e) {
 								$var($Transferable, trans, nullptr);
 								try {
 									$assign(trans, buffer->getContents(nullptr));
-								} catch ($IllegalStateException&) {
-									$var($IllegalStateException, ise, $catch());
+								} catch ($IllegalStateException& ise) {
 									$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(c);
 								}
 								if (trans != nullptr) {
@@ -543,8 +528,7 @@ void DefaultCaret::mouseClicked($MouseEvent* e) {
 							}
 							adjustFocus(true);
 						}
-					} catch ($HeadlessException&) {
-						$catch();
+					} catch ($HeadlessException& he) {
 					}
 				}
 			}
@@ -648,8 +632,7 @@ void DefaultCaret::paint($Graphics* g) {
 					g->fillPolygon(this->flagXPoints, this->flagYPoints, 3);
 				}
 			}
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& e) {
 		}
 	}
 }
@@ -661,7 +644,7 @@ void DefaultCaret::install($JTextComponent* c) {
 	this->dot = (this->mark = 0);
 	this->dotLTR = (this->markLTR = true);
 	$init($Position$Bias);
-	$set(this, dotBias, ($assignField(this, markBias, $Position$Bias::Forward)));
+	$set(this, dotBias, ($set(this, markBias, $Position$Bias::Forward)));
 	if (doc != nullptr) {
 		doc->addDocumentListener(this->handler);
 	}
@@ -747,8 +730,7 @@ void DefaultCaret::setSelectionVisible(bool vis) {
 				$var($Highlighter$HighlightPainter, p, getSelectionPainter());
 				try {
 					$set(this, selectionTag, h->addHighlight(p0, p1, p));
-				} catch ($BadLocationException&) {
-					$var($BadLocationException, bl, $catch());
+				} catch ($BadLocationException& bl) {
 					$set(this, selectionTag, nullptr);
 				}
 			}
@@ -782,8 +764,7 @@ void DefaultCaret::setVisible(bool e) {
 			try {
 				$var($Rectangle, loc, $nc(mapper)->modelToView(this->component, this->dot, this->dotBias));
 				damage(loc);
-			} catch ($BadLocationException&) {
-				$catch();
+			} catch ($BadLocationException& badloc) {
 			}
 		}
 	}
@@ -871,8 +852,7 @@ void DefaultCaret::handleMoveDot(int32_t dot, $Position$Bias* dotBias) {
 						$var($Highlighter$HighlightPainter, p, getSelectionPainter());
 						$set(this, selectionTag, h->addHighlight(p0, p1, p));
 					}
-				} catch ($BadLocationException&) {
-					$var($BadLocationException, e, $catch());
+				} catch ($BadLocationException& e) {
 					$throwNew($StateInvariantError, "Bad caret position"_s);
 				}
 			}
@@ -963,8 +943,7 @@ $Position$Bias* DefaultCaret::guessBiasForOffset(int32_t offset, $Position$Bias*
 			if (s->count > 0 && $nc(s->array)->get(s->offset) == u'\n') {
 				$assign(lastBias, $Position$Bias::Forward);
 			}
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& ble) {
 		}
 	}
 	return lastBias;
@@ -995,8 +974,7 @@ void DefaultCaret::repaintNewCaret() {
 			$var($Rectangle, newLoc, nullptr);
 			try {
 				$assign(newLoc, mapper->modelToView(this->component, this->dot, this->dotBias));
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				$assign(newLoc, nullptr);
 			}
 			if (newLoc != nullptr) {
@@ -1041,8 +1019,7 @@ void DefaultCaret::updateSystemSelection() {
 				$var($Transferable, var$2, static_cast<$Transferable*>($new($StringSelection, selectedText)));
 				clip->setContents(var$2, $(getClipboardOwner()));
 				this->ownsSelection = true;
-			} catch ($IllegalStateException&) {
-				$catch();
+			} catch ($IllegalStateException& ise) {
 			}
 		}
 	}
@@ -1051,10 +1028,8 @@ void DefaultCaret::updateSystemSelection() {
 $Clipboard* DefaultCaret::getSystemSelection() {
 	try {
 		return $nc($($nc(this->component)->getToolkit()))->getSystemSelection();
-	} catch ($HeadlessException&) {
-		$catch();
-	} catch ($SecurityException&) {
-		$catch();
+	} catch ($HeadlessException& he) {
+	} catch ($SecurityException& se) {
 	}
 	return nullptr;
 }

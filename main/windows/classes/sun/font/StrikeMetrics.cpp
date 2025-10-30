@@ -3,14 +3,6 @@
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/geom/Point2D$Float.h>
 #include <java/awt/geom/Point2D.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef MAX_VALUE

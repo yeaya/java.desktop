@@ -3,18 +3,7 @@
 #include <java/io/File.h>
 #include <java/io/FileWriter.h>
 #include <java/io/OutputStreamWriter.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Writer.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/util/PerformanceLogger.h>
 #include <jcpp.h>
 
@@ -82,9 +71,7 @@ $Object* PerformanceLogger$1::run() {
 		$var($File, logFile, $new($File, $PerformanceLogger::logFileName));
 		logFile->createNewFile();
 		$assignStatic($PerformanceLogger::logWriter, $new($FileWriter, logFile));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
-		$init($System);
+	} catch ($Exception& e) {
 		$init($PerformanceLogger);
 		$nc($System::out)->println($$str({e, ": Creating logfile "_s, $PerformanceLogger::logFileName, ".  Log to console"_s}));
 	}

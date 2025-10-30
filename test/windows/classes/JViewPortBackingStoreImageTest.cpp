@@ -18,25 +18,12 @@
 #include <java/awt/event/WindowAdapter.h>
 #include <java/awt/event/WindowListener.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/HashMap.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <java/util/concurrent/TimeUnit.h>
@@ -278,8 +265,7 @@ void JViewPortBackingStoreImageTest::createUI() {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel"_s);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 	$var($JFrame, mainFrame, $new($JFrame));
@@ -374,8 +360,7 @@ void JViewPortBackingStoreImageTest::addParagraph($JViewPortBackingStoreImageTes
 		$var($Style, ls, $nc(JViewPortBackingStoreImageTest::styles)->getStyle($nc(p)->logical));
 		$nc(JViewPortBackingStoreImageTest::doc)->setLogicalStyle($nc(JViewPortBackingStoreImageTest::doc)->getLength() - 1, ls);
 		$nc(JViewPortBackingStoreImageTest::doc)->insertString($nc(JViewPortBackingStoreImageTest::doc)->getLength(), "\n"_s, nullptr);
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }

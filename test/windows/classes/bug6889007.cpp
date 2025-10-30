@@ -5,18 +5,7 @@
 #include <java/awt/Component.h>
 #include <java/awt/Point.h>
 #include <java/awt/Robot.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/SwingUtilities.h>
 #include <jcpp.h>
@@ -89,7 +78,6 @@ void bug6889007::main($StringArray* args) {
 	if ($bug6889007$MyTableHeaderUI::getTestValue() != 9) {
 		$throwNew($RuntimeException, $$str({"Unexpected test number "_s, $$str($bug6889007$MyTableHeaderUI::getTestValue())}));
 	}
-	$init($System);
 	$nc($System::out)->println("ok"_s);
 }
 

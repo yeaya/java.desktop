@@ -15,15 +15,6 @@
 #include <java/io/ObjectInputStream$GetField.h>
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Collections.h>
 #include <java/util/EventObject.h>
 #include <java/util/Iterator.h>
@@ -106,10 +97,10 @@ $Object* allocate$DragGestureEvent($Class* clazz) {
 
 void DragGestureEvent::init$($DragGestureRecognizer* dgr, int32_t act, $Point* ori, $List* evs) {
 	$EventObject::init$(dgr);
-	if (($assignField(this, component, $nc(dgr)->getComponent())) == nullptr) {
+	if (($set(this, component, $nc(dgr)->getComponent())) == nullptr) {
 		$throwNew($IllegalArgumentException, "null component"_s);
 	}
-	if (($assignField(this, dragSource, $nc(dgr)->getDragSource())) == nullptr) {
+	if (($set(this, dragSource, $nc(dgr)->getDragSource())) == nullptr) {
 		$throwNew($IllegalArgumentException, "null DragSource"_s);
 	}
 	if (evs == nullptr || $nc(evs)->isEmpty()) {
@@ -205,8 +196,7 @@ void DragGestureEvent::readObject($ObjectInputStream* s) {
 	$var($List, newEvents, nullptr);
 	try {
 		$assign(newEvents, $cast($List, f->get("events"_s, ($Object*)nullptr)));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		$assign(newEvents, $cast($List, s->readObject()));
 	}
 	if (newEvents != nullptr && newEvents->isEmpty()) {

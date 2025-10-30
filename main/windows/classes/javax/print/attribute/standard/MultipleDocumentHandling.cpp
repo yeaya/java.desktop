@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/MultipleDocumentHandling.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -88,17 +80,11 @@ void MultipleDocumentHandling::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 MultipleDocumentHandling* MultipleDocumentHandling::SINGLE_DOCUMENT = nullptr;
-
 MultipleDocumentHandling* MultipleDocumentHandling::SEPARATE_DOCUMENTS_UNCOLLATED_COPIES = nullptr;
-
 MultipleDocumentHandling* MultipleDocumentHandling::SEPARATE_DOCUMENTS_COLLATED_COPIES = nullptr;
-
 MultipleDocumentHandling* MultipleDocumentHandling::SINGLE_DOCUMENT_NEW_SHEET = nullptr;
-
 $StringArray* MultipleDocumentHandling::myStringTable = nullptr;
-
 $MultipleDocumentHandlingArray* MultipleDocumentHandling::myEnumValueTable = nullptr;
 
 void MultipleDocumentHandling::init$(int32_t value) {

@@ -4,24 +4,10 @@
 #include <NimbusGlueTest$2.h>
 #include <java/awt/Dimension.h>
 #include <java/awt/Robot.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InstantiationException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JToolBar.h>
@@ -139,28 +125,20 @@ bool NimbusGlueTest::tryLookAndFeel($String* lookAndFeelString) {
 	try {
 		$UIManager::setLookAndFeel(lookAndFeelString);
 		return true;
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($Exception, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& e) {
 		$plusAssignStatic(NimbusGlueTest::errorMessage, $$str({$(e->getMessage()), "\n"_s}));
-		$init($System);
 		$nc($System::err)->println($$str({"Caught Exception: "_s, $(e->getMessage())}));
 		return false;
-	} catch ($ClassNotFoundException&) {
-		$var($Exception, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		$plusAssignStatic(NimbusGlueTest::errorMessage, $$str({$(e->getMessage()), "\n"_s}));
-		$init($System);
 		$nc($System::err)->println($$str({"Caught Exception: "_s, $(e->getMessage())}));
 		return false;
-	} catch ($InstantiationException&) {
-		$var($Exception, e, $catch());
+	} catch ($InstantiationException& e) {
 		$plusAssignStatic(NimbusGlueTest::errorMessage, $$str({$(e->getMessage()), "\n"_s}));
-		$init($System);
 		$nc($System::err)->println($$str({"Caught Exception: "_s, $(e->getMessage())}));
 		return false;
-	} catch ($IllegalAccessException&) {
-		$var($Exception, e, $catch());
+	} catch ($IllegalAccessException& e) {
 		$plusAssignStatic(NimbusGlueTest::errorMessage, $$str({$(e->getMessage()), "\n"_s}));
-		$init($System);
 		$nc($System::err)->println($$str({"Caught Exception: "_s, $(e->getMessage())}));
 		return false;
 	}

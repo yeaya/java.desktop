@@ -1,16 +1,7 @@
 #include <java/awt/GraphicsDevice$WindowTranslucency.h>
 
 #include <java/awt/GraphicsDevice.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef PERPIXEL_TRANSLUCENT
@@ -69,11 +60,8 @@ $Object* allocate$GraphicsDevice$WindowTranslucency($Class* clazz) {
 	return $of($alloc(GraphicsDevice$WindowTranslucency));
 }
 
-
 GraphicsDevice$WindowTranslucency* GraphicsDevice$WindowTranslucency::PERPIXEL_TRANSPARENT = nullptr;
-
 GraphicsDevice$WindowTranslucency* GraphicsDevice$WindowTranslucency::TRANSLUCENT = nullptr;
-
 GraphicsDevice$WindowTranslucency* GraphicsDevice$WindowTranslucency::PERPIXEL_TRANSLUCENT = nullptr;
 $GraphicsDevice$WindowTranslucencyArray* GraphicsDevice$WindowTranslucency::$VALUES = nullptr;
 

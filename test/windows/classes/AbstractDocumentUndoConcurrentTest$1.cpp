@@ -1,21 +1,6 @@
 #include <AbstractDocumentUndoConcurrentTest$1.h>
 
 #include <AbstractDocumentUndoConcurrentTest.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/Format.h>
 #include <java/util/concurrent/CyclicBarrier.h>
 #include <javax/swing/text/AbstractDocument.h>
@@ -90,11 +75,9 @@ void AbstractDocumentUndoConcurrentTest$1::run() {
 				$nc($AbstractDocumentUndoConcurrentTest::doc1)->remove(0, 12);
 			}
 		}
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
-	$init($System);
 	$nc($System::out)->println("t1 done"_s);
 }
 

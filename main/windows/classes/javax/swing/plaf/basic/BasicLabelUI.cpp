@@ -15,19 +15,8 @@
 #include <java/awt/geom/RectangularShape.h>
 #include <java/beans/PropertyChangeEvent.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/Short.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/Action.h>
 #include <javax/swing/ActionMap.h>
 #include <javax/swing/ComponentInputMap.h>
@@ -202,7 +191,6 @@ $String* BasicLabelUI::toString() {
 void BasicLabelUI::finalize() {
 	this->$LabelUI::finalize();
 }
-
 
 BasicLabelUI* BasicLabelUI::labelUI = nullptr;
 $Object* BasicLabelUI::BASIC_LABEL_UI_KEY = nullptr;

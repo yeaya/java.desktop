@@ -1,15 +1,6 @@
 #include <AbstractActionBug.h>
 
 #include <java/awt/event/ActionEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractAction.h>
 #include <javax/swing/Action.h>
 #include <jcpp.h>
@@ -48,7 +39,6 @@ void AbstractActionBug::main($StringArray* args) {
 	$useLocalCurrentObjectStackCache();
 	$var(AbstractActionBug, a1, $new(AbstractActionBug, "a1"_s));
 	$assign(a1, $cast(AbstractActionBug, a1->clone()));
-	$init($System);
 	$nc($System::out)->println("a1 cloned ok"_s);
 	$var(AbstractActionBug, a2, $new(AbstractActionBug, "a2"_s));
 	$init($Action);

@@ -33,24 +33,9 @@
 #include <java/awt/image/WritableRaster.h>
 #include <java/io/ByteArrayInputStream.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/ByteOrder.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
@@ -403,24 +388,20 @@ int32_t BMPImageReader::getNumImages(bool allowSearch) {
 }
 
 int32_t BMPImageReader::getWidth(int32_t imageIndex) {
-	$useLocalCurrentObjectStackCache();
 	checkIndex(imageIndex);
 	try {
 		readHeader();
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		$throwNew($IIOException, $($I18N::getString("BMPImageReader6"_s)), e);
 	}
 	return this->width;
 }
 
 int32_t BMPImageReader::getHeight(int32_t imageIndex) {
-	$useLocalCurrentObjectStackCache();
 	checkIndex(imageIndex);
 	try {
 		readHeader();
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		$throwNew($IIOException, $($I18N::getString("BMPImageReader6"_s)), e);
 	}
 	return this->height;
@@ -768,8 +749,7 @@ void BMPImageReader::readHeader() {
 			} else {
 				$assign(colorSpace, $new($ICC_ColorSpace, $($ICC_Profile::getInstance(profile))));
 			}
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$assign(colorSpace, $ColorSpace::getInstance($ColorSpace::CS_sRGB));
 		}
 	}
@@ -870,8 +850,7 @@ $Iterator* BMPImageReader::getImageTypes(int32_t imageIndex) {
 	checkIndex(imageIndex);
 	try {
 		readHeader();
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		$throwNew($IIOException, $($I18N::getString("BMPImageReader6"_s)), e);
 	}
 	$var($ArrayList, list, $new($ArrayList, 1));
@@ -884,13 +863,11 @@ $ImageReadParam* BMPImageReader::getDefaultReadParam() {
 }
 
 $IIOMetadata* BMPImageReader::getImageMetadata(int32_t imageIndex) {
-	$useLocalCurrentObjectStackCache();
 	checkIndex(imageIndex);
 	if (this->metadata == nullptr) {
 		try {
 			readHeader();
-		} catch ($IllegalArgumentException&) {
-			$var($IllegalArgumentException, e, $catch());
+		} catch ($IllegalArgumentException& e) {
 			$throwNew($IIOException, $($I18N::getString("BMPImageReader6"_s)), e);
 		}
 	}
@@ -902,12 +879,10 @@ $IIOMetadata* BMPImageReader::getStreamMetadata() {
 }
 
 bool BMPImageReader::isRandomAccessEasy(int32_t imageIndex) {
-	$useLocalCurrentObjectStackCache();
 	checkIndex(imageIndex);
 	try {
 		readHeader();
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		$throwNew($IIOException, $($I18N::getString("BMPImageReader6"_s)), e);
 	}
 	return $nc(this->metadata)->compression == $BMPConstants::BI_RGB;
@@ -931,8 +906,7 @@ $BufferedImage* BMPImageReader::read(int32_t imageIndex, $ImageReadParam* param$
 	}
 	try {
 		readHeader();
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		$throwNew($IIOException, $($I18N::getString("BMPImageReader6"_s)), e);
 	}
 	$set(this, sourceRegion, $new($Rectangle, 0, 0, 0, 0));
@@ -1167,8 +1141,8 @@ $Raster* BMPImageReader::readRaster(int32_t imageIndex, $ImageReadParam* param) 
 void BMPImageReader::resetHeaderInfo() {
 	this->gotHeader = false;
 	$set(this, bi, nullptr);
-	$set(this, sampleModel, ($assignField(this, originalSampleModel, nullptr)));
-	$set(this, colorModel, ($assignField(this, originalColorModel, nullptr)));
+	$set(this, sampleModel, ($set(this, originalSampleModel, nullptr)));
+	$set(this, colorModel, ($set(this, originalColorModel, nullptr)));
 }
 
 void BMPImageReader::reset() {

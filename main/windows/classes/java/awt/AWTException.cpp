@@ -1,13 +1,5 @@
 #include <java/awt/AWTException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -48,16 +40,10 @@ void AWTException::init$($String* msg) {
 AWTException::AWTException() {
 }
 
-AWTException::AWTException(const AWTException& e) {
+AWTException::AWTException(const AWTException& e) : $Exception(e) {
 }
 
-AWTException AWTException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void AWTException::throwWrapper$() {
-	$pendingException(this);
+void AWTException::throw$() {
 	throw *this;
 }
 

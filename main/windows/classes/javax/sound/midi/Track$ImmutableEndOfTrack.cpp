@@ -1,14 +1,6 @@
 #include <javax/sound/midi/Track$ImmutableEndOfTrack.h>
 
 #include <com/sun/media/sound/MidiUtils.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/midi/InvalidMidiDataException.h>
 #include <javax/sound/midi/MetaMessage.h>
 #include <javax/sound/midi/MidiMessage.h>

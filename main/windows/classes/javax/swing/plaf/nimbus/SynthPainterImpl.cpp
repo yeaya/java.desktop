@@ -11,16 +11,7 @@
 #include <java/awt/geom/NoninvertibleTransformException.h>
 #include <java/awt/image/BufferedImage.h>
 #include <java/awt/image/ImageObserver.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JSlider.h>
 #include <javax/swing/JSplitPane.h>
@@ -261,8 +252,7 @@ void SynthPainterImpl::paint($Painter* p, $SynthContext* ctx, $Graphics* g, int3
 			if (transform != nullptr) {
 				try {
 					gfx->transform($(transform->createInverse()));
-				} catch ($NoninvertibleTransformException&) {
-					$var($NoninvertibleTransformException, e, $catch());
+				} catch ($NoninvertibleTransformException& e) {
 					e->printStackTrace();
 				}
 			}

@@ -6,15 +6,6 @@
 #include <java/awt/dnd/DropTargetDropEvent.h>
 #include <java/awt/dnd/DropTargetEvent.h>
 #include <java/awt/dnd/DropTargetListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <java/util/TooManyListenersException.h>
 #include <javax/swing/TransferHandler$DropHandler.h>
@@ -113,8 +104,7 @@ void TransferHandler$SwingDropTarget::init$($Component* c) {
 	$DropTarget::init$(c, 3 | 0x40000000, nullptr);
 	try {
 		$DropTarget::addDropTargetListener($($TransferHandler::getDropTargetListener()));
-	} catch ($TooManyListenersException&) {
-		$catch();
+	} catch ($TooManyListenersException& tmle) {
 	}
 }
 

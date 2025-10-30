@@ -2,20 +2,7 @@
 
 #include <java/beans/PropertyChangeListener.h>
 #include <java/io/File.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/UIDefaults.h>
 #include <javax/swing/UIManager$LookAndFeelInfo.h>
 #include <javax/swing/UIManager.h>
@@ -82,9 +69,7 @@ void bug6688203::main($StringArray* args) {
 			{
 				try {
 					$UIManager::setLookAndFeel($($nc(lafInfo)->getClassName()));
-				} catch ($Exception&) {
-					$var($Exception, e, $catch());
-					$init($System);
+				} catch ($Exception& e) {
 					$nc($System::out)->println($$str({"Cannot set LAF "_s, $($nc(lafInfo)->getName())}));
 					continue;
 				}
@@ -97,8 +82,7 @@ void bug6688203::main($StringArray* args) {
 					if (var$0 != $nc($($UIManager::getDefaults()))->getBoolean("FileChooser.useSystemExtensionHiding"_s)) {
 						$throwNew($RuntimeException, "Invalid cached value of the FileSystemView.useSystemExtensionHiding field"_s);
 					}
-				} catch ($Exception&) {
-					$var($Exception, e, $catch());
+				} catch ($Exception& e) {
 					$throwNew($RuntimeException, "Cannot read the FileSystemView.useSystemExtensionHiding field"_s, e);
 				}
 			}

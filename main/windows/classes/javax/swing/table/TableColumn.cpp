@@ -3,20 +3,7 @@
 #include <java/awt/Component.h>
 #include <java/awt/Dimension.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JLabel.h>
 #include <javax/swing/JTable.h>
 #include <javax/swing/event/SwingPropertyChangeSupport.h>
@@ -270,13 +257,9 @@ $Object* allocate$TableColumn($Class* clazz) {
 	return $of($alloc(TableColumn));
 }
 
-
 $String* TableColumn::COLUMN_WIDTH_PROPERTY = nullptr;
-
 $String* TableColumn::HEADER_VALUE_PROPERTY = nullptr;
-
 $String* TableColumn::HEADER_RENDERER_PROPERTY = nullptr;
-
 $String* TableColumn::CELL_RENDERER_PROPERTY = nullptr;
 
 void TableColumn::init$() {

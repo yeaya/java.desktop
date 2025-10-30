@@ -4,17 +4,7 @@
 #include <java/awt/Container.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/ActionListener.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <javax/swing/JComboBox.h>
 #include <javax/swing/JComponent.h>
@@ -93,7 +83,6 @@ void Test8019180::run() {
 		int32_t index = $nc(this->test)->getSelectedIndex();
 		$nc(this->test)->setSelectedIndex(1 + index);
 		if (0 > $nc(this->test)->getSelectedIndex()) {
-			$init($System);
 			$nc($System::err)->println("ERROR: no selection"_s);
 			$System::exit(0x007A5CEC);
 		}

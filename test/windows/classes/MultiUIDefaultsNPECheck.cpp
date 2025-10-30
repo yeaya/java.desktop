@@ -1,26 +1,13 @@
 #include <MultiUIDefaultsNPECheck.h>
 
 #include <MultiUIDefaultsNPECheck$1.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JLabel.h>
 #include <javax/swing/LookAndFeel.h>
@@ -132,16 +119,13 @@ void MultiUIDefaultsNPECheck::Test() {
 	$var($JLabel, label, $new($JLabel));
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MultiUIDefaultsNPECheck$1)));
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($UnsupportedLookAndFeelException, e, $catch());
-		$init($System);
+	} catch ($UnsupportedLookAndFeelException& e) {
 		$nc($System::err)->println("Warning: test not applicable because of unsupported look and feel"_s);
 		return;
 	}
 	try {
 		$nc($($UIManager::getDefaults()))->getUI(label);
-	} catch ($NullPointerException&) {
-		$var($NullPointerException, e, $catch());
+	} catch ($NullPointerException& e) {
 		$throwNew($RuntimeException, "Got null pointer exception. Hence Test Failed"_s);
 	}
 }

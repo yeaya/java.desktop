@@ -1,16 +1,6 @@
 #include <javax/swing/text/JTextComponent$2.h>
 
 #include <java/awt/print/PrinterJob.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/PrintRequestAttributeSet.h>
 #include <javax/swing/text/JTextComponent.h>
 #include <sun/swing/PrintingStatus.h>
@@ -88,8 +78,8 @@ $Object* JTextComponent$2::call() {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$nc(this->val$job)->print(this->val$attr);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (this->val$printingStatus != nullptr) {
 				$nc(this->val$printingStatus)->dispose();

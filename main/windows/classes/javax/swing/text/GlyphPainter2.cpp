@@ -8,17 +8,6 @@
 #include <java/awt/geom/Rectangle2D$Float.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/AbstractDocument.h>
 #include <javax/swing/text/BadLocationException.h>
 #include <javax/swing/text/Document.h>
@@ -166,8 +155,7 @@ void GlyphPainter2::paint($GlyphView* v, $Graphics* g, $Shape* a, int32_t p0, in
 				$nc(g2d)->clip(s);
 				$nc(this->layout)->draw(g2d, x, y);
 				g->setClip(savedClip);
-			} catch ($BadLocationException&) {
-				$catch();
+			} catch ($BadLocationException& e) {
 			}
 		} else {
 			$nc(this->layout)->draw(g2d, x, y);

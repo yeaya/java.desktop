@@ -1,17 +1,7 @@
 #include <javax/swing/text/html/CSS$LengthValue.h>
 
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/StyleConstants.h>
 #include <javax/swing/text/View.h>
 #include <javax/swing/text/html/CSS$CssValue.h>
@@ -132,8 +122,7 @@ $Object* CSS$LengthValue::parseCssValue($String* value) {
 		float absolute = $nc($($Float::valueOf(value)))->floatValue();
 		$assign(lv, $new(CSS$LengthValue));
 		lv->span = absolute;
-	} catch ($NumberFormatException&) {
-		$var($NumberFormatException, nfe, $catch());
+	} catch ($NumberFormatException& nfe) {
 		$var($CSS$LengthUnit, lu, $new($CSS$LengthUnit, value, $CSS$LengthUnit::UNINITIALIZED_LENGTH, (float)0));
 		switch (lu->type) {
 		case 0:

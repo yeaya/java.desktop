@@ -1,16 +1,7 @@
 #include <java/awt/desktop/UserSessionEvent$Reason.h>
 
 #include <java/awt/desktop/UserSessionEvent.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef CONSOLE
@@ -72,13 +63,9 @@ $Object* allocate$UserSessionEvent$Reason($Class* clazz) {
 	return $of($alloc(UserSessionEvent$Reason));
 }
 
-
 UserSessionEvent$Reason* UserSessionEvent$Reason::UNSPECIFIED = nullptr;
-
 UserSessionEvent$Reason* UserSessionEvent$Reason::CONSOLE = nullptr;
-
 UserSessionEvent$Reason* UserSessionEvent$Reason::REMOTE = nullptr;
-
 UserSessionEvent$Reason* UserSessionEvent$Reason::LOCK = nullptr;
 $UserSessionEvent$ReasonArray* UserSessionEvent$Reason::$VALUES = nullptr;
 

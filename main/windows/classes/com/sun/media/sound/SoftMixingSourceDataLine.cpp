@@ -10,23 +10,10 @@
 #include <com/sun/media/sound/SoftMixingSourceDataLine$NonBlockingFloatInputStream.h>
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <javax/sound/sampled/AudioFormat.h>
 #include <javax/sound/sampled/AudioInputStream.h>
@@ -239,7 +226,6 @@ void SoftMixingSourceDataLine::init$($SoftMixingMixer* mixer, $DataLine$Info* in
 }
 
 int32_t SoftMixingSourceDataLine::write($bytes* b, int32_t off, int32_t len) {
-	$useLocalCurrentObjectStackCache();
 	if (!isOpen()) {
 		return 0;
 	}
@@ -280,8 +266,7 @@ int32_t SoftMixingSourceDataLine::write($bytes* b, int32_t off, int32_t len) {
 		if (avail == buff_len) {
 			try {
 				$Thread::sleep(1);
-			} catch ($InterruptedException&) {
-				$var($InterruptedException, e, $catch());
+			} catch ($InterruptedException& e) {
 				return l;
 			}
 			if (!isRunning()) {
@@ -316,8 +301,7 @@ void SoftMixingSourceDataLine::processAudioLogic($SoftAudioBufferArray* buffers)
 			if (ret != this->in_nrofchannels) {
 				$Arrays::fill(this->readbuffer, ret, readlen, (float)0);
 			}
-		} catch ($IOException&) {
-			$catch();
+		} catch ($IOException& e) {
 		}
 		int32_t in_c = this->in_nrofchannels;
 		{
@@ -450,7 +434,6 @@ int32_t SoftMixingSourceDataLine::available() {
 }
 
 void SoftMixingSourceDataLine::drain() {
-	$useLocalCurrentObjectStackCache();
 	while (true) {
 		int32_t avail = 0;
 		$synchronized(this->cycling_buffer) {
@@ -461,8 +444,7 @@ void SoftMixingSourceDataLine::drain() {
 		}
 		try {
 			$Thread::sleep(1);
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, e, $catch());
+		} catch ($InterruptedException& e) {
 			return;
 		}
 	}

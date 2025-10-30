@@ -3,13 +3,6 @@
 #include <java/awt/Composite.h>
 #include <java/awt/Paint.h>
 #include <java/awt/geom/AffineTransform.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SunGraphics2D.h>
 #include <sun/java2d/SurfaceData.h>
 #include <sun/java2d/d3d/D3DContext.h>
@@ -77,8 +70,8 @@ $Object* allocate$D3DMaskBlit($Class* clazz) {
 void D3DMaskBlit::register$() {
 	$init(D3DMaskBlit);
 	$useLocalCurrentObjectStackCache();
-		$init($SurfaceType);
-		$init($CompositeType);
+	$init($SurfaceType);
+	$init($CompositeType);
 	$var($GraphicsPrimitiveArray, primitives, $new($GraphicsPrimitiveArray, {
 		static_cast<$GraphicsPrimitive*>($$new(D3DMaskBlit, $SurfaceType::IntArgb, $CompositeType::SrcOver)),
 		static_cast<$GraphicsPrimitive*>($$new(D3DMaskBlit, $SurfaceType::IntArgbPre, $CompositeType::SrcOver)),

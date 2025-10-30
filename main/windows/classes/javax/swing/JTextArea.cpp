@@ -9,20 +9,7 @@
 #include <java/awt/Insets.h>
 #include <java/awt/Rectangle.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Set.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/JComponent$AccessibleJComponent.h>
@@ -93,6 +80,7 @@ $NamedAttribute JTextArea_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JTextArea_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JTextArea_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JTextArea_Attribute_var$1},
@@ -203,7 +191,6 @@ $CompoundAttribute _JTextArea_MethodAnnotations_setWrapStyleWord33[] = {
 	{}
 };
 
-
 $FieldInfo _JTextArea_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JTextArea, uiClassID)},
 	{"rows", "I", nullptr, $PRIVATE, $field(JTextArea, rows)},
@@ -277,7 +264,6 @@ $ClassInfo _JTextArea_ClassInfo_ = {
 $Object* allocate$JTextArea($Class* clazz) {
 	return $of($alloc(JTextArea));
 }
-
 
 $String* JTextArea::uiClassID = nullptr;
 
@@ -432,8 +418,7 @@ void JTextArea::insert($String* str, int32_t pos) {
 	if (doc != nullptr) {
 		try {
 			doc->insertString(pos, str, nullptr);
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			$throwNew($IllegalArgumentException, $(e->getMessage()));
 		}
 	}
@@ -444,8 +429,7 @@ void JTextArea::append($String* str) {
 	if (doc != nullptr) {
 		try {
 			doc->insertString(doc->getLength(), str, nullptr);
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& e) {
 		}
 	}
 }
@@ -464,8 +448,7 @@ void JTextArea::replaceRange($String* str, int32_t start, int32_t end) {
 				doc->remove(start, end - start);
 				doc->insertString(start, str, nullptr);
 			}
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			$throwNew($IllegalArgumentException, $(e->getMessage()));
 		}
 	}

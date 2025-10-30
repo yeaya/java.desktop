@@ -20,19 +20,6 @@
 #include <java/awt/event/WindowAdapter.h>
 #include <java/awt/event/WindowListener.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/HashMap.h>
 #include <java/util/Hashtable.h>
 #include <javax/swing/AbstractButton.h>
@@ -1034,8 +1021,7 @@ void BasicToolBarUI::dragTo($Point* position, $Point* origin) {
 				$nc(this->dragWindow)->setSize($nc(size)->width, size->height);
 				$nc(this->dragWindow)->show();
 			}
-		} catch ($IllegalComponentStateException&) {
-			$catch();
+		} catch ($IllegalComponentStateException& e) {
 		}
 	}
 }
@@ -1063,8 +1049,7 @@ void BasicToolBarUI::floatAt($Point* position, $Point* origin) {
 				setFloating(true, nullptr);
 			}
 			$nc(this->dragWindow)->setOffset(nullptr);
-		} catch ($IllegalComponentStateException&) {
-			$catch();
+		} catch ($IllegalComponentStateException& e) {
 		}
 	}
 }

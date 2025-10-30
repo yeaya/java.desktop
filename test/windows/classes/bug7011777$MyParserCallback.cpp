@@ -1,17 +1,6 @@
 #include <bug7011777$MyParserCallback.h>
 
 #include <bug7011777.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/html/HTMLEditorKit$ParserCallback.h>
 #include <jcpp.h>
 
@@ -67,7 +56,6 @@ void bug7011777$MyParserCallback::handleComment($chars* data, int32_t pos) {
 	$var($String, commentWithoutTags, $nc($bug7011777::comment)->substring(var$0, var$1 - "-->"_s->length()));
 	$var($String, str, $new($String, data));
 	if (!commentWithoutTags->equals(str)) {
-		$init($System);
 		$nc($System::out)->println($$str({"Sample string:\n"_s, commentWithoutTags}));
 		$nc($System::out)->println($$str({"Returned string:\n"_s, str}));
 		$throwNew($RuntimeException, "Test Failed, sample and returned strings are mismatched!"_s);

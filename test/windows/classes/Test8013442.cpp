@@ -4,23 +4,9 @@
 #include <java/awt/Container.h>
 #include <java/awt/Window.h>
 #include <java/io/File.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
 #include <java/lang/Thread$UncaughtExceptionHandler.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFileChooser.h>
@@ -153,23 +139,20 @@ void Test8013442::run() {
 		$nc(Test8013442::LATCH)->countDown();
 	} else if (this->chooser == nullptr) {
 		$var($UIManager$LookAndFeelInfo, info, $nc(this->infos)->get(this->index));
-		$init($System);
 		$nc($System::out)->println($($nc(info)->getName()));
 		try {
 			$UIManager::setLookAndFeel($($nc(info)->getClassName()));
-		} catch ($Exception&) {
-			$var($Exception, exception, $catch());
+		} catch ($Exception& exception) {
 			$throwNew($Error, "could not change look and feel"_s, exception);
 		}
 		$var($JFrame, frame, $new($JFrame, $($of(this)->getClass()->getSimpleName())));
-		frame->add(static_cast<$Component*>(($assignField(this, chooser, $new($JFileChooser)))));
+		frame->add(static_cast<$Component*>(($set(this, chooser, $new($JFileChooser)))));
 		frame->setSize(800, 600);
 		frame->setLocationRelativeTo(nullptr);
 		frame->setVisible(true);
 		$SwingUtilities::invokeLater(this);
 	} else {
 		int32_t count = $nc($($nc(this->chooser)->getChoosableFileFilters()))->length;
-		$init($System);
 		$nc($System::out)->println($$str({"count = "_s, $$str(count), "; "_s, $$str($nc(this->chooser)->isAcceptAllFileFilterUsed())}));
 		if (count == 0) {
 			if (nullptr != $nc(this->chooser)->getFileFilter()) {

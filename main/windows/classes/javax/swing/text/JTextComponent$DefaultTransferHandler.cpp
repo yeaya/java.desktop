@@ -9,14 +9,6 @@
 #include <java/awt/datatransfer/UnsupportedFlavorException.h>
 #include <java/awt/im/InputContext.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/TransferHandler.h>
 #include <javax/swing/text/BadLocationException.h>
@@ -130,8 +122,7 @@ void JTextComponent$DefaultTransferHandler::exportToClipboard($JComponent* comp,
 				if (action == $TransferHandler::MOVE) {
 					doc->remove(p0, p1 - p0);
 				}
-			} catch ($BadLocationException&) {
-				$catch();
+			} catch ($BadLocationException& ble) {
 			}
 		}
 	}
@@ -150,10 +141,8 @@ bool JTextComponent$DefaultTransferHandler::importData($JComponent* comp, $Trans
 				$var($String, data, $cast($String, $nc(t)->getTransferData(flavor)));
 				$nc(($cast($JTextComponent, comp)))->replaceSelection(data);
 				return true;
-			} catch ($UnsupportedFlavorException&) {
-				$catch();
-			} catch ($IOException&) {
-				$catch();
+			} catch ($UnsupportedFlavorException& ufe) {
+			} catch ($IOException& ioe) {
 			}
 		}
 	}

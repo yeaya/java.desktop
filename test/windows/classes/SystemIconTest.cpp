@@ -3,17 +3,6 @@
 #include <java/awt/Image.h>
 #include <java/awt/image/MultiResolutionImage.h>
 #include <java/io/File.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/ImageIcon.h>
 #include <javax/swing/filechooser/FileSystemView.h>
@@ -90,8 +79,7 @@ void SystemIconTest::negativeTests() {
 	try {
 		$assign(icon, $nc(SystemIconTest::fsv)->getSystemIcon($$new($File, "."_s), -1, 16));
 		$throwNew($RuntimeException, "Negative size icon should throw invalid argument exception"_s);
-	} catch ($IllegalArgumentException&) {
-		$catch();
+	} catch ($IllegalArgumentException& iae) {
 	}
 	$assign(icon, $nc(SystemIconTest::fsv)->getSystemIcon($$new($File, "thereisdefinitelynosuchfile.why"_s), 16, 16));
 	if (icon != nullptr) {

@@ -1,16 +1,7 @@
 #include <HangDuringStaticInitialization$1.h>
 
 #include <HangDuringStaticInitialization.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/file/FileVisitResult.h>
 #include <java/nio/file/Path.h>
 #include <java/nio/file/SimpleFileVisitor.h>
@@ -82,8 +73,7 @@ $FileVisitResult* HangDuringStaticInitialization$1::visitFile($Path* file$rename
 		$assign(name, $(name->substring(0, name->indexOf("."_s)))->replace(u'/', u'.'));
 		try {
 			$Class::forName(name, true, nullptr);
-		} catch ($Throwable&) {
-			$catch();
+		} catch ($Throwable& e) {
 		}
 	}
 	$init($FileVisitResult);

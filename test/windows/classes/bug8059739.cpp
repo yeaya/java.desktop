@@ -6,21 +6,9 @@
 #include <java/io/BufferedReader.h>
 #include <java/io/InputStream.h>
 #include <java/io/InputStreamReader.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Reader.h>
-#include <java/lang/Array.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JTextField.h>
 #include <javax/swing/SwingUtilities.h>
@@ -99,7 +87,6 @@ void bug8059739::main($StringArray* args) {
 	if (!bug8059739::passed) {
 		$throwNew($RuntimeException, "Test FAILED."_s);
 	} else {
-		$init($System);
 		$nc($System::out)->println("Passed."_s);
 	}
 }
@@ -125,7 +112,6 @@ void bug8059739::runTest() {
 				if ($InputStream::class$->isAssignableFrom(df->getRepresentationClass()) && charset != nullptr) {
 					$var($BufferedReader, br, $new($BufferedReader, $$new($InputStreamReader, $cast($InputStream, $(clipboard->getData(df))), charset)));
 					$var($String, s, br->readLine());
-					$init($System);
 					$nc($System::out)->println($$str({"Content: \'"_s, s, "\'"_s}));
 					bug8059739::passed &= $nc(s)->contains(testString);
 				}

@@ -22,17 +22,7 @@
 #include <java/awt/font/TextLayout.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/im/InputMethodRequests.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
@@ -229,8 +219,8 @@ $Rectangle* CompositionArea::getCaretRectangle($TextHitInfo* caret) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$assign(metrics, $nc(g)->getFontMetrics());
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(g)->dispose();
 		}
@@ -238,10 +228,10 @@ $Rectangle* CompositionArea::getCaretRectangle($TextHitInfo* caret) {
 			$throw(var$0);
 		}
 	}
-	int32_t var$1 = CompositionArea::TEXT_ORIGIN_X + caretLocation;
-	int32_t var$2 = CompositionArea::TEXT_ORIGIN_Y - $nc(metrics)->getAscent();
-	int32_t var$3 = metrics->getAscent();
-	return $new($Rectangle, var$1, var$2, 0, var$3 + metrics->getDescent());
+	int32_t var$2 = CompositionArea::TEXT_ORIGIN_X + caretLocation;
+	int32_t var$3 = CompositionArea::TEXT_ORIGIN_Y - $nc(metrics)->getAscent();
+	int32_t var$4 = metrics->getAscent();
+	return $new($Rectangle, var$2, var$3, 0, var$4 + metrics->getDescent());
 }
 
 void CompositionArea::paint($Graphics* g) {
@@ -310,8 +300,8 @@ void CompositionArea::setText($AttributedCharacterIterator* composedText, $TextH
 				setPreferredSize($$new($Dimension, newWidth, newHeight));
 				$nc(this->compositionWindow)->setSize($$new($Dimension, newFrameWidth, newFrameHeight));
 				paint(g);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} /*finally*/ {
 				$nc(g)->dispose();
 			}
@@ -331,8 +321,8 @@ void CompositionArea::setCaret($TextHitInfo* caret) {
 			$var($Throwable, var$0, nullptr);
 			try {
 				paint(g);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(g)->dispose();
 			}

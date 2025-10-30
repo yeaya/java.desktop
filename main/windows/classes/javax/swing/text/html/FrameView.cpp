@@ -8,16 +8,6 @@
 #include <java/awt/Shape.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/io/IOException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/MalformedURLException.h>
 #include <java/net/URL.h>
 #include <javax/swing/JComponent.h>
@@ -226,11 +216,9 @@ $Component* FrameView::createComponent() {
 			setMargin();
 			createScrollPane();
 			setBorder();
-		} catch ($MalformedURLException&) {
-			$var($MalformedURLException, e, $catch());
+		} catch ($MalformedURLException& e) {
 			e->printStackTrace();
-		} catch ($IOException&) {
-			$var($IOException, e1, $catch());
+		} catch ($IOException& e1) {
 			e1->printStackTrace();
 		}
 	}
@@ -391,8 +379,7 @@ void FrameView::hyperlinkUpdate($HyperlinkEvent* evt) {
 					try {
 						movePostData(c, postTarget);
 						c->setPage($(e->getURL()));
-					} catch ($IOException&) {
-						$catch();
+					} catch ($IOException& ex) {
 					}
 				} else {
 					$var($HTMLDocument, doc, $cast($HTMLDocument, c->getDocument()));
@@ -406,8 +393,7 @@ void FrameView::hyperlinkUpdate($HyperlinkEvent* evt) {
 		if ($nc(target)->equals("_top"_s)) {
 			try {
 				$nc(c)->setPage($(e->getURL()));
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& ex) {
 			}
 		}
 		if (!$nc(c)->isEditable()) {
@@ -444,10 +430,8 @@ void FrameView::changedUpdate($DocumentEvent* e, $Shape* a, $ViewFactory* f) {
 		if ($instanceOf($HTMLDocument, newDoc)) {
 			$nc(($cast($HTMLDocument, newDoc)))->setFrameDocumentState(true);
 		}
-	} catch ($MalformedURLException&) {
-		$catch();
-	} catch ($IOException&) {
-		$catch();
+	} catch ($MalformedURLException& e1) {
+	} catch ($IOException& e2) {
 	}
 }
 

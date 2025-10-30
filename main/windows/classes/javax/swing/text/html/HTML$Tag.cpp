@@ -1,14 +1,5 @@
 #include <javax/swing/text/html/HTML$Tag.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/html/HTML.h>
 #include <jcpp.h>
 
@@ -219,158 +210,82 @@ $Object* allocate$HTML$Tag($Class* clazz) {
 	return $of($alloc(HTML$Tag));
 }
 
-
 HTML$Tag* HTML$Tag::A = nullptr;
-
 HTML$Tag* HTML$Tag::ADDRESS = nullptr;
-
 HTML$Tag* HTML$Tag::APPLET = nullptr;
-
 HTML$Tag* HTML$Tag::AREA = nullptr;
-
 HTML$Tag* HTML$Tag::B = nullptr;
-
 HTML$Tag* HTML$Tag::BASE = nullptr;
-
 HTML$Tag* HTML$Tag::BASEFONT = nullptr;
-
 HTML$Tag* HTML$Tag::BIG = nullptr;
-
 HTML$Tag* HTML$Tag::BLOCKQUOTE = nullptr;
-
 HTML$Tag* HTML$Tag::BODY = nullptr;
-
 HTML$Tag* HTML$Tag::BR = nullptr;
-
 HTML$Tag* HTML$Tag::CAPTION = nullptr;
-
 HTML$Tag* HTML$Tag::CENTER = nullptr;
-
 HTML$Tag* HTML$Tag::CITE = nullptr;
-
 HTML$Tag* HTML$Tag::CODE = nullptr;
-
 HTML$Tag* HTML$Tag::DD = nullptr;
-
 HTML$Tag* HTML$Tag::DFN = nullptr;
-
 HTML$Tag* HTML$Tag::DIR = nullptr;
-
 HTML$Tag* HTML$Tag::DIV = nullptr;
-
 HTML$Tag* HTML$Tag::DL = nullptr;
-
 HTML$Tag* HTML$Tag::DT = nullptr;
-
 HTML$Tag* HTML$Tag::EM = nullptr;
-
 HTML$Tag* HTML$Tag::FONT = nullptr;
-
 HTML$Tag* HTML$Tag::FORM = nullptr;
-
 HTML$Tag* HTML$Tag::FRAME = nullptr;
-
 HTML$Tag* HTML$Tag::FRAMESET = nullptr;
-
 HTML$Tag* HTML$Tag::H1 = nullptr;
-
 HTML$Tag* HTML$Tag::H2 = nullptr;
-
 HTML$Tag* HTML$Tag::H3 = nullptr;
-
 HTML$Tag* HTML$Tag::H4 = nullptr;
-
 HTML$Tag* HTML$Tag::H5 = nullptr;
-
 HTML$Tag* HTML$Tag::H6 = nullptr;
-
 HTML$Tag* HTML$Tag::HEAD = nullptr;
-
 HTML$Tag* HTML$Tag::HR = nullptr;
-
 HTML$Tag* HTML$Tag::HTML = nullptr;
-
 HTML$Tag* HTML$Tag::I = nullptr;
-
 HTML$Tag* HTML$Tag::IMG = nullptr;
-
 HTML$Tag* HTML$Tag::INPUT = nullptr;
-
 HTML$Tag* HTML$Tag::ISINDEX = nullptr;
-
 HTML$Tag* HTML$Tag::KBD = nullptr;
-
 HTML$Tag* HTML$Tag::LI = nullptr;
-
 HTML$Tag* HTML$Tag::LINK = nullptr;
-
 HTML$Tag* HTML$Tag::MAP = nullptr;
-
 HTML$Tag* HTML$Tag::MENU = nullptr;
-
 HTML$Tag* HTML$Tag::META = nullptr;
 HTML$Tag* HTML$Tag::NOBR = nullptr;
-
 HTML$Tag* HTML$Tag::NOFRAMES = nullptr;
-
 HTML$Tag* HTML$Tag::OBJECT = nullptr;
-
 HTML$Tag* HTML$Tag::OL = nullptr;
-
 HTML$Tag* HTML$Tag::OPTION = nullptr;
-
 HTML$Tag* HTML$Tag::P = nullptr;
-
 HTML$Tag* HTML$Tag::PARAM = nullptr;
-
 HTML$Tag* HTML$Tag::PRE = nullptr;
-
 HTML$Tag* HTML$Tag::SAMP = nullptr;
-
 HTML$Tag* HTML$Tag::SCRIPT = nullptr;
-
 HTML$Tag* HTML$Tag::SELECT = nullptr;
-
 HTML$Tag* HTML$Tag::SMALL = nullptr;
-
 HTML$Tag* HTML$Tag::SPAN = nullptr;
-
 HTML$Tag* HTML$Tag::STRIKE = nullptr;
-
 HTML$Tag* HTML$Tag::S = nullptr;
-
 HTML$Tag* HTML$Tag::STRONG = nullptr;
-
 HTML$Tag* HTML$Tag::STYLE = nullptr;
-
 HTML$Tag* HTML$Tag::SUB = nullptr;
-
 HTML$Tag* HTML$Tag::SUP = nullptr;
-
 HTML$Tag* HTML$Tag::TABLE = nullptr;
-
 HTML$Tag* HTML$Tag::TD = nullptr;
-
 HTML$Tag* HTML$Tag::TEXTAREA = nullptr;
-
 HTML$Tag* HTML$Tag::TH = nullptr;
-
 HTML$Tag* HTML$Tag::TITLE = nullptr;
-
 HTML$Tag* HTML$Tag::TR = nullptr;
-
 HTML$Tag* HTML$Tag::TT = nullptr;
-
 HTML$Tag* HTML$Tag::U = nullptr;
-
 HTML$Tag* HTML$Tag::UL = nullptr;
-
 HTML$Tag* HTML$Tag::VAR = nullptr;
-
 HTML$Tag* HTML$Tag::IMPLIED = nullptr;
-
 HTML$Tag* HTML$Tag::CONTENT = nullptr;
-
 HTML$Tag* HTML$Tag::COMMENT = nullptr;
 $HTML$TagArray* HTML$Tag::allTags = nullptr;
 

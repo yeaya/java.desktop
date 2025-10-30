@@ -1,17 +1,6 @@
 #include <bug4275046$5.h>
 
 #include <bug4275046.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTable.h>
 #include <javax/swing/table/TableModel.h>
 #include <jcpp.h>
@@ -76,7 +65,6 @@ void bug4275046$5::init$($bug4275046* this$0) {
 void bug4275046$5::run() {
 	$useLocalCurrentObjectStackCache();
 	$set(this->this$0, editedValue, $nc($($nc(this->this$0->table)->getModel()))->getValueAt(0, 1));
-	$init($System);
 	$nc($System::out)->println($$str({"The edited value is = "_s, this->this$0->editedValue}));
 	this->this$0->testResult = $nc($of(this->this$0->editedValue))->equals("rededited"_s);
 	if (this->this$0->testResult) {

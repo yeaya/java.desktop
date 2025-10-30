@@ -16,8 +16,10 @@ public:
 	void init$($String* s);
 	static const int64_t serialVersionUID = (int64_t)0x651D9288C30377C2;
 	ProfileDataException(const ProfileDataException& e);
-	ProfileDataException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline ProfileDataException* operator ->() {
+		return (ProfileDataException*)throwing$;
+	}
 };
 
 		} // color

@@ -2,23 +2,7 @@
 
 #include <java/awt/image/RenderedImage.h>
 #include <java/awt/image/renderable/RenderableImage.h>
-#include <java/lang/Array.h>
-#include <java/lang/Byte.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Cloneable.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/Integer.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/Short.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Vector.h>
 #include <jcpp.h>
 
@@ -154,8 +138,7 @@ void ParameterBlock::init$($Vector* sources, $Vector* parameters) {
 $Object* ParameterBlock::shallowClone() {
 	try {
 		return $of($Cloneable::clone());
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		return $of(nullptr);
 	}
 	$shouldNotReachHere();
@@ -166,8 +149,7 @@ $Object* ParameterBlock::clone() {
 	$var(ParameterBlock, theClone, nullptr);
 	try {
 		$assign(theClone, $cast(ParameterBlock, $Cloneable::clone()));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		return $of(nullptr);
 	}
 	if (this->sources != nullptr) {

@@ -2,14 +2,6 @@
 
 #include <java/awt/event/ActionEvent.h>
 #include <java/beans/PropertyVetoException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventObject.h>
 #include <javax/swing/JInternalFrame.h>
 #include <javax/swing/JToggleButton.h>
@@ -88,8 +80,7 @@ void SynthDesktopIconUI$Handler::actionPerformed($ActionEvent* evt) {
 					$nc($($SynthDesktopIconUI::access$300(this->this$0)))->setSelected(true);
 				}
 			}
-		} catch ($PropertyVetoException&) {
-			$catch();
+		} catch ($PropertyVetoException& e2) {
 		}
 	}
 }

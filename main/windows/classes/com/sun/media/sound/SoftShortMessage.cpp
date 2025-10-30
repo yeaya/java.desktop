@@ -1,15 +1,5 @@
 #include <com/sun/media/sound/SoftShortMessage.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/midi/InvalidMidiDataException.h>
 #include <javax/sound/midi/ShortMessage.h>
 #include <jcpp.h>
@@ -68,15 +58,13 @@ void SoftShortMessage::setMessage(int32_t command, int32_t channel, int32_t data
 }
 
 $Object* SoftShortMessage::clone() {
-	$useLocalCurrentObjectStackCache();
 	$var(SoftShortMessage, clone, $new(SoftShortMessage));
 	try {
 		int32_t var$0 = getCommand();
 		int32_t var$1 = getChannel();
 		int32_t var$2 = getData1();
 		clone->setMessage(var$0, var$1, var$2, getData2());
-	} catch ($InvalidMidiDataException&) {
-		$var($InvalidMidiDataException, e, $catch());
+	} catch ($InvalidMidiDataException& e) {
 		$throwNew($IllegalArgumentException, static_cast<$Throwable*>(e));
 	}
 	return $of(clone);

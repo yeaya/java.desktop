@@ -4,16 +4,7 @@
 #include <java/io/IOException.h>
 #include <java/io/OutputStream.h>
 #include <java/io/OutputStreamWriter.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Cloneable.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/charset/Charset.h>
 #include <java/nio/charset/CharsetEncoder.h>
 #include <java/nio/charset/StandardCharsets.h>
@@ -98,8 +89,7 @@ void FontDescriptor::init$($String* nativeName, $CharsetEncoder* encoder, $ints*
 		$var($OutputStreamWriter, osw, $new($OutputStreamWriter, static_cast<$OutputStream*>($$new($ByteArrayOutputStream)), cs));
 		$set(this, charsetName, osw->getEncoding());
 		osw->close();
-	} catch ($IOException&) {
-		$catch();
+	} catch ($IOException& ioe) {
 	}
 }
 
@@ -146,8 +136,7 @@ bool FontDescriptor::useUnicode() {
 		try {
 			$init($StandardCharsets);
 			$set(this, unicodeEncoder, FontDescriptor::isLE ? $nc($StandardCharsets::UTF_16LE)->newEncoder() : $nc($StandardCharsets::UTF_16BE)->newEncoder());
-		} catch ($IllegalArgumentException&) {
-			$catch();
+		} catch ($IllegalArgumentException& x) {
 		}
 	}
 	return this->useUnicode$;

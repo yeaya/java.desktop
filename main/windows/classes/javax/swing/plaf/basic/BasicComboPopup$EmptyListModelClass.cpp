@@ -1,12 +1,5 @@
 #include <javax/swing/plaf/basic/BasicComboPopup$EmptyListModelClass.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/ListModel.h>
 #include <javax/swing/event/ListDataListener.h>
 #include <javax/swing/plaf/basic/BasicComboPopup.h>

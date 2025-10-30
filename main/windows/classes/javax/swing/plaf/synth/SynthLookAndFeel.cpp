@@ -15,23 +15,9 @@
 #include <java/io/InputStream.h>
 #include <java/io/NotSerializableException.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/StringBuilder.h>
 #include <java/lang/ref/Reference.h>
 #include <java/lang/ref/ReferenceQueue.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/HashMap.h>
@@ -307,17 +293,11 @@ $Object* allocate$SynthLookAndFeel($Class* clazz) {
 	return $of($alloc(SynthLookAndFeel));
 }
 
-
 $Insets* SynthLookAndFeel::EMPTY_UIRESOURCE_INSETS = nullptr;
-
 $Object* SynthLookAndFeel::STYLE_FACTORY_KEY = nullptr;
-
 $Object* SynthLookAndFeel::SELECTED_UI_KEY = nullptr;
-
 $Object* SynthLookAndFeel::SELECTED_UI_STATE_KEY = nullptr;
-
 $SynthStyleFactory* SynthLookAndFeel::lastFactory = nullptr;
-
 $AppContext* SynthLookAndFeel::lastContext = nullptr;
 $ReferenceQueue* SynthLookAndFeel::queue = nullptr;
 

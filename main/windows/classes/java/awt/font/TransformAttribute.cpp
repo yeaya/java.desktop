@@ -2,14 +2,7 @@
 
 #include <java/awt/geom/AffineTransform.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef IDENTITY
@@ -57,7 +50,6 @@ $Object* allocate$TransformAttribute($Class* clazz) {
 	return $of($alloc(TransformAttribute));
 }
 
-
 TransformAttribute* TransformAttribute::IDENTITY = nullptr;
 
 void TransformAttribute::init$($AffineTransform* transform) {
@@ -101,8 +93,7 @@ bool TransformAttribute::equals(Object$* rhs) {
 				return that->transform == nullptr;
 			}
 			return $nc(this->transform)->equals(that->transform);
-		} catch ($ClassCastException&) {
-			$catch();
+		} catch ($ClassCastException& e) {
 		}
 	}
 	return false;

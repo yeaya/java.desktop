@@ -3,21 +3,10 @@
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/OutOfMemoryError.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <jcpp.h>
 
@@ -94,7 +83,6 @@ $bytes* MemoryCache::getCacheBlock(int64_t blockNum) {
 }
 
 int64_t MemoryCache::loadFromStream($InputStream* stream, int64_t pos) {
-	$useLocalCurrentObjectStackCache();
 	if (pos < this->length) {
 		return pos;
 	}
@@ -108,8 +96,7 @@ int64_t MemoryCache::loadFromStream($InputStream* stream, int64_t pos) {
 		if (buf == nullptr) {
 			try {
 				$assign(buf, $new($bytes, MemoryCache::BUFFER_LENGTH));
-			} catch ($OutOfMemoryError&) {
-				$var($OutOfMemoryError, e, $catch());
+			} catch ($OutOfMemoryError& e) {
 				$throwNew($IOException, "No memory left for cache!"_s);
 			}
 			offset = 0;
@@ -169,8 +156,7 @@ void MemoryCache::pad(int64_t pos) {
 	for (int64_t i = 0; i < numNewBuffers; ++i) {
 		try {
 			$nc(this->cache)->add($$new($bytes, MemoryCache::BUFFER_LENGTH));
-		} catch ($OutOfMemoryError&) {
-			$var($OutOfMemoryError, e, $catch());
+		} catch ($OutOfMemoryError& e) {
 			$throwNew($IOException, "No memory left for cache!"_s);
 		}
 	}

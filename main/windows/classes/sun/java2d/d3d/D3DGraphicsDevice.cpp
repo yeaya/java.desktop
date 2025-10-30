@@ -14,19 +14,7 @@
 #include <java/awt/event/WindowListener.h>
 #include <java/awt/peer/ComponentPeer.h>
 #include <java/awt/peer/WindowPeer.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <sun/awt/AWTAccessor$ComponentAccessor.h>
 #include <sun/awt/AWTAccessor.h>
@@ -225,13 +213,11 @@ D3DGraphicsDevice* D3DGraphicsDevice::createDevice(int32_t screen) {
 	$var($ContextCapabilities, d3dCaps, getDeviceCaps(screen));
 	if (((int32_t)($nc(d3dCaps)->getCaps() & (uint32_t)0x00040000)) == 0) {
 		if ($WindowsFlags::isD3DVerbose()) {
-			$init($System);
 			$nc($System::out)->println($$str({"Could not enable Direct3D pipeline on screen "_s, $$str(screen)}));
 		}
 		return nullptr;
 	}
 	if ($WindowsFlags::isD3DVerbose()) {
-		$init($System);
 		$nc($System::out)->println($$str({"Direct3D pipeline enabled on screen "_s, $$str(screen)}));
 	}
 	$var(D3DGraphicsDevice, gd, $new(D3DGraphicsDevice, screen, d3dCaps));
@@ -270,8 +256,8 @@ $ContextCapabilities* D3DGraphicsDevice::getDeviceCaps(int32_t screen) {
 			$var($D3DGraphicsDevice$1Result, res, $new($D3DGraphicsDevice$1Result));
 			rq->flushAndInvokeNow($$new($D3DGraphicsDevice$1, res, screen));
 			$assign(d3dCaps, $new($D3DContext$D3DContextCaps, res->caps, res->id));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}
@@ -334,8 +320,8 @@ void D3DGraphicsDevice::enterFullScreenExclusive(int32_t screen, $WindowPeer* wp
 		$var($Throwable, var$0, nullptr);
 		try {
 			rq->flushAndInvokeNow($$new($D3DGraphicsDevice$2, this, wpeer, screen));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}
@@ -366,8 +352,8 @@ void D3DGraphicsDevice::exitFullScreenExclusive(int32_t screen, $WindowPeer* w) 
 			$var($Throwable, var$0, nullptr);
 			try {
 				rq->flushAndInvokeNow($$new($D3DGraphicsDevice$3, this, screen));
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				rq->unlock();
 			}
@@ -383,7 +369,7 @@ void D3DGraphicsDevice::exitFullScreenExclusive(int32_t screen, $WindowPeer* w) 
 void D3DGraphicsDevice::addFSWindowListener($Window* w) {
 	$useLocalCurrentObjectStackCache();
 	$var($AWTAccessor$ComponentAccessor, acc, $AWTAccessor::getComponentAccessor());
-	if (!($instanceOf($Frame, w)) && !($instanceOf($Dialog, w)) && ($assignField(this, realFSWindow, getToplevelOwner(w))) != nullptr) {
+	if (!($instanceOf($Frame, w)) && !($instanceOf($Dialog, w)) && ($set(this, realFSWindow, getToplevelOwner(w))) != nullptr) {
 		$set(this, ownerOrigBounds, $nc(this->realFSWindow)->getBounds());
 		$var($WWindowPeer, fp, $cast($WWindowPeer, $nc(acc)->getPeer(this->realFSWindow)));
 		this->ownerWasVisible = $nc(this->realFSWindow)->isVisible();
@@ -455,8 +441,8 @@ $DisplayMode* D3DGraphicsDevice::getCurrentDisplayMode(int32_t screen) {
 			$assign(var$2, res->dm);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			rq->unlock();
 		}
@@ -494,8 +480,8 @@ void D3DGraphicsDevice::configDisplayMode(int32_t screen, $WindowPeer* w, int32_
 		$var($Throwable, var$0, nullptr);
 		try {
 			rq->flushAndInvokeNow($$new($D3DGraphicsDevice$5, this, wpeer, screen, width, height, bitDepth, refreshRate));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}
@@ -523,8 +509,8 @@ void D3DGraphicsDevice::enumDisplayModes(int32_t screen, $ArrayList* modes) {
 			if ($nc(modes)->size() == 0) {
 				modes->add($(getCurrentDisplayModeNative(screen)));
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}
@@ -559,8 +545,8 @@ int32_t D3DGraphicsDevice::getAvailableAcceleratedMemory() {
 			var$2 = (int32_t)res->mem;
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			rq->unlock();
 		}
@@ -628,8 +614,8 @@ bool D3DGraphicsDevice::isD3DAvailableOnDevice(int32_t screen) {
 			var$2 = res->avail;
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			rq->unlock();
 		}

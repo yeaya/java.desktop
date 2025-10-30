@@ -13,19 +13,8 @@
 #include <com/sun/media/sound/JSSecurityManager.h>
 #include <com/sun/media/sound/Printer.h>
 #include <com/sun/media/sound/Toolkit.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/AudioFormat$Encoding.h>
 #include <javax/sound/sampled/AudioFormat.h>
 #include <javax/sound/sampled/AudioSystem.h>
@@ -382,8 +371,7 @@ void DirectAudioDevice$DirectDL::drain() {
 		$synchronized(this->lock) {
 			try {
 				$nc($of(this->lock))->wait(10);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& ie) {
 			}
 		}
 	}
@@ -463,8 +451,7 @@ int32_t DirectAudioDevice$DirectDL::write($bytes* b, int32_t off, int32_t len) {
 			$synchronized(this->lock) {
 				try {
 					$nc($of(this->lock))->wait(this->waitTime);
-				} catch ($InterruptedException&) {
-					$catch();
+				} catch ($InterruptedException& ie) {
 				}
 			}
 		} else {

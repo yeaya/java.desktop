@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/MediaSizeName.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <javax/print/attribute/standard/Media.h>
 #include <jcpp.h>
@@ -195,155 +187,80 @@ $Object* allocate$MediaSizeName($Class* clazz) {
 	return $of($alloc(MediaSizeName));
 }
 
-
 MediaSizeName* MediaSizeName::ISO_A0 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_A1 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_A2 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_A3 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_A4 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_A5 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_A6 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_A7 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_A8 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_A9 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_A10 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_B0 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_B1 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_B2 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_B3 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_B4 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_B5 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_B6 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_B7 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_B8 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_B9 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_B10 = nullptr;
-
 MediaSizeName* MediaSizeName::JIS_B0 = nullptr;
-
 MediaSizeName* MediaSizeName::JIS_B1 = nullptr;
-
 MediaSizeName* MediaSizeName::JIS_B2 = nullptr;
-
 MediaSizeName* MediaSizeName::JIS_B3 = nullptr;
-
 MediaSizeName* MediaSizeName::JIS_B4 = nullptr;
-
 MediaSizeName* MediaSizeName::JIS_B5 = nullptr;
-
 MediaSizeName* MediaSizeName::JIS_B6 = nullptr;
-
 MediaSizeName* MediaSizeName::JIS_B7 = nullptr;
-
 MediaSizeName* MediaSizeName::JIS_B8 = nullptr;
-
 MediaSizeName* MediaSizeName::JIS_B9 = nullptr;
-
 MediaSizeName* MediaSizeName::JIS_B10 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_C0 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_C1 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_C2 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_C3 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_C4 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_C5 = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_C6 = nullptr;
-
 MediaSizeName* MediaSizeName::NA_LETTER = nullptr;
-
 MediaSizeName* MediaSizeName::NA_LEGAL = nullptr;
-
 MediaSizeName* MediaSizeName::EXECUTIVE = nullptr;
-
 MediaSizeName* MediaSizeName::LEDGER = nullptr;
-
 MediaSizeName* MediaSizeName::TABLOID = nullptr;
-
 MediaSizeName* MediaSizeName::INVOICE = nullptr;
-
 MediaSizeName* MediaSizeName::FOLIO = nullptr;
-
 MediaSizeName* MediaSizeName::QUARTO = nullptr;
-
 MediaSizeName* MediaSizeName::JAPANESE_POSTCARD = nullptr;
-
 MediaSizeName* MediaSizeName::JAPANESE_DOUBLE_POSTCARD = nullptr;
-
 MediaSizeName* MediaSizeName::A = nullptr;
-
 MediaSizeName* MediaSizeName::B = nullptr;
-
 MediaSizeName* MediaSizeName::C = nullptr;
-
 MediaSizeName* MediaSizeName::D = nullptr;
-
 MediaSizeName* MediaSizeName::E = nullptr;
-
 MediaSizeName* MediaSizeName::ISO_DESIGNATED_LONG = nullptr;
-
 MediaSizeName* MediaSizeName::ITALY_ENVELOPE = nullptr;
-
 MediaSizeName* MediaSizeName::MONARCH_ENVELOPE = nullptr;
-
 MediaSizeName* MediaSizeName::PERSONAL_ENVELOPE = nullptr;
-
 MediaSizeName* MediaSizeName::NA_NUMBER_9_ENVELOPE = nullptr;
-
 MediaSizeName* MediaSizeName::NA_NUMBER_10_ENVELOPE = nullptr;
-
 MediaSizeName* MediaSizeName::NA_NUMBER_11_ENVELOPE = nullptr;
-
 MediaSizeName* MediaSizeName::NA_NUMBER_12_ENVELOPE = nullptr;
-
 MediaSizeName* MediaSizeName::NA_NUMBER_14_ENVELOPE = nullptr;
-
 MediaSizeName* MediaSizeName::NA_6X9_ENVELOPE = nullptr;
-
 MediaSizeName* MediaSizeName::NA_7X9_ENVELOPE = nullptr;
-
 MediaSizeName* MediaSizeName::NA_9X11_ENVELOPE = nullptr;
-
 MediaSizeName* MediaSizeName::NA_9X12_ENVELOPE = nullptr;
-
 MediaSizeName* MediaSizeName::NA_10X13_ENVELOPE = nullptr;
-
 MediaSizeName* MediaSizeName::NA_10X14_ENVELOPE = nullptr;
-
 MediaSizeName* MediaSizeName::NA_10X15_ENVELOPE = nullptr;
-
 MediaSizeName* MediaSizeName::NA_5X7 = nullptr;
-
 MediaSizeName* MediaSizeName::NA_8X10 = nullptr;
-
 $StringArray* MediaSizeName::myStringTable = nullptr;
-
 $MediaSizeNameArray* MediaSizeName::myEnumValueTable = nullptr;
 
 void MediaSizeName::init$(int32_t value) {

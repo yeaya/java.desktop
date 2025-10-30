@@ -51,24 +51,12 @@
 #include <java/awt/image/ImageProducer.h>
 #include <java/awt/image/RGBImageFilter.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/Hashtable.h>
@@ -1354,7 +1342,6 @@ $Object* allocate$WindowsLookAndFeel($Class* clazz) {
 }
 
 bool WindowsLookAndFeel::$assertionsDisabled = false;
-
 $Object* WindowsLookAndFeel::HI_RES_DISABLED_ICON_CLIENT_KEY = nullptr;
 bool WindowsLookAndFeel::isMnemonicHidden$ = false;
 bool WindowsLookAndFeel::isClassicWindows$ = false;
@@ -1570,8 +1557,8 @@ void WindowsLookAndFeel::initComponentDefaults($UIDefaults* table) {
 	WindowsLookAndFeel::isClassicWindows$ = $nc($($OSInfo::getWindowsVersion()))->compareTo($OSInfo::WINDOWS_95) <= 0;
 	$var($Object, treeExpandedIcon, $WindowsTreeUI$ExpandedIcon::createExpandedIcon());
 	$var($Object, treeCollapsedIcon, $WindowsTreeUI$CollapsedIcon::createCollapsedIcon());
-		$init($DefaultEditorKit);
-		$init($JTextField);
+	$init($DefaultEditorKit);
+	$init($JTextField);
 	$var($Object, fieldInputMap, $new($UIDefaults$LazyInputMap, $$new($ObjectArray, {
 		$of("control C"_s),
 		$of($DefaultEditorKit::copyAction),
@@ -1882,17 +1869,17 @@ void WindowsLookAndFeel::initComponentDefaults($UIDefaults* table) {
 			$set(this, sizeName, $new($WindowsLookAndFeel$TriggerDesktopProperty, this, "win.xpstyle.sizeName"_s));
 		}
 	}
-		$var($Object, var$2, $of($Integer::valueOf(3)));
-		$var($Object, var$3, $of($Integer::valueOf(3)));
-		$var($Object, var$4, $of($Integer::valueOf(6)));
-		$var($Object, var$5, $of($Integer::valueOf(6)));
-		$var($Object, var$6, $of($Integer::valueOf(0)));
-		$var($Object, var$7, $of($new($EmptyBorder, 1, 3, 1, 1)));
-		$init($TMSchema$State);
-		$var($Object, var$8, $of($Character::valueOf((char16_t)9679)));
-		$var($Object, var$9, $of($new($InsetsUIResource, 1, 4, 1, 4)));
-		$var($Object, var$10, $of($new($InsetsUIResource, 3, 2, 2, 2)));
-		$init($WindowsLookAndFeel$XPValue);
+	$var($Object, var$2, $of($Integer::valueOf(3)));
+	$var($Object, var$3, $of($Integer::valueOf(3)));
+	$var($Object, var$4, $of($Integer::valueOf(6)));
+	$var($Object, var$5, $of($Integer::valueOf(6)));
+	$var($Object, var$6, $of($Integer::valueOf(0)));
+	$var($Object, var$7, $of($new($EmptyBorder, 1, 3, 1, 1)));
+	$init($TMSchema$State);
+	$var($Object, var$8, $of($Character::valueOf((char16_t)9679)));
+	$var($Object, var$9, $of($new($InsetsUIResource, 1, 4, 1, 4)));
+	$var($Object, var$10, $of($new($InsetsUIResource, 3, 2, 2, 2)));
+	$init($WindowsLookAndFeel$XPValue);
 	$var($ObjectArray, defaults, $new($ObjectArray, {
 		$of("AuditoryCues.playList"_s),
 		($Object*)nullptr,
@@ -3636,9 +3623,9 @@ $ObjectArray* WindowsLookAndFeel::getLazyValueDefaults() {
 	$var($UIDefaults$LazyValue, menuArrowIcon, static_cast<$UIDefaults$LazyValue*>($new(WindowsLookAndFeel$$Lambda$lambda$getLazyValueDefaults$28$26)));
 	$var($Color, highlight, $cast($Color, $nc($($Toolkit::getDefaultToolkit()))->getDesktopProperty("win.3d.highlightColor"_s)));
 	$var($Color, shadow, $cast($Color, $nc($($Toolkit::getDefaultToolkit()))->getDesktopProperty("win.3d.shadowColor"_s)));
-		$init($Boolean);
-		$var($Object, var$1, static_cast<$UIDefaults$LazyValue*>($new(WindowsLookAndFeel$$Lambda$lambda$getLazyValueDefaults$29$27)));
-		$var($Object, var$2, static_cast<$UIDefaults$LazyValue*>($new(WindowsLookAndFeel$$Lambda$lambda$getLazyValueDefaults$31$28)));
+	$init($Boolean);
+	$var($Object, var$1, static_cast<$UIDefaults$LazyValue*>($new(WindowsLookAndFeel$$Lambda$lambda$getLazyValueDefaults$29$27)));
+	$var($Object, var$2, static_cast<$UIDefaults$LazyValue*>($new(WindowsLookAndFeel$$Lambda$lambda$getLazyValueDefaults$31$28)));
 	$var($ObjectArray, lazyDefaults, $new($ObjectArray, {
 		$of("Button.border"_s),
 		buttonBorder,
@@ -3953,7 +3940,7 @@ $Object* WindowsLookAndFeel::lambda$initVistaComponentDefaults$6($UIDefaults* t)
 
 $Object* WindowsLookAndFeel::lambda$initComponentDefaults$5($UIDefaults* t) {
 	$useLocalCurrentObjectStackCache();
-		$load($BasicLookAndFeel);
+	$load($BasicLookAndFeel);
 	return $of($new($WindowsInternalFrameTitlePane$ScalableIconUIResource, $$new($ObjectArray, {
 		$($SwingUtilities2::makeIcon($of(this)->getClass(), $BasicLookAndFeel::class$, "icons/JavaCup16.png"_s)),
 		$($SwingUtilities2::makeIcon($of(this)->getClass(), WindowsLookAndFeel::class$, "icons/JavaCup32.png"_s))

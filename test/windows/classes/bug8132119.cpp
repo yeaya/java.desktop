@@ -17,28 +17,13 @@
 #include <java/awt/image/RenderedImage.h>
 #include <java/awt/image/WritableRenderedImage.h>
 #include <java/io/File.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/HashMap.h>
 #include <java/util/Map.h>
@@ -328,8 +313,8 @@ void bug8132119::checkNullArguments() {
 			$var($BufferedImage, img, createBufferedImage(100, 100));
 			$assign(g, $nc(img)->createGraphics());
 			checkNullArguments(component, g, text);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(g)->dispose();
 		}
@@ -355,8 +340,7 @@ void bug8132119::checkNullArgumentsDrawString($JComponent* comp, $Graphics2D* g,
 	$BasicGraphicsUtils::drawString(comp, g, ($String*)nullptr, x, y);
 	try {
 		$BasicGraphicsUtils::drawString(comp, ($Graphics2D*)nullptr, text, x, y);
-	} catch ($NullPointerException&) {
-		$var($NullPointerException, e, $catch());
+	} catch ($NullPointerException& e) {
 		return;
 	}
 	$throwNew($RuntimeException, "NPE is not thrown"_s);
@@ -370,8 +354,7 @@ void bug8132119::checkNullArgumentsDrawStringUnderlineCharAt($JComponent* comp, 
 	$BasicGraphicsUtils::drawStringUnderlineCharAt(comp, g, nullptr, 1, (float)x, (float)y);
 	try {
 		$BasicGraphicsUtils::drawStringUnderlineCharAt(comp, nullptr, text, 1, (float)x, (float)y);
-	} catch ($NullPointerException&) {
-		$var($NullPointerException, e, $catch());
+	} catch ($NullPointerException& e) {
 		return;
 	}
 	$throwNew($RuntimeException, "NPE is not thrown"_s);
@@ -388,8 +371,7 @@ void bug8132119::checkNullArgumentsGetClippedString($JComponent* comp, $String* 
 	}
 	try {
 		$BasicGraphicsUtils::getClippedString(comp, nullptr, text, 1);
-	} catch ($NullPointerException&) {
-		$var($NullPointerException, e, $catch());
+	} catch ($NullPointerException& e) {
 		return;
 	}
 	$throwNew($RuntimeException, "NPE is not thrown"_s);
@@ -406,8 +388,7 @@ void bug8132119::checkNullArgumentsGetStringWidth($JComponent* comp, $String* te
 	}
 	try {
 		$BasicGraphicsUtils::getStringWidth(comp, nullptr, text);
-	} catch ($NullPointerException&) {
-		$var($NullPointerException, e, $catch());
+	} catch ($NullPointerException& e) {
 		return;
 	}
 	$throwNew($RuntimeException, "NPE is not thrown"_s);
@@ -415,11 +396,9 @@ void bug8132119::checkNullArgumentsGetStringWidth($JComponent* comp, $String* te
 
 void bug8132119::setMetalLAF() {
 	$init(bug8132119);
-	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }
@@ -468,7 +447,6 @@ $Font* bug8132119::getFont() {
 			$assign(fontName, getFontName("Dialog"_s, fontNames));
 			if (fontName == nullptr) {
 				$assign(fontName, $nc(fontNames)->get(0));
-				$init($System);
 				$nc($System::out)->println($$str({"warning - preferred fonts not on the system, fall back to first font "_s, fontName}));
 			}
 		}
@@ -514,8 +492,7 @@ void bug8132119::checkImageContainsSymbol($BufferedImage* buffImage, int32_t x, 
 	if (backgroundChangesCount != intersections * 2) {
 		try {
 			$ImageIO::write(static_cast<$RenderedImage*>(buffImage), "png"_s, $$new($File, "image.png"_s));
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& e) {
 		}
 		$throwNew($RuntimeException, "String is not properly drawn!"_s);
 	}

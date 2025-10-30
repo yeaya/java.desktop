@@ -6,23 +6,10 @@
 #include <java/awt/image/Raster.h>
 #include <java/awt/image/RenderedImage.h>
 #include <java/awt/image/WritableRenderedImage.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Module.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Iterator.h>
@@ -405,8 +392,7 @@ $Iterator* ImageReader::readAll($Iterator* params) {
 		$var($BufferedImage, bi, nullptr);
 		try {
 			$assign(bi, read(imageIndex, param));
-		} catch ($IndexOutOfBoundsException&) {
-			$var($IndexOutOfBoundsException, e, $catch());
+		} catch ($IndexOutOfBoundsException& e) {
 			break;
 		}
 		$var($ArrayList, thumbnails, nullptr);
@@ -821,18 +807,15 @@ void ImageReader::processWarningOccurred($String* baseName, $String* keyword) {
 		$var($ResourceBundle, bundle, nullptr);
 		try {
 			$assign(bundle, $ResourceBundle::getBundle(baseName, locale, $($of(this)->getClass()->getModule())));
-		} catch ($MissingResourceException&) {
-			$var($MissingResourceException, mre, $catch());
+		} catch ($MissingResourceException& mre) {
 			$throwNew($IllegalArgumentException, "Bundle not found!"_s, mre);
 		}
 		$var($String, warning, nullptr);
 		try {
 			$assign(warning, $nc(bundle)->getString(keyword));
-		} catch ($ClassCastException&) {
-			$var($ClassCastException, cce, $catch());
+		} catch ($ClassCastException& cce) {
 			$throwNew($IllegalArgumentException, "Resource is not a String!"_s, cce);
-		} catch ($MissingResourceException&) {
-			$var($MissingResourceException, mre, $catch());
+		} catch ($MissingResourceException& mre) {
 			$throwNew($IllegalArgumentException, "Resource is missing!"_s, mre);
 		}
 		$nc(listener)->warningOccurred(this, warning);

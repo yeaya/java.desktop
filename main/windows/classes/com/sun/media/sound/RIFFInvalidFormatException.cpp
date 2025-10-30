@@ -1,13 +1,6 @@
 #include <com/sun/media/sound/RIFFInvalidFormatException.h>
 
 #include <com/sun/media/sound/InvalidFormatException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $InvalidFormatException = ::com::sun::media::sound::InvalidFormatException;
@@ -55,16 +48,10 @@ void RIFFInvalidFormatException::init$($String* s) {
 RIFFInvalidFormatException::RIFFInvalidFormatException() {
 }
 
-RIFFInvalidFormatException::RIFFInvalidFormatException(const RIFFInvalidFormatException& e) {
+RIFFInvalidFormatException::RIFFInvalidFormatException(const RIFFInvalidFormatException& e) : $InvalidFormatException(e) {
 }
 
-RIFFInvalidFormatException RIFFInvalidFormatException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void RIFFInvalidFormatException::throwWrapper$() {
-	$pendingException(this);
+void RIFFInvalidFormatException::throw$() {
 	throw *this;
 }
 

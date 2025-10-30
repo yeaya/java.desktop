@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/PrinterStateReason.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -145,75 +137,40 @@ void PrinterStateReason::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 PrinterStateReason* PrinterStateReason::OTHER = nullptr;
-
 PrinterStateReason* PrinterStateReason::MEDIA_NEEDED = nullptr;
-
 PrinterStateReason* PrinterStateReason::MEDIA_JAM = nullptr;
-
 PrinterStateReason* PrinterStateReason::MOVING_TO_PAUSED = nullptr;
-
 PrinterStateReason* PrinterStateReason::PAUSED = nullptr;
-
 PrinterStateReason* PrinterStateReason::SHUTDOWN = nullptr;
-
 PrinterStateReason* PrinterStateReason::CONNECTING_TO_DEVICE = nullptr;
-
 PrinterStateReason* PrinterStateReason::TIMED_OUT = nullptr;
-
 PrinterStateReason* PrinterStateReason::STOPPING = nullptr;
-
 PrinterStateReason* PrinterStateReason::STOPPED_PARTLY = nullptr;
-
 PrinterStateReason* PrinterStateReason::TONER_LOW = nullptr;
-
 PrinterStateReason* PrinterStateReason::TONER_EMPTY = nullptr;
-
 PrinterStateReason* PrinterStateReason::SPOOL_AREA_FULL = nullptr;
-
 PrinterStateReason* PrinterStateReason::COVER_OPEN = nullptr;
-
 PrinterStateReason* PrinterStateReason::INTERLOCK_OPEN = nullptr;
-
 PrinterStateReason* PrinterStateReason::DOOR_OPEN = nullptr;
-
 PrinterStateReason* PrinterStateReason::INPUT_TRAY_MISSING = nullptr;
-
 PrinterStateReason* PrinterStateReason::MEDIA_LOW = nullptr;
-
 PrinterStateReason* PrinterStateReason::MEDIA_EMPTY = nullptr;
-
 PrinterStateReason* PrinterStateReason::OUTPUT_TRAY_MISSING = nullptr;
-
 PrinterStateReason* PrinterStateReason::OUTPUT_AREA_ALMOST_FULL = nullptr;
-
 PrinterStateReason* PrinterStateReason::OUTPUT_AREA_FULL = nullptr;
-
 PrinterStateReason* PrinterStateReason::MARKER_SUPPLY_LOW = nullptr;
-
 PrinterStateReason* PrinterStateReason::MARKER_SUPPLY_EMPTY = nullptr;
-
 PrinterStateReason* PrinterStateReason::MARKER_WASTE_ALMOST_FULL = nullptr;
-
 PrinterStateReason* PrinterStateReason::MARKER_WASTE_FULL = nullptr;
-
 PrinterStateReason* PrinterStateReason::FUSER_OVER_TEMP = nullptr;
-
 PrinterStateReason* PrinterStateReason::FUSER_UNDER_TEMP = nullptr;
-
 PrinterStateReason* PrinterStateReason::OPC_NEAR_EOL = nullptr;
-
 PrinterStateReason* PrinterStateReason::OPC_LIFE_OVER = nullptr;
-
 PrinterStateReason* PrinterStateReason::DEVELOPER_LOW = nullptr;
-
 PrinterStateReason* PrinterStateReason::DEVELOPER_EMPTY = nullptr;
-
 PrinterStateReason* PrinterStateReason::INTERPRETER_RESOURCE_UNAVAILABLE = nullptr;
-
 $StringArray* PrinterStateReason::myStringTable = nullptr;
-
 $PrinterStateReasonArray* PrinterStateReason::myEnumValueTable = nullptr;
 
 void PrinterStateReason::init$(int32_t value) {

@@ -1,31 +1,16 @@
 #include <sun/awt/shell/Win32ShellFolderManager2$ComInvoker.h>
 
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
 #include <java/lang/Runtime.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/List.h>
@@ -351,18 +336,15 @@ $Object* Win32ShellFolderManager2$ComInvoker::invoke($Callable* task) {
 		$var($Future, future, nullptr);
 		try {
 			$assign(future, submit(task));
-		} catch ($RejectedExecutionException&) {
-			$var($RejectedExecutionException, e, $catch());
+		} catch ($RejectedExecutionException& e) {
 			$throwNew($InterruptedException, $(e->getMessage()));
 		}
 		try {
 			return $of($nc(future)->get());
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, e, $catch());
+		} catch ($InterruptedException& e) {
 			$AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($Win32ShellFolderManager2$ComInvoker$2, this, future)));
 			$throw(e);
-		} catch ($ExecutionException&) {
-			$var($ExecutionException, e, $catch());
+		} catch ($ExecutionException& e) {
 			$var($Throwable, cause, e->getCause());
 			if ($instanceOf($Exception, cause)) {
 				$throw($cast($Exception, cause));

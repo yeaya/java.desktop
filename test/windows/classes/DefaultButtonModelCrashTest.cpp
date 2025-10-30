@@ -10,22 +10,12 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/KeyEvent.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/ButtonModel.h>
 #include <javax/swing/DefaultButtonModel.h>
@@ -204,8 +194,8 @@ void DefaultButtonModelCrashTest::init$() {
 			robot->delay(100);
 			robot->keyPress($KeyEvent::VK_TAB);
 			robot->keyRelease($KeyEvent::VK_TAB);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (this->frame != nullptr) {
 				$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(DefaultButtonModelCrashTest$$Lambda$lambda$new$1$1, this)));

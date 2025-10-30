@@ -8,20 +8,8 @@
 #include <java/io/File.h>
 #include <java/io/FileReader.h>
 #include <java/io/InputStreamReader.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Reader.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <javax/swing/JEditorPane.h>
 #include <javax/swing/JFrame.h>
@@ -106,7 +94,6 @@ void bug7165725::init$() {
 
 void bug7165725::execute($String* urlStr, $bug7165725$GoldenElement* goldenElement) {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println();
 	$nc($System::out)->println($$str({"***** TEST: "_s, urlStr, " *****"_s}));
 	$nc($System::out)->println();
@@ -123,7 +110,6 @@ void bug7165725::main($StringArray* args) {
 	$init(bug7165725);
 	$useLocalCurrentObjectStackCache();
 	$var($String, dirURL, getDirURL());
-	$init($System);
 	$nc($System::out)->println($$str({"dirURL = "_s, dirURL}));
 	$$new(bug7165725)->execute($$str({dirURL, "successive-script-tag.html"_s}), $(createSuccessiveScriptTags()));
 	$$new(bug7165725)->execute($$str({dirURL, "false-text-after-script.html"_s}), $(createFalseTextAfterScript()));

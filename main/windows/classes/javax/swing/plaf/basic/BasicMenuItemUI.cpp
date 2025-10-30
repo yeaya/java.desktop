@@ -16,20 +16,6 @@
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/Action.h>
 #include <javax/swing/ActionMap.h>
@@ -345,17 +331,17 @@ $String* BasicMenuItemUI::getPropertyPrefix() {
 }
 
 void BasicMenuItemUI::installListeners() {
-	if (($assignField(this, mouseInputListener, createMouseInputListener(this->menuItem))) != nullptr) {
+	if (($set(this, mouseInputListener, createMouseInputListener(this->menuItem))) != nullptr) {
 		$nc(this->menuItem)->addMouseListener(this->mouseInputListener);
 		$nc(this->menuItem)->addMouseMotionListener(this->mouseInputListener);
 	}
-	if (($assignField(this, menuDragMouseListener, createMenuDragMouseListener(this->menuItem))) != nullptr) {
+	if (($set(this, menuDragMouseListener, createMenuDragMouseListener(this->menuItem))) != nullptr) {
 		$nc(this->menuItem)->addMenuDragMouseListener(this->menuDragMouseListener);
 	}
-	if (($assignField(this, menuKeyListener, createMenuKeyListener(this->menuItem))) != nullptr) {
+	if (($set(this, menuKeyListener, createMenuKeyListener(this->menuItem))) != nullptr) {
 		$nc(this->menuItem)->addMenuKeyListener(this->menuKeyListener);
 	}
-	if (($assignField(this, propertyChangeListener, createPropertyChangeListener(this->menuItem))) != nullptr) {
+	if (($set(this, propertyChangeListener, createPropertyChangeListener(this->menuItem))) != nullptr) {
 		$nc(this->menuItem)->addPropertyChangeListener(this->propertyChangeListener);
 	}
 }
@@ -845,7 +831,6 @@ $MenuElementArray* BasicMenuItemUI::getPath() {
 
 void BasicMenuItemUI::printMenuElementArray($MenuElementArray* path, bool dumpStack) {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println("Path is("_s);
 	int32_t i = 0;
 	int32_t j = 0;

@@ -7,19 +7,10 @@
 #include <java/awt/Window.h>
 #include <java/beans/PropertyChangeEvent.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
 #include <java/lang/ref/Reference.h>
 #include <java/lang/ref/ReferenceQueue.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Hashtable.h>
 #include <java/util/Map.h>
 #include <javax/swing/LookAndFeel.h>
@@ -135,7 +126,6 @@ $String* SynthLookAndFeel$AATextListener::toString() {
 void SynthLookAndFeel$AATextListener::finalize() {
 	this->$WeakReference::finalize();
 }
-
 
 bool SynthLookAndFeel$AATextListener::updatePending = false;
 

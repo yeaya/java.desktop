@@ -4,16 +4,6 @@
 #include <java/awt/event/ActionEvent.h>
 #include <java/io/File.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Arrays.h>
@@ -108,8 +98,7 @@ void BasicFileChooserUI$ApproveSelectionAction::actionPerformed($ActionEvent* e)
 		if (dir != nullptr) {
 			try {
 				$assign(dir, $ShellFolder::getNormalizedFile(dir));
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& ex) {
 			}
 			this->this$0->changeDirectory(dir);
 			return;
@@ -193,8 +182,7 @@ void BasicFileChooserUI$ApproveSelectionAction::actionPerformed($ActionEvent* e)
 				chooser->setFileFilter(nullptr);
 				chooser->setFileFilter(this->this$0->globFilter);
 				return;
-			} catch ($PatternSyntaxException&) {
-				$catch();
+			} catch ($PatternSyntaxException& pse) {
 			}
 		}
 		this->this$0->resetGlobFilter();

@@ -1,12 +1,6 @@
 #include <java/beans/beancontext/BeanContextMembershipListener.h>
 
 #include <java/beans/beancontext/BeanContextMembershipEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $BeanContextMembershipEvent = ::java::beans::beancontext::BeanContextMembershipEvent;

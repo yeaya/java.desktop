@@ -3,21 +3,6 @@
 #include <bug7010561.h>
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JLabel.h>
@@ -101,8 +86,8 @@ void bug7010561$1::run() {
 	$var($BasicTabbedPaneUI, basicTabbedPaneUI, $cast($BasicTabbedPaneUI, $cast($TabbedPaneUI, tabbedPane->getUI())));
 	try {
 		$load($BasicTabbedPaneUI);
-			$init($Integer);
-			$init($Boolean);
+		$init($Integer);
+		$init($Boolean);
 		$var($Method, method, $BasicTabbedPaneUI::class$->getDeclaredMethod("getTabLabelShiftY"_s, $$new($ClassArray, {
 			$Integer::TYPE,
 			$Integer::TYPE,
@@ -110,7 +95,7 @@ void bug7010561$1::run() {
 		})));
 		$nc(method)->setAccessible(true);
 		for (int32_t i = 0; i < 4; ++i) {
-				$init($bug7010561);
+			$init($bug7010561);
 			int32_t res = $nc(($cast($Integer, $(method->invoke(basicTabbedPaneUI, $$new($ObjectArray, {
 				$($of($Integer::valueOf($nc($bug7010561::TAB_PLACEMENT)->get(i)))),
 				$($of($Integer::valueOf(0))),
@@ -120,11 +105,9 @@ void bug7010561$1::run() {
 				$throwNew($RuntimeException, $$str({"Test bug7010561 failed on index "_s, $$str(i)}));
 			}
 		}
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
-	$init($System);
 	$nc($System::out)->println("Test bug7010561 passed"_s);
 }
 

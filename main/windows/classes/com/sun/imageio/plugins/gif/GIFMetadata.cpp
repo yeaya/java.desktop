@@ -1,17 +1,6 @@
 #include <com/sun/imageio/plugins/gif/GIFMetadata.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/metadata/IIOInvalidTreeException.h>
 #include <javax/imageio/metadata/IIOMetadata.h>
 #include <javax/imageio/metadata/IIOMetadataFormatImpl.h>
@@ -125,8 +114,7 @@ int32_t GIFMetadata::getIntAttribute($Node* node, $String* name, int32_t default
 	int32_t intValue = defaultValue;
 	try {
 		intValue = $Integer::parseInt(value);
-	} catch ($NumberFormatException&) {
-		$var($NumberFormatException, e, $catch());
+	} catch ($NumberFormatException& e) {
 		fatal(node, $$str({"Bad value for "_s, $($nc(node)->getNodeName()), " attribute "_s, name, "!"_s}));
 	}
 	if (bounded && (intValue < min || intValue > max)) {

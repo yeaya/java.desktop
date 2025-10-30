@@ -3,16 +3,7 @@
 #include <java/awt/Font.h>
 #include <java/awt/font/FontRenderContext.h>
 #include <java/awt/geom/AffineTransform.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/SunHints.h>
 #include <sun/font/Font2D.h>
 #include <sun/font/FontUtilities.h>
@@ -101,13 +92,11 @@ int32_t FontStrikeDesc::hashCode() {
 }
 
 bool FontStrikeDesc::equals(Object$* obj) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$var(FontStrikeDesc, desc, $cast(FontStrikeDesc, obj));
 		bool var$0 = $nc(desc)->valuemask == this->valuemask && $nc(desc->glyphTx)->equals(this->glyphTx);
 		return (var$0 && $nc(desc->devTx)->equals(this->devTx));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		return false;
 	}
 	$shouldNotReachHere();

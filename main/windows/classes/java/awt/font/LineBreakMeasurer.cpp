@@ -4,17 +4,7 @@
 #include <java/awt/font/FontRenderContext.h>
 #include <java/awt/font/TextLayout.h>
 #include <java/awt/font/TextMeasurer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/text/BreakIterator.h>
 #include <java/text/CharacterIterator.h>

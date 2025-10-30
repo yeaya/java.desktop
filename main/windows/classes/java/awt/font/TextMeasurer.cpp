@@ -11,24 +11,10 @@
 #include <java/awt/font/TextLayout.h>
 #include <java/awt/font/TextLine$TextLineMetrics.h>
 #include <java/awt/font/TextLine.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
 #include <java/lang/Cloneable.h>
-#include <java/lang/Double.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator$Attribute.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/text/Bidi.h>
@@ -168,12 +154,10 @@ void TextMeasurer::init$($AttributedCharacterIterator* text, $FontRenderContext*
 }
 
 $Object* TextMeasurer::clone() {
-	$useLocalCurrentObjectStackCache();
 	$var(TextMeasurer, other, nullptr);
 	try {
 		$assign(other, $cast(TextMeasurer, $Cloneable::clone()));
-	} catch ($CloneNotSupportedException&) {
-		$var($CloneNotSupportedException, e, $catch());
+	} catch ($CloneNotSupportedException& e) {
 		$throwNew($Error);
 	}
 	if (this->fComponents != nullptr) {
@@ -251,9 +235,7 @@ void TextMeasurer::generateComponents(int32_t startingAt, int32_t endingAt) {
 	}
 	try {
 		$set(this, fComponents, $TextLine::getComponents(this->fParagraph, this->fChars, startingAt, endingAt, charsLtoV, this->fLevels, factory));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
-		$init($System);
+	} catch ($IllegalArgumentException& e) {
 		$nc($System::out)->println($$str({"startingAt="_s, $$str(startingAt), "; endingAt="_s, $$str(endingAt)}));
 		$nc($System::out)->println($$str({"fComponentLimit="_s, $$str(this->fComponentLimit)}));
 		$throw(e);
@@ -455,7 +437,6 @@ $TextLayout* TextMeasurer::getLayout(int32_t start, int32_t limit) {
 
 void TextMeasurer::printStats() {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println($$str({"formattedChars: "_s, $$str(this->formattedChars)}));
 	this->collectStats = false;
 }

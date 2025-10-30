@@ -16,19 +16,7 @@
 #include <java/awt/Panel$AccessibleAWTPanel.h>
 #include <java/awt/Panel.h>
 #include <java/io/ObjectInputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/MalformedURLException.h>
 #include <java/net/URL.h>
 #include <java/security/BasicPermission.h>
@@ -76,11 +64,11 @@ $NamedAttribute Applet_Attribute_var$0[] = {
 	{"forRemoval", 'Z', "true"},
 	{}
 };
+
 $CompoundAttribute _Applet_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", Applet_Attribute_var$0},
 	{}
 };
-
 
 $FieldInfo _Applet_FieldInfo_[] = {
 	{"stub", "Ljava/applet/AppletStub;", nullptr, $PRIVATE | $TRANSIENT, $field(Applet, stub)},
@@ -221,11 +209,9 @@ $Image* Applet::getImage($URL* url) {
 }
 
 $Image* Applet::getImage($URL* url, $String* name) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return getImage($$new($URL, url, name));
-	} catch ($MalformedURLException&) {
-		$var($MalformedURLException, e, $catch());
+	} catch ($MalformedURLException& e) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -241,11 +227,9 @@ $AudioClip* Applet::getAudioClip($URL* url) {
 }
 
 $AudioClip* Applet::getAudioClip($URL* url, $String* name) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return getAudioClip($$new($URL, url, name));
-	} catch ($MalformedURLException&) {
-		$var($MalformedURLException, e, $catch());
+	} catch ($MalformedURLException& e) {
 		return nullptr;
 	}
 	$shouldNotReachHere();

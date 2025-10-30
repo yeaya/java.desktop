@@ -2,19 +2,6 @@
 
 #include <Test6462562.h>
 #include <java/awt/event/ActionEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/ParseException.h>
 #include <javax/swing/Action.h>
 #include <javax/swing/ActionMap.h>
@@ -127,15 +114,13 @@ bool Test6462562$TestFormattedTextField::test(int32_t pos, int32_t selectionLeng
 	}
 	try {
 		commitEdit();
-	} catch ($ParseException&) {
-		$var($ParseException, e, $catch());
+	} catch ($ParseException& e) {
 		e->printStackTrace();
 		this->this$0->failed = true;
 		return false;
 	}
 	$var($Object, v1, getValue());
 	if (!$nc($of(v1))->equals(expectedResult)) {
-		$init($System);
 		$nc($System::err)->printf("Failure: value=\'%s\', mark=%d, dot=%d, action=%s\n"_s, $$new($ObjectArray, {
 			v0,
 			$($of($Integer::valueOf(pos))),

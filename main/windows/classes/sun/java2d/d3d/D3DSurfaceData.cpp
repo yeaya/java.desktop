@@ -19,18 +19,7 @@
 #include <java/awt/image/SampleModel.h>
 #include <java/awt/image/SinglePixelPackedSampleModel.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/SunHints.h>
 #include <sun/awt/SunToolkit.h>
 #include <sun/awt/image/DataBufferNative.h>
@@ -527,8 +516,7 @@ D3DSurfaceData* D3DSurfaceData::createData($D3DGraphicsConfig* gc, int32_t width
 	try {
 		$init($ExtendedBufferCapabilities$VSyncType);
 		$assign(ret, $new(D3DSurfaceData, nullptr, gc, width, height, image, cm, 0, D3DSurfaceData::SWAP_DISCARD, $ExtendedBufferCapabilities$VSyncType::VSYNC_DEFAULT, type));
-	} catch ($InvalidPipeException&) {
-		$var($InvalidPipeException, ipe, $catch());
+	} catch ($InvalidPipeException& ipe) {
 		if (type == $AccelSurface::RT_TEXTURE) {
 			if ($nc(($cast($SunVolatileImage, image)))->getForcedAccelSurfaceType() != $AccelSurface::RT_TEXTURE) {
 				type = $AccelSurface::RT_PLAIN;
@@ -607,8 +595,8 @@ void D3DSurfaceData::initSurface() {
 			if (!status->success) {
 				$throwNew($InvalidPipeException, "Error creating D3DSurface"_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}
@@ -774,8 +762,8 @@ void D3DSurfaceData::flush() {
 			$nc(buf)->putInt(72);
 			buf->putLong(getNativeOps());
 			rq->flushNow();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}
@@ -798,8 +786,8 @@ void D3DSurfaceData::dispose(int64_t pData) {
 			$nc(buf)->putInt(73);
 			buf->putLong(pData);
 			rq->flushNow();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}
@@ -835,8 +823,8 @@ void D3DSurfaceData::swapBuffers(D3DSurfaceData* sd, int32_t x1, int32_t y1, int
 			buf->putInt(x2);
 			buf->putInt(y2);
 			rq->flushNow();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(rq)->unlock();
 		}
@@ -876,8 +864,8 @@ $Rectangle* D3DSurfaceData::getNativeBounds() {
 			$assign(var$2, $new($Rectangle, this->nativeWidth, this->nativeHeight));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			rq->unlock();
 		}

@@ -18,20 +18,8 @@
 #include <com/sun/imageio/spi/OutputStreamImageOutputStreamSpi.h>
 #include <com/sun/imageio/spi/RAFImageInputStreamSpi.h>
 #include <com/sun/imageio/spi/RAFImageOutputStreamSpi.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/Iterator.h>
@@ -132,7 +120,6 @@ $Object* allocate$IIORegistry($Class* clazz) {
 	return $of($alloc(IIORegistry));
 }
 
-
 $Vector* IIORegistry::initialCategories = nullptr;
 
 void IIORegistry::init$() {
@@ -188,8 +175,7 @@ void IIORegistry::registerApplicationClasspathSpis() {
 			try {
 				$var($IIOServiceProvider, r, $cast($IIOServiceProvider, riter->next()));
 				registerServiceProvider(r);
-			} catch ($ServiceConfigurationError&) {
-				$var($ServiceConfigurationError, err, $catch());
+			} catch ($ServiceConfigurationError& err) {
 				if ($System::getSecurityManager() != nullptr) {
 					err->printStackTrace();
 				} else {

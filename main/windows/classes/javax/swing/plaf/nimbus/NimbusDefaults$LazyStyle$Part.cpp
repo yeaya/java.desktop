@@ -1,15 +1,6 @@
 #include <javax/swing/plaf/nimbus/NimbusDefaults$LazyStyle$Part.h>
 
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/plaf/nimbus/NimbusDefaults$LazyStyle.h>
 #include <jcpp.h>
 
@@ -77,13 +68,11 @@ void NimbusDefaults$LazyStyle$Part::init$($NimbusDefaults$LazyStyle* this$1, $St
 		$set(this, s, s);
 		try {
 			$set(this, c, $Class::forName($$str({"javax.swing.J"_s, s})));
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& e) {
 		}
 		try {
 			$set(this, c, $Class::forName($(s->replace(static_cast<$CharSequence*>("_"_s), static_cast<$CharSequence*>("."_s)))));
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& e) {
 		}
 	}
 }

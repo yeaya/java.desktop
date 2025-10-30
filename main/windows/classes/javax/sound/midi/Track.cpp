@@ -2,16 +2,7 @@
 
 #include <com/sun/media/sound/MidiUtils.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <java/util/HashSet.h>
 #include <javax/sound/midi/MetaMessage.h>
@@ -155,13 +146,11 @@ bool Track::remove($MidiEvent* event) {
 }
 
 $MidiEvent* Track::get(int32_t index) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$synchronized(this->eventsList) {
 			return $cast($MidiEvent, $nc(this->eventsList)->get(index));
 		}
-	} catch ($IndexOutOfBoundsException&) {
-		$var($IndexOutOfBoundsException, ioobe, $catch());
+	} catch ($IndexOutOfBoundsException& ioobe) {
 		$throwNew($ArrayIndexOutOfBoundsException, $(ioobe->getMessage()));
 	}
 	$shouldNotReachHere();

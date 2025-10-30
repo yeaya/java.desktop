@@ -1,16 +1,6 @@
 #include <CheckCancellationException.h>
 
 #include <CheckCancellationException$1.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CancellationException.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <javax/swing/SwingWorker.h>
@@ -68,15 +58,13 @@ void CheckCancellationException::init$() {
 
 void CheckCancellationException::main($StringArray* args) {
 	$init(CheckCancellationException);
-	$useLocalCurrentObjectStackCache();
 	$var($SwingWorker, worker, $new($CheckCancellationException$1));
 	worker->execute();
 	$nc(CheckCancellationException::go)->await();
 	worker->cancel(true);
 	try {
 		worker->get();
-	} catch ($CancellationException&) {
-		$var($CancellationException, expected, $catch());
+	} catch ($CancellationException& expected) {
 		return;
 	}
 	$throwNew($RuntimeException, "CancellationException was not thrown"_s);

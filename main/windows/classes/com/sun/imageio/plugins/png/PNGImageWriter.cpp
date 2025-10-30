@@ -16,23 +16,9 @@
 #include <java/io/ByteArrayOutputStream.h>
 #include <java/io/IOException.h>
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Iterator.h>
 #include <java/util/Locale.h>
@@ -764,8 +750,8 @@ void PNGImageWriter::write_IDAT($RenderedImage* image, int32_t deflaterLevel) {
 			} else {
 				encodePass(ios, image, 0, 0, 1, 1);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			ios->finish();
 		}
@@ -815,7 +801,7 @@ void PNGImageWriter::initializeScaleTables($ints* sampleSize) {
 			}
 		}
 		$set(this, scale0, $nc(this->scale)->get(0));
-		$set(this, scaleh, ($assignField(this, scalel, nullptr)));
+		$set(this, scaleh, ($set(this, scalel, nullptr)));
 	} else {
 		$set(this, scaleh, $new($byteArray2, this->numBands));
 		$set(this, scalel, $new($byteArray2, this->numBands));
@@ -969,8 +955,7 @@ void PNGImageWriter::write($IIOMetadata* streamMetadata, $IIOImage* image, $Imag
 				writeIEND();
 				processImageComplete();
 			}
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			$throwNew($IIOException, "I/O error writing PNG file!"_s, e);
 		}
 	}

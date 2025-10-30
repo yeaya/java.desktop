@@ -28,40 +28,17 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Double.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Number.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/MessageFormat.h>
 #include <java/util/Date.h>
 #include <java/util/Enumeration.h>
@@ -695,6 +672,7 @@ $NamedAttribute JTable_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JTable_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JTable_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JTable_Attribute_var$1},
@@ -1169,7 +1147,6 @@ $CompoundAttribute _JTable_MethodAnnotations_sizeColumnsToFit200[] = {
 	{}
 };
 
-
 $FieldInfo _JTable_FieldInfo_[] = {
 	{"$assertionsDisabled", "Z", nullptr, $STATIC | $FINAL | $SYNTHETIC, $staticField(JTable, $assertionsDisabled)},
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JTable, uiClassID)},
@@ -1509,7 +1486,6 @@ void JTable::finalize() {
 }
 
 bool JTable::$assertionsDisabled = false;
-
 $String* JTable::uiClassID = nullptr;
 
 void JTable::init$() {
@@ -1612,8 +1588,7 @@ void JTable::configureEnclosingScrollPaneUI() {
 				$assign(corner, nullptr);
 				try {
 					$assign(corner, $cast($Component, $UIManager::get("Table.scrollPaneCornerComponent"_s)));
-				} catch ($Exception&) {
-					$catch();
+				} catch ($Exception& e) {
 				}
 				scrollPane->setCorner($JScrollPane::UPPER_TRAILING_CORNER, corner);
 			}
@@ -1856,7 +1831,6 @@ $TableCellRenderer* JTable::getDefaultRenderer($Class* columnClass) {
 			return $cast($TableCellRenderer, renderer);
 		} else {
 			$Class* c = $nc(columnClass)->getSuperclass();
-			$load($Object);
 			if (c == nullptr && columnClass != $Object::class$) {
 				c = $Object::class$;
 			}
@@ -2957,8 +2931,8 @@ void JTable::updateUI() {
 			}
 			configureEnclosingScrollPaneUI();
 			setUI($cast($TableUI, $($UIManager::getUI(this))));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->updateInProgress = false;
 		}
@@ -3185,8 +3159,8 @@ void JTable::notifySorter($JTable$ModelChange* change) {
 					break;
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->ignoreSortChange = false;
 		}
@@ -3255,8 +3229,8 @@ void JTable::tableChanged($TableModelEvent* e) {
 				try {
 					this->ignoreSortChange = true;
 					$nc($nc(this->sortManager)->sorter)->modelStructureChanged();
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$1) {
+					$assign(var$0, var$1);
 				} /*finally*/ {
 					this->ignoreSortChange = false;
 				}
@@ -3293,8 +3267,8 @@ void JTable::tableChanged($TableModelEvent* e) {
 	int32_t end = e->getLastRow();
 	$var($Rectangle, dirtyRegion, nullptr);
 	if (modelColumn == $TableModelEvent::ALL_COLUMNS) {
-		int32_t var$1 = start * getRowHeight();
-		$assign(dirtyRegion, $new($Rectangle, 0, var$1, $nc($(getColumnModel()))->getTotalColumnWidth(), 0));
+		int32_t var$2 = start * getRowHeight();
+		$assign(dirtyRegion, $new($Rectangle, 0, var$2, $nc($(getColumnModel()))->getTotalColumnWidth(), 0));
 	} else {
 		int32_t column = convertColumnIndexToView(modelColumn);
 		$assign(dirtyRegion, getCellRect(start, column, false));
@@ -3781,7 +3755,6 @@ bool JTable::processKeyBinding($KeyStroke* ks, $KeyEvent* e, int32_t condition, 
 void JTable::createDefaultRenderers() {
 	$useLocalCurrentObjectStackCache();
 	$set(this, defaultRenderersByColumnClass, $new($UIDefaults, 8, 0.75f));
-	$load($Object);
 	$nc(this->defaultRenderersByColumnClass)->put($Object::class$, static_cast<$UIDefaults$LazyValue*>($$new(JTable$$Lambda$lambda$createDefaultRenderers$0)));
 	$load($Number);
 	$nc(this->defaultRenderersByColumnClass)->put($Number::class$, static_cast<$UIDefaults$LazyValue*>($$new(JTable$$Lambda$lambda$createDefaultRenderers$1$1)));
@@ -3802,7 +3775,6 @@ void JTable::createDefaultRenderers() {
 void JTable::createDefaultEditors() {
 	$useLocalCurrentObjectStackCache();
 	$set(this, defaultEditorsByColumnClass, $new($UIDefaults, 3, 0.75f));
-	$load($Object);
 	$nc(this->defaultEditorsByColumnClass)->put($Object::class$, static_cast<$UIDefaults$LazyValue*>($$new(JTable$$Lambda$lambda$createDefaultEditors$8$6)));
 	$load($Number);
 	$nc(this->defaultEditorsByColumnClass)->put($Number::class$, static_cast<$UIDefaults$LazyValue*>($$new(JTable$$Lambda$lambda$createDefaultEditors$9$7)));
@@ -4160,20 +4132,18 @@ $AccessibleContext* JTable::getAccessibleContext() {
 }
 
 void JTable::lambda$print$11($PrinterJob* job, $PrintRequestAttributeSet* copyAttr, Object$* lock, $PrintingStatus* printingStatus) {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				$nc(job)->print(copyAttr);
-			} catch ($Throwable&) {
-				$var($Throwable, t, $catch());
+			} catch ($Throwable& t) {
 				$synchronized(lock) {
 					$set(this, printError, t);
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(printingStatus)->dispose();
 		}

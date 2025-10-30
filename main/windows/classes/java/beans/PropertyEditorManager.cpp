@@ -3,15 +3,7 @@
 #include <com/sun/beans/finder/PropertyEditorFinder.h>
 #include <java/beans/PropertyEditor.h>
 #include <java/beans/ThreadGroupContext.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $InstanceFinder = ::com::sun::beans::finder::InstanceFinder;

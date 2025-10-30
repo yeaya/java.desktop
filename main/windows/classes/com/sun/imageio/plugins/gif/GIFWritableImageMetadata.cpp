@@ -3,15 +3,6 @@
 #include <com/sun/imageio/plugins/gif/GIFImageMetadata.h>
 #include <com/sun/imageio/plugins/gif/GIFMetadata.h>
 #include <java/io/UnsupportedEncodingException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/charset/Charset.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
@@ -118,8 +109,7 @@ void GIFWritableImageMetadata::reset() {
 $bytes* GIFWritableImageMetadata::fromISO8859($String* data) {
 	try {
 		return $nc(data)->getBytes("ISO-8859-1"_s);
-	} catch ($UnsupportedEncodingException&) {
-		$var($UnsupportedEncodingException, e, $catch());
+	} catch ($UnsupportedEncodingException& e) {
 		return ""_s->getBytes();
 	}
 	$shouldNotReachHere();

@@ -4,16 +4,6 @@
 #include <java/awt/Font.h>
 #include <java/io/Reader.h>
 #include <java/io/StringReader.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <javax/swing/plaf/basic/BasicHTML$BasicDocument.h>
 #include <javax/swing/plaf/basic/BasicHTML.h>
@@ -91,7 +81,6 @@ $Object* allocate$BasicHTML$BasicEditorKit($Class* clazz) {
 	return $of($alloc(BasicHTML$BasicEditorKit));
 }
 
-
 $StyleSheet* BasicHTML$BasicEditorKit::defaultStyles = nullptr;
 
 void BasicHTML$BasicEditorKit::init$() {
@@ -105,8 +94,7 @@ $StyleSheet* BasicHTML$BasicEditorKit::getStyleSheet() {
 		$var($StringReader, r, $new($StringReader, "p { margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0 }body { margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0 }"_s));
 		try {
 			$nc(BasicHTML$BasicEditorKit::defaultStyles)->loadRules(r, nullptr);
-		} catch ($Throwable&) {
-			$catch();
+		} catch ($Throwable& e) {
 		}
 		r->close();
 		$nc(BasicHTML$BasicEditorKit::defaultStyles)->addStyleSheet($($HTMLEditorKit::getStyleSheet()));

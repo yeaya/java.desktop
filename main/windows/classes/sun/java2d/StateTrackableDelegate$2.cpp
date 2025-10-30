@@ -1,15 +1,6 @@
 #include <sun/java2d/StateTrackableDelegate$2.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/StateTrackable$State.h>
 #include <sun/java2d/StateTrackableDelegate.h>
 #include <jcpp.h>
@@ -75,23 +66,19 @@ void clinit$StateTrackableDelegate$2($Class* class$) {
 	{
 		try {
 			$nc(StateTrackableDelegate$2::$SwitchMap$sun$java2d$StateTrackable$State)->set($StateTrackable$State::UNTRACKABLE->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(StateTrackableDelegate$2::$SwitchMap$sun$java2d$StateTrackable$State)->set($StateTrackable$State::STABLE->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(StateTrackableDelegate$2::$SwitchMap$sun$java2d$StateTrackable$State)->set($StateTrackable$State::DYNAMIC->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(StateTrackableDelegate$2::$SwitchMap$sun$java2d$StateTrackable$State)->set($StateTrackable$State::IMMUTABLE->ordinal(), 4);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

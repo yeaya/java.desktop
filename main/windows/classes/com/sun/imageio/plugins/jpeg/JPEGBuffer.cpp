@@ -2,18 +2,7 @@
 
 #include <com/sun/imageio/plugins/jpeg/JPEG.h>
 #include <com/sun/imageio/plugins/jpeg/JPEGImageReader.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/IIOException.h>
 #include <javax/imageio/stream/ImageInputStream.h>
 #include <jcpp.h>
@@ -84,7 +73,6 @@ void JPEGBuffer::init$($ImageInputStream* iis) {
 void JPEGBuffer::loadBuf(int32_t count) {
 	$useLocalCurrentObjectStackCache();
 	if (this->debug) {
-		$init($System);
 		$nc($System::out)->print("loadbuf called with "_s);
 		$nc($System::out)->print($$str({"count "_s, $$str(count), ", "_s}));
 		$nc($System::out)->println($$str({"bufAvail "_s, $$str(this->bufAvail), ", "_s}));
@@ -101,7 +89,6 @@ void JPEGBuffer::loadBuf(int32_t count) {
 	}
 	int32_t ret = $nc(this->iis)->read(this->buf, this->bufAvail, $nc(this->buf)->length - this->bufAvail);
 	if (this->debug) {
-		$init($System);
 		$nc($System::out)->println($$str({"iis.read returned "_s, $$str(ret)}));
 	}
 	if (ret != -1) {
@@ -193,7 +180,6 @@ bool JPEGBuffer::scanForFF($JPEGImageReader* reader) {
 
 void JPEGBuffer::print(int32_t count) {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->print("buffer has "_s);
 	$nc($System::out)->print(this->bufAvail);
 	$nc($System::out)->println(" bytes available"_s);

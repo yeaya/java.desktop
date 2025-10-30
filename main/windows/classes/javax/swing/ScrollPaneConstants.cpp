@@ -1,11 +1,5 @@
 #include <javax/swing/ScrollPaneConstants.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef COLUMN_HEADER
@@ -73,35 +67,20 @@ $Object* allocate$ScrollPaneConstants($Class* clazz) {
 	return $of($alloc(ScrollPaneConstants));
 }
 
-
 $String* ScrollPaneConstants::VIEWPORT = nullptr;
-
 $String* ScrollPaneConstants::VERTICAL_SCROLLBAR = nullptr;
-
 $String* ScrollPaneConstants::HORIZONTAL_SCROLLBAR = nullptr;
-
 $String* ScrollPaneConstants::ROW_HEADER = nullptr;
-
 $String* ScrollPaneConstants::COLUMN_HEADER = nullptr;
-
 $String* ScrollPaneConstants::LOWER_LEFT_CORNER = nullptr;
-
 $String* ScrollPaneConstants::LOWER_RIGHT_CORNER = nullptr;
-
 $String* ScrollPaneConstants::UPPER_LEFT_CORNER = nullptr;
-
 $String* ScrollPaneConstants::UPPER_RIGHT_CORNER = nullptr;
-
 $String* ScrollPaneConstants::LOWER_LEADING_CORNER = nullptr;
-
 $String* ScrollPaneConstants::LOWER_TRAILING_CORNER = nullptr;
-
 $String* ScrollPaneConstants::UPPER_LEADING_CORNER = nullptr;
-
 $String* ScrollPaneConstants::UPPER_TRAILING_CORNER = nullptr;
-
 $String* ScrollPaneConstants::VERTICAL_SCROLLBAR_POLICY = nullptr;
-
 $String* ScrollPaneConstants::HORIZONTAL_SCROLLBAR_POLICY = nullptr;
 
 void clinit$ScrollPaneConstants($Class* class$) {

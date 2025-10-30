@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/PrinterIsAcceptingJobs.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -83,13 +75,9 @@ void PrinterIsAcceptingJobs::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 PrinterIsAcceptingJobs* PrinterIsAcceptingJobs::NOT_ACCEPTING_JOBS = nullptr;
-
 PrinterIsAcceptingJobs* PrinterIsAcceptingJobs::ACCEPTING_JOBS = nullptr;
-
 $StringArray* PrinterIsAcceptingJobs::myStringTable = nullptr;
-
 $PrinterIsAcceptingJobsArray* PrinterIsAcceptingJobs::myEnumValueTable = nullptr;
 
 void PrinterIsAcceptingJobs::init$(int32_t value) {

@@ -2,16 +2,6 @@
 
 #include <java/awt/AWTEvent.h>
 #include <java/awt/dnd/InvalidDnDOperationException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <java/util/HashSet.h>
 #include <sun/awt/datatransfer/DataTransferer.h>
@@ -159,8 +149,8 @@ void SunDropTargetContextPeer$EventDispatcher::dispatchEnterEvent($SunDropTarget
 			$var($Throwable, var$0, nullptr);
 			try {
 				$nc(this->peer)->processEnterMessage(e);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(this->peer)->dropStatus = 0;
 			}
@@ -186,8 +176,8 @@ void SunDropTargetContextPeer$EventDispatcher::dispatchMotionEvent($SunDropTarge
 			$var($Throwable, var$0, nullptr);
 			try {
 				$nc(this->peer)->processMotionMessage(e, operationChanged);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(this->peer)->dropStatus = 0;
 			}
@@ -256,8 +246,8 @@ void SunDropTargetContextPeer$EventDispatcher::unregisterEvent($SunDropTargetEve
 				}
 				this->dispatcherDone = true;
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} $finally: {
 			$nc(SunDropTargetContextPeer$EventDispatcher::handler)->unlock();
 		}
@@ -269,19 +259,19 @@ void SunDropTargetContextPeer$EventDispatcher::unregisterEvent($SunDropTargetEve
 		}
 	}
 	{
-		$var($Throwable, var$2, nullptr);
+		$var($Throwable, var$3, nullptr);
 		try {
 			$nc(this->peer)->eventProcessed(e, this->returnValue, this->dispatcherDone);
-		} catch ($Throwable&) {
-			$assign(var$2, $catch());
+		} catch ($Throwable& var$4) {
+			$assign(var$3, var$4);
 		} /*finally*/ {
 			if (this->dispatcherDone) {
 				this->nativeCtxt = 0;
 				$nc(this->peer)->nativeDragContext = 0;
 			}
 		}
-		if (var$2 != nullptr) {
-			$throw(var$2);
+		if (var$3 != nullptr) {
+			$throw(var$3);
 		}
 	}
 }
@@ -294,8 +284,8 @@ void SunDropTargetContextPeer$EventDispatcher::unregisterAllEvents() {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$assign(events, $nc(this->eventSet)->toArray());
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(SunDropTargetContextPeer$EventDispatcher::handler)->unlock();
 		}

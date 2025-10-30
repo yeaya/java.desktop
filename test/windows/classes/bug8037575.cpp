@@ -5,21 +5,8 @@
 #include <bug8037575$2.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/ActionListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/logging/Level.h>
 #include <java/util/logging/Logger.h>
 #include <javax/swing/AbstractAction.h>
@@ -120,15 +107,13 @@ void bug8037575::main($StringArray* args) {
 	$assignStatic(bug8037575::mainThread, $Thread::currentThread());
 	try {
 		init();
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$init($Level);
 		$nc($($Logger::getLogger($(bug8037575::class$->getName()))))->log($Level::SEVERE, ($String*)nullptr, static_cast<$Throwable*>(ex));
 	}
 	try {
 		$nc(bug8037575::mainThread)->sleep(bug8037575::sleepTime);
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, ex, $catch());
+	} catch ($InterruptedException& ex) {
 		$Sysout::dispose();
 		if (!bug8037575::theTestPassed && bug8037575::testGeneratedInterrupt) {
 			$throwNew($RuntimeException, "Test Failed"_s);

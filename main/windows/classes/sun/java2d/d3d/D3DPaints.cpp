@@ -1,15 +1,5 @@
 #include <sun/java2d/d3d/D3DPaints.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/HashMap.h>
 #include <java/util/Map.h>
@@ -83,7 +73,6 @@ $ClassInfo _D3DPaints_ClassInfo_ = {
 $Object* allocate$D3DPaints($Class* clazz) {
 	return $of($alloc(D3DPaints));
 }
-
 
 $Map* D3DPaints::impls = nullptr;
 

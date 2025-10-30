@@ -1,15 +1,6 @@
 #include <javax/imageio/ImageIO$CanDecodeInputFilter.h>
 
 #include <java/io/IOException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/ImageIO.h>
 #include <javax/imageio/spi/ImageReaderSpi.h>
 #include <javax/imageio/stream/ImageInputStream.h>
@@ -85,8 +76,8 @@ bool ImageIO$CanDecodeInputFilter::filter(Object$* elt) {
 			$var($Throwable, var$0, nullptr);
 			try {
 				canDecode = $nc(spi)->canDecodeInput(this->input);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				if (stream != nullptr) {
 					stream->reset();
@@ -97,8 +88,7 @@ bool ImageIO$CanDecodeInputFilter::filter(Object$* elt) {
 			}
 		}
 		return canDecode;
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		return false;
 	}
 	$shouldNotReachHere();

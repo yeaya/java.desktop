@@ -2,19 +2,7 @@
 
 #include <bug8001470$1.h>
 #include <bug8001470$2.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JTextField.h>
@@ -88,7 +76,6 @@ void bug8001470::main($StringArray* args) {
 	if (var$0 || $nc(bug8001470::textField2)->getHeight() < 10) {
 		$throwNew($Exception, "Wrong field height"_s);
 	}
-	$init($System);
 	$nc($System::out)->println("ok"_s);
 	$SwingUtilities::invokeLater($$new($bug8001470$2));
 }

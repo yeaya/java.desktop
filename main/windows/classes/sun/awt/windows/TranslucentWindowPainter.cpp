@@ -10,16 +10,6 @@
 #include <java/awt/Image.h>
 #include <java/awt/Window.h>
 #include <java/awt/image/ImageObserver.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <sun/awt/windows/TranslucentWindowPainter$BIWindowPainter.h>
@@ -154,8 +144,8 @@ void TranslucentWindowPainter::updateWindow(bool repaint) {
 				$var($Throwable, var$0, nullptr);
 				try {
 					$nc(this->window)->paintAll(g);
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$1) {
+					$assign(var$0, var$1);
 				} /*finally*/ {
 					$nc(g)->dispose();
 				}

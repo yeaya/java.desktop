@@ -3,26 +3,13 @@
 #include <java/io/File.h>
 #include <java/io/FileNotFoundException.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/function/IntFunction.h>
 #include <java/util/function/Predicate.h>
 #include <java/util/stream/Stream.h>
@@ -188,8 +175,7 @@ $Object* ShellFolderManager::get($String* key) {
 		$var($File, homeDir, $new($File, $($System::getProperty("user.home"_s))));
 		try {
 			return $of(checkFile($(createShellFolder(homeDir))));
-		} catch ($FileNotFoundException&) {
-			$var($FileNotFoundException, e, $catch());
+		} catch ($FileNotFoundException& e) {
 			return $of(checkFile(homeDir));
 		}
 	} else if (key->equals("roots"_s)) {
@@ -218,11 +204,9 @@ $File* ShellFolderManager::checkFile($File* f, $SecurityManager* sm) {
 			}
 		}
 		return f;
-	} catch ($SecurityException&) {
-		$var($Exception, e, $catch());
+	} catch ($SecurityException& e) {
 		return nullptr;
-	} catch ($FileNotFoundException&) {
-		$var($Exception, e, $catch());
+	} catch ($FileNotFoundException& e) {
 		return nullptr;
 	}
 	$shouldNotReachHere();

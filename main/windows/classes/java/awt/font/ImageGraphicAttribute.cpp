@@ -6,15 +6,8 @@
 #include <java/awt/geom/Rectangle2D$Float.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/image/ImageObserver.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $Graphics = ::java::awt::Graphics;
@@ -110,8 +103,7 @@ int32_t ImageGraphicAttribute::hashCode() {
 bool ImageGraphicAttribute::equals(Object$* rhs) {
 	try {
 		return equals($cast(ImageGraphicAttribute, rhs));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		return false;
 	}
 	$shouldNotReachHere();

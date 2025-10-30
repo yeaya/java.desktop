@@ -2,14 +2,6 @@
 
 #include <java/awt/Frame.h>
 #include <java/awt/HeadlessException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JDialog.h>
 #include <jcpp.h>
 
@@ -48,8 +40,7 @@ void HeadlessJDialog::main($StringArray* args) {
 	$var($JDialog, b, nullptr);
 	try {
 		$assign(b, $new($JDialog));
-	} catch ($HeadlessException&) {
-		$var($HeadlessException, e, $catch());
+	} catch ($HeadlessException& e) {
 		exceptions = true;
 	}
 	if (!exceptions) {
@@ -58,8 +49,7 @@ void HeadlessJDialog::main($StringArray* args) {
 	exceptions = false;
 	try {
 		$assign(b, $new($JDialog, $$new($Frame, "Frame title"_s)));
-	} catch ($HeadlessException&) {
-		$var($HeadlessException, e, $catch());
+	} catch ($HeadlessException& e) {
 		exceptions = true;
 	}
 	if (!exceptions) {
@@ -68,8 +58,7 @@ void HeadlessJDialog::main($StringArray* args) {
 	exceptions = false;
 	try {
 		$assign(b, $new($JDialog, $$new($Frame, "Frame title"_s), true));
-	} catch ($HeadlessException&) {
-		$var($HeadlessException, e, $catch());
+	} catch ($HeadlessException& e) {
 		exceptions = true;
 	}
 	if (!exceptions) {
@@ -78,8 +67,7 @@ void HeadlessJDialog::main($StringArray* args) {
 	exceptions = false;
 	try {
 		$assign(b, $new($JDialog, $$new($Frame, "Frame title"_s), false));
-	} catch ($HeadlessException&) {
-		$var($HeadlessException, e, $catch());
+	} catch ($HeadlessException& e) {
 		exceptions = true;
 	}
 	if (!exceptions) {
@@ -88,8 +76,7 @@ void HeadlessJDialog::main($StringArray* args) {
 	exceptions = false;
 	try {
 		$assign(b, $new($JDialog, $$new($Frame, "Frame title"_s), "Dialog title"_s));
-	} catch ($HeadlessException&) {
-		$var($HeadlessException, e, $catch());
+	} catch ($HeadlessException& e) {
 		exceptions = true;
 	}
 	if (!exceptions) {
@@ -98,8 +85,7 @@ void HeadlessJDialog::main($StringArray* args) {
 	exceptions = false;
 	try {
 		$assign(b, $new($JDialog, $$new($Frame, "Frame title"_s), "Dialog title"_s, true));
-	} catch ($HeadlessException&) {
-		$var($HeadlessException, e, $catch());
+	} catch ($HeadlessException& e) {
 		exceptions = true;
 	}
 	if (!exceptions) {
@@ -108,8 +94,7 @@ void HeadlessJDialog::main($StringArray* args) {
 	exceptions = false;
 	try {
 		$assign(b, $new($JDialog, $$new($Frame, "Frame title"_s), "Dialog title"_s, false));
-	} catch ($HeadlessException&) {
-		$var($HeadlessException, e, $catch());
+	} catch ($HeadlessException& e) {
 		exceptions = true;
 	}
 	if (!exceptions) {

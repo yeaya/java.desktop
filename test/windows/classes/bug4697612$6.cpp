@@ -2,19 +2,6 @@
 
 #include <bug4697612.h>
 #include <java/awt/Rectangle.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTextArea.h>
 #include <javax/swing/text/BadLocationException.h>
 #include <javax/swing/text/JTextComponent.h>
@@ -81,14 +68,12 @@ void bug4697612$6::init$($ints* val$result) {
 }
 
 void bug4697612$6::run() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$init($bug4697612);
 		int32_t pos0 = $nc($bug4697612::text)->getCaretPosition();
 		$var($Rectangle, dotBounds, $nc($bug4697612::text)->modelToView(pos0));
 		$nc(this->val$result)->set(0, $nc(dotBounds)->height);
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, ex, $catch());
+	} catch ($BadLocationException& ex) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(ex));
 	}
 }

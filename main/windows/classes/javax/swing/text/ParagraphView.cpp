@@ -8,21 +8,7 @@
 #include <java/awt/font/TextAttribute.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SizeRequirements.h>
 #include <javax/swing/SwingConstants.h>
 #include <javax/swing/event/DocumentEvent.h>
@@ -204,11 +190,8 @@ void ParagraphView::finalize() {
 	this->$FlowView::finalize();
 }
 
-
 $Class* ParagraphView::i18nStrategy = nullptr;
-
 $chars* ParagraphView::tabChars = nullptr;
-
 $chars* ParagraphView::tabDecimalChars = nullptr;
 
 void ParagraphView::init$($Element* elem) {
@@ -223,8 +206,7 @@ void ParagraphView::init$($Element* elem) {
 	if ((i18nFlag != nullptr) && $of(i18nFlag)->equals($Boolean::TRUE)) {
 		try {
 			$set(this, strategy, $new($TextLayoutStrategy));
-		} catch ($Throwable&) {
-			$var($Throwable, e, $catch());
+		} catch ($Throwable& e) {
 			$throwNew($StateInvariantError, $$str({"ParagraphView: Can\'t create i18n strategy: "_s, $(e->getMessage())}));
 		}
 	}
@@ -306,8 +288,7 @@ int32_t ParagraphView::getNextNorthSouthVisualPositionFrom(int32_t pos, $Positio
 		$var($Shape, posBounds, nullptr);
 		try {
 			$assign(posBounds, $nc($($cast($TextUI, text->getUI())))->modelToView(text, pos, b));
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, exc, $catch());
+		} catch ($BadLocationException& exc) {
 			$assign(posBounds, nullptr);
 		}
 		if (posBounds == nullptr) {
@@ -511,8 +492,7 @@ int32_t ParagraphView::findOffsetToCharactersInString($chars* string, int32_t st
 	$var($Segment, seg, $new($Segment));
 	try {
 		$nc($(getDocument()))->getText(start, end - start, seg);
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, ble, $catch());
+	} catch ($BadLocationException& ble) {
 		return -1;
 	}
 	{

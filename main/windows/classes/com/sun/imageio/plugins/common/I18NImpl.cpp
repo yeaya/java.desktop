@@ -1,14 +1,6 @@
 #include <com/sun/imageio/plugins/common/I18NImpl.h>
 
 #include <java/io/InputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/PropertyResourceBundle.h>
 #include <jcpp.h>
 
@@ -54,8 +46,7 @@ $String* I18NImpl::getString($String* className, $String* resource_name, $String
 	try {
 		$var($InputStream, stream, $Class::forName(className)->getResourceAsStream(resource_name));
 		$assign(bundle, $new($PropertyResourceBundle, stream));
-	} catch ($Throwable&) {
-		$var($Throwable, e, $catch());
+	} catch ($Throwable& e) {
 		$throwNew($RuntimeException, e);
 	}
 	return $cast($String, $nc(bundle)->handleGetObject(key));

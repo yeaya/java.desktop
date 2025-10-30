@@ -1,15 +1,5 @@
 #include <javax/swing/plaf/metal/MetalFileChooserUI$FileRenderer.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/DefaultListCellRenderer.h>
 #include <javax/swing/plaf/metal/MetalFileChooserUI.h>
 #include <jcpp.h>
@@ -32,11 +22,11 @@ $NamedAttribute MetalFileChooserUI$FileRenderer_Attribute_var$0[] = {
 	{"since", 's', "9"},
 	{}
 };
+
 $CompoundAttribute _MetalFileChooserUI$FileRenderer_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", MetalFileChooserUI$FileRenderer_Attribute_var$0},
 	{}
 };
-
 
 $FieldInfo _MetalFileChooserUI$FileRenderer_FieldInfo_[] = {
 	{"this$0", "Ljavax/swing/plaf/metal/MetalFileChooserUI;", nullptr, $FINAL | $SYNTHETIC, $field(MetalFileChooserUI$FileRenderer, this$0)},

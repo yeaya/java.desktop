@@ -10,18 +10,8 @@
 #include <java/awt/LayoutManager.h>
 #include <java/awt/LayoutManager2.h>
 #include <java/awt/Panel.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JApplet.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JLabel.h>
@@ -126,12 +116,10 @@ void Test8039464::main($StringArray* args) {
 }
 
 void clinit$Test8039464($Class* class$) {
-	$useLocalCurrentObjectStackCache();
 	{
 		try {
 			$UIManager::setLookAndFeel($($UIManager::getSystemLookAndFeelClassName()));
-		} catch ($Exception&) {
-			$var($Exception, exception, $catch());
+		} catch ($Exception& exception) {
 			$throwNew($Error, "unexpected"_s, exception);
 		}
 	}

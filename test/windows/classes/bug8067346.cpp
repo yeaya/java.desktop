@@ -3,20 +3,7 @@
 #include <bug8067346$1.h>
 #include <java/awt/Insets.h>
 #include <java/awt/Window.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JMenu.h>
 #include <javax/swing/JMenuBar.h>
@@ -145,8 +132,8 @@ void bug8067346::performTest() {
 			if (error || retVal != 0) {
 				$throwNew($RuntimeException, $(errorMessageBuilder->toString()));
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			dispose();
 		}

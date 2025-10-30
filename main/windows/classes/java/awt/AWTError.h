@@ -15,8 +15,10 @@ public:
 	void init$($String* msg);
 	static const int64_t serialVersionUID = (int64_t)0xE6BE9B620904E302;
 	AWTError(const AWTError& e);
-	AWTError wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline AWTError* operator ->() {
+		return (AWTError*)throwing$;
+	}
 };
 
 	} // awt

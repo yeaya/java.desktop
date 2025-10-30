@@ -3,15 +3,7 @@
 #include <java/awt/GraphicsEnvironment.h>
 #include <java/awt/Toolkit.h>
 #include <java/awt/geom/Dimension2D.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;

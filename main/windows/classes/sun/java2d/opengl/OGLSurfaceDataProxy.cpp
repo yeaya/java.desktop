@@ -2,14 +2,7 @@
 
 #include <java/awt/Color.h>
 #include <java/awt/Transparency.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/OutOfMemoryError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SurfaceData.h>
 #include <sun/java2d/SurfaceDataProxy.h>
 #include <sun/java2d/loops/CompositeType.h>
@@ -79,13 +72,11 @@ void OGLSurfaceDataProxy::init$($OGLGraphicsConfig* oglgc, int32_t transparency)
 }
 
 $SurfaceData* OGLSurfaceDataProxy::validateSurfaceData($SurfaceData* srcData, $SurfaceData* cachedData$renamed, int32_t w, int32_t h) {
-	$useLocalCurrentObjectStackCache();
 	$var($SurfaceData, cachedData, cachedData$renamed);
 	if (cachedData == nullptr) {
 		try {
 			$assign(cachedData, $nc(this->oglgc)->createManagedSurface(w, h, this->transparency));
-		} catch ($OutOfMemoryError&) {
-			$var($OutOfMemoryError, er, $catch());
+		} catch ($OutOfMemoryError& er) {
 			return nullptr;
 		}
 	}

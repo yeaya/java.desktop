@@ -8,25 +8,8 @@
 #include <java/awt/event/ComponentEvent.h>
 #include <java/awt/event/InputEvent$1.h>
 #include <java/awt/event/NativeLibLoader.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/RuntimeException.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/BasicPermission.h>
 #include <java/security/Permission.h>
 #include <java/util/Arrays.h>
@@ -260,7 +243,6 @@ $Object* allocate$InputEvent($Class* clazz) {
 }
 
 $PlatformLogger* InputEvent::logger = nullptr;
-
 $ints* InputEvent::BUTTON_DOWN_MASK = nullptr;
 
 $ints* InputEvent::getButtonDownMasks() {
@@ -292,7 +274,6 @@ void InputEvent::init$($Component* source, int32_t id, int64_t when, int32_t mod
 }
 
 bool InputEvent::canAccessSystemClipboard() {
-	$useLocalCurrentObjectStackCache();
 	bool b = false;
 	if (!$GraphicsEnvironment::isHeadless()) {
 		$var($SecurityManager, sm, $System::getSecurityManager());
@@ -301,8 +282,7 @@ bool InputEvent::canAccessSystemClipboard() {
 				$init($AWTPermissions);
 				sm->checkPermission($AWTPermissions::ACCESS_CLIPBOARD_PERMISSION);
 				b = true;
-			} catch ($SecurityException&) {
-				$var($SecurityException, se, $catch());
+			} catch ($SecurityException& se) {
 				$init($PlatformLogger$Level);
 				if ($nc(InputEvent::logger)->isLoggable($PlatformLogger$Level::FINE)) {
 					$nc(InputEvent::logger)->fine("InputEvent.canAccessSystemClipboard() got SecurityException "_s, static_cast<$Throwable*>(se));

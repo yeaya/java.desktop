@@ -5,15 +5,6 @@
 #include <java/awt/event/MouseListener.h>
 #include <java/io/File.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <javax/swing/JFileChooser.h>
 #include <javax/swing/JList.h>
@@ -145,8 +136,7 @@ void BasicFileChooserUI$Handler::mouseClicked($MouseEvent* evt) {
 			$var($File, f, $cast($File, $nc($($nc(this->list)->getModel()))->getElementAt(index)));
 			try {
 				$assign(f, $ShellFolder::getNormalizedFile(f));
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& ex) {
 			}
 			if ($nc($(this->this$0->getFileChooser()))->isTraversable(f)) {
 				$nc(this->list)->clearSelection();

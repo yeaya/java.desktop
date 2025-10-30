@@ -6,19 +6,7 @@
 #include <java/awt/datatransfer/Transferable.h>
 #include <java/awt/datatransfer/UnsupportedFlavorException.h>
 #include <java/io/IOException.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/List.h>
@@ -124,9 +112,7 @@ void TreeTransferHandler::init$() {
 		$var($String, mimeType, $str({$DataFlavor::javaJVMLocalObjectMimeType, ";class=\""_s, $($getClass($DefaultMutableTreeNodeArray)->getName()), "\""_s}));
 		$set(this, nodesFlavor, $new($DataFlavor, mimeType));
 		$nc(this->flavors)->set(0, this->nodesFlavor);
-	} catch ($ClassNotFoundException&) {
-		$var($ClassNotFoundException, e, $catch());
-		$init($System);
+	} catch ($ClassNotFoundException& e) {
 		$nc($System::out)->println($$str({"ClassNotFound: "_s, $(e->getMessage())}));
 	}
 }
@@ -258,13 +244,9 @@ bool TreeTransferHandler::importData($TransferHandler$TransferSupport* support) 
 	try {
 		$var($Transferable, t, $nc(support)->getTransferable());
 		$assign(nodes, $cast($DefaultMutableTreeNodeArray, $nc(t)->getTransferData(this->nodesFlavor)));
-	} catch ($UnsupportedFlavorException&) {
-		$var($UnsupportedFlavorException, ufe, $catch());
-		$init($System);
+	} catch ($UnsupportedFlavorException& ufe) {
 		$nc($System::out)->println($$str({"UnsupportedFlavor: "_s, $(ufe->getMessage())}));
-	} catch ($IOException&) {
-		$var($IOException, ioe, $catch());
-		$init($System);
+	} catch ($IOException& ioe) {
 		$nc($System::out)->println($$str({"I/O error: "_s, $(ioe->getMessage())}));
 	}
 	$var($JTree$DropLocation, dl, $cast($JTree$DropLocation, $nc(support)->getDropLocation()));

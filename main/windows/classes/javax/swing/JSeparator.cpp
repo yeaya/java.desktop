@@ -4,18 +4,6 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container$AccessibleAWTContainer.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/JComponent$AccessibleJComponent.h>
 #include <javax/swing/JComponent.h>
@@ -64,6 +52,7 @@ $NamedAttribute JSeparator_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JSeparator_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JSeparator_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JSeparator_Attribute_var$1},
@@ -120,7 +109,6 @@ $CompoundAttribute _JSeparator_MethodAnnotations_setUI9[] = {
 	{"Ljava/beans/BeanProperty;", JSeparator_Attribute_var$6},
 	{}
 };
-
 
 $FieldInfo _JSeparator_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JSeparator, uiClassID)},
@@ -192,7 +180,6 @@ $Object* JSeparator::clone() {
 void JSeparator::finalize() {
 	this->$JComponent::finalize();
 }
-
 
 $String* JSeparator::uiClassID = nullptr;
 

@@ -12,23 +12,9 @@
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
 #include <java/awt/image/ImageObserver.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/MalformedURLException.h>
 #include <java/net/URL.h>
 #include <java/util/Dictionary.h>
@@ -251,15 +237,10 @@ $Object* allocate$ImageView($Class* clazz) {
 	return $of($alloc(ImageView));
 }
 
-
 bool ImageView::sIsInc = false;
-
 int32_t ImageView::sIncRate = 0;
-
 $String* ImageView::PENDING_IMAGE = nullptr;
-
 $String* ImageView::MISSING_IMAGE = nullptr;
-
 $String* ImageView::IMAGE_CACHE_PROPERTY = nullptr;
 
 void ImageView::init$($Element* elem) {
@@ -286,8 +267,7 @@ $URL* ImageView::getImageURL() {
 	try {
 		$var($URL, u, $new($URL, reference, src));
 		return u;
-	} catch ($MalformedURLException&) {
-		$var($MalformedURLException, e, $catch());
+	} catch ($MalformedURLException& e) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -597,8 +577,7 @@ int32_t ImageView::getIntAttr($HTML$Attribute* name, int32_t deflt) {
 		} else {
 			try {
 				i = $Math::max(0, $Integer::parseInt(val));
-			} catch ($NumberFormatException&) {
-				$var($NumberFormatException, x, $catch());
+			} catch ($NumberFormatException& x) {
 				i = deflt;
 			}
 		}
@@ -633,8 +612,8 @@ void ImageView::refreshImage() {
 		try {
 			loadImage();
 			updateImageSize();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$synchronized(this) {
 				this->state = (this->state | ImageView::LOADING_FLAG) ^ ImageView::LOADING_FLAG;

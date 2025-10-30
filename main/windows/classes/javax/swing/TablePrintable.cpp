@@ -16,19 +16,8 @@
 #include <java/awt/print/PageFormat.h>
 #include <java/awt/print/Printable.h>
 #include <java/awt/print/PrinterException.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/MessageFormat.h>
 #include <javax/swing/JTable$PrintMode.h>
 #include <javax/swing/JTable.h>
@@ -128,9 +117,7 @@ $Object* allocate$TablePrintable($Class* clazz) {
 }
 
 bool TablePrintable::$assertionsDisabled = false;
-
 float TablePrintable::HEADER_FONT_SIZE = 0.0;
-
 float TablePrintable::FOOTER_FONT_SIZE = 0.0;
 
 void TablePrintable::init$($JTable* table, $JTable$PrintMode* printMode, $MessageFormat* headerFormat, $MessageFormat* footerFormat) {

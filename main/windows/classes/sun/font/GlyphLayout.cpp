@@ -5,17 +5,7 @@
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/geom/Point2D$Float.h>
 #include <java/awt/geom/Point2D.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Map.h>
 #include <sun/font/AttributeMap.h>
@@ -249,8 +239,7 @@ $StandardGlyphVector* GlyphLayout::layout($Font* font, $FontRenderContext* frc, 
 			try {
 				$nc(er)->layout();
 				break;
-			} catch ($IndexOutOfBoundsException&) {
-				$var($IndexOutOfBoundsException, e, $catch());
+			} catch ($IndexOutOfBoundsException& e) {
 				if ($nc(this->_gvdata)->_count >= 0) {
 					$nc(this->_gvdata)->grow();
 				}

@@ -1,14 +1,6 @@
 #include <java/awt/Toolkit$4.h>
 
 #include <java/awt/Toolkit.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/MissingResourceException.h>
 #include <java/util/ResourceBundle.h>
 #include <jcpp.h>
@@ -70,8 +62,7 @@ $Object* Toolkit$4::run() {
 	try {
 		$init($Toolkit);
 		$assignStatic($Toolkit::resources, $ResourceBundle::getBundle("sun.awt.resources.awt"_s));
-	} catch ($MissingResourceException&) {
-		$catch();
+	} catch ($MissingResourceException& e) {
 	}
 	return $of(nullptr);
 }

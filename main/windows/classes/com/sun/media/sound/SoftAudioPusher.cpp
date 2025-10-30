@@ -1,18 +1,9 @@
 #include <com/sun/media/sound/SoftAudioPusher.h>
 
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/AudioInputStream.h>
 #include <javax/sound/sampled/SourceDataLine.h>
 #include <jcpp.h>
@@ -93,8 +84,7 @@ void SoftAudioPusher::stop() {
 		this->active = false;
 		try {
 			$nc(this->audiothread)->join();
-		} catch ($InterruptedException&) {
-			$catch();
+		} catch ($InterruptedException& e) {
 		}
 	}
 }
@@ -112,8 +102,7 @@ void SoftAudioPusher::run() {
 			}
 			$nc(sourceDataLine)->write(buffer, 0, count);
 		}
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		this->active = false;
 	}
 }

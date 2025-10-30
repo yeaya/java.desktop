@@ -9,16 +9,6 @@
 #include <java/awt/image/Raster.h>
 #include <java/awt/image/SampleModel.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/cmm/ColorTransform.h>
 #include <sun/java2d/cmm/lcms/LCMS.h>
 #include <sun/java2d/cmm/lcms/LCMSImageLayout$ImageLayoutException.h>
@@ -200,8 +190,7 @@ void LCMSTransform::colorConvert($BufferedImage* src, $BufferedImage* dst) {
 				}
 			}
 		}
-	} catch ($LCMSImageLayout$ImageLayoutException&) {
-		$var($LCMSImageLayout$ImageLayoutException, e, $catch());
+	} catch ($LCMSImageLayout$ImageLayoutException& e) {
 		$throwNew($CMMException, "Unable to convert images"_s);
 	}
 	$var($Raster, srcRas, $nc(src)->getRaster());
@@ -269,8 +258,7 @@ void LCMSTransform::colorConvert($BufferedImage* src, $BufferedImage* dst) {
 			int32_t var$7 = $LCMSImageLayout::CHANNELS_SH(getNumOutComponents());
 			int32_t var$6 = var$7 | $LCMSImageLayout::BYTES_SH(1);
 			$assign(dstIL, $new($LCMSImageLayout, var$4, var$5, var$6, getNumOutComponents()));
-		} catch ($LCMSImageLayout$ImageLayoutException&) {
-			$var($LCMSImageLayout$ImageLayoutException, e, $catch());
+		} catch ($LCMSImageLayout$ImageLayoutException& e) {
 			$throwNew($CMMException, "Unable to convert images"_s);
 		}
 		for (int32_t y = 0; y < h; ++y) {
@@ -324,8 +312,7 @@ void LCMSTransform::colorConvert($BufferedImage* src, $BufferedImage* dst) {
 			int32_t var$15 = $LCMSImageLayout::CHANNELS_SH(getNumOutComponents());
 			int32_t var$14 = var$15 | $LCMSImageLayout::BYTES_SH(2);
 			$assign(dstIL, $new($LCMSImageLayout, var$12, var$13, var$14, getNumOutComponents() * 2));
-		} catch ($LCMSImageLayout$ImageLayoutException&) {
-			$var($LCMSImageLayout$ImageLayoutException, e, $catch());
+		} catch ($LCMSImageLayout$ImageLayoutException& e) {
 			$throwNew($CMMException, "Unable to convert images"_s);
 		}
 		for (int32_t y = 0; y < h; ++y) {
@@ -434,8 +421,7 @@ void LCMSTransform::colorConvert($Raster* src, $WritableRaster* dst, $floats* sr
 		int32_t var$7 = $LCMSImageLayout::CHANNELS_SH(getNumOutComponents());
 		int32_t var$6 = var$7 | $LCMSImageLayout::BYTES_SH(2);
 		$assign(dstIL, $new($LCMSImageLayout, var$4, var$5, var$6, getNumOutComponents() * 2));
-	} catch ($LCMSImageLayout$ImageLayoutException&) {
-		$var($LCMSImageLayout$ImageLayoutException, e, $catch());
+	} catch ($LCMSImageLayout$ImageLayoutException& e) {
 		$throwNew($CMMException, "Unable to convert rasters"_s);
 	}
 	for (int32_t y = 0; y < h; ++y, ++ys, ++yd) {
@@ -529,8 +515,7 @@ void LCMSTransform::colorConvert($Raster* src, $WritableRaster* dst) {
 			int32_t var$7 = $LCMSImageLayout::CHANNELS_SH(getNumOutComponents());
 			int32_t var$6 = var$7 | $LCMSImageLayout::BYTES_SH(1);
 			$assign(dstIL, $new($LCMSImageLayout, var$4, var$5, var$6, getNumOutComponents()));
-		} catch ($LCMSImageLayout$ImageLayoutException&) {
-			$var($LCMSImageLayout$ImageLayoutException, e, $catch());
+		} catch ($LCMSImageLayout$ImageLayoutException& e) {
 			$throwNew($CMMException, "Unable to convert rasters"_s);
 		}
 		for (int32_t y = 0; y < h; ++y, ++ys, ++yd) {
@@ -567,8 +552,7 @@ void LCMSTransform::colorConvert($Raster* src, $WritableRaster* dst) {
 			int32_t var$15 = $LCMSImageLayout::CHANNELS_SH(getNumOutComponents());
 			int32_t var$14 = var$15 | $LCMSImageLayout::BYTES_SH(2);
 			$assign(dstIL, $new($LCMSImageLayout, var$12, var$13, var$14, getNumOutComponents() * 2));
-		} catch ($LCMSImageLayout$ImageLayoutException&) {
-			$var($LCMSImageLayout$ImageLayoutException, e, $catch());
+		} catch ($LCMSImageLayout$ImageLayoutException& e) {
 			$throwNew($CMMException, "Unable to convert rasters"_s);
 		}
 		for (int32_t y = 0; y < h; ++y, ++ys, ++yd) {
@@ -613,8 +597,7 @@ $shorts* LCMSTransform::colorConvert($shorts* src, $shorts* dst$renamed) {
 		$var($LCMSImageLayout, dstIL, $new($LCMSImageLayout, var$5, var$6, var$7, getNumOutComponents() * 2));
 		doTransform(srcIL, dstIL);
 		return dst;
-	} catch ($LCMSImageLayout$ImageLayoutException&) {
-		$var($LCMSImageLayout$ImageLayoutException, e, $catch());
+	} catch ($LCMSImageLayout$ImageLayoutException& e) {
 		$throwNew($CMMException, "Unable to convert data"_s);
 	}
 	$shouldNotReachHere();
@@ -640,8 +623,7 @@ $bytes* LCMSTransform::colorConvert($bytes* src, $bytes* dst$renamed) {
 		$var($LCMSImageLayout, dstIL, $new($LCMSImageLayout, var$5, var$6, var$7, getNumOutComponents()));
 		doTransform(srcIL, dstIL);
 		return dst;
-	} catch ($LCMSImageLayout$ImageLayoutException&) {
-		$var($LCMSImageLayout$ImageLayoutException, e, $catch());
+	} catch ($LCMSImageLayout$ImageLayoutException& e) {
 		$throwNew($CMMException, "Unable to convert data"_s);
 	}
 	$shouldNotReachHere();

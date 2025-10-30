@@ -1,15 +1,5 @@
 #include <javax/swing/text/AbstractDocument$2.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/event/DocumentEvent$EventType.h>
 #include <javax/swing/text/AbstractDocument$DefaultDocumentEvent.h>
 #include <javax/swing/text/AbstractDocument.h>
@@ -86,8 +76,8 @@ void AbstractDocument$2::validateObject() {
 			$init($DocumentEvent$EventType);
 			$var($AbstractDocument$DefaultDocumentEvent, e, $new($AbstractDocument$DefaultDocumentEvent, this->this$0, 0, this->this$0->getLength(), $DocumentEvent$EventType::INSERT));
 			this->this$0->updateBidi(e);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->this$0->writeUnlock();
 		}

@@ -8,19 +8,7 @@
 #include <java/awt/event/ItemListener.h>
 #include <java/awt/event/MouseAdapter.h>
 #include <java/awt/event/MouseListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/MalformedURLException.h>
 #include <java/net/URL.h>
 #include <java/net/URLEncoder.h>
@@ -294,11 +282,8 @@ void FormView::finalize() {
 	this->$ComponentView::finalize();
 }
 
-
 $String* FormView::SUBMIT = nullptr;
-
 $String* FormView::RESET = nullptr;
-
 $String* FormView::PostDataProperty = nullptr;
 
 void FormView::init$($Element* elem) {
@@ -379,8 +364,7 @@ $JComponent* FormView::createInputComponent($AttributeSet* attr, Object$* model)
 			$var($URL, srcURL, $new($URL, base, srcAtt));
 			$var($Icon, icon, $new($ImageIcon, srcURL));
 			$assign(button, $new($JButton, icon));
-		} catch ($MalformedURLException&) {
-			$var($MalformedURLException, e, $catch());
+		} catch ($MalformedURLException& e) {
 			$assign(button, $new($JButton, srcAtt));
 		}
 		if (model != nullptr) {
@@ -618,8 +602,7 @@ void FormView::submitData($String* data) {
 			$var($String, query, $nc(data)->toString());
 			$assign(actionURL, $new($URL, $$str({actionURL, "?"_s, query})));
 		}
-	} catch ($MalformedURLException&) {
-		$var($MalformedURLException, e, $catch());
+	} catch ($MalformedURLException& e) {
 		$assign(actionURL, nullptr);
 	}
 	$var($JEditorPane, c, $cast($JEditorPane, getContainer()));
@@ -759,8 +742,7 @@ $String* FormView::getInputElementData($AttributeSet* attr) {
 		$var($Document, doc, $cast($Document, model));
 		try {
 			$assign(value, $nc(doc)->getText(0, doc->getLength()));
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			$assign(value, nullptr);
 		}
 	} else {
@@ -785,8 +767,7 @@ $String* FormView::getInputElementData($AttributeSet* attr) {
 				$var($String, path, nullptr);
 				try {
 					$assign(path, $nc(doc)->getText(0, doc->getLength()));
-				} catch ($BadLocationException&) {
-					$var($BadLocationException, e, $catch());
+				} catch ($BadLocationException& e) {
 					$assign(path, nullptr);
 				}
 				if (path != nullptr && path->length() > 0) {
@@ -799,13 +780,11 @@ $String* FormView::getInputElementData($AttributeSet* attr) {
 }
 
 $String* FormView::getTextAreaData($AttributeSet* attr) {
-	$useLocalCurrentObjectStackCache();
 	$init($StyleConstants);
 	$var($Document, doc, $cast($Document, $nc(attr)->getAttribute($StyleConstants::ModelAttribute)));
 	try {
 		return $nc(doc)->getText(0, doc->getLength());
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -915,8 +894,7 @@ void FormView::resetForm() {
 								doc->insertString(0, value, nullptr);
 							}
 						}
-					} catch ($BadLocationException&) {
-						$catch();
+					} catch ($BadLocationException& e) {
 					}
 				} else if ($instanceOf($OptionListModel, m)) {
 					$var($OptionListModel, model, $cast($OptionListModel, m));

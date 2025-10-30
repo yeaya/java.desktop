@@ -9,26 +9,13 @@
 #include <java/awt/Window.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/atomic/AtomicBoolean.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JEditorPane.h>
@@ -180,7 +167,6 @@ void bug4765271::init$(bool showFrame) {
 
 void bug4765271::init() {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println($$str({"res = "_s, $$str(bug4765271::RES)}));
 	$set(this, jep, $new($JEditorPane));
 	$init($JEditorPane);
@@ -223,7 +209,6 @@ void bug4765271::test() {
 	$var($AttributeSet, attrs, $nc(childView)->getAttributes());
 	$var($Font, font, $nc(ss)->getFont(attrs));
 	int32_t size1 = $nc(font)->getSize();
-	$init($System);
 	$nc($System::out)->println($$str({"Font Size for InlineView #0 = "_s, $$str(size1), "; height = "_s, $$str(h1), "; element = {"_s}));
 	$nc(($cast($AbstractDocument$AbstractElement, $(childView->getElement()))))->dump($System::out, 3);
 	$nc($System::out)->println("}"_s);
@@ -252,7 +237,6 @@ void bug4765271::main($StringArray* args) {
 	if (!$nc(test->passed)->get()) {
 		$throwNew($RuntimeException, "Test failed"_s);
 	} else {
-		$init($System);
 		$nc($System::out)->println("Test succeeded"_s);
 	}
 }

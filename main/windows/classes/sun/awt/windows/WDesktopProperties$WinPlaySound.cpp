@@ -1,14 +1,5 @@
 #include <sun/awt/windows/WDesktopProperties$WinPlaySound.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/windows/WDesktopProperties.h>
 #include <jcpp.h>
 
@@ -83,8 +74,7 @@ bool WDesktopProperties$WinPlaySound::equals(Object$* o) {
 	}
 	try {
 		return $nc(this->winEventName)->equals($nc(($cast(WDesktopProperties$WinPlaySound, o)))->winEventName);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		return false;
 	}
 	$shouldNotReachHere();

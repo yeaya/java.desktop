@@ -6,32 +6,19 @@
 #include <java/beans/PropertyChangeListener.h>
 #include <java/beans/PropertyChangeSupport.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalThreadStateException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
 #include <java/lang/ThreadLocal.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
 #include <java/lang/ref/SoftReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/AbstractMap.h>
@@ -353,8 +340,7 @@ void AppContext::dispose() {
 		$SunToolkit::postEvent(this, $$new($InvocationEvent, $($Toolkit::getDefaultToolkit()), runnable));
 		try {
 			$of(notificationLock)->wait(this->DISPOSAL_TIMEOUT);
-		} catch ($InterruptedException&) {
-			$catch();
+		} catch ($InterruptedException& e) {
 		}
 	}
 	$assign(runnable, $new($AppContext$5, this, notificationLock));
@@ -362,8 +348,7 @@ void AppContext::dispose() {
 		$SunToolkit::postEvent(this, $$new($InvocationEvent, $($Toolkit::getDefaultToolkit()), runnable));
 		try {
 			$of(notificationLock)->wait(this->DISPOSAL_TIMEOUT);
-		} catch ($InterruptedException&) {
-			$catch();
+		} catch ($InterruptedException& e) {
 		}
 	}
 	$synchronized(this) {
@@ -381,8 +366,7 @@ void AppContext::dispose() {
 		{
 			try {
 				$Thread::sleep(10);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& e) {
 			}
 		}
 	}
@@ -397,8 +381,7 @@ void AppContext::dispose() {
 		{
 			try {
 				$Thread::sleep(10);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& e) {
 			}
 		}
 	}
@@ -414,8 +397,7 @@ void AppContext::dispose() {
 	$nc(AppContext::threadAppContext)->set(nullptr);
 	try {
 		$nc(this->threadGroup)->destroy();
-	} catch ($IllegalThreadStateException&) {
-		$catch();
+	} catch ($IllegalThreadStateException& e) {
 	}
 	$synchronized(this->table) {
 		$nc(this->table)->clear();

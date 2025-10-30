@@ -1,13 +1,6 @@
 #include <javax/swing/Action.h>
 
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef ACCELERATOR_KEY
@@ -70,27 +63,16 @@ $Object* allocate$Action($Class* clazz) {
 	return $of($alloc(Action));
 }
 
-
 $String* Action::DEFAULT = nullptr;
-
 $String* Action::NAME = nullptr;
-
 $String* Action::SHORT_DESCRIPTION = nullptr;
-
 $String* Action::LONG_DESCRIPTION = nullptr;
-
 $String* Action::SMALL_ICON = nullptr;
-
 $String* Action::ACTION_COMMAND_KEY = nullptr;
-
 $String* Action::ACCELERATOR_KEY = nullptr;
-
 $String* Action::MNEMONIC_KEY = nullptr;
-
 $String* Action::SELECTED_KEY = nullptr;
-
 $String* Action::DISPLAYED_MNEMONIC_INDEX_KEY = nullptr;
-
 $String* Action::LARGE_ICON_KEY = nullptr;
 
 bool Action::accept(Object$* sender) {

@@ -11,25 +11,12 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/KeyEvent.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractAction.h>
 #include <javax/swing/Action.h>
 #include <javax/swing/JComponent.h>
@@ -210,8 +197,8 @@ void TestNimbusOverride::main($StringArray* args) {
 			if (!TestNimbusOverride::passed) {
 				$throwNew($RuntimeException, "Setting Nimbus.Overrides property affects custom keymap installation"_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestNimbusOverride$$Lambda$lambda$main$1$1)));
 		}
@@ -250,8 +237,7 @@ void TestNimbusOverride::lambda$main$0() {
 	$init(TestNimbusOverride);
 	try {
 		$UIManager::setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel"_s);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 	$assignStatic(TestNimbusOverride::tf, $new(TestNimbusOverride));

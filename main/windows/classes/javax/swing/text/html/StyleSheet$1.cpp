@@ -1,15 +1,6 @@
 #include <javax/swing/text/html/StyleSheet$1.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/html/StyleSheet$BoxPainter$HorizontalMargin.h>
 #include <javax/swing/text/html/StyleSheet$BoxPainter.h>
 #include <javax/swing/text/html/StyleSheet.h>
@@ -77,13 +68,11 @@ void clinit$StyleSheet$1($Class* class$) {
 	{
 		try {
 			$nc(StyleSheet$1::$SwitchMap$javax$swing$text$html$StyleSheet$BoxPainter$HorizontalMargin)->set($StyleSheet$BoxPainter$HorizontalMargin::RIGHT->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(StyleSheet$1::$SwitchMap$javax$swing$text$html$StyleSheet$BoxPainter$HorizontalMargin)->set($StyleSheet$BoxPainter$HorizontalMargin::LEFT->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

@@ -1,17 +1,7 @@
 #include <javax/swing/text/JTextComponent$4$1.h>
 
 #include <java/awt/event/InputMethodEvent.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchMethodException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <javax/swing/text/JTextComponent$4.h>
 #include <jcpp.h>
@@ -85,15 +75,13 @@ void JTextComponent$4$1::init$($JTextComponent$4* this$0, $Class* val$type) {
 }
 
 $Object* JTextComponent$4$1::run() {
-	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$load($InputMethodEvent);
 		$nc(this->val$type)->getDeclaredMethod("processInputMethodEvent"_s, $$new($ClassArray, {$InputMethodEvent::class$}));
 		$init($Boolean);
 		return $of($Boolean::TRUE);
-	} catch ($NoSuchMethodException&) {
-		$var($NoSuchMethodException, exception, $catch());
+	} catch ($NoSuchMethodException& exception) {
 		$init($Boolean);
 		return $of($Boolean::FALSE);
 	}

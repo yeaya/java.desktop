@@ -6,22 +6,8 @@
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/DefaultCellEditor.h>
 #include <javax/swing/JComboBox.h>
 #include <javax/swing/JComponent.h>
@@ -121,8 +107,8 @@ void bug6607130::main($StringArray* args) {
 		try {
 			$SwingUtilities::invokeAndWait($$new($bug6607130$1, test));
 			test->test();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (test->frame != nullptr) {
 				$nc(test->frame)->dispose();
@@ -195,10 +181,8 @@ void bug6607130::test2() {
 void bug6607130::checkResult($String* testName) {
 	$useLocalCurrentObjectStackCache();
 	if (!$nc(this->cb)->isShowing()) {
-		$init($System);
 		$nc($System::out)->println($$str({testName, " passed"_s}));
 	} else {
-		$init($System);
 		$nc($System::out)->println($$str({testName, " failed"_s}));
 		$throwNew($RuntimeException, "JComboBox is showing after item selection."_s);
 	}
@@ -213,8 +197,7 @@ void bug6607130::hitKey(int32_t keycode) {
 void bug6607130::delay() {
 	try {
 		$Thread::sleep(1000);
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, ie, $catch());
+	} catch ($InterruptedException& ie) {
 		ie->printStackTrace();
 	}
 }

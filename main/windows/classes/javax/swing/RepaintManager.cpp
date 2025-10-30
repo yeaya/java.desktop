@@ -22,23 +22,8 @@
 #include <java/awt/event/InvocationEvent.h>
 #include <java/awt/image/ImageObserver.h>
 #include <java/awt/image/VolatileImage.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessControlContext.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
@@ -310,17 +295,13 @@ $Object* allocate$RepaintManager($Class* clazz) {
 	return $of($alloc(RepaintManager));
 }
 
-
 bool RepaintManager::HANDLE_TOP_LEVEL_PAINT = false;
 int16_t RepaintManager::BUFFER_STRATEGY_TYPE = 0;
 $Object* RepaintManager::repaintManagerKey = nullptr;
 bool RepaintManager::volatileImageBufferEnabled = false;
-
 int32_t RepaintManager::volatileBufferType = 0;
-
 bool RepaintManager::nativeDoubleBuffering = false;
 $JavaSecurityAccess* RepaintManager::javaSecurityAccess = nullptr;
-
 $DisplayChangedListener* RepaintManager::displayChangedHandler = nullptr;
 
 RepaintManager* RepaintManager::currentManager($Component* c) {
@@ -713,8 +694,8 @@ void RepaintManager::paintDirtyRegions($Map* tmpDirtyComponents) {
 				$var($AccessControlContext, acc, $nc($($AWTAccessor::getComponentAccessor()))->getAccessControlContext(dirtyComponent));
 				$nc(RepaintManager::javaSecurityAccess)->doIntersectionPrivilege($$new($RepaintManager$4, this, tmpDirtyComponents, dirtyComponent, roots, i, count), stack, acc);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->painting = false;
 		}
@@ -947,8 +928,7 @@ $Dimension* RepaintManager::getDoubleBufferMaximumSize() {
 				}
 			}
 			$set(this, doubleBufferMaxSize, $new($Dimension, $nc(virtualBounds)->width, virtualBounds->height));
-		} catch ($HeadlessException&) {
-			$var($HeadlessException, e, $catch());
+		} catch ($HeadlessException& e) {
 			$set(this, doubleBufferMaxSize, $new($Dimension, $Integer::MAX_VALUE, $Integer::MAX_VALUE));
 		}
 	}

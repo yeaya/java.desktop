@@ -2,18 +2,7 @@
 
 #include <com/sun/imageio/plugins/png/CRC.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/zip/Deflater.h>
 #include <javax/imageio/stream/ImageOutputStream.h>
 #include <javax/imageio/stream/ImageOutputStreamImpl.h>
@@ -108,8 +97,7 @@ void IDATOutputStream::finishChunk() {
 	$nc(this->stream)->seek(pos);
 	try {
 		$nc(this->stream)->flushBefore(pos);
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		this->startPos = $nc(this->stream)->getStreamPosition();
 		$throw(e);
 	}
@@ -170,8 +158,8 @@ void IDATOutputStream::finish() {
 				}
 			}
 			finishChunk();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->def)->end();
 		}

@@ -5,20 +5,7 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/List.h>
 #include <javax/swing/DefaultRowSorter.h>
 #include <javax/swing/JComponent.h>
@@ -109,7 +96,6 @@ void bug6894632::init$() {
 
 void bug6894632::main($StringArray* args) {
 	$SwingUtilities::invokeAndWait($$new($bug6894632$1));
-	$init($System);
 	$nc($System::out)->println("ok"_s);
 }
 
@@ -157,8 +143,8 @@ void bug6894632::test($List* sortKeys) {
 			if (lastRow != $nc(bug6894632::table)->getSelectedRow()) {
 				$throwNew($RuntimeException, "last row must be still selected"_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			frame->dispose();
 		}

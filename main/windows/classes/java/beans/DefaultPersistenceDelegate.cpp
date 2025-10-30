@@ -12,19 +12,9 @@
 #include <java/beans/PersistenceDelegate.h>
 #include <java/beans/PropertyDescriptor.h>
 #include <java/beans/Statement.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchMethodException.h>
-#include <java/lang/String.h>
 #include <java/lang/reflect/Array.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
 #include <java/lang/reflect/Method.h>
 #include <java/lang/reflect/Modifier.h>
@@ -132,10 +122,8 @@ bool DefaultPersistenceDelegate::definesEquals($Class* type) {
 	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
-		$load($Object);
 		return type == $nc($($nc(type)->getMethod("equals"_s, $$new($ClassArray, {$Object::class$}))))->getDeclaringClass();
-	} catch ($NoSuchMethodException&) {
-		$var($NoSuchMethodException, e, $catch());
+	} catch ($NoSuchMethodException& e) {
 		return false;
 	}
 	$shouldNotReachHere();
@@ -166,8 +154,7 @@ $Expression* DefaultPersistenceDelegate::instantiate(Object$* oldInstance, $Enco
 		try {
 			$var($Method, method, findMethod(type, $nc(this->constructor)->get(i)));
 			constructorArgs->set(i, $($MethodUtil::invoke(method, oldInstance, $$new($ObjectArray, 0))));
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$nc($($nc(out)->getExceptionListener()))->exceptionThrown(e);
 		}
 	}
@@ -212,8 +199,7 @@ void DefaultPersistenceDelegate::doProperty($Class* type, $PropertyDescriptor* p
 							out->remove(oldValue);
 							out->writeExpression($$new($Expression, oldValue, f, "get"_s, $$new($ObjectArray, {($Object*)nullptr})));
 						}
-					} catch ($Exception&) {
-						$catch();
+					} catch ($Exception& ex) {
 					}
 				}
 			}
@@ -258,8 +244,7 @@ void DefaultPersistenceDelegate::initBean($Class* type, Object$* oldInstance, Ob
 							oldValue
 						})));
 					}
-				} catch ($Exception&) {
-					$var($Exception, exception, $catch());
+				} catch ($Exception& exception) {
 					$nc($($nc(out)->getExceptionListener()))->exceptionThrown(exception);
 				}
 			}
@@ -268,8 +253,7 @@ void DefaultPersistenceDelegate::initBean($Class* type, Object$* oldInstance, Ob
 	$var($BeanInfo, info, nullptr);
 	try {
 		$assign(info, $Introspector::getBeanInfo(type));
-	} catch ($IntrospectionException&) {
-		$var($IntrospectionException, exception, $catch());
+	} catch ($IntrospectionException& exception) {
 		return;
 	}
 	{
@@ -284,8 +268,7 @@ void DefaultPersistenceDelegate::initBean($Class* type, Object$* oldInstance, Ob
 				}
 				try {
 					doProperty(type, d, oldInstance, newInstance, out);
-				} catch ($Exception&) {
-					$var($Exception, e, $catch());
+				} catch ($Exception& e) {
 					$nc($($nc(out)->getExceptionListener()))->exceptionThrown(e);
 				}
 			}
@@ -321,14 +304,12 @@ void DefaultPersistenceDelegate::initBean($Class* type, Object$* oldInstance, Ob
 					$var($Method, m, d->getGetListenerMethod());
 					$assign(oldL, $cast($EventListenerArray, $MethodUtil::invoke(m, oldInstance, $$new($ObjectArray, 0))));
 					$assign(newL, $cast($EventListenerArray, $MethodUtil::invoke(m, newInstance, $$new($ObjectArray, 0))));
-				} catch ($Exception&) {
-					$var($Exception, e2, $catch());
+				} catch ($Exception& e2) {
 					try {
 						$var($Method, m, type->getMethod("getListeners"_s, $$new($ClassArray, {$Class::class$})));
 						$assign(oldL, $cast($EventListenerArray, $MethodUtil::invoke(m, oldInstance, $$new($ObjectArray, {$of(listenerType)}))));
 						$assign(newL, $cast($EventListenerArray, $MethodUtil::invoke(m, newInstance, $$new($ObjectArray, {$of(listenerType)}))));
-					} catch ($Exception&) {
-						$var($Exception, e3, $catch());
+					} catch ($Exception& e3) {
 						return;
 					}
 				}
@@ -369,8 +350,7 @@ $PropertyDescriptor* DefaultPersistenceDelegate::getPropertyDescriptor($Class* t
 				}
 			}
 		}
-	} catch ($IntrospectionException&) {
-		$catch();
+	} catch ($IntrospectionException& exception) {
 	}
 	return nullptr;
 }

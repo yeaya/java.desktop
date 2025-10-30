@@ -23,21 +23,7 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/EventListener.h>
@@ -182,6 +168,7 @@ $NamedAttribute JPopupMenu_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JPopupMenu_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JPopupMenu_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JPopupMenu_Attribute_var$1},
@@ -374,7 +361,6 @@ $CompoundAttribute _JPopupMenu_MethodAnnotations_setVisible68[] = {
 	{}
 };
 
-
 $FieldInfo _JPopupMenu_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JPopupMenu, uiClassID)},
 	{"defaultLWPopupEnabledKey", "Ljava/lang/Object;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JPopupMenu, defaultLWPopupEnabledKey)},
@@ -524,11 +510,8 @@ void JPopupMenu::finalize() {
 	this->$JComponent::finalize();
 }
 
-
 $String* JPopupMenu::uiClassID = nullptr;
-
 $Object* JPopupMenu::defaultLWPopupEnabledKey = nullptr;
-
 bool JPopupMenu::popupPostionFixDisabled = false;
 $Object* JPopupMenu::classLock = nullptr;
 

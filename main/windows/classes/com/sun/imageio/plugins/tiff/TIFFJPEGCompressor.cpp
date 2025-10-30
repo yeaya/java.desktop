@@ -9,17 +9,6 @@
 #include <java/io/ByteArrayOutputStream.h>
 #include <java/io/InputStream.h>
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Iterator.h>
 #include <javax/imageio/ImageReader.h>
 #include <javax/imageio/ImageWriteParam.h>
@@ -136,8 +125,7 @@ $ImageReader* TIFFJPEGCompressor::getJPEGTablesReader() {
 			$var($ImageReaderSpi, jpegReaderSPI, $cast($ImageReaderSpi, readerSPIs->next()));
 			$assign(jpegReader, $nc(jpegReaderSPI)->createReaderInstance());
 		}
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 	return jpegReader;
 }
@@ -212,12 +200,11 @@ void TIFFJPEGCompressor::setMetadata($IIOMetadata* metadata) {
 					try {
 						try {
 							$set(this, JPEGStreamMetadata, jpegReader->getStreamMetadata());
-						} catch ($Exception&) {
-							$var($Exception, e, $catch());
+						} catch ($Exception& e) {
 							$set(this, JPEGStreamMetadata, nullptr);
 						}
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$1) {
+						$assign(var$0, var$1);
 					} /*finally*/ {
 						jpegReader->reset();
 					}
@@ -238,8 +225,7 @@ void TIFFJPEGCompressor::setMetadata($IIOMetadata* metadata) {
 					$var($bytes, tables, tableByteStream->toByteArray());
 					$assign(JPEGTablesField, $new($TIFFField, $($nc(base)->getTag($BaselineTIFFTagSet::TAG_JPEG_TABLES)), $TIFFTag::TIFF_UNDEFINED, $nc(tables)->length, $of(tables)));
 					$nc(rootIFD)->addTIFFField(JPEGTablesField);
-				} catch ($Exception&) {
-					$var($Exception, e, $catch());
+				} catch ($Exception& e) {
 					$nc(rootIFD)->removeTIFFField($BaselineTIFFTagSet::TAG_JPEG_TABLES);
 					this->writeAbbreviatedStream = false;
 				}

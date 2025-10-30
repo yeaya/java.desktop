@@ -8,14 +8,6 @@
 #include <java/awt/print/PageFormat.h>
 #include <java/awt/print/Printable.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <javax/imageio/ImageIO.h>
 #include <jcpp.h>
@@ -69,16 +61,14 @@ $Object* allocate$ImagePrinter($Class* clazz) {
 void ImagePrinter::init$($InputStream* stream) {
 	try {
 		$set(this, image, $ImageIO::read(stream));
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 }
 
 void ImagePrinter::init$($URL* url) {
 	try {
 		$set(this, image, $ImageIO::read(url));
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 }
 

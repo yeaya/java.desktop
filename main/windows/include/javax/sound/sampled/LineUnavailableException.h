@@ -17,8 +17,10 @@ public:
 	void init$($String* message);
 	static const int64_t serialVersionUID = (int64_t)0xE39898919BDA5A3E;
 	LineUnavailableException(const LineUnavailableException& e);
-	LineUnavailableException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline LineUnavailableException* operator ->() {
+		return (LineUnavailableException*)throwing$;
+	}
 };
 
 		} // sampled

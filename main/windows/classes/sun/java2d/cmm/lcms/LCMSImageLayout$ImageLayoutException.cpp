@@ -1,13 +1,5 @@
 #include <sun/java2d/cmm/lcms/LCMSImageLayout$ImageLayoutException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/cmm/lcms/LCMSImageLayout.h>
 #include <jcpp.h>
 
@@ -59,16 +51,10 @@ void LCMSImageLayout$ImageLayoutException::init$($String* message) {
 LCMSImageLayout$ImageLayoutException::LCMSImageLayout$ImageLayoutException() {
 }
 
-LCMSImageLayout$ImageLayoutException::LCMSImageLayout$ImageLayoutException(const LCMSImageLayout$ImageLayoutException& e) {
+LCMSImageLayout$ImageLayoutException::LCMSImageLayout$ImageLayoutException(const LCMSImageLayout$ImageLayoutException& e) : $Exception(e) {
 }
 
-LCMSImageLayout$ImageLayoutException LCMSImageLayout$ImageLayoutException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void LCMSImageLayout$ImageLayoutException::throwWrapper$() {
-	$pendingException(this);
+void LCMSImageLayout$ImageLayoutException::throw$() {
 	throw *this;
 }
 

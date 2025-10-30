@@ -3,15 +3,6 @@
 #include <java/io/File.h>
 #include <java/io/IOException.h>
 #include <java/io/RandomAccessFile.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/stream/FileCacheImageInputStream.h>
 #include <jcpp.h>
 
@@ -79,11 +70,10 @@ void FileCacheImageInputStream$StreamDisposerRecord::dispose() {
 				try {
 					try {
 						$nc(this->cache)->close();
-					} catch ($IOException&) {
-						$catch();
+					} catch ($IOException& e) {
 					}
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$1) {
+					$assign(var$0, var$1);
 				} /*finally*/ {
 					$set(this, cache, nullptr);
 				}

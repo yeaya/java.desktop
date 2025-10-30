@@ -1,19 +1,7 @@
 #include <javax/swing/text/html/HTMLDocument$HTMLReader.h>
 
 #include <java/awt/font/TextAttribute.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/MalformedURLException.h>
 #include <java/net/URL.h>
 #include <java/util/Hashtable.h>
@@ -540,8 +528,7 @@ void HTMLDocument$HTMLReader::generateEndsSpecsForMidInsert() {
 				$var($DefaultStyledDocument$ElementSpec, spec, $new($DefaultStyledDocument$ElementSpec, newAttrs, $DefaultStyledDocument$ElementSpec::ContentType, $HTMLDocument::NEWLINE, 0, 1));
 				$nc(this->parseBuffer)->addElement(spec);
 			}
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& ble) {
 		}
 		while (count-- > 0) {
 			$nc(this->parseBuffer)->addElement($$new($DefaultStyledDocument$ElementSpec, nullptr, $DefaultStyledDocument$ElementSpec::EndTagType));
@@ -632,11 +619,10 @@ void HTMLDocument$HTMLReader::adjustEndElement() {
 						this->this$0->fireUndoableEditUpdate($$new($UndoableEditEvent, this, event));
 					}
 				}
-			} catch ($BadLocationException&) {
-				$catch();
+			} catch ($BadLocationException& ble) {
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} /*finally*/ {
 			this->this$0->releaseLock();
 		}
@@ -856,8 +842,7 @@ void HTMLDocument$HTMLReader::textAreaContent($chars* data) {
 	try {
 		int32_t var$0 = $nc(this->textAreaDocument)->getLength();
 		$nc(this->textAreaDocument)->insertString(var$0, $$new($String, data), nullptr);
-	} catch ($BadLocationException&) {
-		$catch();
+	} catch ($BadLocationException& e) {
 	}
 }
 
@@ -963,8 +948,7 @@ void HTMLDocument$HTMLReader::addContent($chars* data, int32_t offs, int32_t len
 		}
 		try {
 			flushBuffer(false);
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& ble) {
 		}
 	}
 	if (length > 0) {
@@ -1089,12 +1073,10 @@ void HTMLDocument$HTMLReader::linkCSSStyleSheet($String* href) {
 	$var($URL, url, nullptr);
 	try {
 		$assign(url, $new($URL, this->this$0->base, href));
-	} catch ($MalformedURLException&) {
-		$var($MalformedURLException, mfe, $catch());
+	} catch ($MalformedURLException& mfe) {
 		try {
 			$assign(url, $new($URL, href));
-		} catch ($MalformedURLException&) {
-			$var($MalformedURLException, mfe2, $catch());
+		} catch ($MalformedURLException& mfe2) {
 			$assign(url, nullptr);
 		}
 	}
@@ -1171,8 +1153,7 @@ void HTMLDocument$HTMLReader::foundInsertTag(bool isBlockTag) {
 				}
 				$nc(this->parseBuffer)->addElement(es);
 			}
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& ble) {
 		}
 	}
 	for (int32_t counter = 0; counter < this->popDepth; ++counter) {

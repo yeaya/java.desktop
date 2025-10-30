@@ -9,21 +9,6 @@
 #include <java/awt/event/AdjustmentEvent.h>
 #include <java/awt/event/AdjustmentListener.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/Short.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/accessibility/AccessibleState.h>
@@ -98,6 +83,7 @@ $NamedAttribute JScrollBar_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JScrollBar_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JScrollBar_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JScrollBar_Attribute_var$1},
@@ -258,7 +244,6 @@ $CompoundAttribute _JScrollBar_MethodAnnotations_setVisibleAmount37[] = {
 	{}
 };
 
-
 $FieldInfo _JScrollBar_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JScrollBar, uiClassID)},
 	{"fwdAdjustmentEvents", "Ljavax/swing/event/ChangeListener;", nullptr, $PRIVATE, $field(JScrollBar, fwdAdjustmentEvents)},
@@ -362,7 +347,6 @@ $Object* JScrollBar::clone() {
 void JScrollBar::finalize() {
 	this->$JComponent::finalize();
 }
-
 
 $String* JScrollBar::uiClassID = nullptr;
 

@@ -1,12 +1,5 @@
 #include <javax/swing/text/DateFormatter.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/DateFormat$Field.h>
 #include <java/text/DateFormat.h>
 #include <java/text/Format.h>
@@ -121,8 +114,7 @@ $Object* DateFormatter::adjustValue(Object$* value$renamed, $Map* attributes, Ob
 			try {
 				calendar->add(field, direction);
 				$assign(value, calendar->getTime());
-			} catch ($Throwable&) {
-				$var($Throwable, th, $catch());
+			} catch ($Throwable& th) {
 				$assign(value, nullptr);
 			}
 			return $of(value);

@@ -1,16 +1,6 @@
 #include <com/sun/imageio/plugins/tiff/TIFFCompressor.h>
 
 #include <com/sun/imageio/plugins/tiff/TIFFImageWriter.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/ImageWriter.h>
 #include <javax/imageio/metadata/IIOMetadata.h>
 #include <javax/imageio/stream/ImageOutputStream.h>

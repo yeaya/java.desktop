@@ -16,23 +16,8 @@
 #include <com/sun/media/sound/RealTimeSequencer$SequencerTransmitter.h>
 #include <com/sun/media/sound/ReferenceCountingDevice.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/ArrayList.h>
@@ -319,9 +304,7 @@ $String* RealTimeSequencer::toString() {
 	 return this->$AbstractMidiDevice::toString();
 }
 
-
 $Map* RealTimeSequencer::dispatchers = nullptr;
-
 $MidiDevice$Info* RealTimeSequencer::info = nullptr;
 $Sequencer$SyncModeArray* RealTimeSequencer::masterSyncModes = nullptr;
 $Sequencer$SyncModeArray* RealTimeSequencer::slaveSyncModes = nullptr;
@@ -824,8 +807,8 @@ void RealTimeSequencer::doAutoConnect() {
 				$var($Throwable, var$0, nullptr);
 				try {
 					$assign(rec, synth->getReceiver());
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$1) {
+					$assign(var$0, var$1);
 				} /*finally*/ {
 					if (rec == nullptr) {
 						synth->close();
@@ -836,22 +819,19 @@ void RealTimeSequencer::doAutoConnect() {
 				}
 			}
 		}
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 	if (rec == nullptr) {
 		try {
 			$assign(rec, $MidiSystem::getReceiver());
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& e) {
 		}
 	}
 	if (rec != nullptr) {
 		$set(this, autoConnectedReceiver, rec);
 		try {
 			$nc($(getTransmitter()))->setReceiver(rec);
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& e) {
 		}
 	}
 }
@@ -903,8 +883,7 @@ void RealTimeSequencer::implClose() {
 		if (this->autoConnectedReceiver != nullptr) {
 			try {
 				$nc(this->autoConnectedReceiver)->close();
-			} catch ($Exception&) {
-				$catch();
+			} catch ($Exception& e) {
 			}
 			$set(this, autoConnectedReceiver, nullptr);
 		}

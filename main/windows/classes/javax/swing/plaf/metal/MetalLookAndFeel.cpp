@@ -6,17 +6,6 @@
 #include <java/awt/Insets.h>
 #include <java/awt/Toolkit.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
@@ -24,8 +13,6 @@
 #include <java/lang/invoke/MethodType.h>
 #include <java/lang/ref/Reference.h>
 #include <java/lang/ref/ReferenceQueue.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/Hashtable.h>
@@ -1995,13 +1982,9 @@ $Object* allocate$MetalLookAndFeel($Class* clazz) {
 }
 
 bool MetalLookAndFeel::METAL_LOOK_AND_FEEL_INITED = false;
-
 bool MetalLookAndFeel::checkedWindows = false;
-
 bool MetalLookAndFeel::isWindows$ = false;
-
 bool MetalLookAndFeel::checkedSystemFontSettings = false;
-
 bool MetalLookAndFeel::useSystemFonts$ = false;
 $ReferenceQueue* MetalLookAndFeel::queue = nullptr;
 
@@ -2223,8 +2206,8 @@ void MetalLookAndFeel::initComponentDefaults($UIDefaults* table) {
 	$var($UIDefaults$LazyValue, textFieldBorder, static_cast<$UIDefaults$LazyValue*>($new(MetalLookAndFeel$$Lambda$lambda$initComponentDefaults$0)));
 	$var($UIDefaults$LazyValue, dialogBorder, static_cast<$UIDefaults$LazyValue*>($new(MetalLookAndFeel$$Lambda$lambda$initComponentDefaults$1$1)));
 	$var($UIDefaults$LazyValue, questionDialogBorder, static_cast<$UIDefaults$LazyValue*>($new(MetalLookAndFeel$$Lambda$lambda$initComponentDefaults$2$2)));
-		$init($DefaultEditorKit);
-		$init($JTextField);
+	$init($DefaultEditorKit);
+	$init($JTextField);
 	$var($Object, fieldInputMap, $new($UIDefaults$LazyInputMap, $$new($ObjectArray, {
 		$of("ctrl C"_s),
 		$of($DefaultEditorKit::copyAction),
@@ -2535,7 +2518,7 @@ void MetalLookAndFeel::initComponentDefaults($UIDefaults* table) {
 	$var($Object, windowTitleValue, $new($MetalLookAndFeel$FontActiveValue, theme, $MetalTheme::WINDOW_TITLE_FONT));
 	$var($Object, subTextValue, $new($MetalLookAndFeel$FontActiveValue, theme, $MetalTheme::SUB_TEXT_FONT));
 	$var($Object, systemTextValue, $new($MetalLookAndFeel$FontActiveValue, theme, $MetalTheme::SYSTEM_TEXT_FONT));
-		$init($Boolean);
+	$init($Boolean);
 	$var($ObjectArray, defaults, $new($ObjectArray, {
 		$of("AuditoryCues.defaultCueList"_s),
 		$of(defaultCueList),

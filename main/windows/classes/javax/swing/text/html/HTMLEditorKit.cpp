@@ -12,17 +12,6 @@
 #include <java/io/Reader.h>
 #include <java/io/StringReader.h>
 #include <java/io/Writer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
@@ -310,47 +299,28 @@ void HTMLEditorKit::finalize() {
 	this->$StyledEditorKit::finalize();
 }
 
-
 $String* HTMLEditorKit::DEFAULT_CSS = nullptr;
 $Cursor* HTMLEditorKit::MoveCursor = nullptr;
 $Cursor* HTMLEditorKit::DefaultCursor = nullptr;
-
 $ViewFactory* HTMLEditorKit::defaultFactory = nullptr;
 $Object* HTMLEditorKit::DEFAULT_STYLES_KEY = nullptr;
 $HTMLEditorKit$Parser* HTMLEditorKit::defaultParser = nullptr;
-
 $String* HTMLEditorKit::BOLD_ACTION = nullptr;
-
 $String* HTMLEditorKit::ITALIC_ACTION = nullptr;
-
 $String* HTMLEditorKit::PARA_INDENT_LEFT = nullptr;
-
 $String* HTMLEditorKit::PARA_INDENT_RIGHT = nullptr;
-
 $String* HTMLEditorKit::FONT_CHANGE_BIGGER = nullptr;
-
 $String* HTMLEditorKit::FONT_CHANGE_SMALLER = nullptr;
-
 $String* HTMLEditorKit::COLOR_ACTION = nullptr;
-
 $String* HTMLEditorKit::LOGICAL_STYLE_ACTION = nullptr;
-
 $String* HTMLEditorKit::IMG_ALIGN_TOP = nullptr;
-
 $String* HTMLEditorKit::IMG_ALIGN_MIDDLE = nullptr;
-
 $String* HTMLEditorKit::IMG_ALIGN_BOTTOM = nullptr;
-
 $String* HTMLEditorKit::IMG_BORDER = nullptr;
-
 $String* HTMLEditorKit::INSERT_TABLE_HTML = nullptr;
-
 $String* HTMLEditorKit::INSERT_UL_HTML = nullptr;
-
 $String* HTMLEditorKit::INSERT_OL_HTML = nullptr;
-
 $String* HTMLEditorKit::INSERT_HR_HTML = nullptr;
-
 $String* HTMLEditorKit::INSERT_PRE_HTML = nullptr;
 $HTMLEditorKit$NavigateLinkAction* HTMLEditorKit::nextLinkAction = nullptr;
 $HTMLEditorKit$NavigateLinkAction* HTMLEditorKit::previousLinkAction = nullptr;
@@ -479,8 +449,7 @@ $StyleSheet* HTMLEditorKit::getStyleSheet() {
 			$var($Reader, r, $new($BufferedReader, $$new($InputStreamReader, is, "ISO-8859-1"_s)));
 			defaultStyles->loadRules(r, nullptr);
 			r->close();
-		} catch ($Throwable&) {
-			$catch();
+		} catch ($Throwable& e) {
 		}
 	}
 	return defaultStyles;
@@ -653,8 +622,8 @@ void clinit$HTMLEditorKit($Class* class$) {
 	$assignStatic(HTMLEditorKit::nextLinkAction, $new($HTMLEditorKit$NavigateLinkAction, "next-link-action"_s));
 	$assignStatic(HTMLEditorKit::previousLinkAction, $new($HTMLEditorKit$NavigateLinkAction, "previous-link-action"_s));
 	$assignStatic(HTMLEditorKit::activateLinkAction, $new($HTMLEditorKit$ActivateLinkAction, "activate-link-action"_s));
-		$init($HTML$Tag);
-		$init($DefaultEditorKit);
+	$init($HTML$Tag);
+	$init($DefaultEditorKit);
 	$assignStatic(HTMLEditorKit::defaultActions, $new($ActionArray, {
 		static_cast<$Action*>($$new($HTMLEditorKit$InsertHTMLTextAction, "InsertTable"_s, HTMLEditorKit::INSERT_TABLE_HTML, $HTML$Tag::BODY, $HTML$Tag::TABLE)),
 		static_cast<$Action*>($$new($HTMLEditorKit$InsertHTMLTextAction, "InsertTableRow"_s, HTMLEditorKit::INSERT_TABLE_HTML, $HTML$Tag::TABLE, $HTML$Tag::TR, $HTML$Tag::BODY, $HTML$Tag::TABLE)),

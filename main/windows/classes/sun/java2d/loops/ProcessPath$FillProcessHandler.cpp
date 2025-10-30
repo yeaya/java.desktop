@@ -1,14 +1,5 @@
 #include <sun/java2d/loops/ProcessPath$FillProcessHandler.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/loops/ProcessPath$DrawHandler.h>
 #include <sun/java2d/loops/ProcessPath$FillData.h>
 #include <sun/java2d/loops/ProcessPath$ProcessHandler.h>

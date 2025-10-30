@@ -1,16 +1,6 @@
 #include <sun/java2d/windows/WindowsFlags.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <sun/awt/windows/WToolkit.h>
@@ -93,7 +83,6 @@ $Object* allocate$WindowsFlags($Class* clazz) {
 	return $of($alloc(WindowsFlags));
 }
 
-
 bool WindowsFlags::gdiBlitEnabled = false;
 bool WindowsFlags::d3dEnabled = false;
 bool WindowsFlags::d3dVerbose = false;
@@ -163,8 +152,7 @@ int32_t WindowsFlags::getIntProp($String* p, int32_t defaultVal) {
 	if (propString != nullptr) {
 		try {
 			returnVal = $Integer::parseInt(propString);
-		} catch ($NumberFormatException&) {
-			$catch();
+		} catch ($NumberFormatException& e) {
 		}
 	}
 	return returnVal;

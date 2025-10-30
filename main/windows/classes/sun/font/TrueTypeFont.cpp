@@ -6,23 +6,8 @@
 #include <java/io/IOException.h>
 #include <java/io/RandomAccessFile.h>
 #include <java/io/UnsupportedEncodingException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/Short.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/ByteBuffer.h>
 #include <java/nio/CharBuffer.h>
 #include <java/nio/IntBuffer.h>
@@ -315,8 +300,7 @@ void TrueTypeFont::init$($String* platname, Object$* nativeNames, int32_t fIndex
 		if (!useFilePool) {
 			close();
 		}
-	} catch ($Throwable&) {
-		$var($Throwable, t, $catch());
+	} catch ($Throwable& t) {
 		close();
 		if ($instanceOf($FontFormatException, t)) {
 			$throw($cast($FontFormatException, t));
@@ -351,21 +335,18 @@ $FileChannel* TrueTypeFont::open(bool usePool) {
 						$nc(($cast($SunFontManager, fm)))->addToPool(this);
 					}
 				}
-			} catch ($PrivilegedActionException&) {
-				$var($PrivilegedActionException, e, $catch());
+			} catch ($PrivilegedActionException& e) {
 				close();
 				$var($Throwable, reason, e->getCause());
 				if (reason == nullptr) {
 					$assign(reason, e);
 				}
 				$throwNew($FontFormatException, $($nc(reason)->toString()));
-			} catch ($ClosedChannelException&) {
-				$var($ClosedChannelException, e, $catch());
+			} catch ($ClosedChannelException& e) {
 				$Thread::interrupted();
 				close();
 				open();
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				close();
 				$throwNew($FontFormatException, $(e->toString()));
 			}
@@ -430,20 +411,17 @@ int32_t TrueTypeFont::readBlock($ByteBuffer* buffer, int32_t offset, int32_t len
 				bread = length;
 			}
 		}
-	} catch ($FontFormatException&) {
-		$var($FontFormatException, e, $catch());
+	} catch ($FontFormatException& e) {
 		if ($FontUtilities::isLogging()) {
 			$nc($($FontUtilities::getLogger()))->severe($$str({"While reading "_s, this->platName}), static_cast<$Throwable*>(e));
 		}
 		bread = -1;
 		deregisterFontAndClearStrikeCache();
-	} catch ($ClosedChannelException&) {
-		$var($ClosedChannelException, e, $catch());
+	} catch ($ClosedChannelException& e) {
 		$Thread::interrupted();
 		close();
 		return readBlock(buffer, offset, length);
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		if ($FontUtilities::isLogging()) {
 			$nc($($FontUtilities::getLogger()))->severe($$str({"While reading "_s, this->platName}), static_cast<$Throwable*>(e));
 		}
@@ -456,7 +434,6 @@ int32_t TrueTypeFont::readBlock($ByteBuffer* buffer, int32_t offset, int32_t len
 }
 
 $ByteBuffer* TrueTypeFont::readBlock(int32_t offset, int32_t length) {
-	$useLocalCurrentObjectStackCache();
 	$var($ByteBuffer, buffer, $ByteBuffer::allocate(length));
 	try {
 		$synchronized(this) {
@@ -474,16 +451,13 @@ $ByteBuffer* TrueTypeFont::readBlock(int32_t offset, int32_t length) {
 			$nc($nc(this->disposerRecord)->channel)->read(buffer);
 			$nc(buffer)->flip();
 		}
-	} catch ($FontFormatException&) {
-		$var($FontFormatException, e, $catch());
+	} catch ($FontFormatException& e) {
 		return nullptr;
-	} catch ($ClosedChannelException&) {
-		$var($ClosedChannelException, e, $catch());
+	} catch ($ClosedChannelException& e) {
 		$Thread::interrupted();
 		close();
 		readBlock(buffer, offset, length);
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		return nullptr;
 	}
 	return buffer;
@@ -570,8 +544,7 @@ void TrueTypeFont::init(int32_t fIndex) {
 			$throwNew($FontFormatException, "zero glyphs"_s);
 		}
 		initNames();
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		if ($FontUtilities::isLogging()) {
 			$FontUtilities::logSevere($(e->toString()));
 		}
@@ -693,16 +666,13 @@ $ByteBuffer* TrueTypeFont::getTableBuffer(int32_t tag) {
 			$nc($nc(this->disposerRecord)->channel)->position($nc(entry)->offset);
 			bread = $nc($nc(this->disposerRecord)->channel)->read(buffer);
 			$nc(buffer)->flip();
-		} catch ($ClosedChannelException&) {
-			$var($ClosedChannelException, e, $catch());
+		} catch ($ClosedChannelException& e) {
 			$Thread::interrupted();
 			close();
 			return getTableBuffer(tag);
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			return nullptr;
-		} catch ($FontFormatException&) {
-			$var($FontFormatException, e, $catch());
+		} catch ($FontFormatException& e) {
 			return nullptr;
 		}
 		if (bread < $nc(entry)->length) {
@@ -721,8 +691,7 @@ $bytes* TrueTypeFont::getTableBytes(int32_t tag) {
 	} else if ($nc(buffer)->hasArray()) {
 		try {
 			return $cast($bytes, buffer->array());
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& re) {
 		}
 	}
 	$var($bytes, data, $new($bytes, getTableSize(tag)));
@@ -970,14 +939,12 @@ $String* TrueTypeFont::makeString($bytes* bytes$renamed, int32_t len, int16_t pl
 	}
 	try {
 		return $new($String, bytes, 0, len, charset);
-	} catch ($UnsupportedEncodingException&) {
-		$var($UnsupportedEncodingException, e, $catch());
+	} catch ($UnsupportedEncodingException& e) {
 		if ($FontUtilities::isLogging()) {
 			$FontUtilities::logWarning($$str({e, " EncodingID="_s, $$str(encoding)}));
 		}
 		return $new($String, bytes, 0, len);
-	} catch ($Throwable&) {
-		$var($Throwable, t, $catch());
+	} catch ($Throwable& t) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -1379,8 +1346,7 @@ $StringArray* TrueTypeFont::getAllFamilyNames() {
 	$var($HashSet, aSet, $new($HashSet));
 	try {
 		initAllNames(TrueTypeFont::FAMILY_NAME_ID, aSet);
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 	return $fcast($StringArray, aSet->toArray($$new($StringArray, 0)));
 }
@@ -1390,18 +1356,15 @@ $StringArray* TrueTypeFont::getAllFullNames() {
 	$var($HashSet, aSet, $new($HashSet));
 	try {
 		initAllNames(TrueTypeFont::FULL_NAME_ID, aSet);
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 	return $fcast($StringArray, aSet->toArray($$new($StringArray, 0)));
 }
 
 $Point2D$Float* TrueTypeFont::getGlyphPoint(int64_t pScalerContext, int32_t glyphCode, int32_t ptNumber) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($(getScaler()))->getGlyphPoint(pScalerContext, glyphCode, ptNumber);
-	} catch ($FontScalerException&) {
-		$var($FontScalerException, fe, $catch());
+	} catch ($FontScalerException& fe) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -1414,16 +1377,16 @@ $chars* TrueTypeFont::getGaspTable() {
 	}
 	$var($ByteBuffer, buffer, getTableBuffer(TrueTypeFont::gaspTag));
 	if (buffer == nullptr) {
-		return $assignField(this, gaspTable, $new($chars, 0));
+		return $set(this, gaspTable, $new($chars, 0));
 	}
 	$var($CharBuffer, cbuffer, $nc(buffer)->asCharBuffer());
 	char16_t format = $nc(cbuffer)->get();
 	if (format > 1) {
-		return $assignField(this, gaspTable, $new($chars, 0));
+		return $set(this, gaspTable, $new($chars, 0));
 	}
 	char16_t numRanges = cbuffer->get();
 	if (4 + numRanges * 4 > getTableSize(TrueTypeFont::gaspTag)) {
-		return $assignField(this, gaspTable, $new($chars, 0));
+		return $set(this, gaspTable, $new($chars, 0));
 	}
 	$set(this, gaspTable, $new($chars, 2 * numRanges));
 	cbuffer->get(this->gaspTable);

@@ -3,22 +3,11 @@
 #include <java/io/EOFException.h>
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/OutOfMemoryError.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/VirtualMachineError.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef MAX_VALUE
@@ -262,12 +251,10 @@ void RIFFReader::finish() {
 }
 
 $String* RIFFReader::readString(int32_t len) {
-	$useLocalCurrentObjectStackCache();
 	$var($bytes, buff, nullptr);
 	try {
 		$assign(buff, $new($bytes, len));
-	} catch ($OutOfMemoryError&) {
-		$var($OutOfMemoryError, oom, $catch());
+	} catch ($OutOfMemoryError& oom) {
 		$throwNew($IOException, "Length too big"_s, oom);
 	}
 	readFully(buff);

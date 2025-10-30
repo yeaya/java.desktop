@@ -3,16 +3,6 @@
 #include <java/awt/Graphics.h>
 #include <java/awt/print/PageFormat.h>
 #include <java/awt/print/Printable.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTable$ThreadSafePrintable.h>
 #include <jcpp.h>
 
@@ -85,18 +75,16 @@ void JTable$ThreadSafePrintable$1::init$($JTable$ThreadSafePrintable* this$1, $G
 
 void JTable$ThreadSafePrintable$1::run() {
 	$synchronized(this) {
-		$useLocalCurrentObjectStackCache();
 		{
 			$var($Throwable, var$0, nullptr);
 			try {
 				try {
 					this->this$1->retVal = $nc(this->this$1->printDelegate)->print(this->val$graphics, this->val$pageFormat, this->val$pageIndex);
-				} catch ($Throwable&) {
-					$var($Throwable, throwable, $catch());
+				} catch ($Throwable& throwable) {
 					$set(this->this$1, retThrowable, throwable);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$of(this)->notifyAll();
 			}

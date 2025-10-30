@@ -1,14 +1,6 @@
 #include <sun/awt/SunHints.h>
 
 #include <java/awt/RenderingHints$Key.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/SunHints$Key.h>
 #include <sun/awt/SunHints$LCDContrastKey.h>
 #include <sun/awt/SunHints$Value.h>
@@ -254,17 +246,14 @@ $Object* allocate$SunHints($Class* clazz) {
 	return $of($alloc(SunHints));
 }
 
-
 $SunHints$Key* SunHints::KEY_RENDERING = nullptr;
 $Object* SunHints::VALUE_RENDER_SPEED = nullptr;
 $Object* SunHints::VALUE_RENDER_QUALITY = nullptr;
 $Object* SunHints::VALUE_RENDER_DEFAULT = nullptr;
-
 $SunHints$Key* SunHints::KEY_ANTIALIASING = nullptr;
 $Object* SunHints::VALUE_ANTIALIAS_ON = nullptr;
 $Object* SunHints::VALUE_ANTIALIAS_OFF = nullptr;
 $Object* SunHints::VALUE_ANTIALIAS_DEFAULT = nullptr;
-
 $SunHints$Key* SunHints::KEY_TEXT_ANTIALIASING = nullptr;
 $Object* SunHints::VALUE_TEXT_ANTIALIAS_ON = nullptr;
 $Object* SunHints::VALUE_TEXT_ANTIALIAS_OFF = nullptr;
@@ -274,43 +263,35 @@ $Object* SunHints::VALUE_TEXT_ANTIALIAS_LCD_HRGB = nullptr;
 $Object* SunHints::VALUE_TEXT_ANTIALIAS_LCD_HBGR = nullptr;
 $Object* SunHints::VALUE_TEXT_ANTIALIAS_LCD_VRGB = nullptr;
 $Object* SunHints::VALUE_TEXT_ANTIALIAS_LCD_VBGR = nullptr;
-
 $SunHints$Key* SunHints::KEY_FRACTIONALMETRICS = nullptr;
 $Object* SunHints::VALUE_FRACTIONALMETRICS_ON = nullptr;
 $Object* SunHints::VALUE_FRACTIONALMETRICS_OFF = nullptr;
 $Object* SunHints::VALUE_FRACTIONALMETRICS_DEFAULT = nullptr;
-
 $SunHints$Key* SunHints::KEY_DITHERING = nullptr;
 $Object* SunHints::VALUE_DITHER_ENABLE = nullptr;
 $Object* SunHints::VALUE_DITHER_DISABLE = nullptr;
 $Object* SunHints::VALUE_DITHER_DEFAULT = nullptr;
-
 $SunHints$Key* SunHints::KEY_INTERPOLATION = nullptr;
 $Object* SunHints::VALUE_INTERPOLATION_NEAREST_NEIGHBOR = nullptr;
 $Object* SunHints::VALUE_INTERPOLATION_BILINEAR = nullptr;
 $Object* SunHints::VALUE_INTERPOLATION_BICUBIC = nullptr;
-
 $SunHints$Key* SunHints::KEY_ALPHA_INTERPOLATION = nullptr;
 $Object* SunHints::VALUE_ALPHA_INTERPOLATION_SPEED = nullptr;
 $Object* SunHints::VALUE_ALPHA_INTERPOLATION_QUALITY = nullptr;
 $Object* SunHints::VALUE_ALPHA_INTERPOLATION_DEFAULT = nullptr;
-
 $SunHints$Key* SunHints::KEY_COLOR_RENDERING = nullptr;
 $Object* SunHints::VALUE_COLOR_RENDER_SPEED = nullptr;
 $Object* SunHints::VALUE_COLOR_RENDER_QUALITY = nullptr;
 $Object* SunHints::VALUE_COLOR_RENDER_DEFAULT = nullptr;
-
 $SunHints$Key* SunHints::KEY_STROKE_CONTROL = nullptr;
 $Object* SunHints::VALUE_STROKE_DEFAULT = nullptr;
 $Object* SunHints::VALUE_STROKE_NORMALIZE = nullptr;
 $Object* SunHints::VALUE_STROKE_PURE = nullptr;
-
 $SunHints$Key* SunHints::KEY_RESOLUTION_VARIANT = nullptr;
 $Object* SunHints::VALUE_RESOLUTION_VARIANT_DEFAULT = nullptr;
 $Object* SunHints::VALUE_RESOLUTION_VARIANT_BASE = nullptr;
 $Object* SunHints::VALUE_RESOLUTION_VARIANT_SIZE_FIT = nullptr;
 $Object* SunHints::VALUE_RESOLUTION_VARIANT_DPI_FIT = nullptr;
-
 $RenderingHints$Key* SunHints::KEY_TEXT_ANTIALIAS_LCD_CONTRAST = nullptr;
 
 void SunHints::init$() {

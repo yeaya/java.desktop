@@ -17,8 +17,10 @@ public:
 	void init$($String* message);
 	static const int64_t serialVersionUID = (int64_t)0x2697492DFCE72023;
 	InvalidMidiDataException(const InvalidMidiDataException& e);
-	InvalidMidiDataException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline InvalidMidiDataException* operator ->() {
+		return (InvalidMidiDataException*)throwing$;
+	}
 };
 
 		} // midi

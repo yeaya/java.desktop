@@ -1,14 +1,5 @@
 #include <java/awt/ComponentOrientation.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <java/util/ResourceBundle.h>
 #include <jcpp.h>
@@ -71,11 +62,8 @@ $Object* allocate$ComponentOrientation($Class* clazz) {
 	return $of($alloc(ComponentOrientation));
 }
 
-
 ComponentOrientation* ComponentOrientation::LEFT_TO_RIGHT = nullptr;
-
 ComponentOrientation* ComponentOrientation::RIGHT_TO_LEFT = nullptr;
-
 ComponentOrientation* ComponentOrientation::UNKNOWN = nullptr;
 
 bool ComponentOrientation::isHorizontal() {
@@ -177,8 +165,7 @@ ComponentOrientation* ComponentOrientation::getOrientation($ResourceBundle* bdl)
 	$var(ComponentOrientation, result, nullptr);
 	try {
 		$assign(result, $cast(ComponentOrientation, $nc(bdl)->getObject("Orientation"_s)));
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 	if (result == nullptr) {
 		$assign(result, getOrientation($($nc(bdl)->getLocale())));

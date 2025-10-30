@@ -23,8 +23,10 @@ public:
 	static const int64_t serialVersionUID = (int64_t)0x01CC6AED8726CCF4;
 	::java::beans::PropertyChangeEvent* evt = nullptr;
 	PropertyVetoException(const PropertyVetoException& e);
-	PropertyVetoException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline PropertyVetoException* operator ->() {
+		return (PropertyVetoException*)throwing$;
+	}
 };
 
 	} // beans

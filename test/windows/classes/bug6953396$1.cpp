@@ -2,14 +2,6 @@
 
 #include <bug6953396$1$1.h>
 #include <bug6953396.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JViewport.h>
 #include <javax/swing/plaf/ViewportUI.h>
 #include <javax/swing/plaf/basic/BasicViewportUI.h>

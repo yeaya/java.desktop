@@ -17,8 +17,10 @@ public:
 	void init$($String* s);
 	static const int64_t serialVersionUID = (int64_t)0xB86ACDBE7A47B7BA;
 	IllegalPathStateException(const IllegalPathStateException& e);
-	IllegalPathStateException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline IllegalPathStateException* operator ->() {
+		return (IllegalPathStateException*)throwing$;
+	}
 };
 
 		} // geom

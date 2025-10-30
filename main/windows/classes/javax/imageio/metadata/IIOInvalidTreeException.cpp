@@ -1,13 +1,5 @@
 #include <javax/imageio/metadata/IIOInvalidTreeException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/IIOException.h>
 #include <org/w3c/dom/Node.h>
 #include <jcpp.h>
@@ -67,16 +59,10 @@ $Node* IIOInvalidTreeException::getOffendingNode() {
 IIOInvalidTreeException::IIOInvalidTreeException() {
 }
 
-IIOInvalidTreeException::IIOInvalidTreeException(const IIOInvalidTreeException& e) {
+IIOInvalidTreeException::IIOInvalidTreeException(const IIOInvalidTreeException& e) : $IIOException(e) {
 }
 
-IIOInvalidTreeException IIOInvalidTreeException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void IIOInvalidTreeException::throwWrapper$() {
-	$pendingException(this);
+void IIOInvalidTreeException::throw$() {
 	throw *this;
 }
 

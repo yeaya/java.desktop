@@ -8,24 +8,12 @@
 #include <java/awt/Window.h>
 #include <java/awt/image/BufferedImage.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
@@ -201,14 +189,12 @@ void JMenuItemsTest::main($StringArray* args) {
 }
 
 void JMenuItemsTest::lambda$main$0() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$var(JMenuItemsTest, obj, $new(JMenuItemsTest));
 		obj->testDisabledStateOfJMenu();
 		obj->testDisabledStateOfJMenuItem();
 		obj->dispose();
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$throw(ex);
 	}
 }

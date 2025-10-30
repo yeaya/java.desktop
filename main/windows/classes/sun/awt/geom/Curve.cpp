@@ -3,20 +3,8 @@
 #include <java/awt/geom/IllegalPathStateException.h>
 #include <java/awt/geom/PathIterator.h>
 #include <java/awt/geom/Rectangle2D.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Vector.h>
 #include <sun/awt/geom/Crossings.h>
 #include <sun/awt/geom/Order0.h>
@@ -762,7 +750,6 @@ int32_t Curve::compareTo(Curve* that, $doubles* yrange) {
 	double var$0 = $Math::min(y1, this->getYBot());
 	y1 = $Math::min(var$0, $nc(that)->getYBot());
 	if (y1 <= yrange->get(0)) {
-		$init($System);
 		$nc($System::err)->println($$str({"this == "_s, this}));
 		$nc($System::err)->println($$str({"that == "_s, that}));
 		$nc($System::out)->println($$str({"target range = "_s, $$str(yrange->get(0)), "=>"_s, $$str(yrange->get(1))}));
@@ -841,7 +828,6 @@ int32_t Curve::compareTo(Curve* that, $doubles* yrange) {
 		}
 	}
 	if (ymin <= 0) {
-		$init($System);
 		$nc($System::out)->println($$str({"ymin = "_s, $$str(ymin)}));
 	}
 	while (s0 < s1 && t0 < t1) {
@@ -855,9 +841,7 @@ int32_t Curve::compareTo(Curve* that, $doubles* yrange) {
 			if (findIntersect(that, yrange, ymin, 0, 0, s0, xs0, ys0, sh, xsh, ysh, t0, xt0, yt0, th, xth, yth)) {
 				break;
 			}
-		} catch ($Throwable&) {
-			$var($Throwable, t, $catch());
-			$init($System);
+		} catch ($Throwable& t) {
 			$nc($System::err)->println($$str({"Error: "_s, t}));
 			$nc($System::err)->println($$str({"y range was "_s, $$str(yrange->get(0)), "=>"_s, $$str(yrange->get(1))}));
 			$nc($System::err)->println($$str({"s y range is "_s, $$str(ys0), "=>"_s, $$str(ysh)}));
@@ -911,7 +895,6 @@ bool Curve::findIntersect(Curve* that, $doubles* yrange, double ymin, int32_t sl
 		double xs = this->XforT(s);
 		double ys = this->YforT(s);
 		if (s == s0 || s == s1) {
-			$init($System);
 			$nc($System::out)->println($$str({"s0 = "_s, $$str(s0)}));
 			$nc($System::out)->println($$str({"s1 = "_s, $$str(s1)}));
 			$throwNew($InternalError, "no s progress!"_s);
@@ -921,7 +904,6 @@ bool Curve::findIntersect(Curve* that, $doubles* yrange, double ymin, int32_t sl
 			double xt = $nc(that)->XforT(t);
 			double yt = that->YforT(t);
 			if (t == t0 || t == t1) {
-				$init($System);
 				$nc($System::out)->println($$str({"t0 = "_s, $$str(t0)}));
 				$nc($System::out)->println($$str({"t1 = "_s, $$str(t1)}));
 				$throwNew($InternalError, "no t progress!"_s);
@@ -963,7 +945,6 @@ bool Curve::findIntersect(Curve* that, $doubles* yrange, double ymin, int32_t sl
 		double xt = $nc(that)->XforT(t);
 		double yt = that->YforT(t);
 		if (t == t0 || t == t1) {
-			$init($System);
 			$nc($System::out)->println($$str({"t0 = "_s, $$str(t0)}));
 			$nc($System::out)->println($$str({"t1 = "_s, $$str(t1)}));
 			$throwNew($InternalError, "no t progress!"_s);
@@ -994,7 +975,6 @@ bool Curve::findIntersect(Curve* that, $doubles* yrange, double ymin, int32_t sl
 				s = s0 + s * (s1 - s0);
 				t = t0 + t * (t1 - t0);
 				if (s < 0 || s > 1 || t < 0 || t > 1) {
-					$init($System);
 					$nc($System::out)->println("Uh oh!"_s);
 				}
 				double var$3 = this->YforT(s);

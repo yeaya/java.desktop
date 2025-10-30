@@ -2,14 +2,6 @@
 
 #include <DefaultRowSorterIOOBEtest$SorterModelWrapper.h>
 #include <DefaultRowSorterIOOBEtest.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/DefaultRowSorter$ModelWrapper.h>
 #include <javax/swing/DefaultRowSorter.h>
 #include <jcpp.h>

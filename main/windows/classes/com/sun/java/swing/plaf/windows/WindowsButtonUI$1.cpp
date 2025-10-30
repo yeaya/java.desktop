@@ -2,16 +2,7 @@
 
 #include <com/sun/java/swing/plaf/windows/TMSchema$Part.h>
 #include <com/sun/java/swing/plaf/windows/WindowsButtonUI.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef BP_CHECKBOX
@@ -79,23 +70,19 @@ void clinit$WindowsButtonUI$1($Class* class$) {
 	{
 		try {
 			$nc(WindowsButtonUI$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$Part)->set($TMSchema$Part::BP_RADIOBUTTON->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WindowsButtonUI$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$Part)->set($TMSchema$Part::BP_CHECKBOX->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WindowsButtonUI$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$Part)->set($TMSchema$Part::BP_PUSHBUTTON->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WindowsButtonUI$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$Part)->set($TMSchema$Part::TP_BUTTON->ordinal(), 4);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

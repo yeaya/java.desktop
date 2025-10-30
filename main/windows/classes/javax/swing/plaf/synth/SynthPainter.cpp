@@ -1,14 +1,6 @@
 #include <javax/swing/plaf/synth/SynthPainter.h>
 
 #include <java/awt/Graphics.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/plaf/synth/SynthContext.h>
 #include <javax/swing/plaf/synth/SynthPainter$1.h>
 #include <jcpp.h>
@@ -197,7 +189,6 @@ $ClassInfo _SynthPainter_ClassInfo_ = {
 $Object* allocate$SynthPainter($Class* clazz) {
 	return $of($alloc(SynthPainter));
 }
-
 
 SynthPainter* SynthPainter::NULL_PAINTER = nullptr;
 

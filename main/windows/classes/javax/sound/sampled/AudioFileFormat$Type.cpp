@@ -1,13 +1,5 @@
 #include <javax/sound/sampled/AudioFileFormat$Type.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Objects.h>
 #include <javax/sound/sampled/AudioFileFormat.h>
 #include <jcpp.h>
@@ -74,15 +66,10 @@ $Object* allocate$AudioFileFormat$Type($Class* clazz) {
 	return $of($alloc(AudioFileFormat$Type));
 }
 
-
 AudioFileFormat$Type* AudioFileFormat$Type::WAVE = nullptr;
-
 AudioFileFormat$Type* AudioFileFormat$Type::AU = nullptr;
-
 AudioFileFormat$Type* AudioFileFormat$Type::AIFF = nullptr;
-
 AudioFileFormat$Type* AudioFileFormat$Type::AIFC = nullptr;
-
 AudioFileFormat$Type* AudioFileFormat$Type::SND = nullptr;
 
 void AudioFileFormat$Type::init$($String* name, $String* extension) {

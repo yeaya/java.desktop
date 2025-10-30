@@ -15,8 +15,10 @@ public:
 	void init$($String* msg);
 	void init$();
 	SunToolkit$IllegalThreadException(const SunToolkit$IllegalThreadException& e);
-	SunToolkit$IllegalThreadException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline SunToolkit$IllegalThreadException* operator ->() {
+		return (SunToolkit$IllegalThreadException*)throwing$;
+	}
 };
 
 	} // awt

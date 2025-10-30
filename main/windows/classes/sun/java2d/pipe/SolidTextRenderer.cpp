@@ -1,11 +1,5 @@
 #include <sun/java2d/pipe/SolidTextRenderer.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/SunHints.h>
 #include <sun/font/GlyphList.h>
 #include <sun/java2d/SunGraphics2D.h>

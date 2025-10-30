@@ -33,25 +33,10 @@
 #include <java/awt/image/WritableRaster.h>
 #include <java/io/EOFException.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/Long.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/ByteOrder.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
@@ -343,7 +328,6 @@ void TIFFImageReader::setInput(Object$* input, bool seekForwardOnly, bool ignore
 }
 
 void TIFFImageReader::readHeader() {
-	$useLocalCurrentObjectStackCache();
 	if (this->gotHeader) {
 		return;
 	}
@@ -374,8 +358,7 @@ void TIFFImageReader::readHeader() {
 		int64_t offset = $nc(this->stream)->readUnsignedInt();
 		$nc(this->stream)->seek(offset);
 		$nc(this->imageStartPosition)->add($($Long::valueOf(offset)));
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$throwNew($IIOException, "I/O error reading header!"_s, e);
 	}
 	this->gotHeader = true;
@@ -403,12 +386,10 @@ int32_t TIFFImageReader::locateImage(int32_t imageIndex) {
 			$nc(this->imageStartPosition)->add($($Long::valueOf(offset)));
 			++index;
 		}
-	} catch ($EOFException&) {
-		$var($EOFException, eofe, $catch());
+	} catch ($EOFException& eofe) {
 		forwardWarningMessage($$str({"Ignored "_s, eofe}));
 		imageIndex = index > 0 ? index - 1 : 0;
-	} catch ($IOException&) {
-		$var($IOException, ioe, $catch());
+	} catch ($IOException& ioe) {
 		$throwNew($IIOException, "Couldn\'t seek!"_s, ioe);
 	}
 	if (this->currIndex != imageIndex) {
@@ -479,11 +460,9 @@ void TIFFImageReader::readMetadata() {
 		}
 		$set(this, imageMetadata, $new($TIFFImageMetadata, tagSets));
 		$nc(this->imageMetadata)->initializeFromStream(this->stream, this->ignoreMetadata, readUnknownTags);
-	} catch ($IIOException&) {
-		$var($IIOException, iioe, $catch());
+	} catch ($IIOException& iioe) {
 		$throw(iioe);
-	} catch ($IOException&) {
-		$var($IOException, ioe, $catch());
+	} catch ($IOException& ioe) {
 		$throwNew($IIOException, "I/O error reading image metadata!"_s, ioe);
 	}
 }
@@ -666,8 +645,7 @@ void TIFFImageReader::initializeFromMetadata() {
 				}
 				$nc(this->stream)->reset();
 				defaultBitDepth = imageType != nullptr ? $nc($($nc(imageType)->getColorModel()))->getComponentSize(0) : 8;
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& e) {
 			}
 			$nc(jreader)->dispose();
 		}
@@ -766,8 +744,7 @@ $Iterator* TIFFImageReader::getImageTypes(int32_t imageIndex) {
 					1.0f,
 					1.0f
 				})));
-			} catch ($Exception&) {
-				$var($Exception, iccProfileException, $catch());
+			} catch ($Exception& iccProfileException) {
 				processWarningOccurred($$str({"Superseding bad ICC profile: "_s, $(iccProfileException->getMessage())}));
 				if (iccColorSpace != nullptr) {
 					switch (iccColorSpace->getType()) {

@@ -1,14 +1,5 @@
 #include <javax/print/attribute/standard/MediaSize$Other.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/Size2DSyntax.h>
 #include <javax/print/attribute/standard/MediaSize.h>
 #include <javax/print/attribute/standard/MediaSizeName.h>
@@ -87,27 +78,16 @@ $Object* allocate$MediaSize$Other($Class* clazz) {
 	return $of($alloc(MediaSize$Other));
 }
 
-
 $MediaSize* MediaSize$Other::EXECUTIVE = nullptr;
-
 $MediaSize* MediaSize$Other::LEDGER = nullptr;
-
 $MediaSize* MediaSize$Other::TABLOID = nullptr;
-
 $MediaSize* MediaSize$Other::INVOICE = nullptr;
-
 $MediaSize* MediaSize$Other::FOLIO = nullptr;
-
 $MediaSize* MediaSize$Other::QUARTO = nullptr;
-
 $MediaSize* MediaSize$Other::ITALY_ENVELOPE = nullptr;
-
 $MediaSize* MediaSize$Other::MONARCH_ENVELOPE = nullptr;
-
 $MediaSize* MediaSize$Other::PERSONAL_ENVELOPE = nullptr;
-
 $MediaSize* MediaSize$Other::JAPANESE_POSTCARD = nullptr;
-
 $MediaSize* MediaSize$Other::JAPANESE_DOUBLE_POSTCARD = nullptr;
 
 void MediaSize$Other::init$() {

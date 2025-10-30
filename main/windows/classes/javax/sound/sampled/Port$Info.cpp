@@ -1,14 +1,5 @@
 #include <javax/sound/sampled/Port$Info.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/Line$Info.h>
 #include <javax/sound/sampled/Port.h>
 #include <jcpp.h>
@@ -80,17 +71,11 @@ $Object* allocate$Port$Info($Class* clazz) {
 	return $of($alloc(Port$Info));
 }
 
-
 Port$Info* Port$Info::MICROPHONE = nullptr;
-
 Port$Info* Port$Info::LINE_IN = nullptr;
-
 Port$Info* Port$Info::COMPACT_DISC = nullptr;
-
 Port$Info* Port$Info::SPEAKER = nullptr;
-
 Port$Info* Port$Info::HEADPHONE = nullptr;
-
 Port$Info* Port$Info::LINE_OUT = nullptr;
 
 void Port$Info::init$($Class* lineClass, $String* name, bool isSource) {

@@ -1,16 +1,7 @@
 #include <java/awt/MultipleGradientPaint$ColorSpaceType.h>
 
 #include <java/awt/MultipleGradientPaint.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef LINEAR_RGB
@@ -67,9 +58,7 @@ $Object* allocate$MultipleGradientPaint$ColorSpaceType($Class* clazz) {
 	return $of($alloc(MultipleGradientPaint$ColorSpaceType));
 }
 
-
 MultipleGradientPaint$ColorSpaceType* MultipleGradientPaint$ColorSpaceType::SRGB = nullptr;
-
 MultipleGradientPaint$ColorSpaceType* MultipleGradientPaint$ColorSpaceType::LINEAR_RGB = nullptr;
 $MultipleGradientPaint$ColorSpaceTypeArray* MultipleGradientPaint$ColorSpaceType::$VALUES = nullptr;
 

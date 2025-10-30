@@ -1,16 +1,6 @@
 #include <ProgressMonitorEscapeKeyPress$1.h>
 
 #include <ProgressMonitorEscapeKeyPress.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/ProgressMonitor.h>
 #include <jcpp.h>
 
@@ -67,7 +57,6 @@ void ProgressMonitorEscapeKeyPress$1::run() {
 	$init($ProgressMonitorEscapeKeyPress);
 	if (!$nc($ProgressMonitorEscapeKeyPress::monitor)->isCanceled()) {
 		$nc($ProgressMonitorEscapeKeyPress::monitor)->setProgress($ProgressMonitorEscapeKeyPress::counter);
-		$init($System);
 		$nc($System::out)->println("Progress bar is in progress"_s);
 	}
 }

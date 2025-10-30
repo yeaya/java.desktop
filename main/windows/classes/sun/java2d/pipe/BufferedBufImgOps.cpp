@@ -12,16 +12,7 @@
 #include <java/awt/image/LookupTable.h>
 #include <java/awt/image/RescaleOp.h>
 #include <java/awt/image/ShortLookupTable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SurfaceData.h>
 #include <sun/java2d/pipe/RenderBuffer.h>
 #include <sun/java2d/pipe/RenderQueue.h>

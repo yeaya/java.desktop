@@ -6,16 +6,8 @@
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/geom/Rectangle2D$Float.h>
 #include <java/awt/geom/Rectangle2D.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef FILL
@@ -103,8 +95,8 @@ void ShapeGraphicAttribute::draw($Graphics2D* graphics, float x, float y) {
 			} else {
 				graphics->fill(this->fShape);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			graphics->translate(-$cast(int32_t, x), -$cast(int32_t, y));
 		}
@@ -135,8 +127,7 @@ int32_t ShapeGraphicAttribute::hashCode() {
 bool ShapeGraphicAttribute::equals(Object$* rhs) {
 	try {
 		return equals($cast(ShapeGraphicAttribute, rhs));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		return false;
 	}
 	$shouldNotReachHere();

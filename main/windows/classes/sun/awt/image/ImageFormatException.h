@@ -15,8 +15,10 @@ public:
 	ImageFormatException();
 	void init$($String* s);
 	ImageFormatException(const ImageFormatException& e);
-	ImageFormatException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline ImageFormatException* operator ->() {
+		return (ImageFormatException*)throwing$;
+	}
 };
 
 		} // image

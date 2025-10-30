@@ -1,13 +1,5 @@
 #include <javax/swing/tree/DefaultMutableTreeNode$BreadthFirstEnumeration$Queue.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/NoSuchElementException.h>
 #include <javax/swing/tree/DefaultMutableTreeNode$BreadthFirstEnumeration$Queue$QNode.h>
 #include <javax/swing/tree/DefaultMutableTreeNode$BreadthFirstEnumeration.h>
@@ -74,7 +66,7 @@ void DefaultMutableTreeNode$BreadthFirstEnumeration$Queue::init$($DefaultMutable
 
 void DefaultMutableTreeNode$BreadthFirstEnumeration$Queue::enqueue(Object$* anObject) {
 	if (this->head == nullptr) {
-		$set(this, head, ($assignField(this, tail, $new($DefaultMutableTreeNode$BreadthFirstEnumeration$Queue$QNode, this, anObject, nullptr))));
+		$set(this, head, ($set(this, tail, $new($DefaultMutableTreeNode$BreadthFirstEnumeration$Queue$QNode, this, anObject, nullptr))));
 	} else {
 		$set($nc(this->tail), next, $new($DefaultMutableTreeNode$BreadthFirstEnumeration$Queue$QNode, this, anObject, nullptr));
 		$set(this, tail, $nc(this->tail)->next);

@@ -12,17 +12,6 @@
 #include <java/awt/Window$AccessibleAWTWindow.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/WindowListener.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/JComponent.h>
@@ -82,6 +71,7 @@ $NamedAttribute JWindow_Attribute_var$1[] = {
 	{"delegate", 's', "getContentPane"},
 	{}
 };
+
 $CompoundAttribute _JWindow_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JWindow_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JWindow_Attribute_var$1},
@@ -167,7 +157,6 @@ $CompoundAttribute _JWindow_MethodAnnotations_setTransferHandler24[] = {
 	{"Ljava/beans/BeanProperty;", JWindow_Attribute_var$8},
 	{}
 };
-
 
 $FieldInfo _JWindow_FieldInfo_[] = {
 	{"rootPane", "Ljavax/swing/JRootPane;", nullptr, $PROTECTED, $field(JWindow, rootPane)},
@@ -381,8 +370,8 @@ void JWindow::setRootPane($JRootPane* root) {
 				setRootPaneCheckingEnabled(false);
 				$init($BorderLayout);
 				add(static_cast<$Component*>(this->rootPane), $of($BorderLayout::CENTER));
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				setRootPaneCheckingEnabled(checkingEnabled);
 			}

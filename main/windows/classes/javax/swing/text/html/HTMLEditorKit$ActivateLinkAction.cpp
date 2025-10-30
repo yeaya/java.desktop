@@ -2,14 +2,6 @@
 
 #include <java/awt/Component.h>
 #include <java/awt/event/ActionEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/MalformedURLException.h>
 #include <java/net/URL.h>
 #include <javax/accessibility/Accessible.h>
@@ -133,8 +125,7 @@ void HTMLEditorKit$ActivateLinkAction::activateLink($String* href, $HTMLDocument
 		$var($String, var$3, url->toExternalForm());
 		$var($HyperlinkEvent, linkEvent, $new($HyperlinkEvent, var$0, var$1, var$2, var$3, $(doc->getCharacterElement(offset))));
 		$nc(editor)->fireHyperlinkUpdate(linkEvent);
-	} catch ($MalformedURLException&) {
-		$catch();
+	} catch ($MalformedURLException& m) {
 	}
 }
 
@@ -177,8 +168,8 @@ $View* HTMLEditorKit$ActivateLinkAction::getView($JEditorPane* editor, $Element*
 			$assign(var$2, nullptr);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			unlock(lock);
 		}

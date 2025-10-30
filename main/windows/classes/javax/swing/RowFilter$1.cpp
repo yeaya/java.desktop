@@ -1,15 +1,6 @@
 #include <javax/swing/RowFilter$1.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/RowFilter$ComparisonType.h>
 #include <javax/swing/RowFilter.h>
 #include <jcpp.h>
@@ -75,23 +66,19 @@ void clinit$RowFilter$1($Class* class$) {
 	{
 		try {
 			$nc(RowFilter$1::$SwitchMap$javax$swing$RowFilter$ComparisonType)->set($RowFilter$ComparisonType::BEFORE->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(RowFilter$1::$SwitchMap$javax$swing$RowFilter$ComparisonType)->set($RowFilter$ComparisonType::AFTER->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(RowFilter$1::$SwitchMap$javax$swing$RowFilter$ComparisonType)->set($RowFilter$ComparisonType::EQUAL->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(RowFilter$1::$SwitchMap$javax$swing$RowFilter$ComparisonType)->set($RowFilter$ComparisonType::NOT_EQUAL->ordinal(), 4);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

@@ -3,21 +3,11 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/awt/Window.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Exception.h>
 #include <java/lang/IllegalAccessException.h>
 #include <java/lang/InstantiationException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/ReflectiveOperationException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JColorChooser.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
@@ -137,8 +127,8 @@ void Test6199676::run() {
 				if (isShowing($(chooser->getPreviewPanel()))) {
 					$throwNew($RuntimeException, "custom preview panel is showing"_s);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				frame->dispose();
 			}
@@ -151,19 +141,14 @@ void Test6199676::run() {
 
 void Test6199676::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(Test6199676);
-	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
-	} catch ($UnsupportedLookAndFeelException&) {
-		$catch();
-	} catch ($ClassNotFoundException&) {
-		$var($ReflectiveOperationException, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& ignored) {
+	} catch ($ClassNotFoundException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($InstantiationException&) {
-		$var($ReflectiveOperationException, e, $catch());
+	} catch ($InstantiationException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($IllegalAccessException&) {
-		$var($ReflectiveOperationException, e, $catch());
+	} catch ($IllegalAccessException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }

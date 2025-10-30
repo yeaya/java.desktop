@@ -10,19 +10,7 @@
 #include <java/awt/event/KeyEvent.h>
 #include <java/io/File.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/file/Files.h>
 #include <java/nio/file/Path.h>
 #include <java/nio/file/attribute/FileAttribute.h>
@@ -145,8 +133,8 @@ void bug7199708::main($StringArray* args) {
 			robot->waitForIdle();
 			robot->keyRelease($KeyEvent::VK_ESCAPE);
 			robot->waitForIdle();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			for (int32_t i = 0; i < bug7199708::FILE_NUMBER; ++i) {
 				$Files::delete$($($nc($nc(bug7199708::files)->get(i))->toPath()));
@@ -189,8 +177,7 @@ $File* bug7199708::createLargeFolder() {
 			$nc($nc(bug7199708::files)->get(i))->createNewFile();
 		}
 		return bug7199708::largeFolder;
-	} catch ($IOException&) {
-		$var($IOException, ex, $catch());
+	} catch ($IOException& ex) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(ex));
 	}
 	$shouldNotReachHere();

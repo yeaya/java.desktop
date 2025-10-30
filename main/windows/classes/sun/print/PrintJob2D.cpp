@@ -26,28 +26,12 @@
 #include <java/io/File.h>
 #include <java/io/FilePermission.h>
 #include <java/io/IOException.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URI.h>
 #include <java/net/URISyntaxException.h>
 #include <java/security/Permission.h>
@@ -476,11 +460,9 @@ void PrintJob2D::initPrintJob2D($Frame* frame, $String* doctitle, $JobAttributes
 				if (f->createNewFile()) {
 					f->delete$();
 				}
-			} catch ($IOException&) {
-				$var($IOException, ioe, $catch());
+			} catch ($IOException& ioe) {
 				$throwNew($IllegalArgumentException, $$str({"Cannot write to file:"_s, destStr}));
-			} catch ($SecurityException&) {
-				$catch();
+			} catch ($SecurityException& se) {
 			}
 			$var($File, pFile, f->getParentFile());
 			bool var$1 = f->exists();
@@ -732,7 +714,6 @@ void PrintJob2D::updateAttributes() {
 void PrintJob2D::debugPrintAttributes(bool ja, bool pa) {
 	$useLocalCurrentObjectStackCache();
 	if (ja) {
-		$init($System);
 		$var($String, var$14, $$str({"new Attributes\ncopies = "_s, $$str($nc(this->jobAttributes)->getCopies()), "\nselection = "_s}));
 		$var($String, var$13, $$concat(var$14, $($nc(this->jobAttributes)->getDefaultSelection())));
 		$var($String, var$12, $$concat(var$13, "\ndest "));
@@ -751,7 +732,6 @@ void PrintJob2D::debugPrintAttributes(bool ja, bool pa) {
 		$nc($System::out)->println($$concat(var$0, $($nc(this->jobAttributes)->getSides())));
 	}
 	if (pa) {
-		$init($System);
 		$var($String, var$19, $$str({"new Attributes\ncolor = "_s, $($nc(this->pageAttributes)->getColor()), "\norientation = "_s}));
 		$var($String, var$18, $$concat(var$19, $($nc(this->pageAttributes)->getOrientationRequested())));
 		$var($String, var$17, $$concat(var$18, "\nquality "));
@@ -777,8 +757,7 @@ void PrintJob2D::copyAttributes($PrintService* printServ) {
 					break;
 				}
 			}
-		} catch ($PrinterException&) {
-			$catch();
+		} catch ($PrinterException& pe) {
 		}
 	}
 	$var($JobAttributes$DestinationType, dest, $nc(this->jobAttributes)->getDestination());
@@ -800,13 +779,11 @@ void PrintJob2D::copyAttributes($PrintService* printServ) {
 					$assign(fileName, "out.prn"_s);
 				}
 				$assign(uri, ($$new($File, fileName))->toURI());
-			} catch ($SecurityException&) {
-				$var($SecurityException, se, $catch());
+			} catch ($SecurityException& se) {
 				try {
 					$assign(fileName, $nc(fileName)->replace(u'\\', u'/'));
 					$assign(uri, $new($URI, $$str({"file:"_s, fileName})));
-				} catch ($URISyntaxException&) {
-					$catch();
+				} catch ($URISyntaxException& e) {
 				}
 			}
 			if (uri != nullptr) {
@@ -963,8 +940,7 @@ void PrintJob2D::end() {
 		if (this->printerJobThread != nullptr && $nc(this->printerJobThread)->isAlive()) {
 			try {
 				$nc(this->printerJobThread)->join();
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& e) {
 			}
 		}
 	}
@@ -995,8 +971,7 @@ void PrintJob2D::run() {
 		$load($PageRanges);
 		$nc(this->attributes)->remove($PageRanges::class$);
 		$nc(this->printerJob)->print(this->attributes);
-	} catch ($PrinterException&) {
-		$catch();
+	} catch ($PrinterException& e) {
 	}
 	$nc(this->graphicsToBeDrawn)->closeWhenEmpty();
 	$nc(this->graphicsDrawn)->close();
@@ -1187,7 +1162,7 @@ void clinit$PrintJob2D($Class* class$) {
 	$assignStatic(PrintJob2D::LEGAL, "legal"_s);
 	$assignStatic(PrintJob2D::EXECUTIVE, "executive"_s);
 	$assignStatic(PrintJob2D::A4, "a4"_s);
-		$init($PageAttributes$MediaType);
+	$init($PageAttributes$MediaType);
 	$assignStatic(PrintJob2D::SIZES, $new($PageAttributes$MediaTypeArray, {
 		$PageAttributes$MediaType::ISO_4A0,
 		$PageAttributes$MediaType::ISO_2A0,
@@ -1265,7 +1240,7 @@ void clinit$PrintJob2D($Class* class$) {
 		$PageAttributes$MediaType::MONARCH_ENVELOPE,
 		$PageAttributes$MediaType::PERSONAL_ENVELOPE
 	}));
-		$init($MediaSizeName);
+	$init($MediaSizeName);
 	$assignStatic(PrintJob2D::JAVAXSIZES, $new($MediaSizeNameArray, {
 		($MediaSizeName*)nullptr,
 		($MediaSizeName*)nullptr,

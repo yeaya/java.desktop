@@ -3,15 +3,6 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/awt/Dimension.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JScrollPane.h>
 #include <javax/swing/JViewport.h>
@@ -57,7 +48,6 @@ void bug6612531::main($StringArray* args) {
 	$var($JViewport, vp, $new($JViewport));
 	c->addLayoutComponent("VIEWPORT"_s, vp);
 	c->preferredLayoutSize($$new($JScrollPane));
-	$init($System);
 	$nc($System::out)->println("Test passed"_s);
 }
 

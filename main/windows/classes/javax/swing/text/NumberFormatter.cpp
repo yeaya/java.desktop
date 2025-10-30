@@ -1,23 +1,7 @@
 #include <javax/swing/text/NumberFormatter.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Byte.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/Integer.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
-#include <java/lang/Short.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator$Attribute.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/text/DecimalFormat.h>
@@ -353,8 +337,7 @@ bool NumberFormatter::toggleSignIfNecessary($DocumentFilter$FilterBypass* fb, in
 				repositionCursor(getLiteralCountTo(offset) - lc + offset, 1);
 				return true;
 			}
-		} catch ($ParseException&) {
-			$var($ParseException, pe, $catch());
+		} catch ($ParseException& pe) {
 			invalidEdit();
 		}
 	}
@@ -389,14 +372,12 @@ $Object* NumberFormatter::toggleSign(bool positive) {
 				try {
 					$ReflectUtil::checkPackageAccess(valueClass);
 					$SwingUtilities2::checkAccess($nc(valueClass)->getModifiers());
-					$load($String);
 					$var($Constructor, cons, $nc(valueClass)->getConstructor($$new($ClassArray, {$String::class$})));
 					if (cons != nullptr) {
 						$SwingUtilities2::checkAccess(cons->getModifiers());
 						return $of(cons->newInstance($$new($ObjectArray, {$of(string)})));
 					}
-				} catch ($Throwable&) {
-					$catch();
+				} catch ($Throwable& ex) {
 				}
 			}
 		}

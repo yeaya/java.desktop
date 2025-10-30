@@ -24,22 +24,10 @@
 #include <java/awt/print/PrinterJob.h>
 #include <java/io/File.h>
 #include <java/io/FilePermission.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URI.h>
 #include <java/net/URISyntaxException.h>
 #include <java/security/Permission.h>
@@ -611,7 +599,7 @@ void WPrinterJob::init$() {
 	$set(this, disposerReferent, $new($Object));
 	$set(this, lastNativeService, nullptr);
 	this->defaultCopies = true;
-	$Disposer::addRecord(this->disposerReferent, ($assignField(this, handleRecord, $new($WPrinterJob$HandleRecord))));
+	$Disposer::addRecord(this->disposerReferent, ($set(this, handleRecord, $new($WPrinterJob$HandleRecord))));
 	initAttributeMembers();
 }
 
@@ -639,8 +627,7 @@ $PageFormat* WPrinterJob::pageDialog($PageFormat* page) {
 		if (!$nc($($nc(this->myService)->getName()))->equals(printerName)) {
 			try {
 				setPrintService($($nc($($PrintServiceLookupProvider::getWin32PrintLUS()))->getPrintServiceByName(printerName)));
-			} catch ($PrinterException&) {
-				$catch();
+			} catch ($PrinterException& e) {
 			}
 		}
 		updatePageAttributes(this->myService, pageClone);
@@ -674,8 +661,7 @@ bool WPrinterJob::displayNativeDialog() {
 		$var($ResourceBundle, rb, $ResourceBundle::getBundle(strBundle));
 		try {
 			$assign(title, $nc(rb)->getString("dialog.printtofile"_s));
-		} catch ($MissingResourceException&) {
-			$catch();
+		} catch ($MissingResourceException& e) {
 		}
 		$var($FileDialog, fileDialog, ($instanceOf($Frame, owner)) ? $new($FileDialog, $cast($Frame, owner), title, $FileDialog::SAVE) : $new($FileDialog, $cast($Dialog, owner), title, $FileDialog::SAVE));
 		$var($URI, destURI, $nc(dest)->getURI());
@@ -804,8 +790,7 @@ $PrintService* WPrinterJob::getPrintService() {
 		if ($instanceOf($Win32PrintService, this->myService)) {
 			try {
 				setNativePrintServiceIfNeeded($($nc(this->myService)->getName()));
-			} catch ($Exception&) {
-				$var($Exception, e, $catch());
+			} catch ($Exception& e) {
 				$set(this, myService, nullptr);
 			}
 		}
@@ -891,8 +876,7 @@ void WPrinterJob::setAttributes($PrintRequestAttributeSet* attributes) {
 					}
 				}
 			}
-		} catch ($ClassCastException&) {
-			$catch();
+		} catch ($ClassCastException& e) {
 		}
 	}
 }
@@ -1758,8 +1742,7 @@ bool WPrinterJob::getPrintToFileEnabled() {
 		$var($FilePermission, printToFilePermission, $new($FilePermission, "<<ALL FILES>>"_s, "read,write"_s));
 		try {
 			security->checkPermission(printToFilePermission);
-		} catch ($SecurityException&) {
-			$var($SecurityException, e, $catch());
+		} catch ($SecurityException& e) {
 			return false;
 		}
 	}
@@ -1777,12 +1760,10 @@ void WPrinterJob::setNativeAttributes(int32_t flags, int32_t fields, int32_t val
 		if (destPrn == nullptr) {
 			try {
 				$nc(this->attributes)->add(static_cast<$Attribute*>(static_cast<$PrintJobAttribute*>($$new($Destination, $($$new($File, "./out.prn"_s)->toURI())))));
-			} catch ($SecurityException&) {
-				$var($SecurityException, se, $catch());
+			} catch ($SecurityException& se) {
 				try {
 					$nc(this->attributes)->add(static_cast<$Attribute*>(static_cast<$PrintJobAttribute*>($$new($Destination, $$new($URI, "file:out.prn"_s)))));
-				} catch ($URISyntaxException&) {
-					$catch();
+				} catch ($URISyntaxException& e) {
 				}
 			}
 		}
@@ -2039,8 +2020,7 @@ $PrintRequestAttributeSet* WPrinterJob::showDocumentProperties($Window* owner, $
 	$useLocalCurrentObjectStackCache();
 	try {
 		setNativePrintServiceIfNeeded($($nc(service)->getName()));
-	} catch ($PrinterException&) {
-		$catch();
+	} catch ($PrinterException& e) {
 	}
 	$var($AWTAccessor$ComponentAccessor, acc, $AWTAccessor::getComponentAccessor());
 	int64_t hWnd = $nc(($cast($WComponentPeer, $($nc(acc)->getPeer(owner)))))->getHWnd();
@@ -2083,8 +2063,7 @@ void WPrinterJob::setPrinterNameAttrib($String* printerName) {
 			if (printerName->equals($($nc(services->get(i))->getName()))) {
 				try {
 					this->setPrintService(services->get(i));
-				} catch ($PrinterException&) {
-					$catch();
+				} catch ($PrinterException& e) {
 				}
 				return;
 			}

@@ -11,19 +11,7 @@
 #include <java/awt/Toolkit.h>
 #include <java/awt/datatransfer/Clipboard.h>
 #include <java/awt/datatransfer/DataFlavor.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JTextField.h>
@@ -124,7 +112,6 @@ void bug7049024::main($StringArray* args) {
 	robot->waitForIdle();
 	$init($DataFlavor);
 	$var($String, oldSelection, $cast($String, $nc(bug7049024::clipboard)->getData($DataFlavor::stringFlavor)));
-	$init($System);
 	$nc($System::out)->println($$str({"oldSelection is "_s, oldSelection}));
 	$SwingUtilities::invokeAndWait($$new($bug7049024$4));
 	robot->waitForIdle();

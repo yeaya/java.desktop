@@ -11,28 +11,13 @@
 #include <java/io/FileOutputStream.h>
 #include <java/io/InputStream.h>
 #include <java/io/OutputStream.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JEditorPane.h>
 #include <javax/swing/JFrame.h>
@@ -365,7 +350,6 @@ void RTFWriteParagraphAlignTest::main($StringArray* args) {
 	test($StyleConstants::ALIGN_RIGHT);
 	test($StyleConstants::ALIGN_JUSTIFIED);
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(RTFWriteParagraphAlignTest$$Lambda$lambda$main$1$1)));
-	$init($System);
 	$nc($System::out)->println("ok"_s);
 }
 
@@ -396,8 +380,7 @@ void RTFWriteParagraphAlignTest::lambda$test$5() {
 	try {
 		int32_t endOffset = $nc($($nc($nc($($nc($($nc(RTFWriteParagraphAlignTest::jTextPane)->getDocument()))->getRootElements()))->get(0))->getElement(0)))->getEndOffset();
 		RTFWriteParagraphAlignTest::position2 = $nc($($nc(RTFWriteParagraphAlignTest::jTextPane)->modelToView(endOffset - 1)))->x;
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }
@@ -413,8 +396,7 @@ void RTFWriteParagraphAlignTest::lambda$test$3() {
 	try {
 		int32_t endOffset = $nc($($nc($nc($($nc($($nc(RTFWriteParagraphAlignTest::jTextPane)->getDocument()))->getRootElements()))->get(0))->getElement(0)))->getEndOffset();
 		RTFWriteParagraphAlignTest::position1 = $nc($($nc(RTFWriteParagraphAlignTest::jTextPane)->modelToView(endOffset - 1)))->x;
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }
@@ -426,8 +408,7 @@ void RTFWriteParagraphAlignTest::lambda$test$2(int32_t align) {
 	try {
 		$var($InputStream, var$0, static_cast<$InputStream*>($new($ByteArrayInputStream, $($nc($nc(RTFWriteParagraphAlignTest::RTF_DATA)->get(align))->getBytes()))));
 		$nc(RTFWriteParagraphAlignTest::rtfEditorKit)->read(var$0, $($nc(RTFWriteParagraphAlignTest::jTextPane)->getDocument()), 0);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }

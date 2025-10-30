@@ -1,14 +1,6 @@
 #include <sun/print/ServiceDialog$4.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/MissingResourceException.h>
 #include <java/util/ResourceBundle.h>
 #include <sun/print/ServiceDialog.h>
@@ -73,8 +65,7 @@ $Object* ServiceDialog$4::run() {
 		$init($ServiceDialog);
 		$assignStatic($ServiceDialog::messageRB, $ResourceBundle::getBundle("sun.print.resources.serviceui"_s));
 		return $of(nullptr);
-	} catch ($MissingResourceException&) {
-		$var($MissingResourceException, e, $catch());
+	} catch ($MissingResourceException& e) {
 		$throwNew($Error, "Fatal: Resource for ServiceUI is missing"_s);
 	}
 	$shouldNotReachHere();

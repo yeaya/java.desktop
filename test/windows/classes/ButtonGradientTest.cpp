@@ -17,26 +17,14 @@
 #include <java/awt/image/BufferedImage.h>
 #include <java/awt/image/MultiResolutionImage.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/List.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JButton.h>
@@ -256,8 +244,8 @@ void ButtonGradientTest::main($StringArray* args) {
 			$init(ButtonGradientTest);
 			$assignStatic(ButtonGradientTest::robot, $new($Robot));
 			testGradient();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(ButtonGradientTest$$Lambda$lambda$main$0)));
 		}
@@ -293,8 +281,7 @@ void ButtonGradientTest::createAndShowGUI() {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 	$init(ButtonGradientTest);
@@ -319,8 +306,7 @@ void ButtonGradientTest::getImageFromRobot() {
 		int32_t var$2 = $cast(int32_t, $nc(butSize)->getWidth());
 		$var($MultiResolutionImage, multiResolutionImage, $nc(ButtonGradientTest::robot)->createMultiResolutionScreenCapture($$new($Rectangle, var$0, var$1, var$2, $cast(int32_t, butSize->getHeight()))));
 		$assignStatic(ButtonGradientTest::images, $nc(multiResolutionImage)->getResolutionVariants());
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 	$init(ButtonGradientTest);

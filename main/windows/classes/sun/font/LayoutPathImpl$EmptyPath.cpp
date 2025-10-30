@@ -4,14 +4,6 @@
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/geom/NoninvertibleTransformException.h>
 #include <java/awt/geom/Point2D.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/LayoutPathImpl.h>
 #include <jcpp.h>
 
@@ -87,8 +79,7 @@ bool LayoutPathImpl$EmptyPath::pointToPath($Point2D* pt, $Point2D* result) {
 	if (this->tx != nullptr) {
 		try {
 			$nc(this->tx)->inverseTransform(pt, result);
-		} catch ($NoninvertibleTransformException&) {
-			$catch();
+		} catch ($NoninvertibleTransformException& ex) {
 		}
 	}
 	return result->getX() > 0;

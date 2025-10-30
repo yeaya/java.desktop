@@ -1,17 +1,7 @@
 #include <sun/font/FontUtilities$1.h>
 
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/FontUtilities.h>
 #include <sun/util/logging/PlatformLogger$Level.h>
 #include <sun/util/logging/PlatformLogger.h>
@@ -93,8 +83,7 @@ $Object* FontUtilities$1::run() {
 			try {
 				int32_t v = $Integer::parseInt(version);
 				$FontUtilities::isMacOSX14 = (v >= 14);
-			} catch ($NumberFormatException&) {
-				$catch();
+			} catch ($NumberFormatException& e) {
 			}
 		}
 	}

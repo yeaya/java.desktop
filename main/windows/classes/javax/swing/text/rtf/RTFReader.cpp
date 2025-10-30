@@ -7,22 +7,9 @@
 #include <java/io/InputStreamReader.h>
 #include <java/io/Reader.h>
 #include <java/io/StreamTokenizer.h>
-#include <java/lang/Array.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
@@ -181,7 +168,6 @@ $Object* allocate$RTFReader($Class* clazz) {
 }
 
 $Dictionary* RTFReader::straightforwardAttributes = nullptr;
-
 $Dictionary* RTFReader::textKeywords = nullptr;
 $String* RTFReader::TabAlignmentKey = nullptr;
 $String* RTFReader::TabLeaderKey = nullptr;
@@ -465,8 +451,7 @@ void RTFReader::setCharacterSet($String* name) {
 	$var($Object, set, nullptr);
 	try {
 		$assign(set, getCharacterSet(name));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		warning($$str({"Exception loading RTF character set \""_s, name, "\": "_s, e}));
 		$assign(set, nullptr);
 	}
@@ -477,8 +462,7 @@ void RTFReader::setCharacterSet($String* name) {
 		if (!$nc(name)->equals("ansi"_s)) {
 			try {
 				$set(this, translationTable, $cast($chars, getCharacterSet("ansi"_s)));
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				$throwNew($InternalError, $$str({"RTFReader: Unable to find character set resources ("_s, e, ")"_s}), e);
 			}
 		}
@@ -523,8 +507,7 @@ $chars* RTFReader::readCharset($InputStream* strm) {
 		int32_t ttype = 0;
 		try {
 			ttype = in->nextToken();
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$throwNew($IOException, $$str({"Unable to read from character set file ("_s, e, ")"_s}));
 		}
 		if (ttype != $StreamTokenizer::TT_NUMBER) {

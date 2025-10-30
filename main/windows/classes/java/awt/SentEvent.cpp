@@ -3,14 +3,6 @@
 #include <java/awt/AWTEvent.h>
 #include <java/awt/EventQueue.h>
 #include <java/awt/Toolkit.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventObject.h>
 #include <sun/awt/AppContext.h>
 #include <sun/awt/SunToolkit.h>
@@ -112,8 +104,8 @@ void SentEvent::dispatch() {
 			if (this->nested != nullptr) {
 				$nc($($Toolkit::getEventQueue()))->dispatchEvent(this->nested);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->dispatched$ = true;
 			if (this->toNotify != nullptr) {

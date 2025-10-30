@@ -6,17 +6,8 @@
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/geom/Line2D.h>
 #include <java/awt/geom/Rectangle2D.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/SunHints.h>
 #include <sun/java2d/SunGraphics2D.h>
 #include <sun/java2d/pipe/ParallelogramPipe.h>

@@ -1,16 +1,7 @@
 #include <javax/swing/text/StyledEditorKit$AlignmentAction.h>
 
 #include <java/awt/event/ActionEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventObject.h>
 #include <javax/swing/JEditorPane.h>
 #include <javax/swing/text/AttributeSet.h>
@@ -92,8 +83,7 @@ void StyledEditorKit$AlignmentAction::actionPerformed($ActionEvent* e) {
 			$var($String, s, e->getActionCommand());
 			try {
 				a = $Integer::parseInt(s, 10);
-			} catch ($NumberFormatException&) {
-				$catch();
+			} catch ($NumberFormatException& nfe) {
 			}
 		}
 		$var($MutableAttributeSet, attr, $new($SimpleAttributeSet));

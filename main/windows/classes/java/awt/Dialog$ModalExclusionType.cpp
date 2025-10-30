@@ -1,16 +1,7 @@
 #include <java/awt/Dialog$ModalExclusionType.h>
 
 #include <java/awt/Dialog.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef APPLICATION_EXCLUDE
@@ -69,11 +60,8 @@ $Object* allocate$Dialog$ModalExclusionType($Class* clazz) {
 	return $of($alloc(Dialog$ModalExclusionType));
 }
 
-
 Dialog$ModalExclusionType* Dialog$ModalExclusionType::NO_EXCLUDE = nullptr;
-
 Dialog$ModalExclusionType* Dialog$ModalExclusionType::APPLICATION_EXCLUDE = nullptr;
-
 Dialog$ModalExclusionType* Dialog$ModalExclusionType::TOOLKIT_EXCLUDE = nullptr;
 $Dialog$ModalExclusionTypeArray* Dialog$ModalExclusionType::$VALUES = nullptr;
 

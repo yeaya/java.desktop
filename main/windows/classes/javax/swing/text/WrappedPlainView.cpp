@@ -12,19 +12,7 @@
 #include <java/awt/font/FontRenderContext.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/event/DocumentEvent$ElementChange.h>
 #include <javax/swing/event/DocumentEvent.h>
 #include <javax/swing/text/AttributeSet.h>
@@ -277,8 +265,7 @@ void WrappedPlainView::drawLineImpl(int32_t p0, int32_t p1, $Graphics* g, float 
 				x = drawText(elem, start, end, g, x, y);
 			}
 		}
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		$throwNew($StateInvariantError, $$str({"Can\'t render: "_s, $$str(p0), ","_s, $$str(p1)}));
 	}
 }
@@ -422,12 +409,10 @@ void WrappedPlainView::updateChildren($DocumentEvent* e, $Shape* a) {
 }
 
 void WrappedPlainView::loadText($Segment* segment, int32_t p0, int32_t p1) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$var($Document, doc, getDocument());
 		$nc(doc)->getText(p0, p1 - p0, segment);
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, bl, $catch());
+	} catch ($BadLocationException& bl) {
 		$throwNew($StateInvariantError, "Can\'t get line text"_s);
 	}
 }

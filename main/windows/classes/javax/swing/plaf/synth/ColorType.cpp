@@ -1,14 +1,6 @@
 #include <javax/swing/plaf/synth/ColorType.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef BACKGROUND
@@ -62,17 +54,11 @@ $Object* allocate$ColorType($Class* clazz) {
 	return $of($alloc(ColorType));
 }
 
-
 ColorType* ColorType::FOREGROUND = nullptr;
-
 ColorType* ColorType::BACKGROUND = nullptr;
-
 ColorType* ColorType::TEXT_FOREGROUND = nullptr;
-
 ColorType* ColorType::TEXT_BACKGROUND = nullptr;
-
 ColorType* ColorType::FOCUS = nullptr;
-
 int32_t ColorType::MAX_COUNT = 0;
 int32_t ColorType::nextID = 0;
 

@@ -1,16 +1,7 @@
 #include <java/awt/Window$Type.h>
 
 #include <java/awt/Window.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef NORMAL
@@ -69,11 +60,8 @@ $Object* allocate$Window$Type($Class* clazz) {
 	return $of($alloc(Window$Type));
 }
 
-
 Window$Type* Window$Type::NORMAL = nullptr;
-
 Window$Type* Window$Type::UTILITY = nullptr;
-
 Window$Type* Window$Type::POPUP = nullptr;
 $Window$TypeArray* Window$Type::$VALUES = nullptr;
 

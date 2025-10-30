@@ -1,20 +1,8 @@
 #include <java/awt/RenderingHints.h>
 
 #include <java/awt/RenderingHints$Key.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/Collection.h>
 #include <java/util/Collections.h>
@@ -205,99 +193,52 @@ void RenderingHints::finalize() {
 	this->$Map::finalize();
 }
 
-
 $RenderingHints$Key* RenderingHints::KEY_ANTIALIASING = nullptr;
-
 $Object* RenderingHints::VALUE_ANTIALIAS_ON = nullptr;
-
 $Object* RenderingHints::VALUE_ANTIALIAS_OFF = nullptr;
-
 $Object* RenderingHints::VALUE_ANTIALIAS_DEFAULT = nullptr;
-
 $RenderingHints$Key* RenderingHints::KEY_RENDERING = nullptr;
-
 $Object* RenderingHints::VALUE_RENDER_SPEED = nullptr;
-
 $Object* RenderingHints::VALUE_RENDER_QUALITY = nullptr;
-
 $Object* RenderingHints::VALUE_RENDER_DEFAULT = nullptr;
-
 $RenderingHints$Key* RenderingHints::KEY_DITHERING = nullptr;
-
 $Object* RenderingHints::VALUE_DITHER_DISABLE = nullptr;
-
 $Object* RenderingHints::VALUE_DITHER_ENABLE = nullptr;
-
 $Object* RenderingHints::VALUE_DITHER_DEFAULT = nullptr;
-
 $RenderingHints$Key* RenderingHints::KEY_TEXT_ANTIALIASING = nullptr;
-
 $Object* RenderingHints::VALUE_TEXT_ANTIALIAS_ON = nullptr;
-
 $Object* RenderingHints::VALUE_TEXT_ANTIALIAS_OFF = nullptr;
-
 $Object* RenderingHints::VALUE_TEXT_ANTIALIAS_DEFAULT = nullptr;
-
 $Object* RenderingHints::VALUE_TEXT_ANTIALIAS_GASP = nullptr;
-
 $Object* RenderingHints::VALUE_TEXT_ANTIALIAS_LCD_HRGB = nullptr;
-
 $Object* RenderingHints::VALUE_TEXT_ANTIALIAS_LCD_HBGR = nullptr;
-
 $Object* RenderingHints::VALUE_TEXT_ANTIALIAS_LCD_VRGB = nullptr;
-
 $Object* RenderingHints::VALUE_TEXT_ANTIALIAS_LCD_VBGR = nullptr;
-
 $RenderingHints$Key* RenderingHints::KEY_TEXT_LCD_CONTRAST = nullptr;
-
 $RenderingHints$Key* RenderingHints::KEY_FRACTIONALMETRICS = nullptr;
-
 $Object* RenderingHints::VALUE_FRACTIONALMETRICS_OFF = nullptr;
-
 $Object* RenderingHints::VALUE_FRACTIONALMETRICS_ON = nullptr;
-
 $Object* RenderingHints::VALUE_FRACTIONALMETRICS_DEFAULT = nullptr;
-
 $RenderingHints$Key* RenderingHints::KEY_INTERPOLATION = nullptr;
-
 $Object* RenderingHints::VALUE_INTERPOLATION_NEAREST_NEIGHBOR = nullptr;
-
 $Object* RenderingHints::VALUE_INTERPOLATION_BILINEAR = nullptr;
-
 $Object* RenderingHints::VALUE_INTERPOLATION_BICUBIC = nullptr;
-
 $RenderingHints$Key* RenderingHints::KEY_ALPHA_INTERPOLATION = nullptr;
-
 $Object* RenderingHints::VALUE_ALPHA_INTERPOLATION_SPEED = nullptr;
-
 $Object* RenderingHints::VALUE_ALPHA_INTERPOLATION_QUALITY = nullptr;
-
 $Object* RenderingHints::VALUE_ALPHA_INTERPOLATION_DEFAULT = nullptr;
-
 $RenderingHints$Key* RenderingHints::KEY_COLOR_RENDERING = nullptr;
-
 $Object* RenderingHints::VALUE_COLOR_RENDER_SPEED = nullptr;
-
 $Object* RenderingHints::VALUE_COLOR_RENDER_QUALITY = nullptr;
-
 $Object* RenderingHints::VALUE_COLOR_RENDER_DEFAULT = nullptr;
-
 $RenderingHints$Key* RenderingHints::KEY_STROKE_CONTROL = nullptr;
-
 $Object* RenderingHints::VALUE_STROKE_DEFAULT = nullptr;
-
 $Object* RenderingHints::VALUE_STROKE_NORMALIZE = nullptr;
-
 $Object* RenderingHints::VALUE_STROKE_PURE = nullptr;
-
 $RenderingHints$Key* RenderingHints::KEY_RESOLUTION_VARIANT = nullptr;
-
 $Object* RenderingHints::VALUE_RESOLUTION_VARIANT_DEFAULT = nullptr;
-
 $Object* RenderingHints::VALUE_RESOLUTION_VARIANT_BASE = nullptr;
-
 $Object* RenderingHints::VALUE_RESOLUTION_VARIANT_SIZE_FIT = nullptr;
-
 $Object* RenderingHints::VALUE_RESOLUTION_VARIANT_DPI_FIT = nullptr;
 
 void RenderingHints::init$($Map* init) {
@@ -400,15 +341,13 @@ int32_t RenderingHints::hashCode() {
 }
 
 $Object* RenderingHints::clone() {
-	$useLocalCurrentObjectStackCache();
 	$var(RenderingHints, rh, nullptr);
 	try {
 		$assign(rh, $cast(RenderingHints, $Map::clone()));
 		if (this->hintmap != nullptr) {
 			$set($nc(rh), hintmap, $cast($HashMap, $nc(this->hintmap)->clone()));
 		}
-	} catch ($CloneNotSupportedException&) {
-		$var($CloneNotSupportedException, e, $catch());
+	} catch ($CloneNotSupportedException& e) {
 		$throwNew($InternalError, static_cast<$Throwable*>(e));
 	}
 	return $of(rh);

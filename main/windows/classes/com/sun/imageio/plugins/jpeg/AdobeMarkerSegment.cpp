@@ -3,17 +3,6 @@
 #include <com/sun/imageio/plugins/jpeg/JPEG.h>
 #include <com/sun/imageio/plugins/jpeg/JPEGBuffer.h>
 #include <com/sun/imageio/plugins/jpeg/MarkerSegment.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/metadata/IIOInvalidTreeException.h>
 #include <javax/imageio/metadata/IIOMetadataNode.h>
 #include <javax/imageio/stream/ImageOutputStream.h>
@@ -156,7 +145,6 @@ void AdobeMarkerSegment::writeAdobeSegment($ImageOutputStream* ios, int32_t tran
 void AdobeMarkerSegment::print() {
 	$useLocalCurrentObjectStackCache();
 	printTag("Adobe APP14"_s);
-	$init($System);
 	$nc($System::out)->print("Version: "_s);
 	$nc($System::out)->println(this->version);
 	$nc($System::out)->print("Flags0: 0x"_s);

@@ -4,15 +4,7 @@
 #include <com/sun/beans/decoder/DocumentHandler.h>
 #include <com/sun/beans/decoder/ElementHandler.h>
 #include <com/sun/beans/finder/FieldFinder.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $AccessorElementHandler = ::com::sun::beans::decoder::AccessorElementHandler;
@@ -85,8 +77,7 @@ $Object* FieldElementHandler::getValue($String* name) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		return $of(getFieldValue($(getContextBean()), name));
-	} catch ($Exception&) {
-		$var($Exception, exception, $catch());
+	} catch ($Exception& exception) {
 		$nc($(getOwner()))->handleException(exception);
 	}
 	return $of(nullptr);
@@ -96,8 +87,7 @@ void FieldElementHandler::setValue($String* name, Object$* value) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		setFieldValue($(getContextBean()), name, value);
-	} catch ($Exception&) {
-		$var($Exception, exception, $catch());
+	} catch ($Exception& exception) {
 		$nc($(getOwner()))->handleException(exception);
 	}
 }

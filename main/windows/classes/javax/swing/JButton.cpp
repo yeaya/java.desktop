@@ -5,17 +5,6 @@
 #include <java/awt/Container$AccessibleAWTContainer.h>
 #include <java/awt/Container.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/AbstractButton$AccessibleAbstractButton.h>
 #include <javax/swing/AbstractButton.h>
@@ -75,6 +64,7 @@ $NamedAttribute JButton_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JButton_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JButton_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JButton_Attribute_var$1},
@@ -141,7 +131,6 @@ $CompoundAttribute _JButton_MethodAnnotations_setDefaultCapable11[] = {
 	{"Ljava/beans/BeanProperty;", JButton_Attribute_var$7},
 	{}
 };
-
 
 $FieldInfo _JButton_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JButton, uiClassID)},
@@ -214,7 +203,6 @@ $Object* JButton::clone() {
 void JButton::finalize() {
 	this->$AbstractButton::finalize();
 }
-
 
 $String* JButton::uiClassID = nullptr;
 

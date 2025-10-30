@@ -15,8 +15,10 @@ public:
 	void init$($String* mess);
 	static const int64_t serialVersionUID = (int64_t)0xCC42F2D623EF4625;
 	IntrospectionException(const IntrospectionException& e);
-	IntrospectionException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline IntrospectionException* operator ->() {
+		return (IntrospectionException*)throwing$;
+	}
 };
 
 	} // beans

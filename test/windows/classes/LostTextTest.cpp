@@ -1,19 +1,8 @@
 #include <LostTextTest.h>
 
 #include <LostText.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <java/util/concurrent/TimeUnit.h>
 #include <javax/swing/table/DefaultTableModel.h>
@@ -72,8 +61,7 @@ void LostTextTest::main($StringArray* args) {
 	try {
 		$init($TimeUnit);
 		ret = latch->await(30, $TimeUnit::SECONDS);
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, ie, $catch());
+	} catch ($InterruptedException& ie) {
 		$throw(ie);
 	}
 	if (!ret) {

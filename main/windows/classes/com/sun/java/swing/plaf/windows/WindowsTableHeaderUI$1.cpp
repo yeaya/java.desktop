@@ -2,16 +2,7 @@
 
 #include <com/sun/java/swing/plaf/windows/TMSchema$State.h>
 #include <com/sun/java/swing/plaf/windows/WindowsTableHeaderUI.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SortOrder.h>
 #include <jcpp.h>
 
@@ -86,31 +77,26 @@ void clinit$WindowsTableHeaderUI$1($Class* class$) {
 	{
 		try {
 			$nc(WindowsTableHeaderUI$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State)->set($TMSchema$State::NORMAL->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WindowsTableHeaderUI$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State)->set($TMSchema$State::PRESSED->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WindowsTableHeaderUI$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State)->set($TMSchema$State::HOT->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 	$assignStatic(WindowsTableHeaderUI$1::$SwitchMap$javax$swing$SortOrder, $new($ints, $($SortOrder::values())->length));
 	{
 		try {
 			$nc(WindowsTableHeaderUI$1::$SwitchMap$javax$swing$SortOrder)->set($SortOrder::ASCENDING->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WindowsTableHeaderUI$1::$SwitchMap$javax$swing$SortOrder)->set($SortOrder::DESCENDING->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

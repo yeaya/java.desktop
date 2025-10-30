@@ -1,15 +1,6 @@
 #include <sun/java2d/d3d/D3DSurfaceData$D3DDataBufferNative.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/image/DataBufferNative.h>
 #include <sun/java2d/SurfaceData.h>
 #include <sun/java2d/d3d/D3DRenderQueue.h>
@@ -90,8 +81,8 @@ int32_t D3DSurfaceData$D3DDataBufferNative::getElem(int32_t x, int32_t y, $Surfa
 		$var($Throwable, var$0, nullptr);
 		try {
 			rq->flushAndInvokeNow($$new($D3DSurfaceData$D3DDataBufferNative$1, this, sData, x, y));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			retPixel = this->pixel;
 			rq->unlock();
@@ -115,8 +106,8 @@ void D3DSurfaceData$D3DDataBufferNative::setElem(int32_t x, int32_t y, int32_t p
 		try {
 			rq->flushAndInvokeNow($$new($D3DSurfaceData$D3DDataBufferNative$2, this, sData, x, y, pixel));
 			$nc(sData)->markDirty();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}

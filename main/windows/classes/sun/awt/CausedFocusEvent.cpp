@@ -5,18 +5,9 @@
 #include <java/awt/event/ComponentEvent.h>
 #include <java/awt/event/FocusEvent$Cause.h>
 #include <java/awt/event/FocusEvent.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchFieldException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <sun/awt/AWTAccessor$AWTEventAccessor.h>
@@ -203,8 +194,7 @@ $Object* CausedFocusEvent::readResolve() {
 	try {
 		$var($Field, consumedField, $FocusEvent::class$->getField("consumed"_s));
 		$AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($CausedFocusEvent$2, this, consumedField, focusEvent)));
-	} catch ($NoSuchFieldException&) {
-		$catch();
+	} catch ($NoSuchFieldException& e) {
 	}
 	$var($AWTAccessor$AWTEventAccessor, accessor, $AWTAccessor::getAWTEventAccessor());
 	$nc(accessor)->setBData(focusEvent, $(accessor->getBData(this)));

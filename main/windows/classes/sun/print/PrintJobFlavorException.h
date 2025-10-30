@@ -31,8 +31,10 @@ public:
 	virtual $String* toString() override;
 	::javax::print::DocFlavor* flavor = nullptr;
 	PrintJobFlavorException(const PrintJobFlavorException& e);
-	PrintJobFlavorException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline PrintJobFlavorException* operator ->() {
+		return (PrintJobFlavorException*)throwing$;
+	}
 };
 
 	} // print

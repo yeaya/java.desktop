@@ -7,29 +7,15 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/InputEvent.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/DefaultCellEditor.h>
 #include <javax/swing/JComboBox.h>
 #include <javax/swing/JComponent.h>
@@ -246,8 +232,8 @@ void bug6559152::main($StringArray* args) {
 			$nc(bug6559152::robot)->waitForIdle();
 			$nc(bug6559152::robot)->delay(1000);
 			test();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (bug6559152::frame != nullptr) {
 				$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug6559152$$Lambda$lambda$main$1$1)));
@@ -265,12 +251,10 @@ void bug6559152::blockTillDisplayed($JComponent* comp) {
 	while (bug6559152::p == nullptr) {
 		try {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug6559152$$Lambda$lambda$blockTillDisplayed$2$2, comp)));
-		} catch ($IllegalStateException&) {
-			$var($IllegalStateException, e, $catch());
+		} catch ($IllegalStateException& e) {
 			try {
 				$Thread::sleep(1000);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& ie) {
 			}
 		}
 	}
@@ -323,10 +307,8 @@ void bug6559152::testImpl() {
 void bug6559152::checkResult() {
 	$init(bug6559152);
 	if ($nc($of($($nc(bug6559152::cb)->getSelectedItem())))->equals("two"_s)) {
-		$init($System);
 		$nc($System::out)->println("Test passed"_s);
 	} else {
-		$init($System);
 		$nc($System::out)->println("Test failed"_s);
 		$throwNew($RuntimeException, "Cannot select an item from popup with the ENTER key."_s);
 	}

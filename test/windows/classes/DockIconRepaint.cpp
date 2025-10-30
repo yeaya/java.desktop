@@ -10,30 +10,13 @@
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
 #include <java/beans/PropertyVetoException.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JDesktopPane.h>
 #include <javax/swing/JFrame.h>
@@ -251,8 +234,8 @@ void DockIconRepaint::main($StringArray* args) {
 			test();
 			$assignStatic(DockIconRepaint::color, $Color::GREEN);
 			test();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(DockIconRepaint::frame)->dispose();
 		}
@@ -274,7 +257,6 @@ void DockIconRepaint::test() {
 	$var($Color, c, $nc(DockIconRepaint::robot)->getPixelColor($nc(DockIconRepaint::iconLoc)->x + $nc(DockIconRepaint::iconBounds)->width / 2, $nc(DockIconRepaint::iconLoc)->y + $nc(DockIconRepaint::iconBounds)->height / 2));
 	int32_t var$0 = $nc(c)->getRGB();
 	if (var$0 != $nc(DockIconRepaint::color)->getRGB()) {
-		$init($System);
 		$nc($System::err)->println($$str({"Exp: "_s, $($Integer::toHexString($nc(DockIconRepaint::color)->getRGB()))}));
 		$nc($System::err)->println($$str({"Actual: "_s, $($Integer::toHexString(c->getRGB()))}));
 		$throwNew($RuntimeException, "Wrong color."_s);
@@ -304,8 +286,7 @@ void DockIconRepaint::lambda$test$1() {
 	try {
 		$init(DockIconRepaint);
 		$nc(DockIconRepaint::jif)->setIcon(true);
-	} catch ($PropertyVetoException&) {
-		$var($PropertyVetoException, e, $catch());
+	} catch ($PropertyVetoException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 	$init(DockIconRepaint);
@@ -318,8 +299,7 @@ void DockIconRepaint::lambda$test$0() {
 		$init(DockIconRepaint);
 		$nc(DockIconRepaint::jif)->setIcon(false);
 		$nc(DockIconRepaint::jif)->setMaximum(true);
-	} catch ($PropertyVetoException&) {
-		$var($PropertyVetoException, e, $catch());
+	} catch ($PropertyVetoException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }

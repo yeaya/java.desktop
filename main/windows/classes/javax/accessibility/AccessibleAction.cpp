@@ -1,12 +1,5 @@
 #include <javax/accessibility/AccessibleAction.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef CLICK
@@ -51,15 +44,10 @@ $Object* allocate$AccessibleAction($Class* clazz) {
 	return $of($alloc(AccessibleAction));
 }
 
-
 $String* AccessibleAction::TOGGLE_EXPAND = nullptr;
-
 $String* AccessibleAction::INCREMENT = nullptr;
-
 $String* AccessibleAction::DECREMENT = nullptr;
-
 $String* AccessibleAction::CLICK = nullptr;
-
 $String* AccessibleAction::TOGGLE_POPUP = nullptr;
 
 void clinit$AccessibleAction($Class* class$) {

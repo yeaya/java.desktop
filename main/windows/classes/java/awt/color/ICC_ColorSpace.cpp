@@ -4,16 +4,6 @@
 #include <java/awt/color/ColorSpace.h>
 #include <java/awt/color/ICC_Profile.h>
 #include <java/io/ObjectInputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/cmm/CMSManager.h>
 #include <sun/java2d/cmm/ColorTransform.h>
 #include <sun/java2d/cmm/PCMM.h>
@@ -183,8 +173,7 @@ $floats* ICC_ColorSpace::toCIEXYZ($floats* colorvalue) {
 				$var($PCMM, mdl, $CMSManager::getModule());
 				try {
 					transforms->set(0, $($nc(mdl)->createTransform(this->thisProfile, $ICC_Profile::icRelativeColorimetric, $ColorTransform::In)));
-				} catch ($CMMException&) {
-					$var($CMMException, e, $catch());
+				} catch ($CMMException& e) {
 					transforms->set(0, $($nc(mdl)->createTransform(this->thisProfile, $ColorTransform::Any, $ColorTransform::In)));
 				}
 				transforms->set(1, $($nc(mdl)->createTransform($($nc(xyz)->getProfile()), $ColorTransform::Any, $ColorTransform::Out)));
@@ -220,8 +209,7 @@ $floats* ICC_ColorSpace::fromCIEXYZ($floats* colorvalue) {
 				transforms->set(0, $($nc(mdl)->createTransform($($nc(xyz)->getProfile()), $ColorTransform::Any, $ColorTransform::In)));
 				try {
 					transforms->set(1, $(mdl->createTransform(this->thisProfile, $ICC_Profile::icRelativeColorimetric, $ColorTransform::Out)));
-				} catch ($CMMException&) {
-					$var($CMMException, e, $catch());
+				} catch ($CMMException& e) {
 					transforms->set(1, $(mdl->createTransform(this->thisProfile, $ColorTransform::Any, $ColorTransform::Out)));
 				}
 				if (this->needScaleInit) {

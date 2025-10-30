@@ -1,16 +1,7 @@
 #include <java/awt/Taskbar$Feature.h>
 
 #include <java/awt/Taskbar.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef ICON_BADGE_IMAGE_WINDOW
@@ -83,25 +74,15 @@ $Object* allocate$Taskbar$Feature($Class* clazz) {
 	return $of($alloc(Taskbar$Feature));
 }
 
-
 Taskbar$Feature* Taskbar$Feature::ICON_BADGE_TEXT = nullptr;
-
 Taskbar$Feature* Taskbar$Feature::ICON_BADGE_NUMBER = nullptr;
-
 Taskbar$Feature* Taskbar$Feature::ICON_BADGE_IMAGE_WINDOW = nullptr;
-
 Taskbar$Feature* Taskbar$Feature::ICON_IMAGE = nullptr;
-
 Taskbar$Feature* Taskbar$Feature::MENU = nullptr;
-
 Taskbar$Feature* Taskbar$Feature::PROGRESS_STATE_WINDOW = nullptr;
-
 Taskbar$Feature* Taskbar$Feature::PROGRESS_VALUE = nullptr;
-
 Taskbar$Feature* Taskbar$Feature::PROGRESS_VALUE_WINDOW = nullptr;
-
 Taskbar$Feature* Taskbar$Feature::USER_ATTENTION = nullptr;
-
 Taskbar$Feature* Taskbar$Feature::USER_ATTENTION_WINDOW = nullptr;
 $Taskbar$FeatureArray* Taskbar$Feature::$VALUES = nullptr;
 

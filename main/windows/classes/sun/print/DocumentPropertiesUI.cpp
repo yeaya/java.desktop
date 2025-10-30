@@ -2,13 +2,6 @@
 
 #include <java/awt/Window.h>
 #include <java/awt/print/PrinterJob.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/PrintService.h>
 #include <javax/print/attribute/PrintRequestAttributeSet.h>
 #include <jcpp.h>
@@ -52,7 +45,6 @@ $ClassInfo _DocumentPropertiesUI_ClassInfo_ = {
 $Object* allocate$DocumentPropertiesUI($Class* clazz) {
 	return $of($alloc(DocumentPropertiesUI));
 }
-
 
 $String* DocumentPropertiesUI::DOCPROPERTIESCLASSNAME = nullptr;
 

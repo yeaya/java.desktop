@@ -6,17 +6,7 @@
 #include <java/io/OutputStreamWriter.h>
 #include <java/io/Reader.h>
 #include <java/io/Writer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractAction.h>
 #include <javax/swing/Action.h>
 #include <javax/swing/SwingConstants.h>
@@ -266,115 +256,60 @@ $Object* allocate$DefaultEditorKit($Class* clazz) {
 	return $of($alloc(DefaultEditorKit));
 }
 
-
 $String* DefaultEditorKit::EndOfLineStringProperty = nullptr;
-
 $String* DefaultEditorKit::insertContentAction = nullptr;
-
 $String* DefaultEditorKit::insertBreakAction = nullptr;
-
 $String* DefaultEditorKit::insertTabAction = nullptr;
-
 $String* DefaultEditorKit::deletePrevCharAction = nullptr;
-
 $String* DefaultEditorKit::deleteNextCharAction = nullptr;
-
 $String* DefaultEditorKit::deleteNextWordAction = nullptr;
-
 $String* DefaultEditorKit::deletePrevWordAction = nullptr;
-
 $String* DefaultEditorKit::readOnlyAction = nullptr;
-
 $String* DefaultEditorKit::writableAction = nullptr;
-
 $String* DefaultEditorKit::cutAction = nullptr;
-
 $String* DefaultEditorKit::copyAction = nullptr;
-
 $String* DefaultEditorKit::pasteAction = nullptr;
-
 $String* DefaultEditorKit::beepAction = nullptr;
-
 $String* DefaultEditorKit::pageUpAction = nullptr;
-
 $String* DefaultEditorKit::pageDownAction = nullptr;
-
 $String* DefaultEditorKit::selectionPageUpAction = nullptr;
-
 $String* DefaultEditorKit::selectionPageDownAction = nullptr;
-
 $String* DefaultEditorKit::selectionPageLeftAction = nullptr;
-
 $String* DefaultEditorKit::selectionPageRightAction = nullptr;
-
 $String* DefaultEditorKit::forwardAction = nullptr;
-
 $String* DefaultEditorKit::backwardAction = nullptr;
-
 $String* DefaultEditorKit::selectionForwardAction = nullptr;
-
 $String* DefaultEditorKit::selectionBackwardAction = nullptr;
-
 $String* DefaultEditorKit::upAction = nullptr;
-
 $String* DefaultEditorKit::downAction = nullptr;
-
 $String* DefaultEditorKit::selectionUpAction = nullptr;
-
 $String* DefaultEditorKit::selectionDownAction = nullptr;
-
 $String* DefaultEditorKit::beginWordAction = nullptr;
-
 $String* DefaultEditorKit::endWordAction = nullptr;
-
 $String* DefaultEditorKit::selectionBeginWordAction = nullptr;
-
 $String* DefaultEditorKit::selectionEndWordAction = nullptr;
-
 $String* DefaultEditorKit::previousWordAction = nullptr;
-
 $String* DefaultEditorKit::nextWordAction = nullptr;
-
 $String* DefaultEditorKit::selectionPreviousWordAction = nullptr;
-
 $String* DefaultEditorKit::selectionNextWordAction = nullptr;
-
 $String* DefaultEditorKit::beginLineAction = nullptr;
-
 $String* DefaultEditorKit::endLineAction = nullptr;
-
 $String* DefaultEditorKit::selectionBeginLineAction = nullptr;
-
 $String* DefaultEditorKit::selectionEndLineAction = nullptr;
-
 $String* DefaultEditorKit::beginParagraphAction = nullptr;
-
 $String* DefaultEditorKit::endParagraphAction = nullptr;
-
 $String* DefaultEditorKit::selectionBeginParagraphAction = nullptr;
-
 $String* DefaultEditorKit::selectionEndParagraphAction = nullptr;
-
 $String* DefaultEditorKit::beginAction = nullptr;
-
 $String* DefaultEditorKit::endAction = nullptr;
-
 $String* DefaultEditorKit::selectionBeginAction = nullptr;
-
 $String* DefaultEditorKit::selectionEndAction = nullptr;
-
 $String* DefaultEditorKit::selectWordAction = nullptr;
-
 $String* DefaultEditorKit::selectLineAction = nullptr;
-
 $String* DefaultEditorKit::selectParagraphAction = nullptr;
-
 $String* DefaultEditorKit::selectAllAction = nullptr;
-
 $String* DefaultEditorKit::unselectAction = nullptr;
-
 $String* DefaultEditorKit::toggleComponentOrientationAction = nullptr;
-
 $String* DefaultEditorKit::defaultKeyTypedAction = nullptr;
 $ActionArray* DefaultEditorKit::defaultActions = nullptr;
 

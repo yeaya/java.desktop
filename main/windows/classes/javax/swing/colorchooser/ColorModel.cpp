@@ -1,17 +1,7 @@
 #include <javax/swing/colorchooser/ColorModel.h>
 
 #include <java/awt/Component.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/swing/UIManager.h>
 #include <jcpp.h>
@@ -136,8 +126,7 @@ int32_t ColorModel::getInteger($Component* component, $String* suffix) {
 	if ($instanceOf($String, value)) {
 		try {
 			return $Integer::parseInt($cast($String, value));
-		} catch ($NumberFormatException&) {
-			$catch();
+		} catch ($NumberFormatException& exception) {
 		}
 	}
 	return -1;

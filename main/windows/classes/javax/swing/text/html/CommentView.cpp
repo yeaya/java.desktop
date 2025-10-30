@@ -3,15 +3,6 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/awt/Font.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JTextArea.h>
 #include <javax/swing/border/AbstractBorder.h>
@@ -155,8 +146,8 @@ void CommentView::_updateModelFromText() {
 				int32_t var$1 = getStartOffset();
 				int32_t var$2 = getEndOffset();
 				$nc(($cast($StyledDocument, doc)))->setCharacterAttributes(var$1, var$2 - getStartOffset(), sas, false);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} /*finally*/ {
 				this->isSettingAttributes = false;
 			}

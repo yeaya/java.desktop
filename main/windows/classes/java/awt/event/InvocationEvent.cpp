@@ -2,18 +2,7 @@
 
 #include <java/awt/AWTEvent.h>
 #include <java/awt/event/InvocationEvent$1.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/AWTAccessor$InvocationEventAccessor.h>
 #include <sun/awt/AWTAccessor.h>
 #include <jcpp.h>
@@ -148,15 +137,13 @@ void InvocationEvent::init$(Object$* source, int32_t id, $Runnable* runnable, Ob
 }
 
 void InvocationEvent::dispatch() {
-	$useLocalCurrentObjectStackCache();
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			if (this->catchExceptions) {
 				try {
 					$nc(this->runnable)->run();
-				} catch ($Throwable&) {
-					$var($Throwable, t, $catch());
+				} catch ($Throwable& t) {
 					if ($instanceOf($Exception, t)) {
 						$set(this, exception, $cast($Exception, t));
 					}
@@ -165,8 +152,8 @@ void InvocationEvent::dispatch() {
 			} else {
 				$nc(this->runnable)->run();
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			finishedDispatching(true);
 		}

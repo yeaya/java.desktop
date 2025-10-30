@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/ReferenceUriSchemesSupported.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -95,25 +87,15 @@ void ReferenceUriSchemesSupported::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 ReferenceUriSchemesSupported* ReferenceUriSchemesSupported::FTP = nullptr;
-
 ReferenceUriSchemesSupported* ReferenceUriSchemesSupported::HTTP = nullptr;
-
 ReferenceUriSchemesSupported* ReferenceUriSchemesSupported::HTTPS = nullptr;
-
 ReferenceUriSchemesSupported* ReferenceUriSchemesSupported::GOPHER = nullptr;
-
 ReferenceUriSchemesSupported* ReferenceUriSchemesSupported::NEWS = nullptr;
-
 ReferenceUriSchemesSupported* ReferenceUriSchemesSupported::NNTP = nullptr;
-
 ReferenceUriSchemesSupported* ReferenceUriSchemesSupported::WAIS = nullptr;
-
 ReferenceUriSchemesSupported* ReferenceUriSchemesSupported::FILE = nullptr;
-
 $StringArray* ReferenceUriSchemesSupported::myStringTable = nullptr;
-
 $ReferenceUriSchemesSupportedArray* ReferenceUriSchemesSupported::myEnumValueTable = nullptr;
 
 void ReferenceUriSchemesSupported::init$(int32_t value) {

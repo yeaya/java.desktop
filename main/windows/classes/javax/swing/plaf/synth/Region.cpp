@@ -1,13 +1,5 @@
 #include <javax/swing/plaf/synth/Region.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/HashMap.h>
 #include <java/util/Iterator.h>
@@ -193,119 +185,62 @@ $Object* allocate$Region($Class* clazz) {
 
 $Object* Region::UI_TO_REGION_MAP_KEY = nullptr;
 $Object* Region::LOWER_CASE_NAME_MAP_KEY = nullptr;
-
 Region* Region::ARROW_BUTTON = nullptr;
-
 Region* Region::BUTTON = nullptr;
-
 Region* Region::CHECK_BOX = nullptr;
-
 Region* Region::CHECK_BOX_MENU_ITEM = nullptr;
-
 Region* Region::COLOR_CHOOSER = nullptr;
-
 Region* Region::COMBO_BOX = nullptr;
-
 Region* Region::DESKTOP_PANE = nullptr;
-
 Region* Region::DESKTOP_ICON = nullptr;
-
 Region* Region::EDITOR_PANE = nullptr;
-
 Region* Region::FILE_CHOOSER = nullptr;
-
 Region* Region::FORMATTED_TEXT_FIELD = nullptr;
-
 Region* Region::INTERNAL_FRAME = nullptr;
-
 Region* Region::INTERNAL_FRAME_TITLE_PANE = nullptr;
-
 Region* Region::LABEL = nullptr;
-
 Region* Region::LIST = nullptr;
-
 Region* Region::MENU = nullptr;
-
 Region* Region::MENU_BAR = nullptr;
-
 Region* Region::MENU_ITEM = nullptr;
-
 Region* Region::MENU_ITEM_ACCELERATOR = nullptr;
-
 Region* Region::OPTION_PANE = nullptr;
-
 Region* Region::PANEL = nullptr;
-
 Region* Region::PASSWORD_FIELD = nullptr;
-
 Region* Region::POPUP_MENU = nullptr;
-
 Region* Region::POPUP_MENU_SEPARATOR = nullptr;
-
 Region* Region::PROGRESS_BAR = nullptr;
-
 Region* Region::RADIO_BUTTON = nullptr;
-
 Region* Region::RADIO_BUTTON_MENU_ITEM = nullptr;
-
 Region* Region::ROOT_PANE = nullptr;
-
 Region* Region::SCROLL_BAR = nullptr;
-
 Region* Region::SCROLL_BAR_TRACK = nullptr;
-
 Region* Region::SCROLL_BAR_THUMB = nullptr;
-
 Region* Region::SCROLL_PANE = nullptr;
-
 Region* Region::SEPARATOR = nullptr;
-
 Region* Region::SLIDER = nullptr;
-
 Region* Region::SLIDER_TRACK = nullptr;
-
 Region* Region::SLIDER_THUMB = nullptr;
-
 Region* Region::SPINNER = nullptr;
-
 Region* Region::SPLIT_PANE = nullptr;
-
 Region* Region::SPLIT_PANE_DIVIDER = nullptr;
-
 Region* Region::TABBED_PANE = nullptr;
-
 Region* Region::TABBED_PANE_TAB = nullptr;
-
 Region* Region::TABBED_PANE_TAB_AREA = nullptr;
-
 Region* Region::TABBED_PANE_CONTENT = nullptr;
-
 Region* Region::TABLE = nullptr;
-
 Region* Region::TABLE_HEADER = nullptr;
-
 Region* Region::TEXT_AREA = nullptr;
-
 Region* Region::TEXT_FIELD = nullptr;
-
 Region* Region::TEXT_PANE = nullptr;
-
 Region* Region::TOGGLE_BUTTON = nullptr;
-
 Region* Region::TOOL_BAR = nullptr;
-
 Region* Region::TOOL_BAR_CONTENT = nullptr;
-
 Region* Region::TOOL_BAR_DRAG_WINDOW = nullptr;
-
 Region* Region::TOOL_TIP = nullptr;
-
 Region* Region::TOOL_BAR_SEPARATOR = nullptr;
-
 Region* Region::TREE = nullptr;
-
 Region* Region::TREE_CELL = nullptr;
-
 Region* Region::VIEWPORT = nullptr;
 
 $Map* Region::getUItoRegionMap() {

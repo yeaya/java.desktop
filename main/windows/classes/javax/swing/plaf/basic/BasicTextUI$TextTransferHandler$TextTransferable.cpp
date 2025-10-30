@@ -9,16 +9,7 @@
 #include <java/io/StringReader.h>
 #include <java/io/StringWriter.h>
 #include <java/io/Writer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JEditorPane.h>
 #include <javax/swing/plaf/basic/BasicTextUI$TextTransferHandler.h>
 #include <javax/swing/plaf/basic/BasicTransferable.h>
@@ -129,10 +120,8 @@ void BasicTextUI$TextTransferHandler$TextTransferable::init$($JTextComponent* c,
 				$set(this, richText, sw->toString());
 			}
 		}
-	} catch ($BadLocationException&) {
-		$catch();
-	} catch ($IOException&) {
-		$catch();
+	} catch ($BadLocationException& ble) {
+	} catch ($IOException& ioe) {
 	}
 }
 
@@ -148,8 +137,7 @@ void BasicTextUI$TextTransferHandler$TextTransferable::removeText() {
 			int32_t var$2 = $nc(this->p0)->getOffset();
 			int32_t var$3 = $nc(this->p1)->getOffset();
 			$nc(doc)->remove(var$2, var$3 - $nc(this->p0)->getOffset());
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& e) {
 		}
 	}
 }
@@ -165,8 +153,7 @@ $DataFlavorArray* BasicTextUI$TextTransferHandler$TextTransferable::getRicherFla
 		flavors->set(1, $$new($DataFlavor, $$str({this->mimeType, ";class=java.io.Reader"_s})));
 		flavors->set(2, $$new($DataFlavor, $$str({this->mimeType, ";class=java.io.InputStream;charset=unicode"_s})));
 		return flavors;
-	} catch ($ClassNotFoundException&) {
-		$catch();
+	} catch ($ClassNotFoundException& cle) {
 	}
 	return nullptr;
 }
@@ -175,7 +162,6 @@ $Object* BasicTextUI$TextTransferHandler$TextTransferable::getRicherData($DataFl
 	if (this->richText == nullptr) {
 		return $of(nullptr);
 	}
-	$load($String);
 	if ($of($String::class$)->equals($nc(flavor)->getRepresentationClass())) {
 		return $of(this->richText);
 	} else {

@@ -18,18 +18,6 @@
 #include <java/awt/image/ImageObserver.h>
 #include <java/awt/image/ImageProducer.h>
 #include <java/awt/image/RGBImageFilter.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/util/Hashtable.h>
 #include <javax/swing/DebugGraphicsFilter.h>
@@ -1139,8 +1127,7 @@ void DebugGraphics::copyArea(int32_t x, int32_t y, int32_t width, int32_t height
 void DebugGraphics::sleep(int32_t mSecs) {
 	try {
 		$Thread::sleep(mSecs);
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 }
 
@@ -1168,14 +1155,12 @@ void DebugGraphics::setDebugOptions(int32_t options) {
 	if (options != 0) {
 		if (options == DebugGraphics::NONE_OPTION) {
 			if (this->debugOptions != 0) {
-				$init($System);
 				$nc($System::err)->println($$str({$(toShortString()), " Disabling debug"_s}));
 				this->debugOptions = 0;
 			}
 		} else if (this->debugOptions != options) {
 			this->debugOptions |= options;
 			if (debugLog()) {
-				$init($System);
 				$nc($System::err)->println($$str({$(toShortString()), " Enabling debug"_s}));
 			}
 		}

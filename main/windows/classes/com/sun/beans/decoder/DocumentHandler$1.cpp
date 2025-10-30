@@ -2,16 +2,6 @@
 
 #include <com/sun/beans/decoder/DocumentHandler.h>
 #include <java/io/IOException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/xml/parsers/ParserConfigurationException.h>
 #include <javax/xml/parsers/SAXParser.h>
 #include <javax/xml/parsers/SAXParserFactory.h>
@@ -93,18 +83,15 @@ $Object* DocumentHandler$1::run() {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$nc($($nc($($SAXParserFactory::newInstance()))->newSAXParser()))->parse(this->val$input, static_cast<$DefaultHandler*>(this->this$0));
-	} catch ($ParserConfigurationException&) {
-		$var($ParserConfigurationException, exception, $catch());
+	} catch ($ParserConfigurationException& exception) {
 		this->this$0->handleException(exception);
-	} catch ($SAXException&) {
-		$var($SAXException, wrapper, $catch());
+	} catch ($SAXException& wrapper) {
 		$var($Exception, exception, wrapper->getException());
 		if (exception == nullptr) {
 			$assign(exception, wrapper);
 		}
 		this->this$0->handleException(exception);
-	} catch ($IOException&) {
-		$var($IOException, exception, $catch());
+	} catch ($IOException& exception) {
 		this->this$0->handleException(exception);
 	}
 	return $of(nullptr);

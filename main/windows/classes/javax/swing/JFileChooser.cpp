@@ -28,20 +28,6 @@
 #include <java/io/ObjectInputStream$GetField.h>
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <java/util/Vector.h>
 #include <javax/accessibility/AccessibleContext.h>
@@ -178,6 +164,7 @@ $NamedAttribute JFileChooser_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JFileChooser_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JFileChooser_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JFileChooser_Attribute_var$1},
@@ -488,7 +475,6 @@ $CompoundAttribute _JFileChooser_MethodAnnotations_setSelectedFiles75[] = {
 	{}
 };
 
-
 $FieldInfo _JFileChooser_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JFileChooser, uiClassID)},
 	{"OPEN_DIALOG", "I", nullptr, $PUBLIC | $STATIC | $FINAL, $constField(JFileChooser, OPEN_DIALOG)},
@@ -685,47 +671,26 @@ void JFileChooser::finalize() {
 	this->$JComponent::finalize();
 }
 
-
 $String* JFileChooser::uiClassID = nullptr;
-
 $String* JFileChooser::CANCEL_SELECTION = nullptr;
-
 $String* JFileChooser::APPROVE_SELECTION = nullptr;
-
 $String* JFileChooser::APPROVE_BUTTON_TEXT_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::APPROVE_BUTTON_TOOL_TIP_TEXT_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::APPROVE_BUTTON_MNEMONIC_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::CONTROL_BUTTONS_ARE_SHOWN_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::DIRECTORY_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::SELECTED_FILE_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::SELECTED_FILES_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::MULTI_SELECTION_ENABLED_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::FILE_SYSTEM_VIEW_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::FILE_VIEW_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::FILE_HIDING_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::FILE_FILTER_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::FILE_SELECTION_MODE_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::ACCESSORY_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::ACCEPT_ALL_FILE_FILTER_USED_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::DIALOG_TITLE_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::DIALOG_TYPE_CHANGED_PROPERTY = nullptr;
-
 $String* JFileChooser::CHOOSABLE_FILE_FILTER_CHANGED_PROPERTY = nullptr;
 $String* JFileChooser::SHOW_HIDDEN_PROP = nullptr;
 

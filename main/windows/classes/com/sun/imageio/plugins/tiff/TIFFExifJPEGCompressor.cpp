@@ -3,12 +3,6 @@
 #include <com/sun/imageio/plugins/tiff/TIFFBaseJPEGCompressor.h>
 #include <com/sun/imageio/plugins/tiff/TIFFCompressor.h>
 #include <com/sun/imageio/plugins/tiff/TIFFImageWriter.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/ImageWriteParam.h>
 #include <javax/imageio/metadata/IIOMetadata.h>
 #include <javax/imageio/plugins/tiff/BaselineTIFFTagSet.h>

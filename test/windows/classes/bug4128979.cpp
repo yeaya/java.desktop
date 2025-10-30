@@ -12,16 +12,6 @@
 #include <java/awt/LayoutManager2.h>
 #include <java/awt/Panel.h>
 #include <java/awt/Window.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/BorderFactory.h>
 #include <javax/swing/BoxLayout.h>
@@ -135,12 +125,10 @@ void bug4128979::init() {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel"_s);
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($UnsupportedLookAndFeelException, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& e) {
 		$JOptionPane::showMessageDialog(this, "This test requires Windows look and feel, so just press Pass\n as  this look and feel is unsupported on this platform."_s, "Unsupported LF"_s, $JOptionPane::ERROR_MESSAGE);
 		return;
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, "Couldn\'t set look and feel"_s);
 	}
 	setLayout($$new($FlowLayout));

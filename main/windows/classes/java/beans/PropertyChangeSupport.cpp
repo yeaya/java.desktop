@@ -11,18 +11,6 @@
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/ObjectStreamField.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <java/util/Hashtable.h>
 #include <java/util/Iterator.h>
@@ -117,7 +105,6 @@ $ClassInfo _PropertyChangeSupport_ClassInfo_ = {
 $Object* allocate$PropertyChangeSupport($Class* clazz) {
 	return $of($alloc(PropertyChangeSupport));
 }
-
 
 $ObjectStreamFieldArray* PropertyChangeSupport::serialPersistentFields = nullptr;
 
@@ -356,9 +343,8 @@ void PropertyChangeSupport::readObject($ObjectInputStream* s) {
 
 void clinit$PropertyChangeSupport($Class* class$) {
 	$useLocalCurrentObjectStackCache();
-		$load($Hashtable);
-		$load($Object);
-		$init($Integer);
+	$load($Hashtable);
+	$init($Integer);
 	$assignStatic(PropertyChangeSupport::serialPersistentFields, $new($ObjectStreamFieldArray, {
 		$$new($ObjectStreamField, "children"_s, $Hashtable::class$),
 		$$new($ObjectStreamField, "source"_s, $Object::class$),

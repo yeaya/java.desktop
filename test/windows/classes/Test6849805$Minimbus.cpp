@@ -2,16 +2,6 @@
 
 #include <Test6849805.h>
 #include <java/awt/Color.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/plaf/nimbus/NimbusLookAndFeel.h>
 #include <jcpp.h>
 
@@ -62,7 +52,6 @@ void Test6849805$Minimbus::test($Color* c1, $Color* c2, float f) {
 	$useLocalCurrentObjectStackCache();
 	$var($Color, r, getDerivedColor(c1, c2, f));
 	$var($Color, test, f > 0 ? c2 : c1);
-	$init($System);
 	$nc($System::out)->printf("Got %s, need %s "_s, $$new($ObjectArray, {
 		$of(r),
 		$of(test)

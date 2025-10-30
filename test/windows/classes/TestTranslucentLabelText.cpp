@@ -16,25 +16,13 @@
 #include <java/awt/event/WindowAdapter.h>
 #include <java/awt/event/WindowListener.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JButton.h>
@@ -434,13 +422,11 @@ void TestTranslucentLabelText::runTest() {
 
 void TestTranslucentLabelText::main($StringArray* args) {
 	$init(TestTranslucentLabelText);
-	$useLocalCurrentObjectStackCache();
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestTranslucentLabelText$$Lambda$lambda$main$3$3)));
 	$assignStatic(TestTranslucentLabelText::mainThread, $Thread::currentThread());
 	try {
 		$Thread::sleep(0x0002BF20);
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, e, $catch());
+	} catch ($InterruptedException& e) {
 		if (!TestTranslucentLabelText::testPassed && TestTranslucentLabelText::testGeneratedInterrupt) {
 			$throwNew($RuntimeException, "Label HTML text does not support translucent text colors"_s);
 		}

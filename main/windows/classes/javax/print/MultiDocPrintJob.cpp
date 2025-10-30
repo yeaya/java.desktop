@@ -1,11 +1,5 @@
 #include <javax/print/MultiDocPrintJob.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/MultiDoc.h>
 #include <javax/print/attribute/PrintRequestAttributeSet.h>
 #include <jcpp.h>

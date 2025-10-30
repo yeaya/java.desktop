@@ -15,8 +15,10 @@ public:
 	void init$();
 	void init$($String* s);
 	InvalidPipeException(const InvalidPipeException& e);
-	InvalidPipeException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline InvalidPipeException* operator ->() {
+		return (InvalidPipeException*)throwing$;
+	}
 };
 
 	} // java2d

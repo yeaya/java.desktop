@@ -22,8 +22,10 @@ public:
 	void init$($String* message, $Throwable* cause);
 	static const int64_t serialVersionUID = (int64_t)0xD35DB96440B82FDD;
 	IIOException(const IIOException& e);
-	IIOException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline IIOException* operator ->() {
+		return (IIOException*)throwing$;
+	}
 };
 
 	} // imageio

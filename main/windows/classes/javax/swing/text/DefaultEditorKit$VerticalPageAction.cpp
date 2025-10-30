@@ -3,15 +3,7 @@
 #include <java/awt/Point.h>
 #include <java/awt/Rectangle.h>
 #include <java/awt/event/ActionEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SwingConstants.h>
 #include <javax/swing/text/BadLocationException.h>
 #include <javax/swing/text/Caret.h>
@@ -132,8 +124,7 @@ void DefaultEditorKit$VerticalPageAction::actionPerformed($ActionEvent* e) {
 				} else if (this->direction == -1 && newVis->y <= initialY || this->direction == 1 && newVis->y >= initialY) {
 					newVis->y = initialY;
 				}
-			} catch ($BadLocationException&) {
-				$catch();
+			} catch ($BadLocationException& ble) {
 			}
 		} else {
 			newVis->y = constrainY(target, initialY + scrollAmount, visible->height);
@@ -174,8 +165,7 @@ int32_t DefaultEditorKit$VerticalPageAction::getAdjustedY($JTextComponent* text,
 		} else if ((dotBounds->y > visible->y + visible->height) || (dotBounds->y + dotBounds->height > visible->y + visible->height)) {
 			result = dotBounds->y + dotBounds->height - visible->height;
 		}
-	} catch ($BadLocationException&) {
-		$catch();
+	} catch ($BadLocationException& ble) {
 	}
 	return result;
 }

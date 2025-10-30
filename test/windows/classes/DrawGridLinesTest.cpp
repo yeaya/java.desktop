@@ -7,24 +7,13 @@
 #include <java/awt/Graphics2D.h>
 #include <java/awt/image/BufferedImage.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTable.h>
 #include <javax/swing/SwingUtilities.h>
 #include <javax/swing/table/AbstractTableModel.h>
@@ -168,7 +157,6 @@ void DrawGridLinesTest::checkTableGridLines() {
 	r->setBackground(DrawGridLinesTest::CELL_RENDERER_BACKGROUND_COLOR);
 	$var($JTable, table, $new($JTable, dataModel));
 	table->setSize(DrawGridLinesTest::WIDTH, DrawGridLinesTest::HEIGHT);
-	$load($Object);
 	table->setDefaultRenderer($Object::class$, r);
 	table->setGridColor(DrawGridLinesTest::GRID_COLOR);
 	table->setShowGrid(true);

@@ -8,18 +8,8 @@
 #include <java/awt/Image.h>
 #include <java/awt/Paint.h>
 #include <java/awt/image/ImageObserver.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/List.h>
 #include <javax/swing/plaf/metal/MetalUtils.h>
 #include <sun/swing/CachedPainter.h>
@@ -95,7 +85,6 @@ $ClassInfo _MetalUtils$GradientPainter_ClassInfo_ = {
 $Object* allocate$MetalUtils$GradientPainter($Class* clazz) {
 	return $of($alloc(MetalUtils$GradientPainter));
 }
-
 
 MetalUtils$GradientPainter* MetalUtils$GradientPainter::INSTANCE = nullptr;
 

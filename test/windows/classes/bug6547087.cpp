@@ -2,18 +2,7 @@
 
 #include <bug6547087$1.h>
 #include <java/awt/Dimension.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/Callable.h>
 #include <java/util/concurrent/ExecutionException.h>
 #include <java/util/concurrent/FutureTask.h>
@@ -80,8 +69,7 @@ void bug6547087::main($StringArray* args) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		invokeAndWait($$new($bug6547087$1));
-	} catch ($ExecutionException&) {
-		$var($ExecutionException, e, $catch());
+	} catch ($ExecutionException& e) {
 		if ($instanceOf($NullPointerException, $(e->getCause()))) {
 			$throwNew($RuntimeException, "failed"_s);
 		}

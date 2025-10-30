@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/ColorSupported.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -83,13 +75,9 @@ void ColorSupported::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 ColorSupported* ColorSupported::NOT_SUPPORTED = nullptr;
-
 ColorSupported* ColorSupported::SUPPORTED = nullptr;
-
 $StringArray* ColorSupported::myStringTable = nullptr;
-
 $ColorSupportedArray* ColorSupported::myEnumValueTable = nullptr;
 
 void ColorSupported::init$(int32_t value) {

@@ -2,25 +2,11 @@
 
 #include <bug7013453$1$1.h>
 #include <bug7013453.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchFieldException.h>
 #include <java/lang/NoSuchMethodException.h>
 #include <java/lang/ReflectiveOperationException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
 #include <java/lang/reflect/InvocationTargetException.h>
 #include <java/lang/reflect/Method.h>
@@ -101,7 +87,6 @@ void bug7013453$1::run() {
 		$var($Object, paintManager, getPaintManagerMethod->invoke($($RepaintManager::currentManager(static_cast<$JComponent*>($$new($JLabel)))), $$new($ObjectArray, 0)));
 		$var($String, paintManagerName, $nc($of(paintManager))->getClass()->getCanonicalName());
 		if (!$nc(paintManagerName)->equals("javax.swing.BufferStrategyPaintManager"_s)) {
-			$init($System);
 			$nc($System::out)->println($$str({"The test is not suitable for the "_s, paintManagerName, " paint manager. The test skipped."_s}));
 			return;
 		}
@@ -115,19 +100,14 @@ void bug7013453$1::run() {
 		$var($Method, disposeMethod, $of(paintManager)->getClass()->getDeclaredMethod("dispose"_s, $$new($ClassArray, 0)));
 		$nc(disposeMethod)->setAccessible(true);
 		disposeMethod->invoke(paintManager, $$new($ObjectArray, 0));
-		$init($System);
 		$nc($System::out)->println("The test passed."_s);
-	} catch ($NoSuchMethodException&) {
-		$var($NoSuchMethodException, e, $catch());
+	} catch ($NoSuchMethodException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($InvocationTargetException&) {
-		$var($InvocationTargetException, e, $catch());
+	} catch ($InvocationTargetException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($IllegalAccessException&) {
-		$var($IllegalAccessException, e, $catch());
+	} catch ($IllegalAccessException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($NoSuchFieldException&) {
-		$var($NoSuchFieldException, e, $catch());
+	} catch ($NoSuchFieldException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }

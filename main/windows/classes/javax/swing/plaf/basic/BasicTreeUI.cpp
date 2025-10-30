@@ -26,24 +26,8 @@
 #include <java/awt/event/MouseListener.h>
 #include <java/awt/event/MouseMotionListener.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/Long.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Enumeration.h>
 #include <java/util/EventObject.h>
 #include <java/util/Hashtable.h>
@@ -885,31 +869,31 @@ void BasicTreeUI::installDefaults() {
 
 void BasicTreeUI::installListeners() {
 	$useLocalCurrentObjectStackCache();
-	if (($assignField(this, propertyChangeListener, createPropertyChangeListener())) != nullptr) {
+	if (($set(this, propertyChangeListener, createPropertyChangeListener())) != nullptr) {
 		$nc(this->tree)->addPropertyChangeListener(this->propertyChangeListener);
 	}
-	if (($assignField(this, mouseListener, createMouseListener())) != nullptr) {
+	if (($set(this, mouseListener, createMouseListener())) != nullptr) {
 		$nc(this->tree)->addMouseListener(this->mouseListener);
 		if ($instanceOf($MouseMotionListener, this->mouseListener)) {
 			$nc(this->tree)->addMouseMotionListener($cast($MouseMotionListener, this->mouseListener));
 		}
 	}
-	if (($assignField(this, focusListener, createFocusListener())) != nullptr) {
+	if (($set(this, focusListener, createFocusListener())) != nullptr) {
 		$nc(this->tree)->addFocusListener(this->focusListener);
 	}
-	if (($assignField(this, keyListener, createKeyListener())) != nullptr) {
+	if (($set(this, keyListener, createKeyListener())) != nullptr) {
 		$nc(this->tree)->addKeyListener(this->keyListener);
 	}
-	if (($assignField(this, treeExpansionListener, createTreeExpansionListener())) != nullptr) {
+	if (($set(this, treeExpansionListener, createTreeExpansionListener())) != nullptr) {
 		$nc(this->tree)->addTreeExpansionListener(this->treeExpansionListener);
 	}
-	if (($assignField(this, treeModelListener, createTreeModelListener())) != nullptr && this->treeModel != nullptr) {
+	if (($set(this, treeModelListener, createTreeModelListener())) != nullptr && this->treeModel != nullptr) {
 		$nc(this->treeModel)->addTreeModelListener(this->treeModelListener);
 	}
-	if (($assignField(this, selectionModelPropertyChangeListener, createSelectionModelPropertyChangeListener())) != nullptr && this->treeSelectionModel != nullptr) {
+	if (($set(this, selectionModelPropertyChangeListener, createSelectionModelPropertyChangeListener())) != nullptr && this->treeSelectionModel != nullptr) {
 		$nc(this->treeSelectionModel)->addPropertyChangeListener(this->selectionModelPropertyChangeListener);
 	}
-	if (($assignField(this, treeSelectionListener, createTreeSelectionListener())) != nullptr && this->treeSelectionModel != nullptr) {
+	if (($set(this, treeSelectionListener, createTreeSelectionListener())) != nullptr && this->treeSelectionModel != nullptr) {
 		$nc(this->treeSelectionModel)->addTreeSelectionListener(this->treeSelectionListener);
 	}
 	$var($TransferHandler, th, $nc(this->tree)->getTransferHandler());
@@ -950,7 +934,7 @@ $InputMap* BasicTreeUI::getInputMap(int32_t condition) {
 }
 
 void BasicTreeUI::installComponents() {
-	if (($assignField(this, rendererPane, createCellRendererPane())) != nullptr) {
+	if (($set(this, rendererPane, createCellRendererPane())) != nullptr) {
 		$nc(this->tree)->add(static_cast<$Component*>(this->rendererPane));
 	}
 }
@@ -1849,8 +1833,8 @@ bool BasicTreeUI::startEditingOnRelease($TreePath* path, $MouseEvent* event, $Mo
 			var$2 = startEditing(path, event);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$set(this, releaseEvent, nullptr);
 		}
@@ -2066,8 +2050,8 @@ void BasicTreeUI::setAnchorSelectionPath($TreePath* newPath) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$nc(this->tree)->setAnchorSelectionPath(newPath);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->ignoreLAChange = false;
 		}
@@ -2093,8 +2077,8 @@ void BasicTreeUI::setLeadSelectionPath($TreePath* newPath, bool repaint) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$nc(this->tree)->setLeadSelectionPath(newPath);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->ignoreLAChange = false;
 		}

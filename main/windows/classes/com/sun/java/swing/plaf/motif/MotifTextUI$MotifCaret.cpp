@@ -6,14 +6,6 @@
 #include <java/awt/Graphics.h>
 #include <java/awt/Rectangle.h>
 #include <java/awt/event/FocusEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/plaf/ComponentUI.h>
 #include <javax/swing/plaf/TextUI.h>
 #include <javax/swing/text/BadLocationException.h>
@@ -149,8 +141,7 @@ void MotifTextUI$MotifCaret::paint($Graphics* g) {
 			g->drawLine(r->x, y0, r->x, y1);
 			g->drawLine(x0, y0, x1, y0);
 			g->drawLine(x0, y1, x1, y1);
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& e) {
 		}
 	}
 }

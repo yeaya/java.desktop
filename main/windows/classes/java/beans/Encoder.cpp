@@ -6,18 +6,7 @@
 #include <java/beans/MetaData.h>
 #include <java/beans/PersistenceDelegate.h>
 #include <java/beans/Statement.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/HashMap.h>
 #include <java/util/IdentityHashMap.h>
@@ -113,8 +102,7 @@ $Object* Encoder::getValue($Expression* exp) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		return $of((exp == nullptr) ? ($Object*)nullptr : $nc(exp)->getValue());
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$nc($(getExceptionListener()))->exceptionThrown(e);
 		$throwNew($RuntimeException, $$str({"failed to evaluate: "_s, $($nc(exp)->toString())}));
 	}
@@ -142,7 +130,6 @@ $Object* Encoder::remove(Object$* oldInstance) {
 }
 
 $Object* Encoder::get(Object$* oldInstance) {
-	$load($String);
 	if (oldInstance == nullptr || $equals(oldInstance, this) || $nc($of(oldInstance))->getClass() == $String::class$) {
 		return $of(oldInstance);
 	}
@@ -179,8 +166,7 @@ void Encoder::writeStatement($Statement* oldStm) {
 	if (!$equals($nc(oldStm)->getTarget(), this) && this->executeStatements) {
 		try {
 			$nc(newStm)->execute();
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$nc($(getExceptionListener()))->exceptionThrown($$new($Exception, $$str({"Encoder: discarding statement "_s, newStm}), e));
 		}
 	}

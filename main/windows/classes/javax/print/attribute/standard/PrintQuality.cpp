@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/PrintQuality.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -88,15 +80,10 @@ void PrintQuality::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 PrintQuality* PrintQuality::DRAFT = nullptr;
-
 PrintQuality* PrintQuality::NORMAL = nullptr;
-
 PrintQuality* PrintQuality::HIGH = nullptr;
-
 $StringArray* PrintQuality::myStringTable = nullptr;
-
 $PrintQualityArray* PrintQuality::myEnumValueTable = nullptr;
 
 void PrintQuality::init$(int32_t value) {

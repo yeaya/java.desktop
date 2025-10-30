@@ -92,39 +92,19 @@
 #include <java/awt/peer/WindowPeer.h>
 #include <java/beans/PropertyChangeListener.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
 #include <java/lang/Runtime.h>
-#include <java/lang/RuntimeException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/BasicPermission.h>
 #include <java/security/Permission.h>
@@ -1031,7 +1011,6 @@ bool WToolkit::loaded = false;
 $WMouseInfoPeer* WToolkit::wPeer = nullptr;
 $ColorModel* WToolkit::screenmodel = nullptr;
 $ExecutorService* WToolkit::displayChangeExecutor = nullptr;
-
 $String* WToolkit::prefix = nullptr;
 $String* WToolkit::postfix = nullptr;
 $String* WToolkit::awtPrefix = nullptr;
@@ -1128,8 +1107,7 @@ void WToolkit::init$() {
 				$of(this)->wait();
 			}
 		}
-	} catch ($InterruptedException&) {
-		$catch();
+	} catch ($InterruptedException& x) {
 	}
 	setDynamicLayout(true);
 	$var($String, extraButtons, "sun.awt.enableExtraMouseButtons"_s);
@@ -1672,8 +1650,7 @@ $Object* WToolkit::lazilyLoadDesktopProperty($String* name) {
 		$var($String, cursorName, $concat(var$0, WToolkit::postfix));
 		try {
 			return $of($Cursor::getSystemCustomCursor(cursorName));
-		} catch ($AWTException&) {
-			$var($AWTException, awte, $catch());
+		} catch ($AWTException& awte) {
 			$throwNew($RuntimeException, $$str({"cannot load system cursor: "_s, cursorName}), awte);
 		}
 	}

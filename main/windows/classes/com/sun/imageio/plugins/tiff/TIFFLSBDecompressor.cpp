@@ -2,14 +2,6 @@
 
 #include <com/sun/imageio/plugins/tiff/TIFFDecompressor.h>
 #include <com/sun/imageio/plugins/tiff/TIFFFaxDecompressor.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/stream/ImageInputStream.h>
 #include <jcpp.h>
 
@@ -49,7 +41,6 @@ $ClassInfo _TIFFLSBDecompressor_ClassInfo_ = {
 $Object* allocate$TIFFLSBDecompressor($Class* clazz) {
 	return $of($alloc(TIFFLSBDecompressor));
 }
-
 
 $bytes* TIFFLSBDecompressor::flipTable = nullptr;
 

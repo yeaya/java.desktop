@@ -8,23 +8,12 @@
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComboBox.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
@@ -215,8 +204,8 @@ void WindowsComboBoxSizeTest::main($StringArray* args) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			test();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$init(WindowsComboBoxSizeTest);
 			$SwingUtilities::invokeLater(static_cast<$Runnable*>($$new(WindowsComboBoxSizeTest$$Lambda$dispose$1, static_cast<$JFrame*>($nc(WindowsComboBoxSizeTest::frame)))));

@@ -5,16 +5,6 @@
 #include <java/awt/Rectangle.h>
 #include <java/awt/font/TextHitInfo.h>
 #include <java/awt/im/InputMethodRequests.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator$Attribute.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/text/AttributedString.h>
@@ -135,8 +125,7 @@ $AttributedCharacterIterator* JTextComponent$InputMethodRequestsHandler::cancelL
 			$var($String, latestCommittedText, doc->getText(startIndex, endIndex - startIndex));
 			doc->remove(startIndex, endIndex - startIndex);
 			return $$new($AttributedString, latestCommittedText)->getIterator();
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& ble) {
 		}
 	}
 	return nullptr;
@@ -163,8 +152,7 @@ $AttributedCharacterIterator* JTextComponent$InputMethodRequestsHandler::getComm
 		} else {
 			$assign(committed, this->this$0->getText(beginIndex + (composedEndIndex - composedStartIndex), endIndex - beginIndex));
 		}
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, ble, $catch());
+	} catch ($BadLocationException& ble) {
 		$throwNew($IllegalArgumentException, "Invalid range"_s);
 	}
 	return $$new($AttributedString, committed)->getIterator();
@@ -230,8 +218,7 @@ $Rectangle* JTextComponent$InputMethodRequestsHandler::getTextLocation($TextHitI
 			$var($Point, p, this->this$0->getLocationOnScreen());
 			r->translate($nc(p)->x, p->y);
 		}
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, ble, $catch());
+	} catch ($BadLocationException& ble) {
 		$assign(r, nullptr);
 	}
 	if (r == nullptr) {
@@ -251,15 +238,15 @@ $AttributedCharacterIterator* JTextComponent$InputMethodRequestsHandler::getSele
 }
 
 void JTextComponent$InputMethodRequestsHandler::changedUpdate($DocumentEvent* e) {
-	$set(this->this$0, latestCommittedTextStart, ($assignField(this->this$0, latestCommittedTextEnd, nullptr)));
+	$set(this->this$0, latestCommittedTextStart, ($set(this->this$0, latestCommittedTextEnd, nullptr)));
 }
 
 void JTextComponent$InputMethodRequestsHandler::insertUpdate($DocumentEvent* e) {
-	$set(this->this$0, latestCommittedTextStart, ($assignField(this->this$0, latestCommittedTextEnd, nullptr)));
+	$set(this->this$0, latestCommittedTextStart, ($set(this->this$0, latestCommittedTextEnd, nullptr)));
 }
 
 void JTextComponent$InputMethodRequestsHandler::removeUpdate($DocumentEvent* e) {
-	$set(this->this$0, latestCommittedTextStart, ($assignField(this->this$0, latestCommittedTextEnd, nullptr)));
+	$set(this->this$0, latestCommittedTextStart, ($set(this->this$0, latestCommittedTextEnd, nullptr)));
 }
 
 JTextComponent$InputMethodRequestsHandler::JTextComponent$InputMethodRequestsHandler() {

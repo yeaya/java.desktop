@@ -15,15 +15,6 @@
 #include <java/awt/image/DataBufferInt.h>
 #include <java/awt/image/ImageObserver.h>
 #include <java/awt/image/Raster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Map.h>
 #include <sun/awt/dnd/SunDragSourceContextPeer.h>
 #include <sun/awt/windows/WDropTargetContextPeer.h>
@@ -140,8 +131,7 @@ void WDragSourceContextPeer::startDrag($Transferable* trans, $longs* formats, $M
 			$var($BufferedImage, bi, $new($BufferedImage, imageWidth, imageHeight, $BufferedImage::TYPE_INT_ARGB));
 			$nc($(bi->getGraphics()))->drawImage(im, 0, 0, nullptr);
 			$assign(imageData, $nc(($cast($DataBufferInt, $($nc($(bi->getData()))->getDataBuffer()))))->getData());
-		} catch ($Throwable&) {
-			$var($Throwable, ex, $catch());
+		} catch ($Throwable& ex) {
 			$throwNew($InvalidDnDOperationException, $$str({"drag image creation problem: "_s, $(ex->getMessage())}));
 		}
 	}

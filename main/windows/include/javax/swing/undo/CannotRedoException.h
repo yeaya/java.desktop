@@ -15,8 +15,10 @@ public:
 	CannotRedoException();
 	void init$();
 	CannotRedoException(const CannotRedoException& e);
-	CannotRedoException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline CannotRedoException* operator ->() {
+		return (CannotRedoException*)throwing$;
+	}
 };
 
 		} // undo

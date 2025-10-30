@@ -15,8 +15,10 @@ public:
 	CannotUndoException();
 	void init$();
 	CannotUndoException(const CannotUndoException& e);
-	CannotUndoException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline CannotUndoException* operator ->() {
+		return (CannotUndoException*)throwing$;
+	}
 };
 
 		} // undo

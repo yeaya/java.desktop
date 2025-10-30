@@ -15,18 +15,6 @@
 #include <java/awt/Toolkit.h>
 #include <java/beans/PropertyChangeListener.h>
 #include <java/beans/PropertyChangeSupport.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef BOLD
@@ -260,9 +248,7 @@ bool FontEditor::action($Event* e, Object$* arg) {
 	try {
 		$var($Font, f, $new($Font, family, style, size));
 		changeFont(f);
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
-		$init($System);
+	} catch ($Exception& ex) {
 		$nc($System::err)->println($$str({"Couldn\'t create font "_s, family, "-"_s, $nc(this->styleNames)->get(style), "-"_s, $$str(size)}));
 	}
 	return (false);

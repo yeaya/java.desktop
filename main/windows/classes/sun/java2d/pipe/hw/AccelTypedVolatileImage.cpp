@@ -4,13 +4,7 @@
 #include <java/awt/Graphics2D.h>
 #include <java/awt/GraphicsConfiguration.h>
 #include <java/awt/ImageCapabilities.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/image/SunVolatileImage.h>
 #include <jcpp.h>
 

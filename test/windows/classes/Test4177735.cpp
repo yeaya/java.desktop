@@ -4,21 +4,12 @@
 #include <java/awt/Point.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/ActionListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
 #include <java/lang/InterruptedException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JColorChooser.h>
 #include <javax/swing/JDialog.h>
 #include <javax/swing/SwingUtilities.h>
@@ -115,8 +106,7 @@ $JDialog* Test4177735::show($JColorChooser* chooser) {
 	while (point == nullptr) {
 		try {
 			$assign(point, dialog->getLocationOnScreen());
-		} catch ($IllegalStateException&) {
-			$var($IllegalStateException, exception, $catch());
+		} catch ($IllegalStateException& exception) {
 			pause(Test4177735::DELAY);
 		}
 	}
@@ -127,8 +117,7 @@ void Test4177735::pause(int64_t delay) {
 	$init(Test4177735);
 	try {
 		$Thread::sleep(delay);
-	} catch ($InterruptedException&) {
-		$catch();
+	} catch ($InterruptedException& exception) {
 	}
 }
 

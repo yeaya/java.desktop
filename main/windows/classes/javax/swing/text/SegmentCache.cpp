@@ -1,14 +1,5 @@
 #include <javax/swing/text/SegmentCache.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Arrays.h>
@@ -71,7 +62,6 @@ $ClassInfo _SegmentCache_ClassInfo_ = {
 $Object* allocate$SegmentCache($Class* clazz) {
 	return $of($alloc(SegmentCache));
 }
-
 
 SegmentCache* SegmentCache::sharedCache = nullptr;
 

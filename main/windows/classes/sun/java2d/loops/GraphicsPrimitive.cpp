@@ -6,20 +6,8 @@
 #include <java/awt/image/BufferedImage.h>
 #include <java/io/FileOutputStream.h>
 #include <java/io/OutputStream.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/HashMap.h>
@@ -308,11 +296,9 @@ $PrintStream* GraphicsPrimitive::getTraceOutputFile() {
 			if (o != nullptr) {
 				$assignStatic(GraphicsPrimitive::traceout, $new($PrintStream, static_cast<$OutputStream*>(o)));
 			} else {
-				$init($System);
 				$assignStatic(GraphicsPrimitive::traceout, $System::err);
 			}
 		} else {
-			$init($System);
 			$assignStatic(GraphicsPrimitive::traceout, $System::err);
 		}
 	}
@@ -452,8 +438,7 @@ $String* GraphicsPrimitive::simplename($FieldArray* fields, Object$* o) {
 			if ($equals(o, $nc(f)->get(nullptr))) {
 				return f->getName();
 			}
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& e) {
 		}
 	}
 	return $str({"\""_s, $($nc($of(o))->toString()), "\""_s});
@@ -517,15 +502,12 @@ void clinit$GraphicsPrimitive($Class* class$) {
 					$assignStatic(GraphicsPrimitive::tracefile, tok->substring(4));
 				} else {
 					if (!tok->equalsIgnoreCase("help"_s)) {
-						$init($System);
 						$nc($System::err)->println($$str({"unrecognized token: "_s, tok}));
 					}
-					$init($System);
 					$nc($System::err)->println("usage: -Dsun.java2d.trace=[log[,timestamp]],[count],[out:<filename>],[help],[verbose]"_s);
 				}
 			}
 			if (verbose) {
-				$init($System);
 				$nc($System::err)->print("GraphicsPrimitive logging "_s);
 				if (((int32_t)(traceflags & (uint32_t)GraphicsPrimitive::TRACELOG)) != 0) {
 					$nc($System::err)->println("enabled"_s);

@@ -1,12 +1,5 @@
 #include <javax/swing/undo/AbstractUndoableEdit.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/UIManager.h>
 #include <javax/swing/undo/CannotRedoException.h>
 #include <javax/swing/undo/CannotUndoException.h>
@@ -84,9 +77,7 @@ void AbstractUndoableEdit::finalize() {
 	this->$UndoableEdit::finalize();
 }
 
-
 $String* AbstractUndoableEdit::UndoName = nullptr;
-
 $String* AbstractUndoableEdit::RedoName = nullptr;
 
 void AbstractUndoableEdit::init$() {

@@ -2,14 +2,6 @@
 
 #include <bug6735286.h>
 #include <java/awt/Component.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTable.h>
 #include <javax/swing/table/TableCellRenderer.h>
 #include <jcpp.h>
@@ -66,7 +58,6 @@ void bug6735286$1::init$() {
 
 void bug6735286$1::run() {
 	$useLocalCurrentObjectStackCache();
-	$load($Object);
 	$nc($($$new($JTable)->getDefaultRenderer($Object::class$)))->getTableCellRendererComponent(nullptr, "a value"_s, true, true, 0, 0);
 }
 

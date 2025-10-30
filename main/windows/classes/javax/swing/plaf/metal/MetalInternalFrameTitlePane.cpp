@@ -10,16 +10,6 @@
 #include <java/awt/LayoutManager.h>
 #include <java/awt/Rectangle.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/JButton.h>
@@ -358,7 +348,7 @@ void MetalInternalFrameTitlePane::installDefaults() {
 	this->paletteTitleHeight = $UIManager::getInt("InternalFrame.paletteTitleHeight"_s);
 	$set(this, paletteCloseIcon, $UIManager::getIcon("InternalFrame.paletteCloseIcon"_s));
 	this->wasClosable = $nc(this->frame)->isClosable();
-	$set(this, selectedForegroundKey, ($assignField(this, selectedBackgroundKey, nullptr)));
+	$set(this, selectedForegroundKey, ($set(this, selectedBackgroundKey, nullptr)));
 	if ($MetalLookAndFeel::usingOcean()) {
 		setOpaque(true);
 	}
@@ -620,13 +610,13 @@ void MetalInternalFrameTitlePane::updateOptionPaneState() {
 		{}
 	case $JOptionPane::PLAIN_MESSAGE:
 		{
-			$set(this, selectedBackgroundKey, ($assignField(this, selectedForegroundKey, ($assignField(this, selectedShadowKey, nullptr)))));
+			$set(this, selectedBackgroundKey, ($set(this, selectedForegroundKey, ($set(this, selectedShadowKey, nullptr)))));
 			closable = false;
 			break;
 		}
 	default:
 		{
-			$set(this, selectedBackgroundKey, ($assignField(this, selectedForegroundKey, ($assignField(this, selectedShadowKey, nullptr)))));
+			$set(this, selectedBackgroundKey, ($set(this, selectedForegroundKey, ($set(this, selectedShadowKey, nullptr)))));
 			break;
 		}
 	}

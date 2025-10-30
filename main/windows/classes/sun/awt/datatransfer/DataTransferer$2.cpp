@@ -2,19 +2,6 @@
 
 #include <java/awt/datatransfer/DataFlavor.h>
 #include <java/awt/datatransfer/Transferable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Map.h>
 #include <java/util/Stack.h>
 #include <sun/awt/datatransfer/DataTransferer.h>
@@ -107,8 +94,7 @@ void DataTransferer$2::run() {
 		if (flavor != nullptr) {
 			$assign(data, this->this$0->translateTransferable(this->val$contents, flavor, this->val$format));
 		}
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		e->printStackTrace();
 		$assign(data, nullptr);
 	}
@@ -118,8 +104,8 @@ void DataTransferer$2::run() {
 			$nc($(this->this$0->getToolkitThreadBlockedHandler()))->lock();
 			$nc(this->val$stack)->push(data);
 			$nc($(this->this$0->getToolkitThreadBlockedHandler()))->exit();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc($(this->this$0->getToolkitThreadBlockedHandler()))->unlock();
 			this->done = true;

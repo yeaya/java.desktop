@@ -16,19 +16,7 @@
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/image/BufferedImage.h>
 #include <java/awt/peer/ComponentPeer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/Arrays.h>
@@ -350,8 +338,7 @@ double SunGraphicsEnvironment::getScaleFactor($String* propertyName) {
 		}
 		double scale = $Double::parseDouble(scaleFactor);
 		return scale <= 0 ? (double)-1 : scale / units;
-	} catch ($NumberFormatException&) {
-		$var($NumberFormatException, ignored, $catch());
+	} catch ($NumberFormatException& ignored) {
 		return (double)-1;
 	}
 	$shouldNotReachHere();

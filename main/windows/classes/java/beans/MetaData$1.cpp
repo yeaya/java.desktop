@@ -1,22 +1,11 @@
 #include <java/beans/MetaData$1.h>
 
 #include <java/beans/MetaData.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchFieldException.h>
 #include <java/lang/ReflectiveOperationException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $MetaData = ::java::beans::MetaData;
@@ -85,17 +74,14 @@ void MetaData$1::init$($String* val$className, $String* val$fieldName) {
 }
 
 $Object* MetaData$1::run() {
-	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$var($Field, field, $Class::forName(this->val$className)->getDeclaredField(this->val$fieldName));
 		$nc(field)->setAccessible(true);
 		return $of(field);
-	} catch ($ClassNotFoundException&) {
-		$var($ClassNotFoundException, exception, $catch());
+	} catch ($ClassNotFoundException& exception) {
 		$throwNew($IllegalStateException, "Could not find class"_s, exception);
-	} catch ($NoSuchFieldException&) {
-		$var($NoSuchFieldException, exception, $catch());
+	} catch ($NoSuchFieldException& exception) {
 		$throwNew($IllegalStateException, "Could not find field"_s, exception);
 	}
 	$shouldNotReachHere();

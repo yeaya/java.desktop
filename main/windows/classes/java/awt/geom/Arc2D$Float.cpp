@@ -6,17 +6,6 @@
 #include <java/io/InvalidObjectException.h>
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef OPEN
@@ -206,12 +195,10 @@ void Arc2D$Float::writeObject($ObjectOutputStream* s) {
 }
 
 void Arc2D$Float::readObject($ObjectInputStream* s) {
-	$useLocalCurrentObjectStackCache();
 	$nc(s)->defaultReadObject();
 	try {
 		setArcType(s->readByte());
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, iae, $catch());
+	} catch ($IllegalArgumentException& iae) {
 		$throwNew($InvalidObjectException, $(iae->getMessage()));
 	}
 }

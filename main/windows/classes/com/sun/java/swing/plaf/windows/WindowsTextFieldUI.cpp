@@ -2,13 +2,6 @@
 
 #include <com/sun/java/swing/plaf/windows/WindowsTextFieldUI$WindowsFieldCaret.h>
 #include <java/awt/Graphics.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/plaf/ComponentUI.h>
 #include <javax/swing/plaf/TextUI.h>

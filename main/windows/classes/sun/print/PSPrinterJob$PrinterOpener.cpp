@@ -6,15 +6,6 @@
 #include <java/io/FileOutputStream.h>
 #include <java/io/IOException.h>
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/file/Files.h>
 #include <java/nio/file/Path.h>
 #include <java/nio/file/attribute/FileAttribute.h>
@@ -90,8 +81,7 @@ $Object* PSPrinterJob$PrinterOpener::run() {
 		$nc(this->this$0->spoolFile)->deleteOnExit();
 		$set(this, result, $new($FileOutputStream, this->this$0->spoolFile));
 		return $of(this->result);
-	} catch ($IOException&) {
-		$var($IOException, ex, $catch());
+	} catch ($IOException& ex) {
 		$set(this, pex, $new($PrinterIOException, ex));
 	}
 	return $of(nullptr);

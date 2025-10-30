@@ -34,29 +34,14 @@
 #include <java/awt/event/PaintEvent.h>
 #include <java/awt/event/WindowEvent.h>
 #include <java/awt/peer/ComponentPeer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/Long.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessControlContext.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
@@ -356,8 +341,8 @@ void EventQueue::postEventPrivate($AWTEvent* theEvent) {
 				}
 			}
 			postEvent(theEvent, getPriority(theEvent));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} $finally: {
 			$nc(this->pushPopLock)->unlock();
 		}
@@ -401,7 +386,7 @@ void EventQueue::postEvent($AWTEvent* theEvent, int32_t priority) {
 	bool notifyID = ($nc(theEvent)->getID() == this->waitForID);
 	if ($nc($nc(this->queues)->get(priority))->head == nullptr) {
 		bool shouldNotify = noEvents();
-		$set($nc($nc(this->queues)->get(priority)), head, ($assignField($nc($nc(this->queues)->get(priority)), tail, newItem)));
+		$set($nc($nc(this->queues)->get(priority)), head, ($set($nc($nc(this->queues)->get(priority)), tail, newItem)));
 		if (shouldNotify) {
 			if (!$equals(theEvent->getSource(), $AWTAutoShutdown::getInstance())) {
 				$nc($($AWTAutoShutdown::getInstance()))->notifyThreadBusy(this->dispatchThread);
@@ -605,8 +590,8 @@ $AWTEvent* EventQueue::getNextEvent() {
 				}
 				$nc($($AWTAutoShutdown::getInstance()))->notifyThreadFree(this->dispatchThread);
 				$nc(this->pushPopCond)->await();
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} $finally: {
 				$nc(this->pushPopLock)->unlock();
 			}
@@ -672,8 +657,8 @@ $AWTEvent* EventQueue::getNextEvent(int32_t id) {
 				this->waitForID = id;
 				$nc(this->pushPopCond)->await();
 				this->waitForID = 0;
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} $finally: {
 				$nc(this->pushPopLock)->unlock();
 			}
@@ -703,8 +688,8 @@ $AWTEvent* EventQueue::peekEvent() {
 					goto $finally;
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->pushPopLock)->unlock();
 		}
@@ -736,8 +721,8 @@ $AWTEvent* EventQueue::peekEvent(int32_t id) {
 					}
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->pushPopLock)->unlock();
 		}
@@ -810,8 +795,8 @@ int64_t EventQueue::getMostRecentEventTimeImpl() {
 			var$2 = ($equals($Thread::currentThread(), this->dispatchThread)) ? this->mostRecentEventTime : $System::currentTimeMillis();
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->pushPopLock)->unlock();
 		}
@@ -835,8 +820,8 @@ int64_t EventQueue::getMostRecentEventTimeEx() {
 			var$2 = this->mostRecentEventTime;
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->pushPopLock)->unlock();
 		}
@@ -871,8 +856,8 @@ $AWTEvent* EventQueue::getCurrentEventImpl() {
 			$assign(var$2, nullptr);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->pushPopLock)->unlock();
 		}
@@ -910,8 +895,7 @@ void EventQueue::push(EventQueue* newEventQueue) {
 			while ($nc(topQueue)->peekEvent() != nullptr) {
 				try {
 					$nc(newEventQueue)->postEventPrivate($(topQueue->getNextEventPrivate()));
-				} catch ($InterruptedException&) {
-					$var($InterruptedException, ie, $catch());
+				} catch ($InterruptedException& ie) {
 					if ($nc($(getEventLog()))->isLoggable($PlatformLogger$Level::FINE)) {
 						$nc($(getEventLog()))->fine("Interrupted push"_s, static_cast<$Throwable*>(ie));
 					}
@@ -927,8 +911,8 @@ void EventQueue::push(EventQueue* newEventQueue) {
 				$nc(this->appContext)->put($AppContext::EVENT_QUEUE_KEY, newEventQueue);
 			}
 			$nc(this->pushPopCond)->signalAll();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->pushPopLock)->unlock();
 		}
@@ -961,8 +945,7 @@ void EventQueue::pop() {
 			while (topQueue->peekEvent() != nullptr) {
 				try {
 					prevQueue->postEventPrivate($(topQueue->getNextEventPrivate()));
-				} catch ($InterruptedException&) {
-					$var($InterruptedException, ie, $catch());
+				} catch ($InterruptedException& ie) {
 					if ($nc($(getEventLog()))->isLoggable($PlatformLogger$Level::FINE)) {
 						$nc($(getEventLog()))->fine("Interrupted pop"_s, static_cast<$Throwable*>(ie));
 					}
@@ -978,8 +961,8 @@ void EventQueue::pop() {
 			}
 			topQueue->postEventPrivate($$new($InvocationEvent, topQueue, EventQueue::dummyRunnable));
 			$nc(this->pushPopCond)->signalAll();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->pushPopLock)->unlock();
 		}
@@ -1017,8 +1000,8 @@ $SecondaryLoop* EventQueue::createSecondaryLoop($Conditional* cond, $EventFilter
 			$assign(var$2, $new($WaitDispatchSupport, this->dispatchThread, cond, filter, interval));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->pushPopLock)->unlock();
 		}
@@ -1060,8 +1043,8 @@ bool EventQueue::isDispatchThreadImpl() {
 			var$2 = ($equals($Thread::currentThread(), $nc(eq)->dispatchThread));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->pushPopLock)->unlock();
 		}
@@ -1087,8 +1070,8 @@ void EventQueue::initDispatchThread() {
 				$set(this, dispatchThread, $cast($EventDispatchThread, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($EventQueue$6, this)))));
 				$nc(this->dispatchThread)->start();
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} /*finally*/ {
 			$nc(this->pushPopLock)->unlock();
 		}
@@ -1112,8 +1095,8 @@ void EventQueue::detachDispatchThread($EventDispatchThread* edt) {
 			if (peekEvent() != nullptr) {
 				initDispatchThread();
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->pushPopLock)->unlock();
 		}
@@ -1134,8 +1117,8 @@ $EventDispatchThread* EventQueue::getDispatchThread() {
 			$assign(var$2, this->dispatchThread);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->pushPopLock)->unlock();
 		}
@@ -1186,8 +1169,8 @@ void EventQueue::removeSourceEvents(Object$* source, bool removeAllEvents) {
 				}
 				$set($nc($nc(this->queues)->get(i)), tail, prev);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->pushPopLock)->unlock();
 		}
@@ -1208,8 +1191,8 @@ int64_t EventQueue::getMostRecentKeyEventTime() {
 				var$2 = this->mostRecentKeyEventTime;
 				return$1 = true;
 				goto $finally;
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} $finally: {
 				$nc(this->pushPopLock)->unlock();
 			}
@@ -1259,8 +1242,8 @@ void EventQueue::setCurrentEventAndMostRecentTimeImpl($AWTEvent* e) {
 				mostRecentEventTime2 = $nc(ie)->getWhen();
 			}
 			this->mostRecentEventTime = $Math::max(this->mostRecentEventTime, mostRecentEventTime2);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} $finally: {
 			$nc(this->pushPopLock)->unlock();
 		}
@@ -1318,8 +1301,8 @@ void EventQueue::wakeup(bool isShutdown) {
 			} else if (!isShutdown) {
 				initDispatchThread();
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->pushPopLock)->unlock();
 		}

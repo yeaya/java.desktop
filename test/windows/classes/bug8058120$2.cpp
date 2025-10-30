@@ -1,17 +1,6 @@
 #include <bug8058120$2.h>
 
 #include <bug8058120.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/Element.h>
 #include <javax/swing/text/html/HTMLDocument.h>
 #include <jcpp.h>
@@ -68,12 +57,10 @@ void bug8058120$2::init$() {
 }
 
 void bug8058120$2::run() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$init($bug8058120);
 		$nc($bug8058120::document)->insertAfterEnd($($nc($bug8058120::document)->getElement("ab"_s)), "c"_s);
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(ex));
 	}
 }

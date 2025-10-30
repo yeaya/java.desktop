@@ -18,26 +18,14 @@
 #include <java/beans/MetaData$javax_swing_border_MatteBorder_PersistenceDelegate.h>
 #include <java/beans/PersistenceDelegate.h>
 #include <java/beans/XMLEncoder.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
 #include <java/lang/Enum.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/ReflectiveOperationException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/annotation/Annotation.h>
 #include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <java/lang/reflect/Proxy.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
@@ -228,8 +216,7 @@ $PersistenceDelegate* MetaData::getPersistenceDelegate($Class* type) {
 				}
 				return MetaData::proxyPersistenceDelegate;
 			}
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& e) {
 		}
 		$var($String, typeName, $nc(type)->getName());
 		$var($PersistenceDelegate, pd, $cast($PersistenceDelegate, getBeanAttribute(type, "persistenceDelegate"_s)));
@@ -244,16 +231,13 @@ $PersistenceDelegate* MetaData::getPersistenceDelegate($Class* type) {
 				$Class* c = $Class::forName($$str({"java.beans.MetaData$"_s, $($nc(name)->replace(u'.', u'_')), "_PersistenceDelegate"_s}));
 				$assign(pd, $cast($PersistenceDelegate, $nc(c)->newInstance()));
 				$nc(MetaData::internalPersistenceDelegates)->put(typeName, pd);
-			} catch ($ClassNotFoundException&) {
-				$var($ClassNotFoundException, e, $catch());
+			} catch ($ClassNotFoundException& e) {
 				$var($StringArray, properties, getConstructorProperties(type));
 				if (properties != nullptr) {
 					$assign(pd, $new($DefaultPersistenceDelegate, properties));
 					$nc(MetaData::internalPersistenceDelegates)->put(typeName, pd);
 				}
-			} catch ($Exception&) {
-				$var($Exception, e, $catch());
-				$init($System);
+			} catch ($Exception& e) {
 				$nc($System::err)->println($$str({"Internal error: "_s, e}));
 			}
 		}
@@ -320,8 +304,7 @@ $Object* MetaData::getBeanAttribute($Class* type, $String* attribute) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		return $of($nc($($nc($($Introspector::getBeanInfo(type)))->getBeanDescriptor()))->getValue(attribute));
-	} catch ($IntrospectionException&) {
-		$var($IntrospectionException, exception, $catch());
+	} catch ($IntrospectionException& exception) {
 		return $of(nullptr);
 	}
 	$shouldNotReachHere();
@@ -341,8 +324,7 @@ $Object* MetaData::getPrivateFieldValue(Object$* instance, $String* name) {
 	}
 	try {
 		return $of($nc(field)->get(instance));
-	} catch ($IllegalAccessException&) {
-		$var($IllegalAccessException, exception, $catch());
+	} catch ($IllegalAccessException& exception) {
 		$throwNew($IllegalStateException, "Could not get value of the field"_s, exception);
 	}
 	$shouldNotReachHere();

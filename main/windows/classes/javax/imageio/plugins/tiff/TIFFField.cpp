@@ -1,25 +1,8 @@
 #include <javax/imageio/plugins/tiff/TIFFField.h>
 
 #include <com/sun/imageio/plugins/tiff/TIFFFieldNode.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Cloneable.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/StringTokenizer.h>
 #include <javax/imageio/metadata/IIOMetadataNode.h>
 #include <javax/imageio/plugins/tiff/TIFFDirectory.h>
@@ -323,8 +306,7 @@ TIFFField* TIFFField::createFromMetadataNode($TIFFTagSet* tagSet, $Node* node) {
 	$var(TIFFField, field, nullptr);
 	try {
 		$assign(field, $new(TIFFField, tag, type, count, data));
-	} catch ($NullPointerException&) {
-		$var($NullPointerException, npe, $catch());
+	} catch ($NullPointerException& npe) {
 		$throwNew($IllegalArgumentException, static_cast<$Throwable*>(npe));
 	}
 	return field;

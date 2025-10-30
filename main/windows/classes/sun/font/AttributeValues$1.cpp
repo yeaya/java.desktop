@@ -1,15 +1,6 @@
 #include <sun/font/AttributeValues$1.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/AttributeValues.h>
 #include <sun/font/EAttribute.h>
 #include <jcpp.h>
@@ -94,118 +85,95 @@ void clinit$AttributeValues$1($Class* class$) {
 	{
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::EFAMILY->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::EWEIGHT->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::EWIDTH->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::EPOSTURE->ordinal(), 4);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::ESIZE->ordinal(), 5);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::ETRANSFORM->ordinal(), 6);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::ESUPERSCRIPT->ordinal(), 7);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::EFONT->ordinal(), 8);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::ECHAR_REPLACEMENT->ordinal(), 9);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::EFOREGROUND->ordinal(), 10);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::EBACKGROUND->ordinal(), 11);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::EUNDERLINE->ordinal(), 12);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::ESTRIKETHROUGH->ordinal(), 13);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::ERUN_DIRECTION->ordinal(), 14);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::EBIDI_EMBEDDING->ordinal(), 15);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::EJUSTIFICATION->ordinal(), 16);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::EINPUT_METHOD_HIGHLIGHT->ordinal(), 17);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::EINPUT_METHOD_UNDERLINE->ordinal(), 18);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::ESWAP_COLORS->ordinal(), 19);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::ENUMERIC_SHAPING->ordinal(), 20);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::EKERNING->ordinal(), 21);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::ELIGATURES->ordinal(), 22);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AttributeValues$1::$SwitchMap$sun$font$EAttribute)->set($EAttribute::ETRACKING->ordinal(), 23);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

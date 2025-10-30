@@ -3,15 +3,7 @@
 #include <com/sun/beans/TypeResolver.h>
 #include <com/sun/beans/finder/MethodFinder.h>
 #include <com/sun/beans/introspect/MethodInfo$MethodOrder.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchMethodException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <java/lang/reflect/Modifier.h>
 #include <java/lang/reflect/Type.h>
@@ -136,8 +128,7 @@ $List* MethodInfo::get($Class* type) {
 								if (!$nc($nc(method)->getDeclaringClass())->isInterface()) {
 									$assign(method, nullptr);
 								}
-							} catch ($NoSuchMethodException&) {
-								$catch();
+							} catch ($NoSuchMethodException& exception) {
 							}
 						}
 						if (method != nullptr) {

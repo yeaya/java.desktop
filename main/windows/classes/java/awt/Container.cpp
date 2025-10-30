@@ -59,36 +59,18 @@
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/ObjectStreamField.h>
 #include <java/io/OptionalDataException.h>
-#include <java/io/PrintStream.h>
 #include <java/io/PrintWriter.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/AbstractList.h>
@@ -601,10 +583,8 @@ $PlatformLogger* Container::log = nullptr;
 $PlatformLogger* Container::eventLog = nullptr;
 $ComponentArray* Container::EMPTY_ARRAY = nullptr;
 $PlatformLogger* Container::mixingLog = nullptr;
-
 $ObjectStreamFieldArray* Container::serialPersistentFields = nullptr;
 bool Container::isJavaAwtSmartInvalidate = false;
-
 bool Container::descendUnconditionallyWhenValidating = false;
 
 void Container::initIDs() {
@@ -641,8 +621,7 @@ $Component* Container::getComponent(int32_t n) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		return $cast($Component, $nc(this->component)->get(n));
-	} catch ($IndexOutOfBoundsException&) {
-		$var($IndexOutOfBoundsException, z, $catch());
+	} catch ($IndexOutOfBoundsException& z) {
 		$throwNew($ArrayIndexOutOfBoundsException, $$str({"No such child: "_s, $$str(n)}));
 	}
 	$shouldNotReachHere();
@@ -1549,8 +1528,8 @@ void Container::print($Graphics* g) {
 					this->printing = true;
 				}
 				$Component::print(g);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$synchronized(getObjectLock()) {
 					$nc(this->printingThreads)->remove(t);
@@ -1979,8 +1958,7 @@ void Container::startLWModal() {
 			while ($nc(nativeContainer)->modalComp != nullptr) {
 				try {
 					$nc($of($(getTreeLock())))->wait();
-				} catch ($InterruptedException&) {
-					$var($InterruptedException, e, $catch());
+				} catch ($InterruptedException& e) {
 					break;
 				}
 			}
@@ -2328,8 +2306,7 @@ void Container::readObject($ObjectInputStream* s) {
 		if ($instanceOf($FocusTraversalPolicy, policy)) {
 			$set(this, focusTraversalPolicy, $cast($FocusTraversalPolicy, policy));
 		}
-	} catch ($OptionalDataException&) {
-		$var($OptionalDataException, e, $catch());
+	} catch ($OptionalDataException& e) {
 		if (!e->eof) {
 			$throw(e);
 		}
@@ -2782,12 +2759,12 @@ void clinit$Container($Class* class$) {
 	$assignStatic(Container::eventLog, $PlatformLogger::getLogger("java.awt.event.Container"_s));
 	$assignStatic(Container::EMPTY_ARRAY, $new($ComponentArray, 0));
 	$assignStatic(Container::mixingLog, $PlatformLogger::getLogger("java.awt.mixing.Container"_s));
-		$init($Integer);
-		$load($ComponentArray);
-		$load($LayoutManager);
-		$load($LightweightDispatcher);
-		$load($Dimension);
-		$init($Boolean);
+	$init($Integer);
+	$load($ComponentArray);
+	$load($LayoutManager);
+	$load($LightweightDispatcher);
+	$load($Dimension);
+	$init($Boolean);
 	$assignStatic(Container::serialPersistentFields, $new($ObjectStreamFieldArray, {
 		$$new($ObjectStreamField, "ncomponents"_s, $Integer::TYPE),
 		$$new($ObjectStreamField, "component"_s, $getClass($ComponentArray)),

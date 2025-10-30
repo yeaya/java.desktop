@@ -9,32 +9,18 @@
 #include <java/io/Serializable.h>
 #include <java/io/StringWriter.h>
 #include <java/io/Writer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
 #include <java/lang/ClassNotFoundException.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Module.h>
 #include <java/lang/NoSuchMethodException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
@@ -281,8 +267,7 @@ $Object* UIDefaults::getFromHashtable(Object$* key) {
 			do {
 				try {
 					$of(this)->wait();
-				} catch ($InterruptedException&) {
-					$catch();
+				} catch ($InterruptedException& e) {
 				}
 				$assign(value, $Hashtable::get(key));
 			} while ($equals(value, UIDefaults::PENDING));
@@ -298,8 +283,8 @@ $Object* UIDefaults::getFromHashtable(Object$* key) {
 			$var($Throwable, var$0, nullptr);
 			try {
 				$assign(value, $nc(($cast($UIDefaults$LazyValue, value)))->createValue(this));
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$synchronized(this) {
 					if (value == nullptr) {
@@ -366,8 +351,7 @@ $Map* UIDefaults::getResourceCache($Locale* l) {
 						values->put(key, value);
 					}
 				}
-			} catch ($MissingResourceException&) {
-				$catch();
+			} catch ($MissingResourceException& mre) {
 			}
 		}
 		$nc(this->resourceCache)->put(l, values);
@@ -499,7 +483,6 @@ $Dimension* UIDefaults::getDimension(Object$* key, $Locale* l) {
 }
 
 $Class* UIDefaults::getUIClass($String* uiClassID, $ClassLoader* uiClassLoader) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$var($String, className, $cast($String, get(uiClassID)));
 		if (className != nullptr) {
@@ -518,11 +501,9 @@ $Class* UIDefaults::getUIClass($String* uiClassID, $ClassLoader* uiClassLoader) 
 			$Class* tmp = cls;
 			return tmp;
 		}
-	} catch ($ClassNotFoundException&) {
-		$var($Exception, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		return nullptr;
-	} catch ($ClassCastException&) {
-		$var($Exception, e, $catch());
+	} catch ($ClassCastException& e) {
 		return nullptr;
 	}
 	return nullptr;
@@ -535,8 +516,7 @@ $Class* UIDefaults::getUIClass($String* uiClassID) {
 void UIDefaults::getUIError($String* msg) {
 	try {
 		$throwNew($Error, msg);
-	} catch ($Throwable&) {
-		$var($Throwable, e, $catch());
+	} catch ($Throwable& e) {
 		e->printStackTrace();
 	}
 }
@@ -563,11 +543,9 @@ $ComponentUI* UIDefaults::getUI($JComponent* target) {
 			} else {
 				$assign(uiObject, $MethodUtil::invoke(m, nullptr, $$new($ObjectArray, {$of(target)})));
 			}
-		} catch ($NoSuchMethodException&) {
-			$var($NoSuchMethodException, e, $catch());
+		} catch ($NoSuchMethodException& e) {
 			getUIError($$str({"static createUI() method not found in "_s, uiClass}));
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$var($StringWriter, w, $new($StringWriter));
 			$var($PrintWriter, pw, $new($PrintWriter, static_cast<$Writer*>(w)));
 			e->printStackTrace(pw);

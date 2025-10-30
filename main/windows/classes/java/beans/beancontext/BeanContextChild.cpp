@@ -3,12 +3,6 @@
 #include <java/beans/PropertyChangeListener.h>
 #include <java/beans/VetoableChangeListener.h>
 #include <java/beans/beancontext/BeanContext.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;

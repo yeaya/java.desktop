@@ -2,16 +2,7 @@
 
 #include <java/awt/event/FocusEvent$Cause.h>
 #include <java/awt/event/FocusEvent.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JToggleButton.h>
 #include <jcpp.h>
 
@@ -79,33 +70,27 @@ void clinit$JToggleButton$1($Class* class$) {
 	{
 		try {
 			$nc(JToggleButton$1::$SwitchMap$java$awt$event$FocusEvent$Cause)->set($FocusEvent$Cause::ACTIVATION->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(JToggleButton$1::$SwitchMap$java$awt$event$FocusEvent$Cause)->set($FocusEvent$Cause::TRAVERSAL->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(JToggleButton$1::$SwitchMap$java$awt$event$FocusEvent$Cause)->set($FocusEvent$Cause::TRAVERSAL_UP->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(JToggleButton$1::$SwitchMap$java$awt$event$FocusEvent$Cause)->set($FocusEvent$Cause::TRAVERSAL_DOWN->ordinal(), 4);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(JToggleButton$1::$SwitchMap$java$awt$event$FocusEvent$Cause)->set($FocusEvent$Cause::TRAVERSAL_FORWARD->ordinal(), 5);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(JToggleButton$1::$SwitchMap$java$awt$event$FocusEvent$Cause)->set($FocusEvent$Cause::TRAVERSAL_BACKWARD->ordinal(), 6);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

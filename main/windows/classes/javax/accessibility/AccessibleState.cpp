@@ -1,12 +1,5 @@
 #include <javax/accessibility/AccessibleState.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleBundle.h>
 #include <jcpp.h>
 
@@ -99,63 +92,34 @@ $Object* allocate$AccessibleState($Class* clazz) {
 	return $of($alloc(AccessibleState));
 }
 
-
 AccessibleState* AccessibleState::ACTIVE = nullptr;
-
 AccessibleState* AccessibleState::PRESSED = nullptr;
-
 AccessibleState* AccessibleState::ARMED = nullptr;
-
 AccessibleState* AccessibleState::BUSY = nullptr;
-
 AccessibleState* AccessibleState::CHECKED = nullptr;
-
 AccessibleState* AccessibleState::EDITABLE = nullptr;
-
 AccessibleState* AccessibleState::EXPANDABLE = nullptr;
-
 AccessibleState* AccessibleState::COLLAPSED = nullptr;
-
 AccessibleState* AccessibleState::EXPANDED = nullptr;
-
 AccessibleState* AccessibleState::ENABLED = nullptr;
-
 AccessibleState* AccessibleState::FOCUSABLE = nullptr;
-
 AccessibleState* AccessibleState::FOCUSED = nullptr;
-
 AccessibleState* AccessibleState::ICONIFIED = nullptr;
-
 AccessibleState* AccessibleState::MODAL = nullptr;
-
 AccessibleState* AccessibleState::OPAQUE = nullptr;
-
 AccessibleState* AccessibleState::RESIZABLE = nullptr;
-
 AccessibleState* AccessibleState::MULTISELECTABLE = nullptr;
-
 AccessibleState* AccessibleState::SELECTABLE = nullptr;
-
 AccessibleState* AccessibleState::SELECTED = nullptr;
-
 AccessibleState* AccessibleState::SHOWING = nullptr;
-
 AccessibleState* AccessibleState::VISIBLE = nullptr;
-
 AccessibleState* AccessibleState::VERTICAL = nullptr;
-
 AccessibleState* AccessibleState::HORIZONTAL = nullptr;
-
 AccessibleState* AccessibleState::SINGLE_LINE = nullptr;
-
 AccessibleState* AccessibleState::MULTI_LINE = nullptr;
-
 AccessibleState* AccessibleState::TRANSIENT = nullptr;
-
 AccessibleState* AccessibleState::MANAGES_DESCENDANTS = nullptr;
-
 AccessibleState* AccessibleState::INDETERMINATE = nullptr;
-
 AccessibleState* AccessibleState::TRUNCATED = nullptr;
 
 void AccessibleState::init$($String* key) {

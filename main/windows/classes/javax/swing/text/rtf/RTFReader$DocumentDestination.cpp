@@ -1,16 +1,6 @@
 #include <javax/swing/text/rtf/RTFReader$DocumentDestination.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/AttributeSet.h>
 #include <javax/swing/text/BadLocationException.h>
 #include <javax/swing/text/Document.h>
@@ -91,20 +81,17 @@ void RTFReader$DocumentDestination::deliverText($String* text, $AttributeSet* ch
 		int32_t var$0 = $nc(this->this$0->target)->getLength();
 		$var($String, var$1, text);
 		$nc(this->this$0->target)->insertString(var$0, var$1, $(currentTextAttributes()));
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, ble, $catch());
+	} catch ($BadLocationException& ble) {
 		$throwNew($InternalError, $(ble->getMessage()), ble);
 	}
 }
 
 void RTFReader$DocumentDestination::finishParagraph($AttributeSet* pgfAttributes, $AttributeSet* chrAttributes) {
-	$useLocalCurrentObjectStackCache();
 	int32_t pgfEndPosition = $nc(this->this$0->target)->getLength();
 	try {
 		$nc(this->this$0->target)->insertString(pgfEndPosition, "\n"_s, chrAttributes);
 		$nc(this->this$0->target)->setParagraphAttributes(pgfEndPosition, 1, pgfAttributes, true);
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, ble, $catch());
+	} catch ($BadLocationException& ble) {
 		$throwNew($InternalError, $(ble->getMessage()), ble);
 	}
 }

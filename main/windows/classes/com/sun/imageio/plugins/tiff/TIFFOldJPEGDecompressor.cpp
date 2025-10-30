@@ -8,16 +8,6 @@
 #include <java/io/ByteArrayInputStream.h>
 #include <java/io/ByteArrayOutputStream.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/IIOException.h>
 #include <javax/imageio/ImageReadParam.h>
 #include <javax/imageio/ImageReader.h>

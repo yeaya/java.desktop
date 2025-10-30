@@ -1,17 +1,6 @@
 #include <javax/print/PrintServiceLookup$1.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Iterator.h>
 #include <java/util/ServiceConfigurationError.h>
@@ -84,8 +73,7 @@ $Object* PrintServiceLookup$1::run() {
 	while ($nc(iterator)->hasNext()) {
 		try {
 			$nc(los)->add($cast($PrintServiceLookup, $(iterator->next())));
-		} catch ($ServiceConfigurationError&) {
-			$var($ServiceConfigurationError, err, $catch());
+		} catch ($ServiceConfigurationError& err) {
 			if ($System::getSecurityManager() != nullptr) {
 				err->printStackTrace();
 			} else {

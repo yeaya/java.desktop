@@ -14,19 +14,7 @@
 #include <java/awt/image/Raster.h>
 #include <java/awt/image/RasterOp.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <sun/awt/image/ImagingLib$1.h>
@@ -278,7 +266,6 @@ $BufferedImage* ImagingLib::filter($BufferedImageOp* op, $BufferedImage* src, $B
 	$useLocalCurrentObjectStackCache();
 	$var($BufferedImage, dst, dst$renamed);
 	if (ImagingLib::verbose) {
-		$init($System);
 		$nc($System::out)->println($$str({"in filter and op is "_s, op, "bufimage is "_s, src, " and "_s, dst}));
 	}
 	if (ImagingLib::useLib == false) {
@@ -354,23 +341,17 @@ void clinit$ImagingLib($Class* class$) {
 		ImagingLib::useLib = $nc(($cast($Boolean, $($AccessController::doPrivileged(doMlibInitialization)))))->booleanValue();
 		try {
 			$nc(ImagingLib::nativeOpClass)->set(ImagingLib::LOOKUP_OP, $Class::forName("java.awt.image.LookupOp"_s));
-		} catch ($ClassNotFoundException&) {
-			$var($ClassNotFoundException, e, $catch());
-			$init($System);
+		} catch ($ClassNotFoundException& e) {
 			$nc($System::err)->println($$str({"Could not find class: "_s, e}));
 		}
 		try {
 			$nc(ImagingLib::nativeOpClass)->set(ImagingLib::AFFINE_OP, $Class::forName("java.awt.image.AffineTransformOp"_s));
-		} catch ($ClassNotFoundException&) {
-			$var($ClassNotFoundException, e, $catch());
-			$init($System);
+		} catch ($ClassNotFoundException& e) {
 			$nc($System::err)->println($$str({"Could not find class: "_s, e}));
 		}
 		try {
 			$nc(ImagingLib::nativeOpClass)->set(ImagingLib::CONVOLVE_OP, $Class::forName("java.awt.image.ConvolveOp"_s));
-		} catch ($ClassNotFoundException&) {
-			$var($ClassNotFoundException, e, $catch());
-			$init($System);
+		} catch ($ClassNotFoundException& e) {
 			$nc($System::err)->println($$str({"Could not find class: "_s, e}));
 		}
 	}

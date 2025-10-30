@@ -9,15 +9,7 @@
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/geom/Path2D$Double.h>
 #include <java/awt/geom/Path2D.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/ButtonModel.h>
 #include <javax/swing/JButton.h>

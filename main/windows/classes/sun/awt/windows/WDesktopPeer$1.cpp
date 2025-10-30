@@ -1,16 +1,7 @@
 #include <sun/awt/windows/WDesktopPeer$1.h>
 
 #include <java/awt/Desktop$Action.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/windows/WDesktopPeer.h>
 #include <jcpp.h>
 
@@ -81,48 +72,39 @@ void clinit$WDesktopPeer$1($Class* class$) {
 	{
 		try {
 			$nc(WDesktopPeer$1::$SwitchMap$java$awt$Desktop$Action)->set($Desktop$Action::OPEN->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WDesktopPeer$1::$SwitchMap$java$awt$Desktop$Action)->set($Desktop$Action::EDIT->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WDesktopPeer$1::$SwitchMap$java$awt$Desktop$Action)->set($Desktop$Action::PRINT->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WDesktopPeer$1::$SwitchMap$java$awt$Desktop$Action)->set($Desktop$Action::MAIL->ordinal(), 4);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WDesktopPeer$1::$SwitchMap$java$awt$Desktop$Action)->set($Desktop$Action::BROWSE->ordinal(), 5);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WDesktopPeer$1::$SwitchMap$java$awt$Desktop$Action)->set($Desktop$Action::MOVE_TO_TRASH->ordinal(), 6);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WDesktopPeer$1::$SwitchMap$java$awt$Desktop$Action)->set($Desktop$Action::APP_SUDDEN_TERMINATION->ordinal(), 7);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WDesktopPeer$1::$SwitchMap$java$awt$Desktop$Action)->set($Desktop$Action::APP_EVENT_SYSTEM_SLEEP->ordinal(), 8);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(WDesktopPeer$1::$SwitchMap$java$awt$Desktop$Action)->set($Desktop$Action::APP_EVENT_USER_SESSION->ordinal(), 9);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

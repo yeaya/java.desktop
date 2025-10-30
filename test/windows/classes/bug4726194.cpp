@@ -3,33 +3,18 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/awt/Font.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
 #include <java/lang/InstantiationException.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/ReflectiveOperationException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Arrays.h>
@@ -239,21 +224,15 @@ void bug4726194::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
 	$init(bug4726194);
 	$useLocalCurrentObjectStackCache();
 	try {
-		$init($System);
 		$nc($System::out)->println($$str({"LookAndFeel: "_s, $($nc(laf)->getClassName())}));
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($UnsupportedLookAndFeelException, ignored, $catch());
-		$init($System);
+	} catch ($UnsupportedLookAndFeelException& ignored) {
 		$nc($System::out)->println($$str({"Unsupported LookAndFeel: "_s, $($nc(laf)->getClassName())}));
-	} catch ($ClassNotFoundException&) {
-		$var($ReflectiveOperationException, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($InstantiationException&) {
-		$var($ReflectiveOperationException, e, $catch());
+	} catch ($InstantiationException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($IllegalAccessException&) {
-		$var($ReflectiveOperationException, e, $catch());
+	} catch ($IllegalAccessException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }
@@ -267,7 +246,6 @@ void bug4726194::test(int32_t level, bool horizontal) {
 	$var($JTextField, tf, $new($JTextField, ""_s));
 	tf->setBorder($($BorderFactory::createEmptyBorder()));
 	tf->setFont($$new($Font, "Dialog"_s, $Font::PLAIN, 6));
-	$init($System);
 	$nc($System::out)->print("\t\t"_s);
 	for (int32_t j = 0; j < $nc(constraints)->length; ++j) {
 		$var($String, constraint, constraints->get(j));
@@ -305,7 +283,7 @@ void bug4726194::test(int32_t level, bool horizontal) {
 			}
 		}
 		if (horizontal) {
-				$init($SpringLayout);
+			$init($SpringLayout);
 			$var($ints, a1, getValues(c, $$new($StringArray, {
 				$SpringLayout::WEST,
 				$SpringLayout::WIDTH,
@@ -323,7 +301,7 @@ void bug4726194::test(int32_t level, bool horizontal) {
 				$throwNew($RuntimeException, "WEST + WIDTH/2 != HORIZONTAL_CENTER!!! "_s);
 			}
 		} else {
-				$init($SpringLayout);
+			$init($SpringLayout);
 			$var($ints, a3, getValues(c, $$new($StringArray, {
 				$SpringLayout::NORTH,
 				$SpringLayout::HEIGHT,
@@ -363,7 +341,6 @@ $ints* bug4726194::getValues($SpringLayout$Constraints* con, $StringArray* cName
 		$var($String, name, cNames->get(i));
 		$var($Spring, s, $nc(con)->getConstraint(name));
 		if (s == nullptr) {
-			$init($System);
 			$nc($System::out)->print($$str({"Warning: "_s, name, " is undefined. "_s}));
 			return bug4726194::FAIL;
 		}
@@ -405,7 +382,7 @@ void bug4726194::lambda$main$0($UIManager$LookAndFeelInfo* laf) {
 }
 
 void clinit$bug4726194($Class* class$) {
-		$init($SpringLayout);
+	$init($SpringLayout);
 	$assignStatic(bug4726194::hConstraints, $new($StringArray, {
 		$SpringLayout::WEST,
 		"Width"_s,

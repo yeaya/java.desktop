@@ -5,20 +5,6 @@
 #include <java/awt/Container$AccessibleAWTContainer.h>
 #include <java/awt/Container.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/JComponent$AccessibleJComponent.h>
@@ -79,6 +65,7 @@ $NamedAttribute JPasswordField_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JPasswordField_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JPasswordField_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JPasswordField_Attribute_var$1},
@@ -148,7 +135,6 @@ $CompoundAttribute _JPasswordField_MethodAnnotations_setText17[] = {
 	{}
 };
 
-
 $FieldInfo _JPasswordField_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JPasswordField, uiClassID)},
 	{"echoChar", "C", nullptr, $PRIVATE, $field(JPasswordField, echoChar)},
@@ -203,7 +189,6 @@ $ClassInfo _JPasswordField_ClassInfo_ = {
 $Object* allocate$JPasswordField($Class* clazz) {
 	return $of($alloc(JPasswordField));
 }
-
 
 $String* JPasswordField::uiClassID = nullptr;
 
@@ -295,8 +280,7 @@ void JPasswordField::setText($String* t) {
 			nleft -= text->count;
 			offs += text->count;
 		}
-	} catch ($BadLocationException&) {
-		$catch();
+	} catch ($BadLocationException& ignored) {
 	}
 	$JTextField::setText(t);
 }
@@ -307,8 +291,7 @@ $chars* JPasswordField::getPassword() {
 	$var($Segment, txt, $new($Segment));
 	try {
 		$nc(doc)->getText(0, doc->getLength(), txt);
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		return nullptr;
 	}
 	$var($chars, retValue, $new($chars, txt->count));

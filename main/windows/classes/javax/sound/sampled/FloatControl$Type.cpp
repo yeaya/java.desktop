@@ -1,13 +1,5 @@
 #include <javax/sound/sampled/FloatControl$Type.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/Control$Type.h>
 #include <javax/sound/sampled/FloatControl.h>
 #include <jcpp.h>
@@ -77,23 +69,14 @@ $Object* allocate$FloatControl$Type($Class* clazz) {
 	return $of($alloc(FloatControl$Type));
 }
 
-
 FloatControl$Type* FloatControl$Type::MASTER_GAIN = nullptr;
-
 FloatControl$Type* FloatControl$Type::AUX_SEND = nullptr;
-
 FloatControl$Type* FloatControl$Type::AUX_RETURN = nullptr;
-
 FloatControl$Type* FloatControl$Type::REVERB_SEND = nullptr;
-
 FloatControl$Type* FloatControl$Type::REVERB_RETURN = nullptr;
-
 FloatControl$Type* FloatControl$Type::VOLUME = nullptr;
-
 FloatControl$Type* FloatControl$Type::PAN = nullptr;
-
 FloatControl$Type* FloatControl$Type::BALANCE = nullptr;
-
 FloatControl$Type* FloatControl$Type::SAMPLE_RATE = nullptr;
 
 void FloatControl$Type::init$($String* name) {

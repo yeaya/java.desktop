@@ -10,13 +10,6 @@
 #include <java/awt/MenuItem.h>
 #include <java/awt/Point.h>
 #include <java/awt/PopupMenu.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/AWTAccessor$MenuComponentAccessor.h>
 #include <sun/awt/AWTAccessor$PopupMenuAccessor.h>
 #include <sun/awt/AWTAccessor.h>

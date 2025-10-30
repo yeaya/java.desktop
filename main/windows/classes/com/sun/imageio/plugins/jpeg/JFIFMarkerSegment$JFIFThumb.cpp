@@ -5,16 +5,8 @@
 #include <com/sun/imageio/plugins/jpeg/JPEGImageReader.h>
 #include <com/sun/imageio/plugins/jpeg/JPEGImageWriter.h>
 #include <java/awt/image/BufferedImage.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
 #include <java/lang/Cloneable.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/metadata/IIOMetadataNode.h>
 #include <javax/imageio/stream/ImageOutputStream.h>
 #include <jcpp.h>
@@ -99,8 +91,7 @@ void JFIFMarkerSegment$JFIFThumb::init$($JFIFMarkerSegment* this$0, $JPEGBuffer*
 $Object* JFIFMarkerSegment$JFIFThumb::clone() {
 	try {
 		return $of($Cloneable::clone());
-	} catch ($CloneNotSupportedException&) {
-		$catch();
+	} catch ($CloneNotSupportedException& e) {
 	}
 	return $of(nullptr);
 }

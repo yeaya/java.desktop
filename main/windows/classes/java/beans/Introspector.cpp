@@ -22,22 +22,9 @@
 #include <java/beans/PropertyDescriptor.h>
 #include <java/beans/SimpleBeanInfo.h>
 #include <java/beans/ThreadGroupContext.h>
-#include <java/lang/Array.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
 #include <java/lang/annotation/Annotation.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <java/lang/reflect/Type.h>
 #include <java/util/AbstractList.h>
@@ -697,8 +684,7 @@ $PropertyDescriptor* Introspector::mergePropertyDescriptor($IndexedPropertyDescr
 				if (read != nullptr) {
 					try {
 						result->setReadMethod(read);
-					} catch ($IntrospectionException&) {
-						$catch();
+					} catch ($IntrospectionException& ex) {
 					}
 				}
 			}
@@ -709,8 +695,7 @@ $PropertyDescriptor* Introspector::mergePropertyDescriptor($IndexedPropertyDescr
 				if (write != nullptr) {
 					try {
 						result->setWriteMethod(write);
-					} catch ($IntrospectionException&) {
-						$catch();
+					} catch ($IntrospectionException& ex) {
 					}
 				}
 			}
@@ -952,8 +937,7 @@ $Class* Introspector::findCustomizerClass($Class* type) {
 		if (var$0 && $Customizer::class$->isAssignableFrom(type)) {
 			return type;
 		}
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& exception) {
 	}
 	return nullptr;
 }

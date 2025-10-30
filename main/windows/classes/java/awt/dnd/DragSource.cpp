@@ -26,19 +26,6 @@
 #include <java/awt/dnd/peer/DragSourceContextPeer.h>
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/EventListener.h>
@@ -161,20 +148,13 @@ $Object* allocate$DragSource($Class* clazz) {
 	return $of($alloc(DragSource));
 }
 
-
 $Cursor* DragSource::DefaultCopyDrop = nullptr;
-
 $Cursor* DragSource::DefaultMoveDrop = nullptr;
-
 $Cursor* DragSource::DefaultLinkDrop = nullptr;
-
 $Cursor* DragSource::DefaultCopyNoDrop = nullptr;
-
 $Cursor* DragSource::DefaultMoveNoDrop = nullptr;
-
 $Cursor* DragSource::DefaultLinkNoDrop = nullptr;
 DragSource* DragSource::dflt = nullptr;
-
 $String* DragSource::dragSourceListenerK = nullptr;
 $String* DragSource::dragSourceMotionListenerK = nullptr;
 
@@ -186,8 +166,7 @@ $Cursor* DragSource::load($String* name) {
 	}
 	try {
 		return $cast($Cursor, $nc($($Toolkit::getDefaultToolkit()))->getDesktopProperty(name));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		e->printStackTrace();
 		$throwNew($RuntimeException, $$str({"failed to load system cursor: "_s, name, " : "_s, $(e->getMessage())}));
 	}
@@ -211,8 +190,7 @@ bool DragSource::isDragImageSupported() {
 	try {
 		$assign(supported, $cast($Boolean, $nc($($Toolkit::getDefaultToolkit()))->getDesktopProperty("DnD.isDragImageSupported"_s)));
 		return $nc(supported)->booleanValue();
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		return false;
 	}
 	$shouldNotReachHere();
@@ -238,8 +216,7 @@ void DragSource::startDrag($DragGestureEvent* trigger, $Cursor* dragCursor, $Ima
 		}
 		$var($AWTAccessor$DragSourceContextAccessor, acc, $AWTAccessor::getDragSourceContextAccessor());
 		$nc($($nc(acc)->getPeer(dsc)))->startDrag(dsc, $($nc(dsc)->getCursor()), dragImage, imageOffset);
-	} catch ($RuntimeException&) {
-		$var($RuntimeException, e, $catch());
+	} catch ($RuntimeException& e) {
 		$SunDragSourceContextPeer::setDragDropInProgress(false);
 		$throw(e);
 	}

@@ -11,26 +11,13 @@
 #include <java/awt/LayoutManager.h>
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/BorderFactory.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
@@ -221,7 +208,6 @@ void TabProb::main($StringArray* args) {
 		for (; i$ < len$; ++i$) {
 			$var($UIManager$LookAndFeelInfo, laf, arr$->get(i$));
 			{
-				$init($System);
 				$nc($System::out)->println($$str({"Test for LookAndFeel "_s, $($nc(laf)->getClassName())}));
 				$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 				test();
@@ -238,7 +224,6 @@ void TabProb::test() {
 	$SwingUtilities::invokeAndWait($$new($TabProb$1));
 	double tb1height = $nc($($nc(TabProb::tb1)->getPreferredSize()))->getHeight();
 	double tb2height = $nc($($nc(TabProb::tb2)->getPreferredSize()))->getHeight();
-	$init($System);
 	$nc($System::out)->println(tb1height);
 	$nc($System::out)->println(tb2height);
 	robot->waitForIdle();

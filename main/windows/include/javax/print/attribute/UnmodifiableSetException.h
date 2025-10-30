@@ -17,8 +17,10 @@ public:
 	void init$($String* message);
 	static const int64_t serialVersionUID = (int64_t)0x1F4C4234F1FEBBB3;
 	UnmodifiableSetException(const UnmodifiableSetException& e);
-	UnmodifiableSetException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline UnmodifiableSetException* operator ->() {
+		return (UnmodifiableSetException*)throwing$;
+	}
 };
 
 		} // attribute

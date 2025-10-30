@@ -1,14 +1,5 @@
 #include <javax/swing/text/html/CSS$BorderWidthValue.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/html/CSS$CssValue.h>
 #include <javax/swing/text/html/CSS$LengthValue.h>
 #include <javax/swing/text/html/CSS.h>
@@ -68,7 +59,6 @@ $ClassInfo _CSS$BorderWidthValue_ClassInfo_ = {
 $Object* allocate$CSS$BorderWidthValue($Class* clazz) {
 	return $of($alloc(CSS$BorderWidthValue));
 }
-
 
 $floats* CSS$BorderWidthValue::values = nullptr;
 

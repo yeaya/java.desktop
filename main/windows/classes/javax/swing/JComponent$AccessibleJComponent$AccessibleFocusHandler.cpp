@@ -1,15 +1,6 @@
 #include <javax/swing/JComponent$AccessibleJComponent$AccessibleFocusHandler.h>
 
 #include <java/awt/event/FocusEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/accessibility/AccessibleState.h>
 #include <javax/swing/JComponent$AccessibleJComponent.h>
@@ -33,11 +24,11 @@ using $JComponent$AccessibleJComponent = ::javax::swing::JComponent$AccessibleJC
 
 namespace javax {
 	namespace swing {
+
 $CompoundAttribute _JComponent$AccessibleJComponent$AccessibleFocusHandler_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", nullptr},
 	{}
 };
-
 
 $FieldInfo _JComponent$AccessibleJComponent$AccessibleFocusHandler_FieldInfo_[] = {
 	{"this$1", "Ljavax/swing/JComponent$AccessibleJComponent;", nullptr, $FINAL | $SYNTHETIC, $field(JComponent$AccessibleJComponent$AccessibleFocusHandler, this$1)},

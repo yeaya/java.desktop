@@ -8,20 +8,6 @@
 #include <java/io/FilterInputStream.h>
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Date.h>
 #include <java/util/GregorianCalendar.h>
 #include <java/util/Hashtable.h>
@@ -584,7 +570,7 @@ case$14:
 					{
 						{
 							int32_t llog = logDepth >= 4 ? 3 : logDepth;
-							if (($assignField(this, cm, $nc(PNGImageDecoder::greyModels)->get(llog))) == nullptr) {
+							if (($set(this, cm, $nc(PNGImageDecoder::greyModels)->get(llog))) == nullptr) {
 								int32_t size = $sl(1, $sl(1, llog));
 								$var($bytes, ramp, $new($bytes, size));
 								for (int32_t i = 0; i < size; ++i) {
@@ -822,21 +808,19 @@ case$25:
 					}
 				}
 				imageComplete($ImageConsumer::STATICIMAGEDONE, true);
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				if (!this->aborted) {
 					property("error"_s, $of(e));
 					imageComplete($ImageConsumer::IMAGEERROR | $ImageConsumer::STATICIMAGEDONE, true);
 					$throw(e);
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			try {
 				close();
-			} catch ($Throwable&) {
-				$catch();
+			} catch ($Throwable& e) {
 			}
 		}
 		if (var$0 != nullptr) {
@@ -1056,7 +1040,6 @@ void PNGImageDecoder::wrc(int32_t c) {
 	if (c <= u' ' || c > u'z') {
 		c = u'?';
 	}
-	$init($System);
 	$nc($System::out)->write(c);
 }
 
@@ -1070,7 +1053,6 @@ void PNGImageDecoder::wrk(int32_t n) {
 void PNGImageDecoder::print() {
 	$useLocalCurrentObjectStackCache();
 	wrk(this->chunkKey);
-	$init($System);
 	$nc($System::out)->print($$str({" "_s, $$str(this->chunkLength), "\n"_s}));
 }
 

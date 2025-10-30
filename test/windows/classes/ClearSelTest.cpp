@@ -14,24 +14,12 @@
 #include <java/awt/event/MouseListener.h>
 #include <java/awt/event/MouseMotionListener.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JButton.h>
@@ -274,8 +262,7 @@ void ClearSelTest::run() {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(ClearSelTest$$Lambda$lambda$run$0, this)));
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		if (ClearSelTest::f != nullptr) {
 			$nc(ClearSelTest::f)->dispose();
 		}

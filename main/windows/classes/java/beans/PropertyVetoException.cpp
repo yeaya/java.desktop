@@ -1,14 +1,6 @@
 #include <java/beans/PropertyVetoException.h>
 
 #include <java/beans/PropertyChangeEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
@@ -57,16 +49,10 @@ $PropertyChangeEvent* PropertyVetoException::getPropertyChangeEvent() {
 PropertyVetoException::PropertyVetoException() {
 }
 
-PropertyVetoException::PropertyVetoException(const PropertyVetoException& e) {
+PropertyVetoException::PropertyVetoException(const PropertyVetoException& e) : $Exception(e) {
 }
 
-PropertyVetoException PropertyVetoException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void PropertyVetoException::throwWrapper$() {
-	$pendingException(this);
+void PropertyVetoException::throw$() {
 	throw *this;
 }
 

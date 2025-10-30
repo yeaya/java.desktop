@@ -12,19 +12,9 @@
 #include <java/awt/event/ActionListener.h>
 #include <java/awt/event/FocusEvent.h>
 #include <java/awt/event/FocusListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
 #include <java/lang/Comparable.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/DecimalFormat.h>
 #include <java/text/NumberFormat.h>
 #include <java/util/EventObject.h>
@@ -254,8 +244,7 @@ void ServiceDialog$PrintRangePanel::init$($ServiceDialog* this$0) {
 	$var($NumberFormatter, nfto, nullptr);
 	try {
 		$assign(nfto, $cast($NumberFormatter, nf->clone()));
-	} catch ($CloneNotSupportedException&) {
-		$var($CloneNotSupportedException, e, $catch());
+	} catch ($CloneNotSupportedException& e) {
 		$assign(nfto, $new($NumberFormatter));
 	}
 	$set(this, tfRangeTo, $new($JFormattedTextField, static_cast<$JFormattedTextField$AbstractFormatter*>(nfto)));
@@ -311,14 +300,12 @@ void ServiceDialog$PrintRangePanel::updateRangeAttribute() {
 	int32_t max = 0;
 	try {
 		min = $Integer::parseInt(strFrom);
-	} catch ($NumberFormatException&) {
-		$var($NumberFormatException, e, $catch());
+	} catch ($NumberFormatException& e) {
 		min = 1;
 	}
 	try {
 		max = $Integer::parseInt(strTo);
-	} catch ($NumberFormatException&) {
-		$var($NumberFormatException, e, $catch());
+	} catch ($NumberFormatException& e) {
 		max = min;
 	}
 	if (min < 1) {

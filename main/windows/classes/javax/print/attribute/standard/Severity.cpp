@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/Severity.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -85,15 +77,10 @@ void Severity::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 Severity* Severity::REPORT = nullptr;
-
 Severity* Severity::WARNING = nullptr;
-
 Severity* Severity::ERROR = nullptr;
-
 $StringArray* Severity::myStringTable = nullptr;
-
 $SeverityArray* Severity::myEnumValueTable = nullptr;
 
 void Severity::init$(int32_t value) {

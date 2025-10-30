@@ -6,23 +6,7 @@
 #include <java/io/InputStream.h>
 #include <java/io/InputStreamReader.h>
 #include <java/io/Reader.h>
-#include <java/lang/Array.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/ByteBuffer.h>
 #include <java/nio/CharBuffer.h>
 #include <java/nio/charset/Charset.h>
@@ -133,14 +117,11 @@ void DataTransferer$ReencodingInputStream::init$($DataTransferer* this$0, $Input
 		$set(this, out, $new($bytes, $cast(int32_t, ($nc(this->encoder)->maxBytesPerChar() * 2 + 0.5))));
 		$set(this, inBuf, $CharBuffer::wrap(this->in));
 		$set(this, outBuf, $ByteBuffer::wrap(this->out));
-	} catch ($IllegalCharsetNameException&) {
-		$var($RuntimeException, e, $catch());
+	} catch ($IllegalCharsetNameException& e) {
 		$throwNew($IOException, $(e->toString()));
-	} catch ($UnsupportedCharsetException&) {
-		$var($RuntimeException, e, $catch());
+	} catch ($UnsupportedCharsetException& e) {
 		$throwNew($IOException, $(e->toString()));
-	} catch ($UnsupportedOperationException&) {
-		$var($RuntimeException, e, $catch());
+	} catch ($UnsupportedOperationException& e) {
 		$throwNew($IOException, $(e->toString()));
 	}
 	$var($String, sEoln, $cast($String, $nc($DataTransferer::nativeEOLNs)->get(lFormat)));

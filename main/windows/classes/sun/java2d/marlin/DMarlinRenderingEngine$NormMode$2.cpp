@@ -1,14 +1,6 @@
 #include <sun/java2d/marlin/DMarlinRenderingEngine$NormMode$2.h>
 
 #include <java/awt/geom/PathIterator.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/marlin/DMarlinRenderingEngine$NormMode.h>
 #include <sun/java2d/marlin/DMarlinRenderingEngine$NormalizingPathIterator.h>
 #include <sun/java2d/marlin/RendererContext.h>

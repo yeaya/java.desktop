@@ -9,21 +9,7 @@
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <java/util/Iterator.h>
 #include <java/util/List.h>
@@ -150,7 +136,6 @@ void bug5074573::main($StringArray* args) {
 			$var($UIManager$LookAndFeelInfo, info, arr$->get(i$));
 			{
 				$UIManager::setLookAndFeel($($nc(info)->getClassName()));
-				$init($System);
 				$nc($System::out)->println($of(info));
 				{
 					$var($Iterator, i$, $nc(bug5074573::textClasses)->iterator());
@@ -229,8 +214,7 @@ void bug5074573::initialize($Class* textComponentClass) {
 		$nc(bug5074573::textComponent)->requestFocus();
 		$var($Caret, caret, $nc(bug5074573::textComponent)->getCaret());
 		$nc(caret)->setDot($nc($($nc(bug5074573::textComponent)->getDocument()))->getLength());
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }
@@ -238,12 +222,12 @@ void bug5074573::initialize($Class* textComponentClass) {
 void clinit$bug5074573($Class* class$) {
 	$assignStatic(bug5074573::testString, "123 456 789"_s);
 	$assignStatic(bug5074573::resultString, "456 "_s);
-		$load($JTextArea);
-		$load($JEditorPane);
-		$load($JTextPane);
-		$load($JTextField);
-		$load($JFormattedTextField);
-		$load($JPasswordField);
+	$load($JTextArea);
+	$load($JEditorPane);
+	$load($JTextPane);
+	$load($JTextField);
+	$load($JFormattedTextField);
+	$load($JPasswordField);
 	$assignStatic(bug5074573::textClasses, $Arrays::asList($$new($ClassArray, {
 		$JTextArea::class$,
 		$JEditorPane::class$,

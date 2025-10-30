@@ -1,13 +1,5 @@
 #include <java/awt/im/InputMethodHighlight.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Map.h>
 #include <jcpp.h>
 
@@ -66,13 +58,9 @@ $Object* allocate$InputMethodHighlight($Class* clazz) {
 	return $of($alloc(InputMethodHighlight));
 }
 
-
 InputMethodHighlight* InputMethodHighlight::UNSELECTED_RAW_TEXT_HIGHLIGHT = nullptr;
-
 InputMethodHighlight* InputMethodHighlight::SELECTED_RAW_TEXT_HIGHLIGHT = nullptr;
-
 InputMethodHighlight* InputMethodHighlight::UNSELECTED_CONVERTED_TEXT_HIGHLIGHT = nullptr;
-
 InputMethodHighlight* InputMethodHighlight::SELECTED_CONVERTED_TEXT_HIGHLIGHT = nullptr;
 
 void InputMethodHighlight::init$(bool selected, int32_t state) {

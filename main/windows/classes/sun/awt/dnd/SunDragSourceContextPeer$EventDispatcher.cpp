@@ -4,17 +4,7 @@
 #include <java/awt/dnd/DragSourceDragEvent.h>
 #include <java/awt/dnd/DragSourceDropEvent.h>
 #include <java/awt/dnd/DragSourceEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/dnd/SunDragSourceContextPeer.h>
 #include <jcpp.h>
 
@@ -148,8 +138,8 @@ void SunDragSourceContextPeer$EventDispatcher::run() {
 						$var($Throwable, var$1, nullptr);
 						try {
 							$nc(dragSourceContext)->dragDropEnd($cast($DragSourceDropEvent, this->event));
-						} catch ($Throwable&) {
-							$assign(var$1, $catch());
+						} catch ($Throwable& var$2) {
+							$assign(var$1, var$2);
 						} /*finally*/ {
 							this->this$0->cleanup();
 						}
@@ -164,8 +154,8 @@ void SunDragSourceContextPeer$EventDispatcher::run() {
 					$throwNew($IllegalStateException, $$str({"Dispatch type: "_s, $$str(this->dispatchType)}));
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} /*finally*/ {
 			this->this$0->quitSecondaryEventLoop();
 		}

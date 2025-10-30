@@ -1,14 +1,6 @@
 #include <bug6337518$1.h>
 
 #include <bug6337518.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComboBox.h>
 #include <javax/swing/plaf/ComboBoxUI.h>
 #include <javax/swing/plaf/basic/BasicComboBoxUI.h>

@@ -3,15 +3,6 @@
 #include <java/awt/event/MouseAdapter.h>
 #include <java/awt/event/MouseEvent.h>
 #include <java/beans/PropertyVetoException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JInternalFrame.h>
 #include <javax/swing/plaf/synth/SynthInternalFrameTitlePane.h>
 #include <jcpp.h>
@@ -82,8 +73,7 @@ void SynthInternalFrameTitlePane$1::init$($SynthInternalFrameTitlePane* this$0) 
 void SynthInternalFrameTitlePane$1::mousePressed($MouseEvent* e) {
 	try {
 		$nc($($SynthInternalFrameTitlePane::access$000(this->this$0)))->setSelected(true);
-	} catch ($PropertyVetoException&) {
-		$catch();
+	} catch ($PropertyVetoException& pve) {
 	}
 	this->this$0->showSystemMenu();
 }

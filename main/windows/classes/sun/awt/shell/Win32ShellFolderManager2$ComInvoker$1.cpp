@@ -1,16 +1,6 @@
 #include <sun/awt/shell/Win32ShellFolderManager2$ComInvoker$1.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/shell/Win32ShellFolderManager2$ComInvoker.h>
 #include <sun/awt/shell/Win32ShellFolderManager2.h>
 #include <jcpp.h>
@@ -83,8 +73,8 @@ void Win32ShellFolderManager2$ComInvoker$1::run() {
 		try {
 			$Win32ShellFolderManager2::initializeCom();
 			$nc(this->val$task)->run();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$Win32ShellFolderManager2::uninitializeCom();
 		}

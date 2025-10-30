@@ -4,15 +4,6 @@
 #include <java/awt/Paint.h>
 #include <java/awt/Shape.h>
 #include <java/awt/geom/Rectangle2D.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Map.h>
 #include <sun/font/AttributeValues.h>
 #include <sun/font/Decoration$DecorationImpl.h>
@@ -145,7 +136,7 @@ $Shape* Decoration::getOutline($Decoration$Label* label, float x, float y) {
 }
 
 void clinit$Decoration($Class* class$) {
-		$init($EAttribute);
+	$init($EAttribute);
 	Decoration::VALUES_MASK = $AttributeValues::getMask($$new($EAttributeArray, {
 		$EAttribute::EFOREGROUND,
 		$EAttribute::EBACKGROUND,

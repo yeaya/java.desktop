@@ -6,14 +6,6 @@
 #include <java/awt/Image.h>
 #include <java/awt/Window.h>
 #include <java/awt/image/VolatileImage.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/windows/TranslucentWindowPainter$BIWindowPainter.h>
 #include <sun/awt/windows/TranslucentWindowPainter.h>
 #include <sun/awt/windows/WComponentPeer.h>

@@ -1,17 +1,6 @@
 #include <javax/swing/text/PlainDocument.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Vector.h>
 #include <javax/swing/text/AbstractDocument$AbstractElement.h>
 #include <javax/swing/text/AbstractDocument$BranchElement.h>
@@ -96,9 +85,7 @@ $Object* allocate$PlainDocument($Class* clazz) {
 	return $of($alloc(PlainDocument));
 }
 
-
 $String* PlainDocument::tabSizeAttribute = nullptr;
-
 $String* PlainDocument::lineLimitAttribute = nullptr;
 
 void PlainDocument::init$() {
@@ -204,8 +191,7 @@ void PlainDocument::insertUpdate($AbstractDocument$DefaultDocumentEvent* chng, $
 		if ($Utilities::isComposedTextAttributeDefined(attr)) {
 			insertComposedTextUpdate(chng, attr);
 		}
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		$throwNew($Error, $$str({"Internal error: "_s, $(e->toString())}));
 	}
 	$AbstractDocument::insertUpdate(chng, attr);

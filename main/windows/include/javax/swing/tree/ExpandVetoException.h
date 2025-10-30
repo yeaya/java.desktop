@@ -25,8 +25,10 @@ public:
 	void init$(::javax::swing::event::TreeExpansionEvent* event, $String* message);
 	::javax::swing::event::TreeExpansionEvent* event = nullptr;
 	ExpandVetoException(const ExpandVetoException& e);
-	ExpandVetoException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline ExpandVetoException* operator ->() {
+		return (ExpandVetoException*)throwing$;
+	}
 };
 
 		} // tree

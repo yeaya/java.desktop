@@ -1,17 +1,6 @@
 #include <bug6493680$Test$TestSwingWorker.h>
 
 #include <bug6493680$Test.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/Exchanger.h>
 #include <java/util/concurrent/atomic/AtomicInteger.h>
 #include <javax/swing/SwingWorker.h>
@@ -83,8 +72,7 @@ void bug6493680$Test$TestSwingWorker::done() {
 	bool isPassed = ($nc(this->this$0->lastProgressValue)->get() == 100);
 	try {
 		$nc(this->this$0->exchanger)->exchange($($Boolean::valueOf(isPassed)));
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& ingore) {
 	}
 }
 

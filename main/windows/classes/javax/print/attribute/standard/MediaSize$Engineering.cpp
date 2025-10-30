@@ -1,14 +1,5 @@
 #include <javax/print/attribute/standard/MediaSize$Engineering.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/Size2DSyntax.h>
 #include <javax/print/attribute/standard/MediaSize.h>
 #include <javax/print/attribute/standard/MediaSizeName.h>
@@ -74,15 +65,10 @@ $Object* allocate$MediaSize$Engineering($Class* clazz) {
 	return $of($alloc(MediaSize$Engineering));
 }
 
-
 $MediaSize* MediaSize$Engineering::A = nullptr;
-
 $MediaSize* MediaSize$Engineering::B = nullptr;
-
 $MediaSize* MediaSize$Engineering::C = nullptr;
-
 $MediaSize* MediaSize$Engineering::D = nullptr;
-
 $MediaSize* MediaSize$Engineering::E = nullptr;
 
 void MediaSize$Engineering::init$() {

@@ -1,13 +1,6 @@
 #include <sun/print/PrinterJobWrapper.h>
 
 #include <java/awt/print/PrinterJob.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $PrinterJob = ::java::awt::print::PrinterJob;

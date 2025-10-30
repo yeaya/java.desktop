@@ -2,27 +2,13 @@
 
 #include <bug8031971$TestTable.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Date.h>
 #include <java/util/Hashtable.h>
 #include <javax/swing/Icon.h>
@@ -167,14 +153,13 @@ void bug8031971::lambda$main$0() {
 
 void clinit$bug8031971($Class* class$) {
 	$useLocalCurrentObjectStackCache();
-			$load($Object);
-			$load($Number);
-			$load($Float);
-			$load($Double);
-			$load($Date);
-			$load($Icon);
-			$load($ImageIcon);
-			$load($Boolean);
+	$load($Number);
+	$load($Float);
+	$load($Double);
+	$load($Date);
+	$load($Icon);
+	$load($ImageIcon);
+	$load($Boolean);
 	$assignStatic(bug8031971::RENDERERS, $new($ObjectArray2, {
 		$$new($ObjectArray, {
 			$of($Object::class$),

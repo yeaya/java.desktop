@@ -5,18 +5,8 @@
 #include <com/sun/beans/finder/SignatureException.h>
 #include <com/sun/beans/util/Cache$Kind.h>
 #include <com/sun/beans/util/Cache.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Executable.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ConstructorArray = $Array<::java::lang::reflect::Constructor>;
@@ -88,8 +78,7 @@ $Constructor* ConstructorFinder$1::create($Signature* signature) {
 	try {
 		$var($ConstructorFinder, finder, $new($ConstructorFinder, $($nc(signature)->getArgs())));
 		return $cast($Constructor, finder->find($($fcast($ExecutableArray, $nc($nc(signature)->getType())->getConstructors()))));
-	} catch ($Exception&) {
-		$var($Exception, exception, $catch());
+	} catch ($Exception& exception) {
 		$throwNew($SignatureException, exception);
 	}
 	$shouldNotReachHere();

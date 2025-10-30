@@ -3,17 +3,8 @@
 #include <java/awt/Color.h>
 #include <java/awt/Component.h>
 #include <java/awt/Insets.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/JComponent.h>
@@ -86,13 +77,9 @@ $Object* allocate$DefaultLookup($Class* clazz) {
 	return $of($alloc(DefaultLookup));
 }
 
-
 $Object* DefaultLookup::DEFAULT_LOOKUP_KEY = nullptr;
-
 $Thread* DefaultLookup::currentDefaultThread = nullptr;
-
 DefaultLookup* DefaultLookup::currentDefaultLookup = nullptr;
-
 bool DefaultLookup::isLookupSet = false;
 
 void DefaultLookup::init$() {

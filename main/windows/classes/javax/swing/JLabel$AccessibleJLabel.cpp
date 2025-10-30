@@ -11,15 +11,6 @@
 #include <java/awt/geom/Rectangle2D$Float.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/BreakIterator.h>
 #include <java/util/Locale.h>
 #include <javax/accessibility/Accessible.h>
@@ -273,8 +264,7 @@ $Rectangle* JLabel$AccessibleJLabel::getCharacterBounds(int32_t i) {
 			$init($Position$Bias);
 			$var($Shape, charShape, view->modelToView(i, shape, $Position$Bias::Forward));
 			return $nc(charShape)->getBounds();
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			return nullptr;
 		}
 	} else {
@@ -309,8 +299,7 @@ $String* JLabel$AccessibleJLabel::getAtIndex(int32_t part, int32_t index) {
 		{
 			try {
 				return getText(index, 1);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -322,8 +311,7 @@ $String* JLabel$AccessibleJLabel::getAtIndex(int32_t part, int32_t index) {
 				$nc(words)->setText(s);
 				int32_t end = words->following(index);
 				return $nc(s)->substring(words->previous(), end);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -335,8 +323,7 @@ $String* JLabel$AccessibleJLabel::getAtIndex(int32_t part, int32_t index) {
 				$nc(sentence)->setText(s);
 				int32_t end = sentence->following(index);
 				return $nc(s)->substring(sentence->previous(), end);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -360,8 +347,7 @@ $String* JLabel$AccessibleJLabel::getAfterIndex(int32_t part, int32_t index) {
 			}
 			try {
 				return getText(index + 1, 1);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -380,8 +366,7 @@ $String* JLabel$AccessibleJLabel::getAfterIndex(int32_t part, int32_t index) {
 					return nullptr;
 				}
 				return $nc(s)->substring(start, end);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -400,8 +385,7 @@ $String* JLabel$AccessibleJLabel::getAfterIndex(int32_t part, int32_t index) {
 					return nullptr;
 				}
 				return $nc(s)->substring(start, end);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -425,8 +409,7 @@ $String* JLabel$AccessibleJLabel::getBeforeIndex(int32_t part, int32_t index) {
 			}
 			try {
 				return getText(index - 1, 1);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -443,8 +426,7 @@ $String* JLabel$AccessibleJLabel::getBeforeIndex(int32_t part, int32_t index) {
 					return nullptr;
 				}
 				return $nc(s)->substring(start, end);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -461,8 +443,7 @@ $String* JLabel$AccessibleJLabel::getBeforeIndex(int32_t part, int32_t index) {
 					return nullptr;
 				}
 				return $nc(s)->substring(start, end);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}

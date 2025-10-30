@@ -1,14 +1,5 @@
 #include <DocumentInsertAtWrongPositionTest.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTextArea.h>
 #include <javax/swing/JTextField.h>
 #include <javax/swing/JTextPane.h>
@@ -65,20 +56,17 @@ void DocumentInsertAtWrongPositionTest::main($StringArray* args) {
 	try {
 		ta->insert("abc"_s, 11);
 		$throwNew($RuntimeException, "failed"_s);
-	} catch ($IllegalArgumentException&) {
-		$catch();
+	} catch ($IllegalArgumentException& e) {
 	}
 	try {
 		$nc($(te->getDocument()))->insertString(11, "abc"_s, $$new($SimpleAttributeSet));
 		$throwNew($RuntimeException, "failed"_s);
-	} catch ($BadLocationException&) {
-		$catch();
+	} catch ($BadLocationException& e) {
 	}
 	try {
 		$nc($(tp->getDocument()))->insertString(11, "abc"_s, $$new($SimpleAttributeSet));
 		$throwNew($RuntimeException, "failed"_s);
-	} catch ($BadLocationException&) {
-		$catch();
+	} catch ($BadLocationException& e) {
 	}
 }
 

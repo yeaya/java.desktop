@@ -4,20 +4,8 @@
 #include <com/sun/imageio/plugins/jpeg/JPEG.h>
 #include <com/sun/imageio/plugins/jpeg/JPEGBuffer.h>
 #include <com/sun/imageio/plugins/jpeg/MarkerSegment.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
 #include <java/lang/Cloneable.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/IIOException.h>
 #include <javax/imageio/metadata/IIOInvalidTreeException.h>
 #include <javax/imageio/metadata/IIOMetadataNode.h>
@@ -442,8 +430,7 @@ $Object* DQTMarkerSegment$Qtable::clone() {
 	$var(DQTMarkerSegment$Qtable, newGuy, nullptr);
 	try {
 		$assign(newGuy, $cast(DQTMarkerSegment$Qtable, $Cloneable::clone()));
-	} catch ($CloneNotSupportedException&) {
-		$catch();
+	} catch ($CloneNotSupportedException& e) {
 	}
 	if (this->data != nullptr) {
 		$set($nc(newGuy), data, $cast($ints, $nc(this->data)->clone()));
@@ -462,7 +449,6 @@ $IIOMetadataNode* DQTMarkerSegment$Qtable::getNativeNode() {
 
 void DQTMarkerSegment$Qtable::print() {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println($$str({"Table id: "_s, $($Integer::toString(this->tableID))}));
 	$nc($System::out)->println($$str({"Element precision: "_s, $($Integer::toString(this->elementPrecision))}));
 	($$new($JPEGQTable, this->data))->toString();

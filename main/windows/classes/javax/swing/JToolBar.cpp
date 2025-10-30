@@ -11,20 +11,6 @@
 #include <java/awt/LayoutManager2.h>
 #include <java/beans/PropertyChangeListener.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/Action.h>
@@ -97,6 +83,7 @@ $NamedAttribute JToolBar_Attribute_var$0[] = {
 	{"description", 's', "A component which displays commonly used controls or Actions."},
 	{}
 };
+
 $CompoundAttribute _JToolBar_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JToolBar_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", nullptr},
@@ -198,7 +185,6 @@ $CompoundAttribute _JToolBar_MethodAnnotations_setUI29[] = {
 	{}
 };
 
-
 $FieldInfo _JToolBar_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JToolBar, uiClassID)},
 	{"paintBorder", "Z", nullptr, $PRIVATE, $field(JToolBar, paintBorder$)},
@@ -295,7 +281,6 @@ $Object* JToolBar::clone() {
 void JToolBar::finalize() {
 	this->$JComponent::finalize();
 }
-
 
 $String* JToolBar::uiClassID = nullptr;
 

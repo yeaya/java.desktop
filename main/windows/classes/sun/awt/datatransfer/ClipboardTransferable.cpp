@@ -5,26 +5,12 @@
 #include <java/awt/datatransfer/UnsupportedFlavorException.h>
 #include <java/io/IOException.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Iterable.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/HashMap.h>
 #include <java/util/Map$Entry.h>
@@ -171,8 +157,8 @@ void ClipboardTransferable::init$($SunClipboard* clipboard) {
 				$nc($($nc($($nc($($DataTransferer::getInstance()))->getFlavorsForFormats(formats, $($SunClipboard::getDefaultFlavorTable()))))->entrySet()))->forEach(static_cast<$Consumer*>($$new(ClipboardTransferable$$Lambda$lambda$new$0, this, clipboard, cached_data)));
 				$set(this, flavors, $DataTransferer::setToSortedDataFlavorArray($($nc(this->flavorsToData)->keySet())));
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			clipboard->closeClipboard();
 		}
@@ -189,11 +175,9 @@ bool ClipboardTransferable::fetchOneFlavor($SunClipboard* clipboard, $DataFlavor
 		if (!$nc(cached_data)->containsKey($($Long::valueOf(format)))) {
 			try {
 				$assign(data, $nc(clipboard)->getClipboardData(format));
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				$assign(data, e);
-			} catch ($Throwable&) {
-				$var($Throwable, e, $catch());
+			} catch ($Throwable& e) {
 				e->printStackTrace();
 			}
 			cached_data->put($($Long::valueOf(format)), data);

@@ -9,21 +9,8 @@
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
 #include <java/io/Reader.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/util/Locale.h>
 #include <java/util/Vector.h>
@@ -268,8 +255,7 @@ void PSStreamPrintJob::closeDataStreams() {
 	$var($Object, data, nullptr);
 	try {
 		$assign(data, $nc(this->doc)->getPrintData());
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		return;
 	}
 	if (this->instream != nullptr) {
@@ -278,11 +264,10 @@ void PSStreamPrintJob::closeDataStreams() {
 			try {
 				try {
 					$nc(this->instream)->close();
-				} catch ($IOException&) {
-					$catch();
+				} catch ($IOException& e) {
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$set(this, instream, nullptr);
 			}
@@ -292,33 +277,30 @@ void PSStreamPrintJob::closeDataStreams() {
 		}
 	} else if (this->reader != nullptr) {
 		{
-			$var($Throwable, var$1, nullptr);
+			$var($Throwable, var$2, nullptr);
 			try {
 				try {
 					$nc(this->reader)->close();
-				} catch ($IOException&) {
-					$catch();
+				} catch ($IOException& e) {
 				}
-			} catch ($Throwable&) {
-				$assign(var$1, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$2, var$3);
 			} /*finally*/ {
 				$set(this, reader, nullptr);
 			}
-			if (var$1 != nullptr) {
-				$throw(var$1);
+			if (var$2 != nullptr) {
+				$throw(var$2);
 			}
 		}
 	} else if ($instanceOf($InputStream, data)) {
 		try {
 			$nc(($cast($InputStream, data)))->close();
-		} catch ($IOException&) {
-			$catch();
+		} catch ($IOException& e) {
 		}
 	} else if ($instanceOf($Reader, data)) {
 		try {
 			$nc(($cast($Reader, data)))->close();
-		} catch ($IOException&) {
-			$catch();
+		} catch ($IOException& e) {
 		}
 	}
 }
@@ -418,8 +400,7 @@ void PSStreamPrintJob::print($Doc* doc, $PrintRequestAttributeSet* attributes) {
 	$var($Object, data, nullptr);
 	try {
 		$assign(data, doc->getPrintData());
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		notifyEvent($PrintJobEvent::JOB_FAILED);
 		$throwNew($PrintException, $$str({"can\'t get print data: "_s, $(e->toString())}));
 	}
@@ -442,12 +423,10 @@ void PSStreamPrintJob::print($Doc* doc, $PrintRequestAttributeSet* attributes) {
 			$set(this, instream, doc->getStreamForBytes());
 			printableJob($$new($ImagePrinter, this->instream), this->reqAttrSet);
 			return;
-		} catch ($ClassCastException&) {
-			$var($ClassCastException, cce, $catch());
+		} catch ($ClassCastException& cce) {
 			notifyEvent($PrintJobEvent::JOB_FAILED);
 			$throwNew($PrintException, static_cast<$Exception*>(cce));
-		} catch ($IOException&) {
-			$var($IOException, ioe, $catch());
+		} catch ($IOException& ioe) {
 			notifyEvent($PrintJobEvent::JOB_FAILED);
 			$throwNew($PrintException, static_cast<$Exception*>(ioe));
 		}
@@ -459,8 +438,7 @@ void PSStreamPrintJob::print($Doc* doc, $PrintRequestAttributeSet* attributes) {
 			try {
 				printableJob($$new($ImagePrinter, $cast($URL, data)), this->reqAttrSet);
 				return;
-			} catch ($ClassCastException&) {
-				$var($ClassCastException, cce, $catch());
+			} catch ($ClassCastException& cce) {
 				notifyEvent($PrintJobEvent::JOB_FAILED);
 				$throwNew($PrintException, static_cast<$Exception*>(cce));
 			}
@@ -468,12 +446,10 @@ void PSStreamPrintJob::print($Doc* doc, $PrintRequestAttributeSet* attributes) {
 			try {
 				pageableJob($cast($Pageable, $(doc->getPrintData())), this->reqAttrSet);
 				return;
-			} catch ($ClassCastException&) {
-				$var($ClassCastException, cce, $catch());
+			} catch ($ClassCastException& cce) {
 				notifyEvent($PrintJobEvent::JOB_FAILED);
 				$throwNew($PrintException, static_cast<$Exception*>(cce));
-			} catch ($IOException&) {
-				$var($IOException, ioe, $catch());
+			} catch ($IOException& ioe) {
 				notifyEvent($PrintJobEvent::JOB_FAILED);
 				$throwNew($PrintException, static_cast<$Exception*>(ioe));
 			}
@@ -481,12 +457,10 @@ void PSStreamPrintJob::print($Doc* doc, $PrintRequestAttributeSet* attributes) {
 			try {
 				printableJob($cast($Printable, $(doc->getPrintData())), this->reqAttrSet);
 				return;
-			} catch ($ClassCastException&) {
-				$var($ClassCastException, cce, $catch());
+			} catch ($ClassCastException& cce) {
 				notifyEvent($PrintJobEvent::JOB_FAILED);
 				$throwNew($PrintException, static_cast<$Exception*>(cce));
-			} catch ($IOException&) {
-				$var($IOException, ioe, $catch());
+			} catch ($IOException& ioe) {
 				notifyEvent($PrintJobEvent::JOB_FAILED);
 				$throwNew($PrintException, static_cast<$Exception*>(ioe));
 			}
@@ -534,13 +508,12 @@ void PSStreamPrintJob::printableJob($Printable* printable, $PrintRequestAttribut
 				notifyEvent($PrintJobEvent::JOB_COMPLETE);
 				return$1 = true;
 				goto $finally;
-			} catch ($PrinterException&) {
-				$var($PrinterException, pe, $catch());
+			} catch ($PrinterException& pe) {
 				notifyEvent($PrintJobEvent::JOB_FAILED);
 				$throwNew($PrintException, static_cast<$Exception*>(pe));
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$4) {
+			$assign(var$0, var$4);
 		} $finally: {
 			this->printReturned = true;
 		}
@@ -573,13 +546,12 @@ void PSStreamPrintJob::pageableJob($Pageable* pageable, $PrintRequestAttributeSe
 				notifyEvent($PrintJobEvent::JOB_COMPLETE);
 				return$1 = true;
 				goto $finally;
-			} catch ($PrinterException&) {
-				$var($PrinterException, pe, $catch());
+			} catch ($PrinterException& pe) {
 				notifyEvent($PrintJobEvent::JOB_FAILED);
 				$throwNew($PrintException, static_cast<$Exception*>(pe));
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} $finally: {
 			this->printReturned = true;
 		}
@@ -622,8 +594,7 @@ void PSStreamPrintJob::initializeAttributeSets($Doc* doc, $PrintRequestAttribute
 		$var($String, userName, ""_s);
 		try {
 			$assign(userName, $System::getProperty("user.name"_s));
-		} catch ($SecurityException&) {
-			$catch();
+		} catch ($SecurityException& se) {
 		}
 		if (userName == nullptr || userName->isEmpty()) {
 			$load($RequestingUserName);
@@ -653,8 +624,7 @@ void PSStreamPrintJob::initializeAttributeSets($Doc* doc, $PrintRequestAttribute
 					if ($instanceOf($URL, printData)) {
 						$assign(str, $nc((($cast($URL, $(doc->getPrintData())))))->toString());
 					}
-				} catch ($IOException&) {
-					$catch();
+				} catch ($IOException& e) {
 				}
 				$assign(jobName, $new($JobName, str, nullptr));
 				$nc(this->jobAttrSet)->add(static_cast<$Attribute*>(static_cast<$PrintRequestAttribute*>(jobName)));

@@ -2,16 +2,7 @@
 
 #include <java/awt/Color.h>
 #include <java/awt/Component.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/DefaultCellEditor.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JTable.h>
@@ -87,7 +78,6 @@ $Object* allocate$JTable$GenericEditor($Class* clazz) {
 void JTable$GenericEditor::init$() {
 	$useLocalCurrentObjectStackCache();
 	$DefaultCellEditor::init$($$new($JTextField));
-	$load($String);
 	$set(this, argTypes, $new($ClassArray, {$String::class$}));
 	$nc($(getComponent()))->setName("Table.editor"_s);
 }
@@ -98,7 +88,6 @@ bool JTable$GenericEditor::stopCellEditing() {
 	$var($String, s, $cast($String, $DefaultCellEditor::getCellEditorValue()));
 	try {
 		if (""_s->equals(s)) {
-			$load($String);
 			if ($nc(this->constructor)->getDeclaringClass() == $String::class$) {
 				$set(this, value, s);
 			}
@@ -106,8 +95,7 @@ bool JTable$GenericEditor::stopCellEditing() {
 		}
 		$SwingUtilities2::checkAccess($nc(this->constructor)->getModifiers());
 		$set(this, value, $nc(this->constructor)->newInstance($$new($ObjectArray, {$of(s)})));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$init($Color);
 		$nc(($cast($JComponent, $(getComponent()))))->setBorder($$new($LineBorder, $Color::red));
 		return false;
@@ -123,16 +111,13 @@ $Component* JTable$GenericEditor::getTableCellEditorComponent($JTable* table, Ob
 	$nc(($cast($JComponent, $(getComponent()))))->setBorder($$new($LineBorder, $Color::black));
 	try {
 		$Class* type = $nc(table)->getColumnClass(column);
-		$load($Object);
 		if (type == $Object::class$) {
-			$load($String);
 			type = $String::class$;
 		}
 		$ReflectUtil::checkPackageAccess(type);
 		$SwingUtilities2::checkAccess($nc(type)->getModifiers());
 		$set(this, constructor, $nc(type)->getConstructor(this->argTypes));
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		return nullptr;
 	}
 	return $DefaultCellEditor::getTableCellEditorComponent(table, value, isSelected, row, column);

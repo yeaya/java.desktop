@@ -11,24 +11,7 @@
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/geom/Rectangle2D$Float.h>
 #include <java/awt/geom/Rectangle2D.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Map.h>
 #include <sun/font/AttributeValues.h>
 #include <sun/font/CoreMetrics.h>
@@ -536,10 +519,8 @@ $floats* ExtendedTextSourceLabel::createCharinfo() {
 	$var($floats, glyphinfo, nullptr);
 	try {
 		$assign(glyphinfo, $nc(gv)->getGlyphInfo());
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		if (ExtendedTextSourceLabel::DEBUG) {
-			$init($System);
 			$nc($System::err)->println($of(this->source));
 			e->printStackTrace();
 		}
@@ -552,7 +533,6 @@ $floats* ExtendedTextSourceLabel::createCharinfo() {
 	$var($ints, indices, gv->getGlyphCharIndices(0, numGlyphs, nullptr));
 	$var($floats, charInfo, $new($floats, $nc(this->source)->getLength() * ExtendedTextSourceLabel::numvals));
 	if (ExtendedTextSourceLabel::DEBUG) {
-		$init($System);
 		$nc($System::err)->println($$str({"number of glyphs: "_s, $$str(numGlyphs)}));
 		$nc($System::err)->println($$str({"glyphinfo.len: "_s, $$str($nc(glyphinfo)->length)}));
 		$nc($System::err)->println($$str({"indices.len: "_s, $$str($nc(indices)->length)}));
@@ -602,7 +582,6 @@ $floats* ExtendedTextSourceLabel::createCharinfo() {
 		while (gx != gxlimit && ((glyphinfo->get(gp + ExtendedTextSourceLabel::advx) == 0) || (indices->get(gx) <= maxIndex) || (maxIndex - minIndex > clusterExtraGlyphs))) {
 			++clusterExtraGlyphs;
 			if (ExtendedTextSourceLabel::DEBUG) {
-				$init($System);
 				$nc($System::err)->println($$str({"gp="_s, $$str(gp), " adv="_s, $$str(glyphinfo->get(gp + ExtendedTextSourceLabel::advx)), " gx="_s, $$str(gx), " i[gx]="_s, $$str(indices->get(gx)), " clusterExtraGlyphs="_s, $$str(clusterExtraGlyphs)}));
 			}
 			float radvx = glyphinfo->get(gp + ExtendedTextSourceLabel::advx);
@@ -626,7 +605,6 @@ $floats* ExtendedTextSourceLabel::createCharinfo() {
 			gp += pdelta;
 		}
 		if (ExtendedTextSourceLabel::DEBUG) {
-			$init($System);
 			$nc($System::err)->println($$str({"minIndex = "_s, $$str(minIndex), ", maxIndex = "_s, $$str(maxIndex)}));
 		}
 		charInfo->set(cp + ExtendedTextSourceLabel::posx, cposl);
@@ -645,7 +623,6 @@ $floats* ExtendedTextSourceLabel::createCharinfo() {
 			tgt = indices->get(gx);
 		}
 		if (ExtendedTextSourceLabel::DEBUG) {
-			$init($System);
 			$nc($System::err)->println($$str({"gx="_s, $$str(gx), " gxlimit="_s, $$str(gxlimit), " charInfo.len="_s, $$str(charInfo->length), " tgt="_s, $$str(tgt), " cc="_s, $$str(cc), " cp="_s, $$str(cp)}));
 		}
 		while (cc < tgt) {
@@ -657,13 +634,11 @@ $floats* ExtendedTextSourceLabel::createCharinfo() {
 			cp += pdelta;
 			if (cp < 0 || cp >= charInfo->length) {
 				if (ExtendedTextSourceLabel::DEBUG) {
-					$init($System);
 					$nc($System::err)->println($$str({"Error : cp="_s, $$str(cp), " charInfo.length="_s, $$str(charInfo->length)}));
 				}
 				break;
 			}
 			if (ExtendedTextSourceLabel::DEBUG) {
-				$init($System);
 				$nc($System::err)->println($$str({"Insert charIndex "_s, $$str(cc), " at pos="_s, $$str(cp)}));
 			}
 			charInfo->set(cp + ExtendedTextSourceLabel::posx, cposr);
@@ -682,7 +657,6 @@ $floats* ExtendedTextSourceLabel::createCharinfo() {
 		$var($chars, chars, $nc(this->source)->getChars());
 		int32_t start = $nc(this->source)->getStart();
 		int32_t length = $nc(this->source)->getLength();
-		$init($System);
 		$nc($System::err)->println($$str({"char info for "_s, $$str(length), " characters"_s}));
 		for (int32_t i = 0; i < length * ExtendedTextSourceLabel::numvals;) {
 			$var($String, var$14, $$str({" ch: "_s, $($Integer::toHexString($nc(chars)->get(start + v2l($div(i, ExtendedTextSourceLabel::numvals))))), " x: "_s}));

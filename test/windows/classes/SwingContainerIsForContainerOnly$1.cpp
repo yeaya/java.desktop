@@ -2,19 +2,7 @@
 
 #include <SwingContainerIsForContainerOnly.h>
 #include <java/awt/Container.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/file/FileVisitResult.h>
 #include <java/nio/file/Path.h>
 #include <java/nio/file/SimpleFileVisitor.h>
@@ -92,8 +80,7 @@ $FileVisitResult* SwingContainerIsForContainerOnly$1::visitFile($Path* file$rena
 		$Class* type = nullptr;
 		try {
 			type = $Class::forName(name, false, nullptr);
-		} catch ($Throwable&) {
-			$var($Throwable, e, $catch());
+		} catch ($Throwable& e) {
 			$init($FileVisitResult);
 			return $FileVisitResult::CONTINUE;
 		}
@@ -101,7 +88,6 @@ $FileVisitResult* SwingContainerIsForContainerOnly$1::visitFile($Path* file$rena
 		if ($nc(type)->isAnnotationPresent($SwingContainer::class$)) {
 			$load($Container);
 			if (!$Container::class$->isAssignableFrom(type)) {
-				$init($System);
 				$nc($System::err)->println($$str({"Wrong annotation for: "_s, type}));
 				$throwNew($RuntimeException);
 			}

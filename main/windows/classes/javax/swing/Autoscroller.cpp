@@ -8,13 +8,6 @@
 #include <java/awt/event/ActionListener.h>
 #include <java/awt/event/ComponentEvent.h>
 #include <java/awt/event/MouseEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/Timer.h>
 #include <sun/awt/AWTAccessor$MouseEventAccessor.h>
@@ -77,7 +70,6 @@ $ClassInfo _Autoscroller_ClassInfo_ = {
 $Object* allocate$Autoscroller($Class* clazz) {
 	return $of($alloc(Autoscroller));
 }
-
 
 Autoscroller* Autoscroller::sharedInstance = nullptr;
 $MouseEvent* Autoscroller::event = nullptr;

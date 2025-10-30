@@ -1,15 +1,6 @@
 #include <sun/print/PSStreamPrinterFactory.h>
 
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/DocFlavor$BYTE_ARRAY.h>
 #include <javax/print/DocFlavor$INPUT_STREAM.h>
 #include <javax/print/DocFlavor$SERVICE_FORMATTED.h>
@@ -99,10 +90,10 @@ $StreamPrintService* PSStreamPrinterFactory::getPrintService($OutputStream* out)
 
 void clinit$PSStreamPrinterFactory($Class* class$) {
 	$assignStatic(PSStreamPrinterFactory::psMimeType, "application/postscript"_s);
-		$init($DocFlavor$SERVICE_FORMATTED);
-		$init($DocFlavor$BYTE_ARRAY);
-		$init($DocFlavor$INPUT_STREAM);
-		$init($DocFlavor$URL);
+	$init($DocFlavor$SERVICE_FORMATTED);
+	$init($DocFlavor$BYTE_ARRAY);
+	$init($DocFlavor$INPUT_STREAM);
+	$init($DocFlavor$URL);
 	$assignStatic(PSStreamPrinterFactory::supportedDocFlavors, $new($DocFlavorArray, {
 		static_cast<$DocFlavor*>($DocFlavor$SERVICE_FORMATTED::PAGEABLE),
 		static_cast<$DocFlavor*>($DocFlavor$SERVICE_FORMATTED::PRINTABLE),

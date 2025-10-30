@@ -31,32 +31,12 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/AbstractSet.h>
 #include <java/util/ArrayList.h>
@@ -344,6 +324,7 @@ $NamedAttribute JComponent_Attribute_var$0[] = {
 	{"defaultProperty", 's', "UIClassID"},
 	{}
 };
+
 $CompoundAttribute _JComponent_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JComponent_Attribute_var$0},
 	{}
@@ -830,7 +811,6 @@ $CompoundAttribute _JComponent_MethodAnnotations_setVisible182[] = {
 	{}
 };
 
-
 $FieldInfo _JComponent_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JComponent, uiClassID)},
 	{"readObjectCallbacks", "Ljava/util/Hashtable;", "Ljava/util/Hashtable<Ljava/io/ObjectInputStream;Ljavax/swing/JComponent$ReadObjectCallback;>;", $PRIVATE | $STATIC | $FINAL, $staticField(JComponent, readObjectCallbacks)},
@@ -1160,28 +1140,17 @@ void JComponent::finalize() {
 	this->$Container::finalize();
 }
 
-
 $String* JComponent::uiClassID = nullptr;
-
 $Hashtable* JComponent::readObjectCallbacks = nullptr;
-
 $Set* JComponent::managingFocusForwardTraversalKeys = nullptr;
-
 $Set* JComponent::managingFocusBackwardTraversalKeys = nullptr;
-
 bool JComponent::DEBUG_GRAPHICS_LOADED = false;
-
 $Object* JComponent::INPUT_VERIFIER_SOURCE_KEY = nullptr;
-
 $String* JComponent::KEYBOARD_BINDINGS_KEY = nullptr;
-
 $String* JComponent::WHEN_IN_FOCUSED_WINDOW_BINDINGS = nullptr;
-
 $String* JComponent::TOOL_TIP_TEXT_KEY = nullptr;
 $String* JComponent::NEXT_FOCUS = nullptr;
-
 $List* JComponent::tempRectangles = nullptr;
-
 $String* JComponent::defaultLocale = nullptr;
 $Component* JComponent::componentObtainingGraphicsFrom = nullptr;
 $Object* JComponent::componentObtainingGraphicsFromLock = nullptr;
@@ -1412,8 +1381,8 @@ void JComponent::paintComponent($Graphics* g) {
 			$var($Throwable, var$0, nullptr);
 			try {
 				$nc(this->ui)->update(scratchGraphics, this);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(scratchGraphics)->dispose();
 			}
@@ -1510,8 +1479,8 @@ void JComponent::paintChildren($Graphics* g) {
 							} else {
 								comp->printAll(cg);
 							}
-						} catch ($Throwable&) {
-							$assign(var$3, $catch());
+						} catch ($Throwable& var$4) {
+							$assign(var$3, var$4);
 						} /*finally*/ {
 							cg->dispose();
 							if (shouldSetFlagBack) {
@@ -1599,8 +1568,8 @@ void JComponent::paint($Graphics* g) {
 					$var($Throwable, var$7, nullptr);
 					try {
 						repaintManager->paint(this, this, co, clipX, clipY, clipW, clipH);
-					} catch ($Throwable&) {
-						$assign(var$7, $catch());
+					} catch ($Throwable& var$8) {
+						$assign(var$7, var$8);
 					} /*finally*/ {
 						repaintManager->endPaint();
 					}
@@ -1627,8 +1596,8 @@ void JComponent::paint($Graphics* g) {
 					printChildren(co);
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$1, $catch());
+		} catch ($Throwable& var$9) {
+			$assign(var$1, var$9);
 		} /*finally*/ {
 			$nc(co)->dispose();
 			if (shouldClearPaintFlags) {
@@ -1654,8 +1623,8 @@ void JComponent::paintForceDoubleBuffered($Graphics* g) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			rm->paint(this, this, g, $nc(clip)->x, clip->y, clip->width, clip->height);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rm->endPaint();
 			setFlag(JComponent::IS_REPAINTING, false);
@@ -1707,8 +1676,8 @@ void JComponent::printAll($Graphics* g) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			print(g);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			setFlag(JComponent::IS_PRINTING_ALL, false);
 		}
@@ -1725,8 +1694,8 @@ void JComponent::print($Graphics* g) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			paint(g);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			setFlag(JComponent::IS_PRINTING, false);
 			firePropertyChange("paintingForPrint"_s, true, false);
@@ -3189,8 +3158,8 @@ void JComponent::_paintImmediately(int32_t x, int32_t y, int32_t w, int32_t h) {
 								$var($Throwable, var$5, nullptr);
 								try {
 									rm->paint(paintingComponent, bufferedComponent, g, paintImmediatelyClip->x, paintImmediatelyClip->y, paintImmediatelyClip->width, paintImmediatelyClip->height);
-								} catch ($Throwable&) {
-									$assign(var$5, $catch());
+								} catch ($Throwable& var$6) {
+									$assign(var$5, var$6);
 								} /*finally*/ {
 									rm->endPaint();
 								}
@@ -3202,8 +3171,8 @@ void JComponent::_paintImmediately(int32_t x, int32_t y, int32_t w, int32_t h) {
 							$nc(g)->setClip(paintImmediatelyClip->x, paintImmediatelyClip->y, paintImmediatelyClip->width, paintImmediatelyClip->height);
 							paintingComponent->paint(g);
 						}
-					} catch ($Throwable&) {
-						$assign(var$4, $catch());
+					} catch ($Throwable& var$7) {
+						$assign(var$4, var$7);
 					} /*finally*/ {
 						$nc(g)->dispose();
 					}
@@ -3212,8 +3181,8 @@ void JComponent::_paintImmediately(int32_t x, int32_t y, int32_t w, int32_t h) {
 					}
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$3, $catch());
+		} catch ($Throwable& var$8) {
+			$assign(var$3, var$8);
 		} /*finally*/ {
 			if (paintingComponent != this) {
 				$var($Component, comp, nullptr);
@@ -3251,8 +3220,8 @@ void JComponent::paintToOffscreen($Graphics* g, int32_t x, int32_t y, int32_t w,
 				}
 				paintChildren(g);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			setFlag(JComponent::ANCESTOR_USING_BUFFER, false);
 			setFlag(JComponent::IS_PAINTING_TILE, false);
@@ -3370,8 +3339,7 @@ void JComponent::readObject($ObjectInputStream* s) {
 	if (cb == nullptr) {
 		try {
 			$nc(JComponent::readObjectCallbacks)->put(s, $assign(cb, $new($JComponent$ReadObjectCallback, this, s)));
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$throwNew($IOException, $(e->toString()));
 		}
 	}

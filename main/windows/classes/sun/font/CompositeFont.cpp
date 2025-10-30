@@ -1,17 +1,7 @@
 #include <sun/font/CompositeFont.h>
 
 #include <java/awt/Font.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <sun/font/CharToGlyphMapper.h>
 #include <sun/font/CompositeGlyphMapper.h>
@@ -255,8 +245,7 @@ void CompositeFont::doDeferredInitialisation(int32_t slot) {
 			} else if (!$nc($nc(this->componentNames)->get(slot))->equalsIgnoreCase(name)) {
 				try {
 					$nc(this->components)->set(slot, $cast($PhysicalFont, $($nc(fm)->findFont2D($nc(this->componentNames)->get(slot), this->style, $FontManager::PHYSICAL_FALLBACK))));
-				} catch ($ClassCastException&) {
-					$var($ClassCastException, cce, $catch());
+				} catch ($ClassCastException& cce) {
 					$nc(this->components)->set(slot, $($nc(fm)->getDefaultPhysicalFont()));
 				}
 			}
@@ -324,14 +313,12 @@ $PhysicalFont* CompositeFont::getSlotFont(int32_t slot) {
 			try {
 				$assign(font, $cast($PhysicalFont, $nc(fm)->findFont2D($nc(this->componentNames)->get(slot), this->style, $FontManager::PHYSICAL_FALLBACK)));
 				$nc(this->components)->set(slot, font);
-			} catch ($ClassCastException&) {
-				$var($ClassCastException, cce, $catch());
+			} catch ($ClassCastException& cce) {
 				$assign(font, $nc(fm)->getDefaultPhysicalFont());
 			}
 		}
 		return font;
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		return $nc(fm)->getDefaultPhysicalFont();
 	}
 	$shouldNotReachHere();

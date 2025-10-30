@@ -15,8 +15,10 @@ public:
 	ImageAccessException();
 	void init$($String* s);
 	ImageAccessException(const ImageAccessException& e);
-	ImageAccessException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline ImageAccessException* operator ->() {
+		return (ImageAccessException*)throwing$;
+	}
 };
 
 		} // image

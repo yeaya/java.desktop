@@ -1,18 +1,7 @@
 #include <bug7071166.h>
 
 #include <bug7071166$1.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SwingUtilities.h>
 #include <javax/swing/UIManager$LookAndFeelInfo.h>
 #include <javax/swing/UIManager.h>
@@ -86,11 +75,9 @@ void bug7071166::main($StringArray* args) {
 			{
 				try {
 					$UIManager::setLookAndFeel($($nc(lookAndFeelInfo)->getClassName()));
-				} catch ($UnsupportedLookAndFeelException&) {
-					$var($UnsupportedLookAndFeelException, ignored, $catch());
+				} catch ($UnsupportedLookAndFeelException& ignored) {
 					continue;
 				}
-				$init($System);
 				$nc($System::out)->println($$str({"LookAndFeel: "_s, $($nc(lookAndFeelInfo)->getName())}));
 				$SwingUtilities::invokeAndWait($$new($bug7071166$1));
 				$nc($System::out)->println("passed"_s);

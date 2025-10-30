@@ -33,29 +33,14 @@
 #include <java/awt/image/WritableRaster.h>
 #include <java/awt/peer/ComponentPeer.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <javax/swing/InternalFrameFocusTraversalPolicy.h>
@@ -310,7 +295,6 @@ void JLightweightFrame::finalize() {
 	this->$LightweightFrame::finalize();
 }
 
-
 bool JLightweightFrame::copyBufferEnabled = false;
 
 void JLightweightFrame::init$() {
@@ -341,7 +325,6 @@ void JLightweightFrame::dispose() {
 
 void JLightweightFrame::setContent($LightweightContent* content) {
 	if (content == nullptr) {
-		$init($System);
 		$nc($System::err)->println("JLightweightFrame.setContent: content may not be null!"_s);
 		return;
 	}
@@ -411,8 +394,8 @@ void JLightweightFrame::notifyDisplayChanged(double scaleFactorX, double scaleFa
 					int32_t var$2 = getWidth();
 					resizeBuffer(var$2, getHeight(), scaleFactorX, scaleFactorY);
 				}
-			} catch ($Throwable&) {
-				$assign(var$1, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$1, var$3);
 			} /*finally*/ {
 				if (!JLightweightFrame::copyBufferEnabled) {
 					$nc(this->content)->paintUnlock();
@@ -468,8 +451,8 @@ void JLightweightFrame::syncCopyBuffer(bool reset, int32_t x, int32_t y, int32_t
 				int32_t from = (startY + i) * linestride + startX;
 				$System::arraycopy(srcBuffer, from, this->copyBuffer, from, width);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->content)->paintUnlock();
 		}
@@ -545,8 +528,8 @@ void JLightweightFrame::reshape(int32_t x, int32_t y, int32_t width, int32_t hei
 				goto $finally;
 			}
 			$nc(this->content)->imageReshaped(0, 0, width, height);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} $finally: {
 			if (!JLightweightFrame::copyBufferEnabled) {
 				$nc(this->content)->paintUnlock();

@@ -13,16 +13,7 @@
 #include <java/awt/geom/RectangularShape.h>
 #include <java/awt/geom/RoundRectangle2D$Float.h>
 #include <java/awt/geom/RoundRectangle2D.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/SunHints.h>
 #include <sun/awt/geom/PathConsumer2D.h>
 #include <sun/java2d/SunGraphics2D.h>
@@ -232,8 +223,8 @@ void LoopPipe::fillPolygon($SunGraphics2D* sg2d, $ints* xPoints, $ints* yPoints,
 			$nc(sr)->setOutputArea($($nc(sg2d)->getCompClip()));
 			sr->appendPoly(xPoints, yPoints, nPoints, $nc(sg2d)->transX, sg2d->transY);
 			fillSpans(sg2d, sr);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(sr)->dispose();
 		}
@@ -274,8 +265,8 @@ void LoopPipe::draw($SunGraphics2D* sg2d, $Shape* s) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			fillSpans(sg2d, sr);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(sr)->dispose();
 		}
@@ -303,8 +294,7 @@ $ShapeSpanIterator* LoopPipe::getStrokeSpans($SunGraphics2D* sg2d, $Shape* s) {
 		bool thin = (sg2d->strokeState <= $SunGraphics2D::STROKE_THINDASHED);
 		bool normalize = (sg2d->strokeHint != $SunHints::INTVAL_STROKE_PURE);
 		$nc(LoopPipe::RenderEngine)->strokeTo(s, sg2d->transform$, clip, bs, thin, normalize, false, sr);
-	} catch ($Throwable&) {
-		$var($Throwable, t, $catch());
+	} catch ($Throwable& t) {
 		sr->dispose();
 		$assign(sr, nullptr);
 		$throwNew($InternalError, $$str({"Unable to Stroke shape ("_s, $(t->getMessage()), ")"_s}), t);
@@ -342,8 +332,8 @@ void LoopPipe::fill($SunGraphics2D* sg2d, $Shape* s) {
 			$var($AffineTransform, at, ($nc(sg2d)->transformState == $SunGraphics2D::TRANSFORM_ISIDENT) ? ($AffineTransform*)nullptr : $nc(sg2d)->transform$);
 			sr->appendPath($($nc(s)->getPathIterator(at)));
 			fillSpans(sg2d, sr);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(sr)->dispose();
 		}

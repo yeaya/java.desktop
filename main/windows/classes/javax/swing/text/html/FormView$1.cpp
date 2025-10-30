@@ -3,15 +3,6 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/io/IOException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JEditorPane.h>
@@ -102,14 +93,12 @@ void FormView$1::init$($FormView* this$0, $FormSubmitEvent* val$fse, $JEditorPan
 }
 
 void FormView$1::run() {
-	$useLocalCurrentObjectStackCache();
 	if (this->val$fse != nullptr) {
 		$nc(this->val$c)->fireHyperlinkUpdate(this->val$fse);
 	} else {
 		try {
 			$nc(this->val$c)->setPage(this->val$url);
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this->val$c);
 		}
 	}

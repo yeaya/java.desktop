@@ -8,21 +8,6 @@
 #include <com/sun/media/sound/SoftMixingMixerProvider.h>
 #include <com/sun/media/sound/SoftMixingSourceDataLine.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/List.h>
@@ -374,8 +359,7 @@ void SoftMixingMixer::close() {
 		pusher_to_be_closed->stop();
 		try {
 			$nc(pusher_stream_to_be_closed)->close();
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			e->printStackTrace();
 		}
 	}
@@ -503,8 +487,8 @@ void SoftMixingMixer::open($SourceDataLine* line$renamed) {
 						if (line == nullptr) {
 							$assign(line, $AudioSystem::getSourceDataLine(this->format));
 						}
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$5) {
+						$assign(var$0, var$5);
 					} /*finally*/ {
 						$synchronized($SoftMixingMixerProvider::mutex) {
 							$assignStatic($SoftMixingMixerProvider::lockthread, nullptr);
@@ -520,8 +504,8 @@ void SoftMixingMixer::open($SourceDataLine* line$renamed) {
 			}
 			double latency = (double)this->latency;
 			if (!$nc(line)->isOpen()) {
-				int32_t var$5 = $nc($(getFormat()))->getFrameSize();
-				int32_t bufferSize = var$5 * $cast(int32_t, ($nc($(getFormat()))->getFrameRate() * (latency / 1000000.0f)));
+				int32_t var$6 = $nc($(getFormat()))->getFrameSize();
+				int32_t bufferSize = var$6 * $cast(int32_t, ($nc($(getFormat()))->getFrameRate() * (latency / 1000000.0f)));
 				line->open($(getFormat()), bufferSize);
 				$set(this, sourceDataLine, line);
 			}
@@ -531,8 +515,7 @@ void SoftMixingMixer::open($SourceDataLine* line$renamed) {
 			int32_t controlbuffersize = 512;
 			try {
 				controlbuffersize = $nc(ais)->available();
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& e) {
 			}
 			int32_t buffersize = $nc(line)->getBufferSize();
 			buffersize -= $mod(buffersize, controlbuffersize);
@@ -542,8 +525,7 @@ void SoftMixingMixer::open($SourceDataLine* line$renamed) {
 			$set(this, pusher, $new($SoftAudioPusher, line, ais, controlbuffersize));
 			$set(this, pusher_stream, ais);
 			$nc(this->pusher)->start();
-		} catch ($LineUnavailableException&) {
-			$var($LineUnavailableException, e, $catch());
+		} catch ($LineUnavailableException& e) {
 			if (isOpen()) {
 				close();
 			}

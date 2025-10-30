@@ -10,21 +10,7 @@
 #include <java/io/ObjectInputStream$GetField.h>
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/EventListener.h>
@@ -124,6 +110,7 @@ $NamedAttribute JTabbedPane_Attribute_var$0[] = {
 	{"description", 's', "A component which provides a tab folder metaphor for displaying one component from a set of components."},
 	{}
 };
+
 $CompoundAttribute _JTabbedPane_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JTabbedPane_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", nullptr},
@@ -392,7 +379,6 @@ $CompoundAttribute _JTabbedPane_MethodAnnotations_setUI76[] = {
 	{}
 };
 
-
 $FieldInfo _JTabbedPane_FieldInfo_[] = {
 	{"WRAP_TAB_LAYOUT", "I", nullptr, $PUBLIC | $STATIC | $FINAL, $constField(JTabbedPane, WRAP_TAB_LAYOUT)},
 	{"SCROLL_TAB_LAYOUT", "I", nullptr, $PUBLIC | $STATIC | $FINAL, $constField(JTabbedPane, SCROLL_TAB_LAYOUT)},
@@ -541,7 +527,6 @@ $Object* JTabbedPane::clone() {
 void JTabbedPane::finalize() {
 	this->$JComponent::finalize();
 }
-
 
 $String* JTabbedPane::uiClassID = nullptr;
 

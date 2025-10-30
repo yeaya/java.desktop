@@ -1,14 +1,5 @@
 #include <javax/swing/text/html/CSS$ShorthandBorderParser.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/MutableAttributeSet.h>
 #include <javax/swing/text/html/CSS$Attribute.h>
 #include <javax/swing/text/html/CSS$CssValue.h>
@@ -130,7 +121,7 @@ void CSS$ShorthandBorderParser::parseShorthandBorder($MutableAttributeSet* attri
 }
 
 void clinit$CSS$ShorthandBorderParser($Class* class$) {
-		$init($CSS$Attribute);
+	$init($CSS$Attribute);
 	$assignStatic(CSS$ShorthandBorderParser::keys, $new($CSS$AttributeArray, {
 		$CSS$Attribute::BORDER_TOP,
 		$CSS$Attribute::BORDER_RIGHT,

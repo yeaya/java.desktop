@@ -6,18 +6,6 @@
 #include <java/awt/Image.h>
 #include <java/awt/event/KeyEvent.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/JComponent$AccessibleJComponent.h>
@@ -83,6 +71,7 @@ $NamedAttribute JLabel_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JLabel_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JLabel_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JLabel_Attribute_var$1},
@@ -288,7 +277,6 @@ $CompoundAttribute _JLabel_MethodAnnotations_setVerticalTextPosition37[] = {
 	{}
 };
 
-
 $FieldInfo _JLabel_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JLabel, uiClassID)},
 	{"mnemonic", "I", nullptr, $PRIVATE, $field(JLabel, mnemonic)},
@@ -400,9 +388,7 @@ void JLabel::finalize() {
 	this->$JComponent::finalize();
 }
 
-
 $String* JLabel::uiClassID = nullptr;
-
 $String* JLabel::LABELED_BY_PROPERTY = nullptr;
 
 $AccessibleContext* JLabel::access$000(JLabel* x0) {

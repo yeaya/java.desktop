@@ -6,15 +6,6 @@
 #include <java/awt/print/PageFormat.h>
 #include <java/awt/print/Printable.h>
 #include <java/awt/print/PrinterException.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/print/PSPrinterJob$EPSPrinter.h>
 #include <sun/print/PSPrinterJob.h>
 #include <jcpp.h>
@@ -109,8 +100,7 @@ void PSPrinterJob$PluginPrinter::printPluginPSHeader() {
 void PSPrinterJob$PluginPrinter::printPluginApplet() {
 	try {
 		$nc(this->epsPrinter)->print();
-	} catch ($PrinterException&) {
-		$catch();
+	} catch ($PrinterException& e) {
 	}
 }
 

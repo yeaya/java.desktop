@@ -4,27 +4,12 @@
 #include <java/awt/Component.h>
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InstantiationException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchMethodException.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/ReflectiveOperationException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
 #include <java/lang/reflect/Method.h>
@@ -155,7 +140,6 @@ void SwingTest::run() {
 	$beforeCallerSensitive();
 	try {
 		if (this->object == nullptr) {
-			$init($System);
 			$nc($System::out)->println($of(this->type));
 			$set(this, frame, $new($JFrame, $($nc(this->type)->getSimpleName())));
 			$nc(this->frame)->setSize(SwingTest::WIDTH, SwingTest::HEIGHT);
@@ -163,35 +147,26 @@ void SwingTest::run() {
 			$set(this, object, $nc($($nc(this->type)->getConstructor($$new($ClassArray, {$nc($of(this->frame))->getClass()}))))->newInstance($$new($ObjectArray, {$of(this->frame)})));
 			$nc(this->frame)->setVisible(true);
 		} else if (this->method != nullptr) {
-			$init($System);
 			$nc($System::out)->println($of(this->method));
 			$nc(this->method)->invoke(this->object, $$new($ObjectArray, 0));
 		} else {
-			$init($System);
 			$nc($System::out)->println((this->error == nullptr) ? "PASSED"_s : "FAILED"_s);
 			$nc(this->frame)->dispose();
 			$set(this, frame, nullptr);
 		}
-	} catch ($NoSuchMethodException&) {
-		$var($NoSuchMethodException, exception, $catch());
+	} catch ($NoSuchMethodException& exception) {
 		$set(this, error, exception);
-	} catch ($SecurityException&) {
-		$var($SecurityException, exception, $catch());
+	} catch ($SecurityException& exception) {
 		$set(this, error, exception);
-	} catch ($IllegalAccessException&) {
-		$var($IllegalAccessException, exception, $catch());
+	} catch ($IllegalAccessException& exception) {
 		$set(this, error, exception);
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, exception, $catch());
+	} catch ($IllegalArgumentException& exception) {
 		$set(this, error, exception);
-	} catch ($InstantiationException&) {
-		$var($InstantiationException, exception, $catch());
+	} catch ($InstantiationException& exception) {
 		$set(this, error, exception);
-	} catch ($InvocationTargetException&) {
-		$var($InvocationTargetException, exception, $catch());
+	} catch ($InvocationTargetException& exception) {
 		$set(this, error, exception->getTargetException());
 	}
-	$init($System);
 	$nc($System::out)->flush();
 	$set(this, method, $nc(this->methods)->hasNext() && (this->error == nullptr) ? $cast($Method, $nc(this->methods)->next()) : ($Method*)nullptr);
 }

@@ -2,20 +2,6 @@
 
 #include <java/io/InputStream.h>
 #include <java/lang/AbstractStringBuilder.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/Short.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <java/util/HashMap.h>
 #include <java/util/Iterator.h>
@@ -388,8 +374,7 @@ $ints* FontConfiguration$PropertiesHandler::parseExclusions($String* key, $Strin
 			if (lo > up) {
 				$throwNew($Exception);
 			}
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$init($FontConfiguration);
 			if ($FontUtilities::debugFonts() && $FontConfiguration::logger != nullptr) {
 				$nc($FontConfiguration::logger)->config($$str({"Failed parsing "_s, key, " property of font configuration."_s}));

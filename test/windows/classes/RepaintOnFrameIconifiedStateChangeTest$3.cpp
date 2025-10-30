@@ -1,17 +1,6 @@
 #include <RepaintOnFrameIconifiedStateChangeTest$3.h>
 
 #include <RepaintOnFrameIconifiedStateChangeTest.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JLabel.h>
@@ -70,7 +59,6 @@ void RepaintOnFrameIconifiedStateChangeTest$3::init$() {
 }
 
 void RepaintOnFrameIconifiedStateChangeTest$3::run() {
-	$init($System);
 	$nc($System::out)->println("Changing states of components..."_s);
 	$init($RepaintOnFrameIconifiedStateChangeTest);
 	$nc($RepaintOnFrameIconifiedStateChangeTest::label)->setText($nc($nc($RepaintOnFrameIconifiedStateChangeTest::strsForComps)->get(0))->get(1));

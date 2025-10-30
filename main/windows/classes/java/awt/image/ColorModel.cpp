@@ -11,23 +11,8 @@
 #include <java/awt/image/Raster.h>
 #include <java/awt/image/SampleModel.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/AbstractMap.h>
@@ -212,7 +197,6 @@ $ClassInfo _ColorModel_ClassInfo_ = {
 $Object* allocate$ColorModel($Class* clazz) {
 	return $of($alloc(ColorModel));
 }
-
 
 bool ColorModel::loaded = false;
 ColorModel* ColorModel::RGBdefault = nullptr;

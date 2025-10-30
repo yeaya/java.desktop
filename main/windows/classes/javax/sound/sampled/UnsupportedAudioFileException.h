@@ -17,8 +17,10 @@ public:
 	void init$($String* message);
 	static const int64_t serialVersionUID = (int64_t)0xFE11B85AF813CBD0;
 	UnsupportedAudioFileException(const UnsupportedAudioFileException& e);
-	UnsupportedAudioFileException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline UnsupportedAudioFileException* operator ->() {
+		return (UnsupportedAudioFileException*)throwing$;
+	}
 };
 
 		} // sampled

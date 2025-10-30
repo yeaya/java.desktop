@@ -1,15 +1,6 @@
 #include <javax/swing/LayoutStyle$ComponentPlacement.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/LayoutStyle.h>
 #include <jcpp.h>
 
@@ -69,11 +60,8 @@ $Object* allocate$LayoutStyle$ComponentPlacement($Class* clazz) {
 	return $of($alloc(LayoutStyle$ComponentPlacement));
 }
 
-
 LayoutStyle$ComponentPlacement* LayoutStyle$ComponentPlacement::RELATED = nullptr;
-
 LayoutStyle$ComponentPlacement* LayoutStyle$ComponentPlacement::UNRELATED = nullptr;
-
 LayoutStyle$ComponentPlacement* LayoutStyle$ComponentPlacement::INDENT = nullptr;
 $LayoutStyle$ComponentPlacementArray* LayoutStyle$ComponentPlacement::$VALUES = nullptr;
 

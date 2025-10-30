@@ -15,37 +15,18 @@
 #include <java/io/InputStreamReader.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/OutputStream.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Reader.h>
 #include <java/io/StringReader.h>
 #include <java/io/StringWriter.h>
 #include <java/io/Writer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/ReflectiveOperationException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/HttpURLConnection.h>
 #include <java/net/URL.h>
 #include <java/net/URLConnection.h>
@@ -218,6 +199,7 @@ $NamedAttribute JEditorPane_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JEditorPane_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JEditorPane_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JEditorPane_Attribute_var$1},
@@ -317,7 +299,6 @@ $CompoundAttribute _JEditorPane_MethodAnnotations_setText45[] = {
 	{"Ljava/beans/BeanProperty;", JEditorPane_Attribute_var$10},
 	{}
 };
-
 
 $FieldInfo _JEditorPane_FieldInfo_[] = {
 	{"pageLoader", "Ljavax/swing/SwingWorker;", "Ljavax/swing/SwingWorker<Ljava/net/URL;Ljava/lang/Object;>;", $PRIVATE, $field(JEditorPane, pageLoader)},
@@ -419,16 +400,12 @@ $Object* allocate$JEditorPane($Class* clazz) {
 	return $of($alloc(JEditorPane));
 }
 
-
 $String* JEditorPane::PostDataProperty = nullptr;
 $Object* JEditorPane::kitRegistryKey = nullptr;
 $Object* JEditorPane::kitTypeRegistryKey = nullptr;
 $Object* JEditorPane::kitLoaderRegistryKey = nullptr;
-
 $String* JEditorPane::uiClassID = nullptr;
-
 $String* JEditorPane::W3C_LENGTH_UNITS = nullptr;
-
 $String* JEditorPane::HONOR_DISPLAY_PROPERTIES = nullptr;
 $Map* JEditorPane::defaultEditorKitMap = nullptr;
 
@@ -600,20 +577,18 @@ void JEditorPane::read($InputStream* in$renamed, $Document* doc) {
 			try {
 				try {
 					$nc(this->kit)->read(r, doc, 0);
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					if (r != nullptr) {
 						try {
 							r->close();
-						} catch ($Throwable&) {
-							$var($Throwable, x2, $catch());
+						} catch ($Throwable& x2) {
 							t$->addSuppressed(x2);
 						}
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				if (r != nullptr) {
 					r->close();
@@ -623,11 +598,9 @@ void JEditorPane::read($InputStream* in$renamed, $Document* doc) {
 				$throw(var$0);
 			}
 		}
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		$throwNew($IOException, $(e->getMessage()));
-	} catch ($ChangedCharSetException&) {
-		$var($ChangedCharSetException, changedCharSetException, $catch());
+	} catch ($ChangedCharSetException& changedCharSetException) {
 		$var($String, charSetSpec, changedCharSetException->getCharSetSpec());
 		if (changedCharSetException->keyEqualsCharSet()) {
 			putClientProperty("charset"_s, charSetSpec);
@@ -636,8 +609,7 @@ void JEditorPane::read($InputStream* in$renamed, $Document* doc) {
 		}
 		try {
 			$nc(in)->reset();
-		} catch ($IOException&) {
-			$var($IOException, exception, $catch());
+		} catch ($IOException& exception) {
 			$nc(in)->close();
 			$var($URL, url, $cast($URL, $nc(doc)->getProperty($Document::StreamDescriptionProperty)));
 			if (url != nullptr) {
@@ -649,8 +621,7 @@ void JEditorPane::read($InputStream* in$renamed, $Document* doc) {
 		}
 		try {
 			$nc(doc)->remove(0, doc->getLength());
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& e) {
 		}
 		$nc(doc)->putProperty("IgnoreCharsetDirective"_s, $($Boolean::valueOf(true)));
 		read(in, doc);
@@ -685,11 +656,9 @@ $InputStream* JEditorPane::getStream($URL* page$renamed) {
 	} else {
 		try {
 			$SwingUtilities::invokeAndWait($$new($JEditorPane$3, this, conn));
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, e, $catch());
+		} catch ($InterruptedException& e) {
 			$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-		} catch ($InvocationTargetException&) {
-			$var($InvocationTargetException, e, $catch());
+		} catch ($InvocationTargetException& e) {
 			$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 		}
 	}
@@ -728,8 +697,8 @@ void JEditorPane::handlePostData($HttpURLConnection* conn, Object$* postData) {
 			conn->setRequestProperty("Content-Type"_s, "application/x-www-form-urlencoded"_s);
 			$assign(os, $new($DataOutputStream, $(conn->getOutputStream())));
 			os->writeBytes($cast($String, postData));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (os != nullptr) {
 				os->close();
@@ -762,8 +731,7 @@ void JEditorPane::scrollToReference($String* reference) {
 						scrollRectToVisible(r);
 						setCaretPosition(pos);
 					}
-				} catch ($BadLocationException&) {
-					$var($BadLocationException, ble, $catch());
+				} catch ($BadLocationException& ble) {
 					$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this);
 				}
 			}
@@ -840,13 +808,9 @@ void JEditorPane::setCharsetFromContentTypeParameters($String* paramlist$renamed
 				putClientProperty("charset"_s, charset);
 			}
 		}
-	} catch ($IndexOutOfBoundsException&) {
-		$catch();
-	} catch ($NullPointerException&) {
-		$catch();
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
-		$init($System);
+	} catch ($IndexOutOfBoundsException& e) {
+	} catch ($NullPointerException& e) {
+	} catch ($Exception& e) {
 		$nc($System::err)->println($$str({"JEditorPane.getCharsetFromContentTypeParameters failed on: "_s, paramlist}));
 		e->printStackTrace();
 	}
@@ -920,8 +884,7 @@ void JEditorPane::replaceSelection($String* content) {
 			if (composedTextSaved) {
 				restoreComposedText();
 			}
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this);
 		}
 	} else {
@@ -948,8 +911,7 @@ $EditorKit* JEditorPane::createEditorKitForContentType($String* type) {
 			}
 			$assign(k, $cast($EditorKit, $nc(c)->newInstance()));
 			kitRegistry->put(type, k);
-		} catch ($Throwable&) {
-			$var($Throwable, e, $catch());
+		} catch ($Throwable& e) {
 			$assign(k, nullptr);
 		}
 	}
@@ -1076,11 +1038,9 @@ void JEditorPane::setText($String* t) {
 		$var($Reader, r, $new($StringReader, t));
 		$var($EditorKit, kit, getEditorKit());
 		$nc(kit)->read(r, doc, 0);
-	} catch ($IOException&) {
-		$var($IOException, ioe, $catch());
+	} catch ($IOException& ioe) {
 		$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this);
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, ble, $catch());
+	} catch ($BadLocationException& ble) {
 		$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this);
 	}
 }
@@ -1092,8 +1052,7 @@ $String* JEditorPane::getText() {
 		$var($StringWriter, buf, $new($StringWriter));
 		write(buf);
 		$assign(txt, buf->toString());
-	} catch ($IOException&) {
-		$var($IOException, ioe, $catch());
+	} catch ($IOException& ioe) {
 		$assign(txt, nullptr);
 	}
 	return txt;

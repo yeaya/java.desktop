@@ -2,15 +2,7 @@
 
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JApplet.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JEditorPane.h>
@@ -84,8 +76,7 @@ void bug4984669::init() {
 		$nc($(pane->getDocument()))->insertString(9, "bbb\n"_s, attrs);
 		$nc($(pane->getDocument()))->insertString(13, "cccc\n"_s, attrs);
 		$nc($(pane->getDocument()))->insertString(18, "ddddd\n"_s, attrs);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($Error, "Failed: Unexpected Exception"_s, e);
 	}
 }

@@ -2,19 +2,6 @@
 
 #include <bug6771184$1$1.h>
 #include <bug6771184.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTextArea.h>
 #include <javax/swing/text/BadLocationException.h>
 #include <javax/swing/text/Highlighter$HighlightPainter.h>
@@ -123,21 +110,18 @@ void bug6771184$1::run() {
 				try {
 					$nc(highlighter)->addHighlight($nc(data)->get(0), data->get(1), myPainter);
 					$throwNew($RuntimeException, $$str({"Method addHighlight() does not throw BadLocationException for ("_s, $$str($nc(data)->get(0)), ", "_s, $$str(data->get(1)), ") "_s}));
-				} catch ($BadLocationException&) {
-					$catch();
+				} catch ($BadLocationException& e) {
 				}
 				$var($Object, objRef, nullptr);
 				try {
 					$assign(objRef, $nc(highlighter)->addHighlight(0, 1, myPainter));
-				} catch ($BadLocationException&) {
-					$var($BadLocationException, e, $catch());
+				} catch ($BadLocationException& e) {
 					$throwNew($RuntimeException, "highlighter.addHighlight(0, 1, myPainter) throws exception"_s, e);
 				}
 				try {
 					$nc(highlighter)->changeHighlight(objRef, $nc(data)->get(0), data->get(1));
 					$throwNew($RuntimeException, $$str({"Method changeHighlight() does not throw BadLocationException for ("_s, $$str($nc(data)->get(0)), ", "_s, $$str(data->get(1)), ") "_s}));
-				} catch ($BadLocationException&) {
-					$catch();
+				} catch ($BadLocationException& e) {
 				}
 			}
 		}

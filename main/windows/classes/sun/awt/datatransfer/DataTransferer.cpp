@@ -29,29 +29,12 @@
 #include <java/io/SequenceInputStream.h>
 #include <java/io/Serializable.h>
 #include <java/io/StringReader.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/ReflectiveOperationException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/UnsupportedOperationException.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
@@ -59,7 +42,6 @@
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
 #include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/lang/reflect/Modifier.h>
 #include <java/net/URI.h>
 #include <java/net/URISyntaxException.h>
@@ -590,17 +572,11 @@ $Object* allocate$DataTransferer($Class* clazz) {
 	return $of($alloc(DataTransferer));
 }
 
-
 $DataFlavor* DataTransferer::javaTextEncodingFlavor = nullptr;
-
 $Set* DataTransferer::textNatives = nullptr;
-
 $Map* DataTransferer::nativeCharsets = nullptr;
-
 $Map* DataTransferer::nativeEOLNs = nullptr;
-
 $Map* DataTransferer::nativeTerminators = nullptr;
-
 $String* DataTransferer::DATA_CONVERTER_KEY = nullptr;
 $StringArray* DataTransferer::DEPLOYMENT_CACHE_PROPERTIES = nullptr;
 $ArrayList* DataTransferer::deploymentCacheDirectoryList = nullptr;
@@ -821,8 +797,7 @@ $String* DataTransferer::getBestCharsetForTextFormat($Long* lFormat, $Transferab
 			$var($bytes, charsetNameBytes, $cast($bytes, localeTransferable->getTransferData(DataTransferer::javaTextEncodingFlavor)));
 			$init($StandardCharsets);
 			$assign(charset, $new($String, charsetNameBytes, $StandardCharsets::UTF_8));
-		} catch ($UnsupportedFlavorException&) {
-			$catch();
+		} catch ($UnsupportedFlavorException& cannotHappen) {
 		}
 	} else {
 		$assign(charset, getCharsetForTextFormat(lFormat));
@@ -952,13 +927,11 @@ $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlav
 		} else {
 			stringSelectionHack = false;
 		}
-	} catch ($UnsupportedFlavorException&) {
-		$var($UnsupportedFlavorException, e, $catch());
+	} catch ($UnsupportedFlavorException& e) {
 		$throwNew($IOException, $(e->getMessage()));
 	}
 	bool var$0 = stringSelectionHack;
 	if (!var$0) {
-		$load($String);
 		bool var$2 = $of($String::class$)->equals($nc(flavor)->getRepresentationClass());
 		bool var$1 = var$2 && $DataFlavorUtil::isFlavorCharsetTextType(flavor);
 		var$0 = (var$1 && isTextFormat(format));
@@ -982,20 +955,18 @@ $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlav
 						while ((c = $nc(r)->read()) != -1) {
 							buf->append((char16_t)c);
 						}
-					} catch ($Throwable&) {
-						$var($Throwable, t$, $catch());
+					} catch ($Throwable& t$) {
 						if (r != nullptr) {
 							try {
 								r->close();
-							} catch ($Throwable&) {
-								$var($Throwable, x2, $catch());
+							} catch ($Throwable& x2) {
 								t$->addSuppressed(x2);
 							}
 						}
 						$throw(t$);
 					}
-				} catch ($Throwable&) {
-					$assign(var$4, $catch());
+				} catch ($Throwable& var$5) {
+					$assign(var$4, var$5);
 				} /*finally*/ {
 					if (r != nullptr) {
 						r->close();
@@ -1008,8 +979,8 @@ $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlav
 		}
 		return translateTransferableString($(buf->toString()), format);
 	} else if (flavor->isRepresentationClassCharBuffer()) {
-		bool var$5 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
-		if (!(var$5 && isTextFormat(format))) {
+		bool var$6 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
+		if (!(var$6 && isTextFormat(format))) {
 			$throwNew($IOException, "cannot transfer non-text data as CharBuffer"_s);
 		}
 		$var($CharBuffer, buffer, $cast($CharBuffer, obj));
@@ -1020,8 +991,8 @@ $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlav
 	} else {
 		$load($chars);
 		if ($of($getClass($chars))->equals(flavor->getRepresentationClass())) {
-			bool var$6 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
-			if (!(var$6 && isTextFormat(format))) {
+			bool var$7 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
+			if (!(var$7 && isTextFormat(format))) {
 				$throwNew($IOException, "cannot transfer non-text data as char array"_s);
 			}
 			return translateTransferableString($$new($String, $cast($chars, obj)), format);
@@ -1030,8 +1001,8 @@ $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlav
 			int32_t size = $nc(buffer)->remaining();
 			$var($bytes, bytes, $new($bytes, size));
 			buffer->get(bytes, 0, size);
-			bool var$7 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
-			if (var$7 && isTextFormat(format)) {
+			bool var$8 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
+			if (var$8 && isTextFormat(format)) {
 				$var($String, sourceEncoding, $DataFlavorUtil::getTextCharset(flavor));
 				return translateTransferableString($$new($String, bytes, sourceEncoding), format);
 			} else {
@@ -1041,8 +1012,8 @@ $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlav
 			$load($bytes);
 			if ($of($getClass($bytes))->equals(flavor->getRepresentationClass())) {
 				$var($bytes, bytes, $cast($bytes, obj));
-				bool var$8 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
-				if (var$8 && isTextFormat(format)) {
+				bool var$9 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
+				if (var$9 && isTextFormat(format)) {
 					$var($String, sourceEncoding, $DataFlavorUtil::getTextCharset(flavor));
 					return translateTransferableString($$new($String, bytes, sourceEncoding), format);
 				} else {
@@ -1076,31 +1047,29 @@ $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlav
 		{
 			$var($ByteArrayOutputStream, bos, convertFileListToBytes(fileList));
 			{
-				$var($Throwable, var$9, nullptr);
+				$var($Throwable, var$10, nullptr);
 				try {
 					try {
 						$assign(theByteArray, $nc(bos)->toByteArray());
-					} catch ($Throwable&) {
-						$var($Throwable, t$, $catch());
+					} catch ($Throwable& t$) {
 						if (bos != nullptr) {
 							try {
 								bos->close();
-							} catch ($Throwable&) {
-								$var($Throwable, x2, $catch());
+							} catch ($Throwable& x2) {
 								t$->addSuppressed(x2);
 							}
 						}
 						$throw(t$);
 					}
-				} catch ($Throwable&) {
-					$assign(var$9, $catch());
+				} catch ($Throwable& var$11) {
+					$assign(var$10, var$11);
 				} /*finally*/ {
 					if (bos != nullptr) {
 						bos->close();
 					}
 				}
-				if (var$9 != nullptr) {
-					$throw(var$9);
+				if (var$10 != nullptr) {
+					$throw(var$10);
 				}
 			}
 		}
@@ -1114,8 +1083,7 @@ $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlav
 		if (nat != nullptr) {
 			try {
 				$assign(targetCharset, $$new($DataFlavor, nat)->getParameter("charset"_s));
-			} catch ($ClassNotFoundException&) {
-				$var($ClassNotFoundException, cnfe, $catch());
+			} catch ($ClassNotFoundException& cnfe) {
 				$throwNew($IOException, static_cast<$Throwable*>(cnfe));
 			}
 		}
@@ -1133,12 +1101,11 @@ $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlav
 				{
 					$var($URI, uri, $$new($File, fileObject)->toURI());
 					try {
-						$var($String, var$10, $nc(uri)->getScheme());
-						$var($String, var$11, ""_s);
-						$var($String, var$12, uri->getPath());
-						uriList->add($($$new($URI, var$10, var$11, var$12, $(uri->getFragment()))->toString()));
-					} catch ($URISyntaxException&) {
-						$var($URISyntaxException, uriSyntaxException, $catch());
+						$var($String, var$12, $nc(uri)->getScheme());
+						$var($String, var$13, ""_s);
+						$var($String, var$14, uri->getPath());
+						uriList->add($($$new($URI, var$12, var$13, var$14, $(uri->getFragment()))->toString()));
+					} catch ($URISyntaxException& uriSyntaxException) {
 						$throwNew($IOException, static_cast<$Throwable*>(uriSyntaxException));
 					}
 				}
@@ -1148,7 +1115,7 @@ $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlav
 		{
 			$var($ByteArrayOutputStream, bos, $new($ByteArrayOutputStream));
 			{
-				$var($Throwable, var$13, nullptr);
+				$var($Throwable, var$15, nullptr);
 				try {
 					try {
 						{
@@ -1163,23 +1130,21 @@ $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlav
 							}
 						}
 						$assign(theByteArray, bos->toByteArray());
-					} catch ($Throwable&) {
-						$var($Throwable, t$, $catch());
+					} catch ($Throwable& t$) {
 						try {
 							bos->close();
-						} catch ($Throwable&) {
-							$var($Throwable, x2, $catch());
+						} catch ($Throwable& x2) {
 							t$->addSuppressed(x2);
 						}
 						$throw(t$);
 					}
-				} catch ($Throwable&) {
-					$assign(var$13, $catch());
+				} catch ($Throwable& var$16) {
+					$assign(var$15, var$16);
 				} /*finally*/ {
 					bos->close();
 				}
-				if (var$13 != nullptr) {
-					$throw(var$13);
+				if (var$15 != nullptr) {
+					$throw(var$15);
 				}
 			}
 		}
@@ -1190,73 +1155,69 @@ $bytes* DataTransferer::translateTransferable($Transferable* contents, $DataFlav
 		{
 			$var($ByteArrayOutputStream, bos, $new($ByteArrayOutputStream));
 			{
-				$var($Throwable, var$14, nullptr);
-				$var($bytes, var$16, nullptr);
-				bool return$15 = false;
+				$var($Throwable, var$17, nullptr);
+				$var($bytes, var$19, nullptr);
+				bool return$18 = false;
 				try {
 					try {
 						{
 							$var($InputStream, is, $cast($InputStream, obj));
 							{
-								$var($Throwable, var$17, nullptr);
+								$var($Throwable, var$20, nullptr);
 								try {
 									try {
 										$nc(is)->mark($Integer::MAX_VALUE);
 										is->transferTo(bos);
 										is->reset();
-									} catch ($Throwable&) {
-										$var($Throwable, t$, $catch());
+									} catch ($Throwable& t$) {
 										if (is != nullptr) {
 											try {
 												is->close();
-											} catch ($Throwable&) {
-												$var($Throwable, x2, $catch());
+											} catch ($Throwable& x2) {
 												t$->addSuppressed(x2);
 											}
 										}
 										$throw(t$);
 									}
-								} catch ($Throwable&) {
-									$assign(var$17, $catch());
+								} catch ($Throwable& var$21) {
+									$assign(var$20, var$21);
 								} /*finally*/ {
 									if (is != nullptr) {
 										is->close();
 									}
 								}
-								if (var$17 != nullptr) {
-									$throw(var$17);
+								if (var$20 != nullptr) {
+									$throw(var$20);
 								}
 							}
 						}
-						bool var$18 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
-						if (var$18 && isTextFormat(format)) {
+						bool var$22 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
+						if (var$22 && isTextFormat(format)) {
 							$var($bytes, bytes, bos->toByteArray());
 							$var($String, sourceEncoding, $DataFlavorUtil::getTextCharset(flavor));
-							$assign(var$16, translateTransferableString($$new($String, bytes, sourceEncoding), format));
-							return$15 = true;
+							$assign(var$19, translateTransferableString($$new($String, bytes, sourceEncoding), format));
+							return$18 = true;
 							goto $finally3;
 						}
 						$assign(theByteArray, bos->toByteArray());
-					} catch ($Throwable&) {
-						$var($Throwable, t$, $catch());
+					} catch ($Throwable& t$) {
 						try {
 							bos->close();
-						} catch ($Throwable&) {
-							$var($Throwable, x2, $catch());
+						} catch ($Throwable& x2) {
 							t$->addSuppressed(x2);
 						}
 						$throw(t$);
 					}
-				} catch ($Throwable&) {
-					$assign(var$14, $catch());
+				} catch ($Throwable& var$23) {
+					$assign(var$17, var$23);
 				} $finally3: {
 					bos->close();
 				}
-				if (var$14 != nullptr) {
-					$throw(var$14);
+				if (var$17 != nullptr) {
+					$throw(var$17);
 				}
-				if (return$15) {
-					return var$16;
+				if (return$18) {
+					return var$19;
 				}
 			}
 		}
@@ -1292,18 +1253,16 @@ $bytes* DataTransferer::convertObjectToBytes(Object$* object) {
 								$assign(var$5, bos->toByteArray());
 								return$4 = true;
 								goto $finally1;
-							} catch ($Throwable&) {
-								$var($Throwable, t$, $catch());
+							} catch ($Throwable& t$) {
 								try {
 									oos->close();
-								} catch ($Throwable&) {
-									$var($Throwable, x2, $catch());
+								} catch ($Throwable& x2) {
 									t$->addSuppressed(x2);
 								}
 								$throw(t$);
 							}
-						} catch ($Throwable&) {
-							$assign(var$3, $catch());
+						} catch ($Throwable& var$6) {
+							$assign(var$3, var$6);
 						} $finally1: {
 							oos->close();
 						}
@@ -1316,18 +1275,16 @@ $bytes* DataTransferer::convertObjectToBytes(Object$* object) {
 							goto $finally;
 						}
 					}
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					try {
 						bos->close();
-					} catch ($Throwable&) {
-						$var($Throwable, x2, $catch());
+					} catch ($Throwable& x2) {
 						t$->addSuppressed(x2);
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$7) {
+				$assign(var$0, var$7);
 			} $finally: {
 				bos->close();
 			}
@@ -1352,8 +1309,7 @@ $String* DataTransferer::removeSuspectedData($DataFlavor* flavor, $Transferable*
 	$var($ProtectionDomain, userProtectionDomain, getUserProtectionDomain(contents));
 	try {
 		return $cast($String, $AccessController::doPrivileged(static_cast<$PrivilegedExceptionAction*>($$new(DataTransferer$$Lambda$lambda$removeSuspectedData$0, this, str, userProtectionDomain))));
-	} catch ($PrivilegedActionException&) {
-		$var($PrivilegedActionException, pae, $catch());
+	} catch ($PrivilegedActionException& pae) {
 		$throwNew($IOException, $(pae->getMessage()), pae);
 	}
 	$shouldNotReachHere();
@@ -1374,8 +1330,7 @@ bool DataTransferer::isForbiddenToRead($File* file, $ProtectionDomain* protectio
 		if ($nc(protectionDomain)->implies(filePermission)) {
 			return false;
 		}
-	} catch ($IOException&) {
-		$catch();
+	} catch ($IOException& e) {
 	}
 	return true;
 }
@@ -1385,8 +1340,7 @@ $ArrayList* DataTransferer::castToFiles($List* files, $ProtectionDomain* userPro
 	$beforeCallerSensitive();
 	try {
 		return $cast($ArrayList, $AccessController::doPrivileged(static_cast<$PrivilegedExceptionAction*>($$new(DataTransferer$$Lambda$lambda$castToFiles$1$1, this, files, userProtectionDomain))));
-	} catch ($PrivilegedActionException&) {
-		$var($PrivilegedActionException, pae, $catch());
+	} catch ($PrivilegedActionException& pae) {
 		$throwNew($IOException, $(pae->getMessage()));
 	}
 	$shouldNotReachHere();
@@ -1422,8 +1376,7 @@ bool DataTransferer::isFileInWebstartedCache($File* f) {
 							if (cacheDirectory != nullptr) {
 								$nc(DataTransferer::deploymentCacheDirectoryList)->add(cacheDirectory);
 							}
-						} catch ($IOException&) {
-							$catch();
+						} catch ($IOException& ioe) {
 						}
 					}
 				}
@@ -1495,25 +1448,22 @@ $Object* DataTransferer::translateBytes($bytes* bytes$renamed, $DataFlavor* flav
 									{
 										try {
 											files->add($$new($File, uri));
-										} catch ($IllegalArgumentException&) {
-											$catch();
+										} catch ($IllegalArgumentException& illegalArg) {
 										}
 									}
 								}
 							}
 							$assign(theObject, files);
-						} catch ($Throwable&) {
-							$var($Throwable, t$, $catch());
+						} catch ($Throwable& t$) {
 							try {
 								str->close();
-							} catch ($Throwable&) {
-								$var($Throwable, x2, $catch());
+							} catch ($Throwable& x2) {
 								t$->addSuppressed(x2);
 							}
 							$throw(t$);
 						}
-					} catch ($Throwable&) {
-						$assign(var$2, $catch());
+					} catch ($Throwable& var$5) {
+						$assign(var$2, var$5);
 					} $finally: {
 						str->close();
 					}
@@ -1526,42 +1476,39 @@ $Object* DataTransferer::translateBytes($bytes* bytes$renamed, $DataFlavor* flav
 				}
 			}
 		} else {
-			$load($String);
-			bool var$8 = $of($String::class$)->equals($nc(flavor)->getRepresentationClass());
-			bool var$7 = var$8 && $DataFlavorUtil::isFlavorCharsetTextType(flavor);
-			if (var$7 && isTextFormat(format)) {
+			bool var$9 = $of($String::class$)->equals($nc(flavor)->getRepresentationClass());
+			bool var$8 = var$9 && $DataFlavorUtil::isFlavorCharsetTextType(flavor);
+			if (var$8 && isTextFormat(format)) {
 				$assign(theObject, translateBytesToString(bytes, format, localeTransferable));
 			} else if ($nc(flavor)->isRepresentationClassReader()) {
 				{
 					$var($ByteArrayInputStream, bais, $new($ByteArrayInputStream, bytes));
 					{
-						$var($Throwable, var$9, nullptr);
+						$var($Throwable, var$10, nullptr);
 						try {
 							try {
 								$assign(theObject, translateStream(bais, flavor, format, localeTransferable));
-							} catch ($Throwable&) {
-								$var($Throwable, t$, $catch());
+							} catch ($Throwable& t$) {
 								try {
 									bais->close();
-								} catch ($Throwable&) {
-									$var($Throwable, x2, $catch());
+								} catch ($Throwable& x2) {
 									t$->addSuppressed(x2);
 								}
 								$throw(t$);
 							}
-						} catch ($Throwable&) {
-							$assign(var$9, $catch());
+						} catch ($Throwable& var$11) {
+							$assign(var$10, var$11);
 						} /*finally*/ {
 							bais->close();
 						}
-						if (var$9 != nullptr) {
-							$throw(var$9);
+						if (var$10 != nullptr) {
+							$throw(var$10);
 						}
 					}
 				}
 			} else if (flavor->isRepresentationClassCharBuffer()) {
-				bool var$10 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
-				if (!(var$10 && isTextFormat(format))) {
+				bool var$12 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
+				if (!(var$12 && isTextFormat(format))) {
 					$throwNew($IOException, "cannot transfer non-text data as CharBuffer"_s);
 				}
 				$var($CharBuffer, buffer, $CharBuffer::wrap($(static_cast<$CharSequence*>(translateBytesToString(bytes, format, localeTransferable)))));
@@ -1569,14 +1516,14 @@ $Object* DataTransferer::translateBytes($bytes* bytes$renamed, $DataFlavor* flav
 			} else {
 				$load($chars);
 				if ($of($getClass($chars))->equals(flavor->getRepresentationClass())) {
-					bool var$11 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
-					if (!(var$11 && isTextFormat(format))) {
+					bool var$13 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
+					if (!(var$13 && isTextFormat(format))) {
 						$throwNew($IOException, "cannot transfer non-text data as char array"_s);
 					}
 					$assign(theObject, $nc($(translateBytesToString(bytes, format, localeTransferable)))->toCharArray());
 				} else if (flavor->isRepresentationClassByteBuffer()) {
-					bool var$12 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
-					if (var$12 && isTextFormat(format)) {
+					bool var$14 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
+					if (var$14 && isTextFormat(format)) {
 						$assign(bytes, $nc($(translateBytesToString(bytes, format, localeTransferable)))->getBytes($($DataFlavorUtil::getTextCharset(flavor))));
 					}
 					$var($ByteBuffer, buffer, $ByteBuffer::wrap(bytes));
@@ -1584,8 +1531,8 @@ $Object* DataTransferer::translateBytes($bytes* bytes$renamed, $DataFlavor* flav
 				} else {
 					$load($bytes);
 					if ($of($getClass($bytes))->equals(flavor->getRepresentationClass())) {
-						bool var$13 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
-						if (var$13 && isTextFormat(format)) {
+						bool var$15 = $DataFlavorUtil::isFlavorCharsetTextType(flavor);
+						if (var$15 && isTextFormat(format)) {
 							$assign(theObject, $nc($(translateBytesToString(bytes, format, localeTransferable)))->getBytes($($DataFlavorUtil::getTextCharset(flavor))));
 						} else {
 							$assign(theObject, bytes);
@@ -1594,27 +1541,25 @@ $Object* DataTransferer::translateBytes($bytes* bytes$renamed, $DataFlavor* flav
 						{
 							$var($ByteArrayInputStream, bais, $new($ByteArrayInputStream, bytes));
 							{
-								$var($Throwable, var$14, nullptr);
+								$var($Throwable, var$16, nullptr);
 								try {
 									try {
 										$assign(theObject, translateStream(bais, flavor, format, localeTransferable));
-									} catch ($Throwable&) {
-										$var($Throwable, t$, $catch());
+									} catch ($Throwable& t$) {
 										try {
 											bais->close();
-										} catch ($Throwable&) {
-											$var($Throwable, x2, $catch());
+										} catch ($Throwable& x2) {
 											t$->addSuppressed(x2);
 										}
 										$throw(t$);
 									}
-								} catch ($Throwable&) {
-									$assign(var$14, $catch());
+								} catch ($Throwable& var$17) {
+									$assign(var$16, var$17);
 								} /*finally*/ {
 									bais->close();
 								}
-								if (var$14 != nullptr) {
-									$throw(var$14);
+								if (var$16 != nullptr) {
+									$throw(var$16);
 								}
 							}
 						}
@@ -1622,82 +1567,75 @@ $Object* DataTransferer::translateBytes($bytes* bytes$renamed, $DataFlavor* flav
 						try {
 							$var($ByteArrayInputStream, bais, $new($ByteArrayInputStream, bytes));
 							{
-								$var($Throwable, var$15, nullptr);
+								$var($Throwable, var$18, nullptr);
 								try {
 									try {
 										$var($ObjectInputStream, ois, $new($ObjectInputStream, bais));
 										{
-											$var($Throwable, var$16, nullptr);
+											$var($Throwable, var$19, nullptr);
 											try {
 												try {
 													$assign(theObject, $DataFlavorUtil$RMI::getMarshalledObject($(ois->readObject())));
-												} catch ($Throwable&) {
-													$var($Throwable, t$, $catch());
+												} catch ($Throwable& t$) {
 													try {
 														ois->close();
-													} catch ($Throwable&) {
-														$var($Throwable, x2, $catch());
+													} catch ($Throwable& x2) {
 														t$->addSuppressed(x2);
 													}
 													$throw(t$);
 												}
-											} catch ($Throwable&) {
-												$assign(var$16, $catch());
+											} catch ($Throwable& var$20) {
+												$assign(var$19, var$20);
 											} /*finally*/ {
 												ois->close();
 											}
-											if (var$16 != nullptr) {
-												$throw(var$16);
+											if (var$19 != nullptr) {
+												$throw(var$19);
 											}
 										}
-									} catch ($Throwable&) {
-										$var($Throwable, t$, $catch());
+									} catch ($Throwable& t$) {
 										try {
 											bais->close();
-										} catch ($Throwable&) {
-											$var($Throwable, x2, $catch());
+										} catch ($Throwable& x2) {
 											t$->addSuppressed(x2);
 										}
 										$throw(t$);
 									}
-								} catch ($Throwable&) {
-									$assign(var$15, $catch());
+								} catch ($Throwable& var$21) {
+									$assign(var$18, var$21);
 								} /*finally*/ {
 									bais->close();
 								}
-								if (var$15 != nullptr) {
-									$throw(var$15);
+								if (var$18 != nullptr) {
+									$throw(var$18);
 								}
 							}
-						} catch ($Exception&) {
-							$var($Exception, e, $catch());
+						} catch ($Exception& e) {
 							$throwNew($IOException, $(e->getMessage()));
 						}
 					} else if (flavor->isRepresentationClassSerializable()) {
 						{
 							$var($ByteArrayInputStream, bais, $new($ByteArrayInputStream, bytes));
 							{
-								$var($Throwable, var$17, nullptr);
+								$var($Throwable, var$22, nullptr);
 								try {
 									try {
 										$assign(theObject, translateStream(bais, flavor, format, localeTransferable));
-									} catch ($Throwable&) {
-										$var($Throwable, t$, $catch());
+									} catch ($Throwable& t$) {
 										try {
 											bais->close();
-										} catch ($Throwable&) {
-											$var($Throwable, x2, $catch());
+										} catch ($Throwable& x2) {
 											t$->addSuppressed(x2);
 										}
 										$throw(t$);
 									}
-								} catch ($Throwable&) {
-									$assign(var$17, $catch());
+								} catch ($Throwable& var$23) {
+									$assign(var$22, var$23);
 								} /*finally*/ {
 									bais->close();
 								}
-								if (var$17 != nullptr) {
-									$throw(var$17);
+								if (var$22 != nullptr) {
+									$throw(var$22);
 								}
 							}
 						}
@@ -1739,15 +1677,13 @@ $Object* DataTransferer::translateStream($InputStream* str, $DataFlavor* flavor,
 				{
 					try {
 						files->add($$new($File, uri));
-					} catch ($IllegalArgumentException&) {
-						$catch();
+					} catch ($IllegalArgumentException& illegalArg) {
 					}
 				}
 			}
 		}
 		$assign(theObject, files);
 	} else {
-		$load($String);
 		bool var$4 = $of($String::class$)->equals($nc(flavor)->getRepresentationClass());
 		bool var$3 = var$4 && $DataFlavorUtil::isFlavorCharsetTextType(flavor);
 		if (var$3 && isTextFormat(format)) {
@@ -1784,18 +1720,16 @@ $Object* DataTransferer::translateStream($InputStream* str, $DataFlavor* flavor,
 							try {
 								try {
 									$assign(theObject, $DataFlavorUtil$RMI::getMarshalledObject($(ois->readObject())));
-								} catch ($Throwable&) {
-									$var($Throwable, t$, $catch());
+								} catch ($Throwable& t$) {
 									try {
 										ois->close();
-									} catch ($Throwable&) {
-										$var($Throwable, x2, $catch());
+									} catch ($Throwable& x2) {
 										t$->addSuppressed(x2);
 									}
 									$throw(t$);
 								}
-							} catch ($Throwable&) {
-								$assign(var$7, $catch());
+							} catch ($Throwable& var$8) {
+								$assign(var$7, var$8);
 							} /*finally*/ {
 								ois->close();
 							}
@@ -1803,39 +1737,35 @@ $Object* DataTransferer::translateStream($InputStream* str, $DataFlavor* flavor,
 								$throw(var$7);
 							}
 						}
-					} catch ($Exception&) {
-						$var($Exception, e, $catch());
+					} catch ($Exception& e) {
 						$throwNew($IOException, $(e->getMessage()));
 					}
 				} else if (flavor->isRepresentationClassSerializable()) {
 					try {
 						$var($ObjectInputStream, ois, $new($ObjectInputStream, str));
 						{
-							$var($Throwable, var$8, nullptr);
+							$var($Throwable, var$9, nullptr);
 							try {
 								try {
 									$assign(theObject, ois->readObject());
-								} catch ($Throwable&) {
-									$var($Throwable, t$, $catch());
+								} catch ($Throwable& t$) {
 									try {
 										ois->close();
-									} catch ($Throwable&) {
-										$var($Throwable, x2, $catch());
+									} catch ($Throwable& x2) {
 										t$->addSuppressed(x2);
 									}
 									$throw(t$);
 								}
-							} catch ($Throwable&) {
-								$assign(var$8, $catch());
+							} catch ($Throwable& var$10) {
+								$assign(var$9, var$10);
 							} /*finally*/ {
 								ois->close();
 							}
-							if (var$8 != nullptr) {
-								$throw(var$8);
+							if (var$9 != nullptr) {
+								$throw(var$9);
 							}
 						}
-					} catch ($Exception&) {
-						$var($Exception, e, $catch());
+					} catch ($Exception& e) {
 						$throwNew($IOException, $(e->getMessage()));
 					}
 				} else {
@@ -1876,15 +1806,13 @@ $Object* DataTransferer::constructFlavoredObject(Object$* arg, $DataFlavor* flav
 		$var($ConstructorArray, constructors, nullptr);
 		try {
 			$assign(constructors, $cast($ConstructorArray, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new(DataTransferer$$Lambda$getConstructors$2, static_cast<$Class*>($nc(dfrc)))))));
-		} catch ($SecurityException&) {
-			$var($SecurityException, se, $catch());
+		} catch ($SecurityException& se) {
 			$throwNew($IOException, $(se->getMessage()));
 		}
 		$var($Constructor, constructor, $cast($Constructor, $nc($($nc($($nc($($nc($($Stream::of(constructors)))->filter(static_cast<$Predicate*>($$new(DataTransferer$$Lambda$lambda$constructFlavoredObject$2$3)))))->filter(static_cast<$Predicate*>($$new(DataTransferer$$Lambda$lambda$constructFlavoredObject$3$4, clazz)))))->findFirst()))->orElseThrow(static_cast<$Supplier*>($$new(DataTransferer$$Lambda$lambda$constructFlavoredObject$4$5, clazz, dfrc)))));
 		try {
 			return $of($nc(constructor)->newInstance($$new($ObjectArray, {arg})));
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
+		} catch ($Exception& e) {
 			$throwNew($IOException, $(e->getMessage()));
 		}
 	}
@@ -1933,20 +1861,18 @@ $Image* DataTransferer::standardImageBytesToImage($bytes* bytes, $String* mimeTy
 												return$7 = true;
 												goto $finally2;
 											}
-										} catch ($Throwable&) {
-											$var($Throwable, t$, $catch());
+										} catch ($Throwable& t$) {
 											if (imageInputStream != nullptr) {
 												try {
 													imageInputStream->close();
-												} catch ($Throwable&) {
-													$var($Throwable, x2, $catch());
+												} catch ($Throwable& x2) {
 													t$->addSuppressed(x2);
 												}
 											}
 											$throw(t$);
 										}
-									} catch ($Throwable&) {
-										$assign(var$6, $catch());
+									} catch ($Throwable& var$9) {
+										$assign(var$6, var$9);
 									} $finally2: {
 										if (imageInputStream != nullptr) {
 											imageInputStream->close();
@@ -1961,8 +1887,8 @@ $Image* DataTransferer::standardImageBytesToImage($bytes* bytes, $String* mimeTy
 										goto $finally1;
 									}
 								}
-							} catch ($Throwable&) {
-								$assign(var$3, $catch());
+							} catch ($Throwable& var$10) {
+								$assign(var$3, var$10);
 							} $finally1: {
 								$nc(imageReader)->dispose();
 							}
@@ -1975,18 +1901,16 @@ $Image* DataTransferer::standardImageBytesToImage($bytes* bytes, $String* mimeTy
 								goto $finally;
 							}
 						}
-					} catch ($Throwable&) {
-						$var($Throwable, t$, $catch());
+					} catch ($Throwable& t$) {
 						try {
 							bais->close();
-						} catch ($Throwable&) {
-							$var($Throwable, x2, $catch());
+						} catch ($Throwable& x2) {
 							t$->addSuppressed(x2);
 						}
 						$throw(t$);
 					}
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$11) {
+					$assign(var$0, var$11);
 				} $finally: {
 					bais->close();
 				}
@@ -1997,8 +1921,7 @@ $Image* DataTransferer::standardImageBytesToImage($bytes* bytes, $String* mimeTy
 					return var$2;
 				}
 			}
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			$assign(ioe, e);
 			continue;
 		}
@@ -2020,8 +1943,7 @@ $bytes* DataTransferer::imageToStandardBytes($Image* image, $String* mimeType) {
 	if ($instanceOf($RenderedImage, image)) {
 		try {
 			return imageToStandardBytesImpl($cast($RenderedImage, image), mimeType);
-		} catch ($IOException&) {
-			$var($IOException, ioe, $catch());
+		} catch ($IOException& ioe) {
 			$assign(originalIOE, ioe);
 		}
 	}
@@ -2044,8 +1966,8 @@ $bytes* DataTransferer::imageToStandardBytes($Image* image, $String* mimeType) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$nc(g)->drawImage(image, 0, 0, width, height, nullptr);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(g)->dispose();
 		}
@@ -2055,8 +1977,7 @@ $bytes* DataTransferer::imageToStandardBytes($Image* image, $String* mimeType) {
 	}
 	try {
 		return imageToStandardBytesImpl(bufferedImage, mimeType);
-	} catch ($IOException&) {
-		$var($IOException, ioe, $catch());
+	} catch ($IOException& ioe) {
 		if (originalIOE != nullptr) {
 			$throw(originalIOE);
 		} else {
@@ -2088,20 +2009,18 @@ $bytes* DataTransferer::imageToStandardBytesImpl($RenderedImage* renderedImage, 
 							imageWriter->setOutput(imageOutputStream);
 							imageWriter->write(renderedImage);
 							$nc(imageOutputStream)->flush();
-						} catch ($Throwable&) {
-							$var($Throwable, t$, $catch());
+						} catch ($Throwable& t$) {
 							if (imageOutputStream != nullptr) {
 								try {
 									imageOutputStream->close();
-								} catch ($Throwable&) {
-									$var($Throwable, x2, $catch());
+								} catch ($Throwable& x2) {
 									t$->addSuppressed(x2);
 								}
 							}
 							$throw(t$);
 						}
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$1) {
+						$assign(var$0, var$1);
 					} /*finally*/ {
 						if (imageOutputStream != nullptr) {
 							imageOutputStream->close();
@@ -2112,8 +2031,7 @@ $bytes* DataTransferer::imageToStandardBytesImpl($RenderedImage* renderedImage, 
 					}
 				}
 			}
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			imageWriter->dispose();
 			baos->reset();
 			$assign(ioe, e);
@@ -2179,8 +2097,8 @@ $bytes* DataTransferer::convertData(Object$* source, $Transferable* contents, in
 					appContext->remove(DataTransferer::DATA_CONVERTER_KEY);
 				}
 				$assign(ret, $cast($bytes, stack->pop()));
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc($(getToolkitThreadBlockedHandler()))->unlock();
 			}
@@ -2210,8 +2128,8 @@ void DataTransferer::processDataConversionRequests() {
 					dataConverter->run();
 					appContext->remove(DataTransferer::DATA_CONVERTER_KEY);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc($(getToolkitThreadBlockedHandler()))->unlock();
 			}
@@ -2345,8 +2263,7 @@ void clinit$DataTransferer($Class* class$) {
 		$var($DataFlavor, tJavaTextEncodingFlavor, nullptr);
 		try {
 			$assign(tJavaTextEncodingFlavor, $new($DataFlavor, "application/x-java-text-encoding;class=\"[B\""_s));
-		} catch ($ClassNotFoundException&) {
-			$catch();
+		} catch ($ClassNotFoundException& cannotHappen) {
 		}
 		$assignStatic(DataTransferer::javaTextEncodingFlavor, tJavaTextEncodingFlavor);
 	}

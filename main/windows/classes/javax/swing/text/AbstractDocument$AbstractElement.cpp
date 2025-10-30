@@ -5,19 +5,9 @@
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/OutputStream.h>
 #include <java/io/OutputStreamWriter.h>
-#include <java/io/PrintStream.h>
 #include <java/io/PrintWriter.h>
 #include <java/io/UnsupportedEncodingException.h>
 #include <java/io/Writer.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Enumeration.h>
 #include <javax/swing/text/AbstractDocument$AttributeContext.h>
 #include <javax/swing/text/AbstractDocument$Content.h>
@@ -187,8 +177,7 @@ void AbstractDocument$AbstractElement::dump($PrintStream* psOut, int32_t indentA
 	$var($PrintWriter, out, nullptr);
 	try {
 		$assign(out, $new($PrintWriter, static_cast<$Writer*>($$new($OutputStreamWriter, static_cast<$OutputStream*>(psOut), "JavaEsc"_s)), true));
-	} catch ($UnsupportedEncodingException&) {
-		$var($UnsupportedEncodingException, e, $catch());
+	} catch ($UnsupportedEncodingException& e) {
 		$assign(out, $new($PrintWriter, static_cast<$OutputStream*>(psOut), true));
 	}
 	indent(out, indentAmount);
@@ -223,8 +212,7 @@ void AbstractDocument$AbstractElement::dump($PrintStream* psOut, int32_t indentA
 				$assign(contentStr, $str({$(contentStr->substring(0, 40)), "..."_s}));
 			}
 			out->println($$str({"["_s, contentStr, "]"_s}));
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& e) {
 		}
 	} else {
 		int32_t n = getElementCount();

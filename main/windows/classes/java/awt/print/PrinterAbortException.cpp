@@ -1,13 +1,6 @@
 #include <java/awt/print/PrinterAbortException.h>
 
 #include <java/awt/print/PrinterException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $PrinterException = ::java::awt::print::PrinterException;
@@ -54,16 +47,10 @@ void PrinterAbortException::init$($String* msg) {
 PrinterAbortException::PrinterAbortException() {
 }
 
-PrinterAbortException::PrinterAbortException(const PrinterAbortException& e) {
+PrinterAbortException::PrinterAbortException(const PrinterAbortException& e) : $PrinterException(e) {
 }
 
-PrinterAbortException PrinterAbortException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void PrinterAbortException::throwWrapper$() {
-	$pendingException(this);
+void PrinterAbortException::throw$() {
 	throw *this;
 }
 

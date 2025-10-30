@@ -2,15 +2,6 @@
 
 #include <java/awt/AWTEvent.h>
 #include <java/awt/EventQueue.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $AWTEvent = ::java::awt::AWTEvent;
@@ -46,9 +37,7 @@ void EventQueueProxy::init$() {
 void EventQueueProxy::dispatchEvent($AWTEvent* evt) {
 	try {
 		$EventQueue::dispatchEvent(evt);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
-		$init($System);
+	} catch ($Exception& e) {
 		$nc($System::out)->println("Intentionally consumed Exception from ActionListener"_s);
 		e->printStackTrace();
 	}

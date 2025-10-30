@@ -4,14 +4,6 @@
 #include <java/awt/Component.h>
 #include <java/awt/Frame$AccessibleAWTFrame.h>
 #include <java/awt/Frame.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/accessibility/AccessibleState.h>
 #include <javax/accessibility/AccessibleStateSet.h>

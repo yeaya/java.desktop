@@ -4,22 +4,7 @@
 #include <com/sun/imageio/plugins/common/I18N.h>
 #include <com/sun/imageio/plugins/common/ImageUtil.h>
 #include <java/io/UnsupportedEncodingException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Byte.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/Short.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/metadata/IIOMetadata.h>
 #include <javax/imageio/metadata/IIOMetadataFormatImpl.h>
 #include <javax/imageio/metadata/IIOMetadataNode.h>
@@ -177,8 +162,7 @@ $Node* BMPMetadata::getAsTree($String* formatName) {
 $String* BMPMetadata::toISO8859($bytes* data) {
 	try {
 		return $new($String, data, "ISO-8859-1"_s);
-	} catch ($UnsupportedEncodingException&) {
-		$var($UnsupportedEncodingException, e, $catch());
+	} catch ($UnsupportedEncodingException& e) {
 		return ""_s;
 	}
 	$shouldNotReachHere();

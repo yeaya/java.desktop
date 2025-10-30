@@ -4,22 +4,10 @@
 #include <java/awt/Rectangle.h>
 #include <java/awt/image/Raster.h>
 #include <java/awt/image/RenderedImage.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Module.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/List.h>
 #include <java/util/Locale.h>
 #include <java/util/MissingResourceException.h>
@@ -557,18 +545,15 @@ void ImageWriter::processWarningOccurred(int32_t imageIndex, $String* baseName, 
 		$var($ResourceBundle, bundle, nullptr);
 		try {
 			$assign(bundle, $ResourceBundle::getBundle(baseName, locale, $($of(this)->getClass()->getModule())));
-		} catch ($MissingResourceException&) {
-			$var($MissingResourceException, mre, $catch());
+		} catch ($MissingResourceException& mre) {
 			$throwNew($IllegalArgumentException, "Bundle not found!"_s, mre);
 		}
 		$var($String, warning, nullptr);
 		try {
 			$assign(warning, $nc(bundle)->getString(keyword));
-		} catch ($ClassCastException&) {
-			$var($ClassCastException, cce, $catch());
+		} catch ($ClassCastException& cce) {
 			$throwNew($IllegalArgumentException, "Resource is not a String!"_s, cce);
-		} catch ($MissingResourceException&) {
-			$var($MissingResourceException, mre, $catch());
+		} catch ($MissingResourceException& mre) {
 			$throwNew($IllegalArgumentException, "Resource is missing!"_s, mre);
 		}
 		$nc(listener)->warningOccurred(this, imageIndex, warning);

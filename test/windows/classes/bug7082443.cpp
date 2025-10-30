@@ -1,19 +1,8 @@
 #include <bug7082443.h>
 
 #include <bug7082443$1.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SwingUtilities.h>
 #include <javax/swing/UIManager$LookAndFeelInfo.h>
 #include <javax/swing/UIManager.h>
@@ -90,8 +79,7 @@ void bug7082443::main($StringArray* args) {
 				if ($nc($($nc(lookAndFeelInfo)->getClassName()))->contains(bug7082443::GTK_LAF_CLASS)) {
 					try {
 						$UIManager::setLookAndFeel($(lookAndFeelInfo->getClassName()));
-					} catch ($UnsupportedLookAndFeelException&) {
-						$var($UnsupportedLookAndFeelException, ignored, $catch());
+					} catch ($UnsupportedLookAndFeelException& ignored) {
 						continue;
 					}
 					$SwingUtilities::invokeAndWait($$new($bug7082443$1));
@@ -100,7 +88,6 @@ void bug7082443::main($StringArray* args) {
 			}
 		}
 	}
-	$init($System);
 	$nc($System::out)->println($$str({bug7082443::GTK_LAF_CLASS, " is not found. The test skipped"_s}));
 }
 

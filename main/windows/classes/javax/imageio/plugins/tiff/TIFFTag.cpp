@@ -1,16 +1,5 @@
 #include <javax/imageio/plugins/tiff/TIFFTag.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Iterator.h>
 #include <java/util/NavigableMap.h>
 #include <java/util/Set.h>
@@ -116,7 +105,6 @@ $ClassInfo _TIFFTag_ClassInfo_ = {
 $Object* allocate$TIFFTag($Class* clazz) {
 	return $of($alloc(TIFFTag));
 }
-
 
 $String* TIFFTag::UNKNOWN_TAG_NAME = nullptr;
 $ints* TIFFTag::SIZE_OF_TYPE = nullptr;

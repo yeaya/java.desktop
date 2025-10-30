@@ -5,33 +5,17 @@
 #include <java/io/File.h>
 #include <java/io/FilenameFilter.h>
 #include <java/io/IOException.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
 #include <java/lang/Runtime.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/AbstractCollection.h>
@@ -567,7 +551,6 @@ $volatile($HashMap*) SunFontManager::platformFontMap = nullptr;
 bool SunFontManager::gAltJAFont = false;
 $HashSet* SunFontManager::installedNames = nullptr;
 $Object* SunFontManager::regFamilyLock = nullptr;
-
 $Locale* SunFontManager::systemLocale = nullptr;
 
 SunFontManager* SunFontManager::getInstance() {
@@ -642,7 +625,6 @@ void SunFontManager::init$() {
 	bool platformFont = $nc(($cast($Boolean, $($AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($SunFontManager$3, this)))))))->booleanValue();
 	if (platformFont) {
 		this->usePlatformFontMetrics$ = true;
-		$init($System);
 		$nc($System::out)->println("Enabling platform font metrics for win32. This is an unsupported option."_s);
 		$nc($System::out)->println("This yields incorrect composite font metrics as reported by 1.1.x releases."_s);
 		$nc($System::out)->println("It is appropriate only for use by applications which do not use any Java 2"_s);
@@ -1006,8 +988,7 @@ $PhysicalFont* SunFontManager::registerFontFile($String* fileName, $StringArray*
 		if ($FontUtilities::isLogging()) {
 			$FontUtilities::logInfo($$str({"Registered file "_s, fileName, " as font "_s, physicalFont, " rank="_s, $$str(fontRank)}));
 		}
-	} catch ($FontFormatException&) {
-		$var($FontFormatException, ffe, $catch());
+	} catch ($FontFormatException& ffe) {
 		if ($FontUtilities::isLogging()) {
 			$FontUtilities::logInfo($$str({"Unusable font: "_s, fileName, " "_s, $(ffe->toString())}));
 		}
@@ -1303,8 +1284,7 @@ void SunFontManager::resolveFontFiles($HashSet* unmappedFiles, $ArrayList* unmap
 							}
 						}
 					} while (fn < $nc(ttf)->getFontCount());
-				} catch ($Exception&) {
-					$catch();
+				} catch ($Exception& e) {
 				}
 			}
 		}
@@ -1913,8 +1893,7 @@ $Font2DArray* SunFontManager::createFont2D($File* fontFile, int32_t fontFormat, 
 				}
 			}
 		}
-	} catch ($FontFormatException&) {
-		$var($FontFormatException, e, $catch());
+	} catch ($FontFormatException& e) {
 		if (isCopy) {
 			$AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($SunFontManager$7, this, _tracker, fFile)));
 		}
@@ -2000,8 +1979,7 @@ void SunFontManager::replaceFont($PhysicalFont* oldFont, $PhysicalFont* newFont$
 					try {
 						$var($Map$Entry, tmp, mapEntries->get(i));
 						$nc(tmp)->setValue(newFont);
-					} catch ($Exception&) {
-						$var($Exception, e, $catch());
+					} catch ($Exception& e) {
 						$nc(this->localeFullNamesToFont)->remove($($nc(mapEntries->get(i))->getKey()));
 					}
 				}
@@ -2284,8 +2262,7 @@ $StringArray* SunFontManager::getPlatformFontDirs(bool noType1Fonts) {
 		while (parser->hasMoreTokens()) {
 			pathList->add($(parser->nextToken()));
 		}
-	} catch ($NoSuchElementException&) {
-		$catch();
+	} catch ($NoSuchElementException& e) {
 	}
 	$set(this, pathDirs, $fcast($StringArray, pathList->toArray($$new($StringArray, 0))));
 	return this->pathDirs;
@@ -2306,8 +2283,7 @@ void SunFontManager::addDirFonts($String* dirName, $File* dirFile, $FilenameFilt
 		if (resolveSymLinks) {
 			try {
 				$assign(fullName, theFile->getCanonicalPath());
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& e) {
 			}
 		}
 		if (fullName == nullptr) {
@@ -2391,8 +2367,7 @@ void SunFontManager::registerFontsOnPath($String* pathName, bool useJavaRasteriz
 		while (parser->hasMoreTokens()) {
 			registerFontsInDir($(parser->nextToken()), useJavaRasterizer, fontRank, defer, resolveSymLinks);
 		}
-	} catch ($NoSuchElementException&) {
-		$catch();
+	} catch ($NoSuchElementException& e) {
 	}
 }
 

@@ -45,24 +45,10 @@
 #include <java/awt/image/WritableRaster.h>
 #include <java/io/EOFException.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/ByteOrder.h>
 #include <java/nio/charset/Charset.h>
 #include <java/nio/charset/StandardCharsets.h>
@@ -427,13 +413,9 @@ $Object* allocate$TIFFImageWriter($Class* clazz) {
 }
 
 $String* TIFFImageWriter::EXIF_JPEG_COMPRESSION_TYPE = nullptr;
-
 $StringArray* TIFFImageWriter::TIFFCompressionTypes = nullptr;
-
 $StringArray* TIFFImageWriter::compressionTypes = nullptr;
-
 $booleans* TIFFImageWriter::isCompressionLossless = nullptr;
-
 $ints* TIFFImageWriter::compressionNumbers = nullptr;
 
 int32_t TIFFImageWriter::XToTileX(int32_t x, int32_t tileGridXOffset, int32_t tileWidth) {
@@ -486,7 +468,6 @@ $ImageWriteParam* TIFFImageWriter::getDefaultWriteParam() {
 }
 
 void TIFFImageWriter::setOutput(Object$* output) {
-	$useLocalCurrentObjectStackCache();
 	if (output != nullptr) {
 		if (!($instanceOf($ImageOutputStream, output))) {
 			$throwNew($IllegalArgumentException, "output not an ImageOutputStream!"_s);
@@ -503,13 +484,11 @@ void TIFFImageWriter::setOutput(Object$* output) {
 				} else {
 					this->nextSpace = this->headerPosition;
 				}
-			} catch ($IOException&) {
-				$var($IOException, io, $catch());
+			} catch ($IOException& io) {
 				this->nextSpace = this->headerPosition;
 			}
 			$nc(this->stream)->seek(this->headerPosition);
-		} catch ($IOException&) {
-			$var($IOException, ioe, $catch());
+		} catch ($IOException& ioe) {
 			this->nextSpace = (this->headerPosition = 0);
 		}
 	} else {
@@ -553,8 +532,7 @@ $IIOMetadata* TIFFImageWriter::convertStreamMetadata($IIOMetadata* inData, $Imag
 			$var($String, format, $TIFFStreamMetadata::NATIVE_METADATA_FORMAT_NAME);
 			try {
 				outData->mergeTree(format, $($nc(inData)->getAsTree(format)));
-			} catch ($IIOInvalidTreeException&) {
-				$var($IIOInvalidTreeException, e, $catch());
+			} catch ($IIOInvalidTreeException& e) {
 				return nullptr;
 			}
 		}
@@ -579,15 +557,13 @@ $IIOMetadata* TIFFImageWriter::convertImageMetadata($IIOMetadata* inData, $Image
 		if ($nc($($Arrays::asList($($nc(inData)->getMetadataFormatNames()))))->contains($TIFFImageMetadata::NATIVE_METADATA_FORMAT_NAME)) {
 			try {
 				$assign(outData, convertNativeImageMetadata(inData));
-			} catch ($IIOInvalidTreeException&) {
-				$var($IIOInvalidTreeException, e, $catch());
+			} catch ($IIOInvalidTreeException& e) {
 				return nullptr;
 			}
 		} else if ($nc(inData)->isStandardMetadataFormatSupported()) {
 			try {
 				$assign(outData, convertStandardImageMetadata(inData));
-			} catch ($IIOInvalidTreeException&) {
-				$var($IIOInvalidTreeException, e, $catch());
+			} catch ($IIOInvalidTreeException& e) {
 				return nullptr;
 			}
 		}
@@ -603,8 +579,7 @@ $IIOMetadata* TIFFImageWriter::convertImageMetadata($IIOMetadata* inData, $Image
 			int32_t var$2 = $nc(sm)->getWidth();
 			bogusWriter->setupMetadata(var$0, var$1, var$2, sm->getHeight());
 			return bogusWriter->imageMetadata;
-		} catch ($IIOException&) {
-			$var($IIOException, e, $catch());
+		} catch ($IIOException& e) {
 			return nullptr;
 		}
 	}
@@ -1704,7 +1679,7 @@ void TIFFImageWriter::initializeScaleTables($ints* sampleSize) {
 	}
 	this->isRescaling = false;
 	this->scalingBitDepth = -1;
-	$set(this, scale, ($assignField(this, scalel, ($assignField(this, scaleh, nullptr)))));
+	$set(this, scale, ($set(this, scalel, ($set(this, scaleh, nullptr)))));
 	$set(this, scale0, nullptr);
 	$set(this, sampleSize, sampleSize);
 	if (this->bitDepth <= 16) {
@@ -1731,7 +1706,7 @@ void TIFFImageWriter::initializeScaleTables($ints* sampleSize) {
 			}
 		}
 		$set(this, scale0, $nc(this->scale)->get(0));
-		$set(this, scaleh, ($assignField(this, scalel, nullptr)));
+		$set(this, scaleh, ($set(this, scalel, nullptr)));
 	} else if (this->bitDepth <= 16) {
 		$set(this, scaleh, $new($byteArray2, this->numBands));
 		$set(this, scalel, $new($byteArray2, this->numBands));
@@ -1939,8 +1914,7 @@ void TIFFImageWriter::write($IIOMetadata* sm, $IIOImage* iioimage, $ImageWritePa
 					processWriteAborted();
 					return;
 				}
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				$throwNew($IIOException, "I/O error writing TIFF file!"_s, e);
 			}
 		}
@@ -2004,7 +1978,6 @@ bool TIFFImageWriter::canInsertImage(int32_t imageIndex) {
 }
 
 void TIFFImageWriter::locateIFD(int32_t imageIndex, $longs* ifdpos, $longs* ifd) {
-	$useLocalCurrentObjectStackCache();
 	if (imageIndex < -1) {
 		$throwNew($IndexOutOfBoundsException, "imageIndex < -1!"_s);
 	}
@@ -2039,8 +2012,7 @@ void TIFFImageWriter::locateIFD(int32_t imageIndex, $longs* ifdpos, $longs* ifd)
 		int32_t numFields = 0;
 		try {
 			numFields = $nc(this->stream)->readShort();
-		} catch ($EOFException&) {
-			$var($EOFException, eof, $catch());
+		} catch ($EOFException& eof) {
 			$nc(this->stream)->seek(startPos);
 			ifd->set(0, 0);
 			return;
@@ -2060,19 +2032,17 @@ void TIFFImageWriter::locateIFD(int32_t imageIndex, $longs* ifdpos, $longs* ifd)
 }
 
 void TIFFImageWriter::writeInsert(int32_t imageIndex, $IIOImage* image, $ImageWriteParam* param) {
-	$useLocalCurrentObjectStackCache();
 	int32_t currentImageCached = this->currentImage;
 	{
 		$var($Throwable, var$0, nullptr);
 		try {
 			try {
 				insert(imageIndex, image, param, true);
-			} catch ($Exception&) {
-				$var($Exception, e, $catch());
+			} catch ($Exception& e) {
 				$throw(e);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			this->currentImage = currentImageCached;
 		}
@@ -2582,12 +2552,11 @@ void TIFFImageWriter::replacePixels($RenderedImage* image, $ImageWriteParam* par
 							}
 						}
 					}
-				} catch ($IOException&) {
-					$var($IOException, e, $catch());
+				} catch ($IOException& e) {
 					$throw(e);
 				}
-			} catch ($Throwable&) {
-				$assign(var$3, $catch());
+			} catch ($Throwable& var$8) {
+				$assign(var$3, var$8);
 			} /*finally*/ {
 				$nc(this->stream)->reset();
 			}

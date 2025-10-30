@@ -98,38 +98,14 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/OptionalDataException.h>
-#include <java/io/PrintStream.h>
 #include <java/io/PrintWriter.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Byte.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchMethodException.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Package.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/Short.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <java/security/AccessControlContext.h>
 #include <java/security/AccessController.h>
@@ -1168,9 +1144,7 @@ $PlatformLogger* Component::eventLog = nullptr;
 $PlatformLogger* Component::focusLog = nullptr;
 $PlatformLogger* Component::mixingLog = nullptr;
 $StringArray* Component::focusTraversalKeyPropertyNames = nullptr;
-
 $Object* Component::LOCK = nullptr;
-
 $String* Component::actionListenerK = nullptr;
 $String* Component::adjustmentListenerK = nullptr;
 $String* Component::componentListenerK = nullptr;
@@ -1189,22 +1163,14 @@ $String* Component::hierarchyListenerK = nullptr;
 $String* Component::hierarchyBoundsListenerK = nullptr;
 $String* Component::windowStateListenerK = nullptr;
 $String* Component::windowFocusListenerK = nullptr;
-
 bool Component::isInc = false;
 int32_t Component::incRate = 0;
-
 float Component::TOP_ALIGNMENT = 0.0;
-
 float Component::CENTER_ALIGNMENT = 0.0;
-
 float Component::BOTTOM_ALIGNMENT = 0.0;
-
 float Component::LEFT_ALIGNMENT = 0.0;
-
 float Component::RIGHT_ALIGNMENT = 0.0;
-
 $Map* Component::coalesceMap = nullptr;
-
 $ClassArray* Component::coalesceEventsParams = nullptr;
 $RequestFocusController* Component::requestFocusController = nullptr;
 
@@ -1319,22 +1285,19 @@ void Component::setDropTarget($DropTarget* dt) {
 			$set(this, dropTarget, nullptr);
 			try {
 				$nc(t)->setComponent(nullptr);
-			} catch ($IllegalArgumentException&) {
-				$catch();
+			} catch ($IllegalArgumentException& iae) {
 			}
 		}
-		if (($assignField(this, dropTarget, dt)) != nullptr) {
+		if (($set(this, dropTarget, dt)) != nullptr) {
 			try {
 				$nc(this->dropTarget)->setComponent(this);
 				$nc(this->dropTarget)->addNotify();
-			} catch ($IllegalArgumentException&) {
-				$var($IllegalArgumentException, iae, $catch());
+			} catch ($IllegalArgumentException& iae) {
 				if (old != nullptr) {
 					try {
 						old->setComponent(this);
 						$nc(this->dropTarget)->addNotify();
-					} catch ($IllegalArgumentException&) {
-						$catch();
+					} catch ($IllegalArgumentException& iae1) {
 					}
 				}
 			}
@@ -1781,7 +1744,7 @@ void Component::setFont($Font* f$renamed) {
 	$var($Font, newFont, nullptr);
 	$synchronized(getTreeLock()) {
 		$assign(oldFont, this->font);
-		$assign(newFont, ($assignField(this, font, f)));
+		$assign(newFont, ($set(this, font, f)));
 		$var($ComponentPeer, peer, this->peer);
 		if (peer != nullptr) {
 			$assign(f, getFont());
@@ -1975,8 +1938,8 @@ void Component::reshape(int32_t x, int32_t y, int32_t width, int32_t height) {
 					notifyNewBounds(resized, moved);
 				}
 				repaintParentIfNeeded(oldX, oldY, oldWidth, oldHeight);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$2) {
+				$assign(var$0, var$2);
 			} $finally: {
 				setBoundsOp($ComponentPeer::RESET_OPERATION);
 			}
@@ -2565,8 +2528,7 @@ void Component::createBufferStrategy(int32_t numBuffers) {
 		try {
 			createBufferStrategy(numBuffers, bufferCaps);
 			return;
-		} catch ($AWTException&) {
-			$catch();
+		} catch ($AWTException& e) {
 		}
 	}
 	$var($ImageCapabilities, var$1, $new($ImageCapabilities, true));
@@ -2574,16 +2536,14 @@ void Component::createBufferStrategy(int32_t numBuffers) {
 	try {
 		createBufferStrategy(numBuffers, bufferCaps);
 		return;
-	} catch ($AWTException&) {
-		$catch();
+	} catch ($AWTException& e) {
 	}
 	$var($ImageCapabilities, var$2, $new($ImageCapabilities, false));
 	$assign(bufferCaps, $new($BufferCapabilities, var$2, $$new($ImageCapabilities, false), nullptr));
 	try {
 		createBufferStrategy(numBuffers, bufferCaps);
 		return;
-	} catch ($AWTException&) {
-		$var($AWTException, e, $catch());
+	} catch ($AWTException& e) {
 		$throwNew($InternalError, "Could not create a buffer strategy"_s, e);
 	}
 }
@@ -3539,8 +3499,7 @@ bool Component::isCoalesceEventsOverriden($Class* clazz) {
 	try {
 		clazz->getDeclaredMethod("coalesceEvents"_s, Component::coalesceEventsParams);
 		return true;
-	} catch ($NoSuchMethodException&) {
-		$var($NoSuchMethodException, e, $catch());
+	} catch ($NoSuchMethodException& e) {
 		return false;
 	}
 	$shouldNotReachHere();
@@ -4568,7 +4527,6 @@ $String* Component::toString() {
 }
 
 void Component::list() {
-	$init($System);
 	list($System::out, 0);
 }
 
@@ -4821,8 +4779,7 @@ void Component::readObject($ObjectInputStream* s) {
 	$var($Object, orient, nullptr);
 	try {
 		$assign(orient, s->readObject());
-	} catch ($OptionalDataException&) {
-		$var($OptionalDataException, e, $catch());
+	} catch ($OptionalDataException& e) {
 		if (!e->eof) {
 			$throw(e);
 		}
@@ -4844,8 +4801,7 @@ void Component::readObject($ObjectInputStream* s) {
 				s->readObject();
 			}
 		}
-	} catch ($OptionalDataException&) {
-		$var($OptionalDataException, e, $catch());
+	} catch ($OptionalDataException& e) {
 		if (!e->eof) {
 			$throw(e);
 		}
@@ -4859,8 +4815,7 @@ void Component::readObject($ObjectInputStream* s) {
 				s->readObject();
 			}
 		}
-	} catch ($OptionalDataException&) {
-		$var($OptionalDataException, e, $catch());
+	} catch ($OptionalDataException& e) {
 		if (!e->eof) {
 			$throw(e);
 		}
@@ -5478,7 +5433,7 @@ void clinit$Component($Class* class$) {
 		$AWTAccessor::setComponentAccessor($$new($Component$1));
 	}
 	$assignStatic(Component::coalesceMap, $new($WeakHashMap));
-		$load($AWTEvent);
+	$load($AWTEvent);
 	$assignStatic(Component::coalesceEventsParams, $new($ClassArray, {
 		$AWTEvent::class$,
 		$AWTEvent::class$

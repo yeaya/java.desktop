@@ -1,12 +1,5 @@
 #include <javax/print/ServiceUIFactory.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef ABOUT_UIROLE
@@ -57,13 +50,9 @@ $Object* allocate$ServiceUIFactory($Class* clazz) {
 	return $of($alloc(ServiceUIFactory));
 }
 
-
 $String* ServiceUIFactory::JCOMPONENT_UI = nullptr;
-
 $String* ServiceUIFactory::PANEL_UI = nullptr;
-
 $String* ServiceUIFactory::DIALOG_UI = nullptr;
-
 $String* ServiceUIFactory::JDIALOG_UI = nullptr;
 
 void ServiceUIFactory::init$() {

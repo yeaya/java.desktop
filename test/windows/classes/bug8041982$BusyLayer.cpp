@@ -6,18 +6,6 @@
 #include <java/awt/Graphics.h>
 #include <java/awt/Image.h>
 #include <java/beans/PropertyChangeEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/ImageIcon.h>
@@ -131,7 +119,6 @@ void bug8041982$BusyLayer::applyPropertyChange($PropertyChangeEvent* evt, $JLaye
 
 bool bug8041982$BusyLayer::imageUpdate($Image* img, int32_t infoflags, int32_t x, int32_t y, int32_t w, int32_t h, $JLayer* l) {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println($$str({"imageUpdate "_s, $$str(this->imageUpdateCount)}));
 	if (this->imageUpdateCount++ == 100) {
 		setAnimated(false);

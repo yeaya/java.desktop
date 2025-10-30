@@ -8,22 +8,8 @@
 #include <java/awt/event/InputMethodEvent.h>
 #include <java/awt/im/InputContext.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
 #include <java/lang/Number.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/text/DateFormat.h>
 #include <java/text/DecimalFormat.h>
@@ -120,6 +106,7 @@ using $TextAction = ::javax::swing::text::TextAction;
 
 namespace javax {
 	namespace swing {
+
 $CompoundAttribute _JFormattedTextField_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", nullptr},
 	{}
@@ -229,7 +216,6 @@ $CompoundAttribute _JFormattedTextField_MethodAnnotations_setValue26[] = {
 	{"Ljava/beans/BeanProperty;", JFormattedTextField_Attribute_var$9},
 	{}
 };
-
 
 $FieldInfo _JFormattedTextField_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JFormattedTextField, uiClassID)},

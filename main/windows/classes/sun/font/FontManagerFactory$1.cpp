@@ -1,20 +1,9 @@
 #include <sun/font/FontManagerFactory$1.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/ReflectiveOperationException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/FontManager.h>
 #include <sun/font/FontManagerFactory.h>
 #include <jcpp.h>
@@ -86,8 +75,7 @@ $Object* FontManagerFactory$1::run() {
 		$var($ClassLoader, cl, $ClassLoader::getSystemClassLoader());
 		$Class* fmClass = $Class::forName(fmClassName, true, cl);
 		$assignStatic($FontManagerFactory::instance, $cast($FontManager, $nc($($nc(fmClass)->getDeclaredConstructor($$new($ClassArray, 0))))->newInstance($$new($ObjectArray, 0))));
-	} catch ($ReflectiveOperationException&) {
-		$var($ReflectiveOperationException, ex, $catch());
+	} catch ($ReflectiveOperationException& ex) {
 		$throwNew($InternalError, static_cast<$Throwable*>(ex));
 	}
 	return $of(nullptr);

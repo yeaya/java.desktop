@@ -1,18 +1,7 @@
 #include <javax/print/PrintServiceLookup.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedActionException.h>
 #include <java/security/PrivilegedExceptionAction.h>
@@ -159,8 +148,7 @@ $PrintService* PrintServiceLookup::lookupDefaultPrintService() {
 			if (service != nullptr) {
 				return service;
 			}
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& e) {
 		}
 	}
 	return nullptr;
@@ -177,8 +165,7 @@ bool PrintServiceLookup::registerServiceProvider(PrintServiceLookup* sp) {
 				if ($nc($of(lus))->getClass() == $nc($of(sp))->getClass()) {
 					return false;
 				}
-			} catch ($Exception&) {
-				$catch();
+			} catch ($Exception& e) {
 			}
 		}
 		$nc($(getListOfLookupServices()))->add(sp);
@@ -216,8 +203,7 @@ $ArrayList* PrintServiceLookup::getAllLookupServices() {
 		}
 		try {
 			$AccessController::doPrivileged(static_cast<$PrivilegedExceptionAction*>($$new($PrintServiceLookup$1)));
-		} catch ($PrivilegedActionException&) {
-			$catch();
+		} catch ($PrivilegedActionException& e) {
 		}
 		return listOfLookupServices;
 	}
@@ -234,8 +220,7 @@ $ArrayList* PrintServiceLookup::getServices($DocFlavor* flavor, $AttributeSet* a
 			if (flavor == nullptr && attributes == nullptr) {
 				try {
 					$assign(services, $nc(lus)->getPrintServices());
-				} catch ($Throwable&) {
-					$catch();
+				} catch ($Throwable& tr) {
 				}
 			} else {
 				$assign(services, $nc(lus)->getPrintServices(flavor, attributes));
@@ -246,8 +231,7 @@ $ArrayList* PrintServiceLookup::getServices($DocFlavor* flavor, $AttributeSet* a
 			for (int32_t i = 0; i < $nc(services)->length; ++i) {
 				listOfServices->add(services->get(i));
 			}
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& e) {
 		}
 	}
 	$var($ArrayList, registeredServices, nullptr);
@@ -257,8 +241,7 @@ $ArrayList* PrintServiceLookup::getServices($DocFlavor* flavor, $AttributeSet* a
 			security->checkPrintJobAccess();
 		}
 		$assign(registeredServices, getRegisteredServices());
-	} catch ($SecurityException&) {
-		$catch();
+	} catch ($SecurityException& se) {
 	}
 	if (registeredServices != nullptr) {
 		$var($PrintServiceArray, services, $fcast($PrintServiceArray, registeredServices->toArray($$new($PrintServiceArray, registeredServices->size()))));
@@ -292,8 +275,7 @@ $ArrayList* PrintServiceLookup::getMultiDocServices($DocFlavorArray* flavors, $A
 			for (int32_t i = 0; i < $nc(services)->length; ++i) {
 				listOfServices->add(services->get(i));
 			}
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& e) {
 		}
 	}
 	$var($ArrayList, registeredServices, nullptr);
@@ -303,8 +285,7 @@ $ArrayList* PrintServiceLookup::getMultiDocServices($DocFlavorArray* flavors, $A
 			security->checkPrintJobAccess();
 		}
 		$assign(registeredServices, getRegisteredServices());
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 	if (registeredServices != nullptr) {
 		$var($PrintServiceArray, services, $fcast($PrintServiceArray, registeredServices->toArray($$new($PrintServiceArray, registeredServices->size()))));

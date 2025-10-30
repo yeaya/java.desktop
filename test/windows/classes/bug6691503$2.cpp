@@ -5,17 +5,6 @@
 #include <java/awt/Container.h>
 #include <java/awt/Frame.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JPopupMenu.h>
 #include <jcpp.h>
@@ -86,7 +75,6 @@ void bug6691503$2::run() {
 	$nc(this->this$0->popupMenu)->show(this->this$0->frame, 0, 0);
 	$var($Window, popupWindow, ($cast($Window, $nc($($nc($($nc($($nc(this->this$0->popupMenu)->getParent()))->getParent()))->getParent()))->getParent())));
 	this->this$0->isAlwaysOnTop1 = $nc(popupWindow)->isAlwaysOnTop();
-	$init($System);
 	$nc($System::out)->println($$str({"Application: popupWindow.isAlwaysOnTop() = "_s, $$str(this->this$0->isAlwaysOnTop1)}));
 	$nc(this->this$0->popupMenu)->setVisible(false);
 }

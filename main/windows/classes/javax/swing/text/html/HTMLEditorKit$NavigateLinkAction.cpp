@@ -2,16 +2,7 @@
 
 #include <java/awt/Color.h>
 #include <java/awt/event/ActionEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/JEditorPane.h>
 #include <javax/swing/event/CaretEvent.h>
@@ -224,8 +215,7 @@ void HTMLEditorKit$NavigateLinkAction::moveCaretPosition($JTextComponent* comp, 
 			} else {
 				$set(kit, linkNavigationTag, h->addHighlight(p0, p1, HTMLEditorKit$NavigateLinkAction::focusPainter));
 			}
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& e) {
 		}
 	}
 }

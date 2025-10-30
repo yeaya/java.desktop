@@ -7,22 +7,9 @@
 #include <java/awt/Container.h>
 #include <java/awt/Point.h>
 #include <java/awt/Window.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/Callable.h>
 #include <java/util/concurrent/FutureTask.h>
@@ -125,12 +112,11 @@ void bug6608456::main($StringArray* args) {
 				$init($TimeUnit);
 				if ($nc(($cast($Boolean, $($nc(bug6608456::testFuture)->get(10, $TimeUnit::SECONDS)))))->booleanValue()) {
 				}
-			} catch ($Exception&) {
-				$var($Exception, e, $catch());
+			} catch ($Exception& e) {
 				$throwNew($RuntimeException, "failed"_s, e);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$load($JFrame);
 			$var($JFrame, frame, $cast($JFrame, $SwingUtilities::getAncestorOfClass($JFrame::class$, component)));
@@ -151,8 +137,8 @@ bool bug6608456::registerDelegate($JComponent* c, $RepaintManager* repaintManage
 	bool rv = false;
 	try {
 		$Class* clazz = $Class::forName("com.sun.java.swing.SwingUtilities3"_s);
-			$load($JComponent);
-			$load($RepaintManager);
+		$load($JComponent);
+		$load($RepaintManager);
 		$var($Method, method, $nc(clazz)->getMethod("setDelegateRepaintManager"_s, $$new($ClassArray, {
 			$JComponent::class$,
 			$RepaintManager::class$
@@ -162,8 +148,7 @@ bool bug6608456::registerDelegate($JComponent* c, $RepaintManager* repaintManage
 			$of(repaintManager)
 		}));
 		rv = true;
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& ignore) {
 	}
 	return rv;
 }
@@ -177,17 +162,14 @@ $Object* bug6608456::invokeAndWait($Callable* callable) {
 
 void bug6608456::blockTillDisplayed($Component* comp) {
 	$init(bug6608456);
-	$useLocalCurrentObjectStackCache();
 	$var($Point, p, nullptr);
 	while (p == nullptr) {
 		try {
 			$assign(p, $nc(comp)->getLocationOnScreen());
-		} catch ($IllegalStateException&) {
-			$var($IllegalStateException, e, $catch());
+		} catch ($IllegalStateException& e) {
 			try {
 				$Thread::sleep(100);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& ie) {
 			}
 		}
 	}

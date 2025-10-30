@@ -5,18 +5,6 @@
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/geom/Path2D$Float.h>
 #include <java/awt/geom/Path2D.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <java/util/Comparator.h>
 #include <sun/awt/SunHints.h>
@@ -309,7 +297,6 @@ void GraphicsPrimitiveMgr::testPrimitiveInstantiation(bool verbose) {
 				var$0 = var$1 != $nc(p)->getUniqueID();
 			}
 			if (var$0) {
-				$init($System);
 				$nc($System::out)->println($$str({"r.getSignature == "_s, $(r->getSignature())}));
 				$nc($System::out)->println($$str({"r.getUniqueID == "_s, $$str(r->getUniqueID())}));
 				$nc($System::out)->println($$str({"p.getSignature == "_s, $(p->getSignature())}));
@@ -320,18 +307,15 @@ void GraphicsPrimitiveMgr::testPrimitiveInstantiation(bool verbose) {
 			++unresolved;
 			$assign(p, r);
 			if (verbose) {
-				$init($System);
 				$nc($System::out)->println($of(p));
 			}
 		} else {
 			if (verbose) {
-				$init($System);
 				$nc($System::out)->println($$str({p, " (not proxied)."_s}));
 			}
 			++resolved;
 		}
 	}
-	$init($System);
 	$nc($System::out)->println($$str({$$str(resolved), " graphics primitives were not proxied."_s}));
 	$nc($System::out)->println($$str({$$str(unresolved), " proxied graphics primitives resolved correctly."_s}));
 	$nc($System::out)->println($$str({$$str(resolved), $$str(unresolved), " total graphics primitives"_s}));

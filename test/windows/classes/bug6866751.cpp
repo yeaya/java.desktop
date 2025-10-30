@@ -8,19 +8,7 @@
 #include <java/awt/Container.h>
 #include <java/awt/Robot.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JScrollPane.h>
@@ -107,10 +95,9 @@ void bug6866751::main($StringArray* args) {
 			$SwingUtilities::invokeAndWait($$new($bug6866751$2));
 			$$new($Robot)->waitForIdle();
 			$SwingUtilities::invokeAndWait($$new($bug6866751$3));
-			$init($System);
 			$nc($System::out)->println("ok"_s);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$SwingUtilities::invokeAndWait($$new($bug6866751$4));
 		}

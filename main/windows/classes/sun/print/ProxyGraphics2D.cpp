@@ -25,14 +25,6 @@
 #include <java/awt/image/renderable/RenderContext.h>
 #include <java/awt/image/renderable/RenderableImage.h>
 #include <java/awt/print/PrinterJob.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/util/Map.h>
 #include <sun/print/PrinterGraphicsConfig.h>
@@ -465,8 +457,7 @@ void ProxyGraphics2D::drawRenderableImage($RenderableImage* img, $AffineTransfor
 	$var($RenderContext, rc, $new($RenderContext, concatTransform));
 	try {
 		$assign(reverseTransform, $nc(pipeTransform)->createInverse());
-	} catch ($NoninvertibleTransformException&) {
-		$var($NoninvertibleTransformException, nte, $catch());
+	} catch ($NoninvertibleTransformException& nte) {
 		$assign(rc, $new($RenderContext, pipeTransform));
 		$assign(reverseTransform, $new($AffineTransform));
 	}

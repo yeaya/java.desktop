@@ -5,17 +5,6 @@
 #include <java/awt/Container$AccessibleAWTContainer.h>
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/AbstractButton$AccessibleAbstractButton.h>
 #include <javax/swing/AbstractButton.h>
@@ -75,6 +64,7 @@ $NamedAttribute JCheckBox_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JCheckBox_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JCheckBox_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JCheckBox_Attribute_var$1},
@@ -115,7 +105,6 @@ $CompoundAttribute _JCheckBox_MethodAnnotations_setBorderPaintedFlat13[] = {
 	{"Ljava/beans/BeanProperty;", JCheckBox_Attribute_var$4},
 	{}
 };
-
 
 $FieldInfo _JCheckBox_FieldInfo_[] = {
 	{"BORDER_PAINTED_FLAT_CHANGED_PROPERTY", "Ljava/lang/String;", nullptr, $PUBLIC | $STATIC | $FINAL, $staticField(JCheckBox, BORDER_PAINTED_FLAT_CHANGED_PROPERTY)},
@@ -169,9 +158,7 @@ $Object* allocate$JCheckBox($Class* clazz) {
 	return $of($alloc(JCheckBox));
 }
 
-
 $String* JCheckBox::BORDER_PAINTED_FLAT_CHANGED_PROPERTY = nullptr;
-
 $String* JCheckBox::uiClassID = nullptr;
 
 void JCheckBox::init$() {

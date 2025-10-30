@@ -12,18 +12,7 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Vector.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/AbstractButton.h>
@@ -99,6 +88,7 @@ $NamedAttribute JMenuBar_Attribute_var$0[] = {
 	{"description", 's', "A container for holding and displaying menus."},
 	{}
 };
+
 $CompoundAttribute _JMenuBar_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JMenuBar_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", nullptr},
@@ -209,7 +199,6 @@ $CompoundAttribute _JMenuBar_MethodAnnotations_setUI31[] = {
 	{}
 };
 
-
 $FieldInfo _JMenuBar_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JMenuBar, uiClassID)},
 	{"selectionModel", "Ljavax/swing/SingleSelectionModel;", nullptr, $PRIVATE | $TRANSIENT, $field(JMenuBar, selectionModel)},
@@ -307,7 +296,6 @@ $Object* JMenuBar::clone() {
 void JMenuBar::finalize() {
 	this->$JComponent::finalize();
 }
-
 
 $String* JMenuBar::uiClassID = nullptr;
 

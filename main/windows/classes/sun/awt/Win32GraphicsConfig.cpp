@@ -20,18 +20,6 @@
 #include <java/awt/image/PackedColorModel.h>
 #include <java/awt/image/VolatileImage.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/DisplayChangedListener.h>
 #include <sun/awt/Win32GraphicsDevice.h>
 #include <sun/awt/Win32GraphicsEnvironment.h>
@@ -328,8 +316,8 @@ void Win32GraphicsConfig::flip($WComponentPeer* peer, $Component* target, $Volat
 			$var($Throwable, var$0, nullptr);
 			try {
 				$nc(g)->drawImage(backBuffer, x1, y1, x2, y2, x1, y1, x2, y2, nullptr);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(g)->dispose();
 			}
@@ -341,18 +329,18 @@ void Win32GraphicsConfig::flip($WComponentPeer* peer, $Component* target, $Volat
 		if (flipAction == $BufferCapabilities$FlipContents::BACKGROUND) {
 			$var($Graphics, g, $nc(backBuffer)->getGraphics());
 			{
-				$var($Throwable, var$1, nullptr);
+				$var($Throwable, var$2, nullptr);
 				try {
 					$nc(g)->setColor($($nc(target)->getBackground()));
-					int32_t var$2 = backBuffer->getWidth();
-					g->fillRect(0, 0, var$2, backBuffer->getHeight());
-				} catch ($Throwable&) {
-					$assign(var$1, $catch());
+					int32_t var$3 = backBuffer->getWidth();
+					g->fillRect(0, 0, var$3, backBuffer->getHeight());
+				} catch ($Throwable& var$4) {
+					$assign(var$2, var$4);
 				} /*finally*/ {
 					$nc(g)->dispose();
 				}
-				if (var$1 != nullptr) {
-					$throw(var$1);
+				if (var$2 != nullptr) {
+					$throw(var$2);
 				}
 			}
 		}

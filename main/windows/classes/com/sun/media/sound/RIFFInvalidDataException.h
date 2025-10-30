@@ -18,8 +18,10 @@ public:
 	void init$($String* s);
 	static const int64_t serialVersionUID = (int64_t)1;
 	RIFFInvalidDataException(const RIFFInvalidDataException& e);
-	RIFFInvalidDataException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline RIFFInvalidDataException* operator ->() {
+		return (RIFFInvalidDataException*)throwing$;
+	}
 };
 
 			} // sound

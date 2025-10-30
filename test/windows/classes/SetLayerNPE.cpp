@@ -4,23 +4,13 @@
 #include <java/awt/Container.h>
 #include <java/awt/EventQueue.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JDesktopPane.h>
 #include <javax/swing/JInternalFrame.h>
@@ -149,8 +139,7 @@ void SetLayerNPE::lambda$main$1() {
 		$$new($JDesktopPane)->add(static_cast<$Component*>(jif));
 		jif->setLayer(($Integer*)nullptr);
 		$throwNew($AssertionError, $of("expected NPE was not thrown"_s));
-	} catch ($NullPointerException&) {
-		$catch();
+	} catch ($NullPointerException& ignored) {
 	}
 }
 
@@ -158,8 +147,7 @@ void SetLayerNPE::lambda$main$0() {
 	try {
 		$$new($JInternalFrame, "My Frame"_s)->setLayer(($Integer*)nullptr);
 		$throwNew($AssertionError, $of("expected NPE was not thrown"_s));
-	} catch ($NullPointerException&) {
-		$catch();
+	} catch ($NullPointerException& ignored) {
 	}
 }
 

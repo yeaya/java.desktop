@@ -27,18 +27,7 @@
 #include <java/awt/event/MouseAdapter.h>
 #include <java/awt/event/MouseListener.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/Action.h>
 #include <javax/swing/BorderFactory.h>
@@ -497,8 +486,7 @@ int32_t WindowsInternalFrameTitlePane::getButtonMnemonic($String* button) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		return $Integer::parseInt($($UIManager::getString($$str({"InternalFrameTitlePane."_s, button, "Button.mnemonic"_s}))));
-	} catch ($NumberFormatException&) {
-		$var($NumberFormatException, e, $catch());
+	} catch ($NumberFormatException& e) {
 		return -1;
 	}
 	$shouldNotReachHere();

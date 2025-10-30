@@ -1,19 +1,7 @@
 #include <javax/swing/text/ElementIterator.h>
 
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Enumeration.h>
 #include <java/util/Stack.h>
 #include <javax/swing/text/AttributeSet.h>
@@ -111,8 +99,7 @@ $Object* ElementIterator::clone() {
 				}
 			}
 			return $of(it);
-		} catch ($CloneNotSupportedException&) {
-			$var($CloneNotSupportedException, e, $catch());
+		} catch ($CloneNotSupportedException& e) {
 			$throwNew($InternalError, static_cast<$Throwable*>(e));
 		}
 	}
@@ -227,7 +214,6 @@ void ElementIterator::dumpTree() {
 	$var($Element, elem, nullptr);
 	while (true) {
 		if (($assign(elem, next())) != nullptr) {
-			$init($System);
 			$nc($System::out)->println($$str({"elem: "_s, $($nc(elem)->getName())}));
 			$var($AttributeSet, attr, $nc(elem)->getAttributes());
 			$var($String, s, ""_s);

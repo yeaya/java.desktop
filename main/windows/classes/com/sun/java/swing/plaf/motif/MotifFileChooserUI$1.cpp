@@ -9,16 +9,6 @@
 #include <java/beans/PropertyChangeEvent.h>
 #include <java/io/File.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/DefaultListSelectionModel.h>
 #include <javax/swing/JButton.h>
@@ -174,8 +164,7 @@ void MotifFileChooserUI$1::propertyChange($PropertyChangeEvent* e) {
 					if (currentDirectory != nullptr) {
 						try {
 							this->this$0->setDirectoryName($($nc($($ShellFolder::getNormalizedFile($cast($File, $(e->getNewValue())))))->getPath()));
-						} catch ($IOException&) {
-							$var($IOException, ioe, $catch());
+						} catch ($IOException& ioe) {
 							this->this$0->setDirectoryName($($nc(($cast($File, $(e->getNewValue()))))->getAbsolutePath()));
 						}
 						bool var$2 = ($nc($(this->this$0->getFileChooser()))->getFileSelectionMode() == $JFileChooser::DIRECTORIES_ONLY);

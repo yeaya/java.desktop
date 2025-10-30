@@ -16,20 +16,6 @@
 #include <java/awt/event/InputEvent.h>
 #include <java/beans/PropertyChangeListener.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/AbstractAction.h>
@@ -134,6 +120,7 @@ $NamedAttribute JTextField_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JTextField_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JTextField_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JTextField_Attribute_var$1},
@@ -244,7 +231,6 @@ $CompoundAttribute _JTextField_MethodAnnotations_setHorizontalAlignment35[] = {
 	{}
 };
 
-
 $FieldInfo _JTextField_FieldInfo_[] = {
 	{"action", "Ljavax/swing/Action;", nullptr, $PRIVATE, $field(JTextField, action$)},
 	{"actionPropertyChangeListener", "Ljava/beans/PropertyChangeListener;", nullptr, $PRIVATE, $field(JTextField, actionPropertyChangeListener)},
@@ -353,10 +339,8 @@ void JTextField::finalize() {
 	this->$JTextComponent::finalize();
 }
 
-
 $String* JTextField::notifyAction = nullptr;
 $ActionArray* JTextField::defaultActions = nullptr;
-
 $String* JTextField::uiClassID = nullptr;
 
 void JTextField::init$() {

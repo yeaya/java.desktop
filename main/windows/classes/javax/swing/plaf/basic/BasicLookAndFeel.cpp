@@ -7,32 +7,14 @@
 #include <java/awt/Toolkit.h>
 #include <java/awt/event/ActionEvent.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/HashSet.h>
@@ -1427,7 +1409,6 @@ void BasicLookAndFeel::finalize() {
 	this->$LookAndFeel::finalize();
 }
 
-
 bool BasicLookAndFeel::needsEventHelper = false;
 
 void BasicLookAndFeel::init$() {
@@ -1651,8 +1632,7 @@ void BasicLookAndFeel::loadSystemColors($UIDefaults* table, $StringArray* system
 				$var($String, name, systemColors->get(i));
 				$load($SystemColor);
 				$assign(color, ($cast($Color, $nc($($SystemColor::class$->getField(name)))->get(nullptr))));
-			} catch ($Exception&) {
-				$catch();
+			} catch ($Exception& e) {
 			}
 			$nc(table)->put(systemColors->get(i), $$new($ColorUIResource, color));
 		}
@@ -1662,8 +1642,7 @@ void BasicLookAndFeel::loadSystemColors($UIDefaults* table, $StringArray* system
 			$var($Color, color, $Color::black);
 			try {
 				$assign(color, $Color::decode(systemColors->get(i + 1)));
-			} catch ($NumberFormatException&) {
-				$var($NumberFormatException, e, $catch());
+			} catch ($NumberFormatException& e) {
 				e->printStackTrace();
 			}
 			$nc(table)->put(systemColors->get(i), $$new($ColorUIResource, color));
@@ -1780,9 +1759,9 @@ void BasicLookAndFeel::initComponentDefaults($UIDefaults* table) {
 		$of("RadioButtonMenuItem.commandSound"_s)
 	}));
 	$var($ObjectArray, noAuditoryCues, $new($ObjectArray, {$of("mute"_s)}));
-		$init($Boolean);
-			$init($DefaultEditorKit);
-			$init($JTextField);
+	$init($Boolean);
+	$init($DefaultEditorKit);
+	$init($JTextField);
 	$var($ObjectArray, defaults, $new($ObjectArray, {
 		$of("AuditoryCues.cueList"_s),
 		$of(allAuditoryCues),
@@ -3753,12 +3732,10 @@ $bytes* BasicLookAndFeel::loadAudioData($String* soundFile) {
 	}
 	$var($bytes, buffer, $cast($bytes, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($BasicLookAndFeel$3, this, soundFile)))));
 	if (buffer == nullptr) {
-		$init($System);
 		$nc($System::err)->println($$str({$($of(this)->getClass()->getName()), "/"_s, soundFile, " not found."_s}));
 		return nullptr;
 	}
 	if ($nc(buffer)->length == 0) {
-		$init($System);
 		$nc($System::err)->println($$str({"warning: "_s, soundFile, " is zero-length"_s}));
 		return nullptr;
 	}

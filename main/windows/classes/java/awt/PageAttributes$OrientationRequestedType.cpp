@@ -2,15 +2,6 @@
 
 #include <java/awt/AttributeValue.h>
 #include <java/awt/PageAttributes.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef I_LANDSCAPE
@@ -71,9 +62,7 @@ $Object* allocate$PageAttributes$OrientationRequestedType($Class* clazz) {
 }
 
 $StringArray* PageAttributes$OrientationRequestedType::NAMES = nullptr;
-
 PageAttributes$OrientationRequestedType* PageAttributes$OrientationRequestedType::PORTRAIT = nullptr;
-
 PageAttributes$OrientationRequestedType* PageAttributes$OrientationRequestedType::LANDSCAPE = nullptr;
 
 void PageAttributes$OrientationRequestedType::init$(int32_t type) {

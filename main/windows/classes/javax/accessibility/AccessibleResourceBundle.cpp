@@ -1,13 +1,5 @@
 #include <javax/accessibility/AccessibleResourceBundle.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ListResourceBundle.h>
 #include <jcpp.h>
 
@@ -19,11 +11,11 @@ using $ListResourceBundle = ::java::util::ListResourceBundle;
 
 namespace javax {
 	namespace accessibility {
+
 $CompoundAttribute _AccessibleResourceBundle_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", nullptr},
 	{}
 };
-
 
 $MethodInfo _AccessibleResourceBundle_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PUBLIC, $method(static_cast<void(AccessibleResourceBundle::*)()>(&AccessibleResourceBundle::init$))},

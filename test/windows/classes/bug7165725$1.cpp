@@ -7,18 +7,6 @@
 #include <java/awt/Container.h>
 #include <java/awt/Window.h>
 #include <java/io/IOException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JEditorPane.h>
@@ -116,8 +104,7 @@ void bug7165725$1::run() {
 		$set(this->this$0, editorPane, $new($JEditorPane));
 		$nc(this->this$0->editorPane)->setEditorKit($$new($bug7165725$1$1, this));
 		$nc(this->this$0->editorPane)->setPage($$new($URL, this->val$urlStr));
-	} catch ($IOException&) {
-		$var($IOException, ex, $catch());
+	} catch ($IOException& ex) {
 		$throwNew($RuntimeException, "Test failed"_s, ex);
 	}
 	$nc(this->this$0->editorPane)->setEditable(false);

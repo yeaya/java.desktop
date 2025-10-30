@@ -1,19 +1,7 @@
 #include <bug6794831.h>
 
 #include <bug6794831$1.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <java/util/concurrent/TimeUnit.h>
 #include <javax/swing/SwingUtilities.h>
@@ -82,7 +70,6 @@ void bug6794831::run() {
 	$SwingUtilities::invokeAndWait($$new($bug6794831$1, this));
 	$init($TimeUnit);
 	if ($nc(this->countDownLatch)->await(3000, $TimeUnit::MILLISECONDS)) {
-		$init($System);
 		$nc($System::out)->println("bug6794831 passed"_s);
 	} else {
 		fail("bug6794831 failed"_s);

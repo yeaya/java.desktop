@@ -6,15 +6,6 @@
 #include <java/awt/geom/AffineTransform.h>
 #include <java/awt/image/BufferedImage.h>
 #include <java/awt/image/BufferedImageOp.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/ScreenUpdateManager.h>
 #include <sun/java2d/SunGraphics2D.h>
 #include <sun/java2d/SurfaceData.h>
@@ -172,8 +163,8 @@ void D3DBlitLoops::register$() {
 	$var($Blit, blitIntArgbPreToSurface, $new($D3DSwToSurfaceBlit, $SurfaceType::IntArgbPre, $D3DSurfaceData::ST_INT_ARGB_PRE));
 	$var($Blit, blitIntArgbPreToTexture, $new($D3DSwToTextureBlit, $SurfaceType::IntArgbPre, $D3DSurfaceData::ST_INT_ARGB_PRE));
 	$var($TransformBlit, transformBlitIntArgbPreToSurface, $new($D3DSwToSurfaceTransform, $SurfaceType::IntArgbPre, $D3DSurfaceData::ST_INT_ARGB_PRE));
-		$init($D3DSurfaceData);
-		$init($CompositeType);
+	$init($D3DSurfaceData);
+	$init($CompositeType);
 	$var($GraphicsPrimitiveArray, primitives, $new($GraphicsPrimitiveArray, {
 		static_cast<$GraphicsPrimitive*>($$new($D3DSurfaceToGDIWindowSurfaceBlit)),
 		static_cast<$GraphicsPrimitive*>($$new($D3DSurfaceToGDIWindowSurfaceScale)),
@@ -266,8 +257,8 @@ void D3DBlitLoops::Blit($SurfaceData* srcData, $SurfaceData* dstData, $Composite
 			int32_t packedParams = createPackedParams(false, texture, false, xform != nullptr, hint, srctype);
 			enqueueBlit(rq, srcData, dstData, packedParams, sx1, sy1, sx2, sy2, dx1, dy1, dx2, dy2);
 			rq->flushNow();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}
@@ -311,8 +302,8 @@ void D3DBlitLoops::IsoBlit($SurfaceData* srcData, $SurfaceData* dstData, $Buffer
 			if (biop != nullptr) {
 				$D3DBufImgOps::disableBufImgOp(rq, biop);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}

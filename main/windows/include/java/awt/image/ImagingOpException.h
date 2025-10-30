@@ -16,8 +16,10 @@ public:
 	void init$($String* s);
 	static const int64_t serialVersionUID = (int64_t)0x6F631AD96141B232;
 	ImagingOpException(const ImagingOpException& e);
-	ImagingOpException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline ImagingOpException* operator ->() {
+		return (ImagingOpException*)throwing$;
+	}
 };
 
 		} // image

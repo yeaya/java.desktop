@@ -1,14 +1,6 @@
 #include <sun/awt/Win32FontManager$1.h>
 
 #include <java/awt/FontFormatException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/Win32FontManager.h>
 #include <sun/font/TrueTypeFont.h>
 #include <jcpp.h>
@@ -70,8 +62,7 @@ $Object* Win32FontManager$1::run() {
 	if (eudcFile != nullptr) {
 		try {
 			$assignStatic($Win32FontManager::eudcFont, $new($TrueTypeFont, eudcFile, nullptr, 0, true, false));
-		} catch ($FontFormatException&) {
-			$catch();
+		} catch ($FontFormatException& e) {
 		}
 	}
 	return $of(nullptr);

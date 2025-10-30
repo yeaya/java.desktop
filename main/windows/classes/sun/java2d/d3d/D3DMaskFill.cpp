@@ -3,14 +3,7 @@
 #include <java/awt/Composite.h>
 #include <java/awt/Paint.h>
 #include <java/awt/geom/AffineTransform.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/InvalidPipeException.h>
 #include <sun/java2d/SunGraphics2D.h>
 #include <sun/java2d/SurfaceData.h>
@@ -82,8 +75,8 @@ $Object* allocate$D3DMaskFill($Class* clazz) {
 void D3DMaskFill::register$() {
 	$init(D3DMaskFill);
 	$useLocalCurrentObjectStackCache();
-		$init($SurfaceType);
-		$init($CompositeType);
+	$init($SurfaceType);
+	$init($CompositeType);
 	$var($GraphicsPrimitiveArray, primitives, $new($GraphicsPrimitiveArray, {
 		static_cast<$GraphicsPrimitive*>($$new(D3DMaskFill, $SurfaceType::AnyColor, $CompositeType::SrcOver)),
 		static_cast<$GraphicsPrimitive*>($$new(D3DMaskFill, $SurfaceType::OpaqueColor, $CompositeType::SrcNoEa)),
@@ -115,8 +108,7 @@ void D3DMaskFill::validateContext($SunGraphics2D* sg2d, $Composite* comp, int32_
 	$var($D3DSurfaceData, dstData, nullptr);
 	try {
 		$assign(dstData, $cast($D3DSurfaceData, $nc(sg2d)->surfaceData));
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$throwNew($InvalidPipeException, $$str({"wrong surface data type: "_s, $nc(sg2d)->surfaceData}));
 	}
 	$D3DContext::validateContext(dstData, dstData, $($nc(sg2d)->getCompClip()), comp, nullptr, sg2d->paint, sg2d, ctxflags);

@@ -1,15 +1,6 @@
 #include <javax/swing/JFormattedTextField$AbstractFormatter.h>
 
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/ParseException.h>
 #include <javax/swing/Action.h>
 #include <javax/swing/JFormattedTextField.h>
@@ -96,8 +87,7 @@ void JFormattedTextField$AbstractFormatter::install($JFormattedTextField* ftf) {
 	if (ftf != nullptr) {
 		try {
 			ftf->setText($(valueToString($(ftf->getValue()))));
-		} catch ($ParseException&) {
-			$var($ParseException, pe, $catch());
+		} catch ($ParseException& pe) {
 			ftf->setText(""_s);
 			setEditValid(false);
 		}

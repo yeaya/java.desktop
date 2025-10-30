@@ -1,16 +1,7 @@
 #include <java/awt/Desktop$Action.h>
 
 #include <java/awt/Desktop.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef APP_ABOUT
@@ -111,53 +102,29 @@ $Object* allocate$Desktop$Action($Class* clazz) {
 	return $of($alloc(Desktop$Action));
 }
 
-
 Desktop$Action* Desktop$Action::OPEN = nullptr;
-
 Desktop$Action* Desktop$Action::EDIT = nullptr;
-
 Desktop$Action* Desktop$Action::PRINT = nullptr;
-
 Desktop$Action* Desktop$Action::MAIL = nullptr;
-
 Desktop$Action* Desktop$Action::BROWSE = nullptr;
-
 Desktop$Action* Desktop$Action::APP_EVENT_FOREGROUND = nullptr;
-
 Desktop$Action* Desktop$Action::APP_EVENT_HIDDEN = nullptr;
-
 Desktop$Action* Desktop$Action::APP_EVENT_REOPENED = nullptr;
-
 Desktop$Action* Desktop$Action::APP_EVENT_SCREEN_SLEEP = nullptr;
-
 Desktop$Action* Desktop$Action::APP_EVENT_SYSTEM_SLEEP = nullptr;
-
 Desktop$Action* Desktop$Action::APP_EVENT_USER_SESSION = nullptr;
-
 Desktop$Action* Desktop$Action::APP_ABOUT = nullptr;
-
 Desktop$Action* Desktop$Action::APP_PREFERENCES = nullptr;
-
 Desktop$Action* Desktop$Action::APP_OPEN_FILE = nullptr;
-
 Desktop$Action* Desktop$Action::APP_PRINT_FILE = nullptr;
-
 Desktop$Action* Desktop$Action::APP_OPEN_URI = nullptr;
-
 Desktop$Action* Desktop$Action::APP_QUIT_HANDLER = nullptr;
-
 Desktop$Action* Desktop$Action::APP_QUIT_STRATEGY = nullptr;
-
 Desktop$Action* Desktop$Action::APP_SUDDEN_TERMINATION = nullptr;
-
 Desktop$Action* Desktop$Action::APP_REQUEST_FOREGROUND = nullptr;
-
 Desktop$Action* Desktop$Action::APP_HELP_VIEWER = nullptr;
-
 Desktop$Action* Desktop$Action::APP_MENU_BAR = nullptr;
-
 Desktop$Action* Desktop$Action::BROWSE_FILE_DIR = nullptr;
-
 Desktop$Action* Desktop$Action::MOVE_TO_TRASH = nullptr;
 $Desktop$ActionArray* Desktop$Action::$VALUES = nullptr;
 

@@ -1,14 +1,6 @@
 #include <javax/swing/table/TableRowSorter.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Comparable.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/Collator.h>
 #include <java/util/Comparator.h>
 #include <javax/swing/DefaultRowSorter$ModelWrapper.h>
@@ -82,7 +74,6 @@ $Object* allocate$TableRowSorter($Class* clazz) {
 	return $of($alloc(TableRowSorter));
 }
 
-
 $Comparator* TableRowSorter::COMPARABLE_COMPARATOR = nullptr;
 
 void TableRowSorter::init$() {
@@ -114,7 +105,6 @@ $Comparator* TableRowSorter::getComparator(int32_t column) {
 		return comparator;
 	}
 	$Class* columnClass = $nc(($cast($TableModel, $(getModel()))))->getColumnClass(column);
-	$load($String);
 	if (columnClass == $String::class$) {
 		return $Collator::getInstance();
 	}
@@ -132,7 +122,6 @@ bool TableRowSorter::useToString(int32_t column) {
 		return false;
 	}
 	$Class* columnClass = $nc(($cast($TableModel, $(getModel()))))->getColumnClass(column);
-	$load($String);
 	if (columnClass == $String::class$) {
 		return false;
 	}

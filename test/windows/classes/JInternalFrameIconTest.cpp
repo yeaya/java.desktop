@@ -12,26 +12,12 @@
 #include <java/awt/image/RenderedImage.h>
 #include <java/awt/image/WritableRenderedImage.h>
 #include <java/io/File.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InstantiationException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/ImageIO.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/ImageIcon.h>
@@ -217,7 +203,6 @@ void JInternalFrameIconTest::getImageIconBufferedImage() {
 	int32_t var$1 = point->y + $nc($($nc(JInternalFrameIconTest::internalFrame)->getInsets()))->top;
 	int32_t var$2 = $nc(JInternalFrameIconTest::titleImageIcon)->getIconWidth();
 	$var($Rectangle, captureRect, $new($Rectangle, var$0, var$1, var$2, $nc(JInternalFrameIconTest::titleImageIcon)->getIconHeight()));
-	$init($System);
 	$nc($System::out)->println($$str({"imageicon captureRect "_s, captureRect}));
 	$assignStatic(JInternalFrameIconTest::imageIconImage, $nc(JInternalFrameIconTest::robot)->createScreenCapture(captureRect));
 }
@@ -231,7 +216,6 @@ void JInternalFrameIconTest::getIconBufferedImage() {
 	int32_t var$1 = point->y + $nc($($nc(JInternalFrameIconTest::internalFrame)->getInsets()))->top;
 	int32_t var$2 = $nc(JInternalFrameIconTest::titleIcon)->getIconWidth();
 	$var($Rectangle, captureRect, $new($Rectangle, var$0, var$1, var$2, $nc(JInternalFrameIconTest::titleIcon)->getIconHeight()));
-	$init($System);
 	$nc($System::out)->println($$str({"icon captureRect "_s, captureRect}));
 	$assignStatic(JInternalFrameIconTest::iconImage, $nc(JInternalFrameIconTest::robot)->createScreenCapture(captureRect));
 }
@@ -244,10 +228,8 @@ void JInternalFrameIconTest::testIfSame($String* lookAndFeelString) {
 		$ImageIO::write(static_cast<$RenderedImage*>(JInternalFrameIconTest::iconImage), "png"_s, $$new($File, "iconImage-fail.png"_s));
 		$var($String, error, $str({"["_s, lookAndFeelString, "] : ERROR: icon and imageIcon not same."_s}));
 		$plusAssignStatic(JInternalFrameIconTest::errorString, error);
-		$init($System);
 		$nc($System::err)->println(error);
 	} else {
-		$init($System);
 		$nc($System::out)->println($$str({"["_s, lookAndFeelString, "] : SUCCESS: icon and imageIcon same."_s}));
 	}
 }
@@ -290,7 +272,6 @@ bool JInternalFrameIconTest::bufferedImagesEqual($BufferedImage* bufferedImage1,
 			flag = false;
 		}
 	} else {
-		$init($System);
 		$nc($System::err)->println("ERROR: size is different"_s);
 		flag = false;
 	}
@@ -304,24 +285,19 @@ void JInternalFrameIconTest::cleanUp() {
 
 bool JInternalFrameIconTest::tryLookAndFeel($String* lookAndFeelString) {
 	$init(JInternalFrameIconTest);
-	$useLocalCurrentObjectStackCache();
 	bool var$0 = $nc(lookAndFeelString)->contains("motif"_s);
 	if (var$0 || $nc(lookAndFeelString)->contains("gtk"_s)) {
 		return false;
 	}
 	try {
 		$UIManager::setLookAndFeel(lookAndFeelString);
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($Exception, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& e) {
 		return false;
-	} catch ($ClassNotFoundException&) {
-		$var($Exception, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		return false;
-	} catch ($InstantiationException&) {
-		$var($Exception, e, $catch());
+	} catch ($InstantiationException& e) {
 		return false;
-	} catch ($IllegalAccessException&) {
-		$var($Exception, e, $catch());
+	} catch ($IllegalAccessException& e) {
 		return false;
 	}
 	return true;

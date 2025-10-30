@@ -2,15 +2,6 @@
 
 #include <java/awt/Component.h>
 #include <java/awt/event/FocusEvent$Cause.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/InputVerifier.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/SwingUtilities.h>
@@ -102,8 +93,8 @@ bool JComponent$2::acceptRequestFocus($Component* from, $Component* to, bool tem
 				var$2 = $nc(iv)->shouldYieldFocus(jFocusOwner, target);
 				return$1 = true;
 				goto $finally;
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} $finally: {
 				if (currentSource != nullptr) {
 					$SwingUtilities::appContextPut($JComponent::INPUT_VERIFIER_SOURCE_KEY, currentSource);

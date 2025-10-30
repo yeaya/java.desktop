@@ -17,19 +17,8 @@
 #include <java/awt/image/PackedColorModel.h>
 #include <java/awt/image/Raster.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/image/ByteInterleavedRaster.h>
 #include <sun/awt/image/IntegerInterleavedRaster.h>
 #include <sun/awt/image/SunWritableRaster.h>
@@ -233,7 +222,6 @@ $ColorModel* TexturePaintContext::getInternedColorModel($ColorModel* cm) {
 }
 
 void TexturePaintContext::init$($ColorModel* cm, $AffineTransform* xform$renamed, int32_t bWidth, int32_t bHeight, int32_t maxw) {
-	$useLocalCurrentObjectStackCache();
 	$var($AffineTransform, xform, xform$renamed);
 	$set(this, colorModel, getInternedColorModel(cm));
 	this->bWidth = bWidth;
@@ -241,8 +229,7 @@ void TexturePaintContext::init$($ColorModel* cm, $AffineTransform* xform$renamed
 	this->maxWidth = maxw;
 	try {
 		$assign(xform, $nc(xform)->createInverse());
-	} catch ($NoninvertibleTransformException&) {
-		$var($NoninvertibleTransformException, e, $catch());
+	} catch ($NoninvertibleTransformException& e) {
 		$nc(xform)->setToScale((double)0, (double)0);
 	}
 	this->incXAcross = mod($nc(xform)->getScaleX(), (double)bWidth);

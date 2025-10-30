@@ -10,13 +10,6 @@
 #include <java/awt/event/KeyEvent.h>
 #include <java/beans/PropertyChangeListener.h>
 #include <java/beans/VetoableChangeListener.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Set.h>
 #include <javax/swing/DefaultFocusManager.h>
 #include <jcpp.h>

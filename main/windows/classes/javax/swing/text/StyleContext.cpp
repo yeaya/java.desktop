@@ -10,17 +10,7 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/Collections.h>
 #include <java/util/Enumeration.h>
@@ -200,7 +190,6 @@ void StyleContext::finalize() {
 }
 
 StyleContext* StyleContext::defaultContext = nullptr;
-
 $String* StyleContext::DEFAULT_STYLE = nullptr;
 $Hashtable* StyleContext::freezeKeyMap = nullptr;
 $Hashtable* StyleContext::thawKeyMap = nullptr;
@@ -570,8 +559,7 @@ void clinit$StyleContext($Class* class$) {
 			for (int32_t i = 0; i < n; ++i) {
 				StyleContext::registerStaticAttributeKey($nc($StyleConstants::keys)->get(i));
 			}
-		} catch ($Throwable&) {
-			$var($Throwable, e, $catch());
+		} catch ($Throwable& e) {
 			e->printStackTrace();
 		}
 	}

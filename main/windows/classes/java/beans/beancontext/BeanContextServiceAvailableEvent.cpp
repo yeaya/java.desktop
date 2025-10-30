@@ -3,13 +3,6 @@
 #include <java/beans/beancontext/BeanContext.h>
 #include <java/beans/beancontext/BeanContextEvent.h>
 #include <java/beans/beancontext/BeanContextServices.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventObject.h>
 #include <java/util/Iterator.h>
 #include <jcpp.h>

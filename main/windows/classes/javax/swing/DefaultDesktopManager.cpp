@@ -10,18 +10,7 @@
 #include <java/awt/Toolkit.h>
 #include <java/awt/Window.h>
 #include <java/beans/PropertyVetoException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/DefaultDesktopManager$1.h>
 #include <javax/swing/DesktopManager.h>
 #include <javax/swing/JComponent.h>
@@ -210,8 +199,7 @@ void DefaultDesktopManager::closeFrame($JInternalFrame* f) {
 		$assign(nextFrame, $nc(d)->getNextFrame(f));
 		try {
 			f->setSelected(false);
-		} catch ($PropertyVetoException&) {
-			$catch();
+		} catch ($PropertyVetoException& e2) {
 		}
 	}
 	if (c != nullptr) {
@@ -231,8 +219,7 @@ void DefaultDesktopManager::closeFrame($JInternalFrame* f) {
 	if (nextFrame != nullptr) {
 		try {
 			nextFrame->setSelected(true);
-		} catch ($PropertyVetoException&) {
-			$catch();
+		} catch ($PropertyVetoException& e2) {
 		}
 	} else if (findNext && $nc(d)->getComponentCount() == 0) {
 		d->requestFocus();
@@ -244,8 +231,7 @@ void DefaultDesktopManager::maximizeFrame($JInternalFrame* f) {
 	if ($nc(f)->isIcon()) {
 		try {
 			f->setIcon(false);
-		} catch ($PropertyVetoException&) {
-			$catch();
+		} catch ($PropertyVetoException& e2) {
 		}
 	} else {
 		$var($Container, c, f->getParent());
@@ -258,8 +244,7 @@ void DefaultDesktopManager::maximizeFrame($JInternalFrame* f) {
 	}
 	try {
 		$nc(f)->setSelected(true);
-	} catch ($PropertyVetoException&) {
-		$catch();
+	} catch ($PropertyVetoException& e2) {
 	}
 }
 
@@ -273,8 +258,7 @@ void DefaultDesktopManager::minimizeFrame($JInternalFrame* f) {
 		f->setNormalBounds(nullptr);
 		try {
 			f->setSelected(true);
-		} catch ($PropertyVetoException&) {
-			$catch();
+		} catch ($PropertyVetoException& e2) {
 		}
 		setBoundsForFrame(f, $nc(r)->x, r->y, r->width, r->height);
 	}
@@ -337,8 +321,7 @@ void DefaultDesktopManager::deiconifyFrame($JInternalFrame* f) {
 		} else {
 			try {
 				f->setSelected(true);
-			} catch ($PropertyVetoException&) {
-				$catch();
+			} catch ($PropertyVetoException& e2) {
 			}
 		}
 	}
@@ -364,8 +347,7 @@ void DefaultDesktopManager::activateFrame($JInternalFrame* f) {
 		if ($nc(currentlyActiveFrame)->isSelected()) {
 			try {
 				currentlyActiveFrame->setSelected(false);
-			} catch ($PropertyVetoException&) {
-				$catch();
+			} catch ($PropertyVetoException& e2) {
 			}
 		}
 		if (d != nullptr) {
@@ -683,8 +665,8 @@ void DefaultDesktopManager::dragFrameFaster($JComponent* f, int32_t newX, int32_
 					currentManager->notifyRepaintPerformed(parent, $nc(r)->x, r->y, r->width, r->height);
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			currentManager->endPaint();
 		}
@@ -694,8 +676,8 @@ void DefaultDesktopManager::dragFrameFaster($JComponent* f, int32_t newX, int32_
 	}
 	$var($Window, topLevel, $SwingUtilities::getWindowAncestor(f));
 	$var($Toolkit, tk, $Toolkit::getDefaultToolkit());
-	bool var$1 = !$nc(topLevel)->isOpaque() && ($instanceOf($SunToolkit, tk));
-	if (var$1 && $nc(($cast($SunToolkit, tk)))->needUpdateWindow()) {
+	bool var$2 = !$nc(topLevel)->isOpaque() && ($instanceOf($SunToolkit, tk));
+	if (var$2 && $nc(($cast($SunToolkit, tk)))->needUpdateWindow()) {
 		$nc($($AWTAccessor::getWindowAccessor()))->updateWindow(topLevel);
 	}
 }

@@ -32,8 +32,10 @@ public:
 	static const int64_t serialVersionUID = (int64_t)0xEDC370511F304957;
 	::org::w3c::dom::Node* offendingNode = nullptr;
 	IIOInvalidTreeException(const IIOInvalidTreeException& e);
-	IIOInvalidTreeException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline IIOInvalidTreeException* operator ->() {
+		return (IIOInvalidTreeException*)throwing$;
+	}
 };
 
 		} // metadata

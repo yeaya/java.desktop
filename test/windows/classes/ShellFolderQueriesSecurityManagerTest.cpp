@@ -1,28 +1,14 @@
 #include <ShellFolderQueriesSecurityManagerTest.h>
 
 #include <java/io/File.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Iterable.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
 #include <java/lang/SecurityException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <java/util/List.h>
 #include <java/util/function/Consumer.h>
@@ -125,7 +111,6 @@ void ShellFolderQueriesSecurityManagerTest::main($StringArray* args) {
 	$useLocalCurrentObjectStackCache();
 	try {
 		$var($FileArray, shortcuts, $nc(ShellFolderQueriesSecurityManagerTest::fsv)->getChooserShortcutPanelFiles());
-		$init($System);
 		$nc($($Arrays::asList(shortcuts)))->forEach(static_cast<$Consumer*>($$new(ShellFolderQueriesSecurityManagerTest$$Lambda$println, static_cast<$PrintStream*>($nc($System::out)))));
 		if ($nc(shortcuts)->length != 0) {
 			$throwNew($RuntimeException, "Shortcut panel files leaked from SecurityManager."_s);
@@ -136,8 +121,7 @@ void ShellFolderQueriesSecurityManagerTest::main($StringArray* args) {
 			$throwNew($RuntimeException, "Combobox Files leaked from SecurityManager."_s);
 		}
 		$nc($System::out)->println("ok"_s);
-	} catch ($SecurityException&) {
-		$var($SecurityException, e, $catch());
+	} catch ($SecurityException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }

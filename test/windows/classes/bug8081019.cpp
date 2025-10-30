@@ -3,20 +3,9 @@
 #include <java/awt/Frame.h>
 #include <java/io/File.h>
 #include <java/io/InputStream.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Process.h>
 #include <java/lang/Runtime.h>
-#include <java/lang/RuntimeException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/TimeUnit.h>
 #include <jcpp.h>
 
@@ -148,7 +137,6 @@ void bug8081019::runProcess() {
 void bug8081019::dumpStream($InputStream* in, $String* name) {
 	$init(bug8081019);
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println($$str({"--- dump "_s, name, " ---"_s}));
 	$var($String, tempString, nullptr);
 	int32_t count = $nc(in)->available();

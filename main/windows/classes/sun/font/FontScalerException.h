@@ -15,8 +15,10 @@ public:
 	void init$();
 	void init$($String* reason);
 	FontScalerException(const FontScalerException& e);
-	FontScalerException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline FontScalerException* operator ->() {
+		return (FontScalerException*)throwing$;
+	}
 };
 
 	} // font

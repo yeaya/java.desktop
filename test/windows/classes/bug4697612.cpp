@@ -16,33 +16,18 @@
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
 #include <java/io/InputStreamReader.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Reader.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InstantiationException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JScrollPane.h>
@@ -250,20 +235,15 @@ $JScrollPane* bug4697612::scroller = nullptr;
 $Robot* bug4697612::robot = nullptr;
 
 void bug4697612::setLookAndFeel($UIManager$LookAndFeelInfo* laf) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
-	} catch ($ClassNotFoundException&) {
-		$var($Exception, e, $catch());
+	} catch ($ClassNotFoundException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($InstantiationException&) {
-		$var($Exception, e, $catch());
+	} catch ($InstantiationException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($UnsupportedLookAndFeelException&) {
-		$var($Exception, e, $catch());
+	} catch ($UnsupportedLookAndFeelException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-	} catch ($IllegalAccessException&) {
-		$var($Exception, e, $catch());
+	} catch ($IllegalAccessException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 }
@@ -282,12 +262,10 @@ void bug4697612::main($StringArray* args) {
 			{
 				try {
 					$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4697612$$Lambda$lambda$main$0, laf)));
-					$init($System);
 					$nc($System::out)->println($$str({"Test for LookAndFeel "_s, $($nc(laf)->getClassName())}));
 					$new(bug4697612);
 					$nc($System::out)->println($$str({"Test passed for LookAndFeel "_s, $($nc(laf)->getClassName())}));
-				} catch ($Exception&) {
-					$var($Exception, e, $catch());
+				} catch ($Exception& e) {
 					$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 				}
 			}
@@ -349,12 +327,11 @@ void bug4697612::init$() {
 			$nc(bug4697612::robot)->waitForIdle();
 			int32_t pos = getScrollerViewPosition();
 			if (pos0 != pos) {
-				$init($System);
 				$nc($System::out)->println($$str({"pos0 "_s, $$str(pos0), " pos "_s, $$str(pos)}));
 				$throwNew($RuntimeException, "Failed 6244705: PgDn at the bottom causes scrolling"_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4697612$$Lambda$lambda$new$1$1)));
 		}
@@ -398,8 +375,7 @@ void bug4697612::createAndShowGUI() {
 	try {
 		$var($InputStream, is, bug4697612::class$->getResourceAsStream("bug4697612.txt"_s));
 		$nc(bug4697612::text)->read($$new($InputStreamReader, is), nullptr);
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$throwNew($Error, static_cast<$Throwable*>(e));
 	}
 	$assignStatic(bug4697612::scroller, $new($JScrollPane, bug4697612::text));

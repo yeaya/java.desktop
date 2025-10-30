@@ -4,17 +4,7 @@
 #include <com/sun/media/sound/AbstractMixer.h>
 #include <com/sun/media/sound/Platform.h>
 #include <com/sun/media/sound/Toolkit.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/AudioFormat.h>
 #include <javax/sound/sampled/AudioSystem.h>
 #include <javax/sound/sampled/Control$Type.h>
@@ -217,8 +207,7 @@ void AbstractDataLine::open($AudioFormat* format, int32_t bufferSize) {
 			try {
 				implOpen(format, bufferSize);
 				setOpen(true);
-			} catch ($LineUnavailableException&) {
-				$var($LineUnavailableException, e, $catch());
+			} catch ($LineUnavailableException& e) {
 				$nc(this->mixer)->close(static_cast<$Line*>(static_cast<$AbstractLine*>(this)));
 				$throw(e);
 			}

@@ -2,16 +2,7 @@
 
 #include <com/sun/java/swing/plaf/windows/AnimationController.h>
 #include <com/sun/java/swing/plaf/windows/TMSchema$State.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef DOWNDISABLED
@@ -87,63 +78,51 @@ void clinit$AnimationController$1($Class* class$) {
 	{
 		try {
 			$nc(AnimationController$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State)->set($TMSchema$State::DOWNPRESSED->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AnimationController$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State)->set($TMSchema$State::LEFTPRESSED->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AnimationController$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State)->set($TMSchema$State::RIGHTPRESSED->ordinal(), 3);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AnimationController$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State)->set($TMSchema$State::DOWNDISABLED->ordinal(), 4);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AnimationController$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State)->set($TMSchema$State::LEFTDISABLED->ordinal(), 5);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AnimationController$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State)->set($TMSchema$State::RIGHTDISABLED->ordinal(), 6);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AnimationController$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State)->set($TMSchema$State::DOWNHOT->ordinal(), 7);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AnimationController$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State)->set($TMSchema$State::LEFTHOT->ordinal(), 8);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AnimationController$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State)->set($TMSchema$State::RIGHTHOT->ordinal(), 9);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AnimationController$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State)->set($TMSchema$State::DOWNNORMAL->ordinal(), 10);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AnimationController$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State)->set($TMSchema$State::LEFTNORMAL->ordinal(), 11);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(AnimationController$1::$SwitchMap$com$sun$java$swing$plaf$windows$TMSchema$State)->set($TMSchema$State::RIGHTNORMAL->ordinal(), 12);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

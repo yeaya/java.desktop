@@ -1,13 +1,5 @@
 #include <javax/swing/plaf/multi/MultiUIDefaults.h>
 
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/UIDefaults.h>
 #include <jcpp.h>
 
@@ -45,7 +37,6 @@ void MultiUIDefaults::init$(int32_t initialCapacity, float loadFactor) {
 }
 
 void MultiUIDefaults::getUIError($String* msg) {
-	$init($System);
 	$nc($System::err)->println($$str({"Multiplexing LAF:  "_s, msg}));
 }
 

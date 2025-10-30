@@ -1,17 +1,6 @@
 #include <com/sun/imageio/plugins/tiff/TIFFDeflateDecompressor.h>
 
 #include <com/sun/imageio/plugins/tiff/TIFFDecompressor.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/zip/DataFormatException.h>
 #include <java/util/zip/Inflater.h>
 #include <javax/imageio/IIOException.h>
@@ -101,8 +90,7 @@ void TIFFDeflateDecompressor::decodeRaw($bytes* b, int32_t dstOffset, int32_t bi
 		$nc(this->inflater)->setInput(srcData);
 		try {
 			$nc(this->inflater)->inflate(buf, bufOffset, bytesPerRow * this->srcHeight);
-		} catch ($DataFormatException&) {
-			$var($DataFormatException, dfe, $catch());
+		} catch ($DataFormatException& dfe) {
 			$throwNew($IIOException, "Error inflating data"_s, dfe);
 		}
 		$nc(this->inflater)->reset();

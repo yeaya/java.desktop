@@ -2,18 +2,8 @@
 
 #include <Test8007563.h>
 #include <java/awt/SecondaryLoop.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SwingUtilities.h>
 #include <jcpp.h>
 
@@ -80,8 +70,7 @@ void Test8007563$1::init$($Test8007563* this$0, $SecondaryLoop* val$secondaryLoo
 void Test8007563$1::run() {
 	try {
 		$Thread::sleep(200);
-	} catch ($InterruptedException&) {
-		$catch();
+	} catch ($InterruptedException& e) {
 	}
 	$nc(this->val$secondaryLoop)->exit();
 	$SwingUtilities::invokeLater(this->this$0);

@@ -5,15 +5,6 @@
 #include <java/awt/Insets.h>
 #include <java/awt/Rectangle.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/JEditorPane.h>
 #include <javax/swing/event/DocumentListener.h>
@@ -222,8 +213,8 @@ void AccessibleHTML::buildInfo() {
 			$var($Element, root, $nc(doc)->getDefaultRootElement());
 			$set(this, rootElementInfo, $new($AccessibleHTML$ElementInfo, this, root));
 			$nc(this->rootElementInfo)->validate();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			unlock(lock);
 		}

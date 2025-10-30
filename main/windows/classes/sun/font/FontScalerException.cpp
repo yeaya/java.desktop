@@ -1,12 +1,5 @@
 #include <sun/font/FontScalerException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -46,16 +39,10 @@ void FontScalerException::init$($String* reason) {
 FontScalerException::FontScalerException() {
 }
 
-FontScalerException::FontScalerException(const FontScalerException& e) {
+FontScalerException::FontScalerException(const FontScalerException& e) : $Exception(e) {
 }
 
-FontScalerException FontScalerException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void FontScalerException::throwWrapper$() {
-	$pendingException(this);
+void FontScalerException::throw$() {
 	throw *this;
 }
 

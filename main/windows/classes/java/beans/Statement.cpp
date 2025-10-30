@@ -7,29 +7,12 @@
 #include <java/beans/NameGenerator.h>
 #include <java/beans/Statement$1.h>
 #include <java/beans/Statement$2.h>
-#include <java/lang/Array.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
 #include <java/lang/NoSuchMethodException.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/ReflectiveOperationException.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/reflect/AccessibleObject.h>
 #include <java/lang/reflect/Array.h>
 #include <java/lang/reflect/Constructor.h>
@@ -186,8 +169,7 @@ $Object* Statement::invoke() {
 	}
 	try {
 		return $of($AccessController::doPrivileged(static_cast<$PrivilegedExceptionAction*>($$new($Statement$2, this)), acc));
-	} catch ($PrivilegedActionException&) {
-		$var($PrivilegedActionException, exception, $catch());
+	} catch ($PrivilegedActionException& exception) {
 		$throw($(exception->getException()));
 	}
 	$shouldNotReachHere();
@@ -207,7 +189,6 @@ $Object* Statement::invokeInternal() {
 	} else {
 		$assign(arguments, $cast($ObjectArray, $nc(arguments)->clone()));
 	}
-	$load($Class);
 	if ($equals(target, $Class::class$) && $nc(methodName)->equals("forName"_s)) {
 		$var($String, name, $cast($String, $nc(arguments)->get(0)));
 		if (arguments->length == 1) {
@@ -239,8 +220,7 @@ $Object* Statement::invokeInternal() {
 			}
 			try {
 				$assign(m, $ConstructorFinder::findConstructor($cast($Class, target), argClasses));
-			} catch ($NoSuchMethodException&) {
-				$var($NoSuchMethodException, exception, $catch());
+			} catch ($NoSuchMethodException& exception) {
 				$assign(m, nullptr);
 			}
 		}
@@ -274,11 +254,9 @@ $Object* Statement::invokeInternal() {
 			} else {
 				return $of($nc(($cast($Constructor, m)))->newInstance(arguments));
 			}
-		} catch ($IllegalAccessException&) {
-			$var($IllegalAccessException, iae, $catch());
+		} catch ($IllegalAccessException& iae) {
 			$throwNew($Exception, $$str({"Statement cannot invoke: "_s, methodName, " on "_s, $nc($of(target))->getClass()}), iae);
-		} catch ($InvocationTargetException&) {
-			$var($InvocationTargetException, ite, $catch());
+		} catch ($InvocationTargetException& ite) {
 			$var($Throwable, te, ite->getCause());
 			if ($instanceOf($Exception, te)) {
 				$throw($cast($Exception, te));
@@ -294,13 +272,10 @@ $Object* Statement::invokeInternal() {
 $String* Statement::instanceName(Object$* instance) {
 	if (instance == nullptr) {
 		return "null"_s;
+	} else if ($nc($of(instance))->getClass() == $String::class$) {
+		return $str({"\""_s, $cast($String, instance), "\""_s});
 	} else {
-		$load($String);
-		if ($nc($of(instance))->getClass() == $String::class$) {
-			return $str({"\""_s, $cast($String, instance), "\""_s});
-		} else {
-			return $NameGenerator::unqualifiedClassName($of(instance)->getClass());
-		}
+		return $NameGenerator::unqualifiedClassName($of(instance)->getClass());
 	}
 }
 
@@ -328,8 +303,7 @@ $Method* Statement::getMethod($Class* type, $String* name, $ClassArray* args) {
 	$init(Statement);
 	try {
 		return $MethodFinder::findMethod(type, name, args);
-	} catch ($NoSuchMethodException&) {
-		$var($NoSuchMethodException, exception, $catch());
+	} catch ($NoSuchMethodException& exception) {
 		return nullptr;
 	}
 	$shouldNotReachHere();

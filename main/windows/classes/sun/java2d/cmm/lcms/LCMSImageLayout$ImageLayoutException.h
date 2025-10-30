@@ -16,8 +16,10 @@ public:
 	LCMSImageLayout$ImageLayoutException();
 	void init$($String* message);
 	LCMSImageLayout$ImageLayoutException(const LCMSImageLayout$ImageLayoutException& e);
-	LCMSImageLayout$ImageLayoutException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline LCMSImageLayout$ImageLayoutException* operator ->() {
+		return (LCMSImageLayout$ImageLayoutException*)throwing$;
+	}
 };
 
 			} // lcms

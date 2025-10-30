@@ -1,13 +1,5 @@
 #include <javax/sound/sampled/AudioFormat$Encoding.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Objects.h>
 #include <javax/sound/sampled/AudioFormat.h>
 #include <jcpp.h>
@@ -72,15 +64,10 @@ $Object* allocate$AudioFormat$Encoding($Class* clazz) {
 	return $of($alloc(AudioFormat$Encoding));
 }
 
-
 AudioFormat$Encoding* AudioFormat$Encoding::PCM_SIGNED = nullptr;
-
 AudioFormat$Encoding* AudioFormat$Encoding::PCM_UNSIGNED = nullptr;
-
 AudioFormat$Encoding* AudioFormat$Encoding::PCM_FLOAT = nullptr;
-
 AudioFormat$Encoding* AudioFormat$Encoding::ULAW = nullptr;
-
 AudioFormat$Encoding* AudioFormat$Encoding::ALAW = nullptr;
 
 void AudioFormat$Encoding::init$($String* name) {

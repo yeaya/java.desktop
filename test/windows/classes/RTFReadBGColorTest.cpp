@@ -7,25 +7,12 @@
 #include <java/io/InputStream.h>
 #include <java/io/OutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/file/Files.h>
 #include <java/nio/file/OpenOption.h>
 #include <java/nio/file/Path.h>
@@ -178,20 +165,18 @@ void RTFReadBGColorTest::write() {
 			try {
 				try {
 					$nc($($nc(RTFReadBGColorTest::text)->getEditorKit()))->write(o, $($nc(RTFReadBGColorTest::text)->getDocument()), 0, 0);
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					if (o != nullptr) {
 						try {
 							o->close();
-						} catch ($Throwable&) {
-							$var($Throwable, x2, $catch());
+						} catch ($Throwable& x2) {
 							t$->addSuppressed(x2);
 						}
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				if (o != nullptr) {
 					o->close();
@@ -201,8 +186,7 @@ void RTFReadBGColorTest::write() {
 				$throw(var$0);
 			}
 		}
-	} catch ($Exception&) {
-		$var($Exception, e2, $catch());
+	} catch ($Exception& e2) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e2));
 	}
 }
@@ -217,20 +201,18 @@ void RTFReadBGColorTest::read() {
 			try {
 				try {
 					$nc($($nc(RTFReadBGColorTest::text)->getEditorKit()))->read(in, $($nc(RTFReadBGColorTest::text)->getDocument()), 0);
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					if (in != nullptr) {
 						try {
 							in->close();
-						} catch ($Throwable&) {
-							$var($Throwable, x2, $catch());
+						} catch ($Throwable& x2) {
 							t$->addSuppressed(x2);
 						}
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				if (in != nullptr) {
 					in->close();
@@ -240,8 +222,7 @@ void RTFReadBGColorTest::read() {
 				$throw(var$0);
 			}
 		}
-	} catch ($Exception&) {
-		$var($Exception, e2, $catch());
+	} catch ($Exception& e2) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e2));
 	}
 }
@@ -259,8 +240,7 @@ void RTFReadBGColorTest::lambda$main$0() {
 	$StyleConstants::setBackground(attrBackground, $Color::YELLOW);
 	try {
 		$nc($($nc(RTFReadBGColorTest::text)->getDocument()))->insertString(0, RTFReadBGColorTest::BGTEXT, attrBackground);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 	write();

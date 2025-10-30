@@ -7,18 +7,7 @@
 #include <com/sun/media/sound/ModelPerformer.h>
 #include <com/sun/media/sound/SimpleInstrument.h>
 #include <com/sun/media/sound/SimpleSoundbank.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/ReflectiveOperationException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/List.h>
 #include <javax/sound/midi/Instrument.h>
 #include <javax/sound/midi/MidiChannel.h>
@@ -219,13 +208,11 @@ $Patch* ModelAbstractOscillator::getPatch() {
 }
 
 $ModelOscillatorStream* ModelAbstractOscillator::open(float samplerate) {
-	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$var(ModelAbstractOscillator, oscs, nullptr);
 	try {
 		$assign(oscs, $cast(ModelAbstractOscillator, $of(this)->getClass()->newInstance()));
-	} catch ($ReflectiveOperationException&) {
-		$var($ReflectiveOperationException, e, $catch());
+	} catch ($ReflectiveOperationException& e) {
 		$throwNew($IllegalArgumentException, static_cast<$Throwable*>(e));
 	}
 	$nc(oscs)->setSampleRate(samplerate);

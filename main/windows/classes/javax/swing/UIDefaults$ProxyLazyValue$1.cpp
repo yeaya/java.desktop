@@ -1,16 +1,6 @@
 #include <javax/swing/UIDefaults$ProxyLazyValue$1.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
 #include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <javax/swing/UIDefaults$ProxyLazyValue.h>
@@ -113,8 +103,7 @@ $Object* UIDefaults$ProxyLazyValue$1::run() {
 			$SwingUtilities2::checkAccess($nc(constructor)->getModifiers());
 			return $of($nc(constructor)->newInstance(this->this$0->args));
 		}
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 	return $of(nullptr);
 }

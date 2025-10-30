@@ -5,17 +5,6 @@
 #include <java/awt/Component.h>
 #include <java/awt/Graphics.h>
 #include <java/awt/image/BufferedImage.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/tree/DefaultTreeCellRenderer.h>
 #include <jcpp.h>
 
@@ -99,7 +88,6 @@ void bug7142955$1::run() {
 			}
 		}
 	}
-	$init($System);
 	$nc($System::out)->println("Test bug7142955 passed."_s);
 }
 

@@ -1,16 +1,7 @@
 #include <java/awt/Dialog$ModalityType.h>
 
 #include <java/awt/Dialog.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef APPLICATION_MODAL
@@ -71,13 +62,9 @@ $Object* allocate$Dialog$ModalityType($Class* clazz) {
 	return $of($alloc(Dialog$ModalityType));
 }
 
-
 Dialog$ModalityType* Dialog$ModalityType::MODELESS = nullptr;
-
 Dialog$ModalityType* Dialog$ModalityType::DOCUMENT_MODAL = nullptr;
-
 Dialog$ModalityType* Dialog$ModalityType::APPLICATION_MODAL = nullptr;
-
 Dialog$ModalityType* Dialog$ModalityType::TOOLKIT_MODAL = nullptr;
 $Dialog$ModalityTypeArray* Dialog$ModalityType::$VALUES = nullptr;
 

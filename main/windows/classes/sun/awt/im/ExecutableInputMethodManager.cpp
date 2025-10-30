@@ -10,20 +10,10 @@
 #include <java/awt/Toolkit.h>
 #include <java/awt/event/InvocationEvent.h>
 #include <java/awt/im/spi/InputMethodDescriptor.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/security/PrivilegedActionException.h>
@@ -211,8 +201,7 @@ void ExecutableInputMethodManager::init$() {
 				$set(this, hostAdapterLocator, $new($InputMethodLocator, hostAdapterDescriptor, nullptr, nullptr));
 			}
 		}
-	} catch ($AWTException&) {
-		$catch();
+	} catch ($AWTException& e) {
 	}
 	$set(this, javaInputMethodLocatorList, $new($Vector));
 	initializeInputMethodLocatorList();
@@ -232,8 +221,7 @@ void ExecutableInputMethodManager::run() {
 			$synchronized(this) {
 				$of(this)->wait();
 			}
-		} catch ($InterruptedException&) {
-			$catch();
+		} catch ($InterruptedException& e) {
 		}
 	}
 	while (true) {
@@ -245,10 +233,8 @@ void ExecutableInputMethodManager::run() {
 			} else {
 				$EventQueue::invokeAndWait($$new($ExecutableInputMethodManager$1, this));
 			}
-		} catch ($InterruptedException&) {
-			$catch();
-		} catch ($InvocationTargetException&) {
-			$catch();
+		} catch ($InterruptedException& ie) {
+		} catch ($InvocationTargetException& ite) {
 		}
 	}
 }
@@ -321,21 +307,18 @@ void ExecutableInputMethodManager::waitForChangeRequest() {
 			while (this->requestComponent == nullptr) {
 				$of(this)->wait();
 			}
-		} catch ($InterruptedException&) {
-			$catch();
+		} catch ($InterruptedException& e) {
 		}
 	}
 }
 
 void ExecutableInputMethodManager::initializeInputMethodLocatorList() {
-	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	$synchronized(this->javaInputMethodLocatorList) {
 		$nc(this->javaInputMethodLocatorList)->clear();
 		try {
 			$AccessController::doPrivileged(static_cast<$PrivilegedExceptionAction*>($$new($ExecutableInputMethodManager$3, this)));
-		} catch ($PrivilegedActionException&) {
-			$var($PrivilegedActionException, e, $catch());
+		} catch ($PrivilegedActionException& e) {
 			e->printStackTrace();
 		}
 		this->javaInputMethodCount = $nc(this->javaInputMethodLocatorList)->size();
@@ -523,8 +506,7 @@ $String* ExecutableInputMethodManager::findPreferredInputMethodNode($Locale* loc
 					return nodePath;
 				}
 			}
-		} catch ($BackingStoreException&) {
-			$catch();
+		} catch ($BackingStoreException& bse) {
 		}
 		$assign(nodePath, nodePath->substring(0, nodePath->lastIndexOf((int32_t)u'/')));
 	}
@@ -551,8 +533,7 @@ void ExecutableInputMethodManager::putPreferredInputMethod($InputMethodLocator* 
 				} else {
 					return;
 				}
-			} catch ($AWTException&) {
-				$var($AWTException, ae, $catch());
+			} catch ($AWTException& ae) {
 				return;
 			}
 		}

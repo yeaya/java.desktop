@@ -13,26 +13,12 @@
 #include <java/awt/geom/Point2D.h>
 #include <java/awt/im/InputMethodHighlight.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
 #include <java/lang/Cloneable.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/Annotation.h>
 #include <java/text/AttributedCharacterIterator$Attribute.h>
 #include <java/util/AbstractMap.h>
@@ -645,8 +631,7 @@ void AttributeValues::set($EAttribute* a, Object$* o) {
 			i_set(a, o);
 			update(a);
 			return;
-		} catch ($Exception&) {
-			$catch();
+		} catch ($Exception& e) {
 		}
 	}
 	setDefault(a);
@@ -681,8 +666,7 @@ AttributeValues* AttributeValues::merge($Map* map, int32_t mask) {
 						if (ea != nullptr && ((int32_t)(mask & (uint32_t)ea->mask)) != 0) {
 							set(ea, $($nc(e)->getValue()));
 						}
-					} catch ($ClassCastException&) {
-						$catch();
+					} catch ($ClassCastException& cce) {
 					}
 				}
 			}
@@ -775,8 +759,7 @@ AttributeValues* AttributeValues::fromSerializableHashtable($Hashtable* ht) {
 							if (ea != nullptr) {
 								result->set(ea, val);
 							}
-						} catch ($ClassCastException&) {
-							$catch();
+						} catch ($ClassCastException& ex) {
 						}
 					}
 				}
@@ -819,8 +802,7 @@ int32_t AttributeValues::hashCode() {
 bool AttributeValues::equals(Object$* rhs) {
 	try {
 		return equals($cast(AttributeValues, rhs));
-	} catch ($ClassCastException&) {
-		$catch();
+	} catch ($ClassCastException& e) {
 	}
 	return false;
 }
@@ -849,7 +831,6 @@ bool AttributeValues::equals(AttributeValues* rhs) {
 }
 
 AttributeValues* AttributeValues::clone() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$var(AttributeValues, result, $cast(AttributeValues, $Cloneable::clone()));
 		if (this->transform != nullptr) {
@@ -857,8 +838,7 @@ AttributeValues* AttributeValues::clone() {
 			result->updateDerivedTransforms();
 		}
 		return result;
-	} catch ($CloneNotSupportedException&) {
-		$var($CloneNotSupportedException, e, $catch());
+	} catch ($CloneNotSupportedException& e) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -1789,8 +1769,7 @@ $AffineTransform* AttributeValues::extractRotation($Point2D$Double* pt, $AffineT
 				rtx->setTransform(var$3, var$4, var$5, rtx->getScaleY(), dx, dy);
 			}
 		}
-	} catch ($NoninvertibleTransformException&) {
-		$var($NoninvertibleTransformException, e, $catch());
+	} catch ($NoninvertibleTransformException& e) {
 		return nullptr;
 	}
 	return rtx;

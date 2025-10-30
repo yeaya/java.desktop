@@ -1,13 +1,5 @@
 #include <javax/print/DocFlavor$CHAR_ARRAY.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/DocFlavor.h>
 #include <jcpp.h>
 
@@ -60,9 +52,7 @@ $Object* allocate$DocFlavor$CHAR_ARRAY($Class* clazz) {
 	return $of($alloc(DocFlavor$CHAR_ARRAY));
 }
 
-
 DocFlavor$CHAR_ARRAY* DocFlavor$CHAR_ARRAY::TEXT_PLAIN = nullptr;
-
 DocFlavor$CHAR_ARRAY* DocFlavor$CHAR_ARRAY::TEXT_HTML = nullptr;
 
 void DocFlavor$CHAR_ARRAY::init$($String* mimeType) {

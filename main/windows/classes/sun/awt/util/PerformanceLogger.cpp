@@ -3,18 +3,7 @@
 #include <java/io/FilterOutputStream.h>
 #include <java/io/OutputStream.h>
 #include <java/io/OutputStreamWriter.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Writer.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/Vector.h>
@@ -212,9 +201,7 @@ void PerformanceLogger::outputLog($Writer* writer) {
 				}
 			}
 			$nc(writer)->flush();
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
-			$init($System);
+		} catch ($Exception& e) {
 			$nc($System::out)->println($$str({e, ": Writing performance log to "_s, writer}));
 		}
 	}
@@ -249,7 +236,6 @@ void clinit$PerformanceLogger($Class* class$) {
 				}
 			}
 			if (PerformanceLogger::logWriter == nullptr) {
-				$init($System);
 				$assignStatic(PerformanceLogger::logWriter, $new($OutputStreamWriter, $System::out));
 			}
 		}

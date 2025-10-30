@@ -1,17 +1,6 @@
 #include <SynthScrollbarThumbPainterTest$1.h>
 
 #include <SynthScrollbarThumbPainterTest.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $SynthScrollbarThumbPainterTest = ::SynthScrollbarThumbPainterTest;
@@ -73,8 +62,7 @@ void SynthScrollbarThumbPainterTest$1::init$($String* val$lookAndFeelString) {
 void SynthScrollbarThumbPainterTest$1::run() {
 	try {
 		$SynthScrollbarThumbPainterTest::constructTestUI(this->val$lookAndFeelString);
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$throwNew($RuntimeException, "Exception creating test UI"_s);
 	}
 }

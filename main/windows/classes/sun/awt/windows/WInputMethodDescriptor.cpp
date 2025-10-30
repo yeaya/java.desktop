@@ -3,14 +3,6 @@
 #include <java/awt/Image.h>
 #include <java/awt/Toolkit.h>
 #include <java/awt/im/spi/InputMethod.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <sun/awt/im/InputMethodAdapter.h>
 #include <sun/awt/windows/WInputMethod.h>

@@ -4,13 +4,6 @@
 #include <com/sun/imageio/plugins/common/SubImageInputStream.h>
 #include <com/sun/imageio/plugins/png/PNGImageReader.h>
 #include <java/io/IOException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/stream/ImageInputStream.h>
 #include <javax/imageio/stream/ImageInputStreamImpl.h>
 #include <jcpp.h>
@@ -70,13 +63,11 @@ void PNGImageDataEnumeration::init$($ImageInputStream* stream) {
 }
 
 $Object* PNGImageDataEnumeration::nextElement() {
-	$useLocalCurrentObjectStackCache();
 	try {
 		this->firstTime = false;
 		$var($ImageInputStream, iis, $new($SubImageInputStream, this->stream, this->length));
 		return $of($new($InputStreamAdapter, iis));
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		return $of(nullptr);
 	}
 	$shouldNotReachHere();
@@ -95,8 +86,7 @@ bool PNGImageDataEnumeration::hasMoreElements() {
 		} else {
 			return false;
 		}
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		return false;
 	}
 	$shouldNotReachHere();

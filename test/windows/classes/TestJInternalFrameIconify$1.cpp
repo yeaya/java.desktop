@@ -5,16 +5,6 @@
 #include <java/awt/Container.h>
 #include <java/awt/Window.h>
 #include <java/beans/PropertyVetoException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JDesktopPane.h>
 #include <javax/swing/JFrame.h>
@@ -99,8 +89,7 @@ void TestJInternalFrameIconify$1::run() {
 	f->setLocation(20, 20);
 	try {
 		f->setIcon(true);
-	} catch ($PropertyVetoException&) {
-		$var($PropertyVetoException, ex, $catch());
+	} catch ($PropertyVetoException& ex) {
 		$plusAssignStatic($TestJInternalFrameIconify::errorMessage, $$str({$(ex->getMessage()), "\n"_s}));
 	}
 	$nc($TestJInternalFrameIconify::desktopPane)->add(static_cast<$Component*>(f));

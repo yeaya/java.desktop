@@ -14,16 +14,7 @@
 #include <java/awt/image/ImageObserver.h>
 #include <java/awt/image/VolatileImage.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JRootPane.h>
 #include <javax/swing/RepaintManager.h>
@@ -213,8 +204,8 @@ void RepaintManager$PaintManager::paintDoubleBufferedImpl($JComponent* c, $Image
 					osg->translate(x, y);
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(osg)->dispose();
 		}
@@ -283,8 +274,8 @@ void RepaintManager$PaintManager::paintDoubleBufferedFPScales($JComponent* c, $I
 					g2d->setTransform(tx);
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(osg)->dispose();
 		}

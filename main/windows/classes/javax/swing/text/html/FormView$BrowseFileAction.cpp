@@ -4,14 +4,6 @@
 #include <java/awt/Container.h>
 #include <java/awt/event/ActionEvent.h>
 #include <java/io/File.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFileChooser.h>
 #include <javax/swing/text/AttributeSet.h>
 #include <javax/swing/text/BadLocationException.h>
@@ -99,8 +91,7 @@ void FormView$BrowseFileAction::actionPerformed($ActionEvent* ae) {
 					$nc(this->model)->remove(0, $nc(this->model)->getLength());
 				}
 				$nc(this->model)->insertString(0, $(selected->getPath()), nullptr);
-			} catch ($BadLocationException&) {
-				$catch();
+			} catch ($BadLocationException& ble) {
 			}
 		}
 	}

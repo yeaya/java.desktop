@@ -14,17 +14,6 @@
 #include <java/awt/LayoutManager2.h>
 #include <java/awt/Panel$AccessibleAWTPanel.h>
 #include <java/awt/Panel.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/JApplet$AccessibleJApplet.h>
@@ -97,6 +86,7 @@ $NamedAttribute JApplet_Attribute_var$2[] = {
 	{"delegate", 's', "getContentPane"},
 	{}
 };
+
 $CompoundAttribute _JApplet_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", JApplet_Attribute_var$0},
 	{"Ljava/beans/JavaBean;", JApplet_Attribute_var$1},
@@ -195,7 +185,6 @@ $CompoundAttribute _JApplet_MethodAnnotations_setTransferHandler22[] = {
 	{"Ljava/beans/BeanProperty;", JApplet_Attribute_var$10},
 	{}
 };
-
 
 $FieldInfo _JApplet_FieldInfo_[] = {
 	{"rootPane", "Ljavax/swing/JRootPane;", nullptr, $PROTECTED, $field(JApplet, rootPane)},
@@ -382,8 +371,8 @@ void JApplet::setRootPane($JRootPane* root) {
 				setRootPaneCheckingEnabled(false);
 				$init($BorderLayout);
 				add(static_cast<$Component*>(this->rootPane), $of($BorderLayout::CENTER));
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				setRootPaneCheckingEnabled(checkingEnabled);
 			}

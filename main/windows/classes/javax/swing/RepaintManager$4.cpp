@@ -3,16 +3,6 @@
 #include <java/awt/Component.h>
 #include <java/awt/Graphics.h>
 #include <java/awt/Rectangle.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/List.h>
 #include <java/util/Map.h>
 #include <java/util/concurrent/atomic/AtomicInteger.h>
@@ -117,8 +107,8 @@ $Object* RepaintManager$4::run() {
 				$var($Throwable, var$0, nullptr);
 				try {
 					$nc(this->val$dirtyComponent)->paint(g);
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$1) {
+					$assign(var$0, var$1);
 				} /*finally*/ {
 					g->dispose();
 				}
@@ -132,8 +122,8 @@ $Object* RepaintManager$4::run() {
 		this->this$0->adjustRoots(this->this$0->repaintRoot, this->val$roots, this->val$i + 1);
 		$nc(this->val$count)->set($nc(this->val$roots)->size());
 		$nc(this->this$0->paintManager)->isRepaintingRoot$ = true;
-		int32_t var$1 = $nc(this->this$0->repaintRoot)->getWidth();
-		$nc(this->this$0->repaintRoot)->paintImmediately(0, 0, var$1, $nc(this->this$0->repaintRoot)->getHeight());
+		int32_t var$2 = $nc(this->this$0->repaintRoot)->getWidth();
+		$nc(this->this$0->repaintRoot)->paintImmediately(0, 0, var$2, $nc(this->this$0->repaintRoot)->getHeight());
 		$nc(this->this$0->paintManager)->isRepaintingRoot$ = false;
 		$set(this->this$0, repaintRoot, nullptr);
 	}

@@ -6,16 +6,7 @@
 #include <java/awt/FontMetrics.h>
 #include <java/awt/Insets.h>
 #include <java/awt/Rectangle.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JTabbedPane.h>

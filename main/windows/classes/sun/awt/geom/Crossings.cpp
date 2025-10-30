@@ -1,18 +1,7 @@
 #include <sun/awt/geom/Crossings.h>
 
 #include <java/awt/geom/PathIterator.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Enumeration.h>
 #include <java/util/Vector.h>
 #include <sun/awt/geom/Crossings$EvenOdd.h>
@@ -128,7 +117,6 @@ double Crossings::getYHi() {
 
 void Crossings::print() {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println("Crossings ["_s);
 	$nc($System::out)->println($$str({"  bounds = ["_s, $$str(this->ylo), ", "_s, $$str(this->yhi), "]"_s}));
 	for (int32_t i = 0; i < this->limit; i += 2) {

@@ -2,15 +2,7 @@
 
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractMap.h>
 #include <java/util/Collection.h>
 #include <java/util/Collections.h>
@@ -115,7 +107,6 @@ $Object* allocate$SimpleAttributeSet($Class* clazz) {
 void SimpleAttributeSet::finalize() {
 	this->$MutableAttributeSet::finalize();
 }
-
 
 $AttributeSet* SimpleAttributeSet::EMPTY = nullptr;
 
@@ -232,13 +223,11 @@ void SimpleAttributeSet::setResolveParent($AttributeSet* parent) {
 }
 
 $Object* SimpleAttributeSet::clone() {
-	$useLocalCurrentObjectStackCache();
 	$var(SimpleAttributeSet, attr, nullptr);
 	try {
 		$assign(attr, $cast(SimpleAttributeSet, $MutableAttributeSet::clone()));
 		$set($nc(attr), table, $cast($LinkedHashMap, $nc(this->table)->clone()));
-	} catch ($CloneNotSupportedException&) {
-		$var($CloneNotSupportedException, cnse, $catch());
+	} catch ($CloneNotSupportedException& cnse) {
 		$assign(attr, nullptr);
 	}
 	return $of(attr);

@@ -3,17 +3,6 @@
 #include <WrongSelectionOnMouseOver.h>
 #include <java/awt/event/MouseAdapter.h>
 #include <java/awt/event/MouseEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <jcpp.h>
 
@@ -77,7 +66,6 @@ void WrongSelectionOnMouseOver$2::init$($WrongSelectionOnMouseOver* this$0) {
 
 void WrongSelectionOnMouseOver$2::mouseEntered($MouseEvent* e) {
 	$nc(this->this$0->secondMenuMouseEntered)->countDown();
-	$init($System);
 	$nc($System::out)->println("WrongSelectionOnMouseOver.mouseEntered"_s);
 }
 

@@ -23,28 +23,12 @@
 #include <java/awt/geom/Rectangle2D$Float.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
 #include <java/lang/Cloneable.h>
-#include <java/lang/Double.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/AttributedCharacterIterator$Attribute.h>
 #include <java/text/AttributedCharacterIterator.h>
 #include <java/text/AttributedString.h>
@@ -250,7 +234,6 @@ $Object* allocate$TextLayout($Class* clazz) {
 float TextLayout::ALREADY_JUSTIFIED = 0.0;
 float TextLayout::dx = 0.0;
 float TextLayout::dy = 0.0;
-
 $TextLayout$CaretPolicy* TextLayout::DEFAULT_CARET_POLICY = nullptr;
 
 void TextLayout::init$($String* string, $Font* font, $FontRenderContext* frc) {
@@ -322,8 +305,7 @@ $Font* TextLayout::singleFont($chars* text, int32_t start, int32_t limit, $Map* 
 	$var($Font, font, nullptr);
 	try {
 		$assign(font, $cast($Font, $nc(attributes)->get($TextAttribute::FONT)));
-	} catch ($ClassCastException&) {
-		$catch();
+	} catch ($ClassCastException& e) {
 	}
 	if (font == nullptr) {
 		if ($nc(attributes)->get($TextAttribute::FAMILY) != nullptr) {
@@ -509,8 +491,7 @@ $Rectangle2D* TextLayout::getNaturalBounds() {
 $Object* TextLayout::clone() {
 	try {
 		return $of($Cloneable::clone());
-	} catch ($CloneNotSupportedException&) {
-		$var($CloneNotSupportedException, e, $catch());
+	} catch ($CloneNotSupportedException& e) {
 		$throwNew($InternalError, static_cast<$Throwable*>(e));
 	}
 	$shouldNotReachHere();
@@ -1172,7 +1153,7 @@ $GeneralPath* TextLayout::leftShape($Rectangle2D* bounds) {
 	$useLocalCurrentObjectStackCache();
 	$var($doubles, path0, nullptr);
 	if (this->isVerticalLine) {
-			double var$0 = bounds->getX();
+		double var$0 = bounds->getX();
 		$assign(path0, $new($doubles, {
 			$nc(bounds)->getX(),
 			bounds->getY(),
@@ -1180,7 +1161,7 @@ $GeneralPath* TextLayout::leftShape($Rectangle2D* bounds) {
 			bounds->getY()
 		}));
 	} else {
-			double var$1 = bounds->getY();
+		double var$1 = bounds->getY();
 		$assign(path0, $new($doubles, {
 			$nc(bounds)->getX(),
 			var$1 + bounds->getHeight(),
@@ -1196,9 +1177,9 @@ $GeneralPath* TextLayout::rightShape($Rectangle2D* bounds) {
 	$useLocalCurrentObjectStackCache();
 	$var($doubles, path1, nullptr);
 	if (this->isVerticalLine) {
-			double var$0 = bounds->getY();
-			double var$1 = bounds->getX();
-			double var$2 = bounds->getY();
+		double var$0 = bounds->getY();
+		double var$1 = bounds->getX();
+		double var$2 = bounds->getY();
 		$assign(path1, $new($doubles, {
 			$nc(bounds)->getX(),
 			var$0 + bounds->getHeight(),
@@ -1206,9 +1187,9 @@ $GeneralPath* TextLayout::rightShape($Rectangle2D* bounds) {
 			var$2 + bounds->getHeight()
 		}));
 	} else {
-			double var$3 = $nc(bounds)->getX();
-			double var$4 = bounds->getY();
-			double var$5 = bounds->getX();
+		double var$3 = $nc(bounds)->getX();
+		double var$4 = bounds->getY();
+		double var$5 = bounds->getX();
 		$assign(path1, $new($doubles, {
 			var$3 + bounds->getWidth(),
 			var$4 + bounds->getHeight(),

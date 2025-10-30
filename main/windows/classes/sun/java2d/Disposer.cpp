@@ -1,22 +1,9 @@
 #include <sun/java2d/Disposer.h>
 
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
@@ -26,8 +13,6 @@
 #include <java/lang/ref/Reference.h>
 #include <java/lang/ref/ReferenceQueue.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/ArrayList.h>
@@ -216,9 +201,7 @@ void Disposer::run() {
 			$assign(obj, nullptr);
 			$assign(rec, nullptr);
 			clearDeferredRecords();
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
-			$init($System);
+		} catch ($Exception& e) {
 			$nc($System::out)->println("Exception while removing reference."_s);
 		}
 	}
@@ -234,9 +217,7 @@ void Disposer::clearDeferredRecords() {
 		try {
 			$var($DisposerRecord, rec, $cast($DisposerRecord, $nc(Disposer::deferredRecords)->get(i)));
 			$nc(rec)->dispose();
-		} catch ($Exception&) {
-			$var($Exception, e, $catch());
-			$init($System);
+		} catch ($Exception& e) {
 			$nc($System::out)->println("Exception while disposing deferred rec."_s);
 		}
 	}
@@ -276,13 +257,11 @@ void Disposer::pollRemove() {
 						$nc(Disposer::deferredRecords)->add(rec);
 					}
 				}
-			} catch ($Exception&) {
-				$var($Exception, e, $catch());
-				$init($System);
+			} catch ($Exception& e) {
 				$nc($System::out)->println("Exception while removing reference."_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			Disposer::pollingQueue = false;
 		}
@@ -340,11 +319,9 @@ void clinit$Disposer($Class* class$) {
 		if (type != nullptr) {
 			if (type->equals("weak"_s)) {
 				Disposer::refType = Disposer::WEAK;
-				$init($System);
 				$nc($System::err)->println("Using WEAK refs"_s);
 			} else {
 				Disposer::refType = Disposer::PHANTOM;
-				$init($System);
 				$nc($System::err)->println("Using PHANTOM refs"_s);
 			}
 		}

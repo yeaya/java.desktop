@@ -5,21 +5,9 @@
 #include <java/awt/Rectangle.h>
 #include <java/awt/Window.h>
 #include <java/awt/image/BufferStrategy.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Iterator.h>
@@ -207,8 +195,8 @@ bool BufferStrategyPaintManager::show($Container* c, int32_t x, int32_t y, int32
 				}
 				$nc(this->bufferInfo)->setContentsLostDuringExpose(true);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$4) {
+			$assign(var$0, var$4);
 		} $finally: {
 			$synchronized(this) {
 				this->showing = false;
@@ -284,8 +272,7 @@ void BufferStrategyPaintManager::beginPaint() {
 		while (this->showing) {
 			try {
 				$of(this)->wait();
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& ie) {
 			}
 		}
 	}
@@ -375,8 +362,7 @@ void BufferStrategyPaintManager::doubleBufferingChanged0($JRootPane* rootPane) {
 		while (this->showing) {
 			try {
 				$of(this)->wait();
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& ie) {
 			}
 		}
 		$assign(info, getBufferInfo($($nc(rootPane)->getParent())));

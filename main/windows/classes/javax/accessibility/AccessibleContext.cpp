@@ -3,17 +3,6 @@
 #include <java/beans/PropertyChangeEvent.h>
 #include <java/beans/PropertyChangeListener.h>
 #include <java/beans/PropertyChangeSupport.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/accessibility/Accessible.h>
 #include <javax/accessibility/AccessibleAction.h>
@@ -90,6 +79,7 @@ $NamedAttribute AccessibleContext_Attribute_var$0[] = {
 	{"description", 's', "Minimal information that all accessible objects return"},
 	{}
 };
+
 $CompoundAttribute _AccessibleContext_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", AccessibleContext_Attribute_var$0},
 	{}
@@ -116,7 +106,6 @@ $CompoundAttribute _AccessibleContext_MethodAnnotations_setAccessibleName23[] = 
 	{"Ljava/beans/BeanProperty;", AccessibleContext_Attribute_var$2},
 	{}
 };
-
 
 $FieldInfo _AccessibleContext_FieldInfo_[] = {
 	{"targetAppContext", "Lsun/awt/AppContext;", nullptr, $PRIVATE | $VOLATILE, $field(AccessibleContext, targetAppContext)},
@@ -204,49 +193,27 @@ $Object* allocate$AccessibleContext($Class* clazz) {
 	return $of($alloc(AccessibleContext));
 }
 
-
 $String* AccessibleContext::ACCESSIBLE_NAME_PROPERTY = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_DESCRIPTION_PROPERTY = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_STATE_PROPERTY = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_VALUE_PROPERTY = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_SELECTION_PROPERTY = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_CARET_PROPERTY = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_VISIBLE_DATA_PROPERTY = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_CHILD_PROPERTY = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_ACTIVE_DESCENDANT_PROPERTY = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_TABLE_CAPTION_CHANGED = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_TABLE_SUMMARY_CHANGED = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_TABLE_MODEL_CHANGED = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_TABLE_ROW_HEADER_CHANGED = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_TABLE_ROW_DESCRIPTION_CHANGED = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_TABLE_COLUMN_HEADER_CHANGED = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_TABLE_COLUMN_DESCRIPTION_CHANGED = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_ACTION_PROPERTY = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_HYPERTEXT_OFFSET = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_TEXT_PROPERTY = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_INVALIDATE_CHILDREN = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_TEXT_ATTRIBUTES_CHANGED = nullptr;
-
 $String* AccessibleContext::ACCESSIBLE_COMPONENT_BOUNDS_CHANGED = nullptr;
 
 void AccessibleContext::init$() {

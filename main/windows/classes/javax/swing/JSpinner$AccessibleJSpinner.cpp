@@ -5,19 +5,8 @@
 #include <java/awt/Point.h>
 #include <java/awt/Rectangle.h>
 #include <java/awt/Window.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Comparable.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/Accessible.h>
 #include <javax/accessibility/AccessibleAction.h>
 #include <javax/accessibility/AccessibleContext.h>
@@ -276,8 +265,7 @@ bool JSpinner$AccessibleJSpinner::setCurrentAccessibleValue($Number* n) {
 	try {
 		$nc(this->this$0->model)->setValue(n);
 		return true;
-	} catch ($IllegalArgumentException&) {
-		$catch();
+	} catch ($IllegalArgumentException& iae) {
 	}
 	return false;
 }
@@ -334,8 +322,7 @@ bool JSpinner$AccessibleJSpinner::doAccessibleAction(int32_t i) {
 	try {
 		$nc(this->this$0->model)->setValue(o);
 		return true;
-	} catch ($IllegalArgumentException&) {
-		$catch();
+	} catch ($IllegalArgumentException& iae) {
 	}
 	return false;
 }

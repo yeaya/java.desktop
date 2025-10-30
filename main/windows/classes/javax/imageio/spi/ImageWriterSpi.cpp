@@ -1,16 +1,6 @@
 #include <javax/imageio/spi/ImageWriterSpi.h>
 
 #include <java/awt/image/RenderedImage.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/ImageTypeSpecifier.h>
 #include <javax/imageio/ImageWriter.h>
 #include <javax/imageio/spi/ImageReaderWriterSpi.h>
@@ -73,7 +63,6 @@ $ClassInfo _ImageWriterSpi_ClassInfo_ = {
 $Object* allocate$ImageWriterSpi($Class* clazz) {
 	return $of($alloc(ImageWriterSpi));
 }
-
 
 $ClassArray* ImageWriterSpi::STANDARD_OUTPUT_TYPE = nullptr;
 

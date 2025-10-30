@@ -10,14 +10,6 @@
 #include <java/awt/LayoutManager2.h>
 #include <java/awt/event/ActionListener.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/Icon.h>
 #include <javax/swing/JButton.h>
@@ -181,7 +173,7 @@ void MetalDesktopIconUI::uninstallComponents() {
 
 void MetalDesktopIconUI::installListeners() {
 	$BasicDesktopIconUI::installListeners();
-	$nc($($nc(this->desktopIcon)->getInternalFrame()))->addPropertyChangeListener(($assignField(this, titleListener, $new($MetalDesktopIconUI$TitleListener, this))));
+	$nc($($nc(this->desktopIcon)->getInternalFrame()))->addPropertyChangeListener(($set(this, titleListener, $new($MetalDesktopIconUI$TitleListener, this))));
 }
 
 void MetalDesktopIconUI::uninstallListeners() {

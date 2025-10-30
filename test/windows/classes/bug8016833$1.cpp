@@ -4,18 +4,6 @@
 #include <java/awt/Color.h>
 #include <java/awt/Component.h>
 #include <java/awt/Graphics.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JTextPane.h>
 #include <javax/swing/text/AttributeSet.h>
@@ -122,8 +110,7 @@ void bug8016833$1::run() {
 	}
 	try {
 		$nc(doc)->insertString(doc->getLength(), "mama"_s, style);
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 	comp->setSize(200, 100);

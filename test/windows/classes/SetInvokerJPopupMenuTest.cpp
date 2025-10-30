@@ -12,27 +12,13 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/ActionListener.h>
 #include <java/awt/event/InputEvent.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JComponent.h>
@@ -269,13 +255,11 @@ void SetInvokerJPopupMenuTest::main($StringArray* args) {
 							$nc(SetInvokerJPopupMenuTest::robot)->waitForIdle();
 							$nc(SetInvokerJPopupMenuTest::robot)->mousePress($InputEvent::BUTTON1_DOWN_MASK);
 							$nc(SetInvokerJPopupMenuTest::robot)->mouseRelease($InputEvent::BUTTON1_DOWN_MASK);
-						} catch ($UnsupportedLookAndFeelException&) {
-							$var($UnsupportedLookAndFeelException, e, $catch());
-							$init($System);
+						} catch ($UnsupportedLookAndFeelException& e) {
 							$nc($System::out)->println($$str({"Note: LookAndFeel "_s, $($nc(LF)->getClassName()), " is not supported on this configuration"_s}));
 						}
-					} catch ($Throwable&) {
-						$assign(var$0, $catch());
+					} catch ($Throwable& var$1) {
+						$assign(var$0, var$1);
 					} /*finally*/ {
 						$init(SetInvokerJPopupMenuTest);
 						if (SetInvokerJPopupMenuTest::f != nullptr) {

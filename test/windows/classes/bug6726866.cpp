@@ -5,12 +5,6 @@
 #include <java/awt/Container.h>
 #include <java/awt/Frame.h>
 #include <java/awt/Window.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JApplet.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JDesktopPane.h>

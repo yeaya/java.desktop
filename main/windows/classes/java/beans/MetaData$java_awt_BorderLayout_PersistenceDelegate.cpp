@@ -5,15 +5,6 @@
 #include <java/beans/DefaultPersistenceDelegate.h>
 #include <java/beans/Encoder.h>
 #include <java/beans/MetaData.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef CENTER
@@ -108,7 +99,7 @@ void MetaData$java_awt_BorderLayout_PersistenceDelegate::initialize($Class* type
 }
 
 void clinit$MetaData$java_awt_BorderLayout_PersistenceDelegate($Class* class$) {
-		$init($BorderLayout);
+	$init($BorderLayout);
 	$assignStatic(MetaData$java_awt_BorderLayout_PersistenceDelegate::CONSTRAINTS, $new($StringArray, {
 		$BorderLayout::NORTH,
 		$BorderLayout::SOUTH,

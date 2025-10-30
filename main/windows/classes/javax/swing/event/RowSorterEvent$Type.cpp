@@ -1,15 +1,6 @@
 #include <javax/swing/event/RowSorterEvent$Type.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/event/RowSorterEvent.h>
 #include <jcpp.h>
 
@@ -68,9 +59,7 @@ $Object* allocate$RowSorterEvent$Type($Class* clazz) {
 	return $of($alloc(RowSorterEvent$Type));
 }
 
-
 RowSorterEvent$Type* RowSorterEvent$Type::SORT_ORDER_CHANGED = nullptr;
-
 RowSorterEvent$Type* RowSorterEvent$Type::SORTED = nullptr;
 $RowSorterEvent$TypeArray* RowSorterEvent$Type::$VALUES = nullptr;
 

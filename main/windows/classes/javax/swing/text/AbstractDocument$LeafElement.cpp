@@ -3,14 +3,6 @@
 #include <java/io/IOException.h>
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Enumeration.h>
 #include <javax/swing/text/AbstractDocument$AbstractElement.h>
 #include <javax/swing/text/AbstractDocument.h>
@@ -97,8 +89,7 @@ void AbstractDocument$LeafElement::init$($AbstractDocument* this$0, $Element* pa
 	try {
 		$set(this, p0, this$0->createPosition(offs0));
 		$set(this, p1, this$0->createPosition(offs1));
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		$set(this, p0, nullptr);
 		$set(this, p1, nullptr);
 		$throwNew($StateInvariantError, "Can\'t create Position references"_s);
@@ -162,8 +153,7 @@ void AbstractDocument$LeafElement::readObject($ObjectInputStream* s) {
 	try {
 		$set(this, p0, this->this$0->createPosition(off0));
 		$set(this, p1, this->this$0->createPosition(off1));
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		$set(this, p0, nullptr);
 		$set(this, p1, nullptr);
 		$throwNew($IOException, "Can\'t restore Position references"_s);

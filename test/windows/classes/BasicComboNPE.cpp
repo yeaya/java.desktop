@@ -1,19 +1,9 @@
 #include <BasicComboNPE.h>
 
 #include <java/awt/IllegalComponentStateException.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Exception.h>
 #include <java/lang/IllegalAccessException.h>
 #include <java/lang/InstantiationException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/ComboBoxModel.h>
 #include <javax/swing/JComboBox.h>
 #include <javax/swing/UIManager$LookAndFeelInfo.h>
@@ -71,20 +61,14 @@ void BasicComboNPE::main($StringArray* args) {
 			$var($UIManager$LookAndFeelInfo, laf, arr$->get(i$));
 			{
 				try {
-					$init($System);
 					$nc($System::out)->println($$str({"Test for LookAndFeel "_s, $($nc(laf)->getClassName())}));
 					$UIManager::setLookAndFeel($($nc(laf)->getClassName()));
 					$$new(BasicComboNPE)->getModel();
-				} catch ($IllegalComponentStateException&) {
-					$var($Exception, e, $catch());
-				} catch ($ClassNotFoundException&) {
-					$var($Exception, e, $catch());
-				} catch ($InstantiationException&) {
-					$var($Exception, e, $catch());
-				} catch ($IllegalAccessException&) {
-					$var($Exception, e, $catch());
-				} catch ($UnsupportedLookAndFeelException&) {
-					$var($Exception, e, $catch());
+				} catch ($IllegalComponentStateException& e) {
+				} catch ($ClassNotFoundException& e) {
+				} catch ($InstantiationException& e) {
+				} catch ($IllegalAccessException& e) {
+				} catch ($UnsupportedLookAndFeelException& e) {
 				}
 			}
 		}

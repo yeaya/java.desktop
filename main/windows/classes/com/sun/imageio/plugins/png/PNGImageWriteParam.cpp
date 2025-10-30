@@ -1,14 +1,5 @@
 #include <com/sun/imageio/plugins/png/PNGImageWriteParam.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Locale.h>
 #include <javax/imageio/ImageWriteParam.h>
 #include <jcpp.h>
@@ -58,7 +49,6 @@ $ClassInfo _PNGImageWriteParam_ClassInfo_ = {
 $Object* allocate$PNGImageWriteParam($Class* clazz) {
 	return $of($alloc(PNGImageWriteParam));
 }
-
 
 float PNGImageWriteParam::DEFAULT_QUALITY = 0.0;
 $StringArray* PNGImageWriteParam::compressionNames = nullptr;

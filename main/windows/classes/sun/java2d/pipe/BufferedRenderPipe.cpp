@@ -13,19 +13,8 @@
 #include <java/awt/geom/RectangularShape.h>
 #include <java/awt/geom/RoundRectangle2D$Float.h>
 #include <java/awt/geom/RoundRectangle2D.h>
-#include <java/lang/Array.h>
 #include <java/lang/ArrayIndexOutOfBoundsException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SunGraphics2D.h>
 #include <sun/java2d/loops/ProcessPath$DrawHandler.h>
 #include <sun/java2d/loops/ProcessPath.h>
@@ -212,8 +201,8 @@ void BufferedRenderPipe::drawLine($SunGraphics2D* sg2d, int32_t x1, int32_t y1, 
 			$nc(this->buf)->putInt(y1 + transy);
 			$nc(this->buf)->putInt(x2 + transx);
 			$nc(this->buf)->putInt(y2 + transy);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->rq)->unlock();
 		}
@@ -235,8 +224,8 @@ void BufferedRenderPipe::drawRect($SunGraphics2D* sg2d, int32_t x, int32_t y, in
 			$nc(this->buf)->putInt(y + $nc(sg2d)->transY);
 			$nc(this->buf)->putInt(width);
 			$nc(this->buf)->putInt(height);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->rq)->unlock();
 		}
@@ -258,8 +247,8 @@ void BufferedRenderPipe::fillRect($SunGraphics2D* sg2d, int32_t x, int32_t y, in
 			$nc(this->buf)->putInt(y + $nc(sg2d)->transY);
 			$nc(this->buf)->putInt(width);
 			$nc(this->buf)->putInt(height);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->rq)->unlock();
 		}
@@ -328,8 +317,8 @@ void BufferedRenderPipe::drawPoly($SunGraphics2D* sg2d, $ints* xPoints, $ints* y
 			} else {
 				$nc(this->rq)->flushAndInvokeNow($$new($BufferedRenderPipe$1, this, xPoints, yPoints, nPoints, isClosed, sg2d));
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->rq)->unlock();
 		}
@@ -359,8 +348,8 @@ void BufferedRenderPipe::drawPath($SunGraphics2D* sg2d, $Path2D$Float* p2df, int
 			validateContext(sg2d);
 			$nc(this->drawHandler)->validate(sg2d);
 			$ProcessPath::drawPath(this->drawHandler, p2df, transx, transy);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->rq)->unlock();
 		}
@@ -380,8 +369,8 @@ void BufferedRenderPipe::fillPath($SunGraphics2D* sg2d, $Path2D$Float* p2df, int
 			$nc(this->drawHandler)->startFillPath();
 			$ProcessPath::fillPath(this->drawHandler, p2df, transx, transy);
 			$nc(this->drawHandler)->endFillPath();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->rq)->unlock();
 		}
@@ -414,8 +403,8 @@ void BufferedRenderPipe::fillSpans($SunGraphics2D* sg2d, $SpanIterator* si, int3
 			$var($SpanIterator, var$5, si);
 			int32_t newpos = fillSpans(var$1, var$2, var$3, var$4, var$5, $nc(si)->getNativeIterator(), transx, transy);
 			$nc(this->buf)->position(newpos);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$6) {
+			$assign(var$0, var$6);
 		} /*finally*/ {
 			$nc(this->rq)->unlock();
 		}
@@ -439,8 +428,8 @@ void BufferedRenderPipe::fillParallelogram($SunGraphics2D* sg2d, double ux1, dou
 			$nc(this->buf)->putFloat((float)dy1);
 			$nc(this->buf)->putFloat((float)dx2);
 			$nc(this->buf)->putFloat((float)dy2);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->rq)->unlock();
 		}
@@ -466,8 +455,8 @@ void BufferedRenderPipe::drawParallelogram($SunGraphics2D* sg2d, double ux1, dou
 			$nc(this->buf)->putFloat((float)dy2);
 			$nc(this->buf)->putFloat((float)lw1);
 			$nc(this->buf)->putFloat((float)lw2);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->rq)->unlock();
 		}
@@ -510,8 +499,8 @@ void BufferedRenderPipe::draw($SunGraphics2D* sg2d, $Shape* s) {
 			$var($Throwable, var$0, nullptr);
 			try {
 				fillSpans(sg2d, si, 0, 0);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(si)->dispose();
 			}
@@ -566,8 +555,8 @@ void BufferedRenderPipe::fill($SunGraphics2D* sg2d, $Shape* s) {
 			$nc(ssi)->setOutputAreaXYXY(var$1, var$2, var$3, clip->getHiY() - transy);
 			ssi->appendPath($($nc(s)->getPathIterator(at)));
 			fillSpans(sg2d, ssi, transx, transy);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$4) {
+			$assign(var$0, var$4);
 		} /*finally*/ {
 			$nc(ssi)->dispose();
 		}

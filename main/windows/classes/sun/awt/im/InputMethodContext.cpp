@@ -15,17 +15,7 @@
 #include <java/awt/font/TextHitInfo.h>
 #include <java/awt/im/InputMethodRequests.h>
 #include <java/awt/im/spi/InputMethod.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/text/AttributedCharacterIterator$Attribute.h>
@@ -224,8 +214,8 @@ void InputMethodContext::dispatchCommittedText($Component* client, $AttributedCh
 						keyChar = text->next();
 					}
 				}
-			} catch ($Throwable&) {
-				$assign(var$2, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$2, var$3);
 			} /*finally*/ {
 				this->dispatchingCommittedText = false;
 			}

@@ -1,26 +1,13 @@
 #include <CleanInternalStorageOnSetText.h>
 
 #include <java/awt/EventQueue.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Arrays.h>
 #include <java/util/Iterator.h>
@@ -150,8 +137,7 @@ void CleanInternalStorageOnSetText::test($JPasswordField* pf, $String* text, boo
 	if (makeGap && $nc(text)->length() > 3) {
 		try {
 			$nc($(pf->getDocument()))->remove(1, 2);
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 		}
 	}
@@ -170,12 +156,10 @@ void CleanInternalStorageOnSetText::test($JPasswordField* pf, $String* text, boo
 				nleft -= sgm->count;
 				offs += sgm->count;
 			}
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 		}
 	}
-	$init($System);
 	$nc($System::err)->println($$str({"Before = "_s, $($Arrays::toString(internalArray))}));
 	pf->setText(""_s);
 	$nc($System::err)->println($$str({"After = "_s, $($Arrays::toString(internalArray))}));
@@ -220,8 +204,7 @@ $chars* CleanInternalStorageOnSetText::getInternalArray($JPasswordField* pf) {
 	text->setPartialReturn(true);
 	try {
 		doc->getText(offs, nleft, text);
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 	return text->array;

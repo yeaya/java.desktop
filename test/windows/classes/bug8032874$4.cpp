@@ -1,15 +1,6 @@
 #include <bug8032874$4.h>
 
 #include <bug8032874.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/RowFilter$Entry.h>
 #include <javax/swing/RowFilter.h>
 #include <jcpp.h>

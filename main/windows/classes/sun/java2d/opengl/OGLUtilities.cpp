@@ -3,15 +3,7 @@
 #include <java/awt/Graphics.h>
 #include <java/awt/GraphicsConfiguration.h>
 #include <java/awt/Rectangle.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SunGraphics2D.h>
 #include <sun/java2d/SurfaceData.h>
 #include <sun/java2d/opengl/OGLContext.h>
@@ -117,8 +109,8 @@ bool OGLUtilities::invokeWithOGLContextCurrent($Graphics* g, $Runnable* r) {
 			}
 			rq->flushAndInvokeNow(r);
 			$OGLContext::invalidateCurrentContext();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			rq->unlock();
 		}
@@ -145,8 +137,8 @@ bool OGLUtilities::invokeWithOGLSharedContextCurrent($GraphicsConfiguration* con
 			$OGLContext::setScratchSurface($cast($OGLGraphicsConfig, config));
 			rq->flushAndInvokeNow(r);
 			$OGLContext::invalidateCurrentContext();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			rq->unlock();
 		}

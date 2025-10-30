@@ -1,20 +1,8 @@
 #include <sun/print/PrintServiceLookupProvider.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/ArrayList.h>
@@ -287,8 +275,7 @@ $PrintServiceArray* PrintServiceLookupProvider::getPrintServices($DocFlavor* fla
 				if ($nc(services->get(i))->getUnsupportedAttributes(flavor, requestSet) == nullptr) {
 					matchingServices->add(services->get(i));
 				}
-			} catch ($IllegalArgumentException&) {
-				$catch();
+			} catch ($IllegalArgumentException& e) {
 			}
 		}
 		$assign(services, $new($PrintServiceArray, matchingServices->size()));

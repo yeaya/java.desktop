@@ -1,18 +1,7 @@
 #include <sun/awt/image/ImageFetcher$1.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/image/FetcherInfo.h>
 #include <sun/awt/image/ImageFetcher.h>
 #include <jcpp.h>
@@ -91,8 +80,7 @@ $Object* ImageFetcher$1::run() {
 				$nc($nc(this->val$info)->fetchers)->set(i, f);
 				++$nc(this->val$info)->numFetchers;
 				break;
-			} catch ($Error&) {
-				$catch();
+			} catch ($Error& e) {
 			}
 		}
 	}

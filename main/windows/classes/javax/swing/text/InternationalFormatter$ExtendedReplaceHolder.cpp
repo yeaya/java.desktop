@@ -1,13 +1,5 @@
 #include <javax/swing/text/InternationalFormatter$ExtendedReplaceHolder.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/ParseException.h>
 #include <javax/swing/text/DefaultFormatter$ReplaceHolder.h>
 #include <javax/swing/text/Document.h>
@@ -72,12 +64,10 @@ void InternationalFormatter$ExtendedReplaceHolder::init$() {
 }
 
 void InternationalFormatter$ExtendedReplaceHolder::resetFromValue($InternationalFormatter* formatter) {
-	$useLocalCurrentObjectStackCache();
 	this->offset = 0;
 	try {
 		$set(this, text, $nc(formatter)->valueToString(this->value));
-	} catch ($ParseException&) {
-		$var($ParseException, pe, $catch());
+	} catch ($ParseException& pe) {
 		$set(this, text, ""_s);
 	}
 	this->length = $nc($($nc(this->fb)->getDocument()))->getLength();

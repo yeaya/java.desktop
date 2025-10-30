@@ -20,21 +20,9 @@
 #include <java/awt/image/RenderedImage.h>
 #include <java/awt/image/SampleModel.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/ByteOrder.h>
 #include <java/util/Arrays.h>
 #include <java/util/Iterator.h>
@@ -371,8 +359,7 @@ void GIFImageWriter::convertMetadata($String* metadataFormatName, $IIOMetadata* 
 		try {
 			$var($Node, root, inData->getAsTree(formatName));
 			$nc(outData)->mergeTree(formatName, root);
-		} catch ($IIOInvalidTreeException&) {
-			$catch();
+		} catch ($IIOInvalidTreeException& e) {
 		}
 	}
 }
@@ -632,8 +619,7 @@ void GIFImageWriter::writeImage($RenderedImage* image, $GIFWritableImageMetadata
 		try {
 			$var($IIOMetadataNode, root, $cast($IIOMetadataNode, $nc(imageMetadata)->getAsTree(GIFImageWriter::IMAGE_METADATA_NAME)));
 			$assign(list, $nc(root)->getElementsByTagName("GraphicControlExtension"_s));
-		} catch ($IllegalArgumentException&) {
-			$catch();
+		} catch ($IllegalArgumentException& iae) {
 		}
 		writeGraphicsControlExtension = list != nullptr && list->getLength() > 0;
 		if (param != nullptr && param->canWriteProgressive()) {
@@ -814,7 +800,6 @@ void GIFImageWriter::writeRasterData($RenderedImage* image, $Rectangle* sourceBo
 }
 
 void GIFImageWriter::writeHeader($String* version, int32_t logicalScreenWidth, int32_t logicalScreenHeight, int32_t colorResolution, int32_t pixelAspectRatio, int32_t backgroundColorIndex, bool sortFlag, int32_t bitsPerPixel, $bytes* globalColorTable) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$nc(this->stream)->writeBytes($$str({"GIF"_s, version}));
 		$nc(this->stream)->writeShort((int16_t)logicalScreenWidth);
@@ -831,8 +816,7 @@ void GIFImageWriter::writeHeader($String* version, int32_t logicalScreenWidth, i
 		if (globalColorTable != nullptr) {
 			$nc(this->stream)->write(globalColorTable);
 		}
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$throwNew($IIOException, "I/O error writing header!"_s, e);
 	}
 }
@@ -866,8 +850,7 @@ void GIFImageWriter::writeGraphicControlExtension(int32_t disposalMethod, bool u
 		$nc(this->stream)->writeShort((int16_t)delayTime);
 		$nc(this->stream)->write(transparentColorIndex);
 		$nc(this->stream)->write(0);
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$throwNew($IIOException, "I/O error writing Graphic Control Extension!"_s, e);
 	}
 }
@@ -904,8 +887,7 @@ void GIFImageWriter::writePlainTextExtension($GIFWritableImageMetadata* im) {
 			$nc(this->stream)->write(im->textBackgroundColor);
 			writeBlocks(im->text);
 			$nc(this->stream)->write(0);
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			$throwNew($IIOException, "I/O error writing Plain Text Extension!"_s, e);
 		}
 	}
@@ -926,8 +908,7 @@ void GIFImageWriter::writeApplicationExtension($GIFWritableImageMetadata* im) {
 				$nc(this->stream)->write($cast($bytes, $($nc(iterCodes)->next())), 0, 3);
 				writeBlocks($cast($bytes, $($nc(iterData)->next())));
 				$nc(this->stream)->write(0);
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				$throwNew($IIOException, "I/O error writing Application Extension!"_s, e);
 			}
 		}
@@ -950,8 +931,7 @@ void GIFImageWriter::writeCommentExtension($GIFWritableImageMetadata* im) {
 					}
 				}
 			}
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			$throwNew($IIOException, "I/O error writing Comment Extension!"_s, e);
 		}
 	}
@@ -976,8 +956,7 @@ void GIFImageWriter::writeImageDescriptor(int32_t imageLeftPosition, int32_t ima
 		if (localColorTable != nullptr) {
 			$nc(this->stream)->write(localColorTable);
 		}
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$throwNew($IIOException, "I/O error writing Image Descriptor!"_s, e);
 	}
 }

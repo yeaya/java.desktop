@@ -3,20 +3,7 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/awt/FocusTraversalPolicy.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/AbstractList.h>
@@ -141,12 +128,10 @@ $List* SortingFocusTraversalPolicy::getFocusTraversalCycle($Container* aContaine
 }
 
 int32_t SortingFocusTraversalPolicy::getComponentIndex($List* cycle, $Component* aComponent) {
-	$useLocalCurrentObjectStackCache();
 	int32_t index = 0;
 	try {
 		index = $Collections::binarySearch(cycle, aComponent, this->comparator);
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		$init($PlatformLogger$Level);
 		if ($nc(this->log)->isLoggable($PlatformLogger$Level::FINE)) {
 			$nc(this->log)->fine($$str({"### During the binary search for "_s, aComponent, " the exception occurred: "_s}), static_cast<$Throwable*>(e));

@@ -8,17 +8,7 @@
 #include <java/awt/Transparency.h>
 #include <java/awt/image/BufferedImage.h>
 #include <java/awt/image/ImageObserver.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/swing/CachedPainter.h>
 #include <sun/swing/plaf/synth/Paint9Painter$PaintType.h>
 #include <jcpp.h>

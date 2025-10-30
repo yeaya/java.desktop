@@ -12,16 +12,6 @@
 #include <java/awt/event/FocusListener.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/BreakIterator.h>
 #include <java/text/CharacterIterator.h>
 #include <java/util/Locale.h>
@@ -260,11 +250,9 @@ int32_t AccessibleHTML$TextElementInfo$TextAccessibleContext::getIndexAtPoint($P
 }
 
 $Rectangle* AccessibleHTML$TextElementInfo$TextAccessibleContext::getCharacterBounds(int32_t i) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		return $nc($($cast($TextUI, $nc($nc(this->this$1->this$0)->editor)->getUI())))->modelToView($nc(this->this$1->this$0)->editor, i);
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, e, $catch());
+	} catch ($BadLocationException& e) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -369,11 +357,10 @@ $String* AccessibleHTML$TextElementInfo$TextAccessibleContext::getAtIndex(int32_
 						}
 					}
 				}
-			} catch ($BadLocationException&) {
-				$catch();
+			} catch ($BadLocationException& e) {
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			if ($instanceOf($AbstractDocument, $nc(this->this$1->this$0)->model)) {
 				$nc(($cast($AbstractDocument, $nc(this->this$1->this$0)->model)))->readUnlock();
@@ -419,8 +406,7 @@ $AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment* Accessible
 			int32_t var$0 = para->getEndOffset();
 			int32_t length = var$0 - para->getStartOffset();
 			$nc($nc(this->this$1->this$0)->model)->getText(para->getStartOffset(), length, segment);
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			return nullptr;
 		}
 		segment->modelOffset = para->getStartOffset();

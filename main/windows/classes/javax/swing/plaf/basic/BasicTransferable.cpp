@@ -5,19 +5,9 @@
 #include <java/awt/datatransfer/UnsupportedFlavorException.h>
 #include <java/io/ByteArrayInputStream.h>
 #include <java/io/InputStream.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Reader.h>
 #include <java/io/StringReader.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/datatransfer/DataFlavorUtil.h>
 #include <jcpp.h>
 
@@ -164,7 +154,6 @@ $Object* BasicTransferable::getTransferData($DataFlavor* flavor) {
 	} else if (isHTMLFlavor(flavor)) {
 		$var($String, data, getHTMLData());
 		$assign(data, (data == nullptr) ? ""_s : data);
-		$load($String);
 		if ($of($String::class$)->equals($nc(flavor)->getRepresentationClass())) {
 			return $of(data);
 		} else {
@@ -181,7 +170,6 @@ $Object* BasicTransferable::getTransferData($DataFlavor* flavor) {
 	} else if (isPlainFlavor(flavor)) {
 		$var($String, data, getPlainData());
 		$assign(data, (data == nullptr) ? ""_s : data);
-		$load($String);
 		if ($of($String::class$)->equals($nc(flavor)->getRepresentationClass())) {
 			return $of(data);
 		} else {
@@ -293,9 +281,7 @@ void clinit$BasicTransferable($Class* class$) {
 			$init($DataFlavor);
 			$nc(BasicTransferable::stringFlavors)->set(0, $$new($DataFlavor, $$str({$DataFlavor::javaJVMLocalObjectMimeType, ";class=java.lang.String"_s})));
 			$nc(BasicTransferable::stringFlavors)->set(1, $DataFlavor::stringFlavor);
-		} catch ($ClassNotFoundException&) {
-			$var($ClassNotFoundException, cle, $catch());
-			$init($System);
+		} catch ($ClassNotFoundException& cle) {
 			$nc($System::err)->println("error initializing javax.swing.plaf.basic.BasicTranserable"_s);
 		}
 	}

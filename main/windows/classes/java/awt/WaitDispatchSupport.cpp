@@ -14,20 +14,8 @@
 #include <java/awt/WaitDispatchSupport$4.h>
 #include <java/awt/WaitDispatchSupport$5.h>
 #include <java/awt/event/InvocationEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/Timer.h>
@@ -208,7 +196,7 @@ bool WaitDispatchSupport::enter() {
 					if ($nc(WaitDispatchSupport::log)->isLoggable($PlatformLogger$Level::FINEST)) {
 						$nc(WaitDispatchSupport::log)->finest($$str({"scheduling the timer for "_s, $$str(this->interval), " ms"_s}));
 					}
-					$nc(WaitDispatchSupport::timer)->schedule($assignField(this, timerTask, $new($WaitDispatchSupport$3, this)), this->interval);
+					$nc(WaitDispatchSupport::timer)->schedule($set(this, timerTask, $new($WaitDispatchSupport$3, this)), this->interval);
 				}
 				$var($SequencedEvent, currentSE, $nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getCurrentSequencedEvent());
 				if (currentSE != nullptr) {
@@ -265,14 +253,13 @@ bool WaitDispatchSupport::enter() {
 									$var($String, var$8, $$str({"waitDone "_s, $$str($nc(this->keepBlockingEDT)->get()), " "_s}));
 									$nc(WaitDispatchSupport::log)->fine($$concat(var$8, $$str($nc(this->keepBlockingCT)->get())));
 								}
-							} catch ($InterruptedException&) {
-								$var($InterruptedException, e, $catch());
+							} catch ($InterruptedException& e) {
 								if ($nc(WaitDispatchSupport::log)->isLoggable($PlatformLogger$Level::FINE)) {
 									$nc(WaitDispatchSupport::log)->fine($$str({"Exception caught while waiting: "_s, e}));
 								}
 							}
-						} catch ($Throwable&) {
-							$assign(var$4, $catch());
+						} catch ($Throwable& var$9) {
+							$assign(var$4, var$9);
 						} /*finally*/ {
 							if (this->filter != nullptr) {
 								$nc(this->dispatchThread)->removeEventFilter(this->filter);
@@ -287,8 +274,8 @@ bool WaitDispatchSupport::enter() {
 			var$3 = true;
 			return$2 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$1, $catch());
+		} catch ($Throwable& var$10) {
+			$assign(var$1, var$10);
 		} $finally: {
 			$nc(this->keepBlockingEDT)->set(false);
 			$nc(this->keepBlockingCT)->set(false);

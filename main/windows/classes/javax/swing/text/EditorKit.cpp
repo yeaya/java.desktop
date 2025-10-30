@@ -4,14 +4,8 @@
 #include <java/io/OutputStream.h>
 #include <java/io/Reader.h>
 #include <java/io/Writer.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
 #include <java/lang/Cloneable.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/Action.h>
 #include <javax/swing/JEditorPane.h>
 #include <javax/swing/text/Caret.h>
@@ -92,12 +86,10 @@ void EditorKit::init$() {
 }
 
 $Object* EditorKit::clone() {
-	$useLocalCurrentObjectStackCache();
 	$var($Object, o, nullptr);
 	try {
 		$assign(o, $Cloneable::clone());
-	} catch ($CloneNotSupportedException&) {
-		$var($CloneNotSupportedException, cnse, $catch());
+	} catch ($CloneNotSupportedException& cnse) {
 		$assign(o, nullptr);
 	}
 	return $of(o);

@@ -12,25 +12,13 @@
 #include <java/awt/event/WindowAdapter.h>
 #include <java/awt/event/WindowListener.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JMenuItem.h>
 #include <javax/swing/JPopupMenu.h>
@@ -202,8 +190,7 @@ void bug4760494::main($StringArray* args) {
 	while (!bug4760494::pressed) {
 		try {
 			$Thread::sleep(1000);
-		} catch ($InterruptedException&) {
-			$catch();
+		} catch ($InterruptedException& e) {
 		}
 	}
 	int32_t count = 0;
@@ -211,8 +198,7 @@ void bug4760494::main($StringArray* args) {
 		try {
 			++count;
 			$Thread::sleep(1000);
-		} catch ($InterruptedException&) {
-			$catch();
+		} catch ($InterruptedException& e) {
 		}
 	}
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4760494$$Lambda$lambda$main$1$1)));

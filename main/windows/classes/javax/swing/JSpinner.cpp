@@ -5,20 +5,6 @@
 #include <java/awt/Container$AccessibleAWTContainer.h>
 #include <java/awt/Container.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/AbstractSpinnerModel.h>
@@ -102,6 +88,7 @@ $NamedAttribute JSpinner_Attribute_var$1[] = {
 	{"value", 'Z', "false"},
 	{}
 };
+
 $CompoundAttribute _JSpinner_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JSpinner_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", JSpinner_Attribute_var$1},
@@ -179,7 +166,6 @@ $CompoundAttribute _JSpinner_MethodAnnotations_setModel17[] = {
 	{"Ljava/beans/BeanProperty;", JSpinner_Attribute_var$8},
 	{}
 };
-
 
 $FieldInfo _JSpinner_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JSpinner, uiClassID)},
@@ -274,7 +260,6 @@ $Object* JSpinner::clone() {
 void JSpinner::finalize() {
 	this->$JComponent::finalize();
 }
-
 
 $String* JSpinner::uiClassID = nullptr;
 $Action* JSpinner::DISABLED_ACTION = nullptr;

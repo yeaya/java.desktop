@@ -1,12 +1,5 @@
 #include <javax/swing/undo/CannotUndoException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -42,16 +35,10 @@ void CannotUndoException::init$() {
 CannotUndoException::CannotUndoException() {
 }
 
-CannotUndoException::CannotUndoException(const CannotUndoException& e) {
+CannotUndoException::CannotUndoException(const CannotUndoException& e) : $RuntimeException(e) {
 }
 
-CannotUndoException CannotUndoException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void CannotUndoException::throwWrapper$() {
-	$pendingException(this);
+void CannotUndoException::throw$() {
 	throw *this;
 }
 

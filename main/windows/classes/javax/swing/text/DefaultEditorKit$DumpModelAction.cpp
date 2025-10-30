@@ -1,15 +1,6 @@
 #include <javax/swing/text/DefaultEditorKit$DumpModelAction.h>
 
 #include <java/awt/event/ActionEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/text/AbstractDocument.h>
 #include <javax/swing/text/DefaultEditorKit.h>
 #include <javax/swing/text/Document.h>
@@ -73,7 +64,6 @@ void DefaultEditorKit$DumpModelAction::actionPerformed($ActionEvent* e) {
 	if (target != nullptr) {
 		$var($Document, d, target->getDocument());
 		if ($instanceOf($AbstractDocument, d)) {
-			$init($System);
 			$nc(($cast($AbstractDocument, d)))->dump($System::err);
 		}
 	}

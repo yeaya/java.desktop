@@ -10,17 +10,7 @@
 #include <java/awt/image/PackedColorModel.h>
 #include <java/awt/image/Raster.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/image/IntegerComponentRaster.h>
 #include <jcpp.h>
 
@@ -150,8 +140,7 @@ void GradientPaintContext::init$($ColorModel* cm, $Point2D* p1$renamed, $Point2D
 		$var($AffineTransform, inverse, $nc(xform)->createInverse());
 		$nc(inverse)->deltaTransform(xvec, xvec);
 		inverse->deltaTransform(yvec, yvec);
-	} catch ($NoninvertibleTransformException&) {
-		$var($NoninvertibleTransformException, e, $catch());
+	} catch ($NoninvertibleTransformException& e) {
 		xvec->setLocation((double)0, (double)0);
 		yvec->setLocation((double)0, (double)0);
 	}

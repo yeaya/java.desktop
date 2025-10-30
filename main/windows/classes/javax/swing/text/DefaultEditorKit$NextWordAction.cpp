@@ -3,14 +3,6 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/awt/event/ActionEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/LookAndFeel.h>
 #include <javax/swing/UIManager.h>
@@ -100,8 +92,7 @@ void DefaultEditorKit$NextWordAction::actionPerformed($ActionEvent* e) {
 			if (var$0 && oldOffs != curPara->getEndOffset() - 1) {
 				offs = curPara->getEndOffset() - 1;
 			}
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, bl, $catch());
+		} catch ($BadLocationException& bl) {
 			int32_t end = $nc($(target->getDocument()))->getLength();
 			if (offs != end) {
 				if (oldOffs != $nc(curPara)->getEndOffset() - 1) {

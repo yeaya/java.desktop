@@ -2,17 +2,7 @@
 
 #include <java/awt/event/ActionEvent.h>
 #include <java/io/IOException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JEditorPane.h>
 #include <javax/swing/text/AbstractDocument.h>
 #include <javax/swing/text/BadLocationException.h>
@@ -126,11 +116,9 @@ void HTMLEditorKit$InsertHTMLTextAction::insertHTML($JEditorPane* editor, $HTMLD
 	$useLocalCurrentObjectStackCache();
 	try {
 		$nc($(getHTMLEditorKit(editor)))->insertHTML(doc, offset, html, popDepth, pushDepth, addTag);
-	} catch ($IOException&) {
-		$var($IOException, ioe, $catch());
+	} catch ($IOException& ioe) {
 		$throwNew($RuntimeException, $$str({"Unable to insert: "_s, ioe}));
-	} catch ($BadLocationException&) {
-		$var($BadLocationException, ble, $catch());
+	} catch ($BadLocationException& ble) {
 		$throwNew($RuntimeException, $$str({"Unable to insert: "_s, ble}));
 	}
 }
@@ -203,15 +191,13 @@ bool HTMLEditorKit$InsertHTMLTextAction::insertIntoTag($JEditorPane* editor, $HT
 }
 
 void HTMLEditorKit$InsertHTMLTextAction::adjustSelection($JEditorPane* pane, $HTMLDocument* doc, int32_t startOffset, int32_t oldLength) {
-	$useLocalCurrentObjectStackCache();
 	int32_t newLength = $nc(doc)->getLength();
 	if (newLength != oldLength && startOffset < newLength) {
 		if (startOffset > 0) {
 			$var($String, text, nullptr);
 			try {
 				$assign(text, doc->getText(startOffset - 1, 1));
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, ble, $catch());
+			} catch ($BadLocationException& ble) {
 				$assign(text, nullptr);
 			}
 			bool var$0 = text != nullptr && text->length() > 0;

@@ -35,8 +35,10 @@ public:
 	::javax::print::attribute::Attribute* attr = nullptr;
 	$Class* category = nullptr;
 	PrintJobAttributeException(const PrintJobAttributeException& e);
-	PrintJobAttributeException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline PrintJobAttributeException* operator ->() {
+		return (PrintJobAttributeException*)throwing$;
+	}
 };
 
 	} // print

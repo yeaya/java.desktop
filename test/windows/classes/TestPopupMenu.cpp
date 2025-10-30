@@ -14,28 +14,14 @@
 #include <java/awt/event/KeyEvent.h>
 #include <java/beans/PropertyVetoException.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JDesktopPane.h>
 #include <javax/swing/JFrame.h>
@@ -317,12 +303,10 @@ void TestPopupMenu::blockTillDisplayed($JComponent* comp) {
 	while (this->p == nullptr) {
 		try {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestPopupMenu$$Lambda$lambda$blockTillDisplayed$0, this, comp)));
-		} catch ($IllegalStateException&) {
-			$var($IllegalStateException, e, $catch());
+		} catch ($IllegalStateException& e) {
 			try {
 				$Thread::sleep(1000);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& ie) {
 			}
 		}
 	}
@@ -353,8 +337,8 @@ void TestPopupMenu::init$() {
 			if (popup != nullptr && popup->isVisible()) {
 				$throwNew($RuntimeException, "Popup is visible in wrong internal frame"_s);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(TestPopupMenu$$Lambda$lambda$new$2$2, this)));
 		}
@@ -382,13 +366,11 @@ void TestPopupMenu::createAndShowUI() {
 }
 
 void TestPopupMenu::lambda$createAndShowUI$3($JDesktopPane* pane, $ActionEvent* e) {
-	$useLocalCurrentObjectStackCache();
 	$var($TestPopupMenu$TestInternalFrame, testInternalFrame2, $new($TestPopupMenu$TestInternalFrame, this));
 	$nc(pane)->add(static_cast<$Component*>(testInternalFrame2));
 	try {
 		testInternalFrame2->setMaximum(true);
-	} catch ($PropertyVetoException&) {
-		$var($PropertyVetoException, ex, $catch());
+	} catch ($PropertyVetoException& ex) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(ex));
 	}
 	testInternalFrame2->setVisible(true);
@@ -401,8 +383,7 @@ void TestPopupMenu::lambda$new$2() {
 void TestPopupMenu::lambda$new$1() {
 	try {
 		createAndShowUI();
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(ex));
 	}
 }

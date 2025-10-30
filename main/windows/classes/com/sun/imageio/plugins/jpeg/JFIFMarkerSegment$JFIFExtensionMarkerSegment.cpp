@@ -16,19 +16,7 @@
 #include <java/awt/image/BufferedImage.h>
 #include <java/awt/image/ColorModel.h>
 #include <java/awt/image/IndexColorModel.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/imageio/metadata/IIOInvalidTreeException.h>
 #include <javax/imageio/metadata/IIOMetadataNode.h>
 #include <javax/imageio/stream/ImageOutputStream.h>
@@ -229,8 +217,7 @@ void JFIFMarkerSegment$JFIFExtensionMarkerSegment::setThumbnail($BufferedImage* 
 				break;
 			}
 		}
-	} catch ($JFIFMarkerSegment$IllegalThumbException&) {
-		$var($JFIFMarkerSegment$IllegalThumbException, e, $catch());
+	} catch ($JFIFMarkerSegment$IllegalThumbException& e) {
 		$throwNew($InternalError, "Illegal thumb in setThumbnail!"_s, e);
 	}
 }

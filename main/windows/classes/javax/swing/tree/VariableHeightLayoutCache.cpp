@@ -1,19 +1,7 @@
 #include <javax/swing/tree/VariableHeightLayoutCache.h>
 
 #include <java/awt/Rectangle.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Enumeration.h>
 #include <java/util/Hashtable.h>
 #include <java/util/Stack.h>
@@ -704,8 +692,8 @@ $VariableHeightLayoutCache$TreeStateNode* VariableHeightLayoutCache::getNodeForP
 					paths->push(path);
 					$assign(path, path->getParentPath());
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$5) {
+				$assign(var$0, var$5);
 			} $finally: {
 				$nc(paths)->removeAllElements();
 				$nc(this->tempStacks)->push(paths);

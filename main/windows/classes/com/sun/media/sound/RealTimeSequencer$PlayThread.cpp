@@ -6,20 +6,8 @@
 #include <com/sun/media/sound/Printer.h>
 #include <com/sun/media/sound/RealTimeSequencer$DataPump.h>
 #include <com/sun/media/sound/RealTimeSequencer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/midi/InvalidMidiDataException.h>
 #include <javax/sound/midi/MetaMessage.h>
 #include <javax/sound/midi/MidiMessage.h>
@@ -146,8 +134,7 @@ void RealTimeSequencer$PlayThread::stop() {
 			$synchronized(this->lock) {
 				try {
 					$nc($of(this->lock))->wait(2000);
-				} catch ($InterruptedException&) {
-					$catch();
+				} catch ($InterruptedException& ie) {
 				}
 			}
 			if (($div($System::nanoTime(), (int64_t)1000000)) - t > 1900) {
@@ -182,8 +169,7 @@ void RealTimeSequencer$PlayThread::close() {
 	if (oldThread != nullptr) {
 		try {
 			oldThread->join(2000);
-		} catch ($InterruptedException&) {
-			$catch();
+		} catch ($InterruptedException& ie) {
 		}
 	}
 }
@@ -198,8 +184,7 @@ void RealTimeSequencer$PlayThread::run() {
 			EOM = $nc(this->dataPump)->pump();
 			try {
 				$Thread::sleep(1);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& ie) {
 			}
 		}
 		playThreadImplStop();
@@ -211,8 +196,7 @@ void RealTimeSequencer$PlayThread::run() {
 			$var($MetaMessage, message, $new($MetaMessage));
 			try {
 				message->setMessage($MidiUtils::META_END_OF_TRACK_TYPE, $$new($bytes, 0), 0);
-			} catch ($InvalidMidiDataException&) {
-				$catch();
+			} catch ($InvalidMidiDataException& e1) {
 			}
 			this->this$0->sendMetaEvents(message);
 		}
@@ -222,8 +206,7 @@ void RealTimeSequencer$PlayThread::run() {
 			while (!this->this$0->running && !this->interrupted) {
 				try {
 					$nc($of(this->lock))->wait();
-				} catch ($Exception&) {
-					$catch();
+				} catch ($Exception& ex) {
 				}
 			}
 		}

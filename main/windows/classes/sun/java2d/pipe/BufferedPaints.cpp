@@ -16,18 +16,7 @@
 #include <java/awt/image/AffineTransformOp.h>
 #include <java/awt/image/BufferedImage.h>
 #include <java/awt/image/ColorModel.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/image/PixelConverter$ArgbPre.h>
 #include <sun/awt/image/PixelConverter.h>
 #include <sun/java2d/SunGraphics2D.h>
@@ -198,8 +187,7 @@ void BufferedPaints::setGradientPaint($RenderQueue* rq, $AffineTransform* at, $C
 		p0 = at->getScaleX();
 		p1 = at->getShearX();
 		p3 = at->getTranslateX();
-	} catch ($NoninvertibleTransformException&) {
-		$var($NoninvertibleTransformException, e, $catch());
+	} catch ($NoninvertibleTransformException& e) {
 		p0 = (p1 = (p3 = 0.0));
 	}
 	$nc(rq)->ensureCapacityAndAlignment(44, 12);
@@ -249,8 +237,7 @@ void BufferedPaints::setTexturePaint($RenderQueue* rq, $SunGraphics2D* sg2d, $Te
 		yp0 = at->getShearY();
 		yp1 = at->getScaleY();
 		yp3 = at->getTranslateY();
-	} catch ($NoninvertibleTransformException&) {
-		$var($NoninvertibleTransformException, e, $catch());
+	} catch ($NoninvertibleTransformException& e) {
 		xp0 = (xp1 = (xp3 = (yp0 = (yp1 = (yp3 = 0.0)))));
 	}
 	$nc(rq)->ensureCapacityAndAlignment(68, 12);
@@ -339,8 +326,7 @@ void BufferedPaints::setLinearGradientPaint($RenderQueue* rq, $SunGraphics2D* sg
 		p0 = (float)at->getScaleX();
 		p1 = (float)at->getShearX();
 		p3 = (float)at->getTranslateX();
-	} catch ($NoninvertibleTransformException&) {
-		$var($NoninvertibleTransformException, e, $catch());
+	} catch ($NoninvertibleTransformException& e) {
 		p0 = (p1 = (p3 = 0.0f));
 	}
 	$nc(rq)->ensureCapacity(20 + 12 + (numStops * 4 * 2));
@@ -381,8 +367,7 @@ void BufferedPaints::setRadialGradientPaint($RenderQueue* rq, $SunGraphics2D* sg
 	at->scale(radius, radius);
 	try {
 		at->invert();
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		at->setToScale(0.0, 0.0);
 	}
 	$assign(focus, at->transform(focus, focus));

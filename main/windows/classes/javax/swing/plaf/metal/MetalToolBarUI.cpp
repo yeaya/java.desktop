@@ -8,16 +8,7 @@
 #include <java/awt/Point.h>
 #include <java/awt/event/ContainerListener.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/List.h>
@@ -145,7 +136,6 @@ $ClassInfo _MetalToolBarUI_ClassInfo_ = {
 $Object* allocate$MetalToolBarUI($Class* clazz) {
 	return $of($alloc(MetalToolBarUI));
 }
-
 
 $List* MetalToolBarUI::components = nullptr;
 $Border* MetalToolBarUI::nonRolloverBorder = nullptr;

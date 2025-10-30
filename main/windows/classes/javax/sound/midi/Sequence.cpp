@@ -2,15 +2,6 @@
 
 #include <com/sun/media/sound/MidiUtils$TempoCache.h>
 #include <com/sun/media/sound/MidiUtils.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Vector.h>
 #include <javax/sound/midi/InvalidMidiDataException.h>
 #include <javax/sound/midi/Patch.h>
@@ -79,15 +70,10 @@ $Object* allocate$Sequence($Class* clazz) {
 	return $of($alloc(Sequence));
 }
 
-
 float Sequence::PPQ = 0.0;
-
 float Sequence::SMPTE_24 = 0.0;
-
 float Sequence::SMPTE_25 = 0.0;
-
 float Sequence::SMPTE_30DROP = 0.0;
-
 float Sequence::SMPTE_30 = 0.0;
 
 void Sequence::init$(float divisionType, int32_t resolution) {

@@ -1,18 +1,7 @@
 #include <TestCustomStyleFactory.h>
 
 #include <TestCustomStyleFactory$1.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JLabel.h>
 #include <javax/swing/UIManager$LookAndFeelInfo.h>
 #include <javax/swing/UIManager.h>
@@ -82,7 +71,6 @@ void TestCustomStyleFactory::main($StringArray* args) {
 	$init(TestCustomStyleFactory);
 	$useLocalCurrentObjectStackCache();
 	if (!$nc($($System::getProperty("os.name"_s)))->startsWith("Linux"_s)) {
-		$init($System);
 		$nc($System::out)->println("This test is meant for Linux platform only"_s);
 		return;
 	}
@@ -96,8 +84,7 @@ void TestCustomStyleFactory::main($StringArray* args) {
 				if ($nc($($nc(lookAndFeelInfo)->getClassName()))->contains(TestCustomStyleFactory::GTK_LAF_CLASS)) {
 					try {
 						$UIManager::setLookAndFeel($(lookAndFeelInfo->getClassName()));
-					} catch ($UnsupportedLookAndFeelException&) {
-						$var($UnsupportedLookAndFeelException, ignored, $catch());
+					} catch ($UnsupportedLookAndFeelException& ignored) {
 						$nc($System::out)->println("GTK L&F could not be set, so this test can not be run in this scenario "_s);
 						return;
 					}

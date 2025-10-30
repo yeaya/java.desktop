@@ -1,13 +1,5 @@
 #include <java/awt/FontFormatException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -48,16 +40,10 @@ void FontFormatException::init$($String* reason) {
 FontFormatException::FontFormatException() {
 }
 
-FontFormatException::FontFormatException(const FontFormatException& e) {
+FontFormatException::FontFormatException(const FontFormatException& e) : $Exception(e) {
 }
 
-FontFormatException FontFormatException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void FontFormatException::throwWrapper$() {
-	$pendingException(this);
+void FontFormatException::throw$() {
 	throw *this;
 }
 

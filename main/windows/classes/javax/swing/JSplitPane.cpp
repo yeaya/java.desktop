@@ -7,21 +7,7 @@
 #include <java/awt/Graphics.h>
 #include <java/awt/LayoutManager.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JButton.h>
@@ -85,6 +71,7 @@ $NamedAttribute JSplitPane_Attribute_var$0[] = {
 	{"defaultProperty", 's', "UI"},
 	{}
 };
+
 $CompoundAttribute _JSplitPane_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JSplitPane_Attribute_var$0},
 	{}
@@ -305,7 +292,6 @@ $CompoundAttribute _JSplitPane_MethodAnnotations_setTopComponent40[] = {
 	{}
 };
 
-
 $FieldInfo _JSplitPane_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JSplitPane, uiClassID)},
 	{"VERTICAL_SPLIT", "I", nullptr, $PUBLIC | $STATIC | $FINAL, $constField(JSplitPane, VERTICAL_SPLIT)},
@@ -434,31 +420,18 @@ void JSplitPane::finalize() {
 	this->$JComponent::finalize();
 }
 
-
 $String* JSplitPane::uiClassID = nullptr;
-
 $String* JSplitPane::LEFT = nullptr;
-
 $String* JSplitPane::RIGHT = nullptr;
-
 $String* JSplitPane::TOP = nullptr;
-
 $String* JSplitPane::BOTTOM = nullptr;
-
 $String* JSplitPane::DIVIDER = nullptr;
-
 $String* JSplitPane::ORIENTATION_PROPERTY = nullptr;
-
 $String* JSplitPane::CONTINUOUS_LAYOUT_PROPERTY = nullptr;
-
 $String* JSplitPane::DIVIDER_SIZE_PROPERTY = nullptr;
-
 $String* JSplitPane::ONE_TOUCH_EXPANDABLE_PROPERTY = nullptr;
-
 $String* JSplitPane::LAST_DIVIDER_LOCATION_PROPERTY = nullptr;
-
 $String* JSplitPane::DIVIDER_LOCATION_PROPERTY = nullptr;
-
 $String* JSplitPane::RESIZE_WEIGHT_PROPERTY = nullptr;
 
 void JSplitPane::init$() {
@@ -713,7 +686,7 @@ void JSplitPane::remove(int32_t index) {
 }
 
 void JSplitPane::removeAll() {
-	$set(this, leftComponent, ($assignField(this, rightComponent, nullptr)));
+	$set(this, leftComponent, ($set(this, rightComponent, nullptr)));
 	$JComponent::removeAll();
 	revalidate();
 	repaint();

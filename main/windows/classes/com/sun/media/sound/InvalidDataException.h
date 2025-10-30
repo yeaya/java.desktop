@@ -18,8 +18,10 @@ public:
 	void init$($String* s);
 	static const int64_t serialVersionUID = (int64_t)1;
 	InvalidDataException(const InvalidDataException& e);
-	InvalidDataException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline InvalidDataException* operator ->() {
+		return (InvalidDataException*)throwing$;
+	}
 };
 
 			} // sound

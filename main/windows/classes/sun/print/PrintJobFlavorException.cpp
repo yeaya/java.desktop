@@ -1,13 +1,5 @@
 #include <sun/print/PrintJobFlavorException.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/DocFlavor.h>
 #include <javax/print/PrintException.h>
 #include <jcpp.h>
@@ -85,16 +77,10 @@ $DocFlavorArray* PrintJobFlavorException::getUnsupportedFlavors() {
 PrintJobFlavorException::PrintJobFlavorException() {
 }
 
-PrintJobFlavorException::PrintJobFlavorException(const PrintJobFlavorException& e) {
+PrintJobFlavorException::PrintJobFlavorException(const PrintJobFlavorException& e) : $PrintException(e) {
 }
 
-PrintJobFlavorException PrintJobFlavorException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void PrintJobFlavorException::throwWrapper$() {
-	$pendingException(this);
+void PrintJobFlavorException::throw$() {
 	throw *this;
 }
 

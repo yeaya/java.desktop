@@ -37,36 +37,19 @@
 #include <java/io/BufferedInputStream.h>
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/NumberFormatException.h>
 #include <java/lang/Runnable.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/lang/reflect/Modifier.h>
 #include <java/security/AccessController.h>
 #include <java/security/BasicPermission.h>
@@ -523,18 +506,14 @@ $Object* allocate$SwingUtilities2($Class* clazz) {
 }
 
 bool SwingUtilities2::$assertionsDisabled = false;
-
 $Object* SwingUtilities2::LAF_STATE_KEY = nullptr;
 $Object* SwingUtilities2::MENU_SELECTION_MANAGER_LISTENER_KEY = nullptr;
 $SwingUtilities2$LSBCacheEntryArray* SwingUtilities2::fontCache = nullptr;
 int32_t SwingUtilities2::nextIndex = 0;
 $SwingUtilities2$LSBCacheEntry* SwingUtilities2::searchKey = nullptr;
 $FontRenderContext* SwingUtilities2::DEFAULT_FRC = nullptr;
-
 $String* SwingUtilities2::IMPLIED_CR = nullptr;
-
 $StringBuilder* SwingUtilities2::SKIP_CLICK_COUNT = nullptr;
-
 $StringUIClientPropertyKey* SwingUtilities2::BASICMENUITEMUI_MAX_TEXT_OFFSET = nullptr;
 $String* SwingUtilities2::UntrustedClipboardAccess = nullptr;
 $Object* SwingUtilities2::charsBufferLock = nullptr;
@@ -1318,8 +1297,7 @@ bool SwingUtilities2::useSelectedTextColor($Highlighter$Highlight* h, $JTextComp
 		if (var$1 && !$nc($(defPainter->getColor()))->equals($($nc(c)->getSelectionColor()))) {
 			return false;
 		}
-	} catch ($ClassCastException&) {
-		$var($ClassCastException, e, $catch());
+	} catch ($ClassCastException& e) {
 		return false;
 	}
 	return true;
@@ -1337,8 +1315,7 @@ bool SwingUtilities2::canAccessSystemClipboard() {
 				$init($AWTPermissions);
 				$nc(sm)->checkPermission($AWTPermissions::ACCESS_CLIPBOARD_PERMISSION);
 				canAccess = true;
-			} catch ($SecurityException&) {
-				$catch();
+			} catch ($SecurityException& e) {
 			}
 			if (canAccess && !isTrustedContext()) {
 				canAccess = canCurrentEventAccessSystemClipboard(true);
@@ -1525,18 +1502,16 @@ $bytes* SwingUtilities2::getIconBytes($Class* baseClass, $Class* rootClass, $Str
 										$assign(var$7, in->readAllBytes());
 										return$6 = true;
 										goto $finally1;
-									} catch ($Throwable&) {
-										$var($Throwable, t$, $catch());
+									} catch ($Throwable& t$) {
 										try {
 											in->close();
-										} catch ($Throwable&) {
-											$var($Throwable, x2, $catch());
+										} catch ($Throwable& x2) {
 											t$->addSuppressed(x2);
 										}
 										$throw(t$);
 									}
-								} catch ($Throwable&) {
-									$assign(var$5, $catch());
+								} catch ($Throwable& var$8) {
+									$assign(var$5, var$8);
 								} $finally1: {
 									in->close();
 								}
@@ -1550,20 +1525,18 @@ $bytes* SwingUtilities2::getIconBytes($Class* baseClass, $Class* rootClass, $Str
 								}
 							}
 						}
-					} catch ($Throwable&) {
-						$var($Throwable, t$, $catch());
+					} catch ($Throwable& t$) {
 						if (resource != nullptr) {
 							try {
 								resource->close();
-							} catch ($Throwable&) {
-								$var($Throwable, x2, $catch());
+							} catch ($Throwable& x2) {
 								t$->addSuppressed(x2);
 							}
 						}
 						$throw(t$);
 					}
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$9) {
+					$assign(var$0, var$9);
 				} $finally: {
 					if (resource != nullptr) {
 						resource->close();
@@ -1582,9 +1555,7 @@ $bytes* SwingUtilities2::getIconBytes($Class* baseClass, $Class* rootClass, $Str
 					return var$2;
 				}
 			}
-		} catch ($IOException&) {
-			$var($IOException, ioe, $catch());
-			$init($System);
+		} catch ($IOException& ioe) {
 			$nc($System::err)->println($(ioe->toString()));
 		}
 	}
@@ -1627,8 +1598,7 @@ int32_t SwingUtilities2::getUIDefaultsInt(Object$* key, $Locale* l, int32_t defa
 	if ($instanceOf($String, value)) {
 		try {
 			return $Integer::parseInt($cast($String, value));
-		} catch ($NumberFormatException&) {
-			$catch();
+		} catch ($NumberFormatException& nfe) {
 		}
 	}
 	return defaultValue;
@@ -1908,7 +1878,6 @@ $Object* SwingUtilities2::lambda$makeIcon$1(bool enablePrivileges, $Class* baseC
 		return $of(nullptr);
 	}
 	if ($nc(buffer)->length == 0) {
-		$init($System);
 		$nc($System::err)->println($$str({"warning: "_s, imageFile, " is zero-length"_s}));
 		return $of(nullptr);
 	}

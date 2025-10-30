@@ -6,15 +6,6 @@
 #include <com/sun/media/sound/MidiInDevice.h>
 #include <com/sun/media/sound/MidiInDeviceProvider$MidiInDeviceInfo.h>
 #include <com/sun/media/sound/Platform.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/midi/MidiDevice.h>
 #include <jcpp.h>
 
@@ -91,9 +82,7 @@ $Object* allocate$MidiInDeviceProvider($Class* clazz) {
 	return $of($alloc(MidiInDeviceProvider));
 }
 
-
 $AbstractMidiDeviceProvider$InfoArray* MidiInDeviceProvider::infos = nullptr;
-
 $MidiDeviceArray* MidiInDeviceProvider::devices = nullptr;
 bool MidiInDeviceProvider::enabled = false;
 

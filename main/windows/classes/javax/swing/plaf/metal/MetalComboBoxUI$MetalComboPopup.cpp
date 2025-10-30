@@ -1,15 +1,6 @@
 #include <javax/swing/plaf/metal/MetalComboBoxUI$MetalComboPopup.h>
 
 #include <java/awt/event/MouseEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComboBox.h>
 #include <javax/swing/plaf/basic/BasicComboPopup.h>
 #include <javax/swing/plaf/metal/MetalComboBoxUI.h>
@@ -29,11 +20,11 @@ namespace javax {
 	namespace swing {
 		namespace plaf {
 			namespace metal {
+
 $CompoundAttribute _MetalComboBoxUI$MetalComboPopup_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", nullptr},
 	{}
 };
-
 
 $FieldInfo _MetalComboBoxUI$MetalComboPopup_FieldInfo_[] = {
 	{"this$0", "Ljavax/swing/plaf/metal/MetalComboBoxUI;", nullptr, $FINAL | $SYNTHETIC, $field(MetalComboBoxUI$MetalComboPopup, this$0)},

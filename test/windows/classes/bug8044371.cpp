@@ -7,18 +7,6 @@
 #include <java/awt/Rectangle.h>
 #include <java/awt/event/AdjustmentEvent.h>
 #include <java/awt/event/AdjustmentListener.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JPanel.h>
@@ -121,7 +109,6 @@ void bug8044371::init$($JFrame* frame) {
 
 void bug8044371::adjustmentValueChanged($AdjustmentEvent* e) {
 	$useLocalCurrentObjectStackCache();
-	$init($System);
 	$nc($System::out)->println($$str({"adjustmentValueChanged: "_s, $$str($nc(e)->getValue())}));
 	this->lastAdjust = $nc(e)->getValue();
 }

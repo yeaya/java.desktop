@@ -59,41 +59,21 @@
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
 #include <java/lang/Enum.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/Long.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
 #include <java/lang/SecurityException.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/security/AccessController.h>
 #include <java/security/BasicPermission.h>
@@ -619,9 +599,7 @@ void SunToolkit::finalize() {
 }
 
 $String* SunToolkit::POST_EVENT_QUEUE_KEY = nullptr;
-
 int32_t SunToolkit::numberOfButtons = 0;
-
 $ReentrantLock* SunToolkit::AWT_LOCK = nullptr;
 $Condition* SunToolkit::AWT_LOCK_COND = nullptr;
 $Map* SunToolkit::appContextMap = nullptr;
@@ -923,7 +901,7 @@ $FontMetrics* SunToolkit::getFontMetrics($Font* font) {
 }
 
 $StringArray* SunToolkit::getFontList() {
-		$init($Font);
+	$init($Font);
 	$var($StringArray, hardwiredFontList, $new($StringArray, {
 		$Font::DIALOG,
 		$Font::SANS_SERIF,
@@ -971,8 +949,7 @@ $Image* SunToolkit::getImageFromHash($Toolkit* tk, $URL* url) {
 			try {
 				$assign(img, $nc(tk)->createImage(static_cast<$ImageProducer*>($$new($URLImageSource, url))));
 				$nc(SunToolkit::urlImgCache)->put(key, img);
-			} catch ($Exception&) {
-				$catch();
+			} catch ($Exception& e) {
 			}
 		}
 		return img;
@@ -989,8 +966,7 @@ $Image* SunToolkit::getImageFromHash($Toolkit* tk, $String* filename) {
 			try {
 				$assign(img, $nc(tk)->createImage(static_cast<$ImageProducer*>($$new($FileImageSource, filename))));
 				$nc(SunToolkit::fileImgCache)->put(filename, img);
-			} catch ($Exception&) {
-				$catch();
+			} catch ($Exception& e) {
 			}
 		}
 		return img;
@@ -1162,20 +1138,18 @@ bool SunToolkit::imageExists($URL* url) {
 						var$2 = true;
 						return$1 = true;
 						goto $finally;
-					} catch ($Throwable&) {
-						$var($Throwable, t$, $catch());
+					} catch ($Throwable& t$) {
 						if (is != nullptr) {
 							try {
 								is->close();
-							} catch ($Throwable&) {
-								$var($Throwable, x2, $catch());
+							} catch ($Throwable& x2) {
 								t$->addSuppressed(x2);
 							}
 						}
 						$throw(t$);
 					}
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$3) {
+					$assign(var$0, var$3);
 				} $finally: {
 					if (is != nullptr) {
 						is->close();
@@ -1188,8 +1162,7 @@ bool SunToolkit::imageExists($URL* url) {
 					return var$2;
 				}
 			}
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			return false;
 		}
 	}
@@ -1214,8 +1187,7 @@ void SunToolkit::checkPermissions($URL* url) {
 			if (perm != nullptr) {
 				sm->checkPermission(perm);
 			}
-		} catch ($IOException&) {
-			$var($IOException, ioe, $catch());
+		} catch ($IOException& ioe) {
 			$var($String, var$0, $nc(url)->getHost());
 			sm->checkConnect(var$0, url->getPort());
 		}
@@ -1264,8 +1236,7 @@ $BufferedImage* SunToolkit::getScaledIconImage($List* imageList, int32_t width, 
 			try {
 				iw = $nc(im)->getWidth(nullptr);
 				ih = im->getHeight(nullptr);
-			} catch ($Exception&) {
-				$var($Exception, e, $catch());
+			} catch ($Exception& e) {
 				continue;
 			}
 			if (iw > 0 && ih > 0) {
@@ -1327,8 +1298,8 @@ $BufferedImage* SunToolkit::getScaledIconImage($List* imageList, int32_t width, 
 			int32_t x = (width - bestWidth) / 2;
 			int32_t y = (height - bestHeight) / 2;
 			g->drawImage(bestImage, x, y, bestWidth, bestHeight, nullptr);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			g->dispose();
 		}
@@ -1391,7 +1362,6 @@ bool SunToolkit::isPrintableCharacterModifiersMask(int32_t mods) {
 }
 
 bool SunToolkit::canPopupOverlapTaskBar() {
-	$useLocalCurrentObjectStackCache();
 	bool result = true;
 	try {
 		$var($SecurityManager, sm, $System::getSecurityManager());
@@ -1399,8 +1369,7 @@ bool SunToolkit::canPopupOverlapTaskBar() {
 			$init($AWTPermissions);
 			sm->checkPermission($AWTPermissions::SET_WINDOW_ALWAYS_ON_TOP_PERMISSION);
 		}
-	} catch ($SecurityException&) {
-		$var($SecurityException, se, $catch());
+	} catch ($SecurityException& se) {
 		result = false;
 	}
 	return result;
@@ -1546,16 +1515,13 @@ void SunToolkit::realSync() {
 }
 
 void SunToolkit::realSync(int64_t timeout) {
-	$useLocalCurrentObjectStackCache();
 	if ($EventQueue::isDispatchThread()) {
 		$throwNew($SunToolkit$IllegalThreadException, "The SunToolkit.realSync() method cannot be used on the event dispatch thread (EDT)."_s);
 	}
 	try {
 		$EventQueue::invokeAndWait(static_cast<$Runnable*>($$new(SunToolkit$$Lambda$lambda$realSync$0)));
-	} catch ($InterruptedException&) {
-		$var($Exception, ignored, $catch());
-	} catch ($InvocationTargetException&) {
-		$var($Exception, ignored, $catch());
+	} catch ($InterruptedException& ignored) {
+	} catch ($InvocationTargetException& ignored) {
 	}
 	int32_t bigLoop = 0;
 	$init($TimeUnit);
@@ -1621,15 +1587,13 @@ bool SunToolkit::waitForIdle(int64_t end) {
 					$nc($of(this->waitLock))->wait(timeout(end));
 				}
 			}
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, ie, $catch());
+		} catch ($InterruptedException& ie) {
 			return false;
 		}
 	}
 	try {
 		$Thread::sleep(SunToolkit::MINIMAL_DELAY);
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, ie, $catch());
+	} catch ($InterruptedException& ie) {
 		$throwNew($RuntimeException, "Interrupted"_s);
 	}
 	flushPendingEvents();
@@ -1767,8 +1731,7 @@ void SunToolkit::consumeNextKeyTyped($KeyEvent* keyEvent) {
 		$useLocalCurrentObjectStackCache();
 		try {
 			$nc($($AWTAccessor::getDefaultKeyboardFocusManagerAccessor()))->consumeNextKeyTyped($cast($DefaultKeyboardFocusManager, $($KeyboardFocusManager::getCurrentKeyboardFocusManager())), keyEvent);
-		} catch ($ClassCastException&) {
-			$var($ClassCastException, cce, $catch());
+		} catch ($ClassCastException& cce) {
 			cce->printStackTrace();
 		}
 	}

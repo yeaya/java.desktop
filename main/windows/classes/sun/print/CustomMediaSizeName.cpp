@@ -1,17 +1,6 @@
 #include <sun/print/CustomMediaSizeName.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <javax/print/attribute/standard/Media.h>
@@ -107,8 +96,7 @@ void CustomMediaSizeName::init$($String* name, $String* choice, float width, flo
 	$set(this, mediaName, nullptr);
 	try {
 		$set(this, mediaName, $MediaSize::findMedia(width, length, $MediaSize::INCH));
-	} catch ($IllegalArgumentException&) {
-		$catch();
+	} catch ($IllegalArgumentException& iae) {
 	}
 	if (this->mediaName != nullptr) {
 		$var($MediaSize, sz, $MediaSize::getMediaSizeForName(this->mediaName));

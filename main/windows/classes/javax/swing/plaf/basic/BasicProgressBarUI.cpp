@@ -20,20 +20,7 @@
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/Short.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/BoundedRangeModel.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JProgressBar.h>
@@ -780,8 +767,8 @@ void BasicProgressBarUI::cleanUpIndeterminateValues() {
 	this->numFrames = (this->animationIndex = 0);
 	this->maxPosition = 0;
 	this->delta = 0.0;
-	$set(this, boxRect, ($assignField(this, nextPaintRect, nullptr)));
-	$set(this, componentInnards, ($assignField(this, oldComponentInnards, nullptr)));
+	$set(this, boxRect, ($set(this, nextPaintRect, nullptr)));
+	$set(this, componentInnards, ($set(this, oldComponentInnards, nullptr)));
 	$nc(this->progressBar)->removeHierarchyListener($(getHandler()));
 }
 

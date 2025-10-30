@@ -14,23 +14,8 @@
 #include <java/io/ObjectInputStream$GetField.h>
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/security/AccessControlContext.h>
 #include <java/security/AccessController.h>
@@ -236,11 +221,8 @@ void ImageIcon::finalize() {
 	this->$Icon::finalize();
 }
 
-
 $Component* ImageIcon::component = nullptr;
-
 $MediaTracker* ImageIcon::tracker = nullptr;
-
 int32_t ImageIcon::mediaTrackerID = 0;
 $Object* ImageIcon::TRACKER_KEY = nullptr;
 
@@ -350,16 +332,13 @@ void ImageIcon::init$() {
 }
 
 void ImageIcon::loadImage($Image* image) {
-	$useLocalCurrentObjectStackCache();
 	$var($MediaTracker, mTracker, getTracker());
 	$synchronized(mTracker) {
 		int32_t id = getNextID();
 		$nc(mTracker)->addImage(image, id);
 		try {
 			mTracker->waitForID(id, 0);
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, e, $catch());
-			$init($System);
+		} catch ($InterruptedException& e) {
 			$nc($System::out)->println("INTERRUPTED while loading Image"_s);
 		}
 		this->loadStatus = mTracker->statusID(id, false);
@@ -486,8 +465,7 @@ void ImageIcon::writeObject($ObjectOutputStream* s) {
 			if (((int32_t)(pg->getStatus() & (uint32_t)$ImageObserver::ABORT)) != 0) {
 				$throwNew($IOException, "failed to load image contents"_s);
 			}
-		} catch ($InterruptedException&) {
-			$var($InterruptedException, e, $catch());
+		} catch ($InterruptedException& e) {
 			$throwNew($IOException, "image load interrupted"_s);
 		}
 	}

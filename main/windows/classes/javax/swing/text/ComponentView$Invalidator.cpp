@@ -6,15 +6,6 @@
 #include <java/awt/KeyboardFocusManager.h>
 #include <java/awt/LayoutManager.h>
 #include <java/beans/PropertyChangeEvent.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Set.h>
 #include <javax/swing/text/ComponentView.h>
 #include <javax/swing/text/View.h>
@@ -161,7 +152,7 @@ void ComponentView$Invalidator::cacheChildSizes() {
 		this->yalign = child->getAlignmentY();
 		this->xalign = child->getAlignmentX();
 	} else {
-		$set(this, min, ($assignField(this, pref, ($assignField(this, max, $new($Dimension, 0, 0))))));
+		$set(this, min, ($set(this, pref, ($set(this, max, $new($Dimension, 0, 0))))));
 	}
 }
 

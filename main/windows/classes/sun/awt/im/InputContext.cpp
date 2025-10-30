@@ -22,26 +22,12 @@
 #include <java/awt/im/spi/InputMethod.h>
 #include <java/awt/im/spi/InputMethodContext.h>
 #include <java/awt/im/spi/InputMethodDescriptor.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
 #include <java/lang/Character$Subset.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/LinkageError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/text/MessageFormat.h>
@@ -555,8 +541,7 @@ void InputContext::changeInputMethod($InputMethodLocator* newLocator$renamed) {
 			try {
 				wasCompositionEnabled = $nc(this->inputMethod)->isCompositionEnabled();
 				wasCompositionEnabledSupported = true;
-			} catch ($UnsupportedOperationException&) {
-				$catch();
+			} catch ($UnsupportedOperationException& e) {
 			}
 			if (this->currentClientComponent != nullptr) {
 				if (!this->isInputMethodActive) {
@@ -608,8 +593,7 @@ void InputContext::changeInputMethod($InputMethodLocator* newLocator$renamed) {
 			if (this->inputMethod != nullptr) {
 				try {
 					$nc(this->inputMethod)->setCompositionEnabled(wasCompositionEnabled);
-				} catch ($UnsupportedOperationException&) {
-					$catch();
+				} catch ($UnsupportedOperationException& e) {
 				}
 			}
 		}
@@ -794,15 +778,13 @@ $InputMethod* InputContext::getInputMethodInstance() {
 		}
 		$nc(inputMethodInstance)->setInputMethodContext($cast($InputMethodContext, this));
 		inputMethodInstance->setCharacterSubsets(this->characterSubsets);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		logCreationFailed(e);
 		this->inputMethodCreationFailed = true;
 		if (inputMethodInstance != nullptr) {
 			$assign(inputMethodInstance, nullptr);
 		}
-	} catch ($LinkageError&) {
-		$var($LinkageError, e, $catch());
+	} catch ($LinkageError& e) {
 		logCreationFailed(e);
 		this->inputMethodCreationFailed = true;
 	}
@@ -969,8 +951,7 @@ $AWTKeyStroke* InputContext::getInputMethodSelectionKeyStroke($Preferences* root
 				return $AWTKeyStroke::getAWTKeyStroke(keyCode, modifiers);
 			}
 		}
-	} catch ($BackingStoreException&) {
-		$catch();
+	} catch ($BackingStoreException& bse) {
 	}
 	return nullptr;
 }

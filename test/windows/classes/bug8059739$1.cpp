@@ -1,15 +1,6 @@
 #include <bug8059739$1.h>
 
 #include <bug8059739.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $bug8059739 = ::bug8059739;
@@ -63,8 +54,7 @@ void bug8059739$1::init$() {
 void bug8059739$1::run() {
 	try {
 		$bug8059739::runTest();
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		e->printStackTrace();
 		$init($bug8059739);
 		$bug8059739::passed = false;

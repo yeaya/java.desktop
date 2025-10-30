@@ -550,7 +550,6 @@
 #include <bug8134721.h>
 #include <bug8158734.h>
 #include <jcpp.h>
-#include <stdlib.h>
 
 #undef TAB
 
@@ -677,7 +676,9 @@ private:
 	int32_t processedCount;
 	bool success;
 };
+
 #define run(caseName, caseClass, ...) runCase<caseClass>(caseName, ##__VA_ARGS__);
+
 void TestCases::runCases() {
 	int64_t runCasesBeginMs = $System::currentTimeMillis();
 
@@ -1248,8 +1249,7 @@ int main(int argc, char** argv) {
 	TestCases testcases(argc, argv);
 	try {
 		testcases.runCases();
-	} catch ($Throwable&) {
-		$var($Throwable, e, $catch());
+	} catch ($Throwable& e) {
 		e->printStackTrace();
 	}
 	$System::deinit();

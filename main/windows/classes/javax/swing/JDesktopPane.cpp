@@ -7,20 +7,6 @@
 #include <java/awt/FocusTraversalPolicy.h>
 #include <java/beans/PropertyVetoException.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractCollection.h>
 #include <java/util/AbstractList.h>
 #include <java/util/AbstractSet.h>
@@ -107,6 +93,7 @@ $NamedAttribute JDesktopPane_Attribute_var$0[] = {
 	{"defaultProperty", 's', "UI"},
 	{}
 };
+
 $CompoundAttribute _JDesktopPane_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JDesktopPane_Attribute_var$0},
 	{}
@@ -180,7 +167,6 @@ $CompoundAttribute _JDesktopPane_MethodAnnotations_setUI26[] = {
 	{"Ljava/beans/BeanProperty;", JDesktopPane_Attribute_var$7},
 	{}
 };
-
 
 $FieldInfo _JDesktopPane_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JDesktopPane, uiClassID)},
@@ -257,7 +243,6 @@ $ClassInfo _JDesktopPane_ClassInfo_ = {
 $Object* allocate$JDesktopPane($Class* clazz) {
 	return $of($alloc(JDesktopPane));
 }
-
 
 $String* JDesktopPane::uiClassID = nullptr;
 
@@ -445,8 +430,7 @@ $JInternalFrame* JDesktopPane::selectFrame(bool forward) {
 	}
 	try {
 		$nc(frameToSelect)->setSelected(true);
-	} catch ($PropertyVetoException&) {
-		$catch();
+	} catch ($PropertyVetoException& pve) {
 	}
 	setComponentOrderCheckingEnabled(true);
 	return frameToSelect;

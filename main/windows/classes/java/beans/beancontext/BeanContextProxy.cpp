@@ -1,12 +1,6 @@
 #include <java/beans/beancontext/BeanContextProxy.h>
 
 #include <java/beans/beancontext/BeanContextChild.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $BeanContextChild = ::java::beans::beancontext::BeanContextChild;

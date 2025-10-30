@@ -22,16 +22,6 @@
 #include <java/io/ObjectInputStream$GetField.h>
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/TooManyListenersException.h>
 #include <sun/awt/AWTAccessor$ComponentAccessor.h>
 #include <sun/awt/AWTAccessor.h>
@@ -189,8 +179,7 @@ void DropTarget::init$($Component* c, int32_t ops, $DropTargetListener* dtl, boo
 	if (dtl != nullptr) {
 		try {
 			addDropTargetListener(dtl);
-		} catch ($TooManyListenersException&) {
-			$catch();
+		} catch ($TooManyListenersException& tmle) {
 		}
 	}
 	if (c != nullptr) {
@@ -222,7 +211,6 @@ void DropTarget::init$($Component* c, int32_t ops, $DropTargetListener* dtl) {
 
 void DropTarget::setComponent($Component* c) {
 	$synchronized(this) {
-		$useLocalCurrentObjectStackCache();
 		if (this->component == c || this->component != nullptr && $nc($of(this->component))->equals(c)) {
 			return;
 		}
@@ -233,11 +221,10 @@ void DropTarget::setComponent($Component* c) {
 			removeNotify();
 			old->setDropTarget(nullptr);
 		}
-		if (($assignField(this, component, c)) != nullptr) {
+		if (($set(this, component, c)) != nullptr) {
 			try {
 				$nc(c)->setDropTarget(this);
-			} catch ($Exception&) {
-				$var($Exception, e, $catch());
+			} catch ($Exception& e) {
 				if (old != nullptr) {
 					old->setDropTarget(this);
 					addNotify();
@@ -431,12 +418,10 @@ void DropTarget::writeObject($ObjectOutputStream* s) {
 }
 
 void DropTarget::readObject($ObjectInputStream* s) {
-	$useLocalCurrentObjectStackCache();
 	$var($ObjectInputStream$GetField, f, $nc(s)->readFields());
 	try {
 		$set(this, dropTargetContext, $cast($DropTargetContext, $nc(f)->get("dropTargetContext"_s, ($Object*)nullptr)));
-	} catch ($IllegalArgumentException&) {
-		$catch();
+	} catch ($IllegalArgumentException& e) {
 	}
 	if (this->dropTargetContext == nullptr) {
 		$set(this, dropTargetContext, createDropTargetContext());
@@ -446,8 +431,7 @@ void DropTarget::readObject($ObjectInputStream* s) {
 	this->active = f->get("active"_s, true);
 	try {
 		$set(this, dtListener, $cast($DropTargetListener, f->get("dtListener"_s, ($Object*)nullptr)));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		$set(this, dtListener, $cast($DropTargetListener, s->readObject()));
 	}
 }

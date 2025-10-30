@@ -12,19 +12,6 @@
 #include <java/io/ObjectOutputStream$PutField.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/ObjectStreamField.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Enumeration.h>
 #include <java/util/Hashtable.h>
 #include <java/util/Vector.h>
@@ -150,7 +137,6 @@ $Object* CardLayout::clone() {
 void CardLayout::finalize() {
 	this->$LayoutManager2::finalize();
 }
-
 
 $ObjectStreamFieldArray* CardLayout::serialPersistentFields = nullptr;
 
@@ -481,9 +467,9 @@ void CardLayout::writeObject($ObjectOutputStream* s) {
 
 void clinit$CardLayout($Class* class$) {
 	$useLocalCurrentObjectStackCache();
-		$load($Hashtable);
-		$init($Integer);
-		$load($Vector);
+	$load($Hashtable);
+	$init($Integer);
+	$load($Vector);
 	$assignStatic(CardLayout::serialPersistentFields, $new($ObjectStreamFieldArray, {
 		$$new($ObjectStreamField, "tab"_s, $Hashtable::class$),
 		$$new($ObjectStreamField, "hgap"_s, $Integer::TYPE),

@@ -5,18 +5,6 @@
 #include <java/awt/Container.h>
 #include <java/awt/Graphics.h>
 #include <java/awt/image/BufferedImage.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JTable.h>
 #include <javax/swing/SwingUtilities.h>
@@ -94,12 +82,9 @@ void Test6888156$3::init$($Test6888156* this$0, $String* val$laf) {
 void Test6888156$3::run() {
 	$useLocalCurrentObjectStackCache();
 	try {
-		$init($System);
 		$nc($System::out)->println(this->val$laf);
 		$UIManager::setLookAndFeel(this->val$laf);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
-		$init($System);
+	} catch ($Exception& e) {
 		$nc($System::err)->println($$str({this->val$laf, " is unsupported; continuing"_s}));
 		return;
 	}

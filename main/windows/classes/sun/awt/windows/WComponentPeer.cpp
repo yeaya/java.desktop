@@ -35,21 +35,10 @@
 #include <java/awt/image/VolatileImage.h>
 #include <java/awt/peer/ComponentPeer.h>
 #include <java/awt/peer/ContainerPeer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/AWTAccessor$ComponentAccessor.h>
 #include <sun/awt/AWTAccessor.h>
 #include <sun/awt/AppContext.h>
@@ -491,8 +480,7 @@ void WComponentPeer::setBounds(int32_t x, int32_t y, int32_t width, int32_t heig
 	if ((width != this->oldWidth) || (height != this->oldHeight)) {
 		try {
 			replaceSurfaceData();
-		} catch ($InvalidPipeException&) {
-			$catch();
+		} catch ($InvalidPipeException& e) {
 		}
 		this->oldWidth = width;
 		this->oldHeight = height;
@@ -771,8 +759,7 @@ bool WComponentPeer::updateGraphicsData($GraphicsConfiguration* gc) {
 	}
 	try {
 		replaceSurfaceData();
-	} catch ($InvalidPipeException&) {
-		$catch();
+	} catch ($InvalidPipeException& e) {
 	}
 	return false;
 }
@@ -1171,8 +1158,7 @@ void WComponentPeer::createBuffers(int32_t numBuffers, $BufferCapabilities* caps
 	$nc(gc)->assertOperationSupported($cast($Component, this->target), numBuffers, caps);
 	try {
 		replaceSurfaceData(numBuffers - 1, caps);
-	} catch ($InvalidPipeException&) {
-		$var($InvalidPipeException, e, $catch());
+	} catch ($InvalidPipeException& e) {
 		$throwNew($AWTException, $(e->getMessage()));
 	}
 }

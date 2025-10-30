@@ -2,15 +2,6 @@
 
 #include <java/awt/AttributeValue.h>
 #include <java/awt/JobAttributes.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 #undef FILE
@@ -71,9 +62,7 @@ $Object* allocate$JobAttributes$DestinationType($Class* clazz) {
 }
 
 $StringArray* JobAttributes$DestinationType::NAMES = nullptr;
-
 JobAttributes$DestinationType* JobAttributes$DestinationType::FILE = nullptr;
-
 JobAttributes$DestinationType* JobAttributes$DestinationType::PRINTER = nullptr;
 
 void JobAttributes$DestinationType::init$(int32_t type) {

@@ -5,18 +5,7 @@
 #include <java/awt/Composite.h>
 #include <java/awt/GraphicsEnvironment.h>
 #include <java/awt/Rectangle.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <sun/awt/DisplayChangedListener.h>
@@ -157,7 +146,6 @@ void SurfaceDataProxy::finalize() {
 
 bool SurfaceDataProxy::cachingAllowed = false;
 int32_t SurfaceDataProxy::defaultThreshold = 0;
-
 SurfaceDataProxy* SurfaceDataProxy::UNCACHED = nullptr;
 
 bool SurfaceDataProxy::isCachingAllowed() {
@@ -320,7 +308,6 @@ void clinit$SurfaceDataProxy($Class* class$) {
 		$var($String, manimg, $cast($String, $AccessController::doPrivileged(static_cast<$PrivilegedAction*>($$new($GetPropertyAction, "sun.java2d.managedimages"_s)))));
 		if (manimg != nullptr && manimg->equals("false"_s)) {
 			SurfaceDataProxy::cachingAllowed = false;
-			$init($System);
 			$nc($System::out)->println("Disabling managed images"_s);
 		}
 		SurfaceDataProxy::defaultThreshold = 1;
@@ -330,12 +317,9 @@ void clinit$SurfaceDataProxy($Class* class$) {
 				int32_t parsed = $Integer::parseInt(num);
 				if (parsed >= 0) {
 					SurfaceDataProxy::defaultThreshold = parsed;
-					$init($System);
 					$nc($System::out)->println($$str({"New Default Acceleration Threshold: "_s, $$str(SurfaceDataProxy::defaultThreshold)}));
 				}
-			} catch ($NumberFormatException&) {
-				$var($NumberFormatException, e, $catch());
-				$init($System);
+			} catch ($NumberFormatException& e) {
 				$nc($System::err)->println($$str({"Error setting new threshold:"_s, e}));
 			}
 		}

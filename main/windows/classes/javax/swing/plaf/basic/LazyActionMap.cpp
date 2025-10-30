@@ -1,16 +1,8 @@
 #include <javax/swing/plaf/basic/LazyActionMap.h>
 
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchMethodException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
 #include <java/lang/reflect/Method.h>
 #include <javax/swing/Action.h>
@@ -166,23 +158,19 @@ void LazyActionMap::loadIfNecessary() {
 		try {
 			$var($Method, method, $nc(klass)->getDeclaredMethod("loadActionMap"_s, $$new($ClassArray, {LazyActionMap::class$})));
 			$nc(method)->invoke(klass, $$new($ObjectArray, {$of(this)}));
-		} catch ($NoSuchMethodException&) {
-			$var($NoSuchMethodException, nsme, $catch());
+		} catch ($NoSuchMethodException& nsme) {
 			if (!LazyActionMap::$assertionsDisabled) {
 				$throwNew($AssertionError, $of($$str({"LazyActionMap unable to load actions "_s, klass})));
 			}
-		} catch ($IllegalAccessException&) {
-			$var($IllegalAccessException, iae, $catch());
+		} catch ($IllegalAccessException& iae) {
 			if (!LazyActionMap::$assertionsDisabled) {
 				$throwNew($AssertionError, $of($$str({"LazyActionMap unable to load actions "_s, iae})));
 			}
-		} catch ($InvocationTargetException&) {
-			$var($InvocationTargetException, ite, $catch());
+		} catch ($InvocationTargetException& ite) {
 			if (!LazyActionMap::$assertionsDisabled) {
 				$throwNew($AssertionError, $of($$str({"LazyActionMap unable to load actions "_s, ite})));
 			}
-		} catch ($IllegalArgumentException&) {
-			$var($IllegalArgumentException, iae, $catch());
+		} catch ($IllegalArgumentException& iae) {
 			if (!LazyActionMap::$assertionsDisabled) {
 				$throwNew($AssertionError, $of($$str({"LazyActionMap unable to load actions "_s, iae})));
 			}

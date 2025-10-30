@@ -15,24 +15,8 @@
 #include <java/awt/event/ItemEvent.h>
 #include <java/awt/event/ItemListener.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Attribute.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/accessibility/AccessibleState.h>
@@ -165,6 +149,7 @@ $NamedAttribute AbstractButton_Attribute_var$0[] = {
 	{"defaultProperty", 's', "UI"},
 	{}
 };
+
 $CompoundAttribute _AbstractButton_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", AbstractButton_Attribute_var$0},
 	{}
@@ -543,7 +528,6 @@ $CompoundAttribute _AbstractButton_MethodAnnotations_setVerticalTextPosition101[
 	{}
 };
 
-
 $FieldInfo _AbstractButton_FieldInfo_[] = {
 	{"MODEL_CHANGED_PROPERTY", "Ljava/lang/String;", nullptr, $PUBLIC | $STATIC | $FINAL, $staticField(AbstractButton, MODEL_CHANGED_PROPERTY)},
 	{"TEXT_CHANGED_PROPERTY", "Ljava/lang/String;", nullptr, $PUBLIC | $STATIC | $FINAL, $staticField(AbstractButton, TEXT_CHANGED_PROPERTY)},
@@ -767,43 +751,24 @@ void AbstractButton::finalize() {
 	this->$JComponent::finalize();
 }
 
-
 $String* AbstractButton::MODEL_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::TEXT_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::MNEMONIC_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::MARGIN_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::VERTICAL_ALIGNMENT_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::HORIZONTAL_ALIGNMENT_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::VERTICAL_TEXT_POSITION_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::HORIZONTAL_TEXT_POSITION_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::BORDER_PAINTED_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::FOCUS_PAINTED_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::ROLLOVER_ENABLED_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::CONTENT_AREA_FILLED_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::ICON_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::PRESSED_ICON_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::SELECTED_ICON_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::ROLLOVER_ICON_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::ROLLOVER_SELECTED_ICON_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::DISABLED_ICON_CHANGED_PROPERTY = nullptr;
-
 $String* AbstractButton::DISABLED_SELECTED_ICON_CHANGED_PROPERTY = nullptr;
 
 $AccessibleContext* AbstractButton::access$000(AbstractButton* x0) {
@@ -901,8 +866,7 @@ void AbstractButton::doClick(int32_t pressTime) {
 	paintImmediately($$new($Rectangle, 0, 0, $nc(size)->width, size->height));
 	try {
 		$Thread::sleep(pressTime);
-	} catch ($InterruptedException&) {
-		$catch();
+	} catch ($InterruptedException& ie) {
 	}
 	$nc(this->model)->setPressed(false);
 	$nc(this->model)->setArmed(false);

@@ -8,16 +8,6 @@
 #include <java/awt/geom/PathIterator.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/SunGraphics2D.h>
 #include <sun/java2d/pipe/LoopPipe.h>
 #include <sun/java2d/pipe/Region.h>
@@ -104,8 +94,8 @@ void SpanShapeRenderer::draw($SunGraphics2D* sg, $Shape* s) {
 			$var($Throwable, var$0, nullptr);
 			try {
 				renderSpans(sg, $(sg->getCompClip()), s, sr);
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				$nc(sr)->dispose();
 			}
@@ -132,8 +122,8 @@ void SpanShapeRenderer::fill($SunGraphics2D* sg, $Shape* s) {
 			$nc(sr)->setOutputArea(clipRegion);
 			sr->appendPath($($nc(s)->getPathIterator(sg->transform$)));
 			renderSpans(sg, clipRegion, s, sr);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(sr)->dispose();
 		}
@@ -209,8 +199,8 @@ void SpanShapeRenderer::renderSpans($SunGraphics2D* sg, $Region* clipRegion, $Sh
 			sr->intersectClipBox(abox->get(0), abox->get(1), abox->get(2), abox->get(3));
 			$assign(context, startSequence(sg, s, devR, abox));
 			spanClipLoop(context, sr, clipRegion, abox);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} $finally: {
 			if (context != nullptr) {
 				endSequence(context);

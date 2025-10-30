@@ -8,20 +8,8 @@
 #include <java/io/InputStreamReader.h>
 #include <java/io/Reader.h>
 #include <java/io/StringReader.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/util/Enumeration.h>
 #include <java/util/Hashtable.h>
@@ -240,7 +228,6 @@ $Object* allocate$StyleSheet($Class* clazz) {
 }
 
 $Border* StyleSheet::noBorder = nullptr;
-
 $ints* StyleSheet::sizeMapDefault = nullptr;
 
 void StyleSheet::init$() {
@@ -323,8 +310,8 @@ $Style* StyleSheet::getRule($HTML$Tag* t, $Element* e$renamed) {
 			$assign(var$2, style);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$StyleSheet$SearchBuffer::releaseSearchBuffer(sb);
 		}
@@ -369,8 +356,7 @@ void StyleSheet::addRule($String* rule) {
 			try {
 				$var($URL, var$0, getBase());
 				parser->parse(var$0, $$new($StringReader, rule), false, false);
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& ioe) {
 			}
 		}
 	}
@@ -475,8 +461,7 @@ void StyleSheet::importStyleSheet($URL* url) {
 		parser->parse(url, r, false, true);
 		r->close();
 		$nc(is)->close();
-	} catch ($Throwable&) {
-		$catch();
+	} catch ($Throwable& e) {
 	}
 }
 
@@ -867,8 +852,8 @@ $String* StyleSheet::_cleanSelectorString($String* selector) {
 				buff->append(chars, lastIndex, numChars - lastIndex);
 			}
 			$assign(retValue, $nc(buff)->toString());
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$StyleSheet$SearchBuffer::releaseSearchBuffer(sb);
 		}
@@ -1069,8 +1054,8 @@ $Style* StyleSheet::createResolvedStyle($String* selector, $StringArray* tags, $
 				$assign(var$2, retStyle);
 				return$1 = true;
 				goto $finally;
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} $finally: {
 				$StyleSheet$SearchBuffer::releaseSearchBuffer(sb);
 			}
@@ -1242,8 +1227,8 @@ $Style* StyleSheet::createResolvedStyle($String* selector) {
 			$assign(var$2, createResolvedStyle(selector, tags, ids, classes));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$StyleSheet$SearchBuffer::releaseSearchBuffer(sb);
 		}

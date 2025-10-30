@@ -1,15 +1,6 @@
 #include <javax/swing/MultiUIDefaults$1.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/NoSuchFieldError.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/MultiUIDefaults$MultiUIDefaultsEnumerator$Type.h>
 #include <javax/swing/MultiUIDefaults$MultiUIDefaultsEnumerator.h>
 #include <javax/swing/MultiUIDefaults.h>
@@ -75,13 +66,11 @@ void clinit$MultiUIDefaults$1($Class* class$) {
 	{
 		try {
 			$nc(MultiUIDefaults$1::$SwitchMap$javax$swing$MultiUIDefaults$MultiUIDefaultsEnumerator$Type)->set($MultiUIDefaults$MultiUIDefaultsEnumerator$Type::KEYS->ordinal(), 1);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 		try {
 			$nc(MultiUIDefaults$1::$SwitchMap$javax$swing$MultiUIDefaults$MultiUIDefaultsEnumerator$Type)->set($MultiUIDefaults$MultiUIDefaultsEnumerator$Type::ELEMENTS->ordinal(), 2);
-		} catch ($NoSuchFieldError&) {
-			$catch();
+		} catch ($NoSuchFieldError& ex) {
 		}
 	}
 }

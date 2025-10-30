@@ -1,17 +1,6 @@
 #include <TestProperties.h>
 
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/LookAndFeel.h>
 #include <javax/swing/UIManager.h>
 #include <javax/swing/plaf/basic/BasicLookAndFeel.h>
@@ -85,20 +74,17 @@ void TestProperties::main($StringArray* args) {
 	try {
 		$UIManager::setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel"_s);
 		test(TestProperties::windowsProperties);
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 	try {
 		$UIManager::setLookAndFeel("com.apple.laf.AquaLookAndFeel"_s);
 		test(TestProperties::aquaProperties);
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 	try {
 		$UIManager::setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel"_s);
 		test(TestProperties::gtkProperties);
-	} catch ($Exception&) {
-		$catch();
+	} catch ($Exception& e) {
 	}
 }
 
@@ -114,7 +100,6 @@ void TestProperties::test($StringArray* properties) {
 			{
 				$var($String, value, $UIManager::getString(name));
 				if (value == nullptr) {
-					$init($System);
 					$nc($System::err)->println($$str({"Current LookAndFeel = "_s, $($nc($($UIManager::getLookAndFeel()))->getDescription())}));
 					$nc($System::err)->printf("The value for %s property is null\n"_s, $$new($ObjectArray, {$of(name)}));
 					$throwNew($Error);

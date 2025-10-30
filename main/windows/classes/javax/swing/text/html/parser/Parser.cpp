@@ -4,25 +4,9 @@
 #include <java/io/IOException.h>
 #include <java/io/InterruptedIOException.h>
 #include <java/io/Reader.h>
-#include <java/lang/Array.h>
-#include <java/lang/Character.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
 #include <java/lang/StringBuffer.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadDeath.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Iterator.h>
 #include <java/util/Vector.h>
 #include <javax/swing/text/AttributeSet.h>
@@ -194,7 +178,6 @@ $Object* allocate$Parser($Class* clazz) {
 	return $of($alloc(Parser));
 }
 
-
 $chars* Parser::cp1252Map = nullptr;
 $String* Parser::START_COMMENT = nullptr;
 $String* Parser::END_COMMENT = nullptr;
@@ -261,8 +244,7 @@ void Parser::handleEOFInComment() {
 			$nc(this->in)->close();
 			$set(this, in, $new($CharArrayReader, $(getChars(commentEndPos + 1))));
 			this->ch = u'>';
-		} catch ($IOException&) {
-			$var($IOException, e, $catch());
+		} catch ($IOException& e) {
 			error("ioexception"_s);
 		}
 		resetStrBuffer();
@@ -1085,13 +1067,11 @@ $chars* Parser::parseEntityReference() {
 }
 
 $chars* Parser::mapNumericReference(int32_t c) {
-	$useLocalCurrentObjectStackCache();
 	$var($chars, data, nullptr);
 	if (c >= 0x0000FFFF) {
 		try {
 			$assign(data, $Character::toChars(c));
-		} catch ($IllegalArgumentException&) {
-			$var($IllegalArgumentException, e, $catch());
+		} catch ($IllegalArgumentException& e) {
 			$assign(data, $new($chars, 0));
 		}
 	} else {
@@ -2251,27 +2231,24 @@ void Parser::parse($Reader* in) {
 						endTag(true);
 					}
 					$nc(in)->close();
-				} catch ($IOException&) {
-					$var($IOException, e, $catch());
+				} catch ($IOException& e) {
 					errorContext();
 					error("ioexception"_s);
 					$throw(e);
-				} catch ($Exception&) {
-					$var($Exception, e, $catch());
+				} catch ($Exception& e) {
 					errorContext();
 					$var($String, var$1, "exception"_s);
 					$var($String, var$2, $of(e)->getClass()->getName());
 					error(var$1, var$2, $(e->getMessage()));
 					e->printStackTrace();
-				} catch ($ThreadDeath&) {
-					$var($ThreadDeath, e, $catch());
+				} catch ($ThreadDeath& e) {
 					errorContext();
 					error("terminated"_s);
 					e->printStackTrace();
 					$throw(e);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} /*finally*/ {
 				for (; this->stack != nullptr; $set(this, stack, $nc(this->stack)->next)) {
 					handleEndTag($nc(this->stack)->tag);
@@ -2287,14 +2264,12 @@ void Parser::parse($Reader* in) {
 }
 
 int32_t Parser::readCh() {
-	$useLocalCurrentObjectStackCache();
 	if (this->pos >= this->len) {
 		for (;;) {
 			try {
 				this->len = $nc(this->in)->read(this->buf);
 				break;
-			} catch ($InterruptedIOException&) {
-				$var($InterruptedIOException, ex, $catch());
+			} catch ($InterruptedIOException& ex) {
 				$throw(ex);
 			}
 		}

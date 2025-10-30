@@ -9,23 +9,12 @@
 #include <java/awt/EventFilter.h>
 #include <java/awt/EventQueue.h>
 #include <java/awt/ModalEventFilter.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
 #include <java/lang/Thread$UncaughtExceptionHandler.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ThreadDeath.h>
 #include <java/lang/ThreadGroup.h>
-#include <java/lang/Throwable.h>
 #include <java/lang/UnsupportedOperationException.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/ArrayList.h>
 #include <sun/awt/dnd/SunDragSourceContextPeer.h>
 #include <sun/util/logging/PlatformLogger$Level.h>
@@ -147,8 +136,8 @@ void EventDispatchThread::run() {
 		$var($Throwable, var$0, nullptr);
 		try {
 			pumpEvents($$new($EventDispatchThread$1, this));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc($(getEventQueue()))->detachDispatchThread(this);
 		}
@@ -271,15 +260,12 @@ void EventDispatchThread::pumpOneEventForFilters(int32_t id) {
 			$nc(EventDispatchThread::eventLog)->finest($$str({"Dispatching: "_s, event}));
 		}
 		$nc(eq)->dispatchEvent(event);
-	} catch ($ThreadDeath&) {
-		$var($ThreadDeath, death, $catch());
+	} catch ($ThreadDeath& death) {
 		this->doDispatch = false;
 		$throw(death);
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, interruptedException, $catch());
+	} catch ($InterruptedException& interruptedException) {
 		this->doDispatch = false;
-	} catch ($Throwable&) {
-		$var($Throwable, e, $catch());
+	} catch ($Throwable& e) {
 		processException(e);
 	}
 }

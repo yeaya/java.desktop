@@ -1,14 +1,5 @@
 #include <javax/print/PrintException.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -64,16 +55,10 @@ void PrintException::init$($String* s, $Exception* e) {
 PrintException::PrintException() {
 }
 
-PrintException::PrintException(const PrintException& e) {
+PrintException::PrintException(const PrintException& e) : $Exception(e) {
 }
 
-PrintException PrintException::wrapper$() {
-	$pendingException(this);
-	return *this;
-}
-
-void PrintException::throwWrapper$() {
-	$pendingException(this);
+void PrintException::throw$() {
 	throw *this;
 }
 

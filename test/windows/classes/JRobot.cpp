@@ -9,20 +9,8 @@
 #include <java/awt/Rectangle.h>
 #include <java/awt/Robot.h>
 #include <java/awt/event/InputEvent.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/SwingUtilities.h>
 #include <jcpp.h>
 
@@ -115,13 +103,10 @@ JRobot* JRobot::getRobot() {
 
 JRobot* JRobot::getRobot(bool enableDelays) {
 	$init(JRobot);
-	$useLocalCurrentObjectStackCache();
 	$var(JRobot, robot, nullptr);
 	try {
 		$assign(robot, $new(JRobot, enableDelays));
-	} catch ($AWTException&) {
-		$var($AWTException, e, $catch());
-		$init($System);
+	} catch ($AWTException& e) {
 		$nc($System::err)->println("Coudn\'t create Robot, details below"_s);
 		$throwNew($Error, static_cast<$Throwable*>(e));
 	}

@@ -3,19 +3,8 @@
 #include <bug6868611$1.h>
 #include <bug6868611$MyThread.h>
 #include <java/io/File.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/nio/file/Files.h>
 #include <java/nio/file/Path.h>
 #include <java/nio/file/attribute/FileAttribute.h>
@@ -103,8 +92,8 @@ void bug6868611::main($StringArray* args) {
 				$Thread::sleep($cast(int64_t, ($Math::random() * 100)));
 				thread->interrupt();
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			for (int32_t i = 0; i < fileCount; ++i) {
 				$Files::delete$($($nc($nc(bug6868611::files)->get(i))->toPath()));

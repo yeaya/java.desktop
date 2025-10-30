@@ -5,17 +5,8 @@
 #include <java/awt/ImageCapabilities.h>
 #include <java/awt/image/BufferedImage.h>
 #include <java/awt/image/VolatileImage.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Collection.h>
 #include <java/util/Iterator.h>
 #include <java/util/concurrent/ConcurrentHashMap.h>
@@ -127,8 +118,7 @@ SurfaceManager* SurfaceManager::getManager($Image* img) {
 			$var($BufferedImage, bi, $cast($BufferedImage, img));
 			$assign(sMgr, $new($BufImgSurfaceManager, bi));
 			setManager(bi, sMgr);
-		} catch ($ClassCastException&) {
-			$var($ClassCastException, e, $catch());
+		} catch ($ClassCastException& e) {
 			$throwNew($InvalidPipeException, "Invalid Image variant"_s);
 		}
 	}

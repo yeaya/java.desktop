@@ -2,14 +2,6 @@
 
 #include <java/awt/Point.h>
 #include <java/awt/Rectangle.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleHyperlink.h>
 #include <javax/swing/JEditorPane$AccessibleJEditorPane.h>
 #include <javax/swing/JEditorPane$JEditorPaneAccessibleHypertextSupport$1.h>
@@ -267,8 +259,7 @@ $String* JEditorPane$JEditorPaneAccessibleHypertextSupport::getLinkText(int32_t 
 				int32_t var$0 = e->getStartOffset();
 				int32_t var$1 = e->getEndOffset();
 				return d->getText(var$0, var$1 - e->getStartOffset());
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, exception, $catch());
+			} catch ($BadLocationException& exception) {
 				return nullptr;
 			}
 		}

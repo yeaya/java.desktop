@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/JobState.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -95,25 +87,15 @@ void JobState::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 JobState* JobState::UNKNOWN = nullptr;
-
 JobState* JobState::PENDING = nullptr;
-
 JobState* JobState::PENDING_HELD = nullptr;
-
 JobState* JobState::PROCESSING = nullptr;
-
 JobState* JobState::PROCESSING_STOPPED = nullptr;
-
 JobState* JobState::CANCELED = nullptr;
-
 JobState* JobState::ABORTED = nullptr;
-
 JobState* JobState::COMPLETED = nullptr;
-
 $StringArray* JobState::myStringTable = nullptr;
-
 $JobStateArray* JobState::myEnumValueTable = nullptr;
 
 void JobState::init$(int32_t value) {

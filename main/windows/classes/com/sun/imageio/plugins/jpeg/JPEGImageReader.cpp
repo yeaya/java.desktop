@@ -30,30 +30,10 @@
 #include <java/awt/image/SampleModel.h>
 #include <java/awt/image/WritableRaster.h>
 #include <java/io/IOException.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
-#include <java/lang/Long.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/AbstractList.h>
@@ -444,8 +424,8 @@ void JPEGImageReader::warningOccurred(int32_t code) {
 				$throwNew($InternalError, "Invalid warning index"_s);
 			}
 			processWarningOccurred("com.sun.imageio.plugins.jpeg.JPEGImageReaderResources"_s, $($Integer::toString(code)));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -461,8 +441,8 @@ void JPEGImageReader::warningWithMessage($String* msg) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			processWarningOccurred(msg);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -483,8 +463,8 @@ void JPEGImageReader::setInput(Object$* input, bool seekForwardOnly, bool ignore
 			resetInternalState();
 			$set(this, iis, $cast($ImageInputStream, input));
 			setSource(this->structPointer);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			clearThreadLock();
 		}
@@ -504,8 +484,8 @@ int32_t JPEGImageReader::readInputData($bytes* buf, int32_t off, int32_t len) {
 			var$2 = $nc(this->iis)->read(buf, off, len);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->cbLock)->unlock();
 		}
@@ -529,8 +509,8 @@ int64_t JPEGImageReader::skipInputBytes(int64_t n) {
 			var$2 = $nc(this->iis)->skipBytes(n);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			$nc(this->cbLock)->unlock();
 		}
@@ -553,19 +533,16 @@ void JPEGImageReader::setSource(int64_t structPointer) {
 void JPEGImageReader::checkTablesOnly() {
 	$useLocalCurrentObjectStackCache();
 	if (this->debug) {
-		$init($System);
 		$nc($System::out)->println("Checking for tables-only image"_s);
 	}
 	int64_t savePos = $nc(this->iis)->getStreamPosition();
 	if (this->debug) {
-		$init($System);
 		$nc($System::out)->println($$str({"saved pos is "_s, $$str(savePos)}));
 		$nc($System::out)->println($$str({"length is "_s, $$str($nc(this->iis)->length())}));
 	}
 	bool tablesOnly = readNativeHeader(true);
 	if (tablesOnly) {
 		if (this->debug) {
-			$init($System);
 			$nc($System::out)->println("tables-only image found"_s);
 			int64_t pos = $nc(this->iis)->getStreamPosition();
 			$nc($System::out)->println($$str({"pos after return from native is "_s, $$str(pos)}));
@@ -576,7 +553,6 @@ void JPEGImageReader::checkTablesOnly() {
 			$set(this, streamMetadata, $new($JPEGMetadata, true, false, this->iis, this));
 			int64_t pos = $nc(this->iis)->getStreamPosition();
 			if (this->debug) {
-				$init($System);
 				$nc($System::out)->println($$str({"pos after constructing stream metadata is "_s, $$str(pos)}));
 			}
 		}
@@ -605,8 +581,8 @@ int32_t JPEGImageReader::getNumImages(bool allowSearch) {
 			var$2 = getNumImagesOnThread(allowSearch);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			clearThreadLock();
 		}
@@ -621,7 +597,6 @@ int32_t JPEGImageReader::getNumImages(bool allowSearch) {
 }
 
 void JPEGImageReader::skipPastImage(int32_t imageIndex) {
-	$useLocalCurrentObjectStackCache();
 	$nc(this->cbLock)->lock();
 	{
 		$var($Throwable, var$0, nullptr);
@@ -629,13 +604,11 @@ void JPEGImageReader::skipPastImage(int32_t imageIndex) {
 			try {
 				gotoImage(imageIndex);
 				skipImage();
-			} catch ($IOException&) {
-				$var($Exception, e, $catch());
-			} catch ($IndexOutOfBoundsException&) {
-				$var($Exception, e, $catch());
+			} catch ($IOException& e) {
+			} catch ($IndexOutOfBoundsException& e) {
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -760,7 +733,6 @@ void JPEGImageReader::gotoImage(int32_t imageIndex) {
 void JPEGImageReader::skipImage() {
 	$useLocalCurrentObjectStackCache();
 	if (this->debug) {
-		$init($System);
 		$nc($System::out)->println("skipImage called"_s);
 	}
 	int32_t initialFF = $nc(this->iis)->read();
@@ -946,7 +918,6 @@ case$0:
 					// JPEG.EOI
 					{
 						if (this->debug) {
-							$init($System);
 							$nc($System::out)->println($$str({"skipImage : Found EOI at "_s, $$str(($nc(this->iis)->getStreamPosition() - markerLength))}));
 						}
 						return;
@@ -1191,7 +1162,6 @@ case$53:
 
 bool JPEGImageReader::hasNextImage() {
 	if (this->debug) {
-		$init($System);
 		$nc($System::out)->print("hasNextImage called; returning "_s);
 	}
 	$nc(this->iis)->mark();
@@ -1201,7 +1171,6 @@ bool JPEGImageReader::hasNextImage() {
 			if (byteval == $JPEG::SOI) {
 				$nc(this->iis)->reset();
 				if (this->debug) {
-					$init($System);
 					$nc($System::out)->println("true"_s);
 				}
 				return true;
@@ -1211,7 +1180,6 @@ bool JPEGImageReader::hasNextImage() {
 	}
 	$nc(this->iis)->reset();
 	if (this->debug) {
-		$init($System);
 		$nc($System::out)->println("false"_s);
 	}
 	return false;
@@ -1220,7 +1188,6 @@ bool JPEGImageReader::hasNextImage() {
 void JPEGImageReader::pushBack(int32_t num) {
 	$useLocalCurrentObjectStackCache();
 	if (this->debug) {
-		$init($System);
 		$nc($System::out)->println($$str({"pushing back "_s, $$str(num), " bytes"_s}));
 	}
 	$nc(this->cbLock)->lock();
@@ -1228,8 +1195,8 @@ void JPEGImageReader::pushBack(int32_t num) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			$nc(this->iis)->seek($nc(this->iis)->getStreamPosition() - num);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -1274,8 +1241,7 @@ void JPEGImageReader::setImageData(int32_t width, int32_t height, int32_t colorS
 	$var($ICC_Profile, newProfile, nullptr);
 	try {
 		$assign(newProfile, $ICC_Profile::getInstance(iccData));
-	} catch ($IllegalArgumentException&) {
-		$var($IllegalArgumentException, e, $catch());
+	} catch ($IllegalArgumentException& e) {
 		$set(this, iccCS, nullptr);
 		warningOccurred(JPEGImageReader::WARNING_IGNORE_INVALID_ICC);
 		return;
@@ -1297,16 +1263,15 @@ void JPEGImageReader::setImageData(int32_t width, int32_t height, int32_t colorS
 				0.0f,
 				0.0f
 			})));
-		} catch ($CMMException&) {
-			$var($CMMException, e, $catch());
+		} catch ($CMMException& e) {
 			$set(this, iccCS, nullptr);
 			$nc(this->cbLock)->lock();
 			{
 				$var($Throwable, var$0, nullptr);
 				try {
 					warningOccurred(JPEGImageReader::WARNING_IGNORE_INVALID_ICC);
-				} catch ($Throwable&) {
-					$assign(var$0, $catch());
+				} catch ($Throwable& var$1) {
+					$assign(var$0, var$1);
 				} /*finally*/ {
 					$nc(this->cbLock)->unlock();
 				}
@@ -1332,8 +1297,8 @@ int32_t JPEGImageReader::getWidth(int32_t imageIndex) {
 			var$2 = this->width;
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			clearThreadLock();
 		}
@@ -1361,8 +1326,8 @@ int32_t JPEGImageReader::getHeight(int32_t imageIndex) {
 			var$2 = this->height;
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			clearThreadLock();
 		}
@@ -1399,8 +1364,8 @@ $ImageTypeSpecifier* JPEGImageReader::getRawImageType(int32_t imageIndex) {
 			$assign(var$2, $nc($(getImageType(this->colorSpaceCode)))->getType());
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			clearThreadLock();
 		}
@@ -1425,8 +1390,8 @@ $Iterator* JPEGImageReader::getImageTypes(int32_t imageIndex) {
 			$assign(var$2, getImageTypesOnThread(imageIndex));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			clearThreadLock();
 		}
@@ -1554,8 +1519,8 @@ $IIOMetadata* JPEGImageReader::getStreamMetadata() {
 			$assign(var$2, this->streamMetadata);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			clearThreadLock();
 		}
@@ -1589,8 +1554,8 @@ $IIOMetadata* JPEGImageReader::getImageMetadata(int32_t imageIndex) {
 			$assign(var$2, this->imageMetadata);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			clearThreadLock();
 		}
@@ -1615,12 +1580,10 @@ $BufferedImage* JPEGImageReader::read(int32_t imageIndex, $ImageReadParam* param
 			$nc(this->cbLock)->check();
 			try {
 				readInternal(imageIndex, param, false);
-			} catch ($RuntimeException&) {
-				$var($RuntimeException, e, $catch());
+			} catch ($RuntimeException& e) {
 				resetLibraryState(this->structPointer);
 				$throw(e);
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				resetLibraryState(this->structPointer);
 				$throw(e);
 			}
@@ -1629,8 +1592,8 @@ $BufferedImage* JPEGImageReader::read(int32_t imageIndex, $ImageReadParam* param
 			$assign(var$2, ret);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			clearThreadLock();
 		}
@@ -1731,7 +1694,6 @@ $Raster* JPEGImageReader::readInternal(int32_t imageIndex, $ImageReadParam* para
 		this->progInterval *= (this->maxProgressivePass - this->minProgressivePass + 1);
 	}
 	if (this->debug) {
-		$init($System);
 		$nc($System::out)->println("**** Read Data *****"_s);
 		$nc($System::out)->println($$str({"numRasterBands is "_s, $$str(numRasterBands)}));
 		$nc($System::out)->print("srcBands:"_s);
@@ -1791,7 +1753,6 @@ void JPEGImageReader::acceptPixels(int32_t y, bool progressive) {
 						if ($mod(y, this->progInterval) == 0) {
 							this->percentToDate = this->previousPassPercentage + (1.0f - this->previousPassPercentage) * (percentOfPass) / remainingPasses;
 							if (this->debug) {
-								$init($System);
 								$nc($System::out)->print($$str({"pass= "_s, $$str(this->pass)}));
 								$nc($System::out)->print($$str({", y= "_s, $$str(y)}));
 								$nc($System::out)->print($$str({", progInt= "_s, $$str(this->progInterval)}));
@@ -1808,8 +1769,8 @@ void JPEGImageReader::acceptPixels(int32_t y, bool progressive) {
 					processImageProgress(percentOfPass * 100.0f);
 				}
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -1835,8 +1796,8 @@ void JPEGImageReader::passStarted(int32_t pass) {
 			this->pass = pass;
 			this->previousPassPercentage = this->percentToDate;
 			processPassStarted(this->image, pass, this->minProgressivePass, this->maxProgressivePass, 0, 0, 1, 1, this->destinationBands);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -1852,8 +1813,8 @@ void JPEGImageReader::passComplete() {
 		$var($Throwable, var$0, nullptr);
 		try {
 			processPassComplete(this->image);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -1869,8 +1830,8 @@ void JPEGImageReader::thumbnailStarted(int32_t thumbnailIndex) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			processThumbnailStarted(this->currentImage, thumbnailIndex);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -1886,8 +1847,8 @@ void JPEGImageReader::thumbnailProgress(float percentageDone) {
 		$var($Throwable, var$0, nullptr);
 		try {
 			processThumbnailProgress(percentageDone);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -1903,8 +1864,8 @@ void JPEGImageReader::thumbnailComplete() {
 		$var($Throwable, var$0, nullptr);
 		try {
 			processThumbnailComplete();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->cbLock)->unlock();
 		}
@@ -1935,8 +1896,8 @@ void JPEGImageReader::abort() {
 		try {
 			$ImageReader::abort();
 			abortRead(this->structPointer);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			clearThreadLock();
 		}
@@ -1980,17 +1941,15 @@ $Raster* JPEGImageReader::readRaster(int32_t imageIndex, $ImageReadParam* param)
 				if (saveDestOffset != nullptr) {
 					$set(this, target, $nc(this->target)->createWritableTranslatedChild(saveDestOffset->x, saveDestOffset->y));
 				}
-			} catch ($RuntimeException&) {
-				$var($RuntimeException, e, $catch());
+			} catch ($RuntimeException& e) {
 				resetLibraryState(this->structPointer);
 				$throw(e);
-			} catch ($IOException&) {
-				$var($IOException, e, $catch());
+			} catch ($IOException& e) {
 				resetLibraryState(this->structPointer);
 				$throw(e);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			clearThreadLock();
 		}
@@ -2025,8 +1984,8 @@ int32_t JPEGImageReader::getNumThumbnails(int32_t imageIndex) {
 			var$2 = retval;
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			clearThreadLock();
 		}
@@ -2057,8 +2016,8 @@ int32_t JPEGImageReader::getThumbnailWidth(int32_t imageIndex, int32_t thumbnail
 			var$2 = $nc(jfif)->getThumbnailWidth(thumbnailIndex);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			clearThreadLock();
 		}
@@ -2089,8 +2048,8 @@ int32_t JPEGImageReader::getThumbnailHeight(int32_t imageIndex, int32_t thumbnai
 			var$2 = $nc(jfif)->getThumbnailHeight(thumbnailIndex);
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			clearThreadLock();
 		}
@@ -2121,8 +2080,8 @@ $BufferedImage* JPEGImageReader::readThumbnail(int32_t imageIndex, int32_t thumb
 			$assign(var$2, $nc(jfif)->getThumbnail(this->iis, thumbnailIndex, this));
 			return$1 = true;
 			goto $finally;
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$3) {
+			$assign(var$0, var$3);
 		} $finally: {
 			clearThreadLock();
 		}
@@ -2163,8 +2122,8 @@ void JPEGImageReader::reset() {
 		try {
 			$nc(this->cbLock)->check();
 			$ImageReader::reset();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			clearThreadLock();
 		}
@@ -2190,8 +2149,8 @@ void JPEGImageReader::dispose() {
 				$nc(this->disposerRecord)->dispose();
 				this->structPointer = 0;
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			clearThreadLock();
 		}

@@ -5,17 +5,6 @@
 #include <java/awt/Container.h>
 #include <java/awt/Window.h>
 #include <java/io/IOException.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JEditorPane.h>
@@ -91,8 +80,7 @@ void bug6917744$1::run() {
 	$assignStatic($bug6917744::editorPane, $new($JEditorPane));
 	try {
 		$nc($bug6917744::editorPane)->setPage($($bug6917744::class$->getResource("/test.html"_s)));
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		$nc($bug6917744::frame)->dispose();
 		$throwNew($RuntimeException, "HTML resource not found"_s, e);
 	}

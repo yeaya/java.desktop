@@ -4,14 +4,6 @@
 #include <com/sun/java/swing/plaf/windows/WindowsTextFieldUI.h>
 #include <java/awt/Insets.h>
 #include <java/awt/Rectangle.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/BoundedRangeModel.h>
 #include <javax/swing/JTextField.h>
 #include <javax/swing/plaf/ComponentUI.h>
@@ -100,8 +92,7 @@ void WindowsTextFieldUI$WindowsFieldCaret$SafeScroller::run() {
 		$var($Rectangle, startRect, nullptr);
 		try {
 			$assign(startRect, $nc(ui)->modelToView(field, dot, bias));
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& ble) {
 		}
 		$var($Insets, i, field->getInsets());
 		$var($BoundedRangeModel, vis, field->getHorizontalVisibility());
@@ -119,8 +110,7 @@ void WindowsTextFieldUI$WindowsFieldCaret$SafeScroller::run() {
 				if (endRect != nullptr && !endRect->equals(startRect)) {
 					$WindowsTextFieldUI$WindowsFieldCaret::access$100(this->this$0, endRect);
 				}
-			} catch ($BadLocationException&) {
-				$catch();
+			} catch ($BadLocationException& ble) {
 			}
 		}
 	}

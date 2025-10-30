@@ -2,17 +2,6 @@
 
 #include <bug8075609.h>
 #include <java/awt/Component.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTextField.h>
 #include <jcpp.h>
 
@@ -70,7 +59,6 @@ void bug8075609$2::init$() {
 void bug8075609$2::run() {
 	$init($bug8075609);
 	if (!$nc($bug8075609::textField)->hasFocus()) {
-		$init($System);
 		$nc($System::out)->println("Radio Button Group Go To Next Component through Tab Key failed"_s);
 		$throwNew($RuntimeException, "Focus is not on textField as Expected"_s);
 	}

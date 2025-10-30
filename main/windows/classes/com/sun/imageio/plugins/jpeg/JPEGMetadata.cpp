@@ -24,21 +24,9 @@
 #include <java/awt/color/ICC_Profile.h>
 #include <java/awt/image/ColorModel.h>
 #include <java/io/IOException.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/CloneNotSupportedException.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Iterator.h>
@@ -665,8 +653,7 @@ void JPEGMetadata::init$($ImageTypeSpecifier* imageType, $ImageWriteParam* param
 		if (wantICC) {
 			try {
 				jfif->addICC($cast($ICC_ColorSpace, cs));
-			} catch ($IOException&) {
-				$catch();
+			} catch ($IOException& e) {
 			}
 		}
 	}
@@ -768,8 +755,7 @@ $Object* JPEGMetadata::clone() {
 	$var(JPEGMetadata, newGuy, nullptr);
 	try {
 		$assign(newGuy, $cast(JPEGMetadata, $IIOMetadata::clone()));
-	} catch ($CloneNotSupportedException&) {
-		$catch();
+	} catch ($CloneNotSupportedException& e) {
 	}
 	if (this->markerSequence != nullptr) {
 		$set($nc(newGuy), markerSequence, cloneSequence());

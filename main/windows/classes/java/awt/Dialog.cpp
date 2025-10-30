@@ -38,32 +38,16 @@
 #include <java/io/ObjectInputStream$GetField.h>
 #include <java/io/ObjectInputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
 #include <java/lang/SecurityManager.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessControlException.h>
 #include <java/security/AccessController.h>
 #include <java/security/BasicPermission.h>
@@ -410,7 +394,6 @@ $Object* allocate$Dialog($Class* clazz) {
 	return $of($alloc(Dialog));
 }
 
-
 $Dialog$ModalityType* Dialog::DEFAULT_MODALITY_TYPE = nullptr;
 $IdentityArrayList* Dialog::modalDialogs = nullptr;
 $String* Dialog::base = nullptr;
@@ -684,8 +667,8 @@ void Dialog::show() {
 							if (!$nc(this->secondaryLoop)->enter()) {
 								$set(this, secondaryLoop, nullptr);
 							}
-						} catch ($Throwable&) {
-							$assign(var$1, $catch());
+						} catch ($Throwable& var$2) {
+							$assign(var$1, var$2);
 						} /*finally*/ {
 							modalityPopped();
 						}
@@ -710,8 +693,8 @@ void Dialog::show() {
 						}
 					}
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$3) {
+				$assign(var$0, var$3);
 			} /*finally*/ {
 				if (predictedFocusOwner != nullptr) {
 					$nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->dequeueKeyEvents(time->get(), predictedFocusOwner);
@@ -1100,14 +1083,12 @@ void Dialog::checkModalityPermission($Dialog$ModalityType* mt) {
 }
 
 void Dialog::readObject($ObjectInputStream* s) {
-	$useLocalCurrentObjectStackCache();
 	$GraphicsEnvironment::checkHeadless();
 	$var($ObjectInputStream$GetField, fields, $nc(s)->readFields());
 	$Dialog$ModalityType* localModalityType = $cast($Dialog$ModalityType, $nc(fields)->get("modalityType"_s, ($Object*)nullptr));
 	try {
 		checkModalityPermission(localModalityType);
-	} catch ($AccessControlException&) {
-		$var($AccessControlException, ace, $catch());
+	} catch ($AccessControlException& ace) {
 		localModalityType = Dialog::DEFAULT_MODALITY_TYPE;
 	}
 	if (localModalityType == nullptr) {

@@ -1,17 +1,6 @@
 #include <sun/java2d/marlin/MarlinTileGenerator.h>
 
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <jdk/internal/misc/Unsafe.h>
 #include <sun/java2d/marlin/FloatMath.h>
@@ -253,10 +242,8 @@ void MarlinTileGenerator::getAlphaNoRLE($bytes* tile, int32_t offset, int32_t ro
 			}
 			if ($MarlinConst::DO_TRACE) {
 				for (int32_t i = idx - (x1 - x0); i < idx; ++i) {
-					$init($System);
 					$nc($System::out)->print($(hex($nc(tile)->get(i), 2)));
 				}
-				$init($System);
 				$nc($System::out)->println();
 			}
 			idx += skipRowPixels;
@@ -395,10 +382,8 @@ void MarlinTileGenerator::getAlphaRLE($bytes* tile, int32_t offset, int32_t rows
 				}
 				if ($MarlinConst::DO_TRACE) {
 					for (int32_t i = idx - (x1 - x0); i < idx; ++i) {
-						$init($System);
 						$nc($System::out)->print($(hex($nc(tile)->get(i), 2)));
 					}
-					$init($System);
 					$nc($System::out)->println();
 				}
 				idx += skipRowPixels;
@@ -477,10 +462,8 @@ void MarlinTileGenerator::getAlphaRLE($bytes* tile, int32_t offset, int32_t rows
 				}
 				if ($MarlinConst::DO_TRACE) {
 					for (int32_t i = idx - (x1 - x0); i < idx; ++i) {
-						$init($System);
 						$nc($System::out)->print($(hex($nc(tile)->get(i), 2)));
 					}
-					$init($System);
 					$nc($System::out)->println();
 				}
 				idx += skipRowPixels;
@@ -562,10 +545,8 @@ void MarlinTileGenerator::getAlphaRLE($bytes* tile, int32_t offset, int32_t rows
 				}
 				if ($MarlinConst::DO_TRACE) {
 					for (int32_t i = idx - (x1 - x0); i < idx; ++i) {
-						$init($System);
 						$nc($System::out)->print($(hex($nc(tile)->get(i), 2)));
 					}
-					$init($System);
 					$nc($System::out)->println();
 				}
 				idx += skipRowPixels;

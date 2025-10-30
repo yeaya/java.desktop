@@ -25,21 +25,7 @@
 #include <java/io/ObjectInputStream.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Arrays.h>
 #include <java/util/Vector.h>
 #include <javax/accessibility/AccessibleContext.h>
@@ -179,6 +165,7 @@ $NamedAttribute JOptionPane_Attribute_var$0[] = {
 	{"description", 's', "A component which implements standard dialog box controls."},
 	{}
 };
+
 $CompoundAttribute _JOptionPane_Annotations_[] = {
 	{"Ljava/beans/JavaBean;", JOptionPane_Attribute_var$0},
 	{"Ljavax/swing/SwingContainer;", nullptr},
@@ -345,7 +332,6 @@ $CompoundAttribute _JOptionPane_MethodAnnotations_setWantsInput49[] = {
 	{"Ljava/beans/BeanProperty;", JOptionPane_Attribute_var$15},
 	{}
 };
-
 
 $FieldInfo _JOptionPane_FieldInfo_[] = {
 	{"uiClassID", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(JOptionPane, uiClassID)},
@@ -526,31 +512,18 @@ void JOptionPane::finalize() {
 	this->$JComponent::finalize();
 }
 
-
 $String* JOptionPane::uiClassID = nullptr;
-
 $Object* JOptionPane::UNINITIALIZED_VALUE = nullptr;
-
 $String* JOptionPane::ICON_PROPERTY = nullptr;
-
 $String* JOptionPane::MESSAGE_PROPERTY = nullptr;
-
 $String* JOptionPane::VALUE_PROPERTY = nullptr;
-
 $String* JOptionPane::OPTIONS_PROPERTY = nullptr;
-
 $String* JOptionPane::INITIAL_VALUE_PROPERTY = nullptr;
-
 $String* JOptionPane::MESSAGE_TYPE_PROPERTY = nullptr;
-
 $String* JOptionPane::OPTION_TYPE_PROPERTY = nullptr;
-
 $String* JOptionPane::SELECTION_VALUES_PROPERTY = nullptr;
-
 $String* JOptionPane::INITIAL_SELECTION_VALUE_PROPERTY = nullptr;
-
 $String* JOptionPane::INPUT_VALUE_PROPERTY = nullptr;
-
 $String* JOptionPane::WANTS_INPUT_PROPERTY = nullptr;
 $Object* JOptionPane::sharedFrameKey = nullptr;
 
@@ -801,8 +774,7 @@ int32_t JOptionPane::showInternalOptionDialog($Component* parentComponent, Objec
 	if ($instanceOf($JInternalFrame, parentComponent)) {
 		try {
 			$nc(($cast($JInternalFrame, parentComponent)))->setSelected(true);
-		} catch ($PropertyVetoException&) {
-			$catch();
+		} catch ($PropertyVetoException& e) {
 		}
 	}
 	$var($Object, selectedValue, pane->getValue());
@@ -868,8 +840,7 @@ $Object* JOptionPane::showInternalInputDialog($Component* parentComponent, Objec
 	if ($instanceOf($JInternalFrame, parentComponent)) {
 		try {
 			$nc(($cast($JInternalFrame, parentComponent)))->setSelected(true);
-		} catch ($PropertyVetoException&) {
-			$catch();
+		} catch ($PropertyVetoException& e) {
 		}
 	}
 	if (fo != nullptr && fo->isShowing()) {
@@ -916,8 +887,7 @@ $JInternalFrame* JOptionPane::createInternalFrame($Component* parentComponent, $
 	parent->validate();
 	try {
 		iFrame->setSelected(true);
-	} catch ($PropertyVetoException&) {
-		$catch();
+	} catch ($PropertyVetoException& e) {
 	}
 	return iFrame;
 }

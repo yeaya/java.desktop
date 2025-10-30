@@ -1,13 +1,5 @@
 #include <javax/sound/sampled/EnumControl$Type.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/sound/sampled/Control$Type.h>
 #include <javax/sound/sampled/EnumControl.h>
 #include <jcpp.h>
@@ -60,7 +52,6 @@ $ClassInfo _EnumControl$Type_ClassInfo_ = {
 $Object* allocate$EnumControl$Type($Class* clazz) {
 	return $of($alloc(EnumControl$Type));
 }
-
 
 EnumControl$Type* EnumControl$Type::REVERB = nullptr;
 

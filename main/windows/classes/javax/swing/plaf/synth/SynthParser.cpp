@@ -8,31 +8,14 @@
 #include <java/io/FilterInputStream.h>
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
 #include <java/lang/AssertionError.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/ClassLoader.h>
 #include <java/lang/ClassNotFoundException.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NoSuchFieldException.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/MalformedURLException.h>
 #include <java/net/URL.h>
 #include <java/net/URLClassLoader.h>
@@ -421,19 +404,16 @@ void SynthParser::parse($InputStream* inputStream, $DefaultSynthStyleFactory* fa
 			try {
 				$var($SAXParser, saxParser, $nc($($SAXParserFactory::newInstance()))->newSAXParser());
 				$nc(saxParser)->parse(static_cast<$InputStream*>($$new($BufferedInputStream, inputStream)), static_cast<$DefaultHandler*>(this));
-			} catch ($ParserConfigurationException&) {
-				$var($ParserConfigurationException, e, $catch());
+			} catch ($ParserConfigurationException& e) {
 				$throwNew($ParseException, $$str({"Error parsing: "_s, e}), 0);
-			} catch ($SAXException&) {
-				$var($SAXException, se, $catch());
+			} catch ($SAXException& se) {
 				$var($String, var$1, $$str({"Error parsing: "_s, se, " "_s}));
 				$throwNew($ParseException, $$concat(var$1, $(se->getException())), 0);
-			} catch ($IOException&) {
-				$var($IOException, ioe, $catch());
+			} catch ($IOException& ioe) {
 				$throwNew($ParseException, $$str({"Error parsing: "_s, ioe}), 0);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$0, var$2);
 		} /*finally*/ {
 			reset();
 		}
@@ -450,8 +430,7 @@ $URL* SynthParser::getResource($String* path) {
 	} else {
 		try {
 			return $new($URL, this->_urlResourceBase, path);
-		} catch ($MalformedURLException&) {
-			$var($MalformedURLException, mue, $catch());
+		} catch ($MalformedURLException& mue) {
 			return nullptr;
 		}
 	}
@@ -537,14 +516,12 @@ void SynthParser::register$($String* key, Object$* value) {
 }
 
 int32_t SynthParser::nextInt($StringTokenizer* tok, $String* errorMsg) {
-	$useLocalCurrentObjectStackCache();
 	if (!$nc(tok)->hasMoreTokens()) {
 		$throwNew($SAXException, errorMsg);
 	}
 	try {
 		return $Integer::parseInt($($nc(tok)->nextToken()));
-	} catch ($NumberFormatException&) {
-		$var($NumberFormatException, nfe, $catch());
+	} catch ($NumberFormatException& nfe) {
 		$throwNew($SAXException, errorMsg);
 	}
 	$shouldNotReachHere();
@@ -669,8 +646,7 @@ void SynthParser::startFont($Attributes* attributes) {
 		} else if (key->equals(SynthParser::ATTRIBUTE_SIZE)) {
 			try {
 				size = $Integer::parseInt($(attributes->getValue(i)));
-			} catch ($NumberFormatException&) {
-				$var($NumberFormatException, nfe, $catch());
+			} catch ($NumberFormatException& nfe) {
 				$throwNew($SAXException, $$str({"Invalid font size: "_s, $(attributes->getValue(i))}));
 			}
 		} else if (key->equals(SynthParser::ATTRIBUTE_STYLE)) {
@@ -740,19 +716,16 @@ void SynthParser::startColor($Attributes* attributes) {
 						$throwNew($SAXException, $$str({"Invalid Color value: "_s, value}));
 					}
 					$assign(color, $new($ColorUIResource, $$new($Color, argb, hasAlpha)));
-				} catch ($NumberFormatException&) {
-					$var($NumberFormatException, nfe, $catch());
+				} catch ($NumberFormatException& nfe) {
 					$throwNew($SAXException, $$str({"Invalid Color value: "_s, value}));
 				}
 			} else {
 				try {
 					$load($Color);
 					$assign(color, $new($ColorUIResource, $cast($Color, $($nc($($Color::class$->getField($(value->toUpperCase()))))->get($Color::class$)))));
-				} catch ($NoSuchFieldException&) {
-					$var($NoSuchFieldException, nsfe, $catch());
+				} catch ($NoSuchFieldException& nsfe) {
 					$throwNew($SAXException, $$str({"Invalid color name: "_s, value}));
-				} catch ($IllegalAccessException&) {
-					$var($IllegalAccessException, iae, $catch());
+				} catch ($IllegalAccessException& iae) {
 					$throwNew($SAXException, $$str({"Invalid color name: "_s, value}));
 				}
 			}
@@ -769,8 +742,7 @@ void SynthParser::startColor($Attributes* attributes) {
 				} else {
 					try {
 						typeClass = $ReflectUtil::forName($(typeName->substring(0, classIndex)));
-					} catch ($ClassNotFoundException&) {
-						$var($ClassNotFoundException, cnfe, $catch());
+					} catch ($ClassNotFoundException& cnfe) {
 						$throwNew($SAXException, $$str({"Unknown class: "_s, $(typeName->substring(0, classIndex))}));
 					}
 					++classIndex;
@@ -778,11 +750,9 @@ void SynthParser::startColor($Attributes* attributes) {
 				try {
 					$load($ColorType);
 					$nc(this->_colorTypes)->add($cast($ColorType, $(checkCast($($nc($($nc(typeClass)->getField($(typeName->substring(classIndex)))))->get(typeClass)), $ColorType::class$))));
-				} catch ($NoSuchFieldException&) {
-					$var($NoSuchFieldException, nsfe, $catch());
+				} catch ($NoSuchFieldException& nsfe) {
 					$throwNew($SAXException, $$str({"Unable to find color type: "_s, typeName}));
-				} catch ($IllegalAccessException&) {
-					$var($IllegalAccessException, iae, $catch());
+				} catch ($IllegalAccessException& iae) {
 					$throwNew($SAXException, $$str({"Unable to find color type: "_s, typeName}));
 				}
 			}
@@ -849,7 +819,6 @@ void SynthParser::startProperty($Attributes* attributes, Object$* property) {
 			switch (iType) {
 			case 0:
 				{
-					$load($Object);
 					$assign(value, lookup(aValue, $Object::class$));
 					break;
 				}
@@ -874,8 +843,7 @@ void SynthParser::startProperty($Attributes* attributes, Object$* property) {
 				{
 					try {
 						$assign(value, $Integer::valueOf(aValue));
-					} catch ($NumberFormatException&) {
-						$var($NumberFormatException, nfe, $catch());
+					} catch ($NumberFormatException& nfe) {
 						$throwNew($SAXException, $$str({property, " invalid value"_s}));
 					}
 					break;
@@ -949,8 +917,7 @@ void SynthParser::startInsets($Attributes* attributes) {
 			} else if (key->equals(SynthParser::ATTRIBUTE_RIGHT)) {
 				right = $Integer::parseInt($(attributes->getValue(i)));
 			}
-		} catch ($NumberFormatException&) {
-			$var($NumberFormatException, nfe, $catch());
+		} catch ($NumberFormatException& nfe) {
 			$throwNew($SAXException, $$str({"insets: bad integer value for "_s, $(attributes->getValue(i))}));
 		}
 	}
@@ -991,8 +958,7 @@ void SynthParser::startBind($Attributes* attributes) {
 	}
 	try {
 		$nc(this->_factory)->addStyle(style, path, type);
-	} catch ($PatternSyntaxException&) {
-		$var($PatternSyntaxException, pse, $catch());
+	} catch ($PatternSyntaxException& pse) {
 		$throwNew($SAXException, $$str({"bind: "_s, path, " is not a valid regular expression"_s}));
 	}
 }

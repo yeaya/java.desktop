@@ -10,18 +10,6 @@
 #include <java/awt/Rectangle.h>
 #include <java/awt/event/MouseEvent.h>
 #include <java/io/ObjectOutputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/accessibility/AccessibleContext.h>
 #include <javax/swing/JComponent$AccessibleJComponent.h>
 #include <javax/swing/JComponent.h>
@@ -249,7 +237,6 @@ void JTableHeader::finalize() {
 	this->$JComponent::finalize();
 }
 
-
 $String* JTableHeader::uiClassID = nullptr;
 
 void JTableHeader::init$() {
@@ -433,8 +420,8 @@ void JTableHeader::updateUI() {
 				if ($instanceOf($Component, renderer)) {
 					$SwingUtilities::updateComponentTreeUI($cast($Component, renderer));
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$1) {
+				$assign(var$0, var$1);
 			} /*finally*/ {
 				this->updateInProgress = false;
 			}

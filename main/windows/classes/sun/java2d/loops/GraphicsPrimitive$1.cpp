@@ -2,14 +2,6 @@
 
 #include <java/io/FileNotFoundException.h>
 #include <java/io/FileOutputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/loops/GraphicsPrimitive.h>
 #include <jcpp.h>
 
@@ -70,8 +62,7 @@ $Object* GraphicsPrimitive$1::run() {
 	try {
 		$init($GraphicsPrimitive);
 		return $of($new($FileOutputStream, $GraphicsPrimitive::tracefile));
-	} catch ($FileNotFoundException&) {
-		$var($FileNotFoundException, e, $catch());
+	} catch ($FileNotFoundException& e) {
 		return $of(nullptr);
 	}
 	$shouldNotReachHere();

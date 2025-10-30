@@ -6,16 +6,6 @@
 #include <java/awt/Image.h>
 #include <java/awt/image/ImageProducer.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NamedAttribute.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/util/Enumeration.h>
 #include <java/util/Hashtable.h>
@@ -50,11 +40,11 @@ $NamedAttribute BeansAppletContext_Attribute_var$0[] = {
 	{"forRemoval", 'Z', "true"},
 	{}
 };
+
 $CompoundAttribute _BeansAppletContext_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", BeansAppletContext_Attribute_var$0},
 	{}
 };
-
 
 $FieldInfo _BeansAppletContext_FieldInfo_[] = {
 	{"target", "Ljava/applet/Applet;", nullptr, 0, $field(BeansAppletContext, target)},
@@ -102,8 +92,7 @@ void BeansAppletContext::init$($Applet* target) {
 $AudioClip* BeansAppletContext::getAudioClip($URL* url) {
 	try {
 		return $cast($AudioClip, $nc(url)->getContent());
-	} catch ($Exception&) {
-		$var($Exception, ex, $catch());
+	} catch ($Exception& ex) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -128,8 +117,7 @@ $Image* BeansAppletContext::getImage($URL* url) {
 			$var($Image, img, $nc(this->target)->createImage($cast($ImageProducer, o)));
 			$nc(this->imageCache)->put(url, img);
 			return img;
-		} catch ($Exception&) {
-			$var($Exception, ex, $catch());
+		} catch ($Exception& ex) {
 			return nullptr;
 		}
 	}

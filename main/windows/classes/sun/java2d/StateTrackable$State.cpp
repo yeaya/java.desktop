@@ -1,15 +1,6 @@
 #include <sun/java2d/StateTrackable$State.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/StateTrackable.h>
 #include <jcpp.h>
 
@@ -71,13 +62,9 @@ $Object* allocate$StateTrackable$State($Class* clazz) {
 	return $of($alloc(StateTrackable$State));
 }
 
-
 StateTrackable$State* StateTrackable$State::IMMUTABLE = nullptr;
-
 StateTrackable$State* StateTrackable$State::STABLE = nullptr;
-
 StateTrackable$State* StateTrackable$State::DYNAMIC = nullptr;
-
 StateTrackable$State* StateTrackable$State::UNTRACKABLE = nullptr;
 $StateTrackable$StateArray* StateTrackable$State::$VALUES = nullptr;
 

@@ -12,15 +12,6 @@
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
 #include <java/beans/PropertyChangeListener.h>
-#include <java/lang/Boolean.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JToolTip.h>
 #include <javax/swing/LookAndFeel.h>
@@ -125,7 +116,6 @@ $Object* allocate$BasicToolTipUI($Class* clazz) {
 }
 
 BasicToolTipUI* BasicToolTipUI::sharedInstance = nullptr;
-
 $PropertyChangeListener* BasicToolTipUI::sharedPropertyChangedListener = nullptr;
 
 $ComponentUI* BasicToolTipUI::createUI($JComponent* c) {

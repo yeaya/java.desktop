@@ -16,27 +16,13 @@
 #include <java/awt/event/ItemListener.h>
 #include <java/awt/event/WindowAdapter.h>
 #include <java/awt/event/WindowListener.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventObject.h>
 #include <java/util/concurrent/CountDownLatch.h>
 #include <java/util/concurrent/TimeUnit.h>
@@ -346,7 +332,6 @@ void bug4449413::main($StringArray* args) {
 	$init($TimeUnit);
 	bool timeoutHappened = !$nc(bug4449413::latch)->await(2, $TimeUnit::MINUTES);
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug4449413$$Lambda$lambda$main$1$1)));
-	$init($System);
 	$nc($System::out)->println($$str({"Passed: "_s, $$str(!bug4449413::failed)}));
 	if (timeoutHappened || bug4449413::failed) {
 		$throwNew($RuntimeException, "Test failed!"_s);

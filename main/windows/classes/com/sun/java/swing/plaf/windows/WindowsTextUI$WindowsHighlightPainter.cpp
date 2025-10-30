@@ -7,13 +7,6 @@
 #include <java/awt/Shape.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/plaf/ComponentUI.h>
 #include <javax/swing/plaf/TextUI.h>
 #include <javax/swing/text/BadLocationException.h>
@@ -130,8 +123,7 @@ void WindowsTextUI$WindowsHighlightPainter::paint($Graphics* g, int32_t offs0, i
 			}
 			g->fillRect(alloc->x, p1->y, (p1->x - alloc->x), p1->height);
 		}
-	} catch ($BadLocationException&) {
-		$catch();
+	} catch ($BadLocationException& e) {
 	}
 }
 
@@ -179,8 +171,7 @@ $Shape* WindowsTextUI$WindowsHighlightPainter::paintLayer($Graphics* g, int32_t 
 				$nc(g)->fillRect(r->x, r->y, r->width, r->height);
 			}
 			return r;
-		} catch ($BadLocationException&) {
-			$catch();
+		} catch ($BadLocationException& e) {
 		}
 	}
 	return nullptr;

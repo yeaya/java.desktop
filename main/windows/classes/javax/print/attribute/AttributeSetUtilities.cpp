@@ -1,15 +1,6 @@
 #include <javax/print/attribute/AttributeSetUtilities.h>
 
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/Attribute.h>
 #include <javax/print/attribute/AttributeSet.h>
 #include <javax/print/attribute/AttributeSetUtilities$SynchronizedAttributeSet.h>

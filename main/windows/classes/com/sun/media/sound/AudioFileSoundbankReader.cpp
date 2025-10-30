@@ -11,14 +11,6 @@
 #include <java/io/File.h>
 #include <java/io/IOException.h>
 #include <java/io/InputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/util/List.h>
 #include <javax/sound/midi/Instrument.h>
@@ -92,11 +84,9 @@ $Soundbank* AudioFileSoundbankReader::getSoundbank($URL* url) {
 		$var($Soundbank, sbk, getSoundbank(ais));
 		$nc(ais)->close();
 		return sbk;
-	} catch ($UnsupportedAudioFileException&) {
-		$var($UnsupportedAudioFileException, e, $catch());
+	} catch ($UnsupportedAudioFileException& e) {
 		return nullptr;
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -111,10 +101,8 @@ $Soundbank* AudioFileSoundbankReader::getSoundbank($InputStream* stream) {
 		if (sbk != nullptr) {
 			return sbk;
 		}
-	} catch ($UnsupportedAudioFileException&) {
-		$catch();
-	} catch ($IOException&) {
-		$catch();
+	} catch ($UnsupportedAudioFileException& e) {
+	} catch ($IOException& e) {
 	}
 	stream->reset();
 	return nullptr;
@@ -147,8 +135,7 @@ $Soundbank* AudioFileSoundbankReader::getSoundbank($AudioInputStream* ais) {
 		ins->add(performer);
 		sbk->addInstrument(ins);
 		return sbk;
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		return nullptr;
 	}
 	$shouldNotReachHere();
@@ -167,11 +154,9 @@ $Soundbank* AudioFileSoundbankReader::getSoundbank($File* file) {
 		ins->add(performer);
 		sbk->addInstrument(ins);
 		return sbk;
-	} catch ($UnsupportedAudioFileException&) {
-		$var($UnsupportedAudioFileException, e1, $catch());
+	} catch ($UnsupportedAudioFileException& e1) {
 		return nullptr;
-	} catch ($IOException&) {
-		$var($IOException, e, $catch());
+	} catch ($IOException& e) {
 		return nullptr;
 	}
 	$shouldNotReachHere();

@@ -5,22 +5,9 @@
 #include <java/awt/font/NumericShaper$Range.h>
 #include <java/io/ObjectOutputStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Enum.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IndexOutOfBoundsException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/String.h>
-#include <java/lang/StringBuilder.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractSet.h>
 #include <java/util/Arrays.h>
 #include <java/util/Collection.h>
@@ -564,8 +551,7 @@ bool NumericShaper::equals(Object$* o) {
 				return var$5 && $nc(rset)->equals(rhs->rangeSet) && srange == rhs->shapingRange;
 			}
 			return rhs->mask == this->mask && rhs->key == this->key;
-		} catch ($ClassCastException&) {
-			$catch();
+		} catch ($ClassCastException& e) {
 		}
 	}
 	return false;

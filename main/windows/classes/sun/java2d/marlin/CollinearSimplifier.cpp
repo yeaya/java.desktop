@@ -1,16 +1,6 @@
 #include <sun/java2d/marlin/CollinearSimplifier.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/java2d/marlin/CollinearSimplifier$1.h>
 #include <sun/java2d/marlin/CollinearSimplifier$SimplifierState.h>
 #include <sun/java2d/marlin/DPathConsumer2D.h>
@@ -145,7 +135,7 @@ void CollinearSimplifier::moveTo(double x, double y) {
 }
 
 void CollinearSimplifier::lineTo(double x, double y) {
-		$init($CollinearSimplifier$1);
+	$init($CollinearSimplifier$1);
 	{
 		double slope = 0;
 		switch ($nc($CollinearSimplifier$1::$SwitchMap$sun$java2d$marlin$CollinearSimplifier$SimplifierState)->get($nc((this->state))->ordinal())) {

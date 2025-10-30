@@ -1,15 +1,6 @@
 #include <sun/awt/WeakIdentityHashMap$1$1.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
 #include <java/lang/ref/Reference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Iterator.h>
 #include <java/util/Map.h>
 #include <java/util/NoSuchElementException.h>
@@ -91,7 +82,7 @@ void WeakIdentityHashMap$1$1::init$($WeakIdentityHashMap$1* this$1) {
 bool WeakIdentityHashMap$1$1::hasNext() {
 	$useLocalCurrentObjectStackCache();
 	while ($nc(this->iterator)->hasNext()) {
-		if (($assignField(this, next$, $nc(($cast($WeakIdentityHashMap$WeakKey, $($nc(this->iterator)->next()))))->get())) != nullptr) {
+		if (($set(this, next$, $nc(($cast($WeakIdentityHashMap$WeakKey, $($nc(this->iterator)->next()))))->get())) != nullptr) {
 			return true;
 		}
 	}

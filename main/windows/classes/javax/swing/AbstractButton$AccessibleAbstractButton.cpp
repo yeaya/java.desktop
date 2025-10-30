@@ -11,17 +11,7 @@
 #include <java/awt/geom/Rectangle2D$Float.h>
 #include <java/awt/geom/Rectangle2D.h>
 #include <java/awt/geom/RectangularShape.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Number.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/BreakIterator.h>
 #include <java/util/Enumeration.h>
 #include <java/util/Locale.h>
@@ -391,8 +381,7 @@ $Rectangle* AbstractButton$AccessibleAbstractButton::getCharacterBounds(int32_t 
 			$init($Position$Bias);
 			$var($Shape, charShape, view->modelToView(i, shape, $Position$Bias::Forward));
 			return $nc(charShape)->getBounds();
-		} catch ($BadLocationException&) {
-			$var($BadLocationException, e, $catch());
+		} catch ($BadLocationException& e) {
 			return nullptr;
 		}
 	} else {
@@ -427,8 +416,7 @@ $String* AbstractButton$AccessibleAbstractButton::getAtIndex(int32_t part, int32
 		{
 			try {
 				return getText(index, 1);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -440,8 +428,7 @@ $String* AbstractButton$AccessibleAbstractButton::getAtIndex(int32_t part, int32
 				$nc(words)->setText(s);
 				int32_t end = words->following(index);
 				return $nc(s)->substring(words->previous(), end);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -453,8 +440,7 @@ $String* AbstractButton$AccessibleAbstractButton::getAtIndex(int32_t part, int32
 				$nc(sentence)->setText(s);
 				int32_t end = sentence->following(index);
 				return $nc(s)->substring(sentence->previous(), end);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -478,8 +464,7 @@ $String* AbstractButton$AccessibleAbstractButton::getAfterIndex(int32_t part, in
 			}
 			try {
 				return getText(index + 1, 1);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -498,8 +483,7 @@ $String* AbstractButton$AccessibleAbstractButton::getAfterIndex(int32_t part, in
 					return nullptr;
 				}
 				return $nc(s)->substring(start, end);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -518,8 +502,7 @@ $String* AbstractButton$AccessibleAbstractButton::getAfterIndex(int32_t part, in
 					return nullptr;
 				}
 				return $nc(s)->substring(start, end);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -543,8 +526,7 @@ $String* AbstractButton$AccessibleAbstractButton::getBeforeIndex(int32_t part, i
 			}
 			try {
 				return getText(index - 1, 1);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -561,8 +543,7 @@ $String* AbstractButton$AccessibleAbstractButton::getBeforeIndex(int32_t part, i
 					return nullptr;
 				}
 				return $nc(s)->substring(start, end);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}
@@ -579,8 +560,7 @@ $String* AbstractButton$AccessibleAbstractButton::getBeforeIndex(int32_t part, i
 					return nullptr;
 				}
 				return $nc(s)->substring(start, end);
-			} catch ($BadLocationException&) {
-				$var($BadLocationException, e, $catch());
+			} catch ($BadLocationException& e) {
 				return nullptr;
 			}
 		}

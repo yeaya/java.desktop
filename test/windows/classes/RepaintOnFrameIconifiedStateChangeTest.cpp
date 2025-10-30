@@ -16,24 +16,9 @@
 #include <java/awt/Robot.h>
 #include <java/awt/Toolkit.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/InvocationTargetException.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/JButton.h>
 #include <javax/swing/JComponent.h>
@@ -159,7 +144,6 @@ void RepaintOnFrameIconifiedStateChangeTest::main($StringArray* args) {
 	$var($Toolkit, toolkit, $Toolkit::getDefaultToolkit());
 	bool var$0 = !$nc(toolkit)->isFrameStateSupported($JFrame::ICONIFIED);
 	if (var$0 || !$nc(toolkit)->isFrameStateSupported($JFrame::NORMAL)) {
-		$init($System);
 		$nc($System::out)->println("ICONIFIED or NORMAL frame states are notsupported by a toolkit."_s);
 		return;
 	}
@@ -180,7 +164,6 @@ void RepaintOnFrameIconifiedStateChangeTest::main($StringArray* args) {
 				for (int32_t i = 0; i < $nc(RepaintOnFrameIconifiedStateChangeTest::compRedrawn)->length; ++i) {
 					if (!$nc(RepaintOnFrameIconifiedStateChangeTest::compRedrawn)->get(i)) {
 						++notRedrawnCompsCount;
-						$init($System);
 						$nc($System::out)->println($($String::format("Not redrawn component #%d: \'%s\'"_s, $$new($ObjectArray, {
 							$($of($Integer::valueOf(i))),
 							$of($nc(RepaintOnFrameIconifiedStateChangeTest::comps)->get(i))
@@ -190,28 +173,22 @@ void RepaintOnFrameIconifiedStateChangeTest::main($StringArray* args) {
 				if (notRedrawnCompsCount > 0) {
 					$throwNew($RuntimeException, $($String::format("\'%d\' components were not redrawn."_s, $$new($ObjectArray, {$($of($Integer::valueOf(notRedrawnCompsCount)))}))));
 				}
-				$init($System);
 				$nc($System::out)->println("Test passed."_s);
-			} catch ($InterruptedException&) {
-				$var($Exception, e, $catch());
+			} catch ($InterruptedException& e) {
 				$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-			} catch ($InvocationTargetException&) {
-				$var($Exception, e, $catch());
+			} catch ($InvocationTargetException& e) {
 				$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-			} catch ($AWTException&) {
-				$var($Exception, e, $catch());
+			} catch ($AWTException& e) {
 				$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 			}
-		} catch ($Throwable&) {
-			$assign(var$1, $catch());
+		} catch ($Throwable& var$2) {
+			$assign(var$1, var$2);
 		} /*finally*/ {
 			try {
 				$SwingUtilities::invokeAndWait($$new($RepaintOnFrameIconifiedStateChangeTest$5));
-			} catch ($InterruptedException&) {
-				$var($Exception, e, $catch());
+			} catch ($InterruptedException& e) {
 				$throwNew($RuntimeException, static_cast<$Throwable*>(e));
-			} catch ($InvocationTargetException&) {
-				$var($Exception, e, $catch());
+			} catch ($InvocationTargetException& e) {
 				$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 			}
 		}
@@ -227,8 +204,7 @@ void RepaintOnFrameIconifiedStateChangeTest::createGUI() {
 	if (!($instanceOf($MetalLookAndFeel, $($UIManager::getLookAndFeel())))) {
 		try {
 			$UIManager::setLookAndFeel(static_cast<$LookAndFeel*>($$new($MetalLookAndFeel)));
-		} catch ($UnsupportedLookAndFeelException&) {
-			$var($UnsupportedLookAndFeelException, ulafe, $catch());
+		} catch ($UnsupportedLookAndFeelException& ulafe) {
 			$throwNew($RuntimeException, static_cast<$Throwable*>(ulafe));
 		}
 	}

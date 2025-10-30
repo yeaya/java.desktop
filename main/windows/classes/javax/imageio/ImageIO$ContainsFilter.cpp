@@ -1,14 +1,5 @@
 #include <javax/imageio/ImageIO$ContainsFilter.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Method.h>
 #include <javax/imageio/ImageIO.h>
 #include <jcpp.h>
@@ -73,8 +64,7 @@ bool ImageIO$ContainsFilter::filter(Object$* elt) {
 	$beforeCallerSensitive();
 	try {
 		return $ImageIO::contains($cast($StringArray, $($nc(this->method)->invoke(elt, $$new($ObjectArray, 0)))), this->name);
-	} catch ($Exception&) {
-		$var($Exception, e, $catch());
+	} catch ($Exception& e) {
 		return false;
 	}
 	$shouldNotReachHere();

@@ -30,20 +30,8 @@
 #include <java/awt/event/WindowEvent.h>
 #include <java/awt/peer/ComponentPeer.h>
 #include <java/awt/peer/LightweightPeer.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/Long.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
 #include <java/lang/ref/WeakReference.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/security/AccessController.h>
 #include <java/security/PrivilegedAction.h>
 #include <java/util/AbstractCollection.h>
@@ -364,8 +352,7 @@ bool DefaultKeyboardFocusManager::sendMessage($Component* target, $AWTEvent* e) 
 					fxCheckDispatchThread->start();
 					try {
 						fxCheckDispatchThread->join(500);
-					} catch ($InterruptedException&) {
-						$catch();
+					} catch ($InterruptedException& ex) {
 					}
 				}
 			}
@@ -374,8 +361,7 @@ bool DefaultKeyboardFocusManager::sendMessage($Component* target, $AWTEvent* e) 
 				while (!se->dispatched$ && !$nc(targetAppContext)->isDisposed()) {
 					try {
 						$of(se)->wait(1000);
-					} catch ($InterruptedException&) {
-						$var($InterruptedException, ie, $catch());
+					} catch ($InterruptedException& ie) {
 						break;
 					}
 				}

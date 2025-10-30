@@ -11,22 +11,10 @@
 #include <java/io/Reader.h>
 #include <java/io/StringWriter.h>
 #include <java/io/Writer.h>
-#include <java/lang/Array.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
 #include <java/lang/Process.h>
 #include <java/lang/Runtime.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/print/PSPrinterJob.h>
 #include <jcpp.h>
 
@@ -148,18 +136,16 @@ void PSPrinterJob$PrinterSpooler::handleProcessFailure($Process* failedProcess, 
 																				pw->println();
 																				$nc($(pw->append(static_cast<$CharSequence*>("\t\t"_s))))->append($(static_cast<$CharSequence*>(br->readLine())));
 																			}
-																		} catch ($Throwable&) {
-																			$var($Throwable, t$, $catch());
+																		} catch ($Throwable& t$) {
 																			try {
 																				br->close();
-																			} catch ($Throwable&) {
-																				$var($Throwable, x2, $catch());
+																			} catch ($Throwable& x2) {
 																				t$->addSuppressed(x2);
 																			}
 																			$throw(t$);
 																		}
-																	} catch ($Throwable&) {
-																		$assign(var$5, $catch());
+																	} catch ($Throwable& var$6) {
+																		$assign(var$5, var$6);
 																	} /*finally*/ {
 																		br->close();
 																	}
@@ -167,18 +153,16 @@ void PSPrinterJob$PrinterSpooler::handleProcessFailure($Process* failedProcess, 
 																		$throw(var$5);
 																	}
 																}
-															} catch ($Throwable&) {
-																$var($Throwable, t$, $catch());
+															} catch ($Throwable& t$) {
 																try {
 																	isr->close();
-																} catch ($Throwable&) {
-																	$var($Throwable, x2, $catch());
+																} catch ($Throwable& x2) {
 																	t$->addSuppressed(x2);
 																}
 																$throw(t$);
 															}
-														} catch ($Throwable&) {
-															$assign(var$4, $catch());
+														} catch ($Throwable& var$7) {
+															$assign(var$4, var$7);
 														} /*finally*/ {
 															isr->close();
 														}
@@ -186,20 +170,18 @@ void PSPrinterJob$PrinterSpooler::handleProcessFailure($Process* failedProcess, 
 															$throw(var$4);
 														}
 													}
-												} catch ($Throwable&) {
-													$var($Throwable, t$, $catch());
+												} catch ($Throwable& t$) {
 													if (is != nullptr) {
 														try {
 															is->close();
-														} catch ($Throwable&) {
-															$var($Throwable, x2, $catch());
+														} catch ($Throwable& x2) {
 															t$->addSuppressed(x2);
 														}
 													}
 													$throw(t$);
 												}
-											} catch ($Throwable&) {
-												$assign(var$3, $catch());
+											} catch ($Throwable& var$8) {
+												$assign(var$3, var$8);
 											} /*finally*/ {
 												if (is != nullptr) {
 													is->close();
@@ -209,8 +191,8 @@ void PSPrinterJob$PrinterSpooler::handleProcessFailure($Process* failedProcess, 
 												$throw(var$3);
 											}
 										}
-									} catch ($Throwable&) {
-										$assign(var$2, $catch());
+									} catch ($Throwable& var$9) {
+										$assign(var$2, var$9);
 									} /*finally*/ {
 										pw->flush();
 									}
@@ -219,18 +201,16 @@ void PSPrinterJob$PrinterSpooler::handleProcessFailure($Process* failedProcess, 
 									}
 								}
 								$throwNew($IOException, $(sw->toString()));
-							} catch ($Throwable&) {
-								$var($Throwable, t$, $catch());
+							} catch ($Throwable& t$) {
 								try {
 									pw->close();
-								} catch ($Throwable&) {
-									$var($Throwable, x2, $catch());
+								} catch ($Throwable& x2) {
 									t$->addSuppressed(x2);
 								}
 								$throw(t$);
 							}
-						} catch ($Throwable&) {
-							$assign(var$1, $catch());
+						} catch ($Throwable& var$10) {
+							$assign(var$1, var$10);
 						} /*finally*/ {
 							pw->close();
 						}
@@ -238,18 +218,16 @@ void PSPrinterJob$PrinterSpooler::handleProcessFailure($Process* failedProcess, 
 							$throw(var$1);
 						}
 					}
-				} catch ($Throwable&) {
-					$var($Throwable, t$, $catch());
+				} catch ($Throwable& t$) {
 					try {
 						sw->close();
-					} catch ($Throwable&) {
-						$var($Throwable, x2, $catch());
+					} catch ($Throwable& x2) {
 						t$->addSuppressed(x2);
 					}
 					$throw(t$);
 				}
-			} catch ($Throwable&) {
-				$assign(var$0, $catch());
+			} catch ($Throwable& var$11) {
+				$assign(var$0, var$11);
 			} /*finally*/ {
 				sw->close();
 			}
@@ -278,15 +256,13 @@ $Object* PSPrinterJob$PrinterSpooler::run() {
 				if (0 != result) {
 					handleProcessFailure(process, execCmd, result);
 				}
-			} catch ($IOException&) {
-				$var($IOException, ex, $catch());
+			} catch ($IOException& ex) {
 				$set(this, pex, $new($PrinterIOException, ex));
-			} catch ($InterruptedException&) {
-				$var($InterruptedException, ie, $catch());
+			} catch ($InterruptedException& ie) {
 				$set(this, pex, $new($PrinterException, $(ie->toString())));
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$nc(this->this$0->spoolFile)->delete$();
 		}

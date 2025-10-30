@@ -1,13 +1,5 @@
 #include <javax/swing/text/html/HTMLDocument$HTMLReader$BaseAction.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/MalformedURLException.h>
 #include <java/net/URL.h>
 #include <javax/swing/text/MutableAttributeSet.h>
@@ -92,8 +84,7 @@ void HTMLDocument$HTMLReader$BaseAction::start($HTML$Tag* t, $MutableAttributeSe
 			$var($URL, newBase, $new($URL, $nc(this->this$1->this$0)->base, href));
 			$nc(this->this$1->this$0)->setBase(newBase);
 			$nc(this->this$1->this$0)->hasBaseTag$ = true;
-		} catch ($MalformedURLException&) {
-			$catch();
+		} catch ($MalformedURLException& ex) {
 		}
 	}
 	$set($nc(this->this$1->this$0), baseTarget, $cast($String, attr->getAttribute($HTML$Attribute::TARGET)));

@@ -1,23 +1,10 @@
 #include <bug7013453$1$1.h>
 
 #include <bug7013453$1.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/IllegalAccessException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/ReflectiveOperationException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
 #include <java/lang/reflect/Field.h>
-#include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
 using $bug7013453$1 = ::bug7013453$1;
@@ -86,19 +73,16 @@ void bug7013453$1$1::init$($bug7013453$1* this$0, Object$* val$paintManager, $Fi
 }
 
 void bug7013453$1$1::run() {
-	$useLocalCurrentObjectStackCache();
 	$beforeCallerSensitive();
 	try {
 		$Thread::sleep(500);
-	} catch ($InterruptedException&) {
-		$var($InterruptedException, e, $catch());
+	} catch ($InterruptedException& e) {
 		$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 	}
 	$synchronized(this->val$paintManager) {
 		try {
 			$nc(this->val$showingField)->setBoolean(this->val$paintManager, false);
-		} catch ($IllegalAccessException&) {
-			$var($IllegalAccessException, e, $catch());
+		} catch ($IllegalAccessException& e) {
 			$throwNew($RuntimeException, static_cast<$Throwable*>(e));
 		}
 	}

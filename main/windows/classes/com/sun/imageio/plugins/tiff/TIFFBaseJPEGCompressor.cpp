@@ -21,21 +21,6 @@
 #include <java/io/ByteArrayOutputStream.h>
 #include <java/io/IOException.h>
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/Arrays.h>
@@ -308,14 +293,12 @@ $IIOMetadata* TIFFBaseJPEGCompressor::getImageMetadata(bool pruneTables) {
 		$var($Node, tree, $nc(this->JPEGImageMetadata)->getAsTree(TIFFBaseJPEGCompressor::IMAGE_METADATA_NAME));
 		try {
 			pruneNodes(tree, pruneTables);
-		} catch ($IllegalArgumentException&) {
-			$var($IllegalArgumentException, e, $catch());
+		} catch ($IllegalArgumentException& e) {
 			$throwNew($IIOException, "Error pruning unwanted nodes"_s, e);
 		}
 		try {
 			$nc(this->JPEGImageMetadata)->setFromTree(TIFFBaseJPEGCompressor::IMAGE_METADATA_NAME, tree);
-		} catch ($IIOInvalidTreeException&) {
-			$var($IIOInvalidTreeException, e, $catch());
+		} catch ($IIOInvalidTreeException& e) {
 			$throwNew($IIOException, "Cannot set pruned image metadata!"_s, e);
 		}
 	}

@@ -1,16 +1,7 @@
 #include <sun/awt/shell/Win32ShellFolder2$11.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/shell/Win32ShellFolder2.h>
 #include <sun/awt/shell/Win32ShellFolderManager2.h>
 #include <jcpp.h>
@@ -89,10 +80,8 @@ $Object* Win32ShellFolder2$11::call() {
 	if (linkLocationPIDL != 0) {
 		try {
 			$assign(location, $Win32ShellFolderManager2::createShellFolderFromRelativePIDL($(this->this$0->getDesktop()), linkLocationPIDL));
-		} catch ($InterruptedException&) {
-			$catch();
-		} catch ($InternalError&) {
-			$catch();
+		} catch ($InterruptedException& e) {
+		} catch ($InternalError& e) {
 		}
 	}
 	return $of(location);

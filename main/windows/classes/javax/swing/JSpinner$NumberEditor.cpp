@@ -2,17 +2,8 @@
 
 #include <java/awt/Component.h>
 #include <java/awt/ComponentOrientation.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Comparable.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/text/DecimalFormat.h>
 #include <java/text/Format.h>
 #include <java/text/NumberFormat.h>
@@ -151,8 +142,7 @@ void JSpinner$NumberEditor::init$($JSpinner* spinner, $DecimalFormat* format) {
 		$var($String, minString, formatter->valueToString($($nc(model)->getMaximum())));
 		int32_t var$0 = $nc(maxString)->length();
 		ftf->setColumns($Math::max(var$0, $nc(minString)->length()));
-	} catch ($ParseException&) {
-		$catch();
+	} catch ($ParseException& e) {
 	}
 }
 

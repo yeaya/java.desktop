@@ -28,19 +28,8 @@
 #include <java/awt/print/Paper.h>
 #include <java/awt/print/Printable.h>
 #include <java/awt/print/PrinterJob.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
 #include <java/lang/ClassCastException.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/Float.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/awt/image/ByteComponentRaster.h>
 #include <sun/print/PSPrinterJob.h>
 #include <sun/print/PathGraphics.h>
@@ -220,8 +209,7 @@ void PSPathGraphics::drawString($String* str, float x, float y, $Font* font, $Fo
 		if ($nc(psPrinterJob)->setFont($(getFont()))) {
 			try {
 				psPrinterJob->setColor($cast($Color, $(getPaint())));
-			} catch ($ClassCastException&) {
-				$var($ClassCastException, e, $catch());
+			} catch ($ClassCastException& e) {
 				if (oldFont != nullptr) {
 					setFont(oldFont);
 				}

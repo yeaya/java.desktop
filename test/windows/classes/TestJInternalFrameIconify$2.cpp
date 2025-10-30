@@ -3,19 +3,6 @@
 #include <TestJInternalFrameIconify.h>
 #include <java/awt/Component.h>
 #include <java/awt/Window.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JDesktopPane.h>
 #include <javax/swing/JFrame.h>
 #include <javax/swing/JInternalFrame.h>
@@ -91,11 +78,10 @@ void TestJInternalFrameIconify$2::run() {
 			$var($JInternalFrameArray, internalFrames, $nc($TestJInternalFrameIconify::desktopPane)->getAllFrames());
 			if ($nc($nc(internalFrames)->get(0))->isShowing()) {
 				$plusAssignStatic($TestJInternalFrameIconify::errorMessage, $$str({"Test Failed for "_s, this->val$lookAndFeelString, " look and feel\n"_s}));
-				$init($System);
 				$nc($System::err)->println($TestJInternalFrameIconify::errorMessage);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$init($TestJInternalFrameIconify);
 			$nc($TestJInternalFrameIconify::frame)->dispose();

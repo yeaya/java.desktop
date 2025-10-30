@@ -6,16 +6,8 @@
 #include <java/awt/image/DataBuffer.h>
 #include <java/awt/image/Raster.h>
 #include <java/awt/image/WritableRaster.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
 #include <java/lang/InternalError.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/font/GlyphList.h>
 #include <sun/java2d/SunGraphics2D.h>
 #include <sun/java2d/SurfaceData.h>
@@ -143,17 +135,17 @@ void GeneralRenderer::register$() {
 	$useLocalCurrentObjectStackCache();
 	$load(GeneralRenderer);
 	$Class* owner = GeneralRenderer::class$;
-		$init($FillRect);
-		$init($SurfaceType);
-		$init($CompositeType);
-		$init($FillPath);
-		$init($FillSpans);
-		$init($DrawLine);
-		$init($DrawPolygons);
-		$init($DrawPath);
-		$init($DrawRect);
-		$init($DrawGlyphList);
-		$init($DrawGlyphListAA);
+	$init($FillRect);
+	$init($SurfaceType);
+	$init($CompositeType);
+	$init($FillPath);
+	$init($FillSpans);
+	$init($DrawLine);
+	$init($DrawPolygons);
+	$init($DrawPath);
+	$init($DrawRect);
+	$init($DrawGlyphList);
+	$init($DrawGlyphListAA);
 	$var($GraphicsPrimitiveArray, primitives, $new($GraphicsPrimitiveArray, {
 		static_cast<$GraphicsPrimitive*>($$new($GraphicsPrimitiveProxy, owner, "SetFillRectANY"_s, $FillRect::methodSignature, $FillRect::primTypeID, $SurfaceType::AnyColor, $CompositeType::SrcNoEa, $SurfaceType::Any)),
 		static_cast<$GraphicsPrimitive*>($$new($GraphicsPrimitiveProxy, owner, "SetFillPathANY"_s, $FillPath::methodSignature, $FillPath::primTypeID, $SurfaceType::AnyColor, $CompositeType::SrcNoEa, $SurfaceType::Any)),

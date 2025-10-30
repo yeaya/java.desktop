@@ -1,16 +1,6 @@
 #include <com/sun/media/sound/AlawCodec.h>
 
 #include <com/sun/media/sound/AlawCodec$AlawCodecStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/Objects.h>
 #include <java/util/Vector.h>
 #include <javax/sound/sampled/AudioFormat$Encoding.h>
@@ -97,7 +87,7 @@ void AlawCodec::init$() {
 }
 
 $AudioFormat$EncodingArray* AlawCodec::getSourceEncodings() {
-		$init($AudioFormat$Encoding);
+	$init($AudioFormat$Encoding);
 	return $new($AudioFormat$EncodingArray, {
 		$AudioFormat$Encoding::ALAW,
 		$AudioFormat$Encoding::PCM_SIGNED

@@ -3,20 +3,8 @@
 #include <java/io/IOException.h>
 #include <java/io/Reader.h>
 #include <java/io/StringReader.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
 #include <java/lang/IllegalStateException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
 #include <java/lang/Math.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/util/Enumeration.h>
 #include <java/util/HashMap.h>
@@ -261,18 +249,12 @@ $Object* allocate$HTMLDocument($Class* clazz) {
 	return $of($alloc(HTMLDocument));
 }
 
-
 $String* HTMLDocument::TokenThreshold = nullptr;
-
 $String* HTMLDocument::AdditionalComments = nullptr;
-
 $String* HTMLDocument::StyleType = nullptr;
-
 $AttributeSet* HTMLDocument::contentAttributeSet = nullptr;
-
 $String* HTMLDocument::MAP_PROPERTY = nullptr;
 $chars* HTMLDocument::NEWLINE = nullptr;
-
 $String* HTMLDocument::I18NProperty = nullptr;
 
 void HTMLDocument::access$300(HTMLDocument* x0, $DocumentEvent* x1) {
@@ -405,8 +387,8 @@ void HTMLDocument::setParagraphAttributes(int32_t offset, int32_t length, $Attri
 			changes->end();
 			fireChangedUpdate(changes);
 			fireUndoableEditUpdate($$new($UndoableEditEvent, this, changes));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			writeUnlock();
 		}
@@ -547,10 +529,8 @@ void HTMLDocument::updateFrameSet($Element* element, $String* url) {
 		$plusAssign(html, ">"_s);
 		installParserIfNecessary();
 		setOuterHTML(element, html);
-	} catch ($BadLocationException&) {
-		$catch();
-	} catch ($IOException&) {
-		$catch();
+	} catch ($BadLocationException& e1) {
+	} catch ($IOException& ioe) {
 	}
 }
 
@@ -571,8 +551,8 @@ void HTMLDocument::updateFrame($Element* element, $String* url) {
 			changes->end();
 			fireChangedUpdate(changes);
 			fireUndoableEditUpdate($$new($UndoableEditEvent, this, changes));
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			writeUnlock();
 		}
@@ -870,8 +850,8 @@ void HTMLDocument::removeElements($Element* e, int32_t index, int32_t count) {
 			} else {
 				removeElements(e, index, count, start, end);
 			}
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			writeUnlock();
 		}

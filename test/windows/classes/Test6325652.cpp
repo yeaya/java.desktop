@@ -5,15 +5,7 @@
 #include <java/awt/Container.h>
 #include <java/awt/Robot.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Error.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JDesktopPane.h>
 #include <javax/swing/JFrame.h>
@@ -92,7 +84,7 @@ void Test6325652::init$($JFrame* frame) {
 	$useLocalCurrentObjectStackCache();
 	$var($JDesktopPane, desktop, $new($JDesktopPane));
 	desktop->add($(static_cast<$Component*>(create(0))));
-	desktop->add(static_cast<$Component*>(($assignField(this, internal, create(1)))));
+	desktop->add(static_cast<$Component*>(($set(this, internal, create(1)))));
 	$nc(frame)->add(static_cast<$Component*>(desktop));
 }
 

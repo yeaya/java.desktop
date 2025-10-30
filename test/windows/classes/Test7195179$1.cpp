@@ -7,17 +7,6 @@
 #include <java/awt/LayoutManager.h>
 #include <java/awt/LayoutManager2.h>
 #include <java/awt/Window.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/GroupLayout$Alignment.h>
 #include <javax/swing/GroupLayout$Group.h>
 #include <javax/swing/GroupLayout$ParallelGroup.h>
@@ -131,8 +120,8 @@ void Test7195179$1::run() {
 			$nc($Test7195179::frame)->setDefaultCloseOperation($JFrame::DISPOSE_ON_CLOSE);
 			$nc($Test7195179::frame)->pack();
 			$nc($Test7195179::frame)->setVisible(true);
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			$init($Test7195179);
 			if ($Test7195179::frame != nullptr) {

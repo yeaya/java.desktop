@@ -3,16 +3,7 @@
 #include <java/awt/Component.h>
 #include <java/awt/Container.h>
 #include <java/awt/event/ActionEvent.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/Integer.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/NumberFormatException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventObject.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JEditorPane.h>
@@ -104,8 +95,7 @@ void StyledEditorKit$FontSizeAction::actionPerformed($ActionEvent* e) {
 			$var($String, s, e->getActionCommand());
 			try {
 				size = $Integer::parseInt(s, 10);
-			} catch ($NumberFormatException&) {
-				$catch();
+			} catch ($NumberFormatException& nfe) {
 			}
 		}
 		if (size != 0) {

@@ -10,29 +10,14 @@
 #include <java/awt/event/ActionEvent.h>
 #include <java/awt/event/ActionListener.h>
 #include <java/awt/event/KeyEvent.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Boolean.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Exception.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Thread.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/AbstractButton.h>
 #include <javax/swing/BorderFactory.h>
 #include <javax/swing/BoxLayout.h>
@@ -668,14 +653,12 @@ void bug8033699::changeLAF() {
 	$init(bug8033699);
 	$useLocalCurrentObjectStackCache();
 	$var($String, currentLAF, $nc($($UIManager::getLookAndFeel()))->toString());
-	$init($System);
 	$nc($System::out)->println(currentLAF);
 	$assign(currentLAF, $nc(currentLAF)->toLowerCase());
 	if (currentLAF->contains("nimbus"_s)) {
 		try {
 			$UIManager::setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"_s);
-		} catch ($Exception&) {
-			$var($Exception, ex, $catch());
+		} catch ($Exception& ex) {
 			ex->printStackTrace();
 		}
 	}
@@ -842,7 +825,6 @@ void bug8033699::lambda$runTest9$10() {
 void bug8033699::lambda$runTest8$9() {
 	$init(bug8033699);
 	if (!$equals($nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner(), bug8033699::radioBtnSingle)) {
-		$init($System);
 		$nc($System::out)->println("Separate Component added in button group layout"_s);
 		$throwNew($RuntimeException, "Focus is not on Radio Button Single as Expected"_s);
 	}
@@ -851,7 +833,6 @@ void bug8033699::lambda$runTest8$9() {
 void bug8033699::lambda$runTest7$8() {
 	$init(bug8033699);
 	if (!$equals($nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner(), bug8033699::btnMiddle)) {
-		$init($System);
 		$nc($System::out)->println("Separate Component added in button group layout"_s);
 		$throwNew($RuntimeException, "Focus is not on Middle Button as Expected"_s);
 	}
@@ -860,7 +841,6 @@ void bug8033699::lambda$runTest7$8() {
 void bug8033699::lambda$runTest6$7() {
 	$init(bug8033699);
 	if (!$equals($nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner(), bug8033699::radioBtn2)) {
-		$init($System);
 		$nc($System::out)->println("Radio button Group Circle Back To First Button Test"_s);
 		$throwNew($RuntimeException, "Focus is not on Radio Button B as Expected"_s);
 	}
@@ -869,7 +849,6 @@ void bug8033699::lambda$runTest6$7() {
 void bug8033699::lambda$runTest5$6() {
 	$init(bug8033699);
 	if (!$equals($nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner(), bug8033699::radioBtn1)) {
-		$init($System);
 		$nc($System::out)->println("Radio button Group Left/Up Arrow Key Move Focus Failed"_s);
 		$throwNew($RuntimeException, "Focus is not on Radio Button A as Expected"_s);
 	}
@@ -878,7 +857,6 @@ void bug8033699::lambda$runTest5$6() {
 void bug8033699::lambda$runTest4$5() {
 	$init(bug8033699);
 	if (!$equals($nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner(), bug8033699::radioBtn3)) {
-		$init($System);
 		$nc($System::out)->println("Radio button Group UP/LEFT Arrow Key Move Focus Failed"_s);
 		$throwNew($RuntimeException, "Focus is not on Radio Button C as Expected"_s);
 	}
@@ -887,7 +865,6 @@ void bug8033699::lambda$runTest4$5() {
 void bug8033699::lambda$runTest3$4() {
 	$init(bug8033699);
 	if (!$equals($nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner(), bug8033699::radioBtn1)) {
-		$init($System);
 		$nc($System::out)->println("Radio button Group/Non Grouped Radio Button SHIFT-Tab Key Test failed"_s);
 		$throwNew($RuntimeException, "Focus is not on Radio Button A as Expected"_s);
 	}
@@ -896,7 +873,6 @@ void bug8033699::lambda$runTest3$4() {
 void bug8033699::lambda$runTest2$3() {
 	$init(bug8033699);
 	if (!$equals($nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner(), bug8033699::btnEnd)) {
-		$init($System);
 		$nc($System::out)->println("Non Grouped Radio Button Go To Next Component through Tab Key failed"_s);
 		$throwNew($RuntimeException, "Focus is not on Button End as Expected"_s);
 	}
@@ -905,7 +881,6 @@ void bug8033699::lambda$runTest2$3() {
 void bug8033699::lambda$runTest1$2() {
 	$init(bug8033699);
 	if (!$equals($nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner(), bug8033699::radioBtnSingle)) {
-		$init($System);
 		$nc($System::out)->println("Radio Button Group Go To Next Component through Tab Key failed"_s);
 		$throwNew($RuntimeException, "Focus is not on Radio Button Single as Expected"_s);
 	}

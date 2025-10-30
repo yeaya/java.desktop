@@ -2,16 +2,7 @@
 
 #include <java/awt/Image.h>
 #include <java/awt/image/ImageObserver.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
 #include <java/lang/InterruptedException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/Thread.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <sun/print/PeekGraphics.h>
 #include <jcpp.h>
 
@@ -94,8 +85,7 @@ void PeekGraphics$ImageWaiter::waitForDimensions($Image* img) {
 		while (!this->badImage && (this->mWidth < 0 || this->mHeight < 0)) {
 			try {
 				$Thread::sleep(50);
-			} catch ($InterruptedException&) {
-				$catch();
+			} catch ($InterruptedException& e) {
 			}
 			this->mHeight = img->getHeight(this);
 			this->mWidth = img->getWidth(this);

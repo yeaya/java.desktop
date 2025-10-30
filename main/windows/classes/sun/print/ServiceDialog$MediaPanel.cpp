@@ -9,16 +9,6 @@
 #include <java/awt/LayoutManager2.h>
 #include <java/awt/event/ItemEvent.h>
 #include <java/awt/event/ItemListener.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/Double.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventObject.h>
 #include <java/util/MissingResourceException.h>
 #include <java/util/ResourceBundle.h>
@@ -206,14 +196,12 @@ void ServiceDialog$MediaPanel::init$($ServiceDialog* this$0) {
 }
 
 $String* ServiceDialog$MediaPanel::getMediaName($String* key) {
-	$useLocalCurrentObjectStackCache();
 	try {
 		$var($String, newkey, $nc(key)->replace(u' ', u'-'));
 		$assign(newkey, newkey->replace(u'#', u'n'));
 		$init($ServiceDialog);
 		return $nc($ServiceDialog::messageRB)->getString(newkey);
-	} catch ($MissingResourceException&) {
-		$var($MissingResourceException, e, $catch());
+	} catch ($MissingResourceException& e) {
 		return key;
 	}
 	$shouldNotReachHere();

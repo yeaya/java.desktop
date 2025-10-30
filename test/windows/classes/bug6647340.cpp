@@ -8,26 +8,13 @@
 #include <java/awt/Toolkit.h>
 #include <java/awt/Window.h>
 #include <java/beans/PropertyVetoException.h>
-#include <java/io/PrintStream.h>
 #include <java/io/Serializable.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/Throwable.h>
-#include <java/lang/Void.h>
 #include <java/lang/invoke/CallSite.h>
 #include <java/lang/invoke/LambdaMetafactory.h>
 #include <java/lang/invoke/MethodHandle.h>
 #include <java/lang/invoke/MethodHandles$Lookup.h>
 #include <java/lang/invoke/MethodType.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JDesktopPane.h>
 #include <javax/swing/JFrame.h>
@@ -407,8 +394,8 @@ void bug6647340::main($StringArray* args) {
 			$nc(bug6647340::robot)->waitForIdle();
 			$nc(bug6647340::robot)->delay(1000);
 			test->test();
-		} catch ($Throwable&) {
-			$assign(var$0, $catch());
+		} catch ($Throwable& var$1) {
+			$assign(var$0, var$1);
 		} /*finally*/ {
 			if (test->frame != nullptr) {
 				$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug6647340$$Lambda$lambda$main$1$1, test)));
@@ -466,7 +453,6 @@ void bug6647340::test2() {
 void bug6647340::check1() {
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug6647340$$Lambda$lambda$check1$6$6, this)));
 	if (!$nc(this->iconloc)->equals(this->location)) {
-		$init($System);
 		$nc($System::out)->println("First test passed"_s);
 	} else {
 		$throwNew($RuntimeException, "Icon isn\'t shifted with the frame bounds"_s);
@@ -476,7 +462,6 @@ void bug6647340::check1() {
 void bug6647340::check2() {
 	$SwingUtilities::invokeAndWait(static_cast<$Runnable*>($$new(bug6647340$$Lambda$lambda$check1$6$6, this)));
 	if ($nc(this->iconloc)->equals(this->location)) {
-		$init($System);
 		$nc($System::out)->println("Second test passed"_s);
 	} else {
 		$throwNew($RuntimeException, "Icon isn\'t located near the frame bottom"_s);
@@ -486,8 +471,7 @@ void bug6647340::check2() {
 void bug6647340::setIcon(bool b) {
 	try {
 		$nc(this->jif)->setIcon(b);
-	} catch ($PropertyVetoException&) {
-		$var($PropertyVetoException, e, $catch());
+	} catch ($PropertyVetoException& e) {
 		e->printStackTrace();
 	}
 }

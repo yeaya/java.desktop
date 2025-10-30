@@ -1,12 +1,5 @@
 #include <javax/swing/text/DefaultTextUI.h>
 
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/CompoundAttribute.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/plaf/basic/BasicTextUI.h>
 #include <jcpp.h>
 
@@ -18,11 +11,11 @@ using $BasicTextUI = ::javax::swing::plaf::basic::BasicTextUI;
 namespace javax {
 	namespace swing {
 		namespace text {
+
 $CompoundAttribute _DefaultTextUI_Annotations_[] = {
 	{"Ljava/lang/Deprecated;", nullptr},
 	{}
 };
-
 
 $MethodInfo _DefaultTextUI_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PROTECTED, $method(static_cast<void(DefaultTextUI::*)()>(&DefaultTextUI::init$))},

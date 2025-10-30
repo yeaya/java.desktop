@@ -1,18 +1,8 @@
 #include <javax/imageio/metadata/IIOMetadataFormatImpl.h>
 
 #include <com/sun/imageio/plugins/common/StandardMetadataFormat.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
 #include <java/lang/Comparable.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Module.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/AbstractList.h>
 #include <java/util/ArrayList.h>
 #include <java/util/HashMap.h>
@@ -161,7 +151,6 @@ $ClassInfo _IIOMetadataFormatImpl_ClassInfo_ = {
 $Object* allocate$IIOMetadataFormatImpl($Class* clazz) {
 	return $of($alloc(IIOMetadataFormatImpl));
 }
-
 
 $String* IIOMetadataFormatImpl::standardMetadataFormatName = nullptr;
 $IIOMetadataFormat* IIOMetadataFormatImpl::standardFormat = nullptr;
@@ -535,8 +524,7 @@ $String* IIOMetadataFormatImpl::getResource($String* key, $Locale* locale$rename
 	try {
 		$var($ResourceBundle, bundle, $ResourceBundle::getBundle(this->resourceBaseName, locale, $($of(this)->getClass()->getModule())));
 		return $nc(bundle)->getString(key);
-	} catch ($MissingResourceException&) {
-		$var($MissingResourceException, e, $catch());
+	} catch ($MissingResourceException& e) {
 		return nullptr;
 	}
 	$shouldNotReachHere();

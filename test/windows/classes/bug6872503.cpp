@@ -10,19 +10,7 @@
 #include <java/awt/Window.h>
 #include <java/awt/event/AWTEventListener.h>
 #include <java/awt/event/AWTEventListenerProxy.h>
-#include <java/io/PrintStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
 #include <java/lang/Runnable.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/util/EventListener.h>
 #include <javax/swing/JComponent.h>
 #include <javax/swing/JFrame.h>
@@ -162,10 +150,8 @@ bool bug6872503::isLayerEventControllerAdded() {
 	}
 	bool ret = layerEventController != nullptr;
 	if (ret) {
-		$init($System);
 		$nc($System::out)->println("LayerEventController found"_s);
 	} else {
-		$init($System);
 		$nc($System::out)->println("No LayerEventController"_s);
 	}
 	return ret;
@@ -196,10 +182,8 @@ bool bug6872503::layerEventControllerMaskEquals(int64_t mask) {
 	}
 	bool ret = layerEventController != nullptr;
 	if (ret) {
-		$init($System);
 		$nc($System::out)->println("LayerEventController with the correct mask found"_s);
 	} else {
-		$init($System);
 		$nc($System::out)->println("No LayerEventController with the correct mask"_s);
 	}
 	return ret;

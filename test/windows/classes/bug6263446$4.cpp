@@ -1,14 +1,6 @@
 #include <bug6263446$4.h>
 
 #include <bug6263446.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JTree.h>
 #include <javax/swing/tree/TreePath.h>
 #include <jcpp.h>

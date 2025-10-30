@@ -4,17 +4,6 @@
 #include <java/io/File.h>
 #include <java/io/InputStream.h>
 #include <java/io/OutputStream.h>
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/IllegalArgumentException.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/NullPointerException.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <java/net/URL.h>
 #include <java/util/AbstractList.h>
 #include <java/util/AbstractSet.h>
@@ -188,10 +177,8 @@ $Mixer* AudioSystem::getMixer($Mixer$Info* info) {
 			{
 				try {
 					return $nc(provider)->getMixer(info);
-				} catch ($IllegalArgumentException&) {
-					$var($RuntimeException, ignored, $catch());
-				} catch ($NullPointerException&) {
-					$var($RuntimeException, ignored, $catch());
+				} catch ($IllegalArgumentException& ignored) {
+				} catch ($NullPointerException& ignored) {
 				}
 			}
 		}
@@ -266,11 +253,9 @@ $Line* AudioSystem::getLine($Line$Info* info) {
 		if (mixer != nullptr && mixer->isLineSupported(info)) {
 			return mixer->getLine(info);
 		}
-	} catch ($LineUnavailableException&) {
-		$var($LineUnavailableException, e, $catch());
+	} catch ($LineUnavailableException& e) {
 		$assign(lue, e);
-	} catch ($IllegalArgumentException&) {
-		$catch();
+	} catch ($IllegalArgumentException& iae) {
 	}
 	for (int32_t i = 0; i < $nc(providers)->size(); ++i) {
 		$var($MixerProvider, provider, $cast($MixerProvider, providers->get(i)));
@@ -281,11 +266,9 @@ $Line* AudioSystem::getLine($Line$Info* info) {
 				if (isAppropriateMixer(mixer, info, true)) {
 					return $nc(mixer)->getLine(info);
 				}
-			} catch ($LineUnavailableException&) {
-				$var($LineUnavailableException, e, $catch());
+			} catch ($LineUnavailableException& e) {
 				$assign(lue, e);
-			} catch ($IllegalArgumentException&) {
-				$catch();
+			} catch ($IllegalArgumentException& iae) {
 			}
 		}
 	}
@@ -298,11 +281,9 @@ $Line* AudioSystem::getLine($Line$Info* info) {
 				if (isAppropriateMixer(mixer, info, false)) {
 					return $nc(mixer)->getLine(info);
 				}
-			} catch ($LineUnavailableException&) {
-				$var($LineUnavailableException, e, $catch());
+			} catch ($LineUnavailableException& e) {
 				$assign(lue, e);
-			} catch ($IllegalArgumentException&) {
-				$catch();
+			} catch ($IllegalArgumentException& iae) {
 			}
 		}
 	}
@@ -517,8 +498,7 @@ $AudioFileFormat* AudioSystem::getAudioFileFormat($InputStream* stream) {
 			{
 				try {
 					return $nc(reader)->getAudioFileFormat(stream);
-				} catch ($UnsupportedAudioFileException&) {
-					$catch();
+				} catch ($UnsupportedAudioFileException& ignored) {
 				}
 			}
 		}
@@ -537,8 +517,7 @@ $AudioFileFormat* AudioSystem::getAudioFileFormat($URL* url) {
 			{
 				try {
 					return $nc(reader)->getAudioFileFormat(url);
-				} catch ($UnsupportedAudioFileException&) {
-					$catch();
+				} catch ($UnsupportedAudioFileException& ignored) {
 				}
 			}
 		}
@@ -557,8 +536,7 @@ $AudioFileFormat* AudioSystem::getAudioFileFormat($File* file) {
 			{
 				try {
 					return $nc(reader)->getAudioFileFormat(file);
-				} catch ($UnsupportedAudioFileException&) {
-					$catch();
+				} catch ($UnsupportedAudioFileException& ignored) {
 				}
 			}
 		}
@@ -577,8 +555,7 @@ $AudioInputStream* AudioSystem::getAudioInputStream($InputStream* stream) {
 			{
 				try {
 					return $nc(reader)->getAudioInputStream(stream);
-				} catch ($UnsupportedAudioFileException&) {
-					$catch();
+				} catch ($UnsupportedAudioFileException& ignored) {
 				}
 			}
 		}
@@ -597,8 +574,7 @@ $AudioInputStream* AudioSystem::getAudioInputStream($URL* url) {
 			{
 				try {
 					return $nc(reader)->getAudioInputStream(url);
-				} catch ($UnsupportedAudioFileException&) {
-					$catch();
+				} catch ($UnsupportedAudioFileException& ignored) {
 				}
 			}
 		}
@@ -617,8 +593,7 @@ $AudioInputStream* AudioSystem::getAudioInputStream($File* file) {
 			{
 				try {
 					return $nc(reader)->getAudioInputStream(file);
-				} catch ($UnsupportedAudioFileException&) {
-					$catch();
+				} catch ($UnsupportedAudioFileException& ignored) {
 				}
 			}
 		}
@@ -697,8 +672,7 @@ int32_t AudioSystem::write($AudioInputStream* stream, $AudioFileFormat$Type* fil
 			{
 				try {
 					return $nc(writer)->write(stream, fileType, out);
-				} catch ($IllegalArgumentException&) {
-					$catch();
+				} catch ($IllegalArgumentException& ignored) {
 				}
 			}
 		}
@@ -719,8 +693,7 @@ int32_t AudioSystem::write($AudioInputStream* stream, $AudioFileFormat$Type* fil
 			{
 				try {
 					return $nc(writer)->write(stream, fileType, out);
-				} catch ($IllegalArgumentException&) {
-					$catch();
+				} catch ($IllegalArgumentException& ignored) {
 				}
 			}
 		}

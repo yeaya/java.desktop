@@ -1,13 +1,5 @@
 #include <javax/print/attribute/standard/Compression.h>
 
-#include <java/lang/Array.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/FieldInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/String.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/print/attribute/EnumSyntax.h>
 #include <jcpp.h>
 
@@ -87,17 +79,11 @@ void Compression::finalize() {
 	this->$EnumSyntax::finalize();
 }
 
-
 Compression* Compression::NONE = nullptr;
-
 Compression* Compression::DEFLATE = nullptr;
-
 Compression* Compression::GZIP = nullptr;
-
 Compression* Compression::COMPRESS = nullptr;
-
 $StringArray* Compression::myStringTable = nullptr;
-
 $CompressionArray* Compression::myEnumValueTable = nullptr;
 
 void Compression::init$(int32_t value) {

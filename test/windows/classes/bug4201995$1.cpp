@@ -1,18 +1,7 @@
 #include <bug4201995$1.h>
 
 #include <bug4201995.h>
-#include <java/io/PrintStream.h>
 #include <java/lang/CharSequence.h>
-#include <java/lang/Class.h>
-#include <java/lang/ClassInfo.h>
-#include <java/lang/EnclosingMethodInfo.h>
-#include <java/lang/InnerClassInfo.h>
-#include <java/lang/MethodInfo.h>
-#include <java/lang/RuntimeException.h>
-#include <java/lang/String.h>
-#include <java/lang/System.h>
-#include <java/lang/reflect/Constructor.h>
-#include <java/lang/reflect/Method.h>
 #include <javax/swing/JSplitPane.h>
 #include <javax/swing/LookAndFeel.h>
 #include <javax/swing/UIManager.h>
@@ -77,7 +66,6 @@ void bug4201995$1::run() {
 	bool var$0 = "Nimbus"_s->equals($($nc($($UIManager::getLookAndFeel()))->getName()));
 	bool expectedOpaqueValue = !(var$0 || $nc($($nc($($UIManager::getLookAndFeel()))->getName()))->contains("GTK"_s));
 	$var($JSplitPane, sp, $new($JSplitPane));
-	$init($System);
 	$nc($System::out)->println($$str({"sp.isOpaque "_s, $$str(sp->isOpaque())}));
 	if (sp->isOpaque() != expectedOpaqueValue) {
 		$throwNew($RuntimeException, "JSplitPane has incorrect default opaque value"_s);
