@@ -28,7 +28,6 @@ class SpanShapeRenderer$Simple : public ::sun::java2d::pipe::SpanShapeRenderer, 
 	$class(SpanShapeRenderer$Simple, $NO_CLASS_INIT, ::sun::java2d::pipe::SpanShapeRenderer, ::sun::java2d::pipe::LoopBasedPipe)
 public:
 	SpanShapeRenderer$Simple();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

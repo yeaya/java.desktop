@@ -38,7 +38,6 @@ class RTFAttributes$BooleanAttribute : public ::javax::swing::text::rtf::RTFAttr
 	$class(RTFAttributes$BooleanAttribute, 0, ::javax::swing::text::rtf::RTFAttributes$GenericAttribute, ::javax::swing::text::rtf::RTFAttribute)
 public:
 	RTFAttributes$BooleanAttribute();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual int32_t domain() override;
 	virtual bool equals(Object$* arg0) override;

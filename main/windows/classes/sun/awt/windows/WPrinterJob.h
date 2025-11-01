@@ -158,7 +158,6 @@ class WPrinterJob : public ::sun::print::RasterPrinterJob, public ::sun::java2d:
 	$class(WPrinterJob, 0, ::sun::print::RasterPrinterJob, ::sun::java2d::DisposerTarget)
 public:
 	WPrinterJob();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::print::RasterPrinterJob::defaultPage;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

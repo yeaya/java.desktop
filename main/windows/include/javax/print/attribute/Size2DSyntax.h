@@ -21,7 +21,6 @@ class $import Size2DSyntax : public ::java::io::Serializable, public ::java::lan
 	$class(Size2DSyntax, $NO_CLASS_INIT, ::java::io::Serializable, ::java::lang::Cloneable)
 public:
 	Size2DSyntax();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	void init$(float x, float y, int32_t units);

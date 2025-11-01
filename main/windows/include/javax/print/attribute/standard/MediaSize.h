@@ -32,7 +32,6 @@ class $import MediaSize : public ::javax::print::attribute::Size2DSyntax, public
 	$class(MediaSize, 0, ::javax::print::attribute::Size2DSyntax, ::javax::print::attribute::Attribute)
 public:
 	MediaSize();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

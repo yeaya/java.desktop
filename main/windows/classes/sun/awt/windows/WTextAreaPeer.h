@@ -36,7 +36,6 @@ class WTextAreaPeer : public ::sun::awt::windows::WTextComponentPeer, public ::j
 	$class(WTextAreaPeer, $NO_CLASS_INIT, ::sun::awt::windows::WTextComponentPeer, ::java::awt::peer::TextAreaPeer)
 public:
 	WTextAreaPeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::awt::windows::WTextComponentPeer::getColorModel;
 	virtual void applyShape(::sun::java2d::pipe::Region* shape) override;
 	virtual bool canDetermineObscurity() override;

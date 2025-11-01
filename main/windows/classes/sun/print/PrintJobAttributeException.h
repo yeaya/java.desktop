@@ -23,7 +23,6 @@ class PrintJobAttributeException : public ::javax::print::PrintException, public
 	$class(PrintJobAttributeException, $NO_CLASS_INIT, ::javax::print::PrintException, ::javax::print::AttributeException)
 public:
 	PrintJobAttributeException();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -32,7 +32,6 @@ class $export DefaultTreeCellRenderer : public ::javax::swing::JLabel, public ::
 	$class(DefaultTreeCellRenderer, $NO_CLASS_INIT, ::javax::swing::JLabel, ::javax::swing::tree::TreeCellRenderer)
 public:
 	DefaultTreeCellRenderer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JLabel::contains;
 	using ::javax::swing::JLabel::enable;
 	using ::javax::swing::JLabel::getBounds;

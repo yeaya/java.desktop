@@ -24,7 +24,6 @@ class $export JListWithScroll : public ::javax::swing::JList, public ::java::awt
 	$class(JListWithScroll, $NO_CLASS_INIT, ::javax::swing::JList, ::java::awt::dnd::Autoscroll)
 public:
 	JListWithScroll();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JList::getToolTipText;
 	using ::javax::swing::JList::contains;
 	using ::javax::swing::JList::enable;

@@ -34,7 +34,6 @@ class PixelToShapeConverter : public ::sun::java2d::pipe::PixelDrawPipe, public 
 	$class(PixelToShapeConverter, $NO_CLASS_INIT, ::sun::java2d::pipe::PixelDrawPipe, ::sun::java2d::pipe::PixelFillPipe)
 public:
 	PixelToShapeConverter();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

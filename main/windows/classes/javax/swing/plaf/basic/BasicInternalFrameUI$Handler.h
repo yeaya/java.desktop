@@ -59,7 +59,6 @@ class BasicInternalFrameUI$Handler : public ::java::awt::event::ComponentListene
 	$class(BasicInternalFrameUI$Handler, $NO_CLASS_INIT, ::java::awt::event::ComponentListener, ::javax::swing::event::InternalFrameListener, ::java::awt::LayoutManager, ::javax::swing::event::MouseInputListener, ::java::beans::PropertyChangeListener, ::java::awt::event::WindowFocusListener, ::javax::swing::SwingConstants)
 public:
 	BasicInternalFrameUI$Handler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

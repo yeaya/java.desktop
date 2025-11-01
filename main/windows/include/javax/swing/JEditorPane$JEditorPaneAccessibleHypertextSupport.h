@@ -26,7 +26,6 @@ class $import JEditorPane$JEditorPaneAccessibleHypertextSupport : public ::javax
 	$class(JEditorPane$JEditorPaneAccessibleHypertextSupport, $NO_CLASS_INIT, ::javax::swing::JEditorPane$AccessibleJEditorPane, ::javax::accessibility::AccessibleHypertext)
 public:
 	JEditorPane$JEditorPaneAccessibleHypertextSupport();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

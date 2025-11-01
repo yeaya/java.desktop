@@ -21,7 +21,6 @@ class WCheckboxMenuItemPeer : public ::sun::awt::windows::WMenuItemPeer, public 
 	$class(WCheckboxMenuItemPeer, $NO_CLASS_INIT, ::sun::awt::windows::WMenuItemPeer, ::java::awt::peer::CheckboxMenuItemPeer)
 public:
 	WCheckboxMenuItemPeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::awt::windows::WMenuItemPeer::handleAction;
 	virtual $Object* clone() override;
 	virtual void dispose() override;

@@ -40,7 +40,6 @@ class $import JScrollPane$AccessibleJScrollPane : public ::javax::swing::JCompon
 	$class(JScrollPane$AccessibleJScrollPane, $NO_CLASS_INIT, ::javax::swing::JComponent$AccessibleJComponent, ::javax::swing::event::ChangeListener, ::java::beans::PropertyChangeListener)
 public:
 	JScrollPane$AccessibleJScrollPane();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -108,7 +108,6 @@ class $export BufferedImage : public ::java::awt::Image, public ::java::awt::ima
 	$class(BufferedImage, 0, ::java::awt::Image, ::java::awt::image::WritableRenderedImage, ::java::awt::Transparency)
 public:
 	BufferedImage();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

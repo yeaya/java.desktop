@@ -16,7 +16,6 @@ class $import BasicComboBoxRenderer$UIResource : public ::javax::swing::plaf::ba
 	$class(BasicComboBoxRenderer$UIResource, $NO_CLASS_INIT, ::javax::swing::plaf::basic::BasicComboBoxRenderer, ::javax::swing::plaf::UIResource)
 public:
 	BasicComboBoxRenderer$UIResource();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::plaf::basic::BasicComboBoxRenderer::contains;
 	using ::javax::swing::plaf::basic::BasicComboBoxRenderer::enable;
 	using ::javax::swing::plaf::basic::BasicComboBoxRenderer::getBounds;

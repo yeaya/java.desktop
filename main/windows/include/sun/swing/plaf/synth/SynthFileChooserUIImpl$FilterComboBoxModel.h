@@ -40,7 +40,6 @@ class $import SynthFileChooserUIImpl$FilterComboBoxModel : public ::javax::swing
 	$class(SynthFileChooserUIImpl$FilterComboBoxModel, $NO_CLASS_INIT, ::javax::swing::AbstractListModel, ::javax::swing::ComboBoxModel, ::java::beans::PropertyChangeListener)
 public:
 	SynthFileChooserUIImpl$FilterComboBoxModel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual void addListDataListener(::javax::swing::event::ListDataListener* l) override;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

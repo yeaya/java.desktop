@@ -45,7 +45,6 @@ class $export Menu : public ::java::awt::MenuItem, public ::java::awt::MenuConta
 	$class(Menu, 0, ::java::awt::MenuItem, ::java::awt::MenuContainer)
 public:
 	Menu();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::MenuItem::deleteShortcut;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

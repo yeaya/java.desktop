@@ -35,7 +35,6 @@ class bug8023474$Editor : public ::javax::swing::JPanel, public ::javax::swing::
 	$class(bug8023474$Editor, $NO_CLASS_INIT, ::javax::swing::JPanel, ::javax::swing::tree::TreeCellEditor)
 public:
 	bug8023474$Editor();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JPanel::contains;
 	using ::javax::swing::JPanel::enable;
 	using ::javax::swing::JPanel::getBounds;

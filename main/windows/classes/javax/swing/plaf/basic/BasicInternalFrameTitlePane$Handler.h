@@ -38,7 +38,6 @@ class BasicInternalFrameTitlePane$Handler : public ::java::awt::LayoutManager, p
 	$class(BasicInternalFrameTitlePane$Handler, $NO_CLASS_INIT, ::java::awt::LayoutManager, ::java::beans::PropertyChangeListener)
 public:
 	BasicInternalFrameTitlePane$Handler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

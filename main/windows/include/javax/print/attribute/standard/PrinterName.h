@@ -22,7 +22,6 @@ class $import PrinterName : public ::javax::print::attribute::TextSyntax, public
 	$class(PrinterName, $NO_CLASS_INIT, ::javax::print::attribute::TextSyntax, ::javax::print::attribute::PrintServiceAttribute)
 public:
 	PrinterName();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

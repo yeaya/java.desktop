@@ -39,7 +39,6 @@ class $export BasicTreeUI$TreeTransferHandler : public ::javax::swing::TransferH
 	$class(BasicTreeUI$TreeTransferHandler, $NO_CLASS_INIT, ::javax::swing::TransferHandler, ::javax::swing::plaf::UIResource, ::java::util::Comparator)
 public:
 	BasicTreeUI$TreeTransferHandler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -68,7 +68,6 @@ class AccessibleHTML$TextElementInfo$TextAccessibleContext : public ::javax::swi
 	$class(AccessibleHTML$TextElementInfo$TextAccessibleContext, $NO_CLASS_INIT, ::javax::swing::text::html::AccessibleHTML$HTMLAccessibleContext, ::javax::accessibility::AccessibleText)
 public:
 	AccessibleHTML$TextElementInfo$TextAccessibleContext();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

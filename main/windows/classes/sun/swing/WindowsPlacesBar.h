@@ -46,7 +46,6 @@ class $export WindowsPlacesBar : public ::javax::swing::JToolBar, public ::java:
 	$class(WindowsPlacesBar, $NO_CLASS_INIT, ::javax::swing::JToolBar, ::java::awt::event::ActionListener, ::java::beans::PropertyChangeListener)
 public:
 	WindowsPlacesBar();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JToolBar::add;
 	using ::javax::swing::JToolBar::contains;
 	using ::javax::swing::JToolBar::enable;

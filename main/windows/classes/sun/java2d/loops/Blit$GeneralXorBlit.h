@@ -49,7 +49,6 @@ class Blit$GeneralXorBlit : public ::sun::java2d::loops::Blit, public ::sun::jav
 	$class(Blit$GeneralXorBlit, $NO_CLASS_INIT, ::sun::java2d::loops::Blit, ::sun::java2d::loops::GraphicsPrimitive$GeneralBinaryOp)
 public:
 	Blit$GeneralXorBlit();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -86,7 +86,6 @@ class $import BasicComboPopup : public ::javax::swing::JPopupMenu, public ::java
 	$class(BasicComboPopup, 0, ::javax::swing::JPopupMenu, ::javax::swing::plaf::basic::ComboPopup)
 public:
 	BasicComboPopup();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JPopupMenu::add;
 	using ::javax::swing::JPopupMenu::getComponent;
 	using ::javax::swing::JPopupMenu::contains;

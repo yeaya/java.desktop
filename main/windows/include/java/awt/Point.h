@@ -14,7 +14,6 @@ class $import Point : public ::java::awt::geom::Point2D, public ::java::io::Seri
 	$class(Point, $NO_CLASS_INIT, ::java::awt::geom::Point2D, ::java::io::Serializable)
 public:
 	Point();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

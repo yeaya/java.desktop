@@ -62,7 +62,6 @@ class $import DefaultTreeSelectionModel : public ::java::lang::Cloneable, public
 	$class(DefaultTreeSelectionModel, 0, ::java::lang::Cloneable, ::java::io::Serializable, ::javax::swing::tree::TreeSelectionModel)
 public:
 	DefaultTreeSelectionModel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

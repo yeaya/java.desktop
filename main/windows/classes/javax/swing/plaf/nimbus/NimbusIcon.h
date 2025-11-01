@@ -37,7 +37,6 @@ class NimbusIcon : public ::javax::swing::plaf::synth::SynthIcon, public ::javax
 	$class(NimbusIcon, $NO_CLASS_INIT, ::javax::swing::plaf::synth::SynthIcon, ::javax::swing::plaf::UIResource)
 public:
 	NimbusIcon();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::plaf::synth::SynthIcon::getIconWidth;
 	using ::javax::swing::plaf::synth::SynthIcon::getIconHeight;
 	virtual $Object* clone() override;

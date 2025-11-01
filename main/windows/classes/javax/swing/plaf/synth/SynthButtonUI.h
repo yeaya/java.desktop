@@ -56,7 +56,6 @@ class $export SynthButtonUI : public ::javax::swing::plaf::basic::BasicButtonUI,
 	$class(SynthButtonUI, 0, ::javax::swing::plaf::basic::BasicButtonUI, ::java::beans::PropertyChangeListener, ::javax::swing::plaf::synth::SynthUI)
 public:
 	SynthButtonUI();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::plaf::basic::BasicButtonUI::getTextShiftOffset;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

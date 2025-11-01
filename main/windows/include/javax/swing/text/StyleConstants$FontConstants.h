@@ -16,7 +16,6 @@ class $import StyleConstants$FontConstants : public ::javax::swing::text::StyleC
 	$class(StyleConstants$FontConstants, $NO_CLASS_INIT, ::javax::swing::text::StyleConstants, ::javax::swing::text::AttributeSet$FontAttribute, ::javax::swing::text::AttributeSet$CharacterAttribute)
 public:
 	StyleConstants$FontConstants();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

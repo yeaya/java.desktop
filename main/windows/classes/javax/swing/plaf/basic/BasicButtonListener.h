@@ -56,7 +56,6 @@ class $export BasicButtonListener : public ::java::awt::event::MouseListener, pu
 	$class(BasicButtonListener, $NO_CLASS_INIT, ::java::awt::event::MouseListener, ::java::awt::event::MouseMotionListener, ::java::awt::event::FocusListener, ::javax::swing::event::ChangeListener, ::java::beans::PropertyChangeListener)
 public:
 	BasicButtonListener();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -113,7 +113,6 @@ class Win32PrintService : public ::javax::print::PrintService, public ::sun::pri
 	$class(Win32PrintService, 0, ::javax::print::PrintService, ::sun::print::AttributeUpdater, ::sun::print::SunPrinterJobService)
 public:
 	Win32PrintService();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	void init$($String* name);

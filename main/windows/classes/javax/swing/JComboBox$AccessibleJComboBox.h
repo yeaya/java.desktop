@@ -30,7 +30,6 @@ class $export JComboBox$AccessibleJComboBox : public ::javax::swing::JComponent$
 	$class(JComboBox$AccessibleJComboBox, $NO_CLASS_INIT, ::javax::swing::JComponent$AccessibleJComponent, ::javax::accessibility::AccessibleAction, ::javax::accessibility::AccessibleSelection)
 public:
 	JComboBox$AccessibleJComboBox();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

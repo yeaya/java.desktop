@@ -25,7 +25,6 @@ class JSlider$1SmartHashtable : public ::java::util::Hashtable, public ::java::b
 	$class(JSlider$1SmartHashtable, $NO_CLASS_INIT, ::java::util::Hashtable, ::java::beans::PropertyChangeListener)
 public:
 	JSlider$1SmartHashtable();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

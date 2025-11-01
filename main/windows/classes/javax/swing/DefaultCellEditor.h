@@ -37,7 +37,6 @@ class $export DefaultCellEditor : public ::javax::swing::AbstractCellEditor, pub
 	$class(DefaultCellEditor, $NO_CLASS_INIT, ::javax::swing::AbstractCellEditor, ::javax::swing::table::TableCellEditor, ::javax::swing::tree::TreeCellEditor)
 public:
 	DefaultCellEditor();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual void addCellEditorListener(::javax::swing::event::CellEditorListener* l) override;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

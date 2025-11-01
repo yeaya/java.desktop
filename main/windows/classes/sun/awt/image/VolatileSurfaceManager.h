@@ -41,7 +41,6 @@ class VolatileSurfaceManager : public ::sun::awt::image::SurfaceManager, public 
 	$class(VolatileSurfaceManager, $NO_CLASS_INIT, ::sun::awt::image::SurfaceManager, ::sun::awt::DisplayChangedListener)
 public:
 	VolatileSurfaceManager();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::awt::image::SurfaceManager::flush;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

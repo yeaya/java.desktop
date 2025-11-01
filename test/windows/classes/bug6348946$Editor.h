@@ -23,7 +23,6 @@ class bug6348946$Editor : public ::javax::swing::AbstractCellEditor, public ::ja
 	$class(bug6348946$Editor, $NO_CLASS_INIT, ::javax::swing::AbstractCellEditor, ::javax::swing::table::TableCellEditor)
 public:
 	bug6348946$Editor();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual void addCellEditorListener(::javax::swing::event::CellEditorListener* arg0) override;
 	virtual void cancelCellEditing() override;
 	virtual $Object* clone() override;

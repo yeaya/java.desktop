@@ -16,7 +16,6 @@ class $import JobMediaSheetsCompleted : public ::javax::print::attribute::Intege
 	$class(JobMediaSheetsCompleted, $NO_CLASS_INIT, ::javax::print::attribute::IntegerSyntax, ::javax::print::attribute::PrintJobAttribute)
 public:
 	JobMediaSheetsCompleted();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

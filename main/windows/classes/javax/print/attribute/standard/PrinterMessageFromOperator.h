@@ -22,7 +22,6 @@ class $export PrinterMessageFromOperator : public ::javax::print::attribute::Tex
 	$class(PrinterMessageFromOperator, $NO_CLASS_INIT, ::javax::print::attribute::TextSyntax, ::javax::print::attribute::PrintServiceAttribute)
 public:
 	PrinterMessageFromOperator();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

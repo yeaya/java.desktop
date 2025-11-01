@@ -52,7 +52,6 @@ class $export LayerUI : public ::javax::swing::plaf::ComponentUI, public ::java:
 	$class(LayerUI, $NO_CLASS_INIT, ::javax::swing::plaf::ComponentUI, ::java::io::Serializable)
 public:
 	LayerUI();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

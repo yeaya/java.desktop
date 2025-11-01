@@ -53,7 +53,6 @@ class BufferedRenderPipe : public ::sun::java2d::pipe::PixelDrawPipe, public ::s
 	$class(BufferedRenderPipe, $NO_CLASS_INIT, ::sun::java2d::pipe::PixelDrawPipe, ::sun::java2d::pipe::PixelFillPipe, ::sun::java2d::pipe::ShapeDrawPipe, ::sun::java2d::pipe::ParallelogramPipe)
 public:
 	BufferedRenderPipe();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

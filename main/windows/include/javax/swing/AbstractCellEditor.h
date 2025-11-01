@@ -30,7 +30,6 @@ class $import AbstractCellEditor : public ::javax::swing::CellEditor, public ::j
 	$class(AbstractCellEditor, $NO_CLASS_INIT, ::javax::swing::CellEditor, ::java::io::Serializable)
 public:
 	AbstractCellEditor();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

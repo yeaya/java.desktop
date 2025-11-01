@@ -30,7 +30,6 @@ class $export BeanContextServicesSupport$BCSSProxyServiceProvider : public ::jav
 	$class(BeanContextServicesSupport$BCSSProxyServiceProvider, $NO_CLASS_INIT, ::java::beans::beancontext::BeanContextServiceProvider, ::java::beans::beancontext::BeanContextServiceRevokedListener)
 public:
 	BeanContextServicesSupport$BCSSProxyServiceProvider();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

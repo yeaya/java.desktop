@@ -28,7 +28,6 @@ class $export WindowsBorders$ToolBarBorder : public ::javax::swing::border::Abst
 	$class(WindowsBorders$ToolBarBorder, $NO_CLASS_INIT, ::javax::swing::border::AbstractBorder, ::javax::swing::plaf::UIResource, ::javax::swing::SwingConstants)
 public:
 	WindowsBorders$ToolBarBorder();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::border::AbstractBorder::getBorderInsets;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

@@ -42,7 +42,6 @@ class DirectAudioDevice$DirectClip : public ::com::sun::media::sound::DirectAudi
 	$class(DirectAudioDevice$DirectClip, $NO_CLASS_INIT, ::com::sun::media::sound::DirectAudioDevice$DirectDL, ::java::lang::Runnable, ::com::sun::media::sound::AutoClosingClip)
 public:
 	DirectAudioDevice$DirectClip();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual void addLineListener(::javax::sound::sampled::LineListener* listener) override;
 	virtual int32_t available() override;
 	virtual $Object* clone() override;

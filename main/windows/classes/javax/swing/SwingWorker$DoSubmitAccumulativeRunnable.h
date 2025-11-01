@@ -30,7 +30,6 @@ class SwingWorker$DoSubmitAccumulativeRunnable : public ::sun::swing::Accumulati
 	$class(SwingWorker$DoSubmitAccumulativeRunnable, $NO_CLASS_INIT, ::sun::swing::AccumulativeRunnable, ::java::awt::event::ActionListener)
 public:
 	SwingWorker$DoSubmitAccumulativeRunnable();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -25,7 +25,6 @@ class $import ModalityEvent : public ::java::awt::AWTEvent, public ::java::awt::
 	$class(ModalityEvent, $NO_CLASS_INIT, ::java::awt::AWTEvent, ::java::awt::ActiveEvent)
 public:
 	ModalityEvent();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

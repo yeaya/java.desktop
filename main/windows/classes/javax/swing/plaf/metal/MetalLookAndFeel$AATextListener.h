@@ -32,7 +32,6 @@ class $export MetalLookAndFeel$AATextListener : public ::java::lang::ref::WeakRe
 	$class(MetalLookAndFeel$AATextListener, $NO_CLASS_INIT, ::java::lang::ref::WeakReference, ::java::beans::PropertyChangeListener)
 public:
 	MetalLookAndFeel$AATextListener();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

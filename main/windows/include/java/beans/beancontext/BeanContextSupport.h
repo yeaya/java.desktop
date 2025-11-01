@@ -57,7 +57,6 @@ class $import BeanContextSupport : public ::java::beans::beancontext::BeanContex
 	$class(BeanContextSupport, $NO_CLASS_INIT, ::java::beans::beancontext::BeanContextChildSupport, ::java::beans::beancontext::BeanContext, ::java::beans::PropertyChangeListener, ::java::beans::VetoableChangeListener)
 public:
 	BeanContextSupport();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual void addPropertyChangeListener($String* name, ::java::beans::PropertyChangeListener* pcl) override;
 	virtual void addVetoableChangeListener($String* name, ::java::beans::VetoableChangeListener* vcl) override;
 	virtual $Object* clone() override;

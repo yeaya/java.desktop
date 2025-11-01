@@ -38,7 +38,6 @@ class SynthComboBoxUI$SynthComboBoxRenderer : public ::javax::swing::JLabel, pub
 	$class(SynthComboBoxUI$SynthComboBoxRenderer, $NO_CLASS_INIT, ::javax::swing::JLabel, ::javax::swing::ListCellRenderer, ::javax::swing::plaf::UIResource)
 public:
 	SynthComboBoxUI$SynthComboBoxRenderer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JLabel::contains;
 	using ::javax::swing::JLabel::enable;
 	using ::javax::swing::JLabel::getBounds;

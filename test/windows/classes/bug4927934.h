@@ -47,7 +47,6 @@ class $export bug4927934 : public ::javax::swing::event::TreeSelectionListener, 
 	$class(bug4927934, 0, ::javax::swing::event::TreeSelectionListener, ::javax::swing::event::TreeExpansionListener, ::java::awt::event::FocusListener)
 public:
 	bug4927934();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -15,7 +15,6 @@ class $import InsetsUIResource : public ::java::awt::Insets, public ::javax::swi
 	$class(InsetsUIResource, $NO_CLASS_INIT, ::java::awt::Insets, ::javax::swing::plaf::UIResource)
 public:
 	InsetsUIResource();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* obj) override;
 	virtual void finalize() override;

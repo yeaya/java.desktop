@@ -60,7 +60,6 @@ class $import BasicTextUI$UpdateHandler : public ::java::beans::PropertyChangeLi
 	$class(BasicTextUI$UpdateHandler, $NO_CLASS_INIT, ::java::beans::PropertyChangeListener, ::javax::swing::event::DocumentListener, ::java::awt::LayoutManager2, ::javax::swing::plaf::UIResource)
 public:
 	BasicTextUI$UpdateHandler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -54,7 +54,6 @@ class $export PlainView : public ::javax::swing::text::View, public ::javax::swi
 	$class(PlainView, $NO_CLASS_INIT, ::javax::swing::text::View, ::javax::swing::text::TabExpander)
 public:
 	PlainView();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

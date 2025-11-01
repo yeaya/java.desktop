@@ -31,7 +31,6 @@ class $import MenuItem$AccessibleAWTMenuItem : public ::java::awt::MenuComponent
 	$class(MenuItem$AccessibleAWTMenuItem, $NO_CLASS_INIT, ::java::awt::MenuComponent$AccessibleAWTMenuComponent, ::javax::accessibility::AccessibleAction, ::javax::accessibility::AccessibleValue)
 public:
 	MenuItem$AccessibleAWTMenuItem();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

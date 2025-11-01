@@ -48,7 +48,6 @@ class SynthInternalFrameTitlePane : public ::javax::swing::plaf::basic::BasicInt
 	$class(SynthInternalFrameTitlePane, $NO_CLASS_INIT, ::javax::swing::plaf::basic::BasicInternalFrameTitlePane, ::javax::swing::plaf::synth::SynthUI, ::java::beans::PropertyChangeListener)
 public:
 	SynthInternalFrameTitlePane();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::plaf::basic::BasicInternalFrameTitlePane::addSystemMenuItems;
 	using ::javax::swing::plaf::basic::BasicInternalFrameTitlePane::contains;
 	using ::javax::swing::plaf::basic::BasicInternalFrameTitlePane::enable;

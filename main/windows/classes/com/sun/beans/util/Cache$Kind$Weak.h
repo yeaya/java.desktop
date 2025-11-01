@@ -24,7 +24,6 @@ class Cache$Kind$Weak : public ::java::lang::ref::WeakReference, public ::com::s
 	$class(Cache$Kind$Weak, $NO_CLASS_INIT, ::java::lang::ref::WeakReference, ::com::sun::beans::util::Cache$Ref)
 public:
 	Cache$Kind$Weak();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

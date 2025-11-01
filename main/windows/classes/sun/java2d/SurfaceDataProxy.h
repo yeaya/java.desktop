@@ -36,7 +36,6 @@ class SurfaceDataProxy : public ::sun::awt::DisplayChangedListener, public ::sun
 	$class(SurfaceDataProxy, 0, ::sun::awt::DisplayChangedListener, ::sun::awt::image::SurfaceManager$FlushableCacheData)
 public:
 	SurfaceDataProxy();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

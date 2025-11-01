@@ -34,7 +34,6 @@ class $import Canvas : public ::java::awt::Component, public ::javax::accessibil
 	$class(Canvas, 0, ::java::awt::Component, ::javax::accessibility::Accessible)
 public:
 	Canvas();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

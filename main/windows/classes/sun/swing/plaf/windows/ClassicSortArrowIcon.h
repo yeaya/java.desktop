@@ -27,7 +27,6 @@ class ClassicSortArrowIcon : public ::javax::swing::Icon, public ::javax::swing:
 	$class(ClassicSortArrowIcon, $NO_CLASS_INIT, ::javax::swing::Icon, ::javax::swing::plaf::UIResource, ::java::io::Serializable)
 public:
 	ClassicSortArrowIcon();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

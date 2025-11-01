@@ -28,7 +28,6 @@ class FontLineMetrics : public ::java::awt::font::LineMetrics, public ::java::la
 	$class(FontLineMetrics, $NO_CLASS_INIT, ::java::awt::font::LineMetrics, ::java::lang::Cloneable)
 public:
 	FontLineMetrics();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual void finalize() override;
 	void init$(int32_t numchars, ::sun::font::CoreMetrics* cm, ::java::awt::font::FontRenderContext* frc);
 	virtual $Object* clone() override;

@@ -56,7 +56,6 @@ class $import SunGraphicsEnvironment : public ::java::awt::GraphicsEnvironment, 
 	$class(SunGraphicsEnvironment, 0, ::java::awt::GraphicsEnvironment, ::sun::awt::DisplayChangedListener)
 public:
 	SunGraphicsEnvironment();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -49,7 +49,6 @@ class $export BorderLayout : public ::java::awt::LayoutManager2, public ::java::
 	$class(BorderLayout, 0, ::java::awt::LayoutManager2, ::java::io::Serializable)
 public:
 	BorderLayout();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

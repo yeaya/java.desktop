@@ -67,7 +67,6 @@ class D3DGraphicsConfig : public ::sun::awt::Win32GraphicsConfig, public ::sun::
 	$class(D3DGraphicsConfig, 0, ::sun::awt::Win32GraphicsConfig, ::sun::java2d::pipe::hw::AccelGraphicsConfig)
 public:
 	D3DGraphicsConfig();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::awt::Win32GraphicsConfig::getColorModel;
 	using ::sun::awt::Win32GraphicsConfig::createCompatibleVolatileImage;
 	virtual $Object* clone() override;

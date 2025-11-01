@@ -24,7 +24,6 @@ class BasicIconFactory$CheckBoxMenuItemIcon : public ::javax::swing::Icon, publi
 	$class(BasicIconFactory$CheckBoxMenuItemIcon, $NO_CLASS_INIT, ::javax::swing::Icon, ::javax::swing::plaf::UIResource, ::java::io::Serializable)
 public:
 	BasicIconFactory$CheckBoxMenuItemIcon();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

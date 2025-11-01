@@ -30,7 +30,6 @@ class InputMethodJFrame : public ::javax::swing::JFrame, public ::sun::awt::im::
 	$class(InputMethodJFrame, $NO_CLASS_INIT, ::javax::swing::JFrame, ::sun::awt::im::InputMethodWindow)
 public:
 	InputMethodJFrame();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JFrame::add;
 	using ::javax::swing::JFrame::getMousePosition;
 	virtual $Object* clone() override;

@@ -36,7 +36,6 @@ class $import DefaultFormatter : public ::javax::swing::JFormattedTextField$Abst
 	$class(DefaultFormatter, $NO_CLASS_INIT, ::javax::swing::JFormattedTextField$AbstractFormatter, ::java::lang::Cloneable)
 public:
 	DefaultFormatter();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

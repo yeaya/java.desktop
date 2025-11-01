@@ -84,7 +84,6 @@ class ProxyGraphics2D : public ::java::awt::Graphics2D, public ::java::awt::prin
 	$class(ProxyGraphics2D, $HAS_FINALIZE | $NO_CLASS_INIT, ::java::awt::Graphics2D, ::java::awt::print::PrinterGraphics)
 public:
 	ProxyGraphics2D();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Graphics2D::create;
 	using ::java::awt::Graphics2D::getFontMetrics;
 	using ::java::awt::Graphics2D::drawPolygon;

@@ -24,7 +24,6 @@ class EmbeddedFrame$NullEmbeddedFramePeer : public ::sun::awt::NullComponentPeer
 	$class(EmbeddedFrame$NullEmbeddedFramePeer, $NO_CLASS_INIT, ::sun::awt::NullComponentPeer, ::java::awt::peer::FramePeer)
 public:
 	EmbeddedFrame$NullEmbeddedFramePeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::awt::NullComponentPeer::handleEvent;
 	virtual void applyShape(::sun::java2d::pipe::Region* shape) override;
 	virtual void beginLayout() override;

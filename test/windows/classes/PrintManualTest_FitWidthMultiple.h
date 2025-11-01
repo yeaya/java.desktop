@@ -26,7 +26,6 @@ class $export PrintManualTest_FitWidthMultiple : public ::javax::swing::JTable, 
 	$class(PrintManualTest_FitWidthMultiple, 0, ::javax::swing::JTable, ::java::lang::Runnable)
 public:
 	PrintManualTest_FitWidthMultiple();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JTable::getToolTipText;
 	using ::javax::swing::JTable::contains;
 	using ::javax::swing::JTable::enable;

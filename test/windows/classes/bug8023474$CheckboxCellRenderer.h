@@ -23,7 +23,6 @@ class bug8023474$CheckboxCellRenderer : public ::javax::swing::JPanel, public ::
 	$class(bug8023474$CheckboxCellRenderer, $NO_CLASS_INIT, ::javax::swing::JPanel, ::javax::swing::tree::TreeCellRenderer)
 public:
 	bug8023474$CheckboxCellRenderer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JPanel::contains;
 	using ::javax::swing::JPanel::enable;
 	using ::javax::swing::JPanel::getBounds;

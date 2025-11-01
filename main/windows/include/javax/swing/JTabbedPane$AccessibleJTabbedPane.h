@@ -39,7 +39,6 @@ class $import JTabbedPane$AccessibleJTabbedPane : public ::javax::swing::JCompon
 	$class(JTabbedPane$AccessibleJTabbedPane, $NO_CLASS_INIT, ::javax::swing::JComponent$AccessibleJComponent, ::javax::accessibility::AccessibleSelection, ::javax::swing::event::ChangeListener)
 public:
 	JTabbedPane$AccessibleJTabbedPane();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

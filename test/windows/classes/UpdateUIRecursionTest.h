@@ -30,7 +30,6 @@ class $export UpdateUIRecursionTest : public ::javax::swing::JFrame, public ::ja
 	$class(UpdateUIRecursionTest, $NO_CLASS_INIT, ::javax::swing::JFrame, ::javax::swing::tree::TreeCellRenderer)
 public:
 	UpdateUIRecursionTest();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JFrame::add;
 	using ::javax::swing::JFrame::getMousePosition;
 	virtual $Object* clone() override;

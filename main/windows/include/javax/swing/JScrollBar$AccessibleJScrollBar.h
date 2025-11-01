@@ -31,7 +31,6 @@ class $import JScrollBar$AccessibleJScrollBar : public ::javax::swing::JComponen
 	$class(JScrollBar$AccessibleJScrollBar, $NO_CLASS_INIT, ::javax::swing::JComponent$AccessibleJComponent, ::javax::accessibility::AccessibleValue)
 public:
 	JScrollBar$AccessibleJScrollBar();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

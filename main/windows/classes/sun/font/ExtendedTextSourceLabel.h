@@ -52,7 +52,6 @@ class ExtendedTextSourceLabel : public ::sun::font::ExtendedTextLabel, public ::
 	$class(ExtendedTextSourceLabel, 0, ::sun::font::ExtendedTextLabel, ::sun::font::Decoration$Label)
 public:
 	ExtendedTextSourceLabel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::font::ExtendedTextLabel::getCharVisualBounds;
 	using ::sun::font::ExtendedTextLabel::getVisualBounds;
 	using ::sun::font::ExtendedTextLabel::getAlignBounds;

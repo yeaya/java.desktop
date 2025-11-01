@@ -15,7 +15,6 @@ class $import DefaultTableCellRenderer$UIResource : public ::javax::swing::table
 	$class(DefaultTableCellRenderer$UIResource, $NO_CLASS_INIT, ::javax::swing::table::DefaultTableCellRenderer, ::javax::swing::plaf::UIResource)
 public:
 	DefaultTableCellRenderer$UIResource();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::table::DefaultTableCellRenderer::firePropertyChange;
 	using ::javax::swing::table::DefaultTableCellRenderer::contains;
 	using ::javax::swing::table::DefaultTableCellRenderer::enable;

@@ -15,7 +15,6 @@ class AttributeSetUtilities$SynchronizedPrintJobAttributeSet : public ::javax::p
 	$class(AttributeSetUtilities$SynchronizedPrintJobAttributeSet, $NO_CLASS_INIT, ::javax::print::attribute::AttributeSetUtilities$SynchronizedAttributeSet, ::javax::print::attribute::PrintJobAttributeSet)
 public:
 	AttributeSetUtilities$SynchronizedPrintJobAttributeSet();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool add(::javax::print::attribute::Attribute* attribute) override;
 	virtual bool addAll(::javax::print::attribute::AttributeSet* attributes) override;
 	virtual void clear() override;

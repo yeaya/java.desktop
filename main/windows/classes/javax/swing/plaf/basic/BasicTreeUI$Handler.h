@@ -70,7 +70,6 @@ class BasicTreeUI$Handler : public ::javax::swing::event::CellEditorListener, pu
 	$class(BasicTreeUI$Handler, $NO_CLASS_INIT, ::javax::swing::event::CellEditorListener, ::java::awt::event::FocusListener, ::java::awt::event::KeyListener, ::java::awt::event::MouseListener, ::java::awt::event::MouseMotionListener, ::java::beans::PropertyChangeListener, ::javax::swing::event::TreeExpansionListener, ::javax::swing::event::TreeModelListener, ::javax::swing::event::TreeSelectionListener, ::javax::swing::plaf::basic::DragRecognitionSupport$BeforeDrag)
 public:
 	BasicTreeUI$Handler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

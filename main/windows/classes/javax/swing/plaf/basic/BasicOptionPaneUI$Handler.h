@@ -40,7 +40,6 @@ class BasicOptionPaneUI$Handler : public ::java::awt::event::ActionListener, pub
 	$class(BasicOptionPaneUI$Handler, $NO_CLASS_INIT, ::java::awt::event::ActionListener, ::java::awt::event::MouseListener, ::java::beans::PropertyChangeListener)
 public:
 	BasicOptionPaneUI$Handler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

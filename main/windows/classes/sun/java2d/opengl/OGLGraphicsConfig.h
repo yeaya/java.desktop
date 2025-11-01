@@ -19,7 +19,6 @@ namespace sun {
 class OGLGraphicsConfig : public ::sun::java2d::pipe::hw::AccelGraphicsConfig, public ::sun::awt::image::SurfaceManager$ProxiedGraphicsConfig {
 	$interface(OGLGraphicsConfig, $NO_CLASS_INIT, ::sun::java2d::pipe::hw::AccelGraphicsConfig, ::sun::awt::image::SurfaceManager$ProxiedGraphicsConfig)
 public:
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual ::sun::java2d::SurfaceData* createManagedSurface(int32_t w, int32_t h, int32_t transparency) {return nullptr;}
 	virtual bool equals(Object$* arg0) override;

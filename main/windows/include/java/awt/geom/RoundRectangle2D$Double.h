@@ -23,7 +23,6 @@ class $import RoundRectangle2D$Double : public ::java::awt::geom::RoundRectangle
 	$class(RoundRectangle2D$Double, $NO_CLASS_INIT, ::java::awt::geom::RoundRectangle2D, ::java::io::Serializable)
 public:
 	RoundRectangle2D$Double();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::geom::RoundRectangle2D::contains;
 	using ::java::awt::geom::RoundRectangle2D::getPathIterator;
 	virtual $Object* clone() override;

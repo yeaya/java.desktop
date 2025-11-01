@@ -38,7 +38,6 @@ class MimeType : public ::java::io::Serializable, public ::java::lang::Cloneable
 	$class(MimeType, $NO_CLASS_INIT, ::java::io::Serializable, ::java::lang::Cloneable)
 public:
 	MimeType();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	void init$($String* s);

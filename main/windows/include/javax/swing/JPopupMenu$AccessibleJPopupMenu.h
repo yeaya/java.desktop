@@ -30,7 +30,6 @@ class $import JPopupMenu$AccessibleJPopupMenu : public ::javax::swing::JComponen
 	$class(JPopupMenu$AccessibleJPopupMenu, $NO_CLASS_INIT, ::javax::swing::JComponent$AccessibleJComponent, ::java::beans::PropertyChangeListener)
 public:
 	JPopupMenu$AccessibleJPopupMenu();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

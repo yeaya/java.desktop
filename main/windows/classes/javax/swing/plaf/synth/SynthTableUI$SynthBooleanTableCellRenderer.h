@@ -37,7 +37,6 @@ class SynthTableUI$SynthBooleanTableCellRenderer : public ::javax::swing::JCheck
 	$class(SynthTableUI$SynthBooleanTableCellRenderer, $NO_CLASS_INIT, ::javax::swing::JCheckBox, ::javax::swing::table::TableCellRenderer)
 public:
 	SynthTableUI$SynthBooleanTableCellRenderer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JCheckBox::contains;
 	using ::javax::swing::JCheckBox::enable;
 	using ::javax::swing::JCheckBox::getBounds;

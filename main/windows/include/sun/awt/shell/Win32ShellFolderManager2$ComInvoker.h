@@ -31,7 +31,6 @@ class $import Win32ShellFolderManager2$ComInvoker : public ::java::util::concurr
 	$class(Win32ShellFolderManager2$ComInvoker, $NO_CLASS_INIT, ::java::util::concurrent::ThreadPoolExecutor, ::java::util::concurrent::ThreadFactory, ::sun::awt::shell::ShellFolder$Invoker)
 public:
 	Win32ShellFolderManager2$ComInvoker();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

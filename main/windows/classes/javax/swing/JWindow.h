@@ -38,7 +38,6 @@ class $export JWindow : public ::java::awt::Window, public ::javax::swing::RootP
 	$class(JWindow, $NO_CLASS_INIT, ::java::awt::Window, ::javax::swing::RootPaneContainer, ::javax::swing::TransferHandler$HasGetTransferHandler)
 public:
 	JWindow();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Window::add;
 	using ::java::awt::Window::getMousePosition;
 	virtual $Object* clone() override;

@@ -52,7 +52,6 @@ class FrameView : public ::javax::swing::text::ComponentView, public ::javax::sw
 	$class(FrameView, $NO_CLASS_INIT, ::javax::swing::text::ComponentView, ::javax::swing::event::HyperlinkListener)
 public:
 	FrameView();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

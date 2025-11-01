@@ -96,7 +96,6 @@ class PeekGraphics : public ::java::awt::Graphics2D, public ::java::awt::print::
 	$class(PeekGraphics, $HAS_FINALIZE | $NO_CLASS_INIT, ::java::awt::Graphics2D, ::java::awt::print::PrinterGraphics, ::java::awt::image::ImageObserver, ::java::lang::Cloneable)
 public:
 	PeekGraphics();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Graphics2D::create;
 	using ::java::awt::Graphics2D::getFontMetrics;
 	using ::java::awt::Graphics2D::drawPolygon;

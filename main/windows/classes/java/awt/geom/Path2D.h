@@ -85,7 +85,6 @@ class $export Path2D : public ::java::awt::Shape, public ::java::lang::Cloneable
 	$class(Path2D, 0, ::java::awt::Shape, ::java::lang::Cloneable)
 public:
 	Path2D();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Shape::getPathIterator;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

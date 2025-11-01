@@ -26,7 +26,6 @@ class $export BorderUIResource$MatteBorderUIResource : public ::javax::swing::bo
 	$class(BorderUIResource$MatteBorderUIResource, $NO_CLASS_INIT, ::javax::swing::border::MatteBorder, ::javax::swing::plaf::UIResource)
 public:
 	BorderUIResource$MatteBorderUIResource();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::border::MatteBorder::getBorderInsets;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

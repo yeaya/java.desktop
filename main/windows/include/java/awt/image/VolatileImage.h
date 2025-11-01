@@ -39,7 +39,6 @@ class $import VolatileImage : public ::java::awt::Image, public ::java::awt::Tra
 	$class(VolatileImage, $NO_CLASS_INIT, ::java::awt::Image, ::java::awt::Transparency)
 public:
 	VolatileImage();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Image::getWidth;
 	using ::java::awt::Image::getHeight;
 	using ::java::awt::Image::getCapabilities;

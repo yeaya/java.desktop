@@ -40,7 +40,6 @@ class ModelAbstractOscillator : public ::com::sun::media::sound::ModelOscillator
 	$class(ModelAbstractOscillator, $NO_CLASS_INIT, ::com::sun::media::sound::ModelOscillator, ::com::sun::media::sound::ModelOscillatorStream, ::javax::sound::midi::Soundbank)
 public:
 	ModelAbstractOscillator();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

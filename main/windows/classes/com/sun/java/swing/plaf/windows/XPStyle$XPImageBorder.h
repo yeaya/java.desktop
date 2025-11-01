@@ -41,7 +41,6 @@ class $export XPStyle$XPImageBorder : public ::javax::swing::border::AbstractBor
 	$class(XPStyle$XPImageBorder, $NO_CLASS_INIT, ::javax::swing::border::AbstractBorder, ::javax::swing::plaf::UIResource)
 public:
 	XPStyle$XPImageBorder();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::border::AbstractBorder::getBorderInsets;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

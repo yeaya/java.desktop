@@ -39,7 +39,6 @@ class $export JInternalFrame$JDesktopIcon : public ::javax::swing::JComponent, p
 	$class(JInternalFrame$JDesktopIcon, $NO_CLASS_INIT, ::javax::swing::JComponent, ::javax::accessibility::Accessible)
 public:
 	JInternalFrame$JDesktopIcon();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JComponent::contains;
 	using ::javax::swing::JComponent::enable;
 	using ::javax::swing::JComponent::getBounds;

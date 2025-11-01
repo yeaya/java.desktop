@@ -42,7 +42,6 @@ class $export TestJSpinnerFocusLost : public ::javax::swing::JFrame, public ::ja
 	$class(TestJSpinnerFocusLost, $NO_CLASS_INIT, ::javax::swing::JFrame, ::javax::swing::event::ChangeListener, ::java::awt::event::FocusListener)
 public:
 	TestJSpinnerFocusLost();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JFrame::add;
 	using ::javax::swing::JFrame::getMousePosition;
 	virtual $Object* clone() override;

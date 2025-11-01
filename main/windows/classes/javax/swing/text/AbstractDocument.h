@@ -68,7 +68,6 @@ class $export AbstractDocument : public ::javax::swing::text::Document, public :
 	$class(AbstractDocument, 0, ::javax::swing::text::Document, ::java::io::Serializable)
 public:
 	AbstractDocument();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

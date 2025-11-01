@@ -39,7 +39,6 @@ class $import ImageIcon$AccessibleImageIcon : public ::javax::accessibility::Acc
 	$class(ImageIcon$AccessibleImageIcon, $NO_CLASS_INIT, ::javax::accessibility::AccessibleContext, ::javax::accessibility::AccessibleIcon, ::java::io::Serializable)
 public:
 	ImageIcon$AccessibleImageIcon();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

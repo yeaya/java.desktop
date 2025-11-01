@@ -70,7 +70,6 @@ class LightweightDispatcher : public ::java::io::Serializable, public ::java::aw
 	$class(LightweightDispatcher, 0, ::java::io::Serializable, ::java::awt::event::AWTEventListener)
 public:
 	LightweightDispatcher();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

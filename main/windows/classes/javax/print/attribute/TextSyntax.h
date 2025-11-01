@@ -21,7 +21,6 @@ class $export TextSyntax : public ::java::io::Serializable, public ::java::lang:
 	$class(TextSyntax, $NO_CLASS_INIT, ::java::io::Serializable, ::java::lang::Cloneable)
 public:
 	TextSyntax();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	void init$($String* value, ::java::util::Locale* locale);

@@ -32,7 +32,6 @@ class $import ScrollPaneLayout : public ::java::awt::LayoutManager, public ::jav
 	$class(ScrollPaneLayout, $NO_CLASS_INIT, ::java::awt::LayoutManager, ::javax::swing::ScrollPaneConstants, ::java::io::Serializable)
 public:
 	ScrollPaneLayout();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

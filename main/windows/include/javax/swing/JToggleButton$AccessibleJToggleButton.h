@@ -32,7 +32,6 @@ class $import JToggleButton$AccessibleJToggleButton : public ::javax::swing::Abs
 	$class(JToggleButton$AccessibleJToggleButton, $NO_CLASS_INIT, ::javax::swing::AbstractButton$AccessibleAbstractButton, ::java::awt::event::ItemListener)
 public:
 	JToggleButton$AccessibleJToggleButton();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

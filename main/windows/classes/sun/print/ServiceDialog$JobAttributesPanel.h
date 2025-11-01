@@ -46,7 +46,6 @@ class ServiceDialog$JobAttributesPanel : public ::javax::swing::JPanel, public :
 	$class(ServiceDialog$JobAttributesPanel, $NO_CLASS_INIT, ::javax::swing::JPanel, ::java::awt::event::ActionListener, ::javax::swing::event::ChangeListener, ::java::awt::event::FocusListener)
 public:
 	ServiceDialog$JobAttributesPanel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JPanel::contains;
 	using ::javax::swing::JPanel::enable;
 	using ::javax::swing::JPanel::getBounds;

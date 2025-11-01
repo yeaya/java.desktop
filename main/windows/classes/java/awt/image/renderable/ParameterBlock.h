@@ -39,7 +39,6 @@ class $export ParameterBlock : public ::java::lang::Cloneable, public ::java::io
 	$class(ParameterBlock, $NO_CLASS_INIT, ::java::lang::Cloneable, ::java::io::Serializable)
 public:
 	ParameterBlock();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

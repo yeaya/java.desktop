@@ -31,7 +31,6 @@ class IdentityLinkedList : public ::java::util::AbstractSequentialList, public :
 	$class(IdentityLinkedList, $NO_CLASS_INIT, ::java::util::AbstractSequentialList, ::java::util::Deque)
 public:
 	IdentityLinkedList();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool containsAll(::java::util::Collection* arg0) override;
 	virtual bool equals(Object$* arg0) override;

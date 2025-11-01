@@ -41,7 +41,6 @@ class SynthComboBoxUI$ButtonHandler : public ::javax::swing::DefaultButtonModel,
 	$class(SynthComboBoxUI$ButtonHandler, $NO_CLASS_INIT, ::javax::swing::DefaultButtonModel, ::java::awt::event::MouseListener, ::javax::swing::event::PopupMenuListener)
 public:
 	SynthComboBoxUI$ButtonHandler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

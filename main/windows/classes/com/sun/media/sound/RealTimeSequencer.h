@@ -58,7 +58,6 @@ class RealTimeSequencer : public ::com::sun::media::sound::AbstractMidiDevice, p
 	$class(RealTimeSequencer, 0, ::com::sun::media::sound::AbstractMidiDevice, ::javax::sound::midi::Sequencer, ::com::sun::media::sound::AutoConnectSequencer)
 public:
 	RealTimeSequencer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void close() override;
 	virtual bool equals(Object$* arg0) override;

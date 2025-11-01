@@ -98,7 +98,6 @@ class OGLSurfaceData : public ::sun::java2d::SurfaceData, public ::sun::java2d::
 	$class(OGLSurfaceData, 0, ::sun::java2d::SurfaceData, ::sun::java2d::pipe::hw::AccelSurface)
 public:
 	OGLSurfaceData();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

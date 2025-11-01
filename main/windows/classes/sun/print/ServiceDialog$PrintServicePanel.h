@@ -61,7 +61,6 @@ class ServiceDialog$PrintServicePanel : public ::javax::swing::JPanel, public ::
 	$class(ServiceDialog$PrintServicePanel, $NO_CLASS_INIT, ::javax::swing::JPanel, ::java::awt::event::ActionListener, ::java::awt::event::ItemListener, ::javax::swing::event::PopupMenuListener)
 public:
 	ServiceDialog$PrintServicePanel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JPanel::contains;
 	using ::javax::swing::JPanel::enable;
 	using ::javax::swing::JPanel::getBounds;

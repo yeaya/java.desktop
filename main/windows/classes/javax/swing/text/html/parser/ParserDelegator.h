@@ -48,7 +48,6 @@ class $export ParserDelegator : public ::javax::swing::text::html::HTMLEditorKit
 	$class(ParserDelegator, 0, ::javax::swing::text::html::HTMLEditorKit$Parser, ::java::io::Serializable)
 public:
 	ParserDelegator();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

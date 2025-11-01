@@ -36,7 +36,6 @@ class $export Test6348456 : public ::javax::swing::JApplet, public ::java::awt::
 	$class(Test6348456, 0, ::javax::swing::JApplet, ::java::awt::event::ActionListener)
 public:
 	Test6348456();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JApplet::add;
 	using ::javax::swing::JApplet::getMousePosition;
 	using ::javax::swing::JApplet::list;

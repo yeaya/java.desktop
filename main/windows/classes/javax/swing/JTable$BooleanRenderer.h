@@ -33,7 +33,6 @@ class $export JTable$BooleanRenderer : public ::javax::swing::JCheckBox, public 
 	$class(JTable$BooleanRenderer, 0, ::javax::swing::JCheckBox, ::javax::swing::table::TableCellRenderer, ::javax::swing::plaf::UIResource)
 public:
 	JTable$BooleanRenderer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JCheckBox::contains;
 	using ::javax::swing::JCheckBox::enable;
 	using ::javax::swing::JCheckBox::getBounds;

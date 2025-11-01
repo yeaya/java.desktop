@@ -36,7 +36,6 @@ class SequencedEvent : public ::java::awt::AWTEvent, public ::java::awt::ActiveE
 	$class(SequencedEvent, 0, ::java::awt::AWTEvent, ::java::awt::ActiveEvent)
 public:
 	SequencedEvent();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

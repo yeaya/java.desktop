@@ -27,7 +27,6 @@ namespace javax {
 class $export ImageInputStream : public ::java::io::DataInput, public ::java::io::Closeable {
 	$interface(ImageInputStream, $NO_CLASS_INIT, ::java::io::DataInput, ::java::io::Closeable)
 public:
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void close() override {}
 	virtual bool equals(Object$* arg0) override;

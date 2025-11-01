@@ -46,7 +46,6 @@ class $export ParagraphView : public ::javax::swing::text::FlowView, public ::ja
 	$class(ParagraphView, 0, ::javax::swing::text::FlowView, ::javax::swing::text::TabExpander)
 public:
 	ParagraphView();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::text::FlowView::getViewIndex;
 	using ::javax::swing::text::FlowView::breakView;
 	using ::javax::swing::text::FlowView::getBreakWeight;

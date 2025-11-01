@@ -39,7 +39,6 @@ class TextLayoutStrategy$AttributedSegment : public ::javax::swing::text::Segmen
 	$class(TextLayoutStrategy$AttributedSegment, 0, ::javax::swing::text::Segment, ::java::text::AttributedCharacterIterator)
 public:
 	TextLayoutStrategy$AttributedSegment();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual char16_t current() override;
 	virtual bool equals(Object$* arg0) override;

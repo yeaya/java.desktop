@@ -76,7 +76,6 @@ class $import SynthFileChooserUI : public ::javax::swing::plaf::basic::BasicFile
 	$class(SynthFileChooserUI, $NO_CLASS_INIT, ::javax::swing::plaf::basic::BasicFileChooserUI, ::javax::swing::plaf::synth::SynthUI)
 public:
 	SynthFileChooserUI();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual ::javax::swing::ActionMap* createActionMap() override;
 	virtual bool equals(Object$* arg0) override;

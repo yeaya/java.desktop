@@ -26,7 +26,6 @@ class $import WindowsBorders$DashedBorder : public ::javax::swing::border::LineB
 	$class(WindowsBorders$DashedBorder, $NO_CLASS_INIT, ::javax::swing::border::LineBorder, ::javax::swing::plaf::UIResource)
 public:
 	WindowsBorders$DashedBorder();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::border::LineBorder::getBorderInsets;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

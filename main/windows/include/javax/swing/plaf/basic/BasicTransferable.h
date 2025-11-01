@@ -30,7 +30,6 @@ class $import BasicTransferable : public ::java::awt::datatransfer::Transferable
 	$class(BasicTransferable, 0, ::java::awt::datatransfer::Transferable, ::javax::swing::plaf::UIResource)
 public:
 	BasicTransferable();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

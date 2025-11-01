@@ -48,7 +48,6 @@ class $import BasicPopupMenuUI$MenuKeyboardHelper : public ::javax::swing::event
 	$class(BasicPopupMenuUI$MenuKeyboardHelper, $NO_CLASS_INIT, ::javax::swing::event::ChangeListener, ::java::awt::event::KeyListener)
 public:
 	BasicPopupMenuUI$MenuKeyboardHelper();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

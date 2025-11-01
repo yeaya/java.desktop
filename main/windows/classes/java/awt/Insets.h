@@ -14,7 +14,6 @@ class $export Insets : public ::java::lang::Cloneable, public ::java::io::Serial
 	$class(Insets, 0, ::java::lang::Cloneable, ::java::io::Serializable)
 public:
 	Insets();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual void finalize() override;
 	void init$(int32_t top, int32_t left, int32_t bottom, int32_t right);
 	virtual $Object* clone() override;

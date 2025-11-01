@@ -56,7 +56,6 @@ class $export ImageIcon : public ::javax::swing::Icon, public ::java::io::Serial
 	$class(ImageIcon, 0, ::javax::swing::Icon, ::java::io::Serializable, ::javax::accessibility::Accessible)
 public:
 	ImageIcon();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

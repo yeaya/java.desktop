@@ -67,7 +67,6 @@ class $import SynthTabbedPaneUI : public ::javax::swing::plaf::basic::BasicTabbe
 	$class(SynthTabbedPaneUI, $NO_CLASS_INIT, ::javax::swing::plaf::basic::BasicTabbedPaneUI, ::java::beans::PropertyChangeListener, ::javax::swing::plaf::synth::SynthUI)
 public:
 	SynthTabbedPaneUI();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::plaf::basic::BasicTabbedPaneUI::getBaseline;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

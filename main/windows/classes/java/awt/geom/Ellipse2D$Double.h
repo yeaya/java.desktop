@@ -23,7 +23,6 @@ class $export Ellipse2D$Double : public ::java::awt::geom::Ellipse2D, public ::j
 	$class(Ellipse2D$Double, $NO_CLASS_INIT, ::java::awt::geom::Ellipse2D, ::java::io::Serializable)
 public:
 	Ellipse2D$Double();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::geom::Ellipse2D::contains;
 	using ::java::awt::geom::Ellipse2D::getPathIterator;
 	virtual $Object* clone() override;

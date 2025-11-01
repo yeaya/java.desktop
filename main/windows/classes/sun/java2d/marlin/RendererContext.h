@@ -70,7 +70,6 @@ class RendererContext : public ::sun::java2d::ReentrantContext, public ::sun::ja
 	$class(RendererContext, 0, ::sun::java2d::ReentrantContext, ::sun::java2d::marlin::MarlinConst)
 public:
 	RendererContext();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

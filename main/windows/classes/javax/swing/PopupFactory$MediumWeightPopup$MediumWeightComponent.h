@@ -14,7 +14,6 @@ class PopupFactory$MediumWeightPopup$MediumWeightComponent : public ::java::awt:
 	$class(PopupFactory$MediumWeightPopup$MediumWeightComponent, $NO_CLASS_INIT, ::java::awt::Panel, ::javax::swing::SwingHeavyWeight)
 public:
 	PopupFactory$MediumWeightPopup$MediumWeightComponent();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Panel::add;
 	using ::java::awt::Panel::getMousePosition;
 	virtual $Object* clone() override;

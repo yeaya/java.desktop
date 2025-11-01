@@ -41,7 +41,6 @@ class $import WrappedPlainView : public ::javax::swing::text::BoxView, public ::
 	$class(WrappedPlainView, $NO_CLASS_INIT, ::javax::swing::text::BoxView, ::javax::swing::text::TabExpander)
 public:
 	WrappedPlainView();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::text::BoxView::getViewIndex;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

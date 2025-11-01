@@ -37,7 +37,6 @@ class WScrollPanePeer : public ::sun::awt::windows::WPanelPeer, public ::java::a
 	$class(WScrollPanePeer, 0, ::sun::awt::windows::WPanelPeer, ::java::awt::peer::ScrollPanePeer)
 public:
 	WScrollPanePeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::awt::windows::WPanelPeer::getColorModel;
 	virtual void applyShape(::sun::java2d::pipe::Region* shape) override;
 	virtual void beginLayout() override;

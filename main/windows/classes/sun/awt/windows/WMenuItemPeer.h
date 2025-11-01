@@ -37,7 +37,6 @@ class WMenuItemPeer : public ::sun::awt::windows::WObjectPeer, public ::java::aw
 	$class(WMenuItemPeer, 0, ::sun::awt::windows::WObjectPeer, ::java::awt::peer::MenuItemPeer)
 public:
 	WMenuItemPeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void dispose() override;
 	virtual bool equals(Object$* arg0) override;

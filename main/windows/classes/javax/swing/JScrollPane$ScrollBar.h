@@ -20,7 +20,6 @@ class $export JScrollPane$ScrollBar : public ::javax::swing::JScrollBar, public 
 	$class(JScrollPane$ScrollBar, $NO_CLASS_INIT, ::javax::swing::JScrollBar, ::javax::swing::plaf::UIResource)
 public:
 	JScrollPane$ScrollBar();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JScrollBar::getUnitIncrement;
 	using ::javax::swing::JScrollBar::getBlockIncrement;
 	using ::javax::swing::JScrollBar::contains;

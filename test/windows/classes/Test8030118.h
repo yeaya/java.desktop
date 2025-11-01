@@ -34,7 +34,6 @@ class $export Test8030118 : public ::javax::swing::event::DocumentListener, publ
 	$class(Test8030118, $NO_CLASS_INIT, ::javax::swing::event::DocumentListener, ::java::lang::Runnable)
 public:
 	Test8030118();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

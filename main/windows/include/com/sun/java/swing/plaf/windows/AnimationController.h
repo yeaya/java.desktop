@@ -67,7 +67,6 @@ class $import AnimationController : public ::java::awt::event::ActionListener, p
 	$class(AnimationController, 0, ::java::awt::event::ActionListener, ::java::beans::PropertyChangeListener)
 public:
 	AnimationController();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

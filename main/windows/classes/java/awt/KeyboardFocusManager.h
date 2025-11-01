@@ -94,7 +94,6 @@ class $export KeyboardFocusManager : public ::java::awt::KeyEventDispatcher, pub
 	$class(KeyboardFocusManager, 0, ::java::awt::KeyEventDispatcher, ::java::awt::KeyEventPostProcessor)
 public:
 	KeyboardFocusManager();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool dispatchKeyEvent(::java::awt::event::KeyEvent* e) override {return false;}
 	virtual bool equals(Object$* arg0) override;

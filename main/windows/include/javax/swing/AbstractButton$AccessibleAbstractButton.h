@@ -50,7 +50,6 @@ class $import AbstractButton$AccessibleAbstractButton : public ::javax::swing::J
 	$class(AbstractButton$AccessibleAbstractButton, $NO_CLASS_INIT, ::javax::swing::JComponent$AccessibleJComponent, ::javax::accessibility::AccessibleAction, ::javax::accessibility::AccessibleValue, ::javax::accessibility::AccessibleText)
 public:
 	AbstractButton$AccessibleAbstractButton();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

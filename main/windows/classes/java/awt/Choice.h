@@ -47,7 +47,6 @@ class $export Choice : public ::java::awt::Component, public ::java::awt::ItemSe
 	$class(Choice, 0, ::java::awt::Component, ::java::awt::ItemSelectable, ::javax::accessibility::Accessible)
 public:
 	Choice();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Component::add;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

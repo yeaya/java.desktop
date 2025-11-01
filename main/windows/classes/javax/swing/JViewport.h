@@ -76,7 +76,6 @@ class $export JViewport : public ::javax::swing::JComponent, public ::javax::acc
 	$class(JViewport, 0, ::javax::swing::JComponent, ::javax::accessibility::Accessible)
 public:
 	JViewport();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JComponent::contains;
 	using ::javax::swing::JComponent::enable;
 	using ::javax::swing::JComponent::getBounds;

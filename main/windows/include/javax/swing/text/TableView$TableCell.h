@@ -24,7 +24,6 @@ class $import TableView$TableCell : public ::javax::swing::text::BoxView, public
 	$class(TableView$TableCell, $NO_CLASS_INIT, ::javax::swing::text::BoxView, ::javax::swing::text::TableView$GridCell)
 public:
 	TableView$TableCell();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::text::BoxView::getViewIndex;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

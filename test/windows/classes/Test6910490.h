@@ -31,7 +31,6 @@ class $export Test6910490 : public ::javax::swing::JApplet, public ::javax::swin
 	$class(Test6910490, $NO_CLASS_INIT, ::javax::swing::JApplet, ::javax::swing::Icon)
 public:
 	Test6910490();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JApplet::add;
 	using ::javax::swing::JApplet::getMousePosition;
 	virtual $Object* clone() override;

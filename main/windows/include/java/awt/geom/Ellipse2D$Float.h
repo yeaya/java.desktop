@@ -23,7 +23,6 @@ class $import Ellipse2D$Float : public ::java::awt::geom::Ellipse2D, public ::ja
 	$class(Ellipse2D$Float, $NO_CLASS_INIT, ::java::awt::geom::Ellipse2D, ::java::io::Serializable)
 public:
 	Ellipse2D$Float();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::geom::Ellipse2D::contains;
 	using ::java::awt::geom::Ellipse2D::getPathIterator;
 	virtual $Object* clone() override;

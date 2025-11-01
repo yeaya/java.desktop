@@ -58,7 +58,6 @@ class PSStreamPrintService : public ::javax::print::StreamPrintService, public :
 	$class(PSStreamPrintService, 0, ::javax::print::StreamPrintService, ::sun::print::SunPrinterJobService)
 public:
 	PSStreamPrintService();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	void init$(::java::io::OutputStream* out);

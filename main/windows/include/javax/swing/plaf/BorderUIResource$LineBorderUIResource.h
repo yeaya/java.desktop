@@ -21,7 +21,6 @@ class $import BorderUIResource$LineBorderUIResource : public ::javax::swing::bor
 	$class(BorderUIResource$LineBorderUIResource, $NO_CLASS_INIT, ::javax::swing::border::LineBorder, ::javax::swing::plaf::UIResource)
 public:
 	BorderUIResource$LineBorderUIResource();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::border::LineBorder::getBorderInsets;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

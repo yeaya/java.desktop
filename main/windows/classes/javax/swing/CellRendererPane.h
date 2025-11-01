@@ -32,7 +32,6 @@ class $export CellRendererPane : public ::java::awt::Container, public ::javax::
 	$class(CellRendererPane, $NO_CLASS_INIT, ::java::awt::Container, ::javax::accessibility::Accessible)
 public:
 	CellRendererPane();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Container::add;
 	using ::java::awt::Container::getMousePosition;
 	virtual $Object* clone() override;

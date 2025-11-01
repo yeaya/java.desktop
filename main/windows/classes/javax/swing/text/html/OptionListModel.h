@@ -39,7 +39,6 @@ class OptionListModel : public ::javax::swing::DefaultListModel, public ::javax:
 	$class(OptionListModel, $NO_CLASS_INIT, ::javax::swing::DefaultListModel, ::javax::swing::ListSelectionModel)
 public:
 	OptionListModel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::DefaultListModel::contains;
 	using ::javax::swing::DefaultListModel::clear;
 	virtual bool equals(Object$* arg0) override;

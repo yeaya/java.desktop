@@ -16,7 +16,6 @@ class SynthInternalFrameTitlePane$JPopupMenuUIResource : public ::javax::swing::
 	$class(SynthInternalFrameTitlePane$JPopupMenuUIResource, $NO_CLASS_INIT, ::javax::swing::JPopupMenu, ::javax::swing::plaf::UIResource)
 public:
 	SynthInternalFrameTitlePane$JPopupMenuUIResource();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JPopupMenu::add;
 	using ::javax::swing::JPopupMenu::getComponent;
 	using ::javax::swing::JPopupMenu::contains;

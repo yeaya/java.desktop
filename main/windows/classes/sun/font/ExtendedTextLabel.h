@@ -22,7 +22,6 @@ class ExtendedTextLabel : public ::sun::font::TextLabel, public ::sun::font::Tex
 	$class(ExtendedTextLabel, $NO_CLASS_INIT, ::sun::font::TextLabel, ::sun::font::TextLineComponent)
 public:
 	ExtendedTextLabel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::font::TextLabel::getVisualBounds;
 	using ::sun::font::TextLabel::getLogicalBounds;
 	using ::sun::font::TextLabel::getItalicBounds;

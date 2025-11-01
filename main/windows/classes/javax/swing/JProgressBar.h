@@ -61,7 +61,6 @@ class $export JProgressBar : public ::javax::swing::JComponent, public ::javax::
 	$class(JProgressBar, 0, ::javax::swing::JComponent, ::javax::swing::SwingConstants, ::javax::accessibility::Accessible)
 public:
 	JProgressBar();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JComponent::contains;
 	using ::javax::swing::JComponent::enable;
 	using ::javax::swing::JComponent::getBounds;

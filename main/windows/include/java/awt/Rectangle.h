@@ -30,7 +30,6 @@ class $import Rectangle : public ::java::awt::geom::Rectangle2D, public ::java::
 	$class(Rectangle, 0, ::java::awt::geom::Rectangle2D, ::java::io::Serializable)
 public:
 	Rectangle();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::geom::Rectangle2D::contains;
 	using ::java::awt::geom::Rectangle2D::intersects;
 	using ::java::awt::geom::Rectangle2D::add;

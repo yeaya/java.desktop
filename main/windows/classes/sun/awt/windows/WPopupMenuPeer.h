@@ -31,7 +31,6 @@ class WPopupMenuPeer : public ::sun::awt::windows::WMenuPeer, public ::java::awt
 	$class(WPopupMenuPeer, $NO_CLASS_INIT, ::sun::awt::windows::WMenuPeer, ::java::awt::peer::PopupMenuPeer)
 public:
 	WPopupMenuPeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::awt::windows::WMenuPeer::createMenu;
 	virtual void addItem(::java::awt::MenuItem* item) override;
 	virtual $Object* clone() override;

@@ -151,7 +151,6 @@ class $export SunToolkit : public ::java::awt::Toolkit, public ::sun::awt::Compo
 	$class(SunToolkit, 0, ::java::awt::Toolkit, ::sun::awt::ComponentFactory, ::sun::awt::InputMethodSupport, ::sun::awt::KeyboardFocusManagerPeerProvider)
 public:
 	SunToolkit();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Toolkit::createImage;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

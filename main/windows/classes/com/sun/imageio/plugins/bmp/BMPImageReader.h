@@ -134,7 +134,6 @@ class BMPImageReader : public ::javax::imageio::ImageReader, public ::com::sun::
 	$class(BMPImageReader, 0, ::javax::imageio::ImageReader, ::com::sun::imageio::plugins::bmp::BMPConstants)
 public:
 	BMPImageReader();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::imageio::ImageReader::getStreamMetadata;
 	using ::javax::imageio::ImageReader::getImageMetadata;
 	virtual $Object* clone() override;

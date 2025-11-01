@@ -21,7 +21,6 @@ class $export URISyntax : public ::java::io::Serializable, public ::java::lang::
 	$class(URISyntax, $NO_CLASS_INIT, ::java::io::Serializable, ::java::lang::Cloneable)
 public:
 	URISyntax();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	void init$(::java::net::URI* uri);

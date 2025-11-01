@@ -133,7 +133,6 @@ class $export JFileChooser : public ::javax::swing::JComponent, public ::javax::
 	$class(JFileChooser, 0, ::javax::swing::JComponent, ::javax::accessibility::Accessible)
 public:
 	JFileChooser();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JComponent::contains;
 	using ::javax::swing::JComponent::enable;
 	using ::javax::swing::JComponent::getBounds;

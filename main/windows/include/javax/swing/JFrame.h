@@ -47,7 +47,6 @@ class $import JFrame : public ::java::awt::Frame, public ::javax::swing::WindowC
 	$class(JFrame, 0, ::java::awt::Frame, ::javax::swing::WindowConstants, ::javax::swing::RootPaneContainer, ::javax::swing::TransferHandler$HasGetTransferHandler)
 public:
 	JFrame();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Frame::isFocusCycleRoot;
 	using ::java::awt::Frame::add;
 	using ::java::awt::Frame::getMousePosition;

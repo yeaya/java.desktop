@@ -80,7 +80,6 @@ class WFileDialogPeer : public ::sun::awt::windows::WWindowPeer, public ::java::
 	$class(WFileDialogPeer, 0, ::sun::awt::windows::WWindowPeer, ::java::awt::peer::FileDialogPeer)
 public:
 	WFileDialogPeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::awt::windows::WWindowPeer::getColorModel;
 	virtual void beginLayout() override;
 	virtual bool canDetermineObscurity() override;

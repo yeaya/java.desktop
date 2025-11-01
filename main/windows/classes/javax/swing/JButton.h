@@ -31,7 +31,6 @@ class $export JButton : public ::javax::swing::AbstractButton, public ::javax::a
 	$class(JButton, 0, ::javax::swing::AbstractButton, ::javax::accessibility::Accessible)
 public:
 	JButton();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::AbstractButton::contains;
 	using ::javax::swing::AbstractButton::enable;
 	using ::javax::swing::AbstractButton::getBounds;

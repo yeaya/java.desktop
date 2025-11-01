@@ -60,7 +60,6 @@ class $import JSlider : public ::javax::swing::JComponent, public ::javax::swing
 	$class(JSlider, 0, ::javax::swing::JComponent, ::javax::swing::SwingConstants, ::javax::accessibility::Accessible)
 public:
 	JSlider();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JComponent::contains;
 	using ::javax::swing::JComponent::enable;
 	using ::javax::swing::JComponent::getBounds;

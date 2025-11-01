@@ -40,7 +40,6 @@ class $export DefaultMutableTreeNode : public ::java::lang::Cloneable, public ::
 	$class(DefaultMutableTreeNode, 0, ::java::lang::Cloneable, ::javax::swing::tree::MutableTreeNode, ::java::io::Serializable)
 public:
 	DefaultMutableTreeNode();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

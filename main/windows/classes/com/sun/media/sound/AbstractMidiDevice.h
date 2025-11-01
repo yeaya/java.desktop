@@ -41,7 +41,6 @@ class AbstractMidiDevice : public ::javax::sound::midi::MidiDevice, public ::com
 	$class(AbstractMidiDevice, $HAS_FINALIZE | $NO_CLASS_INIT, ::javax::sound::midi::MidiDevice, ::com::sun::media::sound::ReferenceCountingDevice)
 public:
 	AbstractMidiDevice();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual int32_t hashCode() override;

@@ -66,7 +66,6 @@ class InputMethodContext : public ::sun::awt::im::InputContext, public ::java::a
 	$class(InputMethodContext, 0, ::sun::awt::im::InputContext, ::java::awt::im::spi::InputMethodContext)
 public:
 	InputMethodContext();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

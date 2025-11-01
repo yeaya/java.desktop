@@ -48,7 +48,6 @@ class HiddenTagView : public ::javax::swing::text::html::EditableView, public ::
 	$class(HiddenTagView, 0, ::javax::swing::text::html::EditableView, ::javax::swing::event::DocumentListener)
 public:
 	HiddenTagView();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::text::html::EditableView::insertUpdate;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

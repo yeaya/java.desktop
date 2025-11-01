@@ -34,7 +34,6 @@ class SynthScrollPaneUI$ViewportViewFocusHandler : public ::java::awt::event::Co
 	$class(SynthScrollPaneUI$ViewportViewFocusHandler, $NO_CLASS_INIT, ::java::awt::event::ContainerListener, ::java::awt::event::FocusListener)
 public:
 	SynthScrollPaneUI$ViewportViewFocusHandler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

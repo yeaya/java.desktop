@@ -157,7 +157,6 @@ class $export JTable : public ::javax::swing::JComponent, public ::javax::swing:
 	$class(JTable, 0, ::javax::swing::JComponent, ::javax::swing::event::TableModelListener, ::javax::swing::Scrollable, ::javax::swing::event::TableColumnModelListener, ::javax::swing::event::ListSelectionListener, ::javax::swing::event::CellEditorListener, ::javax::accessibility::Accessible, ::javax::swing::event::RowSorterListener)
 public:
 	JTable();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JComponent::contains;
 	using ::javax::swing::JComponent::getToolTipText;
 	using ::javax::swing::JComponent::enable;

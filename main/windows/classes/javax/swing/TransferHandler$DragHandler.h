@@ -25,7 +25,6 @@ class TransferHandler$DragHandler : public ::java::awt::dnd::DragGestureListener
 	$class(TransferHandler$DragHandler, $NO_CLASS_INIT, ::java::awt::dnd::DragGestureListener, ::java::awt::dnd::DragSourceListener)
 public:
 	TransferHandler$DragHandler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

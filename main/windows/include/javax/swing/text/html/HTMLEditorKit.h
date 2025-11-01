@@ -108,7 +108,6 @@ class $import HTMLEditorKit : public ::javax::swing::text::StyledEditorKit, publ
 	$class(HTMLEditorKit, 0, ::javax::swing::text::StyledEditorKit, ::javax::accessibility::Accessible)
 public:
 	HTMLEditorKit();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

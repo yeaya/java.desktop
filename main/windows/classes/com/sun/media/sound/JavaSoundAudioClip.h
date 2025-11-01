@@ -66,7 +66,6 @@ class JavaSoundAudioClip : public ::java::applet::AudioClip, public ::javax::sou
 	$class(JavaSoundAudioClip, $HAS_FINALIZE | $NO_CLASS_INIT, ::java::applet::AudioClip, ::javax::sound::midi::MetaEventListener, ::javax::sound::sampled::LineListener)
 public:
 	JavaSoundAudioClip();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual int32_t hashCode() override;

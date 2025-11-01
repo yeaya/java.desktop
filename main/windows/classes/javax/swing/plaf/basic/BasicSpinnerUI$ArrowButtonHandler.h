@@ -47,7 +47,6 @@ class BasicSpinnerUI$ArrowButtonHandler : public ::javax::swing::AbstractAction,
 	$class(BasicSpinnerUI$ArrowButtonHandler, $NO_CLASS_INIT, ::javax::swing::AbstractAction, ::java::awt::event::FocusListener, ::java::awt::event::MouseListener, ::javax::swing::plaf::UIResource)
 public:
 	BasicSpinnerUI$ArrowButtonHandler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

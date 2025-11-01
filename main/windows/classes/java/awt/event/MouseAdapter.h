@@ -25,7 +25,6 @@ class $export MouseAdapter : public ::java::awt::event::MouseListener, public ::
 	$class(MouseAdapter, $NO_CLASS_INIT, ::java::awt::event::MouseListener, ::java::awt::event::MouseWheelListener, ::java::awt::event::MouseMotionListener)
 public:
 	MouseAdapter();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

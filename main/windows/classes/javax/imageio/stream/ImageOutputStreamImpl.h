@@ -16,7 +16,6 @@ class $export ImageOutputStreamImpl : public ::javax::imageio::stream::ImageInpu
 	$class(ImageOutputStreamImpl, $NO_CLASS_INIT, ::javax::imageio::stream::ImageInputStreamImpl, ::javax::imageio::stream::ImageOutputStream)
 public:
 	ImageOutputStreamImpl();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void close() override;
 	virtual bool equals(Object$* arg0) override;

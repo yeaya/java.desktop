@@ -33,7 +33,6 @@ class MetalIconFactory$HorizontalSliderThumbIcon : public ::javax::swing::Icon, 
 	$class(MetalIconFactory$HorizontalSliderThumbIcon, $NO_CLASS_INIT, ::javax::swing::Icon, ::java::io::Serializable, ::javax::swing::plaf::UIResource)
 public:
 	MetalIconFactory$HorizontalSliderThumbIcon();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

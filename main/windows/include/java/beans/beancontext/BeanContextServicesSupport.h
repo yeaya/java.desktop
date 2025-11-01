@@ -45,7 +45,6 @@ class $import BeanContextServicesSupport : public ::java::beans::beancontext::Be
 	$class(BeanContextServicesSupport, $NO_CLASS_INIT, ::java::beans::beancontext::BeanContextSupport, ::java::beans::beancontext::BeanContextServices)
 public:
 	BeanContextServicesSupport();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool add(Object$* targetChild) override;
 	virtual bool addAll(::java::util::Collection* c) override;
 	virtual void addBeanContextMembershipListener(::java::beans::beancontext::BeanContextMembershipListener* bcml) override;

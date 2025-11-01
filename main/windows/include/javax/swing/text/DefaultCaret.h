@@ -94,7 +94,6 @@ class $import DefaultCaret : public ::java::awt::Rectangle, public ::javax::swin
 	$class(DefaultCaret, 0, ::java::awt::Rectangle, ::javax::swing::text::Caret, ::java::awt::event::FocusListener, ::java::awt::event::MouseListener, ::java::awt::event::MouseMotionListener)
 public:
 	DefaultCaret();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Rectangle::contains;
 	using ::java::awt::Rectangle::intersects;
 	using ::java::awt::Rectangle::add;

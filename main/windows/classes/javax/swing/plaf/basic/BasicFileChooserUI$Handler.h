@@ -45,7 +45,6 @@ class BasicFileChooserUI$Handler : public ::java::awt::event::MouseListener, pub
 	$class(BasicFileChooserUI$Handler, $NO_CLASS_INIT, ::java::awt::event::MouseListener, ::javax::swing::event::ListSelectionListener)
 public:
 	BasicFileChooserUI$Handler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

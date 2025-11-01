@@ -35,7 +35,6 @@ class PortMixer$PortMixerPort : public ::com::sun::media::sound::AbstractLine, p
 	$class(PortMixer$PortMixerPort, $NO_CLASS_INIT, ::com::sun::media::sound::AbstractLine, ::javax::sound::sampled::Port)
 public:
 	PortMixer$PortMixerPort();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual void addLineListener(::javax::sound::sampled::LineListener* listener) override;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

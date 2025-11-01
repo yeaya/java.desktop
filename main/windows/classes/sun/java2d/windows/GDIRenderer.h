@@ -51,7 +51,6 @@ class GDIRenderer : public ::sun::java2d::pipe::PixelDrawPipe, public ::sun::jav
 	$class(GDIRenderer, $NO_CLASS_INIT, ::sun::java2d::pipe::PixelDrawPipe, ::sun::java2d::pipe::PixelFillPipe, ::sun::java2d::pipe::ShapeDrawPipe)
 public:
 	GDIRenderer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

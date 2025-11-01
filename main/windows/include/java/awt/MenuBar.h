@@ -47,7 +47,6 @@ class $import MenuBar : public ::java::awt::MenuComponent, public ::java::awt::M
 	$class(MenuBar, 0, ::java::awt::MenuComponent, ::java::awt::MenuContainer, ::javax::accessibility::Accessible)
 public:
 	MenuBar();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

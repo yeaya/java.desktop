@@ -57,7 +57,6 @@ class $export SynthTextAreaUI : public ::javax::swing::plaf::basic::BasicTextAre
 	$class(SynthTextAreaUI, $NO_CLASS_INIT, ::javax::swing::plaf::basic::BasicTextAreaUI, ::javax::swing::plaf::synth::SynthUI)
 public:
 	SynthTextAreaUI();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::plaf::basic::BasicTextAreaUI::create;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

@@ -67,7 +67,6 @@ class $import SynthSplitPaneUI : public ::javax::swing::plaf::basic::BasicSplitP
 	$class(SynthSplitPaneUI, $NO_CLASS_INIT, ::javax::swing::plaf::basic::BasicSplitPaneUI, ::java::beans::PropertyChangeListener, ::javax::swing::plaf::synth::SynthUI)
 public:
 	SynthSplitPaneUI();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

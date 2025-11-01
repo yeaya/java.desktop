@@ -58,7 +58,6 @@ class $export JTextField : public ::javax::swing::text::JTextComponent, public :
 	$class(JTextField, 0, ::javax::swing::text::JTextComponent, ::javax::swing::SwingConstants)
 public:
 	JTextField();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::text::JTextComponent::getToolTipText;
 	using ::javax::swing::text::JTextComponent::contains;
 	using ::javax::swing::text::JTextComponent::enable;

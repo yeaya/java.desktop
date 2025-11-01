@@ -40,7 +40,6 @@ class $import BeanContextChildSupport : public ::java::beans::beancontext::BeanC
 	$class(BeanContextChildSupport, $NO_CLASS_INIT, ::java::beans::beancontext::BeanContextChild, ::java::beans::beancontext::BeanContextServicesListener, ::java::io::Serializable)
 public:
 	BeanContextChildSupport();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

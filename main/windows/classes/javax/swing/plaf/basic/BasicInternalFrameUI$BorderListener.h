@@ -41,7 +41,6 @@ class $export BasicInternalFrameUI$BorderListener : public ::javax::swing::event
 	$class(BasicInternalFrameUI$BorderListener, $NO_CLASS_INIT, ::javax::swing::event::MouseInputAdapter, ::javax::swing::SwingConstants)
 public:
 	BasicInternalFrameUI$BorderListener();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -55,7 +55,6 @@ class PNGMetadata : public ::javax::imageio::metadata::IIOMetadata, public ::jav
 	$class(PNGMetadata, 0, ::javax::imageio::metadata::IIOMetadata, ::java::lang::Cloneable)
 public:
 	PNGMetadata();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

@@ -23,7 +23,6 @@ class $export DefaultMenuLayout : public ::javax::swing::BoxLayout, public ::jav
 	$class(DefaultMenuLayout, $NO_CLASS_INIT, ::javax::swing::BoxLayout, ::javax::swing::plaf::UIResource)
 public:
 	DefaultMenuLayout();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

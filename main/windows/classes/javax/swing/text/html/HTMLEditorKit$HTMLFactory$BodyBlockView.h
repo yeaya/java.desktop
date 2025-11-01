@@ -45,7 +45,6 @@ class $export HTMLEditorKit$HTMLFactory$BodyBlockView : public ::javax::swing::t
 	$class(HTMLEditorKit$HTMLFactory$BodyBlockView, $NO_CLASS_INIT, ::javax::swing::text::html::BlockView, ::java::awt::event::ComponentListener)
 public:
 	HTMLEditorKit$HTMLFactory$BodyBlockView();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::text::html::BlockView::getViewIndex;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

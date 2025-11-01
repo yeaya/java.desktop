@@ -16,7 +16,6 @@ class $export BasicComboBoxEditor$UIResource : public ::javax::swing::plaf::basi
 	$class(BasicComboBoxEditor$UIResource, $NO_CLASS_INIT, ::javax::swing::plaf::basic::BasicComboBoxEditor, ::javax::swing::plaf::UIResource)
 public:
 	BasicComboBoxEditor$UIResource();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

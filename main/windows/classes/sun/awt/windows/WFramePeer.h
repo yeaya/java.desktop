@@ -33,7 +33,6 @@ class WFramePeer : public ::sun::awt::windows::WWindowPeer, public ::java::awt::
 	$class(WFramePeer, 0, ::sun::awt::windows::WWindowPeer, ::java::awt::peer::FramePeer)
 public:
 	WFramePeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::awt::windows::WWindowPeer::getColorModel;
 	virtual void applyShape(::sun::java2d::pipe::Region* shape) override;
 	virtual void beginLayout() override;

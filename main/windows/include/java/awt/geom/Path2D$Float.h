@@ -38,7 +38,6 @@ class $import Path2D$Float : public ::java::awt::geom::Path2D, public ::java::io
 	$class(Path2D$Float, 0, ::java::awt::geom::Path2D, ::java::io::Serializable)
 public:
 	Path2D$Float();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::geom::Path2D::append;
 	using ::java::awt::geom::Path2D::getPathIterator;
 	virtual bool equals(Object$* arg0) override;

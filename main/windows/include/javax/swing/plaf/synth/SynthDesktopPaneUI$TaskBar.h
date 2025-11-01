@@ -26,7 +26,6 @@ class $import SynthDesktopPaneUI$TaskBar : public ::javax::swing::JPanel, public
 	$class(SynthDesktopPaneUI$TaskBar, $NO_CLASS_INIT, ::javax::swing::JPanel, ::java::awt::event::ComponentListener, ::java::awt::event::ContainerListener)
 public:
 	SynthDesktopPaneUI$TaskBar();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JPanel::contains;
 	using ::javax::swing::JPanel::enable;
 	using ::javax::swing::JPanel::getBounds;

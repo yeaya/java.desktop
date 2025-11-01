@@ -26,7 +26,6 @@ class BasicTabbedPaneUI$ScrollableTabViewport : public ::javax::swing::JViewport
 	$class(BasicTabbedPaneUI$ScrollableTabViewport, $NO_CLASS_INIT, ::javax::swing::JViewport, ::javax::swing::plaf::UIResource)
 public:
 	BasicTabbedPaneUI$ScrollableTabViewport();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JViewport::firePropertyChange;
 	using ::javax::swing::JViewport::contains;
 	using ::javax::swing::JViewport::enable;

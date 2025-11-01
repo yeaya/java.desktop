@@ -40,7 +40,6 @@ class $import Checkbox$AccessibleAWTCheckbox : public ::java::awt::Component$Acc
 	$class(Checkbox$AccessibleAWTCheckbox, $NO_CLASS_INIT, ::java::awt::Component$AccessibleAWTComponent, ::java::awt::event::ItemListener, ::javax::accessibility::AccessibleAction, ::javax::accessibility::AccessibleValue)
 public:
 	Checkbox$AccessibleAWTCheckbox();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

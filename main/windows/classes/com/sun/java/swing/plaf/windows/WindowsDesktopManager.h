@@ -31,7 +31,6 @@ class $export WindowsDesktopManager : public ::javax::swing::DefaultDesktopManag
 	$class(WindowsDesktopManager, $NO_CLASS_INIT, ::javax::swing::DefaultDesktopManager, ::javax::swing::plaf::UIResource)
 public:
 	WindowsDesktopManager();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

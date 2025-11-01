@@ -16,7 +16,6 @@ class NullElementHandler : public ::com::sun::beans::decoder::ElementHandler, pu
 	$class(NullElementHandler, $NO_CLASS_INIT, ::com::sun::beans::decoder::ElementHandler, ::com::sun::beans::decoder::ValueObject)
 public:
 	NullElementHandler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

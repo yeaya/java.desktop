@@ -22,7 +22,6 @@ class $import PrinterMoreInfoManufacturer : public ::javax::print::attribute::UR
 	$class(PrinterMoreInfoManufacturer, $NO_CLASS_INIT, ::javax::print::attribute::URISyntax, ::javax::print::attribute::PrintServiceAttribute)
 public:
 	PrinterMoreInfoManufacturer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

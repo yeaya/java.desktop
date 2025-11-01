@@ -46,7 +46,6 @@ class $export StyleContext$NamedStyle : public ::javax::swing::text::Style, publ
 	$class(StyleContext$NamedStyle, $NO_CLASS_INIT, ::javax::swing::text::Style, ::java::io::Serializable)
 public:
 	StyleContext$NamedStyle();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

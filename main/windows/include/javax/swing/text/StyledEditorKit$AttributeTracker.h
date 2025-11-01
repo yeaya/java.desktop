@@ -37,7 +37,6 @@ class $import StyledEditorKit$AttributeTracker : public ::javax::swing::event::C
 	$class(StyledEditorKit$AttributeTracker, $NO_CLASS_INIT, ::javax::swing::event::CaretListener, ::java::beans::PropertyChangeListener, ::java::io::Serializable)
 public:
 	StyledEditorKit$AttributeTracker();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

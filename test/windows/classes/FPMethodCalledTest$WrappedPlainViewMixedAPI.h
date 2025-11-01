@@ -25,7 +25,6 @@ class $export FPMethodCalledTest$WrappedPlainViewMixedAPI : public ::javax::swin
 	$class(FPMethodCalledTest$WrappedPlainViewMixedAPI, $NO_CLASS_INIT, ::javax::swing::text::WrappedPlainView, ::FPMethodCalledTest$Resultable)
 public:
 	FPMethodCalledTest$WrappedPlainViewMixedAPI();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::text::WrappedPlainView::getViewIndex;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

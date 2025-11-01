@@ -27,7 +27,6 @@ class tableView : public ::javax::swing::text::TableView, public ::javax::swing:
 	$class(tableView, $NO_CLASS_INIT, ::javax::swing::text::TableView, ::javax::swing::text::ViewFactory)
 public:
 	tableView();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::text::TableView::getViewIndex;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

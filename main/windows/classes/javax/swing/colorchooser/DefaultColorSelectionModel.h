@@ -31,7 +31,6 @@ class $export DefaultColorSelectionModel : public ::javax::swing::colorchooser::
 	$class(DefaultColorSelectionModel, $NO_CLASS_INIT, ::javax::swing::colorchooser::ColorSelectionModel, ::java::io::Serializable)
 public:
 	DefaultColorSelectionModel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

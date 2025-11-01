@@ -15,7 +15,6 @@ class $import Rectangle2D$Float : public ::java::awt::geom::Rectangle2D, public 
 	$class(Rectangle2D$Float, $NO_CLASS_INIT, ::java::awt::geom::Rectangle2D, ::java::io::Serializable)
 public:
 	Rectangle2D$Float();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::geom::Rectangle2D::contains;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* obj) override;

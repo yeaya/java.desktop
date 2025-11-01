@@ -22,7 +22,6 @@ class $import PrinterURI : public ::javax::print::attribute::URISyntax, public :
 	$class(PrinterURI, $NO_CLASS_INIT, ::javax::print::attribute::URISyntax, ::javax::print::attribute::PrintServiceAttribute)
 public:
 	PrinterURI();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

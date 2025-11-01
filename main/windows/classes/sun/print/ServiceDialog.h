@@ -83,7 +83,6 @@ class ServiceDialog : public ::javax::swing::JDialog, public ::java::awt::event:
 	$class(ServiceDialog, 0, ::javax::swing::JDialog, ::java::awt::event::ActionListener)
 public:
 	ServiceDialog();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JDialog::dispose;
 	using ::javax::swing::JDialog::isFocusCycleRoot;
 	using ::javax::swing::JDialog::add;

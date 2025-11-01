@@ -37,7 +37,6 @@ class ColorPanel : public ::javax::swing::JPanel, public ::java::awt::event::Act
 	$class(ColorPanel, $NO_CLASS_INIT, ::javax::swing::JPanel, ::java::awt::event::ActionListener)
 public:
 	ColorPanel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JPanel::contains;
 	using ::javax::swing::JPanel::enable;
 	using ::javax::swing::JPanel::getBounds;

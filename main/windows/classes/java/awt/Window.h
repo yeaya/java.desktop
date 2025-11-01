@@ -144,7 +144,6 @@ class $export Window : public ::java::awt::Container, public ::javax::accessibil
 	$class(Window, 0, ::java::awt::Container, ::javax::accessibility::Accessible)
 public:
 	Window();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Container::add;
 	using ::java::awt::Container::getMousePosition;
 	using ::java::awt::Container::list;

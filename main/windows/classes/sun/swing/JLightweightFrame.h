@@ -74,7 +74,6 @@ class $export JLightweightFrame : public ::sun::awt::LightweightFrame, public ::
 	$class(JLightweightFrame, 0, ::sun::awt::LightweightFrame, ::javax::swing::RootPaneContainer)
 public:
 	JLightweightFrame();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::awt::LightweightFrame::isFocusCycleRoot;
 	using ::sun::awt::LightweightFrame::add;
 	using ::sun::awt::LightweightFrame::getMousePosition;

@@ -34,7 +34,6 @@ class MetalIconFactory$OceanVerticalSliderThumbIcon : public ::sun::swing::Cache
 	$class(MetalIconFactory$OceanVerticalSliderThumbIcon, 0, ::sun::swing::CachedPainter, ::javax::swing::Icon, ::java::io::Serializable, ::javax::swing::plaf::UIResource)
 public:
 	MetalIconFactory$OceanVerticalSliderThumbIcon();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

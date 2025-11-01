@@ -86,7 +86,6 @@ class $export JPopupMenu : public ::javax::swing::JComponent, public ::javax::ac
 	$class(JPopupMenu, 0, ::javax::swing::JComponent, ::javax::accessibility::Accessible, ::javax::swing::MenuElement)
 public:
 	JPopupMenu();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JComponent::contains;
 	using ::javax::swing::JComponent::enable;
 	using ::javax::swing::JComponent::getBounds;

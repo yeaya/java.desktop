@@ -29,7 +29,6 @@ class $import SetOfIntegerSyntax : public ::java::io::Serializable, public ::jav
 	$class(SetOfIntegerSyntax, $NO_CLASS_INIT, ::java::io::Serializable, ::java::lang::Cloneable)
 public:
 	SetOfIntegerSyntax();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	void init$($String* members);

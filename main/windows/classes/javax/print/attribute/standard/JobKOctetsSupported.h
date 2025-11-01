@@ -16,7 +16,6 @@ class $export JobKOctetsSupported : public ::javax::print::attribute::SetOfInteg
 	$class(JobKOctetsSupported, $NO_CLASS_INIT, ::javax::print::attribute::SetOfIntegerSyntax, ::javax::print::attribute::SupportedValuesAttribute)
 public:
 	JobKOctetsSupported();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

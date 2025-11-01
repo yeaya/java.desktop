@@ -16,7 +16,6 @@ class $import BasicEditorPaneUI$StyleSheetUIResource : public ::javax::swing::te
 	$class(BasicEditorPaneUI$StyleSheetUIResource, $NO_CLASS_INIT, ::javax::swing::text::html::StyleSheet, ::javax::swing::plaf::UIResource)
 public:
 	BasicEditorPaneUI$StyleSheetUIResource();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::text::html::StyleSheet::getFont;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

@@ -53,7 +53,6 @@ class $export TextComponent$AccessibleAWTTextComponent : public ::java::awt::Com
 	$class(TextComponent$AccessibleAWTTextComponent, $NO_CLASS_INIT, ::java::awt::Component$AccessibleAWTComponent, ::javax::accessibility::AccessibleText, ::java::awt::event::TextListener)
 public:
 	TextComponent$AccessibleAWTTextComponent();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -51,7 +51,6 @@ class $export Scrollbar : public ::java::awt::Component, public ::java::awt::Adj
 	$class(Scrollbar, 0, ::java::awt::Component, ::java::awt::Adjustable, ::javax::accessibility::Accessible)
 public:
 	Scrollbar();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

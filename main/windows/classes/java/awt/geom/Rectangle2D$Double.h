@@ -15,7 +15,6 @@ class $export Rectangle2D$Double : public ::java::awt::geom::Rectangle2D, public
 	$class(Rectangle2D$Double, $NO_CLASS_INIT, ::java::awt::geom::Rectangle2D, ::java::io::Serializable)
 public:
 	Rectangle2D$Double();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::geom::Rectangle2D::contains;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* obj) override;

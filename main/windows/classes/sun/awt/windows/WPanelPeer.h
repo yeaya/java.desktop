@@ -23,7 +23,6 @@ class WPanelPeer : public ::sun::awt::windows::WCanvasPeer, public ::java::awt::
 	$class(WPanelPeer, 0, ::sun::awt::windows::WCanvasPeer, ::java::awt::peer::PanelPeer)
 public:
 	WPanelPeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::awt::windows::WCanvasPeer::getColorModel;
 	virtual void applyShape(::sun::java2d::pipe::Region* shape) override;
 	virtual void beginLayout() override;

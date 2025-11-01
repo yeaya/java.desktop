@@ -54,7 +54,6 @@ class $import DefaultTableColumnModel : public ::javax::swing::table::TableColum
 	$class(DefaultTableColumnModel, $NO_CLASS_INIT, ::javax::swing::table::TableColumnModel, ::java::beans::PropertyChangeListener, ::javax::swing::event::ListSelectionListener, ::java::io::Serializable)
 public:
 	DefaultTableColumnModel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -20,7 +20,6 @@ class $export DefaultButtonTest : public ::javax::swing::JFrame, public ::java::
 	$class(DefaultButtonTest, 0, ::javax::swing::JFrame, ::java::awt::event::ActionListener)
 public:
 	DefaultButtonTest();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JFrame::isFocusCycleRoot;
 	using ::javax::swing::JFrame::add;
 	using ::javax::swing::JFrame::getMousePosition;

@@ -21,7 +21,6 @@ class $export ResolutionSyntax : public ::java::io::Serializable, public ::java:
 	$class(ResolutionSyntax, $NO_CLASS_INIT, ::java::io::Serializable, ::java::lang::Cloneable)
 public:
 	ResolutionSyntax();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	void init$(int32_t crossFeedResolution, int32_t feedResolution, int32_t units);

@@ -46,7 +46,6 @@ class ColorChooserPanel : public ::javax::swing::colorchooser::AbstractColorChoo
 	$class(ColorChooserPanel, $NO_CLASS_INIT, ::javax::swing::colorchooser::AbstractColorChooserPanel, ::java::beans::PropertyChangeListener)
 public:
 	ColorChooserPanel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::colorchooser::AbstractColorChooserPanel::contains;
 	using ::javax::swing::colorchooser::AbstractColorChooserPanel::enable;
 	using ::javax::swing::colorchooser::AbstractColorChooserPanel::getBounds;

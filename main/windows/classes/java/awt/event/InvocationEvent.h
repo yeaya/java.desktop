@@ -30,7 +30,6 @@ class $export InvocationEvent : public ::java::awt::AWTEvent, public ::java::awt
 	$class(InvocationEvent, 0, ::java::awt::AWTEvent, ::java::awt::ActiveEvent)
 public:
 	InvocationEvent();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

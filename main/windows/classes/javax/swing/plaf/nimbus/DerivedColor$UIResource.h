@@ -16,7 +16,6 @@ class DerivedColor$UIResource : public ::javax::swing::plaf::nimbus::DerivedColo
 	$class(DerivedColor$UIResource, $NO_CLASS_INIT, ::javax::swing::plaf::nimbus::DerivedColor, ::javax::swing::plaf::UIResource)
 public:
 	DerivedColor$UIResource();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	void init$($String* uiDefaultParentName, float hOffset, float sOffset, float bOffset, int32_t aOffset);

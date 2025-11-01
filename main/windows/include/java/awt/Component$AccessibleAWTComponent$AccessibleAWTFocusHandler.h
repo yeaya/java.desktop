@@ -27,7 +27,6 @@ class $import Component$AccessibleAWTComponent$AccessibleAWTFocusHandler : publi
 	$class(Component$AccessibleAWTComponent$AccessibleAWTFocusHandler, $NO_CLASS_INIT, ::java::awt::event::FocusListener, ::java::io::Serializable)
 public:
 	Component$AccessibleAWTComponent$AccessibleAWTFocusHandler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

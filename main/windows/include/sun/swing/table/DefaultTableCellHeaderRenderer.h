@@ -37,7 +37,6 @@ class $import DefaultTableCellHeaderRenderer : public ::javax::swing::table::Def
 	$class(DefaultTableCellHeaderRenderer, $NO_CLASS_INIT, ::javax::swing::table::DefaultTableCellRenderer, ::javax::swing::plaf::UIResource)
 public:
 	DefaultTableCellHeaderRenderer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::table::DefaultTableCellRenderer::firePropertyChange;
 	using ::javax::swing::table::DefaultTableCellRenderer::contains;
 	using ::javax::swing::table::DefaultTableCellRenderer::enable;

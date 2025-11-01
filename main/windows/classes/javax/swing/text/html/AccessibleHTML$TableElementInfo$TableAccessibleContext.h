@@ -62,7 +62,6 @@ class AccessibleHTML$TableElementInfo$TableAccessibleContext : public ::javax::s
 	$class(AccessibleHTML$TableElementInfo$TableAccessibleContext, $NO_CLASS_INIT, ::javax::swing::text::html::AccessibleHTML$HTMLAccessibleContext, ::javax::accessibility::AccessibleTable)
 public:
 	AccessibleHTML$TableElementInfo$TableAccessibleContext();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -14,7 +14,6 @@ class $import DefaultListCellRenderer$UIResource : public ::javax::swing::Defaul
 	$class(DefaultListCellRenderer$UIResource, $NO_CLASS_INIT, ::javax::swing::DefaultListCellRenderer, ::javax::swing::plaf::UIResource)
 public:
 	DefaultListCellRenderer$UIResource();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::DefaultListCellRenderer::contains;
 	using ::javax::swing::DefaultListCellRenderer::enable;
 	using ::javax::swing::DefaultListCellRenderer::getBounds;

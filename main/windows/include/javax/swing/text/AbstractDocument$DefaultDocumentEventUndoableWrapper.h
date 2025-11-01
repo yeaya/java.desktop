@@ -30,7 +30,6 @@ class $import AbstractDocument$DefaultDocumentEventUndoableWrapper : public ::ja
 	$class(AbstractDocument$DefaultDocumentEventUndoableWrapper, $NO_CLASS_INIT, ::javax::swing::text::AbstractDocument$DefaultDocumentEvent, ::sun::swing::text::UndoableEditLockSupport)
 public:
 	AbstractDocument$DefaultDocumentEventUndoableWrapper();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

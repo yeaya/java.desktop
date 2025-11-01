@@ -32,7 +32,6 @@ class $export RectangularShape : public ::java::awt::Shape, public ::java::lang:
 	$class(RectangularShape, $NO_CLASS_INIT, ::java::awt::Shape, ::java::lang::Cloneable)
 public:
 	RectangularShape();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Shape::contains;
 	using ::java::awt::Shape::getPathIterator;
 	virtual bool equals(Object$* arg0) override;

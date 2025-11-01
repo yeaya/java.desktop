@@ -62,7 +62,6 @@ class $import SunDropTargetContextPeer : public ::java::awt::dnd::peer::DropTarg
 	$class(SunDropTargetContextPeer, 0, ::java::awt::dnd::peer::DropTargetContextPeer, ::java::awt::datatransfer::Transferable)
 public:
 	SunDropTargetContextPeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -38,7 +38,6 @@ class $import BasicComboBoxRenderer : public ::javax::swing::JLabel, public ::ja
 	$class(BasicComboBoxRenderer, 0, ::javax::swing::JLabel, ::javax::swing::ListCellRenderer)
 public:
 	BasicComboBoxRenderer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JLabel::contains;
 	using ::javax::swing::JLabel::enable;
 	using ::javax::swing::JLabel::getBounds;

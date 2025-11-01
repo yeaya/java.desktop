@@ -28,7 +28,6 @@ class $import Box : public ::javax::swing::JComponent, public ::javax::accessibi
 	$class(Box, $NO_CLASS_INIT, ::javax::swing::JComponent, ::javax::accessibility::Accessible)
 public:
 	Box();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JComponent::contains;
 	using ::javax::swing::JComponent::enable;
 	using ::javax::swing::JComponent::getBounds;

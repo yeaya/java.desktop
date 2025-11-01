@@ -55,7 +55,6 @@ class JTabbedPane$Page : public ::javax::accessibility::AccessibleContext, publi
 	$class(JTabbedPane$Page, $NO_CLASS_INIT, ::javax::accessibility::AccessibleContext, ::java::io::Serializable, ::javax::accessibility::Accessible, ::javax::accessibility::AccessibleComponent)
 public:
 	JTabbedPane$Page();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

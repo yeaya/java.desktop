@@ -38,7 +38,6 @@ class Dasher : public ::sun::java2d::marlin::DPathConsumer2D, public ::sun::java
 	$class(Dasher, 0, ::sun::java2d::marlin::DPathConsumer2D, ::sun::java2d::marlin::MarlinConst)
 public:
 	Dasher();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

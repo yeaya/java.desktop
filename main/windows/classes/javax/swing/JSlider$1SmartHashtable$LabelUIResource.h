@@ -26,7 +26,6 @@ class JSlider$1SmartHashtable$LabelUIResource : public ::javax::swing::JLabel, p
 	$class(JSlider$1SmartHashtable$LabelUIResource, $NO_CLASS_INIT, ::javax::swing::JLabel, ::javax::swing::plaf::UIResource)
 public:
 	JSlider$1SmartHashtable$LabelUIResource();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JLabel::contains;
 	using ::javax::swing::JLabel::enable;
 	using ::javax::swing::JLabel::getBounds;

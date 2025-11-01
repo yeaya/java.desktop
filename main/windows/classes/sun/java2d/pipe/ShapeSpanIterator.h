@@ -36,7 +36,6 @@ class ShapeSpanIterator : public ::sun::java2d::pipe::SpanIterator, public ::sun
 	$class(ShapeSpanIterator, 0, ::sun::java2d::pipe::SpanIterator, ::sun::awt::geom::PathConsumer2D)
 public:
 	ShapeSpanIterator();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

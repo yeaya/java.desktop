@@ -20,7 +20,6 @@ class $export Test6461042 : public ::javax::swing::JComponent, public ::javax::s
 	$class(Test6461042, $NO_CLASS_INIT, ::javax::swing::JComponent, ::javax::swing::border::Border)
 public:
 	Test6461042();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JComponent::contains;
 	using ::javax::swing::JComponent::enable;
 	using ::javax::swing::JComponent::getBounds;

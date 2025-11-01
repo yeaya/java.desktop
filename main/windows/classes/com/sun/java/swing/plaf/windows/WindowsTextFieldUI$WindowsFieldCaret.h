@@ -32,7 +32,6 @@ class $export WindowsTextFieldUI$WindowsFieldCaret : public ::javax::swing::text
 	$class(WindowsTextFieldUI$WindowsFieldCaret, $NO_CLASS_INIT, ::javax::swing::text::DefaultCaret, ::javax::swing::plaf::UIResource)
 public:
 	WindowsTextFieldUI$WindowsFieldCaret();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::text::DefaultCaret::contains;
 	using ::javax::swing::text::DefaultCaret::add;
 	virtual $Object* clone() override;

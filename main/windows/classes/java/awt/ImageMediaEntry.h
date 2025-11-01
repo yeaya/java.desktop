@@ -22,7 +22,6 @@ class ImageMediaEntry : public ::java::awt::MediaEntry, public ::java::awt::imag
 	$class(ImageMediaEntry, $NO_CLASS_INIT, ::java::awt::MediaEntry, ::java::awt::image::ImageObserver, ::java::io::Serializable)
 public:
 	ImageMediaEntry();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

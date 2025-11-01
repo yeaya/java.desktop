@@ -14,7 +14,6 @@ namespace javax {
 class $import ImageOutputStream : public ::javax::imageio::stream::ImageInputStream, public ::java::io::DataOutput {
 	$interface(ImageOutputStream, $NO_CLASS_INIT, ::javax::imageio::stream::ImageInputStream, ::java::io::DataOutput)
 public:
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

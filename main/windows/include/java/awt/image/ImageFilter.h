@@ -30,7 +30,6 @@ class $import ImageFilter : public ::java::awt::image::ImageConsumer, public ::j
 	$class(ImageFilter, $NO_CLASS_INIT, ::java::awt::image::ImageConsumer, ::java::lang::Cloneable)
 public:
 	ImageFilter();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

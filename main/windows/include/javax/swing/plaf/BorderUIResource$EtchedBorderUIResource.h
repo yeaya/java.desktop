@@ -21,7 +21,6 @@ class $import BorderUIResource$EtchedBorderUIResource : public ::javax::swing::b
 	$class(BorderUIResource$EtchedBorderUIResource, $NO_CLASS_INIT, ::javax::swing::border::EtchedBorder, ::javax::swing::plaf::UIResource)
 public:
 	BorderUIResource$EtchedBorderUIResource();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::border::EtchedBorder::getBorderInsets;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

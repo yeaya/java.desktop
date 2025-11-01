@@ -60,7 +60,6 @@ class $import DefaultSynthStyle : public ::javax::swing::plaf::synth::SynthStyle
 	$class(DefaultSynthStyle, 0, ::javax::swing::plaf::synth::SynthStyle, ::java::lang::Cloneable)
 public:
 	DefaultSynthStyle();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

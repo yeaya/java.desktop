@@ -38,7 +38,6 @@ class $export DefaultListCellRenderer : public ::javax::swing::JLabel, public ::
 	$class(DefaultListCellRenderer, 0, ::javax::swing::JLabel, ::javax::swing::ListCellRenderer)
 public:
 	DefaultListCellRenderer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JLabel::contains;
 	using ::javax::swing::JLabel::enable;
 	using ::javax::swing::JLabel::getBounds;

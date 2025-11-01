@@ -51,7 +51,6 @@ class $import AbstractAction : public ::javax::swing::Action, public ::java::lan
 	$class(AbstractAction, $NO_CLASS_INIT, ::javax::swing::Action, ::java::lang::Cloneable, ::java::io::Serializable)
 public:
 	AbstractAction();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

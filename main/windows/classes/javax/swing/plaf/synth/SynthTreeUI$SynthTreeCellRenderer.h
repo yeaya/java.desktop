@@ -37,7 +37,6 @@ class SynthTreeUI$SynthTreeCellRenderer : public ::javax::swing::tree::DefaultTr
 	$class(SynthTreeUI$SynthTreeCellRenderer, 0, ::javax::swing::tree::DefaultTreeCellRenderer, ::javax::swing::plaf::UIResource)
 public:
 	SynthTreeUI$SynthTreeCellRenderer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::tree::DefaultTreeCellRenderer::contains;
 	using ::javax::swing::tree::DefaultTreeCellRenderer::enable;
 	using ::javax::swing::tree::DefaultTreeCellRenderer::getBounds;

@@ -23,7 +23,6 @@ class $import JobHoldUntil : public ::javax::print::attribute::DateTimeSyntax, p
 	$class(JobHoldUntil, $NO_CLASS_INIT, ::javax::print::attribute::DateTimeSyntax, ::javax::print::attribute::PrintRequestAttribute, ::javax::print::attribute::PrintJobAttribute)
 public:
 	JobHoldUntil();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

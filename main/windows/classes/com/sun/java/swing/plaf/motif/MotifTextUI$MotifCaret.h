@@ -32,7 +32,6 @@ class $export MotifTextUI$MotifCaret : public ::javax::swing::text::DefaultCaret
 	$class(MotifTextUI$MotifCaret, $NO_CLASS_INIT, ::javax::swing::text::DefaultCaret, ::javax::swing::plaf::UIResource)
 public:
 	MotifTextUI$MotifCaret();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::text::DefaultCaret::contains;
 	using ::javax::swing::text::DefaultCaret::add;
 	virtual $Object* clone() override;

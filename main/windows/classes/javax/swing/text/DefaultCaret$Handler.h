@@ -52,7 +52,6 @@ class $export DefaultCaret$Handler : public ::java::beans::PropertyChangeListene
 	$class(DefaultCaret$Handler, $NO_CLASS_INIT, ::java::beans::PropertyChangeListener, ::javax::swing::event::DocumentListener, ::java::awt::event::ActionListener, ::java::awt::datatransfer::ClipboardOwner)
 public:
 	DefaultCaret$Handler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

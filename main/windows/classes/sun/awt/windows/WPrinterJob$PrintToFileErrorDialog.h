@@ -36,7 +36,6 @@ class WPrinterJob$PrintToFileErrorDialog : public ::java::awt::Dialog, public ::
 	$class(WPrinterJob$PrintToFileErrorDialog, $NO_CLASS_INIT, ::java::awt::Dialog, ::java::awt::event::ActionListener)
 public:
 	WPrinterJob$PrintToFileErrorDialog();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Dialog::add;
 	using ::java::awt::Dialog::getMousePosition;
 	virtual $Object* clone() override;

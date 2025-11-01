@@ -39,7 +39,6 @@ class $export ComponentView$Invalidator : public ::java::awt::Container, public 
 	$class(ComponentView$Invalidator, $NO_CLASS_INIT, ::java::awt::Container, ::java::beans::PropertyChangeListener)
 public:
 	ComponentView$Invalidator();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Container::add;
 	using ::java::awt::Container::getMousePosition;
 	virtual $Object* clone() override;

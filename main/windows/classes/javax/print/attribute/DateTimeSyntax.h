@@ -21,7 +21,6 @@ class $export DateTimeSyntax : public ::java::io::Serializable, public ::java::l
 	$class(DateTimeSyntax, $NO_CLASS_INIT, ::java::io::Serializable, ::java::lang::Cloneable)
 public:
 	DateTimeSyntax();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	void init$(::java::util::Date* value);

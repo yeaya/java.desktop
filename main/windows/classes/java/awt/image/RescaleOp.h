@@ -42,7 +42,6 @@ class $export RescaleOp : public ::java::awt::image::BufferedImageOp, public ::j
 	$class(RescaleOp, $NO_CLASS_INIT, ::java::awt::image::BufferedImageOp, ::java::awt::image::RasterOp)
 public:
 	RescaleOp();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

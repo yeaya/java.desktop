@@ -32,7 +32,6 @@ class $export Test8015926 : public ::javax::swing::event::TreeModelListener, pub
 	$class(Test8015926, $NO_CLASS_INIT, ::javax::swing::event::TreeModelListener, ::java::lang::Runnable, ::java::lang::Thread$UncaughtExceptionHandler)
 public:
 	Test8015926();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

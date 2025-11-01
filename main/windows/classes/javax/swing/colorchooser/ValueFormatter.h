@@ -36,7 +36,6 @@ class ValueFormatter : public ::javax::swing::JFormattedTextField$AbstractFormat
 	$class(ValueFormatter, $NO_CLASS_INIT, ::javax::swing::JFormattedTextField$AbstractFormatter, ::java::awt::event::FocusListener, ::java::lang::Runnable)
 public:
 	ValueFormatter();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

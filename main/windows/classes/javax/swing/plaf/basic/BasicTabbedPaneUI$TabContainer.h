@@ -31,7 +31,6 @@ class BasicTabbedPaneUI$TabContainer : public ::javax::swing::JPanel, public ::j
 	$class(BasicTabbedPaneUI$TabContainer, $NO_CLASS_INIT, ::javax::swing::JPanel, ::javax::swing::plaf::UIResource)
 public:
 	BasicTabbedPaneUI$TabContainer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JPanel::contains;
 	using ::javax::swing::JPanel::enable;
 	using ::javax::swing::JPanel::getBounds;

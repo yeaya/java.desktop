@@ -45,7 +45,6 @@ class DiagramComponent : public ::javax::swing::JComponent, public ::java::awt::
 	$class(DiagramComponent, $NO_CLASS_INIT, ::javax::swing::JComponent, ::java::awt::event::MouseListener, ::java::awt::event::MouseMotionListener)
 public:
 	DiagramComponent();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JComponent::contains;
 	using ::javax::swing::JComponent::enable;
 	using ::javax::swing::JComponent::getBounds;

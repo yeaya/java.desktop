@@ -26,7 +26,6 @@ class $export JMenu$AccessibleJMenu : public ::javax::swing::JMenuItem$Accessibl
 	$class(JMenu$AccessibleJMenu, $NO_CLASS_INIT, ::javax::swing::JMenuItem$AccessibleJMenuItem, ::javax::accessibility::AccessibleSelection)
 public:
 	JMenu$AccessibleJMenu();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

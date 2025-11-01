@@ -53,7 +53,6 @@ class $export TextComponent : public ::java::awt::Component, public ::javax::acc
 	$class(TextComponent, $NO_CLASS_INIT, ::java::awt::Component, ::javax::accessibility::Accessible)
 public:
 	TextComponent();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

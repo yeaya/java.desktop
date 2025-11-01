@@ -45,7 +45,6 @@ class SunLayoutEngine : public ::sun::font::GlyphLayout$LayoutEngine, public ::s
 	$class(SunLayoutEngine, 0, ::sun::font::GlyphLayout$LayoutEngine, ::sun::font::GlyphLayout$LayoutEngineFactory)
 public:
 	SunLayoutEngine();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

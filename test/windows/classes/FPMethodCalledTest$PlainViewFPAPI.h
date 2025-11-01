@@ -24,7 +24,6 @@ class $export FPMethodCalledTest$PlainViewFPAPI : public ::javax::swing::text::P
 	$class(FPMethodCalledTest$PlainViewFPAPI, $NO_CLASS_INIT, ::javax::swing::text::PlainView, ::FPMethodCalledTest$Resultable)
 public:
 	FPMethodCalledTest$PlainViewFPAPI();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::text::PlainView::drawLine;
 	using ::javax::swing::text::PlainView::drawUnselectedText;
 	using ::javax::swing::text::PlainView::drawSelectedText;

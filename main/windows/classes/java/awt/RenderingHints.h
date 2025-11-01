@@ -122,7 +122,6 @@ class $export RenderingHints : public ::java::util::Map, public ::java::lang::Cl
 	$class(RenderingHints, 0, ::java::util::Map, ::java::lang::Cloneable)
 public:
 	RenderingHints();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual void finalize() override;
 	void init$(::java::util::Map* init);
 	void init$(::java::awt::RenderingHints$Key* key, Object$* value);

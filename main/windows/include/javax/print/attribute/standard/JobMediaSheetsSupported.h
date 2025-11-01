@@ -16,7 +16,6 @@ class $import JobMediaSheetsSupported : public ::javax::print::attribute::SetOfI
 	$class(JobMediaSheetsSupported, $NO_CLASS_INIT, ::javax::print::attribute::SetOfIntegerSyntax, ::javax::print::attribute::SupportedValuesAttribute)
 public:
 	JobMediaSheetsSupported();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

@@ -29,7 +29,6 @@ class $import Arc2D$Double : public ::java::awt::geom::Arc2D, public ::java::io:
 	$class(Arc2D$Double, $NO_CLASS_INIT, ::java::awt::geom::Arc2D, ::java::io::Serializable)
 public:
 	Arc2D$Double();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::geom::Arc2D::contains;
 	using ::java::awt::geom::Arc2D::getPathIterator;
 	virtual $Object* clone() override;

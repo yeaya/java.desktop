@@ -23,7 +23,6 @@ class $export HTML$UnknownTag : public ::javax::swing::text::html::HTML$Tag, pub
 	$class(HTML$UnknownTag, $NO_CLASS_INIT, ::javax::swing::text::html::HTML$Tag, ::java::io::Serializable)
 public:
 	HTML$UnknownTag();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	void init$($String* id);

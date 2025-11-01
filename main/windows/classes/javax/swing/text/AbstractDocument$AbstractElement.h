@@ -40,7 +40,6 @@ class $export AbstractDocument$AbstractElement : public ::javax::swing::text::El
 	$class(AbstractDocument$AbstractElement, $NO_CLASS_INIT, ::javax::swing::text::Element, ::javax::swing::text::MutableAttributeSet, ::java::io::Serializable, ::javax::swing::tree::TreeNode)
 public:
 	AbstractDocument$AbstractElement();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual ::java::util::Enumeration* children() override {return nullptr;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

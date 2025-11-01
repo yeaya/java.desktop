@@ -109,7 +109,6 @@ class PrintJob2D : public ::java::awt::PrintJob, public ::java::awt::print::Prin
 	$class(PrintJob2D, $HAS_FINALIZE, ::java::awt::PrintJob, ::java::awt::print::Printable, ::java::lang::Runnable)
 public:
 	PrintJob2D();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual int32_t hashCode() override;

@@ -37,7 +37,6 @@ class SoftMixingSourceDataLine : public ::com::sun::media::sound::SoftMixingData
 	$class(SoftMixingSourceDataLine, $NO_CLASS_INIT, ::com::sun::media::sound::SoftMixingDataLine, ::javax::sound::sampled::SourceDataLine)
 public:
 	SoftMixingSourceDataLine();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual void addLineListener(::javax::sound::sampled::LineListener* listener) override;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

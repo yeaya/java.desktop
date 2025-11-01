@@ -75,7 +75,6 @@ class $export JTabbedPane : public ::javax::swing::JComponent, public ::javax::a
 	$class(JTabbedPane, 0, ::javax::swing::JComponent, ::javax::accessibility::Accessible, ::javax::swing::SwingConstants)
 public:
 	JTabbedPane();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JComponent::contains;
 	using ::javax::swing::JComponent::getToolTipText;
 	using ::javax::swing::JComponent::enable;

@@ -15,7 +15,6 @@ class $export FontUIResource : public ::java::awt::Font, public ::javax::swing::
 	$class(FontUIResource, $NO_CLASS_INIT, ::java::awt::Font, ::javax::swing::plaf::UIResource)
 public:
 	FontUIResource();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* obj) override;
 	virtual void finalize() override;

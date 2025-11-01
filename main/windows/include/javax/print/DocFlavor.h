@@ -26,7 +26,6 @@ class $import DocFlavor : public ::java::io::Serializable, public ::java::lang::
 	$class(DocFlavor, 0, ::java::io::Serializable, ::java::lang::Cloneable)
 public:
 	DocFlavor();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	void init$($String* mimeType, $String* className);

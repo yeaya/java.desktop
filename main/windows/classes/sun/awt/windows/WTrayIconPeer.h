@@ -47,7 +47,6 @@ class WTrayIconPeer : public ::sun::awt::windows::WObjectPeer, public ::java::aw
 	$class(WTrayIconPeer, $NO_CLASS_INIT, ::sun::awt::windows::WObjectPeer, ::java::awt::peer::TrayIconPeer)
 public:
 	WTrayIconPeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void dispose() override;
 	virtual bool equals(Object$* arg0) override;

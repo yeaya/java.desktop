@@ -35,7 +35,6 @@ class $import PresentationDirection : public ::javax::print::attribute::EnumSynt
 	$class(PresentationDirection, 0, ::javax::print::attribute::EnumSyntax, ::javax::print::attribute::PrintJobAttribute, ::javax::print::attribute::PrintRequestAttribute)
 public:
 	PresentationDirection();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -218,7 +218,6 @@ class WToolkit : public ::sun::awt::SunToolkit, public ::java::lang::Runnable {
 	$class(WToolkit, 0, ::sun::awt::SunToolkit, ::java::lang::Runnable)
 public:
 	WToolkit();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::awt::SunToolkit::disableBackgroundErase;
 	using ::sun::awt::SunToolkit::createImage;
 	virtual $Object* clone() override;

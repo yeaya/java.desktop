@@ -28,7 +28,6 @@ class ServiceDialog$SidesPanel : public ::javax::swing::JPanel, public ::java::a
 	$class(ServiceDialog$SidesPanel, $NO_CLASS_INIT, ::javax::swing::JPanel, ::java::awt::event::ActionListener)
 public:
 	ServiceDialog$SidesPanel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JPanel::contains;
 	using ::javax::swing::JPanel::enable;
 	using ::javax::swing::JPanel::getBounds;

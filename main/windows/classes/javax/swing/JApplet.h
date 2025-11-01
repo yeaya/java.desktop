@@ -37,7 +37,6 @@ class $export JApplet : public ::java::applet::Applet, public ::javax::swing::Ro
 	$class(JApplet, $NO_CLASS_INIT, ::java::applet::Applet, ::javax::swing::RootPaneContainer, ::javax::swing::TransferHandler$HasGetTransferHandler)
 public:
 	JApplet();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::applet::Applet::add;
 	using ::java::applet::Applet::getMousePosition;
 	virtual $Object* clone() override;

@@ -32,7 +32,6 @@ class $export MetalIconFactory$FolderIcon16 : public ::javax::swing::Icon, publi
 	$class(MetalIconFactory$FolderIcon16, $NO_CLASS_INIT, ::javax::swing::Icon, ::java::io::Serializable)
 public:
 	MetalIconFactory$FolderIcon16();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

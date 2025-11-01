@@ -24,7 +24,6 @@ class SmartGridLayout : public ::java::awt::LayoutManager, public ::java::io::Se
 	$class(SmartGridLayout, $NO_CLASS_INIT, ::java::awt::LayoutManager, ::java::io::Serializable)
 public:
 	SmartGridLayout();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

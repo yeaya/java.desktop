@@ -32,7 +32,6 @@ class ServiceDialog$ChromaticityPanel : public ::javax::swing::JPanel, public ::
 	$class(ServiceDialog$ChromaticityPanel, $NO_CLASS_INIT, ::javax::swing::JPanel, ::java::awt::event::ActionListener)
 public:
 	ServiceDialog$ChromaticityPanel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JPanel::contains;
 	using ::javax::swing::JPanel::enable;
 	using ::javax::swing::JPanel::getBounds;

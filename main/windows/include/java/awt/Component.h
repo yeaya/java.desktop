@@ -175,7 +175,6 @@ class $import Component : public ::java::awt::image::ImageObserver, public ::jav
 	$class(Component, 0, ::java::awt::image::ImageObserver, ::java::awt::MenuContainer, ::java::io::Serializable)
 public:
 	Component();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

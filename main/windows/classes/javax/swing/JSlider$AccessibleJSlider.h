@@ -40,7 +40,6 @@ class $export JSlider$AccessibleJSlider : public ::javax::swing::JComponent$Acce
 	$class(JSlider$AccessibleJSlider, $NO_CLASS_INIT, ::javax::swing::JComponent$AccessibleJComponent, ::javax::accessibility::AccessibleValue, ::javax::swing::event::ChangeListener, ::javax::accessibility::AccessibleAction)
 public:
 	JSlider$AccessibleJSlider();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

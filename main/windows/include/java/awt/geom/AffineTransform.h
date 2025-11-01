@@ -76,7 +76,6 @@ class $import AffineTransform : public ::java::lang::Cloneable, public ::java::i
 	$class(AffineTransform, 0, ::java::lang::Cloneable, ::java::io::Serializable)
 public:
 	AffineTransform();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual void finalize() override;
 	void init$(double m00, double m10, double m01, double m11, double m02, double m12, int32_t state);
 	void init$();

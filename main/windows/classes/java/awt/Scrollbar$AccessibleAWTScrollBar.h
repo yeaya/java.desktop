@@ -31,7 +31,6 @@ class $export Scrollbar$AccessibleAWTScrollBar : public ::java::awt::Component$A
 	$class(Scrollbar$AccessibleAWTScrollBar, $NO_CLASS_INIT, ::java::awt::Component$AccessibleAWTComponent, ::javax::accessibility::AccessibleValue)
 public:
 	Scrollbar$AccessibleAWTScrollBar();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

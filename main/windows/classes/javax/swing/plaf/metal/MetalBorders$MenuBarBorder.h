@@ -24,7 +24,6 @@ class $export MetalBorders$MenuBarBorder : public ::javax::swing::border::Abstra
 	$class(MetalBorders$MenuBarBorder, 0, ::javax::swing::border::AbstractBorder, ::javax::swing::plaf::UIResource)
 public:
 	MetalBorders$MenuBarBorder();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::border::AbstractBorder::getBorderInsets;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

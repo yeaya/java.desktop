@@ -75,7 +75,6 @@ class $import JComboBox : public ::javax::swing::JComponent, public ::java::awt:
 	$class(JComboBox, 0, ::javax::swing::JComponent, ::java::awt::ItemSelectable, ::javax::swing::event::ListDataListener, ::java::awt::event::ActionListener, ::javax::accessibility::Accessible)
 public:
 	JComboBox();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JComponent::contains;
 	using ::javax::swing::JComponent::enable;
 	using ::javax::swing::JComponent::getBounds;

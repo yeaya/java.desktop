@@ -59,7 +59,6 @@ class $export JScrollBar : public ::javax::swing::JComponent, public ::java::awt
 	$class(JScrollBar, 0, ::javax::swing::JComponent, ::java::awt::Adjustable, ::javax::accessibility::Accessible)
 public:
 	JScrollBar();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JComponent::contains;
 	using ::javax::swing::JComponent::enable;
 	using ::javax::swing::JComponent::getBounds;

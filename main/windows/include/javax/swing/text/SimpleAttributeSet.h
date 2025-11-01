@@ -39,7 +39,6 @@ class $import SimpleAttributeSet : public ::javax::swing::text::MutableAttribute
 	$class(SimpleAttributeSet, 0, ::javax::swing::text::MutableAttributeSet, ::java::io::Serializable, ::java::lang::Cloneable)
 public:
 	SimpleAttributeSet();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual void finalize() override;
 	void init$();
 	void init$(::javax::swing::text::AttributeSet* source);

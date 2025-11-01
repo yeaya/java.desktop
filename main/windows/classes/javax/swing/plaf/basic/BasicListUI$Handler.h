@@ -58,7 +58,6 @@ class BasicListUI$Handler : public ::java::awt::event::FocusListener, public ::j
 	$class(BasicListUI$Handler, $NO_CLASS_INIT, ::java::awt::event::FocusListener, ::java::awt::event::KeyListener, ::javax::swing::event::ListDataListener, ::javax::swing::event::ListSelectionListener, ::javax::swing::event::MouseInputListener, ::java::beans::PropertyChangeListener, ::javax::swing::plaf::basic::DragRecognitionSupport$BeforeDrag)
 public:
 	BasicListUI$Handler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -38,7 +38,6 @@ class RTFAttributes$NumericAttribute : public ::javax::swing::text::rtf::RTFAttr
 	$class(RTFAttributes$NumericAttribute, $NO_CLASS_INIT, ::javax::swing::text::rtf::RTFAttributes$GenericAttribute, ::javax::swing::text::rtf::RTFAttribute)
 public:
 	RTFAttributes$NumericAttribute();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual int32_t domain() override;
 	virtual bool equals(Object$* arg0) override;

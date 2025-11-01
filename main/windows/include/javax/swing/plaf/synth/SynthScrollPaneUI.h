@@ -52,7 +52,6 @@ class $import SynthScrollPaneUI : public ::javax::swing::plaf::basic::BasicScrol
 	$class(SynthScrollPaneUI, $NO_CLASS_INIT, ::javax::swing::plaf::basic::BasicScrollPaneUI, ::java::beans::PropertyChangeListener, ::javax::swing::plaf::synth::SynthUI)
 public:
 	SynthScrollPaneUI();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

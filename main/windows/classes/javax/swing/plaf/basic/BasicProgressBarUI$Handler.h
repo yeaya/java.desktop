@@ -46,7 +46,6 @@ class BasicProgressBarUI$Handler : public ::javax::swing::event::ChangeListener,
 	$class(BasicProgressBarUI$Handler, $NO_CLASS_INIT, ::javax::swing::event::ChangeListener, ::java::beans::PropertyChangeListener, ::java::awt::event::HierarchyListener)
 public:
 	BasicProgressBarUI$Handler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

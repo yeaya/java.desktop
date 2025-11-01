@@ -14,7 +14,6 @@ class $export Dimension : public ::java::awt::geom::Dimension2D, public ::java::
 	$class(Dimension, 0, ::java::awt::geom::Dimension2D, ::java::io::Serializable)
 public:
 	Dimension();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	void init$();

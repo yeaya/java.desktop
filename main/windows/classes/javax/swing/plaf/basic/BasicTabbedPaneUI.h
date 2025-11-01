@@ -99,7 +99,6 @@ class $export BasicTabbedPaneUI : public ::javax::swing::plaf::TabbedPaneUI, pub
 	$class(BasicTabbedPaneUI, 0, ::javax::swing::plaf::TabbedPaneUI, ::javax::swing::SwingConstants)
 public:
 	BasicTabbedPaneUI();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

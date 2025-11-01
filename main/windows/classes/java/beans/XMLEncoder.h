@@ -43,7 +43,6 @@ class $export XMLEncoder : public ::java::beans::Encoder, public ::java::lang::A
 	$class(XMLEncoder, $NO_CLASS_INIT, ::java::beans::Encoder, ::java::lang::AutoCloseable)
 public:
 	XMLEncoder();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

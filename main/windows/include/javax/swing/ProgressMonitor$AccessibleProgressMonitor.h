@@ -62,7 +62,6 @@ class $import ProgressMonitor$AccessibleProgressMonitor : public ::javax::access
 	$class(ProgressMonitor$AccessibleProgressMonitor, $NO_CLASS_INIT, ::javax::accessibility::AccessibleContext, ::javax::accessibility::AccessibleText, ::javax::swing::event::ChangeListener, ::java::beans::PropertyChangeListener)
 public:
 	ProgressMonitor$AccessibleProgressMonitor();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

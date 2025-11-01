@@ -43,7 +43,6 @@ class $import JSpinner$DefaultEditor : public ::javax::swing::JPanel, public ::j
 	$class(JSpinner$DefaultEditor, $NO_CLASS_INIT, ::javax::swing::JPanel, ::javax::swing::event::ChangeListener, ::java::beans::PropertyChangeListener, ::java::awt::LayoutManager)
 public:
 	JSpinner$DefaultEditor();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JPanel::contains;
 	using ::javax::swing::JPanel::enable;
 	using ::javax::swing::JPanel::getBounds;

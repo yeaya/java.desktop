@@ -45,7 +45,6 @@ class $import DefaultTreeModel : public ::java::io::Serializable, public ::javax
 	$class(DefaultTreeModel, $NO_CLASS_INIT, ::java::io::Serializable, ::javax::swing::tree::TreeModel)
 public:
 	DefaultTreeModel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

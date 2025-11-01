@@ -26,7 +26,6 @@ class BasicTabbedPaneUI$ScrollableTabButton : public ::javax::swing::plaf::basic
 	$class(BasicTabbedPaneUI$ScrollableTabButton, $NO_CLASS_INIT, ::javax::swing::plaf::basic::BasicArrowButton, ::javax::swing::plaf::UIResource)
 public:
 	BasicTabbedPaneUI$ScrollableTabButton();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::plaf::basic::BasicArrowButton::contains;
 	using ::javax::swing::plaf::basic::BasicArrowButton::enable;
 	using ::javax::swing::plaf::basic::BasicArrowButton::getBounds;

@@ -40,7 +40,6 @@ class $import JTextComponent$MutableCaretEvent : public ::javax::swing::event::C
 	$class(JTextComponent$MutableCaretEvent, $NO_CLASS_INIT, ::javax::swing::event::CaretEvent, ::javax::swing::event::ChangeListener, ::java::awt::event::FocusListener, ::java::awt::event::MouseListener)
 public:
 	JTextComponent$MutableCaretEvent();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

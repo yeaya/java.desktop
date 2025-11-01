@@ -23,7 +23,6 @@ class IIOAttr : public ::javax::imageio::metadata::IIOMetadataNode, public ::org
 	$class(IIOAttr, $NO_CLASS_INIT, ::javax::imageio::metadata::IIOMetadataNode, ::org::w3c::dom::Attr)
 public:
 	IIOAttr();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual ::org::w3c::dom::Node* appendChild(::org::w3c::dom::Node* newChild) override;
 	virtual $Object* clone() override;
 	virtual ::org::w3c::dom::Node* cloneNode(bool deep) override;

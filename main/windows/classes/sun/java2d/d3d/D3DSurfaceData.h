@@ -123,7 +123,6 @@ class D3DSurfaceData : public ::sun::java2d::SurfaceData, public ::sun::java2d::
 	$class(D3DSurfaceData, 0, ::sun::java2d::SurfaceData, ::sun::java2d::pipe::hw::AccelSurface)
 public:
 	D3DSurfaceData();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

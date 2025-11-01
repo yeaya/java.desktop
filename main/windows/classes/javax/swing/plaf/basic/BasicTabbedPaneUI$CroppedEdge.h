@@ -33,7 +33,6 @@ class BasicTabbedPaneUI$CroppedEdge : public ::javax::swing::JPanel, public ::ja
 	$class(BasicTabbedPaneUI$CroppedEdge, $NO_CLASS_INIT, ::javax::swing::JPanel, ::javax::swing::plaf::UIResource)
 public:
 	BasicTabbedPaneUI$CroppedEdge();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JPanel::contains;
 	using ::javax::swing::JPanel::enable;
 	using ::javax::swing::JPanel::getBounds;

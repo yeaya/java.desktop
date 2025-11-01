@@ -37,7 +37,6 @@ class FontEditor : public ::java::awt::Panel, public ::java::beans::PropertyEdit
 	$class(FontEditor, $NO_CLASS_INIT, ::java::awt::Panel, ::java::beans::PropertyEditor)
 public:
 	FontEditor();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Panel::add;
 	using ::java::awt::Panel::getMousePosition;
 	using ::java::awt::Panel::addPropertyChangeListener;

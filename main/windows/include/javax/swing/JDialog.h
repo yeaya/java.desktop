@@ -49,7 +49,6 @@ class $import JDialog : public ::java::awt::Dialog, public ::javax::swing::Windo
 	$class(JDialog, 0, ::java::awt::Dialog, ::javax::swing::WindowConstants, ::javax::swing::RootPaneContainer, ::javax::swing::TransferHandler$HasGetTransferHandler)
 public:
 	JDialog();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Dialog::isFocusCycleRoot;
 	using ::java::awt::Dialog::add;
 	using ::java::awt::Dialog::getMousePosition;

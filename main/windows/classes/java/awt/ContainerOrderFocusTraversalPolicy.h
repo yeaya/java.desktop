@@ -38,7 +38,6 @@ class $export ContainerOrderFocusTraversalPolicy : public ::java::awt::FocusTrav
 	$class(ContainerOrderFocusTraversalPolicy, 0, ::java::awt::FocusTraversalPolicy, ::java::io::Serializable)
 public:
 	ContainerOrderFocusTraversalPolicy();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

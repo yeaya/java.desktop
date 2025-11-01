@@ -51,7 +51,6 @@ class $export SynthViewportUI : public ::javax::swing::plaf::ViewportUI, public 
 	$class(SynthViewportUI, $NO_CLASS_INIT, ::javax::swing::plaf::ViewportUI, ::java::beans::PropertyChangeListener, ::javax::swing::plaf::synth::SynthUI)
 public:
 	SynthViewportUI();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

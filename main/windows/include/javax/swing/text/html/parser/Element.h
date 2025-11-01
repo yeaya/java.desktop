@@ -39,7 +39,6 @@ class $import Element : public ::javax::swing::text::html::parser::DTDConstants,
 	$class(Element, 0, ::javax::swing::text::html::parser::DTDConstants, ::java::io::Serializable)
 public:
 	Element();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -111,7 +111,6 @@ class $export FilePane : public ::javax::swing::JPanel, public ::java::beans::Pr
 	$class(FilePane, 0, ::javax::swing::JPanel, ::java::beans::PropertyChangeListener)
 public:
 	FilePane();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JPanel::contains;
 	using ::javax::swing::JPanel::enable;
 	using ::javax::swing::JPanel::getBounds;

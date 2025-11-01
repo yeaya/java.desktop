@@ -37,7 +37,6 @@ class $import LayoutFocusTraversalPolicy : public ::javax::swing::SortingFocusTr
 	$class(LayoutFocusTraversalPolicy, 0, ::javax::swing::SortingFocusTraversalPolicy, ::java::io::Serializable)
 public:
 	LayoutFocusTraversalPolicy();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::SortingFocusTraversalPolicy::getInitialComponent;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

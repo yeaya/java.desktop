@@ -29,7 +29,6 @@ class WMenuBarPeer : public ::sun::awt::windows::WMenuPeer, public ::java::awt::
 	$class(WMenuBarPeer, $NO_CLASS_INIT, ::sun::awt::windows::WMenuPeer, ::java::awt::peer::MenuBarPeer)
 public:
 	WMenuBarPeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::awt::windows::WMenuPeer::create;
 	virtual $Object* clone() override;
 	virtual void dispose() override;

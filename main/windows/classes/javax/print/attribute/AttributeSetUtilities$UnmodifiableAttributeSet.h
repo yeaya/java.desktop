@@ -24,7 +24,6 @@ class AttributeSetUtilities$UnmodifiableAttributeSet : public ::javax::print::at
 	$class(AttributeSetUtilities$UnmodifiableAttributeSet, $NO_CLASS_INIT, ::javax::print::attribute::AttributeSet, ::java::io::Serializable)
 public:
 	AttributeSetUtilities$UnmodifiableAttributeSet();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	void init$(::javax::print::attribute::AttributeSet* attributeSet);

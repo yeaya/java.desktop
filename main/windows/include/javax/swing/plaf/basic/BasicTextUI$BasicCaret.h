@@ -16,7 +16,6 @@ class $import BasicTextUI$BasicCaret : public ::javax::swing::text::DefaultCaret
 	$class(BasicTextUI$BasicCaret, $NO_CLASS_INIT, ::javax::swing::text::DefaultCaret, ::javax::swing::plaf::UIResource)
 public:
 	BasicTextUI$BasicCaret();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::text::DefaultCaret::contains;
 	using ::javax::swing::text::DefaultCaret::add;
 	virtual $Object* clone() override;

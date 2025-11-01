@@ -65,7 +65,6 @@ class $import EmbeddedFrame : public ::java::awt::Frame, public ::java::awt::Key
 	$class(EmbeddedFrame, $NO_CLASS_INIT, ::java::awt::Frame, ::java::awt::KeyEventDispatcher, ::java::beans::PropertyChangeListener)
 public:
 	EmbeddedFrame();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Frame::add;
 	using ::java::awt::Frame::getMousePosition;
 	virtual $Object* clone() override;

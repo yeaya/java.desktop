@@ -23,7 +23,6 @@ class $import MuxingAttributeSet : public ::javax::swing::text::AttributeSet, pu
 	$class(MuxingAttributeSet, $NO_CLASS_INIT, ::javax::swing::text::AttributeSet, ::java::io::Serializable)
 public:
 	MuxingAttributeSet();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

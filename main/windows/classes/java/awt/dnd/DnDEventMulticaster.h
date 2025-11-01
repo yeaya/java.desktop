@@ -36,7 +36,6 @@ class DnDEventMulticaster : public ::java::awt::AWTEventMulticaster, public ::ja
 	$class(DnDEventMulticaster, $NO_CLASS_INIT, ::java::awt::AWTEventMulticaster, ::java::awt::dnd::DragSourceListener, ::java::awt::dnd::DragSourceMotionListener)
 public:
 	DnDEventMulticaster();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

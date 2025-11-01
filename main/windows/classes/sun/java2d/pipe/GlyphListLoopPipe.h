@@ -26,7 +26,6 @@ class GlyphListLoopPipe : public ::sun::java2d::pipe::GlyphListPipe, public ::su
 	$class(GlyphListLoopPipe, $NO_CLASS_INIT, ::sun::java2d::pipe::GlyphListPipe, ::sun::java2d::pipe::LoopBasedPipe)
 public:
 	GlyphListLoopPipe();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::java2d::pipe::GlyphListPipe::drawGlyphList;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

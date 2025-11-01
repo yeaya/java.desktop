@@ -21,7 +21,6 @@ class $import BorderUIResource$BevelBorderUIResource : public ::javax::swing::bo
 	$class(BorderUIResource$BevelBorderUIResource, $NO_CLASS_INIT, ::javax::swing::border::BevelBorder, ::javax::swing::plaf::UIResource)
 public:
 	BorderUIResource$BevelBorderUIResource();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::border::BevelBorder::getBorderInsets;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

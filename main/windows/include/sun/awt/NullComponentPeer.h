@@ -67,7 +67,6 @@ class $import NullComponentPeer : public ::java::awt::peer::LightweightPeer, pub
 	$class(NullComponentPeer, $NO_CLASS_INIT, ::java::awt::peer::LightweightPeer, ::java::awt::peer::CanvasPeer, ::java::awt::peer::PanelPeer)
 public:
 	NullComponentPeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -51,7 +51,6 @@ class MaskBlit$General : public ::sun::java2d::loops::MaskBlit, public ::sun::ja
 	$class(MaskBlit$General, $NO_CLASS_INIT, ::sun::java2d::loops::MaskBlit, ::sun::java2d::loops::GraphicsPrimitive$GeneralBinaryOp)
 public:
 	MaskBlit$General();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

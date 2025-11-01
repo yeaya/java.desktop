@@ -24,7 +24,6 @@ class $export HashPrintServiceAttributeSet : public ::javax::print::attribute::H
 	$class(HashPrintServiceAttributeSet, $NO_CLASS_INIT, ::javax::print::attribute::HashAttributeSet, ::javax::print::attribute::PrintServiceAttributeSet)
 public:
 	HashPrintServiceAttributeSet();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool add(::javax::print::attribute::Attribute* attribute) override;
 	virtual bool addAll(::javax::print::attribute::AttributeSet* attributes) override;
 	virtual void clear() override;

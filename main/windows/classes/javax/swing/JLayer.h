@@ -63,7 +63,6 @@ class $export JLayer : public ::javax::swing::JComponent, public ::javax::swing:
 	$class(JLayer, 0, ::javax::swing::JComponent, ::javax::swing::Scrollable, ::java::beans::PropertyChangeListener, ::javax::accessibility::Accessible)
 public:
 	JLayer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JComponent::contains;
 	using ::javax::swing::JComponent::enable;
 	using ::javax::swing::JComponent::getBounds;

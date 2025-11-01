@@ -24,7 +24,6 @@ class Cache$Kind$Soft : public ::java::lang::ref::SoftReference, public ::com::s
 	$class(Cache$Kind$Soft, $NO_CLASS_INIT, ::java::lang::ref::SoftReference, ::com::sun::beans::util::Cache$Ref)
 public:
 	Cache$Kind$Soft();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -49,7 +49,6 @@ class TransferHandler$DropHandler : public ::java::awt::dnd::DropTargetListener,
 	$class(TransferHandler$DropHandler, $NO_CLASS_INIT, ::java::awt::dnd::DropTargetListener, ::java::io::Serializable, ::java::awt::event::ActionListener)
 public:
 	TransferHandler$DropHandler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

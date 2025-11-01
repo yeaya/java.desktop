@@ -15,7 +15,6 @@ class $import Point2D$Float : public ::java::awt::geom::Point2D, public ::java::
 	$class(Point2D$Float, $NO_CLASS_INIT, ::java::awt::geom::Point2D, ::java::io::Serializable)
 public:
 	Point2D$Float();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* obj) override;
 	virtual void finalize() override;

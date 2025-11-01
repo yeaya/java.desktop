@@ -31,7 +31,6 @@ class $export JTextComponent$DefaultTransferHandler : public ::javax::swing::Tra
 	$class(JTextComponent$DefaultTransferHandler, $NO_CLASS_INIT, ::javax::swing::TransferHandler, ::javax::swing::plaf::UIResource)
 public:
 	JTextComponent$DefaultTransferHandler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::TransferHandler::importData;
 	using ::javax::swing::TransferHandler::canImport;
 	virtual $Object* clone() override;

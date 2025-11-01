@@ -51,7 +51,6 @@ class $import GlyphView : public ::javax::swing::text::View, public ::javax::swi
 	$class(GlyphView, $NO_CLASS_INIT, ::javax::swing::text::View, ::javax::swing::text::TabableView, ::java::lang::Cloneable)
 public:
 	GlyphView();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

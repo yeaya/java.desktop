@@ -96,7 +96,6 @@ class WComponentPeer : public ::sun::awt::windows::WObjectPeer, public ::java::a
 	$class(WComponentPeer, 0, ::sun::awt::windows::WObjectPeer, ::java::awt::peer::ComponentPeer, ::java::awt::dnd::peer::DropTargetPeer)
 public:
 	WComponentPeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void dispose() override;
 	virtual bool equals(Object$* arg0) override;

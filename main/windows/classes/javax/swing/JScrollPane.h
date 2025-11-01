@@ -55,7 +55,6 @@ class $export JScrollPane : public ::javax::swing::JComponent, public ::javax::s
 	$class(JScrollPane, 0, ::javax::swing::JComponent, ::javax::swing::ScrollPaneConstants, ::javax::accessibility::Accessible)
 public:
 	JScrollPane();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JComponent::contains;
 	using ::javax::swing::JComponent::enable;
 	using ::javax::swing::JComponent::getBounds;

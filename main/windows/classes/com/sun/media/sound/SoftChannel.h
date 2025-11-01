@@ -45,7 +45,6 @@ class SoftChannel : public ::javax::sound::midi::MidiChannel, public ::com::sun:
 	$class(SoftChannel, 0, ::javax::sound::midi::MidiChannel, ::com::sun::media::sound::ModelDirectedPlayer)
 public:
 	SoftChannel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

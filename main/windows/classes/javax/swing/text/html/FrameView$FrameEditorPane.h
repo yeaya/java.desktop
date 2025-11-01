@@ -33,7 +33,6 @@ class FrameView$FrameEditorPane : public ::javax::swing::JEditorPane, public ::s
 	$class(FrameView$FrameEditorPane, $NO_CLASS_INIT, ::javax::swing::JEditorPane, ::sun::swing::text::html::FrameEditorPaneTag)
 public:
 	FrameView$FrameEditorPane();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JEditorPane::getText;
 	using ::javax::swing::JEditorPane::getToolTipText;
 	using ::javax::swing::JEditorPane::contains;

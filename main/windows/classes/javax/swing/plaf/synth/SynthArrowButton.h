@@ -16,7 +16,6 @@ class SynthArrowButton : public ::javax::swing::JButton, public ::javax::swing::
 	$class(SynthArrowButton, $NO_CLASS_INIT, ::javax::swing::JButton, ::javax::swing::plaf::UIResource)
 public:
 	SynthArrowButton();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JButton::contains;
 	using ::javax::swing::JButton::enable;
 	using ::javax::swing::JButton::getBounds;

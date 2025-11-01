@@ -37,7 +37,6 @@ class $export StyleSheet$ResolvedStyle : public ::javax::swing::text::html::Muxi
 	$class(StyleSheet$ResolvedStyle, $NO_CLASS_INIT, ::javax::swing::text::html::MuxingAttributeSet, ::javax::swing::text::Style)
 public:
 	StyleSheet$ResolvedStyle();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool containsAttribute(Object$* name, Object$* value) override;
 	virtual bool containsAttributes(::javax::swing::text::AttributeSet* attrs) override;

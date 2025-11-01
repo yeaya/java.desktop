@@ -21,7 +21,6 @@ class $import BorderUIResource$EmptyBorderUIResource : public ::javax::swing::bo
 	$class(BorderUIResource$EmptyBorderUIResource, $NO_CLASS_INIT, ::javax::swing::border::EmptyBorder, ::javax::swing::plaf::UIResource)
 public:
 	BorderUIResource$EmptyBorderUIResource();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::border::EmptyBorder::getBorderInsets;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

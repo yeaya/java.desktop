@@ -18,7 +18,6 @@ class $import Media : public ::javax::print::attribute::EnumSyntax, public ::jav
 	$class(Media, $NO_CLASS_INIT, ::javax::print::attribute::EnumSyntax, ::javax::print::attribute::DocAttribute, ::javax::print::attribute::PrintRequestAttribute, ::javax::print::attribute::PrintJobAttribute)
 public:
 	Media();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

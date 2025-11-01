@@ -45,7 +45,6 @@ class $import BasicTextUI$TextTransferHandler : public ::javax::swing::TransferH
 	$class(BasicTextUI$TextTransferHandler, $NO_CLASS_INIT, ::javax::swing::TransferHandler, ::javax::swing::plaf::UIResource)
 public:
 	BasicTextUI$TextTransferHandler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::TransferHandler::canImport;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

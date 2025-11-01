@@ -27,7 +27,6 @@ class $export Component$AccessibleAWTComponent$AccessibleAWTComponentHandler : p
 	$class(Component$AccessibleAWTComponent$AccessibleAWTComponentHandler, $NO_CLASS_INIT, ::java::awt::event::ComponentListener, ::java::io::Serializable)
 public:
 	Component$AccessibleAWTComponent$AccessibleAWTComponentHandler();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

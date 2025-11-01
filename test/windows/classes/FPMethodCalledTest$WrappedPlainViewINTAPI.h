@@ -24,7 +24,6 @@ class $export FPMethodCalledTest$WrappedPlainViewINTAPI : public ::javax::swing:
 	$class(FPMethodCalledTest$WrappedPlainViewINTAPI, $NO_CLASS_INIT, ::javax::swing::text::WrappedPlainView, ::FPMethodCalledTest$Resultable)
 public:
 	FPMethodCalledTest$WrappedPlainViewINTAPI();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::text::WrappedPlainView::drawLine;
 	using ::javax::swing::text::WrappedPlainView::drawUnselectedText;
 	using ::javax::swing::text::WrappedPlainView::drawSelectedText;

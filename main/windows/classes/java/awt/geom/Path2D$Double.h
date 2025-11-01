@@ -38,7 +38,6 @@ class $export Path2D$Double : public ::java::awt::geom::Path2D, public ::java::i
 	$class(Path2D$Double, 0, ::java::awt::geom::Path2D, ::java::io::Serializable)
 public:
 	Path2D$Double();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::geom::Path2D::append;
 	using ::java::awt::geom::Path2D::getPathIterator;
 	virtual bool equals(Object$* arg0) override;

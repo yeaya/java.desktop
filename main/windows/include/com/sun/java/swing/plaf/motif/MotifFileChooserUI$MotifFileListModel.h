@@ -39,7 +39,6 @@ class $import MotifFileChooserUI$MotifFileListModel : public ::javax::swing::Abs
 	$class(MotifFileChooserUI$MotifFileListModel, $NO_CLASS_INIT, ::javax::swing::AbstractListModel, ::javax::swing::event::ListDataListener)
 public:
 	MotifFileChooserUI$MotifFileListModel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::AbstractListModel::fireContentsChanged;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

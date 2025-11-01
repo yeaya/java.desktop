@@ -27,7 +27,6 @@ class DefaultFormatter$DefaultNavigationFilter : public ::javax::swing::text::Na
 	$class(DefaultFormatter$DefaultNavigationFilter, $NO_CLASS_INIT, ::javax::swing::text::NavigationFilter, ::java::io::Serializable)
 public:
 	DefaultFormatter$DefaultNavigationFilter();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

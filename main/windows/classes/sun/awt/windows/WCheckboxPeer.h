@@ -23,7 +23,6 @@ class WCheckboxPeer : public ::sun::awt::windows::WComponentPeer, public ::java:
 	$class(WCheckboxPeer, $NO_CLASS_INIT, ::sun::awt::windows::WComponentPeer, ::java::awt::peer::CheckboxPeer)
 public:
 	WCheckboxPeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::awt::windows::WComponentPeer::getColorModel;
 	virtual void applyShape(::sun::java2d::pipe::Region* shape) override;
 	virtual bool canDetermineObscurity() override;

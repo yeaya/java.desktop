@@ -16,7 +16,6 @@ class $import EnumSyntax : public ::java::io::Serializable, public ::java::lang:
 	$class(EnumSyntax, $NO_CLASS_INIT, ::java::io::Serializable, ::java::lang::Cloneable)
 public:
 	EnumSyntax();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;
 	void init$(int32_t value);

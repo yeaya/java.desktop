@@ -21,7 +21,6 @@ class $export Popup$HeavyWeightWindow : public ::javax::swing::JWindow, public :
 	$class(Popup$HeavyWeightWindow, $NO_CLASS_INIT, ::javax::swing::JWindow, ::sun::awt::ModalExclude)
 public:
 	Popup$HeavyWeightWindow();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JWindow::add;
 	using ::javax::swing::JWindow::getMousePosition;
 	virtual $Object* clone() override;

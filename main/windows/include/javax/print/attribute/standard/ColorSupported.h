@@ -22,7 +22,6 @@ class $import ColorSupported : public ::javax::print::attribute::EnumSyntax, pub
 	$class(ColorSupported, 0, ::javax::print::attribute::EnumSyntax, ::javax::print::attribute::PrintServiceAttribute)
 public:
 	ColorSupported();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

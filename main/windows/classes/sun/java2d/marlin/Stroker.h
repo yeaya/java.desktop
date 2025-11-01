@@ -42,7 +42,6 @@ class Stroker : public ::sun::java2d::marlin::DPathConsumer2D, public ::sun::jav
 	$class(Stroker, 0, ::sun::java2d::marlin::DPathConsumer2D, ::sun::java2d::marlin::MarlinConst)
 public:
 	Stroker();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

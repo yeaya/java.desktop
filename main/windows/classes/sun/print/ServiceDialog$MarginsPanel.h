@@ -49,7 +49,6 @@ class ServiceDialog$MarginsPanel : public ::javax::swing::JPanel, public ::java:
 	$class(ServiceDialog$MarginsPanel, $NO_CLASS_INIT, ::javax::swing::JPanel, ::java::awt::event::ActionListener, ::java::awt::event::FocusListener)
 public:
 	ServiceDialog$MarginsPanel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::JPanel::contains;
 	using ::javax::swing::JPanel::enable;
 	using ::javax::swing::JPanel::getBounds;

@@ -25,7 +25,6 @@ class $export BasicBorders$FieldBorder : public ::javax::swing::border::Abstract
 	$class(BasicBorders$FieldBorder, $NO_CLASS_INIT, ::javax::swing::border::AbstractBorder, ::javax::swing::plaf::UIResource)
 public:
 	BasicBorders$FieldBorder();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::border::AbstractBorder::getBorderInsets;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

@@ -33,7 +33,6 @@ namespace java {
 class $export BeanContext : public ::java::beans::beancontext::BeanContextChild, public ::java::util::Collection, public ::java::beans::DesignMode, public ::java::beans::Visibility {
 	$interface(BeanContext, 0, ::java::beans::beancontext::BeanContextChild, ::java::util::Collection, ::java::beans::DesignMode, ::java::beans::Visibility)
 public:
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

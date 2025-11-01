@@ -51,7 +51,6 @@ class $export ScrollPane : public ::java::awt::Container, public ::javax::access
 	$class(ScrollPane, 0, ::java::awt::Container, ::javax::accessibility::Accessible)
 public:
 	ScrollPane();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Container::add;
 	using ::java::awt::Container::getMousePosition;
 	using ::java::awt::Container::list;

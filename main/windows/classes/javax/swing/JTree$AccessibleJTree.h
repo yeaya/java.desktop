@@ -52,7 +52,6 @@ class $export JTree$AccessibleJTree : public ::javax::swing::JComponent$Accessib
 	$class(JTree$AccessibleJTree, $NO_CLASS_INIT, ::javax::swing::JComponent$AccessibleJComponent, ::javax::accessibility::AccessibleSelection, ::javax::swing::event::TreeSelectionListener, ::javax::swing::event::TreeModelListener, ::javax::swing::event::TreeExpansionListener)
 public:
 	JTree$AccessibleJTree();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -21,7 +21,6 @@ class $export SimpleAttributeSet$EmptyAttributeSet : public ::javax::swing::text
 	$class(SimpleAttributeSet$EmptyAttributeSet, $NO_CLASS_INIT, ::javax::swing::text::AttributeSet, ::java::io::Serializable)
 public:
 	SimpleAttributeSet$EmptyAttributeSet();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	void init$();

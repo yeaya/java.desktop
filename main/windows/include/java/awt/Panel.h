@@ -25,7 +25,6 @@ class $import Panel : public ::java::awt::Container, public ::javax::accessibili
 	$class(Panel, 0, ::java::awt::Container, ::javax::accessibility::Accessible)
 public:
 	Panel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Container::add;
 	using ::java::awt::Container::getMousePosition;
 	using ::java::awt::Container::list;

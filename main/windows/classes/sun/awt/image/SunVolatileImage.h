@@ -46,7 +46,6 @@ class SunVolatileImage : public ::java::awt::image::VolatileImage, public ::sun:
 	$class(SunVolatileImage, $NO_CLASS_INIT, ::java::awt::image::VolatileImage, ::sun::java2d::DestSurfaceProvider)
 public:
 	SunVolatileImage();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::image::VolatileImage::getCapabilities;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

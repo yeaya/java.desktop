@@ -77,7 +77,6 @@ class $import BasicTextUI : public ::javax::swing::plaf::TextUI, public ::javax:
 	$class(BasicTextUI, 0, ::javax::swing::plaf::TextUI, ::javax::swing::text::ViewFactory)
 public:
 	BasicTextUI();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

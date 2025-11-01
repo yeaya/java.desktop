@@ -57,7 +57,6 @@ class $import JSpinner$AccessibleJSpinner : public ::javax::swing::JComponent$Ac
 	$class(JSpinner$AccessibleJSpinner, $NO_CLASS_INIT, ::javax::swing::JComponent$AccessibleJComponent, ::javax::accessibility::AccessibleValue, ::javax::accessibility::AccessibleAction, ::javax::accessibility::AccessibleEditableText, ::javax::swing::event::ChangeListener)
 public:
 	JSpinner$AccessibleJSpinner();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -41,7 +41,6 @@ class $import TransferHandler$TransferAction : public ::sun::swing::UIAction, pu
 	$class(TransferHandler$TransferAction, 0, ::sun::swing::UIAction, ::javax::swing::plaf::UIResource)
 public:
 	TransferHandler$TransferAction();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

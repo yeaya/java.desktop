@@ -68,7 +68,6 @@ class $import MotifInternalFrameTitlePane : public ::javax::swing::plaf::basic::
 	$class(MotifInternalFrameTitlePane, 0, ::javax::swing::plaf::basic::BasicInternalFrameTitlePane, ::java::awt::LayoutManager, ::java::awt::event::ActionListener, ::java::beans::PropertyChangeListener)
 public:
 	MotifInternalFrameTitlePane();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::plaf::basic::BasicInternalFrameTitlePane::contains;
 	using ::javax::swing::plaf::basic::BasicInternalFrameTitlePane::enable;
 	using ::javax::swing::plaf::basic::BasicInternalFrameTitlePane::getBounds;

@@ -25,7 +25,6 @@ class DefaultFormatter$DefaultDocumentFilter : public ::javax::swing::text::Docu
 	$class(DefaultFormatter$DefaultDocumentFilter, $NO_CLASS_INIT, ::javax::swing::text::DocumentFilter, ::java::io::Serializable)
 public:
 	DefaultFormatter$DefaultDocumentFilter();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

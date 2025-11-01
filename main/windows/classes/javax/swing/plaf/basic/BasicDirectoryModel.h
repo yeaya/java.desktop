@@ -64,7 +64,6 @@ class $export BasicDirectoryModel : public ::javax::swing::AbstractListModel, pu
 	$class(BasicDirectoryModel, $NO_CLASS_INIT, ::javax::swing::AbstractListModel, ::java::beans::PropertyChangeListener)
 public:
 	BasicDirectoryModel();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::javax::swing::AbstractListModel::fireContentsChanged;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

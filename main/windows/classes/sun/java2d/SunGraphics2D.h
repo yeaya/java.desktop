@@ -186,7 +186,6 @@ class SunGraphics2D : public ::java::awt::Graphics2D, public ::sun::awt::Constra
 	$class(SunGraphics2D, $HAS_FINALIZE, ::java::awt::Graphics2D, ::sun::awt::ConstrainableGraphics, ::java::lang::Cloneable, ::sun::java2d::DestSurfaceProvider)
 public:
 	SunGraphics2D();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Graphics2D::create;
 	using ::java::awt::Graphics2D::drawPolygon;
 	using ::java::awt::Graphics2D::fillPolygon;

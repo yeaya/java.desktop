@@ -28,7 +28,6 @@ namespace java {
 class $import BeanContextServices : public ::java::beans::beancontext::BeanContext, public ::java::beans::beancontext::BeanContextServicesListener {
 	$interface(BeanContextServices, $NO_CLASS_INIT, ::java::beans::beancontext::BeanContext, ::java::beans::beancontext::BeanContextServicesListener)
 public:
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual void addBeanContextServicesListener(::java::beans::beancontext::BeanContextServicesListener* bcsl) {}
 	virtual bool addService($Class* serviceClass, ::java::beans::beancontext::BeanContextServiceProvider* serviceProvider) {return false;}
 	virtual $Object* clone() override;

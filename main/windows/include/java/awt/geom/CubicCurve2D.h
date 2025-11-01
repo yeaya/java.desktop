@@ -32,7 +32,6 @@ class $import CubicCurve2D : public ::java::awt::Shape, public ::java::lang::Clo
 	$class(CubicCurve2D, $NO_CLASS_INIT, ::java::awt::Shape, ::java::lang::Cloneable)
 public:
 	CubicCurve2D();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

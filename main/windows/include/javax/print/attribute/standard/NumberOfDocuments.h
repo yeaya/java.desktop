@@ -16,7 +16,6 @@ class $import NumberOfDocuments : public ::javax::print::attribute::IntegerSynta
 	$class(NumberOfDocuments, $NO_CLASS_INIT, ::javax::print::attribute::IntegerSyntax, ::javax::print::attribute::PrintJobAttribute)
 public:
 	NumberOfDocuments();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

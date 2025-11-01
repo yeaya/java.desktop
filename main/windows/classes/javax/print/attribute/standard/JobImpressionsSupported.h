@@ -16,7 +16,6 @@ class $export JobImpressionsSupported : public ::javax::print::attribute::SetOfI
 	$class(JobImpressionsSupported, $NO_CLASS_INIT, ::javax::print::attribute::SetOfIntegerSyntax, ::javax::print::attribute::SupportedValuesAttribute)
 public:
 	JobImpressionsSupported();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

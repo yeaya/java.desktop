@@ -22,7 +22,6 @@ class SurfaceData$PixelToShapeLoopConverter : public ::sun::java2d::pipe::PixelT
 	$class(SurfaceData$PixelToShapeLoopConverter, $NO_CLASS_INIT, ::sun::java2d::pipe::PixelToShapeConverter, ::sun::java2d::pipe::LoopBasedPipe)
 public:
 	SurfaceData$PixelToShapeLoopConverter();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

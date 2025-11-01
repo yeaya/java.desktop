@@ -30,7 +30,6 @@ class SimpleInputMethodWindow : public ::java::awt::Frame, public ::sun::awt::im
 	$class(SimpleInputMethodWindow, $NO_CLASS_INIT, ::java::awt::Frame, ::sun::awt::im::InputMethodWindow)
 public:
 	SimpleInputMethodWindow();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Frame::add;
 	using ::java::awt::Frame::getMousePosition;
 	virtual $Object* clone() override;

@@ -61,7 +61,6 @@ class $import DefaultStyledDocument : public ::javax::swing::text::AbstractDocum
 	$class(DefaultStyledDocument, $NO_CLASS_INIT, ::javax::swing::text::AbstractDocument, ::javax::swing::text::StyledDocument)
 public:
 	DefaultStyledDocument();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual void addUndoableEditListener(::javax::swing::event::UndoableEditListener* listener) override;
 	virtual $Object* clone() override;
 	virtual ::javax::swing::text::Position* createPosition(int32_t offs) override;

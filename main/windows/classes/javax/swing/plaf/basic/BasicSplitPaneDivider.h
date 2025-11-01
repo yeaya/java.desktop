@@ -59,7 +59,6 @@ class $export BasicSplitPaneDivider : public ::java::awt::Container, public ::ja
 	$class(BasicSplitPaneDivider, $NO_CLASS_INIT, ::java::awt::Container, ::java::beans::PropertyChangeListener)
 public:
 	BasicSplitPaneDivider();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Container::add;
 	using ::java::awt::Container::getMousePosition;
 	virtual $Object* clone() override;

@@ -23,7 +23,6 @@ class BasicIconFactory$CheckBoxIcon : public ::javax::swing::Icon, public ::java
 	$class(BasicIconFactory$CheckBoxIcon, $NO_CLASS_INIT, ::javax::swing::Icon, ::java::io::Serializable)
 public:
 	BasicIconFactory$CheckBoxIcon();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

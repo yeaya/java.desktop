@@ -79,7 +79,6 @@ class JPEGMetadata : public ::javax::imageio::metadata::IIOMetadata, public ::ja
 	$class(JPEGMetadata, $NO_CLASS_INIT, ::javax::imageio::metadata::IIOMetadata, ::java::lang::Cloneable)
 public:
 	JPEGMetadata();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

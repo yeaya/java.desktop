@@ -41,7 +41,6 @@ class $export Test8013442 : public ::javax::swing::filechooser::FileFilter, publ
 	$class(Test8013442, 0, ::javax::swing::filechooser::FileFilter, ::java::lang::Runnable, ::java::lang::Thread$UncaughtExceptionHandler)
 public:
 	Test8013442();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

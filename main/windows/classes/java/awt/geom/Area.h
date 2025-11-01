@@ -36,7 +36,6 @@ class $export Area : public ::java::awt::Shape, public ::java::lang::Cloneable {
 	$class(Area, 0, ::java::awt::Shape, ::java::lang::Cloneable)
 public:
 	Area();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;
 	virtual int32_t hashCode() override;

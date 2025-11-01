@@ -15,7 +15,6 @@ class $import StyleConstants$ParagraphConstants : public ::javax::swing::text::S
 	$class(StyleConstants$ParagraphConstants, $NO_CLASS_INIT, ::javax::swing::text::StyleConstants, ::javax::swing::text::AttributeSet$ParagraphAttribute)
 public:
 	StyleConstants$ParagraphConstants();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

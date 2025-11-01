@@ -24,7 +24,6 @@ class $export Line2D$Float : public ::java::awt::geom::Line2D, public ::java::io
 	$class(Line2D$Float, $NO_CLASS_INIT, ::java::awt::geom::Line2D, ::java::io::Serializable)
 public:
 	Line2D$Float();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;
 	virtual void finalize() override;

@@ -25,7 +25,6 @@ class Map$PolygonRegionContainment : public ::java::awt::Polygon, public ::javax
 	$class(Map$PolygonRegionContainment, $NO_CLASS_INIT, ::java::awt::Polygon, ::javax::swing::text::html::Map$RegionContainment)
 public:
 	Map$PolygonRegionContainment();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::java::awt::Polygon::contains;
 	virtual $Object* clone() override;
 	virtual bool equals(Object$* arg0) override;

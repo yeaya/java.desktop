@@ -29,7 +29,6 @@ class WButtonPeer : public ::sun::awt::windows::WComponentPeer, public ::java::a
 	$class(WButtonPeer, 0, ::sun::awt::windows::WComponentPeer, ::java::awt::peer::ButtonPeer)
 public:
 	WButtonPeer();
-	virtual ::java::lang::Object0* toObject0$() const override {return (::java::lang::Object0*)(void*)this;}
 	using ::sun::awt::windows::WComponentPeer::getColorModel;
 	virtual void applyShape(::sun::java2d::pipe::Region* shape) override;
 	virtual bool canDetermineObscurity() override;
