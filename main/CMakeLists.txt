@@ -9,6 +9,8 @@ if(JCPP_OS MATCHES "windows")
 	)
 endif()
 
+add_definitions(-DJCPP_USE_LIB_CURRENT_OBJECT_STACK_CACHE)
+
 if(JCPP_OS MATCHES "windows")
 	include_directories("windows/classes")
 	include_directories("windows/native")
