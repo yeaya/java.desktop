@@ -8,7 +8,6 @@
 #undef FETCHER_INFO_KEY
 #undef MAX_NUM_FETCHERS_PER_APPCONTEXT
 
-using $ThreadArray = $Array<::java::lang::Thread>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

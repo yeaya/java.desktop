@@ -6,7 +6,6 @@
 #include <sun/awt/image/ImageFetcher.h>
 #include <jcpp.h>
 
-using $ThreadArray = $Array<::java::lang::Thread>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $Error = ::java::lang::Error;

@@ -32,7 +32,7 @@ public:
 	void init$();
 	static ::sun::awt::image::FetcherInfo* getFetcherInfo();
 	static const int32_t MAX_NUM_FETCHERS_PER_APPCONTEXT = 4;
-	$Array<::java::lang::Thread>* fetchers = nullptr;
+	$ThreadArray* fetchers = nullptr;
 	int32_t numFetchers = 0;
 	int32_t numWaiting = 0;
 	::java::util::Vector* waitList = nullptr;

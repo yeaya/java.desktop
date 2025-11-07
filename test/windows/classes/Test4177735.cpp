@@ -18,7 +18,6 @@
 
 #undef DELAY
 
-using $ThreadArray = $Array<::java::lang::Thread>;
 using $AbstractColorChooserPanelArray = $Array<::javax::swing::colorchooser::AbstractColorChooserPanel>;
 using $Component = ::java::awt::Component;
 using $Dialog = ::java::awt::Dialog;

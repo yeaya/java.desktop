@@ -19,7 +19,6 @@
 #undef LOW_PRIORITY
 #undef TIMEOUT
 
-using $ThreadArray = $Array<::java::lang::Thread>;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
