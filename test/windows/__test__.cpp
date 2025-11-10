@@ -813,8 +813,8 @@ void TestCases::runCases() {
 	run("HtmlCommentTagParseTest", ::HtmlCommentTagParseTest, true);
 	run("HtmlFontSizeTest", ::HtmlFontSizeTest);
 	run("I18NViewNoWrapMinSpan", ::I18NViewNoWrapMinSpan);
-	run("IconCoord", ::IconCoord);
-	run("IconifyTest", ::IconifyTest);
+	run("IconCoord", ::IconCoord, true);
+	run("IconifyTest", ::IconifyTest, true);
 	run("ImageViewTest", ::ImageViewTest, true);
 	run("InternalFrameIcon", ::InternalFrameIcon);
 	run("InternalFrameIsNotCollectedTest", ::InternalFrameIsNotCollectedTest, true);
@@ -832,7 +832,7 @@ void TestCases::runCases() {
 	run("JMenuItemToolTipKeyBindingsTest", ::JMenuItemToolTipKeyBindingsTest);
 	run("JMenuItemsTest", ::JMenuItemsTest);
 	run("JMenuSelectedColorTest", ::JMenuSelectedColorTest);
-	run("JOptionPaneConfirmDlgTest", ::JOptionPaneConfirmDlgTest);
+	run("JOptionPaneConfirmDlgTest", ::JOptionPaneConfirmDlgTest, true);
 	run("JPopupMenuEndlessLoopTest", ::JPopupMenuEndlessLoopTest);
 	run("JSpinnerButtonFocusTest", ::JSpinnerButtonFocusTest);
 	run("JTabbedPaneSerialization", ::JTabbedPaneSerialization);
@@ -862,7 +862,7 @@ void TestCases::runCases() {
 	run("NestedWorkers", ::NestedWorkers);
 	run("NimbusGlueTest", ::NimbusGlueTest);
 	run("NimbusPropertiesDoNotImplUIResource", ::NimbusPropertiesDoNotImplUIResource);
-	run("NonOpaquePopupMenuTest", ::NonOpaquePopupMenuTest);
+	run("NonOpaquePopupMenuTest", ::NonOpaquePopupMenuTest, true);
 	run("NormalBoundsTest", ::NormalBoundsTest);
 	run("OptionPaneTest", ::OptionPaneTest);
 	run("OrderOfGConfigNotify", ::OrderOfGConfigNotify);
@@ -1044,7 +1044,7 @@ void TestCases::runCases() {
 	run("bug4473075", ::bug4473075);
 	run("bug4492274", ::bug4492274, true);
 	run("bug4496801", ::bug4496801);
-	run("bug4506788", ::bug4506788);
+	run("bug4506788", ::bug4506788, true);
 	run("bug4529206", ::bug4529206);
 	run("bug4530474", ::bug4530474, true);
 	run("bug4697612", ::bug4697612, true);
@@ -1065,7 +1065,7 @@ void TestCases::runCases() {
 	run("bug4966171", ::bug4966171);
 	run("bug5043626", ::bug5043626, true);
 	run("bug5073047", ::bug5073047);
-	run("bug5074573", ::bug5074573);
+	run("bug5074573", ::bug5074573, true);
 	run("bug5076514", ::bug5076514);
 	run("bug6209975", ::bug6209975);
 	run("bug6219960", ::bug6219960);
@@ -1086,7 +1086,7 @@ void TestCases::runCases() {
 	run("bug6463712", ::bug6463712);
 	run("bug6474153", ::bug6474153);
 	run("bug6484091", ::bug6484091, true);
-	run("bug6489130", ::bug6489130);
+	run("bug6489130", ::bug6489130, true);
 	run("bug6493680", ::bug6493680);
 	run("bug6495408", ::bug6495408);
 	run("bug6501991", ::bug6501991);
@@ -1113,8 +1113,8 @@ void TestCases::runCases() {
 	run("bug6639507", ::bug6639507);
 	run("bug6647340", ::bug6647340);
 	run("bug6670274", ::bug6670274);
-	run("bug6675802", ::bug6675802);
-	run("bug6683775", ::bug6683775);
+	run("bug6675802", ::bug6675802, true);
+	run("bug6683775", ::bug6683775, true);
 	run("bug6688203", ::bug6688203);
 	run("bug6690791", ::bug6690791);
 	run("bug6691503", ::bug6691503, true);
@@ -1166,8 +1166,8 @@ void TestCases::runCases() {
 	run("bug7031551", ::bug7031551);
 	run("bug7032791", ::bug7032791);
 	run("bug7036025", ::bug7036025);
-	run("bug7036148", ::bug7036148);
-	run("bug7045593", ::bug7045593);
+	run("bug7036148", ::bug7036148, true);
+	run("bug7045593", ::bug7045593, true);
 	run("bug7049024", ::bug7049024);
 	run("bug7068740", ::bug7068740);
 	run("bug7071166", ::bug7071166);
@@ -1176,7 +1176,7 @@ void TestCases::runCases() {
 	run("bug7083457", ::bug7083457);
 	run("bug7088744", ::bug7088744);
 	run("bug7107099", ::bug7107099);
-	run("bug7138665", ::bug7138665);
+	run("bug7138665", ::bug7138665, true);
 	run("bug7141573", ::bug7141573);
 	run("bug7142955", ::bug7142955);
 	run("bug7146377", ::bug7146377);
@@ -1205,7 +1205,7 @@ void TestCases::runCases() {
 	run("bug8032874", ::bug8032874);
 	run("bug8032878", ::bug8032878);
 	run("bug8033699", ::bug8033699);
-	run("bug8034955", ::bug8034955);
+	run("bug8034955", ::bug8034955, true);
 	run("bug8037575", ::bug8037575);
 	run("bug8040328", ::bug8040328);
 	run("bug8041561", ::bug8041561);
@@ -1220,7 +1220,7 @@ void TestCases::runCases() {
 	run("bug8057791", ::bug8057791, true);
 	run("bug8057893", ::bug8057893);
 	run("bug8058120", ::bug8058120);
-	run("bug8058305", ::bug8058305);
+	run("bug8058305", ::bug8058305, true);
 	run("bug8059739", ::bug8059739);
 	run("bug8067346", ::bug8067346);
 	run("bug8071705", ::bug8071705);
