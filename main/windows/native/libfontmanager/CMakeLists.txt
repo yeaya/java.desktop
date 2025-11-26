@@ -1,14 +1,14 @@
 #machine generated
 
-if(JCPP_OS MATCHES "windows")
-	add_definitions("-DLIBRARY_NAME=fontmanager")
-endif()
+add_definitions(-DLIBRARY_NAME=fontmanager)
 
-aux_source_directory("${CMAKE_CURRENT_SOURCE_DIR}" windows-native.libfontmanager_SRCS)
-file(GLOB windows-native.libfontmanager_HEADERS *.h *.hpp)
-source_group("Include" FILES ${windows-native.libfontmanager_HEADERS}) 
-list(LENGTH windows-native.libfontmanager_SRCS windows-native.libfontmanager_SRCS_LENGTH)
-if(windows-native.libfontmanager_SRCS_LENGTH)
-	add_library(windows-native.libfontmanager OBJECT "${windows-native.libfontmanager_SRCS}" "${windows-native.libfontmanager_HEADERS}")
+include_directories("../../../share/native/libfontmanager")
+
+aux_source_directory(. SRCS)
+file(GLOB HEADERS *.h *.hpp)
+source_group("Include" FILES ${HEADERS}) 
+list(LENGTH SRCS SRCS_LENGTH)
+if(SRCS_LENGTH)
+	add_library(windows-native.libfontmanager OBJECT ${SRCS} ${HEADERS})
 	jcpp_enable_bigobj(windows-native.libfontmanager)
 endif()

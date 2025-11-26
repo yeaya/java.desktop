@@ -1,14 +1,14 @@
 #machine generated
 
 add_subdirectory("awt")
-add_subdirectory("font")
-add_subdirectory("java2d")
 
-aux_source_directory("${CMAKE_CURRENT_SOURCE_DIR}" windows-native.common_SRCS)
-file(GLOB windows-native.common_HEADERS *.h *.hpp)
-source_group("Include" FILES ${windows-native.common_HEADERS}) 
-list(LENGTH windows-native.common_SRCS windows-native.common_SRCS_LENGTH)
-if(windows-native.common_SRCS_LENGTH)
-	add_library(windows-native.common OBJECT "${windows-native.common_SRCS}" "${windows-native.common_HEADERS}")
+include_directories("../../../share/native/common")
+
+aux_source_directory(. SRCS)
+file(GLOB HEADERS *.h *.hpp)
+source_group("Include" FILES ${HEADERS}) 
+list(LENGTH SRCS SRCS_LENGTH)
+if(SRCS_LENGTH)
+	add_library(windows-native.common OBJECT ${SRCS} ${HEADERS})
 	jcpp_enable_bigobj(windows-native.common)
 endif()

@@ -1,19 +1,33 @@
 #machine generated
 
-if(JCPP_OS MATCHES "windows")
-	jcpp_add_dependencies(
-		"java.prefs:17.35"
-		"java.datatransfer:17.35"
-		"java.xml:17.35"
-		"java.base:17.35"
-	)
-endif()
+jcpp_add_dependencies(
+	"java.prefs:17.35"
+	"java.datatransfer:17.35"
+	"java.xml:17.35"
+	"java.base:17.35"
+)
 
 add_definitions(-DJCPP_USE_LIB_CURRENT_OBJECT_STACK_CACHE)
+
+include_directories("share/classes")
+include_directories("share/native")
+
+if(JCPP_OS MATCHES "linux")
+	include_directories("linux/classes")
+	include_directories("linux/native")
+endif()
 
 if(JCPP_OS MATCHES "windows")
 	include_directories("windows/classes")
 	include_directories("windows/native")
+endif()
+
+add_subdirectory("share/classes")
+add_subdirectory("share/native")
+
+if(JCPP_OS MATCHES "linux")
+	add_subdirectory("linux/classes")
+	add_subdirectory("linux/native")
 endif()
 
 if(JCPP_OS MATCHES "windows")
@@ -21,186 +35,221 @@ if(JCPP_OS MATCHES "windows")
 	add_subdirectory("windows/native")
 endif()
 
-if(JCPP_OS MATCHES "windows")
-	add_definitions("-DUSE_PORTS=TRUE")
-	add_definitions("-DUSE_DAUDIO=TRUE")
-	add_definitions("-DUSE_PLATFORM_MIDI_OUT=TRUE")
-	add_definitions("-DUSE_PLATFORM_MIDI_IN=TRUE")
+set(local_object ${local_object}
+	"$<TARGET_OBJECTS:classes>"
+	"$<TARGET_OBJECTS:com.sun.accessibility.intern_0>"
+	"$<TARGET_OBJECTS:com.sun.beans>"
+	"$<TARGET_OBJECTS:com.sun.beans.decoder>"
+	"$<TARGET_OBJECTS:com.sun.beans.editors>"
+	"$<TARGET_OBJECTS:com.sun.beans.finder>"
+	"$<TARGET_OBJECTS:com.sun.beans.infos>"
+	"$<TARGET_OBJECTS:com.sun.beans.introspect>"
+	"$<TARGET_OBJECTS:com.sun.beans.util>"
+	"$<TARGET_OBJECTS:com.sun.imageio.plugins.bmp>"
+	"$<TARGET_OBJECTS:com.sun.imageio.plugins.common>"
+	"$<TARGET_OBJECTS:com.sun.imageio.plugins.gif>"
+	"$<TARGET_OBJECTS:com.sun.imageio.plugins.jpeg>"
+	"$<TARGET_OBJECTS:com.sun.imageio.plugins.png>"
+	"$<TARGET_OBJECTS:com.sun.imageio.plugins.tiff>"
+	"$<TARGET_OBJECTS:com.sun.imageio.plugins.wbmp>"
+	"$<TARGET_OBJECTS:com.sun.imageio.spi>"
+	"$<TARGET_OBJECTS:com.sun.imageio.stream>"
+	"$<TARGET_OBJECTS:com.sun.java.swing>"
+	"$<TARGET_OBJECTS:com.sun.java.swing.plaf.motif>"
+	"$<TARGET_OBJECTS:com.sun.java.swing.plaf.motif.>"
+	"$<TARGET_OBJECTS:com.sun.java.swing.plaf.moti_1>"
+	"$<TARGET_OBJECTS:com.sun.java.swing.plaf.wind_2>"
+	"$<TARGET_OBJECTS:com.sun.media.sound>"
+	"$<TARGET_OBJECTS:com.sun.swing.internal.plaf._3>"
+	"$<TARGET_OBJECTS:com.sun.swing.internal.plaf._4>"
+	"$<TARGET_OBJECTS:com.sun.swing.internal.plaf._5>"
+	"$<TARGET_OBJECTS:java.applet>"
+	"$<TARGET_OBJECTS:java.awt>"
+	"$<TARGET_OBJECTS:java.awt.color>"
+	"$<TARGET_OBJECTS:java.awt.desktop>"
+	"$<TARGET_OBJECTS:java.awt.dnd>"
+	"$<TARGET_OBJECTS:java.awt.dnd.peer>"
+	"$<TARGET_OBJECTS:java.awt.event>"
+	"$<TARGET_OBJECTS:java.awt.font>"
+	"$<TARGET_OBJECTS:java.awt.geom>"
+	"$<TARGET_OBJECTS:java.awt.im>"
+	"$<TARGET_OBJECTS:java.awt.im.spi>"
+	"$<TARGET_OBJECTS:java.awt.image>"
+	"$<TARGET_OBJECTS:java.awt.image.renderable>"
+	"$<TARGET_OBJECTS:java.awt.peer>"
+	"$<TARGET_OBJECTS:java.awt.print>"
+	"$<TARGET_OBJECTS:java.beans>"
+	"$<TARGET_OBJECTS:java.beans.beancontext>"
+	"$<TARGET_OBJECTS:javax.accessibility>"
+	"$<TARGET_OBJECTS:javax.imageio>"
+	"$<TARGET_OBJECTS:javax.imageio.event>"
+	"$<TARGET_OBJECTS:javax.imageio.metadata>"
+	"$<TARGET_OBJECTS:javax.imageio.plugins.bmp>"
+	"$<TARGET_OBJECTS:javax.imageio.plugins.jpeg>"
+	"$<TARGET_OBJECTS:javax.imageio.plugins.tiff>"
+	"$<TARGET_OBJECTS:javax.imageio.spi>"
+	"$<TARGET_OBJECTS:javax.imageio.stream>"
+	"$<TARGET_OBJECTS:javax.print>"
+	"$<TARGET_OBJECTS:javax.print.attribute>"
+	"$<TARGET_OBJECTS:javax.print.attribute.standard>"
+	"$<TARGET_OBJECTS:javax.print.event>"
+	"$<TARGET_OBJECTS:javax.sound.midi>"
+	"$<TARGET_OBJECTS:javax.sound.midi.spi>"
+	"$<TARGET_OBJECTS:javax.sound.sampled>"
+	"$<TARGET_OBJECTS:javax.sound.sampled.spi>"
+	"$<TARGET_OBJECTS:javax.swing>"
+	"$<TARGET_OBJECTS:javax.swing.beaninfo.images>"
+	"$<TARGET_OBJECTS:javax.swing.border>"
+	"$<TARGET_OBJECTS:javax.swing.colorchooser>"
+	"$<TARGET_OBJECTS:javax.swing.event>"
+	"$<TARGET_OBJECTS:javax.swing.filechooser>"
+	"$<TARGET_OBJECTS:javax.swing.plaf>"
+	"$<TARGET_OBJECTS:javax.swing.plaf.basic>"
+	"$<TARGET_OBJECTS:javax.swing.plaf.basic.icons>"
+	"$<TARGET_OBJECTS:javax.swing.plaf.metal>"
+	"$<TARGET_OBJECTS:javax.swing.plaf.metal.icons>"
+	"$<TARGET_OBJECTS:javax.swing.plaf.metal.icons.o>"
+	"$<TARGET_OBJECTS:javax.swing.plaf.metal.sounds>"
+	"$<TARGET_OBJECTS:javax.swing.plaf.multi>"
+	"$<TARGET_OBJECTS:javax.swing.plaf.nimbus>"
+	"$<TARGET_OBJECTS:javax.swing.plaf.synth>"
+	"$<TARGET_OBJECTS:javax.swing.table>"
+	"$<TARGET_OBJECTS:javax.swing.text>"
+	"$<TARGET_OBJECTS:javax.swing.text.html>"
+	"$<TARGET_OBJECTS:javax.swing.text.html.parser>"
+	"$<TARGET_OBJECTS:javax.swing.text.rtf>"
+	"$<TARGET_OBJECTS:javax.swing.text.rtf.charsets>"
+	"$<TARGET_OBJECTS:javax.swing.tree>"
+	"$<TARGET_OBJECTS:javax.swing.undo>"
+	"$<TARGET_OBJECTS:sun.awt>"
+	"$<TARGET_OBJECTS:sun.awt.datatransfer>"
+	"$<TARGET_OBJECTS:sun.awt.dnd>"
+	"$<TARGET_OBJECTS:sun.awt.event>"
+	"$<TARGET_OBJECTS:sun.awt.geom>"
+	"$<TARGET_OBJECTS:sun.awt.im>"
+	"$<TARGET_OBJECTS:sun.awt.image>"
+	"$<TARGET_OBJECTS:sun.awt.resources>"
+	"$<TARGET_OBJECTS:sun.awt.resources.cursors>"
+	"$<TARGET_OBJECTS:sun.awt.shell>"
+	"$<TARGET_OBJECTS:sun.awt.util>"
+	"$<TARGET_OBJECTS:sun.awt.www.content>"
+	"$<TARGET_OBJECTS:sun.awt.www.content.audio>"
+	"$<TARGET_OBJECTS:sun.awt.www.content.image>"
+	"$<TARGET_OBJECTS:sun.font>"
+	"$<TARGET_OBJECTS:sun.font.lookup>"
+	"$<TARGET_OBJECTS:sun.java2d>"
+	"$<TARGET_OBJECTS:sun.java2d.cmm>"
+	"$<TARGET_OBJECTS:sun.java2d.cmm.lcms>"
+	"$<TARGET_OBJECTS:sun.java2d.cmm.profiles>"
+	"$<TARGET_OBJECTS:sun.java2d.loops>"
+	"$<TARGET_OBJECTS:sun.java2d.marlin>"
+	"$<TARGET_OBJECTS:sun.java2d.marlin.stats>"
+	"$<TARGET_OBJECTS:sun.java2d.opengl>"
+	"$<TARGET_OBJECTS:sun.java2d.pipe>"
+	"$<TARGET_OBJECTS:sun.java2d.pipe.hw>"
+	"$<TARGET_OBJECTS:sun.print>"
+	"$<TARGET_OBJECTS:sun.print.resources>"
+	"$<TARGET_OBJECTS:sun.swing>"
+	"$<TARGET_OBJECTS:sun.swing.icon>"
+	"$<TARGET_OBJECTS:sun.swing.plaf>"
+	"$<TARGET_OBJECTS:sun.swing.plaf.synth>"
+	"$<TARGET_OBJECTS:sun.swing.table>"
+	"$<TARGET_OBJECTS:sun.swing.text>"
+	"$<TARGET_OBJECTS:sun.swing.text.html>"
+	"$<TARGET_OBJECTS:native.common.awt.debug>"
+	"$<TARGET_OBJECTS:native.common.awt.medialib>"
+	"$<TARGET_OBJECTS:native.common.awt.utility>"
+	"$<TARGET_OBJECTS:native.common.font>"
+	"$<TARGET_OBJECTS:native.common.java2d.opengl>"
+	"$<TARGET_OBJECTS:native.libawt.awt.image>"
+	"$<TARGET_OBJECTS:native.libawt.awt.image.cvutil>"
+	"$<TARGET_OBJECTS:native.libawt.awt.image.gif>"
+	"$<TARGET_OBJECTS:native.libawt.awt.medialib>"
+	"$<TARGET_OBJECTS:native.libawt.java2d>"
+	"$<TARGET_OBJECTS:native.libawt.java2d.loops>"
+	"$<TARGET_OBJECTS:native.libawt.java2d.pipe>"
+	"$<TARGET_OBJECTS:native.libfontmanager>"
+	"$<TARGET_OBJECTS:native.libharfbuzz>"
+	"$<TARGET_OBJECTS:native.libjavajpeg>"
+	"$<TARGET_OBJECTS:native.libjsound>"
+	"$<TARGET_OBJECTS:native.liblcms>"
+	"$<TARGET_OBJECTS:native.libmlib_image>"
+	"$<TARGET_OBJECTS:native.libsplashscreen>"
+	"$<TARGET_OBJECTS:native.libsplashscreen.giflib>"
+	"$<TARGET_OBJECTS:native.libsplashscreen.libpng>"
+)
+
+if(JCPP_OS MATCHES "linux")
+	set(local_object ${local_object}
+		"$<TARGET_OBJECTS:linux>"
+		"$<TARGET_OBJECTS:linux.com.sun.java.swing.plaf.>"
+		"$<TARGET_OBJECTS:linux.com.sun.java.swing.pla_6>"
+		"$<TARGET_OBJECTS:linux.sun.awt>"
+		"$<TARGET_OBJECTS:linux.sun.awt.X11>"
+		"$<TARGET_OBJECTS:linux.sun.font>"
+		"$<TARGET_OBJECTS:linux.sun.java2d>"
+		"$<TARGET_OBJECTS:linux.sun.java2d.opengl>"
+		"$<TARGET_OBJECTS:linux.sun.java2d.x11>"
+		"$<TARGET_OBJECTS:linux.sun.java2d.xr>"
+		"$<TARGET_OBJECTS:linux.sun.print>"
+		"$<TARGET_OBJECTS:linux-native.common.awt>"
+		"$<TARGET_OBJECTS:linux-native.common.awt.system>"
+		"$<TARGET_OBJECTS:linux-native.common.java2d.ope>"
+		"$<TARGET_OBJECTS:linux-native.common.java2d.x11>"
+		"$<TARGET_OBJECTS:linux-native.libawt.awt>"
+		"$<TARGET_OBJECTS:linux-native.libawt_headless.a>"
+		"$<TARGET_OBJECTS:linux-native.libawt_xawt.awt>"
+		"$<TARGET_OBJECTS:linux-native.libawt_xawt.jav_8>"
+		"$<TARGET_OBJECTS:linux-native.libawt_xawt.xawt>"
+		"$<TARGET_OBJECTS:linux-native.libfontmanager>"
+		"$<TARGET_OBJECTS:linux-native.libjawt>"
+		"$<TARGET_OBJECTS:linux-native.libjsound>"
+		"$<TARGET_OBJECTS:linux-native.libsplashscreen>"
+	)
 endif()
 
 if(JCPP_OS MATCHES "windows")
 	set(local_object ${local_object}
-		"$<TARGET_OBJECTS:windows-classes>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.acce_2>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.beans>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.bean_3>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.bean_4>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.bean_5>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.bean_6>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.bean_7>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.bean_8>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.ima_11>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.ima_12>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.ima_13>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.ima_14>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.ima_15>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.ima_16>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.ima_17>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.ima_18>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.ima_19>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.jav_20>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.jav_22>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.jav_23>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.jav_24>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.jav_25>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.jav_26>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.jav_27>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.med_28>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.swi_32>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.swi_34>"
-		"$<TARGET_OBJECTS:windows-classes.com.sun.swi_36>"
-		"$<TARGET_OBJECTS:windows-classes.java.applet>"
-		"$<TARGET_OBJECTS:windows-classes.java.awt>"
-		"$<TARGET_OBJECTS:windows-classes.java.awt.color>"
-		"$<TARGET_OBJECTS:windows-classes.java.awt.de_37>"
-		"$<TARGET_OBJECTS:windows-classes.java.awt.dnd>"
-		"$<TARGET_OBJECTS:windows-classes.java.awt.dn_38>"
-		"$<TARGET_OBJECTS:windows-classes.java.awt.event>"
-		"$<TARGET_OBJECTS:windows-classes.java.awt.font>"
-		"$<TARGET_OBJECTS:windows-classes.java.awt.geom>"
-		"$<TARGET_OBJECTS:windows-classes.java.awt.im>"
-		"$<TARGET_OBJECTS:windows-classes.java.awt.im_39>"
-		"$<TARGET_OBJECTS:windows-classes.java.awt.image>"
-		"$<TARGET_OBJECTS:windows-classes.java.awt.im_40>"
-		"$<TARGET_OBJECTS:windows-classes.java.awt.peer>"
-		"$<TARGET_OBJECTS:windows-classes.java.awt.print>"
-		"$<TARGET_OBJECTS:windows-classes.java.beans>"
-		"$<TARGET_OBJECTS:windows-classes.java.beans._41>"
-		"$<TARGET_OBJECTS:windows-classes.javax.acces_42>"
-		"$<TARGET_OBJECTS:windows-classes.javax.imageio>"
-		"$<TARGET_OBJECTS:windows-classes.javax.image_43>"
-		"$<TARGET_OBJECTS:windows-classes.javax.image_44>"
-		"$<TARGET_OBJECTS:windows-classes.javax.image_46>"
-		"$<TARGET_OBJECTS:windows-classes.javax.image_47>"
-		"$<TARGET_OBJECTS:windows-classes.javax.image_48>"
-		"$<TARGET_OBJECTS:windows-classes.javax.image_49>"
-		"$<TARGET_OBJECTS:windows-classes.javax.image_50>"
-		"$<TARGET_OBJECTS:windows-classes.javax.print>"
-		"$<TARGET_OBJECTS:windows-classes.javax.print_51>"
-		"$<TARGET_OBJECTS:windows-classes.javax.print_52>"
-		"$<TARGET_OBJECTS:windows-classes.javax.print_53>"
-		"$<TARGET_OBJECTS:windows-classes.javax.sound_54>"
-		"$<TARGET_OBJECTS:windows-classes.javax.sound_55>"
-		"$<TARGET_OBJECTS:windows-classes.javax.sound_56>"
-		"$<TARGET_OBJECTS:windows-classes.javax.sound_57>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_59>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_60>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_61>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_62>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_63>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_64>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_65>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_66>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_67>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_68>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_69>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_70>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_71>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_72>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_73>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_74>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_75>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_76>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_77>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_78>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_79>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_80>"
-		"$<TARGET_OBJECTS:windows-classes.javax.swing_81>"
-		"$<TARGET_OBJECTS:windows-classes.sun.awt>"
-		"$<TARGET_OBJECTS:windows-classes.sun.awt.dat_82>"
-		"$<TARGET_OBJECTS:windows-classes.sun.awt.dnd>"
-		"$<TARGET_OBJECTS:windows-classes.sun.awt.event>"
-		"$<TARGET_OBJECTS:windows-classes.sun.awt.geom>"
-		"$<TARGET_OBJECTS:windows-classes.sun.awt.im>"
-		"$<TARGET_OBJECTS:windows-classes.sun.awt.image>"
-		"$<TARGET_OBJECTS:windows-classes.sun.awt.res_83>"
-		"$<TARGET_OBJECTS:windows-classes.sun.awt.res_84>"
-		"$<TARGET_OBJECTS:windows-classes.sun.awt.shell>"
-		"$<TARGET_OBJECTS:windows-classes.sun.awt.util>"
-		"$<TARGET_OBJECTS:windows-classes.sun.awt.win_85>"
-		"$<TARGET_OBJECTS:windows-classes.sun.awt.www_86>"
-		"$<TARGET_OBJECTS:windows-classes.sun.awt.www_87>"
-		"$<TARGET_OBJECTS:windows-classes.sun.awt.www_88>"
-		"$<TARGET_OBJECTS:windows-classes.sun.font>"
-		"$<TARGET_OBJECTS:windows-classes.sun.font.lo_89>"
-		"$<TARGET_OBJECTS:windows-classes.sun.java2d>"
-		"$<TARGET_OBJECTS:windows-classes.sun.java2d.cmm>"
-		"$<TARGET_OBJECTS:windows-classes.sun.java2d._90>"
-		"$<TARGET_OBJECTS:windows-classes.sun.java2d._91>"
-		"$<TARGET_OBJECTS:windows-classes.sun.java2d.d3d>"
-		"$<TARGET_OBJECTS:windows-classes.sun.java2d._92>"
-		"$<TARGET_OBJECTS:windows-classes.sun.java2d._93>"
-		"$<TARGET_OBJECTS:windows-classes.sun.java2d._94>"
-		"$<TARGET_OBJECTS:windows-classes.sun.java2d._95>"
-		"$<TARGET_OBJECTS:windows-classes.sun.java2d._96>"
-		"$<TARGET_OBJECTS:windows-classes.sun.java2d._97>"
-		"$<TARGET_OBJECTS:windows-classes.sun.java2d._98>"
-		"$<TARGET_OBJECTS:windows-classes.sun.print>"
-		"$<TARGET_OBJECTS:windows-classes.sun.print.r_99>"
-		"$<TARGET_OBJECTS:windows-classes.sun.swing>"
-		"$<TARGET_OBJECTS:windows-classes.sun.swing.icon>"
-		"$<TARGET_OBJECTS:windows-classes.sun.swing.plaf>"
-		"$<TARGET_OBJECTS:windows-classes.sun.swing._100>"
-		"$<TARGET_OBJECTS:windows-classes.sun.swing._101>"
-		"$<TARGET_OBJECTS:windows-classes.sun.swing._102>"
-		"$<TARGET_OBJECTS:windows-classes.sun.swing.text>"
-		"$<TARGET_OBJECTS:windows-classes.sun.swing._103>"
-		"$<TARGET_OBJECTS:windows-native.common.awt._104>"
-		"$<TARGET_OBJECTS:windows-native.common.awt._105>"
-		"$<TARGET_OBJECTS:windows-native.common.awt._106>"
-		"$<TARGET_OBJECTS:windows-native.common.awt._107>"
-		"$<TARGET_OBJECTS:windows-native.common.font>"
-		"$<TARGET_OBJECTS:windows-native.common.java_108>"
-		"$<TARGET_OBJECTS:windows-native.libawt.awt._110>"
-		"$<TARGET_OBJECTS:windows-native.libawt.awt._111>"
-		"$<TARGET_OBJECTS:windows-native.libawt.awt._112>"
-		"$<TARGET_OBJECTS:windows-native.libawt.awt._113>"
-		"$<TARGET_OBJECTS:windows-native.libawt.java2d>"
-		"$<TARGET_OBJECTS:windows-native.libawt.java_114>"
-		"$<TARGET_OBJECTS:windows-native.libawt.java_115>"
-		"$<TARGET_OBJECTS:windows-native.libawt.java_116>"
-		"$<TARGET_OBJECTS:windows-native.libawt.java_118>"
-		"$<TARGET_OBJECTS:windows-native.libawt.java_119>"
+		"$<TARGET_OBJECTS:windows>"
+		"$<TARGET_OBJECTS:windows.com.sun.java.swing.p_9>"
+		"$<TARGET_OBJECTS:windows.com.sun.java.swing._10>"
+		"$<TARGET_OBJECTS:windows.sun.awt>"
+		"$<TARGET_OBJECTS:windows.sun.awt.shell>"
+		"$<TARGET_OBJECTS:windows.sun.awt.windows>"
+		"$<TARGET_OBJECTS:windows.sun.font>"
+		"$<TARGET_OBJECTS:windows.sun.java2d>"
+		"$<TARGET_OBJECTS:windows.sun.java2d.d3d>"
+		"$<TARGET_OBJECTS:windows.sun.java2d.opengl>"
+		"$<TARGET_OBJECTS:windows.sun.java2d.windows>"
+		"$<TARGET_OBJECTS:windows.sun.print>"
+		"$<TARGET_OBJECTS:windows.sun.swing.plaf.windows>"
+		"$<TARGET_OBJECTS:windows-native.common.awt.syst>"
+		"$<TARGET_OBJECTS:windows-native.libawt.java2d.d>"
+		"$<TARGET_OBJECTS:windows-native.libawt.java2d.o>"
+		"$<TARGET_OBJECTS:windows-native.libawt.java2d.w>"
 		"$<TARGET_OBJECTS:windows-native.libawt.windows>"
 		"$<TARGET_OBJECTS:windows-native.libfontmanager>"
 		"$<TARGET_OBJECTS:windows-native.libfreetype>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype_125>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype_126>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype_127>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype_128>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype_129>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype_130>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype_131>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype_132>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype_133>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype_134>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype_135>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype_136>"
-		"$<TARGET_OBJECTS:windows-native.libharfbuzz>"
-		"$<TARGET_OBJECTS:windows-native.libjavajpeg>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._16>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._17>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._18>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._19>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._20>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._21>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._22>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._23>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._24>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._25>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._26>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._27>"
 		"$<TARGET_OBJECTS:windows-native.libjawt>"
 		"$<TARGET_OBJECTS:windows-native.libjsound>"
-		"$<TARGET_OBJECTS:windows-native.liblcms>"
-		"$<TARGET_OBJECTS:windows-native.libmlib_image>"
 		"$<TARGET_OBJECTS:windows-native.libsplashscreen>"
-		"$<TARGET_OBJECTS:windows-native.libsplashsc_137>"
-		"$<TARGET_OBJECTS:windows-native.libsplashsc_138>"
 	)
 endif()
 
 if(BUILD_STATIC_LIB)
-	add_library(${JCPP_PROJECT_NAME}_static STATIC "${local_object}" "${source_SRCS}")
+	add_library(${JCPP_PROJECT_NAME}_static STATIC ${local_object} ${source_SRCS})
 
 	SET_TARGET_PROPERTIES(${JCPP_PROJECT_NAME}_static PROPERTIES OUTPUT_NAME "${JCPP_PROJECT_FULL_NAME}")
 	SET_TARGET_PROPERTIES(${JCPP_PROJECT_NAME}_static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
@@ -216,7 +265,7 @@ if(BUILD_STATIC_LIB)
 endif()
 
 if(BUILD_SHARED_LIB)
-	add_library(${JCPP_PROJECT_NAME}_shared SHARED "${local_object}" "${source_SRCS}")
+	add_library(${JCPP_PROJECT_NAME}_shared SHARED ${local_object} ${source_SRCS})
 
 	SET_TARGET_PROPERTIES(${JCPP_PROJECT_NAME}_shared PROPERTIES OUTPUT_NAME "${JCPP_PROJECT_FULL_NAME}")
 	SET_TARGET_PROPERTIES(${JCPP_PROJECT_NAME}_shared PROPERTIES CLEAN_DIRECT_OUTPUT 1)
@@ -226,6 +275,12 @@ if(JCPP_OS MATCHES "linux")
 elseif(JCPP_OS MATCHES "macos")
 	SET_TARGET_PROPERTIES(${JCPP_PROJECT_NAME}_shared PROPERTIES INSTALL_RPATH ".;../lib")
 endif()
+
+	if(JCPP_OS MATCHES "linux")
+		set(JCPP_EXT_LIBS ${JCPP_EXT_LIBS}
+			-lXext -lX11 -lXrender -lXtst -lXi -lasound -lfreetype
+		)
+	endif()
 
 	if(JCPP_OS MATCHES "windows")
 		set(JCPP_EXT_LIBS ${JCPP_EXT_LIBS}
@@ -253,15 +308,28 @@ endif()
 	)
 endif()
 
+install(
+	DIRECTORY "share/include/"
+	DESTINATION "${JCPP_INSTALL_INCLUDE_DIR}"
+)
+
+if(JCPP_OS MATCHES "linux")
+	install(
+		DIRECTORY "linux/include/"
+		DESTINATION "${JCPP_INSTALL_INCLUDE_DIR}"
+	)
+endif()
+
 if(JCPP_OS MATCHES "windows")
 	install(
 		DIRECTORY "windows/include/"
 		DESTINATION "${JCPP_INSTALL_INCLUDE_DIR}"
 	)
 endif()
-if(INSTALL_TO_REPO AND JCPP_OS MATCHES "windows")
+
+if(INSTALL_TO_REPO)
 	install(
-		FILES "windows/dependencies.txt"
+		FILES "share/dependencies.txt"
 		DESTINATION "${JCPP_INSTALL_DIR}"
 	)
 endif()

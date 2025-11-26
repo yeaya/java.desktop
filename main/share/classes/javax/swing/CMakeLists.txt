@@ -1,0 +1,21 @@
+#machine generated
+
+add_subdirectory("beaninfo")
+add_subdirectory("border")
+add_subdirectory("colorchooser")
+add_subdirectory("event")
+add_subdirectory("filechooser")
+add_subdirectory("plaf")
+add_subdirectory("table")
+add_subdirectory("text")
+add_subdirectory("tree")
+add_subdirectory("undo")
+
+aux_source_directory(. SRCS)
+file(GLOB HEADERS *.h *.hpp)
+source_group("Include" FILES ${HEADERS}) 
+list(LENGTH SRCS SRCS_LENGTH)
+if(SRCS_LENGTH)
+	add_library(javax.swing OBJECT ${SRCS} ${HEADERS})
+	jcpp_enable_bigobj(javax.swing)
+endif()

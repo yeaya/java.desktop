@@ -1,0 +1,33 @@
+#ifndef _sun_awt_X11_XWarningWindow$3_h_
+#define _sun_awt_X11_XWarningWindow$3_h_
+//$ class sun.awt.X11.XWarningWindow$3
+//$ extends java.lang.Runnable
+
+#include <java/lang/Runnable.h>
+
+namespace sun {
+	namespace awt {
+		namespace X11 {
+			class XWarningWindow;
+		}
+	}
+}
+
+namespace sun {
+	namespace awt {
+		namespace X11 {
+
+class XWarningWindow$3 : public ::java::lang::Runnable {
+	$class(XWarningWindow$3, $NO_CLASS_INIT, ::java::lang::Runnable)
+public:
+	XWarningWindow$3();
+	void init$(::sun::awt::X11::XWarningWindow* this$0);
+	virtual void run() override;
+	::sun::awt::X11::XWarningWindow* this$0 = nullptr;
+};
+
+		} // X11
+	} // awt
+} // sun
+
+#endif // _sun_awt_X11_XWarningWindow$3_h_

@@ -1,0 +1,21 @@
+#machine generated
+
+add_subdirectory("color")
+add_subdirectory("desktop")
+add_subdirectory("dnd")
+add_subdirectory("event")
+add_subdirectory("font")
+add_subdirectory("geom")
+add_subdirectory("im")
+add_subdirectory("image")
+add_subdirectory("peer")
+add_subdirectory("print")
+
+aux_source_directory(. SRCS)
+file(GLOB HEADERS *.h *.hpp)
+source_group("Include" FILES ${HEADERS}) 
+list(LENGTH SRCS SRCS_LENGTH)
+if(SRCS_LENGTH)
+	add_library(java.awt OBJECT ${SRCS} ${HEADERS})
+	jcpp_enable_bigobj(java.awt)
+endif()

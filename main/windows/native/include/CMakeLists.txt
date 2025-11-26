@@ -1,10 +1,12 @@
 #machine generated
 
-aux_source_directory("${CMAKE_CURRENT_SOURCE_DIR}" windows-native.include_SRCS)
-file(GLOB windows-native.include_HEADERS *.h *.hpp)
-source_group("Include" FILES ${windows-native.include_HEADERS}) 
-list(LENGTH windows-native.include_SRCS windows-native.include_SRCS_LENGTH)
-if(windows-native.include_SRCS_LENGTH)
-	add_library(windows-native.include OBJECT "${windows-native.include_SRCS}" "${windows-native.include_HEADERS}")
+include_directories("../../../share/native/include")
+
+aux_source_directory(. SRCS)
+file(GLOB HEADERS *.h *.hpp)
+source_group("Include" FILES ${HEADERS}) 
+list(LENGTH SRCS SRCS_LENGTH)
+if(SRCS_LENGTH)
+	add_library(windows-native.include OBJECT ${SRCS} ${HEADERS})
 	jcpp_enable_bigobj(windows-native.include)
 endif()

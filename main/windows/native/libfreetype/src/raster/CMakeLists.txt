@@ -1,10 +1,10 @@
 #machine generated
 
-aux_source_directory("${CMAKE_CURRENT_SOURCE_DIR}" windows-native.libfreetype_132_SRCS)
-file(GLOB windows-native.libfreetype_132_HEADERS *.h *.hpp)
-source_group("Include" FILES ${windows-native.libfreetype_132_HEADERS}) 
-list(LENGTH windows-native.libfreetype_132_SRCS windows-native.libfreetype_132_SRCS_LENGTH)
-if(windows-native.libfreetype_132_SRCS_LENGTH)
-	add_library(windows-native.libfreetype_132 OBJECT "${windows-native.libfreetype_132_SRCS}" "${windows-native.libfreetype_132_HEADERS}")
-	jcpp_enable_bigobj(windows-native.libfreetype_132)
+aux_source_directory(. SRCS)
+file(GLOB HEADERS *.h *.hpp)
+source_group("Include" FILES ${HEADERS}) 
+list(LENGTH SRCS SRCS_LENGTH)
+if(SRCS_LENGTH)
+	add_library(windows-native.libfreetype._23 OBJECT ${SRCS} ${HEADERS})
+	jcpp_enable_bigobj(windows-native.libfreetype._23)
 endif()

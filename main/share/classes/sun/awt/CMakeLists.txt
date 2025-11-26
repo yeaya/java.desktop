@@ -1,0 +1,21 @@
+#machine generated
+
+add_subdirectory("datatransfer")
+add_subdirectory("dnd")
+add_subdirectory("event")
+add_subdirectory("geom")
+add_subdirectory("im")
+add_subdirectory("image")
+add_subdirectory("resources")
+add_subdirectory("shell")
+add_subdirectory("util")
+add_subdirectory("www")
+
+aux_source_directory(. SRCS)
+file(GLOB HEADERS *.h *.hpp)
+source_group("Include" FILES ${HEADERS}) 
+list(LENGTH SRCS SRCS_LENGTH)
+if(SRCS_LENGTH)
+	add_library(sun.awt OBJECT ${SRCS} ${HEADERS})
+	jcpp_enable_bigobj(sun.awt)
+endif()

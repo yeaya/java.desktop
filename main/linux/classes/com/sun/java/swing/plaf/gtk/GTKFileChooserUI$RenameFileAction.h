@@ -1,0 +1,52 @@
+#ifndef _com_sun_java_swing_plaf_gtk_GTKFileChooserUI$RenameFileAction_h_
+#define _com_sun_java_swing_plaf_gtk_GTKFileChooserUI$RenameFileAction_h_
+//$ class com.sun.java.swing.plaf.gtk.GTKFileChooserUI$RenameFileAction
+//$ extends javax.swing.AbstractAction
+
+#include <javax/swing/AbstractAction.h>
+
+namespace com {
+	namespace sun {
+		namespace java {
+			namespace swing {
+				namespace plaf {
+					namespace gtk {
+						class GTKFileChooserUI;
+					}
+				}
+			}
+		}
+	}
+}
+namespace java {
+	namespace awt {
+		namespace event {
+			class ActionEvent;
+		}
+	}
+}
+
+namespace com {
+	namespace sun {
+		namespace java {
+			namespace swing {
+				namespace plaf {
+					namespace gtk {
+
+class GTKFileChooserUI$RenameFileAction : public ::javax::swing::AbstractAction {
+	$class(GTKFileChooserUI$RenameFileAction, $NO_CLASS_INIT, ::javax::swing::AbstractAction)
+public:
+	GTKFileChooserUI$RenameFileAction();
+	void init$(::com::sun::java::swing::plaf::gtk::GTKFileChooserUI* this$0);
+	virtual void actionPerformed(::java::awt::event::ActionEvent* e) override;
+	::com::sun::java::swing::plaf::gtk::GTKFileChooserUI* this$0 = nullptr;
+};
+
+					} // gtk
+				} // plaf
+			} // swing
+		} // java
+	} // sun
+} // com
+
+#endif // _com_sun_java_swing_plaf_gtk_GTKFileChooserUI$RenameFileAction_h_
