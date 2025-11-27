@@ -835,14 +835,18 @@ bool XDragSourceContextPeer::processEvent($XEvent* ev) {
 		bool return$1 = false;
 		try {
 			try {
-				return $nc(XDragSourceContextPeer::theInstance)->doProcessEvent(ev);
+				var$2 = $nc(XDragSourceContextPeer::theInstance)->doProcessEvent(ev);
+				return$1 = true;
+				goto $finally;
 			} catch ($XException& e) {
 				e->printStackTrace();
-				return false;
+				var$2 = false;
+				return$1 = true;
+				goto $finally;
 			}
 		} catch ($Throwable& var$3) {
 			$assign(var$0, var$3);
-		} /*finally*/ {
+		} $finally: {
 			$XToolkit::awtUnlock();
 		}
 		if (var$0 != nullptr) {

@@ -96,13 +96,14 @@ void InfoWindow$Balloon$Displayer::run() {
 					try {
 						$XToolkit::awtLockWait();
 					} catch ($InterruptedException& e) {
-						return;
+						return$1 = true;
+						goto $finally;
 					}
 				}
 				this->isDisplayed = true;
 			} catch ($Throwable& var$2) {
 				$assign(var$0, var$2);
-			} /*finally*/ {
+			} $finally: {
 				$XToolkit::awtUnlock();
 			}
 			if (var$0 != nullptr) {

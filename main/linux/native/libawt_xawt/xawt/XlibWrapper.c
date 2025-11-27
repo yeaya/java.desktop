@@ -1323,7 +1323,7 @@ JNIEXPORT jboolean JNICALL Java_sun_awt_X11_XlibWrapper_IsKanaKeyboard
     result = kanaCount > 10;
     return result ? JNI_TRUE : JNI_FALSE;
 }
-
+#define jvm jvm_xawt
 JavaVM* jvm = NULL;
 static int ToolkitErrorHandler(Display * dpy, XErrorEvent * event) {
     JNIEnv * env;

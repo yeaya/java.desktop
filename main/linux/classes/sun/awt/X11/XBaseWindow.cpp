@@ -452,7 +452,9 @@ bool XBaseWindow::checkInitialised() {
 							awtLockWait();
 						}
 					} catch ($InterruptedException& ie) {
-						return false;
+						var$2 = false;
+						return$1 = true;
+						goto $finally;
 					}
 					var$2 = true;
 					return$1 = true;

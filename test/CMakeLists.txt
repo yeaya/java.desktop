@@ -26,6 +26,14 @@ add_subdirectory("share/classes")
 
 aux_source_directory("share" source_SRCS)
 
+if(JCPP_OS MATCHES "linux")
+	aux_source_directory("linux" source_SRCS)
+endif()
+
+if(JCPP_OS MATCHES "windows")
+	aux_source_directory("windows" source_SRCS)
+endif()
+
 set(local_object ${local_object}
 	"$<TARGET_OBJECTS:test-classes>"
 )
@@ -477,7 +485,6 @@ add_test(NAME bug6994419 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> b
 add_test(NAME bug7003777 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug7003777)
 add_test(NAME bug7010561 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug7010561)
 add_test(NAME bug7011777 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug7011777)
-add_test(NAME bug7013453 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug7013453)
 add_test(NAME bug7027139 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug7027139)
 add_test(NAME bug7030332 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug7030332)
 add_test(NAME bug7031551 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug7031551)
@@ -538,3 +545,7 @@ add_test(NAME bug8081411 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> b
 add_test(NAME bug8132119 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug8132119)
 add_test(NAME bug8134721 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug8134721)
 add_test(NAME bug8158734 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug8158734)
+
+if(JCPP_OS MATCHES "windows")
+	add_test(NAME bug7013453 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug7013453)
+endif()

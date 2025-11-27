@@ -125,10 +125,14 @@ $Object* JEditorPane$PageLoader::doInBackground() {
 						$SwingUtilities::invokeAndWait($$new($JEditorPane$PageLoader$1, this));
 					} catch ($InvocationTargetException& ex) {
 						$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this->this$0);
-						return $of(this->old);
+						$assign(var$2, this->old);
+						return$1 = true;
+						goto $finally;
 					} catch ($InterruptedException& ex) {
 						$nc($($UIManager::getLookAndFeel()))->provideErrorFeedback(this->this$0);
-						return $of(this->old);
+						$assign(var$2, this->old);
+						return$1 = true;
+						goto $finally;
 					}
 				}
 				this->this$0->read(this->in, this->doc);

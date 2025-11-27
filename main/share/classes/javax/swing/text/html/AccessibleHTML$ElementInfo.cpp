@@ -247,13 +247,15 @@ $Rectangle* AccessibleHTML$ElementInfo::getBounds() {
 					int32_t var$3 = $nc(e)->getStartOffset();
 					$init($Position$Bias);
 					$var($Position$Bias, var$4, $Position$Bias::Forward);
-					return $nc($(rootView->modelToView(var$3, var$4, e->getEndOffset(), $Position$Bias::Backward, bounds)))->getBounds();
+					$assign(var$2, $nc($(rootView->modelToView(var$3, var$4, e->getEndOffset(), $Position$Bias::Backward, bounds)))->getBounds());
+					return$1 = true;
+					goto $finally;
 				} catch ($BadLocationException& ble) {
 				}
 			}
 		} catch ($Throwable& var$5) {
 			$assign(var$0, var$5);
-		} /*finally*/ {
+		} $finally: {
 			this->this$0->unlock(lock);
 		}
 		if (var$0 != nullptr) {

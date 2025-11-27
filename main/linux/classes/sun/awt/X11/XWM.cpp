@@ -696,16 +696,22 @@ int64_t XWM::getECommsWindowIDProperty(int64_t window) {
 					if ($nc(XWM::log)->isLoggable($PlatformLogger$Level::FINER)) {
 						$nc(XWM::log)->finer($$str({"Enlightenment communication window "_s, $$str(winid)}));
 					}
-					return winid;
+					var$2 = winid;
+					return$1 = true;
+					goto $finally;
 				} else {
 					$nc(XWM::log)->finer("ENLIGHTENMENT_COMMS has wrong format"_s);
-					return 0;
+					var$2 = 0;
+					return$1 = true;
+					goto $finally;
 				}
 			} catch ($Exception& e) {
 				if ($nc(XWM::log)->isLoggable($PlatformLogger$Level::FINER)) {
 					e->printStackTrace();
 				}
-				return 0;
+				var$2 = 0;
+				return$1 = true;
+				goto $finally;
 			}
 		} catch ($Throwable& var$6) {
 			$assign(var$0, var$6);

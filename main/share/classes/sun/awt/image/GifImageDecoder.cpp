@@ -264,10 +264,12 @@ void GifImageDecoder::produceImage() {
 						}
 						try {
 							if (!readImage(totalframes == 0, disposal_method, delay)) {
-								return;
+								return$1 = true;
+								goto $finally;
 							}
 						} catch ($Exception& e) {
-							return;
+							return$1 = true;
+							goto $finally;
 						}
 						++frameno;
 						++totalframes;
@@ -297,7 +299,8 @@ void GifImageDecoder::produceImage() {
 								frameno = 0;
 								break;
 							} catch ($IOException& e) {
-								return;
+								return$1 = true;
+								goto $finally;
 							}
 						}
 						imageComplete($ImageConsumer::STATICIMAGEDONE, true);

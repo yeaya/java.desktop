@@ -11937,12 +11937,6 @@ $bytes* java$desktop$GetResource($String* name) {
 	return nullptr;
 }
 
-const char* _java$desktop_args_[] = {
-	"--add-exports",
-	"jdk.charsets/sun.nio.cs.ext=ALL-UNNAMED",
-	nullptr
-};
-
 void java$desktop::init() {
 	::java$prefs::init();
 	::java$datatransfer::init();
@@ -11954,8 +11948,7 @@ void java$desktop::init() {
 		java$desktop$LibEventAction,
 		java$desktop$GetPackages,
 		java$desktop$GetClassEntry,
-		java$desktop$GetResource,
-		_java$desktop_args_
+		java$desktop$GetResource
 	};
 	$System::addLibrary(&lib);
 }

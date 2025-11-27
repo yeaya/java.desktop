@@ -2436,7 +2436,8 @@ void JTree::setExpandedState($TreePath* path, bool state) {
 						try {
 							fireTreeWillExpand(parentPath);
 						} catch ($ExpandVetoException& eve) {
-							return;
+							return$1 = true;
+							goto $finally;
 						}
 						$init($Boolean);
 						$nc(this->expandedState)->put(parentPath, $Boolean::TRUE);
@@ -2448,7 +2449,7 @@ void JTree::setExpandedState($TreePath* path, bool state) {
 				}
 			} catch ($Throwable& var$2) {
 				$assign(var$0, var$2);
-			} /*finally*/ {
+			} $finally: {
 				if ($nc(this->expandedStack)->size() < JTree::TEMP_STACK_SIZE) {
 					$nc(stack)->removeAllElements();
 					$nc(this->expandedStack)->push(stack);

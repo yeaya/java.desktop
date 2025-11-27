@@ -247,13 +247,14 @@ void ImageRepresentation::reconstruct(int32_t flags) {
 							$of(this)->wait();
 						} catch ($InterruptedException& e) {
 							$($Thread::currentThread())->interrupt();
-							return;
+							return$1 = true;
+							goto $finally;
 						}
 						missinginfo = (int32_t)(flags & (uint32_t)~this->availinfo);
 					}
 				} catch ($Throwable& var$2) {
 					$assign(var$0, var$2);
-				} /*finally*/ {
+				} $finally: {
 					decrementWaiters();
 				}
 				if (var$0 != nullptr) {

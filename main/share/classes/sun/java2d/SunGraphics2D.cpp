@@ -2828,9 +2828,13 @@ bool SunGraphics2D::scaleImage($Image* img, int32_t dx1, int32_t dy1, int32_t dx
 			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
-					return $nc(this->imagepipe)->scaleImage(this, img, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, bgcolor, observer);
+					var$2 = $nc(this->imagepipe)->scaleImage(this, img, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, bgcolor, observer);
+					return$1 = true;
+					goto $finally;
 				} catch ($InvalidPipeException& e2) {
-					return false;
+					var$2 = false;
+					return$1 = true;
+					goto $finally;
 				}
 			}
 		} catch ($Throwable& var$3) {
@@ -2861,9 +2865,13 @@ bool SunGraphics2D::transformImage($Image* img, $AffineTransform* xform, $ImageO
 			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
-					return $nc(this->imagepipe)->transformImage(this, img, xform, observer);
+					var$2 = $nc(this->imagepipe)->transformImage(this, img, xform, observer);
+					return$1 = true;
+					goto $finally;
 				} catch ($InvalidPipeException& e2) {
-					return false;
+					var$2 = false;
+					return$1 = true;
+					goto $finally;
 				}
 			}
 		} catch ($Throwable& var$3) {
@@ -2961,9 +2969,13 @@ bool SunGraphics2D::copyImage($Image* img, int32_t dx, int32_t dy, int32_t sx, i
 			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
-					return $nc(this->imagepipe)->copyImage(this, img, dx, dy, sx, sy, width, height, bgcolor, observer);
+					var$2 = $nc(this->imagepipe)->copyImage(this, img, dx, dy, sx, sy, width, height, bgcolor, observer);
+					return$1 = true;
+					goto $finally;
 				} catch ($InvalidPipeException& e2) {
-					return false;
+					var$2 = false;
+					return$1 = true;
+					goto $finally;
 				}
 			}
 		} catch ($Throwable& var$3) {
@@ -3010,9 +3022,13 @@ bool SunGraphics2D::drawImage($Image* img, int32_t x, int32_t y, int32_t width, 
 			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
-					return $nc(this->imagepipe)->scaleImage(this, img, x, y, width, height, bg, observer);
+					var$2 = $nc(this->imagepipe)->scaleImage(this, img, x, y, width, height, bg, observer);
+					return$1 = true;
+					goto $finally;
 				} catch ($InvalidPipeException& e2) {
-					return false;
+					var$2 = false;
+					return$1 = true;
+					goto $finally;
 				}
 			}
 		} catch ($Throwable& var$3) {
@@ -3057,9 +3073,13 @@ bool SunGraphics2D::drawImage($Image* img, int32_t x, int32_t y, $Color* bg, $Im
 			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
-					return $nc(this->imagepipe)->copyImage(this, img, x, y, bg, observer);
+					var$2 = $nc(this->imagepipe)->copyImage(this, img, x, y, bg, observer);
+					return$1 = true;
+					goto $finally;
 				} catch ($InvalidPipeException& e2) {
-					return false;
+					var$2 = false;
+					return$1 = true;
+					goto $finally;
 				}
 			}
 		} catch ($Throwable& var$3) {
@@ -3132,9 +3152,13 @@ bool SunGraphics2D::drawImage($Image* img, int32_t dx1, int32_t dy1, int32_t dx2
 			} catch ($InvalidPipeException& e) {
 				try {
 					revalidateAll();
-					return $nc(this->imagepipe)->scaleImage(this, img, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, bgcolor, observer);
+					var$2 = $nc(this->imagepipe)->scaleImage(this, img, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, bgcolor, observer);
+					return$1 = true;
+					goto $finally;
 				} catch ($InvalidPipeException& e2) {
-					return false;
+					var$2 = false;
+					return$1 = true;
+					goto $finally;
 				}
 			}
 		} catch ($Throwable& var$3) {
