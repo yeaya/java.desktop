@@ -92,7 +92,7 @@ void bug6489130$1::actionPerformed($ActionEvent* e) {
 	case 3:
 		{
 			{
-				$var($WindowArray, windows, $Window::getWindows());
+				$var($WindowArray, windows, $Frame::getWindows());
 				if ($nc(windows)->length > 0) {
 					$nc(windows->get(0))->dispose();
 				}

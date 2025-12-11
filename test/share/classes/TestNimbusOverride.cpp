@@ -216,7 +216,7 @@ void TestNimbusOverride::init$() {
 	$init($BorderLayout);
 	contentPanel->add(static_cast<$Component*>(pp), $of($BorderLayout::CENTER));
 	$var($Keymap, origKeymap, pp->getKeymap());
-	$var($Keymap, km, $JTextComponent::addKeymap("Test keymap"_s, origKeymap));
+	$var($Keymap, km, $JEditorPane::addKeymap("Test keymap"_s, origKeymap));
 	$var($KeyStroke, var$0, $KeyStroke::getKeyStroke(u' '));
 	$nc(km)->addActionForKeyStroke(var$0, $$new($TestNimbusOverride$1, this, "SHOW_SPACE"_s));
 	pp->setKeymap(km);

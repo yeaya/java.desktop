@@ -88,7 +88,7 @@ void bug7072653$2::popupMenuWillBecomeInvisible($PopupMenuEvent* e) {
 	$useLocalCurrentObjectStackCache();
 	int32_t height = 0;
 	{
-		$var($WindowArray, arr$, $Window::getWindows());
+		$var($WindowArray, arr$, $JFrame::getWindows());
 		int32_t len$ = $nc(arr$)->length;
 		int32_t i$ = 0;
 		for (; i$ < len$; ++i$) {

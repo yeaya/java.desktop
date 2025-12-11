@@ -148,7 +148,7 @@ void WrongAltProcessing::main($StringArray* args) {
 
 void WrongAltProcessing::verify() {
 	$useLocalCurrentObjectStackCache();
-	$var($Component, c, $nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner());
+	$var($Component, c, $nc($($DefaultKeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner());
 	$init(WrongAltProcessing);
 	if (!($equals(c, WrongAltProcessing::mainFrameTf2))) {
 		$throwNew($RuntimeException, "Wrong focus owner."_s);
