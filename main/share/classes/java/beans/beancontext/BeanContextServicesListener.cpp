@@ -3,8 +3,6 @@
 #include <java/beans/beancontext/BeanContextServiceAvailableEvent.h>
 #include <jcpp.h>
 
-using $BeanContextServiceAvailableEvent = ::java::beans::beancontext::BeanContextServiceAvailableEvent;
-using $BeanContextServiceRevokedListener = ::java::beans::beancontext::BeanContextServiceRevokedListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

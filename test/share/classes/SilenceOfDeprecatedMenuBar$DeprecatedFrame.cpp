@@ -6,7 +6,6 @@
 #include <javax/swing/JRootPane.h>
 #include <jcpp.h>
 
-using $SilenceOfDeprecatedMenuBar = ::SilenceOfDeprecatedMenuBar;
 using $SilenceOfDeprecatedMenuBar$DeprecatedFrame$1 = ::SilenceOfDeprecatedMenuBar$DeprecatedFrame$1;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

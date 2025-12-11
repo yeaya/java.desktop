@@ -16,7 +16,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Long = ::java::lang::Long;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Map = ::java::util::Map;
-using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XClipboard = ::sun::awt::X11::XClipboard;
 using $XConstants = ::sun::awt::X11::XConstants;
 using $XEvent = ::sun::awt::X11::XEvent;

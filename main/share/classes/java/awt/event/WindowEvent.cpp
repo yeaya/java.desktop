@@ -23,7 +23,6 @@
 #undef WINDOW_OPENED
 #undef WINDOW_STATE_CHANGED
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Window = ::java::awt::Window;
@@ -31,7 +30,6 @@ using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $AppContext = ::sun::awt::AppContext;
 using $SunToolkit = ::sun::awt::SunToolkit;
 

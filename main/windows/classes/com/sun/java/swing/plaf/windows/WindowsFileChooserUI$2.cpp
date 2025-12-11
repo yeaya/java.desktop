@@ -14,7 +14,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComboBox = ::javax::swing::JComboBox;
-using $JComponent = ::javax::swing::JComponent;
 
 namespace com {
 	namespace sun {

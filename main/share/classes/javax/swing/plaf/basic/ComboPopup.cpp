@@ -6,12 +6,8 @@
 #include <javax/swing/JList.h>
 #include <jcpp.h>
 
-using $KeyListener = ::java::awt::event::KeyListener;
-using $MouseListener = ::java::awt::event::MouseListener;
-using $MouseMotionListener = ::java::awt::event::MouseMotionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JList = ::javax::swing::JList;
 
 namespace javax {
 	namespace swing {

@@ -26,18 +26,12 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $Arrays = ::java::util::Arrays;
 using $AtomicInteger = ::java::util::concurrent::atomic::AtomicInteger;
 using $JPasswordField = ::javax::swing::JPasswordField;
 using $DocumentListener = ::javax::swing::event::DocumentListener;
 using $Document = ::javax::swing::text::Document;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 class CheckCommonUseCases$$Lambda$lambda$main$0 : public $Runnable {
 	$class(CheckCommonUseCases$$Lambda$lambda$main$0, $NO_CLASS_INIT, $Runnable)

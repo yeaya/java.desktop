@@ -39,7 +39,6 @@ using $Toolkit = ::java::awt::Toolkit;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $MenuComponentPeer = ::java::awt::peer::MenuComponentPeer;
 using $ObjectInputStream = ::java::io::ObjectInputStream;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -309,7 +308,7 @@ void MenuComponent::readObject($ObjectInputStream* s) {
 void MenuComponent::initIDs() {
 	$init(MenuComponent);
 	$prepareNativeStatic(MenuComponent, initIDs, void);
-	$invokeNativeStatic(MenuComponent, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

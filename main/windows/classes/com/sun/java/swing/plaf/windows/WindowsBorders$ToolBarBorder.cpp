@@ -25,7 +25,6 @@
 
 using $TMSchema$Part = ::com::sun::java::swing::plaf::windows::TMSchema$Part;
 using $TMSchema$State = ::com::sun::java::swing::plaf::windows::TMSchema$State;
-using $WindowsBorders = ::com::sun::java::swing::plaf::windows::WindowsBorders;
 using $XPStyle = ::com::sun::java::swing::plaf::windows::XPStyle;
 using $XPStyle$Skin = ::com::sun::java::swing::plaf::windows::XPStyle$Skin;
 using $Color = ::java::awt::Color;
@@ -41,7 +40,6 @@ using $JToolBar = ::javax::swing::JToolBar;
 using $SwingConstants = ::javax::swing::SwingConstants;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
 using $Border = ::javax::swing::border::Border;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace com {
 	namespace sun {

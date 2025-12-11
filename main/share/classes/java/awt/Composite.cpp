@@ -5,9 +5,6 @@
 #include <java/awt/image/ColorModel.h>
 #include <jcpp.h>
 
-using $CompositeContext = ::java::awt::CompositeContext;
-using $RenderingHints = ::java::awt::RenderingHints;
-using $ColorModel = ::java::awt::image::ColorModel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

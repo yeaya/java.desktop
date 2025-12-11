@@ -9,7 +9,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JFrame = ::javax::swing::JFrame;
 
 $MethodInfo _bug4529206$2_MethodInfo_[] = {

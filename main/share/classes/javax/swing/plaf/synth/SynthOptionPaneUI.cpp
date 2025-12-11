@@ -40,7 +40,6 @@
 
 using $BorderLayout = ::java::awt::BorderLayout;
 using $Component = ::java::awt::Component;
-using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
@@ -54,9 +53,7 @@ using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $Box = ::javax::swing::Box;
-using $Icon = ::javax::swing::Icon;
 using $JComponent = ::javax::swing::JComponent;
 using $JOptionPane = ::javax::swing::JOptionPane;
 using $JPanel = ::javax::swing::JPanel;

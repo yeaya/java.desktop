@@ -8,7 +8,6 @@
 
 using $DataFlavorArray = $Array<::java::awt::datatransfer::DataFlavor>;
 using $DataFlavor = ::java::awt::datatransfer::DataFlavor;
-using $Transferable = ::java::awt::datatransfer::Transferable;
 using $UnsupportedFlavorException = ::java::awt::datatransfer::UnsupportedFlavorException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

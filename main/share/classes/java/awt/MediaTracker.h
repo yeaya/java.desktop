@@ -69,7 +69,7 @@ public:
 	static const int32_t ABORTED = 2;
 	static const int32_t ERRORED = 4;
 	static const int32_t COMPLETE = 8;
-	static const int32_t DONE = (ABORTED | ERRORED | COMPLETE);
+	static const int32_t DONE = 14; // (ABORTED | ERRORED | COMPLETE)
 };
 
 	} // awt

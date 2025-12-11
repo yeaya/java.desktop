@@ -18,7 +18,6 @@
 
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Cursor = ::java::awt::Cursor;
 using $IllegalComponentStateException = ::java::awt::IllegalComponentStateException;
 using $Point = ::java::awt::Point;
 using $Toolkit = ::java::awt::Toolkit;

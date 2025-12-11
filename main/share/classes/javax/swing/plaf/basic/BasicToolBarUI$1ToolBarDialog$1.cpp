@@ -6,8 +6,6 @@
 #include <javax/swing/plaf/basic/BasicToolBarUI$1ToolBarDialog.h>
 #include <jcpp.h>
 
-using $Container = ::java::awt::Container;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

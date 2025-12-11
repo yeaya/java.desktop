@@ -47,7 +47,6 @@ using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $VetoableChangeListener = ::java::beans::VetoableChangeListener;
 using $BeanContext = ::java::beans::beancontext::BeanContext;
 using $BeanContextChild = ::java::beans::beancontext::BeanContextChild;
-using $BeanContextChildSupport = ::java::beans::beancontext::BeanContextChildSupport;
 using $BeanContextMembershipListener = ::java::beans::beancontext::BeanContextMembershipListener;
 using $BeanContextServiceAvailableEvent = ::java::beans::beancontext::BeanContextServiceAvailableEvent;
 using $BeanContextServiceProvider = ::java::beans::beancontext::BeanContextServiceProvider;

@@ -23,7 +23,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AccessController = ::java::security::AccessController;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Properties = ::java::util::Properties;
 using $UIManager = ::javax::swing::UIManager;
 using $OSInfo = ::sun::awt::OSInfo;

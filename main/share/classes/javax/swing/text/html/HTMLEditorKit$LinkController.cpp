@@ -45,7 +45,6 @@
 #undef USEMAP
 
 using $Position$BiasArray = $Array<::javax::swing::text::Position$Bias>;
-using $Component = ::java::awt::Component;
 using $Cursor = ::java::awt::Cursor;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
@@ -55,25 +54,20 @@ using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $RectangularShape = ::java::awt::geom::RectangularShape;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $MalformedURLException = ::java::net::MalformedURLException;
 using $URL = ::java::net::URL;
-using $EventObject = ::java::util::EventObject;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $HyperlinkEvent = ::javax::swing::event::HyperlinkEvent;
 using $HyperlinkEvent$EventType = ::javax::swing::event::HyperlinkEvent$EventType;
 using $TextUI = ::javax::swing::plaf::TextUI;
-using $AbstractDocument = ::javax::swing::text::AbstractDocument;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
-using $DefaultStyledDocument = ::javax::swing::text::DefaultStyledDocument;
 using $Document = ::javax::swing::text::Document;
-using $EditorKit = ::javax::swing::text::EditorKit;
 using $Element = ::javax::swing::text::Element;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $Position$Bias = ::javax::swing::text::Position$Bias;

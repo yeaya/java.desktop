@@ -10,9 +10,6 @@
 #include <javax/swing/plaf/nimbus/State.h>
 #include <jcpp.h>
 
-using $NimbusStyle$RuntimeStateArray = $Array<::javax::swing::plaf::nimbus::NimbusStyle$RuntimeState>;
-using $StateArray = $Array<::javax::swing::plaf::nimbus::State>;
-using $Insets = ::java::awt::Insets;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
@@ -22,9 +19,6 @@ using $AbstractMap = ::java::util::AbstractMap;
 using $HashMap = ::java::util::HashMap;
 using $Map = ::java::util::Map;
 using $UIDefaults = ::javax::swing::UIDefaults;
-using $NimbusStyle = ::javax::swing::plaf::nimbus::NimbusStyle;
-using $NimbusStyle$RuntimeState = ::javax::swing::plaf::nimbus::NimbusStyle$RuntimeState;
-using $State = ::javax::swing::plaf::nimbus::State;
 
 namespace javax {
 	namespace swing {

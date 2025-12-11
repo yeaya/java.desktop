@@ -12,7 +12,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JList = ::javax::swing::JList;
 using $ListSelectionModel = ::javax::swing::ListSelectionModel;
 

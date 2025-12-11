@@ -12,9 +12,7 @@ using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Dictionary = ::java::util::Dictionary;
 using $Enumeration = ::java::util::Enumeration;
-using $RTFParser = ::javax::swing::text::rtf::RTFParser;
 using $RTFReader = ::javax::swing::text::rtf::RTFReader;
-using $RTFReader$Destination = ::javax::swing::text::rtf::RTFReader$Destination;
 
 namespace javax {
 	namespace swing {

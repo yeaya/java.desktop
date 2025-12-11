@@ -19,19 +19,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DrawGlyphList = ::sun::java2d::loops::DrawGlyphList;
-using $DrawGlyphListAA = ::sun::java2d::loops::DrawGlyphListAA;
-using $DrawGlyphListColor = ::sun::java2d::loops::DrawGlyphListColor;
-using $DrawGlyphListLCD = ::sun::java2d::loops::DrawGlyphListLCD;
-using $DrawLine = ::sun::java2d::loops::DrawLine;
-using $DrawParallelogram = ::sun::java2d::loops::DrawParallelogram;
-using $DrawPath = ::sun::java2d::loops::DrawPath;
-using $DrawPolygons = ::sun::java2d::loops::DrawPolygons;
-using $DrawRect = ::sun::java2d::loops::DrawRect;
-using $FillParallelogram = ::sun::java2d::loops::FillParallelogram;
-using $FillPath = ::sun::java2d::loops::FillPath;
-using $FillRect = ::sun::java2d::loops::FillRect;
-using $FillSpans = ::sun::java2d::loops::FillSpans;
 using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
 
 namespace sun {

@@ -22,7 +22,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $JComponent = ::javax::swing::JComponent;
 using $JPanel = ::javax::swing::JPanel;
 using $JLightweightFrame = ::sun::swing::JLightweightFrame;
 using $JLightweightFrame$3$1 = ::sun::swing::JLightweightFrame$3$1;

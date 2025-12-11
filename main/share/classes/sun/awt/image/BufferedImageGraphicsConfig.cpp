@@ -25,7 +25,6 @@
 
 using $BufferedImageGraphicsConfigArray = $Array<::sun::awt::image::BufferedImageGraphicsConfig>;
 using $Component = ::java::awt::Component;
-using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;

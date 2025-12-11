@@ -7,7 +7,6 @@
 #include <java/lang/Runnable.h>
 #include <jcpp.h>
 
-using $bug4760494 = ::bug4760494;
 using $bug4760494$RobotThread = ::bug4760494$RobotThread;
 using $WindowAdapter = ::java::awt::event::WindowAdapter;
 using $WindowEvent = ::java::awt::event::WindowEvent;

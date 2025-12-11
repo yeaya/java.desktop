@@ -15,8 +15,6 @@ using $GlyphList = ::sun::font::GlyphList;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
 using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
 using $OGLTextRenderer = ::sun::java2d::opengl::OGLTextRenderer;
-using $BufferedTextPipe = ::sun::java2d::pipe::BufferedTextPipe;
-using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 
 namespace sun {
 	namespace java2d {

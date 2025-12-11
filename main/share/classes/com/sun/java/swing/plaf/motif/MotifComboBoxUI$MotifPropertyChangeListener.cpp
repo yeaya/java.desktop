@@ -11,7 +11,6 @@
 #include <jcpp.h>
 
 using $MotifComboBoxUI = ::com::sun::java::swing::plaf::motif::MotifComboBoxUI;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $ClassInfo = ::java::lang::ClassInfo;

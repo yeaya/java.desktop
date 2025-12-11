@@ -24,10 +24,8 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $Iterator = ::java::util::Iterator;
 using $Set = ::java::util::Set;
-using $RepaintManager = ::javax::swing::RepaintManager;
 using $RepaintManager$DisplayChangedRunnable = ::javax::swing::RepaintManager$DisplayChangedRunnable;
 using $AppContext = ::sun::awt::AppContext;
-using $DisplayChangedListener = ::sun::awt::DisplayChangedListener;
 
 namespace javax {
 	namespace swing {

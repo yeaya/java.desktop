@@ -38,7 +38,6 @@ using $JComboBox = ::javax::swing::JComboBox;
 using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;
 using $JPanel = ::javax::swing::JPanel;
-using $JSlider = ::javax::swing::JSlider;
 using $JTabbedPane = ::javax::swing::JTabbedPane;
 using $DefaultMetalTheme = ::javax::swing::plaf::metal::DefaultMetalTheme;
 using $OceanTheme = ::javax::swing::plaf::metal::OceanTheme;

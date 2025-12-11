@@ -16,6 +16,21 @@ if(JCPP_OS MATCHES "linux")
 	add_definitions("-DHAVE_INTEL_ATOMIC_PRIMITIVES")
 endif()
 
+if(JCPP_OS MATCHES "macos")
+	add_definitions("-DGETPAGESIZE -DHAVE_MPROTECT -DHAVE_PTHREAD")
+	add_definitions("-DHAVE_SYSCONF -DHAVE_SYS_MMAN_H -DHAVE_UNISTD_H")
+	add_definitions("-DHB_NO_PRAGMA_GCC_DIAGNOSTIC")
+	add_definitions("-DHAVE_INTEL_ATOMIC_PRIMITIVES")
+endif()
+
+if(JCPP_OS MATCHES "macos")
+	include_directories("../../../macos/native/libharfbuzz")
+endif()
+
+if(JCPP_OS MATCHES "windows")
+	include_directories("../../../windows/native/libharfbuzz")
+endif()
+
 aux_source_directory(. SRCS)
 file(GLOB HEADERS *.h *.hpp)
 source_group("Include" FILES ${HEADERS}) 

@@ -52,15 +52,12 @@
 #undef PI
 
 using $ModelConnectionBlockArray = $Array<::com::sun::media::sound::ModelConnectionBlock>;
-using $ModelOscillatorArray = $Array<::com::sun::media::sound::ModelOscillator>;
 using $ModelSourceArray = $Array<::com::sun::media::sound::ModelSource>;
 using $SoftAudioBufferArray = $Array<::com::sun::media::sound::SoftAudioBuffer>;
 using $doubleArray2 = $Array<double, 2>;
 using $floatArray2 = $Array<float, 2>;
 using $intArray2 = $Array<int32_t, 2>;
-using $booleanArray2 = $Array<bool, 2>;
 using $doubleArray3 = $Array<double, 3>;
-using $ModelChannelMixer = ::com::sun::media::sound::ModelChannelMixer;
 using $ModelConnectionBlock = ::com::sun::media::sound::ModelConnectionBlock;
 using $ModelDestination = ::com::sun::media::sound::ModelDestination;
 using $ModelIdentifier = ::com::sun::media::sound::ModelIdentifier;
@@ -74,10 +71,8 @@ using $SoftChannel = ::com::sun::media::sound::SoftChannel;
 using $SoftControl = ::com::sun::media::sound::SoftControl;
 using $SoftEnvelopeGenerator = ::com::sun::media::sound::SoftEnvelopeGenerator;
 using $SoftFilter = ::com::sun::media::sound::SoftFilter;
-using $SoftInstrument = ::com::sun::media::sound::SoftInstrument;
 using $SoftLowFrequencyOscillator = ::com::sun::media::sound::SoftLowFrequencyOscillator;
 using $SoftMainMixer = ::com::sun::media::sound::SoftMainMixer;
-using $SoftPerformer = ::com::sun::media::sound::SoftPerformer;
 using $SoftProcess = ::com::sun::media::sound::SoftProcess;
 using $SoftResamplerStreamer = ::com::sun::media::sound::SoftResamplerStreamer;
 using $SoftSynthesizer = ::com::sun::media::sound::SoftSynthesizer;

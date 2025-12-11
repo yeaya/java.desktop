@@ -77,7 +77,6 @@ using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
-using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $AssertionError = ::java::lang::AssertionError;

@@ -17,7 +17,6 @@ using $IOException = ::java::io::IOException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Enumeration = ::java::util::Enumeration;
 using $ImageInputStream = ::javax::imageio::stream::ImageInputStream;
 using $ImageInputStreamImpl = ::javax::imageio::stream::ImageInputStreamImpl;
 

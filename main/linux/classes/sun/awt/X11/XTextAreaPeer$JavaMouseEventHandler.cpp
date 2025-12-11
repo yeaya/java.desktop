@@ -43,14 +43,12 @@
 using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Cursor = ::java::awt::Cursor;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
@@ -58,7 +56,6 @@ using $AbstractButton = ::javax::swing::AbstractButton;
 using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JScrollBar = ::javax::swing::JScrollBar;
-using $JScrollPane = ::javax::swing::JScrollPane;
 using $JTextArea = ::javax::swing::JTextArea;
 using $JViewport = ::javax::swing::JViewport;
 using $ScrollBarUI = ::javax::swing::plaf::ScrollBarUI;
@@ -73,7 +70,6 @@ using $XTextAreaPeer$AWTTextPane = ::sun::awt::X11::XTextAreaPeer$AWTTextPane;
 using $XTextAreaPeer$JavaMouseEventHandler$Pointer = ::sun::awt::X11::XTextAreaPeer$JavaMouseEventHandler$Pointer;
 using $XTextAreaPeer$JavaMouseEventHandler$Pointer$Type = ::sun::awt::X11::XTextAreaPeer$JavaMouseEventHandler$Pointer$Type;
 using $XTextAreaPeer$XAWTScrollBarUI = ::sun::awt::X11::XTextAreaPeer$XAWTScrollBarUI;
-using $XWindow = ::sun::awt::X11::XWindow;
 
 namespace sun {
 	namespace awt {

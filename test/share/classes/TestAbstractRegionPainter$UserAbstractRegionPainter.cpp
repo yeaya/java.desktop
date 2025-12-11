@@ -9,7 +9,6 @@
 #include <javax/swing/plaf/nimbus/AbstractRegionPainter.h>
 #include <jcpp.h>
 
-using $TestAbstractRegionPainter = ::TestAbstractRegionPainter;
 using $Color = ::java::awt::Color;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $ClassInfo = ::java::lang::ClassInfo;

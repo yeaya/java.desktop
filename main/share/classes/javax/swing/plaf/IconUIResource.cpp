@@ -7,13 +7,11 @@
 
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Icon = ::javax::swing::Icon;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace javax {
 	namespace swing {

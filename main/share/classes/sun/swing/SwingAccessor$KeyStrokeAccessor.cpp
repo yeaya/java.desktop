@@ -7,8 +7,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $KeyStroke = ::javax::swing::KeyStroke;
-using $SwingAccessor = ::sun::swing::SwingAccessor;
 
 namespace sun {
 	namespace swing {

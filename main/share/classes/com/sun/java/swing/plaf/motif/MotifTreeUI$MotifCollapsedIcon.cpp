@@ -7,7 +7,6 @@
 #include <javax/swing/Icon.h>
 #include <jcpp.h>
 
-using $MotifTreeUI = ::com::sun::java::swing::plaf::motif::MotifTreeUI;
 using $MotifTreeUI$MotifExpandedIcon = ::com::sun::java::swing::plaf::motif::MotifTreeUI$MotifExpandedIcon;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;

@@ -6,16 +6,10 @@
 #include <java/net/URL.h>
 #include <jcpp.h>
 
-using $DesignMode = ::java::beans::DesignMode;
-using $Visibility = ::java::beans::Visibility;
 using $BeanContextChild = ::java::beans::beancontext::BeanContextChild;
-using $BeanContextMembershipListener = ::java::beans::beancontext::BeanContextMembershipListener;
-using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $URL = ::java::net::URL;
-using $Collection = ::java::util::Collection;
 
 namespace java {
 	namespace beans {

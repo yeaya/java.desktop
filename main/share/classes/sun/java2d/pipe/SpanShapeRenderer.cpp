@@ -22,7 +22,6 @@ using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;
 using $Stroke = ::java::awt::Stroke;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
-using $PathIterator = ::java::awt::geom::PathIterator;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -32,7 +31,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
 using $LoopPipe = ::sun::java2d::pipe::LoopPipe;
 using $Region = ::sun::java2d::pipe::Region;
-using $ShapeDrawPipe = ::sun::java2d::pipe::ShapeDrawPipe;
 using $ShapeSpanIterator = ::sun::java2d::pipe::ShapeSpanIterator;
 using $SpanIterator = ::sun::java2d::pipe::SpanIterator;
 

@@ -20,7 +20,6 @@
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $Arc2D = ::java::awt::geom::Arc2D;
 using $PathIterator = ::java::awt::geom::PathIterator;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;

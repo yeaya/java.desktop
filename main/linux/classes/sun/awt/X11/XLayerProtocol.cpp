@@ -9,7 +9,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $XWindowPeer = ::sun::awt::X11::XWindowPeer;
 
 namespace sun {
 	namespace awt {

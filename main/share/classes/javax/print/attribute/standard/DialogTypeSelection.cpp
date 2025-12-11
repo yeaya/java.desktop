@@ -12,7 +12,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $EnumSyntax = ::javax::print::attribute::EnumSyntax;
-using $PrintRequestAttribute = ::javax::print::attribute::PrintRequestAttribute;
 
 namespace javax {
 	namespace print {

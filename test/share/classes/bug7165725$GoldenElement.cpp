@@ -11,7 +11,6 @@
 #include <jcpp.h>
 
 using $bug7165725$GoldenElementArray = $Array<bug7165725$GoldenElement>;
-using $bug7165725 = ::bug7165725;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

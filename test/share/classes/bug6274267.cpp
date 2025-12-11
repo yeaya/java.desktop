@@ -25,7 +25,6 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

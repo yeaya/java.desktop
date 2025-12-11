@@ -9,7 +9,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 
 $FieldInfo _bug5074573$1_FieldInfo_[] = {
 	{"val$textComponentClass", "Ljava/lang/Class;", nullptr, $FINAL | $SYNTHETIC, $field(bug5074573$1, val$textComponentClass)},

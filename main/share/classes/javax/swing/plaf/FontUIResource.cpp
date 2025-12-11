@@ -6,7 +6,6 @@
 using $Font = ::java::awt::Font;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace javax {
 	namespace swing {

@@ -5,7 +5,6 @@
 #include <java/util/concurrent/Callable.h>
 #include <jcpp.h>
 
-using $Util = ::Util;
 using $ExceptionArray = $Array<::java::lang::Exception>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
@@ -13,7 +12,6 @@ using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $List = ::java::util::List;
 using $Callable = ::java::util::concurrent::Callable;
 

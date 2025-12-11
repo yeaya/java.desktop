@@ -27,7 +27,6 @@
 using $bug8015853$1 = ::bug8015853$1;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Window = ::java::awt::Window;
 using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $ClassLoader = ::java::lang::ClassLoader;
@@ -37,7 +36,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $URI = ::java::net::URI;
 using $URL = ::java::net::URL;
 using $Scanner = ::java::util::Scanner;
 using $JComponent = ::javax::swing::JComponent;

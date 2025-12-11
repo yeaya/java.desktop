@@ -53,7 +53,6 @@ using $SizeRequirements = ::javax::swing::SizeRequirements;
 using $AbstractDocument = ::javax::swing::text::AbstractDocument;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $BoxView = ::javax::swing::text::BoxView;
-using $CompositeView = ::javax::swing::text::CompositeView;
 using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
 using $GlyphView = ::javax::swing::text::GlyphView;

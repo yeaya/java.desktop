@@ -40,10 +40,7 @@ using $List = ::java::util::List;
 using $ControllerEventListener = ::javax::sound::midi::ControllerEventListener;
 using $MetaEventListener = ::javax::sound::midi::MetaEventListener;
 using $MetaMessage = ::javax::sound::midi::MetaMessage;
-using $MidiMessage = ::javax::sound::midi::MidiMessage;
 using $ShortMessage = ::javax::sound::midi::ShortMessage;
-using $DataLine = ::javax::sound::sampled::DataLine;
-using $Line = ::javax::sound::sampled::Line;
 using $LineEvent = ::javax::sound::sampled::LineEvent;
 using $LineListener = ::javax::sound::sampled::LineListener;
 

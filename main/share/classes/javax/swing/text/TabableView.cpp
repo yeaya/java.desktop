@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $TabExpander = ::javax::swing::text::TabExpander;
 
 namespace javax {
 	namespace swing {

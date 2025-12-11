@@ -27,7 +27,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NumberFormatException = ::java::lang::NumberFormatException;
-using $EventObject = ::java::util::EventObject;
 using $JComponent = ::javax::swing::JComponent;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
@@ -37,7 +36,6 @@ using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $SimpleAttributeSet = ::javax::swing::text::SimpleAttributeSet;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
-using $StyledEditorKit = ::javax::swing::text::StyledEditorKit;
 using $StyledEditorKit$StyledTextAction = ::javax::swing::text::StyledEditorKit$StyledTextAction;
 
 namespace javax {

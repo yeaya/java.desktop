@@ -8,7 +8,6 @@
 
 #undef TRUE
 
-using $bug6608456 = ::bug6608456;
 using $bug6608456$TestFuture$1 = ::bug6608456$TestFuture$1;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;

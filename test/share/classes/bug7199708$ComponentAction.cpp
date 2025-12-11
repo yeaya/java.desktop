@@ -4,8 +4,6 @@
 #include <java/awt/Component.h>
 #include <jcpp.h>
 
-using $bug7199708 = ::bug7199708;
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

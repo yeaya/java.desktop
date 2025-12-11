@@ -20,7 +20,6 @@ using $Element = ::javax::swing::text::Element;
 using $ElementIterator = ::javax::swing::text::ElementIterator;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
 using $HTML$Tag = ::javax::swing::text::html::HTML$Tag;
-using $HTMLDocument = ::javax::swing::text::html::HTMLDocument;
 using $HTMLDocument$Iterator = ::javax::swing::text::html::HTMLDocument$Iterator;
 
 namespace javax {

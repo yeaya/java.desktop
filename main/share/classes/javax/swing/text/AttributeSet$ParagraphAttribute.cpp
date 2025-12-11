@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
-using $AttributeSet = ::javax::swing::text::AttributeSet;
 
 namespace javax {
 	namespace swing {

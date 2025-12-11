@@ -17,7 +17,6 @@ using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $UNIXToolkit = ::sun::awt::UNIXToolkit;
 using $UNIXToolkit$GtkVersions$Constants = ::sun::awt::UNIXToolkit$GtkVersions$Constants;
 
 namespace sun {

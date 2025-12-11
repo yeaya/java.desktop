@@ -21,7 +21,6 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $FocusTraversalPolicy = ::java::awt::FocusTraversalPolicy;
 using $Window = ::java::awt::Window;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
@@ -174,7 +173,7 @@ $Component* ContainerOrderFocusTraversalPolicy::getComponentDownCycle($Component
 				return nullptr;
 			}
 		} else if (cont->isFocusTraversalPolicyProvider()) {
-			$assign(retComp, traversalDirection == this->FORWARD_TRAVERSAL ? $nc($(cont->getFocusTraversalPolicy()))->getDefaultComponent(cont) : $nc($(cont->getFocusTraversalPolicy()))->getLastComponent(cont));
+			$assign(retComp, traversalDirection == ContainerOrderFocusTraversalPolicy::FORWARD_TRAVERSAL ? $nc($(cont->getFocusTraversalPolicy()))->getDefaultComponent(cont) : $nc($(cont->getFocusTraversalPolicy()))->getLastComponent(cont));
 			$init($PlatformLogger$Level);
 			if (retComp != nullptr && $nc(ContainerOrderFocusTraversalPolicy::log)->isLoggable($PlatformLogger$Level::FINE)) {
 				$nc(ContainerOrderFocusTraversalPolicy::log)->fine($$str({"### Transferred focus to "_s, retComp, " in the FTP provider "_s, cont}));
@@ -208,7 +207,7 @@ $Component* ContainerOrderFocusTraversalPolicy::getComponentAfter($Container* aC
 		if (!(var$3 && aContainer->isDisplayable())) {
 			return nullptr;
 		}
-		$var($Component, comp, getComponentDownCycle(aComponent, this->FORWARD_TRAVERSAL));
+		$var($Component, comp, getComponentDownCycle(aComponent, ContainerOrderFocusTraversalPolicy::FORWARD_TRAVERSAL));
 		if (comp != nullptr && comp != aComponent) {
 			return comp;
 		}
@@ -242,7 +241,7 @@ $Component* ContainerOrderFocusTraversalPolicy::getComponentAfter($Container* aC
 			$assign(comp, $cast($Component, cycle->get(index)));
 			if (accept(comp)) {
 				return comp;
-			} else if (($assign(comp, getComponentDownCycle(comp, this->FORWARD_TRAVERSAL))) != nullptr) {
+			} else if (($assign(comp, getComponentDownCycle(comp, ContainerOrderFocusTraversalPolicy::FORWARD_TRAVERSAL))) != nullptr) {
 				return comp;
 			}
 		}
@@ -313,7 +312,7 @@ $Component* ContainerOrderFocusTraversalPolicy::getComponentBefore($Container* a
 		$var($Component, tryComp, nullptr);
 		for (--index; index >= 0; --index) {
 			$assign(comp, $cast($Component, $nc(cycle)->get(index)));
-			if (!$equals(comp, aContainer) && ($assign(tryComp, getComponentDownCycle(comp, this->BACKWARD_TRAVERSAL))) != nullptr) {
+			if (!$equals(comp, aContainer) && ($assign(tryComp, getComponentDownCycle(comp, ContainerOrderFocusTraversalPolicy::BACKWARD_TRAVERSAL))) != nullptr) {
 				return tryComp;
 			} else if (accept(comp)) {
 				return comp;
@@ -367,7 +366,7 @@ $Component* ContainerOrderFocusTraversalPolicy::getFirstComponent($Container* aC
 				{
 					if (accept(comp)) {
 						return comp;
-					} else if (!$equals(comp, aContainer) && ($assign(comp, getComponentDownCycle(comp, this->FORWARD_TRAVERSAL))) != nullptr) {
+					} else if (!$equals(comp, aContainer) && ($assign(comp, getComponentDownCycle(comp, ContainerOrderFocusTraversalPolicy::FORWARD_TRAVERSAL))) != nullptr) {
 						return comp;
 					}
 				}

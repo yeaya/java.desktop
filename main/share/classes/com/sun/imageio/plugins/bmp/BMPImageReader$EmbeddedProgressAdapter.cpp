@@ -4,12 +4,10 @@
 #include <javax/imageio/ImageReader.h>
 #include <jcpp.h>
 
-using $BMPImageReader = ::com::sun::imageio::plugins::bmp::BMPImageReader;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ImageReader = ::javax::imageio::ImageReader;
-using $IIOReadProgressListener = ::javax::imageio::event::IIOReadProgressListener;
 
 namespace com {
 	namespace sun {

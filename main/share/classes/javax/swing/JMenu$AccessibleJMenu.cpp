@@ -27,12 +27,10 @@ using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AccessibleRole = ::javax::accessibility::AccessibleRole;
 using $AccessibleSelection = ::javax::accessibility::AccessibleSelection;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JMenu = ::javax::swing::JMenu;
 using $JMenuItem = ::javax::swing::JMenuItem;
 using $JMenuItem$AccessibleJMenuItem = ::javax::swing::JMenuItem$AccessibleJMenuItem;
-using $JPopupMenu = ::javax::swing::JPopupMenu;
 using $MenuElement = ::javax::swing::MenuElement;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
 

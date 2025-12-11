@@ -11,7 +11,6 @@
 
 #undef CLASSID
 
-using $TestObjectView = ::TestObjectView;
 using $TestObjectView$UserElement = ::TestObjectView$UserElement;
 using $TestObjectView$UserJComponent = ::TestObjectView$UserJComponent;
 using $ClassInfo = ::java::lang::ClassInfo;

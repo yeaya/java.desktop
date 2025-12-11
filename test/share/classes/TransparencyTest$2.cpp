@@ -6,13 +6,11 @@
 #include <jcpp.h>
 
 using $TransparencyTest = ::TransparencyTest;
-using $Dialog = ::java::awt::Dialog;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JDialog = ::javax::swing::JDialog;
 
 $MethodInfo _TransparencyTest$2_MethodInfo_[] = {

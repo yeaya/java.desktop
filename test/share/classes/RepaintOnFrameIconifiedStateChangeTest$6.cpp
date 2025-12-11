@@ -12,7 +12,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;
 
 $MethodInfo _RepaintOnFrameIconifiedStateChangeTest$6_MethodInfo_[] = {

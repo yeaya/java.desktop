@@ -14,17 +14,14 @@
 #undef ON_WITH_AA
 
 using $DMarlinRenderingEngine$NormModeArray = $Array<::sun::java2d::marlin::DMarlinRenderingEngine$NormMode>;
-using $PathIterator = ::java::awt::geom::PathIterator;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DMarlinRenderingEngine = ::sun::java2d::marlin::DMarlinRenderingEngine;
 using $DMarlinRenderingEngine$NormMode$1 = ::sun::java2d::marlin::DMarlinRenderingEngine$NormMode$1;
 using $DMarlinRenderingEngine$NormMode$2 = ::sun::java2d::marlin::DMarlinRenderingEngine$NormMode$2;
 using $DMarlinRenderingEngine$NormMode$3 = ::sun::java2d::marlin::DMarlinRenderingEngine$NormMode$3;
-using $RendererContext = ::sun::java2d::marlin::RendererContext;
 
 namespace sun {
 	namespace java2d {

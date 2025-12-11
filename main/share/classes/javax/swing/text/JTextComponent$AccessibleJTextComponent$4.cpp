@@ -10,8 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $JTextComponent$AccessibleJTextComponent = ::javax::swing::text::JTextComponent$AccessibleJTextComponent;
 
 namespace javax {

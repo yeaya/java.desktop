@@ -19,11 +19,9 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Long = ::java::lang::Long;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $Map = ::java::util::Map;
 using $XEmbedCanvasPeer = ::sun::awt::X11::XEmbedCanvasPeer;
 using $XEmbedCanvasPeer$XEmbedServer = ::sun::awt::X11::XEmbedCanvasPeer$XEmbedServer;
-using $XEmbedHelper = ::sun::awt::X11::XEmbedHelper;
 using $PlatformLogger = ::sun::util::logging::PlatformLogger;
 using $PlatformLogger$Level = ::sun::util::logging::PlatformLogger$Level;
 

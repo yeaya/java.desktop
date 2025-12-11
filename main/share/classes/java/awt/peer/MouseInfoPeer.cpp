@@ -4,8 +4,6 @@
 #include <java/awt/Window.h>
 #include <jcpp.h>
 
-using $Point = ::java::awt::Point;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

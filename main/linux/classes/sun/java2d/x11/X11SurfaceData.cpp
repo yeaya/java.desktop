@@ -117,7 +117,6 @@ using $SunHints = ::sun::awt::SunHints;
 using $SunToolkit = ::sun::awt::SunToolkit;
 using $X11ComponentPeer = ::sun::awt::X11ComponentPeer;
 using $X11GraphicsConfig = ::sun::awt::X11GraphicsConfig;
-using $PixelConverter = ::sun::awt::image::PixelConverter;
 using $PixelConverter$Ushort555Rgb = ::sun::awt::image::PixelConverter$Ushort555Rgb;
 using $PixelConverter$Ushort565Rgb = ::sun::awt::image::PixelConverter$Ushort565Rgb;
 using $PixelConverter$Xbgr = ::sun::awt::image::PixelConverter$Xbgr;
@@ -129,7 +128,6 @@ using $SunGraphicsEnvironment = ::sun::java2d::SunGraphicsEnvironment;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $SurfaceDataProxy = ::sun::java2d::SurfaceDataProxy;
 using $CompositeType = ::sun::java2d::loops::CompositeType;
-using $FontInfo = ::sun::java2d::loops::FontInfo;
 using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
 using $RenderLoops = ::sun::java2d::loops::RenderLoops;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
@@ -333,13 +331,13 @@ $X11SurfaceData$LazyPipe* X11SurfaceData::lazypipe = nullptr;
 void X11SurfaceData::initIDs($Class* xorComp) {
 	$init(X11SurfaceData);
 	$prepareNativeStatic(X11SurfaceData, initIDs, void, $Class* xorComp);
-	$invokeNativeStatic(X11SurfaceData, initIDs, xorComp);
+	$invokeNativeStatic(xorComp);
 	$finishNativeStatic();
 }
 
 void X11SurfaceData::initSurface(int32_t depth, int32_t width, int32_t height, int64_t drawable) {
 	$prepareNative(X11SurfaceData, initSurface, void, int32_t depth, int32_t width, int32_t height, int64_t drawable);
-	$invokeNative(X11SurfaceData, initSurface, depth, width, height, drawable);
+	$invokeNative(depth, width, height, drawable);
 	$finishNative();
 }
 
@@ -352,7 +350,7 @@ bool X11SurfaceData::isShmPMAvailable() {
 	$init(X11SurfaceData);
 	bool $ret = false;
 	$prepareNativeStatic(X11SurfaceData, isShmPMAvailable, bool);
-	$ret = $invokeNativeStatic(X11SurfaceData, isShmPMAvailable);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -648,21 +646,21 @@ void X11SurfaceData::invalidate() {
 void X11SurfaceData::XSetCopyMode(int64_t xgc) {
 	$init(X11SurfaceData);
 	$prepareNativeStatic(X11SurfaceData, XSetCopyMode, void, int64_t xgc);
-	$invokeNativeStatic(X11SurfaceData, XSetCopyMode, xgc);
+	$invokeNativeStatic(xgc);
 	$finishNativeStatic();
 }
 
 void X11SurfaceData::XSetXorMode(int64_t xgc) {
 	$init(X11SurfaceData);
 	$prepareNativeStatic(X11SurfaceData, XSetXorMode, void, int64_t xgc);
-	$invokeNativeStatic(X11SurfaceData, XSetXorMode, xgc);
+	$invokeNativeStatic(xgc);
 	$finishNativeStatic();
 }
 
 void X11SurfaceData::XSetForeground(int64_t xgc, int32_t pixel) {
 	$init(X11SurfaceData);
 	$prepareNativeStatic(X11SurfaceData, XSetForeground, void, int64_t xgc, int32_t pixel);
-	$invokeNativeStatic(X11SurfaceData, XSetForeground, xgc, pixel);
+	$invokeNativeStatic(xgc, pixel);
 	$finishNativeStatic();
 }
 

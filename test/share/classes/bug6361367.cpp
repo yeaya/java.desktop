@@ -41,7 +41,6 @@ using $bug6361367$2 = ::bug6361367$2;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;

@@ -13,7 +13,6 @@
 
 #undef MOUSE_CLICKED
 
-using $bug6938583 = ::bug6938583;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $MouseEvent = ::java::awt::event::MouseEvent;
@@ -21,7 +20,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JComponent = ::javax::swing::JComponent;
 using $JTextArea = ::javax::swing::JTextArea;
 using $Caret = ::javax::swing::text::Caret;

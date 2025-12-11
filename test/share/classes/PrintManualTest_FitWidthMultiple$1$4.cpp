@@ -12,14 +12,12 @@
 
 using $PrintManualTest_FitWidthMultiple$1 = ::PrintManualTest_FitWidthMultiple$1;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $MessageFormat = ::java::text::MessageFormat;
 using $PrintRequestAttributeSet = ::javax::print::attribute::PrintRequestAttributeSet;
 using $JTable = ::javax::swing::JTable;
 using $JTable$PrintMode = ::javax::swing::JTable$PrintMode;

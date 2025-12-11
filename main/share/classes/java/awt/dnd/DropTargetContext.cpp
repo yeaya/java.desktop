@@ -23,7 +23,6 @@ using $DropTargetContext$1 = ::java::awt::dnd::DropTargetContext$1;
 using $DropTargetContext$TransferableProxy = ::java::awt::dnd::DropTargetContext$TransferableProxy;
 using $InvalidDnDOperationException = ::java::awt::dnd::InvalidDnDOperationException;
 using $DropTargetContextPeer = ::java::awt::dnd::peer::DropTargetContextPeer;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

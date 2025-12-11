@@ -4,10 +4,8 @@
 #include <javax/swing/event/ChangeListener.h>
 #include <jcpp.h>
 
-using $Color = ::java::awt::Color;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ChangeListener = ::javax::swing::event::ChangeListener;
 
 namespace javax {
 	namespace swing {

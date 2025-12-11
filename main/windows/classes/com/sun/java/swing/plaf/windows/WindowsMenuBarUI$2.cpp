@@ -9,9 +9,7 @@
 #undef DISPLAYABILITY_CHANGED
 
 using $WindowsMenuBarUI = ::com::sun::java::swing::plaf::windows::WindowsMenuBarUI;
-using $Component = ::java::awt::Component;
 using $HierarchyEvent = ::java::awt::event::HierarchyEvent;
-using $HierarchyListener = ::java::awt::event::HierarchyListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

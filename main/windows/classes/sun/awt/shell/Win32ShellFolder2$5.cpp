@@ -9,7 +9,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Callable = ::java::util::concurrent::Callable;
 using $Win32ShellFolder2 = ::sun::awt::shell::Win32ShellFolder2;
 
 namespace sun {

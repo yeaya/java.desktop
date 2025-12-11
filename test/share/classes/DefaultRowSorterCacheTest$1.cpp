@@ -8,7 +8,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 
 $MethodInfo _DefaultRowSorterCacheTest$1_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(DefaultRowSorterCacheTest$1::*)()>(&DefaultRowSorterCacheTest$1::init$))},

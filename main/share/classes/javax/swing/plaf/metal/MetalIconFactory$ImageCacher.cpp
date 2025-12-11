@@ -16,7 +16,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Iterator = ::java::util::Iterator;
 using $Vector = ::java::util::Vector;
-using $MetalIconFactory = ::javax::swing::plaf::metal::MetalIconFactory;
 using $MetalIconFactory$ImageCacher$ImageGcPair = ::javax::swing::plaf::metal::MetalIconFactory$ImageCacher$ImageGcPair;
 
 namespace javax {

@@ -8,8 +8,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SurfaceData = ::sun::java2d::SurfaceData;
-using $LoopBasedPipe = ::sun::java2d::pipe::LoopBasedPipe;
 using $PixelToShapeConverter = ::sun::java2d::pipe::PixelToShapeConverter;
 using $ShapeDrawPipe = ::sun::java2d::pipe::ShapeDrawPipe;
 

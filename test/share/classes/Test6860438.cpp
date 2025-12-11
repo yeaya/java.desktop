@@ -16,7 +16,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $Enumeration = ::java::util::Enumeration;
-using $Hashtable = ::java::util::Hashtable;
 using $Iterator = ::java::util::Iterator;
 using $Map$Entry = ::java::util::Map$Entry;
 using $Set = ::java::util::Set;

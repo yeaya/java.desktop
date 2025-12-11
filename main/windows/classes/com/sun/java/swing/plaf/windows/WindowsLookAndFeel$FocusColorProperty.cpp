@@ -10,7 +10,6 @@
 #undef WHITE
 
 using $WindowsDesktopProperty = ::com::sun::java::swing::plaf::windows::WindowsDesktopProperty;
-using $WindowsLookAndFeel = ::com::sun::java::swing::plaf::windows::WindowsLookAndFeel;
 using $Color = ::java::awt::Color;
 using $Toolkit = ::java::awt::Toolkit;
 using $Boolean = ::java::lang::Boolean;

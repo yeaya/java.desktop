@@ -29,7 +29,6 @@
 #undef KEY_PRESSED
 #undef KEY_RELEASED
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Event = ::java::awt::Event;
 using $Font = ::java::awt::Font;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
@@ -42,7 +41,6 @@ using $MenuContainer = ::java::awt::MenuContainer;
 using $MenuItem = ::java::awt::MenuItem;
 using $MenuShortcut = ::java::awt::MenuShortcut;
 using $Toolkit = ::java::awt::Toolkit;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $MenuBarPeer = ::java::awt::peer::MenuBarPeer;
 using $MenuComponentPeer = ::java::awt::peer::MenuComponentPeer;
@@ -55,7 +53,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Enumeration = ::java::util::Enumeration;
 using $Vector = ::java::util::Vector;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$MenuBarAccessor = ::sun::awt::AWTAccessor$MenuBarAccessor;
@@ -377,7 +374,7 @@ void MenuBar::readObject($ObjectInputStream* s) {
 void MenuBar::initIDs() {
 	$init(MenuBar);
 	$prepareNativeStatic(MenuBar, initIDs, void);
-	$invokeNativeStatic(MenuBar, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

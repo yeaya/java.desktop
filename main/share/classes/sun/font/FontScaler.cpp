@@ -14,19 +14,14 @@
 #include <sun/java2d/DisposerRecord.h>
 #include <jcpp.h>
 
-using $GeneralPath = ::java::awt::geom::GeneralPath;
-using $Point2D$Float = ::java::awt::geom::Point2D$Float;
-using $Rectangle2D$Float = ::java::awt::geom::Rectangle2D$Float;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $WeakReference = ::java::lang::ref::WeakReference;
 using $Font2D = ::sun::font::Font2D;
 using $FontManager = ::sun::font::FontManager;
 using $FontManagerFactory = ::sun::font::FontManagerFactory;
 using $FreetypeFontScaler = ::sun::font::FreetypeFontScaler;
 using $NullFontScaler = ::sun::font::NullFontScaler;
-using $StrikeMetrics = ::sun::font::StrikeMetrics;
 using $Disposer = ::sun::java2d::Disposer;
 using $DisposerRecord = ::sun::java2d::DisposerRecord;
 

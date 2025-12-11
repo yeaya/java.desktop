@@ -35,7 +35,6 @@ using $MenuShortcut = ::java::awt::MenuShortcut;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $MenuItemPeer = ::java::awt::peer::MenuItemPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

@@ -33,7 +33,6 @@
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
-using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $Image = ::java::awt::Image;
@@ -54,7 +53,6 @@ using $ImageIcon = ::javax::swing::ImageIcon;
 using $JComponent = ::javax::swing::JComponent;
 using $JToolBar = ::javax::swing::JToolBar;
 using $UIManager = ::javax::swing::UIManager;
-using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
 using $MetalLookAndFeel = ::javax::swing::plaf::metal::MetalLookAndFeel;
 using $MetalUtils$GradientPainter = ::javax::swing::plaf::metal::MetalUtils$GradientPainter;
 using $MetalUtils$OceanDisabledButtonImageFilter = ::javax::swing::plaf::metal::MetalUtils$OceanDisabledButtonImageFilter;

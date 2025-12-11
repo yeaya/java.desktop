@@ -10,7 +10,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $GapContent = ::javax::swing::text::GapContent;
 using $GapContent$MarkData = ::javax::swing::text::GapContent$MarkData;
 using $GapVector = ::javax::swing::text::GapVector;
 

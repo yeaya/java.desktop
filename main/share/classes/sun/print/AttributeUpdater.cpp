@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrintServiceAttributeSet = ::javax::print::attribute::PrintServiceAttributeSet;
 
 namespace sun {
 	namespace print {

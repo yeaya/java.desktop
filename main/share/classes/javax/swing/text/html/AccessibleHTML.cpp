@@ -33,8 +33,6 @@
 #undef IMG
 #undef TABLE
 
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Insets = ::java::awt::Insets;
 using $Rectangle = ::java::awt::Rectangle;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
@@ -42,9 +40,7 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
-using $JComponent = ::javax::swing::JComponent;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $DocumentListener = ::javax::swing::event::DocumentListener;
 using $TextUI = ::javax::swing::plaf::TextUI;

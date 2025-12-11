@@ -6,8 +6,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AudioFormat = ::javax::sound::sampled::AudioFormat;
-using $Line = ::javax::sound::sampled::Line;
 
 namespace javax {
 	namespace sound {

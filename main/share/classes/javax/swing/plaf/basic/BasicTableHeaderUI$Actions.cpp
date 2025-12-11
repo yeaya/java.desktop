@@ -24,19 +24,14 @@
 #undef SELECT_COLUMN_TO_RIGHT
 #undef TOGGLE_SORT_ORDER
 
-using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $JComponent = ::javax::swing::JComponent;
 using $JTable = ::javax::swing::JTable;
 using $RowSorter = ::javax::swing::RowSorter;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
-using $TableHeaderUI = ::javax::swing::plaf::TableHeaderUI;
 using $BasicLookAndFeel = ::javax::swing::plaf::basic::BasicLookAndFeel;
 using $BasicTableHeaderUI = ::javax::swing::plaf::basic::BasicTableHeaderUI;
 using $JTableHeader = ::javax::swing::table::JTableHeader;

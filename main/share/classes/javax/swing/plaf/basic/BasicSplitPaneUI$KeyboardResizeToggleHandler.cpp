@@ -7,12 +7,10 @@
 #include <jcpp.h>
 
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JSplitPane = ::javax::swing::JSplitPane;
 using $BasicSplitPaneUI = ::javax::swing::plaf::basic::BasicSplitPaneUI;
 

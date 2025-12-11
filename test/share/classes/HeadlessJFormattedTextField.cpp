@@ -6,7 +6,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JTextField = ::javax::swing::JTextField;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $MethodInfo _HeadlessJFormattedTextField_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PUBLIC, $method(static_cast<void(HeadlessJFormattedTextField::*)()>(&HeadlessJFormattedTextField::init$))},

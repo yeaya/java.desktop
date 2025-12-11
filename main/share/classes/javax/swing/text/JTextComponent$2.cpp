@@ -12,7 +12,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Callable = ::java::util::concurrent::Callable;
 using $PrintRequestAttributeSet = ::javax::print::attribute::PrintRequestAttributeSet;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $PrintingStatus = ::sun::swing::PrintingStatus;

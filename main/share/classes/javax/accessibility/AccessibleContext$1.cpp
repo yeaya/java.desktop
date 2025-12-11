@@ -9,7 +9,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
-using $AWTAccessor$AccessibleContextAccessor = ::sun::awt::AWTAccessor$AccessibleContextAccessor;
 using $AppContext = ::sun::awt::AppContext;
 
 namespace javax {

@@ -7,12 +7,9 @@
 #include <sun/awt/AppContext.h>
 #include <jcpp.h>
 
-using $Container = ::java::awt::Container;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
-using $LayoutStyle$ComponentPlacement = ::javax::swing::LayoutStyle$ComponentPlacement;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $UIManager = ::javax::swing::UIManager;
 using $AppContext = ::sun::awt::AppContext;

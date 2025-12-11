@@ -4,7 +4,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ComboBoxModel = ::javax::swing::ComboBoxModel;
 
 namespace javax {
 	namespace swing {

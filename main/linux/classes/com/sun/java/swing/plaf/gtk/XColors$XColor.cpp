@@ -5,10 +5,8 @@
 #include <javax/swing/plaf/ColorUIResource.h>
 #include <jcpp.h>
 
-using $XColors = ::com::sun::java::swing::plaf::gtk::XColors;
 using $Color = ::java::awt::Color;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Comparable = ::java::lang::Comparable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

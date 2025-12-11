@@ -25,9 +25,7 @@
 #undef INPUT_METHOD_TEXT_CHANGED
 
 using $AttributedCharacterIterator$AttributeArray = $Array<::java::text::AttributedCharacterIterator$Attribute>;
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
-using $Font = ::java::awt::Font;
 using $Rectangle = ::java::awt::Rectangle;
 using $InputMethodEvent = ::java::awt::event::InputMethodEvent;
 using $InputMethodListener = ::java::awt::event::InputMethodListener;
@@ -37,13 +35,10 @@ using $InputMethodRequests = ::java::awt::im::InputMethodRequests;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $AttributedCharacterIterator = ::java::text::AttributedCharacterIterator;
 using $AttributedCharacterIterator$Attribute = ::java::text::AttributedCharacterIterator$Attribute;
 using $AttributedString = ::java::text::AttributedString;
-using $CharacterIterator = ::java::text::CharacterIterator;
-using $EventObject = ::java::util::EventObject;
 using $CompositionArea = ::sun::awt::im::CompositionArea;
 using $InputContext = ::sun::awt::im::InputContext;
 using $InputMethodContext = ::sun::awt::im::InputMethodContext;

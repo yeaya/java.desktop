@@ -397,11 +397,11 @@ public:
 	static const int32_t TEXTARRSIZE = 17;
 	static $Array<double, 2>* textTxArr;
 	static $Array<::java::awt::geom::AffineTransform>* textAtArr;
-	static const int32_t NON_UNIFORM_SCALE_MASK = (::java::awt::geom::AffineTransform::TYPE_GENERAL_TRANSFORM | ::java::awt::geom::AffineTransform::TYPE_GENERAL_SCALE);
+	static const int32_t NON_UNIFORM_SCALE_MASK = 36; // (::java::awt::geom::AffineTransform::TYPE_GENERAL_TRANSFORM | ::java::awt::geom::AffineTransform::TYPE_GENERAL_SCALE)
 	static double MinPenSizeAA;
 	static double MinPenSizeAASquared;
 	static double MinPenSizeSquared;
-	static const int32_t NON_RECTILINEAR_TRANSFORM_MASK = (::java::awt::geom::AffineTransform::TYPE_GENERAL_TRANSFORM | ::java::awt::geom::AffineTransform::TYPE_GENERAL_ROTATION);
+	static const int32_t NON_RECTILINEAR_TRANSFORM_MASK = 48; // (::java::awt::geom::AffineTransform::TYPE_GENERAL_TRANSFORM | ::java::awt::geom::AffineTransform::TYPE_GENERAL_ROTATION)
 	::sun::java2d::loops::Blit* lastCAblit = nullptr;
 	::java::awt::Composite* lastCAcomp = nullptr;
 	::java::awt::font::FontRenderContext* cachedFRC = nullptr;

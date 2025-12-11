@@ -26,28 +26,19 @@
 #include <sun/swing/SwingUtilities2.h>
 #include <jcpp.h>
 
-using $RectangleArray = $Array<::java::awt::Rectangle>;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Rectangle = ::java::awt::Rectangle;
 using $ContainerEvent = ::java::awt::event::ContainerEvent;
-using $ContainerListener = ::java::awt::event::ContainerListener;
 using $FocusEvent = ::java::awt::event::FocusEvent;
-using $FocusListener = ::java::awt::event::FocusListener;
 using $MouseEvent = ::java::awt::event::MouseEvent;
-using $MouseListener = ::java::awt::event::MouseListener;
-using $MouseMotionListener = ::java::awt::event::MouseMotionListener;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $Vector = ::java::util::Vector;
 using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;

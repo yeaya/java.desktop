@@ -6,13 +6,11 @@
 #include <javax/swing/plaf/synth/SynthComboBoxUI.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JTextField = ::javax::swing::JTextField;
 using $BasicComboBoxEditor$UIResource = ::javax::swing::plaf::basic::BasicComboBoxEditor$UIResource;
-using $SynthComboBoxUI = ::javax::swing::plaf::synth::SynthComboBoxUI;
 
 namespace javax {
 	namespace swing {

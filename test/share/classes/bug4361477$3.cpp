@@ -12,7 +12,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JTabbedPane = ::javax::swing::JTabbedPane;
 using $ChangeEvent = ::javax::swing::event::ChangeEvent;
-using $ChangeListener = ::javax::swing::event::ChangeListener;
 
 $MethodInfo _bug4361477$3_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(bug4361477$3::*)()>(&bug4361477$3::init$))},

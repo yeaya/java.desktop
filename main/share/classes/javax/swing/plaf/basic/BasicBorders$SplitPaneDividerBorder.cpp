@@ -27,8 +27,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JSplitPane = ::javax::swing::JSplitPane;
 using $Border = ::javax::swing::border::Border;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $BasicBorders = ::javax::swing::plaf::basic::BasicBorders;
 using $BasicSplitPaneDivider = ::javax::swing::plaf::basic::BasicSplitPaneDivider;
 using $BasicSplitPaneUI = ::javax::swing::plaf::basic::BasicSplitPaneUI;
 

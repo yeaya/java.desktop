@@ -14,7 +14,6 @@
 #include <sun/awt/windows/WPrintDialogPeer.h>
 #include <jcpp.h>
 
-using $Dialog = ::java::awt::Dialog;
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
@@ -22,13 +21,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $ThreadGroup = ::java::lang::ThreadGroup;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WPageDialog = ::sun::awt::windows::WPageDialog;
 using $WPrintDialog = ::sun::awt::windows::WPrintDialog;
 using $WPrintDialogPeer = ::sun::awt::windows::WPrintDialogPeer;
@@ -107,7 +100,7 @@ void WPageDialogPeer::init$($WPageDialog* target) {
 bool WPageDialogPeer::_show() {
 	bool $ret = false;
 	$prepareNative(WPageDialogPeer, _show, bool);
-	$ret = $invokeNative(WPageDialogPeer, _show);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }

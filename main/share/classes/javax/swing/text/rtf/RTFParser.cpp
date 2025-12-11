@@ -10,7 +10,6 @@
 
 using $ByteArrayOutputStream = ::java::io::ByteArrayOutputStream;
 using $IOException = ::java::io::IOException;
-using $OutputStream = ::java::io::OutputStream;
 using $PrintStream = ::java::io::PrintStream;
 using $Character = ::java::lang::Character;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -87,7 +86,7 @@ void RTFParser::handleText(char16_t ch) {
 void RTFParser::init$() {
 	$AbstractFilter::init$();
 	$set(this, currentCharacters, $new($StringBuffer));
-	this->state = this->S_text;
+	this->state = RTFParser::S_text;
 	$set(this, pendingKeyword, nullptr);
 	this->level = 0;
 	$set(this, specialsTable, RTFParser::rtfSpecialsTable);
@@ -105,10 +104,10 @@ void RTFParser::warning($String* s) {
 
 void RTFParser::write($String* s$renamed) {
 	$var($String, s, s$renamed);
-	if (this->state != this->S_text) {
+	if (this->state != RTFParser::S_text) {
 		int32_t index = 0;
 		int32_t length = $nc(s)->length();
-		while (index < length && this->state != this->S_text) {
+		while (index < length && this->state != RTFParser::S_text) {
 			write(s->charAt(index));
 			++index;
 		}
@@ -128,7 +127,7 @@ void RTFParser::write(char16_t ch) {
 	$useLocalCurrentObjectStackCache();
 	bool ok = false;
 	switch (this->state) {
-	case this->S_text:
+	case RTFParser::S_text:
 		{
 			if (ch == u'\n' || ch == u'\r') {
 				break;
@@ -154,16 +153,16 @@ void RTFParser::write(char16_t ch) {
 					handleText($($nc(this->currentCharacters)->toString()));
 					$set(this, currentCharacters, $new($StringBuffer));
 				}
-				this->state = this->S_backslashed;
+				this->state = RTFParser::S_backslashed;
 			} else {
 				$nc(this->currentCharacters)->append(ch);
 			}
 			break;
 		}
-	case this->S_backslashed:
+	case RTFParser::S_backslashed:
 		{
 			if (ch == u'\'') {
-				this->state = this->S_aftertick;
+				this->state = RTFParser::S_aftertick;
 				break;
 			}
 			if (!$Character::isLetter(ch)) {
@@ -172,13 +171,13 @@ void RTFParser::write(char16_t ch) {
 				if (!handleKeyword($$new($String, newstring))) {
 					warning($$str({"Unknown keyword: "_s, newstring, " ("_s, $$str((int8_t)ch), ")"_s}));
 				}
-				this->state = this->S_text;
+				this->state = RTFParser::S_text;
 				$set(this, pendingKeyword, nullptr);
 				break;
 			}
-			this->state = this->S_token;
+			this->state = RTFParser::S_token;
 		}
-	case this->S_token:
+	case RTFParser::S_token:
 		{
 			if ($Character::isLetter(ch)) {
 				$nc(this->currentCharacters)->append(ch);
@@ -186,7 +185,7 @@ void RTFParser::write(char16_t ch) {
 				$set(this, pendingKeyword, $nc(this->currentCharacters)->toString());
 				$set(this, currentCharacters, $new($StringBuffer));
 				if ($Character::isDigit(ch) || (ch == u'-')) {
-					this->state = this->S_parameter;
+					this->state = RTFParser::S_parameter;
 					$nc(this->currentCharacters)->append(ch);
 				} else {
 					ok = handleKeyword(this->pendingKeyword);
@@ -194,7 +193,7 @@ void RTFParser::write(char16_t ch) {
 						warning($$str({"Unknown keyword: "_s, this->pendingKeyword}));
 					}
 					$set(this, pendingKeyword, nullptr);
-					this->state = this->S_text;
+					this->state = RTFParser::S_text;
 					if (!$Character::isWhitespace(ch)) {
 						write(ch);
 					}
@@ -202,7 +201,7 @@ void RTFParser::write(char16_t ch) {
 			}
 			break;
 		}
-	case this->S_parameter:
+	case RTFParser::S_parameter:
 		{
 			if ($Character::isDigit(ch)) {
 				$nc(this->currentCharacters)->append(ch);
@@ -210,7 +209,7 @@ void RTFParser::write(char16_t ch) {
 				if ($nc(this->pendingKeyword)->equals("bin"_s)) {
 					int64_t parameter = $Long::parseLong($($nc(this->currentCharacters)->toString()));
 					$set(this, pendingKeyword, nullptr);
-					this->state = this->S_inblob;
+					this->state = RTFParser::S_inblob;
 					this->binaryBytesLeft = parameter;
 					if (this->binaryBytesLeft > $Integer::MAX_VALUE) {
 						$set(this, binaryBuf, $new($ByteArrayOutputStream, $Integer::MAX_VALUE));
@@ -229,26 +228,26 @@ void RTFParser::write(char16_t ch) {
 				}
 				$set(this, pendingKeyword, nullptr);
 				$set(this, currentCharacters, $new($StringBuffer));
-				this->state = this->S_text;
+				this->state = RTFParser::S_text;
 				if (!$Character::isWhitespace(ch)) {
 					write(ch);
 				}
 			}
 			break;
 		}
-	case this->S_aftertick:
+	case RTFParser::S_aftertick:
 		{
 			if ($Character::digit(ch, 16) == -1) {
-				this->state = this->S_text;
+				this->state = RTFParser::S_text;
 			} else {
 				this->pendingCharacter = $Character::digit(ch, 16);
-				this->state = this->S_aftertickc;
+				this->state = RTFParser::S_aftertickc;
 			}
 			break;
 		}
-	case this->S_aftertickc:
+	case RTFParser::S_aftertickc:
 		{
-			this->state = this->S_text;
+			this->state = RTFParser::S_text;
 			if ($Character::digit(ch, 16) != -1) {
 				this->pendingCharacter = this->pendingCharacter * 16 + $Character::digit(ch, 16);
 				ch = $nc(this->translationTable)->get(this->pendingCharacter);
@@ -258,12 +257,12 @@ void RTFParser::write(char16_t ch) {
 			}
 			break;
 		}
-	case this->S_inblob:
+	case RTFParser::S_inblob:
 		{
 			$nc(this->binaryBuf)->write((int32_t)ch);
 			--this->binaryBytesLeft;
 			if (this->binaryBytesLeft == 0) {
-				this->state = this->S_text;
+				this->state = RTFParser::S_text;
 				$set(this, specialsTable, this->savedSpecials);
 				$set(this, savedSpecials, nullptr);
 				handleBinaryBlob($($nc(this->binaryBuf)->toByteArray()));
@@ -275,7 +274,7 @@ void RTFParser::write(char16_t ch) {
 
 void RTFParser::flush() {
 	$AbstractFilter::flush();
-	if (this->state == this->S_text && $nc(this->currentCharacters)->length() > 0) {
+	if (this->state == RTFParser::S_text && $nc(this->currentCharacters)->length() > 0) {
 		handleText($($nc(this->currentCharacters)->toString()));
 		$set(this, currentCharacters, $new($StringBuffer));
 	}
@@ -283,7 +282,7 @@ void RTFParser::flush() {
 
 void RTFParser::close() {
 	flush();
-	if (this->state != this->S_text || this->level > 0) {
+	if (this->state != RTFParser::S_text || this->level > 0) {
 		warning("Truncated RTF file."_s);
 		while (this->level > 0) {
 			endgroup();

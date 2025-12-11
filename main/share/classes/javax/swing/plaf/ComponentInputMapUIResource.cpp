@@ -8,7 +8,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ComponentInputMap = ::javax::swing::ComponentInputMap;
 using $JComponent = ::javax::swing::JComponent;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace javax {
 	namespace swing {

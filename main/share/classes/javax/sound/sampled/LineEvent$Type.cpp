@@ -12,7 +12,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $LineEvent = ::javax::sound::sampled::LineEvent;
 
 namespace javax {
 	namespace sound {

@@ -26,7 +26,6 @@
 #undef VERTICAL
 
 using $GTKConstants$Orientation = ::com::sun::java::swing::plaf::gtk::GTKConstants$Orientation;
-using $GTKIconFactory = ::com::sun::java::swing::plaf::gtk::GTKIconFactory;
 using $GTKIconFactory$DelegatingIcon = ::com::sun::java::swing::plaf::gtk::GTKIconFactory$DelegatingIcon;
 using $GTKPainter = ::com::sun::java::swing::plaf::gtk::GTKPainter;
 using $GTKRegion = ::com::sun::java::swing::plaf::gtk::GTKRegion;
@@ -36,14 +35,11 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Method = ::java::lang::reflect::Method;
 using $JComponent = ::javax::swing::JComponent;
 using $JToolBar = ::javax::swing::JToolBar;
-using $Region = ::javax::swing::plaf::synth::Region;
 using $SynthConstants = ::javax::swing::plaf::synth::SynthConstants;
 using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
 using $SynthLookAndFeel = ::javax::swing::plaf::synth::SynthLookAndFeel;
-using $SynthStyle = ::javax::swing::plaf::synth::SynthStyle;
 using $SynthStyleFactory = ::javax::swing::plaf::synth::SynthStyleFactory;
 
 namespace com {

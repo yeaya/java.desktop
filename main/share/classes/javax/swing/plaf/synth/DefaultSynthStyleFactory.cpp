@@ -24,7 +24,6 @@
 #undef PLAIN
 #undef REGION
 
-using $Component = ::java::awt::Component;
 using $Font = ::java::awt::Font;
 using $CharSequence = ::java::lang::CharSequence;
 using $ClassInfo = ::java::lang::ClassInfo;

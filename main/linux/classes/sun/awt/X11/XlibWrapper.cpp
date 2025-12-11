@@ -30,7 +30,6 @@ using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
 using $WindowPropertyGetter = ::sun::awt::X11::WindowPropertyGetter;
 using $XAtom = ::sun::awt::X11::XAtom;
-using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XConstants = ::sun::awt::X11::XConstants;
 using $XPropertyCache = ::sun::awt::X11::XPropertyCache;
 using $XPropertyCache$PropertyCacheEntry = ::sun::awt::X11::XPropertyCache$PropertyCacheEntry;
@@ -422,14 +421,14 @@ void XlibWrapper::init$() {
 void XlibWrapper::XFree(int64_t ptr) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XFree, void, int64_t ptr);
-	$invokeNativeStatic(XlibWrapper, XFree, ptr);
+	$invokeNativeStatic(ptr);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::memcpy(int64_t dest_ptr, int64_t src_ptr, int64_t length) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, memcpy, void, int64_t dest_ptr, int64_t src_ptr, int64_t length);
-	$invokeNativeStatic(XlibWrapper, memcpy, dest_ptr, src_ptr, length);
+	$invokeNativeStatic(dest_ptr, src_ptr, length);
 	$finishNativeStatic();
 }
 
@@ -437,7 +436,7 @@ int64_t XlibWrapper::getAddress(Object$* o) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, getAddress, int64_t, Object$* o);
-	$ret = $invokeNativeStatic(XlibWrapper, getAddress, o);
+	$ret = $invokeNativeStatic(o);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -445,14 +444,14 @@ int64_t XlibWrapper::getAddress(Object$* o) {
 void XlibWrapper::copyIntArray(int64_t dest_ptr, Object$* array, int32_t size_bytes) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, copyIntArray, void, int64_t dest_ptr, Object$* array, int32_t size_bytes);
-	$invokeNativeStatic(XlibWrapper, copyIntArray, dest_ptr, array, size_bytes);
+	$invokeNativeStatic(dest_ptr, array, size_bytes);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::copyLongArray(int64_t dest_ptr, Object$* array, int32_t size_bytes) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, copyLongArray, void, int64_t dest_ptr, Object$* array, int32_t size_bytes);
-	$invokeNativeStatic(XlibWrapper, copyLongArray, dest_ptr, array, size_bytes);
+	$invokeNativeStatic(dest_ptr, array, size_bytes);
 	$finishNativeStatic();
 }
 
@@ -460,7 +459,7 @@ $bytes* XlibWrapper::getStringBytes(int64_t str_ptr) {
 	$init(XlibWrapper);
 	$var($bytes, $ret, nullptr);
 	$prepareNativeStatic(XlibWrapper, getStringBytes, $bytes*, int64_t str_ptr);
-	$assign($ret, $invokeNativeStatic(XlibWrapper, getStringBytes, str_ptr));
+	$assign($ret, $invokeNativeStaticObject(str_ptr));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -469,7 +468,7 @@ int64_t XlibWrapper::XOpenDisplay(int64_t display) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XOpenDisplay, int64_t, int64_t display);
-	$ret = $invokeNativeStatic(XlibWrapper, XOpenDisplay, display);
+	$ret = $invokeNativeStatic(display);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -477,7 +476,7 @@ int64_t XlibWrapper::XOpenDisplay(int64_t display) {
 void XlibWrapper::XCloseDisplay(int64_t display) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XCloseDisplay, void, int64_t display);
-	$invokeNativeStatic(XlibWrapper, XCloseDisplay, display);
+	$invokeNativeStatic(display);
 	$finishNativeStatic();
 }
 
@@ -485,7 +484,7 @@ int64_t XlibWrapper::XDisplayString(int64_t display) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XDisplayString, int64_t, int64_t display);
-	$ret = $invokeNativeStatic(XlibWrapper, XDisplayString, display);
+	$ret = $invokeNativeStatic(display);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -493,7 +492,7 @@ int64_t XlibWrapper::XDisplayString(int64_t display) {
 void XlibWrapper::XSetCloseDownMode(int64_t display, int32_t close_mode) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XSetCloseDownMode, void, int64_t display, int32_t close_mode);
-	$invokeNativeStatic(XlibWrapper, XSetCloseDownMode, display, close_mode);
+	$invokeNativeStatic(display, close_mode);
 	$finishNativeStatic();
 }
 
@@ -501,7 +500,7 @@ int64_t XlibWrapper::DefaultScreen(int64_t display) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, DefaultScreen, int64_t, int64_t display);
-	$ret = $invokeNativeStatic(XlibWrapper, DefaultScreen, display);
+	$ret = $invokeNativeStatic(display);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -510,7 +509,7 @@ int64_t XlibWrapper::ScreenOfDisplay(int64_t display, int64_t screen_number) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, ScreenOfDisplay, int64_t, int64_t display, int64_t screen_number);
-	$ret = $invokeNativeStatic(XlibWrapper, ScreenOfDisplay, display, screen_number);
+	$ret = $invokeNativeStatic(display, screen_number);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -519,7 +518,7 @@ int32_t XlibWrapper::DoesBackingStore(int64_t screen) {
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, DoesBackingStore, int32_t, int64_t screen);
-	$ret = $invokeNativeStatic(XlibWrapper, DoesBackingStore, screen);
+	$ret = $invokeNativeStatic(screen);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -528,7 +527,7 @@ int64_t XlibWrapper::DisplayWidth(int64_t display, int64_t screen) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, DisplayWidth, int64_t, int64_t display, int64_t screen);
-	$ret = $invokeNativeStatic(XlibWrapper, DisplayWidth, display, screen);
+	$ret = $invokeNativeStatic(display, screen);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -537,7 +536,7 @@ int64_t XlibWrapper::DisplayWidthMM(int64_t display, int64_t screen) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, DisplayWidthMM, int64_t, int64_t display, int64_t screen);
-	$ret = $invokeNativeStatic(XlibWrapper, DisplayWidthMM, display, screen);
+	$ret = $invokeNativeStatic(display, screen);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -546,7 +545,7 @@ int64_t XlibWrapper::DisplayHeight(int64_t display, int64_t screen) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, DisplayHeight, int64_t, int64_t display, int64_t screen);
-	$ret = $invokeNativeStatic(XlibWrapper, DisplayHeight, display, screen);
+	$ret = $invokeNativeStatic(display, screen);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -555,7 +554,7 @@ int64_t XlibWrapper::DisplayHeightMM(int64_t display, int64_t screen) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, DisplayHeightMM, int64_t, int64_t display, int64_t screen);
-	$ret = $invokeNativeStatic(XlibWrapper, DisplayHeightMM, display, screen);
+	$ret = $invokeNativeStatic(display, screen);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -564,7 +563,7 @@ int64_t XlibWrapper::RootWindow(int64_t display, int64_t screen_number) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, RootWindow, int64_t, int64_t display, int64_t screen_number);
-	$ret = $invokeNativeStatic(XlibWrapper, RootWindow, display, screen_number);
+	$ret = $invokeNativeStatic(display, screen_number);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -573,7 +572,7 @@ int32_t XlibWrapper::ScreenCount(int64_t display) {
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, ScreenCount, int32_t, int64_t display);
-	$ret = $invokeNativeStatic(XlibWrapper, ScreenCount, display);
+	$ret = $invokeNativeStatic(display);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -582,7 +581,7 @@ int64_t XlibWrapper::XCreateWindow(int64_t display, int64_t parent, int32_t x, i
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XCreateWindow, int64_t, int64_t display, int64_t parent, int32_t x, int32_t y, int32_t width, int32_t height, int32_t border_width, int32_t depth, int64_t wclass, int64_t visual, int64_t valuemask, int64_t attributes);
-	$ret = $invokeNativeStatic(XlibWrapper, XCreateWindow, display, parent, x, y, width, height, border_width, depth, wclass, visual, valuemask, attributes);
+	$ret = $invokeNativeStatic(display, parent, x, y, width, height, border_width, depth, wclass, visual, valuemask, attributes);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -590,7 +589,7 @@ int64_t XlibWrapper::XCreateWindow(int64_t display, int64_t parent, int32_t x, i
 void XlibWrapper::XDestroyWindow(int64_t display, int64_t window) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XDestroyWindow, void, int64_t display, int64_t window);
-	$invokeNativeStatic(XlibWrapper, XDestroyWindow, display, window);
+	$invokeNativeStatic(display, window);
 	$finishNativeStatic();
 }
 
@@ -598,7 +597,7 @@ int32_t XlibWrapper::XGrabPointer(int64_t display, int64_t grab_window, int32_t 
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XGrabPointer, int32_t, int64_t display, int64_t grab_window, int32_t owner_events, int32_t event_mask, int32_t pointer_mode, int32_t keyboard_mode, int64_t confine_to, int64_t cursor, int64_t time);
-	$ret = $invokeNativeStatic(XlibWrapper, XGrabPointer, display, grab_window, owner_events, event_mask, pointer_mode, keyboard_mode, confine_to, cursor, time);
+	$ret = $invokeNativeStatic(display, grab_window, owner_events, event_mask, pointer_mode, keyboard_mode, confine_to, cursor, time);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -606,7 +605,7 @@ int32_t XlibWrapper::XGrabPointer(int64_t display, int64_t grab_window, int32_t 
 void XlibWrapper::XUngrabPointer(int64_t display, int64_t time) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XUngrabPointer, void, int64_t display, int64_t time);
-	$invokeNativeStatic(XlibWrapper, XUngrabPointer, display, time);
+	$invokeNativeStatic(display, time);
 	$finishNativeStatic();
 }
 
@@ -614,7 +613,7 @@ int32_t XlibWrapper::XGrabKeyboard(int64_t display, int64_t grab_window, int32_t
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XGrabKeyboard, int32_t, int64_t display, int64_t grab_window, int32_t owner_events, int32_t pointer_mode, int32_t keyboard_mode, int64_t time);
-	$ret = $invokeNativeStatic(XlibWrapper, XGrabKeyboard, display, grab_window, owner_events, pointer_mode, keyboard_mode, time);
+	$ret = $invokeNativeStatic(display, grab_window, owner_events, pointer_mode, keyboard_mode, time);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -622,77 +621,77 @@ int32_t XlibWrapper::XGrabKeyboard(int64_t display, int64_t grab_window, int32_t
 void XlibWrapper::XUngrabKeyboard(int64_t display, int64_t time) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XUngrabKeyboard, void, int64_t display, int64_t time);
-	$invokeNativeStatic(XlibWrapper, XUngrabKeyboard, display, time);
+	$invokeNativeStatic(display, time);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XGrabServer(int64_t display) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XGrabServer, void, int64_t display);
-	$invokeNativeStatic(XlibWrapper, XGrabServer, display);
+	$invokeNativeStatic(display);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XUngrabServer(int64_t display) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XUngrabServer, void, int64_t display);
-	$invokeNativeStatic(XlibWrapper, XUngrabServer, display);
+	$invokeNativeStatic(display);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XMapWindow(int64_t display, int64_t window) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XMapWindow, void, int64_t display, int64_t window);
-	$invokeNativeStatic(XlibWrapper, XMapWindow, display, window);
+	$invokeNativeStatic(display, window);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XMapRaised(int64_t display, int64_t window) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XMapRaised, void, int64_t display, int64_t window);
-	$invokeNativeStatic(XlibWrapper, XMapRaised, display, window);
+	$invokeNativeStatic(display, window);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XRaiseWindow(int64_t display, int64_t window) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XRaiseWindow, void, int64_t display, int64_t window);
-	$invokeNativeStatic(XlibWrapper, XRaiseWindow, display, window);
+	$invokeNativeStatic(display, window);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XLowerWindow(int64_t display, int64_t window) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XLowerWindow, void, int64_t display, int64_t window);
-	$invokeNativeStatic(XlibWrapper, XLowerWindow, display, window);
+	$invokeNativeStatic(display, window);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XRestackWindows(int64_t display, int64_t windows, int32_t length) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XRestackWindows, void, int64_t display, int64_t windows, int32_t length);
-	$invokeNativeStatic(XlibWrapper, XRestackWindows, display, windows, length);
+	$invokeNativeStatic(display, windows, length);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XConfigureWindow(int64_t display, int64_t window, int64_t value_mask, int64_t values) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XConfigureWindow, void, int64_t display, int64_t window, int64_t value_mask, int64_t values);
-	$invokeNativeStatic(XlibWrapper, XConfigureWindow, display, window, value_mask, values);
+	$invokeNativeStatic(display, window, value_mask, values);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XSetInputFocus(int64_t display, int64_t window) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XSetInputFocus, void, int64_t display, int64_t window);
-	$invokeNativeStatic(XlibWrapper, XSetInputFocus, display, window);
+	$invokeNativeStatic(display, window);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XSetInputFocus2(int64_t display, int64_t window, int64_t time) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XSetInputFocus2, void, int64_t display, int64_t window, int64_t time);
-	$invokeNativeStatic(XlibWrapper, XSetInputFocus2, display, window, time);
+	$invokeNativeStatic(display, window, time);
 	$finishNativeStatic();
 }
 
@@ -700,7 +699,7 @@ int64_t XlibWrapper::XGetInputFocus(int64_t display) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XGetInputFocus, int64_t, int64_t display);
-	$ret = $invokeNativeStatic(XlibWrapper, XGetInputFocus, display);
+	$ret = $invokeNativeStatic(display);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -708,35 +707,35 @@ int64_t XlibWrapper::XGetInputFocus(int64_t display) {
 void XlibWrapper::XUnmapWindow(int64_t display, int64_t window) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XUnmapWindow, void, int64_t display, int64_t window);
-	$invokeNativeStatic(XlibWrapper, XUnmapWindow, display, window);
+	$invokeNativeStatic(display, window);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XSelectInput(int64_t display, int64_t window, int64_t event_mask) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XSelectInput, void, int64_t display, int64_t window, int64_t event_mask);
-	$invokeNativeStatic(XlibWrapper, XSelectInput, display, window, event_mask);
+	$invokeNativeStatic(display, window, event_mask);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XNextEvent(int64_t display, int64_t ptr) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XNextEvent, void, int64_t display, int64_t ptr);
-	$invokeNativeStatic(XlibWrapper, XNextEvent, display, ptr);
+	$invokeNativeStatic(display, ptr);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XMaskEvent(int64_t display, int64_t event_mask, int64_t event_return) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XMaskEvent, void, int64_t display, int64_t event_mask, int64_t event_return);
-	$invokeNativeStatic(XlibWrapper, XMaskEvent, display, event_mask, event_return);
+	$invokeNativeStatic(display, event_mask, event_return);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XWindowEvent(int64_t display, int64_t window, int64_t event_mask, int64_t event_return) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XWindowEvent, void, int64_t display, int64_t window, int64_t event_mask, int64_t event_return);
-	$invokeNativeStatic(XlibWrapper, XWindowEvent, display, window, event_mask, event_return);
+	$invokeNativeStatic(display, window, event_mask, event_return);
 	$finishNativeStatic();
 }
 
@@ -744,7 +743,7 @@ bool XlibWrapper::XFilterEvent(int64_t ptr, int64_t window) {
 	$init(XlibWrapper);
 	bool $ret = false;
 	$prepareNativeStatic(XlibWrapper, XFilterEvent, bool, int64_t ptr, int64_t window);
-	$ret = $invokeNativeStatic(XlibWrapper, XFilterEvent, ptr, window);
+	$ret = $invokeNativeStatic(ptr, window);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -753,7 +752,7 @@ bool XlibWrapper::XSupportsLocale() {
 	$init(XlibWrapper);
 	bool $ret = false;
 	$prepareNativeStatic(XlibWrapper, XSupportsLocale, bool);
-	$ret = $invokeNativeStatic(XlibWrapper, XSupportsLocale);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -762,7 +761,7 @@ $String* XlibWrapper::XSetLocaleModifiers($String* modifier_list) {
 	$init(XlibWrapper);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(XlibWrapper, XSetLocaleModifiers, $String*, $String* modifier_list);
-	$assign($ret, $invokeNativeStatic(XlibWrapper, XSetLocaleModifiers, modifier_list));
+	$assign($ret, $invokeNativeStaticObject(modifier_list));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -771,7 +770,7 @@ int32_t XlibWrapper::XTranslateCoordinates(int64_t display, int64_t src_w, int64
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XTranslateCoordinates, int32_t, int64_t display, int64_t src_w, int64_t dest_w, int64_t src_x, int64_t src_y, int64_t dest_x_return, int64_t dest_y_return, int64_t child_return);
-	$ret = $invokeNativeStatic(XlibWrapper, XTranslateCoordinates, display, src_w, dest_w, src_x, src_y, dest_x_return, dest_y_return, child_return);
+	$ret = $invokeNativeStatic(display, src_w, dest_w, src_x, src_y, dest_x_return, dest_y_return, child_return);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -779,42 +778,42 @@ int32_t XlibWrapper::XTranslateCoordinates(int64_t display, int64_t src_w, int64
 void XlibWrapper::XPeekEvent(int64_t display, int64_t ptr) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XPeekEvent, void, int64_t display, int64_t ptr);
-	$invokeNativeStatic(XlibWrapper, XPeekEvent, display, ptr);
+	$invokeNativeStatic(display, ptr);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XFlush(int64_t display) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XFlush, void, int64_t display);
-	$invokeNativeStatic(XlibWrapper, XFlush, display);
+	$invokeNativeStatic(display);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XSync(int64_t display, int32_t discard) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XSync, void, int64_t display, int32_t discard);
-	$invokeNativeStatic(XlibWrapper, XSync, display, discard);
+	$invokeNativeStatic(display, discard);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XMoveResizeWindow(int64_t display, int64_t window, int32_t x, int32_t y, int32_t width, int32_t height) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XMoveResizeWindow, void, int64_t display, int64_t window, int32_t x, int32_t y, int32_t width, int32_t height);
-	$invokeNativeStatic(XlibWrapper, XMoveResizeWindow, display, window, x, y, width, height);
+	$invokeNativeStatic(display, window, x, y, width, height);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XResizeWindow(int64_t display, int64_t window, int32_t width, int32_t height) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XResizeWindow, void, int64_t display, int64_t window, int32_t width, int32_t height);
-	$invokeNativeStatic(XlibWrapper, XResizeWindow, display, window, width, height);
+	$invokeNativeStatic(display, window, width, height);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XMoveWindow(int64_t display, int64_t window, int32_t x, int32_t y) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XMoveWindow, void, int64_t display, int64_t window, int32_t x, int32_t y);
-	$invokeNativeStatic(XlibWrapper, XMoveWindow, display, window, x, y);
+	$invokeNativeStatic(display, window, x, y);
 	$finishNativeStatic();
 }
 
@@ -822,7 +821,7 @@ bool XlibWrapper::XQueryPointer(int64_t display, int64_t window, int64_t root_re
 	$init(XlibWrapper);
 	bool $ret = false;
 	$prepareNativeStatic(XlibWrapper, XQueryPointer, bool, int64_t display, int64_t window, int64_t root_return, int64_t child_return, int64_t root_x_return, int64_t root_y_return, int64_t win_x_return, int64_t win_y_return, int64_t mask_return);
-	$ret = $invokeNativeStatic(XlibWrapper, XQueryPointer, display, window, root_return, child_return, root_x_return, root_y_return, win_x_return, win_y_return, mask_return);
+	$ret = $invokeNativeStatic(display, window, root_return, child_return, root_x_return, root_y_return, win_x_return, win_y_return, mask_return);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -830,14 +829,14 @@ bool XlibWrapper::XQueryPointer(int64_t display, int64_t window, int64_t root_re
 void XlibWrapper::XFreeCursor(int64_t display, int64_t cursor) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XFreeCursor, void, int64_t display, int64_t cursor);
-	$invokeNativeStatic(XlibWrapper, XFreeCursor, display, cursor);
+	$invokeNativeStatic(display, cursor);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XSetWindowBackground(int64_t display, int64_t window, int64_t background_pixel) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XSetWindowBackground, void, int64_t display, int64_t window, int64_t background_pixel);
-	$invokeNativeStatic(XlibWrapper, XSetWindowBackground, display, window, background_pixel);
+	$invokeNativeStatic(display, window, background_pixel);
 	$finishNativeStatic();
 }
 
@@ -845,7 +844,7 @@ int32_t XlibWrapper::XEventsQueued(int64_t display, int32_t mode) {
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XEventsQueued, int32_t, int64_t display, int32_t mode);
-	$ret = $invokeNativeStatic(XlibWrapper, XEventsQueued, display, mode);
+	$ret = $invokeNativeStatic(display, mode);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -854,7 +853,7 @@ int32_t XlibWrapper::XInternAtoms(int64_t display, $StringArray* names, bool onl
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XInternAtoms, int32_t, int64_t display, $StringArray* names, bool only_if_exists, int64_t atoms);
-	$ret = $invokeNativeStatic(XlibWrapper, XInternAtoms, display, names, only_if_exists, atoms);
+	$ret = $invokeNativeStatic(display, names, only_if_exists, atoms);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -862,7 +861,7 @@ int32_t XlibWrapper::XInternAtoms(int64_t display, $StringArray* names, bool onl
 void XlibWrapper::SetProperty(int64_t display, int64_t window, int64_t atom, $String* str) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, SetProperty, void, int64_t display, int64_t window, int64_t atom, $String* str);
-	$invokeNativeStatic(XlibWrapper, SetProperty, display, window, atom, str);
+	$invokeNativeStatic(display, window, atom, str);
 	$finishNativeStatic();
 }
 
@@ -870,7 +869,7 @@ $String* XlibWrapper::GetProperty(int64_t display, int64_t window, int64_t atom)
 	$init(XlibWrapper);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(XlibWrapper, GetProperty, $String*, int64_t display, int64_t window, int64_t atom);
-	$assign($ret, $invokeNativeStatic(XlibWrapper, GetProperty, display, window, atom));
+	$assign($ret, $invokeNativeStaticObject(display, window, atom));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -879,7 +878,7 @@ int64_t XlibWrapper::InternAtom(int64_t display, $String* string, int32_t only_i
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, InternAtom, int64_t, int64_t display, $String* string, int32_t only_if_exists);
-	$ret = $invokeNativeStatic(XlibWrapper, InternAtom, display, string, only_if_exists);
+	$ret = $invokeNativeStatic(display, string, only_if_exists);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -888,7 +887,7 @@ int32_t XlibWrapper::XGetWindowProperty(int64_t display, int64_t window, int64_t
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XGetWindowProperty, int32_t, int64_t display, int64_t window, int64_t atom, int64_t long_offset, int64_t long_length, int64_t delete$, int64_t req_type, int64_t actualy_type, int64_t actualy_format, int64_t nitems_ptr, int64_t bytes_after, int64_t data_ptr);
-	$ret = $invokeNativeStatic(XlibWrapper, XGetWindowProperty, display, window, atom, long_offset, long_length, delete$, req_type, actualy_type, actualy_format, nitems_ptr, bytes_after, data_ptr);
+	$ret = $invokeNativeStatic(display, window, atom, long_offset, long_length, delete$, req_type, actualy_type, actualy_format, nitems_ptr, bytes_after, data_ptr);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -896,7 +895,7 @@ int32_t XlibWrapper::XGetWindowProperty(int64_t display, int64_t window, int64_t
 void XlibWrapper::XChangePropertyImpl(int64_t display, int64_t window, int64_t atom, int64_t type, int32_t format, int32_t mode, int64_t data, int32_t nelements) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XChangePropertyImpl, void, int64_t display, int64_t window, int64_t atom, int64_t type, int32_t format, int32_t mode, int64_t data, int32_t nelements);
-	$invokeNativeStatic(XlibWrapper, XChangePropertyImpl, display, window, atom, type, format, mode, data, nelements);
+	$invokeNativeStatic(display, window, atom, type, format, mode, data, nelements);
 	$finishNativeStatic();
 }
 
@@ -917,35 +916,35 @@ void XlibWrapper::XChangeProperty(int64_t display, int64_t window, int64_t atom,
 void XlibWrapper::XChangePropertyS(int64_t display, int64_t window, int64_t atom, int64_t type, int32_t format, int32_t mode, $String* value) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XChangePropertyS, void, int64_t display, int64_t window, int64_t atom, int64_t type, int32_t format, int32_t mode, $String* value);
-	$invokeNativeStatic(XlibWrapper, XChangePropertyS, display, window, atom, type, format, mode, value);
+	$invokeNativeStatic(display, window, atom, type, format, mode, value);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XDeleteProperty(int64_t display, int64_t window, int64_t atom) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XDeleteProperty, void, int64_t display, int64_t window, int64_t atom);
-	$invokeNativeStatic(XlibWrapper, XDeleteProperty, display, window, atom);
+	$invokeNativeStatic(display, window, atom);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XSetTransientFor(int64_t display, int64_t window, int64_t transient_for_window) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XSetTransientFor, void, int64_t display, int64_t window, int64_t transient_for_window);
-	$invokeNativeStatic(XlibWrapper, XSetTransientFor, display, window, transient_for_window);
+	$invokeNativeStatic(display, window, transient_for_window);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XSetWMHints(int64_t display, int64_t window, int64_t wmhints) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XSetWMHints, void, int64_t display, int64_t window, int64_t wmhints);
-	$invokeNativeStatic(XlibWrapper, XSetWMHints, display, window, wmhints);
+	$invokeNativeStatic(display, window, wmhints);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XGetWMHints(int64_t display, int64_t window, int64_t wmhints) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XGetWMHints, void, int64_t display, int64_t window, int64_t wmhints);
-	$invokeNativeStatic(XlibWrapper, XGetWMHints, display, window, wmhints);
+	$invokeNativeStatic(display, window, wmhints);
 	$finishNativeStatic();
 }
 
@@ -953,7 +952,7 @@ int64_t XlibWrapper::XAllocWMHints() {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XAllocWMHints, int64_t);
-	$ret = $invokeNativeStatic(XlibWrapper, XAllocWMHints);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -962,7 +961,7 @@ int32_t XlibWrapper::XGetPointerMapping(int64_t display, int64_t map, int32_t bu
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XGetPointerMapping, int32_t, int64_t display, int64_t map, int32_t buttonNumber);
-	$ret = $invokeNativeStatic(XlibWrapper, XGetPointerMapping, display, map, buttonNumber);
+	$ret = $invokeNativeStatic(display, map, buttonNumber);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -971,7 +970,7 @@ $String* XlibWrapper::XGetDefault(int64_t display, $String* program, $String* op
 	$init(XlibWrapper);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(XlibWrapper, XGetDefault, $String*, int64_t display, $String* program, $String* option);
-	$assign($ret, $invokeNativeStatic(XlibWrapper, XGetDefault, display, program, option));
+	$assign($ret, $invokeNativeStaticObject(display, program, option));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -980,7 +979,7 @@ int64_t XlibWrapper::getScreenOfWindow(int64_t display, int64_t window) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, getScreenOfWindow, int64_t, int64_t display, int64_t window);
-	$ret = $invokeNativeStatic(XlibWrapper, getScreenOfWindow, display, window);
+	$ret = $invokeNativeStatic(display, window);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -989,7 +988,7 @@ int64_t XlibWrapper::XScreenNumberOfScreen(int64_t screen) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XScreenNumberOfScreen, int64_t, int64_t screen);
-	$ret = $invokeNativeStatic(XlibWrapper, XScreenNumberOfScreen, screen);
+	$ret = $invokeNativeStatic(screen);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -998,7 +997,7 @@ int32_t XlibWrapper::XIconifyWindow(int64_t display, int64_t window, int64_t scr
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XIconifyWindow, int32_t, int64_t display, int64_t window, int64_t screenNumber);
-	$ret = $invokeNativeStatic(XlibWrapper, XIconifyWindow, display, window, screenNumber);
+	$ret = $invokeNativeStatic(display, window, screenNumber);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1007,7 +1006,7 @@ $String* XlibWrapper::ServerVendor(int64_t display) {
 	$init(XlibWrapper);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(XlibWrapper, ServerVendor, $String*, int64_t display);
-	$assign($ret, $invokeNativeStatic(XlibWrapper, ServerVendor, display));
+	$assign($ret, $invokeNativeStaticObject(display));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1016,7 +1015,7 @@ int32_t XlibWrapper::VendorRelease(int64_t display) {
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, VendorRelease, int32_t, int64_t display);
-	$ret = $invokeNativeStatic(XlibWrapper, VendorRelease, display);
+	$ret = $invokeNativeStatic(display);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1025,7 +1024,7 @@ bool XlibWrapper::IsXsunKPBehavior(int64_t display) {
 	$init(XlibWrapper);
 	bool $ret = false;
 	$prepareNativeStatic(XlibWrapper, IsXsunKPBehavior, bool, int64_t display);
-	$ret = $invokeNativeStatic(XlibWrapper, IsXsunKPBehavior, display);
+	$ret = $invokeNativeStatic(display);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1034,7 +1033,7 @@ bool XlibWrapper::IsSunKeyboard(int64_t display) {
 	$init(XlibWrapper);
 	bool $ret = false;
 	$prepareNativeStatic(XlibWrapper, IsSunKeyboard, bool, int64_t display);
-	$ret = $invokeNativeStatic(XlibWrapper, IsSunKeyboard, display);
+	$ret = $invokeNativeStatic(display);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1043,7 +1042,7 @@ bool XlibWrapper::IsKanaKeyboard(int64_t display) {
 	$init(XlibWrapper);
 	bool $ret = false;
 	$prepareNativeStatic(XlibWrapper, IsKanaKeyboard, bool, int64_t display);
-	$ret = $invokeNativeStatic(XlibWrapper, IsKanaKeyboard, display);
+	$ret = $invokeNativeStatic(display);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1051,7 +1050,7 @@ bool XlibWrapper::IsKanaKeyboard(int64_t display) {
 void XlibWrapper::XBell(int64_t display, int32_t percent) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XBell, void, int64_t display, int32_t percent);
-	$invokeNativeStatic(XlibWrapper, XBell, display, percent);
+	$invokeNativeStatic(display, percent);
 	$finishNativeStatic();
 }
 
@@ -1059,7 +1058,7 @@ int32_t XlibWrapper::XCreateFontCursor(int64_t display, int32_t shape) {
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XCreateFontCursor, int32_t, int64_t display, int32_t shape);
-	$ret = $invokeNativeStatic(XlibWrapper, XCreateFontCursor, display, shape);
+	$ret = $invokeNativeStatic(display, shape);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1068,7 +1067,7 @@ int64_t XlibWrapper::XCreateBitmapFromData(int64_t display, int64_t drawable, in
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XCreateBitmapFromData, int64_t, int64_t display, int64_t drawable, int64_t data, int32_t width, int32_t height);
-	$ret = $invokeNativeStatic(XlibWrapper, XCreateBitmapFromData, display, drawable, data, width, height);
+	$ret = $invokeNativeStatic(display, drawable, data, width, height);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1076,7 +1075,7 @@ int64_t XlibWrapper::XCreateBitmapFromData(int64_t display, int64_t drawable, in
 void XlibWrapper::XFreePixmap(int64_t display, int64_t pixmap) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XFreePixmap, void, int64_t display, int64_t pixmap);
-	$invokeNativeStatic(XlibWrapper, XFreePixmap, display, pixmap);
+	$invokeNativeStatic(display, pixmap);
 	$finishNativeStatic();
 }
 
@@ -1084,7 +1083,7 @@ int64_t XlibWrapper::XCreatePixmapCursor(int64_t display, int64_t source, int64_
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XCreatePixmapCursor, int64_t, int64_t display, int64_t source, int64_t mask, int64_t fore, int64_t back, int32_t x, int32_t y);
-	$ret = $invokeNativeStatic(XlibWrapper, XCreatePixmapCursor, display, source, mask, fore, back, x, y);
+	$ret = $invokeNativeStatic(display, source, mask, fore, back, x, y);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1093,7 +1092,7 @@ bool XlibWrapper::XQueryBestCursor(int64_t display, int64_t drawable, int32_t wi
 	$init(XlibWrapper);
 	bool $ret = false;
 	$prepareNativeStatic(XlibWrapper, XQueryBestCursor, bool, int64_t display, int64_t drawable, int32_t width, int32_t height, int64_t width_return, int64_t height_return);
-	$ret = $invokeNativeStatic(XlibWrapper, XQueryBestCursor, display, drawable, width, height, width_return, height_return);
+	$ret = $invokeNativeStatic(display, drawable, width, height, width_return, height_return);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1102,7 +1101,7 @@ bool XlibWrapper::XAllocColor(int64_t display, int64_t colormap, int64_t screen_
 	$init(XlibWrapper);
 	bool $ret = false;
 	$prepareNativeStatic(XlibWrapper, XAllocColor, bool, int64_t display, int64_t colormap, int64_t screen_in_out);
-	$ret = $invokeNativeStatic(XlibWrapper, XAllocColor, display, colormap, screen_in_out);
+	$ret = $invokeNativeStatic(display, colormap, screen_in_out);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1111,7 +1110,7 @@ int64_t XlibWrapper::SetToolkitErrorHandler() {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, SetToolkitErrorHandler, int64_t);
-	$ret = $invokeNativeStatic(XlibWrapper, SetToolkitErrorHandler);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1119,7 +1118,7 @@ int64_t XlibWrapper::SetToolkitErrorHandler() {
 void XlibWrapper::XSetErrorHandler(int64_t handler) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XSetErrorHandler, void, int64_t handler);
-	$invokeNativeStatic(XlibWrapper, XSetErrorHandler, handler);
+	$invokeNativeStatic(handler);
 	$finishNativeStatic();
 }
 
@@ -1127,7 +1126,7 @@ int32_t XlibWrapper::CallErrorHandler(int64_t handler, int64_t display, int64_t 
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, CallErrorHandler, int32_t, int64_t handler, int64_t display, int64_t event_ptr);
-	$ret = $invokeNativeStatic(XlibWrapper, CallErrorHandler, handler, display, event_ptr);
+	$ret = $invokeNativeStatic(handler, display, event_ptr);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1135,7 +1134,7 @@ int32_t XlibWrapper::CallErrorHandler(int64_t handler, int64_t display, int64_t 
 void XlibWrapper::XChangeWindowAttributes(int64_t display, int64_t window, int64_t valuemask, int64_t attributes) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XChangeWindowAttributes, void, int64_t display, int64_t window, int64_t valuemask, int64_t attributes);
-	$invokeNativeStatic(XlibWrapper, XChangeWindowAttributes, display, window, valuemask, attributes);
+	$invokeNativeStatic(display, window, valuemask, attributes);
 	$finishNativeStatic();
 }
 
@@ -1143,7 +1142,7 @@ int32_t XlibWrapper::XGetWindowAttributes(int64_t display, int64_t window, int64
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XGetWindowAttributes, int32_t, int64_t display, int64_t window, int64_t attr_ptr);
-	$ret = $invokeNativeStatic(XlibWrapper, XGetWindowAttributes, display, window, attr_ptr);
+	$ret = $invokeNativeStatic(display, window, attr_ptr);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1152,7 +1151,7 @@ int32_t XlibWrapper::XGetGeometry(int64_t display, int64_t drawable, int64_t roo
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XGetGeometry, int32_t, int64_t display, int64_t drawable, int64_t root_return, int64_t x_return, int64_t y_return, int64_t width_return, int64_t height_return, int64_t border_width_return, int64_t depth_return);
-	$ret = $invokeNativeStatic(XlibWrapper, XGetGeometry, display, drawable, root_return, x_return, y_return, width_return, height_return, border_width_return, depth_return);
+	$ret = $invokeNativeStatic(display, drawable, root_return, x_return, y_return, width_return, height_return, border_width_return, depth_return);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1161,7 +1160,7 @@ int32_t XlibWrapper::XGetWMNormalHints(int64_t display, int64_t window, int64_t 
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XGetWMNormalHints, int32_t, int64_t display, int64_t window, int64_t hints, int64_t supplied_return);
-	$ret = $invokeNativeStatic(XlibWrapper, XGetWMNormalHints, display, window, hints, supplied_return);
+	$ret = $invokeNativeStatic(display, window, hints, supplied_return);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1169,14 +1168,14 @@ int32_t XlibWrapper::XGetWMNormalHints(int64_t display, int64_t window, int64_t 
 void XlibWrapper::XSetWMNormalHints(int64_t display, int64_t window, int64_t hints) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XSetWMNormalHints, void, int64_t display, int64_t window, int64_t hints);
-	$invokeNativeStatic(XlibWrapper, XSetWMNormalHints, display, window, hints);
+	$invokeNativeStatic(display, window, hints);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XSetMinMaxHints(int64_t display, int64_t window, int32_t x, int32_t y, int32_t width, int32_t height, int64_t flags) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XSetMinMaxHints, void, int64_t display, int64_t window, int32_t x, int32_t y, int32_t width, int32_t height, int64_t flags);
-	$invokeNativeStatic(XlibWrapper, XSetMinMaxHints, display, window, x, y, width, height, flags);
+	$invokeNativeStatic(display, window, x, y, width, height, flags);
 	$finishNativeStatic();
 }
 
@@ -1184,7 +1183,7 @@ int64_t XlibWrapper::XAllocSizeHints() {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XAllocSizeHints, int64_t);
-	$ret = $invokeNativeStatic(XlibWrapper, XAllocSizeHints);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1193,7 +1192,7 @@ int32_t XlibWrapper::XSendEvent(int64_t display, int64_t window, bool propagate,
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XSendEvent, int32_t, int64_t display, int64_t window, bool propagate, int64_t event_mask, int64_t event);
-	$ret = $invokeNativeStatic(XlibWrapper, XSendEvent, display, window, propagate, event_mask, event);
+	$ret = $invokeNativeStatic(display, window, propagate, event_mask, event);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1201,7 +1200,7 @@ int32_t XlibWrapper::XSendEvent(int64_t display, int64_t window, bool propagate,
 void XlibWrapper::XPutBackEvent(int64_t display, int64_t event) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XPutBackEvent, void, int64_t display, int64_t event);
-	$invokeNativeStatic(XlibWrapper, XPutBackEvent, display, event);
+	$invokeNativeStatic(display, event);
 	$finishNativeStatic();
 }
 
@@ -1209,7 +1208,7 @@ int32_t XlibWrapper::XQueryTree(int64_t display, int64_t window, int64_t root_re
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XQueryTree, int32_t, int64_t display, int64_t window, int64_t root_return, int64_t parent_return, int64_t children_return, int64_t nchildren_return);
-	$ret = $invokeNativeStatic(XlibWrapper, XQueryTree, display, window, root_return, parent_return, children_return, nchildren_return);
+	$ret = $invokeNativeStatic(display, window, root_return, parent_return, children_return, nchildren_return);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1218,7 +1217,7 @@ int64_t XlibWrapper::XGetVisualInfo(int64_t display, int64_t vinfo_mask, int64_t
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XGetVisualInfo, int64_t, int64_t display, int64_t vinfo_mask, int64_t vinfo_template, int64_t nitems_return);
-	$ret = $invokeNativeStatic(XlibWrapper, XGetVisualInfo, display, vinfo_mask, vinfo_template, nitems_return);
+	$ret = $invokeNativeStatic(display, vinfo_mask, vinfo_template, nitems_return);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1226,21 +1225,21 @@ int64_t XlibWrapper::XGetVisualInfo(int64_t display, int64_t vinfo_mask, int64_t
 void XlibWrapper::XReparentWindow(int64_t display, int64_t window, int64_t parent, int32_t x, int32_t y) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XReparentWindow, void, int64_t display, int64_t window, int64_t parent, int32_t x, int32_t y);
-	$invokeNativeStatic(XlibWrapper, XReparentWindow, display, window, parent, x, y);
+	$invokeNativeStatic(display, window, parent, x, y);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XConvertSelection(int64_t display, int64_t selection, int64_t target, int64_t property, int64_t requestor, int64_t time) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XConvertSelection, void, int64_t display, int64_t selection, int64_t target, int64_t property, int64_t requestor, int64_t time);
-	$invokeNativeStatic(XlibWrapper, XConvertSelection, display, selection, target, property, requestor, time);
+	$invokeNativeStatic(display, selection, target, property, requestor, time);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XSetSelectionOwner(int64_t display, int64_t selection, int64_t owner, int64_t time) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XSetSelectionOwner, void, int64_t display, int64_t selection, int64_t owner, int64_t time);
-	$invokeNativeStatic(XlibWrapper, XSetSelectionOwner, display, selection, owner, time);
+	$invokeNativeStatic(display, selection, owner, time);
 	$finishNativeStatic();
 }
 
@@ -1248,7 +1247,7 @@ int64_t XlibWrapper::XGetSelectionOwner(int64_t display, int64_t selection) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XGetSelectionOwner, int64_t, int64_t display, int64_t selection);
-	$ret = $invokeNativeStatic(XlibWrapper, XGetSelectionOwner, display, selection);
+	$ret = $invokeNativeStatic(display, selection);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1257,7 +1256,7 @@ $String* XlibWrapper::XGetAtomName(int64_t display, int64_t atom) {
 	$init(XlibWrapper);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(XlibWrapper, XGetAtomName, $String*, int64_t display, int64_t atom);
-	$assign($ret, $invokeNativeStatic(XlibWrapper, XGetAtomName, display, atom));
+	$assign($ret, $invokeNativeStaticObject(display, atom));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1266,7 +1265,7 @@ int64_t XlibWrapper::XMaxRequestSize(int64_t display) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XMaxRequestSize, int64_t, int64_t display);
-	$ret = $invokeNativeStatic(XlibWrapper, XMaxRequestSize, display);
+	$ret = $invokeNativeStatic(display);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1275,7 +1274,7 @@ int64_t XlibWrapper::XCreatePixmap(int64_t display, int64_t drawable, int32_t wi
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XCreatePixmap, int64_t, int64_t display, int64_t drawable, int32_t width, int32_t height, int32_t depth);
-	$ret = $invokeNativeStatic(XlibWrapper, XCreatePixmap, display, drawable, width, height, depth);
+	$ret = $invokeNativeStatic(display, drawable, width, height, depth);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1284,7 +1283,7 @@ int64_t XlibWrapper::XCreateImage(int64_t display, int64_t visual_ptr, int32_t d
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XCreateImage, int64_t, int64_t display, int64_t visual_ptr, int32_t depth, int32_t format, int32_t offset, int64_t data, int32_t width, int32_t height, int32_t bitmap_pad, int32_t bytes_per_line);
-	$ret = $invokeNativeStatic(XlibWrapper, XCreateImage, display, visual_ptr, depth, format, offset, data, width, height, bitmap_pad, bytes_per_line);
+	$ret = $invokeNativeStatic(display, visual_ptr, depth, format, offset, data, width, height, bitmap_pad, bytes_per_line);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1292,14 +1291,14 @@ int64_t XlibWrapper::XCreateImage(int64_t display, int64_t visual_ptr, int32_t d
 void XlibWrapper::XDestroyImage(int64_t image) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XDestroyImage, void, int64_t image);
-	$invokeNativeStatic(XlibWrapper, XDestroyImage, image);
+	$invokeNativeStatic(image);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XPutImage(int64_t display, int64_t drawable, int64_t gc, int64_t image, int32_t src_x, int32_t src_y, int32_t dest_x, int32_t dest_y, int32_t width, int32_t height) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XPutImage, void, int64_t display, int64_t drawable, int64_t gc, int64_t image, int32_t src_x, int32_t src_y, int32_t dest_x, int32_t dest_y, int32_t width, int32_t height);
-	$invokeNativeStatic(XlibWrapper, XPutImage, display, drawable, gc, image, src_x, src_y, dest_x, dest_y, width, height);
+	$invokeNativeStatic(display, drawable, gc, image, src_x, src_y, dest_x, dest_y, width, height);
 	$finishNativeStatic();
 }
 
@@ -1307,7 +1306,7 @@ int64_t XlibWrapper::XCreateGC(int64_t display, int64_t drawable, int64_t valuem
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XCreateGC, int64_t, int64_t display, int64_t drawable, int64_t valuemask, int64_t values);
-	$ret = $invokeNativeStatic(XlibWrapper, XCreateGC, display, drawable, valuemask, values);
+	$ret = $invokeNativeStatic(display, drawable, valuemask, values);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1315,21 +1314,21 @@ int64_t XlibWrapper::XCreateGC(int64_t display, int64_t drawable, int64_t valuem
 void XlibWrapper::XFreeGC(int64_t display, int64_t gc) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XFreeGC, void, int64_t display, int64_t gc);
-	$invokeNativeStatic(XlibWrapper, XFreeGC, display, gc);
+	$invokeNativeStatic(display, gc);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XSetWindowBackgroundPixmap(int64_t display, int64_t window, int64_t pixmap) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XSetWindowBackgroundPixmap, void, int64_t display, int64_t window, int64_t pixmap);
-	$invokeNativeStatic(XlibWrapper, XSetWindowBackgroundPixmap, display, window, pixmap);
+	$invokeNativeStatic(display, window, pixmap);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XClearWindow(int64_t display, int64_t window) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XClearWindow, void, int64_t display, int64_t window);
-	$invokeNativeStatic(XlibWrapper, XClearWindow, display, window);
+	$invokeNativeStatic(display, window);
 	$finishNativeStatic();
 }
 
@@ -1337,7 +1336,7 @@ int32_t XlibWrapper::XGetIconSizes(int64_t display, int64_t window, int64_t ret_
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XGetIconSizes, int32_t, int64_t display, int64_t window, int64_t ret_sizes, int64_t ret_count);
-	$ret = $invokeNativeStatic(XlibWrapper, XGetIconSizes, display, window, ret_sizes, ret_count);
+	$ret = $invokeNativeStatic(display, window, ret_sizes, ret_count);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1346,7 +1345,7 @@ int32_t XlibWrapper::XdbeQueryExtension(int64_t display, int64_t major_version_r
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XdbeQueryExtension, int32_t, int64_t display, int64_t major_version_return, int64_t minor_version_return);
-	$ret = $invokeNativeStatic(XlibWrapper, XdbeQueryExtension, display, major_version_return, minor_version_return);
+	$ret = $invokeNativeStatic(display, major_version_return, minor_version_return);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1355,7 +1354,7 @@ bool XlibWrapper::XQueryExtension(int64_t display, $String* name, int64_t mop_re
 	$init(XlibWrapper);
 	bool $ret = false;
 	$prepareNativeStatic(XlibWrapper, XQueryExtension, bool, int64_t display, $String* name, int64_t mop_return, int64_t feve_return, int64_t err_return);
-	$ret = $invokeNativeStatic(XlibWrapper, XQueryExtension, display, name, mop_return, feve_return, err_return);
+	$ret = $invokeNativeStatic(display, name, mop_return, feve_return, err_return);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1364,7 +1363,7 @@ bool XlibWrapper::IsKeypadKey(int64_t keysym) {
 	$init(XlibWrapper);
 	bool $ret = false;
 	$prepareNativeStatic(XlibWrapper, IsKeypadKey, bool, int64_t keysym);
-	$ret = $invokeNativeStatic(XlibWrapper, IsKeypadKey, keysym);
+	$ret = $invokeNativeStatic(keysym);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1373,7 +1372,7 @@ int64_t XlibWrapper::XdbeAllocateBackBufferName(int64_t display, int64_t window,
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XdbeAllocateBackBufferName, int64_t, int64_t display, int64_t window, int32_t swap_action);
-	$ret = $invokeNativeStatic(XlibWrapper, XdbeAllocateBackBufferName, display, window, swap_action);
+	$ret = $invokeNativeStatic(display, window, swap_action);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1382,7 +1381,7 @@ int32_t XlibWrapper::XdbeDeallocateBackBufferName(int64_t display, int64_t buffe
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XdbeDeallocateBackBufferName, int32_t, int64_t display, int64_t buffer);
-	$ret = $invokeNativeStatic(XlibWrapper, XdbeDeallocateBackBufferName, display, buffer);
+	$ret = $invokeNativeStatic(display, buffer);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1391,7 +1390,7 @@ int32_t XlibWrapper::XdbeBeginIdiom(int64_t display) {
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XdbeBeginIdiom, int32_t, int64_t display);
-	$ret = $invokeNativeStatic(XlibWrapper, XdbeBeginIdiom, display);
+	$ret = $invokeNativeStatic(display);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1400,7 +1399,7 @@ int32_t XlibWrapper::XdbeEndIdiom(int64_t display) {
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XdbeEndIdiom, int32_t, int64_t display);
-	$ret = $invokeNativeStatic(XlibWrapper, XdbeEndIdiom, display);
+	$ret = $invokeNativeStatic(display);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1409,7 +1408,7 @@ int32_t XlibWrapper::XdbeSwapBuffers(int64_t display, int64_t swap_info, int32_t
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XdbeSwapBuffers, int32_t, int64_t display, int64_t swap_info, int32_t num_windows);
-	$ret = $invokeNativeStatic(XlibWrapper, XdbeSwapBuffers, display, swap_info, num_windows);
+	$ret = $invokeNativeStatic(display, swap_info, num_windows);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1417,7 +1416,7 @@ int32_t XlibWrapper::XdbeSwapBuffers(int64_t display, int64_t swap_info, int32_t
 void XlibWrapper::XQueryKeymap(int64_t display, int64_t vector) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XQueryKeymap, void, int64_t display, int64_t vector);
-	$invokeNativeStatic(XlibWrapper, XQueryKeymap, display, vector);
+	$invokeNativeStatic(display, vector);
 	$finishNativeStatic();
 }
 
@@ -1425,7 +1424,7 @@ int64_t XlibWrapper::XKeycodeToKeysym(int64_t display, int32_t keycode, int32_t 
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XKeycodeToKeysym, int64_t, int64_t display, int32_t keycode, int32_t index);
-	$ret = $invokeNativeStatic(XlibWrapper, XKeycodeToKeysym, display, keycode, index);
+	$ret = $invokeNativeStatic(display, keycode, index);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1434,7 +1433,7 @@ int32_t XlibWrapper::XKeysymToKeycode(int64_t display, int64_t keysym) {
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XKeysymToKeycode, int32_t, int64_t display, int64_t keysym);
-	$ret = $invokeNativeStatic(XlibWrapper, XKeysymToKeycode, display, keysym);
+	$ret = $invokeNativeStatic(display, keysym);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1443,7 +1442,7 @@ int32_t XlibWrapper::XkbGetEffectiveGroup(int64_t display) {
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XkbGetEffectiveGroup, int32_t, int64_t display);
-	$ret = $invokeNativeStatic(XlibWrapper, XkbGetEffectiveGroup, display);
+	$ret = $invokeNativeStatic(display);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1452,7 +1451,7 @@ int64_t XlibWrapper::XkbKeycodeToKeysym(int64_t display, int32_t keycode, int32_
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XkbKeycodeToKeysym, int64_t, int64_t display, int32_t keycode, int32_t group, int32_t level);
-	$ret = $invokeNativeStatic(XlibWrapper, XkbKeycodeToKeysym, display, keycode, group, level);
+	$ret = $invokeNativeStatic(display, keycode, group, level);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1460,14 +1459,14 @@ int64_t XlibWrapper::XkbKeycodeToKeysym(int64_t display, int32_t keycode, int32_
 void XlibWrapper::XkbSelectEvents(int64_t display, int64_t device, int64_t bits_to_change, int64_t values_for_bits) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XkbSelectEvents, void, int64_t display, int64_t device, int64_t bits_to_change, int64_t values_for_bits);
-	$invokeNativeStatic(XlibWrapper, XkbSelectEvents, display, device, bits_to_change, values_for_bits);
+	$invokeNativeStatic(display, device, bits_to_change, values_for_bits);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XkbSelectEventDetails(int64_t display, int64_t device, int64_t event_type, int64_t bits_to_change, int64_t values_for_bits) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XkbSelectEventDetails, void, int64_t display, int64_t device, int64_t event_type, int64_t bits_to_change, int64_t values_for_bits);
-	$invokeNativeStatic(XlibWrapper, XkbSelectEventDetails, display, device, event_type, bits_to_change, values_for_bits);
+	$invokeNativeStatic(display, device, event_type, bits_to_change, values_for_bits);
 	$finishNativeStatic();
 }
 
@@ -1475,7 +1474,7 @@ bool XlibWrapper::XkbQueryExtension(int64_t display, int64_t opcode_rtrn, int64_
 	$init(XlibWrapper);
 	bool $ret = false;
 	$prepareNativeStatic(XlibWrapper, XkbQueryExtension, bool, int64_t display, int64_t opcode_rtrn, int64_t event_rtrn, int64_t error_rtrn, int64_t major_in_out, int64_t minor_in_out);
-	$ret = $invokeNativeStatic(XlibWrapper, XkbQueryExtension, display, opcode_rtrn, event_rtrn, error_rtrn, major_in_out, minor_in_out);
+	$ret = $invokeNativeStatic(display, opcode_rtrn, event_rtrn, error_rtrn, major_in_out, minor_in_out);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1484,7 +1483,7 @@ bool XlibWrapper::XkbLibraryVersion(int64_t lib_major_in_out, int64_t lib_minor_
 	$init(XlibWrapper);
 	bool $ret = false;
 	$prepareNativeStatic(XlibWrapper, XkbLibraryVersion, bool, int64_t lib_major_in_out, int64_t lib_minor_in_out);
-	$ret = $invokeNativeStatic(XlibWrapper, XkbLibraryVersion, lib_major_in_out, lib_minor_in_out);
+	$ret = $invokeNativeStatic(lib_major_in_out, lib_minor_in_out);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1493,7 +1492,7 @@ int64_t XlibWrapper::XkbGetMap(int64_t display, int64_t which, int64_t device_sp
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XkbGetMap, int64_t, int64_t display, int64_t which, int64_t device_spec);
-	$ret = $invokeNativeStatic(XlibWrapper, XkbGetMap, display, which, device_spec);
+	$ret = $invokeNativeStatic(display, which, device_spec);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1502,7 +1501,7 @@ int64_t XlibWrapper::XkbGetUpdatedMap(int64_t display, int64_t which, int64_t xk
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XkbGetUpdatedMap, int64_t, int64_t display, int64_t which, int64_t xkb);
-	$ret = $invokeNativeStatic(XlibWrapper, XkbGetUpdatedMap, display, which, xkb);
+	$ret = $invokeNativeStatic(display, which, xkb);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1510,7 +1509,7 @@ int64_t XlibWrapper::XkbGetUpdatedMap(int64_t display, int64_t which, int64_t xk
 void XlibWrapper::XkbFreeKeyboard(int64_t xkb, int64_t which, bool free_all) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XkbFreeKeyboard, void, int64_t xkb, int64_t which, bool free_all);
-	$invokeNativeStatic(XlibWrapper, XkbFreeKeyboard, xkb, which, free_all);
+	$invokeNativeStatic(xkb, which, free_all);
 	$finishNativeStatic();
 }
 
@@ -1518,7 +1517,7 @@ bool XlibWrapper::XkbTranslateKeyCode(int64_t xkb, int32_t keycode, int64_t mods
 	$init(XlibWrapper);
 	bool $ret = false;
 	$prepareNativeStatic(XlibWrapper, XkbTranslateKeyCode, bool, int64_t xkb, int32_t keycode, int64_t mods, int64_t mods_rtrn, int64_t keysym_rtrn);
-	$ret = $invokeNativeStatic(XlibWrapper, XkbTranslateKeyCode, xkb, keycode, mods, mods_rtrn, keysym_rtrn);
+	$ret = $invokeNativeStatic(xkb, keycode, mods, mods_rtrn, keysym_rtrn);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1526,14 +1525,14 @@ bool XlibWrapper::XkbTranslateKeyCode(int64_t xkb, int32_t keycode, int64_t mods
 void XlibWrapper::XkbSetDetectableAutoRepeat(int64_t display, bool detectable) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XkbSetDetectableAutoRepeat, void, int64_t display, bool detectable);
-	$invokeNativeStatic(XlibWrapper, XkbSetDetectableAutoRepeat, display, detectable);
+	$invokeNativeStatic(display, detectable);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XConvertCase(int64_t keysym, int64_t keysym_lowercase, int64_t keysym_uppercase) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XConvertCase, void, int64_t keysym, int64_t keysym_lowercase, int64_t keysym_uppercase);
-	$invokeNativeStatic(XlibWrapper, XConvertCase, keysym, keysym_lowercase, keysym_uppercase);
+	$invokeNativeStatic(keysym, keysym_lowercase, keysym_uppercase);
 	$finishNativeStatic();
 }
 
@@ -1541,7 +1540,7 @@ int64_t XlibWrapper::XGetModifierMapping(int64_t display) {
 	$init(XlibWrapper);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XGetModifierMapping, int64_t, int64_t display);
-	$ret = $invokeNativeStatic(XlibWrapper, XGetModifierMapping, display);
+	$ret = $invokeNativeStatic(display);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1549,21 +1548,21 @@ int64_t XlibWrapper::XGetModifierMapping(int64_t display) {
 void XlibWrapper::XFreeModifiermap(int64_t keymap) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XFreeModifiermap, void, int64_t keymap);
-	$invokeNativeStatic(XlibWrapper, XFreeModifiermap, keymap);
+	$invokeNativeStatic(keymap);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XRefreshKeyboardMapping(int64_t event) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XRefreshKeyboardMapping, void, int64_t event);
-	$invokeNativeStatic(XlibWrapper, XRefreshKeyboardMapping, event);
+	$invokeNativeStatic(event);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::XChangeActivePointerGrab(int64_t display, int32_t mask, int64_t cursor, int64_t time) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, XChangeActivePointerGrab, void, int64_t display, int32_t mask, int64_t cursor, int64_t time);
-	$invokeNativeStatic(XlibWrapper, XChangeActivePointerGrab, display, mask, cursor, time);
+	$invokeNativeStatic(display, mask, cursor, time);
 	$finishNativeStatic();
 }
 
@@ -1571,7 +1570,7 @@ int32_t XlibWrapper::XSynchronize(int64_t display, bool onoff) {
 	$init(XlibWrapper);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XlibWrapper, XSynchronize, int32_t, int64_t display, bool onoff);
-	$ret = $invokeNativeStatic(XlibWrapper, XSynchronize, display, onoff);
+	$ret = $invokeNativeStatic(display, onoff);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1580,7 +1579,7 @@ bool XlibWrapper::XNextSecondaryLoopEvent(int64_t display, int64_t ptr) {
 	$init(XlibWrapper);
 	bool $ret = false;
 	$prepareNativeStatic(XlibWrapper, XNextSecondaryLoopEvent, bool, int64_t display, int64_t ptr);
-	$ret = $invokeNativeStatic(XlibWrapper, XNextSecondaryLoopEvent, display, ptr);
+	$ret = $invokeNativeStatic(display, ptr);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1588,7 +1587,7 @@ bool XlibWrapper::XNextSecondaryLoopEvent(int64_t display, int64_t ptr) {
 void XlibWrapper::ExitSecondaryLoop() {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, ExitSecondaryLoop, void);
-	$invokeNativeStatic(XlibWrapper, ExitSecondaryLoop);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -1596,7 +1595,7 @@ $StringArray* XlibWrapper::XTextPropertyToStringList($bytes* bytes, int64_t enco
 	$init(XlibWrapper);
 	$var($StringArray, $ret, nullptr);
 	$prepareNativeStatic(XlibWrapper, XTextPropertyToStringList, $StringArray*, $bytes* bytes, int64_t encoding_atom);
-	$assign($ret, $invokeNativeStatic(XlibWrapper, XTextPropertyToStringList, bytes, encoding_atom));
+	$assign($ret, $invokeNativeStaticObject(bytes, encoding_atom));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1605,7 +1604,7 @@ bool XlibWrapper::XShapeQueryExtension(int64_t display, int64_t event_base_retur
 	$init(XlibWrapper);
 	bool $ret = false;
 	$prepareNativeStatic(XlibWrapper, XShapeQueryExtension, bool, int64_t display, int64_t event_base_return, int64_t error_base_return);
-	$ret = $invokeNativeStatic(XlibWrapper, XShapeQueryExtension, display, event_base_return, error_base_return);
+	$ret = $invokeNativeStatic(display, event_base_return, error_base_return);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1613,21 +1612,21 @@ bool XlibWrapper::XShapeQueryExtension(int64_t display, int64_t event_base_retur
 void XlibWrapper::SetRectangularShape(int64_t display, int64_t window, int32_t lox, int32_t loy, int32_t hix, int32_t hiy, $Region* region) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, SetRectangularShape, void, int64_t display, int64_t window, int32_t lox, int32_t loy, int32_t hix, int32_t hiy, $Region* region);
-	$invokeNativeStatic(XlibWrapper, SetRectangularShape, display, window, lox, loy, hix, hiy, region);
+	$invokeNativeStatic(display, window, lox, loy, hix, hiy, region);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::SetBitmapShape(int64_t display, int64_t window, int32_t width, int32_t height, $ints* bitmap) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, SetBitmapShape, void, int64_t display, int64_t window, int32_t width, int32_t height, $ints* bitmap);
-	$invokeNativeStatic(XlibWrapper, SetBitmapShape, display, window, width, height, bitmap);
+	$invokeNativeStatic(display, window, width, height, bitmap);
 	$finishNativeStatic();
 }
 
 void XlibWrapper::SetZOrder(int64_t display, int64_t window, int64_t above) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, SetZOrder, void, int64_t display, int64_t window, int64_t above);
-	$invokeNativeStatic(XlibWrapper, SetZOrder, display, window, above);
+	$invokeNativeStatic(display, window, above);
 	$finishNativeStatic();
 }
 
@@ -1684,7 +1683,7 @@ bool XlibWrapper::getBuildInternal() {
 void XlibWrapper::PrintXErrorEvent(int64_t display, int64_t event_ptr) {
 	$init(XlibWrapper);
 	$prepareNativeStatic(XlibWrapper, PrintXErrorEvent, void, int64_t display, int64_t event_ptr);
-	$invokeNativeStatic(XlibWrapper, PrintXErrorEvent, display, event_ptr);
+	$invokeNativeStatic(display, event_ptr);
 	$finishNativeStatic();
 }
 

@@ -15,7 +15,6 @@
 
 #undef TYPE_INT_ARGB
 
-using $bug4337267 = ::bug4337267;
 using $bug4337267$TestBufferedImage = ::bug4337267$TestBufferedImage;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;

@@ -23,7 +23,6 @@ using $FontStrike = ::sun::font::FontStrike;
 using $FontStrikeDesc = ::sun::font::FontStrikeDesc;
 using $NativeFont = ::sun::font::NativeFont;
 using $NativeStrike = ::sun::font::NativeStrike;
-using $PhysicalStrike = ::sun::font::PhysicalStrike;
 using $StrikeMetrics = ::sun::font::StrikeMetrics;
 
 namespace sun {

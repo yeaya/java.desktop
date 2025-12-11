@@ -8,7 +8,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ClientPropertyKey = ::javax::swing::ClientPropertyKey;
-using $AWTAccessor$ClientPropertyKeyAccessor = ::sun::awt::AWTAccessor$ClientPropertyKeyAccessor;
 
 namespace javax {
 	namespace swing {

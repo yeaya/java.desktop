@@ -49,10 +49,7 @@
 
 using $XMenuItemPeer$TextMetricsArray = $Array<::sun::awt::X11::XMenuItemPeer$TextMetrics>;
 using $XMenuItemPeerArray = $Array<::sun::awt::X11::XMenuItemPeer>;
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
-using $Font = ::java::awt::Font;
 using $Graphics = ::java::awt::Graphics;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $Point = ::java::awt::Point;
@@ -64,9 +61,7 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $HashMap = ::java::util::HashMap;
 using $Vector = ::java::util::Vector;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $XBaseMenuWindow = ::sun::awt::X11::XBaseMenuWindow;
 using $XBaseMenuWindow$MappingData = ::sun::awt::X11::XBaseMenuWindow$MappingData;
 using $XBaseWindow = ::sun::awt::X11::XBaseWindow;

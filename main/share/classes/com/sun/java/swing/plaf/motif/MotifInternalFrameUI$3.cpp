@@ -22,7 +22,6 @@ using $AbstractAction = ::javax::swing::AbstractAction;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
 using $JInternalFrame$JDesktopIcon = ::javax::swing::JInternalFrame$JDesktopIcon;
 using $DesktopIconUI = ::javax::swing::plaf::DesktopIconUI;
-using $BasicInternalFrameUI = ::javax::swing::plaf::basic::BasicInternalFrameUI;
 
 namespace com {
 	namespace sun {

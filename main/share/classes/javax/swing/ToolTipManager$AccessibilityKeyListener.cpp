@@ -14,10 +14,6 @@
 #include <jcpp.h>
 
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
-using $AWTKeyStroke = ::java::awt::AWTKeyStroke;
-using $Component = ::java::awt::Component;
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyAdapter = ::java::awt::event::KeyAdapter;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -28,10 +24,8 @@ using $JComponent = ::javax::swing::JComponent;
 using $KeyStroke = ::javax::swing::KeyStroke;
 using $MenuElement = ::javax::swing::MenuElement;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
-using $Popup = ::javax::swing::Popup;
 using $ToolTipManager = ::javax::swing::ToolTipManager;
 using $MenuKeyEvent = ::javax::swing::event::MenuKeyEvent;
-using $MenuKeyListener = ::javax::swing::event::MenuKeyListener;
 
 namespace javax {
 	namespace swing {

@@ -17,7 +17,6 @@
 #undef SIZE
 
 using $MotifTreeCellRenderer = ::com::sun::java::swing::plaf::motif::MotifTreeCellRenderer;
-using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;

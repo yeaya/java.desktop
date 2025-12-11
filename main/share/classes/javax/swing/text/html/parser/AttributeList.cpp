@@ -27,7 +27,6 @@
 #undef NUTOKENS
 #undef REQUIRED
 
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Integer = ::java::lang::Integer;

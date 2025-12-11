@@ -24,7 +24,6 @@
 
 using $ComponentArray = $Array<::java::awt::Component>;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Window = ::java::awt::Window;
 using $WindowAdapter = ::java::awt::event::WindowAdapter;
 using $WindowListener = ::java::awt::event::WindowListener;
@@ -45,7 +44,6 @@ using $JWindow = ::javax::swing::JWindow;
 using $MenuElement = ::javax::swing::MenuElement;
 using $Popup = ::javax::swing::Popup;
 using $Popup$DefaultFrame = ::javax::swing::Popup$DefaultFrame;
-using $PopupFactory = ::javax::swing::PopupFactory;
 using $PopupFactory$HeavyWeightPopup$1 = ::javax::swing::PopupFactory$HeavyWeightPopup$1;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 

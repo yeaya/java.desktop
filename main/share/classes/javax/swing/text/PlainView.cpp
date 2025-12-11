@@ -55,9 +55,7 @@
 
 using $ElementArray = $Array<::javax::swing::text::Element>;
 using $Position$BiasArray = $Array<::javax::swing::text::Position$Bias>;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
 using $Graphics = ::java::awt::Graphics;
@@ -81,7 +79,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Module = ::java::lang::Module;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $SoftReference = ::java::lang::ref::SoftReference;
-using $Method = ::java::lang::reflect::Method;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $HashMap = ::java::util::HashMap;

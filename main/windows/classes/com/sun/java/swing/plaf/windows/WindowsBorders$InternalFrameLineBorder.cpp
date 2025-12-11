@@ -9,7 +9,6 @@
 #include <javax/swing/border/LineBorder.h>
 #include <jcpp.h>
 
-using $WindowsBorders = ::com::sun::java::swing::plaf::windows::WindowsBorders;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
@@ -20,7 +19,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
 using $JInternalFrame$JDesktopIcon = ::javax::swing::JInternalFrame$JDesktopIcon;
 using $LineBorder = ::javax::swing::border::LineBorder;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace com {
 	namespace sun {

@@ -49,9 +49,6 @@
 #undef FOCUSED
 
 using $FileArray = $Array<::java::io::File>;
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
 using $Insets = ::java::awt::Insets;
 using $ActionListener = ::java::awt::event::ActionListener;
@@ -64,11 +61,8 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Vector = ::java::util::Vector;
 using $AbstractAction = ::javax::swing::AbstractAction;
-using $AbstractButton = ::javax::swing::AbstractButton;
-using $AbstractListModel = ::javax::swing::AbstractListModel;
 using $Action = ::javax::swing::Action;
 using $ActionMap = ::javax::swing::ActionMap;
-using $Icon = ::javax::swing::Icon;
 using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JFileChooser = ::javax::swing::JFileChooser;
@@ -90,10 +84,8 @@ using $SynthLookAndFeel = ::javax::swing::plaf::synth::SynthLookAndFeel;
 using $SynthPainter = ::javax::swing::plaf::synth::SynthPainter;
 using $SynthStyle = ::javax::swing::plaf::synth::SynthStyle;
 using $SynthStyleFactory = ::javax::swing::plaf::synth::SynthStyleFactory;
-using $SynthUI = ::javax::swing::plaf::synth::SynthUI;
 using $SynthFileChooserUI$1 = ::sun::swing::plaf::synth::SynthFileChooserUI$1;
 using $SynthFileChooserUI$FileNameCompletionAction = ::sun::swing::plaf::synth::SynthFileChooserUI$FileNameCompletionAction;
-using $SynthFileChooserUI$GlobFilter = ::sun::swing::plaf::synth::SynthFileChooserUI$GlobFilter;
 using $SynthFileChooserUI$SynthFCPropertyChangeListener = ::sun::swing::plaf::synth::SynthFileChooserUI$SynthFCPropertyChangeListener;
 using $SynthFileChooserUI$UIBorder = ::sun::swing::plaf::synth::SynthFileChooserUI$UIBorder;
 using $SynthFileChooserUIImpl = ::sun::swing::plaf::synth::SynthFileChooserUIImpl;

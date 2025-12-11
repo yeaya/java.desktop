@@ -21,11 +21,9 @@ using $Reader = ::java::io::Reader;
 using $Writer = ::java::io::Writer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DefaultEditorKit = ::javax::swing::text::DefaultEditorKit;
 using $Document = ::javax::swing::text::Document;
 using $StyledDocument = ::javax::swing::text::StyledDocument;
 using $StyledEditorKit = ::javax::swing::text::StyledEditorKit;
-using $AbstractFilter = ::javax::swing::text::rtf::AbstractFilter;
 using $RTFGenerator = ::javax::swing::text::rtf::RTFGenerator;
 using $RTFReader = ::javax::swing::text::rtf::RTFReader;
 

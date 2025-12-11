@@ -16,7 +16,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $CountDownLatch = ::java::util::concurrent::CountDownLatch;
-using $JComponent = ::javax::swing::JComponent;
 using $JTextField = ::javax::swing::JTextField;
 
 $MethodInfo _JapaneseReadingAttributes$1_MethodInfo_[] = {

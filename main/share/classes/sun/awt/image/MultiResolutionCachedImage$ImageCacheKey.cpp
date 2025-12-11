@@ -9,8 +9,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ImageCache$PixelsKey = ::sun::awt::image::ImageCache$PixelsKey;
-using $MultiResolutionCachedImage = ::sun::awt::image::MultiResolutionCachedImage;
 
 namespace sun {
 	namespace awt {

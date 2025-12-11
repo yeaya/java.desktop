@@ -358,14 +358,14 @@ void GifImageDecoder::readHeader() {
 void GifImageDecoder::initIDs() {
 	$init(GifImageDecoder);
 	$prepareNativeStatic(GifImageDecoder, initIDs, void);
-	$invokeNativeStatic(GifImageDecoder, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
 bool GifImageDecoder::parseImage(int32_t x, int32_t y, int32_t width, int32_t height, bool interlace, int32_t initCodeSize, $bytes* block, $bytes* rasline, $IndexColorModel* model) {
 	bool $ret = false;
 	$prepareNative(GifImageDecoder, parseImage, bool, int32_t x, int32_t y, int32_t width, int32_t height, bool interlace, int32_t initCodeSize, $bytes* block, $bytes* rasline, $IndexColorModel* model);
-	$ret = $invokeNative(GifImageDecoder, parseImage, x, y, width, height, interlace, initCodeSize, block, rasline, model);
+	$ret = $invokeNative(x, y, width, height, interlace, initCodeSize, block, rasline, model);
 	$finishNative();
 	return $ret;
 }

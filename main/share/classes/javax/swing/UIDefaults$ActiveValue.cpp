@@ -6,7 +6,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $UIDefaults = ::javax::swing::UIDefaults;
 
 namespace javax {
 	namespace swing {

@@ -3,7 +3,6 @@
 #include <java/awt/desktop/PrintFilesEvent.h>
 #include <jcpp.h>
 
-using $PrintFilesEvent = ::java::awt::desktop::PrintFilesEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

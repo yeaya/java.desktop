@@ -31,9 +31,7 @@
 #undef HORIZONTAL
 #undef VERTICAL
 
-using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
-using $Container = ::java::awt::Container;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $Dimension = ::java::awt::Dimension;
 using $Font = ::java::awt::Font;
@@ -50,7 +48,6 @@ using $Integer = ::java::lang::Integer;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $Set = ::java::util::Set;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $JComponent = ::javax::swing::JComponent;
 using $JComponent$AccessibleJComponent = ::javax::swing::JComponent$AccessibleJComponent;

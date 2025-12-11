@@ -43,7 +43,6 @@ using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
 using $PaintEvent = ::java::awt::event::PaintEvent;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
-using $CanvasPeer = ::java::awt::peer::CanvasPeer;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -52,7 +51,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $PaintEventDispatcher = ::sun::awt::PaintEventDispatcher;
 using $SunToolkit = ::sun::awt::SunToolkit;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $Region = ::sun::java2d::pipe::Region;
 
 namespace sun {
@@ -298,7 +296,7 @@ void WCanvasPeer::init$($Component* target) {
 
 void WCanvasPeer::create($WComponentPeer* parent) {
 	$prepareNative(WCanvasPeer, create, void, $WComponentPeer* parent);
-	$invokeNative(WCanvasPeer, create, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 
@@ -341,7 +339,7 @@ void WCanvasPeer::disableBackgroundErase() {
 
 void WCanvasPeer::setNativeBackgroundErase(bool doErase, bool doEraseOnResize) {
 	$prepareNative(WCanvasPeer, setNativeBackgroundErase, void, bool doErase, bool doEraseOnResize);
-	$invokeNative(WCanvasPeer, setNativeBackgroundErase, doErase, doEraseOnResize);
+	$invokeNative(doErase, doEraseOnResize);
 	$finishNative();
 }
 

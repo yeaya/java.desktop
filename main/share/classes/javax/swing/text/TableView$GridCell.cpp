@@ -6,7 +6,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $TableView = ::javax::swing::text::TableView;
 
 namespace javax {
 	namespace swing {

@@ -33,7 +33,6 @@ using $TextComponent = ::java::awt::TextComponent;
 using $TextField = ::java::awt::TextField;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $PropertyChangeSupport = ::java::beans::PropertyChangeSupport;
-using $PropertyEditor = ::java::beans::PropertyEditor;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;

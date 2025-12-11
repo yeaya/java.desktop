@@ -47,7 +47,6 @@
 
 using $AccessibleArray = $Array<::javax::accessibility::Accessible>;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Point = ::java::awt::Point;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
@@ -58,7 +57,6 @@ using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AccessibleExtendedTable = ::javax::accessibility::AccessibleExtendedTable;
@@ -66,7 +64,6 @@ using $AccessibleRole = ::javax::accessibility::AccessibleRole;
 using $AccessibleSelection = ::javax::accessibility::AccessibleSelection;
 using $AccessibleTable = ::javax::accessibility::AccessibleTable;
 using $AccessibleTableModelChange = ::javax::accessibility::AccessibleTableModelChange;
-using $CellEditor = ::javax::swing::CellEditor;
 using $JComponent = ::javax::swing::JComponent;
 using $JComponent$AccessibleJComponent = ::javax::swing::JComponent$AccessibleJComponent;
 using $JTable = ::javax::swing::JTable;

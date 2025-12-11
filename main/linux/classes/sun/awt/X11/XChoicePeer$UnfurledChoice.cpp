@@ -33,11 +33,8 @@
 #undef TRUE
 
 using $ColorArray = $Array<::java::awt::Color>;
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Choice = ::java::awt::Choice;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
-using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
@@ -48,7 +45,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $HashMap = ::java::util::HashMap;
 using $ListHelper = ::sun::awt::X11::ListHelper;
 using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XChoicePeer = ::sun::awt::X11::XChoicePeer;

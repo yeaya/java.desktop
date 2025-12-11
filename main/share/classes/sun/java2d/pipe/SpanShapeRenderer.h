@@ -59,7 +59,7 @@ public:
 	virtual void renderSpans(::sun::java2d::SunGraphics2D* sg, ::sun::java2d::pipe::Region* clipRegion, ::java::awt::Shape* s, ::sun::java2d::pipe::ShapeSpanIterator* sr);
 	virtual void spanClipLoop(Object$* ctx, ::sun::java2d::pipe::SpanIterator* sr, ::sun::java2d::pipe::Region* r, $ints* abox);
 	virtual $Object* startSequence(::sun::java2d::SunGraphics2D* sg, ::java::awt::Shape* s, ::java::awt::Rectangle* devR, $ints* bbox) {return nullptr;}
-	static const int32_t NON_RECTILINEAR_TRANSFORM_MASK = (::java::awt::geom::AffineTransform::TYPE_GENERAL_TRANSFORM | ::java::awt::geom::AffineTransform::TYPE_GENERAL_ROTATION);
+	static const int32_t NON_RECTILINEAR_TRANSFORM_MASK = 48; // (::java::awt::geom::AffineTransform::TYPE_GENERAL_TRANSFORM | ::java::awt::geom::AffineTransform::TYPE_GENERAL_ROTATION)
 };
 
 		} // pipe

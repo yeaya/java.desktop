@@ -40,9 +40,7 @@
 #undef VERTICAL
 #undef WEST
 
-using $Component$BaselineResizeBehavior = ::java::awt::Component$BaselineResizeBehavior;
 using $Insets = ::java::awt::Insets;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CloneNotSupportedException = ::java::lang::CloneNotSupportedException;
 using $Cloneable = ::java::lang::Cloneable;

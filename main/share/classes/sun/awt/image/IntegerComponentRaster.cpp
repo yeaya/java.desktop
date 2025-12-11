@@ -117,7 +117,7 @@ $Object* allocate$IntegerComponentRaster($Class* clazz) {
 void IntegerComponentRaster::initIDs() {
 	$init(IntegerComponentRaster);
 	$prepareNativeStatic(IntegerComponentRaster, initIDs, void);
-	$invokeNativeStatic(IntegerComponentRaster, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

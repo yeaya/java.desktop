@@ -8,14 +8,12 @@
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Cloneable = ::java::lang::Cloneable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Hashtable = ::java::util::Hashtable;
 using $Map = ::java::util::Map;
-using $Painter = ::javax::swing::Painter;
 using $UIDefaults = ::javax::swing::UIDefaults;
 using $NimbusStyle = ::javax::swing::plaf::nimbus::NimbusStyle;
 

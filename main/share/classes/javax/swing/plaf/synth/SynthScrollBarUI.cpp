@@ -58,7 +58,6 @@ using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JScrollBar = ::javax::swing::JScrollBar;

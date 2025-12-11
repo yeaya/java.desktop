@@ -25,7 +25,6 @@ using $AbstractList = ::java::util::AbstractList;
 using $ArrayList = ::java::util::ArrayList;
 using $Comparator = ::java::util::Comparator;
 using $List = ::java::util::List;
-using $Callable = ::java::util::concurrent::Callable;
 using $SwingConstants = ::javax::swing::SwingConstants;
 using $ShellFolderColumnInfo = ::sun::awt::shell::ShellFolderColumnInfo;
 using $Win32ShellFolder2 = ::sun::awt::shell::Win32ShellFolder2;

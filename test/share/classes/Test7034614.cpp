@@ -17,7 +17,6 @@ using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractBorder = ::javax::swing::border::AbstractBorder;
 using $Border = ::javax::swing::border::Border;
 using $TitledBorder = ::javax::swing::border::TitledBorder;
 

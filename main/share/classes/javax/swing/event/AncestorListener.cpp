@@ -5,8 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
-using $AncestorEvent = ::javax::swing::event::AncestorEvent;
 
 namespace javax {
 	namespace swing {

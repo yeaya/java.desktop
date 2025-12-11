@@ -17,24 +17,18 @@
 
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
 using $MotifMenuUI = ::com::sun::java::swing::plaf::motif::MotifMenuUI;
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Point = ::java::awt::Point;
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JMenu = ::javax::swing::JMenu;
 using $JMenuBar = ::javax::swing::JMenuBar;
 using $JMenuItem = ::javax::swing::JMenuItem;
-using $JPopupMenu = ::javax::swing::JPopupMenu;
 using $MenuElement = ::javax::swing::MenuElement;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
-using $MouseInputListener = ::javax::swing::event::MouseInputListener;
-using $BasicMenuItemUI = ::javax::swing::plaf::basic::BasicMenuItemUI;
 
 namespace com {
 	namespace sun {

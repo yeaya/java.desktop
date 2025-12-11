@@ -30,7 +30,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JFileChooser = ::javax::swing::JFileChooser;
 using $JLabel = ::javax::swing::JLabel;
 using $JList = ::javax::swing::JList;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 
 namespace com {
 	namespace sun {

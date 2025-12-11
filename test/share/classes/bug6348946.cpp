@@ -37,7 +37,6 @@ using $LayoutManager = ::java::awt::LayoutManager;
 using $LayoutManager2 = ::java::awt::LayoutManager2;
 using $Rectangle = ::java::awt::Rectangle;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;

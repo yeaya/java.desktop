@@ -27,8 +27,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Painter = ::javax::swing::Painter;
 using $UIManager = ::javax::swing::UIManager;
 using $Border = ::javax::swing::border::Border;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $NimbusDefaults = ::javax::swing::plaf::nimbus::NimbusDefaults;
 
 namespace javax {
 	namespace swing {

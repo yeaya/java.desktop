@@ -27,7 +27,6 @@
 #undef SOUTH
 #undef WEST
 
-using $bug4514858 = ::bug4514858;
 using $bug4514858$Test$1 = ::bug4514858$Test$1;
 using $BorderLayout = ::java::awt::BorderLayout;
 using $Component = ::java::awt::Component;

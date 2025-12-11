@@ -36,7 +36,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $URL = ::java::net::URL;
-using $JEditorPane = ::javax::swing::JEditorPane;
 using $JFrame = ::javax::swing::JFrame;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $HTMLEditorKit$ParserCallback = ::javax::swing::text::html::HTMLEditorKit$ParserCallback;

@@ -19,7 +19,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $CellRendererPane = ::javax::swing::CellRendererPane;
 using $JComboBox = ::javax::swing::JComboBox;
-using $JComponent = ::javax::swing::JComponent;
 using $JPanel = ::javax::swing::JPanel;
 
 $MethodInfo _TestMemLeakComboBox$MyPanel_MethodInfo_[] = {

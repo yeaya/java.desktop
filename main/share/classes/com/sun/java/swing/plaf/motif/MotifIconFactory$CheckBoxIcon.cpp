@@ -11,11 +11,9 @@
 #include <javax/swing/UIManager.h>
 #include <jcpp.h>
 
-using $MotifIconFactory = ::com::sun::java::swing::plaf::motif::MotifIconFactory;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -25,7 +23,6 @@ using $ButtonModel = ::javax::swing::ButtonModel;
 using $Icon = ::javax::swing::Icon;
 using $JCheckBox = ::javax::swing::JCheckBox;
 using $UIManager = ::javax::swing::UIManager;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace com {
 	namespace sun {

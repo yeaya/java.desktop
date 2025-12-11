@@ -14,7 +14,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UIDefaults = ::javax::swing::UIDefaults;
-using $UIDefaults$LazyValue = ::javax::swing::UIDefaults$LazyValue;
 using $BorderUIResource$EtchedBorderUIResource = ::javax::swing::plaf::BorderUIResource$EtchedBorderUIResource;
 
 namespace com {

@@ -99,7 +99,7 @@ void GDIBlitLoops::init$($SurfaceType* srcType, $SurfaceType* dstType, int32_t r
 
 void GDIBlitLoops::nativeBlit($SurfaceData* src, $SurfaceData* dst, $Region* clip, int32_t sx, int32_t sy, int32_t dx, int32_t dy, int32_t w, int32_t h, int32_t rmask, int32_t gmask, int32_t bmask, bool needLut) {
 	$prepareNative(GDIBlitLoops, nativeBlit, void, $SurfaceData* src, $SurfaceData* dst, $Region* clip, int32_t sx, int32_t sy, int32_t dx, int32_t dy, int32_t w, int32_t h, int32_t rmask, int32_t gmask, int32_t bmask, bool needLut);
-	$invokeNative(GDIBlitLoops, nativeBlit, src, dst, clip, sx, sy, dx, dy, w, h, rmask, gmask, bmask, needLut);
+	$invokeNative(src, dst, clip, sx, sy, dx, dy, w, h, rmask, gmask, bmask, needLut);
 	$finishNative();
 }
 

@@ -52,7 +52,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $Locale = ::java::util::Locale;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $JApplet$AccessibleJApplet = ::javax::swing::JApplet$AccessibleJApplet;
 using $JComponent = ::javax::swing::JComponent;
@@ -60,11 +59,9 @@ using $JLayeredPane = ::javax::swing::JLayeredPane;
 using $JMenuBar = ::javax::swing::JMenuBar;
 using $JRootPane = ::javax::swing::JRootPane;
 using $RepaintManager = ::javax::swing::RepaintManager;
-using $RootPaneContainer = ::javax::swing::RootPaneContainer;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $TimerQueue = ::javax::swing::TimerQueue;
 using $TransferHandler = ::javax::swing::TransferHandler;
-using $TransferHandler$HasGetTransferHandler = ::javax::swing::TransferHandler$HasGetTransferHandler;
 using $SunToolkit = ::sun::awt::SunToolkit;
 
 namespace javax {

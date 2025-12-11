@@ -6,13 +6,11 @@
 #include <sun/awt/X11/XSystemTrayPeer.h>
 #include <jcpp.h>
 
-using $SystemTray = ::java::awt::SystemTray;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$SystemTrayAccessor = ::sun::awt::AWTAccessor$SystemTrayAccessor;
 using $XSystemTrayPeer = ::sun::awt::X11::XSystemTrayPeer;

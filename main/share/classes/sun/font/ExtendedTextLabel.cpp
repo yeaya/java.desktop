@@ -8,7 +8,6 @@ using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $TextLabel = ::sun::font::TextLabel;
-using $TextLineComponent = ::sun::font::TextLineComponent;
 
 namespace sun {
 	namespace font {

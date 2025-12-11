@@ -4,7 +4,6 @@
 #include <javax/sound/sampled/CompoundControl$Type.h>
 #include <jcpp.h>
 
-using $PortMixer$CompCtrl = ::com::sun::media::sound::PortMixer$CompCtrl;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

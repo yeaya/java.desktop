@@ -21,24 +21,16 @@
 #undef PERPIXEL_TRANSLUCENT
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
-using $Frame = ::java::awt::Frame;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $GraphicsDevice$WindowTranslucency = ::java::awt::GraphicsDevice$WindowTranslucency;
-using $Window = ::java::awt::Window;
 using $PrintStream = ::java::io::PrintStream;
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $JFrame = ::javax::swing::JFrame;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;

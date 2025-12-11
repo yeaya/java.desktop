@@ -18,17 +18,13 @@
 
 using $bug6797139$1 = ::bug6797139$1;
 using $bug6797139$2 = ::bug6797139$2;
-using $Component = ::java::awt::Component;
-using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JButton = ::javax::swing::JButton;
-using $JComponent = ::javax::swing::JComponent;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $ButtonUI = ::javax::swing::plaf::ButtonUI;
 using $BasicButtonUI = ::javax::swing::plaf::basic::BasicButtonUI;

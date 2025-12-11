@@ -17,10 +17,8 @@ using $Runnable = ::java::lang::Runnable;
 using $DataBufferNative = ::sun::awt::image::DataBufferNative;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $D3DRenderQueue = ::sun::java2d::d3d::D3DRenderQueue;
-using $D3DSurfaceData = ::sun::java2d::d3d::D3DSurfaceData;
 using $D3DSurfaceData$D3DDataBufferNative$1 = ::sun::java2d::d3d::D3DSurfaceData$D3DDataBufferNative$1;
 using $D3DSurfaceData$D3DDataBufferNative$2 = ::sun::java2d::d3d::D3DSurfaceData$D3DDataBufferNative$2;
-using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 
 namespace sun {
 	namespace java2d {

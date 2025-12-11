@@ -10,7 +10,6 @@ using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 
 $FieldInfo _bug4314199$2_FieldInfo_[] = {
 	{"this$0", "Lbug4314199;", nullptr, $FINAL | $SYNTHETIC, $field(bug4314199$2, this$0)},

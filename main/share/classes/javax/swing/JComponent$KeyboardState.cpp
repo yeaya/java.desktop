@@ -12,14 +12,11 @@
 #undef KEY_TYPED
 #undef VK_PRINTSCREEN
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JComponent$IntVector = ::javax::swing::JComponent$IntVector;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 

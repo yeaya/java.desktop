@@ -6,12 +6,10 @@
 #include <jcpp.h>
 
 using $bug6583251 = ::bug6583251;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JFrame = ::javax::swing::JFrame;
 
 $MethodInfo _bug6583251$2_MethodInfo_[] = {

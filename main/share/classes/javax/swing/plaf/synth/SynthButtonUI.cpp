@@ -45,15 +45,11 @@
 #undef TEXT_FOREGROUND
 #undef TRUE
 
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
 using $Graphics = ::java::awt::Graphics;
 using $Insets = ::java::awt::Insets;
-using $LayoutManager = ::java::awt::LayoutManager;
 using $Rectangle = ::java::awt::Rectangle;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
@@ -63,7 +59,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
-using $EventObject = ::java::util::EventObject;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $Icon = ::javax::swing::Icon;

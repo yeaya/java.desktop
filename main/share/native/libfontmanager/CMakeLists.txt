@@ -6,6 +6,10 @@ if(JCPP_OS MATCHES "linux")
 	add_definitions("-DLE_STANDALONE -DHEADLESS")
 endif()
 
+if(JCPP_OS MATCHES "macos")
+	add_definitions("-DLE_STANDALONE -DHEADLESS")
+endif()
+
 if(JCPP_OS MATCHES "linux")
 	include_directories("../../../linux/native/libfontmanager")
 endif()

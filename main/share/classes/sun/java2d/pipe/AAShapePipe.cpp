@@ -29,11 +29,8 @@
 #undef TILE_STATE_PROVIDER
 
 using $BasicStroke = ::java::awt::BasicStroke;
-using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;
 using $Stroke = ::java::awt::Stroke;
-using $AffineTransform = ::java::awt::geom::AffineTransform;
-using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -49,8 +46,6 @@ using $AAShapePipe$1 = ::sun::java2d::pipe::AAShapePipe$1;
 using $AAShapePipe$TileState = ::sun::java2d::pipe::AAShapePipe$TileState;
 using $AATileGenerator = ::sun::java2d::pipe::AATileGenerator;
 using $CompositePipe = ::sun::java2d::pipe::CompositePipe;
-using $ParallelogramPipe = ::sun::java2d::pipe::ParallelogramPipe;
-using $Region = ::sun::java2d::pipe::Region;
 using $RenderingEngine = ::sun::java2d::pipe::RenderingEngine;
 using $ShapeDrawPipe = ::sun::java2d::pipe::ShapeDrawPipe;
 

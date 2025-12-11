@@ -7,7 +7,6 @@
 #include <java/util/Properties.h>
 #include <jcpp.h>
 
-using $Toolkit = ::java::awt::Toolkit;
 using $File = ::java::io::File;
 using $FileInputStream = ::java::io::FileInputStream;
 using $InputStream = ::java::io::InputStream;
@@ -17,7 +16,6 @@ using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Properties = ::java::util::Properties;
 
 namespace java {

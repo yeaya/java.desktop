@@ -4,12 +4,9 @@
 #include <javax/swing/text/Element.h>
 #include <jcpp.h>
 
-using $ElementArray = $Array<::javax::swing::text::Element>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DocumentEvent = ::javax::swing::event::DocumentEvent;
-using $Element = ::javax::swing::text::Element;
 
 namespace javax {
 	namespace swing {

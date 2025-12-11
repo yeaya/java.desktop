@@ -18,7 +18,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AccessibleState = ::javax::accessibility::AccessibleState;
 using $AccessibleStateSet = ::javax::accessibility::AccessibleStateSet;
-using $JComponent = ::javax::swing::JComponent;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $JTextComponent$AccessibleJTextComponent = ::javax::swing::text::JTextComponent$AccessibleJTextComponent;

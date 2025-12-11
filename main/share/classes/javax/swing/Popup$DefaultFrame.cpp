@@ -8,7 +8,6 @@ using $Frame = ::java::awt::Frame;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Popup = ::javax::swing::Popup;
 
 namespace javax {
 	namespace swing {

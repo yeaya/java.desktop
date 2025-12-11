@@ -52,7 +52,6 @@ using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
 using $FontUIResource = ::javax::swing::plaf::FontUIResource;
 using $InsetsUIResource = ::javax::swing::plaf::InsetsUIResource;
 using $BasicBorders$MarginBorder = ::javax::swing::plaf::basic::BasicBorders$MarginBorder;
-using $BasicLookAndFeel = ::javax::swing::plaf::basic::BasicLookAndFeel;
 using $DefaultEditorKit = ::javax::swing::text::DefaultEditorKit;
 using $MotifColorUtilities = ::sun::awt::X11::MotifColorUtilities;
 using $XComponentPeer = ::sun::awt::X11::XComponentPeer;

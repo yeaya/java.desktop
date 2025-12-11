@@ -9,7 +9,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Comparator = ::java::util::Comparator;
 using $XRGlyphCache = ::sun::font::XRGlyphCache;
 using $XRGlyphCacheEntry = ::sun::font::XRGlyphCacheEntry;
 

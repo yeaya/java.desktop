@@ -3,7 +3,6 @@
 #include <java/beans/PropertyChangeListener.h>
 #include <jcpp.h>
 
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

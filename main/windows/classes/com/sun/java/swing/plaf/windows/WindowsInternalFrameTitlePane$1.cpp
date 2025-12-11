@@ -12,7 +12,6 @@
 #include <jcpp.h>
 
 using $WindowsInternalFrameTitlePane = ::com::sun::java::swing::plaf::windows::WindowsInternalFrameTitlePane;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;

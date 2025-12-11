@@ -9,7 +9,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractSpinnerModel = ::javax::swing::AbstractSpinnerModel;
-using $SpinnerModel = ::javax::swing::SpinnerModel;
 
 $MethodInfo _HeadlessAbstractSpinnerModel_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PUBLIC, $method(static_cast<void(HeadlessAbstractSpinnerModel::*)()>(&HeadlessAbstractSpinnerModel::init$))},

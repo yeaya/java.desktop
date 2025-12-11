@@ -119,7 +119,7 @@ void MaskBlit::init$(int64_t pNativePrim, $SurfaceType* srctype, $CompositeType*
 
 void MaskBlit::MaskBlit$($SurfaceData* src, $SurfaceData* dst, $Composite* comp, $Region* clip, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t width, int32_t height, $bytes* mask, int32_t maskoff, int32_t maskscan) {
 	$prepareNative(MaskBlit, MaskBlit$, void, $SurfaceData* src, $SurfaceData* dst, $Composite* comp, $Region* clip, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t width, int32_t height, $bytes* mask, int32_t maskoff, int32_t maskscan);
-	$invokeNative(MaskBlit, MaskBlit$, src, dst, comp, clip, srcx, srcy, dstx, dsty, width, height, mask, maskoff, maskscan);
+	$invokeNative(src, dst, comp, clip, srcx, srcy, dstx, dsty, width, height, mask, maskoff, maskscan);
 	$finishNative();
 }
 

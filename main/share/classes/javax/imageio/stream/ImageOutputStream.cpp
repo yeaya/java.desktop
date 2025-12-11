@@ -3,7 +3,6 @@
 #include <javax/imageio/stream/ImageInputStream.h>
 #include <jcpp.h>
 
-using $DataOutput = ::java::io::DataOutput;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ImageInputStream = ::javax::imageio::stream::ImageInputStream;

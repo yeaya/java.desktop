@@ -12,17 +12,13 @@
 #undef FOCUSED_COMPONENT
 
 using $FocusEvent = ::java::awt::event::FocusEvent;
-using $FocusListener = ::java::awt::event::FocusListener;
 using $MouseEvent = ::java::awt::event::MouseEvent;
-using $MouseListener = ::java::awt::event::MouseListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $CaretEvent = ::javax::swing::event::CaretEvent;
 using $ChangeEvent = ::javax::swing::event::ChangeEvent;
-using $ChangeListener = ::javax::swing::event::ChangeListener;
 using $Caret = ::javax::swing::text::Caret;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $AppContext = ::sun::awt::AppContext;

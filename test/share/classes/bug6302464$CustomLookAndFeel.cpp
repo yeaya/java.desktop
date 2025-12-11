@@ -11,9 +11,7 @@
 #undef KEY_TEXT_LCD_CONTRAST
 #undef VALUE_TEXT_ANTIALIAS_GASP
 
-using $bug6302464 = ::bug6302464;
 using $RenderingHints = ::java::awt::RenderingHints;
-using $RenderingHints$Key = ::java::awt::RenderingHints$Key;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

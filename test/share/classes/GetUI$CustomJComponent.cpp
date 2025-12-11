@@ -5,7 +5,6 @@
 #include <javax/swing/plaf/ComponentUI.h>
 #include <jcpp.h>
 
-using $GetUI = ::GetUI;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

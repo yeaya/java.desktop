@@ -55,7 +55,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractAction = ::javax::swing::AbstractAction;
 using $Action = ::javax::swing::Action;
 using $ActionMap = ::javax::swing::ActionMap;
-using $ComponentInputMap = ::javax::swing::ComponentInputMap;
 using $InputMap = ::javax::swing::InputMap;
 using $JComponent = ::javax::swing::JComponent;
 using $JInternalFrame = ::javax::swing::JInternalFrame;

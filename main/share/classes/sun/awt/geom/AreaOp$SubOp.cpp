@@ -7,7 +7,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AreaOp = ::sun::awt::geom::AreaOp;
 using $AreaOp$CAGOp = ::sun::awt::geom::AreaOp$CAGOp;
 
 namespace sun {

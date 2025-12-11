@@ -82,7 +82,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $ByteOrder = ::java::nio::ByteOrder;
 using $Arrays = ::java::util::Arrays;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $MotifDnDConstants$Swapper = ::sun::awt::X11::MotifDnDConstants$Swapper;
 using $Native = ::sun::awt::X11::Native;
 using $WindowPropertyGetter = ::sun::awt::X11::WindowPropertyGetter;

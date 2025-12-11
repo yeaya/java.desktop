@@ -13,7 +13,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JPanel = ::javax::swing::JPanel;
 
 $FieldInfo _bug8044371$1_FieldInfo_[] = {

@@ -17,9 +17,7 @@
 #include <jcpp.h>
 
 using $MotifScrollPaneUI$1 = ::com::sun::java::swing::plaf::motif::MotifScrollPaneUI$1;
-using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
-using $Container = ::java::awt::Container;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

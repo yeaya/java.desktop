@@ -33,7 +33,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Icon = ::javax::swing::Icon;
 using $ImageIcon = ::javax::swing::ImageIcon;
 using $UIDefaults = ::javax::swing::UIDefaults;
-using $UIDefaults$ActiveValue = ::javax::swing::UIDefaults$ActiveValue;
 using $UIDefaults$LazyValue = ::javax::swing::UIDefaults$LazyValue;
 using $BasicLookAndFeel = ::javax::swing::plaf::basic::BasicLookAndFeel;
 using $OSInfo = ::sun::awt::OSInfo;

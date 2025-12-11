@@ -15,11 +15,9 @@ using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JTextArea = ::javax::swing::JTextArea;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $FieldInfo _bug4697612$6_FieldInfo_[] = {
 	{"val$result", "[I", nullptr, $FINAL | $SYNTHETIC, $field(bug4697612$6, val$result)},

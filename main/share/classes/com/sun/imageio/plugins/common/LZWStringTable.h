@@ -47,7 +47,7 @@ public:
 	static const int16_t HASH_FREE = (int16_t)0x0000FFFF;
 	static const int16_t NEXT_FIRST = (int16_t)0x0000FFFF;
 	static const int32_t MAXBITS = 12;
-	static const int32_t MAXSTR = (1 << MAXBITS);
+	static const int32_t MAXSTR = 4096; // (1 << MAXBITS)
 	static const int16_t HASHSIZE = 9973;
 	static const int16_t HASHSTEP = 2039;
 	$bytes* strChr = nullptr;

@@ -59,10 +59,8 @@
 #undef SIMPLE_SCROLL_MODE
 
 using $ComponentArray = $Array<::java::awt::Component>;
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $ChangeListenerArray = $Array<::javax::swing::event::ChangeListener>;
 using $AlphaComposite = ::java::awt::AlphaComposite;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
@@ -70,7 +68,6 @@ using $Composite = ::java::awt::Composite;
 using $Container = ::java::awt::Container;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $Dimension = ::java::awt::Dimension;
-using $Font = ::java::awt::Font;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
@@ -99,7 +96,6 @@ using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $EventListener = ::java::util::EventListener;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $JComponent = ::javax::swing::JComponent;
 using $JComponent$AccessibleJComponent = ::javax::swing::JComponent$AccessibleJComponent;

@@ -58,7 +58,6 @@ using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $Image = ::java::awt::Image;
 using $Point = ::java::awt::Point;
-using $Rectangle = ::java::awt::Rectangle;
 using $Transparency = ::java::awt::Transparency;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $BufferedImage = ::java::awt::image::BufferedImage;
@@ -204,7 +203,7 @@ bool ImageRepresentation::s_useNative = false;
 void ImageRepresentation::initIDs() {
 	$init(ImageRepresentation);
 	$prepareNativeStatic(ImageRepresentation, initIDs, void);
-	$invokeNativeStatic(ImageRepresentation, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -421,7 +420,7 @@ void ImageRepresentation::setHints(int32_t h) {
 bool ImageRepresentation::setICMpixels(int32_t x, int32_t y, int32_t w, int32_t h, $ints* lut, $bytes* pix, int32_t off, int32_t scansize, $IntegerComponentRaster* ict) {
 	bool $ret = false;
 	$prepareNative(ImageRepresentation, setICMpixels, bool, int32_t x, int32_t y, int32_t w, int32_t h, $ints* lut, $bytes* pix, int32_t off, int32_t scansize, $IntegerComponentRaster* ict);
-	$ret = $invokeNative(ImageRepresentation, setICMpixels, x, y, w, h, lut, pix, off, scansize, ict);
+	$ret = $invokeNative(x, y, w, h, lut, pix, off, scansize, ict);
 	$finishNative();
 	return $ret;
 }
@@ -429,7 +428,7 @@ bool ImageRepresentation::setICMpixels(int32_t x, int32_t y, int32_t w, int32_t 
 bool ImageRepresentation::setDiffICM(int32_t x, int32_t y, int32_t w, int32_t h, $ints* lut, int32_t transPix, int32_t numLut, $IndexColorModel* icm, $bytes* pix, int32_t off, int32_t scansize, $ByteComponentRaster* bct, int32_t chanOff) {
 	bool $ret = false;
 	$prepareNative(ImageRepresentation, setDiffICM, bool, int32_t x, int32_t y, int32_t w, int32_t h, $ints* lut, int32_t transPix, int32_t numLut, $IndexColorModel* icm, $bytes* pix, int32_t off, int32_t scansize, $ByteComponentRaster* bct, int32_t chanOff);
-	$ret = $invokeNative(ImageRepresentation, setDiffICM, x, y, w, h, lut, transPix, numLut, icm, pix, off, scansize, bct, chanOff);
+	$ret = $invokeNative(x, y, w, h, lut, transPix, numLut, icm, pix, off, scansize, bct, chanOff);
 	$finishNative();
 	return $ret;
 }

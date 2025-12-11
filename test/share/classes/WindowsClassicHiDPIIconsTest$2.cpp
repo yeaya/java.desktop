@@ -9,7 +9,6 @@
 #include <jcpp.h>
 
 using $WindowsClassicHiDPIIconsTest = ::WindowsClassicHiDPIIconsTest;
-using $Window = ::java::awt::Window;
 using $WindowAdapter = ::java::awt::event::WindowAdapter;
 using $WindowEvent = ::java::awt::event::WindowEvent;
 using $ClassInfo = ::java::lang::ClassInfo;

@@ -26,7 +26,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $Files = ::java::nio::file::Files;
 using $Path = ::java::nio::file::Path;
-using $FileAttribute = ::java::nio::file::attribute::FileAttribute;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 
 $FieldInfo _bug6868611_FieldInfo_[] = {

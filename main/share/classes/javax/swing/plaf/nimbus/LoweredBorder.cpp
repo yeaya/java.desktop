@@ -44,7 +44,6 @@ using $Graphics2D = ::java::awt::Graphics2D;
 using $Image = ::java::awt::Image;
 using $Insets = ::java::awt::Insets;
 using $RenderingHints = ::java::awt::RenderingHints;
-using $RenderingHints$Key = ::java::awt::RenderingHints$Key;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ImageObserver = ::java::awt::image::ImageObserver;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -54,14 +53,12 @@ using $Integer = ::java::lang::Integer;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
-using $Border = ::javax::swing::border::Border;
 using $AbstractRegionPainter = ::javax::swing::plaf::nimbus::AbstractRegionPainter;
 using $AbstractRegionPainter$PaintContext = ::javax::swing::plaf::nimbus::AbstractRegionPainter$PaintContext;
 using $AbstractRegionPainter$PaintContext$CacheMode = ::javax::swing::plaf::nimbus::AbstractRegionPainter$PaintContext$CacheMode;
 using $ImageScalingHelper = ::javax::swing::plaf::nimbus::ImageScalingHelper;
 using $ImageScalingHelper$PaintType = ::javax::swing::plaf::nimbus::ImageScalingHelper$PaintType;
 using $InnerShadowEffect = ::javax::swing::plaf::nimbus::InnerShadowEffect;
-using $ShadowEffect = ::javax::swing::plaf::nimbus::ShadowEffect;
 
 namespace javax {
 	namespace swing {

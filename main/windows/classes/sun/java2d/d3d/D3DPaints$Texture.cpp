@@ -20,9 +20,7 @@
 
 using $Color = ::java::awt::Color;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
-using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $Image = ::java::awt::Image;
-using $Paint = ::java::awt::Paint;
 using $TexturePaint = ::java::awt::TexturePaint;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ClassInfo = ::java::lang::ClassInfo;

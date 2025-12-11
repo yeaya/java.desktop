@@ -4,7 +4,6 @@
 #include <TestUI.h>
 #include <jcpp.h>
 
-using $SliderTickTest = ::SliderTickTest;
 using $TestUI = ::TestUI;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
@@ -12,7 +11,6 @@ using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 
 $FieldInfo _SliderTickTest$2_FieldInfo_[] = {

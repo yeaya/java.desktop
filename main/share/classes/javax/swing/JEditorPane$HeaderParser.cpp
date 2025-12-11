@@ -9,7 +9,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JEditorPane = ::javax::swing::JEditorPane;
 
 namespace javax {
 	namespace swing {

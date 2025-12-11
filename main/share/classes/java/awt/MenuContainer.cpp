@@ -5,9 +5,6 @@
 #include <java/awt/MenuComponent.h>
 #include <jcpp.h>
 
-using $Event = ::java::awt::Event;
-using $Font = ::java::awt::Font;
-using $MenuComponent = ::java::awt::MenuComponent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $MethodInfo = ::java::lang::MethodInfo;

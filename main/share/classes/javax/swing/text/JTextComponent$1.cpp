@@ -13,8 +13,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $TransferHandler$DropLocation = ::javax::swing::TransferHandler$DropLocation;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
-using $JTextComponent$DropLocation = ::javax::swing::text::JTextComponent$DropLocation;
-using $SwingAccessor$JTextComponentAccessor = ::sun::swing::SwingAccessor$JTextComponentAccessor;
 
 namespace javax {
 	namespace swing {

@@ -23,7 +23,6 @@
 #undef TYPE_NEAREST_NEIGHBOR
 
 using $Color = ::java::awt::Color;
-using $Composite = ::java::awt::Composite;
 using $Image = ::java::awt::Image;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $AffineTransformOp = ::java::awt::image::AffineTransformOp;
@@ -33,13 +32,11 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
 using $SurfaceData = ::sun::java2d::SurfaceData;
-using $CompositeType = ::sun::java2d::loops::CompositeType;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $TransformBlit = ::sun::java2d::loops::TransformBlit;
 using $OGLBufImgOps = ::sun::java2d::opengl::OGLBufImgOps;
 using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;
 using $DrawImage = ::sun::java2d::pipe::DrawImage;
-using $Region = ::sun::java2d::pipe::Region;
 
 namespace sun {
 	namespace java2d {

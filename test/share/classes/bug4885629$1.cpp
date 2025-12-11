@@ -4,7 +4,6 @@
 #include <javax/swing/plaf/basic/BasicLookAndFeel.h>
 #include <jcpp.h>
 
-using $bug4885629 = ::bug4885629;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

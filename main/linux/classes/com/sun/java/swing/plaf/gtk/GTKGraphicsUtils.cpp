@@ -43,7 +43,6 @@ using $Region = ::javax::swing::plaf::synth::Region;
 using $SynthConstants = ::javax::swing::plaf::synth::SynthConstants;
 using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
 using $SynthGraphicsUtils = ::javax::swing::plaf::synth::SynthGraphicsUtils;
-using $SynthStyle = ::javax::swing::plaf::synth::SynthStyle;
 
 namespace com {
 	namespace sun {

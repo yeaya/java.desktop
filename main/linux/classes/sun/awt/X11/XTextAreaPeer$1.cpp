@@ -11,16 +11,11 @@
 #undef BUTTON
 #undef TEXT
 
-using $XTextAreaPeer$JavaMouseEventHandler$Pointer$TypeArray = $Array<::sun::awt::X11::XTextAreaPeer$JavaMouseEventHandler$Pointer$Type>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $XTextAreaPeer = ::sun::awt::X11::XTextAreaPeer;
-using $XTextAreaPeer$JavaMouseEventHandler = ::sun::awt::X11::XTextAreaPeer$JavaMouseEventHandler;
-using $XTextAreaPeer$JavaMouseEventHandler$Pointer = ::sun::awt::X11::XTextAreaPeer$JavaMouseEventHandler$Pointer;
 using $XTextAreaPeer$JavaMouseEventHandler$Pointer$Type = ::sun::awt::X11::XTextAreaPeer$JavaMouseEventHandler$Pointer$Type;
 
 namespace sun {

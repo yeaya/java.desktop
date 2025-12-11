@@ -39,11 +39,7 @@ using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $LightweightFrame = ::sun::awt::LightweightFrame;
-using $OverrideNativeWindowHandle = ::sun::awt::OverrideNativeWindowHandle;
-using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $WFramePeer = ::sun::awt::windows::WFramePeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
-using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
 using $JLightweightFrame = ::sun::swing::JLightweightFrame;
 using $SwingAccessor = ::sun::swing::SwingAccessor;
 using $SwingAccessor$JLightweightFrameAccessor = ::sun::swing::SwingAccessor$JLightweightFrameAccessor;
@@ -134,7 +130,7 @@ $Graphics* WLightweightFramePeer::getGraphics() {
 
 void WLightweightFramePeer::overrideNativeHandle(int64_t hwnd) {
 	$prepareNative(WLightweightFramePeer, overrideNativeHandle, void, int64_t hwnd);
-	$invokeNative(WLightweightFramePeer, overrideNativeHandle, hwnd);
+	$invokeNative(hwnd);
 	$finishNative();
 }
 

@@ -13,9 +13,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
-using $RTFGenerator = ::javax::swing::text::rtf::RTFGenerator;
 
 namespace javax {
 	namespace swing {

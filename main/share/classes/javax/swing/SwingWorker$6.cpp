@@ -14,7 +14,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $Executors = ::java::util::concurrent::Executors;
 using $ThreadFactory = ::java::util::concurrent::ThreadFactory;
-using $SwingWorker = ::javax::swing::SwingWorker;
 
 namespace javax {
 	namespace swing {

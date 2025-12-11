@@ -11,7 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PixelWriter = ::sun::java2d::loops::PixelWriter;
 using $XorPixelWriter = ::sun::java2d::loops::XorPixelWriter;
 
 namespace sun {

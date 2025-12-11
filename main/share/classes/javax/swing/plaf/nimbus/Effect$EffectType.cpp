@@ -14,7 +14,6 @@ using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Effect = ::javax::swing::plaf::nimbus::Effect;
 
 namespace javax {
 	namespace swing {

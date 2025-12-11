@@ -3,7 +3,6 @@
 #include <java/awt/event/ItemListener.h>
 #include <jcpp.h>
 
-using $ItemListener = ::java::awt::event::ItemListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

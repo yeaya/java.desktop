@@ -3,8 +3,6 @@
 #include <java/awt/Dimension.h>
 #include <jcpp.h>
 
-using $Dimension = ::java::awt::Dimension;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

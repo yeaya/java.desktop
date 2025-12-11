@@ -39,7 +39,6 @@ using $ColorTransformArray = $Array<::sun::java2d::cmm::ColorTransform>;
 using $Transparency = ::java::awt::Transparency;
 using $ColorSpace = ::java::awt::color::ColorSpace;
 using $ICC_ColorSpace = ::java::awt::color::ICC_ColorSpace;
-using $ICC_Profile = ::java::awt::color::ICC_Profile;
 using $ColorModel$1 = ::java::awt::image::ColorModel$1;
 using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DirectColorModel = ::java::awt::image::DirectColorModel;
@@ -221,7 +220,7 @@ void ColorModel::loadLibraries() {
 void ColorModel::initIDs() {
 	$init(ColorModel);
 	$prepareNativeStatic(ColorModel, initIDs, void);
-	$invokeNativeStatic(ColorModel, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

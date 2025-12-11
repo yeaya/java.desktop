@@ -8,7 +8,6 @@
 
 #undef ALIGNMENT_HORIZONTAL
 
-using $Polygon = ::java::awt::Polygon;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

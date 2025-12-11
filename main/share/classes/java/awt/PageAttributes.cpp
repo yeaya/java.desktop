@@ -23,7 +23,6 @@
 #undef PORTRAIT
 #undef US
 
-using $AttributeValue = ::java::awt::AttributeValue;
 using $PageAttributes$ColorType = ::java::awt::PageAttributes$ColorType;
 using $PageAttributes$MediaType = ::java::awt::PageAttributes$MediaType;
 using $PageAttributes$OrientationRequestedType = ::java::awt::PageAttributes$OrientationRequestedType;

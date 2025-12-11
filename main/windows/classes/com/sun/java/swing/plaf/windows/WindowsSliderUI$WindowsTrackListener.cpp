@@ -11,15 +11,12 @@
 #include <jcpp.h>
 
 using $WindowsSliderUI = ::com::sun::java::swing::plaf::windows::WindowsSliderUI;
-using $Component = ::java::awt::Component;
 using $Rectangle = ::java::awt::Rectangle;
-using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JSlider = ::javax::swing::JSlider;
 using $BasicSliderUI = ::javax::swing::plaf::basic::BasicSliderUI;
 using $BasicSliderUI$TrackListener = ::javax::swing::plaf::basic::BasicSliderUI$TrackListener;

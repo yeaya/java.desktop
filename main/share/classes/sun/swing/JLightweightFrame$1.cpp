@@ -8,7 +8,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JLightweightFrame = ::sun::swing::JLightweightFrame;
-using $SwingAccessor$JLightweightFrameAccessor = ::sun::swing::SwingAccessor$JLightweightFrameAccessor;
 
 namespace sun {
 	namespace swing {

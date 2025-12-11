@@ -19,7 +19,6 @@
 using $ComponentArray = $Array<::java::awt::Component>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Insets = ::java::awt::Insets;
 using $Rectangle = ::java::awt::Rectangle;
 using $PropertyVetoException = ::java::beans::PropertyVetoException;
 using $Boolean = ::java::lang::Boolean;
@@ -32,7 +31,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JDesktopPane = ::javax::swing::JDesktopPane;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
 using $JInternalFrame$JDesktopIcon = ::javax::swing::JInternalFrame$JDesktopIcon;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $SynthDesktopPaneUI = ::javax::swing::plaf::synth::SynthDesktopPaneUI;
 using $SynthDesktopPaneUI$TaskBar = ::javax::swing::plaf::synth::SynthDesktopPaneUI$TaskBar;
 

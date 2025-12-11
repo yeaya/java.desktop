@@ -25,7 +25,6 @@ using $Dimension = ::java::awt::Dimension;
 using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
 using $Insets = ::java::awt::Insets;
-using $LayoutManager = ::java::awt::LayoutManager;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

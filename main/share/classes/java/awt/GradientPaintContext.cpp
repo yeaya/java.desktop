@@ -17,7 +17,6 @@
 #undef MIN_VALUE
 
 using $Color = ::java::awt::Color;
-using $PaintContext = ::java::awt::PaintContext;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $NoninvertibleTransformException = ::java::awt::geom::NoninvertibleTransformException;
 using $Point2D = ::java::awt::geom::Point2D;
@@ -26,16 +25,13 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $DirectColorModel = ::java::awt::image::DirectColorModel;
 using $PackedColorModel = ::java::awt::image::PackedColorModel;
 using $Raster = ::java::awt::image::Raster;
-using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $IntegerComponentRaster = ::sun::awt::image::IntegerComponentRaster;
-using $SunWritableRaster = ::sun::awt::image::SunWritableRaster;
 
 namespace java {
 	namespace awt {

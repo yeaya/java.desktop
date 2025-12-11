@@ -11,16 +11,12 @@
 #include <jcpp.h>
 
 using $MouseInfo = ::java::awt::MouseInfo;
-using $Point = ::java::awt::Point;
 using $PointerInfo = ::java::awt::PointerInfo;
-using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
-using $InfoWindow$LiveArguments = ::sun::awt::X11::InfoWindow$LiveArguments;
 using $InfoWindow$Tooltip = ::sun::awt::X11::InfoWindow$Tooltip;
 using $InfoWindow$Tooltip$2 = ::sun::awt::X11::InfoWindow$Tooltip$2;
 using $InfoWindow$Tooltip$LiveArguments = ::sun::awt::X11::InfoWindow$Tooltip$LiveArguments;

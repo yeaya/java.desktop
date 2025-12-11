@@ -20,7 +20,6 @@ using $DataInput = ::java::io::DataInput;
 using $DataInputStream = ::java::io::DataInputStream;
 using $EOFException = ::java::io::EOFException;
 using $IOException = ::java::io::IOException;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $Double = ::java::lang::Double;

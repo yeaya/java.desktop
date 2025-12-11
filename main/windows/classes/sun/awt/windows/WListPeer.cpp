@@ -48,18 +48,15 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $ListPeer = ::java::awt::peer::ListPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $WListPeer$1 = ::sun::awt::windows::WListPeer$1;
 using $WListPeer$2 = ::sun::awt::windows::WListPeer$2;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WToolkit = ::sun::awt::windows::WToolkit;
 using $Region = ::sun::java2d::pipe::Region;
 
@@ -391,13 +388,13 @@ void WListPeer::addItem($String* item, int32_t index) {
 
 void WListPeer::addItems($StringArray* items, int32_t index, int32_t width) {
 	$prepareNative(WListPeer, addItems, void, $StringArray* items, int32_t index, int32_t width);
-	$invokeNative(WListPeer, addItems, items, index, width);
+	$invokeNative(items, index, width);
 	$finishNative();
 }
 
 void WListPeer::delItems(int32_t start, int32_t end) {
 	$prepareNative(WListPeer, delItems, void, int32_t start, int32_t end);
-	$invokeNative(WListPeer, delItems, start, end);
+	$invokeNative(start, end);
 	$finishNative();
 }
 
@@ -408,32 +405,32 @@ void WListPeer::clear() {
 
 void WListPeer::select(int32_t index) {
 	$prepareNative(WListPeer, select, void, int32_t index);
-	$invokeNative(WListPeer, select, index);
+	$invokeNative(index);
 	$finishNative();
 }
 
 void WListPeer::deselect(int32_t index) {
 	$prepareNative(WListPeer, deselect, void, int32_t index);
-	$invokeNative(WListPeer, deselect, index);
+	$invokeNative(index);
 	$finishNative();
 }
 
 void WListPeer::makeVisible(int32_t index) {
 	$prepareNative(WListPeer, makeVisible, void, int32_t index);
-	$invokeNative(WListPeer, makeVisible, index);
+	$invokeNative(index);
 	$finishNative();
 }
 
 void WListPeer::setMultipleSelections(bool v) {
 	$prepareNative(WListPeer, setMultipleSelections, void, bool v);
-	$invokeNative(WListPeer, setMultipleSelections, v);
+	$invokeNative(v);
 	$finishNative();
 }
 
 int32_t WListPeer::getMaxWidth() {
 	int32_t $ret = 0;
 	$prepareNative(WListPeer, getMaxWidth, int32_t);
-	$ret = $invokeNative(WListPeer, getMaxWidth);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -444,7 +441,7 @@ void WListPeer::init$($List* target) {
 
 void WListPeer::create($WComponentPeer* parent) {
 	$prepareNative(WListPeer, create, void, $WComponentPeer* parent);
-	$invokeNative(WListPeer, create, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 
@@ -491,14 +488,14 @@ bool WListPeer::shouldClearRectBeforePaint() {
 
 void WListPeer::updateMaxItemWidth() {
 	$prepareNative(WListPeer, updateMaxItemWidth, void);
-	$invokeNative(WListPeer, updateMaxItemWidth);
+	$invokeNative();
 	$finishNative();
 }
 
 bool WListPeer::isSelected(int32_t index) {
 	bool $ret = false;
 	$prepareNative(WListPeer, isSelected, bool, int32_t index);
-	$ret = $invokeNative(WListPeer, isSelected, index);
+	$ret = $invokeNative(index);
 	$finishNative();
 	return $ret;
 }

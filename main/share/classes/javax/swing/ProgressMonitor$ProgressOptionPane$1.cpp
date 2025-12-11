@@ -13,8 +13,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JOptionPane = ::javax::swing::JOptionPane;
-using $ProgressMonitor = ::javax::swing::ProgressMonitor;
 using $ProgressMonitor$ProgressOptionPane = ::javax::swing::ProgressMonitor$ProgressOptionPane;
 
 namespace javax {

@@ -54,12 +54,7 @@ using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $JComponent = ::javax::swing::JComponent;
 using $JFormattedTextField = ::javax::swing::JFormattedTextField;
 using $JFrame = ::javax::swing::JFrame;
@@ -69,7 +64,6 @@ using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;
 using $UIManager$LookAndFeelInfo = ::javax::swing::UIManager$LookAndFeelInfo;
 using $UnsupportedLookAndFeelException = ::javax::swing::UnsupportedLookAndFeelException;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 class TestSelectedTextBackgroundColor$$Lambda$lambda$main$0 : public $Runnable {
 	$class(TestSelectedTextBackgroundColor$$Lambda$lambda$main$0, $NO_CLASS_INIT, $Runnable)

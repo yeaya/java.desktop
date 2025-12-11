@@ -2,7 +2,6 @@
 
 #include <jcpp.h>
 
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

@@ -5,11 +5,6 @@
 #include <java/awt/image/WritableRaster.h>
 #include <jcpp.h>
 
-using $PointArray = $Array<::java::awt::Point>;
-using $Raster = ::java::awt::image::Raster;
-using $RenderedImage = ::java::awt::image::RenderedImage;
-using $TileObserver = ::java::awt::image::TileObserver;
-using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

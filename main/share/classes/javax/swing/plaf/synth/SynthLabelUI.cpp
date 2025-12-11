@@ -31,7 +31,6 @@
 #undef ENABLED
 #undef TEXT_FOREGROUND
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
@@ -46,7 +45,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
-using $EventObject = ::java::util::EventObject;
 using $Icon = ::javax::swing::Icon;
 using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;

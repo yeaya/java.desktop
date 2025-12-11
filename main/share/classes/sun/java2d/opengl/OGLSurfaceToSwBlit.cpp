@@ -25,20 +25,16 @@ using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $Blit = ::sun::java2d::loops::Blit;
 using $CompositeType = ::sun::java2d::loops::CompositeType;
-using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $OGLContext = ::sun::java2d::opengl::OGLContext;
 using $OGLRenderQueue = ::sun::java2d::opengl::OGLRenderQueue;
 using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;
-using $BufferedContext = ::sun::java2d::pipe::BufferedContext;
 using $Region = ::sun::java2d::pipe::Region;
 using $RenderBuffer = ::sun::java2d::pipe::RenderBuffer;
-using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 using $AccelSurface = ::sun::java2d::pipe::hw::AccelSurface;
 
 namespace sun {

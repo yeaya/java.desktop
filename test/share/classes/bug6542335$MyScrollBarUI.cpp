@@ -5,7 +5,6 @@
 #include <javax/swing/plaf/basic/BasicScrollBarUI.h>
 #include <jcpp.h>
 
-using $bug6542335 = ::bug6542335;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

@@ -9,7 +9,6 @@ using $Comparable = ::java::lang::Comparable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $GroupLayout = ::javax::swing::GroupLayout;
 
 namespace javax {
 	namespace swing {

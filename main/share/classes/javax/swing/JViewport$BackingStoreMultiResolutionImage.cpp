@@ -24,7 +24,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Arrays = ::java::util::Arrays;
 using $Collections = ::java::util::Collections;
 using $List = ::java::util::List;
-using $JViewport = ::javax::swing::JViewport;
 
 namespace javax {
 	namespace swing {

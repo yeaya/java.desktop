@@ -48,7 +48,6 @@
 #undef VAI
 
 using $NumericShaper$RangeArray = $Array<::java::awt::font::NumericShaper$Range>;
-using $NumericShaper = ::java::awt::font::NumericShaper;
 using $NumericShaper$Range$1 = ::java::awt::font::NumericShaper$Range$1;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;

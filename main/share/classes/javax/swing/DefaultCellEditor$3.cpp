@@ -10,7 +10,6 @@
 
 #undef MOUSE_DRAGGED
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;

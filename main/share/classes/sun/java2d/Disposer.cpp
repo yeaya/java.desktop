@@ -41,11 +41,7 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $ThreadGroup = ::java::lang::ThreadGroup;
 using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $PhantomReference = ::java::lang::ref::PhantomReference;
 using $Reference = ::java::lang::ref::Reference;
 using $ReferenceQueue = ::java::lang::ref::ReferenceQueue;
@@ -274,7 +270,7 @@ void Disposer::pollRemove() {
 void Disposer::initIDs() {
 	$init(Disposer);
 	$prepareNativeStatic(Disposer, initIDs, void);
-	$invokeNativeStatic(Disposer, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

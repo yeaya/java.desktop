@@ -8,8 +8,6 @@
 #include <jcpp.h>
 
 using $GUIUndFrame = ::GUIUndFrame;
-using $Component = ::java::awt::Component;
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $WindowAdapter = ::java::awt::event::WindowAdapter;
 using $WindowEvent = ::java::awt::event::WindowEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -17,7 +15,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JFrame = ::javax::swing::JFrame;
 
 $FieldInfo _GUIUndFrame$2_FieldInfo_[] = {
 	{"this$0", "LGUIUndFrame;", nullptr, $FINAL | $SYNTHETIC, $field(GUIUndFrame$2, this$0)},

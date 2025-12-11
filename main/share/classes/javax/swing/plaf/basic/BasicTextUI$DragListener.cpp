@@ -13,18 +13,14 @@
 #include <javax/swing/text/JTextComponent.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $MouseInputAdapter = ::javax::swing::event::MouseInputAdapter;
-using $BasicTextUI = ::javax::swing::plaf::basic::BasicTextUI;
 using $DragRecognitionSupport = ::javax::swing::plaf::basic::DragRecognitionSupport;
 using $DragRecognitionSupport$BeforeDrag = ::javax::swing::plaf::basic::DragRecognitionSupport$BeforeDrag;
 using $Caret = ::javax::swing::text::Caret;

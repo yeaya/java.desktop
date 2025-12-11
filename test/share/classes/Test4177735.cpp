@@ -20,9 +20,7 @@
 
 using $AbstractColorChooserPanelArray = $Array<::javax::swing::colorchooser::AbstractColorChooserPanel>;
 using $Component = ::java::awt::Component;
-using $Dialog = ::java::awt::Dialog;
 using $Point = ::java::awt::Point;
-using $Window = ::java::awt::Window;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Error = ::java::lang::Error;

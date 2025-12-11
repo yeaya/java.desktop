@@ -4,7 +4,6 @@
 #include <jcpp.h>
 
 using $Path2D = ::java::awt::geom::Path2D;
-using $PathIterator = ::java::awt::geom::PathIterator;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

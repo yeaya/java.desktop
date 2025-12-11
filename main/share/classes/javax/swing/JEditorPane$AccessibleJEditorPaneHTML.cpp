@@ -29,7 +29,6 @@ using $AccessibleText = ::javax::accessibility::AccessibleText;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $JEditorPane$AccessibleJEditorPane = ::javax::swing::JEditorPane$AccessibleJEditorPane;
 using $JEditorPane$JEditorPaneAccessibleHypertextSupport = ::javax::swing::JEditorPane$JEditorPaneAccessibleHypertextSupport;
-using $EditorKit = ::javax::swing::text::EditorKit;
 using $JTextComponent$AccessibleJTextComponent = ::javax::swing::text::JTextComponent$AccessibleJTextComponent;
 using $HTMLEditorKit = ::javax::swing::text::html::HTMLEditorKit;
 

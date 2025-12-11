@@ -3325,7 +3325,6 @@
 #include <javax/swing/plaf/nimbus/InternalFrameTitlePaneMaximizeButtonWindowNotFocusedState.h>
 #include <javax/swing/plaf/nimbus/InternalFrameTitlePaneMenuButtonPainter.h>
 #include <javax/swing/plaf/nimbus/InternalFrameTitlePaneMenuButtonWindowNotFocusedState.h>
-#include <javax/swing/plaf/nimbus/InternalFrameTitlePanePainter.h>
 #include <javax/swing/plaf/nimbus/InternalFrameTitlePaneWindowFocusedState.h>
 #include <javax/swing/plaf/nimbus/InternalFrameWindowFocusedState.h>
 #include <javax/swing/plaf/nimbus/LoweredBorder.h>
@@ -3355,7 +3354,6 @@
 #include <javax/swing/plaf/nimbus/NimbusStyle$RuntimeState.h>
 #include <javax/swing/plaf/nimbus/NimbusStyle$Values.h>
 #include <javax/swing/plaf/nimbus/OptionPaneMessageAreaOptionPaneLabelPainter.h>
-#include <javax/swing/plaf/nimbus/OptionPaneMessageAreaPainter.h>
 #include <javax/swing/plaf/nimbus/OptionPanePainter.h>
 #include <javax/swing/plaf/nimbus/OuterGlowEffect.h>
 #include <javax/swing/plaf/nimbus/PasswordFieldPainter.h>
@@ -3367,30 +3365,25 @@
 #include <javax/swing/plaf/nimbus/RadioButtonMenuItemPainter.h>
 #include <javax/swing/plaf/nimbus/RadioButtonPainter.h>
 #include <javax/swing/plaf/nimbus/ScrollBarButtonPainter.h>
-#include <javax/swing/plaf/nimbus/ScrollBarPainter.h>
 #include <javax/swing/plaf/nimbus/ScrollBarThumbPainter.h>
 #include <javax/swing/plaf/nimbus/ScrollBarTrackPainter.h>
 #include <javax/swing/plaf/nimbus/ScrollPanePainter.h>
 #include <javax/swing/plaf/nimbus/SeparatorPainter.h>
 #include <javax/swing/plaf/nimbus/ShadowEffect.h>
 #include <javax/swing/plaf/nimbus/SliderArrowShapeState.h>
-#include <javax/swing/plaf/nimbus/SliderPainter.h>
 #include <javax/swing/plaf/nimbus/SliderThumbArrowShapeState.h>
 #include <javax/swing/plaf/nimbus/SliderThumbPainter.h>
 #include <javax/swing/plaf/nimbus/SliderTrackArrowShapeState.h>
 #include <javax/swing/plaf/nimbus/SliderTrackPainter.h>
 #include <javax/swing/plaf/nimbus/SpinnerNextButtonPainter.h>
-#include <javax/swing/plaf/nimbus/SpinnerPainter.h>
 #include <javax/swing/plaf/nimbus/SpinnerPanelSpinnerFormattedTextFieldPainter.h>
 #include <javax/swing/plaf/nimbus/SpinnerPreviousButtonPainter.h>
 #include <javax/swing/plaf/nimbus/SplitPaneDividerPainter.h>
 #include <javax/swing/plaf/nimbus/SplitPaneDividerVerticalState.h>
-#include <javax/swing/plaf/nimbus/SplitPanePainter.h>
 #include <javax/swing/plaf/nimbus/SplitPaneVerticalState.h>
 #include <javax/swing/plaf/nimbus/State.h>
 #include <javax/swing/plaf/nimbus/State$StandardState.h>
 #include <javax/swing/plaf/nimbus/SynthPainterImpl.h>
-#include <javax/swing/plaf/nimbus/TabbedPanePainter.h>
 #include <javax/swing/plaf/nimbus/TabbedPaneTabAreaPainter.h>
 #include <javax/swing/plaf/nimbus/TabbedPaneTabPainter.h>
 #include <javax/swing/plaf/nimbus/TableEditorPainter.h>
@@ -4059,9 +4052,6 @@
 #include <sun/awt/AWTAccessor$WindowAccessor.h>
 #include <sun/awt/AWTAutoShutdown.h>
 #include <sun/awt/AWTAutoShutdown$1.h>
-#include <sun/awt/AWTCharset.h>
-#include <sun/awt/AWTCharset$Decoder.h>
-#include <sun/awt/AWTCharset$Encoder.h>
 #include <sun/awt/AWTIcon32_java_icon16_png.h>
 #include <sun/awt/AWTIcon32_java_icon24_png.h>
 #include <sun/awt/AWTIcon32_java_icon32_png.h>
@@ -4240,7 +4230,6 @@
 #include <sun/awt/X11/OwnershipListener.h>
 #include <sun/awt/X11/PropMwmHints.h>
 #include <sun/awt/X11/Screen.h>
-#include <sun/awt/X11/ScreenFormat.h>
 #include <sun/awt/X11/Separator.h>
 #include <sun/awt/X11/ToplevelStateListener.h>
 #include <sun/awt/X11/UnsafeXDisposerRecord.h>
@@ -4252,7 +4241,6 @@
 #include <sun/awt/X11/XAWTXSettings$1.h>
 #include <sun/awt/X11/XAbstractMenuItem.h>
 #include <sun/awt/X11/XAnyEvent.h>
-#include <sun/awt/X11/XArc.h>
 #include <sun/awt/X11/XAtom.h>
 #include <sun/awt/X11/XAtomList.h>
 #include <sun/awt/X11/XAwtState.h>
@@ -4268,8 +4256,6 @@
 #include <sun/awt/X11/XButtonEvent.h>
 #include <sun/awt/X11/XButtonPeer.h>
 #include <sun/awt/X11/XCanvasPeer.h>
-#include <sun/awt/X11/XChar2b.h>
-#include <sun/awt/X11/XCharStruct.h>
 #include <sun/awt/X11/XCheckboxMenuItemPeer.h>
 #include <sun/awt/X11/XCheckboxMenuItemPeer$1.h>
 #include <sun/awt/X11/XCheckboxPeer.h>
@@ -4281,7 +4267,6 @@
 #include <sun/awt/X11/XChoicePeerListener.h>
 #include <sun/awt/X11/XCirculateEvent.h>
 #include <sun/awt/X11/XCirculateRequestEvent.h>
-#include <sun/awt/X11/XClassHint.h>
 #include <sun/awt/X11/XClientMessageEvent.h>
 #include <sun/awt/X11/XClipboard.h>
 #include <sun/awt/X11/XClipboard$CheckChangeTimerTask.h>
@@ -4289,7 +4274,6 @@
 #include <sun/awt/X11/XColor.h>
 #include <sun/awt/X11/XColormapEvent.h>
 #include <sun/awt/X11/XComponentPeer.h>
-#include <sun/awt/X11/XComposeStatus.h>
 #include <sun/awt/X11/XConfigureEvent.h>
 #include <sun/awt/X11/XConfigureRequestEvent.h>
 #include <sun/awt/X11/XConstants.h>
@@ -4357,7 +4341,6 @@
 #include <sun/awt/X11/XEventDispatcher.h>
 #include <sun/awt/X11/XException.h>
 #include <sun/awt/X11/XExposeEvent.h>
-#include <sun/awt/X11/XExtCodes.h>
 #include <sun/awt/X11/XExtData.h>
 #include <sun/awt/X11/XFileDialogPeer.h>
 #include <sun/awt/X11/XFileDialogPeer$1.h>
@@ -4366,39 +4349,19 @@
 #include <sun/awt/X11/XFocusChangeEvent.h>
 #include <sun/awt/X11/XFocusProxyWindow.h>
 #include <sun/awt/X11/XFontPeer.h>
-#include <sun/awt/X11/XFontProp.h>
-#include <sun/awt/X11/XFontSetExtents.h>
-#include <sun/awt/X11/XFontStruct.h>
 #include <sun/awt/X11/XFramePeer.h>
 #include <sun/awt/X11/XFramePeer$1.h>
-#include <sun/awt/X11/XGCValues.h>
 #include <sun/awt/X11/XGlobalCursorManager.h>
 #include <sun/awt/X11/XGraphicsExposeEvent.h>
 #include <sun/awt/X11/XGravityEvent.h>
 #include <sun/awt/X11/XHorizontalScrollbar.h>
-#include <sun/awt/X11/XHostAddress.h>
-#include <sun/awt/X11/XIMCallback.h>
-#include <sun/awt/X11/XIMHotKeyTrigger.h>
-#include <sun/awt/X11/XIMHotKeyTriggers.h>
-#include <sun/awt/X11/XIMPreeditCaretCallbackStruct.h>
-#include <sun/awt/X11/XIMPreeditDrawCallbackStruct.h>
-#include <sun/awt/X11/XIMPreeditStateNotifyCallbackStruct.h>
-#include <sun/awt/X11/XIMStatusDrawCallbackStruct.h>
-#include <sun/awt/X11/XIMStringConversionCallbackStruct.h>
-#include <sun/awt/X11/XIMStringConversionText.h>
-#include <sun/awt/X11/XIMStyles.h>
-#include <sun/awt/X11/XIMText.h>
-#include <sun/awt/X11/XIMValuesList.h>
 #include <sun/awt/X11/XIconSize.h>
 #include <sun/awt/X11/XIconWindow.h>
-#include <sun/awt/X11/XImage.h>
 #include <sun/awt/X11/XInputMethod.h>
 #include <sun/awt/X11/XInputMethodDescriptor.h>
 #include <sun/awt/X11/XKeyEvent.h>
 #include <sun/awt/X11/XKeySymConstants.h>
-#include <sun/awt/X11/XKeyboardControl.h>
 #include <sun/awt/X11/XKeyboardFocusManagerPeer.h>
-#include <sun/awt/X11/XKeyboardState.h>
 #include <sun/awt/X11/XKeymapEvent.h>
 #include <sun/awt/X11/XKeysym.h>
 #include <sun/awt/X11/XKeysym$Keysym2JavaKeycode.h>
@@ -4431,12 +4394,8 @@
 #include <sun/awt/X11/XMouseInfoPeer.h>
 #include <sun/awt/X11/XNETProtocol.h>
 #include <sun/awt/X11/XNoExposeEvent.h>
-#include <sun/awt/X11/XOMCharSetList.h>
-#include <sun/awt/X11/XOMFontInfo.h>
-#include <sun/awt/X11/XOMOrientation.h>
 #include <sun/awt/X11/XPanelPeer.h>
 #include <sun/awt/X11/XPixmapFormatValues.h>
-#include <sun/awt/X11/XPoint.h>
 #include <sun/awt/X11/XPopupMenuPeer.h>
 #include <sun/awt/X11/XPropertyCache.h>
 #include <sun/awt/X11/XPropertyCache$PropertyCacheEntry.h>
@@ -4444,7 +4403,6 @@
 #include <sun/awt/X11/XProtocol.h>
 #include <sun/awt/X11/XProtocolConstants.h>
 #include <sun/awt/X11/XQueryTree.h>
-#include <sun/awt/X11/XRectangle.h>
 #include <sun/awt/X11/XRenderDirectFormat.h>
 #include <sun/awt/X11/XRenderPictFormat.h>
 #include <sun/awt/X11/XRepaintArea.h>
@@ -4460,7 +4418,6 @@
 #include <sun/awt/X11/XScrollbar$1.h>
 #include <sun/awt/X11/XScrollbarClient.h>
 #include <sun/awt/X11/XScrollbarPeer.h>
-#include <sun/awt/X11/XSegment.h>
 #include <sun/awt/X11/XSelection.h>
 #include <sun/awt/X11/XSelection$IncrementalDataProvider.h>
 #include <sun/awt/X11/XSelection$IncrementalTransferHandler.h>
@@ -4470,7 +4427,6 @@
 #include <sun/awt/X11/XSelectionRequestEvent.h>
 #include <sun/awt/X11/XSetWindowAttributes.h>
 #include <sun/awt/X11/XSizeHints.h>
-#include <sun/awt/X11/XStandardColormap.h>
 #include <sun/awt/X11/XStateProtocol.h>
 #include <sun/awt/X11/XSystemTrayPeer.h>
 #include <sun/awt/X11/XSystemTrayPeer$1.h>
@@ -4496,10 +4452,6 @@
 #include <sun/awt/X11/XTextFieldPeer.h>
 #include <sun/awt/X11/XTextFieldPeer$AWTTextFieldUI.h>
 #include <sun/awt/X11/XTextFieldPeer$XAWTTextField.h>
-#include <sun/awt/X11/XTextItem.h>
-#include <sun/awt/X11/XTextItem16.h>
-#include <sun/awt/X11/XTextProperty.h>
-#include <sun/awt/X11/XTimeCoord.h>
 #include <sun/awt/X11/XToolkit.h>
 #include <sun/awt/X11/XToolkit$1.h>
 #include <sun/awt/X11/XToolkit$2.h>
@@ -4540,14 +4492,12 @@
 #include <sun/awt/X11/XWindow$1.h>
 #include <sun/awt/X11/XWindowAttributes.h>
 #include <sun/awt/X11/XWindowAttributesData.h>
-#include <sun/awt/X11/XWindowChanges.h>
 #include <sun/awt/X11/XWindowPeer.h>
 #include <sun/awt/X11/XWindowPeer$1.h>
 #include <sun/awt/X11/XWindowPeer$2.h>
 #include <sun/awt/X11/XWindowPeer$3.h>
 #include <sun/awt/X11/XWindowPeer$4.h>
 #include <sun/awt/X11/XWrapperBase.h>
-#include <sun/awt/X11/XdbeSwapInfo.h>
 #include <sun/awt/X11/XkbAccessXNotifyEvent.h>
 #include <sun/awt/X11/XkbActionMessageEvent.h>
 #include <sun/awt/X11/XkbAnyEvent.h>
@@ -4563,8 +4513,6 @@
 #include <sun/awt/X11/XkbStateNotifyEvent.h>
 #include <sun/awt/X11/XlibUtil.h>
 #include <sun/awt/X11/XlibWrapper.h>
-#include <sun/awt/X11/XmbTextItem.h>
-#include <sun/awt/X11/XwcTextItem.h>
 #include <sun/awt/X11/awtImageData.h>
 #include <sun/awt/X11ComponentPeer.h>
 #include <sun/awt/X11CustomCursor.h>
@@ -9197,7 +9145,6 @@
 	$classEntry("javax.swing.plaf.nimbus.InternalFrameTitlePaneMaximizeButtonWindowNotFocusedState", ::javax::swing::plaf::nimbus::InternalFrameTitlePaneMaximizeButtonWindowNotFocusedState),
 	$classEntry("javax.swing.plaf.nimbus.InternalFrameTitlePaneMenuButtonPainter", ::javax::swing::plaf::nimbus::InternalFrameTitlePaneMenuButtonPainter),
 	$classEntry("javax.swing.plaf.nimbus.InternalFrameTitlePaneMenuButtonWindowNotFocusedState", ::javax::swing::plaf::nimbus::InternalFrameTitlePaneMenuButtonWindowNotFocusedState),
-	$classEntry("javax.swing.plaf.nimbus.InternalFrameTitlePanePainter", ::javax::swing::plaf::nimbus::InternalFrameTitlePanePainter),
 	$classEntry("javax.swing.plaf.nimbus.InternalFrameTitlePaneWindowFocusedState", ::javax::swing::plaf::nimbus::InternalFrameTitlePaneWindowFocusedState),
 	$classEntry("javax.swing.plaf.nimbus.InternalFrameWindowFocusedState", ::javax::swing::plaf::nimbus::InternalFrameWindowFocusedState),
 	$classEntry("javax.swing.plaf.nimbus.LoweredBorder", ::javax::swing::plaf::nimbus::LoweredBorder),
@@ -9227,7 +9174,6 @@
 	$classEntry("javax.swing.plaf.nimbus.NimbusStyle$RuntimeState", ::javax::swing::plaf::nimbus::NimbusStyle$RuntimeState),
 	$classEntry("javax.swing.plaf.nimbus.NimbusStyle$Values", ::javax::swing::plaf::nimbus::NimbusStyle$Values),
 	$classEntry("javax.swing.plaf.nimbus.OptionPaneMessageAreaOptionPaneLabelPainter", ::javax::swing::plaf::nimbus::OptionPaneMessageAreaOptionPaneLabelPainter),
-	$classEntry("javax.swing.plaf.nimbus.OptionPaneMessageAreaPainter", ::javax::swing::plaf::nimbus::OptionPaneMessageAreaPainter),
 	$classEntry("javax.swing.plaf.nimbus.OptionPanePainter", ::javax::swing::plaf::nimbus::OptionPanePainter),
 	$classEntry("javax.swing.plaf.nimbus.OuterGlowEffect", ::javax::swing::plaf::nimbus::OuterGlowEffect),
 	$classEntry("javax.swing.plaf.nimbus.PasswordFieldPainter", ::javax::swing::plaf::nimbus::PasswordFieldPainter),
@@ -9239,30 +9185,25 @@
 	$classEntry("javax.swing.plaf.nimbus.RadioButtonMenuItemPainter", ::javax::swing::plaf::nimbus::RadioButtonMenuItemPainter),
 	$classEntry("javax.swing.plaf.nimbus.RadioButtonPainter", ::javax::swing::plaf::nimbus::RadioButtonPainter),
 	$classEntry("javax.swing.plaf.nimbus.ScrollBarButtonPainter", ::javax::swing::plaf::nimbus::ScrollBarButtonPainter),
-	$classEntry("javax.swing.plaf.nimbus.ScrollBarPainter", ::javax::swing::plaf::nimbus::ScrollBarPainter),
 	$classEntry("javax.swing.plaf.nimbus.ScrollBarThumbPainter", ::javax::swing::plaf::nimbus::ScrollBarThumbPainter),
 	$classEntry("javax.swing.plaf.nimbus.ScrollBarTrackPainter", ::javax::swing::plaf::nimbus::ScrollBarTrackPainter),
 	$classEntry("javax.swing.plaf.nimbus.ScrollPanePainter", ::javax::swing::plaf::nimbus::ScrollPanePainter),
 	$classEntry("javax.swing.plaf.nimbus.SeparatorPainter", ::javax::swing::plaf::nimbus::SeparatorPainter),
 	$classEntry("javax.swing.plaf.nimbus.ShadowEffect", ::javax::swing::plaf::nimbus::ShadowEffect),
 	$classEntry("javax.swing.plaf.nimbus.SliderArrowShapeState", ::javax::swing::plaf::nimbus::SliderArrowShapeState),
-	$classEntry("javax.swing.plaf.nimbus.SliderPainter", ::javax::swing::plaf::nimbus::SliderPainter),
 	$classEntry("javax.swing.plaf.nimbus.SliderThumbArrowShapeState", ::javax::swing::plaf::nimbus::SliderThumbArrowShapeState),
 	$classEntry("javax.swing.plaf.nimbus.SliderThumbPainter", ::javax::swing::plaf::nimbus::SliderThumbPainter),
 	$classEntry("javax.swing.plaf.nimbus.SliderTrackArrowShapeState", ::javax::swing::plaf::nimbus::SliderTrackArrowShapeState),
 	$classEntry("javax.swing.plaf.nimbus.SliderTrackPainter", ::javax::swing::plaf::nimbus::SliderTrackPainter),
 	$classEntry("javax.swing.plaf.nimbus.SpinnerNextButtonPainter", ::javax::swing::plaf::nimbus::SpinnerNextButtonPainter),
-	$classEntry("javax.swing.plaf.nimbus.SpinnerPainter", ::javax::swing::plaf::nimbus::SpinnerPainter),
 	$classEntry("javax.swing.plaf.nimbus.SpinnerPanelSpinnerFormattedTextFieldPainter", ::javax::swing::plaf::nimbus::SpinnerPanelSpinnerFormattedTextFieldPainter),
 	$classEntry("javax.swing.plaf.nimbus.SpinnerPreviousButtonPainter", ::javax::swing::plaf::nimbus::SpinnerPreviousButtonPainter),
 	$classEntry("javax.swing.plaf.nimbus.SplitPaneDividerPainter", ::javax::swing::plaf::nimbus::SplitPaneDividerPainter),
 	$classEntry("javax.swing.plaf.nimbus.SplitPaneDividerVerticalState", ::javax::swing::plaf::nimbus::SplitPaneDividerVerticalState),
-	$classEntry("javax.swing.plaf.nimbus.SplitPanePainter", ::javax::swing::plaf::nimbus::SplitPanePainter),
 	$classEntry("javax.swing.plaf.nimbus.SplitPaneVerticalState", ::javax::swing::plaf::nimbus::SplitPaneVerticalState),
 	$classEntry("javax.swing.plaf.nimbus.State", ::javax::swing::plaf::nimbus::State),
 	$classEntry("javax.swing.plaf.nimbus.State$StandardState", ::javax::swing::plaf::nimbus::State$StandardState),
 	$classEntry("javax.swing.plaf.nimbus.SynthPainterImpl", ::javax::swing::plaf::nimbus::SynthPainterImpl),
-	$classEntry("javax.swing.plaf.nimbus.TabbedPanePainter", ::javax::swing::plaf::nimbus::TabbedPanePainter),
 	$classEntry("javax.swing.plaf.nimbus.TabbedPaneTabAreaPainter", ::javax::swing::plaf::nimbus::TabbedPaneTabAreaPainter),
 	$classEntry("javax.swing.plaf.nimbus.TabbedPaneTabPainter", ::javax::swing::plaf::nimbus::TabbedPaneTabPainter),
 	$classEntry("javax.swing.plaf.nimbus.TableEditorPainter", ::javax::swing::plaf::nimbus::TableEditorPainter),
@@ -9931,9 +9872,6 @@
 	$classEntry("sun.awt.AWTAccessor$WindowAccessor", ::sun::awt::AWTAccessor$WindowAccessor),
 	$classEntry("sun.awt.AWTAutoShutdown", ::sun::awt::AWTAutoShutdown),
 	$classEntry("sun.awt.AWTAutoShutdown$1", ::sun::awt::AWTAutoShutdown$1),
-	$classEntry("sun.awt.AWTCharset", ::sun::awt::AWTCharset),
-	$classEntry("sun.awt.AWTCharset$Decoder", ::sun::awt::AWTCharset$Decoder),
-	$classEntry("sun.awt.AWTCharset$Encoder", ::sun::awt::AWTCharset$Encoder),
 	$classEntry("sun.awt.AWTIcon32_java_icon16_png", ::sun::awt::AWTIcon32_java_icon16_png),
 	$classEntry("sun.awt.AWTIcon32_java_icon24_png", ::sun::awt::AWTIcon32_java_icon24_png),
 	$classEntry("sun.awt.AWTIcon32_java_icon32_png", ::sun::awt::AWTIcon32_java_icon32_png),
@@ -10112,7 +10050,6 @@
 	$classEntry("sun.awt.X11.OwnershipListener", ::sun::awt::X11::OwnershipListener),
 	$classEntry("sun.awt.X11.PropMwmHints", ::sun::awt::X11::PropMwmHints),
 	$classEntry("sun.awt.X11.Screen", ::sun::awt::X11::Screen),
-	$classEntry("sun.awt.X11.ScreenFormat", ::sun::awt::X11::ScreenFormat),
 	$classEntry("sun.awt.X11.Separator", ::sun::awt::X11::Separator),
 	$classEntry("sun.awt.X11.ToplevelStateListener", ::sun::awt::X11::ToplevelStateListener),
 	$classEntry("sun.awt.X11.UnsafeXDisposerRecord", ::sun::awt::X11::UnsafeXDisposerRecord),
@@ -10124,7 +10061,6 @@
 	$classEntry("sun.awt.X11.XAWTXSettings$1", ::sun::awt::X11::XAWTXSettings$1),
 	$classEntry("sun.awt.X11.XAbstractMenuItem", ::sun::awt::X11::XAbstractMenuItem),
 	$classEntry("sun.awt.X11.XAnyEvent", ::sun::awt::X11::XAnyEvent),
-	$classEntry("sun.awt.X11.XArc", ::sun::awt::X11::XArc),
 	$classEntry("sun.awt.X11.XAtom", ::sun::awt::X11::XAtom),
 	$classEntry("sun.awt.X11.XAtomList", ::sun::awt::X11::XAtomList),
 	$classEntry("sun.awt.X11.XAwtState", ::sun::awt::X11::XAwtState),
@@ -10140,8 +10076,6 @@
 	$classEntry("sun.awt.X11.XButtonEvent", ::sun::awt::X11::XButtonEvent),
 	$classEntry("sun.awt.X11.XButtonPeer", ::sun::awt::X11::XButtonPeer),
 	$classEntry("sun.awt.X11.XCanvasPeer", ::sun::awt::X11::XCanvasPeer),
-	$classEntry("sun.awt.X11.XChar2b", ::sun::awt::X11::XChar2b),
-	$classEntry("sun.awt.X11.XCharStruct", ::sun::awt::X11::XCharStruct),
 	$classEntry("sun.awt.X11.XCheckboxMenuItemPeer", ::sun::awt::X11::XCheckboxMenuItemPeer),
 	$classEntry("sun.awt.X11.XCheckboxMenuItemPeer$1", ::sun::awt::X11::XCheckboxMenuItemPeer$1),
 	$classEntry("sun.awt.X11.XCheckboxPeer", ::sun::awt::X11::XCheckboxPeer),
@@ -10153,7 +10087,6 @@
 	$classEntry("sun.awt.X11.XChoicePeerListener", ::sun::awt::X11::XChoicePeerListener),
 	$classEntry("sun.awt.X11.XCirculateEvent", ::sun::awt::X11::XCirculateEvent),
 	$classEntry("sun.awt.X11.XCirculateRequestEvent", ::sun::awt::X11::XCirculateRequestEvent),
-	$classEntry("sun.awt.X11.XClassHint", ::sun::awt::X11::XClassHint),
 	$classEntry("sun.awt.X11.XClientMessageEvent", ::sun::awt::X11::XClientMessageEvent),
 	$classEntry("sun.awt.X11.XClipboard", ::sun::awt::X11::XClipboard),
 	$classEntry("sun.awt.X11.XClipboard$CheckChangeTimerTask", ::sun::awt::X11::XClipboard$CheckChangeTimerTask),
@@ -10161,7 +10094,6 @@
 	$classEntry("sun.awt.X11.XColor", ::sun::awt::X11::XColor),
 	$classEntry("sun.awt.X11.XColormapEvent", ::sun::awt::X11::XColormapEvent),
 	$classEntry("sun.awt.X11.XComponentPeer", ::sun::awt::X11::XComponentPeer),
-	$classEntry("sun.awt.X11.XComposeStatus", ::sun::awt::X11::XComposeStatus),
 	$classEntry("sun.awt.X11.XConfigureEvent", ::sun::awt::X11::XConfigureEvent),
 	$classEntry("sun.awt.X11.XConfigureRequestEvent", ::sun::awt::X11::XConfigureRequestEvent),
 	$classEntry("sun.awt.X11.XConstants", ::sun::awt::X11::XConstants),
@@ -10229,7 +10161,6 @@
 	$classEntry("sun.awt.X11.XEventDispatcher", ::sun::awt::X11::XEventDispatcher),
 	$classEntry("sun.awt.X11.XException", ::sun::awt::X11::XException),
 	$classEntry("sun.awt.X11.XExposeEvent", ::sun::awt::X11::XExposeEvent),
-	$classEntry("sun.awt.X11.XExtCodes", ::sun::awt::X11::XExtCodes),
 	$classEntry("sun.awt.X11.XExtData", ::sun::awt::X11::XExtData),
 	$classEntry("sun.awt.X11.XFileDialogPeer", ::sun::awt::X11::XFileDialogPeer),
 	$classEntry("sun.awt.X11.XFileDialogPeer$1", ::sun::awt::X11::XFileDialogPeer$1),
@@ -10238,39 +10169,19 @@
 	$classEntry("sun.awt.X11.XFocusChangeEvent", ::sun::awt::X11::XFocusChangeEvent),
 	$classEntry("sun.awt.X11.XFocusProxyWindow", ::sun::awt::X11::XFocusProxyWindow),
 	$classEntry("sun.awt.X11.XFontPeer", ::sun::awt::X11::XFontPeer),
-	$classEntry("sun.awt.X11.XFontProp", ::sun::awt::X11::XFontProp),
-	$classEntry("sun.awt.X11.XFontSetExtents", ::sun::awt::X11::XFontSetExtents),
-	$classEntry("sun.awt.X11.XFontStruct", ::sun::awt::X11::XFontStruct),
 	$classEntry("sun.awt.X11.XFramePeer", ::sun::awt::X11::XFramePeer),
 	$classEntry("sun.awt.X11.XFramePeer$1", ::sun::awt::X11::XFramePeer$1),
-	$classEntry("sun.awt.X11.XGCValues", ::sun::awt::X11::XGCValues),
 	$classEntry("sun.awt.X11.XGlobalCursorManager", ::sun::awt::X11::XGlobalCursorManager),
 	$classEntry("sun.awt.X11.XGraphicsExposeEvent", ::sun::awt::X11::XGraphicsExposeEvent),
 	$classEntry("sun.awt.X11.XGravityEvent", ::sun::awt::X11::XGravityEvent),
 	$classEntry("sun.awt.X11.XHorizontalScrollbar", ::sun::awt::X11::XHorizontalScrollbar),
-	$classEntry("sun.awt.X11.XHostAddress", ::sun::awt::X11::XHostAddress),
-	$classEntry("sun.awt.X11.XIMCallback", ::sun::awt::X11::XIMCallback),
-	$classEntry("sun.awt.X11.XIMHotKeyTrigger", ::sun::awt::X11::XIMHotKeyTrigger),
-	$classEntry("sun.awt.X11.XIMHotKeyTriggers", ::sun::awt::X11::XIMHotKeyTriggers),
-	$classEntry("sun.awt.X11.XIMPreeditCaretCallbackStruct", ::sun::awt::X11::XIMPreeditCaretCallbackStruct),
-	$classEntry("sun.awt.X11.XIMPreeditDrawCallbackStruct", ::sun::awt::X11::XIMPreeditDrawCallbackStruct),
-	$classEntry("sun.awt.X11.XIMPreeditStateNotifyCallbackStruct", ::sun::awt::X11::XIMPreeditStateNotifyCallbackStruct),
-	$classEntry("sun.awt.X11.XIMStatusDrawCallbackStruct", ::sun::awt::X11::XIMStatusDrawCallbackStruct),
-	$classEntry("sun.awt.X11.XIMStringConversionCallbackStruct", ::sun::awt::X11::XIMStringConversionCallbackStruct),
-	$classEntry("sun.awt.X11.XIMStringConversionText", ::sun::awt::X11::XIMStringConversionText),
-	$classEntry("sun.awt.X11.XIMStyles", ::sun::awt::X11::XIMStyles),
-	$classEntry("sun.awt.X11.XIMText", ::sun::awt::X11::XIMText),
-	$classEntry("sun.awt.X11.XIMValuesList", ::sun::awt::X11::XIMValuesList),
 	$classEntry("sun.awt.X11.XIconSize", ::sun::awt::X11::XIconSize),
 	$classEntry("sun.awt.X11.XIconWindow", ::sun::awt::X11::XIconWindow),
-	$classEntry("sun.awt.X11.XImage", ::sun::awt::X11::XImage),
 	$classEntry("sun.awt.X11.XInputMethod", ::sun::awt::X11::XInputMethod),
 	$classEntry("sun.awt.X11.XInputMethodDescriptor", ::sun::awt::X11::XInputMethodDescriptor),
 	$classEntry("sun.awt.X11.XKeyEvent", ::sun::awt::X11::XKeyEvent),
 	$classEntry("sun.awt.X11.XKeySymConstants", ::sun::awt::X11::XKeySymConstants),
-	$classEntry("sun.awt.X11.XKeyboardControl", ::sun::awt::X11::XKeyboardControl),
 	$classEntry("sun.awt.X11.XKeyboardFocusManagerPeer", ::sun::awt::X11::XKeyboardFocusManagerPeer),
-	$classEntry("sun.awt.X11.XKeyboardState", ::sun::awt::X11::XKeyboardState),
 	$classEntry("sun.awt.X11.XKeymapEvent", ::sun::awt::X11::XKeymapEvent),
 	$classEntry("sun.awt.X11.XKeysym", ::sun::awt::X11::XKeysym),
 	$classEntry("sun.awt.X11.XKeysym$Keysym2JavaKeycode", ::sun::awt::X11::XKeysym$Keysym2JavaKeycode),
@@ -10303,12 +10214,8 @@
 	$classEntry("sun.awt.X11.XMouseInfoPeer", ::sun::awt::X11::XMouseInfoPeer),
 	$classEntry("sun.awt.X11.XNETProtocol", ::sun::awt::X11::XNETProtocol),
 	$classEntry("sun.awt.X11.XNoExposeEvent", ::sun::awt::X11::XNoExposeEvent),
-	$classEntry("sun.awt.X11.XOMCharSetList", ::sun::awt::X11::XOMCharSetList),
-	$classEntry("sun.awt.X11.XOMFontInfo", ::sun::awt::X11::XOMFontInfo),
-	$classEntry("sun.awt.X11.XOMOrientation", ::sun::awt::X11::XOMOrientation),
 	$classEntry("sun.awt.X11.XPanelPeer", ::sun::awt::X11::XPanelPeer),
 	$classEntry("sun.awt.X11.XPixmapFormatValues", ::sun::awt::X11::XPixmapFormatValues),
-	$classEntry("sun.awt.X11.XPoint", ::sun::awt::X11::XPoint),
 	$classEntry("sun.awt.X11.XPopupMenuPeer", ::sun::awt::X11::XPopupMenuPeer),
 	$classEntry("sun.awt.X11.XPropertyCache", ::sun::awt::X11::XPropertyCache),
 	$classEntry("sun.awt.X11.XPropertyCache$PropertyCacheEntry", ::sun::awt::X11::XPropertyCache$PropertyCacheEntry),
@@ -10316,7 +10223,6 @@
 	$classEntry("sun.awt.X11.XProtocol", ::sun::awt::X11::XProtocol),
 	$classEntry("sun.awt.X11.XProtocolConstants", ::sun::awt::X11::XProtocolConstants),
 	$classEntry("sun.awt.X11.XQueryTree", ::sun::awt::X11::XQueryTree),
-	$classEntry("sun.awt.X11.XRectangle", ::sun::awt::X11::XRectangle),
 	$classEntry("sun.awt.X11.XRenderDirectFormat", ::sun::awt::X11::XRenderDirectFormat),
 	$classEntry("sun.awt.X11.XRenderPictFormat", ::sun::awt::X11::XRenderPictFormat),
 	$classEntry("sun.awt.X11.XRepaintArea", ::sun::awt::X11::XRepaintArea),
@@ -10332,7 +10238,6 @@
 	$classEntry("sun.awt.X11.XScrollbar$1", ::sun::awt::X11::XScrollbar$1),
 	$classEntry("sun.awt.X11.XScrollbarClient", ::sun::awt::X11::XScrollbarClient),
 	$classEntry("sun.awt.X11.XScrollbarPeer", ::sun::awt::X11::XScrollbarPeer),
-	$classEntry("sun.awt.X11.XSegment", ::sun::awt::X11::XSegment),
 	$classEntry("sun.awt.X11.XSelection", ::sun::awt::X11::XSelection),
 	$classEntry("sun.awt.X11.XSelection$IncrementalDataProvider", ::sun::awt::X11::XSelection$IncrementalDataProvider),
 	$classEntry("sun.awt.X11.XSelection$IncrementalTransferHandler", ::sun::awt::X11::XSelection$IncrementalTransferHandler),
@@ -10342,7 +10247,6 @@
 	$classEntry("sun.awt.X11.XSelectionRequestEvent", ::sun::awt::X11::XSelectionRequestEvent),
 	$classEntry("sun.awt.X11.XSetWindowAttributes", ::sun::awt::X11::XSetWindowAttributes),
 	$classEntry("sun.awt.X11.XSizeHints", ::sun::awt::X11::XSizeHints),
-	$classEntry("sun.awt.X11.XStandardColormap", ::sun::awt::X11::XStandardColormap),
 	$classEntry("sun.awt.X11.XStateProtocol", ::sun::awt::X11::XStateProtocol),
 	$classEntry("sun.awt.X11.XSystemTrayPeer", ::sun::awt::X11::XSystemTrayPeer),
 	$classEntry("sun.awt.X11.XSystemTrayPeer$1", ::sun::awt::X11::XSystemTrayPeer$1),
@@ -10368,10 +10272,6 @@
 	$classEntry("sun.awt.X11.XTextFieldPeer", ::sun::awt::X11::XTextFieldPeer),
 	$classEntry("sun.awt.X11.XTextFieldPeer$AWTTextFieldUI", ::sun::awt::X11::XTextFieldPeer$AWTTextFieldUI),
 	$classEntry("sun.awt.X11.XTextFieldPeer$XAWTTextField", ::sun::awt::X11::XTextFieldPeer$XAWTTextField),
-	$classEntry("sun.awt.X11.XTextItem", ::sun::awt::X11::XTextItem),
-	$classEntry("sun.awt.X11.XTextItem16", ::sun::awt::X11::XTextItem16),
-	$classEntry("sun.awt.X11.XTextProperty", ::sun::awt::X11::XTextProperty),
-	$classEntry("sun.awt.X11.XTimeCoord", ::sun::awt::X11::XTimeCoord),
 	$classEntry("sun.awt.X11.XToolkit", ::sun::awt::X11::XToolkit),
 	$classEntry("sun.awt.X11.XToolkit$1", ::sun::awt::X11::XToolkit$1),
 	$classEntry("sun.awt.X11.XToolkit$2", ::sun::awt::X11::XToolkit$2),
@@ -10412,14 +10312,12 @@
 	$classEntry("sun.awt.X11.XWindow$1", ::sun::awt::X11::XWindow$1),
 	$classEntry("sun.awt.X11.XWindowAttributes", ::sun::awt::X11::XWindowAttributes),
 	$classEntry("sun.awt.X11.XWindowAttributesData", ::sun::awt::X11::XWindowAttributesData),
-	$classEntry("sun.awt.X11.XWindowChanges", ::sun::awt::X11::XWindowChanges),
 	$classEntry("sun.awt.X11.XWindowPeer", ::sun::awt::X11::XWindowPeer),
 	$classEntry("sun.awt.X11.XWindowPeer$1", ::sun::awt::X11::XWindowPeer$1),
 	$classEntry("sun.awt.X11.XWindowPeer$2", ::sun::awt::X11::XWindowPeer$2),
 	$classEntry("sun.awt.X11.XWindowPeer$3", ::sun::awt::X11::XWindowPeer$3),
 	$classEntry("sun.awt.X11.XWindowPeer$4", ::sun::awt::X11::XWindowPeer$4),
 	$classEntry("sun.awt.X11.XWrapperBase", ::sun::awt::X11::XWrapperBase),
-	$classEntry("sun.awt.X11.XdbeSwapInfo", ::sun::awt::X11::XdbeSwapInfo),
 	$classEntry("sun.awt.X11.XkbAccessXNotifyEvent", ::sun::awt::X11::XkbAccessXNotifyEvent),
 	$classEntry("sun.awt.X11.XkbActionMessageEvent", ::sun::awt::X11::XkbActionMessageEvent),
 	$classEntry("sun.awt.X11.XkbAnyEvent", ::sun::awt::X11::XkbAnyEvent),
@@ -10435,8 +10333,6 @@
 	$classEntry("sun.awt.X11.XkbStateNotifyEvent", ::sun::awt::X11::XkbStateNotifyEvent),
 	$classEntry("sun.awt.X11.XlibUtil", ::sun::awt::X11::XlibUtil),
 	$classEntry("sun.awt.X11.XlibWrapper", ::sun::awt::X11::XlibWrapper),
-	$classEntry("sun.awt.X11.XmbTextItem", ::sun::awt::X11::XmbTextItem),
-	$classEntry("sun.awt.X11.XwcTextItem", ::sun::awt::X11::XwcTextItem),
 	$classEntry("sun.awt.X11.awtImageData", ::sun::awt::X11::awtImageData),
 	$classEntry("sun.awt.X11ComponentPeer", ::sun::awt::X11ComponentPeer),
 	$classEntry("sun.awt.X11CustomCursor", ::sun::awt::X11CustomCursor),

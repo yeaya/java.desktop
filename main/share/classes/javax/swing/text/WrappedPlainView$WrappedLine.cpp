@@ -54,7 +54,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $SoftReference = ::java::lang::ref::SoftReference;
 using $DocumentEvent = ::javax::swing::event::DocumentEvent;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
-using $BoxView = ::javax::swing::text::BoxView;
 using $Element = ::javax::swing::text::Element;
 using $Highlighter = ::javax::swing::text::Highlighter;
 using $JTextComponent = ::javax::swing::text::JTextComponent;

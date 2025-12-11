@@ -16,7 +16,6 @@ using $IllegalAccessException = ::java::lang::IllegalAccessException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InstantiationException = ::java::lang::InstantiationException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $UIManager = ::javax::swing::UIManager;
 using $UnsupportedLookAndFeelException = ::javax::swing::UnsupportedLookAndFeelException;
 

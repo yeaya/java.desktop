@@ -6,12 +6,8 @@
 #include <sun/awt/im/InputContext.h>
 #include <jcpp.h>
 
-using $Window = ::java::awt::Window;
-using $InputMethodDescriptor = ::java::awt::im::spi::InputMethodDescriptor;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Locale = ::java::util::Locale;
-using $InputContext = ::sun::awt::im::InputContext;
 
 namespace sun {
 	namespace awt {

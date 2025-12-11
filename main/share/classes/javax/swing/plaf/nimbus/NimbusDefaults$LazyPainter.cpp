@@ -26,11 +26,8 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $Constructor = ::java::lang::reflect::Constructor;
 using $UIDefaults = ::javax::swing::UIDefaults;
-using $UIDefaults$LazyValue = ::javax::swing::UIDefaults$LazyValue;
-using $AbstractRegionPainter = ::javax::swing::plaf::nimbus::AbstractRegionPainter;
 using $AbstractRegionPainter$PaintContext = ::javax::swing::plaf::nimbus::AbstractRegionPainter$PaintContext;
 using $AbstractRegionPainter$PaintContext$CacheMode = ::javax::swing::plaf::nimbus::AbstractRegionPainter$PaintContext$CacheMode;
-using $NimbusDefaults = ::javax::swing::plaf::nimbus::NimbusDefaults;
 
 namespace javax {
 	namespace swing {

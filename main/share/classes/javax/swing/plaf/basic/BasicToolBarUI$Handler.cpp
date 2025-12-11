@@ -22,17 +22,13 @@
 
 using $ComponentArray = $Array<::java::awt::Component>;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Point = ::java::awt::Point;
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $ContainerEvent = ::java::awt::event::ContainerEvent;
 using $ContainerListener = ::java::awt::event::ContainerListener;
 using $FocusEvent = ::java::awt::event::FocusEvent;
-using $FocusListener = ::java::awt::event::FocusListener;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -43,7 +39,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JSeparator = ::javax::swing::JSeparator;
 using $JToolBar = ::javax::swing::JToolBar;
 using $JToolBar$Separator = ::javax::swing::JToolBar$Separator;
-using $MouseInputListener = ::javax::swing::event::MouseInputListener;
 using $BasicToolBarUI = ::javax::swing::plaf::basic::BasicToolBarUI;
 
 namespace javax {

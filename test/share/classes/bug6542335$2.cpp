@@ -16,7 +16,6 @@
 using $RectangleArray = $Array<::java::awt::Rectangle>;
 using $bug6542335 = ::bug6542335;
 using $bug6542335$MyScrollBarUI = ::bug6542335$MyScrollBarUI;
-using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $Robot = ::java::awt::Robot;
@@ -27,8 +26,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $JComponent = ::javax::swing::JComponent;
 using $JScrollBar = ::javax::swing::JScrollBar;
 
 $FieldInfo _bug6542335$2_FieldInfo_[] = {

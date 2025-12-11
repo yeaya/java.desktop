@@ -41,7 +41,6 @@ using $Collection = ::java::util::Collection;
 using $HashMap = ::java::util::HashMap;
 using $Iterator = ::java::util::Iterator;
 using $Vector = ::java::util::Vector;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $XAtom = ::sun::awt::X11::XAtom;
 using $XClientMessageEvent = ::sun::awt::X11::XClientMessageEvent;
 using $XConstants = ::sun::awt::X11::XConstants;

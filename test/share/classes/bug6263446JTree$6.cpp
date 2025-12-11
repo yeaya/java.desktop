@@ -14,7 +14,6 @@
 #include <jcpp.h>
 
 using $bug6263446JTree = ::bug6263446JTree;
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $Exception = ::java::lang::Exception;
@@ -24,15 +23,12 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NoSuchFieldException = ::java::lang::NoSuchFieldException;
 using $ReflectiveOperationException = ::java::lang::ReflectiveOperationException;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $Field = ::java::lang::reflect::Field;
 using $DefaultCellEditor = ::javax::swing::DefaultCellEditor;
 using $JTextField = ::javax::swing::JTextField;
 using $JTree = ::javax::swing::JTree;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $DefaultTreeCellEditor = ::javax::swing::tree::DefaultTreeCellEditor;
-using $TreeCellEditor = ::javax::swing::tree::TreeCellEditor;
 
 $FieldInfo _bug6263446JTree$6_FieldInfo_[] = {
 	{"val$sel", "Ljava/lang/String;", nullptr, $FINAL | $SYNTHETIC, $field(bug6263446JTree$6, val$sel)},

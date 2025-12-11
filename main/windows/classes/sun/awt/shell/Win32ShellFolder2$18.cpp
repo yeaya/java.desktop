@@ -15,7 +15,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Collections = ::java::util::Collections;
 using $Comparator = ::java::util::Comparator;
 using $List = ::java::util::List;
-using $Callable = ::java::util::concurrent::Callable;
 using $Win32ShellFolder2 = ::sun::awt::shell::Win32ShellFolder2;
 using $Win32ShellFolder2$ColumnComparator = ::sun::awt::shell::Win32ShellFolder2$ColumnComparator;
 

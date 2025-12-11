@@ -11,18 +11,15 @@
 
 using $bug4242228 = ::bug4242228;
 using $bug4242228$1 = ::bug4242228$1;
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JEditorPane = ::javax::swing::JEditorPane;
 using $JScrollPane = ::javax::swing::JScrollPane;
 using $JTabbedPane = ::javax::swing::JTabbedPane;
 using $JTextPane = ::javax::swing::JTextPane;
 using $ChangeEvent = ::javax::swing::event::ChangeEvent;
-using $ChangeListener = ::javax::swing::event::ChangeListener;
 
 $FieldInfo _bug4242228$1$1_FieldInfo_[] = {
 	{"this$0", "Lbug4242228$1;", nullptr, $FINAL | $SYNTHETIC, $field(bug4242228$1$1, this$0)},

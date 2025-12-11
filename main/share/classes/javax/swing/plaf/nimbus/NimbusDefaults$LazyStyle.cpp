@@ -36,7 +36,6 @@ using $HashMap = ::java::util::HashMap;
 using $List = ::java::util::List;
 using $Map = ::java::util::Map;
 using $JComponent = ::javax::swing::JComponent;
-using $JInternalFrame = ::javax::swing::JInternalFrame;
 using $JInternalFrame$JDesktopIcon = ::javax::swing::JInternalFrame$JDesktopIcon;
 using $NimbusDefaults = ::javax::swing::plaf::nimbus::NimbusDefaults;
 using $NimbusDefaults$LazyStyle$Part = ::javax::swing::plaf::nimbus::NimbusDefaults$LazyStyle$Part;

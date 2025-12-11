@@ -43,7 +43,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $DefaultListModel = ::javax::swing::DefaultListModel;
-using $JComponent = ::javax::swing::JComponent;
 using $JFrame = ::javax::swing::JFrame;
 using $JList = ::javax::swing::JList;
 using $LookAndFeel = ::javax::swing::LookAndFeel;

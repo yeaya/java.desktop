@@ -106,7 +106,7 @@ int32_t WFontMetrics::getMaxAdvance() {
 int32_t WFontMetrics::stringWidth($String* str) {
 	int32_t $ret = 0;
 	$prepareNative(WFontMetrics, stringWidth, int32_t, $String* str);
-	$ret = $invokeNative(WFontMetrics, stringWidth, str);
+	$ret = $invokeNative(str);
 	$finishNative();
 	return $ret;
 }
@@ -114,7 +114,7 @@ int32_t WFontMetrics::stringWidth($String* str) {
 int32_t WFontMetrics::charsWidth($chars* data, int32_t off, int32_t len) {
 	int32_t $ret = 0;
 	$prepareNative(WFontMetrics, charsWidth, int32_t, $chars* data, int32_t off, int32_t len);
-	$ret = $invokeNative(WFontMetrics, charsWidth, data, off, len);
+	$ret = $invokeNative(data, off, len);
 	$finishNative();
 	return $ret;
 }
@@ -122,7 +122,7 @@ int32_t WFontMetrics::charsWidth($chars* data, int32_t off, int32_t len) {
 int32_t WFontMetrics::bytesWidth($bytes* data, int32_t off, int32_t len) {
 	int32_t $ret = 0;
 	$prepareNative(WFontMetrics, bytesWidth, int32_t, $bytes* data, int32_t off, int32_t len);
-	$ret = $invokeNative(WFontMetrics, bytesWidth, data, off, len);
+	$ret = $invokeNative(data, off, len);
 	$finishNative();
 	return $ret;
 }
@@ -133,7 +133,7 @@ $ints* WFontMetrics::getWidths() {
 
 void WFontMetrics::init() {
 	$prepareNative(WFontMetrics, init, void);
-	$invokeNative(WFontMetrics, init);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -149,7 +149,7 @@ $FontMetrics* WFontMetrics::getFontMetrics($Font* font) {
 void WFontMetrics::initIDs() {
 	$init(WFontMetrics);
 	$prepareNativeStatic(WFontMetrics, initIDs, void);
-	$invokeNativeStatic(WFontMetrics, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

@@ -19,7 +19,6 @@
 #undef WEST
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -27,9 +26,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
-using $JComponent = ::javax::swing::JComponent;
 using $SwingConstants = ::javax::swing::SwingConstants;
 using $UIManager = ::javax::swing::UIManager;
 using $BasicArrowButton = ::javax::swing::plaf::basic::BasicArrowButton;

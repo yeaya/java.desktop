@@ -30,12 +30,10 @@
 
 using $Component = ::java::awt::Component;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
-using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $Image = ::java::awt::Image;
 using $Transparency = ::java::awt::Transparency;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

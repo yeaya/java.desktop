@@ -19,9 +19,7 @@
 #undef TWO_PASSES
 
 using $ComponentArray = $Array<::java::awt::Component>;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
-using $Font = ::java::awt::Font;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $Rectangle = ::java::awt::Rectangle;

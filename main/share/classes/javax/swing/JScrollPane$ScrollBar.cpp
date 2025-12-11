@@ -14,20 +14,16 @@
 #undef VERTICAL
 
 using $Adjustable = ::java::awt::Adjustable;
-using $Component = ::java::awt::Component;
-using $Dimension = ::java::awt::Dimension;
 using $Rectangle = ::java::awt::Rectangle;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JScrollBar = ::javax::swing::JScrollBar;
 using $JScrollPane = ::javax::swing::JScrollPane;
 using $JViewport = ::javax::swing::JViewport;
 using $Scrollable = ::javax::swing::Scrollable;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace javax {
 	namespace swing {

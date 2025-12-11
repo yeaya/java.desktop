@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ListHelper = ::sun::awt::X11::ListHelper;
 
 namespace sun {
 	namespace awt {

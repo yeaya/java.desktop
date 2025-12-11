@@ -45,17 +45,14 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $Locale = ::java::util::Locale;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $JComponent = ::javax::swing::JComponent;
 using $JLayeredPane = ::javax::swing::JLayeredPane;
 using $JRootPane = ::javax::swing::JRootPane;
 using $JWindow$AccessibleJWindow = ::javax::swing::JWindow$AccessibleJWindow;
 using $RepaintManager = ::javax::swing::RepaintManager;
-using $RootPaneContainer = ::javax::swing::RootPaneContainer;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $TransferHandler = ::javax::swing::TransferHandler;
-using $TransferHandler$HasGetTransferHandler = ::javax::swing::TransferHandler$HasGetTransferHandler;
 using $SunToolkit = ::sun::awt::SunToolkit;
 
 namespace javax {

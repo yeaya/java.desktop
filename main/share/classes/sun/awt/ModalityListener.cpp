@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ModalityEvent = ::sun::awt::ModalityEvent;
 
 namespace sun {
 	namespace awt {

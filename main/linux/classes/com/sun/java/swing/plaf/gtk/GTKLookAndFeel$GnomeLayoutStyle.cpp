@@ -13,11 +13,9 @@
 #undef INSTANCE
 #undef WEST
 
-using $GTKLookAndFeel = ::com::sun::java::swing::plaf::gtk::GTKLookAndFeel;
 using $GTKLookAndFeel$4 = ::com::sun::java::swing::plaf::gtk::GTKLookAndFeel$4;
 using $Container = ::java::awt::Container;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

@@ -15,7 +15,6 @@ using $AbstractButton = ::javax::swing::AbstractButton;
 using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
 using $SynthButtonUI = ::javax::swing::plaf::synth::SynthButtonUI;
-using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
 
 $MethodInfo _Test8043627_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PUBLIC, $method(static_cast<void(Test8043627::*)()>(&Test8043627::init$))},

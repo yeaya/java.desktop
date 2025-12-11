@@ -5,7 +5,6 @@
 #include <jcpp.h>
 
 using $File = ::java::io::File;
-using $FilenameFilter = ::java::io::FilenameFilter;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

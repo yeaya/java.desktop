@@ -68,7 +68,7 @@ int32_t WDropTargetContextPeerIStream::available() {
 int32_t WDropTargetContextPeerIStream::Available(int64_t istream) {
 	int32_t $ret = 0;
 	$prepareNative(WDropTargetContextPeerIStream, Available, int32_t, int64_t istream);
-	$ret = $invokeNative(WDropTargetContextPeerIStream, Available, istream);
+	$ret = $invokeNative(istream);
 	$finishNative();
 	return $ret;
 }
@@ -83,7 +83,7 @@ int32_t WDropTargetContextPeerIStream::read() {
 int32_t WDropTargetContextPeerIStream::Read(int64_t istream) {
 	int32_t $ret = 0;
 	$prepareNative(WDropTargetContextPeerIStream, Read, int32_t, int64_t istream);
-	$ret = $invokeNative(WDropTargetContextPeerIStream, Read, istream);
+	$ret = $invokeNative(istream);
 	$finishNative();
 	return $ret;
 }
@@ -98,7 +98,7 @@ int32_t WDropTargetContextPeerIStream::read($bytes* b, int32_t off, int32_t len)
 int32_t WDropTargetContextPeerIStream::ReadBytes(int64_t istream, $bytes* b, int32_t off, int32_t len) {
 	int32_t $ret = 0;
 	$prepareNative(WDropTargetContextPeerIStream, ReadBytes, int32_t, int64_t istream, $bytes* b, int32_t off, int32_t len);
-	$ret = $invokeNative(WDropTargetContextPeerIStream, ReadBytes, istream, b, off, len);
+	$ret = $invokeNative(istream, b, off, len);
 	$finishNative();
 	return $ret;
 }
@@ -113,7 +113,7 @@ void WDropTargetContextPeerIStream::close() {
 
 void WDropTargetContextPeerIStream::Close(int64_t istream) {
 	$prepareNative(WDropTargetContextPeerIStream, Close, void, int64_t istream);
-	$invokeNative(WDropTargetContextPeerIStream, Close, istream);
+	$invokeNative(istream);
 	$finishNative();
 }
 

@@ -10,7 +10,6 @@
 
 #undef SHARED_ACTION
 
-using $Component = ::java::awt::Component;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

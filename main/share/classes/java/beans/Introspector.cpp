@@ -63,8 +63,7 @@ using $TypeArray = $Array<::java::lang::reflect::Type>;
 using $TypeResolver = ::com::sun::beans::TypeResolver;
 using $BeanInfoFinder = ::com::sun::beans::finder::BeanInfoFinder;
 using $ClassFinder = ::com::sun::beans::finder::ClassFinder;
-using $InstanceFinder = ::com::sun::beans::finder::InstanceFinder;
-using $ClassInfo = ::com::sun::beans::introspect::ClassInfo;
+using $1ClassInfo = ::com::sun::beans::introspect::ClassInfo;
 using $EventSetInfo = ::com::sun::beans::introspect::EventSetInfo;
 using $PropertyInfo = ::com::sun::beans::introspect::PropertyInfo;
 using $Component = ::java::awt::Component;
@@ -84,7 +83,7 @@ using $PropertyDescriptor = ::java::beans::PropertyDescriptor;
 using $SimpleBeanInfo = ::java::beans::SimpleBeanInfo;
 using $ThreadGroupContext = ::java::beans::ThreadGroupContext;
 using $Character = ::java::lang::Character;
-using $1ClassInfo = ::java::lang::ClassInfo;
+using $ClassInfo = ::java::lang::ClassInfo;
 using $ClassLoader = ::java::lang::ClassLoader;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -92,9 +91,7 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $SecurityManager = ::java::lang::SecurityManager;
-using $Annotation = ::java::lang::annotation::Annotation;
 using $Method = ::java::lang::reflect::Method;
-using $Type = ::java::lang::reflect::Type;
 using $AbstractList = ::java::util::AbstractList;
 using $AbstractMap = ::java::util::AbstractMap;
 using $ArrayList = ::java::util::ArrayList;
@@ -186,7 +183,7 @@ $InnerClassInfo _Introspector_InnerClassesInfo_[] = {
 	{}
 };
 
-$1ClassInfo _Introspector_ClassInfo_ = {
+$ClassInfo _Introspector_ClassInfo_ = {
 	$PUBLIC | $ACC_SUPER,
 	"java.beans.Introspector",
 	"java.lang.Object",
@@ -283,7 +280,7 @@ void Introspector::setBeanInfoSearchPath($StringArray* path) {
 void Introspector::flushCaches() {
 	$init(Introspector);
 	$nc($($ThreadGroupContext::getContext()))->clearBeanInfoCache();
-	$ClassInfo::clear();
+	$1ClassInfo::clear();
 }
 
 void Introspector::flushFromCaches($Class* clz) {
@@ -292,7 +289,7 @@ void Introspector::flushFromCaches($Class* clz) {
 		$throwNew($NullPointerException);
 	}
 	$nc($($ThreadGroupContext::getContext()))->removeBeanInfo(clz);
-	$ClassInfo::remove(clz);
+	$1ClassInfo::remove(clz);
 }
 
 void Introspector::init$($Class* beanClass, $Class* stopClass, int32_t flags) {
@@ -369,7 +366,7 @@ $PropertyDescriptorArray* Introspector::getTargetPropertyInfo() {
 		addPropertyDescriptors(explicitProperties);
 	} else {
 		{
-			$var($Iterator, i$, $nc($($nc($($nc($($ClassInfo::get(this->beanClass)))->getProperties()))->entrySet()))->iterator());
+			$var($Iterator, i$, $nc($($nc($($nc($($1ClassInfo::get(this->beanClass)))->getProperties()))->entrySet()))->iterator());
 			for (; $nc(i$)->hasNext();) {
 				$var($Map$Entry, entry, $cast($Map$Entry, i$->next()));
 				{
@@ -757,13 +754,13 @@ $EventSetDescriptorArray* Introspector::getTargetEventInfo() {
 		}
 	} else {
 		{
-			$var($Iterator, i$, $nc($($nc($($nc($($ClassInfo::get(this->beanClass)))->getEventSets()))->entrySet()))->iterator());
+			$var($Iterator, i$, $nc($($nc($($nc($($1ClassInfo::get(this->beanClass)))->getEventSets()))->entrySet()))->iterator());
 			for (; $nc(i$)->hasNext();) {
 				$var($Map$Entry, entry, $cast($Map$Entry, i$->next()));
 				{
 					$var($List, methods, $new($ArrayList));
 					{
-						$var($Iterator, i$, $nc($($nc($($ClassInfo::get($nc(($cast($EventSetInfo, $($nc(entry)->getValue()))))->getListenerType())))->getMethods()))->iterator());
+						$var($Iterator, i$, $nc($($nc($($1ClassInfo::get($nc(($cast($EventSetInfo, $($nc(entry)->getValue()))))->getListenerType())))->getMethods()))->iterator());
 						for (; $nc(i$)->hasNext();) {
 							$var($Method, method, $cast($Method, i$->next()));
 							{
@@ -846,7 +843,7 @@ $MethodDescriptorArray* Introspector::getTargetMethodInfo() {
 		}
 	} else {
 		{
-			$var($Iterator, i$, $nc($($nc($($ClassInfo::get(this->beanClass)))->getMethods()))->iterator());
+			$var($Iterator, i$, $nc($($nc($($1ClassInfo::get(this->beanClass)))->getMethods()))->iterator());
 			for (; $nc(i$)->hasNext();) {
 				$var($Method, method, $cast($Method, i$->next()));
 				{
@@ -959,7 +956,7 @@ $Method* Introspector::internalFindMethod($Class* start, $String* methodName, in
 		$Class* cl = start;
 		for (; cl != nullptr; cl = $nc(cl)->getSuperclass()) {
 			{
-				$var($Iterator, i$, $nc($($nc($($ClassInfo::get(cl)))->getMethods()))->iterator());
+				$var($Iterator, i$, $nc($($nc($($1ClassInfo::get(cl)))->getMethods()))->iterator());
 				for (; $nc(i$)->hasNext();) {
 					$var($Method, method, $cast($Method, i$->next()));
 					{

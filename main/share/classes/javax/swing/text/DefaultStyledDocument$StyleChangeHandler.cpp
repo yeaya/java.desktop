@@ -9,7 +9,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $ChangeEvent = ::javax::swing::event::ChangeEvent;
 using $DefaultStyledDocument = ::javax::swing::text::DefaultStyledDocument;
 using $DefaultStyledDocument$AbstractChangeHandler = ::javax::swing::text::DefaultStyledDocument$AbstractChangeHandler;

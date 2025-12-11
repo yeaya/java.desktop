@@ -35,7 +35,6 @@
 #undef ID
 
 using $AWTEvent = ::java::awt::AWTEvent;
-using $ActiveEvent = ::java::awt::ActiveEvent;
 using $Component = ::java::awt::Component;
 using $Conditional = ::java::awt::Conditional;
 using $EventDispatchThread = ::java::awt::EventDispatchThread;
@@ -48,24 +47,15 @@ using $SequencedEvent$2 = ::java::awt::SequencedEvent$2;
 using $SequencedEvent$3 = ::java::awt::SequencedEvent$3;
 using $SequencedEvent$SequencedEventsFilter = ::java::awt::SequencedEvent$SequencedEventsFilter;
 using $Toolkit = ::java::awt::Toolkit;
-using $FocusEvent = ::java::awt::event::FocusEvent;
 using $Serializable = ::java::io::Serializable;
-using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
-using $AbstractCollection = ::java::util::AbstractCollection;
-using $AbstractSequentialList = ::java::util::AbstractSequentialList;
-using $EventObject = ::java::util::EventObject;
 using $Iterator = ::java::util::Iterator;
 using $LinkedList = ::java::util::LinkedList;
 using $AWTAccessor = ::sun::awt::AWTAccessor;

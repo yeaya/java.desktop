@@ -4,10 +4,8 @@
 #include <sun/awt/X11/XMenuPeer.h>
 #include <jcpp.h>
 
-using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $XMenuPeer = ::sun::awt::X11::XMenuPeer;
 
 namespace sun {
 	namespace awt {

@@ -12,13 +12,11 @@
 
 using $WindowsFileChooserUI = ::com::sun::java::swing::plaf::windows::WindowsFileChooserUI;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JRadioButtonMenuItem = ::javax::swing::JRadioButtonMenuItem;
 using $FilePane = ::sun::swing::FilePane;
 

@@ -38,7 +38,6 @@ using $EventListenerArray = $Array<::java::util::EventListener>;
 using $TreeSelectionListenerArray = $Array<::javax::swing::event::TreeSelectionListener>;
 using $TreePathArray = $Array<::javax::swing::tree::TreePath>;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
-using $PropertyChangeSupport = ::java::beans::PropertyChangeSupport;
 using $InvalidObjectException = ::java::io::InvalidObjectException;
 using $ObjectInputStream = ::java::io::ObjectInputStream;
 using $ObjectInputStream$GetField = ::java::io::ObjectInputStream$GetField;

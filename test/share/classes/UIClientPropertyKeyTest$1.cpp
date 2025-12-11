@@ -6,7 +6,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $UIClientPropertyKey = ::javax::swing::UIClientPropertyKey;
 
 $MethodInfo _UIClientPropertyKeyTest$1_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(UIClientPropertyKeyTest$1::*)()>(&UIClientPropertyKeyTest$1::init$))},

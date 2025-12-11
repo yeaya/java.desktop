@@ -9,14 +9,11 @@
 #undef INVERTED
 #undef UNKNOWN
 
-using $LCMSImageLayout$BandOrderArray = $Array<::sun::java2d::cmm::lcms::LCMSImageLayout$BandOrder>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $LCMSImageLayout = ::sun::java2d::cmm::lcms::LCMSImageLayout;
 using $LCMSImageLayout$BandOrder = ::sun::java2d::cmm::lcms::LCMSImageLayout$BandOrder;
 
 namespace sun {

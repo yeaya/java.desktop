@@ -10,7 +10,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $FieldInfo _bug5074573$4_FieldInfo_[] = {

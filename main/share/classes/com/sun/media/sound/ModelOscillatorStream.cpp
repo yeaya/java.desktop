@@ -4,11 +4,8 @@
 #include <javax/sound/midi/VoiceStatus.h>
 #include <jcpp.h>
 
-using $floatArray2 = $Array<float, 2>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $MidiChannel = ::javax::sound::midi::MidiChannel;
-using $VoiceStatus = ::javax::sound::midi::VoiceStatus;
 
 namespace com {
 	namespace sun {

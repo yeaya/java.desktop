@@ -10,7 +10,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $MetalUtils = ::javax::swing::plaf::metal::MetalUtils;
 
 namespace javax {
 	namespace swing {

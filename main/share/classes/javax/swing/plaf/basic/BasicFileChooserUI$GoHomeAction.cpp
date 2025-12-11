@@ -9,7 +9,6 @@
 #include <jcpp.h>
 
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

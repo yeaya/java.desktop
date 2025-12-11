@@ -31,7 +31,6 @@ using $Choice$AccessibleAWTChoice = ::java::awt::Choice$AccessibleAWTChoice;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
-using $ItemSelectable = ::java::awt::ItemSelectable;
 using $Toolkit = ::java::awt::Toolkit;
 using $ItemEvent = ::java::awt::event::ItemEvent;
 using $ItemListener = ::java::awt::event::ItemListener;
@@ -49,7 +48,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $EventListener = ::java::util::EventListener;
 using $Vector = ::java::util::Vector;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $ComponentFactory = ::sun::awt::ComponentFactory;
 
@@ -425,7 +423,7 @@ void Choice::readObject($ObjectInputStream* s) {
 void Choice::initIDs() {
 	$init(Choice);
 	$prepareNativeStatic(Choice, initIDs, void);
-	$invokeNativeStatic(Choice, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

@@ -4,7 +4,6 @@
 #include <java/io/ByteArrayOutputStream.h>
 #include <jcpp.h>
 
-using $JavaSoundAudioClip = ::com::sun::media::sound::JavaSoundAudioClip;
 using $ByteArrayOutputStream = ::java::io::ByteArrayOutputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

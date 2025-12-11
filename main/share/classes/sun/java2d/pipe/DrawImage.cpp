@@ -82,7 +82,6 @@ using $ImageObserver = ::java::awt::image::ImageObserver;
 using $IndexColorModel = ::java::awt::image::IndexColorModel;
 using $Raster = ::java::awt::image::Raster;
 using $VolatileImage = ::java::awt::image::VolatileImage;
-using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -101,12 +100,10 @@ using $SurfaceData = ::sun::java2d::SurfaceData;
 using $Blit = ::sun::java2d::loops::Blit;
 using $BlitBg = ::sun::java2d::loops::BlitBg;
 using $CompositeType = ::sun::java2d::loops::CompositeType;
-using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
 using $MaskBlit = ::sun::java2d::loops::MaskBlit;
 using $ScaledBlit = ::sun::java2d::loops::ScaledBlit;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $TransformHelper = ::sun::java2d::loops::TransformHelper;
-using $DrawImagePipe = ::sun::java2d::pipe::DrawImagePipe;
 using $Region = ::sun::java2d::pipe::Region;
 
 namespace sun {

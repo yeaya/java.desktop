@@ -104,7 +104,6 @@ using $FontMetrics = ::java::awt::FontMetrics;
 using $Frame = ::java::awt::Frame;
 using $Graphics = ::java::awt::Graphics;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
-using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $Image = ::java::awt::Image;
 using $Insets = ::java::awt::Insets;
@@ -113,7 +112,6 @@ using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;
 using $SystemColor = ::java::awt::SystemColor;
-using $Toolkit = ::java::awt::Toolkit;
 using $Window = ::java::awt::Window;
 using $Window$Type = ::java::awt::Window$Type;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
@@ -127,7 +125,6 @@ using $DataBufferInt = ::java::awt::image::DataBufferInt;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $WindowPeer = ::java::awt::peer::WindowPeer;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -140,12 +137,7 @@ using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $StringBuffer = ::java::lang::StringBuffer;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AbstractList = ::java::util::AbstractList;
 using $AbstractSequentialList = ::java::util::AbstractSequentialList;
 using $LinkedList = ::java::util::LinkedList;
@@ -161,10 +153,8 @@ using $Win32GraphicsConfig = ::sun::awt::Win32GraphicsConfig;
 using $Win32GraphicsDevice = ::sun::awt::Win32GraphicsDevice;
 using $Win32GraphicsEnvironment = ::sun::awt::Win32GraphicsEnvironment;
 using $TranslucentWindowPainter = ::sun::awt::windows::TranslucentWindowPainter;
-using $WCanvasPeer = ::sun::awt::windows::WCanvasPeer;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $WFileDialogPeer = ::sun::awt::windows::WFileDialogPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WPanelPeer = ::sun::awt::windows::WPanelPeer;
 using $WPrintDialogPeer = ::sun::awt::windows::WPrintDialogPeer;
 using $WToolkit = ::sun::awt::windows::WToolkit;
@@ -592,7 +582,7 @@ $PropertyChangeListener* WWindowPeer::guiDisposedListener = nullptr;
 void WWindowPeer::initIDs() {
 	$init(WWindowPeer);
 	$prepareNativeStatic(WWindowPeer, initIDs, void);
-	$invokeNativeStatic(WWindowPeer, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -623,19 +613,19 @@ void WWindowPeer::toFront() {
 
 void WWindowPeer::_toFront() {
 	$prepareNative(WWindowPeer, _toFront, void);
-	$invokeNative(WWindowPeer, _toFront);
+	$invokeNative();
 	$finishNative();
 }
 
 void WWindowPeer::toBack() {
 	$prepareNative(WWindowPeer, toBack, void);
-	$invokeNative(WWindowPeer, toBack);
+	$invokeNative();
 	$finishNative();
 }
 
 void WWindowPeer::setAlwaysOnTopNative(bool value) {
 	$prepareNative(WWindowPeer, setAlwaysOnTopNative, void, bool value);
-	$invokeNative(WWindowPeer, setAlwaysOnTopNative, value);
+	$invokeNative(value);
 	$finishNative();
 }
 
@@ -655,7 +645,7 @@ void WWindowPeer::updateFocusableWindowState() {
 
 void WWindowPeer::setFocusableWindow(bool value) {
 	$prepareNative(WWindowPeer, setFocusableWindow, void, bool value);
-	$invokeNative(WWindowPeer, setFocusableWindow, value);
+	$invokeNative(value);
 	$finishNative();
 }
 
@@ -669,7 +659,7 @@ void WWindowPeer::setTitle($String* title$renamed) {
 
 void WWindowPeer::_setTitle($String* title) {
 	$prepareNative(WWindowPeer, _setTitle, void, $String* title);
-	$invokeNative(WWindowPeer, _setTitle, title);
+	$invokeNative(title);
 	$finishNative();
 }
 
@@ -679,7 +669,7 @@ void WWindowPeer::setResizable(bool resizable) {
 
 void WWindowPeer::_setResizable(bool resizable) {
 	$prepareNative(WWindowPeer, _setResizable, void, bool resizable);
-	$invokeNative(WWindowPeer, _setResizable, resizable);
+	$invokeNative(resizable);
 	$finishNative();
 }
 
@@ -729,7 +719,7 @@ void WWindowPeer::initialize() {
 
 void WWindowPeer::createAwtWindow($WComponentPeer* parent) {
 	$prepareNative(WWindowPeer, createAwtWindow, void, $WComponentPeer* parent);
-	$invokeNative(WWindowPeer, createAwtWindow, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 
@@ -778,7 +768,7 @@ void WWindowPeer::syncBounds() {
 
 void WWindowPeer::updateInsets($Insets* i) {
 	$prepareNative(WWindowPeer, updateInsets, void, $Insets* i);
-	$invokeNative(WWindowPeer, updateInsets, i);
+	$invokeNative(i);
 	$finishNative();
 }
 
@@ -786,7 +776,7 @@ int32_t WWindowPeer::getSysMinWidth() {
 	$init(WWindowPeer);
 	int32_t $ret = 0;
 	$prepareNativeStatic(WWindowPeer, getSysMinWidth, int32_t);
-	$ret = $invokeNativeStatic(WWindowPeer, getSysMinWidth);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -795,7 +785,7 @@ int32_t WWindowPeer::getSysMinHeight() {
 	$init(WWindowPeer);
 	int32_t $ret = 0;
 	$prepareNativeStatic(WWindowPeer, getSysMinHeight, int32_t);
-	$ret = $invokeNativeStatic(WWindowPeer, getSysMinHeight);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -804,7 +794,7 @@ int32_t WWindowPeer::getSysIconWidth() {
 	$init(WWindowPeer);
 	int32_t $ret = 0;
 	$prepareNativeStatic(WWindowPeer, getSysIconWidth, int32_t);
-	$ret = $invokeNativeStatic(WWindowPeer, getSysIconWidth);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -813,7 +803,7 @@ int32_t WWindowPeer::getSysIconHeight() {
 	$init(WWindowPeer);
 	int32_t $ret = 0;
 	$prepareNativeStatic(WWindowPeer, getSysIconHeight, int32_t);
-	$ret = $invokeNativeStatic(WWindowPeer, getSysIconHeight);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -822,7 +812,7 @@ int32_t WWindowPeer::getSysSmIconWidth() {
 	$init(WWindowPeer);
 	int32_t $ret = 0;
 	$prepareNativeStatic(WWindowPeer, getSysSmIconWidth, int32_t);
-	$ret = $invokeNativeStatic(WWindowPeer, getSysSmIconWidth);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -831,27 +821,27 @@ int32_t WWindowPeer::getSysSmIconHeight() {
 	$init(WWindowPeer);
 	int32_t $ret = 0;
 	$prepareNativeStatic(WWindowPeer, getSysSmIconHeight, int32_t);
-	$ret = $invokeNativeStatic(WWindowPeer, getSysSmIconHeight);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
 
 void WWindowPeer::setIconImagesData($ints* iconRaster, int32_t w, int32_t h, $ints* smallIconRaster, int32_t smw, int32_t smh) {
 	$prepareNative(WWindowPeer, setIconImagesData, void, $ints* iconRaster, int32_t w, int32_t h, $ints* smallIconRaster, int32_t smw, int32_t smh);
-	$invokeNative(WWindowPeer, setIconImagesData, iconRaster, w, h, smallIconRaster, smw, smh);
+	$invokeNative(iconRaster, w, h, smallIconRaster, smw, smh);
 	$finishNative();
 }
 
 void WWindowPeer::reshapeFrame(int32_t x, int32_t y, int32_t width, int32_t height) {
 	$prepareNative(WWindowPeer, reshapeFrame, void, int32_t x, int32_t y, int32_t width, int32_t height);
-	$invokeNative(WWindowPeer, reshapeFrame, x, y, width, height);
+	$invokeNative(x, y, width, height);
 	$finishNative();
 }
 
 $Dimension* WWindowPeer::getNativeWindowSize() {
 	$var($Dimension, $ret, nullptr);
 	$prepareNative(WWindowPeer, getNativeWindowSize, $Dimension*);
-	$assign($ret, $invokeNative(WWindowPeer, getNativeWindowSize));
+	$assign($ret, $invokeNativeObject());
 	$finishNative();
 	return $ret;
 }
@@ -871,7 +861,7 @@ bool WWindowPeer::requestWindowFocus($FocusEvent$Cause* cause) {
 bool WWindowPeer::requestWindowFocus(bool isMouseEventCause) {
 	bool $ret = false;
 	$prepareNative(WWindowPeer, requestWindowFocus, bool, bool isMouseEventCause);
-	$ret = $invokeNative(WWindowPeer, requestWindowFocus, isMouseEventCause);
+	$ret = $invokeNative(isMouseEventCause);
 	$finishNative();
 	return $ret;
 }
@@ -1003,7 +993,7 @@ void WWindowPeer::updateIconImages() {
 
 void WWindowPeer::setMinSize(int32_t width, int32_t height) {
 	$prepareNative(WWindowPeer, setMinSize, void, int32_t width, int32_t height);
-	$invokeNative(WWindowPeer, setMinSize, width, height);
+	$invokeNative(width, height);
 	$finishNative();
 }
 
@@ -1039,13 +1029,13 @@ void WWindowPeer::setModalBlocked($Dialog* dialog, bool blocked) {
 
 void WWindowPeer::modalDisable($Dialog* blocker, int64_t blockerHWnd) {
 	$prepareNative(WWindowPeer, modalDisable, void, $Dialog* blocker, int64_t blockerHWnd);
-	$invokeNative(WWindowPeer, modalDisable, blocker, blockerHWnd);
+	$invokeNative(blocker, blockerHWnd);
 	$finishNative();
 }
 
 void WWindowPeer::modalEnable($Dialog* blocker) {
 	$prepareNative(WWindowPeer, modalEnable, void, $Dialog* blocker);
-	$invokeNative(WWindowPeer, modalEnable, blocker);
+	$invokeNative(blocker);
 	$finishNative();
 }
 
@@ -1111,14 +1101,14 @@ void WWindowPeer::paletteChanged() {
 int32_t WWindowPeer::getScreenImOn() {
 	int32_t $ret = 0;
 	$prepareNative(WWindowPeer, getScreenImOn, int32_t);
-	$ret = $invokeNative(WWindowPeer, getScreenImOn);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
 
 void WWindowPeer::setFullScreenExclusiveModeState(bool state) {
 	$prepareNative(WWindowPeer, setFullScreenExclusiveModeState, void, bool state);
-	$invokeNative(WWindowPeer, setFullScreenExclusiveModeState, state);
+	$invokeNative(state);
 	$finishNative();
 }
 
@@ -1132,13 +1122,13 @@ void WWindowPeer::ungrab() {
 
 void WWindowPeer::nativeGrab() {
 	$prepareNative(WWindowPeer, nativeGrab, void);
-	$invokeNative(WWindowPeer, nativeGrab);
+	$invokeNative();
 	$finishNative();
 }
 
 void WWindowPeer::nativeUngrab() {
 	$prepareNative(WWindowPeer, nativeUngrab, void);
-	$invokeNative(WWindowPeer, nativeUngrab);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -1152,7 +1142,7 @@ bool WWindowPeer::isTargetUndecorated() {
 
 void WWindowPeer::repositionSecurityWarning() {
 	$prepareNative(WWindowPeer, repositionSecurityWarning, void);
-	$invokeNative(WWindowPeer, repositionSecurityWarning);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -1202,7 +1192,7 @@ void WWindowPeer::setBackground($Color* c) {
 
 void WWindowPeer::setOpacity(int32_t iOpacity) {
 	$prepareNative(WWindowPeer, setOpacity, void, int32_t iOpacity);
-	$invokeNative(WWindowPeer, setOpacity, iOpacity);
+	$invokeNative(iOpacity);
 	$finishNative();
 }
 
@@ -1236,7 +1226,7 @@ void WWindowPeer::setOpacity(float opacity) {
 
 void WWindowPeer::setOpaqueImpl(bool isOpaque) {
 	$prepareNative(WWindowPeer, setOpaqueImpl, void, bool isOpaque);
-	$invokeNative(WWindowPeer, setOpaqueImpl, isOpaque);
+	$invokeNative(isOpaque);
 	$finishNative();
 }
 
@@ -1285,7 +1275,7 @@ void WWindowPeer::setOpaque(bool isOpaque) {
 
 void WWindowPeer::updateWindowImpl($ints* data, int32_t width, int32_t height) {
 	$prepareNative(WWindowPeer, updateWindowImpl, void, $ints* data, int32_t width, int32_t height);
-	$invokeNative(WWindowPeer, updateWindowImpl, data, width, height);
+	$invokeNative(data, width, height);
 	$finishNative();
 }
 

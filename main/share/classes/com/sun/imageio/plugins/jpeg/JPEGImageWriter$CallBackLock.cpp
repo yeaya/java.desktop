@@ -5,7 +5,6 @@
 #include <java/lang/IllegalStateException.h>
 #include <jcpp.h>
 
-using $JPEGImageWriter = ::com::sun::imageio::plugins::jpeg::JPEGImageWriter;
 using $JPEGImageWriter$CallBackLock$State = ::com::sun::imageio::plugins::jpeg::JPEGImageWriter$CallBackLock$State;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

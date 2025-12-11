@@ -32,7 +32,6 @@ using $AppletContext = ::java::applet::AppletContext;
 using $AppletStub = ::java::applet::AppletStub;
 using $AudioClip = ::java::applet::AudioClip;
 using $AWTPermission = ::java::awt::AWTPermission;
-using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $Dimension = ::java::awt::Dimension;

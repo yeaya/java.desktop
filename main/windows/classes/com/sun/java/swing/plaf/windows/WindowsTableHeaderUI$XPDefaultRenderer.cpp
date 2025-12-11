@@ -55,7 +55,6 @@ using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $Insets = ::java::awt::Insets;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

@@ -11,7 +11,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ReentrantContext = ::sun::java2d::ReentrantContext;
-using $ReentrantContextProvider = ::sun::java2d::ReentrantContextProvider;
 using $ReentrantContextProviderTL = ::sun::java2d::ReentrantContextProviderTL;
 using $AAShapePipe$TileState = ::sun::java2d::pipe::AAShapePipe$TileState;
 

@@ -13,7 +13,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JButton = ::javax::swing::JButton;
-using $JComponent = ::javax::swing::JComponent;
 
 $MethodInfo _RepaintOnFrameIconifiedStateChangeTest$7_MethodInfo_[] = {
 	{"<init>", "(Ljava/lang/String;)V", nullptr, 0, $method(static_cast<void(RepaintOnFrameIconifiedStateChangeTest$7::*)($String*)>(&RepaintOnFrameIconifiedStateChangeTest$7::init$))},

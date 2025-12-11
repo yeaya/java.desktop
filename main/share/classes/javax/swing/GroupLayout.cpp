@@ -52,7 +52,6 @@ using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Insets = ::java::awt::Insets;
-using $LayoutManager2 = ::java::awt::LayoutManager2;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

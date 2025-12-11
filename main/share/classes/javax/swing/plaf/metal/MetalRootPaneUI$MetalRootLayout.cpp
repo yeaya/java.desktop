@@ -22,7 +22,6 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Insets = ::java::awt::Insets;
-using $LayoutManager2 = ::java::awt::LayoutManager2;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Float = ::java::lang::Float;

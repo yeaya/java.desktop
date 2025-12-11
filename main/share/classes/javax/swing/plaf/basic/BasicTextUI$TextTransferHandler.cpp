@@ -37,7 +37,6 @@
 #undef TRUE
 
 using $DataFlavorArray = $Array<::java::awt::datatransfer::DataFlavor>;
-using $Component = ::java::awt::Component;
 using $DataFlavor = ::java::awt::datatransfer::DataFlavor;
 using $Transferable = ::java::awt::datatransfer::Transferable;
 using $UnsupportedFlavorException = ::java::awt::datatransfer::UnsupportedFlavorException;
@@ -54,11 +53,8 @@ using $JComponent = ::javax::swing::JComponent;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $JPasswordField = ::javax::swing::JPasswordField;
 using $TransferHandler = ::javax::swing::TransferHandler;
-using $TransferHandler$DropLocation = ::javax::swing::TransferHandler$DropLocation;
 using $TransferHandler$TransferSupport = ::javax::swing::TransferHandler$TransferSupport;
 using $TextUI = ::javax::swing::plaf::TextUI;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $BasicTextUI = ::javax::swing::plaf::basic::BasicTextUI;
 using $BasicTextUI$TextTransferHandler$TextTransferable = ::javax::swing::plaf::basic::BasicTextUI$TextTransferHandler$TextTransferable;
 using $BasicTransferable = ::javax::swing::plaf::basic::BasicTransferable;
 using $BadLocationException = ::javax::swing::text::BadLocationException;

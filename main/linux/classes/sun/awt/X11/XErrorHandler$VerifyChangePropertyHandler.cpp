@@ -11,7 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $XErrorEvent = ::sun::awt::X11::XErrorEvent;
-using $XErrorHandler = ::sun::awt::X11::XErrorHandler;
 using $XErrorHandler$XBaseErrorHandler = ::sun::awt::X11::XErrorHandler$XBaseErrorHandler;
 using $XProtocolConstants = ::sun::awt::X11::XProtocolConstants;
 

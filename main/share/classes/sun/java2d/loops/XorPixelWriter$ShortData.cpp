@@ -10,7 +10,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PixelWriter = ::sun::java2d::loops::PixelWriter;
 using $XorPixelWriter = ::sun::java2d::loops::XorPixelWriter;
 
 namespace sun {

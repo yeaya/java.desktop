@@ -3,7 +3,6 @@
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
-using $EventListener = ::java::util::EventListener;
 
 namespace java {
 	namespace awt {

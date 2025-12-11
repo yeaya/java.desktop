@@ -20,7 +20,6 @@
 #include <javax/swing/plaf/ComponentUI.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $ObjectOutputStream = ::java::io::ObjectOutputStream;

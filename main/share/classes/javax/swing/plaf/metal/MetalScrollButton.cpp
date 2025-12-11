@@ -38,7 +38,6 @@ using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
 using $SwingConstants = ::javax::swing::SwingConstants;
 using $UIManager = ::javax::swing::UIManager;
-using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
 using $BasicArrowButton = ::javax::swing::plaf::basic::BasicArrowButton;
 using $MetalLookAndFeel = ::javax::swing::plaf::metal::MetalLookAndFeel;
 using $MetalUtils = ::javax::swing::plaf::metal::MetalUtils;

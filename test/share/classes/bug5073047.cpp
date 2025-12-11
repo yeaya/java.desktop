@@ -17,7 +17,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $UIManager = ::javax::swing::UIManager;
-using $FontUIResource = ::javax::swing::plaf::FontUIResource;
 using $BasicLookAndFeel = ::javax::swing::plaf::basic::BasicLookAndFeel;
 using $DefaultMetalTheme = ::javax::swing::plaf::metal::DefaultMetalTheme;
 using $MetalLookAndFeel = ::javax::swing::plaf::metal::MetalLookAndFeel;

@@ -9,7 +9,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $WeakReference = ::java::lang::ref::WeakReference;
-using $ReentrantContextProvider = ::sun::java2d::ReentrantContextProvider;
 
 namespace sun {
 	namespace java2d {

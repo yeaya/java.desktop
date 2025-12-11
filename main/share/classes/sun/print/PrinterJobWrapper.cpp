@@ -7,7 +7,6 @@ using $PrinterJob = ::java::awt::print::PrinterJob;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrintRequestAttribute = ::javax::print::attribute::PrintRequestAttribute;
 
 namespace sun {
 	namespace print {

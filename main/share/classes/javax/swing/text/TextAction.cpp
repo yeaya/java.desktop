@@ -16,7 +16,6 @@ using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Enumeration = ::java::util::Enumeration;
-using $EventObject = ::java::util::EventObject;
 using $Hashtable = ::java::util::Hashtable;
 using $AbstractAction = ::javax::swing::AbstractAction;
 using $Action = ::javax::swing::Action;

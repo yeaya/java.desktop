@@ -46,7 +46,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JMenuBar = ::javax::swing::JMenuBar;
 using $JToolBar = ::javax::swing::JToolBar;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $Region = ::javax::swing::plaf::synth::Region;
 using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
 using $SynthStyle = ::javax::swing::plaf::synth::SynthStyle;

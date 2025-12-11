@@ -7,8 +7,6 @@
 #include <jcpp.h>
 
 using $TestDialog4bug8037575 = ::TestDialog4bug8037575;
-using $Dialog = ::java::awt::Dialog;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

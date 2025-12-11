@@ -10,7 +10,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $PlainView = ::javax::swing::text::PlainView;
 using $PlainView$FPMethodArgs = ::javax::swing::text::PlainView$FPMethodArgs;
 

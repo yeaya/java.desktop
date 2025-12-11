@@ -8,15 +8,9 @@
 #include <sun/awt/AppContext.h>
 #include <jcpp.h>
 
-using $Font = ::java::awt::Font;
-using $MenuComponent = ::java::awt::MenuComponent;
-using $MenuContainer = ::java::awt::MenuContainer;
-using $MenuComponentPeer = ::java::awt::peer::MenuComponentPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AWTAccessor = ::sun::awt::AWTAccessor;
-using $AppContext = ::sun::awt::AppContext;
 
 namespace sun {
 	namespace awt {

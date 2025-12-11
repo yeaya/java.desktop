@@ -8,8 +8,6 @@ using $Cursor = ::java::awt::Cursor;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $BasicTextUI = ::javax::swing::plaf::basic::BasicTextUI;
 
 namespace javax {
 	namespace swing {

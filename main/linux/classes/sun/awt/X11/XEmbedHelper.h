@@ -107,7 +107,7 @@ public:
 	static ::sun::util::logging::PlatformLogger* xembedLog;
 	static ::jdk::internal::misc::Unsafe* unsafe;
 	static const int32_t XEMBED_VERSION = 0;
-	static const int32_t XEMBED_MAPPED = (1 << 0);
+	static const int32_t XEMBED_MAPPED = 1; // (1 << 0)
 	static const int32_t XEMBED_EMBEDDED_NOTIFY = 0;
 	static const int32_t XEMBED_WINDOW_ACTIVATE = 1;
 	static const int32_t XEMBED_WINDOW_DEACTIVATE = 2;
@@ -128,11 +128,11 @@ public:
 	static const int32_t XEMBED_FOCUS_CURRENT = 0;
 	static const int32_t XEMBED_FOCUS_FIRST = 1;
 	static const int32_t XEMBED_FOCUS_LAST = 2;
-	static const int32_t XEMBED_MODIFIER_SHIFT = (1 << 0);
-	static const int32_t XEMBED_MODIFIER_CONTROL = (1 << 1);
-	static const int32_t XEMBED_MODIFIER_ALT = (1 << 2);
-	static const int32_t XEMBED_MODIFIER_SUPER = (1 << 3);
-	static const int32_t XEMBED_MODIFIER_HYPER = (1 << 4);
+	static const int32_t XEMBED_MODIFIER_SHIFT = 1; // (1 << 0)
+	static const int32_t XEMBED_MODIFIER_CONTROL = 2; // (1 << 1)
+	static const int32_t XEMBED_MODIFIER_ALT = 4; // (1 << 2)
+	static const int32_t XEMBED_MODIFIER_SUPER = 8; // (1 << 3)
+	static const int32_t XEMBED_MODIFIER_HYPER = 16; // (1 << 4)
 	static ::sun::awt::X11::XAtom* XEmbedInfo;
 	static ::sun::awt::X11::XAtom* XEmbed;
 };

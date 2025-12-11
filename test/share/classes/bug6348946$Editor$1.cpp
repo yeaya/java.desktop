@@ -15,7 +15,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JSlider = ::javax::swing::JSlider;
 using $ChangeEvent = ::javax::swing::event::ChangeEvent;
-using $ChangeListener = ::javax::swing::event::ChangeListener;
 
 $FieldInfo _bug6348946$Editor$1_FieldInfo_[] = {
 	{"this$0", "Lbug6348946$Editor;", nullptr, $FINAL | $SYNTHETIC, $field(bug6348946$Editor$1, this$0)},

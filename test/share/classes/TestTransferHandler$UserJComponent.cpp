@@ -8,7 +8,6 @@
 #undef TEST_COLOR
 #undef USER_COLOR
 
-using $TestTransferHandler = ::TestTransferHandler;
 using $Color = ::java::awt::Color;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

@@ -154,7 +154,6 @@
 #undef WIDTH
 
 using $CSS$AttributeArray = $Array<::javax::swing::text::html::CSS$Attribute>;
-using $CSS$ValueArray = $Array<::javax::swing::text::html::CSS$Value>;
 using $Color = ::java::awt::Color;
 using $Font = ::java::awt::Font;
 using $ObjectInputStream = ::java::io::ObjectInputStream;

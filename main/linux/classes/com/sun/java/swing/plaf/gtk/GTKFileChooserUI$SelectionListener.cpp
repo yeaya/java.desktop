@@ -21,13 +21,10 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ArrayList = ::java::util::ArrayList;
-using $EventObject = ::java::util::EventObject;
 using $JFileChooser = ::javax::swing::JFileChooser;
 using $JList = ::javax::swing::JList;
 using $ListSelectionEvent = ::javax::swing::event::ListSelectionEvent;
-using $ListSelectionListener = ::javax::swing::event::ListSelectionListener;
 using $FileSystemView = ::javax::swing::filechooser::FileSystemView;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 
 namespace com {
 	namespace sun {

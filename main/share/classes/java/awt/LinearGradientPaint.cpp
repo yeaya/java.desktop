@@ -23,7 +23,6 @@
 #undef SRGB
 
 using $ColorArray = $Array<::java::awt::Color>;
-using $Color = ::java::awt::Color;
 using $GradientPaintContext = ::java::awt::GradientPaintContext;
 using $LinearGradientPaintContext = ::java::awt::LinearGradientPaintContext;
 using $MultipleGradientPaint = ::java::awt::MultipleGradientPaint;

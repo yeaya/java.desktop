@@ -40,7 +40,6 @@
 #undef WIND_NON_ZERO
 
 using $ArrayCacheConst$CacheStatsArray = $Array<::sun::java2d::marlin::ArrayCacheConst$CacheStats>;
-using $Path2D = ::java::awt::geom::Path2D;
 using $Path2D$Double = ::java::awt::geom::Path2D$Double;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
@@ -48,11 +47,9 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $AtomicInteger = ::java::util::concurrent::atomic::AtomicInteger;
 using $ReentrantContext = ::sun::java2d::ReentrantContext;
-using $ArrayCacheConst$CacheStats = ::sun::java2d::marlin::ArrayCacheConst$CacheStats;
 using $ByteArrayCache = ::sun::java2d::marlin::ByteArrayCache;
 using $ByteArrayCache$Reference = ::sun::java2d::marlin::ByteArrayCache$Reference;
 using $CollinearSimplifier = ::sun::java2d::marlin::CollinearSimplifier;

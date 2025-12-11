@@ -11,11 +11,9 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JComponent = ::javax::swing::JComponent;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 using $PopupMenuEvent = ::javax::swing::event::PopupMenuEvent;
-using $PopupMenuListener = ::javax::swing::event::PopupMenuListener;
 using $BasicLookAndFeel = ::javax::swing::plaf::basic::BasicLookAndFeel;
 using $BasicPopupMenuUI = ::javax::swing::plaf::basic::BasicPopupMenuUI;
 

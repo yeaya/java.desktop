@@ -6,13 +6,10 @@
 #include <jcpp.h>
 
 using $bug4529206 = ::bug4529206;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JFrame = ::javax::swing::JFrame;
 

@@ -30,7 +30,6 @@
 using $TrayIconArray = $Array<::java::awt::TrayIcon>;
 using $PropertyChangeListenerArray = $Array<::java::beans::PropertyChangeListener>;
 using $AWTException = ::java::awt::AWTException;
-using $AWTPermission = ::java::awt::AWTPermission;
 using $Dimension = ::java::awt::Dimension;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $HeadlessException = ::java::awt::HeadlessException;

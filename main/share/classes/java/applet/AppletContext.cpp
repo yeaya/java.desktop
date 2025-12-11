@@ -9,17 +9,10 @@
 #include <java/util/Iterator.h>
 #include <jcpp.h>
 
-using $Applet = ::java::applet::Applet;
-using $AudioClip = ::java::applet::AudioClip;
-using $Image = ::java::awt::Image;
-using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $URL = ::java::net::URL;
-using $Enumeration = ::java::util::Enumeration;
-using $Iterator = ::java::util::Iterator;
 
 namespace java {
 	namespace applet {

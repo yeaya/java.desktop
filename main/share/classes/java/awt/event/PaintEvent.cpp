@@ -11,7 +11,6 @@
 #undef PAINT_LAST
 #undef UPDATE
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Rectangle = ::java::awt::Rectangle;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;

@@ -8,12 +8,9 @@
 #undef WITHOUT_CONTEXT
 #undef WITH_CONTEXT
 
-using $Font = ::java::awt::Font;
-using $FontRenderContext = ::java::awt::font::FontRenderContext;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CoreMetrics = ::sun::font::CoreMetrics;
 
 namespace sun {
 	namespace font {

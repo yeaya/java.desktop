@@ -3,7 +3,6 @@
 #include <java/awt/peer/KeyboardFocusManagerPeer.h>
 #include <jcpp.h>
 
-using $KeyboardFocusManagerPeer = ::java::awt::peer::KeyboardFocusManagerPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

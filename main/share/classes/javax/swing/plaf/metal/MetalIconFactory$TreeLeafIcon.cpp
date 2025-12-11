@@ -7,7 +7,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $MetalIconFactory = ::javax::swing::plaf::metal::MetalIconFactory;
 using $MetalIconFactory$FileIcon16 = ::javax::swing::plaf::metal::MetalIconFactory$FileIcon16;
 
 namespace javax {

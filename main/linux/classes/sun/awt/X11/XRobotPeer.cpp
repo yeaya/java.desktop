@@ -14,10 +14,8 @@
 #include <sun/security/action/GetPropertyAction.h>
 #include <jcpp.h>
 
-using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $Rectangle = ::java::awt::Rectangle;
 using $Toolkit = ::java::awt::Toolkit;
-using $RobotPeer = ::java::awt::peer::RobotPeer;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -147,63 +145,63 @@ $ints* XRobotPeer::getRGBPixels($Rectangle* bounds) {
 void XRobotPeer::setup(int32_t numberOfButtons, $ints* buttonDownMasks) {
 	$init(XRobotPeer);
 	$prepareNativeStatic(XRobotPeer, setup, void, int32_t numberOfButtons, $ints* buttonDownMasks);
-	$invokeNativeStatic(XRobotPeer, setup, numberOfButtons, buttonDownMasks);
+	$invokeNativeStatic(numberOfButtons, buttonDownMasks);
 	$finishNativeStatic();
 }
 
 void XRobotPeer::loadNativeLibraries() {
 	$init(XRobotPeer);
 	$prepareNativeStatic(XRobotPeer, loadNativeLibraries, void);
-	$invokeNativeStatic(XRobotPeer, loadNativeLibraries);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
 void XRobotPeer::mouseMoveImpl($X11GraphicsConfig* xgc, int32_t x, int32_t y) {
 	$init(XRobotPeer);
 	$prepareNativeStatic(XRobotPeer, mouseMoveImpl, void, $X11GraphicsConfig* xgc, int32_t x, int32_t y);
-	$invokeNativeStatic(XRobotPeer, mouseMoveImpl, xgc, x, y);
+	$invokeNativeStatic(xgc, x, y);
 	$finishNativeStatic();
 }
 
 void XRobotPeer::mousePressImpl(int32_t buttons) {
 	$init(XRobotPeer);
 	$prepareNativeStatic(XRobotPeer, mousePressImpl, void, int32_t buttons);
-	$invokeNativeStatic(XRobotPeer, mousePressImpl, buttons);
+	$invokeNativeStatic(buttons);
 	$finishNativeStatic();
 }
 
 void XRobotPeer::mouseReleaseImpl(int32_t buttons) {
 	$init(XRobotPeer);
 	$prepareNativeStatic(XRobotPeer, mouseReleaseImpl, void, int32_t buttons);
-	$invokeNativeStatic(XRobotPeer, mouseReleaseImpl, buttons);
+	$invokeNativeStatic(buttons);
 	$finishNativeStatic();
 }
 
 void XRobotPeer::mouseWheelImpl(int32_t wheelAmt) {
 	$init(XRobotPeer);
 	$prepareNativeStatic(XRobotPeer, mouseWheelImpl, void, int32_t wheelAmt);
-	$invokeNativeStatic(XRobotPeer, mouseWheelImpl, wheelAmt);
+	$invokeNativeStatic(wheelAmt);
 	$finishNativeStatic();
 }
 
 void XRobotPeer::keyPressImpl(int32_t keycode) {
 	$init(XRobotPeer);
 	$prepareNativeStatic(XRobotPeer, keyPressImpl, void, int32_t keycode);
-	$invokeNativeStatic(XRobotPeer, keyPressImpl, keycode);
+	$invokeNativeStatic(keycode);
 	$finishNativeStatic();
 }
 
 void XRobotPeer::keyReleaseImpl(int32_t keycode) {
 	$init(XRobotPeer);
 	$prepareNativeStatic(XRobotPeer, keyReleaseImpl, void, int32_t keycode);
-	$invokeNativeStatic(XRobotPeer, keyReleaseImpl, keycode);
+	$invokeNativeStatic(keycode);
 	$finishNativeStatic();
 }
 
 void XRobotPeer::getRGBPixelsImpl($X11GraphicsConfig* xgc, int32_t x, int32_t y, int32_t width, int32_t height, $ints* pixelArray, bool isGtkSupported) {
 	$init(XRobotPeer);
 	$prepareNativeStatic(XRobotPeer, getRGBPixelsImpl, void, $X11GraphicsConfig* xgc, int32_t x, int32_t y, int32_t width, int32_t height, $ints* pixelArray, bool isGtkSupported);
-	$invokeNativeStatic(XRobotPeer, getRGBPixelsImpl, xgc, x, y, width, height, pixelArray, isGtkSupported);
+	$invokeNativeStatic(xgc, x, y, width, height, pixelArray, isGtkSupported);
 	$finishNativeStatic();
 }
 

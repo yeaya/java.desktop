@@ -13,7 +13,6 @@
 #undef SELECTION
 
 using $AttributeValue = ::java::awt::AttributeValue;
-using $JobAttributes = ::java::awt::JobAttributes;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

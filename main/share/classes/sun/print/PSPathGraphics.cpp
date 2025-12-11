@@ -45,7 +45,6 @@
 #undef TYPE_TRANSLATION
 
 using $Color = ::java::awt::Color;
-using $Composite = ::java::awt::Composite;
 using $Font = ::java::awt::Font;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
@@ -67,9 +66,7 @@ using $Rectangle2D$Float = ::java::awt::geom::Rectangle2D$Float;
 using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ImageObserver = ::java::awt::image::ImageObserver;
-using $WritableRaster = ::java::awt::image::WritableRaster;
 using $PageFormat = ::java::awt::print::PageFormat;
-using $Paper = ::java::awt::print::Paper;
 using $Printable = ::java::awt::print::Printable;
 using $PrinterJob = ::java::awt::print::PrinterJob;
 using $ClassCastException = ::java::lang::ClassCastException;

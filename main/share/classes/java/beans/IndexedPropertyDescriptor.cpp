@@ -35,7 +35,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Void = ::java::lang::Void;
-using $Annotation = ::java::lang::annotation::Annotation;
 using $Reference = ::java::lang::ref::Reference;
 using $Method = ::java::lang::reflect::Method;
 using $Map$Entry = ::java::util::Map$Entry;

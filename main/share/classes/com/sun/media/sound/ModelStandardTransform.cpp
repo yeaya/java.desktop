@@ -13,7 +13,6 @@
 #undef TRANSFORM_LINEAR
 #undef TRANSFORM_SWITCH
 
-using $ModelTransform = ::com::sun::media::sound::ModelTransform;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;

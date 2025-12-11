@@ -8,11 +8,7 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JEditorPane = ::javax::swing::JEditorPane;
 using $JTextPane = ::javax::swing::JTextPane;
-using $Document = ::javax::swing::text::Document;
-using $EditorKit = ::javax::swing::text::EditorKit;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $MethodInfo _HeadlessJTextPane_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PUBLIC, $method(static_cast<void(HeadlessJTextPane::*)()>(&HeadlessJTextPane::init$))},

@@ -9,7 +9,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $List = ::java::util::List;
 using $Node = ::org::w3c::dom::Node;
-using $NodeList = ::org::w3c::dom::NodeList;
 
 namespace javax {
 	namespace imageio {

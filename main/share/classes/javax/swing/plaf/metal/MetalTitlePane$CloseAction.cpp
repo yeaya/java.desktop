@@ -8,13 +8,11 @@
 #include <javax/swing/plaf/metal/MetalTitlePane.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Locale = ::java::util::Locale;
 using $AbstractAction = ::javax::swing::AbstractAction;
 using $UIManager = ::javax::swing::UIManager;
 using $MetalTitlePane = ::javax::swing::plaf::metal::MetalTitlePane;

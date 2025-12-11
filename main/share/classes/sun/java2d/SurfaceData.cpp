@@ -101,14 +101,11 @@
 
 using $AWTPermission = ::java::awt::AWTPermission;
 using $Color = ::java::awt::Color;
-using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $Image = ::java::awt::Image;
 using $Paint = ::java::awt::Paint;
-using $Rectangle = ::java::awt::Rectangle;
 using $Transparency = ::java::awt::Transparency;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $IndexColorModel = ::java::awt::image::IndexColorModel;
-using $Raster = ::java::awt::image::Raster;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -121,14 +118,11 @@ using $Permission = ::java::security::Permission;
 using $SunHints = ::sun::awt::SunHints;
 using $SurfaceManager = ::sun::awt::image::SurfaceManager;
 using $FontUtilities = ::sun::font::FontUtilities;
-using $DisposerTarget = ::sun::java2d::DisposerTarget;
 using $NullSurfaceData = ::sun::java2d::NullSurfaceData;
-using $StateTrackable = ::sun::java2d::StateTrackable;
 using $StateTrackable$State = ::sun::java2d::StateTrackable$State;
 using $StateTrackableDelegate = ::sun::java2d::StateTrackableDelegate;
 using $StateTracker = ::sun::java2d::StateTracker;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
-using $Surface = ::sun::java2d::Surface;
 using $SurfaceData$PixelToPgramLoopConverter = ::sun::java2d::SurfaceData$PixelToPgramLoopConverter;
 using $SurfaceData$PixelToShapeLoopConverter = ::sun::java2d::SurfaceData$PixelToShapeLoopConverter;
 using $SurfaceDataProxy = ::sun::java2d::SurfaceDataProxy;
@@ -146,7 +140,6 @@ using $FillParallelogram = ::sun::java2d::loops::FillParallelogram;
 using $FillPath = ::sun::java2d::loops::FillPath;
 using $FillRect = ::sun::java2d::loops::FillRect;
 using $FillSpans = ::sun::java2d::loops::FillSpans;
-using $FontInfo = ::sun::java2d::loops::FontInfo;
 using $MaskFill = ::sun::java2d::loops::MaskFill;
 using $RenderCache = ::sun::java2d::loops::RenderCache;
 using $RenderLoops = ::sun::java2d::loops::RenderLoops;
@@ -387,7 +380,7 @@ $Permission* SurfaceData::compPermission = nullptr;
 void SurfaceData::initIDs() {
 	$init(SurfaceData);
 	$prepareNativeStatic(SurfaceData, initIDs, void);
-	$invokeNativeStatic(SurfaceData, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -885,7 +878,7 @@ bool SurfaceData::isOpaqueGray($IndexColorModel* icm) {
 	$init(SurfaceData);
 	bool $ret = false;
 	$prepareNativeStatic(SurfaceData, isOpaqueGray, bool, $IndexColorModel* icm);
-	$ret = $invokeNativeStatic(SurfaceData, isOpaqueGray, icm);
+	$ret = $invokeNativeStatic(icm);
 	$finishNativeStatic();
 	return $ret;
 }

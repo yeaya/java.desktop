@@ -12,7 +12,6 @@
 
 using $DirectAudioDeviceArray = $Array<::com::sun::media::sound::DirectAudioDevice>;
 using $DirectAudioDeviceProvider$DirectAudioDeviceInfoArray = $Array<::com::sun::media::sound::DirectAudioDeviceProvider$DirectAudioDeviceInfo>;
-using $Line$InfoArray = $Array<::javax::sound::sampled::Line$Info>;
 using $Mixer$InfoArray = $Array<::javax::sound::sampled::Mixer$Info>;
 using $AbstractMixer = ::com::sun::media::sound::AbstractMixer;
 using $DirectAudioDevice = ::com::sun::media::sound::DirectAudioDevice;
@@ -145,7 +144,7 @@ int32_t DirectAudioDeviceProvider::nGetNumDevices() {
 	$init(DirectAudioDeviceProvider);
 	int32_t $ret = 0;
 	$prepareNativeStatic(DirectAudioDeviceProvider, nGetNumDevices, int32_t);
-	$ret = $invokeNativeStatic(DirectAudioDeviceProvider, nGetNumDevices);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -154,7 +153,7 @@ $DirectAudioDeviceProvider$DirectAudioDeviceInfo* DirectAudioDeviceProvider::nNe
 	$init(DirectAudioDeviceProvider);
 	$var($DirectAudioDeviceProvider$DirectAudioDeviceInfo, $ret, nullptr);
 	$prepareNativeStatic(DirectAudioDeviceProvider, nNewDirectAudioDeviceInfo, $DirectAudioDeviceProvider$DirectAudioDeviceInfo*, int32_t deviceIndex);
-	$assign($ret, $invokeNativeStatic(DirectAudioDeviceProvider, nNewDirectAudioDeviceInfo, deviceIndex));
+	$assign($ret, $invokeNativeStaticObject(deviceIndex));
 	$finishNativeStatic();
 	return $ret;
 }

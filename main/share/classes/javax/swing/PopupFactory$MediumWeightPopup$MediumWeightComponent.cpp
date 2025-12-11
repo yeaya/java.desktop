@@ -14,8 +14,6 @@ using $Panel = ::java::awt::Panel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PopupFactory$MediumWeightPopup = ::javax::swing::PopupFactory$MediumWeightPopup;
-using $SwingHeavyWeight = ::javax::swing::SwingHeavyWeight;
 
 namespace javax {
 	namespace swing {

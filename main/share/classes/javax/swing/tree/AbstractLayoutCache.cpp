@@ -24,7 +24,6 @@ using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $Enumeration = ::java::util::Enumeration;
-using $TreeModelEvent = ::javax::swing::event::TreeModelEvent;
 using $AbstractLayoutCache$NodeDimensions = ::javax::swing::tree::AbstractLayoutCache$NodeDimensions;
 using $RowMapper = ::javax::swing::tree::RowMapper;
 using $TreeModel = ::javax::swing::tree::TreeModel;

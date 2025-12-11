@@ -4,7 +4,6 @@
 #include <javax/sound/sampled/Mixer$Info.h>
 #include <jcpp.h>
 
-using $PortMixerProvider = ::com::sun::media::sound::PortMixerProvider;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

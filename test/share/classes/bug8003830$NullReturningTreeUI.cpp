@@ -7,7 +7,6 @@
 #include <javax/swing/tree/TreePath.h>
 #include <jcpp.h>
 
-using $bug8003830 = ::bug8003830;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

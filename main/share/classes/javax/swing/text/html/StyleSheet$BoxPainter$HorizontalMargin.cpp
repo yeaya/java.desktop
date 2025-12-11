@@ -14,8 +14,6 @@ using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $StyleSheet = ::javax::swing::text::html::StyleSheet;
-using $StyleSheet$BoxPainter = ::javax::swing::text::html::StyleSheet$BoxPainter;
 
 namespace javax {
 	namespace swing {

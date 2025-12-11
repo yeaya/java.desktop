@@ -4,7 +4,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
-using $Line = ::javax::sound::sampled::Line;
 
 namespace javax {
 	namespace sound {

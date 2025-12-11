@@ -65,7 +65,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
-using $Icon = ::javax::swing::Icon;
 using $JComponent = ::javax::swing::JComponent;
 using $JMenu = ::javax::swing::JMenu;
 using $JMenuItem = ::javax::swing::JMenuItem;

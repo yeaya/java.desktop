@@ -3,7 +3,6 @@
 #include <com/sun/media/sound/RIFFWriter.h>
 #include <jcpp.h>
 
-using $RIFFWriter = ::com::sun::media::sound::RIFFWriter;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

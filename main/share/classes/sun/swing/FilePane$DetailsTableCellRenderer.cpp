@@ -27,10 +27,8 @@
 #undef RIGHT
 #undef SHORT
 
-using $ShellFolderColumnInfoArray = $Array<::sun::awt::shell::ShellFolderColumnInfo>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Dimension = ::java::awt::Dimension;
 using $Insets = ::java::awt::Insets;
 using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -44,7 +42,6 @@ using $Number = ::java::lang::Number;
 using $DateFormat = ::java::text::DateFormat;
 using $MessageFormat = ::java::text::MessageFormat;
 using $Date = ::java::util::Date;
-using $Locale = ::java::util::Locale;
 using $Icon = ::javax::swing::Icon;
 using $JComponent = ::javax::swing::JComponent;
 using $JFileChooser = ::javax::swing::JFileChooser;

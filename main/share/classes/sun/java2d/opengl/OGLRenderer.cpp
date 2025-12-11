@@ -24,7 +24,6 @@
 #undef OPAQUE
 #undef SRC_IS_OPAQUE
 
-using $Composite = ::java::awt::Composite;
 using $Paint = ::java::awt::Paint;
 using $Transparency = ::java::awt::Transparency;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
@@ -39,9 +38,7 @@ using $SurfaceData = ::sun::java2d::SurfaceData;
 using $OGLContext = ::sun::java2d::opengl::OGLContext;
 using $OGLRenderer$Tracer = ::sun::java2d::opengl::OGLRenderer$Tracer;
 using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;
-using $BufferedContext = ::sun::java2d::pipe::BufferedContext;
 using $BufferedRenderPipe = ::sun::java2d::pipe::BufferedRenderPipe;
-using $Region = ::sun::java2d::pipe::Region;
 using $RenderBuffer = ::sun::java2d::pipe::RenderBuffer;
 using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 using $SpanIterator = ::sun::java2d::pipe::SpanIterator;
@@ -176,7 +173,7 @@ void OGLRenderer::copyArea($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w
 
 void OGLRenderer::drawPoly($ints* xPoints, $ints* yPoints, int32_t nPoints, bool isClosed, int32_t transX, int32_t transY) {
 	$prepareNative(OGLRenderer, drawPoly, void, $ints* xPoints, $ints* yPoints, int32_t nPoints, bool isClosed, int32_t transX, int32_t transY);
-	$invokeNative(OGLRenderer, drawPoly, xPoints, yPoints, nPoints, isClosed, transX, transY);
+	$invokeNative(xPoints, yPoints, nPoints, isClosed, transX, transY);
 	$finishNative();
 }
 

@@ -9,16 +9,13 @@
 #include <javax/swing/ToolTipManager.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $FocusAdapter = ::java::awt::event::FocusAdapter;
 using $FocusEvent = ::java::awt::event::FocusEvent;
-using $FocusListener = ::java::awt::event::FocusListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JComponent = ::javax::swing::JComponent;
 using $ToolTipManager = ::javax::swing::ToolTipManager;
 

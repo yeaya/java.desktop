@@ -7,7 +7,6 @@
 #include <java/awt/event/AWTEventListener.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $LightweightDispatcher = ::java::awt::LightweightDispatcher;
 using $Toolkit = ::java::awt::Toolkit;
@@ -17,7 +16,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 
 namespace java {
 	namespace awt {

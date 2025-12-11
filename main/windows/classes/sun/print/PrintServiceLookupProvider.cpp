@@ -41,7 +41,6 @@ using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $ArrayList = ::java::util::ArrayList;
 using $DocFlavor = ::javax::print::DocFlavor;
-using $MultiDocPrintService = ::javax::print::MultiDocPrintService;
 using $PrintService = ::javax::print::PrintService;
 using $PrintServiceLookup = ::javax::print::PrintServiceLookup;
 using $Attribute = ::javax::print::attribute::Attribute;
@@ -52,7 +51,6 @@ using $PrintRequestAttribute = ::javax::print::attribute::PrintRequestAttribute;
 using $PrintRequestAttributeSet = ::javax::print::attribute::PrintRequestAttributeSet;
 using $PrintServiceAttribute = ::javax::print::attribute::PrintServiceAttribute;
 using $PrintServiceAttributeSet = ::javax::print::attribute::PrintServiceAttributeSet;
-using $TextSyntax = ::javax::print::attribute::TextSyntax;
 using $PrinterName = ::javax::print::attribute::standard::PrinterName;
 using $PrintServiceLookupProvider$1 = ::sun::print::PrintServiceLookupProvider$1;
 using $PrintServiceLookupProvider$PrinterChangeListener = ::sun::print::PrintServiceLookupProvider$PrinterChangeListener;
@@ -324,7 +322,7 @@ $PrintService* PrintServiceLookupProvider::getDefaultPrintService() {
 $String* PrintServiceLookupProvider::getDefaultPrinterName() {
 	$var($String, $ret, nullptr);
 	$prepareNative(PrintServiceLookupProvider, getDefaultPrinterName, $String*);
-	$assign($ret, $invokeNative(PrintServiceLookupProvider, getDefaultPrinterName));
+	$assign($ret, $invokeNativeObject());
 	$finishNative();
 	return $ret;
 }
@@ -332,20 +330,20 @@ $String* PrintServiceLookupProvider::getDefaultPrinterName() {
 $StringArray* PrintServiceLookupProvider::getAllPrinterNames() {
 	$var($StringArray, $ret, nullptr);
 	$prepareNative(PrintServiceLookupProvider, getAllPrinterNames, $StringArray*);
-	$assign($ret, $invokeNative(PrintServiceLookupProvider, getAllPrinterNames));
+	$assign($ret, $invokeNativeObject());
 	$finishNative();
 	return $ret;
 }
 
 void PrintServiceLookupProvider::notifyLocalPrinterChange() {
 	$prepareNative(PrintServiceLookupProvider, notifyLocalPrinterChange, void);
-	$invokeNative(PrintServiceLookupProvider, notifyLocalPrinterChange);
+	$invokeNative();
 	$finishNative();
 }
 
 void PrintServiceLookupProvider::notifyRemotePrinterChange() {
 	$prepareNative(PrintServiceLookupProvider, notifyRemotePrinterChange, void);
-	$invokeNative(PrintServiceLookupProvider, notifyRemotePrinterChange);
+	$invokeNative();
 	$finishNative();
 }
 

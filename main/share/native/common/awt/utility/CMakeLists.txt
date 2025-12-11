@@ -1,7 +1,15 @@
 #machine generated
 
+if(JCPP_OS MATCHES "macos")
+	add_definitions("-DNULL=0")
+endif()
+
 if(JCPP_OS MATCHES "linux")
 	include_directories("../../../../../linux/native/common/awt/utility")
+endif()
+
+if(JCPP_OS MATCHES "macos")
+	include_directories("../../../../../macos/native/common/awt/utility")
 endif()
 
 if(JCPP_OS MATCHES "windows")

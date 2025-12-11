@@ -3,10 +3,8 @@
 #include <java/awt/event/InputMethodEvent.h>
 #include <jcpp.h>
 
-using $InputMethodEvent = ::java::awt::event::InputMethodEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
 
 namespace java {
 	namespace awt {

@@ -23,7 +23,6 @@
 #undef VISIBLE
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $Boolean = ::java::lang::Boolean;

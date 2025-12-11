@@ -124,7 +124,6 @@
 #undef Y_AXIS
 
 using $FileArray = $Array<::java::io::File>;
-using $ActionArray = $Array<::javax::swing::Action>;
 using $WindowsFileChooserUI$1 = ::com::sun::java::swing::plaf::windows::WindowsFileChooserUI$1;
 using $WindowsFileChooserUI$10 = ::com::sun::java::swing::plaf::windows::WindowsFileChooserUI$10;
 using $WindowsFileChooserUI$11 = ::com::sun::java::swing::plaf::windows::WindowsFileChooserUI$11;

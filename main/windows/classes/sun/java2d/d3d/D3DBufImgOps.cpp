@@ -28,11 +28,8 @@
 #undef TYPE_BICUBIC
 
 using $Color = ::java::awt::Color;
-using $Composite = ::java::awt::Composite;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
-using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $Image = ::java::awt::Image;
-using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $AffineTransformOp = ::java::awt::image::AffineTransformOp;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $BufferedImageOp = ::java::awt::image::BufferedImageOp;
@@ -48,7 +45,6 @@ using $D3DGraphicsDevice = ::sun::java2d::d3d::D3DGraphicsDevice;
 using $D3DSurfaceData = ::sun::java2d::d3d::D3DSurfaceData;
 using $CompositeType = ::sun::java2d::loops::CompositeType;
 using $BufferedBufImgOps = ::sun::java2d::pipe::BufferedBufImgOps;
-using $Region = ::sun::java2d::pipe::Region;
 
 namespace sun {
 	namespace java2d {

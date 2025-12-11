@@ -8,6 +8,10 @@ if(JCPP_OS MATCHES "linux")
 	include_directories("../../../linux/native/common")
 endif()
 
+if(JCPP_OS MATCHES "macos")
+	include_directories("../../../macos/native/common")
+endif()
+
 if(JCPP_OS MATCHES "windows")
 	include_directories("../../../windows/native/common")
 endif()

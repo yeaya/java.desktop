@@ -48,8 +48,6 @@
 #undef STROKE_THIN
 #undef TRANSFORM_INT_TRANSLATE
 
-using $Composite = ::java::awt::Composite;
-using $Paint = ::java::awt::Paint;
 using $Polygon = ::java::awt::Polygon;
 using $Shape = ::java::awt::Shape;
 using $Stroke = ::java::awt::Stroke;
@@ -60,7 +58,6 @@ using $Ellipse2D = ::java::awt::geom::Ellipse2D;
 using $Ellipse2D$Float = ::java::awt::geom::Ellipse2D$Float;
 using $Path2D = ::java::awt::geom::Path2D;
 using $Path2D$Float = ::java::awt::geom::Path2D$Float;
-using $PathIterator = ::java::awt::geom::PathIterator;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $Rectangle2D$Float = ::java::awt::geom::Rectangle2D$Float;
 using $RectangularShape = ::java::awt::geom::RectangularShape;
@@ -75,14 +72,11 @@ using $Short = ::java::lang::Short;
 using $SunToolkit = ::sun::awt::SunToolkit;
 using $InvalidPipeException = ::sun::java2d::InvalidPipeException;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
-using $SurfaceData = ::sun::java2d::SurfaceData;
 using $ProcessPath = ::sun::java2d::loops::ProcessPath;
 using $ProcessPath$DrawHandler = ::sun::java2d::loops::ProcessPath$DrawHandler;
 using $LoopPipe = ::sun::java2d::pipe::LoopPipe;
 using $PixelDrawPipe = ::sun::java2d::pipe::PixelDrawPipe;
-using $PixelFillPipe = ::sun::java2d::pipe::PixelFillPipe;
 using $Region = ::sun::java2d::pipe::Region;
-using $ShapeDrawPipe = ::sun::java2d::pipe::ShapeDrawPipe;
 using $ShapeSpanIterator = ::sun::java2d::pipe::ShapeSpanIterator;
 using $SpanIterator = ::sun::java2d::pipe::SpanIterator;
 using $GrowableRectArray = ::sun::java2d::xr::GrowableRectArray;

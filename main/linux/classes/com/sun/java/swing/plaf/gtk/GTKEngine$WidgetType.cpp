@@ -80,7 +80,6 @@
 #undef VSPLIT_PANE_DIVIDER
 
 using $GTKEngine$WidgetTypeArray = $Array<::com::sun::java::swing::plaf::gtk::GTKEngine$WidgetType>;
-using $GTKEngine = ::com::sun::java::swing::plaf::gtk::GTKEngine;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

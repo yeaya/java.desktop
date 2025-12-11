@@ -18,7 +18,6 @@
 
 using $ColorModel = ::java::awt::image::ColorModel;
 using $ImageConsumer = ::java::awt::image::ImageConsumer;
-using $ImageProducer = ::java::awt::image::ImageProducer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;

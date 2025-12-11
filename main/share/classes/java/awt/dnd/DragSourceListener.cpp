@@ -4,12 +4,8 @@
 #include <java/awt/dnd/DragSourceDropEvent.h>
 #include <jcpp.h>
 
-using $DragSourceDragEvent = ::java::awt::dnd::DragSourceDragEvent;
-using $DragSourceDropEvent = ::java::awt::dnd::DragSourceDropEvent;
-using $DragSourceEvent = ::java::awt::dnd::DragSourceEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
 
 namespace java {
 	namespace awt {

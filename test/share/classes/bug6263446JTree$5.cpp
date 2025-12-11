@@ -10,8 +10,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $CellEditor = ::javax::swing::CellEditor;
 using $JTree = ::javax::swing::JTree;
 using $TreeCellEditor = ::javax::swing::tree::TreeCellEditor;
 

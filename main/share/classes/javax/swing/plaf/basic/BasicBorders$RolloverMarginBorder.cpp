@@ -16,7 +16,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $EmptyBorder = ::javax::swing::border::EmptyBorder;
 using $UIResource = ::javax::swing::plaf::UIResource;
-using $BasicBorders = ::javax::swing::plaf::basic::BasicBorders;
 
 namespace javax {
 	namespace swing {

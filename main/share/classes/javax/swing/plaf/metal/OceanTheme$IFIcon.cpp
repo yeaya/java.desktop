@@ -19,7 +19,6 @@ using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $Icon = ::javax::swing::Icon;
 using $IconUIResource = ::javax::swing::plaf::IconUIResource;
-using $OceanTheme = ::javax::swing::plaf::metal::OceanTheme;
 
 namespace javax {
 	namespace swing {

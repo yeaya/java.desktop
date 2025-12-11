@@ -7,15 +7,12 @@
 #include <javax/swing/ColorChooserDialog.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Window = ::java::awt::Window;
 using $ComponentAdapter = ::java::awt::event::ComponentAdapter;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ColorChooserDialog = ::javax::swing::ColorChooserDialog;
 
 namespace javax {
 	namespace swing {

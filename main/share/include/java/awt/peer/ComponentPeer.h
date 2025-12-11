@@ -115,7 +115,7 @@ public:
 	static const int32_t SET_BOUNDS = 3;
 	static const int32_t SET_CLIENT_SIZE = 4;
 	static const int32_t RESET_OPERATION = 5;
-	static const int32_t NO_EMBEDDED_CHECK = (1 << 14);
+	static const int32_t NO_EMBEDDED_CHECK = 16384; // (1 << 14)
 	static const int32_t DEFAULT_OPERATION = SET_BOUNDS;
 };
 

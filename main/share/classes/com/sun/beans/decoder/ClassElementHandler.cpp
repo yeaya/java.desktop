@@ -6,7 +6,6 @@
 #include <jcpp.h>
 
 using $DocumentHandler = ::com::sun::beans::decoder::DocumentHandler;
-using $ElementHandler = ::com::sun::beans::decoder::ElementHandler;
 using $StringElementHandler = ::com::sun::beans::decoder::StringElementHandler;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

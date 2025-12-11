@@ -16,7 +16,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JFormattedTextField = ::javax::swing::JFormattedTextField;
-using $JFormattedTextField$AbstractFormatter = ::javax::swing::JFormattedTextField$AbstractFormatter;
 using $JSpinner$ListEditor = ::javax::swing::JSpinner$ListEditor;
 using $JSpinner$ListEditor$ListFormatter = ::javax::swing::JSpinner$ListEditor$ListFormatter;
 using $SpinnerListModel = ::javax::swing::SpinnerListModel;
@@ -24,7 +23,6 @@ using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $Document = ::javax::swing::text::Document;
 using $DocumentFilter = ::javax::swing::text::DocumentFilter;
 using $DocumentFilter$FilterBypass = ::javax::swing::text::DocumentFilter$FilterBypass;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 namespace javax {
 	namespace swing {

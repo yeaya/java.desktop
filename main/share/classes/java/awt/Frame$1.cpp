@@ -5,14 +5,12 @@
 #include <java/awt/Rectangle.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Frame = ::java::awt::Frame;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AWTAccessor$FrameAccessor = ::sun::awt::AWTAccessor$FrameAccessor;
 
 namespace java {
 	namespace awt {

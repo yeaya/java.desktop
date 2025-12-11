@@ -6,8 +6,6 @@
 #include <javax/swing/text/PasswordView.h>
 #include <jcpp.h>
 
-using $FPMethodCalledTest = ::FPMethodCalledTest;
-using $FPMethodCalledTest$Resultable = ::FPMethodCalledTest$Resultable;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

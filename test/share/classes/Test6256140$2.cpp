@@ -6,13 +6,11 @@
 #include <jcpp.h>
 
 using $Test6256140 = ::Test6256140;
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JLabel = ::javax::swing::JLabel;
 
 $FieldInfo _Test6256140$2_FieldInfo_[] = {

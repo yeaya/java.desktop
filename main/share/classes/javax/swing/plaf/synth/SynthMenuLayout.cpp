@@ -14,11 +14,9 @@ using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 using $DefaultMenuLayout = ::javax::swing::plaf::basic::DefaultMenuLayout;
 using $SynthMenuItemLayoutHelper = ::javax::swing::plaf::synth::SynthMenuItemLayoutHelper;
-using $StringUIClientPropertyKey = ::sun::swing::StringUIClientPropertyKey;
 
 namespace javax {
 	namespace swing {

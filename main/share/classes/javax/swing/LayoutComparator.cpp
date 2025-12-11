@@ -17,7 +17,6 @@ using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $Window = ::java::awt::Window;
-using $Serializable = ::java::io::Serializable;
 using $ClassCastException = ::java::lang::ClassCastException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

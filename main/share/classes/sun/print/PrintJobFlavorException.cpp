@@ -9,7 +9,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DocFlavor = ::javax::print::DocFlavor;
-using $FlavorException = ::javax::print::FlavorException;
 using $PrintException = ::javax::print::PrintException;
 
 namespace sun {

@@ -32,8 +32,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor;
-using $SunToolkit = ::sun::awt::SunToolkit;
-using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XComponentPeer = ::sun::awt::X11::XComponentPeer;
 using $XToolkit = ::sun::awt::X11::XToolkit;
 using $XWindow = ::sun::awt::X11::XWindow;
@@ -188,7 +186,7 @@ int64_t XInputMethod::getCurrentParentWindow() {
 bool XInputMethod::openXIMNative(int64_t display) {
 	bool $ret = false;
 	$prepareNative(XInputMethod, openXIMNative, bool, int64_t display);
-	$ret = $invokeNative(XInputMethod, openXIMNative, display);
+	$ret = $invokeNative(display);
 	$finishNative();
 	return $ret;
 }
@@ -196,20 +194,20 @@ bool XInputMethod::openXIMNative(int64_t display) {
 bool XInputMethod::createXICNative(int64_t window) {
 	bool $ret = false;
 	$prepareNative(XInputMethod, createXICNative, bool, int64_t window);
-	$ret = $invokeNative(XInputMethod, createXICNative, window);
+	$ret = $invokeNative(window);
 	$finishNative();
 	return $ret;
 }
 
 void XInputMethod::setXICFocusNative(int64_t window, bool value, bool active) {
 	$prepareNative(XInputMethod, setXICFocusNative, void, int64_t window, bool value, bool active);
-	$invokeNative(XInputMethod, setXICFocusNative, window, value, active);
+	$invokeNative(window, value, active);
 	$finishNative();
 }
 
 void XInputMethod::adjustStatusWindow(int64_t window) {
 	$prepareNative(XInputMethod, adjustStatusWindow, void, int64_t window);
-	$invokeNative(XInputMethod, adjustStatusWindow, window);
+	$invokeNative(window);
 	$finishNative();
 }
 

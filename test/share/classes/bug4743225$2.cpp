@@ -5,12 +5,10 @@
 #include <jcpp.h>
 
 using $bug4743225 = ::bug4743225;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 
 $MethodInfo _bug4743225$2_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(bug4743225$2::*)()>(&bug4743225$2::init$))},

@@ -8,7 +8,6 @@
 #include <sun/swing/FilePane.h>
 #include <jcpp.h>
 
-using $ShellFolderColumnInfoArray = $Array<::sun::awt::shell::ShellFolderColumnInfo>;
 using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

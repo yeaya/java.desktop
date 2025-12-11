@@ -10,7 +10,6 @@
 #undef WARNING
 
 using $TrayIcon$MessageTypeArray = $Array<::java::awt::TrayIcon$MessageType>;
-using $TrayIcon = ::java::awt::TrayIcon;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

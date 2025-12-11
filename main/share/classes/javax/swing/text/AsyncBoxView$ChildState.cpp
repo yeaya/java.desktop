@@ -14,11 +14,9 @@ using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $AbstractDocument = ::javax::swing::text::AbstractDocument;
 using $AsyncBoxView = ::javax::swing::text::AsyncBoxView;
 using $AsyncBoxView$ChildLocator = ::javax::swing::text::AsyncBoxView$ChildLocator;
-using $Document = ::javax::swing::text::Document;
 using $View = ::javax::swing::text::View;
 
 namespace javax {

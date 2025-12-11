@@ -24,7 +24,6 @@
 #undef INTVAL_TEXT_ANTIALIAS_ON
 
 using $Composite = ::java::awt::Composite;
-using $Font = ::java::awt::Font;
 using $FontRenderContext = ::java::awt::font::FontRenderContext;
 using $GlyphVector = ::java::awt::font::GlyphVector;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -115,7 +114,7 @@ void X11TextRenderer::drawGlyphVector($SunGraphics2D* sg2d, $GlyphVector* g, flo
 
 void X11TextRenderer::doDrawGlyphList(int64_t dstData, int64_t xgc, $Region* clip, $GlyphList* gl) {
 	$prepareNative(X11TextRenderer, doDrawGlyphList, void, int64_t dstData, int64_t xgc, $Region* clip, $GlyphList* gl);
-	$invokeNative(X11TextRenderer, doDrawGlyphList, dstData, xgc, clip, gl);
+	$invokeNative(dstData, xgc, clip, gl);
 	$finishNative();
 }
 

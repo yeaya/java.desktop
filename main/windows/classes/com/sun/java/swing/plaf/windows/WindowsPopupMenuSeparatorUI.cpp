@@ -30,7 +30,6 @@ using $WindowsMenuItemUI = ::com::sun::java::swing::plaf::windows::WindowsMenuIt
 using $WindowsPopupMenuUI = ::com::sun::java::swing::plaf::windows::WindowsPopupMenuUI;
 using $XPStyle = ::com::sun::java::swing::plaf::windows::XPStyle;
 using $XPStyle$Skin = ::com::sun::java::swing::plaf::windows::XPStyle$Skin;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;

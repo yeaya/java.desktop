@@ -7,7 +7,6 @@
 #include <java/util/Map.h>
 #include <jcpp.h>
 
-using $AnimationController = ::com::sun::java::swing::plaf::windows::AnimationController;
 using $TMSchema$Part = ::com::sun::java::swing::plaf::windows::TMSchema$Part;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -16,7 +15,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractMap = ::java::util::AbstractMap;
 using $EnumMap = ::java::util::EnumMap;
 using $Map = ::java::util::Map;
-using $UIClientPropertyKey = ::javax::swing::UIClientPropertyKey;
 
 namespace com {
 	namespace sun {

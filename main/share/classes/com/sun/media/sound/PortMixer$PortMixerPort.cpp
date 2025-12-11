@@ -26,7 +26,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $Vector = ::java::util::Vector;
 using $CompoundControl = ::javax::sound::sampled::CompoundControl;
 using $Control = ::javax::sound::sampled::Control;
@@ -35,7 +34,6 @@ using $Line = ::javax::sound::sampled::Line;
 using $Line$Info = ::javax::sound::sampled::Line$Info;
 using $LineListener = ::javax::sound::sampled::LineListener;
 using $LineUnavailableException = ::javax::sound::sampled::LineUnavailableException;
-using $Port = ::javax::sound::sampled::Port;
 using $Port$Info = ::javax::sound::sampled::Port$Info;
 
 namespace com {

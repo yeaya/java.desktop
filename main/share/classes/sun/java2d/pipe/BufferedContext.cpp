@@ -43,7 +43,6 @@ using $RenderBuffer = ::sun::java2d::pipe::RenderBuffer;
 using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 using $SpanIterator = ::sun::java2d::pipe::SpanIterator;
 using $AccelSurface = ::sun::java2d::pipe::hw::AccelSurface;
-using $BufferedContextProvider = ::sun::java2d::pipe::hw::BufferedContextProvider;
 
 namespace sun {
 	namespace java2d {

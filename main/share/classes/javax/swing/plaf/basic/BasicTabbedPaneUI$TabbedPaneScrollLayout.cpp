@@ -21,7 +21,6 @@
 #include <javax/swing/plaf/basic/BasicTabbedPaneUI.h>
 #include <jcpp.h>
 
-using $RectangleArray = $Array<::java::awt::Rectangle>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
@@ -42,7 +41,6 @@ using $BasicGraphicsUtils = ::javax::swing::plaf::basic::BasicGraphicsUtils;
 using $BasicTabbedPaneUI = ::javax::swing::plaf::basic::BasicTabbedPaneUI;
 using $BasicTabbedPaneUI$CroppedEdge = ::javax::swing::plaf::basic::BasicTabbedPaneUI$CroppedEdge;
 using $BasicTabbedPaneUI$ScrollableTabPanel = ::javax::swing::plaf::basic::BasicTabbedPaneUI$ScrollableTabPanel;
-using $BasicTabbedPaneUI$ScrollableTabSupport = ::javax::swing::plaf::basic::BasicTabbedPaneUI$ScrollableTabSupport;
 using $BasicTabbedPaneUI$ScrollableTabViewport = ::javax::swing::plaf::basic::BasicTabbedPaneUI$ScrollableTabViewport;
 using $BasicTabbedPaneUI$TabbedPaneLayout = ::javax::swing::plaf::basic::BasicTabbedPaneUI$TabbedPaneLayout;
 

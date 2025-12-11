@@ -11,16 +11,13 @@
 
 #undef VERTICAL_SPLIT
 
-using $Component = ::java::awt::Component;
 using $Insets = ::java::awt::Insets;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JSplitPane = ::javax::swing::JSplitPane;
 using $BasicSplitPaneDivider = ::javax::swing::plaf::basic::BasicSplitPaneDivider;
 using $BasicSplitPaneUI = ::javax::swing::plaf::basic::BasicSplitPaneUI;

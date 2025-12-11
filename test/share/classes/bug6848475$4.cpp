@@ -8,12 +8,10 @@
 
 using $bug6848475 = ::bug6848475;
 using $Rectangle = ::java::awt::Rectangle;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JFrame = ::javax::swing::JFrame;
 

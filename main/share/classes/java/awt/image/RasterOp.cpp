@@ -6,11 +6,6 @@
 #include <java/awt/image/WritableRaster.h>
 #include <jcpp.h>
 
-using $RenderingHints = ::java::awt::RenderingHints;
-using $Point2D = ::java::awt::geom::Point2D;
-using $Rectangle2D = ::java::awt::geom::Rectangle2D;
-using $Raster = ::java::awt::image::Raster;
-using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

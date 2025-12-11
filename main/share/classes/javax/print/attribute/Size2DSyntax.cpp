@@ -8,7 +8,6 @@
 
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Cloneable = ::java::lang::Cloneable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;

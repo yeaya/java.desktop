@@ -13,24 +13,19 @@
 
 #undef SELECTED_KEY
 
-using $Component = ::java::awt::Component;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $ItemEvent = ::java::awt::event::ItemEvent;
-using $ItemListener = ::java::awt::event::ItemListener;
-using $Serializable = ::java::io::Serializable;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $AbstractAction = ::javax::swing::AbstractAction;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $Action = ::javax::swing::Action;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $ChangeEvent = ::javax::swing::event::ChangeEvent;
-using $ChangeListener = ::javax::swing::event::ChangeListener;
 
 namespace javax {
 	namespace swing {

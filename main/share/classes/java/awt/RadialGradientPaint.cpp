@@ -34,7 +34,6 @@ using $Point2D = ::java::awt::geom::Point2D;
 using $Point2D$Double = ::java::awt::geom::Point2D$Double;
 using $Point2D$Float = ::java::awt::geom::Point2D$Float;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $Attribute = ::java::lang::Attribute;
 using $ClassInfo = ::java::lang::ClassInfo;

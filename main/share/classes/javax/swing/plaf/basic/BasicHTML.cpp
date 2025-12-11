@@ -33,8 +33,6 @@
 #undef TRUE
 #undef Y_AXIS
 
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Font = ::java::awt::Font;
 using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;
@@ -64,7 +62,6 @@ using $View = ::javax::swing::text::View;
 using $ViewFactory = ::javax::swing::text::ViewFactory;
 using $HTML$Tag = ::javax::swing::text::html::HTML$Tag;
 using $HTMLDocument = ::javax::swing::text::html::HTMLDocument;
-using $HTMLEditorKit = ::javax::swing::text::html::HTMLEditorKit;
 using $HTMLEditorKit$HTMLFactory = ::javax::swing::text::html::HTMLEditorKit$HTMLFactory;
 
 namespace javax {

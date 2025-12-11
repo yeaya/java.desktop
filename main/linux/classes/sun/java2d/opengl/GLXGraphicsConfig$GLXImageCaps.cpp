@@ -8,7 +8,6 @@ using $ImageCapabilities = ::java::awt::ImageCapabilities;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $GLXGraphicsConfig = ::sun::java2d::opengl::GLXGraphicsConfig;
 
 namespace sun {
 	namespace java2d {

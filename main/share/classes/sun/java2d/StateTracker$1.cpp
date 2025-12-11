@@ -6,7 +6,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $StateTracker = ::sun::java2d::StateTracker;
 
 namespace sun {
 	namespace java2d {

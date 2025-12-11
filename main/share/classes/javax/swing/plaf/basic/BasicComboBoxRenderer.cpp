@@ -17,21 +17,17 @@
 
 #undef SAFE_NO_FOCUS_BORDER
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
-using $Font = ::java::awt::Font;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SecurityManager = ::java::lang::SecurityManager;
 using $Icon = ::javax::swing::Icon;
 using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;
 using $JList = ::javax::swing::JList;
-using $ListCellRenderer = ::javax::swing::ListCellRenderer;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
 using $Border = ::javax::swing::border::Border;
 using $EmptyBorder = ::javax::swing::border::EmptyBorder;

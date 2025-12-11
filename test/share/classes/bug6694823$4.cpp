@@ -16,9 +16,7 @@
 using $bug6694823 = ::bug6694823;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Dimension = ::java::awt::Dimension;
 using $Frame = ::java::awt::Frame;
-using $Insets = ::java::awt::Insets;
 using $Point = ::java::awt::Point;
 using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -26,8 +24,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $JComponent = ::javax::swing::JComponent;
 using $JFrame = ::javax::swing::JFrame;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 

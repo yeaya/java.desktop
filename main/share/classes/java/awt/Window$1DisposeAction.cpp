@@ -9,8 +9,6 @@
 #include <java/util/Vector.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $Window = ::java::awt::Window;
@@ -20,8 +18,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $Vector = ::java::util::Vector;
 

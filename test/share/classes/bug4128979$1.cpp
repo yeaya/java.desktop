@@ -16,7 +16,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Icon = ::javax::swing::Icon;
 using $UIManager = ::javax::swing::UIManager;
 
 $FieldInfo _bug4128979$1_FieldInfo_[] = {

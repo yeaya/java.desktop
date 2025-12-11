@@ -30,8 +30,6 @@
 #undef MINSTRIKES
 
 using $FontStrikeArray = $Array<::sun::font::FontStrike>;
-using $intArray2 = $Array<int32_t, 2>;
-using $longArray2 = $Array<int64_t, 2>;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
@@ -62,7 +60,6 @@ using $Disposer = ::sun::java2d::Disposer;
 using $BufferedContext = ::sun::java2d::pipe::BufferedContext;
 using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 using $AccelGraphicsConfig = ::sun::java2d::pipe::hw::AccelGraphicsConfig;
-using $BufferedContextProvider = ::sun::java2d::pipe::hw::BufferedContextProvider;
 
 namespace sun {
 	namespace font {
@@ -174,7 +171,7 @@ void StrikeCache::init$() {
 void StrikeCache::getGlyphCacheDescription($longs* infoArray) {
 	$init(StrikeCache);
 	$prepareNativeStatic(StrikeCache, getGlyphCacheDescription, void, $longs* infoArray);
-	$invokeNativeStatic(StrikeCache, getGlyphCacheDescription, infoArray);
+	$invokeNativeStatic(infoArray);
 	$finishNativeStatic();
 }
 
@@ -275,28 +272,28 @@ void StrikeCache::disposeStrike($FontStrikeDisposer* disposer) {
 void StrikeCache::freeIntPointer(int32_t ptr) {
 	$init(StrikeCache);
 	$prepareNativeStatic(StrikeCache, freeIntPointer, void, int32_t ptr);
-	$invokeNativeStatic(StrikeCache, freeIntPointer, ptr);
+	$invokeNativeStatic(ptr);
 	$finishNativeStatic();
 }
 
 void StrikeCache::freeLongPointer(int64_t ptr) {
 	$init(StrikeCache);
 	$prepareNativeStatic(StrikeCache, freeLongPointer, void, int64_t ptr);
-	$invokeNativeStatic(StrikeCache, freeLongPointer, ptr);
+	$invokeNativeStatic(ptr);
 	$finishNativeStatic();
 }
 
 void StrikeCache::freeIntMemory($ints* glyphPtrs, int64_t pContext) {
 	$init(StrikeCache);
 	$prepareNativeStatic(StrikeCache, freeIntMemory, void, $ints* glyphPtrs, int64_t pContext);
-	$invokeNativeStatic(StrikeCache, freeIntMemory, glyphPtrs, pContext);
+	$invokeNativeStatic(glyphPtrs, pContext);
 	$finishNativeStatic();
 }
 
 void StrikeCache::freeLongMemory($longs* glyphPtrs, int64_t pContext) {
 	$init(StrikeCache);
 	$prepareNativeStatic(StrikeCache, freeLongMemory, void, $longs* glyphPtrs, int64_t pContext);
-	$invokeNativeStatic(StrikeCache, freeLongMemory, glyphPtrs, pContext);
+	$invokeNativeStatic(glyphPtrs, pContext);
 	$finishNativeStatic();
 }
 

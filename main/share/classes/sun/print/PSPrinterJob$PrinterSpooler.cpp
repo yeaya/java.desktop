@@ -36,12 +36,9 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $Process = ::java::lang::Process;
 using $Runtime = ::java::lang::Runtime;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $PSPrinterJob = ::sun::print::PSPrinterJob;
-using $RasterPrinterJob = ::sun::print::RasterPrinterJob;
 
 namespace sun {
 	namespace print {

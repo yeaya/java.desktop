@@ -3,7 +3,6 @@
 #include <java/awt/image/WritableRenderedImage.h>
 #include <jcpp.h>
 
-using $WritableRenderedImage = ::java::awt::image::WritableRenderedImage;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

@@ -5,8 +5,6 @@
 #include <java/lang/Math.h>
 #include <jcpp.h>
 
-using $RIFFWriter = ::com::sun::media::sound::RIFFWriter;
-using $RIFFWriter$RandomAccessWriter = ::com::sun::media::sound::RIFFWriter$RandomAccessWriter;
 using $OutputStream = ::java::io::OutputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

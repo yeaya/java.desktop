@@ -45,7 +45,6 @@ using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $Files = ::java::nio::file::Files;
 using $Path = ::java::nio::file::Path;
-using $FileAttribute = ::java::nio::file::attribute::FileAttribute;
 using $JFileChooser = ::javax::swing::JFileChooser;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;

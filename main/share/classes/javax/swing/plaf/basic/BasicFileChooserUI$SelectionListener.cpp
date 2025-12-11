@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ListSelectionEvent = ::javax::swing::event::ListSelectionEvent;
-using $ListSelectionListener = ::javax::swing::event::ListSelectionListener;
 using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 using $BasicFileChooserUI$Handler = ::javax::swing::plaf::basic::BasicFileChooserUI$Handler;
 

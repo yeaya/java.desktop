@@ -36,7 +36,6 @@ using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Dimension = ::java::awt::Dimension;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
-using $ItemSelectable = ::java::awt::ItemSelectable;
 using $List$AccessibleAWTList = ::java::awt::List$AccessibleAWTList;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ActionListener = ::java::awt::event::ActionListener;
@@ -54,7 +53,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $EventListener = ::java::util::EventListener;
 using $Vector = ::java::util::Vector;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $ComponentFactory = ::sun::awt::ComponentFactory;
 

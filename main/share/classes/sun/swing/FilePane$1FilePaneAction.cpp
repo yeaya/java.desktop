@@ -12,10 +12,7 @@
 
 #undef ACTION_COMMAND_KEY
 
-using $FileArray = $Array<::java::io::File>;
-using $Component = ::java::awt::Component;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

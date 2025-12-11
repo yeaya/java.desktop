@@ -7,14 +7,11 @@
 #include <javax/swing/text/JTextComponent.h>
 #include <jcpp.h>
 
-using $bug6361367 = ::bug6361367;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Callable = ::java::util::concurrent::Callable;
 using $AtomicReference = ::java::util::concurrent::atomic::AtomicReference;
 using $JFrame = ::javax::swing::JFrame;
 using $JTextComponent = ::javax::swing::text::JTextComponent;

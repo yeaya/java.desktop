@@ -40,7 +40,6 @@
 #undef TEXT_FOREGROUND
 #undef VERTICAL
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
@@ -62,7 +61,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JComponent = ::javax::swing::JComponent;
 using $JProgressBar = ::javax::swing::JProgressBar;
 using $SwingUtilities = ::javax::swing::SwingUtilities;

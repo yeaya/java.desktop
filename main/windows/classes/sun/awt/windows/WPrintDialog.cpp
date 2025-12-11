@@ -25,7 +25,6 @@ using $Container = ::java::awt::Container;
 using $Dialog = ::java::awt::Dialog;
 using $Frame = ::java::awt::Frame;
 using $LayoutManager = ::java::awt::LayoutManager;
-using $PrintJob = ::java::awt::PrintJob;
 using $Toolkit = ::java::awt::Toolkit;
 using $Window = ::java::awt::Window;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
@@ -38,7 +37,6 @@ using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor
 using $WCanvasPeer = ::sun::awt::windows::WCanvasPeer;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $WPanelPeer = ::sun::awt::windows::WPanelPeer;
-using $WPrintDialogPeer = ::sun::awt::windows::WPrintDialogPeer;
 using $WToolkit = ::sun::awt::windows::WToolkit;
 using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
 
@@ -123,7 +121,7 @@ bool WPrintDialog::getRetVal() {
 void WPrintDialog::initIDs() {
 	$init(WPrintDialog);
 	$prepareNativeStatic(WPrintDialog, initIDs, void);
-	$invokeNativeStatic(WPrintDialog, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

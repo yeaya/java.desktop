@@ -7,8 +7,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Highlighter = ::javax::swing::text::Highlighter;
-using $Highlighter$HighlightPainter = ::javax::swing::text::Highlighter$HighlightPainter;
 
 namespace javax {
 	namespace swing {

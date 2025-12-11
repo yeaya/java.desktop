@@ -5,9 +5,6 @@
 #include <com/sun/media/sound/SoftMainMixer.h>
 #include <jcpp.h>
 
-using $SoftAudioBufferArray = $Array<::com::sun::media::sound::SoftAudioBuffer>;
-using $ModelChannelMixer = ::com::sun::media::sound::ModelChannelMixer;
-using $SoftAudioBuffer = ::com::sun::media::sound::SoftAudioBuffer;
 using $SoftMainMixer = ::com::sun::media::sound::SoftMainMixer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

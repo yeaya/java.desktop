@@ -70,7 +70,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JScrollBar = ::javax::swing::JScrollBar;
 using $SwingConstants = ::javax::swing::SwingConstants;
 using $BasicArrowButton = ::javax::swing::plaf::basic::BasicArrowButton;
-using $BasicScrollBarUI = ::javax::swing::plaf::basic::BasicScrollBarUI;
 
 namespace com {
 	namespace sun {

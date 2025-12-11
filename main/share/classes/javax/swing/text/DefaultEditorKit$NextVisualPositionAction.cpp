@@ -32,7 +32,6 @@ using $TextUI = ::javax::swing::plaf::TextUI;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $Caret = ::javax::swing::text::Caret;
 using $DefaultCaret = ::javax::swing::text::DefaultCaret;
-using $DefaultEditorKit = ::javax::swing::text::DefaultEditorKit;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $NavigationFilter = ::javax::swing::text::NavigationFilter;
 using $Position$Bias = ::javax::swing::text::Position$Bias;

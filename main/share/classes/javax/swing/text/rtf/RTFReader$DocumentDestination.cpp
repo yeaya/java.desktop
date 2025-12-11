@@ -19,11 +19,8 @@ using $InternalError = ::java::lang::InternalError;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
-using $Document = ::javax::swing::text::Document;
-using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $StyledDocument = ::javax::swing::text::StyledDocument;
 using $RTFReader = ::javax::swing::text::rtf::RTFReader;
-using $RTFReader$AttributeTrackingDestination = ::javax::swing::text::rtf::RTFReader$AttributeTrackingDestination;
 using $RTFReader$TextHandlingDestination = ::javax::swing::text::rtf::RTFReader$TextHandlingDestination;
 
 namespace javax {

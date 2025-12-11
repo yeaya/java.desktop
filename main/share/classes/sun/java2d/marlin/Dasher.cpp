@@ -40,7 +40,6 @@ using $Helpers = ::sun::java2d::marlin::Helpers;
 using $MarlinConst = ::sun::java2d::marlin::MarlinConst;
 using $MarlinProperties = ::sun::java2d::marlin::MarlinProperties;
 using $RendererContext = ::sun::java2d::marlin::RendererContext;
-using $RendererStats = ::sun::java2d::marlin::RendererStats;
 using $TransformingPathConsumer2D$CurveBasicMonotonizer = ::sun::java2d::marlin::TransformingPathConsumer2D$CurveBasicMonotonizer;
 using $TransformingPathConsumer2D$CurveClipSplitter = ::sun::java2d::marlin::TransformingPathConsumer2D$CurveClipSplitter;
 using $StatLong = ::sun::java2d::marlin::stats::StatLong;

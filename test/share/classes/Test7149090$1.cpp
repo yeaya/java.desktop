@@ -17,7 +17,6 @@
 #include <javax/swing/border/TitledBorder.h>
 #include <jcpp.h>
 
-using $Test7149090 = ::Test7149090;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $Exception = ::java::lang::Exception;
@@ -28,7 +27,6 @@ using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NoSuchMethodException = ::java::lang::NoSuchMethodException;
 using $ReflectiveOperationException = ::java::lang::ReflectiveOperationException;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $InvocationTargetException = ::java::lang::reflect::InvocationTargetException;
 using $Method = ::java::lang::reflect::Method;

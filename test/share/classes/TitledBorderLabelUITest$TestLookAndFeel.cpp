@@ -6,7 +6,6 @@
 #include <javax/swing/plaf/metal/MetalLookAndFeel.h>
 #include <jcpp.h>
 
-using $TitledBorderLabelUITest = ::TitledBorderLabelUITest;
 using $TitledBorderLabelUITest$TestLabelUI = ::TitledBorderLabelUITest$TestLabelUI;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

@@ -12,7 +12,6 @@
 
 #undef INTMASK
 
-using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $Point2D$Float = ::java::awt::geom::Point2D$Float;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -21,7 +20,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $ConcurrentHashMap = ::java::util::concurrent::ConcurrentHashMap;
 using $CharToGlyphMapper = ::sun::font::CharToGlyphMapper;
-using $Font2D = ::sun::font::Font2D;
 using $FontStrike = ::sun::font::FontStrike;
 using $FontStrikeDesc = ::sun::font::FontStrikeDesc;
 using $PhysicalFont = ::sun::font::PhysicalFont;

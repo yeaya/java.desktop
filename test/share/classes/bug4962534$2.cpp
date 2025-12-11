@@ -12,9 +12,7 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JFrame = ::javax::swing::JFrame;
-using $JLayeredPane = ::javax::swing::JLayeredPane;
 
 $FieldInfo _bug4962534$2_FieldInfo_[] = {
 	{"this$0", "Lbug4962534;", nullptr, $FINAL | $SYNTHETIC, $field(bug4962534$2, this$0)},

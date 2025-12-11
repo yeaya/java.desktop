@@ -559,7 +559,7 @@ void SoftMixingMixer::removeLineListener($LineListener* listener) {
 
 int64_t SoftMixingMixer::getLatency() {
 	$synchronized(this->control_mutex) {
-		return this->latency;
+		return SoftMixingMixer::latency;
 	}
 }
 

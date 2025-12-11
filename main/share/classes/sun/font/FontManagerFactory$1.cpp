@@ -19,7 +19,6 @@ using $InternalError = ::java::lang::InternalError;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ReflectiveOperationException = ::java::lang::ReflectiveOperationException;
 using $Constructor = ::java::lang::reflect::Constructor;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $FontManager = ::sun::font::FontManager;
 using $FontManagerFactory = ::sun::font::FontManagerFactory;
 

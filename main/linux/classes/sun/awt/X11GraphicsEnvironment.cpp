@@ -31,7 +31,6 @@ using $GraphicsDeviceArray = $Array<::java::awt::GraphicsDevice>;
 using $X11GraphicsDeviceArray = $Array<::sun::awt::X11GraphicsDevice>;
 using $AWTError = ::java::awt::AWTError;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;
-using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -39,7 +38,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UnsupportedOperationException = ::java::lang::UnsupportedOperationException;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
@@ -150,7 +148,7 @@ bool X11GraphicsEnvironment::initGLX() {
 	$init(X11GraphicsEnvironment);
 	bool $ret = false;
 	$prepareNativeStatic(X11GraphicsEnvironment, initGLX, bool);
-	$ret = $invokeNativeStatic(X11GraphicsEnvironment, initGLX);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -169,7 +167,7 @@ bool X11GraphicsEnvironment::initXRender(bool verbose, bool ignoreLinuxVersion) 
 	$init(X11GraphicsEnvironment);
 	bool $ret = false;
 	$prepareNativeStatic(X11GraphicsEnvironment, initXRender, bool, bool verbose, bool ignoreLinuxVersion);
-	$ret = $invokeNativeStatic(X11GraphicsEnvironment, initXRender, verbose, ignoreLinuxVersion);
+	$ret = $invokeNativeStatic(verbose, ignoreLinuxVersion);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -188,7 +186,7 @@ int32_t X11GraphicsEnvironment::checkShmExt() {
 	$init(X11GraphicsEnvironment);
 	int32_t $ret = 0;
 	$prepareNativeStatic(X11GraphicsEnvironment, checkShmExt, int32_t);
-	$ret = $invokeNativeStatic(X11GraphicsEnvironment, checkShmExt);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -197,7 +195,7 @@ $String* X11GraphicsEnvironment::getDisplayString() {
 	$init(X11GraphicsEnvironment);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(X11GraphicsEnvironment, getDisplayString, $String*);
-	$assign($ret, $invokeNativeStatic(X11GraphicsEnvironment, getDisplayString));
+	$assign($ret, $invokeNativeStaticObject());
 	$finishNativeStatic();
 	return $ret;
 }
@@ -205,14 +203,14 @@ $String* X11GraphicsEnvironment::getDisplayString() {
 void X11GraphicsEnvironment::initDisplay(bool glxRequested) {
 	$init(X11GraphicsEnvironment);
 	$prepareNativeStatic(X11GraphicsEnvironment, initDisplay, void, bool glxRequested);
-	$invokeNativeStatic(X11GraphicsEnvironment, initDisplay, glxRequested);
+	$invokeNativeStatic(glxRequested);
 	$finishNativeStatic();
 }
 
 int32_t X11GraphicsEnvironment::getNumScreens() {
 	int32_t $ret = 0;
 	$prepareNative(X11GraphicsEnvironment, getNumScreens, int32_t);
-	$ret = $invokeNative(X11GraphicsEnvironment, getNumScreens);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -220,7 +218,7 @@ int32_t X11GraphicsEnvironment::getNumScreens() {
 int32_t X11GraphicsEnvironment::getDefaultScreenNum() {
 	int32_t $ret = 0;
 	$prepareNative(X11GraphicsEnvironment, getDefaultScreenNum, int32_t);
-	$ret = $invokeNative(X11GraphicsEnvironment, getDefaultScreenNum);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -238,7 +236,7 @@ void X11GraphicsEnvironment::init$() {
 void X11GraphicsEnvironment::initNativeData() {
 	$init(X11GraphicsEnvironment);
 	$prepareNativeStatic(X11GraphicsEnvironment, initNativeData, void);
-	$invokeNativeStatic(X11GraphicsEnvironment, initNativeData);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -379,7 +377,7 @@ bool X11GraphicsEnvironment::pRunningXinerama() {
 	$init(X11GraphicsEnvironment);
 	bool $ret = false;
 	$prepareNativeStatic(X11GraphicsEnvironment, pRunningXinerama, bool);
-	$ret = $invokeNativeStatic(X11GraphicsEnvironment, pRunningXinerama);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }

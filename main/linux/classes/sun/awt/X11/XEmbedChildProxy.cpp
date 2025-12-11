@@ -18,7 +18,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor;
-using $XEmbedChildProxyPeer = ::sun::awt::X11::XEmbedChildProxyPeer;
 using $XEmbeddingContainer = ::sun::awt::X11::XEmbeddingContainer;
 using $XToolkit = ::sun::awt::X11::XToolkit;
 

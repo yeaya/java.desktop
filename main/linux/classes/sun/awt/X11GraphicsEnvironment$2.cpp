@@ -23,9 +23,7 @@ using $InetAddress = ::java::net::InetAddress;
 using $NetworkInterface = ::java::net::NetworkInterface;
 using $SocketException = ::java::net::SocketException;
 using $UnknownHostException = ::java::net::UnknownHostException;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Enumeration = ::java::util::Enumeration;
-using $X11GraphicsEnvironment = ::sun::awt::X11GraphicsEnvironment;
 
 namespace sun {
 	namespace awt {

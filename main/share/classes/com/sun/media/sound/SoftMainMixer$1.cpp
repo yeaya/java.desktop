@@ -3,7 +3,6 @@
 #include <com/sun/media/sound/SoftMainMixer.h>
 #include <jcpp.h>
 
-using $SoftControl = ::com::sun::media::sound::SoftControl;
 using $SoftMainMixer = ::com::sun::media::sound::SoftMainMixer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

@@ -6,7 +6,6 @@
 #include <javax/swing/plaf/basic/BasicScrollPaneUI.h>
 #include <jcpp.h>
 
-using $Test6632810 = ::Test6632810;
 using $intArray2 = $Array<int32_t, 2>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
@@ -14,7 +13,6 @@ using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JComponent = ::javax::swing::JComponent;
 using $JScrollPane = ::javax::swing::JScrollPane;

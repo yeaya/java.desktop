@@ -9,7 +9,6 @@
 #include <javax/swing/text/html/HTMLEditorKit$ParserCallback.h>
 #include <jcpp.h>
 
-using $bug7165725 = ::bug7165725;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -17,7 +16,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $StringBuffer = ::java::lang::StringBuffer;
 using $ArrayList = ::java::util::ArrayList;
 using $Iterator = ::java::util::Iterator;
-using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $HTML$Tag = ::javax::swing::text::html::HTML$Tag;
 using $HTMLEditorKit$ParserCallback = ::javax::swing::text::html::HTMLEditorKit$ParserCallback;

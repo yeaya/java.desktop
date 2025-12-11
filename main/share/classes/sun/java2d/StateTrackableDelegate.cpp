@@ -18,13 +18,11 @@
 #undef UNTRACKABLE_DELEGATE
 
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalStateException = ::java::lang::IllegalStateException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InternalError = ::java::lang::InternalError;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $StateTrackable = ::sun::java2d::StateTrackable;
 using $StateTrackable$State = ::sun::java2d::StateTrackable$State;
 using $StateTrackableDelegate$1 = ::sun::java2d::StateTrackableDelegate$1;
 using $StateTrackableDelegate$2 = ::sun::java2d::StateTrackableDelegate$2;

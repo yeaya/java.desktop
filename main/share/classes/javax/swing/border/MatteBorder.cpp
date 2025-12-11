@@ -17,7 +17,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Icon = ::javax::swing::Icon;
-using $AbstractBorder = ::javax::swing::border::AbstractBorder;
 using $EmptyBorder = ::javax::swing::border::EmptyBorder;
 
 namespace javax {

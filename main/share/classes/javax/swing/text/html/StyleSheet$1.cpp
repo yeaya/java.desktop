@@ -9,15 +9,11 @@
 #undef LEFT
 #undef RIGHT
 
-using $StyleSheet$BoxPainter$HorizontalMarginArray = $Array<::javax::swing::text::html::StyleSheet$BoxPainter$HorizontalMargin>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $StyleSheet = ::javax::swing::text::html::StyleSheet;
-using $StyleSheet$BoxPainter = ::javax::swing::text::html::StyleSheet$BoxPainter;
 using $StyleSheet$BoxPainter$HorizontalMargin = ::javax::swing::text::html::StyleSheet$BoxPainter$HorizontalMargin;
 
 namespace javax {

@@ -5,8 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AccessibleText = ::javax::accessibility::AccessibleText;
-using $AttributeSet = ::javax::swing::text::AttributeSet;
 
 namespace javax {
 	namespace accessibility {

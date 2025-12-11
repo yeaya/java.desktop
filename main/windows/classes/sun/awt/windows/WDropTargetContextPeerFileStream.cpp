@@ -54,7 +54,7 @@ void WDropTargetContextPeerFileStream::close() {
 
 void WDropTargetContextPeerFileStream::freeStgMedium(int64_t stgmedium) {
 	$prepareNative(WDropTargetContextPeerFileStream, freeStgMedium, void, int64_t stgmedium);
-	$invokeNative(WDropTargetContextPeerFileStream, freeStgMedium, stgmedium);
+	$invokeNative(stgmedium);
 	$finishNative();
 }
 

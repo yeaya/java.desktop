@@ -14,7 +14,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $ParsedSynthStyle = ::javax::swing::plaf::synth::ParsedSynthStyle;
 using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
 using $SynthPainter = ::javax::swing::plaf::synth::SynthPainter;
-using $SynthStyle = ::javax::swing::plaf::synth::SynthStyle;
 
 namespace javax {
 	namespace swing {

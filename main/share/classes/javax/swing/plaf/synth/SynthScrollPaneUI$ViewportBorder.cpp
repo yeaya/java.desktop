@@ -25,7 +25,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
 using $SynthLookAndFeel = ::javax::swing::plaf::synth::SynthLookAndFeel;
 using $SynthPainter = ::javax::swing::plaf::synth::SynthPainter;

@@ -25,7 +25,6 @@ using $JCheckBox = ::javax::swing::JCheckBox;
 using $JComponent = ::javax::swing::JComponent;
 using $JTable = ::javax::swing::JTable;
 using $JToggleButton = ::javax::swing::JToggleButton;
-using $TableCellRenderer = ::javax::swing::table::TableCellRenderer;
 
 $MethodInfo _bug6711682$3_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(bug6711682$3::*)()>(&bug6711682$3::init$))},

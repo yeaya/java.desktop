@@ -6,12 +6,8 @@
 #include <javax/sound/midi/Soundbank.h>
 #include <jcpp.h>
 
-using $File = ::java::io::File;
-using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $URL = ::java::net::URL;
-using $Soundbank = ::javax::sound::midi::Soundbank;
 
 namespace javax {
 	namespace sound {

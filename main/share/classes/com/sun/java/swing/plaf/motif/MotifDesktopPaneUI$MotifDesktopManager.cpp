@@ -39,7 +39,6 @@ using $JInternalFrame = ::javax::swing::JInternalFrame;
 using $JInternalFrame$JDesktopIcon = ::javax::swing::JInternalFrame$JDesktopIcon;
 using $JLayeredPane = ::javax::swing::JLayeredPane;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace com {
 	namespace sun {

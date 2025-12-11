@@ -6,8 +6,6 @@
 #include <jcpp.h>
 
 using $JPEGImageReader$CallBackLock$StateArray = $Array<::com::sun::imageio::plugins::jpeg::JPEGImageReader$CallBackLock$State>;
-using $JPEGImageReader = ::com::sun::imageio::plugins::jpeg::JPEGImageReader;
-using $JPEGImageReader$CallBackLock = ::com::sun::imageio::plugins::jpeg::JPEGImageReader$CallBackLock;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

@@ -21,7 +21,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $View = ::javax::swing::text::View;
-using $CSSBorder = ::javax::swing::text::html::CSSBorder;
 using $CSSBorder$StrokePainter = ::javax::swing::text::html::CSSBorder$StrokePainter;
 
 namespace javax {

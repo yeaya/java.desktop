@@ -27,12 +27,7 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
@@ -40,7 +35,6 @@ using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIDefaults = ::javax::swing::UIDefaults;
 using $UIManager = ::javax::swing::UIManager;
 using $UnsupportedLookAndFeelException = ::javax::swing::UnsupportedLookAndFeelException;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 
 class MultiUIDefaultsNPECheck$$Lambda$lambda$main$0 : public $Runnable {
 	$class(MultiUIDefaultsNPECheck$$Lambda$lambda$main$0, $NO_CLASS_INIT, $Runnable)

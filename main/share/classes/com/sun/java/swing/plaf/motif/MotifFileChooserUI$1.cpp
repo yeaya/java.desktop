@@ -46,9 +46,7 @@ using $BorderLayout = ::java::awt::BorderLayout;
 using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
-using $Dimension = ::java::awt::Dimension;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $File = ::java::io::File;
 using $IOException = ::java::io::IOException;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -56,17 +54,13 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $DefaultListSelectionModel = ::javax::swing::DefaultListSelectionModel;
 using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JFileChooser = ::javax::swing::JFileChooser;
-using $JLabel = ::javax::swing::JLabel;
 using $JList = ::javax::swing::JList;
 using $JPanel = ::javax::swing::JPanel;
 using $ListSelectionModel = ::javax::swing::ListSelectionModel;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 using $ShellFolder = ::sun::awt::shell::ShellFolder;
 
 namespace com {

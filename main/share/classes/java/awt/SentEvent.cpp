@@ -11,14 +11,11 @@
 #undef ID
 
 using $AWTEvent = ::java::awt::AWTEvent;
-using $ActiveEvent = ::java::awt::ActiveEvent;
 using $EventQueue = ::java::awt::EventQueue;
 using $Toolkit = ::java::awt::Toolkit;
-using $FocusEvent = ::java::awt::event::FocusEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $AppContext = ::sun::awt::AppContext;
 using $SunToolkit = ::sun::awt::SunToolkit;
 

@@ -30,7 +30,6 @@
 
 using $Position$BiasArray = $Array<::javax::swing::text::Position$Bias>;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Cloneable = ::java::lang::Cloneable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;

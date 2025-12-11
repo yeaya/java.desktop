@@ -52,7 +52,6 @@
 #undef Y_AXIS
 
 using $Position$BiasArray = $Array<::javax::swing::text::Position$Bias>;
-using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
@@ -89,7 +88,6 @@ using $Position$Bias = ::javax::swing::text::Position$Bias;
 using $Segment = ::javax::swing::text::Segment;
 using $StateInvariantError = ::javax::swing::text::StateInvariantError;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
-using $TabExpander = ::javax::swing::text::TabExpander;
 using $TabSet = ::javax::swing::text::TabSet;
 using $TabStop = ::javax::swing::text::TabStop;
 using $TabableView = ::javax::swing::text::TabableView;

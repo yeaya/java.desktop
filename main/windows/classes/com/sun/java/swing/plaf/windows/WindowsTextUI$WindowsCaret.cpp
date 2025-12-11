@@ -10,10 +10,8 @@ using $WindowsTextUI = ::com::sun::java::swing::plaf::windows::WindowsTextUI;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $DefaultCaret = ::javax::swing::text::DefaultCaret;
 using $Highlighter$HighlightPainter = ::javax::swing::text::Highlighter$HighlightPainter;
-using $LayeredHighlighter$LayerPainter = ::javax::swing::text::LayeredHighlighter$LayerPainter;
 
 namespace com {
 	namespace sun {

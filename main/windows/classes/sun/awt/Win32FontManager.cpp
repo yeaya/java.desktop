@@ -48,7 +48,6 @@ using $Win32FontManager$3 = ::sun::awt::Win32FontManager$3;
 using $Win32FontManager$4 = ::sun::awt::Win32FontManager$4;
 using $Win32GraphicsEnvironment = ::sun::awt::Win32GraphicsEnvironment;
 using $WFontConfiguration = ::sun::awt::windows::WFontConfiguration;
-using $PhysicalFont = ::sun::font::PhysicalFont;
 using $SunFontManager = ::sun::font::SunFontManager;
 using $SunFontManager$FamilyDescription = ::sun::font::SunFontManager$FamilyDescription;
 using $TrueTypeFont = ::sun::font::TrueTypeFont;
@@ -122,7 +121,7 @@ $String* Win32FontManager::getEUDCFontFile() {
 	$init(Win32FontManager);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(Win32FontManager, getEUDCFontFile, $String*);
-	$assign($ret, $invokeNativeStatic(Win32FontManager, getEUDCFontFile));
+	$assign($ret, $invokeNativeStaticObject());
 	$finishNativeStatic();
 	return $ret;
 }
@@ -205,14 +204,14 @@ void Win32FontManager::populateFontFileNameMap($HashMap* fontToFileMap, $HashMap
 void Win32FontManager::populateFontFileNameMap0($HashMap* fontToFileMap, $HashMap* fontToFamilyNameMap, $HashMap* familyToFontListMap, $Locale* locale) {
 	$init(Win32FontManager);
 	$prepareNativeStatic(Win32FontManager, populateFontFileNameMap0, void, $HashMap* fontToFileMap, $HashMap* fontToFamilyNameMap, $HashMap* familyToFontListMap, $Locale* locale);
-	$invokeNativeStatic(Win32FontManager, populateFontFileNameMap0, fontToFileMap, fontToFamilyNameMap, familyToFontListMap, locale);
+	$invokeNativeStatic(fontToFileMap, fontToFamilyNameMap, familyToFontListMap, locale);
 	$finishNativeStatic();
 }
 
 $String* Win32FontManager::getFontPath(bool noType1Fonts) {
 	$var($String, $ret, nullptr);
 	$prepareNative(Win32FontManager, getFontPath, $String*, bool noType1Fonts);
-	$assign($ret, $invokeNative(Win32FontManager, getFontPath, noType1Fonts));
+	$assign($ret, $invokeNativeObject(noType1Fonts));
 	$finishNative();
 	return $ret;
 }
@@ -261,14 +260,14 @@ void Win32FontManager::registerJREFontsForPrinting() {
 void Win32FontManager::registerFontWithPlatform($String* fontName) {
 	$init(Win32FontManager);
 	$prepareNativeStatic(Win32FontManager, registerFontWithPlatform, void, $String* fontName);
-	$invokeNativeStatic(Win32FontManager, registerFontWithPlatform, fontName);
+	$invokeNativeStatic(fontName);
 	$finishNativeStatic();
 }
 
 void Win32FontManager::deRegisterFontWithPlatform($String* fontName) {
 	$init(Win32FontManager);
 	$prepareNativeStatic(Win32FontManager, deRegisterFontWithPlatform, void, $String* fontName);
-	$invokeNativeStatic(Win32FontManager, deRegisterFontWithPlatform, fontName);
+	$invokeNativeStatic(fontName);
 	$finishNativeStatic();
 }
 

@@ -5,10 +5,8 @@
 #include <javax/swing/plaf/ComponentUI.h>
 #include <jcpp.h>
 
-using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JSplitPane = ::javax::swing::JSplitPane;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 
 namespace javax {

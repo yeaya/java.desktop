@@ -62,7 +62,7 @@ public:
 	int32_t imgWid = 0;
 	int32_t imgHgt = 0;
 	static int32_t pScale;
-	static const int32_t MAX_BAND_SIZE = (1024 * 30);
+	static const int32_t MAX_BAND_SIZE = 30720; // (1024 * 30)
 	bool isEmbeddedInIE = false;
 	static $String* printScale;
 };

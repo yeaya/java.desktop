@@ -14,7 +14,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractList = ::java::util::AbstractList;
 using $Arrays = ::java::util::Arrays;
 using $Collection = ::java::util::Collection;
-using $RandomAccess = ::java::util::RandomAccess;
 
 namespace sun {
 	namespace awt {

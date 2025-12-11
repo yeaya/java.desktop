@@ -26,15 +26,12 @@
 #undef MOUSE_PRESSED
 
 using $MotifPopupMenuUI$1 = ::com::sun::java::swing::plaf::motif::MotifPopupMenuUI$1;
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
-using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
 using $Insets = ::java::awt::Insets;
 using $LayoutManager = ::java::awt::LayoutManager;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

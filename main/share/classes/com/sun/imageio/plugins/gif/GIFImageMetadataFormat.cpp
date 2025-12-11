@@ -24,7 +24,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Arrays = ::java::util::Arrays;
-using $List = ::java::util::List;
 using $ImageTypeSpecifier = ::javax::imageio::ImageTypeSpecifier;
 using $IIOMetadataFormat = ::javax::imageio::metadata::IIOMetadataFormat;
 using $IIOMetadataFormatImpl = ::javax::imageio::metadata::IIOMetadataFormatImpl;

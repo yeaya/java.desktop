@@ -29,7 +29,6 @@
 
 #undef CHORUS_SEND
 
-using $SoftAudioBufferArray = $Array<::com::sun::media::sound::SoftAudioBuffer>;
 using $ControlArray = $Array<::javax::sound::sampled::Control>;
 using $LineListenerArray = $Array<::javax::sound::sampled::LineListener>;
 using $SoftMixingDataLine$1 = ::com::sun::media::sound::SoftMixingDataLine$1;
@@ -56,7 +55,6 @@ using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 using $BooleanControl = ::javax::sound::sampled::BooleanControl;
 using $Control = ::javax::sound::sampled::Control;
 using $Control$Type = ::javax::sound::sampled::Control$Type;
-using $DataLine = ::javax::sound::sampled::DataLine;
 using $DataLine$Info = ::javax::sound::sampled::DataLine$Info;
 using $FloatControl = ::javax::sound::sampled::FloatControl;
 using $FloatControl$Type = ::javax::sound::sampled::FloatControl$Type;

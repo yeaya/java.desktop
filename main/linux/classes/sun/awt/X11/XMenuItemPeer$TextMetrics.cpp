@@ -16,7 +16,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InternalError = ::java::lang::InternalError;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $XMenuItemPeer = ::sun::awt::X11::XMenuItemPeer;
 
 namespace sun {
 	namespace awt {

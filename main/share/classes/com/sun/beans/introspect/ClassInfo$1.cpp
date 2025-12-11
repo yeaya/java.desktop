@@ -5,10 +5,10 @@
 #include <com/sun/beans/util/Cache.h>
 #include <jcpp.h>
 
-using $ClassInfo = ::com::sun::beans::introspect::ClassInfo;
+using $1ClassInfo = ::com::sun::beans::introspect::ClassInfo;
 using $Cache = ::com::sun::beans::util::Cache;
 using $Cache$Kind = ::com::sun::beans::util::Cache$Kind;
-using $1ClassInfo = ::java::lang::ClassInfo;
+using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
@@ -36,7 +36,7 @@ $InnerClassInfo _ClassInfo$1_InnerClassesInfo_[] = {
 	{}
 };
 
-$1ClassInfo _ClassInfo$1_ClassInfo_ = {
+$ClassInfo _ClassInfo$1_ClassInfo_ = {
 	$ACC_SUPER,
 	"com.sun.beans.introspect.ClassInfo$1",
 	"com.sun.beans.util.Cache",
@@ -60,8 +60,8 @@ void ClassInfo$1::init$($Cache$Kind* keyKind, $Cache$Kind* valueKind) {
 	$Cache::init$(keyKind, valueKind);
 }
 
-$ClassInfo* ClassInfo$1::create($Class* type) {
-	return $new($ClassInfo, type);
+$1ClassInfo* ClassInfo$1::create($Class* type) {
+	return $new($1ClassInfo, type);
 }
 
 $Object* ClassInfo$1::create(Object$* type) {

@@ -3417,7 +3417,6 @@
 #include <javax/swing/plaf/nimbus/InternalFrameTitlePaneMaximizeButtonWindowNotFocusedState.h>
 #include <javax/swing/plaf/nimbus/InternalFrameTitlePaneMenuButtonPainter.h>
 #include <javax/swing/plaf/nimbus/InternalFrameTitlePaneMenuButtonWindowNotFocusedState.h>
-#include <javax/swing/plaf/nimbus/InternalFrameTitlePanePainter.h>
 #include <javax/swing/plaf/nimbus/InternalFrameTitlePaneWindowFocusedState.h>
 #include <javax/swing/plaf/nimbus/InternalFrameWindowFocusedState.h>
 #include <javax/swing/plaf/nimbus/LoweredBorder.h>
@@ -3447,7 +3446,6 @@
 #include <javax/swing/plaf/nimbus/NimbusStyle$RuntimeState.h>
 #include <javax/swing/plaf/nimbus/NimbusStyle$Values.h>
 #include <javax/swing/plaf/nimbus/OptionPaneMessageAreaOptionPaneLabelPainter.h>
-#include <javax/swing/plaf/nimbus/OptionPaneMessageAreaPainter.h>
 #include <javax/swing/plaf/nimbus/OptionPanePainter.h>
 #include <javax/swing/plaf/nimbus/OuterGlowEffect.h>
 #include <javax/swing/plaf/nimbus/PasswordFieldPainter.h>
@@ -3459,30 +3457,25 @@
 #include <javax/swing/plaf/nimbus/RadioButtonMenuItemPainter.h>
 #include <javax/swing/plaf/nimbus/RadioButtonPainter.h>
 #include <javax/swing/plaf/nimbus/ScrollBarButtonPainter.h>
-#include <javax/swing/plaf/nimbus/ScrollBarPainter.h>
 #include <javax/swing/plaf/nimbus/ScrollBarThumbPainter.h>
 #include <javax/swing/plaf/nimbus/ScrollBarTrackPainter.h>
 #include <javax/swing/plaf/nimbus/ScrollPanePainter.h>
 #include <javax/swing/plaf/nimbus/SeparatorPainter.h>
 #include <javax/swing/plaf/nimbus/ShadowEffect.h>
 #include <javax/swing/plaf/nimbus/SliderArrowShapeState.h>
-#include <javax/swing/plaf/nimbus/SliderPainter.h>
 #include <javax/swing/plaf/nimbus/SliderThumbArrowShapeState.h>
 #include <javax/swing/plaf/nimbus/SliderThumbPainter.h>
 #include <javax/swing/plaf/nimbus/SliderTrackArrowShapeState.h>
 #include <javax/swing/plaf/nimbus/SliderTrackPainter.h>
 #include <javax/swing/plaf/nimbus/SpinnerNextButtonPainter.h>
-#include <javax/swing/plaf/nimbus/SpinnerPainter.h>
 #include <javax/swing/plaf/nimbus/SpinnerPanelSpinnerFormattedTextFieldPainter.h>
 #include <javax/swing/plaf/nimbus/SpinnerPreviousButtonPainter.h>
 #include <javax/swing/plaf/nimbus/SplitPaneDividerPainter.h>
 #include <javax/swing/plaf/nimbus/SplitPaneDividerVerticalState.h>
-#include <javax/swing/plaf/nimbus/SplitPanePainter.h>
 #include <javax/swing/plaf/nimbus/SplitPaneVerticalState.h>
 #include <javax/swing/plaf/nimbus/State.h>
 #include <javax/swing/plaf/nimbus/State$StandardState.h>
 #include <javax/swing/plaf/nimbus/SynthPainterImpl.h>
-#include <javax/swing/plaf/nimbus/TabbedPanePainter.h>
 #include <javax/swing/plaf/nimbus/TabbedPaneTabAreaPainter.h>
 #include <javax/swing/plaf/nimbus/TabbedPaneTabPainter.h>
 #include <javax/swing/plaf/nimbus/TableEditorPainter.h>
@@ -9099,7 +9092,6 @@
 	$classEntry("javax.swing.plaf.nimbus.InternalFrameTitlePaneMaximizeButtonWindowNotFocusedState", ::javax::swing::plaf::nimbus::InternalFrameTitlePaneMaximizeButtonWindowNotFocusedState),
 	$classEntry("javax.swing.plaf.nimbus.InternalFrameTitlePaneMenuButtonPainter", ::javax::swing::plaf::nimbus::InternalFrameTitlePaneMenuButtonPainter),
 	$classEntry("javax.swing.plaf.nimbus.InternalFrameTitlePaneMenuButtonWindowNotFocusedState", ::javax::swing::plaf::nimbus::InternalFrameTitlePaneMenuButtonWindowNotFocusedState),
-	$classEntry("javax.swing.plaf.nimbus.InternalFrameTitlePanePainter", ::javax::swing::plaf::nimbus::InternalFrameTitlePanePainter),
 	$classEntry("javax.swing.plaf.nimbus.InternalFrameTitlePaneWindowFocusedState", ::javax::swing::plaf::nimbus::InternalFrameTitlePaneWindowFocusedState),
 	$classEntry("javax.swing.plaf.nimbus.InternalFrameWindowFocusedState", ::javax::swing::plaf::nimbus::InternalFrameWindowFocusedState),
 	$classEntry("javax.swing.plaf.nimbus.LoweredBorder", ::javax::swing::plaf::nimbus::LoweredBorder),
@@ -9129,7 +9121,6 @@
 	$classEntry("javax.swing.plaf.nimbus.NimbusStyle$RuntimeState", ::javax::swing::plaf::nimbus::NimbusStyle$RuntimeState),
 	$classEntry("javax.swing.plaf.nimbus.NimbusStyle$Values", ::javax::swing::plaf::nimbus::NimbusStyle$Values),
 	$classEntry("javax.swing.plaf.nimbus.OptionPaneMessageAreaOptionPaneLabelPainter", ::javax::swing::plaf::nimbus::OptionPaneMessageAreaOptionPaneLabelPainter),
-	$classEntry("javax.swing.plaf.nimbus.OptionPaneMessageAreaPainter", ::javax::swing::plaf::nimbus::OptionPaneMessageAreaPainter),
 	$classEntry("javax.swing.plaf.nimbus.OptionPanePainter", ::javax::swing::plaf::nimbus::OptionPanePainter),
 	$classEntry("javax.swing.plaf.nimbus.OuterGlowEffect", ::javax::swing::plaf::nimbus::OuterGlowEffect),
 	$classEntry("javax.swing.plaf.nimbus.PasswordFieldPainter", ::javax::swing::plaf::nimbus::PasswordFieldPainter),
@@ -9141,30 +9132,25 @@
 	$classEntry("javax.swing.plaf.nimbus.RadioButtonMenuItemPainter", ::javax::swing::plaf::nimbus::RadioButtonMenuItemPainter),
 	$classEntry("javax.swing.plaf.nimbus.RadioButtonPainter", ::javax::swing::plaf::nimbus::RadioButtonPainter),
 	$classEntry("javax.swing.plaf.nimbus.ScrollBarButtonPainter", ::javax::swing::plaf::nimbus::ScrollBarButtonPainter),
-	$classEntry("javax.swing.plaf.nimbus.ScrollBarPainter", ::javax::swing::plaf::nimbus::ScrollBarPainter),
 	$classEntry("javax.swing.plaf.nimbus.ScrollBarThumbPainter", ::javax::swing::plaf::nimbus::ScrollBarThumbPainter),
 	$classEntry("javax.swing.plaf.nimbus.ScrollBarTrackPainter", ::javax::swing::plaf::nimbus::ScrollBarTrackPainter),
 	$classEntry("javax.swing.plaf.nimbus.ScrollPanePainter", ::javax::swing::plaf::nimbus::ScrollPanePainter),
 	$classEntry("javax.swing.plaf.nimbus.SeparatorPainter", ::javax::swing::plaf::nimbus::SeparatorPainter),
 	$classEntry("javax.swing.plaf.nimbus.ShadowEffect", ::javax::swing::plaf::nimbus::ShadowEffect),
 	$classEntry("javax.swing.plaf.nimbus.SliderArrowShapeState", ::javax::swing::plaf::nimbus::SliderArrowShapeState),
-	$classEntry("javax.swing.plaf.nimbus.SliderPainter", ::javax::swing::plaf::nimbus::SliderPainter),
 	$classEntry("javax.swing.plaf.nimbus.SliderThumbArrowShapeState", ::javax::swing::plaf::nimbus::SliderThumbArrowShapeState),
 	$classEntry("javax.swing.plaf.nimbus.SliderThumbPainter", ::javax::swing::plaf::nimbus::SliderThumbPainter),
 	$classEntry("javax.swing.plaf.nimbus.SliderTrackArrowShapeState", ::javax::swing::plaf::nimbus::SliderTrackArrowShapeState),
 	$classEntry("javax.swing.plaf.nimbus.SliderTrackPainter", ::javax::swing::plaf::nimbus::SliderTrackPainter),
 	$classEntry("javax.swing.plaf.nimbus.SpinnerNextButtonPainter", ::javax::swing::plaf::nimbus::SpinnerNextButtonPainter),
-	$classEntry("javax.swing.plaf.nimbus.SpinnerPainter", ::javax::swing::plaf::nimbus::SpinnerPainter),
 	$classEntry("javax.swing.plaf.nimbus.SpinnerPanelSpinnerFormattedTextFieldPainter", ::javax::swing::plaf::nimbus::SpinnerPanelSpinnerFormattedTextFieldPainter),
 	$classEntry("javax.swing.plaf.nimbus.SpinnerPreviousButtonPainter", ::javax::swing::plaf::nimbus::SpinnerPreviousButtonPainter),
 	$classEntry("javax.swing.plaf.nimbus.SplitPaneDividerPainter", ::javax::swing::plaf::nimbus::SplitPaneDividerPainter),
 	$classEntry("javax.swing.plaf.nimbus.SplitPaneDividerVerticalState", ::javax::swing::plaf::nimbus::SplitPaneDividerVerticalState),
-	$classEntry("javax.swing.plaf.nimbus.SplitPanePainter", ::javax::swing::plaf::nimbus::SplitPanePainter),
 	$classEntry("javax.swing.plaf.nimbus.SplitPaneVerticalState", ::javax::swing::plaf::nimbus::SplitPaneVerticalState),
 	$classEntry("javax.swing.plaf.nimbus.State", ::javax::swing::plaf::nimbus::State),
 	$classEntry("javax.swing.plaf.nimbus.State$StandardState", ::javax::swing::plaf::nimbus::State$StandardState),
 	$classEntry("javax.swing.plaf.nimbus.SynthPainterImpl", ::javax::swing::plaf::nimbus::SynthPainterImpl),
-	$classEntry("javax.swing.plaf.nimbus.TabbedPanePainter", ::javax::swing::plaf::nimbus::TabbedPanePainter),
 	$classEntry("javax.swing.plaf.nimbus.TabbedPaneTabAreaPainter", ::javax::swing::plaf::nimbus::TabbedPaneTabAreaPainter),
 	$classEntry("javax.swing.plaf.nimbus.TabbedPaneTabPainter", ::javax::swing::plaf::nimbus::TabbedPaneTabPainter),
 	$classEntry("javax.swing.plaf.nimbus.TableEditorPainter", ::javax::swing::plaf::nimbus::TableEditorPainter),

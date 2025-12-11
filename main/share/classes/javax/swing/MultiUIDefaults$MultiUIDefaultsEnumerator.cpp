@@ -9,15 +9,12 @@
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Enumeration = ::java::util::Enumeration;
 using $Iterator = ::java::util::Iterator;
 using $Map$Entry = ::java::util::Map$Entry;
 using $Set = ::java::util::Set;
-using $MultiUIDefaults = ::javax::swing::MultiUIDefaults;
 using $MultiUIDefaults$1 = ::javax::swing::MultiUIDefaults$1;
 using $MultiUIDefaults$MultiUIDefaultsEnumerator$Type = ::javax::swing::MultiUIDefaults$MultiUIDefaultsEnumerator$Type;
 

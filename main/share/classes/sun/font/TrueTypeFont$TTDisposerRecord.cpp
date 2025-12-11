@@ -11,9 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $FileChannel = ::java::nio::channels::FileChannel;
-using $AbstractInterruptibleChannel = ::java::nio::channels::spi::AbstractInterruptibleChannel;
-using $TrueTypeFont = ::sun::font::TrueTypeFont;
-using $DisposerRecord = ::sun::java2d::DisposerRecord;
 
 namespace sun {
 	namespace font {

@@ -11,15 +11,12 @@
 #include <jcpp.h>
 
 using $MotifInternalFrameTitlePane = ::com::sun::java::swing::plaf::motif::MotifInternalFrameTitlePane;
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $JButton = ::javax::swing::JButton;
 

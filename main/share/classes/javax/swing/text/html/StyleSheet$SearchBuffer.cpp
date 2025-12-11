@@ -17,7 +17,6 @@ using $EmptyStackException = ::java::util::EmptyStackException;
 using $Hashtable = ::java::util::Hashtable;
 using $Stack = ::java::util::Stack;
 using $Vector = ::java::util::Vector;
-using $StyleSheet = ::javax::swing::text::html::StyleSheet;
 
 namespace javax {
 	namespace swing {

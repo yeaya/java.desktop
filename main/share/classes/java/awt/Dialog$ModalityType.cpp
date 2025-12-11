@@ -10,7 +10,6 @@
 #undef TOOLKIT_MODAL
 
 using $Dialog$ModalityTypeArray = $Array<::java::awt::Dialog$ModalityType>;
-using $Dialog = ::java::awt::Dialog;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

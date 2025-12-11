@@ -10,7 +10,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $FaxTIFFTagSet = ::javax::imageio::plugins::tiff::FaxTIFFTagSet;
 using $TIFFTag = ::javax::imageio::plugins::tiff::TIFFTag;
 
 namespace javax {

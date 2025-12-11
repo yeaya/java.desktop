@@ -19,13 +19,11 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NumberFormatException = ::java::lang::NumberFormatException;
-using $EventObject = ::java::util::EventObject;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $SimpleAttributeSet = ::javax::swing::text::SimpleAttributeSet;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
-using $StyledEditorKit = ::javax::swing::text::StyledEditorKit;
 using $StyledEditorKit$StyledTextAction = ::javax::swing::text::StyledEditorKit$StyledTextAction;
 
 namespace javax {

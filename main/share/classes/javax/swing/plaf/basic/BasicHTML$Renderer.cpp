@@ -20,7 +20,6 @@
 #undef Y_AXIS
 
 using $Position$BiasArray = $Array<::javax::swing::text::Position$Bias>;
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
 using $Rectangle = ::java::awt::Rectangle;
@@ -32,7 +31,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
-using $BasicHTML = ::javax::swing::plaf::basic::BasicHTML;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;

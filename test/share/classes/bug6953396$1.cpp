@@ -7,13 +7,11 @@
 #include <javax/swing/plaf/basic/BasicViewportUI.h>
 #include <jcpp.h>
 
-using $bug6953396 = ::bug6953396;
 using $bug6953396$1$1 = ::bug6953396$1$1;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JViewport = ::javax::swing::JViewport;
 using $ViewportUI = ::javax::swing::plaf::ViewportUI;
 using $BasicViewportUI = ::javax::swing::plaf::basic::BasicViewportUI;

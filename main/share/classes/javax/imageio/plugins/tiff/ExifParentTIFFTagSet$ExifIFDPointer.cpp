@@ -9,7 +9,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ExifParentTIFFTagSet = ::javax::imageio::plugins::tiff::ExifParentTIFFTagSet;
 using $ExifTIFFTagSet = ::javax::imageio::plugins::tiff::ExifTIFFTagSet;
 using $TIFFTag = ::javax::imageio::plugins::tiff::TIFFTag;
 using $TIFFTagSet = ::javax::imageio::plugins::tiff::TIFFTagSet;

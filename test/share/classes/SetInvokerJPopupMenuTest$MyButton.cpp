@@ -6,13 +6,11 @@
 #include <javax/swing/JComponent.h>
 #include <jcpp.h>
 
-using $SetInvokerJPopupMenuTest = ::SetInvokerJPopupMenuTest;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JButton = ::javax::swing::JButton;
-using $JComponent = ::javax::swing::JComponent;
 
 $MethodInfo _SetInvokerJPopupMenuTest$MyButton_MethodInfo_[] = {
 	{"<init>", "(Ljava/lang/String;)V", nullptr, $PUBLIC, $method(static_cast<void(SetInvokerJPopupMenuTest$MyButton::*)($String*)>(&SetInvokerJPopupMenuTest$MyButton::init$))},

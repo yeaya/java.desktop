@@ -28,7 +28,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $Blit = ::sun::java2d::loops::Blit;
 using $CompositeType = ::sun::java2d::loops::CompositeType;
-using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
 using $MaskBlit = ::sun::java2d::loops::MaskBlit;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $Region = ::sun::java2d::pipe::Region;
@@ -144,7 +143,7 @@ void BufferedMaskBlit::MaskBlit$($SurfaceData* src, $SurfaceData* dst, $Composit
 int32_t BufferedMaskBlit::enqueueTile(int64_t buf, int32_t bpos, $SurfaceData* srcData, int64_t pSrcOps, int32_t srcType, $bytes* mask, int32_t masklen, int32_t maskoff, int32_t maskscan, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t width, int32_t height) {
 	int32_t $ret = 0;
 	$prepareNative(BufferedMaskBlit, enqueueTile, int32_t, int64_t buf, int32_t bpos, $SurfaceData* srcData, int64_t pSrcOps, int32_t srcType, $bytes* mask, int32_t masklen, int32_t maskoff, int32_t maskscan, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t width, int32_t height);
-	$ret = $invokeNative(BufferedMaskBlit, enqueueTile, buf, bpos, srcData, pSrcOps, srcType, mask, masklen, maskoff, maskscan, srcx, srcy, dstx, dsty, width, height);
+	$ret = $invokeNative(buf, bpos, srcData, pSrcOps, srcType, mask, masklen, maskoff, maskscan, srcx, srcy, dstx, dsty, width, height);
 	$finishNative();
 	return $ret;
 }

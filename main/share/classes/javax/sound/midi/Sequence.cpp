@@ -24,7 +24,6 @@ using $Float = ::java::lang::Float;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Vector = ::java::util::Vector;
 using $InvalidMidiDataException = ::javax::sound::midi::InvalidMidiDataException;
-using $Patch = ::javax::sound::midi::Patch;
 using $Track = ::javax::sound::midi::Track;
 
 namespace javax {

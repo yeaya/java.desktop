@@ -13,8 +13,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ArrayList = ::java::util::ArrayList;
-using $EnumSyntax = ::javax::print::attribute::EnumSyntax;
-using $Media = ::javax::print::attribute::standard::Media;
 using $MediaTray = ::javax::print::attribute::standard::MediaTray;
 
 namespace sun {

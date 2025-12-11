@@ -14,10 +14,8 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $XEmbedCanvasPeer = ::sun::awt::X11::XEmbedCanvasPeer;
 using $XEmbedCanvasPeer$XEmbedDropTarget = ::sun::awt::X11::XEmbedCanvasPeer$XEmbedDropTarget;
-using $XWindow = ::sun::awt::X11::XWindow;
 
 namespace sun {
 	namespace awt {

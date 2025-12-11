@@ -7,15 +7,9 @@
 #include <javax/swing/text/View.h>
 #include <jcpp.h>
 
-using $Graphics = ::java::awt::Graphics;
-using $Shape = ::java::awt::Shape;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Highlighter$HighlightPainter = ::javax::swing::text::Highlighter$HighlightPainter;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
-using $LayeredHighlighter = ::javax::swing::text::LayeredHighlighter;
-using $View = ::javax::swing::text::View;
 
 namespace javax {
 	namespace swing {

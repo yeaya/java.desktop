@@ -17,7 +17,6 @@ using $ModelByteBuffer$RandomFileInputStream = ::com::sun::media::sound::ModelBy
 using $ByteArrayInputStream = ::java::io::ByteArrayInputStream;
 using $DataInputStream = ::java::io::DataInputStream;
 using $File = ::java::io::File;
-using $FilterInputStream = ::java::io::FilterInputStream;
 using $IOException = ::java::io::IOException;
 using $InputStream = ::java::io::InputStream;
 using $OutputStream = ::java::io::OutputStream;
@@ -27,7 +26,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalStateException = ::java::lang::IllegalStateException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $Collection = ::java::util::Collection;
 using $Iterator = ::java::util::Iterator;
 

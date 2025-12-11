@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $BufferedContext = ::sun::java2d::pipe::BufferedContext;
 
 namespace sun {
 	namespace java2d {

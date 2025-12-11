@@ -19,7 +19,6 @@
 #undef CF_LOCALE
 
 using $DataFlavor = ::java::awt::datatransfer::DataFlavor;
-using $FlavorTable = ::java::awt::datatransfer::FlavorTable;
 using $Transferable = ::java::awt::datatransfer::Transferable;
 using $IOException = ::java::io::IOException;
 using $NotSerializableException = ::java::io::NotSerializableException;
@@ -32,7 +31,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Iterator = ::java::util::Iterator;
 using $Map = ::java::util::Map;
 using $Set = ::java::util::Set;
-using $SortedMap = ::java::util::SortedMap;
 using $DataTransferer = ::sun::awt::datatransfer::DataTransferer;
 using $SunClipboard = ::sun::awt::datatransfer::SunClipboard;
 using $WClipboard$1 = ::sun::awt::windows::WClipboard$1;
@@ -152,33 +150,33 @@ void WClipboard::clearNativeContext() {
 
 void WClipboard::openClipboard($SunClipboard* newOwner) {
 	$prepareNative(WClipboard, openClipboard, void, $SunClipboard* newOwner);
-	$invokeNative(WClipboard, openClipboard, newOwner);
+	$invokeNative(newOwner);
 	$finishNative();
 }
 
 void WClipboard::closeClipboard() {
 	$prepareNative(WClipboard, closeClipboard, void);
-	$invokeNative(WClipboard, closeClipboard);
+	$invokeNative();
 	$finishNative();
 }
 
 void WClipboard::publishClipboardData(int64_t format, $bytes* bytes) {
 	$prepareNative(WClipboard, publishClipboardData, void, int64_t format, $bytes* bytes);
-	$invokeNative(WClipboard, publishClipboardData, format, bytes);
+	$invokeNative(format, bytes);
 	$finishNative();
 }
 
 void WClipboard::init() {
 	$init(WClipboard);
 	$prepareNativeStatic(WClipboard, init, void);
-	$invokeNativeStatic(WClipboard, init);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
 $longs* WClipboard::getClipboardFormats() {
 	$var($longs, $ret, nullptr);
 	$prepareNative(WClipboard, getClipboardFormats, $longs*);
-	$assign($ret, $invokeNative(WClipboard, getClipboardFormats));
+	$assign($ret, $invokeNativeObject());
 	$finishNative();
 	return $ret;
 }
@@ -186,7 +184,7 @@ $longs* WClipboard::getClipboardFormats() {
 $bytes* WClipboard::getClipboardData(int64_t format) {
 	$var($bytes, $ret, nullptr);
 	$prepareNative(WClipboard, getClipboardData, $bytes*, int64_t format);
-	$assign($ret, $invokeNative(WClipboard, getClipboardData, format));
+	$assign($ret, $invokeNativeObject(format));
 	$finishNative();
 	return $ret;
 }
@@ -200,7 +198,7 @@ void WClipboard::registerClipboardViewerChecked() {
 
 void WClipboard::registerClipboardViewer() {
 	$prepareNative(WClipboard, registerClipboardViewer, void);
-	$invokeNative(WClipboard, registerClipboardViewer);
+	$invokeNative();
 	$finishNative();
 }
 

@@ -7,7 +7,6 @@
 #include <jcpp.h>
 
 using $AudioFloatInputStream = ::com::sun::media::sound::AudioFloatInputStream;
-using $SoftMixingSourceDataLine = ::com::sun::media::sound::SoftMixingSourceDataLine;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

@@ -35,7 +35,6 @@
 
 #undef HORIZONTAL
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
@@ -48,7 +47,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $AbstractList = ::java::util::AbstractList;
 using $ArrayList = ::java::util::ArrayList;

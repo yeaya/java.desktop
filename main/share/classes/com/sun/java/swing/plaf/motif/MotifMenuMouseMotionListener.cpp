@@ -5,7 +5,6 @@
 #include <jcpp.h>
 
 using $MouseEvent = ::java::awt::event::MouseEvent;
-using $MouseMotionListener = ::java::awt::event::MouseMotionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;

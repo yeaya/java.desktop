@@ -5,12 +5,9 @@
 #include <sun/awt/AWTAccessor.h>
 #include <jcpp.h>
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AccessControlContext = ::java::security::AccessControlContext;
-using $AWTAccessor = ::sun::awt::AWTAccessor;
 
 namespace sun {
 	namespace awt {

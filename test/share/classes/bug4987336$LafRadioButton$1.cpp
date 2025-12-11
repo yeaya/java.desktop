@@ -20,7 +20,6 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Panel = ::java::awt::Panel;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

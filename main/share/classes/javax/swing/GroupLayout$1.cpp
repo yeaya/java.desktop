@@ -11,16 +11,12 @@
 #undef CONSTANT_DESCENT
 #undef TRAILING
 
-using $Component$BaselineResizeBehaviorArray = $Array<::java::awt::Component$BaselineResizeBehavior>;
-using $GroupLayout$AlignmentArray = $Array<::javax::swing::GroupLayout$Alignment>;
 using $Component$BaselineResizeBehavior = ::java::awt::Component$BaselineResizeBehavior;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $GroupLayout = ::javax::swing::GroupLayout;
 using $GroupLayout$Alignment = ::javax::swing::GroupLayout$Alignment;
 
 namespace javax {

@@ -5,9 +5,7 @@
 #include <jcpp.h>
 
 using $WindowEvent = ::java::awt::event::WindowEvent;
-using $WindowFocusListener = ::java::awt::event::WindowFocusListener;
 using $WindowListener = ::java::awt::event::WindowListener;
-using $WindowStateListener = ::java::awt::event::WindowStateListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

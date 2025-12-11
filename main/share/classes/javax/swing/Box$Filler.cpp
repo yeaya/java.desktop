@@ -12,8 +12,6 @@
 #include <javax/swing/plaf/ComponentUI.h>
 #include <jcpp.h>
 
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
@@ -23,12 +21,9 @@ using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
-using $Box = ::javax::swing::Box;
 using $Box$Filler$AccessibleBoxFiller = ::javax::swing::Box$Filler$AccessibleBoxFiller;
 using $JComponent = ::javax::swing::JComponent;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 
 namespace javax {
 	namespace swing {

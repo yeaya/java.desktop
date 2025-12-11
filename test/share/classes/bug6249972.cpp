@@ -28,10 +28,7 @@
 #undef VK_Z
 
 using $Component = ::java::awt::Component;
-using $Dimension = ::java::awt::Dimension;
-using $Point = ::java::awt::Point;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $InputEvent = ::java::awt::event::InputEvent;
@@ -43,13 +40,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JFrame = ::javax::swing::JFrame;
 using $JMenu = ::javax::swing::JMenu;
 using $JMenuBar = ::javax::swing::JMenuBar;

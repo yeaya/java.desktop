@@ -16,7 +16,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ContentHandler = ::java::net::ContentHandler;
-using $ContentHandlerFactory = ::java::net::ContentHandlerFactory;
 using $aiff = ::sun::awt::www::content::audio::aiff;
 using $basic = ::sun::awt::www::content::audio::basic;
 using $wav = ::sun::awt::www::content::audio::wav;

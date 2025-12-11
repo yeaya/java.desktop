@@ -24,7 +24,6 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Frame = ::java::awt::Frame;
-using $Graphics = ::java::awt::Graphics;
 using $Window = ::java::awt::Window;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ClassInfo = ::java::lang::ClassInfo;

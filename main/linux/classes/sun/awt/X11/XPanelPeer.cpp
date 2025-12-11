@@ -37,7 +37,6 @@
 #undef HEAVYWEIGHTS
 #undef LIGHTWEIGHTS
 
-using $ComponentArray = $Array<::java::awt::Component>;
 using $AWTEvent = ::java::awt::AWTEvent;
 using $BufferCapabilities = ::java::awt::BufferCapabilities;
 using $BufferCapabilities$FlipContents = ::java::awt::BufferCapabilities$FlipContents;
@@ -59,7 +58,6 @@ using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
 using $LightweightPeer = ::java::awt::peer::LightweightPeer;
-using $PanelPeer = ::java::awt::peer::PanelPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

@@ -22,7 +22,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $Painter = ::javax::swing::Painter;
 using $UIManager = ::javax::swing::UIManager;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace javax {
 	namespace swing {

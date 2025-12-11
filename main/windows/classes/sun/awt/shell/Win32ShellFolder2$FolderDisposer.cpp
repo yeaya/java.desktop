@@ -12,9 +12,7 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Callable = ::java::util::concurrent::Callable;
 using $ShellFolder = ::sun::awt::shell::ShellFolder;
-using $Win32ShellFolder2 = ::sun::awt::shell::Win32ShellFolder2;
 using $Win32ShellFolder2$FolderDisposer$1 = ::sun::awt::shell::Win32ShellFolder2$FolderDisposer$1;
-using $DisposerRecord = ::sun::java2d::DisposerRecord;
 
 namespace sun {
 	namespace awt {

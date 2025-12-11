@@ -19,8 +19,6 @@
 
 #undef LATCH
 
-using $UIManager$LookAndFeelInfoArray = $Array<::javax::swing::UIManager$LookAndFeelInfo>;
-using $FileFilterArray = $Array<::javax::swing::filechooser::FileFilter>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Window = ::java::awt::Window;

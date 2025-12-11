@@ -14,7 +14,6 @@
 #include <jcpp.h>
 
 using $floatArray2 = $Array<float, 2>;
-using $Rectangle = ::java::awt::Rectangle;
 using $RenderingHints = ::java::awt::RenderingHints;
 using $Point2D = ::java::awt::geom::Point2D;
 using $Point2D$Float = ::java::awt::geom::Point2D$Float;

@@ -9,15 +9,12 @@
 #include <javax/swing/text/html/HTMLEditorKit.h>
 #include <jcpp.h>
 
-using $bug6836089 = ::bug6836089;
 using $CharSequence = ::java::lang::CharSequence;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $JEditorPane = ::javax::swing::JEditorPane;
 using $JTextPane = ::javax::swing::JTextPane;
 using $DefaultEditorKit = ::javax::swing::text::DefaultEditorKit;
 using $EditorKit = ::javax::swing::text::EditorKit;

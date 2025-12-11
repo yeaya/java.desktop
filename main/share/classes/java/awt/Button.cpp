@@ -43,7 +43,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $EventListener = ::java::util::EventListener;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $ComponentFactory = ::sun::awt::ComponentFactory;
 
@@ -153,7 +152,7 @@ int32_t Button::nameCounter = 0;
 void Button::initIDs() {
 	$init(Button);
 	$prepareNativeStatic(Button, initIDs, void);
-	$invokeNativeStatic(Button, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

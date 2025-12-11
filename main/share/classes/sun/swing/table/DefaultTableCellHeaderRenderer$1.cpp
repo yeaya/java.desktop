@@ -9,15 +9,12 @@
 #undef DESCENDING
 #undef UNSORTED
 
-using $SortOrderArray = $Array<::javax::swing::SortOrder>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
 using $SortOrder = ::javax::swing::SortOrder;
-using $DefaultTableCellHeaderRenderer = ::sun::swing::table::DefaultTableCellHeaderRenderer;
 
 namespace sun {
 	namespace swing {

@@ -8,13 +8,11 @@
 
 #undef EVENT_QUEUE_KEY
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $EventQueue = ::java::awt::EventQueue;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $AWTAutoShutdown = ::sun::awt::AWTAutoShutdown;
 using $AppContext = ::sun::awt::AppContext;
 

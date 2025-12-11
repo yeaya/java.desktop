@@ -11,7 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UnsupportedOperationException = ::java::lang::UnsupportedOperationException;
-using $Iterator = ::java::util::Iterator;
 using $NoSuchElementException = ::java::util::NoSuchElementException;
 using $MimeType = ::javax::print::MimeType;
 using $MimeType$ParameterMapEntry = ::javax::print::MimeType$ParameterMapEntry;

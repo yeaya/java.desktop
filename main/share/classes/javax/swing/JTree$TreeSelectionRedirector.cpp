@@ -12,7 +12,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JTree = ::javax::swing::JTree;
 using $TreeSelectionEvent = ::javax::swing::event::TreeSelectionEvent;
-using $TreeSelectionListener = ::javax::swing::event::TreeSelectionListener;
 
 namespace javax {
 	namespace swing {

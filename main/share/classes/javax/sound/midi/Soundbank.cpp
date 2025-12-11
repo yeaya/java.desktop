@@ -5,12 +5,8 @@
 #include <javax/sound/midi/SoundbankResource.h>
 #include <jcpp.h>
 
-using $InstrumentArray = $Array<::javax::sound::midi::Instrument>;
-using $SoundbankResourceArray = $Array<::javax::sound::midi::SoundbankResource>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Instrument = ::javax::sound::midi::Instrument;
-using $Patch = ::javax::sound::midi::Patch;
 
 namespace javax {
 	namespace sound {

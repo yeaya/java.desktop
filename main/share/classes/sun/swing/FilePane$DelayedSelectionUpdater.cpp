@@ -10,14 +10,12 @@
 #include <sun/swing/FilePane.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $DefaultRowSorter = ::javax::swing::DefaultRowSorter;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $BasicDirectoryModel = ::javax::swing::plaf::basic::BasicDirectoryModel;
 using $FilePane = ::sun::swing::FilePane;

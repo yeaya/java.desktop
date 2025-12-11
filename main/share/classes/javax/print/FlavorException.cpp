@@ -3,7 +3,6 @@
 #include <javax/print/DocFlavor.h>
 #include <jcpp.h>
 
-using $DocFlavorArray = $Array<::javax::print::DocFlavor>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

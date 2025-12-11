@@ -14,7 +14,6 @@
 #include <javax/swing/table/TableCellRenderer.h>
 #include <jcpp.h>
 
-using $bug4235420 = ::bug4235420;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Error = ::java::lang::Error;
@@ -24,7 +23,6 @@ using $Number = ::java::lang::Number;
 using $AbstractMap = ::java::util::AbstractMap;
 using $Date = ::java::util::Date;
 using $HashMap = ::java::util::HashMap;
-using $Hashtable = ::java::util::Hashtable;
 using $Map = ::java::util::Map;
 using $ImageIcon = ::javax::swing::ImageIcon;
 using $JTable = ::javax::swing::JTable;

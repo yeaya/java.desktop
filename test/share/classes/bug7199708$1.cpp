@@ -14,7 +14,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JFileChooser = ::javax::swing::JFileChooser;
 
 $FieldInfo _bug7199708$1_FieldInfo_[] = {

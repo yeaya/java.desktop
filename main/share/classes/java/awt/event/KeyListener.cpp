@@ -3,10 +3,8 @@
 #include <java/awt/event/KeyEvent.h>
 #include <jcpp.h>
 
-using $KeyEvent = ::java::awt::event::KeyEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
 
 namespace java {
 	namespace awt {

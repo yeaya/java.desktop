@@ -9,14 +9,11 @@
 #undef INITIALISED
 #undef INITIALISING
 
-using $XBaseWindow$InitialiseStateArray = $Array<::sun::awt::X11::XBaseWindow$InitialiseState>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XBaseWindow$InitialiseState = ::sun::awt::X11::XBaseWindow$InitialiseState;
 
 namespace sun {

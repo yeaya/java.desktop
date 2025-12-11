@@ -11,7 +11,6 @@
 #include <jcpp.h>
 
 using $ObjectArray2 = $Array<::java::lang::Object, 2>;
-using $bug6348946 = ::bug6348946;
 using $bug6348946$Editor = ::bug6348946$Editor;
 using $bug6348946$Renderer = ::bug6348946$Renderer;
 using $ClassInfo = ::java::lang::ClassInfo;

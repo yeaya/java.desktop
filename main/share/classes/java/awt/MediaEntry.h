@@ -44,8 +44,8 @@ public:
 	static const int32_t ABORTED = ::java::awt::MediaTracker::ABORTED;
 	static const int32_t ERRORED = ::java::awt::MediaTracker::ERRORED;
 	static const int32_t COMPLETE = ::java::awt::MediaTracker::COMPLETE;
-	static const int32_t LOADSTARTED = (LOADING | ERRORED | COMPLETE);
-	static const int32_t DONE = (ABORTED | ERRORED | COMPLETE);
+	static const int32_t LOADSTARTED = 13; // (LOADING | ERRORED | COMPLETE)
+	static const int32_t DONE = 14; // (ABORTED | ERRORED | COMPLETE)
 };
 
 	} // awt

@@ -12,7 +12,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Sequencer = ::javax::sound::midi::Sequencer;
 
 namespace javax {
 	namespace sound {

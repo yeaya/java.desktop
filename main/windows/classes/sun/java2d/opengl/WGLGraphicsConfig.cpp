@@ -95,7 +95,6 @@ using $Win32GraphicsDevice = ::sun::awt::Win32GraphicsDevice;
 using $SunVolatileImage = ::sun::awt::image::SunVolatileImage;
 using $SurfaceManager = ::sun::awt::image::SurfaceManager;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $Disposer = ::sun::java2d::Disposer;
 using $DisposerRecord = ::sun::java2d::DisposerRecord;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
@@ -103,7 +102,6 @@ using $Surface = ::sun::java2d::Surface;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $OGLContext = ::sun::java2d::opengl::OGLContext;
 using $OGLContext$OGLContextCaps = ::sun::java2d::opengl::OGLContext$OGLContextCaps;
-using $OGLGraphicsConfig = ::sun::java2d::opengl::OGLGraphicsConfig;
 using $OGLRenderQueue = ::sun::java2d::opengl::OGLRenderQueue;
 using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;
 using $WGLGraphicsConfig$1 = ::sun::java2d::opengl::WGLGraphicsConfig$1;
@@ -112,9 +110,7 @@ using $WGLGraphicsConfig$WGLGCDisposerRecord = ::sun::java2d::opengl::WGLGraphic
 using $WGLGraphicsConfig$WGLGetConfigInfo = ::sun::java2d::opengl::WGLGraphicsConfig$WGLGetConfigInfo;
 using $WGLGraphicsConfig$WGLImageCaps = ::sun::java2d::opengl::WGLGraphicsConfig$WGLImageCaps;
 using $WGLSurfaceData = ::sun::java2d::opengl::WGLSurfaceData;
-using $WGLSurfaceData$WGLOffScreenSurfaceData = ::sun::java2d::opengl::WGLSurfaceData$WGLOffScreenSurfaceData;
 using $WGLSurfaceData$WGLVSyncOffScreenSurfaceData = ::sun::java2d::opengl::WGLSurfaceData$WGLVSyncOffScreenSurfaceData;
-using $WGLSurfaceData$WGLWindowSurfaceData = ::sun::java2d::opengl::WGLSurfaceData$WGLWindowSurfaceData;
 using $BufferedContext = ::sun::java2d::pipe::BufferedContext;
 using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 using $AccelSurface = ::sun::java2d::pipe::hw::AccelSurface;
@@ -224,7 +220,7 @@ int32_t WGLGraphicsConfig::getDefaultPixFmt(int32_t screennum) {
 	$init(WGLGraphicsConfig);
 	int32_t $ret = 0;
 	$prepareNativeStatic(WGLGraphicsConfig, getDefaultPixFmt, int32_t, int32_t screennum);
-	$ret = $invokeNativeStatic(WGLGraphicsConfig, getDefaultPixFmt, screennum);
+	$ret = $invokeNativeStatic(screennum);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -233,7 +229,7 @@ bool WGLGraphicsConfig::initWGL() {
 	$init(WGLGraphicsConfig);
 	bool $ret = false;
 	$prepareNativeStatic(WGLGraphicsConfig, initWGL, bool);
-	$ret = $invokeNativeStatic(WGLGraphicsConfig, initWGL);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -242,7 +238,7 @@ int64_t WGLGraphicsConfig::getWGLConfigInfo(int32_t screennum, int32_t visualnum
 	$init(WGLGraphicsConfig);
 	int64_t $ret = 0;
 	$prepareNativeStatic(WGLGraphicsConfig, getWGLConfigInfo, int64_t, int32_t screennum, int32_t visualnum);
-	$ret = $invokeNativeStatic(WGLGraphicsConfig, getWGLConfigInfo, screennum, visualnum);
+	$ret = $invokeNativeStatic(screennum, visualnum);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -251,7 +247,7 @@ int32_t WGLGraphicsConfig::getOGLCapabilities(int64_t configInfo) {
 	$init(WGLGraphicsConfig);
 	int32_t $ret = 0;
 	$prepareNativeStatic(WGLGraphicsConfig, getOGLCapabilities, int32_t, int64_t configInfo);
-	$ret = $invokeNativeStatic(WGLGraphicsConfig, getOGLCapabilities, configInfo);
+	$ret = $invokeNativeStatic(configInfo);
 	$finishNativeStatic();
 	return $ret;
 }

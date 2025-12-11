@@ -13,7 +13,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractAction = ::javax::swing::AbstractAction;
-using $JComponent = ::javax::swing::JComponent;
 using $BasicTextUI = ::javax::swing::plaf::basic::BasicTextUI;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 

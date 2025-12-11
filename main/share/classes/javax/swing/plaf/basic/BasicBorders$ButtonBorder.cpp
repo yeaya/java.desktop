@@ -24,8 +24,6 @@ using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $JButton = ::javax::swing::JButton;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $BasicBorders = ::javax::swing::plaf::basic::BasicBorders;
 using $BasicGraphicsUtils = ::javax::swing::plaf::basic::BasicGraphicsUtils;
 
 namespace javax {

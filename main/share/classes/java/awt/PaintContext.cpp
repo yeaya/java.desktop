@@ -4,8 +4,6 @@
 #include <java/awt/image/Raster.h>
 #include <jcpp.h>
 
-using $ColorModel = ::java::awt::image::ColorModel;
-using $Raster = ::java::awt::image::Raster;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

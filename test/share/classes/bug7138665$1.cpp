@@ -11,16 +11,13 @@
 #undef OK_OPTION
 #undef QUESTION_MESSAGE
 
-using $bug7138665 = ::bug7138665;
 using $Component = ::java::awt::Component;
-using $Dialog = ::java::awt::Dialog;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $Icon = ::javax::swing::Icon;
 using $JDialog = ::javax::swing::JDialog;

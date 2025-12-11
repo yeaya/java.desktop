@@ -9,9 +9,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
-using $DocAttribute = ::javax::print::attribute::DocAttribute;
-using $PrintJobAttribute = ::javax::print::attribute::PrintJobAttribute;
-using $PrintRequestAttribute = ::javax::print::attribute::PrintRequestAttribute;
 using $SetOfIntegerSyntax = ::javax::print::attribute::SetOfIntegerSyntax;
 
 namespace javax {

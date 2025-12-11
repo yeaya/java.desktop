@@ -2,10 +2,8 @@
 
 #include <jcpp.h>
 
-using $floatArray2 = $Array<float, 2>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $MidiChannel = ::javax::sound::midi::MidiChannel;
 
 namespace com {
 	namespace sun {

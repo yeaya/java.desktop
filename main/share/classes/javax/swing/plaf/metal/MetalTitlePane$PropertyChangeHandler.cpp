@@ -7,15 +7,12 @@
 #include <javax/swing/plaf/metal/MetalTitlePane.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Frame = ::java::awt::Frame;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JRootPane = ::javax::swing::JRootPane;
 using $MetalTitlePane = ::javax::swing::plaf::metal::MetalTitlePane;
 

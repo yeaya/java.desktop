@@ -7,8 +7,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $StateTrackable$State = ::sun::java2d::StateTrackable$State;
-using $StateTracker = ::sun::java2d::StateTracker;
 
 namespace sun {
 	namespace java2d {

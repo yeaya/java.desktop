@@ -36,7 +36,6 @@ using $Rectangle = ::java::awt::Rectangle;
 using $Toolkit = ::java::awt::Toolkit;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $PropertyChangeSupport = ::java::beans::PropertyChangeSupport;
-using $PropertyEditor = ::java::beans::PropertyEditor;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;

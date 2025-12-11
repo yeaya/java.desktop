@@ -3,10 +3,8 @@
 #include <java/awt/dnd/DragSourceDragEvent.h>
 #include <jcpp.h>
 
-using $DragSourceDragEvent = ::java::awt::dnd::DragSourceDragEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
 
 namespace java {
 	namespace awt {

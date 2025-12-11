@@ -19,8 +19,6 @@
 #undef SOUTH
 #undef WEST
 
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

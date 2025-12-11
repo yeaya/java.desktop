@@ -4,8 +4,6 @@
 #include <java/awt/Graphics.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
-using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

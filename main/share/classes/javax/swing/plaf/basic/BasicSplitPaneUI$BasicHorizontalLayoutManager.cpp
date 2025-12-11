@@ -22,7 +22,6 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Insets = ::java::awt::Insets;
-using $LayoutManager2 = ::java::awt::LayoutManager2;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
@@ -31,7 +30,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JSplitPane = ::javax::swing::JSplitPane;
 using $BasicSplitPaneUI = ::javax::swing::plaf::basic::BasicSplitPaneUI;
 

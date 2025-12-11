@@ -19,7 +19,6 @@
 using $ColorArray = $Array<::java::awt::Color>;
 using $intArray2 = $Array<int32_t, 2>;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
@@ -27,14 +26,10 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $JButton = ::javax::swing::JButton;
-using $JComponent = ::javax::swing::JComponent;
 using $JSplitPane = ::javax::swing::JSplitPane;
 using $Border = ::javax::swing::border::Border;
-using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
-using $BasicSplitPaneDivider = ::javax::swing::plaf::basic::BasicSplitPaneDivider;
 using $MetalLookAndFeel = ::javax::swing::plaf::metal::MetalLookAndFeel;
 using $MetalSplitPaneDivider = ::javax::swing::plaf::metal::MetalSplitPaneDivider;
 

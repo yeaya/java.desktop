@@ -7,7 +7,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $RTFGenerator = ::javax::swing::text::rtf::RTFGenerator;
 
 namespace javax {
 	namespace swing {

@@ -14,12 +14,10 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $BoundedRangeModel = ::javax::swing::BoundedRangeModel;
 using $DefaultBoundedRangeModel = ::javax::swing::DefaultBoundedRangeModel;
 using $JSlider = ::javax::swing::JSlider;
-using $ChangeListener = ::javax::swing::event::ChangeListener;
 
 $FieldInfo _bug6278700$2_FieldInfo_[] = {
 	{"this$0", "Lbug6278700;", nullptr, $FINAL | $SYNTHETIC, $field(bug6278700$2, this$0)},

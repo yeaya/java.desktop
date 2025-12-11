@@ -8,7 +8,6 @@
 using $bug7146377 = ::bug7146377;
 using $bug7146377$1 = ::bug7146377$1;
 using $MouseEvent = ::java::awt::event::MouseEvent;
-using $MouseListener = ::java::awt::event::MouseListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

@@ -20,7 +20,6 @@
 #undef WHITE
 
 using $intArray2 = $Array<int32_t, 2>;
-using $TIFFCompressor = ::com::sun::imageio::plugins::tiff::TIFFCompressor;
 using $TIFFFaxCompressor = ::com::sun::imageio::plugins::tiff::TIFFFaxCompressor;
 using $TIFFFaxDecompressor = ::com::sun::imageio::plugins::tiff::TIFFFaxDecompressor;
 using $TIFFIFD = ::com::sun::imageio::plugins::tiff::TIFFIFD;
@@ -30,10 +29,8 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $IIOException = ::javax::imageio::IIOException;
 using $IIOMetadata = ::javax::imageio::metadata::IIOMetadata;
 using $BaselineTIFFTagSet = ::javax::imageio::plugins::tiff::BaselineTIFFTagSet;
-using $TIFFDirectory = ::javax::imageio::plugins::tiff::TIFFDirectory;
 using $TIFFField = ::javax::imageio::plugins::tiff::TIFFField;
 using $TIFFTag = ::javax::imageio::plugins::tiff::TIFFTag;
-using $TIFFTagSet = ::javax::imageio::plugins::tiff::TIFFTagSet;
 using $ImageOutputStream = ::javax::imageio::stream::ImageOutputStream;
 
 namespace com {

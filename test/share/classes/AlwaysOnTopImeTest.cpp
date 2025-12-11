@@ -22,7 +22,6 @@
 
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Dialog = ::java::awt::Dialog;
 using $Frame = ::java::awt::Frame;
 using $Robot = ::java::awt::Robot;
 using $Window = ::java::awt::Window;
@@ -31,12 +30,7 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $JComponent = ::javax::swing::JComponent;
 using $JDialog = ::javax::swing::JDialog;
 using $JFrame = ::javax::swing::JFrame;

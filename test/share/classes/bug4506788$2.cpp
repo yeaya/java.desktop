@@ -8,14 +8,11 @@
 
 using $PointArray = $Array<::java::awt::Point>;
 using $bug4506788 = ::bug4506788;
-using $Component = ::java::awt::Component;
-using $Point = ::java::awt::Point;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JEditorPane = ::javax::swing::JEditorPane;
 
 $FieldInfo _bug4506788$2_FieldInfo_[] = {

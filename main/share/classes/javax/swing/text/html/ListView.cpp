@@ -24,7 +24,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $BoxView = ::javax::swing::text::BoxView;
 using $CompositeView = ::javax::swing::text::CompositeView;
 using $Element = ::javax::swing::text::Element;

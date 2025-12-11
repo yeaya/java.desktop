@@ -135,7 +135,7 @@ int32_t PortMixerProvider::nGetNumDevices() {
 	$init(PortMixerProvider);
 	int32_t $ret = 0;
 	$prepareNativeStatic(PortMixerProvider, nGetNumDevices, int32_t);
-	$ret = $invokeNativeStatic(PortMixerProvider, nGetNumDevices);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -144,7 +144,7 @@ $PortMixerProvider$PortMixerInfo* PortMixerProvider::nNewPortMixerInfo(int32_t m
 	$init(PortMixerProvider);
 	$var($PortMixerProvider$PortMixerInfo, $ret, nullptr);
 	$prepareNativeStatic(PortMixerProvider, nNewPortMixerInfo, $PortMixerProvider$PortMixerInfo*, int32_t mixerIndex);
-	$assign($ret, $invokeNativeStatic(PortMixerProvider, nNewPortMixerInfo, mixerIndex));
+	$assign($ret, $invokeNativeStaticObject(mixerIndex));
 	$finishNativeStatic();
 	return $ret;
 }

@@ -11,12 +11,10 @@
 using $Window = ::java::awt::Window;
 using $WindowAdapter = ::java::awt::event::WindowAdapter;
 using $WindowEvent = ::java::awt::event::WindowEvent;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $ColorChooserDialog = ::javax::swing::ColorChooserDialog;
 using $JButton = ::javax::swing::JButton;
 

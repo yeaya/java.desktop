@@ -12,7 +12,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DefaultListCellRenderer$UIResource = ::javax::swing::DefaultListCellRenderer$UIResource;
 using $UIDefaults = ::javax::swing::UIDefaults;
-using $UIDefaults$ActiveValue = ::javax::swing::UIDefaults$ActiveValue;
 using $BasicLookAndFeel = ::javax::swing::plaf::basic::BasicLookAndFeel;
 
 namespace javax {

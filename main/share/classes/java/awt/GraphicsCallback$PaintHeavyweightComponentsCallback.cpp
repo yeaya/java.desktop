@@ -10,7 +10,6 @@
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $GraphicsCallback = ::java::awt::GraphicsCallback;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $LightweightPeer = ::java::awt::peer::LightweightPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

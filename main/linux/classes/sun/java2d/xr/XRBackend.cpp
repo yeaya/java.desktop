@@ -10,16 +10,8 @@
 #include <sun/java2d/xr/XRColor.h>
 #include <jcpp.h>
 
-using $AffineTransform = ::java::awt::geom::AffineTransform;
-using $Point2D = ::java::awt::geom::Point2D;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $List = ::java::util::List;
-using $GlyphList = ::sun::font::GlyphList;
-using $Region = ::sun::java2d::pipe::Region;
-using $GrowableEltArray = ::sun::java2d::xr::GrowableEltArray;
-using $GrowableRectArray = ::sun::java2d::xr::GrowableRectArray;
-using $XRColor = ::sun::java2d::xr::XRColor;
 
 namespace sun {
 	namespace java2d {

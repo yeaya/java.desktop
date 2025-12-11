@@ -10,7 +10,6 @@
 
 using $ComponentSetNameTest$1 = ::ComponentSetNameTest$1;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

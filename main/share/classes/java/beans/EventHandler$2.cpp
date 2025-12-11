@@ -15,7 +15,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $InvocationHandler = ::java::lang::reflect::InvocationHandler;
 using $Proxy = ::java::lang::reflect::Proxy;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 
 namespace java {
 	namespace beans {

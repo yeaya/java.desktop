@@ -19,8 +19,6 @@ using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $LayoutManager2 = ::java::awt::LayoutManager2;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -29,7 +27,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $BoxLayout = ::javax::swing::BoxLayout;
 using $JComponent = ::javax::swing::JComponent;
 using $JToolBar = ::javax::swing::JToolBar;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace javax {
 	namespace swing {

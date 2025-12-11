@@ -32,7 +32,6 @@
 using $Position$BiasArray = $Array<::javax::swing::text::Position$Bias>;
 using $ViewArray = $Array<::javax::swing::text::View>;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
 using $Shape = ::java::awt::Shape;
 using $ClassInfo = ::java::lang::ClassInfo;

@@ -106,7 +106,7 @@ void ScaledBlit::init$(int64_t pNativePrim, $SurfaceType* srctype, $CompositeTyp
 
 void ScaledBlit::Scale($SurfaceData* src, $SurfaceData* dst, $Composite* comp, $Region* clip, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, double dx1, double dy1, double dx2, double dy2) {
 	$prepareNative(ScaledBlit, Scale, void, $SurfaceData* src, $SurfaceData* dst, $Composite* comp, $Region* clip, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, double dx1, double dy1, double dx2, double dy2);
-	$invokeNative(ScaledBlit, Scale, src, dst, comp, clip, sx1, sy1, sx2, sy2, dx1, dy1, dx2, dy2);
+	$invokeNative(src, dst, comp, clip, sx1, sy1, sx2, sy2, dx1, dy1, dx2, dy2);
 	$finishNative();
 }
 

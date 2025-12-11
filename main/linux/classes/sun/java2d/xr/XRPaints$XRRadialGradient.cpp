@@ -21,10 +21,7 @@
 #undef SRGB
 
 using $ColorArray = $Array<::java::awt::Color>;
-using $Color = ::java::awt::Color;
-using $MultipleGradientPaint = ::java::awt::MultipleGradientPaint;
 using $MultipleGradientPaint$ColorSpaceType = ::java::awt::MultipleGradientPaint$ColorSpaceType;
-using $MultipleGradientPaint$CycleMethod = ::java::awt::MultipleGradientPaint$CycleMethod;
 using $Paint = ::java::awt::Paint;
 using $RadialGradientPaint = ::java::awt::RadialGradientPaint;
 using $AffineTransform = ::java::awt::geom::AffineTransform;

@@ -13,7 +13,6 @@
 
 using $bug4530474 = ::bug4530474;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Point = ::java::awt::Point;
 using $Robot = ::java::awt::Robot;
@@ -22,7 +21,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JEditorPane = ::javax::swing::JEditorPane;
 

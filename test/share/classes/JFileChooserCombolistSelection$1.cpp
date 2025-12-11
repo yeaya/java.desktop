@@ -4,13 +4,11 @@
 #include <Sysout4JFileChooserCombolistSelection.h>
 #include <jcpp.h>
 
-using $JFileChooserCombolistSelection = ::JFileChooserCombolistSelection;
 using $Sysout4JFileChooserCombolistSelection = ::Sysout4JFileChooserCombolistSelection;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 
 $MethodInfo _JFileChooserCombolistSelection$1_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(JFileChooserCombolistSelection$1::*)()>(&JFileChooserCombolistSelection$1::init$))},

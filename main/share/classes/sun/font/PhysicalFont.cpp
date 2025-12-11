@@ -8,15 +8,12 @@
 #include <sun/font/StrikeMetrics.h>
 #include <jcpp.h>
 
-using $GeneralPath = ::java::awt::geom::GeneralPath;
 using $Point2D$Float = ::java::awt::geom::Point2D$Float;
-using $Rectangle2D$Float = ::java::awt::geom::Rectangle2D$Float;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Font2D = ::sun::font::Font2D;
 using $Font2DHandle = ::sun::font::Font2DHandle;
-using $StrikeMetrics = ::sun::font::StrikeMetrics;
 
 namespace sun {
 	namespace font {

@@ -27,27 +27,9 @@
 #undef SET_LOCATION
 #undef SET_SIZE
 
-using $AWTEvent = ::java::awt::AWTEvent;
-using $BufferCapabilities = ::java::awt::BufferCapabilities;
-using $BufferCapabilities$FlipContents = ::java::awt::BufferCapabilities$FlipContents;
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
-using $Dimension = ::java::awt::Dimension;
-using $Font = ::java::awt::Font;
-using $FontMetrics = ::java::awt::FontMetrics;
-using $Graphics = ::java::awt::Graphics;
-using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
-using $Image = ::java::awt::Image;
-using $Point = ::java::awt::Point;
-using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
-using $PaintEvent = ::java::awt::event::PaintEvent;
-using $ColorModel = ::java::awt::image::ColorModel;
-using $VolatileImage = ::java::awt::image::VolatileImage;
-using $ContainerPeer = ::java::awt::peer::ContainerPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Region = ::sun::java2d::pipe::Region;
 
 namespace java {
 	namespace awt {

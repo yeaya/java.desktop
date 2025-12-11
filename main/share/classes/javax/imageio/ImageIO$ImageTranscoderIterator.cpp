@@ -13,8 +13,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UnsupportedOperationException = ::java::lang::UnsupportedOperationException;
 using $Iterator = ::java::util::Iterator;
-using $ImageIO = ::javax::imageio::ImageIO;
-using $ImageTranscoder = ::javax::imageio::ImageTranscoder;
 using $ImageTranscoderSpi = ::javax::imageio::spi::ImageTranscoderSpi;
 
 namespace javax {

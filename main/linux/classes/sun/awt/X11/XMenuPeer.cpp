@@ -18,7 +18,6 @@
 using $Font = ::java::awt::Font;
 using $Menu = ::java::awt::Menu;
 using $MenuItem = ::java::awt::MenuItem;
-using $MenuPeer = ::java::awt::peer::MenuPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

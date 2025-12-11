@@ -11,7 +11,6 @@
 #undef FOCUSED
 
 using $FocusEvent = ::java::awt::event::FocusEvent;
-using $FocusListener = ::java::awt::event::FocusListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $FieldInfo = ::java::lang::FieldInfo;

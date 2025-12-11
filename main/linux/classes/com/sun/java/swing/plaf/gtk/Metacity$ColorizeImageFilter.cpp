@@ -15,7 +15,6 @@
 
 using $Metacity = ::com::sun::java::swing::plaf::gtk::Metacity;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Image = ::java::awt::Image;
 using $FilteredImageSource = ::java::awt::image::FilteredImageSource;
 using $ImageFilter = ::java::awt::image::ImageFilter;

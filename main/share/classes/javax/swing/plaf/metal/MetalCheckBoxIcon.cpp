@@ -15,15 +15,11 @@
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $Icon = ::javax::swing::Icon;
 using $JCheckBox = ::javax::swing::JCheckBox;
-using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $MetalLookAndFeel = ::javax::swing::plaf::metal::MetalLookAndFeel;
 using $MetalUtils = ::javax::swing::plaf::metal::MetalUtils;
 

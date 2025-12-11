@@ -96,7 +96,6 @@ using $MapArray = $Array<::java::util::Map>;
 using $AWTEvent = ::java::awt::AWTEvent;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $EventQueue = ::java::awt::EventQueue;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $InputMethodEvent = ::java::awt::event::InputMethodEvent;
@@ -108,13 +107,11 @@ using $InputSubset = ::java::awt::im::InputSubset;
 using $InputMethodContext = ::java::awt::im::spi::InputMethodContext;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $LightweightPeer = ::java::awt::peer::LightweightPeer;
-using $Boolean = ::java::lang::Boolean;
 using $Character$Subset = ::java::lang::Character$Subset;
 using $Character$UnicodeBlock = ::java::lang::Character$UnicodeBlock;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
-using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $Annotation = ::java::text::Annotation;
@@ -129,12 +126,10 @@ using $Map = ::java::util::Map;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor;
 using $AppContext = ::sun::awt::AppContext;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $InputMethodAdapter = ::sun::awt::im::InputMethodAdapter;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $WInputMethod$1 = ::sun::awt::windows::WInputMethod$1;
 using $WInputMethodDescriptor = ::sun::awt::windows::WInputMethodDescriptor;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WToolkit = ::sun::awt::windows::WToolkit;
 
 namespace sun {
@@ -693,79 +688,79 @@ $WComponentPeer* WInputMethod::getNearestNativePeer($Component* comp$renamed) {
 int32_t WInputMethod::createNativeContext() {
 	int32_t $ret = 0;
 	$prepareNative(WInputMethod, createNativeContext, int32_t);
-	$ret = $invokeNative(WInputMethod, createNativeContext);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
 
 void WInputMethod::destroyNativeContext(int32_t context) {
 	$prepareNative(WInputMethod, destroyNativeContext, void, int32_t context);
-	$invokeNative(WInputMethod, destroyNativeContext, context);
+	$invokeNative(context);
 	$finishNative();
 }
 
 void WInputMethod::enableNativeIME($WComponentPeer* peer, int32_t context, bool useNativeCompWindow) {
 	$prepareNative(WInputMethod, enableNativeIME, void, $WComponentPeer* peer, int32_t context, bool useNativeCompWindow);
-	$invokeNative(WInputMethod, enableNativeIME, peer, context, useNativeCompWindow);
+	$invokeNative(peer, context, useNativeCompWindow);
 	$finishNative();
 }
 
 void WInputMethod::disableNativeIME($WComponentPeer* peer) {
 	$prepareNative(WInputMethod, disableNativeIME, void, $WComponentPeer* peer);
-	$invokeNative(WInputMethod, disableNativeIME, peer);
+	$invokeNative(peer);
 	$finishNative();
 }
 
 void WInputMethod::handleNativeIMEEvent($WComponentPeer* peer, $AWTEvent* e) {
 	$prepareNative(WInputMethod, handleNativeIMEEvent, void, $WComponentPeer* peer, $AWTEvent* e);
-	$invokeNative(WInputMethod, handleNativeIMEEvent, peer, e);
+	$invokeNative(peer, e);
 	$finishNative();
 }
 
 void WInputMethod::endCompositionNative(int32_t context, bool flag) {
 	$prepareNative(WInputMethod, endCompositionNative, void, int32_t context, bool flag);
-	$invokeNative(WInputMethod, endCompositionNative, context, flag);
+	$invokeNative(context, flag);
 	$finishNative();
 }
 
 void WInputMethod::setConversionStatus(int32_t context, int32_t cmode) {
 	$prepareNative(WInputMethod, setConversionStatus, void, int32_t context, int32_t cmode);
-	$invokeNative(WInputMethod, setConversionStatus, context, cmode);
+	$invokeNative(context, cmode);
 	$finishNative();
 }
 
 int32_t WInputMethod::getConversionStatus(int32_t context) {
 	int32_t $ret = 0;
 	$prepareNative(WInputMethod, getConversionStatus, int32_t, int32_t context);
-	$ret = $invokeNative(WInputMethod, getConversionStatus, context);
+	$ret = $invokeNative(context);
 	$finishNative();
 	return $ret;
 }
 
 void WInputMethod::setOpenStatus(int32_t context, bool flag) {
 	$prepareNative(WInputMethod, setOpenStatus, void, int32_t context, bool flag);
-	$invokeNative(WInputMethod, setOpenStatus, context, flag);
+	$invokeNative(context, flag);
 	$finishNative();
 }
 
 bool WInputMethod::getOpenStatus(int32_t context) {
 	bool $ret = false;
 	$prepareNative(WInputMethod, getOpenStatus, bool, int32_t context);
-	$ret = $invokeNative(WInputMethod, getOpenStatus, context);
+	$ret = $invokeNative(context);
 	$finishNative();
 	return $ret;
 }
 
 void WInputMethod::setStatusWindowVisible($WComponentPeer* peer, bool visible) {
 	$prepareNative(WInputMethod, setStatusWindowVisible, void, $WComponentPeer* peer, bool visible);
-	$invokeNative(WInputMethod, setStatusWindowVisible, peer, visible);
+	$invokeNative(peer, visible);
 	$finishNative();
 }
 
 $String* WInputMethod::getNativeIMMDescription() {
 	$var($String, $ret, nullptr);
 	$prepareNative(WInputMethod, getNativeIMMDescription, $String*);
-	$assign($ret, $invokeNative(WInputMethod, getNativeIMMDescription));
+	$assign($ret, $invokeNativeObject());
 	$finishNative();
 	return $ret;
 }
@@ -774,7 +769,7 @@ $Locale* WInputMethod::getNativeLocale() {
 	$init(WInputMethod);
 	$var($Locale, $ret, nullptr);
 	$prepareNativeStatic(WInputMethod, getNativeLocale, $Locale*);
-	$assign($ret, $invokeNativeStatic(WInputMethod, getNativeLocale));
+	$assign($ret, $invokeNativeStaticObject());
 	$finishNativeStatic();
 	return $ret;
 }
@@ -783,21 +778,21 @@ bool WInputMethod::setNativeLocale($String* localeName, bool onActivate) {
 	$init(WInputMethod);
 	bool $ret = false;
 	$prepareNativeStatic(WInputMethod, setNativeLocale, bool, $String* localeName, bool onActivate);
-	$ret = $invokeNativeStatic(WInputMethod, setNativeLocale, localeName, onActivate);
+	$ret = $invokeNativeStatic(localeName, onActivate);
 	$finishNativeStatic();
 	return $ret;
 }
 
 void WInputMethod::openCandidateWindow($WComponentPeer* peer, int32_t x, int32_t y) {
 	$prepareNative(WInputMethod, openCandidateWindow, void, $WComponentPeer* peer, int32_t x, int32_t y);
-	$invokeNative(WInputMethod, openCandidateWindow, peer, x, y);
+	$invokeNative(peer, x, y);
 	$finishNative();
 }
 
 bool WInputMethod::isCompositionStringAvailable(int32_t context) {
 	bool $ret = false;
 	$prepareNative(WInputMethod, isCompositionStringAvailable, bool, int32_t context);
-	$ret = $invokeNative(WInputMethod, isCompositionStringAvailable, context);
+	$ret = $invokeNative(context);
 	$finishNative();
 	return $ret;
 }

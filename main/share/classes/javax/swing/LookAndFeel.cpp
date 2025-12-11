@@ -33,7 +33,6 @@ using $JTextComponent$KeyBindingArray = $Array<::javax::swing::text::JTextCompon
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Font = ::java::awt::Font;
-using $Image = ::java::awt::Image;
 using $Toolkit = ::java::awt::Toolkit;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

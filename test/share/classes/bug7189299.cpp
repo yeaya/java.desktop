@@ -30,8 +30,6 @@
 #undef EXIT_ON_CLOSE
 
 using $ActionListenerArray = $Array<::java::awt::event::ActionListener>;
-using $ItemListenerArray = $Array<::java::awt::event::ItemListener>;
-using $ChangeListenerArray = $Array<::javax::swing::event::ChangeListener>;
 using $bug7189299$1 = ::bug7189299$1;
 using $bug7189299$2 = ::bug7189299$2;
 using $BorderLayout = ::java::awt::BorderLayout;
@@ -40,8 +38,6 @@ using $Container = ::java::awt::Container;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $LayoutManager2 = ::java::awt::LayoutManager2;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -53,9 +49,7 @@ using $JComponent = ::javax::swing::JComponent;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $JFrame = ::javax::swing::JFrame;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
-using $EditorKit = ::javax::swing::text::EditorKit;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
-using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
 using $StyleContext$NamedStyle = ::javax::swing::text::StyleContext$NamedStyle;
 using $HTMLEditorKit = ::javax::swing::text::html::HTMLEditorKit;

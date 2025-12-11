@@ -6,7 +6,6 @@
 #include <javax/swing/text/SimpleAttributeSet.h>
 #include <jcpp.h>
 
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -14,7 +13,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Collections = ::java::util::Collections;
 using $Enumeration = ::java::util::Enumeration;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $SimpleAttributeSet = ::javax::swing::text::SimpleAttributeSet;
 
 namespace javax {
 	namespace swing {

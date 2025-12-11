@@ -24,7 +24,6 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $GridBagConstraints = ::java::awt::GridBagConstraints;
 using $GridBagLayout = ::java::awt::GridBagLayout;
-using $Insets = ::java::awt::Insets;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $LayoutManager2 = ::java::awt::LayoutManager2;
 using $ClassInfo = ::java::lang::ClassInfo;

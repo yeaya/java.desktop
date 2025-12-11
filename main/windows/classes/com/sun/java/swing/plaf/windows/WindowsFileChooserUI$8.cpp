@@ -16,7 +16,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JFileChooser = ::javax::swing::JFileChooser;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 using $FilePane = ::sun::swing::FilePane;
 
 namespace com {

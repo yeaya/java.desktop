@@ -33,7 +33,6 @@
 #undef BASIC_RADIO_BUTTON_UI_KEY
 #undef MAX_VALUE
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
@@ -43,7 +42,6 @@ using $Graphics = ::java::awt::Graphics;
 using $Insets = ::java::awt::Insets;
 using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;
-using $KeyListener = ::java::awt::event::KeyListener;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $ClassInfo = ::java::lang::ClassInfo;

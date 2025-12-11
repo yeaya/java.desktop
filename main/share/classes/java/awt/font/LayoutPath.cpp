@@ -3,7 +3,6 @@
 #include <java/awt/geom/Point2D.h>
 #include <jcpp.h>
 
-using $Point2D = ::java::awt::geom::Point2D;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

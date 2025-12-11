@@ -26,14 +26,12 @@
 #undef TYPE_BYTE
 
 using $JFIFMarkerSegment = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment;
-using $JFIFMarkerSegment$JFIFThumb = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment$JFIFThumb;
 using $JFIFMarkerSegment$JFIFThumbUncompressed = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment$JFIFThumbUncompressed;
 using $JPEG = ::com::sun::imageio::plugins::jpeg::JPEG;
 using $JPEGBuffer = ::com::sun::imageio::plugins::jpeg::JPEGBuffer;
 using $JPEGImageReader = ::com::sun::imageio::plugins::jpeg::JPEGImageReader;
 using $JPEGImageWriter = ::com::sun::imageio::plugins::jpeg::JPEGImageWriter;
 using $Point = ::java::awt::Point;
-using $ColorSpace = ::java::awt::color::ColorSpace;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $ComponentColorModel = ::java::awt::image::ComponentColorModel;

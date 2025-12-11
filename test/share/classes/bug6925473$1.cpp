@@ -5,13 +5,11 @@
 #include <javax/swing/JTextArea.h>
 #include <jcpp.h>
 
-using $bug6925473 = ::bug6925473;
 using $Dimension = ::java::awt::Dimension;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JTextArea = ::javax::swing::JTextArea;
 

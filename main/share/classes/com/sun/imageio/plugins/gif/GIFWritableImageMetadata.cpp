@@ -17,7 +17,6 @@
 #undef NATIVE_FORMAT_NAME
 
 using $GIFImageMetadata = ::com::sun::imageio::plugins::gif::GIFImageMetadata;
-using $GIFMetadata = ::com::sun::imageio::plugins::gif::GIFMetadata;
 using $UnsupportedEncodingException = ::java::io::UnsupportedEncodingException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

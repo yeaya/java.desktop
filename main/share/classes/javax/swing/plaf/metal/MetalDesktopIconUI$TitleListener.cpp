@@ -8,12 +8,10 @@
 #include <jcpp.h>
 
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $Icon = ::javax::swing::Icon;
 using $JButton = ::javax::swing::JButton;
 using $MetalDesktopIconUI = ::javax::swing::plaf::metal::MetalDesktopIconUI;

@@ -29,14 +29,12 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractList = ::java::util::AbstractList;
 using $AbstractMap = ::java::util::AbstractMap;
 using $ArrayList = ::java::util::ArrayList;
-using $Collection = ::java::util::Collection;
 using $Collections = ::java::util::Collections;
 using $HashMap = ::java::util::HashMap;
 using $Iterator = ::java::util::Iterator;
 using $List = ::java::util::List;
 using $Map = ::java::util::Map;
 using $Set = ::java::util::Set;
-using $Win32ShellFolder2 = ::sun::awt::shell::Win32ShellFolder2;
 
 namespace sun {
 	namespace awt {

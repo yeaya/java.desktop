@@ -11,7 +11,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $Error = ::java::lang::Error;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $MissingResourceException = ::java::util::MissingResourceException;
 using $ResourceBundle = ::java::util::ResourceBundle;
 using $ServiceDialog = ::sun::print::ServiceDialog;

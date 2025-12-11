@@ -8,7 +8,6 @@
 #include <javax/swing/plaf/basic/BasicInternalFrameUI.h>
 #include <jcpp.h>
 
-using $HeadlessJInternalFrame = ::HeadlessJInternalFrame;
 using $HeadlessJInternalFrame$1$1 = ::HeadlessJInternalFrame$1$1;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

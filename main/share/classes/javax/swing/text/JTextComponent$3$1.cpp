@@ -6,15 +6,12 @@
 #include <javax/swing/text/JTextComponent.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Callable = ::java::util::concurrent::Callable;
-using $JComponent = ::javax::swing::JComponent;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $JTextComponent$3 = ::javax::swing::text::JTextComponent$3;
 

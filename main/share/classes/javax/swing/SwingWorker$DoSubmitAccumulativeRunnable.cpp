@@ -21,7 +21,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $Iterator = ::java::util::Iterator;
 using $List = ::java::util::List;
-using $SwingWorker = ::javax::swing::SwingWorker;
 using $Timer = ::javax::swing::Timer;
 using $AccumulativeRunnable = ::sun::swing::AccumulativeRunnable;
 

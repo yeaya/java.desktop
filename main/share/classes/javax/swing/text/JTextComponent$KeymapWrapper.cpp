@@ -11,16 +11,13 @@
 #undef CHAR_UNDEFINED
 
 using $KeyStrokeArray = $Array<::javax::swing::KeyStroke>;
-using $AWTKeyStroke = ::java::awt::AWTKeyStroke;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Action = ::javax::swing::Action;
 using $InputMap = ::javax::swing::InputMap;
 using $KeyStroke = ::javax::swing::KeyStroke;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $Keymap = ::javax::swing::text::Keymap;
 
 namespace javax {

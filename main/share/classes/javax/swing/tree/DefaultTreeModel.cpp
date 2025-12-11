@@ -36,7 +36,6 @@ using $EventListenerList = ::javax::swing::event::EventListenerList;
 using $TreeModelEvent = ::javax::swing::event::TreeModelEvent;
 using $TreeModelListener = ::javax::swing::event::TreeModelListener;
 using $MutableTreeNode = ::javax::swing::tree::MutableTreeNode;
-using $TreeModel = ::javax::swing::tree::TreeModel;
 using $TreeNode = ::javax::swing::tree::TreeNode;
 using $TreePath = ::javax::swing::tree::TreePath;
 

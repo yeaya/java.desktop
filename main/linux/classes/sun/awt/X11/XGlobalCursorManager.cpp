@@ -39,7 +39,6 @@
 #undef W_RESIZE_CURSOR
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Cursor = ::java::awt::Cursor;
 using $Point = ::java::awt::Point;
 using $Toolkit = ::java::awt::Toolkit;
@@ -49,7 +48,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
 using $AWTAccessor = ::sun::awt::AWTAccessor;

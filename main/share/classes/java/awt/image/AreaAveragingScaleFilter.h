@@ -36,7 +36,7 @@ public:
 	virtual void setPixels(int32_t x, int32_t y, int32_t w, int32_t h, ::java::awt::image::ColorModel* model, $bytes* pixels, int32_t off, int32_t scansize) override;
 	virtual void setPixels(int32_t x, int32_t y, int32_t w, int32_t h, ::java::awt::image::ColorModel* model, $ints* pixels, int32_t off, int32_t scansize) override;
 	static ::java::awt::image::ColorModel* rgbmodel;
-	static const int32_t neededHints = (TOPDOWNLEFTRIGHT | COMPLETESCANLINES);
+	static const int32_t neededHints = 6; // (TOPDOWNLEFTRIGHT | COMPLETESCANLINES)
 	bool passthrough = false;
 	$floats* reds = nullptr;
 	$floats* greens = nullptr;

@@ -8,11 +8,8 @@
 #include <javax/swing/UIManager.h>
 #include <jcpp.h>
 
-using $WindowsIconFactory = ::com::sun::java::swing::plaf::windows::WindowsIconFactory;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

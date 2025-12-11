@@ -28,7 +28,6 @@ using $TooManyListenersException = ::java::util::TooManyListenersException;
 using $TransferHandler = ::javax::swing::TransferHandler;
 using $TransferHandler$DropHandler = ::javax::swing::TransferHandler$DropHandler;
 using $EventListenerList = ::javax::swing::event::EventListenerList;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace javax {
 	namespace swing {

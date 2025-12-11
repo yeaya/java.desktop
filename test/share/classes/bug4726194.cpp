@@ -65,12 +65,7 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $ReflectiveOperationException = ::java::lang::ReflectiveOperationException;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AbstractList = ::java::util::AbstractList;
 using $ArrayList = ::java::util::ArrayList;
 using $Arrays = ::java::util::Arrays;
@@ -86,7 +81,6 @@ using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;
 using $UIManager$LookAndFeelInfo = ::javax::swing::UIManager$LookAndFeelInfo;
 using $UnsupportedLookAndFeelException = ::javax::swing::UnsupportedLookAndFeelException;
-using $Border = ::javax::swing::border::Border;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 class bug4726194$$Lambda$lambda$main$0 : public $Runnable {

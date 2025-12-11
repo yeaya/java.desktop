@@ -13,7 +13,6 @@
 using $ImageTypeProducer = ::com::sun::imageio::plugins::jpeg::ImageTypeProducer;
 using $JPEG = ::com::sun::imageio::plugins::jpeg::JPEG;
 using $JPEGImageReader = ::com::sun::imageio::plugins::jpeg::JPEGImageReader;
-using $ColorSpace = ::java::awt::color::ColorSpace;
 using $DataBuffer = ::java::awt::image::DataBuffer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

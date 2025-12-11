@@ -19,7 +19,6 @@ using $Raster = ::java::awt::image::Raster;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $IntegerComponentRaster = ::sun::awt::image::IntegerComponentRaster;
-using $SunWritableRaster = ::sun::awt::image::SunWritableRaster;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $Blit = ::sun::java2d::loops::Blit;
 using $CompositeType = ::sun::java2d::loops::CompositeType;

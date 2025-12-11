@@ -14,7 +14,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $AWTAutoShutdown = ::sun::awt::AWTAutoShutdown;
 using $EventQueueItem = ::sun::awt::EventQueueItem;
 using $SunToolkit = ::sun::awt::SunToolkit;

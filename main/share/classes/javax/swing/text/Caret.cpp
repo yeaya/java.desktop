@@ -6,12 +6,8 @@
 #include <javax/swing/text/JTextComponent.h>
 #include <jcpp.h>
 
-using $Graphics = ::java::awt::Graphics;
-using $Point = ::java::awt::Point;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ChangeListener = ::javax::swing::event::ChangeListener;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 namespace javax {
 	namespace swing {

@@ -10,7 +10,6 @@
 #include <jcpp.h>
 
 using $Color = ::java::awt::Color;
-using $Composite = ::java::awt::Composite;
 using $CompositeContext = ::java::awt::CompositeContext;
 using $RenderingHints = ::java::awt::RenderingHints;
 using $ColorModel = ::java::awt::image::ColorModel;

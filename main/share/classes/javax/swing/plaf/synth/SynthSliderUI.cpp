@@ -46,7 +46,6 @@
 #undef TEXT_FOREGROUND
 #undef VERTICAL
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
@@ -69,7 +68,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $Dictionary = ::java::util::Dictionary;
 using $Enumeration = ::java::util::Enumeration;
-using $EventObject = ::java::util::EventObject;
 using $JComponent = ::javax::swing::JComponent;
 using $JSlider = ::javax::swing::JSlider;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;

@@ -5,7 +5,6 @@
 #include <jcpp.h>
 
 using $PropertyInfo$NameArray = $Array<::com::sun::beans::introspect::PropertyInfo$Name>;
-using $PropertyInfo = ::com::sun::beans::introspect::PropertyInfo;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

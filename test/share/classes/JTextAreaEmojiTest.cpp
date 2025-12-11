@@ -20,9 +20,7 @@
 
 using $JTextAreaEmojiTest$1 = ::JTextAreaEmojiTest$1;
 using $GridBagLayout = ::java::awt::GridBagLayout;
-using $Window = ::java::awt::Window;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $AssertionError = ::java::lang::AssertionError;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -30,10 +28,8 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $EventObject = ::java::util::EventObject;
 using $CountDownLatch = ::java::util::concurrent::CountDownLatch;
 using $TimeUnit = ::java::util::concurrent::TimeUnit;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JButton = ::javax::swing::JButton;
 using $JFrame = ::javax::swing::JFrame;
 using $JPanel = ::javax::swing::JPanel;

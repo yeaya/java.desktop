@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ProcessPath = ::sun::java2d::loops::ProcessPath;
 using $ProcessPath$Edge = ::sun::java2d::loops::ProcessPath$Edge;
 using $ProcessPath$Point = ::sun::java2d::loops::ProcessPath$Point;
 

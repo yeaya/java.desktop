@@ -16,11 +16,7 @@
 
 using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Container$EventTargetFilter = ::java::awt::Container$EventTargetFilter;
-using $MouseListener = ::java::awt::event::MouseListener;
-using $MouseMotionListener = ::java::awt::event::MouseMotionListener;
-using $MouseWheelListener = ::java::awt::event::MouseWheelListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

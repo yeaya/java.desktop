@@ -18,7 +18,6 @@
 #undef MOUSE_ENTERED
 #undef MOUSE_EXITED
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $InvalidDnDOperationException = ::java::awt::dnd::InvalidDnDOperationException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

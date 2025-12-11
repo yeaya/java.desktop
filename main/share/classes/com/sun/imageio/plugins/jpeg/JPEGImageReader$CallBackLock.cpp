@@ -5,7 +5,6 @@
 #include <java/lang/IllegalStateException.h>
 #include <jcpp.h>
 
-using $JPEGImageReader = ::com::sun::imageio::plugins::jpeg::JPEGImageReader;
 using $JPEGImageReader$CallBackLock$State = ::com::sun::imageio::plugins::jpeg::JPEGImageReader$CallBackLock$State;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

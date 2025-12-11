@@ -30,7 +30,6 @@
 
 using $byteArray2 = $Array<int8_t, 2>;
 using $shortArray2 = $Array<int16_t, 2>;
-using $Rectangle = ::java::awt::Rectangle;
 using $RenderingHints = ::java::awt::RenderingHints;
 using $Transparency = ::java::awt::Transparency;
 using $ColorSpace = ::java::awt::color::ColorSpace;

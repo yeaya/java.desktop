@@ -76,7 +76,6 @@ using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Iterator = ::java::util::Iterator;
 using $IIOException = ::javax::imageio::IIOException;
-using $IIOParam = ::javax::imageio::IIOParam;
 using $ImageReadParam = ::javax::imageio::ImageReadParam;
 using $ImageTypeSpecifier = ::javax::imageio::ImageTypeSpecifier;
 using $ImageWriter = ::javax::imageio::ImageWriter;

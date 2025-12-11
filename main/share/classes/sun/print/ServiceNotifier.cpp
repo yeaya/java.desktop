@@ -24,7 +24,6 @@ using $SecurityException = ::java::lang::SecurityException;
 using $ThreadGroup = ::java::lang::ThreadGroup;
 using $Vector = ::java::util::Vector;
 using $PrintService = ::javax::print::PrintService;
-using $AttributeSet = ::javax::print::attribute::AttributeSet;
 using $HashPrintServiceAttributeSet = ::javax::print::attribute::HashPrintServiceAttributeSet;
 using $PrintServiceAttributeSet = ::javax::print::attribute::PrintServiceAttributeSet;
 using $PrintServiceAttributeEvent = ::javax::print::event::PrintServiceAttributeEvent;

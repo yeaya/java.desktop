@@ -21,17 +21,10 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JMenu = ::javax::swing::JMenu;
 using $JMenuItem = ::javax::swing::JMenuItem;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
-using $MenuElement = ::javax::swing::MenuElement;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 

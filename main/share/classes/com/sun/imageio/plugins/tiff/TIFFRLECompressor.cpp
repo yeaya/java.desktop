@@ -12,7 +12,6 @@
 #undef COMPRESSION_CCITT_RLE
 
 using $intArray2 = $Array<int32_t, 2>;
-using $TIFFCompressor = ::com::sun::imageio::plugins::tiff::TIFFCompressor;
 using $TIFFFaxCompressor = ::com::sun::imageio::plugins::tiff::TIFFFaxCompressor;
 using $TIFFFaxDecompressor = ::com::sun::imageio::plugins::tiff::TIFFFaxDecompressor;
 using $ClassInfo = ::java::lang::ClassInfo;

@@ -25,21 +25,18 @@
 #include <javax/swing/plaf/ComponentUI.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
 using $ObjectOutputStream = ::java::io::ObjectOutputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $Enumeration = ::java::util::Enumeration;
 using $Iterator = ::java::util::Iterator;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $AbstractButton$AccessibleAbstractButton = ::javax::swing::AbstractButton$AccessibleAbstractButton;

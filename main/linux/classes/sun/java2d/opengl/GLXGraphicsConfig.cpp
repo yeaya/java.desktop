@@ -107,12 +107,9 @@ using $GLXGraphicsConfig$GLXBufferCaps = ::sun::java2d::opengl::GLXGraphicsConfi
 using $GLXGraphicsConfig$GLXGetConfigInfo = ::sun::java2d::opengl::GLXGraphicsConfig$GLXGetConfigInfo;
 using $GLXGraphicsConfig$GLXImageCaps = ::sun::java2d::opengl::GLXGraphicsConfig$GLXImageCaps;
 using $GLXSurfaceData = ::sun::java2d::opengl::GLXSurfaceData;
-using $GLXSurfaceData$GLXOffScreenSurfaceData = ::sun::java2d::opengl::GLXSurfaceData$GLXOffScreenSurfaceData;
 using $GLXSurfaceData$GLXVSyncOffScreenSurfaceData = ::sun::java2d::opengl::GLXSurfaceData$GLXVSyncOffScreenSurfaceData;
-using $GLXSurfaceData$GLXWindowSurfaceData = ::sun::java2d::opengl::GLXSurfaceData$GLXWindowSurfaceData;
 using $OGLContext = ::sun::java2d::opengl::OGLContext;
 using $OGLContext$OGLContextCaps = ::sun::java2d::opengl::OGLContext$OGLContextCaps;
-using $OGLGraphicsConfig = ::sun::java2d::opengl::OGLGraphicsConfig;
 using $OGLRenderQueue = ::sun::java2d::opengl::OGLRenderQueue;
 using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;
 using $BufferedContext = ::sun::java2d::pipe::BufferedContext;
@@ -218,7 +215,7 @@ int64_t GLXGraphicsConfig::getGLXConfigInfo(int32_t screennum, int32_t visualnum
 	$init(GLXGraphicsConfig);
 	int64_t $ret = 0;
 	$prepareNativeStatic(GLXGraphicsConfig, getGLXConfigInfo, int64_t, int32_t screennum, int32_t visualnum);
-	$ret = $invokeNativeStatic(GLXGraphicsConfig, getGLXConfigInfo, screennum, visualnum);
+	$ret = $invokeNativeStatic(screennum, visualnum);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -227,14 +224,14 @@ int32_t GLXGraphicsConfig::getOGLCapabilities(int64_t configInfo) {
 	$init(GLXGraphicsConfig);
 	int32_t $ret = 0;
 	$prepareNativeStatic(GLXGraphicsConfig, getOGLCapabilities, int32_t, int64_t configInfo);
-	$ret = $invokeNativeStatic(GLXGraphicsConfig, getOGLCapabilities, configInfo);
+	$ret = $invokeNativeStatic(configInfo);
 	$finishNativeStatic();
 	return $ret;
 }
 
 void GLXGraphicsConfig::initConfig(int64_t aData, int64_t ctxinfo) {
 	$prepareNative(GLXGraphicsConfig, initConfig, void, int64_t aData, int64_t ctxinfo);
-	$invokeNative(GLXGraphicsConfig, initConfig, aData, ctxinfo);
+	$invokeNative(aData, ctxinfo);
 	$finishNative();
 }
 

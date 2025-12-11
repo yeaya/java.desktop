@@ -8,8 +8,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $URI = ::java::net::URI;
-using $PrintJobAttribute = ::javax::print::attribute::PrintJobAttribute;
-using $PrintRequestAttribute = ::javax::print::attribute::PrintRequestAttribute;
 using $URISyntax = ::javax::print::attribute::URISyntax;
 
 namespace javax {

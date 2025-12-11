@@ -11,7 +11,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JLabel = ::javax::swing::JLabel;
-using $JTable = ::javax::swing::JTable;
 using $DefaultTableCellRenderer$UIResource = ::javax::swing::table::DefaultTableCellRenderer$UIResource;
 
 namespace javax {

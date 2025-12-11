@@ -38,7 +38,6 @@ using $Toolkit = ::java::awt::Toolkit;
 using $Window = ::java::awt::Window;
 using $TaskbarPeer = ::java::awt::peer::TaskbarPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
@@ -48,7 +47,6 @@ using $UnsupportedOperationException = ::java::lang::UnsupportedOperationExcepti
 using $BasicPermission = ::java::security::BasicPermission;
 using $Permission = ::java::security::Permission;
 using $AppContext = ::sun::awt::AppContext;
-using $ComponentFactory = ::sun::awt::ComponentFactory;
 using $SunToolkit = ::sun::awt::SunToolkit;
 
 namespace java {

@@ -35,7 +35,6 @@ using $SunVolatileImage = ::sun::awt::image::SunVolatileImage;
 using $VolatileSurfaceManager = ::sun::awt::image::VolatileSurfaceManager;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $X11SurfaceData = ::sun::java2d::x11::X11SurfaceData;
-using $X11SurfaceData$X11PixmapSurfaceData = ::sun::java2d::x11::X11SurfaceData$X11PixmapSurfaceData;
 using $XSurfaceData = ::sun::java2d::x11::XSurfaceData;
 
 namespace sun {

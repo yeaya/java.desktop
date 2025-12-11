@@ -21,9 +21,7 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractList = ::java::util::AbstractList;
 using $ArrayList = ::java::util::ArrayList;
 using $List = ::java::util::List;
-using $Icon = ::javax::swing::Icon;
 using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
-using $SynthGraphicsUtils = ::javax::swing::plaf::synth::SynthGraphicsUtils;
 using $SynthIcon = ::javax::swing::plaf::synth::SynthIcon;
 
 namespace javax {

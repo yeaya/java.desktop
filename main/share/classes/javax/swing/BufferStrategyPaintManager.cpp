@@ -33,7 +33,6 @@
 #undef LOGGER
 #undef MAX_VALUE
 
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
 using $Rectangle = ::java::awt::Rectangle;

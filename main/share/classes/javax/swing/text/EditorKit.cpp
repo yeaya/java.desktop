@@ -13,20 +13,11 @@
 #include <javax/swing/text/ViewFactory.h>
 #include <jcpp.h>
 
-using $ActionArray = $Array<::javax::swing::Action>;
-using $InputStream = ::java::io::InputStream;
-using $OutputStream = ::java::io::OutputStream;
-using $Reader = ::java::io::Reader;
-using $Serializable = ::java::io::Serializable;
-using $Writer = ::java::io::Writer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CloneNotSupportedException = ::java::lang::CloneNotSupportedException;
 using $Cloneable = ::java::lang::Cloneable;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JEditorPane = ::javax::swing::JEditorPane;
-using $Caret = ::javax::swing::text::Caret;
-using $Document = ::javax::swing::text::Document;
-using $ViewFactory = ::javax::swing::text::ViewFactory;
 
 namespace javax {
 	namespace swing {

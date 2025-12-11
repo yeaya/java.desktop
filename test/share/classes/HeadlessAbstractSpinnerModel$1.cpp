@@ -4,7 +4,6 @@
 #include <javax/swing/AbstractSpinnerModel.h>
 #include <jcpp.h>
 
-using $HeadlessAbstractSpinnerModel = ::HeadlessAbstractSpinnerModel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

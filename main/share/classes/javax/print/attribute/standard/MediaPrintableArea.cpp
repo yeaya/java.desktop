@@ -13,8 +13,6 @@ using $Float = ::java::lang::Float;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DocAttribute = ::javax::print::attribute::DocAttribute;
-using $PrintJobAttribute = ::javax::print::attribute::PrintJobAttribute;
-using $PrintRequestAttribute = ::javax::print::attribute::PrintRequestAttribute;
 
 namespace javax {
 	namespace print {

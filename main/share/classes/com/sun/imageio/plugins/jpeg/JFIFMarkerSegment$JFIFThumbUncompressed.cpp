@@ -26,7 +26,6 @@ using $JPEGImageReader = ::com::sun::imageio::plugins::jpeg::JPEGImageReader;
 using $JPEGImageWriter = ::com::sun::imageio::plugins::jpeg::JPEGImageWriter;
 using $MarkerSegment = ::com::sun::imageio::plugins::jpeg::MarkerSegment;
 using $BufferedImage = ::java::awt::image::BufferedImage;
-using $Raster = ::java::awt::image::Raster;
 using $WritableRaster = ::java::awt::image::WritableRaster;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;

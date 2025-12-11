@@ -37,7 +37,6 @@
 #undef PLAIN
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
@@ -60,9 +59,7 @@ using $Float = ::java::lang::Float;
 using $Integer = ::java::lang::Integer;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Format = ::java::text::Format;
 using $MessageFormat = ::java::text::MessageFormat;
-using $JComponent = ::javax::swing::JComponent;
 using $JTable = ::javax::swing::JTable;
 using $JTable$PrintMode = ::javax::swing::JTable$PrintMode;
 using $JTableHeader = ::javax::swing::table::JTableHeader;

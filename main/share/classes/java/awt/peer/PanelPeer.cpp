@@ -2,7 +2,6 @@
 
 #include <jcpp.h>
 
-using $ContainerPeer = ::java::awt::peer::ContainerPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 
 namespace java {

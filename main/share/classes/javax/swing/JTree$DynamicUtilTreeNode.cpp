@@ -16,7 +16,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Enumeration = ::java::util::Enumeration;
 using $Hashtable = ::java::util::Hashtable;
 using $Vector = ::java::util::Vector;
-using $JTree = ::javax::swing::JTree;
 using $DefaultMutableTreeNode = ::javax::swing::tree::DefaultMutableTreeNode;
 using $MutableTreeNode = ::javax::swing::tree::MutableTreeNode;
 using $TreeNode = ::javax::swing::tree::TreeNode;

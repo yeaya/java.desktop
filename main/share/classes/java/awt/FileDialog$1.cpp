@@ -6,13 +6,11 @@
 #include <jcpp.h>
 
 using $FileArray = $Array<::java::io::File>;
-using $Component = ::java::awt::Component;
 using $FileDialog = ::java::awt::FileDialog;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AWTAccessor$FileDialogAccessor = ::sun::awt::AWTAccessor$FileDialogAccessor;
 
 namespace java {
 	namespace awt {

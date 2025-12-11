@@ -21,9 +21,6 @@ using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ArrayList = ::java::util::ArrayList;
-using $EnumSyntax = ::javax::print::attribute::EnumSyntax;
-using $Size2DSyntax = ::javax::print::attribute::Size2DSyntax;
-using $Media = ::javax::print::attribute::standard::Media;
 using $MediaSize = ::javax::print::attribute::standard::MediaSize;
 using $MediaSizeName = ::javax::print::attribute::standard::MediaSizeName;
 

@@ -6,7 +6,6 @@
 
 using $DropTargetDragEvent = ::java::awt::dnd::DropTargetDragEvent;
 using $DropTargetEvent = ::java::awt::dnd::DropTargetEvent;
-using $DropTargetListener = ::java::awt::dnd::DropTargetListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

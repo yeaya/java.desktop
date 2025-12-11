@@ -17,8 +17,6 @@
 #undef TD
 #undef TH
 
-using $AccessibleHTML$TableElementInfo$TableCellElementInfoArray = $Array<::javax::swing::text::html::AccessibleHTML$TableElementInfo$TableCellElementInfo>;
-using $AccessibleHTML$TableElementInfo$TableCellElementInfoArray2 = $Array<::javax::swing::text::html::AccessibleHTML$TableElementInfo$TableCellElementInfo, 2>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -29,7 +27,6 @@ using $AccessibleTable = ::javax::accessibility::AccessibleTable;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $Element = ::javax::swing::text::Element;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
-using $AccessibleHTML = ::javax::swing::text::html::AccessibleHTML;
 using $AccessibleHTML$ElementInfo = ::javax::swing::text::html::AccessibleHTML$ElementInfo;
 using $AccessibleHTML$TableElementInfo = ::javax::swing::text::html::AccessibleHTML$TableElementInfo;
 using $AccessibleHTML$TableElementInfo$TableAccessibleContext = ::javax::swing::text::html::AccessibleHTML$TableElementInfo$TableAccessibleContext;

@@ -7,7 +7,6 @@
 using $ObjectArray2 = $Array<::java::lang::Object, 2>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractTableModel = ::javax::swing::table::AbstractTableModel;
 using $DefaultTableModel = ::javax::swing::table::DefaultTableModel;
 
 $MethodInfo _CustomTableModel_MethodInfo_[] = {

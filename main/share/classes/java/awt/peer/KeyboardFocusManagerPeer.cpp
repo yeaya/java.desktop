@@ -4,8 +4,6 @@
 #include <java/awt/Window.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

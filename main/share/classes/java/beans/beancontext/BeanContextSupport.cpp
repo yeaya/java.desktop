@@ -78,7 +78,6 @@ using $AbstractCollection = ::java::util::AbstractCollection;
 using $AbstractList = ::java::util::AbstractList;
 using $ArrayList = ::java::util::ArrayList;
 using $Collection = ::java::util::Collection;
-using $EventObject = ::java::util::EventObject;
 using $HashMap = ::java::util::HashMap;
 using $Iterator = ::java::util::Iterator;
 using $Locale = ::java::util::Locale;

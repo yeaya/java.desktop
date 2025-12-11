@@ -30,7 +30,6 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dialog = ::java::awt::Dialog;
 using $Dialog$ModalityType = ::java::awt::Dialog$ModalityType;
-using $EventFilter = ::java::awt::EventFilter;
 using $EventFilter$FilterAction = ::java::awt::EventFilter$FilterAction;
 using $ModalEventFilter$1 = ::java::awt::ModalEventFilter$1;
 using $ModalEventFilter$ApplicationModalEventFilter = ::java::awt::ModalEventFilter$ApplicationModalEventFilter;
@@ -45,7 +44,6 @@ using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $ModalExclude = ::sun::awt::ModalExclude;
 
 namespace java {

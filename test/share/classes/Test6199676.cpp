@@ -19,10 +19,8 @@
 #include <jcpp.h>
 
 using $ComponentArray = $Array<::java::awt::Component>;
-using $UIManager$LookAndFeelInfoArray = $Array<::javax::swing::UIManager$LookAndFeelInfo>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $ClassNotFoundException = ::java::lang::ClassNotFoundException;
 using $Exception = ::java::lang::Exception;

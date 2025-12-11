@@ -20,14 +20,12 @@ using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Insets = ::java::awt::Insets;
-using $LayoutManager = ::java::awt::LayoutManager;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SwingConstants = ::javax::swing::SwingConstants;
-using $BasicOptionPaneUI = ::javax::swing::plaf::basic::BasicOptionPaneUI;
 
 namespace javax {
 	namespace swing {

@@ -62,17 +62,12 @@ using $TextAttribute = ::java::awt::font::TextAttribute;
 using $TextHitInfo = ::java::awt::font::TextHitInfo;
 using $InputMethodHighlight = ::java::awt::im::InputMethodHighlight;
 using $InputMethodContext = ::java::awt::im::spi::InputMethodContext;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
-using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
-using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
-using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $StringBuffer = ::java::lang::StringBuffer;
 using $UnsupportedOperationException = ::java::lang::UnsupportedOperationException;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $AttributedCharacterIterator = ::java::text::AttributedCharacterIterator;
 using $AttributedString = ::java::text::AttributedString;
@@ -81,9 +76,7 @@ using $Collections = ::java::util::Collections;
 using $HashMap = ::java::util::HashMap;
 using $Locale = ::java::util::Locale;
 using $Map = ::java::util::Map;
-using $AppContext = ::sun::awt::AppContext;
 using $SunToolkit = ::sun::awt::SunToolkit;
-using $X11InputMethodBase$IntBuffer = ::sun::awt::X11InputMethodBase$IntBuffer;
 using $X11InputMethodDescriptor = ::sun::awt::X11InputMethodDescriptor;
 using $InputMethodAdapter = ::sun::awt::im::InputMethodAdapter;
 using $PlatformLogger = ::sun::util::logging::PlatformLogger;
@@ -554,26 +547,26 @@ $InputMethodHighlight* X11InputMethodBase::convertVisualFeedbackToHighlight(int3
 void X11InputMethodBase::initIDs() {
 	$init(X11InputMethodBase);
 	$prepareNativeStatic(X11InputMethodBase, initIDs, void);
-	$invokeNativeStatic(X11InputMethodBase, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
 void X11InputMethodBase::turnoffStatusWindow() {
 	$prepareNative(X11InputMethodBase, turnoffStatusWindow, void);
-	$invokeNative(X11InputMethodBase, turnoffStatusWindow);
+	$invokeNative();
 	$finishNative();
 }
 
 void X11InputMethodBase::disposeXIC() {
 	$prepareNative(X11InputMethodBase, disposeXIC, void);
-	$invokeNative(X11InputMethodBase, disposeXIC);
+	$invokeNative();
 	$finishNative();
 }
 
 $String* X11InputMethodBase::resetXIC() {
 	$var($String, $ret, nullptr);
 	$prepareNative(X11InputMethodBase, resetXIC, $String*);
-	$assign($ret, $invokeNative(X11InputMethodBase, resetXIC));
+	$assign($ret, $invokeNativeObject());
 	$finishNative();
 	return $ret;
 }
@@ -581,7 +574,7 @@ $String* X11InputMethodBase::resetXIC() {
 bool X11InputMethodBase::setCompositionEnabledNative(bool enable) {
 	bool $ret = false;
 	$prepareNative(X11InputMethodBase, setCompositionEnabledNative, bool, bool enable);
-	$ret = $invokeNative(X11InputMethodBase, setCompositionEnabledNative, enable);
+	$ret = $invokeNative(enable);
 	$finishNative();
 	return $ret;
 }
@@ -589,7 +582,7 @@ bool X11InputMethodBase::setCompositionEnabledNative(bool enable) {
 bool X11InputMethodBase::isCompositionEnabledNative() {
 	bool $ret = false;
 	$prepareNative(X11InputMethodBase, isCompositionEnabledNative, bool);
-	$ret = $invokeNative(X11InputMethodBase, isCompositionEnabledNative);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }

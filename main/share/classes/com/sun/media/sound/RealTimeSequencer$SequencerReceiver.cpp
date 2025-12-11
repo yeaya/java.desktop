@@ -19,17 +19,14 @@ using $AbstractMidiDevice = ::com::sun::media::sound::AbstractMidiDevice;
 using $AbstractMidiDevice$AbstractReceiver = ::com::sun::media::sound::AbstractMidiDevice$AbstractReceiver;
 using $FastShortMessage = ::com::sun::media::sound::FastShortMessage;
 using $MidiUtils = ::com::sun::media::sound::MidiUtils;
-using $MidiUtils$TempoCache = ::com::sun::media::sound::MidiUtils$TempoCache;
 using $RealTimeSequencer = ::com::sun::media::sound::RealTimeSequencer;
 using $RealTimeSequencer$RecordingTrack = ::com::sun::media::sound::RealTimeSequencer$RecordingTrack;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $List = ::java::util::List;
 using $MidiEvent = ::javax::sound::midi::MidiEvent;
 using $MidiMessage = ::javax::sound::midi::MidiMessage;
-using $Sequence = ::javax::sound::midi::Sequence;
 using $ShortMessage = ::javax::sound::midi::ShortMessage;
 using $Track = ::javax::sound::midi::Track;
 

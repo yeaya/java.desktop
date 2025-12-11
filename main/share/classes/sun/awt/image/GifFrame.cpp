@@ -21,7 +21,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $GifImageDecoder = ::sun::awt::image::GifImageDecoder;
-using $ImageDecoder = ::sun::awt::image::ImageDecoder;
 
 namespace sun {
 	namespace awt {

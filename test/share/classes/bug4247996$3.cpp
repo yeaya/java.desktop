@@ -9,7 +9,6 @@
 
 using $PointArray = $Array<::java::awt::Point>;
 using $bug4247996 = ::bug4247996;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Point = ::java::awt::Point;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -17,7 +16,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JButton = ::javax::swing::JButton;
 
 $FieldInfo _bug4247996$3_FieldInfo_[] = {

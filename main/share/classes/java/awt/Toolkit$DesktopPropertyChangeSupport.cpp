@@ -19,7 +19,6 @@
 
 using $PropertyChangeListenerArray = $Array<::java::beans::PropertyChangeListener>;
 using $AWTEvent = ::java::awt::AWTEvent;
-using $Toolkit = ::java::awt::Toolkit;
 using $Toolkit$DesktopPropertyChangeSupport$1 = ::java::awt::Toolkit$DesktopPropertyChangeSupport$1;
 using $InvocationEvent = ::java::awt::event::InvocationEvent;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;

@@ -3,13 +3,11 @@
 #include <com/sun/imageio/plugins/bmp/BMPImageReader.h>
 #include <jcpp.h>
 
-using $BMPImageReader = ::com::sun::imageio::plugins::bmp::BMPImageReader;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 
 namespace com {
 	namespace sun {

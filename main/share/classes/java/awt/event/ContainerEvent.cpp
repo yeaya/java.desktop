@@ -12,14 +12,12 @@
 #undef CONTAINER_FIRST
 #undef CONTAINER_LAST
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 
 namespace java {
 	namespace awt {

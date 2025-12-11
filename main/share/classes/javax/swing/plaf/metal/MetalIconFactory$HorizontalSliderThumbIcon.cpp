@@ -21,16 +21,12 @@ using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $RectangularShape = ::java::awt::geom::RectangularShape;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Icon = ::javax::swing::Icon;
-using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $MetalBumps = ::javax::swing::plaf::metal::MetalBumps;
-using $MetalIconFactory = ::javax::swing::plaf::metal::MetalIconFactory;
 using $MetalLookAndFeel = ::javax::swing::plaf::metal::MetalLookAndFeel;
 
 namespace javax {

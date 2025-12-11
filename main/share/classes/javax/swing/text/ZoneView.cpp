@@ -33,7 +33,6 @@ using $DocumentEvent$ElementChange = ::javax::swing::event::DocumentEvent$Elemen
 using $AsyncBoxView = ::javax::swing::text::AsyncBoxView;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $BoxView = ::javax::swing::text::BoxView;
-using $CompositeView = ::javax::swing::text::CompositeView;
 using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
 using $Position = ::javax::swing::text::Position;

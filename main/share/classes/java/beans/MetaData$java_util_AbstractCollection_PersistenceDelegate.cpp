@@ -4,7 +4,6 @@
 #include <java/beans/MetaData.h>
 #include <jcpp.h>
 
-using $MetaData = ::java::beans::MetaData;
 using $MetaData$java_util_Collection_PersistenceDelegate = ::java::beans::MetaData$java_util_Collection_PersistenceDelegate;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

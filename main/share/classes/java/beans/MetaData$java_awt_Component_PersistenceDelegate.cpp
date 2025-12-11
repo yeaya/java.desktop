@@ -15,18 +15,13 @@
 #include <java/util/Objects.h>
 #include <jcpp.h>
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
-using $Font = ::java::awt::Font;
-using $LayoutManager = ::java::awt::LayoutManager;
 using $Point = ::java::awt::Point;
-using $Rectangle = ::java::awt::Rectangle;
 using $Window = ::java::awt::Window;
 using $DefaultPersistenceDelegate = ::java::beans::DefaultPersistenceDelegate;
 using $Encoder = ::java::beans::Encoder;
-using $MetaData = ::java::beans::MetaData;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

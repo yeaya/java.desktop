@@ -9,7 +9,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $IllegalMonitorStateException = ::java::lang::IllegalMonitorStateException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Mutex = ::sun::awt::Mutex;
-using $ToolkitThreadBlockedHandler = ::sun::awt::datatransfer::ToolkitThreadBlockedHandler;
 using $WToolkit = ::sun::awt::windows::WToolkit;
 
 namespace sun {
@@ -96,7 +95,7 @@ void WToolkitThreadBlockedHandler::exit() {
 
 void WToolkitThreadBlockedHandler::startSecondaryEventLoop() {
 	$prepareNative(WToolkitThreadBlockedHandler, startSecondaryEventLoop, void);
-	$invokeNative(WToolkitThreadBlockedHandler, startSecondaryEventLoop);
+	$invokeNative();
 	$finishNative();
 }
 

@@ -30,7 +30,6 @@ using $JFileChooser = ::javax::swing::JFileChooser;
 using $JLabel = ::javax::swing::JLabel;
 using $JList = ::javax::swing::JList;
 using $ListCellRenderer = ::javax::swing::ListCellRenderer;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 using $SynthFileChooserUIImpl = ::sun::swing::plaf::synth::SynthFileChooserUIImpl;
 using $SynthFileChooserUIImpl$DirectoryComboBoxModel = ::sun::swing::plaf::synth::SynthFileChooserUIImpl$DirectoryComboBoxModel;
 using $SynthFileChooserUIImpl$IndentIcon = ::sun::swing::plaf::synth::SynthFileChooserUIImpl$IndentIcon;

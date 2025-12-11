@@ -8,13 +8,11 @@
 #include <jcpp.h>
 
 using $bug8079640 = ::bug8079640;
-using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JComponent = ::javax::swing::JComponent;
 using $JFrame = ::javax::swing::JFrame;

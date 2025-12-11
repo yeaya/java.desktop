@@ -11,9 +11,7 @@
 #include <jcpp.h>
 
 using $bug8071705 = ::bug8071705;
-using $Component = ::java::awt::Component;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;
-using $Window = ::java::awt::Window;
 using $ComponentAdapter = ::java::awt::event::ComponentAdapter;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $ClassInfo = ::java::lang::ClassInfo;

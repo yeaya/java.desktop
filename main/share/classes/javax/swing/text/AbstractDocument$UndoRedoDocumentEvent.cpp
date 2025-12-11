@@ -15,7 +15,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DocumentEvent = ::javax::swing::event::DocumentEvent;
 using $DocumentEvent$ElementChange = ::javax::swing::event::DocumentEvent$ElementChange;
 using $DocumentEvent$EventType = ::javax::swing::event::DocumentEvent$EventType;
 using $AbstractDocument = ::javax::swing::text::AbstractDocument;

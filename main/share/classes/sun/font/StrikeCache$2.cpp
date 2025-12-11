@@ -10,7 +10,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $FontStrikeDisposer = ::sun::font::FontStrikeDisposer;
 using $StrikeCache = ::sun::font::StrikeCache;
 using $Disposer = ::sun::java2d::Disposer;

@@ -29,7 +29,6 @@
 using $bug7146377$1 = ::bug7146377$1;
 using $bug7146377$2 = ::bug7146377$2;
 using $bug7146377$3 = ::bug7146377$3;
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Point = ::java::awt::Point;
 using $Robot = ::java::awt::Robot;
 using $InputEvent = ::java::awt::event::InputEvent;

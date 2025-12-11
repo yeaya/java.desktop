@@ -9,7 +9,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $BasicTreeUI = ::javax::swing::plaf::basic::BasicTreeUI;
 using $BasicTreeUI$Actions = ::javax::swing::plaf::basic::BasicTreeUI$Actions;
 

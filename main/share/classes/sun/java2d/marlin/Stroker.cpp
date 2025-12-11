@@ -42,18 +42,14 @@ using $InternalError = ::java::lang::InternalError;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Arrays = ::java::util::Arrays;
-using $Curve = ::sun::java2d::marlin::Curve;
 using $DPathConsumer2D = ::sun::java2d::marlin::DPathConsumer2D;
 using $Helpers = ::sun::java2d::marlin::Helpers;
 using $Helpers$PolyStack = ::sun::java2d::marlin::Helpers$PolyStack;
 using $MarlinConst = ::sun::java2d::marlin::MarlinConst;
 using $MarlinUtils = ::sun::java2d::marlin::MarlinUtils;
 using $RendererContext = ::sun::java2d::marlin::RendererContext;
-using $RendererStats = ::sun::java2d::marlin::RendererStats;
 using $TransformingPathConsumer2D$CurveBasicMonotonizer = ::sun::java2d::marlin::TransformingPathConsumer2D$CurveBasicMonotonizer;
 using $TransformingPathConsumer2D$CurveClipSplitter = ::sun::java2d::marlin::TransformingPathConsumer2D$CurveClipSplitter;
-using $Histogram = ::sun::java2d::marlin::stats::Histogram;
-using $StatLong = ::sun::java2d::marlin::stats::StatLong;
 
 namespace sun {
 	namespace java2d {

@@ -5,9 +5,6 @@
 #include <java/beans/beancontext/BeanContext.h>
 #include <jcpp.h>
 
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
-using $VetoableChangeListener = ::java::beans::VetoableChangeListener;
-using $BeanContext = ::java::beans::beancontext::BeanContext;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

@@ -16,7 +16,6 @@ using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $OSInfo = ::sun::awt::OSInfo;
 
 namespace sun {
 	namespace awt {

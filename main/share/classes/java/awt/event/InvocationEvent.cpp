@@ -12,7 +12,6 @@
 #undef INVOCATION_LAST
 
 using $AWTEvent = ::java::awt::AWTEvent;
-using $ActiveEvent = ::java::awt::ActiveEvent;
 using $InvocationEvent$1 = ::java::awt::event::InvocationEvent$1;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;

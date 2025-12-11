@@ -66,13 +66,11 @@
 #undef SELECTED
 #undef TRAILING
 
-using $PrintServiceArray = $Array<::javax::print::PrintService>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dialog = ::java::awt::Dialog;
 using $GridBagConstraints = ::java::awt::GridBagConstraints;
 using $GridBagLayout = ::java::awt::GridBagLayout;
-using $Insets = ::java::awt::Insets;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $LayoutManager2 = ::java::awt::LayoutManager2;
 using $Window = ::java::awt::Window;
@@ -93,10 +91,7 @@ using $SecurityManager = ::java::lang::SecurityManager;
 using $MalformedURLException = ::java::net::MalformedURLException;
 using $URI = ::java::net::URI;
 using $URISyntaxException = ::java::net::URISyntaxException;
-using $URL = ::java::net::URL;
 using $Permission = ::java::security::Permission;
-using $EventObject = ::java::util::EventObject;
-using $DocFlavor = ::javax::print::DocFlavor;
 using $PrintService = ::javax::print::PrintService;
 using $ServiceUIFactory = ::javax::print::ServiceUIFactory;
 using $Attribute = ::javax::print::attribute::Attribute;
@@ -105,8 +100,6 @@ using $HashAttributeSet = ::javax::print::attribute::HashAttributeSet;
 using $HashPrintRequestAttributeSet = ::javax::print::attribute::HashPrintRequestAttributeSet;
 using $PrintJobAttribute = ::javax::print::attribute::PrintJobAttribute;
 using $PrintRequestAttributeSet = ::javax::print::attribute::PrintRequestAttributeSet;
-using $PrintServiceAttribute = ::javax::print::attribute::PrintServiceAttribute;
-using $URISyntax = ::javax::print::attribute::URISyntax;
 using $Destination = ::javax::print::attribute::standard::Destination;
 using $PrinterInfo = ::javax::print::attribute::standard::PrinterInfo;
 using $PrinterIsAcceptingJobs = ::javax::print::attribute::standard::PrinterIsAcceptingJobs;
@@ -123,7 +116,6 @@ using $JPanel = ::javax::swing::JPanel;
 using $JToggleButton = ::javax::swing::JToggleButton;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
 using $Border = ::javax::swing::border::Border;
-using $TitledBorder = ::javax::swing::border::TitledBorder;
 using $PopupMenuEvent = ::javax::swing::event::PopupMenuEvent;
 using $PopupMenuListener = ::javax::swing::event::PopupMenuListener;
 using $DocumentPropertiesUI = ::sun::print::DocumentPropertiesUI;

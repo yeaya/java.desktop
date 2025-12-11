@@ -44,7 +44,6 @@ using $LineMetrics = ::java::awt::font::LineMetrics;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $Rectangle2D$Float = ::java::awt::geom::Rectangle2D$Float;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $PrintStream = ::java::io::PrintStream;
 using $Character = ::java::lang::Character;
 using $ClassInfo = ::java::lang::ClassInfo;

@@ -3,8 +3,6 @@
 #include <com/sun/media/sound/SoftSynthesizer.h>
 #include <jcpp.h>
 
-using $SoftControl = ::com::sun::media::sound::SoftControl;
-using $SoftSynthesizer = ::com::sun::media::sound::SoftSynthesizer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

@@ -4,11 +4,8 @@
 #include <javax/imageio/ImageReader.h>
 #include <jcpp.h>
 
-using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
-using $ImageReader = ::javax::imageio::ImageReader;
 
 namespace javax {
 	namespace imageio {

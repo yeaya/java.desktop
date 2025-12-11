@@ -61,7 +61,6 @@
 
 using $ComponentArray = $Array<::java::awt::Component>;
 using $GraphicsDeviceArray = $Array<::java::awt::GraphicsDevice>;
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
 using $MenuListenerArray = $Array<::javax::swing::event::MenuListener>;
 using $Component = ::java::awt::Component;
@@ -77,7 +76,6 @@ using $Insets = ::java::awt::Insets;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $Toolkit = ::java::awt::Toolkit;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ObjectOutputStream = ::java::io::ObjectOutputStream;

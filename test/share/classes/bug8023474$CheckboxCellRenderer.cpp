@@ -11,7 +11,6 @@
 #include <javax/swing/JTree.h>
 #include <jcpp.h>
 
-using $bug8023474 = ::bug8023474;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -24,7 +23,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JPanel = ::javax::swing::JPanel;
 using $JToggleButton = ::javax::swing::JToggleButton;
 using $JTree = ::javax::swing::JTree;
-using $TreeCellRenderer = ::javax::swing::tree::TreeCellRenderer;
 
 $FieldInfo _bug8023474$CheckboxCellRenderer_FieldInfo_[] = {
 	{"checkbox", "Ljavax/swing/JCheckBox;", nullptr, $PRIVATE, $field(bug8023474$CheckboxCellRenderer, checkbox)},

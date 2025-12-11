@@ -15,7 +15,6 @@
 #undef PRESSED
 #undef SELECTED
 
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $AssertionError = ::java::lang::AssertionError;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

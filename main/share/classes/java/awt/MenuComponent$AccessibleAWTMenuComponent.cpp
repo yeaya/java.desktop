@@ -33,7 +33,6 @@ using $MenuContainer = ::java::awt::MenuContainer;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $FocusListener = ::java::awt::event::FocusListener;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

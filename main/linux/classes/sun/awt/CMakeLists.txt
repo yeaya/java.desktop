@@ -1,6 +1,7 @@
 #machine generated
 
 add_subdirectory("im")
+add_subdirectory("image")
 add_subdirectory("X11")
 
 aux_source_directory(. SRCS)

@@ -18,7 +18,6 @@ using $RuntimeException = ::java::lang::RuntimeException;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $HTML$Attribute = ::javax::swing::text::html::HTML$Attribute;
 using $Map = ::javax::swing::text::html::Map;
-using $Map$RegionContainment = ::javax::swing::text::html::Map$RegionContainment;
 
 namespace javax {
 	namespace swing {

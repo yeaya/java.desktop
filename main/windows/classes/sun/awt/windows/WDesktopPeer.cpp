@@ -29,7 +29,6 @@
 
 using $SystemSleepListenerArray = $Array<::java::awt::desktop::SystemSleepListener>;
 using $UserSessionListenerArray = $Array<::java::awt::desktop::UserSessionListener>;
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $Desktop$Action = ::java::awt::Desktop$Action;
 using $EventQueue = ::java::awt::EventQueue;
 using $SystemEventListener = ::java::awt::desktop::SystemEventListener;
@@ -38,23 +37,15 @@ using $SystemSleepListener = ::java::awt::desktop::SystemSleepListener;
 using $UserSessionEvent = ::java::awt::desktop::UserSessionEvent;
 using $UserSessionEvent$Reason = ::java::awt::desktop::UserSessionEvent$Reason;
 using $UserSessionListener = ::java::awt::desktop::UserSessionListener;
-using $DesktopPeer = ::java::awt::peer::DesktopPeer;
 using $File = ::java::io::File;
 using $IOException = ::java::io::IOException;
 using $Serializable = ::java::io::Serializable;
-using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $URI = ::java::net::URI;
 using $EventListener = ::java::util::EventListener;
 using $EventListenerList = ::javax::swing::event::EventListenerList;
@@ -224,7 +215,7 @@ $EventListenerList* WDesktopPeer::listenerList = nullptr;
 void WDesktopPeer::init() {
 	$init(WDesktopPeer);
 	$prepareNativeStatic(WDesktopPeer, init, void);
-	$invokeNativeStatic(WDesktopPeer, init);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -302,7 +293,7 @@ $String* WDesktopPeer::ShellExecute($String* fileOrUri, $String* verb) {
 	$init(WDesktopPeer);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(WDesktopPeer, ShellExecute, $String*, $String* fileOrUri, $String* verb);
-	$assign($ret, $invokeNativeStatic(WDesktopPeer, ShellExecute, fileOrUri, verb));
+	$assign($ret, $invokeNativeStaticObject(fileOrUri, verb));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -318,7 +309,7 @@ void WDesktopPeer::enableSuddenTermination() {
 void WDesktopPeer::setSuddenTerminationEnabled(bool enable) {
 	$init(WDesktopPeer);
 	$prepareNativeStatic(WDesktopPeer, setSuddenTerminationEnabled, void, bool enable);
-	$invokeNativeStatic(WDesktopPeer, setSuddenTerminationEnabled, enable);
+	$invokeNativeStatic(enable);
 	$finishNativeStatic();
 }
 
@@ -388,7 +379,7 @@ bool WDesktopPeer::moveToTrash($String* file) {
 	$init(WDesktopPeer);
 	bool $ret = false;
 	$prepareNativeStatic(WDesktopPeer, moveToTrash, bool, $String* file);
-	$ret = $invokeNativeStatic(WDesktopPeer, moveToTrash, file);
+	$ret = $invokeNativeStatic(file);
 	$finishNativeStatic();
 	return $ret;
 }

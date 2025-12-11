@@ -10,10 +10,8 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JComboBox = ::javax::swing::JComboBox;
 using $AncestorEvent = ::javax::swing::event::AncestorEvent;
-using $AncestorListener = ::javax::swing::event::AncestorListener;
 
 namespace javax {
 	namespace swing {

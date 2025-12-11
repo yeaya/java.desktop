@@ -25,12 +25,10 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $X11ComponentPeer = ::sun::awt::X11ComponentPeer;
-using $X11GraphicsConfig = ::sun::awt::X11GraphicsConfig;
 using $X11GraphicsDevice = ::sun::awt::X11GraphicsDevice;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $GLXGraphicsConfig = ::sun::java2d::opengl::GLXGraphicsConfig;
 using $GLXSurfaceData = ::sun::java2d::opengl::GLXSurfaceData;
-using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;
 using $AccelSurface = ::sun::java2d::pipe::hw::AccelSurface;
 
 namespace sun {

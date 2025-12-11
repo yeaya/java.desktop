@@ -14,7 +14,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractLayoutCache = ::javax::swing::tree::AbstractLayoutCache;
 using $DefaultMutableTreeNode = ::javax::swing::tree::DefaultMutableTreeNode;
 using $FixedHeightLayoutCache = ::javax::swing::tree::FixedHeightLayoutCache;
 using $FixedHeightLayoutCache$SearchInfo = ::javax::swing::tree::FixedHeightLayoutCache$SearchInfo;

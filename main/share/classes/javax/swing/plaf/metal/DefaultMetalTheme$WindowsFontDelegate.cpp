@@ -8,7 +8,6 @@
 #include <javax/swing/plaf/metal/MetalFontDesktopProperty.h>
 #include <jcpp.h>
 
-using $FontUIResourceArray = $Array<::javax::swing::plaf::FontUIResource>;
 using $MetalFontDesktopPropertyArray = $Array<::javax::swing::plaf::metal::MetalFontDesktopProperty>;
 using $Font = ::java::awt::Font;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -17,10 +16,8 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UIDefaults = ::javax::swing::UIDefaults;
 using $FontUIResource = ::javax::swing::plaf::FontUIResource;
-using $DefaultMetalTheme = ::javax::swing::plaf::metal::DefaultMetalTheme;
 using $DefaultMetalTheme$FontDelegate = ::javax::swing::plaf::metal::DefaultMetalTheme$FontDelegate;
 using $MetalFontDesktopProperty = ::javax::swing::plaf::metal::MetalFontDesktopProperty;
-using $DesktopProperty = ::sun::swing::plaf::DesktopProperty;
 
 namespace javax {
 	namespace swing {

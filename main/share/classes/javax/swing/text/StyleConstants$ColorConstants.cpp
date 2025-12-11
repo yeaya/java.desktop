@@ -6,8 +6,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AttributeSet$CharacterAttribute = ::javax::swing::text::AttributeSet$CharacterAttribute;
-using $AttributeSet$ColorAttribute = ::javax::swing::text::AttributeSet$ColorAttribute;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
 
 namespace javax {

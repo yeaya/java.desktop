@@ -15,7 +15,6 @@ using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Paint9Painter = ::sun::swing::plaf::synth::Paint9Painter;
 
 namespace sun {
 	namespace swing {

@@ -228,7 +228,6 @@
 
 using $AWTEvent = ::java::awt::AWTEvent;
 using $AWTException = ::java::awt::AWTException;
-using $AWTPermission = ::java::awt::AWTPermission;
 using $Button = ::java::awt::Button;
 using $Canvas = ::java::awt::Canvas;
 using $Checkbox = ::java::awt::Checkbox;
@@ -292,7 +291,6 @@ using $CanvasPeer = ::java::awt::peer::CanvasPeer;
 using $CheckboxMenuItemPeer = ::java::awt::peer::CheckboxMenuItemPeer;
 using $CheckboxPeer = ::java::awt::peer::CheckboxPeer;
 using $ChoicePeer = ::java::awt::peer::ChoicePeer;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $DesktopPeer = ::java::awt::peer::DesktopPeer;
 using $DialogPeer = ::java::awt::peer::DialogPeer;
 using $FileDialogPeer = ::java::awt::peer::FileDialogPeer;
@@ -337,12 +335,7 @@ using $RuntimeException = ::java::lang::RuntimeException;
 using $SecurityManager = ::java::lang::SecurityManager;
 using $ThreadGroup = ::java::lang::ThreadGroup;
 using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $AccessController = ::java::security::AccessController;
 using $BasicPermission = ::java::security::BasicPermission;
@@ -356,7 +349,6 @@ using $Properties = ::java::util::Properties;
 using $Set = ::java::util::Set;
 using $ExecutorService = ::java::util::concurrent::ExecutorService;
 using $Executors = ::java::util::concurrent::Executors;
-using $Future = ::java::util::concurrent::Future;
 using $ThreadFactory = ::java::util::concurrent::ThreadFactory;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
@@ -365,7 +357,6 @@ using $AWTAccessor$MouseEventAccessor = ::sun::awt::AWTAccessor$MouseEventAccess
 using $AWTAutoShutdown = ::sun::awt::AWTAutoShutdown;
 using $AWTPermissions = ::sun::awt::AWTPermissions;
 using $AppContext = ::sun::awt::AppContext;
-using $ComponentFactory = ::sun::awt::ComponentFactory;
 using $CustomCursor = ::sun::awt::CustomCursor;
 using $DisplayChangedListener = ::sun::awt::DisplayChangedListener;
 using $EmbeddedFrame = ::sun::awt::EmbeddedFrame;
@@ -1020,7 +1011,7 @@ $WeakReference* WToolkit::NULL_COMPONENT_WR = nullptr;
 void WToolkit::initIDs() {
 	$init(WToolkit);
 	$prepareNativeStatic(WToolkit, initIDs, void);
-	$invokeNativeStatic(WToolkit, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -1037,7 +1028,7 @@ $String* WToolkit::getWindowsVersion() {
 	$init(WToolkit);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(WToolkit, getWindowsVersion, $String*);
-	$assign($ret, $invokeNativeStatic(WToolkit, getWindowsVersion));
+	$assign($ret, $invokeNativeStaticObject());
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1046,7 +1037,7 @@ bool WToolkit::embeddedInit() {
 	$init(WToolkit);
 	bool $ret = false;
 	$prepareNativeStatic(WToolkit, embeddedInit, bool);
-	$ret = $invokeNativeStatic(WToolkit, embeddedInit);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1055,21 +1046,21 @@ bool WToolkit::embeddedDispose() {
 	$init(WToolkit);
 	bool $ret = false;
 	$prepareNativeStatic(WToolkit, embeddedDispose, bool);
-	$ret = $invokeNativeStatic(WToolkit, embeddedDispose);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
 
 void WToolkit::embeddedEventLoopIdleProcessing() {
 	$prepareNative(WToolkit, embeddedEventLoopIdleProcessing, void);
-	$invokeNative(WToolkit, embeddedEventLoopIdleProcessing);
+	$invokeNative();
 	$finishNative();
 }
 
 void WToolkit::postDispose() {
 	$init(WToolkit);
 	$prepareNativeStatic(WToolkit, postDispose, void);
-	$invokeNativeStatic(WToolkit, postDispose);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -1077,7 +1068,7 @@ bool WToolkit::startToolkitThread($Runnable* thread, $ThreadGroup* rootThreadGro
 	$init(WToolkit);
 	bool $ret = false;
 	$prepareNativeStatic(WToolkit, startToolkitThread, bool, $Runnable* thread, $ThreadGroup* rootThreadGroup);
-	$ret = $invokeNativeStatic(WToolkit, startToolkitThread, thread, rootThreadGroup);
+	$ret = $invokeNativeStatic(thread, rootThreadGroup);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1139,34 +1130,34 @@ void WToolkit::run() {
 bool WToolkit::init() {
 	bool $ret = false;
 	$prepareNative(WToolkit, init, bool);
-	$ret = $invokeNative(WToolkit, init);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
 
 void WToolkit::eventLoop() {
 	$prepareNative(WToolkit, eventLoop, void);
-	$invokeNative(WToolkit, eventLoop);
+	$invokeNative();
 	$finishNative();
 }
 
 void WToolkit::shutdown() {
 	$prepareNative(WToolkit, shutdown, void);
-	$invokeNative(WToolkit, shutdown);
+	$invokeNative();
 	$finishNative();
 }
 
 void WToolkit::startSecondaryEventLoop() {
 	$init(WToolkit);
 	$prepareNativeStatic(WToolkit, startSecondaryEventLoop, void);
-	$invokeNativeStatic(WToolkit, startSecondaryEventLoop);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
 void WToolkit::quitSecondaryEventLoop() {
 	$init(WToolkit);
 	$prepareNativeStatic(WToolkit, quitSecondaryEventLoop, void);
-	$invokeNativeStatic(WToolkit, quitSecondaryEventLoop);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -1363,7 +1354,7 @@ $MouseInfoPeer* WToolkit::getMouseInfoPeer() {
 
 void WToolkit::setDynamicLayoutNative(bool b) {
 	$prepareNative(WToolkit, setDynamicLayoutNative, void, bool b);
-	$invokeNative(WToolkit, setDynamicLayoutNative, b);
+	$invokeNative(b);
 	$finishNative();
 }
 
@@ -1382,7 +1373,7 @@ bool WToolkit::isDynamicLayoutSet() {
 bool WToolkit::isDynamicLayoutSupportedNative() {
 	bool $ret = false;
 	$prepareNative(WToolkit, isDynamicLayoutSupportedNative, bool);
-	$ret = $invokeNative(WToolkit, isDynamicLayoutSupportedNative);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -1413,7 +1404,7 @@ $ColorModel* WToolkit::makeColorModel() {
 	$init(WToolkit);
 	$var($ColorModel, $ret, nullptr);
 	$prepareNativeStatic(WToolkit, makeColorModel, $ColorModel*);
-	$assign($ret, $invokeNativeStatic(WToolkit, makeColorModel));
+	$assign($ret, $invokeNativeStaticObject());
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1434,7 +1425,7 @@ int32_t WToolkit::getScreenResolution() {
 $Insets* WToolkit::getScreenInsets(int32_t screen) {
 	$var($Insets, $ret, nullptr);
 	$prepareNative(WToolkit, getScreenInsets, $Insets*, int32_t screen);
-	$assign($ret, $invokeNative(WToolkit, getScreenInsets, screen));
+	$assign($ret, $invokeNativeObject(screen));
 	$finishNative();
 	return $ret;
 }
@@ -1471,7 +1462,7 @@ $FontPeer* WToolkit::getFontPeer($String* name, int32_t style) {
 
 void WToolkit::nativeSync() {
 	$prepareNative(WToolkit, nativeSync, void);
-	$invokeNative(WToolkit, nativeSync);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -1498,7 +1489,7 @@ $PrintJob* WToolkit::getPrintJob($Frame* frame, $String* doctitle, $JobAttribute
 
 void WToolkit::beep() {
 	$prepareNative(WToolkit, beep, void);
-	$invokeNative(WToolkit, beep);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -1512,7 +1503,7 @@ bool WToolkit::getLockingKeyState(int32_t key) {
 bool WToolkit::getLockingKeyStateNative(int32_t key) {
 	bool $ret = false;
 	$prepareNative(WToolkit, getLockingKeyStateNative, bool, int32_t key);
-	$ret = $invokeNative(WToolkit, getLockingKeyStateNative, key);
+	$ret = $invokeNative(key);
 	$finishNative();
 	return $ret;
 }
@@ -1526,7 +1517,7 @@ void WToolkit::setLockingKeyState(int32_t key, bool on) {
 
 void WToolkit::setLockingKeyStateNative(int32_t key, bool on) {
 	$prepareNative(WToolkit, setLockingKeyStateNative, void, int32_t key, bool on);
-	$invokeNative(WToolkit, setLockingKeyStateNative, key, on);
+	$invokeNative(key, on);
 	$finishNative();
 }
 
@@ -1546,7 +1537,7 @@ $Clipboard* WToolkit::getSystemClipboard() {
 
 void WToolkit::loadSystemColors($ints* systemColors) {
 	$prepareNative(WToolkit, loadSystemColors, void, $ints* systemColors);
-	$invokeNative(WToolkit, loadSystemColors, systemColors);
+	$invokeNative(systemColors);
 	$finishNative();
 }
 
@@ -1593,7 +1584,7 @@ $Dimension* WToolkit::getBestCursorSize(int32_t preferredWidth, int32_t preferre
 int32_t WToolkit::getMaximumCursorColors() {
 	int32_t $ret = 0;
 	$prepareNative(WToolkit, getMaximumCursorColors, int32_t);
-	$ret = $invokeNative(WToolkit, getMaximumCursorColors);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -1867,20 +1858,20 @@ void WToolkit::showOrHideTouchKeyboard($Component* comp, $AWTEvent* e) {
 
 void WToolkit::showTouchKeyboard(bool causedByTouchEvent) {
 	$prepareNative(WToolkit, showTouchKeyboard, void, bool causedByTouchEvent);
-	$invokeNative(WToolkit, showTouchKeyboard, causedByTouchEvent);
+	$invokeNative(causedByTouchEvent);
 	$finishNative();
 }
 
 void WToolkit::hideTouchKeyboard() {
 	$prepareNative(WToolkit, hideTouchKeyboard, void);
-	$invokeNative(WToolkit, hideTouchKeyboard);
+	$invokeNative();
 	$finishNative();
 }
 
 bool WToolkit::syncNativeQueue(int64_t timeout) {
 	bool $ret = false;
 	$prepareNative(WToolkit, syncNativeQueue, bool, int64_t timeout);
-	$ret = $invokeNative(WToolkit, syncNativeQueue, timeout);
+	$ret = $invokeNative(timeout);
 	$finishNative();
 	return $ret;
 }
@@ -1904,7 +1895,7 @@ $TaskbarPeer* WToolkit::createTaskbarPeer($Taskbar* target) {
 void WToolkit::setExtraMouseButtonsEnabledNative(bool enable) {
 	$init(WToolkit);
 	$prepareNativeStatic(WToolkit, setExtraMouseButtonsEnabledNative, void, bool enable);
-	$invokeNativeStatic(WToolkit, setExtraMouseButtonsEnabledNative, enable);
+	$invokeNativeStatic(enable);
 	$finishNativeStatic();
 }
 
@@ -1915,7 +1906,7 @@ bool WToolkit::areExtraMouseButtonsEnabled() {
 int32_t WToolkit::getNumberOfButtonsImpl() {
 	int32_t $ret = 0;
 	$prepareNative(WToolkit, getNumberOfButtonsImpl, int32_t);
-	$ret = $invokeNative(WToolkit, getNumberOfButtonsImpl);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }

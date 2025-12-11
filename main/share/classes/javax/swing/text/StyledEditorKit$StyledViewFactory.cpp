@@ -31,9 +31,7 @@ using $IconView = ::javax::swing::text::IconView;
 using $LabelView = ::javax::swing::text::LabelView;
 using $ParagraphView = ::javax::swing::text::ParagraphView;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
-using $StyledEditorKit = ::javax::swing::text::StyledEditorKit;
 using $View = ::javax::swing::text::View;
-using $ViewFactory = ::javax::swing::text::ViewFactory;
 
 namespace javax {
 	namespace swing {

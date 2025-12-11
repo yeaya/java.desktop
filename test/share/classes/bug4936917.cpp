@@ -25,10 +25,7 @@
 
 using $bug4936917$1 = ::bug4936917$1;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
-using $Point = ::java::awt::Point;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $PrintStream = ::java::io::PrintStream;
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -39,15 +36,8 @@ using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
-using $Timer = ::java::util::Timer;
 using $JComponent = ::javax::swing::JComponent;
-using $JEditorPane = ::javax::swing::JEditorPane;
 using $JFrame = ::javax::swing::JFrame;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $JTextComponent = ::javax::swing::text::JTextComponent;

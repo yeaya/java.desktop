@@ -50,10 +50,8 @@
 
 using $GraphicsPrimitiveArray = $Array<::sun::java2d::loops::GraphicsPrimitive>;
 using $Color = ::java::awt::Color;
-using $Composite = ::java::awt::Composite;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $DataBuffer = ::java::awt::image::DataBuffer;
-using $Raster = ::java::awt::image::Raster;
 using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

@@ -48,8 +48,6 @@
 #undef Y_AXIS
 
 using $RectangleArray = $Array<::java::awt::Rectangle>;
-using $AWTKeyStroke = ::java::awt::AWTKeyStroke;
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Font = ::java::awt::Font;

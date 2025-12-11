@@ -5,12 +5,9 @@
 #include <javax/imageio/stream/IIOByteBuffer.h>
 #include <jcpp.h>
 
-using $Closeable = ::java::io::Closeable;
 using $DataInput = ::java::io::DataInput;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ByteOrder = ::java::nio::ByteOrder;
-using $IIOByteBuffer = ::javax::imageio::stream::IIOByteBuffer;
 
 namespace javax {
 	namespace imageio {

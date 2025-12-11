@@ -36,7 +36,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JEditorPane = ::javax::swing::JEditorPane;
-using $BasicTextUI$TextTransferHandler = ::javax::swing::plaf::basic::BasicTextUI$TextTransferHandler;
 using $BasicTransferable = ::javax::swing::plaf::basic::BasicTransferable;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $Document = ::javax::swing::text::Document;

@@ -8,7 +8,6 @@
 using $bug4708809 = ::bug4708809;
 using $bug4708809$3 = ::bug4708809$3;
 using $AdjustmentEvent = ::java::awt::event::AdjustmentEvent;
-using $AdjustmentListener = ::java::awt::event::AdjustmentListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

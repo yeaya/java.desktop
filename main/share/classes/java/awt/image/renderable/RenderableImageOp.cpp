@@ -18,7 +18,6 @@
 using $RenderingHints = ::java::awt::RenderingHints;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $RenderedImage = ::java::awt::image::RenderedImage;
 using $ContextualRenderedImageFactory = ::java::awt::image::renderable::ContextualRenderedImageFactory;
 using $ParameterBlock = ::java::awt::image::renderable::ParameterBlock;

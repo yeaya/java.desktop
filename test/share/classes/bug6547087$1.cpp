@@ -8,7 +8,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Callable = ::java::util::concurrent::Callable;
 
 $MethodInfo _bug6547087$1_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(bug6547087$1::*)()>(&bug6547087$1::init$))},

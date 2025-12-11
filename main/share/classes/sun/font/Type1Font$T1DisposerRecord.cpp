@@ -12,9 +12,7 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
-using $Type1Font = ::sun::font::Type1Font;
 using $Type1Font$T1DisposerRecord$1 = ::sun::font::Type1Font$T1DisposerRecord$1;
-using $DisposerRecord = ::sun::java2d::DisposerRecord;
 
 namespace sun {
 	namespace font {

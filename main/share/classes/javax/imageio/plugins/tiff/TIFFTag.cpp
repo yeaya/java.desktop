@@ -34,7 +34,6 @@ using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $Iterator = ::java::util::Iterator;
-using $Map = ::java::util::Map;
 using $NavigableMap = ::java::util::NavigableMap;
 using $Set = ::java::util::Set;
 using $SortedMap = ::java::util::SortedMap;

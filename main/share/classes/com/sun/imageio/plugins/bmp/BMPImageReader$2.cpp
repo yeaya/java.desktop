@@ -13,7 +13,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ImageReader = ::javax::imageio::ImageReader;
-using $IIOReadUpdateListener = ::javax::imageio::event::IIOReadUpdateListener;
 
 namespace com {
 	namespace sun {

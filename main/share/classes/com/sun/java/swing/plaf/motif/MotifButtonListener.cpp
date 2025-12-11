@@ -7,7 +7,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractButton = ::javax::swing::AbstractButton;
-using $JComponent = ::javax::swing::JComponent;
 using $BasicButtonListener = ::javax::swing::plaf::basic::BasicButtonListener;
 
 namespace com {

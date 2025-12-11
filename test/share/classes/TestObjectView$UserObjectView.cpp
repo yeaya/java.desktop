@@ -6,7 +6,6 @@
 #include <javax/swing/text/html/ObjectView.h>
 #include <jcpp.h>
 
-using $TestObjectView = ::TestObjectView;
 using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

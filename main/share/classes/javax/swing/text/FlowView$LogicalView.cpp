@@ -37,7 +37,6 @@ using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $ComponentView = ::javax::swing::text::ComponentView;
 using $CompositeView = ::javax::swing::text::CompositeView;
 using $Element = ::javax::swing::text::Element;
-using $FlowView = ::javax::swing::text::FlowView;
 using $GlyphView = ::javax::swing::text::GlyphView;
 using $LabelView = ::javax::swing::text::LabelView;
 using $View = ::javax::swing::text::View;

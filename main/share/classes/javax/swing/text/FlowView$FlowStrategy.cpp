@@ -19,7 +19,6 @@
 
 using $ViewArray = $Array<::javax::swing::text::View>;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Rectangle = ::java::awt::Rectangle;
 using $AssertionError = ::java::lang::AssertionError;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -30,8 +29,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Vector = ::java::util::Vector;
 using $DocumentEvent = ::javax::swing::event::DocumentEvent;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
-using $BoxView = ::javax::swing::text::BoxView;
-using $CompositeView = ::javax::swing::text::CompositeView;
 using $Document = ::javax::swing::text::Document;
 using $FlowView = ::javax::swing::text::FlowView;
 using $Position = ::javax::swing::text::Position;

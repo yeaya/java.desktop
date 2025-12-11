@@ -6,7 +6,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $InternalFrameEvent = ::javax::swing::event::InternalFrameEvent;
-using $InternalFrameListener = ::javax::swing::event::InternalFrameListener;
 
 namespace javax {
 	namespace swing {

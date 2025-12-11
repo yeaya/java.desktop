@@ -11,7 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $TableModelEvent = ::javax::swing::event::TableModelEvent;
-using $TableModelListener = ::javax::swing::event::TableModelListener;
 using $FilePane = ::sun::swing::FilePane;
 using $FilePane$DetailsTableRowSorter = ::sun::swing::FilePane$DetailsTableRowSorter;
 

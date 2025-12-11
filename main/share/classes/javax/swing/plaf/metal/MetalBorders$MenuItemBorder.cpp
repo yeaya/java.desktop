@@ -17,22 +17,17 @@
 
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
 using $Insets = ::java::awt::Insets;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $JMenu = ::javax::swing::JMenu;
 using $JMenuBar = ::javax::swing::JMenuBar;
 using $JMenuItem = ::javax::swing::JMenuItem;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
-using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $MetalBorders = ::javax::swing::plaf::metal::MetalBorders;
 using $MetalLookAndFeel = ::javax::swing::plaf::metal::MetalLookAndFeel;
 
 namespace javax {

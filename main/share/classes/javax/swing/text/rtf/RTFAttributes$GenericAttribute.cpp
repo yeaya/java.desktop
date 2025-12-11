@@ -11,8 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
-using $RTFAttributes = ::javax::swing::text::rtf::RTFAttributes;
 using $RTFGenerator = ::javax::swing::text::rtf::RTFGenerator;
 
 namespace javax {

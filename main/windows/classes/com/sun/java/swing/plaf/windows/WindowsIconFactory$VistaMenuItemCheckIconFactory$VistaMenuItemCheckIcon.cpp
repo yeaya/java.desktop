@@ -55,7 +55,6 @@ using $XPStyle$Skin = ::com::sun::java::swing::plaf::windows::XPStyle$Skin;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
-using $Serializable = ::java::io::Serializable;
 using $AssertionError = ::java::lang::AssertionError;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -71,7 +70,6 @@ using $JRadioButtonMenuItem = ::javax::swing::JRadioButtonMenuItem;
 using $UIDefaults = ::javax::swing::UIDefaults;
 using $UIManager = ::javax::swing::UIManager;
 using $ButtonUI = ::javax::swing::plaf::ButtonUI;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace com {
 	namespace sun {

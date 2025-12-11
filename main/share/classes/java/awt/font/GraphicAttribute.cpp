@@ -15,8 +15,6 @@
 #undef ROMAN_BASELINE
 #undef TOP_ALIGNMENT
 
-using $Font = ::java::awt::Font;
-using $Graphics2D = ::java::awt::Graphics2D;
 using $Shape = ::java::awt::Shape;
 using $GlyphJustificationInfo = ::java::awt::font::GlyphJustificationInfo;
 using $AffineTransform = ::java::awt::geom::AffineTransform;

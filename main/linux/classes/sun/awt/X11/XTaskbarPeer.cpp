@@ -30,16 +30,13 @@
 
 using $MenuItemArray = $Array<::java::awt::MenuItem>;
 using $AWTEvent = ::java::awt::AWTEvent;
-using $Menu = ::java::awt::Menu;
 using $MenuItem = ::java::awt::MenuItem;
 using $PopupMenu = ::java::awt::PopupMenu;
 using $Taskbar$Feature = ::java::awt::Taskbar$Feature;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $TaskbarPeer = ::java::awt::peer::TaskbarPeer;
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Long = ::java::lang::Long;
@@ -48,17 +45,9 @@ using $NumberFormatException = ::java::lang::NumberFormatException;
 using $Runnable = ::java::lang::Runnable;
 using $ThreadGroup = ::java::lang::ThreadGroup;
 using $UnsupportedOperationException = ::java::lang::UnsupportedOperationException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
-using $EventObject = ::java::util::EventObject;
-using $AppContext = ::sun::awt::AppContext;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $UNIXToolkit = ::sun::awt::UNIXToolkit;
 using $UNIXToolkit$GtkVersions = ::sun::awt::UNIXToolkit$GtkVersions;
 using $XTaskbarPeer$1 = ::sun::awt::X11::XTaskbarPeer$1;
@@ -337,7 +326,7 @@ bool XTaskbarPeer::init($String* name, int32_t version, bool verbose) {
 	$init(XTaskbarPeer);
 	bool $ret = false;
 	$prepareNativeStatic(XTaskbarPeer, init, bool, $String* name, int32_t version, bool verbose);
-	$ret = $invokeNativeStatic(XTaskbarPeer, init, name, version, verbose);
+	$ret = $invokeNativeStatic(name, version, verbose);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -345,31 +334,31 @@ bool XTaskbarPeer::init($String* name, int32_t version, bool verbose) {
 void XTaskbarPeer::runloop() {
 	$init(XTaskbarPeer);
 	$prepareNativeStatic(XTaskbarPeer, runloop, void);
-	$invokeNativeStatic(XTaskbarPeer, runloop);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
 void XTaskbarPeer::setBadge(int64_t value, bool visible) {
 	$prepareNative(XTaskbarPeer, setBadge, void, int64_t value, bool visible);
-	$invokeNative(XTaskbarPeer, setBadge, value, visible);
+	$invokeNative(value, visible);
 	$finishNative();
 }
 
 void XTaskbarPeer::updateProgress(double value, bool visible) {
 	$prepareNative(XTaskbarPeer, updateProgress, void, double value, bool visible);
-	$invokeNative(XTaskbarPeer, updateProgress, value, visible);
+	$invokeNative(value, visible);
 	$finishNative();
 }
 
 void XTaskbarPeer::setUrgent(bool urgent) {
 	$prepareNative(XTaskbarPeer, setUrgent, void, bool urgent);
-	$invokeNative(XTaskbarPeer, setUrgent, urgent);
+	$invokeNative(urgent);
 	$finishNative();
 }
 
 void XTaskbarPeer::setNativeMenu($MenuItemArray* items) {
 	$prepareNative(XTaskbarPeer, setNativeMenu, void, $MenuItemArray* items);
-	$invokeNative(XTaskbarPeer, setNativeMenu, items);
+	$invokeNative(items);
 	$finishNative();
 }
 

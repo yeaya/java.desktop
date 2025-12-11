@@ -18,7 +18,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $UIManager = ::javax::swing::UIManager;
 using $UIManager$LookAndFeelInfo = ::javax::swing::UIManager$LookAndFeelInfo;
 using $UnsupportedLookAndFeelException = ::javax::swing::UnsupportedLookAndFeelException;

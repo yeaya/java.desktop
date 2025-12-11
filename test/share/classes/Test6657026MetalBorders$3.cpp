@@ -8,7 +8,6 @@
 #undef NEGATIVE
 
 using $Test6657026MetalBorders = ::Test6657026MetalBorders;
-using $Insets = ::java::awt::Insets;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

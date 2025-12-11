@@ -16,7 +16,6 @@
 #include <jcpp.h>
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Toolkit = ::java::awt::Toolkit;
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -24,12 +23,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $JDesktopPane = ::javax::swing::JDesktopPane;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;

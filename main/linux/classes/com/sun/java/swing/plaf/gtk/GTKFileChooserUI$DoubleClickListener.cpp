@@ -16,7 +16,6 @@
 #include <jcpp.h>
 
 using $GTKFileChooserUI = ::com::sun::java::swing::plaf::gtk::GTKFileChooserUI;
-using $Point = ::java::awt::Point;
 using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $File = ::java::io::File;
@@ -25,13 +24,11 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JFileChooser = ::javax::swing::JFileChooser;
 using $JList = ::javax::swing::JList;
 using $ListModel = ::javax::swing::ListModel;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $TransferHandler = ::javax::swing::TransferHandler;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 using $ShellFolder = ::sun::awt::shell::ShellFolder;
 
 namespace com {

@@ -12,7 +12,6 @@ using $SeverityArray = $Array<::javax::print::attribute::standard::Severity>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Attribute = ::javax::print::attribute::Attribute;
 using $EnumSyntax = ::javax::print::attribute::EnumSyntax;
 
 namespace javax {

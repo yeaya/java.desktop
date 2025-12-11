@@ -5,8 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $MidiDevice = ::javax::sound::midi::MidiDevice;
-using $Receiver = ::javax::sound::midi::Receiver;
 
 namespace javax {
 	namespace sound {

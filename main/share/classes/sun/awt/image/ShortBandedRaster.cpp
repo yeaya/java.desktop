@@ -19,7 +19,6 @@ using $shortArray2 = $Array<int16_t, 2>;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $BandedSampleModel = ::java::awt::image::BandedSampleModel;
-using $ComponentSampleModel = ::java::awt::image::ComponentSampleModel;
 using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DataBufferUShort = ::java::awt::image::DataBufferUShort;
 using $Raster = ::java::awt::image::Raster;

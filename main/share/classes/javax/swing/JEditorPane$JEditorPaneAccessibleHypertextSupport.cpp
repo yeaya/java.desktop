@@ -27,9 +27,7 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Vector = ::java::util::Vector;
 using $AccessibleHyperlink = ::javax::accessibility::AccessibleHyperlink;
-using $AccessibleHypertext = ::javax::accessibility::AccessibleHypertext;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $JEditorPane$AccessibleJEditorPane = ::javax::swing::JEditorPane$AccessibleJEditorPane;
 using $JEditorPane$JEditorPaneAccessibleHypertextSupport$1 = ::javax::swing::JEditorPane$JEditorPaneAccessibleHypertextSupport$1;
@@ -41,7 +39,6 @@ using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
 using $ElementIterator = ::javax::swing::text::ElementIterator;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $HTML$Attribute = ::javax::swing::text::html::HTML$Attribute;
 using $HTML$Tag = ::javax::swing::text::html::HTML$Tag;
 

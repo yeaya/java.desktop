@@ -8,7 +8,6 @@ using $AbstractColorChooserPanelArray = $Array<::javax::swing::colorchooser::Abs
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JColorChooser = ::javax::swing::JColorChooser;
-using $AbstractColorChooserPanel = ::javax::swing::colorchooser::AbstractColorChooserPanel;
 
 $MethodInfo _Test4711996_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PUBLIC, $method(static_cast<void(Test4711996::*)()>(&Test4711996::init$))},

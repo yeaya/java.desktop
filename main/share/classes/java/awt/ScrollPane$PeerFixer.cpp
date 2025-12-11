@@ -15,14 +15,10 @@
 
 using $Adjustable = ::java::awt::Adjustable;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
-using $Point = ::java::awt::Point;
 using $ScrollPane = ::java::awt::ScrollPane;
 using $AdjustmentEvent = ::java::awt::event::AdjustmentEvent;
 using $AdjustmentListener = ::java::awt::event::AdjustmentListener;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ScrollPanePeer = ::java::awt::peer::ScrollPanePeer;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;

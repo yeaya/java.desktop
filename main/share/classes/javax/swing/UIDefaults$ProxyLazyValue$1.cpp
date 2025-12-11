@@ -19,7 +19,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Constructor = ::java::lang::reflect::Constructor;
 using $Method = ::java::lang::reflect::Method;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $UIDefaults = ::javax::swing::UIDefaults;
 using $UIDefaults$ProxyLazyValue = ::javax::swing::UIDefaults$ProxyLazyValue;
 using $MethodUtil = ::sun::reflect::misc::MethodUtil;

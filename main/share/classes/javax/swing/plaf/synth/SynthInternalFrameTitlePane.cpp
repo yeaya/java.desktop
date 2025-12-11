@@ -55,11 +55,9 @@
 #undef TEXT_FOREGROUND
 #undef TRAILING
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
-using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
 using $Graphics = ::java::awt::Graphics;
 using $Image = ::java::awt::Image;
@@ -76,9 +74,7 @@ using $Integer = ::java::lang::Integer;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NumberFormatException = ::java::lang::NumberFormatException;
-using $EventObject = ::java::util::EventObject;
 using $AbstractButton = ::javax::swing::AbstractButton;
-using $Action = ::javax::swing::Action;
 using $Icon = ::javax::swing::Icon;
 using $ImageIcon = ::javax::swing::ImageIcon;
 using $JButton = ::javax::swing::JButton;

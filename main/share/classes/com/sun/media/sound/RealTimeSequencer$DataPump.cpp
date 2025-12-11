@@ -23,9 +23,7 @@
 #undef PPQ
 #undef PROGRAM_CHANGE
 
-using $TrackArray = $Array<::javax::sound::midi::Track>;
 using $byteArray2 = $Array<int8_t, 2>;
-using $AbstractMidiDevice = ::com::sun::media::sound::AbstractMidiDevice;
 using $AbstractMidiDevice$TransmitterList = ::com::sun::media::sound::AbstractMidiDevice$TransmitterList;
 using $MidiUtils = ::com::sun::media::sound::MidiUtils;
 using $MidiUtils$TempoCache = ::com::sun::media::sound::MidiUtils$TempoCache;

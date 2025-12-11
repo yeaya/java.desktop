@@ -18,7 +18,6 @@
 
 using $bug8016833 = ::bug8016833;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
@@ -26,13 +25,10 @@ using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $JComponent = ::javax::swing::JComponent;
 using $JTextPane = ::javax::swing::JTextPane;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
-using $Document = ::javax::swing::text::Document;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $Style = ::javax::swing::text::Style;
 using $StyleConstants = ::javax::swing::text::StyleConstants;

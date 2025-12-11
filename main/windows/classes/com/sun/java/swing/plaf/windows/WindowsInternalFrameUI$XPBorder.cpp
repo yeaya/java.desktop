@@ -29,7 +29,6 @@ using $XPStyle = ::com::sun::java::swing::plaf::windows::XPStyle;
 using $XPStyle$Skin = ::com::sun::java::swing::plaf::windows::XPStyle$Skin;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $Insets = ::java::awt::Insets;
 using $ClassInfo = ::java::lang::ClassInfo;

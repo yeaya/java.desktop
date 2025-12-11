@@ -13,20 +13,16 @@
 #include <jcpp.h>
 
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $CaretEvent = ::javax::swing::event::CaretEvent;
 using $CaretListener = ::javax::swing::event::CaretListener;
 using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
-using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $StyledDocument = ::javax::swing::text::StyledDocument;
 using $StyledEditorKit = ::javax::swing::text::StyledEditorKit;
 

@@ -7,13 +7,11 @@
 #include <javax/swing/JMenuItem.h>
 #include <jcpp.h>
 
-using $Dimension = ::java::awt::Dimension;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JCheckBoxMenuItem = ::javax::swing::JCheckBoxMenuItem;
-using $JComponent = ::javax::swing::JComponent;
 using $JMenu = ::javax::swing::JMenu;
 using $JMenuItem = ::javax::swing::JMenuItem;
 

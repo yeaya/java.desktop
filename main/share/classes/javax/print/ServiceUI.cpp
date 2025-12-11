@@ -26,8 +26,6 @@
 
 using $PrintServiceArray = $Array<::javax::print::PrintService>;
 using $AttributeArray = $Array<::javax::print::attribute::Attribute>;
-using $Component = ::java::awt::Component;
-using $Dialog = ::java::awt::Dialog;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;

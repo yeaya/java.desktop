@@ -22,7 +22,6 @@ using $MotifOptionPaneUI$1 = ::com::sun::java::swing::plaf::motif::MotifOptionPa
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
-using $LayoutManager = ::java::awt::LayoutManager;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

@@ -6,11 +6,6 @@
 #include <java/awt/geom/Point2D.h>
 #include <jcpp.h>
 
-using $Rectangle = ::java::awt::Rectangle;
-using $AffineTransform = ::java::awt::geom::AffineTransform;
-using $PathIterator = ::java::awt::geom::PathIterator;
-using $Point2D = ::java::awt::geom::Point2D;
-using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

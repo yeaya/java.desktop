@@ -12,7 +12,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $D3DSurfaceData = ::sun::java2d::d3d::D3DSurfaceData;
 
 namespace sun {

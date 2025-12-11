@@ -11,7 +11,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

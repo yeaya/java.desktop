@@ -19,7 +19,6 @@ using $byteArray2 = $Array<int8_t, 2>;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $BandedSampleModel = ::java::awt::image::BandedSampleModel;
-using $ComponentSampleModel = ::java::awt::image::ComponentSampleModel;
 using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DataBufferByte = ::java::awt::image::DataBufferByte;
 using $Raster = ::java::awt::image::Raster;

@@ -21,7 +21,6 @@
 #undef SCALE_REPLICATE
 #undef SCALE_SMOOTH
 
-using $Graphics = ::java::awt::Graphics;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $Image$1 = ::java::awt::Image$1;
 using $ImageCapabilities = ::java::awt::ImageCapabilities;
@@ -29,7 +28,6 @@ using $Toolkit = ::java::awt::Toolkit;
 using $AreaAveragingScaleFilter = ::java::awt::image::AreaAveragingScaleFilter;
 using $FilteredImageSource = ::java::awt::image::FilteredImageSource;
 using $ImageFilter = ::java::awt::image::ImageFilter;
-using $ImageObserver = ::java::awt::image::ImageObserver;
 using $ImageProducer = ::java::awt::image::ImageProducer;
 using $ReplicateScaleFilter = ::java::awt::image::ReplicateScaleFilter;
 using $ClassInfo = ::java::lang::ClassInfo;

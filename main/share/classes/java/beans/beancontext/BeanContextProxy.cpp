@@ -3,7 +3,6 @@
 #include <java/beans/beancontext/BeanContextChild.h>
 #include <jcpp.h>
 
-using $BeanContextChild = ::java::beans::beancontext::BeanContextChild;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

@@ -5,14 +5,9 @@
 #include <javax/sound/sampled/Mixer$Info.h>
 #include <jcpp.h>
 
-using $Line$InfoArray = $Array<::javax::sound::sampled::Line$Info>;
-using $LineArray = $Array<::javax::sound::sampled::Line>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Line = ::javax::sound::sampled::Line;
-using $Line$Info = ::javax::sound::sampled::Line$Info;
-using $Mixer$Info = ::javax::sound::sampled::Mixer$Info;
 
 namespace javax {
 	namespace sound {

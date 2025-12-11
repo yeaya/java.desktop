@@ -13,7 +13,6 @@
 
 #undef BORDER_SIZE
 
-using $MotifBorders = ::com::sun::java::swing::plaf::motif::MotifBorders;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
@@ -26,7 +25,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $UIManager = ::javax::swing::UIManager;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace com {
 	namespace sun {

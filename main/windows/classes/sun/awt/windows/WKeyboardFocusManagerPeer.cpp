@@ -66,7 +66,7 @@ WKeyboardFocusManagerPeer* WKeyboardFocusManagerPeer::inst = nullptr;
 void WKeyboardFocusManagerPeer::setNativeFocusOwner($ComponentPeer* peer) {
 	$init(WKeyboardFocusManagerPeer);
 	$prepareNativeStatic(WKeyboardFocusManagerPeer, setNativeFocusOwner, void, $ComponentPeer* peer);
-	$invokeNativeStatic(WKeyboardFocusManagerPeer, setNativeFocusOwner, peer);
+	$invokeNativeStatic(peer);
 	$finishNativeStatic();
 }
 
@@ -74,7 +74,7 @@ $Component* WKeyboardFocusManagerPeer::getNativeFocusOwner() {
 	$init(WKeyboardFocusManagerPeer);
 	$var($Component, $ret, nullptr);
 	$prepareNativeStatic(WKeyboardFocusManagerPeer, getNativeFocusOwner, $Component*);
-	$assign($ret, $invokeNativeStatic(WKeyboardFocusManagerPeer, getNativeFocusOwner));
+	$assign($ret, $invokeNativeStaticObject());
 	$finishNativeStatic();
 	return $ret;
 }
@@ -83,7 +83,7 @@ $Window* WKeyboardFocusManagerPeer::getNativeFocusedWindow() {
 	$init(WKeyboardFocusManagerPeer);
 	$var($Window, $ret, nullptr);
 	$prepareNativeStatic(WKeyboardFocusManagerPeer, getNativeFocusedWindow, $Window*);
-	$assign($ret, $invokeNativeStatic(WKeyboardFocusManagerPeer, getNativeFocusedWindow));
+	$assign($ret, $invokeNativeStaticObject());
 	$finishNativeStatic();
 	return $ret;
 }

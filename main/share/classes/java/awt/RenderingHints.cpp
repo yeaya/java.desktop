@@ -67,7 +67,6 @@
 using $RenderingHints$Key = ::java::awt::RenderingHints$Key;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CloneNotSupportedException = ::java::lang::CloneNotSupportedException;
-using $Cloneable = ::java::lang::Cloneable;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
@@ -84,7 +83,6 @@ using $Map = ::java::util::Map;
 using $Map$Entry = ::java::util::Map$Entry;
 using $Set = ::java::util::Set;
 using $SunHints = ::sun::awt::SunHints;
-using $SunHints$Key = ::sun::awt::SunHints$Key;
 
 namespace java {
 	namespace awt {

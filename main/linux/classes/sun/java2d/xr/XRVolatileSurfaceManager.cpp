@@ -25,14 +25,12 @@ using $Long = ::java::lang::Long;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $OutOfMemoryError = ::java::lang::OutOfMemoryError;
-using $X11GraphicsConfig = ::sun::awt::X11GraphicsConfig;
 using $SunVolatileImage = ::sun::awt::image::SunVolatileImage;
 using $VolatileSurfaceManager = ::sun::awt::image::VolatileSurfaceManager;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $XSurfaceData = ::sun::java2d::x11::XSurfaceData;
 using $XRGraphicsConfig = ::sun::java2d::xr::XRGraphicsConfig;
 using $XRSurfaceData = ::sun::java2d::xr::XRSurfaceData;
-using $XRSurfaceData$XRPixmapSurfaceData = ::sun::java2d::xr::XRSurfaceData$XRPixmapSurfaceData;
 
 namespace sun {
 	namespace java2d {

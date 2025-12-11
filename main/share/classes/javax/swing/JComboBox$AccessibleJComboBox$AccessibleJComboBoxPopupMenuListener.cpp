@@ -11,12 +11,10 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $JComboBox$AccessibleJComboBox = ::javax::swing::JComboBox$AccessibleJComboBox;
 using $JList = ::javax::swing::JList;
 using $PopupMenuEvent = ::javax::swing::event::PopupMenuEvent;
-using $PopupMenuListener = ::javax::swing::event::PopupMenuListener;
 
 namespace javax {
 	namespace swing {

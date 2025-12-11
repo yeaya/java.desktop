@@ -20,7 +20,6 @@
 #undef FOCUSED
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $KeyboardFocusManager = ::java::awt::KeyboardFocusManager;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
@@ -29,7 +28,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JComponent = ::javax::swing::JComponent;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $ColorType = ::javax::swing::plaf::synth::ColorType;

@@ -8,10 +8,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Enumeration = ::java::util::Enumeration;
-using $ListSelectionModel = ::javax::swing::ListSelectionModel;
-using $TableColumnModelListener = ::javax::swing::event::TableColumnModelListener;
-using $TableColumn = ::javax::swing::table::TableColumn;
 
 namespace javax {
 	namespace swing {

@@ -3,10 +3,8 @@
 #include <java/awt/event/ContainerEvent.h>
 #include <jcpp.h>
 
-using $ContainerEvent = ::java::awt::event::ContainerEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
 
 namespace java {
 	namespace awt {

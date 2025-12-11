@@ -8,7 +8,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PNGImageDecoder = ::sun::awt::image::PNGImageDecoder;
 
 namespace sun {
 	namespace awt {

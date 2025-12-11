@@ -16,7 +16,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;
 using $WindowsPlacesBar = ::sun::swing::WindowsPlacesBar;
 

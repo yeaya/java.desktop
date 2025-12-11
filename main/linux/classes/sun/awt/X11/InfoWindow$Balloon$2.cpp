@@ -5,13 +5,11 @@
 #include <jcpp.h>
 
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $InfoWindow = ::sun::awt::X11::InfoWindow;
 using $InfoWindow$Balloon = ::sun::awt::X11::InfoWindow$Balloon;
 
 namespace sun {

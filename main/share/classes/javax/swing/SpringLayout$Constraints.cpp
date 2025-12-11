@@ -24,7 +24,6 @@ using $Component = ::java::awt::Component;
 using $Component$BaselineResizeBehavior = ::java::awt::Component$BaselineResizeBehavior;
 using $Dimension = ::java::awt::Dimension;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

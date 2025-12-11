@@ -1,0 +1,23 @@
+#machine generated
+
+add_subdirectory("autofit")
+add_subdirectory("base")
+add_subdirectory("cff")
+add_subdirectory("cid")
+add_subdirectory("psaux")
+add_subdirectory("pshinter")
+add_subdirectory("psnames")
+add_subdirectory("raster")
+add_subdirectory("sfnt")
+add_subdirectory("smooth")
+add_subdirectory("truetype")
+add_subdirectory("type1")
+
+aux_source_directory(. SRCS)
+file(GLOB HEADERS *.h *.hpp)
+source_group("Include" FILES ${HEADERS}) 
+list(LENGTH SRCS SRCS_LENGTH)
+if(SRCS_LENGTH)
+	add_library(macos-native.libfreetype.src OBJECT ${SRCS} ${HEADERS})
+	jcpp_enable_bigobj(macos-native.libfreetype.src)
+endif()

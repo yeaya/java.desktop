@@ -10,7 +10,6 @@ using $MethodArray = $Array<::java::lang::reflect::Method>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $SoftReference = ::java::lang::ref::SoftReference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $Method = ::java::lang::reflect::Method;

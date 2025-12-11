@@ -10,7 +10,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
-using $SurfaceData = ::sun::java2d::SurfaceData;
 using $ValidatePipe = ::sun::java2d::pipe::ValidatePipe;
 using $XRSurfaceData = ::sun::java2d::xr::XRSurfaceData;
 

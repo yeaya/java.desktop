@@ -12,13 +12,10 @@
 using $EventDispatchThread = ::java::awt::EventDispatchThread;
 using $EventQueue = ::java::awt::EventQueue;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $ClassLoader = ::java::lang::ClassLoader;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ThreadGroup = ::java::lang::ThreadGroup;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $AWTAutoShutdown = ::sun::awt::AWTAutoShutdown;
 
 namespace java {

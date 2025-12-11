@@ -72,7 +72,6 @@
 #undef TRANSLUCENT
 
 using $AlphaComposite = ::java::awt::AlphaComposite;
-using $Composite = ::java::awt::Composite;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
@@ -92,10 +91,8 @@ using $SunHints = ::sun::awt::SunHints;
 using $SunToolkit = ::sun::awt::SunToolkit;
 using $X11ComponentPeer = ::sun::awt::X11ComponentPeer;
 using $X11GraphicsConfig = ::sun::awt::X11GraphicsConfig;
-using $PixelConverter = ::sun::awt::image::PixelConverter;
 using $PixelConverter$ArgbPre = ::sun::awt::image::PixelConverter$ArgbPre;
 using $FontManagerNativeLibrary = ::sun::font::FontManagerNativeLibrary;
-using $XRTextRenderer = ::sun::font::XRTextRenderer;
 using $InvalidPipeException = ::sun::java2d::InvalidPipeException;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
 using $SurfaceData = ::sun::java2d::SurfaceData;
@@ -115,7 +112,6 @@ using $Region = ::sun::java2d::pipe::Region;
 using $ShapeDrawPipe = ::sun::java2d::pipe::ShapeDrawPipe;
 using $TextPipe = ::sun::java2d::pipe::TextPipe;
 using $XSurfaceData = ::sun::java2d::x11::XSurfaceData;
-using $MaskTileManager = ::sun::java2d::xr::MaskTileManager;
 using $XRBackend = ::sun::java2d::xr::XRBackend;
 using $XRCompositeManager = ::sun::java2d::xr::XRCompositeManager;
 using $XRDrawImage = ::sun::java2d::xr::XRDrawImage;
@@ -247,25 +243,25 @@ $SurfaceType* XRSurfaceData::IntArgbPreX11 = nullptr;
 void XRSurfaceData::initIDs() {
 	$init(XRSurfaceData);
 	$prepareNativeStatic(XRSurfaceData, initIDs, void);
-	$invokeNativeStatic(XRSurfaceData, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
 void XRSurfaceData::XRInitSurface(int32_t depth, int32_t width, int32_t height, int64_t drawable, int32_t pictFormat) {
 	$prepareNative(XRSurfaceData, XRInitSurface, void, int32_t depth, int32_t width, int32_t height, int64_t drawable, int32_t pictFormat);
-	$invokeNative(XRSurfaceData, XRInitSurface, depth, width, height, drawable, pictFormat);
+	$invokeNative(depth, width, height, drawable, pictFormat);
 	$finishNative();
 }
 
 void XRSurfaceData::initXRPicture(int64_t xsdo, int32_t pictForm) {
 	$prepareNative(XRSurfaceData, initXRPicture, void, int64_t xsdo, int32_t pictForm);
-	$invokeNative(XRSurfaceData, initXRPicture, xsdo, pictForm);
+	$invokeNative(xsdo, pictForm);
 	$finishNative();
 }
 
 void XRSurfaceData::freeXSDOPicture(int64_t xsdo) {
 	$prepareNative(XRSurfaceData, freeXSDOPicture, void, int64_t xsdo);
-	$invokeNative(XRSurfaceData, freeXSDOPicture, xsdo);
+	$invokeNative(xsdo);
 	$finishNative();
 }
 

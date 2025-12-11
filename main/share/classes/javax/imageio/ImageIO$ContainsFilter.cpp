@@ -11,7 +11,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Method = ::java::lang::reflect::Method;
 using $ImageIO = ::javax::imageio::ImageIO;
-using $ServiceRegistry$Filter = ::javax::imageio::spi::ServiceRegistry$Filter;
 
 namespace javax {
 	namespace imageio {

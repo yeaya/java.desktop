@@ -25,7 +25,6 @@
 #undef FALSE
 #undef LEADING
 
-using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $ObjectInputStream = ::java::io::ObjectInputStream;

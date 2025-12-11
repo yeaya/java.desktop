@@ -6,7 +6,6 @@
 #include <jcpp.h>
 
 using $AudioFormatArray = $Array<::javax::sound::sampled::AudioFormat>;
-using $DirectAudioDevice = ::com::sun::media::sound::DirectAudioDevice;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

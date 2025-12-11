@@ -18,16 +18,28 @@ if(JCPP_OS MATCHES "linux")
 	include_directories("../main/linux/include")
 endif()
 
+if(JCPP_OS MATCHES "macos")
+	include_directories("../main/macos/include")
+endif()
+
 if(JCPP_OS MATCHES "windows")
 	include_directories("../main/windows/include")
 endif()
 
 add_subdirectory("share/classes")
 
-aux_source_directory("share" source_SRCS)
+if(JCPP_SUBSYSTEM MATCHES "WINDOWS")
+	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS")
+	add_definitions(-DJCPP_SUBSYSTEM_WINDOWS)
+	message(STATUS "set the WINDOWS subsystem for the executable")
+endif()
 
 if(JCPP_OS MATCHES "linux")
 	aux_source_directory("linux" source_SRCS)
+endif()
+
+if(JCPP_OS MATCHES "macos")
+	aux_source_directory("macos" source_SRCS)
 endif()
 
 if(JCPP_OS MATCHES "windows")
@@ -42,7 +54,7 @@ add_executable(${JCPP_PROJECT_FULL_NAME}-test "${local_object}" "${source_SRCS}"
 
 SET_TARGET_PROPERTIES(${JCPP_PROJECT_FULL_NAME}-test PROPERTIES OUTPUT_NAME "${JCPP_PROJECT_FULL_NAME}-test")
 if(JCPP_OS MATCHES "linux")
-	SET_TARGET_PROPERTIES(${JCPP_PROJECT_FULL_NAME}-test PROPERTIES INSTALL_RPATH "\\\$ORIGIN;\\\$ORIGIN/../lib")
+	SET_TARGET_PROPERTIES(${JCPP_PROJECT_FULL_NAME}-test PROPERTIES INSTALL_RPATH "\$ORIGIN;\$ORIGIN/../lib")
 elseif(JCPP_OS MATCHES "macos")
 	SET_TARGET_PROPERTIES(${JCPP_PROJECT_FULL_NAME}-test PROPERTIES INSTALL_RPATH ".;../lib")
 endif()
@@ -386,7 +398,6 @@ add_test(NAME bug4473075 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> b
 add_test(NAME bug4496801 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug4496801)
 add_test(NAME bug4529206 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug4529206)
 add_test(NAME bug4708809 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug4708809)
-add_test(NAME bug4714674 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug4714674)
 add_test(NAME bug4726194 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug4726194)
 add_test(NAME bug4743225 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug4743225)
 add_test(NAME bug4760494 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug4760494)
@@ -545,6 +556,10 @@ add_test(NAME bug8081411 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> b
 add_test(NAME bug8132119 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug8132119)
 add_test(NAME bug8134721 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug8134721)
 add_test(NAME bug8158734 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug8158734)
+
+if(JCPP_OS MATCHES "macos")
+	add_test(NAME bug7013453 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug7013453)
+endif()
 
 if(JCPP_OS MATCHES "windows")
 	add_test(NAME bug7013453 COMMAND $<TARGET_FILE:${JCPP_PROJECT_FULL_NAME}-test> bug7013453)

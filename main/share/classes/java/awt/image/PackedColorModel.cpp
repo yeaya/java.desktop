@@ -17,7 +17,6 @@ using $Transparency = ::java::awt::Transparency;
 using $ColorSpace = ::java::awt::color::ColorSpace;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $DataBuffer = ::java::awt::image::DataBuffer;
-using $Raster = ::java::awt::image::Raster;
 using $SampleModel = ::java::awt::image::SampleModel;
 using $SinglePixelPackedSampleModel = ::java::awt::image::SinglePixelPackedSampleModel;
 using $WritableRaster = ::java::awt::image::WritableRaster;

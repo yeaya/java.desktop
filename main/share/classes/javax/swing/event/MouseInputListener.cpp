@@ -4,7 +4,6 @@
 #include <jcpp.h>
 
 using $MouseListener = ::java::awt::event::MouseListener;
-using $MouseMotionListener = ::java::awt::event::MouseMotionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

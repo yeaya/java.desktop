@@ -17,7 +17,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JRadioButton = ::javax::swing::JRadioButton;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $UIManager = ::javax::swing::UIManager;

@@ -22,7 +22,6 @@ using $Control$Type = ::javax::sound::sampled::Control$Type;
 using $DataLine$Info = ::javax::sound::sampled::DataLine$Info;
 using $Line$Info = ::javax::sound::sampled::Line$Info;
 using $LineListener = ::javax::sound::sampled::LineListener;
-using $SourceDataLine = ::javax::sound::sampled::SourceDataLine;
 
 namespace com {
 	namespace sun {

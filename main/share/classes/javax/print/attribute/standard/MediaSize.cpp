@@ -26,7 +26,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $HashMap = ::java::util::HashMap;
 using $Vector = ::java::util::Vector;
-using $Attribute = ::javax::print::attribute::Attribute;
 using $Size2DSyntax = ::javax::print::attribute::Size2DSyntax;
 using $MediaSize$Engineering = ::javax::print::attribute::standard::MediaSize$Engineering;
 using $MediaSize$ISO = ::javax::print::attribute::standard::MediaSize$ISO;

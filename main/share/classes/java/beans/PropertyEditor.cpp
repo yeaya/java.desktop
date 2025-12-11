@@ -6,10 +6,6 @@
 #include <java/beans/PropertyChangeListener.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
-using $Graphics = ::java::awt::Graphics;
-using $Rectangle = ::java::awt::Rectangle;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

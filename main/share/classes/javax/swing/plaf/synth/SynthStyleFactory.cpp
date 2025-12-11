@@ -7,9 +7,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
-using $Region = ::javax::swing::plaf::synth::Region;
-using $SynthStyle = ::javax::swing::plaf::synth::SynthStyle;
 
 namespace javax {
 	namespace swing {

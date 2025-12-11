@@ -287,19 +287,19 @@ void DebugSettings::println(Object$* object) {
 
 void DebugSettings::setCTracingOn(bool enabled) {
 	$prepareNative0(_METHOD_INDEX_setCTracingOn$13, DebugSettings, setCTracingOn, void, bool enabled);
-	$invokeNative(DebugSettings, setCTracingOn, enabled);
+	$invokeNative(enabled);
 	$finishNative();
 }
 
 void DebugSettings::setCTracingOn(bool enabled, $String* file) {
 	$prepareNative0(_METHOD_INDEX_setCTracingOn$14, DebugSettings, setCTracingOn, void, bool enabled, $String* file);
-	$invokeNative(DebugSettings, setCTracingOn, enabled, file);
+	$invokeNative(enabled, file);
 	$finishNative();
 }
 
 void DebugSettings::setCTracingOn(bool enabled, $String* file, int32_t line) {
 	$prepareNative0(_METHOD_INDEX_setCTracingOn$15, DebugSettings, setCTracingOn, void, bool enabled, $String* file, int32_t line);
-	$invokeNative(DebugSettings, setCTracingOn, enabled, file, line);
+	$invokeNative(enabled, file, line);
 	$finishNative();
 }
 

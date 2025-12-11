@@ -22,23 +22,16 @@
 
 using $AWTEvent = ::java::awt::AWTEvent;
 using $Font = ::java::awt::Font;
-using $MenuComponent = ::java::awt::MenuComponent;
-using $MenuContainer = ::java::awt::MenuContainer;
 using $MenuItem = ::java::awt::MenuItem;
 using $MenuShortcut = ::java::awt::MenuShortcut;
-using $MenuItemPeer = ::java::awt::peer::MenuItemPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Error = ::java::lang::Error;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InternalError = ::java::lang::InternalError;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $Runnable = ::java::lang::Runnable;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
-using $AppContext = ::sun::awt::AppContext;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $WMenuBarPeer = ::sun::awt::windows::WMenuBarPeer;
 using $WMenuItemPeer$1 = ::sun::awt::windows::WMenuItemPeer$1;
 using $WMenuItemPeer$2 = ::sun::awt::windows::WMenuItemPeer$2;
@@ -149,7 +142,7 @@ $Font* WMenuItemPeer::defaultMenuFont = nullptr;
 
 void WMenuItemPeer::_dispose() {
 	$prepareNative(WMenuItemPeer, _dispose, void);
-	$invokeNative(WMenuItemPeer, _dispose);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -183,7 +176,7 @@ void WMenuItemPeer::setLabel($String* label) {
 
 void WMenuItemPeer::_setLabel($String* label) {
 	$prepareNative(WMenuItemPeer, _setLabel, void, $String* label);
-	$invokeNative(WMenuItemPeer, _setLabel, label);
+	$invokeNative(label);
 	$finishNative();
 }
 
@@ -223,13 +216,13 @@ void WMenuItemPeer::postEvent($AWTEvent* event) {
 
 void WMenuItemPeer::create($WMenuPeer* parent) {
 	$prepareNative(WMenuItemPeer, create, void, $WMenuPeer* parent);
-	$invokeNative(WMenuItemPeer, create, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 
 void WMenuItemPeer::enable(bool e) {
 	$prepareNative(WMenuItemPeer, enable, void, bool e);
-	$invokeNative(WMenuItemPeer, enable, e);
+	$invokeNative(e);
 	$finishNative();
 }
 
@@ -245,13 +238,13 @@ $Font* WMenuItemPeer::getDefaultFont() {
 void WMenuItemPeer::initIDs() {
 	$init(WMenuItemPeer);
 	$prepareNativeStatic(WMenuItemPeer, initIDs, void);
-	$invokeNativeStatic(WMenuItemPeer, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
 void WMenuItemPeer::_setFont($Font* f) {
 	$prepareNative(WMenuItemPeer, _setFont, void, $Font* f);
-	$invokeNative(WMenuItemPeer, _setFont, f);
+	$invokeNative(f);
 	$finishNative();
 }
 

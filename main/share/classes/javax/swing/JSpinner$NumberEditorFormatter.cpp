@@ -14,9 +14,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NumberFormat = ::java::text::NumberFormat;
-using $JSpinner = ::javax::swing::JSpinner;
 using $SpinnerNumberModel = ::javax::swing::SpinnerNumberModel;
-using $DefaultFormatter = ::javax::swing::text::DefaultFormatter;
 using $NumberFormatter = ::javax::swing::text::NumberFormatter;
 
 namespace javax {

@@ -17,9 +17,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Module = ::java::lang::Module;
-using $NullPointerException = ::java::lang::NullPointerException;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
-using $UIDefaults = ::javax::swing::UIDefaults;
 
 namespace javax {
 	namespace swing {

@@ -5,14 +5,12 @@
 #include <javax/swing/text/html/CSS.h>
 #include <jcpp.h>
 
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
 using $View = ::javax::swing::text::View;
-using $CSS = ::javax::swing::text::html::CSS;
 
 namespace javax {
 	namespace swing {

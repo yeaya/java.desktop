@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $StateTrackableDelegate = ::sun::java2d::StateTrackableDelegate;
-using $StateTracker = ::sun::java2d::StateTracker;
 
 namespace sun {
 	namespace java2d {

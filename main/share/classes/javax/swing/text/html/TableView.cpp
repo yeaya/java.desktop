@@ -86,11 +86,10 @@ using $DocumentEvent$ElementChange = ::javax::swing::event::DocumentEvent$Elemen
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $BoxView = ::javax::swing::text::BoxView;
 using $CompositeView = ::javax::swing::text::CompositeView;
-using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
 using $FlowView = ::javax::swing::text::FlowView;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
-using $1ParagraphView = ::javax::swing::text::ParagraphView;
+using $ParagraphView = ::javax::swing::text::ParagraphView;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
 using $View = ::javax::swing::text::View;
 using $ViewFactory = ::javax::swing::text::ViewFactory;
@@ -102,7 +101,7 @@ using $CSS$LengthValue = ::javax::swing::text::html::CSS$LengthValue;
 using $HTML$Attribute = ::javax::swing::text::html::HTML$Attribute;
 using $HTML$Tag = ::javax::swing::text::html::HTML$Tag;
 using $HTMLDocument = ::javax::swing::text::html::HTMLDocument;
-using $ParagraphView = ::javax::swing::text::html::ParagraphView;
+using $1ParagraphView = ::javax::swing::text::html::ParagraphView;
 using $StyleSheet = ::javax::swing::text::html::StyleSheet;
 using $StyleSheet$BoxPainter = ::javax::swing::text::html::StyleSheet$BoxPainter;
 using $TableView$CellView = ::javax::swing::text::html::TableView$CellView;
@@ -815,7 +814,7 @@ $View* TableView::create($Element* elem) {
 				return $new($TableView$CellView, this, elem);
 			} else {
 				if (kind == $HTML$Tag::CAPTION) {
-					return $new($ParagraphView, elem);
+					return $new($1ParagraphView, elem);
 				}
 			}
 		}

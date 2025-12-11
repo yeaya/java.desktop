@@ -14,7 +14,6 @@
 #include <sun/awt/ComponentFactory.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Container = ::java::awt::Container;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
@@ -23,12 +22,10 @@ using $LayoutManager = ::java::awt::LayoutManager;
 using $Panel$AccessibleAWTPanel = ::java::awt::Panel$AccessibleAWTPanel;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $PanelPeer = ::java::awt::peer::PanelPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $ComponentFactory = ::sun::awt::ComponentFactory;
 

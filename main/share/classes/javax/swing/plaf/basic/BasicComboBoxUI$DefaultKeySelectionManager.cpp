@@ -16,8 +16,6 @@ using $ComboBoxModel = ::javax::swing::ComboBoxModel;
 using $JComboBox = ::javax::swing::JComboBox;
 using $JComboBox$KeySelectionManager = ::javax::swing::JComboBox$KeySelectionManager;
 using $JList = ::javax::swing::JList;
-using $ListModel = ::javax::swing::ListModel;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $BasicComboBoxUI = ::javax::swing::plaf::basic::BasicComboBoxUI;
 using $Position$Bias = ::javax::swing::text::Position$Bias;
 

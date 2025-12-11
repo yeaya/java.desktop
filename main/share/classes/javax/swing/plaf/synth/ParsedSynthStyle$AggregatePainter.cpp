@@ -21,7 +21,6 @@ using $AbstractSequentialList = ::java::util::AbstractSequentialList;
 using $Iterator = ::java::util::Iterator;
 using $LinkedList = ::java::util::LinkedList;
 using $List = ::java::util::List;
-using $ParsedSynthStyle = ::javax::swing::plaf::synth::ParsedSynthStyle;
 using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
 using $SynthPainter = ::javax::swing::plaf::synth::SynthPainter;
 

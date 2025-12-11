@@ -28,7 +28,6 @@ using $TreeUI = ::javax::swing::plaf::TreeUI;
 using $BasicTreeUI = ::javax::swing::plaf::basic::BasicTreeUI;
 using $DefaultTreeCellRenderer = ::javax::swing::tree::DefaultTreeCellRenderer;
 using $TreeCellRenderer = ::javax::swing::tree::TreeCellRenderer;
-using $TreePath = ::javax::swing::tree::TreePath;
 
 namespace com {
 	namespace sun {

@@ -14,7 +14,6 @@
 #include <javax/swing/plaf/ToolTipUI.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $ObjectOutputStream = ::java::io::ObjectOutputStream;
@@ -25,7 +24,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $Objects = ::java::util::Objects;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $JComponent = ::javax::swing::JComponent;
 using $JComponent$AccessibleJComponent = ::javax::swing::JComponent$AccessibleJComponent;

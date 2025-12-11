@@ -17,8 +17,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NoSuchMethodException = ::java::lang::NoSuchMethodException;
-using $Method = ::java::lang::reflect::Method;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $JTextComponent$4 = ::javax::swing::text::JTextComponent$4;
 
 namespace javax {

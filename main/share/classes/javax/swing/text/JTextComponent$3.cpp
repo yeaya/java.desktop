@@ -17,7 +17,6 @@
 #include <sun/swing/SwingUtilities2.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $AssertionError = ::java::lang::AssertionError;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -28,7 +27,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $Callable = ::java::util::concurrent::Callable;
@@ -36,7 +34,6 @@ using $ExecutionException = ::java::util::concurrent::ExecutionException;
 using $Future = ::java::util::concurrent::Future;
 using $FutureTask = ::java::util::concurrent::FutureTask;
 using $RunnableFuture = ::java::util::concurrent::RunnableFuture;
-using $JComponent = ::javax::swing::JComponent;
 using $Document = ::javax::swing::text::Document;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $JTextComponent$3$1 = ::javax::swing::text::JTextComponent$3$1;

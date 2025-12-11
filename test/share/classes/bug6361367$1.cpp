@@ -11,9 +11,7 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Callable = ::java::util::concurrent::Callable;
 using $AtomicReference = ::java::util::concurrent::atomic::AtomicReference;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $FieldInfo _bug6361367$1_FieldInfo_[] = {
 	{"val$ref", "Ljava/util/concurrent/atomic/AtomicReference;", nullptr, $FINAL | $SYNTHETIC, $field(bug6361367$1, val$ref)},

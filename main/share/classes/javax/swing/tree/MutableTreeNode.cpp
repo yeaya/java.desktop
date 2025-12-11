@@ -4,7 +4,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $TreeNode = ::javax::swing::tree::TreeNode;
 
 namespace javax {
 	namespace swing {

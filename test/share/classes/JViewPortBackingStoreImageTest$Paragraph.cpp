@@ -4,8 +4,6 @@
 #include <JViewPortBackingStoreImageTest.h>
 #include <jcpp.h>
 
-using $JViewPortBackingStoreImageTest = ::JViewPortBackingStoreImageTest;
-using $JViewPortBackingStoreImageTest$AttributedContent = ::JViewPortBackingStoreImageTest$AttributedContent;
 using $JViewPortBackingStoreImageTest$AttributedContentArray = $Array<JViewPortBackingStoreImageTest$AttributedContent>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

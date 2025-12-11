@@ -13,7 +13,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ThreadGroup = ::java::lang::ThreadGroup;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $FetcherInfo = ::sun::awt::image::FetcherInfo;
 using $ImageFetcher = ::sun::awt::image::ImageFetcher;
 

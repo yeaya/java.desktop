@@ -88,7 +88,7 @@ void FillRect::init$(int64_t pNativePrim, $SurfaceType* srctype, $CompositeType*
 
 void FillRect::FillRect$($SunGraphics2D* sg2d, $SurfaceData* dest, int32_t x, int32_t y, int32_t w, int32_t h) {
 	$prepareNative(FillRect, FillRect$, void, $SunGraphics2D* sg2d, $SurfaceData* dest, int32_t x, int32_t y, int32_t w, int32_t h);
-	$invokeNative(FillRect, FillRect$, sg2d, dest, x, y, w, h);
+	$invokeNative(sg2d, dest, x, y, w, h);
 	$finishNative();
 }
 

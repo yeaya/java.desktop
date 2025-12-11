@@ -8,7 +8,6 @@
 #undef MENU_ITEM
 #undef RADIO_BUTTON_MENU_ITEM
 
-using $CloseOnMouseClickPropertyTest = ::CloseOnMouseClickPropertyTest;
 using $CloseOnMouseClickPropertyTest$TestTypeArray = $Array<CloseOnMouseClickPropertyTest$TestType>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;

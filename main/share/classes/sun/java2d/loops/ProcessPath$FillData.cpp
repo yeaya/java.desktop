@@ -14,7 +14,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractList = ::java::util::AbstractList;
 using $List = ::java::util::List;
 using $Vector = ::java::util::Vector;
-using $ProcessPath = ::sun::java2d::loops::ProcessPath;
 using $ProcessPath$Point = ::sun::java2d::loops::ProcessPath$Point;
 
 namespace sun {

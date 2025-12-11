@@ -15,7 +15,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $JScrollBar = ::javax::swing::JScrollBar;
 using $ChangeEvent = ::javax::swing::event::ChangeEvent;
-using $ChangeListener = ::javax::swing::event::ChangeListener;
 using $BasicScrollBarUI = ::javax::swing::plaf::basic::BasicScrollBarUI;
 
 namespace javax {

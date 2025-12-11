@@ -6,7 +6,6 @@
 #include <javax/swing/tree/DefaultTreeCellRenderer.h>
 #include <jcpp.h>
 
-using $HeadlessJTree = ::HeadlessJTree;
 using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

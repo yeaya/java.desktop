@@ -9,7 +9,6 @@
 
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $ObjectOutputStream = ::java::io::ObjectOutputStream;
-using $Serializable = ::java::io::Serializable;
 using $ClassCastException = ::java::lang::ClassCastException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

@@ -10,7 +10,6 @@ using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $SetOfIntegerSyntax = ::javax::print::attribute::SetOfIntegerSyntax;
-using $SupportedValuesAttribute = ::javax::print::attribute::SupportedValuesAttribute;
 
 namespace javax {
 	namespace print {

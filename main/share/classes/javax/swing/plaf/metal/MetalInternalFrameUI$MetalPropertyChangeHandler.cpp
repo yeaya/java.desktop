@@ -12,12 +12,10 @@
 #undef IS_PALETTE_KEY
 
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
 using $InternalFrameUI = ::javax::swing::plaf::InternalFrameUI;
 using $MetalInternalFrameUI = ::javax::swing::plaf::metal::MetalInternalFrameUI;

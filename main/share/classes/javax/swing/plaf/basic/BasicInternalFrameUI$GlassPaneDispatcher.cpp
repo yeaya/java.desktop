@@ -10,7 +10,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $MouseInputListener = ::javax::swing::event::MouseInputListener;
 using $BasicInternalFrameUI = ::javax::swing::plaf::basic::BasicInternalFrameUI;
 using $BasicInternalFrameUI$Handler = ::javax::swing::plaf::basic::BasicInternalFrameUI$Handler;
 

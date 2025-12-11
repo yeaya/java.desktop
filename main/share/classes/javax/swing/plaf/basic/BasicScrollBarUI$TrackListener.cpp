@@ -31,7 +31,6 @@
 
 using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
-using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
@@ -51,8 +50,6 @@ using $JScrollPane = ::javax::swing::JScrollPane;
 using $JViewport = ::javax::swing::JViewport;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $Timer = ::javax::swing::Timer;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
-using $ListUI = ::javax::swing::plaf::ListUI;
 using $BasicScrollBarUI = ::javax::swing::plaf::basic::BasicScrollBarUI;
 using $BasicScrollBarUI$ScrollListener = ::javax::swing::plaf::basic::BasicScrollBarUI$ScrollListener;
 using $DefaultLookup = ::sun::swing::DefaultLookup;

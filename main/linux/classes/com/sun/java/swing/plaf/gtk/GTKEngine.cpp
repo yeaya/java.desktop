@@ -168,7 +168,6 @@ using $GTKEngine$WidgetType = ::com::sun::java::swing::plaf::gtk::GTKEngine$Widg
 using $GTKLookAndFeel = ::com::sun::java::swing::plaf::gtk::GTKLookAndFeel;
 using $GTKRegion = ::com::sun::java::swing::plaf::gtk::GTKRegion;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
@@ -186,7 +185,6 @@ using $PackedColorModel = ::java::awt::image::PackedColorModel;
 using $Raster = ::java::awt::image::Raster;
 using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
@@ -342,125 +340,125 @@ void GTKEngine::init$() {
 
 void GTKEngine::native_paint_arrow(int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t arrowType) {
 	$prepareNative(GTKEngine, native_paint_arrow, void, int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t arrowType);
-	$invokeNative(GTKEngine, native_paint_arrow, widgetType, state, shadowType, detail, x, y, width, height, arrowType);
+	$invokeNative(widgetType, state, shadowType, detail, x, y, width, height, arrowType);
 	$finishNative();
 }
 
 void GTKEngine::native_paint_box(int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t synthState, int32_t dir) {
 	$prepareNative(GTKEngine, native_paint_box, void, int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t synthState, int32_t dir);
-	$invokeNative(GTKEngine, native_paint_box, widgetType, state, shadowType, detail, x, y, width, height, synthState, dir);
+	$invokeNative(widgetType, state, shadowType, detail, x, y, width, height, synthState, dir);
 	$finishNative();
 }
 
 void GTKEngine::native_paint_box_gap(int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t gapSide, int32_t gapX, int32_t gapWidth) {
 	$prepareNative(GTKEngine, native_paint_box_gap, void, int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t gapSide, int32_t gapX, int32_t gapWidth);
-	$invokeNative(GTKEngine, native_paint_box_gap, widgetType, state, shadowType, detail, x, y, width, height, gapSide, gapX, gapWidth);
+	$invokeNative(widgetType, state, shadowType, detail, x, y, width, height, gapSide, gapX, gapWidth);
 	$finishNative();
 }
 
 void GTKEngine::native_paint_check(int32_t widgetType, int32_t synthState, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height) {
 	$prepareNative(GTKEngine, native_paint_check, void, int32_t widgetType, int32_t synthState, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height);
-	$invokeNative(GTKEngine, native_paint_check, widgetType, synthState, detail, x, y, width, height);
+	$invokeNative(widgetType, synthState, detail, x, y, width, height);
 	$finishNative();
 }
 
 void GTKEngine::native_paint_expander(int32_t widgetType, int32_t state, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t expanderStyle) {
 	$prepareNative(GTKEngine, native_paint_expander, void, int32_t widgetType, int32_t state, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t expanderStyle);
-	$invokeNative(GTKEngine, native_paint_expander, widgetType, state, detail, x, y, width, height, expanderStyle);
+	$invokeNative(widgetType, state, detail, x, y, width, height, expanderStyle);
 	$finishNative();
 }
 
 void GTKEngine::native_paint_extension(int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t placement) {
 	$prepareNative(GTKEngine, native_paint_extension, void, int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t placement);
-	$invokeNative(GTKEngine, native_paint_extension, widgetType, state, shadowType, detail, x, y, width, height, placement);
+	$invokeNative(widgetType, state, shadowType, detail, x, y, width, height, placement);
 	$finishNative();
 }
 
 void GTKEngine::native_paint_flat_box(int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, bool hasFocus) {
 	$prepareNative(GTKEngine, native_paint_flat_box, void, int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, bool hasFocus);
-	$invokeNative(GTKEngine, native_paint_flat_box, widgetType, state, shadowType, detail, x, y, width, height, hasFocus);
+	$invokeNative(widgetType, state, shadowType, detail, x, y, width, height, hasFocus);
 	$finishNative();
 }
 
 void GTKEngine::native_paint_focus(int32_t widgetType, int32_t state, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height) {
 	$prepareNative(GTKEngine, native_paint_focus, void, int32_t widgetType, int32_t state, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height);
-	$invokeNative(GTKEngine, native_paint_focus, widgetType, state, detail, x, y, width, height);
+	$invokeNative(widgetType, state, detail, x, y, width, height);
 	$finishNative();
 }
 
 void GTKEngine::native_paint_handle(int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t orientation) {
 	$prepareNative(GTKEngine, native_paint_handle, void, int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t orientation);
-	$invokeNative(GTKEngine, native_paint_handle, widgetType, state, shadowType, detail, x, y, width, height, orientation);
+	$invokeNative(widgetType, state, shadowType, detail, x, y, width, height, orientation);
 	$finishNative();
 }
 
 void GTKEngine::native_paint_hline(int32_t widgetType, int32_t state, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height) {
 	$prepareNative(GTKEngine, native_paint_hline, void, int32_t widgetType, int32_t state, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height);
-	$invokeNative(GTKEngine, native_paint_hline, widgetType, state, detail, x, y, width, height);
+	$invokeNative(widgetType, state, detail, x, y, width, height);
 	$finishNative();
 }
 
 void GTKEngine::native_paint_option(int32_t widgetType, int32_t synthState, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height) {
 	$prepareNative(GTKEngine, native_paint_option, void, int32_t widgetType, int32_t synthState, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height);
-	$invokeNative(GTKEngine, native_paint_option, widgetType, synthState, detail, x, y, width, height);
+	$invokeNative(widgetType, synthState, detail, x, y, width, height);
 	$finishNative();
 }
 
 void GTKEngine::native_paint_shadow(int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t synthState, int32_t dir) {
 	$prepareNative(GTKEngine, native_paint_shadow, void, int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t synthState, int32_t dir);
-	$invokeNative(GTKEngine, native_paint_shadow, widgetType, state, shadowType, detail, x, y, width, height, synthState, dir);
+	$invokeNative(widgetType, state, shadowType, detail, x, y, width, height, synthState, dir);
 	$finishNative();
 }
 
 void GTKEngine::native_paint_slider(int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t orientation, bool hasFocus) {
 	$prepareNative(GTKEngine, native_paint_slider, void, int32_t widgetType, int32_t state, int32_t shadowType, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height, int32_t orientation, bool hasFocus);
-	$invokeNative(GTKEngine, native_paint_slider, widgetType, state, shadowType, detail, x, y, width, height, orientation, hasFocus);
+	$invokeNative(widgetType, state, shadowType, detail, x, y, width, height, orientation, hasFocus);
 	$finishNative();
 }
 
 void GTKEngine::native_paint_vline(int32_t widgetType, int32_t state, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height) {
 	$prepareNative(GTKEngine, native_paint_vline, void, int32_t widgetType, int32_t state, $String* detail, int32_t x, int32_t y, int32_t width, int32_t height);
-	$invokeNative(GTKEngine, native_paint_vline, widgetType, state, detail, x, y, width, height);
+	$invokeNative(widgetType, state, detail, x, y, width, height);
 	$finishNative();
 }
 
 void GTKEngine::native_paint_background(int32_t widgetType, int32_t state, int32_t x, int32_t y, int32_t width, int32_t height) {
 	$prepareNative(GTKEngine, native_paint_background, void, int32_t widgetType, int32_t state, int32_t x, int32_t y, int32_t width, int32_t height);
-	$invokeNative(GTKEngine, native_paint_background, widgetType, state, x, y, width, height);
+	$invokeNative(widgetType, state, x, y, width, height);
 	$finishNative();
 }
 
 $Object* GTKEngine::native_get_gtk_setting(int32_t property) {
 	$var($Object, $ret, nullptr);
 	$prepareNative(GTKEngine, native_get_gtk_setting, $Object*, int32_t property);
-	$assign($ret, $invokeNative(GTKEngine, native_get_gtk_setting, property));
+	$assign($ret, $invokeNativeObject(property));
 	$finishNative();
 	return $ret;
 }
 
 void GTKEngine::nativeSetRangeValue(int32_t widgetType, double value, double min, double max, double visible) {
 	$prepareNative(GTKEngine, nativeSetRangeValue, void, int32_t widgetType, double value, double min, double max, double visible);
-	$invokeNative(GTKEngine, nativeSetRangeValue, widgetType, value, min, max, visible);
+	$invokeNative(widgetType, value, min, max, visible);
 	$finishNative();
 }
 
 void GTKEngine::nativeStartPainting(int32_t w, int32_t h) {
 	$prepareNative(GTKEngine, nativeStartPainting, void, int32_t w, int32_t h);
-	$invokeNative(GTKEngine, nativeStartPainting, w, h);
+	$invokeNative(w, h);
 	$finishNative();
 }
 
 int32_t GTKEngine::nativeFinishPainting($ints* buffer, int32_t width, int32_t height) {
 	int32_t $ret = 0;
 	$prepareNative(GTKEngine, nativeFinishPainting, int32_t, $ints* buffer, int32_t width, int32_t height);
-	$ret = $invokeNative(GTKEngine, nativeFinishPainting, buffer, width, height);
+	$ret = $invokeNative(buffer, width, height);
 	$finishNative();
 	return $ret;
 }
 
 void GTKEngine::native_switch_theme() {
 	$prepareNative(GTKEngine, native_switch_theme, void);
-	$invokeNative(GTKEngine, native_switch_theme);
+	$invokeNative();
 	$finishNative();
 }
 

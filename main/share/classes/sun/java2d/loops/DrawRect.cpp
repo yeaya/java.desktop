@@ -84,7 +84,7 @@ void DrawRect::init$(int64_t pNativePrim, $SurfaceType* srctype, $CompositeType*
 
 void DrawRect::DrawRect$($SunGraphics2D* sg2d, $SurfaceData* dest, int32_t x1, int32_t y1, int32_t w, int32_t h) {
 	$prepareNative(DrawRect, DrawRect$, void, $SunGraphics2D* sg2d, $SurfaceData* dest, int32_t x1, int32_t y1, int32_t w, int32_t h);
-	$invokeNative(DrawRect, DrawRect$, sg2d, dest, x1, y1, w, h);
+	$invokeNative(sg2d, dest, x1, y1, w, h);
 	$finishNative();
 }
 

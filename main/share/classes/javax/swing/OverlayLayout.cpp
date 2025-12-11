@@ -16,7 +16,6 @@ using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Insets = ::java::awt::Insets;
 using $LayoutManager2 = ::java::awt::LayoutManager2;
-using $Serializable = ::java::io::Serializable;
 using $Attribute = ::java::lang::Attribute;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;

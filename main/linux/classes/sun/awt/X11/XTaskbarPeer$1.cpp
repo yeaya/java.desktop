@@ -10,15 +10,12 @@
 #undef PROGRESS_VALUE
 #undef USER_ATTENTION
 
-using $Taskbar$FeatureArray = $Array<::java::awt::Taskbar$Feature>;
 using $Taskbar$Feature = ::java::awt::Taskbar$Feature;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $XTaskbarPeer = ::sun::awt::X11::XTaskbarPeer;
 
 namespace sun {
 	namespace awt {

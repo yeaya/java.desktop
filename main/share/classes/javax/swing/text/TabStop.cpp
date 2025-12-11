@@ -15,7 +15,6 @@
 #undef LEAD_THICKLINE
 #undef LEAD_UNDERLINE
 
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Math = ::java::lang::Math;

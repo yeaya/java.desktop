@@ -13,10 +13,8 @@ using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $EmptyStackException = ::java::util::EmptyStackException;
-using $Enumeration = ::java::util::Enumeration;
 using $NoSuchElementException = ::java::util::NoSuchElementException;
 using $Stack = ::java::util::Stack;
-using $Vector = ::java::util::Vector;
 using $DefaultMutableTreeNode = ::javax::swing::tree::DefaultMutableTreeNode;
 using $TreeNode = ::javax::swing::tree::TreeNode;
 

@@ -7,12 +7,10 @@
 #include <jcpp.h>
 
 using $bug4242228 = ::bug4242228;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JFrame = ::javax::swing::JFrame;
 using $JTabbedPane = ::javax::swing::JTabbedPane;
 

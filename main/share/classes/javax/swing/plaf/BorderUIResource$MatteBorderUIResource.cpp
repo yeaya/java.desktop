@@ -12,8 +12,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Icon = ::javax::swing::Icon;
 using $MatteBorder = ::javax::swing::border::MatteBorder;
-using $BorderUIResource = ::javax::swing::plaf::BorderUIResource;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace javax {
 	namespace swing {

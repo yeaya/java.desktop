@@ -23,7 +23,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DocumentEvent = ::javax::swing::event::DocumentEvent;
 using $DocumentEvent$ElementChange = ::javax::swing::event::DocumentEvent$ElementChange;
-using $BasicTextAreaUI$PlainParagraph = ::javax::swing::plaf::basic::BasicTextAreaUI$PlainParagraph;
 using $CompositeView = ::javax::swing::text::CompositeView;
 using $Element = ::javax::swing::text::Element;
 using $GlyphView = ::javax::swing::text::GlyphView;

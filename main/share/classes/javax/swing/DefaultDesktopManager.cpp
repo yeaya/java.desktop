@@ -46,7 +46,6 @@ using $Rectangle = ::java::awt::Rectangle;
 using $Toolkit = ::java::awt::Toolkit;
 using $Window = ::java::awt::Window;
 using $PropertyVetoException = ::java::beans::PropertyVetoException;
-using $Serializable = ::java::io::Serializable;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

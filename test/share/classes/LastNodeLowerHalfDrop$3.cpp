@@ -15,18 +15,15 @@
 #include <jcpp.h>
 
 using $LastNodeLowerHalfDrop = ::LastNodeLowerHalfDrop;
-using $TreeNodeArray = $Array<::javax::swing::tree::TreeNode>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JComponent = ::javax::swing::JComponent;
 using $JTree = ::javax::swing::JTree;
 using $SwingUtilities = ::javax::swing::SwingUtilities;

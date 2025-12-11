@@ -34,7 +34,6 @@ using $X11GraphicsConfig = ::sun::awt::X11GraphicsConfig;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $SurfaceDataProxy = ::sun::java2d::SurfaceDataProxy;
 using $X11SurfaceData = ::sun::java2d::x11::X11SurfaceData;
-using $X11SurfaceData$X11PixmapSurfaceData = ::sun::java2d::x11::X11SurfaceData$X11PixmapSurfaceData;
 using $X11SurfaceDataProxy$Bitmask = ::sun::java2d::x11::X11SurfaceDataProxy$Bitmask;
 using $X11SurfaceDataProxy$Opaque = ::sun::java2d::x11::X11SurfaceDataProxy$Opaque;
 using $XSurfaceData = ::sun::java2d::x11::XSurfaceData;

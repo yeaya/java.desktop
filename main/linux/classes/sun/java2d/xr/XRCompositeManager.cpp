@@ -51,7 +51,6 @@ using $XRTextRenderer = ::sun::font::XRTextRenderer;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
 using $XORComposite = ::sun::java2d::loops::XORComposite;
 using $GrowableEltArray = ::sun::java2d::xr::GrowableEltArray;
-using $GrowableIntArray = ::sun::java2d::xr::GrowableIntArray;
 using $GrowableRectArray = ::sun::java2d::xr::GrowableRectArray;
 using $MaskTileManager = ::sun::java2d::xr::MaskTileManager;
 using $XRBackend = ::sun::java2d::xr::XRBackend;

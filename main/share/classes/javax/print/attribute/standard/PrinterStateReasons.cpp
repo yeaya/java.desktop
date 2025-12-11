@@ -22,7 +22,6 @@ using $Iterator = ::java::util::Iterator;
 using $Map = ::java::util::Map;
 using $Map$Entry = ::java::util::Map$Entry;
 using $Set = ::java::util::Set;
-using $PrintServiceAttribute = ::javax::print::attribute::PrintServiceAttribute;
 using $PrinterStateReason = ::javax::print::attribute::standard::PrinterStateReason;
 using $PrinterStateReasons$PrinterStateReasonSet = ::javax::print::attribute::standard::PrinterStateReasons$PrinterStateReasonSet;
 using $Severity = ::javax::print::attribute::standard::Severity;

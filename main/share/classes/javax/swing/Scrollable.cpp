@@ -4,8 +4,6 @@
 #include <java/awt/Rectangle.h>
 #include <jcpp.h>
 
-using $Dimension = ::java::awt::Dimension;
-using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

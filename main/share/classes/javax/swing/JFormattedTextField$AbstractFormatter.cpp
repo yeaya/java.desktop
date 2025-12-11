@@ -22,7 +22,6 @@ using $JFormattedTextField = ::javax::swing::JFormattedTextField;
 using $AbstractDocument = ::javax::swing::text::AbstractDocument;
 using $Document = ::javax::swing::text::Document;
 using $DocumentFilter = ::javax::swing::text::DocumentFilter;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $NavigationFilter = ::javax::swing::text::NavigationFilter;
 
 namespace javax {

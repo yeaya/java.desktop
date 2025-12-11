@@ -17,7 +17,6 @@ using $SoftPerformerArray = $Array<::com::sun::media::sound::SoftPerformer>;
 using $ModelDirectedPlayer = ::com::sun::media::sound::ModelDirectedPlayer;
 using $ModelDirector = ::com::sun::media::sound::ModelDirector;
 using $ModelInstrument = ::com::sun::media::sound::ModelInstrument;
-using $ModelPerformer = ::com::sun::media::sound::ModelPerformer;
 using $SoftPerformer = ::com::sun::media::sound::SoftPerformer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -26,7 +25,6 @@ using $Instrument = ::javax::sound::midi::Instrument;
 using $MidiChannel = ::javax::sound::midi::MidiChannel;
 using $Patch = ::javax::sound::midi::Patch;
 using $Soundbank = ::javax::sound::midi::Soundbank;
-using $SoundbankResource = ::javax::sound::midi::SoundbankResource;
 
 namespace com {
 	namespace sun {

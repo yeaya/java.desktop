@@ -56,13 +56,11 @@
 #undef Y_AXIS
 
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $LayoutManager2 = ::java::awt::LayoutManager2;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -75,7 +73,6 @@ using $List = ::java::util::List;
 using $Action = ::javax::swing::Action;
 using $ActionMap = ::javax::swing::ActionMap;
 using $BoxLayout = ::javax::swing::BoxLayout;
-using $ComponentInputMap = ::javax::swing::ComponentInputMap;
 using $InputMap = ::javax::swing::InputMap;
 using $JComponent = ::javax::swing::JComponent;
 using $JPopupMenu = ::javax::swing::JPopupMenu;

@@ -35,7 +35,6 @@
 using $PaintContext = ::java::awt::PaintContext;
 using $Rectangle = ::java::awt::Rectangle;
 using $RenderingHints = ::java::awt::RenderingHints;
-using $RenderingHints$Key = ::java::awt::RenderingHints$Key;
 using $TexturePaintContext$Any = ::java::awt::TexturePaintContext$Any;
 using $TexturePaintContext$Byte = ::java::awt::TexturePaintContext$Byte;
 using $TexturePaintContext$ByteFilter = ::java::awt::TexturePaintContext$ByteFilter;
@@ -56,7 +55,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $ByteInterleavedRaster = ::sun::awt::image::ByteInterleavedRaster;
 using $IntegerInterleavedRaster = ::sun::awt::image::IntegerInterleavedRaster;

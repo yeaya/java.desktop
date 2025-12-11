@@ -16,10 +16,8 @@
 #include <javax/swing/TransferHandler.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Cursor = ::java::awt::Cursor;
 using $Image = ::java::awt::Image;
-using $Point = ::java::awt::Point;
 using $Transferable = ::java::awt::datatransfer::Transferable;
 using $DragGestureEvent = ::java::awt::dnd::DragGestureEvent;
 using $DragGestureListener = ::java::awt::dnd::DragGestureListener;

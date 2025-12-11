@@ -6,12 +6,10 @@
 #include <sun/awt/AppContext.h>
 #include <jcpp.h>
 
-using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Effect$ArrayCache = ::javax::swing::plaf::nimbus::Effect$ArrayCache;
-using $Effect$EffectType = ::javax::swing::plaf::nimbus::Effect$EffectType;
 using $AppContext = ::sun::awt::AppContext;
 
 namespace javax {

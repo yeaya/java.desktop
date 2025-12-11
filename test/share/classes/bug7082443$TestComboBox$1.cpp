@@ -7,7 +7,6 @@
 #include <javax/swing/ListCellRenderer.h>
 #include <jcpp.h>
 
-using $bug7082443 = ::bug7082443;
 using $bug7082443$TestComboBox = ::bug7082443$TestComboBox;
 using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;

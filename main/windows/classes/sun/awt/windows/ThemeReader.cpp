@@ -139,7 +139,7 @@ bool ThemeReader::initThemes() {
 	$init(ThemeReader);
 	bool $ret = false;
 	$prepareNativeStatic(ThemeReader, initThemes, bool);
-	$ret = $invokeNativeStatic(ThemeReader, initThemes);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -255,7 +255,7 @@ $Long* ThemeReader::getTheme($String* widget) {
 void ThemeReader::paintBackground($ints* buffer, int64_t theme, int32_t part, int32_t state, int32_t x, int32_t y, int32_t w, int32_t h, int32_t stride) {
 	$init(ThemeReader);
 	$prepareNativeStatic(ThemeReader, paintBackground, void, $ints* buffer, int64_t theme, int32_t part, int32_t state, int32_t x, int32_t y, int32_t w, int32_t h, int32_t stride);
-	$invokeNativeStatic(ThemeReader, paintBackground, buffer, theme, part, state, x, y, w, h, stride);
+	$invokeNativeStatic(buffer, theme, part, state, x, y, w, h, stride);
 	$finishNativeStatic();
 }
 
@@ -282,7 +282,7 @@ $Insets* ThemeReader::getThemeMargins(int64_t theme, int32_t part, int32_t state
 	$init(ThemeReader);
 	$var($Insets, $ret, nullptr);
 	$prepareNativeStatic(ThemeReader, getThemeMargins, $Insets*, int64_t theme, int32_t part, int32_t state, int32_t marginType);
-	$assign($ret, $invokeNativeStatic(ThemeReader, getThemeMargins, theme, part, state, marginType));
+	$assign($ret, $invokeNativeStaticObject(theme, part, state, marginType));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -318,7 +318,7 @@ bool ThemeReader::isThemePartDefined(int64_t theme, int32_t part, int32_t state)
 	$init(ThemeReader);
 	bool $ret = false;
 	$prepareNativeStatic(ThemeReader, isThemePartDefined, bool, int64_t theme, int32_t part, int32_t state);
-	$ret = $invokeNativeStatic(ThemeReader, isThemePartDefined, theme, part, state);
+	$ret = $invokeNativeStatic(theme, part, state);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -354,7 +354,7 @@ $Color* ThemeReader::getColor(int64_t theme, int32_t part, int32_t state, int32_
 	$init(ThemeReader);
 	$var($Color, $ret, nullptr);
 	$prepareNativeStatic(ThemeReader, getColor, $Color*, int64_t theme, int32_t part, int32_t state, int32_t property);
-	$assign($ret, $invokeNativeStatic(ThemeReader, getColor, theme, part, state, property));
+	$assign($ret, $invokeNativeStaticObject(theme, part, state, property));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -390,7 +390,7 @@ int32_t ThemeReader::getInt(int64_t theme, int32_t part, int32_t state, int32_t 
 	$init(ThemeReader);
 	int32_t $ret = 0;
 	$prepareNativeStatic(ThemeReader, getInt, int32_t, int64_t theme, int32_t part, int32_t state, int32_t property);
-	$ret = $invokeNativeStatic(ThemeReader, getInt, theme, part, state, property);
+	$ret = $invokeNativeStatic(theme, part, state, property);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -426,7 +426,7 @@ int32_t ThemeReader::getEnum(int64_t theme, int32_t part, int32_t state, int32_t
 	$init(ThemeReader);
 	int32_t $ret = 0;
 	$prepareNativeStatic(ThemeReader, getEnum, int32_t, int64_t theme, int32_t part, int32_t state, int32_t property);
-	$ret = $invokeNativeStatic(ThemeReader, getEnum, theme, part, state, property);
+	$ret = $invokeNativeStatic(theme, part, state, property);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -462,7 +462,7 @@ bool ThemeReader::getBoolean(int64_t theme, int32_t part, int32_t state, int32_t
 	$init(ThemeReader);
 	bool $ret = false;
 	$prepareNativeStatic(ThemeReader, getBoolean, bool, int64_t theme, int32_t part, int32_t state, int32_t property);
-	$ret = $invokeNativeStatic(ThemeReader, getBoolean, theme, part, state, property);
+	$ret = $invokeNativeStatic(theme, part, state, property);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -498,7 +498,7 @@ bool ThemeReader::getSysBoolean(int64_t theme, int32_t property) {
 	$init(ThemeReader);
 	bool $ret = false;
 	$prepareNativeStatic(ThemeReader, getSysBoolean, bool, int64_t theme, int32_t property);
-	$ret = $invokeNativeStatic(ThemeReader, getSysBoolean, theme, property);
+	$ret = $invokeNativeStatic(theme, property);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -534,7 +534,7 @@ $Point* ThemeReader::getPoint(int64_t theme, int32_t part, int32_t state, int32_
 	$init(ThemeReader);
 	$var($Point, $ret, nullptr);
 	$prepareNativeStatic(ThemeReader, getPoint, $Point*, int64_t theme, int32_t part, int32_t state, int32_t property);
-	$assign($ret, $invokeNativeStatic(ThemeReader, getPoint, theme, part, state, property));
+	$assign($ret, $invokeNativeStaticObject(theme, part, state, property));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -570,7 +570,7 @@ $Dimension* ThemeReader::getPosition(int64_t theme, int32_t part, int32_t state,
 	$init(ThemeReader);
 	$var($Dimension, $ret, nullptr);
 	$prepareNativeStatic(ThemeReader, getPosition, $Dimension*, int64_t theme, int32_t part, int32_t state, int32_t property);
-	$assign($ret, $invokeNativeStatic(ThemeReader, getPosition, theme, part, state, property));
+	$assign($ret, $invokeNativeStaticObject(theme, part, state, property));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -606,7 +606,7 @@ $Dimension* ThemeReader::getPartSize(int64_t theme, int32_t part, int32_t state)
 	$init(ThemeReader);
 	$var($Dimension, $ret, nullptr);
 	$prepareNativeStatic(ThemeReader, getPartSize, $Dimension*, int64_t theme, int32_t part, int32_t state);
-	$assign($ret, $invokeNativeStatic(ThemeReader, getPartSize, theme, part, state));
+	$assign($ret, $invokeNativeStaticObject(theme, part, state));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -642,7 +642,7 @@ int64_t ThemeReader::openTheme($String* widget) {
 	$init(ThemeReader);
 	int64_t $ret = 0;
 	$prepareNativeStatic(ThemeReader, openTheme, int64_t, $String* widget);
-	$ret = $invokeNativeStatic(ThemeReader, openTheme, widget);
+	$ret = $invokeNativeStatic(widget);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -650,14 +650,14 @@ int64_t ThemeReader::openTheme($String* widget) {
 void ThemeReader::closeTheme(int64_t theme) {
 	$init(ThemeReader);
 	$prepareNativeStatic(ThemeReader, closeTheme, void, int64_t theme);
-	$invokeNativeStatic(ThemeReader, closeTheme, theme);
+	$invokeNativeStatic(theme);
 	$finishNativeStatic();
 }
 
 void ThemeReader::setWindowTheme($String* subAppName) {
 	$init(ThemeReader);
 	$prepareNativeStatic(ThemeReader, setWindowTheme, void, $String* subAppName);
-	$invokeNativeStatic(ThemeReader, setWindowTheme, subAppName);
+	$invokeNativeStatic(subAppName);
 	$finishNativeStatic();
 }
 
@@ -665,7 +665,7 @@ int64_t ThemeReader::getThemeTransitionDuration(int64_t theme, int32_t part, int
 	$init(ThemeReader);
 	int64_t $ret = 0;
 	$prepareNativeStatic(ThemeReader, getThemeTransitionDuration, int64_t, int64_t theme, int32_t part, int32_t stateFrom, int32_t stateTo, int32_t propId);
-	$ret = $invokeNativeStatic(ThemeReader, getThemeTransitionDuration, theme, part, stateFrom, stateTo, propId);
+	$ret = $invokeNativeStatic(theme, part, stateFrom, stateTo, propId);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -701,7 +701,7 @@ $Insets* ThemeReader::getThemeBackgroundContentMargins(int64_t theme, int32_t pa
 	$init(ThemeReader);
 	$var($Insets, $ret, nullptr);
 	$prepareNativeStatic(ThemeReader, getThemeBackgroundContentMargins, $Insets*, int64_t theme, int32_t part, int32_t state, int32_t boundingWidth, int32_t boundingHeight);
-	$assign($ret, $invokeNativeStatic(ThemeReader, getThemeBackgroundContentMargins, theme, part, state, boundingWidth, boundingHeight));
+	$assign($ret, $invokeNativeStaticObject(theme, part, state, boundingWidth, boundingHeight));
 	$finishNativeStatic();
 	return $ret;
 }

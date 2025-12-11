@@ -52,12 +52,10 @@
 #undef WRAP_TAB_LAYOUT
 
 using $ComponentArray = $Array<::java::awt::Component>;
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $ChangeListenerArray = $Array<::javax::swing::event::ChangeListener>;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
-using $Container = ::java::awt::Container;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $Rectangle = ::java::awt::Rectangle;
 using $MouseEvent = ::java::awt::event::MouseEvent;

@@ -34,7 +34,6 @@ using $ArrayList = ::java::util::ArrayList;
 using $HashSet = ::java::util::HashSet;
 using $Iterator = ::java::util::Iterator;
 using $List = ::java::util::List;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XConstants = ::sun::awt::X11::XConstants;
 using $XDropTargetRegistry = ::sun::awt::X11::XDropTargetRegistry;

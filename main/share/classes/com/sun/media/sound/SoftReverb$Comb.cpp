@@ -3,7 +3,6 @@
 #include <com/sun/media/sound/SoftReverb.h>
 #include <jcpp.h>
 
-using $SoftReverb = ::com::sun::media::sound::SoftReverb;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

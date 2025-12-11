@@ -7,13 +7,11 @@
 #include <jcpp.h>
 
 using $File = ::java::io::File;
-using $FilenameFilter = ::java::io::FilenameFilter;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Win32FontManager = ::sun::awt::Win32FontManager;
 using $SunFontManager = ::sun::font::SunFontManager;
 

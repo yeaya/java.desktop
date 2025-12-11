@@ -24,8 +24,6 @@
 #undef ENGLISH
 #undef RIGHT
 
-using $Component = ::java::awt::Component;
-using $Dimension = ::java::awt::Dimension;
 using $FocusEvent = ::java::awt::event::FocusEvent;
 using $FocusListener = ::java::awt::event::FocusListener;
 using $Character = ::java::lang::Character;
@@ -36,24 +34,19 @@ using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $NumberFormatException = ::java::lang::NumberFormatException;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $ParseException = ::java::text::ParseException;
-using $EventObject = ::java::util::EventObject;
 using $Locale = ::java::util::Locale;
-using $JComponent = ::javax::swing::JComponent;
 using $JFormattedTextField = ::javax::swing::JFormattedTextField;
 using $JFormattedTextField$AbstractFormatter = ::javax::swing::JFormattedTextField$AbstractFormatter;
 using $JFormattedTextField$AbstractFormatterFactory = ::javax::swing::JFormattedTextField$AbstractFormatterFactory;
-using $JTextField = ::javax::swing::JTextField;
 using $SwingConstants = ::javax::swing::SwingConstants;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $ValueFormatter$1 = ::javax::swing::colorchooser::ValueFormatter$1;
 using $DefaultFormatterFactory = ::javax::swing::text::DefaultFormatterFactory;
 using $DocumentFilter = ::javax::swing::text::DocumentFilter;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 namespace javax {
 	namespace swing {

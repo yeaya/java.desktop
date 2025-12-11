@@ -8,7 +8,6 @@ using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $FileSystemView = ::javax::swing::filechooser::FileSystemView;
 
 namespace javax {
 	namespace swing {

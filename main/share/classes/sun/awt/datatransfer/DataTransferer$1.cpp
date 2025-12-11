@@ -11,7 +11,6 @@
 using $DataFlavorArray = $Array<::java::awt::datatransfer::DataFlavor>;
 using $DataFlavor = ::java::awt::datatransfer::DataFlavor;
 using $FlavorMap = ::java::awt::datatransfer::FlavorMap;
-using $FlavorTable = ::java::awt::datatransfer::FlavorTable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -20,7 +19,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Collections = ::java::util::Collections;
 using $List = ::java::util::List;
 using $Map = ::java::util::Map;
-using $DataTransferer = ::sun::awt::datatransfer::DataTransferer;
 
 namespace sun {
 	namespace awt {

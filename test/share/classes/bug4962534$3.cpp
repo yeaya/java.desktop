@@ -7,7 +7,6 @@
 
 #undef FRAME_CONTENT_LAYER
 
-using $ComponentArray = $Array<::java::awt::Component>;
 using $bug4962534 = ::bug4962534;
 using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -16,7 +15,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JLayeredPane = ::javax::swing::JLayeredPane;
 
 $FieldInfo _bug4962534$3_FieldInfo_[] = {

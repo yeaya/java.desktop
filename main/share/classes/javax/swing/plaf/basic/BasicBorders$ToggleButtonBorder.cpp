@@ -16,7 +16,6 @@ using $Insets = ::java::awt::Insets;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $BasicBorders = ::javax::swing::plaf::basic::BasicBorders;
 using $BasicBorders$ButtonBorder = ::javax::swing::plaf::basic::BasicBorders$ButtonBorder;
 using $BasicGraphicsUtils = ::javax::swing::plaf::basic::BasicGraphicsUtils;
 

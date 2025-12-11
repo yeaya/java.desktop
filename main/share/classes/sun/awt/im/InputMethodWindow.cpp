@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $InputContext = ::sun::awt::im::InputContext;
 
 namespace sun {
 	namespace awt {

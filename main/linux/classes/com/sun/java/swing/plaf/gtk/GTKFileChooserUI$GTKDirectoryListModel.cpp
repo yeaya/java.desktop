@@ -25,7 +25,6 @@ using $ListDataEvent = ::javax::swing::event::ListDataEvent;
 using $ListDataListener = ::javax::swing::event::ListDataListener;
 using $FileSystemView = ::javax::swing::filechooser::FileSystemView;
 using $BasicDirectoryModel = ::javax::swing::plaf::basic::BasicDirectoryModel;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 
 namespace com {
 	namespace sun {

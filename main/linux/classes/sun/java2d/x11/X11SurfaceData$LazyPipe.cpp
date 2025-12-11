@@ -10,10 +10,8 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
-using $SurfaceData = ::sun::java2d::SurfaceData;
 using $ValidatePipe = ::sun::java2d::pipe::ValidatePipe;
 using $X11SurfaceData = ::sun::java2d::x11::X11SurfaceData;
-using $XSurfaceData = ::sun::java2d::x11::XSurfaceData;
 
 namespace sun {
 	namespace java2d {

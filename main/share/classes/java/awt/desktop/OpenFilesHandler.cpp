@@ -3,7 +3,6 @@
 #include <java/awt/desktop/OpenFilesEvent.h>
 #include <jcpp.h>
 
-using $OpenFilesEvent = ::java::awt::desktop::OpenFilesEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

@@ -8,7 +8,6 @@
 #include <java/util/concurrent/atomic/AtomicInteger.h>
 #include <jcpp.h>
 
-using $bug6493680 = ::bug6493680;
 using $bug6493680$Test$1 = ::bug6493680$Test$1;
 using $bug6493680$Test$TestSwingWorker = ::bug6493680$Test$TestSwingWorker;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
@@ -19,7 +18,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Exchanger = ::java::util::concurrent::Exchanger;
 using $AtomicInteger = ::java::util::concurrent::atomic::AtomicInteger;
-using $SwingWorker = ::javax::swing::SwingWorker;
 
 $FieldInfo _bug6493680$Test_FieldInfo_[] = {
 	{"lastProgressValue", "Ljava/util/concurrent/atomic/AtomicInteger;", nullptr, $PRIVATE | $FINAL, $field(bug6493680$Test, lastProgressValue)},

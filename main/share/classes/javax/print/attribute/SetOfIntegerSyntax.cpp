@@ -10,7 +10,6 @@ using $intArray2 = $Array<int32_t, 2>;
 using $Serializable = ::java::io::Serializable;
 using $Character = ::java::lang::Character;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Cloneable = ::java::lang::Cloneable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $Math = ::java::lang::Math;

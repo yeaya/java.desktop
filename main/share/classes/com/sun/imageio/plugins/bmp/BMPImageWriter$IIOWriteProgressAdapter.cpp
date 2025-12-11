@@ -4,12 +4,10 @@
 #include <javax/imageio/ImageWriter.h>
 #include <jcpp.h>
 
-using $BMPImageWriter = ::com::sun::imageio::plugins::bmp::BMPImageWriter;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ImageWriter = ::javax::imageio::ImageWriter;
-using $IIOWriteProgressListener = ::javax::imageio::event::IIOWriteProgressListener;
 
 namespace com {
 	namespace sun {

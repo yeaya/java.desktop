@@ -5,14 +5,12 @@
 #include <java/util/HashMap.h>
 #include <jcpp.h>
 
-using $RenderingHints = ::java::awt::RenderingHints;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $HashMap = ::java::util::HashMap;
 

@@ -17,7 +17,6 @@ using $Float = ::java::lang::Float;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractRegionPainter = ::javax::swing::plaf::nimbus::AbstractRegionPainter;
 using $AbstractRegionPainter$PaintContext$CacheMode = ::javax::swing::plaf::nimbus::AbstractRegionPainter$PaintContext$CacheMode;
 
 namespace javax {

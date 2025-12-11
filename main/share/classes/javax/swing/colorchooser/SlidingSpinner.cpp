@@ -16,16 +16,13 @@
 #include <javax/swing/event/ChangeListener.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Comparable = ::java::lang::Comparable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $AbstractSpinnerModel = ::javax::swing::AbstractSpinnerModel;
 using $JComponent = ::javax::swing::JComponent;
-using $JFormattedTextField = ::javax::swing::JFormattedTextField;
 using $JSlider = ::javax::swing::JSlider;
 using $JSpinner = ::javax::swing::JSpinner;
 using $JSpinner$DefaultEditor = ::javax::swing::JSpinner$DefaultEditor;

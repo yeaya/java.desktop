@@ -34,31 +34,23 @@
 #undef TOOL_TIP_TEXT_KEY
 #undef TRUE
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $EventQueue = ::java::awt::EventQueue;
-using $Font = ::java::awt::Font;
 using $Insets = ::java::awt::Insets;
-using $LayoutManager = ::java::awt::LayoutManager;
 using $Rectangle = ::java::awt::Rectangle;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $FocusEvent = ::java::awt::event::FocusEvent;
-using $FocusListener = ::java::awt::event::FocusListener;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
-using $KeyListener = ::java::awt::event::KeyListener;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $Action = ::javax::swing::Action;
 using $ActionMap = ::javax::swing::ActionMap;
 using $ComboBoxEditor = ::javax::swing::ComboBoxEditor;
@@ -67,9 +59,7 @@ using $JButton = ::javax::swing::JButton;
 using $JComboBox = ::javax::swing::JComboBox;
 using $JComponent = ::javax::swing::JComponent;
 using $JList = ::javax::swing::JList;
-using $ListModel = ::javax::swing::ListModel;
 using $ListDataEvent = ::javax::swing::event::ListDataEvent;
-using $ListDataListener = ::javax::swing::event::ListDataListener;
 using $BasicComboBoxUI = ::javax::swing::plaf::basic::BasicComboBoxUI;
 using $BasicGraphicsUtils = ::javax::swing::plaf::basic::BasicGraphicsUtils;
 using $SwingUtilities2 = ::sun::swing::SwingUtilities2;

@@ -8,7 +8,6 @@
 #include <javax/swing/text/Element.h>
 #include <jcpp.h>
 
-using $TestObjectView = ::TestObjectView;
 using $TestObjectView$UserElement$1 = ::TestObjectView$UserElement$1;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

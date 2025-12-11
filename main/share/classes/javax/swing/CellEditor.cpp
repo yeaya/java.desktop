@@ -6,8 +6,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $CellEditorListener = ::javax::swing::event::CellEditorListener;
 
 namespace javax {
 	namespace swing {

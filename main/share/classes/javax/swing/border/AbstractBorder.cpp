@@ -17,7 +17,6 @@ using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Graphics = ::java::awt::Graphics;
 using $Insets = ::java::awt::Insets;
 using $Rectangle = ::java::awt::Rectangle;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;

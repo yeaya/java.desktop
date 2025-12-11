@@ -12,7 +12,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Charset = ::java::nio::charset::Charset;
-using $CharsetEncoder = ::java::nio::charset::CharsetEncoder;
 using $X11GBK = ::sun::font::X11GBK;
 using $DoubleByte$Encoder = ::sun::nio::cs::DoubleByte$Encoder;
 using $GBK = ::sun::nio::cs::GBK;

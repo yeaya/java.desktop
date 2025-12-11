@@ -18,7 +18,6 @@ using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $SecurityException = ::java::lang::SecurityException;
 using $SecurityManager = ::java::lang::SecurityManager;
 using $HttpURLConnection = ::java::net::HttpURLConnection;

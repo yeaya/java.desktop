@@ -4,13 +4,11 @@
 #include <Sysout4FileChooserTest.h>
 #include <jcpp.h>
 
-using $FileChooserTest = ::FileChooserTest;
 using $Sysout4FileChooserTest = ::Sysout4FileChooserTest;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 
 $MethodInfo _FileChooserTest$1_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(FileChooserTest$1::*)()>(&FileChooserTest$1::init$))},

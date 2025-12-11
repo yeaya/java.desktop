@@ -5,8 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
-using $JInternalFrame = ::javax::swing::JInternalFrame;
 
 namespace javax {
 	namespace swing {

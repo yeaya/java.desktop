@@ -8,13 +8,11 @@
 #include <jcpp.h>
 
 using $bug6987844 = ::bug6987844;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JMenu = ::javax::swing::JMenu;
 using $JPopupMenu = ::javax::swing::JPopupMenu;

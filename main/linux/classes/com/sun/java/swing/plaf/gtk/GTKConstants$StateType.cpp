@@ -11,7 +11,6 @@
 #undef SELECTED
 
 using $GTKConstants$StateTypeArray = $Array<::com::sun::java::swing::plaf::gtk::GTKConstants$StateType>;
-using $GTKConstants = ::com::sun::java::swing::plaf::gtk::GTKConstants;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

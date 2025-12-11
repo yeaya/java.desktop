@@ -32,13 +32,10 @@
 
 using $DefaultSynthStyle$StateInfoArray = $Array<::sun::swing::plaf::synth::DefaultSynthStyle$StateInfo>;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Font = ::java::awt::Font;
 using $Insets = ::java::awt::Insets;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CloneNotSupportedException = ::java::lang::CloneNotSupportedException;
-using $Cloneable = ::java::lang::Cloneable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;

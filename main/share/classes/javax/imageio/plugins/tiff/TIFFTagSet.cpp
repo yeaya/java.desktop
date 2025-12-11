@@ -23,7 +23,6 @@ using $Collection = ::java::util::Collection;
 using $Collections = ::java::util::Collections;
 using $Iterator = ::java::util::Iterator;
 using $List = ::java::util::List;
-using $Map = ::java::util::Map;
 using $NavigableMap = ::java::util::NavigableMap;
 using $NavigableSet = ::java::util::NavigableSet;
 using $Set = ::java::util::Set;

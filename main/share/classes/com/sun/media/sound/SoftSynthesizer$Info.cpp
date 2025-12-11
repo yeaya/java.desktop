@@ -4,7 +4,6 @@
 #include <javax/sound/midi/MidiDevice$Info.h>
 #include <jcpp.h>
 
-using $SoftSynthesizer = ::com::sun::media::sound::SoftSynthesizer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

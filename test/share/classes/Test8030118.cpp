@@ -26,7 +26,6 @@ using $CountDownLatch = ::java::util::concurrent::CountDownLatch;
 using $TimeUnit = ::java::util::concurrent::TimeUnit;
 using $DocumentEvent = ::javax::swing::event::DocumentEvent;
 using $DocumentListener = ::javax::swing::event::DocumentListener;
-using $AbstractDocument = ::javax::swing::text::AbstractDocument;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $Document = ::javax::swing::text::Document;

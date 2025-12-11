@@ -14,7 +14,6 @@
 using $Dimension = ::java::awt::Dimension;
 using $SystemTray = ::java::awt::SystemTray;
 using $Toolkit = ::java::awt::Toolkit;
-using $SystemTrayPeer = ::java::awt::peer::SystemTrayPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $WObjectPeer = ::sun::awt::windows::WObjectPeer;

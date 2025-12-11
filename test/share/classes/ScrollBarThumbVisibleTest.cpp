@@ -31,7 +31,6 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Point = ::java::awt::Point;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;

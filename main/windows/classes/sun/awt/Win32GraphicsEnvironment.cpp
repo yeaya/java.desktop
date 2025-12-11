@@ -28,7 +28,6 @@ using $AssertionError = ::java::lang::AssertionError;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $ArrayList = ::java::util::ArrayList;
 using $ListIterator = ::java::util::ListIterator;
@@ -103,7 +102,7 @@ $volatile(bool) Win32GraphicsEnvironment::isDWMCompositionEnabled$ = false;
 void Win32GraphicsEnvironment::initDisplay() {
 	$init(Win32GraphicsEnvironment);
 	$prepareNativeStatic(Win32GraphicsEnvironment, initDisplay, void);
-	$invokeNativeStatic(Win32GraphicsEnvironment, initDisplay);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -122,7 +121,7 @@ void Win32GraphicsEnvironment::init$() {
 int32_t Win32GraphicsEnvironment::getNumScreens() {
 	int32_t $ret = 0;
 	$prepareNative(Win32GraphicsEnvironment, getNumScreens, int32_t);
-	$ret = $invokeNative(Win32GraphicsEnvironment, getNumScreens);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -130,7 +129,7 @@ int32_t Win32GraphicsEnvironment::getNumScreens() {
 int32_t Win32GraphicsEnvironment::getDefaultScreen() {
 	int32_t $ret = 0;
 	$prepareNative(Win32GraphicsEnvironment, getDefaultScreen, int32_t);
-	$ret = $invokeNative(Win32GraphicsEnvironment, getDefaultScreen);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -147,7 +146,7 @@ $GraphicsDevice* Win32GraphicsEnvironment::getDefaultScreenDevice() {
 int32_t Win32GraphicsEnvironment::getXResolution() {
 	int32_t $ret = 0;
 	$prepareNative(Win32GraphicsEnvironment, getXResolution, int32_t);
-	$ret = $invokeNative(Win32GraphicsEnvironment, getXResolution);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -155,7 +154,7 @@ int32_t Win32GraphicsEnvironment::getXResolution() {
 int32_t Win32GraphicsEnvironment::getYResolution() {
 	int32_t $ret = 0;
 	$prepareNative(Win32GraphicsEnvironment, getYResolution, int32_t);
-	$ret = $invokeNative(Win32GraphicsEnvironment, getYResolution);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -262,7 +261,7 @@ bool Win32GraphicsEnvironment::isVistaOS() {
 	$init(Win32GraphicsEnvironment);
 	bool $ret = false;
 	$prepareNativeStatic(Win32GraphicsEnvironment, isVistaOS, bool);
-	$ret = $invokeNativeStatic(Win32GraphicsEnvironment, isVistaOS);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }

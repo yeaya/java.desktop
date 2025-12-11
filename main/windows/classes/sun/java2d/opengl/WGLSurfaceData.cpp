@@ -38,7 +38,6 @@ using $SunToolkit = ::sun::awt::SunToolkit;
 using $Win32GraphicsConfig = ::sun::awt::Win32GraphicsConfig;
 using $Win32GraphicsDevice = ::sun::awt::Win32GraphicsDevice;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $OGLGraphicsConfig = ::sun::java2d::opengl::OGLGraphicsConfig;
 using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;
 using $WGLGraphicsConfig = ::sun::java2d::opengl::WGLGraphicsConfig;
@@ -104,7 +103,7 @@ $Object* allocate$WGLSurfaceData($Class* clazz) {
 
 void WGLSurfaceData::initOps($OGLGraphicsConfig* gc, int64_t pConfigInfo, $WComponentPeer* peer, int64_t hwnd) {
 	$prepareNative(WGLSurfaceData, initOps, void, $OGLGraphicsConfig* gc, int64_t pConfigInfo, $WComponentPeer* peer, int64_t hwnd);
-	$invokeNative(WGLSurfaceData, initOps, gc, pConfigInfo, peer, hwnd);
+	$invokeNative(gc, pConfigInfo, peer, hwnd);
 	$finishNative();
 }
 
@@ -182,7 +181,7 @@ bool WGLSurfaceData::updateWindowAccelImpl(int64_t psdops, $WComponentPeer* peer
 	$init(WGLSurfaceData);
 	bool $ret = false;
 	$prepareNativeStatic(WGLSurfaceData, updateWindowAccelImpl, bool, int64_t psdops, $WComponentPeer* peer, int32_t w, int32_t h);
-	$ret = $invokeNativeStatic(WGLSurfaceData, updateWindowAccelImpl, psdops, peer, w, h);
+	$ret = $invokeNativeStatic(psdops, peer, w, h);
 	$finishNativeStatic();
 	return $ret;
 }

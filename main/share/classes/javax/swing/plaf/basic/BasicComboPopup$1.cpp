@@ -17,7 +17,6 @@
 
 #undef NOBUTTON
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Toolkit = ::java::awt::Toolkit;
 using $InputEvent = ::java::awt::event::InputEvent;
@@ -27,8 +26,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $JComponent = ::javax::swing::JComponent;
 using $JList = ::javax::swing::JList;
 using $ListModel = ::javax::swing::ListModel;
 using $BasicComboPopup = ::javax::swing::plaf::basic::BasicComboPopup;

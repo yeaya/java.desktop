@@ -6,13 +6,8 @@
 #include <javax/sound/sampled/AudioInputStream.h>
 #include <jcpp.h>
 
-using $File = ::java::io::File;
-using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $URL = ::java::net::URL;
-using $AudioFileFormat = ::javax::sound::sampled::AudioFileFormat;
-using $AudioInputStream = ::javax::sound::sampled::AudioInputStream;
 
 namespace javax {
 	namespace sound {

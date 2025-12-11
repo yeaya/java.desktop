@@ -9,7 +9,6 @@
 #include <jcpp.h>
 
 using $TestJTextPaneHTMLRendering = ::TestJTextPaneHTMLRendering;
-using $Window = ::java::awt::Window;
 using $WindowAdapter = ::java::awt::event::WindowAdapter;
 using $WindowEvent = ::java::awt::event::WindowEvent;
 using $ClassInfo = ::java::lang::ClassInfo;

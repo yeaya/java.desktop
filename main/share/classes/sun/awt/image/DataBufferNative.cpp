@@ -54,7 +54,7 @@ void DataBufferNative::init$($SurfaceData* sData, int32_t type, int32_t width, i
 int32_t DataBufferNative::getElem(int32_t x, int32_t y, $SurfaceData* sData) {
 	int32_t $ret = 0;
 	$prepareNative(DataBufferNative, getElem, int32_t, int32_t x, int32_t y, $SurfaceData* sData);
-	$ret = $invokeNative(DataBufferNative, getElem, x, y, sData);
+	$ret = $invokeNative(x, y, sData);
 	$finishNative();
 	return $ret;
 }
@@ -65,7 +65,7 @@ int32_t DataBufferNative::getElem(int32_t bank, int32_t i) {
 
 void DataBufferNative::setElem(int32_t x, int32_t y, int32_t val, $SurfaceData* sData) {
 	$prepareNative(DataBufferNative, setElem, void, int32_t x, int32_t y, int32_t val, $SurfaceData* sData);
-	$invokeNative(DataBufferNative, setElem, x, y, val, sData);
+	$invokeNative(x, y, val, sData);
 	$finishNative();
 }
 

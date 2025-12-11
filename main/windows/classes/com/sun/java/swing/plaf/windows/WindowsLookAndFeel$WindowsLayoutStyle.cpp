@@ -16,7 +16,6 @@ using $WindowsLookAndFeel = ::com::sun::java::swing::plaf::windows::WindowsLookA
 using $WindowsLookAndFeel$3 = ::com::sun::java::swing::plaf::windows::WindowsLookAndFeel$3;
 using $Container = ::java::awt::Container;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

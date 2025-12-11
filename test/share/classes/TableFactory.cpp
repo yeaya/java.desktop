@@ -36,7 +36,6 @@ using $ParagraphView = ::javax::swing::text::ParagraphView;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
 using $TableView = ::javax::swing::text::TableView;
 using $View = ::javax::swing::text::View;
-using $ViewFactory = ::javax::swing::text::ViewFactory;
 using $tableView = ::tableView;
 
 $MethodInfo _TableFactory_MethodInfo_[] = {

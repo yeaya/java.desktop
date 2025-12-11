@@ -31,11 +31,7 @@ using $Helpers = ::sun::java2d::marlin::Helpers;
 using $Helpers$IndexStack = ::sun::java2d::marlin::Helpers$IndexStack;
 using $MarlinConst = ::sun::java2d::marlin::MarlinConst;
 using $RendererContext = ::sun::java2d::marlin::RendererContext;
-using $RendererStats = ::sun::java2d::marlin::RendererStats;
-using $TransformingPathConsumer2D = ::sun::java2d::marlin::TransformingPathConsumer2D;
 using $TransformingPathConsumer2D$CurveClipSplitter = ::sun::java2d::marlin::TransformingPathConsumer2D$CurveClipSplitter;
-using $Histogram = ::sun::java2d::marlin::stats::Histogram;
-using $StatLong = ::sun::java2d::marlin::stats::StatLong;
 
 namespace sun {
 	namespace java2d {

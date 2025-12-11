@@ -6,9 +6,6 @@
 #include <sun/print/RasterPrinterJob.h>
 #include <jcpp.h>
 
-using $Shape = ::java::awt::Shape;
-using $AffineTransform = ::java::awt::geom::AffineTransform;
-using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

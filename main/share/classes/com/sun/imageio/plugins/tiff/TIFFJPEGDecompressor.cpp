@@ -24,7 +24,6 @@
 
 using $TIFFDecompressor = ::com::sun::imageio::plugins::tiff::TIFFDecompressor;
 using $TIFFImageMetadata = ::com::sun::imageio::plugins::tiff::TIFFImageMetadata;
-using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ByteArrayInputStream = ::java::io::ByteArrayInputStream;
 using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -35,7 +34,6 @@ using $Iterator = ::java::util::Iterator;
 using $ImageIO = ::javax::imageio::ImageIO;
 using $ImageReadParam = ::javax::imageio::ImageReadParam;
 using $ImageReader = ::javax::imageio::ImageReader;
-using $IIOMetadata = ::javax::imageio::metadata::IIOMetadata;
 using $BaselineTIFFTagSet = ::javax::imageio::plugins::tiff::BaselineTIFFTagSet;
 using $TIFFField = ::javax::imageio::plugins::tiff::TIFFField;
 using $ImageInputStream = ::javax::imageio::stream::ImageInputStream;

@@ -66,7 +66,6 @@ using $JFIFMarkerSegment$IllegalThumbException = ::com::sun::imageio::plugins::j
 using $JFIFMarkerSegment$JFIFExtensionMarkerSegment = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment$JFIFExtensionMarkerSegment;
 using $JFIFMarkerSegment$JFIFThumb = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment$JFIFThumb;
 using $JFIFMarkerSegment$JFIFThumbRGB = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment$JFIFThumbRGB;
-using $JFIFMarkerSegment$JFIFThumbUncompressed = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment$JFIFThumbUncompressed;
 using $JPEG = ::com::sun::imageio::plugins::jpeg::JPEG;
 using $JPEGBuffer = ::com::sun::imageio::plugins::jpeg::JPEGBuffer;
 using $JPEGImageReader = ::com::sun::imageio::plugins::jpeg::JPEGImageReader;
@@ -409,11 +408,11 @@ void JFIFMarkerSegment::write($ImageOutputStream* ios, $BufferedImage* thumb, $J
 	if (thumb != nullptr) {
 		thumbWidth = thumb->getWidth();
 		thumbHeight = thumb->getHeight();
-		if ((thumbWidth > this->MAX_THUMB_WIDTH) || (thumbHeight > this->MAX_THUMB_HEIGHT)) {
+		if ((thumbWidth > JFIFMarkerSegment::MAX_THUMB_WIDTH) || (thumbHeight > JFIFMarkerSegment::MAX_THUMB_HEIGHT)) {
 			$nc(writer)->warningOccurred($JPEGImageWriter::WARNING_THUMB_CLIPPED);
 		}
-		thumbWidth = $Math::min(thumbWidth, this->MAX_THUMB_WIDTH);
-		thumbHeight = $Math::min(thumbHeight, this->MAX_THUMB_HEIGHT);
+		thumbWidth = $Math::min(thumbWidth, JFIFMarkerSegment::MAX_THUMB_WIDTH);
+		thumbHeight = $Math::min(thumbHeight, JFIFMarkerSegment::MAX_THUMB_HEIGHT);
 		$assign(thumbData, $nc($(thumb->getRaster()))->getPixels(0, 0, thumbWidth, thumbHeight, ($ints*)nullptr));
 		thumbLength = $nc(thumbData)->length;
 	}

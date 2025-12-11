@@ -14,23 +14,16 @@
 #include <jcpp.h>
 
 using $ActionListenerExceptionTest = ::ActionListenerExceptionTest;
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
-using $Dimension = ::java::awt::Dimension;
-using $Point = ::java::awt::Point;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $Accessible = ::javax::accessibility::Accessible;
 using $JComboBox = ::javax::swing::JComboBox;
 using $JComponent = ::javax::swing::JComponent;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 using $JScrollPane = ::javax::swing::JScrollPane;
 using $ComboBoxUI = ::javax::swing::plaf::ComboBoxUI;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 
 $FieldInfo _ActionListenerExceptionTest$4_FieldInfo_[] = {
 	{"this$0", "LActionListenerExceptionTest;", nullptr, $FINAL | $SYNTHETIC, $field(ActionListenerExceptionTest$4, this$0)},

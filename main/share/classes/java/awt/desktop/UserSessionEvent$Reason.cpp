@@ -10,7 +10,6 @@
 #undef UNSPECIFIED
 
 using $UserSessionEvent$ReasonArray = $Array<::java::awt::desktop::UserSessionEvent$Reason>;
-using $UserSessionEvent = ::java::awt::desktop::UserSessionEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

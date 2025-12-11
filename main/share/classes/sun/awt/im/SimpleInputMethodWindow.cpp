@@ -7,13 +7,11 @@
 #include <jcpp.h>
 
 using $Frame = ::java::awt::Frame;
-using $Window = ::java::awt::Window;
-using $InputContext = ::java::awt::im::InputContext;
+using $1InputContext = ::java::awt::im::InputContext;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $1InputContext = ::sun::awt::im::InputContext;
-using $InputMethodWindow = ::sun::awt::im::InputMethodWindow;
+using $InputContext = ::sun::awt::im::InputContext;
 
 namespace sun {
 	namespace awt {
@@ -30,7 +28,7 @@ $MethodInfo _SimpleInputMethodWindow_MethodInfo_[] = {
 	{"*equals", "(Ljava/lang/Object;)Z", nullptr, $PUBLIC},
 	{"*finalize", "()V", nullptr, $PROTECTED | $DEPRECATED},
 	{"*hashCode", "()I", nullptr, $PUBLIC | $NATIVE},
-	{"<init>", "(Ljava/lang/String;Lsun/awt/im/InputContext;)V", nullptr, $PUBLIC, $method(static_cast<void(SimpleInputMethodWindow::*)($String*,$1InputContext*)>(&SimpleInputMethodWindow::init$))},
+	{"<init>", "(Ljava/lang/String;Lsun/awt/im/InputContext;)V", nullptr, $PUBLIC, $method(static_cast<void(SimpleInputMethodWindow::*)($String*,$InputContext*)>(&SimpleInputMethodWindow::init$))},
 	{"getInputContext", "()Ljava/awt/im/InputContext;", nullptr, $PUBLIC},
 	{"setInputContext", "(Lsun/awt/im/InputContext;)V", nullptr, $PUBLIC},
 	{"*toString", "()Ljava/lang/String;", nullptr, $PUBLIC},
@@ -70,7 +68,7 @@ void SimpleInputMethodWindow::finalize() {
 	this->$Frame::finalize();
 }
 
-void SimpleInputMethodWindow::init$($String* title, $1InputContext* context) {
+void SimpleInputMethodWindow::init$($String* title, $InputContext* context) {
 	$Frame::init$(title);
 	$set(this, inputContext, nullptr);
 	if (context != nullptr) {
@@ -79,11 +77,11 @@ void SimpleInputMethodWindow::init$($String* title, $1InputContext* context) {
 	setFocusableWindowState(false);
 }
 
-void SimpleInputMethodWindow::setInputContext($1InputContext* inputContext) {
+void SimpleInputMethodWindow::setInputContext($InputContext* inputContext) {
 	$set(this, inputContext, inputContext);
 }
 
-$InputContext* SimpleInputMethodWindow::getInputContext() {
+$1InputContext* SimpleInputMethodWindow::getInputContext() {
 	if (this->inputContext != nullptr) {
 		return this->inputContext;
 	} else {

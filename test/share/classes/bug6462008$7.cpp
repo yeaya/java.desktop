@@ -9,7 +9,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 
 $FieldInfo _bug6462008$7_FieldInfo_[] = {
 	{"val$anchorLeadValue", "I", nullptr, $FINAL | $SYNTHETIC, $field(bug6462008$7, val$anchorLeadValue)},

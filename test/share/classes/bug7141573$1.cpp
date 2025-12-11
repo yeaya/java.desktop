@@ -9,17 +9,12 @@
 
 #undef TYPE_INT_ARGB
 
-using $bug7141573 = ::bug7141573;
-using $Component = ::java::awt::Component;
-using $Graphics = ::java::awt::Graphics;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $JComponent = ::javax::swing::JComponent;
 using $JProgressBar = ::javax::swing::JProgressBar;
 
 $MethodInfo _bug7141573$1_MethodInfo_[] = {

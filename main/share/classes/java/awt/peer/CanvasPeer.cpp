@@ -3,8 +3,6 @@
 #include <java/awt/GraphicsConfiguration.h>
 #include <jcpp.h>
 
-using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

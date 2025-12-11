@@ -14,7 +14,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Highlighter$HighlightPainter = ::javax::swing::text::Highlighter$HighlightPainter;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $FieldInfo _bug6771184$1$1_FieldInfo_[] = {

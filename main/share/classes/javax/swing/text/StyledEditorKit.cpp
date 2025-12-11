@@ -39,8 +39,6 @@
 #undef ALIGN_RIGHT
 
 using $ActionArray = $Array<::javax::swing::Action>;
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -56,7 +54,6 @@ using $Caret = ::javax::swing::text::Caret;
 using $DefaultEditorKit = ::javax::swing::text::DefaultEditorKit;
 using $DefaultStyledDocument = ::javax::swing::text::DefaultStyledDocument;
 using $Document = ::javax::swing::text::Document;
-using $EditorKit = ::javax::swing::text::EditorKit;
 using $Element = ::javax::swing::text::Element;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;

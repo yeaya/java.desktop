@@ -23,7 +23,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Icon = ::javax::swing::Icon;
 using $JComponent = ::javax::swing::JComponent;
 using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
-using $SynthIcon = ::javax::swing::plaf::synth::SynthIcon;
 using $SynthStyle = ::javax::swing::plaf::synth::SynthStyle;
 
 namespace com {

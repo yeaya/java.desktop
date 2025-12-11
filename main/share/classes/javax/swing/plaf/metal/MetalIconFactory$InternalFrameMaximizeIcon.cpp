@@ -17,20 +17,14 @@
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
-using $Serializable = ::java::io::Serializable;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $Icon = ::javax::swing::Icon;
 using $JButton = ::javax::swing::JButton;
-using $JComponent = ::javax::swing::JComponent;
-using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $MetalIconFactory = ::javax::swing::plaf::metal::MetalIconFactory;
 using $MetalLookAndFeel = ::javax::swing::plaf::metal::MetalLookAndFeel;
 
 namespace javax {

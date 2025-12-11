@@ -18,8 +18,6 @@
 #undef TRANSPARENCY_ENABLED_PROPERTY
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -31,10 +29,7 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $NumberFormatException = ::java::lang::NumberFormatException;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Locale = ::java::util::Locale;
-using $Icon = ::javax::swing::Icon;
 using $JColorChooser = ::javax::swing::JColorChooser;
-using $JComponent = ::javax::swing::JComponent;
 using $JPanel = ::javax::swing::JPanel;
 using $UIManager = ::javax::swing::UIManager;
 using $AbstractColorChooserPanel$1 = ::javax::swing::colorchooser::AbstractColorChooserPanel$1;

@@ -20,7 +20,6 @@
 
 using $Test6462562 = ::Test6462562;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -30,14 +29,12 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $ParseException = ::java::text::ParseException;
 using $Action = ::javax::swing::Action;
 using $ActionMap = ::javax::swing::ActionMap;
-using $JComponent = ::javax::swing::JComponent;
 using $JFormattedTextField = ::javax::swing::JFormattedTextField;
 using $JFormattedTextField$AbstractFormatter = ::javax::swing::JFormattedTextField$AbstractFormatter;
 using $Caret = ::javax::swing::text::Caret;
 using $DefaultEditorKit = ::javax::swing::text::DefaultEditorKit;
 using $DefaultFormatter = ::javax::swing::text::DefaultFormatter;
 using $InternationalFormatter = ::javax::swing::text::InternationalFormatter;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $FieldInfo _Test6462562$TestFormattedTextField_FieldInfo_[] = {
 	{"this$0", "LTest6462562;", nullptr, $FINAL | $SYNTHETIC, $field(Test6462562$TestFormattedTextField, this$0)},

@@ -6,7 +6,6 @@
 
 using $TestDialog4bug4644444 = ::TestDialog4bug4644444;
 using $StringArray2 = $Array<::java::lang::String, 2>;
-using $Dialog = ::java::awt::Dialog;
 using $Frame = ::java::awt::Frame;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

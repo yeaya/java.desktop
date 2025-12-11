@@ -4,8 +4,6 @@
 #include <java/awt/EventFilter$FilterAction.h>
 #include <jcpp.h>
 
-using $AWTEvent = ::java::awt::AWTEvent;
-using $EventFilter$FilterAction = ::java::awt::EventFilter$FilterAction;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

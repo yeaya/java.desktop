@@ -27,7 +27,6 @@ using $ClassFinder = ::com::sun::beans::finder::ClassFinder;
 using $Applet = ::java::applet::Applet;
 using $AppletContext = ::java::applet::AppletContext;
 using $AppletStub = ::java::applet::AppletStub;
-using $Component = ::java::awt::Component;
 using $AppletInitializer = ::java::beans::AppletInitializer;
 using $BeansAppletContext = ::java::beans::BeansAppletContext;
 using $BeansAppletStub = ::java::beans::BeansAppletStub;
@@ -45,12 +44,10 @@ using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $Exception = ::java::lang::Exception;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $SecurityException = ::java::lang::SecurityException;
 using $SecurityManager = ::java::lang::SecurityManager;
 using $Modifier = ::java::lang::reflect::Modifier;
 using $URL = ::java::net::URL;
-using $Collection = ::java::util::Collection;
 
 namespace java {
 	namespace beans {

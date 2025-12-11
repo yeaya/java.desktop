@@ -7,8 +7,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
-using $SwingUtilities2 = ::sun::swing::SwingUtilities2;
 
 namespace sun {
 	namespace swing {

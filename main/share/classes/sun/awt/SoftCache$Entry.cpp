@@ -10,7 +10,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ReferenceQueue = ::java::lang::ref::ReferenceQueue;
 using $Map$Entry = ::java::util::Map$Entry;
 using $SoftCache = ::sun::awt::SoftCache;
 using $SoftCache$ValueCell = ::sun::awt::SoftCache$ValueCell;

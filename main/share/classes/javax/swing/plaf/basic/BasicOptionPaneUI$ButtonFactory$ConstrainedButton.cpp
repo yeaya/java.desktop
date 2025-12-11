@@ -14,8 +14,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JButton = ::javax::swing::JButton;
-using $JComponent = ::javax::swing::JComponent;
-using $BasicOptionPaneUI$ButtonFactory = ::javax::swing::plaf::basic::BasicOptionPaneUI$ButtonFactory;
 
 namespace javax {
 	namespace swing {

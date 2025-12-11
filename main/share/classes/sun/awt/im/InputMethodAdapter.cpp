@@ -8,8 +8,6 @@
 
 using $Component = ::java::awt::Component;
 using $Rectangle = ::java::awt::Rectangle;
-using $InputMethodRequests = ::java::awt::im::InputMethodRequests;
-using $InputMethod = ::java::awt::im::spi::InputMethod;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

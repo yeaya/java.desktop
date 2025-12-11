@@ -45,7 +45,6 @@ using $ColorSpace = ::java::awt::color::ColorSpace;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $ColorModel = ::java::awt::image::ColorModel;
-using $Serializable = ::java::io::Serializable;
 using $Attribute = ::java::lang::Attribute;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
@@ -212,7 +211,7 @@ double Color::FACTOR = 0.0;
 void Color::initIDs() {
 	$init(Color);
 	$prepareNativeStatic(Color, initIDs, void);
-	$invokeNativeStatic(Color, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

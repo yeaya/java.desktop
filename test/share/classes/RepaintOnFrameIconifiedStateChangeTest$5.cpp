@@ -6,12 +6,10 @@
 #include <jcpp.h>
 
 using $RepaintOnFrameIconifiedStateChangeTest = ::RepaintOnFrameIconifiedStateChangeTest;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JFrame = ::javax::swing::JFrame;
 
 $MethodInfo _RepaintOnFrameIconifiedStateChangeTest$5_MethodInfo_[] = {

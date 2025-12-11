@@ -15,7 +15,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $BoxLayout = ::javax::swing::BoxLayout;
 using $JComponent = ::javax::swing::JComponent;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $MenuItemLayoutHelper = ::sun::swing::MenuItemLayoutHelper;
 
 namespace javax {

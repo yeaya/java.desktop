@@ -183,7 +183,7 @@ $SurfaceTypeArray* BufImgSurfaceData::typecache = nullptr;
 void BufImgSurfaceData::initIDs($Class* ICM, $Class* ICMColorData) {
 	$init(BufImgSurfaceData);
 	$prepareNativeStatic(BufImgSurfaceData, initIDs, void, $Class* ICM, $Class* ICMColorData);
-	$invokeNativeStatic(BufImgSurfaceData, initIDs, ICM, ICMColorData);
+	$invokeNativeStatic(ICM, ICMColorData);
 	$finishNativeStatic();
 }
 
@@ -487,7 +487,7 @@ $Raster* BufImgSurfaceData::getRaster(int32_t x, int32_t y, int32_t w, int32_t h
 
 void BufImgSurfaceData::initRaster(Object$* theArray, int32_t offset, int32_t bitoffset, int32_t width, int32_t height, int32_t pixStr, int32_t scanStr, $IndexColorModel* icm) {
 	$prepareNative(BufImgSurfaceData, initRaster, void, Object$* theArray, int32_t offset, int32_t bitoffset, int32_t width, int32_t height, int32_t pixStr, int32_t scanStr, $IndexColorModel* icm);
-	$invokeNative(BufImgSurfaceData, initRaster, theArray, offset, bitoffset, width, height, pixStr, scanStr, icm);
+	$invokeNative(theArray, offset, bitoffset, width, height, pixStr, scanStr, icm);
 	$finishNative();
 }
 

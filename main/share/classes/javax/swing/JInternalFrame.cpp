@@ -83,7 +83,6 @@
 #undef W_RESIZE_CURSOR
 
 using $ComponentArray = $Array<::java::awt::Component>;
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $InternalFrameListenerArray = $Array<::javax::swing::event::InternalFrameListener>;
 using $AWTEvent = ::java::awt::AWTEvent;
 using $BorderLayout = ::java::awt::BorderLayout;
@@ -92,7 +91,6 @@ using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTCo
 using $Container = ::java::awt::Container;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $Cursor = ::java::awt::Cursor;
-using $Dimension = ::java::awt::Dimension;
 using $EventQueue = ::java::awt::EventQueue;
 using $FocusTraversalPolicy = ::java::awt::FocusTraversalPolicy;
 using $Graphics = ::java::awt::Graphics;
@@ -115,7 +113,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $SecurityException = ::java::lang::SecurityException;
 using $EventListener = ::java::util::EventListener;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $Icon = ::javax::swing::Icon;
 using $InternalFrameFocusTraversalPolicy = ::javax::swing::InternalFrameFocusTraversalPolicy;
@@ -128,7 +125,6 @@ using $JInternalFrame$JDesktopIcon = ::javax::swing::JInternalFrame$JDesktopIcon
 using $JLayeredPane = ::javax::swing::JLayeredPane;
 using $JMenuBar = ::javax::swing::JMenuBar;
 using $JRootPane = ::javax::swing::JRootPane;
-using $RootPaneContainer = ::javax::swing::RootPaneContainer;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;
 using $WindowConstants = ::javax::swing::WindowConstants;

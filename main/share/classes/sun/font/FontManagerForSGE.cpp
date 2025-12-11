@@ -5,12 +5,8 @@
 #include <java/util/TreeMap.h>
 #include <jcpp.h>
 
-using $FontArray = $Array<::java::awt::Font>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Locale = ::java::util::Locale;
-using $TreeMap = ::java::util::TreeMap;
-using $FontManager = ::sun::font::FontManager;
 
 namespace sun {
 	namespace font {

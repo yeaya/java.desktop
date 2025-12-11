@@ -199,12 +199,10 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $WindowPeer = ::java::awt::peer::WindowPeer;
 using $UnsupportedEncodingException = ::java::io::UnsupportedEncodingException;
 using $AssertionError = ::java::lang::AssertionError;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
@@ -220,7 +218,6 @@ using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $AbstractList = ::java::util::AbstractList;
 using $AbstractSet = ::java::util::AbstractSet;
 using $ArrayList = ::java::util::ArrayList;
-using $HashMap = ::java::util::HashMap;
 using $HashSet = ::java::util::HashSet;
 using $Iterator = ::java::util::Iterator;
 using $List = ::java::util::List;
@@ -288,7 +285,6 @@ using $XWindowPeer$1 = ::sun::awt::X11::XWindowPeer$1;
 using $XWindowPeer$2 = ::sun::awt::X11::XWindowPeer$2;
 using $XWindowPeer$3 = ::sun::awt::X11::XWindowPeer$3;
 using $XWindowPeer$4 = ::sun::awt::X11::XWindowPeer$4;
-using $XWrapperBase = ::sun::awt::X11::XWrapperBase;
 using $XlibUtil = ::sun::awt::X11::XlibUtil;
 using $XlibWrapper = ::sun::awt::X11::XlibWrapper;
 using $X11GraphicsDevice = ::sun::awt::X11GraphicsDevice;
@@ -824,7 +820,7 @@ $String* XWindowPeer::getLocalHostname() {
 	$init(XWindowPeer);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(XWindowPeer, getLocalHostname, $String*);
-	$assign($ret, $invokeNativeStatic(XWindowPeer, getLocalHostname));
+	$assign($ret, $invokeNativeStaticObject());
 	$finishNativeStatic();
 	return $ret;
 }
@@ -833,7 +829,7 @@ int32_t XWindowPeer::getJvmPID() {
 	$init(XWindowPeer);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XWindowPeer, getJvmPID, int32_t);
-	$ret = $invokeNativeStatic(XWindowPeer, getJvmPID);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }

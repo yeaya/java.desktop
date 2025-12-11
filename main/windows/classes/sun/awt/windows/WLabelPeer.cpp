@@ -45,11 +45,9 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $LabelPeer = ::java::awt::peer::LabelPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $Region = ::sun::java2d::pipe::Region;
 
 namespace sun {
@@ -300,7 +298,7 @@ $Dimension* WLabelPeer::getMinimumSize() {
 
 void WLabelPeer::lazyPaint() {
 	$prepareNative(WLabelPeer, lazyPaint, void);
-	$invokeNative(WLabelPeer, lazyPaint);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -317,13 +315,13 @@ bool WLabelPeer::shouldClearRectBeforePaint() {
 
 void WLabelPeer::setText($String* label) {
 	$prepareNative(WLabelPeer, setText, void, $String* label);
-	$invokeNative(WLabelPeer, setText, label);
+	$invokeNative(label);
 	$finishNative();
 }
 
 void WLabelPeer::setAlignment(int32_t alignment) {
 	$prepareNative(WLabelPeer, setAlignment, void, int32_t alignment);
-	$invokeNative(WLabelPeer, setAlignment, alignment);
+	$invokeNative(alignment);
 	$finishNative();
 }
 
@@ -333,7 +331,7 @@ void WLabelPeer::init$($Label* target) {
 
 void WLabelPeer::create($WComponentPeer* parent) {
 	$prepareNative(WLabelPeer, create, void, $WComponentPeer* parent);
-	$invokeNative(WLabelPeer, create, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 

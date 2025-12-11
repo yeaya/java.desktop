@@ -20,9 +20,7 @@ using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
 using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
 using $OGLRenderer = ::sun::java2d::opengl::OGLRenderer;
 using $OGLRenderer$Tracer$1 = ::sun::java2d::opengl::OGLRenderer$Tracer$1;
-using $BufferedRenderPipe = ::sun::java2d::pipe::BufferedRenderPipe;
 using $ParallelogramPipe = ::sun::java2d::pipe::ParallelogramPipe;
-using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 using $SpanIterator = ::sun::java2d::pipe::SpanIterator;
 
 namespace sun {

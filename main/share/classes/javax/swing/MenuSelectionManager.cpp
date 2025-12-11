@@ -36,14 +36,11 @@
 #undef TRACE
 #undef VERBOSE
 
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
 using $ChangeListenerArray = $Array<::javax::swing::event::ChangeListener>;
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
@@ -53,7 +50,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $EventListener = ::java::util::EventListener;
 using $Vector = ::java::util::Vector;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JMenuBar = ::javax::swing::JMenuBar;
 using $JMenuItem = ::javax::swing::JMenuItem;

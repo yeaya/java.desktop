@@ -14,7 +14,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Attribute = ::javax::print::attribute::Attribute;
 using $AttributeSet = ::javax::print::attribute::AttributeSet;
-using $AttributeSetUtilities = ::javax::print::attribute::AttributeSetUtilities;
 using $AttributeSetUtilities$SynchronizedAttributeSet = ::javax::print::attribute::AttributeSetUtilities$SynchronizedAttributeSet;
 using $PrintRequestAttributeSet = ::javax::print::attribute::PrintRequestAttributeSet;
 

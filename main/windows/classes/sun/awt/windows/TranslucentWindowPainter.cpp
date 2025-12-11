@@ -27,7 +27,6 @@
 
 using $AlphaComposite = ::java::awt::AlphaComposite;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Composite = ::java::awt::Composite;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
@@ -47,8 +46,6 @@ using $TranslucentWindowPainter$VIOptD3DWindowPainter = ::sun::awt::windows::Tra
 using $TranslucentWindowPainter$VIOptWGLWindowPainter = ::sun::awt::windows::TranslucentWindowPainter$VIOptWGLWindowPainter;
 using $TranslucentWindowPainter$VIOptWindowPainter = ::sun::awt::windows::TranslucentWindowPainter$VIOptWindowPainter;
 using $TranslucentWindowPainter$VIWindowPainter = ::sun::awt::windows::TranslucentWindowPainter$VIWindowPainter;
-using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
 using $AccelGraphicsConfig = ::sun::java2d::pipe::hw::AccelGraphicsConfig;
 using $ContextCapabilities = ::sun::java2d::pipe::hw::ContextCapabilities;

@@ -26,7 +26,6 @@ using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Arrays = ::java::util::Arrays;
-using $Effect = ::javax::swing::plaf::nimbus::Effect;
 using $Effect$ArrayCache = ::javax::swing::plaf::nimbus::Effect$ArrayCache;
 using $Effect$EffectType = ::javax::swing::plaf::nimbus::Effect$EffectType;
 using $EffectUtils = ::javax::swing::plaf::nimbus::EffectUtils;

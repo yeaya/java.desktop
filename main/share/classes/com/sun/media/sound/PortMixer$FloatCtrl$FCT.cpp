@@ -4,7 +4,6 @@
 #include <javax/sound/sampled/FloatControl$Type.h>
 #include <jcpp.h>
 
-using $PortMixer$FloatCtrl = ::com::sun::media::sound::PortMixer$FloatCtrl;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

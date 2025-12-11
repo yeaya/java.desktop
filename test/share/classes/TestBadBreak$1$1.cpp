@@ -17,7 +17,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;
 
 $FieldInfo _TestBadBreak$1$1_FieldInfo_[] = {

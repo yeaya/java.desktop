@@ -39,7 +39,7 @@ public:
 	static const int64_t PAspect = 128; // (int64_t)1 << 7
 	static const int64_t PBaseSize = 256; // (int64_t)1 << 8
 	static const int64_t PWinGravity = 512; // (int64_t)1 << 9
-	static const int64_t PAllHints = (PPosition | PSize | PMinSize | PMaxSize | PResizeInc | PAspect);
+	static const int64_t PAllHints = 252; // (PPosition | PSize | PMinSize | PMaxSize | PResizeInc | PAspect)
 	static const int64_t InputHint = 1; // (int64_t)1 << 0
 	static const int64_t StateHint = 2; // (int64_t)1 << 1
 	static const int64_t IconPixmapHint = 4; // (int64_t)1 << 2
@@ -47,7 +47,7 @@ public:
 	static const int64_t IconPositionHint = 16; // (int64_t)1 << 4
 	static const int64_t IconMaskHint = 32; // (int64_t)1 << 5
 	static const int64_t WindowGroupHint = 64; // (int64_t)1 << 6
-	static const int64_t AllHints = (InputHint | StateHint | IconPixmapHint | IconWindowHint | IconPositionHint | IconMaskHint | WindowGroupHint);
+	static const int64_t AllHints = 127; // (InputHint | StateHint | IconPixmapHint | IconWindowHint | IconPositionHint | IconMaskHint | WindowGroupHint)
 	static const int64_t XUrgencyHint = 256; // (int64_t)1 << 8
 	static const int32_t WithdrawnState = 0;
 	static const int32_t NormalState = 1;

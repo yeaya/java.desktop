@@ -19,20 +19,16 @@
 #undef TYPE_INT_ARGB
 #undef WIDTH
 
-using $Component = ::java::awt::Component;
-using $Graphics = ::java::awt::Graphics;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $JComboBox = ::javax::swing::JComboBox;
-using $JComponent = ::javax::swing::JComponent;
 using $JTextField = ::javax::swing::JTextField;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;
-using $Border = ::javax::swing::border::Border;
 using $BasicLookAndFeel = ::javax::swing::plaf::basic::BasicLookAndFeel;
 using $NimbusLookAndFeel = ::javax::swing::plaf::nimbus::NimbusLookAndFeel;
 using $SynthLookAndFeel = ::javax::swing::plaf::synth::SynthLookAndFeel;

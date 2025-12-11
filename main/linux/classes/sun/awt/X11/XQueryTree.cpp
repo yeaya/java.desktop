@@ -18,7 +18,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalStateException = ::java::lang::IllegalStateException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $Native = ::sun::awt::X11::Native;
 using $UnsafeXDisposerRecord = ::sun::awt::X11::UnsafeXDisposerRecord;
 using $XErrorHandler = ::sun::awt::X11::XErrorHandler;

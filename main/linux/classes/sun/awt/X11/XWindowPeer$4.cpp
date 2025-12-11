@@ -10,16 +10,12 @@
 #undef POPUP
 #undef UTILITY
 
-using $Window$TypeArray = $Array<::java::awt::Window$Type>;
-using $Window = ::java::awt::Window;
 using $Window$Type = ::java::awt::Window$Type;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $XWindowPeer = ::sun::awt::X11::XWindowPeer;
 
 namespace sun {
 	namespace awt {

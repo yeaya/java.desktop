@@ -41,7 +41,6 @@
 
 using $Position$BiasArray = $Array<::javax::swing::text::Position$Bias>;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
 using $Rectangle = ::java::awt::Rectangle;
@@ -57,7 +56,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NumberFormatException = ::java::lang::NumberFormatException;
 using $DocumentEvent = ::javax::swing::event::DocumentEvent;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
 using $Position$Bias = ::javax::swing::text::Position$Bias;
 using $StyleConstants = ::javax::swing::text::StyleConstants;

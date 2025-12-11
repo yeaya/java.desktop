@@ -18,7 +18,6 @@
 #undef SEPARATE_DOCUMENTS_UNCOLLATED_COPIES
 
 using $intArray2 = $Array<int32_t, 2>;
-using $AttributeValue = ::java::awt::AttributeValue;
 using $JobAttributes$DefaultSelectionType = ::java::awt::JobAttributes$DefaultSelectionType;
 using $JobAttributes$DestinationType = ::java::awt::JobAttributes$DestinationType;
 using $JobAttributes$DialogType = ::java::awt::JobAttributes$DialogType;

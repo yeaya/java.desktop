@@ -25,7 +25,6 @@
 using $DefaultStyledDocument$ElementBuffer$ElemChangesArray = $Array<::javax::swing::text::DefaultStyledDocument$ElementBuffer$ElemChanges>;
 using $DefaultStyledDocument$ElementSpecArray = $Array<::javax::swing::text::DefaultStyledDocument$ElementSpec>;
 using $ElementArray = $Array<::javax::swing::text::Element>;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -34,7 +33,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $ArrayList = ::java::util::ArrayList;
 using $Stack = ::java::util::Stack;
 using $Vector = ::java::util::Vector;
-using $AbstractDocument = ::javax::swing::text::AbstractDocument;
 using $AbstractDocument$BranchElement = ::javax::swing::text::AbstractDocument$BranchElement;
 using $AbstractDocument$DefaultDocumentEvent = ::javax::swing::text::AbstractDocument$DefaultDocumentEvent;
 using $AbstractDocument$ElementEdit = ::javax::swing::text::AbstractDocument$ElementEdit;

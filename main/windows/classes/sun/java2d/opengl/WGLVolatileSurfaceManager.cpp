@@ -39,7 +39,6 @@ using $Image = ::java::awt::Image;
 using $Transparency = ::java::awt::Transparency;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -55,7 +54,6 @@ using $SurfaceData = ::sun::java2d::SurfaceData;
 using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;
 using $WGLGraphicsConfig = ::sun::java2d::opengl::WGLGraphicsConfig;
 using $WGLSurfaceData = ::sun::java2d::opengl::WGLSurfaceData;
-using $WGLSurfaceData$WGLOffScreenSurfaceData = ::sun::java2d::opengl::WGLSurfaceData$WGLOffScreenSurfaceData;
 using $ExtendedBufferCapabilities = ::sun::java2d::pipe::hw::ExtendedBufferCapabilities;
 using $ExtendedBufferCapabilities$VSyncType = ::sun::java2d::pipe::hw::ExtendedBufferCapabilities$VSyncType;
 

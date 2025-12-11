@@ -10,7 +10,6 @@
 #undef UP
 
 using $GTKConstants$ArrowTypeArray = $Array<::com::sun::java::swing::plaf::gtk::GTKConstants$ArrowType>;
-using $GTKConstants = ::com::sun::java::swing::plaf::gtk::GTKConstants;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

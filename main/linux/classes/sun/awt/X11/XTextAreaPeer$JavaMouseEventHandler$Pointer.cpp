@@ -21,7 +21,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $JButton = ::javax::swing::JButton;
 using $JScrollBar = ::javax::swing::JScrollBar;
 using $XTextAreaPeer = ::sun::awt::X11::XTextAreaPeer;
-using $XTextAreaPeer$JavaMouseEventHandler = ::sun::awt::X11::XTextAreaPeer$JavaMouseEventHandler;
 using $XTextAreaPeer$JavaMouseEventHandler$Pointer$Type = ::sun::awt::X11::XTextAreaPeer$JavaMouseEventHandler$Pointer$Type;
 
 namespace sun {

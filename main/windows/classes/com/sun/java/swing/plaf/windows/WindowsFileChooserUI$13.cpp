@@ -7,7 +7,6 @@
 #include <javax/swing/JButton.h>
 #include <jcpp.h>
 
-using $WindowsFileChooserUI = ::com::sun::java::swing::plaf::windows::WindowsFileChooserUI;
 using $FocusAdapter = ::java::awt::event::FocusAdapter;
 using $FocusEvent = ::java::awt::event::FocusEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -15,7 +14,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $JButton = ::javax::swing::JButton;
 

@@ -10,14 +10,11 @@
 
 using $FocusTraversal = ::FocusTraversal;
 using $Component = ::java::awt::Component;
-using $KeyboardFocusManager = ::java::awt::KeyboardFocusManager;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $FocusManager = ::javax::swing::FocusManager;
 using $JFrame = ::javax::swing::JFrame;

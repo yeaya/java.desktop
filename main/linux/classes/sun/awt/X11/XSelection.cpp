@@ -61,7 +61,6 @@ using $Native = ::sun::awt::X11::Native;
 using $OwnershipListener = ::sun::awt::X11::OwnershipListener;
 using $WindowPropertyGetter = ::sun::awt::X11::WindowPropertyGetter;
 using $XAtom = ::sun::awt::X11::XAtom;
-using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XConstants = ::sun::awt::X11::XConstants;
 using $XDataTransferer = ::sun::awt::X11::XDataTransferer;
 using $XEventDispatcher = ::sun::awt::X11::XEventDispatcher;

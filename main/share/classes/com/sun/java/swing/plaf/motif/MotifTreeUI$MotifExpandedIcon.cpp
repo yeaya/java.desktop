@@ -8,11 +8,9 @@
 #include <javax/swing/UIManager.h>
 #include <jcpp.h>
 
-using $MotifTreeUI = ::com::sun::java::swing::plaf::motif::MotifTreeUI;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

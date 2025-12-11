@@ -9,7 +9,6 @@
 using $Choice = ::java::awt::Choice;
 using $DefaultPersistenceDelegate = ::java::beans::DefaultPersistenceDelegate;
 using $Encoder = ::java::beans::Encoder;
-using $MetaData = ::java::beans::MetaData;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

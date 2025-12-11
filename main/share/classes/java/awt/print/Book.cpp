@@ -8,7 +8,6 @@
 
 using $Book$BookPage = ::java::awt::print::Book$BookPage;
 using $PageFormat = ::java::awt::print::PageFormat;
-using $Pageable = ::java::awt::print::Pageable;
 using $Printable = ::java::awt::print::Printable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

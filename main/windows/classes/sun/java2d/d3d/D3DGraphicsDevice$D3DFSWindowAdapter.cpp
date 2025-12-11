@@ -11,7 +11,6 @@ using $WindowEvent = ::java::awt::event::WindowEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $D3DGraphicsDevice = ::sun::java2d::d3d::D3DGraphicsDevice;
 using $D3DRenderQueue = ::sun::java2d::d3d::D3DRenderQueue;
 
 namespace sun {

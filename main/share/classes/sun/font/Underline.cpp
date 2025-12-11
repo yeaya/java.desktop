@@ -21,14 +21,11 @@
 #undef USE_THICKNESS
 
 using $UnderlineArray = $Array<::sun::font::Underline>;
-using $Graphics2D = ::java::awt::Graphics2D;
-using $Shape = ::java::awt::Shape;
 using $TextAttribute = ::java::awt::font::TextAttribute;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
-using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ConcurrentHashMap = ::java::util::concurrent::ConcurrentHashMap;
 using $Underline$IMGrayUnderline = ::sun::font::Underline$IMGrayUnderline;

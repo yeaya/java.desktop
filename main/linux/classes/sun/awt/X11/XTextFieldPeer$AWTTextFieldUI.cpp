@@ -26,7 +26,6 @@
 
 using $MotifPasswordFieldUI = ::com::sun::java::swing::plaf::motif::MotifPasswordFieldUI;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Font = ::java::awt::Font;
 using $Insets = ::java::awt::Insets;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -41,7 +40,6 @@ using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIDefaults = ::javax::swing::UIDefaults;
 using $Border = ::javax::swing::border::Border;
 using $UIResource = ::javax::swing::plaf::UIResource;
-using $BasicTextUI = ::javax::swing::plaf::basic::BasicTextUI;
 using $Caret = ::javax::swing::text::Caret;
 using $DefaultCaret = ::javax::swing::text::DefaultCaret;
 using $JTextComponent = ::javax::swing::text::JTextComponent;

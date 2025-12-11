@@ -29,7 +29,6 @@
 #undef WEST
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
@@ -42,13 +41,10 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $Integer = ::java::lang::Integer;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $JButton = ::javax::swing::JButton;
-using $JComponent = ::javax::swing::JComponent;
 using $SwingConstants = ::javax::swing::SwingConstants;
 using $UIManager = ::javax::swing::UIManager;
-using $Border = ::javax::swing::border::Border;
 using $UIResource = ::javax::swing::plaf::UIResource;
 using $SwingUtilities2 = ::sun::swing::SwingUtilities2;
 

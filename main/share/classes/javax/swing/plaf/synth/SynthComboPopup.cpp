@@ -16,16 +16,12 @@
 
 #undef SINGLE_SELECTION
 
-using $Component = ::java::awt::Component;
-using $Font = ::java::awt::Font;
 using $Insets = ::java::awt::Insets;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComboBox = ::javax::swing::JComboBox;
-using $JComponent = ::javax::swing::JComponent;
 using $JList = ::javax::swing::JList;
-using $ListCellRenderer = ::javax::swing::ListCellRenderer;
 using $ListSelectionModel = ::javax::swing::ListSelectionModel;
 using $ComboBoxUI = ::javax::swing::plaf::ComboBoxUI;
 using $BasicComboPopup = ::javax::swing::plaf::basic::BasicComboPopup;

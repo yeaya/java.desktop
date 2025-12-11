@@ -3,7 +3,6 @@
 #include <java/awt/EventQueue.h>
 #include <jcpp.h>
 
-using $EventQueue = ::java::awt::EventQueue;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

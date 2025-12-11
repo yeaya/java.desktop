@@ -47,7 +47,6 @@ using $TextComponent = ::java::awt::TextComponent;
 using $TextField = ::java::awt::TextField;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $PaintEvent = ::java::awt::event::PaintEvent;
 using $InputMethodRequests = ::java::awt::im::InputMethodRequests;
@@ -55,11 +54,9 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $TextFieldPeer = ::java::awt::peer::TextFieldPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WTextComponentPeer = ::sun::awt::windows::WTextComponentPeer;
 using $Region = ::sun::java2d::pipe::Region;
 
@@ -365,7 +362,7 @@ bool WTextFieldPeer::handleJavaKeyEvent($KeyEvent* e) {
 
 void WTextFieldPeer::setEchoChar(char16_t echoChar) {
 	$prepareNative(WTextFieldPeer, setEchoChar, void, char16_t echoChar);
-	$invokeNative(WTextFieldPeer, setEchoChar, echoChar);
+	$invokeNative(echoChar);
 	$finishNative();
 }
 
@@ -390,7 +387,7 @@ void WTextFieldPeer::init$($TextField* target) {
 
 void WTextFieldPeer::create($WComponentPeer* parent) {
 	$prepareNative(WTextFieldPeer, create, void, $WComponentPeer* parent);
-	$invokeNative(WTextFieldPeer, create, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 

@@ -11,7 +11,6 @@
 #include <jcpp.h>
 
 using $Component = ::java::awt::Component;
-using $FocusListener = ::java::awt::event::FocusListener;
 using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -21,7 +20,6 @@ using $DefaultCellEditor = ::javax::swing::DefaultCellEditor;
 using $JFileChooser = ::javax::swing::JFileChooser;
 using $JTable = ::javax::swing::JTable;
 using $JTextField = ::javax::swing::JTextField;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $FilePane = ::sun::swing::FilePane;
 
 namespace sun {

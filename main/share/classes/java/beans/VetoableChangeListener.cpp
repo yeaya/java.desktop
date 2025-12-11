@@ -3,10 +3,8 @@
 #include <java/beans/PropertyChangeEvent.h>
 #include <jcpp.h>
 
-using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
 
 namespace java {
 	namespace beans {

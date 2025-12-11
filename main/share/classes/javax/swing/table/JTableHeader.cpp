@@ -37,7 +37,6 @@
 #undef AUTO_RESIZE_OFF
 #undef NOBUTTON
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
@@ -45,7 +44,6 @@ using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTCo
 using $Dimension = ::java::awt::Dimension;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ObjectOutputStream = ::java::io::ObjectOutputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -55,7 +53,6 @@ using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $JComponent = ::javax::swing::JComponent;
 using $JComponent$AccessibleJComponent = ::javax::swing::JComponent$AccessibleJComponent;

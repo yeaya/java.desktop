@@ -10,17 +10,14 @@
 #include <javax/swing/border/MatteBorder.h>
 #include <jcpp.h>
 
-using $Color = ::java::awt::Color;
 using $Insets = ::java::awt::Insets;
 using $Encoder = ::java::beans::Encoder;
 using $Expression = ::java::beans::Expression;
-using $MetaData = ::java::beans::MetaData;
 using $PersistenceDelegate = ::java::beans::PersistenceDelegate;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Icon = ::javax::swing::Icon;
 using $MatteBorder = ::javax::swing::border::MatteBorder;
 
 namespace java {

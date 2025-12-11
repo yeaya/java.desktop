@@ -49,7 +49,6 @@
 
 using $AWTEvent = ::java::awt::AWTEvent;
 using $BorderLayout = ::java::awt::BorderLayout;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Container = ::java::awt::Container;
@@ -74,7 +73,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $SecurityManager = ::java::lang::SecurityManager;
 using $StringBuffer = ::java::lang::StringBuffer;
-using $Locale = ::java::util::Locale;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $JComponent = ::javax::swing::JComponent;
 using $JFrame$AccessibleJFrame = ::javax::swing::JFrame$AccessibleJFrame;
@@ -83,10 +81,8 @@ using $JMenuBar = ::javax::swing::JMenuBar;
 using $JRootPane = ::javax::swing::JRootPane;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $RepaintManager = ::javax::swing::RepaintManager;
-using $RootPaneContainer = ::javax::swing::RootPaneContainer;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $TransferHandler = ::javax::swing::TransferHandler;
-using $TransferHandler$HasGetTransferHandler = ::javax::swing::TransferHandler$HasGetTransferHandler;
 using $UIManager = ::javax::swing::UIManager;
 using $WindowConstants = ::javax::swing::WindowConstants;
 using $SunToolkit = ::sun::awt::SunToolkit;

@@ -10,9 +10,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Long = ::java::lang::Long;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Callable = ::java::util::concurrent::Callable;
 using $Win32ShellFolder2 = ::sun::awt::shell::Win32ShellFolder2;
-using $Win32ShellFolder2$FolderDisposer = ::sun::awt::shell::Win32ShellFolder2$FolderDisposer;
 
 namespace sun {
 	namespace awt {

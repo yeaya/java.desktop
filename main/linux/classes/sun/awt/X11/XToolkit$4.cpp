@@ -14,7 +14,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $SunToolkit = ::sun::awt::SunToolkit;
 using $XConstants = ::sun::awt::X11::XConstants;
 using $XEvent = ::sun::awt::X11::XEvent;
-using $XEventDispatcher = ::sun::awt::X11::XEventDispatcher;
 using $XToolkit = ::sun::awt::X11::XToolkit;
 
 namespace sun {

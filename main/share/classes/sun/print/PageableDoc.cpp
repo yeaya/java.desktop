@@ -17,7 +17,6 @@ using $Reader = ::java::io::Reader;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Doc = ::javax::print::Doc;
 using $DocFlavor = ::javax::print::DocFlavor;
 using $DocFlavor$SERVICE_FORMATTED = ::javax::print::DocFlavor$SERVICE_FORMATTED;
 using $DocAttributeSet = ::javax::print::attribute::DocAttributeSet;

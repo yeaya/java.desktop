@@ -17,7 +17,6 @@
 #undef DEFAULT_LOOKUP_KEY
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Insets = ::java::awt::Insets;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -25,7 +24,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Number = ::java::lang::Number;
 using $StringBuffer = ::java::lang::StringBuffer;
-using $Locale = ::java::util::Locale;
 using $Icon = ::javax::swing::Icon;
 using $JComponent = ::javax::swing::JComponent;
 using $UIManager = ::javax::swing::UIManager;

@@ -9,10 +9,8 @@
 #include <jcpp.h>
 
 using $Color = ::java::awt::Color;
-using $Font = ::java::awt::Font;
 using $Shape = ::java::awt::Shape;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
-using $PathIterator = ::java::awt::geom::PathIterator;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

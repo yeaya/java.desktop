@@ -32,7 +32,6 @@ using $DocumentEvent = ::javax::swing::event::DocumentEvent;
 using $DocumentEvent$ElementChange = ::javax::swing::event::DocumentEvent$ElementChange;
 using $AsyncBoxView = ::javax::swing::text::AsyncBoxView;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $BoxView = ::javax::swing::text::BoxView;
 using $Element = ::javax::swing::text::Element;
 using $Position = ::javax::swing::text::Position;
 using $Position$Bias = ::javax::swing::text::Position$Bias;

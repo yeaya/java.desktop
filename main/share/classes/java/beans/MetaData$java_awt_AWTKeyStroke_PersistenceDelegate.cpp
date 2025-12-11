@@ -16,7 +16,6 @@ using $AWTKeyStroke = ::java::awt::AWTKeyStroke;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $Encoder = ::java::beans::Encoder;
 using $Expression = ::java::beans::Expression;
-using $MetaData = ::java::beans::MetaData;
 using $PersistenceDelegate = ::java::beans::PersistenceDelegate;
 using $Boolean = ::java::lang::Boolean;
 using $Character = ::java::lang::Character;

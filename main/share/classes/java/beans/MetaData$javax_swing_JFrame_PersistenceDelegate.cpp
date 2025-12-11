@@ -7,11 +7,9 @@
 #include <java/beans/MetaData.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Window = ::java::awt::Window;
 using $DefaultPersistenceDelegate = ::java::beans::DefaultPersistenceDelegate;
 using $Encoder = ::java::beans::Encoder;
-using $MetaData = ::java::beans::MetaData;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

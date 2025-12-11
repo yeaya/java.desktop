@@ -36,13 +36,13 @@ public:
 	OGLContext$OGLContextCaps();
 	void init$(int32_t caps, $String* adapterId);
 	virtual $String* toString() override;
-	static const int32_t CAPS_EXT_FBOBJECT = (CAPS_RT_TEXTURE_ALPHA | CAPS_RT_TEXTURE_OPAQUE);
-	static const int32_t CAPS_DOUBLEBUFFERED = (FIRST_PRIVATE_CAP << 0);
-	static const int32_t CAPS_EXT_LCD_SHADER = (FIRST_PRIVATE_CAP << 1);
-	static const int32_t CAPS_EXT_BIOP_SHADER = (FIRST_PRIVATE_CAP << 2);
-	static const int32_t CAPS_EXT_GRAD_SHADER = (FIRST_PRIVATE_CAP << 3);
-	static const int32_t CAPS_EXT_TEXRECT = (FIRST_PRIVATE_CAP << 4);
-	static const int32_t CAPS_EXT_TEXBARRIER = (FIRST_PRIVATE_CAP << 5);
+	static const int32_t CAPS_EXT_FBOBJECT = 12; // (CAPS_RT_TEXTURE_ALPHA | CAPS_RT_TEXTURE_OPAQUE)
+	static const int32_t CAPS_DOUBLEBUFFERED = 65536; // (FIRST_PRIVATE_CAP << 0)
+	static const int32_t CAPS_EXT_LCD_SHADER = 131072; // (FIRST_PRIVATE_CAP << 1)
+	static const int32_t CAPS_EXT_BIOP_SHADER = 262144; // (FIRST_PRIVATE_CAP << 2)
+	static const int32_t CAPS_EXT_GRAD_SHADER = 524288; // (FIRST_PRIVATE_CAP << 3)
+	static const int32_t CAPS_EXT_TEXRECT = 1048576; // (FIRST_PRIVATE_CAP << 4)
+	static const int32_t CAPS_EXT_TEXBARRIER = 2097152; // (FIRST_PRIVATE_CAP << 5)
 };
 
 		} // opengl

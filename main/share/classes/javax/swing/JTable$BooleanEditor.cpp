@@ -9,14 +9,11 @@
 
 #undef CENTER
 
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $DefaultCellEditor = ::javax::swing::DefaultCellEditor;
 using $JCheckBox = ::javax::swing::JCheckBox;
-using $JTable = ::javax::swing::JTable;
 
 namespace javax {
 	namespace swing {

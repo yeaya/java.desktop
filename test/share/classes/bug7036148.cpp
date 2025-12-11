@@ -12,7 +12,6 @@
 #include <jcpp.h>
 
 using $bug7036148$1 = ::bug7036148$1;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

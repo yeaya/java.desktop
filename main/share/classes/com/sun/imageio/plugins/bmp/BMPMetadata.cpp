@@ -13,7 +13,6 @@
 #include <jcpp.h>
 
 using $BMPCompressionTypes = ::com::sun::imageio::plugins::bmp::BMPCompressionTypes;
-using $BMPConstants = ::com::sun::imageio::plugins::bmp::BMPConstants;
 using $I18N = ::com::sun::imageio::plugins::common::I18N;
 using $ImageUtil = ::com::sun::imageio::plugins::common::ImageUtil;
 using $UnsupportedEncodingException = ::java::io::UnsupportedEncodingException;

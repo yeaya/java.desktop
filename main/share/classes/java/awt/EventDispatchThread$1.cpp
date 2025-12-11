@@ -3,7 +3,6 @@
 #include <java/awt/EventDispatchThread.h>
 #include <jcpp.h>
 
-using $Conditional = ::java::awt::Conditional;
 using $EventDispatchThread = ::java::awt::EventDispatchThread;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

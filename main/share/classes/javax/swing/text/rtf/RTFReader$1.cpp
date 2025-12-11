@@ -4,13 +4,11 @@
 #include <javax/swing/text/rtf/RTFReader.h>
 #include <jcpp.h>
 
-using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $RTFReader = ::javax::swing::text::rtf::RTFReader;
 
 namespace javax {

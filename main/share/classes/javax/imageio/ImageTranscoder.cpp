@@ -7,9 +7,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ImageTypeSpecifier = ::javax::imageio::ImageTypeSpecifier;
-using $ImageWriteParam = ::javax::imageio::ImageWriteParam;
-using $IIOMetadata = ::javax::imageio::metadata::IIOMetadata;
 
 namespace javax {
 	namespace imageio {

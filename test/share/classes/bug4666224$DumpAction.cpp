@@ -10,7 +10,6 @@
 #include <jcpp.h>
 
 using $bug4666224 = ::bug4666224;
-using $Rectangle = ::java::awt::Rectangle;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;

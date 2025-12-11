@@ -11,12 +11,10 @@
 #include <jcpp.h>
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JCheckBoxMenuItem = ::javax::swing::JCheckBoxMenuItem;
 using $JMenu = ::javax::swing::JMenu;
 using $JMenuItem = ::javax::swing::JMenuItem;

@@ -9,7 +9,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Vector = ::java::util::Vector;
-using $AccessibleBundle = ::javax::accessibility::AccessibleBundle;
 using $AccessibleState = ::javax::accessibility::AccessibleState;
 
 namespace javax {

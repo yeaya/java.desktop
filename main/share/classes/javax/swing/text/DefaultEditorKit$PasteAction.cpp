@@ -10,7 +10,6 @@ using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DefaultEditorKit = ::javax::swing::text::DefaultEditorKit;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $TextAction = ::javax::swing::text::TextAction;
 

@@ -27,7 +27,6 @@
 
 #undef BASIC_TOGGLE_BUTTON_UI_KEY
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;

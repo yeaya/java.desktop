@@ -17,7 +17,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NumberFormatException = ::java::lang::NumberFormatException;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $FontUtilities = ::sun::font::FontUtilities;
 using $PlatformLogger = ::sun::util::logging::PlatformLogger;
 using $PlatformLogger$Level = ::sun::util::logging::PlatformLogger$Level;

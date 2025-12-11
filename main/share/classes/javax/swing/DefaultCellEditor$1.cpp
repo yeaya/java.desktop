@@ -13,7 +13,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $DefaultCellEditor = ::javax::swing::DefaultCellEditor;
 using $DefaultCellEditor$EditorDelegate = ::javax::swing::DefaultCellEditor$EditorDelegate;
 using $JTextField = ::javax::swing::JTextField;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 namespace javax {
 	namespace swing {

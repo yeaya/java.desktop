@@ -32,7 +32,6 @@
 #undef TYPE_INT_ARGB
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $EventQueue = ::java::awt::EventQueue;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
@@ -47,16 +46,10 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $Iterator = ::java::util::Iterator;
 using $List = ::java::util::List;
 using $ImageIO = ::javax::imageio::ImageIO;
-using $JComponent = ::javax::swing::JComponent;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $DefaultEditorKit = ::javax::swing::text::DefaultEditorKit;
 using $EditorKit = ::javax::swing::text::EditorKit;

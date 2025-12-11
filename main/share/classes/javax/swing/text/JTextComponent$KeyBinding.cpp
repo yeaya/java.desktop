@@ -9,7 +9,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $KeyStroke = ::javax::swing::KeyStroke;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 namespace javax {
 	namespace swing {

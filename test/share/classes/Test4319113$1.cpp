@@ -10,7 +10,6 @@
 using $Test4319113 = ::Test4319113;
 using $Test4319113$1$1 = ::Test4319113$1$1;
 using $ItemEvent = ::java::awt::event::ItemEvent;
-using $ItemListener = ::java::awt::event::ItemListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

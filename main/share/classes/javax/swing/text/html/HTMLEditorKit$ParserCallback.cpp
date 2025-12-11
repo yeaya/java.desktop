@@ -13,7 +13,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $HTML$Tag = ::javax::swing::text::html::HTML$Tag;
-using $HTMLEditorKit = ::javax::swing::text::html::HTMLEditorKit;
 
 namespace javax {
 	namespace swing {

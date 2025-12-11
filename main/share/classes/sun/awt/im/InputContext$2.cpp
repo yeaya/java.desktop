@@ -5,13 +5,11 @@
 #include <sun/awt/im/InputContext.h>
 #include <jcpp.h>
 
-using $AWTKeyStroke = ::java::awt::AWTKeyStroke;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Preferences = ::java::util::prefs::Preferences;
 using $InputContext = ::sun::awt::im::InputContext;
 

@@ -8,7 +8,6 @@
 
 using $ClassFinder = ::com::sun::beans::finder::ClassFinder;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $ClassLoader = ::java::lang::ClassLoader;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

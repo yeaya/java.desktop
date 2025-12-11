@@ -11,15 +11,12 @@
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $ItemEvent = ::java::awt::event::ItemEvent;
-using $ItemListener = ::java::awt::event::ItemListener;
 using $MouseEvent = ::java::awt::event::MouseEvent;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $EventObject = ::java::util::EventObject;
-using $AbstractCellEditor = ::javax::swing::AbstractCellEditor;
 using $DefaultCellEditor = ::javax::swing::DefaultCellEditor;
 
 namespace javax {

@@ -16,16 +16,12 @@
 #undef FORWARD_TRAVERSAL_KEYS
 
 using $AWTKeyStroke = ::java::awt::AWTKeyStroke;
-using $Container = ::java::awt::Container;
 using $KeyboardFocusManager = ::java::awt::KeyboardFocusManager;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
-using $KeyListener = ::java::awt::event::KeyListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $Set = ::java::util::Set;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $JComponent = ::javax::swing::JComponent;

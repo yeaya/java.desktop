@@ -14,7 +14,6 @@
 #undef MAX_PRIORITY
 
 using $byteArray2 = $Array<int8_t, 2>;
-using $SoftJitterCorrector = ::com::sun::media::sound::SoftJitterCorrector;
 using $SoftJitterCorrector$JitterStream$1 = ::com::sun::media::sound::SoftJitterCorrector$JitterStream$1;
 using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;

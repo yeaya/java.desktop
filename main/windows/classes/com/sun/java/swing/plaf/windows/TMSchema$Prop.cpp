@@ -30,7 +30,6 @@
 #undef TRANSITIONDURATIONS
 
 using $TMSchema$PropArray = $Array<::com::sun::java::swing::plaf::windows::TMSchema$Prop>;
-using $TMSchema = ::com::sun::java::swing::plaf::windows::TMSchema;
 using $Color = ::java::awt::Color;
 using $Dimension = ::java::awt::Dimension;
 using $Insets = ::java::awt::Insets;

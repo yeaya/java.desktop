@@ -8,11 +8,7 @@
 #include <javax/swing/ToolTipManager.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
-using $Point = ::java::awt::Point;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
-using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

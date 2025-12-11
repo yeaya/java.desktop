@@ -25,8 +25,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Files = ::java::nio::file::Files;
 using $Path = ::java::nio::file::Path;
-using $FileAttribute = ::java::nio::file::attribute::FileAttribute;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $PSPrinterJob = ::sun::print::PSPrinterJob;
 
 namespace sun {

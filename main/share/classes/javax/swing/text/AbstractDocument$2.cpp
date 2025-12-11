@@ -7,7 +7,6 @@
 
 #undef INSERT
 
-using $ObjectInputValidation = ::java::io::ObjectInputValidation;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

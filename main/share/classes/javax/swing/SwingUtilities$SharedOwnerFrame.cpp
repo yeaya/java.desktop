@@ -11,8 +11,6 @@
 #include <jcpp.h>
 
 using $WindowArray = $Array<::java::awt::Window>;
-using $Component = ::java::awt::Component;
-using $EventQueue = ::java::awt::EventQueue;
 using $Frame = ::java::awt::Frame;
 using $Toolkit = ::java::awt::Toolkit;
 using $Window = ::java::awt::Window;
@@ -22,7 +20,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SwingUtilities = ::javax::swing::SwingUtilities;
 
 namespace javax {
 	namespace swing {

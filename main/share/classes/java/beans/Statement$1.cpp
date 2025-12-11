@@ -2,7 +2,6 @@
 
 #include <jcpp.h>
 
-using $ExceptionListener = ::java::beans::ExceptionListener;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

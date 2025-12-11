@@ -11,8 +11,6 @@
 #include <jcpp.h>
 
 using $WindowsInternalFrameTitlePane = ::com::sun::java::swing::plaf::windows::WindowsInternalFrameTitlePane;
-using $Component = ::java::awt::Component;
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $PropertyVetoException = ::java::beans::PropertyVetoException;

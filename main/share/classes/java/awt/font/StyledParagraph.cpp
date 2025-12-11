@@ -38,7 +38,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NoSuchMethodError = ::java::lang::NoSuchMethodError;
 using $Annotation = ::java::text::Annotation;
 using $AttributedCharacterIterator = ::java::text::AttributedCharacterIterator;
-using $CharacterIterator = ::java::text::CharacterIterator;
 using $AbstractMap = ::java::util::AbstractMap;
 using $HashMap = ::java::util::HashMap;
 using $Map = ::java::util::Map;

@@ -4,12 +4,8 @@
 #include <javax/swing/KeyStroke.h>
 #include <jcpp.h>
 
-using $ActionArray = $Array<::javax::swing::Action>;
-using $KeyStrokeArray = $Array<::javax::swing::KeyStroke>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Action = ::javax::swing::Action;
-using $KeyStroke = ::javax::swing::KeyStroke;
 
 namespace javax {
 	namespace swing {

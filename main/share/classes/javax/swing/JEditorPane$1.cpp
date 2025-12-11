@@ -21,7 +21,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $LayoutFocusTraversalPolicy = ::javax::swing::LayoutFocusTraversalPolicy;
-using $SortingFocusTraversalPolicy = ::javax::swing::SortingFocusTraversalPolicy;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 namespace javax {

@@ -58,12 +58,9 @@
 
 using $DataFlavorArray = $Array<::java::awt::datatransfer::DataFlavor>;
 using $AWTEvent = ::java::awt::AWTEvent;
-using $AWTPermission = ::java::awt::AWTPermission;
 using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
 using $DataFlavor = ::java::awt::datatransfer::DataFlavor;
-using $FlavorMap = ::java::awt::datatransfer::FlavorMap;
-using $FlavorTable = ::java::awt::datatransfer::FlavorTable;
 using $Transferable = ::java::awt::datatransfer::Transferable;
 using $UnsupportedFlavorException = ::java::awt::datatransfer::UnsupportedFlavorException;
 using $DnDConstants = ::java::awt::dnd::DnDConstants;
@@ -91,7 +88,6 @@ using $SecurityManager = ::java::lang::SecurityManager;
 using $Thread$UncaughtExceptionHandler = ::java::lang::Thread$UncaughtExceptionHandler;
 using $BasicPermission = ::java::security::BasicPermission;
 using $Permission = ::java::security::Permission;
-using $EventObject = ::java::util::EventObject;
 using $Map = ::java::util::Map;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$DropTargetContextAccessor = ::sun::awt::AWTAccessor$DropTargetContextAccessor;

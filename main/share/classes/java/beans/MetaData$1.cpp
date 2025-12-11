@@ -8,7 +8,6 @@
 #include <java/lang/reflect/Field.h>
 #include <jcpp.h>
 
-using $MetaData = ::java::beans::MetaData;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $ClassNotFoundException = ::java::lang::ClassNotFoundException;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
@@ -20,7 +19,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NoSuchFieldException = ::java::lang::NoSuchFieldException;
 using $ReflectiveOperationException = ::java::lang::ReflectiveOperationException;
 using $Field = ::java::lang::reflect::Field;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 
 namespace java {
 	namespace beans {

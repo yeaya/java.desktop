@@ -3,8 +3,6 @@
 #include <java/awt/MenuItem.h>
 #include <jcpp.h>
 
-using $MenuItem = ::java::awt::MenuItem;
-using $MenuItemPeer = ::java::awt::peer::MenuItemPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

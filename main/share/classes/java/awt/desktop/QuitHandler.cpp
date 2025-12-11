@@ -4,8 +4,6 @@
 #include <java/awt/desktop/QuitResponse.h>
 #include <jcpp.h>
 
-using $QuitEvent = ::java::awt::desktop::QuitEvent;
-using $QuitResponse = ::java::awt::desktop::QuitResponse;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

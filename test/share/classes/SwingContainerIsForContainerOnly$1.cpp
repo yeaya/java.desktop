@@ -12,7 +12,6 @@
 
 #undef CONTINUE
 
-using $SwingContainerIsForContainerOnly = ::SwingContainerIsForContainerOnly;
 using $Container = ::java::awt::Container;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;

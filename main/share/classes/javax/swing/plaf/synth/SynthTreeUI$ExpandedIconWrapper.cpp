@@ -14,12 +14,9 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Icon = ::javax::swing::Icon;
 using $JComponent = ::javax::swing::JComponent;
-using $JTree = ::javax::swing::JTree;
 using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
 using $SynthGraphicsUtils = ::javax::swing::plaf::synth::SynthGraphicsUtils;
-using $SynthIcon = ::javax::swing::plaf::synth::SynthIcon;
 using $SynthTreeUI = ::javax::swing::plaf::synth::SynthTreeUI;
 
 namespace javax {

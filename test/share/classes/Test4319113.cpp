@@ -37,11 +37,9 @@
 
 using $Test4319113$1 = ::Test4319113$1;
 using $WindowArray = $Array<::java::awt::Window>;
-using $UIManager$LookAndFeelInfoArray = $Array<::javax::swing::UIManager$LookAndFeelInfo>;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Dialog = ::java::awt::Dialog;
 using $EventQueue = ::java::awt::EventQueue;
 using $Frame = ::java::awt::Frame;
 using $GridLayout = ::java::awt::GridLayout;
@@ -57,13 +55,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
-using $EventObject = ::java::util::EventObject;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $JApplet = ::javax::swing::JApplet;
 using $JButton = ::javax::swing::JButton;

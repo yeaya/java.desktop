@@ -80,7 +80,6 @@
 
 using $ProcessPath$PointArray = $Array<::sun::java2d::loops::ProcessPath$Point>;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
-using $Path2D = ::java::awt::geom::Path2D;
 using $Path2D$Float = ::java::awt::geom::Path2D$Float;
 using $PathIterator = ::java::awt::geom::PathIterator;
 using $QuadCurve2D = ::java::awt::geom::QuadCurve2D;

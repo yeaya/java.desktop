@@ -6,7 +6,6 @@
 #include <javax/swing/plaf/synth/SynthIcon.h>
 #include <jcpp.h>
 
-using $bug8081411 = ::bug8081411;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

@@ -15,7 +15,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractDocument = ::javax::swing::text::AbstractDocument;
-using $AbstractDocument$AbstractElement = ::javax::swing::text::AbstractDocument$AbstractElement;
 using $AbstractDocument$LeafElement = ::javax::swing::text::AbstractDocument$LeafElement;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $DefaultStyledDocument = ::javax::swing::text::DefaultStyledDocument;

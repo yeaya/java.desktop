@@ -4,13 +4,11 @@
 #include <javax/swing/event/ListDataEvent.h>
 #include <jcpp.h>
 
-using $DefaultComboBoxModelAddAllElementsTest = ::DefaultComboBoxModelAddAllElementsTest;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $ListDataEvent = ::javax::swing::event::ListDataEvent;
-using $ListDataListener = ::javax::swing::event::ListDataListener;
 
 $MethodInfo _DefaultComboBoxModelAddAllElementsTest$MyListDataListener_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PRIVATE, $method(static_cast<void(DefaultComboBoxModelAddAllElementsTest$MyListDataListener::*)()>(&DefaultComboBoxModelAddAllElementsTest$MyListDataListener::init$))},

@@ -24,7 +24,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $ClassNotFoundException = ::java::lang::ClassNotFoundException;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $DataFlavorUtil = ::sun::datatransfer::DataFlavorUtil;
 
 namespace javax {

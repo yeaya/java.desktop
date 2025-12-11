@@ -14,7 +14,6 @@
 #undef APPLICATION_EXCLUDE
 #undef REJECT
 
-using $Component = ::java::awt::Component;
 using $Dialog = ::java::awt::Dialog;
 using $Dialog$ModalExclusionType = ::java::awt::Dialog$ModalExclusionType;
 using $EventFilter$FilterAction = ::java::awt::EventFilter$FilterAction;
@@ -24,7 +23,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AppContext = ::sun::awt::AppContext;
 
 namespace java {
 	namespace awt {

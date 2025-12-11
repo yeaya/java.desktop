@@ -6,13 +6,10 @@
 #include <javax/swing/table/TableCellRenderer.h>
 #include <jcpp.h>
 
-using $bug6735286 = ::bug6735286;
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JTable = ::javax::swing::JTable;
 using $TableCellRenderer = ::javax::swing::table::TableCellRenderer;
 

@@ -9,8 +9,6 @@
 
 #undef E_RESIZE_CURSOR
 
-using $bug6889007 = ::bug6889007;
-using $Component = ::java::awt::Component;
 using $Cursor = ::java::awt::Cursor;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

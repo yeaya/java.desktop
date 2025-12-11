@@ -60,7 +60,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $EventListener = ::java::util::EventListener;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$MenuItemAccessor = ::sun::awt::AWTAccessor$MenuItemAccessor;
@@ -468,7 +467,7 @@ void MenuItem::readObject($ObjectInputStream* s) {
 void MenuItem::initIDs() {
 	$init(MenuItem);
 	$prepareNativeStatic(MenuItem, initIDs, void);
-	$invokeNativeStatic(MenuItem, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

@@ -7,7 +7,6 @@
 #undef RESULT_1
 #undef RESULT_2
 
-using $TestProxyLazyValue = ::TestProxyLazyValue;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

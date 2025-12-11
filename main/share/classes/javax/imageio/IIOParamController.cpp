@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $IIOParam = ::javax::imageio::IIOParam;
 
 namespace javax {
 	namespace imageio {

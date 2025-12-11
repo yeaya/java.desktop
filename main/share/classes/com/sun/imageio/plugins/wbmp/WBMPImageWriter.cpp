@@ -30,7 +30,6 @@ using $I18N = ::com::sun::imageio::plugins::common::I18N;
 using $WBMPMetadata = ::com::sun::imageio::plugins::wbmp::WBMPMetadata;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
-using $ColorModel = ::java::awt::image::ColorModel;
 using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DataBufferByte = ::java::awt::image::DataBufferByte;
 using $IndexColorModel = ::java::awt::image::IndexColorModel;
@@ -47,13 +46,11 @@ using $IllegalStateException = ::java::lang::IllegalStateException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $IIOImage = ::javax::imageio::IIOImage;
-using $IIOParam = ::javax::imageio::IIOParam;
 using $ImageTypeSpecifier = ::javax::imageio::ImageTypeSpecifier;
 using $ImageWriteParam = ::javax::imageio::ImageWriteParam;
 using $ImageWriter = ::javax::imageio::ImageWriter;
 using $IIOMetadata = ::javax::imageio::metadata::IIOMetadata;
 using $ImageWriterSpi = ::javax::imageio::spi::ImageWriterSpi;
-using $ImageInputStream = ::javax::imageio::stream::ImageInputStream;
 using $ImageOutputStream = ::javax::imageio::stream::ImageOutputStream;
 
 namespace com {

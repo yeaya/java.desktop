@@ -13,12 +13,10 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $ReferenceQueue = ::java::lang::ref::ReferenceQueue;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $GapContent = ::javax::swing::text::GapContent;
 using $GapContent$StickyPosition = ::javax::swing::text::GapContent$StickyPosition;
-using $GapVector = ::javax::swing::text::GapVector;
 
 namespace javax {
 	namespace swing {

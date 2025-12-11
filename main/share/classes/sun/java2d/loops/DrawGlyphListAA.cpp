@@ -90,7 +90,7 @@ void DrawGlyphListAA::init$(int64_t pNativePrim, $SurfaceType* srctype, $Composi
 
 void DrawGlyphListAA::DrawGlyphListAA$($SunGraphics2D* sg2d, $SurfaceData* dest, $GlyphList* srcData, int32_t fromGlyph, int32_t toGlyph) {
 	$prepareNative(DrawGlyphListAA, DrawGlyphListAA$, void, $SunGraphics2D* sg2d, $SurfaceData* dest, $GlyphList* srcData, int32_t fromGlyph, int32_t toGlyph);
-	$invokeNative(DrawGlyphListAA, DrawGlyphListAA$, sg2d, dest, srcData, fromGlyph, toGlyph);
+	$invokeNative(sg2d, dest, srcData, fromGlyph, toGlyph);
 	$finishNative();
 }
 

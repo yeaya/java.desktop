@@ -13,7 +13,6 @@ using $BeanContextServices = ::java::beans::beancontext::BeanContextServices;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $Iterator = ::java::util::Iterator;
 
 namespace java {

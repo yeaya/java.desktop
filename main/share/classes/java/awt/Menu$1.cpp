@@ -10,7 +10,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Vector = ::java::util::Vector;
-using $AWTAccessor$MenuAccessor = ::sun::awt::AWTAccessor$MenuAccessor;
 
 namespace java {
 	namespace awt {

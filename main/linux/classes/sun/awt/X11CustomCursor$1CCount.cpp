@@ -4,7 +4,6 @@
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Comparable = ::java::lang::Comparable;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

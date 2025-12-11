@@ -3,7 +3,6 @@
 #include <com/sun/media/sound/ModelConnectionBlock.h>
 #include <jcpp.h>
 
-using $ModelConnectionBlockArray = $Array<::com::sun::media::sound::ModelConnectionBlock>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

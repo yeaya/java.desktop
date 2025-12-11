@@ -56,18 +56,14 @@
 #undef TRAILING
 #undef VERBOSE
 
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
 using $MenuDragMouseListenerArray = $Array<::javax::swing::event::MenuDragMouseListener>;
 using $MenuKeyListenerArray = $Array<::javax::swing::event::MenuKeyListener>;
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Container = ::java::awt::Container;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $FocusListener = ::java::awt::event::FocusListener;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ObjectInputStream = ::java::io::ObjectInputStream;
@@ -80,7 +76,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $EventListener = ::java::util::EventListener;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $AbstractButton$AccessibleAbstractButton = ::javax::swing::AbstractButton$AccessibleAbstractButton;
@@ -95,7 +90,6 @@ using $JInternalFrame = ::javax::swing::JInternalFrame;
 using $JMenuItem$AccessibleJMenuItem = ::javax::swing::JMenuItem$AccessibleJMenuItem;
 using $JMenuItem$MenuItemFocusListener = ::javax::swing::JMenuItem$MenuItemFocusListener;
 using $KeyStroke = ::javax::swing::KeyStroke;
-using $MenuElement = ::javax::swing::MenuElement;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;

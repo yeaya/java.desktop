@@ -115,7 +115,6 @@
 #undef WP_WINDOW
 
 using $TMSchema$PartArray = $Array<::com::sun::java::swing::plaf::windows::TMSchema$Part>;
-using $TMSchema = ::com::sun::java::swing::plaf::windows::TMSchema;
 using $TMSchema$Control = ::com::sun::java::swing::plaf::windows::TMSchema$Control;
 using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;

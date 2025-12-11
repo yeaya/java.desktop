@@ -4,7 +4,6 @@
 #include <java/beans/XMLEncoder.h>
 #include <jcpp.h>
 
-using $Expression = ::java::beans::Expression;
 using $XMLEncoder = ::java::beans::XMLEncoder;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

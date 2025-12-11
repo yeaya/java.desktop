@@ -4,9 +4,6 @@
 #include <java/io/InputStream.h>
 #include <jcpp.h>
 
-using $DataFlavorArray = $Array<::java::awt::datatransfer::DataFlavor>;
-using $DataFlavor = ::java::awt::datatransfer::DataFlavor;
-using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

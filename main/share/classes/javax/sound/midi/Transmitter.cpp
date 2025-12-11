@@ -3,10 +3,8 @@
 #include <javax/sound/midi/Receiver.h>
 #include <jcpp.h>
 
-using $AutoCloseable = ::java::lang::AutoCloseable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Receiver = ::javax::sound::midi::Receiver;
 
 namespace javax {
 	namespace sound {

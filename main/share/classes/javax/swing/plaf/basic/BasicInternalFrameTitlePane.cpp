@@ -58,18 +58,15 @@
 #undef SIZE_CMD
 
 using $AWTEvent = ::java::awt::AWTEvent;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $EventQueue = ::java::awt::EventQueue;
 using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
 using $Graphics = ::java::awt::Graphics;
-using $Insets = ::java::awt::Insets;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $Rectangle = ::java::awt::Rectangle;
 using $RenderingHints = ::java::awt::RenderingHints;
-using $RenderingHints$Key = ::java::awt::RenderingHints$Key;
 using $Toolkit = ::java::awt::Toolkit;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
@@ -84,7 +81,6 @@ using $AbstractAction = ::javax::swing::AbstractAction;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $Action = ::javax::swing::Action;
 using $ActionMap = ::javax::swing::ActionMap;
-using $Icon = ::javax::swing::Icon;
 using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JInternalFrame = ::javax::swing::JInternalFrame;

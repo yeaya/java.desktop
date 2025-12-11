@@ -58,7 +58,6 @@ using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Locale = ::java::util::Locale;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $Icon = ::javax::swing::Icon;
 using $JColorChooser = ::javax::swing::JColorChooser;

@@ -5,7 +5,6 @@
 #include <javax/sound/sampled/Port.h>
 #include <jcpp.h>
 
-using $PortMixer = ::com::sun::media::sound::PortMixer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

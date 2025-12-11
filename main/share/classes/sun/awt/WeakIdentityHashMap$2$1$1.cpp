@@ -12,7 +12,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $Iterator = ::java::util::Iterator;
 using $Map$Entry = ::java::util::Map$Entry;
 using $WeakIdentityHashMap$2$1 = ::sun::awt::WeakIdentityHashMap$2$1;

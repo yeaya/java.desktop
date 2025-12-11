@@ -31,7 +31,6 @@ using $Long = ::java::lang::Long;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $HashMap = ::java::util::HashMap;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $MotifDnDConstants = ::sun::awt::X11::MotifDnDConstants;
 using $XAtom = ::sun::awt::X11::XAtom;
 using $XClientMessageEvent = ::sun::awt::X11::XClientMessageEvent;

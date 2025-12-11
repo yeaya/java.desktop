@@ -8,7 +8,6 @@
 #include <jcpp.h>
 
 using $ControlArray = $Array<::javax::sound::sampled::Control>;
-using $PortMixer = ::com::sun::media::sound::PortMixer;
 using $PortMixer$CompCtrl$CCT = ::com::sun::media::sound::PortMixer$CompCtrl$CCT;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

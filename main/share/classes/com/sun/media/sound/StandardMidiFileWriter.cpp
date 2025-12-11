@@ -45,7 +45,6 @@ using $ByteArrayOutputStream = ::java::io::ByteArrayOutputStream;
 using $DataOutputStream = ::java::io::DataOutputStream;
 using $File = ::java::io::File;
 using $FileOutputStream = ::java::io::FileOutputStream;
-using $FilterOutputStream = ::java::io::FilterOutputStream;
 using $InputStream = ::java::io::InputStream;
 using $OutputStream = ::java::io::OutputStream;
 using $PipedInputStream = ::java::io::PipedInputStream;

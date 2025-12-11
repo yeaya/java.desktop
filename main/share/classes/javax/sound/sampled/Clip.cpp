@@ -9,9 +9,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AudioFormat = ::javax::sound::sampled::AudioFormat;
-using $AudioInputStream = ::javax::sound::sampled::AudioInputStream;
-using $DataLine = ::javax::sound::sampled::DataLine;
 
 namespace javax {
 	namespace sound {

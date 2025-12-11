@@ -28,7 +28,6 @@
 #undef TRUE
 #undef WINDOWS_TOGGLE_BUTTON_UI_KEY
 
-using $TMSchema$Part = ::com::sun::java::swing::plaf::windows::TMSchema$Part;
 using $WindowsButtonUI = ::com::sun::java::swing::plaf::windows::WindowsButtonUI;
 using $WindowsGraphicsUtils = ::com::sun::java::swing::plaf::windows::WindowsGraphicsUtils;
 using $XPStyle = ::com::sun::java::swing::plaf::windows::XPStyle;
@@ -48,7 +47,6 @@ using $AbstractButton = ::javax::swing::AbstractButton;
 using $JComponent = ::javax::swing::JComponent;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $UIManager = ::javax::swing::UIManager;
-using $Border = ::javax::swing::border::Border;
 using $ButtonUI = ::javax::swing::plaf::ButtonUI;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $BasicButtonUI = ::javax::swing::plaf::basic::BasicButtonUI;

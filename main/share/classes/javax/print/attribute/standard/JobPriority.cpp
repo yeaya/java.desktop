@@ -7,8 +7,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $IntegerSyntax = ::javax::print::attribute::IntegerSyntax;
-using $PrintJobAttribute = ::javax::print::attribute::PrintJobAttribute;
-using $PrintRequestAttribute = ::javax::print::attribute::PrintRequestAttribute;
 
 namespace javax {
 	namespace print {

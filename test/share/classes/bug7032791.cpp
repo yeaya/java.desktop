@@ -9,7 +9,6 @@
 #include <javax/swing/table/TableCellRenderer.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

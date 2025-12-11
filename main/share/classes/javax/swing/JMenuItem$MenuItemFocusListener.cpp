@@ -7,15 +7,11 @@
 #include <javax/swing/JMenuItem.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $FocusEvent = ::java::awt::event::FocusEvent;
 using $FocusListener = ::java::awt::event::FocusListener;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JMenuItem = ::javax::swing::JMenuItem;
 
 namespace javax {

@@ -22,12 +22,10 @@
 
 using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
-using $Container = ::java::awt::Container;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JEditorPane$PlainEditorKit = ::javax::swing::JEditorPane$PlainEditorKit;
 using $JEditorPane$PlainEditorKit$PlainParagraph$LogicalView = ::javax::swing::JEditorPane$PlainEditorKit$PlainParagraph$LogicalView;
 using $JTextArea = ::javax::swing::JTextArea;
 using $SizeRequirements = ::javax::swing::SizeRequirements;

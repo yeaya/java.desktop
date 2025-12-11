@@ -6,13 +6,8 @@
 #include <javax/swing/MenuSelectionManager.h>
 #include <jcpp.h>
 
-using $MenuElementArray = $Array<::javax::swing::MenuElement>;
-using $Component = ::java::awt::Component;
-using $KeyEvent = ::java::awt::event::KeyEvent;
-using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
 
 namespace javax {
 	namespace swing {

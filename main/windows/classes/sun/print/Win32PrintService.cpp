@@ -197,7 +197,6 @@ using $SheetCollateArray = $Array<::javax::print::attribute::standard::SheetColl
 using $SidesArray = $Array<::javax::print::attribute::standard::Sides>;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $Toolkit = ::java::awt::Toolkit;
-using $Window = ::java::awt::Window;
 using $File = ::java::io::File;
 using $ClassCastException = ::java::lang::ClassCastException;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -233,11 +232,8 @@ using $AttributeSetUtilities = ::javax::print::attribute::AttributeSetUtilities;
 using $DocAttribute = ::javax::print::attribute::DocAttribute;
 using $HashAttributeSet = ::javax::print::attribute::HashAttributeSet;
 using $HashPrintServiceAttributeSet = ::javax::print::attribute::HashPrintServiceAttributeSet;
-using $IntegerSyntax = ::javax::print::attribute::IntegerSyntax;
 using $PrintServiceAttribute = ::javax::print::attribute::PrintServiceAttribute;
 using $PrintServiceAttributeSet = ::javax::print::attribute::PrintServiceAttributeSet;
-using $Size2DSyntax = ::javax::print::attribute::Size2DSyntax;
-using $URISyntax = ::javax::print::attribute::URISyntax;
 using $Chromaticity = ::javax::print::attribute::standard::Chromaticity;
 using $ColorSupported = ::javax::print::attribute::standard::ColorSupported;
 using $Copies = ::javax::print::attribute::standard::Copies;
@@ -268,12 +264,10 @@ using $SheetCollate = ::javax::print::attribute::standard::SheetCollate;
 using $Sides = ::javax::print::attribute::standard::Sides;
 using $PrintServiceAttributeListener = ::javax::print::event::PrintServiceAttributeListener;
 using $WPrinterJob = ::sun::awt::windows::WPrinterJob;
-using $AttributeUpdater = ::sun::print::AttributeUpdater;
 using $DialogOwnerAccessor = ::sun::print::DialogOwnerAccessor;
 using $DocumentPropertiesUI = ::sun::print::DocumentPropertiesUI;
 using $ServiceNotifier = ::sun::print::ServiceNotifier;
 using $SunAlternateMedia = ::sun::print::SunAlternateMedia;
-using $SunPrinterJobService = ::sun::print::SunPrinterJobService;
 using $Win32MediaSize = ::sun::print::Win32MediaSize;
 using $Win32MediaTray = ::sun::print::Win32MediaTray;
 using $Win32PrintJob = ::sun::print::Win32PrintJob;
@@ -2039,7 +2033,7 @@ bool Win32PrintService::usesClass($Class* c) {
 $ints* Win32PrintService::getAllMediaIDs($String* printerName, $String* port) {
 	$var($ints, $ret, nullptr);
 	$prepareNative(Win32PrintService, getAllMediaIDs, $ints*, $String* printerName, $String* port);
-	$assign($ret, $invokeNative(Win32PrintService, getAllMediaIDs, printerName, port));
+	$assign($ret, $invokeNativeObject(printerName, port));
 	$finishNative();
 	return $ret;
 }
@@ -2047,7 +2041,7 @@ $ints* Win32PrintService::getAllMediaIDs($String* printerName, $String* port) {
 $ints* Win32PrintService::getAllMediaSizes($String* printerName, $String* port) {
 	$var($ints, $ret, nullptr);
 	$prepareNative(Win32PrintService, getAllMediaSizes, $ints*, $String* printerName, $String* port);
-	$assign($ret, $invokeNative(Win32PrintService, getAllMediaSizes, printerName, port));
+	$assign($ret, $invokeNativeObject(printerName, port));
 	$finishNative();
 	return $ret;
 }
@@ -2055,7 +2049,7 @@ $ints* Win32PrintService::getAllMediaSizes($String* printerName, $String* port) 
 $ints* Win32PrintService::getAllMediaTrays($String* printerName, $String* port) {
 	$var($ints, $ret, nullptr);
 	$prepareNative(Win32PrintService, getAllMediaTrays, $ints*, $String* printerName, $String* port);
-	$assign($ret, $invokeNative(Win32PrintService, getAllMediaTrays, printerName, port));
+	$assign($ret, $invokeNativeObject(printerName, port));
 	$finishNative();
 	return $ret;
 }
@@ -2063,7 +2057,7 @@ $ints* Win32PrintService::getAllMediaTrays($String* printerName, $String* port) 
 $floats* Win32PrintService::getMediaPrintableArea($String* printerName, int32_t paperSize) {
 	$var($floats, $ret, nullptr);
 	$prepareNative(Win32PrintService, getMediaPrintableArea, $floats*, $String* printerName, int32_t paperSize);
-	$assign($ret, $invokeNative(Win32PrintService, getMediaPrintableArea, printerName, paperSize));
+	$assign($ret, $invokeNativeObject(printerName, paperSize));
 	$finishNative();
 	return $ret;
 }
@@ -2071,7 +2065,7 @@ $floats* Win32PrintService::getMediaPrintableArea($String* printerName, int32_t 
 $StringArray* Win32PrintService::getAllMediaNames($String* printerName, $String* port) {
 	$var($StringArray, $ret, nullptr);
 	$prepareNative(Win32PrintService, getAllMediaNames, $StringArray*, $String* printerName, $String* port);
-	$assign($ret, $invokeNative(Win32PrintService, getAllMediaNames, printerName, port));
+	$assign($ret, $invokeNativeObject(printerName, port));
 	$finishNative();
 	return $ret;
 }
@@ -2079,7 +2073,7 @@ $StringArray* Win32PrintService::getAllMediaNames($String* printerName, $String*
 $StringArray* Win32PrintService::getAllMediaTrayNames($String* printerName, $String* port) {
 	$var($StringArray, $ret, nullptr);
 	$prepareNative(Win32PrintService, getAllMediaTrayNames, $StringArray*, $String* printerName, $String* port);
-	$assign($ret, $invokeNative(Win32PrintService, getAllMediaTrayNames, printerName, port));
+	$assign($ret, $invokeNativeObject(printerName, port));
 	$finishNative();
 	return $ret;
 }
@@ -2087,7 +2081,7 @@ $StringArray* Win32PrintService::getAllMediaTrayNames($String* printerName, $Str
 int32_t Win32PrintService::getCopiesSupported($String* printerName, $String* port) {
 	int32_t $ret = 0;
 	$prepareNative(Win32PrintService, getCopiesSupported, int32_t, $String* printerName, $String* port);
-	$ret = $invokeNative(Win32PrintService, getCopiesSupported, printerName, port);
+	$ret = $invokeNative(printerName, port);
 	$finishNative();
 	return $ret;
 }
@@ -2095,7 +2089,7 @@ int32_t Win32PrintService::getCopiesSupported($String* printerName, $String* por
 $ints* Win32PrintService::getAllResolutions($String* printerName, $String* port) {
 	$var($ints, $ret, nullptr);
 	$prepareNative(Win32PrintService, getAllResolutions, $ints*, $String* printerName, $String* port);
-	$assign($ret, $invokeNative(Win32PrintService, getAllResolutions, printerName, port));
+	$assign($ret, $invokeNativeObject(printerName, port));
 	$finishNative();
 	return $ret;
 }
@@ -2103,7 +2097,7 @@ $ints* Win32PrintService::getAllResolutions($String* printerName, $String* port)
 int32_t Win32PrintService::getCapabilities($String* printerName, $String* port) {
 	int32_t $ret = 0;
 	$prepareNative(Win32PrintService, getCapabilities, int32_t, $String* printerName, $String* port);
-	$ret = $invokeNative(Win32PrintService, getCapabilities, printerName, port);
+	$ret = $invokeNative(printerName, port);
 	$finishNative();
 	return $ret;
 }
@@ -2111,7 +2105,7 @@ int32_t Win32PrintService::getCapabilities($String* printerName, $String* port) 
 $ints* Win32PrintService::getDefaultSettings($String* printerName, $String* port) {
 	$var($ints, $ret, nullptr);
 	$prepareNative(Win32PrintService, getDefaultSettings, $ints*, $String* printerName, $String* port);
-	$assign($ret, $invokeNative(Win32PrintService, getDefaultSettings, printerName, port));
+	$assign($ret, $invokeNativeObject(printerName, port));
 	$finishNative();
 	return $ret;
 }
@@ -2119,7 +2113,7 @@ $ints* Win32PrintService::getDefaultSettings($String* printerName, $String* port
 int32_t Win32PrintService::getJobStatus($String* printerName, int32_t type) {
 	int32_t $ret = 0;
 	$prepareNative(Win32PrintService, getJobStatus, int32_t, $String* printerName, int32_t type);
-	$ret = $invokeNative(Win32PrintService, getJobStatus, printerName, type);
+	$ret = $invokeNative(printerName, type);
 	$finishNative();
 	return $ret;
 }
@@ -2127,7 +2121,7 @@ int32_t Win32PrintService::getJobStatus($String* printerName, int32_t type) {
 $String* Win32PrintService::getPrinterPort($String* printerName) {
 	$var($String, $ret, nullptr);
 	$prepareNative(Win32PrintService, getPrinterPort, $String*, $String* printerName);
-	$assign($ret, $invokeNative(Win32PrintService, getPrinterPort, printerName));
+	$assign($ret, $invokeNativeObject(printerName));
 	$finishNative();
 	return $ret;
 }

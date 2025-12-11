@@ -4,7 +4,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AccessibleTable = ::javax::accessibility::AccessibleTable;
 
 namespace javax {
 	namespace accessibility {

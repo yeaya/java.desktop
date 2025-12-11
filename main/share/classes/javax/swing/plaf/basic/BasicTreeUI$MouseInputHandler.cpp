@@ -29,7 +29,6 @@ using $JTextField = ::javax::swing::JTextField;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $MouseInputListener = ::javax::swing::event::MouseInputListener;
 using $BasicTreeUI = ::javax::swing::plaf::basic::BasicTreeUI;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $SwingUtilities2 = ::sun::swing::SwingUtilities2;
 
 namespace javax {

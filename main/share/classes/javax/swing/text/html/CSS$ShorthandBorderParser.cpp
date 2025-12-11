@@ -17,8 +17,6 @@
 #undef PARSERS
 
 using $CSS$AttributeArray = $Array<::javax::swing::text::html::CSS$Attribute>;
-using $CSS$CssValueArray = $Array<::javax::swing::text::html::CSS$CssValue>;
-using $CSS$AttributeArray2 = $Array<::javax::swing::text::html::CSS$Attribute, 2>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

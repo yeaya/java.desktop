@@ -12,17 +12,14 @@
 using $PropertyDescriptorArray = $Array<::java::beans::PropertyDescriptor>;
 using $BeanInfo = ::java::beans::BeanInfo;
 using $ConstructorProperties = ::java::beans::ConstructorProperties;
-using $FeatureDescriptor = ::java::beans::FeatureDescriptor;
 using $Introspector = ::java::beans::Introspector;
 using $PropertyDescriptor = ::java::beans::PropertyDescriptor;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Annotation = ::java::lang::annotation::Annotation;
 using $Constructor = ::java::lang::reflect::Constructor;
 using $Method = ::java::lang::reflect::Method;
-using $JavaBeansAccess = ::jdk::internal::access::JavaBeansAccess;
 
 namespace java {
 	namespace beans {

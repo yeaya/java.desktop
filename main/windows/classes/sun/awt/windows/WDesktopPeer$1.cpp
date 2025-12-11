@@ -15,15 +15,12 @@
 #undef OPEN
 #undef PRINT
 
-using $Desktop$ActionArray = $Array<::java::awt::Desktop$Action>;
 using $Desktop$Action = ::java::awt::Desktop$Action;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $WDesktopPeer = ::sun::awt::windows::WDesktopPeer;
 
 namespace sun {
 	namespace awt {

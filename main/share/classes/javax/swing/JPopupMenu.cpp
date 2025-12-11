@@ -80,7 +80,6 @@
 
 using $ComponentArray = $Array<::java::awt::Component>;
 using $GraphicsDeviceArray = $Array<::java::awt::GraphicsDevice>;
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
 using $MenuKeyListenerArray = $Array<::javax::swing::event::MenuKeyListener>;
 using $PopupMenuListenerArray = $Array<::javax::swing::event::PopupMenuListener>;
@@ -99,9 +98,7 @@ using $Insets = ::java::awt::Insets;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $Toolkit = ::java::awt::Toolkit;
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $FocusEvent = ::java::awt::event::FocusEvent;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
@@ -124,7 +121,6 @@ using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $EventListener = ::java::util::EventListener;
 using $Iterator = ::java::util::Iterator;
 using $Vector = ::java::util::Vector;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $Action = ::javax::swing::Action;

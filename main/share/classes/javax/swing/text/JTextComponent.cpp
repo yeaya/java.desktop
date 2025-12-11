@@ -144,7 +144,6 @@
 #undef WEAK
 #undef WHEN_FOCUSED
 
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $ActionArray = $Array<::javax::swing::Action>;
 using $CaretListenerArray = $Array<::javax::swing::event::CaretListener>;
 using $JTextComponent$KeyBindingArray = $Array<::javax::swing::text::JTextComponent$KeyBinding>;
@@ -167,7 +166,6 @@ using $LayoutManager = ::java::awt::LayoutManager;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $FocusListener = ::java::awt::event::FocusListener;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $InputMethodEvent = ::java::awt::event::InputMethodEvent;
@@ -194,7 +192,6 @@ using $Boolean = ::java::lang::Boolean;
 using $Character = ::java::lang::Character;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
-using $Enum = ::java::lang::Enum;
 using $Error = ::java::lang::Error;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -205,7 +202,6 @@ using $InterruptedException = ::java::lang::InterruptedException;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $ThreadGroup = ::java::lang::ThreadGroup;
@@ -219,7 +215,6 @@ using $Hashtable = ::java::util::Hashtable;
 using $Callable = ::java::util::concurrent::Callable;
 using $ExecutionException = ::java::util::concurrent::ExecutionException;
 using $FutureTask = ::java::util::concurrent::FutureTask;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $PrintService = ::javax::print::PrintService;
 using $HashPrintRequestAttributeSet = ::javax::print::attribute::HashPrintRequestAttributeSet;
@@ -234,7 +229,6 @@ using $JComponent$AccessibleJComponent = ::javax::swing::JComponent$AccessibleJC
 using $JViewport = ::javax::swing::JViewport;
 using $KeyStroke = ::javax::swing::KeyStroke;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
-using $Scrollable = ::javax::swing::Scrollable;
 using $SwingConstants = ::javax::swing::SwingConstants;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $TransferHandler = ::javax::swing::TransferHandler;

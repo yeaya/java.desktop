@@ -3,10 +3,8 @@
 #include <java/awt/event/TextEvent.h>
 #include <jcpp.h>
 
-using $TextEvent = ::java::awt::event::TextEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
 
 namespace java {
 	namespace awt {

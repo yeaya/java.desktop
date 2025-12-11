@@ -7,7 +7,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JPasswordField = ::javax::swing::JPasswordField;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $MethodInfo _HeadlessJPasswordField_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PUBLIC, $method(static_cast<void(HeadlessJPasswordField::*)()>(&HeadlessJPasswordField::init$))},

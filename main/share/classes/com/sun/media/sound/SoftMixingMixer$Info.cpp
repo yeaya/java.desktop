@@ -4,7 +4,6 @@
 #include <javax/sound/sampled/Mixer$Info.h>
 #include <jcpp.h>
 
-using $SoftMixingMixer = ::com::sun::media::sound::SoftMixingMixer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

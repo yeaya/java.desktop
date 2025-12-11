@@ -12,16 +12,13 @@
 #undef SIMPLE_SCROLL_MODE
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JTabbedPane = ::javax::swing::JTabbedPane;
 using $JViewport = ::javax::swing::JViewport;
 using $UIManager = ::javax::swing::UIManager;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $BasicTabbedPaneUI = ::javax::swing::plaf::basic::BasicTabbedPaneUI;
 
 namespace javax {

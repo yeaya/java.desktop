@@ -16,14 +16,11 @@
 #undef T
 
 using $Component = ::java::awt::Component;
-using $Dialog = ::java::awt::Dialog;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $JDialog = ::javax::swing::JDialog;
 using $JLabel = ::javax::swing::JLabel;

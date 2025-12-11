@@ -16,7 +16,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $SecurityManager = ::java::lang::SecurityManager;
 using $ThreadGroup = ::java::lang::ThreadGroup;
 using $ThreadLocal = ::java::lang::ThreadLocal;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Map = ::java::util::Map;
 using $AtomicInteger = ::java::util::concurrent::atomic::AtomicInteger;
 using $AppContext = ::sun::awt::AppContext;

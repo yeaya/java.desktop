@@ -142,14 +142,14 @@ void X11PMBlitLoops::Blit$($SurfaceData* src, $SurfaceData* dst, $Composite* com
 
 void X11PMBlitLoops::nativeBlit(int64_t srcData, int64_t dstData, int64_t xgc, $Region* clip, int32_t sx, int32_t sy, int32_t dx, int32_t dy, int32_t w, int32_t h) {
 	$prepareNative(X11PMBlitLoops, nativeBlit, void, int64_t srcData, int64_t dstData, int64_t xgc, $Region* clip, int32_t sx, int32_t sy, int32_t dx, int32_t dy, int32_t w, int32_t h);
-	$invokeNative(X11PMBlitLoops, nativeBlit, srcData, dstData, xgc, clip, sx, sy, dx, dy, w, h);
+	$invokeNative(srcData, dstData, xgc, clip, sx, sy, dx, dy, w, h);
 	$finishNative();
 }
 
 void X11PMBlitLoops::updateBitmask($SurfaceData* src, $SurfaceData* dst, bool isICM) {
 	$init(X11PMBlitLoops);
 	$prepareNativeStatic(X11PMBlitLoops, updateBitmask, void, $SurfaceData* src, $SurfaceData* dst, bool isICM);
-	$invokeNativeStatic(X11PMBlitLoops, updateBitmask, src, dst, isICM);
+	$invokeNativeStatic(src, dst, isICM);
 	$finishNativeStatic();
 }
 

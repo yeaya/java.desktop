@@ -12,14 +12,10 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Enumeration = ::java::util::Enumeration;
 using $NoSuchElementException = ::java::util::NoSuchElementException;
-using $AbstractLayoutCache = ::javax::swing::tree::AbstractLayoutCache;
-using $DefaultMutableTreeNode = ::javax::swing::tree::DefaultMutableTreeNode;
 using $FixedHeightLayoutCache = ::javax::swing::tree::FixedHeightLayoutCache;
 using $FixedHeightLayoutCache$FHTreeStateNode = ::javax::swing::tree::FixedHeightLayoutCache$FHTreeStateNode;
 using $TreeModel = ::javax::swing::tree::TreeModel;
-using $TreeNode = ::javax::swing::tree::TreeNode;
 using $TreePath = ::javax::swing::tree::TreePath;
 
 namespace javax {

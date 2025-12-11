@@ -7,14 +7,12 @@
 #include <javax/swing/text/Keymap.h>
 #include <jcpp.h>
 
-using $ActionArray = $Array<::javax::swing::Action>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Action = ::javax::swing::Action;
 using $ActionMap = ::javax::swing::ActionMap;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $JTextComponent$KeymapWrapper = ::javax::swing::text::JTextComponent$KeymapWrapper;
 using $Keymap = ::javax::swing::text::Keymap;
 

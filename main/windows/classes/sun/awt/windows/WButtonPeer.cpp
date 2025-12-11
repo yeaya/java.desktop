@@ -45,22 +45,18 @@ using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $Image = ::java::awt::Image;
 using $Point = ::java::awt::Point;
 using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $PaintEvent = ::java::awt::event::PaintEvent;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
-using $ButtonPeer = ::java::awt::peer::ButtonPeer;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $WButtonPeer$1 = ::sun::awt::windows::WButtonPeer$1;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WToolkit = ::sun::awt::windows::WToolkit;
 using $Region = ::sun::java2d::pipe::Region;
 
@@ -321,7 +317,7 @@ bool WButtonPeer::isFocusable() {
 
 void WButtonPeer::setLabel($String* label) {
 	$prepareNative(WButtonPeer, setLabel, void, $String* label);
-	$invokeNative(WButtonPeer, setLabel, label);
+	$invokeNative(label);
 	$finishNative();
 }
 
@@ -331,7 +327,7 @@ void WButtonPeer::init$($Button* target) {
 
 void WButtonPeer::create($WComponentPeer* peer) {
 	$prepareNative(WButtonPeer, create, void, $WComponentPeer* peer);
-	$invokeNative(WButtonPeer, create, peer);
+	$invokeNative(peer);
 	$finishNative();
 }
 
@@ -346,7 +342,7 @@ bool WButtonPeer::shouldClearRectBeforePaint() {
 void WButtonPeer::initIDs() {
 	$init(WButtonPeer);
 	$prepareNativeStatic(WButtonPeer, initIDs, void);
-	$invokeNativeStatic(WButtonPeer, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

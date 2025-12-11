@@ -12,7 +12,6 @@
 #undef PRESSED
 
 using $ComponentArray = $Array<::java::awt::Component>;
-using $WindowsFileChooserUI = ::com::sun::java::swing::plaf::windows::WindowsFileChooserUI;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -20,7 +19,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $DefaultButtonModel = ::javax::swing::DefaultButtonModel;
 using $JButton = ::javax::swing::JButton;

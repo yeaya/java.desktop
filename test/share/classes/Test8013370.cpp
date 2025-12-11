@@ -30,7 +30,6 @@ using $Test8013370$2 = ::Test8013370$2;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Error = ::java::lang::Error;

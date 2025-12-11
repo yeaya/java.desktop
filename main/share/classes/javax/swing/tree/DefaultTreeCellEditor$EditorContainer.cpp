@@ -20,7 +20,6 @@ using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
-using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
 using $Graphics = ::java::awt::Graphics;
 using $LayoutManager = ::java::awt::LayoutManager;

@@ -52,7 +52,6 @@ using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Frame = ::java::awt::Frame;
-using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;
@@ -67,29 +66,19 @@ using $TrayIcon = ::java::awt::TrayIcon;
 using $Window = ::java::awt::Window;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $BufferedImage = ::java::awt::image::BufferedImage;
-using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DataBufferInt = ::java::awt::image::DataBufferInt;
 using $ImageObserver = ::java::awt::image::ImageObserver;
 using $Raster = ::java::awt::image::Raster;
 using $WritableRaster = ::java::awt::image::WritableRaster;
-using $MenuComponentPeer = ::java::awt::peer::MenuComponentPeer;
-using $TrayIconPeer = ::java::awt::peer::TrayIconPeer;
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
-using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$MenuComponentAccessor = ::sun::awt::AWTAccessor$MenuComponentAccessor;
-using $AppContext = ::sun::awt::AppContext;
 using $SunToolkit = ::sun::awt::SunToolkit;
 using $IntegerComponentRaster = ::sun::awt::image::IntegerComponentRaster;
 using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
@@ -268,7 +257,7 @@ void WTrayIconPeer::updateImage() {
 
 void WTrayIconPeer::setToolTip($String* tooltip) {
 	$prepareNative(WTrayIconPeer, setToolTip, void, $String* tooltip);
-	$invokeNative(WTrayIconPeer, setToolTip, tooltip);
+	$invokeNative(tooltip);
 	$finishNative();
 }
 
@@ -366,31 +355,31 @@ void WTrayIconPeer::postEvent($AWTEvent* event) {
 
 void WTrayIconPeer::create() {
 	$prepareNative(WTrayIconPeer, create, void);
-	$invokeNative(WTrayIconPeer, create);
+	$invokeNative();
 	$finishNative();
 }
 
 void WTrayIconPeer::_dispose() {
 	$prepareNative(WTrayIconPeer, _dispose, void);
-	$invokeNative(WTrayIconPeer, _dispose);
+	$invokeNative();
 	$finishNative();
 }
 
 void WTrayIconPeer::updateNativeIcon(bool doUpdate) {
 	$prepareNative(WTrayIconPeer, updateNativeIcon, void, bool doUpdate);
-	$invokeNative(WTrayIconPeer, updateNativeIcon, doUpdate);
+	$invokeNative(doUpdate);
 	$finishNative();
 }
 
 void WTrayIconPeer::setNativeIcon($ints* rData, $bytes* andMask, int32_t nScanStride, int32_t width, int32_t height) {
 	$prepareNative(WTrayIconPeer, setNativeIcon, void, $ints* rData, $bytes* andMask, int32_t nScanStride, int32_t width, int32_t height);
-	$invokeNative(WTrayIconPeer, setNativeIcon, rData, andMask, nScanStride, width, height);
+	$invokeNative(rData, andMask, nScanStride, width, height);
 	$finishNative();
 }
 
 void WTrayIconPeer::_displayMessage($String* caption, $String* text, $String* messageType) {
 	$prepareNative(WTrayIconPeer, _displayMessage, void, $String* caption, $String* text, $String* messageType);
-	$invokeNative(WTrayIconPeer, _displayMessage, caption, text, messageType);
+	$invokeNative(caption, text, messageType);
 	$finishNative();
 }
 

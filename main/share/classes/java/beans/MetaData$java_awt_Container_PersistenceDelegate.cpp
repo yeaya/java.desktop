@@ -13,12 +13,9 @@
 
 using $ComponentArray = $Array<::java::awt::Component>;
 using $BorderLayout = ::java::awt::BorderLayout;
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $LayoutManager = ::java::awt::LayoutManager;
 using $DefaultPersistenceDelegate = ::java::beans::DefaultPersistenceDelegate;
 using $Encoder = ::java::beans::Encoder;
-using $MetaData = ::java::beans::MetaData;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;

@@ -50,8 +50,6 @@ using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $DocFlavor = ::javax::print::DocFlavor;
 using $PrintService = ::javax::print::PrintService;
 using $Attribute = ::javax::print::attribute::Attribute;
 using $AttributeSet = ::javax::print::attribute::AttributeSet;
@@ -68,7 +66,6 @@ using $JRadioButton = ::javax::swing::JRadioButton;
 using $JToggleButton = ::javax::swing::JToggleButton;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
 using $Border = ::javax::swing::border::Border;
-using $TitledBorder = ::javax::swing::border::TitledBorder;
 using $ServiceDialog = ::sun::print::ServiceDialog;
 
 namespace sun {

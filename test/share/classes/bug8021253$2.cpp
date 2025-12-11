@@ -6,12 +6,10 @@
 #include <jcpp.h>
 
 using $bug8021253 = ::bug8021253;
-using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JFileChooser = ::javax::swing::JFileChooser;
 
 $MethodInfo _bug8021253$2_MethodInfo_[] = {

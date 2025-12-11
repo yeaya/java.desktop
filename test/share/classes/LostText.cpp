@@ -15,7 +15,6 @@
 
 using $LostText$1 = ::LostText$1;
 using $LostText$2 = ::LostText$2;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;

@@ -26,16 +26,11 @@
 #undef INSTANCE
 #undef TRUE
 
-using $FontArray = $Array<::java::awt::Font>;
-using $GraphicsDeviceArray = $Array<::java::awt::GraphicsDevice>;
 using $Font = ::java::awt::Font;
-using $Graphics2D = ::java::awt::Graphics2D;
-using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $GraphicsEnvironment$LocalGE = ::java::awt::GraphicsEnvironment$LocalGE;
 using $HeadlessException = ::java::awt::HeadlessException;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
-using $BufferedImage = ::java::awt::image::BufferedImage;
 using $Serializable = ::java::io::Serializable;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -44,14 +39,9 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
-using $Locale = ::java::util::Locale;
 using $PlatformGraphicsInfo = ::sun::awt::PlatformGraphicsInfo;
 using $FontManager = ::sun::font::FontManager;
 using $FontManagerFactory = ::sun::font::FontManagerFactory;

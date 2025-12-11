@@ -16,13 +16,11 @@
 #include <javax/swing/plaf/basic/BasicTabbedPaneUI.h>
 #include <jcpp.h>
 
-using $RectangleArray = $Array<::java::awt::Rectangle>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $FontMetrics = ::java::awt::FontMetrics;
 using $Insets = ::java::awt::Insets;
-using $LayoutManager = ::java::awt::LayoutManager;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;

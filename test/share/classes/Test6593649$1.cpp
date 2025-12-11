@@ -11,12 +11,9 @@
 #include <jcpp.h>
 
 using $Test6593649 = ::Test6593649;
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
-using $Window = ::java::awt::Window;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -24,7 +21,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JFrame = ::javax::swing::JFrame;
 using $JTextArea = ::javax::swing::JTextArea;
-using $Timer = ::javax::swing::Timer;
 
 $MethodInfo _Test6593649$1_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(Test6593649$1::*)()>(&Test6593649$1::init$))},

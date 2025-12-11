@@ -17,11 +17,7 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 
@@ -152,7 +148,7 @@ bool Platform::nIsBigEndian() {
 	$init(Platform);
 	bool $ret = false;
 	$prepareNativeStatic(Platform, nIsBigEndian, bool);
-	$ret = $invokeNativeStatic(Platform, nIsBigEndian);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }

@@ -36,7 +36,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JDialog = ::javax::swing::JDialog;
 using $JMenuItem = ::javax::swing::JMenuItem;
 using $JPopupMenu = ::javax::swing::JPopupMenu;

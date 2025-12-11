@@ -77,11 +77,9 @@ using $ImageObserver = ::java::awt::image::ImageObserver;
 using $RenderedImage = ::java::awt::image::RenderedImage;
 using $WritableRenderedImage = ::java::awt::image::WritableRenderedImage;
 using $RenderableImage = ::java::awt::image::renderable::RenderableImage;
-using $PrinterGraphics = ::java::awt::print::PrinterGraphics;
 using $PrinterJob = ::java::awt::print::PrinterJob;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CloneNotSupportedException = ::java::lang::CloneNotSupportedException;
-using $Cloneable = ::java::lang::Cloneable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InterruptedException = ::java::lang::InterruptedException;
@@ -92,7 +90,6 @@ using $Map = ::java::util::Map;
 using $Spans = ::sun::java2d::Spans;
 using $PeekGraphics$ImageWaiter = ::sun::print::PeekGraphics$ImageWaiter;
 using $PeekMetrics = ::sun::print::PeekMetrics;
-using $PrinterGraphicsConfig = ::sun::print::PrinterGraphicsConfig;
 using $RasterPrinterJob = ::sun::print::RasterPrinterJob;
 
 namespace sun {

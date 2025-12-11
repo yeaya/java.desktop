@@ -179,9 +179,7 @@ using $HeadlessException = ::java::awt::HeadlessException;
 using $Toolkit = ::java::awt::Toolkit;
 using $Window = ::java::awt::Window;
 using $BufferedImage = ::java::awt::image::BufferedImage;
-using $ColorModel = ::java::awt::image::ColorModel;
 using $IndexColorModel = ::java::awt::image::IndexColorModel;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $PageFormat = ::java::awt::print::PageFormat;
 using $Pageable = ::java::awt::print::Pageable;
 using $Paper = ::java::awt::print::Paper;
@@ -212,13 +210,9 @@ using $Attribute = ::javax::print::attribute::Attribute;
 using $AttributeSet = ::javax::print::attribute::AttributeSet;
 using $DocAttribute = ::javax::print::attribute::DocAttribute;
 using $HashPrintRequestAttributeSet = ::javax::print::attribute::HashPrintRequestAttributeSet;
-using $IntegerSyntax = ::javax::print::attribute::IntegerSyntax;
 using $PrintJobAttribute = ::javax::print::attribute::PrintJobAttribute;
 using $PrintRequestAttribute = ::javax::print::attribute::PrintRequestAttribute;
 using $PrintRequestAttributeSet = ::javax::print::attribute::PrintRequestAttributeSet;
-using $ResolutionSyntax = ::javax::print::attribute::ResolutionSyntax;
-using $Size2DSyntax = ::javax::print::attribute::Size2DSyntax;
-using $URISyntax = ::javax::print::attribute::URISyntax;
 using $Chromaticity = ::javax::print::attribute::standard::Chromaticity;
 using $Copies = ::javax::print::attribute::standard::Copies;
 using $Destination = ::javax::print::attribute::standard::Destination;
@@ -245,7 +239,6 @@ using $WPrinterJob$HandleRecord = ::sun::awt::windows::WPrinterJob$HandleRecord;
 using $WPrinterJob$PrintToFileErrorDialog = ::sun::awt::windows::WPrinterJob$PrintToFileErrorDialog;
 using $Disposer = ::sun::java2d::Disposer;
 using $DisposerRecord = ::sun::java2d::DisposerRecord;
-using $DisposerTarget = ::sun::java2d::DisposerTarget;
 using $PathGraphics = ::sun::print::PathGraphics;
 using $PeekGraphics = ::sun::print::PeekGraphics;
 using $PeekMetrics = ::sun::print::PeekMetrics;
@@ -765,7 +758,7 @@ void WPrinterJob::setPrintService($PrintService* service) {
 
 void WPrinterJob::setNativePrintService($String* name) {
 	$prepareNative(WPrinterJob, setNativePrintService, void, $String* name);
-	$invokeNative(WPrinterJob, setNativePrintService, name);
+	$invokeNative(name);
 	$finishNative();
 }
 
@@ -801,7 +794,7 @@ $PrintService* WPrinterJob::getPrintService() {
 $String* WPrinterJob::getNativePrintService() {
 	$var($String, $ret, nullptr);
 	$prepareNative(WPrinterJob, getNativePrintService, $String*);
-	$assign($ret, $invokeNative(WPrinterJob, getNativePrintService));
+	$assign($ret, $invokeNativeObject());
 	$finishNative();
 	return $ret;
 }
@@ -883,7 +876,7 @@ void WPrinterJob::setAttributes($PrintRequestAttributeSet* attributes) {
 
 void WPrinterJob::getDefaultPage($PageFormat* page) {
 	$prepareNative(WPrinterJob, getDefaultPage, void, $PageFormat* page);
-	$invokeNative(WPrinterJob, getDefaultPage, page);
+	$invokeNative(page);
 	$finishNative();
 }
 
@@ -895,7 +888,7 @@ $PageFormat* WPrinterJob::defaultPage($PageFormat* page) {
 
 void WPrinterJob::validatePaper($Paper* origPaper, $Paper* newPaper) {
 	$prepareNative(WPrinterJob, validatePaper, void, $Paper* origPaper, $Paper* newPaper);
-	$invokeNative(WPrinterJob, validatePaper, origPaper, newPaper);
+	$invokeNative(origPaper, newPaper);
 	$finishNative();
 }
 
@@ -1264,28 +1257,28 @@ void WPrinterJob::setCopies(int32_t copies) {
 
 void WPrinterJob::setNativeCopies(int32_t copies) {
 	$prepareNative(WPrinterJob, setNativeCopies, void, int32_t copies);
-	$invokeNative(WPrinterJob, setNativeCopies, copies);
+	$invokeNative(copies);
 	$finishNative();
 }
 
 bool WPrinterJob::jobSetup($Pageable* doc, bool allowPrintToFile) {
 	bool $ret = false;
 	$prepareNative(WPrinterJob, jobSetup, bool, $Pageable* doc, bool allowPrintToFile);
-	$ret = $invokeNative(WPrinterJob, jobSetup, doc, allowPrintToFile);
+	$ret = $invokeNative(doc, allowPrintToFile);
 	$finishNative();
 	return $ret;
 }
 
 void WPrinterJob::initPrinter() {
 	$prepareNative(WPrinterJob, initPrinter, void);
-	$invokeNative(WPrinterJob, initPrinter);
+	$invokeNative();
 	$finishNative();
 }
 
 bool WPrinterJob::_startDoc($String* dest, $String* jobName) {
 	bool $ret = false;
 	$prepareNative(WPrinterJob, _startDoc, bool, $String* dest, $String* jobName);
-	$ret = $invokeNative(WPrinterJob, _startDoc, dest, jobName);
+	$ret = $invokeNative(dest, jobName);
 	$finishNative();
 	return $ret;
 }
@@ -1298,131 +1291,131 @@ void WPrinterJob::startDoc() {
 
 void WPrinterJob::endDoc() {
 	$prepareNative(WPrinterJob, endDoc, void);
-	$invokeNative(WPrinterJob, endDoc);
+	$invokeNative();
 	$finishNative();
 }
 
 void WPrinterJob::abortDoc() {
 	$prepareNative(WPrinterJob, abortDoc, void);
-	$invokeNative(WPrinterJob, abortDoc);
+	$invokeNative();
 	$finishNative();
 }
 
 void WPrinterJob::deleteDC(int64_t dc, int64_t devmode, int64_t devnames) {
 	$init(WPrinterJob);
 	$prepareNativeStatic(WPrinterJob, deleteDC, void, int64_t dc, int64_t devmode, int64_t devnames);
-	$invokeNativeStatic(WPrinterJob, deleteDC, dc, devmode, devnames);
+	$invokeNativeStatic(dc, devmode, devnames);
 	$finishNativeStatic();
 }
 
 void WPrinterJob::deviceStartPage($PageFormat* format, $Printable* painter, int32_t index, bool paperChanged) {
 	$prepareNative(WPrinterJob, deviceStartPage, void, $PageFormat* format, $Printable* painter, int32_t index, bool paperChanged);
-	$invokeNative(WPrinterJob, deviceStartPage, format, painter, index, paperChanged);
+	$invokeNative(format, painter, index, paperChanged);
 	$finishNative();
 }
 
 void WPrinterJob::deviceEndPage($PageFormat* format, $Printable* painter, int32_t index) {
 	$prepareNative(WPrinterJob, deviceEndPage, void, $PageFormat* format, $Printable* painter, int32_t index);
-	$invokeNative(WPrinterJob, deviceEndPage, format, painter, index);
+	$invokeNative(format, painter, index);
 	$finishNative();
 }
 
 void WPrinterJob::printBand($bytes* data, int32_t x, int32_t y, int32_t width, int32_t height) {
 	$prepareNative(WPrinterJob, printBand, void, $bytes* data, int32_t x, int32_t y, int32_t width, int32_t height);
-	$invokeNative(WPrinterJob, printBand, data, x, y, width, height);
+	$invokeNative(data, x, y, width, height);
 	$finishNative();
 }
 
 void WPrinterJob::beginPath(int64_t printDC) {
 	$prepareNative(WPrinterJob, beginPath, void, int64_t printDC);
-	$invokeNative(WPrinterJob, beginPath, printDC);
+	$invokeNative(printDC);
 	$finishNative();
 }
 
 void WPrinterJob::endPath(int64_t printDC) {
 	$prepareNative(WPrinterJob, endPath, void, int64_t printDC);
-	$invokeNative(WPrinterJob, endPath, printDC);
+	$invokeNative(printDC);
 	$finishNative();
 }
 
 void WPrinterJob::closeFigure(int64_t printDC) {
 	$prepareNative(WPrinterJob, closeFigure, void, int64_t printDC);
-	$invokeNative(WPrinterJob, closeFigure, printDC);
+	$invokeNative(printDC);
 	$finishNative();
 }
 
 void WPrinterJob::fillPath(int64_t printDC) {
 	$prepareNative(WPrinterJob, fillPath, void, int64_t printDC);
-	$invokeNative(WPrinterJob, fillPath, printDC);
+	$invokeNative(printDC);
 	$finishNative();
 }
 
 void WPrinterJob::moveTo(int64_t printDC, float x, float y) {
 	$prepareNative(WPrinterJob, moveTo, void, int64_t printDC, float x, float y);
-	$invokeNative(WPrinterJob, moveTo, printDC, x, y);
+	$invokeNative(printDC, x, y);
 	$finishNative();
 }
 
 void WPrinterJob::lineTo(int64_t printDC, float x, float y) {
 	$prepareNative(WPrinterJob, lineTo, void, int64_t printDC, float x, float y);
-	$invokeNative(WPrinterJob, lineTo, printDC, x, y);
+	$invokeNative(printDC, x, y);
 	$finishNative();
 }
 
 void WPrinterJob::polyBezierTo(int64_t printDC, float control1x, float control1y, float control2x, float control2y, float endX, float endY) {
 	$prepareNative(WPrinterJob, polyBezierTo, void, int64_t printDC, float control1x, float control1y, float control2x, float control2y, float endX, float endY);
-	$invokeNative(WPrinterJob, polyBezierTo, printDC, control1x, control1y, control2x, control2y, endX, endY);
+	$invokeNative(printDC, control1x, control1y, control2x, control2y, endX, endY);
 	$finishNative();
 }
 
 void WPrinterJob::setPolyFillMode(int64_t printDC, int32_t fillRule) {
 	$prepareNative(WPrinterJob, setPolyFillMode, void, int64_t printDC, int32_t fillRule);
-	$invokeNative(WPrinterJob, setPolyFillMode, printDC, fillRule);
+	$invokeNative(printDC, fillRule);
 	$finishNative();
 }
 
 int32_t WPrinterJob::setAdvancedGraphicsMode(int64_t printDC) {
 	int32_t $ret = 0;
 	$prepareNative(WPrinterJob, setAdvancedGraphicsMode, int32_t, int64_t printDC);
-	$ret = $invokeNative(WPrinterJob, setAdvancedGraphicsMode, printDC);
+	$ret = $invokeNative(printDC);
 	$finishNative();
 	return $ret;
 }
 
 void WPrinterJob::setGraphicsMode(int64_t printDC, int32_t mode) {
 	$prepareNative(WPrinterJob, setGraphicsMode, void, int64_t printDC, int32_t mode);
-	$invokeNative(WPrinterJob, setGraphicsMode, printDC, mode);
+	$invokeNative(printDC, mode);
 	$finishNative();
 }
 
 void WPrinterJob::scale(int64_t printDC, double scaleX, double scaleY) {
 	$prepareNative(WPrinterJob, scale, void, int64_t printDC, double scaleX, double scaleY);
-	$invokeNative(WPrinterJob, scale, printDC, scaleX, scaleY);
+	$invokeNative(printDC, scaleX, scaleY);
 	$finishNative();
 }
 
 void WPrinterJob::getWorldTransform(int64_t printDC, $doubles* transform) {
 	$prepareNative(WPrinterJob, getWorldTransform, void, int64_t printDC, $doubles* transform);
-	$invokeNative(WPrinterJob, getWorldTransform, printDC, transform);
+	$invokeNative(printDC, transform);
 	$finishNative();
 }
 
 void WPrinterJob::setWorldTransform(int64_t printDC, $doubles* transform) {
 	$prepareNative(WPrinterJob, setWorldTransform, void, int64_t printDC, $doubles* transform);
-	$invokeNative(WPrinterJob, setWorldTransform, printDC, transform);
+	$invokeNative(printDC, transform);
 	$finishNative();
 }
 
 void WPrinterJob::selectSolidBrush(int64_t printDC, int32_t red, int32_t green, int32_t blue) {
 	$prepareNative(WPrinterJob, selectSolidBrush, void, int64_t printDC, int32_t red, int32_t green, int32_t blue);
-	$invokeNative(WPrinterJob, selectSolidBrush, printDC, red, green, blue);
+	$invokeNative(printDC, red, green, blue);
 	$finishNative();
 }
 
 int32_t WPrinterJob::getPenX(int64_t printDC) {
 	int32_t $ret = 0;
 	$prepareNative(WPrinterJob, getPenX, int32_t, int64_t printDC);
-	$ret = $invokeNative(WPrinterJob, getPenX, printDC);
+	$ret = $invokeNative(printDC);
 	$finishNative();
 	return $ret;
 }
@@ -1430,39 +1423,39 @@ int32_t WPrinterJob::getPenX(int64_t printDC) {
 int32_t WPrinterJob::getPenY(int64_t printDC) {
 	int32_t $ret = 0;
 	$prepareNative(WPrinterJob, getPenY, int32_t, int64_t printDC);
-	$ret = $invokeNative(WPrinterJob, getPenY, printDC);
+	$ret = $invokeNative(printDC);
 	$finishNative();
 	return $ret;
 }
 
 void WPrinterJob::selectClipPath(int64_t printDC) {
 	$prepareNative(WPrinterJob, selectClipPath, void, int64_t printDC);
-	$invokeNative(WPrinterJob, selectClipPath, printDC);
+	$invokeNative(printDC);
 	$finishNative();
 }
 
 void WPrinterJob::frameRect(int64_t printDC, float x, float y, float width, float height) {
 	$prepareNative(WPrinterJob, frameRect, void, int64_t printDC, float x, float y, float width, float height);
-	$invokeNative(WPrinterJob, frameRect, printDC, x, y, width, height);
+	$invokeNative(printDC, x, y, width, height);
 	$finishNative();
 }
 
 void WPrinterJob::fillRect(int64_t printDC, float x, float y, float width, float height, int32_t red, int32_t green, int32_t blue) {
 	$prepareNative(WPrinterJob, fillRect, void, int64_t printDC, float x, float y, float width, float height, int32_t red, int32_t green, int32_t blue);
-	$invokeNative(WPrinterJob, fillRect, printDC, x, y, width, height, red, green, blue);
+	$invokeNative(printDC, x, y, width, height, red, green, blue);
 	$finishNative();
 }
 
 void WPrinterJob::selectPen(int64_t printDC, float width, int32_t red, int32_t green, int32_t blue) {
 	$prepareNative(WPrinterJob, selectPen, void, int64_t printDC, float width, int32_t red, int32_t green, int32_t blue);
-	$invokeNative(WPrinterJob, selectPen, printDC, width, red, green, blue);
+	$invokeNative(printDC, width, red, green, blue);
 	$finishNative();
 }
 
 bool WPrinterJob::selectStylePen(int64_t printDC, int64_t cap, int64_t join, float width, int32_t red, int32_t green, int32_t blue) {
 	bool $ret = false;
 	$prepareNative(WPrinterJob, selectStylePen, bool, int64_t printDC, int64_t cap, int64_t join, float width, int32_t red, int32_t green, int32_t blue);
-	$ret = $invokeNative(WPrinterJob, selectStylePen, printDC, cap, join, width, red, green, blue);
+	$ret = $invokeNative(printDC, cap, join, width, red, green, blue);
 	$finishNative();
 	return $ret;
 }
@@ -1470,34 +1463,34 @@ bool WPrinterJob::selectStylePen(int64_t printDC, int64_t cap, int64_t join, flo
 bool WPrinterJob::setFont(int64_t printDC, $String* familyName, float fontSize, bool bold, bool italic, int32_t rotation, float awScale) {
 	bool $ret = false;
 	$prepareNative(WPrinterJob, setFont, bool, int64_t printDC, $String* familyName, float fontSize, bool bold, bool italic, int32_t rotation, float awScale);
-	$ret = $invokeNative(WPrinterJob, setFont, printDC, familyName, fontSize, bold, italic, rotation, awScale);
+	$ret = $invokeNative(printDC, familyName, fontSize, bold, italic, rotation, awScale);
 	$finishNative();
 	return $ret;
 }
 
 void WPrinterJob::setTextColor(int64_t printDC, int32_t red, int32_t green, int32_t blue) {
 	$prepareNative(WPrinterJob, setTextColor, void, int64_t printDC, int32_t red, int32_t green, int32_t blue);
-	$invokeNative(WPrinterJob, setTextColor, printDC, red, green, blue);
+	$invokeNative(printDC, red, green, blue);
 	$finishNative();
 }
 
 void WPrinterJob::textOut(int64_t printDC, $String* text, int32_t strlen, bool glyphs, float x, float y, $floats* positions) {
 	$prepareNative(WPrinterJob, textOut, void, int64_t printDC, $String* text, int32_t strlen, bool glyphs, float x, float y, $floats* positions);
-	$invokeNative(WPrinterJob, textOut, printDC, text, strlen, glyphs, x, y, positions);
+	$invokeNative(printDC, text, strlen, glyphs, x, y, positions);
 	$finishNative();
 }
 
 int32_t WPrinterJob::getGDIAdvance(int64_t printDC, $String* text) {
 	int32_t $ret = 0;
 	$prepareNative(WPrinterJob, getGDIAdvance, int32_t, int64_t printDC, $String* text);
-	$ret = $invokeNative(WPrinterJob, getGDIAdvance, printDC, text);
+	$ret = $invokeNative(printDC, text);
 	$finishNative();
 	return $ret;
 }
 
 void WPrinterJob::drawDIBImage(int64_t printDC, $bytes* image, float destX, float destY, float destWidth, float destHeight, float srcX, float srcY, float srcWidth, float srcHeight, int32_t bitCount, $bytes* bmiColors) {
 	$prepareNative(WPrinterJob, drawDIBImage, void, int64_t printDC, $bytes* image, float destX, float destY, float destWidth, float destHeight, float srcX, float srcY, float srcWidth, float srcHeight, int32_t bitCount, $bytes* bmiColors);
-	$invokeNative(WPrinterJob, drawDIBImage, printDC, image, destX, destY, destWidth, destHeight, srcX, srcY, srcWidth, srcHeight, bitCount, bmiColors);
+	$invokeNative(printDC, image, destX, destY, destWidth, destHeight, srcX, srcY, srcWidth, srcHeight, bitCount, bmiColors);
 	$finishNative();
 }
 
@@ -2011,7 +2004,7 @@ void WPrinterJob::setJobAttributes($PrintRequestAttributeSet* attributes, int32_
 bool WPrinterJob::showDocProperties(int64_t hWnd, $PrintRequestAttributeSet* aset, int32_t dmFields, int16_t copies, int16_t collate, int16_t color, int16_t duplex, int16_t orient, int16_t paper, int16_t bin, int16_t xres_quality, int16_t yres) {
 	bool $ret = false;
 	$prepareNative(WPrinterJob, showDocProperties, bool, int64_t hWnd, $PrintRequestAttributeSet* aset, int32_t dmFields, int16_t copies, int16_t collate, int16_t color, int16_t duplex, int16_t orient, int16_t paper, int16_t bin, int16_t xres_quality, int16_t yres);
-	$ret = $invokeNative(WPrinterJob, showDocProperties, hWnd, aset, dmFields, copies, collate, color, duplex, orient, paper, bin, xres_quality, yres);
+	$ret = $invokeNative(hWnd, aset, dmFields, copies, collate, color, duplex, orient, paper, bin, xres_quality, yres);
 	$finishNative();
 	return $ret;
 }
@@ -2074,7 +2067,7 @@ void WPrinterJob::setPrinterNameAttrib($String* printerName) {
 void WPrinterJob::initIDs() {
 	$init(WPrinterJob);
 	$prepareNativeStatic(WPrinterJob, initIDs, void);
-	$invokeNativeStatic(WPrinterJob, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

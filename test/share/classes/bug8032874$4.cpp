@@ -5,7 +5,6 @@
 #include <javax/swing/RowFilter.h>
 #include <jcpp.h>
 
-using $bug8032874 = ::bug8032874;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

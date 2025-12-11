@@ -8,7 +8,6 @@
 #include <javax/swing/plaf/synth/SynthTabbedPaneUI.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $MouseListener = ::java::awt::event::MouseListener;
 using $MouseMotionListener = ::java::awt::event::MouseMotionListener;
@@ -18,7 +17,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JTabbedPane = ::javax::swing::JTabbedPane;
-using $BasicTabbedPaneUI = ::javax::swing::plaf::basic::BasicTabbedPaneUI;
 using $SynthTabbedPaneUI = ::javax::swing::plaf::synth::SynthTabbedPaneUI;
 
 namespace javax {

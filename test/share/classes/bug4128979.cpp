@@ -47,7 +47,6 @@ using $FlowLayout = ::java::awt::FlowLayout;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $LayoutManager2 = ::java::awt::LayoutManager2;
 using $Panel = ::java::awt::Panel;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

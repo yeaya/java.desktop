@@ -22,7 +22,6 @@ using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XConstants = ::sun::awt::X11::XConstants;
 using $XCreateWindowParams = ::sun::awt::X11::XCreateWindowParams;
 using $XEvent = ::sun::awt::X11::XEvent;
-using $XWindow = ::sun::awt::X11::XWindow;
 using $XWindowPeer = ::sun::awt::X11::XWindowPeer;
 
 namespace sun {

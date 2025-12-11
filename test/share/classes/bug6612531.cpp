@@ -11,7 +11,6 @@
 
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Dimension = ::java::awt::Dimension;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

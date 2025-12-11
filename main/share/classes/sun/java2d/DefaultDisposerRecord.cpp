@@ -5,7 +5,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DisposerRecord = ::sun::java2d::DisposerRecord;
 
 namespace sun {
 	namespace java2d {
@@ -60,7 +59,7 @@ int64_t DefaultDisposerRecord::getDisposerMethodPointer() {
 void DefaultDisposerRecord::invokeNativeDispose(int64_t disposerMethodPointer, int64_t dataPointer) {
 	$init(DefaultDisposerRecord);
 	$prepareNativeStatic(DefaultDisposerRecord, invokeNativeDispose, void, int64_t disposerMethodPointer, int64_t dataPointer);
-	$invokeNativeStatic(DefaultDisposerRecord, invokeNativeDispose, disposerMethodPointer, dataPointer);
+	$invokeNativeStatic(disposerMethodPointer, dataPointer);
 	$finishNativeStatic();
 }
 

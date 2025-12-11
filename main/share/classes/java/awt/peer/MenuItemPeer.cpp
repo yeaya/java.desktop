@@ -2,7 +2,6 @@
 
 #include <jcpp.h>
 
-using $MenuComponentPeer = ::java::awt::peer::MenuComponentPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

@@ -17,7 +17,6 @@
 #include <sun/swing/SwingUtilities2.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Cursor = ::java::awt::Cursor;
 using $Point = ::java::awt::Point;
@@ -31,7 +30,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $JTable = ::javax::swing::JTable;
 using $RowSorter = ::javax::swing::RowSorter;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
-using $MouseInputListener = ::javax::swing::event::MouseInputListener;
 using $BasicTableHeaderUI = ::javax::swing::plaf::basic::BasicTableHeaderUI;
 using $JTableHeader = ::javax::swing::table::JTableHeader;
 using $TableColumn = ::javax::swing::table::TableColumn;

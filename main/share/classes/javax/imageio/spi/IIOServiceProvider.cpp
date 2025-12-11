@@ -8,8 +8,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Locale = ::java::util::Locale;
-using $RegisterableService = ::javax::imageio::spi::RegisterableService;
 using $ServiceRegistry = ::javax::imageio::spi::ServiceRegistry;
 
 namespace javax {

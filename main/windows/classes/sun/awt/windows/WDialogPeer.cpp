@@ -61,7 +61,6 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $DialogPeer = ::java::awt::peer::DialogPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
@@ -71,7 +70,6 @@ using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor;
 using $InputMethodManager = ::sun::awt::im::InputMethodManager;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
 using $SunGraphicsEnvironment = ::sun::java2d::SunGraphicsEnvironment;
 using $Region = ::sun::java2d::pipe::Region;
@@ -425,7 +423,7 @@ void WDialogPeer::init$($Dialog* target) {
 
 void WDialogPeer::createAwtDialog($WComponentPeer* parent) {
 	$prepareNative(WDialogPeer, createAwtDialog, void, $WComponentPeer* parent);
-	$invokeNative(WDialogPeer, createAwtDialog, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 
@@ -436,13 +434,13 @@ void WDialogPeer::create($WComponentPeer* parent) {
 
 void WDialogPeer::showModal() {
 	$prepareNative(WDialogPeer, showModal, void);
-	$invokeNative(WDialogPeer, showModal);
+	$invokeNative();
 	$finishNative();
 }
 
 void WDialogPeer::endModal() {
 	$prepareNative(WDialogPeer, endModal, void);
-	$invokeNative(WDialogPeer, endModal);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -518,7 +516,7 @@ void WDialogPeer::reshape(int32_t x, int32_t y, int32_t width, int32_t height) {
 
 void WDialogPeer::pSetIMMOption($String* option) {
 	$prepareNative(WDialogPeer, pSetIMMOption, void, $String* option);
-	$invokeNative(WDialogPeer, pSetIMMOption, option);
+	$invokeNative(option);
 	$finishNative();
 }
 

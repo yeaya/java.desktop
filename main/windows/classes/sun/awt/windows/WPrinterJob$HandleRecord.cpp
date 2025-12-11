@@ -8,7 +8,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $WPrinterJob = ::sun::awt::windows::WPrinterJob;
-using $DisposerRecord = ::sun::java2d::DisposerRecord;
 
 namespace sun {
 	namespace awt {

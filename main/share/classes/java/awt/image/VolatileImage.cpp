@@ -16,10 +16,7 @@
 #undef TRANSLUCENT
 
 using $Graphics = ::java::awt::Graphics;
-using $Graphics2D = ::java::awt::Graphics2D;
-using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $Image = ::java::awt::Image;
-using $ImageCapabilities = ::java::awt::ImageCapabilities;
 using $Transparency = ::java::awt::Transparency;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ImageProducer = ::java::awt::image::ImageProducer;

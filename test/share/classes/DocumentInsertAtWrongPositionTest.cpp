@@ -14,14 +14,12 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $JEditorPane = ::javax::swing::JEditorPane;
 using $JTextArea = ::javax::swing::JTextArea;
 using $JTextField = ::javax::swing::JTextField;
 using $JTextPane = ::javax::swing::JTextPane;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $Document = ::javax::swing::text::Document;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $SimpleAttributeSet = ::javax::swing::text::SimpleAttributeSet;
 

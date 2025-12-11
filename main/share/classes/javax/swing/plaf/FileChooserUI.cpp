@@ -8,13 +8,10 @@
 #include <javax/swing/plaf/ComponentUI.h>
 #include <jcpp.h>
 
-using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JButton = ::javax::swing::JButton;
 using $JFileChooser = ::javax::swing::JFileChooser;
-using $FileFilter = ::javax::swing::filechooser::FileFilter;
-using $FileView = ::javax::swing::filechooser::FileView;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 
 namespace javax {

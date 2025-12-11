@@ -24,20 +24,16 @@
 #undef VERTICAL
 
 using $AdjustmentListenerArray = $Array<::java::awt::event::AdjustmentListener>;
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $AWTError = ::java::awt::AWTError;
 using $AWTEventMulticaster = ::java::awt::AWTEventMulticaster;
 using $Adjustable = ::java::awt::Adjustable;
-using $Component = ::java::awt::Component;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $ScrollPane = ::java::awt::ScrollPane;
 using $ScrollPaneAdjustable$1 = ::java::awt::ScrollPaneAdjustable$1;
 using $Toolkit = ::java::awt::Toolkit;
 using $AdjustmentEvent = ::java::awt::event::AdjustmentEvent;
 using $AdjustmentListener = ::java::awt::event::AdjustmentListener;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ScrollPanePeer = ::java::awt::peer::ScrollPanePeer;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -146,7 +142,7 @@ $String* ScrollPaneAdjustable::SCROLLPANE_ONLY = nullptr;
 void ScrollPaneAdjustable::initIDs() {
 	$init(ScrollPaneAdjustable);
 	$prepareNativeStatic(ScrollPaneAdjustable, initIDs, void);
-	$invokeNativeStatic(ScrollPaneAdjustable, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

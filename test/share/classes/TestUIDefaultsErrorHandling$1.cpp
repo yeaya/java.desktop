@@ -4,7 +4,6 @@
 #include <javax/swing/JLabel.h>
 #include <jcpp.h>
 
-using $TestUIDefaultsErrorHandling = ::TestUIDefaultsErrorHandling;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

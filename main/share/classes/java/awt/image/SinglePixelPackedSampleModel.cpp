@@ -90,7 +90,7 @@ $Object* allocate$SinglePixelPackedSampleModel($Class* clazz) {
 void SinglePixelPackedSampleModel::initIDs() {
 	$init(SinglePixelPackedSampleModel);
 	$prepareNativeStatic(SinglePixelPackedSampleModel, initIDs, void);
-	$invokeNativeStatic(SinglePixelPackedSampleModel, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

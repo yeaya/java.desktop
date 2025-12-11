@@ -42,10 +42,8 @@ using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
-using $Frame = ::java::awt::Frame;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $PrintStream = ::java::io::PrintStream;
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -54,12 +52,7 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $BorderFactory = ::javax::swing::BorderFactory;
 using $JComponent = ::javax::swing::JComponent;
 using $JFrame = ::javax::swing::JFrame;
@@ -69,7 +62,6 @@ using $JTabbedPane = ::javax::swing::JTabbedPane;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;
 using $UIManager$LookAndFeelInfo = ::javax::swing::UIManager$LookAndFeelInfo;
-using $Border = ::javax::swing::border::Border;
 
 class TabProb$$Lambda$lambda$test$0 : public $Runnable {
 	$class(TabProb$$Lambda$lambda$test$0, $NO_CLASS_INIT, $Runnable)

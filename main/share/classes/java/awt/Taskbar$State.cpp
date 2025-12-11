@@ -11,7 +11,6 @@
 #undef PAUSED
 
 using $Taskbar$StateArray = $Array<::java::awt::Taskbar$State>;
-using $Taskbar = ::java::awt::Taskbar;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

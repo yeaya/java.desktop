@@ -9,7 +9,6 @@
 using $ModelConnectionBlockArray = $Array<::com::sun::media::sound::ModelConnectionBlock>;
 using $ModelPerformerArray = $Array<::com::sun::media::sound::ModelPerformer>;
 using $ModelDirectedPlayer = ::com::sun::media::sound::ModelDirectedPlayer;
-using $ModelDirector = ::com::sun::media::sound::ModelDirector;
 using $ModelPerformer = ::com::sun::media::sound::ModelPerformer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

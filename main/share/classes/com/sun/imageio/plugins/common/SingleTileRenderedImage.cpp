@@ -9,7 +9,6 @@
 using $SimpleRenderedImage = ::com::sun::imageio::plugins::common::SimpleRenderedImage;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $Raster = ::java::awt::image::Raster;
-using $SampleModel = ::java::awt::image::SampleModel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;

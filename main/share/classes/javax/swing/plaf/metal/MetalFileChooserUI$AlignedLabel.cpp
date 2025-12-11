@@ -9,7 +9,6 @@
 
 #undef LEFT_ALIGNMENT
 
-using $MetalFileChooserUI$AlignedLabelArray = $Array<::javax::swing::plaf::metal::MetalFileChooserUI$AlignedLabel>;
 using $Dimension = ::java::awt::Dimension;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

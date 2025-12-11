@@ -14,7 +14,6 @@
 #undef PAGE_EXISTS
 
 using $Component = ::java::awt::Component;
-using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $PageFormat = ::java::awt::print::PageFormat;
 using $Printable = ::java::awt::print::Printable;
@@ -24,7 +23,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PSPrinterJob = ::sun::print::PSPrinterJob;
 using $PSPrinterJob$EPSPrinter = ::sun::print::PSPrinterJob$EPSPrinter;
 
 namespace sun {

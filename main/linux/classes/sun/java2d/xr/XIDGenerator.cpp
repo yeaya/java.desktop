@@ -57,7 +57,7 @@ int32_t XIDGenerator::getNextXID() {
 void XIDGenerator::bufferXIDs($ints* buffer, int32_t arraySize) {
 	$init(XIDGenerator);
 	$prepareNativeStatic(XIDGenerator, bufferXIDs, void, $ints* buffer, int32_t arraySize);
-	$invokeNativeStatic(XIDGenerator, bufferXIDs, buffer, arraySize);
+	$invokeNativeStatic(buffer, arraySize);
 	$finishNativeStatic();
 }
 

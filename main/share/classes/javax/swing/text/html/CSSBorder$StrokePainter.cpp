@@ -17,8 +17,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $View = ::javax::swing::text::View;
-using $CSSBorder = ::javax::swing::text::html::CSSBorder;
-using $CSSBorder$BorderPainter = ::javax::swing::text::html::CSSBorder$BorderPainter;
 
 namespace javax {
 	namespace swing {

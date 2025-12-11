@@ -12,7 +12,6 @@ using $TIFFImageReader = ::com::sun::imageio::plugins::tiff::TIFFImageReader;
 using $ArrayIndexOutOfBoundsException = ::java::lang::ArrayIndexOutOfBoundsException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ImageReader = ::javax::imageio::ImageReader;
 using $ImageInputStream = ::javax::imageio::stream::ImageInputStream;
 
 namespace com {

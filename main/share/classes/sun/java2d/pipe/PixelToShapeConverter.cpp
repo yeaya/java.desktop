@@ -44,7 +44,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
 using $PixelDrawPipe = ::sun::java2d::pipe::PixelDrawPipe;
-using $PixelFillPipe = ::sun::java2d::pipe::PixelFillPipe;
 using $ShapeDrawPipe = ::sun::java2d::pipe::ShapeDrawPipe;
 
 namespace sun {

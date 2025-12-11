@@ -12,7 +12,6 @@
 
 #undef POPUP
 
-using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Window = ::java::awt::Window;
 using $Window$Type = ::java::awt::Window$Type;
@@ -22,8 +21,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $SecurityException = ::java::lang::SecurityException;
 using $JRootPane = ::javax::swing::JRootPane;
 using $JWindow = ::javax::swing::JWindow;
-using $Popup = ::javax::swing::Popup;
-using $ModalExclude = ::sun::awt::ModalExclude;
 
 namespace javax {
 	namespace swing {

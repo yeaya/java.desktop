@@ -11,7 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Font2D = ::sun::font::Font2D;
-using $GlyphLayout = ::sun::font::GlyphLayout;
 
 namespace sun {
 	namespace font {

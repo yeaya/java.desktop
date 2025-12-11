@@ -10,13 +10,9 @@
 #undef DOCUMENT_MODAL
 #undef TOOLKIT_MODAL
 
-using $Dialog$ModalityTypeArray = $Array<::java::awt::Dialog$ModalityType>;
-using $Dialog = ::java::awt::Dialog;
 using $Dialog$ModalityType = ::java::awt::Dialog$ModalityType;
-using $ModalEventFilter = ::java::awt::ModalEventFilter;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;

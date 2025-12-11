@@ -15,9 +15,7 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $XTrayIconPeer = ::sun::awt::X11::XTrayIconPeer;
 using $XTrayIconPeer$IconCanvas = ::sun::awt::X11::XTrayIconPeer$IconCanvas;
-using $XTrayIconPeer$IconCanvas$IconObserver = ::sun::awt::X11::XTrayIconPeer$IconCanvas$IconObserver;
 
 namespace sun {
 	namespace awt {

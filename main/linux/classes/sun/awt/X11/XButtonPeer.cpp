@@ -66,19 +66,16 @@ using $SystemColor = ::java::awt::SystemColor;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $FocusEvent = ::java::awt::event::FocusEvent;
 using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $PaintEvent = ::java::awt::event::PaintEvent;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
-using $ButtonPeer = ::java::awt::peer::ButtonPeer;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $Icon = ::javax::swing::Icon;
 using $SwingConstants = ::javax::swing::SwingConstants;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
@@ -86,7 +83,6 @@ using $BasicGraphicsUtils = ::javax::swing::plaf::basic::BasicGraphicsUtils;
 using $XComponentPeer = ::sun::awt::X11::XComponentPeer;
 using $XCreateWindowParams = ::sun::awt::X11::XCreateWindowParams;
 using $XToolkit = ::sun::awt::X11::XToolkit;
-using $XWindow = ::sun::awt::X11::XWindow;
 using $Region = ::sun::java2d::pipe::Region;
 
 namespace sun {

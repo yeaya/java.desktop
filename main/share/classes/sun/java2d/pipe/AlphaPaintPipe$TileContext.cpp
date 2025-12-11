@@ -11,17 +11,12 @@
 #include <jcpp.h>
 
 using $PaintContext = ::java::awt::PaintContext;
-using $ColorModel = ::java::awt::image::ColorModel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
-using $SurfaceData = ::sun::java2d::SurfaceData;
-using $Blit = ::sun::java2d::loops::Blit;
-using $MaskBlit = ::sun::java2d::loops::MaskBlit;
 using $AlphaPaintPipe = ::sun::java2d::pipe::AlphaPaintPipe;
 
 namespace sun {

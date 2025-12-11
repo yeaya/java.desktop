@@ -13,7 +13,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $JEditorPane$JEditorPaneAccessibleHypertextSupport = ::javax::swing::JEditorPane$JEditorPaneAccessibleHypertextSupport;
 using $DocumentEvent = ::javax::swing::event::DocumentEvent;
-using $DocumentListener = ::javax::swing::event::DocumentListener;
 
 namespace javax {
 	namespace swing {

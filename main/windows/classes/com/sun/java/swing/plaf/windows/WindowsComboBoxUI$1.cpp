@@ -17,17 +17,12 @@
 
 using $WindowsComboBoxUI = ::com::sun::java::swing::plaf::windows::WindowsComboBoxUI;
 using $WindowsComboBoxUI$XPComboBoxButton = ::com::sun::java::swing::plaf::windows::WindowsComboBoxUI$XPComboBoxButton;
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseEvent = ::java::awt::event::MouseEvent;
-using $MouseListener = ::java::awt::event::MouseListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $JButton = ::javax::swing::JButton;
 using $JComboBox = ::javax::swing::JComboBox;

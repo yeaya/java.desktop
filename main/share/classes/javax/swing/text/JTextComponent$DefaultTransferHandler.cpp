@@ -20,7 +20,6 @@
 #undef NONE
 
 using $DataFlavorArray = $Array<::java::awt::datatransfer::DataFlavor>;
-using $Component = ::java::awt::Component;
 using $Clipboard = ::java::awt::datatransfer::Clipboard;
 using $ClipboardOwner = ::java::awt::datatransfer::ClipboardOwner;
 using $DataFlavor = ::java::awt::datatransfer::DataFlavor;
@@ -34,7 +33,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $TransferHandler = ::javax::swing::TransferHandler;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $Document = ::javax::swing::text::Document;
 using $JTextComponent = ::javax::swing::text::JTextComponent;

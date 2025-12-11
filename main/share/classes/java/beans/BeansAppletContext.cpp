@@ -14,9 +14,7 @@
 #include <jcpp.h>
 
 using $Applet = ::java::applet::Applet;
-using $AppletContext = ::java::applet::AppletContext;
 using $AudioClip = ::java::applet::AudioClip;
-using $Component = ::java::awt::Component;
 using $Image = ::java::awt::Image;
 using $ImageProducer = ::java::awt::image::ImageProducer;
 using $InputStream = ::java::io::InputStream;

@@ -13,7 +13,6 @@
 
 using $EventListenerArray = $Array<::java::util::EventListener>;
 using $ListDataListenerArray = $Array<::javax::swing::event::ListDataListener>;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

@@ -38,7 +38,6 @@ using $ActionListener = ::java::awt::event::ActionListener;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $ItemEvent = ::java::awt::event::ItemEvent;
 using $ItemListener = ::java::awt::event::ItemListener;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

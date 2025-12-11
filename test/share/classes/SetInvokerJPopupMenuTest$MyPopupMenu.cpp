@@ -8,7 +8,6 @@
 #include <javax/swing/JPopupMenu.h>
 #include <jcpp.h>
 
-using $SetInvokerJPopupMenuTest = ::SetInvokerJPopupMenuTest;
 using $PrintWriter = ::java::io::PrintWriter;
 using $StringWriter = ::java::io::StringWriter;
 using $Writer = ::java::io::Writer;

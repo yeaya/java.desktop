@@ -26,7 +26,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $Blit = ::sun::java2d::loops::Blit;
 using $CompositeType = ::sun::java2d::loops::CompositeType;
-using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $OGLBlitLoops = ::sun::java2d::opengl::OGLBlitLoops;
 using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;
 using $Region = ::sun::java2d::pipe::Region;

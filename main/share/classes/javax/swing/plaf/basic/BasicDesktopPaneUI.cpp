@@ -54,9 +54,6 @@
 #undef WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
 #undef WHEN_IN_FOCUSED_WINDOW
 
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
@@ -69,14 +66,12 @@ using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Action = ::javax::swing::Action;
 using $ActionMap = ::javax::swing::ActionMap;
-using $ComponentInputMap = ::javax::swing::ComponentInputMap;
 using $DefaultDesktopManager = ::javax::swing::DefaultDesktopManager;
 using $DesktopManager = ::javax::swing::DesktopManager;
 using $InputMap = ::javax::swing::InputMap;
 using $JComponent = ::javax::swing::JComponent;
 using $JDesktopPane = ::javax::swing::JDesktopPane;
 using $JLayeredPane = ::javax::swing::JLayeredPane;
-using $KeyStroke = ::javax::swing::KeyStroke;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;

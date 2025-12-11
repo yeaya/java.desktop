@@ -28,18 +28,12 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $FlowLayout = ::java::awt::FlowLayout;
 using $LayoutManager = ::java::awt::LayoutManager;
-using $Window = ::java::awt::Window;
 using $PrintStream = ::java::io::PrintStream;
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
@@ -47,7 +41,6 @@ using $JFrame = ::javax::swing::JFrame;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;
 using $UIManager$LookAndFeelInfo = ::javax::swing::UIManager$LookAndFeelInfo;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $BasicButtonUI = ::javax::swing::plaf::basic::BasicButtonUI;
 
 class AllSwingComponentsBaselineTest$$Lambda$lambda$main$0 : public $Runnable {

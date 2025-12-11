@@ -26,7 +26,6 @@ using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $Runnable = ::java::lang::Runnable;
-using $Format = ::java::text::Format;
 using $MessageFormat = ::java::text::MessageFormat;
 using $JLabel = ::javax::swing::JLabel;
 using $SwingUtilities = ::javax::swing::SwingUtilities;

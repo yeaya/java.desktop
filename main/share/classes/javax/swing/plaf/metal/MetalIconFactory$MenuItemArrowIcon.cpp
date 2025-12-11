@@ -8,14 +8,11 @@
 #include <jcpp.h>
 
 using $Component = ::java::awt::Component;
-using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Icon = ::javax::swing::Icon;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $MetalIconFactory = ::javax::swing::plaf::metal::MetalIconFactory;
 
 namespace javax {

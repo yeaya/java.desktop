@@ -17,10 +17,8 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractColorChooserPanel = ::javax::swing::colorchooser::AbstractColorChooserPanel;
 using $DefaultSwatchChooserPanel = ::javax::swing::colorchooser::DefaultSwatchChooserPanel;
 using $RecentSwatchPanel = ::javax::swing::colorchooser::RecentSwatchPanel;
-using $SwatchPanel = ::javax::swing::colorchooser::SwatchPanel;
 
 namespace javax {
 	namespace swing {

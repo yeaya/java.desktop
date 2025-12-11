@@ -15,7 +15,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $AtomicInteger = ::java::util::concurrent::atomic::AtomicInteger;
-using $JavaAWTAccess = ::jdk::internal::access::JavaAWTAccess;
 using $AppContext = ::sun::awt::AppContext;
 using $AppContext$6$1 = ::sun::awt::AppContext$6$1;
 

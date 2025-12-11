@@ -19,7 +19,6 @@
 #include <jcpp.h>
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
@@ -37,7 +36,6 @@ using $GlyphView = ::javax::swing::text::GlyphView;
 using $StateInvariantError = ::javax::swing::text::StateInvariantError;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
 using $StyledDocument = ::javax::swing::text::StyledDocument;
-using $View = ::javax::swing::text::View;
 using $ViewFactory = ::javax::swing::text::ViewFactory;
 
 namespace javax {

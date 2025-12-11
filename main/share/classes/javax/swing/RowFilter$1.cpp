@@ -10,14 +10,11 @@
 #undef EQUAL
 #undef NOT_EQUAL
 
-using $RowFilter$ComparisonTypeArray = $Array<::javax::swing::RowFilter$ComparisonType>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $RowFilter = ::javax::swing::RowFilter;
 using $RowFilter$ComparisonType = ::javax::swing::RowFilter$ComparisonType;
 
 namespace javax {

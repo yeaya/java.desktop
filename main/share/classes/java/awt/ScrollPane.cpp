@@ -61,7 +61,6 @@ using $ScrollPane$PeerFixer = ::java::awt::ScrollPane$PeerFixer;
 using $ScrollPaneAdjustable = ::java::awt::ScrollPaneAdjustable;
 using $Toolkit = ::java::awt::Toolkit;
 using $AdjustmentListener = ::java::awt::event::AdjustmentListener;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $MouseWheelEvent = ::java::awt::event::MouseWheelEvent;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
@@ -79,7 +78,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $NullPointerException = ::java::lang::NullPointerException;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $ComponentFactory = ::sun::awt::ComponentFactory;
 using $ScrollPaneWheelScroller = ::sun::awt::ScrollPaneWheelScroller;
@@ -220,7 +218,7 @@ int32_t ScrollPane::nameCounter = 0;
 void ScrollPane::initIDs() {
 	$init(ScrollPane);
 	$prepareNativeStatic(ScrollPane, initIDs, void);
-	$invokeNativeStatic(ScrollPane, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

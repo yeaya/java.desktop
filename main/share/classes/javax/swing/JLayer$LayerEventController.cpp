@@ -55,8 +55,6 @@
 
 using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
-using $AWTEventListener = ::java::awt::event::AWTEventListener;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $ContainerEvent = ::java::awt::event::ContainerEvent;
 using $FocusEvent = ::java::awt::event::FocusEvent;
@@ -73,7 +71,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $ArrayList = ::java::util::ArrayList;
-using $EventObject = ::java::util::EventObject;
 using $Iterator = ::java::util::Iterator;
 using $JLayer = ::javax::swing::JLayer;
 using $JLayer$LayerEventController$1 = ::javax::swing::JLayer$LayerEventController$1;

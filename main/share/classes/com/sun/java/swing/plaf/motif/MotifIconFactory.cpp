@@ -11,7 +11,6 @@ using $MotifIconFactory$CheckBoxIcon = ::com::sun::java::swing::plaf::motif::Mot
 using $MotifIconFactory$MenuArrowIcon = ::com::sun::java::swing::plaf::motif::MotifIconFactory$MenuArrowIcon;
 using $MotifIconFactory$MenuItemArrowIcon = ::com::sun::java::swing::plaf::motif::MotifIconFactory$MenuItemArrowIcon;
 using $MotifIconFactory$RadioButtonIcon = ::com::sun::java::swing::plaf::motif::MotifIconFactory$RadioButtonIcon;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

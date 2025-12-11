@@ -82,7 +82,6 @@ using $Shape = ::java::awt::Shape;
 using $Toolkit = ::java::awt::Toolkit;
 using $Window = ::java::awt::Window;
 using $Window$AccessibleAWTWindow = ::java::awt::Window$AccessibleAWTWindow;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
@@ -99,7 +98,6 @@ using $Float = ::java::lang::Float;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $AbstractList = ::java::util::AbstractList;
 using $ArrayList = ::java::util::ArrayList;
 using $List = ::java::util::List;
@@ -722,7 +720,7 @@ void Frame::readObject($ObjectInputStream* s) {
 void Frame::initIDs() {
 	$init(Frame);
 	$prepareNativeStatic(Frame, initIDs, void);
-	$invokeNativeStatic(Frame, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

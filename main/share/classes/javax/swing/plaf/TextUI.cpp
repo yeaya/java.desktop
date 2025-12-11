@@ -13,7 +13,6 @@
 
 using $Position$BiasArray = $Array<::javax::swing::text::Position$Bias>;
 using $Point = ::java::awt::Point;
-using $Rectangle = ::java::awt::Rectangle;
 using $Point2D = ::java::awt::geom::Point2D;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -21,10 +20,8 @@ using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
-using $EditorKit = ::javax::swing::text::EditorKit;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $Position$Bias = ::javax::swing::text::Position$Bias;
-using $View = ::javax::swing::text::View;
 
 namespace javax {
 	namespace swing {

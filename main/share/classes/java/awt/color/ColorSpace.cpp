@@ -35,7 +35,6 @@
 #undef XYZ
 
 using $ColorSpace$BuiltInSpace = ::java::awt::color::ColorSpace$BuiltInSpace;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;

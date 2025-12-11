@@ -9,7 +9,6 @@
 #undef REPEAT
 
 using $MultipleGradientPaint$CycleMethodArray = $Array<::java::awt::MultipleGradientPaint$CycleMethod>;
-using $MultipleGradientPaint = ::java::awt::MultipleGradientPaint;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

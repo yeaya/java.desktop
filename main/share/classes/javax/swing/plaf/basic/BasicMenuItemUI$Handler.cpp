@@ -23,26 +23,21 @@
 #undef BUTTON3_MASK
 
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
-using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Number = ::java::lang::Number;
-using $EventObject = ::java::util::EventObject;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JMenuItem = ::javax::swing::JMenuItem;
-using $MenuElement = ::javax::swing::MenuElement;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
 using $MenuDragMouseEvent = ::javax::swing::event::MenuDragMouseEvent;
 using $MenuDragMouseListener = ::javax::swing::event::MenuDragMouseListener;
-using $MouseInputListener = ::javax::swing::event::MouseInputListener;
 using $BasicHTML = ::javax::swing::plaf::basic::BasicHTML;
 using $BasicMenuItemUI = ::javax::swing::plaf::basic::BasicMenuItemUI;
 using $SwingUtilities2 = ::sun::swing::SwingUtilities2;

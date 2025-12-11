@@ -17,7 +17,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $EventListenerList = ::javax::swing::event::EventListenerList;
 using $UndoableEditEvent = ::javax::swing::event::UndoableEditEvent;
 using $UndoableEditListener = ::javax::swing::event::UndoableEditListener;
-using $AbstractDocument = ::javax::swing::text::AbstractDocument;
 using $PlainDocument = ::javax::swing::text::PlainDocument;
 
 $FieldInfo _TestCCEOnEditEvent$3$1_FieldInfo_[] = {

@@ -109,7 +109,6 @@ using $Map = ::java::util::Map;
 using $Map$Entry = ::java::util::Map$Entry;
 using $Set = ::java::util::Set;
 using $Stack = ::java::util::Stack;
-using $Vector = ::java::util::Vector;
 using $Instrument = ::javax::sound::midi::Instrument;
 using $Patch = ::javax::sound::midi::Patch;
 using $Soundbank = ::javax::sound::midi::Soundbank;

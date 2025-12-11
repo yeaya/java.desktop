@@ -9,7 +9,6 @@
 #undef FILTER
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Container$EventTargetFilter = ::java::awt::Container$EventTargetFilter;
 using $DropTarget = ::java::awt::dnd::DropTarget;
 using $ClassInfo = ::java::lang::ClassInfo;

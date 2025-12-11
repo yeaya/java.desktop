@@ -47,7 +47,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $StringBuffer = ::java::lang::StringBuffer;
 using $ThreadDeath = ::java::lang::ThreadDeath;
 using $Iterator = ::java::util::Iterator;

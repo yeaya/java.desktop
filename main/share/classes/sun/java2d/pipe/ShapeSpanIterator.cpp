@@ -11,7 +11,6 @@ using $PathIterator = ::java::awt::geom::PathIterator;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PathConsumer2D = ::sun::awt::geom::PathConsumer2D;
 using $Region = ::sun::java2d::pipe::Region;
 using $SpanIterator = ::sun::java2d::pipe::SpanIterator;
 
@@ -113,7 +112,7 @@ void ShapeSpanIterator::finalize() {
 void ShapeSpanIterator::initIDs() {
 	$init(ShapeSpanIterator);
 	$prepareNativeStatic(ShapeSpanIterator, initIDs, void);
-	$invokeNativeStatic(ShapeSpanIterator, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -133,13 +132,13 @@ void ShapeSpanIterator::appendPath($PathIterator* pi) {
 
 void ShapeSpanIterator::appendPoly($ints* xPoints, $ints* yPoints, int32_t nPoints, int32_t xoff, int32_t yoff) {
 	$prepareNative(ShapeSpanIterator, appendPoly, void, $ints* xPoints, $ints* yPoints, int32_t nPoints, int32_t xoff, int32_t yoff);
-	$invokeNative(ShapeSpanIterator, appendPoly, xPoints, yPoints, nPoints, xoff, yoff);
+	$invokeNative(xPoints, yPoints, nPoints, xoff, yoff);
 	$finishNative();
 }
 
 void ShapeSpanIterator::setNormalize(bool adjust) {
 	$prepareNative(ShapeSpanIterator, setNormalize, void, bool adjust);
-	$invokeNative(ShapeSpanIterator, setNormalize, adjust);
+	$invokeNative(adjust);
 	$finishNative();
 }
 
@@ -152,7 +151,7 @@ void ShapeSpanIterator::setOutputAreaXYWH(int32_t x, int32_t y, int32_t w, int32
 
 void ShapeSpanIterator::setOutputAreaXYXY(int32_t lox, int32_t loy, int32_t hix, int32_t hiy) {
 	$prepareNative(ShapeSpanIterator, setOutputAreaXYXY, void, int32_t lox, int32_t loy, int32_t hix, int32_t hiy);
-	$invokeNative(ShapeSpanIterator, setOutputAreaXYXY, lox, loy, hix, hiy);
+	$invokeNative(lox, loy, hix, hiy);
 	$finishNative();
 }
 
@@ -169,96 +168,96 @@ void ShapeSpanIterator::setOutputArea($Region* r) {
 
 void ShapeSpanIterator::setRule(int32_t rule) {
 	$prepareNative(ShapeSpanIterator, setRule, void, int32_t rule);
-	$invokeNative(ShapeSpanIterator, setRule, rule);
+	$invokeNative(rule);
 	$finishNative();
 }
 
 void ShapeSpanIterator::addSegment(int32_t type, $floats* coords) {
 	$prepareNative(ShapeSpanIterator, addSegment, void, int32_t type, $floats* coords);
-	$invokeNative(ShapeSpanIterator, addSegment, type, coords);
+	$invokeNative(type, coords);
 	$finishNative();
 }
 
 void ShapeSpanIterator::getPathBox($ints* pathbox) {
 	$prepareNative(ShapeSpanIterator, getPathBox, void, $ints* pathbox);
-	$invokeNative(ShapeSpanIterator, getPathBox, pathbox);
+	$invokeNative(pathbox);
 	$finishNative();
 }
 
 void ShapeSpanIterator::intersectClipBox(int32_t lox, int32_t loy, int32_t hix, int32_t hiy) {
 	$prepareNative(ShapeSpanIterator, intersectClipBox, void, int32_t lox, int32_t loy, int32_t hix, int32_t hiy);
-	$invokeNative(ShapeSpanIterator, intersectClipBox, lox, loy, hix, hiy);
+	$invokeNative(lox, loy, hix, hiy);
 	$finishNative();
 }
 
 bool ShapeSpanIterator::nextSpan($ints* spanbox) {
 	bool $ret = false;
 	$prepareNative(ShapeSpanIterator, nextSpan, bool, $ints* spanbox);
-	$ret = $invokeNative(ShapeSpanIterator, nextSpan, spanbox);
+	$ret = $invokeNative(spanbox);
 	$finishNative();
 	return $ret;
 }
 
 void ShapeSpanIterator::skipDownTo(int32_t y) {
 	$prepareNative(ShapeSpanIterator, skipDownTo, void, int32_t y);
-	$invokeNative(ShapeSpanIterator, skipDownTo, y);
+	$invokeNative(y);
 	$finishNative();
 }
 
 int64_t ShapeSpanIterator::getNativeIterator() {
 	int64_t $ret = 0;
 	$prepareNative(ShapeSpanIterator, getNativeIterator, int64_t);
-	$ret = $invokeNative(ShapeSpanIterator, getNativeIterator);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
 
 void ShapeSpanIterator::dispose() {
 	$prepareNative(ShapeSpanIterator, dispose, void);
-	$invokeNative(ShapeSpanIterator, dispose);
+	$invokeNative();
 	$finishNative();
 }
 
 void ShapeSpanIterator::moveTo(float x, float y) {
 	$prepareNative(ShapeSpanIterator, moveTo, void, float x, float y);
-	$invokeNative(ShapeSpanIterator, moveTo, x, y);
+	$invokeNative(x, y);
 	$finishNative();
 }
 
 void ShapeSpanIterator::lineTo(float x, float y) {
 	$prepareNative(ShapeSpanIterator, lineTo, void, float x, float y);
-	$invokeNative(ShapeSpanIterator, lineTo, x, y);
+	$invokeNative(x, y);
 	$finishNative();
 }
 
 void ShapeSpanIterator::quadTo(float x1, float y1, float x2, float y2) {
 	$prepareNative(ShapeSpanIterator, quadTo, void, float x1, float y1, float x2, float y2);
-	$invokeNative(ShapeSpanIterator, quadTo, x1, y1, x2, y2);
+	$invokeNative(x1, y1, x2, y2);
 	$finishNative();
 }
 
 void ShapeSpanIterator::curveTo(float x1, float y1, float x2, float y2, float x3, float y3) {
 	$prepareNative(ShapeSpanIterator, curveTo, void, float x1, float y1, float x2, float y2, float x3, float y3);
-	$invokeNative(ShapeSpanIterator, curveTo, x1, y1, x2, y2, x3, y3);
+	$invokeNative(x1, y1, x2, y2, x3, y3);
 	$finishNative();
 }
 
 void ShapeSpanIterator::closePath() {
 	$prepareNative(ShapeSpanIterator, closePath, void);
-	$invokeNative(ShapeSpanIterator, closePath);
+	$invokeNative();
 	$finishNative();
 }
 
 void ShapeSpanIterator::pathDone() {
 	$prepareNative(ShapeSpanIterator, pathDone, void);
-	$invokeNative(ShapeSpanIterator, pathDone);
+	$invokeNative();
 	$finishNative();
 }
 
 int64_t ShapeSpanIterator::getNativeConsumer() {
 	int64_t $ret = 0;
 	$prepareNative(ShapeSpanIterator, getNativeConsumer, int64_t);
-	$ret = $invokeNative(ShapeSpanIterator, getNativeConsumer);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }

@@ -10,7 +10,6 @@
 #undef OTHER
 
 using $Component$BaselineResizeBehaviorArray = $Array<::java::awt::Component$BaselineResizeBehavior>;
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

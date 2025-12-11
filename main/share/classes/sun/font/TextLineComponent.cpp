@@ -13,17 +13,9 @@
 #undef RIGHT_TO_LEFT
 #undef UNCHANGED
 
-using $GlyphJustificationInfoArray = $Array<::java::awt::font::GlyphJustificationInfo>;
-using $Graphics2D = ::java::awt::Graphics2D;
-using $Rectangle = ::java::awt::Rectangle;
-using $Shape = ::java::awt::Shape;
-using $FontRenderContext = ::java::awt::font::FontRenderContext;
-using $AffineTransform = ::java::awt::geom::AffineTransform;
-using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CoreMetrics = ::sun::font::CoreMetrics;
 
 namespace sun {
 	namespace font {

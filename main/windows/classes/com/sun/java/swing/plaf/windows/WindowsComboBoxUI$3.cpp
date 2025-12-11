@@ -31,7 +31,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $JButton = ::javax::swing::JButton;
 using $JComboBox = ::javax::swing::JComboBox;
 using $JComponent = ::javax::swing::JComponent;
-using $Border = ::javax::swing::border::Border;
 using $EmptyBorder = ::javax::swing::border::EmptyBorder;
 using $BasicComboBoxUI = ::javax::swing::plaf::basic::BasicComboBoxUI;
 using $BasicComboBoxUI$ComboBoxLayoutManager = ::javax::swing::plaf::basic::BasicComboBoxUI$ComboBoxLayoutManager;

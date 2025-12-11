@@ -26,7 +26,6 @@ using $Point = ::java::awt::Point;
 using $Toolkit = ::java::awt::Toolkit;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $Rectangle2D$Double = ::java::awt::geom::Rectangle2D$Double;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $Double = ::java::lang::Double;
@@ -155,7 +154,7 @@ void Rectangle::finalize() {
 void Rectangle::initIDs() {
 	$init(Rectangle);
 	$prepareNativeStatic(Rectangle, initIDs, void);
-	$invokeNativeStatic(Rectangle, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

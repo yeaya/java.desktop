@@ -15,7 +15,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractList = ::java::util::AbstractList;
 using $ArrayList = ::java::util::ArrayList;
 using $List = ::java::util::List;
-using $Callable = ::java::util::concurrent::Callable;
 using $Win32ShellFolder2 = ::sun::awt::shell::Win32ShellFolder2;
 using $Win32ShellFolder2$KnownFolderDefinition = ::sun::awt::shell::Win32ShellFolder2$KnownFolderDefinition;
 

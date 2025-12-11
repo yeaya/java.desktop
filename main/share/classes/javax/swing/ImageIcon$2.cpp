@@ -8,8 +8,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
-using $ImageIcon = ::javax::swing::ImageIcon;
 using $ImageIcon$2$1 = ::javax::swing::ImageIcon$2$1;
 
 namespace javax {

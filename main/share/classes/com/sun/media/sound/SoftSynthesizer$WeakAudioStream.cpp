@@ -17,8 +17,6 @@
 #undef NOT_SPECIFIED
 
 using $AudioFloatConverter = ::com::sun::media::sound::AudioFloatConverter;
-using $SoftAudioPusher = ::com::sun::media::sound::SoftAudioPusher;
-using $SoftSynthesizer = ::com::sun::media::sound::SoftSynthesizer;
 using $SoftSynthesizer$WeakAudioStream$1 = ::com::sun::media::sound::SoftSynthesizer$WeakAudioStream$1;
 using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -27,12 +25,10 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $ThreadGroup = ::java::lang::ThreadGroup;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 using $AudioInputStream = ::javax::sound::sampled::AudioInputStream;
 using $AudioSystem = ::javax::sound::sampled::AudioSystem;
-using $SourceDataLine = ::javax::sound::sampled::SourceDataLine;
 
 namespace com {
 	namespace sun {

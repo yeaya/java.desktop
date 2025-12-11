@@ -16,7 +16,6 @@
 
 using $WindowsTableHeaderUI$XPDefaultRenderer = ::com::sun::java::swing::plaf::windows::WindowsTableHeaderUI$XPDefaultRenderer;
 using $XPStyle = ::com::sun::java::swing::plaf::windows::XPStyle;
-using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

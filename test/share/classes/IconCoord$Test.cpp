@@ -27,7 +27,6 @@
 #undef SOUTH
 #undef WEST
 
-using $IconCoord = ::IconCoord;
 using $IconCoord$Test$1 = ::IconCoord$Test$1;
 using $BorderLayout = ::java::awt::BorderLayout;
 using $Component = ::java::awt::Component;

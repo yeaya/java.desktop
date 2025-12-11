@@ -4,7 +4,6 @@
 #include <javax/swing/JInternalFrame.h>
 #include <jcpp.h>
 
-using $InternalFrameIsNotCollectedTest = ::InternalFrameIsNotCollectedTest;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

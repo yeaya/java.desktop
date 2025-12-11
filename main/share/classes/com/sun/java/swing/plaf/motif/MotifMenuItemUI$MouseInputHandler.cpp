@@ -11,22 +11,15 @@
 #include <javax/swing/MenuSelectionManager.h>
 #include <jcpp.h>
 
-using $MenuElementArray = $Array<::javax::swing::MenuElement>;
 using $MotifMenuItemUI = ::com::sun::java::swing::plaf::motif::MotifMenuItemUI;
-using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
-using $JComponent = ::javax::swing::JComponent;
 using $JMenuItem = ::javax::swing::JMenuItem;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
-using $MouseInputListener = ::javax::swing::event::MouseInputListener;
-using $BasicMenuItemUI = ::javax::swing::plaf::basic::BasicMenuItemUI;
 
 namespace com {
 	namespace sun {

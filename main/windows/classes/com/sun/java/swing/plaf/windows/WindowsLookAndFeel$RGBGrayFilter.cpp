@@ -5,7 +5,6 @@
 #include <java/lang/Math.h>
 #include <jcpp.h>
 
-using $WindowsLookAndFeel = ::com::sun::java::swing::plaf::windows::WindowsLookAndFeel;
 using $RGBImageFilter = ::java::awt::image::RGBImageFilter;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Float = ::java::lang::Float;

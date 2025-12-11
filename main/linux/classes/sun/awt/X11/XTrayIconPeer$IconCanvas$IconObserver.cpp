@@ -14,7 +14,6 @@
 #undef HEIGHT
 #undef WIDTH
 
-using $Component = ::java::awt::Component;
 using $Image = ::java::awt::Image;
 using $ImageObserver = ::java::awt::image::ImageObserver;
 using $ClassInfo = ::java::lang::ClassInfo;

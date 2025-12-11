@@ -15,8 +15,6 @@
 
 using $MotifInternalFrameTitlePane = ::com::sun::java::swing::plaf::motif::MotifInternalFrameTitlePane;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $PropertyVetoException = ::java::beans::PropertyVetoException;
@@ -25,7 +23,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $Action = ::javax::swing::Action;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
 using $JPopupMenu = ::javax::swing::JPopupMenu;

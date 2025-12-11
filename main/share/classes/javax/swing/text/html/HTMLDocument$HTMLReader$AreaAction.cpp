@@ -12,7 +12,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $HTML$Tag = ::javax::swing::text::html::HTML$Tag;
 using $HTMLDocument$HTMLReader = ::javax::swing::text::html::HTMLDocument$HTMLReader;

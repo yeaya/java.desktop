@@ -9,7 +9,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JPopupMenu = ::javax::swing::JPopupMenu;
 using $JSeparator = ::javax::swing::JSeparator;
 
 namespace javax {

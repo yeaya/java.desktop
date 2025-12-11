@@ -5,12 +5,8 @@
 #include <javax/swing/plaf/synth/SynthContext.h>
 #include <jcpp.h>
 
-using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
-using $SynthConstants = ::javax::swing::plaf::synth::SynthConstants;
-using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
 
 namespace javax {
 	namespace swing {

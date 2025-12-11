@@ -5,7 +5,6 @@
 #include <javax/swing/JComboBox.h>
 #include <jcpp.h>
 
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -13,7 +12,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $ComboBoxModel = ::javax::swing::ComboBoxModel;
 using $JComboBox = ::javax::swing::JComboBox;
 using $JComboBox$KeySelectionManager = ::javax::swing::JComboBox$KeySelectionManager;
-using $ListModel = ::javax::swing::ListModel;
 
 namespace javax {
 	namespace swing {

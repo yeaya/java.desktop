@@ -8,7 +8,6 @@
 #include <javax/swing/filechooser/FileSystemView.h>
 #include <jcpp.h>
 
-using $Image = ::java::awt::Image;
 using $MultiResolutionImage = ::java::awt::image::MultiResolutionImage;
 using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;

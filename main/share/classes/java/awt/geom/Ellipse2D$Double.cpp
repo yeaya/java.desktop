@@ -8,7 +8,6 @@
 using $Ellipse2D = ::java::awt::geom::Ellipse2D;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $Rectangle2D$Double = ::java::awt::geom::Rectangle2D$Double;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;

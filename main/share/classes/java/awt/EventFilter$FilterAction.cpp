@@ -9,7 +9,6 @@
 #undef REJECT
 
 using $EventFilter$FilterActionArray = $Array<::java::awt::EventFilter$FilterAction>;
-using $EventFilter = ::java::awt::EventFilter;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

@@ -6,8 +6,6 @@
 
 #undef UNKNOWN_NUMBER_OF_PAGES
 
-using $PageFormat = ::java::awt::print::PageFormat;
-using $Printable = ::java::awt::print::Printable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

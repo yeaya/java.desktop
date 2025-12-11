@@ -58,13 +58,13 @@ void ColorGlyphSurfaceData::init$() {
 
 void ColorGlyphSurfaceData::initOps() {
 	$prepareNative(ColorGlyphSurfaceData, initOps, void);
-	$invokeNative(ColorGlyphSurfaceData, initOps);
+	$invokeNative();
 	$finishNative();
 }
 
 void ColorGlyphSurfaceData::setCurrentGlyph(int64_t imgPtr) {
 	$prepareNative(ColorGlyphSurfaceData, setCurrentGlyph, void, int64_t imgPtr);
-	$invokeNative(ColorGlyphSurfaceData, setCurrentGlyph, imgPtr);
+	$invokeNative(imgPtr);
 	$finishNative();
 }
 

@@ -89,7 +89,6 @@
 
 using $WindowArray = $Array<::java::awt::Window>;
 using $AWTEvent = ::java::awt::AWTEvent;
-using $AWTPermission = ::java::awt::AWTPermission;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
@@ -115,7 +114,6 @@ using $Toolkit = ::java::awt::Toolkit;
 using $Window = ::java::awt::Window;
 using $Window$AccessibleAWTWindow = ::java::awt::Window$AccessibleAWTWindow;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
-using $ComponentListener = ::java::awt::event::ComponentListener;
 using $HierarchyEvent = ::java::awt::event::HierarchyEvent;
 using $InvocationEvent = ::java::awt::event::InvocationEvent;
 using $WindowEvent = ::java::awt::event::WindowEvent;
@@ -126,7 +124,6 @@ using $WindowPeer = ::java::awt::peer::WindowPeer;
 using $ObjectInputStream = ::java::io::ObjectInputStream;
 using $ObjectInputStream$GetField = ::java::io::ObjectInputStream$GetField;
 using $Serializable = ::java::io::Serializable;
-using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $Enum = ::java::lang::Enum;
@@ -138,13 +135,7 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $SecurityManager = ::java::lang::SecurityManager;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $AccessControlException = ::java::security::AccessControlException;
 using $AccessController = ::java::security::AccessController;
@@ -863,7 +854,7 @@ $String* Dialog::paramString() {
 void Dialog::initIDs() {
 	$init(Dialog);
 	$prepareNativeStatic(Dialog, initIDs, void);
-	$invokeNativeStatic(Dialog, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

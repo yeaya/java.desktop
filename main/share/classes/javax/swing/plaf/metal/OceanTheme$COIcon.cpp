@@ -17,7 +17,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Icon = ::javax::swing::Icon;
 using $IconUIResource = ::javax::swing::plaf::IconUIResource;
 using $MetalUtils = ::javax::swing::plaf::metal::MetalUtils;
-using $OceanTheme = ::javax::swing::plaf::metal::OceanTheme;
 
 namespace javax {
 	namespace swing {

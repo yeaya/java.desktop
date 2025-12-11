@@ -4,14 +4,12 @@
 #include <sun/awt/windows/WFileDialogPeer.h>
 #include <jcpp.h>
 
-using $Dialog = ::java::awt::Dialog;
 using $FileDialog = ::java::awt::FileDialog;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $WFileDialogPeer = ::sun::awt::windows::WFileDialogPeer;
 
 namespace sun {

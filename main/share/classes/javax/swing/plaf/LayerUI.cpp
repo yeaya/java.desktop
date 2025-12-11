@@ -53,13 +53,11 @@ using $MouseWheelEvent = ::java::awt::event::MouseWheelEvent;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $PropertyChangeSupport = ::java::beans::PropertyChangeSupport;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $JLayer = ::javax::swing::JLayer;
-using $JPanel = ::javax::swing::JPanel;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 
 namespace javax {

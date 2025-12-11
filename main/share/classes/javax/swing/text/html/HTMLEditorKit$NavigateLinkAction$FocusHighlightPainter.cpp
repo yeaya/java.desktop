@@ -28,7 +28,6 @@ using $DefaultHighlighter$DefaultHighlightPainter = ::javax::swing::text::Defaul
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $Position$Bias = ::javax::swing::text::Position$Bias;
 using $View = ::javax::swing::text::View;
-using $HTMLEditorKit$NavigateLinkAction = ::javax::swing::text::html::HTMLEditorKit$NavigateLinkAction;
 
 namespace javax {
 	namespace swing {

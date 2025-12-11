@@ -61,7 +61,6 @@ using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $Rectangle = ::java::awt::Rectangle;
 using $Window = ::java::awt::Window;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $PrintStream = ::java::io::PrintStream;
 using $Serializable = ::java::io::Serializable;
 using $Boolean = ::java::lang::Boolean;
@@ -77,13 +76,8 @@ using $Runnable = ::java::lang::Runnable;
 using $Runtime = ::java::lang::Runtime;
 using $SecurityException = ::java::lang::SecurityException;
 using $SecurityManager = ::java::lang::SecurityManager;
-using $ThreadGroup = ::java::lang::ThreadGroup;
 using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AccessController = ::java::security::AccessController;
 using $BasicPermission = ::java::security::BasicPermission;
 using $Permission = ::java::security::Permission;
@@ -337,7 +331,7 @@ $Object* X11GraphicsDevice::getProxyKeyFor($SurfaceType* st) {
 int64_t X11GraphicsDevice::getDisplay() {
 	int64_t $ret = 0;
 	$prepareNative(X11GraphicsDevice, getDisplay, int64_t);
-	$ret = $invokeNative(X11GraphicsDevice, getDisplay);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -418,7 +412,7 @@ void X11GraphicsDevice::makeConfigurations() {
 int32_t X11GraphicsDevice::getNumConfigs(int32_t screen) {
 	int32_t $ret = 0;
 	$prepareNative(X11GraphicsDevice, getNumConfigs, int32_t, int32_t screen);
-	$ret = $invokeNative(X11GraphicsDevice, getNumConfigs, screen);
+	$ret = $invokeNative(screen);
 	$finishNative();
 	return $ret;
 }
@@ -426,7 +420,7 @@ int32_t X11GraphicsDevice::getNumConfigs(int32_t screen) {
 int32_t X11GraphicsDevice::getConfigVisualId(int32_t index, int32_t screen) {
 	int32_t $ret = 0;
 	$prepareNative(X11GraphicsDevice, getConfigVisualId, int32_t, int32_t index, int32_t screen);
-	$ret = $invokeNative(X11GraphicsDevice, getConfigVisualId, index, screen);
+	$ret = $invokeNative(index, screen);
 	$finishNative();
 	return $ret;
 }
@@ -434,7 +428,7 @@ int32_t X11GraphicsDevice::getConfigVisualId(int32_t index, int32_t screen) {
 int32_t X11GraphicsDevice::getConfigDepth(int32_t index, int32_t screen) {
 	int32_t $ret = 0;
 	$prepareNative(X11GraphicsDevice, getConfigDepth, int32_t, int32_t index, int32_t screen);
-	$ret = $invokeNative(X11GraphicsDevice, getConfigDepth, index, screen);
+	$ret = $invokeNative(index, screen);
 	$finishNative();
 	return $ret;
 }
@@ -442,7 +436,7 @@ int32_t X11GraphicsDevice::getConfigDepth(int32_t index, int32_t screen) {
 int32_t X11GraphicsDevice::getConfigColormap(int32_t index, int32_t screen) {
 	int32_t $ret = 0;
 	$prepareNative(X11GraphicsDevice, getConfigColormap, int32_t, int32_t index, int32_t screen);
-	$ret = $invokeNative(X11GraphicsDevice, getConfigColormap, index, screen);
+	$ret = $invokeNative(index, screen);
 	$finishNative();
 	return $ret;
 }
@@ -451,7 +445,7 @@ bool X11GraphicsDevice::isDBESupported() {
 	$init(X11GraphicsDevice);
 	bool $ret = false;
 	$prepareNativeStatic(X11GraphicsDevice, isDBESupported, bool);
-	$ret = $invokeNativeStatic(X11GraphicsDevice, isDBESupported);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -462,7 +456,7 @@ void X11GraphicsDevice::addDoubleBufferVisual(int32_t visNum) {
 
 void X11GraphicsDevice::getDoubleBufferVisuals(int32_t screen) {
 	$prepareNative(X11GraphicsDevice, getDoubleBufferVisuals, void, int32_t screen);
-	$invokeNative(X11GraphicsDevice, getDoubleBufferVisuals, screen);
+	$invokeNative(screen);
 	$finishNative();
 }
 
@@ -513,14 +507,14 @@ void X11GraphicsDevice::makeDefaultConfiguration() {
 void X11GraphicsDevice::enterFullScreenExclusive(int64_t window) {
 	$init(X11GraphicsDevice);
 	$prepareNativeStatic(X11GraphicsDevice, enterFullScreenExclusive, void, int64_t window);
-	$invokeNativeStatic(X11GraphicsDevice, enterFullScreenExclusive, window);
+	$invokeNativeStatic(window);
 	$finishNativeStatic();
 }
 
 void X11GraphicsDevice::exitFullScreenExclusive(int64_t window) {
 	$init(X11GraphicsDevice);
 	$prepareNativeStatic(X11GraphicsDevice, exitFullScreenExclusive, void, int64_t window);
-	$invokeNativeStatic(X11GraphicsDevice, exitFullScreenExclusive, window);
+	$invokeNativeStatic(window);
 	$finishNativeStatic();
 }
 
@@ -528,7 +522,7 @@ bool X11GraphicsDevice::initXrandrExtension() {
 	$init(X11GraphicsDevice);
 	bool $ret = false;
 	$prepareNativeStatic(X11GraphicsDevice, initXrandrExtension, bool);
-	$ret = $invokeNativeStatic(X11GraphicsDevice, initXrandrExtension);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -537,7 +531,7 @@ $DisplayMode* X11GraphicsDevice::getCurrentDisplayMode(int32_t screen) {
 	$init(X11GraphicsDevice);
 	$var($DisplayMode, $ret, nullptr);
 	$prepareNativeStatic(X11GraphicsDevice, getCurrentDisplayMode, $DisplayMode*, int32_t screen);
-	$assign($ret, $invokeNativeStatic(X11GraphicsDevice, getCurrentDisplayMode, screen));
+	$assign($ret, $invokeNativeStaticObject(screen));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -545,14 +539,14 @@ $DisplayMode* X11GraphicsDevice::getCurrentDisplayMode(int32_t screen) {
 void X11GraphicsDevice::enumDisplayModes(int32_t screen, $ArrayList* modes) {
 	$init(X11GraphicsDevice);
 	$prepareNativeStatic(X11GraphicsDevice, enumDisplayModes, void, int32_t screen, $ArrayList* modes);
-	$invokeNativeStatic(X11GraphicsDevice, enumDisplayModes, screen, modes);
+	$invokeNativeStatic(screen, modes);
 	$finishNativeStatic();
 }
 
 void X11GraphicsDevice::configDisplayMode(int32_t screen, int32_t width, int32_t height, int32_t displayMode) {
 	$init(X11GraphicsDevice);
 	$prepareNativeStatic(X11GraphicsDevice, configDisplayMode, void, int32_t screen, int32_t width, int32_t height, int32_t displayMode);
-	$invokeNativeStatic(X11GraphicsDevice, configDisplayMode, screen, width, height, displayMode);
+	$invokeNativeStatic(screen, width, height, displayMode);
 	$finishNativeStatic();
 }
 
@@ -560,7 +554,7 @@ double X11GraphicsDevice::getNativeScaleFactor(int32_t screen) {
 	$init(X11GraphicsDevice);
 	double $ret = 0.0;
 	$prepareNativeStatic(X11GraphicsDevice, getNativeScaleFactor, double, int32_t screen);
-	$ret = $invokeNativeStatic(X11GraphicsDevice, getNativeScaleFactor, screen);
+	$ret = $invokeNativeStatic(screen);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -568,7 +562,7 @@ double X11GraphicsDevice::getNativeScaleFactor(int32_t screen) {
 $Rectangle* X11GraphicsDevice::pGetBounds(int32_t screenNum) {
 	$var($Rectangle, $ret, nullptr);
 	$prepareNative(X11GraphicsDevice, pGetBounds, $Rectangle*, int32_t screenNum);
-	$assign($ret, $invokeNative(X11GraphicsDevice, pGetBounds, screenNum));
+	$assign($ret, $invokeNativeObject(screenNum));
 	$finishNative();
 	return $ret;
 }

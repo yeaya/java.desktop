@@ -16,7 +16,6 @@
 
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Font = ::java::awt::Font;
 using $File = ::java::io::File;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;

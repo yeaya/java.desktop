@@ -39,9 +39,7 @@
 
 using $AbstractColorChooserPanelArray = $Array<::javax::swing::colorchooser::AbstractColorChooserPanel>;
 using $BorderLayout = ::java::awt::BorderLayout;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
-using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $LayoutManager2 = ::java::awt::LayoutManager2;
@@ -52,7 +50,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Locale = ::java::util::Locale;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $JColorChooser = ::javax::swing::JColorChooser;
 using $JComponent = ::javax::swing::JComponent;

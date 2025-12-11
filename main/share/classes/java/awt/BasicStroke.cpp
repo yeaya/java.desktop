@@ -13,7 +13,6 @@
 #undef JOIN_ROUND
 
 using $Shape = ::java::awt::Shape;
-using $Stroke = ::java::awt::Stroke;
 using $Attribute = ::java::lang::Attribute;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;

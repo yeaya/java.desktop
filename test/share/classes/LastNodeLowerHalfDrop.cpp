@@ -35,7 +35,6 @@ using $LastNodeLowerHalfDrop$1 = ::LastNodeLowerHalfDrop$1;
 using $LastNodeLowerHalfDrop$2 = ::LastNodeLowerHalfDrop$2;
 using $LastNodeLowerHalfDrop$3 = ::LastNodeLowerHalfDrop$3;
 using $TreeTransferHandler = ::TreeTransferHandler;
-using $TreeNodeArray = $Array<::javax::swing::tree::TreeNode>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Point = ::java::awt::Point;

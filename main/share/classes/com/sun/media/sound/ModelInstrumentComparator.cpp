@@ -8,7 +8,6 @@
 using $ModelPatch = ::com::sun::media::sound::ModelPatch;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Comparator = ::java::util::Comparator;
 using $Instrument = ::javax::sound::midi::Instrument;
 using $Patch = ::javax::sound::midi::Patch;
 

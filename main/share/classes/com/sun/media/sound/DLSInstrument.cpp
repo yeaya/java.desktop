@@ -147,7 +147,6 @@ using $ModelPatch = ::com::sun::media::sound::ModelPatch;
 using $ModelPerformer = ::com::sun::media::sound::ModelPerformer;
 using $ModelSource = ::com::sun::media::sound::ModelSource;
 using $ModelStandardTransform = ::com::sun::media::sound::ModelStandardTransform;
-using $ModelTransform = ::com::sun::media::sound::ModelTransform;
 using $ModelWavetable = ::com::sun::media::sound::ModelWavetable;
 using $SoftFilter = ::com::sun::media::sound::SoftFilter;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -167,7 +166,6 @@ using $List = ::java::util::List;
 using $Map = ::java::util::Map;
 using $Patch = ::javax::sound::midi::Patch;
 using $Soundbank = ::javax::sound::midi::Soundbank;
-using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 
 namespace com {
 	namespace sun {

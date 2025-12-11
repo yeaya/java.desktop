@@ -8,7 +8,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 
 $MethodInfo _HiddenDefaultButtonTest$2_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(HiddenDefaultButtonTest$2::*)()>(&HiddenDefaultButtonTest$2::init$))},

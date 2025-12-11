@@ -18,7 +18,6 @@
 
 using $WindowsLookAndFeel = ::com::sun::java::swing::plaf::windows::WindowsLookAndFeel;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

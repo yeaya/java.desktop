@@ -36,7 +36,6 @@
 #undef FALSE
 #undef TRUE
 
-using $NativeFontArray = $Array<::sun::font::NativeFont>;
 using $GeneralPath = ::java::awt::geom::GeneralPath;
 using $Point2D$Float = ::java::awt::geom::Point2D$Float;
 using $Rectangle2D$Float = ::java::awt::geom::Rectangle2D$Float;
@@ -49,7 +48,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $SecurityException = ::java::lang::SecurityException;
 using $SecurityManager = ::java::lang::SecurityManager;
 using $Reference = ::java::lang::ref::Reference;
-using $ByteBuffer = ::java::nio::ByteBuffer;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedActionException = ::java::security::PrivilegedActionException;
 using $PrivilegedExceptionAction = ::java::security::PrivilegedExceptionAction;
@@ -66,7 +64,6 @@ using $FontScaler = ::sun::font::FontScaler;
 using $FontScalerException = ::sun::font::FontScalerException;
 using $FontStrike = ::sun::font::FontStrike;
 using $FontStrikeDesc = ::sun::font::FontStrikeDesc;
-using $NativeFont = ::sun::font::NativeFont;
 using $PhysicalFont = ::sun::font::PhysicalFont;
 using $PhysicalStrike = ::sun::font::PhysicalStrike;
 using $StrikeMetrics = ::sun::font::StrikeMetrics;

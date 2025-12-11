@@ -57,10 +57,8 @@ using $JTextField = ::javax::swing::JTextField;
 using $UIManager = ::javax::swing::UIManager;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $ComponentView = ::javax::swing::text::ComponentView;
-using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
-using $View = ::javax::swing::text::View;
 using $HTML$Attribute = ::javax::swing::text::html::HTML$Attribute;
 using $HTMLDocument = ::javax::swing::text::html::HTMLDocument;
 

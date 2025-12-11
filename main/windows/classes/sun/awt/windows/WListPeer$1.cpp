@@ -17,10 +17,7 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $WListPeer = ::sun::awt::windows::WListPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 
 namespace sun {
 	namespace awt {

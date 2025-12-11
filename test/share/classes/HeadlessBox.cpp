@@ -52,9 +52,6 @@ using $Container = ::java::awt::Container;
 using $Cursor = ::java::awt::Cursor;
 using $Dimension = ::java::awt::Dimension;
 using $Font = ::java::awt::Font;
-using $FontMetrics = ::java::awt::FontMetrics;
-using $Graphics = ::java::awt::Graphics;
-using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $IllegalComponentStateException = ::java::awt::IllegalComponentStateException;
 using $Insets = ::java::awt::Insets;
 using $LayoutManager = ::java::awt::LayoutManager;
@@ -62,16 +59,13 @@ using $LayoutManager2 = ::java::awt::LayoutManager2;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $Toolkit = ::java::awt::Toolkit;
-using $ColorModel = ::java::awt::image::ColorModel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $Locale = ::java::util::Locale;
-using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $Box = ::javax::swing::Box;
 using $BoxLayout = ::javax::swing::BoxLayout;
-using $JComponent = ::javax::swing::JComponent;
 
 $MethodInfo _HeadlessBox_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PUBLIC, $method(static_cast<void(HeadlessBox::*)()>(&HeadlessBox::init$))},

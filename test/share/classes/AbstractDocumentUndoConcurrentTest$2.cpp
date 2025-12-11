@@ -19,7 +19,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $Format = ::java::text::Format;
 using $CyclicBarrier = ::java::util::concurrent::CyclicBarrier;
-using $AbstractDocument = ::javax::swing::text::AbstractDocument;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $PlainDocument = ::javax::swing::text::PlainDocument;
 

@@ -38,7 +38,6 @@ using $EventDispatchThread = ::java::awt::EventDispatchThread;
 using $EventFilter = ::java::awt::EventFilter;
 using $EventQueue = ::java::awt::EventQueue;
 using $KeyboardFocusManager = ::java::awt::KeyboardFocusManager;
-using $SecondaryLoop = ::java::awt::SecondaryLoop;
 using $SequencedEvent = ::java::awt::SequencedEvent;
 using $WaitDispatchSupport$1 = ::java::awt::WaitDispatchSupport$1;
 using $WaitDispatchSupport$2 = ::java::awt::WaitDispatchSupport$2;

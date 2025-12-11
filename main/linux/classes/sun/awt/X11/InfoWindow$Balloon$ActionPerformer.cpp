@@ -16,17 +16,12 @@
 
 using $AWTEvent = ::java::awt::AWTEvent;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $AppContext = ::sun::awt::AppContext;
-using $SunToolkit = ::sun::awt::SunToolkit;
-using $InfoWindow = ::sun::awt::X11::InfoWindow;
 using $InfoWindow$Balloon = ::sun::awt::X11::InfoWindow$Balloon;
 using $InfoWindow$Balloon$LiveArguments = ::sun::awt::X11::InfoWindow$Balloon$LiveArguments;
 using $XToolkit = ::sun::awt::X11::XToolkit;

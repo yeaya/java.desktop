@@ -18,7 +18,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DPathConsumer2D = ::sun::java2d::marlin::DPathConsumer2D;
-using $Helpers = ::sun::java2d::marlin::Helpers;
 using $IntArrayCache$Reference = ::sun::java2d::marlin::IntArrayCache$Reference;
 using $MarlinConst = ::sun::java2d::marlin::MarlinConst;
 using $RendererContext = ::sun::java2d::marlin::RendererContext;

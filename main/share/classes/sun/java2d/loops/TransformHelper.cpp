@@ -117,7 +117,7 @@ void TransformHelper::init$(int64_t pNativePrim, $SurfaceType* srctype, $Composi
 
 void TransformHelper::Transform($MaskBlit* output, $SurfaceData* src, $SurfaceData* dst, $Composite* comp, $Region* clip, $AffineTransform* itx, int32_t txtype, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, int32_t dx1, int32_t dy1, int32_t dx2, int32_t dy2, $ints* edges, int32_t dxoff, int32_t dyoff) {
 	$prepareNative(TransformHelper, Transform, void, $MaskBlit* output, $SurfaceData* src, $SurfaceData* dst, $Composite* comp, $Region* clip, $AffineTransform* itx, int32_t txtype, int32_t sx1, int32_t sy1, int32_t sx2, int32_t sy2, int32_t dx1, int32_t dy1, int32_t dx2, int32_t dy2, $ints* edges, int32_t dxoff, int32_t dyoff);
-	$invokeNative(TransformHelper, Transform, output, src, dst, comp, clip, itx, txtype, sx1, sy1, sx2, sy2, dx1, dy1, dx2, dy2, edges, dxoff, dyoff);
+	$invokeNative(output, src, dst, comp, clip, itx, txtype, sx1, sy1, sx2, sy2, dx1, dy1, dx2, dy2, edges, dxoff, dyoff);
 	$finishNative();
 }
 

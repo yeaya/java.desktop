@@ -8,7 +8,6 @@
 #undef TEST_COLOR
 #undef USER_COLOR
 
-using $TestObjectView = ::TestObjectView;
 using $Color = ::java::awt::Color;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;

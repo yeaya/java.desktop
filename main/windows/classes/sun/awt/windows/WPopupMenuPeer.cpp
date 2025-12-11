@@ -23,7 +23,6 @@
 #undef MOUSE_DOWN
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Event = ::java::awt::Event;
 using $Font = ::java::awt::Font;
 using $Menu = ::java::awt::Menu;
@@ -32,14 +31,12 @@ using $MenuContainer = ::java::awt::MenuContainer;
 using $MenuItem = ::java::awt::MenuItem;
 using $Point = ::java::awt::Point;
 using $PopupMenu = ::java::awt::PopupMenu;
-using $PopupMenuPeer = ::java::awt::peer::PopupMenuPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$MenuComponentAccessor = ::sun::awt::AWTAccessor$MenuComponentAccessor;
 using $AWTAccessor$PopupMenuAccessor = ::sun::awt::AWTAccessor$PopupMenuAccessor;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $WMenuItemPeer = ::sun::awt::windows::WMenuItemPeer;
 using $WMenuPeer = ::sun::awt::windows::WMenuPeer;
@@ -157,7 +154,7 @@ void WPopupMenuPeer::init$($PopupMenu* target) {
 
 void WPopupMenuPeer::createMenu($WComponentPeer* parent) {
 	$prepareNative(WPopupMenuPeer, createMenu, void, $WComponentPeer* parent);
-	$invokeNative(WPopupMenuPeer, createMenu, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 
@@ -195,7 +192,7 @@ void WPopupMenuPeer::show($Component* origin, $Point* p) {
 
 void WPopupMenuPeer::_show($Event* e) {
 	$prepareNative(WPopupMenuPeer, _show, void, $Event* e);
-	$invokeNative(WPopupMenuPeer, _show, e);
+	$invokeNative(e);
 	$finishNative();
 }
 

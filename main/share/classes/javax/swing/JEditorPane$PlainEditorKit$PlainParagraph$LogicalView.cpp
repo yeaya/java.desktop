@@ -21,7 +21,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $Error = ::java::lang::Error;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JEditorPane$PlainEditorKit$PlainParagraph = ::javax::swing::JEditorPane$PlainEditorKit$PlainParagraph;
 using $DocumentEvent = ::javax::swing::event::DocumentEvent;
 using $DocumentEvent$ElementChange = ::javax::swing::event::DocumentEvent$ElementChange;
 using $CompositeView = ::javax::swing::text::CompositeView;

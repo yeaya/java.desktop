@@ -12,10 +12,8 @@
 
 using $floatArray2 = $Array<float, 2>;
 using $AudioFloatInputStream = ::com::sun::media::sound::AudioFloatInputStream;
-using $ModelOscillator = ::com::sun::media::sound::ModelOscillator;
 using $ModelWavetable = ::com::sun::media::sound::ModelWavetable;
 using $SoftAbstractResampler = ::com::sun::media::sound::SoftAbstractResampler;
-using $SoftResamplerStreamer = ::com::sun::media::sound::SoftResamplerStreamer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;

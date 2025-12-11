@@ -20,7 +20,6 @@
 #undef PREFERRED_VERTICAL_SIZE
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $Rectangle = ::java::awt::Rectangle;

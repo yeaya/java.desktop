@@ -8,11 +8,9 @@
 
 using $ObjectInputStream = ::java::io::ObjectInputStream;
 using $ObjectOutputStream = ::java::io::ObjectOutputStream;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $HTML = ::javax::swing::text::html::HTML;
 using $HTML$Tag = ::javax::swing::text::html::HTML$Tag;
 
 namespace javax {

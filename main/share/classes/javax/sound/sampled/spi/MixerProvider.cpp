@@ -13,21 +13,14 @@
 #include <javax/sound/sampled/Mixer.h>
 #include <jcpp.h>
 
-using $Mixer$InfoArray = $Array<::javax::sound::sampled::Mixer$Info>;
 using $Serializable = ::java::io::Serializable;
-using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $Arrays = ::java::util::Arrays;
 using $Predicate = ::java::util::function::Predicate;
 using $Stream = ::java::util::stream::Stream;
-using $Mixer = ::javax::sound::sampled::Mixer;
 using $Mixer$Info = ::javax::sound::sampled::Mixer$Info;
 
 namespace javax {

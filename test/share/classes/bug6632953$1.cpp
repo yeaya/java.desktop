@@ -10,20 +10,17 @@
 #include <jcpp.h>
 
 using $UIManager$LookAndFeelInfoArray = $Array<::javax::swing::UIManager$LookAndFeelInfo>;
-using $bug6632953 = ::bug6632953;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $Exception = ::java::lang::Exception;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JComboBox = ::javax::swing::JComboBox;
 using $JComponent = ::javax::swing::JComponent;
 using $UIManager = ::javax::swing::UIManager;
 using $UIManager$LookAndFeelInfo = ::javax::swing::UIManager$LookAndFeelInfo;
 using $UnsupportedLookAndFeelException = ::javax::swing::UnsupportedLookAndFeelException;
-using $BasicComboBoxUI = ::javax::swing::plaf::basic::BasicComboBoxUI;
 using $MetalComboBoxUI = ::javax::swing::plaf::metal::MetalComboBoxUI;
 
 $MethodInfo _bug6632953$1_MethodInfo_[] = {

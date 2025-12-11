@@ -15,7 +15,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $DocPrintJob = ::javax::print::DocPrintJob;
 using $PrintEvent = ::javax::print::event::PrintEvent;
 

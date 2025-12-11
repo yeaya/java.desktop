@@ -26,8 +26,6 @@
 #undef NO_STYLE_STRING
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
 using $Insets = ::java::awt::Insets;
 using $Rectangle = ::java::awt::Rectangle;

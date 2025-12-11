@@ -6,7 +6,6 @@
 #include <jcpp.h>
 
 using $bug7199708$2 = ::bug7199708$2;
-using $bug7199708$ComponentAction = ::bug7199708$ComponentAction;
 using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
@@ -14,7 +13,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractButton = ::javax::swing::AbstractButton;
-using $JComponent = ::javax::swing::JComponent;
 
 $FieldInfo _bug7199708$2$1_FieldInfo_[] = {
 	{"this$0", "Lbug7199708$2;", nullptr, $FINAL | $SYNTHETIC, $field(bug7199708$2$1, this$0)},

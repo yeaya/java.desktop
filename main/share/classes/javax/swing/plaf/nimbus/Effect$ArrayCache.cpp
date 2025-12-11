@@ -9,7 +9,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SoftReference = ::java::lang::ref::SoftReference;
-using $Effect = ::javax::swing::plaf::nimbus::Effect;
 
 namespace javax {
 	namespace swing {

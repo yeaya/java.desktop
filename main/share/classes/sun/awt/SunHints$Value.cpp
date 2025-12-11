@@ -5,14 +5,12 @@
 #include <sun/awt/SunHints.h>
 #include <jcpp.h>
 
-using $SunHints$ValueArray = $Array<::sun::awt::SunHints$Value>;
 using $SunHints$ValueArray2 = $Array<::sun::awt::SunHints$Value, 2>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InternalError = ::java::lang::InternalError;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SunHints = ::sun::awt::SunHints;
 using $SunHints$Key = ::sun::awt::SunHints$Key;
 
 namespace sun {

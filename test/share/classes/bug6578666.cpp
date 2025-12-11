@@ -24,7 +24,6 @@ using $bug6578666$2 = ::bug6578666$2;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $KeyAdapter = ::java::awt::event::KeyAdapter;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $KeyListener = ::java::awt::event::KeyListener;

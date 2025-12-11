@@ -44,7 +44,6 @@ using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JSplitPane = ::javax::swing::JSplitPane;
 using $UIManager = ::javax::swing::UIManager;
-using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
 using $BasicSplitPaneDivider = ::javax::swing::plaf::basic::BasicSplitPaneDivider;
 using $BasicSplitPaneUI = ::javax::swing::plaf::basic::BasicSplitPaneUI;
 using $MetalBumps = ::javax::swing::plaf::metal::MetalBumps;

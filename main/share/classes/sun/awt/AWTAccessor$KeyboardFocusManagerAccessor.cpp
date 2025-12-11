@@ -7,16 +7,9 @@
 #include <sun/awt/AppContext.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
-using $KeyboardFocusManager = ::java::awt::KeyboardFocusManager;
-using $Window = ::java::awt::Window;
-using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AWTAccessor = ::sun::awt::AWTAccessor;
-using $AppContext = ::sun::awt::AppContext;
 
 namespace sun {
 	namespace awt {

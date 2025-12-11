@@ -18,19 +18,14 @@
 #undef REPEAT
 
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
-using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $LinearGradientPaint = ::java::awt::LinearGradientPaint;
-using $MultipleGradientPaint = ::java::awt::MultipleGradientPaint;
 using $MultipleGradientPaint$ColorSpaceType = ::java::awt::MultipleGradientPaint$ColorSpaceType;
 using $MultipleGradientPaint$CycleMethod = ::java::awt::MultipleGradientPaint$CycleMethod;
-using $Paint = ::java::awt::Paint;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
-using $SurfaceData = ::sun::java2d::SurfaceData;
 using $D3DGraphicsDevice = ::sun::java2d::d3d::D3DGraphicsDevice;
-using $D3DPaints = ::sun::java2d::d3d::D3DPaints;
 using $D3DPaints$MultiGradient = ::sun::java2d::d3d::D3DPaints$MultiGradient;
 using $D3DSurfaceData = ::sun::java2d::d3d::D3DSurfaceData;
 

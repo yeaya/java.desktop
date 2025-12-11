@@ -13,8 +13,6 @@
 #undef ACTIVE
 #undef WINDOW
 
-using $Component = ::java::awt::Component;
-using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Container = ::java::awt::Container;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $Window = ::java::awt::Window;

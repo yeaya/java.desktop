@@ -18,7 +18,6 @@ using $IndexOutOfBoundsException = ::java::lang::IndexOutOfBoundsException;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
-using $ImageInputStreamImpl = ::javax::imageio::stream::ImageInputStreamImpl;
 using $ImageOutputStreamImpl = ::javax::imageio::stream::ImageOutputStreamImpl;
 using $MemoryCache = ::javax::imageio::stream::MemoryCache;
 

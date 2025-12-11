@@ -12,7 +12,6 @@
 #include <jcpp.h>
 
 using $Composite = ::java::awt::Composite;
-using $ColorModel = ::java::awt::image::ColorModel;
 using $IndexColorModel = ::java::awt::image::IndexColorModel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

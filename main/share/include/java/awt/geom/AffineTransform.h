@@ -157,11 +157,11 @@ public:
 	static const int32_t TYPE_TRANSLATION = 1;
 	static const int32_t TYPE_UNIFORM_SCALE = 2;
 	static const int32_t TYPE_GENERAL_SCALE = 4;
-	static const int32_t TYPE_MASK_SCALE = (TYPE_UNIFORM_SCALE | TYPE_GENERAL_SCALE);
+	static const int32_t TYPE_MASK_SCALE = 6; // (TYPE_UNIFORM_SCALE | TYPE_GENERAL_SCALE)
 	static const int32_t TYPE_FLIP = 64;
 	static const int32_t TYPE_QUADRANT_ROTATION = 8;
 	static const int32_t TYPE_GENERAL_ROTATION = 16;
-	static const int32_t TYPE_MASK_ROTATION = (TYPE_QUADRANT_ROTATION | TYPE_GENERAL_ROTATION);
+	static const int32_t TYPE_MASK_ROTATION = 24; // (TYPE_QUADRANT_ROTATION | TYPE_GENERAL_ROTATION)
 	static const int32_t TYPE_GENERAL_TRANSFORM = 32;
 	static const int32_t APPLY_IDENTITY = 0;
 	static const int32_t APPLY_TRANSLATE = 1;

@@ -11,7 +11,6 @@
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Error = ::java::lang::Error;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalStateException = ::java::lang::IllegalStateException;
@@ -113,7 +112,7 @@ bool WObjectPeer::isDisposed() {
 void WObjectPeer::initIDs() {
 	$init(WObjectPeer);
 	$prepareNativeStatic(WObjectPeer, initIDs, void);
-	$invokeNativeStatic(WObjectPeer, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

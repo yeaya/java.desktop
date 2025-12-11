@@ -8,12 +8,10 @@
 
 using $bug6989617 = ::bug6989617;
 using $bug6989617$MyPanel = ::bug6989617$MyPanel;
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JButton = ::javax::swing::JButton;
 
 $MethodInfo _bug6989617$2_MethodInfo_[] = {

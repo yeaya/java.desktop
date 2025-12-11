@@ -3,8 +3,6 @@
 #include <java/beans/BeanInfo.h>
 #include <jcpp.h>
 
-using $BeanInfoArray = $Array<::java::beans::BeanInfo>;
-using $BeanInfo = ::java::beans::BeanInfo;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

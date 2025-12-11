@@ -15,10 +15,7 @@
 #undef NO_CACHING
 #undef SPACE
 
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
-using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $Insets = ::java::awt::Insets;
 using $ClassInfo = ::java::lang::ClassInfo;

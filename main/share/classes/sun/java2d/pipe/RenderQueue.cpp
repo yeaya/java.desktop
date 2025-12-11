@@ -15,7 +15,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $AbstractSet = ::java::util::AbstractSet;
 using $HashSet = ::java::util::HashSet;
 using $Set = ::java::util::Set;

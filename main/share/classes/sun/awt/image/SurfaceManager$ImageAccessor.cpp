@@ -4,11 +4,9 @@
 #include <sun/awt/image/SurfaceManager.h>
 #include <jcpp.h>
 
-using $Image = ::java::awt::Image;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SurfaceManager = ::sun::awt::image::SurfaceManager;
 
 namespace sun {
 	namespace awt {

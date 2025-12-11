@@ -66,7 +66,6 @@
 #undef XDND_PROTOCOL_VERSION
 
 using $GraphicsDeviceArray = $Array<::java::awt::GraphicsDevice>;
-using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $Point = ::java::awt::Point;
@@ -79,7 +78,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $Native = ::sun::awt::X11::Native;
 using $WindowPropertyGetter = ::sun::awt::X11::WindowPropertyGetter;
 using $XAtom = ::sun::awt::X11::XAtom;

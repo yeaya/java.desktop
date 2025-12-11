@@ -4,7 +4,6 @@
 #include <javax/swing/table/AbstractTableModel.h>
 #include <jcpp.h>
 
-using $DrawGridLinesTest = ::DrawGridLinesTest;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

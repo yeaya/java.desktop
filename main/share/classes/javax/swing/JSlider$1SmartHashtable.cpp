@@ -13,7 +13,6 @@
 #undef CENTER
 
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -22,7 +21,6 @@ using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Dictionary = ::java::util::Dictionary;
 using $Enumeration = ::java::util::Enumeration;
-using $EventObject = ::java::util::EventObject;
 using $Hashtable = ::java::util::Hashtable;
 using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;

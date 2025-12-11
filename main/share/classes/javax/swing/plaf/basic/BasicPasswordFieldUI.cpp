@@ -35,7 +35,6 @@ using $BasicTextUI = ::javax::swing::plaf::basic::BasicTextUI;
 using $DefaultEditorKit = ::javax::swing::text::DefaultEditorKit;
 using $Element = ::javax::swing::text::Element;
 using $FieldView = ::javax::swing::text::FieldView;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $PasswordView = ::javax::swing::text::PasswordView;
 using $PlainView = ::javax::swing::text::PlainView;
 using $View = ::javax::swing::text::View;

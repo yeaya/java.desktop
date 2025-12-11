@@ -108,7 +108,7 @@ void TransformBlit::init$(int64_t pNativePrim, $SurfaceType* srctype, $Composite
 
 void TransformBlit::Transform($SurfaceData* src, $SurfaceData* dst, $Composite* comp, $Region* clip, $AffineTransform* at, int32_t hint, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t width, int32_t height) {
 	$prepareNative(TransformBlit, Transform, void, $SurfaceData* src, $SurfaceData* dst, $Composite* comp, $Region* clip, $AffineTransform* at, int32_t hint, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t width, int32_t height);
-	$invokeNative(TransformBlit, Transform, src, dst, comp, clip, at, hint, srcx, srcy, dstx, dsty, width, height);
+	$invokeNative(src, dst, comp, clip, at, hint, srcx, srcy, dstx, dsty, width, height);
 	$finishNative();
 }
 

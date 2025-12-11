@@ -15,7 +15,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractAction = ::javax::swing::AbstractAction;
-using $BasicInternalFrameUI = ::javax::swing::plaf::basic::BasicInternalFrameUI;
 
 namespace com {
 	namespace sun {

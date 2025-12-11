@@ -12,7 +12,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $InputMap = ::javax::swing::InputMap;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $UIDefaults = ::javax::swing::UIDefaults;
-using $UIDefaults$LazyValue = ::javax::swing::UIDefaults$LazyValue;
 
 namespace javax {
 	namespace swing {

@@ -198,40 +198,40 @@ void MidiInDevice::callbackLongMessage($bytes* data, int64_t timeStamp) {
 int64_t MidiInDevice::nOpen(int32_t index) {
 	int64_t $ret = 0;
 	$prepareNative(MidiInDevice, nOpen, int64_t, int32_t index);
-	$ret = $invokeNative(MidiInDevice, nOpen, index);
+	$ret = $invokeNative(index);
 	$finishNative();
 	return $ret;
 }
 
 void MidiInDevice::nClose(int64_t id) {
 	$prepareNative(MidiInDevice, nClose, void, int64_t id);
-	$invokeNative(MidiInDevice, nClose, id);
+	$invokeNative(id);
 	$finishNative();
 }
 
 void MidiInDevice::nStart(int64_t id) {
 	$prepareNative(MidiInDevice, nStart, void, int64_t id);
-	$invokeNative(MidiInDevice, nStart, id);
+	$invokeNative(id);
 	$finishNative();
 }
 
 void MidiInDevice::nStop(int64_t id) {
 	$prepareNative(MidiInDevice, nStop, void, int64_t id);
-	$invokeNative(MidiInDevice, nStop, id);
+	$invokeNative(id);
 	$finishNative();
 }
 
 int64_t MidiInDevice::nGetTimeStamp(int64_t id) {
 	int64_t $ret = 0;
 	$prepareNative(MidiInDevice, nGetTimeStamp, int64_t, int64_t id);
-	$ret = $invokeNative(MidiInDevice, nGetTimeStamp, id);
+	$ret = $invokeNative(id);
 	$finishNative();
 	return $ret;
 }
 
 void MidiInDevice::nGetMessages(int64_t id) {
 	$prepareNative(MidiInDevice, nGetMessages, void, int64_t id);
-	$invokeNative(MidiInDevice, nGetMessages, id);
+	$invokeNative(id);
 	$finishNative();
 }
 

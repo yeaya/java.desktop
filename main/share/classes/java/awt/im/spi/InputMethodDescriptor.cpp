@@ -5,12 +5,8 @@
 #include <java/util/Locale.h>
 #include <jcpp.h>
 
-using $LocaleArray = $Array<::java::util::Locale>;
-using $Image = ::java::awt::Image;
-using $InputMethod = ::java::awt::im::spi::InputMethod;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Locale = ::java::util::Locale;
 
 namespace java {
 	namespace awt {

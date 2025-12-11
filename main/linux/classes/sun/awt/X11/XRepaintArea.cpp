@@ -11,14 +11,12 @@
 
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor;
 using $RepaintArea = ::sun::awt::RepaintArea;
 using $XComponentPeer = ::sun::awt::X11::XComponentPeer;
-using $XWindow = ::sun::awt::X11::XWindow;
 
 namespace sun {
 	namespace awt {

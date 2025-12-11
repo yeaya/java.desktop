@@ -30,7 +30,6 @@ using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $TextUI = ::javax::swing::plaf::TextUI;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
-using $DefaultHighlighter = ::javax::swing::text::DefaultHighlighter;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $LayeredHighlighter$LayerPainter = ::javax::swing::text::LayeredHighlighter$LayerPainter;
 using $Position$Bias = ::javax::swing::text::Position$Bias;

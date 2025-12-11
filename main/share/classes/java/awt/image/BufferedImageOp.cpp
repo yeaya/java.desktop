@@ -7,11 +7,6 @@
 #include <java/awt/image/ColorModel.h>
 #include <jcpp.h>
 
-using $RenderingHints = ::java::awt::RenderingHints;
-using $Point2D = ::java::awt::geom::Point2D;
-using $Rectangle2D = ::java::awt::geom::Rectangle2D;
-using $BufferedImage = ::java::awt::image::BufferedImage;
-using $ColorModel = ::java::awt::image::ColorModel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

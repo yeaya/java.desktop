@@ -41,7 +41,6 @@ using $CompositeFont = ::sun::font::CompositeFont;
 using $FileFont = ::sun::font::FileFont;
 using $Font2D = ::sun::font::Font2D;
 using $FontUtilities = ::sun::font::FontUtilities;
-using $PhysicalFont = ::sun::font::PhysicalFont;
 
 namespace sun {
 	namespace font {

@@ -9,12 +9,10 @@
 using $SetInvokerJPopupMenuTest = ::SetInvokerJPopupMenuTest;
 using $SetInvokerJPopupMenuTest$MyPopupMenu = ::SetInvokerJPopupMenuTest$MyPopupMenu;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JPopupMenu = ::javax::swing::JPopupMenu;
 
 $MethodInfo _SetInvokerJPopupMenuTest$1_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(SetInvokerJPopupMenuTest$1::*)()>(&SetInvokerJPopupMenuTest$1::init$))},

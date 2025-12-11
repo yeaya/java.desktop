@@ -3,7 +3,6 @@
 #include <java/awt/font/TextLine.h>
 #include <jcpp.h>
 
-using $TextLine = ::java::awt::font::TextLine;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

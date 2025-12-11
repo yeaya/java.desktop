@@ -103,7 +103,7 @@ $Object* allocate$BytePackedRaster($Class* clazz) {
 void BytePackedRaster::initIDs() {
 	$init(BytePackedRaster);
 	$prepareNativeStatic(BytePackedRaster, initIDs, void);
-	$invokeNativeStatic(BytePackedRaster, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

@@ -22,7 +22,6 @@
 
 using $Desktop$ActionArray = $Array<::java::awt::Desktop$Action>;
 using $Desktop$Action = ::java::awt::Desktop$Action;
-using $DesktopPeer = ::java::awt::peer::DesktopPeer;
 using $File = ::java::io::File;
 using $IOException = ::java::io::IOException;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -36,7 +35,6 @@ using $ArrayList = ::java::util::ArrayList;
 using $Arrays = ::java::util::Arrays;
 using $Collection = ::java::util::Collection;
 using $List = ::java::util::List;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $UNIXToolkit = ::sun::awt::UNIXToolkit;
 using $UNIXToolkit$GtkVersions = ::sun::awt::UNIXToolkit$GtkVersions;
 using $XToolkit = ::sun::awt::X11::XToolkit;
@@ -179,7 +177,7 @@ void XDesktopPeer::launch($URI* uri) {
 bool XDesktopPeer::gnome_url_show($bytes* url) {
 	bool $ret = false;
 	$prepareNative(XDesktopPeer, gnome_url_show, bool, $bytes* url);
-	$ret = $invokeNative(XDesktopPeer, gnome_url_show, url);
+	$ret = $invokeNative(url);
 	$finishNative();
 	return $ret;
 }
@@ -188,7 +186,7 @@ bool XDesktopPeer::init(int32_t gtkVersion, bool verbose) {
 	$init(XDesktopPeer);
 	bool $ret = false;
 	$prepareNativeStatic(XDesktopPeer, init, bool, int32_t gtkVersion, bool verbose);
-	$ret = $invokeNativeStatic(XDesktopPeer, init, gtkVersion, verbose);
+	$ret = $invokeNativeStatic(gtkVersion, verbose);
 	$finishNativeStatic();
 	return $ret;
 }

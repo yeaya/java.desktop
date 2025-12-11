@@ -21,7 +21,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 using $AudioInputStream$TargetDataLineInputStream = ::javax::sound::sampled::AudioInputStream$TargetDataLineInputStream;
 using $AudioSystem = ::javax::sound::sampled::AudioSystem;
-using $DataLine = ::javax::sound::sampled::DataLine;
 using $TargetDataLine = ::javax::sound::sampled::TargetDataLine;
 
 namespace javax {

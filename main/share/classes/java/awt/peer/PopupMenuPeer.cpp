@@ -3,8 +3,6 @@
 #include <java/awt/Event.h>
 #include <jcpp.h>
 
-using $Event = ::java::awt::Event;
-using $MenuPeer = ::java::awt::peer::MenuPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

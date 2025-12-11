@@ -9,12 +9,10 @@
 
 using $DefaultPersistenceDelegate = ::java::beans::DefaultPersistenceDelegate;
 using $Encoder = ::java::beans::Encoder;
-using $MetaData = ::java::beans::MetaData;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DefaultMutableTreeNode = ::javax::swing::tree::DefaultMutableTreeNode;
-using $TreeNode = ::javax::swing::tree::TreeNode;
 
 namespace java {
 	namespace beans {

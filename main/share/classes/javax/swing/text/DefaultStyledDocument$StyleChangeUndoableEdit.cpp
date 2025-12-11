@@ -14,7 +14,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractDocument$AbstractElement = ::javax::swing::text::AbstractDocument$AbstractElement;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $DefaultStyledDocument = ::javax::swing::text::DefaultStyledDocument;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $Style = ::javax::swing::text::Style;
 using $AbstractUndoableEdit = ::javax::swing::undo::AbstractUndoableEdit;

@@ -21,11 +21,9 @@ using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Dictionary = ::java::util::Dictionary;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $Style = ::javax::swing::text::Style;
 using $StyledDocument = ::javax::swing::text::StyledDocument;
 using $Constants = ::javax::swing::text::rtf::Constants;
-using $RTFReader = ::javax::swing::text::rtf::RTFReader;
 using $RTFReader$AttributeTrackingDestination = ::javax::swing::text::rtf::RTFReader$AttributeTrackingDestination;
 using $RTFReader$StylesheetDestination = ::javax::swing::text::rtf::RTFReader$StylesheetDestination;
 
@@ -94,8 +92,8 @@ void RTFReader$StylesheetDestination$StyleDefiningDestination::init$($RTFReader$
 	this->sectionStyle = false;
 	$set(this, styleName, nullptr);
 	this->number = 0;
-	this->basedOn = this->STYLENUMBER_NONE;
-	this->nextStyle = this->STYLENUMBER_NONE;
+	this->basedOn = RTFReader$StylesheetDestination$StyleDefiningDestination::STYLENUMBER_NONE;
+	this->nextStyle = RTFReader$StylesheetDestination$StyleDefiningDestination::STYLENUMBER_NONE;
 	this->hidden = false;
 }
 
@@ -158,7 +156,7 @@ $Style* RTFReader$StylesheetDestination$StyleDefiningDestination::realize() {
 	if (this->realizedStyle != nullptr) {
 		return this->realizedStyle;
 	}
-	if (this->basedOn != this->STYLENUMBER_NONE) {
+	if (this->basedOn != RTFReader$StylesheetDestination$StyleDefiningDestination::STYLENUMBER_NONE) {
 		$var(RTFReader$StylesheetDestination$StyleDefiningDestination, styleDest, nullptr);
 		$assign(styleDest, $cast(RTFReader$StylesheetDestination$StyleDefiningDestination, $nc(this->this$1->definedStyles)->get($($Integer::valueOf(this->basedOn)))));
 		if (styleDest != nullptr && styleDest != this) {
@@ -179,7 +177,7 @@ $Style* RTFReader$StylesheetDestination$StyleDefiningDestination::realize() {
 		$init($Constants);
 		$nc(this->realizedStyle)->addAttribute($Constants::StyleType, $Constants::STParagraph);
 	}
-	if (this->nextStyle != this->STYLENUMBER_NONE) {
+	if (this->nextStyle != RTFReader$StylesheetDestination$StyleDefiningDestination::STYLENUMBER_NONE) {
 		$var(RTFReader$StylesheetDestination$StyleDefiningDestination, styleDest, nullptr);
 		$assign(styleDest, $cast(RTFReader$StylesheetDestination$StyleDefiningDestination, $nc(this->this$1->definedStyles)->get($($Integer::valueOf(this->nextStyle)))));
 		if (styleDest != nullptr) {

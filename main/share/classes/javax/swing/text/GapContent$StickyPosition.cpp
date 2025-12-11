@@ -11,7 +11,6 @@ using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $GapContent = ::javax::swing::text::GapContent;
 using $GapContent$MarkData = ::javax::swing::text::GapContent$MarkData;
-using $Position = ::javax::swing::text::Position;
 
 namespace javax {
 	namespace swing {

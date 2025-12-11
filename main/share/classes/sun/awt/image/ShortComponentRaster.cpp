@@ -102,7 +102,7 @@ $Object* allocate$ShortComponentRaster($Class* clazz) {
 void ShortComponentRaster::initIDs() {
 	$init(ShortComponentRaster);
 	$prepareNativeStatic(ShortComponentRaster, initIDs, void);
-	$invokeNativeStatic(ShortComponentRaster, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

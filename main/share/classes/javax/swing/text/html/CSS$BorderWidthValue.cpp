@@ -12,8 +12,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CSS = ::javax::swing::text::html::CSS;
-using $CSS$CssValue = ::javax::swing::text::html::CSS$CssValue;
 using $CSS$LengthValue = ::javax::swing::text::html::CSS$LengthValue;
 using $HTML = ::javax::swing::text::html::HTML;
 

@@ -10,14 +10,11 @@
 
 using $bug4816114 = ::bug4816114;
 using $Dimension = ::java::awt::Dimension;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $JComponent = ::javax::swing::JComponent;
 using $JFrame = ::javax::swing::JFrame;
 using $JSplitPane = ::javax::swing::JSplitPane;
 

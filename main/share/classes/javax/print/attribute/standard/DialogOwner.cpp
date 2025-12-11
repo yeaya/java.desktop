@@ -10,7 +10,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrintRequestAttribute = ::javax::print::attribute::PrintRequestAttribute;
 using $DialogOwner$Accessor = ::javax::print::attribute::standard::DialogOwner$Accessor;
 using $DialogOwnerAccessor = ::sun::print::DialogOwnerAccessor;
 

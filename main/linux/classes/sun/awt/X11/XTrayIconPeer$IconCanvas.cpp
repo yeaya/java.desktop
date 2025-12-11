@@ -15,8 +15,6 @@
 #undef TYPE_INT_ARGB
 
 using $Canvas = ::java::awt::Canvas;
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $Image = ::java::awt::Image;
@@ -26,7 +24,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $XTrayIconPeer = ::sun::awt::X11::XTrayIconPeer;
 using $XTrayIconPeer$IconCanvas$IconObserver = ::sun::awt::X11::XTrayIconPeer$IconCanvas$IconObserver;
 
 namespace sun {

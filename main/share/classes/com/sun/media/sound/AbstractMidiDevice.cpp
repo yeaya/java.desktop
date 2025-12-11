@@ -13,7 +13,6 @@
 #include <jcpp.h>
 
 using $AbstractMidiDevice$TransmitterList = ::com::sun::media::sound::AbstractMidiDevice$TransmitterList;
-using $ReferenceCountingDevice = ::com::sun::media::sound::ReferenceCountingDevice;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

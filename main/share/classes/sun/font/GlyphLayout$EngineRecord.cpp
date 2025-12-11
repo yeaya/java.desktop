@@ -11,20 +11,16 @@
 #include <sun/font/TextRecord.h>
 #include <jcpp.h>
 
-using $Point2D$Float = ::java::awt::geom::Point2D$Float;
 using $Character = ::java::lang::Character;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Font2D = ::sun::font::Font2D;
-using $FontStrikeDesc = ::sun::font::FontStrikeDesc;
 using $GlyphLayout = ::sun::font::GlyphLayout;
-using $GlyphLayout$GVData = ::sun::font::GlyphLayout$GVData;
 using $GlyphLayout$LayoutEngine = ::sun::font::GlyphLayout$LayoutEngine;
 using $GlyphLayout$LayoutEngineFactory = ::sun::font::GlyphLayout$LayoutEngineFactory;
 using $GlyphLayout$LayoutEngineKey = ::sun::font::GlyphLayout$LayoutEngineKey;
-using $TextRecord = ::sun::font::TextRecord;
 
 namespace sun {
 	namespace font {

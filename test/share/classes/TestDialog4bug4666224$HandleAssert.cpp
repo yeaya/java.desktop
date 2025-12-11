@@ -11,17 +11,13 @@
 
 using $TestDialog4bug4666224 = ::TestDialog4bug4666224;
 using $TestDialog4bug4666224$RemarksDialog = ::TestDialog4bug4666224$RemarksDialog;
-using $StringArray2 = $Array<::java::lang::String, 2>;
 using $Button = ::java::awt::Button;
-using $Component = ::java::awt::Component;
 using $Dialog = ::java::awt::Dialog;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 
 $FieldInfo _TestDialog4bug4666224$HandleAssert_FieldInfo_[] = {
 	{"this$0", "LTestDialog4bug4666224;", nullptr, $FINAL | $SYNTHETIC, $field(TestDialog4bug4666224$HandleAssert, this$0)},

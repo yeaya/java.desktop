@@ -7,13 +7,10 @@
 #include <jcpp.h>
 
 using $ScrollBarThumbVisibleTest = ::ScrollBarThumbVisibleTest;
-using $Component = ::java::awt::Component;
-using $Point = ::java::awt::Point;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JScrollBar = ::javax::swing::JScrollBar;
 
 $MethodInfo _ScrollBarThumbVisibleTest$2_MethodInfo_[] = {

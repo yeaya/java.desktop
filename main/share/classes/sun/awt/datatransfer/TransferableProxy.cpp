@@ -21,17 +21,13 @@ using $ByteArrayInputStream = ::java::io::ByteArrayInputStream;
 using $ByteArrayOutputStream = ::java::io::ByteArrayOutputStream;
 using $IOException = ::java::io::IOException;
 using $InputStream = ::java::io::InputStream;
-using $ObjectInputStream = ::java::io::ObjectInputStream;
-using $ObjectOutputStream = ::java::io::ObjectOutputStream;
 using $OutputStream = ::java::io::OutputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $ClassNotFoundException = ::java::lang::ClassNotFoundException;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $ReflectiveOperationException = ::java::lang::ReflectiveOperationException;
-using $Map = ::java::util::Map;
 using $ClassLoaderObjectInputStream = ::sun::awt::datatransfer::ClassLoaderObjectInputStream;
 using $ClassLoaderObjectOutputStream = ::sun::awt::datatransfer::ClassLoaderObjectOutputStream;
 

@@ -9,8 +9,6 @@
 #undef LOOP_TYPE_RELEASE
 #undef LOOP_TYPE_REVERSE
 
-using $AudioFloatInputStream = ::com::sun::media::sound::AudioFloatInputStream;
-using $ModelOscillator = ::com::sun::media::sound::ModelOscillator;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

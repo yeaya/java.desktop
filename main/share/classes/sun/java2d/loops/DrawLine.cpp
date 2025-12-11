@@ -84,7 +84,7 @@ void DrawLine::init$(int64_t pNativePrim, $SurfaceType* srctype, $CompositeType*
 
 void DrawLine::DrawLine$($SunGraphics2D* sg2d, $SurfaceData* dest, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
 	$prepareNative(DrawLine, DrawLine$, void, $SunGraphics2D* sg2d, $SurfaceData* dest, int32_t x1, int32_t y1, int32_t x2, int32_t y2);
-	$invokeNative(DrawLine, DrawLine$, sg2d, dest, x1, y1, x2, y2);
+	$invokeNative(sg2d, dest, x1, y1, x2, y2);
 	$finishNative();
 }
 

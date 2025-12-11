@@ -1,12 +1,14 @@
 #machine generated
 
 add_definitions(-DSTATIC_BUILD)
-add_definitions(-D__USE_J2D_NAMES)
-add_definitions(-D__MEDIALIB_OLD_NAMES)
-add_definitions(-DMLIB_NO_LIBSUNMATH)
 
 if(JCPP_OS MATCHES "linux")
 	add_definitions("-D_GNU_SOURCE")
+endif()
+
+if(JCPP_OS MATCHES "macos")
+	add_definitions("-DMACOSX")
+	add_definitions("-D_ALLBSD_SOURCE")
 endif()
 
 include_directories("include")
@@ -48,12 +50,28 @@ if(JCPP_OS MATCHES "linux")
 	include_directories("/usr/include/freetype2")
 endif()
 
+if(JCPP_OS MATCHES "macos")
+	include_directories("../../macos/native/include")
+	include_directories("../../macos/native/libawt/java2d")
+	include_directories("../../macos/native/common/awt")
+	include_directories("../../macos/native/common/awt/systemscale")
+	include_directories("../../macos/native/libharfbuzz")
+	include_directories("../../macos/native/libjsound")
+	include_directories("../../macos/native/libsplashscreen")
+	include_directories("../../macos/native/libosxapp")
+	include_directories("../../macos/native/libawt_lwawt/awt")
+	include_directories("../../macos/native/libawt_lwawt/font")
+	include_directories("../../macos/native/libawt_lwawt/java2d/opengl")
+	include_directories("../../macos/native/libfreetype/include")
+endif()
+
 if(JCPP_OS MATCHES "windows")
 	include_directories("../../windows/native/include")
 	include_directories("../../windows/native/libawt/java2d")
 	include_directories("../../windows/native/common/awt")
 	include_directories("../../windows/native/common/awt/systemscale")
 	include_directories("../../windows/native/libfontmanager")
+	include_directories("../../windows/native/libharfbuzz")
 	include_directories("../../windows/native/libjsound")
 	include_directories("../../windows/native/libsplashscreen")
 	include_directories("../../windows/native/libawt/java2d/d3d")
@@ -76,6 +94,10 @@ add_subdirectory("libsplashscreen")
 
 if(JCPP_OS MATCHES "linux")
 	include_directories("../../linux/native")
+endif()
+
+if(JCPP_OS MATCHES "macos")
+	include_directories("../../macos/native")
 endif()
 
 if(JCPP_OS MATCHES "windows")

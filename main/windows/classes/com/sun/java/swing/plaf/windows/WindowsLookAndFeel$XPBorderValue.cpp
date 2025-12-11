@@ -11,7 +11,6 @@
 #include <jcpp.h>
 
 using $TMSchema$Part = ::com::sun::java::swing::plaf::windows::TMSchema$Part;
-using $WindowsLookAndFeel = ::com::sun::java::swing::plaf::windows::WindowsLookAndFeel;
 using $WindowsLookAndFeel$XPValue = ::com::sun::java::swing::plaf::windows::WindowsLookAndFeel$XPValue;
 using $XPStyle = ::com::sun::java::swing::plaf::windows::XPStyle;
 using $Component = ::java::awt::Component;

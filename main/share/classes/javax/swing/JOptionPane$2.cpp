@@ -8,7 +8,6 @@
 #include <javax/swing/JOptionPane.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $WindowAdapter = ::java::awt::event::WindowAdapter;
 using $WindowEvent = ::java::awt::event::WindowEvent;

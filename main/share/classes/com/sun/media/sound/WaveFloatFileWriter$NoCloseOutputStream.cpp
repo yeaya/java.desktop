@@ -4,7 +4,6 @@
 #include <java/io/OutputStream.h>
 #include <jcpp.h>
 
-using $WaveFloatFileWriter = ::com::sun::media::sound::WaveFloatFileWriter;
 using $OutputStream = ::java::io::OutputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

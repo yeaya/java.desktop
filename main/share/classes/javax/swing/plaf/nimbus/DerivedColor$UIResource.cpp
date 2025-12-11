@@ -6,7 +6,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $DerivedColor = ::javax::swing::plaf::nimbus::DerivedColor;
 
 namespace javax {

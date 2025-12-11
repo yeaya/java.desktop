@@ -84,7 +84,7 @@ void DrawPolygons::init$(int64_t pNativePrim, $SurfaceType* srctype, $CompositeT
 
 void DrawPolygons::DrawPolygons$($SunGraphics2D* sg2d, $SurfaceData* sData, $ints* xPoints, $ints* yPoints, $ints* nPoints, int32_t numPolys, int32_t transX, int32_t transY, bool close) {
 	$prepareNative(DrawPolygons, DrawPolygons$, void, $SunGraphics2D* sg2d, $SurfaceData* sData, $ints* xPoints, $ints* yPoints, $ints* nPoints, int32_t numPolys, int32_t transX, int32_t transY, bool close);
-	$invokeNative(DrawPolygons, DrawPolygons$, sg2d, sData, xPoints, yPoints, nPoints, numPolys, transX, transY, close);
+	$invokeNative(sg2d, sData, xPoints, yPoints, nPoints, numPolys, transX, transY, close);
 	$finishNative();
 }
 

@@ -11,18 +11,15 @@
 #include <sun/awt/X11/XTextAreaPeer.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JScrollPane = ::javax::swing::JScrollPane;
 using $JScrollPane$ScrollBar = ::javax::swing::JScrollPane$ScrollBar;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $ScrollBarUI = ::javax::swing::plaf::ScrollBarUI;
 using $BasicScrollBarUI = ::javax::swing::plaf::basic::BasicScrollBarUI;
-using $XTextAreaPeer = ::sun::awt::X11::XTextAreaPeer;
 using $XTextAreaPeer$AWTTextPane = ::sun::awt::X11::XTextAreaPeer$AWTTextPane;
 using $XTextAreaPeer$XAWTScrollBarUI = ::sun::awt::X11::XTextAreaPeer$XAWTScrollBarUI;
 

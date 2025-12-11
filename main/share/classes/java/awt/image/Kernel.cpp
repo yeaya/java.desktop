@@ -59,7 +59,7 @@ $Object* allocate$Kernel($Class* clazz) {
 void Kernel::initIDs() {
 	$init(Kernel);
 	$prepareNativeStatic(Kernel, initIDs, void);
-	$invokeNativeStatic(Kernel, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

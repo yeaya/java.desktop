@@ -12,8 +12,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $JScrollBar = ::javax::swing::JScrollBar;
 
 $FieldInfo _bug4865918$3_FieldInfo_[] = {
 	{"val$result", "[I", nullptr, $FINAL | $SYNTHETIC, $field(bug4865918$3, val$result)},

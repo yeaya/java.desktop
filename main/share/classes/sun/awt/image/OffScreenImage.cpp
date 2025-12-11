@@ -31,7 +31,6 @@ using $SystemColor = ::java::awt::SystemColor;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $ImageProducer = ::java::awt::image::ImageProducer;
-using $Raster = ::java::awt::image::Raster;
 using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

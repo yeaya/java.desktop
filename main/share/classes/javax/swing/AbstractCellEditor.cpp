@@ -8,9 +8,7 @@
 #include <javax/swing/event/EventListenerList.h>
 #include <jcpp.h>
 
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $CellEditorListenerArray = $Array<::javax::swing::event::CellEditorListener>;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

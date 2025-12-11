@@ -18,7 +18,6 @@ using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $IllegalStateException = ::java::lang::IllegalStateException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $SunDragSourceContextPeer = ::sun::awt::dnd::SunDragSourceContextPeer;
 
 namespace sun {

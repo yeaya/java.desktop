@@ -15,7 +15,6 @@ using $Color = ::java::awt::Color;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $BorderFactory = ::javax::swing::BorderFactory;
-using $Border = ::javax::swing::border::Border;
 using $EtchedBorder = ::javax::swing::border::EtchedBorder;
 
 $MethodInfo _Test4120351_MethodInfo_[] = {

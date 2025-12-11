@@ -50,7 +50,6 @@ using $Arc2D$Float = ::java::awt::geom::Arc2D$Float;
 using $Ellipse2D = ::java::awt::geom::Ellipse2D;
 using $Ellipse2D$Float = ::java::awt::geom::Ellipse2D$Float;
 using $Path2D$Float = ::java::awt::geom::Path2D$Float;
-using $PathIterator = ::java::awt::geom::PathIterator;
 using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $RoundRectangle2D = ::java::awt::geom::RoundRectangle2D;
 using $RoundRectangle2D$Float = ::java::awt::geom::RoundRectangle2D$Float;
@@ -70,11 +69,9 @@ using $BufferedRenderPipe$BufferedDrawHandler = ::sun::java2d::pipe::BufferedRen
 using $LoopPipe = ::sun::java2d::pipe::LoopPipe;
 using $ParallelogramPipe = ::sun::java2d::pipe::ParallelogramPipe;
 using $PixelDrawPipe = ::sun::java2d::pipe::PixelDrawPipe;
-using $PixelFillPipe = ::sun::java2d::pipe::PixelFillPipe;
 using $Region = ::sun::java2d::pipe::Region;
 using $RenderBuffer = ::sun::java2d::pipe::RenderBuffer;
 using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
-using $ShapeDrawPipe = ::sun::java2d::pipe::ShapeDrawPipe;
 using $ShapeSpanIterator = ::sun::java2d::pipe::ShapeSpanIterator;
 using $SpanIterator = ::sun::java2d::pipe::SpanIterator;
 
@@ -383,7 +380,7 @@ void BufferedRenderPipe::fillPath($SunGraphics2D* sg2d, $Path2D$Float* p2df, int
 int32_t BufferedRenderPipe::fillSpans($RenderQueue* rq, int64_t buf, int32_t pos, int32_t limit, $SpanIterator* si, int64_t iterator, int32_t transx, int32_t transy) {
 	int32_t $ret = 0;
 	$prepareNative(BufferedRenderPipe, fillSpans, int32_t, $RenderQueue* rq, int64_t buf, int32_t pos, int32_t limit, $SpanIterator* si, int64_t iterator, int32_t transx, int32_t transy);
-	$ret = $invokeNative(BufferedRenderPipe, fillSpans, rq, buf, pos, limit, si, iterator, transx, transy);
+	$ret = $invokeNative(rq, buf, pos, limit, si, iterator, transx, transy);
 	$finishNative();
 	return $ret;
 }

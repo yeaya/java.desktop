@@ -20,8 +20,6 @@
 #undef VERTICAL
 
 using $MotifScrollBarButton = ::com::sun::java::swing::plaf::motif::MotifScrollBarButton;
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $Insets = ::java::awt::Insets;

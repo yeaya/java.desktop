@@ -15,12 +15,10 @@
 
 #undef METAL_LABEL_UI_KEY
 
-using $Color = ::java::awt::Color;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SecurityManager = ::java::lang::SecurityManager;
 using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;
 using $UIManager = ::javax::swing::UIManager;

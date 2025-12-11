@@ -9,12 +9,10 @@
 #include <jcpp.h>
 
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractDocument = ::javax::swing::text::AbstractDocument;
-using $DefaultEditorKit = ::javax::swing::text::DefaultEditorKit;
 using $Document = ::javax::swing::text::Document;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $TextAction = ::javax::swing::text::TextAction;

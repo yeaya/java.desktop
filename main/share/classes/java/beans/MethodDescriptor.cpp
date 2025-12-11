@@ -17,7 +17,6 @@ using $FeatureDescriptor = ::java::beans::FeatureDescriptor;
 using $Introspector = ::java::beans::Introspector;
 using $MethodRef = ::java::beans::MethodRef;
 using $ParameterDescriptor = ::java::beans::ParameterDescriptor;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

@@ -3,7 +3,6 @@
 #include <com/sun/media/sound/SoftPerformer.h>
 #include <jcpp.h>
 
-using $ModelTransform = ::com::sun::media::sound::ModelTransform;
 using $SoftPerformer = ::com::sun::media::sound::SoftPerformer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

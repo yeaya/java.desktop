@@ -11,7 +11,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $Collection = ::java::util::Collection;
 using $HashSet = ::java::util::HashSet;
-using $PrintJobAttribute = ::javax::print::attribute::PrintJobAttribute;
 using $JobStateReason = ::javax::print::attribute::standard::JobStateReason;
 
 namespace javax {

@@ -6,7 +6,6 @@
 
 #undef TITLED_BORDER
 
-using $GTKEngine = ::com::sun::java::swing::plaf::gtk::GTKEngine;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

@@ -12,7 +12,6 @@
 
 using $Canvas = ::java::awt::Canvas;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;

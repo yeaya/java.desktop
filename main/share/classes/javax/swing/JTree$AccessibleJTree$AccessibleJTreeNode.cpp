@@ -67,7 +67,6 @@ using $AccessibleState = ::javax::accessibility::AccessibleState;
 using $AccessibleStateSet = ::javax::accessibility::AccessibleStateSet;
 using $AccessibleText = ::javax::accessibility::AccessibleText;
 using $AccessibleValue = ::javax::accessibility::AccessibleValue;
-using $JComponent = ::javax::swing::JComponent;
 using $JTree = ::javax::swing::JTree;
 using $JTree$AccessibleJTree = ::javax::swing::JTree$AccessibleJTree;
 using $TreeUI = ::javax::swing::plaf::TreeUI;

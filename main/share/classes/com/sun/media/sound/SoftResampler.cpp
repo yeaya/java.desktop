@@ -3,7 +3,6 @@
 #include <com/sun/media/sound/SoftResamplerStreamer.h>
 #include <jcpp.h>
 
-using $SoftResamplerStreamer = ::com::sun::media::sound::SoftResamplerStreamer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

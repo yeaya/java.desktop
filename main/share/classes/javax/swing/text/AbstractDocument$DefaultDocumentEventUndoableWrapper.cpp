@@ -13,14 +13,9 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DocumentEvent$EventType = ::javax::swing::event::DocumentEvent$EventType;
 using $AbstractDocument = ::javax::swing::text::AbstractDocument;
 using $AbstractDocument$DefaultDocumentEvent = ::javax::swing::text::AbstractDocument$DefaultDocumentEvent;
-using $Document = ::javax::swing::text::Document;
-using $AbstractUndoableEdit = ::javax::swing::undo::AbstractUndoableEdit;
-using $CompoundEdit = ::javax::swing::undo::CompoundEdit;
 using $UndoableEdit = ::javax::swing::undo::UndoableEdit;
-using $UndoableEditLockSupport = ::sun::swing::text::UndoableEditLockSupport;
 
 namespace javax {
 	namespace swing {

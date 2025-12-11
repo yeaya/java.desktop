@@ -21,8 +21,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $WListPeer = ::sun::awt::windows::WListPeer;
 
 namespace sun {

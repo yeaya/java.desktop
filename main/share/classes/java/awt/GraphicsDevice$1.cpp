@@ -9,12 +9,9 @@
 #undef PERPIXEL_TRANSPARENT
 #undef TRANSLUCENT
 
-using $GraphicsDevice$WindowTranslucencyArray = $Array<::java::awt::GraphicsDevice$WindowTranslucency>;
-using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $GraphicsDevice$WindowTranslucency = ::java::awt::GraphicsDevice$WindowTranslucency;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;

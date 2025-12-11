@@ -4,8 +4,6 @@
 #include <java/beans/beancontext/BeanContext.h>
 #include <jcpp.h>
 
-using $Applet = ::java::applet::Applet;
-using $BeanContext = ::java::beans::beancontext::BeanContext;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $MethodInfo = ::java::lang::MethodInfo;

@@ -104,11 +104,9 @@
 
 using $DHTMarkerSegment$HtableArray = $Array<::com::sun::imageio::plugins::jpeg::DHTMarkerSegment$Htable>;
 using $SOFMarkerSegment$ComponentSpecArray = $Array<::com::sun::imageio::plugins::jpeg::SOFMarkerSegment$ComponentSpec>;
-using $SOSMarkerSegment$ScanComponentSpecArray = $Array<::com::sun::imageio::plugins::jpeg::SOSMarkerSegment$ScanComponentSpec>;
 using $DimensionArray = $Array<::java::awt::Dimension>;
 using $JPEGHuffmanTableArray = $Array<::javax::imageio::plugins::jpeg::JPEGHuffmanTable>;
 using $JPEGQTableArray = $Array<::javax::imageio::plugins::jpeg::JPEGQTable>;
-using $intArray2 = $Array<int32_t, 2>;
 using $ImageUtil = ::com::sun::imageio::plugins::common::ImageUtil;
 using $AdobeMarkerSegment = ::com::sun::imageio::plugins::jpeg::AdobeMarkerSegment;
 using $DHTMarkerSegment = ::com::sun::imageio::plugins::jpeg::DHTMarkerSegment;
@@ -117,7 +115,6 @@ using $DQTMarkerSegment = ::com::sun::imageio::plugins::jpeg::DQTMarkerSegment;
 using $DQTMarkerSegment$Qtable = ::com::sun::imageio::plugins::jpeg::DQTMarkerSegment$Qtable;
 using $DRIMarkerSegment = ::com::sun::imageio::plugins::jpeg::DRIMarkerSegment;
 using $JFIFMarkerSegment = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment;
-using $JFIFMarkerSegment$ICCMarkerSegment = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment$ICCMarkerSegment;
 using $JPEG = ::com::sun::imageio::plugins::jpeg::JPEG;
 using $JPEGImageWriter$1 = ::com::sun::imageio::plugins::jpeg::JPEGImageWriter$1;
 using $JPEGImageWriter$CallBackLock = ::com::sun::imageio::plugins::jpeg::JPEGImageWriter$CallBackLock;
@@ -125,16 +122,13 @@ using $JPEGImageWriter$JPEGWriterDisposerRecord = ::com::sun::imageio::plugins::
 using $JPEGMetadata = ::com::sun::imageio::plugins::jpeg::JPEGMetadata;
 using $MarkerSegment = ::com::sun::imageio::plugins::jpeg::MarkerSegment;
 using $SOFMarkerSegment = ::com::sun::imageio::plugins::jpeg::SOFMarkerSegment;
-using $SOFMarkerSegment$ComponentSpec = ::com::sun::imageio::plugins::jpeg::SOFMarkerSegment$ComponentSpec;
 using $SOSMarkerSegment = ::com::sun::imageio::plugins::jpeg::SOSMarkerSegment;
-using $SOSMarkerSegment$ScanComponentSpec = ::com::sun::imageio::plugins::jpeg::SOSMarkerSegment$ScanComponentSpec;
 using $Dimension = ::java::awt::Dimension;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $Transparency = ::java::awt::Transparency;
 using $ColorSpace = ::java::awt::color::ColorSpace;
 using $ICC_ColorSpace = ::java::awt::color::ICC_ColorSpace;
-using $ICC_Profile = ::java::awt::color::ICC_Profile;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ColorConvertOp = ::java::awt::image::ColorConvertOp;
 using $ColorModel = ::java::awt::image::ColorModel;
@@ -165,7 +159,6 @@ using $List = ::java::util::List;
 using $Locale = ::java::util::Locale;
 using $IIOException = ::javax::imageio::IIOException;
 using $IIOImage = ::javax::imageio::IIOImage;
-using $IIOParam = ::javax::imageio::IIOParam;
 using $ImageTypeSpecifier = ::javax::imageio::ImageTypeSpecifier;
 using $ImageWriteParam = ::javax::imageio::ImageWriteParam;
 using $ImageWriter = ::javax::imageio::ImageWriter;
@@ -176,7 +169,6 @@ using $JPEGHuffmanTable = ::javax::imageio::plugins::jpeg::JPEGHuffmanTable;
 using $JPEGImageWriteParam = ::javax::imageio::plugins::jpeg::JPEGImageWriteParam;
 using $JPEGQTable = ::javax::imageio::plugins::jpeg::JPEGQTable;
 using $ImageWriterSpi = ::javax::imageio::spi::ImageWriterSpi;
-using $ImageInputStream = ::javax::imageio::stream::ImageInputStream;
 using $ImageOutputStream = ::javax::imageio::stream::ImageOutputStream;
 using $Node = ::org::w3c::dom::Node;
 using $Disposer = ::sun::java2d::Disposer;
@@ -1666,28 +1658,28 @@ bool JPEGImageWriter::isSubsampled($SOFMarkerSegment$ComponentSpecArray* specs) 
 void JPEGImageWriter::initWriterIDs($Class* qTableClass, $Class* huffClass) {
 	$init(JPEGImageWriter);
 	$prepareNativeStatic(JPEGImageWriter, initWriterIDs, void, $Class* qTableClass, $Class* huffClass);
-	$invokeNativeStatic(JPEGImageWriter, initWriterIDs, qTableClass, huffClass);
+	$invokeNativeStatic(qTableClass, huffClass);
 	$finishNativeStatic();
 }
 
 int64_t JPEGImageWriter::initJPEGImageWriter() {
 	int64_t $ret = 0;
 	$prepareNative(JPEGImageWriter, initJPEGImageWriter, int64_t);
-	$ret = $invokeNative(JPEGImageWriter, initJPEGImageWriter);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
 
 void JPEGImageWriter::setDest(int64_t structPointer) {
 	$prepareNative(JPEGImageWriter, setDest, void, int64_t structPointer);
-	$invokeNative(JPEGImageWriter, setDest, structPointer);
+	$invokeNative(structPointer);
 	$finishNative();
 }
 
 bool JPEGImageWriter::writeImage(int64_t structPointer, $bytes* data, int32_t inCsType, int32_t outCsType, int32_t numBands, $ints* bandSizes, int32_t srcWidth, int32_t destWidth, int32_t destHeight, int32_t stepX, int32_t stepY, $JPEGQTableArray* qtables, bool writeDQT, $JPEGHuffmanTableArray* DCHuffmanTables, $JPEGHuffmanTableArray* ACHuffmanTables, bool writeDHT, bool optimizeHuffman, bool progressive, int32_t numScans, $ints* scans, $ints* componentIds, $ints* HsamplingFactors, $ints* VsamplingFactors, $ints* QtableSelectors, bool haveMetadata, int32_t restartInterval) {
 	bool $ret = false;
 	$prepareNative(JPEGImageWriter, writeImage, bool, int64_t structPointer, $bytes* data, int32_t inCsType, int32_t outCsType, int32_t numBands, $ints* bandSizes, int32_t srcWidth, int32_t destWidth, int32_t destHeight, int32_t stepX, int32_t stepY, $JPEGQTableArray* qtables, bool writeDQT, $JPEGHuffmanTableArray* DCHuffmanTables, $JPEGHuffmanTableArray* ACHuffmanTables, bool writeDHT, bool optimizeHuffman, bool progressive, int32_t numScans, $ints* scans, $ints* componentIds, $ints* HsamplingFactors, $ints* VsamplingFactors, $ints* QtableSelectors, bool haveMetadata, int32_t restartInterval);
-	$ret = $invokeNative(JPEGImageWriter, writeImage, structPointer, data, inCsType, outCsType, numBands, bandSizes, srcWidth, destWidth, destHeight, stepX, stepY, qtables, writeDQT, DCHuffmanTables, ACHuffmanTables, writeDHT, optimizeHuffman, progressive, numScans, scans, componentIds, HsamplingFactors, VsamplingFactors, QtableSelectors, haveMetadata, restartInterval);
+	$ret = $invokeNative(structPointer, data, inCsType, outCsType, numBands, bandSizes, srcWidth, destWidth, destHeight, stepX, stepY, qtables, writeDQT, DCHuffmanTables, ACHuffmanTables, writeDHT, optimizeHuffman, progressive, numScans, scans, componentIds, HsamplingFactors, VsamplingFactors, QtableSelectors, haveMetadata, restartInterval);
 	$finishNative();
 	return $ret;
 }
@@ -1707,7 +1699,7 @@ void JPEGImageWriter::writeMetadata() {
 
 void JPEGImageWriter::writeTables(int64_t structPointer, $JPEGQTableArray* qtables, $JPEGHuffmanTableArray* DCHuffmanTables, $JPEGHuffmanTableArray* ACHuffmanTables) {
 	$prepareNative(JPEGImageWriter, writeTables, void, int64_t structPointer, $JPEGQTableArray* qtables, $JPEGHuffmanTableArray* DCHuffmanTables, $JPEGHuffmanTableArray* ACHuffmanTables);
-	$invokeNative(JPEGImageWriter, writeTables, structPointer, qtables, DCHuffmanTables, ACHuffmanTables);
+	$invokeNative(structPointer, qtables, DCHuffmanTables, ACHuffmanTables);
 	$finishNative();
 }
 
@@ -1767,20 +1759,20 @@ void JPEGImageWriter::grabPixels(int32_t y) {
 
 void JPEGImageWriter::abortWrite(int64_t structPointer) {
 	$prepareNative(JPEGImageWriter, abortWrite, void, int64_t structPointer);
-	$invokeNative(JPEGImageWriter, abortWrite, structPointer);
+	$invokeNative(structPointer);
 	$finishNative();
 }
 
 void JPEGImageWriter::resetWriter(int64_t structPointer) {
 	$prepareNative(JPEGImageWriter, resetWriter, void, int64_t structPointer);
-	$invokeNative(JPEGImageWriter, resetWriter, structPointer);
+	$invokeNative(structPointer);
 	$finishNative();
 }
 
 void JPEGImageWriter::disposeWriter(int64_t structPointer) {
 	$init(JPEGImageWriter);
 	$prepareNativeStatic(JPEGImageWriter, disposeWriter, void, int64_t structPointer);
-	$invokeNativeStatic(JPEGImageWriter, disposeWriter, structPointer);
+	$invokeNativeStatic(structPointer);
 	$finishNativeStatic();
 }
 

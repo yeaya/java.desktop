@@ -107,7 +107,6 @@ using $AWTEvent$1 = ::java::awt::AWTEvent$1;
 using $Button = ::java::awt::Button;
 using $Choice = ::java::awt::Choice;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Dialog = ::java::awt::Dialog;
 using $Event = ::java::awt::Event;
 using $Frame = ::java::awt::Frame;
@@ -247,7 +246,7 @@ $AccessControlContext* AWTEvent::getAccessControlContext() {
 void AWTEvent::initIDs() {
 	$init(AWTEvent);
 	$prepareNativeStatic(AWTEvent, initIDs, void);
-	$invokeNativeStatic(AWTEvent, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -303,7 +302,7 @@ void AWTEvent::setSource(Object$* newSource) {
 
 void AWTEvent::nativeSetSource($ComponentPeer* peer) {
 	$prepareNative(AWTEvent, nativeSetSource, void, $ComponentPeer* peer);
-	$invokeNative(AWTEvent, nativeSetSource, peer);
+	$invokeNative(peer);
 	$finishNative();
 }
 

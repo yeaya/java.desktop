@@ -18,26 +18,9 @@
 #include <sun/awt/RequestFocusController.h>
 #include <jcpp.h>
 
-using $AWTEvent = ::java::awt::AWTEvent;
-using $BufferCapabilities = ::java::awt::BufferCapabilities;
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
-using $Cursor = ::java::awt::Cursor;
-using $Font = ::java::awt::Font;
-using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
-using $Point = ::java::awt::Point;
-using $Rectangle = ::java::awt::Rectangle;
-using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
-using $BufferStrategy = ::java::awt::image::BufferStrategy;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AccessControlContext = ::java::security::AccessControlContext;
-using $AWTAccessor = ::sun::awt::AWTAccessor;
-using $AppContext = ::sun::awt::AppContext;
-using $RequestFocusController = ::sun::awt::RequestFocusController;
 
 namespace sun {
 	namespace awt {

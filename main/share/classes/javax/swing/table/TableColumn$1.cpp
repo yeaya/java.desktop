@@ -14,10 +14,8 @@
 #include <javax/swing/table/TableColumn.h>
 #include <jcpp.h>
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Font = ::java::awt::Font;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -27,7 +25,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;
 using $JTable = ::javax::swing::JTable;
 using $UIManager = ::javax::swing::UIManager;
-using $Border = ::javax::swing::border::Border;
 using $DefaultTableCellRenderer = ::javax::swing::table::DefaultTableCellRenderer;
 using $JTableHeader = ::javax::swing::table::JTableHeader;
 using $TableColumn = ::javax::swing::table::TableColumn;

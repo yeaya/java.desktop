@@ -13,7 +13,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Action = ::javax::swing::Action;
 using $BasicTreeUI = ::javax::swing::plaf::basic::BasicTreeUI;
 using $BasicTreeUI$Handler = ::javax::swing::plaf::basic::BasicTreeUI$Handler;
 

@@ -11,19 +11,14 @@
 #include <jcpp.h>
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseEvent = ::java::awt::event::MouseEvent;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
-using $AbstractColorChooserPanel = ::javax::swing::colorchooser::AbstractColorChooserPanel;
 using $DefaultSwatchChooserPanel = ::javax::swing::colorchooser::DefaultSwatchChooserPanel;
 using $RecentSwatchPanel = ::javax::swing::colorchooser::RecentSwatchPanel;
-using $SwatchPanel = ::javax::swing::colorchooser::SwatchPanel;
 
 namespace javax {
 	namespace swing {

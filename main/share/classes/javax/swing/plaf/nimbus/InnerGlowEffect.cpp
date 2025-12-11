@@ -9,7 +9,6 @@ using $Color = ::java::awt::Color;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $InnerShadowEffect = ::javax::swing::plaf::nimbus::InnerShadowEffect;
-using $ShadowEffect = ::javax::swing::plaf::nimbus::ShadowEffect;
 
 namespace javax {
 	namespace swing {

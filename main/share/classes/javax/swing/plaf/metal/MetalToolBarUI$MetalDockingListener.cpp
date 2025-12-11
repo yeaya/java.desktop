@@ -18,7 +18,6 @@
 
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Dimension = ::java::awt::Dimension;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $MouseEvent = ::java::awt::event::MouseEvent;

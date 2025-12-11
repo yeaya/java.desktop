@@ -19,7 +19,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractButton = ::javax::swing::AbstractButton;
-using $Icon = ::javax::swing::Icon;
 using $JComponent = ::javax::swing::JComponent;
 using $UIManager = ::javax::swing::UIManager;
 using $ButtonUI = ::javax::swing::plaf::ButtonUI;

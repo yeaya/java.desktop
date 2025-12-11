@@ -19,7 +19,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $ByteOrder = ::java::nio::ByteOrder;
 using $IIOByteBuffer = ::javax::imageio::stream::IIOByteBuffer;
 using $ImageInputStreamImpl = ::javax::imageio::stream::ImageInputStreamImpl;
-using $ImageOutputStream = ::javax::imageio::stream::ImageOutputStream;
 
 namespace javax {
 	namespace imageio {

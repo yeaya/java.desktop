@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $TreeSelectionEvent = ::javax::swing::event::TreeSelectionEvent;
-using $TreeSelectionListener = ::javax::swing::event::TreeSelectionListener;
 using $BasicTreeUI = ::javax::swing::plaf::basic::BasicTreeUI;
 using $BasicTreeUI$Handler = ::javax::swing::plaf::basic::BasicTreeUI$Handler;
 

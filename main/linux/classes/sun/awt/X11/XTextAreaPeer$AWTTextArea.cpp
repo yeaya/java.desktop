@@ -32,9 +32,7 @@ using $MotifTextAreaUI = ::com::sun::java::swing::plaf::motif::MotifTextAreaUI;
 using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Rectangle = ::java::awt::Rectangle;
 using $FocusEvent = ::java::awt::event::FocusEvent;
-using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
 using $InputMethodEvent = ::java::awt::event::InputMethodEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $TextEvent = ::java::awt::event::TextEvent;
@@ -46,7 +44,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JTextArea = ::javax::swing::JTextArea;
 using $TransferHandler = ::javax::swing::TransferHandler;
 using $DocumentEvent = ::javax::swing::event::DocumentEvent;
-using $DocumentListener = ::javax::swing::event::DocumentListener;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $TextUI = ::javax::swing::plaf::TextUI;
 using $BasicTextAreaUI = ::javax::swing::plaf::basic::BasicTextAreaUI;
@@ -56,7 +53,6 @@ using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$ClientPropertyKeyAccessor = ::sun::awt::AWTAccessor$ClientPropertyKeyAccessor;
 using $XTextAreaPeer = ::sun::awt::X11::XTextAreaPeer;
 using $XTextAreaPeer$AWTTextAreaUI = ::sun::awt::X11::XTextAreaPeer$AWTTextAreaUI;
-using $XWindow = ::sun::awt::X11::XWindow;
 
 namespace sun {
 	namespace awt {

@@ -11,7 +11,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Win32GraphicsDevice = ::sun::awt::Win32GraphicsDevice;
 using $D3DGraphicsDevice = ::sun::java2d::d3d::D3DGraphicsDevice;
 using $D3DRenderQueue = ::sun::java2d::d3d::D3DRenderQueue;
 using $BufferedContext = ::sun::java2d::pipe::BufferedContext;

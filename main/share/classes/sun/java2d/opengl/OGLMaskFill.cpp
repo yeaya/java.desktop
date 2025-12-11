@@ -23,14 +23,12 @@
 
 using $GraphicsPrimitiveArray = $Array<::sun::java2d::loops::GraphicsPrimitive>;
 using $Composite = ::java::awt::Composite;
-using $Paint = ::java::awt::Paint;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $ClassCastException = ::java::lang::ClassCastException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $InvalidPipeException = ::sun::java2d::InvalidPipeException;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
-using $SurfaceData = ::sun::java2d::SurfaceData;
 using $CompositeType = ::sun::java2d::loops::CompositeType;
 using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
 using $GraphicsPrimitiveMgr = ::sun::java2d::loops::GraphicsPrimitiveMgr;
@@ -39,9 +37,7 @@ using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $OGLContext = ::sun::java2d::opengl::OGLContext;
 using $OGLRenderQueue = ::sun::java2d::opengl::OGLRenderQueue;
 using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;
-using $BufferedContext = ::sun::java2d::pipe::BufferedContext;
 using $BufferedMaskFill = ::sun::java2d::pipe::BufferedMaskFill;
-using $Region = ::sun::java2d::pipe::Region;
 using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 using $AccelSurface = ::sun::java2d::pipe::hw::AccelSurface;
 
@@ -99,7 +95,7 @@ void OGLMaskFill::init$($SurfaceType* srcType, $CompositeType* compType) {
 
 void OGLMaskFill::maskFill(int32_t x, int32_t y, int32_t w, int32_t h, int32_t maskoff, int32_t maskscan, int32_t masklen, $bytes* mask) {
 	$prepareNative(OGLMaskFill, maskFill, void, int32_t x, int32_t y, int32_t w, int32_t h, int32_t maskoff, int32_t maskscan, int32_t masklen, $bytes* mask);
-	$invokeNative(OGLMaskFill, maskFill, x, y, w, h, maskoff, maskscan, masklen, mask);
+	$invokeNative(x, y, w, h, maskoff, maskscan, masklen, mask);
 	$finishNative();
 }
 

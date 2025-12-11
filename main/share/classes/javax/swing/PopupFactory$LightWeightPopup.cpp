@@ -36,7 +36,6 @@ using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
-using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $StringBuffer = ::java::lang::StringBuffer;
 using $AbstractList = ::java::util::AbstractList;
@@ -49,7 +48,6 @@ using $JLayeredPane = ::javax::swing::JLayeredPane;
 using $JPanel = ::javax::swing::JPanel;
 using $JRootPane = ::javax::swing::JRootPane;
 using $Popup = ::javax::swing::Popup;
-using $PopupFactory = ::javax::swing::PopupFactory;
 using $PopupFactory$ContainerPopup = ::javax::swing::PopupFactory$ContainerPopup;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 

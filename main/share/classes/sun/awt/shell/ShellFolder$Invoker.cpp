@@ -7,8 +7,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Callable = ::java::util::concurrent::Callable;
-using $ShellFolder = ::sun::awt::shell::ShellFolder;
 
 namespace sun {
 	namespace awt {

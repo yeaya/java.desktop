@@ -11,12 +11,10 @@
 #include <javax/swing/UIManager.h>
 #include <jcpp.h>
 
-using $MotifIconFactory = ::com::sun::java::swing::plaf::motif::MotifIconFactory;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Graphics = ::java::awt::Graphics;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -25,7 +23,6 @@ using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $Icon = ::javax::swing::Icon;
 using $UIManager = ::javax::swing::UIManager;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace com {
 	namespace sun {

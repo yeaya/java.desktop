@@ -309,7 +309,7 @@ void CheckboxMenuItem::readObject($ObjectInputStream* s) {
 void CheckboxMenuItem::initIDs() {
 	$init(CheckboxMenuItem);
 	$prepareNativeStatic(CheckboxMenuItem, initIDs, void);
-	$invokeNativeStatic(CheckboxMenuItem, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

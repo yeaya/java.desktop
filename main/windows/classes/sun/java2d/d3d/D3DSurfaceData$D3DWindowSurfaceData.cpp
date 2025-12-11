@@ -24,17 +24,13 @@
 #undef VSYNC_DEFAULT
 #undef WINDOW
 
-using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $Image = ::java::awt::Image;
-using $Rectangle = ::java::awt::Rectangle;
 using $Window = ::java::awt::Window;
-using $ColorModel = ::java::awt::image::ColorModel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $InvalidPipeException = ::sun::java2d::InvalidPipeException;
 using $ScreenUpdateManager = ::sun::java2d::ScreenUpdateManager;
 using $StateTracker = ::sun::java2d::StateTracker;
@@ -45,7 +41,6 @@ using $D3DGraphicsDevice = ::sun::java2d::d3d::D3DGraphicsDevice;
 using $D3DRenderQueue = ::sun::java2d::d3d::D3DRenderQueue;
 using $D3DSurfaceData = ::sun::java2d::d3d::D3DSurfaceData;
 using $BufferedContext = ::sun::java2d::pipe::BufferedContext;
-using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 using $AccelSurface = ::sun::java2d::pipe::hw::AccelSurface;
 using $ExtendedBufferCapabilities$VSyncType = ::sun::java2d::pipe::hw::ExtendedBufferCapabilities$VSyncType;
 

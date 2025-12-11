@@ -16,8 +16,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $InvalidMidiDataException = ::javax::sound::midi::InvalidMidiDataException;
 using $MetaMessage = ::javax::sound::midi::MetaMessage;
-using $MidiMessage = ::javax::sound::midi::MidiMessage;
-using $Track = ::javax::sound::midi::Track;
 
 namespace javax {
 	namespace sound {

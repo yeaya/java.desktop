@@ -10,7 +10,6 @@
 
 using $RenderedImage = ::java::awt::image::RenderedImage;
 using $RenderableImage = ::java::awt::image::renderable::RenderableImage;
-using $Serializable = ::java::io::Serializable;
 using $Byte = ::java::lang::Byte;
 using $Character = ::java::lang::Character;
 using $ClassInfo = ::java::lang::ClassInfo;

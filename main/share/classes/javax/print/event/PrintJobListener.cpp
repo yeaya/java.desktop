@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrintJobEvent = ::javax::print::event::PrintJobEvent;
 
 namespace javax {
 	namespace print {

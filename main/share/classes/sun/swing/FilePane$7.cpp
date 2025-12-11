@@ -10,8 +10,6 @@
 #include <sun/swing/FilePane.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
-using $Dimension = ::java::awt::Dimension;
 using $ComponentAdapter = ::java::awt::event::ComponentAdapter;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $ComponentListener = ::java::awt::event::ComponentListener;

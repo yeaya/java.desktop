@@ -15,17 +15,14 @@
 using $FileFilterArray = $Array<::javax::swing::filechooser::FileFilter>;
 using $GTKFileChooserUI = ::com::sun::java::swing::plaf::gtk::GTKFileChooserUI;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractListModel = ::javax::swing::AbstractListModel;
-using $ComboBoxModel = ::javax::swing::ComboBoxModel;
 using $JFileChooser = ::javax::swing::JFileChooser;
 using $ListDataListener = ::javax::swing::event::ListDataListener;
 using $FileFilter = ::javax::swing::filechooser::FileFilter;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 
 namespace com {
 	namespace sun {

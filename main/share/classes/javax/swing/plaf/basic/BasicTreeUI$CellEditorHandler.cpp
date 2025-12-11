@@ -9,7 +9,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CellEditorListener = ::javax::swing::event::CellEditorListener;
 using $ChangeEvent = ::javax::swing::event::ChangeEvent;
 using $BasicTreeUI = ::javax::swing::plaf::basic::BasicTreeUI;
 using $BasicTreeUI$Handler = ::javax::swing::plaf::basic::BasicTreeUI$Handler;

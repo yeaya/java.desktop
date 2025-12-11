@@ -7,7 +7,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $XDragSourceProtocol = ::sun::awt::X11::XDragSourceProtocol;
 
 namespace sun {
 	namespace awt {

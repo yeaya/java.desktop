@@ -17,7 +17,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $HashMap = ::java::util::HashMap;
-using $UIDefaults = ::javax::swing::UIDefaults;
 
 namespace javax {
 	namespace swing {

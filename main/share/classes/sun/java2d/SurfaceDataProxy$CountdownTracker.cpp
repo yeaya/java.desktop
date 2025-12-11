@@ -7,8 +7,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $StateTracker = ::sun::java2d::StateTracker;
-using $SurfaceDataProxy = ::sun::java2d::SurfaceDataProxy;
 
 namespace sun {
 	namespace java2d {

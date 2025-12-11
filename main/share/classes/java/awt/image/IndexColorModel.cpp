@@ -55,7 +55,6 @@ using $UnsupportedOperationException = ::java::lang::UnsupportedOperationExcepti
 using $BigInteger = ::java::math::BigInteger;
 using $Arrays = ::java::util::Arrays;
 using $Hashtable = ::java::util::Hashtable;
-using $BufImgSurfaceData$ICMColorData = ::sun::awt::image::BufImgSurfaceData$ICMColorData;
 
 namespace java {
 	namespace awt {
@@ -160,7 +159,7 @@ $ints* IndexColorModel::alphaBits = nullptr;
 void IndexColorModel::initIDs() {
 	$init(IndexColorModel);
 	$prepareNativeStatic(IndexColorModel, initIDs, void);
-	$invokeNativeStatic(IndexColorModel, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

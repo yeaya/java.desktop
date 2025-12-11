@@ -21,7 +21,6 @@ using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $StringBuffer = ::java::lang::StringBuffer;
 using $AppContext = ::sun::awt::AppContext;
 using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
 using $PlatformLogger = ::sun::util::logging::PlatformLogger;

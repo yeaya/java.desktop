@@ -25,7 +25,6 @@ using $bug7049024$3 = ::bug7049024$3;
 using $bug7049024$4 = ::bug7049024$4;
 using $bug7049024$5 = ::bug7049024$5;
 using $bug7049024$6 = ::bug7049024$6;
-using $Component = ::java::awt::Component;
 using $Robot = ::java::awt::Robot;
 using $Toolkit = ::java::awt::Toolkit;
 using $Clipboard = ::java::awt::datatransfer::Clipboard;

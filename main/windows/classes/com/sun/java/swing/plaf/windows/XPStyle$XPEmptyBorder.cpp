@@ -15,7 +15,6 @@
 
 using $XPStyle = ::com::sun::java::swing::plaf::windows::XPStyle;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Insets = ::java::awt::Insets;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -27,7 +26,6 @@ using $JRadioButton = ::javax::swing::JRadioButton;
 using $JToolBar = ::javax::swing::JToolBar;
 using $EmptyBorder = ::javax::swing::border::EmptyBorder;
 using $InsetsUIResource = ::javax::swing::plaf::InsetsUIResource;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 namespace com {

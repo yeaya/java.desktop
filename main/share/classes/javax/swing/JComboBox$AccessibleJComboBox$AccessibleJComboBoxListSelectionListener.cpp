@@ -24,7 +24,6 @@ using $AccessibleState = ::javax::accessibility::AccessibleState;
 using $JComboBox$AccessibleJComboBox = ::javax::swing::JComboBox$AccessibleJComboBox;
 using $JList = ::javax::swing::JList;
 using $ListSelectionEvent = ::javax::swing::event::ListSelectionEvent;
-using $ListSelectionListener = ::javax::swing::event::ListSelectionListener;
 
 namespace javax {
 	namespace swing {

@@ -10,7 +10,6 @@
 #include <jcpp.h>
 
 using $Encoder = ::java::beans::Encoder;
-using $MetaData = ::java::beans::MetaData;
 using $PersistenceDelegate = ::java::beans::PersistenceDelegate;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

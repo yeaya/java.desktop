@@ -20,10 +20,8 @@
 #undef GET_USER_THEME
 
 using $Metacity = ::com::sun::java::swing::plaf::gtk::Metacity;
-using $Image = ::java::awt::Image;
 using $File = ::java::io::File;
 using $IOException = ::java::io::IOException;
-using $InputStream = ::java::io::InputStream;
 using $InputStreamReader = ::java::io::InputStreamReader;
 using $Reader = ::java::io::Reader;
 using $ClassInfo = ::java::lang::ClassInfo;

@@ -5,14 +5,11 @@
 #include <javax/swing/JComponent.h>
 #include <jcpp.h>
 
-using $bug6608456 = ::bug6608456;
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Callable = ::java::util::concurrent::Callable;
 using $JComponent = ::javax::swing::JComponent;
 
 $FieldInfo _bug6608456$2_FieldInfo_[] = {

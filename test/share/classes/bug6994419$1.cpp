@@ -11,7 +11,6 @@
 #include <javax/swing/JLayer.h>
 #include <jcpp.h>
 
-using $bug6994419 = ::bug6994419;
 using $bug6994419$1$1 = ::bug6994419$1$1;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
@@ -20,7 +19,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;

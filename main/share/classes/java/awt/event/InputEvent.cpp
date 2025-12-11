@@ -43,16 +43,12 @@
 #undef SHIFT_DOWN_MASK
 #undef SHIFT_MASK
 
-using $AWTEvent = ::java::awt::AWTEvent;
-using $AWTPermission = ::java::awt::AWTPermission;
 using $Component = ::java::awt::Component;
-using $Event = ::java::awt::Event;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $Toolkit = ::java::awt::Toolkit;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $InputEvent$1 = ::java::awt::event::InputEvent$1;
 using $NativeLibLoader = ::java::awt::event::NativeLibLoader;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $Exception = ::java::lang::Exception;
@@ -262,7 +258,7 @@ int32_t InputEvent::getMaskForButton(int32_t button) {
 void InputEvent::initIDs() {
 	$init(InputEvent);
 	$prepareNativeStatic(InputEvent, initIDs, void);
-	$invokeNativeStatic(InputEvent, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

@@ -114,7 +114,6 @@ using $CopyOption = ::java::nio::file::CopyOption;
 using $Files = ::java::nio::file::Files;
 using $Path = ::java::nio::file::Path;
 using $StandardCopyOption = ::java::nio::file::StandardCopyOption;
-using $HashMap = ::java::util::HashMap;
 using $Locale = ::java::util::Locale;
 using $Vector = ::java::util::Vector;
 using $CancelablePrintJob = ::javax::print::CancelablePrintJob;
@@ -132,15 +131,10 @@ using $AttributeSetUtilities = ::javax::print::attribute::AttributeSetUtilities;
 using $DocAttributeSet = ::javax::print::attribute::DocAttributeSet;
 using $HashPrintJobAttributeSet = ::javax::print::attribute::HashPrintJobAttributeSet;
 using $HashPrintRequestAttributeSet = ::javax::print::attribute::HashPrintRequestAttributeSet;
-using $IntegerSyntax = ::javax::print::attribute::IntegerSyntax;
 using $PrintJobAttribute = ::javax::print::attribute::PrintJobAttribute;
 using $PrintJobAttributeSet = ::javax::print::attribute::PrintJobAttributeSet;
 using $PrintRequestAttribute = ::javax::print::attribute::PrintRequestAttribute;
 using $PrintRequestAttributeSet = ::javax::print::attribute::PrintRequestAttributeSet;
-using $PrintServiceAttribute = ::javax::print::attribute::PrintServiceAttribute;
-using $Size2DSyntax = ::javax::print::attribute::Size2DSyntax;
-using $TextSyntax = ::javax::print::attribute::TextSyntax;
-using $URISyntax = ::javax::print::attribute::URISyntax;
 using $Copies = ::javax::print::attribute::standard::Copies;
 using $Destination = ::javax::print::attribute::standard::Destination;
 using $DocumentName = ::javax::print::attribute::standard::DocumentName;
@@ -899,7 +893,7 @@ void Win32PrintJob::getAttributeValues($DocFlavor* flavor) {
 bool Win32PrintJob::startPrintRawData($String* printerName, $String* jobName) {
 	bool $ret = false;
 	$prepareNative(Win32PrintJob, startPrintRawData, bool, $String* printerName, $String* jobName);
-	$ret = $invokeNative(Win32PrintJob, startPrintRawData, printerName, jobName);
+	$ret = $invokeNative(printerName, jobName);
 	$finishNative();
 	return $ret;
 }
@@ -907,7 +901,7 @@ bool Win32PrintJob::startPrintRawData($String* printerName, $String* jobName) {
 bool Win32PrintJob::printRawData($bytes* data, int32_t count) {
 	bool $ret = false;
 	$prepareNative(Win32PrintJob, printRawData, bool, $bytes* data, int32_t count);
-	$ret = $invokeNative(Win32PrintJob, printRawData, data, count);
+	$ret = $invokeNative(data, count);
 	$finishNative();
 	return $ret;
 }
@@ -915,7 +909,7 @@ bool Win32PrintJob::printRawData($bytes* data, int32_t count) {
 bool Win32PrintJob::endPrintRawData() {
 	bool $ret = false;
 	$prepareNative(Win32PrintJob, endPrintRawData, bool);
-	$ret = $invokeNative(Win32PrintJob, endPrintRawData);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }

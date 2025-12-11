@@ -14,7 +14,6 @@
 #include <jcpp.h>
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $ComponentAdapter = ::java::awt::event::ComponentAdapter;

@@ -3,8 +3,6 @@
 #include <java/awt/Adjustable.h>
 #include <jcpp.h>
 
-using $Adjustable = ::java::awt::Adjustable;
-using $ContainerPeer = ::java::awt::peer::ContainerPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

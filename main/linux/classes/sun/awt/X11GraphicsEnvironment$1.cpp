@@ -11,7 +11,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $X11GraphicsEnvironment = ::sun::awt::X11GraphicsEnvironment;
 using $XRSurfaceData = ::sun::java2d::xr::XRSurfaceData;
 

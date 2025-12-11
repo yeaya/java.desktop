@@ -12,7 +12,6 @@
 #include <jcpp.h>
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $FocusEvent = ::java::awt::event::FocusEvent;
 using $FocusListener = ::java::awt::event::FocusListener;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
@@ -23,7 +22,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ComboBoxEditor = ::javax::swing::ComboBoxEditor;
 using $JComboBox = ::javax::swing::JComboBox;
-using $SynthComboBoxUI = ::javax::swing::plaf::synth::SynthComboBoxUI;
 
 namespace javax {
 	namespace swing {

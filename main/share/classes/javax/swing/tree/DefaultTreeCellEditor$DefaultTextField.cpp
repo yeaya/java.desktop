@@ -11,7 +11,6 @@
 #include <javax/swing/tree/DefaultTreeCellRenderer.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Font = ::java::awt::Font;
@@ -21,7 +20,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $JComponent = ::javax::swing::JComponent;
 using $JTextField = ::javax::swing::JTextField;
 using $Border = ::javax::swing::border::Border;
 using $FontUIResource = ::javax::swing::plaf::FontUIResource;

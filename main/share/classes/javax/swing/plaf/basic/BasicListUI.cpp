@@ -138,7 +138,6 @@ using $ListSelectionModel = ::javax::swing::ListSelectionModel;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $TransferHandler = ::javax::swing::TransferHandler;
-using $TransferHandler$DropLocation = ::javax::swing::TransferHandler$DropLocation;
 using $UIDefaults = ::javax::swing::UIDefaults;
 using $UIManager = ::javax::swing::UIManager;
 using $ListDataListener = ::javax::swing::event::ListDataListener;

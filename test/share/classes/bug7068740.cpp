@@ -42,7 +42,6 @@ using $AWTException = ::java::awt::AWTException;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

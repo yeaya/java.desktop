@@ -13,7 +13,6 @@
 #undef RED
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

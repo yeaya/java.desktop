@@ -22,7 +22,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $Native = ::sun::awt::X11::Native;
 using $XConstants = ::sun::awt::X11::XConstants;
 using $XEmbedCanvasPeer = ::sun::awt::X11::XEmbedCanvasPeer;

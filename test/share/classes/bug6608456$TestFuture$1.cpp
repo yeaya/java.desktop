@@ -3,12 +3,10 @@
 #include <bug6608456$TestFuture.h>
 #include <jcpp.h>
 
-using $bug6608456$TestFuture = ::bug6608456$TestFuture;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Callable = ::java::util::concurrent::Callable;
 
 $MethodInfo _bug6608456$TestFuture$1_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(bug6608456$TestFuture$1::*)()>(&bug6608456$TestFuture$1::init$))},

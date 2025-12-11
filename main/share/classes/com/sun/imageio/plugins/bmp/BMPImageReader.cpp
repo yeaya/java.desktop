@@ -153,7 +153,6 @@ using $ArrayList = ::java::util::ArrayList;
 using $Hashtable = ::java::util::Hashtable;
 using $Iterator = ::java::util::Iterator;
 using $IIOException = ::javax::imageio::IIOException;
-using $IIOParam = ::javax::imageio::IIOParam;
 using $ImageIO = ::javax::imageio::ImageIO;
 using $ImageReadParam = ::javax::imageio::ImageReadParam;
 using $ImageReader = ::javax::imageio::ImageReader;

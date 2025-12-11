@@ -23,9 +23,7 @@
 #undef NULL_BORDER
 
 using $WindowsBorders$DashedBorder = ::com::sun::java::swing::plaf::windows::WindowsBorders$DashedBorder;
-using $WindowsComboBoxUI = ::com::sun::java::swing::plaf::windows::WindowsComboBoxUI;
 using $WindowsComboBoxUI$WindowsComboBoxRenderer$WindowsComboBoxDashedBorder = ::com::sun::java::swing::plaf::windows::WindowsComboBoxUI$WindowsComboBoxRenderer$WindowsComboBoxDashedBorder;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Insets = ::java::awt::Insets;

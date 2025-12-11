@@ -25,7 +25,6 @@ using $ByteBuffer = ::java::nio::ByteBuffer;
 using $CharBuffer = ::java::nio::CharBuffer;
 using $Charset = ::java::nio::charset::Charset;
 using $CharsetEncoder = ::java::nio::charset::CharsetEncoder;
-using $CoderResult = ::java::nio::charset::CoderResult;
 using $CodingErrorAction = ::java::nio::charset::CodingErrorAction;
 using $HashMap = ::java::util::HashMap;
 

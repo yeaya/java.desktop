@@ -7,17 +7,14 @@
 #include <java/net/URL.h>
 #include <jcpp.h>
 
-using $Metacity = ::com::sun::java::swing::plaf::gtk::Metacity;
 using $BufferedInputStream = ::java::io::BufferedInputStream;
 using $IOException = ::java::io::IOException;
-using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $URL = ::java::net::URL;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 
 namespace com {
 	namespace sun {

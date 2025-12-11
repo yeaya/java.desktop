@@ -12,7 +12,6 @@
 #include <javax/swing/text/LayeredHighlighter$LayerPainter.h>
 #include <jcpp.h>
 
-using $WindowsTextFieldUI = ::com::sun::java::swing::plaf::windows::WindowsTextFieldUI;
 using $WindowsTextFieldUI$WindowsFieldCaret$SafeScroller = ::com::sun::java::swing::plaf::windows::WindowsTextFieldUI$WindowsFieldCaret$SafeScroller;
 using $WindowsTextUI = ::com::sun::java::swing::plaf::windows::WindowsTextUI;
 using $Rectangle = ::java::awt::Rectangle;
@@ -21,11 +20,9 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $DefaultCaret = ::javax::swing::text::DefaultCaret;
 using $Highlighter$HighlightPainter = ::javax::swing::text::Highlighter$HighlightPainter;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
-using $LayeredHighlighter$LayerPainter = ::javax::swing::text::LayeredHighlighter$LayerPainter;
 
 namespace com {
 	namespace sun {

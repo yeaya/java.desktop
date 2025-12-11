@@ -3,8 +3,6 @@
 #include <java/awt/CheckboxGroup.h>
 #include <jcpp.h>
 
-using $CheckboxGroup = ::java::awt::CheckboxGroup;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

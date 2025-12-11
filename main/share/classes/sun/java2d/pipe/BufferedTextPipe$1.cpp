@@ -10,7 +10,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $GlyphList = ::sun::font::GlyphList;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
 using $BufferedTextPipe = ::sun::java2d::pipe::BufferedTextPipe;

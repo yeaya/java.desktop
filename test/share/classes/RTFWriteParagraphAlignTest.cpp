@@ -38,13 +38,9 @@
 #undef EXIT_ON_CLOSE
 #undef RTF_DATA
 
-using $ElementArray = $Array<::javax::swing::text::Element>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Frame = ::java::awt::Frame;
-using $Rectangle = ::java::awt::Rectangle;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $ByteArrayInputStream = ::java::io::ByteArrayInputStream;
 using $File = ::java::io::File;
 using $FileInputStream = ::java::io::FileInputStream;
@@ -56,16 +52,10 @@ using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
-using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $JComponent = ::javax::swing::JComponent;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $JFrame = ::javax::swing::JFrame;
@@ -76,7 +66,6 @@ using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
-using $StyledEditorKit = ::javax::swing::text::StyledEditorKit;
 using $RTFEditorKit = ::javax::swing::text::rtf::RTFEditorKit;
 
 class RTFWriteParagraphAlignTest$$Lambda$lambda$main$0 : public $Runnable {

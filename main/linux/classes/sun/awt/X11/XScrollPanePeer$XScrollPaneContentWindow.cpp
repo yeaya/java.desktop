@@ -13,7 +13,6 @@ using $ScrollPane = ::java::awt::ScrollPane;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $XScrollPanePeer = ::sun::awt::X11::XScrollPanePeer;
 using $XWindow = ::sun::awt::X11::XWindow;
 
 namespace sun {

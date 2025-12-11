@@ -6,12 +6,10 @@
 #include <jcpp.h>
 
 using $bug6514582 = ::bug6514582;
-using $Container = ::java::awt::Container;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 
 $MethodInfo _bug6514582$2_MethodInfo_[] = {

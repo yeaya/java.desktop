@@ -3,7 +3,6 @@
 #include <java/awt/Graphics2D.h>
 #include <jcpp.h>
 
-using $Graphics2D = ::java::awt::Graphics2D;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

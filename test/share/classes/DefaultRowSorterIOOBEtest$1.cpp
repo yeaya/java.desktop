@@ -13,7 +13,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $List = ::java::util::List;
 using $AbstractTableModel = ::javax::swing::table::AbstractTableModel;
-using $TableModel = ::javax::swing::table::TableModel;
 
 $MethodInfo _DefaultRowSorterIOOBEtest$1_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(DefaultRowSorterIOOBEtest$1::*)()>(&DefaultRowSorterIOOBEtest$1::init$))},

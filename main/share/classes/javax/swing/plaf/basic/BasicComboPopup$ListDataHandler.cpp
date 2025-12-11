@@ -9,7 +9,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ListDataEvent = ::javax::swing::event::ListDataEvent;
-using $ListDataListener = ::javax::swing::event::ListDataListener;
 using $BasicComboPopup = ::javax::swing::plaf::basic::BasicComboPopup;
 
 namespace javax {

@@ -22,7 +22,6 @@
 #undef WINDOW
 
 using $TMSchema$ControlArray = $Array<::com::sun::java::swing::plaf::windows::TMSchema$Control>;
-using $TMSchema = ::com::sun::java::swing::plaf::windows::TMSchema;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

@@ -15,7 +15,6 @@ using $doubleArray2 = $Array<double, 2>;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $Ellipse2D = ::java::awt::geom::Ellipse2D;
 using $PathIterator = ::java::awt::geom::PathIterator;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;

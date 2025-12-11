@@ -30,7 +30,6 @@ using $WindowsIconFactory$RadioButtonIcon = ::com::sun::java::swing::plaf::windo
 using $WindowsIconFactory$RadioButtonMenuItemIcon = ::com::sun::java::swing::plaf::windows::WindowsIconFactory$RadioButtonMenuItemIcon;
 using $WindowsIconFactory$ResizeIcon = ::com::sun::java::swing::plaf::windows::WindowsIconFactory$ResizeIcon;
 using $WindowsIconFactory$VistaMenuItemCheckIconFactory = ::com::sun::java::swing::plaf::windows::WindowsIconFactory$VistaMenuItemCheckIconFactory;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

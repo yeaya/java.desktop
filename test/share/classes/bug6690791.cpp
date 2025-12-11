@@ -13,7 +13,6 @@
 #undef BUTTON1
 #undef MOUSE_CLICKED
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $MouseEvent = ::java::awt::event::MouseEvent;

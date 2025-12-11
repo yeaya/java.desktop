@@ -3,10 +3,8 @@
 #include <java/beans/beancontext/BeanContextMembershipEvent.h>
 #include <jcpp.h>
 
-using $BeanContextMembershipEvent = ::java::beans::beancontext::BeanContextMembershipEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
 
 namespace java {
 	namespace beans {

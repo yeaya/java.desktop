@@ -14,7 +14,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Iterator = ::java::util::Iterator;
 using $List = ::java::util::List;
 using $DOMException = ::org::w3c::dom::DOMException;
-using $NamedNodeMap = ::org::w3c::dom::NamedNodeMap;
 using $Node = ::org::w3c::dom::Node;
 
 namespace javax {

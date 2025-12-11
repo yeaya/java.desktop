@@ -20,7 +20,6 @@ using $MetaData = ::java::beans::MetaData;
 using $PersistenceDelegate = ::java::beans::PersistenceDelegate;
 using $Statement = ::java::beans::Statement;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $ClassLoader = ::java::lang::ClassLoader;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

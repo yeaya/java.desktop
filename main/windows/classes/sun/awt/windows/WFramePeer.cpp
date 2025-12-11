@@ -69,7 +69,6 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $FramePeer = ::java::awt::peer::FramePeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalStateException = ::java::lang::IllegalStateException;
@@ -84,7 +83,6 @@ using $WMenuBarPeer = ::sun::awt::windows::WMenuBarPeer;
 using $WMenuItemPeer = ::sun::awt::windows::WMenuItemPeer;
 using $WMenuPeer = ::sun::awt::windows::WMenuPeer;
 using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
-using $WPanelPeer = ::sun::awt::windows::WPanelPeer;
 using $WToolkit = ::sun::awt::windows::WToolkit;
 using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
 using $SunGraphicsEnvironment = ::sun::java2d::SunGraphicsEnvironment;
@@ -444,20 +442,20 @@ bool WFramePeer::keepOnMinimize = false;
 void WFramePeer::initIDs() {
 	$init(WFramePeer);
 	$prepareNativeStatic(WFramePeer, initIDs, void);
-	$invokeNativeStatic(WFramePeer, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
 void WFramePeer::setState(int32_t state) {
 	$prepareNative(WFramePeer, setState, void, int32_t state);
-	$invokeNative(WFramePeer, setState, state);
+	$invokeNative(state);
 	$finishNative();
 }
 
 int32_t WFramePeer::getState() {
 	int32_t $ret = 0;
 	$prepareNative(WFramePeer, getState, int32_t);
-	$ret = $invokeNative(WFramePeer, getState);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -472,13 +470,13 @@ int32_t WFramePeer::getExtendedState() {
 
 void WFramePeer::setMaximizedBounds(int32_t x, int32_t y, int32_t w, int32_t h) {
 	$prepareNative(WFramePeer, setMaximizedBounds, void, int32_t x, int32_t y, int32_t w, int32_t h);
-	$invokeNative(WFramePeer, setMaximizedBounds, x, y, w, h);
+	$invokeNative(x, y, w, h);
 	$finishNative();
 }
 
 void WFramePeer::clearMaximizedBounds() {
 	$prepareNative(WFramePeer, clearMaximizedBounds, void);
-	$invokeNative(WFramePeer, clearMaximizedBounds);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -561,7 +559,7 @@ void WFramePeer::setMenuBar($MenuBar* mb) {
 
 void WFramePeer::setMenuBar0($WMenuBarPeer* mbPeer) {
 	$prepareNative(WFramePeer, setMenuBar0, void, $WMenuBarPeer* mbPeer);
-	$invokeNative(WFramePeer, setMenuBar0, mbPeer);
+	$invokeNative(mbPeer);
 	$finishNative();
 }
 
@@ -577,7 +575,7 @@ void WFramePeer::init$($Frame* target) {
 
 void WFramePeer::createAwtFrame($WComponentPeer* parent) {
 	$prepareNative(WFramePeer, createAwtFrame, void, $WComponentPeer* parent);
-	$invokeNative(WFramePeer, createAwtFrame, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 
@@ -601,14 +599,14 @@ int32_t WFramePeer::getSysMenuHeight() {
 	$init(WFramePeer);
 	int32_t $ret = 0;
 	$prepareNativeStatic(WFramePeer, getSysMenuHeight, int32_t);
-	$ret = $invokeNativeStatic(WFramePeer, getSysMenuHeight);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
 
 void WFramePeer::pSetIMMOption($String* option) {
 	$prepareNative(WFramePeer, pSetIMMOption, void, $String* option);
-	$invokeNative(WFramePeer, pSetIMMOption, option);
+	$invokeNative(option);
 	$finishNative();
 }
 
@@ -630,7 +628,7 @@ void WFramePeer::emulateActivation(bool activate) {
 
 void WFramePeer::synthesizeWmActivate(bool activate) {
 	$prepareNative(WFramePeer, synthesizeWmActivate, void, bool activate);
-	$invokeNative(WFramePeer, synthesizeWmActivate, activate);
+	$invokeNative(activate);
 	$finishNative();
 }
 

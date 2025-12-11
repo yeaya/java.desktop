@@ -23,7 +23,6 @@ using $LinkedHashSet = ::java::util::LinkedHashSet;
 using $Supplier = ::java::util::function::Supplier;
 using $AppContext = ::sun::awt::AppContext;
 using $DataTransferer = ::sun::awt::datatransfer::DataTransferer;
-using $DesktopDatatransferService = ::sun::datatransfer::DesktopDatatransferService;
 
 namespace sun {
 	namespace awt {

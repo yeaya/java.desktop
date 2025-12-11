@@ -12,7 +12,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DefaultEditorKit = ::javax::swing::text::DefaultEditorKit;
 using $Document = ::javax::swing::text::Document;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $TextAction = ::javax::swing::text::TextAction;

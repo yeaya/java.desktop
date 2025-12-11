@@ -26,7 +26,6 @@
 using $bug7193219$1 = ::bug7193219$1;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Window = ::java::awt::Window;
 using $ByteArrayInputStream = ::java::io::ByteArrayInputStream;
 using $ByteArrayOutputStream = ::java::io::ByteArrayOutputStream;
 using $IOException = ::java::io::IOException;

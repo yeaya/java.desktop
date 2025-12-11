@@ -15,7 +15,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Objects = ::java::util::Objects;
-using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 
 namespace javax {
 	namespace sound {

@@ -41,7 +41,6 @@ using $FontUIResource = ::javax::swing::plaf::FontUIResource;
 using $CharToGlyphMapper = ::sun::font::CharToGlyphMapper;
 using $CompositeFont = ::sun::font::CompositeFont;
 using $Font2D = ::sun::font::Font2D;
-using $Font2DHandle = ::sun::font::Font2DHandle;
 using $FontAccess = ::sun::font::FontAccess;
 using $FontManager = ::sun::font::FontManager;
 using $FontManagerFactory = ::sun::font::FontManagerFactory;
@@ -49,7 +48,6 @@ using $FontUtilities$1 = ::sun::font::FontUtilities$1;
 using $PhysicalFont = ::sun::font::PhysicalFont;
 using $SunFontManager = ::sun::font::SunFontManager;
 using $TrueTypeFont = ::sun::font::TrueTypeFont;
-using $TrueTypeFont$DirectoryEntry = ::sun::font::TrueTypeFont$DirectoryEntry;
 using $PlatformLogger = ::sun::util::logging::PlatformLogger;
 
 namespace sun {

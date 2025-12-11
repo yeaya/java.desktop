@@ -24,7 +24,6 @@
 
 #undef TYPE_INT_ARGB_PRE
 
-using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
@@ -32,7 +31,6 @@ using $Image = ::java::awt::Image;
 using $Window = ::java::awt::Window;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $BufferedImage = ::java::awt::image::BufferedImage;
-using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DataBufferInt = ::java::awt::image::DataBufferInt;
 using $Raster = ::java::awt::image::Raster;
 using $VolatileImage = ::java::awt::image::VolatileImage;
@@ -43,7 +41,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $BufImgSurfaceData = ::sun::awt::image::BufImgSurfaceData;
 using $TranslucentWindowPainter = ::sun::awt::windows::TranslucentWindowPainter;
-using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
 using $DestSurfaceProvider = ::sun::java2d::DestSurfaceProvider;
 using $Surface = ::sun::java2d::Surface;

@@ -18,7 +18,6 @@
 #undef TRUE
 
 using $bug6711682 = ::bug6711682;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Boolean = ::java::lang::Boolean;
@@ -35,7 +34,6 @@ using $JTable = ::javax::swing::JTable;
 using $JToggleButton = ::javax::swing::JToggleButton;
 using $UIManager = ::javax::swing::UIManager;
 using $CellEditorListener = ::javax::swing::event::CellEditorListener;
-using $TableCellEditor = ::javax::swing::table::TableCellEditor;
 using $TableModel = ::javax::swing::table::TableModel;
 
 $FieldInfo _bug6711682$2_FieldInfo_[] = {

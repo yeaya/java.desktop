@@ -115,7 +115,7 @@ void BlitBg::init$(int64_t pNativePrim, $SurfaceType* srctype, $CompositeType* c
 
 void BlitBg::BlitBg$($SurfaceData* src, $SurfaceData* dst, $Composite* comp, $Region* clip, int32_t bgColor, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t width, int32_t height) {
 	$prepareNative(BlitBg, BlitBg$, void, $SurfaceData* src, $SurfaceData* dst, $Composite* comp, $Region* clip, int32_t bgColor, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t width, int32_t height);
-	$invokeNative(BlitBg, BlitBg$, src, dst, comp, clip, bgColor, srcx, srcy, dstx, dsty, width, height);
+	$invokeNative(src, dst, comp, clip, bgColor, srcx, srcy, dstx, dsty, width, height);
 	$finishNative();
 }
 

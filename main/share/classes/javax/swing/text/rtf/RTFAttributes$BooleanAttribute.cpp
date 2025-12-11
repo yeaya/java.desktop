@@ -14,8 +14,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
-using $RTFAttribute = ::javax::swing::text::rtf::RTFAttribute;
-using $RTFAttributes = ::javax::swing::text::rtf::RTFAttributes;
 using $RTFAttributes$GenericAttribute = ::javax::swing::text::rtf::RTFAttributes$GenericAttribute;
 using $RTFGenerator = ::javax::swing::text::rtf::RTFGenerator;
 

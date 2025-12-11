@@ -16,7 +16,6 @@ using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $SimpleAttributeSet = ::javax::swing::text::SimpleAttributeSet;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
 using $CSS = ::javax::swing::text::html::CSS;
-using $CSS$Attribute = ::javax::swing::text::html::CSS$Attribute;
 using $StyleSheet = ::javax::swing::text::html::StyleSheet;
 
 namespace javax {

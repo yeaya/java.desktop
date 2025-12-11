@@ -9,16 +9,13 @@
 #include <sun/java2d/pipe/CompositePipe.h>
 #include <jcpp.h>
 
-using $Composite = ::java::awt::Composite;
 using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
-using $SurfaceData = ::sun::java2d::SurfaceData;
 using $MaskFill = ::sun::java2d::loops::MaskFill;
 using $CompositePipe = ::sun::java2d::pipe::CompositePipe;
-using $ParallelogramPipe = ::sun::java2d::pipe::ParallelogramPipe;
 
 namespace sun {
 	namespace java2d {

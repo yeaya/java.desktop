@@ -27,7 +27,6 @@
 #undef SCROLLBARS_NONE
 #undef SCROLLBARS_VERTICAL_ONLY
 
-using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Dimension = ::java::awt::Dimension;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
@@ -175,7 +174,7 @@ $Set* TextArea::backwardTraversalKeys = nullptr;
 void TextArea::initIDs() {
 	$init(TextArea);
 	$prepareNativeStatic(TextArea, initIDs, void);
-	$invokeNativeStatic(TextArea, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

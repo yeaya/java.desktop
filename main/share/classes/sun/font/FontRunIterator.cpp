@@ -22,7 +22,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CharToGlyphMapper = ::sun::font::CharToGlyphMapper;
 using $CompositeFont = ::sun::font::CompositeFont;
 using $CompositeGlyphMapper = ::sun::font::CompositeGlyphMapper;
 using $PhysicalFont = ::sun::font::PhysicalFont;

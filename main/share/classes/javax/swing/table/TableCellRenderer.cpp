@@ -4,10 +4,8 @@
 #include <javax/swing/JTable.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JTable = ::javax::swing::JTable;
 
 namespace javax {
 	namespace swing {

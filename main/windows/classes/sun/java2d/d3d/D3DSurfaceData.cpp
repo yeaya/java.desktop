@@ -119,7 +119,6 @@ using $AlphaComposite = ::java::awt::AlphaComposite;
 using $BufferCapabilities = ::java::awt::BufferCapabilities;
 using $BufferCapabilities$FlipContents = ::java::awt::BufferCapabilities$FlipContents;
 using $Component = ::java::awt::Component;
-using $Composite = ::java::awt::Composite;
 using $Dimension = ::java::awt::Dimension;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;
@@ -130,7 +129,6 @@ using $Transparency = ::java::awt::Transparency;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DirectColorModel = ::java::awt::image::DirectColorModel;
-using $PackedColorModel = ::java::awt::image::PackedColorModel;
 using $Raster = ::java::awt::image::Raster;
 using $SampleModel = ::java::awt::image::SampleModel;
 using $SinglePixelPackedSampleModel = ::java::awt::image::SinglePixelPackedSampleModel;
@@ -143,23 +141,18 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $SunHints = ::sun::awt::SunHints;
 using $SunToolkit = ::sun::awt::SunToolkit;
-using $Win32GraphicsConfig = ::sun::awt::Win32GraphicsConfig;
-using $Win32GraphicsDevice = ::sun::awt::Win32GraphicsDevice;
 using $DataBufferNative = ::sun::awt::image::DataBufferNative;
-using $PixelConverter = ::sun::awt::image::PixelConverter;
 using $PixelConverter$ArgbPre = ::sun::awt::image::PixelConverter$ArgbPre;
 using $SunVolatileImage = ::sun::awt::image::SunVolatileImage;
 using $SurfaceManager = ::sun::awt::image::SurfaceManager;
 using $WritableRasterNative = ::sun::awt::image::WritableRasterNative;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
 using $InvalidPipeException = ::sun::java2d::InvalidPipeException;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $SurfaceDataProxy = ::sun::java2d::SurfaceDataProxy;
 using $D3DBlitLoops = ::sun::java2d::d3d::D3DBlitLoops;
-using $D3DContext = ::sun::java2d::d3d::D3DContext;
 using $D3DDrawImage = ::sun::java2d::d3d::D3DDrawImage;
 using $D3DGraphicsConfig = ::sun::java2d::d3d::D3DGraphicsConfig;
 using $D3DGraphicsDevice = ::sun::java2d::d3d::D3DGraphicsDevice;
@@ -387,7 +380,7 @@ $D3DDrawImage* D3DSurfaceData::d3dImagePipe = nullptr;
 bool D3DSurfaceData::initTexture(int64_t pData, bool isRTT, bool isOpaque) {
 	bool $ret = false;
 	$prepareNative(D3DSurfaceData, initTexture, bool, int64_t pData, bool isRTT, bool isOpaque);
-	$ret = $invokeNative(D3DSurfaceData, initTexture, pData, isRTT, isOpaque);
+	$ret = $invokeNative(pData, isRTT, isOpaque);
 	$finishNative();
 	return $ret;
 }
@@ -395,7 +388,7 @@ bool D3DSurfaceData::initTexture(int64_t pData, bool isRTT, bool isOpaque) {
 bool D3DSurfaceData::initFlipBackbuffer(int64_t pData, int64_t pPeerData, int32_t numbuffers, int32_t swapEffect, int32_t syncType) {
 	bool $ret = false;
 	$prepareNative(D3DSurfaceData, initFlipBackbuffer, bool, int64_t pData, int64_t pPeerData, int32_t numbuffers, int32_t swapEffect, int32_t syncType);
-	$ret = $invokeNative(D3DSurfaceData, initFlipBackbuffer, pData, pPeerData, numbuffers, swapEffect, syncType);
+	$ret = $invokeNative(pData, pPeerData, numbuffers, swapEffect, syncType);
 	$finishNative();
 	return $ret;
 }
@@ -403,14 +396,14 @@ bool D3DSurfaceData::initFlipBackbuffer(int64_t pData, int64_t pPeerData, int32_
 bool D3DSurfaceData::initRTSurface(int64_t pData, bool isOpaque) {
 	bool $ret = false;
 	$prepareNative(D3DSurfaceData, initRTSurface, bool, int64_t pData, bool isOpaque);
-	$ret = $invokeNative(D3DSurfaceData, initRTSurface, pData, isOpaque);
+	$ret = $invokeNative(pData, isOpaque);
 	$finishNative();
 	return $ret;
 }
 
 void D3DSurfaceData::initOps(int32_t screen, int32_t width, int32_t height) {
 	$prepareNative(D3DSurfaceData, initOps, void, int32_t screen, int32_t width, int32_t height);
-	$invokeNative(D3DSurfaceData, initOps, screen, width, height);
+	$invokeNative(screen, width, height);
 	$finishNative();
 }
 
@@ -618,7 +611,7 @@ int32_t D3DSurfaceData::dbGetPixelNative(int64_t pData, int32_t x, int32_t y) {
 	$init(D3DSurfaceData);
 	int32_t $ret = 0;
 	$prepareNativeStatic(D3DSurfaceData, dbGetPixelNative, int32_t, int64_t pData, int32_t x, int32_t y);
-	$ret = $invokeNativeStatic(D3DSurfaceData, dbGetPixelNative, pData, x, y);
+	$ret = $invokeNativeStatic(pData, x, y);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -626,7 +619,7 @@ int32_t D3DSurfaceData::dbGetPixelNative(int64_t pData, int32_t x, int32_t y) {
 void D3DSurfaceData::dbSetPixelNative(int64_t pData, int32_t x, int32_t y, int32_t pixel) {
 	$init(D3DSurfaceData);
 	$prepareNativeStatic(D3DSurfaceData, dbSetPixelNative, void, int64_t pData, int32_t x, int32_t y, int32_t pixel);
-	$invokeNativeStatic(D3DSurfaceData, dbSetPixelNative, pData, x, y, pixel);
+	$invokeNativeStatic(pData, x, y, pixel);
 	$finishNativeStatic();
 }
 
@@ -921,7 +914,7 @@ int64_t D3DSurfaceData::getNativeResourceNative(int64_t sdops, int32_t resType) 
 	$init(D3DSurfaceData);
 	int64_t $ret = 0;
 	$prepareNativeStatic(D3DSurfaceData, getNativeResourceNative, int64_t, int64_t sdops, int32_t resType);
-	$ret = $invokeNativeStatic(D3DSurfaceData, getNativeResourceNative, sdops, resType);
+	$ret = $invokeNativeStatic(sdops, resType);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -934,7 +927,7 @@ bool D3DSurfaceData::updateWindowAccelImpl(int64_t pd3dsd, int64_t pData, int32_
 	$init(D3DSurfaceData);
 	bool $ret = false;
 	$prepareNativeStatic(D3DSurfaceData, updateWindowAccelImpl, bool, int64_t pd3dsd, int64_t pData, int32_t w, int32_t h);
-	$ret = $invokeNativeStatic(D3DSurfaceData, updateWindowAccelImpl, pd3dsd, pData, w, h);
+	$ret = $invokeNativeStatic(pd3dsd, pData, w, h);
 	$finishNativeStatic();
 	return $ret;
 }

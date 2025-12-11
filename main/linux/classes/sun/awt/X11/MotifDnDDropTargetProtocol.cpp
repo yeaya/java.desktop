@@ -86,7 +86,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $MotifDnDConstants = ::sun::awt::X11::MotifDnDConstants;
 using $MotifDnDConstants$Swapper = ::sun::awt::X11::MotifDnDConstants$Swapper;
 using $Native = ::sun::awt::X11::Native;

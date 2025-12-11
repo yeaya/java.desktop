@@ -10,17 +10,13 @@
 
 using $FileArray = $Array<::java::io::File>;
 using $ShellFolderArray = $Array<::sun::awt::shell::ShellFolder>;
-using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ArrayList = ::java::util::ArrayList;
-using $Callable = ::java::util::concurrent::Callable;
-using $ShellFolder = ::sun::awt::shell::ShellFolder;
 using $Win32ShellFolder2 = ::sun::awt::shell::Win32ShellFolder2;
-using $Win32ShellFolder2$FolderDisposer = ::sun::awt::shell::Win32ShellFolder2$FolderDisposer;
 using $Win32ShellFolderManager2 = ::sun::awt::shell::Win32ShellFolderManager2;
 
 namespace sun {

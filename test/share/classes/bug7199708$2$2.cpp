@@ -11,7 +11,6 @@
 
 using $bug7199708 = ::bug7199708;
 using $bug7199708$2 = ::bug7199708$2;
-using $bug7199708$ComponentAction = ::bug7199708$ComponentAction;
 using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;

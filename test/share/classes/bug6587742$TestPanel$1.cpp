@@ -30,7 +30,6 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Panel = ::java::awt::Panel;
 using $ItemEvent = ::java::awt::event::ItemEvent;
-using $ItemListener = ::java::awt::event::ItemListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

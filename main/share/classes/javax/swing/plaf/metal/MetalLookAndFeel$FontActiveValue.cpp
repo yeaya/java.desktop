@@ -18,9 +18,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UIDefaults = ::javax::swing::UIDefaults;
-using $UIDefaults$ActiveValue = ::javax::swing::UIDefaults$ActiveValue;
-using $FontUIResource = ::javax::swing::plaf::FontUIResource;
-using $MetalLookAndFeel = ::javax::swing::plaf::metal::MetalLookAndFeel;
 using $MetalTheme = ::javax::swing::plaf::metal::MetalTheme;
 
 namespace javax {

@@ -11,9 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DateFormat = ::java::text::DateFormat;
-using $Format = ::java::text::Format;
-using $JLabel = ::javax::swing::JLabel;
-using $JTable = ::javax::swing::JTable;
 using $DefaultTableCellRenderer$UIResource = ::javax::swing::table::DefaultTableCellRenderer$UIResource;
 
 namespace javax {

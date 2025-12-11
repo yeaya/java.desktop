@@ -14,7 +14,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SwingConstants = ::javax::swing::SwingConstants;
-using $MenuItemLayoutHelper = ::sun::swing::MenuItemLayoutHelper;
 
 namespace sun {
 	namespace swing {

@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ChangeListener = ::javax::swing::event::ChangeListener;
 
 namespace javax {
 	namespace swing {

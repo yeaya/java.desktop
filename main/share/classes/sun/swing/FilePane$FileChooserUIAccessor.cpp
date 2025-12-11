@@ -10,18 +10,9 @@
 #include <sun/swing/FilePane.h>
 #include <jcpp.h>
 
-using $MouseListener = ::java::awt::event::MouseListener;
-using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Action = ::javax::swing::Action;
-using $JFileChooser = ::javax::swing::JFileChooser;
-using $JList = ::javax::swing::JList;
-using $JPanel = ::javax::swing::JPanel;
-using $ListSelectionListener = ::javax::swing::event::ListSelectionListener;
-using $BasicDirectoryModel = ::javax::swing::plaf::basic::BasicDirectoryModel;
-using $FilePane = ::sun::swing::FilePane;
 
 namespace sun {
 	namespace swing {

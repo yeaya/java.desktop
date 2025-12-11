@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ArrayList = ::java::util::ArrayList;
 
 namespace sun {
 	namespace font {

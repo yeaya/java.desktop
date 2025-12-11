@@ -40,12 +40,10 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JScrollPane = ::javax::swing::JScrollPane;
 using $JViewport = ::javax::swing::JViewport;
 using $Scrollable = ::javax::swing::Scrollable;
 using $SwingConstants = ::javax::swing::SwingConstants;
-using $BasicScrollPaneUI = ::javax::swing::plaf::basic::BasicScrollPaneUI;
 using $UIAction = ::sun::swing::UIAction;
 
 namespace javax {

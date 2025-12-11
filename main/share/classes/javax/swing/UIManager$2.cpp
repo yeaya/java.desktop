@@ -10,9 +10,6 @@
 #include <jcpp.h>
 
 using $Component = ::java::awt::Component;
-using $KeyEventPostProcessor = ::java::awt::KeyEventPostProcessor;
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
@@ -21,7 +18,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $JComponent$KeyboardState = ::javax::swing::JComponent$KeyboardState;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
-using $UIManager = ::javax::swing::UIManager;
 
 namespace javax {
 	namespace swing {

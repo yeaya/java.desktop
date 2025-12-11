@@ -69,25 +69,21 @@ using $SunHints = ::sun::awt::SunHints;
 using $Win32GraphicsConfig = ::sun::awt::Win32GraphicsConfig;
 using $Win32GraphicsDevice = ::sun::awt::Win32GraphicsDevice;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $InvalidPipeException = ::sun::java2d::InvalidPipeException;
 using $ScreenUpdateManager = ::sun::java2d::ScreenUpdateManager;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $SurfaceDataProxy = ::sun::java2d::SurfaceDataProxy;
 using $CompositeType = ::sun::java2d::loops::CompositeType;
-using $FontInfo = ::sun::java2d::loops::FontInfo;
 using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
 using $RenderLoops = ::sun::java2d::loops::RenderLoops;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $XORComposite = ::sun::java2d::loops::XORComposite;
-using $DrawImagePipe = ::sun::java2d::pipe::DrawImagePipe;
 using $PixelDrawPipe = ::sun::java2d::pipe::PixelDrawPipe;
 using $PixelFillPipe = ::sun::java2d::pipe::PixelFillPipe;
 using $PixelToShapeConverter = ::sun::java2d::pipe::PixelToShapeConverter;
 using $Region = ::sun::java2d::pipe::Region;
 using $ShapeDrawPipe = ::sun::java2d::pipe::ShapeDrawPipe;
-using $TextPipe = ::sun::java2d::pipe::TextPipe;
 using $GDIBlitLoops = ::sun::java2d::windows::GDIBlitLoops;
 using $GDIRenderer = ::sun::java2d::windows::GDIRenderer;
 using $WindowsFlags = ::sun::java2d::windows::WindowsFlags;
@@ -165,7 +161,7 @@ $PixelToShapeConverter* GDIWindowSurfaceData::gdiTxPipe = nullptr;
 void GDIWindowSurfaceData::initIDs($Class* xorComp) {
 	$init(GDIWindowSurfaceData);
 	$prepareNativeStatic(GDIWindowSurfaceData, initIDs, void, $Class* xorComp);
-	$invokeNativeStatic(GDIWindowSurfaceData, initIDs, xorComp);
+	$invokeNativeStatic(xorComp);
 	$finishNativeStatic();
 }
 
@@ -318,7 +314,7 @@ $GraphicsConfiguration* GDIWindowSurfaceData::getDeviceConfiguration() {
 
 void GDIWindowSurfaceData::initOps($WComponentPeer* peer, int32_t depth, int32_t redMask, int32_t greenMask, int32_t blueMask, int32_t screen) {
 	$prepareNative(GDIWindowSurfaceData, initOps, void, $WComponentPeer* peer, int32_t depth, int32_t redMask, int32_t greenMask, int32_t blueMask, int32_t screen);
-	$invokeNative(GDIWindowSurfaceData, initOps, peer, depth, redMask, greenMask, blueMask, screen);
+	$invokeNative(peer, depth, redMask, greenMask, blueMask, screen);
 	$finishNative();
 }
 
@@ -421,7 +417,7 @@ bool GDIWindowSurfaceData::copyArea($SunGraphics2D* sg2d, int32_t x, int32_t y, 
 
 void GDIWindowSurfaceData::invalidateSD() {
 	$prepareNative(GDIWindowSurfaceData, invalidateSD, void);
-	$invokeNative(GDIWindowSurfaceData, invalidateSD);
+	$invokeNative();
 	$finishNative();
 }
 

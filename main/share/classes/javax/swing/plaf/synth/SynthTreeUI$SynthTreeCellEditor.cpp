@@ -18,7 +18,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $DefaultCellEditor = ::javax::swing::DefaultCellEditor;
 using $JTextField = ::javax::swing::JTextField;
 using $JTree = ::javax::swing::JTree;
-using $SynthTreeUI = ::javax::swing::plaf::synth::SynthTreeUI;
 using $SynthTreeUI$SynthTreeCellEditor$1 = ::javax::swing::plaf::synth::SynthTreeUI$SynthTreeCellEditor$1;
 using $DefaultTreeCellEditor = ::javax::swing::tree::DefaultTreeCellEditor;
 using $DefaultTreeCellRenderer = ::javax::swing::tree::DefaultTreeCellRenderer;

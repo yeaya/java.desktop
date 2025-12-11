@@ -17,7 +17,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $ReferenceQueue = ::java::lang::ref::ReferenceQueue;
 using $SoftReference = ::java::lang::ref::SoftReference;
 using $Arrays = ::java::util::Arrays;
-using $ImageCache = ::javax::swing::plaf::nimbus::ImageCache;
 
 namespace javax {
 	namespace swing {

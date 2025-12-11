@@ -141,7 +141,6 @@
 
 using $TMSchema$StateArray = $Array<::com::sun::java::swing::plaf::windows::TMSchema$State>;
 using $EnumArray = $Array<::java::lang::Enum>;
-using $TMSchema = ::com::sun::java::swing::plaf::windows::TMSchema;
 using $TMSchema$Control = ::com::sun::java::swing::plaf::windows::TMSchema$Control;
 using $TMSchema$Part = ::com::sun::java::swing::plaf::windows::TMSchema$Part;
 using $TMSchema$Prop = ::com::sun::java::swing::plaf::windows::TMSchema$Prop;

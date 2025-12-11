@@ -15,7 +15,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $List = ::java::util::List;
 using $MidiDevice = ::javax::sound::midi::MidiDevice;
-using $MidiDeviceReceiver = ::javax::sound::midi::MidiDeviceReceiver;
 using $MidiMessage = ::javax::sound::midi::MidiMessage;
 
 namespace com {

@@ -46,7 +46,6 @@
 #undef TEXT_FOREGROUND
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Font = ::java::awt::Font;
 using $Insets = ::java::awt::Insets;
 using $Boolean = ::java::lang::Boolean;

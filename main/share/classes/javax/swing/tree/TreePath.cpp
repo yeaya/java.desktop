@@ -2,7 +2,6 @@
 
 #include <jcpp.h>
 
-using $Serializable = ::java::io::Serializable;
 using $Attribute = ::java::lang::Attribute;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;

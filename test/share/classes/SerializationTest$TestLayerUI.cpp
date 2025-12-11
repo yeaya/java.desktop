@@ -4,7 +4,6 @@
 #include <javax/swing/plaf/LayerUI.h>
 #include <jcpp.h>
 
-using $SerializationTest = ::SerializationTest;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

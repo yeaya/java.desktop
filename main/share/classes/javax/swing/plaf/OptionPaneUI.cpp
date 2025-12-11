@@ -6,7 +6,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JOptionPane = ::javax::swing::JOptionPane;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 
 namespace javax {

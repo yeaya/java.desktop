@@ -23,7 +23,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NumberFormatException = ::java::lang::NumberFormatException;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
 using $View = ::javax::swing::text::View;
-using $CSS = ::javax::swing::text::html::CSS;
 using $CSS$CssValue = ::javax::swing::text::html::CSS$CssValue;
 using $CSS$LengthUnit = ::javax::swing::text::html::CSS$LengthUnit;
 using $HTML = ::javax::swing::text::html::HTML;

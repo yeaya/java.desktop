@@ -69,10 +69,8 @@
 #undef VERTICAL
 #undef VERTICAL_WRAP
 
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $ListSelectionListenerArray = $Array<::javax::swing::event::ListSelectionListener>;
 using $intArray2 = $Array<int32_t, 2>;
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
@@ -86,14 +84,12 @@ using $HeadlessException = ::java::awt::HeadlessException;
 using $Insets = ::java::awt::Insets;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ObjectOutputStream = ::java::io::ObjectOutputStream;
 using $AssertionError = ::java::lang::AssertionError;
 using $Attribute = ::java::lang::Attribute;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -106,7 +102,6 @@ using $Collections = ::java::util::Collections;
 using $EventListener = ::java::util::EventListener;
 using $List = ::java::util::List;
 using $Vector = ::java::util::Vector;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AbstractListModel = ::javax::swing::AbstractListModel;
 using $DefaultListSelectionModel = ::javax::swing::DefaultListSelectionModel;
@@ -126,7 +121,6 @@ using $JViewport = ::javax::swing::JViewport;
 using $ListCellRenderer = ::javax::swing::ListCellRenderer;
 using $ListModel = ::javax::swing::ListModel;
 using $ListSelectionModel = ::javax::swing::ListSelectionModel;
-using $Scrollable = ::javax::swing::Scrollable;
 using $SwingConstants = ::javax::swing::SwingConstants;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $ToolTipManager = ::javax::swing::ToolTipManager;

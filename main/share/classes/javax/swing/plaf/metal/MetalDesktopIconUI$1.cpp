@@ -5,13 +5,11 @@
 #include <jcpp.h>
 
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $BasicDesktopIconUI = ::javax::swing::plaf::basic::BasicDesktopIconUI;
 using $MetalDesktopIconUI = ::javax::swing::plaf::metal::MetalDesktopIconUI;
 
 namespace javax {

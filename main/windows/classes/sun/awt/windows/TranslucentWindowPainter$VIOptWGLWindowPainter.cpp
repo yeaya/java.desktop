@@ -12,7 +12,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $TranslucentWindowPainter = ::sun::awt::windows::TranslucentWindowPainter;
 using $TranslucentWindowPainter$VIOptWindowPainter = ::sun::awt::windows::TranslucentWindowPainter$VIOptWindowPainter;
 using $WCanvasPeer = ::sun::awt::windows::WCanvasPeer;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;

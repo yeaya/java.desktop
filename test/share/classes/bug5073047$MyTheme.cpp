@@ -6,8 +6,6 @@
 #include <javax/swing/plaf/metal/DefaultMetalTheme.h>
 #include <jcpp.h>
 
-using $bug5073047 = ::bug5073047;
-using $Font = ::java::awt::Font;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;

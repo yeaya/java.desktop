@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $MidiDevice = ::javax::sound::midi::MidiDevice;
-using $MidiDeviceReceiver = ::javax::sound::midi::MidiDeviceReceiver;
 using $MidiMessage = ::javax::sound::midi::MidiMessage;
 using $Receiver = ::javax::sound::midi::Receiver;
 

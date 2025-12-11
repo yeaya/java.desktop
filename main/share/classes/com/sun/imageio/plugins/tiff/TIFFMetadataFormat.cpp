@@ -22,7 +22,6 @@ using $Comparable = ::java::lang::Comparable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Module = ::java::lang::Module;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $AbstractMap = ::java::util::AbstractMap;
 using $HashMap = ::java::util::HashMap;

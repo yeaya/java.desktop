@@ -8,8 +8,6 @@
 #include <sun/java2d/DisposerRecord.h>
 #include <jcpp.h>
 
-using $intArray2 = $Array<int32_t, 2>;
-using $longArray2 = $Array<int64_t, 2>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -19,7 +17,6 @@ using $ConcurrentHashMap = ::java::util::concurrent::ConcurrentHashMap;
 using $Font2D = ::sun::font::Font2D;
 using $FontStrikeDesc = ::sun::font::FontStrikeDesc;
 using $StrikeCache = ::sun::font::StrikeCache;
-using $Disposer$PollDisposable = ::sun::java2d::Disposer$PollDisposable;
 using $DisposerRecord = ::sun::java2d::DisposerRecord;
 
 namespace sun {

@@ -238,7 +238,7 @@ $Component* SortingFocusTraversalPolicy::getComponentDownCycle($Component* comp,
 				return nullptr;
 			}
 		} else if (cont->isFocusTraversalPolicyProvider()) {
-			$assign(retComp, traversalDirection == this->FORWARD_TRAVERSAL ? $nc($(cont->getFocusTraversalPolicy()))->getDefaultComponent(cont) : $nc($(cont->getFocusTraversalPolicy()))->getLastComponent(cont));
+			$assign(retComp, traversalDirection == SortingFocusTraversalPolicy::FORWARD_TRAVERSAL ? $nc($(cont->getFocusTraversalPolicy()))->getDefaultComponent(cont) : $nc($(cont->getFocusTraversalPolicy()))->getLastComponent(cont));
 			$init($PlatformLogger$Level);
 			if (retComp != nullptr && $nc(this->log)->isLoggable($PlatformLogger$Level::FINE)) {
 				$nc(this->log)->fine($$str({"### Transfered focus to "_s, retComp, " in the FTP provider "_s, cont}));
@@ -267,7 +267,7 @@ $Component* SortingFocusTraversalPolicy::getComponentAfter($Container* aContaine
 			$throwNew($IllegalArgumentException, "aContainer is not a focus cycle root of aComponent"_s);
 		}
 	}
-	$var($Component, comp, getComponentDownCycle(aComponent, this->FORWARD_TRAVERSAL));
+	$var($Component, comp, getComponentDownCycle(aComponent, SortingFocusTraversalPolicy::FORWARD_TRAVERSAL));
 	if (comp != nullptr) {
 		return comp;
 	}
@@ -301,7 +301,7 @@ $Component* SortingFocusTraversalPolicy::getComponentAfter($Container* aContaine
 		$assign(comp, $cast($Component, cycle->get(index)));
 		if (accept(comp)) {
 			return comp;
-		} else if (($assign(comp, getComponentDownCycle(comp, this->FORWARD_TRAVERSAL))) != nullptr) {
+		} else if (($assign(comp, getComponentDownCycle(comp, SortingFocusTraversalPolicy::FORWARD_TRAVERSAL))) != nullptr) {
 			return comp;
 		}
 	}
@@ -366,7 +366,7 @@ $Component* SortingFocusTraversalPolicy::getComponentBefore($Container* aContain
 	$var($Component, tryComp, nullptr);
 	for (--index; index >= 0; --index) {
 		$assign(comp, $cast($Component, $nc(cycle)->get(index)));
-		if (!$equals(comp, aContainer) && ($assign(tryComp, getComponentDownCycle(comp, this->BACKWARD_TRAVERSAL))) != nullptr) {
+		if (!$equals(comp, aContainer) && ($assign(tryComp, getComponentDownCycle(comp, SortingFocusTraversalPolicy::BACKWARD_TRAVERSAL))) != nullptr) {
 			return tryComp;
 		} else if (accept(comp)) {
 			return comp;
@@ -414,7 +414,7 @@ $Component* SortingFocusTraversalPolicy::getFirstComponent($Container* aContaine
 			{
 				if (accept(comp)) {
 					return comp;
-				} else if (!$equals(comp, aContainer) && ($assign(comp, getComponentDownCycle(comp, this->FORWARD_TRAVERSAL))) != nullptr) {
+				} else if (!$equals(comp, aContainer) && ($assign(comp, getComponentDownCycle(comp, SortingFocusTraversalPolicy::FORWARD_TRAVERSAL))) != nullptr) {
 					return comp;
 				}
 			}

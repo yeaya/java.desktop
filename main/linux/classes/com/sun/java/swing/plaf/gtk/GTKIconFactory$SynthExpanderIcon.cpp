@@ -7,7 +7,6 @@
 #include <javax/swing/plaf/synth/SynthStyle.h>
 #include <jcpp.h>
 
-using $GTKIconFactory = ::com::sun::java::swing::plaf::gtk::GTKIconFactory;
 using $GTKIconFactory$DelegatingIcon = ::com::sun::java::swing::plaf::gtk::GTKIconFactory$DelegatingIcon;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;

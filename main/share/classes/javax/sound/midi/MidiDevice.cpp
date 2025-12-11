@@ -6,14 +6,9 @@
 #include <javax/sound/midi/Transmitter.h>
 #include <jcpp.h>
 
-using $AutoCloseable = ::java::lang::AutoCloseable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $List = ::java::util::List;
-using $MidiDevice$Info = ::javax::sound::midi::MidiDevice$Info;
-using $Receiver = ::javax::sound::midi::Receiver;
-using $Transmitter = ::javax::sound::midi::Transmitter;
 
 namespace javax {
 	namespace sound {

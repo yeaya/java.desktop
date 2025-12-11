@@ -13,14 +13,12 @@
 #undef WINDOW
 
 using $Rectangle = ::java::awt::Rectangle;
-using $ColorModel = ::java::awt::image::ColorModel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $X11ComponentPeer = ::sun::awt::X11ComponentPeer;
-using $X11GraphicsConfig = ::sun::awt::X11GraphicsConfig;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $GLXGraphicsConfig = ::sun::java2d::opengl::GLXGraphicsConfig;
 using $GLXSurfaceData = ::sun::java2d::opengl::GLXSurfaceData;

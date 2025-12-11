@@ -6,7 +6,6 @@
 #include <javax/swing/plaf/metal/MetalLookAndFeel.h>
 #include <jcpp.h>
 
-using $bug4331767 = ::bug4331767;
 using $bug4331767$BrokenUIDefaults = ::bug4331767$BrokenUIDefaults;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

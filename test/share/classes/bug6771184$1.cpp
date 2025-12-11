@@ -12,7 +12,6 @@
 #undef MIN_VALUE
 
 using $intArray2 = $Array<int32_t, 2>;
-using $bug6771184 = ::bug6771184;
 using $bug6771184$1$1 = ::bug6771184$1$1;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
@@ -20,13 +19,11 @@ using $Exception = ::java::lang::Exception;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JTextArea = ::javax::swing::JTextArea;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $Highlighter = ::javax::swing::text::Highlighter;
 using $Highlighter$HighlightPainter = ::javax::swing::text::Highlighter$HighlightPainter;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $MethodInfo _bug6771184$1_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(bug6771184$1::*)()>(&bug6771184$1::init$))},

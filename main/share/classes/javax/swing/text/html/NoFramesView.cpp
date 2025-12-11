@@ -16,7 +16,6 @@ using $Shape = ::java::awt::Shape;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $BoxView = ::javax::swing::text::BoxView;
 using $Element = ::javax::swing::text::Element;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $View = ::javax::swing::text::View;

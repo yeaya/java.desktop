@@ -44,7 +44,6 @@
 #undef TRUE
 
 using $Applet = ::java::applet::Applet;
-using $AWTEvent = ::java::awt::AWTEvent;
 using $AWTKeyStroke = ::java::awt::AWTKeyStroke;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
@@ -61,8 +60,6 @@ using $MenuComponent = ::java::awt::MenuComponent;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $Window = ::java::awt::Window;
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $FramePeer = ::java::awt::peer::FramePeer;
@@ -76,7 +73,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $EventObject = ::java::util::EventObject;
 using $List = ::java::util::List;
 using $Set = ::java::util::Set;
 using $AWTAccessor = ::sun::awt::AWTAccessor;

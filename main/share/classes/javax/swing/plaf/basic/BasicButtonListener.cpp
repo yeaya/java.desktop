@@ -38,20 +38,14 @@
 #undef WHEN_FOCUSED
 #undef WHEN_IN_FOCUSED_WINDOW
 
-using $Component = ::java::awt::Component;
 using $FocusEvent = ::java::awt::event::FocusEvent;
-using $FocusListener = ::java::awt::event::FocusListener;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $MouseListener = ::java::awt::event::MouseListener;
-using $MouseMotionListener = ::java::awt::event::MouseMotionListener;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $Action = ::javax::swing::Action;
 using $ActionMap = ::javax::swing::ActionMap;
@@ -64,7 +58,6 @@ using $JRootPane = ::javax::swing::JRootPane;
 using $KeyStroke = ::javax::swing::KeyStroke;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $ChangeEvent = ::javax::swing::event::ChangeEvent;
-using $ChangeListener = ::javax::swing::event::ChangeListener;
 using $ButtonUI = ::javax::swing::plaf::ButtonUI;
 using $ComponentInputMapUIResource = ::javax::swing::plaf::ComponentInputMapUIResource;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;

@@ -24,7 +24,6 @@
 #undef MOUSE_DRAGGED
 
 using $AWTEvent = ::java::awt::AWTEvent;
-using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
 using $TrayIcon = ::java::awt::TrayIcon;
 using $ActionEvent = ::java::awt::event::ActionEvent;
@@ -32,15 +31,10 @@ using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $MouseListener = ::java::awt::event::MouseListener;
-using $MouseMotionListener = ::java::awt::event::MouseMotionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $AppContext = ::sun::awt::AppContext;
-using $SunToolkit = ::sun::awt::SunToolkit;
-using $InfoWindow = ::sun::awt::X11::InfoWindow;
 using $InfoWindow$Balloon = ::sun::awt::X11::InfoWindow$Balloon;
 using $InfoWindow$Tooltip = ::sun::awt::X11::InfoWindow$Tooltip;
 using $XBaseWindow = ::sun::awt::X11::XBaseWindow;

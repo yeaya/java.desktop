@@ -13,7 +13,6 @@ using $Font = ::java::awt::Font;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $BasicHTML = ::javax::swing::plaf::basic::BasicHTML;
 using $HTMLDocument = ::javax::swing::text::html::HTMLDocument;
 using $StyleSheet = ::javax::swing::text::html::StyleSheet;
 using $SwingUtilities2 = ::sun::swing::SwingUtilities2;

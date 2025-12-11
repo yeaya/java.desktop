@@ -32,7 +32,6 @@
 #undef ACTION_REFERENCE
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $HeadlessException = ::java::awt::HeadlessException;
 using $Point = ::java::awt::Point;
@@ -53,7 +52,6 @@ using $LightweightPeer = ::java::awt::peer::LightweightPeer;
 using $ObjectInputStream = ::java::io::ObjectInputStream;
 using $ObjectInputStream$GetField = ::java::io::ObjectInputStream$GetField;
 using $ObjectOutputStream = ::java::io::ObjectOutputStream;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;

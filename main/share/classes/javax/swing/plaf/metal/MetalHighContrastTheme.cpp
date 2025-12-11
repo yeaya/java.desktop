@@ -26,7 +26,6 @@ using $BorderUIResource = ::javax::swing::plaf::BorderUIResource;
 using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
 using $BasicBorders$MarginBorder = ::javax::swing::plaf::basic::BasicBorders$MarginBorder;
 using $DefaultMetalTheme = ::javax::swing::plaf::metal::DefaultMetalTheme;
-using $MetalTheme = ::javax::swing::plaf::metal::MetalTheme;
 
 namespace javax {
 	namespace swing {

@@ -57,7 +57,6 @@ using $ModelPerformerArray = $Array<::com::sun::media::sound::ModelPerformer>;
 using $ModelSourceArray = $Array<::com::sun::media::sound::ModelSource>;
 using $SoftChannelArray = $Array<::com::sun::media::sound::SoftChannel>;
 using $SoftControlArray = $Array<::com::sun::media::sound::SoftControl>;
-using $SoftVoiceArray = $Array<::com::sun::media::sound::SoftVoice>;
 using $doubleArray2 = $Array<double, 2>;
 using $booleanArray2 = $Array<bool, 2>;
 using $ModelChannelMixer = ::com::sun::media::sound::ModelChannelMixer;
@@ -104,8 +103,6 @@ using $Map = ::java::util::Map;
 using $Set = ::java::util::Set;
 using $MidiChannel = ::javax::sound::midi::MidiChannel;
 using $Patch = ::javax::sound::midi::Patch;
-using $VoiceStatus = ::javax::sound::midi::VoiceStatus;
-using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 
 namespace com {
 	namespace sun {

@@ -10,8 +10,6 @@
 
 using $JFileChooserCombolistSelection = ::JFileChooserCombolistSelection;
 using $TestDialog4Sysout = ::TestDialog4Sysout;
-using $Dialog = ::java::awt::Dialog;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

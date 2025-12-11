@@ -31,7 +31,6 @@
 
 using $MotifTextAreaUI = ::com::sun::java::swing::plaf::motif::MotifTextAreaUI;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Font = ::java::awt::Font;
 using $Insets = ::java::awt::Insets;
 using $SystemColor = ::java::awt::SystemColor;
@@ -50,7 +49,6 @@ using $CompoundBorder = ::javax::swing::border::CompoundBorder;
 using $EmptyBorder = ::javax::swing::border::EmptyBorder;
 using $BorderUIResource$CompoundBorderUIResource = ::javax::swing::plaf::BorderUIResource$CompoundBorderUIResource;
 using $UIResource = ::javax::swing::plaf::UIResource;
-using $BasicTextUI = ::javax::swing::plaf::basic::BasicTextUI;
 using $Caret = ::javax::swing::text::Caret;
 using $DefaultCaret = ::javax::swing::text::DefaultCaret;
 using $JTextComponent = ::javax::swing::text::JTextComponent;

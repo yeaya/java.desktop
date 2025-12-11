@@ -70,7 +70,6 @@
 #undef X_AXIS
 
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
-using $AWTKeyStroke = ::java::awt::AWTKeyStroke;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;

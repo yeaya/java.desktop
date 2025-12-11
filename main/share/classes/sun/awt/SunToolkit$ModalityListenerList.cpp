@@ -15,7 +15,6 @@ using $Iterator = ::java::util::Iterator;
 using $Vector = ::java::util::Vector;
 using $ModalityEvent = ::sun::awt::ModalityEvent;
 using $ModalityListener = ::sun::awt::ModalityListener;
-using $SunToolkit = ::sun::awt::SunToolkit;
 
 namespace sun {
 	namespace awt {

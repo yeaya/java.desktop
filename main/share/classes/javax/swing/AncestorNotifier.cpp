@@ -18,7 +18,6 @@
 #undef ANCESTOR_MOVED
 #undef ANCESTOR_REMOVED
 
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $AncestorListenerArray = $Array<::javax::swing::event::AncestorListener>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
@@ -27,12 +26,10 @@ using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $ComponentListener = ::java::awt::event::ComponentListener;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $EventListener = ::java::util::EventListener;
-using $EventObject = ::java::util::EventObject;
 using $JComponent = ::javax::swing::JComponent;
 using $AncestorEvent = ::javax::swing::event::AncestorEvent;
 using $AncestorListener = ::javax::swing::event::AncestorListener;

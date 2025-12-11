@@ -9,7 +9,6 @@
 
 using $ColorModel = ::java::awt::image::ColorModel;
 using $ImageConsumer = ::java::awt::image::ImageConsumer;
-using $ImageFilter = ::java::awt::image::ImageFilter;
 using $ReplicateScaleFilter = ::java::awt::image::ReplicateScaleFilter;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

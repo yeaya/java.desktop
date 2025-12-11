@@ -29,8 +29,6 @@
 #include <sun/java2d/pipe/Region.h>
 #include <jcpp.h>
 
-using $GraphicsConfigurationArray = $Array<::java::awt::GraphicsConfiguration>;
-using $GraphicsDeviceArray = $Array<::java::awt::GraphicsDevice>;
 using $AWTEvent = ::java::awt::AWTEvent;
 using $BufferCapabilities = ::java::awt::BufferCapabilities;
 using $BufferCapabilities$FlipContents = ::java::awt::BufferCapabilities$FlipContents;
@@ -49,7 +47,6 @@ using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
 using $PaintEvent = ::java::awt::event::PaintEvent;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
-using $CanvasPeer = ::java::awt::peer::CanvasPeer;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -58,7 +55,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $SunToolkit = ::sun::awt::SunToolkit;
 using $XComponentPeer = ::sun::awt::X11::XComponentPeer;
 using $XCreateWindowParams = ::sun::awt::X11::XCreateWindowParams;
-using $XWindow = ::sun::awt::X11::XWindow;
 using $X11GraphicsConfig = ::sun::awt::X11GraphicsConfig;
 using $X11GraphicsDevice = ::sun::awt::X11GraphicsDevice;
 using $Region = ::sun::java2d::pipe::Region;

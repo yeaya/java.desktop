@@ -159,7 +159,7 @@ $Object* allocate$Raster($Class* clazz) {
 void Raster::initIDs() {
 	$init(Raster);
 	$prepareNativeStatic(Raster, initIDs, void);
-	$invokeNativeStatic(Raster, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

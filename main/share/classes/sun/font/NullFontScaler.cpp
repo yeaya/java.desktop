@@ -122,7 +122,7 @@ int64_t NullFontScaler::getNullScalerContext() {
 	$init(NullFontScaler);
 	int64_t $ret = 0;
 	$prepareNativeStatic(NullFontScaler, getNullScalerContext, int64_t);
-	$ret = $invokeNativeStatic(NullFontScaler, getNullScalerContext);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -130,7 +130,7 @@ int64_t NullFontScaler::getNullScalerContext() {
 int64_t NullFontScaler::getGlyphImage(int64_t pScalerContext, int32_t glyphCode) {
 	int64_t $ret = 0;
 	$prepareNative(NullFontScaler, getGlyphImage, int64_t, int64_t pScalerContext, int32_t glyphCode);
-	$ret = $invokeNative(NullFontScaler, getGlyphImage, pScalerContext, glyphCode);
+	$ret = $invokeNative(pScalerContext, glyphCode);
 	$finishNative();
 	return $ret;
 }

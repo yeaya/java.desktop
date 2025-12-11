@@ -16,7 +16,6 @@
 #include <javax/swing/plaf/metal/MetalUtils.h>
 #include <jcpp.h>
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;

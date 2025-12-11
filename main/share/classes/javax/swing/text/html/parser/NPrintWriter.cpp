@@ -7,7 +7,6 @@
 
 using $FilterOutputStream = ::java::io::FilterOutputStream;
 using $OutputStream = ::java::io::OutputStream;
-using $PrintStream = ::java::io::PrintStream;
 using $PrintWriter = ::java::io::PrintWriter;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

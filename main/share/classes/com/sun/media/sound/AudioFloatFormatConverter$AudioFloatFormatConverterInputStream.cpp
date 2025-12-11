@@ -8,7 +8,6 @@
 #include <jcpp.h>
 
 using $AudioFloatConverter = ::com::sun::media::sound::AudioFloatConverter;
-using $AudioFloatFormatConverter = ::com::sun::media::sound::AudioFloatFormatConverter;
 using $AudioFloatInputStream = ::com::sun::media::sound::AudioFloatInputStream;
 using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;

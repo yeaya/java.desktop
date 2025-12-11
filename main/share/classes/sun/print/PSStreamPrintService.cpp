@@ -113,7 +113,6 @@ using $AttributeSet = ::javax::print::attribute::AttributeSet;
 using $AttributeSetUtilities = ::javax::print::attribute::AttributeSetUtilities;
 using $HashAttributeSet = ::javax::print::attribute::HashAttributeSet;
 using $HashPrintServiceAttributeSet = ::javax::print::attribute::HashPrintServiceAttributeSet;
-using $IntegerSyntax = ::javax::print::attribute::IntegerSyntax;
 using $PrintServiceAttribute = ::javax::print::attribute::PrintServiceAttribute;
 using $PrintServiceAttributeSet = ::javax::print::attribute::PrintServiceAttributeSet;
 using $Size2DSyntax = ::javax::print::attribute::Size2DSyntax;
@@ -138,7 +137,6 @@ using $PrintServiceAttributeListener = ::javax::print::event::PrintServiceAttrib
 using $PSPrinterJob = ::sun::print::PSPrinterJob;
 using $PSStreamPrintJob = ::sun::print::PSStreamPrintJob;
 using $PSStreamPrinterFactory = ::sun::print::PSStreamPrinterFactory;
-using $SunPrinterJobService = ::sun::print::SunPrinterJobService;
 
 namespace sun {
 	namespace print {

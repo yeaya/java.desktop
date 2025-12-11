@@ -3,10 +3,8 @@
 #include <javax/print/attribute/Attribute.h>
 #include <jcpp.h>
 
-using $AttributeArray = $Array<::javax::print::attribute::Attribute>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Attribute = ::javax::print::attribute::Attribute;
 
 namespace javax {
 	namespace print {

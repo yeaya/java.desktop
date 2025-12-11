@@ -8,17 +8,14 @@
 #include <sun/awt/X11/XWindowPeer.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor;
-using $XWindow = ::sun::awt::X11::XWindow;
 using $XWindowPeer = ::sun::awt::X11::XWindowPeer;
 
 namespace sun {

@@ -17,7 +17,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $Exception = ::java::lang::Exception;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $Document = ::javax::swing::text::Document;
 using $HTMLEditorKit = ::javax::swing::text::html::HTMLEditorKit;
 

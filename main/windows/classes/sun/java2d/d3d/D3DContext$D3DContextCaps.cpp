@@ -13,7 +13,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $D3DContext = ::sun::java2d::d3d::D3DContext;
 using $ContextCapabilities = ::sun::java2d::pipe::hw::ContextCapabilities;
 
 namespace sun {

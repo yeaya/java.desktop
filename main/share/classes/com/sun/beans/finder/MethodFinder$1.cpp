@@ -10,8 +10,6 @@
 #include <jcpp.h>
 
 using $ExecutableArray = $Array<::java::lang::reflect::Executable>;
-using $MethodArray = $Array<::java::lang::reflect::Method>;
-using $AbstractFinder = ::com::sun::beans::finder::AbstractFinder;
 using $MethodFinder = ::com::sun::beans::finder::MethodFinder;
 using $Signature = ::com::sun::beans::finder::Signature;
 using $SignatureException = ::com::sun::beans::finder::SignatureException;
@@ -22,7 +20,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $Exception = ::java::lang::Exception;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Executable = ::java::lang::reflect::Executable;
 using $Method = ::java::lang::reflect::Method;
 
 namespace com {

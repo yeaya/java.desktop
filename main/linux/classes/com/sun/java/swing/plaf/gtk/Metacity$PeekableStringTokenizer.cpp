@@ -4,7 +4,6 @@
 #include <java/util/StringTokenizer.h>
 #include <jcpp.h>
 
-using $Metacity = ::com::sun::java::swing::plaf::gtk::Metacity;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

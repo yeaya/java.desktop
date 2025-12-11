@@ -8,7 +8,6 @@
 #include <javax/swing/border/Border.h>
 #include <jcpp.h>
 
-using $WindowsTableHeaderUI = ::com::sun::java::swing::plaf::windows::WindowsTableHeaderUI;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Insets = ::java::awt::Insets;
@@ -18,7 +17,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Icon = ::javax::swing::Icon;
 using $Border = ::javax::swing::border::Border;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace com {
 	namespace sun {

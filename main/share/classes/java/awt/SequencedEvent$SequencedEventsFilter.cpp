@@ -14,7 +14,6 @@
 #undef REJECT
 
 using $AWTEvent = ::java::awt::AWTEvent;
-using $EventFilter = ::java::awt::EventFilter;
 using $EventFilter$FilterAction = ::java::awt::EventFilter$FilterAction;
 using $SentEvent = ::java::awt::SentEvent;
 using $SequencedEvent = ::java::awt::SequencedEvent;
@@ -22,7 +21,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractSequentialList = ::java::util::AbstractSequentialList;
 using $Iterator = ::java::util::Iterator;
 using $LinkedList = ::java::util::LinkedList;
 

@@ -77,7 +77,6 @@
 
 using $ActionArray = $Array<::javax::swing::Action>;
 using $Component = ::java::awt::Component;
-using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Container = ::java::awt::Container;
 using $EventQueue = ::java::awt::EventQueue;
 using $IllegalComponentStateException = ::java::awt::IllegalComponentStateException;
@@ -86,7 +85,6 @@ using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ComponentAdapter = ::java::awt::event::ComponentAdapter;
 using $ComponentListener = ::java::awt::event::ComponentListener;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
@@ -102,7 +100,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $BreakIterator = ::java::text::BreakIterator;
 using $CharacterIterator = ::java::text::CharacterIterator;
-using $Locale = ::java::util::Locale;
 using $AccessibleAction = ::javax::accessibility::AccessibleAction;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AccessibleEditableText = ::javax::accessibility::AccessibleEditableText;

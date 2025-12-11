@@ -101,7 +101,6 @@ using $RasterFormatException = ::java::awt::image::RasterFormatException;
 using $SampleModel = ::java::awt::image::SampleModel;
 using $TileObserver = ::java::awt::image::TileObserver;
 using $WritableRaster = ::java::awt::image::WritableRaster;
-using $WritableRenderedImage = ::java::awt::image::WritableRenderedImage;
 using $ArrayIndexOutOfBoundsException = ::java::lang::ArrayIndexOutOfBoundsException;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -268,7 +267,7 @@ void BufferedImage::finalize() {
 void BufferedImage::initIDs() {
 	$init(BufferedImage);
 	$prepareNativeStatic(BufferedImage, initIDs, void);
-	$invokeNativeStatic(BufferedImage, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

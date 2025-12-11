@@ -26,9 +26,7 @@
 #undef TYPE_BICUBIC
 
 using $Color = ::java::awt::Color;
-using $Composite = ::java::awt::Composite;
 using $Image = ::java::awt::Image;
-using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $AffineTransformOp = ::java::awt::image::AffineTransformOp;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $BufferedImageOp = ::java::awt::image::BufferedImageOp;
@@ -44,7 +42,6 @@ using $OGLBlitLoops = ::sun::java2d::opengl::OGLBlitLoops;
 using $OGLGraphicsConfig = ::sun::java2d::opengl::OGLGraphicsConfig;
 using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;
 using $BufferedBufImgOps = ::sun::java2d::pipe::BufferedBufImgOps;
-using $Region = ::sun::java2d::pipe::Region;
 
 namespace sun {
 	namespace java2d {

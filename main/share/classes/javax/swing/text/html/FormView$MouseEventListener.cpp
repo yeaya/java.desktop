@@ -6,7 +6,6 @@
 #include <javax/swing/text/html/FormView.h>
 #include <jcpp.h>
 
-using $Point = ::java::awt::Point;
 using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;

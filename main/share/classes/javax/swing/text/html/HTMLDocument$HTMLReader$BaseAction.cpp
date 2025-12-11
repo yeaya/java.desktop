@@ -19,7 +19,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $MalformedURLException = ::java::net::MalformedURLException;
 using $URL = ::java::net::URL;
-using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $HTML$Attribute = ::javax::swing::text::html::HTML$Attribute;
 using $HTML$Tag = ::javax::swing::text::html::HTML$Tag;

@@ -32,7 +32,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $URL = ::java::net::URL;
 using $AudioFileFormat = ::javax::sound::sampled::AudioFileFormat;
 using $AudioFormat = ::javax::sound::sampled::AudioFormat;

@@ -13,18 +13,12 @@
 
 using $JFIFMarkerSegment = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment;
 using $JPEGBuffer = ::com::sun::imageio::plugins::jpeg::JPEGBuffer;
-using $JPEGImageReader = ::com::sun::imageio::plugins::jpeg::JPEGImageReader;
-using $JPEGImageWriter = ::com::sun::imageio::plugins::jpeg::JPEGImageWriter;
-using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CloneNotSupportedException = ::java::lang::CloneNotSupportedException;
 using $Cloneable = ::java::lang::Cloneable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $IIOMetadataNode = ::javax::imageio::metadata::IIOMetadataNode;
-using $ImageInputStream = ::javax::imageio::stream::ImageInputStream;
-using $ImageOutputStream = ::javax::imageio::stream::ImageOutputStream;
 
 namespace com {
 	namespace sun {

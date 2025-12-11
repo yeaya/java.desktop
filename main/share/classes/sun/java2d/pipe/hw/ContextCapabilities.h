@@ -39,16 +39,16 @@ public:
 	virtual $String* getAdapterId();
 	virtual int32_t getCaps();
 	virtual $String* toString() override;
-	static const int32_t CAPS_EMPTY = (0 << 0);
-	static const int32_t CAPS_RT_PLAIN_ALPHA = (1 << 1);
-	static const int32_t CAPS_RT_TEXTURE_ALPHA = (1 << 2);
-	static const int32_t CAPS_RT_TEXTURE_OPAQUE = (1 << 3);
-	static const int32_t CAPS_MULTITEXTURE = (1 << 4);
-	static const int32_t CAPS_TEXNONPOW2 = (1 << 5);
-	static const int32_t CAPS_TEXNONSQUARE = (1 << 6);
-	static const int32_t CAPS_PS20 = (1 << 7);
-	static const int32_t CAPS_PS30 = (1 << 8);
-	static const int32_t FIRST_PRIVATE_CAP = (1 << 16);
+	static const int32_t CAPS_EMPTY = 0; // (0 << 0)
+	static const int32_t CAPS_RT_PLAIN_ALPHA = 2; // (1 << 1)
+	static const int32_t CAPS_RT_TEXTURE_ALPHA = 4; // (1 << 2)
+	static const int32_t CAPS_RT_TEXTURE_OPAQUE = 8; // (1 << 3)
+	static const int32_t CAPS_MULTITEXTURE = 16; // (1 << 4)
+	static const int32_t CAPS_TEXNONPOW2 = 32; // (1 << 5)
+	static const int32_t CAPS_TEXNONSQUARE = 64; // (1 << 6)
+	static const int32_t CAPS_PS20 = 128; // (1 << 7)
+	static const int32_t CAPS_PS30 = 256; // (1 << 8)
+	static const int32_t FIRST_PRIVATE_CAP = 65536; // (1 << 16)
 	int32_t caps = 0;
 	$String* adapterId = nullptr;
 };

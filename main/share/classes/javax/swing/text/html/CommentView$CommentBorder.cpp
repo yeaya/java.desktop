@@ -16,7 +16,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $LineBorder = ::javax::swing::border::LineBorder;
-using $CommentView = ::javax::swing::text::html::CommentView;
 
 namespace javax {
 	namespace swing {

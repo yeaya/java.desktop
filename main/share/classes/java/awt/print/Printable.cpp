@@ -7,8 +7,6 @@
 #undef NO_SUCH_PAGE
 #undef PAGE_EXISTS
 
-using $Graphics = ::java::awt::Graphics;
-using $PageFormat = ::java::awt::print::PageFormat;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

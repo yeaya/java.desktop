@@ -15,7 +15,6 @@
 
 using $JColorChooserTest$1 = ::JColorChooserTest$1;
 using $GridBagLayout = ::java::awt::GridBagLayout;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;

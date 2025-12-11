@@ -10,8 +10,6 @@
 
 using $RectangleArray = $Array<::java::awt::Rectangle>;
 using $bug6348946 = ::bug6348946;
-using $Component = ::java::awt::Component;
-using $Dimension = ::java::awt::Dimension;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -19,7 +17,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JPanel = ::javax::swing::JPanel;
 
 $FieldInfo _bug6348946$3_FieldInfo_[] = {

@@ -35,7 +35,6 @@ using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $HTML$Attribute = ::javax::swing::text::html::HTML$Attribute;
 using $HTML$Tag = ::javax::swing::text::html::HTML$Tag;
 

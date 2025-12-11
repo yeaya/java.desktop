@@ -8,8 +8,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Comparator = ::java::util::Comparator;
-using $Spans = ::sun::java2d::Spans;
 using $Spans$Span = ::sun::java2d::Spans$Span;
 
 namespace sun {

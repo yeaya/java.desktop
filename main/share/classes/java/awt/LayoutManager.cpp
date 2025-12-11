@@ -4,9 +4,6 @@
 #include <java/awt/Dimension.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
-using $Dimension = ::java::awt::Dimension;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

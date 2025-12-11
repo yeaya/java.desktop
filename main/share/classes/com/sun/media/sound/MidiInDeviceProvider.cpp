@@ -132,7 +132,7 @@ int32_t MidiInDeviceProvider::nGetNumDevices() {
 	$init(MidiInDeviceProvider);
 	int32_t $ret = 0;
 	$prepareNativeStatic(MidiInDeviceProvider, nGetNumDevices, int32_t);
-	$ret = $invokeNativeStatic(MidiInDeviceProvider, nGetNumDevices);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -141,7 +141,7 @@ $String* MidiInDeviceProvider::nGetName(int32_t index) {
 	$init(MidiInDeviceProvider);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(MidiInDeviceProvider, nGetName, $String*, int32_t index);
-	$assign($ret, $invokeNativeStatic(MidiInDeviceProvider, nGetName, index));
+	$assign($ret, $invokeNativeStaticObject(index));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -150,7 +150,7 @@ $String* MidiInDeviceProvider::nGetVendor(int32_t index) {
 	$init(MidiInDeviceProvider);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(MidiInDeviceProvider, nGetVendor, $String*, int32_t index);
-	$assign($ret, $invokeNativeStatic(MidiInDeviceProvider, nGetVendor, index));
+	$assign($ret, $invokeNativeStaticObject(index));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -159,7 +159,7 @@ $String* MidiInDeviceProvider::nGetDescription(int32_t index) {
 	$init(MidiInDeviceProvider);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(MidiInDeviceProvider, nGetDescription, $String*, int32_t index);
-	$assign($ret, $invokeNativeStatic(MidiInDeviceProvider, nGetDescription, index));
+	$assign($ret, $invokeNativeStaticObject(index));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -168,7 +168,7 @@ $String* MidiInDeviceProvider::nGetVersion(int32_t index) {
 	$init(MidiInDeviceProvider);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(MidiInDeviceProvider, nGetVersion, $String*, int32_t index);
-	$assign($ret, $invokeNativeStatic(MidiInDeviceProvider, nGetVersion, index));
+	$assign($ret, $invokeNativeStaticObject(index));
 	$finishNativeStatic();
 	return $ret;
 }

@@ -8,14 +8,12 @@
 #include <jcpp.h>
 
 using $bug6848475 = ::bug6848475;
-using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
 using $Robot = ::java::awt::Robot;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JSlider = ::javax::swing::JSlider;
 
 $MethodInfo _bug6848475$2_MethodInfo_[] = {

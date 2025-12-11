@@ -12,11 +12,9 @@
 #undef LOG
 #undef LOGMAP
 
-using $Shape = ::java::awt::Shape;
 using $LayoutPath = ::java::awt::font::LayoutPath;
 using $Point2D = ::java::awt::geom::Point2D;
 using $Point2D$Double = ::java::awt::geom::Point2D$Double;
-using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;

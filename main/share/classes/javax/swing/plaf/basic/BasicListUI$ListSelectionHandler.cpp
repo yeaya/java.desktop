@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ListSelectionEvent = ::javax::swing::event::ListSelectionEvent;
-using $ListSelectionListener = ::javax::swing::event::ListSelectionListener;
 using $BasicListUI = ::javax::swing::plaf::basic::BasicListUI;
 using $BasicListUI$Handler = ::javax::swing::plaf::basic::BasicListUI$Handler;
 

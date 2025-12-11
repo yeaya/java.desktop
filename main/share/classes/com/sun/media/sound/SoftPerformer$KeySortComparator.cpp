@@ -7,11 +7,9 @@
 
 using $ModelIdentifier = ::com::sun::media::sound::ModelIdentifier;
 using $ModelSource = ::com::sun::media::sound::ModelSource;
-using $SoftPerformer = ::com::sun::media::sound::SoftPerformer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Comparator = ::java::util::Comparator;
 
 namespace com {
 	namespace sun {

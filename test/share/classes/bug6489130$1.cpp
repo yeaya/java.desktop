@@ -19,7 +19,6 @@ using $bug6489130$1$1 = ::bug6489130$1$1;
 using $Frame = ::java::awt::Frame;
 using $Window = ::java::awt::Window;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -28,7 +27,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $CountDownLatch = ::java::util::concurrent::CountDownLatch;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
-using $Timer = ::javax::swing::Timer;
 
 $FieldInfo _bug6489130$1_FieldInfo_[] = {
 	{"this$0", "Lbug6489130;", nullptr, $FINAL | $SYNTHETIC, $field(bug6489130$1, this$0)},
@@ -94,7 +92,7 @@ void bug6489130$1::actionPerformed($ActionEvent* e) {
 	case 3:
 		{
 			{
-				$var($WindowArray, windows, $Frame::getWindows());
+				$var($WindowArray, windows, $Window::getWindows());
 				if ($nc(windows)->length > 0) {
 					$nc(windows->get(0))->dispose();
 				}

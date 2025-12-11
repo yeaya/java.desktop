@@ -6,7 +6,6 @@
 #include <java/awt/Point.h>
 #include <jcpp.h>
 
-using $Util = ::Util;
 using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Point = ::java::awt::Point;
@@ -15,7 +14,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Callable = ::java::util::concurrent::Callable;
 
 $FieldInfo _Util$1_FieldInfo_[] = {
 	{"val$component", "Ljava/awt/Component;", nullptr, $FINAL | $SYNTHETIC, $field(Util$1, val$component)},

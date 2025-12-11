@@ -89,13 +89,11 @@
 
 using $ActionListenerArray = $Array<::java::awt::event::ActionListener>;
 using $FileArray = $Array<::java::io::File>;
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $FileFilterArray = $Array<::javax::swing::filechooser::FileFilter>;
 using $AWTEvent = ::java::awt::AWTEvent;
 using $BorderLayout = ::java::awt::BorderLayout;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
-using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $Dialog = ::java::awt::Dialog;
@@ -130,7 +128,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $EventListener = ::java::util::EventListener;
 using $Vector = ::java::util::Vector;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $Icon = ::javax::swing::Icon;
 using $JComponent = ::javax::swing::JComponent;

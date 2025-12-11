@@ -8,7 +8,6 @@
 #include <javax/swing/AbstractAction.h>
 #include <jcpp.h>
 
-using $WindowsLookAndFeel = ::com::sun::java::swing::plaf::windows::WindowsLookAndFeel;
 using $Toolkit = ::java::awt::Toolkit;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ClassInfo = ::java::lang::ClassInfo;

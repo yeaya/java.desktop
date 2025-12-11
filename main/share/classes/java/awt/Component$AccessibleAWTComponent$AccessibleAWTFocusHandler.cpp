@@ -11,11 +11,9 @@
 #undef ACCESSIBLE_STATE_PROPERTY
 #undef FOCUSED
 
-using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $FocusEvent = ::java::awt::event::FocusEvent;
 using $FocusListener = ::java::awt::event::FocusListener;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

@@ -21,15 +21,10 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $DefaultStyledDocument = ::javax::swing::text::DefaultStyledDocument;
 using $Element = ::javax::swing::text::Element;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
-using $StyledEditorKit$StyledTextAction = ::javax::swing::text::StyledEditorKit$StyledTextAction;
 using $HTML$Tag = ::javax::swing::text::html::HTML$Tag;
 using $HTMLDocument = ::javax::swing::text::html::HTMLDocument;
-using $HTMLEditorKit = ::javax::swing::text::html::HTMLEditorKit;
-using $HTMLEditorKit$HTMLTextAction = ::javax::swing::text::html::HTMLEditorKit$HTMLTextAction;
 using $HTMLEditorKit$InsertHTMLTextAction = ::javax::swing::text::html::HTMLEditorKit$InsertHTMLTextAction;
 
 namespace javax {

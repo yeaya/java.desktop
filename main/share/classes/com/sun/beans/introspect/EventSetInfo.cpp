@@ -18,16 +18,14 @@
 
 #undef TYPE
 
-using $TypeArray = $Array<::java::lang::reflect::Type>;
-using $ClassInfo = ::com::sun::beans::introspect::ClassInfo;
-using $MethodInfo = ::com::sun::beans::introspect::MethodInfo;
-using $1ClassInfo = ::java::lang::ClassInfo;
+using $1ClassInfo = ::com::sun::beans::introspect::ClassInfo;
+using $1MethodInfo = ::com::sun::beans::introspect::MethodInfo;
+using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
-using $1MethodInfo = ::java::lang::MethodInfo;
+using $MethodInfo = ::java::lang::MethodInfo;
 using $Void = ::java::lang::Void;
 using $Method = ::java::lang::reflect::Method;
 using $Modifier = ::java::lang::reflect::Modifier;
-using $Type = ::java::lang::reflect::Type;
 using $AbstractMap = ::java::util::AbstractMap;
 using $Collection = ::java::util::Collection;
 using $Collections = ::java::util::Collections;
@@ -50,12 +48,12 @@ $FieldInfo _EventSetInfo_FieldInfo_[] = {
 	{}
 };
 
-$1MethodInfo _EventSetInfo_MethodInfo_[] = {
+$MethodInfo _EventSetInfo_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PRIVATE, $method(static_cast<void(EventSetInfo::*)()>(&EventSetInfo::init$))},
 	{"get", "(Ljava/lang/Class;)Ljava/util/Map;", "(Ljava/lang/Class<*>;)Ljava/util/Map<Ljava/lang/String;Lcom/sun/beans/introspect/EventSetInfo;>;", $PUBLIC | $STATIC, $method(static_cast<$Map*(*)($Class*)>(&EventSetInfo::get))},
 	{"getAddMethod", "()Ljava/lang/reflect/Method;", nullptr, $PUBLIC, $method(static_cast<$Method*(EventSetInfo::*)()>(&EventSetInfo::getAddMethod))},
 	{"getGetMethod", "()Ljava/lang/reflect/Method;", nullptr, $PUBLIC, $method(static_cast<$Method*(EventSetInfo::*)()>(&EventSetInfo::getGetMethod))},
-	{"getInfo", "(Lcom/sun/beans/introspect/MethodInfo;Ljava/lang/reflect/Method;II)Lcom/sun/beans/introspect/MethodInfo;", nullptr, $PRIVATE | $STATIC, $method(static_cast<$MethodInfo*(*)($MethodInfo*,$Method*,int32_t,int32_t)>(&EventSetInfo::getInfo))},
+	{"getInfo", "(Lcom/sun/beans/introspect/MethodInfo;Ljava/lang/reflect/Method;II)Lcom/sun/beans/introspect/MethodInfo;", nullptr, $PRIVATE | $STATIC, $method(static_cast<$1MethodInfo*(*)($1MethodInfo*,$Method*,int32_t,int32_t)>(&EventSetInfo::getInfo))},
 	{"getInfo", "(Ljava/util/Map;Ljava/lang/String;)Lcom/sun/beans/introspect/EventSetInfo;", "(Ljava/util/Map<Ljava/lang/String;Lcom/sun/beans/introspect/EventSetInfo;>;Ljava/lang/String;)Lcom/sun/beans/introspect/EventSetInfo;", $PRIVATE | $STATIC, $method(static_cast<EventSetInfo*(*)($Map*,$String*)>(&EventSetInfo::getInfo))},
 	{"getListenerType", "()Ljava/lang/Class;", "()Ljava/lang/Class<*>;", $PUBLIC, $method(static_cast<$Class*(EventSetInfo::*)()>(&EventSetInfo::getListenerType))},
 	{"getRemoveMethod", "()Ljava/lang/reflect/Method;", nullptr, $PUBLIC, $method(static_cast<$Method*(EventSetInfo::*)()>(&EventSetInfo::getRemoveMethod))},
@@ -64,7 +62,7 @@ $1MethodInfo _EventSetInfo_MethodInfo_[] = {
 	{}
 };
 
-$1ClassInfo _EventSetInfo_ClassInfo_ = {
+$ClassInfo _EventSetInfo_ClassInfo_ = {
 	$PUBLIC | $FINAL | $ACC_SUPER,
 	"com.sun.beans.introspect.EventSetInfo",
 	"java.lang.Object",
@@ -111,16 +109,16 @@ bool EventSetInfo::isUnicast() {
 	return $nc(this->add)->isThrow($TooManyListenersException::class$);
 }
 
-$MethodInfo* EventSetInfo::getInfo($MethodInfo* info, $Method* method, int32_t prefix, int32_t postfix) {
+$1MethodInfo* EventSetInfo::getInfo($1MethodInfo* info, $Method* method, int32_t prefix, int32_t postfix) {
 	$useLocalCurrentObjectStackCache();
-	$Class* type = (postfix > 0) ? $nc($MethodInfo::resolve(method, $($nc(method)->getGenericReturnType())))->getComponentType() : $MethodInfo::resolve(method, $nc($($nc(method)->getGenericParameterTypes()))->get(0));
+	$Class* type = (postfix > 0) ? $nc($1MethodInfo::resolve(method, $($nc(method)->getGenericReturnType())))->getComponentType() : $1MethodInfo::resolve(method, $nc($($nc(method)->getGenericParameterTypes()))->get(0));
 	$load($EventListener);
 	if ((type != nullptr) && $EventListener::class$->isAssignableFrom(type)) {
 		$var($String, name, $nc(method)->getName());
 		if (prefix + postfix < $nc(name)->length()) {
 			if ($nc($(type->getName()))->endsWith($(name->substring(prefix, name->length() - postfix)))) {
 				if ((info == nullptr) || $nc($nc(info)->type)->isAssignableFrom(type)) {
-					return $new($MethodInfo, method, type);
+					return $new($1MethodInfo, method, type);
 				}
 			}
 		}
@@ -139,13 +137,13 @@ EventSetInfo* EventSetInfo::getInfo($Map* map, $String* key) {
 
 $Map* EventSetInfo::get($Class* type) {
 	$useLocalCurrentObjectStackCache();
-	$var($List, methods, $nc($($ClassInfo::get(type)))->getMethods());
+	$var($List, methods, $nc($($1ClassInfo::get(type)))->getMethods());
 	if ($nc(methods)->isEmpty()) {
 		return $Collections::emptyMap();
 	}
 	$var($Map, map, static_cast<$Map*>(static_cast<$AbstractMap*>($new($TreeMap))));
 	{
-		$var($Iterator, i$, $nc($($nc($($ClassInfo::get(type)))->getMethods()))->iterator());
+		$var($Iterator, i$, $nc($($nc($($1ClassInfo::get(type)))->getMethods()))->iterator());
 		for (; $nc(i$)->hasNext();) {
 			$var($Method, method, $cast($Method, i$->next()));
 			{

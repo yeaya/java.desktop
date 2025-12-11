@@ -9,15 +9,11 @@
 #undef ELEMENTS
 #undef KEYS
 
-using $MultiUIDefaults$MultiUIDefaultsEnumerator$TypeArray = $Array<::javax::swing::MultiUIDefaults$MultiUIDefaultsEnumerator$Type>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $MultiUIDefaults = ::javax::swing::MultiUIDefaults;
-using $MultiUIDefaults$MultiUIDefaultsEnumerator = ::javax::swing::MultiUIDefaults$MultiUIDefaultsEnumerator;
 using $MultiUIDefaults$MultiUIDefaultsEnumerator$Type = ::javax::swing::MultiUIDefaults$MultiUIDefaultsEnumerator$Type;
 
 namespace javax {

@@ -8,7 +8,6 @@
 #include <javax/swing/JEditorPane.h>
 #include <jcpp.h>
 
-using $JEditorPaneTest = ::JEditorPaneTest;
 using $File = ::java::io::File;
 using $IOException = ::java::io::IOException;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -16,10 +15,8 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $URI = ::java::net::URI;
-using $URL = ::java::net::URL;
 using $JEditorPane = ::javax::swing::JEditorPane;
 
 $FieldInfo _JEditorPaneTest$1_FieldInfo_[] = {

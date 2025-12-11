@@ -14,7 +14,6 @@ using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $LayoutPathImpl = ::sun::font::LayoutPathImpl;
 
 namespace sun {
 	namespace font {

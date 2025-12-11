@@ -44,8 +44,8 @@ public:
 	int32_t out(int32_t v, int32_t vmin, int32_t vmax, int32_t cmin, int32_t cmax);
 	int32_t outcode(int32_t x, int32_t y, int32_t xmin, int32_t ymin, int32_t xmax, int32_t ymax);
 	virtual void rasterizeLine(::sun::java2d::xr::GrowableRectArray* rectBuffer, int32_t _x1, int32_t _y1, int32_t _x2, int32_t _y2, int32_t cxmin, int32_t cymin, int32_t cxmax, int32_t cymax, bool clip, bool overflowCheck);
-	static const int32_t BIG_MAX = ((1 << 29) - 1);
-	static const int32_t BIG_MIN = (-(1 << 29));
+	static const int32_t BIG_MAX = 0x1FFFFFFF; // ((1 << 29) - 1)
+	static const int32_t BIG_MIN = 0xE0000000; // (-(1 << 29))
 	static const int32_t OUTCODE_TOP = 1;
 	static const int32_t OUTCODE_BOTTOM = 2;
 	static const int32_t OUTCODE_LEFT = 4;

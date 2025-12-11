@@ -15,7 +15,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CMSManager = ::sun::java2d::cmm::CMSManager;
 using $ColorTransform = ::sun::java2d::cmm::ColorTransform;
 using $PCMM = ::sun::java2d::cmm::PCMM;
 using $Profile = ::sun::java2d::cmm::Profile;

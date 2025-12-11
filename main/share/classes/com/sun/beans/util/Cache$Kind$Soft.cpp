@@ -5,8 +5,6 @@
 #include <java/lang/ref/SoftReference.h>
 #include <jcpp.h>
 
-using $Cache$Kind = ::com::sun::beans::util::Cache$Kind;
-using $Cache$Ref = ::com::sun::beans::util::Cache$Ref;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

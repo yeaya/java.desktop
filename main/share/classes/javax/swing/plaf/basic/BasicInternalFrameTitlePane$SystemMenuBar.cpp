@@ -30,8 +30,6 @@ using $ImageIcon = ::javax::swing::ImageIcon;
 using $JComponent = ::javax::swing::JComponent;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
 using $JMenuBar = ::javax::swing::JMenuBar;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
-using $InternalFrameUI = ::javax::swing::plaf::InternalFrameUI;
 using $BasicInternalFrameTitlePane = ::javax::swing::plaf::basic::BasicInternalFrameTitlePane;
 using $DefaultLookup = ::sun::swing::DefaultLookup;
 

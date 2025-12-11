@@ -11,15 +11,9 @@
 #undef NO_FALLBACK
 #undef PHYSICAL_FALLBACK
 
-using $Font2DArray = $Array<::sun::font::Font2D>;
-using $Font = ::java::awt::Font;
-using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CreatedFontTracker = ::sun::font::CreatedFontTracker;
-using $Font2D = ::sun::font::Font2D;
-using $Font2DHandle = ::sun::font::Font2DHandle;
 
 namespace sun {
 	namespace font {

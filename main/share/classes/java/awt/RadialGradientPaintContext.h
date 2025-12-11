@@ -61,7 +61,7 @@ public:
 	float gDeltaDelta = 0.0;
 	float trivial = 0.0;
 	static float SCALEBACK;
-	static const int32_t SQRT_LUT_SIZE = (1 << 11);
+	static const int32_t SQRT_LUT_SIZE = 2048; // (1 << 11)
 	static $floats* sqrtLut;
 };
 

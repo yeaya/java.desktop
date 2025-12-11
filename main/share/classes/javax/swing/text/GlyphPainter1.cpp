@@ -22,7 +22,6 @@
 #include <jcpp.h>
 
 using $Position$BiasArray = $Array<::javax::swing::text::Position$Bias>;
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;

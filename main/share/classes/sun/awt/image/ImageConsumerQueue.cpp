@@ -10,7 +10,6 @@
 #include <jcpp.h>
 
 using $ImageConsumer = ::java::awt::image::ImageConsumer;
-using $ImageProducer = ::java::awt::image::ImageProducer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
@@ -18,7 +17,6 @@ using $SecurityException = ::java::lang::SecurityException;
 using $SecurityManager = ::java::lang::SecurityManager;
 using $ImageRepresentation = ::sun::awt::image::ImageRepresentation;
 using $InputStreamImageSource = ::sun::awt::image::InputStreamImageSource;
-using $ToolkitImage = ::sun::awt::image::ToolkitImage;
 
 namespace sun {
 	namespace awt {

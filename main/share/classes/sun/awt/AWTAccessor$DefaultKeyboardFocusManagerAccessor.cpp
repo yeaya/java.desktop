@@ -5,12 +5,9 @@
 #include <sun/awt/AWTAccessor.h>
 #include <jcpp.h>
 
-using $DefaultKeyboardFocusManager = ::java::awt::DefaultKeyboardFocusManager;
-using $KeyEvent = ::java::awt::event::KeyEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AWTAccessor = ::sun::awt::AWTAccessor;
 
 namespace sun {
 	namespace awt {

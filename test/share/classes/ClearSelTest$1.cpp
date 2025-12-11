@@ -7,8 +7,6 @@
 #include <javax/swing/JTable.h>
 #include <jcpp.h>
 
-using $ClearSelTest = ::ClearSelTest;
-using $Point = ::java::awt::Point;
 using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;

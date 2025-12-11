@@ -14,10 +14,8 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $Deflater = ::java::util::zip::Deflater;
-using $ImageInputStream = ::javax::imageio::stream::ImageInputStream;
 using $ImageOutputStream = ::javax::imageio::stream::ImageOutputStream;
 using $ImageOutputStreamImpl = ::javax::imageio::stream::ImageOutputStreamImpl;
 

@@ -6,12 +6,8 @@
 #include <javax/print/attribute/DocAttributeSet.h>
 #include <jcpp.h>
 
-using $InputStream = ::java::io::InputStream;
-using $Reader = ::java::io::Reader;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DocFlavor = ::javax::print::DocFlavor;
-using $DocAttributeSet = ::javax::print::attribute::DocAttributeSet;
 
 namespace javax {
 	namespace print {

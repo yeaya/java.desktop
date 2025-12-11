@@ -69,7 +69,6 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $FileDialogPeer = ::java::awt::peer::FileDialogPeer;
 using $File = ::java::io::File;
 using $FilenameFilter = ::java::io::FilenameFilter;
 using $Serializable = ::java::io::Serializable;
@@ -78,22 +77,14 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $ThreadGroup = ::java::lang::ThreadGroup;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $List = ::java::util::List;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$FileDialogAccessor = ::sun::awt::AWTAccessor$FileDialogAccessor;
-using $SunToolkit = ::sun::awt::SunToolkit;
-using $XDecoratedPeer = ::sun::awt::X11::XDecoratedPeer;
 using $XDialogPeer = ::sun::awt::X11::XDialogPeer;
 using $XNETProtocol = ::sun::awt::X11::XNETProtocol;
 using $XToolkit = ::sun::awt::X11::XToolkit;
 using $XWM = ::sun::awt::X11::XWM;
-using $XWindowPeer = ::sun::awt::X11::XWindowPeer;
 using $Region = ::sun::java2d::pipe::Region;
 
 namespace sun {
@@ -477,31 +468,31 @@ void GtkFileDialogPeer::init$($FileDialog* fd) {
 void GtkFileDialogPeer::initIDs() {
 	$init(GtkFileDialogPeer);
 	$prepareNativeStatic(GtkFileDialogPeer, initIDs, void);
-	$invokeNativeStatic(GtkFileDialogPeer, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
 void GtkFileDialogPeer::run($String* title, int32_t mode, $String* dir, $String* file, $FilenameFilter* filter, bool isMultipleMode, int32_t x, int32_t y) {
 	$prepareNative(GtkFileDialogPeer, run, void, $String* title, int32_t mode, $String* dir, $String* file, $FilenameFilter* filter, bool isMultipleMode, int32_t x, int32_t y);
-	$invokeNative(GtkFileDialogPeer, run, title, mode, dir, file, filter, isMultipleMode, x, y);
+	$invokeNative(title, mode, dir, file, filter, isMultipleMode, x, y);
 	$finishNative();
 }
 
 void GtkFileDialogPeer::quit() {
 	$prepareNative(GtkFileDialogPeer, quit, void);
-	$invokeNative(GtkFileDialogPeer, quit);
+	$invokeNative();
 	$finishNative();
 }
 
 void GtkFileDialogPeer::toFront() {
 	$prepareNative(GtkFileDialogPeer, toFront, void);
-	$invokeNative(GtkFileDialogPeer, toFront);
+	$invokeNative();
 	$finishNative();
 }
 
 void GtkFileDialogPeer::setBounds(int32_t x, int32_t y, int32_t width, int32_t height, int32_t op) {
 	$prepareNative(GtkFileDialogPeer, setBounds, void, int32_t x, int32_t y, int32_t width, int32_t height, int32_t op);
-	$invokeNative(GtkFileDialogPeer, setBounds, x, y, width, height, op);
+	$invokeNative(x, y, width, height, op);
 	$finishNative();
 }
 

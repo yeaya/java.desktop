@@ -20,9 +20,7 @@ using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
 using $D3DRenderer = ::sun::java2d::d3d::D3DRenderer;
 using $D3DRenderer$Tracer$1 = ::sun::java2d::d3d::D3DRenderer$Tracer$1;
 using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
-using $BufferedRenderPipe = ::sun::java2d::pipe::BufferedRenderPipe;
 using $ParallelogramPipe = ::sun::java2d::pipe::ParallelogramPipe;
-using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 using $SpanIterator = ::sun::java2d::pipe::SpanIterator;
 
 namespace sun {

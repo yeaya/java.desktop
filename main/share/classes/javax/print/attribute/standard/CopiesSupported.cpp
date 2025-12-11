@@ -8,7 +8,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SetOfIntegerSyntax = ::javax::print::attribute::SetOfIntegerSyntax;
-using $SupportedValuesAttribute = ::javax::print::attribute::SupportedValuesAttribute;
 
 namespace javax {
 	namespace print {

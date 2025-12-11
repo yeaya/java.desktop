@@ -11,7 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JTable = ::javax::swing::JTable;
-using $JTable$Resizable3 = ::javax::swing::JTable$Resizable3;
 using $TableColumn = ::javax::swing::table::TableColumn;
 using $TableColumnModel = ::javax::swing::table::TableColumnModel;
 

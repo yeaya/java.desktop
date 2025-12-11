@@ -6,13 +6,9 @@
 #include <javax/swing/text/JTextComponent.h>
 #include <jcpp.h>
 
-using $Highlighter$HighlightArray = $Array<::javax::swing::text::Highlighter$Highlight>;
-using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Highlighter$HighlightPainter = ::javax::swing::text::Highlighter$HighlightPainter;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 namespace javax {
 	namespace swing {

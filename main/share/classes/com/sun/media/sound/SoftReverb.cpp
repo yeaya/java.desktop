@@ -13,7 +13,6 @@
 using $SoftReverb$AllPassArray = $Array<::com::sun::media::sound::SoftReverb$AllPass>;
 using $SoftReverb$CombArray = $Array<::com::sun::media::sound::SoftReverb$Comb>;
 using $SoftAudioBuffer = ::com::sun::media::sound::SoftAudioBuffer;
-using $SoftAudioProcessor = ::com::sun::media::sound::SoftAudioProcessor;
 using $SoftReverb$AllPass = ::com::sun::media::sound::SoftReverb$AllPass;
 using $SoftReverb$Comb = ::com::sun::media::sound::SoftReverb$Comb;
 using $SoftReverb$Delay = ::com::sun::media::sound::SoftReverb$Delay;

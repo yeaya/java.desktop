@@ -7,12 +7,6 @@
 #include <java/awt/image/renderable/RenderableImage.h>
 #include <jcpp.h>
 
-using $Rectangle2D = ::java::awt::geom::Rectangle2D;
-using $RenderedImage = ::java::awt::image::RenderedImage;
-using $ParameterBlock = ::java::awt::image::renderable::ParameterBlock;
-using $RenderContext = ::java::awt::image::renderable::RenderContext;
-using $RenderableImage = ::java::awt::image::renderable::RenderableImage;
-using $RenderedImageFactory = ::java::awt::image::renderable::RenderedImageFactory;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

@@ -5,7 +5,6 @@
 #include <jcpp.h>
 
 using $NumberEditor = ::com::sun::beans::editors::NumberEditor;
-using $PropertyEditorSupport = ::java::beans::PropertyEditorSupport;
 using $Byte = ::java::lang::Byte;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

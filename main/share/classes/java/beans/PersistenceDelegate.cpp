@@ -5,7 +5,6 @@
 #include <jcpp.h>
 
 using $Encoder = ::java::beans::Encoder;
-using $Expression = ::java::beans::Expression;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

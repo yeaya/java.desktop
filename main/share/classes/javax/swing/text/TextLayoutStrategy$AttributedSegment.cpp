@@ -30,7 +30,6 @@ using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AttributedCharacterIterator = ::java::text::AttributedCharacterIterator;
 using $AttributedCharacterIterator$Attribute = ::java::text::AttributedCharacterIterator$Attribute;
 using $AbstractSet = ::java::util::AbstractSet;
 using $HashSet = ::java::util::HashSet;
@@ -42,7 +41,6 @@ using $Document = ::javax::swing::text::Document;
 using $GlyphView = ::javax::swing::text::GlyphView;
 using $Position$Bias = ::javax::swing::text::Position$Bias;
 using $Segment = ::javax::swing::text::Segment;
-using $TextLayoutStrategy = ::javax::swing::text::TextLayoutStrategy;
 using $View = ::javax::swing::text::View;
 
 namespace javax {

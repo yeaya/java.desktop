@@ -14,15 +14,12 @@
 
 using $ComponentArray = $Array<::java::awt::Component>;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $JComponent = ::javax::swing::JComponent;
 using $JDesktopPane = ::javax::swing::JDesktopPane;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
 using $BasicInternalFrameUI = ::javax::swing::plaf::basic::BasicInternalFrameUI;

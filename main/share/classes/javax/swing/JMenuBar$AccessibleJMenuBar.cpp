@@ -19,7 +19,6 @@
 #undef MENU_BAR
 
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -33,7 +32,6 @@ using $JComponent$AccessibleJComponent = ::javax::swing::JComponent$AccessibleJC
 using $JMenu = ::javax::swing::JMenu;
 using $JMenuBar = ::javax::swing::JMenuBar;
 using $JMenuItem = ::javax::swing::JMenuItem;
-using $JPopupMenu = ::javax::swing::JPopupMenu;
 using $MenuElement = ::javax::swing::MenuElement;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
 using $SingleSelectionModel = ::javax::swing::SingleSelectionModel;

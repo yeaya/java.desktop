@@ -17,8 +17,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $FillRect = ::sun::java2d::loops::FillRect;
-using $RenderLoops = ::sun::java2d::loops::RenderLoops;
-using $LoopBasedPipe = ::sun::java2d::pipe::LoopBasedPipe;
 using $SpanShapeRenderer = ::sun::java2d::pipe::SpanShapeRenderer;
 
 namespace sun {

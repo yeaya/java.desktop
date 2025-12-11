@@ -15,7 +15,6 @@
 
 using $EventListenerArray = $Array<::java::util::EventListener>;
 using $TableModelListenerArray = $Array<::javax::swing::event::TableModelListener>;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

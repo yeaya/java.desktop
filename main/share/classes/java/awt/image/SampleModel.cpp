@@ -98,7 +98,7 @@ $Object* allocate$SampleModel($Class* clazz) {
 void SampleModel::initIDs() {
 	$init(SampleModel);
 	$prepareNativeStatic(SampleModel, initIDs, void);
-	$invokeNativeStatic(SampleModel, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

@@ -30,7 +30,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Hashtable = ::java::util::Hashtable;
@@ -101,13 +100,13 @@ $Class* JPEGImageDecoder::InputStreamClass = nullptr;
 void JPEGImageDecoder::initIDs($Class* InputStreamClass) {
 	$init(JPEGImageDecoder);
 	$prepareNativeStatic(JPEGImageDecoder, initIDs, void, $Class* InputStreamClass);
-	$invokeNativeStatic(JPEGImageDecoder, initIDs, InputStreamClass);
+	$invokeNativeStatic(InputStreamClass);
 	$finishNativeStatic();
 }
 
 void JPEGImageDecoder::readImage($InputStream* is, $bytes* buf) {
 	$prepareNative(JPEGImageDecoder, readImage, void, $InputStream* is, $bytes* buf);
-	$invokeNative(JPEGImageDecoder, readImage, is, buf);
+	$invokeNative(is, buf);
 	$finishNative();
 }
 

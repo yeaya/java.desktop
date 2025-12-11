@@ -26,7 +26,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $List = ::java::util::List;
 using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
@@ -39,7 +38,6 @@ using $JTabbedPane$Page = ::javax::swing::JTabbedPane$Page;
 using $SingleSelectionModel = ::javax::swing::SingleSelectionModel;
 using $ChangeEvent = ::javax::swing::event::ChangeEvent;
 using $ChangeListener = ::javax::swing::event::ChangeListener;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $TabbedPaneUI = ::javax::swing::plaf::TabbedPaneUI;
 
 namespace javax {

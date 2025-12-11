@@ -8,7 +8,6 @@
 #include <javax/swing/plaf/basic/BasicGraphicsUtils.h>
 #include <jcpp.h>
 
-using $WindowsBorders = ::com::sun::java::swing::plaf::windows::WindowsBorders;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
@@ -16,7 +15,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $LineBorder = ::javax::swing::border::LineBorder;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $BasicGraphicsUtils = ::javax::swing::plaf::basic::BasicGraphicsUtils;
 
 namespace com {

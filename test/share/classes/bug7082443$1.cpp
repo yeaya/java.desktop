@@ -4,14 +4,12 @@
 #include <bug7082443.h>
 #include <jcpp.h>
 
-using $bug7082443 = ::bug7082443;
 using $bug7082443$TestComboBox = ::bug7082443$TestComboBox;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 
 $MethodInfo _bug7082443$1_MethodInfo_[] = {

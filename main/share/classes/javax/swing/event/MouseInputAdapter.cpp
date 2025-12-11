@@ -8,7 +8,6 @@ using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $MouseInputListener = ::javax::swing::event::MouseInputListener;
 
 namespace javax {
 	namespace swing {

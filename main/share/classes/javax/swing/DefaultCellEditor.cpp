@@ -26,7 +26,6 @@
 
 #undef TRUE
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $ActionListener = ::java::awt::event::ActionListener;
@@ -52,12 +51,9 @@ using $JTable = ::javax::swing::JTable;
 using $JTextField = ::javax::swing::JTextField;
 using $JToggleButton = ::javax::swing::JToggleButton;
 using $JTree = ::javax::swing::JTree;
-using $Border = ::javax::swing::border::Border;
 using $CellEditorListener = ::javax::swing::event::CellEditorListener;
-using $TableCellEditor = ::javax::swing::table::TableCellEditor;
 using $TableCellRenderer = ::javax::swing::table::TableCellRenderer;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
-using $TreeCellEditor = ::javax::swing::tree::TreeCellEditor;
 
 namespace javax {
 	namespace swing {

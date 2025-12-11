@@ -4,7 +4,6 @@
 #include <javax/swing/UIDefaults$ProxyLazyValue.h>
 #include <jcpp.h>
 
-using $TestProxyLazyValue = ::TestProxyLazyValue;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

@@ -108,7 +108,6 @@ using $ImageReaderSpi = ::javax::imageio::spi::ImageReaderSpi;
 using $ImageReaderWriterSpi = ::javax::imageio::spi::ImageReaderWriterSpi;
 using $ImageTranscoderSpi = ::javax::imageio::spi::ImageTranscoderSpi;
 using $ImageWriterSpi = ::javax::imageio::spi::ImageWriterSpi;
-using $ServiceRegistry = ::javax::imageio::spi::ServiceRegistry;
 using $ServiceRegistry$Filter = ::javax::imageio::spi::ServiceRegistry$Filter;
 using $ImageInputStream = ::javax::imageio::stream::ImageInputStream;
 using $ImageOutputStream = ::javax::imageio::stream::ImageOutputStream;

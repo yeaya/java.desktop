@@ -6,8 +6,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $Document = ::javax::swing::text::Document;
 
 namespace javax {
 	namespace swing {

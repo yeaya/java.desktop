@@ -9,17 +9,8 @@
 #include <javax/print/event/PrintServiceAttributeListener.h>
 #include <jcpp.h>
 
-using $DocFlavorArray = $Array<::javax::print::DocFlavor>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DocFlavor = ::javax::print::DocFlavor;
-using $DocPrintJob = ::javax::print::DocPrintJob;
-using $ServiceUIFactory = ::javax::print::ServiceUIFactory;
-using $Attribute = ::javax::print::attribute::Attribute;
-using $AttributeSet = ::javax::print::attribute::AttributeSet;
-using $PrintServiceAttribute = ::javax::print::attribute::PrintServiceAttribute;
-using $PrintServiceAttributeSet = ::javax::print::attribute::PrintServiceAttributeSet;
-using $PrintServiceAttributeListener = ::javax::print::event::PrintServiceAttributeListener;
 
 namespace javax {
 	namespace print {

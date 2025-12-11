@@ -22,7 +22,6 @@
 
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -41,7 +40,6 @@ using $DefaultTreeModel = ::javax::swing::tree::DefaultTreeModel;
 using $MutableTreeNode = ::javax::swing::tree::MutableTreeNode;
 using $TreeModel = ::javax::swing::tree::TreeModel;
 using $TreeNode = ::javax::swing::tree::TreeNode;
-using $TreePath = ::javax::swing::tree::TreePath;
 
 $FieldInfo _Test8015926_FieldInfo_[] = {
 	{"tree", "Ljavax/swing/JTree;", nullptr, $PRIVATE, $field(Test8015926, tree)},

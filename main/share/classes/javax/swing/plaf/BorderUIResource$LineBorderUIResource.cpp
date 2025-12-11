@@ -13,8 +13,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $LineBorder = ::javax::swing::border::LineBorder;
-using $BorderUIResource = ::javax::swing::plaf::BorderUIResource;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace javax {
 	namespace swing {

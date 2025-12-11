@@ -55,7 +55,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JComponent = ::javax::swing::JComponent;
 using $JDesktopPane = ::javax::swing::JDesktopPane;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
@@ -63,7 +62,6 @@ using $JLayeredPane = ::javax::swing::JLayeredPane;
 using $SortingFocusTraversalPolicy = ::javax::swing::SortingFocusTraversalPolicy;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;
-using $BasicDesktopPaneUI = ::javax::swing::plaf::basic::BasicDesktopPaneUI;
 using $UIAction = ::sun::swing::UIAction;
 
 namespace javax {
@@ -205,33 +203,33 @@ void BasicDesktopPaneUI$Actions::actionPerformed($ActionEvent* e) {
 		$var($Point, loc, c->getLocation());
 		if (BasicDesktopPaneUI$Actions::LEFT == key) {
 			if (BasicDesktopPaneUI$Actions::moving) {
-				c->setLocation($nc(loc)->x + $nc(size)->width - this->MOVE_RESIZE_INCREMENT < $nc(minOnScreenInsets)->right ? -$nc(size)->width + $nc(minOnScreenInsets)->right : $nc(loc)->x - this->MOVE_RESIZE_INCREMENT, loc->y);
+				c->setLocation($nc(loc)->x + $nc(size)->width - BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT < $nc(minOnScreenInsets)->right ? -$nc(size)->width + $nc(minOnScreenInsets)->right : $nc(loc)->x - BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT, loc->y);
 			} else if (BasicDesktopPaneUI$Actions::resizing) {
-				c->setLocation($nc(loc)->x - this->MOVE_RESIZE_INCREMENT, loc->y);
-				c->setSize($nc(size)->width + this->MOVE_RESIZE_INCREMENT, size->height);
+				c->setLocation($nc(loc)->x - BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT, loc->y);
+				c->setSize($nc(size)->width + BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT, size->height);
 			}
 		} else if (BasicDesktopPaneUI$Actions::RIGHT == key) {
 			if (BasicDesktopPaneUI$Actions::moving) {
-				c->setLocation($nc(loc)->x + this->MOVE_RESIZE_INCREMENT > dpWidth - $nc(minOnScreenInsets)->left ? dpWidth - $nc(minOnScreenInsets)->left : $nc(loc)->x + this->MOVE_RESIZE_INCREMENT, loc->y);
+				c->setLocation($nc(loc)->x + BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT > dpWidth - $nc(minOnScreenInsets)->left ? dpWidth - $nc(minOnScreenInsets)->left : $nc(loc)->x + BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT, loc->y);
 			} else if (BasicDesktopPaneUI$Actions::resizing) {
-				c->setSize($nc(size)->width + this->MOVE_RESIZE_INCREMENT, size->height);
+				c->setSize($nc(size)->width + BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT, size->height);
 			}
 		} else if (BasicDesktopPaneUI$Actions::UP == key) {
 			if (BasicDesktopPaneUI$Actions::moving) {
-				c->setLocation($nc(loc)->x, loc->y + $nc(size)->height - this->MOVE_RESIZE_INCREMENT < $nc(minOnScreenInsets)->bottom ? -$nc(size)->height + $nc(minOnScreenInsets)->bottom : loc->y - this->MOVE_RESIZE_INCREMENT);
+				c->setLocation($nc(loc)->x, loc->y + $nc(size)->height - BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT < $nc(minOnScreenInsets)->bottom ? -$nc(size)->height + $nc(minOnScreenInsets)->bottom : loc->y - BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT);
 			} else if (BasicDesktopPaneUI$Actions::resizing) {
-				c->setLocation($nc(loc)->x, loc->y - this->MOVE_RESIZE_INCREMENT);
-				c->setSize($nc(size)->width, size->height + this->MOVE_RESIZE_INCREMENT);
+				c->setLocation($nc(loc)->x, loc->y - BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT);
+				c->setSize($nc(size)->width, size->height + BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT);
 			}
 		} else if (BasicDesktopPaneUI$Actions::DOWN == key) {
 			if (BasicDesktopPaneUI$Actions::moving) {
-				c->setLocation($nc(loc)->x, loc->y + this->MOVE_RESIZE_INCREMENT > dpHeight - $nc(minOnScreenInsets)->top ? dpHeight - $nc(minOnScreenInsets)->top : loc->y + this->MOVE_RESIZE_INCREMENT);
+				c->setLocation($nc(loc)->x, loc->y + BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT > dpHeight - $nc(minOnScreenInsets)->top ? dpHeight - $nc(minOnScreenInsets)->top : loc->y + BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT);
 			} else if (BasicDesktopPaneUI$Actions::resizing) {
-				c->setSize($nc(size)->width, size->height + this->MOVE_RESIZE_INCREMENT);
+				c->setSize($nc(size)->width, size->height + BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT);
 			}
 		} else if (BasicDesktopPaneUI$Actions::SHRINK_LEFT == key && BasicDesktopPaneUI$Actions::resizing) {
-			if ($nc(minSize)->width < ($nc(size)->width - this->MOVE_RESIZE_INCREMENT)) {
-				delta = this->MOVE_RESIZE_INCREMENT;
+			if ($nc(minSize)->width < ($nc(size)->width - BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT)) {
+				delta = BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT;
 			} else {
 				delta = size->width - minSize->width;
 			}
@@ -240,8 +238,8 @@ void BasicDesktopPaneUI$Actions::actionPerformed($ActionEvent* e) {
 			}
 			c->setSize($nc(size)->width - delta, size->height);
 		} else if (BasicDesktopPaneUI$Actions::SHRINK_RIGHT == key && BasicDesktopPaneUI$Actions::resizing) {
-			if ($nc(minSize)->width < ($nc(size)->width - this->MOVE_RESIZE_INCREMENT)) {
-				delta = this->MOVE_RESIZE_INCREMENT;
+			if ($nc(minSize)->width < ($nc(size)->width - BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT)) {
+				delta = BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT;
 			} else {
 				delta = size->width - minSize->width;
 			}
@@ -251,8 +249,8 @@ void BasicDesktopPaneUI$Actions::actionPerformed($ActionEvent* e) {
 			c->setLocation($nc(loc)->x + delta, loc->y);
 			c->setSize($nc(size)->width - delta, size->height);
 		} else if (BasicDesktopPaneUI$Actions::SHRINK_UP == key && BasicDesktopPaneUI$Actions::resizing) {
-			if ($nc(minSize)->height < ($nc(size)->height - this->MOVE_RESIZE_INCREMENT)) {
-				delta = this->MOVE_RESIZE_INCREMENT;
+			if ($nc(minSize)->height < ($nc(size)->height - BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT)) {
+				delta = BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT;
 			} else {
 				delta = size->height - minSize->height;
 			}
@@ -261,8 +259,8 @@ void BasicDesktopPaneUI$Actions::actionPerformed($ActionEvent* e) {
 			}
 			c->setSize($nc(size)->width, size->height - delta);
 		} else if (BasicDesktopPaneUI$Actions::SHRINK_DOWN == key && BasicDesktopPaneUI$Actions::resizing) {
-			if ($nc(minSize)->height < ($nc(size)->height - this->MOVE_RESIZE_INCREMENT)) {
-				delta = this->MOVE_RESIZE_INCREMENT;
+			if ($nc(minSize)->height < ($nc(size)->height - BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT)) {
+				delta = BasicDesktopPaneUI$Actions::MOVE_RESIZE_INCREMENT;
 			} else {
 				delta = size->height - minSize->height;
 			}

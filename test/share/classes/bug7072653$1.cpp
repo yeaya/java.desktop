@@ -4,7 +4,6 @@
 #include <javax/swing/DefaultComboBoxModel.h>
 #include <jcpp.h>
 
-using $bug7072653 = ::bug7072653;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

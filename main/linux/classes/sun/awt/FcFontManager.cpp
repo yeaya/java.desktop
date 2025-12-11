@@ -17,8 +17,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $FontConfiguration = ::sun::awt::FontConfiguration;
 using $FcFontConfiguration = ::sun::font::FcFontConfiguration;
 using $FontConfigManager = ::sun::font::FontConfigManager;
-using $FontConfigManager$FcCompFont = ::sun::font::FontConfigManager$FcCompFont;
-using $FontConfigManager$FontConfigFont = ::sun::font::FontConfigManager$FontConfigFont;
 using $SunFontManager = ::sun::font::SunFontManager;
 
 namespace sun {
@@ -116,7 +114,7 @@ $StringArray* FcFontManager::getDefaultPlatformFont() {
 $String* FcFontManager::getFontPathNative(bool noType1Fonts, bool isX11GE) {
 	$var($String, $ret, nullptr);
 	$prepareNative(FcFontManager, getFontPathNative, $String*, bool noType1Fonts, bool isX11GE);
-	$assign($ret, $invokeNative(FcFontManager, getFontPathNative, noType1Fonts, isX11GE));
+	$assign($ret, $invokeNativeObject(noType1Fonts, isX11GE));
 	$finishNative();
 	return $ret;
 }

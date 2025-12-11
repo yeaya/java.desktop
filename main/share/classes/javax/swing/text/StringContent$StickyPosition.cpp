@@ -11,7 +11,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Vector = ::java::util::Vector;
-using $Position = ::javax::swing::text::Position;
 using $StringContent = ::javax::swing::text::StringContent;
 using $StringContent$PosRec = ::javax::swing::text::StringContent$PosRec;
 

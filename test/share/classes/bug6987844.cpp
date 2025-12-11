@@ -23,10 +23,8 @@
 
 using $bug6987844$1 = ::bug6987844$1;
 using $bug6987844$2 = ::bug6987844$2;
-using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -34,12 +32,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $JFrame = ::javax::swing::JFrame;
 using $JMenu = ::javax::swing::JMenu;
 using $SwingUtilities = ::javax::swing::SwingUtilities;

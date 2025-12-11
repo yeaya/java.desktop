@@ -30,7 +30,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $ButtonGroup = ::javax::swing::ButtonGroup;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $DefaultButtonModel = ::javax::swing::DefaultButtonModel;
-using $JToggleButton = ::javax::swing::JToggleButton;
 
 namespace javax {
 	namespace swing {

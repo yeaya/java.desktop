@@ -47,7 +47,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Number = ::java::lang::Number;
-using $EventObject = ::java::util::EventObject;
 using $JComponent = ::javax::swing::JComponent;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $TextUI = ::javax::swing::plaf::TextUI;

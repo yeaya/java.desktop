@@ -7,7 +7,6 @@
 #include <sun/awt/image/IntegerComponentRaster.h>
 #include <jcpp.h>
 
-using $PaintContext = ::java::awt::PaintContext;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $Raster = ::java::awt::image::Raster;
 using $WritableRaster = ::java::awt::image::WritableRaster;
@@ -16,7 +15,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Arrays = ::java::util::Arrays;
 using $IntegerComponentRaster = ::sun::awt::image::IntegerComponentRaster;
-using $SunWritableRaster = ::sun::awt::image::SunWritableRaster;
 
 namespace java {
 	namespace awt {

@@ -22,7 +22,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JFrame = ::javax::swing::JFrame;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 
 $MethodInfo _bug4760494$1_MethodInfo_[] = {

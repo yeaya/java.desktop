@@ -14,8 +14,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UIDefaults = ::javax::swing::UIDefaults;
-using $UIDefaults$ActiveValue = ::javax::swing::UIDefaults$ActiveValue;
-using $SynthIcon = ::javax::swing::plaf::synth::SynthIcon;
 
 namespace com {
 	namespace sun {

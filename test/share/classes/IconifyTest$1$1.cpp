@@ -14,7 +14,6 @@
 
 using $IconifyTest = ::IconifyTest;
 using $IconifyTest$1 = ::IconifyTest$1;
-using $Component = ::java::awt::Component;
 using $Rectangle = ::java::awt::Rectangle;
 using $WindowAdapter = ::java::awt::event::WindowAdapter;
 using $WindowEvent = ::java::awt::event::WindowEvent;

@@ -5,7 +5,6 @@
 #include <java/util/EventObject.h>
 #include <jcpp.h>
 
-using $DropTarget = ::java::awt::dnd::DropTarget;
 using $DropTargetContext = ::java::awt::dnd::DropTargetContext;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

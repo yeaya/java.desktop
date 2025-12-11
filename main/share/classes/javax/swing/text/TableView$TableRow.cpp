@@ -26,7 +26,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $BitSet = ::java::util::BitSet;
 using $SizeRequirements = ::javax::swing::SizeRequirements;
 using $BoxView = ::javax::swing::text::BoxView;
-using $CompositeView = ::javax::swing::text::CompositeView;
 using $Element = ::javax::swing::text::Element;
 using $TableView = ::javax::swing::text::TableView;
 using $View = ::javax::swing::text::View;

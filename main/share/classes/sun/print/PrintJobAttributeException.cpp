@@ -8,7 +8,6 @@ using $AttributeArray = $Array<::javax::print::attribute::Attribute>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AttributeException = ::javax::print::AttributeException;
 using $PrintException = ::javax::print::PrintException;
 using $Attribute = ::javax::print::attribute::Attribute;
 

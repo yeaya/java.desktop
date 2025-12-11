@@ -11,7 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $RTFReader = ::javax::swing::text::rtf::RTFReader;
 using $RTFReader$AttributeTrackingDestination = ::javax::swing::text::rtf::RTFReader$AttributeTrackingDestination;
 

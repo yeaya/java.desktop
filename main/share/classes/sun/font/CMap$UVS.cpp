@@ -14,10 +14,8 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Buffer = ::java::nio::Buffer;
 using $ByteBuffer = ::java::nio::ByteBuffer;
 using $Arrays = ::java::util::Arrays;
-using $CMap = ::sun::font::CMap;
 
 namespace sun {
 	namespace font {

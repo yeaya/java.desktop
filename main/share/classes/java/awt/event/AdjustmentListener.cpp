@@ -3,10 +3,8 @@
 #include <java/awt/event/AdjustmentEvent.h>
 #include <jcpp.h>
 
-using $AdjustmentEvent = ::java::awt::event::AdjustmentEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
 
 namespace java {
 	namespace awt {

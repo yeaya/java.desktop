@@ -7,13 +7,8 @@
 #include <javax/sound/midi/Sequence.h>
 #include <jcpp.h>
 
-using $File = ::java::io::File;
-using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $URL = ::java::net::URL;
-using $MidiFileFormat = ::javax::sound::midi::MidiFileFormat;
-using $Sequence = ::javax::sound::midi::Sequence;
 
 namespace javax {
 	namespace sound {

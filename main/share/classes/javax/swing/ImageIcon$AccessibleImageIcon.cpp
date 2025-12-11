@@ -14,7 +14,6 @@
 
 using $ObjectInputStream = ::java::io::ObjectInputStream;
 using $ObjectOutputStream = ::java::io::ObjectOutputStream;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -22,7 +21,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Locale = ::java::util::Locale;
 using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
-using $AccessibleIcon = ::javax::accessibility::AccessibleIcon;
 using $AccessibleRole = ::javax::accessibility::AccessibleRole;
 using $AccessibleStateSet = ::javax::accessibility::AccessibleStateSet;
 using $ImageIcon = ::javax::swing::ImageIcon;

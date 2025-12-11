@@ -5,7 +5,6 @@
 #include <java/io/FileOutputStream.h>
 #include <jcpp.h>
 
-using $Font = ::java::awt::Font;
 using $File = ::java::io::File;
 using $FileOutputStream = ::java::io::FileOutputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -13,7 +12,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedExceptionAction = ::java::security::PrivilegedExceptionAction;
 
 namespace java {
 	namespace awt {

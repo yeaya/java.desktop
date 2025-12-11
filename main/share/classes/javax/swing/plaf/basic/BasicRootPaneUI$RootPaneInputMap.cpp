@@ -10,7 +10,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $ComponentInputMapUIResource = ::javax::swing::plaf::ComponentInputMapUIResource;
-using $BasicRootPaneUI = ::javax::swing::plaf::basic::BasicRootPaneUI;
 
 namespace javax {
 	namespace swing {

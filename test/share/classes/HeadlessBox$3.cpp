@@ -4,7 +4,6 @@
 #include <java/awt/Component.h>
 #include <jcpp.h>
 
-using $HeadlessBox = ::HeadlessBox;
 using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

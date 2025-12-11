@@ -14,7 +14,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Collection = ::java::util::Collection;
 using $Vector = ::java::util::Vector;
 using $AbstractListModel = ::javax::swing::AbstractListModel;
-using $MutableComboBoxModel = ::javax::swing::MutableComboBoxModel;
 using $ListDataListener = ::javax::swing::event::ListDataListener;
 
 namespace javax {

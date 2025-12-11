@@ -10,16 +10,13 @@
 
 #undef NONE
 
-using $Frame = ::java::awt::Frame;
-using $Window = ::java::awt::Window;
-using $InputContext = ::java::awt::im::InputContext;
+using $1InputContext = ::java::awt::im::InputContext;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JFrame = ::javax::swing::JFrame;
 using $JRootPane = ::javax::swing::JRootPane;
-using $1InputContext = ::sun::awt::im::InputContext;
-using $InputMethodWindow = ::sun::awt::im::InputMethodWindow;
+using $InputContext = ::sun::awt::im::InputContext;
 
 namespace sun {
 	namespace awt {
@@ -36,7 +33,7 @@ $MethodInfo _InputMethodJFrame_MethodInfo_[] = {
 	{"*equals", "(Ljava/lang/Object;)Z", nullptr, $PUBLIC},
 	{"*finalize", "()V", nullptr, $PROTECTED | $DEPRECATED},
 	{"*hashCode", "()I", nullptr, $PUBLIC | $NATIVE},
-	{"<init>", "(Ljava/lang/String;Lsun/awt/im/InputContext;)V", nullptr, $PUBLIC, $method(static_cast<void(InputMethodJFrame::*)($String*,$1InputContext*)>(&InputMethodJFrame::init$))},
+	{"<init>", "(Ljava/lang/String;Lsun/awt/im/InputContext;)V", nullptr, $PUBLIC, $method(static_cast<void(InputMethodJFrame::*)($String*,$InputContext*)>(&InputMethodJFrame::init$))},
 	{"getInputContext", "()Ljava/awt/im/InputContext;", nullptr, $PUBLIC},
 	{"setInputContext", "(Lsun/awt/im/InputContext;)V", nullptr, $PUBLIC},
 	{"*toString", "()Ljava/lang/String;", nullptr, $PUBLIC},
@@ -76,7 +73,7 @@ void InputMethodJFrame::finalize() {
 	this->$JFrame::finalize();
 }
 
-void InputMethodJFrame::init$($String* title, $1InputContext* context) {
+void InputMethodJFrame::init$($String* title, $InputContext* context) {
 	$JFrame::init$(title);
 	$set(this, inputContext, nullptr);
 	if ($JFrame::isDefaultLookAndFeelDecorated()) {
@@ -89,11 +86,11 @@ void InputMethodJFrame::init$($String* title, $1InputContext* context) {
 	setFocusableWindowState(false);
 }
 
-void InputMethodJFrame::setInputContext($1InputContext* inputContext) {
+void InputMethodJFrame::setInputContext($InputContext* inputContext) {
 	$set(this, inputContext, inputContext);
 }
 
-$InputContext* InputMethodJFrame::getInputContext() {
+$1InputContext* InputMethodJFrame::getInputContext() {
 	if (this->inputContext != nullptr) {
 		return this->inputContext;
 	} else {

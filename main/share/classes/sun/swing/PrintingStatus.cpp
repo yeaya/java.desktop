@@ -39,9 +39,6 @@
 #undef INFORMATION_MESSAGE
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
-using $Dialog = ::java::awt::Dialog;
-using $Window = ::java::awt::Window;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $WindowAdapter = ::java::awt::event::WindowAdapter;
 using $WindowListener = ::java::awt::event::WindowListener;
@@ -56,7 +53,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $NumberFormatException = ::java::lang::NumberFormatException;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
@@ -64,12 +60,10 @@ using $InvocationTargetException = ::java::lang::reflect::InvocationTargetExcept
 using $MessageFormat = ::java::text::MessageFormat;
 using $AtomicBoolean = ::java::util::concurrent::atomic::AtomicBoolean;
 using $AbstractAction = ::javax::swing::AbstractAction;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $Action = ::javax::swing::Action;
 using $ActionMap = ::javax::swing::ActionMap;
 using $Icon = ::javax::swing::Icon;
 using $JButton = ::javax::swing::JButton;
-using $JComponent = ::javax::swing::JComponent;
 using $JDialog = ::javax::swing::JDialog;
 using $JLabel = ::javax::swing::JLabel;
 using $JOptionPane = ::javax::swing::JOptionPane;

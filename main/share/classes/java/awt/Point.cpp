@@ -5,7 +5,6 @@
 #include <jcpp.h>
 
 using $Point2D = ::java::awt::geom::Point2D;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $Double = ::java::lang::Double;

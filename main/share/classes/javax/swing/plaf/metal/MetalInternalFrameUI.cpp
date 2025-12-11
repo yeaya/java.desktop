@@ -29,7 +29,6 @@
 #undef OPTION_DIALOG
 #undef PALETTE_FRAME
 
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $Boolean = ::java::lang::Boolean;

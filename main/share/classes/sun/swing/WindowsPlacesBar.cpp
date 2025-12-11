@@ -41,7 +41,6 @@
 #undef WINDOWS
 #undef WINDOWS_XP
 
-using $FileArray = $Array<::java::io::File>;
 using $JToggleButtonArray = $Array<::javax::swing::JToggleButton>;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
@@ -52,13 +51,11 @@ using $Insets = ::java::awt::Insets;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $File = ::java::io::File;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $Box = ::javax::swing::Box;
 using $ButtonGroup = ::javax::swing::ButtonGroup;

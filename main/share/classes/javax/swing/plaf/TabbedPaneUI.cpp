@@ -5,10 +5,8 @@
 #include <javax/swing/plaf/ComponentUI.h>
 #include <jcpp.h>
 
-using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JTabbedPane = ::javax::swing::JTabbedPane;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 
 namespace javax {

@@ -18,14 +18,14 @@
 
 using $ClassInfo$1 = ::com::sun::beans::introspect::ClassInfo$1;
 using $EventSetInfo = ::com::sun::beans::introspect::EventSetInfo;
-using $MethodInfo = ::com::sun::beans::introspect::MethodInfo;
+using $1MethodInfo = ::com::sun::beans::introspect::MethodInfo;
 using $PropertyInfo = ::com::sun::beans::introspect::PropertyInfo;
 using $Cache = ::com::sun::beans::util::Cache;
 using $Cache$Kind = ::com::sun::beans::util::Cache$Kind;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
-using $1MethodInfo = ::java::lang::MethodInfo;
+using $MethodInfo = ::java::lang::MethodInfo;
 using $SecurityException = ::java::lang::SecurityException;
 using $List = ::java::util::List;
 using $Map = ::java::util::Map;
@@ -47,7 +47,7 @@ $FieldInfo _ClassInfo_FieldInfo_[] = {
 	{}
 };
 
-$1MethodInfo _ClassInfo_MethodInfo_[] = {
+$MethodInfo _ClassInfo_MethodInfo_[] = {
 	{"<init>", "(Ljava/lang/Class;)V", "(Ljava/lang/Class<*>;)V", $PRIVATE, $method(static_cast<void(ClassInfo::*)($Class*)>(&ClassInfo::init$))},
 	{"clear", "()V", nullptr, $PUBLIC | $STATIC, $method(static_cast<void(*)()>(&ClassInfo::clear))},
 	{"get", "(Ljava/lang/Class;)Lcom/sun/beans/introspect/ClassInfo;", "(Ljava/lang/Class<*>;)Lcom/sun/beans/introspect/ClassInfo;", $PUBLIC | $STATIC, $method(static_cast<ClassInfo*(*)($Class*)>(&ClassInfo::get))},
@@ -118,7 +118,7 @@ $List* ClassInfo::getMethods() {
 	if (this->methods == nullptr) {
 		$synchronized(this->mutex) {
 			if (this->methods == nullptr) {
-				$set(this, methods, $MethodInfo::get(this->type));
+				$set(this, methods, $1MethodInfo::get(this->type));
 			}
 		}
 	}

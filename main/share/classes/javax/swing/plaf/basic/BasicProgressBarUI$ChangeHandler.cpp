@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ChangeEvent = ::javax::swing::event::ChangeEvent;
-using $ChangeListener = ::javax::swing::event::ChangeListener;
 using $BasicProgressBarUI = ::javax::swing::plaf::basic::BasicProgressBarUI;
 using $BasicProgressBarUI$Handler = ::javax::swing::plaf::basic::BasicProgressBarUI$Handler;
 

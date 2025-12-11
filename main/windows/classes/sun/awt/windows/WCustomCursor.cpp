@@ -116,7 +116,7 @@ void WCustomCursor::createNativeCursor($Image* im, $ints* pixels, int32_t w, int
 
 void WCustomCursor::createCursorIndirect($ints* rData, $bytes* andMask, int32_t nScanStride, int32_t width, int32_t height, int32_t xHotSpot, int32_t yHotSpot) {
 	$prepareNative(WCustomCursor, createCursorIndirect, void, $ints* rData, $bytes* andMask, int32_t nScanStride, int32_t width, int32_t height, int32_t xHotSpot, int32_t yHotSpot);
-	$invokeNative(WCustomCursor, createCursorIndirect, rData, andMask, nScanStride, width, height, xHotSpot, yHotSpot);
+	$invokeNative(rData, andMask, nScanStride, width, height, xHotSpot, yHotSpot);
 	$finishNative();
 }
 
@@ -124,7 +124,7 @@ int32_t WCustomCursor::getCursorWidth() {
 	$init(WCustomCursor);
 	int32_t $ret = 0;
 	$prepareNativeStatic(WCustomCursor, getCursorWidth, int32_t);
-	$ret = $invokeNativeStatic(WCustomCursor, getCursorWidth);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -133,7 +133,7 @@ int32_t WCustomCursor::getCursorHeight() {
 	$init(WCustomCursor);
 	int32_t $ret = 0;
 	$prepareNativeStatic(WCustomCursor, getCursorHeight, int32_t);
-	$ret = $invokeNativeStatic(WCustomCursor, getCursorHeight);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }

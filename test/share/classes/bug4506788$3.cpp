@@ -11,7 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $CaretEvent = ::javax::swing::event::CaretEvent;
-using $CaretListener = ::javax::swing::event::CaretListener;
 
 $FieldInfo _bug4506788$3_FieldInfo_[] = {
 	{"this$0", "Lbug4506788;", nullptr, $FINAL | $SYNTHETIC, $field(bug4506788$3, this$0)},

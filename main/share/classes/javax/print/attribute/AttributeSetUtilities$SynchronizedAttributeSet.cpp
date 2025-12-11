@@ -6,14 +6,12 @@
 #include <jcpp.h>
 
 using $AttributeArray = $Array<::javax::print::attribute::Attribute>;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Attribute = ::javax::print::attribute::Attribute;
 using $AttributeSet = ::javax::print::attribute::AttributeSet;
-using $AttributeSetUtilities = ::javax::print::attribute::AttributeSetUtilities;
 
 namespace javax {
 	namespace print {

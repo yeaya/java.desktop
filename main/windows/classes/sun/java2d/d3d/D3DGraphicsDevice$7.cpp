@@ -9,8 +9,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $Win32GraphicsDevice = ::sun::awt::Win32GraphicsDevice;
 using $D3DGraphicsDevice = ::sun::java2d::d3d::D3DGraphicsDevice;
 using $D3DGraphicsDevice$3Result = ::sun::java2d::d3d::D3DGraphicsDevice$3Result;
 

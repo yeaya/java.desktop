@@ -2,7 +2,6 @@
 
 #include <jcpp.h>
 
-using $ModelChannelMixer = ::com::sun::media::sound::ModelChannelMixer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

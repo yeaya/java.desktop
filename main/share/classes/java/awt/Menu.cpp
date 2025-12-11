@@ -424,7 +424,7 @@ $String* Menu::paramString() {
 void Menu::initIDs() {
 	$init(Menu);
 	$prepareNativeStatic(Menu, initIDs, void);
-	$invokeNativeStatic(Menu, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

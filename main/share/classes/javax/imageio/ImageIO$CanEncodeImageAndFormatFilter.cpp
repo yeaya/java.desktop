@@ -13,11 +13,8 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Arrays = ::java::util::Arrays;
 using $List = ::java::util::List;
-using $ImageIO = ::javax::imageio::ImageIO;
 using $ImageTypeSpecifier = ::javax::imageio::ImageTypeSpecifier;
-using $ImageReaderWriterSpi = ::javax::imageio::spi::ImageReaderWriterSpi;
 using $ImageWriterSpi = ::javax::imageio::spi::ImageWriterSpi;
-using $ServiceRegistry$Filter = ::javax::imageio::spi::ServiceRegistry$Filter;
 
 namespace javax {
 	namespace imageio {

@@ -9,7 +9,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ExifTIFFTagSet = ::javax::imageio::plugins::tiff::ExifTIFFTagSet;
 using $TIFFTag = ::javax::imageio::plugins::tiff::TIFFTag;
 
 namespace javax {

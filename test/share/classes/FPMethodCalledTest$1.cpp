@@ -7,7 +7,6 @@
 #include <javax/swing/text/View.h>
 #include <jcpp.h>
 
-using $FPMethodCalledTest = ::FPMethodCalledTest;
 using $FPMethodCalledTest$Test = ::FPMethodCalledTest$Test;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

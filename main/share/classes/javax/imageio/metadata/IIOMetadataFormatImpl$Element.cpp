@@ -21,7 +21,6 @@ using $HashMap = ::java::util::HashMap;
 using $List = ::java::util::List;
 using $Map = ::java::util::Map;
 using $IIOMetadataFormatImpl = ::javax::imageio::metadata::IIOMetadataFormatImpl;
-using $IIOMetadataFormatImpl$ObjectValue = ::javax::imageio::metadata::IIOMetadataFormatImpl$ObjectValue;
 
 namespace javax {
 	namespace imageio {

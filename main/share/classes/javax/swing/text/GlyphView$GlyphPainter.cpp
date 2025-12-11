@@ -21,7 +21,6 @@
 
 using $Position$BiasArray = $Array<::javax::swing::text::Position$Bias>;
 using $Container = ::java::awt::Container;
-using $Graphics = ::java::awt::Graphics;
 using $Point = ::java::awt::Point;
 using $Shape = ::java::awt::Shape;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -35,7 +34,6 @@ using $GlyphView = ::javax::swing::text::GlyphView;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $Position$Bias = ::javax::swing::text::Position$Bias;
 using $Segment = ::javax::swing::text::Segment;
-using $TabExpander = ::javax::swing::text::TabExpander;
 using $View = ::javax::swing::text::View;
 
 namespace javax {

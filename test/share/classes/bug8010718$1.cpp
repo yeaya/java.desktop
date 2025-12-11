@@ -7,14 +7,12 @@
 #include <javax/swing/filechooser/FileFilter.h>
 #include <jcpp.h>
 
-using $bug8010718 = ::bug8010718;
 using $bug8010718$1$1 = ::bug8010718$1$1;
 using $bug8010718$1$2 = ::bug8010718$1$2;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JFileChooser = ::javax::swing::JFileChooser;
 using $FileFilter = ::javax::swing::filechooser::FileFilter;

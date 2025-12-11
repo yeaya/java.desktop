@@ -36,7 +36,6 @@
 #undef NONE_OPTION
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
@@ -46,7 +45,6 @@ using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;
 using $Toolkit = ::java::awt::Toolkit;
-using $Window = ::java::awt::Window;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $FilteredImageSource = ::java::awt::image::FilteredImageSource;

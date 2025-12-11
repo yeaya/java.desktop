@@ -18,8 +18,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $BasicBorders = ::javax::swing::plaf::basic::BasicBorders;
 using $SwingUtilities2 = ::sun::swing::SwingUtilities2;
 
 namespace javax {

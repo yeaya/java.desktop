@@ -22,7 +22,6 @@ using $UpdateUIRecursionTest$1 = ::UpdateUIRecursionTest$1;
 using $BorderLayout = ::java::awt::BorderLayout;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

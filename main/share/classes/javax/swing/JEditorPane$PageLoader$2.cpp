@@ -12,12 +12,10 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $URL = ::java::net::URL;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $JEditorPane$PageLoader = ::javax::swing::JEditorPane$PageLoader;
 using $Document = ::javax::swing::text::Document;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 namespace javax {
 	namespace swing {

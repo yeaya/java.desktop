@@ -4,11 +4,9 @@
 #include <javax/swing/tree/AbstractLayoutCache.h>
 #include <jcpp.h>
 
-using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractLayoutCache = ::javax::swing::tree::AbstractLayoutCache;
 
 namespace javax {
 	namespace swing {

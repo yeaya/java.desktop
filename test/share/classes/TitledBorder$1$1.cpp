@@ -10,9 +10,7 @@
 
 using $TitledBorder = ::TitledBorder;
 using $TitledBorder$1 = ::TitledBorder$1;
-using $Window = ::java::awt::Window;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

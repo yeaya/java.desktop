@@ -9,12 +9,9 @@
 
 #undef RIGHT
 
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DefaultCellEditor = ::javax::swing::DefaultCellEditor;
-using $JTable = ::javax::swing::JTable;
 using $JTable$GenericEditor = ::javax::swing::JTable$GenericEditor;
 using $JTextField = ::javax::swing::JTextField;
 

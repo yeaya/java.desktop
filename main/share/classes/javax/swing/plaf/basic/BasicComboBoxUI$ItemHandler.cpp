@@ -5,7 +5,6 @@
 #include <jcpp.h>
 
 using $ItemEvent = ::java::awt::event::ItemEvent;
-using $ItemListener = ::java::awt::event::ItemListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

@@ -8,7 +8,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $List = ::java::util::List;
 using $IIOMetadataFormatImpl = ::javax::imageio::metadata::IIOMetadataFormatImpl;
 
 namespace javax {

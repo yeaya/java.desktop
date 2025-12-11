@@ -15,7 +15,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UnsupportedOperationException = ::java::lang::UnsupportedOperationException;
-using $AbstractCollection = ::java::util::AbstractCollection;
 using $AbstractMap = ::java::util::AbstractMap;
 using $HashMap = ::java::util::HashMap;
 using $Iterator = ::java::util::Iterator;

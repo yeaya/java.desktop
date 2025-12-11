@@ -84,7 +84,7 @@ void FillParallelogram::init$(int64_t pNativePrim, $SurfaceType* srctype, $Compo
 
 void FillParallelogram::FillParallelogram$($SunGraphics2D* sg2d, $SurfaceData* dest, double x0, double y0, double dx1, double dy1, double dx2, double dy2) {
 	$prepareNative(FillParallelogram, FillParallelogram$, void, $SunGraphics2D* sg2d, $SurfaceData* dest, double x0, double y0, double dx1, double dy1, double dx2, double dy2);
-	$invokeNative(FillParallelogram, FillParallelogram$, sg2d, dest, x0, y0, dx1, dy1, dx2, dy2);
+	$invokeNative(sg2d, dest, x0, y0, dx1, dy1, dx2, dy2);
 	$finishNative();
 }
 

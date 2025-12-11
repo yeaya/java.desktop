@@ -16,7 +16,6 @@
 #undef USER_ATTENTION_WINDOW
 
 using $Taskbar$FeatureArray = $Array<::java::awt::Taskbar$Feature>;
-using $Taskbar = ::java::awt::Taskbar;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

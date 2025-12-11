@@ -10,7 +10,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Win32FontManager = ::sun::awt::Win32FontManager;
 using $TrueTypeFont = ::sun::font::TrueTypeFont;
 

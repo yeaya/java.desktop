@@ -25,7 +25,6 @@
 
 #undef ACTION_PERFORMED
 
-using $RectangleArray = $Array<::java::awt::Rectangle>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
@@ -38,7 +37,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $Action = ::javax::swing::Action;
 using $ActionMap = ::javax::swing::ActionMap;
@@ -46,7 +44,6 @@ using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JPanel = ::javax::swing::JPanel;
 using $JTabbedPane = ::javax::swing::JTabbedPane;
-using $JViewport = ::javax::swing::JViewport;
 using $ChangeEvent = ::javax::swing::event::ChangeEvent;
 using $ChangeListener = ::javax::swing::event::ChangeListener;
 using $BasicTabbedPaneUI = ::javax::swing::plaf::basic::BasicTabbedPaneUI;

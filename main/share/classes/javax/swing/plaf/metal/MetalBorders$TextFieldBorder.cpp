@@ -13,7 +13,6 @@ using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $MetalBorders = ::javax::swing::plaf::metal::MetalBorders;
 using $MetalBorders$Flush3DBorder = ::javax::swing::plaf::metal::MetalBorders$Flush3DBorder;
 using $MetalUtils = ::javax::swing::plaf::metal::MetalUtils;
 using $JTextComponent = ::javax::swing::text::JTextComponent;

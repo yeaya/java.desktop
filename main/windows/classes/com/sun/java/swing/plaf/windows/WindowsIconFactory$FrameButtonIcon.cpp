@@ -35,7 +35,6 @@
 
 using $TMSchema$Part = ::com::sun::java::swing::plaf::windows::TMSchema$Part;
 using $TMSchema$State = ::com::sun::java::swing::plaf::windows::TMSchema$State;
-using $WindowsIconFactory = ::com::sun::java::swing::plaf::windows::WindowsIconFactory;
 using $XPStyle = ::com::sun::java::swing::plaf::windows::XPStyle;
 using $XPStyle$Skin = ::com::sun::java::swing::plaf::windows::XPStyle$Skin;
 using $Color = ::java::awt::Color;
@@ -43,7 +42,6 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

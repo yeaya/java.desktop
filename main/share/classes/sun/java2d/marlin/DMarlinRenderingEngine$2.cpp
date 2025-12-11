@@ -12,7 +12,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ReentrantContext = ::sun::java2d::ReentrantContext;
 using $ReentrantContextProviderCLQ = ::sun::java2d::ReentrantContextProviderCLQ;
-using $DMarlinRenderingEngine = ::sun::java2d::marlin::DMarlinRenderingEngine;
 using $RendererContext = ::sun::java2d::marlin::RendererContext;
 
 namespace sun {

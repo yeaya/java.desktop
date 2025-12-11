@@ -7,7 +7,6 @@
 
 #undef PI
 
-using $SoftChorus = ::com::sun::media::sound::SoftChorus;
 using $SoftChorus$VariableDelay = ::com::sun::media::sound::SoftChorus$VariableDelay;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;

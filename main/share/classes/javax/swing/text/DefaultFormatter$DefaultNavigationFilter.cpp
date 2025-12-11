@@ -12,12 +12,10 @@
 #include <jcpp.h>
 
 using $Position$BiasArray = $Array<::javax::swing::text::Position$Bias>;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JFormattedTextField = ::javax::swing::JFormattedTextField;
 using $JTextField = ::javax::swing::JTextField;
 using $TextUI = ::javax::swing::plaf::TextUI;
 using $DefaultFormatter = ::javax::swing::text::DefaultFormatter;

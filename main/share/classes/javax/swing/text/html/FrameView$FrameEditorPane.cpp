@@ -12,7 +12,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $EditorKit = ::javax::swing::text::EditorKit;
 using $FrameView = ::javax::swing::text::html::FrameView;
-using $FrameEditorPaneTag = ::sun::swing::text::html::FrameEditorPaneTag;
 
 namespace javax {
 	namespace swing {

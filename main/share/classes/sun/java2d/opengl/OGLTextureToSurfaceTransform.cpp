@@ -21,7 +21,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $CompositeType = ::sun::java2d::loops::CompositeType;
-using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $TransformBlit = ::sun::java2d::loops::TransformBlit;
 using $OGLBlitLoops = ::sun::java2d::opengl::OGLBlitLoops;
 using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;

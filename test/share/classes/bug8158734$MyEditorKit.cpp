@@ -13,7 +13,6 @@
 #include <jcpp.h>
 
 using $ActionArray = $Array<::javax::swing::Action>;
-using $bug8158734 = ::bug8158734;
 using $InputStream = ::java::io::InputStream;
 using $OutputStream = ::java::io::OutputStream;
 using $Reader = ::java::io::Reader;
@@ -21,7 +20,6 @@ using $Writer = ::java::io::Writer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Action = ::javax::swing::Action;
 using $Caret = ::javax::swing::text::Caret;
 using $Document = ::javax::swing::text::Document;
 using $EditorKit = ::javax::swing::text::EditorKit;

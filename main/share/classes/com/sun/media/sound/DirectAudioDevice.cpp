@@ -406,7 +406,7 @@ $AudioFormat* DirectAudioDevice::getSignOrEndianChangedFormat($AudioFormat* form
 void DirectAudioDevice::nGetFormats(int32_t mixerIndex, int32_t deviceID, bool isSource, $Vector* formats) {
 	$init(DirectAudioDevice);
 	$prepareNativeStatic(DirectAudioDevice, nGetFormats, void, int32_t mixerIndex, int32_t deviceID, bool isSource, $Vector* formats);
-	$invokeNativeStatic(DirectAudioDevice, nGetFormats, mixerIndex, deviceID, isSource, formats);
+	$invokeNativeStatic(mixerIndex, deviceID, isSource, formats);
 	$finishNativeStatic();
 }
 
@@ -414,7 +414,7 @@ int64_t DirectAudioDevice::nOpen(int32_t mixerIndex, int32_t deviceID, bool isSo
 	$init(DirectAudioDevice);
 	int64_t $ret = 0;
 	$prepareNativeStatic(DirectAudioDevice, nOpen, int64_t, int32_t mixerIndex, int32_t deviceID, bool isSource, int32_t encoding, float sampleRate, int32_t sampleSizeInBits, int32_t frameSize, int32_t channels, bool signed$, bool bigEndian, int32_t bufferSize);
-	$ret = $invokeNativeStatic(DirectAudioDevice, nOpen, mixerIndex, deviceID, isSource, encoding, sampleRate, sampleSizeInBits, frameSize, channels, signed$, bigEndian, bufferSize);
+	$ret = $invokeNativeStatic(mixerIndex, deviceID, isSource, encoding, sampleRate, sampleSizeInBits, frameSize, channels, signed$, bigEndian, bufferSize);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -422,21 +422,21 @@ int64_t DirectAudioDevice::nOpen(int32_t mixerIndex, int32_t deviceID, bool isSo
 void DirectAudioDevice::nStart(int64_t id, bool isSource) {
 	$init(DirectAudioDevice);
 	$prepareNativeStatic(DirectAudioDevice, nStart, void, int64_t id, bool isSource);
-	$invokeNativeStatic(DirectAudioDevice, nStart, id, isSource);
+	$invokeNativeStatic(id, isSource);
 	$finishNativeStatic();
 }
 
 void DirectAudioDevice::nStop(int64_t id, bool isSource) {
 	$init(DirectAudioDevice);
 	$prepareNativeStatic(DirectAudioDevice, nStop, void, int64_t id, bool isSource);
-	$invokeNativeStatic(DirectAudioDevice, nStop, id, isSource);
+	$invokeNativeStatic(id, isSource);
 	$finishNativeStatic();
 }
 
 void DirectAudioDevice::nClose(int64_t id, bool isSource) {
 	$init(DirectAudioDevice);
 	$prepareNativeStatic(DirectAudioDevice, nClose, void, int64_t id, bool isSource);
-	$invokeNativeStatic(DirectAudioDevice, nClose, id, isSource);
+	$invokeNativeStatic(id, isSource);
 	$finishNativeStatic();
 }
 
@@ -444,7 +444,7 @@ int32_t DirectAudioDevice::nWrite(int64_t id, $bytes* b, int32_t off, int32_t le
 	$init(DirectAudioDevice);
 	int32_t $ret = 0;
 	$prepareNativeStatic(DirectAudioDevice, nWrite, int32_t, int64_t id, $bytes* b, int32_t off, int32_t len, int32_t conversionSize, float volLeft, float volRight);
-	$ret = $invokeNativeStatic(DirectAudioDevice, nWrite, id, b, off, len, conversionSize, volLeft, volRight);
+	$ret = $invokeNativeStatic(id, b, off, len, conversionSize, volLeft, volRight);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -453,7 +453,7 @@ int32_t DirectAudioDevice::nRead(int64_t id, $bytes* b, int32_t off, int32_t len
 	$init(DirectAudioDevice);
 	int32_t $ret = 0;
 	$prepareNativeStatic(DirectAudioDevice, nRead, int32_t, int64_t id, $bytes* b, int32_t off, int32_t len, int32_t conversionSize);
-	$ret = $invokeNativeStatic(DirectAudioDevice, nRead, id, b, off, len, conversionSize);
+	$ret = $invokeNativeStatic(id, b, off, len, conversionSize);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -462,7 +462,7 @@ int32_t DirectAudioDevice::nGetBufferSize(int64_t id, bool isSource) {
 	$init(DirectAudioDevice);
 	int32_t $ret = 0;
 	$prepareNativeStatic(DirectAudioDevice, nGetBufferSize, int32_t, int64_t id, bool isSource);
-	$ret = $invokeNativeStatic(DirectAudioDevice, nGetBufferSize, id, isSource);
+	$ret = $invokeNativeStatic(id, isSource);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -471,7 +471,7 @@ bool DirectAudioDevice::nIsStillDraining(int64_t id, bool isSource) {
 	$init(DirectAudioDevice);
 	bool $ret = false;
 	$prepareNativeStatic(DirectAudioDevice, nIsStillDraining, bool, int64_t id, bool isSource);
-	$ret = $invokeNativeStatic(DirectAudioDevice, nIsStillDraining, id, isSource);
+	$ret = $invokeNativeStatic(id, isSource);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -479,7 +479,7 @@ bool DirectAudioDevice::nIsStillDraining(int64_t id, bool isSource) {
 void DirectAudioDevice::nFlush(int64_t id, bool isSource) {
 	$init(DirectAudioDevice);
 	$prepareNativeStatic(DirectAudioDevice, nFlush, void, int64_t id, bool isSource);
-	$invokeNativeStatic(DirectAudioDevice, nFlush, id, isSource);
+	$invokeNativeStatic(id, isSource);
 	$finishNativeStatic();
 }
 
@@ -487,7 +487,7 @@ int32_t DirectAudioDevice::nAvailable(int64_t id, bool isSource) {
 	$init(DirectAudioDevice);
 	int32_t $ret = 0;
 	$prepareNativeStatic(DirectAudioDevice, nAvailable, int32_t, int64_t id, bool isSource);
-	$ret = $invokeNativeStatic(DirectAudioDevice, nAvailable, id, isSource);
+	$ret = $invokeNativeStatic(id, isSource);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -496,7 +496,7 @@ int64_t DirectAudioDevice::nGetBytePosition(int64_t id, bool isSource, int64_t j
 	$init(DirectAudioDevice);
 	int64_t $ret = 0;
 	$prepareNativeStatic(DirectAudioDevice, nGetBytePosition, int64_t, int64_t id, bool isSource, int64_t javaPos);
-	$ret = $invokeNativeStatic(DirectAudioDevice, nGetBytePosition, id, isSource, javaPos);
+	$ret = $invokeNativeStatic(id, isSource, javaPos);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -504,7 +504,7 @@ int64_t DirectAudioDevice::nGetBytePosition(int64_t id, bool isSource, int64_t j
 void DirectAudioDevice::nSetBytePosition(int64_t id, bool isSource, int64_t pos) {
 	$init(DirectAudioDevice);
 	$prepareNativeStatic(DirectAudioDevice, nSetBytePosition, void, int64_t id, bool isSource, int64_t pos);
-	$invokeNativeStatic(DirectAudioDevice, nSetBytePosition, id, isSource, pos);
+	$invokeNativeStatic(id, isSource, pos);
 	$finishNativeStatic();
 }
 
@@ -512,7 +512,7 @@ bool DirectAudioDevice::nRequiresServicing(int64_t id, bool isSource) {
 	$init(DirectAudioDevice);
 	bool $ret = false;
 	$prepareNativeStatic(DirectAudioDevice, nRequiresServicing, bool, int64_t id, bool isSource);
-	$ret = $invokeNativeStatic(DirectAudioDevice, nRequiresServicing, id, isSource);
+	$ret = $invokeNativeStatic(id, isSource);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -520,7 +520,7 @@ bool DirectAudioDevice::nRequiresServicing(int64_t id, bool isSource) {
 void DirectAudioDevice::nService(int64_t id, bool isSource) {
 	$init(DirectAudioDevice);
 	$prepareNativeStatic(DirectAudioDevice, nService, void, int64_t id, bool isSource);
-	$invokeNativeStatic(DirectAudioDevice, nService, id, isSource);
+	$invokeNativeStatic(id, isSource);
 	$finishNativeStatic();
 }
 

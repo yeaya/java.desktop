@@ -11,7 +11,6 @@
 #include <java/awt/image/ColorModel.h>
 #include <jcpp.h>
 
-using $Paint = ::java::awt::Paint;
 using $PaintContext = ::java::awt::PaintContext;
 using $Rectangle = ::java::awt::Rectangle;
 using $RenderingHints = ::java::awt::RenderingHints;
@@ -19,7 +18,6 @@ using $TexturePaintContext = ::java::awt::TexturePaintContext;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $Rectangle2D$Double = ::java::awt::geom::Rectangle2D$Double;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $ClassInfo = ::java::lang::ClassInfo;

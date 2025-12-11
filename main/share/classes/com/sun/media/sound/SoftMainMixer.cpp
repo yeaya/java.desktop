@@ -90,7 +90,6 @@ using $TreeMap = ::java::util::TreeMap;
 using $MidiMessage = ::javax::sound::midi::MidiMessage;
 using $Patch = ::javax::sound::midi::Patch;
 using $ShortMessage = ::javax::sound::midi::ShortMessage;
-using $VoiceStatus = ::javax::sound::midi::VoiceStatus;
 using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 using $AudioInputStream = ::javax::sound::sampled::AudioInputStream;
 using $AudioSystem = ::javax::sound::sampled::AudioSystem;

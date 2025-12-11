@@ -8,7 +8,6 @@
 #include <jcpp.h>
 
 using $TestTranslucentLabelText = ::TestTranslucentLabelText;
-using $Window = ::java::awt::Window;
 using $WindowAdapter = ::java::awt::event::WindowAdapter;
 using $WindowEvent = ::java::awt::event::WindowEvent;
 using $PrintStream = ::java::io::PrintStream;

@@ -1,6 +1,7 @@
 #machine generated
 
 add_subdirectory("im")
+add_subdirectory("image")
 add_subdirectory("shell")
 add_subdirectory("windows")
 

@@ -18,8 +18,6 @@
 #undef FREE_STANDING_PROP
 #undef TRUE
 
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;

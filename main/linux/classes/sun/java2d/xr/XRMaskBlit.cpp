@@ -86,7 +86,7 @@ void XRMaskBlit::init$($SurfaceType* srcType, $CompositeType* compType, $Surface
 
 void XRMaskBlit::maskBlit(int64_t srcXsdo, int64_t dstxsdo, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t w, int32_t h, int32_t maskoff, int32_t maskscan, int32_t masklen, $bytes* mask) {
 	$prepareNative(XRMaskBlit, maskBlit, void, int64_t srcXsdo, int64_t dstxsdo, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t w, int32_t h, int32_t maskoff, int32_t maskscan, int32_t masklen, $bytes* mask);
-	$invokeNative(XRMaskBlit, maskBlit, srcXsdo, dstxsdo, srcx, srcy, dstx, dsty, w, h, maskoff, maskscan, masklen, mask);
+	$invokeNative(srcXsdo, dstxsdo, srcx, srcy, dstx, dsty, w, h, maskoff, maskscan, masklen, mask);
 	$finishNative();
 }
 

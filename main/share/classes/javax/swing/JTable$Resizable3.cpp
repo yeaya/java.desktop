@@ -6,8 +6,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JTable = ::javax::swing::JTable;
-using $JTable$Resizable2 = ::javax::swing::JTable$Resizable2;
 
 namespace javax {
 	namespace swing {

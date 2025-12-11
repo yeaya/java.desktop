@@ -20,7 +20,6 @@ using $bug8041982$1 = ::bug8041982$1;
 using $bug8041982$BusyLayer = ::bug8041982$BusyLayer;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

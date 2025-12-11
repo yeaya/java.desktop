@@ -7,7 +7,6 @@
 #include <java/lang/Error.h>
 #include <jcpp.h>
 
-using $Test7034614 = ::Test7034614;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Insets = ::java::awt::Insets;
@@ -16,7 +15,6 @@ using $Error = ::java::lang::Error;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Border = ::javax::swing::border::Border;
 
 $FieldInfo _Test7034614$BrokenBorder_FieldInfo_[] = {
 	{"insets", "Ljava/awt/Insets;", nullptr, $PRIVATE, $field(Test7034614$BrokenBorder, insets)},

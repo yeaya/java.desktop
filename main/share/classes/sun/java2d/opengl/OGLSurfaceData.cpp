@@ -102,9 +102,7 @@ using $Runnable = ::java::lang::Runnable;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $SunHints = ::sun::awt::SunHints;
-using $PixelConverter = ::sun::awt::image::PixelConverter;
 using $PixelConverter$ArgbPre = ::sun::awt::image::PixelConverter$ArgbPre;
-using $SurfaceManager$ProxiedGraphicsConfig = ::sun::awt::image::SurfaceManager$ProxiedGraphicsConfig;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $SurfaceDataProxy = ::sun::java2d::SurfaceDataProxy;
@@ -310,7 +308,7 @@ $OGLDrawImage* OGLSurfaceData::oglImagePipe = nullptr;
 bool OGLSurfaceData::initTexture(int64_t pData, bool isOpaque, bool texNonPow2, bool texRect, int32_t width, int32_t height) {
 	bool $ret = false;
 	$prepareNative(OGLSurfaceData, initTexture, bool, int64_t pData, bool isOpaque, bool texNonPow2, bool texRect, int32_t width, int32_t height);
-	$ret = $invokeNative(OGLSurfaceData, initTexture, pData, isOpaque, texNonPow2, texRect, width, height);
+	$ret = $invokeNative(pData, isOpaque, texNonPow2, texRect, width, height);
 	$finishNative();
 	return $ret;
 }
@@ -318,7 +316,7 @@ bool OGLSurfaceData::initTexture(int64_t pData, bool isOpaque, bool texNonPow2, 
 bool OGLSurfaceData::initFBObject(int64_t pData, bool isOpaque, bool texNonPow2, bool texRect, int32_t width, int32_t height) {
 	bool $ret = false;
 	$prepareNative(OGLSurfaceData, initFBObject, bool, int64_t pData, bool isOpaque, bool texNonPow2, bool texRect, int32_t width, int32_t height);
-	$ret = $invokeNative(OGLSurfaceData, initFBObject, pData, isOpaque, texNonPow2, texRect, width, height);
+	$ret = $invokeNative(pData, isOpaque, texNonPow2, texRect, width, height);
 	$finishNative();
 	return $ret;
 }
@@ -326,7 +324,7 @@ bool OGLSurfaceData::initFBObject(int64_t pData, bool isOpaque, bool texNonPow2,
 bool OGLSurfaceData::initFlipBackbuffer(int64_t pData) {
 	bool $ret = false;
 	$prepareNative(OGLSurfaceData, initFlipBackbuffer, bool, int64_t pData);
-	$ret = $invokeNative(OGLSurfaceData, initFlipBackbuffer, pData);
+	$ret = $invokeNative(pData);
 	$finishNative();
 	return $ret;
 }
@@ -334,7 +332,7 @@ bool OGLSurfaceData::initFlipBackbuffer(int64_t pData) {
 int32_t OGLSurfaceData::getTextureTarget(int64_t pData) {
 	int32_t $ret = 0;
 	$prepareNative(OGLSurfaceData, getTextureTarget, int32_t, int64_t pData);
-	$ret = $invokeNative(OGLSurfaceData, getTextureTarget, pData);
+	$ret = $invokeNative(pData);
 	$finishNative();
 	return $ret;
 }
@@ -342,7 +340,7 @@ int32_t OGLSurfaceData::getTextureTarget(int64_t pData) {
 int32_t OGLSurfaceData::getTextureID(int64_t pData) {
 	int32_t $ret = 0;
 	$prepareNative(OGLSurfaceData, getTextureID, int32_t, int64_t pData);
-	$ret = $invokeNative(OGLSurfaceData, getTextureID, pData);
+	$ret = $invokeNative(pData);
 	$finishNative();
 	return $ret;
 }

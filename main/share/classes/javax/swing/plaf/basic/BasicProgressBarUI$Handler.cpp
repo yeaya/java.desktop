@@ -12,11 +12,8 @@
 
 #undef DISPLAYABILITY_CHANGED
 
-using $Component = ::java::awt::Component;
 using $HierarchyEvent = ::java::awt::event::HierarchyEvent;
-using $HierarchyListener = ::java::awt::event::HierarchyListener;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

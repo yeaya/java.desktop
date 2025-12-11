@@ -7,14 +7,9 @@
 #include <sun/font/TextRecord.h>
 #include <jcpp.h>
 
-using $Point2D$Float = ::java::awt::geom::Point2D$Float;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $FontStrikeDesc = ::sun::font::FontStrikeDesc;
-using $GlyphLayout = ::sun::font::GlyphLayout;
-using $GlyphLayout$GVData = ::sun::font::GlyphLayout$GVData;
-using $TextRecord = ::sun::font::TextRecord;
 
 namespace sun {
 	namespace font {

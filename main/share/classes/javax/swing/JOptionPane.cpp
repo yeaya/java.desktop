@@ -95,7 +95,6 @@
 using $BorderLayout = ::java::awt::BorderLayout;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
-using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $Dialog = ::java::awt::Dialog;
@@ -129,7 +128,6 @@ using $NamedAttribute = ::java::lang::NamedAttribute;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $Arrays = ::java::util::Arrays;
 using $Vector = ::java::util::Vector;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $ClientPropertyKey = ::javax::swing::ClientPropertyKey;
 using $Icon = ::javax::swing::Icon;

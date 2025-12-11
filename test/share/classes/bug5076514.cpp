@@ -17,7 +17,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $SecurityManager = ::java::lang::SecurityManager;
 using $JEditorPane = ::javax::swing::JEditorPane;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $FieldInfo _bug5076514_FieldInfo_[] = {
 	{"ACCESS_CLIPBOARD", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(bug5076514, ACCESS_CLIPBOARD)},

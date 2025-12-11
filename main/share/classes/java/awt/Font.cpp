@@ -171,7 +171,6 @@ using $InputStream = ::java::io::InputStream;
 using $ObjectInputStream = ::java::io::ObjectInputStream;
 using $ObjectOutputStream = ::java::io::ObjectOutputStream;
 using $OutputStream = ::java::io::OutputStream;
-using $Serializable = ::java::io::Serializable;
 using $ArrayIndexOutOfBoundsException = ::java::lang::ArrayIndexOutOfBoundsException;
 using $Character = ::java::lang::Character;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -192,14 +191,12 @@ using $SecurityManager = ::java::lang::SecurityManager;
 using $SoftReference = ::java::lang::ref::SoftReference;
 using $Files = ::java::nio::file::Files;
 using $Path = ::java::nio::file::Path;
-using $FileAttribute = ::java::nio::file::attribute::FileAttribute;
 using $AccessController = ::java::security::AccessController;
 using $Permission = ::java::security::Permission;
 using $PrivilegedExceptionAction = ::java::security::PrivilegedExceptionAction;
 using $AttributedCharacterIterator$Attribute = ::java::text::AttributedCharacterIterator$Attribute;
 using $CharacterIterator = ::java::text::CharacterIterator;
 using $AbstractMap = ::java::util::AbstractMap;
-using $Hashtable = ::java::util::Hashtable;
 using $Locale = ::java::util::Locale;
 using $Map = ::java::util::Map;
 using $ComponentFactory = ::sun::awt::ComponentFactory;
@@ -1526,7 +1523,7 @@ void Font::applyStyle(int32_t style, $AttributeValues* values) {
 void Font::initIDs() {
 	$init(Font);
 	$prepareNativeStatic(Font, initIDs, void);
-	$invokeNativeStatic(Font, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

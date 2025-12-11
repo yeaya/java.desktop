@@ -12,16 +12,12 @@
 #undef LOCK
 #undef NORM_PRIORITY
 
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $ThreadGroup = ::java::lang::ThreadGroup;
-using $Locale = ::java::util::Locale;
 using $ExecutableInputMethodManager = ::sun::awt::im::ExecutableInputMethodManager;
-using $InputContext = ::sun::awt::im::InputContext;
-using $InputMethodLocator = ::sun::awt::im::InputMethodLocator;
 
 namespace sun {
 	namespace awt {

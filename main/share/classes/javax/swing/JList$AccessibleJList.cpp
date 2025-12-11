@@ -29,7 +29,6 @@
 #undef MULTISELECTABLE
 #undef SINGLE_SELECTION
 
-using $Container = ::java::awt::Container;
 using $Point = ::java::awt::Point;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;

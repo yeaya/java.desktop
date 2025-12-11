@@ -18,7 +18,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InternalError = ::java::lang::InternalError;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DMarlinRenderingEngine = ::sun::java2d::marlin::DMarlinRenderingEngine;
 
 namespace sun {
 	namespace java2d {

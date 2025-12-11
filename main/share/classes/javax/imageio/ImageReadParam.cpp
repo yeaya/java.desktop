@@ -10,7 +10,6 @@
 #undef MAX_VALUE
 
 using $Dimension = ::java::awt::Dimension;
-using $Dimension2D = ::java::awt::geom::Dimension2D;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

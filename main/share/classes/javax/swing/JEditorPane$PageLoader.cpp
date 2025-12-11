@@ -44,7 +44,6 @@ using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $SwingWorker = ::javax::swing::SwingWorker;
 using $UIManager = ::javax::swing::UIManager;
 using $Document = ::javax::swing::text::Document;
-using $EditorKit = ::javax::swing::text::EditorKit;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 namespace javax {

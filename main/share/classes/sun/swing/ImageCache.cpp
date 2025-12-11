@@ -17,10 +17,8 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SoftReference = ::java::lang::ref::SoftReference;
-using $AbstractList = ::java::util::AbstractList;
 using $Iterator = ::java::util::Iterator;
 using $LinkedList = ::java::util::LinkedList;
-using $ListIterator = ::java::util::ListIterator;
 using $ImageCache$Entry = ::sun::swing::ImageCache$Entry;
 
 namespace sun {

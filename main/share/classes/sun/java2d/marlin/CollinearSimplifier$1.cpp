@@ -5,14 +5,11 @@
 #include <sun/java2d/marlin/CollinearSimplifier.h>
 #include <jcpp.h>
 
-using $CollinearSimplifier$SimplifierStateArray = $Array<::sun::java2d::marlin::CollinearSimplifier$SimplifierState>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $CollinearSimplifier = ::sun::java2d::marlin::CollinearSimplifier;
 using $CollinearSimplifier$SimplifierState = ::sun::java2d::marlin::CollinearSimplifier$SimplifierState;
 
 namespace sun {

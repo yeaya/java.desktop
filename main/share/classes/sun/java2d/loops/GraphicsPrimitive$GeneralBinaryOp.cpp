@@ -8,10 +8,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Blit = ::sun::java2d::loops::Blit;
-using $CompositeType = ::sun::java2d::loops::CompositeType;
-using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
-using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 
 namespace sun {
 	namespace java2d {

@@ -6,7 +6,6 @@
 #include <java/security/Permission.h>
 #include <jcpp.h>
 
-using $bug6694823 = ::bug6694823;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

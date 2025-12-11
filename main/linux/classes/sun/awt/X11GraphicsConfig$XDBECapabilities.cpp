@@ -10,7 +10,6 @@
 
 using $BufferCapabilities = ::java::awt::BufferCapabilities;
 using $BufferCapabilities$FlipContents = ::java::awt::BufferCapabilities$FlipContents;
-using $ImageCapabilities = ::java::awt::ImageCapabilities;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

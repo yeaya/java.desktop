@@ -23,7 +23,6 @@ using $Dimension = ::java::awt::Dimension;
 using $Insets = ::java::awt::Insets;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $ObjectInputStream = ::java::io::ObjectInputStream;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Math = ::java::lang::Math;

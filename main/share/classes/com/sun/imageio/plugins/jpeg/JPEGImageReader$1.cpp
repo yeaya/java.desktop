@@ -3,12 +3,10 @@
 #include <com/sun/imageio/plugins/jpeg/JPEGImageReader.h>
 #include <jcpp.h>
 
-using $JPEGImageReader = ::com::sun::imageio::plugins::jpeg::JPEGImageReader;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 
 namespace com {
 	namespace sun {

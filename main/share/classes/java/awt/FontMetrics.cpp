@@ -23,7 +23,6 @@ using $FontRenderContext = ::java::awt::font::FontRenderContext;
 using $LineMetrics = ::java::awt::font::LineMetrics;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
-using $Serializable = ::java::io::Serializable;
 using $Character = ::java::lang::Character;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
@@ -252,7 +251,7 @@ $String* FontMetrics::toString() {
 void FontMetrics::initIDs() {
 	$init(FontMetrics);
 	$prepareNativeStatic(FontMetrics, initIDs, void);
-	$invokeNativeStatic(FontMetrics, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

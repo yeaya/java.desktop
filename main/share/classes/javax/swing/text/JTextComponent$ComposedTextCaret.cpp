@@ -20,8 +20,6 @@
 #include <javax/swing/text/StyledDocument.h>
 #include <jcpp.h>
 
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $EventQueue = ::java::awt::EventQueue;
 using $Graphics = ::java::awt::Graphics;
 using $Point = ::java::awt::Point;

@@ -17,19 +17,15 @@
 #undef NO_CONTEXT_FLAGS
 
 using $Composite = ::java::awt::Composite;
-using $Paint = ::java::awt::Paint;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
-using $SurfaceData = ::sun::java2d::SurfaceData;
 using $D3DContext = ::sun::java2d::d3d::D3DContext;
 using $D3DSurfaceData = ::sun::java2d::d3d::D3DSurfaceData;
 using $D3DTextRenderer$Tracer = ::sun::java2d::d3d::D3DTextRenderer$Tracer;
-using $BufferedContext = ::sun::java2d::pipe::BufferedContext;
 using $BufferedTextPipe = ::sun::java2d::pipe::BufferedTextPipe;
-using $Region = ::sun::java2d::pipe::Region;
 using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 using $AccelSurface = ::sun::java2d::pipe::hw::AccelSurface;
 
@@ -83,7 +79,7 @@ void D3DTextRenderer::init$($RenderQueue* rq) {
 
 void D3DTextRenderer::drawGlyphList(int32_t numGlyphs, bool usePositions, bool subPixPos, bool rgbOrder, int32_t lcdContrast, float glOrigX, float glOrigY, $longs* images, $floats* positions) {
 	$prepareNative(D3DTextRenderer, drawGlyphList, void, int32_t numGlyphs, bool usePositions, bool subPixPos, bool rgbOrder, int32_t lcdContrast, float glOrigX, float glOrigY, $longs* images, $floats* positions);
-	$invokeNative(D3DTextRenderer, drawGlyphList, numGlyphs, usePositions, subPixPos, rgbOrder, lcdContrast, glOrigX, glOrigY, images, positions);
+	$invokeNative(numGlyphs, usePositions, subPixPos, rgbOrder, lcdContrast, glOrigX, glOrigY, images, positions);
 	$finishNative();
 }
 

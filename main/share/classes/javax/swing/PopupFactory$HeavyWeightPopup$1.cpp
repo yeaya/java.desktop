@@ -19,7 +19,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $List = ::java::util::List;
 using $Map = ::java::util::Map;
-using $PopupFactory = ::javax::swing::PopupFactory;
 using $PopupFactory$HeavyWeightPopup = ::javax::swing::PopupFactory$HeavyWeightPopup;
 
 namespace javax {

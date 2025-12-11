@@ -5,9 +5,6 @@
 #include <java/awt/image/renderable/ParameterBlock.h>
 #include <jcpp.h>
 
-using $RenderingHints = ::java::awt::RenderingHints;
-using $RenderedImage = ::java::awt::image::RenderedImage;
-using $ParameterBlock = ::java::awt::image::renderable::ParameterBlock;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

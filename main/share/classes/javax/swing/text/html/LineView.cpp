@@ -23,7 +23,6 @@
 #undef X_AXIS
 #undef Y_AXIS
 
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
@@ -35,15 +34,10 @@ using $Float = ::java::lang::Float;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $CompositeView = ::javax::swing::text::CompositeView;
 using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
-using $FlowView = ::javax::swing::text::FlowView;
-using $1ParagraphView = ::javax::swing::text::ParagraphView;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
 using $StyledDocument = ::javax::swing::text::StyledDocument;
-using $TabSet = ::javax::swing::text::TabSet;
 using $View = ::javax::swing::text::View;
 using $ParagraphView = ::javax::swing::text::html::ParagraphView;
 

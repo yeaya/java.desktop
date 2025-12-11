@@ -4,7 +4,6 @@
 #include <java/io/ByteArrayOutputStream.h>
 #include <jcpp.h>
 
-using $DirectAudioDevice = ::com::sun::media::sound::DirectAudioDevice;
 using $ByteArrayOutputStream = ::java::io::ByteArrayOutputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

@@ -15,7 +15,6 @@
 
 using $DocFlavorArray = $Array<::javax::print::DocFlavor>;
 using $StreamPrintServiceFactoryArray = $Array<::javax::print::StreamPrintServiceFactory>;
-using $OutputStream = ::java::io::OutputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
@@ -25,7 +24,6 @@ using $PrivilegedExceptionAction = ::java::security::PrivilegedExceptionAction;
 using $ArrayList = ::java::util::ArrayList;
 using $Iterator = ::java::util::Iterator;
 using $DocFlavor = ::javax::print::DocFlavor;
-using $StreamPrintService = ::javax::print::StreamPrintService;
 using $StreamPrintServiceFactory$1 = ::javax::print::StreamPrintServiceFactory$1;
 using $StreamPrintServiceFactory$Services = ::javax::print::StreamPrintServiceFactory$Services;
 using $AppContext = ::sun::awt::AppContext;

@@ -7,12 +7,8 @@
 
 #undef PCMM
 
-using $ColorTransformArray = $Array<::sun::java2d::cmm::ColorTransform>;
-using $ICC_Profile = ::java::awt::color::ICC_Profile;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ColorTransform = ::sun::java2d::cmm::ColorTransform;
-using $Profile = ::sun::java2d::cmm::Profile;
 
 namespace sun {
 	namespace java2d {

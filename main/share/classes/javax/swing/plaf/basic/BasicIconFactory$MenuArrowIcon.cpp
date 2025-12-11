@@ -10,13 +10,10 @@
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Polygon = ::java::awt::Polygon;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Icon = ::javax::swing::Icon;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $BasicIconFactory = ::javax::swing::plaf::basic::BasicIconFactory;
 
 namespace javax {
 	namespace swing {

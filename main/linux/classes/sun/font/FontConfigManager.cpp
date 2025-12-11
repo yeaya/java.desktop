@@ -28,7 +28,6 @@
 #undef UNKNOWN_RANK
 
 using $FontConfigManager$FcCompFontArray = $Array<::sun::font::FontConfigManager$FcCompFont>;
-using $FontConfigManager$FontConfigFontArray = $Array<::sun::font::FontConfigManager$FontConfigFont>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -151,7 +150,7 @@ int32_t FontConfigManager::getFontConfigVersion() {
 	$init(FontConfigManager);
 	int32_t $ret = 0;
 	$prepareNativeStatic(FontConfigManager, getFontConfigVersion, int32_t);
-	$ret = $invokeNativeStatic(FontConfigManager, getFontConfigVersion);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -344,7 +343,7 @@ $FontConfigManager$FcCompFontArray* FontConfigManager::getFontConfigFonts() {
 void FontConfigManager::getFontConfig($String* locale, $FontConfigManager$FontConfigInfo* fcInfo, $FontConfigManager$FcCompFontArray* fonts, bool includeFallbacks) {
 	$init(FontConfigManager);
 	$prepareNativeStatic(FontConfigManager, getFontConfig, void, $String* locale, $FontConfigManager$FontConfigInfo* fcInfo, $FontConfigManager$FcCompFontArray* fonts, bool includeFallbacks);
-	$invokeNativeStatic(FontConfigManager, getFontConfig, locale, fcInfo, fonts, includeFallbacks);
+	$invokeNativeStatic(locale, fcInfo, fonts, includeFallbacks);
 	$finishNativeStatic();
 }
 
@@ -366,7 +365,7 @@ int32_t FontConfigManager::getFontConfigAASettings($String* locale, $String* fcF
 	$init(FontConfigManager);
 	int32_t $ret = 0;
 	$prepareNativeStatic(FontConfigManager, getFontConfigAASettings, int32_t, $String* locale, $String* fcFamily);
-	$ret = $invokeNativeStatic(FontConfigManager, getFontConfigAASettings, locale, fcFamily);
+	$ret = $invokeNativeStatic(locale, fcFamily);
 	$finishNativeStatic();
 	return $ret;
 }

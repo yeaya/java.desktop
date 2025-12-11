@@ -48,8 +48,6 @@
 using $AccessibleIconArray = $Array<::javax::accessibility::AccessibleIcon>;
 using $Position$BiasArray = $Array<::javax::swing::text::Position$Bias>;
 using $Component = ::java::awt::Component;
-using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
-using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
 using $Insets = ::java::awt::Insets;
 using $Point = ::java::awt::Point;
@@ -63,7 +61,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $BreakIterator = ::java::text::BreakIterator;
-using $Locale = ::java::util::Locale;
 using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AccessibleExtendedComponent = ::javax::accessibility::AccessibleExtendedComponent;

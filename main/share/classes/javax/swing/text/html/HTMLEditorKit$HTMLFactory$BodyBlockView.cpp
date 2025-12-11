@@ -27,9 +27,7 @@
 #undef X_AXIS
 #undef Y_AXIS
 
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Dimension = ::java::awt::Dimension;
 using $Insets = ::java::awt::Insets;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $ComponentListener = ::java::awt::event::ComponentListener;
@@ -41,19 +39,15 @@ using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
-using $EventObject = ::java::util::EventObject;
 using $JComponent = ::javax::swing::JComponent;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $JViewport = ::javax::swing::JViewport;
 using $SizeRequirements = ::javax::swing::SizeRequirements;
 using $AbstractDocument = ::javax::swing::text::AbstractDocument;
-using $BoxView = ::javax::swing::text::BoxView;
-using $CompositeView = ::javax::swing::text::CompositeView;
 using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
 using $View = ::javax::swing::text::View;
 using $BlockView = ::javax::swing::text::html::BlockView;
-using $HTMLEditorKit$HTMLFactory = ::javax::swing::text::html::HTMLEditorKit$HTMLFactory;
 
 namespace javax {
 	namespace swing {

@@ -6,13 +6,9 @@
 #include <sun/swing/SwingAccessor.h>
 #include <jcpp.h>
 
-using $Point = ::java::awt::Point;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $TransferHandler$DropLocation = ::javax::swing::TransferHandler$DropLocation;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
-using $SwingAccessor = ::sun::swing::SwingAccessor;
 
 namespace sun {
 	namespace swing {

@@ -3,7 +3,6 @@
 #include <java/awt/desktop/OpenURIEvent.h>
 #include <jcpp.h>
 
-using $OpenURIEvent = ::java::awt::desktop::OpenURIEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

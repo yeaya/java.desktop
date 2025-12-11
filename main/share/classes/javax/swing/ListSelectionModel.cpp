@@ -10,7 +10,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ListSelectionListener = ::javax::swing::event::ListSelectionListener;
 
 namespace javax {
 	namespace swing {

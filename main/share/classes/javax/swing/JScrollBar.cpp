@@ -34,11 +34,9 @@
 
 using $ComponentArray = $Array<::java::awt::Component>;
 using $AdjustmentListenerArray = $Array<::java::awt::event::AdjustmentListener>;
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $Adjustable = ::java::awt::Adjustable;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
-using $Container = ::java::awt::Container;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $Dimension = ::java::awt::Dimension;
 using $AdjustmentEvent = ::java::awt::event::AdjustmentEvent;
@@ -55,7 +53,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $Short = ::java::lang::Short;
 using $EventListener = ::java::util::EventListener;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AccessibleState = ::javax::accessibility::AccessibleState;
 using $BoundedRangeModel = ::javax::swing::BoundedRangeModel;

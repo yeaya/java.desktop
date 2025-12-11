@@ -6,6 +6,10 @@ if(JCPP_OS MATCHES "linux")
 	add_definitions("-DHEADLESS=true")
 endif()
 
+if(JCPP_OS MATCHES "macos")
+	add_definitions("-DHEADLESS=true")
+endif()
+
 if(JCPP_OS MATCHES "windows")
 	add_definitions("-DUNICODE -D_UNICODE -DMLIB_OS64BIT")
 endif()
@@ -15,6 +19,10 @@ add_subdirectory("java2d")
 
 if(JCPP_OS MATCHES "linux")
 	include_directories("../../../linux/native/libawt")
+endif()
+
+if(JCPP_OS MATCHES "macos")
+	include_directories("../../../macos/native/libawt")
 endif()
 
 if(JCPP_OS MATCHES "windows")

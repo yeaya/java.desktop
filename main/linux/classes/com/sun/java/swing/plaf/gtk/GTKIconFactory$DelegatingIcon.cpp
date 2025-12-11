@@ -43,8 +43,6 @@ using $Method = ::java::lang::reflect::Method;
 using $UIResource = ::javax::swing::plaf::UIResource;
 using $Region = ::javax::swing::plaf::synth::Region;
 using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
-using $SynthIcon = ::javax::swing::plaf::synth::SynthIcon;
-using $SynthStyle = ::javax::swing::plaf::synth::SynthStyle;
 
 namespace com {
 	namespace sun {

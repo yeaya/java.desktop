@@ -22,12 +22,10 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DefaultListCellRenderer = ::javax::swing::DefaultListCellRenderer;
-using $Icon = ::javax::swing::Icon;
 using $JComponent = ::javax::swing::JComponent;
 using $JFileChooser = ::javax::swing::JFileChooser;
 using $JLabel = ::javax::swing::JLabel;
 using $JList = ::javax::swing::JList;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 
 namespace com {
 	namespace sun {

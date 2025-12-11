@@ -5,12 +5,9 @@
 #include <sun/awt/AWTAccessor.h>
 #include <jcpp.h>
 
-using $DropTargetContext = ::java::awt::dnd::DropTargetContext;
-using $DropTargetContextPeer = ::java::awt::dnd::peer::DropTargetContextPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AWTAccessor = ::sun::awt::AWTAccessor;
 
 namespace sun {
 	namespace awt {

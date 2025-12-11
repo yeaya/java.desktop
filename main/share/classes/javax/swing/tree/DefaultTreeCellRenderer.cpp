@@ -57,13 +57,10 @@ using $Border = ::javax::swing::border::Border;
 using $EmptyBorder = ::javax::swing::border::EmptyBorder;
 using $BorderUIResource$EmptyBorderUIResource = ::javax::swing::plaf::BorderUIResource$EmptyBorderUIResource;
 using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $FontUIResource = ::javax::swing::plaf::FontUIResource;
 using $UIResource = ::javax::swing::plaf::UIResource;
 using $BasicGraphicsUtils = ::javax::swing::plaf::basic::BasicGraphicsUtils;
 using $BasicHTML = ::javax::swing::plaf::basic::BasicHTML;
-using $TreeCellRenderer = ::javax::swing::tree::TreeCellRenderer;
-using $TreePath = ::javax::swing::tree::TreePath;
 using $DefaultLookup = ::sun::swing::DefaultLookup;
 using $SwingUtilities2 = ::sun::swing::SwingUtilities2;
 

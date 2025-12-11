@@ -4,7 +4,6 @@
 #include <com/sun/media/sound/RIFFReader.h>
 #include <jcpp.h>
 
-using $DLSSoundbank = ::com::sun::media::sound::DLSSoundbank;
 using $RIFFReader = ::com::sun::media::sound::RIFFReader;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

@@ -10,13 +10,10 @@
 
 using $Rectangle = ::java::awt::Rectangle;
 using $FocusEvent = ::java::awt::event::FocusEvent;
-using $FocusListener = ::java::awt::event::FocusListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $JComponent = ::javax::swing::JComponent;
 using $JList = ::javax::swing::JList;
 using $JTable = ::javax::swing::JTable;
 using $ListSelectionModel = ::javax::swing::ListSelectionModel;

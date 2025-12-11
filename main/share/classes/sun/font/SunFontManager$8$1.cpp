@@ -8,7 +8,6 @@
 #include <jcpp.h>
 
 using $FileArray = $Array<::java::io::File>;
-using $FileFontArray = $Array<::sun::font::FileFont>;
 using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
@@ -16,10 +15,8 @@ using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Vector = ::java::util::Vector;
 using $FileFont = ::sun::font::FileFont;
-using $SunFontManager = ::sun::font::SunFontManager;
 using $SunFontManager$8 = ::sun::font::SunFontManager$8;
 
 namespace sun {

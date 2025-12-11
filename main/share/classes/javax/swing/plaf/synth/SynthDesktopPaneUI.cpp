@@ -36,7 +36,6 @@
 #undef PALETTE_LAYER
 
 using $ComponentArray = $Array<::java::awt::Component>;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
@@ -50,7 +49,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $DefaultDesktopManager = ::javax::swing::DefaultDesktopManager;
 using $DesktopManager = ::javax::swing::DesktopManager;
 using $JComponent = ::javax::swing::JComponent;

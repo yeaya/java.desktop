@@ -54,7 +54,6 @@
 #undef VERTICAL
 #undef VERTICAL_WRAP
 
-using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
@@ -64,14 +63,10 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $DefaultListSelectionModel = ::javax::swing::DefaultListSelectionModel;
-using $JComponent = ::javax::swing::JComponent;
 using $JList = ::javax::swing::JList;
 using $ListModel = ::javax::swing::ListModel;
 using $ListSelectionModel = ::javax::swing::ListSelectionModel;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
-using $ListUI = ::javax::swing::plaf::ListUI;
 using $BasicListUI = ::javax::swing::plaf::basic::BasicListUI;
 using $BasicLookAndFeel = ::javax::swing::plaf::basic::BasicLookAndFeel;
 using $SwingUtilities2 = ::sun::swing::SwingUtilities2;

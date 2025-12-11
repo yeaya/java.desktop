@@ -16,7 +16,6 @@
 #include <jcpp.h>
 
 using $TestBasicComboBoxEditor$UserComboBoxEditorType = ::TestBasicComboBoxEditor$UserComboBoxEditorType;
-using $Component = ::java::awt::Component;
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -24,16 +23,10 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $SecurityManager = ::java::lang::SecurityManager;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $JTextField = ::javax::swing::JTextField;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $BasicComboBoxEditor = ::javax::swing::plaf::basic::BasicComboBoxEditor;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 class TestBasicComboBoxEditor$$Lambda$testBasicComboBoxEditor : public $Runnable {
 	$class(TestBasicComboBoxEditor$$Lambda$testBasicComboBoxEditor, $NO_CLASS_INIT, $Runnable)

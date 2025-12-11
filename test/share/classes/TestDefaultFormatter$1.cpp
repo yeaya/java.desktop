@@ -4,7 +4,6 @@
 #include <javax/swing/text/DefaultFormatter.h>
 #include <jcpp.h>
 
-using $TestDefaultFormatter = ::TestDefaultFormatter;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

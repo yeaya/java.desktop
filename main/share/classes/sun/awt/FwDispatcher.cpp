@@ -4,10 +4,8 @@
 #include <java/lang/Runnable.h>
 #include <jcpp.h>
 
-using $SecondaryLoop = ::java::awt::SecondaryLoop;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 
 namespace sun {
 	namespace awt {

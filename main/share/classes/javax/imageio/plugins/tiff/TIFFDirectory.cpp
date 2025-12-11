@@ -52,7 +52,6 @@ using $BaselineTIFFTagSet = ::javax::imageio::plugins::tiff::BaselineTIFFTagSet;
 using $TIFFField = ::javax::imageio::plugins::tiff::TIFFField;
 using $TIFFTag = ::javax::imageio::plugins::tiff::TIFFTag;
 using $TIFFTagSet = ::javax::imageio::plugins::tiff::TIFFTagSet;
-using $Node = ::org::w3c::dom::Node;
 
 namespace javax {
 	namespace imageio {

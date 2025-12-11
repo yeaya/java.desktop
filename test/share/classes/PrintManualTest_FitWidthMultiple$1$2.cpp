@@ -14,7 +14,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractAction = ::javax::swing::AbstractAction;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JButton = ::javax::swing::JButton;
 
 $FieldInfo _PrintManualTest_FitWidthMultiple$1$2_FieldInfo_[] = {

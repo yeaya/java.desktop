@@ -3,7 +3,6 @@
 #include <java/awt/desktop/AboutEvent.h>
 #include <jcpp.h>
 
-using $AboutEvent = ::java::awt::desktop::AboutEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

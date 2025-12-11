@@ -4,10 +4,8 @@
 #include <sun/awt/X11/XScrollbar.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $XScrollbar = ::sun::awt::X11::XScrollbar;
 
 namespace sun {
 	namespace awt {

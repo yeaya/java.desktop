@@ -5,11 +5,8 @@
 #include <javax/swing/JMenuItem.h>
 #include <jcpp.h>
 
-using $TMSchema$Part = ::com::sun::java::swing::plaf::windows::TMSchema$Part;
-using $TMSchema$State = ::com::sun::java::swing::plaf::windows::TMSchema$State;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JMenuItem = ::javax::swing::JMenuItem;
 
 namespace com {
 	namespace sun {

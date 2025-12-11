@@ -13,7 +13,6 @@ using $Graphics = ::java::awt::Graphics;
 using $Rectangle = ::java::awt::Rectangle;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
-using $PropertyEditor = ::java::beans::PropertyEditor;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;

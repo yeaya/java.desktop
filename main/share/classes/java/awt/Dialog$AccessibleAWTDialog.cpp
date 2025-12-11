@@ -14,7 +14,6 @@
 #undef MODAL
 #undef RESIZABLE
 
-using $Component = ::java::awt::Component;
 using $Dialog = ::java::awt::Dialog;
 using $Window = ::java::awt::Window;
 using $Window$AccessibleAWTWindow = ::java::awt::Window$AccessibleAWTWindow;

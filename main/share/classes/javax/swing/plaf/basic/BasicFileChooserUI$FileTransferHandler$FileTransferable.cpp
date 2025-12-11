@@ -13,7 +13,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ArrayList = ::java::util::ArrayList;
-using $BasicFileChooserUI$FileTransferHandler = ::javax::swing::plaf::basic::BasicFileChooserUI$FileTransferHandler;
 using $BasicTransferable = ::javax::swing::plaf::basic::BasicTransferable;
 
 namespace javax {

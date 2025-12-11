@@ -19,7 +19,6 @@ using $GraphicAttribute = ::java::awt::font::GraphicAttribute;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $Rectangle2D$Float = ::java::awt::geom::Rectangle2D$Float;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $ClassCastException = ::java::lang::ClassCastException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

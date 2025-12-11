@@ -29,7 +29,6 @@ using $Region = ::sun::java2d::pipe::Region;
 using $GrowableEltArray = ::sun::java2d::xr::GrowableEltArray;
 using $GrowableIntArray = ::sun::java2d::xr::GrowableIntArray;
 using $GrowableRectArray = ::sun::java2d::xr::GrowableRectArray;
-using $XRBackend = ::sun::java2d::xr::XRBackend;
 using $XRColor = ::sun::java2d::xr::XRColor;
 using $XRUtils = ::sun::java2d::xr::XRUtils;
 
@@ -145,28 +144,28 @@ void XRBackendNative::init$() {
 void XRBackendNative::initIDs() {
 	$init(XRBackendNative);
 	$prepareNativeStatic(XRBackendNative, initIDs, void);
-	$invokeNativeStatic(XRBackendNative, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
 int64_t XRBackendNative::createGC(int32_t drawable) {
 	int64_t $ret = 0;
 	$prepareNative(XRBackendNative, createGC, int64_t, int32_t drawable);
-	$ret = $invokeNative(XRBackendNative, createGC, drawable);
+	$ret = $invokeNative(drawable);
 	$finishNative();
 	return $ret;
 }
 
 void XRBackendNative::freeGC(int64_t gc) {
 	$prepareNative(XRBackendNative, freeGC, void, int64_t gc);
-	$invokeNative(XRBackendNative, freeGC, gc);
+	$invokeNative(gc);
 	$finishNative();
 }
 
 int32_t XRBackendNative::createPixmap(int32_t drawable, int32_t depth, int32_t width, int32_t height) {
 	int32_t $ret = 0;
 	$prepareNative(XRBackendNative, createPixmap, int32_t, int32_t drawable, int32_t depth, int32_t width, int32_t height);
-	$ret = $invokeNative(XRBackendNative, createPixmap, drawable, depth, width, height);
+	$ret = $invokeNative(drawable, depth, width, height);
 	$finishNative();
 	return $ret;
 }
@@ -174,82 +173,82 @@ int32_t XRBackendNative::createPixmap(int32_t drawable, int32_t depth, int32_t w
 int32_t XRBackendNative::createPictureNative(int32_t drawable, int64_t formatID) {
 	int32_t $ret = 0;
 	$prepareNative(XRBackendNative, createPictureNative, int32_t, int32_t drawable, int64_t formatID);
-	$ret = $invokeNative(XRBackendNative, createPictureNative, drawable, formatID);
+	$ret = $invokeNative(drawable, formatID);
 	$finishNative();
 	return $ret;
 }
 
 void XRBackendNative::freePicture(int32_t picture) {
 	$prepareNative(XRBackendNative, freePicture, void, int32_t picture);
-	$invokeNative(XRBackendNative, freePicture, picture);
+	$invokeNative(picture);
 	$finishNative();
 }
 
 void XRBackendNative::freePixmap(int32_t pixmap) {
 	$prepareNative(XRBackendNative, freePixmap, void, int32_t pixmap);
-	$invokeNative(XRBackendNative, freePixmap, pixmap);
+	$invokeNative(pixmap);
 	$finishNative();
 }
 
 void XRBackendNative::setGCExposures(int64_t gc, bool exposure) {
 	$prepareNative(XRBackendNative, setGCExposures, void, int64_t gc, bool exposure);
-	$invokeNative(XRBackendNative, setGCExposures, gc, exposure);
+	$invokeNative(gc, exposure);
 	$finishNative();
 }
 
 void XRBackendNative::setGCForeground(int64_t gc, int32_t pixel) {
 	$prepareNative(XRBackendNative, setGCForeground, void, int64_t gc, int32_t pixel);
-	$invokeNative(XRBackendNative, setGCForeground, gc, pixel);
+	$invokeNative(gc, pixel);
 	$finishNative();
 }
 
 void XRBackendNative::setPictureRepeat(int32_t picture, int32_t repeat) {
 	$prepareNative(XRBackendNative, setPictureRepeat, void, int32_t picture, int32_t repeat);
-	$invokeNative(XRBackendNative, setPictureRepeat, picture, repeat);
+	$invokeNative(picture, repeat);
 	$finishNative();
 }
 
 void XRBackendNative::copyArea(int32_t src, int32_t dst, int64_t gc, int32_t srcx, int32_t srcy, int32_t width, int32_t height, int32_t dstx, int32_t dsty) {
 	$prepareNative(XRBackendNative, copyArea, void, int32_t src, int32_t dst, int64_t gc, int32_t srcx, int32_t srcy, int32_t width, int32_t height, int32_t dstx, int32_t dsty);
-	$invokeNative(XRBackendNative, copyArea, src, dst, gc, srcx, srcy, width, height, dstx, dsty);
+	$invokeNative(src, dst, gc, srcx, srcy, width, height, dstx, dsty);
 	$finishNative();
 }
 
 void XRBackendNative::setGCMode(int64_t gc, bool copy) {
 	$prepareNative(XRBackendNative, setGCMode, void, int64_t gc, bool copy);
-	$invokeNative(XRBackendNative, setGCMode, gc, copy);
+	$invokeNative(gc, copy);
 	$finishNative();
 }
 
 void XRBackendNative::GCRectanglesNative(int32_t drawable, int64_t gc, $ints* rectArray, int32_t rectCnt) {
 	$init(XRBackendNative);
 	$prepareNativeStatic(XRBackendNative, GCRectanglesNative, void, int32_t drawable, int64_t gc, $ints* rectArray, int32_t rectCnt);
-	$invokeNativeStatic(XRBackendNative, GCRectanglesNative, drawable, gc, rectArray, rectCnt);
+	$invokeNativeStatic(drawable, gc, rectArray, rectCnt);
 	$finishNativeStatic();
 }
 
 void XRBackendNative::renderComposite(int8_t op, int32_t src, int32_t mask, int32_t dst, int32_t srcX, int32_t srcY, int32_t maskX, int32_t maskY, int32_t dstX, int32_t dstY, int32_t width, int32_t height) {
 	$prepareNative(XRBackendNative, renderComposite, void, int8_t op, int32_t src, int32_t mask, int32_t dst, int32_t srcX, int32_t srcY, int32_t maskX, int32_t maskY, int32_t dstX, int32_t dstY, int32_t width, int32_t height);
-	$invokeNative(XRBackendNative, renderComposite, op, src, mask, dst, srcX, srcY, maskX, maskY, dstX, dstY, width, height);
+	$invokeNative(op, src, mask, dst, srcX, srcY, maskX, maskY, dstX, dstY, width, height);
 	$finishNative();
 }
 
 void XRBackendNative::renderRectangle(int32_t dst, int8_t op, int16_t red, int16_t green, int16_t blue, int16_t alpha, int32_t x, int32_t y, int32_t width, int32_t height) {
 	$prepareNative(XRBackendNative, renderRectangle, void, int32_t dst, int8_t op, int16_t red, int16_t green, int16_t blue, int16_t alpha, int32_t x, int32_t y, int32_t width, int32_t height);
-	$invokeNative(XRBackendNative, renderRectangle, dst, op, red, green, blue, alpha, x, y, width, height);
+	$invokeNative(dst, op, red, green, blue, alpha, x, y, width, height);
 	$finishNative();
 }
 
 void XRBackendNative::XRenderRectanglesNative(int32_t dst, int8_t op, int16_t red, int16_t green, int16_t blue, int16_t alpha, $ints* rects, int32_t rectCnt) {
 	$init(XRBackendNative);
 	$prepareNativeStatic(XRBackendNative, XRenderRectanglesNative, void, int32_t dst, int8_t op, int16_t red, int16_t green, int16_t blue, int16_t alpha, $ints* rects, int32_t rectCnt);
-	$invokeNativeStatic(XRBackendNative, XRenderRectanglesNative, dst, op, red, green, blue, alpha, rects, rectCnt);
+	$invokeNativeStatic(dst, op, red, green, blue, alpha, rects, rectCnt);
 	$finishNativeStatic();
 }
 
 void XRBackendNative::XRSetTransformNative(int32_t pic, int32_t m00, int32_t m01, int32_t m02, int32_t m10, int32_t m11, int32_t m12) {
 	$prepareNative(XRBackendNative, XRSetTransformNative, void, int32_t pic, int32_t m00, int32_t m01, int32_t m02, int32_t m10, int32_t m11, int32_t m12);
-	$invokeNative(XRBackendNative, XRSetTransformNative, pic, m00, m01, m02, m10, m11, m12);
+	$invokeNative(pic, m00, m01, m02, m10, m11, m12);
 	$finishNative();
 }
 
@@ -257,7 +256,7 @@ int32_t XRBackendNative::XRCreateLinearGradientPaintNative($floats* fractionsArr
 	$init(XRBackendNative);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XRBackendNative, XRCreateLinearGradientPaintNative, int32_t, $floats* fractionsArray, $shorts* pixelsArray, int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t numStops, int32_t repeat);
-	$ret = $invokeNativeStatic(XRBackendNative, XRCreateLinearGradientPaintNative, fractionsArray, pixelsArray, x1, y1, x2, y2, numStops, repeat);
+	$ret = $invokeNativeStatic(fractionsArray, pixelsArray, x1, y1, x2, y2, numStops, repeat);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -266,21 +265,21 @@ int32_t XRBackendNative::XRCreateRadialGradientPaintNative($floats* fractionsArr
 	$init(XRBackendNative);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XRBackendNative, XRCreateRadialGradientPaintNative, int32_t, $floats* fractionsArray, $shorts* pixelsArray, int32_t numStops, int32_t centerX, int32_t centerY, int32_t innerRadius, int32_t outerRadius, int32_t repeat);
-	$ret = $invokeNativeStatic(XRBackendNative, XRCreateRadialGradientPaintNative, fractionsArray, pixelsArray, numStops, centerX, centerY, innerRadius, outerRadius, repeat);
+	$ret = $invokeNativeStatic(fractionsArray, pixelsArray, numStops, centerX, centerY, innerRadius, outerRadius, repeat);
 	$finishNativeStatic();
 	return $ret;
 }
 
 void XRBackendNative::setFilter(int32_t picture, int32_t filter) {
 	$prepareNative(XRBackendNative, setFilter, void, int32_t picture, int32_t filter);
-	$invokeNative(XRBackendNative, setFilter, picture, filter);
+	$invokeNative(picture, filter);
 	$finishNative();
 }
 
 void XRBackendNative::XRSetClipNative(int64_t dst, int32_t x1, int32_t y1, int32_t x2, int32_t y2, $Region* clip, bool isGC) {
 	$init(XRBackendNative);
 	$prepareNativeStatic(XRBackendNative, XRSetClipNative, void, int64_t dst, int32_t x1, int32_t y1, int32_t x2, int32_t y2, $Region* clip, bool isGC);
-	$invokeNativeStatic(XRBackendNative, XRSetClipNative, dst, x1, y1, x2, y2, clip, isGC);
+	$invokeNativeStatic(dst, x1, y1, x2, y2, clip, isGC);
 	$finishNativeStatic();
 }
 
@@ -417,21 +416,21 @@ void XRBackendNative::XRenderFreeGlyphs(int32_t glyphSet, $ints* gids) {
 void XRBackendNative::XRAddGlyphsNative(int32_t glyphSet, $longs* glyphInfoPtrs, int32_t glyphCnt, $bytes* pixelData, int32_t pixelDataLength) {
 	$init(XRBackendNative);
 	$prepareNativeStatic(XRBackendNative, XRAddGlyphsNative, void, int32_t glyphSet, $longs* glyphInfoPtrs, int32_t glyphCnt, $bytes* pixelData, int32_t pixelDataLength);
-	$invokeNativeStatic(XRBackendNative, XRAddGlyphsNative, glyphSet, glyphInfoPtrs, glyphCnt, pixelData, pixelDataLength);
+	$invokeNativeStatic(glyphSet, glyphInfoPtrs, glyphCnt, pixelData, pixelDataLength);
 	$finishNativeStatic();
 }
 
 void XRBackendNative::XRFreeGlyphsNative(int32_t glyphSet, $ints* gids, int32_t idCnt) {
 	$init(XRBackendNative);
 	$prepareNativeStatic(XRBackendNative, XRFreeGlyphsNative, void, int32_t glyphSet, $ints* gids, int32_t idCnt);
-	$invokeNativeStatic(XRBackendNative, XRFreeGlyphsNative, glyphSet, gids, idCnt);
+	$invokeNativeStatic(glyphSet, gids, idCnt);
 	$finishNativeStatic();
 }
 
 void XRBackendNative::XRenderCompositeTextNative(int32_t op, int32_t src, int32_t dst, int32_t srcX, int32_t srcY, int64_t maskFormat, $ints* eltArray, $ints* glyphIDs, int32_t eltCnt, int32_t glyphCnt) {
 	$init(XRBackendNative);
 	$prepareNativeStatic(XRBackendNative, XRenderCompositeTextNative, void, int32_t op, int32_t src, int32_t dst, int32_t srcX, int32_t srcY, int64_t maskFormat, $ints* eltArray, $ints* glyphIDs, int32_t eltCnt, int32_t glyphCnt);
-	$invokeNativeStatic(XRBackendNative, XRenderCompositeTextNative, op, src, dst, srcX, srcY, maskFormat, eltArray, glyphIDs, eltCnt, glyphCnt);
+	$invokeNativeStatic(op, src, dst, srcX, srcY, maskFormat, eltArray, glyphIDs, eltCnt, glyphCnt);
 	$finishNativeStatic();
 }
 
@@ -443,7 +442,7 @@ int32_t XRBackendNative::XRenderCreateGlyphSetNative(int64_t format) {
 	$init(XRBackendNative);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XRBackendNative, XRenderCreateGlyphSetNative, int32_t, int64_t format);
-	$ret = $invokeNativeStatic(XRBackendNative, XRenderCreateGlyphSetNative, format);
+	$ret = $invokeNativeStatic(format);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -469,7 +468,7 @@ void XRBackendNative::putMaskImage(int32_t drawable, int64_t gc, $bytes* imageDa
 void XRBackendNative::putMaskNative(int32_t drawable, int64_t gc, $bytes* imageData, int32_t sx, int32_t sy, int32_t dx, int32_t dy, int32_t width, int32_t height, int32_t maskOff, int32_t maskScan, float ea, int64_t xImg) {
 	$init(XRBackendNative);
 	$prepareNativeStatic(XRBackendNative, putMaskNative, void, int32_t drawable, int64_t gc, $bytes* imageData, int32_t sx, int32_t sy, int32_t dx, int32_t dy, int32_t width, int32_t height, int32_t maskOff, int32_t maskScan, float ea, int64_t xImg);
-	$invokeNativeStatic(XRBackendNative, putMaskNative, drawable, gc, imageData, sx, sy, dx, dy, width, height, maskOff, maskScan, ea, xImg);
+	$invokeNativeStatic(drawable, gc, imageData, sx, sy, dx, dy, width, height, maskOff, maskScan, ea, xImg);
 	$finishNativeStatic();
 }
 
@@ -489,7 +488,7 @@ void XRBackendNative::padBlit(int8_t op, int32_t srcPict, int32_t maskPict, int3
 void XRBackendNative::padBlitNative(int8_t op, int32_t srcPict, int32_t maskPict, int32_t dstPict, int32_t m00, int32_t m01, int32_t m02, int32_t m10, int32_t m11, int32_t m12, int32_t maskWidth, int32_t maskHeight, int32_t lastMaskWidth, int32_t lastMaskHeight, int32_t sx, int32_t sy, int32_t dx, int32_t dy, int32_t w, int32_t h) {
 	$init(XRBackendNative);
 	$prepareNativeStatic(XRBackendNative, padBlitNative, void, int8_t op, int32_t srcPict, int32_t maskPict, int32_t dstPict, int32_t m00, int32_t m01, int32_t m02, int32_t m10, int32_t m11, int32_t m12, int32_t maskWidth, int32_t maskHeight, int32_t lastMaskWidth, int32_t lastMaskHeight, int32_t sx, int32_t sy, int32_t dx, int32_t dy, int32_t w, int32_t h);
-	$invokeNativeStatic(XRBackendNative, padBlitNative, op, srcPict, maskPict, dstPict, m00, m01, m02, m10, m11, m12, maskWidth, maskHeight, lastMaskWidth, lastMaskHeight, sx, sy, dx, dy, w, h);
+	$invokeNativeStatic(op, srcPict, maskPict, dstPict, m00, m01, m02, m10, m11, m12, maskWidth, maskHeight, lastMaskWidth, lastMaskHeight, sx, sy, dx, dy, w, h);
 	$finishNativeStatic();
 }
 

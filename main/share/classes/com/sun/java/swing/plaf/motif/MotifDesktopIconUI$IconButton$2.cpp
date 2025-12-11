@@ -9,9 +9,7 @@
 
 using $MotifDesktopIconUI = ::com::sun::java::swing::plaf::motif::MotifDesktopIconUI;
 using $MotifDesktopIconUI$IconButton = ::com::sun::java::swing::plaf::motif::MotifDesktopIconUI$IconButton;
-using $Component = ::java::awt::Component;
 using $MouseEvent = ::java::awt::event::MouseEvent;
-using $MouseListener = ::java::awt::event::MouseListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

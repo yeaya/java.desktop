@@ -12,15 +12,12 @@
 
 using $bug6462008 = ::bug6462008;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $Action = ::javax::swing::Action;
 using $ActionMap = ::javax::swing::ActionMap;
-using $JComponent = ::javax::swing::JComponent;
 using $JList = ::javax::swing::JList;
 
 $MethodInfo _bug6462008$4_MethodInfo_[] = {

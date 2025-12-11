@@ -3,8 +3,6 @@
 #include <java/awt/im/InputMethodRequests.h>
 #include <jcpp.h>
 
-using $InputMethodRequests = ::java::awt::im::InputMethodRequests;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

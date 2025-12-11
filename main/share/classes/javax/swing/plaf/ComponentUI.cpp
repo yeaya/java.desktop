@@ -14,7 +14,6 @@
 
 #undef OTHER
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Component$BaselineResizeBehavior = ::java::awt::Component$BaselineResizeBehavior;
 using $Container = ::java::awt::Container;

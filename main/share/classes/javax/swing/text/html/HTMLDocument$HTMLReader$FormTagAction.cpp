@@ -15,7 +15,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $HashMap = ::java::util::HashMap;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $HTML$Tag = ::javax::swing::text::html::HTML$Tag;
-using $HTMLDocument = ::javax::swing::text::html::HTMLDocument;
 using $HTMLDocument$HTMLReader = ::javax::swing::text::html::HTMLDocument$HTMLReader;
 using $HTMLDocument$HTMLReader$BlockAction = ::javax::swing::text::html::HTMLDocument$HTMLReader$BlockAction;
 

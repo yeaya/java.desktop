@@ -27,9 +27,7 @@ using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $View = ::javax::swing::text::View;
 using $CSS$Value = ::javax::swing::text::html::CSS$Value;
-using $CSSBorder = ::javax::swing::text::html::CSSBorder;
 using $CSSBorder$ShadowLightPainter = ::javax::swing::text::html::CSSBorder$ShadowLightPainter;
-using $CSSBorder$StrokePainter = ::javax::swing::text::html::CSSBorder$StrokePainter;
 
 namespace javax {
 	namespace swing {

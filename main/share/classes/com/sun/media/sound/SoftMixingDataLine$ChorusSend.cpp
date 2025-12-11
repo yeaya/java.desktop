@@ -16,7 +16,6 @@ using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $FloatControl = ::javax::sound::sampled::FloatControl;
-using $FloatControl$Type = ::javax::sound::sampled::FloatControl$Type;
 
 namespace com {
 	namespace sun {

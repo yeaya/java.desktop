@@ -40,7 +40,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
-using $JSpinner = ::javax::swing::JSpinner;
 using $UIManager = ::javax::swing::UIManager;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $SpinnerUI = ::javax::swing::plaf::SpinnerUI;

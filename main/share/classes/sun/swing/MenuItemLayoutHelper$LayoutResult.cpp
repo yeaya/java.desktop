@@ -15,7 +15,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractMap = ::java::util::AbstractMap;
 using $HashMap = ::java::util::HashMap;
 using $Map = ::java::util::Map;
-using $MenuItemLayoutHelper = ::sun::swing::MenuItemLayoutHelper;
 
 namespace sun {
 	namespace swing {

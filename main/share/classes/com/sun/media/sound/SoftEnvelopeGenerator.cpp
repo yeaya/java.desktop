@@ -15,7 +15,6 @@
 #undef EG_SUSTAIN
 
 using $doubleArray2 = $Array<double, 2>;
-using $SoftProcess = ::com::sun::media::sound::SoftProcess;
 using $SoftSynthesizer = ::com::sun::media::sound::SoftSynthesizer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;

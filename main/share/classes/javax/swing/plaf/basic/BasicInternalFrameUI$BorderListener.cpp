@@ -49,17 +49,14 @@ using $Cursor = ::java::awt::Cursor;
 using $Dimension = ::java::awt::Dimension;
 using $Insets = ::java::awt::Insets;
 using $Point = ::java::awt::Point;
-using $Rectangle = ::java::awt::Rectangle;
 using $Window = ::java::awt::Window;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
-using $WindowFocusListener = ::java::awt::event::WindowFocusListener;
 using $PropertyVetoException = ::java::beans::PropertyVetoException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $DesktopManager = ::javax::swing::DesktopManager;
 using $JComponent = ::javax::swing::JComponent;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
@@ -192,7 +189,7 @@ void BasicInternalFrameUI$BorderListener::finishMouseReleased() {
 		this->discardRelease = false;
 		return;
 	}
-	if (this->resizeDir == this->RESIZE_NONE) {
+	if (this->resizeDir == BasicInternalFrameUI$BorderListener::RESIZE_NONE) {
 		$nc($(this->this$0->getDesktopManager()))->endDraggingFrame(this->this$0->frame);
 		this->this$0->dragging = false;
 	} else {
@@ -215,7 +212,7 @@ void BasicInternalFrameUI$BorderListener::finishMouseReleased() {
 	this->__x = 0;
 	this->__y = 0;
 	$set(this, startingBounds, nullptr);
-	this->resizeDir = this->RESIZE_NONE;
+	this->resizeDir = BasicInternalFrameUI$BorderListener::RESIZE_NONE;
 	this->discardRelease = true;
 }
 
@@ -233,7 +230,7 @@ void BasicInternalFrameUI$BorderListener::mousePressed($MouseEvent* e) {
 	this->_x = $nc(p)->x;
 	this->_y = p->y;
 	$set(this, startingBounds, $nc(this->this$0->frame)->getBounds());
-	this->resizeDir = this->RESIZE_NONE;
+	this->resizeDir = BasicInternalFrameUI$BorderListener::RESIZE_NONE;
 	this->discardRelease = false;
 	try {
 		$nc(this->this$0->frame)->setSelected(true);
@@ -409,7 +406,7 @@ void BasicInternalFrameUI$BorderListener::mouseDragged($MouseEvent* e) {
 	newH = $nc(this->this$0->frame)->getHeight();
 	$set(this->this$0, parentBounds, $nc($($nc(this->this$0->frame)->getParent()))->getBounds());
 	switch (this->resizeDir) {
-	case this->RESIZE_NONE:
+	case BasicInternalFrameUI$BorderListener::RESIZE_NONE:
 		{
 			return;
 		}

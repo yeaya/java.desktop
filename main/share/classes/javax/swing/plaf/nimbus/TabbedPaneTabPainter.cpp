@@ -32,9 +32,7 @@
 #undef BACKGROUND_SELECTED_PRESSED_FOCUSED
 
 using $ColorArray = $Array<::java::awt::Color>;
-using $Color = ::java::awt::Color;
 using $Graphics2D = ::java::awt::Graphics2D;
-using $LinearGradientPaint = ::java::awt::LinearGradientPaint;
 using $MultipleGradientPaint = ::java::awt::MultipleGradientPaint;
 using $Paint = ::java::awt::Paint;
 using $Shape = ::java::awt::Shape;
@@ -44,7 +42,6 @@ using $Path2D = ::java::awt::geom::Path2D;
 using $Path2D$Float = ::java::awt::geom::Path2D$Float;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $Rectangle2D$Float = ::java::awt::geom::Rectangle2D$Float;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $RoundRectangle2D = ::java::awt::geom::RoundRectangle2D;
 using $RoundRectangle2D$Float = ::java::awt::geom::RoundRectangle2D$Float;
 using $ClassInfo = ::java::lang::ClassInfo;

@@ -3,7 +3,6 @@
 #include <java/awt/event/HierarchyEvent.h>
 #include <jcpp.h>
 
-using $HierarchyBoundsListener = ::java::awt::event::HierarchyBoundsListener;
 using $HierarchyEvent = ::java::awt::event::HierarchyEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

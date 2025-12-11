@@ -14,16 +14,13 @@
 
 #undef WIDTH
 
-using $SizeRequirementsArray = $Array<::javax::swing::SizeRequirements>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SizeRequirements = ::javax::swing::SizeRequirements;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $CompositeView = ::javax::swing::text::CompositeView;
 using $View = ::javax::swing::text::View;
 using $CSS$Attribute = ::javax::swing::text::html::CSS$Attribute;
 using $CSS$LayoutIterator = ::javax::swing::text::html::CSS$LayoutIterator;

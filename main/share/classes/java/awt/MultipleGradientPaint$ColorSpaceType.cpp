@@ -8,7 +8,6 @@
 #undef SRGB
 
 using $MultipleGradientPaint$ColorSpaceTypeArray = $Array<::java::awt::MultipleGradientPaint$ColorSpaceType>;
-using $MultipleGradientPaint = ::java::awt::MultipleGradientPaint;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

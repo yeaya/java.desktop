@@ -15,19 +15,16 @@
 #undef RIGHT_TO_LEFT
 
 using $JSpinnerArray = $Array<::javax::swing::JSpinner>;
-using $bug6532833 = ::bug6532833;
 using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $Insets = ::java::awt::Insets;
 using $LayoutManager = ::java::awt::LayoutManager;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JComponent = ::javax::swing::JComponent;
 using $JFrame = ::javax::swing::JFrame;

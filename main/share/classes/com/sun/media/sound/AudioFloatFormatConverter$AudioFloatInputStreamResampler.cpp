@@ -19,7 +19,6 @@
 #undef NOT_SPECIFIED
 
 using $floatArray2 = $Array<float, 2>;
-using $AudioFloatFormatConverter = ::com::sun::media::sound::AudioFloatFormatConverter;
 using $AudioFloatInputStream = ::com::sun::media::sound::AudioFloatInputStream;
 using $SoftAbstractResampler = ::com::sun::media::sound::SoftAbstractResampler;
 using $SoftCubicResampler = ::com::sun::media::sound::SoftCubicResampler;
@@ -159,10 +158,10 @@ void AudioFloatFormatConverter$AudioFloatInputStreamResampler::init$($AudioFloat
 	$nc(this->pitch)->set(0, var$6 / format->getSampleRate());
 	this->pad = $nc(this->resampler)->getPadding();
 	this->pad2 = this->pad * 2;
-	$set(this, ibuffer, $new($floatArray2, this->nrofchannels, this->buffer_len + this->pad2));
-	$set(this, ibuffer2, $new($floats, this->nrofchannels * this->buffer_len));
-	this->ibuffer_index = (float)(this->buffer_len + this->pad);
-	this->ibuffer_len = this->buffer_len;
+	$set(this, ibuffer, $new($floatArray2, this->nrofchannels, AudioFloatFormatConverter$AudioFloatInputStreamResampler::buffer_len + this->pad2));
+	$set(this, ibuffer2, $new($floats, this->nrofchannels * AudioFloatFormatConverter$AudioFloatInputStreamResampler::buffer_len));
+	this->ibuffer_index = (float)(AudioFloatFormatConverter$AudioFloatInputStreamResampler::buffer_len + this->pad);
+	this->ibuffer_len = AudioFloatFormatConverter$AudioFloatInputStreamResampler::buffer_len;
 }
 
 int32_t AudioFloatFormatConverter$AudioFloatInputStreamResampler::available() {

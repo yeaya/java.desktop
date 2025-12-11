@@ -31,10 +31,8 @@
 #undef TRUE
 #undef Y_AXIS
 
-using $Component = ::java::awt::Component;
 using $Component$BaselineResizeBehavior = ::java::awt::Component$BaselineResizeBehavior;
 using $Dimension = ::java::awt::Dimension;
-using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
 using $Insets = ::java::awt::Insets;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;

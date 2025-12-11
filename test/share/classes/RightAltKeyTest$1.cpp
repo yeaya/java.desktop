@@ -11,7 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $MenuEvent = ::javax::swing::event::MenuEvent;
-using $MenuListener = ::javax::swing::event::MenuListener;
 
 $FieldInfo _RightAltKeyTest$1_FieldInfo_[] = {
 	{"this$0", "LRightAltKeyTest;", nullptr, $FINAL | $SYNTHETIC, $field(RightAltKeyTest$1, this$0)},

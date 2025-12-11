@@ -15,13 +15,10 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $Exception = ::java::lang::Exception;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $JEditorPane = ::javax::swing::JEditorPane;
 using $JTextPane = ::javax::swing::JTextPane;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $Document = ::javax::swing::text::Document;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $MethodInfo _bug7003777$1_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(bug7003777$1::*)()>(&bug7003777$1::init$))},

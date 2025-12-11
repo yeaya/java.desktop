@@ -4,7 +4,6 @@
 #include <java/beans/MetaData.h>
 #include <jcpp.h>
 
-using $MetaData = ::java::beans::MetaData;
 using $MetaData$StaticFieldsPersistenceDelegate = ::java::beans::MetaData$StaticFieldsPersistenceDelegate;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

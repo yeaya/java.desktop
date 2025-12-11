@@ -124,14 +124,14 @@ $Comparator* GraphicsPrimitiveMgr::primFinder = nullptr;
 void GraphicsPrimitiveMgr::initIDs($Class* GP, $Class* ST, $Class* CT, $Class* SG2D, $Class* Color, $Class* AT, $Class* XORComp, $Class* AlphaComp, $Class* Path2D, $Class* Path2DFloat, $Class* SHints) {
 	$init(GraphicsPrimitiveMgr);
 	$prepareNativeStatic(GraphicsPrimitiveMgr, initIDs, void, $Class* GP, $Class* ST, $Class* CT, $Class* SG2D, $Class* Color, $Class* AT, $Class* XORComp, $Class* AlphaComp, $Class* Path2D, $Class* Path2DFloat, $Class* SHints);
-	$invokeNativeStatic(GraphicsPrimitiveMgr, initIDs, GP, ST, CT, SG2D, Color, AT, XORComp, AlphaComp, Path2D, Path2DFloat, SHints);
+	$invokeNativeStatic(GP, ST, CT, SG2D, Color, AT, XORComp, AlphaComp, Path2D, Path2DFloat, SHints);
 	$finishNativeStatic();
 }
 
 void GraphicsPrimitiveMgr::registerNativeLoops() {
 	$init(GraphicsPrimitiveMgr);
 	$prepareNativeStatic(GraphicsPrimitiveMgr, registerNativeLoops, void);
-	$invokeNativeStatic(GraphicsPrimitiveMgr, registerNativeLoops);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

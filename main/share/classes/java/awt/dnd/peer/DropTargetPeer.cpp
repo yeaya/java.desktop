@@ -3,7 +3,6 @@
 #include <java/awt/dnd/DropTarget.h>
 #include <jcpp.h>
 
-using $DropTarget = ::java::awt::dnd::DropTarget;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

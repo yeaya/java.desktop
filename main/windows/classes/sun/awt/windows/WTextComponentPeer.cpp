@@ -47,11 +47,9 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $TextComponentPeer = ::java::awt::peer::TextComponentPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $Region = ::sun::java2d::pipe::Region;
 
 namespace sun {
@@ -306,21 +304,21 @@ void WTextComponentPeer::setEditable(bool editable) {
 $String* WTextComponentPeer::getText() {
 	$var($String, $ret, nullptr);
 	$prepareNative(WTextComponentPeer, getText, $String*);
-	$assign($ret, $invokeNative(WTextComponentPeer, getText));
+	$assign($ret, $invokeNativeObject());
 	$finishNative();
 	return $ret;
 }
 
 void WTextComponentPeer::setText($String* text) {
 	$prepareNative(WTextComponentPeer, setText, void, $String* text);
-	$invokeNative(WTextComponentPeer, setText, text);
+	$invokeNative(text);
 	$finishNative();
 }
 
 int32_t WTextComponentPeer::getSelectionStart() {
 	int32_t $ret = 0;
 	$prepareNative(WTextComponentPeer, getSelectionStart, int32_t);
-	$ret = $invokeNative(WTextComponentPeer, getSelectionStart);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -328,14 +326,14 @@ int32_t WTextComponentPeer::getSelectionStart() {
 int32_t WTextComponentPeer::getSelectionEnd() {
 	int32_t $ret = 0;
 	$prepareNative(WTextComponentPeer, getSelectionEnd, int32_t);
-	$ret = $invokeNative(WTextComponentPeer, getSelectionEnd);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
 
 void WTextComponentPeer::select(int32_t selStart, int32_t selEnd) {
 	$prepareNative(WTextComponentPeer, select, void, int32_t selStart, int32_t selEnd);
-	$invokeNative(WTextComponentPeer, select, selStart, selEnd);
+	$invokeNative(selStart, selEnd);
 	$finishNative();
 }
 
@@ -358,7 +356,7 @@ void WTextComponentPeer::initialize() {
 
 void WTextComponentPeer::enableEditing(bool e) {
 	$prepareNative(WTextComponentPeer, enableEditing, void, bool e);
-	$invokeNative(WTextComponentPeer, enableEditing, e);
+	$invokeNative(e);
 	$finishNative();
 }
 
@@ -381,7 +379,7 @@ void WTextComponentPeer::valueChanged() {
 void WTextComponentPeer::initIDs() {
 	$init(WTextComponentPeer);
 	$prepareNativeStatic(WTextComponentPeer, initIDs, void);
-	$invokeNativeStatic(WTextComponentPeer, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

@@ -7,13 +7,10 @@
 #include <jcpp.h>
 
 using $bug7146377 = ::bug7146377;
-using $Component = ::java::awt::Component;
-using $Point = ::java::awt::Point;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JLabel = ::javax::swing::JLabel;
 
 $MethodInfo _bug7146377$2_MethodInfo_[] = {

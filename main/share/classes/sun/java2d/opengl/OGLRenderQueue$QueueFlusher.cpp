@@ -19,13 +19,10 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $Runnable = ::java::lang::Runnable;
-using $ThreadGroup = ::java::lang::ThreadGroup;
 using $ThreadGroupUtils = ::sun::awt::util::ThreadGroupUtils;
 using $OGLRenderQueue = ::sun::java2d::opengl::OGLRenderQueue;
 using $RenderBuffer = ::sun::java2d::pipe::RenderBuffer;
-using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 
 namespace sun {
 	namespace java2d {

@@ -17,13 +17,9 @@
 
 #undef WHEN_FOCUSED
 
-using $Component = ::java::awt::Component;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
-using $ComponentListener = ::java::awt::event::ComponentListener;
 using $FocusEvent = ::java::awt::event::FocusEvent;
-using $FocusListener = ::java::awt::event::FocusListener;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

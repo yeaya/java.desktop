@@ -15,7 +15,6 @@
 #undef UNDEFINED
 
 using $AttributeValue = ::java::awt::AttributeValue;
-using $BufferCapabilities = ::java::awt::BufferCapabilities;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

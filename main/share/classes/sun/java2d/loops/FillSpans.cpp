@@ -87,7 +87,7 @@ void FillSpans::init$(int64_t pNativePrim, $SurfaceType* srctype, $CompositeType
 
 void FillSpans::FillSpans$($SunGraphics2D* sg2d, $SurfaceData* dest, int32_t pixel, int64_t pIterator, $SpanIterator* si) {
 	$prepareNative(FillSpans, FillSpans$, void, $SunGraphics2D* sg2d, $SurfaceData* dest, int32_t pixel, int64_t pIterator, $SpanIterator* si);
-	$invokeNative(FillSpans, FillSpans$, sg2d, dest, pixel, pIterator, si);
+	$invokeNative(sg2d, dest, pixel, pIterator, si);
 	$finishNative();
 }
 

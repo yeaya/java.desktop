@@ -18,7 +18,6 @@
 
 using $UIManager$LookAndFeelInfoArray = $Array<::javax::swing::UIManager$LookAndFeelInfo>;
 using $bug6794831 = ::bug6794831;
-using $Graphics = ::java::awt::Graphics;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
@@ -27,7 +26,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $CountDownLatch = ::java::util::concurrent::CountDownLatch;
 using $JSlider = ::javax::swing::JSlider;
 using $UIManager = ::javax::swing::UIManager;

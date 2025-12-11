@@ -12,11 +12,8 @@
 #include <jcpp.h>
 
 using $TestCaretPositionJTextPane = ::TestCaretPositionJTextPane;
-using $Point = ::java::awt::Point;
 using $MouseEvent = ::java::awt::event::MouseEvent;
-using $MouseListener = ::java::awt::event::MouseListener;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
@@ -27,7 +24,6 @@ using $RuntimeException = ::java::lang::RuntimeException;
 using $JTextPane = ::javax::swing::JTextPane;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $Caret = ::javax::swing::text::Caret;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $MethodInfo _TestCaretPositionJTextPane$1_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(TestCaretPositionJTextPane$1::*)()>(&TestCaretPositionJTextPane$1::init$))},

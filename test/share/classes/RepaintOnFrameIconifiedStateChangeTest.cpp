@@ -53,7 +53,6 @@ using $FlowLayout = ::java::awt::FlowLayout;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $Robot = ::java::awt::Robot;
 using $Toolkit = ::java::awt::Toolkit;
-using $Window = ::java::awt::Window;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;

@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $IntegerSyntax = ::javax::print::attribute::IntegerSyntax;
-using $PrintServiceAttribute = ::javax::print::attribute::PrintServiceAttribute;
 
 namespace javax {
 	namespace print {

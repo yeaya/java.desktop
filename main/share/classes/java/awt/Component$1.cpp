@@ -38,7 +38,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AccessControlContext = ::java::security::AccessControlContext;
-using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor;
 using $AppContext = ::sun::awt::AppContext;
 using $RequestFocusController = ::sun::awt::RequestFocusController;
 

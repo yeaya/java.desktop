@@ -10,14 +10,9 @@
 #undef DISCONTIGUOUS_TREE_SELECTION
 #undef SINGLE_TREE_SELECTION
 
-using $TreePathArray = $Array<::javax::swing::tree::TreePath>;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $TreeSelectionListener = ::javax::swing::event::TreeSelectionListener;
-using $RowMapper = ::javax::swing::tree::RowMapper;
-using $TreePath = ::javax::swing::tree::TreePath;
 
 namespace javax {
 	namespace swing {

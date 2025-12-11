@@ -6,11 +6,9 @@
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Comparable = ::java::lang::Comparable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $List = ::java::util::List;
 using $IIOMetadataFormatImpl = ::javax::imageio::metadata::IIOMetadataFormatImpl;
 
 namespace javax {

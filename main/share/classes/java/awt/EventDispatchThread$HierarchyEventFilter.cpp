@@ -24,8 +24,6 @@
 using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $EventDispatchThread = ::java::awt::EventDispatchThread;
-using $EventFilter = ::java::awt::EventFilter;
 using $EventFilter$FilterAction = ::java::awt::EventFilter$FilterAction;
 using $Window = ::java::awt::Window;
 using $ActionEvent = ::java::awt::event::ActionEvent;
@@ -35,7 +33,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $ModalExclude = ::sun::awt::ModalExclude;
 using $SunToolkit = ::sun::awt::SunToolkit;
 

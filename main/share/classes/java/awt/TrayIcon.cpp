@@ -38,7 +38,6 @@
 using $ActionListenerArray = $Array<::java::awt::event::ActionListener>;
 using $MouseListenerArray = $Array<::java::awt::event::MouseListener>;
 using $MouseMotionListenerArray = $Array<::java::awt::event::MouseMotionListener>;
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $AWTEvent = ::java::awt::AWTEvent;
 using $AWTEventMulticaster = ::java::awt::AWTEventMulticaster;
 using $Dimension = ::java::awt::Dimension;
@@ -46,7 +45,6 @@ using $EventQueue = ::java::awt::EventQueue;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $HeadlessException = ::java::awt::HeadlessException;
 using $Image = ::java::awt::Image;
-using $Menu = ::java::awt::Menu;
 using $PopupMenu = ::java::awt::PopupMenu;
 using $SystemTray = ::java::awt::SystemTray;
 using $Toolkit = ::java::awt::Toolkit;
@@ -59,7 +57,6 @@ using $MouseListener = ::java::awt::event::MouseListener;
 using $MouseMotionListener = ::java::awt::event::MouseMotionListener;
 using $TrayIconPeer = ::java::awt::peer::TrayIconPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -472,7 +469,7 @@ void TrayIcon::processActionEvent($ActionEvent* e) {
 void TrayIcon::initIDs() {
 	$init(TrayIcon);
 	$prepareNativeStatic(TrayIcon, initIDs, void);
-	$invokeNativeStatic(TrayIcon, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

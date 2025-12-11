@@ -7,7 +7,6 @@
 #include <jcpp.h>
 
 using $TestBrowserBGColor = ::TestBrowserBGColor;
-using $Window = ::java::awt::Window;
 using $WindowAdapter = ::java::awt::event::WindowAdapter;
 using $WindowEvent = ::java::awt::event::WindowEvent;
 using $ClassInfo = ::java::lang::ClassInfo;

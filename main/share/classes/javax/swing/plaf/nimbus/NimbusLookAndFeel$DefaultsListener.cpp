@@ -6,12 +6,10 @@
 #include <jcpp.h>
 
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Map = ::java::util::Map;
 using $NimbusLookAndFeel = ::javax::swing::plaf::nimbus::NimbusLookAndFeel;
 
 namespace javax {

@@ -8,16 +8,12 @@
 #include <jcpp.h>
 
 using $FileAttributeArray = $Array<::java::nio::file::attribute::FileAttribute>;
-using $Font = ::java::awt::Font;
-using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Files = ::java::nio::file::Files;
 using $Path = ::java::nio::file::Path;
-using $FileAttribute = ::java::nio::file::attribute::FileAttribute;
-using $PrivilegedExceptionAction = ::java::security::PrivilegedExceptionAction;
 
 namespace java {
 	namespace awt {

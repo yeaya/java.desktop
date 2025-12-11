@@ -11,7 +11,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Charset = ::java::nio::charset::Charset;
 using $DoubleByteEncoder = ::sun::font::DoubleByteEncoder;
-using $X11GB18030_1 = ::sun::font::X11GB18030_1;
 
 namespace sun {
 	namespace font {

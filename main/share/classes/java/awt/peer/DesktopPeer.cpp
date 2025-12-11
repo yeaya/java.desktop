@@ -14,7 +14,6 @@
 #include <javax/swing/JMenuBar.h>
 #include <jcpp.h>
 
-using $Desktop$Action = ::java::awt::Desktop$Action;
 using $AboutHandler = ::java::awt::desktop::AboutHandler;
 using $OpenFilesHandler = ::java::awt::desktop::OpenFilesHandler;
 using $OpenURIHandler = ::java::awt::desktop::OpenURIHandler;
@@ -26,7 +25,6 @@ using $SystemEventListener = ::java::awt::desktop::SystemEventListener;
 using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $URI = ::java::net::URI;
 using $JMenuBar = ::javax::swing::JMenuBar;
 
 namespace java {

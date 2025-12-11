@@ -6,9 +6,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DocAttribute = ::javax::print::attribute::DocAttribute;
-using $PrintJobAttribute = ::javax::print::attribute::PrintJobAttribute;
-using $PrintRequestAttribute = ::javax::print::attribute::PrintRequestAttribute;
 using $ResolutionSyntax = ::javax::print::attribute::ResolutionSyntax;
 
 namespace javax {

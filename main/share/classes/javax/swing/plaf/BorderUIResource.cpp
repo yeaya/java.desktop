@@ -21,7 +21,6 @@ using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Insets = ::java::awt::Insets;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
@@ -35,7 +34,6 @@ using $LineBorder = ::javax::swing::border::LineBorder;
 using $BorderUIResource$BevelBorderUIResource = ::javax::swing::plaf::BorderUIResource$BevelBorderUIResource;
 using $BorderUIResource$EtchedBorderUIResource = ::javax::swing::plaf::BorderUIResource$EtchedBorderUIResource;
 using $BorderUIResource$LineBorderUIResource = ::javax::swing::plaf::BorderUIResource$LineBorderUIResource;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace javax {
 	namespace swing {

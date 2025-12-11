@@ -24,8 +24,6 @@ using $JList = ::javax::swing::JList;
 using $JPanel = ::javax::swing::JPanel;
 using $ListSelectionListener = ::javax::swing::event::ListSelectionListener;
 using $BasicDirectoryModel = ::javax::swing::plaf::basic::BasicDirectoryModel;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
-using $FilePane$FileChooserUIAccessor = ::sun::swing::FilePane$FileChooserUIAccessor;
 
 namespace com {
 	namespace sun {

@@ -13,7 +13,6 @@
 #include <javax/swing/event/ChangeListener.h>
 #include <jcpp.h>
 
-using $bug6348946 = ::bug6348946;
 using $bug6348946$Editor$1 = ::bug6348946$Editor$1;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
@@ -29,7 +28,6 @@ using $JSlider = ::javax::swing::JSlider;
 using $JTable = ::javax::swing::JTable;
 using $CellEditorListener = ::javax::swing::event::CellEditorListener;
 using $ChangeListener = ::javax::swing::event::ChangeListener;
-using $TableCellEditor = ::javax::swing::table::TableCellEditor;
 
 $FieldInfo _bug6348946$Editor_FieldInfo_[] = {
 	{"slider", "Ljavax/swing/JSlider;", nullptr, $PRIVATE, $field(bug6348946$Editor, slider)},

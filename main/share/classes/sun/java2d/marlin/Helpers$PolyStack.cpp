@@ -27,7 +27,6 @@ using $Arrays = ::java::util::Arrays;
 using $ByteArrayCache$Reference = ::sun::java2d::marlin::ByteArrayCache$Reference;
 using $DPathConsumer2D = ::sun::java2d::marlin::DPathConsumer2D;
 using $DoubleArrayCache$Reference = ::sun::java2d::marlin::DoubleArrayCache$Reference;
-using $Helpers = ::sun::java2d::marlin::Helpers;
 using $MarlinConst = ::sun::java2d::marlin::MarlinConst;
 using $RendererContext = ::sun::java2d::marlin::RendererContext;
 using $Histogram = ::sun::java2d::marlin::stats::Histogram;

@@ -35,7 +35,6 @@ using $Long = ::java::lang::Long;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractList = ::java::util::AbstractList;
 using $ArrayList = ::java::util::ArrayList;
-using $Collection = ::java::util::Collection;
 using $Collections = ::java::util::Collections;
 using $Comparator = ::java::util::Comparator;
 using $HashMap = ::java::util::HashMap;

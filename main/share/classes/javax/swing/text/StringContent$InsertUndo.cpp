@@ -19,7 +19,6 @@ using $StringContent = ::javax::swing::text::StringContent;
 using $AbstractUndoableEdit = ::javax::swing::undo::AbstractUndoableEdit;
 using $CannotRedoException = ::javax::swing::undo::CannotRedoException;
 using $CannotUndoException = ::javax::swing::undo::CannotUndoException;
-using $UndoableEdit = ::javax::swing::undo::UndoableEdit;
 
 namespace javax {
 	namespace swing {

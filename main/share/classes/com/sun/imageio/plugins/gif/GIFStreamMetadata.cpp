@@ -19,7 +19,6 @@ using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $IllegalStateException = ::java::lang::IllegalStateException;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $IIOMetadata = ::javax::imageio::metadata::IIOMetadata;
 using $IIOMetadataFormatImpl = ::javax::imageio::metadata::IIOMetadataFormatImpl;
 using $IIOMetadataNode = ::javax::imageio::metadata::IIOMetadataNode;
 using $Element = ::org::w3c::dom::Element;

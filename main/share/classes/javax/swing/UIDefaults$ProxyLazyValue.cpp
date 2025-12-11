@@ -21,12 +21,9 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SecurityException = ::java::lang::SecurityException;
-using $SecurityManager = ::java::lang::SecurityManager;
-using $AccessControlContext = ::java::security::AccessControlContext;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $UIDefaults = ::javax::swing::UIDefaults;
-using $UIDefaults$LazyValue = ::javax::swing::UIDefaults$LazyValue;
 using $UIDefaults$ProxyLazyValue$1 = ::javax::swing::UIDefaults$ProxyLazyValue$1;
 using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
 

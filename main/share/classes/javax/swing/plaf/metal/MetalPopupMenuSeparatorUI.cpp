@@ -11,8 +11,6 @@
 #include <javax/swing/plaf/metal/MetalSeparatorUI.h>
 #include <jcpp.h>
 
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;

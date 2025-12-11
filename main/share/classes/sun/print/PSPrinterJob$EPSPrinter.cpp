@@ -25,7 +25,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IndexOutOfBoundsException = ::java::lang::IndexOutOfBoundsException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $Date = ::java::util::Date;
 using $PSPrinterJob = ::sun::print::PSPrinterJob;
 using $RasterPrinterJob = ::sun::print::RasterPrinterJob;

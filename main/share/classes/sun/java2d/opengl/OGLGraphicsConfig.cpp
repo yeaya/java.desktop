@@ -7,8 +7,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SurfaceManager$ProxiedGraphicsConfig = ::sun::awt::image::SurfaceManager$ProxiedGraphicsConfig;
-using $SurfaceData = ::sun::java2d::SurfaceData;
 using $AccelGraphicsConfig = ::sun::java2d::pipe::hw::AccelGraphicsConfig;
 
 namespace sun {

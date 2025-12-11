@@ -4,9 +4,6 @@
 #include <com/sun/media/sound/SimpleInstrument.h>
 #include <jcpp.h>
 
-using $ModelPerformerArray = $Array<::com::sun::media::sound::ModelPerformer>;
-using $ModelPerformer = ::com::sun::media::sound::ModelPerformer;
-using $SimpleInstrument = ::com::sun::media::sound::SimpleInstrument;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

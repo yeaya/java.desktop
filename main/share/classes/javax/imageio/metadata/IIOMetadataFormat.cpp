@@ -28,11 +28,8 @@
 #undef VALUE_RANGE_MIN_MAX_INCLUSIVE
 
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Comparable = ::java::lang::Comparable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Locale = ::java::util::Locale;
-using $ImageTypeSpecifier = ::javax::imageio::ImageTypeSpecifier;
 
 namespace javax {
 	namespace imageio {

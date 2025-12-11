@@ -10,8 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $IllegalStateException = ::java::lang::IllegalStateException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SunVolatileImage = ::sun::awt::image::SunVolatileImage;
-using $VolatileSurfaceManager = ::sun::awt::image::VolatileSurfaceManager;
 
 namespace sun {
 	namespace java2d {

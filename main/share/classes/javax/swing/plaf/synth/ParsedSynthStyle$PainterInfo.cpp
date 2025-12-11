@@ -9,7 +9,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ParsedSynthStyle = ::javax::swing::plaf::synth::ParsedSynthStyle;
 using $ParsedSynthStyle$AggregatePainter = ::javax::swing::plaf::synth::ParsedSynthStyle$AggregatePainter;
 using $SynthPainter = ::javax::swing::plaf::synth::SynthPainter;
 

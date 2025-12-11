@@ -8,8 +8,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ProcessPath = ::sun::java2d::loops::ProcessPath;
-using $ProcessPath$Edge = ::sun::java2d::loops::ProcessPath$Edge;
 
 namespace sun {
 	namespace java2d {

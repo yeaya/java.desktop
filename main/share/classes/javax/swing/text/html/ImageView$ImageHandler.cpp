@@ -27,7 +27,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $Element = ::javax::swing::text::Element;
-using $View = ::javax::swing::text::View;
 using $HTML$Attribute = ::javax::swing::text::html::HTML$Attribute;
 using $ImageView = ::javax::swing::text::html::ImageView;
 

@@ -16,7 +16,6 @@
 
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
-using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DataBufferInt = ::java::awt::image::DataBufferInt;
 using $Raster = ::java::awt::image::Raster;
 using $RasterFormatException = ::java::awt::image::RasterFormatException;

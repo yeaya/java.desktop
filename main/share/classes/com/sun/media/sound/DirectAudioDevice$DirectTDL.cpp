@@ -14,7 +14,6 @@
 #include <jcpp.h>
 
 using $ControlArray = $Array<::javax::sound::sampled::Control>;
-using $AbstractDataLine = ::com::sun::media::sound::AbstractDataLine;
 using $DirectAudioDevice = ::com::sun::media::sound::DirectAudioDevice;
 using $DirectAudioDevice$DirectDL = ::com::sun::media::sound::DirectAudioDevice$DirectDL;
 using $ArrayIndexOutOfBoundsException = ::java::lang::ArrayIndexOutOfBoundsException;
@@ -29,7 +28,6 @@ using $Control$Type = ::javax::sound::sampled::Control$Type;
 using $DataLine$Info = ::javax::sound::sampled::DataLine$Info;
 using $Line$Info = ::javax::sound::sampled::Line$Info;
 using $LineListener = ::javax::sound::sampled::LineListener;
-using $TargetDataLine = ::javax::sound::sampled::TargetDataLine;
 
 namespace com {
 	namespace sun {

@@ -7,14 +7,12 @@
 #include <sun/awt/X11/XTextAreaPeer.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $FocusEvent = ::java::awt::event::FocusEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DefaultCaret = ::javax::swing::text::DefaultCaret;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
-using $XTextAreaPeer = ::sun::awt::X11::XTextAreaPeer;
 
 namespace sun {
 	namespace awt {

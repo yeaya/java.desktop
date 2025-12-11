@@ -10,7 +10,6 @@
 #undef COORDS
 
 using $Polygon = ::java::awt::Polygon;
-using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
@@ -20,7 +19,6 @@ using $RuntimeException = ::java::lang::RuntimeException;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $HTML$Attribute = ::javax::swing::text::html::HTML$Attribute;
 using $Map = ::javax::swing::text::html::Map;
-using $Map$RegionContainment = ::javax::swing::text::html::Map$RegionContainment;
 
 namespace javax {
 	namespace swing {

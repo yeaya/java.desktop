@@ -31,8 +31,6 @@
 #undef X_AXIS
 
 using $Position$BiasArray = $Array<::javax::swing::text::Position$Bias>;
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
@@ -49,12 +47,10 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $JComponent = ::javax::swing::JComponent;
 using $JPasswordField = ::javax::swing::JPasswordField;
 using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
 using $FieldView = ::javax::swing::text::FieldView;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $PlainView = ::javax::swing::text::PlainView;
 using $PlainView$FPMethodArgs = ::javax::swing::text::PlainView$FPMethodArgs;
 using $Position$Bias = ::javax::swing::text::Position$Bias;

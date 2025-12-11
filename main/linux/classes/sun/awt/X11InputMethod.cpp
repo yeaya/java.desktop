@@ -25,13 +25,10 @@
 #undef INPUT_METHOD_HIGHLIGHT
 #undef INPUT_METHOD_TEXT_CHANGED
 
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Window = ::java::awt::Window;
 using $InputMethodEvent = ::java::awt::event::InputMethodEvent;
 using $TextAttribute = ::java::awt::font::TextAttribute;
 using $TextHitInfo = ::java::awt::font::TextHitInfo;
-using $InputMethodHighlight = ::java::awt::im::InputMethodHighlight;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
@@ -42,7 +39,6 @@ using $AttributedCharacterIterator$Attribute = ::java::text::AttributedCharacter
 using $AttributedString = ::java::text::AttributedString;
 using $X11InputMethodBase = ::sun::awt::X11InputMethodBase;
 using $X11InputMethodBase$IntBuffer = ::sun::awt::X11InputMethodBase$IntBuffer;
-using $InputMethodAdapter = ::sun::awt::im::InputMethodAdapter;
 using $PlatformLogger = ::sun::util::logging::PlatformLogger;
 using $PlatformLogger$Level = ::sun::util::logging::PlatformLogger$Level;
 

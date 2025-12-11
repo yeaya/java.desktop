@@ -18,10 +18,8 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $UnsupportedOperationException = ::java::lang::UnsupportedOperationException;
 using $Iterator = ::java::util::Iterator;
 using $ImageIO = ::javax::imageio::ImageIO;
-using $ImageReader = ::javax::imageio::ImageReader;
 using $IIORegistry = ::javax::imageio::spi::IIORegistry;
 using $ImageReaderSpi = ::javax::imageio::spi::ImageReaderSpi;
-using $ServiceRegistry = ::javax::imageio::spi::ServiceRegistry;
 
 namespace javax {
 	namespace imageio {

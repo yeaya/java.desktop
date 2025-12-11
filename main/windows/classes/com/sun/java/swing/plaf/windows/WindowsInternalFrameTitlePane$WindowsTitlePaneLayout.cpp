@@ -40,10 +40,8 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractButton = ::javax::swing::AbstractButton;
-using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
-using $JLabel = ::javax::swing::JLabel;
 using $BasicInternalFrameTitlePane = ::javax::swing::plaf::basic::BasicInternalFrameTitlePane;
 using $BasicInternalFrameTitlePane$TitlePaneLayout = ::javax::swing::plaf::basic::BasicInternalFrameTitlePane$TitlePaneLayout;
 

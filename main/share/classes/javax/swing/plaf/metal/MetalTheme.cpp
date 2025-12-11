@@ -17,7 +17,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UIDefaults = ::javax::swing::UIDefaults;
 using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
-using $FontUIResource = ::javax::swing::plaf::FontUIResource;
 
 namespace javax {
 	namespace swing {

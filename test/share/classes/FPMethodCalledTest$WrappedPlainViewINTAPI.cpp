@@ -6,8 +6,6 @@
 #include <javax/swing/text/WrappedPlainView.h>
 #include <jcpp.h>
 
-using $FPMethodCalledTest = ::FPMethodCalledTest;
-using $FPMethodCalledTest$Resultable = ::FPMethodCalledTest$Resultable;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

@@ -11,20 +11,14 @@
 #include <jcpp.h>
 
 using $Color = ::java::awt::Color;
-using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
-using $Image = ::java::awt::Image;
 using $Polygon = ::java::awt::Polygon;
 using $Rectangle = ::java::awt::Rectangle;
-using $Shape = ::java::awt::Shape;
-using $Rectangle2D = ::java::awt::geom::Rectangle2D;
-using $ImageObserver = ::java::awt::image::ImageObserver;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $NullPointerException = ::java::lang::NullPointerException;
-using $AttributedCharacterIterator = ::java::text::AttributedCharacterIterator;
 
 namespace java {
 	namespace awt {

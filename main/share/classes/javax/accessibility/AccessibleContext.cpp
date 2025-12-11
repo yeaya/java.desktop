@@ -55,22 +55,18 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $Locale = ::java::util::Locale;
 using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleAction = ::javax::accessibility::AccessibleAction;
 using $AccessibleComponent = ::javax::accessibility::AccessibleComponent;
 using $AccessibleContext$1 = ::javax::accessibility::AccessibleContext$1;
 using $AccessibleEditableText = ::javax::accessibility::AccessibleEditableText;
 using $AccessibleRelationSet = ::javax::accessibility::AccessibleRelationSet;
-using $AccessibleRole = ::javax::accessibility::AccessibleRole;
 using $AccessibleSelection = ::javax::accessibility::AccessibleSelection;
-using $AccessibleStateSet = ::javax::accessibility::AccessibleStateSet;
 using $AccessibleTable = ::javax::accessibility::AccessibleTable;
 using $AccessibleText = ::javax::accessibility::AccessibleText;
 using $AccessibleValue = ::javax::accessibility::AccessibleValue;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$AccessibleContextAccessor = ::sun::awt::AWTAccessor$AccessibleContextAccessor;
-using $AppContext = ::sun::awt::AppContext;
 
 namespace javax {
 	namespace accessibility {

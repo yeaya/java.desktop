@@ -25,7 +25,6 @@
 #undef DEFAULT_STYLE
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Font = ::java::awt::Font;
 using $Graphics = ::java::awt::Graphics;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
@@ -39,7 +38,6 @@ using $BasicTextUI = ::javax::swing::plaf::basic::BasicTextUI;
 using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
 using $SynthEditorPaneUI = ::javax::swing::plaf::synth::SynthEditorPaneUI;
 using $SynthPainter = ::javax::swing::plaf::synth::SynthPainter;
-using $Document = ::javax::swing::text::Document;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $Style = ::javax::swing::text::Style;

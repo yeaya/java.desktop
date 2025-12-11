@@ -4,7 +4,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AttributeSet = ::javax::print::attribute::AttributeSet;
 
 namespace javax {
 	namespace print {

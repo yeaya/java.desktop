@@ -14,8 +14,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NumberFormatException = ::java::lang::NumberFormatException;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
-using $FontStrike = ::sun::font::FontStrike;
 using $StrikeCache = ::sun::font::StrikeCache;
 
 namespace sun {

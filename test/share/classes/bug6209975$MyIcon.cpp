@@ -9,7 +9,6 @@
 
 #undef BLACK
 
-using $bug6209975 = ::bug6209975;
 using $bug6209975$ReturnObject = ::bug6209975$ReturnObject;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
@@ -18,7 +17,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Icon = ::javax::swing::Icon;
 
 $FieldInfo _bug6209975$MyIcon_FieldInfo_[] = {
 	{"thisObject", "Lbug6209975$ReturnObject;", nullptr, 0, $field(bug6209975$MyIcon, thisObject)},

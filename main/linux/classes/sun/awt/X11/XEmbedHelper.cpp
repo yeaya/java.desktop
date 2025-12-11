@@ -61,7 +61,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $Long = ::java::lang::Long;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $XAtom = ::sun::awt::X11::XAtom;
 using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XClientMessageEvent = ::sun::awt::X11::XClientMessageEvent;

@@ -21,7 +21,6 @@ using $Image = ::java::awt::Image;
 using $MediaEntry = ::java::awt::MediaEntry;
 using $MediaTracker = ::java::awt::MediaTracker;
 using $ImageObserver = ::java::awt::image::ImageObserver;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

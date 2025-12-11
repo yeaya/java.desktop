@@ -15,17 +15,13 @@
 #undef ORIENTATION_PROPERTY
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $FocusEvent = ::java::awt::event::FocusEvent;
 using $FocusListener = ::java::awt::event::FocusListener;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $JComponent = ::javax::swing::JComponent;
 using $JSplitPane = ::javax::swing::JSplitPane;
 using $BasicSplitPaneDivider = ::javax::swing::plaf::basic::BasicSplitPaneDivider;
 using $BasicSplitPaneUI = ::javax::swing::plaf::basic::BasicSplitPaneUI;

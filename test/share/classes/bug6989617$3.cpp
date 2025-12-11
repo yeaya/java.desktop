@@ -11,7 +11,6 @@
 
 using $bug6989617 = ::bug6989617;
 using $bug6989617$MyPanel = ::bug6989617$MyPanel;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
@@ -19,7 +18,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JButton = ::javax::swing::JButton;
 

@@ -16,7 +16,6 @@
 #include <javax/swing/text/View.h>
 #include <jcpp.h>
 
-using $WindowsTextUI = ::com::sun::java::swing::plaf::windows::WindowsTextUI;
 using $Color = ::java::awt::Color;
 using $Graphics = ::java::awt::Graphics;
 using $Rectangle = ::java::awt::Rectangle;

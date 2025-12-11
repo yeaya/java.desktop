@@ -11,7 +11,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Spring = ::javax::swing::Spring;
-using $Spring$AbstractSpring = ::javax::swing::Spring$AbstractSpring;
 using $Spring$CompoundSpring = ::javax::swing::Spring$CompoundSpring;
 
 namespace javax {

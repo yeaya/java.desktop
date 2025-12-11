@@ -9,15 +9,12 @@
 #undef HTML_READ_FRAGMENT
 #undef HTML_READ_SELECTION
 
-using $EHTMLReadModeArray = $Array<::sun::awt::windows::EHTMLReadMode>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
 using $EHTMLReadMode = ::sun::awt::windows::EHTMLReadMode;
-using $HTMLCodec = ::sun::awt::windows::HTMLCodec;
 
 namespace sun {
 	namespace awt {

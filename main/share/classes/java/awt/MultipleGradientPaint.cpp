@@ -17,10 +17,8 @@ using $ColorArray = $Array<::java::awt::Color>;
 using $Color = ::java::awt::Color;
 using $MultipleGradientPaint$ColorSpaceType = ::java::awt::MultipleGradientPaint$ColorSpaceType;
 using $MultipleGradientPaint$CycleMethod = ::java::awt::MultipleGradientPaint$CycleMethod;
-using $Paint = ::java::awt::Paint;
 using $Transparency = ::java::awt::Transparency;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
-using $ColorModel = ::java::awt::image::ColorModel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
@@ -28,7 +26,6 @@ using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
-using $SoftReference = ::java::lang::ref::SoftReference;
 using $Arrays = ::java::util::Arrays;
 
 namespace java {

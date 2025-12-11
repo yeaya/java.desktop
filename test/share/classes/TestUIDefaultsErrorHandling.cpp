@@ -27,7 +27,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;
 using $UIDefaults = ::javax::swing::UIDefaults;
 using $UIManager = ::javax::swing::UIManager;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 
 $FieldInfo _TestUIDefaultsErrorHandling_FieldInfo_[] = {
 	{"erroutput", "Ljava/lang/String;", nullptr, $PRIVATE | $STATIC | $FINAL, $staticField(TestUIDefaultsErrorHandling, erroutput)},

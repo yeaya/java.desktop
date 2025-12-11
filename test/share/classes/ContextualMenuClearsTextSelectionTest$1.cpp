@@ -16,7 +16,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 
 $MethodInfo _ContextualMenuClearsTextSelectionTest$1_MethodInfo_[] = {

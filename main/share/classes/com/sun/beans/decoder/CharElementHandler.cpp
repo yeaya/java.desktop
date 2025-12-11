@@ -4,7 +4,6 @@
 #include <com/sun/beans/decoder/StringElementHandler.h>
 #include <jcpp.h>
 
-using $ElementHandler = ::com::sun::beans::decoder::ElementHandler;
 using $StringElementHandler = ::com::sun::beans::decoder::StringElementHandler;
 using $Character = ::java::lang::Character;
 using $ClassInfo = ::java::lang::ClassInfo;

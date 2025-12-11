@@ -17,10 +17,8 @@
 
 #undef TRANSIENT
 
-using $TypeArray = $Array<::java::lang::reflect::Type>;
 using $TypeResolver = ::com::sun::beans::TypeResolver;
 using $Transient = ::java::beans::Transient;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -29,7 +27,6 @@ using $Reference = ::java::lang::ref::Reference;
 using $SoftReference = ::java::lang::ref::SoftReference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $Method = ::java::lang::reflect::Method;
-using $Type = ::java::lang::reflect::Type;
 using $Enumeration = ::java::util::Enumeration;
 using $Hashtable = ::java::util::Hashtable;
 using $Iterator = ::java::util::Iterator;

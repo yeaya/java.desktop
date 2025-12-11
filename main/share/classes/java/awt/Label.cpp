@@ -29,7 +29,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $ComponentFactory = ::sun::awt::ComponentFactory;
 
@@ -233,7 +232,7 @@ $String* Label::paramString() {
 void Label::initIDs() {
 	$init(Label);
 	$prepareNativeStatic(Label, initIDs, void);
-	$invokeNativeStatic(Label, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

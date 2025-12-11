@@ -18,7 +18,6 @@
 
 using $bug6884066$1 = ::bug6884066$1;
 using $bug6884066$2 = ::bug6884066$2;
-using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
 using $Robot = ::java::awt::Robot;
 using $InputEvent = ::java::awt::event::InputEvent;
@@ -28,7 +27,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $JComponent = ::javax::swing::JComponent;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;
 using $JTableHeader = ::javax::swing::table::JTableHeader;

@@ -10,8 +10,6 @@
 
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
-using $Point2D = ::java::awt::geom::Point2D;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;

@@ -16,9 +16,6 @@
 #include <jcpp.h>
 
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
-using $Component = ::java::awt::Component;
-using $InputEvent = ::java::awt::event::InputEvent;
-using $KeyEvent = ::java::awt::event::KeyEvent;
 using $Character = ::java::lang::Character;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -27,15 +24,12 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $ArrayList = ::java::util::ArrayList;
 using $Arrays = ::java::util::Arrays;
 using $Collection = ::java::util::Collection;
-using $List = ::java::util::List;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JMenu = ::javax::swing::JMenu;
 using $JMenuItem = ::javax::swing::JMenuItem;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 using $MenuElement = ::javax::swing::MenuElement;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
 using $MenuKeyEvent = ::javax::swing::event::MenuKeyEvent;
-using $MenuKeyListener = ::javax::swing::event::MenuKeyListener;
 using $BasicPopupMenuUI = ::javax::swing::plaf::basic::BasicPopupMenuUI;
 
 namespace javax {

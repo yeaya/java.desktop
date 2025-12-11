@@ -61,7 +61,6 @@ using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Number = ::java::lang::Number;
 using $AbstractSet = ::java::util::AbstractSet;
-using $EventObject = ::java::util::EventObject;
 using $HashSet = ::java::util::HashSet;
 using $Set = ::java::util::Set;
 using $JComponent = ::javax::swing::JComponent;

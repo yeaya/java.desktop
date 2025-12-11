@@ -32,7 +32,6 @@ using $TIFFImageMetadata = ::com::sun::imageio::plugins::tiff::TIFFImageMetadata
 using $TIFFImageReader = ::com::sun::imageio::plugins::tiff::TIFFImageReader;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ColorModel = ::java::awt::image::ColorModel;
-using $Raster = ::java::awt::image::Raster;
 using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ByteArrayInputStream = ::java::io::ByteArrayInputStream;
 using $EOFException = ::java::io::EOFException;

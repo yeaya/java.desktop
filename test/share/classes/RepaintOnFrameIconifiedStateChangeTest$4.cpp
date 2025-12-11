@@ -8,14 +8,11 @@
 #undef NORMAL
 
 using $RepaintOnFrameIconifiedStateChangeTest = ::RepaintOnFrameIconifiedStateChangeTest;
-using $Frame = ::java::awt::Frame;
-using $Window = ::java::awt::Window;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JFrame = ::javax::swing::JFrame;
 
 $MethodInfo _RepaintOnFrameIconifiedStateChangeTest$4_MethodInfo_[] = {

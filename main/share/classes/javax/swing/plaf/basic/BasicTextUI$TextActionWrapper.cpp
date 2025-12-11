@@ -11,12 +11,10 @@
 #undef NAME
 
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractAction = ::javax::swing::AbstractAction;
 using $Action = ::javax::swing::Action;
 using $BasicTextUI = ::javax::swing::plaf::basic::BasicTextUI;
 using $JTextComponent = ::javax::swing::text::JTextComponent;

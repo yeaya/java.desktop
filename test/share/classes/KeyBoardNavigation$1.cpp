@@ -4,7 +4,6 @@
 #include <javax/swing/table/AbstractTableModel.h>
 #include <jcpp.h>
 
-using $KeyBoardNavigation = ::KeyBoardNavigation;
 using $ObjectArray2 = $Array<::java::lang::Object, 2>;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;

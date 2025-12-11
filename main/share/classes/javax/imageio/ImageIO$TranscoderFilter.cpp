@@ -10,11 +10,9 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ImageIO = ::javax::imageio::ImageIO;
 using $ImageReaderSpi = ::javax::imageio::spi::ImageReaderSpi;
 using $ImageTranscoderSpi = ::javax::imageio::spi::ImageTranscoderSpi;
 using $ImageWriterSpi = ::javax::imageio::spi::ImageWriterSpi;
-using $ServiceRegistry$Filter = ::javax::imageio::spi::ServiceRegistry$Filter;
 
 namespace javax {
 	namespace imageio {

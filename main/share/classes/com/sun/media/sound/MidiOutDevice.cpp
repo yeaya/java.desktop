@@ -114,33 +114,33 @@ $Receiver* MidiOutDevice::createReceiver() {
 int64_t MidiOutDevice::nOpen(int32_t index) {
 	int64_t $ret = 0;
 	$prepareNative(MidiOutDevice, nOpen, int64_t, int32_t index);
-	$ret = $invokeNative(MidiOutDevice, nOpen, index);
+	$ret = $invokeNative(index);
 	$finishNative();
 	return $ret;
 }
 
 void MidiOutDevice::nClose(int64_t id) {
 	$prepareNative(MidiOutDevice, nClose, void, int64_t id);
-	$invokeNative(MidiOutDevice, nClose, id);
+	$invokeNative(id);
 	$finishNative();
 }
 
 void MidiOutDevice::nSendShortMessage(int64_t id, int32_t packedMsg, int64_t timeStamp) {
 	$prepareNative(MidiOutDevice, nSendShortMessage, void, int64_t id, int32_t packedMsg, int64_t timeStamp);
-	$invokeNative(MidiOutDevice, nSendShortMessage, id, packedMsg, timeStamp);
+	$invokeNative(id, packedMsg, timeStamp);
 	$finishNative();
 }
 
 void MidiOutDevice::nSendLongMessage(int64_t id, $bytes* data, int32_t size, int64_t timeStamp) {
 	$prepareNative(MidiOutDevice, nSendLongMessage, void, int64_t id, $bytes* data, int32_t size, int64_t timeStamp);
-	$invokeNative(MidiOutDevice, nSendLongMessage, id, data, size, timeStamp);
+	$invokeNative(id, data, size, timeStamp);
 	$finishNative();
 }
 
 int64_t MidiOutDevice::nGetTimeStamp(int64_t id) {
 	int64_t $ret = 0;
 	$prepareNative(MidiOutDevice, nGetTimeStamp, int64_t, int64_t id);
-	$ret = $invokeNative(MidiOutDevice, nGetTimeStamp, id);
+	$ret = $invokeNative(id);
 	$finishNative();
 	return $ret;
 }

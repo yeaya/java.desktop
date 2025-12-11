@@ -39,7 +39,6 @@ using $SplashScreen$1 = ::java::awt::SplashScreen$1;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DataBufferInt = ::java::awt::image::DataBufferInt;
-using $Raster = ::java::awt::image::Raster;
 using $SampleModel = ::java::awt::image::SampleModel;
 using $SinglePixelPackedSampleModel = ::java::awt::image::SinglePixelPackedSampleModel;
 using $WritableRaster = ::java::awt::image::WritableRaster;
@@ -330,7 +329,7 @@ bool SplashScreen::isVisible() {
 void SplashScreen::_update(int64_t splashPtr, $ints* data, int32_t x, int32_t y, int32_t width, int32_t height, int32_t scanlineStride) {
 	$init(SplashScreen);
 	$prepareNativeStatic(SplashScreen, _update, void, int64_t splashPtr, $ints* data, int32_t x, int32_t y, int32_t width, int32_t height, int32_t scanlineStride);
-	$invokeNativeStatic(SplashScreen, _update, splashPtr, data, x, y, width, height, scanlineStride);
+	$invokeNativeStatic(splashPtr, data, x, y, width, height, scanlineStride);
 	$finishNativeStatic();
 }
 
@@ -338,7 +337,7 @@ bool SplashScreen::_isVisible(int64_t splashPtr) {
 	$init(SplashScreen);
 	bool $ret = false;
 	$prepareNativeStatic(SplashScreen, _isVisible, bool, int64_t splashPtr);
-	$ret = $invokeNativeStatic(SplashScreen, _isVisible, splashPtr);
+	$ret = $invokeNativeStatic(splashPtr);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -347,7 +346,7 @@ $Rectangle* SplashScreen::_getBounds(int64_t splashPtr) {
 	$init(SplashScreen);
 	$var($Rectangle, $ret, nullptr);
 	$prepareNativeStatic(SplashScreen, _getBounds, $Rectangle*, int64_t splashPtr);
-	$assign($ret, $invokeNativeStatic(SplashScreen, _getBounds, splashPtr));
+	$assign($ret, $invokeNativeStaticObject(splashPtr));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -356,7 +355,7 @@ int64_t SplashScreen::_getInstance() {
 	$init(SplashScreen);
 	int64_t $ret = 0;
 	$prepareNativeStatic(SplashScreen, _getInstance, int64_t);
-	$ret = $invokeNativeStatic(SplashScreen, _getInstance);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -364,7 +363,7 @@ int64_t SplashScreen::_getInstance() {
 void SplashScreen::_close(int64_t splashPtr) {
 	$init(SplashScreen);
 	$prepareNativeStatic(SplashScreen, _close, void, int64_t splashPtr);
-	$invokeNativeStatic(SplashScreen, _close, splashPtr);
+	$invokeNativeStatic(splashPtr);
 	$finishNativeStatic();
 }
 
@@ -372,7 +371,7 @@ $String* SplashScreen::_getImageFileName(int64_t splashPtr) {
 	$init(SplashScreen);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(SplashScreen, _getImageFileName, $String*, int64_t splashPtr);
-	$assign($ret, $invokeNativeStatic(SplashScreen, _getImageFileName, splashPtr));
+	$assign($ret, $invokeNativeStaticObject(splashPtr));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -381,7 +380,7 @@ $String* SplashScreen::_getImageJarName(int64_t SplashPtr) {
 	$init(SplashScreen);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(SplashScreen, _getImageJarName, $String*, int64_t SplashPtr);
-	$assign($ret, $invokeNativeStatic(SplashScreen, _getImageJarName, SplashPtr));
+	$assign($ret, $invokeNativeStaticObject(SplashPtr));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -390,7 +389,7 @@ bool SplashScreen::_setImageData(int64_t SplashPtr, $bytes* data) {
 	$init(SplashScreen);
 	bool $ret = false;
 	$prepareNativeStatic(SplashScreen, _setImageData, bool, int64_t SplashPtr, $bytes* data);
-	$ret = $invokeNativeStatic(SplashScreen, _setImageData, SplashPtr, data);
+	$ret = $invokeNativeStatic(SplashPtr, data);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -399,7 +398,7 @@ float SplashScreen::_getScaleFactor(int64_t SplashPtr) {
 	$init(SplashScreen);
 	float $ret = 0.0;
 	$prepareNativeStatic(SplashScreen, _getScaleFactor, float, int64_t SplashPtr);
-	$ret = $invokeNativeStatic(SplashScreen, _getScaleFactor, SplashPtr);
+	$ret = $invokeNativeStatic(SplashPtr);
 	$finishNativeStatic();
 	return $ret;
 }

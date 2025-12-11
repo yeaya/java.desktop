@@ -7,7 +7,6 @@
 
 using $DataFlavorArray = $Array<::java::awt::datatransfer::DataFlavor>;
 using $DataFlavor = ::java::awt::datatransfer::DataFlavor;
-using $Transferable = ::java::awt::datatransfer::Transferable;
 using $UnsupportedFlavorException = ::java::awt::datatransfer::UnsupportedFlavorException;
 using $DragSourceContext = ::java::awt::dnd::DragSourceContext;
 using $ClassInfo = ::java::lang::ClassInfo;

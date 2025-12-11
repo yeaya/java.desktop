@@ -34,7 +34,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JButton = ::javax::swing::JButton;
-using $JComponent = ::javax::swing::JComponent;
 using $JFrame = ::javax::swing::JFrame;
 using $JToolBar = ::javax::swing::JToolBar;
 using $SwingUtilities = ::javax::swing::SwingUtilities;

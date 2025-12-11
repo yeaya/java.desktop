@@ -57,15 +57,12 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $ScrollbarPeer = ::java::awt::peer::ScrollbarPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WScrollbarPeer$1 = ::sun::awt::windows::WScrollbarPeer$1;
 using $WScrollbarPeer$2 = ::sun::awt::windows::WScrollbarPeer$2;
 using $WToolkit = ::sun::awt::windows::WToolkit;
@@ -336,7 +333,7 @@ int32_t WScrollbarPeer::getScrollbarSize(int32_t orientation) {
 	$init(WScrollbarPeer);
 	int32_t $ret = 0;
 	$prepareNativeStatic(WScrollbarPeer, getScrollbarSize, int32_t, int32_t orientation);
-	$ret = $invokeNativeStatic(WScrollbarPeer, getScrollbarSize, orientation);
+	$ret = $invokeNativeStatic(orientation);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -351,19 +348,19 @@ $Dimension* WScrollbarPeer::getMinimumSize() {
 
 void WScrollbarPeer::setValues(int32_t value, int32_t visible, int32_t minimum, int32_t maximum) {
 	$prepareNative(WScrollbarPeer, setValues, void, int32_t value, int32_t visible, int32_t minimum, int32_t maximum);
-	$invokeNative(WScrollbarPeer, setValues, value, visible, minimum, maximum);
+	$invokeNative(value, visible, minimum, maximum);
 	$finishNative();
 }
 
 void WScrollbarPeer::setLineIncrement(int32_t l) {
 	$prepareNative(WScrollbarPeer, setLineIncrement, void, int32_t l);
-	$invokeNative(WScrollbarPeer, setLineIncrement, l);
+	$invokeNative(l);
 	$finishNative();
 }
 
 void WScrollbarPeer::setPageIncrement(int32_t l) {
 	$prepareNative(WScrollbarPeer, setPageIncrement, void, int32_t l);
-	$invokeNative(WScrollbarPeer, setPageIncrement, l);
+	$invokeNative(l);
 	$finishNative();
 }
 
@@ -374,7 +371,7 @@ void WScrollbarPeer::init$($Scrollbar* target) {
 
 void WScrollbarPeer::create($WComponentPeer* parent) {
 	$prepareNative(WScrollbarPeer, create, void, $WComponentPeer* parent);
-	$invokeNative(WScrollbarPeer, create, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 

@@ -3,7 +3,6 @@
 #include <java/awt/desktop/PreferencesEvent.h>
 #include <jcpp.h>
 
-using $PreferencesEvent = ::java::awt::desktop::PreferencesEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

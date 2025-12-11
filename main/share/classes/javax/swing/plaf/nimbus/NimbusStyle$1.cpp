@@ -7,7 +7,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Comparator = ::java::util::Comparator;
 using $NimbusStyle$RuntimeState = ::javax::swing::plaf::nimbus::NimbusStyle$RuntimeState;
 
 namespace javax {

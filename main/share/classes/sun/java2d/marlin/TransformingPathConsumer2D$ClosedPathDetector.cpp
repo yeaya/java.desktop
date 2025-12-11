@@ -18,10 +18,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $DPathConsumer2D = ::sun::java2d::marlin::DPathConsumer2D;
 using $Helpers$PolyStack = ::sun::java2d::marlin::Helpers$PolyStack;
 using $RendererContext = ::sun::java2d::marlin::RendererContext;
-using $RendererStats = ::sun::java2d::marlin::RendererStats;
-using $TransformingPathConsumer2D = ::sun::java2d::marlin::TransformingPathConsumer2D;
-using $Histogram = ::sun::java2d::marlin::stats::Histogram;
-using $StatLong = ::sun::java2d::marlin::stats::StatLong;
 
 namespace sun {
 	namespace java2d {

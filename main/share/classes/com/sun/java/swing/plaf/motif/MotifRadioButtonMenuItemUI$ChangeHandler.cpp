@@ -10,13 +10,11 @@
 #include <jcpp.h>
 
 using $MotifRadioButtonMenuItemUI = ::com::sun::java::swing::plaf::motif::MotifRadioButtonMenuItemUI;
-using $Serializable = ::java::io::Serializable;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JMenuItem = ::javax::swing::JMenuItem;

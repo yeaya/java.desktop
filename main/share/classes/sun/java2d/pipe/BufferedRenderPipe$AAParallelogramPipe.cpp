@@ -12,7 +12,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
 using $BufferedRenderPipe = ::sun::java2d::pipe::BufferedRenderPipe;
-using $ParallelogramPipe = ::sun::java2d::pipe::ParallelogramPipe;
 using $RenderBuffer = ::sun::java2d::pipe::RenderBuffer;
 using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 

@@ -5,7 +5,6 @@
 #include <jcpp.h>
 
 using $SoftAbstractResampler$ModelAbstractResamplerStream = ::com::sun::media::sound::SoftAbstractResampler$ModelAbstractResamplerStream;
-using $SoftResampler = ::com::sun::media::sound::SoftResampler;
 using $SoftResamplerStreamer = ::com::sun::media::sound::SoftResamplerStreamer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

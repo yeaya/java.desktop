@@ -24,18 +24,13 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $Comparator = ::java::util::Comparator;
 using $Vector = ::java::util::Vector;
 using $Function = ::java::util::function::Function;
 using $JFileChooser = ::javax::swing::JFileChooser;
 using $FileSystemView = ::javax::swing::filechooser::FileSystemView;
 using $BasicDirectoryModel = ::javax::swing::plaf::basic::BasicDirectoryModel;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 
 namespace com {
 	namespace sun {

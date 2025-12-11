@@ -3,7 +3,6 @@
 #include <java/awt/PrintJob.h>
 #include <jcpp.h>
 
-using $PrintJob = ::java::awt::PrintJob;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

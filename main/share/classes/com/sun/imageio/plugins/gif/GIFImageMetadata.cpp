@@ -23,7 +23,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $Iterator = ::java::util::Iterator;
 using $List = ::java::util::List;
-using $IIOMetadata = ::javax::imageio::metadata::IIOMetadata;
 using $IIOMetadataFormatImpl = ::javax::imageio::metadata::IIOMetadataFormatImpl;
 using $IIOMetadataNode = ::javax::imageio::metadata::IIOMetadataNode;
 using $Element = ::org::w3c::dom::Element;

@@ -16,7 +16,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ImageIcon = ::javax::swing::ImageIcon;
 using $UIDefaults = ::javax::swing::UIDefaults;
-using $UIDefaults$LazyValue = ::javax::swing::UIDefaults$LazyValue;
 using $ShellFolder = ::sun::awt::shell::ShellFolder;
 using $SwingUtilities2 = ::sun::swing::SwingUtilities2;
 

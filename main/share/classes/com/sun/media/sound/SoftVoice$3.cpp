@@ -3,7 +3,6 @@
 #include <com/sun/media/sound/SoftVoice.h>
 #include <jcpp.h>
 
-using $SoftControl = ::com::sun::media::sound::SoftControl;
 using $SoftVoice = ::com::sun::media::sound::SoftVoice;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

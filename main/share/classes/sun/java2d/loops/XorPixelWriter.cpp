@@ -6,8 +6,6 @@
 #include <sun/java2d/loops/PixelWriter.h>
 #include <jcpp.h>
 
-using $ColorModel = ::java::awt::image::ColorModel;
-using $Raster = ::java::awt::image::Raster;
 using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

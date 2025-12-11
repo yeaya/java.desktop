@@ -15,11 +15,9 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $Native = ::sun::awt::X11::Native;
 using $XToolkit = ::sun::awt::X11::XToolkit;
 using $XlibWrapper = ::sun::awt::X11::XlibWrapper;
-using $DisposerRecord = ::sun::java2d::DisposerRecord;
 using $PlatformLogger = ::sun::util::logging::PlatformLogger;
 using $PlatformLogger$Level = ::sun::util::logging::PlatformLogger$Level;
 

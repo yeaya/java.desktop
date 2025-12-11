@@ -7,7 +7,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $D3DPaints = ::sun::java2d::d3d::D3DPaints;
 using $D3DPaints$MultiGradient = ::sun::java2d::d3d::D3DPaints$MultiGradient;
 
 namespace sun {

@@ -15,7 +15,6 @@ using $IllegalAccessException = ::java::lang::IllegalAccessException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Field = ::java::lang::reflect::Field;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $CausedFocusEvent = ::sun::awt::CausedFocusEvent;
 
 namespace sun {

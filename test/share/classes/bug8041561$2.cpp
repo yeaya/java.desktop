@@ -15,7 +15,6 @@
 using $bug8041561 = ::bug8041561;
 using $AWTException = ::java::awt::AWTException;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
 using $Robot = ::java::awt::Robot;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -23,9 +22,7 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $Exception = ::java::lang::Exception;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $JComponent = ::javax::swing::JComponent;
 using $JRadioButton = ::javax::swing::JRadioButton;
 
 $MethodInfo _bug8041561$2_MethodInfo_[] = {

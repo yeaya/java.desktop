@@ -9,10 +9,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Font2D = ::sun::font::Font2D;
-using $GlyphLayout = ::sun::font::GlyphLayout;
-using $GlyphLayout$LayoutEngine = ::sun::font::GlyphLayout$LayoutEngine;
-using $GlyphLayout$LayoutEngineKey = ::sun::font::GlyphLayout$LayoutEngineKey;
 
 namespace sun {
 	namespace font {

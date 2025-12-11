@@ -3,8 +3,6 @@
 #include <java/awt/desktop/ScreenSleepEvent.h>
 #include <jcpp.h>
 
-using $ScreenSleepEvent = ::java::awt::desktop::ScreenSleepEvent;
-using $SystemEventListener = ::java::awt::desktop::SystemEventListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

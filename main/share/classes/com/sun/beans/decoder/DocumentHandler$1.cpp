@@ -18,7 +18,6 @@ using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $ParserConfigurationException = ::javax::xml::parsers::ParserConfigurationException;
 using $SAXParser = ::javax::xml::parsers::SAXParser;
 using $SAXParserFactory = ::javax::xml::parsers::SAXParserFactory;

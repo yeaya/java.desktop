@@ -53,7 +53,6 @@ using $List = ::java::util::List;
 using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 using $AudioInputStream = ::javax::sound::sampled::AudioInputStream;
 using $AudioSystem = ::javax::sound::sampled::AudioSystem;
-using $Line = ::javax::sound::sampled::Line;
 
 namespace com {
 	namespace sun {

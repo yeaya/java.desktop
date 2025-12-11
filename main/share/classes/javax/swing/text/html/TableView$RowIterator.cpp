@@ -14,10 +14,7 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Vector = ::java::util::Vector;
-using $BoxView = ::javax::swing::text::BoxView;
-using $CompositeView = ::javax::swing::text::CompositeView;
 using $View = ::javax::swing::text::View;
-using $CSS$LayoutIterator = ::javax::swing::text::html::CSS$LayoutIterator;
 using $TableView = ::javax::swing::text::html::TableView;
 using $TableView$RowView = ::javax::swing::text::html::TableView$RowView;
 

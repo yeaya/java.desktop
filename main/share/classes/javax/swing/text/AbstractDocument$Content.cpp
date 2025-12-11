@@ -9,10 +9,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractDocument = ::javax::swing::text::AbstractDocument;
-using $Position = ::javax::swing::text::Position;
-using $Segment = ::javax::swing::text::Segment;
-using $UndoableEdit = ::javax::swing::undo::UndoableEdit;
 
 namespace javax {
 	namespace swing {

@@ -13,7 +13,6 @@
 #undef SMALL_TOOLBAR
 
 using $GTKConstants$IconSizeArray = $Array<::com::sun::java::swing::plaf::gtk::GTKConstants$IconSize>;
-using $GTKConstants = ::com::sun::java::swing::plaf::gtk::GTKConstants;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

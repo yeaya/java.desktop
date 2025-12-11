@@ -32,11 +32,9 @@
 
 using $BasicStroke = ::java::awt::BasicStroke;
 using $Shape = ::java::awt::Shape;
-using $Stroke = ::java::awt::Stroke;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $Line2D = ::java::awt::geom::Line2D;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;

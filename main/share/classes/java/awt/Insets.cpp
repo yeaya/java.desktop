@@ -9,7 +9,6 @@
 
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $Toolkit = ::java::awt::Toolkit;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CloneNotSupportedException = ::java::lang::CloneNotSupportedException;
 using $Cloneable = ::java::lang::Cloneable;
@@ -109,7 +108,7 @@ $Object* Insets::clone() {
 void Insets::initIDs() {
 	$init(Insets);
 	$prepareNativeStatic(Insets, initIDs, void);
-	$invokeNativeStatic(Insets, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

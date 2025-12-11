@@ -21,7 +21,6 @@ using $EventListenerArray = $Array<::java::util::EventListener>;
 using $TableColumnModelListenerArray = $Array<::javax::swing::event::TableColumnModelListener>;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;

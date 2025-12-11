@@ -93,7 +93,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $ReflectiveOperationException = ::java::lang::ReflectiveOperationException;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $SecurityException = ::java::lang::SecurityException;
-using $SecurityManager = ::java::lang::SecurityManager;
 using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $AccessControlContext = ::java::security::AccessControlContext;

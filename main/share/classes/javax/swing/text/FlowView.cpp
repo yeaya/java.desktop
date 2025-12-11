@@ -21,7 +21,6 @@
 #undef Y_AXIS
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;
 using $ClassInfo = ::java::lang::ClassInfo;

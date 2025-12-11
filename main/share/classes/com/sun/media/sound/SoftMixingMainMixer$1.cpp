@@ -7,7 +7,6 @@
 #include <javax/sound/sampled/AudioFormat.h>
 #include <jcpp.h>
 
-using $SoftAudioBufferArray = $Array<::com::sun::media::sound::SoftAudioBuffer>;
 using $SoftAudioBuffer = ::com::sun::media::sound::SoftAudioBuffer;
 using $SoftMixingMainMixer = ::com::sun::media::sound::SoftMixingMainMixer;
 using $SoftMixingMixer = ::com::sun::media::sound::SoftMixingMixer;

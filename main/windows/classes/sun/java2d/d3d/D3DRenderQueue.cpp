@@ -176,7 +176,7 @@ void D3DRenderQueue::flushAndInvokeNow($Runnable* r) {
 
 void D3DRenderQueue::flushBuffer(int64_t buf, int32_t limit, $Runnable* task) {
 	$prepareNative(D3DRenderQueue, flushBuffer, void, int64_t buf, int32_t limit, $Runnable* task);
-	$invokeNative(D3DRenderQueue, flushBuffer, buf, limit, task);
+	$invokeNative(buf, limit, task);
 	$finishNative();
 }
 

@@ -16,7 +16,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $BoxView = ::javax::swing::text::BoxView;
 using $Element = ::javax::swing::text::Element;
 using $TableView = ::javax::swing::text::TableView;
-using $TableView$GridCell = ::javax::swing::text::TableView$GridCell;
 using $View = ::javax::swing::text::View;
 
 namespace javax {

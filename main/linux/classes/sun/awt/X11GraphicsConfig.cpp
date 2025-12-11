@@ -53,7 +53,6 @@
 using $AWTException = ::java::awt::AWTException;
 using $BufferCapabilities = ::java::awt::BufferCapabilities;
 using $BufferCapabilities$FlipContents = ::java::awt::BufferCapabilities$FlipContents;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;
@@ -87,7 +86,6 @@ using $X11GraphicsConfig$XDBECapabilities = ::sun::awt::X11GraphicsConfig$XDBECa
 using $X11GraphicsDevice = ::sun::awt::X11GraphicsDevice;
 using $OffScreenImage = ::sun::awt::image::OffScreenImage;
 using $SunVolatileImage = ::sun::awt::image::SunVolatileImage;
-using $SurfaceManager$ProxiedGraphicsConfig = ::sun::awt::image::SurfaceManager$ProxiedGraphicsConfig;
 using $Disposer = ::sun::java2d::Disposer;
 using $DisposerRecord = ::sun::java2d::DisposerRecord;
 using $SurfaceData = ::sun::java2d::SurfaceData;
@@ -96,7 +94,6 @@ using $RenderLoops = ::sun::java2d::loops::RenderLoops;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $Region = ::sun::java2d::pipe::Region;
 using $X11SurfaceData = ::sun::java2d::x11::X11SurfaceData;
-using $X11SurfaceData$X11WindowSurfaceData = ::sun::java2d::x11::X11SurfaceData$X11WindowSurfaceData;
 using $XSurfaceData = ::sun::java2d::x11::XSurfaceData;
 
 namespace sun {
@@ -240,21 +237,21 @@ X11GraphicsConfig* X11GraphicsConfig::getConfig($X11GraphicsDevice* device, int3
 int32_t X11GraphicsConfig::getNumColors() {
 	int32_t $ret = 0;
 	$prepareNative(X11GraphicsConfig, getNumColors, int32_t);
-	$ret = $invokeNative(X11GraphicsConfig, getNumColors);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
 
 void X11GraphicsConfig::init(int32_t visualNum, int32_t screen) {
 	$prepareNative(X11GraphicsConfig, init, void, int32_t visualNum, int32_t screen);
-	$invokeNative(X11GraphicsConfig, init, visualNum, screen);
+	$invokeNative(visualNum, screen);
 	$finishNative();
 }
 
 $ColorModel* X11GraphicsConfig::makeColorModel() {
 	$var($ColorModel, $ret, nullptr);
 	$prepareNative(X11GraphicsConfig, makeColorModel, $ColorModel*);
-	$assign($ret, $invokeNative(X11GraphicsConfig, makeColorModel));
+	$assign($ret, $invokeNativeObject());
 	$finishNative();
 	return $ret;
 }
@@ -402,7 +399,7 @@ $AffineTransform* X11GraphicsConfig::getNormalizingTransform() {
 double X11GraphicsConfig::getXResolution(int32_t screen) {
 	double $ret = 0.0;
 	$prepareNative(X11GraphicsConfig, getXResolution, double, int32_t screen);
-	$ret = $invokeNative(X11GraphicsConfig, getXResolution, screen);
+	$ret = $invokeNative(screen);
 	$finishNative();
 	return $ret;
 }
@@ -410,7 +407,7 @@ double X11GraphicsConfig::getXResolution(int32_t screen) {
 double X11GraphicsConfig::getYResolution(int32_t screen) {
 	double $ret = 0.0;
 	$prepareNative(X11GraphicsConfig, getYResolution, double, int32_t screen);
-	$ret = $invokeNative(X11GraphicsConfig, getYResolution, screen);
+	$ret = $invokeNative(screen);
 	$finishNative();
 	return $ret;
 }
@@ -429,7 +426,7 @@ $String* X11GraphicsConfig::toString() {
 void X11GraphicsConfig::initIDs() {
 	$init(X11GraphicsConfig);
 	$prepareNativeStatic(X11GraphicsConfig, initIDs, void);
-	$invokeNativeStatic(X11GraphicsConfig, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -459,7 +456,7 @@ bool X11GraphicsConfig::isDoubleBuffered() {
 void X11GraphicsConfig::dispose(int64_t x11ConfigData) {
 	$init(X11GraphicsConfig);
 	$prepareNativeStatic(X11GraphicsConfig, dispose, void, int64_t x11ConfigData);
-	$invokeNativeStatic(X11GraphicsConfig, dispose, x11ConfigData);
+	$invokeNativeStatic(x11ConfigData);
 	$finishNativeStatic();
 }
 
@@ -477,14 +474,14 @@ $Image* X11GraphicsConfig::createAcceleratedImage($Component* target, int32_t wi
 int64_t X11GraphicsConfig::createBackBuffer(int64_t window, int32_t swapAction) {
 	int64_t $ret = 0;
 	$prepareNative(X11GraphicsConfig, createBackBuffer, int64_t, int64_t window, int32_t swapAction);
-	$ret = $invokeNative(X11GraphicsConfig, createBackBuffer, window, swapAction);
+	$ret = $invokeNative(window, swapAction);
 	$finishNative();
 	return $ret;
 }
 
 void X11GraphicsConfig::swapBuffers(int64_t window, int32_t swapAction) {
 	$prepareNative(X11GraphicsConfig, swapBuffers, void, int64_t window, int32_t swapAction);
-	$invokeNative(X11GraphicsConfig, swapBuffers, window, swapAction);
+	$invokeNative(window, swapAction);
 	$finishNative();
 }
 
@@ -507,7 +504,7 @@ int64_t X11GraphicsConfig::createBackBuffer($X11ComponentPeer* peer, int32_t num
 
 void X11GraphicsConfig::destroyBackBuffer(int64_t backBuffer) {
 	$prepareNative(X11GraphicsConfig, destroyBackBuffer, void, int64_t backBuffer);
-	$invokeNative(X11GraphicsConfig, destroyBackBuffer, backBuffer);
+	$invokeNative(backBuffer);
 	$finishNative();
 }
 
@@ -548,7 +545,7 @@ bool X11GraphicsConfig::isTranslucencyCapable() {
 bool X11GraphicsConfig::isTranslucencyCapable(int64_t x11ConfigData) {
 	bool $ret = false;
 	$prepareNative(X11GraphicsConfig, isTranslucencyCapable, bool, int64_t x11ConfigData);
-	$ret = $invokeNative(X11GraphicsConfig, isTranslucencyCapable, x11ConfigData);
+	$ret = $invokeNative(x11ConfigData);
 	$finishNative();
 	return $ret;
 }

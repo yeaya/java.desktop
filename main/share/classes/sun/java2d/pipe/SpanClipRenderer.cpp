@@ -82,7 +82,7 @@ $Class* SpanClipRenderer::RegionIteratorClass = nullptr;
 void SpanClipRenderer::initIDs($Class* rc, $Class* ric) {
 	$init(SpanClipRenderer);
 	$prepareNativeStatic(SpanClipRenderer, initIDs, void, $Class* rc, $Class* ric);
-	$invokeNativeStatic(SpanClipRenderer, initIDs, rc, ric);
+	$invokeNativeStatic(rc, ric);
 	$finishNativeStatic();
 }
 
@@ -139,13 +139,13 @@ void SpanClipRenderer::renderPathTile(Object$* ctx, $bytes* atile$renamed, int32
 
 void SpanClipRenderer::fillTile($RegionIterator* ri, $bytes* alpha, int32_t offset, int32_t tsize, $ints* band) {
 	$prepareNative(SpanClipRenderer, fillTile, void, $RegionIterator* ri, $bytes* alpha, int32_t offset, int32_t tsize, $ints* band);
-	$invokeNative(SpanClipRenderer, fillTile, ri, alpha, offset, tsize, band);
+	$invokeNative(ri, alpha, offset, tsize, band);
 	$finishNative();
 }
 
 void SpanClipRenderer::eraseTile($RegionIterator* ri, $bytes* alpha, int32_t offset, int32_t tsize, $ints* band) {
 	$prepareNative(SpanClipRenderer, eraseTile, void, $RegionIterator* ri, $bytes* alpha, int32_t offset, int32_t tsize, $ints* band);
-	$invokeNative(SpanClipRenderer, eraseTile, ri, alpha, offset, tsize, band);
+	$invokeNative(ri, alpha, offset, tsize, band);
 	$finishNative();
 }
 

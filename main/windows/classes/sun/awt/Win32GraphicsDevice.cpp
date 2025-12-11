@@ -58,7 +58,6 @@ using $Window = ::java::awt::Window;
 using $WindowAdapter = ::java::awt::event::WindowAdapter;
 using $WindowListener = ::java::awt::event::WindowListener;
 using $ColorModel = ::java::awt::image::ColorModel;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $WindowPeer = ::java::awt::peer::WindowPeer;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -229,32 +228,32 @@ $AWTPermission* Win32GraphicsDevice::fullScreenExclusivePermission = nullptr;
 void Win32GraphicsDevice::initIDs() {
 	$init(Win32GraphicsDevice);
 	$prepareNativeStatic(Win32GraphicsDevice, initIDs, void);
-	$invokeNativeStatic(Win32GraphicsDevice, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
 void Win32GraphicsDevice::initDevice(int32_t screen) {
 	$prepareNative(Win32GraphicsDevice, initDevice, void, int32_t screen);
-	$invokeNative(Win32GraphicsDevice, initDevice, screen);
+	$invokeNative(screen);
 	$finishNative();
 }
 
 void Win32GraphicsDevice::initNativeScale(int32_t screen) {
 	$prepareNative(Win32GraphicsDevice, initNativeScale, void, int32_t screen);
-	$invokeNative(Win32GraphicsDevice, initNativeScale, screen);
+	$invokeNative(screen);
 	$finishNative();
 }
 
 void Win32GraphicsDevice::setNativeScale(int32_t screen, float scaleX, float scaleY) {
 	$prepareNative(Win32GraphicsDevice, setNativeScale, void, int32_t screen, float scaleX, float scaleY);
-	$invokeNative(Win32GraphicsDevice, setNativeScale, screen, scaleX, scaleY);
+	$invokeNative(screen, scaleX, scaleY);
 	$finishNative();
 }
 
 float Win32GraphicsDevice::getNativeScaleX(int32_t screen) {
 	float $ret = 0.0;
 	$prepareNative(Win32GraphicsDevice, getNativeScaleX, float, int32_t screen);
-	$ret = $invokeNative(Win32GraphicsDevice, getNativeScaleX, screen);
+	$ret = $invokeNative(screen);
 	$finishNative();
 	return $ret;
 }
@@ -262,7 +261,7 @@ float Win32GraphicsDevice::getNativeScaleX(int32_t screen) {
 float Win32GraphicsDevice::getNativeScaleY(int32_t screen) {
 	float $ret = 0.0;
 	$prepareNative(Win32GraphicsDevice, getNativeScaleY, float, int32_t screen);
-	$ret = $invokeNative(Win32GraphicsDevice, getNativeScaleY, screen);
+	$ret = $invokeNative(screen);
 	$finishNative();
 	return $ret;
 }
@@ -373,7 +372,7 @@ int32_t Win32GraphicsDevice::getMaxConfigs(int32_t screen) {
 int32_t Win32GraphicsDevice::getMaxConfigsImpl(int32_t screen) {
 	int32_t $ret = 0;
 	$prepareNative(Win32GraphicsDevice, getMaxConfigsImpl, int32_t, int32_t screen);
-	$ret = $invokeNative(Win32GraphicsDevice, getMaxConfigsImpl, screen);
+	$ret = $invokeNative(screen);
 	$finishNative();
 	return $ret;
 }
@@ -381,7 +380,7 @@ int32_t Win32GraphicsDevice::getMaxConfigsImpl(int32_t screen) {
 bool Win32GraphicsDevice::isPixFmtSupported(int32_t index, int32_t screen) {
 	bool $ret = false;
 	$prepareNative(Win32GraphicsDevice, isPixFmtSupported, bool, int32_t index, int32_t screen);
-	$ret = $invokeNative(Win32GraphicsDevice, isPixFmtSupported, index, screen);
+	$ret = $invokeNative(index, screen);
 	$finishNative();
 	return $ret;
 }
@@ -397,7 +396,7 @@ int32_t Win32GraphicsDevice::getDefaultPixID(int32_t screen) {
 int32_t Win32GraphicsDevice::getDefaultPixIDImpl(int32_t screen) {
 	int32_t $ret = 0;
 	$prepareNative(Win32GraphicsDevice, getDefaultPixIDImpl, int32_t, int32_t screen);
-	$ret = $invokeNative(Win32GraphicsDevice, getDefaultPixIDImpl, screen);
+	$ret = $invokeNative(screen);
 	$finishNative();
 	return $ret;
 }
@@ -496,13 +495,13 @@ void Win32GraphicsDevice::setFullScreenWindow($Window* w) {
 
 void Win32GraphicsDevice::enterFullScreenExclusive(int32_t screen, $WindowPeer* w) {
 	$prepareNative(Win32GraphicsDevice, enterFullScreenExclusive, void, int32_t screen, $WindowPeer* w);
-	$invokeNative(Win32GraphicsDevice, enterFullScreenExclusive, screen, w);
+	$invokeNative(screen, w);
 	$finishNative();
 }
 
 void Win32GraphicsDevice::exitFullScreenExclusive(int32_t screen, $WindowPeer* w) {
 	$prepareNative(Win32GraphicsDevice, exitFullScreenExclusive, void, int32_t screen, $WindowPeer* w);
-	$invokeNative(Win32GraphicsDevice, exitFullScreenExclusive, screen, w);
+	$invokeNative(screen, w);
 	$finishNative();
 }
 
@@ -545,20 +544,20 @@ void Win32GraphicsDevice::setDisplayMode($DisplayMode* dm$renamed) {
 $DisplayMode* Win32GraphicsDevice::getCurrentDisplayMode(int32_t screen) {
 	$var($DisplayMode, $ret, nullptr);
 	$prepareNative(Win32GraphicsDevice, getCurrentDisplayMode, $DisplayMode*, int32_t screen);
-	$assign($ret, $invokeNative(Win32GraphicsDevice, getCurrentDisplayMode, screen));
+	$assign($ret, $invokeNativeObject(screen));
 	$finishNative();
 	return $ret;
 }
 
 void Win32GraphicsDevice::configDisplayMode(int32_t screen, $WindowPeer* w, int32_t width, int32_t height, int32_t bitDepth, int32_t refreshRate) {
 	$prepareNative(Win32GraphicsDevice, configDisplayMode, void, int32_t screen, $WindowPeer* w, int32_t width, int32_t height, int32_t bitDepth, int32_t refreshRate);
-	$invokeNative(Win32GraphicsDevice, configDisplayMode, screen, w, width, height, bitDepth, refreshRate);
+	$invokeNative(screen, w, width, height, bitDepth, refreshRate);
 	$finishNative();
 }
 
 void Win32GraphicsDevice::enumDisplayModes(int32_t screen, $ArrayList* modes) {
 	$prepareNative(Win32GraphicsDevice, enumDisplayModes, void, int32_t screen, $ArrayList* modes);
-	$invokeNative(Win32GraphicsDevice, enumDisplayModes, screen, modes);
+	$invokeNative(screen, modes);
 	$finishNative();
 }
 
@@ -648,7 +647,7 @@ void Win32GraphicsDevice::removeDisplayChangedListener($DisplayChangedListener* 
 $ColorModel* Win32GraphicsDevice::makeColorModel(int32_t screen, bool dynamic) {
 	$var($ColorModel, $ret, nullptr);
 	$prepareNative(Win32GraphicsDevice, makeColorModel, $ColorModel*, int32_t screen, bool dynamic);
-	$assign($ret, $invokeNative(Win32GraphicsDevice, makeColorModel, screen, dynamic));
+	$assign($ret, $invokeNativeObject(screen, dynamic));
 	$finishNative();
 	return $ret;
 }

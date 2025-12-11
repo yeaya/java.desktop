@@ -38,7 +38,6 @@ using $JLabel = ::javax::swing::JLabel;
 using $JToggleButton = ::javax::swing::JToggleButton;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
 using $Border = ::javax::swing::border::Border;
-using $TitledBorder = ::javax::swing::border::TitledBorder;
 
 $FieldInfo _Test4129681_FieldInfo_[] = {
 	{"label", "Ljavax/swing/JLabel;", nullptr, $PRIVATE, $field(Test4129681, label)},

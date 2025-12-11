@@ -7,14 +7,10 @@
 #include <sun/font/Font2DHandle.h>
 #include <jcpp.h>
 
-using $Font = ::java::awt::Font;
-using $FontPeer = ::java::awt::peer::FontPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InternalError = ::java::lang::InternalError;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Font2D = ::sun::font::Font2D;
-using $Font2DHandle = ::sun::font::Font2DHandle;
 
 namespace sun {
 	namespace font {

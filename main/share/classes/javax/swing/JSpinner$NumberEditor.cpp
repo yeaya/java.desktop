@@ -30,16 +30,13 @@
 #undef LEFT
 #undef RIGHT
 
-using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Comparable = ::java::lang::Comparable;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DecimalFormat = ::java::text::DecimalFormat;
-using $Format = ::java::text::Format;
 using $NumberFormat = ::java::text::NumberFormat;
 using $ParseException = ::java::text::ParseException;
 using $NumberFormatProvider = ::java::text::spi::NumberFormatProvider;
@@ -51,12 +48,10 @@ using $JSpinner = ::javax::swing::JSpinner;
 using $JSpinner$DefaultEditor = ::javax::swing::JSpinner$DefaultEditor;
 using $JSpinner$NumberEditorFormatter = ::javax::swing::JSpinner$NumberEditorFormatter;
 using $JTextField = ::javax::swing::JTextField;
-using $SpinnerModel = ::javax::swing::SpinnerModel;
 using $SpinnerNumberModel = ::javax::swing::SpinnerNumberModel;
 using $DefaultFormatter = ::javax::swing::text::DefaultFormatter;
 using $DefaultFormatterFactory = ::javax::swing::text::DefaultFormatterFactory;
 using $InternationalFormatter = ::javax::swing::text::InternationalFormatter;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $NumberFormatter = ::javax::swing::text::NumberFormatter;
 using $LocaleProviderAdapter = ::sun::util::locale::provider::LocaleProviderAdapter;
 using $LocaleResources = ::sun::util::locale::provider::LocaleResources;

@@ -20,8 +20,6 @@
 
 using $GraphicsPrimitiveArray = $Array<::sun::java2d::loops::GraphicsPrimitive>;
 using $Composite = ::java::awt::Composite;
-using $Paint = ::java::awt::Paint;
-using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SunToolkit = ::sun::awt::SunToolkit;
@@ -32,7 +30,6 @@ using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
 using $GraphicsPrimitiveMgr = ::sun::java2d::loops::GraphicsPrimitiveMgr;
 using $MaskFill = ::sun::java2d::loops::MaskFill;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
-using $Region = ::sun::java2d::pipe::Region;
 using $MaskTileManager = ::sun::java2d::xr::MaskTileManager;
 using $XRCompositeManager = ::sun::java2d::xr::XRCompositeManager;
 using $XRSurfaceData = ::sun::java2d::xr::XRSurfaceData;
@@ -102,7 +99,7 @@ void XRMaskFill::init$($SurfaceType* srcType, $CompositeType* compType, $Surface
 
 void XRMaskFill::maskFill(int64_t xsdo, int32_t x, int32_t y, int32_t w, int32_t h, int32_t maskoff, int32_t maskscan, int32_t masklen, $bytes* mask) {
 	$prepareNative(XRMaskFill, maskFill, void, int64_t xsdo, int32_t x, int32_t y, int32_t w, int32_t h, int32_t maskoff, int32_t maskscan, int32_t masklen, $bytes* mask);
-	$invokeNative(XRMaskFill, maskFill, xsdo, x, y, w, h, maskoff, maskscan, masklen, mask);
+	$invokeNative(xsdo, x, y, w, h, maskoff, maskscan, masklen, mask);
 	$finishNative();
 }
 

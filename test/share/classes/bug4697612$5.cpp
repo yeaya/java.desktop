@@ -11,9 +11,7 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JTextArea = ::javax::swing::JTextArea;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $FieldInfo _bug4697612$5_FieldInfo_[] = {
 	{"val$result", "[I", nullptr, $FINAL | $SYNTHETIC, $field(bug4697612$5, val$result)},

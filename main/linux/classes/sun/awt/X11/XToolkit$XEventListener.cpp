@@ -7,8 +7,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $XEvent = ::sun::awt::X11::XEvent;
-using $XToolkit = ::sun::awt::X11::XToolkit;
 
 namespace sun {
 	namespace awt {

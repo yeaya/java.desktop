@@ -23,11 +23,9 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SunToolkit = ::sun::awt::SunToolkit;
 using $X11ComponentPeer = ::sun::awt::X11ComponentPeer;
-using $X11GraphicsConfig = ::sun::awt::X11GraphicsConfig;
 using $X11GraphicsDevice = ::sun::awt::X11GraphicsDevice;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
-using $XSurfaceData = ::sun::java2d::x11::XSurfaceData;
 using $XRGraphicsConfig = ::sun::java2d::xr::XRGraphicsConfig;
 using $XRSurfaceData = ::sun::java2d::xr::XRSurfaceData;
 

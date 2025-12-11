@@ -8,7 +8,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $FontConfiguration = ::sun::awt::FontConfiguration;
 using $PlatformFont = ::sun::awt::PlatformFont;
 using $WFontConfiguration = ::sun::awt::windows::WFontConfiguration;
 
@@ -57,7 +56,7 @@ char16_t WFontPeer::getMissingGlyphCharacter() {
 void WFontPeer::initIDs() {
 	$init(WFontPeer);
 	$prepareNativeStatic(WFontPeer, initIDs, void);
-	$invokeNativeStatic(WFontPeer, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

@@ -23,7 +23,6 @@ using $Runnable = ::java::lang::Runnable;
 using $DefaultRowSorter = ::javax::swing::DefaultRowSorter;
 using $JTable = ::javax::swing::JTable;
 using $RowFilter = ::javax::swing::RowFilter;
-using $RowSorter = ::javax::swing::RowSorter;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $AbstractTableModel = ::javax::swing::table::AbstractTableModel;
 using $DefaultTableModel = ::javax::swing::table::DefaultTableModel;

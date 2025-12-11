@@ -19,7 +19,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 
 $MethodInfo _bug4760494$RobotThread_MethodInfo_[] = {

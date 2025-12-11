@@ -19,7 +19,6 @@
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $ComponentSampleModel = ::java::awt::image::ComponentSampleModel;
-using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DataBufferByte = ::java::awt::image::DataBufferByte;
 using $PixelInterleavedSampleModel = ::java::awt::image::PixelInterleavedSampleModel;
 using $Raster = ::java::awt::image::Raster;

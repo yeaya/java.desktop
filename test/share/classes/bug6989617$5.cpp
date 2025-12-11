@@ -7,13 +7,11 @@
 
 using $bug6989617 = ::bug6989617;
 using $bug6989617$MyPanel = ::bug6989617$MyPanel;
-using $Rectangle = ::java::awt::Rectangle;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 
 $MethodInfo _bug6989617$5_MethodInfo_[] = {

@@ -9,7 +9,6 @@
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $Toolkit = ::java::awt::Toolkit;
 using $Dimension2D = ::java::awt::geom::Dimension2D;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -76,7 +75,7 @@ void Dimension::finalize() {
 void Dimension::initIDs() {
 	$init(Dimension);
 	$prepareNativeStatic(Dimension, initIDs, void);
-	$invokeNativeStatic(Dimension, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

@@ -3,7 +3,6 @@
 #include <TestDefaultFormatter.h>
 #include <jcpp.h>
 
-using $TestDefaultFormatter = ::TestDefaultFormatter;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

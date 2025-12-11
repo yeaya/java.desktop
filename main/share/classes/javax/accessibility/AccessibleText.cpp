@@ -9,12 +9,9 @@
 #undef SENTENCE
 #undef WORD
 
-using $Point = ::java::awt::Point;
-using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AttributeSet = ::javax::swing::text::AttributeSet;
 
 namespace javax {
 	namespace accessibility {

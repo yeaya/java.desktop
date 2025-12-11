@@ -8,12 +8,9 @@
 
 #undef TEST_COLOR
 
-using $TestTransferHandler = ::TestTransferHandler;
 using $TestTransferHandler$UserJComponent = ::TestTransferHandler$UserJComponent;
 using $DataFlavorArray = $Array<::java::awt::datatransfer::DataFlavor>;
-using $Color = ::java::awt::Color;
 using $DataFlavor = ::java::awt::datatransfer::DataFlavor;
-using $Transferable = ::java::awt::datatransfer::Transferable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

@@ -9,7 +9,6 @@
 #undef UTILITY
 
 using $Window$TypeArray = $Array<::java::awt::Window$Type>;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

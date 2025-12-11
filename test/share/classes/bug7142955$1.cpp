@@ -14,7 +14,6 @@
 
 using $bug7142955 = ::bug7142955;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $PrintStream = ::java::io::PrintStream;
@@ -22,7 +21,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $DefaultTreeCellRenderer = ::javax::swing::tree::DefaultTreeCellRenderer;
 

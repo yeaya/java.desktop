@@ -21,7 +21,6 @@
 
 using $GetUpToDateData$1 = ::GetUpToDateData$1;
 using $AWTEventListenerArray = $Array<::java::awt::event::AWTEventListener>;
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $AWTEvent = ::java::awt::AWTEvent;
 using $AWTEventListener = ::java::awt::event::AWTEventListener;
 using $Serializable = ::java::io::Serializable;
@@ -32,12 +31,7 @@ using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $EventListener = ::java::util::EventListener;
 using $CountDownLatch = ::java::util::concurrent::CountDownLatch;
 using $TimeUnit = ::java::util::concurrent::TimeUnit;

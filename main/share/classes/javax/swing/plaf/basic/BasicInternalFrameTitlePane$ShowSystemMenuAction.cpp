@@ -13,8 +13,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractAction = ::javax::swing::AbstractAction;
-using $AbstractButton = ::javax::swing::AbstractButton;
-using $JComponent = ::javax::swing::JComponent;
 using $JMenu = ::javax::swing::JMenu;
 using $BasicInternalFrameTitlePane = ::javax::swing::plaf::basic::BasicInternalFrameTitlePane;
 

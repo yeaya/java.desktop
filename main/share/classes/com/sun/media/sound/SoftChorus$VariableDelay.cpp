@@ -4,7 +4,6 @@
 #include <java/util/Arrays.h>
 #include <jcpp.h>
 
-using $SoftChorus = ::com::sun::media::sound::SoftChorus;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

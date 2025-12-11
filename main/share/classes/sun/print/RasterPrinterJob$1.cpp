@@ -12,7 +12,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $PrintService = ::javax::print::PrintService;
 using $RasterPrinterJob = ::sun::print::RasterPrinterJob;
 using $ServiceDialog = ::sun::print::ServiceDialog;

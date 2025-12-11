@@ -16,7 +16,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ReentrantContext = ::sun::java2d::ReentrantContext;
-using $AAShapePipe = ::sun::java2d::pipe::AAShapePipe;
 
 namespace sun {
 	namespace java2d {

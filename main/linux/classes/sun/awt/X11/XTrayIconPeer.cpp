@@ -76,7 +76,6 @@ using $TrayIcon = ::java::awt::TrayIcon;
 using $Window = ::java::awt::Window;
 using $MouseListener = ::java::awt::event::MouseListener;
 using $MouseMotionListener = ::java::awt::event::MouseMotionListener;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $TrayIconPeer = ::java::awt::peer::TrayIconPeer;
 using $AssertionError = ::java::lang::AssertionError;
 using $ClassInfo = ::java::lang::ClassInfo;

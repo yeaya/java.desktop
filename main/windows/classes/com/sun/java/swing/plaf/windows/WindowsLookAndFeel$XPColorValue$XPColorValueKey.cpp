@@ -10,7 +10,6 @@
 using $TMSchema$Part = ::com::sun::java::swing::plaf::windows::TMSchema$Part;
 using $TMSchema$Prop = ::com::sun::java::swing::plaf::windows::TMSchema$Prop;
 using $TMSchema$State = ::com::sun::java::swing::plaf::windows::TMSchema$State;
-using $WindowsLookAndFeel$XPColorValue = ::com::sun::java::swing::plaf::windows::WindowsLookAndFeel$XPColorValue;
 using $XPStyle$Skin = ::com::sun::java::swing::plaf::windows::XPStyle$Skin;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

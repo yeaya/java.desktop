@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
-using $Disposer = ::sun::java2d::Disposer;
 
 namespace sun {
 	namespace java2d {

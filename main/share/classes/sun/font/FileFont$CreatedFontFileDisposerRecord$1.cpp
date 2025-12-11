@@ -14,7 +14,6 @@ using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Vector = ::java::util::Vector;
 using $CreatedFontTracker = ::sun::font::CreatedFontTracker;
 using $FileFont$CreatedFontFileDisposerRecord = ::sun::font::FileFont$CreatedFontFileDisposerRecord;

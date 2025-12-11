@@ -29,8 +29,6 @@
 #undef D_SECTION
 #undef LEAD_NONE
 
-using $ColorArray = $Array<::java::awt::Color>;
-using $StyleArray = $Array<::javax::swing::text::Style>;
 using $TabStopArray = $Array<::javax::swing::text::TabStop>;
 using $Color = ::java::awt::Color;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -52,11 +50,8 @@ using $StyleContext = ::javax::swing::text::StyleContext;
 using $StyledDocument = ::javax::swing::text::StyledDocument;
 using $TabStop = ::javax::swing::text::TabStop;
 using $Constants = ::javax::swing::text::rtf::Constants;
-using $MockAttributeSet = ::javax::swing::text::rtf::MockAttributeSet;
 using $RTFAttribute = ::javax::swing::text::rtf::RTFAttribute;
-using $RTFParser = ::javax::swing::text::rtf::RTFParser;
 using $RTFReader = ::javax::swing::text::rtf::RTFReader;
-using $RTFReader$Destination = ::javax::swing::text::rtf::RTFReader$Destination;
 
 namespace javax {
 	namespace swing {

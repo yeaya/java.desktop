@@ -10,15 +10,12 @@
 
 #undef TYPE_INT_RGB
 
-using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
-using $Graphics2D = ::java::awt::Graphics2D;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ArrayIndexOutOfBoundsException = ::java::lang::ArrayIndexOutOfBoundsException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;
 
 $MethodInfo _bug6501991_MethodInfo_[] = {

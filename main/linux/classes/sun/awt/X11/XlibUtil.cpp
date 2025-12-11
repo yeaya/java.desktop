@@ -35,7 +35,6 @@
 #undef MAX_BUTTONS
 #undef XA_WM_STATE
 
-using $Dimension = ::java::awt::Dimension;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
@@ -48,7 +47,6 @@ using $AbstractSet = ::java::util::AbstractSet;
 using $Collections = ::java::util::Collections;
 using $HashSet = ::java::util::HashSet;
 using $Set = ::java::util::Set;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $Native = ::sun::awt::X11::Native;
 using $WindowPropertyGetter = ::sun::awt::X11::WindowPropertyGetter;
 using $XAtom = ::sun::awt::X11::XAtom;

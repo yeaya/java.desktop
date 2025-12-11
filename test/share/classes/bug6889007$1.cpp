@@ -16,24 +16,20 @@
 
 #undef EXIT_ON_CLOSE
 
-using $bug6889007 = ::bug6889007;
 using $bug6889007$MyTableHeaderUI = ::bug6889007$MyTableHeaderUI;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JComponent = ::javax::swing::JComponent;
 using $JFrame = ::javax::swing::JFrame;
 using $JTable = ::javax::swing::JTable;
 using $TableHeaderUI = ::javax::swing::plaf::TableHeaderUI;
 using $BasicTableHeaderUI = ::javax::swing::plaf::basic::BasicTableHeaderUI;
 using $JTableHeader = ::javax::swing::table::JTableHeader;
-using $TableColumnModel = ::javax::swing::table::TableColumnModel;
 
 $FieldInfo _bug6889007$1_FieldInfo_[] = {
 	{"val$frame", "Ljavax/swing/JFrame;", nullptr, $FINAL | $SYNTHETIC, $field(bug6889007$1, val$frame)},

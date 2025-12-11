@@ -17,7 +17,6 @@ using $Dimension = ::java::awt::Dimension;
 using $KeyboardFocusManager = ::java::awt::KeyboardFocusManager;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

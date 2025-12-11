@@ -13,7 +13,6 @@
 #undef RIGHT
 
 using $Color = ::java::awt::Color;
-using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;

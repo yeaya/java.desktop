@@ -7,14 +7,12 @@
 #include <sun/swing/JLightweightFrame.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JPanel = ::javax::swing::JPanel;
 using $JLightweightFrame = ::sun::swing::JLightweightFrame;
 using $JLightweightFrame$3 = ::sun::swing::JLightweightFrame$3;

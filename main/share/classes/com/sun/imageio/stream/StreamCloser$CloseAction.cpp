@@ -4,7 +4,6 @@
 #include <javax/imageio/stream/ImageInputStream.h>
 #include <jcpp.h>
 
-using $StreamCloser = ::com::sun::imageio::stream::StreamCloser;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

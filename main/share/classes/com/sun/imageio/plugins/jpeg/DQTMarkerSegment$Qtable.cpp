@@ -254,11 +254,11 @@ void DQTMarkerSegment$Qtable::init$($DQTMarkerSegment* this$0, $JPEGBuffer* buff
 	if (this->elementPrecision != 0) {
 		$throwNew($IIOException, "Unsupported element precision"_s);
 	}
-	$set(this, data, $new($ints, this->QTABLE_SIZE));
-	for (int32_t i = 0; i < this->QTABLE_SIZE; ++i) {
+	$set(this, data, $new($ints, DQTMarkerSegment$Qtable::QTABLE_SIZE));
+	for (int32_t i = 0; i < DQTMarkerSegment$Qtable::QTABLE_SIZE; ++i) {
 		$nc(this->data)->set(i, (int32_t)($nc(buffer->buf)->get(buffer->bufPtr + $nc(this->zigzag)->get(i)) & (uint32_t)255));
 	}
-	buffer->bufPtr += this->QTABLE_SIZE;
+	buffer->bufPtr += DQTMarkerSegment$Qtable::QTABLE_SIZE;
 }
 
 void DQTMarkerSegment$Qtable::init$($DQTMarkerSegment* this$0, $JPEGQTable* table, int32_t id) {

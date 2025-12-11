@@ -19,8 +19,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $URL = ::java::net::URL;
 using $ImageIcon = ::javax::swing::ImageIcon;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $SynthParser = ::javax::swing::plaf::synth::SynthParser;
 
 namespace javax {
 	namespace swing {

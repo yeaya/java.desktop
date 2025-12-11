@@ -38,7 +38,6 @@ using $NullPointerException = ::java::lang::NullPointerException;
 using $UnsupportedOperationException = ::java::lang::UnsupportedOperationException;
 using $Hashtable = ::java::util::Hashtable;
 using $ImageRepresentation = ::sun::awt::image::ImageRepresentation;
-using $ImageWatched = ::sun::awt::image::ImageWatched;
 using $InputStreamImageSource = ::sun::awt::image::InputStreamImageSource;
 using $NativeLibLoader = ::sun::awt::image::NativeLibLoader;
 

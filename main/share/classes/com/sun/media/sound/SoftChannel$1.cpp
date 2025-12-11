@@ -3,9 +3,7 @@
 #include <com/sun/media/sound/SoftChannel.h>
 #include <jcpp.h>
 
-using $doubleArray2 = $Array<double, 2>;
 using $SoftChannel = ::com::sun::media::sound::SoftChannel;
-using $SoftControl = ::com::sun::media::sound::SoftControl;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

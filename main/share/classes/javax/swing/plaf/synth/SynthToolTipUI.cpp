@@ -38,7 +38,6 @@
 #undef X_AXIS
 #undef Y_AXIS
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
@@ -55,7 +54,6 @@ using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JComponent = ::javax::swing::JComponent;
 using $JToolTip = ::javax::swing::JToolTip;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;

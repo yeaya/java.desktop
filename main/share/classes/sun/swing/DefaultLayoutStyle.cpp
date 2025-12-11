@@ -31,7 +31,6 @@
 #undef UNRELATED
 #undef WEST
 
-using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $Insets = ::java::awt::Insets;

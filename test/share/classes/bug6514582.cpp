@@ -11,7 +11,6 @@
 
 using $bug6514582$1 = ::bug6514582$1;
 using $bug6514582$2 = ::bug6514582$2;
-using $Component = ::java::awt::Component;
 using $Robot = ::java::awt::Robot;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

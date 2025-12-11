@@ -16,13 +16,11 @@
 #include <javax/swing/plaf/basic/BasicTabbedPaneUI.h>
 #include <jcpp.h>
 
-using $RectangleArray = $Array<::java::awt::Rectangle>;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
-using $Polygon = ::java::awt::Polygon;
 using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -33,7 +31,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JPanel = ::javax::swing::JPanel;
 using $JTabbedPane = ::javax::swing::JTabbedPane;
 using $UIManager = ::javax::swing::UIManager;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $BasicTabbedPaneUI = ::javax::swing::plaf::basic::BasicTabbedPaneUI;
 using $BasicTabbedPaneUI$TabContainer = ::javax::swing::plaf::basic::BasicTabbedPaneUI$TabContainer;
 

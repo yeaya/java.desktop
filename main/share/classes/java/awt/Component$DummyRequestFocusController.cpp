@@ -9,7 +9,6 @@ using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $RequestFocusController = ::sun::awt::RequestFocusController;
 
 namespace java {
 	namespace awt {

@@ -31,7 +31,6 @@ using $LayoutManager2 = ::java::awt::LayoutManager2;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Error = ::java::lang::Error;

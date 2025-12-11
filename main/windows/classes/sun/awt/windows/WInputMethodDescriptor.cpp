@@ -12,7 +12,6 @@ using $LocaleArray = $Array<::java::util::Locale>;
 using $Image = ::java::awt::Image;
 using $Toolkit = ::java::awt::Toolkit;
 using $InputMethod = ::java::awt::im::spi::InputMethod;
-using $InputMethodDescriptor = ::java::awt::im::spi::InputMethodDescriptor;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Locale = ::java::util::Locale;
@@ -93,7 +92,7 @@ $LocaleArray* WInputMethodDescriptor::getNativeAvailableLocales() {
 	$init(WInputMethodDescriptor);
 	$var($LocaleArray, $ret, nullptr);
 	$prepareNativeStatic(WInputMethodDescriptor, getNativeAvailableLocales, $LocaleArray*);
-	$assign($ret, $invokeNativeStatic(WInputMethodDescriptor, getNativeAvailableLocales));
+	$assign($ret, $invokeNativeStaticObject());
 	$finishNativeStatic();
 	return $ret;
 }

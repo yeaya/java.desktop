@@ -10,12 +10,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Doc = ::javax::print::Doc;
-using $PrintService = ::javax::print::PrintService;
-using $PrintJobAttributeSet = ::javax::print::attribute::PrintJobAttributeSet;
-using $PrintRequestAttributeSet = ::javax::print::attribute::PrintRequestAttributeSet;
-using $PrintJobAttributeListener = ::javax::print::event::PrintJobAttributeListener;
-using $PrintJobListener = ::javax::print::event::PrintJobListener;
 
 namespace javax {
 	namespace print {

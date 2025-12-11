@@ -4,7 +4,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ListModel = ::javax::swing::ListModel;
 
 namespace javax {
 	namespace swing {

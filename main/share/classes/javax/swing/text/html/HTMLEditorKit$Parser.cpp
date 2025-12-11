@@ -5,12 +5,9 @@
 #include <javax/swing/text/html/HTMLEditorKit.h>
 #include <jcpp.h>
 
-using $Reader = ::java::io::Reader;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $HTMLEditorKit = ::javax::swing::text::html::HTMLEditorKit;
-using $HTMLEditorKit$ParserCallback = ::javax::swing::text::html::HTMLEditorKit$ParserCallback;
 
 namespace javax {
 	namespace swing {

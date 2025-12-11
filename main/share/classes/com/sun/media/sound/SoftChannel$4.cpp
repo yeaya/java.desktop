@@ -4,7 +4,6 @@
 #include <java/lang/Math.h>
 #include <jcpp.h>
 
-using $ModelTransform = ::com::sun::media::sound::ModelTransform;
 using $SoftChannel = ::com::sun::media::sound::SoftChannel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;

@@ -20,7 +20,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $ReferenceQueue = ::java::lang::ref::ReferenceQueue;
 using $Objects = ::java::util::Objects;
 

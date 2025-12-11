@@ -23,7 +23,6 @@
 using $PropertyChangeListenerArray = $Array<::java::beans::PropertyChangeListener>;
 using $ObjectStreamFieldArray = $Array<::java::io::ObjectStreamField>;
 using $EventListenerArray = $Array<::java::util::EventListener>;
-using $ChangeListenerMap = ::java::beans::ChangeListenerMap;
 using $IndexedPropertyChangeEvent = ::java::beans::IndexedPropertyChangeEvent;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
@@ -43,7 +42,6 @@ using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $EventListener = ::java::util::EventListener;
-using $EventListenerProxy = ::java::util::EventListenerProxy;
 using $Hashtable = ::java::util::Hashtable;
 using $Iterator = ::java::util::Iterator;
 using $Map$Entry = ::java::util::Map$Entry;

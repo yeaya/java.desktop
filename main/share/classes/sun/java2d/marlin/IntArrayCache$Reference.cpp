@@ -19,7 +19,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ArrayCacheConst = ::sun::java2d::marlin::ArrayCacheConst;
-using $ArrayCacheConst$CacheStats = ::sun::java2d::marlin::ArrayCacheConst$CacheStats;
 using $IntArrayCache = ::sun::java2d::marlin::IntArrayCache;
 using $IntArrayCache$Bucket = ::sun::java2d::marlin::IntArrayCache$Bucket;
 using $MarlinConst = ::sun::java2d::marlin::MarlinConst;

@@ -12,7 +12,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Vector = ::java::util::Vector;
 using $AbstractListModel = ::javax::swing::AbstractListModel;
-using $JList = ::javax::swing::JList;
 
 namespace javax {
 	namespace swing {

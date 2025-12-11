@@ -25,7 +25,6 @@ using $SoftCubicResampler = ::com::sun::media::sound::SoftCubicResampler;
 using $SoftLanczosResampler = ::com::sun::media::sound::SoftLanczosResampler;
 using $SoftLinearResampler = ::com::sun::media::sound::SoftLinearResampler;
 using $SoftLinearResampler2 = ::com::sun::media::sound::SoftLinearResampler2;
-using $SoftMixingDataLine = ::com::sun::media::sound::SoftMixingDataLine;
 using $SoftPointResampler = ::com::sun::media::sound::SoftPointResampler;
 using $SoftSincResampler = ::com::sun::media::sound::SoftSincResampler;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -160,10 +159,10 @@ void SoftMixingDataLine$AudioFloatInputStreamResampler::init$($AudioFloatInputSt
 	$nc(this->pitch)->set(0, var$6 / format->getSampleRate());
 	this->pad = $nc(this->resampler)->getPadding();
 	this->pad2 = this->pad * 2;
-	$set(this, ibuffer, $new($floatArray2, this->nrofchannels, this->buffer_len + this->pad2));
-	$set(this, ibuffer2, $new($floats, this->nrofchannels * this->buffer_len));
-	this->ibuffer_index = (float)(this->buffer_len + this->pad);
-	this->ibuffer_len = this->buffer_len;
+	$set(this, ibuffer, $new($floatArray2, this->nrofchannels, SoftMixingDataLine$AudioFloatInputStreamResampler::buffer_len + this->pad2));
+	$set(this, ibuffer2, $new($floats, this->nrofchannels * SoftMixingDataLine$AudioFloatInputStreamResampler::buffer_len));
+	this->ibuffer_index = (float)(SoftMixingDataLine$AudioFloatInputStreamResampler::buffer_len + this->pad);
+	this->ibuffer_len = SoftMixingDataLine$AudioFloatInputStreamResampler::buffer_len;
 }
 
 int32_t SoftMixingDataLine$AudioFloatInputStreamResampler::available() {

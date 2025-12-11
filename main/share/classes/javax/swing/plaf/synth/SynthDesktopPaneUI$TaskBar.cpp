@@ -29,18 +29,15 @@
 using $ComponentArray = $Array<::java::awt::Component>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Dimension = ::java::awt::Dimension;
 using $FlowLayout = ::java::awt::FlowLayout;
 using $Insets = ::java::awt::Insets;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $ComponentListener = ::java::awt::event::ComponentListener;
 using $ContainerEvent = ::java::awt::event::ContainerEvent;
-using $ContainerListener = ::java::awt::event::ContainerListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JComponent = ::javax::swing::JComponent;
 using $JDesktopPane = ::javax::swing::JDesktopPane;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
@@ -49,7 +46,6 @@ using $JPanel = ::javax::swing::JPanel;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
 using $BevelBorder = ::javax::swing::border::BevelBorder;
 using $Border = ::javax::swing::border::Border;
-using $SynthDesktopPaneUI = ::javax::swing::plaf::synth::SynthDesktopPaneUI;
 using $SynthDesktopPaneUI$TaskBar$1 = ::javax::swing::plaf::synth::SynthDesktopPaneUI$TaskBar$1;
 using $SynthDesktopPaneUI$TaskBar$2 = ::javax::swing::plaf::synth::SynthDesktopPaneUI$TaskBar$2;
 

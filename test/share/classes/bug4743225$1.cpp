@@ -13,7 +13,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComboBox = ::javax::swing::JComboBox;
 using $PopupMenuEvent = ::javax::swing::event::PopupMenuEvent;
-using $PopupMenuListener = ::javax::swing::event::PopupMenuListener;
 
 $FieldInfo _bug4743225$1_FieldInfo_[] = {
 	{"this$0", "Lbug4743225;", nullptr, $FINAL | $SYNTHETIC, $field(bug4743225$1, this$0)},

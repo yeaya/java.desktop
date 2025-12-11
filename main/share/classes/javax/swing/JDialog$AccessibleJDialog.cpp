@@ -14,16 +14,12 @@
 #undef MODAL
 #undef RESIZABLE
 
-using $Component = ::java::awt::Component;
-using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Dialog = ::java::awt::Dialog;
 using $Dialog$AccessibleAWTDialog = ::java::awt::Dialog$AccessibleAWTDialog;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AccessibleState = ::javax::accessibility::AccessibleState;
 using $AccessibleStateSet = ::javax::accessibility::AccessibleStateSet;
 using $JDialog = ::javax::swing::JDialog;

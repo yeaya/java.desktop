@@ -9,13 +9,11 @@
 #undef TOOLKIT_EXCLUDE
 
 using $Dialog$ModalExclusionType = ::java::awt::Dialog$ModalExclusionType;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $XTrayIconPeer = ::sun::awt::X11::XTrayIconPeer;
 using $XTrayIconPeer$XTrayIconEmbeddedFrame = ::sun::awt::X11::XTrayIconPeer$XTrayIconEmbeddedFrame;
 

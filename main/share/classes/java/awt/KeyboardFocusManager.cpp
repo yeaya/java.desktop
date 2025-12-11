@@ -131,7 +131,6 @@ using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $WindowEvent = ::java::awt::event::WindowEvent;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $KeyboardFocusManagerPeer = ::java::awt::peer::KeyboardFocusManagerPeer;
 using $LightweightPeer = ::java::awt::peer::LightweightPeer;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
@@ -149,18 +148,15 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $SecurityManager = ::java::lang::SecurityManager;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $AccessController = ::java::security::AccessController;
 using $BasicPermission = ::java::security::BasicPermission;
 using $Permission = ::java::security::Permission;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $AbstractMap = ::java::util::AbstractMap;
-using $AbstractSequentialList = ::java::util::AbstractSequentialList;
 using $AbstractSet = ::java::util::AbstractSet;
 using $Collection = ::java::util::Collection;
 using $Collections = ::java::util::Collections;
@@ -404,7 +400,7 @@ $volatile(bool) KeyboardFocusManager::disableRestoreFocus = false;
 void KeyboardFocusManager::initIDs() {
 	$init(KeyboardFocusManager);
 	$prepareNativeStatic(KeyboardFocusManager, initIDs, void);
-	$invokeNativeStatic(KeyboardFocusManager, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

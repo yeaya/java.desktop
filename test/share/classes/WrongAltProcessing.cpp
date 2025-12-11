@@ -47,12 +47,10 @@ using $Container = ::java::awt::Container;
 using $DefaultKeyboardFocusManager = ::java::awt::DefaultKeyboardFocusManager;
 using $Dimension = ::java::awt::Dimension;
 using $FlowLayout = ::java::awt::FlowLayout;
-using $Insets = ::java::awt::Insets;
 using $KeyboardFocusManager = ::java::awt::KeyboardFocusManager;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $Point = ::java::awt::Point;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyAdapter = ::java::awt::event::KeyAdapter;
 using $KeyEvent = ::java::awt::event::KeyEvent;
@@ -150,7 +148,7 @@ void WrongAltProcessing::main($StringArray* args) {
 
 void WrongAltProcessing::verify() {
 	$useLocalCurrentObjectStackCache();
-	$var($Component, c, $nc($($DefaultKeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner());
+	$var($Component, c, $nc($($KeyboardFocusManager::getCurrentKeyboardFocusManager()))->getFocusOwner());
 	$init(WrongAltProcessing);
 	if (!($equals(c, WrongAltProcessing::mainFrameTf2))) {
 		$throwNew($RuntimeException, "Wrong focus owner."_s);

@@ -14,12 +14,10 @@
 #undef VALUE_TEXT_ANTIALIAS_LCD_HRGB
 
 using $Font = ::java::awt::Font;
-using $Rectangle = ::java::awt::Rectangle;
 using $RenderingHints = ::java::awt::RenderingHints;
 using $FontRenderContext = ::java::awt::font::FontRenderContext;
 using $GlyphVector = ::java::awt::font::GlyphVector;
 using $AssertionError = ::java::lang::AssertionError;
-using $Byte = ::java::lang::Byte;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;

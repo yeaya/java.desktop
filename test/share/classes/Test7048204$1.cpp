@@ -6,12 +6,10 @@
 #include <javax/swing/UIManager.h>
 #include <jcpp.h>
 
-using $Test7048204 = ::Test7048204;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JLabel = ::javax::swing::JLabel;
 using $UIDefaults = ::javax::swing::UIDefaults;
 using $UIManager = ::javax::swing::UIManager;

@@ -17,7 +17,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ReflectiveOperationException = ::java::lang::ReflectiveOperationException;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $Field = ::java::lang::reflect::Field;
 

@@ -13,7 +13,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $TreeSelectionEvent = ::javax::swing::event::TreeSelectionEvent;
-using $TreeSelectionListener = ::javax::swing::event::TreeSelectionListener;
 using $DefaultMutableTreeNode = ::javax::swing::tree::DefaultMutableTreeNode;
 using $TreePath = ::javax::swing::tree::TreePath;
 

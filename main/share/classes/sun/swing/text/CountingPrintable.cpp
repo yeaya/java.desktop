@@ -2,7 +2,6 @@
 
 #include <jcpp.h>
 
-using $Printable = ::java::awt::print::Printable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

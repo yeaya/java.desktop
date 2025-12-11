@@ -21,19 +21,15 @@
 #undef WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
 
 using $Rectangle = ::java::awt::Rectangle;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyAdapter = ::java::awt::event::KeyAdapter;
 using $KeyEvent = ::java::awt::event::KeyEvent;
-using $KeyListener = ::java::awt::event::KeyListener;
 using $File = ::java::io::File;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Long = ::java::lang::Long;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DefaultRowSorter = ::javax::swing::DefaultRowSorter;
 using $InputMap = ::javax::swing::InputMap;
 using $JComponent = ::javax::swing::JComponent;
 using $JFileChooser = ::javax::swing::JFileChooser;

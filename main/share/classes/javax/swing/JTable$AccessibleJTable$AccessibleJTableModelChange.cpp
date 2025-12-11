@@ -7,7 +7,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AccessibleTableModelChange = ::javax::accessibility::AccessibleTableModelChange;
 using $JTable$AccessibleJTable = ::javax::swing::JTable$AccessibleJTable;
 
 namespace javax {

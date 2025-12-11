@@ -52,7 +52,6 @@
 #undef VISIBLE
 
 using $AWTKeyStroke = ::java::awt::AWTKeyStroke;
-using $Component = ::java::awt::Component;
 using $Dialog = ::java::awt::Dialog;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
@@ -67,7 +66,6 @@ using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractSequentialList = ::java::util::AbstractSequentialList;
 using $Iterator = ::java::util::Iterator;
 using $LinkedList = ::java::util::LinkedList;
 using $List = ::java::util::List;
@@ -82,7 +80,6 @@ using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XConfigureEvent = ::sun::awt::X11::XConfigureEvent;
 using $XConstants = ::sun::awt::X11::XConstants;
 using $XCreateWindowParams = ::sun::awt::X11::XCreateWindowParams;
-using $XDecoratedPeer = ::sun::awt::X11::XDecoratedPeer;
 using $XEmbedClientHelper = ::sun::awt::X11::XEmbedClientHelper;
 using $XEmbeddedFrame = ::sun::awt::X11::XEmbeddedFrame;
 using $XEvent = ::sun::awt::X11::XEvent;
@@ -93,7 +90,6 @@ using $XToolkit = ::sun::awt::X11::XToolkit;
 using $XWindow = ::sun::awt::X11::XWindow;
 using $XWindowAttributes = ::sun::awt::X11::XWindowAttributes;
 using $XWindowPeer = ::sun::awt::X11::XWindowPeer;
-using $XWrapperBase = ::sun::awt::X11::XWrapperBase;
 using $XlibUtil = ::sun::awt::X11::XlibUtil;
 using $XlibWrapper = ::sun::awt::X11::XlibWrapper;
 using $PlatformLogger = ::sun::util::logging::PlatformLogger;

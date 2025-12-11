@@ -7,14 +7,8 @@
 #include <javax/sound/sampled/SourceDataLine.h>
 #include <jcpp.h>
 
-using $AudioSynthesizerPropertyInfoArray = $Array<::com::sun::media::sound::AudioSynthesizerPropertyInfo>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Map = ::java::util::Map;
-using $Synthesizer = ::javax::sound::midi::Synthesizer;
-using $AudioFormat = ::javax::sound::sampled::AudioFormat;
-using $AudioInputStream = ::javax::sound::sampled::AudioInputStream;
-using $SourceDataLine = ::javax::sound::sampled::SourceDataLine;
 
 namespace com {
 	namespace sun {

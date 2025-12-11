@@ -8,11 +8,9 @@
 #include <javax/swing/text/html/HiddenTagView.h>
 #include <jcpp.h>
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Insets = ::java::awt::Insets;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

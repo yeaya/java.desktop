@@ -11,7 +11,6 @@ using $IndexOutOfBoundsException = ::java::lang::IndexOutOfBoundsException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractListModel = ::javax::swing::AbstractListModel;
-using $JList = ::javax::swing::JList;
 
 namespace javax {
 	namespace swing {

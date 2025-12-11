@@ -10,11 +10,9 @@
 
 using $ColorArray = $Array<::java::awt::Color>;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Locale = ::java::util::Locale;
 using $UIManager = ::javax::swing::UIManager;
 using $SwatchPanel = ::javax::swing::colorchooser::SwatchPanel;
 

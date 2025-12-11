@@ -8,7 +8,6 @@
 #undef PI
 
 using $SoftAudioBuffer = ::com::sun::media::sound::SoftAudioBuffer;
-using $SoftAudioProcessor = ::com::sun::media::sound::SoftAudioProcessor;
 using $SoftChorus$LFODelay = ::com::sun::media::sound::SoftChorus$LFODelay;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;

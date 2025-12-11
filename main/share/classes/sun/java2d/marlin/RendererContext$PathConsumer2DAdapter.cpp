@@ -11,8 +11,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InternalError = ::java::lang::InternalError;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $PathConsumer2D = ::sun::awt::geom::PathConsumer2D;
-using $DPathConsumer2D = ::sun::java2d::marlin::DPathConsumer2D;
-using $RendererContext = ::sun::java2d::marlin::RendererContext;
 
 namespace sun {
 	namespace java2d {

@@ -3,8 +3,6 @@
 #include <java/awt/Dialog.h>
 #include <jcpp.h>
 
-using $Dialog = ::java::awt::Dialog;
-using $ContainerPeer = ::java::awt::peer::ContainerPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

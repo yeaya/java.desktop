@@ -13,7 +13,6 @@
 #undef FRAME
 
 using $Applet = ::java::applet::Applet;
-using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Panel = ::java::awt::Panel;
 using $Panel$AccessibleAWTPanel = ::java::awt::Panel$AccessibleAWTPanel;
 using $ClassInfo = ::java::lang::ClassInfo;

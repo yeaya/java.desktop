@@ -18,7 +18,6 @@
 #undef TYPE_INT_ARGB
 
 using $bug8032667$1 = ::bug8032667$1;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
@@ -29,7 +28,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JApplet = ::javax::swing::JApplet;
 using $JCheckBox = ::javax::swing::JCheckBox;
 using $JComponent = ::javax::swing::JComponent;

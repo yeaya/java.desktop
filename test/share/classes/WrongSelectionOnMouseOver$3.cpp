@@ -14,7 +14,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $CountDownLatch = ::java::util::concurrent::CountDownLatch;
 using $MenuEvent = ::javax::swing::event::MenuEvent;
-using $MenuListener = ::javax::swing::event::MenuListener;
 
 $FieldInfo _WrongSelectionOnMouseOver$3_FieldInfo_[] = {
 	{"this$0", "LWrongSelectionOnMouseOver;", nullptr, $FINAL | $SYNTHETIC, $field(WrongSelectionOnMouseOver$3, this$0)},

@@ -187,15 +187,11 @@ using $Long = ::java::lang::Long;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
-using $EventObject = ::java::util::EventObject;
-using $HashMap = ::java::util::HashMap;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$AWTEventAccessor = ::sun::awt::AWTAccessor$AWTEventAccessor;
 using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor;
 using $AWTAccessor$KeyEventAccessor = ::sun::awt::AWTAccessor$KeyEventAccessor;
-using $AppContext = ::sun::awt::AppContext;
 using $EmbeddedFrame = ::sun::awt::EmbeddedFrame;
 using $ExtendedKeyCodes = ::sun::awt::ExtendedKeyCodes;
 using $PaintEventDispatcher = ::sun::awt::PaintEventDispatcher;
@@ -213,7 +209,6 @@ using $XAwtState = ::sun::awt::X11::XAwtState;
 using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XButtonEvent = ::sun::awt::X11::XButtonEvent;
 using $XComponentPeer = ::sun::awt::X11::XComponentPeer;
-using $XConfigureEvent = ::sun::awt::X11::XConfigureEvent;
 using $XConstants = ::sun::awt::X11::XConstants;
 using $XCreateWindowParams = ::sun::awt::X11::XCreateWindowParams;
 using $XCrossingEvent = ::sun::awt::X11::XCrossingEvent;
@@ -235,7 +230,6 @@ using $XWM = ::sun::awt::X11::XWM;
 using $XWindow$1 = ::sun::awt::X11::XWindow$1;
 using $XWindowAttributesData = ::sun::awt::X11::XWindowAttributesData;
 using $XWindowPeer = ::sun::awt::X11::XWindowPeer;
-using $XWrapperBase = ::sun::awt::X11::XWrapperBase;
 using $XlibUtil = ::sun::awt::X11::XlibUtil;
 using $XlibWrapper = ::sun::awt::X11::XlibWrapper;
 using $X11ComponentPeer = ::sun::awt::X11ComponentPeer;
@@ -513,7 +507,7 @@ $Font* XWindow::getDefaultFont() {
 void XWindow::initIDs() {
 	$init(XWindow);
 	$prepareNativeStatic(XWindow, initIDs, void);
-	$invokeNativeStatic(XWindow, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -1263,7 +1257,7 @@ void XWindow::handleMotionNotify($XEvent* xev) {
 bool XWindow::x11inputMethodLookupString(int64_t event, $longs* keysymArray) {
 	bool $ret = false;
 	$prepareNative(XWindow, x11inputMethodLookupString, bool, int64_t event, $longs* keysymArray);
-	$ret = $invokeNative(XWindow, x11inputMethodLookupString, event, keysymArray);
+	$ret = $invokeNative(event, keysymArray);
 	$finishNative();
 	return $ret;
 }
@@ -1271,7 +1265,7 @@ bool XWindow::x11inputMethodLookupString(int64_t event, $longs* keysymArray) {
 bool XWindow::haveCurrentX11InputMethodInstance() {
 	bool $ret = false;
 	$prepareNative(XWindow, haveCurrentX11InputMethodInstance, bool);
-	$ret = $invokeNative(XWindow, haveCurrentX11InputMethodInstance);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -1861,7 +1855,7 @@ int32_t XWindow::getAWTKeyCodeForKeySym(int32_t keysym) {
 	$init(XWindow);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XWindow, getAWTKeyCodeForKeySym, int32_t, int32_t keysym);
-	$ret = $invokeNativeStatic(XWindow, getAWTKeyCodeForKeySym, keysym);
+	$ret = $invokeNativeStatic(keysym);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1870,7 +1864,7 @@ int32_t XWindow::getKeySymForAWTKeyCode(int32_t keycode) {
 	$init(XWindow);
 	int32_t $ret = 0;
 	$prepareNativeStatic(XWindow, getKeySymForAWTKeyCode, int32_t, int32_t keycode);
-	$ret = $invokeNativeStatic(XWindow, getKeySymForAWTKeyCode, keycode);
+	$ret = $invokeNativeStatic(keycode);
 	$finishNativeStatic();
 	return $ret;
 }

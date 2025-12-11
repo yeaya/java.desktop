@@ -86,7 +86,7 @@ void DrawPath::init$(int64_t pNativePrim, $SurfaceType* srctype, $CompositeType*
 
 void DrawPath::DrawPath$($SunGraphics2D* sg2d, $SurfaceData* sData, int32_t transX, int32_t transY, $Path2D$Float* p2df) {
 	$prepareNative(DrawPath, DrawPath$, void, $SunGraphics2D* sg2d, $SurfaceData* sData, int32_t transX, int32_t transY, $Path2D$Float* p2df);
-	$invokeNative(DrawPath, DrawPath$, sg2d, sData, transX, transY, p2df);
+	$invokeNative(sg2d, sData, transX, transY, p2df);
 	$finishNative();
 }
 

@@ -8,13 +8,11 @@
 #include <jcpp.h>
 
 using $bug8032878 = ::bug8032878;
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $ComboBoxEditor = ::javax::swing::ComboBoxEditor;
 using $JComboBox = ::javax::swing::JComboBox;
 using $JTextComponent = ::javax::swing::text::JTextComponent;

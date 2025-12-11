@@ -19,7 +19,6 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Window = ::java::awt::Window;
 using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

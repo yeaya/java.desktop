@@ -12,8 +12,6 @@
 
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $Rectangle2D$Double = ::java::awt::geom::Rectangle2D$Double;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;

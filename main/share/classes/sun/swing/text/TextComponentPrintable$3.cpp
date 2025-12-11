@@ -20,7 +20,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AtomicReference = ::java::util::concurrent::atomic::AtomicReference;
-using $JComponent = ::javax::swing::JComponent;
 using $JPasswordField = ::javax::swing::JPasswordField;
 using $JTextField = ::javax::swing::JTextField;
 using $JTextComponent = ::javax::swing::text::JTextComponent;

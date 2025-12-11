@@ -31,7 +31,6 @@ using $CheckboxGroup = ::java::awt::CheckboxGroup;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
-using $ItemSelectable = ::java::awt::ItemSelectable;
 using $Toolkit = ::java::awt::Toolkit;
 using $ItemEvent = ::java::awt::event::ItemEvent;
 using $ItemListener = ::java::awt::event::ItemListener;
@@ -44,7 +43,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $EventListener = ::java::util::EventListener;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $ComponentFactory = ::sun::awt::ComponentFactory;
 
@@ -377,7 +375,7 @@ void Checkbox::readObject($ObjectInputStream* s) {
 void Checkbox::initIDs() {
 	$init(Checkbox);
 	$prepareNativeStatic(Checkbox, initIDs, void);
-	$invokeNativeStatic(Checkbox, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

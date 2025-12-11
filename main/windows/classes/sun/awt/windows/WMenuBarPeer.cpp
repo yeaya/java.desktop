@@ -14,9 +14,6 @@
 using $Font = ::java::awt::Font;
 using $Menu = ::java::awt::Menu;
 using $MenuBar = ::java::awt::MenuBar;
-using $MenuComponent = ::java::awt::MenuComponent;
-using $MenuContainer = ::java::awt::MenuContainer;
-using $MenuBarPeer = ::java::awt::peer::MenuBarPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
@@ -98,13 +95,13 @@ void WMenuBarPeer::finalize() {
 
 void WMenuBarPeer::addMenu($Menu* m) {
 	$prepareNative(WMenuBarPeer, addMenu, void, $Menu* m);
-	$invokeNative(WMenuBarPeer, addMenu, m);
+	$invokeNative(m);
 	$finishNative();
 }
 
 void WMenuBarPeer::delMenu(int32_t index) {
 	$prepareNative(WMenuBarPeer, delMenu, void, int32_t index);
-	$invokeNative(WMenuBarPeer, delMenu, index);
+	$invokeNative(index);
 	$finishNative();
 }
 
@@ -125,7 +122,7 @@ void WMenuBarPeer::init$($MenuBar* target) {
 
 void WMenuBarPeer::create($WFramePeer* f) {
 	$prepareNative(WMenuBarPeer, create, void, $WFramePeer* f);
-	$invokeNative(WMenuBarPeer, create, f);
+	$invokeNative(f);
 	$finishNative();
 }
 

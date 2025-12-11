@@ -13,7 +13,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DateFormat = ::java::text::DateFormat;
-using $JSpinner = ::javax::swing::JSpinner;
 using $SpinnerDateModel = ::javax::swing::SpinnerDateModel;
 using $DateFormatter = ::javax::swing::text::DateFormatter;
 

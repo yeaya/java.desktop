@@ -12,8 +12,6 @@
 
 using $bug6889007$1 = ::bug6889007$1;
 using $bug6889007$MyTableHeaderUI = ::bug6889007$MyTableHeaderUI;
-using $Component = ::java::awt::Component;
-using $Frame = ::java::awt::Frame;
 using $Point = ::java::awt::Point;
 using $Robot = ::java::awt::Robot;
 using $PrintStream = ::java::io::PrintStream;

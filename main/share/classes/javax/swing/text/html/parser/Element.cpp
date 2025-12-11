@@ -15,12 +15,10 @@
 #undef MAX_INDEX_KEY
 #undef RCDATA
 
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $BitSet = ::java::util::BitSet;
 using $Hashtable = ::java::util::Hashtable;
 using $Vector = ::java::util::Vector;
 using $AttributeList = ::javax::swing::text::html::parser::AttributeList;

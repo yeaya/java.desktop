@@ -21,7 +21,6 @@ using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $Toolkit = ::java::awt::Toolkit;
 using $Autoscroll = ::java::awt::dnd::Autoscroll;
-using $DropTarget = ::java::awt::dnd::DropTarget;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;

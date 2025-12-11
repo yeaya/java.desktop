@@ -23,11 +23,7 @@ using $ImageObserver = ::java::awt::image::ImageObserver;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
-using $DrawImagePipe = ::sun::java2d::pipe::DrawImagePipe;
 using $PixelDrawPipe = ::sun::java2d::pipe::PixelDrawPipe;
-using $PixelFillPipe = ::sun::java2d::pipe::PixelFillPipe;
-using $ShapeDrawPipe = ::sun::java2d::pipe::ShapeDrawPipe;
-using $TextPipe = ::sun::java2d::pipe::TextPipe;
 
 namespace sun {
 	namespace java2d {

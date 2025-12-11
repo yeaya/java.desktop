@@ -18,11 +18,8 @@
 
 using $WindowArray = $Array<::java::awt::Window>;
 using $bug7072653 = ::bug7072653;
-using $Component = ::java::awt::Component;
-using $Dimension = ::java::awt::Dimension;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $Insets = ::java::awt::Insets;
-using $Rectangle = ::java::awt::Rectangle;
 using $Toolkit = ::java::awt::Toolkit;
 using $Window = ::java::awt::Window;
 using $Window$Type = ::java::awt::Window$Type;
@@ -35,7 +32,6 @@ using $RuntimeException = ::java::lang::RuntimeException;
 using $JComboBox = ::javax::swing::JComboBox;
 using $JFrame = ::javax::swing::JFrame;
 using $PopupMenuEvent = ::javax::swing::event::PopupMenuEvent;
-using $PopupMenuListener = ::javax::swing::event::PopupMenuListener;
 
 $FieldInfo _bug7072653$2_FieldInfo_[] = {
 	{"val$lookAndFeelString", "Ljava/lang/String;", nullptr, $FINAL | $SYNTHETIC, $field(bug7072653$2, val$lookAndFeelString)},
@@ -92,7 +88,7 @@ void bug7072653$2::popupMenuWillBecomeInvisible($PopupMenuEvent* e) {
 	$useLocalCurrentObjectStackCache();
 	int32_t height = 0;
 	{
-		$var($WindowArray, arr$, $JFrame::getWindows());
+		$var($WindowArray, arr$, $Window::getWindows());
 		int32_t len$ = $nc(arr$)->length;
 		int32_t i$ = 0;
 		for (; i$ < len$; ++i$) {

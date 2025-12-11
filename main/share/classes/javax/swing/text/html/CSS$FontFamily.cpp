@@ -17,7 +17,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
 using $View = ::javax::swing::text::View;
-using $CSS = ::javax::swing::text::html::CSS;
 using $CSS$CssValue = ::javax::swing::text::html::CSS$CssValue;
 
 namespace javax {

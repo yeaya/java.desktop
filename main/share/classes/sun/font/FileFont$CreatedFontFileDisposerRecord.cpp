@@ -16,9 +16,7 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $CreatedFontTracker = ::sun::font::CreatedFontTracker;
-using $FileFont = ::sun::font::FileFont;
 using $FileFont$CreatedFontFileDisposerRecord$1 = ::sun::font::FileFont$CreatedFontFileDisposerRecord$1;
-using $DisposerRecord = ::sun::java2d::DisposerRecord;
 
 namespace sun {
 	namespace font {

@@ -11,7 +11,6 @@
 #undef NAMES
 
 using $AttributeValue = ::java::awt::AttributeValue;
-using $PageAttributes = ::java::awt::PageAttributes;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

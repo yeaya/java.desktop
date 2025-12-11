@@ -16,7 +16,6 @@ using $ParseException = ::java::text::ParseException;
 using $JFormattedTextField = ::javax::swing::JFormattedTextField;
 using $JTextField$NotifyAction = ::javax::swing::JTextField$NotifyAction;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
-using $TextAction = ::javax::swing::text::TextAction;
 
 namespace javax {
 	namespace swing {

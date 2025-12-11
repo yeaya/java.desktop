@@ -24,7 +24,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Comparator = ::java::util::Comparator;
 using $Callable = ::java::util::concurrent::Callable;
-using $DefaultRowSorter = ::javax::swing::DefaultRowSorter;
 using $DefaultRowSorter$ModelWrapper = ::javax::swing::DefaultRowSorter$ModelWrapper;
 using $TableModelListener = ::javax::swing::event::TableModelListener;
 using $TableModel = ::javax::swing::table::TableModel;

@@ -23,7 +23,6 @@
 #undef Y_AXIS
 
 using $AWTError = ::java::awt::AWTError;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Container = ::java::awt::Container;
@@ -38,13 +37,11 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $Short = ::java::lang::Short;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $Box$AccessibleBox = ::javax::swing::Box$AccessibleBox;
 using $Box$Filler = ::javax::swing::Box$Filler;
 using $BoxLayout = ::javax::swing::BoxLayout;
 using $JComponent = ::javax::swing::JComponent;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 
 namespace javax {
 	namespace swing {

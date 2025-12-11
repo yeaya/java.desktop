@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ServiceRegistry = ::javax::imageio::spi::ServiceRegistry;
 
 namespace javax {
 	namespace imageio {

@@ -12,9 +12,7 @@
 #include <javax/swing/plaf/metal/MetalLookAndFeel.h>
 #include <jcpp.h>
 
-using $PropertyChangeListenerArray = $Array<::java::beans::PropertyChangeListener>;
 using $bug6559589$1 = ::bug6559589$1;
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

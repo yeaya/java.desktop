@@ -31,7 +31,6 @@ using $JTable = ::javax::swing::JTable;
 using $JToggleButton = ::javax::swing::JToggleButton;
 using $UIResource = ::javax::swing::plaf::UIResource;
 using $SynthTableUI = ::javax::swing::plaf::synth::SynthTableUI;
-using $TableCellRenderer = ::javax::swing::table::TableCellRenderer;
 
 namespace javax {
 	namespace swing {

@@ -90,7 +90,6 @@
 #undef TRUE
 #undef W3C_LENGTH_UNITS
 
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $HyperlinkListenerArray = $Array<::javax::swing::event::HyperlinkListener>;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
@@ -102,12 +101,10 @@ using $Rectangle = ::java::awt::Rectangle;
 using $BufferedInputStream = ::java::io::BufferedInputStream;
 using $DataOutputStream = ::java::io::DataOutputStream;
 using $FilterInputStream = ::java::io::FilterInputStream;
-using $FilterOutputStream = ::java::io::FilterOutputStream;
 using $IOException = ::java::io::IOException;
 using $InputStream = ::java::io::InputStream;
 using $InputStreamReader = ::java::io::InputStreamReader;
 using $ObjectOutputStream = ::java::io::ObjectOutputStream;
-using $OutputStream = ::java::io::OutputStream;
 using $PrintStream = ::java::io::PrintStream;
 using $Reader = ::java::io::Reader;
 using $StringReader = ::java::io::StringReader;
@@ -177,7 +174,6 @@ using $Document = ::javax::swing::text::Document;
 using $EditorKit = ::javax::swing::text::EditorKit;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $JTextComponent$AccessibleJTextComponent = ::javax::swing::text::JTextComponent$AccessibleJTextComponent;
-using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $StyledEditorKit = ::javax::swing::text::StyledEditorKit;
 using $HTML$Attribute = ::javax::swing::text::html::HTML$Attribute;
 using $HTML$Tag = ::javax::swing::text::html::HTML$Tag;

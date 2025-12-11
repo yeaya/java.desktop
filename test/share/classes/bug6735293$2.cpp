@@ -20,15 +20,12 @@
 
 using $Position$BiasArray = $Array<::javax::swing::text::Position$Bias>;
 using $bug6735293 = ::bug6735293;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $JFormattedTextField = ::javax::swing::JFormattedTextField;
 using $JFrame = ::javax::swing::JFrame;
 using $JTextField = ::javax::swing::JTextField;
 using $SwingConstants = ::javax::swing::SwingConstants;

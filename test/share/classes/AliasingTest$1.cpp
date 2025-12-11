@@ -12,16 +12,13 @@
 #undef KEY_ANTIALIASING
 #undef VALUE_ANTIALIAS_ON
 
-using $AliasingTest = ::AliasingTest;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $RenderingHints = ::java::awt::RenderingHints;
-using $RenderingHints$Key = ::java::awt::RenderingHints$Key;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JEditorPane = ::javax::swing::JEditorPane;
 
 $MethodInfo _AliasingTest$1_MethodInfo_[] = {

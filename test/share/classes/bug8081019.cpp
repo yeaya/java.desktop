@@ -14,7 +14,6 @@
 #undef SECONDS
 
 using $Frame = ::java::awt::Frame;
-using $Window = ::java::awt::Window;
 using $File = ::java::io::File;
 using $InputStream = ::java::io::InputStream;
 using $PrintStream = ::java::io::PrintStream;

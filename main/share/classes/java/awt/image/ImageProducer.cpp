@@ -3,7 +3,6 @@
 #include <java/awt/image/ImageConsumer.h>
 #include <jcpp.h>
 
-using $ImageConsumer = ::java::awt::image::ImageConsumer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

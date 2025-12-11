@@ -12,9 +12,6 @@
 #include <javax/swing/SwingUtilities.h>
 #include <jcpp.h>
 
-using $MouseListenerArray = $Array<::java::awt::event::MouseListener>;
-using $MouseMotionListenerArray = $Array<::java::awt::event::MouseMotionListener>;
-using $MouseWheelListenerArray = $Array<::java::awt::event::MouseWheelListener>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Point = ::java::awt::Point;
@@ -22,7 +19,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
-using $JLayer = ::javax::swing::JLayer;
 using $JPanel = ::javax::swing::JPanel;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 

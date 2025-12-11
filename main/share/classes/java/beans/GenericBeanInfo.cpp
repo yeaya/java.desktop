@@ -18,7 +18,6 @@ using $EventSetDescriptorArray = $Array<::java::beans::EventSetDescriptor>;
 using $MethodDescriptorArray = $Array<::java::beans::MethodDescriptor>;
 using $PropertyDescriptorArray = $Array<::java::beans::PropertyDescriptor>;
 using $BeanInfoFinder = ::com::sun::beans::finder::BeanInfoFinder;
-using $InstanceFinder = ::com::sun::beans::finder::InstanceFinder;
 using $Image = ::java::awt::Image;
 using $BeanDescriptor = ::java::beans::BeanDescriptor;
 using $BeanInfo = ::java::beans::BeanInfo;

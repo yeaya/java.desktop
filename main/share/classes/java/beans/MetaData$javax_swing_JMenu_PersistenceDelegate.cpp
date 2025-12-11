@@ -8,10 +8,8 @@
 #include <jcpp.h>
 
 using $ComponentArray = $Array<::java::awt::Component>;
-using $Component = ::java::awt::Component;
 using $DefaultPersistenceDelegate = ::java::beans::DefaultPersistenceDelegate;
 using $Encoder = ::java::beans::Encoder;
-using $MetaData = ::java::beans::MetaData;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

@@ -88,7 +88,6 @@
 
 using $ActionListenerArray = $Array<::java::awt::event::ActionListener>;
 using $ItemListenerArray = $Array<::java::awt::event::ItemListener>;
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $ChangeListenerArray = $Array<::javax::swing::event::ChangeListener>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;

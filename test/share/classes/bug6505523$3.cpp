@@ -8,14 +8,12 @@
 #include <javax/swing/tree/TreeNode.h>
 #include <jcpp.h>
 
-using $bug6505523 = ::bug6505523;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $TreeExpansionEvent = ::javax::swing::event::TreeExpansionEvent;
-using $TreeExpansionListener = ::javax::swing::event::TreeExpansionListener;
 using $DefaultMutableTreeNode = ::javax::swing::tree::DefaultMutableTreeNode;
 using $DefaultTreeModel = ::javax::swing::tree::DefaultTreeModel;
 using $MutableTreeNode = ::javax::swing::tree::MutableTreeNode;

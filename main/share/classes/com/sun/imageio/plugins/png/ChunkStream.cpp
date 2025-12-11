@@ -10,7 +10,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $ImageInputStream = ::javax::imageio::stream::ImageInputStream;
 using $ImageOutputStream = ::javax::imageio::stream::ImageOutputStream;
 using $ImageOutputStreamImpl = ::javax::imageio::stream::ImageOutputStreamImpl;
 

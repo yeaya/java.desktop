@@ -7,7 +7,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $InfoWindow$Balloon = ::sun::awt::X11::InfoWindow$Balloon;
 
 namespace sun {
 	namespace awt {

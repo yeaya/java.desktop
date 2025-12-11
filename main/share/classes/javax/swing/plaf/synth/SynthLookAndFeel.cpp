@@ -134,7 +134,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $StringBuffer = ::java::lang::StringBuffer;
-using $Reference = ::java::lang::ref::Reference;
 using $ReferenceQueue = ::java::lang::ref::ReferenceQueue;
 using $URL = ::java::net::URL;
 using $AbstractMap = ::java::util::AbstractMap;

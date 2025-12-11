@@ -7,7 +7,6 @@
 #include <jcpp.h>
 
 using $GTKFileChooserUI = ::com::sun::java::swing::plaf::gtk::GTKFileChooserUI;
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $FlowLayout = ::java::awt::FlowLayout;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -16,7 +15,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComboBox = ::javax::swing::JComboBox;
-using $JComponent = ::javax::swing::JComponent;
 
 namespace com {
 	namespace sun {

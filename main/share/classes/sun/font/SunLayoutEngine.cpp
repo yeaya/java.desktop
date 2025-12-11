@@ -30,14 +30,8 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $SoftReference = ::java::lang::ref::SoftReference;
-using $Map = ::java::util::Map;
 using $WeakHashMap = ::java::util::WeakHashMap;
 using $ConcurrentHashMap = ::java::util::concurrent::ConcurrentHashMap;
 using $Function = ::java::util::function::Function;
@@ -228,7 +222,7 @@ bool SunLayoutEngine::shape($Font2D* font, $FontStrike* strike, float ptSize, $f
 	$init(SunLayoutEngine);
 	bool $ret = false;
 	$prepareNativeStatic(SunLayoutEngine, shape, bool, $Font2D* font, $FontStrike* strike, float ptSize, $floats* mat, int64_t pFace, $chars* chars, $GlyphLayout$GVData* data, int32_t script, int32_t offset, int32_t limit, int32_t baseIndex, $Point2D$Float* pt, int32_t typo_flags, int32_t slot);
-	$ret = $invokeNativeStatic(SunLayoutEngine, shape, font, strike, ptSize, mat, pFace, chars, data, script, offset, limit, baseIndex, pt, typo_flags, slot);
+	$ret = $invokeNativeStatic(font, strike, ptSize, mat, pFace, chars, data, script, offset, limit, baseIndex, pt, typo_flags, slot);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -237,7 +231,7 @@ int64_t SunLayoutEngine::createFace($Font2D* font, int64_t platformNativeFontPtr
 	$init(SunLayoutEngine);
 	int64_t $ret = 0;
 	$prepareNativeStatic(SunLayoutEngine, createFace, int64_t, $Font2D* font, int64_t platformNativeFontPtr);
-	$ret = $invokeNativeStatic(SunLayoutEngine, createFace, font, platformNativeFontPtr);
+	$ret = $invokeNativeStatic(font, platformNativeFontPtr);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -245,7 +239,7 @@ int64_t SunLayoutEngine::createFace($Font2D* font, int64_t platformNativeFontPtr
 void SunLayoutEngine::disposeFace(int64_t facePtr) {
 	$init(SunLayoutEngine);
 	$prepareNativeStatic(SunLayoutEngine, disposeFace, void, int64_t facePtr);
-	$invokeNativeStatic(SunLayoutEngine, disposeFace, facePtr);
+	$invokeNativeStatic(facePtr);
 	$finishNativeStatic();
 }
 

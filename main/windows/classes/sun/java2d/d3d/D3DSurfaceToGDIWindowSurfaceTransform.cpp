@@ -20,7 +20,6 @@ using $SurfaceData = ::sun::java2d::SurfaceData;
 using $D3DSurfaceData = ::sun::java2d::d3d::D3DSurfaceData;
 using $D3DVolatileSurfaceManager = ::sun::java2d::d3d::D3DVolatileSurfaceManager;
 using $CompositeType = ::sun::java2d::loops::CompositeType;
-using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $TransformBlit = ::sun::java2d::loops::TransformBlit;
 using $Region = ::sun::java2d::pipe::Region;
 using $GDIWindowSurfaceData = ::sun::java2d::windows::GDIWindowSurfaceData;

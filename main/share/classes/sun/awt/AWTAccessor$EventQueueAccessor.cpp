@@ -5,13 +5,9 @@
 #include <sun/awt/FwDispatcher.h>
 #include <jcpp.h>
 
-using $EventQueue = ::java::awt::EventQueue;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $AWTAccessor = ::sun::awt::AWTAccessor;
-using $FwDispatcher = ::sun::awt::FwDispatcher;
 
 namespace sun {
 	namespace awt {

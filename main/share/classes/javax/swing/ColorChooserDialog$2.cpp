@@ -13,7 +13,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $AbstractAction = ::javax::swing::AbstractAction;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $ColorChooserDialog = ::javax::swing::ColorChooserDialog;

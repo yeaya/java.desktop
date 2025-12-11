@@ -39,9 +39,7 @@ using $BorderLayout = ::java::awt::BorderLayout;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
-using $Frame = ::java::awt::Frame;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Error = ::java::lang::Error;
@@ -49,12 +47,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $BorderFactory = ::javax::swing::BorderFactory;
 using $JButton = ::javax::swing::JButton;
@@ -62,7 +55,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JFrame = ::javax::swing::JFrame;
 using $JSplitPane = ::javax::swing::JSplitPane;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
-using $Border = ::javax::swing::border::Border;
 
 class bug4816114$$Lambda$lambda$main$0 : public $Runnable {
 	$class(bug4816114$$Lambda$lambda$main$0, $NO_CLASS_INIT, $Runnable)

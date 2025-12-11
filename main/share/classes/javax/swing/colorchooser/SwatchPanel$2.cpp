@@ -15,9 +15,7 @@
 #undef VK_RIGHT
 #undef VK_UP
 
-using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
-using $Dimension = ::java::awt::Dimension;
 using $KeyAdapter = ::java::awt::event::KeyAdapter;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $ClassInfo = ::java::lang::ClassInfo;

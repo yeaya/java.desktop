@@ -42,7 +42,6 @@ using $BufferCapabilities = ::java::awt::BufferCapabilities;
 using $BufferCapabilities$FlipContents = ::java::awt::BufferCapabilities$FlipContents;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
@@ -58,7 +57,6 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $ScrollPanePeer = ::java::awt::peer::ScrollPanePeer;
 using $ArrayIndexOutOfBoundsException = ::java::lang::ArrayIndexOutOfBoundsException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -66,9 +64,7 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $PeerEvent = ::sun::awt::PeerEvent;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WPanelPeer = ::sun::awt::windows::WPanelPeer;
 using $WScrollPanePeer$Adjustor = ::sun::awt::windows::WScrollPanePeer$Adjustor;
 using $WScrollPanePeer$ScrollEvent = ::sun::awt::windows::WScrollPanePeer$ScrollEvent;
@@ -380,20 +376,20 @@ $PlatformLogger* WScrollPanePeer::log = nullptr;
 void WScrollPanePeer::initIDs() {
 	$init(WScrollPanePeer);
 	$prepareNativeStatic(WScrollPanePeer, initIDs, void);
-	$invokeNativeStatic(WScrollPanePeer, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
 void WScrollPanePeer::create($WComponentPeer* parent) {
 	$prepareNative(WScrollPanePeer, create, void, $WComponentPeer* parent);
-	$invokeNative(WScrollPanePeer, create, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 
 int32_t WScrollPanePeer::getOffset(int32_t orient) {
 	int32_t $ret = 0;
 	$prepareNative(WScrollPanePeer, getOffset, int32_t, int32_t orient);
-	$ret = $invokeNative(WScrollPanePeer, getOffset, orient);
+	$ret = $invokeNative(orient);
 	$finishNative();
 	return $ret;
 }
@@ -416,13 +412,13 @@ void WScrollPanePeer::setUnitIncrement($Adjustable* adj, int32_t p) {
 
 void WScrollPanePeer::setInsets() {
 	$prepareNative(WScrollPanePeer, setInsets, void);
-	$invokeNative(WScrollPanePeer, setInsets);
+	$invokeNative();
 	$finishNative();
 }
 
 void WScrollPanePeer::setScrollPosition(int32_t x, int32_t y) {
 	$prepareNative(WScrollPanePeer, setScrollPosition, void, int32_t x, int32_t y);
-	$invokeNative(WScrollPanePeer, setScrollPosition, x, y);
+	$invokeNative(x, y);
 	$finishNative();
 }
 
@@ -433,7 +429,7 @@ int32_t WScrollPanePeer::getHScrollbarHeight() {
 int32_t WScrollPanePeer::_getHScrollbarHeight() {
 	int32_t $ret = 0;
 	$prepareNative(WScrollPanePeer, _getHScrollbarHeight, int32_t);
-	$ret = $invokeNative(WScrollPanePeer, _getHScrollbarHeight);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -445,7 +441,7 @@ int32_t WScrollPanePeer::getVScrollbarWidth() {
 int32_t WScrollPanePeer::_getVScrollbarWidth() {
 	int32_t $ret = 0;
 	$prepareNative(WScrollPanePeer, _getVScrollbarWidth, int32_t);
-	$ret = $invokeNative(WScrollPanePeer, _getVScrollbarWidth);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -466,7 +462,7 @@ void WScrollPanePeer::childResized(int32_t width, int32_t height) {
 
 void WScrollPanePeer::setSpans(int32_t viewWidth, int32_t viewHeight, int32_t childWidth, int32_t childHeight) {
 	$prepareNative(WScrollPanePeer, setSpans, void, int32_t viewWidth, int32_t viewHeight, int32_t childWidth, int32_t childHeight);
-	$invokeNative(WScrollPanePeer, setSpans, viewWidth, viewHeight, childWidth, childHeight);
+	$invokeNative(viewWidth, viewHeight, childWidth, childHeight);
 	$finishNative();
 }
 

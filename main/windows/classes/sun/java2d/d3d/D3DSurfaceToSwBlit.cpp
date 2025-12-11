@@ -23,7 +23,6 @@ using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $D3DContext = ::sun::java2d::d3d::D3DContext;
@@ -31,11 +30,9 @@ using $D3DRenderQueue = ::sun::java2d::d3d::D3DRenderQueue;
 using $D3DSurfaceData = ::sun::java2d::d3d::D3DSurfaceData;
 using $Blit = ::sun::java2d::loops::Blit;
 using $CompositeType = ::sun::java2d::loops::CompositeType;
-using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $Region = ::sun::java2d::pipe::Region;
 using $RenderBuffer = ::sun::java2d::pipe::RenderBuffer;
-using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 
 namespace sun {
 	namespace java2d {

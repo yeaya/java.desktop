@@ -10,14 +10,12 @@
 #include <jcpp.h>
 
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractAction = ::javax::swing::AbstractAction;
 using $Action = ::javax::swing::Action;
-using $DefaultEditorKit = ::javax::swing::text::DefaultEditorKit;
 using $DefaultEditorKit$BeginParagraphAction = ::javax::swing::text::DefaultEditorKit$BeginParagraphAction;
 using $DefaultEditorKit$EndParagraphAction = ::javax::swing::text::DefaultEditorKit$EndParagraphAction;
 using $TextAction = ::javax::swing::text::TextAction;

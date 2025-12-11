@@ -34,7 +34,6 @@
 #undef WEST
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Cursor = ::java::awt::Cursor;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
@@ -42,8 +41,6 @@ using $Rectangle = ::java::awt::Rectangle;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JSplitPane = ::javax::swing::JSplitPane;

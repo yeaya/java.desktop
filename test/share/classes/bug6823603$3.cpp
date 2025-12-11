@@ -5,7 +5,6 @@
 #include <javax/swing/AbstractListModel.h>
 #include <jcpp.h>
 
-using $bug6823603 = ::bug6823603;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

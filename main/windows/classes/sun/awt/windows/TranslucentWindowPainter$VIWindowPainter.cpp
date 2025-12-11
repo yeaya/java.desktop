@@ -13,7 +13,6 @@
 #include <sun/java2d/pipe/hw/AccelGraphicsConfig.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $Image = ::java::awt::Image;
@@ -25,7 +24,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $TranslucentWindowPainter = ::sun::awt::windows::TranslucentWindowPainter;
 using $TranslucentWindowPainter$BIWindowPainter = ::sun::awt::windows::TranslucentWindowPainter$BIWindowPainter;
-using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
 using $AccelGraphicsConfig = ::sun::java2d::pipe::hw::AccelGraphicsConfig;
 

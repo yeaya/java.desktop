@@ -14,17 +14,14 @@
 #undef WEAK
 
 using $Cache$KindArray = $Array<::com::sun::beans::util::Cache$Kind>;
-using $Cache = ::com::sun::beans::util::Cache;
 using $Cache$Kind$1 = ::com::sun::beans::util::Cache$Kind$1;
 using $Cache$Kind$2 = ::com::sun::beans::util::Cache$Kind$2;
 using $Cache$Kind$3 = ::com::sun::beans::util::Cache$Kind$3;
-using $Cache$Ref = ::com::sun::beans::util::Cache$Ref;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ReferenceQueue = ::java::lang::ref::ReferenceQueue;
 
 namespace com {
 	namespace sun {

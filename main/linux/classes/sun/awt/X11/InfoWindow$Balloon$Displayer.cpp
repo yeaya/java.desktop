@@ -20,7 +20,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $ThreadGroup = ::java::lang::ThreadGroup;
 using $ArrayBlockingQueue = ::java::util::concurrent::ArrayBlockingQueue;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $InfoWindow$Balloon = ::sun::awt::X11::InfoWindow$Balloon;
 using $InfoWindow$Balloon$Message = ::sun::awt::X11::InfoWindow$Balloon$Message;
 using $XToolkit = ::sun::awt::X11::XToolkit;
@@ -73,7 +72,7 @@ $Object* allocate$InfoWindow$Balloon$Displayer($Class* clazz) {
 
 void InfoWindow$Balloon$Displayer::init$($InfoWindow$Balloon* this$0) {
 	$set(this, this$0, this$0);
-	$set(this, messageQueue, $new($ArrayBlockingQueue, this->MAX_CONCURRENT_MSGS));
+	$set(this, messageQueue, $new($ArrayBlockingQueue, InfoWindow$Balloon$Displayer::MAX_CONCURRENT_MSGS));
 	$set(this, thread, $new($Thread, nullptr, this, "Displayer"_s, 0, false));
 	$nc(this->thread)->setDaemon(true);
 }

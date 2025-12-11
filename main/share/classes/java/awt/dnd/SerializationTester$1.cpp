@@ -4,7 +4,6 @@
 #include <java/io/OutputStream.h>
 #include <jcpp.h>
 
-using $SerializationTester = ::java::awt::dnd::SerializationTester;
 using $OutputStream = ::java::io::OutputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

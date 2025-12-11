@@ -25,13 +25,11 @@
 #undef TRANSFORM_INT_TRANSLATE
 #undef TRANSFORM_TRANSLATESCALE
 
-using $Composite = ::java::awt::Composite;
 using $Polygon = ::java::awt::Polygon;
 using $Shape = ::java::awt::Shape;
 using $Stroke = ::java::awt::Stroke;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $Path2D$Float = ::java::awt::geom::Path2D$Float;
-using $PathIterator = ::java::awt::geom::PathIterator;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
@@ -41,9 +39,7 @@ using $SurfaceData = ::sun::java2d::SurfaceData;
 using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
 using $LoopPipe = ::sun::java2d::pipe::LoopPipe;
 using $PixelDrawPipe = ::sun::java2d::pipe::PixelDrawPipe;
-using $PixelFillPipe = ::sun::java2d::pipe::PixelFillPipe;
 using $Region = ::sun::java2d::pipe::Region;
-using $ShapeDrawPipe = ::sun::java2d::pipe::ShapeDrawPipe;
 using $ShapeSpanIterator = ::sun::java2d::pipe::ShapeSpanIterator;
 using $SpanIterator = ::sun::java2d::pipe::SpanIterator;
 using $X11Renderer$X11TracingRenderer = ::sun::java2d::x11::X11Renderer$X11TracingRenderer;
@@ -169,7 +165,7 @@ int64_t X11Renderer::validate($SunGraphics2D* sg2d) {
 
 void X11Renderer::XDrawLine(int64_t pXSData, int64_t xgc, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
 	$prepareNative(X11Renderer, XDrawLine, void, int64_t pXSData, int64_t xgc, int32_t x1, int32_t y1, int32_t x2, int32_t y2);
-	$invokeNative(X11Renderer, XDrawLine, pXSData, xgc, x1, y1, x2, y2);
+	$invokeNative(pXSData, xgc, x1, y1, x2, y2);
 	$finishNative();
 }
 
@@ -195,7 +191,7 @@ void X11Renderer::drawLine($SunGraphics2D* sg2d, int32_t x1, int32_t y1, int32_t
 
 void X11Renderer::XDrawRect(int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h) {
 	$prepareNative(X11Renderer, XDrawRect, void, int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h);
-	$invokeNative(X11Renderer, XDrawRect, pXSData, xgc, x, y, w, h);
+	$invokeNative(pXSData, xgc, x, y, w, h);
 	$finishNative();
 }
 
@@ -219,7 +215,7 @@ void X11Renderer::drawRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w
 
 void X11Renderer::XDrawRoundRect(int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h, int32_t arcW, int32_t arcH) {
 	$prepareNative(X11Renderer, XDrawRoundRect, void, int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h, int32_t arcW, int32_t arcH);
-	$invokeNative(X11Renderer, XDrawRoundRect, pXSData, xgc, x, y, w, h, arcW, arcH);
+	$invokeNative(pXSData, xgc, x, y, w, h, arcW, arcH);
 	$finishNative();
 }
 
@@ -243,7 +239,7 @@ void X11Renderer::drawRoundRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int3
 
 void X11Renderer::XDrawOval(int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h) {
 	$prepareNative(X11Renderer, XDrawOval, void, int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h);
-	$invokeNative(X11Renderer, XDrawOval, pXSData, xgc, x, y, w, h);
+	$invokeNative(pXSData, xgc, x, y, w, h);
 	$finishNative();
 }
 
@@ -267,7 +263,7 @@ void X11Renderer::drawOval($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w
 
 void X11Renderer::XDrawArc(int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h, int32_t angleStart, int32_t angleExtent) {
 	$prepareNative(X11Renderer, XDrawArc, void, int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h, int32_t angleStart, int32_t angleExtent);
-	$invokeNative(X11Renderer, XDrawArc, pXSData, xgc, x, y, w, h, angleStart, angleExtent);
+	$invokeNative(pXSData, xgc, x, y, w, h, angleStart, angleExtent);
 	$finishNative();
 }
 
@@ -291,7 +287,7 @@ void X11Renderer::drawArc($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t wi
 
 void X11Renderer::XDrawPoly(int64_t pXSData, int64_t xgc, int32_t transx, int32_t transy, $ints* xpoints, $ints* ypoints, int32_t npoints, bool isclosed) {
 	$prepareNative(X11Renderer, XDrawPoly, void, int64_t pXSData, int64_t xgc, int32_t transx, int32_t transy, $ints* xpoints, $ints* ypoints, int32_t npoints, bool isclosed);
-	$invokeNative(X11Renderer, XDrawPoly, pXSData, xgc, transx, transy, xpoints, ypoints, npoints, isclosed);
+	$invokeNative(pXSData, xgc, transx, transy, xpoints, ypoints, npoints, isclosed);
 	$finishNative();
 }
 
@@ -333,7 +329,7 @@ void X11Renderer::drawPolygon($SunGraphics2D* sg2d, $ints* xpoints, $ints* ypoin
 
 void X11Renderer::XFillRect(int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h) {
 	$prepareNative(X11Renderer, XFillRect, void, int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h);
-	$invokeNative(X11Renderer, XFillRect, pXSData, xgc, x, y, w, h);
+	$invokeNative(pXSData, xgc, x, y, w, h);
 	$finishNative();
 }
 
@@ -357,7 +353,7 @@ void X11Renderer::fillRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w
 
 void X11Renderer::XFillRoundRect(int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h, int32_t arcW, int32_t arcH) {
 	$prepareNative(X11Renderer, XFillRoundRect, void, int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h, int32_t arcW, int32_t arcH);
-	$invokeNative(X11Renderer, XFillRoundRect, pXSData, xgc, x, y, w, h, arcW, arcH);
+	$invokeNative(pXSData, xgc, x, y, w, h, arcW, arcH);
 	$finishNative();
 }
 
@@ -381,7 +377,7 @@ void X11Renderer::fillRoundRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int3
 
 void X11Renderer::XFillOval(int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h) {
 	$prepareNative(X11Renderer, XFillOval, void, int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h);
-	$invokeNative(X11Renderer, XFillOval, pXSData, xgc, x, y, w, h);
+	$invokeNative(pXSData, xgc, x, y, w, h);
 	$finishNative();
 }
 
@@ -405,7 +401,7 @@ void X11Renderer::fillOval($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w
 
 void X11Renderer::XFillArc(int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h, int32_t angleStart, int32_t angleExtent) {
 	$prepareNative(X11Renderer, XFillArc, void, int64_t pXSData, int64_t xgc, int32_t x, int32_t y, int32_t w, int32_t h, int32_t angleStart, int32_t angleExtent);
-	$invokeNative(X11Renderer, XFillArc, pXSData, xgc, x, y, w, h, angleStart, angleExtent);
+	$invokeNative(pXSData, xgc, x, y, w, h, angleStart, angleExtent);
 	$finishNative();
 }
 
@@ -429,7 +425,7 @@ void X11Renderer::fillArc($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t wi
 
 void X11Renderer::XFillPoly(int64_t pXSData, int64_t xgc, int32_t transx, int32_t transy, $ints* xpoints, $ints* ypoints, int32_t npoints) {
 	$prepareNative(X11Renderer, XFillPoly, void, int64_t pXSData, int64_t xgc, int32_t transx, int32_t transy, $ints* xpoints, $ints* ypoints, int32_t npoints);
-	$invokeNative(X11Renderer, XFillPoly, pXSData, xgc, transx, transy, xpoints, ypoints, npoints);
+	$invokeNative(pXSData, xgc, transx, transy, xpoints, ypoints, npoints);
 	$finishNative();
 }
 
@@ -453,13 +449,13 @@ void X11Renderer::fillPolygon($SunGraphics2D* sg2d, $ints* xpoints, $ints* ypoin
 
 void X11Renderer::XFillSpans(int64_t pXSData, int64_t xgc, $SpanIterator* si, int64_t iterator, int32_t transx, int32_t transy) {
 	$prepareNative(X11Renderer, XFillSpans, void, int64_t pXSData, int64_t xgc, $SpanIterator* si, int64_t iterator, int32_t transx, int32_t transy);
-	$invokeNative(X11Renderer, XFillSpans, pXSData, xgc, si, iterator, transx, transy);
+	$invokeNative(pXSData, xgc, si, iterator, transx, transy);
 	$finishNative();
 }
 
 void X11Renderer::XDoPath($SunGraphics2D* sg2d, int64_t pXSData, int64_t xgc, int32_t transX, int32_t transY, $Path2D$Float* p2df, bool isFill) {
 	$prepareNative(X11Renderer, XDoPath, void, $SunGraphics2D* sg2d, int64_t pXSData, int64_t xgc, int32_t transX, int32_t transY, $Path2D$Float* p2df, bool isFill);
-	$invokeNative(X11Renderer, XDoPath, sg2d, pXSData, xgc, transX, transY, p2df, isFill);
+	$invokeNative(sg2d, pXSData, xgc, transX, transY, p2df, isFill);
 	$finishNative();
 }
 
@@ -607,7 +603,7 @@ void X11Renderer::fill($SunGraphics2D* sg2d, $Shape* s) {
 
 void X11Renderer::devCopyArea(int64_t sdOps, int64_t xgc, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t w, int32_t h) {
 	$prepareNative(X11Renderer, devCopyArea, void, int64_t sdOps, int64_t xgc, int32_t srcx, int32_t srcy, int32_t dstx, int32_t dsty, int32_t w, int32_t h);
-	$invokeNative(X11Renderer, devCopyArea, sdOps, xgc, srcx, srcy, dstx, dsty, w, h);
+	$invokeNative(sdOps, xgc, srcx, srcy, dstx, dsty, w, h);
 	$finishNative();
 }
 

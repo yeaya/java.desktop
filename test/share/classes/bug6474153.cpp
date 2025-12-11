@@ -7,14 +7,12 @@
 #include <jcpp.h>
 
 using $JTextComponent$KeyBindingArray = $Array<::javax::swing::text::JTextComponent$KeyBinding>;
-using $AWTKeyStroke = ::java::awt::AWTKeyStroke;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $KeyStroke = ::javax::swing::KeyStroke;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $DefaultEditorKit = ::javax::swing::text::DefaultEditorKit;
-using $JTextComponent$KeyBinding = ::javax::swing::text::JTextComponent$KeyBinding;
 
 $MethodInfo _bug6474153_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PUBLIC, $method(static_cast<void(bug6474153::*)()>(&bug6474153::init$))},

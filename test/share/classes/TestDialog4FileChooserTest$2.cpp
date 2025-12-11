@@ -8,7 +8,6 @@
 using $FileChooserTest = ::FileChooserTest;
 using $TestDialog4FileChooserTest = ::TestDialog4FileChooserTest;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

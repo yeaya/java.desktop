@@ -21,7 +21,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractSequentialList = ::java::util::AbstractSequentialList;
 using $Iterator = ::java::util::Iterator;
 using $LinkedList = ::java::util::LinkedList;
 using $PlatformLogger = ::sun::util::logging::PlatformLogger;

@@ -11,18 +11,13 @@
 #include <jcpp.h>
 
 using $UIDefaultsArray = $Array<::javax::swing::UIDefaults>;
-using $UIManager$LookAndFeelInfoArray = $Array<::javax::swing::UIManager$LookAndFeelInfo>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Properties = ::java::util::Properties;
-using $Vector = ::java::util::Vector;
-using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $MultiUIDefaults = ::javax::swing::MultiUIDefaults;
 using $UIDefaults = ::javax::swing::UIDefaults;
 using $UIManager = ::javax::swing::UIManager;
-using $UIManager$LookAndFeelInfo = ::javax::swing::UIManager$LookAndFeelInfo;
 using $SwingPropertyChangeSupport = ::javax::swing::event::SwingPropertyChangeSupport;
 
 namespace javax {

@@ -9,7 +9,6 @@ using $RenderingHints = ::java::awt::RenderingHints;
 using $Shape = ::java::awt::Shape;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Cloneable = ::java::lang::Cloneable;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

@@ -15,9 +15,7 @@
 #undef APPROVE_OPTION
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -27,7 +25,6 @@ using $JFileChooser = ::javax::swing::JFileChooser;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $Document = ::javax::swing::text::Document;
-using $View = ::javax::swing::text::View;
 using $FormView = ::javax::swing::text::html::FormView;
 
 namespace javax {

@@ -165,7 +165,7 @@ int32_t TextField::nameCounter = 0;
 void TextField::initIDs() {
 	$init(TextField);
 	$prepareNativeStatic(TextField, initIDs, void);
-	$invokeNativeStatic(TextField, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

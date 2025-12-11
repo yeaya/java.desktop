@@ -12,11 +12,8 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JTextField = ::javax::swing::JTextField;
-using $Caret = ::javax::swing::text::Caret;
 using $DefaultCaret = ::javax::swing::text::DefaultCaret;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $MethodInfo _bug7049024$3_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(bug7049024$3::*)()>(&bug7049024$3::init$))},

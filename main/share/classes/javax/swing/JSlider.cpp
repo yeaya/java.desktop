@@ -40,13 +40,10 @@
 #undef HORIZONTAL
 #undef VERTICAL
 
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $ChangeListenerArray = $Array<::javax::swing::event::ChangeListener>;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
-using $Container = ::java::awt::Container;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
-using $Dimension = ::java::awt::Dimension;
 using $Font = ::java::awt::Font;
 using $Image = ::java::awt::Image;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
@@ -64,12 +61,10 @@ using $Dictionary = ::java::util::Dictionary;
 using $Enumeration = ::java::util::Enumeration;
 using $EventListener = ::java::util::EventListener;
 using $Hashtable = ::java::util::Hashtable;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AccessibleState = ::javax::accessibility::AccessibleState;
 using $BoundedRangeModel = ::javax::swing::BoundedRangeModel;
 using $DefaultBoundedRangeModel = ::javax::swing::DefaultBoundedRangeModel;
-using $Icon = ::javax::swing::Icon;
 using $JComponent = ::javax::swing::JComponent;
 using $JComponent$AccessibleJComponent = ::javax::swing::JComponent$AccessibleJComponent;
 using $JLabel = ::javax::swing::JLabel;

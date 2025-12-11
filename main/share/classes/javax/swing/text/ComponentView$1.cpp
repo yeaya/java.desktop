@@ -7,14 +7,12 @@
 #include <javax/swing/text/View.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $AbstractDocument = ::javax::swing::text::AbstractDocument;
 using $ComponentView = ::javax::swing::text::ComponentView;
 using $Document = ::javax::swing::text::Document;

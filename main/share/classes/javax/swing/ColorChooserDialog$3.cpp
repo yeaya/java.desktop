@@ -5,9 +5,7 @@
 #include <javax/swing/ColorChooserDialog.h>
 #include <jcpp.h>
 
-using $Dialog = ::java::awt::Dialog;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

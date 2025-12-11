@@ -7,14 +7,12 @@
 #include <javax/swing/plaf/basic/BasicToolBarUI.h>
 #include <jcpp.h>
 
-using $Point = ::java::awt::Point;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JToolBar = ::javax::swing::JToolBar;
-using $MouseInputListener = ::javax::swing::event::MouseInputListener;
 using $BasicToolBarUI = ::javax::swing::plaf::basic::BasicToolBarUI;
 using $BasicToolBarUI$Handler = ::javax::swing::plaf::basic::BasicToolBarUI$Handler;
 

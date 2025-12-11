@@ -10,10 +10,8 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $Icon = ::javax::swing::Icon;
 using $JButton = ::javax::swing::JButton;
-using $BasicOptionPaneUI = ::javax::swing::plaf::basic::BasicOptionPaneUI;
 using $BasicOptionPaneUI$ButtonFactory$ConstrainedButton = ::javax::swing::plaf::basic::BasicOptionPaneUI$ButtonFactory$ConstrainedButton;
 
 namespace javax {

@@ -24,7 +24,6 @@
 using $DisplayModeArray = $Array<::java::awt::DisplayMode>;
 using $GraphicsConfigurationArray = $Array<::java::awt::GraphicsConfiguration>;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $DisplayMode = ::java::awt::DisplayMode;
 using $GraphicsConfigTemplate = ::java::awt::GraphicsConfigTemplate;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
@@ -36,7 +35,6 @@ using $Toolkit = ::java::awt::Toolkit;
 using $Window = ::java::awt::Window;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

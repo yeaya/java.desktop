@@ -35,7 +35,6 @@ using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $Point2D = ::java::awt::geom::Point2D;
 using $AffineTransformOp = ::java::awt::image::AffineTransformOp;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Integer = ::java::lang::Integer;
 using $InternalError = ::java::lang::InternalError;

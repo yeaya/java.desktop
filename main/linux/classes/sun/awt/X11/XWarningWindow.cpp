@@ -73,15 +73,11 @@
 #undef TARGET
 #undef XA_NET_WM_STATE_SKIP_TASKBAR
 
-using $IconInfoArray = $Array<::sun::awt::IconInfo>;
 using $IconInfoArray2 = $Array<::sun::awt::IconInfo, 2>;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Font = ::java::awt::Font;
 using $Frame = ::java::awt::Frame;
 using $Graphics = ::java::awt::Graphics;
-using $Image = ::java::awt::Image;
 using $Insets = ::java::awt::Insets;
 using $Rectangle = ::java::awt::Rectangle;
 using $SystemColor = ::java::awt::SystemColor;
@@ -95,9 +91,7 @@ using $Long = ::java::lang::Long;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
-using $HashMap = ::java::util::HashMap;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$WindowAccessor = ::sun::awt::AWTAccessor$WindowAccessor;
 using $AWTIcon32_security_icon_bw16_png = ::sun::awt::AWTIcon32_security_icon_bw16_png;
@@ -128,8 +122,6 @@ using $IconInfo = ::sun::awt::IconInfo;
 using $SunToolkit = ::sun::awt::SunToolkit;
 using $InfoWindow$Tooltip = ::sun::awt::X11::InfoWindow$Tooltip;
 using $InfoWindow$Tooltip$LiveArguments = ::sun::awt::X11::InfoWindow$Tooltip$LiveArguments;
-using $XAtom = ::sun::awt::X11::XAtom;
-using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XConstants = ::sun::awt::X11::XConstants;
 using $XCreateWindowParams = ::sun::awt::X11::XCreateWindowParams;
 using $XEvent = ::sun::awt::X11::XEvent;

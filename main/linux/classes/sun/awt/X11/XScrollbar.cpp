@@ -53,7 +53,6 @@ using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
-using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $Image = ::java::awt::Image;
 using $Point = ::java::awt::Point;
 using $Polygon = ::java::awt::Polygon;

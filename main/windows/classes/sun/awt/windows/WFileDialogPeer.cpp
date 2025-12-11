@@ -80,7 +80,6 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $FileDialogPeer = ::java::awt::peer::FileDialogPeer;
 using $File = ::java::io::File;
 using $FilenameFilter = ::java::io::FilenameFilter;
 using $Serializable = ::java::io::Serializable;
@@ -90,12 +89,7 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $ThreadGroup = ::java::lang::ThreadGroup;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Iterator = ::java::util::Iterator;
@@ -104,12 +98,10 @@ using $Vector = ::java::util::Vector;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor;
 using $AWTAccessor$FileDialogAccessor = ::sun::awt::AWTAccessor$FileDialogAccessor;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $WFileDialogPeer$1 = ::sun::awt::windows::WFileDialogPeer$1;
 using $WFileDialogPeer$2 = ::sun::awt::windows::WFileDialogPeer$2;
 using $WFileDialogPeer$3 = ::sun::awt::windows::WFileDialogPeer$3;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WToolkit = ::sun::awt::windows::WToolkit;
 using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
 using $Region = ::sun::java2d::pipe::Region;
@@ -461,7 +453,7 @@ void WFileDialogPeer::finalize() {
 void WFileDialogPeer::setFilterString($String* allFilter) {
 	$init(WFileDialogPeer);
 	$prepareNativeStatic(WFileDialogPeer, setFilterString, void, $String* allFilter);
-	$invokeNativeStatic(WFileDialogPeer, setFilterString, allFilter);
+	$invokeNativeStatic(allFilter);
 	$finishNativeStatic();
 }
 
@@ -498,7 +490,7 @@ void WFileDialogPeer::initialize() {
 
 void WFileDialogPeer::_dispose() {
 	$prepareNative(WFileDialogPeer, _dispose, void);
-	$invokeNative(WFileDialogPeer, _dispose);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -509,13 +501,13 @@ void WFileDialogPeer::disposeImpl() {
 
 void WFileDialogPeer::_show() {
 	$prepareNative(WFileDialogPeer, _show, void);
-	$invokeNative(WFileDialogPeer, _show);
+	$invokeNative();
 	$finishNative();
 }
 
 void WFileDialogPeer::_hide() {
 	$prepareNative(WFileDialogPeer, _hide, void);
-	$invokeNative(WFileDialogPeer, _hide);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -625,13 +617,13 @@ void WFileDialogPeer::blockWindows($List* toBlock) {
 
 void WFileDialogPeer::toFront() {
 	$prepareNative(WFileDialogPeer, toFront, void);
-	$invokeNative(WFileDialogPeer, toFront);
+	$invokeNative();
 	$finishNative();
 }
 
 void WFileDialogPeer::toBack() {
 	$prepareNative(WFileDialogPeer, toBack, void);
-	$invokeNative(WFileDialogPeer, toBack);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -713,7 +705,7 @@ void WFileDialogPeer::setZOrder($ComponentPeer* above) {
 void WFileDialogPeer::initIDs() {
 	$init(WFileDialogPeer);
 	$prepareNativeStatic(WFileDialogPeer, initIDs, void);
-	$invokeNativeStatic(WFileDialogPeer, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -744,7 +736,7 @@ bool WFileDialogPeer::isMultipleMode() {
 $Point* WFileDialogPeer::getLocationOnScreen() {
 	$var($Point, $ret, nullptr);
 	$prepareNative(WFileDialogPeer, getLocationOnScreen, $Point*);
-	$assign($ret, $invokeNative(WFileDialogPeer, getLocationOnScreen));
+	$assign($ret, $invokeNativeObject());
 	$finishNative();
 	return $ret;
 }

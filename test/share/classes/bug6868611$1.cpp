@@ -5,14 +5,11 @@
 #include <javax/swing/filechooser/FileSystemView.h>
 #include <jcpp.h>
 
-using $FileArray = $Array<::java::io::File>;
 using $bug6868611 = ::bug6868611;
-using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $FileSystemView = ::javax::swing::filechooser::FileSystemView;
 
 $MethodInfo _bug6868611$1_MethodInfo_[] = {

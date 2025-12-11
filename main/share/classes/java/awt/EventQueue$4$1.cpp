@@ -6,7 +6,6 @@
 #include <java/awt/EventQueue.h>
 #include <jcpp.h>
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $EventDispatchThread = ::java::awt::EventDispatchThread;
 using $EventQueue = ::java::awt::EventQueue;
 using $EventQueue$4 = ::java::awt::EventQueue$4;
@@ -15,7 +14,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 
 namespace java {
 	namespace awt {

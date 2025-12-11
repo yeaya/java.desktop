@@ -18,7 +18,6 @@ using $Exception = ::java::lang::Exception;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $MissingResourceException = ::java::util::MissingResourceException;
 using $ResourceBundle = ::java::util::ResourceBundle;
 using $WMenuItemPeer = ::sun::awt::windows::WMenuItemPeer;

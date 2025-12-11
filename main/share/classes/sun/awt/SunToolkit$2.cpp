@@ -12,7 +12,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $PeerEvent = ::sun::awt::PeerEvent;
-using $SunToolkit = ::sun::awt::SunToolkit;
 
 namespace sun {
 	namespace awt {

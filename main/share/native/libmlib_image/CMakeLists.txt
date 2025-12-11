@@ -1,6 +1,7 @@
 #machine generated
 
 add_definitions(-DLIBRARY_NAME=mlib_image)
+add_definitions(-D__USE_J2D_NAMES -D__MEDIALIB_OLD_NAMES -DMLIB_NO_LIBSUNMATH -DMLIB_OS64BIT)
 
 aux_source_directory(. SRCS)
 file(GLOB HEADERS *.h *.hpp)

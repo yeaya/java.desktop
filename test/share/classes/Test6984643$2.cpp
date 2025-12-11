@@ -4,12 +4,10 @@
 #include <javax/swing/JFileChooser.h>
 #include <jcpp.h>
 
-using $Test6984643 = ::Test6984643;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JFileChooser = ::javax::swing::JFileChooser;
 
 $MethodInfo _Test6984643$2_MethodInfo_[] = {

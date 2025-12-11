@@ -4,13 +4,11 @@
 #include <bug4235420.h>
 #include <jcpp.h>
 
-using $bug4235420 = ::bug4235420;
 using $bug4235420$Table = ::bug4235420$Table;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 
 $MethodInfo _bug4235420$1_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(bug4235420$1::*)()>(&bug4235420$1::init$))},

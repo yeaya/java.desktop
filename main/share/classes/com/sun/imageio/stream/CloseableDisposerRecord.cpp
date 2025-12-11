@@ -9,7 +9,6 @@ using $IOException = ::java::io::IOException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DisposerRecord = ::sun::java2d::DisposerRecord;
 
 namespace com {
 	namespace sun {

@@ -5,7 +5,6 @@
 #include <jcpp.h>
 
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $BeanContextSupport = ::java::beans::beancontext::BeanContextSupport;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DefaultHighlighter = ::javax::swing::text::DefaultHighlighter;
-using $Highlighter$Highlight = ::javax::swing::text::Highlighter$Highlight;
 using $Highlighter$HighlightPainter = ::javax::swing::text::Highlighter$HighlightPainter;
 using $Position = ::javax::swing::text::Position;
 

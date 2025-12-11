@@ -47,7 +47,6 @@
 #undef SHIFT_DOWN_MASK
 #undef SHIFT_MASK
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $IllegalComponentStateException = ::java::awt::IllegalComponentStateException;
@@ -57,7 +56,6 @@ using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseEvent$1 = ::java::awt::event::MouseEvent$1;
 using $NativeLibLoader = ::java::awt::event::NativeLibLoader;
 using $ObjectInputStream = ::java::io::ObjectInputStream;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
@@ -155,7 +153,7 @@ int32_t MouseEvent::cachedNumberOfButtons = 0;
 void MouseEvent::initIDs() {
 	$init(MouseEvent);
 	$prepareNativeStatic(MouseEvent, initIDs, void);
-	$invokeNativeStatic(MouseEvent, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

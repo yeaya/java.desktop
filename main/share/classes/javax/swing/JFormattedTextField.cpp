@@ -72,7 +72,6 @@ using $NamedAttribute = ::java::lang::NamedAttribute;
 using $Number = ::java::lang::Number;
 using $Runnable = ::java::lang::Runnable;
 using $AttributedCharacterIterator = ::java::text::AttributedCharacterIterator;
-using $CharacterIterator = ::java::text::CharacterIterator;
 using $DateFormat = ::java::text::DateFormat;
 using $DecimalFormat = ::java::text::DecimalFormat;
 using $Format = ::java::text::Format;

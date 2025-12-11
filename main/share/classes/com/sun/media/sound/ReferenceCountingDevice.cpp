@@ -6,8 +6,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Receiver = ::javax::sound::midi::Receiver;
-using $Transmitter = ::javax::sound::midi::Transmitter;
 
 namespace com {
 	namespace sun {

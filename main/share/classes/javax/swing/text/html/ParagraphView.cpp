@@ -39,7 +39,6 @@
 #undef X_AXIS
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
 using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;

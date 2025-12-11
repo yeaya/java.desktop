@@ -9,7 +9,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $StringBuffer = ::java::lang::StringBuffer;
-using $StandardGlyphVector = ::sun::font::StandardGlyphVector;
 
 namespace sun {
 	namespace font {

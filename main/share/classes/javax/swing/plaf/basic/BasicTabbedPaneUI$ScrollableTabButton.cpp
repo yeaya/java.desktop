@@ -12,7 +12,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UIManager = ::javax::swing::UIManager;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $BasicArrowButton = ::javax::swing::plaf::basic::BasicArrowButton;
 using $BasicTabbedPaneUI = ::javax::swing::plaf::basic::BasicTabbedPaneUI;
 

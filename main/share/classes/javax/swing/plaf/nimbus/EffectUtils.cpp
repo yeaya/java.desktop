@@ -23,7 +23,6 @@
 
 using $AlphaComposite = ::java::awt::AlphaComposite;
 using $Composite = ::java::awt::Composite;
-using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;

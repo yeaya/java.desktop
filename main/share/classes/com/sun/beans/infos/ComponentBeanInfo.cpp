@@ -9,7 +9,6 @@
 
 using $PropertyDescriptorArray = $Array<::java::beans::PropertyDescriptor>;
 using $Component = ::java::awt::Component;
-using $FeatureDescriptor = ::java::beans::FeatureDescriptor;
 using $IntrospectionException = ::java::beans::IntrospectionException;
 using $PropertyDescriptor = ::java::beans::PropertyDescriptor;
 using $SimpleBeanInfo = ::java::beans::SimpleBeanInfo;

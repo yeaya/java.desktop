@@ -30,7 +30,6 @@
 using $ColorArray = $Array<::java::awt::Color>;
 using $Color = ::java::awt::Color;
 using $Graphics2D = ::java::awt::Graphics2D;
-using $LinearGradientPaint = ::java::awt::LinearGradientPaint;
 using $MultipleGradientPaint = ::java::awt::MultipleGradientPaint;
 using $Paint = ::java::awt::Paint;
 using $Shape = ::java::awt::Shape;

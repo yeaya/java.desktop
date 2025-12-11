@@ -17,7 +17,6 @@ using $NullPointerException = ::java::lang::NullPointerException;
 using $Arrays = ::java::util::Arrays;
 using $Collection = ::java::util::Collection;
 using $Iterator = ::java::util::Iterator;
-using $List = ::java::util::List;
 
 namespace java {
 	namespace beans {

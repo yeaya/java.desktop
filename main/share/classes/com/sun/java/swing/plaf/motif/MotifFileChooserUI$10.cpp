@@ -13,7 +13,6 @@
 #include <jcpp.h>
 
 using $MotifFileChooserUI = ::com::sun::java::swing::plaf::motif::MotifFileChooserUI;
-using $Point = ::java::awt::Point;
 using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $File = ::java::io::File;
@@ -26,7 +25,6 @@ using $JFileChooser = ::javax::swing::JFileChooser;
 using $JList = ::javax::swing::JList;
 using $ListModel = ::javax::swing::ListModel;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 using $SwingUtilities2 = ::sun::swing::SwingUtilities2;
 
 namespace com {

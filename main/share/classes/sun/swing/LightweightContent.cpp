@@ -25,7 +25,6 @@ using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $JComponent = ::javax::swing::JComponent;
 
 namespace sun {
 	namespace swing {

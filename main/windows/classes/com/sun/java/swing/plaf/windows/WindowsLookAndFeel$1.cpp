@@ -16,7 +16,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UIDefaults = ::javax::swing::UIDefaults;
-using $UIDefaults$ActiveValue = ::javax::swing::UIDefaults$ActiveValue;
 
 namespace com {
 	namespace sun {

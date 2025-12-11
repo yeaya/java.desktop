@@ -14,7 +14,6 @@ using $DefaultPersistenceDelegate = ::java::beans::DefaultPersistenceDelegate;
 using $Encoder = ::java::beans::Encoder;
 using $ExceptionListener = ::java::beans::ExceptionListener;
 using $Expression = ::java::beans::Expression;
-using $MetaData = ::java::beans::MetaData;
 using $PersistenceDelegate = ::java::beans::PersistenceDelegate;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;

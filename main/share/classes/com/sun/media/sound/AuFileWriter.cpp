@@ -56,7 +56,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $Objects = ::java::util::Objects;
 using $AudioFileFormat = ::javax::sound::sampled::AudioFileFormat;
 using $AudioFileFormat$Type = ::javax::sound::sampled::AudioFileFormat$Type;
@@ -64,7 +63,6 @@ using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 using $AudioFormat$Encoding = ::javax::sound::sampled::AudioFormat$Encoding;
 using $AudioInputStream = ::javax::sound::sampled::AudioInputStream;
 using $AudioSystem = ::javax::sound::sampled::AudioSystem;
-using $AudioFileWriter = ::javax::sound::sampled::spi::AudioFileWriter;
 
 namespace com {
 	namespace sun {

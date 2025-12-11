@@ -4,7 +4,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Clip = ::javax::sound::sampled::Clip;
 
 namespace com {
 	namespace sun {

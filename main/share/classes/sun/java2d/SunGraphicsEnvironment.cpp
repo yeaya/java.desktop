@@ -53,7 +53,6 @@ using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $Toolkit = ::java::awt::Toolkit;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
-using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ClassInfo = ::java::lang::ClassInfo;

@@ -59,14 +59,12 @@ using $ImageObserver = ::java::awt::image::ImageObserver;
 using $RenderedImage = ::java::awt::image::RenderedImage;
 using $RenderContext = ::java::awt::image::renderable::RenderContext;
 using $RenderableImage = ::java::awt::image::renderable::RenderableImage;
-using $PrinterGraphics = ::java::awt::print::PrinterGraphics;
 using $PrinterJob = ::java::awt::print::PrinterJob;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AttributedCharacterIterator = ::java::text::AttributedCharacterIterator;
 using $Map = ::java::util::Map;
-using $PrinterGraphicsConfig = ::sun::print::PrinterGraphicsConfig;
 using $RasterPrinterJob = ::sun::print::RasterPrinterJob;
 
 namespace sun {

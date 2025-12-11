@@ -31,7 +31,6 @@
 
 using $Color = ::java::awt::Color;
 using $Writer = ::java::io::Writer;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Integer = ::java::lang::Integer;

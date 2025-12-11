@@ -14,18 +14,12 @@
 
 #undef TYPE_INT_ARGB
 
-using $bug6923305 = ::bug6923305;
 using $bug6923305$1$1 = ::bug6923305$1$1;
-using $Component = ::java::awt::Component;
-using $Dimension = ::java::awt::Dimension;
-using $Graphics = ::java::awt::Graphics;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $JComponent = ::javax::swing::JComponent;
 using $JSlider = ::javax::swing::JSlider;
 using $SliderUI = ::javax::swing::plaf::SliderUI;
 using $BasicSliderUI = ::javax::swing::plaf::basic::BasicSliderUI;

@@ -14,7 +14,6 @@
 #include <jcpp.h>
 
 using $bug6547087$1 = ::bug6547087$1;
-using $Dimension = ::java::awt::Dimension;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
@@ -25,7 +24,6 @@ using $Callable = ::java::util::concurrent::Callable;
 using $ExecutionException = ::java::util::concurrent::ExecutionException;
 using $FutureTask = ::java::util::concurrent::FutureTask;
 using $RunnableFuture = ::java::util::concurrent::RunnableFuture;
-using $JComponent = ::javax::swing::JComponent;
 using $JPopupMenu$Separator = ::javax::swing::JPopupMenu$Separator;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;

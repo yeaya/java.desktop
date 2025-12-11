@@ -18,7 +18,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Element = ::javax::swing::text::Element;
 using $Position$Bias = ::javax::swing::text::Position$Bias;
-using $View = ::javax::swing::text::View;
 using $ViewFactory = ::javax::swing::text::ViewFactory;
 using $BlockView = ::javax::swing::text::html::BlockView;
 using $HTMLEditorKit$HTMLFactory = ::javax::swing::text::html::HTMLEditorKit$HTMLFactory;

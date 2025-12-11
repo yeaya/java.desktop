@@ -34,7 +34,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JFileChooser = ::javax::swing::JFileChooser;
 using $JOptionPane = ::javax::swing::JOptionPane;
 using $FileSystemView = ::javax::swing::filechooser::FileSystemView;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 using $FilePane = ::sun::swing::FilePane;
 
 namespace com {

@@ -14,7 +14,6 @@
 #undef GETTER
 #undef SETTER
 
-using $ElementHandler = ::com::sun::beans::decoder::ElementHandler;
 using $FieldElementHandler = ::com::sun::beans::decoder::FieldElementHandler;
 using $NewElementHandler = ::com::sun::beans::decoder::NewElementHandler;
 using $PropertyElementHandler = ::com::sun::beans::decoder::PropertyElementHandler;

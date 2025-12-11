@@ -40,16 +40,13 @@ using $Border = ::javax::swing::border::Border;
 using $LineBorder = ::javax::swing::border::LineBorder;
 using $DocumentListener = ::javax::swing::event::DocumentListener;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $ComponentView = ::javax::swing::text::ComponentView;
 using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $SimpleAttributeSet = ::javax::swing::text::SimpleAttributeSet;
 using $StyledDocument = ::javax::swing::text::StyledDocument;
-using $View = ::javax::swing::text::View;
 using $CommentView$CommentBorder = ::javax::swing::text::html::CommentView$CommentBorder;
-using $EditableView = ::javax::swing::text::html::EditableView;
 using $HTML$Attribute = ::javax::swing::text::html::HTML$Attribute;
 using $HiddenTagView = ::javax::swing::text::html::HiddenTagView;
 

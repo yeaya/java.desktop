@@ -12,14 +12,12 @@
 
 using $RepaintManagerFPUIScaleTest = ::RepaintManagerFPUIScaleTest;
 using $Component = ::java::awt::Component;
-using $Image = ::java::awt::Image;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DefaultListCellRenderer = ::javax::swing::DefaultListCellRenderer;
 using $Icon = ::javax::swing::Icon;
 using $ImageIcon = ::javax::swing::ImageIcon;
-using $JLabel = ::javax::swing::JLabel;
 using $JList = ::javax::swing::JList;
 
 $MethodInfo _RepaintManagerFPUIScaleTest$TestListCellRenderer_MethodInfo_[] = {

@@ -31,7 +31,6 @@ using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Locale = ::java::util::Locale;
 using $JColorChooser = ::javax::swing::JColorChooser;
 using $JComponent = ::javax::swing::JComponent;
 using $JPanel = ::javax::swing::JPanel;

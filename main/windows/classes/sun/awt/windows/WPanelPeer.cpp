@@ -33,7 +33,6 @@
 #undef HEAVYWEIGHTS
 #undef LIGHTWEIGHTS
 
-using $ComponentArray = $Array<::java::awt::Component>;
 using $AWTEvent = ::java::awt::AWTEvent;
 using $BufferCapabilities = ::java::awt::BufferCapabilities;
 using $BufferCapabilities$FlipContents = ::java::awt::BufferCapabilities$FlipContents;
@@ -55,7 +54,6 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $PanelPeer = ::java::awt::peer::PanelPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
@@ -63,8 +61,6 @@ using $SunGraphicsCallback = ::sun::awt::SunGraphicsCallback;
 using $SunGraphicsCallback$PaintHeavyweightComponentsCallback = ::sun::awt::SunGraphicsCallback$PaintHeavyweightComponentsCallback;
 using $SunGraphicsCallback$PrintHeavyweightComponentsCallback = ::sun::awt::SunGraphicsCallback$PrintHeavyweightComponentsCallback;
 using $WCanvasPeer = ::sun::awt::windows::WCanvasPeer;
-using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $Region = ::sun::java2d::pipe::Region;
 
 namespace sun {
@@ -335,7 +331,7 @@ $Insets* WPanelPeer::getInsets() {
 void WPanelPeer::initIDs() {
 	$init(WPanelPeer);
 	$prepareNativeStatic(WPanelPeer, initIDs, void);
-	$invokeNativeStatic(WPanelPeer, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

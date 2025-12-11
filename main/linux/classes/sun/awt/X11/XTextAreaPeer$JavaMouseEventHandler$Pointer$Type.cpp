@@ -17,9 +17,6 @@ using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $XTextAreaPeer = ::sun::awt::X11::XTextAreaPeer;
-using $XTextAreaPeer$JavaMouseEventHandler = ::sun::awt::X11::XTextAreaPeer$JavaMouseEventHandler;
-using $XTextAreaPeer$JavaMouseEventHandler$Pointer = ::sun::awt::X11::XTextAreaPeer$JavaMouseEventHandler$Pointer;
 
 namespace sun {
 	namespace awt {

@@ -16,7 +16,6 @@
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $HierarchyEvent = ::java::awt::event::HierarchyEvent;
-using $HierarchyListener = ::java::awt::event::HierarchyListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

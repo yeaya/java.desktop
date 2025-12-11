@@ -9,18 +9,15 @@
 #include <javax/swing/JPanel.h>
 #include <jcpp.h>
 
-using $bug6613904 = ::bug6613904;
 using $Container = ::java::awt::Container;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $GroupLayout = ::javax::swing::GroupLayout;
 using $GroupLayout$Alignment = ::javax::swing::GroupLayout$Alignment;
-using $GroupLayout$ParallelGroup = ::javax::swing::GroupLayout$ParallelGroup;
 using $JComponent = ::javax::swing::JComponent;
 using $JPanel = ::javax::swing::JPanel;
 

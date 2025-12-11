@@ -37,7 +37,6 @@ using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $OGLContext = ::sun::java2d::opengl::OGLContext;
 using $OGLRenderQueue = ::sun::java2d::opengl::OGLRenderQueue;
 using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;
-using $BufferedContext = ::sun::java2d::pipe::BufferedContext;
 using $BufferedMaskBlit = ::sun::java2d::pipe::BufferedMaskBlit;
 using $Region = ::sun::java2d::pipe::Region;
 using $RenderQueue = ::sun::java2d::pipe::RenderQueue;

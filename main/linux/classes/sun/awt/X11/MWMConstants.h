@@ -65,23 +65,23 @@ class MWMConstants : public ::java::lang::Object {
 public:
 	MWMConstants();
 	void init$();
-	static const int32_t MWM_HINTS_FUNCTIONS = (1 << 0);
-	static const int32_t MWM_HINTS_DECORATIONS = (1 << 1);
-	static const int32_t MWM_HINTS_INPUT_MODE = (1 << 2);
-	static const int32_t MWM_HINTS_STATUS = (1 << 3);
-	static const int32_t MWM_FUNC_ALL = (1 << 0);
-	static const int32_t MWM_FUNC_RESIZE = (1 << 1);
-	static const int32_t MWM_FUNC_MOVE = (1 << 2);
-	static const int32_t MWM_FUNC_MINIMIZE = (1 << 3);
-	static const int32_t MWM_FUNC_MAXIMIZE = (1 << 4);
-	static const int32_t MWM_FUNC_CLOSE = (1 << 5);
-	static const int32_t MWM_DECOR_ALL = (1 << 0);
-	static const int32_t MWM_DECOR_BORDER = (1 << 1);
-	static const int32_t MWM_DECOR_RESIZEH = (1 << 2);
-	static const int32_t MWM_DECOR_TITLE = (1 << 3);
-	static const int32_t MWM_DECOR_MENU = (1 << 4);
-	static const int32_t MWM_DECOR_MINIMIZE = (1 << 5);
-	static const int32_t MWM_DECOR_MAXIMIZE = (1 << 6);
+	static const int32_t MWM_HINTS_FUNCTIONS = 1; // (1 << 0)
+	static const int32_t MWM_HINTS_DECORATIONS = 2; // (1 << 1)
+	static const int32_t MWM_HINTS_INPUT_MODE = 4; // (1 << 2)
+	static const int32_t MWM_HINTS_STATUS = 8; // (1 << 3)
+	static const int32_t MWM_FUNC_ALL = 1; // (1 << 0)
+	static const int32_t MWM_FUNC_RESIZE = 2; // (1 << 1)
+	static const int32_t MWM_FUNC_MOVE = 4; // (1 << 2)
+	static const int32_t MWM_FUNC_MINIMIZE = 8; // (1 << 3)
+	static const int32_t MWM_FUNC_MAXIMIZE = 16; // (1 << 4)
+	static const int32_t MWM_FUNC_CLOSE = 32; // (1 << 5)
+	static const int32_t MWM_DECOR_ALL = 1; // (1 << 0)
+	static const int32_t MWM_DECOR_BORDER = 2; // (1 << 1)
+	static const int32_t MWM_DECOR_RESIZEH = 4; // (1 << 2)
+	static const int32_t MWM_DECOR_TITLE = 8; // (1 << 3)
+	static const int32_t MWM_DECOR_MENU = 16; // (1 << 4)
+	static const int32_t MWM_DECOR_MINIMIZE = 32; // (1 << 5)
+	static const int32_t MWM_DECOR_MAXIMIZE = 64; // (1 << 6)
 	static const int32_t MWM_INPUT_MODELESS = 0;
 	static const int32_t MWM_INPUT_PRIMARY_APPLICATION_MODAL = 1;
 	static const int32_t MWM_INPUT_SYSTEM_MODAL = 2;

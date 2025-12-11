@@ -6,7 +6,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 
 namespace sun {
 	namespace awt {

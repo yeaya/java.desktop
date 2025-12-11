@@ -3,10 +3,8 @@
 #include <java/util/List.h>
 #include <jcpp.h>
 
-using $WindowPeer = ::java::awt::peer::WindowPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $List = ::java::util::List;
 
 namespace java {
 	namespace awt {

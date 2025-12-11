@@ -8,8 +8,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $Comparable = ::java::lang::Comparable;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Comparator = ::java::util::Comparator;
-using $TableRowSorter = ::javax::swing::table::TableRowSorter;
 
 namespace javax {
 	namespace swing {

@@ -69,7 +69,6 @@ using $Action = ::javax::swing::Action;
 using $InputMap = ::javax::swing::InputMap;
 using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
-using $JFormattedTextField = ::javax::swing::JFormattedTextField;
 using $JPanel = ::javax::swing::JPanel;
 using $JSpinner = ::javax::swing::JSpinner;
 using $JSpinner$DefaultEditor = ::javax::swing::JSpinner$DefaultEditor;

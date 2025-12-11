@@ -14,13 +14,11 @@ using $EventListenerArray = $Array<::java::util::EventListener>;
 using $ChangeListenerMap = ::java::beans::ChangeListenerMap;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $PropertyChangeListenerProxy = ::java::beans::PropertyChangeListenerProxy;
-using $PropertyChangeSupport = ::java::beans::PropertyChangeSupport;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $EventListener = ::java::util::EventListener;
-using $EventListenerProxy = ::java::util::EventListenerProxy;
 
 namespace java {
 	namespace beans {

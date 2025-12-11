@@ -6,8 +6,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Icon = ::javax::swing::Icon;
-using $JMenuItem = ::javax::swing::JMenuItem;
 
 namespace sun {
 	namespace swing {

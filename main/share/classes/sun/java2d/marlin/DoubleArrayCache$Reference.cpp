@@ -20,7 +20,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ArrayCacheConst = ::sun::java2d::marlin::ArrayCacheConst;
-using $ArrayCacheConst$CacheStats = ::sun::java2d::marlin::ArrayCacheConst$CacheStats;
 using $DoubleArrayCache = ::sun::java2d::marlin::DoubleArrayCache;
 using $DoubleArrayCache$Bucket = ::sun::java2d::marlin::DoubleArrayCache$Bucket;
 using $MarlinConst = ::sun::java2d::marlin::MarlinConst;

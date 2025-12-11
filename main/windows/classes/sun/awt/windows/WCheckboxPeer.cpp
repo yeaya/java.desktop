@@ -47,7 +47,6 @@ using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
 using $PaintEvent = ::java::awt::event::PaintEvent;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
-using $CheckboxPeer = ::java::awt::peer::CheckboxPeer;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -55,10 +54,8 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $WCheckboxPeer$1 = ::sun::awt::windows::WCheckboxPeer$1;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WToolkit = ::sun::awt::windows::WToolkit;
 using $Region = ::sun::java2d::pipe::Region;
 
@@ -308,19 +305,19 @@ void WCheckboxPeer::finalize() {
 
 void WCheckboxPeer::setState(bool state) {
 	$prepareNative(WCheckboxPeer, setState, void, bool state);
-	$invokeNative(WCheckboxPeer, setState, state);
+	$invokeNative(state);
 	$finishNative();
 }
 
 void WCheckboxPeer::setCheckboxGroup($CheckboxGroup* g) {
 	$prepareNative(WCheckboxPeer, setCheckboxGroup, void, $CheckboxGroup* g);
-	$invokeNative(WCheckboxPeer, setCheckboxGroup, g);
+	$invokeNative(g);
 	$finishNative();
 }
 
 void WCheckboxPeer::setLabel($String* label) {
 	$prepareNative(WCheckboxPeer, setLabel, void, $String* label);
-	$invokeNative(WCheckboxPeer, setLabel, label);
+	$invokeNative(label);
 	$finishNative();
 }
 
@@ -328,7 +325,7 @@ int32_t WCheckboxPeer::getCheckMarkSize() {
 	$init(WCheckboxPeer);
 	int32_t $ret = 0;
 	$prepareNativeStatic(WCheckboxPeer, getCheckMarkSize, int32_t);
-	$ret = $invokeNativeStatic(WCheckboxPeer, getCheckMarkSize);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -355,7 +352,7 @@ void WCheckboxPeer::init$($Checkbox* target) {
 
 void WCheckboxPeer::create($WComponentPeer* parent) {
 	$prepareNative(WCheckboxPeer, create, void, $WComponentPeer* parent);
-	$invokeNative(WCheckboxPeer, create, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 

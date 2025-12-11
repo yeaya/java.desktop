@@ -9,8 +9,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Callable = ::java::util::concurrent::Callable;
-using $FilePane = ::sun::swing::FilePane;
 using $FilePane$DetailsTableRowSorter = ::sun::swing::FilePane$DetailsTableRowSorter;
 
 namespace sun {

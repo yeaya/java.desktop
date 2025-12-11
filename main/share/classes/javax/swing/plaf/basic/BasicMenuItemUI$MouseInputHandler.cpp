@@ -12,7 +12,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $MouseInputListener = ::javax::swing::event::MouseInputListener;
 using $BasicMenuItemUI = ::javax::swing::plaf::basic::BasicMenuItemUI;
 using $BasicMenuItemUI$Handler = ::javax::swing::plaf::basic::BasicMenuItemUI$Handler;
 

@@ -52,7 +52,6 @@ using $List = ::java::util::List;
 using $AbstractExecutorService = ::java::util::concurrent::AbstractExecutorService;
 using $BlockingQueue = ::java::util::concurrent::BlockingQueue;
 using $Callable = ::java::util::concurrent::Callable;
-using $Executor = ::java::util::concurrent::Executor;
 using $ExecutorService = ::java::util::concurrent::ExecutorService;
 using $FutureTask = ::java::util::concurrent::FutureTask;
 using $LinkedBlockingQueue = ::java::util::concurrent::LinkedBlockingQueue;

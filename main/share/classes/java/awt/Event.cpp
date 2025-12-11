@@ -95,7 +95,6 @@ using $intArray2 = $Array<int32_t, 2>;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $Toolkit = ::java::awt::Toolkit;
 using $KeyEvent = ::java::awt::event::KeyEvent;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -245,7 +244,7 @@ $intArray2* Event::actionKeyCodes = nullptr;
 void Event::initIDs() {
 	$init(Event);
 	$prepareNativeStatic(Event, initIDs, void);
-	$invokeNativeStatic(Event, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

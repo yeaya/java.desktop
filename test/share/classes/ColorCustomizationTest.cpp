@@ -34,7 +34,6 @@ using $ColorCustomizationTest$1 = ::ColorCustomizationTest$1;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Graphics = ::java::awt::Graphics;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $PrintStream = ::java::io::PrintStream;
 using $Boolean = ::java::lang::Boolean;

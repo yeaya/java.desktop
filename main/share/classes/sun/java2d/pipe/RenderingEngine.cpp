@@ -37,7 +37,6 @@ using $Constructor = ::java::lang::reflect::Constructor;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $PathConsumer2D = ::sun::awt::geom::PathConsumer2D;
-using $AATileGenerator = ::sun::java2d::pipe::AATileGenerator;
 using $Region = ::sun::java2d::pipe::Region;
 using $RenderingEngine$Tracer = ::sun::java2d::pipe::RenderingEngine$Tracer;
 using $GetPropertyAction = ::sun::security::action::GetPropertyAction;

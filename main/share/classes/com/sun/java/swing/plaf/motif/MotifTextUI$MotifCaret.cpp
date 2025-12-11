@@ -13,9 +13,7 @@
 #include <javax/swing/text/JTextComponent.h>
 #include <jcpp.h>
 
-using $MotifTextUI = ::com::sun::java::swing::plaf::motif::MotifTextUI;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Rectangle = ::java::awt::Rectangle;
 using $FocusEvent = ::java::awt::event::FocusEvent;
@@ -24,7 +22,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $TextUI = ::javax::swing::plaf::TextUI;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $DefaultCaret = ::javax::swing::text::DefaultCaret;
 using $JTextComponent = ::javax::swing::text::JTextComponent;

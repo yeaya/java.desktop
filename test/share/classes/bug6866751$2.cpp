@@ -12,19 +12,15 @@
 
 using $bug6866751 = ::bug6866751;
 using $Point = ::java::awt::Point;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $JComponent = ::javax::swing::JComponent;
 using $JFrame = ::javax::swing::JFrame;
 using $JTextArea = ::javax::swing::JTextArea;
 using $Caret = ::javax::swing::text::Caret;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $MethodInfo _bug6866751$2_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(bug6866751$2::*)()>(&bug6866751$2::init$))},

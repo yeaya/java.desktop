@@ -8,13 +8,11 @@
 #include <javax/swing/plaf/synth/SynthSliderUI.h>
 #include <jcpp.h>
 
-using $bug6918861 = ::bug6918861;
 using $bug6918861$HackedSynthSliderUI = ::bug6918861$HackedSynthSliderUI;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JSlider = ::javax::swing::JSlider;
 using $SliderUI = ::javax::swing::plaf::SliderUI;

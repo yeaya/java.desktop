@@ -122,11 +122,9 @@
 
 using $JPEGHuffmanTableArray = $Array<::javax::imageio::plugins::jpeg::JPEGHuffmanTable>;
 using $JPEGQTableArray = $Array<::javax::imageio::plugins::jpeg::JPEGQTable>;
-using $intArray2 = $Array<int32_t, 2>;
 using $ImageTypeIterator = ::com::sun::imageio::plugins::jpeg::ImageTypeIterator;
 using $ImageTypeProducer = ::com::sun::imageio::plugins::jpeg::ImageTypeProducer;
 using $JFIFMarkerSegment = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment;
-using $JFIFMarkerSegment$JFIFThumbRGB = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment$JFIFThumbRGB;
 using $JPEG = ::com::sun::imageio::plugins::jpeg::JPEG;
 using $JPEGBuffer = ::com::sun::imageio::plugins::jpeg::JPEGBuffer;
 using $JPEGImageReader$1 = ::com::sun::imageio::plugins::jpeg::JPEGImageReader$1;
@@ -134,7 +132,6 @@ using $JPEGImageReader$2 = ::com::sun::imageio::plugins::jpeg::JPEGImageReader$2
 using $JPEGImageReader$CallBackLock = ::com::sun::imageio::plugins::jpeg::JPEGImageReader$CallBackLock;
 using $JPEGImageReader$JPEGReaderDisposerRecord = ::com::sun::imageio::plugins::jpeg::JPEGImageReader$JPEGReaderDisposerRecord;
 using $JPEGMetadata = ::com::sun::imageio::plugins::jpeg::JPEGMetadata;
-using $MarkerSegment = ::com::sun::imageio::plugins::jpeg::MarkerSegment;
 using $SOSMarkerSegment = ::com::sun::imageio::plugins::jpeg::SOSMarkerSegment;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
@@ -167,7 +164,6 @@ using $InternalError = ::java::lang::InternalError;
 using $Long = ::java::lang::Long;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
@@ -177,7 +173,6 @@ using $Arrays = ::java::util::Arrays;
 using $Iterator = ::java::util::Iterator;
 using $List = ::java::util::List;
 using $IIOException = ::javax::imageio::IIOException;
-using $IIOParam = ::javax::imageio::IIOParam;
 using $ImageReadParam = ::javax::imageio::ImageReadParam;
 using $ImageReader = ::javax::imageio::ImageReader;
 using $ImageTypeSpecifier = ::javax::imageio::ImageTypeSpecifier;
@@ -362,7 +357,7 @@ void JPEGImageReader::initStatic() {
 void JPEGImageReader::initReaderIDs($Class* iisClass, $Class* qTableClass, $Class* huffClass) {
 	$init(JPEGImageReader);
 	$prepareNativeStatic(JPEGImageReader, initReaderIDs, void, $Class* iisClass, $Class* qTableClass, $Class* huffClass);
-	$invokeNativeStatic(JPEGImageReader, initReaderIDs, iisClass, qTableClass, huffClass);
+	$invokeNativeStatic(iisClass, qTableClass, huffClass);
 	$finishNativeStatic();
 }
 
@@ -409,7 +404,7 @@ void JPEGImageReader::init$($ImageReaderSpi* originator) {
 int64_t JPEGImageReader::initJPEGImageReader() {
 	int64_t $ret = 0;
 	$prepareNative(JPEGImageReader, initJPEGImageReader, int64_t);
-	$ret = $invokeNative(JPEGImageReader, initJPEGImageReader);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -526,7 +521,7 @@ int64_t JPEGImageReader::skipInputBytes(int64_t n) {
 
 void JPEGImageReader::setSource(int64_t structPointer) {
 	$prepareNative(JPEGImageReader, setSource, void, int64_t structPointer);
-	$invokeNative(JPEGImageReader, setSource, structPointer);
+	$invokeNative(structPointer);
 	$finishNative();
 }
 
@@ -1222,7 +1217,7 @@ bool JPEGImageReader::readNativeHeader(bool reset) {
 bool JPEGImageReader::readImageHeader(int64_t structPointer, bool clearBuffer, bool reset) {
 	bool $ret = false;
 	$prepareNative(JPEGImageReader, readImageHeader, bool, int64_t structPointer, bool clearBuffer, bool reset);
-	$ret = $invokeNative(JPEGImageReader, readImageHeader, structPointer, clearBuffer, reset);
+	$ret = $invokeNative(structPointer, clearBuffer, reset);
 	$finishNative();
 	return $ret;
 }
@@ -1496,7 +1491,7 @@ void JPEGImageReader::checkColorConversion($BufferedImage* image, $ImageReadPara
 
 void JPEGImageReader::setOutColorSpace(int64_t structPointer, int32_t id) {
 	$prepareNative(JPEGImageReader, setOutColorSpace, void, int64_t structPointer, int32_t id);
-	$invokeNative(JPEGImageReader, setOutColorSpace, structPointer, id);
+	$invokeNative(structPointer, id);
 	$finishNative();
 }
 
@@ -1878,14 +1873,14 @@ void JPEGImageReader::thumbnailComplete() {
 bool JPEGImageReader::readImage(int32_t imageIndex, int64_t structPointer, $bytes* buffer, int32_t numRasterBands, $ints* srcBands, $ints* bandSizes, int32_t sourceXOffset, int32_t sourceYOffset, int32_t sourceWidth, int32_t sourceHeight, int32_t periodX, int32_t periodY, $JPEGQTableArray* abbrevQTables, $JPEGHuffmanTableArray* abbrevDCHuffmanTables, $JPEGHuffmanTableArray* abbrevACHuffmanTables, int32_t minProgressivePass, int32_t maxProgressivePass, bool wantUpdates) {
 	bool $ret = false;
 	$prepareNative(JPEGImageReader, readImage, bool, int32_t imageIndex, int64_t structPointer, $bytes* buffer, int32_t numRasterBands, $ints* srcBands, $ints* bandSizes, int32_t sourceXOffset, int32_t sourceYOffset, int32_t sourceWidth, int32_t sourceHeight, int32_t periodX, int32_t periodY, $JPEGQTableArray* abbrevQTables, $JPEGHuffmanTableArray* abbrevDCHuffmanTables, $JPEGHuffmanTableArray* abbrevACHuffmanTables, int32_t minProgressivePass, int32_t maxProgressivePass, bool wantUpdates);
-	$ret = $invokeNative(JPEGImageReader, readImage, imageIndex, structPointer, buffer, numRasterBands, srcBands, bandSizes, sourceXOffset, sourceYOffset, sourceWidth, sourceHeight, periodX, periodY, abbrevQTables, abbrevDCHuffmanTables, abbrevACHuffmanTables, minProgressivePass, maxProgressivePass, wantUpdates);
+	$ret = $invokeNative(imageIndex, structPointer, buffer, numRasterBands, srcBands, bandSizes, sourceXOffset, sourceYOffset, sourceWidth, sourceHeight, periodX, periodY, abbrevQTables, abbrevDCHuffmanTables, abbrevACHuffmanTables, minProgressivePass, maxProgressivePass, wantUpdates);
 	$finishNative();
 	return $ret;
 }
 
 void JPEGImageReader::clearNativeReadAbortFlag(int64_t structPointer) {
 	$prepareNative(JPEGImageReader, clearNativeReadAbortFlag, void, int64_t structPointer);
-	$invokeNative(JPEGImageReader, clearNativeReadAbortFlag, structPointer);
+	$invokeNative(structPointer);
 	$finishNative();
 }
 
@@ -1909,13 +1904,13 @@ void JPEGImageReader::abort() {
 
 void JPEGImageReader::abortRead(int64_t structPointer) {
 	$prepareNative(JPEGImageReader, abortRead, void, int64_t structPointer);
-	$invokeNative(JPEGImageReader, abortRead, structPointer);
+	$invokeNative(structPointer);
 	$finishNative();
 }
 
 void JPEGImageReader::resetLibraryState(int64_t structPointer) {
 	$prepareNative(JPEGImageReader, resetLibraryState, void, int64_t structPointer);
-	$invokeNative(JPEGImageReader, resetLibraryState, structPointer);
+	$invokeNative(structPointer);
 	$finishNative();
 }
 
@@ -2135,7 +2130,7 @@ void JPEGImageReader::reset() {
 
 void JPEGImageReader::resetReader(int64_t structPointer) {
 	$prepareNative(JPEGImageReader, resetReader, void, int64_t structPointer);
-	$invokeNative(JPEGImageReader, resetReader, structPointer);
+	$invokeNative(structPointer);
 	$finishNative();
 }
 
@@ -2163,7 +2158,7 @@ void JPEGImageReader::dispose() {
 void JPEGImageReader::disposeReader(int64_t structPointer) {
 	$init(JPEGImageReader);
 	$prepareNativeStatic(JPEGImageReader, disposeReader, void, int64_t structPointer);
-	$invokeNativeStatic(JPEGImageReader, disposeReader, structPointer);
+	$invokeNativeStatic(structPointer);
 	$finishNativeStatic();
 }
 

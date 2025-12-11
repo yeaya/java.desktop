@@ -131,19 +131,19 @@ void MaskFill::init$(int64_t pNativePrim, $SurfaceType* srctype, $CompositeType*
 
 void MaskFill::MaskFill$($SunGraphics2D* sg2d, $SurfaceData* sData, $Composite* comp, int32_t x, int32_t y, int32_t w, int32_t h, $bytes* mask, int32_t maskoff, int32_t maskscan) {
 	$prepareNative(MaskFill, MaskFill$, void, $SunGraphics2D* sg2d, $SurfaceData* sData, $Composite* comp, int32_t x, int32_t y, int32_t w, int32_t h, $bytes* mask, int32_t maskoff, int32_t maskscan);
-	$invokeNative(MaskFill, MaskFill$, sg2d, sData, comp, x, y, w, h, mask, maskoff, maskscan);
+	$invokeNative(sg2d, sData, comp, x, y, w, h, mask, maskoff, maskscan);
 	$finishNative();
 }
 
 void MaskFill::FillAAPgram($SunGraphics2D* sg2d, $SurfaceData* sData, $Composite* comp, double x, double y, double dx1, double dy1, double dx2, double dy2) {
 	$prepareNative(MaskFill, FillAAPgram, void, $SunGraphics2D* sg2d, $SurfaceData* sData, $Composite* comp, double x, double y, double dx1, double dy1, double dx2, double dy2);
-	$invokeNative(MaskFill, FillAAPgram, sg2d, sData, comp, x, y, dx1, dy1, dx2, dy2);
+	$invokeNative(sg2d, sData, comp, x, y, dx1, dy1, dx2, dy2);
 	$finishNative();
 }
 
 void MaskFill::DrawAAPgram($SunGraphics2D* sg2d, $SurfaceData* sData, $Composite* comp, double x, double y, double dx1, double dy1, double dx2, double dy2, double lw1, double lw2) {
 	$prepareNative(MaskFill, DrawAAPgram, void, $SunGraphics2D* sg2d, $SurfaceData* sData, $Composite* comp, double x, double y, double dx1, double dy1, double dx2, double dy2, double lw1, double lw2);
-	$invokeNative(MaskFill, DrawAAPgram, sg2d, sData, comp, x, y, dx1, dy1, dx2, dy2, lw1, lw2);
+	$invokeNative(sg2d, sData, comp, x, y, dx1, dy1, dx2, dy2, lw1, lw2);
 	$finishNative();
 }
 

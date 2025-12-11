@@ -29,7 +29,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Enumeration = ::java::util::Enumeration;
 using $Hashtable = ::java::util::Hashtable;
 using $Stack = ::java::util::Stack;
-using $Vector = ::java::util::Vector;
 using $TreeModelEvent = ::javax::swing::event::TreeModelEvent;
 using $AbstractLayoutCache = ::javax::swing::tree::AbstractLayoutCache;
 using $DefaultMutableTreeNode = ::javax::swing::tree::DefaultMutableTreeNode;

@@ -53,7 +53,6 @@ using $JMenu = ::javax::swing::JMenu;
 using $JToolBar = ::javax::swing::JToolBar;
 using $Painter = ::javax::swing::Painter;
 using $UIManager = ::javax::swing::UIManager;
-using $Border = ::javax::swing::border::Border;
 using $UIResource = ::javax::swing::plaf::UIResource;
 using $NimbusLookAndFeel = ::javax::swing::plaf::nimbus::NimbusLookAndFeel;
 using $NimbusStyle = ::javax::swing::plaf::nimbus::NimbusStyle;

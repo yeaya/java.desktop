@@ -9,8 +9,6 @@
 #include <javax/swing/Box.h>
 #include <jcpp.h>
 
-using $Container = ::java::awt::Container;
-using $LayoutManager = ::java::awt::LayoutManager;
 using $DefaultPersistenceDelegate = ::java::beans::DefaultPersistenceDelegate;
 using $Encoder = ::java::beans::Encoder;
 using $Expression = ::java::beans::Expression;

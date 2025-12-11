@@ -5,9 +5,6 @@
 #include <java/awt/Insets.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
-using $Graphics = ::java::awt::Graphics;
-using $Insets = ::java::awt::Insets;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

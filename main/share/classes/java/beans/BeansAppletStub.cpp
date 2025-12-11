@@ -7,7 +7,6 @@
 
 using $Applet = ::java::applet::Applet;
 using $AppletContext = ::java::applet::AppletContext;
-using $AppletStub = ::java::applet::AppletStub;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $FieldInfo = ::java::lang::FieldInfo;

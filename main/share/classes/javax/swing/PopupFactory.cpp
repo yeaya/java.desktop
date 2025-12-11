@@ -33,7 +33,6 @@
 #undef MEDIUM_WEIGHT_POPUP
 #undef TRUE
 
-using $Applet = ::java::applet::Applet;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
@@ -45,7 +44,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $StringBuffer = ::java::lang::StringBuffer;
 using $AccessController = ::java::security::AccessController;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $ClientPropertyKey = ::javax::swing::ClientPropertyKey;
 using $JComponent = ::javax::swing::JComponent;
 using $JPopupMenu = ::javax::swing::JPopupMenu;

@@ -145,7 +145,6 @@ using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $ClassLoader = ::java::lang::ClassLoader;
 using $ClassNotFoundException = ::java::lang::ClassNotFoundException;
-using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalAccessException = ::java::lang::IllegalAccessException;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
@@ -154,7 +153,6 @@ using $Integer = ::java::lang::Integer;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NoSuchFieldException = ::java::lang::NoSuchFieldException;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $NumberFormatException = ::java::lang::NumberFormatException;
 using $Field = ::java::lang::reflect::Field;
 using $MalformedURLException = ::java::net::MalformedURLException;
@@ -201,7 +199,6 @@ using $SAXParseException = ::org::xml::sax::SAXParseException;
 using $DefaultHandler = ::org::xml::sax::helpers::DefaultHandler;
 using $ReflectUtil = ::sun::reflect::misc::ReflectUtil;
 using $DefaultSynthStyle = ::sun::swing::plaf::synth::DefaultSynthStyle;
-using $DefaultSynthStyle$StateInfo = ::sun::swing::plaf::synth::DefaultSynthStyle$StateInfo;
 
 namespace javax {
 	namespace swing {

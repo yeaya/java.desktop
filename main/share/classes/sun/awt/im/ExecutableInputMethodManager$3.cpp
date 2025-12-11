@@ -17,7 +17,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedExceptionAction = ::java::security::PrivilegedExceptionAction;
 using $Iterator = ::java::util::Iterator;
 using $Locale = ::java::util::Locale;
 using $ServiceLoader = ::java::util::ServiceLoader;

@@ -9,7 +9,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $BitSet = ::java::util::BitSet;
-using $GlyphView = ::javax::swing::text::GlyphView;
 
 namespace javax {
 	namespace swing {

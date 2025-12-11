@@ -13,7 +13,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $URL = ::java::net::URL;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Icon = ::javax::swing::Icon;
 using $ImageIcon = ::javax::swing::ImageIcon;
 using $ServiceDialog = ::sun::print::ServiceDialog;

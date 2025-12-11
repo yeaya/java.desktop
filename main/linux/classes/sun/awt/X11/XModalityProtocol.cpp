@@ -6,8 +6,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $XDialogPeer = ::sun::awt::X11::XDialogPeer;
-using $XWindowPeer = ::sun::awt::X11::XWindowPeer;
 
 namespace sun {
 	namespace awt {

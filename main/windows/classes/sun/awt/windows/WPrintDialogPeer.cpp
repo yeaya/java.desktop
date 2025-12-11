@@ -70,7 +70,6 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $DialogPeer = ::java::awt::peer::DialogPeer;
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
@@ -78,19 +77,13 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $ThreadGroup = ::java::lang::ThreadGroup;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $Iterator = ::java::util::Iterator;
 using $List = ::java::util::List;
 using $Vector = ::java::util::Vector;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WPrintDialog = ::sun::awt::windows::WPrintDialog;
 using $WToolkit = ::sun::awt::windows::WToolkit;
 using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
@@ -440,7 +433,7 @@ void WPrintDialogPeer::disposeImpl() {
 bool WPrintDialogPeer::_show() {
 	bool $ret = false;
 	$prepareNative(WPrintDialogPeer, _show, bool);
-	$ret = $invokeNative(WPrintDialogPeer, _show);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -507,13 +500,13 @@ void WPrintDialogPeer::blockWindows($List* toBlock) {
 
 void WPrintDialogPeer::toFront() {
 	$prepareNative(WPrintDialogPeer, toFront, void);
-	$invokeNative(WPrintDialogPeer, toFront);
+	$invokeNative();
 	$finishNative();
 }
 
 void WPrintDialogPeer::toBack() {
 	$prepareNative(WPrintDialogPeer, toBack, void);
-	$invokeNative(WPrintDialogPeer, toBack);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -592,7 +585,7 @@ void WPrintDialogPeer::setZOrder($ComponentPeer* above) {
 void WPrintDialogPeer::initIDs() {
 	$init(WPrintDialogPeer);
 	$prepareNativeStatic(WPrintDialogPeer, initIDs, void);
-	$invokeNativeStatic(WPrintDialogPeer, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

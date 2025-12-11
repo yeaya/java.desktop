@@ -7,15 +7,9 @@
 #include <sun/java2d/StateTrackableDelegate.h>
 #include <jcpp.h>
 
-using $DataBuffer = ::java::awt::image::DataBuffer;
-using $DataBufferByte = ::java::awt::image::DataBufferByte;
-using $DataBufferInt = ::java::awt::image::DataBufferInt;
-using $DataBufferUShort = ::java::awt::image::DataBufferUShort;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SunWritableRaster = ::sun::awt::image::SunWritableRaster;
-using $StateTrackableDelegate = ::sun::java2d::StateTrackableDelegate;
 
 namespace sun {
 	namespace awt {

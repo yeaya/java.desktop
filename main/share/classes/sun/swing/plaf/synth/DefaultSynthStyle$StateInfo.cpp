@@ -22,10 +22,8 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractMap = ::java::util::AbstractMap;
 using $Arrays = ::java::util::Arrays;
 using $HashMap = ::java::util::HashMap;
-using $List = ::java::util::List;
 using $Map = ::java::util::Map;
 using $ColorType = ::javax::swing::plaf::synth::ColorType;
-using $DefaultSynthStyle = ::sun::swing::plaf::synth::DefaultSynthStyle;
 
 namespace sun {
 	namespace swing {

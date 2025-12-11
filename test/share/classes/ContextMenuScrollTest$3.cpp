@@ -4,9 +4,7 @@
 #include <java/awt/event/ActionEvent.h>
 #include <jcpp.h>
 
-using $ContextMenuScrollTest = ::ContextMenuScrollTest;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

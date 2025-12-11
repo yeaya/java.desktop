@@ -20,7 +20,6 @@
 
 using $Component$BaselineResizeBehavior = ::java::awt::Component$BaselineResizeBehavior;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalStateException = ::java::lang::IllegalStateException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -31,7 +30,6 @@ using $List = ::java::util::List;
 using $GroupLayout = ::javax::swing::GroupLayout;
 using $GroupLayout$1 = ::javax::swing::GroupLayout$1;
 using $GroupLayout$Alignment = ::javax::swing::GroupLayout$Alignment;
-using $GroupLayout$Group = ::javax::swing::GroupLayout$Group;
 using $GroupLayout$ParallelGroup = ::javax::swing::GroupLayout$ParallelGroup;
 using $GroupLayout$Spring = ::javax::swing::GroupLayout$Spring;
 

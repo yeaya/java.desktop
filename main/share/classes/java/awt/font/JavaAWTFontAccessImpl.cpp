@@ -13,11 +13,9 @@
 using $NumericShaper = ::java::awt::font::NumericShaper;
 using $TextAttribute = ::java::awt::font::TextAttribute;
 using $AssertionError = ::java::lang::AssertionError;
-using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JavaAWTFontAccess = ::jdk::internal::access::JavaAWTFontAccess;
 
 namespace java {
 	namespace awt {

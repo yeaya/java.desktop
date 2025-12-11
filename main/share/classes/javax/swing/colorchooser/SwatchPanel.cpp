@@ -16,9 +16,7 @@
 #include <javax/swing/colorchooser/SwatchPanel$2.h>
 #include <jcpp.h>
 
-using $ColorArray = $Array<::java::awt::Color>;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
@@ -31,7 +29,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JPanel = ::javax::swing::JPanel;
 using $SwatchPanel$1 = ::javax::swing::colorchooser::SwatchPanel$1;
 using $SwatchPanel$2 = ::javax::swing::colorchooser::SwatchPanel$2;

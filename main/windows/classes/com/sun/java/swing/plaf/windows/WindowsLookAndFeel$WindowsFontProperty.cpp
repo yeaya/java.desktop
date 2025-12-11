@@ -24,12 +24,10 @@ using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $LayoutStyle = ::javax::swing::LayoutStyle;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $FontUIResource = ::javax::swing::plaf::FontUIResource;
 using $UIResource = ::javax::swing::plaf::UIResource;
 using $FontUtilities = ::sun::font::FontUtilities;
-using $DesktopProperty = ::sun::swing::plaf::DesktopProperty;
 
 namespace com {
 	namespace sun {

@@ -3,10 +3,8 @@
 #include <javax/sound/midi/MidiMessage.h>
 #include <jcpp.h>
 
-using $AutoCloseable = ::java::lang::AutoCloseable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $MidiMessage = ::javax::sound::midi::MidiMessage;
 
 namespace javax {
 	namespace sound {

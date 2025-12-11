@@ -9,9 +9,7 @@
 #include <java/lang/reflect/Executable.h>
 #include <jcpp.h>
 
-using $ConstructorArray = $Array<::java::lang::reflect::Constructor>;
 using $ExecutableArray = $Array<::java::lang::reflect::Executable>;
-using $AbstractFinder = ::com::sun::beans::finder::AbstractFinder;
 using $ConstructorFinder = ::com::sun::beans::finder::ConstructorFinder;
 using $Signature = ::com::sun::beans::finder::Signature;
 using $SignatureException = ::com::sun::beans::finder::SignatureException;
@@ -23,7 +21,6 @@ using $Exception = ::java::lang::Exception;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Constructor = ::java::lang::reflect::Constructor;
-using $Executable = ::java::lang::reflect::Executable;
 
 namespace com {
 	namespace sun {

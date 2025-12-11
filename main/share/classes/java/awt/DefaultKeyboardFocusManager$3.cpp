@@ -5,8 +5,6 @@
 #include <sun/awt/AppContext.h>
 #include <jcpp.h>
 
-using $Conditional = ::java::awt::Conditional;
-using $DefaultKeyboardFocusManager = ::java::awt::DefaultKeyboardFocusManager;
 using $SentEvent = ::java::awt::SentEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

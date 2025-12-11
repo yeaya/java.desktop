@@ -38,7 +38,6 @@ using $IllegalAccessException = ::java::lang::IllegalAccessException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InstantiationException = ::java::lang::InstantiationException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $JButton = ::javax::swing::JButton;

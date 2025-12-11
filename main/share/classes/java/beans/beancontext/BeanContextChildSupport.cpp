@@ -26,7 +26,6 @@ using $BeanContext = ::java::beans::beancontext::BeanContext;
 using $BeanContextChild = ::java::beans::beancontext::BeanContextChild;
 using $BeanContextServiceAvailableEvent = ::java::beans::beancontext::BeanContextServiceAvailableEvent;
 using $BeanContextServiceRevokedEvent = ::java::beans::beancontext::BeanContextServiceRevokedEvent;
-using $BeanContextServicesListener = ::java::beans::beancontext::BeanContextServicesListener;
 using $IOException = ::java::io::IOException;
 using $ObjectInputStream = ::java::io::ObjectInputStream;
 using $ObjectOutputStream = ::java::io::ObjectOutputStream;
@@ -34,7 +33,6 @@ using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 
 namespace java {
 	namespace beans {

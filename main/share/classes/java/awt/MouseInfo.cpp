@@ -21,7 +21,6 @@
 #undef WATCH_MOUSE_PERMISSION
 
 using $GraphicsDeviceArray = $Array<::java::awt::GraphicsDevice>;
-using $AWTPermission = ::java::awt::AWTPermission;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;

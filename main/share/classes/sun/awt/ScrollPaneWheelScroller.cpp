@@ -17,15 +17,12 @@
 #undef WHEEL_UNIT_SCROLL
 
 using $Adjustable = ::java::awt::Adjustable;
-using $Container = ::java::awt::Container;
 using $Insets = ::java::awt::Insets;
 using $ScrollPane = ::java::awt::ScrollPane;
-using $MouseEvent = ::java::awt::event::MouseEvent;
 using $MouseWheelEvent = ::java::awt::event::MouseWheelEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $PlatformLogger = ::sun::util::logging::PlatformLogger;
 using $PlatformLogger$Level = ::sun::util::logging::PlatformLogger$Level;
 

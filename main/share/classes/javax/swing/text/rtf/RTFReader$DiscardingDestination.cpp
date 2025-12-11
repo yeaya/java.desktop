@@ -10,7 +10,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Dictionary = ::java::util::Dictionary;
 using $RTFReader = ::javax::swing::text::rtf::RTFReader;
-using $RTFReader$Destination = ::javax::swing::text::rtf::RTFReader$Destination;
 
 namespace javax {
 	namespace swing {

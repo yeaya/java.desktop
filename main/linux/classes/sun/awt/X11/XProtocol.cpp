@@ -20,7 +20,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractMap = ::java::util::AbstractMap;
 using $HashMap = ::java::util::HashMap;
 using $Map = ::java::util::Map;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $XAtom = ::sun::awt::X11::XAtom;
 using $XAtomList = ::sun::awt::X11::XAtomList;
 using $XToolkit = ::sun::awt::X11::XToolkit;

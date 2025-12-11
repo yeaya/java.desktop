@@ -9,7 +9,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AccessibleKeyBinding = ::javax::accessibility::AccessibleKeyBinding;
 using $JLabel$AccessibleJLabel = ::javax::swing::JLabel$AccessibleJLabel;
 using $KeyStroke = ::javax::swing::KeyStroke;
 

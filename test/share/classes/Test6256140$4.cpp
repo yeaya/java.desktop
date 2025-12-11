@@ -24,7 +24,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $JFormattedTextField = ::javax::swing::JFormattedTextField;
-using $JLabel = ::javax::swing::JLabel;
 using $JToolTip = ::javax::swing::JToolTip;
 
 $MethodInfo _Test6256140$4_MethodInfo_[] = {

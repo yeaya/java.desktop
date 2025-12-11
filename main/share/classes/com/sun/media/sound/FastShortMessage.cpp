@@ -9,7 +9,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $InvalidMidiDataException = ::javax::sound::midi::InvalidMidiDataException;
-using $MidiMessage = ::javax::sound::midi::MidiMessage;
 using $ShortMessage = ::javax::sound::midi::ShortMessage;
 
 namespace com {

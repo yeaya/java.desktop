@@ -18,8 +18,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UIDefaults = ::javax::swing::UIDefaults;
-using $UIDefaults$ActiveValue = ::javax::swing::UIDefaults$ActiveValue;
-using $NimbusDefaults = ::javax::swing::plaf::nimbus::NimbusDefaults;
 
 namespace javax {
 	namespace swing {

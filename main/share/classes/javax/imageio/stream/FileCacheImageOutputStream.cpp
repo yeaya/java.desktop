@@ -18,7 +18,6 @@
 
 using $FileAttributeArray = $Array<::java::nio::file::attribute::FileAttribute>;
 using $StreamCloser = ::com::sun::imageio::stream::StreamCloser;
-using $StreamCloser$CloseAction = ::com::sun::imageio::stream::StreamCloser$CloseAction;
 using $File = ::java::io::File;
 using $IOException = ::java::io::IOException;
 using $OutputStream = ::java::io::OutputStream;
@@ -32,7 +31,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $Files = ::java::nio::file::Files;
 using $Path = ::java::nio::file::Path;
-using $FileAttribute = ::java::nio::file::attribute::FileAttribute;
 using $ImageInputStream = ::javax::imageio::stream::ImageInputStream;
 using $ImageInputStreamImpl = ::javax::imageio::stream::ImageInputStreamImpl;
 using $ImageOutputStreamImpl = ::javax::imageio::stream::ImageOutputStreamImpl;

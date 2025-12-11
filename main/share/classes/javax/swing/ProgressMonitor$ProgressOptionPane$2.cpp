@@ -7,17 +7,12 @@
 #include <javax/swing/ProgressMonitor$ProgressOptionPane.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
-using $Dialog = ::java::awt::Dialog;
-using $Window = ::java::awt::Window;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JDialog = ::javax::swing::JDialog;
 using $ProgressMonitor$ProgressOptionPane = ::javax::swing::ProgressMonitor$ProgressOptionPane;
 

@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractListModel = ::javax::swing::AbstractListModel;
-using $JList = ::javax::swing::JList;
 
 namespace javax {
 	namespace swing {

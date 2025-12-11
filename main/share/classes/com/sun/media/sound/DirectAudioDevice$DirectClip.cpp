@@ -34,9 +34,6 @@
 #undef NOT_SPECIFIED
 
 using $ControlArray = $Array<::javax::sound::sampled::Control>;
-using $AbstractDataLine = ::com::sun::media::sound::AbstractDataLine;
-using $AbstractLine = ::com::sun::media::sound::AbstractLine;
-using $AbstractMixer = ::com::sun::media::sound::AbstractMixer;
 using $AutoClosingClip = ::com::sun::media::sound::AutoClosingClip;
 using $DirectAudioDevice = ::com::sun::media::sound::DirectAudioDevice;
 using $DirectAudioDevice$DirectBAOS = ::com::sun::media::sound::DirectAudioDevice$DirectBAOS;
@@ -44,7 +41,6 @@ using $DirectAudioDevice$DirectDL = ::com::sun::media::sound::DirectAudioDevice$
 using $EventDispatcher = ::com::sun::media::sound::EventDispatcher;
 using $JSSecurityManager = ::com::sun::media::sound::JSSecurityManager;
 using $Toolkit = ::com::sun::media::sound::Toolkit;
-using $ByteArrayOutputStream = ::java::io::ByteArrayOutputStream;
 using $IOException = ::java::io::IOException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -54,7 +50,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $OutOfMemoryError = ::java::lang::OutOfMemoryError;
 using $Runnable = ::java::lang::Runnable;
 using $AudioFormat = ::javax::sound::sampled::AudioFormat;

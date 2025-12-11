@@ -7,8 +7,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Map = ::javax::swing::text::html::Map;
-using $Map$RegionContainment = ::javax::swing::text::html::Map$RegionContainment;
 
 namespace javax {
 	namespace swing {

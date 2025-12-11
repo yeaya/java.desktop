@@ -99,7 +99,6 @@ using $Dimension = ::java::awt::Dimension;
 using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
 using $Graphics = ::java::awt::Graphics;
-using $Graphics2D = ::java::awt::Graphics2D;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $Image = ::java::awt::Image;
 using $Point = ::java::awt::Point;
@@ -107,7 +106,6 @@ using $Rectangle = ::java::awt::Rectangle;
 using $SystemColor = ::java::awt::SystemColor;
 using $Window = ::java::awt::Window;
 using $DropTarget = ::java::awt::dnd::DropTarget;
-using $DropTargetPeer = ::java::awt::dnd::peer::DropTargetPeer;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $FocusEvent = ::java::awt::event::FocusEvent;
 using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
@@ -126,20 +124,15 @@ using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
-using $Error = ::java::lang::Error;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalStateException = ::java::lang::IllegalStateException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InternalError = ::java::lang::InternalError;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $Runnable = ::java::lang::Runnable;
-using $EventObject = ::java::util::EventObject;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor;
-using $AppContext = ::sun::awt::AppContext;
 using $GlobalCursorManager = ::sun::awt::GlobalCursorManager;
-using $KeyboardFocusManagerPeerImpl = ::sun::awt::KeyboardFocusManagerPeerImpl;
 using $PaintEventDispatcher = ::sun::awt::PaintEventDispatcher;
 using $RepaintArea = ::sun::awt::RepaintArea;
 using $SunToolkit = ::sun::awt::SunToolkit;
@@ -396,7 +389,7 @@ $Font* WComponentPeer::defaultFont = nullptr;
 bool WComponentPeer::isObscured() {
 	bool $ret = false;
 	$prepareNative(WComponentPeer, isObscured, bool);
-	$ret = $invokeNative(WComponentPeer, isObscured);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -407,25 +400,25 @@ bool WComponentPeer::canDetermineObscurity() {
 
 void WComponentPeer::pShow() {
 	$prepareNative(WComponentPeer, pShow, void);
-	$invokeNative(WComponentPeer, pShow);
+	$invokeNative();
 	$finishNative();
 }
 
 void WComponentPeer::hide() {
 	$prepareNative(WComponentPeer, hide, void);
-	$invokeNative(WComponentPeer, hide);
+	$invokeNative();
 	$finishNative();
 }
 
 void WComponentPeer::enable() {
 	$prepareNative(WComponentPeer, enable, void);
-	$invokeNative(WComponentPeer, enable);
+	$invokeNative();
 	$finishNative();
 }
 
 void WComponentPeer::disable() {
 	$prepareNative(WComponentPeer, disable, void);
-	$invokeNative(WComponentPeer, disable);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -436,7 +429,7 @@ int64_t WComponentPeer::getHWnd() {
 $Point* WComponentPeer::getLocationOnScreen() {
 	$var($Point, $ret, nullptr);
 	$prepareNative(WComponentPeer, getLocationOnScreen, $Point*);
-	$assign($ret, $invokeNative(WComponentPeer, getLocationOnScreen));
+	$assign($ret, $invokeNativeObject());
 	$finishNative();
 	return $ret;
 }
@@ -466,7 +459,7 @@ void WComponentPeer::setEnabled(bool b) {
 
 void WComponentPeer::reshapeNoCheck(int32_t x, int32_t y, int32_t width, int32_t height) {
 	$prepareNative(WComponentPeer, reshapeNoCheck, void, int32_t x, int32_t y, int32_t width, int32_t height);
-	$invokeNative(WComponentPeer, reshapeNoCheck, x, y, width, height);
+	$invokeNative(x, y, width, height);
 	$finishNative();
 }
 
@@ -509,7 +502,7 @@ void WComponentPeer::paintDamagedAreaImmediately() {
 
 void WComponentPeer::updateWindow() {
 	$prepareNative(WComponentPeer, updateWindow, void);
-	$invokeNative(WComponentPeer, updateWindow);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -523,7 +516,7 @@ void WComponentPeer::repaint(int64_t tm, int32_t x, int32_t y, int32_t width, in
 $ints* WComponentPeer::createPrintedPixels(int32_t srcX, int32_t srcY, int32_t srcW, int32_t srcH, int32_t alpha) {
 	$var($ints, $ret, nullptr);
 	$prepareNative(WComponentPeer, createPrintedPixels, $ints*, int32_t srcX, int32_t srcY, int32_t srcW, int32_t srcH, int32_t alpha);
-	$assign($ret, $invokeNative(WComponentPeer, createPrintedPixels, srcX, srcY, srcW, srcH, alpha));
+	$assign($ret, $invokeNativeObject(srcX, srcY, srcW, srcH, alpha));
 	$finishNative();
 	return $ret;
 }
@@ -580,7 +573,7 @@ void WComponentPeer::coalescePaintEvent($PaintEvent* e) {
 
 void WComponentPeer::reshape(int32_t x, int32_t y, int32_t width, int32_t height) {
 	$prepareNative(WComponentPeer, reshape, void, int32_t x, int32_t y, int32_t width, int32_t height);
-	$invokeNative(WComponentPeer, reshape, x, y, width, height);
+	$invokeNative(x, y, width, height);
 	$finishNative();
 }
 
@@ -605,7 +598,7 @@ void WComponentPeer::handleJavaMouseEvent($MouseEvent* e) {
 
 void WComponentPeer::nativeHandleEvent($AWTEvent* e) {
 	$prepareNative(WComponentPeer, nativeHandleEvent, void, $AWTEvent* e);
-	$invokeNative(WComponentPeer, nativeHandleEvent, e);
+	$invokeNative(e);
 	$finishNative();
 }
 
@@ -657,7 +650,7 @@ void WComponentPeer::handleJavaFocusEvent($FocusEvent* fe) {
 
 void WComponentPeer::setFocus(bool doSetFocus) {
 	$prepareNative(WComponentPeer, setFocus, void, bool doSetFocus);
-	$invokeNative(WComponentPeer, setFocus, doSetFocus);
+	$invokeNative(doSetFocus);
 	$finishNative();
 }
 
@@ -852,7 +845,7 @@ $FontMetrics* WComponentPeer::getFontMetrics($Font* font) {
 
 void WComponentPeer::_dispose() {
 	$prepareNative(WComponentPeer, _dispose, void);
-	$invokeNative(WComponentPeer, _dispose);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -891,13 +884,13 @@ $Color* WComponentPeer::getBackgroundNoSync() {
 
 void WComponentPeer::_setForeground(int32_t rgb) {
 	$prepareNative(WComponentPeer, _setForeground, void, int32_t rgb);
-	$invokeNative(WComponentPeer, _setForeground, rgb);
+	$invokeNative(rgb);
 	$finishNative();
 }
 
 void WComponentPeer::_setBackground(int32_t rgb) {
 	$prepareNative(WComponentPeer, _setBackground, void, int32_t rgb);
-	$invokeNative(WComponentPeer, _setBackground, rgb);
+	$invokeNative(rgb);
 	$finishNative();
 }
 
@@ -910,7 +903,7 @@ void WComponentPeer::setFont($Font* f) {
 
 void WComponentPeer::_setFont($Font* f) {
 	$prepareNative(WComponentPeer, _setFont, void, $Font* f);
-	$invokeNative(WComponentPeer, _setFont, f);
+	$invokeNative(f);
 	$finishNative();
 }
 
@@ -1025,7 +1018,7 @@ void WComponentPeer::checkCreation() {
 
 void WComponentPeer::start() {
 	$prepareNative(WComponentPeer, start, void);
-	$invokeNative(WComponentPeer, start);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -1093,13 +1086,13 @@ void WComponentPeer::endLayout() {
 
 void WComponentPeer::beginValidate() {
 	$prepareNative(WComponentPeer, beginValidate, void);
-	$invokeNative(WComponentPeer, beginValidate);
+	$invokeNative();
 	$finishNative();
 }
 
 void WComponentPeer::endValidate() {
 	$prepareNative(WComponentPeer, endValidate, void);
-	$invokeNative(WComponentPeer, endValidate);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -1125,21 +1118,21 @@ void WComponentPeer::removeDropTarget($DropTarget* dt) {
 int64_t WComponentPeer::addNativeDropTarget() {
 	int64_t $ret = 0;
 	$prepareNative(WComponentPeer, addNativeDropTarget, int64_t);
-	$ret = $invokeNative(WComponentPeer, addNativeDropTarget);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
 
 void WComponentPeer::removeNativeDropTarget() {
 	$prepareNative(WComponentPeer, removeNativeDropTarget, void);
-	$invokeNative(WComponentPeer, removeNativeDropTarget);
+	$invokeNative();
 	$finishNative();
 }
 
 bool WComponentPeer::nativeHandlesWheelScrolling() {
 	bool $ret = false;
 	$prepareNative(WComponentPeer, nativeHandlesWheelScrolling, bool);
-	$ret = $invokeNative(WComponentPeer, nativeHandlesWheelScrolling);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -1201,7 +1194,7 @@ bool WComponentPeer::shouldClearRectBeforePaint() {
 
 void WComponentPeer::pSetParent($ComponentPeer* newNativeParent) {
 	$prepareNative(WComponentPeer, pSetParent, void, $ComponentPeer* newNativeParent);
-	$invokeNative(WComponentPeer, pSetParent, newNativeParent);
+	$invokeNative(newNativeParent);
 	$finishNative();
 }
 
@@ -1230,7 +1223,7 @@ void WComponentPeer::disableAcceleration() {
 
 void WComponentPeer::setRectangularShape(int32_t lox, int32_t loy, int32_t hix, int32_t hiy, $Region* region) {
 	$prepareNative(WComponentPeer, setRectangularShape, void, int32_t lox, int32_t loy, int32_t hix, int32_t hiy, $Region* region);
-	$invokeNative(WComponentPeer, setRectangularShape, lox, loy, hix, hiy, region);
+	$invokeNative(lox, loy, hix, hiy, region);
 	$finishNative();
 }
 
@@ -1279,7 +1272,7 @@ void WComponentPeer::setZOrder($ComponentPeer* above) {
 
 void WComponentPeer::setZOrder(int64_t above) {
 	$prepareNative(WComponentPeer, setZOrder, void, int64_t above);
-	$invokeNative(WComponentPeer, setZOrder, above);
+	$invokeNative(above);
 	$finishNative();
 }
 

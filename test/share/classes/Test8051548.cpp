@@ -38,7 +38,6 @@ using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
@@ -51,12 +50,7 @@ using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $Predicate = ::java::util::function::Predicate;
 using $JColorChooser = ::javax::swing::JColorChooser;
 using $JComponent = ::javax::swing::JComponent;
@@ -66,7 +60,6 @@ using $JPanel = ::javax::swing::JPanel;
 using $JTabbedPane = ::javax::swing::JTabbedPane;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $AbstractColorChooserPanel = ::javax::swing::colorchooser::AbstractColorChooserPanel;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 class Test8051548$$Lambda$lambda$main$0 : public $Runnable {
 	$class(Test8051548$$Lambda$lambda$main$0, $NO_CLASS_INIT, $Runnable)

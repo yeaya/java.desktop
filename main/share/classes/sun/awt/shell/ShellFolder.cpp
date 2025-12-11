@@ -67,7 +67,6 @@ using $Constructor = ::java::lang::reflect::Constructor;
 using $URI = ::java::net::URI;
 using $Files = ::java::nio::file::Files;
 using $LinkOption = ::java::nio::file::LinkOption;
-using $Path = ::java::nio::file::Path;
 using $Paths = ::java::nio::file::Paths;
 using $Comparator = ::java::util::Comparator;
 using $Date = ::java::util::Date;

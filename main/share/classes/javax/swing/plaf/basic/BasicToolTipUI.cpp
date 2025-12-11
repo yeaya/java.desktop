@@ -29,9 +29,6 @@
 #undef X_AXIS
 #undef Y_AXIS
 
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
@@ -51,7 +48,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JToolTip = ::javax::swing::JToolTip;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $UIManager = ::javax::swing::UIManager;
-using $Border = ::javax::swing::border::Border;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $ToolTipUI = ::javax::swing::plaf::ToolTipUI;
 using $BasicHTML = ::javax::swing::plaf::basic::BasicHTML;

@@ -26,10 +26,8 @@
 #undef EDGE_NO_OP
 #undef EDGE_ZERO_FILL
 
-using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $Image = ::java::awt::Image;
-using $Rectangle = ::java::awt::Rectangle;
 using $RenderingHints = ::java::awt::RenderingHints;
 using $ColorSpace = ::java::awt::color::ColorSpace;
 using $Point2D = ::java::awt::geom::Point2D;

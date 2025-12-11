@@ -14,7 +14,6 @@
 #include <jcpp.h>
 
 using $ColorArray = $Array<::java::awt::Color>;
-using $Color = ::java::awt::Color;
 using $GradientPaint = ::java::awt::GradientPaint;
 using $Paint = ::java::awt::Paint;
 using $Point2D = ::java::awt::geom::Point2D;

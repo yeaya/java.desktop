@@ -18,7 +18,6 @@
 #include <sun/awt/windows/WWindowPeer.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dialog = ::java::awt::Dialog;
 using $Frame = ::java::awt::Frame;
@@ -32,7 +31,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $WCanvasPeer = ::sun::awt::windows::WCanvasPeer;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WPageDialogPeer = ::sun::awt::windows::WPageDialogPeer;
 using $WPanelPeer = ::sun::awt::windows::WPanelPeer;
 using $WPrintDialog = ::sun::awt::windows::WPrintDialog;
 using $WPrintDialogPeer = ::sun::awt::windows::WPrintDialogPeer;
@@ -102,7 +100,7 @@ void WPageDialog::addNotify() {
 void WPageDialog::initIDs() {
 	$init(WPageDialog);
 	$prepareNativeStatic(WPageDialog, initIDs, void);
-	$invokeNativeStatic(WPageDialog, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

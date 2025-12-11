@@ -27,7 +27,6 @@ using $HTML$Attribute = ::javax::swing::text::html::HTML$Attribute;
 using $HTML$Tag = ::javax::swing::text::html::HTML$Tag;
 using $HTMLDocument$HTMLReader = ::javax::swing::text::html::HTMLDocument$HTMLReader;
 using $HTMLDocument$HTMLReader$SpecialAction = ::javax::swing::text::html::HTMLDocument$HTMLReader$SpecialAction;
-using $HTMLDocument$HTMLReader$TagAction = ::javax::swing::text::html::HTMLDocument$HTMLReader$TagAction;
 
 namespace javax {
 	namespace swing {

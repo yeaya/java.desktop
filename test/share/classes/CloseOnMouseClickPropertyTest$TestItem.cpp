@@ -10,17 +10,14 @@
 #include <javax/swing/UIManager.h>
 #include <jcpp.h>
 
-using $CloseOnMouseClickPropertyTest = ::CloseOnMouseClickPropertyTest;
 using $CloseOnMouseClickPropertyTest$1 = ::CloseOnMouseClickPropertyTest$1;
 using $CloseOnMouseClickPropertyTest$TestType = ::CloseOnMouseClickPropertyTest$TestType;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JCheckBoxMenuItem = ::javax::swing::JCheckBoxMenuItem;
-using $JComponent = ::javax::swing::JComponent;
 using $JMenuItem = ::javax::swing::JMenuItem;
 using $JRadioButtonMenuItem = ::javax::swing::JRadioButtonMenuItem;
 using $UIManager = ::javax::swing::UIManager;

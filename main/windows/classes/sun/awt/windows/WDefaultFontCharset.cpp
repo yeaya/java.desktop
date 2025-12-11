@@ -73,7 +73,7 @@ $CharsetEncoder* WDefaultFontCharset::newEncoder() {
 bool WDefaultFontCharset::canConvert(char16_t ch) {
 	bool $ret = false;
 	$prepareNative(WDefaultFontCharset, canConvert, bool, char16_t ch);
-	$ret = $invokeNative(WDefaultFontCharset, canConvert, ch);
+	$ret = $invokeNative(ch);
 	$finishNative();
 	return $ret;
 }
@@ -81,7 +81,7 @@ bool WDefaultFontCharset::canConvert(char16_t ch) {
 void WDefaultFontCharset::initIDs() {
 	$init(WDefaultFontCharset);
 	$prepareNativeStatic(WDefaultFontCharset, initIDs, void);
-	$invokeNativeStatic(WDefaultFontCharset, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

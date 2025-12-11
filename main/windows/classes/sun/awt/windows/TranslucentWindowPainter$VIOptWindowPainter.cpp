@@ -17,13 +17,10 @@
 #include <jcpp.h>
 
 using $Image = ::java::awt::Image;
-using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $TranslucentWindowPainter = ::sun::awt::windows::TranslucentWindowPainter;
-using $TranslucentWindowPainter$BIWindowPainter = ::sun::awt::windows::TranslucentWindowPainter$BIWindowPainter;
 using $TranslucentWindowPainter$VIOptWindowPainter$1 = ::sun::awt::windows::TranslucentWindowPainter$VIOptWindowPainter$1;
 using $TranslucentWindowPainter$VIWindowPainter = ::sun::awt::windows::TranslucentWindowPainter$VIWindowPainter;
 using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
@@ -33,7 +30,6 @@ using $Surface = ::sun::java2d::Surface;
 using $BufferedContext = ::sun::java2d::pipe::BufferedContext;
 using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 using $AccelSurface = ::sun::java2d::pipe::hw::AccelSurface;
-using $BufferedContextProvider = ::sun::java2d::pipe::hw::BufferedContextProvider;
 
 namespace sun {
 	namespace awt {

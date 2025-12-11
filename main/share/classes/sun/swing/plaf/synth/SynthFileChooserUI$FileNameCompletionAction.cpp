@@ -18,7 +18,6 @@ using $PatternSyntaxException = ::java::util::regex::PatternSyntaxException;
 using $AbstractAction = ::javax::swing::AbstractAction;
 using $JFileChooser = ::javax::swing::JFileChooser;
 using $FileFilter = ::javax::swing::filechooser::FileFilter;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 using $SynthFileChooserUI = ::sun::swing::plaf::synth::SynthFileChooserUI;
 using $SynthFileChooserUI$GlobFilter = ::sun::swing::plaf::synth::SynthFileChooserUI$GlobFilter;
 

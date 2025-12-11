@@ -6,12 +6,8 @@
 #include <java/text/AttributedCharacterIterator.h>
 #include <jcpp.h>
 
-using $AttributedCharacterIterator$AttributeArray = $Array<::java::text::AttributedCharacterIterator$Attribute>;
-using $Rectangle = ::java::awt::Rectangle;
-using $TextHitInfo = ::java::awt::font::TextHitInfo;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AttributedCharacterIterator = ::java::text::AttributedCharacterIterator;
 
 namespace java {
 	namespace awt {

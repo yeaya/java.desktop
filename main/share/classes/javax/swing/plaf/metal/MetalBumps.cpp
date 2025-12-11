@@ -27,7 +27,6 @@ using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
-using $Image = ::java::awt::Image;
 using $ImageObserver = ::java::awt::image::ImageObserver;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -37,7 +36,6 @@ using $AbstractList = ::java::util::AbstractList;
 using $ArrayList = ::java::util::ArrayList;
 using $Iterator = ::java::util::Iterator;
 using $List = ::java::util::List;
-using $Icon = ::javax::swing::Icon;
 using $BumpBuffer = ::javax::swing::plaf::metal::BumpBuffer;
 using $AppContext = ::sun::awt::AppContext;
 

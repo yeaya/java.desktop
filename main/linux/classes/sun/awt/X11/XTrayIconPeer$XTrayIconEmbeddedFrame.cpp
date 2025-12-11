@@ -6,13 +6,11 @@
 #include <sun/awt/X11/XTrayIconPeer.h>
 #include <jcpp.h>
 
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $XEmbeddedFrame = ::sun::awt::X11::XEmbeddedFrame;
 using $XToolkit = ::sun::awt::X11::XToolkit;
-using $XTrayIconPeer = ::sun::awt::X11::XTrayIconPeer;
 
 namespace sun {
 	namespace awt {

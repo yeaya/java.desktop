@@ -54,7 +54,6 @@
 #undef TRUE
 
 using $ActionListenerArray = $Array<::java::awt::event::ActionListener>;
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $ActionArray = $Array<::javax::swing::Action>;
 using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;

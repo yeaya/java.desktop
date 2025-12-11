@@ -226,7 +226,6 @@
 #undef VK_Y
 #undef VK_Z
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $Toolkit = ::java::awt::Toolkit;
@@ -234,7 +233,6 @@ using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent$1 = ::java::awt::event::KeyEvent$1;
 using $NativeLibLoader = ::java::awt::event::NativeLibLoader;
 using $ObjectInputStream = ::java::io::ObjectInputStream;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -539,7 +537,7 @@ $Object* allocate$KeyEvent($Class* clazz) {
 void KeyEvent::initIDs() {
 	$init(KeyEvent);
 	$prepareNativeStatic(KeyEvent, initIDs, void);
-	$invokeNativeStatic(KeyEvent, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

@@ -27,7 +27,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $JToolBar = ::javax::swing::JToolBar;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 namespace com {

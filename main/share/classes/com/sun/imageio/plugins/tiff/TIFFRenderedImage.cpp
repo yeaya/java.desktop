@@ -21,12 +21,10 @@
 
 using $TIFFImageReader = ::com::sun::imageio::plugins::tiff::TIFFImageReader;
 using $Image = ::java::awt::Image;
-using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $Raster = ::java::awt::image::Raster;
-using $RenderedImage = ::java::awt::image::RenderedImage;
 using $SampleModel = ::java::awt::image::SampleModel;
 using $WritableRaster = ::java::awt::image::WritableRaster;
 using $IOException = ::java::io::IOException;
@@ -38,7 +36,6 @@ using $RuntimeException = ::java::lang::RuntimeException;
 using $Iterator = ::java::util::Iterator;
 using $List = ::java::util::List;
 using $Vector = ::java::util::Vector;
-using $IIOParam = ::javax::imageio::IIOParam;
 using $ImageReadParam = ::javax::imageio::ImageReadParam;
 using $ImageTypeSpecifier = ::javax::imageio::ImageTypeSpecifier;
 using $TIFFImageReadParam = ::javax::imageio::plugins::tiff::TIFFImageReadParam;

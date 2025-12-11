@@ -16,10 +16,7 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $XEmbedClientHelper = ::sun::awt::X11::XEmbedClientHelper;
-using $XEmbeddedFramePeer = ::sun::awt::X11::XEmbeddedFramePeer;
-using $XWindow = ::sun::awt::X11::XWindow;
 
 namespace sun {
 	namespace awt {

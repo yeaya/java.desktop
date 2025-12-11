@@ -18,7 +18,6 @@
 
 using $ColorSpace = ::java::awt::color::ColorSpace;
 using $BandedSampleModel = ::java::awt::image::BandedSampleModel;
-using $ColorModel = ::java::awt::image::ColorModel;
 using $ComponentSampleModel = ::java::awt::image::ComponentSampleModel;
 using $DataBuffer = ::java::awt::image::DataBuffer;
 using $SampleModel = ::java::awt::image::SampleModel;

@@ -3,7 +3,6 @@
 #include <com/sun/media/sound/ModelOscillatorStream.h>
 #include <jcpp.h>
 
-using $ModelOscillatorStream = ::com::sun::media::sound::ModelOscillatorStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

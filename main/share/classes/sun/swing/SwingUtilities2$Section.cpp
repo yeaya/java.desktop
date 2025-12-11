@@ -14,7 +14,6 @@ using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SwingUtilities2 = ::sun::swing::SwingUtilities2;
 
 namespace sun {
 	namespace swing {

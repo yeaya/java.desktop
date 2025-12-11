@@ -13,7 +13,6 @@
 using $Sysout = ::Sysout;
 using $bug8037575 = ::bug8037575;
 using $Frame = ::java::awt::Frame;
-using $Window = ::java::awt::Window;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

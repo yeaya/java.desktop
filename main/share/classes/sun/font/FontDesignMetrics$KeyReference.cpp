@@ -19,7 +19,6 @@ using $SoftReference = ::java::lang::ref::SoftReference;
 using $ConcurrentHashMap = ::java::util::concurrent::ConcurrentHashMap;
 using $FontDesignMetrics = ::sun::font::FontDesignMetrics;
 using $Disposer = ::sun::java2d::Disposer;
-using $Disposer$PollDisposable = ::sun::java2d::Disposer$PollDisposable;
 using $DisposerRecord = ::sun::java2d::DisposerRecord;
 
 namespace sun {

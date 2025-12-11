@@ -38,7 +38,6 @@ using $Instrument = ::javax::sound::midi::Instrument;
 using $MidiChannel = ::javax::sound::midi::MidiChannel;
 using $Patch = ::javax::sound::midi::Patch;
 using $Soundbank = ::javax::sound::midi::Soundbank;
-using $SoundbankResource = ::javax::sound::midi::SoundbankResource;
 using $VoiceStatus = ::javax::sound::midi::VoiceStatus;
 
 namespace com {

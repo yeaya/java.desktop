@@ -55,7 +55,6 @@
 #undef WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
 #undef WHEN_FOCUSED
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;

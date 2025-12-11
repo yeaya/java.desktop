@@ -7,7 +7,6 @@
 #include <javax/swing/plaf/synth/SynthStyleFactory.h>
 #include <jcpp.h>
 
-using $TestCustomStyleFactory = ::TestCustomStyleFactory;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

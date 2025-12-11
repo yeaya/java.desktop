@@ -21,8 +21,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $SynthSpinnerUI = ::javax::swing::plaf::synth::SynthSpinnerUI;
 
 namespace javax {
 	namespace swing {

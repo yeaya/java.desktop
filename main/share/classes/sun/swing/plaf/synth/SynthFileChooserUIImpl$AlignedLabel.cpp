@@ -9,7 +9,6 @@
 
 #undef LEFT_ALIGNMENT
 
-using $SynthFileChooserUIImpl$AlignedLabelArray = $Array<::sun::swing::plaf::synth::SynthFileChooserUIImpl$AlignedLabel>;
 using $Dimension = ::java::awt::Dimension;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

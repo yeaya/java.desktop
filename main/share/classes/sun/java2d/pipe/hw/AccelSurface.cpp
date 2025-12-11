@@ -11,11 +11,9 @@
 #undef UNDEFINED
 #undef WINDOW
 
-using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Surface = ::sun::java2d::Surface;
 using $BufferedContextProvider = ::sun::java2d::pipe::hw::BufferedContextProvider;
 
 namespace sun {

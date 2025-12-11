@@ -5,7 +5,6 @@
 #include <javax/swing/JSpinner.h>
 #include <jcpp.h>
 
-using $FontSetToNull = ::FontSetToNull;
 using $Font = ::java::awt::Font;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

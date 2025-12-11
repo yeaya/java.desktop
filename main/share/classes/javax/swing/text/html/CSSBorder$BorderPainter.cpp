@@ -6,13 +6,9 @@
 #include <javax/swing/text/html/CSSBorder.h>
 #include <jcpp.h>
 
-using $Color = ::java::awt::Color;
-using $Graphics = ::java::awt::Graphics;
-using $Polygon = ::java::awt::Polygon;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CSSBorder = ::javax::swing::text::html::CSSBorder;
 
 namespace javax {
 	namespace swing {

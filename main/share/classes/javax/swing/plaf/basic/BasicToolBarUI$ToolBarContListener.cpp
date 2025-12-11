@@ -6,7 +6,6 @@
 #include <jcpp.h>
 
 using $ContainerEvent = ::java::awt::event::ContainerEvent;
-using $ContainerListener = ::java::awt::event::ContainerListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

@@ -14,7 +14,6 @@
 using $SwingContainerIsForContainerOnly$1 = ::SwingContainerIsForContainerOnly$1;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
-using $Iterable = ::java::lang::Iterable;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $URI = ::java::net::URI;
 using $FileSystem = ::java::nio::file::FileSystem;

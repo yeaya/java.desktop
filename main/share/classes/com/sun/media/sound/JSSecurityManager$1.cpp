@@ -5,14 +5,11 @@
 #include <java/util/ServiceLoader.h>
 #include <jcpp.h>
 
-using $JSSecurityManager = ::com::sun::media::sound::JSSecurityManager;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
-using $Iterator = ::java::util::Iterator;
 using $ServiceLoader = ::java::util::ServiceLoader;
 
 namespace com {

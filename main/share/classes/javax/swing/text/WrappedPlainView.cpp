@@ -43,7 +43,6 @@
 
 using $ElementArray = $Array<::javax::swing::text::Element>;
 using $ViewArray = $Array<::javax::swing::text::View>;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Font = ::java::awt::Font;
@@ -72,7 +71,6 @@ using $Caret = ::javax::swing::text::Caret;
 using $CompositeView = ::javax::swing::text::CompositeView;
 using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
-using $Highlighter = ::javax::swing::text::Highlighter;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $PlainDocument = ::javax::swing::text::PlainDocument;
 using $PlainView = ::javax::swing::text::PlainView;

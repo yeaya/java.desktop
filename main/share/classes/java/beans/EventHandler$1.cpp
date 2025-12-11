@@ -11,7 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Method = ::java::lang::reflect::Method;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 
 namespace java {
 	namespace beans {

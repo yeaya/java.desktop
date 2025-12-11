@@ -5,7 +5,6 @@
 #include <sun/font/TextLineComponent.h>
 #include <jcpp.h>
 
-using $TextLineComponentArray = $Array<::sun::font::TextLineComponent>;
 using $TextLine = ::java::awt::font::TextLine;
 using $TextLine$Function = ::java::awt::font::TextLine$Function;
 using $ClassInfo = ::java::lang::ClassInfo;

@@ -38,10 +38,7 @@
 #include <javax/swing/text/Position$Bias.h>
 #include <jcpp.h>
 
-using $CaretFloatingPointAPITest = ::CaretFloatingPointAPITest;
 using $CaretFloatingPointAPITest$CustomCaret$CaretMouseListener = ::CaretFloatingPointAPITest$CustomCaret$CaretMouseListener;
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $Point = ::java::awt::Point;
@@ -54,7 +51,6 @@ using $Line2D$Float = ::java::awt::geom::Line2D$Float;
 using $Point2D = ::java::awt::geom::Point2D;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $Rectangle2D$Double = ::java::awt::geom::Rectangle2D$Double;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
@@ -64,24 +60,16 @@ using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
-using $JComponent = ::javax::swing::JComponent;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $ChangeListener = ::javax::swing::event::ChangeListener;
 using $TextUI = ::javax::swing::plaf::TextUI;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
-using $Caret = ::javax::swing::text::Caret;
 using $DefaultHighlighter = ::javax::swing::text::DefaultHighlighter;
 using $Document = ::javax::swing::text::Document;
 using $Highlighter = ::javax::swing::text::Highlighter;
 using $Highlighter$HighlightPainter = ::javax::swing::text::Highlighter$HighlightPainter;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
-using $LayeredHighlighter$LayerPainter = ::javax::swing::text::LayeredHighlighter$LayerPainter;
 using $Position$Bias = ::javax::swing::text::Position$Bias;
 
 class CaretFloatingPointAPITest$CustomCaret$$Lambda$repaintNewCaret : public $Runnable {

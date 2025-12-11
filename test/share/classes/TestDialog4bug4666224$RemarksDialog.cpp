@@ -30,14 +30,12 @@ using $LayoutManager2 = ::java::awt::LayoutManager2;
 using $Panel = ::java::awt::Panel;
 using $TextArea = ::java::awt::TextArea;
 using $TextComponent = ::java::awt::TextComponent;
-using $Window = ::java::awt::Window;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 
 $FieldInfo _TestDialog4bug4666224$RemarksDialog_FieldInfo_[] = {
 	{"this$0", "LTestDialog4bug4666224;", nullptr, $FINAL | $SYNTHETIC, $field(TestDialog4bug4666224$RemarksDialog, this$0)},

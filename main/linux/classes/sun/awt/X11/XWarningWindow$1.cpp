@@ -13,8 +13,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $InfoWindow$Tooltip$LiveArguments = ::sun::awt::X11::InfoWindow$Tooltip$LiveArguments;
-using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XWarningWindow = ::sun::awt::X11::XWarningWindow;
 
 namespace sun {

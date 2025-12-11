@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ByteBuffer = ::java::nio::ByteBuffer;
-using $FontDescriptor = ::sun::awt::FontDescriptor;
 using $PlatformFont = ::sun::awt::PlatformFont;
 
 namespace sun {

@@ -8,9 +8,7 @@
 #include <javax/swing/plaf/synth/SynthComboBoxUI.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $MouseEvent = ::java::awt::event::MouseEvent;
-using $MouseListener = ::java::awt::event::MouseListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -18,7 +16,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $DefaultButtonModel = ::javax::swing::DefaultButtonModel;
 using $JComboBox = ::javax::swing::JComboBox;
 using $PopupMenuEvent = ::javax::swing::event::PopupMenuEvent;
-using $PopupMenuListener = ::javax::swing::event::PopupMenuListener;
 using $SynthComboBoxUI = ::javax::swing::plaf::synth::SynthComboBoxUI;
 
 namespace javax {

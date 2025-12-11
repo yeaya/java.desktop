@@ -39,40 +39,28 @@ using $AlphaComposite = ::java::awt::AlphaComposite;
 using $Component = ::java::awt::Component;
 using $Composite = ::java::awt::Composite;
 using $Container = ::java::awt::Container;
-using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $Image = ::java::awt::Image;
 using $Taskbar$Feature = ::java::awt::Taskbar$Feature;
 using $Taskbar$State = ::java::awt::Taskbar$State;
 using $Window = ::java::awt::Window;
 using $BufferedImage = ::java::awt::image::BufferedImage;
-using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DataBufferInt = ::java::awt::image::DataBufferInt;
 using $ImageObserver = ::java::awt::image::ImageObserver;
-using $Raster = ::java::awt::image::Raster;
 using $WritableRaster = ::java::awt::image::WritableRaster;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
-using $TaskbarPeer = ::java::awt::peer::TaskbarPeer;
 using $Serializable = ::java::io::Serializable;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
-using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $Callable = ::java::util::concurrent::Callable;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor;
 using $OSInfo = ::sun::awt::OSInfo;
 using $OSInfo$WindowsVersion = ::sun::awt::OSInfo$WindowsVersion;
 using $ShellFolder = ::sun::awt::shell::ShellFolder;
-using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $WTaskbarPeer$1 = ::sun::awt::windows::WTaskbarPeer$1;
 using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
 
@@ -418,32 +406,32 @@ bool WTaskbarPeer::nativeInit() {
 	$init(WTaskbarPeer);
 	bool $ret = false;
 	$prepareNativeStatic(WTaskbarPeer, nativeInit, bool);
-	$ret = $invokeNativeStatic(WTaskbarPeer, nativeInit);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
 
 void WTaskbarPeer::setProgressValue(int64_t hwnd, int32_t value) {
 	$prepareNative(WTaskbarPeer, setProgressValue, void, int64_t hwnd, int32_t value);
-	$invokeNative(WTaskbarPeer, setProgressValue, hwnd, value);
+	$invokeNative(hwnd, value);
 	$finishNative();
 }
 
 void WTaskbarPeer::setProgressState(int64_t hwnd, $Taskbar$State* state) {
 	$prepareNative(WTaskbarPeer, setProgressState, void, int64_t hwnd, $Taskbar$State* state);
-	$invokeNative(WTaskbarPeer, setProgressState, hwnd, state);
+	$invokeNative(hwnd, state);
 	$finishNative();
 }
 
 void WTaskbarPeer::setOverlayIcon(int64_t hwnd, $ints* badge, int32_t width, int32_t height) {
 	$prepareNative(WTaskbarPeer, setOverlayIcon, void, int64_t hwnd, $ints* badge, int32_t width, int32_t height);
-	$invokeNative(WTaskbarPeer, setOverlayIcon, hwnd, badge, width, height);
+	$invokeNative(hwnd, badge, width, height);
 	$finishNative();
 }
 
 void WTaskbarPeer::flashWindow(int64_t hWnd) {
 	$prepareNative(WTaskbarPeer, flashWindow, void, int64_t hWnd);
-	$invokeNative(WTaskbarPeer, flashWindow, hWnd);
+	$invokeNative(hWnd);
 	$finishNative();
 }
 

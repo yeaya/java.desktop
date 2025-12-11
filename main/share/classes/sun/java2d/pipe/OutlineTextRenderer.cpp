@@ -27,8 +27,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SunHints = ::sun::awt::SunHints;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
-using $FontInfo = ::sun::java2d::loops::FontInfo;
-using $TextPipe = ::sun::java2d::pipe::TextPipe;
 
 namespace sun {
 	namespace java2d {

@@ -28,7 +28,6 @@
 using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
-using $PathIterator = ::java::awt::geom::PathIterator;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -154,7 +153,7 @@ Region* Region::WHOLE_REGION = nullptr;
 void Region::initIDs() {
 	$init(Region);
 	$prepareNativeStatic(Region, initIDs, void);
-	$invokeNativeStatic(Region, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

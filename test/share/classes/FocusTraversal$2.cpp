@@ -4,14 +4,12 @@
 #include <java/awt/Component.h>
 #include <jcpp.h>
 
-using $FocusTraversal = ::FocusTraversal;
 using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 
 $FieldInfo _FocusTraversal$2_FieldInfo_[] = {
 	{"val$component", "Ljava/awt/Component;", nullptr, $FINAL | $SYNTHETIC, $field(FocusTraversal$2, val$component)},

@@ -21,7 +21,6 @@ using $DrawGlyphList = ::sun::java2d::loops::DrawGlyphList;
 using $GeneralRenderer = ::sun::java2d::loops::GeneralRenderer;
 using $PixelWriter = ::sun::java2d::loops::PixelWriter;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
-using $Region = ::sun::java2d::pipe::Region;
 
 namespace sun {
 	namespace java2d {

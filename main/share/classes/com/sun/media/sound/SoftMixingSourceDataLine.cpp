@@ -75,7 +75,6 @@ using $Line$Info = ::javax::sound::sampled::Line$Info;
 using $LineEvent = ::javax::sound::sampled::LineEvent;
 using $LineEvent$Type = ::javax::sound::sampled::LineEvent$Type;
 using $LineListener = ::javax::sound::sampled::LineListener;
-using $SourceDataLine = ::javax::sound::sampled::SourceDataLine;
 
 namespace com {
 	namespace sun {

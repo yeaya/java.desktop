@@ -7,9 +7,6 @@
 #undef REQUIRED
 #undef UNNECESSARY
 
-using $GraphicsConfigurationArray = $Array<::java::awt::GraphicsConfiguration>;
-using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

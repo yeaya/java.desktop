@@ -11,7 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $VolatileSurfaceManager = ::sun::awt::image::VolatileSurfaceManager;
-using $SurfaceData = ::sun::java2d::SurfaceData;
 
 namespace sun {
 	namespace awt {

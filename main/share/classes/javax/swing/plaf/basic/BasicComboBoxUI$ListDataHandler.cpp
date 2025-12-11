@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ListDataEvent = ::javax::swing::event::ListDataEvent;
-using $ListDataListener = ::javax::swing::event::ListDataListener;
 using $BasicComboBoxUI = ::javax::swing::plaf::basic::BasicComboBoxUI;
 using $BasicComboBoxUI$Handler = ::javax::swing::plaf::basic::BasicComboBoxUI$Handler;
 

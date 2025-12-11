@@ -8,13 +8,8 @@
 #include <jcpp.h>
 
 using $BeanContext = ::java::beans::beancontext::BeanContext;
-using $BeanContextChild = ::java::beans::beancontext::BeanContextChild;
-using $BeanContextServiceProvider = ::java::beans::beancontext::BeanContextServiceProvider;
-using $BeanContextServiceRevokedListener = ::java::beans::beancontext::BeanContextServiceRevokedListener;
-using $BeanContextServicesListener = ::java::beans::beancontext::BeanContextServicesListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Iterator = ::java::util::Iterator;
 
 namespace java {
 	namespace beans {

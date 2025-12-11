@@ -17,7 +17,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Arrays = ::java::util::Arrays;
 using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 using $AudioSystem = ::javax::sound::sampled::AudioSystem;
-using $DataLine = ::javax::sound::sampled::DataLine;
 using $Line$Info = ::javax::sound::sampled::Line$Info;
 
 namespace javax {

@@ -20,7 +20,6 @@ using $AbstractListModel = ::javax::swing::AbstractListModel;
 using $ListDataEvent = ::javax::swing::event::ListDataEvent;
 using $ListDataListener = ::javax::swing::event::ListDataListener;
 using $BasicDirectoryModel = ::javax::swing::plaf::basic::BasicDirectoryModel;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 
 namespace com {
 	namespace sun {

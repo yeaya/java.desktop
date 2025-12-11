@@ -51,8 +51,6 @@
 #undef XEMBED_WINDOW_DEACTIVATE
 
 using $AWTKeyStroke = ::java::awt::AWTKeyStroke;
-using $Component = ::java::awt::Component;
-using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -63,7 +61,6 @@ using $Unsafe = ::jdk::internal::misc::Unsafe;
 using $SunToolkit = ::sun::awt::SunToolkit;
 using $Native = ::sun::awt::X11::Native;
 using $XAtom = ::sun::awt::X11::XAtom;
-using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XClientMessageEvent = ::sun::awt::X11::XClientMessageEvent;
 using $XConstants = ::sun::awt::X11::XConstants;
 using $XDecoratedPeer = ::sun::awt::X11::XDecoratedPeer;
@@ -79,7 +76,6 @@ using $XReparentEvent = ::sun::awt::X11::XReparentEvent;
 using $XToolkit = ::sun::awt::X11::XToolkit;
 using $XWindow = ::sun::awt::X11::XWindow;
 using $XWindowPeer = ::sun::awt::X11::XWindowPeer;
-using $XWrapperBase = ::sun::awt::X11::XWrapperBase;
 using $XlibUtil = ::sun::awt::X11::XlibUtil;
 using $XlibWrapper = ::sun::awt::X11::XlibWrapper;
 using $X11GraphicsConfig = ::sun::awt::X11GraphicsConfig;

@@ -3,10 +3,8 @@
 #include <java/awt/event/ComponentEvent.h>
 #include <jcpp.h>
 
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
 
 namespace java {
 	namespace awt {

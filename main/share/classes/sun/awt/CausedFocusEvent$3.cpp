@@ -17,14 +17,11 @@
 #undef TRAVERSAL_UP
 #undef UNKNOWN
 
-using $CausedFocusEvent$CauseArray = $Array<::sun::awt::CausedFocusEvent$Cause>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $CausedFocusEvent = ::sun::awt::CausedFocusEvent;
 using $CausedFocusEvent$Cause = ::sun::awt::CausedFocusEvent$Cause;
 
 namespace sun {

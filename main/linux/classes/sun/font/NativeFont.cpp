@@ -38,7 +38,6 @@ using $Point2D$Float = ::java::awt::geom::Point2D$Float;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $Rectangle2D$Float = ::java::awt::geom::Rectangle2D$Float;
 using $UnsupportedEncodingException = ::java::io::UnsupportedEncodingException;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $Character = ::java::lang::Character;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -244,7 +243,7 @@ bool NativeFont::haveBitmapFonts($bytes* xlfd) {
 	$init(NativeFont);
 	bool $ret = false;
 	$prepareNativeStatic(NativeFont, haveBitmapFonts, bool, $bytes* xlfd);
-	$ret = $invokeNativeStatic(NativeFont, haveBitmapFonts, xlfd);
+	$ret = $invokeNativeStatic(xlfd);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -253,7 +252,7 @@ bool NativeFont::fontExists($bytes* xlfd) {
 	$init(NativeFont);
 	bool $ret = false;
 	$prepareNativeStatic(NativeFont, fontExists, bool, $bytes* xlfd);
-	$ret = $invokeNativeStatic(NativeFont, fontExists, xlfd);
+	$ret = $invokeNativeStatic(xlfd);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -295,7 +294,7 @@ $Rectangle2D* NativeFont::getMaxCharBounds($FontRenderContext* frc) {
 $StrikeMetrics* NativeFont::getFontMetrics(int64_t pScalerContext) {
 	$var($StrikeMetrics, $ret, nullptr);
 	$prepareNative(NativeFont, getFontMetrics, $StrikeMetrics*, int64_t pScalerContext);
-	$assign($ret, $invokeNative(NativeFont, getFontMetrics, pScalerContext));
+	$assign($ret, $invokeNativeObject(pScalerContext));
 	$finishNative();
 	return $ret;
 }
@@ -303,7 +302,7 @@ $StrikeMetrics* NativeFont::getFontMetrics(int64_t pScalerContext) {
 float NativeFont::getGlyphAdvance(int64_t pContext, int32_t glyphCode) {
 	float $ret = 0.0;
 	$prepareNative(NativeFont, getGlyphAdvance, float, int64_t pContext, int32_t glyphCode);
-	$ret = $invokeNative(NativeFont, getGlyphAdvance, pContext, glyphCode);
+	$ret = $invokeNative(pContext, glyphCode);
 	$finishNative();
 	return $ret;
 }
@@ -319,7 +318,7 @@ $GeneralPath* NativeFont::getGlyphOutline(int64_t pScalerContext, int32_t glyphC
 int64_t NativeFont::getGlyphImage(int64_t pScalerContext, int32_t glyphCode) {
 	int64_t $ret = 0;
 	$prepareNative(NativeFont, getGlyphImage, int64_t, int64_t pScalerContext, int32_t glyphCode);
-	$ret = $invokeNative(NativeFont, getGlyphImage, pScalerContext, glyphCode);
+	$ret = $invokeNative(pScalerContext, glyphCode);
 	$finishNative();
 	return $ret;
 }
@@ -327,7 +326,7 @@ int64_t NativeFont::getGlyphImage(int64_t pScalerContext, int32_t glyphCode) {
 int64_t NativeFont::getGlyphImageNoDefault(int64_t pScalerContext, int32_t glyphCode) {
 	int64_t $ret = 0;
 	$prepareNative(NativeFont, getGlyphImageNoDefault, int64_t, int64_t pScalerContext, int32_t glyphCode);
-	$ret = $invokeNative(NativeFont, getGlyphImageNoDefault, pScalerContext, glyphCode);
+	$ret = $invokeNative(pScalerContext, glyphCode);
 	$finishNative();
 	return $ret;
 }
@@ -343,7 +342,7 @@ $GeneralPath* NativeFont::getGlyphVectorOutline(int64_t pScalerContext, $ints* g
 int32_t NativeFont::countGlyphs($bytes* platformNameBytes, int32_t ptSize) {
 	int32_t $ret = 0;
 	$prepareNative(NativeFont, countGlyphs, int32_t, $bytes* platformNameBytes, int32_t ptSize);
-	$ret = $invokeNative(NativeFont, countGlyphs, platformNameBytes, ptSize);
+	$ret = $invokeNative(platformNameBytes, ptSize);
 	$finishNative();
 	return $ret;
 }

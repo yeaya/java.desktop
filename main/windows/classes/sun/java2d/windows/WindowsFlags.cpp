@@ -101,7 +101,7 @@ bool WindowsFlags::initNativeFlags() {
 	$init(WindowsFlags);
 	bool $ret = false;
 	$prepareNativeStatic(WindowsFlags, initNativeFlags, bool);
-	$ret = $invokeNativeStatic(WindowsFlags, initNativeFlags);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }

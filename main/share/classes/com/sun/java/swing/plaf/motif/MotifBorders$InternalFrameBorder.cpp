@@ -14,19 +14,15 @@
 #undef BORDER_SIZE
 #undef CORNER_SIZE
 
-using $MotifBorders = ::com::sun::java::swing::plaf::motif::MotifBorders;
 using $MotifBorders$FrameBorder = ::com::sun::java::swing::plaf::motif::MotifBorders$FrameBorder;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
-using $Insets = ::java::awt::Insets;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
-using $AbstractBorder = ::javax::swing::border::AbstractBorder;
 
 namespace com {
 	namespace sun {

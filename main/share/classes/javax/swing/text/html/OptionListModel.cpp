@@ -17,7 +17,6 @@
 #undef SINGLE_INTERVAL_SELECTION
 #undef SINGLE_SELECTION
 
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $ListSelectionListenerArray = $Array<::javax::swing::event::ListSelectionListener>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

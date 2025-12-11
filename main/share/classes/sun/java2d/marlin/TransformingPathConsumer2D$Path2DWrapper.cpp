@@ -5,15 +5,12 @@
 #include <sun/java2d/marlin/TransformingPathConsumer2D.h>
 #include <jcpp.h>
 
-using $Path2D = ::java::awt::geom::Path2D;
 using $Path2D$Double = ::java::awt::geom::Path2D$Double;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InternalError = ::java::lang::InternalError;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DPathConsumer2D = ::sun::java2d::marlin::DPathConsumer2D;
-using $TransformingPathConsumer2D = ::sun::java2d::marlin::TransformingPathConsumer2D;
 
 namespace sun {
 	namespace java2d {

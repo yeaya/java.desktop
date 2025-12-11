@@ -9,7 +9,6 @@
 #include <javax/swing/plaf/metal/MetalLabelUI.h>
 #include <jcpp.h>
 
-using $TitledBorderLabelUITest = ::TitledBorderLabelUITest;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -18,7 +17,6 @@ using $RuntimeException = ::java::lang::RuntimeException;
 using $JComponent = ::javax::swing::JComponent;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $LabelUI = ::javax::swing::plaf::LabelUI;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $BasicLabelUI = ::javax::swing::plaf::basic::BasicLabelUI;
 using $MetalLabelUI = ::javax::swing::plaf::metal::MetalLabelUI;
 

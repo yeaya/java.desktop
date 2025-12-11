@@ -24,8 +24,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $JFrame = ::javax::swing::JFrame;
-using $JPopupMenu = ::javax::swing::JPopupMenu;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 
 $FieldInfo _bug6691503_FieldInfo_[] = {

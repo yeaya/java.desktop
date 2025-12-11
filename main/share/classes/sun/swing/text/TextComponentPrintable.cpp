@@ -89,7 +89,6 @@
 #undef W3C_LENGTH_UNITS
 
 using $ComponentArray = $Array<::java::awt::Component>;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
@@ -100,7 +99,6 @@ using $Graphics2D = ::java::awt::Graphics2D;
 using $Insets = ::java::awt::Insets;
 using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;
-using $FontRenderContext = ::java::awt::font::FontRenderContext;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $PageFormat = ::java::awt::print::PageFormat;
@@ -117,11 +115,9 @@ using $Integer = ::java::lang::Integer;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $InvocationTargetException = ::java::lang::reflect::InvocationTargetException;
-using $Format = ::java::text::Format;
 using $MessageFormat = ::java::text::MessageFormat;
 using $AbstractList = ::java::util::AbstractList;
 using $ArrayList = ::java::util::ArrayList;

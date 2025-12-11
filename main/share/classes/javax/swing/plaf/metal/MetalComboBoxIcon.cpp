@@ -12,12 +12,10 @@
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Icon = ::javax::swing::Icon;
 using $JComponent = ::javax::swing::JComponent;
-using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
 using $MetalLookAndFeel = ::javax::swing::plaf::metal::MetalLookAndFeel;
 
 namespace javax {

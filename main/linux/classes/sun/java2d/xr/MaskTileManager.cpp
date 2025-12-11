@@ -24,7 +24,6 @@ using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ArrayList = ::java::util::ArrayList;
 using $DirtyRegion = ::sun::java2d::xr::DirtyRegion;
-using $GrowableIntArray = ::sun::java2d::xr::GrowableIntArray;
 using $GrowableRectArray = ::sun::java2d::xr::GrowableRectArray;
 using $MaskTile = ::sun::java2d::xr::MaskTile;
 using $XRBackend = ::sun::java2d::xr::XRBackend;

@@ -26,7 +26,6 @@ using $X11GraphicsDevice = ::sun::awt::X11GraphicsDevice;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $X11SurfaceData = ::sun::java2d::x11::X11SurfaceData;
-using $XSurfaceData = ::sun::java2d::x11::XSurfaceData;
 
 namespace sun {
 	namespace java2d {

@@ -5,13 +5,11 @@
 #include <sun/awt/X11/XEmbedChildProxyPeer.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $XEmbedChildProxy = ::sun::awt::X11::XEmbedChildProxy;
 using $XEmbedChildProxyPeer = ::sun::awt::X11::XEmbedChildProxyPeer;
 

@@ -84,7 +84,6 @@ using $PlainDocument = ::javax::swing::text::PlainDocument;
 using $Segment = ::javax::swing::text::Segment;
 using $StyledDocument = ::javax::swing::text::StyledDocument;
 using $View = ::javax::swing::text::View;
-using $AccessibleHTML = ::javax::swing::text::html::AccessibleHTML;
 using $AccessibleHTML$ElementInfo = ::javax::swing::text::html::AccessibleHTML$ElementInfo;
 using $AccessibleHTML$HTMLAccessibleContext = ::javax::swing::text::html::AccessibleHTML$HTMLAccessibleContext;
 using $AccessibleHTML$TextElementInfo = ::javax::swing::text::html::AccessibleHTML$TextElementInfo;

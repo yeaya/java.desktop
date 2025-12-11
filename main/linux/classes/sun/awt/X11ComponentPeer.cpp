@@ -7,13 +7,8 @@
 #include <sun/java2d/SurfaceData.h>
 #include <jcpp.h>
 
-using $Graphics = ::java::awt::Graphics;
-using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
-using $Rectangle = ::java::awt::Rectangle;
-using $ColorModel = ::java::awt::image::ColorModel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SurfaceData = ::sun::java2d::SurfaceData;
 
 namespace sun {
 	namespace awt {

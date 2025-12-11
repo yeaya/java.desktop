@@ -18,7 +18,6 @@
 using $Serializable = ::java::io::Serializable;
 using $Character = ::java::lang::Character;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Cloneable = ::java::lang::Cloneable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -29,7 +28,6 @@ using $Map = ::java::util::Map;
 using $Vector = ::java::util::Vector;
 using $MimeType$LexicalAnalyzer = ::javax::print::MimeType$LexicalAnalyzer;
 using $MimeType$ParameterMap = ::javax::print::MimeType$ParameterMap;
-using $MimeType$ParameterMapEntrySet = ::javax::print::MimeType$ParameterMapEntrySet;
 
 namespace javax {
 	namespace print {

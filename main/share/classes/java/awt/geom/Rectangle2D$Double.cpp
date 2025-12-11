@@ -10,8 +10,6 @@
 #undef OUT_TOP
 
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;

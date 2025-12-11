@@ -15,7 +15,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $EventListener = ::java::util::EventListener;
-using $List = ::java::util::List;
 using $EventListenerList = ::javax::swing::event::EventListenerList;
 using $RowSorterEvent = ::javax::swing::event::RowSorterEvent;
 using $RowSorterEvent$Type = ::javax::swing::event::RowSorterEvent$Type;

@@ -17,10 +17,8 @@
 #include <javax/swing/plaf/basic/BasicTabbedPaneUI.h>
 #include <jcpp.h>
 
-using $RectangleArray = $Array<::java::awt::Rectangle>;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $Rectangle = ::java::awt::Rectangle;
@@ -28,15 +26,12 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JPanel = ::javax::swing::JPanel;
 using $JTabbedPane = ::javax::swing::JTabbedPane;
 using $UIManager = ::javax::swing::UIManager;
 using $UIResource = ::javax::swing::plaf::UIResource;
 using $BasicTabbedPaneUI = ::javax::swing::plaf::basic::BasicTabbedPaneUI;
 using $BasicTabbedPaneUI$CroppedEdge = ::javax::swing::plaf::basic::BasicTabbedPaneUI$CroppedEdge;
-using $BasicTabbedPaneUI$ScrollableTabSupport = ::javax::swing::plaf::basic::BasicTabbedPaneUI$ScrollableTabSupport;
-using $BasicTabbedPaneUI$TabContainer = ::javax::swing::plaf::basic::BasicTabbedPaneUI$TabContainer;
 
 namespace javax {
 	namespace swing {

@@ -16,11 +16,9 @@
 
 #undef WHEN_FOCUSED
 
-using $Component = ::java::awt::Component;
 using $FocusEvent = ::java::awt::event::FocusEvent;
 using $FocusListener = ::java::awt::event::FocusListener;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -32,7 +30,6 @@ using $JScrollBar = ::javax::swing::JScrollBar;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $ChangeListener = ::javax::swing::event::ChangeListener;
 using $BasicScrollBarUI = ::javax::swing::plaf::basic::BasicScrollBarUI;
-using $BasicScrollBarUI$ModelListener = ::javax::swing::plaf::basic::BasicScrollBarUI$ModelListener;
 
 namespace javax {
 	namespace swing {

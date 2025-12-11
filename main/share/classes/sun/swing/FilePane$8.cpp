@@ -14,9 +14,6 @@
 
 #undef SINGLE_SELECTION
 
-using $Component = ::java::awt::Component;
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -24,7 +21,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CellEditor = ::javax::swing::CellEditor;
 using $JScrollPane = ::javax::swing::JScrollPane;
 using $JTable = ::javax::swing::JTable;
 using $JViewport = ::javax::swing::JViewport;

@@ -23,7 +23,6 @@ using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
 using $DnDConstants = ::java::awt::dnd::DnDConstants;
 using $DragGestureListener = ::java::awt::dnd::DragGestureListener;
-using $DragGestureRecognizer = ::java::awt::dnd::DragGestureRecognizer;
 using $DragSource = ::java::awt::dnd::DragSource;
 using $MouseDragGestureRecognizer = ::java::awt::dnd::MouseDragGestureRecognizer;
 using $InputEvent = ::java::awt::event::InputEvent;

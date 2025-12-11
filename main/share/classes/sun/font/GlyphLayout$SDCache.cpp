@@ -30,7 +30,6 @@ using $ConcurrentHashMap = ::java::util::concurrent::ConcurrentHashMap;
 using $Font2D = ::sun::font::Font2D;
 using $FontStrikeDesc = ::sun::font::FontStrikeDesc;
 using $FontUtilities = ::sun::font::FontUtilities;
-using $GlyphLayout = ::sun::font::GlyphLayout;
 using $GlyphLayout$SDCache$SDKey = ::sun::font::GlyphLayout$SDCache$SDKey;
 
 namespace sun {

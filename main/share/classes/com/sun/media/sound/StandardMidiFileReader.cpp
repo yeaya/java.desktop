@@ -38,7 +38,6 @@ using $URL = ::java::net::URL;
 using $InvalidMidiDataException = ::javax::sound::midi::InvalidMidiDataException;
 using $MidiFileFormat = ::javax::sound::midi::MidiFileFormat;
 using $Sequence = ::javax::sound::midi::Sequence;
-using $Track = ::javax::sound::midi::Track;
 using $MidiFileReader = ::javax::sound::midi::spi::MidiFileReader;
 
 namespace com {

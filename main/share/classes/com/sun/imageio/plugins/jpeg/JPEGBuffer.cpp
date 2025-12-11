@@ -64,7 +64,7 @@ $Object* allocate$JPEGBuffer($Class* clazz) {
 
 void JPEGBuffer::init$($ImageInputStream* iis) {
 	this->debug = false;
-	$set(this, buf, $new($bytes, this->BUFFER_SIZE));
+	$set(this, buf, $new($bytes, JPEGBuffer::BUFFER_SIZE));
 	this->bufAvail = 0;
 	this->bufPtr = 0;
 	$set(this, iis, iis);
@@ -81,10 +81,10 @@ void JPEGBuffer::loadBuf(int32_t count) {
 		if (this->bufAvail >= count) {
 			return;
 		}
-	} else if (this->bufAvail == this->BUFFER_SIZE) {
+	} else if (this->bufAvail == JPEGBuffer::BUFFER_SIZE) {
 		return;
 	}
-	if ((this->bufAvail > 0) && (this->bufAvail < this->BUFFER_SIZE)) {
+	if ((this->bufAvail > 0) && (this->bufAvail < JPEGBuffer::BUFFER_SIZE)) {
 		$System::arraycopy(this->buf, this->bufPtr, this->buf, 0, this->bufAvail);
 	}
 	int32_t ret = $nc(this->iis)->read(this->buf, this->bufAvail, $nc(this->buf)->length - this->bufAvail);
@@ -95,7 +95,7 @@ void JPEGBuffer::loadBuf(int32_t count) {
 		this->bufAvail += ret;
 	}
 	this->bufPtr = 0;
-	int32_t minimum = $Math::min(this->BUFFER_SIZE, count);
+	int32_t minimum = $Math::min(JPEGBuffer::BUFFER_SIZE, count);
 	if (this->bufAvail < minimum) {
 		$throwNew($IIOException, "Image Format Error"_s);
 	}

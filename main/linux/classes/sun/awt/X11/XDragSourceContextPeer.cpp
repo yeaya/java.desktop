@@ -56,7 +56,6 @@
 #undef ROOT_EVENT_MASK
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Cursor = ::java::awt::Cursor;
 using $Window = ::java::awt::Window;
 using $Transferable = ::java::awt::datatransfer::Transferable;
@@ -64,14 +63,12 @@ using $DnDConstants = ::java::awt::dnd::DnDConstants;
 using $DragGestureEvent = ::java::awt::dnd::DragGestureEvent;
 using $DragSourceContext = ::java::awt::dnd::DragSourceContext;
 using $InvalidDnDOperationException = ::java::awt::dnd::InvalidDnDOperationException;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $AssertionError = ::java::lang::AssertionError;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Long = ::java::lang::Long;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $Iterator = ::java::util::Iterator;
 using $Map = ::java::util::Map;

@@ -17,7 +17,6 @@ using $Point2D = ::java::awt::geom::Point2D;
 using $Point2D$Double = ::java::awt::geom::Point2D$Double;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

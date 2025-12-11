@@ -21,7 +21,6 @@
 
 using $TMSchema$Part = ::com::sun::java::swing::plaf::windows::TMSchema$Part;
 using $TMSchema$State = ::com::sun::java::swing::plaf::windows::TMSchema$State;
-using $XPStyle = ::com::sun::java::swing::plaf::windows::XPStyle;
 using $XPStyle$Skin = ::com::sun::java::swing::plaf::windows::XPStyle$Skin;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
@@ -30,7 +29,6 @@ using $Image = ::java::awt::Image;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DataBufferInt = ::java::awt::image::DataBufferInt;
-using $Raster = ::java::awt::image::Raster;
 using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

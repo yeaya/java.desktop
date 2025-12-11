@@ -73,13 +73,8 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $NumberFormatException = ::java::lang::NumberFormatException;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $PrivilegedExceptionAction = ::java::security::PrivilegedExceptionAction;
@@ -288,7 +283,7 @@ $PlatformLogger* Cursor::log = nullptr;
 void Cursor::initIDs() {
 	$init(Cursor);
 	$prepareNativeStatic(Cursor, initIDs, void);
-	$invokeNativeStatic(Cursor, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -469,7 +464,7 @@ void Cursor::loadSystemCustomCursorProperties() {
 void Cursor::finalizeImpl(int64_t pData) {
 	$init(Cursor);
 	$prepareNativeStatic(Cursor, finalizeImpl, void, int64_t pData);
-	$invokeNativeStatic(Cursor, finalizeImpl, pData);
+	$invokeNativeStatic(pData);
 	$finishNativeStatic();
 }
 

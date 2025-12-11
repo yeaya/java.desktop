@@ -17,7 +17,6 @@ using $Unsafe = ::jdk::internal::misc::Unsafe;
 using $Native = ::sun::awt::X11::Native;
 using $Screen = ::sun::awt::X11::Screen;
 using $Visual = ::sun::awt::X11::Visual;
-using $XEvent = ::sun::awt::X11::XEvent;
 using $XWrapperBase = ::sun::awt::X11::XWrapperBase;
 using $XlibWrapper = ::sun::awt::X11::XlibWrapper;
 using $PlatformLogger = ::sun::util::logging::PlatformLogger;

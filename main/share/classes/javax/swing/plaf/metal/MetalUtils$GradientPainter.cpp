@@ -34,7 +34,6 @@ using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Number = ::java::lang::Number;
 using $List = ::java::util::List;
-using $MetalUtils = ::javax::swing::plaf::metal::MetalUtils;
 using $CachedPainter = ::sun::swing::CachedPainter;
 
 namespace javax {

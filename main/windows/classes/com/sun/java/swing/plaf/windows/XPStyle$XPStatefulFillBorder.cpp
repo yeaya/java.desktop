@@ -33,7 +33,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComboBox = ::javax::swing::JComboBox;
 using $JComponent = ::javax::swing::JComponent;
-using $LineBorder = ::javax::swing::border::LineBorder;
 using $ComboBoxUI = ::javax::swing::plaf::ComboBoxUI;
 
 namespace com {

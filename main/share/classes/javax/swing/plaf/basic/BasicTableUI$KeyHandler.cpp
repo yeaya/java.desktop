@@ -6,7 +6,6 @@
 #include <jcpp.h>
 
 using $KeyEvent = ::java::awt::event::KeyEvent;
-using $KeyListener = ::java::awt::event::KeyListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

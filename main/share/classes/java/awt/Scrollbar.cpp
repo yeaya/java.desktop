@@ -33,7 +33,6 @@ using $AdjustmentListenerArray = $Array<::java::awt::event::AdjustmentListener>;
 using $EventListenerArray = $Array<::java::util::EventListener>;
 using $AWTEvent = ::java::awt::AWTEvent;
 using $AWTEventMulticaster = ::java::awt::AWTEventMulticaster;
-using $Adjustable = ::java::awt::Adjustable;
 using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
@@ -53,7 +52,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $EventListener = ::java::util::EventListener;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AccessibleState = ::javax::accessibility::AccessibleState;
 using $ComponentFactory = ::sun::awt::ComponentFactory;
@@ -205,7 +203,7 @@ int32_t Scrollbar::nameCounter = 0;
 void Scrollbar::initIDs() {
 	$init(Scrollbar);
 	$prepareNativeStatic(Scrollbar, initIDs, void);
-	$invokeNativeStatic(Scrollbar, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

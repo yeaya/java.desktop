@@ -4,7 +4,6 @@
 #include <javax/swing/table/AbstractTableModel.h>
 #include <jcpp.h>
 
-using $TestJTableCellEditor = ::TestJTableCellEditor;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

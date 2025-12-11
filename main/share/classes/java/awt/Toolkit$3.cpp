@@ -10,7 +10,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ResourceBundle = ::java::util::ResourceBundle;
-using $AWTAccessor$ToolkitAccessor = ::sun::awt::AWTAccessor$ToolkitAccessor;
 
 namespace java {
 	namespace awt {

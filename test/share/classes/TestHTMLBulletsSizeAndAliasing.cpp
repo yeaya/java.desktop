@@ -13,7 +13,6 @@ using $AliasingTest = ::AliasingTest;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $CountDownLatch = ::java::util::concurrent::CountDownLatch;

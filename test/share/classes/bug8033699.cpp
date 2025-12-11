@@ -52,7 +52,6 @@ using $KeyboardFocusManager = ::java::awt::KeyboardFocusManager;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $LayoutManager2 = ::java::awt::LayoutManager2;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $KeyEvent = ::java::awt::event::KeyEvent;
@@ -66,12 +65,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $BorderFactory = ::javax::swing::BorderFactory;
 using $BoxLayout = ::javax::swing::BoxLayout;
@@ -88,7 +82,6 @@ using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
 using $Border = ::javax::swing::border::Border;
-using $TitledBorder = ::javax::swing::border::TitledBorder;
 
 class bug8033699$$Lambda$lambda$main$0 : public $Runnable {
 	$class(bug8033699$$Lambda$lambda$main$0, $NO_CLASS_INIT, $Runnable)

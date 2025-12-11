@@ -4,7 +4,6 @@
 #include <javax/sound/midi/MidiDevice$Info.h>
 #include <jcpp.h>
 
-using $AbstractMidiDeviceProvider = ::com::sun::media::sound::AbstractMidiDeviceProvider;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

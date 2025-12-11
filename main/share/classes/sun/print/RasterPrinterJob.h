@@ -207,7 +207,7 @@ public:
 	static const int32_t PD_SELECTION = 1;
 	static const int32_t PD_PAGENUMS = 2;
 	static const int32_t PD_NOSELECTION = 4;
-	static const int32_t MAX_BAND_SIZE = (1024 * 1024 * 4);
+	static const int32_t MAX_BAND_SIZE = 4194304; // (1024 * 1024 * 4)
 	static float DPI;
 	static $String* FORCE_PIPE_PROP;
 	static $String* FORCE_RASTER;

@@ -6,6 +6,11 @@ if(JCPP_OS MATCHES "linux")
 	add_definitions("-DWITH_X11")
 endif()
 
+if(JCPP_OS MATCHES "macos")
+	add_definitions("-DWITH_MACOSX")
+	add_definitions("-x objective-c")
+endif()
+
 add_subdirectory("giflib")
 add_subdirectory("libpng")
 
@@ -15,6 +20,10 @@ endif()
 
 if(JCPP_OS MATCHES "linux")
 	include_directories("../../../linux/native/libsplashscreen")
+endif()
+
+if(JCPP_OS MATCHES "macos")
+	include_directories("../../../macos/native/libsplashscreen")
 endif()
 
 if(JCPP_OS MATCHES "windows")

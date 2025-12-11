@@ -19,12 +19,10 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $CellRendererPane = ::javax::swing::CellRendererPane;
 using $JComponent = ::javax::swing::JComponent;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
-using $TextComponentPrintable = ::sun::swing::text::TextComponentPrintable;
 
 namespace sun {
 	namespace swing {

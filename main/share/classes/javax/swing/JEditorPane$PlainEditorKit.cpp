@@ -22,7 +22,6 @@ using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JEditorPane = ::javax::swing::JEditorPane;
 using $JEditorPane$PlainEditorKit$PlainParagraph = ::javax::swing::JEditorPane$PlainEditorKit$PlainParagraph;
 using $AbstractDocument = ::javax::swing::text::AbstractDocument;
 using $BoxView = ::javax::swing::text::BoxView;

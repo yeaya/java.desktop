@@ -17,7 +17,6 @@
 #include <jcpp.h>
 
 using $AttributedCharacterIterator$AttributeArray = $Array<::java::text::AttributedCharacterIterator$Attribute>;
-using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $TextHitInfo = ::java::awt::font::TextHitInfo;
@@ -30,12 +29,10 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AttributedCharacterIterator = ::java::text::AttributedCharacterIterator;
 using $AttributedString = ::java::text::AttributedString;
 using $DocumentEvent = ::javax::swing::event::DocumentEvent;
-using $DocumentListener = ::javax::swing::event::DocumentListener;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $Document = ::javax::swing::text::Document;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $Position = ::javax::swing::text::Position;
-using $SimpleAttributeSet = ::javax::swing::text::SimpleAttributeSet;
 
 namespace javax {
 	namespace swing {

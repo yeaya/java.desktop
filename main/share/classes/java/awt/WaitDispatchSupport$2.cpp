@@ -7,16 +7,13 @@
 #include <sun/util/logging/PlatformLogger.h>
 #include <jcpp.h>
 
-using $Conditional = ::java::awt::Conditional;
 using $EventDispatchThread = ::java::awt::EventDispatchThread;
-using $EventFilter = ::java::awt::EventFilter;
 using $WaitDispatchSupport = ::java::awt::WaitDispatchSupport;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $PlatformLogger = ::sun::util::logging::PlatformLogger;
 
 namespace java {

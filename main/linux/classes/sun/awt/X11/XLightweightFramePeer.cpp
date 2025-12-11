@@ -28,7 +28,6 @@
 #include <sun/swing/SwingAccessor.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Dialog = ::java::awt::Dialog;
 using $Dimension = ::java::awt::Dimension;
 using $Frame = ::java::awt::Frame;
@@ -45,15 +44,11 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $List = ::java::util::List;
 using $Vector = ::java::util::Vector;
 using $LightweightFrame = ::sun::awt::LightweightFrame;
-using $OverrideNativeWindowHandle = ::sun::awt::OverrideNativeWindowHandle;
 using $PropMwmHints = ::sun::awt::X11::PropMwmHints;
 using $ToplevelStateListener = ::sun::awt::X11::ToplevelStateListener;
 using $XAtomList = ::sun::awt::X11::XAtomList;
-using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
-using $XDecoratedPeer = ::sun::awt::X11::XDecoratedPeer;
 using $XEvent = ::sun::awt::X11::XEvent;
 using $XFramePeer = ::sun::awt::X11::XFramePeer;
-using $XWindow = ::sun::awt::X11::XWindow;
 using $XWindowPeer = ::sun::awt::X11::XWindowPeer;
 using $JLightweightFrame = ::sun::swing::JLightweightFrame;
 using $SwingAccessor = ::sun::swing::SwingAccessor;

@@ -3,10 +3,8 @@
 #include <java/awt/AWTEvent.h>
 #include <jcpp.h>
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
 
 namespace java {
 	namespace awt {

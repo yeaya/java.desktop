@@ -19,7 +19,6 @@ using $bug6406264$2 = ::bug6406264$2;
 using $bug6406264$3 = ::bug6406264$3;
 using $bug6406264$CustomComboBoxUI = ::bug6406264$CustomComboBoxUI;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

@@ -6,7 +6,6 @@
 #include <java/lang/SecurityManager.h>
 #include <jcpp.h>
 
-using $InstanceFinder = ::com::sun::beans::finder::InstanceFinder;
 using $PropertyEditorFinder = ::com::sun::beans::finder::PropertyEditorFinder;
 using $PropertyEditor = ::java::beans::PropertyEditor;
 using $ThreadGroupContext = ::java::beans::ThreadGroupContext;

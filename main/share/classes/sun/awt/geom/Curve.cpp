@@ -25,7 +25,6 @@
 
 using $IllegalPathStateException = ::java::awt::geom::IllegalPathStateException;
 using $PathIterator = ::java::awt::geom::PathIterator;
-using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;

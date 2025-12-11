@@ -19,7 +19,6 @@ using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $DefaultRowSorter = ::javax::swing::DefaultRowSorter;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $AbstractTableModel = ::javax::swing::table::AbstractTableModel;
 using $DefaultTableModel = ::javax::swing::table::DefaultTableModel;

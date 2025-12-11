@@ -30,7 +30,6 @@
 #undef PRINT
 
 using $Desktop$ActionArray = $Array<::java::awt::Desktop$Action>;
-using $Desktop = ::java::awt::Desktop;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

@@ -20,13 +20,11 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $List = ::java::util::List;
 using $Map = ::java::util::Map;
 using $AtomicInteger = ::java::util::concurrent::atomic::AtomicInteger;
 using $JComponent = ::javax::swing::JComponent;
 using $RepaintManager = ::javax::swing::RepaintManager;
-using $RepaintManager$PaintManager = ::javax::swing::RepaintManager$PaintManager;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 
 namespace javax {

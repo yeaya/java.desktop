@@ -41,7 +41,6 @@ using $ColorTransform = ::sun::java2d::cmm::ColorTransform;
 using $LCMS = ::sun::java2d::cmm::lcms::LCMS;
 using $LCMSImageLayout = ::sun::java2d::cmm::lcms::LCMSImageLayout;
 using $LCMSImageLayout$ImageLayoutException = ::sun::java2d::cmm::lcms::LCMSImageLayout$ImageLayoutException;
-using $LCMSProfile = ::sun::java2d::cmm::lcms::LCMSProfile;
 
 namespace sun {
 	namespace java2d {

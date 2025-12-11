@@ -8,9 +8,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $RepaintManager = ::javax::swing::RepaintManager;
-using $SwingAccessor = ::sun::swing::SwingAccessor;
-using $SwingUtilities2$RepaintListener = ::sun::swing::SwingUtilities2$RepaintListener;
 
 namespace sun {
 	namespace swing {

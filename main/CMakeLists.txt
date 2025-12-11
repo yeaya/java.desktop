@@ -17,6 +17,11 @@ if(JCPP_OS MATCHES "linux")
 	include_directories("linux/native")
 endif()
 
+if(JCPP_OS MATCHES "macos")
+	include_directories("macos/classes")
+	include_directories("macos/native")
+endif()
+
 if(JCPP_OS MATCHES "windows")
 	include_directories("windows/classes")
 	include_directories("windows/native")
@@ -28,6 +33,11 @@ add_subdirectory("share/native")
 if(JCPP_OS MATCHES "linux")
 	add_subdirectory("linux/classes")
 	add_subdirectory("linux/native")
+endif()
+
+if(JCPP_OS MATCHES "macos")
+	add_subdirectory("macos/classes")
+	add_subdirectory("macos/native")
 endif()
 
 if(JCPP_OS MATCHES "windows")
@@ -208,11 +218,60 @@ if(JCPP_OS MATCHES "linux")
 	)
 endif()
 
+if(JCPP_OS MATCHES "macos")
+	set(local_object ${local_object}
+		"$<TARGET_OBJECTS:macos>"
+		"$<TARGET_OBJECTS:macos.apple.laf>"
+		"$<TARGET_OBJECTS:macos.com.apple.eawt>"
+		"$<TARGET_OBJECTS:macos.com.apple.eawt.event>"
+		"$<TARGET_OBJECTS:macos.com.apple.eio>"
+		"$<TARGET_OBJECTS:macos.com.apple.laf>"
+		"$<TARGET_OBJECTS:macos.com.apple.laf.resources>"
+		"$<TARGET_OBJECTS:macos.sun.awt>"
+		"$<TARGET_OBJECTS:macos.sun.awt.resources>"
+		"$<TARGET_OBJECTS:macos.sun.font>"
+		"$<TARGET_OBJECTS:macos.sun.java2d>"
+		"$<TARGET_OBJECTS:macos.sun.java2d.metal>"
+		"$<TARGET_OBJECTS:macos.sun.java2d.opengl>"
+		"$<TARGET_OBJECTS:macos.sun.lwawt>"
+		"$<TARGET_OBJECTS:macos.sun.lwawt.macosx>"
+		"$<TARGET_OBJECTS:macos.sun.print>"
+		"$<TARGET_OBJECTS:macos-native.common.awt>"
+		"$<TARGET_OBJECTS:macos-native.common.awt.system>"
+		"$<TARGET_OBJECTS:macos-native.libawt.awt>"
+		"$<TARGET_OBJECTS:macos-native.libawt_lwawt.awt>"
+		"$<TARGET_OBJECTS:macos-native.libawt_lwawt.awt.>"
+		"$<TARGET_OBJECTS:macos-native.libawt_lwawt.font>"
+		"$<TARGET_OBJECTS:macos-native.libawt_lwawt.ja_9>"
+		"$<TARGET_OBJECTS:macos-native.libawt_lwawt.j_10>"
+		"$<TARGET_OBJECTS:macos-native.libfreetype>"
+		"$<TARGET_OBJECTS:macos-native.libfreetype.src.a>"
+		"$<TARGET_OBJECTS:macos-native.libfreetype.src.b>"
+		"$<TARGET_OBJECTS:macos-native.libfreetype.src.c>"
+		"$<TARGET_OBJECTS:macos-native.libfreetype.sr_16>"
+		"$<TARGET_OBJECTS:macos-native.libfreetype.src.p>"
+		"$<TARGET_OBJECTS:macos-native.libfreetype.sr_17>"
+		"$<TARGET_OBJECTS:macos-native.libfreetype.sr_18>"
+		"$<TARGET_OBJECTS:macos-native.libfreetype.src.r>"
+		"$<TARGET_OBJECTS:macos-native.libfreetype.src.s>"
+		"$<TARGET_OBJECTS:macos-native.libfreetype.sr_19>"
+		"$<TARGET_OBJECTS:macos-native.libfreetype.src.t>"
+		"$<TARGET_OBJECTS:macos-native.libfreetype.sr_20>"
+		"$<TARGET_OBJECTS:macos-native.libharfbuzz>"
+		"$<TARGET_OBJECTS:macos-native.libjawt>"
+		"$<TARGET_OBJECTS:macos-native.libjsound>"
+		"$<TARGET_OBJECTS:macos-native.libosx>"
+		"$<TARGET_OBJECTS:macos-native.libosxapp>"
+		"$<TARGET_OBJECTS:macos-native.libosxui>"
+		"$<TARGET_OBJECTS:macos-native.libsplashscreen>"
+	)
+endif()
+
 if(JCPP_OS MATCHES "windows")
 	set(local_object ${local_object}
 		"$<TARGET_OBJECTS:windows>"
-		"$<TARGET_OBJECTS:windows.com.sun.java.swing.p_9>"
-		"$<TARGET_OBJECTS:windows.com.sun.java.swing._10>"
+		"$<TARGET_OBJECTS:windows.com.sun.java.swing._21>"
+		"$<TARGET_OBJECTS:windows.com.sun.java.swing._22>"
 		"$<TARGET_OBJECTS:windows.sun.awt>"
 		"$<TARGET_OBJECTS:windows.sun.awt.shell>"
 		"$<TARGET_OBJECTS:windows.sun.awt.windows>"
@@ -230,18 +289,19 @@ if(JCPP_OS MATCHES "windows")
 		"$<TARGET_OBJECTS:windows-native.libawt.windows>"
 		"$<TARGET_OBJECTS:windows-native.libfontmanager>"
 		"$<TARGET_OBJECTS:windows-native.libfreetype>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype._16>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype._17>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype._18>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype._19>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype._20>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype._21>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype._22>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype._23>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype._24>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype._25>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype._26>"
-		"$<TARGET_OBJECTS:windows-native.libfreetype._27>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._28>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._29>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._30>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._31>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._32>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._33>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._34>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._35>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._36>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._37>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._38>"
+		"$<TARGET_OBJECTS:windows-native.libfreetype._39>"
+		"$<TARGET_OBJECTS:windows-native.libharfbuzz>"
 		"$<TARGET_OBJECTS:windows-native.libjawt>"
 		"$<TARGET_OBJECTS:windows-native.libjsound>"
 		"$<TARGET_OBJECTS:windows-native.libsplashscreen>"
@@ -271,7 +331,7 @@ if(BUILD_SHARED_LIB)
 	SET_TARGET_PROPERTIES(${JCPP_PROJECT_NAME}_shared PROPERTIES CLEAN_DIRECT_OUTPUT 1)
 	SET_TARGET_PROPERTIES(${JCPP_PROJECT_NAME}_shared PROPERTIES VERSION ${JCPP_PROJECT_VERSION} SOVERSION 1)
 if(JCPP_OS MATCHES "linux")
-	SET_TARGET_PROPERTIES(${JCPP_PROJECT_NAME}_shared PROPERTIES INSTALL_RPATH "\\\$ORIGIN;\\\$ORIGIN/../lib")
+	SET_TARGET_PROPERTIES(${JCPP_PROJECT_NAME}_shared PROPERTIES INSTALL_RPATH "\$ORIGIN;\$ORIGIN/../lib")
 elseif(JCPP_OS MATCHES "macos")
 	SET_TARGET_PROPERTIES(${JCPP_PROJECT_NAME}_shared PROPERTIES INSTALL_RPATH ".;../lib")
 endif()
@@ -279,6 +339,33 @@ endif()
 	if(JCPP_OS MATCHES "linux")
 		set(JCPP_EXT_LIBS ${JCPP_EXT_LIBS}
 			-lXext -lX11 -lXrender -lXtst -lXi -lasound -lfreetype
+		)
+	endif()
+
+	if(JCPP_OS MATCHES "macos")
+		set(JCPP_EXT_LIBS ${JCPP_EXT_LIBS}
+			-lpthread -liconv
+			"-framework CoreAudio"
+			"-framework CoreFoundation"
+			"-framework CoreServices"
+			"-framework AudioUnit"
+			"-framework CoreMIDI"
+			"-framework AudioToolbox"
+			"-framework CoreText"
+			"-framework CoreGraphics"
+			"-framework ApplicationServices"
+			"-framework Foundation"
+			"-framework Security"
+			"-framework Cocoa"
+			"-framework Metal"
+			"-framework Accelerate"
+			"-framework Carbon"
+			"-framework ExceptionHandling"
+			"-framework JavaRuntimeSupport"
+			"-framework OpenGL"
+			"-framework QuartzCore"
+			"-framework Cocoa"
+			"-framework Carbon"
 		)
 	endif()
 
@@ -320,16 +407,16 @@ if(JCPP_OS MATCHES "linux")
 	)
 endif()
 
-if(JCPP_OS MATCHES "windows")
+if(JCPP_OS MATCHES "macos")
 	install(
-		DIRECTORY "windows/include/"
+		DIRECTORY "macos/include/"
 		DESTINATION "${JCPP_INSTALL_INCLUDE_DIR}"
 	)
 endif()
 
-if(INSTALL_TO_REPO)
+if(JCPP_OS MATCHES "windows")
 	install(
-		FILES "share/dependencies.txt"
-		DESTINATION "${JCPP_INSTALL_DIR}"
+		DIRECTORY "windows/include/"
+		DESTINATION "${JCPP_INSTALL_INCLUDE_DIR}"
 	)
 endif()

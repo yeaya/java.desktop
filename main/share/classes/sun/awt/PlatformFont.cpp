@@ -21,8 +21,6 @@
 #undef FONTCACHESIZE
 
 using $CharsetStringArray = $Array<::sun::awt::CharsetString>;
-using $FontDescriptorArray = $Array<::sun::awt::FontDescriptor>;
-using $FontPeer = ::java::awt::peer::FontPeer;
 using $PrintStream = ::java::io::PrintStream;
 using $ArrayIndexOutOfBoundsException = ::java::lang::ArrayIndexOutOfBoundsException;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -30,11 +28,9 @@ using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Buffer = ::java::nio::Buffer;
 using $ByteBuffer = ::java::nio::ByteBuffer;
 using $CharBuffer = ::java::nio::CharBuffer;
 using $CharsetEncoder = ::java::nio::charset::CharsetEncoder;
-using $CoderResult = ::java::nio::charset::CoderResult;
 using $Locale = ::java::util::Locale;
 using $Vector = ::java::util::Vector;
 using $CharsetString = ::sun::awt::CharsetString;
@@ -362,7 +358,7 @@ $ObjectArray* PlatformFont::getFontCache() {
 void PlatformFont::initIDs() {
 	$init(PlatformFont);
 	$prepareNativeStatic(PlatformFont, initIDs, void);
-	$invokeNativeStatic(PlatformFont, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

@@ -15,12 +15,10 @@
 #include <javax/swing/plaf/metal/MetalTitlePane.h>
 #include <jcpp.h>
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
-using $Image = ::java::awt::Image;
 using $ImageObserver = ::java::awt::image::ImageObserver;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

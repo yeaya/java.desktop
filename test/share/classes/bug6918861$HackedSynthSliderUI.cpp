@@ -6,13 +6,11 @@
 #include <javax/swing/plaf/synth/SynthSliderUI.h>
 #include <jcpp.h>
 
-using $bug6918861 = ::bug6918861;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JSlider = ::javax::swing::JSlider;
-using $BasicSliderUI = ::javax::swing::plaf::basic::BasicSliderUI;
 using $SynthSliderUI = ::javax::swing::plaf::synth::SynthSliderUI;
 
 $FieldInfo _bug6918861$HackedSynthSliderUI_FieldInfo_[] = {

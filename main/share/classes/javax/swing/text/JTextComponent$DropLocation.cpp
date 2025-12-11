@@ -12,7 +12,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $TransferHandler$DropLocation = ::javax::swing::TransferHandler$DropLocation;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $Position$Bias = ::javax::swing::text::Position$Bias;
 
 namespace javax {

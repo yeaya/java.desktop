@@ -9,7 +9,6 @@
 
 using $PointArray = $Array<::java::awt::Point>;
 using $bug4708809 = ::bug4708809;
-using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -17,7 +16,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JScrollBar = ::javax::swing::JScrollBar;
 
 $FieldInfo _bug4708809$4_FieldInfo_[] = {

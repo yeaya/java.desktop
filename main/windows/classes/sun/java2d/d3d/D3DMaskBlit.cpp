@@ -37,7 +37,6 @@ using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
 using $GraphicsPrimitiveMgr = ::sun::java2d::loops::GraphicsPrimitiveMgr;
 using $MaskBlit = ::sun::java2d::loops::MaskBlit;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
-using $BufferedContext = ::sun::java2d::pipe::BufferedContext;
 using $BufferedMaskBlit = ::sun::java2d::pipe::BufferedMaskBlit;
 using $Region = ::sun::java2d::pipe::Region;
 using $RenderQueue = ::sun::java2d::pipe::RenderQueue;

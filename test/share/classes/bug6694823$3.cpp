@@ -10,16 +10,12 @@
 #include <jcpp.h>
 
 using $bug6694823 = ::bug6694823;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
-using $Insets = ::java::awt::Insets;
 using $Toolkit = ::java::awt::Toolkit;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JFrame = ::javax::swing::JFrame;
 
 $MethodInfo _bug6694823$3_MethodInfo_[] = {

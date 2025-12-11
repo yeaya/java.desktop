@@ -74,7 +74,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Enumeration = ::java::util::Enumeration;
-using $EventObject = ::java::util::EventObject;
 using $Hashtable = ::java::util::Hashtable;
 using $CellRendererPane = ::javax::swing::CellRendererPane;
 using $Icon = ::javax::swing::Icon;

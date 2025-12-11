@@ -51,7 +51,6 @@ using $GraphicsDevice$WindowTranslucency = ::java::awt::GraphicsDevice$WindowTra
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $LayoutManager2 = ::java::awt::LayoutManager2;
-using $Window = ::java::awt::Window;
 using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseListener = ::java::awt::event::MouseListener;
 using $Serializable = ::java::io::Serializable;
@@ -60,12 +59,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AbstractAction = ::javax::swing::AbstractAction;
 using $Action = ::javax::swing::Action;
 using $BorderFactory = ::javax::swing::BorderFactory;
@@ -78,7 +72,6 @@ using $JPanel = ::javax::swing::JPanel;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 using $JWindow = ::javax::swing::JWindow;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
-using $Border = ::javax::swing::border::Border;
 
 class bug7160604$$Lambda$lambda$init$0 : public $Runnable {
 	$class(bug7160604$$Lambda$lambda$init$0, $NO_CLASS_INIT, $Runnable)

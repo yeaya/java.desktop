@@ -13,7 +13,6 @@
 #undef ICON_TYPE_MAP
 
 using $DimensionArray = $Array<::java::awt::Dimension>;
-using $GTKStyle = ::com::sun::java::swing::plaf::gtk::GTKStyle;
 using $Dimension = ::java::awt::Dimension;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

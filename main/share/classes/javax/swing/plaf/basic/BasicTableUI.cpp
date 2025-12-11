@@ -109,7 +109,6 @@ using $Component$BaselineResizeBehavior = ::java::awt::Component$BaselineResizeB
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
-using $Font = ::java::awt::Font;
 using $Graphics = ::java::awt::Graphics;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;

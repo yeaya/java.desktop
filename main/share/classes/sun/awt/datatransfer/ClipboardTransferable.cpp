@@ -24,8 +24,6 @@
 
 using $DataFlavorArray = $Array<::java::awt::datatransfer::DataFlavor>;
 using $DataFlavor = ::java::awt::datatransfer::DataFlavor;
-using $FlavorTable = ::java::awt::datatransfer::FlavorTable;
-using $Transferable = ::java::awt::datatransfer::Transferable;
 using $UnsupportedFlavorException = ::java::awt::datatransfer::UnsupportedFlavorException;
 using $IOException = ::java::io::IOException;
 using $Serializable = ::java::io::Serializable;
@@ -34,15 +32,9 @@ using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
-using $Iterable = ::java::lang::Iterable;
 using $Long = ::java::lang::Long;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AbstractMap = ::java::util::AbstractMap;
 using $HashMap = ::java::util::HashMap;
 using $Map = ::java::util::Map;

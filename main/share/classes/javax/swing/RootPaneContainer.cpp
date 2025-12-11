@@ -5,12 +5,8 @@
 #include <javax/swing/JRootPane.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JLayeredPane = ::javax::swing::JLayeredPane;
-using $JRootPane = ::javax::swing::JRootPane;
 
 namespace javax {
 	namespace swing {

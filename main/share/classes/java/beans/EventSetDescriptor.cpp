@@ -30,7 +30,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
-using $Annotation = ::java::lang::annotation::Annotation;
 using $Reference = ::java::lang::ref::Reference;
 using $Method = ::java::lang::reflect::Method;
 using $Modifier = ::java::lang::reflect::Modifier;

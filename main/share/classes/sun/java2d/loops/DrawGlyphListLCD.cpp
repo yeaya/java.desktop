@@ -86,7 +86,7 @@ void DrawGlyphListLCD::init$(int64_t pNativePrim, $SurfaceType* srctype, $Compos
 
 void DrawGlyphListLCD::DrawGlyphListLCD$($SunGraphics2D* sg2d, $SurfaceData* dest, $GlyphList* srcData, int32_t fromGlyph, int32_t toGlyph) {
 	$prepareNative(DrawGlyphListLCD, DrawGlyphListLCD$, void, $SunGraphics2D* sg2d, $SurfaceData* dest, $GlyphList* srcData, int32_t fromGlyph, int32_t toGlyph);
-	$invokeNative(DrawGlyphListLCD, DrawGlyphListLCD$, sg2d, dest, srcData, fromGlyph, toGlyph);
+	$invokeNative(sg2d, dest, srcData, fromGlyph, toGlyph);
 	$finishNative();
 }
 

@@ -33,7 +33,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractMap = ::java::util::AbstractMap;
-using $Collection = ::java::util::Collection;
 using $HashMap = ::java::util::HashMap;
 using $HashSet = ::java::util::HashSet;
 using $Iterator = ::java::util::Iterator;

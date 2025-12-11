@@ -30,7 +30,6 @@ using $Font = ::java::awt::Font;
 using $TextAttribute = ::java::awt::font::TextAttribute;
 using $Encoder = ::java::beans::Encoder;
 using $Expression = ::java::beans::Expression;
-using $MetaData = ::java::beans::MetaData;
 using $PersistenceDelegate = ::java::beans::PersistenceDelegate;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Float = ::java::lang::Float;

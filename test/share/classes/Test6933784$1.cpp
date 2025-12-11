@@ -13,7 +13,6 @@
 #include <javax/swing/text/html/ImageView.h>
 #include <jcpp.h>
 
-using $Test6933784 = ::Test6933784;
 using $Reader = ::java::io::Reader;
 using $StringReader = ::java::io::StringReader;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -21,9 +20,7 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $Exception = ::java::lang::Exception;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Icon = ::javax::swing::Icon;
 using $AbstractDocument = ::javax::swing::text::AbstractDocument;
 using $DefaultStyledDocument = ::javax::swing::text::DefaultStyledDocument;
 using $Document = ::javax::swing::text::Document;

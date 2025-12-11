@@ -19,7 +19,6 @@
 
 using $AlphaComposite = ::java::awt::AlphaComposite;
 using $Composite = ::java::awt::Composite;
-using $CompositeContext = ::java::awt::CompositeContext;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $Raster = ::java::awt::image::Raster;

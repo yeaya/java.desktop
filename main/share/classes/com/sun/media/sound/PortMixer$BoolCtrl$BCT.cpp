@@ -4,7 +4,6 @@
 #include <javax/sound/sampled/BooleanControl$Type.h>
 #include <jcpp.h>
 
-using $PortMixer$BoolCtrl = ::com::sun::media::sound::PortMixer$BoolCtrl;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

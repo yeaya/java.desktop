@@ -15,7 +15,6 @@
 
 using $ImageTypeProducerArray = $Array<::com::sun::imageio::plugins::jpeg::ImageTypeProducer>;
 using $JPEG = ::com::sun::imageio::plugins::jpeg::JPEG;
-using $ColorSpace = ::java::awt::color::ColorSpace;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $DataBuffer = ::java::awt::image::DataBuffer;
 using $ClassInfo = ::java::lang::ClassInfo;

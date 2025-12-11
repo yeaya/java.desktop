@@ -16,7 +16,6 @@
 #undef KEYS
 
 using $UIDefaultsArray = $Array<::javax::swing::UIDefaults>;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -25,7 +24,6 @@ using $AbstractSet = ::java::util::AbstractSet;
 using $Collection = ::java::util::Collection;
 using $Enumeration = ::java::util::Enumeration;
 using $HashSet = ::java::util::HashSet;
-using $Hashtable = ::java::util::Hashtable;
 using $Locale = ::java::util::Locale;
 using $Set = ::java::util::Set;
 using $MultiUIDefaults$MultiUIDefaultsEnumerator = ::javax::swing::MultiUIDefaults$MultiUIDefaultsEnumerator;

@@ -10,7 +10,6 @@
 #include <java/lang/Math.h>
 #include <jcpp.h>
 
-using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $Image = ::java::awt::Image;
 using $GraphicAttribute = ::java::awt::font::GraphicAttribute;

@@ -4,12 +4,10 @@
 #include <java/net/URL.h>
 #include <jcpp.h>
 
-using $AppletContext = ::java::applet::AppletContext;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
-using $URL = ::java::net::URL;
 
 namespace java {
 	namespace applet {

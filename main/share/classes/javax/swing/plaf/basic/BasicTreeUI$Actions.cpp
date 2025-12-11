@@ -64,7 +64,6 @@
 #undef TOGGLE
 #undef TOGGLE_AND_ANCHOR
 
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Rectangle = ::java::awt::Rectangle;
 using $ActionEvent = ::java::awt::event::ActionEvent;
@@ -74,13 +73,9 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $EventObject = ::java::util::EventObject;
-using $JComponent = ::javax::swing::JComponent;
 using $JTree = ::javax::swing::JTree;
 using $SwingConstants = ::javax::swing::SwingConstants;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
-using $TreeUI = ::javax::swing::plaf::TreeUI;
 using $BasicLookAndFeel = ::javax::swing::plaf::basic::BasicLookAndFeel;
 using $BasicTreeUI = ::javax::swing::plaf::basic::BasicTreeUI;
 using $BasicTreeUI$Actions$1 = ::javax::swing::plaf::basic::BasicTreeUI$Actions$1;

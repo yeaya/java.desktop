@@ -39,8 +39,6 @@
 
 #undef TT_NUMBER
 
-using $ColorArray = $Array<::java::awt::Color>;
-using $StyleArray = $Array<::javax::swing::text::Style>;
 using $Color = ::java::awt::Color;
 using $BufferedReader = ::java::io::BufferedReader;
 using $IOException = ::java::io::IOException;
@@ -64,11 +62,8 @@ using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Dictionary = ::java::util::Dictionary;
 using $Enumeration = ::java::util::Enumeration;
 using $Hashtable = ::java::util::Hashtable;
-using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $Document = ::javax::swing::text::Document;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $SimpleAttributeSet = ::javax::swing::text::SimpleAttributeSet;
-using $Style = ::javax::swing::text::Style;
 using $StyledDocument = ::javax::swing::text::StyledDocument;
 using $AbstractFilter = ::javax::swing::text::rtf::AbstractFilter;
 using $Constants = ::javax::swing::text::rtf::Constants;

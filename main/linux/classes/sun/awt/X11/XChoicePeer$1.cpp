@@ -16,10 +16,7 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $XChoicePeer = ::sun::awt::X11::XChoicePeer;
-using $XComponentPeer = ::sun::awt::X11::XComponentPeer;
-using $XWindow = ::sun::awt::X11::XWindow;
 using $XWindowPeer = ::sun::awt::X11::XWindowPeer;
 
 namespace sun {

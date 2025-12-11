@@ -44,7 +44,6 @@
 using $AWTException = ::java::awt::AWTException;
 using $BufferCapabilities = ::java::awt::BufferCapabilities;
 using $BufferCapabilities$FlipContents = ::java::awt::BufferCapabilities$FlipContents;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
@@ -73,9 +72,7 @@ using $Win32GraphicsDevice = ::sun::awt::Win32GraphicsDevice;
 using $Win32GraphicsEnvironment = ::sun::awt::Win32GraphicsEnvironment;
 using $OffScreenImage = ::sun::awt::image::OffScreenImage;
 using $SunVolatileImage = ::sun::awt::image::SunVolatileImage;
-using $SurfaceManager$ProxiedGraphicsConfig = ::sun::awt::image::SurfaceManager$ProxiedGraphicsConfig;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $CompositeType = ::sun::java2d::loops::CompositeType;
 using $RenderLoops = ::sun::java2d::loops::RenderLoops;
@@ -172,7 +169,7 @@ void Win32GraphicsConfig::finalize() {
 void Win32GraphicsConfig::initIDs() {
 	$init(Win32GraphicsConfig);
 	$prepareNativeStatic(Win32GraphicsConfig, initIDs, void);
-	$invokeNativeStatic(Win32GraphicsConfig, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -265,7 +262,7 @@ $String* Win32GraphicsConfig::toString() {
 $Rectangle* Win32GraphicsConfig::getBounds(int32_t screen) {
 	$var($Rectangle, $ret, nullptr);
 	$prepareNative(Win32GraphicsConfig, getBounds, $Rectangle*, int32_t screen);
-	$assign($ret, $invokeNative(Win32GraphicsConfig, getBounds, screen));
+	$assign($ret, $invokeNativeObject(screen));
 	$finishNative();
 	return $ret;
 }

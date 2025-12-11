@@ -9,7 +9,6 @@
 #include <javax/swing/filechooser/FileSystemView.h>
 #include <jcpp.h>
 
-using $PropertyChangeListenerArray = $Array<::java::beans::PropertyChangeListener>;
 using $UIManager$LookAndFeelInfoArray = $Array<::javax::swing::UIManager$LookAndFeelInfo>;
 using $File = ::java::io::File;
 using $PrintStream = ::java::io::PrintStream;

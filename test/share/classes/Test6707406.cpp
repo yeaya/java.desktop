@@ -28,7 +28,6 @@ using $UIManager = ::javax::swing::UIManager;
 using $UIManager$LookAndFeelInfo = ::javax::swing::UIManager$LookAndFeelInfo;
 using $ColorSelectionModel = ::javax::swing::colorchooser::ColorSelectionModel;
 using $ColorChooserUI = ::javax::swing::plaf::ColorChooserUI;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $BasicColorChooserUI = ::javax::swing::plaf::basic::BasicColorChooserUI;
 
 $MethodInfo _Test6707406_MethodInfo_[] = {

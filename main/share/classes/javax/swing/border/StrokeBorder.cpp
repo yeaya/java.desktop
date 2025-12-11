@@ -22,14 +22,12 @@
 #undef VALUE_ANTIALIAS_ON
 
 using $BasicStroke = ::java::awt::BasicStroke;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $Insets = ::java::awt::Insets;
 using $Paint = ::java::awt::Paint;
 using $RenderingHints = ::java::awt::RenderingHints;
-using $RenderingHints$Key = ::java::awt::RenderingHints$Key;
 using $Shape = ::java::awt::Shape;
 using $Stroke = ::java::awt::Stroke;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;

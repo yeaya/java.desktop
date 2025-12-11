@@ -3,7 +3,6 @@
 #include <com/sun/media/sound/SoftAudioBuffer.h>
 #include <jcpp.h>
 
-using $SoftAudioBuffer = ::com::sun::media::sound::SoftAudioBuffer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

@@ -20,8 +20,6 @@ using $AbstractList = ::java::util::AbstractList;
 using $Collection = ::java::util::Collection;
 using $List = ::java::util::List;
 using $Vector = ::java::util::Vector;
-using $Callable = ::java::util::concurrent::Callable;
-using $BasicDirectoryModel = ::javax::swing::plaf::basic::BasicDirectoryModel;
 using $BasicDirectoryModel$DoChangeContents = ::javax::swing::plaf::basic::BasicDirectoryModel$DoChangeContents;
 using $BasicDirectoryModel$FilesLoader = ::javax::swing::plaf::basic::BasicDirectoryModel$FilesLoader;
 

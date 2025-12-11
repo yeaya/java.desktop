@@ -25,7 +25,6 @@
 using $WindowArray = $Array<::java::awt::Window>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Dimension = ::java::awt::Dimension;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $Insets = ::java::awt::Insets;
 using $Point = ::java::awt::Point;
@@ -40,11 +39,9 @@ using $JApplet = ::javax::swing::JApplet;
 using $JComponent = ::javax::swing::JComponent;
 using $JDialog = ::javax::swing::JDialog;
 using $JFrame = ::javax::swing::JFrame;
-using $JLayeredPane = ::javax::swing::JLayeredPane;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 using $JWindow = ::javax::swing::JWindow;
 using $Popup = ::javax::swing::Popup;
-using $PopupFactory = ::javax::swing::PopupFactory;
 using $RootPaneContainer = ::javax::swing::RootPaneContainer;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 

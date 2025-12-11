@@ -8,12 +8,10 @@
 #include <jcpp.h>
 
 using $bug4361477 = ::bug4361477;
-using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JTabbedPane = ::javax::swing::JTabbedPane;
 using $TabbedPaneUI = ::javax::swing::plaf::TabbedPaneUI;
 

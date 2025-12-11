@@ -156,11 +156,7 @@ using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $SecurityManager = ::java::lang::SecurityManager;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AbstractMap = ::java::util::AbstractMap;
 using $HashMap = ::java::util::HashMap;
 using $Iterator = ::java::util::Iterator;
@@ -168,7 +164,6 @@ using $List = ::java::util::List;
 using $Map = ::java::util::Map;
 using $Callable = ::java::util::concurrent::Callable;
 using $ShellFolder = ::sun::awt::shell::ShellFolder;
-using $ShellFolderColumnInfo = ::sun::awt::shell::ShellFolderColumnInfo;
 using $Win32ShellFolder2$1 = ::sun::awt::shell::Win32ShellFolder2$1;
 using $Win32ShellFolder2$10 = ::sun::awt::shell::Win32ShellFolder2$10;
 using $Win32ShellFolder2$11 = ::sun::awt::shell::Win32ShellFolder2$11;
@@ -529,7 +524,7 @@ $Image* Win32ShellFolder2::access$001(Win32ShellFolder2* x0, bool x1) {
 void Win32ShellFolder2::initIDs() {
 	$init(Win32ShellFolder2);
 	$prepareNativeStatic(Win32ShellFolder2, initIDs, void);
-	$invokeNativeStatic(Win32ShellFolder2, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -596,13 +591,13 @@ Win32ShellFolder2* Win32ShellFolder2::createShellFolder(Win32ShellFolder2* paren
 
 void Win32ShellFolder2::initDesktop() {
 	$prepareNative(Win32ShellFolder2, initDesktop, void);
-	$invokeNative(Win32ShellFolder2, initDesktop);
+	$invokeNative();
 	$finishNative();
 }
 
 void Win32ShellFolder2::initSpecial(int64_t desktopIShellFolder, int32_t csidl) {
 	$prepareNative(Win32ShellFolder2, initSpecial, void, int64_t desktopIShellFolder, int32_t csidl);
-	$invokeNative(Win32ShellFolder2, initSpecial, desktopIShellFolder, csidl);
+	$invokeNative(desktopIShellFolder, csidl);
 	$finishNative();
 }
 
@@ -622,7 +617,7 @@ int64_t Win32ShellFolder2::getNextPIDLEntry(int64_t pIDL) {
 	$init(Win32ShellFolder2);
 	int64_t $ret = 0;
 	$prepareNativeStatic(Win32ShellFolder2, getNextPIDLEntry, int64_t, int64_t pIDL);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, getNextPIDLEntry, pIDL);
+	$ret = $invokeNativeStatic(pIDL);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -631,7 +626,7 @@ int64_t Win32ShellFolder2::copyFirstPIDLEntry(int64_t pIDL) {
 	$init(Win32ShellFolder2);
 	int64_t $ret = 0;
 	$prepareNativeStatic(Win32ShellFolder2, copyFirstPIDLEntry, int64_t, int64_t pIDL);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, copyFirstPIDLEntry, pIDL);
+	$ret = $invokeNativeStatic(pIDL);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -640,7 +635,7 @@ int64_t Win32ShellFolder2::combinePIDLs(int64_t ppIDL, int64_t pIDL) {
 	$init(Win32ShellFolder2);
 	int64_t $ret = 0;
 	$prepareNativeStatic(Win32ShellFolder2, combinePIDLs, int64_t, int64_t ppIDL, int64_t pIDL);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, combinePIDLs, ppIDL, pIDL);
+	$ret = $invokeNativeStatic(ppIDL, pIDL);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -648,14 +643,14 @@ int64_t Win32ShellFolder2::combinePIDLs(int64_t ppIDL, int64_t pIDL) {
 void Win32ShellFolder2::releasePIDL(int64_t pIDL) {
 	$init(Win32ShellFolder2);
 	$prepareNativeStatic(Win32ShellFolder2, releasePIDL, void, int64_t pIDL);
-	$invokeNativeStatic(Win32ShellFolder2, releasePIDL, pIDL);
+	$invokeNativeStatic(pIDL);
 	$finishNativeStatic();
 }
 
 void Win32ShellFolder2::releaseIShellFolder(int64_t pIShellFolder) {
 	$init(Win32ShellFolder2);
 	$prepareNativeStatic(Win32ShellFolder2, releaseIShellFolder, void, int64_t pIShellFolder);
-	$invokeNativeStatic(Win32ShellFolder2, releaseIShellFolder, pIShellFolder);
+	$invokeNativeStatic(pIShellFolder);
 	$finishNativeStatic();
 }
 
@@ -751,7 +746,7 @@ int32_t Win32ShellFolder2::compareIDs(int64_t pParentIShellFolder, int64_t pidl1
 	$init(Win32ShellFolder2);
 	int32_t $ret = 0;
 	$prepareNativeStatic(Win32ShellFolder2, compareIDs, int32_t, int64_t pParentIShellFolder, int64_t pidl1, int64_t pidl2);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, compareIDs, pParentIShellFolder, pidl1, pidl2);
+	$ret = $invokeNativeStatic(pParentIShellFolder, pidl1, pidl2);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -773,7 +768,7 @@ int32_t Win32ShellFolder2::getAttributes0(int64_t pParentIShellFolder, int64_t p
 	$init(Win32ShellFolder2);
 	int32_t $ret = 0;
 	$prepareNativeStatic(Win32ShellFolder2, getAttributes0, int32_t, int64_t pParentIShellFolder, int64_t pIDL, int32_t attrsMask);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, getAttributes0, pParentIShellFolder, pIDL, attrsMask);
+	$ret = $invokeNativeStatic(pParentIShellFolder, pIDL, attrsMask);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -834,7 +829,7 @@ $String* Win32ShellFolder2::getFileSystemPath0(int32_t csidl) {
 	$init(Win32ShellFolder2);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(Win32ShellFolder2, getFileSystemPath0, $String*, int32_t csidl);
-	$assign($ret, $invokeNativeStatic(Win32ShellFolder2, getFileSystemPath0, csidl));
+	$assign($ret, $invokeNativeStaticObject(csidl));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -877,7 +872,7 @@ int64_t Win32ShellFolder2::getEnumObjects(bool includeHiddenFiles) {
 int64_t Win32ShellFolder2::getEnumObjects(int64_t pIShellFolder, bool isDesktop, bool includeHiddenFiles) {
 	int64_t $ret = 0;
 	$prepareNative(Win32ShellFolder2, getEnumObjects, int64_t, int64_t pIShellFolder, bool isDesktop, bool includeHiddenFiles);
-	$ret = $invokeNative(Win32ShellFolder2, getEnumObjects, pIShellFolder, isDesktop, includeHiddenFiles);
+	$ret = $invokeNative(pIShellFolder, isDesktop, includeHiddenFiles);
 	$finishNative();
 	return $ret;
 }
@@ -885,14 +880,14 @@ int64_t Win32ShellFolder2::getEnumObjects(int64_t pIShellFolder, bool isDesktop,
 int64_t Win32ShellFolder2::getNextChild(int64_t pEnumObjects) {
 	int64_t $ret = 0;
 	$prepareNative(Win32ShellFolder2, getNextChild, int64_t, int64_t pEnumObjects);
-	$ret = $invokeNative(Win32ShellFolder2, getNextChild, pEnumObjects);
+	$ret = $invokeNative(pEnumObjects);
 	$finishNative();
 	return $ret;
 }
 
 void Win32ShellFolder2::releaseEnumObjects(int64_t pEnumObjects) {
 	$prepareNative(Win32ShellFolder2, releaseEnumObjects, void, int64_t pEnumObjects);
-	$invokeNative(Win32ShellFolder2, releaseEnumObjects, pEnumObjects);
+	$invokeNative(pEnumObjects);
 	$finishNative();
 }
 
@@ -900,7 +895,7 @@ int64_t Win32ShellFolder2::bindToObject(int64_t parentIShellFolder, int64_t pIDL
 	$init(Win32ShellFolder2);
 	int64_t $ret = 0;
 	$prepareNativeStatic(Win32ShellFolder2, bindToObject, int64_t, int64_t parentIShellFolder, int64_t pIDL);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, bindToObject, parentIShellFolder, pIDL);
+	$ret = $invokeNativeStatic(parentIShellFolder, pIDL);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -941,7 +936,7 @@ int64_t Win32ShellFolder2::getLinkLocation(int64_t parentIShellFolder, int64_t r
 	$init(Win32ShellFolder2);
 	int64_t $ret = 0;
 	$prepareNativeStatic(Win32ShellFolder2, getLinkLocation, int64_t, int64_t parentIShellFolder, int64_t relativePIDL, bool resolve);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, getLinkLocation, parentIShellFolder, relativePIDL, resolve);
+	$ret = $invokeNativeStatic(parentIShellFolder, relativePIDL, resolve);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -964,7 +959,7 @@ int64_t Win32ShellFolder2::parseDisplayName0(int64_t pIShellFolder, $String* nam
 	$init(Win32ShellFolder2);
 	int64_t $ret = 0;
 	$prepareNativeStatic(Win32ShellFolder2, parseDisplayName0, int64_t, int64_t pIShellFolder, $String* name);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, parseDisplayName0, pIShellFolder, name);
+	$ret = $invokeNativeStatic(pIShellFolder, name);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -973,7 +968,7 @@ $String* Win32ShellFolder2::getDisplayNameOf(int64_t parentIShellFolder, int64_t
 	$init(Win32ShellFolder2);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(Win32ShellFolder2, getDisplayNameOf, $String*, int64_t parentIShellFolder, int64_t relativePIDL, int32_t attrs);
-	$assign($ret, $invokeNativeStatic(Win32ShellFolder2, getDisplayNameOf, parentIShellFolder, relativePIDL, attrs));
+	$assign($ret, $invokeNativeStaticObject(parentIShellFolder, relativePIDL, attrs));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -982,7 +977,7 @@ $Win32ShellFolder2$KnownFolderDefinitionArray* Win32ShellFolder2::loadKnownFolde
 	$init(Win32ShellFolder2);
 	$var($Win32ShellFolder2$KnownFolderDefinitionArray, $ret, nullptr);
 	$prepareNativeStatic(Win32ShellFolder2, loadKnownFolders, $Win32ShellFolder2$KnownFolderDefinitionArray*);
-	$assign($ret, $invokeNativeStatic(Win32ShellFolder2, loadKnownFolders));
+	$assign($ret, $invokeNativeStaticObject());
 	$finishNativeStatic();
 	return $ret;
 }
@@ -998,7 +993,7 @@ $String* Win32ShellFolder2::getFolderType(int64_t pIDL) {
 	$init(Win32ShellFolder2);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(Win32ShellFolder2, getFolderType, $String*, int64_t pIDL);
-	$assign($ret, $invokeNativeStatic(Win32ShellFolder2, getFolderType, pIDL));
+	$assign($ret, $invokeNativeStaticObject(pIDL));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1014,7 +1009,7 @@ $String* Win32ShellFolder2::getFolderType() {
 $String* Win32ShellFolder2::getExecutableType($String* path) {
 	$var($String, $ret, nullptr);
 	$prepareNative(Win32ShellFolder2, getExecutableType, $String*, $String* path);
-	$assign($ret, $invokeNative(Win32ShellFolder2, getExecutableType, path));
+	$assign($ret, $invokeNativeObject(path));
 	$finishNative();
 	return $ret;
 }
@@ -1030,7 +1025,7 @@ int64_t Win32ShellFolder2::getIShellIcon(int64_t pIShellFolder) {
 	$init(Win32ShellFolder2);
 	int64_t $ret = 0;
 	$prepareNativeStatic(Win32ShellFolder2, getIShellIcon, int64_t, int64_t pIShellFolder);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, getIShellIcon, pIShellFolder);
+	$ret = $invokeNativeStatic(pIShellFolder);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1039,7 +1034,7 @@ int32_t Win32ShellFolder2::getIconIndex(int64_t parentIShellIcon, int64_t relati
 	$init(Win32ShellFolder2);
 	int32_t $ret = 0;
 	$prepareNativeStatic(Win32ShellFolder2, getIconIndex, int32_t, int64_t parentIShellIcon, int64_t relativePIDL);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, getIconIndex, parentIShellIcon, relativePIDL);
+	$ret = $invokeNativeStatic(parentIShellIcon, relativePIDL);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1048,7 +1043,7 @@ int64_t Win32ShellFolder2::getIcon($String* absolutePath, bool getLargeIcon) {
 	$init(Win32ShellFolder2);
 	int64_t $ret = 0;
 	$prepareNativeStatic(Win32ShellFolder2, getIcon, int64_t, $String* absolutePath, bool getLargeIcon);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, getIcon, absolutePath, getLargeIcon);
+	$ret = $invokeNativeStatic(absolutePath, getLargeIcon);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1057,7 +1052,7 @@ int64_t Win32ShellFolder2::extractIcon(int64_t parentIShellFolder, int64_t relat
 	$init(Win32ShellFolder2);
 	int64_t $ret = 0;
 	$prepareNativeStatic(Win32ShellFolder2, extractIcon, int64_t, int64_t parentIShellFolder, int64_t relativePIDL, int32_t size, bool getDefaultIcon);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, extractIcon, parentIShellFolder, relativePIDL, size, getDefaultIcon);
+	$ret = $invokeNativeStatic(parentIShellFolder, relativePIDL, size, getDefaultIcon);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1066,7 +1061,7 @@ bool Win32ShellFolder2::hiResIconAvailable(int64_t parentIShellFolder, int64_t r
 	$init(Win32ShellFolder2);
 	bool $ret = false;
 	$prepareNativeStatic(Win32ShellFolder2, hiResIconAvailable, bool, int64_t parentIShellFolder, int64_t relativePIDL);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, hiResIconAvailable, parentIShellFolder, relativePIDL);
+	$ret = $invokeNativeStatic(parentIShellFolder, relativePIDL);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1075,7 +1070,7 @@ int64_t Win32ShellFolder2::getSystemIcon(int32_t iconID) {
 	$init(Win32ShellFolder2);
 	int64_t $ret = 0;
 	$prepareNativeStatic(Win32ShellFolder2, getSystemIcon, int64_t, int32_t iconID);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, getSystemIcon, iconID);
+	$ret = $invokeNativeStatic(iconID);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1084,7 +1079,7 @@ int64_t Win32ShellFolder2::getIconResource($String* libName, int32_t iconID, int
 	$init(Win32ShellFolder2);
 	int64_t $ret = 0;
 	$prepareNativeStatic(Win32ShellFolder2, getIconResource, int64_t, $String* libName, int32_t iconID, int32_t cxDesired, int32_t cyDesired);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, getIconResource, libName, iconID, cxDesired, cyDesired);
+	$ret = $invokeNativeStatic(libName, iconID, cxDesired, cyDesired);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1093,7 +1088,7 @@ $ints* Win32ShellFolder2::getIconBits(int64_t hIcon) {
 	$init(Win32ShellFolder2);
 	$var($ints, $ret, nullptr);
 	$prepareNativeStatic(Win32ShellFolder2, getIconBits, $ints*, int64_t hIcon);
-	$assign($ret, $invokeNativeStatic(Win32ShellFolder2, getIconBits, hIcon));
+	$assign($ret, $invokeNativeStaticObject(hIcon));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1101,7 +1096,7 @@ $ints* Win32ShellFolder2::getIconBits(int64_t hIcon) {
 void Win32ShellFolder2::disposeIcon(int64_t hIcon) {
 	$init(Win32ShellFolder2);
 	$prepareNativeStatic(Win32ShellFolder2, disposeIcon, void, int64_t hIcon);
-	$invokeNativeStatic(Win32ShellFolder2, disposeIcon, hIcon);
+	$invokeNativeStatic(hIcon);
 	$finishNativeStatic();
 }
 
@@ -1109,7 +1104,7 @@ $ints* Win32ShellFolder2::getStandardViewButton0(int32_t iconIndex, bool small) 
 	$init(Win32ShellFolder2);
 	$var($ints, $ret, nullptr);
 	$prepareNativeStatic(Win32ShellFolder2, getStandardViewButton0, $ints*, int32_t iconIndex, bool small);
-	$assign($ret, $invokeNativeStatic(Win32ShellFolder2, getStandardViewButton0, iconIndex, small));
+	$assign($ret, $invokeNativeStaticObject(iconIndex, small));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1243,7 +1238,7 @@ $ShellFolder* Win32ShellFolder2::resolveLibrary() {
 $ShellFolderColumnInfoArray* Win32ShellFolder2::doGetColumnInfo(int64_t iShellFolder2) {
 	$var($ShellFolderColumnInfoArray, $ret, nullptr);
 	$prepareNative(Win32ShellFolder2, doGetColumnInfo, $ShellFolderColumnInfoArray*, int64_t iShellFolder2);
-	$assign($ret, $invokeNative(Win32ShellFolder2, doGetColumnInfo, iShellFolder2));
+	$assign($ret, $invokeNativeObject(iShellFolder2));
 	$finishNative();
 	return $ret;
 }
@@ -1251,7 +1246,7 @@ $ShellFolderColumnInfoArray* Win32ShellFolder2::doGetColumnInfo(int64_t iShellFo
 $Object* Win32ShellFolder2::doGetColumnValue(int64_t parentIShellFolder2, int64_t childPIDL, int32_t columnIdx) {
 	$var($Object, $ret, nullptr);
 	$prepareNative(Win32ShellFolder2, doGetColumnValue, $Object*, int64_t parentIShellFolder2, int64_t childPIDL, int32_t columnIdx);
-	$assign($ret, $invokeNative(Win32ShellFolder2, doGetColumnValue, parentIShellFolder2, childPIDL, columnIdx));
+	$assign($ret, $invokeNativeObject(parentIShellFolder2, childPIDL, columnIdx));
 	$finishNative();
 	return $ret;
 }
@@ -1260,7 +1255,7 @@ int32_t Win32ShellFolder2::compareIDsByColumn(int64_t pParentIShellFolder, int64
 	$init(Win32ShellFolder2);
 	int32_t $ret = 0;
 	$prepareNativeStatic(Win32ShellFolder2, compareIDsByColumn, int32_t, int64_t pParentIShellFolder, int64_t pidl1, int64_t pidl2, int32_t columnIdx);
-	$ret = $invokeNativeStatic(Win32ShellFolder2, compareIDsByColumn, pParentIShellFolder, pidl1, pidl2, columnIdx);
+	$ret = $invokeNativeStatic(pParentIShellFolder, pidl1, pidl2, columnIdx);
 	$finishNativeStatic();
 	return $ret;
 }

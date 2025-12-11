@@ -11,7 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ReentrantContext = ::sun::java2d::ReentrantContext;
-using $ReentrantContextProvider = ::sun::java2d::ReentrantContextProvider;
 using $ReentrantContextProviderCLQ = ::sun::java2d::ReentrantContextProviderCLQ;
 using $ReentrantContextProviderTL = ::sun::java2d::ReentrantContextProviderTL;
 

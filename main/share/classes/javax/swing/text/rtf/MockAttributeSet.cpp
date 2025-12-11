@@ -13,7 +13,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Dictionary = ::java::util::Dictionary;
 using $Enumeration = ::java::util::Enumeration;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 
 namespace javax {
 	namespace swing {

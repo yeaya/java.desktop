@@ -28,7 +28,6 @@ using $Format = ::java::text::Format;
 using $NumberFormat = ::java::text::NumberFormat;
 using $CyclicBarrier = ::java::util::concurrent::CyclicBarrier;
 using $UndoableEditListener = ::javax::swing::event::UndoableEditListener;
-using $AbstractDocument = ::javax::swing::text::AbstractDocument;
 using $AbstractDocument$Content = ::javax::swing::text::AbstractDocument$Content;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $PlainDocument = ::javax::swing::text::PlainDocument;

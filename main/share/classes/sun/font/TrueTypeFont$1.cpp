@@ -11,8 +11,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedExceptionAction = ::java::security::PrivilegedExceptionAction;
-using $PhysicalFont = ::sun::font::PhysicalFont;
 using $TrueTypeFont = ::sun::font::TrueTypeFont;
 
 namespace sun {

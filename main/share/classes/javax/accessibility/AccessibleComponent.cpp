@@ -11,17 +11,8 @@
 #include <javax/accessibility/Accessible.h>
 #include <jcpp.h>
 
-using $Color = ::java::awt::Color;
-using $Cursor = ::java::awt::Cursor;
-using $Dimension = ::java::awt::Dimension;
-using $Font = ::java::awt::Font;
-using $FontMetrics = ::java::awt::FontMetrics;
-using $Point = ::java::awt::Point;
-using $Rectangle = ::java::awt::Rectangle;
-using $FocusListener = ::java::awt::event::FocusListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Accessible = ::javax::accessibility::Accessible;
 
 namespace javax {
 	namespace accessibility {

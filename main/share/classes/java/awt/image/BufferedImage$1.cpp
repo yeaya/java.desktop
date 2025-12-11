@@ -4,7 +4,6 @@
 #include <java/lang/ClassLoader.h>
 #include <jcpp.h>
 
-using $BufferedImage = ::java::awt::image::BufferedImage;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $ClassLoader = ::java::lang::ClassLoader;
@@ -12,7 +11,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 
 namespace java {
 	namespace awt {

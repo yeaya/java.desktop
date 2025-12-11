@@ -26,7 +26,6 @@ using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JComponent = ::javax::swing::JComponent;
 using $JRootPane = ::javax::swing::JRootPane;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;

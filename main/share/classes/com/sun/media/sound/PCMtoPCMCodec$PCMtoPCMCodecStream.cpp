@@ -33,7 +33,6 @@ using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 using $AudioFormat$Encoding = ::javax::sound::sampled::AudioFormat$Encoding;
 using $AudioInputStream = ::javax::sound::sampled::AudioInputStream;
 using $AudioSystem = ::javax::sound::sampled::AudioSystem;
-using $FormatConversionProvider = ::javax::sound::sampled::spi::FormatConversionProvider;
 
 namespace com {
 	namespace sun {
@@ -117,32 +116,32 @@ void PCMtoPCMCodec$PCMtoPCMCodecStream::init$($PCMtoPCMCodec* this$0, $AudioInpu
 		$init($AudioFormat$Encoding);
 		bool var$1 = $nc($AudioFormat$Encoding::PCM_UNSIGNED)->equals(inputEncoding);
 		if (var$1 && $nc($AudioFormat$Encoding::PCM_SIGNED)->equals(outputEncoding)) {
-			this->conversionType = this->PCM_SWITCH_SIGNED_8BIT;
+			this->conversionType = PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_SWITCH_SIGNED_8BIT;
 		} else {
 			bool var$3 = $nc($AudioFormat$Encoding::PCM_SIGNED)->equals(inputEncoding);
 			if (var$3 && $nc($AudioFormat$Encoding::PCM_UNSIGNED)->equals(outputEncoding)) {
-				this->conversionType = this->PCM_SWITCH_SIGNED_8BIT;
+				this->conversionType = PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_SWITCH_SIGNED_8BIT;
 			}
 		}
 	} else if ($nc(inputEncoding)->equals(outputEncoding) && (inputIsBigEndian != outputIsBigEndian)) {
-		this->conversionType = this->PCM_SWITCH_ENDIAN;
+		this->conversionType = PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_SWITCH_ENDIAN;
 	} else {
 		$init($AudioFormat$Encoding);
 		bool var$5 = $nc($AudioFormat$Encoding::PCM_UNSIGNED)->equals(inputEncoding) && !inputIsBigEndian;
 		if (var$5 && $nc($AudioFormat$Encoding::PCM_SIGNED)->equals(outputEncoding) && outputIsBigEndian) {
-			this->conversionType = this->PCM_UNSIGNED_LE2SIGNED_BE;
+			this->conversionType = PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_UNSIGNED_LE2SIGNED_BE;
 		} else {
 			bool var$7 = $nc($AudioFormat$Encoding::PCM_SIGNED)->equals(inputEncoding) && !inputIsBigEndian;
 			if (var$7 && $nc($AudioFormat$Encoding::PCM_UNSIGNED)->equals(outputEncoding) && outputIsBigEndian) {
-				this->conversionType = this->PCM_SIGNED_LE2UNSIGNED_BE;
+				this->conversionType = PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_SIGNED_LE2UNSIGNED_BE;
 			} else {
 				bool var$9 = $nc($AudioFormat$Encoding::PCM_UNSIGNED)->equals(inputEncoding) && inputIsBigEndian;
 				if (var$9 && $nc($AudioFormat$Encoding::PCM_SIGNED)->equals(outputEncoding) && !outputIsBigEndian) {
-					this->conversionType = this->PCM_UNSIGNED_BE2SIGNED_LE;
+					this->conversionType = PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_UNSIGNED_BE2SIGNED_LE;
 				} else {
 					bool var$11 = $nc($AudioFormat$Encoding::PCM_SIGNED)->equals(inputEncoding) && inputIsBigEndian;
 					if (var$11 && $nc($AudioFormat$Encoding::PCM_UNSIGNED)->equals(outputEncoding) && !outputIsBigEndian) {
-						this->conversionType = this->PCM_SIGNED_BE2UNSIGNED_LE;
+						this->conversionType = PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_SIGNED_BE2UNSIGNED_LE;
 					}
 				}
 			}
@@ -164,7 +163,7 @@ int32_t PCMtoPCMCodec$PCMtoPCMCodecStream::read() {
 	int32_t temp = 0;
 	int8_t tempbyte = 0;
 	if (this->frameSize == 1) {
-		if (this->conversionType == this->PCM_SWITCH_SIGNED_8BIT) {
+		if (this->conversionType == PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_SWITCH_SIGNED_8BIT) {
 			temp = $AudioInputStream::read();
 			if (temp < 0) {
 				return temp;
@@ -199,37 +198,37 @@ int32_t PCMtoPCMCodec$PCMtoPCMCodecStream::read($bytes* b, int32_t off, int32_t 
 		return readCount;
 	}
 	switch (this->conversionType) {
-	case this->PCM_SWITCH_SIGNED_8BIT:
+	case PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_SWITCH_SIGNED_8BIT:
 		{
 			switchSigned8bit(b, off, len, readCount);
 			break;
 		}
-	case this->PCM_SWITCH_ENDIAN:
+	case PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_SWITCH_ENDIAN:
 		{
 			switchEndian(b, off, len, readCount);
 			break;
 		}
-	case this->PCM_SWITCH_SIGNED_LE:
+	case PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_SWITCH_SIGNED_LE:
 		{
 			switchSignedLE(b, off, len, readCount);
 			break;
 		}
-	case this->PCM_SWITCH_SIGNED_BE:
+	case PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_SWITCH_SIGNED_BE:
 		{
 			switchSignedBE(b, off, len, readCount);
 			break;
 		}
-	case this->PCM_UNSIGNED_LE2SIGNED_BE:
+	case PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_UNSIGNED_LE2SIGNED_BE:
 		{}
-	case this->PCM_SIGNED_LE2UNSIGNED_BE:
+	case PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_SIGNED_LE2UNSIGNED_BE:
 		{
 			switchSignedLE(b, off, len, readCount);
 			switchEndian(b, off, len, readCount);
 			break;
 		}
-	case this->PCM_UNSIGNED_BE2SIGNED_LE:
+	case PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_UNSIGNED_BE2SIGNED_LE:
 		{}
-	case this->PCM_SIGNED_BE2UNSIGNED_LE:
+	case PCMtoPCMCodec$PCMtoPCMCodecStream::PCM_SIGNED_BE2UNSIGNED_LE:
 		{
 			switchSignedBE(b, off, len, readCount);
 			switchEndian(b, off, len, readCount);

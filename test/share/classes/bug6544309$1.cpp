@@ -9,7 +9,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 
 $FieldInfo _bug6544309$1_FieldInfo_[] = {
 	{"val$test", "Lbug6544309;", nullptr, $FINAL | $SYNTHETIC, $field(bug6544309$1, val$test)},

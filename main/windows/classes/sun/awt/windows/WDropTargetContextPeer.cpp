@@ -15,13 +15,11 @@
 
 #undef MOUSE_DROPPED
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $FileInputStream = ::java::io::FileInputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $EventObject = ::java::util::EventObject;
 using $PeerEvent = ::sun::awt::PeerEvent;
 using $SunToolkit = ::sun::awt::SunToolkit;
 using $SunDropTargetContextPeer = ::sun::awt::dnd::SunDropTargetContextPeer;
@@ -113,14 +111,14 @@ void WDropTargetContextPeer::eventPosted($SunDropTargetEvent* e) {
 $Object* WDropTargetContextPeer::getData(int64_t nativeContext, int64_t format) {
 	$var($Object, $ret, nullptr);
 	$prepareNative(WDropTargetContextPeer, getData, $Object*, int64_t nativeContext, int64_t format);
-	$assign($ret, $invokeNative(WDropTargetContextPeer, getData, nativeContext, format));
+	$assign($ret, $invokeNativeObject(nativeContext, format));
 	$finishNative();
 	return $ret;
 }
 
 void WDropTargetContextPeer::dropDone(int64_t nativeContext, bool success, int32_t action) {
 	$prepareNative(WDropTargetContextPeer, dropDone, void, int64_t nativeContext, bool success, int32_t action);
-	$invokeNative(WDropTargetContextPeer, dropDone, nativeContext, success, action);
+	$invokeNative(nativeContext, success, action);
 	$finishNative();
 }
 

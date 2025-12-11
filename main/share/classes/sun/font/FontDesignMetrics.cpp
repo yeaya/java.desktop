@@ -51,7 +51,6 @@ using $IndexOutOfBoundsException = ::java::lang::IndexOutOfBoundsException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
-using $SoftReference = ::java::lang::ref::SoftReference;
 using $ConcurrentHashMap = ::java::util::concurrent::ConcurrentHashMap;
 using $CompositeFont = ::sun::font::CompositeFont;
 using $Font2D = ::sun::font::Font2D;

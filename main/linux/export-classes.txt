@@ -2301,9 +2301,6 @@ sun.awt.AWTAccessor$ToolkitAccessor
 sun.awt.AWTAccessor$TrayIconAccessor
 sun.awt.AWTAccessor$WindowAccessor
 sun.awt.AWTAutoShutdown
-sun.awt.AWTCharset
-sun.awt.AWTCharset$Decoder
-sun.awt.AWTCharset$Encoder
 sun.awt.AWTIcon32_java_icon16_png
 sun.awt.AWTIcon32_java_icon24_png
 sun.awt.AWTIcon32_java_icon32_png

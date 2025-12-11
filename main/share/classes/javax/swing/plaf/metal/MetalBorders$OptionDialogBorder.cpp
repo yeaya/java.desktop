@@ -28,14 +28,10 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
 using $JOptionPane = ::javax::swing::JOptionPane;
 using $UIManager = ::javax::swing::UIManager;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
-using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $MetalBorders = ::javax::swing::plaf::metal::MetalBorders;
 using $MetalLookAndFeel = ::javax::swing::plaf::metal::MetalLookAndFeel;
 
 namespace javax {

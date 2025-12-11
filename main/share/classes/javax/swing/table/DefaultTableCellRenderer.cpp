@@ -26,13 +26,11 @@
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Font = ::java::awt::Font;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SecurityManager = ::java::lang::SecurityManager;
 using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;
 using $JTable = ::javax::swing::JTable;
@@ -40,10 +38,8 @@ using $JTable$DropLocation = ::javax::swing::JTable$DropLocation;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
 using $Border = ::javax::swing::border::Border;
 using $EmptyBorder = ::javax::swing::border::EmptyBorder;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $UIResource = ::javax::swing::plaf::UIResource;
 using $BasicHTML = ::javax::swing::plaf::basic::BasicHTML;
-using $TableCellRenderer = ::javax::swing::table::TableCellRenderer;
 using $DefaultLookup = ::sun::swing::DefaultLookup;
 using $SwingUtilities2 = ::sun::swing::SwingUtilities2;
 

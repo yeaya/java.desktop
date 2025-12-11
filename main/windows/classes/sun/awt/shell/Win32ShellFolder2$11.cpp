@@ -13,7 +13,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InternalError = ::java::lang::InternalError;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Callable = ::java::util::concurrent::Callable;
 using $Win32ShellFolder2 = ::sun::awt::shell::Win32ShellFolder2;
 using $Win32ShellFolderManager2 = ::sun::awt::shell::Win32ShellFolderManager2;
 

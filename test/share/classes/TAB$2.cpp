@@ -7,14 +7,12 @@
 #include <javax/swing/table/DefaultTableCellRenderer.h>
 #include <jcpp.h>
 
-using $TAB = ::TAB;
 using $Color = ::java::awt::Color;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Number = ::java::lang::Number;
-using $JLabel = ::javax::swing::JLabel;
 using $DefaultTableCellRenderer = ::javax::swing::table::DefaultTableCellRenderer;
 
 $MethodInfo _TAB$2_MethodInfo_[] = {

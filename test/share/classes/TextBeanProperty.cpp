@@ -11,7 +11,6 @@
 
 using $PropertyDescriptorArray = $Array<::java::beans::PropertyDescriptor>;
 using $BeanInfo = ::java::beans::BeanInfo;
-using $FeatureDescriptor = ::java::beans::FeatureDescriptor;
 using $Introspector = ::java::beans::Introspector;
 using $PropertyDescriptor = ::java::beans::PropertyDescriptor;
 using $PrintStream = ::java::io::PrintStream;

@@ -40,22 +40,7 @@
 #include <jcpp.h>
 
 using $ComponentArray = $Array<::java::awt::Component>;
-using $ComponentListenerArray = $Array<::java::awt::event::ComponentListener>;
-using $FocusListenerArray = $Array<::java::awt::event::FocusListener>;
-using $HierarchyBoundsListenerArray = $Array<::java::awt::event::HierarchyBoundsListener>;
-using $HierarchyListenerArray = $Array<::java::awt::event::HierarchyListener>;
-using $InputMethodListenerArray = $Array<::java::awt::event::InputMethodListener>;
-using $KeyListenerArray = $Array<::java::awt::event::KeyListener>;
-using $MouseListenerArray = $Array<::java::awt::event::MouseListener>;
-using $MouseMotionListenerArray = $Array<::java::awt::event::MouseMotionListener>;
-using $MouseWheelListenerArray = $Array<::java::awt::event::MouseWheelListener>;
-using $PropertyChangeListenerArray = $Array<::java::beans::PropertyChangeListener>;
-using $VetoableChangeListenerArray = $Array<::java::beans::VetoableChangeListener>;
 using $UIManager$LookAndFeelInfoArray = $Array<::javax::swing::UIManager$LookAndFeelInfo>;
-using $AncestorListenerArray = $Array<::javax::swing::event::AncestorListener>;
-using $MenuDragMouseListenerArray = $Array<::javax::swing::event::MenuDragMouseListener>;
-using $MenuKeyListenerArray = $Array<::javax::swing::event::MenuKeyListener>;
-using $MenuListenerArray = $Array<::javax::swing::event::MenuListener>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $EventQueue = ::java::awt::EventQueue;
@@ -70,12 +55,7 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $ReflectiveOperationException = ::java::lang::ReflectiveOperationException;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $JComponent = ::javax::swing::JComponent;
 using $JFileChooser = ::javax::swing::JFileChooser;
 using $JMenu = ::javax::swing::JMenu;

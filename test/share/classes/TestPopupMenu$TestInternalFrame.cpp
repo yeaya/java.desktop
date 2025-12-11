@@ -12,14 +12,12 @@
 
 using $TestPopupMenu = ::TestPopupMenu;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
 
 $FieldInfo _TestPopupMenu$TestInternalFrame_FieldInfo_[] = {

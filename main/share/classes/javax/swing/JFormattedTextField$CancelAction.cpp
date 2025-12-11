@@ -11,7 +11,6 @@ using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractAction = ::javax::swing::AbstractAction;
 using $JFormattedTextField = ::javax::swing::JFormattedTextField;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $TextAction = ::javax::swing::text::TextAction;

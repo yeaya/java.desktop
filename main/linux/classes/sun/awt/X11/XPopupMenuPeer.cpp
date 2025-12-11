@@ -49,7 +49,6 @@
 #undef MOUSE_RELEASED
 
 using $AWTEvent = ::java::awt::AWTEvent;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Event = ::java::awt::Event;
@@ -65,7 +64,6 @@ using $PopupMenu = ::java::awt::PopupMenu;
 using $Rectangle = ::java::awt::Rectangle;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
-using $PopupMenuPeer = ::java::awt::peer::PopupMenuPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
@@ -74,9 +72,6 @@ using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$MenuAccessor = ::sun::awt::AWTAccessor$MenuAccessor;
 using $AWTAccessor$MenuComponentAccessor = ::sun::awt::AWTAccessor$MenuComponentAccessor;
 using $AWTAccessor$MenuItemAccessor = ::sun::awt::AWTAccessor$MenuItemAccessor;
-using $XBaseMenuWindow = ::sun::awt::X11::XBaseMenuWindow;
-using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
-using $XComponentPeer = ::sun::awt::X11::XComponentPeer;
 using $XEvent = ::sun::awt::X11::XEvent;
 using $XKeyEvent = ::sun::awt::X11::XKeyEvent;
 using $XMenuItemPeer = ::sun::awt::X11::XMenuItemPeer;
@@ -84,7 +79,6 @@ using $XMenuPeer = ::sun::awt::X11::XMenuPeer;
 using $XMenuWindow = ::sun::awt::X11::XMenuWindow;
 using $XToolkit = ::sun::awt::X11::XToolkit;
 using $XWindow = ::sun::awt::X11::XWindow;
-using $XWrapperBase = ::sun::awt::X11::XWrapperBase;
 using $PlatformLogger = ::sun::util::logging::PlatformLogger;
 using $PlatformLogger$Level = ::sun::util::logging::PlatformLogger$Level;
 

@@ -38,25 +38,19 @@
 #undef WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
 #undef WHEN_FOCUSED
 
-using $AWTEvent = ::java::awt::AWTEvent;
-using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
-using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $FocusEvent = ::java::awt::event::FocusEvent;
 using $FocusListener = ::java::awt::event::FocusListener;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
-using $KeyListener = ::java::awt::event::KeyListener;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $InputMap = ::javax::swing::InputMap;
 using $JComponent = ::javax::swing::JComponent;
 using $JList = ::javax::swing::JList;
@@ -66,10 +60,7 @@ using $ListModel = ::javax::swing::ListModel;
 using $ListSelectionModel = ::javax::swing::ListSelectionModel;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $ListDataEvent = ::javax::swing::event::ListDataEvent;
-using $ListDataListener = ::javax::swing::event::ListDataListener;
 using $ListSelectionEvent = ::javax::swing::event::ListSelectionEvent;
-using $ListSelectionListener = ::javax::swing::event::ListSelectionListener;
-using $MouseInputListener = ::javax::swing::event::MouseInputListener;
 using $BasicGraphicsUtils = ::javax::swing::plaf::basic::BasicGraphicsUtils;
 using $BasicListUI = ::javax::swing::plaf::basic::BasicListUI;
 using $DragRecognitionSupport = ::javax::swing::plaf::basic::DragRecognitionSupport;

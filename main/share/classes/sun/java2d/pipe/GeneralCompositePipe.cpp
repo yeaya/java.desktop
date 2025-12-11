@@ -34,7 +34,6 @@ using $PaintContext = ::java::awt::PaintContext;
 using $Rectangle = ::java::awt::Rectangle;
 using $RenderingHints = ::java::awt::RenderingHints;
 using $Shape = ::java::awt::Shape;
-using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ColorModel = ::java::awt::image::ColorModel;
@@ -51,7 +50,6 @@ using $Blit = ::sun::java2d::loops::Blit;
 using $CompositeType = ::sun::java2d::loops::CompositeType;
 using $MaskBlit = ::sun::java2d::loops::MaskBlit;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
-using $CompositePipe = ::sun::java2d::pipe::CompositePipe;
 using $GeneralCompositePipe$TileContext = ::sun::java2d::pipe::GeneralCompositePipe$TileContext;
 using $Region = ::sun::java2d::pipe::Region;
 

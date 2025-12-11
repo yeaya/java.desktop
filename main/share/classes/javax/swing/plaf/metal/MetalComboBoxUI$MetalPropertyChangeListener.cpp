@@ -14,7 +14,6 @@
 #include <jcpp.h>
 
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -22,7 +21,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JButton = ::javax::swing::JButton;
 using $JComboBox = ::javax::swing::JComboBox;
-using $JComponent = ::javax::swing::JComponent;
 using $JList = ::javax::swing::JList;
 using $BasicComboBoxUI = ::javax::swing::plaf::basic::BasicComboBoxUI;
 using $BasicComboBoxUI$PropertyChangeHandler = ::javax::swing::plaf::basic::BasicComboBoxUI$PropertyChangeHandler;

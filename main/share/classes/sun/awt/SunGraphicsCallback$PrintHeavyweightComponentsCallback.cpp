@@ -9,7 +9,6 @@
 #undef HEAVYWEIGHTS
 #undef LIGHTWEIGHTS
 
-using $ComponentArray = $Array<::java::awt::Component>;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Graphics = ::java::awt::Graphics;

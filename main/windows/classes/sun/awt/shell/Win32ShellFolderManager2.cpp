@@ -65,7 +65,6 @@ using $File = ::java::io::File;
 using $FileNotFoundException = ::java::io::FileNotFoundException;
 using $IOException = ::java::io::IOException;
 using $Serializable = ::java::io::Serializable;
-using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -77,11 +76,7 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NumberFormatException = ::java::lang::NumberFormatException;
 using $SecurityException = ::java::lang::SecurityException;
 using $SecurityManager = ::java::lang::SecurityManager;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $AbstractList = ::java::util::AbstractList;
@@ -777,14 +772,14 @@ $ShellFolder$Invoker* Win32ShellFolderManager2::createInvoker() {
 void Win32ShellFolderManager2::initializeCom() {
 	$init(Win32ShellFolderManager2);
 	$prepareNativeStatic(Win32ShellFolderManager2, initializeCom, void);
-	$invokeNativeStatic(Win32ShellFolderManager2, initializeCom);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
 void Win32ShellFolderManager2::uninitializeCom() {
 	$init(Win32ShellFolderManager2);
 	$prepareNativeStatic(Win32ShellFolderManager2, uninitializeCom, void);
-	$invokeNativeStatic(Win32ShellFolderManager2, uninitializeCom);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

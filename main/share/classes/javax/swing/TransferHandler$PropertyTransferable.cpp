@@ -13,9 +13,7 @@
 
 using $DataFlavorArray = $Array<::java::awt::datatransfer::DataFlavor>;
 using $DataFlavor = ::java::awt::datatransfer::DataFlavor;
-using $Transferable = ::java::awt::datatransfer::Transferable;
 using $UnsupportedFlavorException = ::java::awt::datatransfer::UnsupportedFlavorException;
-using $FeatureDescriptor = ::java::beans::FeatureDescriptor;
 using $PropertyDescriptor = ::java::beans::PropertyDescriptor;
 using $IOException = ::java::io::IOException;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -26,7 +24,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Method = ::java::lang::reflect::Method;
 using $JComponent = ::javax::swing::JComponent;
-using $TransferHandler = ::javax::swing::TransferHandler;
 using $MethodUtil = ::sun::reflect::misc::MethodUtil;
 
 namespace javax {

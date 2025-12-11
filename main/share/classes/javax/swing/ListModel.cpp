@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ListDataListener = ::javax::swing::event::ListDataListener;
 
 namespace javax {
 	namespace swing {

@@ -17,11 +17,9 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $Exception = ::java::lang::Exception;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JTextField = ::javax::swing::JTextField;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $MethodInfo _bug7045593$2_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(bug7045593$2::*)()>(&bug7045593$2::init$))},

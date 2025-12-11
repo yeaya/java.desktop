@@ -43,7 +43,6 @@ using $DropTargetEvent = ::java::awt::dnd::DropTargetEvent;
 using $DropTargetListener = ::java::awt::dnd::DropTargetListener;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ActionListener = ::java::awt::event::ActionListener;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

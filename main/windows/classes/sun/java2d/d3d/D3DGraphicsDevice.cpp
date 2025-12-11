@@ -51,13 +51,11 @@ using $Dialog = ::java::awt::Dialog;
 using $DisplayMode = ::java::awt::DisplayMode;
 using $Frame = ::java::awt::Frame;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
-using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $Rectangle = ::java::awt::Rectangle;
 using $Toolkit = ::java::awt::Toolkit;
 using $Window = ::java::awt::Window;
 using $WindowAdapter = ::java::awt::event::WindowAdapter;
 using $WindowListener = ::java::awt::event::WindowListener;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $WindowPeer = ::java::awt::peer::WindowPeer;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -70,7 +68,6 @@ using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor;
 using $Win32GraphicsConfig = ::sun::awt::Win32GraphicsConfig;
 using $Win32GraphicsDevice = ::sun::awt::Win32GraphicsDevice;
-using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
 using $D3DContext = ::sun::java2d::d3d::D3DContext;
 using $D3DContext$D3DContextCaps = ::sun::java2d::d3d::D3DContext$D3DContextCaps;
@@ -199,7 +196,7 @@ bool D3DGraphicsDevice::initD3D() {
 	$init(D3DGraphicsDevice);
 	bool $ret = false;
 	$prepareNativeStatic(D3DGraphicsDevice, initD3D, bool);
-	$ret = $invokeNativeStatic(D3DGraphicsDevice, initD3D);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -228,7 +225,7 @@ int32_t D3DGraphicsDevice::getDeviceCapsNative(int32_t screen) {
 	$init(D3DGraphicsDevice);
 	int32_t $ret = 0;
 	$prepareNativeStatic(D3DGraphicsDevice, getDeviceCapsNative, int32_t, int32_t screen);
-	$ret = $invokeNativeStatic(D3DGraphicsDevice, getDeviceCapsNative, screen);
+	$ret = $invokeNativeStatic(screen);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -237,7 +234,7 @@ $String* D3DGraphicsDevice::getDeviceIdNative(int32_t screen) {
 	$init(D3DGraphicsDevice);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(D3DGraphicsDevice, getDeviceIdNative, $String*, int32_t screen);
-	$assign($ret, $invokeNativeStatic(D3DGraphicsDevice, getDeviceIdNative, screen));
+	$assign($ret, $invokeNativeStaticObject(screen));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -306,7 +303,7 @@ bool D3DGraphicsDevice::enterFullScreenExclusiveNative(int32_t screen, int64_t h
 	$init(D3DGraphicsDevice);
 	bool $ret = false;
 	$prepareNativeStatic(D3DGraphicsDevice, enterFullScreenExclusiveNative, bool, int32_t screen, int64_t hwnd);
-	$ret = $invokeNativeStatic(D3DGraphicsDevice, enterFullScreenExclusiveNative, screen, hwnd);
+	$ret = $invokeNativeStatic(screen, hwnd);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -338,7 +335,7 @@ bool D3DGraphicsDevice::exitFullScreenExclusiveNative(int32_t screen) {
 	$init(D3DGraphicsDevice);
 	bool $ret = false;
 	$prepareNativeStatic(D3DGraphicsDevice, exitFullScreenExclusiveNative, bool, int32_t screen);
-	$ret = $invokeNativeStatic(D3DGraphicsDevice, exitFullScreenExclusiveNative, screen);
+	$ret = $invokeNativeStatic(screen);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -415,7 +412,7 @@ $DisplayMode* D3DGraphicsDevice::getCurrentDisplayModeNative(int32_t screen) {
 	$init(D3DGraphicsDevice);
 	$var($DisplayMode, $ret, nullptr);
 	$prepareNativeStatic(D3DGraphicsDevice, getCurrentDisplayModeNative, $DisplayMode*, int32_t screen);
-	$assign($ret, $invokeNativeStatic(D3DGraphicsDevice, getCurrentDisplayModeNative, screen));
+	$assign($ret, $invokeNativeStaticObject(screen));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -459,7 +456,7 @@ $DisplayMode* D3DGraphicsDevice::getCurrentDisplayMode(int32_t screen) {
 void D3DGraphicsDevice::configDisplayModeNative(int32_t screen, int64_t hwnd, int32_t width, int32_t height, int32_t bitDepth, int32_t refreshRate) {
 	$init(D3DGraphicsDevice);
 	$prepareNativeStatic(D3DGraphicsDevice, configDisplayModeNative, void, int32_t screen, int64_t hwnd, int32_t width, int32_t height, int32_t bitDepth, int32_t refreshRate);
-	$invokeNativeStatic(D3DGraphicsDevice, configDisplayModeNative, screen, hwnd, width, height, bitDepth, refreshRate);
+	$invokeNativeStatic(screen, hwnd, width, height, bitDepth, refreshRate);
 	$finishNativeStatic();
 }
 
@@ -494,7 +491,7 @@ void D3DGraphicsDevice::configDisplayMode(int32_t screen, $WindowPeer* w, int32_
 void D3DGraphicsDevice::enumDisplayModesNative(int32_t screen, $ArrayList* modes) {
 	$init(D3DGraphicsDevice);
 	$prepareNativeStatic(D3DGraphicsDevice, enumDisplayModesNative, void, int32_t screen, $ArrayList* modes);
-	$invokeNativeStatic(D3DGraphicsDevice, enumDisplayModesNative, screen, modes);
+	$invokeNativeStatic(screen, modes);
 	$finishNativeStatic();
 }
 
@@ -524,7 +521,7 @@ int64_t D3DGraphicsDevice::getAvailableAcceleratedMemoryNative(int32_t screen) {
 	$init(D3DGraphicsDevice);
 	int64_t $ret = 0;
 	$prepareNativeStatic(D3DGraphicsDevice, getAvailableAcceleratedMemoryNative, int64_t, int32_t screen);
-	$ret = $invokeNativeStatic(D3DGraphicsDevice, getAvailableAcceleratedMemoryNative, screen);
+	$ret = $invokeNativeStatic(screen);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -589,7 +586,7 @@ bool D3DGraphicsDevice::isD3DAvailableOnDeviceNative(int32_t screen) {
 	$init(D3DGraphicsDevice);
 	bool $ret = false;
 	$prepareNativeStatic(D3DGraphicsDevice, isD3DAvailableOnDeviceNative, bool, int32_t screen);
-	$ret = $invokeNativeStatic(D3DGraphicsDevice, isD3DAvailableOnDeviceNative, screen);
+	$ret = $invokeNativeStatic(screen);
 	$finishNativeStatic();
 	return $ret;
 }

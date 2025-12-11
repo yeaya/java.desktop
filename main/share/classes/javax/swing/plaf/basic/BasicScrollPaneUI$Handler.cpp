@@ -30,14 +30,10 @@
 
 using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
-using $Dimension = ::java::awt::Dimension;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseWheelEvent = ::java::awt::event::MouseWheelEvent;
-using $MouseWheelListener = ::java::awt::event::MouseWheelListener;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $AssertionError = ::java::lang::AssertionError;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -45,9 +41,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $BoundedRangeModel = ::javax::swing::BoundedRangeModel;
-using $JComponent = ::javax::swing::JComponent;
 using $JScrollBar = ::javax::swing::JScrollBar;
 using $JScrollPane = ::javax::swing::JScrollPane;
 using $JViewport = ::javax::swing::JViewport;

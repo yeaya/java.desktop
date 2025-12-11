@@ -46,7 +46,6 @@ using $LocaleArray = $Array<::java::util::Locale>;
 using $AWTEvent = ::java::awt::AWTEvent;
 using $AWTException = ::java::awt::AWTException;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Dialog = ::java::awt::Dialog;
 using $EventQueue = ::java::awt::EventQueue;
 using $Frame = ::java::awt::Frame;

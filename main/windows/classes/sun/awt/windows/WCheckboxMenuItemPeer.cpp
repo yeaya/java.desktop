@@ -13,15 +13,12 @@
 using $CheckboxMenuItem = ::java::awt::CheckboxMenuItem;
 using $Font = ::java::awt::Font;
 using $MenuItem = ::java::awt::MenuItem;
-using $CheckboxMenuItemPeer = ::java::awt::peer::CheckboxMenuItemPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $WCheckboxMenuItemPeer$1 = ::sun::awt::windows::WCheckboxMenuItemPeer$1;
 using $WMenuItemPeer = ::sun::awt::windows::WMenuItemPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WToolkit = ::sun::awt::windows::WToolkit;
 
 namespace sun {
@@ -108,7 +105,7 @@ void WCheckboxMenuItemPeer::finalize() {
 
 void WCheckboxMenuItemPeer::setState(bool t) {
 	$prepareNative(WCheckboxMenuItemPeer, setState, void, bool t);
-	$invokeNative(WCheckboxMenuItemPeer, setState, t);
+	$invokeNative(t);
 	$finishNative();
 }
 

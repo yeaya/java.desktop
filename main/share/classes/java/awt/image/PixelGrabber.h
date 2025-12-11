@@ -78,8 +78,8 @@ public:
 	int32_t dstScan = 0;
 	bool grabbing = false;
 	int32_t flags = 0;
-	static const int32_t GRABBEDBITS = (::java::awt::image::ImageObserver::FRAMEBITS | ::java::awt::image::ImageObserver::ALLBITS);
-	static const int32_t DONEBITS = (GRABBEDBITS | ::java::awt::image::ImageObserver::ERROR);
+	static const int32_t GRABBEDBITS = 48; // (::java::awt::image::ImageObserver::FRAMEBITS | ::java::awt::image::ImageObserver::ALLBITS)
+	static const int32_t DONEBITS = 112; // (GRABBEDBITS | ::java::awt::image::ImageObserver::ERROR)
 };
 
 		} // image

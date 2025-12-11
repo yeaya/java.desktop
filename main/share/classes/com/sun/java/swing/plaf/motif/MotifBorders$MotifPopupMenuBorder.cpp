@@ -18,7 +18,6 @@
 #undef GROOVE_HEIGHT
 #undef TEXT_SPACING
 
-using $MotifBorders = ::com::sun::java::swing::plaf::motif::MotifBorders;
 using $MotifGraphicsUtils = ::com::sun::java::swing::plaf::motif::MotifGraphicsUtils;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
@@ -34,7 +33,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $SwingUtilities2 = ::sun::swing::SwingUtilities2;
 
 namespace com {

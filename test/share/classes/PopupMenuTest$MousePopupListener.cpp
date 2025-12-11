@@ -20,7 +20,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
-using $JPanel = ::javax::swing::JPanel;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 
 $FieldInfo _PopupMenuTest$MousePopupListener_FieldInfo_[] = {

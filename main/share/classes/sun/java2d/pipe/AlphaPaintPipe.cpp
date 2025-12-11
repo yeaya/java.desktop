@@ -30,11 +30,9 @@
 #undef OPAQUE
 #undef TILE_SIZE
 
-using $Composite = ::java::awt::Composite;
 using $Paint = ::java::awt::Paint;
 using $PaintContext = ::java::awt::PaintContext;
 using $Rectangle = ::java::awt::Rectangle;
-using $RenderingHints = ::java::awt::RenderingHints;
 using $Shape = ::java::awt::Shape;
 using $Transparency = ::java::awt::Transparency;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
@@ -48,7 +46,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $Hashtable = ::java::util::Hashtable;
 using $BufImgSurfaceData = ::sun::awt::image::BufImgSurfaceData;
@@ -59,7 +56,6 @@ using $CompositeType = ::sun::java2d::loops::CompositeType;
 using $MaskBlit = ::sun::java2d::loops::MaskBlit;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $AlphaPaintPipe$TileContext = ::sun::java2d::pipe::AlphaPaintPipe$TileContext;
-using $CompositePipe = ::sun::java2d::pipe::CompositePipe;
 using $Region = ::sun::java2d::pipe::Region;
 
 namespace sun {

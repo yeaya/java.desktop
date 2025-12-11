@@ -28,7 +28,6 @@ using $JPasswordField = ::javax::swing::JPasswordField;
 using $JTextField = ::javax::swing::JTextField;
 using $JTextField$AccessibleJTextField = ::javax::swing::JTextField$AccessibleJTextField;
 using $Document = ::javax::swing::text::Document;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $JTextComponent$AccessibleJTextComponent = ::javax::swing::text::JTextComponent$AccessibleJTextComponent;
 
 namespace javax {

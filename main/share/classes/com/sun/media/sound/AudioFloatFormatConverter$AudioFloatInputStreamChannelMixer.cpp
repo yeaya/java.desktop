@@ -7,7 +7,6 @@
 #include <javax/sound/sampled/AudioFormat.h>
 #include <jcpp.h>
 
-using $AudioFloatFormatConverter = ::com::sun::media::sound::AudioFloatFormatConverter;
 using $AudioFloatInputStream = ::com::sun::media::sound::AudioFloatInputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

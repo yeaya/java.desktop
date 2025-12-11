@@ -37,17 +37,14 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 using $JRootPane = ::javax::swing::JRootPane;
-using $MenuElement = ::javax::swing::MenuElement;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
-using $BasicRootPaneUI = ::javax::swing::plaf::basic::BasicRootPaneUI;
 using $UIAction = ::sun::swing::UIAction;
 
 namespace javax {

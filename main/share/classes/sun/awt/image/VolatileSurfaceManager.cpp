@@ -28,15 +28,11 @@
 #undef IMAGE_RESTORED
 
 using $Graphics = ::java::awt::Graphics;
-using $Graphics2D = ::java::awt::Graphics2D;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
-using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $ImageCapabilities = ::java::awt::ImageCapabilities;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $BufferedImage = ::java::awt::image::BufferedImage;
-using $DataBuffer = ::java::awt::image::DataBuffer;
-using $Raster = ::java::awt::image::Raster;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ClassInfo = ::java::lang::ClassInfo;

@@ -7,14 +7,12 @@
 #include <javax/swing/ListCellRenderer.h>
 #include <jcpp.h>
 
-using $bug7082443 = ::bug7082443;
 using $bug7082443$TestComboBox$1 = ::bug7082443$TestComboBox$1;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComboBox = ::javax::swing::JComboBox;
-using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;
 using $ListCellRenderer = ::javax::swing::ListCellRenderer;
 

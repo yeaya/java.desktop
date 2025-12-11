@@ -14,10 +14,8 @@
 using $Font = ::java::awt::Font;
 using $Menu = ::java::awt::Menu;
 using $MenuBar = ::java::awt::MenuBar;
-using $MenuComponent = ::java::awt::MenuComponent;
 using $MenuContainer = ::java::awt::MenuContainer;
 using $MenuItem = ::java::awt::MenuItem;
-using $MenuPeer = ::java::awt::peer::MenuPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
@@ -107,7 +105,7 @@ void WMenuPeer::addItem($MenuItem* item) {
 
 void WMenuPeer::delItem(int32_t index) {
 	$prepareNative(WMenuPeer, delItem, void, int32_t index);
-	$invokeNative(WMenuPeer, delItem, index);
+	$invokeNative(index);
 	$finishNative();
 }
 
@@ -137,13 +135,13 @@ void WMenuPeer::init$($Menu* target) {
 
 void WMenuPeer::createMenu($WMenuBarPeer* parent) {
 	$prepareNative(WMenuPeer, createMenu, void, $WMenuBarPeer* parent);
-	$invokeNative(WMenuPeer, createMenu, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 
 void WMenuPeer::createSubMenu(WMenuPeer* parent) {
 	$prepareNative(WMenuPeer, createSubMenu, void, WMenuPeer* parent);
-	$invokeNative(WMenuPeer, createSubMenu, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 

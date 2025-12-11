@@ -17,14 +17,12 @@
 #undef SELECT
 
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JMenu = ::javax::swing::JMenu;
 using $JMenuBar = ::javax::swing::JMenuBar;
 using $JMenuItem = ::javax::swing::JMenuItem;

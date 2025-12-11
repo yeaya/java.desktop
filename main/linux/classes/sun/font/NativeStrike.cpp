@@ -41,7 +41,6 @@ using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $CharToGlyphMapper = ::sun::font::CharToGlyphMapper;
 using $Font2D = ::sun::font::Font2D;
-using $FontStrike = ::sun::font::FontStrike;
 using $FontStrikeDesc = ::sun::font::FontStrikeDesc;
 using $FontStrikeDisposer = ::sun::font::FontStrikeDisposer;
 using $FontUtilities = ::sun::font::FontUtilities;
@@ -215,7 +214,7 @@ $StrikeMetrics* NativeStrike::getFontMetrics() {
 int64_t NativeStrike::createScalerContext($bytes* nameBytes, int32_t ptSize, double scale) {
 	int64_t $ret = 0;
 	$prepareNative(NativeStrike, createScalerContext, int64_t, $bytes* nameBytes, int32_t ptSize, double scale);
-	$ret = $invokeNative(NativeStrike, createScalerContext, nameBytes, ptSize, scale);
+	$ret = $invokeNative(nameBytes, ptSize, scale);
 	$finishNative();
 	return $ret;
 }
@@ -223,7 +222,7 @@ int64_t NativeStrike::createScalerContext($bytes* nameBytes, int32_t ptSize, dou
 int32_t NativeStrike::getMaxGlyph(int64_t pScalerContext) {
 	int32_t $ret = 0;
 	$prepareNative(NativeStrike, getMaxGlyph, int32_t, int64_t pScalerContext);
-	$ret = $invokeNative(NativeStrike, getMaxGlyph, pScalerContext);
+	$ret = $invokeNative(pScalerContext);
 	$finishNative();
 	return $ret;
 }
@@ -231,7 +230,7 @@ int32_t NativeStrike::getMaxGlyph(int64_t pScalerContext) {
 int64_t NativeStrike::createNullScalerContext() {
 	int64_t $ret = 0;
 	$prepareNative(NativeStrike, createNullScalerContext, int64_t);
-	$ret = $invokeNative(NativeStrike, createNullScalerContext);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }

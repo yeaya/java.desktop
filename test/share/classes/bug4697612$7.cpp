@@ -7,13 +7,11 @@
 #include <jcpp.h>
 
 using $bug4697612 = ::bug4697612;
-using $Point = ::java::awt::Point;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JScrollPane = ::javax::swing::JScrollPane;
 using $JViewport = ::javax::swing::JViewport;
 

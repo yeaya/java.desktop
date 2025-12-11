@@ -35,7 +35,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $Map = ::java::util::Map;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $Native = ::sun::awt::X11::Native;
 using $WindowPropertyGetter = ::sun::awt::X11::WindowPropertyGetter;
 using $XAWTXSettings$1 = ::sun::awt::X11::XAWTXSettings$1;

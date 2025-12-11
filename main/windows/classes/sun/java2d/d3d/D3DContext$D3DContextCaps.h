@@ -26,10 +26,10 @@ public:
 	D3DContext$D3DContextCaps();
 	void init$(int32_t caps, $String* adapterId);
 	virtual $String* toString() override;
-	static const int32_t CAPS_LCD_SHADER = (FIRST_PRIVATE_CAP << 0);
-	static const int32_t CAPS_BIOP_SHADER = (FIRST_PRIVATE_CAP << 1);
-	static const int32_t CAPS_DEVICE_OK = (FIRST_PRIVATE_CAP << 2);
-	static const int32_t CAPS_AA_SHADER = (FIRST_PRIVATE_CAP << 3);
+	static const int32_t CAPS_LCD_SHADER = 65536; // (FIRST_PRIVATE_CAP << 0)
+	static const int32_t CAPS_BIOP_SHADER = 131072; // (FIRST_PRIVATE_CAP << 1)
+	static const int32_t CAPS_DEVICE_OK = 262144; // (FIRST_PRIVATE_CAP << 2)
+	static const int32_t CAPS_AA_SHADER = 524288; // (FIRST_PRIVATE_CAP << 3)
 };
 
 		} // d3d

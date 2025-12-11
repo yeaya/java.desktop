@@ -10,7 +10,6 @@
 #undef MAX_VALUE
 
 using $ModelByteBuffer = ::com::sun::media::sound::ModelByteBuffer;
-using $File = ::java::io::File;
 using $IOException = ::java::io::IOException;
 using $InputStream = ::java::io::InputStream;
 using $RandomAccessFile = ::java::io::RandomAccessFile;

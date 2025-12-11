@@ -5,11 +5,9 @@
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Comparable = ::java::lang::Comparable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JDesktopPane = ::javax::swing::JDesktopPane;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
 
 namespace javax {

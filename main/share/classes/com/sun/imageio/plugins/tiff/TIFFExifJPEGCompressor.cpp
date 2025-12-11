@@ -12,7 +12,6 @@
 #undef EXIF_JPEG_COMPRESSION_TYPE
 
 using $TIFFBaseJPEGCompressor = ::com::sun::imageio::plugins::tiff::TIFFBaseJPEGCompressor;
-using $TIFFCompressor = ::com::sun::imageio::plugins::tiff::TIFFCompressor;
 using $TIFFImageWriter = ::com::sun::imageio::plugins::tiff::TIFFImageWriter;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

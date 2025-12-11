@@ -8,9 +8,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Enumeration = ::java::util::Enumeration;
-using $AbstractDocument = ::javax::swing::text::AbstractDocument;
-using $AttributeSet = ::javax::swing::text::AttributeSet;
 
 namespace javax {
 	namespace swing {

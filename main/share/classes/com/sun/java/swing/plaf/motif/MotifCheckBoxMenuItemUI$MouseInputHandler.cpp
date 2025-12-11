@@ -14,11 +14,8 @@
 #include <sun/swing/SwingUtilities2.h>
 #include <jcpp.h>
 
-using $MenuElementArray = $Array<::javax::swing::MenuElement>;
 using $MotifCheckBoxMenuItemUI = ::com::sun::java::swing::plaf::motif::MotifCheckBoxMenuItemUI;
-using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -28,8 +25,6 @@ using $AbstractButton = ::javax::swing::AbstractButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JMenuItem = ::javax::swing::JMenuItem;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
-using $MouseInputListener = ::javax::swing::event::MouseInputListener;
-using $BasicMenuItemUI = ::javax::swing::plaf::basic::BasicMenuItemUI;
 using $SwingUtilities2 = ::sun::swing::SwingUtilities2;
 
 namespace com {

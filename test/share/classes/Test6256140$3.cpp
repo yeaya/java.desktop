@@ -11,9 +11,7 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JFormattedTextField = ::javax::swing::JFormattedTextField;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $FieldInfo _Test6256140$3_FieldInfo_[] = {
 	{"val$result", "[Z", nullptr, $FINAL | $SYNTHETIC, $field(Test6256140$3, val$result)},

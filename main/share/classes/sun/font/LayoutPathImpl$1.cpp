@@ -9,14 +9,11 @@
 #undef EXTENDED
 #undef PINNED
 
-using $LayoutPathImpl$EndTypeArray = $Array<::sun::font::LayoutPathImpl$EndType>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $LayoutPathImpl = ::sun::font::LayoutPathImpl;
 using $LayoutPathImpl$EndType = ::sun::font::LayoutPathImpl$EndType;
 
 namespace sun {

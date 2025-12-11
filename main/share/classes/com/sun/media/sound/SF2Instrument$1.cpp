@@ -3,7 +3,6 @@
 #include <com/sun/media/sound/SF2Instrument.h>
 #include <jcpp.h>
 
-using $ModelTransform = ::com::sun::media::sound::ModelTransform;
 using $SF2Instrument = ::com::sun::media::sound::SF2Instrument;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;

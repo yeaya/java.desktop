@@ -10,7 +10,6 @@
 
 #undef CONTINUE
 
-using $HangDuringStaticInitialization = ::HangDuringStaticInitialization;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $ClassLoader = ::java::lang::ClassLoader;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

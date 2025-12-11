@@ -7,12 +7,10 @@
 #undef ICONIFIED
 
 using $TransparencyTest = ::TransparencyTest;
-using $Frame = ::java::awt::Frame;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JFrame = ::javax::swing::JFrame;
 
 $MethodInfo _TransparencyTest$3_MethodInfo_[] = {

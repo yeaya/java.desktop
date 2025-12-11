@@ -19,7 +19,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractAction = ::javax::swing::AbstractAction;
 using $JComboBox = ::javax::swing::JComboBox;
 using $JFileChooser = ::javax::swing::JFileChooser;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 
 namespace com {
 	namespace sun {

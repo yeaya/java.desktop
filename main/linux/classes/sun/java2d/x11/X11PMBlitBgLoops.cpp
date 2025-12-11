@@ -103,7 +103,7 @@ void X11PMBlitBgLoops::BlitBg$($SurfaceData* src, $SurfaceData* dst, $Composite*
 
 void X11PMBlitBgLoops::nativeBlitBg(int64_t srcData, int64_t dstData, int64_t xgc, int32_t pixel, int32_t sx, int32_t sy, int32_t dx, int32_t dy, int32_t w, int32_t h) {
 	$prepareNative(X11PMBlitBgLoops, nativeBlitBg, void, int64_t srcData, int64_t dstData, int64_t xgc, int32_t pixel, int32_t sx, int32_t sy, int32_t dx, int32_t dy, int32_t w, int32_t h);
-	$invokeNative(X11PMBlitBgLoops, nativeBlitBg, srcData, dstData, xgc, pixel, sx, sy, dx, dy, w, h);
+	$invokeNative(srcData, dstData, xgc, pixel, sx, sy, dx, dy, w, h);
 	$finishNative();
 }
 

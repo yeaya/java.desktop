@@ -8,7 +8,6 @@
 #include <javax/swing/JTable.h>
 #include <jcpp.h>
 
-using $bug6348946 = ::bug6348946;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -19,7 +18,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $JSlider = ::javax::swing::JSlider;
 using $JTable = ::javax::swing::JTable;
-using $TableCellRenderer = ::javax::swing::table::TableCellRenderer;
 
 $FieldInfo _bug6348946$Renderer_FieldInfo_[] = {
 	{"slider", "Ljavax/swing/JSlider;", nullptr, $PRIVATE, $field(bug6348946$Renderer, slider)},

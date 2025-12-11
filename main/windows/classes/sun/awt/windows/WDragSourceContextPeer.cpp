@@ -34,7 +34,6 @@ using $DragGestureRecognizer = ::java::awt::dnd::DragGestureRecognizer;
 using $InvalidDnDOperationException = ::java::awt::dnd::InvalidDnDOperationException;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $BufferedImage = ::java::awt::image::BufferedImage;
-using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DataBufferInt = ::java::awt::image::DataBufferInt;
 using $ImageObserver = ::java::awt::image::ImageObserver;
 using $Raster = ::java::awt::image::Raster;
@@ -43,7 +42,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Map = ::java::util::Map;
 using $SunDragSourceContextPeer = ::sun::awt::dnd::SunDragSourceContextPeer;
-using $SunDropTargetContextPeer = ::sun::awt::dnd::SunDropTargetContextPeer;
 using $WDropTargetContextPeer = ::sun::awt::windows::WDropTargetContextPeer;
 using $WToolkit = ::sun::awt::windows::WToolkit;
 
@@ -149,20 +147,20 @@ void WDragSourceContextPeer::startDrag($Transferable* trans, $longs* formats, $M
 int64_t WDragSourceContextPeer::createDragSource($Component* component, $Transferable* transferable, $InputEvent* nativeTrigger, int32_t actions, $longs* formats, $Map* formatMap) {
 	int64_t $ret = 0;
 	$prepareNative(WDragSourceContextPeer, createDragSource, int64_t, $Component* component, $Transferable* transferable, $InputEvent* nativeTrigger, int32_t actions, $longs* formats, $Map* formatMap);
-	$ret = $invokeNative(WDragSourceContextPeer, createDragSource, component, transferable, nativeTrigger, actions, formats, formatMap);
+	$ret = $invokeNative(component, transferable, nativeTrigger, actions, formats, formatMap);
 	$finishNative();
 	return $ret;
 }
 
 void WDragSourceContextPeer::doDragDrop(int64_t nativeCtxt, $Cursor* cursor, $ints* imageData, int32_t imgWidth, int32_t imgHight, int32_t offsetX, int32_t offsetY) {
 	$prepareNative(WDragSourceContextPeer, doDragDrop, void, int64_t nativeCtxt, $Cursor* cursor, $ints* imageData, int32_t imgWidth, int32_t imgHight, int32_t offsetX, int32_t offsetY);
-	$invokeNative(WDragSourceContextPeer, doDragDrop, nativeCtxt, cursor, imageData, imgWidth, imgHight, offsetX, offsetY);
+	$invokeNative(nativeCtxt, cursor, imageData, imgWidth, imgHight, offsetX, offsetY);
 	$finishNative();
 }
 
 void WDragSourceContextPeer::setNativeCursor(int64_t nativeCtxt, $Cursor* c, int32_t cType) {
 	$prepareNative(WDragSourceContextPeer, setNativeCursor, void, int64_t nativeCtxt, $Cursor* c, int32_t cType);
-	$invokeNative(WDragSourceContextPeer, setNativeCursor, nativeCtxt, c, cType);
+	$invokeNative(nativeCtxt, c, cType);
 	$finishNative();
 }
 

@@ -23,7 +23,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $SurfaceData = ::sun::java2d::SurfaceData;
-using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;
 using $WGLGraphicsConfig = ::sun::java2d::opengl::WGLGraphicsConfig;
 using $WGLSurfaceData = ::sun::java2d::opengl::WGLSurfaceData;
 using $Region = ::sun::java2d::pipe::Region;

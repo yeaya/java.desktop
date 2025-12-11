@@ -17,15 +17,12 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AttributedCharacterIterator = ::java::text::AttributedCharacterIterator;
-using $CharacterIterator = ::java::text::CharacterIterator;
 using $ParseException = ::java::text::ParseException;
 using $Map = ::java::util::Map;
 using $AbstractAction = ::javax::swing::AbstractAction;
 using $JFormattedTextField = ::javax::swing::JFormattedTextField;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
-using $DefaultFormatter = ::javax::swing::text::DefaultFormatter;
 using $InternationalFormatter = ::javax::swing::text::InternationalFormatter;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 namespace javax {
 	namespace swing {

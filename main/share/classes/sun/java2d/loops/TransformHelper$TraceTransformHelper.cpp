@@ -19,7 +19,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $GraphicsPrimitive = ::sun::java2d::loops::GraphicsPrimitive;
 using $MaskBlit = ::sun::java2d::loops::MaskBlit;
-using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $TransformHelper = ::sun::java2d::loops::TransformHelper;
 using $Region = ::sun::java2d::pipe::Region;
 

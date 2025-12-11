@@ -9,7 +9,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Date = ::java::util::Date;
 using $DateTimeSyntax = ::javax::print::attribute::DateTimeSyntax;
-using $PrintJobAttribute = ::javax::print::attribute::PrintJobAttribute;
 
 namespace javax {
 	namespace print {

@@ -36,12 +36,8 @@
 #undef IMAGE_INCOMPATIBLE
 #undef IMAGE_RESTORED
 
-using $ColorArray = $Array<::java::awt::Color>;
 using $Color = ::java::awt::Color;
-using $Font = ::java::awt::Font;
 using $Graphics = ::java::awt::Graphics;
-using $Graphics2D = ::java::awt::Graphics2D;
-using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $Image = ::java::awt::Image;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
@@ -57,15 +53,11 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Vector = ::java::util::Vector;
-using $SunToolkit = ::sun::awt::SunToolkit;
-using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XComponentPeer = ::sun::awt::X11::XComponentPeer;
 using $XHorizontalScrollbar = ::sun::awt::X11::XHorizontalScrollbar;
 using $XListPeer = ::sun::awt::X11::XListPeer;
 using $XScrollbar = ::sun::awt::X11::XScrollbar;
 using $XToolkit = ::sun::awt::X11::XToolkit;
-using $XVerticalScrollbar = ::sun::awt::X11::XVerticalScrollbar;
-using $XWindow = ::sun::awt::X11::XWindow;
 using $X11GraphicsConfig = ::sun::awt::X11GraphicsConfig;
 using $PlatformLogger = ::sun::util::logging::PlatformLogger;
 using $PlatformLogger$Level = ::sun::util::logging::PlatformLogger$Level;

@@ -10,12 +10,10 @@
 #include <javax/swing/text/Utilities.h>
 #include <jcpp.h>
 
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JFormattedTextField = ::javax::swing::JFormattedTextField;
 using $JTextField = ::javax::swing::JTextField;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $DefaultFormatter = ::javax::swing::text::DefaultFormatter;

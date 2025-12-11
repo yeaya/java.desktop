@@ -59,7 +59,6 @@ using $MarlinProperties = ::sun::java2d::marlin::MarlinProperties;
 using $MarlinUtils = ::sun::java2d::marlin::MarlinUtils;
 using $OffHeapArray = ::sun::java2d::marlin::OffHeapArray;
 using $RendererContext = ::sun::java2d::marlin::RendererContext;
-using $RendererStats = ::sun::java2d::marlin::RendererStats;
 using $Histogram = ::sun::java2d::marlin::stats::Histogram;
 using $StatLong = ::sun::java2d::marlin::stats::StatLong;
 

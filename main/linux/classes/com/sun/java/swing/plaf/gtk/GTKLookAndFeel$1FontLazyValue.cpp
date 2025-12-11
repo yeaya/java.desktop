@@ -13,7 +13,6 @@
 
 using $GTKLookAndFeel = ::com::sun::java::swing::plaf::gtk::GTKLookAndFeel;
 using $GTKStyle = ::com::sun::java::swing::plaf::gtk::GTKStyle;
-using $Font = ::java::awt::Font;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -21,10 +20,8 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $UIDefaults = ::javax::swing::UIDefaults;
-using $UIDefaults$LazyValue = ::javax::swing::UIDefaults$LazyValue;
 using $Region = ::javax::swing::plaf::synth::Region;
 using $SynthLookAndFeel = ::javax::swing::plaf::synth::SynthLookAndFeel;
-using $SynthStyle = ::javax::swing::plaf::synth::SynthStyle;
 using $SynthStyleFactory = ::javax::swing::plaf::synth::SynthStyleFactory;
 
 namespace com {

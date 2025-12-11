@@ -47,12 +47,10 @@
 #undef VK_UNDEFINED
 
 using $FieldArray = $Array<::java::lang::reflect::Field>;
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Toolkit = ::java::awt::Toolkit;
 using $VKCollection = ::java::awt::VKCollection;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
-using $Serializable = ::java::io::Serializable;
 using $AssertionError = ::java::lang::AssertionError;
 using $Character = ::java::lang::Character;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -71,7 +69,6 @@ using $Collections = ::java::util::Collections;
 using $HashMap = ::java::util::HashMap;
 using $Map = ::java::util::Map;
 using $StringTokenizer = ::java::util::StringTokenizer;
-using $KeyStroke = ::javax::swing::KeyStroke;
 using $AppContext = ::sun::awt::AppContext;
 using $SwingAccessor = ::sun::swing::SwingAccessor;
 using $SwingAccessor$KeyStrokeAccessor = ::sun::swing::SwingAccessor$KeyStrokeAccessor;

@@ -4,11 +4,8 @@
 #include <javax/swing/JTree.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CellEditor = ::javax::swing::CellEditor;
-using $JTree = ::javax::swing::JTree;
 
 namespace javax {
 	namespace swing {

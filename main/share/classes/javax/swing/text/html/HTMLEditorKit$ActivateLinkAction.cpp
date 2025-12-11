@@ -50,7 +50,6 @@ using $HyperlinkEvent$EventType = ::javax::swing::event::HyperlinkEvent$EventTyp
 using $TextUI = ::javax::swing::plaf::TextUI;
 using $AbstractDocument = ::javax::swing::text::AbstractDocument;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $ComponentView = ::javax::swing::text::ComponentView;
 using $DefaultStyledDocument = ::javax::swing::text::DefaultStyledDocument;
 using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;

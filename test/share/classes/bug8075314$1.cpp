@@ -7,12 +7,10 @@
 #undef EXIT_ON_CLOSE
 
 using $bug8075314 = ::bug8075314;
-using $Frame = ::java::awt::Frame;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JFrame = ::javax::swing::JFrame;
 
 $MethodInfo _bug8075314$1_MethodInfo_[] = {

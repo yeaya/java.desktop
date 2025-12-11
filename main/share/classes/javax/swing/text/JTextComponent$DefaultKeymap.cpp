@@ -20,7 +20,6 @@ using $Hashtable = ::java::util::Hashtable;
 using $Vector = ::java::util::Vector;
 using $Action = ::javax::swing::Action;
 using $KeyStroke = ::javax::swing::KeyStroke;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $Keymap = ::javax::swing::text::Keymap;
 
 namespace javax {

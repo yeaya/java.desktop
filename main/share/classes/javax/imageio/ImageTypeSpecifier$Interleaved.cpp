@@ -18,7 +18,6 @@
 #undef TYPE_USHORT
 
 using $ColorSpace = ::java::awt::color::ColorSpace;
-using $ColorModel = ::java::awt::image::ColorModel;
 using $ComponentSampleModel = ::java::awt::image::ComponentSampleModel;
 using $DataBuffer = ::java::awt::image::DataBuffer;
 using $PixelInterleavedSampleModel = ::java::awt::image::PixelInterleavedSampleModel;

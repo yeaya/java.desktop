@@ -8,10 +8,8 @@
 #include <javax/swing/event/EventListenerList.h>
 #include <jcpp.h>
 
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $ChangeListenerArray = $Array<::javax::swing::event::ChangeListener>;
 using $Color = ::java::awt::Color;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

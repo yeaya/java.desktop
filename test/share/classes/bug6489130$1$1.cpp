@@ -6,7 +6,6 @@
 #include <javax/swing/JFileChooser.h>
 #include <jcpp.h>
 
-using $bug6489130 = ::bug6489130;
 using $bug6489130$1 = ::bug6489130$1;
 using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -14,7 +13,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JFileChooser = ::javax::swing::JFileChooser;
 
 $FieldInfo _bug6489130$1$1_FieldInfo_[] = {

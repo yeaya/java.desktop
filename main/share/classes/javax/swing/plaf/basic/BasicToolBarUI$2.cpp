@@ -15,7 +15,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $RootPaneContainer = ::javax::swing::RootPaneContainer;
 using $BasicToolBarUI = ::javax::swing::plaf::basic::BasicToolBarUI;
 
 namespace javax {

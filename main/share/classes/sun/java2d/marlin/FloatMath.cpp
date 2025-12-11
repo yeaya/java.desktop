@@ -19,7 +19,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $MarlinConst = ::sun::java2d::marlin::MarlinConst;
 
 namespace sun {
 	namespace java2d {

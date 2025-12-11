@@ -6,7 +6,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ImageTranscoder = ::javax::imageio::ImageTranscoder;
 using $IIOServiceProvider = ::javax::imageio::spi::IIOServiceProvider;
 
 namespace javax {

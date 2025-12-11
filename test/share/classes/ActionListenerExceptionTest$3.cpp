@@ -8,15 +8,11 @@
 #include <jcpp.h>
 
 using $ActionListenerExceptionTest = ::ActionListenerExceptionTest;
-using $Component = ::java::awt::Component;
-using $Dimension = ::java::awt::Dimension;
-using $Point = ::java::awt::Point;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JComboBox = ::javax::swing::JComboBox;
 
 $FieldInfo _ActionListenerExceptionTest$3_FieldInfo_[] = {

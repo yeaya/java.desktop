@@ -23,7 +23,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $MidiChannel = ::javax::sound::midi::MidiChannel;
 using $Patch = ::javax::sound::midi::Patch;
 using $Soundbank = ::javax::sound::midi::Soundbank;
-using $SoundbankResource = ::javax::sound::midi::SoundbankResource;
 using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 
 namespace com {

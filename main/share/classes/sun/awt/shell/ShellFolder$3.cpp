@@ -8,7 +8,6 @@ using $Comparable = ::java::lang::Comparable;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Comparator = ::java::util::Comparator;
 
 namespace sun {
 	namespace awt {

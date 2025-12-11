@@ -13,7 +13,6 @@
 #undef HORIZONTAL
 #undef VERTICAL
 
-using $Component = ::java::awt::Component;
 using $Rectangle = ::java::awt::Rectangle;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;

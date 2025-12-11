@@ -16,15 +16,12 @@ using $Dimension = ::java::awt::Dimension;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $TextHitInfo = ::java::awt::font::TextHitInfo;
-using $InputMethodRequests = ::java::awt::im::InputMethodRequests;
 using $InputMethodContext = ::java::awt::im::spi::InputMethodContext;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $WInputMethod = ::sun::awt::windows::WInputMethod;
 
 namespace sun {

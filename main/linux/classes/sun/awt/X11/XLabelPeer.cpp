@@ -51,15 +51,12 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $LabelPeer = ::java::awt::peer::LabelPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NullPointerException = ::java::lang::NullPointerException;
-using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XComponentPeer = ::sun::awt::X11::XComponentPeer;
 using $XCreateWindowParams = ::sun::awt::X11::XCreateWindowParams;
-using $XWindow = ::sun::awt::X11::XWindow;
 using $Region = ::sun::java2d::pipe::Region;
 
 namespace sun {

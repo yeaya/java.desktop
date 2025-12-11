@@ -13,7 +13,6 @@
 #undef COPY
 
 using $Transferable = ::java::awt::datatransfer::Transferable;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
@@ -21,8 +20,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JList = ::javax::swing::JList;
 using $JTable = ::javax::swing::JTable;
 using $TransferHandler = ::javax::swing::TransferHandler;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 using $BasicFileChooserUI$FileTransferHandler$FileTransferable = ::javax::swing::plaf::basic::BasicFileChooserUI$FileTransferHandler$FileTransferable;
 using $BasicTransferable = ::javax::swing::plaf::basic::BasicTransferable;
 

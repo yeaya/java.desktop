@@ -14,9 +14,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Collections = ::java::util::Collections;
-using $Comparator = ::java::util::Comparator;
 using $List = ::java::util::List;
-using $Callable = ::java::util::concurrent::Callable;
 using $ShellFolder = ::sun::awt::shell::ShellFolder;
 
 namespace sun {

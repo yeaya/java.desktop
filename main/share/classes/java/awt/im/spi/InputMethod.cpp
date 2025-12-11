@@ -7,13 +7,8 @@
 #include <java/util/Locale.h>
 #include <jcpp.h>
 
-using $Character$SubsetArray = $Array<::java::lang::Character$Subset>;
-using $AWTEvent = ::java::awt::AWTEvent;
-using $Rectangle = ::java::awt::Rectangle;
-using $InputMethodContext = ::java::awt::im::spi::InputMethodContext;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Locale = ::java::util::Locale;
 
 namespace java {
 	namespace awt {

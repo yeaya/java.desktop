@@ -33,7 +33,6 @@ using $OutputStream = ::java::io::OutputStream;
 using $OutputStreamWriter = ::java::io::OutputStreamWriter;
 using $PrintStream = ::java::io::PrintStream;
 using $PrintWriter = ::java::io::PrintWriter;
-using $Serializable = ::java::io::Serializable;
 using $UnsupportedEncodingException = ::java::io::UnsupportedEncodingException;
 using $Writer = ::java::io::Writer;
 using $ClassInfo = ::java::lang::ClassInfo;

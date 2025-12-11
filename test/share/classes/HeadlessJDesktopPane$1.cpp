@@ -4,7 +4,6 @@
 #include <javax/swing/JComponent.h>
 #include <jcpp.h>
 
-using $HeadlessJDesktopPane = ::HeadlessJDesktopPane;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

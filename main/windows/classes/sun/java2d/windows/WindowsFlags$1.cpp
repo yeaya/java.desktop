@@ -9,7 +9,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $WGLGraphicsConfig = ::sun::java2d::opengl::WGLGraphicsConfig;
 using $WindowsFlags = ::sun::java2d::windows::WindowsFlags;
 

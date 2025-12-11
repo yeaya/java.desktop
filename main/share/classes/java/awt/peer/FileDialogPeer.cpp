@@ -3,8 +3,6 @@
 #include <java/io/FilenameFilter.h>
 #include <jcpp.h>
 
-using $DialogPeer = ::java::awt::peer::DialogPeer;
-using $FilenameFilter = ::java::io::FilenameFilter;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

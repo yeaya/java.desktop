@@ -95,7 +95,6 @@
 #undef Y_AXIS
 
 using $FileArray = $Array<::java::io::File>;
-using $ActionArray = $Array<::javax::swing::Action>;
 using $MetalFileChooserUI$AlignedLabelArray = $Array<::javax::swing::plaf::metal::MetalFileChooserUI$AlignedLabel>;
 using $BorderLayout = ::java::awt::BorderLayout;
 using $Component = ::java::awt::Component;
@@ -128,7 +127,6 @@ using $BoxLayout = ::javax::swing::BoxLayout;
 using $ButtonGroup = ::javax::swing::ButtonGroup;
 using $ComboBoxModel = ::javax::swing::ComboBoxModel;
 using $DefaultListCellRenderer = ::javax::swing::DefaultListCellRenderer;
-using $Icon = ::javax::swing::Icon;
 using $JButton = ::javax::swing::JButton;
 using $JComboBox = ::javax::swing::JComboBox;
 using $JComponent = ::javax::swing::JComponent;

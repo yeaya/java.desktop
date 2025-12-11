@@ -127,7 +127,7 @@ $String* FontDescriptor::toString() {
 void FontDescriptor::initIDs() {
 	$init(FontDescriptor);
 	$prepareNativeStatic(FontDescriptor, initIDs, void);
-	$invokeNativeStatic(FontDescriptor, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

@@ -36,7 +36,6 @@ using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
-using $LayoutManager2 = ::java::awt::LayoutManager2;
 using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
@@ -52,10 +51,8 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Enumeration = ::java::util::Enumeration;
 using $Hashtable = ::java::util::Hashtable;
 using $DropMode = ::javax::swing::DropMode;
-using $JComponent = ::javax::swing::JComponent;
 using $DocumentEvent = ::javax::swing::event::DocumentEvent;
 using $DocumentListener = ::javax::swing::event::DocumentListener;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $BasicTextUI = ::javax::swing::plaf::basic::BasicTextUI;
 using $BasicTextUI$BasicCaret = ::javax::swing::plaf::basic::BasicTextUI$BasicCaret;
 using $BasicTextUI$RootView = ::javax::swing::plaf::basic::BasicTextUI$RootView;
@@ -66,7 +63,6 @@ using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $JTextComponent$DropLocation = ::javax::swing::text::JTextComponent$DropLocation;
 using $Position$Bias = ::javax::swing::text::Position$Bias;
 using $View = ::javax::swing::text::View;
-using $ViewFactory = ::javax::swing::text::ViewFactory;
 
 namespace javax {
 	namespace swing {

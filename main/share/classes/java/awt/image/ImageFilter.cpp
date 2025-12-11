@@ -13,7 +13,6 @@ using $ImageConsumer = ::java::awt::image::ImageConsumer;
 using $ImageProducer = ::java::awt::image::ImageProducer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CloneNotSupportedException = ::java::lang::CloneNotSupportedException;
-using $Cloneable = ::java::lang::Cloneable;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InternalError = ::java::lang::InternalError;

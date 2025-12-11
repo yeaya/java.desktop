@@ -14,7 +14,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
 using $Native = ::sun::awt::X11::Native;
-using $XEvent = ::sun::awt::X11::XEvent;
 using $XExtData = ::sun::awt::X11::XExtData;
 using $XWrapperBase = ::sun::awt::X11::XWrapperBase;
 using $XlibWrapper = ::sun::awt::X11::XlibWrapper;

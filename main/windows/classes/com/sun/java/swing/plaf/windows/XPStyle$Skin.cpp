@@ -29,13 +29,10 @@ using $TMSchema$State = ::com::sun::java::swing::plaf::windows::TMSchema$State;
 using $XPStyle = ::com::sun::java::swing::plaf::windows::XPStyle;
 using $XPStyle$SkinPainter = ::com::sun::java::swing::plaf::windows::XPStyle$SkinPainter;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
-using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $Insets = ::java::awt::Insets;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
@@ -43,7 +40,6 @@ using $CellRendererPane = ::javax::swing::CellRendererPane;
 using $JComponent = ::javax::swing::JComponent;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $ThemeReader = ::sun::awt::windows::ThemeReader;
-using $CachedPainter = ::sun::swing::CachedPainter;
 
 namespace com {
 	namespace sun {

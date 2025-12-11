@@ -6,13 +6,11 @@
 #include <jcpp.h>
 
 using $Window = ::java::awt::Window;
-using $WindowListener = ::java::awt::event::WindowListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $Win32GraphicsDevice = ::sun::awt::Win32GraphicsDevice;
 
 namespace sun {

@@ -7,7 +7,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $OGLPaints = ::sun::java2d::opengl::OGLPaints;
 using $OGLPaints$MultiGradient = ::sun::java2d::opengl::OGLPaints$MultiGradient;
 
 namespace sun {

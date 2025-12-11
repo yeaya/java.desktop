@@ -33,7 +33,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $BreakIterator = ::java::text::BreakIterator;
-using $AbstractAction = ::javax::swing::AbstractAction;
 using $Action = ::javax::swing::Action;
 using $JComponent = ::javax::swing::JComponent;
 using $LookAndFeel = ::javax::swing::LookAndFeel;

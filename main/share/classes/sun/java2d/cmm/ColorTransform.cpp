@@ -4,9 +4,6 @@
 #include <java/awt/image/WritableRaster.h>
 #include <jcpp.h>
 
-using $BufferedImage = ::java::awt::image::BufferedImage;
-using $Raster = ::java::awt::image::Raster;
-using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

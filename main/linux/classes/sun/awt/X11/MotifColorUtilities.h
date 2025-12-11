@@ -40,7 +40,7 @@ public:
 	static const int32_t XmLIGHT_FACTOR = 0;
 	static const int32_t XmLUMINOSITY_FACTOR = 25;
 	static const int32_t XmMAX_SHORT = 0x0000FFFF;
-	static const int32_t XmCOLOR_PERCENTILE = (XmMAX_SHORT / 100);
+	static const int32_t XmCOLOR_PERCENTILE = 655; // (XmMAX_SHORT / 100)
 	static const int32_t XmDEFAULT_DARK_THRESHOLD = 20;
 	static const int32_t XmDEFAULT_LIGHT_THRESHOLD = 93;
 	static const int32_t XmDEFAULT_FOREGROUND_THRESHOLD = 70;

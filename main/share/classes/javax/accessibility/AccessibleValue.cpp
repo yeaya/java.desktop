@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Number = ::java::lang::Number;
 
 namespace javax {
 	namespace accessibility {

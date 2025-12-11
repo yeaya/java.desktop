@@ -26,7 +26,6 @@ using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DataBufferByte = ::java::awt::image::DataBufferByte;
 using $DataBufferInt = ::java::awt::image::DataBufferInt;
 using $DataBufferUShort = ::java::awt::image::DataBufferUShort;
-using $Raster = ::java::awt::image::Raster;
 using $SampleModel = ::java::awt::image::SampleModel;
 using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ClassInfo = ::java::lang::ClassInfo;

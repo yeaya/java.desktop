@@ -25,16 +25,12 @@
 #undef DTCP_KEY
 #undef FINER
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
-using $InputEvent = ::java::awt::event::InputEvent;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $Iterator = ::java::util::Iterator;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
 using $AWTAccessor = ::sun::awt::AWTAccessor;

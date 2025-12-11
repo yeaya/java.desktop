@@ -12,7 +12,6 @@
 #include <sun/awt/X11/XTrayIconPeer.h>
 #include <jcpp.h>
 
-using $TrayIcon = ::java::awt::TrayIcon;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -22,7 +21,6 @@ using $Runnable = ::java::lang::Runnable;
 using $SunToolkit = ::sun::awt::SunToolkit;
 using $XConstants = ::sun::awt::X11::XConstants;
 using $XEvent = ::sun::awt::X11::XEvent;
-using $XEventDispatcher = ::sun::awt::X11::XEventDispatcher;
 using $XReparentEvent = ::sun::awt::X11::XReparentEvent;
 using $XToolkit = ::sun::awt::X11::XToolkit;
 using $XTrayIconPeer = ::sun::awt::X11::XTrayIconPeer;

@@ -18,7 +18,6 @@
 #undef VK_ESCAPE
 
 using $AWTEvent = ::java::awt::AWTEvent;
-using $Component = ::java::awt::Component;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $KeyEvent = ::java::awt::event::KeyEvent;
@@ -31,7 +30,6 @@ using $JFileChooser = ::javax::swing::JFileChooser;
 using $JTable = ::javax::swing::JTable;
 using $KeyStroke = ::javax::swing::KeyStroke;
 using $TableModelEvent = ::javax::swing::event::TableModelEvent;
-using $TableCellEditor = ::javax::swing::table::TableCellEditor;
 using $TableModel = ::javax::swing::table::TableModel;
 using $FilePane = ::sun::swing::FilePane;
 

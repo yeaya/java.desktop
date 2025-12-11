@@ -8,7 +8,6 @@
 #include <sun/awt/shell/Win32ShellFolder2.h>
 #include <jcpp.h>
 
-using $File = ::java::io::File;
 using $AssertionError = ::java::lang::AssertionError;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
@@ -17,10 +16,7 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InternalError = ::java::lang::InternalError;
 using $Long = ::java::lang::Long;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Callable = ::java::util::concurrent::Callable;
-using $ShellFolder = ::sun::awt::shell::ShellFolder;
 using $Win32ShellFolder2 = ::sun::awt::shell::Win32ShellFolder2;
-using $Win32ShellFolder2$FolderDisposer = ::sun::awt::shell::Win32ShellFolder2$FolderDisposer;
 
 namespace sun {
 	namespace awt {

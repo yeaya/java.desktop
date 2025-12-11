@@ -47,11 +47,9 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $TextAreaPeer = ::java::awt::peer::TextAreaPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WTextComponentPeer = ::sun::awt::windows::WTextComponentPeer;
 using $Region = ::sun::java2d::pipe::Region;
 
@@ -337,7 +335,7 @@ void WTextAreaPeer::insert($String* text, int32_t pos) {
 
 void WTextAreaPeer::replaceRange($String* text, int32_t start, int32_t end) {
 	$prepareNative(WTextAreaPeer, replaceRange, void, $String* text, int32_t start, int32_t end);
-	$invokeNative(WTextAreaPeer, replaceRange, text, start, end);
+	$invokeNative(text, start, end);
 	$finishNative();
 }
 
@@ -362,7 +360,7 @@ void WTextAreaPeer::init$($TextArea* target) {
 
 void WTextAreaPeer::create($WComponentPeer* parent) {
 	$prepareNative(WTextAreaPeer, create, void, $WComponentPeer* parent);
-	$invokeNative(WTextAreaPeer, create, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 

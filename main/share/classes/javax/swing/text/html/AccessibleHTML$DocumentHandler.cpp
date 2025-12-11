@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DocumentEvent = ::javax::swing::event::DocumentEvent;
-using $DocumentListener = ::javax::swing::event::DocumentListener;
 using $AccessibleHTML = ::javax::swing::text::html::AccessibleHTML;
 using $AccessibleHTML$ElementInfo = ::javax::swing::text::html::AccessibleHTML$ElementInfo;
 

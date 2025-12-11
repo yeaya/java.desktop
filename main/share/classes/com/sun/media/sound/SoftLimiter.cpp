@@ -4,7 +4,6 @@
 #include <jcpp.h>
 
 using $SoftAudioBuffer = ::com::sun::media::sound::SoftAudioBuffer;
-using $SoftAudioProcessor = ::com::sun::media::sound::SoftAudioProcessor;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;

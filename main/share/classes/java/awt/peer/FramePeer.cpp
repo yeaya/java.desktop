@@ -4,9 +4,6 @@
 #include <java/awt/Rectangle.h>
 #include <jcpp.h>
 
-using $MenuBar = ::java::awt::MenuBar;
-using $Rectangle = ::java::awt::Rectangle;
-using $WindowPeer = ::java::awt::peer::WindowPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

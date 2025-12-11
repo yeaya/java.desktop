@@ -12,17 +12,13 @@
 #undef PRESS
 #undef RELEASE
 
-using $Component = ::java::awt::Component;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
-using $JComponent = ::javax::swing::JComponent;
-using $BasicButtonListener = ::javax::swing::plaf::basic::BasicButtonListener;
 using $UIAction = ::sun::swing::UIAction;
 
 namespace javax {

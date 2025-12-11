@@ -6,11 +6,9 @@
 #include <java/awt/Window.h>
 #include <jcpp.h>
 
-using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $Point = ::java::awt::Point;
 using $Window = ::java::awt::Window;
-using $MouseInfoPeer = ::java::awt::peer::MouseInfoPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 
@@ -47,7 +45,7 @@ void WMouseInfoPeer::init$() {
 int32_t WMouseInfoPeer::fillPointWithCoords($Point* point) {
 	int32_t $ret = 0;
 	$prepareNative(WMouseInfoPeer, fillPointWithCoords, int32_t, $Point* point);
-	$ret = $invokeNative(WMouseInfoPeer, fillPointWithCoords, point);
+	$ret = $invokeNative(point);
 	$finishNative();
 	return $ret;
 }
@@ -55,7 +53,7 @@ int32_t WMouseInfoPeer::fillPointWithCoords($Point* point) {
 bool WMouseInfoPeer::isWindowUnderMouse($Window* w) {
 	bool $ret = false;
 	$prepareNative(WMouseInfoPeer, isWindowUnderMouse, bool, $Window* w);
-	$ret = $invokeNative(WMouseInfoPeer, isWindowUnderMouse, w);
+	$ret = $invokeNative(w);
 	$finishNative();
 	return $ret;
 }

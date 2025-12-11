@@ -64,7 +64,6 @@ using $Arrays = ::java::util::Arrays;
 using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 using $AudioInputStream = ::javax::sound::sampled::AudioInputStream;
 using $AudioSystem = ::javax::sound::sampled::AudioSystem;
-using $Clip = ::javax::sound::sampled::Clip;
 using $Control = ::javax::sound::sampled::Control;
 using $Control$Type = ::javax::sound::sampled::Control$Type;
 using $DataLine = ::javax::sound::sampled::DataLine;

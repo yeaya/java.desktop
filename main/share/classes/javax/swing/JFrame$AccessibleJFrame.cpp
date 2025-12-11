@@ -13,16 +13,12 @@
 #undef ACTIVE
 #undef RESIZABLE
 
-using $Component = ::java::awt::Component;
-using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Frame = ::java::awt::Frame;
 using $Frame$AccessibleAWTFrame = ::java::awt::Frame$AccessibleAWTFrame;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AccessibleState = ::javax::accessibility::AccessibleState;
 using $AccessibleStateSet = ::javax::accessibility::AccessibleStateSet;
 using $JFrame = ::javax::swing::JFrame;

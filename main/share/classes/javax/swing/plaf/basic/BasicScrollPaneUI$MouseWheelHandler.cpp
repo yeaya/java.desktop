@@ -6,7 +6,6 @@
 #include <jcpp.h>
 
 using $MouseWheelEvent = ::java::awt::event::MouseWheelEvent;
-using $MouseWheelListener = ::java::awt::event::MouseWheelListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

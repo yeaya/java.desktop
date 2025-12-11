@@ -14,24 +14,16 @@
 #include <javax/sound/sampled/AudioInputStream.h>
 #include <jcpp.h>
 
-using $AudioFormat$EncodingArray = $Array<::javax::sound::sampled::AudioFormat$Encoding>;
-using $AudioFormatArray = $Array<::javax::sound::sampled::AudioFormat>;
 using $Serializable = ::java::io::Serializable;
-using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $Arrays = ::java::util::Arrays;
 using $Predicate = ::java::util::function::Predicate;
 using $Stream = ::java::util::stream::Stream;
 using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 using $AudioFormat$Encoding = ::javax::sound::sampled::AudioFormat$Encoding;
-using $AudioInputStream = ::javax::sound::sampled::AudioInputStream;
 
 namespace javax {
 	namespace sound {

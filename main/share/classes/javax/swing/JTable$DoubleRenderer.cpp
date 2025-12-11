@@ -10,10 +10,7 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Format = ::java::text::Format;
 using $NumberFormat = ::java::text::NumberFormat;
-using $JLabel = ::javax::swing::JLabel;
-using $JTable = ::javax::swing::JTable;
 using $JTable$NumberRenderer = ::javax::swing::JTable$NumberRenderer;
 
 namespace javax {

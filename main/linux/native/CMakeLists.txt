@@ -1,9 +1,6 @@
 #machine generated
 
 add_definitions(-DSTATIC_BUILD)
-add_definitions(-D__USE_J2D_NAMES)
-add_definitions(-D__MEDIALIB_OLD_NAMES)
-add_definitions(-DMLIB_NO_LIBSUNMATH)
 
 if(JCPP_OS MATCHES "linux")
 	add_definitions("-D_GNU_SOURCE")

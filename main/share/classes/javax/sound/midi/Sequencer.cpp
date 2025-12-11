@@ -10,18 +10,10 @@
 
 #undef LOOP_CONTINUOUSLY
 
-using $Sequencer$SyncModeArray = $Array<::javax::sound::midi::Sequencer$SyncMode>;
-using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ControllerEventListener = ::javax::sound::midi::ControllerEventListener;
-using $MetaEventListener = ::javax::sound::midi::MetaEventListener;
-using $MidiDevice = ::javax::sound::midi::MidiDevice;
-using $Sequence = ::javax::sound::midi::Sequence;
-using $Sequencer$SyncMode = ::javax::sound::midi::Sequencer$SyncMode;
-using $Track = ::javax::sound::midi::Track;
 
 namespace javax {
 	namespace sound {

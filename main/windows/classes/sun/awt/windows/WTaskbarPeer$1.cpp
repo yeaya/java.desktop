@@ -10,15 +10,12 @@
 #undef PROGRESS_VALUE_WINDOW
 #undef USER_ATTENTION_WINDOW
 
-using $Taskbar$FeatureArray = $Array<::java::awt::Taskbar$Feature>;
 using $Taskbar$Feature = ::java::awt::Taskbar$Feature;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $WTaskbarPeer = ::sun::awt::windows::WTaskbarPeer;
 
 namespace sun {
 	namespace awt {

@@ -10,7 +10,6 @@
 using $MenuShortcut = ::java::awt::MenuShortcut;
 using $Encoder = ::java::beans::Encoder;
 using $Expression = ::java::beans::Expression;
-using $MetaData = ::java::beans::MetaData;
 using $PersistenceDelegate = ::java::beans::PersistenceDelegate;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;

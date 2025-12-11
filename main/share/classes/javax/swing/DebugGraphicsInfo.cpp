@@ -14,7 +14,6 @@ using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Hashtable = ::java::util::Hashtable;
 using $JComponent = ::javax::swing::JComponent;
-using $JFrame = ::javax::swing::JFrame;
 
 namespace javax {
 	namespace swing {

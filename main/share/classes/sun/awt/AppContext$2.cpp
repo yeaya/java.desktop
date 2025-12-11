@@ -10,7 +10,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ThreadGroup = ::java::lang::ThreadGroup;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $AppContext = ::sun::awt::AppContext;
 using $SunToolkit = ::sun::awt::SunToolkit;
 

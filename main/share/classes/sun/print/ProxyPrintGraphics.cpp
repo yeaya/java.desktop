@@ -6,7 +6,6 @@
 #include <jcpp.h>
 
 using $Graphics = ::java::awt::Graphics;
-using $PrintGraphics = ::java::awt::PrintGraphics;
 using $PrintJob = ::java::awt::PrintJob;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

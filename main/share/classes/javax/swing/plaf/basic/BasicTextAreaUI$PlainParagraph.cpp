@@ -22,14 +22,12 @@
 
 using $Component = ::java::awt::Component;
 using $ComponentOrientation = ::java::awt::ComponentOrientation;
-using $Container = ::java::awt::Container;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JTextArea = ::javax::swing::JTextArea;
 using $SizeRequirements = ::javax::swing::SizeRequirements;
-using $BasicTextAreaUI = ::javax::swing::plaf::basic::BasicTextAreaUI;
 using $BasicTextAreaUI$PlainParagraph$LogicalView = ::javax::swing::plaf::basic::BasicTextAreaUI$PlainParagraph$LogicalView;
 using $BoxView = ::javax::swing::text::BoxView;
 using $CompositeView = ::javax::swing::text::CompositeView;

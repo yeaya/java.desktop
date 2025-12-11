@@ -13,7 +13,6 @@ using $InternalError = ::java::lang::InternalError;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DPathConsumer2D = ::sun::java2d::marlin::DPathConsumer2D;
 using $MarlinUtils = ::sun::java2d::marlin::MarlinUtils;
-using $TransformingPathConsumer2D = ::sun::java2d::marlin::TransformingPathConsumer2D;
 
 namespace sun {
 	namespace java2d {

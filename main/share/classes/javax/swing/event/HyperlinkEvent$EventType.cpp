@@ -11,7 +11,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $HyperlinkEvent = ::javax::swing::event::HyperlinkEvent;
 
 namespace javax {
 	namespace swing {

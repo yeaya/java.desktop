@@ -58,7 +58,6 @@ using $AccessibleState = ::javax::accessibility::AccessibleState;
 using $AccessibleStateSet = ::javax::accessibility::AccessibleStateSet;
 using $AccessibleText = ::javax::accessibility::AccessibleText;
 using $AccessibleValue = ::javax::accessibility::AccessibleValue;
-using $JComponent = ::javax::swing::JComponent;
 using $JTable = ::javax::swing::JTable;
 using $JTableHeader = ::javax::swing::table::JTableHeader;
 using $JTableHeader$AccessibleJTableHeader = ::javax::swing::table::JTableHeader$AccessibleJTableHeader;

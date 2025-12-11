@@ -11,15 +11,12 @@
 #undef COPY
 
 using $Transferable = ::java::awt::datatransfer::Transferable;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $JTable = ::javax::swing::JTable;
 using $TransferHandler = ::javax::swing::TransferHandler;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $BasicTableUI = ::javax::swing::plaf::basic::BasicTableUI;
 using $BasicTransferable = ::javax::swing::plaf::basic::BasicTransferable;
 
 namespace javax {

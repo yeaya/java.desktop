@@ -18,7 +18,6 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $FocusEvent = ::java::awt::event::FocusEvent;
-using $FocusListener = ::java::awt::event::FocusListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;

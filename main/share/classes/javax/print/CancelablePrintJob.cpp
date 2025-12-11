@@ -4,7 +4,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DocPrintJob = ::javax::print::DocPrintJob;
 
 namespace javax {
 	namespace print {

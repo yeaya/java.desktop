@@ -7,7 +7,6 @@
 #include <javax/swing/plaf/basic/BasicLabelUI.h>
 #include <jcpp.h>
 
-using $TestUIDefaultsErrorHandling = ::TestUIDefaultsErrorHandling;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

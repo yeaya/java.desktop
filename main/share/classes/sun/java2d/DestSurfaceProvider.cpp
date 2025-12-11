@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Surface = ::sun::java2d::Surface;
 
 namespace sun {
 	namespace java2d {

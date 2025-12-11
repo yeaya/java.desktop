@@ -4,8 +4,6 @@
 #include <java/awt/Point.h>
 #include <jcpp.h>
 
-using $Insets = ::java::awt::Insets;
-using $Point = ::java::awt::Point;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

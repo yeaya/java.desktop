@@ -65,7 +65,6 @@
 
 using $DataFlavorArray = $Array<::java::awt::datatransfer::DataFlavor>;
 using $FileArray = $Array<::java::io::File>;
-using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $Image = ::java::awt::Image;
 using $Point = ::java::awt::Point;
@@ -91,7 +90,6 @@ using $ByteArrayOutputStream = ::java::io::ByteArrayOutputStream;
 using $File = ::java::io::File;
 using $IOException = ::java::io::IOException;
 using $InputStream = ::java::io::InputStream;
-using $OutputStream = ::java::io::OutputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
@@ -105,7 +103,6 @@ using $Arrays = ::java::util::Arrays;
 using $Collections = ::java::util::Collections;
 using $HashMap = ::java::util::HashMap;
 using $Hashtable = ::java::util::Hashtable;
-using $List = ::java::util::List;
 using $Map = ::java::util::Map;
 using $SortedMap = ::java::util::SortedMap;
 using $DataTransferer = ::sun::awt::datatransfer::DataTransferer;
@@ -319,7 +316,7 @@ int64_t WDataTransferer::registerClipboardFormat($String* str) {
 	$init(WDataTransferer);
 	int64_t $ret = 0;
 	$prepareNativeStatic(WDataTransferer, registerClipboardFormat, int64_t, $String* str);
-	$ret = $invokeNativeStatic(WDataTransferer, registerClipboardFormat, str);
+	$ret = $invokeNativeStatic(str);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -328,7 +325,7 @@ $String* WDataTransferer::getClipboardFormatName(int64_t format) {
 	$init(WDataTransferer);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(WDataTransferer, getClipboardFormatName, $String*, int64_t format);
-	$assign($ret, $invokeNativeStatic(WDataTransferer, getClipboardFormatName, format));
+	$assign($ret, $invokeNativeStaticObject(format));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -414,7 +411,7 @@ $ByteArrayOutputStream* WDataTransferer::convertFileListToBytes($ArrayList* file
 $bytes* WDataTransferer::imageDataToPlatformImageBytes($bytes* imageData, int32_t width, int32_t height, int64_t format) {
 	$var($bytes, $ret, nullptr);
 	$prepareNative(WDataTransferer, imageDataToPlatformImageBytes, $bytes*, $bytes* imageData, int32_t width, int32_t height, int64_t format);
-	$assign($ret, $invokeNative(WDataTransferer, imageDataToPlatformImageBytes, imageData, width, height, format));
+	$assign($ret, $invokeNativeObject(imageData, width, height, format));
 	$finishNative();
 	return $ret;
 }
@@ -445,7 +442,7 @@ $Image* WDataTransferer::platformImageBytesToImage($bytes* bytes, int64_t format
 $ints* WDataTransferer::platformImageBytesToImageData($bytes* bytes, int64_t format) {
 	$var($ints, $ret, nullptr);
 	$prepareNative(WDataTransferer, platformImageBytesToImageData, $ints*, $bytes* bytes, int64_t format);
-	$assign($ret, $invokeNative(WDataTransferer, platformImageBytesToImageData, bytes, format));
+	$assign($ret, $invokeNativeObject(bytes, format));
 	$finishNative();
 	return $ret;
 }
@@ -453,7 +450,7 @@ $ints* WDataTransferer::platformImageBytesToImageData($bytes* bytes, int64_t for
 $StringArray* WDataTransferer::dragQueryFile($bytes* bytes) {
 	$var($StringArray, $ret, nullptr);
 	$prepareNative(WDataTransferer, dragQueryFile, $StringArray*, $bytes* bytes);
-	$assign($ret, $invokeNative(WDataTransferer, dragQueryFile, bytes));
+	$assign($ret, $invokeNativeObject(bytes));
 	$finishNative();
 	return $ret;
 }

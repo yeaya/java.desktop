@@ -5,13 +5,11 @@
 #include <sun/java2d/d3d/D3DGraphicsDevice.h>
 #include <jcpp.h>
 
-using $DisplayMode = ::java::awt::DisplayMode;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $D3DGraphicsDevice = ::sun::java2d::d3d::D3DGraphicsDevice;
 using $D3DGraphicsDevice$2Result = ::sun::java2d::d3d::D3DGraphicsDevice$2Result;
 

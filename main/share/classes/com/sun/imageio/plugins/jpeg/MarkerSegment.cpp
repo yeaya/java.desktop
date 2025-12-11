@@ -22,7 +22,6 @@ using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $IIOException = ::javax::imageio::IIOException;
 using $IIOInvalidTreeException = ::javax::imageio::metadata::IIOInvalidTreeException;
 using $IIOMetadataNode = ::javax::imageio::metadata::IIOMetadataNode;

@@ -14,7 +14,6 @@
 #undef TST_SINGLE
 
 using $TMSchema$TypeEnumArray = $Array<::com::sun::java::swing::plaf::windows::TMSchema$TypeEnum>;
-using $TMSchema = ::com::sun::java::swing::plaf::windows::TMSchema;
 using $TMSchema$Prop = ::com::sun::java::swing::plaf::windows::TMSchema$Prop;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;

@@ -47,8 +47,6 @@
 #undef WHEN_IN_FOCUSED_WINDOW
 
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $KeyEvent = ::java::awt::event::KeyEvent;

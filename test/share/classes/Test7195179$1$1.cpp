@@ -15,7 +15,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JList = ::javax::swing::JList;
-using $ListCellRenderer = ::javax::swing::ListCellRenderer;
 using $BasicComboBoxRenderer = ::javax::swing::plaf::basic::BasicComboBoxRenderer;
 
 $FieldInfo _Test7195179$1$1_FieldInfo_[] = {

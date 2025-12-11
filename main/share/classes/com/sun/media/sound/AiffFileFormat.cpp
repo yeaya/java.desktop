@@ -82,15 +82,15 @@ void AiffFileFormat::init$($AudioFileFormat$Type* type, int64_t byteLength, $Aud
 }
 
 int32_t AiffFileFormat::getHeaderSize() {
-	return this->headerSize;
+	return AiffFileFormat::headerSize;
 }
 
 int32_t AiffFileFormat::getCommChunkSize() {
-	return this->commChunkSize;
+	return AiffFileFormat::commChunkSize;
 }
 
 int32_t AiffFileFormat::getFverChunkSize() {
-	return this->fverChunkSize;
+	return AiffFileFormat::fverChunkSize;
 }
 
 int32_t AiffFileFormat::getSsndChunkOffset() {

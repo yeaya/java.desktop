@@ -7,9 +7,6 @@
 #include <sun/java2d/StateTrackableDelegate.h>
 #include <jcpp.h>
 
-using $byteArray2 = $Array<int8_t, 2>;
-using $intArray2 = $Array<int32_t, 2>;
-using $shortArray2 = $Array<int16_t, 2>;
 using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DataBufferByte = ::java::awt::image::DataBufferByte;
 using $DataBufferInt = ::java::awt::image::DataBufferInt;
@@ -18,7 +15,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SunWritableRaster$DataStealer = ::sun::awt::image::SunWritableRaster$DataStealer;
 using $StateTrackableDelegate = ::sun::java2d::StateTrackableDelegate;
 
 namespace java {

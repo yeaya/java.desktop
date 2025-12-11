@@ -5,12 +5,10 @@
 #include <jcpp.h>
 
 using $TableViewLayoutTest = ::TableViewLayoutTest;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 
 $MethodInfo _TableViewLayoutTest$5_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(TableViewLayoutTest$5::*)()>(&TableViewLayoutTest$5::init$))},

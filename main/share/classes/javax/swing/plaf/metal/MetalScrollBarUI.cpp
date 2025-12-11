@@ -46,7 +46,6 @@ using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JScrollBar = ::javax::swing::JScrollBar;
 using $UIManager = ::javax::swing::UIManager;
-using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $ScrollBarUI = ::javax::swing::plaf::ScrollBarUI;
 using $BasicArrowButton = ::javax::swing::plaf::basic::BasicArrowButton;

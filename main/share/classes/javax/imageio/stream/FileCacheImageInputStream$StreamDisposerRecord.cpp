@@ -13,8 +13,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $FileCacheImageInputStream = ::javax::imageio::stream::FileCacheImageInputStream;
-using $DisposerRecord = ::sun::java2d::DisposerRecord;
 
 namespace javax {
 	namespace imageio {

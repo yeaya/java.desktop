@@ -140,16 +140,16 @@ public:
 	virtual void stopListening() override;
 	virtual void turnoffStatusWindow();
 	static ::sun::util::logging::PlatformLogger* log;
-	static const int32_t XIMReverse = (1 << 0);
-	static const int32_t XIMUnderline = (1 << 1);
-	static const int32_t XIMHighlight = (1 << 2);
-	static const int32_t XIMPrimary = (1 << 5);
-	static const int32_t XIMSecondary = (1 << 6);
-	static const int32_t XIMTertiary = (1 << 7);
-	static const int32_t XIMVisibleToForward = (1 << 8);
-	static const int32_t XIMVisibleToBackward = (1 << 9);
-	static const int32_t XIMVisibleCenter = (1 << 10);
-	static const int32_t XIMVisibleMask = (XIMVisibleToForward | XIMVisibleToBackward | XIMVisibleCenter);
+	static const int32_t XIMReverse = 1; // (1 << 0)
+	static const int32_t XIMUnderline = 2; // (1 << 1)
+	static const int32_t XIMHighlight = 4; // (1 << 2)
+	static const int32_t XIMPrimary = 32; // (1 << 5)
+	static const int32_t XIMSecondary = 64; // (1 << 6)
+	static const int32_t XIMTertiary = 128; // (1 << 7)
+	static const int32_t XIMVisibleToForward = 256; // (1 << 8)
+	static const int32_t XIMVisibleToBackward = 512; // (1 << 9)
+	static const int32_t XIMVisibleCenter = 1024; // (1 << 10)
+	static const int32_t XIMVisibleMask = 1792; // (XIMVisibleToForward | XIMVisibleToBackward | XIMVisibleCenter)
 	::java::util::Locale* locale = nullptr;
 	static bool isXIMOpened;
 	::java::awt::Container* clientComponentWindow = nullptr;

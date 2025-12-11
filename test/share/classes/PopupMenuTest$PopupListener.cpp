@@ -20,7 +20,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 using $Popup = ::javax::swing::Popup;
 using $PopupMenuEvent = ::javax::swing::event::PopupMenuEvent;
-using $PopupMenuListener = ::javax::swing::event::PopupMenuListener;
 using $PopupMenuUI = ::javax::swing::plaf::PopupMenuUI;
 
 $FieldInfo _PopupMenuTest$PopupListener_FieldInfo_[] = {

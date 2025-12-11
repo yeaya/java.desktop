@@ -16,7 +16,6 @@
 
 #undef TYPE_INT_ARGB
 
-using $Color = ::java::awt::Color;
 using $Composite = ::java::awt::Composite;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ClassInfo = ::java::lang::ClassInfo;

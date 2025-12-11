@@ -29,8 +29,6 @@
 #undef WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
 #undef WHEN_IN_FOCUSED_WINDOW
 
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $Boolean = ::java::lang::Boolean;
@@ -38,12 +36,10 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $Action = ::javax::swing::Action;
 using $ActionMap = ::javax::swing::ActionMap;
 using $ComponentInputMap = ::javax::swing::ComponentInputMap;
 using $InputMap = ::javax::swing::InputMap;
-using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
 using $JRootPane = ::javax::swing::JRootPane;
 using $LookAndFeel = ::javax::swing::LookAndFeel;

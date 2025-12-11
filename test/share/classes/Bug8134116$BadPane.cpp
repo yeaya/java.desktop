@@ -9,7 +9,6 @@
 #include <javax/swing/JTabbedPane.h>
 #include <jcpp.h>
 
-using $Bug8134116 = ::Bug8134116;
 using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

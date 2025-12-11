@@ -13,7 +13,6 @@ using $Toolkit = ::java::awt::Toolkit;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $XToolkit = ::sun::awt::X11::XToolkit;
 using $XlibWrapper = ::sun::awt::X11::XlibWrapper;
 using $ToolkitThreadBlockedHandler = ::sun::awt::datatransfer::ToolkitThreadBlockedHandler;

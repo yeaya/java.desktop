@@ -24,10 +24,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $Reference = ::java::lang::ref::Reference;
-using $ReferenceQueue = ::java::lang::ref::ReferenceQueue;
 using $WeakReference = ::java::lang::ref::WeakReference;
-using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;
 

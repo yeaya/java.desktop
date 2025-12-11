@@ -18,7 +18,6 @@
 #undef TYPE_BYTE
 #undef TYPE_BYTE_INDEXED
 
-using $WindowsScrollBarUI = ::com::sun::java::swing::plaf::windows::WindowsScrollBarUI;
 using $Color = ::java::awt::Color;
 using $Graphics = ::java::awt::Graphics;
 using $Image = ::java::awt::Image;
@@ -32,7 +31,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $HashMap = ::java::util::HashMap;
 

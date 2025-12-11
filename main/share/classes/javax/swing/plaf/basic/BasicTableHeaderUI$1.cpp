@@ -9,17 +9,11 @@
 #include <javax/swing/table/JTableHeader.h>
 #include <jcpp.h>
 
-using $Rectangle = ::java::awt::Rectangle;
 using $FocusEvent = ::java::awt::event::FocusEvent;
-using $FocusListener = ::java::awt::event::FocusListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $JComponent = ::javax::swing::JComponent;
-using $ComponentUI = ::javax::swing::plaf::ComponentUI;
-using $TableHeaderUI = ::javax::swing::plaf::TableHeaderUI;
 using $BasicLookAndFeel = ::javax::swing::plaf::basic::BasicLookAndFeel;
 using $BasicTableHeaderUI = ::javax::swing::plaf::basic::BasicTableHeaderUI;
 using $JTableHeader = ::javax::swing::table::JTableHeader;

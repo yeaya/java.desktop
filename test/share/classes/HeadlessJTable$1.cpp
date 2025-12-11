@@ -4,7 +4,6 @@
 #include <javax/swing/table/AbstractTableModel.h>
 #include <jcpp.h>
 
-using $HeadlessJTable = ::HeadlessJTable;
 using $ObjectArray2 = $Array<::java::lang::Object, 2>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

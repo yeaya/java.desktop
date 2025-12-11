@@ -18,7 +18,6 @@ using $StyleConstants = ::javax::swing::text::StyleConstants;
 using $StyleContext = ::javax::swing::text::StyleContext;
 using $StyleContext$SmallAttributeSet = ::javax::swing::text::StyleContext$SmallAttributeSet;
 using $CSS = ::javax::swing::text::html::CSS;
-using $CSS$Attribute = ::javax::swing::text::html::CSS$Attribute;
 using $StyleSheet = ::javax::swing::text::html::StyleSheet;
 
 namespace javax {

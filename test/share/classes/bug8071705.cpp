@@ -26,7 +26,6 @@
 
 using $GraphicsDeviceArray = $Array<::java::awt::GraphicsDevice>;
 using $bug8071705$1 = ::bug8071705$1;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;
@@ -34,7 +33,6 @@ using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $Toolkit = ::java::awt::Toolkit;
-using $Window = ::java::awt::Window;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -42,8 +40,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $CountDownLatch = ::java::util::concurrent::CountDownLatch;
-using $AbstractButton = ::javax::swing::AbstractButton;
-using $JComponent = ::javax::swing::JComponent;
 using $JFrame = ::javax::swing::JFrame;
 using $JMenu = ::javax::swing::JMenu;
 using $JMenuBar = ::javax::swing::JMenuBar;

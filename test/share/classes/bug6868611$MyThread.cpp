@@ -5,8 +5,6 @@
 #include <javax/swing/filechooser/FileSystemView.h>
 #include <jcpp.h>
 
-using $FileArray = $Array<::java::io::File>;
-using $bug6868611 = ::bug6868611;
 using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

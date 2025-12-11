@@ -5,7 +5,6 @@
 #include <javax/swing/filechooser/FileFilter.h>
 #include <jcpp.h>
 
-using $FileFilterDescription = ::FileFilterDescription;
 using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

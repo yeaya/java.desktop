@@ -23,9 +23,6 @@
 #undef MAX_ELT_GLYPH_COUNT
 
 using $XRGlyphCacheEntryArray = $Array<::sun::font::XRGlyphCacheEntry>;
-using $Composite = ::java::awt::Composite;
-using $Paint = ::java::awt::Paint;
-using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Float = ::java::lang::Float;
@@ -36,12 +33,9 @@ using $GlyphList = ::sun::font::GlyphList;
 using $XRGlyphCache = ::sun::font::XRGlyphCache;
 using $XRGlyphCacheEntry = ::sun::font::XRGlyphCacheEntry;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
-using $SurfaceData = ::sun::java2d::SurfaceData;
 using $GlyphListPipe = ::sun::java2d::pipe::GlyphListPipe;
-using $Region = ::sun::java2d::pipe::Region;
 using $GrowableEltArray = ::sun::java2d::xr::GrowableEltArray;
 using $GrowableIntArray = ::sun::java2d::xr::GrowableIntArray;
-using $XRBackend = ::sun::java2d::xr::XRBackend;
 using $XRCompositeManager = ::sun::java2d::xr::XRCompositeManager;
 using $XRSurfaceData = ::sun::java2d::xr::XRSurfaceData;
 using $XRUtils = ::sun::java2d::xr::XRUtils;

@@ -10,7 +10,6 @@
 
 using $AWTEvent = ::java::awt::AWTEvent;
 using $AWTEventMulticaster = ::java::awt::AWTEventMulticaster;
-using $Toolkit = ::java::awt::Toolkit;
 using $AWTEventListener = ::java::awt::event::AWTEventListener;
 using $ComponentListener = ::java::awt::event::ComponentListener;
 using $ClassInfo = ::java::lang::ClassInfo;

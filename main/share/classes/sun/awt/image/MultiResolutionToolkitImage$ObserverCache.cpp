@@ -21,13 +21,11 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $AbstractMap = ::java::util::AbstractMap;
 using $Map = ::java::util::Map;
 using $WeakHashMap = ::java::util::WeakHashMap;
 using $ImageRepresentation = ::sun::awt::image::ImageRepresentation;
-using $MultiResolutionToolkitImage = ::sun::awt::image::MultiResolutionToolkitImage;
 using $ToolkitImage = ::sun::awt::image::ToolkitImage;
 
 namespace sun {

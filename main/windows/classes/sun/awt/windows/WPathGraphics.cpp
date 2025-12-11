@@ -89,7 +89,6 @@
 
 using $BasicStroke = ::java::awt::BasicStroke;
 using $Color = ::java::awt::Color;
-using $Composite = ::java::awt::Composite;
 using $Font = ::java::awt::Font;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
@@ -122,7 +121,6 @@ using $MultiPixelPackedSampleModel = ::java::awt::image::MultiPixelPackedSampleM
 using $SampleModel = ::java::awt::image::SampleModel;
 using $WritableRaster = ::java::awt::image::WritableRaster;
 using $PageFormat = ::java::awt::print::PageFormat;
-using $Paper = ::java::awt::print::Paper;
 using $Printable = ::java::awt::print::Printable;
 using $PrinterJob = ::java::awt::print::PrinterJob;
 using $Boolean = ::java::lang::Boolean;

@@ -15,10 +15,8 @@
 #include <jcpp.h>
 
 using $Component = ::java::awt::Component;
-using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $FocusTraversalPolicy = ::java::awt::FocusTraversalPolicy;
-using $KeyboardFocusManager = ::java::awt::KeyboardFocusManager;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

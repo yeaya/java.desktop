@@ -6,14 +6,10 @@
 #include <javax/swing/text/View.h>
 #include <jcpp.h>
 
-using $FPMethodCalledTest = ::FPMethodCalledTest;
-using $FPMethodCalledTest$Resultable = ::FPMethodCalledTest$Resultable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Element = ::javax::swing::text::Element;
-using $View = ::javax::swing::text::View;
 
 $FieldInfo _FPMethodCalledTest$Test_FieldInfo_[] = {
 	{"resultable", "LFPMethodCalledTest$Resultable;", nullptr, 0, $field(FPMethodCalledTest$Test, resultable)},

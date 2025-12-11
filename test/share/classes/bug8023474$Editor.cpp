@@ -13,7 +13,6 @@
 #include <javax/swing/event/CellEditorListener.h>
 #include <jcpp.h>
 
-using $bug8023474 = ::bug8023474;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Boolean = ::java::lang::Boolean;
@@ -29,7 +28,6 @@ using $JPanel = ::javax::swing::JPanel;
 using $JToggleButton = ::javax::swing::JToggleButton;
 using $JTree = ::javax::swing::JTree;
 using $CellEditorListener = ::javax::swing::event::CellEditorListener;
-using $TreeCellEditor = ::javax::swing::tree::TreeCellEditor;
 
 $FieldInfo _bug8023474$Editor_FieldInfo_[] = {
 	{"checkbox", "Ljavax/swing/JCheckBox;", nullptr, $PRIVATE, $field(bug8023474$Editor, checkbox)},

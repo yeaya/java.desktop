@@ -10,14 +10,12 @@
 #undef MAX_VALUE
 
 using $Component = ::java::awt::Component;
-using $Dimension = ::java::awt::Dimension;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Short = ::java::lang::Short;
-using $Spring = ::javax::swing::Spring;
 using $Spring$AbstractSpring = ::javax::swing::Spring$AbstractSpring;
 
 namespace javax {

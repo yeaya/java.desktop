@@ -121,7 +121,6 @@ using $JFrame = ::javax::swing::JFrame;
 using $JRootPane = ::javax::swing::JRootPane;
 using $JToggleButton = ::javax::swing::JToggleButton;
 using $JToolBar = ::javax::swing::JToolBar;
-using $KeyStroke = ::javax::swing::KeyStroke;
 using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $RootPaneContainer = ::javax::swing::RootPaneContainer;
 using $SwingConstants = ::javax::swing::SwingConstants;

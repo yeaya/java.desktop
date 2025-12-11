@@ -56,10 +56,8 @@ using $Toolkit = ::java::awt::Toolkit;
 using $Window = ::java::awt::Window;
 using $InvocationEvent = ::java::awt::event::InvocationEvent;
 using $BufferedImage = ::java::awt::image::BufferedImage;
-using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $FramePeer = ::java::awt::peer::FramePeer;
-using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $Exception = ::java::lang::Exception;
@@ -76,7 +74,6 @@ using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor;
 using $AppContext = ::sun::awt::AppContext;
 using $EmbeddedFrame = ::sun::awt::EmbeddedFrame;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $ByteInterleavedRaster = ::sun::awt::image::ByteInterleavedRaster;
 using $WCanvasPeer = ::sun::awt::windows::WCanvasPeer;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
@@ -272,21 +269,21 @@ int32_t WEmbeddedFrame::getPrintScaleFactor() {
 bool WEmbeddedFrame::isPrinterDC(int64_t hdc) {
 	bool $ret = false;
 	$prepareNative(WEmbeddedFrame, isPrinterDC, bool, int64_t hdc);
-	$ret = $invokeNative(WEmbeddedFrame, isPrinterDC, hdc);
+	$ret = $invokeNative(hdc);
 	$finishNative();
 	return $ret;
 }
 
 void WEmbeddedFrame::printBand(int64_t hdc, $bytes* data, int32_t offset, int32_t sx, int32_t sy, int32_t swidth, int32_t sheight, int32_t dx, int32_t dy, int32_t dwidth, int32_t dheight) {
 	$prepareNative(WEmbeddedFrame, printBand, void, int64_t hdc, $bytes* data, int32_t offset, int32_t sx, int32_t sy, int32_t swidth, int32_t sheight, int32_t dx, int32_t dy, int32_t dwidth, int32_t dheight);
-	$invokeNative(WEmbeddedFrame, printBand, hdc, data, offset, sx, sy, swidth, sheight, dx, dy, dwidth, dheight);
+	$invokeNative(hdc, data, offset, sx, sy, swidth, sheight, dx, dy, dwidth, dheight);
 	$finishNative();
 }
 
 void WEmbeddedFrame::initIDs() {
 	$init(WEmbeddedFrame);
 	$prepareNativeStatic(WEmbeddedFrame, initIDs, void);
-	$invokeNativeStatic(WEmbeddedFrame, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -324,7 +321,7 @@ void WEmbeddedFrame::notifyModalBlocked($Dialog* blocker, bool blocked) {
 
 void WEmbeddedFrame::notifyModalBlockedImpl($WEmbeddedFramePeer* peer, $WWindowPeer* blockerPeer, bool blocked) {
 	$prepareNative(WEmbeddedFrame, notifyModalBlockedImpl, void, $WEmbeddedFramePeer* peer, $WWindowPeer* blockerPeer, bool blocked);
-	$invokeNative(WEmbeddedFrame, notifyModalBlockedImpl, peer, blockerPeer, blocked);
+	$invokeNative(peer, blockerPeer, blocked);
 	$finishNative();
 }
 

@@ -9,7 +9,6 @@
 using $LocaleArray = $Array<::java::util::Locale>;
 using $Image = ::java::awt::Image;
 using $Toolkit = ::java::awt::Toolkit;
-using $InputMethodDescriptor = ::java::awt::im::spi::InputMethodDescriptor;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

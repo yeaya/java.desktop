@@ -3,8 +3,6 @@
 #include <java/awt/desktop/AppHiddenEvent.h>
 #include <jcpp.h>
 
-using $AppHiddenEvent = ::java::awt::desktop::AppHiddenEvent;
-using $SystemEventListener = ::java::awt::desktop::SystemEventListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

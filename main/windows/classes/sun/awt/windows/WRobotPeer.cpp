@@ -7,7 +7,6 @@
 
 using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
-using $RobotPeer = ::java::awt::peer::RobotPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SunGraphicsEnvironment = ::sun::java2d::SunGraphicsEnvironment;
@@ -58,7 +57,7 @@ void WRobotPeer::init$() {
 
 void WRobotPeer::mouseMoveImpl(int32_t x, int32_t y) {
 	$prepareNative(WRobotPeer, mouseMoveImpl, void, int32_t x, int32_t y);
-	$invokeNative(WRobotPeer, mouseMoveImpl, x, y);
+	$invokeNative(x, y);
 	$finishNative();
 }
 
@@ -69,31 +68,31 @@ void WRobotPeer::mouseMove(int32_t x, int32_t y) {
 
 void WRobotPeer::mousePress(int32_t buttons) {
 	$prepareNative(WRobotPeer, mousePress, void, int32_t buttons);
-	$invokeNative(WRobotPeer, mousePress, buttons);
+	$invokeNative(buttons);
 	$finishNative();
 }
 
 void WRobotPeer::mouseRelease(int32_t buttons) {
 	$prepareNative(WRobotPeer, mouseRelease, void, int32_t buttons);
-	$invokeNative(WRobotPeer, mouseRelease, buttons);
+	$invokeNative(buttons);
 	$finishNative();
 }
 
 void WRobotPeer::mouseWheel(int32_t wheelAmt) {
 	$prepareNative(WRobotPeer, mouseWheel, void, int32_t wheelAmt);
-	$invokeNative(WRobotPeer, mouseWheel, wheelAmt);
+	$invokeNative(wheelAmt);
 	$finishNative();
 }
 
 void WRobotPeer::keyPress(int32_t keycode) {
 	$prepareNative(WRobotPeer, keyPress, void, int32_t keycode);
-	$invokeNative(WRobotPeer, keyPress, keycode);
+	$invokeNative(keycode);
 	$finishNative();
 }
 
 void WRobotPeer::keyRelease(int32_t keycode) {
 	$prepareNative(WRobotPeer, keyRelease, void, int32_t keycode);
-	$invokeNative(WRobotPeer, keyRelease, keycode);
+	$invokeNative(keycode);
 	$finishNative();
 }
 
@@ -114,7 +113,7 @@ bool WRobotPeer::useAbsoluteCoordinates() {
 
 void WRobotPeer::getRGBPixels(int32_t x, int32_t y, int32_t width, int32_t height, $ints* pixelArray) {
 	$prepareNative(WRobotPeer, getRGBPixels, void, int32_t x, int32_t y, int32_t width, int32_t height, $ints* pixelArray);
-	$invokeNative(WRobotPeer, getRGBPixels, x, y, width, height, pixelArray);
+	$invokeNative(x, y, width, height, pixelArray);
 	$finishNative();
 }
 

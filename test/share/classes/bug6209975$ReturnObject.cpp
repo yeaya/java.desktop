@@ -3,7 +3,6 @@
 #include <bug6209975.h>
 #include <jcpp.h>
 
-using $bug6209975 = ::bug6209975;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

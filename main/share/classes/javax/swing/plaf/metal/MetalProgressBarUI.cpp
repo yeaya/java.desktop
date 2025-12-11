@@ -36,7 +36,6 @@ using $Float = ::java::lang::Float;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $JProgressBar = ::javax::swing::JProgressBar;
-using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $ProgressBarUI = ::javax::swing::plaf::ProgressBarUI;
 using $BasicProgressBarUI = ::javax::swing::plaf::basic::BasicProgressBarUI;

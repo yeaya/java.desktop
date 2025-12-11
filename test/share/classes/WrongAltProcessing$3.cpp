@@ -8,7 +8,6 @@
 
 #undef EVT
 
-using $WrongAltProcessing = ::WrongAltProcessing;
 using $KeyAdapter = ::java::awt::event::KeyAdapter;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $ClassInfo = ::java::lang::ClassInfo;

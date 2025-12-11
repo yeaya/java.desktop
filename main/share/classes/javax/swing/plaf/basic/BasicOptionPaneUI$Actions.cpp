@@ -16,9 +16,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JOptionPane = ::javax::swing::JOptionPane;
-using $BasicOptionPaneUI = ::javax::swing::plaf::basic::BasicOptionPaneUI;
 using $UIAction = ::sun::swing::UIAction;
 
 namespace javax {

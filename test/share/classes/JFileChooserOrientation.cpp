@@ -55,7 +55,6 @@ using $JPanel = ::javax::swing::JPanel;
 using $JTextArea = ::javax::swing::JTextArea;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;
-using $UIManager$LookAndFeelInfo = ::javax::swing::UIManager$LookAndFeelInfo;
 using $UnsupportedLookAndFeelException = ::javax::swing::UnsupportedLookAndFeelException;
 
 $FieldInfo _JFileChooserOrientation_FieldInfo_[] = {

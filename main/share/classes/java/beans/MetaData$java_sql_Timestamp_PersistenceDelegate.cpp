@@ -15,7 +15,6 @@
 #include <jcpp.h>
 
 using $Encoder = ::java::beans::Encoder;
-using $MetaData = ::java::beans::MetaData;
 using $MetaData$java_util_Date_PersistenceDelegate = ::java::beans::MetaData$java_util_Date_PersistenceDelegate;
 using $Statement = ::java::beans::Statement;
 using $AssertionError = ::java::lang::AssertionError;
@@ -29,7 +28,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NoSuchMethodException = ::java::lang::NoSuchMethodException;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $InvocationTargetException = ::java::lang::reflect::InvocationTargetException;
 using $Method = ::java::lang::reflect::Method;

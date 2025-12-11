@@ -9,12 +9,10 @@
 #include <jcpp.h>
 
 using $bug6917744 = ::bug6917744;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $BoundedRangeModel = ::javax::swing::BoundedRangeModel;
 using $JFrame = ::javax::swing::JFrame;

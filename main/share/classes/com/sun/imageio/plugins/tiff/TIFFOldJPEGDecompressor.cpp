@@ -36,15 +36,12 @@
 #undef TAG_TILE_OFFSETS
 #undef TAG_Y_CB_CR_SUBSAMPLING
 
-using $TIFFDecompressor = ::com::sun::imageio::plugins::tiff::TIFFDecompressor;
 using $TIFFImageMetadata = ::com::sun::imageio::plugins::tiff::TIFFImageMetadata;
 using $TIFFImageReader = ::com::sun::imageio::plugins::tiff::TIFFImageReader;
 using $TIFFJPEGDecompressor = ::com::sun::imageio::plugins::tiff::TIFFJPEGDecompressor;
-using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ByteArrayInputStream = ::java::io::ByteArrayInputStream;
 using $ByteArrayOutputStream = ::java::io::ByteArrayOutputStream;
 using $InputStream = ::java::io::InputStream;
-using $OutputStream = ::java::io::OutputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Long = ::java::lang::Long;
@@ -52,7 +49,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $IIOException = ::javax::imageio::IIOException;
 using $ImageReadParam = ::javax::imageio::ImageReadParam;
 using $ImageReader = ::javax::imageio::ImageReader;
-using $IIOMetadata = ::javax::imageio::metadata::IIOMetadata;
 using $BaselineTIFFTagSet = ::javax::imageio::plugins::tiff::BaselineTIFFTagSet;
 using $TIFFField = ::javax::imageio::plugins::tiff::TIFFField;
 using $ImageInputStream = ::javax::imageio::stream::ImageInputStream;

@@ -12,7 +12,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UnsatisfiedLinkError = ::java::lang::UnsatisfiedLinkError;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $ImagingLib = ::sun::awt::image::ImagingLib;
 
 namespace sun {

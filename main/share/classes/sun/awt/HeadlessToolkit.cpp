@@ -92,7 +92,6 @@ using $Properties = ::java::util::Properties;
 using $ComponentFactory = ::sun::awt::ComponentFactory;
 using $GlobalCursorManager = ::sun::awt::GlobalCursorManager;
 using $HeadlessToolkit$1 = ::sun::awt::HeadlessToolkit$1;
-using $KeyboardFocusManagerPeerProvider = ::sun::awt::KeyboardFocusManagerPeerProvider;
 using $SunToolkit = ::sun::awt::SunToolkit;
 
 namespace sun {

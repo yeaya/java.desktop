@@ -13,7 +13,6 @@
 #undef TOP_LEFT
 #undef TOP_RIGHT
 
-using $Metacity = ::com::sun::java::swing::plaf::gtk::Metacity;
 using $Metacity$RoundRectClipShape$RoundishRectIterator = ::com::sun::java::swing::plaf::gtk::Metacity$RoundRectClipShape$RoundishRectIterator;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $PathIterator = ::java::awt::geom::PathIterator;

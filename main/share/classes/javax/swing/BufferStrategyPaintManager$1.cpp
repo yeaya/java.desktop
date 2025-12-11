@@ -13,9 +13,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $AbstractList = ::java::util::AbstractList;
-using $ArrayList = ::java::util::ArrayList;
 using $List = ::java::util::List;
 using $BufferStrategyPaintManager = ::javax::swing::BufferStrategyPaintManager;
 

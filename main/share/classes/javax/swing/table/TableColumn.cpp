@@ -22,10 +22,7 @@
 
 using $PropertyChangeListenerArray = $Array<::java::beans::PropertyChangeListener>;
 using $Component = ::java::awt::Component;
-using $Dimension = ::java::awt::Dimension;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
-using $PropertyChangeSupport = ::java::beans::PropertyChangeSupport;
-using $Serializable = ::java::io::Serializable;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;

@@ -6,7 +6,6 @@
 
 using $Component = ::java::awt::Component;
 using $Window = ::java::awt::Window;
-using $KeyboardFocusManagerPeer = ::java::awt::peer::KeyboardFocusManagerPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
-using $XPropertyCache = ::sun::awt::X11::XPropertyCache;
 using $XlibWrapper = ::sun::awt::X11::XlibWrapper;
 
 namespace sun {

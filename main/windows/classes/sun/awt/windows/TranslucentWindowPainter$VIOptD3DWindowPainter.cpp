@@ -10,9 +10,7 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $TranslucentWindowPainter = ::sun::awt::windows::TranslucentWindowPainter;
 using $TranslucentWindowPainter$VIOptWindowPainter = ::sun::awt::windows::TranslucentWindowPainter$VIOptWindowPainter;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
 using $D3DSurfaceData = ::sun::java2d::d3d::D3DSurfaceData;
 

@@ -14,9 +14,7 @@
 using $GraphicsDeviceArray = $Array<::java::awt::GraphicsDevice>;
 using $bug8071705 = ::bug8071705;
 using $bug8071705$FrameListener = ::bug8071705$FrameListener;
-using $Component = ::java::awt::Component;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;
-using $Window = ::java::awt::Window;
 using $ComponentAdapter = ::java::awt::event::ComponentAdapter;
 using $ComponentListener = ::java::awt::event::ComponentListener;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -24,7 +22,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $CountDownLatch = ::java::util::concurrent::CountDownLatch;
 using $JFrame = ::javax::swing::JFrame;
 

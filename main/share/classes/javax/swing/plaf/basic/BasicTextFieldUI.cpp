@@ -30,9 +30,7 @@
 #undef TRUE
 #undef Y_AXIS
 
-using $Component = ::java::awt::Component;
 using $Component$BaselineResizeBehavior = ::java::awt::Component$BaselineResizeBehavior;
-using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
 using $Insets = ::java::awt::Insets;
 using $Boolean = ::java::lang::Boolean;

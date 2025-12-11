@@ -60,7 +60,6 @@ using $Collections = ::java::util::Collections;
 using $HashMap = ::java::util::HashMap;
 using $Iterator = ::java::util::Iterator;
 using $List = ::java::util::List;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XConstants = ::sun::awt::X11::XConstants;
 using $XDnDConstants = ::sun::awt::X11::XDnDConstants;

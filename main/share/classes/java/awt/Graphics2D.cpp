@@ -22,28 +22,10 @@
 #include <jcpp.h>
 
 using $Color = ::java::awt::Color;
-using $Composite = ::java::awt::Composite;
 using $Graphics = ::java::awt::Graphics;
-using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
-using $Image = ::java::awt::Image;
 using $Paint = ::java::awt::Paint;
-using $Rectangle = ::java::awt::Rectangle;
-using $RenderingHints = ::java::awt::RenderingHints;
-using $RenderingHints$Key = ::java::awt::RenderingHints$Key;
-using $Shape = ::java::awt::Shape;
-using $Stroke = ::java::awt::Stroke;
-using $FontRenderContext = ::java::awt::font::FontRenderContext;
-using $GlyphVector = ::java::awt::font::GlyphVector;
-using $AffineTransform = ::java::awt::geom::AffineTransform;
-using $BufferedImage = ::java::awt::image::BufferedImage;
-using $BufferedImageOp = ::java::awt::image::BufferedImageOp;
-using $ImageObserver = ::java::awt::image::ImageObserver;
-using $RenderedImage = ::java::awt::image::RenderedImage;
-using $RenderableImage = ::java::awt::image::renderable::RenderableImage;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AttributedCharacterIterator = ::java::text::AttributedCharacterIterator;
-using $Map = ::java::util::Map;
 
 namespace java {
 	namespace awt {

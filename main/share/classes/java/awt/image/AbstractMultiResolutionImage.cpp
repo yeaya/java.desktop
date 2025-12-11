@@ -11,7 +11,6 @@ using $Graphics = ::java::awt::Graphics;
 using $Image = ::java::awt::Image;
 using $ImageObserver = ::java::awt::image::ImageObserver;
 using $ImageProducer = ::java::awt::image::ImageProducer;
-using $MultiResolutionImage = ::java::awt::image::MultiResolutionImage;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UnsupportedOperationException = ::java::lang::UnsupportedOperationException;

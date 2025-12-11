@@ -15,7 +15,6 @@
 #include <jcpp.h>
 
 using $AbstractMidiDevice = ::com::sun::media::sound::AbstractMidiDevice;
-using $AbstractMidiDevice$AbstractReceiver = ::com::sun::media::sound::AbstractMidiDevice$AbstractReceiver;
 using $AbstractMidiDevice$BasicTransmitter = ::com::sun::media::sound::AbstractMidiDevice$BasicTransmitter;
 using $FastShortMessage = ::com::sun::media::sound::FastShortMessage;
 using $FastSysexMessage = ::com::sun::media::sound::FastSysexMessage;

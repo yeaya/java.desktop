@@ -24,7 +24,6 @@
 
 using $TreeClipTest = ::TreeClipTest;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $BufferedImage = ::java::awt::image::BufferedImage;
@@ -37,9 +36,7 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $ImageIO = ::javax::imageio::ImageIO;
-using $JComponent = ::javax::swing::JComponent;
 using $JTree = ::javax::swing::JTree;
 using $DefaultMutableTreeNode = ::javax::swing::tree::DefaultMutableTreeNode;
 using $DefaultTreeModel = ::javax::swing::tree::DefaultTreeModel;

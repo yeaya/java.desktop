@@ -11,7 +11,6 @@ using $ModelPerformerArray = $Array<::com::sun::media::sound::ModelPerformer>;
 using $byteArray2 = $Array<int8_t, 2>;
 using $intArray2 = $Array<int32_t, 2>;
 using $ModelDirectedPlayer = ::com::sun::media::sound::ModelDirectedPlayer;
-using $ModelDirector = ::com::sun::media::sound::ModelDirector;
 using $ModelPerformer = ::com::sun::media::sound::ModelPerformer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

@@ -10,7 +10,6 @@
 #undef WHEN_IN_FOCUSED_WINDOW
 
 using $KeyStrokeArray = $Array<::javax::swing::KeyStroke>;
-using $AWTKeyStroke = ::java::awt::AWTKeyStroke;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -19,7 +18,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
 using $JTextField = ::javax::swing::JTextField;
 using $KeyStroke = ::javax::swing::KeyStroke;
-using $BasicOptionPaneUI = ::javax::swing::plaf::basic::BasicOptionPaneUI;
 
 namespace javax {
 	namespace swing {

@@ -41,7 +41,6 @@
 #undef ORIENTATION_PROPERTY
 #undef S_RESIZE_CURSOR
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Cursor = ::java::awt::Cursor;
@@ -59,7 +58,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
@@ -71,7 +69,6 @@ using $SplitPaneUI = ::javax::swing::plaf::SplitPaneUI;
 using $BasicSplitPaneDivider$1 = ::javax::swing::plaf::basic::BasicSplitPaneDivider$1;
 using $BasicSplitPaneDivider$2 = ::javax::swing::plaf::basic::BasicSplitPaneDivider$2;
 using $BasicSplitPaneDivider$DividerLayout = ::javax::swing::plaf::basic::BasicSplitPaneDivider$DividerLayout;
-using $BasicSplitPaneDivider$DragController = ::javax::swing::plaf::basic::BasicSplitPaneDivider$DragController;
 using $BasicSplitPaneDivider$MouseHandler = ::javax::swing::plaf::basic::BasicSplitPaneDivider$MouseHandler;
 using $BasicSplitPaneDivider$OneTouchActionHandler = ::javax::swing::plaf::basic::BasicSplitPaneDivider$OneTouchActionHandler;
 using $BasicSplitPaneUI = ::javax::swing::plaf::basic::BasicSplitPaneUI;

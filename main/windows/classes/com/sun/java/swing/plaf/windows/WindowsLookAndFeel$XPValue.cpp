@@ -9,7 +9,6 @@
 
 #undef NULL_VALUE
 
-using $WindowsLookAndFeel = ::com::sun::java::swing::plaf::windows::WindowsLookAndFeel;
 using $XPStyle = ::com::sun::java::swing::plaf::windows::XPStyle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

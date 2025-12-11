@@ -10,7 +10,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $D3DSurfaceData = ::sun::java2d::d3d::D3DSurfaceData;
 using $D3DSurfaceData$D3DDataBufferNative = ::sun::java2d::d3d::D3DSurfaceData$D3DDataBufferNative;

@@ -73,20 +73,20 @@ void WGlobalCursorManager::nativeUpdateCursor($Component* heavy) {
 
 void WGlobalCursorManager::setCursor($Component* comp, $Cursor* cursor, bool u) {
 	$prepareNative(WGlobalCursorManager, setCursor, void, $Component* comp, $Cursor* cursor, bool u);
-	$invokeNative(WGlobalCursorManager, setCursor, comp, cursor, u);
+	$invokeNative(comp, cursor, u);
 	$finishNative();
 }
 
 void WGlobalCursorManager::getCursorPos($Point* p) {
 	$prepareNative(WGlobalCursorManager, getCursorPos, void, $Point* p);
-	$invokeNative(WGlobalCursorManager, getCursorPos, p);
+	$invokeNative(p);
 	$finishNative();
 }
 
 $Component* WGlobalCursorManager::findHeavyweightUnderCursor(bool useCache) {
 	$var($Component, $ret, nullptr);
 	$prepareNative(WGlobalCursorManager, findHeavyweightUnderCursor, $Component*, bool useCache);
-	$assign($ret, $invokeNative(WGlobalCursorManager, findHeavyweightUnderCursor, useCache));
+	$assign($ret, $invokeNativeObject(useCache));
 	$finishNative();
 	return $ret;
 }
@@ -94,7 +94,7 @@ $Component* WGlobalCursorManager::findHeavyweightUnderCursor(bool useCache) {
 $Point* WGlobalCursorManager::getLocationOnScreen($Component* com) {
 	$var($Point, $ret, nullptr);
 	$prepareNative(WGlobalCursorManager, getLocationOnScreen, $Point*, $Component* com);
-	$assign($ret, $invokeNative(WGlobalCursorManager, getLocationOnScreen, com));
+	$assign($ret, $invokeNativeObject(com));
 	$finishNative();
 	return $ret;
 }

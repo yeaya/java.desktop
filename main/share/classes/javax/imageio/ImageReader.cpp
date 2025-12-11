@@ -34,7 +34,6 @@
 #undef MAX_VALUE
 
 using $LocaleArray = $Array<::java::util::Locale>;
-using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $Raster = ::java::awt::image::Raster;
@@ -48,7 +47,6 @@ using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $IndexOutOfBoundsException = ::java::lang::IndexOutOfBoundsException;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Module = ::java::lang::Module;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $UnsupportedOperationException = ::java::lang::UnsupportedOperationException;
 using $AbstractList = ::java::util::AbstractList;
@@ -61,7 +59,6 @@ using $ResourceBundle = ::java::util::ResourceBundle;
 using $Set = ::java::util::Set;
 using $IIOException = ::javax::imageio::IIOException;
 using $IIOImage = ::javax::imageio::IIOImage;
-using $IIOParam = ::javax::imageio::IIOParam;
 using $ImageReadParam = ::javax::imageio::ImageReadParam;
 using $ImageTypeSpecifier = ::javax::imageio::ImageTypeSpecifier;
 using $IIOReadProgressListener = ::javax::imageio::event::IIOReadProgressListener;
@@ -70,7 +67,6 @@ using $IIOReadWarningListener = ::javax::imageio::event::IIOReadWarningListener;
 using $IIOMetadata = ::javax::imageio::metadata::IIOMetadata;
 using $IIOMetadataFormatImpl = ::javax::imageio::metadata::IIOMetadataFormatImpl;
 using $ImageReaderSpi = ::javax::imageio::spi::ImageReaderSpi;
-using $ImageReaderWriterSpi = ::javax::imageio::spi::ImageReaderWriterSpi;
 using $ImageInputStream = ::javax::imageio::stream::ImageInputStream;
 
 namespace javax {

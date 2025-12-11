@@ -12,17 +12,13 @@
 #include <jcpp.h>
 
 using $MotifSplitPaneDivider = ::com::sun::java::swing::plaf::motif::MotifSplitPaneDivider;
-using $Component = ::java::awt::Component;
-using $Cursor = ::java::awt::Cursor;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JSplitPane = ::javax::swing::JSplitPane;
 using $BasicSplitPaneDivider = ::javax::swing::plaf::basic::BasicSplitPaneDivider;
-using $BasicSplitPaneDivider$DragController = ::javax::swing::plaf::basic::BasicSplitPaneDivider$DragController;
 using $BasicSplitPaneDivider$MouseHandler = ::javax::swing::plaf::basic::BasicSplitPaneDivider$MouseHandler;
 
 namespace com {

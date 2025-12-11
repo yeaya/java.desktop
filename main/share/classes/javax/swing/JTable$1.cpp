@@ -10,7 +10,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JTable = ::javax::swing::JTable;
 using $AbstractTableModel = ::javax::swing::table::AbstractTableModel;
 
 namespace javax {

@@ -22,7 +22,6 @@ using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DefaultHighlighter = ::javax::swing::text::DefaultHighlighter;
 using $DefaultHighlighter$HighlightInfo = ::javax::swing::text::DefaultHighlighter$HighlightInfo;
-using $Highlighter$HighlightPainter = ::javax::swing::text::Highlighter$HighlightPainter;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $LayeredHighlighter$LayerPainter = ::javax::swing::text::LayeredHighlighter$LayerPainter;
 using $View = ::javax::swing::text::View;

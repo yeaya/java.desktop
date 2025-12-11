@@ -7,14 +7,8 @@
 #include <java/util/Vector.h>
 #include <jcpp.h>
 
-using $Rectangle = ::java::awt::Rectangle;
-using $ColorModel = ::java::awt::image::ColorModel;
-using $Raster = ::java::awt::image::Raster;
-using $SampleModel = ::java::awt::image::SampleModel;
-using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Vector = ::java::util::Vector;
 
 namespace java {
 	namespace awt {

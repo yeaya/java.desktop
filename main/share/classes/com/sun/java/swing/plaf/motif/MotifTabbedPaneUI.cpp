@@ -21,10 +21,7 @@
 #undef TOP
 
 using $RectangleArray = $Array<::java::awt::Rectangle>;
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
-using $Insets = ::java::awt::Insets;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;

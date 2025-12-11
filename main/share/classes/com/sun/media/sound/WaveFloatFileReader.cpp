@@ -24,7 +24,6 @@ using $WaveFileFormat = ::com::sun::media::sound::WaveFileFormat;
 using $InputStream = ::java::io::InputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AudioFileFormat = ::javax::sound::sampled::AudioFileFormat;
 using $AudioFileFormat$Type = ::javax::sound::sampled::AudioFileFormat$Type;
 using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 using $AudioFormat$Encoding = ::javax::sound::sampled::AudioFormat$Encoding;

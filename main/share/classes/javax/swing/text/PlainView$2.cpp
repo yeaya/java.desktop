@@ -10,14 +10,11 @@
 #undef IGNN
 #undef IIGNN
 
-using $PlainView$FPMethodArgsArray = $Array<::javax::swing::text::PlainView$FPMethodArgs>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $PlainView = ::javax::swing::text::PlainView;
 using $PlainView$FPMethodArgs = ::javax::swing::text::PlainView$FPMethodArgs;
 
 namespace javax {

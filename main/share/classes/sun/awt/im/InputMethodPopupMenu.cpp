@@ -20,7 +20,6 @@ using $AWTException = ::java::awt::AWTException;
 using $Component = ::java::awt::Component;
 using $Toolkit = ::java::awt::Toolkit;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $InputMethodDescriptor = ::java::awt::im::spi::InputMethodDescriptor;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

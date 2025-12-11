@@ -11,7 +11,6 @@
 #include <jcpp.h>
 
 using $DeafServer$DeafHandler = ::DeafServer$DeafHandler;
-using $HttpContext = ::com::sun::net::httpserver::HttpContext;
 using $HttpHandler = ::com::sun::net::httpserver::HttpHandler;
 using $HttpServer = ::com::sun::net::httpserver::HttpServer;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -20,7 +19,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $InetSocketAddress = ::java::net::InetSocketAddress;
 using $Executor = ::java::util::concurrent::Executor;
-using $ExecutorService = ::java::util::concurrent::ExecutorService;
 using $Executors = ::java::util::concurrent::Executors;
 
 $FieldInfo _DeafServer_FieldInfo_[] = {

@@ -15,7 +15,6 @@
 
 using $TitledBorder$1 = ::TitledBorder$1;
 using $GridBagLayout = ::java::awt::GridBagLayout;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;

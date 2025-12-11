@@ -3,10 +3,8 @@
 #include <java/beans/beancontext/BeanContextServiceRevokedEvent.h>
 #include <jcpp.h>
 
-using $BeanContextServiceRevokedEvent = ::java::beans::beancontext::BeanContextServiceRevokedEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
 
 namespace java {
 	namespace beans {

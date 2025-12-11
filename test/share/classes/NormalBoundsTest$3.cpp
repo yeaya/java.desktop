@@ -11,7 +11,6 @@
 #undef BUTTON1_MASK
 
 using $NormalBoundsTest = ::NormalBoundsTest;
-using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
 using $Robot = ::java::awt::Robot;
 using $InputEvent = ::java::awt::event::InputEvent;
@@ -20,7 +19,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
 
 $FieldInfo _NormalBoundsTest$3_FieldInfo_[] = {

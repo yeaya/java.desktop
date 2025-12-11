@@ -11,7 +11,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $CSS = ::javax::swing::text::html::CSS;
-using $CSS$Attribute = ::javax::swing::text::html::CSS$Attribute;
 
 namespace javax {
 	namespace swing {

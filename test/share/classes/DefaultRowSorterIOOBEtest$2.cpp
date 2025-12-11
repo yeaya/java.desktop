@@ -6,7 +6,6 @@
 #include <javax/swing/DefaultRowSorter.h>
 #include <jcpp.h>
 
-using $DefaultRowSorterIOOBEtest = ::DefaultRowSorterIOOBEtest;
 using $DefaultRowSorterIOOBEtest$SorterModelWrapper = ::DefaultRowSorterIOOBEtest$SorterModelWrapper;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

@@ -25,7 +25,6 @@ using $SurfaceData = ::sun::java2d::SurfaceData;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $XSurfaceData = ::sun::java2d::x11::XSurfaceData;
 using $XRSurfaceData = ::sun::java2d::xr::XRSurfaceData;
-using $XRSurfaceData$XRWindowSurfaceData = ::sun::java2d::xr::XRSurfaceData$XRWindowSurfaceData;
 
 namespace sun {
 	namespace java2d {

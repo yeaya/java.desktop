@@ -7,14 +7,8 @@
 #include <javax/swing/text/Style.h>
 #include <jcpp.h>
 
-using $Color = ::java::awt::Color;
-using $Font = ::java::awt::Font;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $Document = ::javax::swing::text::Document;
-using $Element = ::javax::swing::text::Element;
-using $Style = ::javax::swing::text::Style;
 
 namespace javax {
 	namespace swing {

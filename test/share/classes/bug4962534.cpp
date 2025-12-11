@@ -36,8 +36,6 @@
 #undef BUTTON1_MASK
 #undef LOCK
 
-using $GraphicsConfigurationArray = $Array<::java::awt::GraphicsConfiguration>;
-using $GraphicsDeviceArray = $Array<::java::awt::GraphicsDevice>;
 using $bug4962534$1 = ::bug4962534$1;
 using $bug4962534$2 = ::bug4962534$2;
 using $bug4962534$3 = ::bug4962534$3;
@@ -51,11 +49,8 @@ using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $GraphicsEnvironment = ::java::awt::GraphicsEnvironment;
 using $MouseInfo = ::java::awt::MouseInfo;
-using $Point = ::java::awt::Point;
 using $PointerInfo = ::java::awt::PointerInfo;
-using $Rectangle = ::java::awt::Rectangle;
 using $Robot = ::java::awt::Robot;
-using $Window = ::java::awt::Window;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $PrintStream = ::java::io::PrintStream;
 using $Serializable = ::java::io::Serializable;
@@ -66,15 +61,9 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $Random = ::java::util::Random;
 using $JFrame = ::javax::swing::JFrame;
-using $JLayeredPane = ::javax::swing::JLayeredPane;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;
 

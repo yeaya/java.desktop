@@ -44,7 +44,6 @@
 #undef WHEEL_BLOCK_SCROLL
 
 using $ColorArray = $Array<::java::awt::Color>;
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Font = ::java::awt::Font;
@@ -53,7 +52,6 @@ using $Graphics = ::java::awt::Graphics;
 using $Rectangle = ::java::awt::Rectangle;
 using $Toolkit = ::java::awt::Toolkit;
 using $AdjustmentEvent = ::java::awt::event::AdjustmentEvent;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $MouseWheelEvent = ::java::awt::event::MouseWheelEvent;
 using $AssertionError = ::java::lang::AssertionError;
@@ -66,7 +64,6 @@ using $AbstractList = ::java::util::AbstractList;
 using $ArrayList = ::java::util::ArrayList;
 using $Iterator = ::java::util::Iterator;
 using $List = ::java::util::List;
-using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XComponentPeer = ::sun::awt::X11::XComponentPeer;
 using $XHorizontalScrollbar = ::sun::awt::X11::XHorizontalScrollbar;
 using $XScrollbar = ::sun::awt::X11::XScrollbar;
@@ -577,7 +574,7 @@ void ListHelper::paintItem($Graphics* g, $ColorArray* colors, $String* string, i
 	if (focused) {
 		$init($Color);
 		g->setColor($Color::BLACK);
-		g->drawRect(x + this->FOCUS_INSET, y + this->FOCUS_INSET, width - 2 * this->FOCUS_INSET, height - 2 * this->FOCUS_INSET);
+		g->drawRect(x + ListHelper::FOCUS_INSET, y + ListHelper::FOCUS_INSET, width - 2 * ListHelper::FOCUS_INSET, height - 2 * ListHelper::FOCUS_INSET);
 	}
 	if (selected) {
 		g->setColor($nc(colors)->get($XComponentPeer::BACKGROUND_COLOR));

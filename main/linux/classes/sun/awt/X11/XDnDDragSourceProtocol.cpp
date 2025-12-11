@@ -54,7 +54,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Map = ::java::util::Map;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $Native = ::sun::awt::X11::Native;
 using $WindowPropertyGetter = ::sun::awt::X11::WindowPropertyGetter;
 using $XAtom = ::sun::awt::X11::XAtom;

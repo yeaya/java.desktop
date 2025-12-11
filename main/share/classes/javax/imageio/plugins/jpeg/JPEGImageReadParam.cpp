@@ -12,8 +12,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ImageReadParam = ::javax::imageio::ImageReadParam;
-using $JPEGHuffmanTable = ::javax::imageio::plugins::jpeg::JPEGHuffmanTable;
-using $JPEGQTable = ::javax::imageio::plugins::jpeg::JPEGQTable;
 
 namespace javax {
 	namespace imageio {

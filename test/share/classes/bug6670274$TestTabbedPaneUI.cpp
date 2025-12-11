@@ -6,7 +6,6 @@
 #include <javax/swing/text/View.h>
 #include <jcpp.h>
 
-using $bug6670274 = ::bug6670274;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

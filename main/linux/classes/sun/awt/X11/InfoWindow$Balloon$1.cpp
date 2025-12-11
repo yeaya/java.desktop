@@ -10,18 +10,13 @@
 #include <sun/awt/X11/XTrayIconPeer$IconCanvas.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $Panel = ::java::awt::Panel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $InfoWindow$Balloon = ::sun::awt::X11::InfoWindow$Balloon;
-using $InfoWindow$Balloon$Displayer = ::sun::awt::X11::InfoWindow$Balloon$Displayer;
 using $XToolkit = ::sun::awt::X11::XToolkit;
 using $XTrayIconPeer$IconCanvas = ::sun::awt::X11::XTrayIconPeer$IconCanvas;
 

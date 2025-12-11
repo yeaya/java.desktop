@@ -7,14 +7,8 @@
 #include <javax/swing/JFrame.h>
 #include <jcpp.h>
 
-using $Window = ::java::awt::Window;
-using $TextHitInfo = ::java::awt::font::TextHitInfo;
-using $InputMethodRequests = ::java::awt::im::InputMethodRequests;
-using $InputMethod = ::java::awt::im::spi::InputMethod;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AttributedCharacterIterator = ::java::text::AttributedCharacterIterator;
-using $JFrame = ::javax::swing::JFrame;
 
 namespace java {
 	namespace awt {

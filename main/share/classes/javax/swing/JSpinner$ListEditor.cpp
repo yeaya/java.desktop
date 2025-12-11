@@ -23,9 +23,7 @@ using $JSpinner = ::javax::swing::JSpinner;
 using $JSpinner$DefaultEditor = ::javax::swing::JSpinner$DefaultEditor;
 using $JSpinner$ListEditor$ListFormatter = ::javax::swing::JSpinner$ListEditor$ListFormatter;
 using $SpinnerListModel = ::javax::swing::SpinnerListModel;
-using $SpinnerModel = ::javax::swing::SpinnerModel;
 using $DefaultFormatterFactory = ::javax::swing::text::DefaultFormatterFactory;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 namespace javax {
 	namespace swing {

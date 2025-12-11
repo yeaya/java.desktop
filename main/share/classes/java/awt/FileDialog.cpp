@@ -25,7 +25,6 @@
 #undef SAVE
 
 using $FileArray = $Array<::java::io::File>;
-using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dialog = ::java::awt::Dialog;
 using $FileDialog$1 = ::java::awt::FileDialog$1;
@@ -38,7 +37,6 @@ using $ContainerPeer = ::java::awt::peer::ContainerPeer;
 using $DialogPeer = ::java::awt::peer::DialogPeer;
 using $FileDialogPeer = ::java::awt::peer::FileDialogPeer;
 using $WindowPeer = ::java::awt::peer::WindowPeer;
-using $File = ::java::io::File;
 using $FilenameFilter = ::java::io::FilenameFilter;
 using $ObjectInputStream = ::java::io::ObjectInputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -129,7 +127,7 @@ int32_t FileDialog::nameCounter = 0;
 void FileDialog::initIDs() {
 	$init(FileDialog);
 	$prepareNativeStatic(FileDialog, initIDs, void);
-	$invokeNativeStatic(FileDialog, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

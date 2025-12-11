@@ -23,7 +23,6 @@ using $UndoableEditEvent = ::javax::swing::event::UndoableEditEvent;
 using $AbstractDocument$DefaultDocumentEvent = ::javax::swing::text::AbstractDocument$DefaultDocumentEvent;
 using $CompoundEdit = ::javax::swing::undo::CompoundEdit;
 using $UndoManager = ::javax::swing::undo::UndoManager;
-using $UndoableEdit = ::javax::swing::undo::UndoableEdit;
 
 $FieldInfo _TestCCEOnEditEvent$4_FieldInfo_[] = {
 	{"this$0", "LTestCCEOnEditEvent;", nullptr, $FINAL | $SYNTHETIC, $field(TestCCEOnEditEvent$4, this$0)},

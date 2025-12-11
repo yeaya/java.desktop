@@ -20,7 +20,6 @@ using $BeanContextServiceRevokedListener = ::java::beans::beancontext::BeanConte
 using $BeanContextServices = ::java::beans::beancontext::BeanContextServices;
 using $BeanContextServicesSupport = ::java::beans::beancontext::BeanContextServicesSupport;
 using $BeanContextServicesSupport$BCSSChild = ::java::beans::beancontext::BeanContextServicesSupport$BCSSChild;
-using $BeanContextSupport = ::java::beans::beancontext::BeanContextSupport;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

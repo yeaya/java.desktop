@@ -10,7 +10,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JTableHeader = ::javax::swing::table::JTableHeader;
 using $TableColumnModel = ::javax::swing::table::TableColumnModel;
 

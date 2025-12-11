@@ -6,8 +6,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $XMSelection = ::sun::awt::X11::XMSelection;
-using $XPropertyEvent = ::sun::awt::X11::XPropertyEvent;
 
 namespace sun {
 	namespace awt {

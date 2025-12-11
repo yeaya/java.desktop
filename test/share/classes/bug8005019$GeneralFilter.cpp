@@ -8,7 +8,6 @@
 #include <jcpp.h>
 
 using $IntegerArray = $Array<::java::lang::Integer>;
-using $bug8005019 = ::bug8005019;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

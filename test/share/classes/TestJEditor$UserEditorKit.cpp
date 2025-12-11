@@ -13,7 +13,6 @@
 #include <javax/swing/text/ViewFactory.h>
 #include <jcpp.h>
 
-using $TestJEditor = ::TestJEditor;
 using $ActionArray = $Array<::javax::swing::Action>;
 using $InputStream = ::java::io::InputStream;
 using $OutputStream = ::java::io::OutputStream;

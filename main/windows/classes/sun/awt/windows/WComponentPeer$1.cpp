@@ -14,10 +14,8 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $InvalidPipeException = ::sun::java2d::InvalidPipeException;
-using $SurfaceData = ::sun::java2d::SurfaceData;
 using $D3DSurfaceData$D3DWindowSurfaceData = ::sun::java2d::d3d::D3DSurfaceData$D3DWindowSurfaceData;
 using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;
 

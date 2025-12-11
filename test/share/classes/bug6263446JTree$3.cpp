@@ -21,13 +21,11 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NoSuchFieldException = ::java::lang::NoSuchFieldException;
 using $ReflectiveOperationException = ::java::lang::ReflectiveOperationException;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $Field = ::java::lang::reflect::Field;
 using $DefaultCellEditor = ::javax::swing::DefaultCellEditor;
 using $JTree = ::javax::swing::JTree;
 using $DefaultTreeCellEditor = ::javax::swing::tree::DefaultTreeCellEditor;
-using $TreeCellEditor = ::javax::swing::tree::TreeCellEditor;
 
 $FieldInfo _bug6263446JTree$3_FieldInfo_[] = {
 	{"val$clicks", "I", nullptr, $FINAL | $SYNTHETIC, $field(bug6263446JTree$3, val$clicks)},

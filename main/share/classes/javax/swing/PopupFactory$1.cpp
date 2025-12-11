@@ -12,7 +12,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Popup = ::javax::swing::Popup;
 using $PopupFactory = ::javax::swing::PopupFactory;
-using $SwingAccessor$PopupFactoryAccessor = ::sun::swing::SwingAccessor$PopupFactoryAccessor;
 
 namespace javax {
 	namespace swing {

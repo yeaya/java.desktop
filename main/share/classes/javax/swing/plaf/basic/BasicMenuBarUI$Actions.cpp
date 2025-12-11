@@ -20,14 +20,11 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JMenu = ::javax::swing::JMenu;
 using $JMenuBar = ::javax::swing::JMenuBar;
 using $JMenuItem = ::javax::swing::JMenuItem;
-using $JPopupMenu = ::javax::swing::JPopupMenu;
 using $MenuElement = ::javax::swing::MenuElement;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
-using $BasicMenuBarUI = ::javax::swing::plaf::basic::BasicMenuBarUI;
 using $UIAction = ::sun::swing::UIAction;
 
 namespace javax {

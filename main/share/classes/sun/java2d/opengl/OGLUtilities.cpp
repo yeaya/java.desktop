@@ -33,9 +33,7 @@ using $OGLContext = ::sun::java2d::opengl::OGLContext;
 using $OGLGraphicsConfig = ::sun::java2d::opengl::OGLGraphicsConfig;
 using $OGLRenderQueue = ::sun::java2d::opengl::OGLRenderQueue;
 using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;
-using $BufferedContext = ::sun::java2d::pipe::BufferedContext;
 using $Region = ::sun::java2d::pipe::Region;
-using $RenderQueue = ::sun::java2d::pipe::RenderQueue;
 using $AccelSurface = ::sun::java2d::pipe::hw::AccelSurface;
 
 namespace sun {

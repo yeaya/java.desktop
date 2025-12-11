@@ -56,8 +56,6 @@
 using $GTKConstants$TextDirection = ::com::sun::java::swing::plaf::gtk::GTKConstants$TextDirection;
 using $Point = ::java::awt::Point;
 using $RenderingHints = ::java::awt::RenderingHints;
-using $RenderingHints$Key = ::java::awt::RenderingHints$Key;
-using $Toolkit = ::java::awt::Toolkit;
 using $ColorSpace = ::java::awt::color::ColorSpace;
 using $BufferedImage = ::java::awt::image::BufferedImage;
 using $ColorModel = ::java::awt::image::ColorModel;
@@ -70,18 +68,13 @@ using $Serializable = ::java::io::Serializable;
 using $Boolean = ::java::lang::Boolean;
 using $CharSequence = ::java::lang::CharSequence;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Number = ::java::lang::Number;
 using $NumberFormatException = ::java::lang::NumberFormatException;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Hashtable = ::java::util::Hashtable;
@@ -399,7 +392,7 @@ bool UNIXToolkit::check_gtk(int32_t version) {
 	$init(UNIXToolkit);
 	bool $ret = false;
 	$prepareNativeStatic(UNIXToolkit, check_gtk, bool, int32_t version);
-	$ret = $invokeNativeStatic(UNIXToolkit, check_gtk, version);
+	$ret = $invokeNativeStatic(version);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -408,7 +401,7 @@ bool UNIXToolkit::load_gtk(int32_t version, bool verbose) {
 	$init(UNIXToolkit);
 	bool $ret = false;
 	$prepareNativeStatic(UNIXToolkit, load_gtk, bool, int32_t version, bool verbose);
-	$ret = $invokeNativeStatic(UNIXToolkit, load_gtk, version, verbose);
+	$ret = $invokeNativeStatic(version, verbose);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -417,7 +410,7 @@ bool UNIXToolkit::unload_gtk() {
 	$init(UNIXToolkit);
 	bool $ret = false;
 	$prepareNativeStatic(UNIXToolkit, unload_gtk, bool);
-	$ret = $invokeNativeStatic(UNIXToolkit, unload_gtk);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -425,7 +418,7 @@ bool UNIXToolkit::unload_gtk() {
 bool UNIXToolkit::load_gtk_icon($String* filename) {
 	bool $ret = false;
 	$prepareNative(UNIXToolkit, load_gtk_icon, bool, $String* filename);
-	$ret = $invokeNative(UNIXToolkit, load_gtk_icon, filename);
+	$ret = $invokeNative(filename);
 	$finishNative();
 	return $ret;
 }
@@ -433,14 +426,14 @@ bool UNIXToolkit::load_gtk_icon($String* filename) {
 bool UNIXToolkit::load_stock_icon(int32_t widget_type, $String* stock_id, int32_t iconSize, int32_t textDirection, $String* detail) {
 	bool $ret = false;
 	$prepareNative(UNIXToolkit, load_stock_icon, bool, int32_t widget_type, $String* stock_id, int32_t iconSize, int32_t textDirection, $String* detail);
-	$ret = $invokeNative(UNIXToolkit, load_stock_icon, widget_type, stock_id, iconSize, textDirection, detail);
+	$ret = $invokeNative(widget_type, stock_id, iconSize, textDirection, detail);
 	$finishNative();
 	return $ret;
 }
 
 void UNIXToolkit::nativeSync() {
 	$prepareNative(UNIXToolkit, nativeSync, void);
-	$invokeNative(UNIXToolkit, nativeSync);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -448,7 +441,7 @@ int32_t UNIXToolkit::get_gtk_version() {
 	$init(UNIXToolkit);
 	int32_t $ret = 0;
 	$prepareNativeStatic(UNIXToolkit, get_gtk_version, int32_t);
-	$ret = $invokeNativeStatic(UNIXToolkit, get_gtk_version);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -504,7 +497,7 @@ $RenderingHints* UNIXToolkit::getDesktopAAHints() {
 bool UNIXToolkit::gtkCheckVersionImpl(int32_t major, int32_t minor, int32_t micro) {
 	bool $ret = false;
 	$prepareNative(UNIXToolkit, gtkCheckVersionImpl, bool, int32_t major, int32_t minor, int32_t micro);
-	$ret = $invokeNative(UNIXToolkit, gtkCheckVersionImpl, major, minor, micro);
+	$ret = $invokeNative(major, minor, micro);
 	$finishNative();
 	return $ret;
 }

@@ -7,7 +7,6 @@
 #include <javax/swing/plaf/basic/BasicOptionPaneUI.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Font = ::java::awt::Font;
 using $ClassInfo = ::java::lang::ClassInfo;

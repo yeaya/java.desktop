@@ -33,11 +33,8 @@
 
 #undef DISABLED_ACTION
 
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $ChangeListenerArray = $Array<::javax::swing::event::ChangeListener>;
-using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
-using $Container = ::java::awt::Container;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $ObjectOutputStream = ::java::io::ObjectOutputStream;
 using $Boolean = ::java::lang::Boolean;
@@ -50,7 +47,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $NullPointerException = ::java::lang::NullPointerException;
 using $EventListener = ::java::util::EventListener;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AbstractSpinnerModel = ::javax::swing::AbstractSpinnerModel;
 using $Action = ::javax::swing::Action;

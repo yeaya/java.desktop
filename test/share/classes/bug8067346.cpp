@@ -17,7 +17,6 @@
 
 using $bug8067346$1 = ::bug8067346$1;
 using $Insets = ::java::awt::Insets;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

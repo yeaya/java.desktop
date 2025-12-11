@@ -38,7 +38,6 @@ using $ParseException = ::java::text::ParseException;
 using $SimpleDateFormat = ::java::text::SimpleDateFormat;
 using $Date = ::java::util::Date;
 using $Locale = ::java::util::Locale;
-using $JFormattedTextField = ::javax::swing::JFormattedTextField;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $DateFormatter = ::javax::swing::text::DateFormatter;
 using $InternationalFormatter = ::javax::swing::text::InternationalFormatter;

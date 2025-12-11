@@ -13,7 +13,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Icon = ::javax::swing::Icon;
 using $UIDefaults = ::javax::swing::UIDefaults;
-using $UIDefaults$LazyValue = ::javax::swing::UIDefaults$LazyValue;
 using $OceanTheme = ::javax::swing::plaf::metal::OceanTheme;
 using $OceanTheme$IFIcon = ::javax::swing::plaf::metal::OceanTheme$IFIcon;
 

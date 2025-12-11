@@ -13,7 +13,6 @@ using $Float = ::java::lang::Float;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NumberFormatException = ::java::lang::NumberFormatException;
-using $Locale = ::java::util::Locale;
 using $UIManager = ::javax::swing::UIManager;
 
 namespace javax {

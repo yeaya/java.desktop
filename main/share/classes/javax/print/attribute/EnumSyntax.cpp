@@ -8,7 +8,6 @@ using $EnumSyntaxArray = $Array<::javax::print::attribute::EnumSyntax>;
 using $InvalidObjectException = ::java::io::InvalidObjectException;
 using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Cloneable = ::java::lang::Cloneable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;

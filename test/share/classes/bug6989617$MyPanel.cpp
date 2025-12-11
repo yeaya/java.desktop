@@ -10,8 +10,6 @@
 #include <javax/swing/JPanel.h>
 #include <jcpp.h>
 
-using $bug6989617 = ::bug6989617;
-using $Container = ::java::awt::Container;
 using $GridBagLayout = ::java::awt::GridBagLayout;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $LayoutManager2 = ::java::awt::LayoutManager2;
@@ -20,7 +18,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JPanel = ::javax::swing::JPanel;
 
 $FieldInfo _bug6989617$MyPanel_FieldInfo_[] = {

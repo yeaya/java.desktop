@@ -9,12 +9,10 @@
 #include <javax/swing/text/html/parser/ParserDelegator.h>
 #include <jcpp.h>
 
-using $ElementArray = $Array<::javax::swing::text::Element>;
 using $IOException = ::java::io::IOException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $AbstractDocument = ::javax::swing::text::AbstractDocument;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $Element = ::javax::swing::text::Element;
 using $HTMLDocument = ::javax::swing::text::html::HTMLDocument;

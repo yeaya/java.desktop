@@ -11,7 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ListDataEvent = ::javax::swing::event::ListDataEvent;
-using $ListDataListener = ::javax::swing::event::ListDataListener;
 using $SynthFileChooserUI = ::sun::swing::plaf::synth::SynthFileChooserUI;
 using $SynthFileChooserUI$DelayedSelectionUpdater = ::sun::swing::plaf::synth::SynthFileChooserUI$DelayedSelectionUpdater;
 

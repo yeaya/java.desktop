@@ -19,7 +19,6 @@
 
 using $TreePathArray = $Array<::javax::swing::tree::TreePath>;
 using $Transferable = ::java::awt::datatransfer::Transferable;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -32,9 +31,7 @@ using $List = ::java::util::List;
 using $JComponent = ::javax::swing::JComponent;
 using $JTree = ::javax::swing::JTree;
 using $TransferHandler = ::javax::swing::TransferHandler;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $BasicTransferable = ::javax::swing::plaf::basic::BasicTransferable;
-using $BasicTreeUI = ::javax::swing::plaf::basic::BasicTreeUI;
 using $TreeModel = ::javax::swing::tree::TreeModel;
 using $TreePath = ::javax::swing::tree::TreePath;
 

@@ -5,12 +5,9 @@
 #include <sun/awt/AWTAccessor.h>
 #include <jcpp.h>
 
-using $MenuItem = ::java::awt::MenuItem;
-using $MenuShortcut = ::java::awt::MenuShortcut;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AWTAccessor = ::sun::awt::AWTAccessor;
 
 namespace sun {
 	namespace awt {

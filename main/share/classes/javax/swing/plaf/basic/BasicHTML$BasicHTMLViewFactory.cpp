@@ -10,7 +10,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $BasicHTML = ::javax::swing::plaf::basic::BasicHTML;
 using $Element = ::javax::swing::text::Element;
 using $View = ::javax::swing::text::View;
 using $HTMLEditorKit$HTMLFactory = ::javax::swing::text::html::HTMLEditorKit$HTMLFactory;

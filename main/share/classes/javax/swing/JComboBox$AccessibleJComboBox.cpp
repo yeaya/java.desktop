@@ -31,7 +31,6 @@
 #undef EXPANDED
 
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -49,7 +48,6 @@ using $JComboBox = ::javax::swing::JComboBox;
 using $JComboBox$AccessibleJComboBox$AccessibleJComboBoxListSelectionListener = ::javax::swing::JComboBox$AccessibleJComboBox$AccessibleJComboBoxListSelectionListener;
 using $JComboBox$AccessibleJComboBox$AccessibleJComboBoxPopupMenuListener = ::javax::swing::JComboBox$AccessibleJComboBox$AccessibleJComboBoxPopupMenuListener;
 using $JComboBox$AccessibleJComboBox$AccessibleJComboBoxPropertyChangeListener = ::javax::swing::JComboBox$AccessibleJComboBox$AccessibleJComboBoxPropertyChangeListener;
-using $JComboBox$AccessibleJComboBox$EditorAccessibleContext = ::javax::swing::JComboBox$AccessibleJComboBox$EditorAccessibleContext;
 using $JComponent = ::javax::swing::JComponent;
 using $JComponent$AccessibleJComponent = ::javax::swing::JComponent$AccessibleJComponent;
 using $JList = ::javax::swing::JList;

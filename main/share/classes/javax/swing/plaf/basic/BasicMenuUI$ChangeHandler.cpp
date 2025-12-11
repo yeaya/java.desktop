@@ -6,14 +6,12 @@
 #include <javax/swing/plaf/basic/BasicMenuUI.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JMenu = ::javax::swing::JMenu;
 using $ChangeEvent = ::javax::swing::event::ChangeEvent;
-using $ChangeListener = ::javax::swing::event::ChangeListener;
 using $BasicMenuUI = ::javax::swing::plaf::basic::BasicMenuUI;
 
 namespace javax {

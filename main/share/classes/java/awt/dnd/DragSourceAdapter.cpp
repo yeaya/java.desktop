@@ -10,7 +10,6 @@ using $DragSourceDragEvent = ::java::awt::dnd::DragSourceDragEvent;
 using $DragSourceDropEvent = ::java::awt::dnd::DragSourceDropEvent;
 using $DragSourceEvent = ::java::awt::dnd::DragSourceEvent;
 using $DragSourceListener = ::java::awt::dnd::DragSourceListener;
-using $DragSourceMotionListener = ::java::awt::dnd::DragSourceMotionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

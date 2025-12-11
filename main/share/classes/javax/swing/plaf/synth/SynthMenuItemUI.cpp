@@ -48,7 +48,6 @@ using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $Icon = ::javax::swing::Icon;
 using $JComponent = ::javax::swing::JComponent;
@@ -69,7 +68,6 @@ using $SynthPainter = ::javax::swing::plaf::synth::SynthPainter;
 using $SynthStyle = ::javax::swing::plaf::synth::SynthStyle;
 using $SynthUI = ::javax::swing::plaf::synth::SynthUI;
 using $MenuItemLayoutHelper = ::sun::swing::MenuItemLayoutHelper;
-using $StringUIClientPropertyKey = ::sun::swing::StringUIClientPropertyKey;
 
 namespace javax {
 	namespace swing {

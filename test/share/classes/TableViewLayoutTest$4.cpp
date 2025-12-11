@@ -12,9 +12,7 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JEditorPane = ::javax::swing::JEditorPane;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $MethodInfo _TableViewLayoutTest$4_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(TableViewLayoutTest$4::*)()>(&TableViewLayoutTest$4::init$))},

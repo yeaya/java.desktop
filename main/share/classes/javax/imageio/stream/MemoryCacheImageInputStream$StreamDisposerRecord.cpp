@@ -9,8 +9,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $MemoryCache = ::javax::imageio::stream::MemoryCache;
-using $MemoryCacheImageInputStream = ::javax::imageio::stream::MemoryCacheImageInputStream;
-using $DisposerRecord = ::sun::java2d::DisposerRecord;
 
 namespace javax {
 	namespace imageio {

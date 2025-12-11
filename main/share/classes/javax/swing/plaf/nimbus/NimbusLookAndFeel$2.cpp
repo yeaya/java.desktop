@@ -11,7 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UIDefaults = ::javax::swing::UIDefaults;
-using $UIDefaults$ActiveValue = ::javax::swing::UIDefaults$ActiveValue;
 using $NimbusLookAndFeel = ::javax::swing::plaf::nimbus::NimbusLookAndFeel;
 using $TableScrollPaneCorner = ::javax::swing::plaf::nimbus::TableScrollPaneCorner;
 

@@ -126,7 +126,7 @@ bool ImagingLib::init() {
 	$init(ImagingLib);
 	bool $ret = false;
 	$prepareNativeStatic(ImagingLib, init, bool);
-	$ret = $invokeNativeStatic(ImagingLib, init);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -135,7 +135,7 @@ int32_t ImagingLib::transformBI($BufferedImage* src, $BufferedImage* dst, $doubl
 	$init(ImagingLib);
 	int32_t $ret = 0;
 	$prepareNativeStatic(ImagingLib, transformBI, int32_t, $BufferedImage* src, $BufferedImage* dst, $doubles* matrix, int32_t interpType);
-	$ret = $invokeNativeStatic(ImagingLib, transformBI, src, dst, matrix, interpType);
+	$ret = $invokeNativeStatic(src, dst, matrix, interpType);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -144,7 +144,7 @@ int32_t ImagingLib::transformRaster($Raster* src, $Raster* dst, $doubles* matrix
 	$init(ImagingLib);
 	int32_t $ret = 0;
 	$prepareNativeStatic(ImagingLib, transformRaster, int32_t, $Raster* src, $Raster* dst, $doubles* matrix, int32_t interpType);
-	$ret = $invokeNativeStatic(ImagingLib, transformRaster, src, dst, matrix, interpType);
+	$ret = $invokeNativeStatic(src, dst, matrix, interpType);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -153,7 +153,7 @@ int32_t ImagingLib::convolveBI($BufferedImage* src, $BufferedImage* dst, $Kernel
 	$init(ImagingLib);
 	int32_t $ret = 0;
 	$prepareNativeStatic(ImagingLib, convolveBI, int32_t, $BufferedImage* src, $BufferedImage* dst, $Kernel* kernel, int32_t edgeHint);
-	$ret = $invokeNativeStatic(ImagingLib, convolveBI, src, dst, kernel, edgeHint);
+	$ret = $invokeNativeStatic(src, dst, kernel, edgeHint);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -162,7 +162,7 @@ int32_t ImagingLib::convolveRaster($Raster* src, $Raster* dst, $Kernel* kernel, 
 	$init(ImagingLib);
 	int32_t $ret = 0;
 	$prepareNativeStatic(ImagingLib, convolveRaster, int32_t, $Raster* src, $Raster* dst, $Kernel* kernel, int32_t edgeHint);
-	$ret = $invokeNativeStatic(ImagingLib, convolveRaster, src, dst, kernel, edgeHint);
+	$ret = $invokeNativeStatic(src, dst, kernel, edgeHint);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -171,7 +171,7 @@ int32_t ImagingLib::lookupByteBI($BufferedImage* src, $BufferedImage* dst, $byte
 	$init(ImagingLib);
 	int32_t $ret = 0;
 	$prepareNativeStatic(ImagingLib, lookupByteBI, int32_t, $BufferedImage* src, $BufferedImage* dst, $byteArray2* table);
-	$ret = $invokeNativeStatic(ImagingLib, lookupByteBI, src, dst, table);
+	$ret = $invokeNativeStatic(src, dst, table);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -180,7 +180,7 @@ int32_t ImagingLib::lookupByteRaster($Raster* src, $Raster* dst, $byteArray2* ta
 	$init(ImagingLib);
 	int32_t $ret = 0;
 	$prepareNativeStatic(ImagingLib, lookupByteRaster, int32_t, $Raster* src, $Raster* dst, $byteArray2* table);
-	$ret = $invokeNativeStatic(ImagingLib, lookupByteRaster, src, dst, table);
+	$ret = $invokeNativeStatic(src, dst, table);
 	$finishNativeStatic();
 	return $ret;
 }

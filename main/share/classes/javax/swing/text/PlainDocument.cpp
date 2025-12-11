@@ -22,7 +22,6 @@
 
 using $AbstractDocument$BranchElementArray = $Array<::javax::swing::text::AbstractDocument$BranchElement>;
 using $ElementArray = $Array<::javax::swing::text::Element>;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Error = ::java::lang::Error;

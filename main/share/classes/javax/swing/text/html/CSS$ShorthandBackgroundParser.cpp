@@ -12,7 +12,6 @@
 #undef BACKGROUND_POSITION
 #undef BACKGROUND_REPEAT
 
-using $Color = ::java::awt::Color;
 using $Character = ::java::lang::Character;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

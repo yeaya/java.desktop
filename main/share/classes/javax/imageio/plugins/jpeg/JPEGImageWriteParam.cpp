@@ -23,8 +23,6 @@ using $IllegalStateException = ::java::lang::IllegalStateException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Locale = ::java::util::Locale;
 using $ImageWriteParam = ::javax::imageio::ImageWriteParam;
-using $JPEGHuffmanTable = ::javax::imageio::plugins::jpeg::JPEGHuffmanTable;
-using $JPEGQTable = ::javax::imageio::plugins::jpeg::JPEGQTable;
 
 namespace javax {
 	namespace imageio {

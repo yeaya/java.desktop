@@ -9,10 +9,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $DocumentEvent$ElementChange = ::javax::swing::event::DocumentEvent$ElementChange;
-using $DocumentEvent$EventType = ::javax::swing::event::DocumentEvent$EventType;
-using $Document = ::javax::swing::text::Document;
-using $Element = ::javax::swing::text::Element;
 
 namespace javax {
 	namespace swing {

@@ -8,13 +8,11 @@
 #include <jcpp.h>
 
 using $DockIconRepaint = ::DockIconRepaint;
-using $Color = ::java::awt::Color;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JPanel = ::javax::swing::JPanel;
 
 $MethodInfo _DockIconRepaint$1_MethodInfo_[] = {

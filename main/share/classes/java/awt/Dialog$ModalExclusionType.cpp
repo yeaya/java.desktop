@@ -9,7 +9,6 @@
 #undef TOOLKIT_EXCLUDE
 
 using $Dialog$ModalExclusionTypeArray = $Array<::java::awt::Dialog$ModalExclusionType>;
-using $Dialog = ::java::awt::Dialog;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

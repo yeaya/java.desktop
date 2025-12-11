@@ -69,10 +69,8 @@
 #undef X_AXIS
 
 using $RectangleArray = $Array<::java::awt::Rectangle>;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Dimension = ::java::awt::Dimension;
 using $Font = ::java::awt::Font;
 using $FontMetrics = ::java::awt::FontMetrics;
 using $Graphics = ::java::awt::Graphics;
@@ -100,7 +98,6 @@ using $JTabbedPane = ::javax::swing::JTabbedPane;
 using $SwingConstants = ::javax::swing::SwingConstants;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $UIManager = ::javax::swing::UIManager;
-using $Border = ::javax::swing::border::Border;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $TabbedPaneUI = ::javax::swing::plaf::TabbedPaneUI;
 using $BasicTabbedPaneUI = ::javax::swing::plaf::basic::BasicTabbedPaneUI;

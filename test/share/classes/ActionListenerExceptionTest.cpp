@@ -25,7 +25,6 @@ using $ActionListenerExceptionTest$2 = ::ActionListenerExceptionTest$2;
 using $ActionListenerExceptionTest$3 = ::ActionListenerExceptionTest$3;
 using $ActionListenerExceptionTest$4 = ::ActionListenerExceptionTest$4;
 using $EventQueueProxy = ::EventQueueProxy;
-using $Dimension = ::java::awt::Dimension;
 using $EventQueue = ::java::awt::EventQueue;
 using $Point = ::java::awt::Point;
 using $Robot = ::java::awt::Robot;
@@ -37,8 +36,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $JComboBox = ::javax::swing::JComboBox;
-using $JFrame = ::javax::swing::JFrame;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 
 $FieldInfo _ActionListenerExceptionTest_FieldInfo_[] = {

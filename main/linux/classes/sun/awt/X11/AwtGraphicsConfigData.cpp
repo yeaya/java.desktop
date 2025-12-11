@@ -18,7 +18,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
 using $ColorData = ::sun::awt::X11::ColorData;
 using $Native = ::sun::awt::X11::Native;
-using $XEvent = ::sun::awt::X11::XEvent;
 using $XRenderPictFormat = ::sun::awt::X11::XRenderPictFormat;
 using $XVisualInfo = ::sun::awt::X11::XVisualInfo;
 using $XWrapperBase = ::sun::awt::X11::XWrapperBase;

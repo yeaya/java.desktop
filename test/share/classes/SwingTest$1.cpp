@@ -11,7 +11,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Method = ::java::lang::reflect::Method;
-using $Comparator = ::java::util::Comparator;
 
 $FieldInfo _SwingTest$1_FieldInfo_[] = {
 	{"this$0", "LSwingTest;", nullptr, $FINAL | $SYNTHETIC, $field(SwingTest$1, this$0)},

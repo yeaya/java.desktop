@@ -3,7 +3,6 @@
 #include <javax/print/PrintService.h>
 #include <jcpp.h>
 
-using $PrintServiceArray = $Array<::javax::print::PrintService>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

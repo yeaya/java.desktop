@@ -8,15 +8,8 @@
 #include <sun/java2d/SunGraphics2D.h>
 #include <jcpp.h>
 
-using $Color = ::java::awt::Color;
-using $Image = ::java::awt::Image;
-using $AffineTransform = ::java::awt::geom::AffineTransform;
-using $BufferedImage = ::java::awt::image::BufferedImage;
-using $BufferedImageOp = ::java::awt::image::BufferedImageOp;
-using $ImageObserver = ::java::awt::image::ImageObserver;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
 
 namespace sun {
 	namespace java2d {

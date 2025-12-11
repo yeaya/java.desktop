@@ -19,7 +19,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Control$Type = ::javax::sound::sampled::Control$Type;
-using $FloatControl = ::javax::sound::sampled::FloatControl;
 
 namespace javax {
 	namespace sound {

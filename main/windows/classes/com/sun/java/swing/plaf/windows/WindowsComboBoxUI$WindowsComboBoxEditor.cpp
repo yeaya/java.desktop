@@ -12,20 +12,14 @@
 #include <javax/swing/plaf/basic/BasicComboBoxEditor.h>
 #include <jcpp.h>
 
-using $WindowsComboBoxUI = ::com::sun::java::swing::plaf::windows::WindowsComboBoxUI;
-using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $KeyboardFocusManager = ::java::awt::KeyboardFocusManager;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JTextField = ::javax::swing::JTextField;
 using $UIManager = ::javax::swing::UIManager;
 using $Border = ::javax::swing::border::Border;
-using $BasicComboBoxEditor = ::javax::swing::plaf::basic::BasicComboBoxEditor;
 using $BasicComboBoxEditor$UIResource = ::javax::swing::plaf::basic::BasicComboBoxEditor$UIResource;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 namespace com {
 	namespace sun {

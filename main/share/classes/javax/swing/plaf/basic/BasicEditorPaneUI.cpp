@@ -41,7 +41,6 @@
 using $ActionArray = $Array<::javax::swing::Action>;
 using $StyleSheetArray = $Array<::javax::swing::text::html::StyleSheet>;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Font = ::java::awt::Font;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $Boolean = ::java::lang::Boolean;

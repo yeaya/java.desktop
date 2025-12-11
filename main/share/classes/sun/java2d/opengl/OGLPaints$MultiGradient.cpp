@@ -10,12 +10,10 @@
 #include <jcpp.h>
 
 using $MultipleGradientPaint = ::java::awt::MultipleGradientPaint;
-using $Paint = ::java::awt::Paint;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
-using $SurfaceData = ::sun::java2d::SurfaceData;
 using $OGLGraphicsConfig = ::sun::java2d::opengl::OGLGraphicsConfig;
 using $OGLPaints = ::sun::java2d::opengl::OGLPaints;
 using $OGLSurfaceData = ::sun::java2d::opengl::OGLSurfaceData;

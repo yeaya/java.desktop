@@ -17,7 +17,6 @@
 #undef OFFSET
 
 using $TMSchema$Part = ::com::sun::java::swing::plaf::windows::TMSchema$Part;
-using $WindowsIconFactory = ::com::sun::java::swing::plaf::windows::WindowsIconFactory;
 using $WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon = ::com::sun::java::swing::plaf::windows::WindowsIconFactory$VistaMenuItemCheckIconFactory$VistaMenuItemCheckIcon;
 using $XPStyle = ::com::sun::java::swing::plaf::windows::XPStyle;
 using $XPStyle$Skin = ::com::sun::java::swing::plaf::windows::XPStyle$Skin;
@@ -31,7 +30,6 @@ using $JCheckBoxMenuItem = ::javax::swing::JCheckBoxMenuItem;
 using $JMenu = ::javax::swing::JMenu;
 using $JMenuItem = ::javax::swing::JMenuItem;
 using $JRadioButtonMenuItem = ::javax::swing::JRadioButtonMenuItem;
-using $MenuItemCheckIconFactory = ::sun::swing::MenuItemCheckIconFactory;
 
 namespace com {
 	namespace sun {

@@ -15,8 +15,6 @@
 #undef SHORT_DESCRIPTION
 #undef SMALL_ICON
 
-using $ActionListener = ::java::awt::event::ActionListener;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

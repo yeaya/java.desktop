@@ -8,7 +8,6 @@
 using $MidiUtils = ::com::sun::media::sound::MidiUtils;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $MidiMessage = ::javax::sound::midi::MidiMessage;
 using $SysexMessage = ::javax::sound::midi::SysexMessage;
 
 namespace com {

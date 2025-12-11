@@ -9,7 +9,6 @@
 #undef PI2
 
 using $doubleArray2 = $Array<double, 2>;
-using $SoftProcess = ::com::sun::media::sound::SoftProcess;
 using $SoftSynthesizer = ::com::sun::media::sound::SoftSynthesizer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
@@ -65,14 +64,14 @@ double SoftLowFrequencyOscillator::PI2 = 0.0;
 
 void SoftLowFrequencyOscillator::init$() {
 	this->used_count = 0;
-	$set(this, out, $new($doubleArray2, this->max_count, 1));
-	$set(this, delay, $new($doubleArray2, this->max_count, 1));
-	$set(this, delay2, $new($doubleArray2, this->max_count, 1));
-	$set(this, freq, $new($doubleArray2, this->max_count, 1));
-	$set(this, delay_counter, $new($ints, this->max_count));
-	$set(this, sin_phase, $new($doubles, this->max_count));
-	$set(this, sin_stepfreq, $new($doubles, this->max_count));
-	$set(this, sin_step, $new($doubles, this->max_count));
+	$set(this, out, $new($doubleArray2, SoftLowFrequencyOscillator::max_count, 1));
+	$set(this, delay, $new($doubleArray2, SoftLowFrequencyOscillator::max_count, 1));
+	$set(this, delay2, $new($doubleArray2, SoftLowFrequencyOscillator::max_count, 1));
+	$set(this, freq, $new($doubleArray2, SoftLowFrequencyOscillator::max_count, 1));
+	$set(this, delay_counter, $new($ints, SoftLowFrequencyOscillator::max_count));
+	$set(this, sin_phase, $new($doubles, SoftLowFrequencyOscillator::max_count));
+	$set(this, sin_stepfreq, $new($doubles, SoftLowFrequencyOscillator::max_count));
+	$set(this, sin_step, $new($doubles, SoftLowFrequencyOscillator::max_count));
 	this->control_time = (double)0;
 	this->sin_factor = (double)0;
 	for (int32_t i = 0; i < $nc(this->sin_stepfreq)->length; ++i) {

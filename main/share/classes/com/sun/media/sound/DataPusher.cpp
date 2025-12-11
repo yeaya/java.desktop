@@ -32,8 +32,6 @@ using $Runnable = ::java::lang::Runnable;
 using $Arrays = ::java::util::Arrays;
 using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 using $AudioInputStream = ::javax::sound::sampled::AudioInputStream;
-using $DataLine = ::javax::sound::sampled::DataLine;
-using $Line = ::javax::sound::sampled::Line;
 using $SourceDataLine = ::javax::sound::sampled::SourceDataLine;
 
 namespace com {
@@ -115,12 +113,12 @@ void DataPusher::start() {
 void DataPusher::start(bool loop) {
 	$synchronized(this) {
 		try {
-			if (this->threadState == this->STATE_STOPPING) {
+			if (this->threadState == DataPusher::STATE_STOPPING) {
 				stop();
 			}
 			this->looping = loop;
 			this->newPos = 0;
-			this->wantedState = this->STATE_PLAYING;
+			this->wantedState = DataPusher::STATE_PLAYING;
 			if (!$nc(this->source)->isOpen()) {
 				$nc(this->source)->open(this->format);
 			}
@@ -141,16 +139,16 @@ void DataPusher::start(bool loop) {
 
 void DataPusher::stop() {
 	$synchronized(this) {
-		if (this->threadState == this->STATE_STOPPING || this->threadState == this->STATE_STOPPED || this->pushThread == nullptr) {
+		if (this->threadState == DataPusher::STATE_STOPPING || this->threadState == DataPusher::STATE_STOPPED || this->pushThread == nullptr) {
 			return;
 		}
-		this->wantedState = this->STATE_WAITING;
+		this->wantedState = DataPusher::STATE_WAITING;
 		if (this->source != nullptr) {
 			$nc(this->source)->flush();
 		}
 		$of(this)->notifyAll();
 		int32_t maxWaitCount = 50;
-		while ((maxWaitCount-- >= 0) && (this->threadState == this->STATE_PLAYING)) {
+		while ((maxWaitCount-- >= 0) && (this->threadState == DataPusher::STATE_PLAYING)) {
 			try {
 				$of(this)->wait(100);
 			} catch ($InterruptedException& e) {
@@ -171,16 +169,16 @@ void DataPusher::run() {
 	$var($bytes, buffer, nullptr);
 	bool useStream = (this->ais != nullptr);
 	if (useStream) {
-		$assign(buffer, $new($bytes, this->BUFFER_SIZE));
+		$assign(buffer, $new($bytes, DataPusher::BUFFER_SIZE));
 	} else {
 		$assign(buffer, this->audioData);
 	}
-	while (this->wantedState != this->STATE_STOPPING) {
-		if (this->wantedState == this->STATE_WAITING) {
+	while (this->wantedState != DataPusher::STATE_STOPPING) {
+		if (this->wantedState == DataPusher::STATE_WAITING) {
 			try {
 				$synchronized(this) {
-					this->threadState = this->STATE_WAITING;
-					this->wantedState = this->STATE_STOPPING;
+					this->threadState = DataPusher::STATE_WAITING;
+					this->wantedState = DataPusher::STATE_STOPPING;
 					$of(this)->wait(DataPusher::AUTO_CLOSE_TIME);
 				}
 			} catch ($InterruptedException& ie) {
@@ -191,8 +189,8 @@ void DataPusher::run() {
 			this->pos = this->newPos;
 			this->newPos = -1;
 		}
-		this->threadState = this->STATE_PLAYING;
-		int32_t toWrite = this->BUFFER_SIZE;
+		this->threadState = DataPusher::STATE_PLAYING;
+		int32_t toWrite = DataPusher::BUFFER_SIZE;
 		if (useStream) {
 			try {
 				this->pos = 0;
@@ -213,19 +211,19 @@ void DataPusher::run() {
 				this->pos = 0;
 				continue;
 			}
-			this->wantedState = this->STATE_WAITING;
+			this->wantedState = DataPusher::STATE_WAITING;
 			$nc(this->source)->drain();
 			continue;
 		}
 		int32_t bytesWritten = $nc(this->source)->write(buffer, this->pos, toWrite);
 		this->pos += bytesWritten;
 	}
-	this->threadState = this->STATE_STOPPING;
+	this->threadState = DataPusher::STATE_STOPPING;
 	$nc(this->source)->flush();
 	$nc(this->source)->stop();
 	$nc(this->source)->flush();
 	$nc(this->source)->close();
-	this->threadState = this->STATE_STOPPED;
+	this->threadState = DataPusher::STATE_STOPPED;
 	$synchronized(this) {
 		$set(this, pushThread, nullptr);
 		$of(this)->notifyAll();

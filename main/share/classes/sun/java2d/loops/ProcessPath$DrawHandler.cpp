@@ -12,7 +12,6 @@ using $Float = ::java::lang::Float;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $SunHints = ::sun::awt::SunHints;
-using $ProcessPath = ::sun::java2d::loops::ProcessPath;
 
 namespace sun {
 	namespace java2d {

@@ -12,7 +12,6 @@
 
 using $SpanTest$1 = ::SpanTest$1;
 using $SpanTest$2 = ::SpanTest$2;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;

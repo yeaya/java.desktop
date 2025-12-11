@@ -14,7 +14,6 @@ using $Float = ::java::lang::Float;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $UIManager = ::javax::swing::UIManager;
 using $NimbusLookAndFeel = ::javax::swing::plaf::nimbus::NimbusLookAndFeel;
 

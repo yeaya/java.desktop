@@ -21,7 +21,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Popup = ::javax::swing::Popup;
-using $PopupFactory = ::javax::swing::PopupFactory;
 using $PopupFactory$ContainerPopup = ::javax::swing::PopupFactory$ContainerPopup;
 
 namespace javax {

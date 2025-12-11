@@ -10,7 +10,6 @@
 #include <javax/swing/text/JTextComponent.h>
 #include <jcpp.h>
 
-using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $IllegalComponentStateException = ::java::awt::IllegalComponentStateException;
 using $Point = ::java::awt::Point;
 using $ComponentAdapter = ::java::awt::event::ComponentAdapter;
@@ -20,7 +19,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $JTextComponent$AccessibleJTextComponent = ::javax::swing::text::JTextComponent$AccessibleJTextComponent;
 

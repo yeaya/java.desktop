@@ -185,7 +185,6 @@ using $Map$Entry = ::java::util::Map$Entry;
 using $Set = ::java::util::Set;
 using $Patch = ::javax::sound::midi::Patch;
 using $Soundbank = ::javax::sound::midi::Soundbank;
-using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 
 namespace com {
 	namespace sun {

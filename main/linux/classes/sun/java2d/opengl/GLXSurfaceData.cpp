@@ -90,7 +90,7 @@ $Object* allocate$GLXSurfaceData($Class* clazz) {
 
 void GLXSurfaceData::initOps($OGLGraphicsConfig* gc, $X11ComponentPeer* peer, int64_t aData) {
 	$prepareNative(GLXSurfaceData, initOps, void, $OGLGraphicsConfig* gc, $X11ComponentPeer* peer, int64_t aData);
-	$invokeNative(GLXSurfaceData, initOps, gc, peer, aData);
+	$invokeNative(gc, peer, aData);
 	$finishNative();
 }
 

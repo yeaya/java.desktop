@@ -9,7 +9,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Region = ::sun::java2d::pipe::Region;
 using $RegionIterator = ::sun::java2d::pipe::RegionIterator;
-using $SpanIterator = ::sun::java2d::pipe::SpanIterator;
 
 namespace sun {
 	namespace java2d {

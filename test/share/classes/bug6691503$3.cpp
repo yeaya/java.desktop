@@ -21,9 +21,7 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $SecurityManager = ::java::lang::SecurityManager;
-using $JFrame = ::javax::swing::JFrame;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
 
 $FieldInfo _bug6691503$3_FieldInfo_[] = {

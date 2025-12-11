@@ -11,9 +11,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $WeakReference = ::java::lang::ref::WeakReference;
-using $AccessControlContext = ::java::security::AccessControlContext;
 using $AccessController = ::java::security::AccessController;
-using $ImageWatched = ::sun::awt::image::ImageWatched;
 
 namespace sun {
 	namespace awt {

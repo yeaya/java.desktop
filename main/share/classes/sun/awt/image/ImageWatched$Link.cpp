@@ -10,7 +10,6 @@ using $ImageObserver = ::java::awt::image::ImageObserver;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ImageWatched = ::sun::awt::image::ImageWatched;
 
 namespace sun {
 	namespace awt {

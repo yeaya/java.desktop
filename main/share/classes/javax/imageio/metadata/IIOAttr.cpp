@@ -16,7 +16,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $IIOMetadataNode = ::javax::imageio::metadata::IIOMetadataNode;
-using $Attr = ::org::w3c::dom::Attr;
 using $Document = ::org::w3c::dom::Document;
 using $Element = ::org::w3c::dom::Element;
 using $NamedNodeMap = ::org::w3c::dom::NamedNodeMap;

@@ -7,16 +7,13 @@
 #include <sun/awt/X11/XTrayIconPeer.h>
 #include <jcpp.h>
 
-using $Image = ::java::awt::Image;
 using $TrayIcon = ::java::awt::TrayIcon;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $XTrayIconPeer = ::sun::awt::X11::XTrayIconPeer;
-using $XTrayIconPeer$IconCanvas = ::sun::awt::X11::XTrayIconPeer$IconCanvas;
 using $XTrayIconPeer$TrayIconCanvas = ::sun::awt::X11::XTrayIconPeer$TrayIconCanvas;
 
 namespace sun {

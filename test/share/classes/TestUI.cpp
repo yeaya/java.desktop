@@ -33,13 +33,11 @@
 
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Frame = ::java::awt::Frame;
 using $GridBagConstraints = ::java::awt::GridBagConstraints;
 using $GridBagLayout = ::java::awt::GridBagLayout;
 using $Insets = ::java::awt::Insets;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $LayoutManager2 = ::java::awt::LayoutManager2;
-using $Window = ::java::awt::Window;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $PrintStream = ::java::io::PrintStream;
@@ -47,12 +45,7 @@ using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $CountDownLatch = ::java::util::concurrent::CountDownLatch;
 using $AbstractButton = ::javax::swing::AbstractButton;
 using $BorderFactory = ::javax::swing::BorderFactory;
@@ -64,7 +57,6 @@ using $JTextArea = ::javax::swing::JTextArea;
 using $UIManager = ::javax::swing::UIManager;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
 using $Border = ::javax::swing::border::Border;
-using $TitledBorder = ::javax::swing::border::TitledBorder;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 class TestUI$$Lambda$lambda$createUI$0 : public $ActionListener {

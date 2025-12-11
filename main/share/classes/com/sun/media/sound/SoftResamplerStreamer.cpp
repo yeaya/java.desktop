@@ -3,8 +3,6 @@
 #include <com/sun/media/sound/ModelWavetable.h>
 #include <jcpp.h>
 
-using $ModelOscillatorStream = ::com::sun::media::sound::ModelOscillatorStream;
-using $ModelWavetable = ::com::sun::media::sound::ModelWavetable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

@@ -17,7 +17,6 @@
 #undef UNKNOWN
 
 using $FocusEvent$CauseArray = $Array<::java::awt::event::FocusEvent$Cause>;
-using $FocusEvent = ::java::awt::event::FocusEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

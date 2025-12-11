@@ -6,15 +6,9 @@
 #include <javax/sound/sampled/LineListener.h>
 #include <jcpp.h>
 
-using $ControlArray = $Array<::javax::sound::sampled::Control>;
-using $AutoCloseable = ::java::lang::AutoCloseable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Control = ::javax::sound::sampled::Control;
-using $Control$Type = ::javax::sound::sampled::Control$Type;
-using $Line$Info = ::javax::sound::sampled::Line$Info;
-using $LineListener = ::javax::sound::sampled::LineListener;
 
 namespace javax {
 	namespace sound {

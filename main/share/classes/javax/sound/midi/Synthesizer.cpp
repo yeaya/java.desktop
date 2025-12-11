@@ -7,15 +7,8 @@
 #include <javax/sound/midi/VoiceStatus.h>
 #include <jcpp.h>
 
-using $InstrumentArray = $Array<::javax::sound::midi::Instrument>;
-using $MidiChannelArray = $Array<::javax::sound::midi::MidiChannel>;
-using $PatchArray = $Array<::javax::sound::midi::Patch>;
-using $VoiceStatusArray = $Array<::javax::sound::midi::VoiceStatus>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Instrument = ::javax::sound::midi::Instrument;
-using $MidiDevice = ::javax::sound::midi::MidiDevice;
-using $Soundbank = ::javax::sound::midi::Soundbank;
 
 namespace javax {
 	namespace sound {

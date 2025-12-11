@@ -10,15 +10,12 @@
 
 using $TestJInternalFrameIconify = ::TestJInternalFrameIconify;
 using $JInternalFrameArray = $Array<::javax::swing::JInternalFrame>;
-using $Component = ::java::awt::Component;
-using $Window = ::java::awt::Window;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JDesktopPane = ::javax::swing::JDesktopPane;
 using $JFrame = ::javax::swing::JFrame;
 using $JInternalFrame = ::javax::swing::JInternalFrame;

@@ -95,7 +95,6 @@ using $Long = ::java::lang::Long;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $HashMap = ::java::util::HashMap;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $Native = ::sun::awt::X11::Native;
 using $WindowPropertyGetter = ::sun::awt::X11::WindowPropertyGetter;
 using $XAtomList = ::sun::awt::X11::XAtomList;

@@ -6,15 +6,12 @@
 #include <javax/swing/Icon.h>
 #include <jcpp.h>
 
-using $MotifIconFactory = ::com::sun::java::swing::plaf::motif::MotifIconFactory;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Icon = ::javax::swing::Icon;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace com {
 	namespace sun {

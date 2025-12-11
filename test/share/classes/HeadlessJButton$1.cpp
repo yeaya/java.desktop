@@ -4,7 +4,6 @@
 #include <java/awt/Component.h>
 #include <jcpp.h>
 
-using $HeadlessJButton = ::HeadlessJButton;
 using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

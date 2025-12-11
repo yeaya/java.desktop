@@ -16,14 +16,11 @@
 
 using $ComponentArray = $Array<::java::awt::Component>;
 using $Component = ::java::awt::Component;
-using $Container = ::java::awt::Container;
 using $LayoutManager = ::java::awt::LayoutManager;
-using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JPanel = ::javax::swing::JPanel;
 using $JTabbedPane = ::javax::swing::JTabbedPane;
 using $UIResource = ::javax::swing::plaf::UIResource;

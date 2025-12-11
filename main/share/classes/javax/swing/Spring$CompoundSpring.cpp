@@ -13,7 +13,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Spring = ::javax::swing::Spring;
-using $Spring$AbstractSpring = ::javax::swing::Spring$AbstractSpring;
 using $Spring$StaticSpring = ::javax::swing::Spring$StaticSpring;
 using $SpringLayout = ::javax::swing::SpringLayout;
 

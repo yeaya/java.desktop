@@ -26,7 +26,6 @@
 
 using $JFIFMarkerSegment = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment;
 using $JFIFMarkerSegment$IllegalThumbException = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment$IllegalThumbException;
-using $JFIFMarkerSegment$JFIFThumb = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment$JFIFThumb;
 using $JFIFMarkerSegment$JFIFThumbUncompressed = ::com::sun::imageio::plugins::jpeg::JFIFMarkerSegment$JFIFThumbUncompressed;
 using $JPEGBuffer = ::com::sun::imageio::plugins::jpeg::JPEGBuffer;
 using $JPEGImageReader = ::com::sun::imageio::plugins::jpeg::JPEGImageReader;

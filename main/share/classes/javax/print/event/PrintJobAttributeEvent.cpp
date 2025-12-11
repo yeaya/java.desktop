@@ -10,7 +10,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $DocPrintJob = ::javax::print::DocPrintJob;
 using $AttributeSetUtilities = ::javax::print::attribute::AttributeSetUtilities;
 using $PrintJobAttributeSet = ::javax::print::attribute::PrintJobAttributeSet;

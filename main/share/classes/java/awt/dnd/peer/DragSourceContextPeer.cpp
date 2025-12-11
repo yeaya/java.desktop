@@ -6,10 +6,6 @@
 #include <java/awt/dnd/DragSourceContext.h>
 #include <jcpp.h>
 
-using $Cursor = ::java::awt::Cursor;
-using $Image = ::java::awt::Image;
-using $Point = ::java::awt::Point;
-using $DragSourceContext = ::java::awt::dnd::DragSourceContext;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

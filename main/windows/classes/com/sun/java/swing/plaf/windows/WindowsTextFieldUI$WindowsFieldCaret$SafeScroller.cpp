@@ -13,7 +13,6 @@
 #include <javax/swing/text/Position$Bias.h>
 #include <jcpp.h>
 
-using $WindowsTextFieldUI = ::com::sun::java::swing::plaf::windows::WindowsTextFieldUI;
 using $WindowsTextFieldUI$WindowsFieldCaret = ::com::sun::java::swing::plaf::windows::WindowsTextFieldUI$WindowsFieldCaret;
 using $Insets = ::java::awt::Insets;
 using $Rectangle = ::java::awt::Rectangle;
@@ -21,13 +20,10 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $BoundedRangeModel = ::javax::swing::BoundedRangeModel;
-using $JComponent = ::javax::swing::JComponent;
 using $JTextField = ::javax::swing::JTextField;
 using $TextUI = ::javax::swing::plaf::TextUI;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
-using $DefaultCaret = ::javax::swing::text::DefaultCaret;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $Position$Bias = ::javax::swing::text::Position$Bias;
 

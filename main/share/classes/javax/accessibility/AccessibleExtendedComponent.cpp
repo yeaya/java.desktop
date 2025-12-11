@@ -5,8 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AccessibleComponent = ::javax::accessibility::AccessibleComponent;
-using $AccessibleKeyBinding = ::javax::accessibility::AccessibleKeyBinding;
 
 namespace javax {
 	namespace accessibility {

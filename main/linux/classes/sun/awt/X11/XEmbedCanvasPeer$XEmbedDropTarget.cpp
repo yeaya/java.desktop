@@ -12,7 +12,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $TooManyListenersException = ::java::util::TooManyListenersException;
-using $XEmbedCanvasPeer = ::sun::awt::X11::XEmbedCanvasPeer;
 
 namespace sun {
 	namespace awt {

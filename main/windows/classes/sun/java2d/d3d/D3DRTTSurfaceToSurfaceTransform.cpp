@@ -23,7 +23,6 @@ using $SurfaceData = ::sun::java2d::SurfaceData;
 using $D3DBlitLoops = ::sun::java2d::d3d::D3DBlitLoops;
 using $D3DSurfaceData = ::sun::java2d::d3d::D3DSurfaceData;
 using $CompositeType = ::sun::java2d::loops::CompositeType;
-using $SurfaceType = ::sun::java2d::loops::SurfaceType;
 using $TransformBlit = ::sun::java2d::loops::TransformBlit;
 using $Region = ::sun::java2d::pipe::Region;
 

@@ -11,9 +11,7 @@ using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XToolkit = ::sun::awt::X11::XToolkit;
 

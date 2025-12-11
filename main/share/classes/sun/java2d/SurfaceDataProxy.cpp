@@ -42,7 +42,6 @@ using $NumberFormatException = ::java::lang::NumberFormatException;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $DisplayChangedListener = ::sun::awt::DisplayChangedListener;
-using $SurfaceManager$FlushableCacheData = ::sun::awt::image::SurfaceManager$FlushableCacheData;
 using $StateTrackable$State = ::sun::java2d::StateTrackable$State;
 using $StateTracker = ::sun::java2d::StateTracker;
 using $SunGraphicsEnvironment = ::sun::java2d::SunGraphicsEnvironment;

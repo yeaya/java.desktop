@@ -30,7 +30,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NoSuchMethodException = ::java::lang::NoSuchMethodException;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $Constructor = ::java::lang::reflect::Constructor;
 using $Modifier = ::java::lang::reflect::Modifier;
 using $ReflectUtil = ::sun::reflect::misc::ReflectUtil;

@@ -27,7 +27,6 @@ using $PixelWriterDrawHandler = ::sun::java2d::loops::PixelWriterDrawHandler;
 using $ProcessPath = ::sun::java2d::loops::ProcessPath;
 using $ProcessPath$DrawHandler = ::sun::java2d::loops::ProcessPath$DrawHandler;
 using $SurfaceType = ::sun::java2d::loops::SurfaceType;
-using $Region = ::sun::java2d::pipe::Region;
 
 namespace sun {
 	namespace java2d {

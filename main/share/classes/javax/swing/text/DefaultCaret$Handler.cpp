@@ -26,13 +26,10 @@
 
 #undef TRUE
 
-using $Component = ::java::awt::Component;
 using $Rectangle = ::java::awt::Rectangle;
 using $Clipboard = ::java::awt::datatransfer::Clipboard;
-using $ClipboardOwner = ::java::awt::datatransfer::ClipboardOwner;
 using $Transferable = ::java::awt::datatransfer::Transferable;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $Boolean = ::java::lang::Boolean;

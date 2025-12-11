@@ -6,12 +6,9 @@
 #include <javax/swing/tree/TreePath.h>
 #include <jcpp.h>
 
-using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JTree = ::javax::swing::JTree;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
-using $TreePath = ::javax::swing::tree::TreePath;
 
 namespace javax {
 	namespace swing {

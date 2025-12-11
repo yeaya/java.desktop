@@ -9,8 +9,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $GLXGraphicsConfig = ::sun::java2d::opengl::GLXGraphicsConfig;
 using $OGLContext = ::sun::java2d::opengl::OGLContext;
 
 namespace sun {

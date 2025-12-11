@@ -3,10 +3,8 @@
 #include <java/awt/event/MouseEvent.h>
 #include <jcpp.h>
 
-using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
 
 namespace java {
 	namespace awt {

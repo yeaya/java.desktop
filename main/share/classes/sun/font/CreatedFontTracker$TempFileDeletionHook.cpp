@@ -35,11 +35,7 @@ using $Runnable = ::java::lang::Runnable;
 using $Runtime = ::java::lang::Runtime;
 using $ThreadGroup = ::java::lang::ThreadGroup;
 using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $HashMap = ::java::util::HashMap;
@@ -47,7 +43,6 @@ using $Iterator = ::java::util::Iterator;
 using $Map$Entry = ::java::util::Map$Entry;
 using $Set = ::java::util::Set;
 using $ThreadGroupUtils = ::sun::awt::util::ThreadGroupUtils;
-using $CreatedFontTracker = ::sun::font::CreatedFontTracker;
 
 namespace sun {
 	namespace font {

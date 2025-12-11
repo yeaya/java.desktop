@@ -18,7 +18,6 @@
 
 using $Component = ::java::awt::Component;
 using $Point = ::java::awt::Point;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $MouseListener = ::java::awt::event::MouseListener;
@@ -27,7 +26,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JSplitPane = ::javax::swing::JSplitPane;
 using $BasicSplitPaneDivider = ::javax::swing::plaf::basic::BasicSplitPaneDivider;
 using $BasicSplitPaneDivider$DragController = ::javax::swing::plaf::basic::BasicSplitPaneDivider$DragController;

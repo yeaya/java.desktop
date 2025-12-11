@@ -17,7 +17,6 @@
 
 #undef CENTER
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Boolean = ::java::lang::Boolean;
@@ -35,8 +34,6 @@ using $UIManager = ::javax::swing::UIManager;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
 using $Border = ::javax::swing::border::Border;
 using $EmptyBorder = ::javax::swing::border::EmptyBorder;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $TableCellRenderer = ::javax::swing::table::TableCellRenderer;
 
 namespace javax {
 	namespace swing {

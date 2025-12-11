@@ -13,7 +13,6 @@
 #undef FRAME
 #undef RESIZABLE
 
-using $Component = ::java::awt::Component;
 using $Frame = ::java::awt::Frame;
 using $Window = ::java::awt::Window;
 using $Window$AccessibleAWTWindow = ::java::awt::Window$AccessibleAWTWindow;

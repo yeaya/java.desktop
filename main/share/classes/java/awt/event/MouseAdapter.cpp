@@ -7,9 +7,7 @@
 
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $MouseListener = ::java::awt::event::MouseListener;
-using $MouseMotionListener = ::java::awt::event::MouseMotionListener;
 using $MouseWheelEvent = ::java::awt::event::MouseWheelEvent;
-using $MouseWheelListener = ::java::awt::event::MouseWheelListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

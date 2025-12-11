@@ -47,7 +47,6 @@ using $Point2D$Double = ::java::awt::geom::Point2D$Double;
 using $Point2D$Float = ::java::awt::geom::Point2D$Float;
 using $ObjectInputStream = ::java::io::ObjectInputStream;
 using $ObjectOutputStream = ::java::io::ObjectOutputStream;
-using $Serializable = ::java::io::Serializable;
 using $Attribute = ::java::lang::Attribute;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CloneNotSupportedException = ::java::lang::CloneNotSupportedException;

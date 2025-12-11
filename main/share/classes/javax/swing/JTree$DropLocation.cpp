@@ -11,7 +11,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JTree = ::javax::swing::JTree;
 using $TransferHandler$DropLocation = ::javax::swing::TransferHandler$DropLocation;
 using $TreePath = ::javax::swing::tree::TreePath;
 

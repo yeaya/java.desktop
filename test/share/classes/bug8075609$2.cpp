@@ -6,13 +6,11 @@
 #include <jcpp.h>
 
 using $bug8075609 = ::bug8075609;
-using $Component = ::java::awt::Component;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JTextField = ::javax::swing::JTextField;
 

@@ -35,7 +35,6 @@
 #undef SWING_COMPONENT
 
 using $Color = ::java::awt::Color;
-using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Container = ::java::awt::Container;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $Cursor = ::java::awt::Cursor;

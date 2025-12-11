@@ -17,7 +17,6 @@
 #undef HORIZONTAL
 #undef VERTICAL
 
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Rectangle = ::java::awt::Rectangle;
 using $MouseEvent = ::java::awt::event::MouseEvent;
@@ -26,7 +25,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JComponent = ::javax::swing::JComponent;
 using $JSlider = ::javax::swing::JSlider;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $Timer = ::javax::swing::Timer;

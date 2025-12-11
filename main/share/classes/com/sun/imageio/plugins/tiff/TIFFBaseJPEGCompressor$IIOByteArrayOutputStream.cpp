@@ -5,7 +5,6 @@
 #include <javax/imageio/stream/ImageOutputStream.h>
 #include <jcpp.h>
 
-using $TIFFBaseJPEGCompressor = ::com::sun::imageio::plugins::tiff::TIFFBaseJPEGCompressor;
 using $ByteArrayOutputStream = ::java::io::ByteArrayOutputStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

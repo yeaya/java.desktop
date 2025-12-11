@@ -20,7 +20,6 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
 using $Point = ::java::awt::Point;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Error = ::java::lang::Error;
 using $FieldInfo = ::java::lang::FieldInfo;

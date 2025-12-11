@@ -10,8 +10,6 @@ using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Action = ::javax::swing::Action;
-using $JSpinner = ::javax::swing::JSpinner;
 
 namespace javax {
 	namespace swing {

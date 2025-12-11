@@ -16,10 +16,8 @@ using $ClassLoader = ::java::lang::ClassLoader;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JEditorPane = ::javax::swing::JEditorPane;
-using $EditorKit = ::javax::swing::text::EditorKit;
 
 $MethodInfo _bug8158734$1_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(bug8158734$1::*)()>(&bug8158734$1::init$))},

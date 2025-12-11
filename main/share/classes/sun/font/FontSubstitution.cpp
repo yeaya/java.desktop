@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CompositeFont = ::sun::font::CompositeFont;
 
 namespace sun {
 	namespace font {

@@ -7,7 +7,6 @@
 
 #undef UNINITIALIZED_LENGTH
 
-using $Serializable = ::java::io::Serializable;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -16,7 +15,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NumberFormatException = ::java::lang::NumberFormatException;
 using $Hashtable = ::java::util::Hashtable;
-using $CSS = ::javax::swing::text::html::CSS;
 
 namespace javax {
 	namespace swing {

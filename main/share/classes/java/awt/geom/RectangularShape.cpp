@@ -25,7 +25,6 @@ using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $Rectangle2D$Double = ::java::awt::geom::Rectangle2D$Double;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CloneNotSupportedException = ::java::lang::CloneNotSupportedException;
-using $Cloneable = ::java::lang::Cloneable;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $Double = ::java::lang::Double;
 using $Exception = ::java::lang::Exception;

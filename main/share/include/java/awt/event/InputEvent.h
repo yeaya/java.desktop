@@ -105,7 +105,7 @@ public:
 	static $ints* BUTTON_DOWN_MASK;
 	static const int32_t FIRST_HIGH_BIT = 0x80000000; // 1 << 31
 	static const int32_t JDK_1_3_MODIFIERS = 63; // SHIFT_DOWN_MASK - 1
-	static const int32_t HIGH_MODIFIERS = ~(FIRST_HIGH_BIT - 1);
+	static const int32_t HIGH_MODIFIERS = 0x80000000; // ~(FIRST_HIGH_BIT - 1)
 	int64_t when = 0;
 	int32_t modifiers = 0;
 	bool canAccessSystemClipboard$ = false;

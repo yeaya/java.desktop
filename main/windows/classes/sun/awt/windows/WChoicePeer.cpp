@@ -58,7 +58,6 @@ using $WindowAdapter = ::java::awt::event::WindowAdapter;
 using $WindowListener = ::java::awt::event::WindowListener;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
-using $ChoicePeer = ::java::awt::peer::ChoicePeer;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -73,7 +72,6 @@ using $SunToolkit = ::sun::awt::SunToolkit;
 using $WChoicePeer$1 = ::sun::awt::windows::WChoicePeer$1;
 using $WChoicePeer$2 = ::sun::awt::windows::WChoicePeer$2;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $WToolkit = ::sun::awt::windows::WToolkit;
 using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
 using $Region = ::sun::java2d::pipe::Region;
@@ -351,7 +349,7 @@ bool WChoicePeer::isFocusable() {
 
 void WChoicePeer::select(int32_t index) {
 	$prepareNative(WChoicePeer, select, void, int32_t index);
-	$invokeNative(WChoicePeer, select, index);
+	$invokeNative(index);
 	$finishNative();
 }
 
@@ -365,25 +363,25 @@ bool WChoicePeer::shouldClearRectBeforePaint() {
 
 void WChoicePeer::removeAll() {
 	$prepareNative(WChoicePeer, removeAll, void);
-	$invokeNative(WChoicePeer, removeAll);
+	$invokeNative();
 	$finishNative();
 }
 
 void WChoicePeer::remove(int32_t index) {
 	$prepareNative(WChoicePeer, remove, void, int32_t index);
-	$invokeNative(WChoicePeer, remove, index);
+	$invokeNative(index);
 	$finishNative();
 }
 
 void WChoicePeer::addItems($StringArray* items, int32_t index) {
 	$prepareNative(WChoicePeer, addItems, void, $StringArray* items, int32_t index);
-	$invokeNative(WChoicePeer, addItems, items, index);
+	$invokeNative(items, index);
 	$finishNative();
 }
 
 void WChoicePeer::reshape(int32_t x, int32_t y, int32_t width, int32_t height) {
 	$prepareNative(WChoicePeer, reshape, void, int32_t x, int32_t y, int32_t width, int32_t height);
-	$invokeNative(WChoicePeer, reshape, x, y, width, height);
+	$invokeNative(x, y, width, height);
 	$finishNative();
 }
 
@@ -393,7 +391,7 @@ void WChoicePeer::init$($Choice* target) {
 
 void WChoicePeer::create($WComponentPeer* parent) {
 	$prepareNative(WChoicePeer, create, void, $WComponentPeer* parent);
-	$invokeNative(WChoicePeer, create, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 
@@ -442,7 +440,7 @@ void WChoicePeer::handleAction(int32_t index) {
 
 void WChoicePeer::closeList() {
 	$prepareNative(WChoicePeer, closeList, void);
-	$invokeNative(WChoicePeer, closeList);
+	$invokeNative();
 	$finishNative();
 }
 

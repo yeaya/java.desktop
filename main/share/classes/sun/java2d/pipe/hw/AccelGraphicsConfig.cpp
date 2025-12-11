@@ -4,11 +4,8 @@
 #include <sun/java2d/pipe/hw/ContextCapabilities.h>
 #include <jcpp.h>
 
-using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $BufferedContextProvider = ::sun::java2d::pipe::hw::BufferedContextProvider;
-using $ContextCapabilities = ::sun::java2d::pipe::hw::ContextCapabilities;
 
 namespace sun {
 	namespace java2d {

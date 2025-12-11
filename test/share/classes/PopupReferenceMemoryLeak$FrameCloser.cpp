@@ -8,7 +8,6 @@
 #include <jcpp.h>
 
 using $PopupReferenceMemoryLeak = ::PopupReferenceMemoryLeak;
-using $Window = ::java::awt::Window;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

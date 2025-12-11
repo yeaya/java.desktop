@@ -37,7 +37,6 @@ using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
-using $Style = ::javax::swing::text::Style;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
 using $View = ::javax::swing::text::View;
 using $CSS = ::javax::swing::text::html::CSS;

@@ -8,9 +8,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Caret = ::javax::swing::text::Caret;
-using $NavigationFilter = ::javax::swing::text::NavigationFilter;
-using $Position$Bias = ::javax::swing::text::Position$Bias;
 
 namespace javax {
 	namespace swing {

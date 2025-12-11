@@ -3,8 +3,6 @@
 #include <java/awt/desktop/SystemSleepEvent.h>
 #include <jcpp.h>
 
-using $SystemEventListener = ::java::awt::desktop::SystemEventListener;
-using $SystemSleepEvent = ::java::awt::desktop::SystemSleepEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

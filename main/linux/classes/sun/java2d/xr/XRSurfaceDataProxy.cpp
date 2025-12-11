@@ -25,14 +25,12 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $OutOfMemoryError = ::java::lang::OutOfMemoryError;
-using $X11GraphicsConfig = ::sun::awt::X11GraphicsConfig;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $SurfaceDataProxy = ::sun::java2d::SurfaceDataProxy;
 using $CompositeType = ::sun::java2d::loops::CompositeType;
 using $XSurfaceData = ::sun::java2d::x11::XSurfaceData;
 using $XRGraphicsConfig = ::sun::java2d::xr::XRGraphicsConfig;
 using $XRSurfaceData = ::sun::java2d::xr::XRSurfaceData;
-using $XRSurfaceData$XRPixmapSurfaceData = ::sun::java2d::xr::XRSurfaceData$XRPixmapSurfaceData;
 
 namespace sun {
 	namespace java2d {

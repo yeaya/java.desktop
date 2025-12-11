@@ -41,7 +41,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Map = ::java::util::Map;
 using $InvalidMidiDataException = ::javax::sound::midi::InvalidMidiDataException;
 using $MetaMessage = ::javax::sound::midi::MetaMessage;
-using $MidiDevice = ::javax::sound::midi::MidiDevice;
 using $MidiEvent = ::javax::sound::midi::MidiEvent;
 using $MidiMessage = ::javax::sound::midi::MidiMessage;
 using $MidiSystem = ::javax::sound::midi::MidiSystem;

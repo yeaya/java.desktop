@@ -45,16 +45,13 @@
 #undef WHEN_IN_FOCUSED_WINDOW
 
 using $BorderLayout = ::java::awt::BorderLayout;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
-using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
 using $Dialog = ::java::awt::Dialog;
 using $FlowLayout = ::java::awt::FlowLayout;
 using $Frame = ::java::awt::Frame;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $LayoutManager2 = ::java::awt::LayoutManager2;
-using $Window = ::java::awt::Window;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $WindowAdapter = ::java::awt::event::WindowAdapter;

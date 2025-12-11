@@ -18,18 +18,12 @@
 #undef FLAG_MASK
 #undef FLAG_RUN_RTL
 
-using $Font = ::java::awt::Font;
 using $Rectangle = ::java::awt::Rectangle;
 using $Shape = ::java::awt::Shape;
 using $FontRenderContext = ::java::awt::font::FontRenderContext;
-using $GlyphJustificationInfo = ::java::awt::font::GlyphJustificationInfo;
-using $GlyphMetrics = ::java::awt::font::GlyphMetrics;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
-using $Point2D = ::java::awt::geom::Point2D;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
-using $RectangularShape = ::java::awt::geom::RectangularShape;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Cloneable = ::java::lang::Cloneable;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;

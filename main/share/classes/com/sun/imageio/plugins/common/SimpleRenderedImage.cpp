@@ -18,7 +18,6 @@ using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $ColorModel = ::java::awt::image::ColorModel;
 using $Raster = ::java::awt::image::Raster;
-using $RenderedImage = ::java::awt::image::RenderedImage;
 using $SampleModel = ::java::awt::image::SampleModel;
 using $WritableRaster = ::java::awt::image::WritableRaster;
 using $ClassInfo = ::java::lang::ClassInfo;

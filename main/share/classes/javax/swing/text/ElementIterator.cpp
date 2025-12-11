@@ -13,7 +13,6 @@
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CloneNotSupportedException = ::java::lang::CloneNotSupportedException;
-using $Cloneable = ::java::lang::Cloneable;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -21,7 +20,6 @@ using $InternalError = ::java::lang::InternalError;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Enumeration = ::java::util::Enumeration;
 using $Stack = ::java::util::Stack;
-using $Vector = ::java::util::Vector;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;

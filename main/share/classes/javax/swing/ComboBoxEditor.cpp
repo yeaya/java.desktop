@@ -4,8 +4,6 @@
 #include <java/awt/event/ActionListener.h>
 #include <jcpp.h>
 
-using $Component = ::java::awt::Component;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

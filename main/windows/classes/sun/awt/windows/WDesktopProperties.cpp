@@ -38,7 +38,6 @@
 using $Color = ::java::awt::Color;
 using $Font = ::java::awt::Font;
 using $RenderingHints = ::java::awt::RenderingHints;
-using $RenderingHints$Key = ::java::awt::RenderingHints$Key;
 using $AssertionError = ::java::lang::AssertionError;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -133,7 +132,7 @@ $HashMap* WDesktopProperties::fontNameMap = nullptr;
 void WDesktopProperties::initIDs() {
 	$init(WDesktopProperties);
 	$prepareNativeStatic(WDesktopProperties, initIDs, void);
-	$invokeNativeStatic(WDesktopProperties, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -153,7 +152,7 @@ void WDesktopProperties::init$($WToolkit* wToolkit) {
 
 void WDesktopProperties::init() {
 	$prepareNative(WDesktopProperties, init, void);
-	$invokeNative(WDesktopProperties, init);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -170,7 +169,7 @@ $StringArray* WDesktopProperties::getKeyNames() {
 
 void WDesktopProperties::getWindowsParameters() {
 	$prepareNative(WDesktopProperties, getWindowsParameters, void);
-	$invokeNative(WDesktopProperties, getWindowsParameters);
+	$invokeNative();
 	$finishNative();
 }
 
@@ -273,7 +272,7 @@ void WDesktopProperties::setSoundProperty($String* key, $String* winEventName) {
 
 void WDesktopProperties::playWindowsSound($String* winEventName) {
 	$prepareNative(WDesktopProperties, playWindowsSound, void, $String* winEventName);
-	$invokeNative(WDesktopProperties, playWindowsSound, winEventName);
+	$invokeNative(winEventName);
 	$finishNative();
 }
 

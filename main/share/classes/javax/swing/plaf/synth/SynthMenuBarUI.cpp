@@ -37,7 +37,6 @@ using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $BoxLayout = ::javax::swing::BoxLayout;
 using $JComponent = ::javax::swing::JComponent;
 using $JMenuBar = ::javax::swing::JMenuBar;

@@ -16,7 +16,6 @@ using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Frame = ::java::awt::Frame;
 using $Panel = ::java::awt::Panel;
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $MouseWheelEvent = ::java::awt::event::MouseWheelEvent;
 using $ClassInfo = ::java::lang::ClassInfo;

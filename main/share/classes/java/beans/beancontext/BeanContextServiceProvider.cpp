@@ -4,10 +4,8 @@
 #include <java/util/Iterator.h>
 #include <jcpp.h>
 
-using $BeanContextServices = ::java::beans::beancontext::BeanContextServices;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Iterator = ::java::util::Iterator;
 
 namespace java {
 	namespace beans {

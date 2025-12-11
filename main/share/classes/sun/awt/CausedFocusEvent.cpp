@@ -36,7 +36,6 @@ using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $FocusEvent = ::java::awt::event::FocusEvent;
 using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalStateException = ::java::lang::IllegalStateException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

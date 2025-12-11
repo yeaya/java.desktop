@@ -23,7 +23,6 @@ using $ParsedSynthStyle$StateInfo = ::javax::swing::plaf::synth::ParsedSynthStyl
 using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
 using $SynthPainter = ::javax::swing::plaf::synth::SynthPainter;
 using $DefaultSynthStyle = ::sun::swing::plaf::synth::DefaultSynthStyle;
-using $DefaultSynthStyle$StateInfo = ::sun::swing::plaf::synth::DefaultSynthStyle$StateInfo;
 
 namespace javax {
 	namespace swing {

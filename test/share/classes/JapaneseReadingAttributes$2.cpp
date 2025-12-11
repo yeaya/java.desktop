@@ -13,7 +13,6 @@
 
 using $JapaneseReadingAttributes = ::JapaneseReadingAttributes;
 using $InputMethodEvent = ::java::awt::event::InputMethodEvent;
-using $InputMethodListener = ::java::awt::event::InputMethodListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
@@ -21,9 +20,7 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Annotation = ::java::text::Annotation;
 using $AttributedCharacterIterator = ::java::text::AttributedCharacterIterator;
 using $AttributedCharacterIterator$Attribute = ::java::text::AttributedCharacterIterator$Attribute;
-using $CharacterIterator = ::java::text::CharacterIterator;
 using $JTextField = ::javax::swing::JTextField;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $MethodInfo _JapaneseReadingAttributes$2_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(JapaneseReadingAttributes$2::*)()>(&JapaneseReadingAttributes$2::init$))},

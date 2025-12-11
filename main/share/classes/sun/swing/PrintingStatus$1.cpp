@@ -14,7 +14,6 @@
 #include <sun/swing/PrintingStatus.h>
 #include <jcpp.h>
 
-using $Dialog = ::java::awt::Dialog;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $PrinterJob = ::java::awt::print::PrinterJob;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -24,8 +23,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AtomicBoolean = ::java::util::concurrent::atomic::AtomicBoolean;
 using $AbstractAction = ::javax::swing::AbstractAction;
-using $AbstractButton = ::javax::swing::AbstractButton;
-using $Action = ::javax::swing::Action;
 using $JButton = ::javax::swing::JButton;
 using $JDialog = ::javax::swing::JDialog;
 using $JLabel = ::javax::swing::JLabel;

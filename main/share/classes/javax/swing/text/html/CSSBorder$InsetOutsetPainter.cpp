@@ -18,7 +18,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $CSS$Value = ::javax::swing::text::html::CSS$Value;
-using $CSSBorder = ::javax::swing::text::html::CSSBorder;
 using $CSSBorder$ShadowLightPainter = ::javax::swing::text::html::CSSBorder$ShadowLightPainter;
 
 namespace javax {

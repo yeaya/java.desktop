@@ -3,7 +3,6 @@
 #include <com/sun/media/sound/EventDispatcher.h>
 #include <jcpp.h>
 
-using $EventDispatcher = ::com::sun::media::sound::EventDispatcher;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

@@ -49,8 +49,6 @@
 #undef TYPE_TRANSLATION
 #undef UNINITIALISED
 
-using $NativeFontArray = $Array<::sun::font::NativeFont>;
-using $NativeStrikeArray = $Array<::sun::font::NativeStrike>;
 using $floatArray2 = $Array<float, 2>;
 using $intArray2 = $Array<int32_t, 2>;
 using $longArray2 = $Array<int64_t, 2>;
@@ -60,7 +58,6 @@ using $Rectangle = ::java::awt::Rectangle;
 using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $GeneralPath = ::java::awt::geom::GeneralPath;
 using $NoninvertibleTransformException = ::java::awt::geom::NoninvertibleTransformException;
-using $Path2D$Float = ::java::awt::geom::Path2D$Float;
 using $Point2D = ::java::awt::geom::Point2D;
 using $Point2D$Float = ::java::awt::geom::Point2D$Float;
 using $Rectangle2D = ::java::awt::geom::Rectangle2D;
@@ -73,7 +70,6 @@ using $Float = ::java::lang::Float;
 using $Integer = ::java::lang::Integer;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Reference = ::java::lang::ref::Reference;
 using $SoftReference = ::java::lang::ref::SoftReference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $Locale = ::java::util::Locale;
@@ -83,7 +79,6 @@ using $CharToGlyphMapper = ::sun::font::CharToGlyphMapper;
 using $FileFont = ::sun::font::FileFont;
 using $Font2D = ::sun::font::Font2D;
 using $FontScaler = ::sun::font::FontScaler;
-using $FontStrike = ::sun::font::FontStrike;
 using $FontStrikeDesc = ::sun::font::FontStrikeDesc;
 using $FontStrikeDisposer = ::sun::font::FontStrikeDisposer;
 using $FontUtilities = ::sun::font::FontUtilities;
@@ -182,7 +177,7 @@ bool FileFontStrike::initNative() {
 	$init(FileFontStrike);
 	bool $ret = false;
 	$prepareNativeStatic(FileFontStrike, initNative, bool);
-	$ret = $invokeNativeStatic(FileFontStrike, initNative);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -279,7 +274,7 @@ int64_t FileFontStrike::getGlyphImageFromNative(int32_t glyphCode) {
 int64_t FileFontStrike::_getGlyphImageFromWindows($String* family, int32_t style, int32_t size, int32_t glyphCode, bool fracMetrics, int32_t fontDataSize) {
 	int64_t $ret = 0;
 	$prepareNative(FileFontStrike, _getGlyphImageFromWindows, int64_t, $String* family, int32_t style, int32_t size, int32_t glyphCode, bool fracMetrics, int32_t fontDataSize);
-	$ret = $invokeNative(FileFontStrike, _getGlyphImageFromWindows, family, style, size, glyphCode, fracMetrics, fontDataSize);
+	$ret = $invokeNative(family, style, size, glyphCode, fracMetrics, fontDataSize);
 	$finishNative();
 	return $ret;
 }

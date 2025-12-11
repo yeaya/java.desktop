@@ -19,8 +19,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
-using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
-using $MetalBorders = ::javax::swing::plaf::metal::MetalBorders;
 using $MetalLookAndFeel = ::javax::swing::plaf::metal::MetalLookAndFeel;
 
 namespace javax {

@@ -39,7 +39,6 @@ using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NoSuchMethodException = ::java::lang::NoSuchMethodException;
-using $NullPointerException = ::java::lang::NullPointerException;
 using $Executable = ::java::lang::reflect::Executable;
 using $Method = ::java::lang::reflect::Method;
 using $Modifier = ::java::lang::reflect::Modifier;

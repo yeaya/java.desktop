@@ -77,9 +77,9 @@ public:
 	void validate(::sun::java2d::pipe::hw::AccelSurface* srcData, ::sun::java2d::pipe::hw::AccelSurface* dstData, ::sun::java2d::pipe::Region* clip, ::java::awt::Composite* comp, ::java::awt::geom::AffineTransform* xform, ::java::awt::Paint* paint, ::sun::java2d::SunGraphics2D* sg2d, int32_t flags);
 	static void validateContext(::sun::java2d::pipe::hw::AccelSurface* srcData, ::sun::java2d::pipe::hw::AccelSurface* dstData, ::sun::java2d::pipe::Region* clip, ::java::awt::Composite* comp, ::java::awt::geom::AffineTransform* xform, ::java::awt::Paint* paint, ::sun::java2d::SunGraphics2D* sg2d, int32_t flags);
 	static void validateContext(::sun::java2d::pipe::hw::AccelSurface* surface);
-	static const int32_t NO_CONTEXT_FLAGS = (0 << 0);
-	static const int32_t SRC_IS_OPAQUE = (1 << 0);
-	static const int32_t USE_MASK = (1 << 1);
+	static const int32_t NO_CONTEXT_FLAGS = 0; // (0 << 0)
+	static const int32_t SRC_IS_OPAQUE = 1; // (1 << 0)
+	static const int32_t USE_MASK = 2; // (1 << 1)
 	::sun::java2d::pipe::RenderQueue* rq = nullptr;
 	::sun::java2d::pipe::RenderBuffer* buf = nullptr;
 	static ::sun::java2d::pipe::BufferedContext* currentContext;

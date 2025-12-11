@@ -8,7 +8,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AccessibleBundle = ::javax::accessibility::AccessibleBundle;
-using $AWTAccessor$AccessibleBundleAccessor = ::sun::awt::AWTAccessor$AccessibleBundleAccessor;
 
 namespace javax {
 	namespace accessibility {

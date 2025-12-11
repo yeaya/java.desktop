@@ -29,7 +29,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Number = ::java::lang::Number;
-using $EventObject = ::java::util::EventObject;
 using $AccessibleAction = ::javax::accessibility::AccessibleAction;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AccessibleRole = ::javax::accessibility::AccessibleRole;

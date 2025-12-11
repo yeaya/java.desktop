@@ -6,8 +6,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $TreeModelListener = ::javax::swing::event::TreeModelListener;
-using $TreePath = ::javax::swing::tree::TreePath;
 
 namespace javax {
 	namespace swing {

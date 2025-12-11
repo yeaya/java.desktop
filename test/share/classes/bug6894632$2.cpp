@@ -4,7 +4,6 @@
 #include <javax/swing/table/DefaultTableModel.h>
 #include <jcpp.h>
 
-using $bug6894632 = ::bug6894632;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

@@ -15,7 +15,6 @@ using $IndexOutOfBoundsException = ::java::lang::IndexOutOfBoundsException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ConcurrentModificationException = ::java::util::ConcurrentModificationException;
-using $ListIterator = ::java::util::ListIterator;
 using $NoSuchElementException = ::java::util::NoSuchElementException;
 using $IdentityLinkedList = ::sun::awt::util::IdentityLinkedList;
 using $IdentityLinkedList$Entry = ::sun::awt::util::IdentityLinkedList$Entry;

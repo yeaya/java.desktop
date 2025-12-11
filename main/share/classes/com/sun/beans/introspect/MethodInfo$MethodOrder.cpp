@@ -4,13 +4,11 @@
 #include <java/lang/reflect/Method.h>
 #include <jcpp.h>
 
-using $MethodInfo = ::com::sun::beans::introspect::MethodInfo;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
-using $1MethodInfo = ::java::lang::MethodInfo;
+using $MethodInfo = ::java::lang::MethodInfo;
 using $Method = ::java::lang::reflect::Method;
-using $Comparator = ::java::util::Comparator;
 
 namespace com {
 	namespace sun {
@@ -22,7 +20,7 @@ $FieldInfo _MethodInfo$MethodOrder_FieldInfo_[] = {
 	{}
 };
 
-$1MethodInfo _MethodInfo$MethodOrder_MethodInfo_[] = {
+$MethodInfo _MethodInfo$MethodOrder_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PRIVATE, $method(static_cast<void(MethodInfo$MethodOrder::*)()>(&MethodInfo$MethodOrder::init$))},
 	{"compare", "(Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;)I", nullptr, $PUBLIC, $method(static_cast<int32_t(MethodInfo$MethodOrder::*)($Method*,$Method*)>(&MethodInfo$MethodOrder::compare))},
 	{"compare", "(Ljava/lang/Object;Ljava/lang/Object;)I", nullptr, $PUBLIC | $VOLATILE | $SYNTHETIC},

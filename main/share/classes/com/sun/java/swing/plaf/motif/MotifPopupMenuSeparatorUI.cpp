@@ -12,8 +12,6 @@
 #include <jcpp.h>
 
 using $MotifSeparatorUI = ::com::sun::java::swing::plaf::motif::MotifSeparatorUI;
-using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Dimension = ::java::awt::Dimension;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;

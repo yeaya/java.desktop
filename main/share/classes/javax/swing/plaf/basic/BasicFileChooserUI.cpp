@@ -63,9 +63,6 @@
 #undef WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
 
 using $BorderLayout = ::java::awt::BorderLayout;
-using $Component = ::java::awt::Component;
-using $ComponentOrientation = ::java::awt::ComponentOrientation;
-using $Container = ::java::awt::Container;
 using $LayoutManager = ::java::awt::LayoutManager;
 using $LayoutManager2 = ::java::awt::LayoutManager2;
 using $MouseListener = ::java::awt::event::MouseListener;
@@ -81,7 +78,6 @@ using $Locale = ::java::util::Locale;
 using $AbstractAction = ::javax::swing::AbstractAction;
 using $Action = ::javax::swing::Action;
 using $ActionMap = ::javax::swing::ActionMap;
-using $Icon = ::javax::swing::Icon;
 using $InputMap = ::javax::swing::InputMap;
 using $JButton = ::javax::swing::JButton;
 using $JComponent = ::javax::swing::JComponent;
@@ -108,7 +104,6 @@ using $BasicFileChooserUI$BasicFileView = ::javax::swing::plaf::basic::BasicFile
 using $BasicFileChooserUI$CancelSelectionAction = ::javax::swing::plaf::basic::BasicFileChooserUI$CancelSelectionAction;
 using $BasicFileChooserUI$ChangeToParentDirectoryAction = ::javax::swing::plaf::basic::BasicFileChooserUI$ChangeToParentDirectoryAction;
 using $BasicFileChooserUI$FileTransferHandler = ::javax::swing::plaf::basic::BasicFileChooserUI$FileTransferHandler;
-using $BasicFileChooserUI$GlobFilter = ::javax::swing::plaf::basic::BasicFileChooserUI$GlobFilter;
 using $BasicFileChooserUI$GoHomeAction = ::javax::swing::plaf::basic::BasicFileChooserUI$GoHomeAction;
 using $BasicFileChooserUI$Handler = ::javax::swing::plaf::basic::BasicFileChooserUI$Handler;
 using $BasicFileChooserUI$NewFolderAction = ::javax::swing::plaf::basic::BasicFileChooserUI$NewFolderAction;

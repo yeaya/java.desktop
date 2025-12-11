@@ -5,8 +5,6 @@
 #include <java/io/RandomAccessFile.h>
 #include <jcpp.h>
 
-using $RIFFWriter = ::com::sun::media::sound::RIFFWriter;
-using $RIFFWriter$RandomAccessWriter = ::com::sun::media::sound::RIFFWriter$RandomAccessWriter;
 using $File = ::java::io::File;
 using $RandomAccessFile = ::java::io::RandomAccessFile;
 using $ClassInfo = ::java::lang::ClassInfo;

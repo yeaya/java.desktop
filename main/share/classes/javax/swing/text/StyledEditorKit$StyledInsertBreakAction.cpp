@@ -33,7 +33,6 @@ using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $SimpleAttributeSet = ::javax::swing::text::SimpleAttributeSet;
 using $StyledEditorKit = ::javax::swing::text::StyledEditorKit;
 using $StyledEditorKit$StyledTextAction = ::javax::swing::text::StyledEditorKit$StyledTextAction;
-using $TextAction = ::javax::swing::text::TextAction;
 
 namespace javax {
 	namespace swing {

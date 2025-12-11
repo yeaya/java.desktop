@@ -6,11 +6,8 @@
 #include <javax/swing/plaf/ComponentUI.h>
 #include <jcpp.h>
 
-using $Point = ::java::awt::Point;
-using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JList = ::javax::swing::JList;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 
 namespace javax {

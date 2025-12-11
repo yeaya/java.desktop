@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JTable = ::javax::swing::JTable;
-using $JTable$Resizable2 = ::javax::swing::JTable$Resizable2;
 using $JTable$Resizable3 = ::javax::swing::JTable$Resizable3;
 
 namespace javax {

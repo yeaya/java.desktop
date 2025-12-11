@@ -9,14 +9,9 @@
 #undef DOCPROPERTIESCLASSNAME
 #undef DOCUMENTPROPERTIES_ROLE
 
-using $Window = ::java::awt::Window;
-using $PrinterJob = ::java::awt::print::PrinterJob;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $PrintService = ::javax::print::PrintService;
-using $ServiceUIFactory = ::javax::print::ServiceUIFactory;
-using $PrintRequestAttributeSet = ::javax::print::attribute::PrintRequestAttributeSet;
 
 namespace sun {
 	namespace print {

@@ -12,7 +12,6 @@
 #undef CLOSED
 
 using $TMSchema$State = ::com::sun::java::swing::plaf::windows::TMSchema$State;
-using $WindowsTreeUI = ::com::sun::java::swing::plaf::windows::WindowsTreeUI;
 using $WindowsTreeUI$ExpandedIcon = ::com::sun::java::swing::plaf::windows::WindowsTreeUI$ExpandedIcon;
 using $XPStyle$Skin = ::com::sun::java::swing::plaf::windows::XPStyle$Skin;
 using $Component = ::java::awt::Component;

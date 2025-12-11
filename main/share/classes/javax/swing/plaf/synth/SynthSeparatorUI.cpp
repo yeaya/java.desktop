@@ -37,7 +37,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Short = ::java::lang::Short;
-using $EventObject = ::java::util::EventObject;
 using $JComponent = ::javax::swing::JComponent;
 using $JSeparator = ::javax::swing::JSeparator;
 using $JToolBar$Separator = ::javax::swing::JToolBar$Separator;

@@ -102,7 +102,7 @@ $Object* allocate$ByteComponentRaster($Class* clazz) {
 void ByteComponentRaster::initIDs() {
 	$init(ByteComponentRaster);
 	$prepareNativeStatic(ByteComponentRaster, initIDs, void);
-	$invokeNativeStatic(ByteComponentRaster, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 

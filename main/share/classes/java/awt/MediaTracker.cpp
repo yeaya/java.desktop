@@ -17,7 +17,6 @@ using $Component = ::java::awt::Component;
 using $Image = ::java::awt::Image;
 using $ImageMediaEntry = ::java::awt::ImageMediaEntry;
 using $MediaEntry = ::java::awt::MediaEntry;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

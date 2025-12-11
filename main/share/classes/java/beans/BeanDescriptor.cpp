@@ -13,7 +13,6 @@ using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Annotation = ::java::lang::annotation::Annotation;
 using $Reference = ::java::lang::ref::Reference;
 using $SwingContainer = ::javax::swing::SwingContainer;
 

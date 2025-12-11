@@ -14,7 +14,6 @@
 
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Point = ::java::awt::Point;
 using $DragGestureListener = ::java::awt::dnd::DragGestureListener;
 using $DragGestureRecognizer = ::java::awt::dnd::DragGestureRecognizer;
 using $DragSource = ::java::awt::dnd::DragSource;
@@ -24,7 +23,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JComponent = ::javax::swing::JComponent;
-using $TransferHandler = ::javax::swing::TransferHandler;
 
 namespace javax {
 	namespace swing {

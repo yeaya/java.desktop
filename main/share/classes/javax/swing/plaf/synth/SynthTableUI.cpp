@@ -69,7 +69,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Number = ::java::lang::Number;
 using $Date = ::java::util::Date;
-using $EventObject = ::java::util::EventObject;
 using $CellRendererPane = ::javax::swing::CellRendererPane;
 using $Icon = ::javax::swing::Icon;
 using $ImageIcon = ::javax::swing::ImageIcon;

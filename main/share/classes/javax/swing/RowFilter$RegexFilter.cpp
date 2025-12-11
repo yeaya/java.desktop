@@ -16,7 +16,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Matcher = ::java::util::regex::Matcher;
 using $Pattern = ::java::util::regex::Pattern;
-using $RowFilter = ::javax::swing::RowFilter;
 using $RowFilter$Entry = ::javax::swing::RowFilter$Entry;
 using $RowFilter$GeneralFilter = ::javax::swing::RowFilter$GeneralFilter;
 

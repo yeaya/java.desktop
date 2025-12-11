@@ -7,8 +7,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $FontStrikeDisposer = ::sun::font::FontStrikeDisposer;
-using $StrikeCache = ::sun::font::StrikeCache;
 
 namespace sun {
 	namespace font {

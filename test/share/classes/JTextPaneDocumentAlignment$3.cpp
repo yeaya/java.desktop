@@ -10,17 +10,13 @@
 #include <jcpp.h>
 
 using $JTextPaneDocumentAlignment = ::JTextPaneDocumentAlignment;
-using $Rectangle = ::java::awt::Rectangle;
-using $Window = ::java::awt::Window;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JFrame = ::javax::swing::JFrame;
 using $JTextPane = ::javax::swing::JTextPane;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $MethodInfo _JTextPaneDocumentAlignment$3_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(JTextPaneDocumentAlignment$3::*)()>(&JTextPaneDocumentAlignment$3::init$))},

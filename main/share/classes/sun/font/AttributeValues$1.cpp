@@ -29,14 +29,11 @@
 #undef EWEIGHT
 #undef EWIDTH
 
-using $EAttributeArray = $Array<::sun::font::EAttribute>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;
-using $AttributeValues = ::sun::font::AttributeValues;
 using $EAttribute = ::sun::font::EAttribute;
 
 namespace sun {

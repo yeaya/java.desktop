@@ -22,14 +22,11 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $SunHints = ::sun::awt::SunHints;
 using $GlyphList = ::sun::font::GlyphList;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
-using $SurfaceData = ::sun::java2d::SurfaceData;
 using $DrawGlyphList = ::sun::java2d::loops::DrawGlyphList;
 using $DrawGlyphListAA = ::sun::java2d::loops::DrawGlyphListAA;
 using $DrawGlyphListColor = ::sun::java2d::loops::DrawGlyphListColor;
 using $DrawGlyphListLCD = ::sun::java2d::loops::DrawGlyphListLCD;
-using $RenderLoops = ::sun::java2d::loops::RenderLoops;
 using $GlyphListPipe = ::sun::java2d::pipe::GlyphListPipe;
-using $LoopBasedPipe = ::sun::java2d::pipe::LoopBasedPipe;
 
 namespace sun {
 	namespace java2d {

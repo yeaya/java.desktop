@@ -15,7 +15,6 @@
 #undef SIZE
 
 using $IconArray = $Array<::javax::swing::Icon>;
-using $WindowsInternalFrameTitlePane = ::com::sun::java::swing::plaf::windows::WindowsInternalFrameTitlePane;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Graphics2D = ::java::awt::Graphics2D;
@@ -29,7 +28,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $Icon = ::javax::swing::Icon;
 using $UIDefaults = ::javax::swing::UIDefaults;
 using $UIDefaults$LazyValue = ::javax::swing::UIDefaults$LazyValue;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace com {
 	namespace sun {

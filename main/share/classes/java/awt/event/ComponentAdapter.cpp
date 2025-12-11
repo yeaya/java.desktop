@@ -4,7 +4,6 @@
 #include <jcpp.h>
 
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
-using $ComponentListener = ::java::awt::event::ComponentListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

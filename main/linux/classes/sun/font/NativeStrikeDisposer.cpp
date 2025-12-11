@@ -77,7 +77,7 @@ void NativeStrikeDisposer::dispose() {
 
 void NativeStrikeDisposer::freeNativeScalerContext(int64_t pContext) {
 	$prepareNative(NativeStrikeDisposer, freeNativeScalerContext, void, int64_t pContext);
-	$invokeNative(NativeStrikeDisposer, freeNativeScalerContext, pContext);
+	$invokeNative(pContext);
 	$finishNative();
 }
 

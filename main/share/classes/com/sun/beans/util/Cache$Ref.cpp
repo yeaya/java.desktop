@@ -3,7 +3,6 @@
 #include <com/sun/beans/util/Cache.h>
 #include <jcpp.h>
 
-using $Cache = ::com::sun::beans::util::Cache;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

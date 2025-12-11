@@ -310,7 +310,7 @@ int64_t PortMixer::nOpen(int32_t mixerIndex) {
 	$init(PortMixer);
 	int64_t $ret = 0;
 	$prepareNativeStatic(PortMixer, nOpen, int64_t, int32_t mixerIndex);
-	$ret = $invokeNativeStatic(PortMixer, nOpen, mixerIndex);
+	$ret = $invokeNativeStatic(mixerIndex);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -318,7 +318,7 @@ int64_t PortMixer::nOpen(int32_t mixerIndex) {
 void PortMixer::nClose(int64_t id) {
 	$init(PortMixer);
 	$prepareNativeStatic(PortMixer, nClose, void, int64_t id);
-	$invokeNativeStatic(PortMixer, nClose, id);
+	$invokeNativeStatic(id);
 	$finishNativeStatic();
 }
 
@@ -326,7 +326,7 @@ int32_t PortMixer::nGetPortCount(int64_t id) {
 	$init(PortMixer);
 	int32_t $ret = 0;
 	$prepareNativeStatic(PortMixer, nGetPortCount, int32_t, int64_t id);
-	$ret = $invokeNativeStatic(PortMixer, nGetPortCount, id);
+	$ret = $invokeNativeStatic(id);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -335,7 +335,7 @@ int32_t PortMixer::nGetPortType(int64_t id, int32_t portIndex) {
 	$init(PortMixer);
 	int32_t $ret = 0;
 	$prepareNativeStatic(PortMixer, nGetPortType, int32_t, int64_t id, int32_t portIndex);
-	$ret = $invokeNativeStatic(PortMixer, nGetPortType, id, portIndex);
+	$ret = $invokeNativeStatic(id, portIndex);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -344,7 +344,7 @@ $String* PortMixer::nGetPortName(int64_t id, int32_t portIndex) {
 	$init(PortMixer);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(PortMixer, nGetPortName, $String*, int64_t id, int32_t portIndex);
-	$assign($ret, $invokeNativeStatic(PortMixer, nGetPortName, id, portIndex));
+	$assign($ret, $invokeNativeStaticObject(id, portIndex));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -352,14 +352,14 @@ $String* PortMixer::nGetPortName(int64_t id, int32_t portIndex) {
 void PortMixer::nGetControls(int64_t id, int32_t portIndex, $Vector* vector) {
 	$init(PortMixer);
 	$prepareNativeStatic(PortMixer, nGetControls, void, int64_t id, int32_t portIndex, $Vector* vector);
-	$invokeNativeStatic(PortMixer, nGetControls, id, portIndex, vector);
+	$invokeNativeStatic(id, portIndex, vector);
 	$finishNativeStatic();
 }
 
 void PortMixer::nControlSetIntValue(int64_t controlID, int32_t value) {
 	$init(PortMixer);
 	$prepareNativeStatic(PortMixer, nControlSetIntValue, void, int64_t controlID, int32_t value);
-	$invokeNativeStatic(PortMixer, nControlSetIntValue, controlID, value);
+	$invokeNativeStatic(controlID, value);
 	$finishNativeStatic();
 }
 
@@ -367,7 +367,7 @@ int32_t PortMixer::nControlGetIntValue(int64_t controlID) {
 	$init(PortMixer);
 	int32_t $ret = 0;
 	$prepareNativeStatic(PortMixer, nControlGetIntValue, int32_t, int64_t controlID);
-	$ret = $invokeNativeStatic(PortMixer, nControlGetIntValue, controlID);
+	$ret = $invokeNativeStatic(controlID);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -375,7 +375,7 @@ int32_t PortMixer::nControlGetIntValue(int64_t controlID) {
 void PortMixer::nControlSetFloatValue(int64_t controlID, float value) {
 	$init(PortMixer);
 	$prepareNativeStatic(PortMixer, nControlSetFloatValue, void, int64_t controlID, float value);
-	$invokeNativeStatic(PortMixer, nControlSetFloatValue, controlID, value);
+	$invokeNativeStatic(controlID, value);
 	$finishNativeStatic();
 }
 
@@ -383,7 +383,7 @@ float PortMixer::nControlGetFloatValue(int64_t controlID) {
 	$init(PortMixer);
 	float $ret = 0.0;
 	$prepareNativeStatic(PortMixer, nControlGetFloatValue, float, int64_t controlID);
-	$ret = $invokeNativeStatic(PortMixer, nControlGetFloatValue, controlID);
+	$ret = $invokeNativeStatic(controlID);
 	$finishNativeStatic();
 	return $ret;
 }

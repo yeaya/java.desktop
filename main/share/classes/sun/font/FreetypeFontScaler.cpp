@@ -34,13 +34,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $ThreadGroup = ::java::lang::ThreadGroup;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
-using $Reference = ::java::lang::ref::Reference;
 using $WeakReference = ::java::lang::ref::WeakReference;
 using $Font2D = ::sun::font::Font2D;
 using $FontManagerNativeLibrary = ::sun::font::FontManagerNativeLibrary;
@@ -171,7 +165,7 @@ $Object* allocate$FreetypeFontScaler($Class* clazz) {
 void FreetypeFontScaler::initIDs($Class* FFS) {
 	$init(FreetypeFontScaler);
 	$prepareNativeStatic(FreetypeFontScaler, initIDs, void, $Class* FFS);
-	$invokeNativeStatic(FreetypeFontScaler, initIDs, FFS);
+	$invokeNativeStatic(FFS);
 	$finishNativeStatic();
 }
 
@@ -336,7 +330,7 @@ int64_t FreetypeFontScaler::createScalerContext($doubles* matrix, int32_t aa, in
 int64_t FreetypeFontScaler::initNativeScaler($Font2D* font, int32_t type, int32_t indexInCollection, bool supportsCJK, int32_t filesize) {
 	int64_t $ret = 0;
 	$prepareNative(FreetypeFontScaler, initNativeScaler, int64_t, $Font2D* font, int32_t type, int32_t indexInCollection, bool supportsCJK, int32_t filesize);
-	$ret = $invokeNative(FreetypeFontScaler, initNativeScaler, font, type, indexInCollection, supportsCJK, filesize);
+	$ret = $invokeNative(font, type, indexInCollection, supportsCJK, filesize);
 	$finishNative();
 	return $ret;
 }
@@ -344,7 +338,7 @@ int64_t FreetypeFontScaler::initNativeScaler($Font2D* font, int32_t type, int32_
 $StrikeMetrics* FreetypeFontScaler::getFontMetricsNative($Font2D* font, int64_t pScalerContext, int64_t pScaler) {
 	$var($StrikeMetrics, $ret, nullptr);
 	$prepareNative(FreetypeFontScaler, getFontMetricsNative, $StrikeMetrics*, $Font2D* font, int64_t pScalerContext, int64_t pScaler);
-	$assign($ret, $invokeNative(FreetypeFontScaler, getFontMetricsNative, font, pScalerContext, pScaler));
+	$assign($ret, $invokeNativeObject(font, pScalerContext, pScaler));
 	$finishNative();
 	return $ret;
 }
@@ -352,21 +346,21 @@ $StrikeMetrics* FreetypeFontScaler::getFontMetricsNative($Font2D* font, int64_t 
 float FreetypeFontScaler::getGlyphAdvanceNative($Font2D* font, int64_t pScalerContext, int64_t pScaler, int32_t glyphCode) {
 	float $ret = 0.0;
 	$prepareNative(FreetypeFontScaler, getGlyphAdvanceNative, float, $Font2D* font, int64_t pScalerContext, int64_t pScaler, int32_t glyphCode);
-	$ret = $invokeNative(FreetypeFontScaler, getGlyphAdvanceNative, font, pScalerContext, pScaler, glyphCode);
+	$ret = $invokeNative(font, pScalerContext, pScaler, glyphCode);
 	$finishNative();
 	return $ret;
 }
 
 void FreetypeFontScaler::getGlyphMetricsNative($Font2D* font, int64_t pScalerContext, int64_t pScaler, int32_t glyphCode, $Point2D$Float* metrics) {
 	$prepareNative(FreetypeFontScaler, getGlyphMetricsNative, void, $Font2D* font, int64_t pScalerContext, int64_t pScaler, int32_t glyphCode, $Point2D$Float* metrics);
-	$invokeNative(FreetypeFontScaler, getGlyphMetricsNative, font, pScalerContext, pScaler, glyphCode, metrics);
+	$invokeNative(font, pScalerContext, pScaler, glyphCode, metrics);
 	$finishNative();
 }
 
 int64_t FreetypeFontScaler::getGlyphImageNative($Font2D* font, int64_t pScalerContext, int64_t pScaler, int32_t glyphCode) {
 	int64_t $ret = 0;
 	$prepareNative(FreetypeFontScaler, getGlyphImageNative, int64_t, $Font2D* font, int64_t pScalerContext, int64_t pScaler, int32_t glyphCode);
-	$ret = $invokeNative(FreetypeFontScaler, getGlyphImageNative, font, pScalerContext, pScaler, glyphCode);
+	$ret = $invokeNative(font, pScalerContext, pScaler, glyphCode);
 	$finishNative();
 	return $ret;
 }
@@ -374,7 +368,7 @@ int64_t FreetypeFontScaler::getGlyphImageNative($Font2D* font, int64_t pScalerCo
 $Rectangle2D$Float* FreetypeFontScaler::getGlyphOutlineBoundsNative($Font2D* font, int64_t pScalerContext, int64_t pScaler, int32_t glyphCode) {
 	$var($Rectangle2D$Float, $ret, nullptr);
 	$prepareNative(FreetypeFontScaler, getGlyphOutlineBoundsNative, $Rectangle2D$Float*, $Font2D* font, int64_t pScalerContext, int64_t pScaler, int32_t glyphCode);
-	$assign($ret, $invokeNative(FreetypeFontScaler, getGlyphOutlineBoundsNative, font, pScalerContext, pScaler, glyphCode));
+	$assign($ret, $invokeNativeObject(font, pScalerContext, pScaler, glyphCode));
 	$finishNative();
 	return $ret;
 }
@@ -382,7 +376,7 @@ $Rectangle2D$Float* FreetypeFontScaler::getGlyphOutlineBoundsNative($Font2D* fon
 $GeneralPath* FreetypeFontScaler::getGlyphOutlineNative($Font2D* font, int64_t pScalerContext, int64_t pScaler, int32_t glyphCode, float x, float y) {
 	$var($GeneralPath, $ret, nullptr);
 	$prepareNative(FreetypeFontScaler, getGlyphOutlineNative, $GeneralPath*, $Font2D* font, int64_t pScalerContext, int64_t pScaler, int32_t glyphCode, float x, float y);
-	$assign($ret, $invokeNative(FreetypeFontScaler, getGlyphOutlineNative, font, pScalerContext, pScaler, glyphCode, x, y));
+	$assign($ret, $invokeNativeObject(font, pScalerContext, pScaler, glyphCode, x, y));
 	$finishNative();
 	return $ret;
 }
@@ -390,7 +384,7 @@ $GeneralPath* FreetypeFontScaler::getGlyphOutlineNative($Font2D* font, int64_t p
 $GeneralPath* FreetypeFontScaler::getGlyphVectorOutlineNative($Font2D* font, int64_t pScalerContext, int64_t pScaler, $ints* glyphs, int32_t numGlyphs, float x, float y) {
 	$var($GeneralPath, $ret, nullptr);
 	$prepareNative(FreetypeFontScaler, getGlyphVectorOutlineNative, $GeneralPath*, $Font2D* font, int64_t pScalerContext, int64_t pScaler, $ints* glyphs, int32_t numGlyphs, float x, float y);
-	$assign($ret, $invokeNative(FreetypeFontScaler, getGlyphVectorOutlineNative, font, pScalerContext, pScaler, glyphs, numGlyphs, x, y));
+	$assign($ret, $invokeNativeObject(font, pScalerContext, pScaler, glyphs, numGlyphs, x, y));
 	$finishNative();
 	return $ret;
 }
@@ -398,21 +392,21 @@ $GeneralPath* FreetypeFontScaler::getGlyphVectorOutlineNative($Font2D* font, int
 $Point2D$Float* FreetypeFontScaler::getGlyphPointNative($Font2D* font, int64_t pScalerContext, int64_t pScaler, int32_t glyphCode, int32_t ptNumber) {
 	$var($Point2D$Float, $ret, nullptr);
 	$prepareNative(FreetypeFontScaler, getGlyphPointNative, $Point2D$Float*, $Font2D* font, int64_t pScalerContext, int64_t pScaler, int32_t glyphCode, int32_t ptNumber);
-	$assign($ret, $invokeNative(FreetypeFontScaler, getGlyphPointNative, font, pScalerContext, pScaler, glyphCode, ptNumber));
+	$assign($ret, $invokeNativeObject(font, pScalerContext, pScaler, glyphCode, ptNumber));
 	$finishNative();
 	return $ret;
 }
 
 void FreetypeFontScaler::disposeNativeScaler($Font2D* font2D, int64_t pScaler) {
 	$prepareNative(FreetypeFontScaler, disposeNativeScaler, void, $Font2D* font2D, int64_t pScaler);
-	$invokeNative(FreetypeFontScaler, disposeNativeScaler, font2D, pScaler);
+	$invokeNative(font2D, pScaler);
 	$finishNative();
 }
 
 int32_t FreetypeFontScaler::getGlyphCodeNative($Font2D* font, int64_t pScaler, char16_t charCode) {
 	int32_t $ret = 0;
 	$prepareNative(FreetypeFontScaler, getGlyphCodeNative, int32_t, $Font2D* font, int64_t pScaler, char16_t charCode);
-	$ret = $invokeNative(FreetypeFontScaler, getGlyphCodeNative, font, pScaler, charCode);
+	$ret = $invokeNative(font, pScaler, charCode);
 	$finishNative();
 	return $ret;
 }
@@ -420,7 +414,7 @@ int32_t FreetypeFontScaler::getGlyphCodeNative($Font2D* font, int64_t pScaler, c
 int32_t FreetypeFontScaler::getNumGlyphsNative(int64_t pScaler) {
 	int32_t $ret = 0;
 	$prepareNative(FreetypeFontScaler, getNumGlyphsNative, int32_t, int64_t pScaler);
-	$ret = $invokeNative(FreetypeFontScaler, getNumGlyphsNative, pScaler);
+	$ret = $invokeNative(pScaler);
 	$finishNative();
 	return $ret;
 }
@@ -428,7 +422,7 @@ int32_t FreetypeFontScaler::getNumGlyphsNative(int64_t pScaler) {
 int32_t FreetypeFontScaler::getMissingGlyphCodeNative(int64_t pScaler) {
 	int32_t $ret = 0;
 	$prepareNative(FreetypeFontScaler, getMissingGlyphCodeNative, int32_t, int64_t pScaler);
-	$ret = $invokeNative(FreetypeFontScaler, getMissingGlyphCodeNative, pScaler);
+	$ret = $invokeNative(pScaler);
 	$finishNative();
 	return $ret;
 }
@@ -436,7 +430,7 @@ int32_t FreetypeFontScaler::getMissingGlyphCodeNative(int64_t pScaler) {
 int64_t FreetypeFontScaler::getUnitsPerEMNative(int64_t pScaler) {
 	int64_t $ret = 0;
 	$prepareNative(FreetypeFontScaler, getUnitsPerEMNative, int64_t, int64_t pScaler);
-	$ret = $invokeNative(FreetypeFontScaler, getUnitsPerEMNative, pScaler);
+	$ret = $invokeNative(pScaler);
 	$finishNative();
 	return $ret;
 }
@@ -444,7 +438,7 @@ int64_t FreetypeFontScaler::getUnitsPerEMNative(int64_t pScaler) {
 int64_t FreetypeFontScaler::createScalerContextNative(int64_t pScaler, $doubles* matrix, int32_t aa, int32_t fm, float boldness, float italic) {
 	int64_t $ret = 0;
 	$prepareNative(FreetypeFontScaler, createScalerContextNative, int64_t, int64_t pScaler, $doubles* matrix, int32_t aa, int32_t fm, float boldness, float italic);
-	$ret = $invokeNative(FreetypeFontScaler, createScalerContextNative, pScaler, matrix, aa, fm, boldness, italic);
+	$ret = $invokeNative(pScaler, matrix, aa, fm, boldness, italic);
 	$finishNative();
 	return $ret;
 }

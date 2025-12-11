@@ -26,7 +26,6 @@ using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
 using $CustomCursor = ::sun::awt::CustomCursor;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $Native = ::sun::awt::X11::Native;
 using $XColor = ::sun::awt::X11::XColor;
 using $XConstants = ::sun::awt::X11::XConstants;

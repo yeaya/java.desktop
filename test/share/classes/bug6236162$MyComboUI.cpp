@@ -6,11 +6,9 @@
 #include <javax/swing/plaf/metal/MetalComboBoxUI.h>
 #include <jcpp.h>
 
-using $bug6236162 = ::bug6236162;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $BasicComboBoxUI = ::javax::swing::plaf::basic::BasicComboBoxUI;
 using $ComboPopup = ::javax::swing::plaf::basic::ComboPopup;
 using $MetalComboBoxUI = ::javax::swing::plaf::metal::MetalComboBoxUI;
 

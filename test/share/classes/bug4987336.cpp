@@ -45,7 +45,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $URL = ::java::net::URL;
 using $Dictionary = ::java::util::Dictionary;
 using $Hashtable = ::java::util::Hashtable;
 using $AbstractButton = ::javax::swing::AbstractButton;

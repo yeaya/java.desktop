@@ -10,7 +10,6 @@
 
 using $ColorArray = $Array<::java::awt::Color>;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Error = ::java::lang::Error;
 using $MethodInfo = ::java::lang::MethodInfo;

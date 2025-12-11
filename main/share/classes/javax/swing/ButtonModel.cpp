@@ -5,12 +5,9 @@
 #include <javax/swing/event/ChangeListener.h>
 #include <jcpp.h>
 
-using $ItemSelectable = ::java::awt::ItemSelectable;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ButtonGroup = ::javax::swing::ButtonGroup;
-using $ChangeListener = ::javax::swing::event::ChangeListener;
 
 namespace javax {
 	namespace swing {

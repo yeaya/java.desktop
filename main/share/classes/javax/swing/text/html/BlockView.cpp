@@ -50,7 +50,6 @@ using $DocumentEvent = ::javax::swing::event::DocumentEvent;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
 using $BoxView = ::javax::swing::text::BoxView;
 using $CompositeView = ::javax::swing::text::CompositeView;
-using $Document = ::javax::swing::text::Document;
 using $Element = ::javax::swing::text::Element;
 using $View = ::javax::swing::text::View;
 using $ViewFactory = ::javax::swing::text::ViewFactory;

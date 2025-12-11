@@ -7,8 +7,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $BasicEditorPaneUI = ::javax::swing::plaf::basic::BasicEditorPaneUI;
 using $StyleSheet = ::javax::swing::text::html::StyleSheet;
 
 namespace javax {

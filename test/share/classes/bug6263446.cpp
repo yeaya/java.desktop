@@ -43,20 +43,12 @@ using $Robot = ::java::awt::Robot;
 using $Window = ::java::awt::Window;
 using $InputEvent = ::java::awt::event::InputEvent;
 using $Serializable = ::java::io::Serializable;
-using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
-using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
-using $CellEditor = ::javax::swing::CellEditor;
 using $DefaultCellEditor = ::javax::swing::DefaultCellEditor;
 using $JComponent = ::javax::swing::JComponent;
 using $JFrame = ::javax::swing::JFrame;
@@ -67,7 +59,6 @@ using $AbstractTableModel = ::javax::swing::table::AbstractTableModel;
 using $DefaultTableModel = ::javax::swing::table::DefaultTableModel;
 using $TableCellEditor = ::javax::swing::table::TableCellEditor;
 using $TableModel = ::javax::swing::table::TableModel;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 class bug6263446$$Lambda$lambda$main$0 : public $Runnable {
 	$class(bug6263446$$Lambda$lambda$main$0, $NO_CLASS_INIT, $Runnable)

@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $XEvent = ::sun::awt::X11::XEvent;
-using $XEventDispatcher = ::sun::awt::X11::XEventDispatcher;
 using $XMSelection = ::sun::awt::X11::XMSelection;
 
 namespace sun {

@@ -129,7 +129,6 @@
 #undef WHITE_COLOR
 
 using $GTKColorType = ::com::sun::java::swing::plaf::gtk::GTKColorType;
-using $GTKConstants = ::com::sun::java::swing::plaf::gtk::GTKConstants;
 using $GTKConstants$StateType = ::com::sun::java::swing::plaf::gtk::GTKConstants$StateType;
 using $GTKConstants$TextDirection = ::com::sun::java::swing::plaf::gtk::GTKConstants$TextDirection;
 using $GTKEngine$CustomRegion = ::com::sun::java::swing::plaf::gtk::GTKEngine$CustomRegion;
@@ -148,12 +147,9 @@ using $Font = ::java::awt::Font;
 using $Image = ::java::awt::Image;
 using $Insets = ::java::awt::Insets;
 using $RenderingHints = ::java::awt::RenderingHints;
-using $RenderingHints$Key = ::java::awt::RenderingHints$Key;
 using $Toolkit = ::java::awt::Toolkit;
-using $BufferedImage = ::java::awt::image::BufferedImage;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
@@ -323,7 +319,7 @@ int32_t GTKStyle::nativeGetXThickness(int32_t widgetType) {
 	$init(GTKStyle);
 	int32_t $ret = 0;
 	$prepareNativeStatic(GTKStyle, nativeGetXThickness, int32_t, int32_t widgetType);
-	$ret = $invokeNativeStatic(GTKStyle, nativeGetXThickness, widgetType);
+	$ret = $invokeNativeStatic(widgetType);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -332,7 +328,7 @@ int32_t GTKStyle::nativeGetYThickness(int32_t widgetType) {
 	$init(GTKStyle);
 	int32_t $ret = 0;
 	$prepareNativeStatic(GTKStyle, nativeGetYThickness, int32_t, int32_t widgetType);
-	$ret = $invokeNativeStatic(GTKStyle, nativeGetYThickness, widgetType);
+	$ret = $invokeNativeStatic(widgetType);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -341,7 +337,7 @@ int32_t GTKStyle::nativeGetColorForState(int32_t widgetType, int32_t state, int3
 	$init(GTKStyle);
 	int32_t $ret = 0;
 	$prepareNativeStatic(GTKStyle, nativeGetColorForState, int32_t, int32_t widgetType, int32_t state, int32_t typeID);
-	$ret = $invokeNativeStatic(GTKStyle, nativeGetColorForState, widgetType, state, typeID);
+	$ret = $invokeNativeStatic(widgetType, state, typeID);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -350,7 +346,7 @@ $Object* GTKStyle::nativeGetClassValue(int32_t widgetType, $String* key) {
 	$init(GTKStyle);
 	$var($Object, $ret, nullptr);
 	$prepareNativeStatic(GTKStyle, nativeGetClassValue, $Object*, int32_t widgetType, $String* key);
-	$assign($ret, $invokeNativeStatic(GTKStyle, nativeGetClassValue, widgetType, key));
+	$assign($ret, $invokeNativeStaticObject(widgetType, key));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -359,7 +355,7 @@ $String* GTKStyle::nativeGetPangoFontName(int32_t widgetType) {
 	$init(GTKStyle);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(GTKStyle, nativeGetPangoFontName, $String*, int32_t widgetType);
-	$assign($ret, $invokeNativeStatic(GTKStyle, nativeGetPangoFontName, widgetType));
+	$assign($ret, $invokeNativeStaticObject(widgetType));
 	$finishNativeStatic();
 	return $ret;
 }

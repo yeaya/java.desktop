@@ -32,13 +32,9 @@
 #undef MOUSE_RELEASED
 
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Point = ::java::awt::Point;
-using $ComponentEvent = ::java::awt::event::ComponentEvent;
-using $InputEvent = ::java::awt::event::InputEvent;
-using $KeyEvent = ::java::awt::event::KeyEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $Character = ::java::lang::Character;
@@ -51,7 +47,6 @@ using $Arrays = ::java::util::Arrays;
 using $Collection = ::java::util::Collection;
 using $List = ::java::util::List;
 using $AbstractButton = ::javax::swing::AbstractButton;
-using $JComponent = ::javax::swing::JComponent;
 using $JMenu = ::javax::swing::JMenu;
 using $JMenuBar = ::javax::swing::JMenuBar;
 using $JMenuItem = ::javax::swing::JMenuItem;
@@ -61,7 +56,6 @@ using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
 using $UIManager = ::javax::swing::UIManager;
 using $MenuDragMouseEvent = ::javax::swing::event::MenuDragMouseEvent;
 using $MenuKeyEvent = ::javax::swing::event::MenuKeyEvent;
-using $MenuKeyListener = ::javax::swing::event::MenuKeyListener;
 using $BasicMenuItemUI = ::javax::swing::plaf::basic::BasicMenuItemUI;
 using $BasicMenuItemUI$Handler = ::javax::swing::plaf::basic::BasicMenuItemUI$Handler;
 using $BasicMenuUI = ::javax::swing::plaf::basic::BasicMenuUI;

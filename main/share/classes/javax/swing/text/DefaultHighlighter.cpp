@@ -31,7 +31,6 @@
 
 using $Highlighter$HighlightArray = $Array<::javax::swing::text::Highlighter$Highlight>;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
 using $Insets = ::java::awt::Insets;
 using $Rectangle = ::java::awt::Rectangle;
@@ -45,7 +44,6 @@ using $Integer = ::java::lang::Integer;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Vector = ::java::util::Vector;
-using $JComponent = ::javax::swing::JComponent;
 using $TextUI = ::javax::swing::plaf::TextUI;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $DefaultHighlighter$DefaultHighlightPainter = ::javax::swing::text::DefaultHighlighter$DefaultHighlightPainter;
@@ -53,7 +51,6 @@ using $DefaultHighlighter$HighlightInfo = ::javax::swing::text::DefaultHighlight
 using $DefaultHighlighter$LayeredHighlightInfo = ::javax::swing::text::DefaultHighlighter$LayeredHighlightInfo;
 using $DefaultHighlighter$SafeDamager = ::javax::swing::text::DefaultHighlighter$SafeDamager;
 using $Document = ::javax::swing::text::Document;
-using $Highlighter$Highlight = ::javax::swing::text::Highlighter$Highlight;
 using $Highlighter$HighlightPainter = ::javax::swing::text::Highlighter$HighlightPainter;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $LayeredHighlighter = ::javax::swing::text::LayeredHighlighter;

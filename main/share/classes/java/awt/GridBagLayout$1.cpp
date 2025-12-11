@@ -10,13 +10,9 @@
 #undef CONSTANT_ASCENT
 #undef OTHER
 
-using $Component$BaselineResizeBehaviorArray = $Array<::java::awt::Component$BaselineResizeBehavior>;
-using $Component = ::java::awt::Component;
 using $Component$BaselineResizeBehavior = ::java::awt::Component$BaselineResizeBehavior;
-using $GridBagLayout = ::java::awt::GridBagLayout;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;

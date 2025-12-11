@@ -19,7 +19,6 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $DataBuffer = ::java::awt::image::DataBuffer;
 using $DirectColorModel = ::java::awt::image::DirectColorModel;
 using $PackedColorModel = ::java::awt::image::PackedColorModel;
-using $SampleModel = ::java::awt::image::SampleModel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;

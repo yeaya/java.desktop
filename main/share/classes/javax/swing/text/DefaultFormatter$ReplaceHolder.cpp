@@ -10,7 +10,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $DefaultFormatter = ::javax::swing::text::DefaultFormatter;
 using $DocumentFilter$FilterBypass = ::javax::swing::text::DocumentFilter$FilterBypass;
 
 namespace javax {

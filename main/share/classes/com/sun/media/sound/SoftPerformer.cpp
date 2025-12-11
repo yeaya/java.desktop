@@ -44,7 +44,6 @@ using $intArray2 = $Array<int32_t, 2>;
 using $ModelConnectionBlock = ::com::sun::media::sound::ModelConnectionBlock;
 using $ModelDestination = ::com::sun::media::sound::ModelDestination;
 using $ModelIdentifier = ::com::sun::media::sound::ModelIdentifier;
-using $ModelOscillator = ::com::sun::media::sound::ModelOscillator;
 using $ModelPerformer = ::com::sun::media::sound::ModelPerformer;
 using $ModelSource = ::com::sun::media::sound::ModelSource;
 using $ModelStandardTransform = ::com::sun::media::sound::ModelStandardTransform;

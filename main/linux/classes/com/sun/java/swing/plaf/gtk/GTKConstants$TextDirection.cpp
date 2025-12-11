@@ -9,7 +9,6 @@
 #undef RTL
 
 using $GTKConstants$TextDirectionArray = $Array<::com::sun::java::swing::plaf::gtk::GTKConstants$TextDirection>;
-using $GTKConstants = ::com::sun::java::swing::plaf::gtk::GTKConstants;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

@@ -13,7 +13,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $UIDefaults = ::javax::swing::UIDefaults;
 using $UIDefaults$ActiveValue = ::javax::swing::UIDefaults$ActiveValue;
 using $UIManager = ::javax::swing::UIManager;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $NimbusLookAndFeel = ::javax::swing::plaf::nimbus::NimbusLookAndFeel;
 
 namespace javax {

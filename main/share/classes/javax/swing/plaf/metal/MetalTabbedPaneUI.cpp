@@ -50,7 +50,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JTabbedPane = ::javax::swing::JTabbedPane;
 using $SwingConstants = ::javax::swing::SwingConstants;
 using $UIManager = ::javax::swing::UIManager;
-using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $TabbedPaneUI = ::javax::swing::plaf::TabbedPaneUI;
 using $UIResource = ::javax::swing::plaf::UIResource;

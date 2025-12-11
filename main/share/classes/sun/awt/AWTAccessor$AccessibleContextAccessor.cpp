@@ -8,9 +8,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AccessibleContext = ::javax::accessibility::AccessibleContext;
-using $AWTAccessor = ::sun::awt::AWTAccessor;
-using $AppContext = ::sun::awt::AppContext;
 
 namespace sun {
 	namespace awt {

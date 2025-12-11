@@ -19,7 +19,6 @@ using $Runnable = ::java::lang::Runnable;
 using $JButton = ::javax::swing::JButton;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
 using $PopupMenuEvent = ::javax::swing::event::PopupMenuEvent;
-using $PopupMenuListener = ::javax::swing::event::PopupMenuListener;
 
 namespace com {
 	namespace sun {

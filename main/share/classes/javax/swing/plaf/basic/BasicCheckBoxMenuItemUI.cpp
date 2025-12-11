@@ -17,16 +17,13 @@
 #undef MOUSE_RELEASED
 
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Point = ::java::awt::Point;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $JComponent = ::javax::swing::JComponent;
 using $JMenuItem = ::javax::swing::JMenuItem;
-using $MenuElement = ::javax::swing::MenuElement;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
 using $ButtonUI = ::javax::swing::plaf::ButtonUI;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;

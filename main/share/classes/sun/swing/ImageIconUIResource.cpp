@@ -8,7 +8,6 @@ using $Image = ::java::awt::Image;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ImageIcon = ::javax::swing::ImageIcon;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace sun {
 	namespace swing {

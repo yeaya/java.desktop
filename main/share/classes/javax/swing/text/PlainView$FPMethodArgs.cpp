@@ -27,7 +27,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $PlainView = ::javax::swing::text::PlainView;
 using $PlainView$2 = ::javax::swing::text::PlainView$2;
 
 namespace javax {

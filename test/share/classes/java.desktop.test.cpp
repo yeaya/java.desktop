@@ -3193,5 +3193,4 @@ void java$desktop$test::init() {
 		_java$desktop$test_args_
 	};
 	$System::addLibrary(&lib);
-	$System::init();
 }

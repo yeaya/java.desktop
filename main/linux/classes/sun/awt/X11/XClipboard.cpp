@@ -36,10 +36,7 @@
 #undef MAX_LENGTH
 #undef TARGETS_ATOM
 
-using $Clipboard = ::java::awt::datatransfer::Clipboard;
-using $ClipboardOwner = ::java::awt::datatransfer::ClipboardOwner;
 using $FlavorMap = ::java::awt::datatransfer::FlavorMap;
-using $FlavorTable = ::java::awt::datatransfer::FlavorTable;
 using $Transferable = ::java::awt::datatransfer::Transferable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -54,12 +51,10 @@ using $AbstractMap = ::java::util::AbstractMap;
 using $HashMap = ::java::util::HashMap;
 using $Map = ::java::util::Map;
 using $SortedMap = ::java::util::SortedMap;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $UNIXToolkit = ::sun::awt::UNIXToolkit;
 using $OwnershipListener = ::sun::awt::X11::OwnershipListener;
 using $WindowPropertyGetter = ::sun::awt::X11::WindowPropertyGetter;
 using $XAtom = ::sun::awt::X11::XAtom;
-using $XBaseWindow = ::sun::awt::X11::XBaseWindow;
 using $XClipboard$CheckChangeTimerTask = ::sun::awt::X11::XClipboard$CheckChangeTimerTask;
 using $XClipboard$SelectionNotifyHandler = ::sun::awt::X11::XClipboard$SelectionNotifyHandler;
 using $XConstants = ::sun::awt::X11::XConstants;

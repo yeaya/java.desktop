@@ -15,10 +15,8 @@ using $Error = ::java::lang::Error;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $JComponent = ::javax::swing::JComponent;
 using $JEditorPane = ::javax::swing::JEditorPane;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 
 $MethodInfo _Test5062055_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PUBLIC, $method(static_cast<void(Test5062055::*)()>(&Test5062055::init$))},

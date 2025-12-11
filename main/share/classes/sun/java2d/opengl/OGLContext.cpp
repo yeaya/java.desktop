@@ -94,7 +94,7 @@ $String* OGLContext::getOGLIdString() {
 	$init(OGLContext);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(OGLContext, getOGLIdString, $String*);
-	$assign($ret, $invokeNativeStatic(OGLContext, getOGLIdString));
+	$assign($ret, $invokeNativeStaticObject());
 	$finishNativeStatic();
 	return $ret;
 }

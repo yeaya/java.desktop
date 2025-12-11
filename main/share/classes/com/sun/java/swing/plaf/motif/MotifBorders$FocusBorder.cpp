@@ -8,7 +8,6 @@
 #include <javax/swing/border/AbstractBorder.h>
 #include <jcpp.h>
 
-using $MotifBorders = ::com::sun::java::swing::plaf::motif::MotifBorders;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Graphics = ::java::awt::Graphics;
@@ -18,7 +17,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractBorder = ::javax::swing::border::AbstractBorder;
-using $UIResource = ::javax::swing::plaf::UIResource;
 
 namespace com {
 	namespace sun {

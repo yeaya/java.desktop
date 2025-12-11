@@ -9,8 +9,6 @@
 #undef MIN_VALUE
 
 using $GeneralPath = ::java::awt::geom::GeneralPath;
-using $Path2D = ::java::awt::geom::Path2D;
-using $Path2D$Float = ::java::awt::geom::Path2D$Float;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;

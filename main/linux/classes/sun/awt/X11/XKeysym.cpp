@@ -255,7 +255,6 @@ using $Long = ::java::lang::Long;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Hashtable = ::java::util::Hashtable;
 using $Unsafe = ::jdk::internal::misc::Unsafe;
-using $SunToolkit = ::sun::awt::SunToolkit;
 using $Native = ::sun::awt::X11::Native;
 using $XConstants = ::sun::awt::X11::XConstants;
 using $XKeyEvent = ::sun::awt::X11::XKeyEvent;

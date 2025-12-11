@@ -11,13 +11,11 @@
 
 using $ObjectArray2 = $Array<::java::lang::Object, 2>;
 using $StringArray2 = $Array<::java::lang::String, 2>;
-using $bug7027139 = ::bug7027139;
 using $bug7027139$1$1 = ::bug7027139$1$1;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JTable = ::javax::swing::JTable;
 using $ListSelectionModel = ::javax::swing::ListSelectionModel;
 using $ListSelectionListener = ::javax::swing::event::ListSelectionListener;

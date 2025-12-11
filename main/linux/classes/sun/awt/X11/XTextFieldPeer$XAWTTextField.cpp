@@ -39,16 +39,12 @@
 
 using $MotifPasswordFieldUI = ::com::sun::java::swing::plaf::motif::MotifPasswordFieldUI;
 using $AWTEvent = ::java::awt::AWTEvent;
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
-using $Font = ::java::awt::Font;
 using $Graphics = ::java::awt::Graphics;
-using $Rectangle = ::java::awt::Rectangle;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $FocusEvent = ::java::awt::event::FocusEvent;
-using $FocusEvent$Cause = ::java::awt::event::FocusEvent$Cause;
 using $InputMethodEvent = ::java::awt::event::InputMethodEvent;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $TextEvent = ::java::awt::event::TextEvent;
@@ -61,7 +57,6 @@ using $JPasswordField = ::javax::swing::JPasswordField;
 using $JTextField = ::javax::swing::JTextField;
 using $TransferHandler = ::javax::swing::TransferHandler;
 using $DocumentEvent = ::javax::swing::event::DocumentEvent;
-using $DocumentListener = ::javax::swing::event::DocumentListener;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $TextUI = ::javax::swing::plaf::TextUI;
 using $BasicPasswordFieldUI = ::javax::swing::plaf::basic::BasicPasswordFieldUI;
@@ -74,7 +69,6 @@ using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor
 using $XComponentPeer = ::sun::awt::X11::XComponentPeer;
 using $XTextFieldPeer = ::sun::awt::X11::XTextFieldPeer;
 using $XTextFieldPeer$AWTTextFieldUI = ::sun::awt::X11::XTextFieldPeer$AWTTextFieldUI;
-using $XWindow = ::sun::awt::X11::XWindow;
 
 namespace sun {
 	namespace awt {

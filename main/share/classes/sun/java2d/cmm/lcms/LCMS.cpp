@@ -121,7 +121,7 @@ $LCMSProfile* LCMS::getLcmsProfile($Profile* p) {
 void LCMS::setTagDataNative(int64_t ptr, int32_t tagSignature, $bytes* data) {
 	$init(LCMS);
 	$prepareNativeStatic(LCMS, setTagDataNative, void, int64_t ptr, int32_t tagSignature, $bytes* data);
-	$invokeNativeStatic(LCMS, setTagDataNative, ptr, tagSignature, data);
+	$invokeNativeStatic(ptr, tagSignature, data);
 	$finishNativeStatic();
 }
 
@@ -129,7 +129,7 @@ $bytes* LCMS::getProfileDataNative(int64_t ptr) {
 	$init(LCMS);
 	$var($bytes, $ret, nullptr);
 	$prepareNativeStatic(LCMS, getProfileDataNative, $bytes*, int64_t ptr);
-	$assign($ret, $invokeNativeStatic(LCMS, getProfileDataNative, ptr));
+	$assign($ret, $invokeNativeStaticObject(ptr));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -138,7 +138,7 @@ $bytes* LCMS::getTagNative(int64_t profileID, int32_t signature) {
 	$init(LCMS);
 	$var($bytes, $ret, nullptr);
 	$prepareNativeStatic(LCMS, getTagNative, $bytes*, int64_t profileID, int32_t signature);
-	$assign($ret, $invokeNativeStatic(LCMS, getTagNative, profileID, signature));
+	$assign($ret, $invokeNativeStaticObject(profileID, signature));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -147,7 +147,7 @@ int64_t LCMS::loadProfileNative($bytes* data, Object$* ref) {
 	$init(LCMS);
 	int64_t $ret = 0;
 	$prepareNativeStatic(LCMS, loadProfileNative, int64_t, $bytes* data, Object$* ref);
-	$ret = $invokeNativeStatic(LCMS, loadProfileNative, data, ref);
+	$ret = $invokeNativeStatic(data, ref);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -170,7 +170,7 @@ $LCMSProfile* LCMS::getProfileID($ICC_Profile* profile) {
 	$init(LCMS);
 	$var($LCMSProfile, $ret, nullptr);
 	$prepareNativeStatic(LCMS, getProfileID, $LCMSProfile*, $ICC_Profile* profile);
-	$assign($ret, $invokeNativeStatic(LCMS, getProfileID, profile));
+	$assign($ret, $invokeNativeStaticObject(profile));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -191,7 +191,7 @@ int64_t LCMS::createNativeTransform($longs* profileIDs, int32_t renderType, int3
 	$init(LCMS);
 	int64_t $ret = 0;
 	$prepareNativeStatic(LCMS, createNativeTransform, int64_t, $longs* profileIDs, int32_t renderType, int32_t inFormatter, bool isInIntPacked, int32_t outFormatter, bool isOutIntPacked, Object$* disposerRef);
-	$ret = $invokeNativeStatic(LCMS, createNativeTransform, profileIDs, renderType, inFormatter, isInIntPacked, outFormatter, isOutIntPacked, disposerRef);
+	$ret = $invokeNativeStatic(profileIDs, renderType, inFormatter, isInIntPacked, outFormatter, isOutIntPacked, disposerRef);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -209,14 +209,14 @@ $ColorTransform* LCMS::createTransform($ColorTransformArray* transforms) {
 void LCMS::colorConvert($LCMSTransform* trans, $LCMSImageLayout* src, $LCMSImageLayout* dest) {
 	$init(LCMS);
 	$prepareNativeStatic(LCMS, colorConvert, void, $LCMSTransform* trans, $LCMSImageLayout* src, $LCMSImageLayout* dest);
-	$invokeNativeStatic(LCMS, colorConvert, trans, src, dest);
+	$invokeNativeStatic(trans, src, dest);
 	$finishNativeStatic();
 }
 
 void LCMS::initLCMS($Class* Trans, $Class* IL, $Class* Pf) {
 	$init(LCMS);
 	$prepareNativeStatic(LCMS, initLCMS, void, $Class* Trans, $Class* IL, $Class* Pf);
-	$invokeNativeStatic(LCMS, initLCMS, Trans, IL, Pf);
+	$invokeNativeStatic(Trans, IL, Pf);
 	$finishNativeStatic();
 }
 

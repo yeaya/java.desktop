@@ -8,7 +8,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DirtyRegion = ::sun::java2d::xr::DirtyRegion;
-using $GrowableIntArray = ::sun::java2d::xr::GrowableIntArray;
 using $GrowableRectArray = ::sun::java2d::xr::GrowableRectArray;
 
 namespace sun {

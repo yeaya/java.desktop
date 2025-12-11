@@ -6,7 +6,6 @@
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ProcessPath = ::sun::java2d::loops::ProcessPath;
 
 namespace sun {
 	namespace java2d {

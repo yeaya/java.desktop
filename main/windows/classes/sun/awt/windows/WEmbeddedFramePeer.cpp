@@ -30,8 +30,6 @@ using $EmbeddedFrame = ::sun::awt::EmbeddedFrame;
 using $Win32GraphicsEnvironment = ::sun::awt::Win32GraphicsEnvironment;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
 using $WFramePeer = ::sun::awt::windows::WFramePeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
-using $WWindowPeer = ::sun::awt::windows::WWindowPeer;
 
 namespace sun {
 	namespace awt {
@@ -80,7 +78,7 @@ void WEmbeddedFramePeer::init$($EmbeddedFrame* target) {
 
 void WEmbeddedFramePeer::create($WComponentPeer* parent) {
 	$prepareNative(WEmbeddedFramePeer, create, void, $WComponentPeer* parent);
-	$invokeNative(WEmbeddedFramePeer, create, parent);
+	$invokeNative(parent);
 	$finishNative();
 }
 
@@ -107,7 +105,7 @@ void WEmbeddedFramePeer::setBoundsPrivate(int32_t x, int32_t y, int32_t width, i
 $Rectangle* WEmbeddedFramePeer::getBoundsPrivate() {
 	$var($Rectangle, $ret, nullptr);
 	$prepareNative(WEmbeddedFramePeer, getBoundsPrivate, $Rectangle*);
-	$assign($ret, $invokeNative(WEmbeddedFramePeer, getBoundsPrivate));
+	$assign($ret, $invokeNativeObject());
 	$finishNative();
 	return $ret;
 }

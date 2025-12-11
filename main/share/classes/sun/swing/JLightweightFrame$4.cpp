@@ -8,8 +8,6 @@
 
 using $Component = ::java::awt::Component;
 using $ContainerEvent = ::java::awt::event::ContainerEvent;
-using $ContainerListener = ::java::awt::event::ContainerListener;
-using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;

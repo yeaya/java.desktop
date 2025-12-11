@@ -8,7 +8,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Segment = ::javax::swing::text::Segment;
-using $SegmentCache = ::javax::swing::text::SegmentCache;
 
 namespace javax {
 	namespace swing {

@@ -9,7 +9,6 @@
 #undef MODALITY_PUSHED
 
 using $AWTEvent = ::java::awt::AWTEvent;
-using $ActiveEvent = ::java::awt::ActiveEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Error = ::java::lang::Error;
 using $FieldInfo = ::java::lang::FieldInfo;

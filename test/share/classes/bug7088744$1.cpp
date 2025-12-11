@@ -26,7 +26,6 @@
 #undef META_MASK
 #undef NOBUTTON
 
-using $bug7088744 = ::bug7088744;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Event = ::java::awt::Event;
@@ -36,7 +35,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;

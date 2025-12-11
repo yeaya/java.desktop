@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $TableModelListener = ::javax::swing::event::TableModelListener;
 
 namespace javax {
 	namespace swing {

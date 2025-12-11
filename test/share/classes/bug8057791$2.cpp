@@ -10,14 +10,11 @@
 
 using $bug8057791 = ::bug8057791;
 using $Color = ::java::awt::Color;
-using $Component = ::java::awt::Component;
-using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JList = ::javax::swing::JList;
 
 $MethodInfo _bug8057791$2_MethodInfo_[] = {

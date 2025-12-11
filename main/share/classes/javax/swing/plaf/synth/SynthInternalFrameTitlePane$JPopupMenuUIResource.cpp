@@ -8,8 +8,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $JPopupMenu = ::javax::swing::JPopupMenu;
-using $UIResource = ::javax::swing::plaf::UIResource;
-using $SynthInternalFrameTitlePane = ::javax::swing::plaf::synth::SynthInternalFrameTitlePane;
 
 namespace javax {
 	namespace swing {

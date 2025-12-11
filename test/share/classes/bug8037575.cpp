@@ -22,7 +22,6 @@
 using $Sysout = ::Sysout;
 using $bug8037575$1 = ::bug8037575$1;
 using $bug8037575$2 = ::bug8037575$2;
-using $Window = ::java::awt::Window;
 using $ActionListener = ::java::awt::event::ActionListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;

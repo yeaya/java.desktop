@@ -82,7 +82,7 @@ void XSurfaceData::init$($SurfaceType* surfaceType, $ColorModel* cm) {
 
 void XSurfaceData::initOps($X11ComponentPeer* peer, $X11GraphicsConfig* gc, int32_t depth) {
 	$prepareNative(XSurfaceData, initOps, void, $X11ComponentPeer* peer, $X11GraphicsConfig* gc, int32_t depth);
-	$invokeNative(XSurfaceData, initOps, peer, gc, depth);
+	$invokeNative(peer, gc, depth);
 	$finishNative();
 }
 
@@ -90,7 +90,7 @@ int64_t XSurfaceData::XCreateGC(int64_t pXSData) {
 	$init(XSurfaceData);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XSurfaceData, XCreateGC, int64_t, int64_t pXSData);
-	$ret = $invokeNativeStatic(XSurfaceData, XCreateGC, pXSData);
+	$ret = $invokeNativeStatic(pXSData);
 	$finishNativeStatic();
 	return $ret;
 }
@@ -98,41 +98,41 @@ int64_t XSurfaceData::XCreateGC(int64_t pXSData) {
 void XSurfaceData::XResetClip(int64_t xgc) {
 	$init(XSurfaceData);
 	$prepareNativeStatic(XSurfaceData, XResetClip, void, int64_t xgc);
-	$invokeNativeStatic(XSurfaceData, XResetClip, xgc);
+	$invokeNativeStatic(xgc);
 	$finishNativeStatic();
 }
 
 void XSurfaceData::XSetClip(int64_t xgc, int32_t lox, int32_t loy, int32_t hix, int32_t hiy, $Region* complexclip) {
 	$init(XSurfaceData);
 	$prepareNativeStatic(XSurfaceData, XSetClip, void, int64_t xgc, int32_t lox, int32_t loy, int32_t hix, int32_t hiy, $Region* complexclip);
-	$invokeNativeStatic(XSurfaceData, XSetClip, xgc, lox, loy, hix, hiy, complexclip);
+	$invokeNativeStatic(xgc, lox, loy, hix, hiy, complexclip);
 	$finishNativeStatic();
 }
 
 void XSurfaceData::flushNativeSurface() {
 	$prepareNative(XSurfaceData, flushNativeSurface, void);
-	$invokeNative(XSurfaceData, flushNativeSurface);
+	$invokeNative();
 	$finishNative();
 }
 
 bool XSurfaceData::isDrawableValid() {
 	bool $ret = false;
 	$prepareNative(XSurfaceData, isDrawableValid, bool);
-	$ret = $invokeNative(XSurfaceData, isDrawableValid);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
 
 void XSurfaceData::setInvalid() {
 	$prepareNative(XSurfaceData, setInvalid, void);
-	$invokeNative(XSurfaceData, setInvalid);
+	$invokeNative();
 	$finishNative();
 }
 
 void XSurfaceData::XSetGraphicsExposures(int64_t xgc, bool needExposures) {
 	$init(XSurfaceData);
 	$prepareNativeStatic(XSurfaceData, XSetGraphicsExposures, void, int64_t xgc, bool needExposures);
-	$invokeNativeStatic(XSurfaceData, XSetGraphicsExposures, xgc, needExposures);
+	$invokeNativeStatic(xgc, needExposures);
 	$finishNativeStatic();
 }
 

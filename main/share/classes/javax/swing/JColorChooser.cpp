@@ -58,7 +58,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $NamedAttribute = ::java::lang::NamedAttribute;
 using $Arrays = ::java::util::Arrays;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $ColorChooserDialog = ::javax::swing::ColorChooserDialog;
 using $ColorChooserDialog$DisposeOnClose = ::javax::swing::ColorChooserDialog$DisposeOnClose;

@@ -13,12 +13,10 @@
 #undef WINDOW
 
 using $Rectangle = ::java::awt::Rectangle;
-using $ColorModel = ::java::awt::image::ColorModel;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $WComponentPeer = ::sun::awt::windows::WComponentPeer;
-using $WObjectPeer = ::sun::awt::windows::WObjectPeer;
 using $SurfaceData = ::sun::java2d::SurfaceData;
 using $WGLGraphicsConfig = ::sun::java2d::opengl::WGLGraphicsConfig;
 using $WGLSurfaceData = ::sun::java2d::opengl::WGLSurfaceData;

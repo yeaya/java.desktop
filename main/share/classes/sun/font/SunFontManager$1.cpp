@@ -13,7 +13,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
-using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $FontManagerNativeLibrary = ::sun::font::FontManagerNativeLibrary;
 using $StrikeCache = ::sun::font::StrikeCache;
 using $SunFontManager = ::sun::font::SunFontManager;

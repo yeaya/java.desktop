@@ -14,7 +14,6 @@ using $Component = ::java::awt::Component;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $ContainerEvent = ::java::awt::event::ContainerEvent;
 using $ContainerListener = ::java::awt::event::ContainerListener;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

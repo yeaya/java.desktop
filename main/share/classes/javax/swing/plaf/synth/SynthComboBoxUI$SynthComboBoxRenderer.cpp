@@ -19,11 +19,8 @@
 #include <javax/swing/plaf/synth/SynthLookAndFeel.h>
 #include <jcpp.h>
 
-using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
-using $ComponentOrientation = ::java::awt::ComponentOrientation;
 using $Container = ::java::awt::Container;
-using $Font = ::java::awt::Font;
 using $Graphics = ::java::awt::Graphics;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -34,10 +31,8 @@ using $JComboBox = ::javax::swing::JComboBox;
 using $JComponent = ::javax::swing::JComponent;
 using $JLabel = ::javax::swing::JLabel;
 using $JList = ::javax::swing::JList;
-using $ListCellRenderer = ::javax::swing::ListCellRenderer;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $LabelUI = ::javax::swing::plaf::LabelUI;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $BasicLabelUI = ::javax::swing::plaf::basic::BasicLabelUI;
 using $SynthComboBoxUI = ::javax::swing::plaf::synth::SynthComboBoxUI;
 using $SynthLabelUI = ::javax::swing::plaf::synth::SynthLabelUI;

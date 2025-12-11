@@ -30,9 +30,7 @@
 #undef HORIZONTAL
 #undef VERTICAL
 
-using $EventListenerArray = $Array<::java::util::EventListener>;
 using $ChangeListenerArray = $Array<::javax::swing::event::ChangeListener>;
-using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Container$AccessibleAWTContainer = ::java::awt::Container$AccessibleAWTContainer;
 using $Graphics = ::java::awt::Graphics;
@@ -49,7 +47,6 @@ using $NamedAttribute = ::java::lang::NamedAttribute;
 using $Format = ::java::text::Format;
 using $NumberFormat = ::java::text::NumberFormat;
 using $EventListener = ::java::util::EventListener;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AccessibleState = ::javax::accessibility::AccessibleState;
 using $BoundedRangeModel = ::javax::swing::BoundedRangeModel;

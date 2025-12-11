@@ -29,15 +29,12 @@
 
 #undef SHORT
 
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Comparable = ::java::lang::Comparable;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DateFormat = ::java::text::DateFormat;
-using $Format = ::java::text::Format;
 using $ParseException = ::java::text::ParseException;
 using $SimpleDateFormat = ::java::text::SimpleDateFormat;
 using $DateFormatProvider = ::java::text::spi::DateFormatProvider;
@@ -49,14 +46,11 @@ using $JFormattedTextField$AbstractFormatterFactory = ::javax::swing::JFormatted
 using $JSpinner = ::javax::swing::JSpinner;
 using $JSpinner$DateEditorFormatter = ::javax::swing::JSpinner$DateEditorFormatter;
 using $JSpinner$DefaultEditor = ::javax::swing::JSpinner$DefaultEditor;
-using $JTextField = ::javax::swing::JTextField;
 using $SpinnerDateModel = ::javax::swing::SpinnerDateModel;
-using $SpinnerModel = ::javax::swing::SpinnerModel;
 using $DateFormatter = ::javax::swing::text::DateFormatter;
 using $DefaultFormatter = ::javax::swing::text::DefaultFormatter;
 using $DefaultFormatterFactory = ::javax::swing::text::DefaultFormatterFactory;
 using $InternationalFormatter = ::javax::swing::text::InternationalFormatter;
-using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $LocaleProviderAdapter = ::sun::util::locale::provider::LocaleProviderAdapter;
 using $LocaleResources = ::sun::util::locale::provider::LocaleResources;
 

@@ -80,7 +80,6 @@
 #undef Y_AXIS
 
 using $FileArray = $Array<::java::io::File>;
-using $ActionArray = $Array<::javax::swing::Action>;
 using $SynthFileChooserUIImpl$AlignedLabelArray = $Array<::sun::swing::plaf::synth::SynthFileChooserUIImpl$AlignedLabel>;
 using $BorderLayout = ::java::awt::BorderLayout;
 using $Component = ::java::awt::Component;
@@ -111,7 +110,6 @@ using $Box = ::javax::swing::Box;
 using $BoxLayout = ::javax::swing::BoxLayout;
 using $ButtonGroup = ::javax::swing::ButtonGroup;
 using $ComboBoxModel = ::javax::swing::ComboBoxModel;
-using $Icon = ::javax::swing::Icon;
 using $JButton = ::javax::swing::JButton;
 using $JComboBox = ::javax::swing::JComboBox;
 using $JComponent = ::javax::swing::JComponent;
@@ -126,7 +124,6 @@ using $ListCellRenderer = ::javax::swing::ListCellRenderer;
 using $UIManager = ::javax::swing::UIManager;
 using $FileSystemView = ::javax::swing::filechooser::FileSystemView;
 using $ActionMapUIResource = ::javax::swing::plaf::ActionMapUIResource;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 using $SynthConstants = ::javax::swing::plaf::synth::SynthConstants;
 using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
 using $JTextComponent = ::javax::swing::text::JTextComponent;

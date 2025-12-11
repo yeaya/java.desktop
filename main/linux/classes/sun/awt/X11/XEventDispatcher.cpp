@@ -5,7 +5,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $XEvent = ::sun::awt::X11::XEvent;
 
 namespace sun {
 	namespace awt {

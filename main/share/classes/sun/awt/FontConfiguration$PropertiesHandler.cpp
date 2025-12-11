@@ -20,7 +20,6 @@
 
 using $ShortArray = $Array<::java::lang::Short>;
 using $InputStream = ::java::io::InputStream;
-using $AbstractStringBuilder = ::java::lang::AbstractStringBuilder;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -32,7 +31,6 @@ using $Arrays = ::java::util::Arrays;
 using $HashMap = ::java::util::HashMap;
 using $Iterator = ::java::util::Iterator;
 using $Map$Entry = ::java::util::Map$Entry;
-using $Properties = ::java::util::Properties;
 using $Set = ::java::util::Set;
 using $Vector = ::java::util::Vector;
 using $FontConfiguration = ::sun::awt::FontConfiguration;

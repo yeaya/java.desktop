@@ -5,7 +5,6 @@
 #include <javax/swing/event/DocumentEvent.h>
 #include <jcpp.h>
 
-using $CheckCommonUseCases = ::CheckCommonUseCases;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
@@ -14,7 +13,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $AtomicInteger = ::java::util::concurrent::atomic::AtomicInteger;
 using $DocumentEvent = ::javax::swing::event::DocumentEvent;
-using $DocumentListener = ::javax::swing::event::DocumentListener;
 
 $FieldInfo _CheckCommonUseCases$1_FieldInfo_[] = {
 	{"val$update", "Ljava/util/concurrent/atomic/AtomicInteger;", nullptr, $FINAL | $SYNTHETIC, $field(CheckCommonUseCases$1, val$update)},

@@ -21,7 +21,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $XConfigureEvent = ::sun::awt::X11::XConfigureEvent;
 using $XConstants = ::sun::awt::X11::XConstants;
 using $XEvent = ::sun::awt::X11::XEvent;
-using $XEventDispatcher = ::sun::awt::X11::XEventDispatcher;
 using $XToolkit = ::sun::awt::X11::XToolkit;
 using $XTrayIconPeer = ::sun::awt::X11::XTrayIconPeer;
 using $XlibWrapper = ::sun::awt::X11::XlibWrapper;

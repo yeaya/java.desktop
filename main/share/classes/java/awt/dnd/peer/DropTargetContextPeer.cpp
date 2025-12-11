@@ -5,9 +5,6 @@
 #include <java/awt/dnd/DropTarget.h>
 #include <jcpp.h>
 
-using $DataFlavorArray = $Array<::java::awt::datatransfer::DataFlavor>;
-using $Transferable = ::java::awt::datatransfer::Transferable;
-using $DropTarget = ::java::awt::dnd::DropTarget;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

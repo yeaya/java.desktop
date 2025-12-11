@@ -34,7 +34,6 @@
 
 using $ControlArray = $Array<::javax::sound::sampled::Control>;
 using $AbstractDataLine = ::com::sun::media::sound::AbstractDataLine;
-using $AbstractLine = ::com::sun::media::sound::AbstractLine;
 using $AbstractMixer = ::com::sun::media::sound::AbstractMixer;
 using $DirectAudioDevice = ::com::sun::media::sound::DirectAudioDevice;
 using $DirectAudioDevice$DirectDL$Balance = ::com::sun::media::sound::DirectAudioDevice$DirectDL$Balance;
@@ -62,7 +61,6 @@ using $BooleanControl = ::javax::sound::sampled::BooleanControl;
 using $Control = ::javax::sound::sampled::Control;
 using $DataLine$Info = ::javax::sound::sampled::DataLine$Info;
 using $FloatControl = ::javax::sound::sampled::FloatControl;
-using $Line$Info = ::javax::sound::sampled::Line$Info;
 using $LineUnavailableException = ::javax::sound::sampled::LineUnavailableException;
 
 namespace com {

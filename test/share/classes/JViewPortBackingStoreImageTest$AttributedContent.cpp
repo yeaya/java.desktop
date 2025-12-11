@@ -3,7 +3,6 @@
 #include <JViewPortBackingStoreImageTest.h>
 #include <jcpp.h>
 
-using $JViewPortBackingStoreImageTest = ::JViewPortBackingStoreImageTest;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

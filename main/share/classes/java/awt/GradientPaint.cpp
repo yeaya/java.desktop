@@ -18,7 +18,6 @@
 
 using $Color = ::java::awt::Color;
 using $GradientPaintContext = ::java::awt::GradientPaintContext;
-using $Paint = ::java::awt::Paint;
 using $PaintContext = ::java::awt::PaintContext;
 using $Rectangle = ::java::awt::Rectangle;
 using $RenderingHints = ::java::awt::RenderingHints;

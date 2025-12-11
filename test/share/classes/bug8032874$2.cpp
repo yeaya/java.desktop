@@ -13,7 +13,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JTable = ::javax::swing::JTable;
 using $ListSelectionModel = ::javax::swing::ListSelectionModel;
 using $RowSorter = ::javax::swing::RowSorter;

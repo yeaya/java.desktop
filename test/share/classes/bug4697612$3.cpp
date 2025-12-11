@@ -7,14 +7,12 @@
 #include <jcpp.h>
 
 using $bug4697612 = ::bug4697612;
-using $Component = ::java::awt::Component;
 using $Font = ::java::awt::Font;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JTextArea = ::javax::swing::JTextArea;
 
 $FieldInfo _bug4697612$3_FieldInfo_[] = {

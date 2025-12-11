@@ -39,7 +39,6 @@
 
 using $longArray2 = $Array<int64_t, 2>;
 using $TIFFBaseJPEGCompressor = ::com::sun::imageio::plugins::tiff::TIFFBaseJPEGCompressor;
-using $TIFFCompressor = ::com::sun::imageio::plugins::tiff::TIFFCompressor;
 using $TIFFIFD = ::com::sun::imageio::plugins::tiff::TIFFIFD;
 using $TIFFImageMetadata = ::com::sun::imageio::plugins::tiff::TIFFImageMetadata;
 using $TIFFJPEGCompressor$JPEGSPIFilter = ::com::sun::imageio::plugins::tiff::TIFFJPEGCompressor$JPEGSPIFilter;
@@ -57,17 +56,12 @@ using $ImageReader = ::javax::imageio::ImageReader;
 using $ImageWriteParam = ::javax::imageio::ImageWriteParam;
 using $ImageWriter = ::javax::imageio::ImageWriter;
 using $IIOMetadata = ::javax::imageio::metadata::IIOMetadata;
-using $JPEGImageWriteParam = ::javax::imageio::plugins::jpeg::JPEGImageWriteParam;
 using $BaselineTIFFTagSet = ::javax::imageio::plugins::tiff::BaselineTIFFTagSet;
-using $TIFFDirectory = ::javax::imageio::plugins::tiff::TIFFDirectory;
 using $TIFFField = ::javax::imageio::plugins::tiff::TIFFField;
 using $TIFFTag = ::javax::imageio::plugins::tiff::TIFFTag;
-using $TIFFTagSet = ::javax::imageio::plugins::tiff::TIFFTagSet;
 using $IIORegistry = ::javax::imageio::spi::IIORegistry;
 using $ImageReaderSpi = ::javax::imageio::spi::ImageReaderSpi;
-using $ServiceRegistry = ::javax::imageio::spi::ServiceRegistry;
 using $ServiceRegistry$Filter = ::javax::imageio::spi::ServiceRegistry$Filter;
-using $ImageInputStreamImpl = ::javax::imageio::stream::ImageInputStreamImpl;
 using $MemoryCacheImageInputStream = ::javax::imageio::stream::MemoryCacheImageInputStream;
 using $MemoryCacheImageOutputStream = ::javax::imageio::stream::MemoryCacheImageOutputStream;
 

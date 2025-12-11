@@ -34,7 +34,6 @@ using $EmptyBorder = ::javax::swing::border::EmptyBorder;
 using $LineBorder = ::javax::swing::border::LineBorder;
 using $MatteBorder = ::javax::swing::border::MatteBorder;
 using $BorderUIResource$CompoundBorderUIResource = ::javax::swing::plaf::BorderUIResource$CompoundBorderUIResource;
-using $ColorUIResource = ::javax::swing::plaf::ColorUIResource;
 using $BasicBorders$MarginBorder = ::javax::swing::plaf::basic::BasicBorders$MarginBorder;
 using $MetalBorders$ButtonBorder = ::javax::swing::plaf::metal::MetalBorders$ButtonBorder;
 using $MetalBorders$Flush3DBorder = ::javax::swing::plaf::metal::MetalBorders$Flush3DBorder;

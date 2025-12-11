@@ -26,7 +26,6 @@ using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 using $AudioFormat$Encoding = ::javax::sound::sampled::AudioFormat$Encoding;
 using $AudioInputStream = ::javax::sound::sampled::AudioInputStream;
 using $AudioSystem = ::javax::sound::sampled::AudioSystem;
-using $FormatConversionProvider = ::javax::sound::sampled::spi::FormatConversionProvider;
 
 namespace com {
 	namespace sun {

@@ -5,13 +5,11 @@
 #include <javax/swing/plaf/basic/BasicComboPopup.h>
 #include <jcpp.h>
 
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ListModel = ::javax::swing::ListModel;
 using $ListDataListener = ::javax::swing::event::ListDataListener;
-using $BasicComboPopup = ::javax::swing::plaf::basic::BasicComboPopup;
 
 namespace javax {
 	namespace swing {

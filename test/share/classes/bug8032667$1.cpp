@@ -27,10 +27,7 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $AbstractButton = ::javax::swing::AbstractButton;
-using $JApplet = ::javax::swing::JApplet;
-using $JCheckBox = ::javax::swing::JCheckBox;
 using $JComponent = ::javax::swing::JComponent;
 using $JToggleButton = ::javax::swing::JToggleButton;
 

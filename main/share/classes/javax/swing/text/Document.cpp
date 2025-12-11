@@ -9,17 +9,9 @@
 #include <javax/swing/text/Segment.h>
 #include <jcpp.h>
 
-using $ElementArray = $Array<::javax::swing::text::Element>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
-using $DocumentListener = ::javax::swing::event::DocumentListener;
-using $UndoableEditListener = ::javax::swing::event::UndoableEditListener;
-using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $Element = ::javax::swing::text::Element;
-using $Position = ::javax::swing::text::Position;
-using $Segment = ::javax::swing::text::Segment;
 
 namespace javax {
 	namespace swing {

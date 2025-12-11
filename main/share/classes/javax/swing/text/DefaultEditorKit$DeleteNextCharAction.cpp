@@ -27,7 +27,6 @@ using $LookAndFeel = ::javax::swing::LookAndFeel;
 using $UIManager = ::javax::swing::UIManager;
 using $BadLocationException = ::javax::swing::text::BadLocationException;
 using $Caret = ::javax::swing::text::Caret;
-using $DefaultEditorKit = ::javax::swing::text::DefaultEditorKit;
 using $Document = ::javax::swing::text::Document;
 using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $TextAction = ::javax::swing::text::TextAction;

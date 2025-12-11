@@ -303,9 +303,7 @@
 using $StackTraceElementArray = $Array<::java::lang::StackTraceElement>;
 using $MotifLookAndFeel = ::com::sun::java::swing::plaf::motif::MotifLookAndFeel;
 using $AWTError = ::java::awt::AWTError;
-using $AWTEvent = ::java::awt::AWTEvent;
 using $AWTException = ::java::awt::AWTException;
-using $AWTPermission = ::java::awt::AWTPermission;
 using $Button = ::java::awt::Button;
 using $Canvas = ::java::awt::Canvas;
 using $Checkbox = ::java::awt::Checkbox;
@@ -330,7 +328,7 @@ using $Image = ::java::awt::Image;
 using $Insets = ::java::awt::Insets;
 using $JobAttributes = ::java::awt::JobAttributes;
 using $Label = ::java::awt::Label;
-using $1List = ::java::awt::List;
+using $List = ::java::awt::List;
 using $Menu = ::java::awt::Menu;
 using $MenuBar = ::java::awt::MenuBar;
 using $MenuItem = ::java::awt::MenuItem;
@@ -340,7 +338,6 @@ using $Point = ::java::awt::Point;
 using $PopupMenu = ::java::awt::PopupMenu;
 using $PrintJob = ::java::awt::PrintJob;
 using $Rectangle = ::java::awt::Rectangle;
-using $RenderingHints = ::java::awt::RenderingHints;
 using $ScrollPane = ::java::awt::ScrollPane;
 using $Scrollbar = ::java::awt::Scrollbar;
 using $SystemColor = ::java::awt::SystemColor;
@@ -368,7 +365,6 @@ using $CanvasPeer = ::java::awt::peer::CanvasPeer;
 using $CheckboxMenuItemPeer = ::java::awt::peer::CheckboxMenuItemPeer;
 using $CheckboxPeer = ::java::awt::peer::CheckboxPeer;
 using $ChoicePeer = ::java::awt::peer::ChoicePeer;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $DesktopPeer = ::java::awt::peer::DesktopPeer;
 using $DialogPeer = ::java::awt::peer::DialogPeer;
 using $FileDialogPeer = ::java::awt::peer::FileDialogPeer;
@@ -418,13 +414,8 @@ using $RuntimeException = ::java::lang::RuntimeException;
 using $SecurityManager = ::java::lang::SecurityManager;
 using $StackTraceElement = ::java::lang::StackTraceElement;
 using $ThreadDeath = ::java::lang::ThreadDeath;
-using $ThreadGroup = ::java::lang::ThreadGroup;
 using $Void = ::java::lang::Void;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AccessController = ::java::security::AccessController;
 using $BasicPermission = ::java::security::BasicPermission;
 using $Permission = ::java::security::Permission;
@@ -437,7 +428,7 @@ using $Collection = ::java::util::Collection;
 using $HashMap = ::java::util::HashMap;
 using $Iterator = ::java::util::Iterator;
 using $LinkedList = ::java::util::LinkedList;
-using $List = ::java::util::List;
+using $1List = ::java::util::List;
 using $Map = ::java::util::Map;
 using $Map$Entry = ::java::util::Map$Entry;
 using $NavigableMap = ::java::util::NavigableMap;
@@ -458,7 +449,6 @@ using $AWTAccessor$ComponentAccessor = ::sun::awt::AWTAccessor$ComponentAccessor
 using $AWTAccessor$EventQueueAccessor = ::sun::awt::AWTAccessor$EventQueueAccessor;
 using $AWTPermissions = ::sun::awt::AWTPermissions;
 using $AppContext = ::sun::awt::AppContext;
-using $ComponentFactory = ::sun::awt::ComponentFactory;
 using $CustomCursor = ::sun::awt::CustomCursor;
 using $DisplayChangedListener = ::sun::awt::DisplayChangedListener;
 using $EmbeddedFrame = ::sun::awt::EmbeddedFrame;
@@ -538,7 +528,6 @@ using $XWM = ::sun::awt::X11::XWM;
 using $XWindow = ::sun::awt::X11::XWindow;
 using $XWindowAttributes = ::sun::awt::X11::XWindowAttributes;
 using $XWindowPeer = ::sun::awt::X11::XWindowPeer;
-using $XWrapperBase = ::sun::awt::X11::XWrapperBase;
 using $XkbAnyEvent = ::sun::awt::X11::XkbAnyEvent;
 using $XkbEvent = ::sun::awt::X11::XkbEvent;
 using $XlibUtil = ::sun::awt::X11::XlibUtil;
@@ -547,7 +536,6 @@ using $X11CustomCursor = ::sun::awt::X11CustomCursor;
 using $X11GraphicsConfig = ::sun::awt::X11GraphicsConfig;
 using $X11GraphicsDevice = ::sun::awt::X11GraphicsDevice;
 using $X11GraphicsEnvironment = ::sun::awt::X11GraphicsEnvironment;
-using $X11InputMethodBase = ::sun::awt::X11InputMethodBase;
 using $X11InputMethodDescriptor = ::sun::awt::X11InputMethodDescriptor;
 using $XSettings = ::sun::awt::XSettings;
 using $DataTransferer = ::sun::awt::datatransfer::DataTransferer;
@@ -1207,7 +1195,7 @@ int64_t XToolkit::getTrayIconDisplayTimeout() {
 	$init(XToolkit);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XToolkit, getTrayIconDisplayTimeout, int64_t);
-	$ret = $invokeNativeStatic(XToolkit, getTrayIconDisplayTimeout);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1215,14 +1203,14 @@ int64_t XToolkit::getTrayIconDisplayTimeout() {
 void XToolkit::initIDs() {
 	$init(XToolkit);
 	$prepareNativeStatic(XToolkit, initIDs, void);
-	$invokeNativeStatic(XToolkit, initIDs);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
 void XToolkit::waitForEvents(int64_t nextTaskTime) {
 	$init(XToolkit);
 	$prepareNativeStatic(XToolkit, waitForEvents, void, int64_t nextTaskTime);
-	$invokeNativeStatic(XToolkit, waitForEvents, nextTaskTime);
+	$invokeNativeStatic(nextTaskTime);
 	$finishNativeStatic();
 }
 
@@ -1247,7 +1235,7 @@ bool XToolkit::isSecurityWarningEnabled() {
 void XToolkit::awt_output_flush() {
 	$init(XToolkit);
 	$prepareNativeStatic(XToolkit, awt_output_flush, void);
-	$invokeNativeStatic(XToolkit, awt_output_flush);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -1259,7 +1247,7 @@ void XToolkit::awtFUnlock() {
 
 void XToolkit::nativeLoadSystemColors($ints* systemColors) {
 	$prepareNative(XToolkit, nativeLoadSystemColors, void, $ints* systemColors);
-	$invokeNative(XToolkit, nativeLoadSystemColors, systemColors);
+	$invokeNative(systemColors);
 	$finishNative();
 }
 
@@ -1373,7 +1361,7 @@ $String* XToolkit::getEnv($String* key) {
 	$init(XToolkit);
 	$var($String, $ret, nullptr);
 	$prepareNativeStatic(XToolkit, getEnv, $String*, $String* key);
-	$assign($ret, $invokeNativeStatic(XToolkit, getEnv, key));
+	$assign($ret, $invokeNativeStaticObject(key));
 	$finishNativeStatic();
 	return $ret;
 }
@@ -1655,7 +1643,7 @@ void XToolkit::processException($Throwable* thr) {
 void XToolkit::awt_toolkit_init() {
 	$init(XToolkit);
 	$prepareNativeStatic(XToolkit, awt_toolkit_init, void);
-	$invokeNativeStatic(XToolkit, awt_toolkit_init);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -2004,7 +1992,7 @@ $LabelPeer* XToolkit::createLabel($Label* target) {
 	return peer;
 }
 
-$ListPeer* XToolkit::createList($1List* target) {
+$ListPeer* XToolkit::createList($List* target) {
 	$var($ListPeer, peer, $new($XListPeer, target));
 	targetCreatedPeer(target, peer);
 	return peer;
@@ -2319,7 +2307,7 @@ int64_t XToolkit::getDefaultXColormap() {
 	$init(XToolkit);
 	int64_t $ret = 0;
 	$prepareNativeStatic(XToolkit, getDefaultXColormap, int64_t);
-	$ret = $invokeNativeStatic(XToolkit, getDefaultXColormap);
+	$ret = $invokeNativeStatic();
 	$finishNativeStatic();
 	return $ret;
 }
@@ -2477,7 +2465,7 @@ void XToolkit::initializeDesktopProperties() {
 int32_t XToolkit::getNumberOfButtonsImpl() {
 	int32_t $ret = 0;
 	$prepareNative(XToolkit, getNumberOfButtonsImpl, int32_t);
-	$ret = $invokeNative(XToolkit, getNumberOfButtonsImpl);
+	$ret = $invokeNative();
 	$finishNative();
 	return $ret;
 }
@@ -2832,7 +2820,7 @@ void XToolkit::remove($Runnable* task) {
 			$var($Collection, values, $nc(XToolkit::timeoutTasks)->values());
 			$var($Iterator, iter, $nc(values)->iterator());
 			while ($nc(iter)->hasNext()) {
-				$var($List, list, $cast($List, iter->next()));
+				$var($1List, list, $cast($1List, iter->next()));
 				bool removed = false;
 				if ($nc(list)->contains(task)) {
 					list->remove($of(task));
@@ -2859,7 +2847,7 @@ void XToolkit::remove($Runnable* task) {
 void XToolkit::wakeup_poll() {
 	$init(XToolkit);
 	$prepareNativeStatic(XToolkit, wakeup_poll, void);
-	$invokeNativeStatic(XToolkit, wakeup_poll);
+	$invokeNativeStatic();
 	$finishNativeStatic();
 }
 
@@ -2889,7 +2877,7 @@ void XToolkit::schedule($Runnable* task, int64_t interval) {
 				$assignStatic(XToolkit::timeoutTasks, $new($TreeMap));
 			}
 			$var($Long, time, $Long::valueOf($System::currentTimeMillis() + interval));
-			$var($List, tasks, $cast($List, $nc(XToolkit::timeoutTasks)->get(time)));
+			$var($1List, tasks, $cast($1List, $nc(XToolkit::timeoutTasks)->get(time)));
 			if (tasks == nullptr) {
 				$assign(tasks, $new($ArrayList, 1));
 				$nc(XToolkit::timeoutTasks)->put(time, tasks);
@@ -2957,7 +2945,7 @@ void XToolkit::callTimeoutTasks() {
 	$var($Long, currentTime, $Long::valueOf($System::currentTimeMillis()));
 	$var($Long, time, $cast($Long, $nc(XToolkit::timeoutTasks)->firstKey()));
 	while ($nc(time)->compareTo(currentTime) <= 0) {
-		$var($List, tasks, $cast($List, $nc(XToolkit::timeoutTasks)->remove(time)));
+		$var($1List, tasks, $cast($1List, $nc(XToolkit::timeoutTasks)->remove(time)));
 		{
 			$var($Iterator, iter, $nc(tasks)->iterator());
 			for (; $nc(iter)->hasNext();) {

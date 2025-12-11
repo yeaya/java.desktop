@@ -26,7 +26,6 @@ using $PropertyChangeListener = ::java::beans::PropertyChangeListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JComponent = ::javax::swing::JComponent;
 using $ComponentUI = ::javax::swing::plaf::ComponentUI;
 using $ViewportUI = ::javax::swing::plaf::ViewportUI;
@@ -36,7 +35,6 @@ using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
 using $SynthLookAndFeel = ::javax::swing::plaf::synth::SynthLookAndFeel;
 using $SynthPainter = ::javax::swing::plaf::synth::SynthPainter;
 using $SynthStyle = ::javax::swing::plaf::synth::SynthStyle;
-using $SynthUI = ::javax::swing::plaf::synth::SynthUI;
 
 namespace javax {
 	namespace swing {

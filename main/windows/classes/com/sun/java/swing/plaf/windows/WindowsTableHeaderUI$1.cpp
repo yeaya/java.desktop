@@ -12,13 +12,9 @@
 #undef NORMAL
 #undef PRESSED
 
-using $TMSchema$StateArray = $Array<::com::sun::java::swing::plaf::windows::TMSchema$State>;
-using $SortOrderArray = $Array<::javax::swing::SortOrder>;
 using $TMSchema$State = ::com::sun::java::swing::plaf::windows::TMSchema$State;
-using $WindowsTableHeaderUI = ::com::sun::java::swing::plaf::windows::WindowsTableHeaderUI;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $NoSuchFieldError = ::java::lang::NoSuchFieldError;

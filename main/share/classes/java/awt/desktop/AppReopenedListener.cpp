@@ -3,8 +3,6 @@
 #include <java/awt/desktop/AppReopenedEvent.h>
 #include <jcpp.h>
 
-using $AppReopenedEvent = ::java::awt::desktop::AppReopenedEvent;
-using $SystemEventListener = ::java::awt::desktop::SystemEventListener;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

@@ -12,7 +12,6 @@
 
 using $Image = ::java::awt::Image;
 using $AbstractMultiResolutionImage = ::java::awt::image::AbstractMultiResolutionImage;
-using $File = ::java::io::File;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -22,8 +21,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractMap = ::java::util::AbstractMap;
 using $HashMap = ::java::util::HashMap;
 using $Map = ::java::util::Map;
-using $Callable = ::java::util::concurrent::Callable;
-using $ShellFolder = ::sun::awt::shell::ShellFolder;
 using $Win32ShellFolder2 = ::sun::awt::shell::Win32ShellFolder2;
 using $Win32ShellFolder2$MultiResolutionIconImage = ::sun::awt::shell::Win32ShellFolder2$MultiResolutionIconImage;
 

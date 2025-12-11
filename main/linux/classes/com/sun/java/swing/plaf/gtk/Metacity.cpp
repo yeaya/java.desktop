@@ -180,7 +180,6 @@ using $BasicInternalFrameTitlePane = ::javax::swing::plaf::basic::BasicInternalF
 using $ColorType = ::javax::swing::plaf::synth::ColorType;
 using $SynthConstants = ::javax::swing::plaf::synth::SynthConstants;
 using $SynthContext = ::javax::swing::plaf::synth::SynthContext;
-using $SynthStyle = ::javax::swing::plaf::synth::SynthStyle;
 using $DocumentBuilder = ::javax::xml::parsers::DocumentBuilder;
 using $DocumentBuilderFactory = ::javax::xml::parsers::DocumentBuilderFactory;
 using $ParserConfigurationException = ::javax::xml::parsers::ParserConfigurationException;

@@ -9,7 +9,6 @@
 
 using $AccessorElementHandler = ::com::sun::beans::decoder::AccessorElementHandler;
 using $DocumentHandler = ::com::sun::beans::decoder::DocumentHandler;
-using $ElementHandler = ::com::sun::beans::decoder::ElementHandler;
 using $FieldFinder = ::com::sun::beans::finder::FieldFinder;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Exception = ::java::lang::Exception;

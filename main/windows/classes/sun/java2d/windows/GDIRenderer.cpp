@@ -25,7 +25,6 @@
 using $Composite = ::java::awt::Composite;
 using $Shape = ::java::awt::Shape;
 using $Stroke = ::java::awt::Stroke;
-using $AffineTransform = ::java::awt::geom::AffineTransform;
 using $Path2D$Float = ::java::awt::geom::Path2D$Float;
 using $ClassCastException = ::java::lang::ClassCastException;
 using $ClassInfo = ::java::lang::ClassInfo;
@@ -33,12 +32,9 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $InvalidPipeException = ::sun::java2d::InvalidPipeException;
 using $SunGraphics2D = ::sun::java2d::SunGraphics2D;
-using $SurfaceData = ::sun::java2d::SurfaceData;
 using $LoopPipe = ::sun::java2d::pipe::LoopPipe;
 using $PixelDrawPipe = ::sun::java2d::pipe::PixelDrawPipe;
-using $PixelFillPipe = ::sun::java2d::pipe::PixelFillPipe;
 using $Region = ::sun::java2d::pipe::Region;
-using $ShapeDrawPipe = ::sun::java2d::pipe::ShapeDrawPipe;
 using $ShapeSpanIterator = ::sun::java2d::pipe::ShapeSpanIterator;
 using $SpanIterator = ::sun::java2d::pipe::SpanIterator;
 using $GDIRenderer$Tracer = ::sun::java2d::windows::GDIRenderer$Tracer;
@@ -151,7 +147,7 @@ void GDIRenderer::init$() {
 
 void GDIRenderer::doDrawLine($GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
 	$prepareNative(GDIRenderer, doDrawLine, void, $GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x1, int32_t y1, int32_t x2, int32_t y2);
-	$invokeNative(GDIRenderer, doDrawLine, sData, clip, comp, color, x1, y1, x2, y2);
+	$invokeNative(sData, clip, comp, color, x1, y1, x2, y2);
 	$finishNative();
 }
 
@@ -168,7 +164,7 @@ void GDIRenderer::drawLine($SunGraphics2D* sg2d, int32_t x1, int32_t y1, int32_t
 
 void GDIRenderer::doDrawRect($GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h) {
 	$prepareNative(GDIRenderer, doDrawRect, void, $GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h);
-	$invokeNative(GDIRenderer, doDrawRect, sData, clip, comp, color, x, y, w, h);
+	$invokeNative(sData, clip, comp, color, x, y, w, h);
 	$finishNative();
 }
 
@@ -183,7 +179,7 @@ void GDIRenderer::drawRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w
 
 void GDIRenderer::doDrawRoundRect($GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h, int32_t arcW, int32_t arcH) {
 	$prepareNative(GDIRenderer, doDrawRoundRect, void, $GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h, int32_t arcW, int32_t arcH);
-	$invokeNative(GDIRenderer, doDrawRoundRect, sData, clip, comp, color, x, y, w, h, arcW, arcH);
+	$invokeNative(sData, clip, comp, color, x, y, w, h, arcW, arcH);
 	$finishNative();
 }
 
@@ -198,7 +194,7 @@ void GDIRenderer::drawRoundRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int3
 
 void GDIRenderer::doDrawOval($GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h) {
 	$prepareNative(GDIRenderer, doDrawOval, void, $GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h);
-	$invokeNative(GDIRenderer, doDrawOval, sData, clip, comp, color, x, y, w, h);
+	$invokeNative(sData, clip, comp, color, x, y, w, h);
 	$finishNative();
 }
 
@@ -213,7 +209,7 @@ void GDIRenderer::drawOval($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w
 
 void GDIRenderer::doDrawArc($GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h, int32_t angleStart, int32_t angleExtent) {
 	$prepareNative(GDIRenderer, doDrawArc, void, $GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h, int32_t angleStart, int32_t angleExtent);
-	$invokeNative(GDIRenderer, doDrawArc, sData, clip, comp, color, x, y, w, h, angleStart, angleExtent);
+	$invokeNative(sData, clip, comp, color, x, y, w, h, angleStart, angleExtent);
 	$finishNative();
 }
 
@@ -228,7 +224,7 @@ void GDIRenderer::drawArc($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t wi
 
 void GDIRenderer::doDrawPoly($GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t transx, int32_t transy, $ints* xpoints, $ints* ypoints, int32_t npoints, bool isclosed) {
 	$prepareNative(GDIRenderer, doDrawPoly, void, $GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t transx, int32_t transy, $ints* xpoints, $ints* ypoints, int32_t npoints, bool isclosed);
-	$invokeNative(GDIRenderer, doDrawPoly, sData, clip, comp, color, transx, transy, xpoints, ypoints, npoints, isclosed);
+	$invokeNative(sData, clip, comp, color, transx, transy, xpoints, ypoints, npoints, isclosed);
 	$finishNative();
 }
 
@@ -252,7 +248,7 @@ void GDIRenderer::drawPolygon($SunGraphics2D* sg2d, $ints* xpoints, $ints* ypoin
 
 void GDIRenderer::doFillRect($GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h) {
 	$prepareNative(GDIRenderer, doFillRect, void, $GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h);
-	$invokeNative(GDIRenderer, doFillRect, sData, clip, comp, color, x, y, w, h);
+	$invokeNative(sData, clip, comp, color, x, y, w, h);
 	$finishNative();
 }
 
@@ -267,7 +263,7 @@ void GDIRenderer::fillRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w
 
 void GDIRenderer::doFillRoundRect($GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h, int32_t arcW, int32_t arcH) {
 	$prepareNative(GDIRenderer, doFillRoundRect, void, $GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h, int32_t arcW, int32_t arcH);
-	$invokeNative(GDIRenderer, doFillRoundRect, sData, clip, comp, color, x, y, w, h, arcW, arcH);
+	$invokeNative(sData, clip, comp, color, x, y, w, h, arcW, arcH);
 	$finishNative();
 }
 
@@ -282,7 +278,7 @@ void GDIRenderer::fillRoundRect($SunGraphics2D* sg2d, int32_t x, int32_t y, int3
 
 void GDIRenderer::doFillOval($GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h) {
 	$prepareNative(GDIRenderer, doFillOval, void, $GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h);
-	$invokeNative(GDIRenderer, doFillOval, sData, clip, comp, color, x, y, w, h);
+	$invokeNative(sData, clip, comp, color, x, y, w, h);
 	$finishNative();
 }
 
@@ -297,7 +293,7 @@ void GDIRenderer::fillOval($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t w
 
 void GDIRenderer::doFillArc($GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h, int32_t angleStart, int32_t angleExtent) {
 	$prepareNative(GDIRenderer, doFillArc, void, $GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t x, int32_t y, int32_t w, int32_t h, int32_t angleStart, int32_t angleExtent);
-	$invokeNative(GDIRenderer, doFillArc, sData, clip, comp, color, x, y, w, h, angleStart, angleExtent);
+	$invokeNative(sData, clip, comp, color, x, y, w, h, angleStart, angleExtent);
 	$finishNative();
 }
 
@@ -312,7 +308,7 @@ void GDIRenderer::fillArc($SunGraphics2D* sg2d, int32_t x, int32_t y, int32_t wi
 
 void GDIRenderer::doFillPoly($GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t transx, int32_t transy, $ints* xpoints, $ints* ypoints, int32_t npoints) {
 	$prepareNative(GDIRenderer, doFillPoly, void, $GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t transx, int32_t transy, $ints* xpoints, $ints* ypoints, int32_t npoints);
-	$invokeNative(GDIRenderer, doFillPoly, sData, clip, comp, color, transx, transy, xpoints, ypoints, npoints);
+	$invokeNative(sData, clip, comp, color, transx, transy, xpoints, ypoints, npoints);
 	$finishNative();
 }
 
@@ -327,7 +323,7 @@ void GDIRenderer::fillPolygon($SunGraphics2D* sg2d, $ints* xpoints, $ints* ypoin
 
 void GDIRenderer::doShape($GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t transX, int32_t transY, $Path2D$Float* p2df, bool isfill) {
 	$prepareNative(GDIRenderer, doShape, void, $GDIWindowSurfaceData* sData, $Region* clip, $Composite* comp, int32_t color, int32_t transX, int32_t transY, $Path2D$Float* p2df, bool isfill);
-	$invokeNative(GDIRenderer, doShape, sData, clip, comp, color, transX, transY, p2df, isfill);
+	$invokeNative(sData, clip, comp, color, transX, transY, p2df, isfill);
 	$finishNative();
 }
 
@@ -403,7 +399,7 @@ void GDIRenderer::fill($SunGraphics2D* sg2d, $Shape* s) {
 
 void GDIRenderer::devCopyArea($GDIWindowSurfaceData* sData, int32_t srcx, int32_t srcy, int32_t dx, int32_t dy, int32_t w, int32_t h) {
 	$prepareNative(GDIRenderer, devCopyArea, void, $GDIWindowSurfaceData* sData, int32_t srcx, int32_t srcy, int32_t dx, int32_t dy, int32_t w, int32_t h);
-	$invokeNative(GDIRenderer, devCopyArea, sData, srcx, srcy, dx, dy, w, h);
+	$invokeNative(sData, srcx, srcy, dx, dy, w, h);
 	$finishNative();
 }
 

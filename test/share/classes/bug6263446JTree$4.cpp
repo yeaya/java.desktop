@@ -10,9 +10,7 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $JTree = ::javax::swing::JTree;
-using $TreePath = ::javax::swing::tree::TreePath;
 
 $MethodInfo _bug6263446JTree$4_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, 0, $method(static_cast<void(bug6263446JTree$4::*)()>(&bug6263446JTree$4::init$))},

@@ -1,0 +1,124 @@
+//$ module java.desktop
+::java::lang::RequiresDirective _java$desktop_ModuleInfo_Requires_[] = {
+    {"java.base", ""},
+    {"java.prefs", ""},
+    {"java.datatransfer", "TRANSITIVE"},
+    {"java.xml", "TRANSITIVE"},
+    {}
+};
+
+::java::lang::ExportsDirective _java$desktop_ModuleInfo_Exports_[] = {
+    {"java.applet", nullptr},
+    {"java.awt", nullptr},
+    {"java.awt.color", nullptr},
+    {"java.awt.desktop", nullptr},
+    {"java.awt.dnd", nullptr},
+    {"java.awt.event", nullptr},
+    {"java.awt.font", nullptr},
+    {"java.awt.geom", nullptr},
+    {"java.awt.im", nullptr},
+    {"java.awt.im.spi", nullptr},
+    {"java.awt.image", nullptr},
+    {"java.awt.image.renderable", nullptr},
+    {"java.awt.print", nullptr},
+    {"java.beans", nullptr},
+    {"java.beans.beancontext", nullptr},
+    {"javax.accessibility", nullptr},
+    {"javax.imageio", nullptr},
+    {"javax.imageio.event", nullptr},
+    {"javax.imageio.metadata", nullptr},
+    {"javax.imageio.plugins.bmp", nullptr},
+    {"javax.imageio.plugins.jpeg", nullptr},
+    {"javax.imageio.plugins.tiff", nullptr},
+    {"javax.imageio.spi", nullptr},
+    {"javax.imageio.stream", nullptr},
+    {"javax.print", nullptr},
+    {"javax.print.attribute", nullptr},
+    {"javax.print.attribute.standard", nullptr},
+    {"javax.print.event", nullptr},
+    {"javax.sound.midi", nullptr},
+    {"javax.sound.midi.spi", nullptr},
+    {"javax.sound.sampled", nullptr},
+    {"javax.sound.sampled.spi", nullptr},
+    {"javax.swing", nullptr},
+    {"javax.swing.border", nullptr},
+    {"javax.swing.colorchooser", nullptr},
+    {"javax.swing.event", nullptr},
+    {"javax.swing.filechooser", nullptr},
+    {"javax.swing.plaf", nullptr},
+    {"javax.swing.plaf.basic", nullptr},
+    {"javax.swing.plaf.metal", nullptr},
+    {"javax.swing.plaf.multi", nullptr},
+    {"javax.swing.plaf.nimbus", nullptr},
+    {"javax.swing.plaf.synth", nullptr},
+    {"javax.swing.table", nullptr},
+    {"javax.swing.text", nullptr},
+    {"javax.swing.text.html", nullptr},
+    {"javax.swing.text.html.parser", nullptr},
+    {"javax.swing.text.rtf", nullptr},
+    {"javax.swing.tree", nullptr},
+    {"javax.swing.undo", nullptr},
+    {"sun.awt", "jdk.accessibility,jdk.unsupported.desktop"},
+    {"java.awt.dnd.peer", "jdk.unsupported.desktop"},
+    {"sun.awt.dnd", "jdk.unsupported.desktop"},
+    {"sun.swing", "jdk.unsupported.desktop"},
+    {"com.sun.java.swing.plaf.windows", nullptr},
+    {"sun.swing.table", nullptr},
+    {"sun.awt.shell", nullptr},
+    {"sun.swing.plaf.synth", nullptr},
+    {"com.sun.java.swing.plaf.motif", nullptr},
+    {}
+};
+
+::java::lang::OpensDirective _java$desktop_ModuleInfo_Opens_[] = {
+    {"javax.swing.plaf.basic", "jdk.jconsole"},
+    {}
+};
+
+::java::lang::UsesDirective _java$desktop_ModuleInfo_Uses_[] = {
+    {"java.awt.im.spi.InputMethodDescriptor"},
+    {"javax.accessibility.AccessibilityProvider"},
+    {"javax.imageio.spi.ImageInputStreamSpi"},
+    {"javax.imageio.spi.ImageOutputStreamSpi"},
+    {"javax.imageio.spi.ImageReaderSpi"},
+    {"javax.imageio.spi.ImageTranscoderSpi"},
+    {"javax.imageio.spi.ImageWriterSpi"},
+    {"javax.print.PrintServiceLookup"},
+    {"javax.print.StreamPrintServiceFactory"},
+    {"javax.sound.midi.spi.MidiDeviceProvider"},
+    {"javax.sound.midi.spi.MidiFileReader"},
+    {"javax.sound.midi.spi.MidiFileWriter"},
+    {"javax.sound.midi.spi.SoundbankReader"},
+    {"javax.sound.sampled.spi.AudioFileReader"},
+    {"javax.sound.sampled.spi.AudioFileWriter"},
+    {"javax.sound.sampled.spi.FormatConversionProvider"},
+    {"javax.sound.sampled.spi.MixerProvider"},
+    {"sun.swing.InteropProvider"},
+    {}
+};
+
+::java::lang::ProvidesDirective _java$desktop_ModuleInfo_Provides_[] = {
+    {"sun.datatransfer.DesktopDatatransferService", "sun.awt.datatransfer.DesktopDatatransferServiceImpl"},
+    {"java.net.ContentHandlerFactory", "sun.awt.www.content.MultimediaContentHandlers"},
+    {"javax.print.PrintServiceLookup", "sun.print.PrintServiceLookupProvider"},
+    {"javax.print.StreamPrintServiceFactory", "sun.print.PSStreamPrinterFactory"},
+    {"javax.sound.midi.spi.MidiDeviceProvider", "com.sun.media.sound.MidiInDeviceProvider,com.sun.media.sound.MidiOutDeviceProvider,com.sun.media.sound.RealTimeSequencerProvider,com.sun.media.sound.SoftProvider"},
+    {"javax.sound.midi.spi.MidiFileReader", "com.sun.media.sound.StandardMidiFileReader"},
+    {"javax.sound.midi.spi.MidiFileWriter", "com.sun.media.sound.StandardMidiFileWriter"},
+    {"javax.sound.midi.spi.SoundbankReader", "com.sun.media.sound.AudioFileSoundbankReader,com.sun.media.sound.DLSSoundbankReader,com.sun.media.sound.JARSoundbankReader,com.sun.media.sound.SF2SoundbankReader"},
+    {"javax.sound.sampled.spi.AudioFileReader", "com.sun.media.sound.AiffFileReader,com.sun.media.sound.AuFileReader,com.sun.media.sound.SoftMidiAudioFileReader,com.sun.media.sound.WaveFileReader,com.sun.media.sound.WaveFloatFileReader,com.sun.media.sound.WaveExtensibleFileReader"},
+    {"javax.sound.sampled.spi.AudioFileWriter", "com.sun.media.sound.AiffFileWriter,com.sun.media.sound.AuFileWriter,com.sun.media.sound.WaveFileWriter,com.sun.media.sound.WaveFloatFileWriter"},
+    {"javax.sound.sampled.spi.FormatConversionProvider", "com.sun.media.sound.AlawCodec,com.sun.media.sound.AudioFloatFormatConverter,com.sun.media.sound.PCMtoPCMCodec,com.sun.media.sound.UlawCodec"},
+    {"javax.sound.sampled.spi.MixerProvider", "com.sun.media.sound.DirectAudioDeviceProvider,com.sun.media.sound.PortMixerProvider"},
+    {}
+};
+
+::java::lang::ModuleInfo _java$desktop_ModuleInfo_ = {
+    "java.desktop",
+    false,
+    _java$desktop_ModuleInfo_Requires_,
+    _java$desktop_ModuleInfo_Exports_,
+    _java$desktop_ModuleInfo_Opens_,
+    _java$desktop_ModuleInfo_Uses_,
+    _java$desktop_ModuleInfo_Provides_
+};

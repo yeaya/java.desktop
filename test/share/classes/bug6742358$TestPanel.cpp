@@ -25,7 +25,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $BoxLayout = ::javax::swing::BoxLayout;
 using $JComponent = ::javax::swing::JComponent;
 using $JPanel = ::javax::swing::JPanel;
-using $JSlider = ::javax::swing::JSlider;
 
 $MethodInfo _bug6742358$TestPanel_MethodInfo_[] = {
 	{"<init>", "()V", nullptr, $PRIVATE, $method(static_cast<void(bug6742358$TestPanel::*)()>(&bug6742358$TestPanel::init$))},

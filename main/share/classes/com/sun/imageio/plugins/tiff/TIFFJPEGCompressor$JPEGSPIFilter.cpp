@@ -4,13 +4,10 @@
 #include <javax/imageio/spi/ImageReaderSpi.h>
 #include <jcpp.h>
 
-using $TIFFJPEGCompressor = ::com::sun::imageio::plugins::tiff::TIFFJPEGCompressor;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ImageReaderSpi = ::javax::imageio::spi::ImageReaderSpi;
-using $ImageReaderWriterSpi = ::javax::imageio::spi::ImageReaderWriterSpi;
-using $ServiceRegistry$Filter = ::javax::imageio::spi::ServiceRegistry$Filter;
 
 namespace com {
 	namespace sun {

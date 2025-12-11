@@ -26,7 +26,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $CharToGlyphMapper = ::sun::font::CharToGlyphMapper;
 using $CompositeFont = ::sun::font::CompositeFont;
-using $Font2D = ::sun::font::Font2D;
 using $FontUtilities = ::sun::font::FontUtilities;
 using $PhysicalFont = ::sun::font::PhysicalFont;
 

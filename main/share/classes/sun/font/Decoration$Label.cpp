@@ -7,14 +7,9 @@
 #include <sun/font/Decoration.h>
 #include <jcpp.h>
 
-using $Graphics2D = ::java::awt::Graphics2D;
-using $Shape = ::java::awt::Shape;
-using $Rectangle2D = ::java::awt::geom::Rectangle2D;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CoreMetrics = ::sun::font::CoreMetrics;
-using $Decoration = ::sun::font::Decoration;
 
 namespace sun {
 	namespace font {

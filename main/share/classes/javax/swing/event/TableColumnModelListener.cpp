@@ -7,10 +7,6 @@
 
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventListener = ::java::util::EventListener;
-using $ChangeEvent = ::javax::swing::event::ChangeEvent;
-using $ListSelectionEvent = ::javax::swing::event::ListSelectionEvent;
-using $TableColumnModelEvent = ::javax::swing::event::TableColumnModelEvent;
 
 namespace javax {
 	namespace swing {

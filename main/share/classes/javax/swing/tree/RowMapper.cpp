@@ -3,7 +3,6 @@
 #include <javax/swing/tree/TreePath.h>
 #include <jcpp.h>
 
-using $TreePathArray = $Array<::javax::swing::tree::TreePath>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

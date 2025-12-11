@@ -5,7 +5,6 @@
 #include <javax/swing/JTable.h>
 #include <jcpp.h>
 
-using $bug8031971 = ::bug8031971;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

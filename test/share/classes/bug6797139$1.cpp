@@ -7,7 +7,6 @@
 #include <javax/swing/plaf/basic/BasicButtonUI.h>
 #include <jcpp.h>
 
-using $bug6797139 = ::bug6797139;
 using $Graphics = ::java::awt::Graphics;
 using $Rectangle = ::java::awt::Rectangle;
 using $ClassInfo = ::java::lang::ClassInfo;

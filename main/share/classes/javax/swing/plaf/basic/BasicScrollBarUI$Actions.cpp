@@ -19,7 +19,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $JScrollBar = ::javax::swing::JScrollBar;
 using $BasicScrollBarUI = ::javax::swing::plaf::basic::BasicScrollBarUI;
 using $UIAction = ::sun::swing::UIAction;

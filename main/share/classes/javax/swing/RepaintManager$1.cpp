@@ -9,7 +9,6 @@ using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RepaintManager = ::javax::swing::RepaintManager;
-using $SwingAccessor$RepaintManagerAccessor = ::sun::swing::SwingAccessor$RepaintManagerAccessor;
 using $SwingUtilities2$RepaintListener = ::sun::swing::SwingUtilities2$RepaintListener;
 
 namespace javax {

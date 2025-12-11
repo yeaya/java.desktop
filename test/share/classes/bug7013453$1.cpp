@@ -15,7 +15,6 @@
 #include <javax/swing/RepaintManager.h>
 #include <jcpp.h>
 
-using $bug7013453 = ::bug7013453;
 using $bug7013453$1$1 = ::bug7013453$1$1;
 using $PrintStream = ::java::io::PrintStream;
 using $ClassInfo = ::java::lang::ClassInfo;

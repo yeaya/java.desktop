@@ -40,17 +40,14 @@
 #undef VK_ENTER
 #undef WHEN_IN_FOCUSED_WINDOW
 
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $KeyEvent = ::java::awt::event::KeyEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $Action = ::javax::swing::Action;
 using $ActionMap = ::javax::swing::ActionMap;
 using $ComboBoxEditor = ::javax::swing::ComboBoxEditor;

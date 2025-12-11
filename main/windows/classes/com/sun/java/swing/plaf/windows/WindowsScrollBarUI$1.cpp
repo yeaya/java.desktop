@@ -10,8 +10,6 @@
 #include <jcpp.h>
 
 using $WindowsScrollBarUI = ::com::sun::java::swing::plaf::windows::WindowsScrollBarUI;
-using $Component = ::java::awt::Component;
-using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseEvent = ::java::awt::event::MouseEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;

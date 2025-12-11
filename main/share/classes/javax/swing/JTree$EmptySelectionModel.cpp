@@ -14,7 +14,6 @@ using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $JTree = ::javax::swing::JTree;
 using $TreeSelectionListener = ::javax::swing::event::TreeSelectionListener;
 using $DefaultTreeSelectionModel = ::javax::swing::tree::DefaultTreeSelectionModel;
 using $RowMapper = ::javax::swing::tree::RowMapper;

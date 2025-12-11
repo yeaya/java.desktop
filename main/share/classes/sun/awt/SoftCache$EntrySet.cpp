@@ -17,7 +17,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $AbstractSet = ::java::util::AbstractSet;
 using $Iterator = ::java::util::Iterator;
 using $Map = ::java::util::Map;
-using $Map$Entry = ::java::util::Map$Entry;
 using $Set = ::java::util::Set;
 using $SoftCache = ::sun::awt::SoftCache;
 using $SoftCache$Entry = ::sun::awt::SoftCache$Entry;

@@ -55,12 +55,10 @@ using $ColorModel = ::java::awt::image::ColorModel;
 using $VolatileImage = ::java::awt::image::VolatileImage;
 using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ContainerPeer = ::java::awt::peer::ContainerPeer;
-using $FramePeer = ::java::awt::peer::FramePeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $UnsupportedOperationException = ::java::lang::UnsupportedOperationException;
-using $EmbeddedFrame = ::sun::awt::EmbeddedFrame;
 using $NullComponentPeer = ::sun::awt::NullComponentPeer;
 using $Region = ::sun::java2d::pipe::Region;
 

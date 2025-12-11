@@ -23,7 +23,6 @@
 #undef PRESSED
 
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
-using $Component = ::java::awt::Component;
 using $Boolean = ::java::lang::Boolean;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
@@ -36,7 +35,6 @@ using $AbstractButton = ::javax::swing::AbstractButton;
 using $AbstractButton$AccessibleAbstractButton = ::javax::swing::AbstractButton$AccessibleAbstractButton;
 using $ButtonModel = ::javax::swing::ButtonModel;
 using $JMenuItem = ::javax::swing::JMenuItem;
-using $MenuElement = ::javax::swing::MenuElement;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
 using $ChangeEvent = ::javax::swing::event::ChangeEvent;
 using $ChangeListener = ::javax::swing::event::ChangeListener;

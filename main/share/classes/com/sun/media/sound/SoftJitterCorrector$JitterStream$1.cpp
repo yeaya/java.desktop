@@ -10,7 +10,6 @@
 
 #undef MAX_VALUE
 
-using $byteArray2 = $Array<int8_t, 2>;
 using $SoftJitterCorrector$JitterStream = ::com::sun::media::sound::SoftJitterCorrector$JitterStream;
 using $EOFException = ::java::io::EOFException;
 using $IOException = ::java::io::IOException;
@@ -22,7 +21,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $InterruptedException = ::java::lang::InterruptedException;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $AudioFormat = ::javax::sound::sampled::AudioFormat;
 using $AudioInputStream = ::javax::sound::sampled::AudioInputStream;
 

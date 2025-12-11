@@ -14,16 +14,13 @@
 using $AWTEvent = ::java::awt::AWTEvent;
 using $CheckboxMenuItem = ::java::awt::CheckboxMenuItem;
 using $ItemSelectable = ::java::awt::ItemSelectable;
-using $MenuItem = ::java::awt::MenuItem;
 using $ItemEvent = ::java::awt::event::ItemEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $EnclosingMethodInfo = ::java::lang::EnclosingMethodInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Runnable = ::java::lang::Runnable;
 using $WCheckboxMenuItemPeer = ::sun::awt::windows::WCheckboxMenuItemPeer;
-using $WMenuItemPeer = ::sun::awt::windows::WMenuItemPeer;
 
 namespace sun {
 	namespace awt {

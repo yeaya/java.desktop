@@ -24,7 +24,6 @@ using $AbstractCollection = ::java::util::AbstractCollection;
 using $AbstractList = ::java::util::AbstractList;
 using $ArrayList = ::java::util::ArrayList;
 using $Collection = ::java::util::Collection;
-using $EnumSyntax = ::javax::print::attribute::EnumSyntax;
 using $MediaTray = ::javax::print::attribute::standard::MediaTray;
 
 namespace sun {

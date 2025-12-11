@@ -67,12 +67,10 @@
 #undef Y_AXIS
 
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
-using $AWTEvent = ::java::awt::AWTEvent;
 using $Color = ::java::awt::Color;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $Dimension = ::java::awt::Dimension;
-using $Font = ::java::awt::Font;
 using $GraphicsConfiguration = ::java::awt::GraphicsConfiguration;
 using $Insets = ::java::awt::Insets;
 using $LayoutManager = ::java::awt::LayoutManager;
@@ -81,7 +79,6 @@ using $Point = ::java::awt::Point;
 using $Rectangle = ::java::awt::Rectangle;
 using $Toolkit = ::java::awt::Toolkit;
 using $ActionListener = ::java::awt::event::ActionListener;
-using $InputEvent = ::java::awt::event::InputEvent;
 using $ItemListener = ::java::awt::event::ItemListener;
 using $KeyListener = ::java::awt::event::KeyListener;
 using $MouseEvent = ::java::awt::event::MouseEvent;
@@ -94,7 +91,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Math = ::java::lang::Math;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $BoxLayout = ::javax::swing::BoxLayout;
@@ -109,7 +105,6 @@ using $JScrollPane = ::javax::swing::JScrollPane;
 using $ListCellRenderer = ::javax::swing::ListCellRenderer;
 using $ListModel = ::javax::swing::ListModel;
 using $ListSelectionModel = ::javax::swing::ListSelectionModel;
-using $MenuElement = ::javax::swing::MenuElement;
 using $MenuSelectionManager = ::javax::swing::MenuSelectionManager;
 using $ScrollPaneConstants = ::javax::swing::ScrollPaneConstants;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
@@ -124,7 +119,6 @@ using $BasicComboPopup$1 = ::javax::swing::plaf::basic::BasicComboPopup$1;
 using $BasicComboPopup$AutoScrollActionHandler = ::javax::swing::plaf::basic::BasicComboPopup$AutoScrollActionHandler;
 using $BasicComboPopup$EmptyListModelClass = ::javax::swing::plaf::basic::BasicComboPopup$EmptyListModelClass;
 using $BasicComboPopup$Handler = ::javax::swing::plaf::basic::BasicComboPopup$Handler;
-using $ComboPopup = ::javax::swing::plaf::basic::ComboPopup;
 using $AWTAccessor = ::sun::awt::AWTAccessor;
 using $AWTAccessor$MouseEventAccessor = ::sun::awt::AWTAccessor$MouseEventAccessor;
 

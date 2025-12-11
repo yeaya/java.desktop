@@ -9,7 +9,6 @@
 #undef TRANSLUCENT
 
 using $GraphicsDevice$WindowTranslucencyArray = $Array<::java::awt::GraphicsDevice$WindowTranslucency>;
-using $GraphicsDevice = ::java::awt::GraphicsDevice;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;

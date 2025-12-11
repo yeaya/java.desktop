@@ -35,7 +35,6 @@
 #undef TREE
 
 using $Component = ::java::awt::Component;
-using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $Point = ::java::awt::Point;
 using $PropertyChangeEvent = ::java::beans::PropertyChangeEvent;
 using $Boolean = ::java::lang::Boolean;

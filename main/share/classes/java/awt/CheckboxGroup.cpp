@@ -4,7 +4,6 @@
 #include <jcpp.h>
 
 using $Checkbox = ::java::awt::Checkbox;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $FieldInfo = ::java::lang::FieldInfo;

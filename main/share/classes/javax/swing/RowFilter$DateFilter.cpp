@@ -9,13 +9,11 @@
 #include <jcpp.h>
 
 using $ClassInfo = ::java::lang::ClassInfo;
-using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Date = ::java::util::Date;
-using $RowFilter = ::javax::swing::RowFilter;
 using $RowFilter$1 = ::javax::swing::RowFilter$1;
 using $RowFilter$ComparisonType = ::javax::swing::RowFilter$ComparisonType;
 using $RowFilter$Entry = ::javax::swing::RowFilter$Entry;

@@ -101,8 +101,6 @@
 #undef WIDTH
 
 using $ActionArray = $Array<::javax::swing::Action>;
-using $ElementArray = $Array<::javax::swing::text::Element>;
-using $Component = ::java::awt::Component;
 using $Cursor = ::java::awt::Cursor;
 using $MouseAdapter = ::java::awt::event::MouseAdapter;
 using $MouseListener = ::java::awt::event::MouseListener;
@@ -123,7 +121,6 @@ using $URL = ::java::net::URL;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Enumeration = ::java::util::Enumeration;
-using $Accessible = ::javax::accessibility::Accessible;
 using $AccessibleContext = ::javax::accessibility::AccessibleContext;
 using $AbstractAction = ::javax::swing::AbstractAction;
 using $Action = ::javax::swing::Action;
@@ -140,7 +137,6 @@ using $JTextComponent = ::javax::swing::text::JTextComponent;
 using $MutableAttributeSet = ::javax::swing::text::MutableAttributeSet;
 using $Style = ::javax::swing::text::Style;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
-using $StyleContext = ::javax::swing::text::StyleContext;
 using $StyledDocument = ::javax::swing::text::StyledDocument;
 using $StyledEditorKit = ::javax::swing::text::StyledEditorKit;
 using $StyledEditorKit$StyledTextAction = ::javax::swing::text::StyledEditorKit$StyledTextAction;

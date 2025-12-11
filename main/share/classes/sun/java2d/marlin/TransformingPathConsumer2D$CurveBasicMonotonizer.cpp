@@ -13,10 +13,8 @@ using $Double = ::java::lang::Double;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Curve = ::sun::java2d::marlin::Curve;
 using $Helpers = ::sun::java2d::marlin::Helpers;
 using $RendererContext = ::sun::java2d::marlin::RendererContext;
-using $TransformingPathConsumer2D = ::sun::java2d::marlin::TransformingPathConsumer2D;
 
 namespace sun {
 	namespace java2d {

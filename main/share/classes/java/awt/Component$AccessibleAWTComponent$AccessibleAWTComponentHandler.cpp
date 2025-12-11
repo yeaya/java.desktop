@@ -11,11 +11,9 @@
 #undef ACCESSIBLE_STATE_PROPERTY
 #undef VISIBLE
 
-using $Component = ::java::awt::Component;
 using $Component$AccessibleAWTComponent = ::java::awt::Component$AccessibleAWTComponent;
 using $ComponentEvent = ::java::awt::event::ComponentEvent;
 using $ComponentListener = ::java::awt::event::ComponentListener;
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;

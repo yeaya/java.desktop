@@ -3,8 +3,6 @@
 #include <java/awt/Insets.h>
 #include <jcpp.h>
 
-using $Insets = ::java::awt::Insets;
-using $ComponentPeer = ::java::awt::peer::ComponentPeer;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 

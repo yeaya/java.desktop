@@ -8,13 +8,9 @@
 
 #undef HINTS_OBSERVED
 
-using $RenderingHints = ::java::awt::RenderingHints;
-using $RenderedImage = ::java::awt::image::RenderedImage;
-using $RenderContext = ::java::awt::image::renderable::RenderContext;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Vector = ::java::util::Vector;
 
 namespace java {
 	namespace awt {

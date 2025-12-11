@@ -27,7 +27,6 @@ using $JComponent = ::javax::swing::JComponent;
 using $JFileChooser = ::javax::swing::JFileChooser;
 using $JLabel = ::javax::swing::JLabel;
 using $JList = ::javax::swing::JList;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 using $MetalFileChooserUI = ::javax::swing::plaf::metal::MetalFileChooserUI;
 using $MetalFileChooserUI$DirectoryComboBoxModel = ::javax::swing::plaf::metal::MetalFileChooserUI$DirectoryComboBoxModel;
 using $MetalFileChooserUI$IndentIcon = ::javax::swing::plaf::metal::MetalFileChooserUI$IndentIcon;

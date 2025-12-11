@@ -313,7 +313,6 @@
 #undef VIEWPORT
 #undef WARNINGICON_ENABLED
 
-using $NimbusDefaults$LazyStyle$PartArray = $Array<::javax::swing::plaf::nimbus::NimbusDefaults$LazyStyle$Part>;
 using $Color = ::java::awt::Color;
 using $Dimension = ::java::awt::Dimension;
 using $Font = ::java::awt::Font;

@@ -15,7 +15,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $IllegalArgumentException = ::java::lang::IllegalArgumentException;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Arrays = ::java::util::Arrays;
-using $List = ::java::util::List;
 using $Locale = ::java::util::Locale;
 using $FileFilter = ::javax::swing::filechooser::FileFilter;
 

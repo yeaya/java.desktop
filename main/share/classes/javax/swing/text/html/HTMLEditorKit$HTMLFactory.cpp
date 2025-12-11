@@ -101,10 +101,9 @@ using $FlowView = ::javax::swing::text::FlowView;
 using $GlyphView = ::javax::swing::text::GlyphView;
 using $IconView = ::javax::swing::text::IconView;
 using $LabelView = ::javax::swing::text::LabelView;
-using $1ParagraphView = ::javax::swing::text::ParagraphView;
+using $ParagraphView = ::javax::swing::text::ParagraphView;
 using $StyleConstants = ::javax::swing::text::StyleConstants;
 using $View = ::javax::swing::text::View;
-using $ViewFactory = ::javax::swing::text::ViewFactory;
 using $BRView = ::javax::swing::text::html::BRView;
 using $BlockView = ::javax::swing::text::html::BlockView;
 using $CSS$Attribute = ::javax::swing::text::html::CSS$Attribute;
@@ -117,7 +116,6 @@ using $HRuleView = ::javax::swing::text::html::HRuleView;
 using $HTML$Attribute = ::javax::swing::text::html::HTML$Attribute;
 using $HTML$Tag = ::javax::swing::text::html::HTML$Tag;
 using $HTML$UnknownTag = ::javax::swing::text::html::HTML$UnknownTag;
-using $HTMLEditorKit = ::javax::swing::text::html::HTMLEditorKit;
 using $HTMLEditorKit$HTMLFactory$1 = ::javax::swing::text::html::HTMLEditorKit$HTMLFactory$1;
 using $HTMLEditorKit$HTMLFactory$BodyBlockView = ::javax::swing::text::html::HTMLEditorKit$HTMLFactory$BodyBlockView;
 using $HiddenTagView = ::javax::swing::text::html::HiddenTagView;
@@ -128,7 +126,7 @@ using $LineView = ::javax::swing::text::html::LineView;
 using $ListView = ::javax::swing::text::html::ListView;
 using $NoFramesView = ::javax::swing::text::html::NoFramesView;
 using $ObjectView = ::javax::swing::text::html::ObjectView;
-using $ParagraphView = ::javax::swing::text::html::ParagraphView;
+using $1ParagraphView = ::javax::swing::text::html::ParagraphView;
 using $TableView = ::javax::swing::text::html::TableView;
 
 namespace javax {
@@ -191,10 +189,10 @@ $View* HTMLEditorKit$HTMLFactory::create($Element* elem) {
 				if ((ws != nullptr) && ws->equals("pre"_s)) {
 					return $new($LineView, elem);
 				}
-				return $new($ParagraphView, elem);
+				return $new($1ParagraphView, elem);
 			} else {
 				if ((kind == $HTML$Tag::P) || (kind == $HTML$Tag::H1) || (kind == $HTML$Tag::H2) || (kind == $HTML$Tag::H3) || (kind == $HTML$Tag::H4) || (kind == $HTML$Tag::H5) || (kind == $HTML$Tag::H6) || (kind == $HTML$Tag::DT)) {
-					return $new($ParagraphView, elem);
+					return $new($1ParagraphView, elem);
 				} else {
 					if ((kind == $HTML$Tag::MENU) || (kind == $HTML$Tag::DIR) || (kind == $HTML$Tag::UL) || (kind == $HTML$Tag::OL)) {
 						return $new($ListView, elem);
@@ -283,7 +281,7 @@ $View* HTMLEditorKit$HTMLFactory::create($Element* elem) {
 			return $new($LabelView, elem);
 		} else {
 			if (nm->equals($AbstractDocument::ParagraphElementName)) {
-				return $new($ParagraphView, elem);
+				return $new($1ParagraphView, elem);
 			} else {
 				if (nm->equals($AbstractDocument::SectionElementName)) {
 					return $new($BoxView, elem, $View::Y_AXIS);

@@ -11,7 +11,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Arrays = ::java::util::Arrays;
 using $AttributeSet = ::javax::swing::text::AttributeSet;
-using $DefaultStyledDocument = ::javax::swing::text::DefaultStyledDocument;
 
 namespace javax {
 	namespace swing {

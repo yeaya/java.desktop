@@ -5,14 +5,10 @@
 #include <sun/font/FontConfigManager.h>
 #include <jcpp.h>
 
-using $FontConfigManager$FontConfigFontArray = $Array<::sun::font::FontConfigManager$FontConfigFont>;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $CompositeFont = ::sun::font::CompositeFont;
-using $FontConfigManager = ::sun::font::FontConfigManager;
-using $FontConfigManager$FontConfigFont = ::sun::font::FontConfigManager$FontConfigFont;
 
 namespace sun {
 	namespace font {

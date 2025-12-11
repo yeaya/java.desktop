@@ -14,7 +14,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $ReferenceQueue = ::java::lang::ref::ReferenceQueue;
 using $SoftReference = ::java::lang::ref::SoftReference;
-using $ImageCache = ::sun::awt::image::ImageCache;
 using $ImageCache$PixelsKey = ::sun::awt::image::ImageCache$PixelsKey;
 
 namespace sun {

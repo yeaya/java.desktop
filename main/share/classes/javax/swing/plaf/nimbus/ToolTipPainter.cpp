@@ -21,7 +21,6 @@
 #undef BACKGROUND_DISABLED
 #undef BACKGROUND_ENABLED
 
-using $Color = ::java::awt::Color;
 using $Graphics2D = ::java::awt::Graphics2D;
 using $Paint = ::java::awt::Paint;
 using $Shape = ::java::awt::Shape;

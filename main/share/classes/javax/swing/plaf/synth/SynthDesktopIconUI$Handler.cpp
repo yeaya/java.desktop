@@ -9,14 +9,11 @@
 #include <jcpp.h>
 
 using $ActionEvent = ::java::awt::event::ActionEvent;
-using $ActionListener = ::java::awt::event::ActionListener;
 using $PropertyVetoException = ::java::beans::PropertyVetoException;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
-using $AbstractButton = ::javax::swing::AbstractButton;
 using $JInternalFrame = ::javax::swing::JInternalFrame;
 using $JToggleButton = ::javax::swing::JToggleButton;
 using $SynthDesktopIconUI = ::javax::swing::plaf::synth::SynthDesktopIconUI;

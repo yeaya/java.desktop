@@ -12,7 +12,6 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $RuntimeException = ::java::lang::RuntimeException;
 using $ListSelectionEvent = ::javax::swing::event::ListSelectionEvent;
-using $ListSelectionListener = ::javax::swing::event::ListSelectionListener;
 
 $FieldInfo _bug7027139$1$1_FieldInfo_[] = {
 	{"this$0", "Lbug7027139$1;", nullptr, $FINAL | $SYNTHETIC, $field(bug7027139$1$1, this$0)},

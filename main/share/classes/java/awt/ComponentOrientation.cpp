@@ -11,7 +11,6 @@
 #undef UNKNOWN
 #undef UNK_BIT
 
-using $Serializable = ::java::io::Serializable;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $CompoundAttribute = ::java::lang::CompoundAttribute;
 using $Exception = ::java::lang::Exception;

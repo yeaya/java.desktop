@@ -4,7 +4,6 @@
 #include <javax/swing/GrayFilter.h>
 #include <jcpp.h>
 
-using $ImageFilter = ::java::awt::image::ImageFilter;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $GrayFilter = ::javax::swing::GrayFilter;

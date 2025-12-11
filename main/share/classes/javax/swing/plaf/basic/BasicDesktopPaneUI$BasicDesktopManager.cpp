@@ -9,7 +9,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $DefaultDesktopManager = ::javax::swing::DefaultDesktopManager;
-using $UIResource = ::javax::swing::plaf::UIResource;
 using $BasicDesktopPaneUI = ::javax::swing::plaf::basic::BasicDesktopPaneUI;
 
 namespace javax {

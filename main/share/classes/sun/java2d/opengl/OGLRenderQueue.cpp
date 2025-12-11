@@ -24,11 +24,7 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Runnable = ::java::lang::Runnable;
-using $CallSite = ::java::lang::invoke::CallSite;
-using $LambdaMetafactory = ::java::lang::invoke::LambdaMetafactory;
 using $MethodHandle = ::java::lang::invoke::MethodHandle;
-using $MethodHandles$Lookup = ::java::lang::invoke::MethodHandles$Lookup;
-using $MethodType = ::java::lang::invoke::MethodType;
 using $AccessController = ::java::security::AccessController;
 using $PrivilegedAction = ::java::security::PrivilegedAction;
 using $Set = ::java::util::Set;
@@ -225,7 +221,7 @@ void OGLRenderQueue::flushAndInvokeNow($Runnable* r) {
 
 void OGLRenderQueue::flushBuffer(int64_t buf, int32_t limit) {
 	$prepareNative(OGLRenderQueue, flushBuffer, void, int64_t buf, int32_t limit);
-	$invokeNative(OGLRenderQueue, flushBuffer, buf, limit);
+	$invokeNative(buf, limit);
 	$finishNative();
 }
 

@@ -18,7 +18,6 @@ using $MethodInfo = ::java::lang::MethodInfo;
 using $InputVerifier = ::javax::swing::InputVerifier;
 using $JComponent = ::javax::swing::JComponent;
 using $SwingUtilities = ::javax::swing::SwingUtilities;
-using $RequestFocusController = ::sun::awt::RequestFocusController;
 
 namespace javax {
 	namespace swing {

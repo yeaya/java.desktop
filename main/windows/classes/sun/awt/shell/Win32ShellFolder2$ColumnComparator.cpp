@@ -13,7 +13,6 @@ using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $Integer = ::java::lang::Integer;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $Comparator = ::java::util::Comparator;
 using $Callable = ::java::util::concurrent::Callable;
 using $ShellFolder = ::sun::awt::shell::ShellFolder;
 using $Win32ShellFolder2 = ::sun::awt::shell::Win32ShellFolder2;

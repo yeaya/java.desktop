@@ -18,11 +18,9 @@ using $Enum = ::java::lang::Enum;
 using $FieldInfo = ::java::lang::FieldInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $ImageIO = ::javax::imageio::ImageIO;
 using $ImageIO$SpiInfo$1 = ::javax::imageio::ImageIO$SpiInfo$1;
 using $ImageIO$SpiInfo$2 = ::javax::imageio::ImageIO$SpiInfo$2;
 using $ImageIO$SpiInfo$3 = ::javax::imageio::ImageIO$SpiInfo$3;
-using $ImageReaderWriterSpi = ::javax::imageio::spi::ImageReaderWriterSpi;
 
 namespace javax {
 	namespace imageio {

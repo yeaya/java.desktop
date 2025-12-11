@@ -21,11 +21,9 @@ using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
 using $Vector = ::java::util::Vector;
 using $AbstractListModel = ::javax::swing::AbstractListModel;
-using $ComboBoxModel = ::javax::swing::ComboBoxModel;
 using $JFileChooser = ::javax::swing::JFileChooser;
 using $ListDataListener = ::javax::swing::event::ListDataListener;
 using $FileSystemView = ::javax::swing::filechooser::FileSystemView;
-using $BasicFileChooserUI = ::javax::swing::plaf::basic::BasicFileChooserUI;
 using $ShellFolder = ::sun::awt::shell::ShellFolder;
 
 namespace com {

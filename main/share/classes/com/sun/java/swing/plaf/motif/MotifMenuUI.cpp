@@ -20,7 +20,6 @@
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
 using $MotifMenuUI$MotifChangeHandler = ::com::sun::java::swing::plaf::motif::MotifMenuUI$MotifChangeHandler;
 using $MotifMenuUI$MouseInputHandler = ::com::sun::java::swing::plaf::motif::MotifMenuUI$MouseInputHandler;
-using $Component = ::java::awt::Component;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;

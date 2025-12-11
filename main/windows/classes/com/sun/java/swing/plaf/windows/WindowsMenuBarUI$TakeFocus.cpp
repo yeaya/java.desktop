@@ -17,14 +17,12 @@
 
 using $MenuElementArray = $Array<::javax::swing::MenuElement>;
 using $WindowsLookAndFeel = ::com::sun::java::swing::plaf::windows::WindowsLookAndFeel;
-using $WindowsMenuBarUI = ::com::sun::java::swing::plaf::windows::WindowsMenuBarUI;
 using $Component = ::java::awt::Component;
 using $Container = ::java::awt::Container;
 using $ActionEvent = ::java::awt::event::ActionEvent;
 using $ClassInfo = ::java::lang::ClassInfo;
 using $InnerClassInfo = ::java::lang::InnerClassInfo;
 using $MethodInfo = ::java::lang::MethodInfo;
-using $EventObject = ::java::util::EventObject;
 using $AbstractAction = ::javax::swing::AbstractAction;
 using $JComponent = ::javax::swing::JComponent;
 using $JMenu = ::javax::swing::JMenu;
