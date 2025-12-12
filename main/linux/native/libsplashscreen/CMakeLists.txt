@@ -1,6 +1,7 @@
 #machine generated
 
 add_definitions(-DLIBRARY_NAME=splashscreen)
+add_definitions(-DSPLASHSCREEN -DPNG_NO_MMX_CODE -DPNG_ARM_NEON_OPT=0 -DPNG_ARM_NEON_IMPLEMENTATION=0)
 
 if(JCPP_OS MATCHES "linux")
 	add_definitions("-DWITH_X11")
