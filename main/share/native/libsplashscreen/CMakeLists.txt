@@ -8,7 +8,7 @@ if(JCPP_OS MATCHES "linux")
 endif()
 
 if(JCPP_OS MATCHES "macos")
-	add_definitions("-DWITH_MACOSX")
+	add_definitions("-DWITH_MACOSX -D__MATH_H")
 	add_definitions("-x objective-c")
 endif()
 

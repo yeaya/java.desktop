@@ -4,7 +4,7 @@ add_definitions(-DLIBRARY_NAME=splashscreen)
 add_definitions(-DSPLASHSCREEN -DPNG_NO_MMX_CODE -DPNG_ARM_NEON_OPT=0 -DPNG_ARM_NEON_IMPLEMENTATION=0)
 
 if(JCPP_OS MATCHES "macos")
-	add_definitions("-DWITH_MACOSX")
+	add_definitions("-DWITH_MACOSX -D__MATH_H")
 	add_definitions("-x objective-c")
 endif()
 
